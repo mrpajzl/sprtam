@@ -1,0 +1,520 @@
+import type { Subject } from '../../types'
+
+export default {
+  grade: 's3',
+  subject: 'anglictina',
+  topics: [
+    {
+      id: 'third-conditional',
+      title: 'Third conditional',
+      emoji: '⏪',
+      ex: [
+        {
+          title: 'Příběhem',
+          blocks: [
+            { t: 'p', text: 'Tom zaspal a ujel mu vlak. Teď lituje: *If I **had set** the alarm, I **would have caught** the train.*' },
+            { t: 'p', text: 'Mluvíme o minulosti, kterou už nejde změnit. Je to jen představa.' },
+            { t: 'w', w: 'gap', p: { items: [
+              { before: 'If she had studied, she', after: 'passed.', options: ['would have', 'would', 'will have'], a: 0 },
+              { before: 'If we', after: 'earlier, we would have seen the start.', options: ['had left', 'left', 'would leave'], a: 0 },
+              { before: 'He wouldn\'t have got lost if he', after: 'a map.', options: ['had taken', 'took', 'has taken'], a: 0 },
+            ] } },
+            { t: 'key', text: 'Neskutečná minulost: **If + had + 3. tvar, would have + 3. tvar**.' },
+          ],
+        },
+        {
+          title: 'Vzorec',
+          blocks: [
+            { t: 'table', head: ['Věta s if', 'Hlavní věta'], rows: [
+              ['If I had known,', 'I would have helped.'],
+              ['If it hadn\'t rained,', 'we could have played.'],
+              ['If you had asked,', 'she might have said yes.'],
+            ] },
+            { t: 'w', w: 'parts', p: { words: [
+              { parts: [{ text: 'If I had known', label: 'if + past perfect' }, { text: 'I would have come', label: 'would have + 3. tvar' }] },
+            ] } },
+            { t: 'list', items: ['*would have* = jistý výsledek', '*could have* = byl bych schopen', '*might have* = možná'] },
+            { t: 'key', text: 'V části s *if* nikdy není *would*.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'If I ___ about the party, I would have come.', o: ['had known', 'knew', 'would have known', 'have known'], a: 0, why: 'Ve větě s if je past perfect.' },
+        { t: 'choice', q: 'If they had played better, they ___ the match.', o: ['would have won', 'would win', 'had won', 'will have won'], a: 0, why: 'Hlavní věta: would have + 3. tvar.' },
+        { t: 'tf', q: 'Third conditional mluví o minulosti, která se nestala.', a: true, why: 'Jde o neskutečnou minulost.' },
+        { t: 'tf', q: '„If I would have known, I would have told you.“ je správně.', a: false, why: 'Ve větě s if nepoužíváme would: If I had known…' },
+        { t: 'input', q: 'If she ___ (not miss) the bus, she wouldn\'t have been late.', a: ["hadn't missed", 'had not missed'], why: 'Zápor past perfect: hadn\'t + 3. tvar.' },
+        { t: 'input', q: 'If you had told me, I ___ have helped you. (podmiňovací sloveso)', a: ['would', 'could'], why: 'would/could have + 3. tvar.' },
+        { t: 'choice', q: 'Který tvar vyjadřuje jen možnost?', o: ['might have done', 'would have done', 'had done'], a: 0, why: 'might have = možná by.' },
+        { t: 'order', q: 'Seřaď větu.', items: ['If we', 'had left', 'earlier,', 'we wouldn’t', 'have missed', 'it.'], why: 'If + past perfect, wouldn\'t have + 3. tvar.' },
+        { t: 'pair', q: 'Spoj začátek s koncem.', pairs: [
+          ['If I had saved money,', 'I could have bought it.'],
+          ['If he hadn\'t eaten so much,', 'he wouldn\'t have felt sick.'],
+          ['If it had been sunny,', 'we would have gone out.'],
+        ] },
+        { t: 'choice', q: 'Jak přeložíš: „Kdybych to býval věděl, nešel bych tam.“', o: ['If I had known, I wouldn\'t have gone there.', 'If I knew, I wouldn\'t go there.', 'If I know, I won\'t go there.'], a: 0, why: 'Minulost, která se nestala → third conditional.' },
+        { t: 'open', q: 'Jak se tvoří third conditional a kdy ho použiješ?', a: 'If + past perfect, hlavní věta would/could/might have + 3. tvar. Mluvíme o minulé situaci, která se nestala, často o lítosti nebo kritice.' },
+        { t: 'open', q: 'Řekni anglicky větu o něčem, čeho v minulosti lituješ.', a: 'Např.: If I had studied harder, I would have passed the test. Část s if má past perfect, hlavní věta would have + 3. tvar.' },
+      ],
+    },
+    {
+      id: 'mixed-conditionals',
+      title: 'Mixed conditionals',
+      emoji: '🔀',
+      ex: [
+        {
+          title: 'Na situaci',
+          blocks: [
+            { t: 'p', text: 'Včera jsi nešel spát včas. **Dnes** jsi unavený.' },
+            { t: 'example', q: 'Minulá příčina → dnešní následek?', a: 'If I had gone to bed earlier, I **wouldn\'t be** tired now.' },
+            { t: 'p', text: 'Obráceně: trvalá vlastnost → minulý výsledek. *If I spoke French, I would have understood him yesterday.*' },
+            { t: 'w', w: 'sort', p: { buckets: ['minulost → teď', 'teď/vždy → minulost'], items: [
+              { text: 'If I had taken the job, I would be rich now.', b: 0 },
+              { text: 'If she hadn\'t moved, she would live here.', b: 0 },
+              { text: 'If we had booked, we would have a table now.', b: 0 },
+              { text: 'If I weren\'t so shy, I would have asked her.', b: 1 },
+              { text: 'If he were taller, he would have got into the team.', b: 1 },
+              { text: 'If you were careful, you wouldn\'t have broken it.', b: 1 },
+            ] } },
+            { t: 'key', text: 'Každá část věty má čas podle toho, **kdy** se děje.' },
+          ],
+        },
+        {
+          title: 'Tabulkou',
+          blocks: [
+            { t: 'table', head: ['Typ', 'If-část', 'Hlavní věta'], rows: [
+              ['minulost → přítomnost', 'had + 3. tvar', 'would + infinitiv'],
+              ['přítomnost → minulost', 'past simple', 'would have + 3. tvar'],
+            ] },
+            { t: 'w', w: 'gap', p: { items: [
+              { before: 'If I had won the lottery, I', after: 'in a villa now.', options: ['would live', 'would have lived', 'will live'], a: 0 },
+              { before: 'If she', after: 'afraid of flying, she would have come with us.', options: ['weren\'t', 'hadn\'t been', 'isn\'t'], a: 0 },
+              { before: 'If they had trained more, they', after: 'in the final today.', options: ['would be', 'would have been', 'are'], a: 0 },
+            ] } },
+            { t: 'key', text: 'Míchá se 2. a 3. kondicionál.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'If I had eaten breakfast, I ___ hungry now.', o: ['wouldn\'t be', 'wouldn\'t have been', 'won\'t be', 'hadn\'t been'], a: 0, why: 'Následek je teď → would + infinitiv.' },
+        { t: 'choice', q: 'If he ___ so lazy, he would have finished the project last week.', o: ['weren\'t', 'wouldn\'t be', 'isn\'t', 'won\'t be'], a: 0, why: 'Trvalá vlastnost → past simple (were).' },
+        { t: 'tf', q: 'Mixed conditional spojuje dvě různé časové roviny.', a: true },
+        { t: 'tf', q: '„If I had studied medicine, I would be a doctor now.“ je správně.', a: true, why: 'Minulá podmínka, přítomný následek.' },
+        { t: 'input', q: 'If we had bought the tickets, we ___ (be) at the concert now.', a: ['would be', "'d be"], why: 'Teď → would + be.' },
+        { t: 'input', q: 'If I ___ (know) him well, I would have invited him. (trvale ho neznám)', a: ['knew'], why: 'Přítomná neskutečnost → past simple.' },
+        { t: 'choice', q: 'Kdybych se tehdy nepřestěhoval, bydlel bych teď v Brně.', o: ['If I hadn\'t moved, I would live in Brno now.', 'If I didn\'t move, I would have lived in Brno now.', 'If I hadn\'t moved, I would have lived in Brno now.'], a: 0, why: 'Minulá příčina (hadn\'t moved), dnešní stav (would live).' },
+        { t: 'pair', q: 'Spoj části.', pairs: [
+          ['If I had saved money,', 'I would have a car now.'],
+          ['If she spoke English,', 'she would have got the job.'],
+          ['If you had listened,', 'you would know the answer now.'],
+        ] },
+        { t: 'order', q: 'Seřaď větu.', items: ['If I', 'had slept', 'more,', 'I wouldn’t', 'be tired', 'now.'] },
+        { t: 'choice', q: 'Ve které větě je chyba?', o: ['If I had left on time, I would be there now.', 'If I had known, I would have helped.', 'If I would have known, I would help.'], a: 2, why: 'V podmínce s if není would: If I had known, …' },
+        { t: 'open', q: 'Vysvětli rozdíl mezi third a mixed conditional.', a: 'Third conditional má podmínku i následek v minulosti. Mixed conditional míchá roviny: minulá podmínka s přítomným následkem, nebo přítomná podmínka s minulým následkem.' },
+        { t: 'open', q: 'Utvoř větu: minulé rozhodnutí, které ovlivňuje tvůj dnešek.', a: 'Např.: If I hadn\'t started learning English, I wouldn\'t understand this film now. If-část past perfect, hlavní věta would + infinitiv.' },
+      ],
+    },
+    {
+      id: 'reported-questions-commands',
+      title: 'Nepřímé otázky a příkazy',
+      emoji: '🗣️',
+      ex: [
+        {
+          title: 'Rozhovorem',
+          blocks: [
+            { t: 'p', text: 'Učitel: *„Where do you live?“* → *He asked me **where I lived**.*' },
+            { t: 'p', text: 'Máma: *„Close the window.“* → *She **told me to close** the window.*' },
+            { t: 'w', w: 'flip', p: { cards: [
+              { front: '"Are you ready?"', back: 'She asked if I was ready.' },
+              { front: '"What time is it?"', back: 'He asked what time it was.' },
+              { front: '"Don\'t shout!"', back: 'She told us not to shout.' },
+              { front: '"You should rest."', back: 'The doctor advised me to rest.' },
+              { front: '"I\'ll carry it for you."', back: 'He offered to carry it.' },
+            ] } },
+            { t: 'key', text: 'V nepřímé otázce je **slovosled oznamovací věty** a bez *do/does/did*.' },
+          ],
+        },
+        {
+          title: 'Pravidla',
+          blocks: [
+            { t: 'table', head: ['Přímá řeč', 'Nepřímá řeč'], rows: [
+              ['otázka s wh-', 'asked + wh- + podmět + sloveso'],
+              ['otázka ano/ne', 'asked + if/whether + podmět + sloveso'],
+              ['příkaz', 'told/asked + sb + (not) to + inf.'],
+              ['rada / nabídka', 'advised sb to… / offered to…'],
+            ] },
+            { t: 'w', w: 'sort', p: { buckets: ['sb + to + inf.', 'to + inf. (bez osoby)'], items: [
+              { text: 'tell', b: 0 },
+              { text: 'advise', b: 0 },
+              { text: 'warn', b: 0 },
+              { text: 'remind', b: 0 },
+              { text: 'offer', b: 1 },
+              { text: 'refuse', b: 1 },
+              { text: 'promise', b: 1 },
+              { text: 'agree', b: 1 },
+            ] } },
+            { t: 'key', text: 'Posun času jako u oznamovacích vět: present → past, past → past perfect.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: '"Where are you going?" → She asked me where ___.', o: ['I was going', 'was I going', 'I am going to', 'did I go'], a: 0, why: 'Oznamovací slovosled a posun času.' },
+        { t: 'choice', q: '"Do you like jazz?" → He asked ___ I liked jazz.', o: ['if', 'that', 'do', 'what'], a: 0, why: 'Otázka ano/ne → if/whether.' },
+        { t: 'input', q: '"Don\'t touch it!" → She told me ___ touch it. (2 slova)', a: ['not to'], why: 'Záporný příkaz: not to + infinitiv.' },
+        { t: 'tf', q: '„He asked me where did I live.“ je správně.', a: false, why: 'Správně: He asked me where I lived.' },
+        { t: 'choice', q: '"I\'ll help you," he said. → He ___ to help me.', o: ['offered', 'told', 'advised', 'asked me'], a: 0, why: 'Nabídka → offer to do.' },
+        { t: 'choice', q: '"You should see a doctor." → She ___ me to see a doctor.', o: ['advised', 'offered', 'said', 'suggested'], a: 0, why: 'advise sb to do; suggest se s to + inf. nepojí.' },
+        { t: 'input', q: '"Have you finished?" → She asked whether I ___ finished. (1 slovo)', a: ['had'], why: 'Present perfect → past perfect.' },
+        { t: 'tf', q: 'Po *say* nestojí přímo osoba: *say to sb*, ale *tell sb*.', a: true },
+        { t: 'pair', q: 'Spoj přímou řeč se slovesem.', pairs: [
+          ['"No, I won\'t do it."', 'refuse'],
+          ['"Remember to call Mum."', 'remind'],
+          ['"Be careful, it\'s hot!"', 'warn'],
+          ['"I\'ll never lie again."', 'promise'],
+        ] },
+        { t: 'order', q: 'Seřaď nepřímou otázku.', items: ['She', 'asked me', 'how', 'old', 'I was.'] },
+        { t: 'open', q: 'Jak převedeš do nepřímé řeči otázku „Can you swim?“ a proč?', a: 'He asked me if/whether I could swim. U otázky ano/ne použijeme if/whether, oznamovací slovosled a posuneme čas (can → could).' },
+        { t: 'open', q: 'Jak převedeš příkazy a prosby do nepřímé řeči?', a: 'Použijeme tell/ask + osoba + to + infinitiv, v záporu not to. Např. "Sit down." → She told me to sit down.' },
+      ],
+    },
+    {
+      id: 'modals-deduction-present',
+      title: 'Dedukce v přítomnosti',
+      emoji: '🕵️',
+      ex: [
+        {
+          title: 'Jako detektiv',
+          blocks: [
+            { t: 'p', text: 'Světlo svítí, auto je před domem. *They **must be** at home.*' },
+            { t: 'p', text: 'Nikdo nebere telefon. *She **might be** asleep.*' },
+            { t: 'p', text: 'Viděl jsem ho před minutou v Praze. *He **can\'t be** in London.*' },
+            { t: 'w', w: 'gap', p: { items: [
+              { before: 'She\'s been working all day. She', after: 'be tired.', options: ['must', 'can\'t', 'mustn\'t'], a: 0 },
+              { before: 'He\'s only 12. He', after: 'be a university student.', options: ['can\'t', 'must', 'might'], a: 0 },
+              { before: 'Take an umbrella. It', after: 'rain later.', options: ['might', 'must', 'can\'t'], a: 0 },
+            ] } },
+            { t: 'key', text: '**must** = jsem si jistý, že ano. **can\'t** = jsem si jistý, že ne.' },
+          ],
+        },
+        {
+          title: 'Stupnice jistoty',
+          blocks: [
+            { t: 'w', w: 'bars', p: { unit: '% jistoty', items: [
+              { label: 'must', value: 95 },
+              { label: 'may', value: 50 },
+              { label: 'might / could', value: 40 },
+              { label: 'can\'t', value: 5 },
+            ] } },
+            { t: 'table', head: ['Sloveso', 'Význam'], rows: [
+              ['must be', 'určitě je'],
+              ['may / might / could be', 'možná je'],
+              ['can\'t / couldn\'t be', 'určitě není'],
+            ] },
+            { t: 'key', text: 'Opakem *must* v dedukci je **can\'t**, ne *mustn\'t*.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'He\'s got a Ferrari. He ___ be rich.', o: ['must', 'can\'t', 'mustn\'t', 'needn\'t'], a: 0, why: 'Logický závěr: určitě.' },
+        { t: 'choice', q: 'That ___ be Jane – she\'s in Spain this week.', o: ['can\'t', 'mustn\'t', 'must', 'should'], a: 0, why: 'Jistota, že ne → can\'t.' },
+        { t: 'tf', q: '*mustn\'t* vyjadřuje, že něco určitě není pravda.', a: false, why: 'mustn\'t = zákaz. Pro dedukci „určitě ne“ je can\'t.' },
+        { t: 'tf', q: '*might*, *may* a *could* vyjadřují možnost.', a: true },
+        { t: 'input', q: 'I\'m not sure where Tom is. He ___ be in the library. (možná)', a: ['might', 'may', 'could'], why: 'Nejistota → might/may/could.' },
+        { t: 'input', q: 'You\'ve been travelling for 20 hours. You ___ be exhausted. (určitě)', a: ['must'] },
+        { t: 'choice', q: 'Look at the clouds. It ___ rain soon.', o: ['could', 'can\'t', 'mustn\'t'], a: 0, why: 'Možnost do budoucna.' },
+        { t: 'choice', q: 'Which sentence means "Určitě teď pracuje"?', o: ['She must be working now.', 'She must work now.', 'She can\'t be working now.'], a: 0, why: 'Probíhající děj: must be + -ing.' },
+        { t: 'order', q: 'Seřaď od největší jistoty k nejmenší.', items: ['must be', 'may be', 'might be', "can't be"] },
+        { t: 'pair', q: 'Spoj situaci se závěrem.', pairs: [
+          ['The phone is ringing.', 'It might be Dad.'],
+          ['She hasn\'t eaten all day.', 'She must be hungry.'],
+          ['He failed every test.', 'He can\'t be a genius.'],
+        ] },
+        { t: 'open', q: 'Jak vyjádříš anglicky jistotu a nejistotu v přítomnosti?', a: 'Jistotu, že ano, vyjádříme must be, jistotu, že ne, can\'t be. Možnost vyjadřují may, might nebo could be.' },
+        { t: 'open', q: 'Proč nelze říct „He mustn\'t be at home“ ve smyslu „určitě není doma“?', a: 'Mustn\'t znamená zákaz. Pro logický závěr, že něco není pravda, se používá can\'t: He can\'t be at home.' },
+      ],
+    },
+    {
+      id: 'modals-deduction-past',
+      title: 'Dedukce v minulosti',
+      emoji: '🔍',
+      ex: [
+        {
+          title: 'Případ',
+          blocks: [
+            { t: 'p', text: 'Ráno je mokrý chodník. *It **must have rained** in the night.*' },
+            { t: 'p', text: 'Petr nepřišel. *He **might have forgotten**.* Ale on nikdy nezapomíná… *He **can\'t have forgotten**.*' },
+            { t: 'p', text: 'Výčitka: *You **should have told** me!* (měl jsi mi to říct)' },
+            { t: 'w', w: 'flip', p: { cards: [
+              { front: 'must have gone', back: 'určitě odešel' },
+              { front: 'might have gone', back: 'možná odešel' },
+              { front: 'can\'t have gone', back: 'určitě neodešel' },
+              { front: 'should have gone', back: 'měl odejít (ale neodešel)' },
+              { front: 'needn\'t have gone', back: 'nemusel odcházet (ale odešel)' },
+            ] } },
+            { t: 'key', text: 'modální sloveso + **have + 3. tvar** = úvaha o minulosti.' },
+          ],
+        },
+        {
+          title: 'Vzorec',
+          blocks: [
+            { t: 'w', w: 'parts', p: { words: [
+              { parts: [{ text: 'must', label: 'modál' }, { text: 'have', label: 'have' }, { text: 'left', label: '3. tvar' }] },
+            ] } },
+            { t: 'table', head: ['Přítomnost', 'Minulost'], rows: [
+              ['must be', 'must have been'],
+              ['might be', 'might have been'],
+              ['can\'t be', 'can\'t / couldn\'t have been'],
+            ] },
+            { t: 'key', text: 'Po modálním slovese vždy *have*, nikdy *had* ani *has*.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'The window is broken. Someone ___ it.', o: ['must have broken', 'must break', 'must had broken', 'mustn\'t have broken'], a: 0, why: 'Jistý závěr o minulosti.' },
+        { t: 'choice', q: 'She ___ the exam – she didn\'t study at all.', o: ['can\'t have passed', 'mustn\'t have passed', 'must have passed', 'should have passed'], a: 0, why: 'Jistota, že ne → can\'t have.' },
+        { t: 'input', q: 'I can\'t find my keys. I ___ have left them at school. (možná)', a: ['might', 'may', 'could'] },
+        { t: 'input', q: 'You ___ have told me earlier! (výčitka: měl jsi)', a: ['should', 'ought to'] },
+        { t: 'tf', q: '„He must have went home.“ je správně.', a: false, why: 'Po have je 3. tvar: must have gone.' },
+        { t: 'tf', q: '*should have done* znamená, že se to nestalo, i když mělo.', a: true },
+        { t: 'choice', q: 'We ___ have taken a taxi – the station was very close.', o: ['needn\'t', 'mustn\'t', 'can\'t'], a: 0, why: 'Zbytečná minulá akce → needn\'t have.' },
+        { t: 'pair', q: 'Spoj s významem.', pairs: [
+          ['must have seen', 'určitě viděl'],
+          ['might have seen', 'možná viděl'],
+          ['can\'t have seen', 'určitě neviděl'],
+          ['should have seen', 'měl vidět'],
+        ] },
+        { t: 'order', q: 'Seřaď větu.', items: ['They', 'must', 'have', 'been', 'very', 'tired.'] },
+        { t: 'choice', q: 'Jim isn\'t answering. He ___ his phone at home.', o: ['may have left', 'may leave', 'may has left'], a: 0, why: 'may + have + 3. tvar.' },
+        { t: 'open', q: 'Jak tvoříme dedukci o minulosti? Uveď příklad.', a: 'Modální sloveso (must, might, can\'t) + have + 3. tvar. Např.: She must have missed the bus.' },
+        { t: 'open', q: 'Jaký je rozdíl mezi „must have done“ a „should have done“?', a: 'Must have done je logický závěr, že se to určitě stalo. Should have done je výčitka nebo lítost: mělo se to stát, ale nestalo.' },
+      ],
+    },
+    {
+      id: 'narrative-tenses',
+      title: 'Časy ve vyprávění',
+      emoji: '📖',
+      ex: [
+        {
+          title: 'Na příběhu',
+          blocks: [
+            { t: 'p', text: '*It **was raining**. I **had been waiting** for an hour when the bus finally **arrived**. Somebody **had stolen** my umbrella.*' },
+            { t: 'w', w: 'timeline', p: { events: [
+              { year: 1, label: 'umbrella stolen (past perfect)' },
+              { year: 2, label: 'waiting starts (had been waiting)' },
+              { year: 3, label: 'raining (past continuous)' },
+              { year: 4, label: 'bus arrived (past simple)' },
+            ] } },
+            { t: 'key', text: 'Past simple = hlavní děj. Předtím = past perfect. Pozadí = past continuous.' },
+          ],
+        },
+        {
+          title: 'Čtyři časy',
+          blocks: [
+            { t: 'table', head: ['Čas', 'Tvar', 'Ve vyprávění'], rows: [
+              ['past simple', 'walked', 'hlavní události'],
+              ['past continuous', 'was walking', 'pozadí, probíhající děj'],
+              ['past perfect', 'had walked', 'dřívější událost'],
+              ['past perfect cont.', 'had been walking', 'dlouhý děj do určitého bodu'],
+            ] },
+            { t: 'w', w: 'gap', p: { items: [
+              { before: 'She was out of breath because she', after: '.', options: ['had been running', 'was run', 'has run'], a: 0 },
+              { before: 'When I got to the cinema, the film', after: '.', options: ['had already started', 'already starts', 'has already started'], a: 0 },
+              { before: 'While we', after: 'dinner, the lights went out.', options: ['were having', 'had', 'have had'], a: 0 },
+            ] } },
+            { t: 'key', text: 'Past perfect continuous zdůrazňuje **trvání** před jiným minulým dějem.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Her eyes were red. She ___.', o: ['had been crying', 'has been crying', 'cried', 'was cry'], a: 0, why: 'Dlouhý děj před minulým okamžikem s viditelným výsledkem.' },
+        { t: 'choice', q: 'When we arrived, the party ___. Everyone had gone home.', o: ['had finished', 'finished', 'was finishing', 'has finished'], a: 0, why: 'Skončilo dřív než náš příchod.' },
+        { t: 'input', q: 'I ___ (walk) home when I saw the accident.', a: ['was walking'], why: 'Probíhající děj přerušený jiným.' },
+        { t: 'input', q: 'They had been ___ (play) for two hours when it started to rain.', a: ['playing'] },
+        { t: 'tf', q: 'Past perfect continuous se tvoří: had been + -ing.', a: true },
+        { t: 'tf', q: 'Ve vyprávění se hlavní události, které jdou po sobě, dávají do past continuous.', a: false, why: 'Hlavní události po sobě = past simple.' },
+        { t: 'order', q: 'Seřaď větu.', items: ['I', 'had been', 'working there', 'for years', 'before', 'I left.'] },
+        { t: 'pair', q: 'Spoj tvar s časem.', pairs: [
+          ['had been sleeping', 'past perfect continuous'],
+          ['was sleeping', 'past continuous'],
+          ['had slept', 'past perfect'],
+          ['slept', 'past simple'],
+        ] },
+        { t: 'choice', q: 'By the time the police arrived, the thief ___.', o: ['had escaped', 'escaped', 'was escaping'], a: 0, why: 'By the time → dřívější děj v past perfect.' },
+        { t: 'choice', q: 'Jaký je rozdíl? „I had read the book.“ × „I had been reading the book.“', o: ['první = dočteno, druhé = četl jsem nějakou dobu', 'žádný', 'první = čtu teď'], a: 0, why: 'Simple = výsledek, continuous = trvání.' },
+        { t: 'open', q: 'Kdy ve vyprávění použiješ past perfect continuous? Uveď příklad.', a: 'Pro dlouhý děj, který probíhal až do jiného minulého okamžiku. Např.: We had been driving for hours when the car broke down.' },
+        { t: 'open', q: 'Vysvětli roli čtyř minulých časů ve vyprávění.', a: 'Past simple nese hlavní děj, past continuous popisuje pozadí. Past perfect vrací do dřívější doby a past perfect continuous zdůrazňuje trvání před minulým bodem.' },
+      ],
+    },
+    {
+      id: 'future-continuous-perfect',
+      title: 'Future continuous a future perfect',
+      emoji: '🔮',
+      ex: [
+        {
+          title: 'Na časové ose',
+          blocks: [
+            { t: 'p', text: 'Zítra v 10:00 právě letím: *I **will be flying** to Rome.*' },
+            { t: 'p', text: 'Do pátku to stihnu: *I **will have finished** the essay by Friday.*' },
+            { t: 'w', w: 'timeline', p: { events: [
+              { year: 2026, label: 'teď' },
+              { year: 2028, label: 'will be studying (probíhá)' },
+              { year: 2030, label: 'will have graduated (hotovo)' },
+            ] } },
+            { t: 'key', text: '**will be + -ing** = bude probíhat. **will have + 3. tvar** = bude hotovo.' },
+          ],
+        },
+        {
+          title: 'Kartičkami',
+          blocks: [
+            { t: 'w', w: 'sort', p: { buckets: ['will be -ing', 'will have done'], items: [
+              { text: 'This time tomorrow I ___ (lie) on the beach.', b: 0 },
+              { text: 'At 8 pm we ___ (watch) the match.', b: 0 },
+              { text: 'Don\'t call at 7 – I ___ (have) dinner.', b: 0 },
+              { text: 'By 2030 they ___ (build) the bridge.', b: 1 },
+              { text: 'By the time you arrive, I ___ (cook) lunch.', b: 1 },
+              { text: 'In June I ___ (work) here for ten years.', b: 1 },
+            ] } },
+            { t: 'list', items: ['typické výrazy: *this time tomorrow, at 5 o\'clock*', 'typické výrazy: *by Friday, by then, by the time*'] },
+            { t: 'key', text: '**by** + čas → future perfect.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'This time next week I ___ in the Alps.', o: ['will be skiing', 'will have skied', 'ski', 'am ski'], a: 0, why: 'Probíhající děj v bodě budoucnosti.' },
+        { t: 'choice', q: 'By the end of the year, she ___ 20 books.', o: ['will have read', 'will be reading', 'reads', 'has read'], a: 0, why: 'by + čas → future perfect.' },
+        { t: 'input', q: 'By 6 pm I will ___ finished my homework. (1 slovo)', a: ['have'] },
+        { t: 'input', q: 'Don\'t phone at nine. We will ___ (sleep). (1 slovo)', a: ['sleeping', 'be sleeping'], why: 'will be + -ing.' },
+        { t: 'tf', q: '„By Monday I will have finished“ znamená, že v pondělí už budu hotový.', a: true },
+        { t: 'tf', q: 'Future continuous se tvoří: will + have + -ing.', a: false, why: 'Správně: will be + -ing.' },
+        { t: 'choice', q: '___ you be using the car tonight? I\'d like to borrow it.', o: ['Will', 'Have', 'Are'], a: 0, why: 'Zdvořilý dotaz na plány: Will you be using…?' },
+        { t: 'order', q: 'Seřaď větu.', items: ['By July', 'we', 'will', 'have', 'moved', 'house.'] },
+        { t: 'pair', q: 'Spoj začátek s koncem.', pairs: [
+          ['At midnight we', 'will be dancing.'],
+          ['By midnight the guests', 'will have left.'],
+          ['Next year I', 'will be studying abroad.'],
+        ] },
+        { t: 'choice', q: 'Do you think the film ___ by 10?', o: ['will have ended', 'will be ending', 'will have end'], a: 0 },
+        { t: 'open', q: 'Jaký je rozdíl mezi future continuous a future perfect?', a: 'Future continuous (will be + -ing) popisuje děj, který bude v určitém budoucím okamžiku probíhat. Future perfect (will have + 3. tvar) říká, že děj bude do určité doby dokončen.' },
+        { t: 'open', q: 'Řekni anglicky, co budeš dělat zítra v tuto dobu a co budeš mít hotové do konce týdne.', a: 'Např.: This time tomorrow I will be sitting in a lesson. By the end of the week I will have written my essay.' },
+      ],
+    },
+    {
+      id: 'causative-have-get',
+      title: 'Have something done',
+      emoji: '💇',
+      ex: [
+        {
+          title: 'V kadeřnictví',
+          blocks: [
+            { t: 'p', text: '*I cut my hair.* = stříhal jsem se sám.' },
+            { t: 'p', text: '*I **had my hair cut**.* = nechal jsem se ostříhat (udělal to někdo jiný).' },
+            { t: 'w', w: 'flip', p: { cards: [
+              { front: 'I repaired my bike.', back: 'opravil jsem si ho sám' },
+              { front: 'I had my bike repaired.', back: 'nechal jsem si ho opravit' },
+              { front: 'She got her nails done.', back: 'nechala si udělat nehty' },
+              { front: 'We\'re having the house painted.', back: 'necháváme si malovat dům' },
+            ] } },
+            { t: 'key', text: '**have + věc + 3. tvar** = nechat si něco udělat.' },
+          ],
+        },
+        {
+          title: 'Vzorec',
+          blocks: [
+            { t: 'w', w: 'parts', p: { words: [
+              { parts: [{ text: 'had', label: 'have (čas)' }, { text: 'my car', label: 'předmět' }, { text: 'washed', label: '3. tvar' }] },
+            ] } },
+            { t: 'table', head: ['Čas', 'Příklad'], rows: [
+              ['present simple', 'I have my teeth checked every year.'],
+              ['past simple', 'She had her phone fixed.'],
+              ['present perfect', 'We have had the windows cleaned.'],
+              ['going to', 'I\'m going to get my hair dyed.'],
+            ] },
+            { t: 'p', text: 'Také nepříjemná událost: *He **had his wallet stolen**.*' },
+            { t: 'key', text: 'Čas nese sloveso *have/get*, 3. tvar zůstává.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'I didn\'t fix the roof myself. I ___.', o: ['had it fixed', 'had fixed it', 'fixed it', 'have fixed it'], a: 0, why: 'have + předmět + 3. tvar.' },
+        { t: 'choice', q: 'She ___ her photo taken for her passport yesterday.', o: ['had', 'has', 'was', 'did'], a: 0, why: 'Minulost → had.' },
+        { t: 'input', q: 'We are having our kitchen ___ (paint).', a: ['painted'] },
+        { t: 'input', q: 'He had his bike ___ (steal) last night.', a: ['stolen'], why: 'Nepříjemná událost; steal – stole – stolen.' },
+        { t: 'tf', q: '„I had cut my hair“ znamená „nechal jsem se ostříhat“.', a: false, why: 'To je past perfect. Správně: I had my hair cut.' },
+        { t: 'tf', q: 'V hovorové angličtině lze místo *have* použít *get*: *get my car washed*.', a: true },
+        { t: 'order', q: 'Seřaď větu.', items: ['I am', 'going to', 'have', 'my eyes', 'tested.'] },
+        { t: 'choice', q: 'Where do you usually ___?', o: ['have your hair cut', 'have cut your hair', 'cut your hair by someone'], a: 0 },
+        { t: 'pair', q: 'Spoj začátek s koncem.', pairs: [
+          ['I need to have my car', 'serviced.'],
+          ['She has just had her ears', 'pierced.'],
+          ['They had their house', 'burgled.'],
+        ] },
+        { t: 'choice', q: 'Have you ___ the heating checked yet?', o: ['had', 'have', 'got to'], a: 0, why: 'Present perfect: have had + předmět + 3. tvar.' },
+        { t: 'open', q: 'Jak se tvoří konstrukce have something done a kdy ji použiješ?', a: 'Have (v příslušném čase) + předmět + 3. tvar. Použijeme ji, když za nás práci udělá někdo jiný, nebo pro nepříjemnou událost (had my phone stolen).' },
+        { t: 'open', q: 'Řekni tři služby, které si lidé nechávají dělat, anglicky.', a: 'Např.: I have my hair cut. She has her nails done. We have our car repaired.' },
+      ],
+    },
+    {
+      id: 'phrasal-verbs',
+      title: 'Frázová slovesa',
+      emoji: '🧩',
+      ex: [
+        {
+          title: 'Ze života',
+          blocks: [
+            { t: 'p', text: '*I **woke up** late, **put on** my coat and **ran out**. I **found out** the bus had gone, so I **gave up** and walked.*' },
+            { t: 'w', w: 'flip', p: { cards: [
+              { front: 'give up', back: 'vzdát (se), přestat' },
+              { front: 'find out', back: 'zjistit' },
+              { front: 'look after', back: 'starat se o' },
+              { front: 'turn down', back: 'odmítnout; ztlumit' },
+              { front: 'put off', back: 'odložit' },
+              { front: 'come across', back: 'narazit na' },
+              { front: 'run out of', back: 'dojít (něčeho)' },
+              { front: 'get over', back: 'překonat, zotavit se' },
+            ] } },
+            { t: 'key', text: 'Částice mění význam slovesa – uč se celé spojení.' },
+          ],
+        },
+        {
+          title: 'Dělitelná a nedělitelná',
+          blocks: [
+            { t: 'table', head: ['Typ', 'Příklad'], rows: [
+              ['dělitelné', 'turn the TV off / turn off the TV / turn it off'],
+              ['nedělitelné', 'look after the kids / look after them'],
+            ] },
+            { t: 'w', w: 'sort', p: { buckets: ['dělitelné', 'nedělitelné'], items: [
+              { text: 'turn off', b: 0 },
+              { text: 'pick up', b: 0 },
+              { text: 'put off', b: 0 },
+              { text: 'fill in', b: 0 },
+              { text: 'look after', b: 1 },
+              { text: 'come across', b: 1 },
+              { text: 'get over', b: 1 },
+              { text: 'deal with', b: 1 },
+            ] } },
+            { t: 'key', text: 'Zájmeno u dělitelného slovesa jde **doprostřed**: *turn it off*, ne *turn off it*.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Can you ___ my cat while I\'m away?', o: ['look after', 'look for', 'look up', 'look into'], a: 0, why: 'look after = starat se.' },
+        { t: 'choice', q: 'Která věta je správně?', o: ['Turn it off.', 'Turn off it.', 'It turn off.'], a: 0, why: 'Zájmeno mezi sloveso a částici.' },
+        { t: 'input', q: 'We\'ve run ___ of milk. (1 slovo)', a: ['out'] },
+        { t: 'input', q: 'The meeting was put ___ until next week. (1 slovo)', a: ['off'], why: 'put off = odložit.' },
+        { t: 'tf', q: '*give up* znamená „vzdát se, přestat“.', a: true },
+        { t: 'tf', q: '„I came it across.“ je správně.', a: false, why: 'come across je nedělitelné: I came across it.' },
+        { t: 'pair', q: 'Spoj sloveso s významem.', pairs: [
+          ['find out', 'zjistit'],
+          ['turn down', 'odmítnout'],
+          ['get over', 'překonat'],
+          ['set up', 'založit'],
+        ] },
+        { t: 'choice', q: 'It took her months to ___ the illness.', o: ['get over', 'get off', 'get on', 'get by'], a: 0 },
+        { t: 'choice', q: 'Please ___ this form.', o: ['fill in', 'fill on', 'fill at'], a: 0 },
+        { t: 'order', q: 'Seřaď větu.', items: ['She', 'picked', 'it', 'up', 'from the floor.'] },
+        { t: 'open', q: 'Co jsou frázová slovesa a proč jsou obtížná?', a: 'Sloveso + částice (předložka nebo příslovce), které spolu mají nový význam, často jiný než samotné sloveso. Proto se je musíme učit jako celek.' },
+        { t: 'open', q: 'Jaký je rozdíl mezi dělitelným a nedělitelným frázovým slovesem? Uveď příklady.', a: 'U dělitelného může předmět stát mezi slovesem a částicí a zájmeno tam stát musí (turn it off). U nedělitelného předmět stojí vždy až za částicí (look after them).' },
+      ],
+    },
+  ],
+} satisfies Subject

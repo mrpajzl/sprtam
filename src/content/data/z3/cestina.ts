@@ -1,0 +1,548 @@
+import type { Subject } from '../../types'
+
+export default {
+  grade: 'z3',
+  subject: 'cestina',
+  topics: [
+    {
+      id: 'vyjmenovana-slova-b',
+      title: 'Vyjmenovaná slova po B',
+      emoji: '🐂',
+      ex: [
+        {
+          title: 'Říkanka',
+          blocks: [
+            { t: 'p', text: 'Po obojetném **b** píšeme **y** jen ve vyjmenovaných a příbuzných slovech.' },
+            { t: 'p', text: '**by, být, bydlit, obyvatel, byt, příbytek, nábytek, dobytek, obyčej, bystrý, bylina, kobyla, býk, Přibyslav**' },
+            { t: 'p', text: 'Příbuzná slova: *bydliště, nábytkový, obyčejný, bylinkový, býček…*' },
+            { t: 'key', text: 'Vyjmenované nebo příbuzné → y. Jinak i: *bílý, bit, bič*.' },
+          ],
+        },
+        {
+          title: 'Doplň',
+          blocks: [
+            { t: 'p', text: 'Pozor na dvojice: **být** (existovat) × **bít** (tlouct).' },
+            {
+              t: 'w',
+              w: 'gap',
+              p: {
+                items: [
+                  { before: 'Kráva je dob', after: 'tek.', options: ['y', 'i'], a: 0 },
+                  { before: 'Sníh je b', after: 'lý.', options: ['ý', 'í'], a: 1 },
+                  { before: 'Na louce roste b', after: 'linka.', options: ['y', 'i'], a: 0 },
+                  { before: 'Bouřka b', after: 'la silná.', options: ['y', 'i'], a: 0 },
+                  { before: 'Zvony b', after: 'jí poledne.', options: ['y', 'i'], a: 1 },
+                  { before: 'Máme nový náb', after: 'tek.', options: ['y', 'i'], a: 0 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Zeptej se: je to vyjmenované slovo, nebo příbuzné?' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'input', q: 'Doplň y/i: ob_vatel', a: ['y'] },
+        { t: 'input', q: 'Doplň y/i: b_dliště', a: ['y'], why: 'Příbuzné k bydlit.' },
+        { t: 'input', q: 'Doplň ý/í: b_lá barva', a: ['í', 'i'], why: 'Bílý není vyjmenované slovo.' },
+        { t: 'input', q: 'Doplň y/i: kob_la', a: ['y'] },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['obyčejný', 'običejný'], a: 0 },
+        { t: 'choice', q: 'Kluci se ve hře nesmí …', o: ['bít', 'být'], a: 0, why: 'Bít = tlouct, ubližovat.' },
+        { t: 'choice', q: 'Chci … zdravý.', o: ['bít', 'být'], a: 1, why: 'Být = existovat, vyjmenované slovo.' },
+        { t: 'tf', q: '„Býk“ je vyjmenované slovo.', a: true },
+        { t: 'tf', q: 'Slovo „bylinkový“ píšeme s i.', a: false, why: 'Je příbuzné k bylina – píšeme y.' },
+        { t: 'pair', q: 'Spoj vyjmenované slovo s příbuzným.', pairs: [['byt', 'bytový'], ['bystrý', 'bystřina'], ['dobytek', 'dobytčí'], ['býk', 'býček']] },
+        { t: 'order', q: 'Seřaď jako v říkance.', items: ['by', 'být', 'bydlit', 'obyvatel', 'byt'] },
+        { t: 'open', q: 'Vyjmenuj vyjmenovaná slova po B.', a: 'By, být, bydlit, obyvatel, byt, příbytek, nábytek, dobytek, obyčej, bystrý, bylina, kobyla, býk, Přibyslav.' },
+        { t: 'open', q: 'Jaký je rozdíl mezi „být“ a „bít“?', a: 'Být s y znamená existovat (být doma). Bít s i znamená tlouct (bít do bubnu).' },
+      ],
+    },
+    {
+      id: 'vyjmenovana-slova-l',
+      title: 'Vyjmenovaná slova po L',
+      emoji: '⛷️',
+      ex: [
+        {
+          title: 'Říkanka',
+          blocks: [
+            { t: 'p', text: '**slyšet, mlýn, blýskat se, polykat, plynout, plýtvat, vzlykat, lysý, lýko, lýtko, lyže, pelyněk, plyš**' },
+            { t: 'p', text: 'Příbuzná: *slyšitelný, mlynář, blýskavý, plyn, lyžař, lysina…*' },
+            { t: 'pic', items: ['👂', '⚙️', '⚡', '⛷️', '🧸'], caption: 'slyšet, mlýn, blýskat se, lyže, plyš' },
+            { t: 'key', text: 'Po l je y jen ve vyjmenovaných a příbuzných slovech.' },
+          ],
+        },
+        {
+          title: 'Roztřiď',
+          blocks: [
+            {
+              t: 'w',
+              w: 'sort',
+              p: {
+                buckets: ['píšu y', 'píšu i'],
+                items: [
+                  { text: 'mlynář', b: 0 },
+                  { text: 'mlít', b: 1 },
+                  { text: 'lyžař', b: 0 },
+                  { text: 'lízat', b: 1 },
+                  { text: 'plynový', b: 0 },
+                  { text: 'list', b: 1 },
+                  { text: 'lýtko', b: 0 },
+                  { text: 'líný', b: 1 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Pozor: mlýn s y, ale mlít s i!' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'input', q: 'Doplň y/i: sl_šet', a: ['y'] },
+        { t: 'input', q: 'Doplň ý/í: ml_n', a: ['ý', 'y'] },
+        { t: 'input', q: 'Doplň y/i: l_žovat', a: ['y'], why: 'Příbuzné k lyže.' },
+        { t: 'input', q: 'Doplň y/i: pol_kat', a: ['y'] },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['mlít mouku', 'mlýt mouku'], a: 0, why: 'Mlít není vyjmenované slovo.' },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['plítvat', 'plýtvat'], a: 1 },
+        { t: 'choice', q: 'Které slovo NENÍ příbuzné s „plynout“?', o: ['plyn', 'plynulý', 'pilný'], a: 2 },
+        { t: 'tf', q: '„Lysý“ znamená plešatý a píše se s y.', a: true },
+        { t: 'tf', q: 'Ve slově „blýskavý“ píšeme í.', a: false, why: 'Je příbuzné k blýskat se – píšeme ý.' },
+        { t: 'pair', q: 'Spoj vyjmenované slovo s příbuzným.', pairs: [['mlýn', 'mlynář'], ['lyže', 'lyžař'], ['vzlykat', 'vzlyk'], ['lysý', 'lysina']] },
+        { t: 'order', q: 'Seřaď jako v říkance.', items: ['slyšet', 'mlýn', 'blýskat se', 'polykat', 'plynout'] },
+        { t: 'open', q: 'Vyjmenuj vyjmenovaná slova po L.', a: 'Slyšet, mlýn, blýskat se, polykat, plynout, plýtvat, vzlykat, lysý, lýko, lýtko, lyže, pelyněk, plyš.' },
+        { t: 'open', q: 'Proč píšeme „mlýn“ s y, ale „mlít“ s i?', a: 'Mlýn je vyjmenované slovo. Mlít mezi vyjmenovanými slovy není, proto ho píšeme s i.' },
+      ],
+    },
+    {
+      id: 'vyjmenovana-slova-m',
+      title: 'Vyjmenovaná slova po M',
+      emoji: '🐭',
+      ex: [
+        {
+          title: 'Říkanka',
+          blocks: [
+            { t: 'p', text: '**my, mýt, myslit, mýlit se, hmyz, myš, hlemýžď, mýtit, zamykat, smýkat, dmýchat, chmýří, nachomýtnout se, Litomyšl**' },
+            { t: 'p', text: 'Příbuzná: *mýdlo, umyvadlo, myšlenka, smysl, omyl, myška, odemykat…*' },
+            { t: 'key', text: 'Pozor: **mýt** (umývat) × **mít** (vlastnit).' },
+          ],
+        },
+        {
+          title: 'Doplň',
+          blocks: [
+            {
+              t: 'w',
+              w: 'gap',
+              p: {
+                items: [
+                  { before: 'Musím si um', after: 't ruce.', options: ['ý', 'í'], a: 0 },
+                  { before: 'Chci m', after: 't psa.', options: ['ý', 'í'], a: 1 },
+                  { before: 'Na trávě je h', after: 'z.', options: ['my', 'mi'], a: 0 },
+                  { before: 'Kopu do m', after: 'če.', options: ['y', 'i'], a: 1 },
+                  { before: 'To byl om', after: 'l.', options: ['y', 'i'], a: 0 },
+                  { before: 'Babička je m', after: 'lá.', options: ['y', 'i'], a: 1 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Mýt, myslit, mýlit se → y. Míč, milý, mít → i.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'input', q: 'Doplň y/i: m_š', a: ['y'] },
+        { t: 'input', q: 'Doplň y/i: m_šlenka', a: ['y'], why: 'Příbuzné k myslit.' },
+        { t: 'input', q: 'Doplň y/i: m_lý kamarád', a: ['i'], why: 'Milý není vyjmenované slovo.' },
+        { t: 'input', q: 'Doplň y/i: zam_kat dveře', a: ['y'] },
+        { t: 'choice', q: 'Večer si musím … zuby.', o: ['mít', 'mýt'], a: 1, why: 'Mýt = umývat.' },
+        { t: 'choice', q: 'Chtěla bych … kočku.', o: ['mít', 'mýt'], a: 0, why: 'Mít = vlastnit.' },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['hlemížď', 'hlemýžď'], a: 1 },
+        { t: 'tf', q: '„Mýdlo“ je příbuzné k mýt.', a: true },
+        { t: 'tf', q: 'Ve slově „omyl“ píšeme i.', a: false, why: 'Omyl je příbuzné k mýlit se – píšeme y.' },
+        { t: 'pair', q: 'Spoj vyjmenované slovo s příbuzným.', pairs: [['myš', 'myška'], ['mýt', 'umyvadlo'], ['myslit', 'smysl'], ['mýlit se', 'omyl']] },
+        { t: 'order', q: 'Seřaď jako v říkance.', items: ['my', 'mýt', 'myslit', 'mýlit se', 'hmyz'] },
+        { t: 'open', q: 'Vyjmenuj vyjmenovaná slova po M.', a: 'My, mýt, myslit, mýlit se, hmyz, myš, hlemýžď, mýtit, zamykat, smýkat, dmýchat, chmýří, nachomýtnout se, Litomyšl.' },
+        { t: 'open', q: 'Vysvětli rozdíl mezi „mýt“ a „mít“.', a: 'Mýt s y znamená umývat (mýt nádobí). Mít s i znamená vlastnit (mít kolo).' },
+      ],
+    },
+    {
+      id: 'vyjmenovana-slova-p',
+      title: 'Vyjmenovaná slova po P',
+      emoji: '🦇',
+      ex: [
+        {
+          title: 'Říkanka',
+          blocks: [
+            { t: 'p', text: '**pýcha, pytel, pysk, netopýr, slepýš, pyl, kopyto, klopýtat, třpytit se, zpytovat, pykat, pýr, pýřit se, čepýřit se**' },
+            { t: 'pic', items: ['🦇', '🐍', '🐴', '🌼'], caption: 'netopýr, slepýš, kopyto, pyl' },
+            { t: 'key', text: 'Pyšný je příbuzné k pýcha → y.' },
+          ],
+        },
+        {
+          title: 'Roztřiď',
+          blocks: [
+            {
+              t: 'w',
+              w: 'sort',
+              p: {
+                buckets: ['píšu y', 'píšu i'],
+                items: [
+                  { text: 'pytlík', b: 0 },
+                  { text: 'pivo', b: 1 },
+                  { text: 'pyšný', b: 0 },
+                  { text: 'písek', b: 1 },
+                  { text: 'kopytník', b: 0 },
+                  { text: 'pilný', b: 1 },
+                  { text: 'třpytivý', b: 0 },
+                  { text: 'pít', b: 1 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Pít, pila, písek, pivo – nejsou vyjmenovaná → i.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'input', q: 'Doplň y/i: p_tel', a: ['y'] },
+        { t: 'input', q: 'Doplň ý/í: netop_r', a: ['ý', 'y'] },
+        { t: 'input', q: 'Doplň y/i: p_lný žák', a: ['i'], why: 'Pilný není vyjmenované slovo.' },
+        { t: 'input', q: 'Doplň y/i: kop_to', a: ['y'] },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['pišný', 'pyšný'], a: 1 },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['slepýš', 'slepíš'], a: 0 },
+        { t: 'choice', q: 'Které slovo píšeme s i?', o: ['p_lka (na dřevo)', 'p_l (na květu)', 'p_sk (ret)'], a: 0, why: 'Pila, pilka – není vyjmenované.' },
+        { t: 'tf', q: '„Klopýtat“ znamená zakopávat a píše se s ý.', a: true },
+        { t: 'tf', q: 'Ve slově „pyl“ píšeme i.', a: false, why: 'Pyl je vyjmenované slovo.' },
+        { t: 'pair', q: 'Spoj vyjmenované slovo s příbuzným.', pairs: [['pýcha', 'pyšný'], ['pytel', 'pytlík'], ['třpytit se', 'třpytivý'], ['kopyto', 'kopytník']] },
+        { t: 'order', q: 'Seřaď jako v říkance.', items: ['pýcha', 'pytel', 'pysk', 'netopýr', 'slepýš'] },
+        { t: 'open', q: 'Vyjmenuj vyjmenovaná slova po P.', a: 'Pýcha, pytel, pysk, netopýr, slepýš, pyl, kopyto, klopýtat, třpytit se, zpytovat, pykat, pýr, pýřit se, čepýřit se.' },
+        { t: 'open', q: 'Řekni dvě slova příbuzná k „pytel“ a dvě slova s pi.', a: 'Příbuzná: pytlík, pytlovina. S pi: pivo, pila, písek.' },
+      ],
+    },
+    {
+      id: 'vyjmenovana-slova-s',
+      title: 'Vyjmenovaná slova po S',
+      emoji: '🧀',
+      ex: [
+        {
+          title: 'Říkanka',
+          blocks: [
+            { t: 'p', text: '**syn, sytý, sýr, syrový, sychravý, usychat, sýkora, sýček, sysel, syčet, sypat**' },
+            { t: 'pic', items: ['👦', '🧀', '🐦', '🦉', '🐿️'], caption: 'syn, sýr, sýkora, sýček, sysel' },
+            { t: 'key', text: 'Sýr je s ý, síla je s í.' },
+          ],
+        },
+        {
+          title: 'Kartičky',
+          blocks: [
+            { t: 'p', text: 'Otoč kartu. Je to vyjmenované, nebo ne?' },
+            {
+              t: 'w',
+              w: 'flip',
+              p: {
+                cards: [
+                  { front: 's_novec', back: 'synovec – y (syn)' },
+                  { front: 's_la', back: 'síla – í' },
+                  { front: 'nas_tit', back: 'nasytit – y (sytý)' },
+                  { front: 's_to', back: 'síto – í' },
+                  { front: 's_pký', back: 'sypký – y (sypat)' },
+                  { front: 's_lnice', back: 'silnice – i' },
+                ],
+              },
+            },
+            { t: 'key', text: 'Syn, sytý, sýr, sypat… → y. Ostatní → i.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'input', q: 'Doplň ý/í: s_r', a: ['ý', 'y'] },
+        { t: 'input', q: 'Doplň y/i: s_novec', a: ['y'], why: 'Příbuzné k syn.' },
+        { t: 'input', q: 'Doplň y/i: s_lnice', a: ['i'] },
+        { t: 'input', q: 'Doplň y/i: s_pat písek', a: ['y'] },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['sýkora', 'síkora'], a: 0 },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['silný', 'sylný'], a: 0, why: 'Silný (síla) není vyjmenované.' },
+        { t: 'choice', q: 'Které slovo je příbuzné k „sytý“?', o: ['nasytit', 'síto', 'sít'], a: 0 },
+        { t: 'tf', q: '„Sychravý“ znamená chladný a vlhký. Píše se s y.', a: true },
+        { t: 'tf', q: 'Ve slově „syčet“ píšeme i.', a: false, why: 'Syčet je vyjmenované – y.' },
+        { t: 'pair', q: 'Spoj vyjmenované slovo s příbuzným.', pairs: [['syn', 'synovec'], ['sýr', 'sýrový'], ['sypat', 'sypký'], ['usychat', 'usychající']] },
+        { t: 'order', q: 'Seřaď jako v říkance.', items: ['syn', 'sytý', 'sýr', 'syrový', 'sychravý'] },
+        { t: 'open', q: 'Vyjmenuj vyjmenovaná slova po S.', a: 'Syn, sytý, sýr, syrový, sychravý, usychat, sýkora, sýček, sysel, syčet, sypat.' },
+        { t: 'open', q: 'Jaký je rozdíl mezi „syrový“ a „sýrový“?', a: 'Syrový znamená nevařený (syrové maso). Sýrový znamená ze sýra (sýrová omáčka). Obě se píšou s y.' },
+      ],
+    },
+    {
+      id: 'vyjmenovana-slova-v',
+      title: 'Vyjmenovaná slova po V',
+      emoji: '🦦',
+      ex: [
+        {
+          title: 'Říkanka',
+          blocks: [
+            { t: 'p', text: '**vy, vysoký, výt, výskat, zvykat, žvýkat, vydra, výr, vyžle, povyk, výheň**' },
+            { t: 'p', text: 'A **předpona vy-/vý-**: *vyletět, výlet, vyskočit, výhra*.' },
+            { t: 'key', text: 'Výt (vlk) × vít (věnec).' },
+          ],
+        },
+        {
+          title: 'Roztřiď',
+          blocks: [
+            {
+              t: 'w',
+              w: 'sort',
+              p: {
+                buckets: ['píšu y', 'píšu i'],
+                items: [
+                  { text: 'výška', b: 0 },
+                  { text: 'vítr', b: 1 },
+                  { text: 'zvyk', b: 0 },
+                  { text: 'víla', b: 1 },
+                  { text: 'výlet', b: 0 },
+                  { text: 'vidět', b: 1 },
+                  { text: 'žvýkačka', b: 0 },
+                  { text: 'víno', b: 1 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Vy-/vý- na začátku jako předpona → vždy y.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'input', q: 'Doplň y/i: v_soký', a: ['y'] },
+        { t: 'input', q: 'Doplň y/i: v_dra', a: ['y'] },
+        { t: 'input', q: 'Doplň y/i: v_dět', a: ['i'], why: 'Vidět není vyjmenované.' },
+        { t: 'input', q: 'Doplň y/i: v_skočit (předpona)', a: ['y'] },
+        { t: 'choice', q: 'Vlk v noci …', o: ['vyje', 'vije'], a: 0, why: 'Výt – vyje, vyjí.' },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['zvyk', 'zvik'], a: 0 },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['výla', 'víla'], a: 1 },
+        { t: 'tf', q: 'Výr je druh sovy a píše se s ý.', a: true },
+        { t: 'tf', q: 'Ve slově „vítr“ píšeme ý.', a: false, why: 'Vítr není vyjmenované – í.' },
+        { t: 'pair', q: 'Spoj vyjmenované slovo s příbuzným.', pairs: [['vysoký', 'výška'], ['zvykat', 'obvyklý'], ['žvýkat', 'žvýkačka'], ['vy', 'vykat']] },
+        { t: 'order', q: 'Seřaď jako v říkance.', items: ['vy', 'vysoký', 'výt', 'výskat', 'zvykat'] },
+        { t: 'open', q: 'Vyjmenuj vyjmenovaná slova po V.', a: 'Vy, vysoký, výt, výskat, zvykat, žvýkat, vydra, výr, vyžle, povyk, výheň. A předpona vy-/vý-.' },
+        { t: 'open', q: 'Co je výheň a co vyžle?', a: 'Výheň je ohniště, kde kovář rozžhavuje železo. Vyžle je lovecký pes.' },
+      ],
+    },
+    {
+      id: 'vyjmenovana-slova-z',
+      title: 'Vyjmenovaná slova po Z',
+      emoji: '👅',
+      ex: [
+        {
+          title: 'Říkanka',
+          blocks: [
+            { t: 'p', text: 'Po z jsou jen tři: **brzy, jazyk, nazývat se**.' },
+            { t: 'pic', items: ['⏰ brzy', '👅 jazyk', '🏷️ nazývat se'] },
+            { t: 'key', text: 'Brzy, jazyk, nazývat se → y. Jinak po z píšeme i.' },
+          ],
+        },
+        {
+          title: 'Doplň',
+          blocks: [
+            {
+              t: 'w',
+              w: 'gap',
+              p: {
+                items: [
+                  { before: 'Vstávám br', after: '.', options: ['zy', 'zi'], a: 0 },
+                  { before: 'V ', after: 'mě sněží.', options: ['zy', 'zi'], a: 1 },
+                  { before: 'Učím se cizí ja', after: 'k.', options: ['zy', 'zi'], a: 0 },
+                  { before: 'Prodej přinesl z', after: 'sk.', options: ['y', 'i'], a: 1 },
+                  { before: 'Ta hora se naz', after: 'vá Sněžka.', options: ['ý', 'í'], a: 0 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Zima, zítra, zisk → i.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'input', q: 'Doplň y/i: br_', a: ['y'], why: 'Brzy je vyjmenované.' },
+        { t: 'input', q: 'Doplň y/i: ja_k', a: ['y'], why: 'Píšeme jazyk.' },
+        { t: 'input', q: 'Doplň y/i: z_ma', a: ['i'] },
+        { t: 'input', q: 'Doplň ý/í: naz_vat se', a: ['ý', 'y'] },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['jazýček', 'jazíček'], a: 0, why: 'Příbuzné k jazyk.' },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['zýtra', 'zítra'], a: 1 },
+        { t: 'choice', q: 'Kolik je vyjmenovaných slov po z?', o: ['3', '7', '11'], a: 0 },
+        { t: 'tf', q: '„Jazykový“ píšeme s y.', a: true, why: 'Je příbuzné k jazyk.' },
+        { t: 'tf', q: '„Zisk“ píšeme s y.', a: false, why: 'Zisk není vyjmenované – i.' },
+        { t: 'pair', q: 'Spoj vyjmenované slovo s příbuzným.', pairs: [['jazyk', 'jazýček'], ['nazývat se', 'nazývání'], ['brzy', 'brzký']] },
+        { t: 'order', q: 'Seřaď vyjmenovaná slova po z jako v říkance.', items: ['brzy', 'jazyk', 'nazývat se'] },
+        { t: 'open', q: 'Vyjmenuj vyjmenovaná slova po Z.', a: 'Brzy, jazyk, nazývat se.' },
+        { t: 'open', q: 'Napiš (řekni) větu se slovem „jazyk“ a se slovem „zima“.', a: 'Například: V zimě jsem si spálil jazyk o horký čaj.' },
+      ],
+    },
+    {
+      id: 'slovni-druhy',
+      title: 'Slovní druhy',
+      emoji: '🗂️',
+      ex: [
+        {
+          title: 'Deset šuplíků',
+          blocks: [
+            { t: 'p', text: 'Každé slovo patří do jednoho z 10 šuplíků.' },
+            { t: 'table', head: ['č.', 'slovní druh', 'příklad'], rows: [['1', 'podstatná jména', 'pes, Praha'], ['2', 'přídavná jména', 'velký, modrý'], ['3', 'zájmena', 'já, ty, on'], ['4', 'číslovky', 'pět, první'], ['5', 'slovesa', 'běží, spát'], ['6', 'příslovce', 'rychle, venku'], ['7', 'předložky', 'na, v, pod'], ['8', 'spojky', 'a, ale'], ['9', 'částice', 'ať, kéž'], ['10', 'citoslovce', 'haf, au']] },
+            { t: 'key', text: 'Podstatné jméno = kdo, co. Přídavné = jaký. Sloveso = co dělá.' },
+          ],
+        },
+        {
+          title: 'Otázkou',
+          blocks: [
+            { t: 'p', text: 'Zeptej se a najdeš druh.' },
+            {
+              t: 'w',
+              w: 'sort',
+              p: {
+                buckets: ['kdo? co? (podst. jm.)', 'jaký? (přídavné jm.)', 'co dělá? (sloveso)'],
+                items: [
+                  { text: 'kočka', b: 0 },
+                  { text: 'zelený', b: 1 },
+                  { text: 'skáče', b: 2 },
+                  { text: 'škola', b: 0 },
+                  { text: 'malý', b: 1 },
+                  { text: 'zpívá', b: 2 },
+                  { text: 'strom', b: 0 },
+                  { text: 'veselá', b: 1 },
+                  { text: 'čte', b: 2 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Slovo urči podle otázky, na kterou odpovídá.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Jaký slovní druh je „pes“?', o: ['podstatné jméno', 'přídavné jméno', 'sloveso'], a: 0 },
+        { t: 'choice', q: 'Jaký slovní druh je „rychlý“?', o: ['sloveso', 'přídavné jméno', 'příslovce'], a: 1 },
+        { t: 'choice', q: 'Jaký slovní druh je „píše“?', o: ['sloveso', 'podstatné jméno', 'spojka'], a: 0 },
+        { t: 'choice', q: 'Jaký slovní druh je „na“ (na stole)?', o: ['předložka', 'spojka', 'citoslovce'], a: 0 },
+        { t: 'choice', q: 'Jaký slovní druh je „bum“?', o: ['citoslovce', 'částice', 'zájmeno'], a: 0 },
+        { t: 'input', q: 'Kolik je slovních druhů?', a: ['10', 'deset'] },
+        { t: 'input', q: 'Kolikátý slovní druh je sloveso?', a: ['5', 'pátý'] },
+        { t: 'tf', q: '„Tři“ je číslovka.', a: true },
+        { t: 'tf', q: '„A“ (pes a kočka) je předložka.', a: false, why: 'A spojuje slova – je to spojka.' },
+        { t: 'pair', q: 'Spoj slovo se slovním druhem.', pairs: [['on', 'zájmeno'], ['venku', 'příslovce'], ['ale', 'spojka'], ['první', 'číslovka']] },
+        { t: 'order', q: 'Seřaď první slovní druhy podle čísel.', items: ['podstatná jména', 'přídavná jména', 'zájmena', 'číslovky', 'slovesa'] },
+        { t: 'open', q: 'Vyjmenuj všech 10 slovních druhů.', a: 'Podstatná jména, přídavná jména, zájmena, číslovky, slovesa, příslovce, předložky, spojky, částice, citoslovce.' },
+        { t: 'open', q: 'Urči slovní druhy ve větě „Malý pes běží.“', a: 'Malý – přídavné jméno, pes – podstatné jméno, běží – sloveso.' },
+      ],
+    },
+    {
+      id: 'podstatna-jmena-rod-cislo-pad',
+      title: 'Podstatná jména: rod, číslo, pád',
+      emoji: '👨‍👩‍👧',
+      ex: [
+        {
+          title: 'Ten, ta, to',
+          blocks: [
+            { t: 'p', text: '**Rod** poznáš, když před slovo řekneš ukazovátko.' },
+            { t: 'table', head: ['rod', 'řekni', 'příklad'], rows: [['mužský', 'ten', 'ten pes, ten hrad'], ['ženský', 'ta', 'ta kočka, ta růže'], ['střední', 'to', 'to auto, to kuře']] },
+            { t: 'p', text: '**Číslo**: jednotné (jeden pes), množné (dva, tři psi…).' },
+            {
+              t: 'w',
+              w: 'sort',
+              p: {
+                buckets: ['ten', 'ta', 'to'],
+                items: [
+                  { text: 'stůl', b: 0 },
+                  { text: 'lavice', b: 1 },
+                  { text: 'okno', b: 2 },
+                  { text: 'kluk', b: 0 },
+                  { text: 'žirafa', b: 1 },
+                  { text: 'kotě', b: 2 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Ten = mužský, ta = ženský, to = střední.' },
+          ],
+        },
+        {
+          title: 'Pádové otázky',
+          blocks: [
+            { t: 'p', text: '**Pád** je tvar slova. Je jich 7. Každý má svou otázku.' },
+            {
+              t: 'w',
+              w: 'flip',
+              p: {
+                cards: [
+                  { front: '1. pád', back: 'kdo, co' },
+                  { front: '2. pád', back: '(bez) koho, čeho' },
+                  { front: '3. pád', back: '(ke) komu, čemu' },
+                  { front: '4. pád', back: '(vidím) koho, co' },
+                  { front: '5. pád', back: 'oslovujeme, voláme' },
+                  { front: '6. pád', back: '(o) kom, o čem' },
+                  { front: '7. pád', back: '(s) kým, čím' },
+                ],
+              },
+            },
+            { t: 'example', q: 'Jdu ke kamarádovi. Který pád?', a: 'Ke komu? → 3. pád' },
+            { t: 'key', text: 'Pád zjistíš otázkou.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Jaký rod má „židle“?', o: ['mužský', 'ženský', 'střední'], a: 1, why: 'Ta židle.' },
+        { t: 'choice', q: 'Jaký rod má „kuře“?', o: ['mužský', 'ženský', 'střední'], a: 2, why: 'To kuře.' },
+        { t: 'choice', q: 'Jaký rod má „slon“?', o: ['mužský', 'ženský', 'střední'], a: 0, why: 'Ten slon.' },
+        { t: 'choice', q: 'V jakém čísle je slovo „domy“?', o: ['jednotném', 'množném'], a: 1 },
+        { t: 'choice', q: 'Ve kterém pádě je „s kamarádem“?', o: ['3. pád', '6. pád', '7. pád'], a: 2, why: 'S kým? → 7. pád' },
+        { t: 'choice', q: 'Ve kterém pádě je „bez mámy“?', o: ['2. pád', '4. pád', '1. pád'], a: 0, why: 'Bez koho? → 2. pád' },
+        { t: 'input', q: 'Kolik je v češtině pádů?', a: ['7', 'sedm'] },
+        { t: 'input', q: 'Který pád používáme, když voláme: „Petře!“?', a: ['5', 'pátý', '5. pád'] },
+        { t: 'tf', q: '„Okno“ je rodu středního.', a: true },
+        { t: 'tf', q: '„Myši“ je v jednotném čísle.', a: false, why: 'Myši = více myší, množné číslo.' },
+        { t: 'pair', q: 'Spoj pád s otázkou.', pairs: [['1. pád', 'kdo, co'], ['3. pád', 'komu, čemu'], ['6. pád', 'o kom, o čem'], ['7. pád', 's kým, čím']] },
+        { t: 'order', q: 'Seřaď pády podle čísla.', items: ['kdo, co', 'koho, čeho', 'komu, čemu', 'koho, co', 'oslovujeme', 'o kom, o čem'] },
+        { t: 'open', q: 'Jak zjistíš rod podstatného jména?', a: 'Řeknu před něj ten, ta, nebo to. Ten = mužský, ta = ženský, to = střední.' },
+        { t: 'open', q: 'Řekni pádové otázky všech sedmi pádů.', a: '1. kdo, co; 2. koho, čeho; 3. komu, čemu; 4. koho, co; 5. oslovujeme, voláme; 6. o kom, o čem; 7. s kým, čím.' },
+      ],
+    },
+    {
+      id: 'slovesa-z3',
+      title: 'Slovesa',
+      emoji: '🏃',
+      ex: [
+        {
+          title: 'Co dělá?',
+          blocks: [
+            { t: 'p', text: '**Sloveso** říká, co kdo **dělá** nebo co se **děje**.' },
+            { t: 'pic', items: ['🏃 běží', '😴 spí', '🌧️ prší', '📖 čte'] },
+            { t: 'p', text: 'Základní tvar je **neurčitek (infinitiv)**: *běžet, spát, číst*. Končí na **-t**.' },
+            { t: 'key', text: 'Sloveso = co dělá? Infinitiv končí na -t.' },
+          ],
+        },
+        {
+          title: 'Osoba a čas',
+          blocks: [
+            { t: 'table', head: ['osoba', 'jednotné', 'množné'], rows: [['1.', 'já zpívám', 'my zpíváme'], ['2.', 'ty zpíváš', 'vy zpíváte'], ['3.', 'on zpívá', 'oni zpívají']] },
+            {
+              t: 'w',
+              w: 'sort',
+              p: {
+                buckets: ['minulý čas', 'přítomný čas', 'budoucí čas'],
+                items: [
+                  { text: 'hrál jsem', b: 0 },
+                  { text: 'hraju', b: 1 },
+                  { text: 'budu hrát', b: 2 },
+                  { text: 'psala', b: 0 },
+                  { text: 'píše', b: 1 },
+                  { text: 'napíše', b: 2 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Včera – dnes – zítra = minulý – přítomný – budoucí čas.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Které slovo je sloveso?', o: ['skok', 'skákat', 'skokan'], a: 1 },
+        { t: 'choice', q: 'Ve kterém čase je „Včera jsem plaval.“?', o: ['minulém', 'přítomném', 'budoucím'], a: 0 },
+        { t: 'choice', q: 'Ve kterém čase je „Budu malovat.“?', o: ['minulém', 'přítomném', 'budoucím'], a: 2 },
+        { t: 'choice', q: 'Kterou osobu má „vy čtete“?', o: ['1. osoba', '2. osoba', '3. osoba'], a: 1 },
+        { t: 'choice', q: 'Které je neurčitek (infinitiv)?', o: ['nese', 'nést', 'nesl'], a: 1 },
+        { t: 'input', q: 'Napiš infinitiv ke slovu „píše“.', a: ['psát'] },
+        { t: 'input', q: 'Kolik má sloveso osob?', a: ['3', 'tři'] },
+        { t: 'tf', q: '„My jdeme“ je 1. osoba množného čísla.', a: true },
+        { t: 'tf', q: '„Zítra pojedu“ je čas minulý.', a: false, why: 'Zítra = budoucnost, čas budoucí.' },
+        { t: 'pair', q: 'Spoj zájmeno se slovesem.', pairs: [['já', 'kreslím'], ['ty', 'kreslíš'], ['my', 'kreslíme'], ['oni', 'kreslí']] },
+        { t: 'order', q: 'Seřaď podle času od minulosti.', items: ['spal', 'spí', 'bude spát'] },
+        { t: 'open', q: 'Co je sloveso? Řekni tři příklady.', a: 'Sloveso říká, co kdo dělá nebo co se děje. Například skáče, píše, prší.' },
+        { t: 'open', q: 'Časuj sloveso „být“ v přítomném čase.', a: 'Já jsem, ty jsi, on je, my jsme, vy jste, oni jsou.' },
+      ],
+    },
+  ],
+} satisfies Subject

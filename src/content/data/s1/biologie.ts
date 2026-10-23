@@ -1,0 +1,477 @@
+import type { Subject } from '../../types'
+
+export default {
+  grade: 's1',
+  subject: 'biologie',
+  topics: [
+    {
+      id: 'obecna-biologie',
+      title: 'Obecná biologie a třídění organismů',
+      emoji: '🌐',
+      ex: [
+        {
+          title: 'Adresa organismu',
+          blocks: [
+            { t: 'p', text: 'Zařazení do systému je jako poštovní adresa: od státu po číslo bytu.' },
+            { t: 'table', head: ['Kategorie', 'Člověk', 'Vlk'], rows: [
+              ['doména', 'eukaryota', 'eukaryota'],
+              ['říše', 'živočichové', 'živočichové'],
+              ['kmen', 'strunatci', 'strunatci'],
+              ['třída', 'savci', 'savci'],
+              ['řád', 'primáti', 'šelmy'],
+              ['čeleď', 'hominidé', 'psovití'],
+              ['rod a druh', '*Homo sapiens*', '*Canis lupus*'],
+            ] },
+            { t: 'key', text: 'Binomická nomenklatura (C. Linné): rodové jméno + druhový přívlastek.' },
+          ],
+        },
+        {
+          title: 'Znaky života',
+          blocks: [
+            { t: 'w', w: 'flip', p: { cards: [
+              { front: 'metabolismus', back: 'látková a energetická přeměna' },
+              { front: 'homeostáze', back: 'udržování stálého vnitřního prostředí' },
+              { front: 'dráždivost', back: 'reakce na podněty' },
+              { front: 'reprodukce', back: 'vznik nových jedinců' },
+              { front: 'dědičnost a proměnlivost', back: 'předávání a změna genetické informace' },
+              { front: 'vývoj', back: 'ontogeneze (jedinec) a fylogeneze (druh)' },
+            ] } },
+            { t: 'p', text: 'Tři domény života: **Bacteria**, **Archaea**, **Eukarya**.' },
+            { t: 'key', text: 'Živá soustava je otevřená – vyměňuje s okolím látky, energii i informace.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'order', q: 'Seřaď taxonomické kategorie od nejvyšší.', items: ['říše', 'kmen', 'třída', 'řád', 'čeleď', 'rod'] },
+        { t: 'choice', q: 'Autor binomické nomenklatury je…', o: ['Carl Linné', 'Charles Darwin', 'Robert Hooke'], a: 0 },
+        { t: 'choice', q: 'Která doména NEexistuje?', o: ['Protista', 'Archaea', 'Bacteria'], a: 0 },
+        { t: 'input', q: 'Udržování stálého vnitřního prostředí organismu se nazývá…', a: ['homeostáze', 'homeostaze', 'homeostáza'] },
+        { t: 'tf', q: 'Ve vědeckém jménu se rodové jméno píše s velkým a druhové s malým písmenem.', a: true },
+        { t: 'pair', q: 'Spoj obor s předmětem zkoumání.', pairs: [['cytologie', 'buňka'], ['mykologie', 'houby'], ['botanika', 'rostliny'], ['etologie', 'chování']] },
+        { t: 'choice', q: 'Ontogeneze je…', o: ['vývoj jedince', 'vývoj druhu', 'vznik života'], a: 0 },
+        { t: 'tf', q: 'Viry splňují všechny znaky živých soustav.', a: false, why: 'Nemají vlastní metabolismus a nemnoží se mimo hostitelskou buňku.' },
+        { t: 'choice', q: 'Základní taxonomická jednotka je…', o: ['druh', 'rod', 'říše'], a: 0 },
+        { t: 'tf', q: 'Živé soustavy jsou z termodynamického hlediska otevřené.', a: true },
+        { t: 'open', q: 'Vyjmenuj a vysvětli aspoň čtyři vlastnosti živých soustav.', a: 'Metabolismus (přeměna látek a energie), homeostáze (stálé vnitřní prostředí), dráždivost, reprodukce, dědičnost a proměnlivost, růst a vývoj, buněčná stavba.' },
+        { t: 'open', q: 'Co je binomická nomenklatura? Uveď příklad.', a: 'Dvouslovné vědecké pojmenování druhu – rodové jméno a druhový přívlastek, latinsky. Např. Homo sapiens, Canis lupus.' },
+      ],
+    },
+    {
+      id: 'bunka-stavba',
+      title: 'Stavba buňky',
+      emoji: '🔬',
+      ex: [
+        {
+          title: 'Prokaryota vs. eukaryota',
+          blocks: [
+            { t: 'table', head: ['Znak', 'Prokaryotní', 'Eukaryotní'], rows: [
+              ['jádro', 'ne – nukleoid', 'ano, s jaderným obalem'],
+              ['membránové organely', 'ne', 'ano'],
+              ['ribozomy', '70S', '80S (v cytoplazmě)'],
+              ['velikost', 'asi 1–10 µm', 'asi 10–100 µm'],
+              ['příklad', 'bakterie, archea', 'rostliny, živočichové, houby, protista'],
+            ] },
+            { t: 'key', text: 'Prokaryota nemají jádro ani membránové organely.' },
+          ],
+        },
+        {
+          title: 'Buňka jako město',
+          blocks: [
+            { t: 'w', w: 'flip', p: { cards: [
+              { front: 'jádro', back: 'radnice – DNA, řízení' },
+              { front: 'ribozomy', back: 'dílny – syntéza bílkovin' },
+              { front: 'drsné ER', back: 'výrobní linka s ribozomy' },
+              { front: 'Golgiho aparát', back: 'pošta – úprava a expedice látek' },
+              { front: 'lyzozomy', back: 'recyklační dvůr – trávicí enzymy' },
+              { front: 'mitochondrie', back: 'elektrárna – buněčné dýchání, ATP' },
+              { front: 'chloroplast', back: 'solární elektrárna – fotosyntéza' },
+            ] } },
+            { t: 'p', text: '**Endosymbiotická teorie**: mitochondrie a chloroplasty vznikly z pohlcených prokaryot (mají vlastní DNA a 70S ribozomy).' },
+            { t: 'key', text: 'Dvojitou membránu má jádro, mitochondrie a chloroplast.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Kde probíhá buněčné dýchání?', o: ['v mitochondrii', 'v Golgiho aparátu', 'v lyzozomu'], a: 0 },
+        { t: 'choice', q: 'Které ribozomy mají prokaryota?', o: ['70S', '80S', 'nemají ribozomy'], a: 0 },
+        { t: 'tf', q: 'Prokaryota mají membránou ohraničené jádro.', a: false, why: 'DNA leží volně v cytoplazmě jako nukleoid.' },
+        { t: 'input', q: 'Organela s trávicími enzymy je…', a: ['lyzozom', 'lysozom', 'lyzozóm'] },
+        { t: 'pair', q: 'Spoj organelu s funkcí.', pairs: [['ribozom', 'proteosyntéza'], ['Golgiho aparát', 'úprava a sekrece'], ['hladké ER', 'syntéza lipidů'], ['chloroplast', 'fotosyntéza']] },
+        { t: 'tf', q: 'Mitochondrie mají vlastní DNA.', a: true, why: 'Podporuje to endosymbiotickou teorii.' },
+        { t: 'choice', q: 'Buněčná stěna hub je hlavně z…', o: ['chitinu', 'celulózy', 'peptidoglykanu'], a: 0 },
+        { t: 'choice', q: 'Membrána je tvořena hlavně…', o: ['dvojvrstvou fosfolipidů s bílkovinami', 'celulózou', 'DNA'], a: 0 },
+        { t: 'tf', q: 'Buněčná stěna rostlin je hlavně z celulózy.', a: true },
+        { t: 'choice', q: 'V jadérku vznikají…', o: ['ribozomy (rRNA)', 'lyzozomy', 'mitochondrie'], a: 0 },
+        { t: 'open', q: 'Porovnej prokaryotní a eukaryotní buňku.', a: 'Prokaryotní je menší, nemá jádro (jen nukleoid) ani membránové organely, má 70S ribozomy. Eukaryotní má jádro s obalem, membránové organely a 80S ribozomy.' },
+        { t: 'open', q: 'Co tvrdí endosymbiotická teorie a jaké má důkazy?', a: 'Mitochondrie a chloroplasty vznikly z prokaryot pohlcených předkem eukaryot. Důkazy: dvojitá membrána, vlastní kruhová DNA, 70S ribozomy, dělení podobné bakteriím.' },
+      ],
+    },
+    {
+      id: 'bunecny-cyklus',
+      title: 'Buněčný cyklus, mitóza a meióza',
+      emoji: '➗',
+      ex: [
+        {
+          title: 'Cyklus',
+          blocks: [
+            { t: 'w', w: 'cycle', p: { steps: ['G1 – růst buňky', 'S – replikace DNA', 'G2 – příprava na dělení', 'M – mitóza', 'cytokineze – rozdělení cytoplazmy'] } },
+            { t: 'steps', items: ['**profáze** – kondenzace chromozomů, rozpad jaderného obalu', '**metafáze** – chromozomy v rovníkové rovině', '**anafáze** – chromatidy putují k pólům', '**telofáze** – vznik dvou jader'] },
+            { t: 'key', text: 'Pořadí fází mitózy: PMAT (profáze, metafáze, anafáze, telofáze).' },
+          ],
+        },
+        {
+          title: 'Srovnání',
+          blocks: [
+            { t: 'table', head: ['', 'Mitóza', 'Meióza'], rows: [
+              ['počet dělení', '1', '2'],
+              ['vzniklé buňky', '2', '4'],
+              ['počet chromozomů', '2n → 2n', '2n → n'],
+              ['genetická shoda', 'stejné', 'různé (crossing-over)'],
+              ['kde', 'tělní buňky', 'tvorba pohlavních buněk'],
+            ] },
+            { t: 'example', q: 'Kolik chromozomů má lidská spermie?', a: '23 (haploidní, n). Tělní buňka má 46 (2n).' },
+            { t: 'key', text: 'Mitóza kopíruje, meióza redukuje a míchá.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'order', q: 'Seřaď fáze mitózy.', items: ['profáze', 'metafáze', 'anafáze', 'telofáze'] },
+        { t: 'choice', q: 'Ve které fázi buněčného cyklu se replikuje DNA?', o: ['S', 'G1', 'M'], a: 0 },
+        { t: 'choice', q: 'Kolik buněk vznikne meiózou z jedné buňky?', o: ['4', '2', '8'], a: 0 },
+        { t: 'tf', q: 'Mitózou vznikají geneticky shodné buňky.', a: true },
+        { t: 'input', q: 'Výměna úseků mezi homologními chromozomy v meióze je crossing-…', a: ['over', 'crossing-over', 'crossingover'] },
+        { t: 'choice', q: 'V metafázi jsou chromozomy…', o: ['v rovníkové rovině', 'u pólů', 'rozvolněné v jádře'], a: 0 },
+        { t: 'pair', q: 'Spoj pojem s významem.', pairs: [['haploidní', 'n'], ['diploidní', '2n'], ['cytokineze', 'dělení cytoplazmy'], ['chromatida', 'polovina zdvojeného chromozomu']] },
+        { t: 'tf', q: 'Meióza probíhá při tvorbě gamet.', a: true },
+        { t: 'choice', q: 'Nekontrolované dělení buněk vede ke vzniku…', o: ['nádorů', 'gamet', 'tkání'], a: 0 },
+        { t: 'tf', q: 'Dělicí vřeténko tvoří mikrotubuly.', a: true },
+        { t: 'open', q: 'Porovnej mitózu a meiózu.', a: 'Mitóza: jedno dělení, 2 geneticky shodné diploidní buňky, tělní buňky. Meióza: dvě dělení, 4 haploidní geneticky různé buňky, tvorba gamet, crossing-over.' },
+        { t: 'open', q: 'Proč je meióza důležitá pro pohlavní rozmnožování?', a: 'Snižuje počet chromozomů na polovinu, takže po oplození zůstává počet stálý. Crossing-over a náhodné rozchody chromozomů zvyšují genetickou rozmanitost.' },
+      ],
+    },
+    {
+      id: 'viry',
+      title: 'Viry',
+      emoji: '🧫',
+      ex: [
+        {
+          title: 'Únos továrny',
+          blocks: [
+            { t: 'p', text: 'Virus je **flash disk s programem**. Sám nic nedělá. V buňce přepíše výrobu na kopie sebe.' },
+            { t: 'w', w: 'cycle', p: { steps: ['adsorpce na buňku', 'průnik nukleové kyseliny', 'syntéza virových součástí', 'skládání virionů', 'uvolnění (lyze buňky)'] } },
+            { t: 'key', text: 'Virus = nukleová kyselina (DNA nebo RNA) + bílkovinná kapsida.' },
+          ],
+        },
+        {
+          title: 'Přehled',
+          blocks: [
+            { t: 'table', head: ['Virus', 'Nukleová kyselina', 'Nemoc'], rows: [
+              ['HIV (retrovirus)', 'RNA', 'AIDS'],
+              ['virus chřipky', 'RNA', 'chřipka'],
+              ['SARS-CoV-2', 'RNA', 'covid-19'],
+              ['herpesviry', 'DNA', 'opar, plané neštovice'],
+              ['papilomaviry (HPV)', 'DNA', 'bradavice, rakovina děložního čípku'],
+            ] },
+            { t: 'p', text: '**Bakteriofág** napadá bakterie. **Retrovirus** přepisuje RNA do DNA enzymem **reverzní transkriptáza**. **Priony** jsou infekční bílkoviny (BSE).' },
+            { t: 'key', text: 'Proti virům: očkování a antivirotika, ne antibiotika.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'tf', q: 'Virus obsahuje současně DNA i RNA.', a: false, why: 'Virus má buď DNA, nebo RNA.' },
+        { t: 'choice', q: 'Virus napadající bakterie je…', o: ['bakteriofág', 'prion', 'viroid'], a: 0 },
+        { t: 'input', q: 'Bílkovinný obal viru je…', a: ['kapsida', 'kapsid'] },
+        { t: 'choice', q: 'Enzym retrovirů přepisující RNA do DNA je…', o: ['reverzní transkriptáza', 'DNA polymeráza', 'amyláza'], a: 0 },
+        { t: 'order', q: 'Seřaď lytický cyklus bakteriofága.', items: ['adsorpce', 'průnik', 'syntéza', 'skládání', 'uvolnění'] },
+        { t: 'pair', q: 'Spoj virus s nemocí.', pairs: [['HIV', 'AIDS'], ['HPV', 'rakovina děložního čípku'], ['virus varicella-zoster', 'plané neštovice'], ['virus vztekliny', 'vzteklina']] },
+        { t: 'tf', q: 'Priony jsou infekční bílkoviny bez nukleové kyseliny.', a: true },
+        { t: 'choice', q: 'Lyzogenní cyklus znamená, že…', o: ['DNA viru se vřadí do DNA hostitele a čeká', 'buňka hned praskne', 'virus se sám dělí'], a: 0 },
+        { t: 'tf', q: 'Antibiotika jsou účinná proti virovým infekcím.', a: false },
+        { t: 'choice', q: 'Kompletní virová částice mimo buňku se nazývá…', o: ['virion', 'kapsomera', 'plazmid'], a: 0 },
+        { t: 'open', q: 'Proč viry nepovažujeme za plnohodnotné organismy?', a: 'Nemají buněčnou stavbu ani vlastní metabolismus a rozmnožují se jen uvnitř hostitelské buňky.' },
+        { t: 'open', q: 'Jak funguje očkování?', a: 'Vakcína obsahuje oslabený či usmrcený patogen nebo jeho část. Imunitní systém si vytvoří protilátky a paměťové buňky, takže při skutečné nákaze reaguje rychle.' },
+      ],
+    },
+    {
+      id: 'bakterie',
+      title: 'Bakterie a sinice',
+      emoji: '🦠',
+      ex: [
+        {
+          title: 'Stavba',
+          blocks: [
+            { t: 'w', w: 'flip', p: { cards: [
+              { front: 'buněčná stěna', back: 'peptidoglykan (murein)' },
+              { front: 'nukleoid', back: 'kruhová DNA bez jaderného obalu' },
+              { front: 'plazmid', back: 'malá kruhová DNA, např. geny rezistence' },
+              { front: 'bičík', back: 'pohyb' },
+              { front: 'pouzdro', back: 'ochrana' },
+              { front: 'endospora', back: 'odolné klidové stadium' },
+            ] } },
+            { t: 'key', text: 'Bakterie se množí příčným dělením, geny si předávají konjugací.' },
+          ],
+        },
+        {
+          title: 'Tvary a nemoci',
+          blocks: [
+            { t: 'w', w: 'sort', p: { buckets: ['Koky (kulovité)', 'Tyčinky', 'Spirálovité'], items: [
+              { text: 'streptokok', b: 0 }, { text: 'Escherichia coli', b: 1 }, { text: 'borelie', b: 2 }, { text: 'stafylokok', b: 0 },
+              { text: 'Bacillus anthracis', b: 1 }, { text: 'treponema (syfilis)', b: 2 }, { text: 'Mycobacterium tuberculosis', b: 1 },
+            ] } },
+            { t: 'p', text: '**Sinice** provádějí fotosyntézu s uvolněním kyslíku, některé váží vzdušný dusík (heterocyty). Při přemnožení tvoří vodní květ.' },
+            { t: 'key', text: 'Gramovo barvení: G+ fialové (silný peptidoglykan), G− růžové (vnější membrána).' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Buněčná stěna bakterií je z…', o: ['peptidoglykanu', 'celulózy', 'chitinu'], a: 0 },
+        { t: 'choice', q: 'Kulovité bakterie jsou…', o: ['koky', 'bacily', 'spirily'], a: 0 },
+        { t: 'input', q: 'Malá kruhová molekula DNA mimo nukleoid je…', a: ['plazmid', 'plasmid'] },
+        { t: 'tf', q: 'Sinice uvolňují při fotosyntéze kyslík.', a: true },
+        { t: 'pair', q: 'Spoj nemoc s původcem.', pairs: [['tuberkulóza', 'Mycobacterium'], ['tetanus', 'Clostridium'], ['borelióza', 'Borrelia'], ['cholera', 'Vibrio']] },
+        { t: 'choice', q: 'Kdo objevil penicilin?', o: ['Alexander Fleming', 'Robert Koch', 'Louis Pasteur'], a: 0 },
+        { t: 'tf', q: 'Gramnegativní bakterie mají vnější membránu.', a: true },
+        { t: 'choice', q: 'Přenos genetické informace mezi bakteriemi pomocí pilusu je…', o: ['konjugace', 'mitóza', 'meióza'], a: 0 },
+        { t: 'tf', q: 'Endospora je způsob rozmnožování bakterií.', a: false, why: 'Je to odolné klidové stadium, ne rozmnožování.' },
+        { t: 'choice', q: 'Hlízkové bakterie na kořenech bobovitých…', o: ['váží vzdušný dusík', 'způsobují hnilobu', 'tvoří škrob'], a: 0 },
+        { t: 'open', q: 'Uveď význam bakterií pro přírodu a člověka.', a: 'Rozkládají organickou hmotu, váží dusík, tvoří střevní mikroflóru, využívají se v potravinářství (jogurty) a biotechnologiích. Některé jsou patogenní.' },
+        { t: 'open', q: 'Proč je nadužívání antibiotik nebezpečné?', a: 'Přežívají odolné bakterie a šíří geny rezistence (i plazmidy), takže antibiotika přestávají účinkovat.' },
+      ],
+    },
+    {
+      id: 'protista',
+      title: 'Protista',
+      emoji: '🧪',
+      ex: [
+        {
+          title: 'Pestrá skupina',
+          blocks: [
+            { t: 'p', text: 'Protista = jednobuněčná a jednoduchá mnohobuněčná eukaryota, která nejsou živočichy, rostlinami ani houbami. Nejsou přirozenou (příbuzenskou) skupinou.' },
+            { t: 'w', w: 'sort', p: { buckets: ['Heterotrofní (prvoci)', 'Autotrofní (řasy)'], items: [
+              { text: 'trepka', b: 0 }, { text: 'rozsivky', b: 1 }, { text: 'měňavka', b: 0 }, { text: 'chaluhy', b: 1 },
+              { text: 'trypanozoma', b: 0 }, { text: 'ruduchy', b: 1 }, { text: 'zimnička (Plasmodium)', b: 0 },
+            ] } },
+            { t: 'key', text: 'Krásnoočko umí obojí – fotosyntetizuje i přijímá hotovou potravu (mixotrofie).' },
+          ],
+        },
+        {
+          title: 'Paraziti člověka',
+          blocks: [
+            { t: 'table', head: ['Původce', 'Nemoc', 'Přenos'], rows: [
+              ['Plasmodium (zimnička)', 'malárie', 'komár Anopheles'],
+              ['Trypanosoma brucei', 'spavá nemoc', 'moucha tse-tse'],
+              ['Toxoplasma gondii', 'toxoplazmóza', 'kočičí trus, syrové maso'],
+              ['Giardia', 'giardióza (průjem)', 'kontaminovaná voda'],
+              ['Trichomonas vaginalis', 'trichomoniáza', 'pohlavní styk'],
+            ] },
+            { t: 'p', text: 'Trepka má dvě jádra: **makronukleus** (řídí metabolismus) a **mikronukleus** (rozmnožování).' },
+            { t: 'key', text: 'Řasy jsou hlavní producenti kyslíku a základ vodních potravních řetězců.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Malárii přenáší…', o: ['komár Anopheles', 'moucha tse-tse', 'klíště'], a: 0 },
+        { t: 'choice', q: 'Agar se získává z…', o: ['ruduch', 'rozsivek', 'trepek'], a: 0 },
+        { t: 'tf', q: 'Protista tvoří jednu přirozenou příbuzenskou skupinu.', a: false, why: 'Jde o umělou (parafyletickou až polyfyletickou) skupinu.' },
+        { t: 'input', q: 'Jádro trepky řídící metabolismus je…', a: ['makronukleus', 'makronucleus', 'velké jádro'] },
+        { t: 'pair', q: 'Spoj organismus s pohybovým útvarem.', pairs: [['trepka', 'brvy'], ['měňavka', 'panožky'], ['trypanozoma', 'bičík'], ['zimnička', 'bez pohybových útvarů']] },
+        { t: 'choice', q: 'Křemitou schránku mají…', o: ['rozsivky', 'ruduchy', 'měňavky'], a: 0 },
+        { t: 'tf', q: 'Toxoplazmou se lze nakazit z kočičího trusu.', a: true },
+        { t: 'choice', q: 'Spavou nemoc způsobuje…', o: ['trypanozoma', 'giardie', 'trepka'], a: 0 },
+        { t: 'tf', q: 'Chaluhy (hnědé řasy) mohou dorůst desítek metrů.', a: true },
+        { t: 'choice', q: 'Organel trepky k vylučování přebytečné vody je…', o: ['pulzující (stažitelná) vakuola', 'chloroplast', 'bičík'], a: 0 },
+        { t: 'open', q: 'Proč jsou protista ekologicky důležitá?', a: 'Řasy vyrábějí velkou část kyslíku a tvoří fytoplankton – základ vodních potravních řetězců. Prvoci se podílejí na rozkladu a jsou potravou dalších organismů.' },
+        { t: 'open', q: 'Popiš životní cyklus původce malárie zjednodušeně.', a: 'Komár Anopheles vstříkne zimničku do krve člověka. Ta se množí v játrech a pak v červených krvinkách, které rozpadem vyvolávají horečky. Komár při sání nasaje gamety a cyklus pokračuje.' },
+      ],
+    },
+    {
+      id: 'houby',
+      title: 'Houby',
+      emoji: '🍄',
+      ex: [
+        {
+          title: 'Ani rostlina, ani živočich',
+          blocks: [
+            { t: 'table', head: ['Znak', 'Houby', 'Rostliny'], rows: [
+              ['výživa', 'heterotrofní', 'autotrofní'],
+              ['buněčná stěna', 'chitin', 'celulóza'],
+              ['zásobní látka', 'glykogen', 'škrob'],
+              ['stélka', 'vlákna (hyfy) → mycelium', 'pletiva a orgány'],
+            ] },
+            { t: 'key', text: 'Houby jsou příbuznější živočichům než rostlinám.' },
+          ],
+        },
+        {
+          title: 'Skupiny',
+          blocks: [
+            { t: 'w', w: 'sort', p: { buckets: ['Vřeckovýtrusé', 'Stopkovýtrusé'], items: [
+              { text: 'kvasinka pivní', b: 0 }, { text: 'hřib smrkový', b: 1 }, { text: 'štětičkovec (Penicillium)', b: 0 },
+              { text: 'muchomůrka zelená', b: 1 }, { text: 'paličkovice nachová (námel)', b: 0 }, { text: 'rez travní', b: 1 }, { text: 'smrž', b: 0 },
+            ] } },
+            { t: 'w', w: 'flip', p: { cards: [
+              { front: 'saprotrofie', back: 'rozklad odumřelé hmoty' },
+              { front: 'parazitismus', back: 'na úkor hostitele (rzi, sněti)' },
+              { front: 'mykorhiza', back: 'symbióza s kořeny rostlin' },
+              { front: 'lišejník', back: 'symbióza houby a řasy/sinice' },
+            ] } },
+            { t: 'key', text: 'Vřeckovýtrusé: výtrusy ve vřecku. Stopkovýtrusé: na stopkách bazidie.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Zásobní látkou hub je…', o: ['glykogen', 'škrob', 'celulóza'], a: 0 },
+        { t: 'choice', q: 'Buněčná stěna hub je z…', o: ['chitinu', 'celulózy', 'peptidoglykanu'], a: 0 },
+        { t: 'input', q: 'Spleť houbových vláken (hyf) je…', a: ['mycelium', 'podhoubí'] },
+        { t: 'tf', q: 'Kvasinky jsou vřeckovýtrusé houby.', a: true },
+        { t: 'pair', q: 'Spoj houbu s významem.', pairs: [['Penicillium', 'antibiotika'], ['Saccharomyces', 'kvašení'], ['paličkovice', 'námel – alkaloidy'], ['muchomůrka zelená', 'smrtelná otrava']] },
+        { t: 'choice', q: 'Mykorhiza je…', o: ['symbióza houby a kořenů', 'parazitace hmyzu', 'rozklad dřeva'], a: 0 },
+        { t: 'tf', q: 'Houby jsou fylogeneticky bližší rostlinám než živočichům.', a: false, why: 'Houby a živočichové mají společného předka (Opisthokonta).' },
+        { t: 'choice', q: 'Lišejník je soužití houby a…', o: ['řasy nebo sinice', 'mechu', 'prvoka'], a: 0 },
+        { t: 'choice', q: 'Kvasinky při kvašení přeměňují cukr na…', o: ['ethanol a CO₂', 'kyslík', 'škrob'], a: 0 },
+        { t: 'tf', q: 'Rzi a sněti jsou parazité rostlin.', a: true },
+        { t: 'open', q: 'Jaké jsou rozdíly mezi houbami a rostlinami?', a: 'Houby jsou heterotrofní, nemají chlorofyl, stěnu mají z chitinu a zásobují glykogen. Rostliny jsou autotrofní, mají celulózovou stěnu a škrob.' },
+        { t: 'open', q: 'Jaký význam mají houby v ekosystému?', a: 'Rozkládají odumřelou hmotu a vracejí živiny, tvoří mykorhizu s dřevinami, jsou součástí lišejníků; některé parazitují.' },
+      ],
+    },
+    {
+      id: 'rostlinna-pletiva-organy',
+      title: 'Pletiva a orgány rostlin',
+      emoji: '🌿',
+      ex: [
+        {
+          title: 'Pletiva',
+          blocks: [
+            { t: 'table', head: ['Pletivo', 'Funkce', 'Příklad'], rows: [
+              ['dělivé (meristémy)', 'tvorba nových buněk', 'vrchol stonku a kořene, kambium'],
+              ['krycí', 'ochrana', 'pokožka, průduchy, korek'],
+              ['vodivé – xylém', 'voda a minerály nahoru', 'cévy, cévice (dřevo)'],
+              ['vodivé – floém', 'organické látky', 'sítkovice (lýko)'],
+              ['základní', 'fotosyntéza, zásoba, opora', 'parenchym, sklerenchym'],
+            ] },
+            { t: 'key', text: 'Xylém vede vodu, floém vede cukry.' },
+          ],
+        },
+        {
+          title: 'Řez listem',
+          blocks: [
+            { t: 'steps', items: ['svrchní pokožka s kutikulou', 'palisádový parenchym – nejvíc chloroplastů', 'houbovitý parenchym – mezibuněčné prostory', 'cévní svazky (žilky)', 'spodní pokožka s průduchy a svěracími buňkami'] },
+            { t: 'w', w: 'sort', p: { buckets: ['Kořen', 'Stonek', 'List'], items: [
+              { text: 'kořenová čepička', b: 0 }, { text: 'kambium', b: 1 }, { text: 'průduchy', b: 2 }, { text: 'kořenové vlásky', b: 0 },
+              { text: 'uzliny a články', b: 1 }, { text: 'palisádový parenchym', b: 2 }, { text: 'letokruhy', b: 1 },
+            ] } },
+            { t: 'key', text: 'Kambium umožňuje druhotné tloustnutí – vznikají letokruhy.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Které pletivo vede vodu s minerály?', o: ['xylém', 'floém', 'kolenchym'], a: 0 },
+        { t: 'choice', q: 'Kde je v listu nejvíce chloroplastů?', o: ['v palisádovém parenchymu', 'v pokožce', 'v houbovitém parenchymu'], a: 0 },
+        { t: 'input', q: 'Dělivé pletivo, které způsobuje druhotné tloustnutí stonku, je…', a: ['kambium'] },
+        { t: 'tf', q: 'Floém je součástí lýka.', a: true },
+        { t: 'pair', q: 'Spoj strukturu s funkcí.', pairs: [['kořenové vlásky', 'příjem vody'], ['kořenová čepička', 'ochrana vrcholu'], ['svěrací buňky', 'otevírání průduchů'], ['kutikula', 'omezení výparu']] },
+        { t: 'choice', q: 'Letokruh vzniká za…', o: ['jedno vegetační období', 'jeden měsíc', 'deset let'], a: 0 },
+        { t: 'tf', q: 'Průduchy bývají častěji na spodní straně listu.', a: true },
+        { t: 'choice', q: 'Úponky hrachu jsou přeměněné…', o: ['listy', 'kořeny', 'květy'], a: 0 },
+        { t: 'choice', q: 'Pletivo z odumřelých buněk se ztlustlými stěnami, které zpevňuje, je…', o: ['sklerenchym', 'meristém', 'parenchym'], a: 0 },
+        { t: 'tf', q: 'Bramborová hlíza je přeměněný kořen.', a: false, why: 'Je to přeměněný podzemní stonek.' },
+        { t: 'open', q: 'Popiš vnitřní stavbu listu.', a: 'Svrchní pokožka s kutikulou, palisádový parenchym, houbovitý parenchym s mezibuněčnými prostory, cévní svazky, spodní pokožka s průduchy.' },
+        { t: 'open', q: 'Jaký je rozdíl mezi xylémem a floémem?', a: 'Xylém (dřevo) vede vodu a minerální látky od kořenů nahoru, tvoří ho cévy a cévice. Floém (lýko) vede organické látky z listů, tvoří ho sítkovice.' },
+      ],
+    },
+    {
+      id: 'fyziologie-rostlin',
+      title: 'Fotosyntéza a fyziologie rostlin',
+      emoji: '☀️',
+      ex: [
+        {
+          title: 'Dvě fáze',
+          blocks: [
+            { t: 'p', text: '`6 CO₂ + 6 H₂O → C₆H₁₂O₆ + 6 O₂` (za světla, v chloroplastu)' },
+            { t: 'table', head: ['', 'Primární (světelná) fáze', 'Sekundární fáze (Calvinův cyklus)'], rows: [
+              ['kde', 'membrány tylakoidů', 'stroma'],
+              ['co se děje', 'fotolýza vody, vzniká O₂, ATP a NADPH', 'fixace CO₂ (RuBisCO), vzniká cukr'],
+              ['světlo', 'nutné', 'přímo ne'],
+            ] },
+            { t: 'key', text: 'Kyslík z fotosyntézy pochází z vody, ne z CO₂.' },
+          ],
+        },
+        {
+          title: 'Koloběh a hormony',
+          blocks: [
+            { t: 'w', w: 'cycle', p: { steps: ['fixace CO₂ na RuBP', 'redukce pomocí ATP a NADPH', 'vznik cukru (část odchází)', 'regenerace RuBP'] } },
+            { t: 'w', w: 'flip', p: { cards: [
+              { front: 'auxiny', back: 'prodlužování buněk, fototropismus, apikální dominance' },
+              { front: 'gibereliny', back: 'prodlužování stonku, klíčení' },
+              { front: 'cytokininy', back: 'dělení buněk, zpomalují stárnutí' },
+              { front: 'kyselina abscisová', back: 'zavírání průduchů, dormance' },
+              { front: 'ethylen', back: 'zrání plodů, opad listů' },
+            ] } },
+            { t: 'key', text: 'Transpirace (výpar z listů) táhne vodu xylémem vzhůru.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Kde probíhá Calvinův cyklus?', o: ['ve stromatu chloroplastu', 'v tylakoidech', 'v mitochondrii'], a: 0 },
+        { t: 'choice', q: 'Odkud pochází kyslík uvolněný při fotosyntéze?', o: ['z vody', 'z CO₂', 'z glukózy'], a: 0 },
+        { t: 'input', q: 'Enzym fixující CO₂ v Calvinově cyklu je…', a: ['RuBisCO', 'rubisco', 'ribulóza-1,5-bisfosfátkarboxyláza'] },
+        { t: 'tf', q: 'Rostliny dýchají jen v noci.', a: false, why: 'Buněčné dýchání probíhá neustále, ve dne je jen překryto fotosyntézou.' },
+        { t: 'pair', q: 'Spoj hormon s účinkem.', pairs: [['auxin', 'fototropismus'], ['ethylen', 'zrání plodů'], ['kyselina abscisová', 'zavírání průduchů'], ['cytokinin', 'dělení buněk']] },
+        { t: 'choice', q: 'Ohyb rostliny za světlem je…', o: ['fototropismus', 'gravitropismus', 'nastie'], a: 0 },
+        { t: 'tf', q: 'Ve světelné fázi vzniká ATP a NADPH.', a: true },
+        { t: 'choice', q: 'Výpar vody listy je…', o: ['transpirace', 'gutace', 'fotolýza'], a: 0 },
+        { t: 'input', q: 'Kolik molekul CO₂ je potřeba na vznik jedné molekuly glukózy?', a: ['6'] },
+        { t: 'choice', q: 'Které barvivo přímo zachycuje světlo ve fotosystémech?', o: ['chlorofyl a', 'hemoglobin', 'melanin'], a: 0 },
+        { t: 'open', q: 'Popiš obě fáze fotosyntézy.', a: 'Primární fáze v tylakoidech: světlo štěpí vodu, uvolní se kyslík, vzniká ATP a NADPH. Sekundární fáze (Calvinův cyklus) ve stromatu: ATP a NADPH se využijí k fixaci CO₂ a vzniku cukru.' },
+        { t: 'open', q: 'Jak se voda dostane z kořene až do listů vysokého stromu?', a: 'Kořenovým vztlakem, hlavně však transpirací – výpar z listů vytváří sání a soudržnost molekul vody táhne sloupec vody xylémem vzhůru.' },
+      ],
+    },
+    {
+      id: 'system-rostlin',
+      title: 'Systém a rozmnožování rostlin',
+      emoji: '🌲',
+      ex: [
+        {
+          title: 'Rodozměna',
+          blocks: [
+            { t: 'w', w: 'cycle', p: { steps: ['gametofyt (n) tvoří gamety', 'oplození → zygota (2n)', 'sporofyt (2n)', 'meióza → výtrusy (n)', 'výtrus vyklíčí v gametofyt'] } },
+            { t: 'table', head: ['Skupina', 'Převládá', 'Příklad'], rows: [
+              ['mechorosty', 'gametofyt', 'ploník, rašeliník'],
+              ['kapraďorosty', 'sporofyt', 'kapraď, přeslička, plavuň'],
+              ['nahosemenné', 'sporofyt', 'smrk, borovice, jinan'],
+              ['krytosemenné', 'sporofyt', 'dub, pšenice, růže'],
+            ] },
+            { t: 'key', text: 'Jen u mechorostů převládá gametofyt.' },
+          ],
+        },
+        {
+          title: 'Evoluční vynálezy',
+          blocks: [
+            { t: 'p', text: 'Přibližně kdy se skupina objevila:' },
+            { t: 'w', w: 'bars', p: { unit: 'milionů let zpět', items: [
+              { label: 'mechorosty – přechod na souš', value: 470 },
+              { label: 'cévnaté rostliny – cévní svazky', value: 430 },
+              { label: 'semenné rostliny – semeno, pyl', value: 370 },
+              { label: 'krytosemenné – květ, plod', value: 140 },
+            ] } },
+            { t: 'p', text: '**Dvojité oplození**: jedna spermatická buňka oplodí vaječnou buňku (zárodek), druhá centrální buňku (živné pletivo – endosperm).' },
+            { t: 'key', text: 'Semeno osvobodilo rostliny od vody při oplození.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'U které skupiny převládá gametofyt?', o: ['mechorosty', 'kapraďorosty', 'krytosemenné'], a: 0 },
+        { t: 'choice', q: 'Dvojité oplození je typické pro…', o: ['krytosemenné', 'nahosemenné', 'mechorosty'], a: 0 },
+        { t: 'tf', q: 'Výtrusy vznikají meiózou.', a: true },
+        { t: 'input', q: 'Střídání pohlavní a nepohlavní generace se nazývá…', a: ['rodozměna'] },
+        { t: 'pair', q: 'Spoj rostlinu se skupinou.', pairs: [['rašeliník', 'mechorosty'], ['přeslička', 'kapraďorosty'], ['jinan', 'nahosemenné'], ['kukuřice', 'krytosemenné']] },
+        { t: 'order', q: 'Seřaď skupiny podle evolučního vzniku.', items: ['mechorosty', 'kapraďorosty', 'nahosemenné', 'krytosemenné'] },
+        { t: 'tf', q: 'Kapraďorosty mají cévní svazky.', a: true },
+        { t: 'choice', q: 'Endosperm krytosemenných je…', o: ['triploidní živné pletivo', 'haploidní gametofyt', 'diploidní zárodek'], a: 0 },
+        { t: 'choice', q: 'Prothalium kapradiny je…', o: ['gametofyt', 'sporofyt', 'semeno'], a: 0 },
+        { t: 'tf', q: 'Nahosemenné rostliny mají semeník.', a: false, why: 'Vajíčka leží volně na semenných šupinách.' },
+        { t: 'open', q: 'Vysvětli rodozměnu na příkladu kapradiny.', a: 'Velká kapradina je sporofyt (2n), meiózou tvoří výtrusy. Z výtrusu vyroste drobný gametofyt – prothalium (n), na kterém vznikají gamety. Po oplození vyroste nový sporofyt.' },
+        { t: 'open', q: 'Co je dvojité oplození a proč je výhodné?', a: 'Jedna spermatická buňka oplodí vaječnou buňku (vznikne zárodek), druhá centrální buňku (vznikne triploidní endosperm). Živné pletivo vzniká jen při oplození, takže se nemrhá zásobami.' },
+      ],
+    },
+  ],
+} satisfies Subject

@@ -1,5 +1,5 @@
 // Validates all content files: npm run check:content [-- path-filter]
-import { readdirSync, statSync } from 'node:fs'
+import { existsSync, readdirSync, statSync } from 'node:fs'
 import { join, relative } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import type { Subject, Block, Question } from '../src/content/types'
@@ -89,6 +89,10 @@ for (const file of walk(join(root, 'vocab', 'data')).filter((f) => f.includes(fi
     else if (new Set(w.slice(1).map((x) => x.toLowerCase())).size !== 3) errors.push(`${rel} ${g.name}: distractor equals answer ${JSON.stringify(w)}`)
   }
 }
+
+// Every subject listed in the curriculum must have a file (guards against content missing from a build).
+if (!filter) for (const [g, subs] of Object.entries(GRADE_SUBJECTS)) for (const s of subs) if (!existsSync(join(root, 'content', 'data', g, `${s}.ts`))) errors.push(`missing content file data/${g}/${s}.ts`)
+for (const l of ['a1', 'a2', 'b1', 'b2', 'c1']) if (!filter && !existsSync(join(root, 'vocab', 'data', `${l}.ts`))) errors.push(`missing vocab/data/${l}.ts`)
 
 console.log(`${topics} topics, ${questions} questions, ${errors.length} errors`)
 for (const e of errors.slice(0, 200)) console.log('✗', e)
