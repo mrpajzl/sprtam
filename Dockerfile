@@ -4,7 +4,7 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 ENV VITE_STATS_URL=/api/ping
-RUN npm run build
+RUN npm run check:content && npm run build
 
 FROM node:24-alpine
 WORKDIR /app

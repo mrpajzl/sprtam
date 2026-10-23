@@ -1,0 +1,415 @@
+import type { Subject } from '../../types'
+
+export default {
+  grade: 'z1',
+  subject: 'cestina',
+  topics: [
+    {
+      id: 'hlasky-a-pismena',
+      title: 'Hlásky a písmena',
+      emoji: '🔤',
+      ex: [
+        {
+          title: 'Ucho a oko',
+          blocks: [
+            { t: 'pic', items: ['👂', '➡️', '🔊'], caption: 'Hlásku slyšíme.' },
+            { t: 'pic', items: ['👀', '➡️', '🅰️'], caption: 'Písmeno vidíme.' },
+            { t: 'p', text: 'Řekni **M**. To je hláska.' },
+            { t: 'p', text: 'Napiš **M**. To je písmeno.' },
+            { t: 'key', text: 'Hlásku slyšíme. Písmeno píšeme a čteme.' },
+          ],
+        },
+        {
+          title: 'Kartičky',
+          blocks: [
+            { t: 'p', text: 'Otoč kartu. Co začíná tou hláskou?' },
+            {
+              t: 'w',
+              w: 'flip',
+              p: {
+                cards: [
+                  { front: 'M', back: '🐭 myš' },
+                  { front: 'L', back: '🦁 lev' },
+                  { front: 'S', back: '🐘 slon' },
+                  { front: 'P', back: '🐶 pes' },
+                  { front: 'R', back: '🐟 ryba' },
+                ],
+              },
+            },
+            { t: 'key', text: 'Každá hláska má své písmeno.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'tf', q: 'Hlásku slyšíme.', a: true, why: 'Hlásku říkáme a slyšíme ušima.' },
+        { t: 'tf', q: 'Písmeno slyšíme ušima.', a: false, why: 'Písmeno vidíme očima. Slyšíme hlásku.' },
+        { t: 'choice', q: 'Čím vidíme písmena?', o: ['👀 očima', '👂 ušima', '👃 nosem'], a: 0 },
+        { t: 'choice', q: 'Jakou hláskou začíná 🐭 myš?', o: ['M', 'N', 'Š'], a: 0, why: 'Mmm-yš. První je M.' },
+        { t: 'choice', q: 'Jakou hláskou začíná 🐶 pes?', o: ['B', 'P', 'S'], a: 1, why: 'Ppp-es. První je P.' },
+        { t: 'input', q: 'Jakým písmenem začíná slovo LES?', a: ['L'] },
+        { t: 'input', q: 'Jakým písmenem začíná slovo OSA?', a: ['O'] },
+        { t: 'pair', q: 'Spoj obrázek s první hláskou.', pairs: [['🐘 slon', 'S'], ['🦁 lev', 'L'], ['🐟 ryba', 'R'], ['🦆 kachna', 'K']] },
+        { t: 'choice', q: 'Kolik písmen má slovo PES?', o: ['2', '3', '4'], a: 1, why: 'P – E – S. Tři písmena.' },
+        { t: 'order', q: 'Slož slovo MÁMA.', items: ['M', 'Á', 'M', 'A'] },
+        { t: 'open', q: 'Jaký je rozdíl mezi hláskou a písmenem?', a: 'Hlásku slyšíme, když mluvíme. Písmeno vidíme, když čteme a píšeme.' },
+        { t: 'open', q: 'Řekni tři slova, která začínají hláskou M.', a: 'Například máma, myš, med, míč, mrak.' },
+      ],
+    },
+    {
+      id: 'samohlasky-z1',
+      title: 'Samohlásky',
+      emoji: '🅰️',
+      ex: [
+        {
+          title: 'Zpívání',
+          blocks: [
+            { t: 'p', text: 'Některé hlásky umíš **zpívat** dlouho.' },
+            { t: 'pic', items: ['🎵', 'aaa', 'eee', 'iii', 'ooo', 'uuu'] },
+            { t: 'p', text: 'To jsou **samohlásky**.' },
+            { t: 'key', text: 'Samohlásky: a, e, i, o, u, y.' },
+          ],
+        },
+        {
+          title: 'Roztřiď',
+          blocks: [
+            { t: 'p', text: 'Je to samohláska, nebo ne?' },
+            {
+              t: 'w',
+              w: 'sort',
+              p: {
+                buckets: ['samohláska 🎵', 'není samohláska'],
+                items: [
+                  { text: 'a', b: 0 },
+                  { text: 'm', b: 1 },
+                  { text: 'o', b: 0 },
+                  { text: 's', b: 1 },
+                  { text: 'u', b: 0 },
+                  { text: 'k', b: 1 },
+                  { text: 'e', b: 0 },
+                  { text: 't', b: 1 },
+                ],
+              },
+            },
+            { t: 'key', text: 'a, e, i, o, u, y – to jsou samohlásky.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'tf', q: 'A je samohláska.', a: true },
+        { t: 'tf', q: 'M je samohláska.', a: false, why: 'M není samohláska. Samohlásky jsou a, e, i, o, u, y.' },
+        { t: 'choice', q: 'Která je samohláska?', o: ['p', 'o', 'l'], a: 1 },
+        { t: 'choice', q: 'Která NENÍ samohláska?', o: ['e', 'u', 's'], a: 2 },
+        { t: 'choice', q: 'Jakou samohláskou začíná 🍍 *ananas*?', o: ['a', 'e', 'o'], a: 0 },
+        { t: 'choice', q: 'Jakou samohláskou začíná 🐒 *opice*?', o: ['u', 'o', 'a'], a: 1 },
+        { t: 'input', q: 'Kolik samohlásek je ve slově MÁMA?', a: ['2'], why: 'M-Á-M-A: á a a.' },
+        { t: 'input', q: 'Jakou samohláskou začíná slovo UCHO?', a: ['u'] },
+        { t: 'order', q: 'Seřaď samohlásky jako v písničce.', items: ['a', 'e', 'i', 'o', 'u'] },
+        { t: 'pair', q: 'Spoj slovo s první samohláskou.', pairs: [['ovce', 'o'], ['eso', 'e'], ['ulice', 'u'], ['auto', 'a']] },
+        { t: 'open', q: 'Vyjmenuj samohlásky.', a: 'a, e, i, o, u, y.' },
+        { t: 'open', q: 'Jak poznáš samohlásku?', a: 'Samohlásku umím zazpívat dlouho, třeba aaa nebo ooo.' },
+      ],
+    },
+    {
+      id: 'kde-je-hlaska',
+      title: 'Kde je ta hláska?',
+      emoji: '👂',
+      ex: [
+        {
+          title: 'Vláček',
+          blocks: [
+            { t: 'p', text: 'Slovo je jako vláček. Hlásky jsou vagonky.' },
+            { t: 'pic', items: ['🚂', 'L', 'E', 'S'], caption: 'les' },
+            { t: 'p', text: 'První je **L**. Poslední je **S**.' },
+            { t: 'key', text: 'Řekni slovo pomalu. Poslouchej první a poslední hlásku.' },
+          ],
+        },
+        {
+          title: 'Krok za krokem',
+          blocks: [
+            { t: 'steps', items: ['Řekni slovo pomalu: k-o-l-o.', 'Co slyšíš na začátku? **K**.', 'Co slyšíš na konci? **O**.'] },
+            {
+              t: 'w',
+              w: 'flip',
+              p: {
+                cards: [
+                  { front: '🐦 kos', back: 'první K, poslední S' },
+                  { front: '🍯 med', back: 'první M, poslední D' },
+                  { front: '🐟 ryba', back: 'první R, poslední A' },
+                  { front: '🏠 dům', back: 'první D, poslední M' },
+                ],
+              },
+            },
+            { t: 'key', text: 'Začátek – prostředek – konec.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Jaká je první hláska ve slově MOTÝL?', o: ['M', 'O', 'L'], a: 0 },
+        { t: 'choice', q: 'Jaká je poslední hláska ve slově PES?', o: ['P', 'E', 'S'], a: 2 },
+        { t: 'choice', q: 'Jaká je poslední hláska ve slově KOLO?', o: ['K', 'L', 'O'], a: 2 },
+        { t: 'input', q: 'Jaká je první hláska ve slově VODA?', a: ['V'] },
+        { t: 'input', q: 'Jaká je poslední hláska ve slově NOS?', a: ['S'] },
+        { t: 'tf', q: 'Slovo SÝR začíná hláskou S.', a: true },
+        { t: 'tf', q: 'Slovo LES končí hláskou L.', a: false, why: 'Le-sss. Končí na S.' },
+        { t: 'pair', q: 'Spoj slovo s poslední hláskou.', pairs: [['dům', 'M'], ['les', 'S'], ['ryba', 'A'], ['vlak', 'K']] },
+        { t: 'order', q: 'Slož slovo z hlásek: OKNO.', items: ['O', 'K', 'N', 'O'] },
+        { t: 'choice', q: 'Které slovo začíná na S?', o: ['☀️ slunce', '🐶 pes', '🐟 ryba'], a: 0 },
+        { t: 'open', q: 'Řekni slovo, které končí hláskou A.', a: 'Například máma, ryba, voda, koza.' },
+        { t: 'open', q: 'Jaká je první a poslední hláska ve slově TÁTA?', a: 'První je T a poslední je A.' },
+      ],
+    },
+    {
+      id: 'slabiky-z1',
+      title: 'Slabiky',
+      emoji: '👏',
+      ex: [
+        {
+          title: 'Tleskání',
+          blocks: [
+            { t: 'p', text: 'Řekni slovo a tleskej.' },
+            { t: 'pic', items: ['👏', '👏'], caption: 'MA – MA' },
+            { t: 'p', text: 'Každé tlesknutí je **slabika**.' },
+            { t: 'w', w: 'counter', p: { emoji: '👏', start: 0, max: 6 } },
+            { t: 'p', text: 'Zkus: *ko-ko-ši-ce*. Kolikrát tleskneš?' },
+            { t: 'key', text: 'Kolikrát tleskneš, tolik má slovo slabik.' },
+          ],
+        },
+        {
+          title: 'Samohlásky',
+          blocks: [
+            { t: 'p', text: 'V každé slabice je **samohláska**.' },
+            { t: 'table', head: ['slovo', 'slabiky', 'počet'], rows: [['pes', 'pes', '1'], ['ryba', 'ry-ba', '2'], ['banány', 'ba-ná-ny', '3'], ['čokoláda', 'čo-ko-lá-da', '4']] },
+            {
+              t: 'w',
+              w: 'sort',
+              p: {
+                buckets: ['1 slabika', '2 slabiky', '3 slabiky'],
+                items: [
+                  { text: 'dům', b: 0 },
+                  { text: 'les', b: 0 },
+                  { text: 'máma', b: 1 },
+                  { text: 'kolo', b: 1 },
+                  { text: 'žirafa', b: 2 },
+                  { text: 'telefon', b: 2 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Kolik samohlásek, tolik slabik.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'input', q: 'Kolik slabik má slovo MÁ-MA?', a: ['2'] },
+        { t: 'input', q: 'Kolik slabik má slovo PES?', a: ['1'] },
+        { t: 'input', q: 'Kolik slabik má slovo ŽIRAFA?', a: ['3'], why: 'ži-ra-fa' },
+        { t: 'choice', q: 'Kolik slabik má slovo ČOKOLÁDA?', o: ['3', '4', '5'], a: 1, why: 'čo-ko-lá-da = 4' },
+        { t: 'choice', q: 'Které slovo má 1 slabiku?', o: ['dům', 'kolo', 'ryba'], a: 0 },
+        { t: 'choice', q: 'Jak se slovo KOLO dělí na slabiky?', o: ['ko-lo', 'kol-o', 'k-olo'], a: 0 },
+        { t: 'tf', q: 'Slovo TELEFON má 3 slabiky.', a: true, why: 'te-le-fon' },
+        { t: 'tf', q: 'Slovo SLON má 2 slabiky.', a: false, why: 'Slon je jedno tlesknutí – 1 slabika.' },
+        { t: 'order', q: 'Slož slovo LOKOMOTIVA.', items: ['LO', 'KO', 'MO', 'TI', 'VA'] },
+        { t: 'pair', q: 'Spoj slovo s počtem slabik.', pairs: [['les', '1'], ['ryba', '2'], ['banány', '3'], ['čokoláda', '4']] },
+        { t: 'open', q: 'Jak zjistíš, kolik má slovo slabik?', a: 'Řeknu slovo a tleskám. Kolikrát tlesknu, tolik je slabik.' },
+        { t: 'open', q: 'Vytleskej své jméno. Kolik má slabik?', a: 'Například E-ma má 2 slabiky, To-máš má 2, Ka-te-ři-na má 4.' },
+      ],
+    },
+    {
+      id: 'carka-a-krouzek',
+      title: 'Čárka a kroužek',
+      emoji: '✏️',
+      ex: [
+        {
+          title: 'Dlouhá hláska',
+          blocks: [
+            { t: 'p', text: 'Řekni **a**. Teď **á**. Á je delší.' },
+            { t: 'pic', items: ['🐜', 'a'], caption: 'krátká' },
+            { t: 'pic', items: ['🐍', 'á'], caption: 'dlouhá' },
+            { t: 'p', text: 'Dlouhá samohláska má **čárku**: á, é, í, ó, ú, ý.' },
+            { t: 'p', text: 'Dlouhé ů má **kroužek**: dům.' },
+            { t: 'key', text: 'Dlouhá samohláska má čárku nebo kroužek.' },
+          ],
+        },
+        {
+          title: 'Doplň',
+          blocks: [
+            { t: 'p', text: 'Poslouchej. Je hláska krátká, nebo dlouhá?' },
+            {
+              t: 'w',
+              w: 'gap',
+              p: {
+                items: [
+                  { before: 'm', after: 'ma', options: ['a', 'á'], a: 1 },
+                  { before: 'p', after: 's', options: ['e', 'é'], a: 0 },
+                  { before: 's', after: 'r', options: ['y', 'ý'], a: 1 },
+                  { before: 'l', after: 's', options: ['e', 'é'], a: 0 },
+                  { before: 'd', after: 'm', options: ['u', 'ů'], a: 1 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Slyšíš dlouhou hlásku? Napiš čárku.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'tf', q: 'Á je dlouhá samohláska.', a: true },
+        { t: 'tf', q: 'E je dlouhá samohláska.', a: false, why: 'E je krátká. Dlouhá je é.' },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['mama', 'máma', 'mamá'], a: 1 },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['dum', 'dům', 'důmm'], a: 1 },
+        { t: 'choice', q: 'Které slovo je napsané správně?', o: ['sýr', 'syr', 'sír'], a: 0 },
+        { t: 'choice', q: 'Co má dlouhé ů?', o: ['čárku', 'kroužek', 'tečku'], a: 1 },
+        { t: 'choice', q: 'Ve slově *táta* je první á…', o: ['krátké', 'dlouhé'], a: 1 },
+        { t: 'pair', q: 'Spoj krátkou a dlouhou.', pairs: [['a', 'á'], ['e', 'é'], ['i', 'í'], ['u', 'ú']] },
+        { t: 'tf', q: 'Ve slově *les* je dlouhá samohláska.', a: false, why: 'Les – e je krátké.' },
+        { t: 'choice', q: 'Které slovo má dlouhou samohlásku?', o: ['pes', 'kolo', 'míč'], a: 2 },
+        { t: 'input', q: 'Kolik dlouhých samohlásek je ve slově *máma*?', a: ['1'], why: 'Jen první á je dlouhé.' },
+        { t: 'open', q: 'Jak poznáš, že je samohláska dlouhá?', a: 'Slyším ji déle. Píšu ji s čárkou, ů s kroužkem.' },
+        { t: 'open', q: 'Řekni slovo s dlouhou samohláskou.', a: 'Například máma, táta, míč, sýr, dům.' },
+      ],
+    },
+    {
+      id: 'velka-a-mala-pismena',
+      title: 'Velká a malá písmena',
+      emoji: '🔠',
+      ex: [
+        {
+          title: 'Máma a mládě',
+          blocks: [
+            { t: 'p', text: 'Každé písmeno má velkou a malou podobu.' },
+            { t: 'pic', items: ['🐘', 'A', '🐭', 'a'] },
+            { t: 'pic', items: ['🐘', 'M', '🐭', 'm'] },
+            { t: 'key', text: 'Velké i malé písmeno čteme stejně.' },
+          ],
+        },
+        {
+          title: 'Kartičky',
+          blocks: [
+            { t: 'p', text: 'Najdi k velkému písmenu malé.' },
+            {
+              t: 'w',
+              w: 'flip',
+              p: {
+                cards: [
+                  { front: 'A', back: 'a' },
+                  { front: 'E', back: 'e' },
+                  { front: 'L', back: 'l' },
+                  { front: 'T', back: 't' },
+                  { front: 'D', back: 'd' },
+                  { front: 'B', back: 'b' },
+                ],
+              },
+            },
+            { t: 'key', text: 'Pozor: b a d vypadají podobně!' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'pair', q: 'Spoj velké a malé písmeno.', pairs: [['A', 'a'], ['M', 'm'], ['L', 'l'], ['S', 's']] },
+        { t: 'pair', q: 'Spoj velké a malé písmeno.', pairs: [['B', 'b'], ['D', 'd'], ['P', 'p'], ['E', 'e']] },
+        { t: 'choice', q: 'Které je malé písmeno k D?', o: ['b', 'd', 'p'], a: 1 },
+        { t: 'choice', q: 'Které je velké písmeno k b?', o: ['D', 'P', 'B'], a: 2 },
+        { t: 'tf', q: 'A a a čteme stejně.', a: true },
+        { t: 'tf', q: 'Malé písmeno k T je l.', a: false, why: 'K T patří malé t.' },
+        { t: 'input', q: 'Napiš malé písmeno k velkému O.', a: ['o'] },
+        { t: 'input', q: 'Napiš malé písmeno k velkému S.', a: ['s'] },
+        { t: 'choice', q: 'Které slovo je napsané celé velkými písmeny?', o: ['MÁMA', 'máma', 'Máma'], a: 0 },
+        { t: 'order', q: 'Slož slovo LES velkými písmeny.', items: ['L', 'E', 'S'] },
+        { t: 'open', q: 'Která písmena si snadno spleteš? Proč?', a: 'Například b a d nebo p a b, protože vypadají podobně, jen jsou otočená.' },
+        { t: 'open', q: 'Řekni, jak vypadá velké a malé písmeno M.', a: 'Velké M má dvě špičky nahoře. Malé m má dva obloučky.' },
+      ],
+    },
+    {
+      id: 'slova-ve-vete',
+      title: 'Slova ve větě',
+      emoji: '💬',
+      ex: [
+        {
+          title: 'Kostičky',
+          blocks: [
+            { t: 'p', text: 'Věta je jako stavba z kostiček. Kostičky jsou **slova**.' },
+            { t: 'pic', items: ['🟥 Máma', '🟦 vaří', '🟩 polévku.'] },
+            { t: 'p', text: 'Mezi slovy je **mezera**.' },
+            { t: 'key', text: 'Věta má slova. Mezi slovy je mezera.' },
+          ],
+        },
+        {
+          title: 'Počítání',
+          blocks: [
+            { t: 'p', text: 'Za každé slovo přidej jednu kostku.' },
+            { t: 'example', q: 'Pes běží.', a: '2 slova' },
+            { t: 'example', q: 'Ema má malou kočku.', a: '4 slova' },
+            { t: 'w', w: 'counter', p: { emoji: '🧱', start: 0, max: 6 } },
+            { t: 'key', text: 'Kolik slov, tolik kostek.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'input', q: 'Kolik slov má věta: *Táta spí.*', a: ['2'] },
+        { t: 'input', q: 'Kolik slov má věta: *Ema má míč.*', a: ['3'] },
+        { t: 'choice', q: 'Kolik slov má věta: *Malý pes běží domů.*', o: ['3', '4', '5'], a: 1 },
+        { t: 'order', q: 'Slož větu.', items: ['Máma', 'vaří', 'oběd.'] },
+        { t: 'order', q: 'Slož větu.', items: ['Kočka', 'pije', 'mléko.'] },
+        { t: 'tf', q: 'Mezi slovy píšeme mezeru.', a: true },
+        { t: 'tf', q: '*Pesštěká* je správně napsáno.', a: false, why: 'Mezi slovy chybí mezera: Pes štěká.' },
+        { t: 'choice', q: 'Co je slovo?', o: ['les', 'l', 'Les je velký.'], a: 0, why: 'l je písmeno, „Les je velký.“ je věta.' },
+        { t: 'choice', q: 'Co je věta?', o: ['pes', 'Pes štěká.', 'p'], a: 1 },
+        { t: 'pair', q: 'Spoj se správným názvem.', pairs: [['m', 'písmeno'], ['máma', 'slovo'], ['Máma spí.', 'věta']] },
+        { t: 'open', q: 'Řekni větu o svém kamarádovi. Kolik má slov?', a: 'Například: Tom hraje fotbal. Ta věta má 3 slova.' },
+        { t: 'open', q: 'Jaký je rozdíl mezi slovem a větou?', a: 'Věta se skládá ze slov. Věta něco sděluje celé.' },
+      ],
+    },
+    {
+      id: 'velke-pismeno-a-tecka',
+      title: 'Velké písmeno a tečka',
+      emoji: '🔴',
+      ex: [
+        {
+          title: 'Semafor',
+          blocks: [
+            { t: 'pic', items: ['🟢', 'Pes štěká', '🔴'], caption: 'start – konec' },
+            { t: 'p', text: 'Na začátku věty je **velké písmeno**.' },
+            { t: 'p', text: 'Na konci věty je **tečka**.' },
+            { t: 'key', text: 'Velké písmeno = start. Tečka = stop.' },
+          ],
+        },
+        {
+          title: 'Jména',
+          blocks: [
+            { t: 'p', text: 'Jména lidí a zvířat píšeme velkým písmenem.' },
+            {
+              t: 'w',
+              w: 'sort',
+              p: {
+                buckets: ['velké písmeno', 'malé písmeno'],
+                items: [
+                  { text: 'Ema', b: 0 },
+                  { text: 'pes', b: 1 },
+                  { text: 'Alík', b: 0 },
+                  { text: 'kočka', b: 1 },
+                  { text: 'Petr', b: 0 },
+                  { text: 'stůl', b: 1 },
+                  { text: 'Micka', b: 0 },
+                  { text: 'máma', b: 1 },
+                ],
+              },
+            },
+            { t: 'key', text: 'Jméno = velké písmeno.' },
+          ],
+        },
+      ],
+      qs: [
+        { t: 'choice', q: 'Která věta je napsaná správně?', o: ['pes štěká.', 'Pes štěká.', 'Pes štěká'], a: 1 },
+        { t: 'choice', q: 'Která věta je napsaná správně?', o: ['Ema má míč.', 'ema má míč.', 'Ema má míč'], a: 0 },
+        { t: 'tf', q: 'Na začátku věty píšeme velké písmeno.', a: true },
+        { t: 'tf', q: 'Na konci věty píšeme čárku.', a: false, why: 'Na konci oznamovací věty píšeme tečku.' },
+        { t: 'tf', q: 'Jméno *Petr* píšeme velkým P.', a: true },
+        { t: 'choice', q: 'Co je napsané správně?', o: ['alík', 'Alík'], a: 1, why: 'Alík je jméno psa – velké písmeno.' },
+        { t: 'choice', q: 'Co je napsané správně?', o: ['Kočka', 'kočka'], a: 1, why: 'Kočka uprostřed věty není jméno – malé písmeno.' },
+        { t: 'input', q: 'Jaké znaménko patří na konec věty *Máma vaří*?', a: ['.', 'tečka', 'tecku', 'tečku'] },
+        { t: 'pair', q: 'Spoj.', pairs: [['začátek věty', 'velké písmeno'], ['konec věty', 'tečka'], ['jméno', 'velké písmeno'], ['mezi slovy', 'mezera']] },
+        { t: 'order', q: 'Slož větu.', items: ['Ema', 'má', 'psa', 'Alíka.'] },
+        { t: 'open', q: 'Co píšeme na začátek a co na konec věty?', a: 'Na začátek věty velké písmeno, na konec tečku.' },
+        { t: 'open', q: 'Napiš (řekni) své jméno. Jakým písmenem začíná?', a: 'Moje jméno začíná velkým písmenem, třeba Ema – velké E.' },
+      ],
+    },
+  ],
+} satisfies Subject
