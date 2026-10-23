@@ -4,8 +4,8 @@ const exe = process.env.HOME + '/Library/Caches/ms-playwright/chromium-1243/chro
 const b = await chromium.launch({ executablePath: exe })
 const p = await b.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, hasTouch: true })
 const errs = []; p.on('pageerror', (e) => errs.push(String(e)))
-await p.goto('http://127.0.0.1:5179/#/slovicka'); await p.waitForTimeout(800); await p.screenshot({ path: '/tmp/sprtam-shots/v-levels.png' })
-await p.goto('http://127.0.0.1:5179/#/slovicka/A1/0'); await p.waitForTimeout(600); await p.screenshot({ path: '/tmp/sprtam-shots/v-card.png' })
+await p.goto((process.env.BASE ?? 'http://127.0.0.1:5179/') + '#/slovicka'); await p.waitForTimeout(800); await p.screenshot({ path: '/tmp/sprtam-shots/v-levels.png' })
+await p.goto((process.env.BASE ?? 'http://127.0.0.1:5179/') + '#/slovicka/A1/0'); await p.waitForTimeout(600); await p.screenshot({ path: '/tmp/sprtam-shots/v-card.png' })
 const drag = async (dx) => { const box = await p.locator('.scard:not(.back)').boundingBox(); const x = box.x + box.width / 2, y = box.y + box.height / 2; await p.mouse.move(x, y); await p.mouse.down(); for (let i = 1; i <= 8; i++) await p.mouse.move(x + (dx * i) / 8, y); if (dx > 0 && Math.abs(dx) < 200) await p.screenshot({ path: '/tmp/sprtam-shots/v-drag.png' }); await p.mouse.up() }
 let rounds = 0
 for (let i = 0; i < 60 && !(await p.locator('.result').count()); i++) {
