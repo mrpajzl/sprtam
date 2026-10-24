@@ -16,6 +16,12 @@ export function Stars({ n }: { n: number }) {
   return <span class="stars" role="img" aria-label={`${n} ze 3`}>{[0, 1, 2].map((i) => <span key={i} class={i < n ? 'on' : ''}><IStar on={i < n} /></span>)}</span>
 }
 
+/** Segmented LED meter, 0–100. */
+export function Meter({ pct, n = 10 }: { pct: number; n?: number }) {
+  const lit = Math.round((pct / 100) * n)
+  return <span class="seg-meter" role="img" aria-label={`${Math.round(pct)} %`}>{Array.from({ length: n }, (_, i) => <i key={i} class={i < lit ? 'on' : ''} />)}</span>
+}
+
 /** Result stars, popping in one after another. */
 export function BigStars({ n }: { n: number }) {
   return <div class="big-stars" role="img" aria-label={`${n} ze 3`}>{[0, 1, 2].map((i) => <span key={i} class={i < n ? 'on' : ''} style={{ animationDelay: `${0.15 + i * 0.12}s` }}><IStar on={i < n} /></span>)}</div>

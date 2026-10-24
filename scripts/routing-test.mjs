@@ -53,7 +53,7 @@ await p.click('a.num-key[href="/g/z7"]')
 await p.waitForSelector('.tiles')
 ok(await path() === '/g/z7' && (await p.title()).startsWith('7. třída'), 'grade key link + title')
 await p.goto(`${BASE}/slovicka/B1`)
-await p.waitForSelector('.list .row')
+await p.waitForSelector('html[data-app] .vocab-tile .seg-meter')
 ok((await p.title()).includes('B1'), 'vocab level direct load')
 
 // Unknown route → 404 status.

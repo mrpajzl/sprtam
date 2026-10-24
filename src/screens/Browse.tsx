@@ -4,16 +4,10 @@ import { hasSubject, loadSubject, topicKey } from '../content'
 import type { GradeId, SubjectId, Subject } from '../content/types'
 import { isPinned, setGrade, stars, useProgress } from '../progress/store'
 import { go, Link } from '../router'
-import { Bar, Stars } from '../ui/Bar'
+import { Bar, Meter, Stars } from '../ui/Bar'
 import { GLYPHS, keyStyle, subjectStyle } from '../ui/glyphs'
 import { IPin, ISearch, ITest } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
-
-/** Segmented LED meter, 0–100. */
-export function Meter({ pct, n = 10 }: { pct: number; n?: number }) {
-  const lit = Math.round((pct / 100) * n)
-  return <span class="seg-meter" role="img" aria-label={`${Math.round(pct)} %`}>{Array.from({ length: n }, (_, i) => <i key={i} class={i < lit ? 'on' : ''} />)}</span>
-}
 
 /** Average stars → 0–100 for a subject's meter. */
 function useSubjectPct(g: GradeId, s: SubjectId, subj: Subject | undefined | null) {

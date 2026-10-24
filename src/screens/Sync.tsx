@@ -42,7 +42,7 @@ export function SyncScreen({ offer }: { offer?: string }) {
           <button class="row" onClick={() => setView('host')}><span class="skey m"><ILink /></span><b>Propojit dvě zařízení</b></button>
           <button class="row" onClick={() => setView('code')}><span class="skey m"><IQr /></span><b>Ukázat kód pokroku</b></button>
           <button class="row" onClick={() => setView('load')}><span class="skey m"><ICamera /></span><b>Načíst kód</b></button>
-          <p class="muted center" style={{ marginTop: 18, fontSize: '0.92rem', lineHeight: 1.5 }}>
+          <p class="muted center" style={{ marginTop: '18px', fontSize: '0.92rem', lineHeight: 1.5 }}>
             Bez účtu. Pokrok je jen v tomto zařízení a putuje přímo do druhého.
           </p>
         </div>
@@ -52,7 +52,7 @@ export function SyncScreen({ offer }: { offer?: string }) {
       {view === 'host' && <Host onDone={() => setView('done')} />}
       {view === 'join' && <Join offer={offer} onDone={() => setView('done')} />}
       {view === 'done' && (
-        <div class="stack" style={{ paddingTop: 40 }}>
+        <div class="stack" style={{ paddingTop: '40px' }}>
           <div class="ok-big"><Mascot mood="happy" size={110} /></div>
           <p class="center"><b>Pokrok je spojený.</b></p>
           <button class="btn block" onClick={() => go('/')}>Hotovo</button>
@@ -74,7 +74,7 @@ function ShowCode() {
     <div class="stack">
       {url.length < 2800 ? <><Qr text={url} /><p class="muted center">Naskenuj druhým zařízením.</p></>
         : <p class="muted center">Na QR je toho moc. Použij <b>Propojit dvě zařízení</b> nebo pošli odkaz.</p>}
-      <div style={{ display: 'flex', gap: 10 }}>
+      <div style={{ display: 'flex', gap: '10px' }}>
         <button class="btn ghost" style={{ flex: 1 }} onClick={copy}><ICopy />Kopírovat</button>
         {'share' in navigator && <button class="btn ghost" style={{ flex: 1 }} onClick={() => navigator.share({ url }).catch(() => {})}><IShare />Sdílet</button>}
       </div>

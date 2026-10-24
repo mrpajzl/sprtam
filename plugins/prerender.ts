@@ -138,7 +138,7 @@ async function pages(): Promise<Page[]> {
   out.push({
     path: '/slovicka',
     title: titles.vocab(),
-    description: `Anglická slovíčka podle úrovně A1–C1 (${vocab.reduce((n, v) => n + v.groups.reduce((m, gr) => m + gr.words.length, 0), 0)} slov). Procvičování swipováním, slova se vracejí, dokud je neumíš.`,
+    description: `Anglická slovíčka podle úrovně A1–C1 (${vocab.reduce((n, v) => n + v.groups.reduce((m, gr) => m + gr.words.length, 0), 0)} slov). Nová slova vybíráš ze tří, známá píšeš; slova se vracejí, dokud je neumíš.`,
     crumbs: vCrumbs,
     body: `<div class="page" style="${style('purple')}">${bar('Slovíčka', '/')}<div class="levels">${vocab.map((v) => `<a class="row" href="/slovicka/${v.level}"><span class="skey m"><b>${v.level}</b></span><b>${v.groups.length} okruhů</b></a>`).join('')}</div></div>`,
   })
@@ -149,7 +149,7 @@ async function pages(): Promise<Page[]> {
       title: titles.vocabLevel(v.level),
       description: `Anglická slovíčka ${v.level}: ${v.groups.map((gr) => gr.name.toLowerCase()).slice(0, 8).join(', ')}${v.groups.length > 8 ? ' a další' : ''}. Například ${v.groups[0].words.slice(0, 4).map((w) => `${w[0]} – ${w[1]}`).join(', ')}.`,
       crumbs: [...vCrumbs, [v.level, path]],
-      body: `<div class="page" style="${style('purple')}">${bar(v.level, '/slovicka')}<div class="list">${v.groups.map((gr) => `<section class="row"><span class="em">${gr.emoji}</span><span class="txt"><b>${esc(gr.name)}</b><small>${esc(gr.words.slice(0, 6).map((w) => `${w[0]} – ${w[1]}`).join(', '))}…</small></span></section>`).join('')}</div></div>`,
+      body: `<div class="page" style="${style('purple')}">${bar(v.level, '/slovicka')}<a class="btn block mix" href="${path}/vse">Míchat vše<small class="btn-count">${v.groups.reduce((n, gr) => n + gr.words.length, 0)}</small></a><div class="tiles">${v.groups.map((gr, i) => `<a class="tile vocab-tile" href="${path}/${i}"><span class="tile-face em">${gr.emoji}</span><b>${esc(gr.name)}</b><small class="sample">${esc(gr.words.slice(0, 6).map((w) => `${w[0]} – ${w[1]}`).join(', '))}…</small></a>`).join('')}</div></div>`,
     })
   }
   return out
