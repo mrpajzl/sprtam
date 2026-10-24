@@ -203,7 +203,7 @@ export function ColumnProblem({ a, b, op }: { a: string | number; b: string | nu
   if (!L) return <div class="column-q">{A} : {B} =</div>
   const keep = L.rows.slice(0, op === '·' && B.length > 1 ? 2 : 3).map((row) => row.map((c) => (c && c.kind !== 'carry' && c.kind !== 'res' ? c : null)))
   return (
-    <div class="column" style={{ gridTemplateColumns: cols(L), marginBottom: 8 }} role="img" aria-label={`${A} ${op} ${B}`}>
+    <div class="column" style={{ gridTemplateColumns: cols(L), marginBottom: '8px' }} role="img" aria-label={`${A} ${op} ${B}`}>
       {keep.map((row, r) => row.map((cell, c) => <span key={`${r}-${c}`} class={`cc ${cell ? cell.kind : ''}`}>{cell?.ch ?? ''}</span>))}
       {Array.from({ length: L.width }, (_, c) => <span key={`l${c}`} class="cc line" />)}
     </div>

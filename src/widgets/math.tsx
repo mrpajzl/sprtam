@@ -98,7 +98,7 @@ export function Fraction({ n: n0, d: d0 }: { n: number; d: number }) {
   const g = gcd(n, d)
   return (
     <div class="w">
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 8, flexWrap: 'wrap' }}>{pies}</div>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', flexWrap: 'wrap' }}>{pies}</div>
       <div class="val" style={{ fontSize: '2rem', lineHeight: 1.1 }}>
         <span style={{ display: 'inline-grid', justifyItems: 'center' }}><span>{n}</span><span style={{ borderTop: '3px solid currentColor', padding: '0 6px' }}>{d}</span></span>
       </div>
@@ -115,7 +115,7 @@ export function PlaceValue({ value }: { value: number }) {
   const [v, setV] = useState(Math.max(0, Math.min(999, value)))
   const h = Math.floor(v / 100), t = Math.floor((v % 100) / 10), u = v % 10
   const col = (count: number, kind: 'h' | 't' | 'u', name: string, mul: number) => (
-    <div style={{ display: 'grid', justifyItems: 'center', gap: 6, flex: 1 }}>
+    <div style={{ display: 'grid', justifyItems: 'center', gap: '6px', flex: 1 }}>
       <svg viewBox="0 0 90 120" width="90">
         {kind === 'h' && Array.from({ length: count }, (_, i) => <rect key={i} x={6 + (i % 3) * 4} y={6 + i * 10} width={60} height={60} rx="4" fill="var(--accent)" opacity={0.25 + 0.75 / (i + 1)} stroke="var(--card)" stroke-width="2" />)}
         {kind === 't' && Array.from({ length: count }, (_, i) => <rect key={i} x={4 + i * 9} y={4} width={7} height={100} rx="3" fill="var(--accent)" />)}
@@ -128,7 +128,7 @@ export function PlaceValue({ value }: { value: number }) {
   )
   return (
     <div class="w">
-      <div style={{ display: 'flex', gap: 6 }}>{col(h, 'h', 'stovky', 100)}{col(t, 't', 'desítky', 10)}{col(u, 'u', 'jednotky', 1)}</div>
+      <div style={{ display: 'flex', gap: '6px' }}>{col(h, 'h', 'stovky', 100)}{col(t, 't', 'desítky', 10)}{col(u, 'u', 'jednotky', 1)}</div>
       <div class="val">{v}</div>
     </div>
   )

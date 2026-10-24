@@ -228,6 +228,14 @@ mark { background: color-mix(in oklab, var(--k-yellow) 55%, transparent); color:
 .tile b { font-size: 1rem; font-weight: 850; line-height: 1.2; }
 .tile .seg-meter { margin-top: auto; width: 100%; }
 @media (min-width: 560px) { .tiles { grid-template-columns: repeat(3, 1fr); } }
+.vocab-tile { min-height: 0; gap: 10px; }
+.vocab-tile .tile-face.em { font-size: 1.9rem; background: var(--accent-soft); box-shadow: none; }
+.vocab-tile .sample { margin-top: auto; font-size: 0.78rem; font-weight: 650; color: var(--ink-3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.vocab-tile .foot { margin-top: auto; width: 100%; display: flex; align-items: center; gap: 8px; }
+.vocab-tile .foot .seg-meter { flex: 1; }
+.vocab-tile .foot small { font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--ink-3); }
+.btn.mix { margin-bottom: 20px; }
+.btn-count { font-family: var(--mono); font-size: 0.8rem; font-weight: 800; padding: 2px 7px; border-radius: 7px; background: rgb(0 0 0 / 0.14); }
 
 .seg-meter { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; }
 .seg-meter i { height: 7px; border-radius: 2px; background: var(--line); }

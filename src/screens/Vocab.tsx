@@ -3,9 +3,9 @@ import type { Level, Word } from '../vocab/types'
 import { loadLevel } from '../vocab'
 import { setWordBox, useProgress, getProgress } from '../progress/store'
 import { back, go, Link } from '../router'
-import { Bar, BigStars } from '../ui/Bar'
+import { Bar, BigStars, Meter } from '../ui/Bar'
 import { keyStyle } from '../ui/glyphs'
-import { IClose } from '../ui/icons'
+import { IClose, IShuffle } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
 
 const load = loadLevel
@@ -40,7 +40,7 @@ function LevelRow({ id, hint }: { id: Level; hint: string }) {
   return (
     <Link class="row" href={`/slovicka/${id}`}>
       <span class="skey m"><b>{id}</b></span>
-      <span style={{ flex: 1, display: 'grid', gap: 6 }}>
+      <span style={{ flex: 1, display: 'grid', gap: '6px' }}>
         <b>{hint}</b>
         <span class="meter"><i style={{ width: `${words.length ? (done / words.length) * 100 : 0}%` }} /></span>
       </span>
@@ -52,18 +52,25 @@ export function VocabLevel({ level }: { level: Level }) {
   const set = useAsync(() => load(level), [level])
   const p = useProgress()
   if (!set) return <div class="page" />
-  const pct = (ws: Word[]) => (ws.filter((w) => (p.w[w[1]] ?? 0) >= MASTERED).length / ws.length) * 100
+  const known = (ws: Word[]) => ws.filter((w) => (p.w[w[1]] ?? 0) >= MASTERED).length
+  const total = set.groups.reduce((n, g) => n + g.words.length, 0)
   return (
     <div class="page" style={keyStyle('purple')}>
       <Bar title={level} onBack={() => go('/slovicka')} />
-      <button class="btn block" onClick={() => go(`/slovicka/${level}/vse`)} style={{ marginBottom: 16 }}>Míchat vše</button>
-      <div class="list">
-        {set.groups.map((g, i) => (
-          <Link key={i} class="row" href={`/slovicka/${level}/${i}`}>
-            <span class="em">{g.emoji}</span>
-            <span style={{ flex: 1, display: 'grid', gap: 6 }}><b>{g.name}</b><span class="meter"><i style={{ width: `${pct(g.words)}%` }} /></span></span>
-          </Link>
-        ))}
+      <button class="btn block mix" onClick={() => go(`/slovicka/${level}/vse`)}>
+        <IShuffle />Míchat vše<small class="btn-count">{total}</small>
+      </button>
+      <div class="tiles">
+        {set.groups.map((g, i) => {
+          const done = known(g.words)
+          return (
+            <Link key={i} class="tile vocab-tile" href={`/slovicka/${level}/${i}`}>
+              <span class="tile-face em">{g.emoji}</span>
+              <b>{g.name}</b>
+              <span class="foot"><Meter pct={g.words.length ? (done / g.words.length) * 100 : 0} /><small>{done}/{g.words.length}</small></span>
+            </Link>
+          )
+        })}
       </div>
     </div>
   )

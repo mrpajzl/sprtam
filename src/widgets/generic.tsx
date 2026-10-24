@@ -129,9 +129,9 @@ export function Gap({ items }: { items: { before: string; after: string; options
   const [got, setGot] = useState<Record<number, boolean>>({})
   const [bad, setBad] = useState<string | null>(null)
   return (
-    <div class="w" style={{ gap: 18 }}>
+    <div class="w" style={{ gap: '18px' }}>
       {items.map((it, i) => (
-        <div key={i} style={{ display: 'grid', gap: 8 }}>
+        <div key={i} style={{ display: 'grid', gap: '8px' }}>
           <div class="gap-row">
             <span>{it.before}<span class={`hole ${got[i] ? 'ok' : ''}`}>{got[i] ? it.options[it.a] : '?'}</span>{it.after}</span>
           </div>
