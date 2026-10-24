@@ -24,7 +24,7 @@ function checkBlock(b: Block, where: string) {
     case 'term': if (!b.term || !b.def) e('term needs term and def'); break
     case 'mistake': if (!b.wrong || !b.right || !b.why) e('mistake needs wrong, right and why'); break
     case 'list': case 'steps': if (!b.items?.length) e('empty items'); break
-    case 'example': if (!b.q || !b.a) e('example needs q and a'); break
+    case 'example': if (!b.q || !b.a) e('example needs q and a'); if (b.col) checkColumn(b.col, e); break
     case 'table': if (!b.rows?.every((r) => r.length === b.head.length)) e('table row width != head'); break
     case 'pic': if (!b.items?.length) e('empty pic'); break
     case 'w': {
@@ -35,18 +35,20 @@ function checkBlock(b: Block, where: string) {
       if (b.w === 'gap' && !p.items.every((i: any) => i.a >= 0 && i.a < i.options.length)) e('gap answer out of range')
       if (b.w === 'fraction' && !(p.d > 0 && p.n >= 0)) e('bad fraction')
       if (b.w === 'flip' && !p.cards?.length) e('flip without cards')
-      if (b.w === 'column') {
-        const num = (v: unknown) => String(v).replace(/\s/g, '')
-        if (!['+', '-', '·', ':'].includes(p.op)) e('column op must be + - · :')
-        if (!/^\d+(,\d+)?$/.test(num(p.a)) || !/^\d+(,\d+)?$/.test(num(p.b))) e('column a/b must be non-negative numbers (decimal comma)')
-        if ((p.op === '·' || p.op === ':') && (/,/.test(num(p.a)) || /,/.test(num(p.b)))) e('column · and : need whole numbers')
-        if (p.op === '-' && Number(num(p.a).replace(',', '.')) < Number(num(p.b).replace(',', '.'))) e('column − needs a ≥ b')
-        if (p.op === ':' && Number(num(p.b)) === 0) e('column : by zero')
-      }
+      if (b.w === 'column') checkColumn(p, e)
       break
     }
     default: e(`unknown block ${(b as any).t}`)
   }
+}
+
+function checkColumn(p: any, e: (m: string) => void) {
+  const num = (v: unknown) => String(v).replace(/\s/g, '')
+  if (!['+', '-', '·', ':'].includes(p.op)) e('column op must be + - · :')
+  if (!/^\d+(,\d+)?$/.test(num(p.a)) || !/^\d+(,\d+)?$/.test(num(p.b))) e('column a/b must be non-negative numbers (decimal comma)')
+  if ((p.op === '·' || p.op === ':') && (/,/.test(num(p.a)) || /,/.test(num(p.b)))) e('column · and : need whole numbers')
+  if (p.op === '-' && Number(num(p.a).replace(',', '.')) < Number(num(p.b).replace(',', '.'))) e('column − needs a ≥ b')
+  if (p.op === ':' && Number(num(p.b)) === 0) e('column : by zero')
 }
 
 function checkQ(q: Question, where: string) {
