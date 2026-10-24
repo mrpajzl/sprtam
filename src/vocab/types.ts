@@ -6,5 +6,5 @@ export type Word = [cz: string, en: string, near: string, rel: string]
 export interface VocabSet {
   level: Level
   /** Themed groups, e.g. „Zvířata“. */
-  groups: { name: string; emoji: string; words: Word[] }[]
+  groups: { name: string; emoji: string; words: Word[]; /** Accent for speech, default en-GB (e.g. Australian idioms). */ lang?: string }[]
 }

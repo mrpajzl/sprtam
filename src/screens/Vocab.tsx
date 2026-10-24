@@ -76,8 +76,8 @@ export function VocabLevel({ level }: { level: Level }) {
   )
 }
 
-function speak(text: string) {
-  try { const u = new SpeechSynthesisUtterance(text); u.lang = 'en-GB'; u.rate = 0.9; speechSynthesis.cancel(); speechSynthesis.speak(u) } catch { /* no TTS */ }
+function speak(text: string, lang = 'en-GB') {
+  try { const u = new SpeechSynthesisUtterance(text); u.lang = lang; u.rate = 0.9; speechSynthesis.cancel(); speechSynthesis.speak(u) } catch { /* no TTS */ }
 }
 
 /** Words known well enough (Leitner box) are typed instead of picked. */
@@ -85,18 +85,19 @@ const TYPE_FROM = 2
 /** A missed word comes back this many cards later. */
 const AGAIN = 3
 
-interface Card { w: Word; type: boolean; again: boolean }
+interface Card { w: Word; type: boolean; again: boolean; lang?: string }
 
 export function VocabDrill({ level, group }: { level: Level; group: string }) {
   const set = useAsync(() => load(level), [level])
   const [round, setRound] = useState(0)
   const first = useMemo(() => {
     if (!set) return []
-    const pool = group === 'vse' ? set.groups.flatMap((g) => g.words) : set.groups[Number(group)]?.words ?? []
+    const groups = group === 'vse' ? set.groups : set.groups.slice(Number(group), Number(group) + 1)
+    const pool = groups.flatMap((g) => g.words.map((w) => [w, g.lang] as const))
     // Weakest words first (Leitner box), random among equals.
     const box = getProgress().w
-    return shuffle(pool).sort((a, b) => (box[a[1]] ?? 0) - (box[b[1]] ?? 0)).slice(0, SESSION)
-      .map((w): Card => ({ w, type: (box[w[1]] ?? 0) >= TYPE_FROM, again: false }))
+    return shuffle(pool).sort((a, b) => (box[a[0][1]] ?? 0) - (box[b[0][1]] ?? 0)).slice(0, SESSION)
+      .map(([w, lang]): Card => ({ w, lang, type: (box[w[1]] ?? 0) >= TYPE_FROM, again: false }))
   }, [set, group, round])
   const [src, setSrc] = useState(first)
   const [queue, setQueue] = useState(first)
@@ -143,7 +144,7 @@ export function VocabDrill({ level, group }: { level: Level; group: string }) {
         }
         // Missed words come back a few cards later, typed, until they are right.
         setMarks([...marks, ok])
-        if (!ok) setQueue((q) => [...q.slice(0, i + 1 + AGAIN), { w: c.w, type: true, again: true }, ...q.slice(i + 1 + AGAIN)])
+        if (!ok) setQueue((q) => [...q.slice(0, i + 1 + AGAIN), { ...c, type: true, again: true }, ...q.slice(i + 1 + AGAIN)])
         setI(i + 1)
       }} />}
     </div>
@@ -186,7 +187,7 @@ function WordCard({ c, onDone }: { c: Card; onDone: (ok: boolean) => void }) {
 
   const answer = (r: 'ok' | 'typo' | 'bad') => {
     if (res) return
-    setRes(r); speak(en)
+    setRes(r); speak(en, c.lang)
     if (r === 'ok') setTimeout(() => onDone(true), 900)
   }
   useEffect(() => { if (c.type) input.current?.focus() }, [c])
@@ -203,7 +204,7 @@ function WordCard({ c, onDone }: { c: Card; onDone: (ok: boolean) => void }) {
       <div class="ask"><small>Jak se řekne</small><h2>{cz}</h2></div>
       {c.type ? (
         <form class="type" onSubmit={(e) => { e.preventDefault(); answer(check(v, en)) }}>
-          <div class={`lethint ${res ? 'shown' : ''}`} onClick={() => res && speak(en)}>{res ? en : mask(en)}</div>
+          <div class={`lethint ${res ? 'shown' : ''}`} onClick={() => res && speak(en, c.lang)}>{res ? en : mask(en)}</div>
           <input ref={input} class={`answer-input ${res ? (ok ? 'ok' : 'bad') : ''}`} value={v} onInput={(e) => setV(e.currentTarget.value)} readOnly={!!res}
             autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck={false} enterKeyHint="done" lang="en" aria-label="Anglicky" />
           {!res && (
