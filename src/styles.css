@@ -25,19 +25,18 @@
   -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14161a;
-    --card: #1e2127;
-    --ink: #eef0f3;
-    --ink-2: #a9afba;
-    --ink-3: #6b7280;
-    --line: #2c3038;
-    --ok-bg: #12351f;
-    --bad-bg: #3f1520;
-    --shadow: none;
-    color-scheme: dark;
-  }
+/* Light is the default; dark only when chosen (see src/theme.ts). */
+:root[data-theme='dark'] {
+  --bg: #14161a;
+  --card: #1e2127;
+  --ink: #eef0f3;
+  --ink-2: #a9afba;
+  --ink-3: #6b7280;
+  --line: #2c3038;
+  --ok-bg: #12351f;
+  --bad-bg: #3f1520;
+  --shadow: none;
+  color-scheme: dark;
 }
 
 /* Accent derives from --h; re-derived wherever a subject sets its own hue. */
@@ -46,12 +45,10 @@
   --accent-soft: hsl(var(--h) 80% 94%);
   --accent-ink: hsl(var(--h) 70% 28%);
 }
-@media (prefers-color-scheme: dark) {
-  :root, [style*='--h'] {
-    --accent: hsl(var(--h) 65% 55%);
-    --accent-soft: hsl(var(--h) 35% 20%);
-    --accent-ink: hsl(var(--h) 80% 80%);
-  }
+[data-theme='dark'], [data-theme='dark'] [style*='--h'] {
+  --accent: hsl(var(--h) 65% 55%);
+  --accent-soft: hsl(var(--h) 35% 20%);
+  --accent-ink: hsl(var(--h) 80% 80%);
 }
 
 * { box-sizing: border-box; }

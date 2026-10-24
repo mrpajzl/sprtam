@@ -1,0 +1,28 @@
+import { useState } from 'preact/hooks'
+
+// Light by default; dark only when the user picks it. index.html applies the
+// saved choice before first paint, this keeps it in sync afterwards.
+export type Theme = 'light' | 'dark'
+
+const KEY = 'sprtam-theme'
+const BG: Record<Theme, string> = { light: '#f6f5f1', dark: '#14161a' }
+
+const read = (): Theme => { try { return localStorage.getItem(KEY) === 'dark' ? 'dark' : 'light' } catch { return 'light' } }
+
+function apply(t: Theme) {
+  const root = document.documentElement
+  if (t === 'dark') root.dataset.theme = 'dark'
+  else delete root.dataset.theme
+  document.querySelector<HTMLMetaElement>('meta[name=theme-color]')?.setAttribute('content', BG[t])
+}
+
+export function useTheme() {
+  const [theme, set] = useState(read)
+  const toggle = () => {
+    const t: Theme = theme === 'dark' ? 'light' : 'dark'
+    try { localStorage.setItem(KEY, t) } catch { /* private mode: still switch for this session */ }
+    apply(t)
+    set(t)
+  }
+  return [theme, toggle] as const
+}

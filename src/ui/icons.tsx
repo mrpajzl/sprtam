@@ -22,3 +22,5 @@ export const ILink = P('M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a
 export const ICopy = P('M9 9h11v11H9zM5 15H4V4h11v1')
 export const IShare = P('M12 3v12M7 8l5-5 5 5M5 14v6h14v-6')
 export const IPlay = P('M7 4l13 8-13 8z')
+export const ISun = P('M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4')
+export const IMoon = P('M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z')
