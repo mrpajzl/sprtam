@@ -33,7 +33,7 @@ npm run build            # typy + produkční build do dist/
 
 Pravidla pro psaní obsahu: [docs/CONTENT.md](docs/CONTENT.md).
 
-Pomocné skripty pro vývoj (potřebují běžící dev server na :5179 a Playwright Chromium): `scripts/shots.mjs` (snímky obrazovek), `scripts/flow.mjs` (průchod kvízem), `scripts/p2p-test.mjs` (spojení dvou prohlížečů), `scripts/code-test.mjs` (kód pokroku), `scripts/routing-test.mjs` (adresy a navigace proti produkčnímu buildu), `scripts/widget-sheet.mjs` (přehled widgetů).
+Pomocné skripty pro vývoj (potřebují běžící dev server na :5179 a Playwright Chromium): `scripts/shots.mjs` (snímky obrazovek), `scripts/flow.mjs` (průchod kvízem), `scripts/p2p-test.mjs` (spojení dvou prohlížečů), `scripts/code-test.mjs` (kód pokroku), `scripts/routing-test.mjs` (adresy a navigace proti produkčnímu buildu), `scripts/vocab-test.mjs` (slovíčka), `scripts/widget-sheet.mjs` (přehled widgetů).
 
 ## Nasazení
 

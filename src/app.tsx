@@ -11,7 +11,7 @@ import { Home } from './screens/Home'
 import { Search } from './screens/Search'
 import { SyncScreen } from './screens/Sync'
 import { MixScreen, QuizScreen, TopicScreen } from './screens/TopicScreen'
-import { LEVELS, VocabHome, VocabLevel, VocabSwipe } from './screens/Vocab'
+import { LEVELS, VocabHome, VocabLevel, VocabDrill } from './screens/Vocab'
 import type { Level } from './vocab/types'
 
 export function App() {
@@ -37,7 +37,7 @@ export function App() {
   if (a === 'sdilet') return <SyncScreen />
   if (a === 'slovicka') {
     const lvl = LEVELS.find((l) => l.id === b)?.id as Level | undefined
-    if (lvl && c) return <VocabSwipe level={lvl} group={c} />
+    if (lvl && c) return <VocabDrill level={lvl} group={c} />
     if (lvl) return <VocabLevel level={lvl} />
     return <VocabHome />
   }
