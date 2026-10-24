@@ -2,6 +2,7 @@ import { useState } from 'preact/hooks'
 import type { Block } from '../content/types'
 import { Inline } from '../ui/Inline'
 import { WidgetView } from '../widgets'
+import { Column } from '../widgets/column'
 
 export function Blocks({ blocks }: { blocks: Block[] }) {
   return <div class="blocks">{blocks.map((b, i) => <BlockView key={i} b={b} />)}</div>
@@ -28,7 +29,7 @@ function BlockView({ b }: { b: Block }) {
     case 'key': return <div class="key"><Inline text={b.text} /></div>
     case 'list': return <ul>{b.items.map((x, i) => <li key={i}><Inline text={x} /></li>)}</ul>
     case 'steps': return <Steps items={b.items} />
-    case 'example': return <Example q={b.q} a={b.a} />
+    case 'example': return <Example q={b.q} a={b.a} col={b.col} />
     case 'pic': return <div class="pic" role="img" aria-label={b.caption}>{b.items.join(' ')}{b.caption && <small>{b.caption}</small>}</div>
     case 'table': return (
       <div class="card table-wrap"><table>
@@ -50,12 +51,12 @@ function Steps({ items }: { items: string[] }) {
   )
 }
 
-function Example({ q, a }: { q: string; a: string }) {
+function Example({ q, a, col }: { q: string; a: string; col?: Extract<Block, { t: 'example' }>['col'] }) {
   const [open, setOpen] = useState(false)
   return (
     <div class="card example">
       <div class="q"><Inline text={q} /></div>
-      {open ? <div class="a"><Inline text={a} /></div> : <button class="reveal" onClick={() => setOpen(true)}>Ukázat řešení</button>}
+      {open ? <><div class="a"><Inline text={a} /></div>{col && <Column {...col} />}</> : <button class="reveal" onClick={() => setOpen(true)}>Ukázat řešení</button>}
     </div>
   )
 }

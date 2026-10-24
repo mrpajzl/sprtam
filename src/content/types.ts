@@ -22,7 +22,7 @@ export type Block =
   | { t: 'key'; text: string } // the one rule to remember, shown highlighted
   | { t: 'list'; items: string[] }
   | { t: 'steps'; items: string[] } // revealed one by one
-  | { t: 'example'; q: string; a: string } // worked example, answer revealed on tap
+  | { t: 'example'; q: string; a: string; col?: { a: number | string; b: number | string; op: '+' | '-' | '·' | ':' } } // worked example, answer revealed on tap; `col` adds the written calculation „pod sebou“
   | { t: 'table'; head: string[]; rows: string[][] }
   | { t: 'pic'; items: string[]; caption?: string } // row of emoji as a picture
   | Widget
