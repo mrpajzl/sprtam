@@ -23,30 +23,32 @@ export const GRADE_SHORT: Record<GradeId, string> = {
   s1: '1.', s2: '2.', s3: '3.', s4: '4.',
 }
 
+/** Key colours (see --k-* in styles.css). */
+export type KeyColor = 'orange' | 'blue' | 'yellow' | 'green' | 'lime' | 'teal' | 'purple' | 'pink' | 'red' | 'gray' | 'ink'
+
 export interface SubjectMeta {
   name: string
-  emoji: string
-  /** Hue used for the subject's accent colour. */
-  hue: number
+  /** Key colour; subjects in one grade never share one. */
+  c: KeyColor
 }
 
 export const SUBJECTS: Record<SubjectId, SubjectMeta> = {
-  cestina: { name: 'Čeština', emoji: '✏️', hue: 350 },
-  literatura: { name: 'Literatura', emoji: '📚', hue: 330 },
-  matematika: { name: 'Matematika', emoji: '➗', hue: 210 },
-  anglictina: { name: 'Angličtina', emoji: '🇬🇧', hue: 230 },
-  prvouka: { name: 'Prvouka', emoji: '🌱', hue: 130 },
-  prirodoveda: { name: 'Přírodověda', emoji: '🌿', hue: 140 },
-  vlastiveda: { name: 'Vlastivěda', emoji: '🏰', hue: 30 },
-  dejepis: { name: 'Dějepis', emoji: '🏛️', hue: 25 },
-  zemepis: { name: 'Zeměpis', emoji: '🌍', hue: 180 },
-  prirodopis: { name: 'Přírodopis', emoji: '🦋', hue: 120 },
-  biologie: { name: 'Biologie', emoji: '🧬', hue: 120 },
-  fyzika: { name: 'Fyzika', emoji: '⚡', hue: 260 },
-  chemie: { name: 'Chemie', emoji: '⚗️', hue: 290 },
-  obcanska: { name: 'Občanská výchova', emoji: '🤝', hue: 45 },
-  zsv: { name: 'Základy společenských věd', emoji: '⚖️', hue: 45 },
-  informatika: { name: 'Informatika', emoji: '💻', hue: 200 },
+  cestina: { name: 'Čeština', c: 'red' },
+  literatura: { name: 'Literatura', c: 'ink' },
+  matematika: { name: 'Matematika', c: 'blue' },
+  anglictina: { name: 'Angličtina', c: 'purple' },
+  prvouka: { name: 'Prvouka', c: 'green' },
+  prirodoveda: { name: 'Přírodověda', c: 'green' },
+  vlastiveda: { name: 'Vlastivěda', c: 'yellow' },
+  dejepis: { name: 'Dějepis', c: 'yellow' },
+  zemepis: { name: 'Zeměpis', c: 'teal' },
+  prirodopis: { name: 'Přírodopis', c: 'lime' },
+  biologie: { name: 'Biologie', c: 'lime' },
+  fyzika: { name: 'Fyzika', c: 'orange' },
+  chemie: { name: 'Chemie', c: 'pink' },
+  obcanska: { name: 'Občanská výchova', c: 'gray' },
+  zsv: { name: 'Základy společenských věd', c: 'gray' },
+  informatika: { name: 'Informatika', c: 'teal' },
 }
 
 /** Which subjects each grade has (follows RVP ZV and RVP G). */

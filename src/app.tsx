@@ -5,9 +5,11 @@ import { decodeProgress } from './progress/code'
 import { importProgress } from './progress/store'
 import { MODES, type ModeId } from './quiz/engine'
 import { go, useRoute } from './router'
-import { GradeScreen, Home, SubjectScreen } from './screens/Browse'
+import { GradeScreen, SubjectScreen } from './screens/Browse'
+import { Home } from './screens/Home'
+import { Search } from './screens/Search'
 import { SyncScreen } from './screens/Sync'
-import { QuizScreen, TopicScreen } from './screens/TopicScreen'
+import { MixScreen, QuizScreen, TopicScreen } from './screens/TopicScreen'
 import { LEVELS, VocabHome, VocabLevel, VocabSwipe } from './screens/Vocab'
 import type { Level } from './vocab/types'
 
@@ -15,6 +17,18 @@ export function App() {
   const r = useRoute()
   const [a, b, c, d, e] = r
 
+  // „/“ opens search from anywhere (except while typing).
+  useEffect(() => {
+    const on = (ev: KeyboardEvent) => {
+      const t = ev.target as HTMLElement
+      if (ev.key === '/' && !ev.metaKey && !ev.ctrlKey && !/^(INPUT|TEXTAREA)$/.test(t.tagName) && !t.isContentEditable) { ev.preventDefault(); go('/hledat') }
+    }
+    addEventListener('keydown', on)
+    return () => removeEventListener('keydown', on)
+  }, [])
+
+  if (a === 'hledat') return <Search />
+  if (a === 'mix') return <MixScreen />
   if (a === 'p' && b) return <ImportLink code={b} />
   if (a === 'spojit' && b) return <SyncScreen offer={b} />
   if (a === 'sdilet') return <SyncScreen />
@@ -44,5 +58,5 @@ function ImportLink({ code }: { code: string }) {
   useEffect(() => {
     decodeProgress(code).then((p) => { importProgress(p); history.replaceState(null, '', '#/'); go(p.g ? `/g/${p.g}` : '/') }, (e) => setErr(e.message))
   }, [code])
-  return <div class="page"><div class="empty"><div class="big">{err ? '⚠️' : '⏳'}</div>{err || 'Načítám pokrok…'}{err && <button class="btn" onClick={() => go('/')}>Domů</button>}</div></div>
+  return <div class="page"><div class="empty">{err || 'Načítám pokrok…'}{err && <button class="btn" onClick={() => go('/')}>Domů</button>}</div></div>
 }

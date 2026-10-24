@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { topicIndex } from './plugins/topic-index'
 
 export default defineConfig({
   plugins: [
     preact(),
+    topicIndex(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg', 'apple-touch-icon-180x180.png', 'favicon.ico'],
@@ -13,8 +15,8 @@ export default defineConfig({
         short_name: 'Šprtám',
         description: 'Opakování učiva ZŠ a SŠ',
         lang: 'cs',
-        theme_color: '#0891b2',
-        background_color: '#f6f5f1',
+        theme_color: '#ff5b14',
+        background_color: '#e9eaec',
         display: 'standalone',
         orientation: 'portrait',
         start_url: './',

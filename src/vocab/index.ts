@@ -12,3 +12,10 @@ export async function allWords(): Promise<string[]> {
   const sets = await Promise.all(Object.values(files).map((f) => f().then((m) => m.default)))
   return sets.flatMap((s) => s.groups.flatMap((g) => g.words.map((w) => w[1])))
 }
+
+export interface WordRef { cz: string; en: string; level: Level; group: number }
+
+let words: Promise<WordRef[]> | undefined
+/** All words with their level and group (for search). */
+export const loadWordRefs = () => (words ??= Promise.all(Object.values(files).map((f) => f().then((m) => m.default)))
+  .then((sets) => sets.flatMap((s) => s.groups.flatMap((g, group) => g.words.map(([cz, en]) => ({ cz, en, level: s.level, group }))))))

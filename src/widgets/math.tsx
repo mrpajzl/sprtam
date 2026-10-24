@@ -246,9 +246,9 @@ export function Pythagoras({ a: a0, b: b0 }: { a: number; b: number }) {
   return (
     <div class="w">
       <svg viewBox={`0 0 ${W} ${H}`} width="280">
-        <path d={`M${ox - A},${oy} h${A} v${A} h${-A} Z`} fill="hsl(var(--h) 80% 60% / 0.35)" />
-        <path d={`M${ox},${oy + A} h${B} v${B} h${-B} Z`} fill="hsl(var(--h) 80% 50% / 0.35)" />
-        <path d={sq} fill="hsl(var(--h) 80% 40% / 0.3)" />
+        <path d={`M${ox - A},${oy} h${A} v${A} h${-A} Z`} fill="color-mix(in oklch, var(--accent) 30%, transparent)" />
+        <path d={`M${ox},${oy + A} h${B} v${B} h${-B} Z`} fill="color-mix(in oklch, var(--accent) 45%, transparent)" />
+        <path d={sq} fill="color-mix(in oklch, var(--accent-ink) 35%, transparent)" />
         <path d={`M${P1} L${P2} L${P3} Z`} fill="var(--card)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round" />
         <text x={ox - A / 2} y={oy + A / 2 + 6} text-anchor="middle" font-weight="900" font-size="15" fill="var(--ink)">a²={a * a}</text>
         <text x={ox + B / 2} y={oy + A + B / 2 + 6} text-anchor="middle" font-weight="900" font-size="15" fill="var(--ink)">b²={b * b}</text>

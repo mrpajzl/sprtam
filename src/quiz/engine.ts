@@ -1,7 +1,7 @@
 import type { Question, Topic } from '../content/types'
 import { GENERATORS } from './generators'
 
-export type ModeId = 'kviz' | 'opakovani' | 'pisemka' | 'zkouseni' | 'test'
+export type ModeId = 'kviz' | 'opakovani' | 'pisemka' | 'zkouseni' | 'test' | 'mix'
 
 export interface Mode {
   id: ModeId
@@ -18,6 +18,7 @@ export const MODES: Record<ModeId, Mode> = {
   pisemka: { id: 'pisemka', name: 'Písemka', hint: '10 otázek, známka', instant: false, count: 10 },
   zkouseni: { id: 'zkouseni', name: 'Zkoušení', hint: 'odpovídej nahlas', instant: true, count: 8 },
   test: { id: 'test', name: 'Test', hint: 'celý předmět, 20 otázek', instant: false, count: 20 },
+  mix: { id: 'mix', name: 'Mix', hint: 'připnutá témata', instant: true, count: 15 },
 }
 
 export interface Item { q: Question; topic: string }
@@ -38,7 +39,7 @@ export function build(mode: ModeId, topics: { key: string; t: Topic }[]): Item[]
   }
 
   const closed = all((q) => q.t !== 'open')
-  if (mode === 'test') {
+  if (mode === 'test' || mode === 'mix') {
     // Spread evenly across topics.
     const per = Math.max(1, Math.ceil(m.count / topics.length))
     const picked = topics.flatMap(({ key }) => shuffle(closed.filter((i) => i.topic === key)).slice(0, per))

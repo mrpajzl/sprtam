@@ -1,18 +1,21 @@
 import { useEffect, useMemo, useState } from 'preact/hooks'
-import { SUBJECTS } from '../content/curriculum'
+import { SUBJECTS, type KeyColor } from '../content/curriculum'
 import { loadSubject, topicKey } from '../content'
-import type { GradeId, SubjectId } from '../content/types'
+import { loadIndex, refFor } from '../content/library'
+import type { GradeId, SubjectId, Topic } from '../content/types'
 import { MODES, type ModeId } from '../quiz/engine'
-import { preferExplanation, useProgress } from '../progress/store'
-import { go, query } from '../router'
+import { getProgress, isPinned, pinnedKeys, preferExplanation, togglePin, useProgress } from '../progress/store'
+import { back, go, query } from '../router'
 import { Bar } from '../ui/Bar'
-import { IBolt, IBulb, IMic, IPencil, IRepeat } from '../ui/icons'
+import { keyStyle, subjectStyle } from '../ui/glyphs'
+import { IBolt, IBulb, IMic, IPencil, IPin, IRepeat } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
 import { Blocks } from './Blocks'
-import { hue } from './Browse'
 import { Quiz } from './Quiz'
 
-const MODE_ICON: Partial<Record<ModeId, () => preact.JSX.Element>> = { kviz: IBolt, opakovani: IRepeat, pisemka: IPencil, zkouseni: IMic }
+const MODE_KEY: Partial<Record<ModeId, [() => preact.JSX.Element, KeyColor]>> = {
+  kviz: [IBolt, 'orange'], opakovani: [IRepeat, 'blue'], pisemka: [IPencil, 'yellow'], zkouseni: [IMic, 'green'],
+}
 
 export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string }) {
   const subj = useAsync(() => loadSubject(g, s), [g, s])
@@ -23,14 +26,14 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
   useEffect(() => setEx(initial()), [key])
   const topic = subj?.topics.find((t) => t.id === id)
   if (subj === undefined) return <div class="page" />
-  if (!topic) return <div class="page"><Bar title={SUBJECTS[s].name} /><div class="empty"><div class="big">🔍</div>Téma nenalezeno.</div></div>
+  if (!topic) return <div class="page"><Bar title={SUBJECTS[s].name} /><div class="empty">Téma nenalezeno.</div></div>
 
   const switchTo = (e: 0 | 1) => { setEx(e); preferExplanation(key, e); scrollTo({ top: 0, behavior: 'smooth' }) }
   const other = (1 - ex) as 0 | 1
 
   return (
-    <div class="page" style={hue(s)}>
-      <Bar title={`${topic.emoji} ${topic.title}`} onBack={() => go(`/g/${g}/${s}`)} />
+    <div class="page" style={subjectStyle(s)}>
+      <Bar title={`${topic.emoji} ${topic.title}`} onBack={() => go(`/g/${g}/${s}`)} right={<PinButton k={key} />} />
       <div class="seg" role="tablist">
         {topic.ex.map((x, i) => <button key={i} role="tab" aria-selected={ex === i} class={ex === i ? 'on' : ''} onClick={() => switchTo(i as 0 | 1)}>{x.title}</button>)}
       </div>
@@ -38,10 +41,10 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
       <button class="other" onClick={() => switchTo(other)}><IBulb />Nerozumím – vysvětli to jinak: {topic.ex[other].title}</button>
       <div class="modes">
         {(['kviz', 'opakovani', 'pisemka', 'zkouseni'] as ModeId[]).map((m) => {
-          const I = MODE_ICON[m]!
+          const [I, c] = MODE_KEY[m]!
           return (
             <button key={m} class="mode" onClick={() => go(`/g/${g}/${s}/${id}/${m}`)}>
-              <span class="ic"><I /></span><b>{MODES[m].name}</b><small>{MODES[m].hint}</small>
+              <span class="skey m" style={keyStyle(c)}><I /></span><b>{MODES[m].name}</b><small>{MODES[m].hint}</small>
             </button>
           )
         })}
@@ -54,5 +57,27 @@ export function QuizScreen({ g, s, id, mode }: { g: GradeId; s: SubjectId; id: s
   const subj = useAsync(() => loadSubject(g, s), [g, s])
   const topics = useMemo(() => subj && (id === '~test' ? subj.topics : subj.topics.filter((t) => t.id === id)).map((t) => ({ key: topicKey(g, s, t), t })), [subj, id])
   if (!topics) return <div class="page" />
-  return <div style={hue(s)}><Quiz key={`${id}/${mode}`} mode={mode} topics={topics} /></div>
+  return <div style={subjectStyle(s)}><Quiz key={`${id}/${mode}`} mode={mode} topics={topics} /></div>
+}
+
+export function PinButton({ k }: { k: string }) {
+  const on = isPinned(useProgress(), k)
+  return (
+    <button class={`icon-btn pin ${on ? 'on' : ''}`} onClick={() => togglePin(k)} aria-pressed={on} aria-label={on ? 'Odepnout' : 'Připnout k opakování'}>
+      <IPin on={on} />
+    </button>
+  )
+}
+
+/** One round across all pinned topics. */
+export function MixScreen() {
+  const topics = useAsync(async () => {
+    await loadIndex()
+    const refs = pinnedKeys(getProgress()).flatMap((k) => refFor(k) ?? [])
+    const subjects = await Promise.all(refs.map((r) => loadSubject(r.g, r.s)))
+    return refs.flatMap((r, i) => { const t = subjects[i].topics.find((x) => x.id === r.id); return t ? [{ key: r.key, t }] : [] as { key: string; t: Topic }[] })
+  }, [])
+  if (topics === undefined) return <div class="page" />
+  if (!topics?.length) return <div class="page"><Bar title="Mix" /><div class="empty">Nejdřív si připni nějaké téma.<button class="btn" onClick={back}>Zpět</button></div></div>
+  return <Quiz mode="mix" topics={topics} />
 }

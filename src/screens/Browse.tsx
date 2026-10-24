@@ -1,45 +1,18 @@
 import { useEffect } from 'preact/hooks'
-import { GRADE_NAME, GRADE_SUBJECTS, STAGES, SUBJECTS } from '../content/curriculum'
+import { GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } from '../content/curriculum'
 import { hasSubject, loadSubject, topicKey } from '../content'
 import type { GradeId, SubjectId, Subject } from '../content/types'
-import { setGrade, stars, useProgress } from '../progress/store'
+import { isPinned, setGrade, stars, useProgress } from '../progress/store'
 import { go } from '../router'
 import { Bar, Stars } from '../ui/Bar'
-import { IMoon, ISun, ISync, ITest } from '../ui/icons'
+import { GLYPHS, keyStyle, subjectStyle } from '../ui/glyphs'
+import { IPin, ISearch, ITest } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
-import { useTheme } from '../theme'
 
-export const hue = (s: SubjectId) => ({ '--h': SUBJECTS[s].hue }) as Record<string, number>
-
-export function Home() {
-  const p = useProgress()
-  const [theme, toggleTheme] = useTheme()
-  const dark = theme === 'dark'
-  return (
-    <div class="page">
-      <header class="bar">
-        <div class="brand"><img src="./icon.svg" alt="" />Šprtám</div>
-        <span style={{ flex: 1 }} />
-        <button class="icon-btn" onClick={toggleTheme} aria-label={dark ? 'Světlý režim' : 'Tmavý režim'} aria-pressed={dark}>{dark ? <ISun /> : <IMoon />}</button>
-        <button class="icon-btn" onClick={() => go('/sdilet')} aria-label="Přenést pokrok"><ISync /></button>
-      </header>
-      {STAGES.map((s) => (
-        <section key={s.id} class="stage" style={{ '--h': { zs1: 150, zs2: 205, ss: 265 }[s.id] }}>
-          <h2>{s.name}</h2>
-          <div class="grades">
-            {s.grades.map((g) => (
-              <button key={g} class={`grade ${p.g === g ? 'on' : ''}`} onClick={() => go(`/g/${g}`)} aria-label={GRADE_NAME[g]}>{GRADE_NAME[g].split('.')[0]}</button>
-            ))}
-          </div>
-        </section>
-      ))}
-      <section class="stage">
-        <button class="tile wide" style={{ '--h': 230 }} onClick={() => go('/slovicka')}>
-          <span class="em">🇬🇧</span><b>Anglická slovíčka</b>
-        </button>
-      </section>
-    </div>
-  )
+/** Segmented LED meter, 0–100. */
+export function Meter({ pct, n = 10 }: { pct: number; n?: number }) {
+  const lit = Math.round((pct / 100) * n)
+  return <span class="seg-meter" role="img" aria-label={`${Math.round(pct)} %`}>{Array.from({ length: n }, (_, i) => <i key={i} class={i < lit ? 'on' : ''} />)}</span>
 }
 
 /** Average stars → 0–100 for a subject's meter. */
@@ -53,11 +26,12 @@ function useSubjectPct(g: GradeId, s: SubjectId, subj: Subject | undefined | nul
 function SubjectTile({ g, s }: { g: GradeId; s: SubjectId }) {
   const subj = useAsync(() => loadSubject(g, s), [g, s])
   const pct = useSubjectPct(g, s, subj)
+  const G = GLYPHS[s]
   return (
-    <button class="tile" style={hue(s)} onClick={() => go(`/g/${g}/${s}`)}>
-      <span class="em">{SUBJECTS[s].emoji}</span>
+    <button class="tile" style={subjectStyle(s)} onClick={() => go(`/g/${g}/${s}`)}>
+      <span class="tile-face"><G /></span>
       <b>{SUBJECTS[s].name}</b>
-      <div class="meter"><i style={{ width: `${pct}%` }} /></div>
+      <Meter pct={pct} />
     </button>
   )
 }
@@ -67,15 +41,15 @@ export function GradeScreen({ g }: { g: GradeId }) {
   const subjects = GRADE_SUBJECTS[g].filter((s) => hasSubject(g, s))
   return (
     <div class="page">
-      <Bar title={GRADE_NAME[g]} onBack={() => go('/')} />
+      <Bar title={GRADE_NAME[g]} onBack={() => go('/')} right={<button class="icon-btn" onClick={() => go('/hledat')} aria-label="Hledat"><ISearch /></button>} />
       {subjects.length ? (
         <div class="tiles">
           {subjects.map((s) => <SubjectTile key={s} g={g} s={s} />)}
           {GRADE_SUBJECTS[g].includes('anglictina') && (
-            <button class="tile wide" style={{ '--h': 230 }} onClick={() => go('/slovicka')}><span class="em">🃏</span><b>Slovíčka</b></button>
+            <button class="tile" style={keyStyle('purple')} onClick={() => go('/slovicka')}><span class="tile-face"><b class="aa">Aa</b></span><b>Slovíčka</b></button>
           )}
         </div>
-      ) : <div class="empty"><div class="big">🚧</div>Připravujeme.</div>}
+      ) : <div class="empty">Připravujeme.</div>}
     </div>
   )
 }
@@ -84,27 +58,29 @@ export function SubjectScreen({ g, s }: { g: GradeId; s: SubjectId }) {
   const subj = useAsync(() => loadSubject(g, s), [g, s])
   const p = useProgress()
   return (
-    <div class="page" style={hue(s)}>
+    <div class="page" style={subjectStyle(s)}>
       <Bar title={SUBJECTS[s].name} onBack={() => go(`/g/${g}`)} />
-      {subj === null && <div class="empty"><div class="big">🚧</div>Připravujeme.</div>}
+      {subj === null && <div class="empty">Připravujeme.</div>}
       {subj && (
         <>
           <div class="list">
-            {subj.topics.map((t, i) => (
-              <button key={t.id} class="row" onClick={() => go(`/g/${g}/${s}/${t.id}`)}>
-                <span class="num">{i + 1}</span>
-                <span class="em">{t.emoji}</span>
-                <b>{t.title}</b>
-                <Stars n={stars(p.t[topicKey(g, s, t)]?.s)} />
-              </button>
-            ))}
+            {subj.topics.map((t, i) => {
+              const key = topicKey(g, s, t)
+              return (
+                <button key={t.id} class="row" onClick={() => go(`/g/${g}/${s}/${t.id}`)}>
+                  <span class="num">{String(i + 1).padStart(2, '0')}</span>
+                  <span class="em">{t.emoji}</span>
+                  <b>{t.title}</b>
+                  {isPinned(p, key) && <span class="pinned" aria-label="Připnuté"><IPin on /></span>}
+                  <Stars n={stars(p.t[key]?.s)} />
+                </button>
+              )
+            })}
           </div>
-          <div class="modes" style={{ gridTemplateColumns: '1fr' }}>
-            <button class="mode" style={{ flexDirection: 'row', alignItems: 'center' }} onClick={() => go(`/g/${g}/${s}/~test`)}>
-              <span class="ic"><ITest /></span>
-              <span style={{ display: 'grid', gap: 2 }}><b>Test</b><small style={{ margin: 0 }}>celý předmět · 20 otázek</small></span>
-            </button>
-          </div>
+          <button class="row test-key" onClick={() => go(`/g/${g}/${s}/~test`)}>
+            <span class="skey m"><ITest /></span>
+            <span class="txt"><b>Test</b><small>celý předmět · 20 otázek</small></span>
+          </button>
         </>
       )}
     </div>
