@@ -66,6 +66,8 @@ export type Widget =
   | { t: 'w'; w: 'parts'; p: { words: { parts: { text: string; label: string }[] }[] } }
   /** Fill the gap: tap the correct option, e.g. b_t → y/i. */
   | { t: 'w'; w: 'gap'; p: { items: { before: string; after: string; options: string[]; a: number }[] } }
+  /** Written arithmetic „pod sebou“ solved step by step: +, − (Czech doplňování), · (also multi-digit), : (Czech layout). + and − accept decimals ('12,5'). */
+  | { t: 'w'; w: 'column'; p: { a: number | string; b: number | string; op: '+' | '-' | '·' | ':' } }
   /** Bar chart for comparing values (population, temperatures…). */
   | { t: 'w'; w: 'bars'; p: { unit?: string; items: { label: string; value: number }[] } }
 
@@ -73,7 +75,7 @@ export type Question =
   | { t: 'choice'; q: string; o: string[]; a: number; why?: string }
   | { t: 'tf'; q: string; a: boolean; why?: string }
   /** Short typed answer; any of `a` is accepted (case/diacritics/space-insensitive for text, numeric compare for numbers). */
-  | { t: 'input'; q: string; a: string[]; why?: string }
+  | { t: 'input'; q: string; a: string[]; why?: string; col?: { a: number | string; b: number | string; op: '+' | '-' | '·' | ':' } }
   /** Put items into the given (correct) order. */
   | { t: 'order'; q: string; items: string[]; why?: string }
   /** Match left to right; pairs are given correctly. */

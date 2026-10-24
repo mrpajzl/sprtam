@@ -7,7 +7,7 @@ import { GENERATOR_NAMES } from '../src/quiz/generators'
 import { GRADE_SUBJECTS } from '../src/content/curriculum'
 import type { VocabSet } from '../src/vocab/types'
 
-const WIDGETS = ['counter', 'numberline', 'fraction', 'placevalue', 'clock', 'multiply', 'balance', 'angle', 'pythagoras', 'linear', 'quadratic', 'percent', 'shape', 'timeline', 'flip', 'sort', 'cycle', 'parts', 'gap', 'bars']
+const WIDGETS = ['counter', 'numberline', 'fraction', 'placevalue', 'clock', 'multiply', 'balance', 'angle', 'pythagoras', 'linear', 'quadratic', 'percent', 'shape', 'timeline', 'flip', 'sort', 'cycle', 'parts', 'gap', 'bars', 'column']
 const filter = process.argv[2] ?? ''
 const root = join(import.meta.dirname, '..', 'src')
 const errors: string[] = []
@@ -35,6 +35,14 @@ function checkBlock(b: Block, where: string) {
       if (b.w === 'gap' && !p.items.every((i: any) => i.a >= 0 && i.a < i.options.length)) e('gap answer out of range')
       if (b.w === 'fraction' && !(p.d > 0 && p.n >= 0)) e('bad fraction')
       if (b.w === 'flip' && !p.cards?.length) e('flip without cards')
+      if (b.w === 'column') {
+        const num = (v: unknown) => String(v).replace(/\s/g, '')
+        if (!['+', '-', '·', ':'].includes(p.op)) e('column op must be + - · :')
+        if (!/^\d+(,\d+)?$/.test(num(p.a)) || !/^\d+(,\d+)?$/.test(num(p.b))) e('column a/b must be non-negative numbers (decimal comma)')
+        if ((p.op === '·' || p.op === ':') && (/,/.test(num(p.a)) || /,/.test(num(p.b)))) e('column · and : need whole numbers')
+        if (p.op === '-' && Number(num(p.a).replace(',', '.')) < Number(num(p.b).replace(',', '.'))) e('column − needs a ≥ b')
+        if (p.op === ':' && Number(num(p.b)) === 0) e('column : by zero')
+      }
       break
     }
     default: e(`unknown block ${(b as any).t}`)
@@ -51,7 +59,15 @@ function checkQ(q: Question, where: string) {
       if (new Set(q.o).size !== q.o.length) e('duplicate options')
       break
     case 'tf': if (typeof q.a !== 'boolean') e('tf needs boolean'); break
-    case 'input': if (!Array.isArray(q.a) || !q.a.length) e('input needs a: string[]'); break
+    case 'input':
+      if (!Array.isArray(q.a) || !q.a.length) e('input needs a: string[]')
+      if (q.col) {
+        const n = (v: unknown) => Number(String(v).replace(/\s/g, '').replace(',', '.'))
+        const { a: x, b: y, op } = q.col
+        const want = op === '+' ? n(x) + n(y) : op === '-' ? n(x) - n(y) : op === '·' ? n(x) * n(y) : Math.floor(n(x) / n(y))
+        if (!q.a.some((v) => Math.abs(n(v) - want) < 1e-9)) e(`col result ${want} not among answers`)
+      }
+      break
     case 'order': if (q.items.length < 3) e('order needs ≥ 3 items'); break
     case 'pair': if (q.pairs.length < 3) e('pair needs ≥ 3 pairs'); break
     case 'open': if (!q.a) e('open needs a'); break

@@ -3,6 +3,7 @@ import type { Question } from '../content/types'
 import { Inline } from '../ui/Inline'
 import { IDown, IUp } from '../ui/icons'
 import { checkInput } from './engine'
+import { ColumnProblem } from '../widgets/column'
 
 const shuffle = <T,>(xs: T[]) => xs.map((x) => [Math.random(), x] as const).sort((a, b) => a[0] - b[0]).map((x) => x[1])
 
@@ -16,6 +17,7 @@ export function QuestionView({ q, reveal, strict = true, onAnswer }: { q: Questi
   return (
     <div>
       <h2 class="question"><Inline text={q.q} /></h2>
+      {q.t === 'input' && q.col && <ColumnProblem {...q.col} />}
       {q.t === 'choice' && <Choice q={q} done={done} reveal={reveal} answer={answer} />}
       {q.t === 'tf' && <TrueFalse q={q} done={done} reveal={reveal} answer={answer} />}
       {q.t === 'input' && <Input q={q} done={done} reveal={reveal} answer={answer} strict={strict} />}
