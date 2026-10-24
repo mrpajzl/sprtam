@@ -20,7 +20,9 @@ function walk(dir: string): string[] {
 function checkBlock(b: Block, where: string) {
   const e = (m: string) => errors.push(`${where}: ${m}`)
   switch (b.t) {
-    case 'p': case 'key': if (!b.text) e('empty text'); break
+    case 'h': case 'p': case 'key': if (!b.text) e('empty text'); break
+    case 'term': if (!b.term || !b.def) e('term needs term and def'); break
+    case 'mistake': if (!b.wrong || !b.right || !b.why) e('mistake needs wrong, right and why'); break
     case 'list': case 'steps': if (!b.items?.length) e('empty items'); break
     case 'example': if (!b.q || !b.a) e('example needs q and a'); break
     case 'table': if (!b.rows?.every((r) => r.length === b.head.length)) e('table row width != head'); break
@@ -74,6 +76,17 @@ for (const file of walk(join(root, 'content', 'data')).filter((f) => f.includes(
     if (!t.title || !t.emoji) errors.push(`${w}: title/emoji missing`)
     if (t.ex?.length !== 2) errors.push(`${w}: needs exactly 2 explanations`)
     t.ex?.forEach((x, i) => { if (!x.title || !x.blocks.length) errors.push(`${w} ex${i}: empty`); x.blocks.forEach((b, j) => checkBlock(b, `${w} ex${i}[${j}]`)) })
+    // Depth: every explanation must stand on its own and start from zero (docs/CONTENT.md).
+    t.ex?.forEach((x, i) => {
+      const e = (m: string) => errors.push(`${w} ex${i}: ${m}`)
+      const has = (k: string) => x.blocks.some((b) => b.t === k)
+      if (x.blocks.length < 8) e(`too shallow (${x.blocks.length} blocks, need ≥ 8)`)
+      if (x.blocks[0]?.t !== 'h' || x.blocks[1]?.t !== 'p') e('must start with h "O čem to je" + p')
+      if (!has('term')) e('no term block – new terms must be explained')
+      if (!has('key')) e('no key summary')
+      if (!has('example') && !has('steps') && !has('w')) e('needs an example, steps or a widget')
+    })
+    if (!t.ex?.some((x) => x.blocks.some((b) => b.t === 'mistake'))) errors.push(`${w}: needs a mistake block`)
     if (t.gen && !GENERATOR_NAMES.includes(t.gen)) errors.push(`${w}: unknown gen ${t.gen}`)
     if ((t.qs?.length ?? 0) < 8) errors.push(`${w}: needs ≥ 8 questions (has ${t.qs?.length ?? 0})`)
     if (!t.qs?.some((q) => q.t === 'open')) errors.push(`${w}: needs ≥ 1 open question`)

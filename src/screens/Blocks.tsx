@@ -9,7 +9,22 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
 
 function BlockView({ b }: { b: Block }) {
   switch (b.t) {
+    case 'h': return <h3 class="bh"><Inline text={b.text} /></h3>
     case 'p': return <p><Inline text={b.text} /></p>
+    case 'term': return (
+      <div class="term">
+        <b><Inline text={b.term} /></b>
+        <span><Inline text={b.def} /></span>
+        {b.ex && <small><Inline text={b.ex} /></small>}
+      </div>
+    )
+    case 'mistake': return (
+      <div class="card mistake">
+        <div class="wrong"><span>✗</span><span><Inline text={b.wrong} /></span></div>
+        <div class="right"><span>✓</span><span><Inline text={b.right} /></span></div>
+        <p><Inline text={b.why} /></p>
+      </div>
+    )
     case 'key': return <div class="key"><Inline text={b.text} /></div>
     case 'list': return <ul>{b.items.map((x, i) => <li key={i}><Inline text={x} /></li>)}</ul>
     case 'steps': return <Steps items={b.items} />
