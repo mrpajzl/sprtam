@@ -15,10 +15,11 @@ function read(): string[] {
   return parse(location.pathname)
 }
 
-// Old links used hash routing (`/#/g/z5`): move them to the real path.
-if (location.hash.startsWith('#/') && !PRIVATE.test(location.hash)) {
-  history.replaceState(history.state, '', location.hash.slice(1) || '/')
+// Old links used hash routing (`/#/g/z5`): move them to the real path (on load and when one is followed later).
+function fromLegacyHash() {
+  if (location.hash.startsWith('#/') && !PRIVATE.test(location.hash)) history.replaceState(history.state, '', location.hash.slice(1) || '/')
 }
+fromLegacyHash()
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
 
 interface State { i: number; y?: number }
@@ -29,14 +30,16 @@ export function useRoute(): string[] {
   const [parts, setParts] = useState(read)
   useEffect(() => {
     const on = (e: Event) => {
+      fromLegacyHash()
       setParts(read())
       // Back/forward: return to where the user was once the screen has rendered.
       const y = e.type === 'popstate' ? state().y ?? 0 : 0
       requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, y)))
     }
     addEventListener('popstate', on)
+    addEventListener('hashchange', on)
     addEventListener(NAV, on)
-    return () => { removeEventListener('popstate', on); removeEventListener(NAV, on) }
+    return () => { removeEventListener('popstate', on); removeEventListener('hashchange', on); removeEventListener(NAV, on) }
   }, [])
   return parts
 }
