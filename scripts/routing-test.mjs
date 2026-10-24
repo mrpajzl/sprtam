@@ -15,7 +15,7 @@ const path = () => p.evaluate(() => location.pathname + location.search + locati
 await p.goto(`${BASE}/g/z5/matematika/zlomky`)
 ok(await p.locator('.seg').count() > 0, 'topic opened directly renders the app screen')
 ok((await p.title()).startsWith('Zlomky – Matematika, 5. třída'), `topic title: ${await p.title()}`)
-ok(await p.locator('link[rel=canonical]').getAttribute('href') === 'https://sprtam.ondrejzraly.cz/g/z5/matematika/zlomky', 'canonical')
+ok(await p.locator('link[rel=canonical]').getAttribute('href') === 'https://sprtam.cz/g/z5/matematika/zlomky', 'canonical')
 
 // Bar back on a directly opened page goes one level up (not out of the app).
 await p.click('.bar .icon-btn')

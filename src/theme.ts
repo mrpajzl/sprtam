@@ -9,6 +9,11 @@ const BG: Record<Theme, string> = { light: '#e6e7e9', dark: '#111214' }
 
 const read = (): Theme => { try { return localStorage.getItem(KEY) === 'dark' ? 'dark' : 'light' } catch { return 'light' } }
 
+export function setTheme(t: Theme) {
+  try { localStorage.setItem(KEY, t) } catch { /* private mode */ }
+  apply(t)
+}
+
 function apply(t: Theme) {
   const root = document.documentElement
   if (t === 'dark') root.dataset.theme = 'dark'
@@ -20,8 +25,7 @@ export function useTheme() {
   const [theme, set] = useState(read)
   const toggle = () => {
     const t: Theme = theme === 'dark' ? 'light' : 'dark'
-    try { localStorage.setItem(KEY, t) } catch { /* private mode: still switch for this session */ }
-    apply(t)
+    setTheme(t)
     set(t)
   }
   return [theme, toggle] as const

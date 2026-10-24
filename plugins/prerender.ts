@@ -14,7 +14,7 @@ import type { VocabSet } from '../src/vocab/types'
 // plus app.html (empty shell for the remaining in-app routes), sitemap.xml and robots.txt.
 // The markup uses the app's own classes, so it looks like the screen the app then renders over it.
 
-const SITE = (process.env.SITE_URL ?? 'https://sprtam.ondrejzraly.cz').replace(/\/$/, '')
+const SITE = (process.env.SITE_URL ?? 'https://sprtam.cz').replace(/\/$/, '')
 const root = join(import.meta.dirname, '..')
 const src = (f: string) => pathToFileURL(join(root, 'src', f)).href
 

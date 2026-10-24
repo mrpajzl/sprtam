@@ -4,9 +4,10 @@ import { useEffect, useState } from 'preact/hooks'
 // Path routing (History API): every screen has a real, shareable URL that the server
 // answers with a prerendered page (see plugins/prerender.ts).
 // Two routes stay in the #fragment on purpose, because the fragment is never sent to a server:
-// `#/p/<code>` (progress code) and `#/spojit/<offer>` (device pairing).
+// `#/p/<code>` (progress code), `#/spojit/<offer>` (device pairing) and `#/presun/<code>` (progress
+// carried over from the old domain, public/move.js).
 
-const PRIVATE = /^#\/(p|spojit)\//
+const PRIVATE = /^#\/(p|spojit|presun)\//
 
 const parse = (path: string) => path.split('?')[0].split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x) } catch { return x } })
 

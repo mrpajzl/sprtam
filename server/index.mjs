@@ -9,6 +9,9 @@ const DIST = process.env.DIST ?? join(import.meta.dirname, '..', 'dist')
 const DATA = process.env.DATA_DIR ?? join(import.meta.dirname, '..', 'data')
 const STATS_TOKEN = process.env.STATS_TOKEN ?? ''
 const FILE = join(DATA, 'stats.json')
+// The app moved to sprtam.cz. These hosts still reach this server and send everyone over (see below).
+const CANONICAL = 'https://sprtam.cz'
+const LEGACY = new Set((process.env.LEGACY_HOSTS ?? 'sprtam.ondrejzraly.cz,www.sprtam.cz').split(','))
 
 const isFile = (f) => stat(f).then((s) => s.isFile(), () => false)
 const page = (...parts) => isFile(join(DIST, ...parts, 'index.html'))
@@ -29,6 +32,9 @@ async function isAppRoute(path) {
 // a script that drops the old service worker and reloads once into the current version.
 // Only for the page's own script loads (Sec-Fetch-Dest: script), never for a service worker filling its cache.
 const STALE = `${await readFile(join(DIST, 'boot-check.js'), 'utf8').catch(() => '')}\n;window.sprtamHeal && sprtamHeal()`
+
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
+const movePage = (to) => `<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Šprtám se přestěhoval</title><link rel="canonical" href="${esc(to)}"><script src="/move.js"></script></head><body style="font-family:system-ui,sans-serif;padding:2rem"><p>Šprtám se přestěhoval na <a href="${esc(to)}">sprtam.cz</a>…</p></body></html>`
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.json': 'application/json', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' }
 const SECURITY = {
@@ -64,6 +70,22 @@ createServer(async (req, res) => {
     return res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify(stats))
   }
   if (url.pathname === '/healthz') return res.writeHead(200).end('ok')
+
+  const host = (req.headers.host ?? '').replace(/:\d+$/, '').toLowerCase()
+  if (LEGACY.has(host)) {
+    // A person's browser loading a page gets public/move.js, which carries their progress (localStorage, bound
+    // to this domain) to the new one. Everyone else (search engines, links to files) gets a permanent redirect.
+    // Browsers tell themselves apart by sending Sec-Fetch-Dest; an old service worker re-fetching the page sends
+    // it too, though not as "document".
+    // Scripts and the service worker are still served here, so old open pages and installed apps keep working
+    // until they reload into move.js. www.sprtam.cz never served the app, so it has nothing to carry.
+    const page = !extname(url.pathname) || url.pathname.endsWith('.html')
+    const to = CANONICAL + url.pathname + url.search
+    if (page && host !== 'www.sprtam.cz' && req.headers['sec-fetch-dest']) {
+      return res.writeHead(200, { ...SECURITY, 'Content-Type': TYPES['.html'], 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' }).end(movePage(to))
+    }
+    if (page || /\.(xml|txt|webmanifest)$/.test(url.pathname)) return res.writeHead(301, { Location: to }).end()
+  }
 
   // Pages: /g/z5/matematika → dist/g/z5/matematika/index.html (prerendered, see plugins/prerender.ts).
   if (url.pathname.length > 1 && url.pathname.endsWith('/')) return res.writeHead(301, { Location: url.pathname.replace(/\/+$/, '') + url.search }).end()

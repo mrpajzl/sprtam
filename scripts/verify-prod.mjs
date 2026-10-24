@@ -2,7 +2,7 @@
 import { chromium } from 'playwright-core'
 import { readdirSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
-const base = process.argv[2] ?? 'https://sprtam.ondrejzraly.cz/'
+const base = process.argv[2] ?? 'https://sprtam.cz/'
 const exe = process.env.HOME + '/Library/Caches/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'
 const counts = JSON.parse(execFileSync('npx', ['tsx', '-e', `
 import { readdirSync } from 'node:fs'
