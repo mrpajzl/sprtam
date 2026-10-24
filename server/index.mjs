@@ -24,6 +24,11 @@ async function isAppRoute(path) {
   return false
 }
 
+// A page from an older deploy (kept open, or served by an old service worker) asks for
+// hashed chunks that no longer exist. Instead of a 404 that leaves the app dead, answer with
+// a script that drops the old service worker and reloads once into the current version.
+const STALE = `try{if(!sessionStorage.getItem('sprtam-stale')){sessionStorage.setItem('sprtam-stale','1');Promise.resolve(navigator.serviceWorker&&navigator.serviceWorker.getRegistrations()).then(function(r){return Promise.all((r||[]).map(function(x){return x.unregister()}))}).finally(function(){location.reload()})}}catch(e){location.reload()}`
+
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.json': 'application/json', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' }
 const SECURITY = {
   'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; media-src 'self' blob:; worker-src 'self' blob:",
@@ -68,6 +73,7 @@ createServer(async (req, res) => {
   if (!file.startsWith(DIST)) return res.writeHead(404).end()
   if (!(await isFile(file))) {
     if (await isFile(join(file, 'index.html'))) file = join(file, 'index.html')
+    else if (/\/assets\/[^/]+\.js$/.test(path)) return res.writeHead(200, { ...SECURITY, 'Content-Type': 'text/javascript', 'Cache-Control': 'no-store' }).end(STALE)
     else if (extname(path)) return res.writeHead(404, SECURITY).end()
     else {
       // In-app screens without their own page (quiz, search…) get the empty shell; anything else is a 404.
