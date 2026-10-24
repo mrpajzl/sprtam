@@ -7,12 +7,13 @@ Opakování učiva základní a střední školy jako PWA. Bez účtů, bez rekl
 - **Stupeň → třída → předmět → téma**, obsah podle RVP ZV a RVP G (`src/content/data/<třída>/<předmět>.ts`).
 - Každé téma má **dvě různá vysvětlení** („Nerozumím – vysvětli to jinak“) s interaktivními widgety.
 - Režimy: **Rychlý kvíz**, **Opakování** (chyby se vracejí, dokud to neumíš), **Písemka** (známka 1–5), **Zkoušení** (ústní otázky, sebehodnocení) a **Test** z celého předmětu.
-- **Anglická slovíčka** podle úrovně A1–C1: „Jak se řekne ‚pták‘?“ → swipe doprava = správně, doleva = špatně. Slova se opakují podle Leitnerova systému.
+- **Anglická slovíčka** podle úrovně A1–C1: „Jak se řekne ‚pták‘?“ Nová slova se vybírají ze tří podobných (bird / bard / parrot), slova, která už žák umí (Leitnerova přihrádka ≥ 2), se píšou s nápovědou prvního písmene (překlep o jedno písmeno projde). Chybné slovo se ve stejném kole vrátí o tři karty později k napsání. Výslovnost se přehraje po odpovědi. Slova se opakují podle Leitnerova systému.
 - **Hledání v celé databázi** (`/` nebo lupa): všechna témata všech ročníků podle názvu, pojmů a hlavních pravidel, plus všechna anglická slovíčka. Bez diakritiky, s filtrem stupně. Index staví při buildu `plugins/topic-index.ts` (`virtual:topic-index`, `virtual:topic-text`), takže se nenačítají všechny předměty.
 - **Připnutá témata** (špendlík u tématu) a **Mix**: jedno kolo otázek ze všech připnutých témat.
 - **Na řadě**: doporučení podle toho, co si žák opakoval (`src/progress/recommend.ts`): opakování s rozestupy podle posledního výsledku (připnutá dřív), slabá témata, další téma v pořadí a základ z nižšího ročníku, na kterém slabé téma staví.
 - Vzhled ve stylu malého přístroje (inspirace Teenage Engineering): barevné klávesy předmětů s vlastními SVG glyfy (`src/ui/glyphs.tsx`), maskot Šprťa (`src/ui/Mascot.tsx`), displej se sérií dní.
 - Funguje **offline** (service worker má v cache celý obsah).
+- **Sdílitelné adresy**: každá obrazovka má vlastní cestu (`/g/z5/matematika/zlomky`, `/slovicka/A1`, `/hledat?q=zlomky`; History API, `src/router.tsx`, odkazy jsou skutečné `<a href>`). Build předrenderuje stránku pro každý ročník, předmět, téma a úroveň slovíček (`plugins/prerender.ts`: obsah, `<title>`, popis, canonical, Open Graph, JSON-LD) a vytvoří `sitemap.xml` a `robots.txt`. Staré odkazy `#/…` se přesměrují. Kód pokroku a párování zařízení zůstávají ve fragmentu (`#/p/…`, `#/spojit/…`).
 
 ## Soukromí
 
@@ -32,8 +33,8 @@ npm run build            # typy + produkční build do dist/
 
 Pravidla pro psaní obsahu: [docs/CONTENT.md](docs/CONTENT.md).
 
-Pomocné skripty pro vývoj (potřebují běžící dev server na :5179 a Playwright Chromium): `scripts/shots.mjs` (snímky obrazovek), `scripts/flow.mjs` (průchod kvízem), `scripts/p2p-test.mjs` (spojení dvou prohlížečů), `scripts/code-test.mjs` (kód pokroku), `scripts/widget-sheet.mjs` (přehled widgetů).
+Pomocné skripty pro vývoj (potřebují běžící dev server na :5179 a Playwright Chromium): `scripts/shots.mjs` (snímky obrazovek), `scripts/flow.mjs` (průchod kvízem), `scripts/p2p-test.mjs` (spojení dvou prohlížečů), `scripts/code-test.mjs` (kód pokroku), `scripts/routing-test.mjs` (adresy a navigace proti produkčnímu buildu), `scripts/widget-sheet.mjs` (přehled widgetů).
 
 ## Nasazení
 
-`Dockerfile` sestaví aplikaci a spustí malý Node server (`server/index.mjs`): statické soubory + `/api/ping`, `/api/stats` (volitelně chráněné `STATS_TOKEN`) a `/healthz`. Data statistik ve volume `/data`.
+`Dockerfile` sestaví aplikaci a spustí malý Node server (`server/index.mjs`): předrenderované stránky (neznámé cesty vrací 404, koncové `/` přesměruje 301; obrazovky bez vlastní stránky, např. kvíz nebo hledání, dostanou prázdný `app.html` s `noindex`), statické soubory + `/api/ping`, `/api/stats` (volitelně chráněné `STATS_TOKEN`) a `/healthz`. Data statistik ve volume `/data`.

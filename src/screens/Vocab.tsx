@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 import type { Level, Word } from '../vocab/types'
 import { loadLevel } from '../vocab'
 import { setWordBox, useProgress, getProgress } from '../progress/store'
-import { back, go } from '../router'
+import { back, go, Link } from '../router'
 import { Bar, BigStars } from '../ui/Bar'
 import { keyStyle } from '../ui/glyphs'
 import { ICheck, IClose, IX } from '../ui/icons'
@@ -38,13 +38,13 @@ function LevelRow({ id, hint }: { id: Level; hint: string }) {
   const words = set?.groups.flatMap((g) => g.words) ?? []
   const done = words.filter((w) => (p.w[w[1]] ?? 0) >= MASTERED).length
   return (
-    <button class="row" onClick={() => go(`/slovicka/${id}`)}>
+    <Link class="row" href={`/slovicka/${id}`}>
       <span class="skey m"><b>{id}</b></span>
       <span style={{ flex: 1, display: 'grid', gap: 6 }}>
         <b>{hint}</b>
         <span class="meter"><i style={{ width: `${words.length ? (done / words.length) * 100 : 0}%` }} /></span>
       </span>
-    </button>
+    </Link>
   )
 }
 
@@ -59,10 +59,10 @@ export function VocabLevel({ level }: { level: Level }) {
       <button class="btn block" onClick={() => go(`/slovicka/${level}/vse`)} style={{ marginBottom: 16 }}>Míchat vše</button>
       <div class="list">
         {set.groups.map((g, i) => (
-          <button key={i} class="row" onClick={() => go(`/slovicka/${level}/${i}`)}>
+          <Link key={i} class="row" href={`/slovicka/${level}/${i}`}>
             <span class="em">{g.emoji}</span>
             <span style={{ flex: 1, display: 'grid', gap: 6 }}><b>{g.name}</b><span class="meter"><i style={{ width: `${pct(g.words)}%` }} /></span></span>
-          </button>
+          </Link>
         ))}
       </div>
     </div>

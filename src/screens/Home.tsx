@@ -2,7 +2,7 @@ import { GRADE_NAME, STAGES, SUBJECTS } from '../content/curriculum'
 import { useIndex, refFor, type TopicRef } from '../content/library'
 import { recommend, streak, type Why } from '../progress/recommend'
 import { pinnedKeys, stars, today, useProgress, type Progress } from '../progress/store'
-import { go } from '../router'
+import { go, Link } from '../router'
 import { useTheme } from '../theme'
 import { Stars } from '../ui/Bar'
 import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
@@ -24,15 +24,15 @@ export function Home() {
   return (
     <div class="page home">
       <header class="bar">
-        <div class="brand"><Mascot size={38} /><span>šprtám</span></div>
+        <h1 class="brand"><Mascot size={38} /><span>šprtám</span></h1>
         <span class="grow" />
         <button class="icon-btn" onClick={toggleTheme} aria-label={dark ? 'Světlý režim' : 'Tmavý režim'} aria-pressed={dark}>{dark ? <ISun /> : <IMoon />}</button>
         <button class="icon-btn" onClick={() => go('/sdilet')} aria-label="Přenést pokrok"><ISync /></button>
       </header>
 
-      <button class="search-key" onClick={() => go('/hledat')}>
+      <Link class="search-key" href="/hledat">
         <ISearch /><span>Hledat téma nebo slovíčko</span><kbd>/</kbd>
-      </button>
+      </Link>
 
       <Display p={p} />
 
@@ -51,11 +51,11 @@ export function Home() {
           <h2 class="label">Na řadě</h2>
           <div class="list">
             {recs.map(({ ref, why }) => (
-              <button key={ref.key} class="row rec" style={subjectStyle(ref.s)} onClick={() => go(topicPath(ref))}>
+              <Link key={ref.key} class="row rec" style={subjectStyle(ref.s)} href={topicPath(ref)}>
                 <SubjectKey s={ref.s} />
                 <span class="txt"><b>{ref.title}</b><small>{GRADE_NAME[ref.g]} · {SUBJECTS[ref.s].name}</small></span>
                 <WhyTag why={why} />
-              </button>
+              </Link>
             ))}
           </div>
         </section>
@@ -69,7 +69,7 @@ export function Home() {
               <small>{STAGE_LABEL[s.id]}</small>
               <div class="pad-keys">
                 {s.grades.map((g) => (
-                  <button key={g} class={`num-key ${p.g === g ? 'on' : ''}`} onClick={() => go(`/g/${g}`)} aria-label={GRADE_NAME[g]}>{GRADE_NAME[g].split('.')[0]}</button>
+                  <Link key={g} class={`num-key ${p.g === g ? 'on' : ''}`} href={`/g/${g}`} aria-label={GRADE_NAME[g]}>{GRADE_NAME[g].split('.')[0]}</Link>
                 ))}
               </div>
             </div>
@@ -77,11 +77,11 @@ export function Home() {
         </div>
       </section>
 
-      <button class="row vocab-key" style={keyStyle('purple')} onClick={() => go('/slovicka')}>
+      <Link class="row vocab-key" style={keyStyle('purple')} href="/slovicka">
         <span class="skey m" style={keyStyle('purple')}><b>Aa</b></span>
         <span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span>
         <IArrow />
-      </button>
+      </Link>
     </div>
   )
 }
@@ -107,11 +107,11 @@ function WhyTag({ why }: { why: Why }) {
 
 function Cart({ r, st }: { r: TopicRef; st: number }) {
   return (
-    <button class="cart" style={subjectStyle(r.s)} onClick={() => go(topicPath(r))}>
+    <Link class="cart" style={subjectStyle(r.s)} href={topicPath(r)}>
       <span class="cart-top"><SubjectKey s={r.s} size="s" /><small>{GRADE_NAME[r.g].split('.')[0]}.</small></span>
       <b>{r.title}</b>
       <Stars n={st} />
-    </button>
+    </Link>
   )
 }
 

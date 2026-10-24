@@ -120,7 +120,7 @@ function Host({ onDone }: { onDone: () => void }) {
     const l = new Link(); link.current = l
     exchange(l, onDone)
     l.onFail = () => setState('fail')
-    l.offer().then((c) => setOffer(`${location.origin}${location.pathname}#/spojit/${c}`), () => setState('fail'))
+    l.offer().then((c) => setOffer(`${location.origin}/#/spojit/${c}`), () => setState('fail'))
     return () => { if (l.pc.connectionState !== 'connected') l.close() }
   }, [])
   if (state === 'fail') return <Failed />

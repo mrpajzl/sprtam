@@ -5,7 +5,8 @@ import { loadIndex, refFor } from '../content/library'
 import type { GradeId, SubjectId, Topic } from '../content/types'
 import { MODES, type ModeId } from '../quiz/engine'
 import { getProgress, isPinned, pinnedKeys, preferExplanation, togglePin, useProgress } from '../progress/store'
-import { back, go, query } from '../router'
+import { back, go, Link, query } from '../router'
+import { titles, useTitle } from '../seo'
 import { Bar } from '../ui/Bar'
 import { keyStyle, subjectStyle } from '../ui/glyphs'
 import { IBolt, IBulb, IMic, IPencil, IPin, IRepeat } from '../ui/icons'
@@ -25,6 +26,7 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
   const [ex, setEx] = useState<0 | 1>(initial)
   useEffect(() => setEx(initial()), [key])
   const topic = subj?.topics.find((t) => t.id === id)
+  useTitle(topic && titles.topic(g, s, topic.title))
   if (subj === undefined) return <div class="page" />
   if (!topic) return <div class="page"><Bar title={SUBJECTS[s].name} /><div class="empty">Téma nenalezeno.</div></div>
 
@@ -43,9 +45,9 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
         {(['kviz', 'opakovani', 'pisemka', 'zkouseni'] as ModeId[]).map((m) => {
           const [I, c] = MODE_KEY[m]!
           return (
-            <button key={m} class="mode" onClick={() => go(`/g/${g}/${s}/${id}/${m}`)}>
+            <Link key={m} class="mode" href={`/g/${g}/${s}/${id}/${m}`} rel="nofollow">
               <span class="skey m" style={keyStyle(c)}><I /></span><b>{MODES[m].name}</b><small>{MODES[m].hint}</small>
-            </button>
+            </Link>
           )
         })}
       </div>

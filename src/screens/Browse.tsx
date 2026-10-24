@@ -3,7 +3,7 @@ import { GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } from '../content/curriculum'
 import { hasSubject, loadSubject, topicKey } from '../content'
 import type { GradeId, SubjectId, Subject } from '../content/types'
 import { isPinned, setGrade, stars, useProgress } from '../progress/store'
-import { go } from '../router'
+import { go, Link } from '../router'
 import { Bar, Stars } from '../ui/Bar'
 import { GLYPHS, keyStyle, subjectStyle } from '../ui/glyphs'
 import { IPin, ISearch, ITest } from '../ui/icons'
@@ -28,11 +28,11 @@ function SubjectTile({ g, s }: { g: GradeId; s: SubjectId }) {
   const pct = useSubjectPct(g, s, subj)
   const G = GLYPHS[s]
   return (
-    <button class="tile" style={subjectStyle(s)} onClick={() => go(`/g/${g}/${s}`)}>
+    <Link class="tile" style={subjectStyle(s)} href={`/g/${g}/${s}`}>
       <span class="tile-face"><G /></span>
       <b>{SUBJECTS[s].name}</b>
       <Meter pct={pct} />
-    </button>
+    </Link>
   )
 }
 
@@ -46,7 +46,7 @@ export function GradeScreen({ g }: { g: GradeId }) {
         <div class="tiles">
           {subjects.map((s) => <SubjectTile key={s} g={g} s={s} />)}
           {GRADE_SUBJECTS[g].includes('anglictina') && (
-            <button class="tile" style={keyStyle('purple')} onClick={() => go('/slovicka')}><span class="tile-face"><b class="aa">Aa</b></span><b>Slovíčka</b></button>
+            <Link class="tile" style={keyStyle('purple')} href="/slovicka"><span class="tile-face"><b class="aa">Aa</b></span><b>Slovíčka</b></Link>
           )}
         </div>
       ) : <div class="empty">Připravujeme.</div>}
@@ -67,20 +67,20 @@ export function SubjectScreen({ g, s }: { g: GradeId; s: SubjectId }) {
             {subj.topics.map((t, i) => {
               const key = topicKey(g, s, t)
               return (
-                <button key={t.id} class="row" onClick={() => go(`/g/${g}/${s}/${t.id}`)}>
+                <Link key={t.id} class="row" href={`/g/${g}/${s}/${t.id}`}>
                   <span class="num">{String(i + 1).padStart(2, '0')}</span>
                   <span class="em">{t.emoji}</span>
                   <b>{t.title}</b>
                   {isPinned(p, key) && <span class="pinned" aria-label="Připnuté"><IPin on /></span>}
                   <Stars n={stars(p.t[key]?.s)} />
-                </button>
+                </Link>
               )
             })}
           </div>
-          <button class="row test-key" onClick={() => go(`/g/${g}/${s}/~test`)}>
+          <Link class="row test-key" href={`/g/${g}/${s}/~test`} rel="nofollow">
             <span class="skey m"><ITest /></span>
             <span class="txt"><b>Test</b><small>celý předmět · 20 otázek</small></span>
-          </button>
+          </Link>
         </>
       )}
     </div>
