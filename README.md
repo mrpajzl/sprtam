@@ -8,6 +8,10 @@ Opakování učiva základní a střední školy jako PWA. Bez účtů, bez rekl
 - Každé téma má **dvě různá vysvětlení** („Nerozumím – vysvětli to jinak“) s interaktivními widgety.
 - Režimy: **Rychlý kvíz**, **Opakování** (chyby se vracejí, dokud to neumíš), **Písemka** (známka 1–5), **Zkoušení** (ústní otázky, sebehodnocení) a **Test** z celého předmětu.
 - **Anglická slovíčka** podle úrovně A1–C1: „Jak se řekne ‚pták‘?“ → swipe doprava = správně, doleva = špatně. Slova se opakují podle Leitnerova systému.
+- **Hledání v celé databázi** (`/` nebo lupa): všechna témata všech ročníků podle názvu, pojmů a hlavních pravidel, plus všechna anglická slovíčka. Bez diakritiky, s filtrem stupně. Index staví při buildu `plugins/topic-index.ts` (`virtual:topic-index`, `virtual:topic-text`), takže se nenačítají všechny předměty.
+- **Připnutá témata** (špendlík u tématu) a **Mix**: jedno kolo otázek ze všech připnutých témat.
+- **Na řadě**: doporučení podle toho, co si žák opakoval (`src/progress/recommend.ts`): opakování s rozestupy podle posledního výsledku (připnutá dřív), slabá témata, další téma v pořadí a základ z nižšího ročníku, na kterém slabé téma staví.
+- Vzhled ve stylu malého přístroje (inspirace Teenage Engineering): barevné klávesy předmětů s vlastními SVG glyfy (`src/ui/glyphs.tsx`), maskot Šprťa (`src/ui/Mascot.tsx`), displej se sérií dní.
 - Funguje **offline** (service worker má v cache celý obsah).
 
 ## Soukromí

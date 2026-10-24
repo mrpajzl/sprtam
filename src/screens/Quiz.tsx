@@ -4,7 +4,9 @@ import { build, strictFor, grade, GRADE_WORD, MODES, answerText, type Item, type
 import { QuestionView } from '../quiz/QuestionView'
 import { recordTopic, stars } from '../progress/store'
 import { back } from '../router'
+import { BigStars } from '../ui/Bar'
 import { IClose, ICheck, IX } from '../ui/icons'
+import { Mascot } from '../ui/Mascot'
 import { Inline } from '../ui/Inline'
 
 interface Answer { item: Item; ok: boolean }
@@ -32,7 +34,7 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
     by.forEach((s, key) => recordTopic(key, (s.ok / s.n) * 100))
   }, [finished])
 
-  if (!queue.length) return <div class="page"><div class="empty"><div class="big">🤷</div>Tady zatím nejsou otázky.<button class="btn" onClick={back}>Zpět</button></div></div>
+  if (!queue.length) return <div class="page"><div class="empty"><Mascot mood="sad" size={96} />Tady zatím nejsou otázky.<button class="btn" onClick={back}>Zpět</button></div></div>
 
   if (finished) {
     const pct = Math.round((firstTry.filter((a) => a.ok).length / firstTry.length) * 100)
@@ -41,8 +43,8 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
     return (
       <div class="page">
         <div class="result">
-          {m.instant ? <div class="big-stars">{[0, 1, 2].map((k) => <span key={k} style={{ opacity: k < stars(pct) ? 1 : 0.18 }}>⭐</span>)}</div>
-            : <div class={`mark m${g}`}>{g}</div>}
+          <Mascot mood={pct >= 90 ? 'happy' : pct >= 60 ? 'wow' : 'sad'} size={96} />
+          {m.instant ? <BigStars n={stars(pct)} /> : <div class={`mark m${g}`}>{g}</div>}
           <h2>{m.instant ? (pct >= 90 ? 'Výborně!' : pct >= 60 ? 'Dobře!' : 'Ještě to procvič') : GRADE_WORD[g]}</h2>
           <div class="pct">{firstTry.filter((a) => a.ok).length} / {firstTry.length} · {pct} %</div>
           <div class="actions">
@@ -74,7 +76,7 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
     <div class="page" key={i}>
       <div class="qtop">
         <button class="icon-btn" onClick={back} aria-label="Ukončit"><IClose /></button>
-        <div class="meter"><i style={{ width: `${(i / queue.length) * 100}%` }} /></div>
+        <Progress queue={queue} answers={answers} i={i} instant={m.instant} />
         {mode === 'test' ? <Timer since={start} /> : <span class="timer">{i + 1}/{queue.length}</span>}
       </div>
       {mode === 'zkouseni' ? <Oral q={item.q} onAnswer={(ok) => { setAnswers([...answers, { item, ok }]); next() }} />
@@ -90,6 +92,15 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+/** One LED per question: green/red once answered (only where feedback is instant). */
+function Progress({ queue, answers, i, instant }: { queue: Item[]; answers: Answer[]; i: number; instant: boolean }) {
+  return (
+    <div class="steps-meter" role="progressbar" aria-valuemin={0} aria-valuemax={queue.length} aria-valuenow={i}>
+      {queue.map((_, k) => <i key={k} class={k < answers.length ? (instant ? (answers[k].ok ? 'ok' : 'bad') : 'done') : k === i ? 'now' : ''} />)}
     </div>
   )
 }

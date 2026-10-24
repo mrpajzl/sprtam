@@ -90,7 +90,7 @@ export function Cycle({ steps }: { steps: string[] }) {
         })}
         {steps.map((_, k) => {
           const a = (k / n) * 2 * Math.PI - Math.PI / 2
-          return <text key={k} x={C + R * Math.cos(a)} y={C + R * Math.sin(a) + 6} text-anchor="middle" font-size="16" font-weight="900" fill={k === i ? '#fff' : 'var(--accent-ink)'}>{k + 1}</text>
+          return <text key={k} x={C + R * Math.cos(a)} y={C + R * Math.sin(a) + 6} text-anchor="middle" font-size="16" font-weight="900" fill={k === i ? 'var(--on-accent)' : 'var(--accent-ink)'}>{k + 1}</text>
         })}
         <foreignObject x={C - 60} y={C - 46} width="120" height="92">
           <div style={{ height: '100%', display: 'grid', placeItems: 'center', textAlign: 'center', fontWeight: 800, fontSize: '14px', lineHeight: 1.25 }}><Inline text={steps[i]} /></div>

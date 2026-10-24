@@ -5,7 +5,7 @@ import { useState } from 'preact/hooks'
 export type Theme = 'light' | 'dark'
 
 const KEY = 'sprtam-theme'
-const BG: Record<Theme, string> = { light: '#f6f5f1', dark: '#14161a' }
+const BG: Record<Theme, string> = { light: '#e6e7e9', dark: '#111214' }
 
 const read = (): Theme => { try { return localStorage.getItem(KEY) === 'dark' ? 'dark' : 'light' } catch { return 'light' } }
 

@@ -24,3 +24,24 @@ export const IShare = P('M12 3v12M7 8l5-5 5 5M5 14v6h14v-6')
 export const IPlay = P('M7 4l13 8-13 8z')
 export const ISun = P('M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4')
 export const IMoon = P('M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z')
+export const ISearch = P('M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.5 15.5L20 20')
+export const IShuffle = P('M3 7h3.5c4 0 6.5 10 11 10H21M3 17h3.5c1.6 0 2.9-1.6 4-3.6M13.5 9.6c1.1-1.5 2.4-2.6 4-2.6H21M18.5 4.5L21 7l-2.5 2.5M18.5 14.5L21 17l-2.5 2.5')
+export const IArrow = P('M5 12h14M13 6l6 6-6 6')
+
+/** Push pin; filled when the topic is pinned. */
+export function IPin({ on }: { on?: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M9 3.5h6l-1 5.5 3.5 3.5h-11L10 9z" fill={on ? 'currentColor' : 'none'} /><path d="M12 12.5V21" />
+    </svg>
+  )
+}
+
+/** Chunky five-point star. */
+export function IStar({ on }: { on?: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2.8l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2L12 16.6l-5.6 3.2 1.3-6.2L3 9.3l6.3-.7z" fill={on ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+    </svg>
+  )
+}

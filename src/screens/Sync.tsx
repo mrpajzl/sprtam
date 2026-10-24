@@ -6,6 +6,7 @@ import { getProgress, importProgress, type Progress } from '../progress/store'
 import { go } from '../router'
 import { Bar } from '../ui/Bar'
 import { ICamera, ICopy, ILink, IQr, IShare } from '../ui/icons'
+import { Mascot } from '../ui/Mascot'
 
 export function Qr({ text }: { text: string }) {
   return <div class="qr" dangerouslySetInnerHTML={{ __html: renderSVG(text, { ecc: 'L', border: 1 }) }} />
@@ -38,9 +39,9 @@ export function SyncScreen({ offer }: { offer?: string }) {
       <Bar title={title} onBack={() => (view === 'menu' || view === 'done' ? go('/') : setView('menu'))} />
       {view === 'menu' && (
         <div class="list">
-          <button class="row" onClick={() => setView('host')}><span class="em"><ILinkBig /></span><b>Propojit dvě zařízení</b></button>
-          <button class="row" onClick={() => setView('code')}><span class="em"><IQrBig /></span><b>Ukázat kód pokroku</b></button>
-          <button class="row" onClick={() => setView('load')}><span class="em"><ICameraBig /></span><b>Načíst kód</b></button>
+          <button class="row" onClick={() => setView('host')}><span class="skey m"><ILink /></span><b>Propojit dvě zařízení</b></button>
+          <button class="row" onClick={() => setView('code')}><span class="skey m"><IQr /></span><b>Ukázat kód pokroku</b></button>
+          <button class="row" onClick={() => setView('load')}><span class="skey m"><ICamera /></span><b>Načíst kód</b></button>
           <p class="muted center" style={{ marginTop: 18, fontSize: '0.92rem', lineHeight: 1.5 }}>
             Bez účtu. Pokrok je jen v tomto zařízení a putuje přímo do druhého.
           </p>
@@ -52,7 +53,7 @@ export function SyncScreen({ offer }: { offer?: string }) {
       {view === 'join' && <Join offer={offer} onDone={() => setView('done')} />}
       {view === 'done' && (
         <div class="stack" style={{ paddingTop: 40 }}>
-          <div class="ok-big">✅</div>
+          <div class="ok-big"><Mascot mood="happy" size={110} /></div>
           <p class="center"><b>Pokrok je spojený.</b></p>
           <button class="btn block" onClick={() => go('/')}>Hotovo</button>
         </div>
@@ -61,9 +62,6 @@ export function SyncScreen({ offer }: { offer?: string }) {
   )
 }
 
-const ILinkBig = () => <span style={{ width: 24, height: 24, display: 'grid', color: 'var(--accent)' }}><ILink /></span>
-const IQrBig = () => <span style={{ width: 24, height: 24, display: 'grid', color: 'var(--accent)' }}><IQr /></span>
-const ICameraBig = () => <span style={{ width: 24, height: 24, display: 'grid', color: 'var(--accent)' }}><ICamera /></span>
 
 function ShowCode() {
   const [code, setCode] = useState('')
@@ -126,7 +124,7 @@ function Host({ onDone }: { onDone: () => void }) {
     return () => { if (l.pc.connectionState !== 'connected') l.close() }
   }, [])
   if (state === 'fail') return <Failed />
-  if (state === 'connecting') return <div class="empty"><div class="big">🔗</div>Spojuji…</div>
+  if (state === 'connecting') return <div class="empty"><Mascot mood="wow" size={96} />Spojuji…</div>
   return (
     <div class="stack">
       {!scan ? (
@@ -177,7 +175,7 @@ function Join({ offer, onDone }: { offer?: string; onDone: () => void }) {
 function Failed() {
   return (
     <div class="empty">
-      <div class="big">📡</div>
+      <Mascot mood="sad" size={96} />
       <p>Přímé spojení se nepovedlo. Zkus obě zařízení na stejné Wi-Fi, nebo použij <b>kód pokroku</b>.</p>
       <button class="btn" onClick={() => location.reload()}>Zkusit znovu</button>
     </div>

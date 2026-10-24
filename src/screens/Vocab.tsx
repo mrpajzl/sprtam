@@ -3,7 +3,8 @@ import type { Level, Word } from '../vocab/types'
 import { loadLevel } from '../vocab'
 import { setWordBox, useProgress, getProgress } from '../progress/store'
 import { back, go } from '../router'
-import { Bar } from '../ui/Bar'
+import { Bar, BigStars } from '../ui/Bar'
+import { keyStyle } from '../ui/glyphs'
 import { ICheck, IClose, IX } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
 
@@ -23,7 +24,7 @@ const shuffle = <T,>(xs: T[]) => xs.map((x) => [Math.random(), x] as const).sort
 
 export function VocabHome() {
   return (
-    <div class="page" style={{ '--h': 230 }}>
+    <div class="page" style={keyStyle('purple')}>
       <Bar title="Slovíčka" />
       <div class="levels">{LEVELS.map((l) => <LevelRow key={l.id} id={l.id} hint={l.hint} />)}</div>
     </div>
@@ -38,7 +39,7 @@ function LevelRow({ id, hint }: { id: Level; hint: string }) {
   const done = words.filter((w) => (p.w[w[1]] ?? 0) >= MASTERED).length
   return (
     <button class="row" onClick={() => go(`/slovicka/${id}`)}>
-      <span class="em" style={{ fontWeight: 900, fontSize: '1.05rem' }}>{id}</span>
+      <span class="skey m"><b>{id}</b></span>
       <span style={{ flex: 1, display: 'grid', gap: 6 }}>
         <b>{hint}</b>
         <span class="meter"><i style={{ width: `${words.length ? (done / words.length) * 100 : 0}%` }} /></span>
@@ -53,7 +54,7 @@ export function VocabLevel({ level }: { level: Level }) {
   if (!set) return <div class="page" />
   const pct = (ws: Word[]) => (ws.filter((w) => (p.w[w[1]] ?? 0) >= MASTERED).length / ws.length) * 100
   return (
-    <div class="page" style={{ '--h': 230 }}>
+    <div class="page" style={keyStyle('purple')}>
       <Bar title={level} onBack={() => go('/slovicka')} />
       <button class="btn block" onClick={() => go(`/slovicka/${level}/vse`)} style={{ marginBottom: 16 }}>Míchat vše</button>
       <div class="list">
@@ -89,9 +90,9 @@ export function VocabSwipe({ level, group }: { level: Level; group: string }) {
   if (!set) return <div class="page" />
   if (i >= words.length && words.length) {
     return (
-      <div class="page" style={{ '--h': 230 }}>
+      <div class="page" style={keyStyle('purple')}>
         <div class="result">
-          <div class="big-stars">{[0, 1, 2].map((k) => <span key={k} style={{ opacity: k < Math.round((score / words.length) * 3) ? 1 : 0.18 }}>⭐</span>)}</div>
+          <BigStars n={Math.round((score / words.length) * 3)} />
           <h2>{score === words.length ? 'Perfektní!' : score / words.length >= 0.7 ? 'Dobře!' : 'Ještě jednou?'}</h2>
           <div class="pct">{score} / {words.length}</div>
           <div class="actions">
@@ -104,7 +105,7 @@ export function VocabSwipe({ level, group }: { level: Level; group: string }) {
   }
   const w = words[i]
   return (
-    <div class="page" style={{ '--h': 230 }}>
+    <div class="page" style={keyStyle('purple')}>
       <div class="qtop">
         <button class="icon-btn" onClick={back} aria-label="Ukončit"><IClose /></button>
         <div class="meter"><i style={{ width: `${(i / words.length) * 100}%` }} /></div>
