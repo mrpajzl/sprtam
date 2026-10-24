@@ -22,11 +22,11 @@ export const GENERATORS: Record<string, () => Question> = {
   sub20: () => { const a = r(5, 20); const b = r(1, a); return num(`${a} − ${b} =`, a - b) },
   add100: () => { const a = r(10, 90); const b = r(1, 100 - a); return num(`${a} + ${b} =`, a + b) },
   sub100: () => { const a = r(20, 100); const b = r(1, a); return num(`${a} − ${b} =`, a - b) },
-  add1000: () => { const a = r(100, 800); const b = r(10, 1000 - a); return pick([num(`${a} + ${b} =`, a + b), num(`${a + b} − ${b} =`, a)]) },
+  add1000: () => { const a = r(100, 800); const b = r(10, 1000 - a); return pick([{ ...num(`Vypočítej písemně: ${a} + ${b} =`, a + b), col: { a, b, op: '+' } }, { ...num(`Vypočítej písemně: ${a + b} − ${b} =`, a), col: { a: a + b, b, op: '-' } }]) as Question },
   'mul-table': () => { const a = r(1, 10); const b = r(1, 10); return num(`${a} · ${b} =`, a * b) },
   'div-table': () => { const a = r(1, 10); const b = r(1, 10); return num(`${a * b} : ${b} =`, a) },
-  'written-mul': () => { const a = r(12, 999); const b = r(2, 9); return num(`${a} · ${b} =`, a * b, 'Násob od jednotek a přenášej desítky.') },
-  'written-div': () => { const b = r(2, 9); const a = r(11, 120); return num(`${a * b} : ${b} =`, a) },
+  'written-mul': () => { const a = r(12, 999); const b = r(2, 9); return { ...num(`Vypočítej písemně: ${a} · ${b} =`, a * b, 'Násob od jednotek, co přeteče, si pamatuj.'), col: { a, b, op: '·' } } as Question },
+  'written-div': () => { const b = r(2, 9); const a = r(11, 120); return { ...num(`Vypočítej písemně: ${a * b} : ${b} =`, a), col: { a: a * b, b, op: ':' } } as Question },
   round: () => {
     const n = r(101, 9999); const to = pick([10, 100])
     return num(`Zaokrouhli ${n} na ${to === 10 ? 'desítky' : 'stovky'}.`, Math.round(n / to) * to, '0–4 dolů, 5–9 nahoru.')

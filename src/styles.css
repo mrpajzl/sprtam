@@ -348,3 +348,17 @@ th { font-weight: 800; color: var(--ink-2); font-size: 0.85rem; }
 .mistake .wrong > span:first-child, .mistake .right > span:first-child { text-decoration: none; display: inline-block; font-weight: 900; flex: none; }
 .mistake .wrong > span:last-child, .mistake .right > span:last-child { min-width: 0; overflow-wrap: anywhere; }
 .mistake p { color: var(--ink-2); font-size: 0.98rem; }
+
+/* Written arithmetic „pod sebou“ */
+.column { display: grid; justify-content: center; font-size: 2rem; font-weight: 850; font-variant-numeric: tabular-nums; line-height: 1.3; padding: 4px 0; }
+.cc { text-align: center; height: 1.3em; transition: color 0.2s, background 0.2s; }
+.cc.carry { font-size: 0.55em; height: auto; align-self: end; color: var(--accent); line-height: 1; }
+.cc.line { border-top: 3px solid var(--ink); }
+.cc.op { color: var(--ink-2); }
+.cc.pad { color: var(--ink-3); }
+.cc.res { color: var(--accent-ink); }
+.cc.act { background: var(--accent-soft); border-radius: 6px; }
+.cc.hid { color: transparent; }
+.column-q { text-align: center; font-size: 2rem; font-weight: 850; margin-bottom: 8px; }
+.column.div { font-size: 1.6rem; justify-content: start; overflow-x: auto; }
+.cc.line.act { border-radius: 0 0 6px 6px; }
