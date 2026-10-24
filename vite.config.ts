@@ -32,10 +32,15 @@ export default defineConfig({
       workbox: {
         // Everything (all grades, all subjects) is cached so the app works fully offline.
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
-        // Prerendered pages are for first visits and crawlers; offline, the app shell renders every route.
-        globIgnores: ['g/**', 'slovicka/**', 'app.html'],
-        navigateFallback: 'index.html',
-        navigateFallbackDenylist: [/^\/api\//, /\.(xml|txt)$/],
+        // Pages are never served from the precache while online (a cached page can point at assets of an
+        // older deploy). Only the empty shell app.html is precached, as the offline fallback for any route.
+        globIgnores: ['g/**', 'slovicka/**', 'index.html', 'boot-check.js'],
+        navigateFallback: null,
+        runtimeCaching: [{
+          urlPattern: ({ request, url }) => request.mode === 'navigate' && !url.pathname.startsWith('/api/') && !/\.(xml|txt)$/.test(url.pathname),
+          handler: 'NetworkFirst',
+          options: { cacheName: 'pages', networkTimeoutSeconds: 5, expiration: { maxEntries: 30 }, precacheFallback: { fallbackURL: 'app.html' } },
+        }],
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
       },
     }),
