@@ -5,6 +5,7 @@ import { decodeProgress } from './progress/code'
 import { importProgress } from './progress/store'
 import { MODES, type ModeId } from './quiz/engine'
 import { go, useRoute } from './router'
+import { fullTitle, titles } from './seo'
 import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
 import { Search } from './screens/Search'
@@ -16,6 +17,8 @@ import type { Level } from './vocab/types'
 export function App() {
   const r = useRoute()
   const [a, b, c, d, e] = r
+  const title = routeTitle(r)
+  useEffect(() => { if (title !== null) document.title = fullTitle(title) }, [title])
 
   // „/“ opens search from anywhere (except while typing).
   useEffect(() => {
@@ -52,11 +55,23 @@ export function App() {
   return <Home />
 }
 
+/** Title of screens that know it without loading content; `null` = the screen sets it (topics). */
+function routeTitle([a, b, c, d]: string[]): string | null | undefined {
+  if (a === 'hledat') return 'Hledat'
+  if (a === 'slovicka') return b ? titles.vocabLevel(b) : titles.vocab()
+  if (a === 'g' && ALL_GRADES.includes(b as GradeId)) {
+    const g = b as GradeId
+    if (c && GRADE_SUBJECTS[g].includes(c as SubjectId)) return d === '~test' || !d ? titles.subject(g, c as SubjectId) : null
+    return titles.grade(g)
+  }
+  return undefined
+}
+
 /** Opening a shared progress link imports it (the code is in the #fragment, never sent to a server). */
 function ImportLink({ code }: { code: string }) {
   const [err, setErr] = useState('')
   useEffect(() => {
-    decodeProgress(code).then((p) => { importProgress(p); history.replaceState(null, '', '#/'); go(p.g ? `/g/${p.g}` : '/') }, (e) => setErr(e.message))
+    decodeProgress(code).then((p) => { importProgress(p); go(p.g ? `/g/${p.g}` : '/', true) }, (e) => setErr(e.message))
   }, [code])
   return <div class="page"><div class="empty">{err || 'Načítám pokrok…'}{err && <button class="btn" onClick={() => go('/')}>Domů</button>}</div></div>
 }

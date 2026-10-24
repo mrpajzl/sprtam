@@ -3,5 +3,7 @@ import { App } from './app'
 import { ping } from './stats'
 import './styles.css'
 
-render(<App />, document.getElementById('app')!)
+const root = document.getElementById('app')!
+root.textContent = '' // drop the prerendered page (plugins/prerender.ts); the app renders the same screen
+render(<App />, root)
 ping()

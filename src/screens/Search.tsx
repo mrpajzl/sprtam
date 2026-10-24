@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 import { GRADE_NAME, STAGES, SUBJECTS } from '../content/curriculum'
 import { fold, loadTexts, searchTopics, useIndex, type Hit } from '../content/library'
 import { stars, useProgress } from '../progress/store'
-import { back, go, query } from '../router'
+import { back, go, Link, query, setQuery } from '../router'
 import { Stars } from '../ui/Bar'
 import { SubjectKey, subjectStyle } from '../ui/glyphs'
 import { IBack, IClose, ISearch } from '../ui/icons'
@@ -31,7 +31,7 @@ export function Search() {
     const qs = new URLSearchParams()
     if (q) qs.set('q', q)
     if (scope !== 'all') qs.set('in', scope)
-    history.replaceState(history.state, '', `#/hledat${qs.size ? `?${qs}` : ''}`)
+    setQuery(qs)
   }, [q, scope])
 
   const hits = useMemo(() => {
@@ -76,9 +76,9 @@ export function Search() {
               <h2 class="label">Slovíčka</h2>
               <div class="words">
                 {vocab.map((w) => (
-                  <button key={w.level + w.en + w.cz} class="word" onClick={() => go(`/slovicka/${w.level}/${w.group}`)}>
+                  <Link key={w.level + w.en + w.cz} class="word" href={`/slovicka/${w.level}/${w.group}`}>
                     <span><Mark text={w.cz} q={term} /></span><b><Mark text={w.en} q={term} /></b><small>{w.level}</small>
-                  </button>
+                  </Link>
                 ))}
               </div>
             </>
@@ -94,7 +94,7 @@ function HitRow({ h, q, st }: { h: Hit; q: string; st: number }) {
   const r = h.ref
   return (
     <div class="hit" style={subjectStyle(r.s)}>
-      <button class="row" onClick={() => go(topicPath(r))}>
+      <Link class="row" href={topicPath(r)}>
         <SubjectKey s={r.s} />
         <span class="txt">
           <b><Mark text={r.title} q={q} /></b>
@@ -102,7 +102,7 @@ function HitRow({ h, q, st }: { h: Hit; q: string; st: number }) {
           {h.via && <small class="via"><Mark text={excerpt(h.via, q)} q={q} /></small>}
         </span>
         {st > 0 && <Stars n={st} />}
-      </button>
+      </Link>
       <PinButton k={r.key} />
     </div>
   )

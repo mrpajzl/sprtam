@@ -5,7 +5,7 @@ const A = await (await b.newContext({ viewport: { width: 390, height: 844 }, dev
 const B = await (await b.newContext()).newPage()
 await A.goto('http://127.0.0.1:5179/')
 await A.evaluate(() => localStorage.setItem('sprtam:progress', JSON.stringify({ v: 1, g: 'z6', t: { 'z6/matematika/uhel': { s: 90, n: 3, d: 20749 } }, w: { bird: 3 } })))
-await A.goto('http://127.0.0.1:5179/#/sdilet'); await A.reload(); await A.waitForTimeout(300)
+await A.goto('http://127.0.0.1:5179/sdilet'); await A.reload(); await A.waitForTimeout(300)
 await A.getByText('Ukázat kód pokroku').click(); await A.waitForSelector('.qr svg')
 await A.screenshot({ path: '/tmp/sprtam-shots/code.png' })
 const url = await A.evaluate(async () => { const m = await import('/src/progress/code.ts'); const s = await import('/src/progress/store.ts'); return m.shareUrl(await m.encodeProgress(s.getProgress())) })

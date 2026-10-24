@@ -10,7 +10,21 @@ const DATA = process.env.DATA_DIR ?? join(import.meta.dirname, '..', 'data')
 const STATS_TOKEN = process.env.STATS_TOKEN ?? ''
 const FILE = join(DATA, 'stats.json')
 
-const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.json': 'application/json' }
+const isFile = (f) => stat(f).then((s) => s.isFile(), () => false)
+const page = (...parts) => isFile(join(DIST, ...parts, 'index.html'))
+const MODES = ['kviz', 'opakovani', 'pisemka', 'zkouseni']
+
+/** Routes the app renders that have no prerendered page of their own. */
+async function isAppRoute(path) {
+  const p = path.split('/').filter(Boolean)
+  if (p.length === 1) return ['hledat', 'mix', 'sdilet'].includes(p[0])
+  if (p[0] === 'g' && p.length === 4 && p[3] === '~test') return page(...p.slice(0, 3))
+  if (p[0] === 'g' && p.length === 5 && MODES.includes(p[4])) return page(...p.slice(0, 4))
+  if (p[0] === 'slovicka' && p.length === 3) return page(...p.slice(0, 2))
+  return false
+}
+
+const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.json': 'application/json', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' }
 const SECURITY = {
   'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; media-src 'self' blob:; worker-src 'self' blob:",
   'Referrer-Policy': 'no-referrer',
@@ -45,14 +59,26 @@ createServer(async (req, res) => {
   }
   if (url.pathname === '/healthz') return res.writeHead(200).end('ok')
 
-  const path = normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, '')
+  // Pages: /g/z5/matematika → dist/g/z5/matematika/index.html (prerendered, see plugins/prerender.ts).
+  if (url.pathname.length > 1 && url.pathname.endsWith('/')) return res.writeHead(301, { Location: url.pathname.replace(/\/+$/, '') + url.search }).end()
+  let path
+  try { path = normalize(decodeURIComponent(url.pathname)) } catch { return res.writeHead(400).end() }
   let file = join(DIST, path)
-  if (!file.startsWith(DIST)) file = join(DIST, 'index.html')
-  try { if ((await stat(file)).isDirectory()) file = join(file, 'index.html') } catch { file = join(DIST, 'index.html') }
+  let status = 200
+  if (!file.startsWith(DIST)) return res.writeHead(404).end()
+  if (!(await isFile(file))) {
+    if (await isFile(join(file, 'index.html'))) file = join(file, 'index.html')
+    else if (extname(path)) return res.writeHead(404, SECURITY).end()
+    else {
+      // In-app screens without their own page (quiz, search…) get the empty shell; anything else is a 404.
+      status = (await isAppRoute(path)) ? 200 : 404
+      file = join(DIST, 'app.html')
+    }
+  }
   try {
     const data = await readFile(file)
     const immutable = file.includes(`${join(DIST, 'assets')}`)
-    res.writeHead(200, {
+    res.writeHead(status, {
       ...SECURITY,
       'Content-Type': TYPES[extname(file)] ?? 'application/octet-stream',
       'Cache-Control': immutable ? 'public, max-age=31536000, immutable' : 'no-cache',

@@ -80,4 +80,4 @@ export async function decodeProgress(code: string): Promise<Progress> {
 }
 
 /** A link that imports the progress when opened (code is in the #fragment, never sent to a server). */
-export const shareUrl = (code: string) => `${location.origin}${location.pathname}#/p/${code}`
+export const shareUrl = (code: string) => `${location.origin}/#/p/${code}`
