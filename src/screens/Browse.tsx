@@ -5,18 +5,22 @@ import type { GradeId, SubjectId, Subject } from '../content/types'
 import { setGrade, stars, useProgress } from '../progress/store'
 import { go } from '../router'
 import { Bar, Stars } from '../ui/Bar'
-import { ISync, ITest } from '../ui/icons'
+import { IMoon, ISun, ISync, ITest } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
+import { useTheme } from '../theme'
 
 export const hue = (s: SubjectId) => ({ '--h': SUBJECTS[s].hue }) as Record<string, number>
 
 export function Home() {
   const p = useProgress()
+  const [theme, toggleTheme] = useTheme()
+  const dark = theme === 'dark'
   return (
     <div class="page">
       <header class="bar">
         <div class="brand"><img src="./icon.svg" alt="" />Šprtám</div>
         <span style={{ flex: 1 }} />
+        <button class="icon-btn" onClick={toggleTheme} aria-label={dark ? 'Světlý režim' : 'Tmavý režim'} aria-pressed={dark}>{dark ? <ISun /> : <IMoon />}</button>
         <button class="icon-btn" onClick={() => go('/sdilet')} aria-label="Přenést pokrok"><ISync /></button>
       </header>
       {STAGES.map((s) => (
