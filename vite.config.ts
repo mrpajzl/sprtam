@@ -34,7 +34,7 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
         // Pages are never served from the precache while online (a cached page can point at assets of an
         // older deploy). Only the empty shell app.html is precached, as the offline fallback for any route.
-        globIgnores: ['g/**', 'slovicka/**', 'index.html', 'boot-check.js'],
+        globIgnores: ['g/**', 'slovicka/**', 'index.html', 'boot-check.js', 'move.js'],
         navigateFallback: null,
         runtimeCaching: [{
           urlPattern: ({ request, url }) => request.mode === 'navigate' && !url.pathname.startsWith('/api/') && !/\.(xml|txt)$/.test(url.pathname),

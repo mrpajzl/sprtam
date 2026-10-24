@@ -1,6 +1,6 @@
 // Production check: device A copies its progress link (UI "Kopírovat"), device B opens it and imports.
 import { chromium } from 'playwright-core'
-const base = process.argv[2] ?? 'https://sprtam.ondrejzraly.cz/'
+const base = process.argv[2] ?? 'https://sprtam.cz/'
 const exe = process.env.HOME + '/Library/Caches/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'
 const b = await chromium.launch({ executablePath: exe })
 const ca = await b.newContext({ permissions: ['clipboard-read', 'clipboard-write'] })

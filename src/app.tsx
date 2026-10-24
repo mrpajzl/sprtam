@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'preact/hooks'
 import { ALL_GRADES, GRADE_SUBJECTS } from './content/curriculum'
 import type { GradeId, SubjectId } from './content/types'
-import { decodeProgress } from './progress/code'
-import { importProgress } from './progress/store'
+import { decodeProgress, unpack } from './progress/code'
+import { importProgress, type Progress } from './progress/store'
 import { MODES, type ModeId } from './quiz/engine'
 import { go, useRoute } from './router'
 import { fullTitle, titles } from './seo'
+import { setTheme } from './theme'
 import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
 import { Search } from './screens/Search'
@@ -33,6 +34,7 @@ export function App() {
   if (a === 'hledat') return <Search />
   if (a === 'mix') return <MixScreen />
   if (a === 'p' && b) return <ImportLink code={b} />
+  if (a === 'presun' && b) return <MoveIn code={b} />
   if (a === 'spojit' && b) return <SyncScreen offer={b} />
   if (a === 'sdilet') return <SyncScreen />
   if (a === 'slovicka') {
@@ -74,4 +76,18 @@ function ImportLink({ code }: { code: string }) {
     decodeProgress(code).then((p) => { importProgress(p); go(p.g ? `/g/${p.g}` : '/', true) }, (e) => setErr(e.message))
   }, [code])
   return <div class="page"><div class="empty">{err || 'Načítám pokrok…'}{err && <button class="btn" onClick={() => go('/')}>Domů</button>}</div></div>
+}
+
+/** Arrival from the old domain (public/move.js): take over its progress and theme, then show the page that was open. */
+function MoveIn({ code }: { code: string }) {
+  useEffect(() => {
+    const done = () => go(location.pathname + location.search, true)
+    unpack<{ p?: Progress; t?: 'dark'; h?: string }>(code).then((d) => {
+      if (d.p?.v === 1) importProgress(d.p)
+      if (d.t === 'dark') setTheme('dark')
+      if (d.h && /^#\/(p|spojit)\//.test(d.h)) go(location.pathname + location.search + d.h, true)
+      else done()
+    }, done)
+  }, [code])
+  return <div class="page"><div class="empty">Načítám pokrok…</div></div>
 }
