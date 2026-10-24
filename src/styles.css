@@ -334,3 +334,17 @@ th { font-weight: 800; color: var(--ink-2); font-size: 0.85rem; }
 .bucket h4, .bucket .chip { hyphens: auto; overflow-wrap: anywhere; }
 .bucket .chip { max-width: 100%; padding: 6px 10px; min-height: 36px; font-size: 0.9rem; text-align: center; }
 .chip { max-width: 100%; }
+
+/* Deeper explanations */
+.bh { font-size: 1.12rem; font-weight: 900; margin: 10px 2px -4px; }
+.term { display: grid; gap: 4px; padding: 14px 16px; border-radius: var(--r-s); background: var(--card); box-shadow: var(--shadow); border-top: 4px solid var(--accent); }
+.term b { font-size: 1.1rem; font-weight: 900; color: var(--accent-ink); }
+.term span { line-height: 1.5; }
+.term small { color: var(--ink-2); font-size: 0.95rem; font-style: italic; }
+.mistake { display: grid; gap: 8px; }
+.mistake .wrong, .mistake .right { display: flex; gap: 10px; align-items: baseline; font-weight: 750; }
+.mistake .wrong { color: var(--bad); text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.mistake .right { color: var(--ok); }
+.mistake .wrong > span:first-child, .mistake .right > span:first-child { text-decoration: none; display: inline-block; font-weight: 900; flex: none; }
+.mistake .wrong > span:last-child, .mistake .right > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.mistake p { color: var(--ink-2); font-size: 0.98rem; }

@@ -13,7 +13,12 @@ export type SubjectId =
 
 /** Inline text supports **bold**, *italic* and `code`/vzorec. */
 export type Block =
+  | { t: 'h'; text: string } // short section heading inside an explanation
   | { t: 'p'; text: string }
+  /** A new term, introduced before it is used: what it is in plain words, plus an example. */
+  | { t: 'term'; term: string; def: string; ex?: string }
+  /** A typical mistake: the wrong version, the right one and why. */
+  | { t: 'mistake'; wrong: string; right: string; why: string }
   | { t: 'key'; text: string } // the one rule to remember, shown highlighted
   | { t: 'list'; items: string[] }
   | { t: 'steps'; items: string[] } // revealed one by one
