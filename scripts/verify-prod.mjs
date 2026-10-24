@@ -15,7 +15,7 @@ const errs = []; p.on('pageerror', (e) => errs.push(String(e)))
 await p.goto(base); await p.waitForTimeout(1000)
 let bad = 0
 for (const [k, n] of Object.entries(counts)) {
-  await p.evaluate((h) => { location.hash = h }, `/g/${k}`)
+  await p.evaluate((u) => { history.pushState(null, '', u); dispatchEvent(new PopStateEvent('popstate')) }, `/g/${k}`)
   const got = await p.waitForFunction((n) => document.querySelectorAll('.list .row').length === n, n, { timeout: 15000 }).then(() => n, async () => p.locator('.list .row').count())
   if (got !== n) { bad++; console.log('✗', k, 'prod', got, 'local', n) }
 }
