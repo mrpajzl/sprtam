@@ -1,4 +1,3 @@
-import type { ComponentChildren } from 'preact'
 import { useState } from 'preact/hooks'
 
 // Reordering cards by dragging their handle (mouse) – the arrow buttons on each card do the same by keyboard.
@@ -56,8 +55,4 @@ export function Menu<T extends string>({ items, onPick, onClose, title }: { item
       </div>
     </div>
   )
-}
-
-export function Card({ children, ...rest }: { children: ComponentChildren } & Record<string, unknown>) {
-  return <div {...rest}>{children}</div>
 }
