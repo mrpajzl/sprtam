@@ -19,7 +19,14 @@ export const LEVELS: { id: Level; hint: string }[] = [
   { id: 'C1', hint: 'velmi pokročilý' },
 ]
 
+/** A word counts as learned from this Leitner box on. */
 const MASTERED = 3
+/** Practised words (right at least once) and progress towards learning them all, 0–100. Every right answer moves the meter. */
+function vocabProgress(ws: Word[], box: Record<string, number>) {
+  let seen = 0, sum = 0
+  for (const w of ws) { const b = box[w[1]] ?? 0; if (b > 0) seen++; sum += Math.min(b, MASTERED) }
+  return { seen, pct: ws.length ? (sum / (ws.length * MASTERED)) * 100 : 0 }
+}
 const SESSION = 15
 const shuffle = <T,>(xs: T[]) => xs.map((x) => [Math.random(), x] as const).sort((a, b) => a[0] - b[0]).map((x) => x[1])
 
@@ -36,14 +43,13 @@ function LevelRow({ id, hint }: { id: Level; hint: string }) {
   const set = useAsync(() => load(id), [id])
   const p = useProgress()
   if (set === null) return null
-  const words = set?.groups.flatMap((g) => g.words) ?? []
-  const done = words.filter((w) => (p.w[w[1]] ?? 0) >= MASTERED).length
+  const { pct } = vocabProgress(set?.groups.flatMap((g) => g.words) ?? [], p.w)
   return (
     <Link class="row" href={`/slovicka/${id}`}>
       <span class="skey m"><b>{id}</b></span>
       <span style={{ flex: 1, display: 'grid', gap: '6px' }}>
         <b>{hint}</b>
-        <span class="meter"><i style={{ width: `${words.length ? (done / words.length) * 100 : 0}%` }} /></span>
+        <span class="meter"><i style={{ width: `${pct}%` }} /></span>
       </span>
     </Link>
   )
@@ -53,7 +59,6 @@ export function VocabLevel({ level }: { level: Level }) {
   const set = useAsync(() => load(level), [level])
   const p = useProgress()
   if (!set) return <div class="page" />
-  const known = (ws: Word[]) => ws.filter((w) => (p.w[w[1]] ?? 0) >= MASTERED).length
   const total = set.groups.reduce((n, g) => n + g.words.length, 0)
   return (
     <div class="page" style={keyStyle('purple')}>
@@ -63,12 +68,12 @@ export function VocabLevel({ level }: { level: Level }) {
       </button>
       <div class="tiles">
         {set.groups.map((g, i) => {
-          const done = known(g.words)
+          const { seen, pct } = vocabProgress(g.words, p.w)
           return (
             <Link key={i} class="tile vocab-tile" href={`/slovicka/${level}/${i}`}>
               <span class="tile-face em">{g.emoji}</span>
               <b>{g.name}</b>
-              <span class="foot"><Meter pct={g.words.length ? (done / g.words.length) * 100 : 0} /><small>{done}/{g.words.length}</small></span>
+              <span class="foot"><Meter pct={pct} /><small>{seen}/{g.words.length}</small></span>
             </Link>
           )
         })}

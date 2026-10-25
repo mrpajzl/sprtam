@@ -83,6 +83,7 @@ Přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního
 - Když se spleteš, slovo se **ve stejném kole vrátí o 3 karty později** k napsání.
 - Po odpovědi se přehraje **výslovnost**: nahrávka rodilého hlasu (britský, u amerických a australských idiomů americký a australský). Slovíčka z rozehraného kola se uloží, takže hrají i offline. Bez nahrávky mluví hlas prohlížeče (podrobnosti v [Soukromí](SOUKROMI.md#co-se-posílá-ven)).
 - Slova se opakují podle **Leitnerova systému**: každé slovo má přihrádku 0–5. Správná odpověď ho posune o přihrádku výš, chyba vrátí na 0. V kole přijdou na řadu nejdřív slova z nejnižších přihrádek. Od přihrádky 2 se slovo píše.
+- **Postup** u každé skupiny a úrovně: číslo ukazuje, kolik slov jsi už aspoň jednou trefil, ukazatel se posune s každou správnou odpovědí a zaplní se, až jsou všechna slova aspoň v přihrádce 3 (naučená). Chyba slovo vrátí na začátek.
 
 ## Další funkce
 
