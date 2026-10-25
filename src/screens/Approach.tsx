@@ -63,7 +63,7 @@ export function YearBlocks({ a, g, p }: { a: Approach; g: GradeId; p: Progress }
   const row = (b: YearBlock) => (
     <Link key={b.id} class="row epoch" href={`/${a.id}/${g}/${b.id}`}>
       <span class="em">{b.emoji}</span>
-      <span class="txt"><b>{b.title}</b>{b.month && <small>{b.month}</small>}</span>
+      <b>{b.title}</b>
       {b.topics.length > 0 && <Meter pct={blockPct(b, p)} n={5} />}
     </Link>
   )
@@ -83,6 +83,7 @@ function YearScreen({ a, g }: { a: Approach; g: GradeId }) {
   return (
     <div class="page" style={STYLE}>
       <Bar title={y?.title ?? ''} crumbs={[{ href: `/${a.id}`, label: a.short }]} />
+      {y?.about && <div class="blocks approach-about">{y.about.map((x, i) => <p key={i}><Inline text={x} /></p>)}</div>}
       <YearBlocks a={a} g={g} p={p} />
       <Link class="row test-key" href={`/g/${g}`}>
         <span class="txt"><b>Všechny předměty</b><small>{GRADE_NAME[g]} v běžném pořadí</small></span><IArrow />
@@ -104,7 +105,6 @@ function BlockScreen({ a, g, id, test }: { a: Approach; g: GradeId; id: string; 
   return (
     <div class="page" style={STYLE}>
       <Bar title={`${b.emoji} ${b.title}`} crumbs={[{ href: `/${a.id}`, label: a.short }, { href: `/${a.id}/${g}`, label: y!.title }]} />
-      {b.month && <div class="label">{b.month}</div>}
       <div class="blocks approach-about">{b.about.map((x, i) => <p key={i}><Inline text={x} /></p>)}</div>
       {b.topics.length > 0 ? (
         <>

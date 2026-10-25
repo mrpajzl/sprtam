@@ -21,7 +21,7 @@ Obsah je ve složce [`content/`](../content): každé téma je jeden soubor `con
 
 Kdo chodí do waldorfské školy, zapne si to na úvodní obrazovce ([sprtam.cz/waldorf](https://sprtam.cz/waldorf)). Pak:
 
-- **Ročník ukazuje epochy** v pořadí školního roku (září až červen) a ke každé témata k procvičení, i když jsou v aplikaci zařazená v jiném ročníku. Waldorfská 1. třída třeba probírá násobkové řady, které jsou v běžné škole ve 2. třídě.
+- **Ročník ukazuje epochy** (v obvyklém pořadí – třídy si je každý rok skládají jinak) a ke každé témata k procvičení, i když jsou v aplikaci zařazená v jiném ročníku. Waldorfská 1. třída třeba probírá násobkové řady, které jsou v běžné škole ve 2. třídě.
 - **Vysvětlení v duchu waldorfské školy** (od celku k částem, rytmus, příběh, přírodniny) se ukáže jako první. Zatím je u matematiky 1.–3. třídy.
 - **Témata navíc**, která běžná škola nemá, např. Od zrna ke chlebu, Stavba domu, Platónská tělesa, Parsifal nebo Faust.
 - **Písemka a test končí slovním hodnocením** místo známky.

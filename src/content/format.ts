@@ -152,7 +152,6 @@ const blockOfYear = s.object({
   id: s.string({ pattern: ID, description: 'Kebab-case ASCII, jedinečné v roce. Je v adrese (/waldorf/z1/<id>), nemění se.' }),
   title: s.string({ description: 'Název epochy, např. "Svět rovných a oblých čar".' }),
   emoji: s.string({ description: 'Jedno emoji.' }),
-  month: s.optional(s.string({ description: 'Kdy se epocha učí, např. "září" nebo "listopad–prosinec". U průběžných předmětů chybí.' })),
   about: s.array(text('Odstavec.'), { min: 1, description: 'Co se v epoše dělá, pro děti a rodiče; 1–3 krátké odstavce.' }),
   topics: s.array(s.string({ pattern: '^[a-z0-9]+/[a-z]+/[a-z0-9]+(-[a-z0-9]+)*$', description: 'Téma jako <ročník>/<předmět>/<id>, třeba z jiného ročníku.' }), { description: 'Témata aplikace, která k epoše patří, v pořadí probírání. Smí být prázdné.' }),
 })
@@ -170,7 +169,8 @@ export const approachFile = s.object({
 export const approachYearFile = s.object({
   format: s.int({ min: FORMAT, max: FORMAT, description: `Verze formátu, teď ${FORMAT}.` }),
   title: s.string({ description: 'Název ročníku v tomto přístupu, např. "1. třída" nebo "11. třída (lyceum)".' }),
-  epochs: s.array(blockOfYear, { min: 1, description: 'Epochy hlavního vyučování v pořadí školního roku.' }),
+  about: s.optional(s.array(text('Odstavec.'), { min: 1, description: 'Poznámka k celému ročníku, např. odkud plán pochází.' })),
+  epochs: s.array(blockOfYear, { min: 1, description: 'Epochy hlavního vyučování v obvyklém pořadí. Třídy si je každý rok skládají jinak, proto bez měsíců.' }),
   ongoing: s.optional(s.array(blockOfYear, { description: 'Předměty, které běží celý rok mimo epochy (cizí jazyky, cvičné hodiny).' })),
 }, { description: 'Plán jednoho ročníku v přístupu k výuce: epochy a průběžné předměty, každé s tématy aplikace.' })
 

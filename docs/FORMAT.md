@@ -75,18 +75,17 @@ Každý soubor začíná polem `"$schema"` s relativní cestou ke schématu – 
 |---|---|---|---|
 | `format` | celé číslo 1 | ano | Verze formátu, teď 1. |
 | `title` | text | ano | Název ročníku v tomto přístupu, např. "1. třída" nebo "11. třída (lyceum)". |
-| `epochs` | seznam (objekt) ≥ 1 položek | ano | Epochy hlavního vyučování v pořadí školního roku. |
+| `about` | seznam (text) ≥ 1 položek | – | Poznámka k celému ročníku, např. odkud plán pochází. |
+| `epochs` | seznam (objekt) ≥ 1 položek | ano | Epochy hlavního vyučování v obvyklém pořadí. Třídy si je každý rok skládají jinak, proto bez měsíců. |
 | `epochs[].id` | text | ano | Kebab-case ASCII, jedinečné v roce. Je v adrese (/waldorf/z1/<id>), nemění se. |
 | `epochs[].title` | text | ano | Název epochy, např. "Svět rovných a oblých čar". |
 | `epochs[].emoji` | text | ano | Jedno emoji. |
-| `epochs[].month` | text | – | Kdy se epocha učí, např. "září" nebo "listopad–prosinec". U průběžných předmětů chybí. |
 | `epochs[].about` | seznam (text) ≥ 1 položek | ano | Co se v epoše dělá, pro děti a rodiče; 1–3 krátké odstavce. |
 | `epochs[].topics` | seznam (text) | ano | Témata aplikace, která k epoše patří, v pořadí probírání. Smí být prázdné. |
 | `ongoing` | seznam (objekt) | – | Předměty, které běží celý rok mimo epochy (cizí jazyky, cvičné hodiny). |
 | `ongoing[].id` | text | ano | Kebab-case ASCII, jedinečné v roce. Je v adrese (/waldorf/z1/<id>), nemění se. |
 | `ongoing[].title` | text | ano | Název epochy, např. "Svět rovných a oblých čar". |
 | `ongoing[].emoji` | text | ano | Jedno emoji. |
-| `ongoing[].month` | text | – | Kdy se epocha učí, např. "září" nebo "listopad–prosinec". U průběžných předmětů chybí. |
 | `ongoing[].about` | seznam (text) ≥ 1 položek | ano | Co se v epoše dělá, pro děti a rodiče; 1–3 krátké odstavce. |
 | `ongoing[].topics` | seznam (text) | ano | Témata aplikace, která k epoše patří, v pořadí probírání. Smí být prázdné. |
 
