@@ -45,7 +45,7 @@ src/
     types.ts            schéma obsahu (zdroj pravdy)
     curriculum.ts       ročníky, předměty, barvy
     data/<ročník>/<předmět>.ts
-  vocab/                anglická slovíčka A1–C1
+  vocab/                anglická slovíčka A1–C1, přehrávání výslovnosti (speak.ts)
   quiz/                 režimy, vyhodnocení odpovědí, generátory příkladů
   progress/
     store.ts            pokrok v localStorage, slučování
@@ -167,6 +167,7 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/check-quiz.ts` | že každá napsaná odpověď projde vlastní kontrolou |
 | `scripts/flow.mjs` | průchod kvízem |
 | `scripts/vocab-test.mjs` | slovíčka |
+| `scripts/vocab-audio.ts` | nahrávky výslovnosti: `gen` nahraje chybějící přes ElevenLabs (klíč v `ELEVENLABS_API_KEY`), `build` je ořízne, srovná hlasitost a zapíše do `public/audio/en` a verzi do `src/vocab/audio.ts`, `check` je nechá přepsat řečí na text a porovná se slovíčkem |
 | `scripts/p2p-test.mjs` | spojení dvou oddělených prohlížečů přes WebRTC |
 | `scripts/code-test.mjs` | kód pokroku tam a zpět |
 | `scripts/import-test.mjs` | import pokroku odkazem (proti produkci) |

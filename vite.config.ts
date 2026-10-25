@@ -34,12 +34,17 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
         // Pages are never served from the precache while online (a cached page can point at assets of an
         // older deploy). Only the empty shell app.html is precached, as the offline fallback for any route.
-        globIgnores: ['g/**', 'slovicka/**', 'index.html', 'boot-check.js', 'move.js'],
+        globIgnores: ['audio/**', 'g/**', 'slovicka/**', 'index.html', 'boot-check.js', 'move.js'],
         navigateFallback: null,
         runtimeCaching: [{
           urlPattern: ({ request, url }) => request.mode === 'navigate' && !url.pathname.startsWith('/api/') && !/\.(xml|txt)$/.test(url.pathname),
           handler: 'NetworkFirst',
           options: { cacheName: 'pages', networkTimeoutSeconds: 5, expiration: { maxEntries: 30 }, precacheFallback: { fallbackURL: 'app.html' } },
+        }, {
+          // Word recordings (~10 MB together) are not precached: each is kept once a drill has loaded it.
+          urlPattern: ({ url }) => url.pathname.startsWith('/audio/'),
+          handler: 'CacheFirst',
+          options: { cacheName: 'audio', expiration: { maxEntries: 2000 }, cacheableResponse: { statuses: [200] }, rangeRequests: true },
         }],
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
       },
