@@ -19,7 +19,7 @@ Obsah je ve složce [`content/`](../content): každé téma je jeden soubor `con
 
 ## Waldorfská škola
 
-Kdo chodí do waldorfské školy, zapne si to na úvodní obrazovce ([sprtam.cz/waldorf](https://sprtam.cz/waldorf)). Pak:
+Kdo chodí do waldorfské školy, zapne si to v nastavení (ozubené kolečko na úvodní obrazovce). Plán ročníků je na [sprtam.cz/waldorf](https://sprtam.cz/waldorf). Pak:
 
 - **Ročník ukazuje epochy** (v obvyklém pořadí – třídy si je každý rok skládají jinak) a ke každé témata k procvičení, i když jsou v aplikaci zařazená v jiném ročníku. Waldorfská 1. třída třeba probírá násobkové řady, které jsou v běžné škole ve 2. třídě.
 - **Vysvětlení v duchu waldorfské školy** (od celku k částem, rytmus, příběh, přírodniny) se ukáže jako první. Zatím je u matematiky 1.–3. třídy.
@@ -101,7 +101,7 @@ Přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního
 - **Hledání** (lupa nebo klávesa `/`): ve všech tématech všech ročníků podle názvu, pojmů a pravidel a ve všech slovíčkách. Funguje i bez diakritiky a dá se filtrovat podle stupně.
 - **Připnutá témata**: špendlíkem si označíš, co se zrovna učíš. Připnutá témata se vracejí dřív a jdou procvičit najednou v Mixu.
 - **Série dní**: kolik dní po sobě jsi procvičoval (počítá se, pokud jsi procvičoval dnes nebo včera).
-- **Tmavý vzhled**: přepínač na úvodní obrazovce.
+- **Tmavý vzhled**: v nastavení (ozubené kolečko na úvodní obrazovce).
 - **Offline**: po první návštěvě má aplikace v zařízení celé učivo všech ročníků a funguje i bez internetu.
 - **Instalace**: v prohlížeči jde aplikace „přidat na plochu“ a pak se chová jako běžná aplikace.
 - **Sdílitelné adresy**: každé téma má vlastní odkaz, např. [`sprtam.cz/g/z5/matematika/zlomky`](https://sprtam.cz/g/z5/matematika/zlomky). Učitel ho může poslat žákům.

@@ -28,5 +28,6 @@ export function useTheme() {
     setTheme(t)
     set(t)
   }
-  return [theme, toggle] as const
+  const choose = (t: Theme) => { setTheme(t); set(t) }
+  return [theme, toggle, choose] as const
 }

@@ -76,7 +76,7 @@ function checkQuestion(q: Question, where: string) {
 
 // Teaching approaches are folders in content/approaches; their ids are also top-level URLs (/waldorf).
 const APPROACH_IDS = ls(APPROACHES).filter((f) => isDir(join(APPROACHES, f)))
-const RESERVED = ['g', 'p', 'hledat', 'mix', 'sdilet', 'slovicka', 'spojit', 'presun', 'widgety', 'api', 'assets', 'audio', 'healthz']
+const RESERVED = ['g', 'p', 'hledat', 'mix', 'sdilet', 'slovicka', 'spojit', 'presun', 'widgety', 'nastaveni', 'api', 'assets', 'audio', 'healthz']
 /** Every topic key that exists (grade/subject/id) and the approach of approach-only topics. */
 const topicKeys = new Map<string, string | undefined>()
 
