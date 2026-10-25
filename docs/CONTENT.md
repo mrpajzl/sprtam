@@ -44,6 +44,8 @@ Formátování je pevné: JSON odsazený dvěma mezerami, na konci nový řádek
 
 ## Postup
 
+Bez práce se soubory to jde v [moderaci](MODERACE.md): editor s živým náhledem hlídá tato pravidla a hotovou změnu pošle jako pull request. Ruční postup:
+
 ### Nové téma
 
 1. Vytvoř `content/topics/<ročník>/<předmět>/<id>.json`. Nejrychleji tak, že zkopíruješ podobné téma, nebo vzorové téma `z6/matematika/uhel.json` (pro malé děti `z3/cestina/slovni-druhy.json`).
