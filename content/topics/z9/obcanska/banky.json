@@ -1,0 +1,406 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "banky",
+  "title": "Banky a placení",
+  "emoji": "🏦",
+  "explanations": [
+    {
+      "title": "První účet",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Za brigádu ti zaměstnavatel nechce dát peníze do ruky – chce číslo účtu. Proto si zakládáš první bankovní účet a dostaneš kartu. Co to vlastně je a jak s tím bezpečně zacházet?"
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, co dělají banky, jak funguje placení kartou a převodem a jak se nenechat okrást."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Banka",
+          "definition": "Firma, která uchovává peníze lidí a firem, provádí platby a půjčuje peníze."
+        },
+        {
+          "type": "term",
+          "term": "Bankovní účet",
+          "definition": "Tvoje „schránka“ na peníze v bance. Má číslo, přes které ti lidé mohou peníze posílat."
+        },
+        {
+          "type": "term",
+          "term": "Vklad",
+          "definition": "Uložení peněz do banky."
+        },
+        {
+          "type": "term",
+          "term": "PIN",
+          "definition": "Tajné čtyřmístné číslo ke kartě. Nikdy ho nikomu neříkej."
+        },
+        {
+          "type": "heading",
+          "text": "Den s účtem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zaměstnavatel ti pošle výplatu **převodem** na účet.",
+            "V obchodě zaplatíš **debetní kartou** – peníze se strhnou rovnou z tvého účtu.",
+            "Nastavíš **trvalý příkaz**: každý měsíc automaticky pošle 300 Kč na spořicí účet.",
+            "V bankovní aplikaci zkontroluješ, co ti přišlo a co odešlo.",
+            "Přijde SMS: „Vaše karta je zablokována, klikněte sem a zadejte PIN.“ Neklikneš – je to **phishing**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Karta není jako karta"
+        },
+        {
+          "type": "term",
+          "term": "Debetní karta",
+          "definition": "Platíš **vlastními** penězi z účtu."
+        },
+        {
+          "type": "term",
+          "term": "Kreditní karta",
+          "definition": "Platíš **vypůjčenými** penězi banky. Když je včas nevrátíš, platíš vysoké úroky."
+        },
+        {
+          "type": "term",
+          "term": "Phishing",
+          "definition": "Podvodná zpráva (e-mail, SMS), která se tváří jako od banky a chce tvoje hesla nebo PIN."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď: je to bezpečné, nebo nebezpečné chování?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "bezpečné",
+              "nebezpečné"
+            ],
+            "items": [
+              {
+                "text": "zakrýt PIN rukou u bankomatu",
+                "group": 0
+              },
+              {
+                "text": "ztracenou kartu hned zablokovat",
+                "group": 0
+              },
+              {
+                "text": "kontrolovat pohyby na účtu",
+                "group": 0
+              },
+              {
+                "text": "banku kontaktovat přes oficiální aplikaci",
+                "group": 0
+              },
+              {
+                "text": "napsat PIN na kartu",
+                "group": 1
+              },
+              {
+                "text": "kliknout na odkaz v SMS „od banky“",
+                "group": 1
+              },
+              {
+                "text": "sdělit heslo „bankéři“ do telefonu",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Přijde e-mail „od banky“, ať zadáš PIN. Co uděláš?",
+          "answer": "Nic nezadám. **Banka se na PIN ani hesla nikdy neptá.** E-mail smažu a případně zavolám do banky na číslo z jejího oficiálního webu."
+        },
+        {
+          "type": "example",
+          "question": "Platíš kartou, ze které se ti pak strhnou peníze z tvého účtu. Je debetní, nebo kreditní?",
+          "answer": "Platíš vlastními penězi → **debetní** karta."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když ztratím kartu, počkám, jestli se nenajde.",
+          "right": "Ztracenou kartu hned zablokuj v aplikaci nebo telefonem v bance.",
+          "why": "Kdo kartu najde, může s ní hned platit. Každá minuta je riziko."
+        },
+        {
+          "type": "summary",
+          "text": "Banka uchovává peníze, provádí platby a půjčuje. Debetní karta = vlastní peníze, kreditní = půjčené. PIN a hesla nikomu – banka se na ně nikdy neptá."
+        }
+      ]
+    },
+    {
+      "title": "Bankovní soustava",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kdo tiskne bankovky? Kdo hlídá, aby ceny nerostly příliš rychle? A kdo ti vede účet? Nejsou to ty samé banky."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si dva typy bank a hlavní bankovní služby."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Centrální banka",
+          "definition": "Hlavní banka státu. V ČR je to **Česká národní banka (ČNB)**. Lidem účty nevede."
+        },
+        {
+          "type": "term",
+          "term": "Obchodní banka",
+          "definition": "Banka pro lidi a firmy: vede účty, přijímá vklady, poskytuje úvěry."
+        },
+        {
+          "type": "term",
+          "term": "Úvěr",
+          "definition": "Půjčka peněz, kterou musíš vrátit i s úrokem (poplatkem za půjčení)."
+        },
+        {
+          "type": "term",
+          "term": "Inflace",
+          "definition": "Růst cen. Za stejné peníze si koupíš méně."
+        },
+        {
+          "type": "heading",
+          "text": "ČNB vs. obchodní banka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Česká národní banka",
+            "obchodní banka"
+          ],
+          "rows": [
+            [
+              "vydává bankovky a mince",
+              "vede účty lidem a firmám"
+            ],
+            [
+              "hlídá stabilitu cen – inflační cíl **2 %**",
+              "přijímá vklady"
+            ],
+            [
+              "dohlíží na banky",
+              "poskytuje úvěry"
+            ],
+            [
+              "občanům účty nevede",
+              "vydává platební karty"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Česká měna je **koruna česká** (Kč, mezinárodně CZK)."
+        },
+        {
+          "type": "heading",
+          "text": "Způsoby placení"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**hotovost** – bankovky a mince",
+            "**platba kartou** – debetní (vlastní peníze) nebo kreditní (půjčené)",
+            "**převod** – jednorázově pošleš peníze na jiný účet",
+            "**trvalý příkaz** – stejná částka pravidelně (nájem)",
+            "**inkaso** – svolíš, aby si příjemce sám strhl částku, která se může měnit (třeba vyúčtování za telefon)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zkus vysvětlit pojem, pak otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "debetní karta",
+                "back": "vlastní peníze"
+              },
+              {
+                "front": "kreditní karta",
+                "back": "půjčka od banky"
+              },
+              {
+                "front": "phishing",
+                "back": "podvodná zpráva, která chce hesla nebo PIN"
+              },
+              {
+                "front": "vklad",
+                "back": "uložení peněz"
+              },
+              {
+                "front": "trvalý příkaz",
+                "back": "pravidelná platba stejné částky"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Platíš každý měsíc nájem 12 000 Kč. Jak to nastavíš?",
+          "answer": "Pravidelná a stále stejná částka → **trvalý příkaz**."
+        },
+        {
+          "type": "example",
+          "question": "Může si občan založit účet v ČNB?",
+          "answer": "**Ne.** ČNB je centrální banka – vydává peníze a hlídá ceny. Účty lidem vedou **obchodní banky**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Česká národní banka vybírá daně.",
+          "right": "Daně vybírá finanční úřad. ČNB vydává peníze a hlídá stabilitu cen.",
+          "why": "ČNB je centrální banka, ne úřad pro daně. Má jiné úkoly."
+        },
+        {
+          "type": "summary",
+          "text": "ČNB = centrální banka: vydává peníze, hlídá inflaci (cíl 2 %), dohlíží na banky. Obchodní banky vedou účty, přijímají vklady a půjčují."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je centrální banka ČR?",
+      "options": [
+        "Česká národní banka",
+        "Česká spořitelna",
+        "Ministerstvo financí",
+        "Evropská centrální banka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jaký inflační cíl má ČNB (v %)?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "S kreditní kartou platíš z vypůjčených peněz banky.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Pravidelná platba stejné částky, např. nájmu, je…",
+      "options": [
+        "trvalý příkaz",
+        "inkaso",
+        "hotovost",
+        "úvěr"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Banka tě může e-mailem požádat o zadání PINu.",
+      "answer": false,
+      "explanation": "Banka se na PIN ani hesla nikdy neptá."
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a význam.",
+      "pairs": [
+        [
+          "debetní karta",
+          "vlastní peníze"
+        ],
+        [
+          "kreditní karta",
+          "půjčka od banky"
+        ],
+        [
+          "phishing",
+          "podvodná zpráva"
+        ],
+        [
+          "vklad",
+          "uložení peněz"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co dělá ČNB?",
+      "options": [
+        "vydává bankovky a mince",
+        "vede účty občanům",
+        "vybírá daně",
+        "schvaluje zákony"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co dělat, když ztratíš platební kartu?",
+      "options": [
+        "hned ji zablokovat v bance",
+        "počkat týden",
+        "nic",
+        "napsat PIN na sociální síť"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Obchodní banky přijímají vklady a poskytují úvěry.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje česká měna?",
+      "answers": [
+        "koruna",
+        "česká koruna",
+        "Kč",
+        "CZK"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak se chránit před podvody v bankovnictví?",
+      "answer": "Nikomu neříkat PIN ani hesla, neklikat na odkazy v podezřelých SMS a e-mailech, kontrolovat pohyby na účtu a ztracenou kartu hned zablokovat."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi ČNB a obchodní bankou?",
+      "answer": "ČNB je centrální banka: vydává peníze a hlídá stabilitu cen. Obchodní banka vede účty lidem a firmám a půjčuje peníze."
+    }
+  ]
+}

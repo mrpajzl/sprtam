@@ -1,0 +1,356 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "svetlo",
+  "title": "Světlo a jeho šíření",
+  "emoji": "🔦",
+  "explanations": [
+    {
+      "title": "Stíny a zatmění",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Bez světla nic nevidíme. Když ráno zhasneš lampu a zatáhneš závěsy, pokoj zmizí ve tmě. Světlo k nám přináší obraz světa – a taky vytváří stíny, zatmění a duhu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zdroj světla",
+          "definition": "Těleso, které světlo **samo vyzařuje**.",
+          "example": "Slunce, svíčka, LED žárovka, blesk."
+        },
+        {
+          "type": "term",
+          "term": "Osvětlené těleso",
+          "definition": "Těleso, které samo nesvítí, jen **odráží** světlo, které na něj dopadne. Proto ho vidíme.",
+          "example": "Měsíc, zrcadlo, papír, tvůj obličej."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď tělesa: svítí sama, nebo jen odrážejí světlo?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "zdroj světla",
+              "jen odráží světlo"
+            ],
+            "items": [
+              {
+                "text": "Slunce",
+                "group": 0
+              },
+              {
+                "text": "svíčka",
+                "group": 0
+              },
+              {
+                "text": "LED žárovka",
+                "group": 0
+              },
+              {
+                "text": "blesk",
+                "group": 0
+              },
+              {
+                "text": "Měsíc",
+                "group": 1
+              },
+              {
+                "text": "zrcadlo",
+                "group": 1
+              },
+              {
+                "text": "planeta Venuše",
+                "group": 1
+              },
+              {
+                "text": "bílý papír",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Světlo letí rovně"
+        },
+        {
+          "type": "text",
+          "text": "Paprsek baterky ve tmě nebo sluneční paprsky prosvítající mezi mraky jsou **rovné**. Ve stejnorodém prostředí (všude stejném, např. ve vzduchu) se světlo šíří **přímočaře**."
+        },
+        {
+          "type": "term",
+          "term": "Stín",
+          "definition": "Místo za neprůhledným předmětem, kam světlo nedopadne. Vznikne, protože světlo předmět neobejde – letí rovně.",
+          "example": "Tvůj stín na chodníku v slunečný den."
+        },
+        {
+          "type": "heading",
+          "text": "Zatmění"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Zatmění Slunce**: **Měsíc** se dostane **mezi Slunce a Zemi**. Jeho stín dopadne na Zemi a tam je na chvíli tma ve dne.",
+            "**Zatmění Měsíce**: **Země** je **mezi Sluncem a Měsícem**. Měsíc vstoupí do stínu Země a ztmavne (často zčervená)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč nevidíme v noci zemi kolem sebe, ale Měsíc ano?",
+          "answer": "Měsíc je osvětlený **Sluncem** a odráží jeho světlo k nám. Krajina kolem nás v noci světlo ze Slunce nedostává (jsme ve stínu Země)."
+        },
+        {
+          "type": "example",
+          "question": "Při bouřce vidíš blesk a hrom slyšíš až za chvíli. Proč?",
+          "answer": "Světlo je **mnohem rychlejší** než zvuk. Blesk uvidíš skoro hned, zvuk hromu k tobě letí několik sekund."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Měsíc svítí vlastním světlem.",
+          "right": "Měsíc jen odráží světlo ze Slunce.",
+          "why": "Proto vidíme fáze Měsíce: osvětlená je vždy jen ta polovina, která je natočená ke Slunci."
+        },
+        {
+          "type": "summary",
+          "text": "Zdroje světlo vyzařují, ostatní tělesa ho odrážejí. Světlo se šíří přímočaře, proto vznikají stíny a zatmění."
+        }
+      ]
+    },
+    {
+      "title": "Rychlost a prostředí",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Světlo je nejrychlejší věc ve vesmíru. Za jednu sekundu by obletělo Zemi sedmkrát. A přesto mu cesta ze Slunce trvá přes osm minut. Ukážeme si, jak to spočítat a čím světlo projde."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rychlost světla `c`",
+          "definition": "Ve **vakuu** (prázdném prostoru bez vzduchu) asi **300 000 km/s**. V jiném prostředí je menší – ve vodě i ve skle.",
+          "example": "Přesně 299 792 km/s, zaokrouhlujeme na 300 000 km/s."
+        },
+        {
+          "type": "term",
+          "term": "Optické prostředí",
+          "definition": "Látka, kterou světlo prochází (nebo neprochází): vzduch, voda, sklo, dřevo…"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Prostředí",
+            "Co dělá se světlem",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "průhledné",
+              "propustí, vidíme skrz ostře",
+              "čiré sklo, voda, vzduch"
+            ],
+            [
+              "průsvitné",
+              "propustí, ale rozptýlí – obrysy nevidíme",
+              "matné sklo, pauzovací papír"
+            ],
+            [
+              "neprůhledné",
+              "nepropustí",
+              "dřevo, kov, zeď"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Výpočet doby letu"
+        },
+        {
+          "type": "text",
+          "text": "Platí stejný vzorec jako u každého pohybu: čas = dráha : rychlost, `t = s : c`."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vzdálenost měj v km.",
+            "Rychlost světla 300 000 km/s.",
+            "Vyděl: t = s : c.",
+            "Výsledek v sekundách, případně převeď na minuty."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik sekund letí světlo ze Slunce na Zemi (150 000 000 km)?",
+          "answer": "t = 150 000 000 : 300 000 = **500 s**, to je 8 min 20 s."
+        },
+        {
+          "type": "example",
+          "question": "Vzdálenost Země–Měsíc je asi 384 000 km. Jak dlouho letí světlo z Měsíce?",
+          "answer": "t = 384 000 : 300 000 ≈ **1,3 s**."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "čiré sklo",
+                "back": "průhledné"
+              },
+              {
+                "front": "pauzovací papír",
+                "back": "průsvitné"
+              },
+              {
+                "front": "dřevo",
+                "back": "neprůhledné"
+              },
+              {
+                "front": "matné sklo",
+                "back": "průsvitné"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Ke každé kartě nejdřív řekni typ prostředí sám."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ve vodě je světlo rychlejší, protože voda je hustá.",
+          "right": "Největší rychlost má světlo ve vakuu, ve vodě je asi o čtvrtinu pomalejší.",
+          "why": "Látka světlo vždy zpomaluje. Ve vakuu mu nic nestojí v cestě."
+        },
+        {
+          "type": "summary",
+          "text": "Rychlost světla ve vakuu je asi 300 000 km/s; v látkách je menší. Prostředí jsou průhledná, průsvitná a neprůhledná."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Rychlost světla ve vakuu v km/s (zaokrouhleně) =",
+      "answers": [
+        "300000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik sekund letí světlo ze Slunce na Zemi (150 000 000 km)?",
+      "answers": [
+        "500"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co není zdroj světla?",
+      "options": [
+        "Měsíc",
+        "Slunce",
+        "svíčka",
+        "žárovka"
+      ],
+      "answer": 0,
+      "explanation": "Měsíc jen odráží sluneční světlo."
+    },
+    {
+      "type": "truefalse",
+      "question": "Světlo se ve stejnorodém prostředí šíří přímočaře.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kdy nastává zatmění Měsíce?",
+      "options": [
+        "Měsíc vstoupí do stínu Země",
+        "Měsíc zakryje Slunce",
+        "Měsíc je v novu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaké prostředí je matné sklo?",
+      "options": [
+        "průsvitné",
+        "průhledné",
+        "neprůhledné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve vodě je rychlost světla větší než ve vakuu.",
+      "answer": false,
+      "explanation": "Ve vakuu je největší."
+    },
+    {
+      "type": "choice",
+      "question": "Proč při bouřce vidíme blesk dřív, než slyšíme hrom?",
+      "options": [
+        "světlo je mnohem rychlejší než zvuk",
+        "blesk vznikne dřív",
+        "hrom se odráží"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj prostředí s příkladem.",
+      "pairs": [
+        [
+          "průhledné",
+          "čiré sklo"
+        ],
+        [
+          "průsvitné",
+          "pauzovací papír"
+        ],
+        [
+          "neprůhledné",
+          "dřevo"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdy nastává zatmění Slunce?",
+      "options": [
+        "Měsíc je mezi Sluncem a Zemí",
+        "Země je mezi Sluncem a Měsícem",
+        "Slunce zapadá"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak vzniká stín?",
+      "answer": "Světlo se šíří přímočaře. Neprůhledný předmět ho zastaví a za ním zůstane místo, kam světlo nedopadá – stín."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, jak vzniká zatmění Slunce a Měsíce.",
+      "answer": "Zatmění Slunce: Měsíc se dostane mezi Slunce a Zemi a vrhá na Zemi stín. Zatmění Měsíce: Země je mezi Sluncem a Měsícem a Měsíc je v jejím stínu."
+    }
+  ]
+}

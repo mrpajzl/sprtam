@@ -1,0 +1,423 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cr-kraje",
+  "title": "Kraje Česka",
+  "emoji": "🗺️",
+  "explanations": [
+    {
+      "title": "Krajská města",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když se tě někdo zeptá, odkud jsi, můžeš říct město, ale taky kraj: „Jsem z Jihočeského kraje.“ Česko je rozdělené na menší části – **kraje**."
+        },
+        {
+          "type": "text",
+          "text": "Kraj se stará o střední školy, silnice, nemocnice nebo autobusy. Hodí se znát, ve kterém kraji žiješ a kde je jeho úřad."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kraj",
+          "definition": "Velká část státu, která si sama spravuje některé věci (střední školy, silnice 2. a 3. třídy, krajské nemocnice).",
+          "example": "Jihomoravský kraj, kraj Vysočina."
+        },
+        {
+          "type": "term",
+          "term": "Krajské město",
+          "definition": "Město, kde sídlí krajský úřad – úřad, který kraj řídí.",
+          "example": "Krajské město Jihomoravského kraje je Brno."
+        },
+        {
+          "type": "term",
+          "term": "Hejtman",
+          "definition": "Člověk, který stojí v čele kraje – něco jako starosta celého kraje.",
+          "example": "Hejtmana volí krajští zastupitelé."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Kolik je krajů"
+        },
+        {
+          "type": "text",
+          "text": "Česko má **14 krajů**: 13 krajů a **hlavní město Praha**, které je zároveň krajem. Většina krajů se jmenuje podle svého krajského města."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Kraj a jeho město"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. U každé si napřed tipni krajské město."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Jihočeský",
+                "back": "České Budějovice"
+              },
+              {
+                "front": "Plzeňský",
+                "back": "Plzeň"
+              },
+              {
+                "front": "Karlovarský",
+                "back": "Karlovy Vary"
+              },
+              {
+                "front": "Ústecký",
+                "back": "Ústí nad Labem"
+              },
+              {
+                "front": "Královéhradecký",
+                "back": "Hradec Králové"
+              },
+              {
+                "front": "Vysočina",
+                "back": "Jihlava"
+              },
+              {
+                "front": "Jihomoravský",
+                "back": "Brno"
+              },
+              {
+                "front": "Moravskoslezský",
+                "back": "Ostrava"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Zbývající: **Liberecký** – Liberec, **Pardubický** – Pardubice, **Olomoucký** – Olomouc, **Zlínský** – Zlín. Pozor na výjimky: úřad **Středočeského** kraje sídlí v **Praze**, i když Praha do něj nepatří."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Jak se jmenuje krajské město kraje Vysočina?",
+          "answer": "Kraj Vysočina se nejmenuje podle města – musíš si ho zapamatovat. Je to **Jihlava**."
+        },
+        {
+          "type": "example",
+          "question": "Jaké je krajské město Moravskoslezského kraje: Opava, nebo Ostrava?",
+          "answer": "**Ostrava**. Opava je historické hlavní město Slezska, ale krajský úřad je v Ostravě – největším městě kraje."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Úřad Středočeského kraje sídlí v Kladně, protože je to největší středočeské město.",
+          "right": "Úřad Středočeského kraje sídlí v Praze.",
+          "why": "Praha leží uprostřed Středočeského kraje a všude se do ní dobře dojede. Proto tam úřad zůstal, i když Praha je samostatný kraj."
+        },
+        {
+          "type": "summary",
+          "text": "Česko má 14 krajů (13 + Praha). Většina se jmenuje podle krajského města. Výjimky: Vysočina – Jihlava, Středočeský – úřad v Praze."
+        }
+      ]
+    },
+    {
+      "title": "Čechy a Morava",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Moraváci říkají „Jedu do Čech“, i když nejedou do ciziny. Česko se totiž skládá ze tří historických zemí: **Čech, Moravy a Slezska**. Kraje do nich zapadají jako dílky do skládačky."
+        },
+        {
+          "type": "text",
+          "text": "Uvidíš, jak kraje rozdělit, který je největší a čím je který typický – od vinic po rybníky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kraj",
+          "definition": "Velká část Česka, která si sama spravuje silnice, střední školy a nemocnice. V čele je **hejtman**, úřad sídlí v **krajském městě**.",
+          "example": "Olomoucký kraj, krajské město Olomouc."
+        },
+        {
+          "type": "term",
+          "term": "Historické země",
+          "definition": "Části, ze kterých se Česko skládá odedávna: **Čechy** (západ), **Morava** (východ) a **Slezsko** (malá část na severovýchodě).",
+          "example": "Praha je v Čechách, Brno na Moravě, Opava ve Slezsku."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Rozděl kraje"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď kraje. Pomůcka: na Moravě a ve Slezsku jsou jen čtyři kraje."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Čechy",
+              "Morava a Slezsko"
+            ],
+            "items": [
+              {
+                "text": "Liberecký",
+                "group": 0
+              },
+              {
+                "text": "Pardubický",
+                "group": 0
+              },
+              {
+                "text": "Karlovarský",
+                "group": 0
+              },
+              {
+                "text": "Olomoucký",
+                "group": 1
+              },
+              {
+                "text": "Zlínský",
+                "group": 1
+              },
+              {
+                "text": "Moravskoslezský",
+                "group": 1
+              },
+              {
+                "text": "Jihomoravský",
+                "group": 1
+              },
+              {
+                "text": "Plzeňský",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Kraj **Vysočina** leží na pomezí Čech a Moravy – část je v Čechách, část na Moravě."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Velikost"
+        },
+        {
+          "type": "text",
+          "text": "Rozlohou největší je **Středočeský** kraj (obklopuje Prahu). Nejmenší je **Praha** – je to jen jedno město."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: Čím je který kraj typický"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kraj",
+            "Krajské město",
+            "Typické"
+          ],
+          "rows": [
+            [
+              "Jihomoravský",
+              "Brno",
+              "vinice, teplé nížiny"
+            ],
+            [
+              "Jihočeský",
+              "České Budějovice",
+              "rybníky, Šumava, Temelín"
+            ],
+            [
+              "Moravskoslezský",
+              "Ostrava",
+              "těžký průmysl, hutě, dříve uhlí"
+            ],
+            [
+              "Liberecký",
+              "Liberec",
+              "hora Ještěd, sklářství"
+            ],
+            [
+              "Karlovarský",
+              "Karlovy Vary",
+              "lázně"
+            ],
+            [
+              "Zlínský",
+              "Zlín",
+              "obuvnictví (Baťa)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Leží Olomoucký kraj v Čechách, nebo na Moravě?",
+          "answer": "Olomouc je na řece Moravě. Kraj patří k **Moravě** (malý kousek na severu je Slezsko)."
+        },
+        {
+          "type": "example",
+          "question": "Čím se liší Moravskoslezský a Jihočeský kraj?",
+          "answer": "Moravskoslezský je hustě osídlený a průmyslový (uhlí, hutě). Jihočeský je řidčeji osídlený, s rybníky, lesy, zemědělstvím a turistikou."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejmenší kraj je Liberecký.",
+          "right": "Nejmenší kraj je Praha. Liberecký je nejmenší až mezi ostatními 13 kraji.",
+          "why": "Praha je zároveň město i kraj. Má rozlohu jen asi 500 km², to je mnohem méně než jakýkoli jiný kraj."
+        },
+        {
+          "type": "summary",
+          "text": "Česko = Čechy, Morava a Slezsko. Na Moravě a ve Slezsku jsou 4 kraje (Jihomoravský, Olomoucký, Zlínský, Moravskoslezský), Vysočina je na pomezí. Největší je Středočeský, nejmenší Praha."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik krajů má Česko (včetně Prahy)?",
+      "answers": [
+        "14"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj kraj a krajské město.",
+      "pairs": [
+        [
+          "Jihočeský",
+          "České Budějovice"
+        ],
+        [
+          "Vysočina",
+          "Jihlava"
+        ],
+        [
+          "Zlínský",
+          "Zlín"
+        ],
+        [
+          "Liberecký",
+          "Liberec"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který kraj je rozlohou největší?",
+      "options": [
+        "Jihočeský",
+        "Středočeský",
+        "Moravskoslezský",
+        "Plzeňský"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaké je krajské město Moravskoslezského kraje?",
+      "options": [
+        "Opava",
+        "Ostrava",
+        "Olomouc",
+        "Frýdek-Místek"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Úřad Středočeského kraje sídlí v Kladně.",
+      "answer": false,
+      "explanation": "Sídlí v Praze."
+    },
+    {
+      "type": "input",
+      "question": "Krajské město Královéhradeckého kraje?",
+      "answers": [
+        "Hradec Králové",
+        "Hradec Kralove"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který kraj je známý lázněmi?",
+      "options": [
+        "Karlovarský",
+        "Ústecký",
+        "Pardubický",
+        "Zlínský"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj kraj a typickou věc.",
+      "pairs": [
+        [
+          "Jihomoravský",
+          "vinice"
+        ],
+        [
+          "Jihočeský",
+          "rybníky"
+        ],
+        [
+          "Moravskoslezský",
+          "těžký průmysl"
+        ],
+        [
+          "Liberecký",
+          "Ještěd"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Olomoucký kraj leží na Moravě.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který kraj je nejmenší rozlohou?",
+      "options": [
+        "Praha",
+        "Liberecký",
+        "Karlovarský",
+        "Zlínský"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Popiš kraj, ve kterém žiješ: krajské město, příroda a hospodářství.",
+      "answer": "Např. Jihočeský kraj: krajské město České Budějovice, Šumava a rybníky na Třeboňsku, zemědělství, rybářství, cestovní ruch a jaderná elektrárna Temelín."
+    },
+    {
+      "type": "open",
+      "question": "Čím se liší Moravskoslezský a Jihočeský kraj?",
+      "answer": "Moravskoslezský je hustě osídlený, průmyslový, s hutnictvím a dlouhou historií těžby uhlí. Jihočeský je řidčeji osídlený, zemědělský, s rybníky, lesy a turistikou."
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "paka-a-kladka",
+  "title": "Páka a kladka",
+  "emoji": "🏗️",
+  "explanations": [
+    {
+      "title": "Houpačka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na houpačce s tátou se houpat nejde – tatínek je těžší a ty zůstaneš nahoře. Ale stačí, aby si sedl blíž ke středu, a najednou to funguje."
+        },
+        {
+          "type": "text",
+          "text": "Stejný trik používají nůžky, kleště, klika u dveří, páčidlo i jeřáb. Díky němu zvedneš malou silou velký náklad."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla",
+          "definition": "Tlačení nebo tahání. Měří se v newtonech (N). Těleso o hmotnosti 1 kg táhne Země dolů silou asi 10 N.",
+          "example": "Dítě 30 kg tlačí na houpačku silou asi 300 N."
+        },
+        {
+          "type": "term",
+          "term": "Páka",
+          "definition": "Tuhá tyč, která se může otáčet kolem jednoho pevného bodu.",
+          "example": "Houpačka, páčidlo, klika, kleště."
+        },
+        {
+          "type": "term",
+          "term": "Osa otáčení",
+          "definition": "Bod (nebo čára), kolem kterého se páka otáčí.",
+          "example": "U houpačky je to kolík uprostřed, u dveří panty."
+        },
+        {
+          "type": "term",
+          "term": "Rameno síly",
+          "definition": "Vzdálenost od osy otáčení k místu, kde síla působí.",
+          "example": "Sedíš-li 2 m od středu houpačky, rameno tvé síly je 2 m."
+        },
+        {
+          "type": "heading",
+          "text": "Čím dál, tím snáz"
+        },
+        {
+          "type": "text",
+          "text": "Na jedné straně páky visí 1 m od osy náklad, který tlačí dolů silou 300 N. Jakou silou ho vyvážíš na druhé straně? Podívej se na graf: záleží, jak daleko od osy zatlačíš."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "N",
+            "items": [
+              {
+                "label": "rameno 1 m",
+                "value": 300
+              },
+              {
+                "label": "2 m",
+                "value": 150
+              },
+              {
+                "label": "3 m",
+                "value": 100
+              },
+              {
+                "label": "5 m",
+                "value": 60
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Dvakrát delší rameno → stačí poloviční síla. Třikrát delší → třetinová."
+        },
+        {
+          "type": "example",
+          "question": "Proč je klika daleko od pantů dveří?",
+          "answer": "Na dlouhém rameni stačí **malá síla**. Zkus zavřít dveře zatlačením u pantů – jde to mnohem hůř."
+        },
+        {
+          "type": "example",
+          "question": "Dítě o tíze 400 N sedí 1,5 m od osy houpačky. Kam si musí sednout dítě o tíze 300 N?",
+          "answer": "Lehčí dítě musí sedět dál. Na levé straně je 400 · 1,5 = 600. Na pravé chci také 600: 600 : 300 = **2 m** od osy."
+        },
+        {
+          "type": "heading",
+          "text": "Kladka"
+        },
+        {
+          "type": "term",
+          "term": "Kladka",
+          "definition": "Kolo s drážkou na obvodu, přes které vede lano.",
+          "example": "Kladka na stožáru vlajky nebo na stavebním jeřábu."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Pevná kladka** je připevněná nahoře. Tahem dolů zvedáš náklad nahoru. Síla je **stejná** jako tíha nákladu – kladka jen **mění směr** síly.",
+            "**Volná kladka** visí na laně a jede s nákladem nahoru. Náklad drží dva kusy lana, každý nese polovinu. Táhneš **poloviční silou**."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pevná kladka zmenší sílu na polovinu.",
+          "right": "Pevná kladka jen mění směr síly. Polovinu ušetří volná kladka.",
+          "why": "U pevné kladky drží náklad jen jeden kus lana – ten, za který táhneš. U volné ho drží dva kusy."
+        },
+        {
+          "type": "summary",
+          "text": "Páka se otáčí kolem osy. Delší rameno = stačí menší síla. Pevná kladka mění směr síly, volná ušetří polovinu síly."
+        }
+      ]
+    },
+    {
+      "title": "Momenty sil",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Archimédés prý řekl: „Dejte mi pevný bod a pohnu Zemí.“ Myslel tím páku. Naučíš se přesně spočítat, kdy je páka v rovnováze a jakou silou co zvedneš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Páka",
+          "definition": "Tuhá tyč otáčivá kolem **osy otáčení** (pevného bodu).",
+          "example": "Páčidlo, nůžky, kolečko na písek."
+        },
+        {
+          "type": "term",
+          "term": "Rameno síly `a`",
+          "definition": "Vzdálenost osy otáčení od místa, kde síla působí. V metrech.",
+          "example": "Klíč na matice 0,3 m dlouhý = rameno 0,3 m."
+        },
+        {
+          "type": "term",
+          "term": "Moment síly `M`",
+          "definition": "Jak silně síla páku **otáčí**. Vypočítá se `M = F · a` (síla krát rameno). Jednotka **newtonmetr (N·m)**.",
+          "example": "Síla 30 N na rameni 0,4 m: M = 30 · 0,4 = 12 N·m."
+        },
+        {
+          "type": "heading",
+          "text": "Podmínka rovnováhy"
+        },
+        {
+          "type": "text",
+          "text": "Moment na jedné straně otáčí pákou jedním směrem, moment na druhé straně opačně. Páka stojí v rovnováze, když jsou **momenty stejné**:"
+        },
+        {
+          "type": "text",
+          "text": "`F₁ · a₁ = F₂ · a₂`"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej moment strany, kde znáš sílu i rameno: F₁ · a₁.",
+            "Na druhé straně musí vyjít stejné číslo.",
+            "Neznámou sílu dopočítáš dělením: F₂ = (F₁ · a₁) : a₂.",
+            "Nebo neznámé rameno: a₂ = (F₁ · a₁) : F₂."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Na rameni 0,5 m visí 200 N. Jakou silou to vyvážíš na rameni 2 m?",
+          "answer": "Moment: 200 · 0,5 = 100 N·m. Na druhé straně F · 2 = 100 → F = 100 : 2 = **50 N**."
+        },
+        {
+          "type": "example",
+          "question": "Na rameni 1 m je břemeno 300 N. Jakou silou ho vyvážíš na rameni 3 m?",
+          "answer": "300 · 1 = F · 3 → F = 300 : 3 = **100 N**."
+        },
+        {
+          "type": "heading",
+          "text": "Kladky"
+        },
+        {
+          "type": "term",
+          "term": "Kladka",
+          "definition": "Kolo s drážkou pro lano. Je to vlastně páka, která se může otáčet dokola.",
+          "example": "Kladka na studni."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kladka",
+            "Síla",
+            "K čemu je"
+          ],
+          "rows": [
+            [
+              "pevná",
+              "stejná jako tíha břemene",
+              "mění směr síly – tahám dolů, náklad jede nahoru"
+            ],
+            [
+              "volná",
+              "poloviční",
+              "ušetří polovinu síly (lano táhneš dvakrát delší)"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Volnou kladkou zvedáš břemeno o tíze 600 N. Jakou silou táhneš?",
+          "answer": "Volná kladka → poloviční síla: 600 : 2 = **300 N** (kladku považujeme za lehkou)."
+        },
+        {
+          "type": "text",
+          "text": "Páka i kladka patří mezi **jednoduché stroje**. Další je například **klín** (sekera, nůž) – ten ale není páka, protože se kolem žádné osy neotáčí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Moment síly = síla + rameno",
+          "right": "Moment síly = síla · rameno",
+          "why": "Dvakrát delší rameno má otáčet dvakrát silněji. To zajistí jen násobení."
+        },
+        {
+          "type": "summary",
+          "text": "`M = F · a` (N·m). Páka je v rovnováze, když `F₁ · a₁ = F₂ · a₂`. Pevná kladka mění směr, volná půlí sílu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Síla 30 N působí na rameni 0,4 m. Moment síly v N·m =",
+      "answers": [
+        "12"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Na rameni 1 m je břemeno 300 N. Jakou silou v N ho vyvážíš na rameni 3 m?",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Dítě o tíze 400 N sedí 1,5 m od osy houpačky. Jak daleko v m musí sedět dítě o tíze 300 N?",
+      "answers": [
+        "2"
+      ],
+      "explanation": "400 · 1,5 = 600; 600 : 300 = 2"
+    },
+    {
+      "type": "choice",
+      "question": "K čemu slouží pevná kladka?",
+      "options": [
+        "mění směr síly",
+        "zmenší sílu na polovinu",
+        "zvětší sílu",
+        "zmenší tření"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Volnou kladkou zvedáš břemeno o tíze 600 N. Jakou silou v N táhneš? (hmotnost kladky zanedbej)",
+      "answers": [
+        "300"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Čím delší rameno, tím menší síla stačí k vyvážení.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co není páka?",
+      "options": [
+        "klín (sekera při štípání)",
+        "nůžky",
+        "kleště",
+        "páčidlo"
+      ],
+      "answer": 0,
+      "explanation": "Klín je samostatný jednoduchý stroj, neotáčí se kolem osy."
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a popis.",
+      "pairs": [
+        [
+          "rameno síly",
+          "vzdálenost od osy"
+        ],
+        [
+          "moment síly",
+          "F · a"
+        ],
+        [
+          "pevná kladka",
+          "mění směr"
+        ],
+        [
+          "volná kladka",
+          "poloviční síla"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč je klika u dveří daleko od pantů?",
+      "options": [
+        "větší rameno = menší potřebná síla",
+        "aby se dveře nezasekly",
+        "z estetických důvodů"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Jednotka momentu síly je N·m.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Kdy je páka v rovnováze?",
+      "answer": "Když jsou momenty sil na obou stranách stejné: F₁ · a₁ = F₂ · a₂."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi pevnou a volnou kladkou?",
+      "answer": "Pevná kladka jen mění směr síly, síla je stejná jako tíha břemene. Volná kladka se pohybuje s břemenem a potřebná síla je poloviční."
+    }
+  ]
+}

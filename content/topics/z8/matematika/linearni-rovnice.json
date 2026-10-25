@@ -1,0 +1,307 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "linearni-rovnice",
+  "title": "Lineární rovnice",
+  "emoji": "⚖️",
+  "generator": "linear-eq",
+  "explanations": [
+    {
+      "title": "Váhy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Myslím si číslo. Když ho zdvojnásobím a přičtu 5, dostanu 31.“ Jaké číslo? Takové hádanky se dají řešit zkoušením – nebo jistě a rychle pomocí **rovnice**."
+        },
+        {
+          "type": "text",
+          "text": "Rovnice pomáhají spočítat, kolik stojí jeden lístek, kolik je komu let nebo kdy se dva cyklisté potkají."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Neznámá",
+          "definition": "Číslo, které hledáme. Označujeme ho písmenem, nejčastěji x.",
+          "example": "Myšlené číslo = x."
+        },
+        {
+          "type": "term",
+          "term": "Rovnice",
+          "definition": "Dva výrazy spojené rovnítkem. Tvrdí, že levá a pravá strana mají stejnou hodnotu.",
+          "example": "2x + 5 = 31"
+        },
+        {
+          "type": "term",
+          "term": "Řešení (kořen)",
+          "definition": "Číslo, které když dosadíš za x, platí rovnost.",
+          "example": "x = 13, protože 2 · 13 + 5 = 31."
+        },
+        {
+          "type": "heading",
+          "text": "Rovnice jsou váhy"
+        },
+        {
+          "type": "text",
+          "text": "Představ si rovnoramenné váhy v rovnováze. Na levé misce jsou 3 pytlíky x a 4 závaží, na pravé 19 závaží. Zápis: 3x + 4 = 19."
+        },
+        {
+          "type": "text",
+          "text": "Pravidlo vah: **co uděláš s jednou miskou, musíš udělat i s druhou** – jinak se váhy nakloní. Zkus ubrat 4 závaží z obou misek a pak rozdělit obě misky na 3 stejné díly."
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 3,
+            "b": 4,
+            "c": 19
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "Uber 4 z obou stran: 3x = 15.",
+            "Vyděl obě strany 3: x = 5.",
+            "Jeden pytlík váží 5."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Myšlené číslo: zdvojnásobím a přičtu 5, vyjde 31.",
+          "answer": "Rovnice 2x + 5 = 31. Uber 5: 2x = 26. Vyděl 2: **x = 13**. Zkouška: 2 · 13 + 5 = 31 ✓."
+        },
+        {
+          "type": "example",
+          "question": "Petr je o 4 roky starší než Eva. Dohromady mají 30 let. Kolik je Evě?",
+          "answer": "Eva x, Petr x + 4. Rovnice x + x + 4 = 30, tedy 2x + 4 = 30. Uber 4: 2x = 26. **x = 13**. Evě je 13, Petrovi 17."
+        },
+        {
+          "type": "heading",
+          "text": "Pytlíky na obou miskách"
+        },
+        {
+          "type": "text",
+          "text": "2x + 3 = x + 10: vlevo 2 pytlíky a 3 závaží, vpravo 1 pytlík a 10 závaží. Uber z obou misek jeden pytlík: x + 3 = 10. Uber 3: **x = 7**. A závorka? 3(x + 1) = 15 jsou 3 stejné balíčky „pytlík + 1 závaží“, tedy 3x + 3 = 15, x = 4."
+        },
+        {
+          "type": "text",
+          "text": "Nakonec udělej **zkoušku**: dosaď výsledek do původní rovnice. 2 · 7 + 3 = 17 a 7 + 10 = 17 ✓."
+        },
+        {
+          "type": "mistake",
+          "wrong": "3x + 4 = 19 → 3x = 19 + 4",
+          "right": "3x = 19 − 4 = 15",
+          "why": "Na levé straně jsi 4 **ubral**, takže musíš ubrat 4 i vpravo. Ne přidat."
+        },
+        {
+          "type": "summary",
+          "text": "Rovnice = váhy v rovnováze. Na obě strany dělej vždy totéž, dokud nezůstane samotné x."
+        }
+      ]
+    },
+    {
+      "title": "Postup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "U složitějších rovnic se závorkami a neznámou na obou stranách se hodí pevný postup. Dodržíš-li pořadí kroků, vyřešíš každou lineární rovnici."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rovnice a strany",
+          "definition": "Rovnice má **levou stranu** (před =) a **pravou stranu** (za =). Obě mají stejnou hodnotu.",
+          "example": "V 5(x − 2) = 2x + 8 je levá strana 5(x − 2)."
+        },
+        {
+          "type": "term",
+          "term": "Lineární rovnice",
+          "definition": "Rovnice, kde je neznámá x jen v první mocnině – žádné x², žádné x ve jmenovateli.",
+          "example": "3x − 5 = 16 je lineární, x² = 9 není."
+        },
+        {
+          "type": "term",
+          "term": "Ekvivalentní úprava",
+          "definition": "Úprava, která nezmění řešení: přičíst/odečíst totéž na obou stranách, vynásobit/vydělit obě strany stejným číslem různým od nuly.",
+          "example": "Z 3x = 18 vydělením 3 dostaneš x = 6."
+        },
+        {
+          "type": "term",
+          "term": "Zkouška",
+          "definition": "Dosazení výsledku do **původní** rovnice. Obě strany musí vyjít stejně.",
+          "example": "x = 6: levá 5 · 4 = 20, pravá 12 + 8 = 20 ✓"
+        },
+        {
+          "type": "heading",
+          "text": "Postup v pěti krocích"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zadání: 5(x − 2) = 2x + 8",
+            "Odstraň závorky: 5x − 10 = 2x + 8",
+            "Členy s x převeď doleva (odečti 2x): 3x − 10 = 8",
+            "Čísla převeď doprava (přičti 10): 3x = 18",
+            "Vyděl koeficientem u x: x = 6",
+            "Zkouška: L = 5 · (6 − 2) = 20, P = 2 · 6 + 8 = 20 ✓"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zkus to na vahách: 2x − 3 = 7. Co musíš udělat s oběma stranami nejdřív?"
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 2,
+            "b": -3,
+            "c": 7
+          }
+        },
+        {
+          "type": "example",
+          "question": "7 − 2x = 1",
+          "answer": "Odečti 7: −2x = −6. Vyděl −2: **x = 3**. Zkouška: 7 − 6 = 1 ✓."
+        },
+        {
+          "type": "example",
+          "question": "x/3 + 2 = 6",
+          "answer": "Odečti 2: x/3 = 4. Vynásob 3: **x = 12**. Zkouška: 12/3 + 2 = 6 ✓."
+        },
+        {
+          "type": "heading",
+          "text": "Zvláštní případy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "2x + 1 = 2x + 3 → odečti 2x: 1 = 3. To nikdy neplatí → **rovnice nemá řešení**.",
+            "2x + 2 = 2(x + 1) → vyjde 2 = 2. Platí vždy → **řešením je každé číslo**."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "3x = 18 → x = 18 − 3 = 15",
+          "right": "x = 18 : 3 = 6",
+          "why": "3x znamená 3 **krát** x. Opakem násobení je dělení, ne odčítání."
+        },
+        {
+          "type": "summary",
+          "text": "Závorky → x doleva → čísla doprava → vyděl koeficientem → zkouška. Vždy dělej totéž na obou stranách."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "x + 7 = 12, x =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "4x = 28, x =",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3x − 5 = 16, x =",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "2x + 3 = x + 10, x =",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "5(x − 2) = 2x + 8, x =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "x/3 + 2 = 6, x =",
+      "answers": [
+        "12"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "7 − 2x = 1, x =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Rovnice 2x + 1 = 2x + 3 nemá řešení.",
+      "answer": true,
+      "explanation": "Po odečtení 2x vyjde 1 = 3, což neplatí."
+    },
+    {
+      "type": "choice",
+      "question": "Myslím si číslo. Když ho zdvojnásobím a přičtu 5, dostanu 31. Které číslo?",
+      "options": [
+        "13",
+        "18",
+        "26",
+        "15"
+      ],
+      "answer": 0,
+      "explanation": "2x + 5 = 31 → x = 13"
+    },
+    {
+      "type": "input",
+      "question": "Petr je o 4 roky starší než Eva. Dohromady mají 30 let. Kolik let je Evě?",
+      "answers": [
+        "13"
+      ],
+      "explanation": "x + x + 4 = 30 → x = 13"
+    },
+    {
+      "type": "order",
+      "question": "Seřaď kroky řešení 3(x + 1) = 15.",
+      "items": [
+        "3x + 3 = 15",
+        "3x = 12",
+        "x = 4",
+        "zkouška: 3 · 5 = 15"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaké úpravy smíš s rovnicí dělat?",
+      "answer": "K oběma stranám přičíst nebo odečíst stejné číslo či výraz a obě strany vynásobit nebo vydělit stejným nenulovým číslem. Strany lze i prohodit."
+    },
+    {
+      "type": "open",
+      "question": "Proč se dělá zkouška?",
+      "answer": "Dosazením kořene do levé i pravé strany ověřím, že vyjdou stejně. Tak odhalím chybu ve výpočtu."
+    }
+  ]
+}

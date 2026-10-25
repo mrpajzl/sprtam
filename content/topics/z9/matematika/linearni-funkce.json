@@ -1,0 +1,311 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "linearni-funkce",
+  "title": "Funkce a lineární funkce",
+  "emoji": "📈",
+  "explanations": [
+    {
+      "title": "Taxík a graf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Taxík účtuje 40 Kč za nástup a 30 Kč za každý kilometr. Za 1 km zaplatíš 70 Kč, za 2 km 100 Kč, za 5 km 190 Kč. Ke každé délce cesty patří **právě jedna** cena."
+        },
+        {
+          "type": "text",
+          "text": "Takovému pravidlu se říká **funkce**. Funkce popisují, jak jedna věc závisí na druhé – cena na kilometrech, teplota na čase, výška rostliny na dnech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Funkce",
+          "definition": "Pravidlo (předpis), které každému číslu x přiřadí **právě jedno** číslo y.",
+          "example": "Cena taxíku y = 30 · x + 40, kde x jsou kilometry."
+        },
+        {
+          "type": "term",
+          "term": "Graf funkce",
+          "definition": "Obrázek všech dvojic [x; y] v rovině. Vodorovná osa je x, svislá osa y.",
+          "example": "Bod [2; 100]: 2 km stojí 100 Kč."
+        },
+        {
+          "type": "term",
+          "term": "Bod [x; y]",
+          "definition": "Místo v grafu: x dílků doprava (nebo doleva při záporném x) a y dílků nahoru (dolů).",
+          "example": "[1; 3] = 1 doprava, 3 nahoru."
+        },
+        {
+          "type": "term",
+          "term": "Lineární funkce",
+          "definition": "Funkce s předpisem y = k · x + q. Jejím grafem je vždy **přímka**.",
+          "example": "y = 2x + 1"
+        },
+        {
+          "type": "heading",
+          "text": "Pohraj si s přímkou"
+        },
+        {
+          "type": "text",
+          "text": "Posouvej **k** a sleduj, jak se mění sklon přímky. Pak posouvej **q** a sleduj, jak přímka jezdí nahoru a dolů."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 2,
+            "q": 1
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "**k** = o kolik vzroste y, když x vzroste o 1. Je to „cena za kilometr“.",
+            "k > 0: přímka stoupá (funkce je **rostoucí**). k < 0: klesá (**klesající**). k = 0: vodorovná (**konstantní**).",
+            "**q** = kde přímka protne svislou osu y. Je to „nástupné“ – cena za 0 km."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Taxík: 40 Kč nástup + 30 Kč za km. Napiš předpis a spočítej cenu za 5 km.",
+          "answer": "Nástup je pevný (q = 40), za každý km +30 (k = 30): **y = 30x + 40**. Pro x = 5: 30 · 5 + 40 = **190 Kč**."
+        },
+        {
+          "type": "example",
+          "question": "Leží bod [2; 5] na grafu y = 2x + 1?",
+          "answer": "Dosaď x = 2: y = 2 · 2 + 1 = 5. Vyšlo stejné y → **ano, leží**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V y = 30x + 40 je 40 cena za kilometr.",
+          "right": "30 je cena za km (k), 40 je pevná částka (q).",
+          "why": "Číslo, které násobí x, se s x mění. Samotné číslo bez x zůstává stejné, ať jedeš kolik chceš."
+        },
+        {
+          "type": "summary",
+          "text": "Funkce přiřadí každému x právě jedno y. Lineární funkce y = kx + q má graf přímku: k určuje sklon, q kde protne osu y."
+        }
+      ]
+    },
+    {
+      "title": "Tabulka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Funkci můžeš zapsat třemi způsoby: předpisem, tabulkou a grafem. Kdo umí přecházet mezi nimi, ten funkci opravdu rozumí. Začneme tabulkou."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Funkce",
+          "definition": "Předpis, který každému x z dovolených hodnot (**definičního oboru**) přiřadí právě jedno y.",
+          "example": "y = 2x + 1: pro x = 3 je y = 7."
+        },
+        {
+          "type": "term",
+          "term": "Lineární funkce y = kx + q",
+          "definition": "Funkce, jejímž grafem je přímka. k a q jsou pevná čísla.",
+          "example": "y = −x + 4: k = −1, q = 4"
+        },
+        {
+          "type": "term",
+          "term": "Směrnice k",
+          "definition": "O kolik se změní y, když se x zvětší o 1.",
+          "example": "y = 2x + 1: x o 1 víc → y o 2 víc."
+        },
+        {
+          "type": "term",
+          "term": "Úsek q",
+          "definition": "Hodnota y pro x = 0 – tam přímka protne osu y.",
+          "example": "y = 3x − 4 protne osu y v bodě [0; −4]."
+        },
+        {
+          "type": "term",
+          "term": "Průsečík s osou x",
+          "definition": "Bod, kde přímka protne vodorovnou osu. Tam je y = 0.",
+          "example": "y = −x + 4 protne osu x v [4; 0]."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka hodnot"
+        },
+        {
+          "type": "table",
+          "head": [
+            "x",
+            "−1",
+            "0",
+            "1",
+            "2"
+          ],
+          "rows": [
+            [
+              "y = 2x + 1",
+              "−1",
+              "1",
+              "3",
+              "5"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Všimni si: když x vzroste o 1, y vzroste vždy o 2. To je k. A pro x = 0 je y = 1. To je q."
+        },
+        {
+          "type": "heading",
+          "text": "Jak nakreslit graf"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vyber si dvě hodnoty x, třeba 0 a 2.",
+            "Dosaď do předpisu: y = 2 · 0 + 1 = 1, y = 2 · 2 + 1 = 5.",
+            "Zakresli body [0; 1] a [2; 5].",
+            "Spoj je pravítkem a prodluž – to je graf."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zkontroluj si to ve widgetu: nastav k = 2 a q = 1 a najdi body [0; 1] a [2; 5]."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 2,
+            "q": 1
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kde protne osu x přímka y = −x + 4?",
+          "answer": "Na ose x je y = 0. 0 = −x + 4 → **x = 4**. Bod [4; 0]."
+        },
+        {
+          "type": "example",
+          "question": "Přímka prochází body [0; 1] a [1; 3]. Jaký má předpis?",
+          "answer": "Pro x = 0 je y = 1 → q = 1. Když x vzroste o 1, y vzroste z 1 na 3, tedy o 2 → k = 2. **y = 2x + 1**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "y = −3x + 5 pro x = 2: −3 · 2 + 5 = −11",
+          "right": "−6 + 5 = −1",
+          "why": "Pozor na znaménka: −3 · 2 = −6 a −6 + 5 = −1."
+        },
+        {
+          "type": "summary",
+          "text": "y = kx + q. k = změna y při x o 1 víc (k > 0 roste, k < 0 klesá). q = průsečík s osou y. Na graf přímky stačí dva body."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "y = 2x + 1. Kolik je y pro x = 3?",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "y = −3x + 5. Kolik je y pro x = 2?",
+      "answers": [
+        "-1",
+        "−1"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která funkce je klesající?",
+      "options": [
+        "y = −2x + 3",
+        "y = 2x − 3",
+        "y = x",
+        "y = 0,5x + 1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "V kterém bodě y protne osu y přímka y = 3x − 4? Napiš y.",
+      "answers": [
+        "-4",
+        "−4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Přímka y = −x + 4 protne osu x v x =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Bod [2; 5] leží na grafu y = 2x + 1.",
+      "answer": true,
+      "explanation": "2 · 2 + 1 = 5"
+    },
+    {
+      "type": "choice",
+      "question": "Přímka prochází body [0; 1] a [1; 3]. Její rovnice:",
+      "options": [
+        "y = 2x + 1",
+        "y = x + 1",
+        "y = 3x",
+        "y = x + 3"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "y = 5 je konstantní funkce.",
+      "answer": true,
+      "explanation": "k = 0, graf je vodorovná přímka."
+    },
+    {
+      "type": "choice",
+      "question": "Taxi: 40 Kč nástupní + 30 Kč za km. Předpis:",
+      "options": [
+        "y = 30x + 40",
+        "y = 40x + 30",
+        "y = 70x",
+        "y = 30x − 40"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Taxi y = 30x + 40. Kolik Kč stojí 5 km?",
+      "answers": [
+        "190"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co udávají čísla k a q v předpisu y = kx + q?",
+      "answer": "k je směrnice – určuje, jak strmě a kterým směrem přímka stoupá či klesá. q je úsek na ose y, tedy kde přímka protne osu y."
+    },
+    {
+      "type": "open",
+      "question": "Co je funkce?",
+      "answer": "Předpis, který každému číslu x z definičního oboru přiřadí právě jedno číslo y."
+    }
+  ]
+}

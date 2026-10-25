@@ -1,0 +1,369 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "idealni-plyn",
+  "title": "Ideální plyn",
+  "emoji": "🎈",
+  "explanations": [
+    {
+      "title": "Balonek a stříkačka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Nafouknutý balonek dáš do mrazáku – splaskne. Položíš ho na topení – nafoukne se. Ucpeš prstem stříkačku a zatlačíš na píst – čím víc ho zatlačíš, tím víc vzduch tlačí zpátky."
+        },
+        {
+          "type": "text",
+          "text": "Plyny se chovají podle jednoduchých pravidel. Využívá je pneumatika, potápěčská láhev, motor, lednička i předpověď počasí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ideální plyn",
+          "definition": "Zjednodušený model plynu: molekuly jsou nepatrné kuličky, které na sebe působí **jen při srážkách** (jako kulečníkové koule). Vzduch za běžných podmínek se mu velmi blíží."
+        },
+        {
+          "type": "term",
+          "term": "Tlak p",
+          "definition": "Jak silně plyn tlačí na každý m² stěny – výsledek nárazů molekul. Jednotka pascal (Pa), běžně kPa.",
+          "example": "Vzduch kolem nás má asi 100 kPa."
+        },
+        {
+          "type": "term",
+          "term": "Objem V",
+          "definition": "Kolik místa plyn zabírá – u plynu vždy celý objem nádoby. Jednotka m³ nebo litr (l)."
+        },
+        {
+          "type": "term",
+          "term": "Termodynamická teplota T",
+          "definition": "Teplota v kelvinech: `T = t + 273,15`. Udává, jak rychle se molekuly pohybují.",
+          "example": "27 °C ≈ 300 K."
+        },
+        {
+          "type": "heading",
+          "text": "Co se děje uvnitř"
+        },
+        {
+          "type": "text",
+          "text": "Tlak dělají nárazy molekul na stěny. Z toho plyne všechno ostatní:"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Zmenšíš objem** (stříkačka): molekuly mají míň místa, narážejí do stěn častěji → tlak roste.",
+            "**Zvýšíš teplotu** v pevné nádobě: molekuly letí rychleji, narážejí silněji a častěji → tlak roste.",
+            "**Zvýšíš teplotu** v pružném obalu (balonek): tlak by rostl, ale obal povolí → roste objem."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři děje"
+        },
+        {
+          "type": "term",
+          "term": "Děj",
+          "definition": "Změna stavu plynu – změna tlaku, objemu nebo teploty. Často jedna z veličin zůstává stálá."
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty. Předpona *izo-* znamená „stejný“: izo-**term** = stejná teplota, izo-**bar** = stejný tlak, izo-**chor** = stejný objem."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "izotermický (T = konst.)",
+                "back": "p · V = konst. – zákon Boylův–Mariottův"
+              },
+              {
+                "front": "izobarický (p = konst.)",
+                "back": "V / T = konst. – zákon Gay-Lussacův"
+              },
+              {
+                "front": "izochorický (V = konst.)",
+                "back": "p / T = konst. – zákon Charlesův"
+              },
+              {
+                "front": "adiabatický (Q = 0)",
+                "back": "bez výměny tepla: p · V^κ = konst. – zákon Poissonův"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Plyn ve stříkačce: 6 l při 100 kPa. Pomalu (teplota se nemění) ho stlačíš na 3 l. Jaký bude tlak?",
+          "answer": "Izotermický děj: p · V = konst. 100 · 6 = p · 3 → p = **200 kPa**. Poloviční objem = dvojnásobný tlak."
+        },
+        {
+          "type": "example",
+          "question": "Balonek (stálý tlak) má 2 l při 300 K. Ohřeješ ho na 600 K. Jaký bude objem?",
+          "answer": "Izobarický děj: V / T = konst. Teplota v kelvinech se zdvojnásobila → objem také: **4 l**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ohřeju plyn z 10 °C na 20 °C, teplota se zdvojnásobila, tak se zdvojnásobí i objem.",
+          "right": "10 °C = 283 K, 20 °C = 293 K. Objem vzroste jen asi o 3,5 %.",
+          "why": "Zákony plynů platí jen pro teplotu v kelvinech, která začíná u absolutní nuly. Stupně Celsia mají nulu „náhodně“ u tání ledu."
+        },
+        {
+          "type": "text",
+          "text": "Všechny čtyři zákony shrnuje jedna **stavová rovnice**: `p · V = n · R · T`, kde n je látkové množství v molech a R = 8,31 J/(mol·K)."
+        },
+        {
+          "type": "summary",
+          "text": "Menší objem nebo vyšší teplota = vyšší tlak. Izotermický: pV = konst., izobarický: V/T = konst., izochorický: p/T = konst. Teplotu vždy v kelvinech."
+        }
+      ]
+    },
+    {
+      "title": "Stavová rovnice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Potápěčská láhev má 12 litrů a tlak 200× vyšší než vzduch kolem. Kolik vzduchu v ní je? Co se stane, když láhev necháš na slunci? Na takové otázky odpovídá jediná rovnice – stavová rovnice ideálního plynu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ideální plyn",
+          "definition": "Model plynu, jehož molekuly jsou zanedbatelně malé a působí na sebe jen při srážkách."
+        },
+        {
+          "type": "term",
+          "term": "Stavové veličiny",
+          "definition": "Veličiny, které popisují stav plynu: tlak p (Pa), objem V (m³), termodynamická teplota T (K) a látkové množství n (mol)."
+        },
+        {
+          "type": "term",
+          "term": "Molární plynová konstanta R",
+          "definition": "Číslo stejné pro všechny plyny: `R = 8,31 J/(mol·K)`."
+        },
+        {
+          "type": "term",
+          "term": "p–V diagram",
+          "definition": "Graf, kde na vodorovné ose je objem a na svislé tlak. Každý bod je jeden stav plynu, čára je děj."
+        },
+        {
+          "type": "heading",
+          "text": "Stavová rovnice"
+        },
+        {
+          "type": "text",
+          "text": "`p · V = n · R · T`. Když se množství plynu nemění (nic neuniká), platí pro dva stavy:"
+        },
+        {
+          "type": "text",
+          "text": "`p₁ · V₁ / T₁ = p₂ · V₂ / T₂`"
+        },
+        {
+          "type": "text",
+          "text": "Když jedna veličina zůstane stálá, prostě ji v rovnici škrtneš – a dostaneš jednodušší zákon:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Děj",
+            "Co je stálé",
+            "Zákon",
+            "Graf v p–V"
+          ],
+          "rows": [
+            [
+              "izotermický",
+              "T",
+              "p₁V₁ = p₂V₂ (Boyle–Mariotte)",
+              "hyperbola (izoterma)"
+            ],
+            [
+              "izobarický",
+              "p",
+              "V₁/T₁ = V₂/T₂ (Gay-Lussac)",
+              "vodorovná přímka"
+            ],
+            [
+              "izochorický",
+              "V",
+              "p₁/T₁ = p₂/T₂ (Charles)",
+              "svislá přímka"
+            ],
+            [
+              "adiabatický",
+              "žádná výměna tepla",
+              "pV^κ = konst. (Poisson)",
+              "strmější než izoterma"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Izoterma je hyperbola: když se objem zdvojnásobí, tlak klesne na polovinu. Na widgetu nastav délku obdélníku (objem) a šířku (tlak) tak, aby obsah p · V zůstal 12 – například 2 a 6, 3 a 4, 4 a 3. Všechny tyto stavy leží na jedné izotermě."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4,
+            "max": 10
+          }
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Převeď teploty na kelviny.",
+            "Zjisti, která veličina je stálá, a vyškrtni ji.",
+            "Dosaď do p₁V₁/T₁ = p₂V₂/T₂ (jednotky tlaku a objemu stačí na obou stranách stejné).",
+            "Vyjádři neznámou."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Plyn má 100 kPa a 300 K. Při stálém objemu ho ohřejeme na 450 K. Jaký bude tlak?",
+          "answer": "Izochorický: p₂ = p₁ · T₂ / T₁ = 100 · 450 / 300 = **150 kPa**."
+        },
+        {
+          "type": "example",
+          "question": "Plyn má 200 kPa, 2 l, 400 K. Jaký tlak bude mít při 4 l a 200 K?",
+          "answer": "p₂ = p₁ · V₁ · T₂ / (V₂ · T₁) = 200 · 2 · 200 / (4 · 400) = 80 000 / 1 600 = **50 kPa**."
+        },
+        {
+          "type": "text",
+          "text": "Práce plynu: při izochorickém ději se objem nemění, píst se nehýbe, proto plyn **práci nekoná**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dosadím teplotu 27 °C jako T = 27.",
+          "right": "T = 27 + 273,15 ≈ 300 K.",
+          "why": "V rovnici se teplotou násobí a dělí, takže nula musí být skutečná nula – absolutní nula 0 K. Se °C vyjdou nesmysly (např. dělení nulou při 0 °C)."
+        },
+        {
+          "type": "summary",
+          "text": "`pV = nRT`, R = 8,31 J/(mol·K). Pro stálé množství: p₁V₁/T₁ = p₂V₂/T₂. Teplota vždy v kelvinech."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Izotermicky stlačíme plyn ze 6 l (100 kPa) na 3 l. Tlak v kPa =",
+      "answers": [
+        "200"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Izobaricky ohřejeme plyn z 300 K na 600 K, objem byl 2 l. Nový objem v l =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Izochoricky: 100 kPa při 300 K. Tlak v kPa při 450 K =",
+      "answers": [
+        "150"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Plyn má 200 kPa, 2 l, 400 K. Jaký tlak v kPa bude mít při 4 l a 200 K?",
+      "answers": [
+        "50"
+      ],
+      "explanation": "p₂ = 200 · 2 · 200 / (4 · 400) = 50"
+    },
+    {
+      "type": "choice",
+      "question": "Jaký zákon platí pro izotermický děj?",
+      "options": [
+        "Boyleův–Mariottův",
+        "Gay-Lussacův",
+        "Charlesův",
+        "Archimédův"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V ideálním plynu na sebe molekuly působí jen při srážkách.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve stavové rovnici lze dosazovat teplotu ve °C.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Jak vypadá izoterma v p–V diagramu?",
+      "options": [
+        "hyperbola",
+        "přímka rovnoběžná s osou V",
+        "přímka z počátku",
+        "parabola"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Při izochorickém ději plyn práci…",
+      "options": [
+        "nekoná",
+        "koná vždy kladnou",
+        "koná vždy zápornou"
+      ],
+      "answer": 0,
+      "explanation": "Objem se nemění."
+    },
+    {
+      "type": "match",
+      "question": "Spoj děj se stálou veličinou.",
+      "pairs": [
+        [
+          "izotermický",
+          "teplota"
+        ],
+        [
+          "izobarický",
+          "tlak"
+        ],
+        [
+          "izochorický",
+          "objem"
+        ],
+        [
+          "adiabatický",
+          "bez tepelné výměny"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Napiš stavovou rovnici ideálního plynu a vysvětli veličiny.",
+      "answer": "pV = nRT: p tlak (Pa), V objem (m³), n látkové množství (mol), R = 8,31 J/(mol·K) molární plynová konstanta, T termodynamická teplota (K)."
+    },
+    {
+      "type": "open",
+      "question": "Popiš izotermický, izobarický a izochorický děj.",
+      "answer": "Izotermický: stálá teplota, pV = konst. Izobarický: stálý tlak, V/T = konst. Izochorický: stálý objem, p/T = konst."
+    }
+  ]
+}

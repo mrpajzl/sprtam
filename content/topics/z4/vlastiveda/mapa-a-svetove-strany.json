@@ -1,0 +1,404 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mapa-a-svetove-strany",
+  "title": "Mapa a světové strany",
+  "emoji": "🧭",
+  "explanations": [
+    {
+      "title": "Sluncem a kompasem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že se ztratíš v lese. Kamarád ti do telefonu řekne: „Jdi doleva.“ Jenže doleva od čeho? Když se otočíš, „doleva“ je najednou jinde."
+        },
+        {
+          "type": "text",
+          "text": "Proto lidé vymysleli směry, které se nemění, ať stojíš jakkoli. Podle nich se domluví turista, pilot i hasič."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Světové strany",
+          "definition": "Čtyři hlavní směry, které platí všude na Zemi: **sever (S), jih (J), východ (V), západ (Z)**.",
+          "example": "Sever a jih jsou proti sobě. Východ a západ také."
+        },
+        {
+          "type": "term",
+          "term": "Vedlejší světové strany",
+          "definition": "Směry mezi dvěma hlavními. Jméno se složí ze dvou slov.",
+          "example": "Mezi severem a východem je **severovýchod (SV)**. Mezi jihem a západem je **jihozápad (JZ)**."
+        },
+        {
+          "type": "term",
+          "term": "Kompas",
+          "definition": "Malý přístroj s otočnou **střelkou**. Střelka je magnet. Země ji natočí tak, že jedním koncem ukazuje **k severu**.",
+          "example": "Turisté nosí kompas, aby poznali sever i v mlze."
+        },
+        {
+          "type": "heading",
+          "text": "Jak poznat strany podle Slunce"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ráno Slunce **vychází na východě**.",
+            "V poledne je Slunce nejvýš a stojí **na jihu**.",
+            "Večer **zapadá na západě**.",
+            "Sever je tedy tam, kde Slunce nikdy nevidíš – v poledne máš sever za zády."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "V noci ti pomůže hvězda **Polárka**. Svítí skoro přesně nad severem."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartičku a zkus nejdřív říct, co je na druhé straně."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "S",
+                "back": "sever – sem ukazuje střelka kompasu"
+              },
+              {
+                "front": "J",
+                "back": "jih – tady je Slunce v poledne"
+              },
+              {
+                "front": "V",
+                "back": "východ – tady Slunce vychází"
+              },
+              {
+                "front": "Z",
+                "back": "západ – tady Slunce zapadá"
+              },
+              {
+                "front": "SV",
+                "back": "severovýchod"
+              },
+              {
+                "front": "JZ",
+                "back": "jihozápad"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je poledne. Stojíš čelem ke Slunci. Co máš za zády?",
+          "answer": "V poledne je Slunce na jihu. Díváš se tedy na jih. Za zády máš opačnou stranu – **sever**."
+        },
+        {
+          "type": "example",
+          "question": "Díváš se na sever. Na kterou stranu ukazuje tvoje pravá ruka?",
+          "answer": "Když se díváš na sever, vpravo je **východ** a vlevo západ. Pravá ruka ukazuje na východ."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Sever je nahoře – nad hlavou.",
+          "right": "Sever je směr po zemi, jako když ukážeš rukou k obzoru.",
+          "why": "Nahoře je sever jen na **mapě**, protože ji tak kreslíme. V krajině ho najdeš kompasem nebo podle Slunce."
+        },
+        {
+          "type": "summary",
+          "text": "Slunce vychází na východě, v poledne je na jihu a zapadá na západě. Střelka kompasu ukazuje k severu."
+        }
+      ]
+    },
+    {
+      "title": "Čtení mapy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kdybys vylezl do letadla a podíval se dolů, viděl bys pole, řeky, silnice a města. Mapa je přesně takový pohled shora – jen nakreslený a hodně zmenšený."
+        },
+        {
+          "type": "text",
+          "text": "S mapou najdeš cestu na výlet, zjistíš, jak daleko je hrad, nebo kde je kopec."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mapa",
+          "definition": "Zmenšený obrázek krajiny, jak ji vidí pták shora.",
+          "example": "Mapa České republiky se vejde na stůl, i když je země obrovská."
+        },
+        {
+          "type": "term",
+          "term": "Světové strany na mapě",
+          "definition": "Sever, jih, východ a západ. Na mapě je **sever vždy nahoře**, jih dole, východ vpravo a západ vlevo.",
+          "example": "Praha je na mapě nad Českými Budějovicemi – leží tedy severněji."
+        },
+        {
+          "type": "term",
+          "term": "Legenda",
+          "definition": "Rámeček na kraji mapy, který vysvětluje **značky a barvy**.",
+          "example": "V legendě zjistíš, že malý hrad na mapě znamená zříceninu."
+        },
+        {
+          "type": "term",
+          "term": "Měřítko",
+          "definition": "Číslo, které říká, **kolikrát je mapa menší** než skutečnost.",
+          "example": "Měřítko 1 : 100 000 znamená, že vše je 100 000krát menší."
+        },
+        {
+          "type": "term",
+          "term": "Nadmořská výška",
+          "definition": "Jak vysoko je místo nad hladinou moře. Měří se v metrech (m).",
+          "example": "Sněžka má 1603 m – je o 1603 metrů výš než hladina moře."
+        },
+        {
+          "type": "term",
+          "term": "Vrstevnice",
+          "definition": "Tenká čára na mapě, která spojuje místa se **stejnou nadmořskou výškou**.",
+          "example": "Když jsou vrstevnice hodně u sebe, je kopec prudký."
+        },
+        {
+          "type": "heading",
+          "text": "Co znamenají barvy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Barva",
+            "Co znamená"
+          ],
+          "rows": [
+            [
+              "zelená",
+              "nížiny – nízko položená rovná krajina"
+            ],
+            [
+              "žlutá, světle hnědá",
+              "pahorkatiny a vrchoviny – kopce"
+            ],
+            [
+              "tmavě hnědá",
+              "hory – vysoko"
+            ],
+            [
+              "modrá",
+              "voda: řeky, rybníky, moře"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak spočítat vzdálenost"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Pravítkem změř vzdálenost na mapě v centimetrech.",
+            "Podívej se na měřítko, třeba 1 : 100 000.",
+            "1 cm na mapě je 100 000 cm ve skutečnosti. To je **1 km**.",
+            "Vynásob: kolik centimetrů, tolik kilometrů."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Měřítko 1 : 100 000. Z vesnice na hrad je na mapě 4 cm. Kolik je to ve skutečnosti?",
+          "answer": "1 cm = 100 000 cm = 1 km. Takže 4 cm = **4 km**."
+        },
+        {
+          "type": "example",
+          "question": "Měřítko 1 : 50 000. Kolik je 1 cm na mapě ve skutečnosti?",
+          "answer": "50 000 cm = 500 m. Jeden centimetr na mapě je **půl kilometru**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď kartičky: patří k nížině, nebo k horám?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "nížina",
+              "hory"
+            ],
+            "items": [
+              {
+                "text": "zelená barva",
+                "group": 0
+              },
+              {
+                "text": "tmavě hnědá barva",
+                "group": 1
+              },
+              {
+                "text": "rovina u řeky",
+                "group": 0
+              },
+              {
+                "text": "vysoké vrcholy",
+                "group": 1
+              },
+              {
+                "text": "pole a města",
+                "group": 0
+              },
+              {
+                "text": "sníh dlouho do jara",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zelená barva na mapě znamená les nebo trávu.",
+          "right": "Na zeměpisné mapě znamená zelená **nížinu** – nízkou krajinu.",
+          "why": "Barvy tu ukazují výšku, ne rostliny. Co přesně znamená, vždycky ověříš v legendě."
+        },
+        {
+          "type": "summary",
+          "text": "Na mapě je sever nahoře. Legenda vysvětluje značky, měřítko říká, kolikrát je mapa menší. Čím tmavší hnědá, tím výš."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kde je na mapě sever?",
+      "options": [
+        "nahoře",
+        "dole",
+        "vlevo",
+        "vpravo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Na kterou stranu ukazuje střelka kompasu?",
+      "options": [
+        "k severu",
+        "k jihu",
+        "k východu"
+      ],
+      "answer": 0,
+      "explanation": "Magnetická střelka se otáčí k severu."
+    },
+    {
+      "type": "truefalse",
+      "question": "Slunce vychází na západě.",
+      "answer": false,
+      "explanation": "Slunce vychází na východě a zapadá na západě."
+    },
+    {
+      "type": "choice",
+      "question": "Jakou barvou jsou na mapě hory?",
+      "options": [
+        "tmavě hnědou",
+        "zelenou",
+        "modrou",
+        "žlutou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co vysvětluje značky na mapě?",
+      "options": [
+        "legenda",
+        "měřítko",
+        "kompas"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Měřítko 1 : 100 000. Kolik kilometrů je 1 cm na mapě?",
+      "answers": [
+        "1"
+      ],
+      "explanation": "100 000 cm = 1 000 m = 1 km."
+    },
+    {
+      "type": "choice",
+      "question": "Kde je Slunce v poledne?",
+      "options": [
+        "na jihu",
+        "na severu",
+        "na východě"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj zkratku se světovou stranou.",
+      "pairs": [
+        [
+          "S",
+          "sever"
+        ],
+        [
+          "V",
+          "východ"
+        ],
+        [
+          "JZ",
+          "jihozápad"
+        ],
+        [
+          "SV",
+          "severovýchod"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Zelená barva na mapě znamená nížinu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co spojují vrstevnice?",
+      "options": [
+        "místa se stejnou nadmořskou výškou",
+        "města se stejným počtem obyvatel",
+        "řeky stejné délky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak zjistíš světové strany bez kompasu?",
+      "answer": "Podle Slunce: ráno je na východě, v poledne na jihu, večer na západě. V noci ukazuje sever Polárka."
+    },
+    {
+      "type": "open",
+      "question": "K čemu slouží měřítko mapy?",
+      "answer": "Říká, kolikrát je mapa menší než skutečnost. Podle něj spočítám skutečnou vzdálenost."
+    }
+  ]
+}

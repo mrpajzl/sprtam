@@ -1,0 +1,366 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stredova-soumernost",
+  "title": "Středová souměrnost",
+  "emoji": "🔄",
+  "explanations": [
+    {
+      "title": "Otočení",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Napiš na papír písmeno S a otoč papír „vzhůru nohama“ (o půl otáčky). Pořád vidíš S! Zkus to s písmenem A – po otočení je obrácené."
+        },
+        {
+          "type": "text",
+          "text": "Obrazce, které po otočení o půl otáčky vypadají stejně, jsou **středově souměrné**. Najdeš je na hracích kartách, v ornamentech, u vrtulí i na dlaždicích."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Otočení o 180°",
+          "definition": "Půl otáčky kolem jednoho bodu. Úhly měříme ve stupních: celá otáčka je 360°, půl otáčky 180°.",
+          "example": "Ručička hodin z 12 na 6."
+        },
+        {
+          "type": "term",
+          "term": "Střed souměrnosti (S)",
+          "definition": "Bod, kolem kterého se otáčí. Zůstává na místě.",
+          "example": "U písmene S je to bod přesně uprostřed."
+        },
+        {
+          "type": "term",
+          "term": "Středová souměrnost",
+          "definition": "Přemístění, při kterém se každý bod otočí o 180° kolem středu S.",
+          "example": "Obrázek otočený vzhůru nohama kolem svého středu."
+        },
+        {
+          "type": "term",
+          "term": "Obraz",
+          "definition": "Kam se bod nebo obrazec dostane po otočení. Obraz bodu A se značí A′ („A s čárkou“).",
+          "example": "Levý horní roh obrázku se otočí na pravý dolní."
+        },
+        {
+          "type": "heading",
+          "text": "Půl otáčky"
+        },
+        {
+          "type": "text",
+          "text": "Nastav úhel na 180°. Obě ramena tvoří rovnou čáru – bod a jeho obraz leží na přímce přes střed, každý na jedné straně."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 180
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Co je středově souměrné?"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď obrazce. U každého si v duchu otoč papír o půl otáčky: vypadá stejně?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "středově souměrné",
+              "není"
+            ],
+            "items": [
+              {
+                "text": "S",
+                "group": 0
+              },
+              {
+                "text": "N",
+                "group": 0
+              },
+              {
+                "text": "Z",
+                "group": 0
+              },
+              {
+                "text": "A",
+                "group": 1
+              },
+              {
+                "text": "kruh",
+                "group": 0
+              },
+              {
+                "text": "rovnostranný △",
+                "group": 1
+              },
+              {
+                "text": "obdélník",
+                "group": 0
+              },
+              {
+                "text": "T",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je písmeno N středově souměrné?",
+          "answer": "Otočíš-li N o půl otáčky, levá svislá čára se dostane doprava a šikmá čára zůstane šikmá stejným směrem. Vypadá stejně → **ano**."
+        },
+        {
+          "type": "example",
+          "question": "Je rovnostranný trojúhelník středově souměrný?",
+          "answer": "Po půl otáčce míří špička dolů místo nahoru. Nevypadá stejně → **ne**. (Osově souměrný ale je.)"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Písmeno A je středově souměrné, protože je souměrné.",
+          "right": "A je jen **osově** souměrné (podle svislé čáry).",
+          "why": "Osová souměrnost = zrcadlo, středová = otočení o půl otáčky. A po otočení stojí na špičce."
+        },
+        {
+          "type": "text",
+          "text": "Ještě jedna věc: bod a jeho obraz jsou od středu **stejně daleko**. Je-li A 4 cm od S, je A′ také 4 cm od S, na druhé straně – mezi A a A′ je 8 cm."
+        },
+        {
+          "type": "summary",
+          "text": "Středová souměrnost = otočení o 180° kolem středu S. Bod a obraz jsou od S stejně daleko, na opačných stranách."
+        }
+      ]
+    },
+    {
+      "title": "Konstrukce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Otáčet obrázek v hlavě je jedna věc, ale narýsovat ho přesně je druhá. Stačí umět najít obraz jednoho bodu – pak tak „otočíš“ celý obrazec bod po bodu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Úsečka",
+          "definition": "Rovná čára mezi dvěma body. Délka úsečky AS se píše |AS|.",
+          "example": "|AS| = 4 cm"
+        },
+        {
+          "type": "term",
+          "term": "Polopřímka",
+          "definition": "Rovná čára, která začíná v bodě a pokračuje jedním směrem donekonečna.",
+          "example": "Polopřímka AS začíná v A, jde přes S a pokračuje dál."
+        },
+        {
+          "type": "term",
+          "term": "Střed souměrnosti S",
+          "definition": "Pevný bod, který leží přesně uprostřed mezi každým bodem a jeho obrazem.",
+          "example": "S je střed úsečky AA′."
+        },
+        {
+          "type": "term",
+          "term": "Obraz A′",
+          "definition": "Bod, který vznikne z bodu A středovou souměrností.",
+          "example": "Je-li |AS| = 3 cm, je i |SA′| = 3 cm."
+        },
+        {
+          "type": "heading",
+          "text": "Obraz bodu krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Narýsuj polopřímku z bodu A přes střed S a prodluž ji za S.",
+            "Kružítkem změř vzdálenost |AS|.",
+            "Stejnou vzdálenost nanes z S **dál** po polopřímce.",
+            "Vznikl bod A′. Střed S je přesně uprostřed úsečky AA′."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Obraz trojúhelníku ABC: najdi A′, B′, C′ a spoj je. Obraz je stejně velký, jen „vzhůru nohama“."
+        },
+        {
+          "type": "heading",
+          "text": "Co platí vždycky"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Střed S je sám sobě obrazem.",
+            "Délky se nemění: úsečka a její obraz jsou stejně dlouhé (shodné).",
+            "Obraz přímky, která neprochází středem, je přímka s ní **rovnoběžná** (nikdy se neprotnou).",
+            "Středová souměrnost je totéž jako otočení o 180°."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Bod A je 4 cm od středu S. Jak daleko je A od A′?",
+          "answer": "A′ je také 4 cm od S, na druhé straně. 4 + 4 = **8 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Kde je střed souměrnosti rovnoběžníku?",
+          "answer": "Rovnoběžník je čtyřúhelník, který má protější strany rovnoběžné (např. obdélník). Jeho střed je v **průsečíku úhlopříček** – spojnic protějších rohů."
+        },
+        {
+          "type": "table",
+          "head": [
+            "útvar",
+            "osově",
+            "středově"
+          ],
+          "rows": [
+            [
+              "čtverec, obdélník, kruh",
+              "ano",
+              "ano"
+            ],
+            [
+              "písmeno A, rovnostranný △",
+              "ano",
+              "ne"
+            ],
+            [
+              "písmena S, N, Z",
+              "ne",
+              "ano"
+            ],
+            [
+              "písmeno F",
+              "ne",
+              "ne"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obraz A′ najdu tak, že A zrcadlím přes přímku vedenou bodem S.",
+          "right": "A′ leží na **polopřímce AS za středem**, ve stejné vzdálenosti.",
+          "why": "To první je osová souměrnost. Ve středové souměrnosti se zrcadlí přes **bod**, ne přes čáru."
+        },
+        {
+          "type": "summary",
+          "text": "Obraz bodu: polopřímka AS, za S naneseš |AS|. S je uprostřed úsečky AA′. Délky se nemění, přímky se zobrazí na rovnoběžky."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Střed souměrnosti je sám sobě obrazem.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Které písmeno je středově souměrné?",
+      "options": [
+        "S",
+        "A",
+        "T",
+        "V"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Rovnostranný trojúhelník je středově souměrný.",
+      "answer": false
+    },
+    {
+      "type": "truefalse",
+      "question": "Kruh je osově i středově souměrný.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Bod A je 4 cm od středu S. Kolik cm je mezi A a jeho obrazem A′?",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Obraz přímky ve středové souměrnosti (střed neleží na ní) je…",
+      "options": [
+        "rovnoběžná přímka",
+        "kolmá přímka",
+        "kružnice",
+        "bod"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Středová souměrnost odpovídá otočení o…",
+      "options": [
+        "180°",
+        "90°",
+        "360°",
+        "45°"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Úsečka a její obraz ve středové souměrnosti jsou shodné.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj útvar a souměrnost.",
+      "pairs": [
+        [
+          "čtverec",
+          "osově i středově"
+        ],
+        [
+          "písmeno Z",
+          "jen středově"
+        ],
+        [
+          "písmeno A",
+          "jen osově"
+        ],
+        [
+          "písmeno F",
+          "žádná"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Rovnoběžník je středově souměrný.",
+      "answer": true,
+      "explanation": "Středem je průsečík úhlopříček."
+    },
+    {
+      "type": "open",
+      "question": "Jak sestrojíš obraz bodu A ve středové souměrnosti se středem S?",
+      "answer": "Narýsuji polopřímku AS. Za bod S na ni nanesu vzdálenost |AS|. Získám bod A′."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi osovou a středovou souměrností?",
+      "answer": "Osová zrcadlí podle přímky (osy), bod a obraz leží na kolmici k ose. Středová otáčí o 180° kolem bodu, střed je uprostřed mezi bodem a obrazem."
+    }
+  ]
+}

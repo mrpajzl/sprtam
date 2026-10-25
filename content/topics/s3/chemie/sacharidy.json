@@ -1,0 +1,465 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "sacharidy",
+  "title": "Sacharidy",
+  "emoji": "🍯",
+  "explanations": [
+    {
+      "title": "Energie a stavba",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mozek spotřebuje denně zhruba 120 g glukózy. Bavlněné tričko je z celulózy, brambory jsou plné škrobu, mléko obsahuje laktózu a v RNA je ribóza. **Sacharidy** jsou palivo, zásoba i stavební materiál života."
+        },
+        {
+          "type": "text",
+          "text": "Vznikají fotosyntézou a my z nich buněčným dýcháním získáváme energii. Ukážeme si, jak jsou postavené a jak se rozdělují."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sacharidy",
+          "definition": "Přírodní látky, které obsahují skupinu C=O (aldehydovou nebo ketonovou) a několik skupin –OH. Mnohé mají vzorec Cₙ(H₂O)ₙ – proto starý název „uhlohydráty“."
+        },
+        {
+          "type": "term",
+          "term": "Monosacharid",
+          "definition": "Jednoduchý cukr, který se už nedá rozštěpit na menší cukry.",
+          "example": "glukóza, fruktóza, ribóza"
+        },
+        {
+          "type": "term",
+          "term": "Aldóza a ketóza",
+          "definition": "**Aldóza** má aldehydovou skupinu –CHO, **ketóza** ketonovou C=O uvnitř řetězce. Podle počtu uhlíků: pentóza (5), hexóza (6).",
+          "example": "glukóza = aldohexóza, fruktóza = ketohexóza, ribóza = aldopentóza"
+        },
+        {
+          "type": "term",
+          "term": "Glykosidová vazba",
+          "definition": "Vazba, kterou se spojují dva monosacharidy přes atom kyslíku (uvolní se voda)."
+        },
+        {
+          "type": "heading",
+          "text": "Od jednoho ke tisícům"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Monosacharidy**: glukóza (krev, ovoce), fruktóza (ovoce, med), galaktóza, ribóza (RNA), deoxyribóza (DNA).",
+            "**Disacharidy** (2 jednotky): **sacharóza** = glukóza + fruktóza (cukrová řepa); **laktóza** = galaktóza + glukóza (mléko); **maltóza** = glukóza + glukóza (slad).",
+            "**Polysacharidy** (tisíce jednotek glukózy): **škrob** (zásoba rostlin), **glykogen** (zásoba živočichů v játrech a svalech), **celulóza** (buněčné stěny rostlin)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď sacharidy podle velikosti."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "monosacharid",
+              "disacharid",
+              "polysacharid"
+            ],
+            "items": [
+              {
+                "text": "glukóza",
+                "group": 0
+              },
+              {
+                "text": "fruktóza",
+                "group": 0
+              },
+              {
+                "text": "ribóza",
+                "group": 0
+              },
+              {
+                "text": "sacharóza",
+                "group": 1
+              },
+              {
+                "text": "laktóza",
+                "group": 1
+              },
+              {
+                "text": "maltóza",
+                "group": 1
+              },
+              {
+                "text": "škrob",
+                "group": 2
+              },
+              {
+                "text": "glykogen",
+                "group": 2
+              },
+              {
+                "text": "celulóza",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Proč celulózu nestrávíme"
+        },
+        {
+          "type": "text",
+          "text": "Glukóza existuje ve dvou cyklických formách: **α** a **β** (liší se polohou jedné skupiny –OH). Škrob a glykogen jsou z **α-glukózy** – naše enzymy je štěpí. Celulóza je z **β-glukózy** – na tu enzymy nemáme. Prochází střevem jako vláknina."
+        },
+        {
+          "type": "heading",
+          "text": "Důkazy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Škrob**: **Lugolův roztok** (jod v jodidu draselném) → modrofialové zbarvení.",
+            "**Redukující cukry** (glukóza, maltóza, laktóza): Fehlingovo činidlo → červená sraženina Cu₂O."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč sacharóza nedá pozitivní Fehlingovu zkoušku, ale glukóza ano?",
+          "answer": "Glukóza má volnou (poloacetalovou) skupinu, která se může otevřít na aldehyd → redukuje Cu²⁺. V sacharóze jsou tyto skupiny **obou** jednotek spotřebované v glykosidové vazbě → sacharóza je **neredukující**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak z cukru získáme energii"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Glykolýza** v cytoplazmě: 1 glukóza → **2 pyruváty** (+ trochu ATP).",
+            "Pyruvát vstoupí do mitochondrie, v **Krebsově cyklu** se rozloží na CO₂.",
+            "V **dýchacím řetězci** se vodík spojí s kyslíkem na vodu a vznikne většina ATP.",
+            "Celkem: C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energie (ATP)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik molekul pyruvátu vznikne glykolýzou z jedné glukózy?",
+          "answer": "Glukóza má 6 uhlíků, pyruvát 3. Glykolýza ji rozdělí napůl → **2 pyruváty**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Sacharóza = glukóza + glukóza.",
+          "right": "Sacharóza = **glukóza + fruktóza**. Glukóza + glukóza je maltóza.",
+          "why": "Každý disacharid má jiné složení: sacharóza (glc + fru), maltóza (glc + glc), laktóza (gal + glc)."
+        },
+        {
+          "type": "summary",
+          "text": "Mono- (glukóza – aldohexóza, fruktóza – ketohexóza, ribóza), di- (sacharóza, laktóza, maltóza), polysacharidy (škrob a glykogen z α-glukózy, celulóza z β-glukózy). Glykolýza: glukóza → 2 pyruváty."
+        }
+      ]
+    },
+    {
+      "title": "Klasifikace",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sacharidy mají vlastní systém třídění podle tří otázek: **kolik jednotek**, **jaká karbonylová skupina** a **kolik uhlíků**. Kdo ho zná, zařadí každý cukr a odhadne jeho vlastnosti."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Karbonylová skupina",
+          "definition": "Skupina C=O. Na konci řetězce (–CHO) je **aldehydová**, uvnitř **ketonová**."
+        },
+        {
+          "type": "term",
+          "term": "Poloacetal (cyklická forma)",
+          "definition": "V roztoku se monosacharid uzavře do kruhu: skupina –OH reaguje s vlastní skupinou C=O. Vznikne nový –OH na uhlíku C1 – podle jeho polohy forma **α** nebo **β**."
+        },
+        {
+          "type": "term",
+          "term": "Glykosidová vazba",
+          "definition": "Spojení poloacetalového –OH jednoho cukru s –OH druhého za odštěpení vody."
+        },
+        {
+          "type": "term",
+          "term": "Redukující cukr",
+          "definition": "Cukr s volnou poloacetalovou skupinou; v otevřené formě má aldehyd a redukuje Fehlingovo činidlo."
+        },
+        {
+          "type": "heading",
+          "text": "Tři otázky"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kolik jednotek? 1 → monosacharid, 2 → disacharid, mnoho → polysacharid.",
+            "Aldehyd, nebo keton? → **aldóza**, nebo **ketóza**.",
+            "Kolik uhlíků? 5 → **pentóza**, 6 → **hexóza**.",
+            "Spoj: např. glukóza = **aldohexóza**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zkus si zařadit monosacharidy sám, pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "glukóza",
+                "back": "aldohexóza"
+              },
+              {
+                "front": "fruktóza",
+                "back": "ketohexóza"
+              },
+              {
+                "front": "galaktóza",
+                "back": "aldohexóza"
+              },
+              {
+                "front": "ribóza",
+                "back": "aldopentóza (v RNA)"
+              },
+              {
+                "front": "deoxyribóza",
+                "back": "aldopentóza bez jednoho O (v DNA)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Disacharidy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Disacharid",
+            "Složení",
+            "Zdroj",
+            "Redukující?"
+          ],
+          "rows": [
+            [
+              "sacharóza",
+              "glukóza + fruktóza",
+              "cukrová řepa, třtina",
+              "ne"
+            ],
+            [
+              "maltóza",
+              "glukóza + glukóza",
+              "slad",
+              "ano"
+            ],
+            [
+              "laktóza",
+              "galaktóza + glukóza",
+              "mléko",
+              "ano"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč sacharóza není redukující disacharid?",
+          "answer": "Glykosidová vazba v ní spojuje poloacetalové uhlíky **obou** monosacharidů (C1 glukózy a C2 fruktózy). Žádná jednotka se nemůže otevřít na aldehyd → Fehlingovo činidlo nezredukuje."
+        },
+        {
+          "type": "heading",
+          "text": "Polysacharidy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Polysacharid",
+            "Jednotka",
+            "Funkce",
+            "Kde"
+          ],
+          "rows": [
+            [
+              "škrob (amylóza + amylopektin)",
+              "α-glukóza",
+              "zásobní",
+              "rostliny – hlízy, semena"
+            ],
+            [
+              "glykogen",
+              "α-glukóza (silně větvený)",
+              "zásobní",
+              "živočichové – játra, svaly"
+            ],
+            [
+              "celulóza",
+              "β-glukóza",
+              "stavební",
+              "buněčné stěny rostlin"
+            ],
+            [
+              "chitin",
+              "derivát glukózy s dusíkem",
+              "stavební",
+              "krovky hmyzu, stěny hub"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Metabolismus"
+        },
+        {
+          "type": "text",
+          "text": "Fotosyntéza: 6 CO₂ + 6 H₂O → C₆H₁₂O₆ + 6 O₂. Buněčné dýchání je opačný děj: glykolýza (cytoplazma, glukóza → 2 pyruváty) → Krebsův cyklus a dýchací řetězec (mitochondrie). Celkem C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energie, která se ukládá do ATP."
+        },
+        {
+          "type": "example",
+          "question": "Jak dokážeš škrob v bramboře a jak glukózu v hroznovém víně?",
+          "answer": "Škrob: kápneš **Lugolův roztok** → modrofialová. Glukózu: šťávu zahřeješ s **Fehlingovým činidlem** → červená sraženina Cu₂O (glukóza je redukující)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Celulóza je ze stejné glukózy jako škrob, proto ji člověk stráví.",
+          "right": "Celulóza je z **β-glukózy**, škrob z **α-glukózy**. Člověk celulózu nestráví.",
+          "why": "Enzymy jsou velmi specifické – lidská amyláza štěpí jen α-glykosidové vazby. Celulózu štěpí jen bakterie (např. v bachoru přežvýkavců)."
+        },
+        {
+          "type": "summary",
+          "text": "Třídění: počet jednotek, aldóza/ketóza, počet C. Sacharóza (glc + fru) je neredukující. Škrob a glykogen z α-glukózy (zásoba), celulóza z β-glukózy (stavba). Škrob dokáže Lugolův roztok."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Z čeho se skládá sacharóza?",
+      "options": [
+        "glukóza + fruktóza",
+        "glukóza + glukóza",
+        "galaktóza + glukóza",
+        "fruktóza + fruktóza"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak je glukóza klasifikována?",
+      "options": [
+        "aldohexóza",
+        "ketohexóza",
+        "aldopentóza",
+        "ketopentóza"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který sacharid je v RNA?",
+      "options": [
+        "ribóza",
+        "deoxyribóza",
+        "glukóza",
+        "fruktóza"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Sacharóza je redukující disacharid.",
+      "answer": false,
+      "explanation": "Poloacetalové skupiny obou jednotek jsou vázány v glykosidové vazbě."
+    },
+    {
+      "type": "truefalse",
+      "question": "Celulóza je tvořena jednotkami β-glukózy.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá zásobní polysacharid živočichů?",
+      "options": [
+        "glykogen",
+        "škrob",
+        "celulóza",
+        "chitin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Čím dokážeš škrob?",
+      "options": [
+        "Lugolovým roztokem (modrofialově)",
+        "Fehlingovým činidlem",
+        "bromovou vodou",
+        "fenolftaleinem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj disacharid se zdrojem.",
+      "pairs": [
+        [
+          "sacharóza",
+          "cukrová řepa"
+        ],
+        [
+          "laktóza",
+          "mléko"
+        ],
+        [
+          "maltóza",
+          "slad"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik molekul pyruvátu vznikne glykolýzou z jedné molekuly glukózy?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kde v buňce probíhá glykolýza?",
+      "options": [
+        "v cytoplazmě",
+        "v mitochondrii",
+        "v jádře",
+        "v chloroplastu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Porovnej škrob, glykogen a celulózu.",
+      "answer": "Všechny jsou polysacharidy z glukózy. Škrob je zásobní u rostlin, glykogen u živočichů – oba z α-glukózy. Celulóza je stavební látka buněčných stěn z β-glukózy, člověk ji nestráví."
+    },
+    {
+      "type": "open",
+      "question": "Popiš celkovou rovnici buněčného dýchání a jeho význam.",
+      "answer": "C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energie. Glukóza se postupně oxiduje v glykolýze, Krebsově cyklu a dýchacím řetězci a uvolněná energie se ukládá do ATP."
+    }
+  ]
+}

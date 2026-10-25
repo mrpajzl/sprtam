@@ -1,4 +1,6 @@
 import { useMemo, useState } from 'preact/hooks'
+import { s, type Infer } from '../content/schema'
+import { defineWidget } from './kit'
 
 // Written arithmetic laid out the way it is written in a Czech exercise book
 // ("pod sebou"), solved column by column with a spoken commentary.
@@ -196,8 +198,24 @@ const cols = (L: Layout) => Array.from({ length: L.width }, (_, c) => {
   return chars.length && chars.every((x) => x === ',' || x === ' ') ? '0.32em' : '0.72em'
 }).join(' ')
 
+const num = s.anyOf([s.number({ min: 0 }), s.string({ pattern: '^[0-9 ]+(,[0-9]+)?$' })], { description: 'Číslo; jako text i s mezerami mezi řády nebo s desetinnou čárkou: 12500, "12 500", "3,75".' })
+const props = s.object({
+  a: num,
+  b: num,
+  op: s.enum(['+', '-', '·', ':'], { description: 'Početní operace: "+" sčítání, "-" odčítání (doplňováním), "·" násobení (i víceciferným číslem), ":" dělení (jednociferným i víceciferným dělitelem). · a : jen s celými čísly.' }),
+}, { description: 'Příklad a op b.' })
+type P = Infer<typeof props>
+
+const value = (v: string | number) => Number(clean(v).replace(',', '.'))
+/** The exact result: a whole quotient for :, otherwise rounded to the decimals of the operands. */
+export function columnResult({ a, b, op }: P) {
+  const x = value(a), y = value(b)
+  const r = op === '+' ? x + y : op === '-' ? x - y : op === '·' ? x * y : Math.floor(x / y)
+  return Math.round(r * 1e9) / 1e9
+}
+
 /** The problem written „pod sebou“ without the solution – used in quiz questions. */
-export function ColumnProblem({ a, b, op }: { a: string | number; b: string | number; op: '+' | '-' | '−' | '·' | ':' }) {
+function ColumnProblem({ a, b, op }: P) {
   const A = clean(a), B = clean(b)
   const L = op === ':' ? null : op === '·' ? multiply(A, B) : addSub(A, B, op !== '+')
   if (!L) return <div class="column-q">{A} : {B} =</div>
@@ -210,11 +228,11 @@ export function ColumnProblem({ a, b, op }: { a: string | number; b: string | nu
   )
 }
 
-export function Column({ a, b, op }: { a: string | number; b: string | number; op: '+' | '-' | '−' | '·' | ':' }) {
+function Column({ a, b, op }: P) {
   const L = useMemo(() => {
     const A = clean(a), B = clean(b)
     if (op === '+') return addSub(A, B, false)
-    if (op === '-' || op === '−') return addSub(A, B, true)
+    if (op === '-') return addSub(A, B, true)
     if (op === '·') return multiply(A, B)
     return divide(A, B)
   }, [a, b, op])
@@ -239,6 +257,33 @@ export function Column({ a, b, op }: { a: string | number; b: string | number; o
     </div>
   )
 }
+
+export default defineWidget({
+  name: 'column',
+  title: 'Písemné počítání pod sebou',
+  summary: 'Příklad zapsaný pod sebou jako v sešitě. Dítě jde tlačítkem krok za krokem, každý krok je okomentovaný („7 a kolik je 12? 5, 1 si pamatuji“).',
+  use: 'Písemné sčítání, odčítání, násobení a dělení; v příkladech (example) jako řešení, v otázkách (input) jako zadání.',
+  props,
+  examples: [
+    { title: 'Odčítání', props: { a: 832, b: 457, op: '-' } },
+    { title: 'Násobení dvojciferným', props: { a: 345, b: 23, op: '·' } },
+    { title: 'Dělení', props: { a: 9874, b: 7, op: ':' } },
+    { title: 'Desetinná čísla', props: { a: '12,5', b: '3,75', op: '+' } },
+  ],
+  check: (p) => {
+    const e: string[] = []
+    if ((p.op === '·' || p.op === ':') && (/,/.test(clean(p.a)) || /,/.test(clean(p.b)))) e.push('· and : need whole numbers')
+    if (p.op === '-' && value(p.a) < value(p.b)) e.push('− needs a ≥ b')
+    if (p.op === ':' && value(p.b) === 0) e.push('division by zero')
+    return e
+  },
+  Component: Column,
+  Question: ColumnProblem,
+  checkQuestion: (p, answers) => {
+    const want = columnResult(p)
+    return answers.some((v) => Math.abs(value(v) - want) < 1e-9) ? [] : [`the result ${want} is not among the answers`]
+  },
+})
 
 /** For tests: the raw layouts. */
 export const _layout = { addSub, multiply, divide }

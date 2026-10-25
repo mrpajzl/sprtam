@@ -1,0 +1,424 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "savci-skupiny",
+  "title": "Přehled savců",
+  "emoji": "🦊",
+  "explanations": [
+    {
+      "title": "Podle zubů a nohou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zoologové se nejdřív dívají savci do pusy a na nohy. Zuby prozradí, co jí. Nohy prozradí, jak se pohybuje. Podle toho savce dělí do skupin – **řádů**."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se nejdůležitější řády savců a poznáš, kam patří zvířata, která znáš z lesa, statku i zoo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Řád",
+          "definition": "Velká skupina příbuzných živočichů s podobnou stavbou těla.",
+          "example": "Šelmy jsou řád – patří tam pes, kočka, rys i medvěd."
+        },
+        {
+          "type": "term",
+          "term": "Řezáky a špičáky",
+          "definition": "**Řezáky** jsou přední ploché zuby na ukusování. **Špičáky** jsou dlouhé ostré zuby vedle nich, na trhání."
+        },
+        {
+          "type": "term",
+          "term": "Kopyto",
+          "definition": "Tvrdý rohový obal na konci prstu. Chodí po něm koně, krávy, jeleni."
+        },
+        {
+          "type": "heading",
+          "text": "Podle zubů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Řád",
+            "Zuby",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "šelmy",
+              "velké špičáky a ostré **trháky** na krájení masa",
+              "pes, kočka, rys, liška"
+            ],
+            [
+              "hlodavci",
+              "1 pár horních řezáků, celý život dorůstají; nemají špičáky",
+              "myš, veverka, bobr"
+            ],
+            [
+              "zajícovci",
+              "2 páry horních řezáků (jeden malý za druhým)",
+              "zajíc, králík"
+            ],
+            [
+              "hmyzožravci",
+              "drobné ostré zoubky na hmyz",
+              "ježek, krtek, rejsek"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Podle nohou"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Řád",
+            "Nohy",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "lichokopytníci",
+              "lichý počet prstů s kopyty (1 nebo 3)",
+              "kůň, nosorožec"
+            ],
+            [
+              "sudokopytníci",
+              "sudý počet prstů s kopyty (2 nebo 4)",
+              "prase, jelen, kráva"
+            ],
+            [
+              "letouni",
+              "přední končetiny s blánou jako křídla",
+              "netopýr"
+            ],
+            [
+              "kytovci",
+              "přední končetiny jako ploutve, zadní chybí",
+              "delfín, plejtvák"
+            ],
+            [
+              "primáti",
+              "ruce s palcem, který se dotkne ostatních prstů",
+              "opice, člověk"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zařaď zvířata do řádů. Vzpomeň si na jejich zuby."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Šelmy",
+              "Hlodavci",
+              "Hmyzožravci"
+            ],
+            "items": [
+              {
+                "text": "rys",
+                "group": 0
+              },
+              {
+                "text": "bobr",
+                "group": 1
+              },
+              {
+                "text": "ježek",
+                "group": 2
+              },
+              {
+                "text": "liška",
+                "group": 0
+              },
+              {
+                "text": "veverka",
+                "group": 1
+              },
+              {
+                "text": "krtek",
+                "group": 2
+              },
+              {
+                "text": "jezevec",
+                "group": 0
+              },
+              {
+                "text": "křeček",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč musí morče nebo křeček stále něco hryzat?",
+          "answer": "Jsou to hlodavci. Řezáky jim **celý život dorůstají**. Hryzáním je obrušují – jinak by přerostly a zvíře by nemohlo jíst."
+        },
+        {
+          "type": "example",
+          "question": "Kůň má na noze jedno kopyto, kráva dvě. Do kterých řádů patří?",
+          "answer": "Kůň: 1 prst = lichý počet → **lichokopytníci**. Kráva: 2 prsty = sudý počet → **sudokopytníci**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zajíc je hlodavec.",
+          "right": "Zajíc patří mezi zajícovce.",
+          "why": "Zajícovci mají za předními horními řezáky ještě druhý, malý pár. Hlodavci mají jen jeden pár."
+        },
+        {
+          "type": "summary",
+          "text": "Řády savců poznáš podle zubů (šelmy – špičáky, hlodavci – dorůstající řezáky) a nohou (lichokopytníci, sudokopytníci, letouni, kytovci)."
+        }
+      ]
+    },
+    {
+      "title": "Přizpůsobení",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Krtek žije ve tmě pod zemí, netopýr létá v noci, kráva jí celý den trávu, velryba žije v oceánu. Každý z nich má tělo „na míru“ svému životu."
+        },
+        {
+          "type": "text",
+          "text": "Na příkladech pochopíš, jak tělo savců odpovídá prostředí a potravě. Tak si řády zapamatuješ mnohem snáz než z tabulky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Savci",
+          "definition": "Obratlovci, kteří kojí mláďata mlékem, mají srst a stálou teplotu těla."
+        },
+        {
+          "type": "term",
+          "term": "Přizpůsobení",
+          "definition": "Vlastnost těla nebo chování, která živočichovi pomáhá přežít v jeho prostředí.",
+          "example": "Hustá bílá srst ledního medvěda."
+        },
+        {
+          "type": "term",
+          "term": "Echolokace",
+          "definition": "Orientace pomocí ozvěny. Zvíře vydá vysoký zvuk (ultrazvuk, který člověk neslyší) a podle ozvěny pozná, kde jsou překážky a kořist."
+        },
+        {
+          "type": "term",
+          "term": "Přežvýkavci",
+          "definition": "Sudokopytníci se žaludkem ze čtyř oddílů. Potravu spolknou, později ji vrátí do úst a znovu přežvýkají.",
+          "example": "Kráva, ovce, jelen."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři příběhy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Krtek (hmyzožravci)** – válcovité tělo, krátká srst, lopatovité přední končetiny na hrabání, zakrnělé oči. Pod zemí loví žížaly a larvy.",
+            "**Netopýr (letouni)** – blána mezi prsty je křídlo. V noci loví hmyz pomocí **echolokace**.",
+            "**Kráva (sudokopytníci, přežvýkavci)** – tráva je těžko stravitelná. Kráva ji tráví ve čtyřdílném žaludku.",
+            "**Plejtvák obrovský (kytovci)** – největší žijící živočich. Ploutve, podkožní tuk proti chladu, dýchá plícemi."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Cesta trávy kravským žaludkem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kráva trávu jen zhruba ukousne a spolkne do **bachoru** – prvního, největšího oddílu.",
+            "V bachoru ji začnou rozkládat bakterie.",
+            "Přes **čepec** se potrava vrací do úst a kráva ji v klidu přežvykuje.",
+            "Rozžvýkaná potrava jde do **knihy** a pak do **slezu**, kde se tráví trávicími šťávami."
+          ]
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "krtek",
+                "back": "hmyzožravci – hrabavé končetiny"
+              },
+              {
+                "front": "netopýr",
+                "back": "letouni – echolokace"
+              },
+              {
+                "front": "kráva",
+                "back": "sudokopytníci – přežvýkavec"
+              },
+              {
+                "front": "kůň",
+                "back": "lichokopytníci – jedno kopyto"
+              },
+              {
+                "front": "delfín",
+                "back": "kytovci – ploutve, plíce"
+              },
+              {
+                "front": "člověk",
+                "back": "primáti"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a ke každému zvířeti si vybav jedno přizpůsobení."
+        },
+        {
+          "type": "example",
+          "question": "Jak netopýr chytí v úplné tmě komára?",
+          "answer": "Vydává ultrazvuk. Zvuk se odrazí od komára a vrátí se. Podle ozvěny netopýr pozná, kde komár je – to je **echolokace**."
+        },
+        {
+          "type": "example",
+          "question": "Proč prase není přežvýkavec, i když je sudokopytník?",
+          "answer": "Prase je **všežravec** a má jednoduchý žaludek. Přežvýkavci mají čtyřdílný žaludek a potravu přežvykují."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Člověk nepatří mezi savce, je zvláštní skupina.",
+          "right": "Člověk je savec z řádu primátů.",
+          "why": "Má všechny znaky savců: srst (vlasy), kojení, stálou teplotu, bránici."
+        },
+        {
+          "type": "summary",
+          "text": "Tělo savce odpovídá jeho životu: krtek hrabe, netopýr používá echolokaci, přežvýkavci mají čtyřdílný žaludek (bachor, čepec, kniha, slez), kytovci ploutve."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Ježek patří mezi…",
+      "options": [
+        "hmyzožravce",
+        "hlodavce",
+        "šelmy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kůň patří mezi…",
+      "options": [
+        "lichokopytníky",
+        "sudokopytníky",
+        "šelmy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Zajíc je hlodavec.",
+      "answer": false,
+      "explanation": "Zajíc patří mezi zajícovce – má dva páry horních řezáků."
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje první oddíl žaludku přežvýkavců?",
+      "answers": [
+        "bachor"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj savce s řádem.",
+      "pairs": [
+        [
+          "bobr",
+          "hlodavci"
+        ],
+        [
+          "rys",
+          "šelmy"
+        ],
+        [
+          "jelen",
+          "sudokopytníci"
+        ],
+        [
+          "delfín",
+          "kytovci"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se netopýři orientují ve tmě?",
+      "options": [
+        "echolokací (ultrazvukem)",
+        "čichem",
+        "hmatem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Hlodavcům řezáky celý život dorůstají.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který savec je přežvýkavec?",
+      "options": [
+        "kráva",
+        "prase",
+        "kůň"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Největší žijící živočich je…",
+      "options": [
+        "plejtvák obrovský",
+        "slon africký",
+        "žirafa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Člověk patří mezi primáty.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak je krtek přizpůsoben životu pod zemí?",
+      "answer": "Má válcovité tělo, krátkou srst, lopatovité přední hrabavé končetiny a zakrnělé oči."
+    },
+    {
+      "type": "open",
+      "question": "Čím se liší šelmy od hlodavců?",
+      "answer": "Šelmy jsou masožravé, mají velké špičáky a trháky. Hlodavci jsou většinou býložraví, mají dorůstající řezáky a nemají špičáky."
+    }
+  ]
+}

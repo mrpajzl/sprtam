@@ -1,0 +1,361 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ekosystemy",
+  "title": "Ekosystémy a potravní řetězce",
+  "emoji": "🌳",
+  "explanations": [
+    {
+      "title": "Kdo koho jí",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zajíc spase trávu. Lišku nasytí zajíc. Když liška uhyne, její tělo rozloží drobní tvorové v půdě. Každý tvor v přírodě je pro někoho potravou."
+        },
+        {
+          "type": "text",
+          "text": "Když to propojíme šipkami, vznikne **potravní řetězec**. Pomáhá pochopit, proč je v přírodě důležitý každý článek – i ten nejmenší."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Potravní řetězec",
+          "definition": "Řada organismů, kde každý slouží jako potrava dalšímu.",
+          "example": "tráva → zajíc → liška"
+        },
+        {
+          "type": "term",
+          "term": "Producent",
+          "definition": "Organismus, který si potravu **vyrábí** sám ze světla, vody a vzduchu (fotosyntézou). Jsou to zelené rostliny a řasy.",
+          "example": "Tráva, buk, borůvka."
+        },
+        {
+          "type": "term",
+          "term": "Konzument",
+          "definition": "Organismus, který potravu **jí** – živí se jinými organismy.",
+          "example": "Zajíc jí trávu, liška zajíce."
+        },
+        {
+          "type": "term",
+          "term": "Rozkladač",
+          "definition": "Organismus, který rozkládá mrtvá těla, listí a trus na jednoduché látky. Ty se vrátí do půdy jako živiny pro rostliny.",
+          "example": "Půdní bakterie, houby, žížala."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se řetězec čte"
+        },
+        {
+          "type": "text",
+          "text": "Šipka vede **od toho, kdo je sněden, k tomu, kdo jí**. Šipka tedy ukazuje, kam putuje potrava a energie."
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj, kudy putuje potrava. Na konci rozkladači vracejí živiny rostlinám."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "rostlina (producent)",
+              "býložravec (konzument)",
+              "masožravec (konzument)",
+              "rozkladač (bakterie, houby)"
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Býložravec, masožravec, všežravec",
+          "definition": "Býložravec jí jen rostliny, masožravec jen živočichy, všežravec obojí.",
+          "example": "Srnec – býložravec, sova – masožravec, prase divoké – všežravec."
+        },
+        {
+          "type": "heading",
+          "text": "Kde je začátek"
+        },
+        {
+          "type": "text",
+          "text": "Na začátku každého řetězce je **Slunce**. Rostliny zachytí jeho světlo a vyrobí si cukr. Energii pak předávají dál každému, kdo je sní."
+        },
+        {
+          "type": "example",
+          "question": "Sestav řetězec z: liška, tráva, zajíc.",
+          "answer": "Kdo nic nejí, ale vyrábí? Tráva (producent). Kdo jí trávu? Zajíc. Kdo jí zajíce? Liška. Řetězec: **tráva → zajíc → liška**."
+        },
+        {
+          "type": "example",
+          "question": "Doplň řetězec: tráva → kobylka → žába → ?",
+          "answer": "Hledáme někoho, kdo jí žáby. Například **čáp**. Řetězec: tráva → kobylka → žába → čáp."
+        },
+        {
+          "type": "mistake",
+          "wrong": "liška → zajíc → tráva",
+          "right": "tráva → zajíc → liška",
+          "why": "Šipka ukazuje, kam jde potrava: od sněděného k tomu, kdo jí. Tráva je vždy na začátku."
+        },
+        {
+          "type": "summary",
+          "text": "Producenti (rostliny) vyrábějí potravu, konzumenti ji jedí, rozkladači vracejí živiny do půdy. Energie v řetězci pochází ze Slunce."
+        }
+      ]
+    },
+    {
+      "title": "Role v lese",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Les není jen spousta stromů. Žijí v něm srnci, sovy, mravenci i neviditelné bakterie. A všichni potřebují vodu, půdu a světlo. Dohromady tvoří jeden velký systém, kde jedno závisí na druhém."
+        },
+        {
+          "type": "text",
+          "text": "Takový systém se jmenuje **ekosystém**. Když pochopíš, jaké „role“ v něm kdo hraje, pochopíš, proč nám vadí, když nějaký druh zmizí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Společenstvo",
+          "definition": "Všechny organismy, které žijí společně na jednom místě.",
+          "example": "Všechny rostliny, zvířata, houby a bakterie v jednom lese."
+        },
+        {
+          "type": "term",
+          "term": "Ekosystém",
+          "definition": "Společenstvo organismů **plus** jejich neživé prostředí (voda, půda, vzduch, světlo) na jednom místě. Všechno se navzájem ovlivňuje.",
+          "example": "Les, rybník, louka, pole."
+        },
+        {
+          "type": "term",
+          "term": "Producent",
+          "definition": "Kdo si potravu vyrábí ze světla – zelené rostliny."
+        },
+        {
+          "type": "term",
+          "term": "Konzument",
+          "definition": "Kdo jí jiné organismy – býložravci, masožravci i všežravci."
+        },
+        {
+          "type": "term",
+          "term": "Rozkladač",
+          "definition": "Kdo rozkládá odumřelé zbytky na živiny – hlavně bakterie a houby."
+        },
+        {
+          "type": "term",
+          "term": "Potravní síť",
+          "definition": "Mnoho propletených potravních řetězců. Většina živočichů jí víc druhů potravy a sama je potravou pro víc druhů.",
+          "example": "Myš sežere sova, liška i káně."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přiřaď obyvatele lesa k jejich roli. Ptej se: vyrábí, jí, nebo rozkládá?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Producent",
+              "Konzument",
+              "Rozkladač"
+            ],
+            "items": [
+              {
+                "text": "buk",
+                "group": 0
+              },
+              {
+                "text": "srnec",
+                "group": 1
+              },
+              {
+                "text": "plíseň",
+                "group": 2
+              },
+              {
+                "text": "borůvka",
+                "group": 0
+              },
+              {
+                "text": "sova",
+                "group": 1
+              },
+              {
+                "text": "půdní bakterie",
+                "group": 2
+              },
+              {
+                "text": "mech",
+                "group": 0
+              },
+              {
+                "text": "liška",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Rovnováha"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Každý druh je v síti něčím důležitý.",
+            "Když jeden druh zmizí, jeho potrava se může přemnožit.",
+            "Přemnožený druh pak spotřebuje příliš mnoho své potravy.",
+            "Změna se šíří dál celou sítí – ekosystém ztrácí **rovnováhu**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Z lesa zmizí všichni dravci (liška, sova, káně). Co se stane?",
+          "answer": "Nikdo neloví myši a srnce, a ti se **přemnoží**. Spasou mladé stromky a byliny. Les se poškodí. Rovnováha ekosystému se naruší."
+        },
+        {
+          "type": "example",
+          "question": "Co by se stalo, kdyby v lese nebyli rozkladači?",
+          "answer": "Spadané listí a mrtvá těla by se nerozkládala. Hromadila by se a živiny by se nevracely do půdy. Rostliny by neměly z čeho růst."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ekosystém tvoří jen zvířata a rostliny.",
+          "right": "Ekosystém = organismy + neživé prostředí (voda, půda, vzduch, světlo).",
+          "why": "Bez vody, půdy a světla by organismy nemohly žít. Neživé prostředí je stejně důležitá součást."
+        },
+        {
+          "type": "summary",
+          "text": "Ekosystém = společenstvo organismů + neživé prostředí. Producenti vyrábějí, konzumenti jedí, rozkladači vracejí živiny. Každý druh drží rovnováhu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo je v ekosystému producent?",
+      "options": [
+        "zelená rostlina",
+        "liška",
+        "houba"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď potravní řetězec.",
+      "items": [
+        "tráva",
+        "kobylka",
+        "žába",
+        "čáp"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Houby a bakterie, které rozkládají zbytky, jsou…",
+      "options": [
+        "rozkladači",
+        "producenti",
+        "predátoři"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ekosystém tvoří jen živé organismy.",
+      "answer": false,
+      "explanation": "Patří k němu i neživé prostředí – voda, půda, světlo."
+    },
+    {
+      "type": "input",
+      "question": "Živočich, který jí jen rostliny, je…",
+      "answers": [
+        "býložravec",
+        "bylozravec"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj ekosystém s typickým organismem.",
+      "pairs": [
+        [
+          "rybník",
+          "kapr"
+        ],
+        [
+          "les",
+          "jelen"
+        ],
+        [
+          "louka",
+          "kobylka"
+        ],
+        [
+          "pole",
+          "křeček"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Bez rozkladačů by se živiny nevracely do půdy.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kdo stojí na konci řetězce tráva → myš → užovka → …?",
+      "options": [
+        "káně",
+        "zajíc",
+        "kobylka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Všežravec jí rostliny i živočichy.",
+      "answer": true,
+      "explanation": "Například prase divoké, medvěd, člověk."
+    },
+    {
+      "type": "choice",
+      "question": "Odkud pochází energie v potravním řetězci?",
+      "options": [
+        "ze Slunce",
+        "z půdy",
+        "z vody"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je ekosystém? Uveď příklad.",
+      "answer": "Soubor organismů a neživého prostředí na jednom místě, které se navzájem ovlivňují. Např. les, rybník, louka."
+    },
+    {
+      "type": "open",
+      "question": "Co by se stalo, kdyby z lesa zmizeli všichni dravci?",
+      "answer": "Přemnožili by se býložravci (myši, srnci), spásali by rostliny a narušila by se rovnováha ekosystému."
+    }
+  ]
+}

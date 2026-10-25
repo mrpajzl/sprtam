@@ -1,0 +1,334 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "soustavy-rovnic",
+  "title": "Soustavy dvou rovnic",
+  "emoji": "🔗",
+  "generator": "linear-eq",
+  "explanations": [
+    {
+      "title": "Hádanka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V kleci jsou slepice a králíci. Dohromady mají 10 hlav a 28 nohou. Kolik je králíků? Neznáš dvě čísla – počet slepic i králíků. Jedna rovnice na to nestačí, potřebuješ dvě."
+        },
+        {
+          "type": "text",
+          "text": "Dvě rovnice se dvěma neznámými dohromady jsou **soustava rovnic**. Řeší úlohy o cenách lístků, směsích, rychlostech a spoustu hádanek."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Neznámá",
+          "definition": "Číslo, které hledáme, označené písmenem.",
+          "example": "s = počet slepic, k = počet králíků"
+        },
+        {
+          "type": "term",
+          "term": "Rovnice",
+          "definition": "Zápis, kde se dvě strany rovnají.",
+          "example": "s + k = 10 (hlavy)"
+        },
+        {
+          "type": "term",
+          "term": "Soustava rovnic",
+          "definition": "Dvě (nebo víc) rovnic, které musí platit **zároveň**.",
+          "example": "s + k = 10 a 2s + 4k = 28"
+        },
+        {
+          "type": "term",
+          "term": "Řešení soustavy",
+          "definition": "Dvojice čísel, která splňuje obě rovnice najednou. Píše se do hranatých závorek [x; y].",
+          "example": "[6; 4] – 6 slepic, 4 králíci."
+        },
+        {
+          "type": "heading",
+          "text": "Úvaha bez vzorců"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Představ si, že všechna zvířata zvednou dvě nohy.",
+            "Zvedlo se 10 · 2 = 20 nohou, na zemi zbylo 28 − 20 = 8.",
+            "Na zemi stojí jen králíci, každý na dvou nohách.",
+            "Králíků je 8 : 2 = **4**, slepic 10 − 4 = **6**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Totéž rovnicemi"
+        },
+        {
+          "type": "text",
+          "text": "Hlavy: s + k = 10. Nohy: 2s + 4k = 28. Z první rovnice: s = 10 − k. Dosaď do druhé: 2(10 − k) + 4k = 28 → 20 + 2k = 28 → k = 4. Pak s = 6."
+        },
+        {
+          "type": "heading",
+          "text": "Obrázkem: dvě přímky"
+        },
+        {
+          "type": "text",
+          "text": "Každá rovnice se dvěma neznámými se dá nakreslit jako **přímka** – rovná čára ze všech dvojic, které ji splňují. Řešení soustavy je bod, kde se obě přímky **protnou**."
+        },
+        {
+          "type": "text",
+          "text": "Nakreslená je přímka y = x + 1. Druhá přímka y = −x + 3 by ji protnula v bodě [1; 2]. Zkus nastavit k = −1 a q = 3 a podívej se, kudy vede."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 1,
+            "q": 1
+          }
+        },
+        {
+          "type": "example",
+          "question": "Lístek pro dospělého stojí 100 Kč, pro dítě 60 Kč. Za 5 lístků zaplatíš 380 Kč. Kolik je dospělých?",
+          "answer": "Dospělých d, dětí 5 − d. 100d + 60(5 − d) = 380 → 100d + 300 − 60d = 380 → 40d = 80 → **d = 2**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vyšlo k = 4, hotovo.",
+          "right": "Dopočítej i druhou neznámou: s = 6. Řešení je [6; 4].",
+          "why": "Řešení soustavy je vždy **dvojice** čísel. A obě musí sedět v obou rovnicích: 6 + 4 = 10, 12 + 16 = 28 ✓."
+        },
+        {
+          "type": "summary",
+          "text": "Soustava = dvě rovnice, které platí zároveň. Řešení = dvojice [x; y] – na obrázku průsečík dvou přímek."
+        }
+      ]
+    },
+    {
+      "title": "Dvě metody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Se dvěma neznámými najednou počítat neumíme. Cíl je proto vždy stejný: **jednu neznámou se zbavit**, vyřešit obyčejnou rovnici a pak dopočítat tu druhou. Jsou na to dvě metody."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Soustava dvou rovnic",
+          "definition": "Dvě rovnice se dvěma neznámými (x, y), které musí platit současně.",
+          "example": "x + y = 10, x − y = 2"
+        },
+        {
+          "type": "term",
+          "term": "Koeficient",
+          "definition": "Číslo před neznámou.",
+          "example": "Ve 3x + 2y je u x koeficient 3, u y koeficient 2."
+        },
+        {
+          "type": "term",
+          "term": "Opačná čísla",
+          "definition": "Čísla, která se liší jen znaménkem. Jejich součet je 0.",
+          "example": "+y a −y, 3 a −3"
+        },
+        {
+          "type": "term",
+          "term": "Uspořádaná dvojice [x; y]",
+          "definition": "Zápis řešení: první číslo patří x, druhé y. Pořadí je důležité.",
+          "example": "[6; 4] znamená x = 6, y = 4."
+        },
+        {
+          "type": "heading",
+          "text": "Sčítací metoda"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "x + y = 10 a x − y = 2.",
+            "U y jsou opačné koeficienty (+1 a −1). Sečti rovnice: levé strany spolu, pravé spolu.",
+            "(x + y) + (x − y) = 10 + 2 → 2x = 12 → x = 6.",
+            "Dosaď do první: 6 + y = 10 → y = 4.",
+            "Zkouška ve druhé: 6 − 4 = 2 ✓. Řešení [6; 4]."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Nemají-li neznámé opačné koeficienty, vynásob napřed jednu rovnici vhodným číslem."
+        },
+        {
+          "type": "heading",
+          "text": "Dosazovací metoda"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "y = 2x a x + y = 9.",
+            "Z první rovnice už víš, čemu se rovná y.",
+            "Dosaď 2x místo y do druhé: x + 2x = 9.",
+            "3x = 9 → x = 3.",
+            "Dopočítej y = 2 · 3 = 6. Řešení [3; 6]."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "2x + y = 7 a x − y = 2. Kolik je y?",
+          "answer": "Sečti: 3x = 9, x = 3. Dosaď do druhé: 3 − y = 2, **y = 1**."
+        },
+        {
+          "type": "heading",
+          "text": "Kolik může být řešení"
+        },
+        {
+          "type": "table",
+          "head": [
+            "přímky",
+            "počet řešení"
+          ],
+          "rows": [
+            [
+              "protínají se (různoběžky)",
+              "1"
+            ],
+            [
+              "rovnoběžné, různé",
+              "0"
+            ],
+            [
+              "totožné (jedna leží na druhé)",
+              "nekonečně mnoho"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Přímka y = x + 1. Nastav ještě q = 3: dostaneš přímku rovnoběžnou – nikdy se nepotkají, soustava nemá řešení."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 1,
+            "q": 1
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "x + y = 3 a x + y = 5 má jedno řešení.",
+          "right": "Nemá žádné.",
+          "why": "Součet x + y nemůže být zároveň 3 i 5. Graficky jsou to dvě rovnoběžné přímky."
+        },
+        {
+          "type": "summary",
+          "text": "Zbav se jedné neznámé: sečti rovnice (sčítací metoda) nebo dosaď vyjádřenou neznámou (dosazovací). Dopočítej druhou a udělej zkoušku."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "x + y = 10, x − y = 2. x =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "2x + y = 7, x − y = 2. y =",
+      "answers": [
+        "1"
+      ],
+      "explanation": "3x = 9 → x = 3, y = 1"
+    },
+    {
+      "type": "input",
+      "question": "y = 2x, x + y = 9. x =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3x + 2y = 12, x = 2. y =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které řešení má soustava x + y = 5, x − y = 1?",
+      "options": [
+        "[3; 2]",
+        "[2; 3]",
+        "[4; 1]",
+        "[5; 0]"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "V kleci jsou slepice a králíci: 10 hlav, 28 noh. Kolik je králíků?",
+      "answers": [
+        "4"
+      ],
+      "explanation": "s + k = 10, 2s + 4k = 28"
+    },
+    {
+      "type": "input",
+      "question": "Lístek pro dospělého 100 Kč, pro dítě 60 Kč. Za 5 lístků 380 Kč. Kolik dospělých?",
+      "answers": [
+        "2"
+      ],
+      "explanation": "100d + 60(5 − d) = 380 → d = 2"
+    },
+    {
+      "type": "truefalse",
+      "question": "Soustava může mít nekonečně mnoho řešení.",
+      "answer": true,
+      "explanation": "Když obě rovnice popisují tutéž přímku."
+    },
+    {
+      "type": "truefalse",
+      "question": "Soustava x + y = 3, x + y = 5 má jedno řešení.",
+      "answer": false,
+      "explanation": "Rovnoběžné přímky – žádné řešení."
+    },
+    {
+      "type": "match",
+      "question": "Spoj polohu přímek s počtem řešení.",
+      "pairs": [
+        [
+          "různoběžky",
+          "1 řešení"
+        ],
+        [
+          "rovnoběžky různé",
+          "0 řešení"
+        ],
+        [
+          "totožné přímky",
+          "nekonečně"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Popiš sčítací metodu.",
+      "answer": "Rovnice upravím tak, aby u jedné neznámé byly opačné koeficienty. Sečtu je, neznámá zmizí. Vypočítám druhou neznámou a dosadím zpět."
+    },
+    {
+      "type": "open",
+      "question": "Co je řešením soustavy dvou rovnic se dvěma neznámými?",
+      "answer": "Uspořádaná dvojice čísel [x; y], která po dosazení splňuje obě rovnice zároveň. Graficky průsečík dvou přímek."
+    }
+  ]
+}

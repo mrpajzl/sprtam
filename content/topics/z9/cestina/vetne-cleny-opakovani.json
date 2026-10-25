@@ -1,0 +1,426 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vetne-cleny-opakovani",
+  "title": "Větné členy – opakování",
+  "emoji": "🧱",
+  "explanations": [
+    {
+      "title": "Přehled",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozbor věty je jako rozebrat hodinky: každá součástka má svou úlohu. Ve větě se součástkám říká **větné členy**. Rozbor vět je jistá úloha v přijímačkách."
+        },
+        {
+          "type": "text",
+          "text": "Tady si zopakuješ všechny větné členy v jednom přehledu – od nuly. Přibudou i dva méně známé: **doplněk** a **přístavek**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Větný člen",
+          "definition": "Slovo nebo skupina slov s určitou úlohou ve větě. Poznáš ho otázkou.",
+          "example": "*Pes* (kdo?) *štěká* (co dělá?)."
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo nebo co děj dělá. **1. pád**, otázka **kdo? co?**",
+          "example": "**Pes** štěká."
+        },
+        {
+          "type": "term",
+          "term": "Přísudek",
+          "definition": "Co podmět dělá nebo co se s ním děje. **Slovesný** (jen sloveso) nebo **jmenný se sponou** (být + jméno).",
+          "example": "Pes **štěká**. Sestra **je lékařka**."
+        },
+        {
+          "type": "term",
+          "term": "Předmět",
+          "definition": "Rozvíjí sloveso, ptáš se pádovou otázkou (koho? co? komu? čemu? s kým?…), ne 1. pádem.",
+          "example": "Čtu **knihu**."
+        },
+        {
+          "type": "term",
+          "term": "Přívlastek",
+          "definition": "Rozvíjí podstatné jméno – jaký? který? čí? **Shodný** se mění s jménem (*starý dům – starého domu*), **neshodný** ne (*dům souseda*).",
+          "example": "**starý** dům"
+        },
+        {
+          "type": "term",
+          "term": "Příslovečné určení",
+          "definition": "Okolnosti děje: místo (kde?), čas (kdy?), způsob (jak?), příčina (proč?).",
+          "example": "**Ráno** jsem vstal."
+        },
+        {
+          "type": "term",
+          "term": "Doplněk",
+          "definition": "Člen, který se váže **zároveň** ke slovesu i ke jménu. Říká, jaký je podmět nebo předmět **během děje**.",
+          "example": "Vrátil se **unavený**. (vrátil se – jaký? unavený)"
+        },
+        {
+          "type": "term",
+          "term": "Přístavek",
+          "definition": "Druhé pojmenování téže věci, které ji blíže vysvětlí. Odděluje se čárkami.",
+          "example": "Praha, **hlavní město Česka**, leží na Vltavě."
+        },
+        {
+          "type": "heading",
+          "text": "Přehled v tabulce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Člen",
+            "Otázka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "podmět",
+              "kdo? co?",
+              "**Pes** štěká."
+            ],
+            [
+              "přísudek",
+              "co dělá?",
+              "Pes **štěká**."
+            ],
+            [
+              "předmět",
+              "pádová otázka u slovesa",
+              "Čtu **knihu**."
+            ],
+            [
+              "přívlastek",
+              "jaký? který? čí?",
+              "**starý** dům"
+            ],
+            [
+              "příslovečné určení",
+              "kde? kdy? jak? proč?",
+              "**Ráno** jsem vstal."
+            ],
+            [
+              "doplněk",
+              "jaký? (ke jménu i slovesu)",
+              "Vrátil se **unavený**."
+            ],
+            [
+              "přístavek",
+              "vysvětlí jméno",
+              "Praha, **hlavní město**, …"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup rozboru"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi **přísudek**.",
+            "Zeptej se na **podmět** (kdo? co?).",
+            "Ze slovesa se ptej na **předmět** a **příslovečná určení**.",
+            "Z podstatných jmen se ptej na **přívlastky**.",
+            "Zbylo slovo, které patří ke slovesu i jménu? → **doplněk**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rozeber: *Náš soused včera opravil starý plot.*",
+          "answer": "Přísudek *opravil*, podmět *soused*, *náš* – přívlastek shodný, *včera* – PU času, *plot* – předmět, *starý* – přívlastek shodný."
+        },
+        {
+          "type": "example",
+          "question": "Rozeber: *Na louce se pásly krávy.*",
+          "answer": "Přísudek *pásly se*, podmět *krávy* (kdo se pásl?), *na louce* – PU místa."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V *Vrátil se unavený* je *unavený* přívlastek.",
+          "right": "*unavený* je doplněk.",
+          "why": "Přívlastek stojí u podstatného jména (*unavený turista*). Tady *unavený* patří ke slovesu (vrátil se jak?) i k podmětu (on byl unavený) → doplněk."
+        },
+        {
+          "type": "summary",
+          "text": "Podmět (kdo? co?), přísudek (co dělá?), předmět (pádová otázka), přívlastek (jaký?), příslovečné určení (kde, kdy, jak, proč), doplněk (ke slovesu i jménu), přístavek (druhé pojmenování)."
+        }
+      ]
+    },
+    {
+      "title": "Barvami",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Učitelé při rozboru vět často barví: podmět zeleně, přísudek červeně… Barvy pomáhají vidět, jak je věta poskládaná – jako stavebnice z dílků různých barev."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme větu po dílcích. Každý dílek je **větný člen** – část věty se svou úlohou, kterou poznáš otázkou."
+        },
+        {
+          "type": "term",
+          "term": "Větný člen",
+          "definition": "Část věty se svou úlohou. Hlavní dvojici tvoří **podmět** (kdo? co?) a **přísudek** (co dělá?). Ostatní členy je rozvíjejí.",
+          "example": "*babička* (podmět) *upekla* (přísudek)"
+        },
+        {
+          "type": "term",
+          "term": "Rozvíjející členy",
+          "definition": "**Předmět** (pádová otázka ke slovesu), **přívlastek** (jaký? čí? k podstatnému jménu), **příslovečné určení** (kde? kdy? jak? proč?).",
+          "example": "upekla **bábovku** (co?), **výbornou** (jakou?), **včera** (kdy?)"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na obarvenou větu *Naše stará babička upekla včera výbornou bábovku.* Ke každé barvě si polož otázku."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "Naše",
+                    "label": "přívlastek"
+                  },
+                  {
+                    "text": " stará",
+                    "label": "přívlastek"
+                  },
+                  {
+                    "text": " babička",
+                    "label": "podmět"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "upekla",
+                    "label": "přísudek"
+                  },
+                  {
+                    "text": " včera",
+                    "label": "PU času"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "výbornou",
+                    "label": "přívlastek"
+                  },
+                  {
+                    "text": " bábovku",
+                    "label": "předmět"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dva zvláštní dílky"
+        },
+        {
+          "type": "term",
+          "term": "Doplněk",
+          "definition": "Dílek se **dvěma** úchyty: drží se slovesa i podstatného jména zároveň.",
+          "example": "*Vrátil se domů **unavený**.* – vrátil se jak? a kdo byl unavený? on"
+        },
+        {
+          "type": "term",
+          "term": "Přístavek",
+          "definition": "Dílek přilepený za podstatné jméno, který ho jinými slovy vysvětlí. Je oddělený čárkami.",
+          "example": "*Karel IV., **český král**, založil univerzitu.*"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu. Nejdřív urči tučný člen sám."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Vrátil se domů **unavený**.",
+                "back": "doplněk"
+              },
+              {
+                "front": "Zvolili ho **předsedou**.",
+                "back": "doplněk"
+              },
+              {
+                "front": "Karel IV., **český král**, …",
+                "back": "přístavek"
+              },
+              {
+                "front": "Čekali **na kamaráda**.",
+                "back": "předmět (čekali na koho?)"
+              },
+              {
+                "front": "Stojí tam **dřevěný** stůl.",
+                "back": "přívlastek shodný"
+              },
+              {
+                "front": "**Kvůli dešti** zůstal doma.",
+                "back": "PU příčiny"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Urči tučný člen: *Dědeček opravil **plot**.*",
+          "answer": "Opravil **co?** → 4. pád, ptám se od slovesa → **předmět**."
+        },
+        {
+          "type": "example",
+          "question": "Jaký přísudek je v *Sestra je lékařka.*?",
+          "answer": "Tvar slovesa *být* (spona) + jméno *lékařka* → **přísudek jmenný se sponou**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V *Čekali na kamaráda* je *na kamaráda* PU místa, protože tam je *na*.",
+          "right": "Je to **předmět**.",
+          "why": "Rozhoduje otázka: čekali **na koho?** (pádová otázka), ne *kde?*. Předložka *na* neznamená automaticky místo."
+        },
+        {
+          "type": "summary",
+          "text": "Postup: přísudek → podmět → rozvíjející členy. Doplněk se drží slovesa i jména zároveň, přístavek vysvětluje jméno a je v čárkách. Rozhoduje vždy otázka."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký větný člen je *unavený* ve větě *Vrátil se unavený.*?",
+      "options": [
+        "doplněk",
+        "přívlastek",
+        "PU způsobu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký větný člen je *hlavní město Česka* ve větě *Praha, hlavní město Česka, leží na Vltavě.*?",
+      "options": [
+        "přístavek",
+        "podmět",
+        "předmět"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký větný člen je *knihu* ve větě *Půjčil mi knihu.*?",
+      "options": [
+        "předmět",
+        "podmět",
+        "příslovečné určení"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký přívlastek je *dřevěný* ve větě *Stojí tam dřevěný stůl.*?",
+      "options": [
+        "shodný",
+        "neshodný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaké příslovečné určení je *kvůli dešti*?",
+      "options": [
+        "příčiny",
+        "způsobu",
+        "místa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Napiš podmět věty *Na louce se pásly krávy.*",
+      "answers": [
+        "krávy"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš předmět věty *Dědeček opravil plot.*",
+      "answers": [
+        "plot"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Přívlastek rozvíjí podstatné jméno.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj otázku s větným členem.",
+      "pairs": [
+        [
+          "kdo? co? (1. pád)",
+          "podmět"
+        ],
+        [
+          "jaký? který? čí?",
+          "přívlastek"
+        ],
+        [
+          "kde? kdy? jak?",
+          "příslovečné určení"
+        ],
+        [
+          "pádová otázka u slovesa",
+          "předmět"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve které větě je přísudek jmenný se sponou?",
+      "options": [
+        "Sestra je lékařka.",
+        "Sestra léčí lidi.",
+        "Sestra běží."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je doplněk? Uveď příklad.",
+      "answer": "Větný člen, který se vztahuje zároveň ke slovesu i k podstatnému jménu (podmětu nebo předmětu): *Vrátil se unavený.* *Zvolili ho předsedou.*"
+    },
+    {
+      "type": "open",
+      "question": "Rozeber větu *Náš soused včera opravil starý plot.*",
+      "answer": "Soused – podmět, opravil – přísudek, náš – přívlastek shodný, včera – PU času, plot – předmět, starý – přívlastek shodný."
+    }
+  ]
+}

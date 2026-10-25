@@ -1,0 +1,396 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pohyby-zeme",
+  "title": "Pohyby Země",
+  "emoji": "🔄",
+  "explanations": [
+    {
+      "title": "S baterkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ráno vyjde Slunce, večer zapadne. V létě je teplo a dlouhé dny, v zimě zima a brzy tma. Proč? Protože se Země **pořád hýbe** – a to dvěma různými způsoby."
+        },
+        {
+          "type": "text",
+          "text": "Tohle si můžeš vyzkoušet doma s baterkou a míčem. Baterka bude Slunce, míč Země."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zemská osa",
+          "definition": "Myšlená tyč, která prochází Zemí od severního pólu k jižnímu. Kolem ní se Země točí.",
+          "example": "Jako špejle napíchnutá skrz jablko, kterým otáčíš."
+        },
+        {
+          "type": "term",
+          "term": "Otáčení (rotace)",
+          "definition": "Točení Země kolem vlastní osy – jako káča.",
+          "example": "Jedna celá otočka trvá **24 hodin** = jeden den."
+        },
+        {
+          "type": "term",
+          "term": "Oběh",
+          "definition": "Cesta Země kolem Slunce po velkém kruhu (přesněji oválu).",
+          "example": "Jeden celý oběh trvá asi **365 dní** = jeden rok."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 1: den a noc"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ve tmavém pokoji posviť baterkou na míč.",
+            "Strana míče k baterce je světlá – tam je **den**.",
+            "Odvrácená strana je tmavá – tam je **noc**.",
+            "Pomalu míčem otáčej. Každé místo se dostane do světla a pak zase do tmy."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Země se točí **ze západu na východ**. Proto nám se zdá, že Slunce **vychází na východě** a **zapadá na západě**. Ve skutečnosti se nehýbe Slunce, ale my."
+        },
+        {
+          "type": "example",
+          "question": "Kde vychází Slunce dřív – v Praze, nebo v Londýně?",
+          "answer": "Země se točí k východu. Praha leží víc na východ než Londýn, takže se do slunečního světla „otočí“ dřív. Slunce vychází dřív v Praze."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 2: roční období"
+        },
+        {
+          "type": "text",
+          "text": "Teď míč nakloň (asi jako ručičku hodin na „jednu“) a obcházej s ním kolem baterky. Náklon nech stále stejným směrem."
+        },
+        {
+          "type": "term",
+          "term": "Sklon osy",
+          "definition": "Zemská osa není svislá, je nakloněná asi o **23,5°**. Míří pořád stejným směrem – k Polárce."
+        },
+        {
+          "type": "text",
+          "text": "Když je naše severní polovina Země nakloněná **ke Slunci**, svítí na nás Slunce zvysoka a dlouho – je **léto**. Když je odkloněná, svítí nízko a krátce – je **zima**."
+        },
+        {
+          "type": "term",
+          "term": "Slunovrat",
+          "definition": "Den, kdy je Slunce v poledne nejvýš (letní) nebo nejníž (zimní) za celý rok.",
+          "example": "Letní slunovrat kolem 21. června = nejdelší den. Zimní kolem 21. prosince = nejkratší den."
+        },
+        {
+          "type": "term",
+          "term": "Rovnodennost",
+          "definition": "Den, kdy je den a noc skoro stejně dlouhé – 12 a 12 hodin – na celé Zemi.",
+          "example": "Jarní kolem 21. března, podzimní kolem 23. září."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "jarní rovnodennost (kolem 21. 3.) – začíná jaro",
+              "letní slunovrat (kolem 21. 6.) – začíná léto",
+              "podzimní rovnodennost (kolem 23. 9.) – začíná podzim",
+              "zimní slunovrat (kolem 21. 12.) – začíná zima"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj, jak se během jednoho oběhu vystřídají všechna čtyři období."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V létě je teplo, protože je Země blíž ke Slunci.",
+          "right": "V létě je teplo, protože je naše polovina Země nakloněná ke Slunci.",
+          "why": "Vzdálenost se během roku mění jen málo. Země je Slunci dokonce nejblíž na začátku ledna – a u nás je zima."
+        },
+        {
+          "type": "summary",
+          "text": "Otáčení kolem osy (24 h) = den a noc. Oběh kolem Slunce (asi 365 dní) + skloněná osa = roční období."
+        }
+      ]
+    },
+    {
+      "title": "Rok kolem Slunce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kalendář, narozeniny, prázdniny – to všechno se řídí tím, jak Země putuje kolem Slunce. Jeden okruh je jeden rok."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme dva pohyby Země jeden po druhém: co dělají, jak dlouho trvají a co z nich plyne pro náš život."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zemská osa",
+          "definition": "Myšlená přímka skrz Zemi od severního k jižnímu pólu (nejsevernější a nejjižnější bod Země)."
+        },
+        {
+          "type": "term",
+          "term": "Rotace",
+          "definition": "Otáčení Země kolem její osy."
+        },
+        {
+          "type": "term",
+          "term": "Oběh",
+          "definition": "Pohyb Země kolem Slunce po stálé dráze."
+        },
+        {
+          "type": "term",
+          "term": "Polokoule",
+          "definition": "Polovina Země. Rovník (pomyslná čára kolem středu Země) ji dělí na **severní** polokouli (tam jsme my) a **jižní** (např. Austrálie)."
+        },
+        {
+          "type": "heading",
+          "text": "Pohyb 1: rotace"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Rotace",
+            "Oběh"
+          ],
+          "rows": [
+            [
+              "Co se děje",
+              "Země se točí kolem osy",
+              "Země obíhá kolem Slunce"
+            ],
+            [
+              "Jak dlouho",
+              "24 hodin",
+              "365 dní a asi 6 hodin"
+            ],
+            [
+              "Následek",
+              "den a noc",
+              "roční období (spolu se sklonem osy)"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Země se při rotaci točí **ze západu na východ**. Proto Slunce vychází na východě."
+        },
+        {
+          "type": "heading",
+          "text": "Pohyb 2: oběh a sklon osy"
+        },
+        {
+          "type": "text",
+          "text": "Osa je skloněná asi o **23,5°**. Během oběhu je proto k Slunci natočená jednou severní, jindy jižní polokoule."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Polokoule nakloněná ke Slunci: Slunce je vysoko, paprsky dopadají strmě a den je dlouhý → **léto**.",
+            "Polokoule odkloněná: Slunce je nízko, paprsky dopadají šikmo a den je krátký → **zima**.",
+            "Mezi tím jsou jaro a podzim.",
+            "Na jižní polokouli je to **opačně**: když máme léto, je v Austrálii zima."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Datum (přibližně)",
+            "Jev",
+            "Začíná"
+          ],
+          "rows": [
+            [
+              "21. března",
+              "jarní rovnodennost – den = noc",
+              "jaro"
+            ],
+            [
+              "21. června",
+              "letní slunovrat – nejdelší den",
+              "léto"
+            ],
+            [
+              "23. září",
+              "podzimní rovnodennost – den = noc",
+              "podzim"
+            ],
+            [
+              "21. prosince",
+              "zimní slunovrat – nejkratší den",
+              "zima"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky cyklu a projdi celý rok."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "jaro – 21. března rovnodennost",
+              "léto – 21. června slunovrat",
+              "podzim – 23. září rovnodennost",
+              "zima – 21. prosince slunovrat"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Přestupný rok"
+        },
+        {
+          "type": "term",
+          "term": "Přestupný rok",
+          "definition": "Rok, který má **366 dní** – přidáme 29. února.",
+          "example": "Roky 2024 a 2028 jsou přestupné."
+        },
+        {
+          "type": "example",
+          "question": "Proč přidáváme 29. února?",
+          "answer": "Oběh trvá 365 dní a asi 6 hodin. Kalendář má jen 365 dní, takže každý rok zbývá 6 hodin. Za 4 roky: 4 · 6 h = 24 h = jeden celý den. Ten přidáme jako 29. února."
+        },
+        {
+          "type": "example",
+          "question": "V Česku je 21. června. Jaké roční období začíná v Austrálii?",
+          "answer": "Austrálie je na jižní polokouli, tam je to opačně. U nás začíná léto, v Austrálii zima."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Den a noc se střídají, protože Země obíhá kolem Slunce.",
+          "right": "Den a noc způsobuje rotace – otáčení Země kolem osy.",
+          "why": "Oběh trvá celý rok. Den a noc se střídají každých 24 hodin, a to je doba jedné otočky."
+        },
+        {
+          "type": "summary",
+          "text": "Rotace (24 h) dává den a noc. Oběh (365 dní a 6 h) se skloněnou osou dává roční období. Každý 4. rok je přestupný – má 366 dní."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co způsobuje střídání dne a noci?",
+      "options": [
+        "otáčení Země kolem osy",
+        "oběh Země kolem Slunce",
+        "pohyb Měsíce",
+        "mraky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co způsobuje roční období?",
+      "options": [
+        "vzdálenost od Měsíce",
+        "oběh kolem Slunce a skloněná osa",
+        "otáčení kolem osy",
+        "mořské proudy"
+      ],
+      "answer": 1,
+      "explanation": "Kvůli sklonu osy dopadají paprsky v létě strměji."
+    },
+    {
+      "type": "input",
+      "question": "Za kolik hodin se Země otočí kolem osy?",
+      "answers": [
+        "24"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Země se otáčí ze západu na východ.",
+      "answer": true,
+      "explanation": "Proto Slunce vychází na východě."
+    },
+    {
+      "type": "input",
+      "question": "Kolik dní má přestupný rok?",
+      "answers": [
+        "366"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj datum a jev (severní polokoule).",
+      "pairs": [
+        [
+          "21. června",
+          "letní slunovrat"
+        ],
+        [
+          "21. prosince",
+          "zimní slunovrat"
+        ],
+        [
+          "21. března",
+          "jarní rovnodennost"
+        ],
+        [
+          "23. září",
+          "podzimní rovnodennost"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Když je u nás léto, je v Austrálii také léto.",
+      "answer": false,
+      "explanation": "Na jižní polokouli jsou roční období opačně."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď roční období od jarní rovnodennosti.",
+      "items": [
+        "jaro",
+        "léto",
+        "podzim",
+        "zima"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdy je u nás nejdelší den v roce?",
+      "options": [
+        "21. března",
+        "kolem 21. června",
+        "kolem 21. prosince",
+        "1. ledna"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "open",
+      "question": "Proč máme přestupný rok?",
+      "answer": "Oběh kolem Slunce trvá asi 365 dní a 6 hodin. Za 4 roky se nastřádá jeden den navíc, proto přidáváme 29. února."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, proč je v létě tepleji než v zimě.",
+      "answer": "Zemská osa je skloněná. V létě je Slunce výš, paprsky dopadají strměji a den je delší, takže se povrch víc ohřeje."
+    }
+  ]
+}

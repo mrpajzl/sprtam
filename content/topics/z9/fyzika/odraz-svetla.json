@@ -1,0 +1,329 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "odraz-svetla",
+  "title": "Odraz světla a zrcadla",
+  "emoji": "🪞",
+  "explanations": [
+    {
+      "title": "Kulečník se světlem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ráno se díváš do zrcadla, řidič kontroluje zpětné zrcátko, na nepřehledné křižovatce visí kulaté zrcadlo. Všude světlo **odráží** podle jednoho jednoduchého pravidla – stejného, podle kterého se odráží kulečníková koule od mantinelu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Paprsek",
+          "definition": "Rovná čára, která ukazuje, kudy světlo letí.",
+          "example": "Úzký paprsek laserového ukazovátka."
+        },
+        {
+          "type": "term",
+          "term": "Kolmice dopadu",
+          "definition": "Pomyslná čára, která stojí na zrcadle **kolmo** (pod úhlem 90°) v místě, kam paprsek dopadl.",
+          "example": "Jako sloupek zapíchnutý svisle do vodorovného zrcadla."
+        },
+        {
+          "type": "term",
+          "term": "Úhel dopadu a úhel odrazu",
+          "definition": "**Úhel dopadu** svírá přicházející paprsek s kolmicí. **Úhel odrazu** svírá odražený paprsek s kolmicí.",
+          "example": "Úhel dopadu 30° → úhel odrazu 30°."
+        },
+        {
+          "type": "heading",
+          "text": "Zákon odrazu"
+        },
+        {
+          "type": "text",
+          "text": "**Úhel odrazu = úhel dopadu.** Oba měříme **od kolmice**, ne od zrcadla. Paprsek dopadající kolmo (0°) se vrátí stejnou cestou zpátky."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Úhel na obrázku je úhel dopadu. Měň ho a vždy si řekni: jak velký bude úhel odrazu? A jaký úhel svírají oba paprsky dohromady?"
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 40
+          }
+        },
+        {
+          "type": "example",
+          "question": "Úhel dopadu je 25°. Jaký úhel svírá dopadající a odražený paprsek?",
+          "answer": "Úhel odrazu je také 25°. Mezi paprsky je kolmice, takže dohromady 25 + 25 = **50°**."
+        },
+        {
+          "type": "example",
+          "question": "Paprsek svírá se **zrcadlem** úhel 60°. Jaký je úhel dopadu?",
+          "answer": "Kolmice svírá se zrcadlem 90°. Úhel dopadu = 90 − 60 = **30°**."
+        },
+        {
+          "type": "example",
+          "question": "Proč je na sanitce nápis AMBULANCE napsaný zrcadlově?",
+          "answer": "Řidič auta před sanitkou ho vidí ve **zpětném zrcátku**. Zrcadlo obraz stranově převrátí, takže nápis přečte správně."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Úhel dopadu měřím od plochy zrcadla.",
+          "right": "Úhel dopadu i odrazu měřím od kolmice.",
+          "why": "Tak zní dohoda ve fyzice. Kdybys měřil od zrcadla, u šikmých úloh vyjde špatné číslo (60° místo 30°)."
+        },
+        {
+          "type": "summary",
+          "text": "Úhel odrazu se rovná úhlu dopadu; oba měříme od kolmice k zrcadlu."
+        }
+      ]
+    },
+    {
+      "title": "Druhy zrcadel",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V kosmetickém zrcátku vidíš obličej zvětšený, v zrcadle na křižovatce zmenšený, ale zato celou ulici. V koupelně stejně velký. Rozdíl je v tvaru zrcadla."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Odraz světla",
+          "definition": "Světlo dopadne na hladký lesklý povrch a vrátí se zpět. Platí, že úhel odrazu = úhel dopadu (oba měřeno od kolmice k povrchu).",
+          "example": "Odlesk slunce na hladině rybníka."
+        },
+        {
+          "type": "term",
+          "term": "Rovinné zrcadlo",
+          "definition": "Úplně rovné zrcadlo.",
+          "example": "Zrcadlo v koupelně."
+        },
+        {
+          "type": "term",
+          "term": "Duté zrcadlo",
+          "definition": "Zakřivené dovnitř, jako vnitřek lžíce. Paprsky **soustřeďuje** do jednoho bodu (ohniska).",
+          "example": "Reflektor auta, kosmetické zrcátko."
+        },
+        {
+          "type": "term",
+          "term": "Vypuklé zrcadlo",
+          "definition": "Zakřivené ven, jako záda lžíce. Paprsky **rozptyluje**.",
+          "example": "Zrcadlo na křižovatce, zpětné zrcátko."
+        },
+        {
+          "type": "heading",
+          "text": "Srovnání"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zrcadlo",
+            "Obraz",
+            "Využití"
+          ],
+          "rows": [
+            [
+              "rovinné",
+              "stejně velký, stranově převrácený",
+              "koupelna"
+            ],
+            [
+              "duté",
+              "zvětšený (když jsi blízko)",
+              "kosmetické zrcátko, reflektor"
+            ],
+            [
+              "vypuklé",
+              "zmenšený, ale ukáže velký prostor",
+              "zpětné zrcátko, zrcadlo na křižovatce"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej doma lžíci: v její vnitřní straně (duté zrcadlo) se uvidíš z dálky vzhůru nohama, zblízka zvětšeně. Na zadní straně (vypuklé) malého, ale s celou kuchyní."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "duté",
+              "vypuklé",
+              "rovinné"
+            ],
+            "items": [
+              {
+                "text": "reflektor auta",
+                "group": 0
+              },
+              {
+                "text": "kosmetické zrcátko",
+                "group": 0
+              },
+              {
+                "text": "zrcadlo na křižovatce",
+                "group": 1
+              },
+              {
+                "text": "zpětné zrcátko",
+                "group": 1
+              },
+              {
+                "text": "zrcadlo v koupelně",
+                "group": 2
+              },
+              {
+                "text": "zrcadlo v šatně obchodu",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď zrcadla podle tvaru. Ptej se: potřebuju zvětšit, vidět velký prostor, nebo vidět věrně?"
+        },
+        {
+          "type": "example",
+          "question": "Proč je v reflektoru auta duté zrcadlo?",
+          "answer": "Žárovka je v **ohnisku**. Duté zrcadlo odrazí její světlo do rovnoběžného svazku dopředu – silnice je osvětlená daleko."
+        },
+        {
+          "type": "example",
+          "question": "Proč jsou na nepřehledných křižovatkách vypuklá zrcadla?",
+          "answer": "Vypuklé zrcadlo ukáže **velký prostor** – řidič vidí celou silnici, i když jsou auta zmenšená."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rovinné zrcadlo ukazuje obraz zmenšený, protože je zrcadlo menší než já.",
+          "right": "Rovinné zrcadlo dává obraz stejně velký jako předmět.",
+          "why": "Obraz se jen zdá daleko – je stejně daleko za zrcadlem, jako jsi ty před ním."
+        },
+        {
+          "type": "summary",
+          "text": "Rovinné zrcadlo: stejně velký obraz. Duté: soustřeďuje světlo, zblízka zvětšuje. Vypuklé: rozptyluje, zmenšuje, ukáže větší prostor."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Paprsek dopadá na zrcadlo pod úhlem 30° (od kolmice). Úhel odrazu ve stupních =",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Úhel dopadu je 25°. Jaký úhel ve stupních svírá dopadající a odražený paprsek?",
+      "answers": [
+        "50"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Paprsek svírá se zrcadlem úhel 60°. Úhel dopadu (od kolmice) ve stupních =",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Od čeho měříme úhel dopadu?",
+      "options": [
+        "od kolmice k zrcadlu",
+        "od plochy zrcadla",
+        "od země"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které zrcadlo je na nepřehledných křižovatkách?",
+      "options": [
+        "vypuklé",
+        "duté",
+        "rovinné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které zrcadlo je v reflektoru auta?",
+      "options": [
+        "duté",
+        "vypuklé",
+        "rovinné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Rovinné zrcadlo vytváří obraz stejně velký jako předmět.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Paprsek dopadající kolmo na zrcadlo se odrazí zpět po stejné přímce.",
+      "answer": true,
+      "explanation": "Úhel dopadu i odrazu je 0°."
+    },
+    {
+      "type": "match",
+      "question": "Spoj zrcadlo s využitím.",
+      "pairs": [
+        [
+          "rovinné",
+          "zrcadlo v koupelně"
+        ],
+        [
+          "duté",
+          "kosmetické zrcátko"
+        ],
+        [
+          "vypuklé",
+          "zpětné zrcátko"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč je na sanitce nápis AMBULANCE zrcadlově?",
+      "options": [
+        "řidič vpředu ho přečte ve zpětném zrcátku",
+        "kvůli designu",
+        "aby ho četli chodci"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj zákon odrazu světla.",
+      "answer": "Úhel odrazu se rovná úhlu dopadu. Oba měříme od kolmice a odražený paprsek leží v rovině dopadu."
+    },
+    {
+      "type": "open",
+      "question": "Porovnej duté a vypuklé zrcadlo.",
+      "answer": "Duté zrcadlo soustřeďuje světlo, z blízka zvětšuje (reflektor, kosmetické zrcátko). Vypuklé rozptyluje, zmenšuje a ukáže větší prostor (zpětné zrcátko, křižovatky)."
+    }
+  ]
+}

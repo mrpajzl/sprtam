@@ -1,0 +1,409 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kraj-region",
+  "title": "Kraj a region",
+  "emoji": "🗺️",
+  "explanations": [
+    {
+      "title": "Výlet po krajích",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Obec je na některé věci moc malá. Malá vesnice sama nepostaví nemocnici ani gymnázium. Proto se obce spojují do větších celků – **krajů**."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, co dělá kraj, rozumíš, kdo platí tvou budoucí střední školu nebo autobus do vedlejšího města."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kraj",
+          "definition": "Velká část území státu, do které patří mnoho obcí. Kraj sám rozhoduje o věcech, které jsou pro jednu obec moc velké.",
+          "example": "Brno a stovky okolních obcí patří do Jihomoravského kraje."
+        },
+        {
+          "type": "term",
+          "term": "Krajské město",
+          "definition": "Město, kde sídlí úřad kraje. Většinou je to největší město kraje.",
+          "example": "Krajské město Moravskoslezského kraje je Ostrava."
+        },
+        {
+          "type": "term",
+          "term": "Hejtman",
+          "definition": "Člověk v čele kraje. Podobá se starostovi, jen pro celý kraj."
+        },
+        {
+          "type": "term",
+          "term": "Zastupitelstvo kraje",
+          "definition": "Lidé zvolení obyvateli kraje na **4 roky**. Rozhodují o věcech kraje a volí hejtmana."
+        },
+        {
+          "type": "heading",
+          "text": "Petrova cesta"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Petr vyjede z **Ostravy** – je v Moravskoslezském kraji.",
+            "Za Ostravou pokračuje přes **Olomoucký kraj**. Vidí rovinu Hané – kraje tu je hodně polí.",
+            "Dorazí do **Brna** v Jihomoravském kraji.",
+            "Cestou jel po silnicích, které opravuje kraj, a minul nemocnice a střední školy, které kraj provozuje."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Co dělá kraj"
+        },
+        {
+          "type": "list",
+          "items": [
+            "zřizuje **střední školy**",
+            "provozuje mnoho **nemocnic**",
+            "stará se o **silnice 2. a 3. třídy** (menší silnice mezi obcemi)",
+            "objednává **autobusy a vlaky** v kraji",
+            "zajišťuje **sociální služby** (třeba domovy pro seniory)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krajská města"
+        },
+        {
+          "type": "text",
+          "text": "Česko má **14 krajů**: 13 krajů a hlavní město Praha. Zkus si u každého kraje vzpomenout na krajské město a pak kartičku otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Jihočeský kraj",
+                "back": "České Budějovice"
+              },
+              {
+                "front": "Kraj Vysočina",
+                "back": "Jihlava"
+              },
+              {
+                "front": "Královéhradecký kraj",
+                "back": "Hradec Králové"
+              },
+              {
+                "front": "Ústecký kraj",
+                "back": "Ústí nad Labem"
+              },
+              {
+                "front": "Plzeňský kraj",
+                "back": "Plzeň"
+              },
+              {
+                "front": "Zlínský kraj",
+                "back": "Zlín"
+              },
+              {
+                "front": "Středočeský kraj",
+                "back": "Úřad sídlí v Praze, i když Praha do kraje nepatří."
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kdo zřizuje gymnázium v Pardubicích?",
+          "answer": "Gymnázium je střední škola. Střední školy zřizuje kraj → **Pardubický kraj**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik krajů je v Česku, když Praha je zvlášť?",
+          "answer": "13 krajů + hlavní město Praha = **14** (Praha je zároveň obec i kraj)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V čele kraje stojí starosta.",
+          "right": "V čele kraje stojí hejtman.",
+          "why": "Starosta vede obec. Kraj je větší celek a jeho „starosta“ se jmenuje hejtman."
+        },
+        {
+          "type": "summary",
+          "text": "ČR má 14 krajů (13 + Praha). Kraj vede hejtman, zastupitelstvo kraje se volí na 4 roky. Kraj se stará o střední školy, nemocnice, silnice 2. a 3. třídy a dopravu."
+        }
+      ]
+    },
+    {
+      "title": "Kraj, nebo region?",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Babička z Valašska říká, že je „Valaška“. Na úřadě ale vyplňuje „Zlínský kraj“. Jak to jde dohromady? Jedno je úřední rozdělení státu, druhé oblast se společnými tradicemi."
+        },
+        {
+          "type": "text",
+          "text": "Tady si přesně rozlišíme **kraj** a **region** a ukážeme, jak je kraj řízený."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kraj",
+          "definition": "Úřední část státu s vlastním zastupitelstvem, hejtmanem a úřadem. Má přesné hranice. Kraje v dnešní podobě fungují od roku 2000."
+        },
+        {
+          "type": "term",
+          "term": "Region",
+          "definition": "Oblast, která má něco společného – krajinu, nářečí, kroje, zvyky. Nemá úřad ani hejtmana a její hranice nebývají přesné.",
+          "example": "Valašsko, Chodsko, Haná, Slovácko."
+        },
+        {
+          "type": "term",
+          "term": "Hejtman",
+          "definition": "Stojí v čele kraje a zastupuje ho. Volí ho zastupitelstvo kraje."
+        },
+        {
+          "type": "heading",
+          "text": "Jak je kraj řízený"
+        },
+        {
+          "type": "table",
+          "head": [
+            "kdo",
+            "co dělá"
+          ],
+          "rows": [
+            [
+              "občané kraje",
+              "volí zastupitelstvo kraje (každé 4 roky)"
+            ],
+            [
+              "zastupitelstvo kraje",
+              "schvaluje rozpočet kraje, volí hejtmana"
+            ],
+            [
+              "hejtman",
+              "stojí v čele kraje"
+            ],
+            [
+              "krajský úřad",
+              "úředníci, kteří vyřizují věci kraje"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Je to stejné „schéma“ jako v obci: občané volí zastupitele, ti zvolí toho, kdo stojí v čele. Jen místo starosty je tu hejtman."
+        },
+        {
+          "type": "heading",
+          "text": "Co kraj zajišťuje"
+        },
+        {
+          "type": "list",
+          "items": [
+            "střední školy (základní a mateřské zřizuje většinou obec)",
+            "mnoho nemocnic",
+            "silnice 2. a 3. třídy",
+            "autobusy a vlaky po kraji",
+            "sociální služby"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď názvy: je to úřední kraj, nebo region s tradicemi?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "kraj",
+              "region"
+            ],
+            "items": [
+              {
+                "text": "Zlínský kraj",
+                "group": 0
+              },
+              {
+                "text": "Kraj Vysočina",
+                "group": 0
+              },
+              {
+                "text": "Olomoucký kraj",
+                "group": 0
+              },
+              {
+                "text": "Liberecký kraj",
+                "group": 0
+              },
+              {
+                "text": "Valašsko",
+                "group": 1
+              },
+              {
+                "text": "Chodsko",
+                "group": 1
+              },
+              {
+                "text": "Haná",
+                "group": 1
+              },
+              {
+                "text": "Slovácko",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Valašsko leží hlavně ve Zlínském kraji. Je Valašsko kraj?",
+          "answer": "Valašsko nemá hejtmana ani úřad. Má ale společné tradice, kroje a nářečí. Je to **region**, ne kraj."
+        },
+        {
+          "type": "example",
+          "question": "Kdo rozhodne, kolik peněz dá kraj na opravu silnice 3. třídy?",
+          "answer": "O penězích kraje je **rozpočet kraje**. Schvaluje ho **zastupitelstvo kraje**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Region a kraj jsou dvě slova pro totéž.",
+          "right": "Kraj je úřední celek s hejtmanem. Region je oblast se společnými znaky.",
+          "why": "Hranice regionu a kraje se nekryjí. Jeden region může ležet ve více krajích a v jednom kraji může být víc regionů."
+        },
+        {
+          "type": "summary",
+          "text": "Kraj = úřední celek s hejtmanem a zastupitelstvem (14 krajů včetně Prahy). Region = oblast se společnou krajinou, nářečím nebo tradicemi."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik krajů má ČR (včetně Prahy)?",
+      "answers": [
+        "14",
+        "čtrnáct"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo stojí v čele kraje?",
+      "options": [
+        "hejtman",
+        "starosta",
+        "primátor",
+        "premiér"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj kraj s krajským městem.",
+      "pairs": [
+        [
+          "Vysočina",
+          "Jihlava"
+        ],
+        [
+          "Jihočeský",
+          "České Budějovice"
+        ],
+        [
+          "Moravskoslezský",
+          "Ostrava"
+        ],
+        [
+          "Jihomoravský",
+          "Brno"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co obvykle zřizuje kraj?",
+      "options": [
+        "střední školy",
+        "mateřské školy",
+        "armádu",
+        "státní hranice"
+      ],
+      "answer": 0,
+      "explanation": "Mateřské a základní školy zřizuje většinou obec."
+    },
+    {
+      "type": "truefalse",
+      "question": "Krajské zastupitelstvo se volí na 4 roky.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Valašsko je jeden ze 14 krajů.",
+      "answer": false,
+      "explanation": "Valašsko je národopisný region, ne kraj."
+    },
+    {
+      "type": "choice",
+      "question": "Které město je sídlem Plzeňského kraje?",
+      "options": [
+        "Plzeň",
+        "Karlovy Vary",
+        "Cheb",
+        "Klatovy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je region?",
+      "options": [
+        "oblast se společnými znaky (krajina, tradice)",
+        "jen jiný název pro obec",
+        "stát v Evropě",
+        "úřad v Praze"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje krajské město Královéhradeckého kraje?",
+      "answers": [
+        "Hradec Králové"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Praha je zároveň obcí i krajem.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi krajem a regionem?",
+      "answer": "Kraj je úřední samosprávný celek s hejtmanem a zastupitelstvem. Region je oblast, která má něco společného, třeba krajinu, nářečí nebo tradice."
+    },
+    {
+      "type": "open",
+      "question": "O co se stará kraj? Uveď příklady.",
+      "answer": "O střední školy, nemocnice, silnice 2. a 3. třídy, autobusovou a vlakovou dopravu v kraji a sociální služby."
+    }
+  ]
+}

@@ -7,7 +7,7 @@
 // Delete a raw take (or pass words after `gen --force`) to record it again.
 import { execFileSync, spawnSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
-import { existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { audioSlug } from '../src/vocab/slug'
@@ -41,8 +41,8 @@ interface Entry { en: string; lang: string; slug: string }
 async function words(): Promise<Entry[]> {
   const out: Entry[] = []
   for (const l of ['a1', 'a2', 'b1', 'b2', 'c1']) {
-    const set: VocabSet = (await import(`../src/vocab/data/${l}.ts`)).default
-    for (const g of set.groups) for (const [, en] of g.words) out.push({ en, lang: g.lang ?? 'en-GB', slug: audioSlug(en) })
+    const set: VocabSet = JSON.parse(readFileSync(join(ROOT, 'content', 'vocab', `${l}.json`), 'utf8'))
+    for (const g of set.groups) for (const { en } of g.words) out.push({ en, lang: g.lang ?? 'en-GB', slug: audioSlug(en) })
   }
   const seen = new Map<string, string>()
   for (const w of out) {

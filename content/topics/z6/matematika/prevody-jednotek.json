@@ -1,0 +1,519 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "prevody-jednotek",
+  "title": "Převody jednotek",
+  "emoji": "📏",
+  "generator": "units-dec",
+  "explanations": [
+    {
+      "title": "Schody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Běžec uběhl 2,5 km. Kolik je to metrů? Recept chce 0,25 kg mouky. Kolik gramů nasypeš na váhu? Na lahvi je 1,5 l. Kolik je to mililitrů?"
+        },
+        {
+          "type": "text",
+          "text": "Stejnou věc jde zapsat v různých jednotkách. **Převést** jednotku znamená zapsat totéž množství jinou jednotkou. Je to potřeba v obchodě, v kuchyni, ve fyzice i ve slovních úlohách."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jednotka",
+          "definition": "Domluvená míra, kterou něco měříme. Číslo bez jednotky nic neříká: „5“ může být 5 cm, nebo 5 km.",
+          "example": "metr (m), kilogram (kg), litr (l), hodina (h)"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Začátek názvu jednotky, který říká, kolikrát je větší nebo menší než základní jednotka.",
+          "example": "**kilo** = 1 000krát víc, **deci** = desetina, **centi** = setina, **mili** = tisícina"
+        },
+        {
+          "type": "term",
+          "term": "Převodní číslo",
+          "definition": "Kolik menších jednotek se vejde do jedné větší.",
+          "example": "1 m = 100 cm → převodní číslo je 100."
+        },
+        {
+          "type": "term",
+          "term": "Desetinné číslo",
+          "definition": "Připomenutí: číslo s čárkou. Za čárkou jsou části celku – desetiny, setiny, tisíciny.",
+          "example": "2,5 km = dva celé kilometry a půl kilometru."
+        },
+        {
+          "type": "heading",
+          "text": "Jednotky jako schody"
+        },
+        {
+          "type": "text",
+          "text": "Představ si jednotky jako schody. Nahoře jsou velké jednotky, dole malé. Mezi každými dvěma schody je napsané převodní číslo."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Co měříme",
+            "Schody shora dolů"
+          ],
+          "rows": [
+            [
+              "délka",
+              "1 km = 1 000 m; 1 m = 10 dm; 1 dm = 10 cm; 1 cm = 10 mm"
+            ],
+            [
+              "hmotnost",
+              "1 t = 1 000 kg; 1 kg = 1 000 g; 1 g = 1 000 mg"
+            ],
+            [
+              "tekutiny",
+              "1 hl = 100 l; 1 l = 10 dl; 1 dl = 10 cl; 1 cl = 10 ml"
+            ],
+            [
+              "čas",
+              "1 den = 24 h; 1 h = 60 min; 1 min = 60 s"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi obě jednotky na stejných schodech.",
+            "Jdeš **dolů** (na menší jednotku)? Číslo bude **větší** → **násob**.",
+            "Jdeš **nahoru** (na větší jednotku)? Číslo bude **menší** → **děl**.",
+            "Přes víc schodů najednou: převodní čísla mezi sebou vynásob. Z m na mm: 10 · 10 · 10 = 1 000.",
+            "Zkontroluj selským rozumem: menší jednotek musí být víc."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "2,5 km = ? m",
+          "answer": "Z km na m jdu dolů o jeden schod, převodní číslo 1 000 → násobím. 2,5 · 1 000 = **2 500 m**."
+        },
+        {
+          "type": "example",
+          "question": "350 g = ? kg",
+          "answer": "Z g na kg jdu nahoru, převodní číslo 1 000 → dělím. 350 : 1 000 = **0,35 kg**."
+        },
+        {
+          "type": "example",
+          "question": "45 mm = ? m",
+          "answer": "Z mm na m jdu nahoru o tři schody: 10 · 10 · 10 = 1 000 → dělím. 45 : 1 000 = **0,045 m**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber správný převod. Nejdřív si řekni: jdu dolů, nebo nahoru?"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "2,5 km = ",
+                "after": "",
+                "options": [
+                  "2 500 m",
+                  "250 m",
+                  "25 m"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "350 cm = ",
+                "after": "",
+                "options": [
+                  "35 m",
+                  "3,5 m",
+                  "0,35 m"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "0,8 kg = ",
+                "after": "",
+                "options": [
+                  "8 g",
+                  "80 g",
+                  "800 g"
+                ],
+                "answer": 2
+              },
+              {
+                "before": "3 dl = ",
+                "after": "",
+                "options": [
+                  "0,3 l",
+                  "3 l",
+                  "30 l"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "1,2 t = ",
+                "after": "",
+                "options": [
+                  "120 kg",
+                  "1 200 kg",
+                  "12 kg"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "350 cm = 35 000 m",
+          "right": "350 cm = **3,5 m**",
+          "why": "Z cm na m jdeš na **větší** jednotku, takže dělíš. Metrů musí vyjít méně než centimetrů."
+        },
+        {
+          "type": "summary",
+          "text": "Na menší jednotku násobím, na větší dělím. Převodní čísla mezi schody: délka po 10 (km–m 1 000), hmotnost po 1 000, tekutiny po 10 (hl–l 100), čas po 60."
+        }
+      ]
+    },
+    {
+      "title": "Posun čárky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Násobit a dělit 10, 100 nebo 1 000 se dá bez počítání: stačí posunout desetinnou čárku. Proto se většina převodů dá udělat zpaměti za pár vteřin."
+        },
+        {
+          "type": "text",
+          "text": "Výjimkou je čas. Hodina nemá 100 minut, ale 60. Tam se čárka posouvat nedá a musíš násobit nebo dělit 60."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desetinná čárka",
+          "definition": "Čárka v čísle, která odděluje celé části od desetin, setin a tisícin.",
+          "example": "V čísle 3,25 jsou 3 celé a 25 setin."
+        },
+        {
+          "type": "term",
+          "term": "Posun čárky",
+          "definition": "Krátká cesta, jak násobit nebo dělit 10, 100, 1 000. Kolik nul, o tolik míst se čárka posune.",
+          "example": "3,25 · 100 = 325 (o 2 místa doprava). 47 : 10 = 4,7 (o 1 místo doleva)."
+        },
+        {
+          "type": "term",
+          "term": "Převodní číslo",
+          "definition": "Kolik menších jednotek je v jedné větší.",
+          "example": "1 kg = 1 000 g, 1 h = 60 min."
+        },
+        {
+          "type": "term",
+          "term": "Smíšený zápis",
+          "definition": "Množství zapsané dvěma jednotkami najednou.",
+          "example": "3 m 25 cm, 2 h 30 min"
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo posunu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti převodní číslo (10, 100, nebo 1 000) a spočítej jeho nuly.",
+            "Na **menší** jednotku: posuň čárku **doprava** o tolik míst, kolik má převodní číslo nul.",
+            "Na **větší** jednotku: posuň čárku **doleva**.",
+            "Chybí-li číslice, doplň nuly. 0,8 kg → 0,800 → **800 g**."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Převod",
+            "Nuly",
+            "Ukázka"
+          ],
+          "rows": [
+            [
+              "m → cm (· 100)",
+              "2 doprava",
+              "1,75 m = 175 cm"
+            ],
+            [
+              "g → kg (: 1 000)",
+              "3 doleva",
+              "1 250 g = 1,25 kg"
+            ],
+            [
+              "l → ml (· 1 000)",
+              "3 doprava",
+              "0,33 l = 330 ml"
+            ],
+            [
+              "hl → l (· 100)",
+              "2 doprava",
+              "0,5 hl = 50 l"
+            ],
+            [
+              "mm → cm (: 10)",
+              "1 doleva",
+              "45 mm = 4,5 cm"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Smíšený zápis"
+        },
+        {
+          "type": "text",
+          "text": "3 m 25 cm: 25 cm je 25 setin metru, tedy 0,25 m. Celkem **3,25 m**. Pozor u 3 m 5 cm: 5 cm = 0,05 m, takže **3,05 m**, ne 3,5 m."
+        },
+        {
+          "type": "heading",
+          "text": "Čas zvlášť"
+        },
+        {
+          "type": "text",
+          "text": "1 h = 60 min, 1 min = 60 s. Půl hodiny je 30 minut, čtvrt hodiny 15 minut. Takže 1,5 h = 1 h 30 min = **90 min**, a ne 1 h 50 min."
+        },
+        {
+          "type": "example",
+          "question": "0,25 h = ? min",
+          "answer": "Čas: násobím 60. 0,25 · 60 = **15 min** (čtvrt hodiny)."
+        },
+        {
+          "type": "example",
+          "question": "150 min = ? h",
+          "answer": "Dělím 60. 150 : 60 = 2,5 → **2,5 h** = 2 h 30 min."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Řekni převod nahlas, pak kartičku otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "1,75 m = ? cm",
+                "back": "175 cm"
+              },
+              {
+                "front": "1 250 g = ? kg",
+                "back": "1,25 kg"
+              },
+              {
+                "front": "0,33 l = ? ml",
+                "back": "330 ml"
+              },
+              {
+                "front": "3 m 5 cm = ? m",
+                "back": "3,05 m"
+              },
+              {
+                "front": "1,5 h = ? min",
+                "back": "90 min"
+              },
+              {
+                "front": "2,4 t = ? kg",
+                "back": "2 400 kg"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "1,5 h = 1 h 50 min",
+          "right": "1,5 h = **1 h 30 min** = 90 min",
+          "why": "0,5 h je půl hodiny a půl hodiny je 30 minut. Hodina má 60 minut, ne 100, takže u času čárku neposouvej."
+        },
+        {
+          "type": "summary",
+          "text": "Převodní číslo 10, 100, 1 000 = posuň čárku o 1, 2, 3 místa: na menší jednotku doprava, na větší doleva. Čas převáděj přes 60."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "2,5 km = ? m",
+      "answers": [
+        "2500"
+      ],
+      "explanation": "2,5 · 1 000 = 2 500"
+    },
+    {
+      "type": "input",
+      "question": "350 cm = ? m",
+      "answers": [
+        "3,5"
+      ],
+      "explanation": "350 : 100 = 3,5"
+    },
+    {
+      "type": "input",
+      "question": "45 mm = ? cm",
+      "answers": [
+        "4,5"
+      ],
+      "explanation": "45 : 10 = 4,5"
+    },
+    {
+      "type": "input",
+      "question": "0,8 kg = ? g",
+      "answers": [
+        "800"
+      ],
+      "explanation": "0,8 · 1 000 = 800"
+    },
+    {
+      "type": "input",
+      "question": "1 250 g = ? kg",
+      "answers": [
+        "1,25"
+      ],
+      "explanation": "1 250 : 1 000 = 1,25"
+    },
+    {
+      "type": "input",
+      "question": "3,2 t = ? kg",
+      "answers": [
+        "3200"
+      ],
+      "explanation": "1 t = 1 000 kg"
+    },
+    {
+      "type": "input",
+      "question": "1,5 l = ? ml",
+      "answers": [
+        "1500"
+      ],
+      "explanation": "1 l = 1 000 ml"
+    },
+    {
+      "type": "input",
+      "question": "3 dl = ? l",
+      "answers": [
+        "0,3"
+      ],
+      "explanation": "1 l = 10 dl, 3 : 10 = 0,3"
+    },
+    {
+      "type": "input",
+      "question": "1,5 h = ? min",
+      "answers": [
+        "90"
+      ],
+      "explanation": "1,5 · 60 = 90"
+    },
+    {
+      "type": "input",
+      "question": "3 m 5 cm = ? m",
+      "answers": [
+        "3,05"
+      ],
+      "explanation": "5 cm = 0,05 m"
+    },
+    {
+      "type": "choice",
+      "question": "0,25 h je…",
+      "options": [
+        "15 min",
+        "25 min",
+        "2,5 min",
+        "40 min"
+      ],
+      "answer": 0,
+      "explanation": "0,25 · 60 = 15 (čtvrt hodiny)."
+    },
+    {
+      "type": "choice",
+      "question": "Kolik litrů je 2 hl?",
+      "options": [
+        "200 l",
+        "20 l",
+        "2 000 l",
+        "0,2 l"
+      ],
+      "answer": 0,
+      "explanation": "1 hl = 100 l."
+    },
+    {
+      "type": "truefalse",
+      "question": "1,5 h = 1 h 50 min",
+      "answer": false,
+      "explanation": "Půl hodiny je 30 minut: 1,5 h = 1 h 30 min."
+    },
+    {
+      "type": "truefalse",
+      "question": "0,045 m = 45 mm",
+      "answer": true,
+      "explanation": "0,045 · 1 000 = 45"
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejkratší po nejdelší.",
+      "items": [
+        "1 200 cm",
+        "80 m",
+        "0,5 km",
+        "2 km"
+      ],
+      "explanation": "1 200 cm = 12 m, 0,5 km = 500 m."
+    },
+    {
+      "type": "match",
+      "question": "Spoj stejné.",
+      "pairs": [
+        [
+          "1 t",
+          "1 000 kg"
+        ],
+        [
+          "1 hl",
+          "100 l"
+        ],
+        [
+          "1 dm",
+          "10 cm"
+        ],
+        [
+          "1 g",
+          "1 000 mg"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš, jestli máš při převodu násobit, nebo dělit?",
+      "answer": "Když převádím na menší jednotku, bude jí víc, takže násobím. Když na větší, bude jí méně, takže dělím."
+    },
+    {
+      "type": "open",
+      "question": "Proč u převodu hodin na minuty nestačí posunout čárku?",
+      "answer": "Hodina má 60 minut, ne 10 ani 100. Posun čárky funguje jen pro 10, 100, 1 000, takže čas musím násobit nebo dělit 60."
+    }
+  ]
+}

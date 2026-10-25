@@ -1,0 +1,328 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zaporna-cisla",
+  "title": "Záporná čísla",
+  "emoji": "🌡️",
+  "explanations": [
+    {
+      "title": "Teploměr",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V zimě hlásí: „Ráno bude minus pět stupňů.“ To znamená pět stupňů **pod nulou**. Je zima a voda mrzne."
+        },
+        {
+          "type": "text",
+          "text": "Čísla pod nulou jsou **záporná čísla**. Potkáš je na teploměru, ve výtahu (podzemní patra) nebo u dluhu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Záporné číslo",
+          "definition": "Číslo menší než nula. Píšeme před něj znaménko **−**.",
+          "example": "−5 °C – pět stupňů pod nulou"
+        },
+        {
+          "type": "term",
+          "term": "Kladné číslo",
+          "definition": "Číslo větší než nula. Znaménko + se většinou nepíše.",
+          "example": "5 °C – pět stupňů nad nulou"
+        },
+        {
+          "type": "term",
+          "term": "Nula",
+          "definition": "Hranice mezi kladnými a zápornými čísly. Sama **není kladná ani záporná**."
+        },
+        {
+          "type": "heading",
+          "text": "Teploty v týdnu"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na graf. Sloupce nad čarou jsou nad nulou, sloupce pod čarou pod nulou. Který den byla největší zima?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "°C",
+            "items": [
+              {
+                "label": "Po",
+                "value": 3
+              },
+              {
+                "label": "Út",
+                "value": 1
+              },
+              {
+                "label": "St",
+                "value": -2
+              },
+              {
+                "label": "Čt",
+                "value": -5
+              },
+              {
+                "label": "Pá",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Ochlazení a oteplení"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je **3 °C**. Ochladí se o 5 °C.",
+            "O 3 stupně klesne na **0 °C**.",
+            "Zbývají 2 stupně – pod nulu.",
+            "Je **−2 °C**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Ráno bylo −4 °C, odpoledne o 6 °C víc. Kolik bylo odpoledne?",
+          "answer": "Z −4 o 4 stupně nahoru na 0. Zbývají 2 → **2 °C**."
+        },
+        {
+          "type": "example",
+          "question": "Bylo −3 °C a ochladilo se o 4 °C. Kolik je teď?",
+          "answer": "Ochladit = jít dolů, ještě hlouběji pod nulu: 3 + 4 = 7 pod nulou → **−7 °C**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "−8 °C je tepleji než −3 °C, protože 8 je víc.",
+          "right": "−8 °C je **větší zima** než −3 °C.",
+          "why": "Minus osm je osm stupňů pod nulou – hlouběji než tři. Čím víc pod nulou, tím menší číslo."
+        },
+        {
+          "type": "summary",
+          "text": "Pod nulou = záporné číslo se znaménkem −. Čím víc pod nulou, tím menší číslo."
+        }
+      ]
+    },
+    {
+      "title": "Na ose",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Číselná osa nemusí začínat nulou. Pokračuje i **doleva** – tam jsou záporná čísla. Je to jako teploměr položený na bok."
+        },
+        {
+          "type": "text",
+          "text": "Na ose se dá krásně porovnávat a počítat s čísly kladnými i zápornými."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Číselná osa",
+          "definition": "Čára s čísly. Vpravo od nuly jsou kladná čísla, vlevo záporná."
+        },
+        {
+          "type": "term",
+          "term": "Záporné číslo",
+          "definition": "Číslo vlevo od nuly, se znaménkem −.",
+          "example": "−1, −2, −3…"
+        },
+        {
+          "type": "term",
+          "term": "Celá čísla",
+          "definition": "Čísla bez čárky: … −3, −2, −1, 0, 1, 2, 3 …"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Žabka stojí na 3 a skočí o 5 doleva. Kde přistane? Pak najdi −8 a −3. Které je víc vlevo?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "start": 3,
+            "hop": -5
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Vpravo od 0: kladná čísla.",
+            "Vlevo od 0: záporná čísla.",
+            "Čím víc **vlevo**, tím **menší**: −8 < −3.",
+            "Každé záporné číslo je menší než 0 i než každé kladné.",
+            "Přičítání = skok doprava, odčítání (ochlazení) = skok doleva."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Výtah je ve 2. podzemním patře (−2). Vyjede o 5 pater nahoru. Kde je?",
+          "answer": "Z −2 pět skoků doprava: −1, 0, 1, 2, **3**. Je ve 3. patře."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejmenšího: 3, −2, 5, −7, 0.",
+          "answer": "Zleva na ose: **−7, −2, 0, 3, 5**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "0 je kladné číslo.",
+          "right": "Nula **není kladná ani záporná**.",
+          "why": "Kladná čísla jsou vpravo od nuly, záporná vlevo. Nula je přesně na hranici."
+        },
+        {
+          "type": "summary",
+          "text": "Na ose: vlevo záporná, vpravo kladná. Čím víc vlevo, tím menší: −8 < −3 < 0."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je větší?",
+      "options": [
+        "−3",
+        "−8",
+        "jsou stejné"
+      ],
+      "answer": 0,
+      "explanation": "−3 je blíž nule, víc vpravo."
+    },
+    {
+      "type": "choice",
+      "question": "−1 ? 0",
+      "options": [
+        "<",
+        ">",
+        "="
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "−6 ? 2",
+      "options": [
+        "<",
+        ">",
+        "="
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Ráno bylo −4 °C, odpoledne o 6 °C víc. Kolik stupňů bylo odpoledne?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Bylo 2 °C a ochladilo se o 5 °C. Kolik je teď?",
+      "answers": [
+        "-3",
+        "−3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Bylo −3 °C a ochladilo se o 4 °C. Kolik je teď?",
+      "answers": [
+        "-7",
+        "−7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Které celé číslo je hned vlevo od 0?",
+      "answers": [
+        "-1",
+        "−1"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "0 je kladné číslo.",
+      "answer": false,
+      "explanation": "Nula není kladná ani záporná."
+    },
+    {
+      "type": "truefalse",
+      "question": "−10 < −1",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "−7",
+        "−2",
+        "0",
+        "3",
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Výtah je v 2. podzemním patře (−2). Vyjede o 5 pater nahoru. Ve kterém je patře?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "−5 °C",
+          "pět pod nulou"
+        ],
+        [
+          "0 °C",
+          "nula"
+        ],
+        [
+          "5 °C",
+          "pět nad nulou"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Kde v životě potkáš záporná čísla?",
+      "answer": "Na teploměru v zimě, ve výtahu u podzemních pater, u dluhu v bance nebo pod hladinou moře."
+    },
+    {
+      "type": "open",
+      "question": "Proč je −8 menší než −3?",
+      "answer": "Na číselné ose je −8 víc vlevo. Například −8 °C je větší zima než −3 °C."
+    }
+  ]
+}

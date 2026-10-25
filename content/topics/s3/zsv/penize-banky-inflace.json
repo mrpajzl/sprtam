@@ -1,0 +1,418 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "penize-banky-inflace",
+  "title": "Peníze, banky a inflace",
+  "emoji": "💰",
+  "explanations": [
+    {
+      "title": "Babiččina obálka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Babička si na začátku roku 2022 dala do obálky 10 000 Kč „na horší časy“. Na konci roku 2023 obálku otevřela. Bankovky byly pořád stejné, ale koupila si za ně asi o **pětinu méně** věcí než dřív. Kam se hodnota ztratila?"
+        },
+        {
+          "type": "text",
+          "text": "Za to může **inflace**. Ovlivňuje, kolik stojí nákup, nájem i kolik mají tvoje úspory skutečně hodnotu. Když jí rozumíš, umíš se rozhodnout, co s penězi dělat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Peníze",
+          "definition": "Cokoli, co lidé všeobecně přijímají jako platbu za zboží a služby.",
+          "example": "Koruny v peněžence i na účtu."
+        },
+        {
+          "type": "term",
+          "term": "Cenová hladina",
+          "definition": "Průměrná výše cen všech běžně kupovaných věcí a služeb dohromady.",
+          "example": "Ne cena jednoho rohlíku, ale „kolik stojí život“ celkově."
+        },
+        {
+          "type": "term",
+          "term": "Inflace",
+          "definition": "**Růst cenové hladiny**. Ceny celkově rostou, takže za stejné peníze koupíš méně – peníze ztrácejí **kupní sílu**.",
+          "example": "Inflace 10 % = co stálo 100 Kč, stojí v průměru 110 Kč."
+        },
+        {
+          "type": "term",
+          "term": "Kupní síla",
+          "definition": "Kolik věcí si za určitou částku můžeš koupít.",
+          "example": "Za 100 Kč dřív 4 chleby, dnes jen 3."
+        },
+        {
+          "type": "term",
+          "term": "Deflace",
+          "definition": "Opak inflace: **pokles cenové hladiny**.",
+          "example": "Ceny v průměru klesají."
+        },
+        {
+          "type": "heading",
+          "text": "Jak velká inflace v Česku byla"
+        },
+        {
+          "type": "text",
+          "text": "Inflaci v ČR měří **Český statistický úřad (ČSÚ)**. Sleduje ceny vybraného „koše“ běžných věcí. Prohlédni si průměrnou roční inflaci a najdi rok, kdy byla nejvyšší:"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "%",
+            "items": [
+              {
+                "label": "2019",
+                "value": 2.8
+              },
+              {
+                "label": "2020",
+                "value": 3.2
+              },
+              {
+                "label": "2021",
+                "value": 3.8
+              },
+              {
+                "label": "2022",
+                "value": 15.1
+              },
+              {
+                "label": "2023",
+                "value": 10.7
+              },
+              {
+                "label": "2024",
+                "value": 2.4
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč si babička za stejných 10 000 Kč koupila asi o pětinu méně?",
+          "answer": "V roce 2022 byla inflace **15,1 %** a v roce 2023 **10,7 %**. Ceny tedy vzrostly asi 1,151 · 1,107 ≈ **1,27krát**. Co stálo 10 000 Kč, stojí asi 12 700 Kč. Babiččiny peníze tak mají reálně asi o **pětinu menší** hodnotu."
+        },
+        {
+          "type": "heading",
+          "text": "Kdo hlídá ceny: Česká národní banka"
+        },
+        {
+          "type": "term",
+          "term": "Centrální banka",
+          "definition": "Hlavní banka státu. Nepůjčuje lidem, ale **vydává peníze** a pečuje o **stabilitu cen**. V Česku je to **Česká národní banka (ČNB)**.",
+          "example": "Na bankovkách je podpis guvernéra ČNB."
+        },
+        {
+          "type": "term",
+          "term": "Inflační cíl",
+          "definition": "Výše inflace, o kterou ČNB usiluje: **2 %** ročně. Mírná inflace je pro ekonomiku zdravá, vysoká škodí.",
+          "example": "Když je inflace 10 %, ČNB se ji snaží srazit k 2 %."
+        },
+        {
+          "type": "term",
+          "term": "Úroková sazba",
+          "definition": "Cena za půjčení peněz, v procentech ročně.",
+          "example": "Úvěr se sazbou 6 % znamená, že ze 100 000 Kč zaplatíš ročně asi 6 000 Kč úroků."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Inflace je vysoká – lidé a firmy hodně utrácejí.",
+            "ČNB **zvýší úrokové sazby**.",
+            "Půjčky (úvěry) zdraží a spoření se víc vyplácí.",
+            "Lidé si méně půjčují a méně utrácejí.",
+            "Poptávka klesne a ceny rostou pomaleji – **inflace klesá**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Inflace je vysoká a ČNB zvýší úrokové sazby z 4 % na 7 %. Co udělá rodina, která plánovala koupit auto na úvěr?",
+          "answer": "Úvěr **zdražil** – úroky budou vyšší. Rodina si nákup spíš odloží nebo vezme menší půjčku. Když tak jedná hodně lidí, klesne poptávka a ceny rostou pomaleji. **Přesně o to ČNB usiluje.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když mám peníze doma v obálce, nemůžu o ně přijít.",
+          "right": "Při inflaci ztrácejí peníze v obálce **reálnou hodnotu** – koupíš si za ně méně.",
+          "why": "Částka na bankovkách se nemění, ale ceny rostou. Proto se úspory obvykle ukládají tak, aby se úročily."
+        },
+        {
+          "type": "summary",
+          "text": "Inflace = růst cenové hladiny, peníze ztrácejí kupní sílu. Měří ji ČSÚ. ČNB má inflační cíl 2 % a proti vysoké inflaci zvyšuje úrokové sazby."
+        }
+      ]
+    },
+    {
+      "title": "K čemu jsou peníze",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že peníze neexistují. Máš slepice a chceš boty. Musíš najít ševce, který zrovna chce vejce. To je pomalé a složité. Proto lidé vymysleli **peníze**."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, k čemu peníze slouží, jak se vyvíjely, kdo je vydává, co dělají banky a proč peníze ztrácejí hodnotu. Je to základ, bez kterého nepochopíš úspory ani půjčky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Naturální směna",
+          "definition": "Výměna **zboží za zboží**, bez peněz.",
+          "example": "Pět vajec za bochník chleba."
+        },
+        {
+          "type": "term",
+          "term": "Peníze",
+          "definition": "Všeobecně přijímaný prostředek, kterým se platí.",
+          "example": "Koruny, eura, platba kartou."
+        },
+        {
+          "type": "heading",
+          "text": "Tři funkce peněz"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Prostředek směny** – platím jimi: zaplatím za chleba.",
+            "**Míra hodnoty** – vyjadřují cenu, takže věci můžu srovnat: kolo stojí 8 000 Kč, koloběžka 3 000 Kč.",
+            "**Uchovatel hodnoty** – můžu je odložit a použít později: spořím na dovolenou."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak se peníze vyvíjely"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Naturální směna** – zboží za zboží.",
+            "**Komoditní peníze** – platí se věcí, kterou chtějí všichni: dobytek, sůl, zlato.",
+            "**Mince** – kousky kovu se zaručenou hodnotou; první ražené mince pocházejí z Lýdie v Malé Asii (asi 7. stol. př. n. l.).",
+            "**Papírové bankovky** – lehčí než kov; jako první je používali v Číně.",
+            "**Bezhotovostní peníze** – jen čísla na účtech, platba kartou nebo mobilem."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď situace podle toho, jakou funkci v nich peníze mají."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Prostředek směny",
+              "Míra hodnoty",
+              "Uchovatel hodnoty"
+            ],
+            "items": [
+              {
+                "text": "Platím za oběd v jídelně",
+                "group": 0
+              },
+              {
+                "text": "Posílám kamarádovi peníze za lístek",
+                "group": 0
+              },
+              {
+                "text": "Kolo stojí 8 000 Kč, koloběžka 3 000 Kč",
+                "group": 1
+              },
+              {
+                "text": "Porovnávám ceny dvou mobilů",
+                "group": 1
+              },
+              {
+                "text": "Spořím na dovolenou",
+                "group": 2
+              },
+              {
+                "text": "Dávám mince do prasátka",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Banky"
+        },
+        {
+          "type": "term",
+          "term": "Česká národní banka (ČNB)",
+          "definition": "**Centrální banka** ČR. **Vydává bankovky a mince**, pečuje o **cenovou stabilitu** a **dohlíží** na banky a finanční trh.",
+          "example": "ČNB rozhoduje o výši základních úrokových sazeb."
+        },
+        {
+          "type": "term",
+          "term": "Obchodní banka",
+          "definition": "Banka pro lidi a firmy: **přijímá vklady** (úspory) a **poskytuje úvěry** (půjčky).",
+          "example": "Banka, kde máš účet."
+        },
+        {
+          "type": "heading",
+          "text": "Když peníze ztrácejí hodnotu"
+        },
+        {
+          "type": "term",
+          "term": "Inflace",
+          "definition": "**Růst cenové hladiny** (průměrných cen). Peníze ztrácejí kupní sílu. Opak, **pokles** cenové hladiny, je **deflace**.",
+          "example": "Při inflaci 10 % si za 1 000 Kč koupíš o něco méně než loni."
+        },
+        {
+          "type": "text",
+          "text": "Inflaci měří **Český statistický úřad**. ČNB usiluje o inflaci **2 %** (inflační cíl). Když je inflace vysoká, ČNB **zvýší úrokové sazby** – půjčky zdraží, lidé méně utrácejí a růst cen se zpomalí. Nejvyšší inflace posledních let byla v roce **2022 (15,1 %)**."
+        },
+        {
+          "type": "example",
+          "question": "Urči funkci peněz: a) kupuješ lístek do kina, b) v obchodě srovnáváš ceny dvou mobilů, c) dáváš peníze do prasátka.",
+          "answer": "a) **prostředek směny**, b) **míra hodnoty**, c) **uchovatel hodnoty**."
+        },
+        {
+          "type": "example",
+          "question": "Inflace je 10 % a ty máš doma v hotovosti 5 000 Kč. Kolik zhruba „ztratíš“ za rok?",
+          "answer": "Ceny vzrostou asi o 10 %. Za 5 000 Kč si koupíš to, co dřív stálo asi 5 000 : 1,1 ≈ 4 545 Kč. Reálně jsi přišel asi o **450 Kč**, i když bankovky máš stejné."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Bankovky tiskne vláda, nebo ministerstvo financí.",
+          "right": "Bankovky a mince v ČR vydává **Česká národní banka**.",
+          "why": "ČNB je nezávislá na vládě, aby politici nemohli „natisknout“ peníze a roztočit inflaci."
+        },
+        {
+          "type": "summary",
+          "text": "Peníze jsou prostředek směny, míra hodnoty a uchovatel hodnoty. ČNB vydává peníze a hlídá inflaci (cíl 2 %), obchodní banky přijímají vklady a dávají úvěry. Inflace = růst cen, deflace = pokles."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je inflace?",
+      "options": [
+        "Růst cenové hladiny",
+        "Pokles cen",
+        "Růst HDP",
+        "Nedostatek peněz v bankách"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jaký je inflační cíl ČNB v procentech?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj funkci peněz s příkladem.",
+      "pairs": [
+        [
+          "prostředek směny",
+          "zaplatím za chleba"
+        ],
+        [
+          "míra hodnoty",
+          "kolo stojí 8 000 Kč"
+        ],
+        [
+          "uchovatel hodnoty",
+          "spořím na dovolenou"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo v ČR vydává bankovky a mince?",
+      "options": [
+        "ČNB",
+        "Ministerstvo financí",
+        "Komerční banky",
+        "Vláda"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Deflace znamená pokles cenové hladiny.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak ČNB obvykle reaguje na vysokou inflaci?",
+      "options": [
+        "Zvýší úrokové sazby",
+        "Sníží úrokové sazby",
+        "Zvýší daně",
+        "Zakáže úvěry"
+      ],
+      "answer": 0,
+      "explanation": "Daně určuje parlament, ne ČNB."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď vývoj forem peněz.",
+      "items": [
+        "naturální směna",
+        "komoditní peníze",
+        "mince",
+        "papírové bankovky",
+        "bezhotovostní peníze"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Při inflaci 10 % si za stejné úspory koupíš víc než předtím.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Kdo v ČR měří inflaci (index spotřebitelských cen)?",
+      "options": [
+        "Český statistický úřad",
+        "ČNB",
+        "Ministerstvo průmyslu",
+        "Senát"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém roce byla průměrná inflace v ČR nejvyšší?",
+      "options": [
+        "2022",
+        "2020",
+        "2023",
+        "2024"
+      ],
+      "answer": 0,
+      "explanation": "15,1 %."
+    },
+    {
+      "type": "open",
+      "question": "Jaké funkce mají peníze?",
+      "answer": "Slouží jako prostředek směny (platíme jimi), míra hodnoty (vyjadřují cenu) a uchovatel hodnoty (lze je spořit). Také jako platidlo při splácení dluhů."
+    },
+    {
+      "type": "open",
+      "question": "Proč inflace škodí lidem, kteří mají úspory v hotovosti?",
+      "answer": "Ceny rostou, ale hotovost se nezvyšuje. Za stejnou částku si proto koupí méně – úspory ztrácejí reálnou hodnotu."
+    }
+  ]
+}

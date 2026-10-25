@@ -1,0 +1,388 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "linking-cause-result-purpose",
+  "title": "Spojky: příčina, důsledek, účel",
+  "emoji": "🔗",
+  "explanations": [
+    {
+      "title": "Řetězem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Silnice byla zledovatělá, **a proto** se stala nehoda. Řidič jel pomalu, **protože** byla mlha. Odešel jsem dřív, **abych** stihl vlak. Věci na sebe navazují jako články řetězu: **příčina → důsledek**, a někdy i **účel** (proč to dělám)."
+        },
+        {
+          "type": "text",
+          "text": "V esejích, e-mailech i při ústní zkoušce musíš umět vysvětlit, proč se něco stalo a co z toho plyne. Angličtina na to má víc slov, než si myslíš – a každé se pojí s něčím jiným."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Příčina",
+          "definition": "**Proč** se něco stalo. Česky „protože, kvůli“.",
+          "example": "*because of the fog* = kvůli mlze"
+        },
+        {
+          "type": "term",
+          "term": "Důsledek",
+          "definition": "**Co z toho** vyplynulo. Česky „proto, takže“.",
+          "example": "*so the flight was cancelled* = takže let zrušili"
+        },
+        {
+          "type": "term",
+          "term": "Účel",
+          "definition": "**Za jakým cílem** něco dělám. Česky „abych, aby“.",
+          "example": "*to catch the train* = abych stihl vlak"
+        },
+        {
+          "type": "term",
+          "term": "Věta × podstatné jméno",
+          "definition": "**Věta** má podmět a sloveso (*it was foggy*). **Podstatné jméno** je jen pojmenování (*the fog*).",
+          "example": "*because **it was foggy*** × *because of **the fog***"
+        },
+        {
+          "type": "term",
+          "term": "Infinitiv",
+          "definition": "Základní tvar slovesa, zde se *to*.",
+          "example": "*to buy, to learn, to avoid*"
+        },
+        {
+          "type": "heading",
+          "text": "Řetěz krok za krokem"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Příčina + věta: *We stayed in **because** it was raining.*",
+            "Příčina + podstatné jméno: *The flight was cancelled **due to** fog.*",
+            "Důsledek: *It was foggy. **Therefore**, the flight was cancelled.* / *It was foggy, **so** the flight was cancelled.*",
+            "Účel + infinitiv: *I left early **to** catch the train.*",
+            "Účel + věta: *I left early **so that** I wouldn't miss the train.*"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Další varianty se stejnou funkcí: *as, since* (= *because*, + věta), *owing to* (= *due to*, + podstatné jméno), *consequently, as a result* (= *therefore*), *so as to* (= *in order to*, + infinitiv)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Sleduj, jak se řetěz točí: příčina, důsledek, účel. U každého kroku si řekni jednu vlastní větu."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "because / as / since + věta",
+              "because of / due to + podst. jméno",
+              "so / therefore / as a result",
+              "to / in order to / so that"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *The match was postponed ___ the rain.* (because / because of)",
+          "answer": "Za mezerou je jen podstatné jméno *the rain* → ***because of***."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *She spoke slowly ___ everyone could understand.* (so that / in order to)",
+          "answer": "Za mezerou je celá věta s *could* → ***so that***. *in order to* by chtělo infinitiv."
+        },
+        {
+          "type": "mistake",
+          "wrong": "I went to the shop for to buy milk.",
+          "right": "I went to the shop to buy milk.",
+          "why": "Účel se vyjadřuje *to* + infinitiv. Česká „pro“ svádí k *for*, ale *for to* v angličtině neexistuje."
+        },
+        {
+          "type": "summary",
+          "text": "Příčina → *because* (+ věta) / *because of* (+ jméno). Důsledek → *so, therefore*. Účel → *to* + infinitiv nebo *so that* + věta."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Spojovací výrazy pro příčinu, důsledek a účel se dají uspořádat do přehledné tabulky. Jeden rozměr je **funkce** (proč / co z toho / za jakým cílem), druhý je **co za slovem stojí** (věta, nebo podstatné jméno či infinitiv)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Funkce spojovacího výrazu",
+          "definition": "Jaký vztah ukazuje: příčinu (proč), důsledek (co z toho), nebo účel (za jakým cílem).",
+          "example": "*because* = příčina, *therefore* = důsledek, *in order to* = účel"
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Skupina slov s podmětem a slovesem.",
+          "example": "*it was late*"
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Pojmenování věci nebo jevu, bez slovesa.",
+          "example": "*the traffic, the delay*"
+        },
+        {
+          "type": "term",
+          "term": "Infinitiv s to",
+          "definition": "Základní tvar slovesa se slovem *to*.",
+          "example": "*to avoid, to help*"
+        },
+        {
+          "type": "heading",
+          "text": "Velká tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Funkce",
+            "+ věta",
+            "+ podst. jméno / infinitiv"
+          ],
+          "rows": [
+            [
+              "příčina",
+              "because, as, since",
+              "because of, due to, owing to"
+            ],
+            [
+              "důsledek",
+              "so, therefore, as a result, consequently",
+              "as a result of"
+            ],
+            [
+              "účel",
+              "so that (+ can/could/would)",
+              "to, in order to, so as to"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "*Therefore, consequently, as a result* obvykle stojí na začátku nové věty a mají za sebou čárku: *He didn't study. **Consequently**, he failed.*"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozhodni funkci: proč (příčina), co z toho (důsledek), za jakým cílem (účel)?",
+            "Podívej se, co následuje: celá věta, nebo podstatné jméno / infinitiv?",
+            "Vyber slovo ze správné buňky tabulky."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *___ it was late, we took a taxi.* (As / Due to / Because of)",
+          "answer": "Funkce: příčina. Následuje věta (*it was late*) → ***As***."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *We left early ___ avoid the traffic.*",
+          "answer": "Funkce: účel. Následuje infinitiv *avoid* → ***in order to*** (nebo *to*, *so as to*)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď výrazy podle funkce. Zkus si u každého říct, jestli za ním stojí věta, nebo podstatné jméno."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "příčina",
+              "důsledek",
+              "účel"
+            ],
+            "items": [
+              {
+                "text": "because of",
+                "group": 0
+              },
+              {
+                "text": "due to",
+                "group": 0
+              },
+              {
+                "text": "since",
+                "group": 0
+              },
+              {
+                "text": "therefore",
+                "group": 1
+              },
+              {
+                "text": "consequently",
+                "group": 1
+              },
+              {
+                "text": "as a result",
+                "group": 1
+              },
+              {
+                "text": "in order to",
+                "group": 2
+              },
+              {
+                "text": "so that",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "The flight was cancelled because the fog.",
+          "right": "The flight was cancelled because of the fog.",
+          "why": "*because* chce celou větu (*because it was foggy*). Před samotným podstatným jménem musí být *because of*."
+        },
+        {
+          "type": "summary",
+          "text": "Rozhodni funkci a pak, co následuje: věta → *because, as, since, so, so that*; podstatné jméno → *because of, due to*; infinitiv → *to, in order to*."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "The match was postponed ___ the rain.",
+      "options": [
+        "because of",
+        "because",
+        "so that",
+        "therefore"
+      ],
+      "answer": 0,
+      "explanation": "Podstatné jméno → because of."
+    },
+    {
+      "type": "choice",
+      "question": "I'm saving money ___ buy a laptop.",
+      "options": [
+        "in order to",
+        "so that",
+        "because of",
+        "for"
+      ],
+      "answer": 0,
+      "explanation": "Účel + infinitiv."
+    },
+    {
+      "type": "choice",
+      "question": "She spoke slowly ___ everyone could understand.",
+      "options": [
+        "so that",
+        "in order to",
+        "due to",
+        "therefore"
+      ],
+      "answer": 0,
+      "explanation": "Účel + věta s could → so that."
+    },
+    {
+      "type": "truefalse",
+      "question": "„I went to the shop for to buy milk.“ je správně.",
+      "answer": false,
+      "explanation": "Správně: to buy / in order to buy."
+    },
+    {
+      "type": "truefalse",
+      "question": "*Due to* se pojí s podstatným jménem.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "He didn't study. ___, he failed. (důsledek, 1 slovo)",
+      "answers": [
+        "Therefore",
+        "Consequently"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "I set an alarm so ___ I wouldn't oversleep. (1 slovo)",
+      "answers": [
+        "that"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "___ it was late, we took a taxi.",
+      "options": [
+        "As",
+        "Due to",
+        "Because of"
+      ],
+      "answer": 0,
+      "explanation": "Věta → as/because/since."
+    },
+    {
+      "type": "match",
+      "question": "Spoj spojku s funkcí.",
+      "pairs": [
+        [
+          "owing to",
+          "příčina"
+        ],
+        [
+          "as a result",
+          "důsledek"
+        ],
+        [
+          "so as to",
+          "účel"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "We",
+        "left",
+        "early",
+        "in order to",
+        "avoid",
+        "the traffic."
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak anglicky vyjádříš účel? Uveď dvě možnosti.",
+      "answer": "To / in order to + infinitiv (I came to help), nebo so that + věta, často s can/could/would (I came so that I could help)."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi because a because of?",
+      "answer": "Because uvádí větu s podmětem a slovesem (because it rained). Because of se pojí s podstatným jménem nebo zájmenem (because of the rain)."
+    }
+  ]
+}

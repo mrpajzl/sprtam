@@ -1,0 +1,336 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rocni-obdobi",
+  "title": "Roční období",
+  "emoji": "🍂",
+  "explanations": [
+    {
+      "title": "Kolečko roku",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Někdy chodíš ven v kraťasech. Jindy potřebuješ čepici a rukavice. Venku není pořád stejně."
+        },
+        {
+          "type": "text",
+          "text": "Během roku se počasí a příroda mění. Když víš jak, víš, co si obléct a co se bude venku dít."
+        },
+        {
+          "type": "term",
+          "term": "Rok",
+          "definition": "Dlouhý čas, za který se vystřídá jaro, léto, podzim a zima. Pak to začne znovu.",
+          "example": "Za rok budu o rok starší."
+        },
+        {
+          "type": "term",
+          "term": "Roční období",
+          "definition": "Jedna ze čtyř částí roku. Každá má jiné počasí.",
+          "example": "Jaro, léto, podzim, zima."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři období dokola"
+        },
+        {
+          "type": "text",
+          "text": "Období jdou pořád dokola jako kolečko. Po zimě přijde zase jaro. Klepni a podívej se."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "jaro 🌷",
+              "léto ☀️",
+              "podzim 🍂",
+              "zima ❄️"
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Jaro",
+          "definition": "Otepluje se. Rostliny se probouzejí, kvetou první květiny.",
+          "example": "Sněženky, tulipány, mláďata zvířat."
+        },
+        {
+          "type": "term",
+          "term": "Léto",
+          "definition": "Nejteplejší období. Dlouhé dny, velké prázdniny.",
+          "example": "Koupání, zmrzlina."
+        },
+        {
+          "type": "term",
+          "term": "Podzim",
+          "definition": "Ochlazuje se. Listí se barví a padá. Sklízí se ovoce.",
+          "example": "Pouštění draka, sbírání kaštanů."
+        },
+        {
+          "type": "term",
+          "term": "Zima",
+          "definition": "Nejstudenější období. Může padat sníh a mrznout.",
+          "example": "Sáňkování, Vánoce."
+        },
+        {
+          "type": "example",
+          "question": "Je zima. Jaké období přijde potom?",
+          "answer": "Kolečko jde: jaro, léto, podzim, zima – a znovu **jaro**."
+        },
+        {
+          "type": "example",
+          "question": "Jaké období je před létem?",
+          "answer": "Řekni je popořadě: jaro, léto. Před létem je **jaro**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rok začíná jarem, takže jaro je vždycky první.",
+          "right": "Roční období jdou dokola. Můžeš začít kterýmkoli.",
+          "why": "Kalendářní rok začíná v zimě, 1. ledna. Období se ale jen pořád opakují."
+        },
+        {
+          "type": "summary",
+          "text": "Rok má 4 roční období: jaro, léto, podzim, zima. Pořád se opakují."
+        }
+      ]
+    },
+    {
+      "title": "Co kdy je",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si sněhuláka. Kdy ho stavíš? A kdy se koupeš v rybníce? Každá věc patří do jiné části roku."
+        },
+        {
+          "type": "text",
+          "text": "Podle toho, co vidíš venku, poznáš, jaké je období."
+        },
+        {
+          "type": "term",
+          "term": "Roční období",
+          "definition": "Část roku s typickým počasím. Jsou čtyři: jaro, léto, podzim, zima.",
+          "example": "V létě je teplo, v zimě zima."
+        },
+        {
+          "type": "term",
+          "term": "Počasí",
+          "definition": "Jak je venku: teplo nebo zima, slunce, déšť, sníh, vítr.",
+          "example": "Dnes je slunečno a teplo."
+        },
+        {
+          "type": "heading",
+          "text": "Poznávej podle znamení"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Období",
+            "Co vidím venku"
+          ],
+          "rows": [
+            [
+              "jaro 🌷",
+              "kvetou květiny, rostou listy, rodí se mláďata"
+            ],
+            [
+              "léto ☀️",
+              "horko, zralé třešně, prázdniny"
+            ],
+            [
+              "podzim 🍂",
+              "barevné listí padá, ptáci odlétají, sklízí se jablka"
+            ],
+            [
+              "zima ❄️",
+              "sníh, mráz, holé stromy, Vánoce"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď: patří to k létu, nebo k zimě?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Léto ☀️",
+              "Zima ❄️"
+            ],
+            "items": [
+              {
+                "text": "koupání 🏊",
+                "group": 0
+              },
+              {
+                "text": "sněhulák ⛄",
+                "group": 1
+              },
+              {
+                "text": "zmrzlina 🍦",
+                "group": 0
+              },
+              {
+                "text": "sáňky 🛷",
+                "group": 1
+              },
+              {
+                "text": "prázdniny 🏖️",
+                "group": 0
+              },
+              {
+                "text": "Vánoce 🎄",
+                "group": 1
+              },
+              {
+                "text": "čepice a rukavice 🧤",
+                "group": 1
+              },
+              {
+                "text": "kraťasy 🩳",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Venku padá žluté a červené listí. Jaké je období?",
+          "answer": "Listí se barví a padá na **podzim**."
+        },
+        {
+          "type": "example",
+          "question": "Na zahradě vykvetly tulipány a je teplejší. Jaké je období?",
+          "answer": "Po zimě se otepluje a kvetou první květiny – je **jaro**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vánoce jsou v létě.",
+          "right": "Vánoce jsou v zimě, v prosinci.",
+          "why": "U nás je v prosinci zima. Často i sníh."
+        },
+        {
+          "type": "summary",
+          "text": "Jaro: kvete. Léto: horko a prázdniny. Podzim: padá listí. Zima: sníh a Vánoce. Léto je nejteplejší, zima nejstudenější."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik je ročních období?",
+      "answers": [
+        "4",
+        "čtyři"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdy padá listí ze stromů?",
+      "options": [
+        "na podzim",
+        "v létě",
+        "na jaře"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdy stavíme sněhuláka?",
+      "options": [
+        "v zimě",
+        "v létě",
+        "na podzim"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdy jsou velké prázdniny?",
+      "options": [
+        "v létě",
+        "v zimě",
+        "na podzim"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdy kvetou sněženky a tulipány?",
+      "options": [
+        "na jaře",
+        "na podzim",
+        "v zimě"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od jara.",
+      "items": [
+        "jaro",
+        "léto",
+        "podzim",
+        "zima"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Po zimě přijde jaro.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Vánoce jsou v létě.",
+      "answer": false,
+      "explanation": "Vánoce jsou v zimě, v prosinci."
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "zima",
+          "sníh"
+        ],
+        [
+          "jaro",
+          "květy"
+        ],
+        [
+          "podzim",
+          "barevné listí"
+        ],
+        [
+          "léto",
+          "koupání"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Léto je nejteplejší roční období.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jaké je tvoje oblíbené roční období a proč?",
+      "answer": "Například léto, protože je teplo, jsou prázdniny a můžu se koupat."
+    },
+    {
+      "type": "open",
+      "question": "Co se děje v přírodě na podzim?",
+      "answer": "Listí se barví a padá, ptáci odlétají do teplých krajin, sklízí se ovoce a je chladněji."
+    }
+  ]
+}

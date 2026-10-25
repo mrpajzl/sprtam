@@ -1,0 +1,465 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "passive-all-tenses",
+  "title": "Trpný rod ve všech časech",
+  "emoji": "🏗️",
+  "explanations": [
+    {
+      "title": "Zprávou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve zprávách slyšíš: „Most **byl postaven** ve 14. století.“ „Zloděj **byl zatčen**.“ Nikoho nezajímá, kteří zedníci most stavěli ani který policista zatýkal. Důležitá je věc a to, **co se s ní stalo**."
+        },
+        {
+          "type": "text",
+          "text": "Takovým větám se říká trpný rod. V angličtině je mnohem častější než v češtině – ve zprávách, návodech, vědeckých textech i v maturitních čteních. Bez něj jim neporozumíš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "O kom nebo o čem věta mluví. V angličtině stojí před slovesem.",
+          "example": "***Tom** painted the house.* – podmět je Tom."
+        },
+        {
+          "type": "term",
+          "term": "Předmět",
+          "definition": "Koho nebo co sloveso „zasáhne“. Stojí za slovesem.",
+          "example": "*Tom painted **the house**.* – předmět je the house."
+        },
+        {
+          "type": "term",
+          "term": "Činný rod (active)",
+          "definition": "Podmět sám něco dělá.",
+          "example": "*Tom painted the house.* = Tom natřel dům."
+        },
+        {
+          "type": "term",
+          "term": "Trpný rod (passive)",
+          "definition": "Podmětem je věc nebo člověk, **se kterým se něco děje**. Tvoří se z *be* + 3. tvaru slovesa.",
+          "example": "*The house was painted.* = Dům byl natřen."
+        },
+        {
+          "type": "term",
+          "term": "3. tvar slovesa (příčestí minulé)",
+          "definition": "Třetí tvar z řady nepravidelných sloves; u pravidelných končí na *-ed*.",
+          "example": "*paint – painted – **painted***, *build – built – **built***, *write – wrote – **written***"
+        },
+        {
+          "type": "term",
+          "term": "Původce",
+          "definition": "Ten, kdo děj udělal. V trpném rodě ho můžeš přidat pomocí *by*, ale často ho vynecháš.",
+          "example": "*The house was painted **by Tom**.*"
+        },
+        {
+          "type": "heading",
+          "text": "Jak z činné věty udělat trpnou"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi předmět: *Tom painted **the house**.*",
+            "Dej předmět na začátek jako nový podmět: *The house …*",
+            "Zjisti čas původní věty: *painted* = minulý čas (past simple).",
+            "Dej *be* do stejného času: minulost → *was*.",
+            "Přidej 3. tvar slovesa: *painted*.",
+            "Je původce důležitý? Přidej *by Tom*. Není? Vynech ho."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pamatuj si: **čas nese sloveso *be***. Hlavní sloveso je vždycky ve 3. tvaru."
+        },
+        {
+          "type": "list",
+          "items": [
+            "teď obecně: *It **is made** in China.* (Vyrábí se v Číně.)",
+            "právě teď: *It **is being made**.* (Právě se vyrábí.)",
+            "minule: *It **was made** in 2020.* (Bylo vyrobeno.)",
+            "už hotovo: *It **has been made**.* (Už je vyrobeno.)",
+            "předtím, než se stalo něco jiného: *It **had been made** before…*",
+            "v budoucnu: *It **will be made**.* (Bude vyrobeno.)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si barevné části. Zkus u každé věty říct, v jakém čase je *be*."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "The house",
+                    "label": "podmět"
+                  },
+                  {
+                    "text": "is being",
+                    "label": "be v čase"
+                  },
+                  {
+                    "text": "painted",
+                    "label": "3. tvar"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "The letters",
+                    "label": "podmět"
+                  },
+                  {
+                    "text": "had been",
+                    "label": "be v čase"
+                  },
+                  {
+                    "text": "sent",
+                    "label": "3. tvar"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Převeď do trpného rodu: *They are repairing the road.*",
+          "answer": "*are repairing* = děj probíhá právě teď. *be* v tomto čase je *is being*. Přidám 3. tvar: ***The road is being repaired.*** = Silnice se právě opravuje."
+        },
+        {
+          "type": "example",
+          "question": "Převeď: *Someone has stolen my bike.*",
+          "answer": "*has stolen* = čas present perfect (stalo se, výsledek je vidět teď). *be* → *has been*, 3. tvar *stolen*. Původce *someone* nic neříká, vynechám: ***My bike has been stolen.***"
+        },
+        {
+          "type": "mistake",
+          "wrong": "The window was broke by the ball.",
+          "right": "The window was broken by the ball.",
+          "why": "Po *be* musí stát 3. tvar: *break – broke – **broken***. *broke* je 2. tvar (minulý čas)."
+        },
+        {
+          "type": "summary",
+          "text": "Trpný rod = *be* ve správném čase + 3. tvar slovesa. Původce přidáš s *by*, jen když je důležitý."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Trpný rod má v angličtině jediný recept: ***be* + 3. tvar**. Trik je v tom, že *be* umí být v jakémkoli čase. Tím se mění čas celé věty."
+        },
+        {
+          "type": "text",
+          "text": "Když tedy umíš časovat *be*, umíš trpný rod ve všech časech. Hodí se to v testech typu „převeď do pasiva“ i při psaní formálních textů."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Činný rod (active)",
+          "definition": "Věta, ve které ten, o kom mluvíme, **sám něco dělá**.",
+          "example": "*They make cars here.* = Vyrábějí tu auta."
+        },
+        {
+          "type": "term",
+          "term": "Trpný rod (passive, pasivum)",
+          "definition": "Věta, ve které ten, o kom mluvíme, nic nedělá – **něco se děje s ním**.",
+          "example": "*Cars are made here.* = Auta se tu vyrábějí."
+        },
+        {
+          "type": "term",
+          "term": "3. tvar slovesa",
+          "definition": "Třetí tvar z řady sloves. Pravidelná: *-ed*. Nepravidelná se učí.",
+          "example": "*make – made – **made***, *speak – spoke – **spoken***"
+        },
+        {
+          "type": "term",
+          "term": "Modální sloveso",
+          "definition": "Sloveso jako *can, must, should, may*. Vyjadřuje možnost, povinnost nebo radu. Po něm je infinitiv bez *to*.",
+          "example": "*must be done* = musí být uděláno"
+        },
+        {
+          "type": "term",
+          "term": "Čas (tense)",
+          "definition": "Tvar slovesa, podle kterého poznáš, kdy se děj odehrává a jestli probíhá, nebo je hotový.",
+          "example": "*make* (obecně), *is making* (právě teď), *made* (minule)"
+        },
+        {
+          "type": "heading",
+          "text": "Všechny časy pod sebou"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Čas",
+            "Co vyjadřuje",
+            "Činný",
+            "Trpný"
+          ],
+          "rows": [
+            [
+              "present simple",
+              "obecně, pravidelně",
+              "They make it.",
+              "It is made."
+            ],
+            [
+              "present continuous",
+              "právě teď probíhá",
+              "They are making it.",
+              "It is being made."
+            ],
+            [
+              "past simple",
+              "skončilo v minulosti",
+              "They made it.",
+              "It was made."
+            ],
+            [
+              "past continuous",
+              "probíhalo v minulosti",
+              "They were making it.",
+              "It was being made."
+            ],
+            [
+              "present perfect",
+              "stalo se, výsledek teď",
+              "They have made it.",
+              "It has been made."
+            ],
+            [
+              "past perfect",
+              "stalo se před jiným minulým dějem",
+              "They had made it.",
+              "It had been made."
+            ],
+            [
+              "will",
+              "budoucnost",
+              "They will make it.",
+              "It will be made."
+            ],
+            [
+              "modální",
+              "musí, může…",
+              "They must make it.",
+              "It must be made."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na poslední sloupec. Mění se jen tvar *be* (*is, is being, was, was being, has been, had been, will be, must be*). Slovo *made* zůstává pořád stejné."
+        },
+        {
+          "type": "example",
+          "question": "Doplň trpný tvar: *English ___ (speak) all over the world.*",
+          "answer": "Platí to obecně → present simple. *be* = *is* (jedna věc). 3. tvar *speak – spoke – spoken*. ***English is spoken** all over the world.*"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *The results ___ (announce) tomorrow.*",
+          "answer": "*tomorrow* = budoucnost → *will be*. 3. tvar *announced*. ***The results will be announced** tomorrow.*"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň mezery. Nejdřív najdi slovo, které prozradí čas (*at the moment, tomorrow, twice this year*), a teprve potom vyber tvar."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "English",
+                "after": "all over the world.",
+                "options": [
+                  "is spoken",
+                  "is speaking"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "The road",
+                "after": "at the moment.",
+                "options": [
+                  "is being repaired",
+                  "is repaired"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "The results",
+                "after": "tomorrow.",
+                "options": [
+                  "will be announced",
+                  "will announce"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "My bike",
+                "after": "twice this year.",
+                "options": [
+                  "has been stolen",
+                  "has stolen"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "The road is repairing.",
+          "right": "The road is being repaired.",
+          "why": "Bez *be* + 3. tvaru je věta činná a znamenala by nesmysl „silnice (sama) opravuje“."
+        },
+        {
+          "type": "summary",
+          "text": "Pasivum = *be* v potřebném čase + 3. tvar. Čas poznáš podle tvaru *be*, hlavní sloveso se nemění."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "The Harry Potter books ___ by J. K. Rowling.",
+      "options": [
+        "were written",
+        "wrote",
+        "have written"
+      ],
+      "answer": 0,
+      "explanation": "Minulé pasivum: *was/were* + 3. tvar."
+    },
+    {
+      "type": "choice",
+      "question": "Your room ___ right now.",
+      "options": [
+        "is being cleaned",
+        "is cleaned",
+        "is cleaning"
+      ],
+      "answer": 0,
+      "explanation": "Probíhající děj → *is being* + 3. tvar."
+    },
+    {
+      "type": "choice",
+      "question": "When we arrived, the food ___ already ___.",
+      "options": [
+        "had … been eaten",
+        "has … been eaten",
+        "was … eating"
+      ],
+      "answer": 0,
+      "explanation": "Předminulost → *had been* + 3. tvar."
+    },
+    {
+      "type": "choice",
+      "question": "This form must ___ in black ink.",
+      "options": [
+        "be completed",
+        "completed",
+        "been completed"
+      ],
+      "answer": 0,
+      "explanation": "Modální + *be* + 3. tvar."
+    },
+    {
+      "type": "input",
+      "question": "Převeď do pasiva (doplň dvě slova): They grow rice in China. → Rice ___ in China.",
+      "answers": [
+        "is grown"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: The Eiffel Tower ___ (build) in the 1880s. – dvě slova",
+      "answers": [
+        "was built"
+      ],
+      "explanation": "Minulost, jednotné číslo → *was built*."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: The winner will ___ (announce) at 8. – dvě slova",
+      "answers": [
+        "be announced"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„The window was broke by the ball.“ je správně.",
+      "answer": false,
+      "explanation": "3. tvar je *broken*."
+    },
+    {
+      "type": "truefalse",
+      "question": "V pasivu se původce děje uvádí předložkou *by*.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj čas s pasivním tvarem.",
+      "pairs": [
+        [
+          "present perfect",
+          "has been done"
+        ],
+        [
+          "past continuous",
+          "was being done"
+        ],
+        [
+          "future",
+          "will be done"
+        ],
+        [
+          "past perfect",
+          "had been done"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Kdy se v angličtině používá trpný rod?",
+      "answer": "Když je důležitější děj nebo výsledek než ten, kdo ho vykonal, nebo když původce neznáme. Častý je ve zprávách, odborných textech a popisech postupů."
+    },
+    {
+      "type": "open",
+      "question": "Jak se tvoří pasivum? Uveď příklad v present perfect.",
+      "answer": "Tvar slovesa *be* v potřebném čase + 3. tvar (příčestí minulé) významového slovesa. *The museum has been renovated.*"
+    }
+  ]
+}

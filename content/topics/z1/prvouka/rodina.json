@@ -1,0 +1,345 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rodina",
+  "title": "Moje rodina",
+  "emoji": "👨‍👩‍👧",
+  "explanations": [
+    {
+      "title": "Obrázkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Doma nejsi sám. Máš kolem sebe lidi, kteří tě mají rádi. Starají se o tebe, vaří ti, čtou ti pohádky."
+        },
+        {
+          "type": "text",
+          "text": "Těmto lidem říkáme rodina. Každá rodina je trochu jiná. Někde je víc dětí, někde bydlí i babička."
+        },
+        {
+          "type": "term",
+          "term": "Rodina",
+          "definition": "Lidé, kteří k sobě patří a mají se rádi. Často spolu bydlí.",
+          "example": "Máma, táta, já a moje sestra."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "👴",
+            "👵",
+            "👨",
+            "👩",
+            "👦",
+            "👧"
+          ],
+          "caption": "Rodina: dědeček, babička, táta, máma a děti"
+        },
+        {
+          "type": "heading",
+          "text": "Kdo je kdo"
+        },
+        {
+          "type": "term",
+          "term": "Rodiče",
+          "definition": "Máma a táta.",
+          "example": "Moji rodiče se jmenují Jana a Pavel."
+        },
+        {
+          "type": "term",
+          "term": "Sourozenci",
+          "definition": "Děti, které mají stejné rodiče. Kluk je **bratr**, holka je **sestra**.",
+          "example": "Můj bratr Jirka a moje sestra Ema."
+        },
+        {
+          "type": "term",
+          "term": "Prarodiče",
+          "definition": "Rodiče mojí mámy nebo mého táty. Babička a dědeček.",
+          "example": "Babička je maminka mé mámy."
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky a přečti si, kdo je kdo."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "👩 Maminka",
+                "back": "Moje máma."
+              },
+              {
+                "front": "👨 Tatínek",
+                "back": "Můj táta."
+              },
+              {
+                "front": "👦 Bratr",
+                "back": "Kluk, má stejné rodiče jako já."
+              },
+              {
+                "front": "👧 Sestra",
+                "back": "Holka, má stejné rodiče jako já."
+              },
+              {
+                "front": "👵 Babička",
+                "back": "Maminka mé mámy nebo táty."
+              },
+              {
+                "front": "👴 Dědeček",
+                "back": "Tatínek mé mámy nebo táty."
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kdo je maminka mé maminky?",
+          "answer": "Maminka mojí mámy je o generaci starší. Je to **babička**."
+        },
+        {
+          "type": "example",
+          "question": "Kdo je tatínek mého tatínka?",
+          "answer": "Tatínek mého táty je **dědeček**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Babička je jen maminka mé mámy.",
+          "right": "Babička je maminka mé mámy i maminka mého táty.",
+          "why": "Máš dvě babičky a dva dědečky: jedny od mámy, druhé od táty."
+        },
+        {
+          "type": "summary",
+          "text": "Rodina = lidé, kteří patří k sobě. Rodiče jsou máma a táta. Babička a dědeček jsou rodiče mých rodičů."
+        }
+      ]
+    },
+    {
+      "title": "Kdo pomáhá",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Doma je pořád co dělat. Uvařit, uklidit, vyprat, nakoupit. Kdyby to dělal jen jeden, byl by unavený."
+        },
+        {
+          "type": "text",
+          "text": "Proto si v rodině pomáháme. Každý udělá kousek. I ty."
+        },
+        {
+          "type": "term",
+          "term": "Rodina",
+          "definition": "Lidé, kteří k sobě patří a mají se rádi. Pomáhají si.",
+          "example": "Máma, táta, sourozenci, babička a dědeček."
+        },
+        {
+          "type": "term",
+          "term": "Domácí práce",
+          "definition": "Práce, která se dělá doma, aby byl pořádek a bylo co jíst.",
+          "example": "Vaření, úklid, praní, mytí nádobí."
+        },
+        {
+          "type": "heading",
+          "text": "Co můžu udělat já"
+        },
+        {
+          "type": "list",
+          "items": [
+            "uklidím si hračky 🧸",
+            "prostřu stůl 🍽️",
+            "zaliju kytku 🪴",
+            "odnesu svůj talíř 🍽️",
+            "pomůžu nést nákup 🛍️"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď, co rodině pomáhá a co ne."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Pomáhá ✅",
+              "Nepomáhá ❌"
+            ],
+            "items": [
+              {
+                "text": "uklidím hračky",
+                "group": 0
+              },
+              {
+                "text": "rozházím boty",
+                "group": 1
+              },
+              {
+                "text": "prostřu stůl",
+                "group": 0
+              },
+              {
+                "text": "křičím",
+                "group": 1
+              },
+              {
+                "text": "zaliju kytku",
+                "group": 0
+              },
+              {
+                "text": "nechám talíř na stole",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Od nejmladšího po nejstaršího"
+        },
+        {
+          "type": "text",
+          "text": "V rodině jsou lidé různě staří. Nejmladší je miminko. Pak děti. Pak rodiče. Nejstarší jsou babička a dědeček."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "miminko 👶",
+            "já 🧒",
+            "maminka 👩",
+            "babička 👵"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Máma vaří večeři. Jak jí můžeš pomoct?",
+          "answer": "Vaření je pro dospělé. Ale můžu **prostřít stůl** – dát talíře a příbory. Tak je večeře hotová dřív."
+        },
+        {
+          "type": "example",
+          "question": "Bráška má narozeniny. Co pro něj můžeš udělat?",
+          "answer": "Můžu mu **nakreslit obrázek** nebo dát dárek. A popřát mu všechno nejlepší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Doma pomáhají jen dospělí.",
+          "right": "Doma pomáhá každý, i děti.",
+          "why": "I malá práce pomůže. Když si uklidíš hračky, máma je uklízet nemusí."
+        },
+        {
+          "type": "summary",
+          "text": "V rodině si pomáháme. I děti mají doma svou práci: uklidit hračky, prostřít stůl, zalít kytku."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo je maminka mého tatínka?",
+      "options": [
+        "babička",
+        "sestra",
+        "teta"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo je tatínek mé maminky?",
+      "options": [
+        "dědeček",
+        "bratr",
+        "strýc"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kluk se stejnými rodiči jako já je můj…",
+      "options": [
+        "bratr",
+        "děda",
+        "táta"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Holka se stejnými rodiči jako já je moje ………",
+      "answers": [
+        "sestra"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Doma pomáhají jen dospělí.",
+      "answer": false,
+      "explanation": "Pomáhá každý. I děti."
+    },
+    {
+      "type": "truefalse",
+      "question": "Babička je starší než maminka.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmladšího.",
+      "items": [
+        "miminko",
+        "já",
+        "maminka",
+        "babička"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "máma",
+          "maminka"
+        ],
+        [
+          "táta",
+          "tatínek"
+        ],
+        [
+          "děda",
+          "dědeček"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak můžu doma pomoct?",
+      "options": [
+        "uklidím si hračky",
+        "rozházím boty",
+        "křičím"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Když má někdo narozeniny, můžeme mu dát dárek.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Kdo patří do tvé rodiny?",
+      "answer": "Například máma, táta, sourozenci, babička a dědeček."
+    },
+    {
+      "type": "open",
+      "question": "Jak pomáháš doma?",
+      "answer": "Uklízím si hračky, prostírám stůl nebo zalévám květiny."
+    }
+  ]
+}

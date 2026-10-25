@@ -1,0 +1,410 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "shoda-a-zajmena",
+  "title": "Shoda přísudku a tvary zájmen",
+  "emoji": "🔗",
+  "explanations": [
+    {
+      "title": "Kdo to dělá?",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "*Psi štěkali*, *děti si hrály*, *kuřata pobíhala*. Koncovka slovesa v minulém čase se mění podle toho, kdo děj dělá. Ucho rozdíl neslyší – musíš ho poznat hlavou."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Shoda je jeden z nejjistějších bodů v maturitním testu – a jedna z nejčastějších chyb v písemné práci."
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo nebo co ve větě děj dělá. Ptáme se *kdo? co?*",
+          "example": "*Psi* štěkali."
+        },
+        {
+          "type": "term",
+          "term": "Přísudek",
+          "definition": "Co podmět dělá.",
+          "example": "Psi *štěkali*."
+        },
+        {
+          "type": "term",
+          "term": "Příčestí minulé",
+          "definition": "Tvar slovesa v minulém čase, který končí na *-l, -li, -ly, -la*.",
+          "example": "*štěkal, štěkali, štěkaly, štěkala*"
+        },
+        {
+          "type": "term",
+          "term": "Rod",
+          "definition": "Mužský životný (lidé, zvířata), mužský neživotný (věci), ženský, střední.",
+          "example": "*kůň* m. živ., *vlak* m. neživ., *žena* ž., *kuře* stř."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi přísudek s příčestím: *Psi štěkal_.*",
+            "Zeptej se *kdo štěkal?* → podmět *psi*.",
+            "Urči rod: *pes* → mužský životný.",
+            "Přiřaď koncovku: m. živ. **-i**, m. neživ. a ženský **-y**, střední **-a**.",
+            "Víc podmětů? Je mezi nimi m. životný → **-i**. Jinak ženský / m. neživ. → **-y**. Jen střední → **-a**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zařaď věty podle koncovky. Pozor: *děti* jsou v množném čísle rodu ženského."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "-i",
+              "-y",
+              "-a"
+            ],
+            "items": [
+              {
+                "text": "Psi štěkal_.",
+                "group": 0
+              },
+              {
+                "text": "Stroje jezdil_.",
+                "group": 1
+              },
+              {
+                "text": "Děti si hrál_.",
+                "group": 1
+              },
+              {
+                "text": "Kuřata pobíhal_.",
+                "group": 2
+              },
+              {
+                "text": "Dívky a chlapci běžel_.",
+                "group": 0
+              },
+              {
+                "text": "Vlaky a tramvaje stál_.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Ženy a muži zpíval_.*",
+          "answer": "Podměty: *ženy* (ženský), *muži* (m. životný). Je tam mužský životný → má přednost → **zpívali**."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Ty a tvoje sestra jste přišl_ pozdě.* (ty = chlapec)",
+          "answer": "*Ty* je chlapec → mužský životný. Má přednost před *sestrou* → **přišli**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Děti si hráli na zahradě.",
+          "right": "Děti si hrály na zahradě.",
+          "why": "*Dítě* je střední, ale *děti* se v množném čísle skloňují jako ženský rod (vzor kost). Proto -y."
+        },
+        {
+          "type": "summary",
+          "text": "Najdi podmět, urči rod: m. živ. -i, m. neživ. a ženský -y, střední -a. Mužský životný vždy vyhrává. Děti = ženský rod → -y."
+        }
+      ]
+    },
+    {
+      "title": "Pádová mapa zájmen",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "*Viděl jsem ji* × *Dal jsem jí dárek.* *Vzal jsem si deštník s sebou* × *Trhl sebou.* Malé rozdíly v psaní, velký rozdíl ve významu. Testy je milují."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Naučíš se vybrat správný tvar podle pádové otázky – rychle a s jistotou."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zájmeno",
+          "definition": "Slovo, které zastupuje jméno, abychom ho neopakovali.",
+          "example": "*já, ona, se*"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar podle otázky. 2. pád: koho? čeho? 3.: komu? 4.: koho? co? 6.: o kom? 7.: s kým? čím?",
+          "example": "*vidím ji* (4. pád – koho?)"
+        },
+        {
+          "type": "term",
+          "term": "Zvratné zájmeno",
+          "definition": "Zájmeno *se/sebe*, které odkazuje zpět k podmětu.",
+          "example": "*Vidí sebe v zrcadle.*"
+        },
+        {
+          "type": "heading",
+          "text": "Mapa"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zájmeno",
+            "2. a 4. pád",
+            "3., 6. a 7. pád"
+          ],
+          "rows": [
+            [
+              "já",
+              "mě / mne",
+              "mně (3., 6.); mnou (7.)"
+            ],
+            [
+              "ona",
+              "jí (2.), ji (4.)",
+              "jí (3., 7.); po předložce ní"
+            ],
+            [
+              "se",
+              "sebe",
+              "sobě (3., 6.), sebou (7.)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak vybrat"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Polož pádovou otázku od slovesa: *viděl* **koho?** → 4. pád → **ji**.",
+            "*podal ruku* **komu?** → 3. pád → **jí**.",
+            "*s sebou* = mít něco u sebe, vzít s sebou (předložka *s* + 7. pád). *Sebou* bez předložky = pohyb těla: *trhl sebou, hodil sebou*.",
+            "*mne/mě* = 2. a 4. pád (bez mne, vidí mě); *mně* = 3. a 6. pád."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Ke každé větě si nahlas polož pádovou otázku."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Viděl jsem ",
+                "after": " v parku.",
+                "options": [
+                  "ji",
+                  "jí"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Podal jsem ",
+                "after": " ruku.",
+                "options": [
+                  "ji",
+                  "jí"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Vezmi si deštník ",
+                "after": ".",
+                "options": [
+                  "sebou",
+                  "s sebou"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Trhl ",
+                "after": " leknutím.",
+                "options": [
+                  "sebou",
+                  "s sebou"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Přišel bez ",
+                "after": ".",
+                "options": [
+                  "mne",
+                  "mně"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "*Pozdravil jsem ji*, nebo *jí*?",
+          "answer": "Pozdravil **koho?** → 4. pád → **ji** (krátké). Pozor, jde o koho, ne komu."
+        },
+        {
+          "type": "example",
+          "question": "*Poděkoval jsem ji*, nebo *jí*?",
+          "answer": "Poděkoval **komu?** → 3. pád → **jí** (dlouhé)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vzal psa sebou.",
+          "right": "Vzal psa s sebou.",
+          "why": "Jde o to, že psa má u sebe – předložka *s* + *sebou*. *Sebou* bez předložky znamená pohyb vlastního těla (*mrskl sebou*)."
+        },
+        {
+          "type": "summary",
+          "text": "ji = koho? co? (4. pád); jí = komu? s kým? (3., 7. pád). s sebou = mít u sebe; sebou = pohyb těla. mně = komu? o kom?; mě/mne = koho?"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Doplň: „Myšlenky a nápady se rodil_.“",
+      "options": [
+        "i",
+        "y",
+        "a"
+      ],
+      "answer": 1,
+      "explanation": "Neživotný + ženský rod → -y."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: „Koně se plašil_.“",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 0,
+      "explanation": "Kůň je mužský životný → -i."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Děti si hráli na zahradě.“ je správně.",
+      "answer": false,
+      "explanation": "Děti (pl.) se pojí s -y: hrály."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: „Města byl_ zničena.“",
+      "options": [
+        "i",
+        "y",
+        "a"
+      ],
+      "answer": 2,
+      "explanation": "Střední rod v množném čísle → -a."
+    },
+    {
+      "type": "choice",
+      "question": "Ve které větě je správně jí?",
+      "options": [
+        "Pozdravil jsem jí.",
+        "Poděkoval jsem jí.",
+        "Potkal jsem jí."
+      ],
+      "answer": 1,
+      "explanation": "Poděkovat komu → 3. pád jí."
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je správně?",
+      "options": [
+        "Vzal psa sebou.",
+        "Vzal psa s sebou.",
+        "Vzal psa se sebou."
+      ],
+      "answer": 1,
+      "explanation": "„S sebou“ = mít u sebe, vzít s sebou."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Mluvili o mně.“ je správně.",
+      "answer": true,
+      "explanation": "6. pád (o kom) = mně."
+    },
+    {
+      "type": "input",
+      "question": "Doplň koncovku: „Ty a tvoje sestra jste přišl_ pozdě.“ (ty = chlapec)",
+      "answers": [
+        "i"
+      ],
+      "explanation": "Je tam mužský životný (ty = chlapec) → -i."
+    },
+    {
+      "type": "match",
+      "question": "Spoj podmět s koncovkou příčestí.",
+      "pairs": [
+        [
+          "ženy",
+          "byly"
+        ],
+        [
+          "muži",
+          "byli"
+        ],
+        [
+          "kuřata",
+          "byla"
+        ],
+        [
+          "stoly",
+          "byly"
+        ]
+      ],
+      "explanation": "Rod a životnost podmětu."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: „Vlaky jezdil_ načas.“",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 1,
+      "explanation": "Vlak je mužský neživotný → -y."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli pravidlo shody přísudku s několikanásobným podmětem.",
+      "answer": "Je-li v několikanásobném podmětu aspoň jedno podstatné jméno rodu mužského životného, píšeme -i. Jinak, je-li tam rod mužský neživotný nebo ženský, píšeme -y; jsou-li všechna střední rodu, -a."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi „ji“ a „jí“?",
+      "answer": "Ji je 4. pád zájmena ona (vidím ji). Jí je 3. a 7. pád (dám jí, šel s ní – po předložce ní). Jí je také tvar slovesa jíst."
+    }
+  ]
+}

@@ -1,0 +1,384 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kuzelosecky",
+  "title": "Kuželosečky",
+  "emoji": "🥚",
+  "explanations": [
+    {
+      "title": "Provázkem a baterkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Posviť baterkou kolmo na zeď – světlo tvoří kruh. Nakloň ji – kruh se protáhne do elipsy. Nakloň ještě víc – okraj světla se otevře do paraboly nebo hyperboly. Všechny tyto křivky jsou **řezy kužele** (kužel světla řízneš rovinou zdi). Proto kuželosečky."
+        },
+        {
+          "type": "text",
+          "text": "Planety obíhají po elipsách, satelitní talíř má tvar paraboly (soustředí signál do jednoho bodu), hozený míč letí po parabole."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Množina bodů",
+          "definition": "Všechny body, které splňují nějaké pravidlo. Každá kuželosečka je definovaná pravidlem o vzdálenostech."
+        },
+        {
+          "type": "term",
+          "term": "Ohnisko",
+          "definition": "Význačný bod uvnitř křivky. U paraboly do něj talíř soustředí signál, u elipsy kolem Slunce je Slunce v jednom ohnisku."
+        },
+        {
+          "type": "heading",
+          "text": "Kružnice: provázek na kolíku"
+        },
+        {
+          "type": "term",
+          "term": "Kružnice",
+          "definition": "Body, které mají od středu S stejnou vzdálenost r (poloměr). Přivaž provázek ke kolíku a obejdi ho dokola.",
+          "example": "Střed [0; 0], r = 5: rovnice x² + y² = 25."
+        },
+        {
+          "type": "text",
+          "text": "Proč x² + y² = r²? Bod [x; y], počátek a pata kolmice tvoří pravoúhlý trojúhelník s odvěsnami x, y a přeponou r. Nastav 3 a 4: přepona je 5. Bod [3; 4] tedy leží na kružnici x² + y² = 25."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 3,
+            "b": 4
+          }
+        },
+        {
+          "type": "text",
+          "text": "Posunutý střed S[m; n]: (x − m)² + (y − n)² = r². Pozor na znaménka: (y + 3)² znamená n = −3."
+        },
+        {
+          "type": "example",
+          "question": "Kde je střed a jaký je poloměr (x − 2)² + (y + 3)² = 16?",
+          "answer": "m = 2, n = −3, r² = 16. Střed **[2; −3]**, **r = 4**."
+        },
+        {
+          "type": "heading",
+          "text": "Elipsa: provázek na dvou kolících"
+        },
+        {
+          "type": "term",
+          "term": "Elipsa",
+          "definition": "Body, jejichž **součet** vzdáleností od dvou ohnisek je stálý. Zatluč dva kolíky, přivaž k nim volný provázek, napni ho tužkou a obkresli.",
+          "example": "x²/25 + y²/9 = 1"
+        },
+        {
+          "type": "term",
+          "term": "Poloosy a, b a výstřednost e",
+          "definition": "a = hlavní poloosa (polovina nejdelšího průměru), b = vedlejší (polovina nejkratšího). Výstřednost e = vzdálenost ohniska od středu, e² = a² − b².",
+          "example": "x²/25 + y²/9 = 1: a = 5, b = 3, e = 4."
+        },
+        {
+          "type": "heading",
+          "text": "Hyperbola a parabola"
+        },
+        {
+          "type": "term",
+          "term": "Hyperbola",
+          "definition": "Body se stálou absolutní hodnotou **rozdílu** vzdáleností od dvou ohnisek. Má dvě oddělené větve.",
+          "example": "x²/9 − y²/4 = 1 (minus místo plus)."
+        },
+        {
+          "type": "term",
+          "term": "Parabola",
+          "definition": "Body, které jsou **stejně daleko** od ohniska a od pevné přímky (řídicí přímky).",
+          "example": "y² = 4x, nebo y = x² jako graf funkce."
+        },
+        {
+          "type": "text",
+          "text": "Parabolu znáš i z grafů. Hýbej koeficientem a – parabola se zužuje a rozšiřuje, ale pořád je to parabola."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": 0,
+            "c": 0
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "(x − 2)² + (y + 3)² = 16 má střed [−2; 3].",
+          "right": "Střed je [2; −3].",
+          "why": "Rovnice obsahuje x − m a y − n. Pro x − 2 je m = 2; y + 3 = y − (−3), takže n = −3. Znaménka v závorce se otáčejí."
+        },
+        {
+          "type": "summary",
+          "text": "Kružnice: stejná vzdálenost od středu. Elipsa: stálý součet vzdáleností od dvou ohnisek. Hyperbola: stálý rozdíl. Parabola: stejně daleko od ohniska a řídicí přímky."
+        }
+      ]
+    },
+    {
+      "title": "Rovnicemi",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Počítač kreslí kružnice a elipsy podle rovnic. Navigace podle rovnic počítá, jestli trasa protne zakázanou zónu. Z rovnice umíš vyčíst střed, velikost i tvar křivky."
+        },
+        {
+          "type": "text",
+          "text": "Klíčová dovednost: poznat podle rovnice, o jakou křivku jde, a převést ji do tvaru, ze kterého všechno přečteš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kuželosečka",
+          "definition": "Křivka, která vznikne řezem kužele rovinou: kružnice, elipsa, parabola, hyperbola."
+        },
+        {
+          "type": "term",
+          "term": "Středová rovnice",
+          "definition": "Tvar, ze kterého přečteš střed a rozměry přímo.",
+          "example": "(x − m)² + (y − n)² = r² – kružnice se středem S[m; n] a poloměrem r."
+        },
+        {
+          "type": "term",
+          "term": "Doplnění na čtverec",
+          "definition": "Úprava x² + px na (x + p/2)² − (p/2)², podle vzorce (a + b)² = a² + 2ab + b².",
+          "example": "x² − 6x = (x − 3)² − 9."
+        },
+        {
+          "type": "heading",
+          "text": "Poznávací tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rovnice",
+            "Křivka",
+            "Co přečteš"
+          ],
+          "rows": [
+            [
+              "(x − m)² + (y − n)² = r²",
+              "kružnice",
+              "střed [m; n], poloměr r"
+            ],
+            [
+              "x²/a² + y²/b² = 1",
+              "elipsa",
+              "poloosy a, b; e = √(a² − b²)"
+            ],
+            [
+              "x²/a² − y²/b² = 1",
+              "hyperbola",
+              "poloosy a, b; e = √(a² + b²)"
+            ],
+            [
+              "y² = 2px nebo y = ax²",
+              "parabola",
+              "vrchol v počátku"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup: obecná rovnice kružnice"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Seskup členy s x a členy s y.",
+            "Každou skupinu doplň na čtverec.",
+            "Čísla převeď na pravou stranu.",
+            "Přečti střed a poloměr."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči poloměr x² + y² − 6x + 8y = 0.",
+          "answer": "x² − 6x = (x − 3)² − 9, y² + 8y = (y + 4)² − 16. Tedy (x − 3)² + (y + 4)² − 25 = 0 → (x − 3)² + (y + 4)² = 25. Střed [3; −4], **r = 5**."
+        },
+        {
+          "type": "example",
+          "question": "Kružnice se středem [1; 1] prochází bodem [4; 5]. Poloměr?",
+          "answer": "r = vzdálenost středu a bodu = √((4 − 1)² + (5 − 1)²) = √(9 + 16) = **5**."
+        },
+        {
+          "type": "heading",
+          "text": "Elipsa"
+        },
+        {
+          "type": "text",
+          "text": "Definice: součet vzdáleností od ohnisek je stálý a rovná se 2a. Ohniska leží na hlavní ose ve vzdálenosti e od středu a platí a² = b² + e². Ověř: nastav b = 3, e = 4 – přepona vyjde a = 5."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 3,
+            "b": 4
+          }
+        },
+        {
+          "type": "example",
+          "question": "Elipsa x²/25 + y²/9 = 1. Urči a, b, e.",
+          "answer": "a² = 25 → **a = 5**, b² = 9 → b = 3. e = √(25 − 9) = √16 = **4**."
+        },
+        {
+          "type": "heading",
+          "text": "Bod a přímka vůči kružnici"
+        },
+        {
+          "type": "text",
+          "text": "Bod leží na kružnici, když po dosazení platí rovnost: [3; 4] a x² + y² = 25 → 9 + 16 = 25 ✓. Přímka je **tečna**, když má s kružnicí jediný společný bod: y = 5 a x² + y² = 25 → x² = 0, jen bod [0; 5]. Dva společné body = **sečna**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "U elipsy x²/25 + y²/9 = 1 je e = √(25 + 9).",
+          "right": "e = √(25 − 9) = 4",
+          "why": "U elipsy je ohnisko uvnitř, takže e < a: e² = a² − b². Plus patří k hyperbole, kde jsou ohniska dál než vrcholy."
+        },
+        {
+          "type": "summary",
+          "text": "Kružnice (x − m)² + (y − n)² = r², obecnou rovnici doplň na čtverec. Elipsa x²/a² + y²/b² = 1, e² = a² − b². Hyperbola má mezi zlomky minus. Parabola má jen jednu proměnnou na druhou."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "x² + y² = 25. Poloměr r =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Střed kružnice (x − 2)² + (y + 3)² = 16:",
+      "options": [
+        "[2; −3]",
+        "[−2; 3]",
+        "[2; 3]",
+        "[4; −3]"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "x² + y² − 6x + 8y = 0. Poloměr r =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Elipsa x²/25 + y²/9 = 1. Hlavní poloosa a =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Elipsa x²/25 + y²/9 = 1. Výstřednost e =",
+      "answers": [
+        "4"
+      ],
+      "explanation": "√(25 − 9)"
+    },
+    {
+      "type": "truefalse",
+      "question": "Elipsa je množina bodů se stálým součtem vzdáleností od dvou ohnisek.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Množina bodů se stálou absolutní hodnotou rozdílu vzdáleností od dvou ohnisek je:",
+      "options": [
+        "hyperbola",
+        "elipsa",
+        "parabola",
+        "kružnice"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Body stejně vzdálené od ohniska a řídicí přímky tvoří:",
+      "options": [
+        "parabolu",
+        "hyperbolu",
+        "elipsu",
+        "kružnici"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Bod [3; 4] leží na kružnici x² + y² = 25.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Přímka y = 5 a kružnice x² + y² = 25 jsou:",
+      "options": [
+        "tečna a kružnice",
+        "sečna a kružnice",
+        "nemají společný bod"
+      ],
+      "answer": 0,
+      "explanation": "Jediný společný bod [0; 5]."
+    },
+    {
+      "type": "input",
+      "question": "Kružnice se středem [1; 1] prochází bodem [4; 5]. r =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj rovnici s křivkou.",
+      "pairs": [
+        [
+          "x² + y² = 4",
+          "kružnice"
+        ],
+        [
+          "x²/9 + y²/4 = 1",
+          "elipsa"
+        ],
+        [
+          "x²/9 − y²/4 = 1",
+          "hyperbola"
+        ],
+        [
+          "y² = 4x",
+          "parabola"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Definuj elipsu a popiš její prvky.",
+      "answer": "Elipsa je množina bodů, jejichž součet vzdáleností od dvou ohnisek je stálý (2a). Má střed, hlavní poloosu a, vedlejší b a výstřednost e = √(a² − b²)."
+    },
+    {
+      "type": "open",
+      "question": "Jak z obecné rovnice kružnice zjistíš střed a poloměr?",
+      "answer": "Doplním členy s x a s y na čtverec a převedu na tvar (x − m)² + (y − n)² = r². Střed je S[m; n], poloměr r."
+    }
+  ]
+}

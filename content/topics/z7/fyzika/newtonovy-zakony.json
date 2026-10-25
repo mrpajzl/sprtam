@@ -1,0 +1,326 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "newtonovy-zakony",
+  "title": "Newtonovy zákony",
+  "emoji": "🚌",
+  "explanations": [
+    {
+      "title": "V autobuse",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Stojíš v autobuse a ten prudce zabrzdí. Najednou letíš dopředu, i když tě nikdo nestrčil. Když se rozjede, padáš dozadu. Proč?"
+        },
+        {
+          "type": "text",
+          "text": "Odpověď dal před více než 300 lety Isaac Newton. Popsal tři pravidla, podle kterých se pohybuje všechno – od míče po rakety."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla",
+          "definition": "Působení jednoho tělesa na druhé (tlačení, tahání). Jednotka newton (N).",
+          "example": "Motor autobusu tlačí autobus dopředu."
+        },
+        {
+          "type": "term",
+          "term": "Výsledná síla",
+          "definition": "Co zbude, když sečteš všechny síly, které na těleso působí (stejné směry sčítáš, opačné odečítáš).",
+          "example": "Když tě dva táhnou stejně silně na opačné strany, výsledná síla je nula."
+        },
+        {
+          "type": "term",
+          "term": "Setrvačnost",
+          "definition": "Vlastnost každého tělesa: „chce“ zůstat v tom, co právě dělá. Když stojí, chce stát. Když jede, chce jet dál stejně rychle a rovně.",
+          "example": "Proto tě v brzdícím autobuse to „táhne“ dopředu – tvé tělo chce jet dál."
+        },
+        {
+          "type": "heading",
+          "text": "1. zákon: setrvačnost"
+        },
+        {
+          "type": "text",
+          "text": "Když na těleso nepůsobí žádná výsledná síla, zůstane **v klidu**, nebo se bude pohybovat **stále stejně rychle po přímce**."
+        },
+        {
+          "type": "example",
+          "question": "Autobus prudce zabrzdí. Kam se nakloníš a proč?",
+          "answer": "Autobus zpomalí, ale tvé tělo setrvačností jede dál stejnou rychlostí. Nakloníš se **dopředu**. Proto se v autě poutáme."
+        },
+        {
+          "type": "heading",
+          "text": "2. zákon: síla mění pohyb"
+        },
+        {
+          "type": "text",
+          "text": "Chceš-li pohyb změnit (rozjet, zrychlit, zabrzdit), potřebuješ sílu. Čím **větší síla**, tím rychleji se pohyb změní. Čím **větší hmotnost**, tím je to těžší."
+        },
+        {
+          "type": "example",
+          "question": "Stejnou silou strčíš do prázdného a do plného nákupního vozíku. Který se rozjede rychleji?",
+          "answer": "Prázdný – má **menší hmotnost**. Stejná síla změní jeho pohyb víc."
+        },
+        {
+          "type": "heading",
+          "text": "3. zákon: akce a reakce"
+        },
+        {
+          "type": "text",
+          "text": "Když strčíš do kamaráda na bruslích, odjedete **oba** – on dopředu, ty dozadu. Ty jsi působil na něj a on současně na tebe stejně velkou silou opačným směrem."
+        },
+        {
+          "type": "example",
+          "question": "Proč odskočí puška do ramene, když vystřelí?",
+          "answer": "Puška tlačí kulku dopředu (**akce**). Kulka tlačí pušku stejně velkou silou dozadu (**reakce**) – to je zpětný ráz."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kolo po přestání šlapání zastaví, protože mu „dojde setrvačnost“.",
+          "right": "Kolo zastaví, protože ho brzdí tření a odpor vzduchu.",
+          "why": "Setrvačnost nedochází. Bez brzdících sil by kolo jelo pořád dál."
+        },
+        {
+          "type": "summary",
+          "text": "1. Bez výsledné síly se pohyb nemění (setrvačnost). 2. Síla mění pohyb – víc u lehčích těles. 3. Každá akce má stejně velkou opačnou reakci."
+        }
+      ]
+    },
+    {
+      "title": "Tři zákony",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Isaac Newton byl anglický fyzik. V roce 1687 vydal knihu, ve které shrnul pohyb do **tří zákonů**. Platí na hřišti, v autě i ve vesmíru. Projdeme je jeden po druhém i s tím, jak se dají zapsat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Výsledná síla `F`",
+          "definition": "Jedna síla, která nahradí všechny síly působící na těleso (stejný směr sčítáš, opačný odečítáš). V newtonech (N).",
+          "example": "Táhnu 30 N dopředu, tření brzdí 10 N dozadu → výsledná síla 20 N dopředu."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoměrný přímočarý pohyb",
+          "definition": "Pohyb po přímce stále stejnou rychlostí.",
+          "example": "Hokejový puk klouzající po ledu."
+        },
+        {
+          "type": "term",
+          "term": "Zrychlení `a`",
+          "definition": "Jak rychle se mění rychlost. Velké zrychlení = rychlost se mění rychle (prudký rozjezd nebo prudké brzdění).",
+          "example": "Sportovní auto má větší zrychlení než naložený náklaďák."
+        },
+        {
+          "type": "heading",
+          "text": "Tři zákony na kartách"
+        },
+        {
+          "type": "text",
+          "text": "Přečti si název zákona a zkus ho říct vlastními slovy. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "1. zákon setrvačnosti",
+                "back": "Bez výsledné síly těleso zůstane v klidu nebo v rovnoměrném přímočarém pohybu."
+              },
+              {
+                "front": "2. zákon síly",
+                "back": "Čím větší síla a menší hmotnost, tím větší zrychlení: F = m · a."
+              },
+              {
+                "front": "3. zákon akce a reakce",
+                "back": "Dvě tělesa na sebe působí stejně velkými silami opačného směru."
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Druhý zákon jako vzorec"
+        },
+        {
+          "type": "text",
+          "text": "Zkušenost: silnější kopnutí → míč rychleji zrychlí. Těžší míč → zrychlí méně. Zapisujeme to `F = m · a` (síla = hmotnost · zrychlení)."
+        },
+        {
+          "type": "heading",
+          "text": "Akce a reakce – pozor"
+        },
+        {
+          "type": "text",
+          "text": "Akce a reakce působí vždy na **dvě různá tělesa**. Plavec tlačí na stěnu bazénu, stěna tlačí na plavce. Proto se navzájem neruší – každá pohne něčím jiným."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zákon",
+            "Příklad ze života"
+          ],
+          "rows": [
+            [
+              "setrvačnost",
+              "ubrus jde rychle vytrhnout zpod hrnku, hrnek zůstane stát"
+            ],
+            [
+              "zákon síly",
+              "silnější kopnutí → rychlejší míč"
+            ],
+            [
+              "akce a reakce",
+              "plavec se odrazí od stěny; raketa vyhání plyny dolů a letí nahoru"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč letí raketa vzhůru, i když se nemá od čeho odrazit?",
+          "answer": "Motor vyhání plyny velkou silou **dolů** (akce). Plyny tlačí raketu stejně velkou silou **nahoru** (reakce)."
+        },
+        {
+          "type": "example",
+          "question": "Proč jde rychlým trhnutím vytáhnout ubrus a nádobí zůstane stát?",
+          "answer": "Nádobí díky **setrvačnosti** zůstává v klidu. Trhnutí je tak krátké, že tření nestihne nádobí rozpohybovat."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Akce a reakce se vyruší, protože jsou stejně velké a opačné.",
+          "right": "Neruší se, protože každá působí na jiné těleso.",
+          "why": "Vyrušit se můžou jen síly, které působí na **stejné** těleso. Akce působí na stěnu, reakce na plavce."
+        },
+        {
+          "type": "summary",
+          "text": "Setrvačnost (bez síly se pohyb nemění), zákon síly (F = m · a), akce a reakce (stejně velké, opačné, každá na jiné těleso)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Autobus prudce zabrzdí. Kam se nakloní cestující?",
+      "options": [
+        "dopředu",
+        "dozadu",
+        "do strany",
+        "nikam"
+      ],
+      "answer": 0,
+      "explanation": "Setrvačností pokračují v pohybu."
+    },
+    {
+      "type": "choice",
+      "question": "Který zákon vysvětluje zpětný ráz pušky?",
+      "options": [
+        "zákon akce a reakce",
+        "zákon setrvačnosti",
+        "zákon síly",
+        "Archimédův zákon"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Podle zákona akce a reakce jsou obě síly stejně velké a opačného směru.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Síly akce a reakce se navzájem ruší, protože působí na stejné těleso.",
+      "answer": false,
+      "explanation": "Každá působí na jiné těleso, proto se neruší."
+    },
+    {
+      "type": "choice",
+      "question": "Proč se v autě poutáme?",
+      "options": [
+        "kvůli setrvačnosti při nárazu",
+        "kvůli tření",
+        "kvůli gravitaci",
+        "kvůli atmosférickému tlaku"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Stejnou silou strčíš do prázdného a do plného vozíku. Který víc zrychlí?",
+      "options": [
+        "prázdný",
+        "plný",
+        "oba stejně"
+      ],
+      "answer": 0,
+      "explanation": "Menší hmotnost = větší zrychlení."
+    },
+    {
+      "type": "match",
+      "question": "Spoj zákon s příkladem.",
+      "pairs": [
+        [
+          "setrvačnost",
+          "ubrus se dá vytrhnout zpod hrnku"
+        ],
+        [
+          "akce a reakce",
+          "odraz plavce od stěny"
+        ],
+        [
+          "zákon síly",
+          "silnější kopnutí, rychlejší míč"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik pohybových zákonů formuloval Isaac Newton?",
+      "answers": [
+        "3",
+        "tři"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Těleso v klidu zůstane v klidu, pokud na něj nepůsobí výsledná síla.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Proč kolo po přestání šlapání nakonec zastaví?",
+      "options": [
+        "brzdí ho tření a odpor vzduchu",
+        "skončí setrvačnost",
+        "Země ho přitahuje dozadu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli zákon setrvačnosti na příkladu.",
+      "answer": "Těleso zůstává v klidu nebo v rovnoměrném přímočarém pohybu, dokud na něj nepůsobí síla. Při brzdění autobusu se cestující nakloní dopředu."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli zákon akce a reakce na příkladu.",
+      "answer": "Když jedno těleso působí silou na druhé, druhé působí na první stejně velkou opačnou silou. Plavec se odrazí od stěny bazénu a stěna ho odtlačí."
+    }
+  ]
+}

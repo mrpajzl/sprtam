@@ -1,0 +1,426 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "much-many-few-little",
+  "title": "Much, many, a few, a little",
+  "emoji": "🧮",
+  "explanations": [
+    {
+      "title": "Spočítám to?",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jablka v míse spočítáš: jedno, dvě, tři. Ale vodu ve sklenici nespočítáš – nemůžeš říct „tři vody“. Musíš říct „trochu vody“ nebo „hodně vody“."
+        },
+        {
+          "type": "text",
+          "text": "Angličtina tohle rozlišuje velmi přísně. Podle toho, jestli věc jde spočítat, vybíráš slova pro „hodně“ a „málo“: **many / much**, **a few / a little**. Hodí se v obchodě, v kuchyni i při otázce „Kolik?“."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Slovo, které pojmenuje věc, osobu, zvíře nebo látku.",
+          "example": "apple (jablko), water (voda), friend (kamarád)"
+        },
+        {
+          "type": "term",
+          "term": "Počitatelné podstatné jméno",
+          "definition": "Věc, kterou můžeš spočítat po kusech. Má množné číslo (obvykle s *-s*).",
+          "example": "an apple – three apples, a car – many cars"
+        },
+        {
+          "type": "term",
+          "term": "Nepočitatelné podstatné jméno",
+          "definition": "Látka nebo něco, co nespočítáš po kusech. Nemá množné číslo a nedáš před něj *a*.",
+          "example": "water, milk, money, time, traffic"
+        },
+        {
+          "type": "term",
+          "term": "Množné číslo",
+          "definition": "Tvar slova pro víc kusů.",
+          "example": "book → books, child → children"
+        },
+        {
+          "type": "heading",
+          "text": "Dvě krabice"
+        },
+        {
+          "type": "text",
+          "text": "Představ si dvě krabice. Do jedné dáváš věci, které jdou spočítat. Do druhé ty, které ne. Zkus to."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "spočítám (počitatelné)",
+              "nespočítám (nepočitatelné)"
+            ],
+            "items": [
+              {
+                "text": "apples",
+                "group": 0
+              },
+              {
+                "text": "students",
+                "group": 0
+              },
+              {
+                "text": "chairs",
+                "group": 0
+              },
+              {
+                "text": "minutes",
+                "group": 0
+              },
+              {
+                "text": "milk",
+                "group": 1
+              },
+              {
+                "text": "money",
+                "group": 1
+              },
+              {
+                "text": "time",
+                "group": 1
+              },
+              {
+                "text": "water",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Pozor: *money* (peníze) je v angličtině nepočitatelné, i když mince spočítat jdou. Spočítat jdou *coins* (mince), ale *money* ne."
+        },
+        {
+          "type": "heading",
+          "text": "Slova pro každou krabici"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "počitatelné",
+            "nepočitatelné"
+          ],
+          "rows": [
+            [
+              "hodně (hlavně otázka a zápor)",
+              "many cars",
+              "much traffic"
+            ],
+            [
+              "hodně (všude)",
+              "a lot of cars",
+              "a lot of traffic"
+            ],
+            [
+              "několik / trochu",
+              "a few minutes",
+              "a little patience"
+            ],
+            [
+              "Kolik?",
+              "How many?",
+              "How much?"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Zeptej se anglicky, kolik je ve třídě žáků.",
+          "answer": "Žáky spočítáš → *How many*: *How many students are in your class?*"
+        },
+        {
+          "type": "example",
+          "question": "Požádej o trochu mléka do čaje.",
+          "answer": "Mléko nespočítáš → *a little*: *Can I have a little milk in my tea?*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "How much chairs are there?",
+          "right": "How many chairs are there?",
+          "why": "Židle se dají spočítat → *many*. *Much* je jen pro nepočitatelné věci."
+        },
+        {
+          "type": "summary",
+          "text": "Spočítám → **many, a few, How many?** Nespočítám → **much, a little, How much?** *A lot of* jde s obojím."
+        }
+      ]
+    },
+    {
+      "title": "Málo, nebo pár?",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Mám **pár** kamarádů“ zní spokojeně. „Mám **málo** kamarádů“ zní smutně. Česky to rozlišíš slovem. Anglicky to rozliší jedno malé **a**: *a few* × *few*."
+        },
+        {
+          "type": "text",
+          "text": "Tady se naučíš všechna slova pro množství a jejich jemné rozdíly – od „žádný“ po „spousta“."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Počitatelné podstatné jméno",
+          "definition": "Věc, kterou spočítáš po kusech. Má množné číslo.",
+          "example": "friends, ideas, books"
+        },
+        {
+          "type": "term",
+          "term": "Nepočitatelné podstatné jméno",
+          "definition": "Látka nebo pojem, který po kusech nespočítáš. Nemá množné číslo.",
+          "example": "water, time, money, music"
+        },
+        {
+          "type": "term",
+          "term": "Kvantifikátor",
+          "definition": "Slovo, které říká, **kolik** něčeho je. Stojí před podstatným jménem.",
+          "example": "many, much, a few, a little, a lot of, no"
+        },
+        {
+          "type": "heading",
+          "text": "Pár × málo"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "počitatelné",
+            "nepočitatelné",
+            "pocit"
+          ],
+          "rows": [
+            [
+              "s a",
+              "a few friends (pár, několik)",
+              "a little time (trochu)",
+              "spokojený – něco tam je"
+            ],
+            [
+              "bez a",
+              "few friends (málo)",
+              "little time (málo)",
+              "smutný – skoro nic"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Od nejmenšího po největší"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "*no* – žádný: *There is no milk.*",
+            "*few / little* – málo (skoro nic): *I have little time.*",
+            "*a few / a little* – pár, trochu: *I've got a few ideas.*",
+            "*many / much* – hodně (hlavně v otázkách a záporech): *There isn't much water.*",
+            "*a lot of* – spousta (všude, s oběma druhy): *She has a lot of books.*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň. Nejdřív se rozhodni, jestli to jde spočítat."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "How",
+                "after": "money have you got?",
+                "options": [
+                  "much",
+                  "many"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "I've got",
+                "after": "ideas.",
+                "options": [
+                  "a few",
+                  "a little"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "There isn't",
+                "after": "water in the bottle.",
+                "options": [
+                  "much",
+                  "many"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Can I have",
+                "after": "sugar?",
+                "options": [
+                  "a little",
+                  "a few"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jaký je rozdíl: „She has few friends.“ × „She has a few friends.“?",
+          "answer": "*Few* = málo (je to smutné, skoro žádné). *A few* = pár, několik (má nějaké, je to v pohodě)."
+        },
+        {
+          "type": "example",
+          "question": "Zeptej se kamaráda, kolik má volného času.",
+          "answer": "Čas nespočítáš → *How much*: *How much free time have you got?*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "I need a few water.",
+          "right": "I need a little water.",
+          "why": "Voda je nepočitatelná, proto *a little*. *A few* je jen pro věci, které spočítáš."
+        },
+        {
+          "type": "summary",
+          "text": "**a few / a little** = pár, trochu (spokojeně). **few / little** = málo (smutně). Počitatelné: few, many. Nepočitatelné: little, much."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "How ___ money have you got?",
+      "options": [
+        "much",
+        "many",
+        "few"
+      ],
+      "answer": 0,
+      "explanation": "money je nepočitatelné."
+    },
+    {
+      "type": "choice",
+      "question": "How ___ students are in your class?",
+      "options": [
+        "many",
+        "much",
+        "little"
+      ],
+      "answer": 0,
+      "explanation": "students jsou počitatelní."
+    },
+    {
+      "type": "choice",
+      "question": "Can I have ___ milk in my tea?",
+      "options": [
+        "a little",
+        "a few",
+        "many"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Doplň: I’ve got ___ ideas. (několik, 2 slova)",
+      "answers": [
+        "a few"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„a lot of“ jde s počitatelnými i nepočitatelnými.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„How much chairs?“ je správně.",
+      "answer": false,
+      "explanation": "chairs jsou počitatelné → How many chairs?"
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "many",
+          "cars"
+        ],
+        [
+          "much",
+          "traffic"
+        ],
+        [
+          "a few",
+          "minutes"
+        ],
+        [
+          "a little",
+          "patience"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: There isn’t ___ water in the bottle.",
+      "answers": [
+        "much"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je rozdíl: „few friends“ × „a few friends“?",
+      "options": [
+        "few = málo (smutné), a few = několik",
+        "žádný",
+        "few = hodně"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího množství.",
+      "items": [
+        "no",
+        "a few",
+        "a lot of"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Kdy použiješ much a kdy many?",
+      "answer": "Many s počitatelnými podstatnými jmény v množném čísle (many books), much s nepočitatelnými (much water). Používají se hlavně v otázce a záporu."
+    },
+    {
+      "type": "open",
+      "question": "Zeptej se anglicky, kolik je hodin volného času a kolik kamarádů má spolužák.",
+      "answer": "How much free time have you got? How many friends have you got?"
+    }
+  ]
+}

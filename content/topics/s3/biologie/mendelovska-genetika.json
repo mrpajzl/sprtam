@@ -1,0 +1,373 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mendelovska-genetika",
+  "title": "Mendelovská dědičnost",
+  "emoji": "🫛",
+  "explanations": [
+    {
+      "title": "Kombinační čtverec",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč může mít hnědooký pár modrookého syna? Proč se nemoc „přeskočí“ o generaci? Odpověď našel augustiniánský mnich **Gregor Mendel** v Brně pokusy s hrachem. Výsledky publikoval v roce **1866**."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se jednoduchý nástroj – **kombinační čtverec** –, kterým spočítáš, jaké děti mohou mít rodiče a s jakou pravděpodobností."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Gen a alela",
+          "definition": "**Gen** je úsek DNA pro určitou vlastnost (barva semen). **Alela** je jeho konkrétní varianta (žlutá / zelená). Každý má od každého genu **dvě** alely – od matky a od otce."
+        },
+        {
+          "type": "term",
+          "term": "Dominantní a recesivní alela",
+          "definition": "**Dominantní** (velké písmeno, A) se projeví, i když je jen jedna. **Recesivní** (malé, a) se projeví jen ve dvojici aa."
+        },
+        {
+          "type": "term",
+          "term": "Homozygot a heterozygot",
+          "definition": "**Homozygot** má dvě stejné alely (AA nebo aa). **Heterozygot** má dvě **různé** (Aa)."
+        },
+        {
+          "type": "term",
+          "term": "Genotyp a fenotyp",
+          "definition": "**Genotyp** = jaké alely jedinec má (Aa). **Fenotyp** = jak vypadá (žlutá semena)."
+        },
+        {
+          "type": "term",
+          "term": "P, F1, F2",
+          "definition": "**P** = rodiče, **F1** = jejich potomci (1. generace), **F2** = potomci F1 mezi sebou."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s hrachem"
+        },
+        {
+          "type": "text",
+          "text": "Žlutá barva semen **A** je dominantní nad zelenou **a**. Mendel zkřížil čistě žlutý (AA) a čistě zelený (aa) hrách. Všichni potomci F1 byli **Aa** – žlutí. Pak zkřížil F1 × F1 (Aa × Aa):"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Každý rodič dá do gamety jednu alelu: A nebo a.",
+            "Napiš alely jednoho rodiče nahoru, druhého do řádků.",
+            "Do políček zapiš kombinace.",
+            "Spočítej genotypy a fenotypy."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "A",
+            "a"
+          ],
+          "rows": [
+            [
+              "A",
+              "AA",
+              "Aa"
+            ],
+            [
+              "a",
+              "Aa",
+              "aa"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si výsledek v grafu: kolik políček připadne na každý genotyp."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "podíl ze 4",
+            "items": [
+              {
+                "label": "AA",
+                "value": 1
+              },
+              {
+                "label": "Aa",
+                "value": 2
+              },
+              {
+                "label": "aa",
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Genotyp **1 : 2 : 1**. Fenotyp **3 : 1** – tři žluté (AA, Aa, Aa), jedno zelené (aa)."
+        },
+        {
+          "type": "example",
+          "question": "Kolik procent potomků bude aa při křížení Aa × aa?",
+          "answer": "Čtverec: Aa, Aa, aa, aa. Polovina políček je aa → **50 %**."
+        },
+        {
+          "type": "example",
+          "question": "Rodiče se skupinami A0 a B0. Jaké skupiny mohou mít děti?",
+          "answer": "Gamety: A nebo 0 × B nebo 0. Kombinace: **AB, A0 (skupina A), B0 (skupina B), 00 (skupina 0)**. Všechny čtyři skupiny, každá s pravděpodobností 25 %."
+        },
+        {
+          "type": "term",
+          "term": "Zpětné křížení",
+          "definition": "Křížení s **recesivním homozygotem** (aa). Prozradí, jestli je jedinec s dominantním fenotypem AA, nebo Aa.",
+          "example": "Když se mezi potomky objeví aa, musel být rodič Aa."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V F2 je poměr 3 : 1, takže ze 4 potomků budou vždy přesně 3 žlutí.",
+          "right": "Poměr 3 : 1 je **pravděpodobnost**. U malého počtu potomků se může lišit.",
+          "why": "Každý potomek je nový „hod kostkou“. Poměr se ukáže až u velkého počtu – Mendel počítal tisíce semen."
+        },
+        {
+          "type": "summary",
+          "text": "Aa × Aa: genotyp 1 : 2 : 1, fenotyp 3 : 1. Aa × aa: 50 % aa. Zpětné křížení s aa odhalí genotyp."
+        }
+      ]
+    },
+    {
+      "title": "Mendelovy zákony",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mendel nebyl jen šťastný zahradník. Vymyslel přesná pravidla, jak se vlastnosti dědí, a zapsal je čísly. Platí pro hrách, myši i lidi. Dnes je známe jako **Mendelovy zákony**."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme zákony, výjimky z „úplné dominance“ a dědičnost vázanou na pohlaví – proto jsou hemofilií a daltonismem postiženi hlavně muži."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Alela",
+          "definition": "Varianta genu. Každý jedinec má od genu dvě – od matky a od otce. **Dominantní** (A) se projeví vždy, **recesivní** (a) jen ve dvojici aa."
+        },
+        {
+          "type": "term",
+          "term": "Homozygot / heterozygot",
+          "definition": "Dvě stejné alely (AA, aa) / dvě různé (Aa)."
+        },
+        {
+          "type": "term",
+          "term": "Monohybrid a dihybrid",
+          "definition": "Křížení, kde sledujeme **jeden** gen (monohybrid) nebo **dva** geny najednou (dihybrid)."
+        },
+        {
+          "type": "term",
+          "term": "Gonozomy",
+          "definition": "Pohlavní chromozomy. Žena **XX**, muž **XY**. Chromozom Y je malý a většina genů z X na něm chybí."
+        },
+        {
+          "type": "heading",
+          "text": "Tři zákony"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**1. zákon – uniformita F1**: potomci dvou různých homozygotů (AA × aa) jsou všichni stejní (Aa).",
+            "**2. zákon – štěpení v F2**: kříženci F1 mezi sebou dají fenotyp **3 : 1** a genotyp **1 : 2 : 1**.",
+            "**3. zákon – volná kombinovatelnost**: alely různých genů se do gamet dostávají nezávisle. Dihybrid v F2: **9 : 3 : 3 : 1**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Když dominance není úplná"
+        },
+        {
+          "type": "text",
+          "text": "Ke každému typu dědičnosti si nejdřív vymysli příklad, pak otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "neúplná dominance",
+                "back": "heterozygot má přechodný fenotyp (růžová nocenka)"
+              },
+              {
+                "front": "kodominance",
+                "back": "projeví se obě alely (krevní skupina AB)"
+              },
+              {
+                "front": "gonozomální dědičnost",
+                "back": "gen na X – hemofilie, daltonismus"
+              },
+              {
+                "front": "zpětné křížení",
+                "back": "s recesivním homozygotem aa – zjistí genotyp"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dědičnost vázaná na X"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Gen pro hemofilii nebo daltonismus je **recesivní** a leží na **X**.",
+            "Muž má jen jeden X – recesivní alela se u něj **projeví hned**.",
+            "Žena potřebuje recesivní alelu na **obou** X. S jednou je **přenašečka** – zdravá, ale může gen předat.",
+            "Otec dává **synům Y** a **dcerám X**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Matka přenašečka daltonismu (XᴰXᵈ) a zdravý otec (XᴰY). Jaká je šance, že syn bude daltonik?",
+          "answer": "Syn dostane od otce Y, od matky buď Xᴰ, nebo Xᵈ – každé s pravděpodobností 1/2. Synové: XᴰY (zdravý) nebo XᵈY (daltonik) → **50 %**."
+        },
+        {
+          "type": "example",
+          "question": "Proč dihybrid dává 16 políček a poměr 9 : 3 : 3 : 1?",
+          "answer": "Heterozygot AaBb tvoří **4 druhy gamet** (AB, Ab, aB, ab). 4 · 4 = **16** kombinací. Z nich 9 má obě dominantní vlastnosti, 3 + 3 jednu z nich a 1 obě recesivní."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Otec předává daltonismus svým synům.",
+          "right": "Otec synům dává **Y**, ne X. Daltonismus dostane syn od **matky**.",
+          "why": "Gen leží na X. Syn ho proto může zdědit jen od matky; od otce ho zdědí dcery."
+        },
+        {
+          "type": "summary",
+          "text": "Uniformita F1, štěpení 3 : 1 (1 : 2 : 1), volná kombinovatelnost 9 : 3 : 3 : 1. Kodominance – AB, neúplná dominance – nocenka. Choroby vázané na X postihují častěji muže."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký je fenotypový štěpný poměr v F2 u monohybridu s úplnou dominancí?",
+      "options": [
+        "3 : 1",
+        "1 : 2 : 1",
+        "9 : 3 : 3 : 1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je štěpný poměr dihybridu v F2?",
+      "options": [
+        "9 : 3 : 3 : 1",
+        "3 : 1",
+        "1 : 1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik procent potomků bude aa při křížení Aa × aa?",
+      "answers": [
+        "50",
+        "50 %"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Heterozygot má dvě různé alely daného genu.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj typ dědičnosti s příkladem.",
+      "pairs": [
+        [
+          "kodominance",
+          "krevní skupina AB"
+        ],
+        [
+          "neúplná dominance",
+          "růžová nocenka"
+        ],
+        [
+          "vazba na X",
+          "hemofilie"
+        ],
+        [
+          "úplná dominance",
+          "žlutá semena hrachu"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Matka přenašečka daltonismu (XᴰXᵈ) a zdravý otec. Jaká je šance, že syn bude daltonik?",
+      "options": [
+        "50 %",
+        "25 %",
+        "100 %"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Otec předává chromozom X svým synům.",
+      "answer": false,
+      "explanation": "Synům předává Y, chromozom X dostávají od otce dcery."
+    },
+    {
+      "type": "choice",
+      "question": "Rodiče A0 × B0 mohou mít dítě se skupinou…",
+      "options": [
+        "A, B, AB i 0",
+        "jen AB",
+        "jen A nebo B"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Zpětné křížení se provádí s…",
+      "options": [
+        "recesivním homozygotem",
+        "dominantním homozygotem",
+        "heterozygotem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Mendel publikoval své výsledky v roce 1866 v Brně.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Formuluj Mendelovy zákony.",
+      "answer": "1. Uniformita F1 – potomci dvou homozygotů jsou stejní. 2. V F2 dochází ke štěpení (fenotyp 3 : 1, genotyp 1 : 2 : 1). 3. Alely různých genů se kombinují nezávisle (dihybrid 9 : 3 : 3 : 1)."
+    },
+    {
+      "type": "open",
+      "question": "Proč trpí hemofilií častěji muži než ženy?",
+      "answer": "Gen je recesivní a leží na chromozomu X. Muž má jen jeden X, takže se projeví hned. Žena potřebuje dvě recesivní alely, s jednou je jen přenašečka."
+    }
+  ]
+}

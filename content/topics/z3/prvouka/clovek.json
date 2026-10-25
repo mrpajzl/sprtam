@@ -1,0 +1,347 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "clovek",
+  "title": "Lidské tělo",
+  "emoji": "🫀",
+  "explanations": [
+    {
+      "title": "Orgány",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Tvoje tělo je jako velká továrna. Pracuje pořád, i když spíš. Srdce bije, dýcháš, jídlo se tráví."
+        },
+        {
+          "type": "text",
+          "text": "Každou práci dělá jiná část uvnitř těla. Když víš, co dělá, víš, jak ji chránit."
+        },
+        {
+          "type": "term",
+          "term": "Orgán",
+          "definition": "Část těla, která má jednu důležitou práci.",
+          "example": "srdce, plíce, mozek, žaludek"
+        },
+        {
+          "type": "heading",
+          "text": "Hlavní orgány"
+        },
+        {
+          "type": "term",
+          "term": "Mozek",
+          "definition": "Je v hlavě. **Řídí celé tělo**: myslíš jím, pamatuješ si, posílá povely svalům.",
+          "example": "Mozek řekne ruce: „Zvedni se.“"
+        },
+        {
+          "type": "term",
+          "term": "Srdce",
+          "definition": "Sval v hrudníku, který **pumpuje krev** do celého těla.",
+          "example": "Když běžíš, srdce bije rychleji."
+        },
+        {
+          "type": "term",
+          "term": "Krev",
+          "definition": "Červená tekutina, která roznáší po těle vzduch (kyslík) a živiny z jídla.",
+          "example": "Při odřenině uvidíš krev."
+        },
+        {
+          "type": "term",
+          "term": "Plíce",
+          "definition": "Dva měkké „vaky“ v hrudníku. Jimi **dýcháme**.",
+          "example": "Při nádechu se plíce naplní vzduchem."
+        },
+        {
+          "type": "term",
+          "term": "Kostra",
+          "definition": "Všechny kosti těla dohromady. Je **oporou** těla a **chrání** orgány.",
+          "example": "lebka, páteř, žebra"
+        },
+        {
+          "type": "term",
+          "term": "Svaly",
+          "definition": "Táhnou za kosti, a tak se **pohybujeme**.",
+          "example": "Sval na paži zvedne ruku."
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky a zopakuj si, co který orgán dělá."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "🧠 mozek",
+                "back": "řídí celé tělo"
+              },
+              {
+                "front": "🫀 srdce",
+                "back": "pumpuje krev"
+              },
+              {
+                "front": "🫁 plíce",
+                "back": "dýchání"
+              },
+              {
+                "front": "žaludek",
+                "back": "trávení potravy"
+              },
+              {
+                "front": "🦴 kostra",
+                "back": "opora a ochrana"
+              },
+              {
+                "front": "💪 svaly",
+                "back": "pohyb"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč nosíme na kole přilbu?",
+          "answer": "V hlavě je **mozek**, který řídí celé tělo. Lebka ho chrání, přilba ještě víc."
+        },
+        {
+          "type": "example",
+          "question": "Po běhu ti buší srdce a rychle dýcháš. Proč?",
+          "answer": "Svaly potřebují víc kyslíku. **Plíce** ho rychleji nabírají a **srdce** rychleji pumpuje krev, která ho roznáší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Srdce je vlevo úplně u kraje hrudníku.",
+          "right": "Srdce je uprostřed hrudníku, trochu vlevo.",
+          "why": "Srdce leží mezi plícemi za hrudní kostí, jen jeho špička míří doleva."
+        },
+        {
+          "type": "summary",
+          "text": "Mozek řídí, srdce pumpuje krev, plíce dýchají, žaludek tráví, kostra chrání a svaly hýbou."
+        }
+      ]
+    },
+    {
+      "title": "Cestou jídla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sníš rohlík. Za chvíli máš sílu běhat. Jak se z rohlíku stane síla? Rohlík musí projít dlouhou cestou tělem."
+        },
+        {
+          "type": "text",
+          "text": "Sledujme ho. Cestou poznáme orgány, které tělo řídí, chrání a krmí."
+        },
+        {
+          "type": "term",
+          "term": "Trávení",
+          "definition": "Když tělo rozloží jídlo na drobné kousky, které umí použít.",
+          "example": "Rohlík se v žaludku a střevech tráví."
+        },
+        {
+          "type": "term",
+          "term": "Živiny",
+          "definition": "Užitečné látky z jídla. Dávají tělu sílu a stavební materiál.",
+          "example": "Z mléka máme živiny pro kosti."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta rohlíku"
+        },
+        {
+          "type": "term",
+          "term": "Jícen",
+          "definition": "Trubice z krku do žaludku. Jídlo jí sklouzne dolů.",
+          "example": "Když polkneš, sousto jde jícnem."
+        },
+        {
+          "type": "term",
+          "term": "Žaludek",
+          "definition": "Vak v břiše. Jídlo v něm rozmělní a rozloží.",
+          "example": "Po velkém obědě je žaludek plný."
+        },
+        {
+          "type": "term",
+          "term": "Střeva",
+          "definition": "Dlouhá stočená trubice v břiše. Tady se živiny dostanou do krve.",
+          "example": "Střeva jsou delší než celý člověk."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**ústa** – zuby rozkoušou, sliny navlhčí",
+            "**jícen** – sousto sklouzne dolů",
+            "**žaludek** – jídlo se rozloží",
+            "**střeva** – živiny přejdou do krve",
+            "zbytky odejdou z těla ven"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Krev pak roznese živiny po těle. Pumpuje ji **srdce**. Kyslík do krve dodávají **plíce**. Všechno řídí **mozek**."
+        },
+        {
+          "type": "heading",
+          "text": "Kostra chrání"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kost",
+            "Co chrání"
+          ],
+          "rows": [
+            [
+              "lebka",
+              "mozek"
+            ],
+            [
+              "žebra (hrudník)",
+              "srdce a plíce"
+            ],
+            [
+              "páteř",
+              "míchu – vedení z mozku do těla"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Seřaď cestu potravy: žaludek, ústa, střeva, jícen.",
+          "answer": "Nejdřív **ústa**, pak **jícen**, **žaludek** a nakonec **střeva**."
+        },
+        {
+          "type": "example",
+          "question": "Co chrání srdce a plíce?",
+          "answer": "Srdce a plíce jsou v hrudníku. Chrání je **žebra**, jako klec."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Jídlo jde z úst rovnou do plic.",
+          "right": "Jídlo jde jícnem do žaludku. Do plic jde jen vzduch.",
+          "why": "Z krku vedou dvě trubice: jícen (pro jídlo) a průdušnice (pro vzduch). Proto se nemá mluvit s plnou pusou – sousto by mohlo „zaskočit“."
+        },
+        {
+          "type": "summary",
+          "text": "Jídlo jde ústy, jícnem do žaludku a do střev. Lebka chrání mozek, žebra chrání srdce a plíce."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který orgán pumpuje krev?",
+      "options": [
+        "srdce",
+        "žaludek",
+        "plíce"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Čím dýcháme?",
+      "options": [
+        "plícemi",
+        "srdcem",
+        "žaludkem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co řídí celé tělo?",
+      "options": [
+        "mozek",
+        "kůže",
+        "svaly"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co chrání mozek?",
+      "options": [
+        "lebka",
+        "žebra",
+        "pánev"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Svaly nám umožňují pohyb.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Potrava jde z úst rovnou do plic.",
+      "answer": false,
+      "explanation": "Potrava jde jícnem do žaludku, vzduch jde do plic."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď cestu potravy.",
+      "items": [
+        "ústa",
+        "jícen",
+        "žaludek",
+        "střeva"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj orgán a úkol.",
+      "pairs": [
+        [
+          "srdce",
+          "pumpuje krev"
+        ],
+        [
+          "plíce",
+          "dýchání"
+        ],
+        [
+          "žaludek",
+          "trávení"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik smyslů má člověk?",
+      "answers": [
+        "5",
+        "pět"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co chrání srdce a plíce?",
+      "options": [
+        "žebra (hrudník)",
+        "lebka",
+        "kolena"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "K čemu slouží kostra?",
+      "answer": "Kostra je opora těla, chrání vnitřní orgány a spolu se svaly umožňuje pohyb."
+    },
+    {
+      "type": "open",
+      "question": "Popiš, kudy putuje jídlo v těle.",
+      "answer": "Z úst, kde ho rozkoušeme, jícnem do žaludku. Pak do střev, kde se vstřebají živiny, a zbytky odejdou ven."
+    }
+  ]
+}

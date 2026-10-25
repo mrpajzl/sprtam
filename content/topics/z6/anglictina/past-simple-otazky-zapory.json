@@ -1,0 +1,389 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "past-simple-otazky-zapory",
+  "title": "Minulý čas: otázky a zápory",
+  "emoji": "❓",
+  "explanations": [
+    {
+      "title": "Pomocník did",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kamarád ti vypráví o výletě a ty se ptáš: „**Viděl jsi** medvěda? **Jedli jste** v restauraci?“ A on odpoví: „Ne, **neviděl**.“ Potřebuješ otázky a zápory v minulosti."
+        },
+        {
+          "type": "text",
+          "text": "V přítomném čase ti pomáhal **do / does**. V minulosti ho nahradí jeho minulý tvar – **did**. Je to jednodušší, než to vypadá."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Minulý čas prostý",
+          "definition": "Tvar slovesa pro děj, který skončil v minulosti. Pravidelná slovesa mají **-ed** (played), nepravidelná vlastní tvar (went).",
+          "example": "She went home. = Šla domů."
+        },
+        {
+          "type": "term",
+          "term": "Pomocné sloveso",
+          "definition": "Slovíčko, které samo nic neznamená, ale pomáhá udělat otázku nebo zápor. V minulosti je to **did**.",
+          "example": "Did you…? I didn’t…"
+        },
+        {
+          "type": "term",
+          "term": "Základní tvar",
+          "definition": "Sloveso tak, jak je ve slovníku – bez -ed, bez -s.",
+          "example": "go, play, see"
+        },
+        {
+          "type": "term",
+          "term": "Zápor a otázka",
+          "definition": "Zápor = věta s „ne“. Otázka = věta, kterou se ptáš.",
+          "example": "I didn’t go. Did you go?"
+        },
+        {
+          "type": "heading",
+          "text": "Did nese minulost"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že minulost je batoh. Ve větě ho může nést **jen jedno** slovo. Když přijde **did**, vezme si batoh on – a sloveso se vrátí do **základního tvaru**."
+        },
+        {
+          "type": "example",
+          "question": "She went home. → zápor?",
+          "answer": "Přidám **didn’t**. Batoh minulosti nese didn’t, takže *went* → **go**: **She didn’t go home.** (ne *didn’t went*)"
+        },
+        {
+          "type": "example",
+          "question": "He played tennis. → otázka?",
+          "answer": "**Did** dám na začátek. *played* → **play**: **Did he play tennis?**"
+        },
+        {
+          "type": "heading",
+          "text": "Krátká odpověď"
+        },
+        {
+          "type": "text",
+          "text": "**Did you see it? – Yes, I did. / No, I didn’t.** Sloveso v krátké odpovědi neopakuješ."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň. Pamatuj: po did a didn’t je sloveso v základním tvaru."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "I didn’t ",
+                "after": " the film.",
+                "options": [
+                  "see",
+                  "saw"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Did you ",
+                "after": " your homework?",
+                "options": [
+                  "do",
+                  "did"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "They ",
+                "after": " come to the party.",
+                "options": [
+                  "didn’t",
+                  "don’t"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Where ",
+                "after": " you go?",
+                "options": [
+                  "did",
+                  "were"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "He didn’t went to school.",
+          "right": "He didn’t go to school.",
+          "why": "Minulost už nese **didn’t**. Kdyby bylo i *went*, byla by minulost ve větě dvakrát."
+        },
+        {
+          "type": "text",
+          "text": "Pozor na výjimku: **was / were** pomocníka nepotřebují. *Were you tired?* *I wasn’t there.* (ne *Did you be…*)"
+        },
+        {
+          "type": "summary",
+          "text": "Otázka: **Did** + kdo + základní tvar? Zápor: **didn’t** + základní tvar. Minulost nese jen did."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V pondělí se ve třídě všichni ptají: „Co jsi dělal o víkendu? Byl jsi venku?“ Na tyhle rozhovory potřebuješ otázky a zápory v minulém čase."
+        },
+        {
+          "type": "text",
+          "text": "Celé to funguje podle **vzorce** – jako recept. Stačí dosadit, kdo a co dělal."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo ve větě něco dělá. Odpovídá na otázku **kdo? co?**",
+          "example": "V „**Tom** saw a fox.“ je podmět *Tom*."
+        },
+        {
+          "type": "term",
+          "term": "did / didn’t",
+          "definition": "Pomocné slovíčko minulého času pro otázku (**did**) a zápor (**didn’t** = did not). Česky se nepřekládá.",
+          "example": "Did you…? I didn’t…"
+        },
+        {
+          "type": "term",
+          "term": "Základní tvar",
+          "definition": "Sloveso ze slovníku, bez koncovek a bez minulého tvaru.",
+          "example": "eat (ne ate), watch (ne watched)"
+        },
+        {
+          "type": "term",
+          "term": "Tázací slovo",
+          "definition": "Slovo na začátku otázky: **What** (co), **Where** (kde, kam), **When** (kdy), **Why** (proč), **Who** (kdo).",
+          "example": "What did you eat?"
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Vzorec",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "zápor",
+              "podmět + didn’t + základní tvar",
+              "I didn’t watch TV."
+            ],
+            [
+              "otázka",
+              "Did + podmět + základní tvar?",
+              "Did you watch TV?"
+            ],
+            [
+              "krátká odpověď",
+              "Yes, podmět + did. / No, podmět + didn’t.",
+              "Yes, I did. / No, I didn’t."
+            ],
+            [
+              "tázací slovo",
+              "Wh- + did + podmět + základní tvar?",
+              "What did you eat?"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi sloveso v minulém tvaru: *Tom **saw** a fox.*",
+            "Vrať ho do základního tvaru: saw → **see**.",
+            "Otázka: **Did** + Tom + see + a fox? → *Did Tom see a fox?*",
+            "Zápor: Tom + **didn’t** + see + a fox → *Tom didn’t see a fox.*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Podle vzorce udělej z věty zápor nebo otázku. Pak klepni na kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "He ate fish. → zápor",
+                "back": "He didn’t eat fish."
+              },
+              {
+                "front": "You saw Tom. → otázka",
+                "back": "Did you see Tom?"
+              },
+              {
+                "front": "We won. → zápor",
+                "back": "We didn’t win."
+              },
+              {
+                "front": "She called you. → otázka",
+                "back": "Did she call you?"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Zeptej se: Co sis koupil? (koupit = buy)",
+          "answer": "Tázací slovo **What** + **did** + **you** + základní tvar **buy**: **What did you buy?**"
+        },
+        {
+          "type": "example",
+          "question": "Did they win? (ne) – krátká odpověď",
+          "answer": "Podmět **they**, ne → **didn’t**: **No, they didn’t.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Did you liked it?",
+          "right": "Did you like it?",
+          "why": "Po **Did** je vždy **základní tvar**. Minulost už nese did, sloveso -ed nemá."
+        },
+        {
+          "type": "summary",
+          "text": "**Did** je ve větě jen jednou – sloveso za ním už minulé není. U was / were se did nepoužívá."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Zápor: I ___ my keys.",
+      "options": [
+        "didn't find",
+        "didn't found",
+        "don't found"
+      ],
+      "answer": 0,
+      "explanation": "Po didn't je základní tvar: find."
+    },
+    {
+      "type": "choice",
+      "question": "Otázka:",
+      "options": [
+        "Did you like it?",
+        "Did you liked it?",
+        "You did like it?"
+      ],
+      "answer": 0,
+      "explanation": "Did + podmět + základní tvar."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: ___ she call you yesterday?",
+      "answers": [
+        "did"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň zápor: We ___ go out. (nešli jsme)",
+      "answers": [
+        "didn't",
+        "did not"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Krátká odpověď: Did they win? – No, they ___.",
+      "answers": [
+        "didn't",
+        "did not"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„He didn't went to school.“ je správně.",
+      "answer": false,
+      "explanation": "Správně: He didn't go to school."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď otázku.",
+      "items": [
+        "What",
+        "did",
+        "you",
+        "buy?"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď zápor.",
+      "items": [
+        "She",
+        "didn't",
+        "eat",
+        "breakfast."
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Otázka na „Tom saw a fox.“",
+      "options": [
+        "Did Tom see a fox?",
+        "Did Tom saw a fox?",
+        "Saw Tom a fox?"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "U was/were se did nepoužívá: „Were you tired?“",
+      "answer": true,
+      "explanation": "Be tvoří otázku sám: Were you…? Wasn't…"
+    },
+    {
+      "type": "open",
+      "question": "Jak utvoříš otázku a zápor v minulém čase prostém?",
+      "answer": "Pomocí did / didn't a základního tvaru slovesa: Did you go? I didn't go."
+    },
+    {
+      "type": "open",
+      "question": "Zeptej se kamaráda anglicky, co dělal o víkendu, a odpověz.",
+      "answer": "What did you do at the weekend? – I visited my grandparents and played football."
+    }
+  ]
+}

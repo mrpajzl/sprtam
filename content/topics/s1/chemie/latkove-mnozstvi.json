@@ -1,0 +1,419 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "latkove-mnozstvi",
+  "title": "Látkové množství a molární hmotnost",
+  "emoji": "🥚",
+  "explanations": [
+    {
+      "title": "Jako tucet",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vejce se prodávají po desítkách, tužky po tuctech (12 kusů), papír po balících (500 listů). Je to pohodlnější než počítat každý kus."
+        },
+        {
+          "type": "text",
+          "text": "Atomy a molekuly jsou tak malé, že je spočítat nejde vůbec. Chemici si proto zavedli vlastní „balení“ – **mol**. Díky němu zvážením na váze zjistíš, kolik částic máš, a spočítáš, kolik látky do reakce dát."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mol",
+          "definition": "Balení částic. **1 mol = 6,022 · 10²³ částic** (atomů, molekul, iontů).",
+          "example": "Jako 1 tucet = 12 kusů, 1 mol = 602 200 000 000 000 000 000 000 kusů."
+        },
+        {
+          "type": "term",
+          "term": "Avogadrova konstanta Nₐ",
+          "definition": "Právě to číslo 6,022 · 10²³ (na mol). Jednotka mol⁻¹ znamená „kusů na jeden mol“."
+        },
+        {
+          "type": "term",
+          "term": "Látkové množství n",
+          "definition": "Kolik **molů** látky máš. Jednotka mol.",
+          "example": "2 mol vody = 2 balení molekul vody."
+        },
+        {
+          "type": "heading",
+          "text": "Proč zrovna takové číslo"
+        },
+        {
+          "type": "text",
+          "text": "Číslo je zvolené tak, aby **1 mol atomů uhlíku ¹²C vážil přesně 12 g**. Díky tomu se hmotnost molu dá vyčíst rovnou z periodické tabulky."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🥚",
+            "×",
+            "12",
+            "=",
+            "📦"
+          ],
+          "caption": "tucet vajec – mol atomů"
+        },
+        {
+          "type": "term",
+          "term": "Relativní atomová hmotnost Aᵣ",
+          "definition": "Číslo v periodické tabulce u každého prvku. Říká, kolikrát je atom těžší než 1/12 atomu ¹²C. Nemá jednotku.",
+          "example": "Aᵣ(H) ≈ 1, Aᵣ(O) ≈ 16, Aᵣ(Fe) ≈ 56"
+        },
+        {
+          "type": "term",
+          "term": "Molární hmotnost M",
+          "definition": "Kolik váží **1 mol** látky v gramech. Číselně je rovná součtu Aᵣ všech atomů ve vzorci. Jednotka g/mol.",
+          "example": "M(H₂O) = 2 · 1 + 16 = 18 g/mol"
+        },
+        {
+          "type": "example",
+          "question": "Kolik váží 1 mol železa a kolik 1 mol hliníku?",
+          "answer": "Z tabulky: Aᵣ(Fe) ≈ 56, Aᵣ(Al) ≈ 27. Tedy 1 mol Fe = **56 g**, 1 mol Al = **27 g**. Počet atomů je v obou stejný, ale atomy železa jsou těžší."
+        },
+        {
+          "type": "heading",
+          "text": "Z gramů na moly a zpět"
+        },
+        {
+          "type": "text",
+          "text": "Představ si to jako přepočet „gramy ↔ balení“: když víš, kolik váží jedno balení (M), vydělíš celkovou hmotnost."
+        },
+        {
+          "type": "text",
+          "text": "`n = m / M` a obráceně `m = n · M`. Počet částic: `N = n · Nₐ`."
+        },
+        {
+          "type": "example",
+          "question": "Kolik molů je 54 g vody?",
+          "answer": "M(H₂O) = 18 g/mol. n = 54 / 18 = **3 mol**. To je 3 · 6,022 · 10²³ ≈ 1,8 · 10²⁴ molekul."
+        },
+        {
+          "type": "heading",
+          "text": "Plyny"
+        },
+        {
+          "type": "term",
+          "term": "Molární objem Vₘ",
+          "definition": "Objem 1 molu plynu. Za **normálních podmínek** (0 °C a 101,325 kPa) je pro všechny plyny asi **22,4 dm³/mol**.",
+          "example": "Je jedno, jestli je to vodík, nebo kyslík – mol plynu zabere asi 22,4 litru."
+        },
+        {
+          "type": "text",
+          "text": "Proč stejně? Molekuly plynu jsou od sebe tak daleko, že na jejich velikosti skoro nezáleží (**Avogadrův zákon**)."
+        },
+        {
+          "type": "text",
+          "text": "Zkus si převody sám: nejdřív si výsledek spočítej, pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "2 mol plynu (norm. podm.)",
+                "back": "2 · 22,4 = 44,8 dm³"
+              },
+              {
+                "front": "36 g vody (M = 18 g/mol)",
+                "back": "36 / 18 = 2 mol"
+              },
+              {
+                "front": "0,5 mol NaOH (M = 40 g/mol)",
+                "back": "0,5 · 40 = 20 g"
+              },
+              {
+                "front": "1 mol molekul",
+                "back": "6,022 · 10²³ molekul"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 mol železa a 1 mol hliníku váží stejně, je to přece 1 mol.",
+          "right": "Mají stejný **počet atomů**, ale různou hmotnost: 56 g a 27 g.",
+          "why": "Mol je počet, ne hmotnost. Tucet melounů a tucet třešní také neváží stejně."
+        },
+        {
+          "type": "summary",
+          "text": "1 mol = 6,022 · 10²³ částic. Molární hmotnost M (g/mol) = součet Aᵣ ze vzorce. n = m / M. Mol plynu zabere za normálních podmínek asi 22,4 dm³."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V laboratoři odvažuješ gramy a odměřuješ litry. Reakce ale probíhají mezi jednotlivými částicemi. Potřebuješ most mezi „kolik to váží“ a „kolik je tam molekul“. Tím mostem je **látkové množství**."
+        },
+        {
+          "type": "text",
+          "text": "Tady jsou všechny vzorce pohromadě a postup, jak je použít."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Látkové množství n",
+          "definition": "Veličina, která vyjadřuje počet částic v „balíčcích“ po 6,022 · 10²³. Jednotka **mol**."
+        },
+        {
+          "type": "term",
+          "term": "Avogadrova konstanta Nₐ",
+          "definition": "Nₐ = 6,022 · 10²³ mol⁻¹ – počet částic v 1 molu."
+        },
+        {
+          "type": "term",
+          "term": "Molární hmotnost M",
+          "definition": "Hmotnost 1 molu látky (g/mol). Spočítáš ji sečtením relativních atomových hmotností Aᵣ z periodické tabulky."
+        },
+        {
+          "type": "term",
+          "term": "Molární objem Vₘ",
+          "definition": "Objem 1 molu plynu. Za normálních podmínek (0 °C, 101,325 kPa) **Vₘ ≈ 22,4 dm³/mol**."
+        },
+        {
+          "type": "heading",
+          "text": "Jeden vzorec, tři podoby"
+        },
+        {
+          "type": "text",
+          "text": "`n = m / M = N / Nₐ = V / Vₘ`"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Znáš",
+            "Vzorec",
+            "Jednotky"
+          ],
+          "rows": [
+            [
+              "hmotnost m",
+              "n = m / M",
+              "g a g/mol"
+            ],
+            [
+              "počet částic N",
+              "n = N / Nₐ",
+              "– a mol⁻¹"
+            ],
+            [
+              "objem plynu V",
+              "n = V / Vₘ",
+              "dm³ a dm³/mol"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak spočítat molární hmotnost"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ze vzorce zjisti, kolik je kterých atomů.",
+            "Každý počet vynásob Aᵣ daného prvku.",
+            "Všechno sečti. Výsledek v g/mol."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Spočítej M(H₂SO₄). (H = 1, S = 32, O = 16)",
+          "answer": "Atomy: 2 H, 1 S, 4 O. 2 · 1 + 32 + 4 · 16 = 2 + 32 + 64 = **98 g/mol**."
+        },
+        {
+          "type": "heading",
+          "text": "Typické úlohy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "M(H₂O) = 2 · 1 + 16 = 18 g/mol",
+            "Máme 36 g vody.",
+            "n = 36 / 18 = **2 mol**",
+            "N = 2 · 6,022 · 10²³ ≈ 1,2 · 10²⁴ molekul"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik atomů je v 10 g vápníku? (M = 40 g/mol)",
+          "answer": "n = 10 / 40 = 0,25 mol. N = 0,25 · 6,022 · 10²³ ≈ **1,5 · 10²³ atomů**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik molů je 11,2 dm³ kyslíku za normálních podmínek?",
+          "answer": "n = V / Vₘ = 11,2 / 22,4 = **0,5 mol**."
+        },
+        {
+          "type": "text",
+          "text": "Doplň chybějící číslo. Vždy si nejdřív řekni, který vzorec použiješ."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "M(CO₂) = 12 + 2 · 16 = ",
+                "after": " g/mol",
+                "options": [
+                  "44",
+                  "28",
+                  "32"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "0,5 mol NaOH (M = 40) váží ",
+                "after": " g",
+                "options": [
+                  "20",
+                  "80",
+                  "40"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "2 mol plynu za norm. podm. = ",
+                "after": " dm³",
+                "options": [
+                  "44,8",
+                  "22,4",
+                  "11,2"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "n = M / m",
+          "right": "n = **m / M**",
+          "why": "Kontrola jednotek: g děleno g/mol dá mol. Obráceně by vyšly mol⁻¹ – to není látkové množství."
+        },
+        {
+          "type": "summary",
+          "text": "n = m / M = N / Nₐ = V / Vₘ. M sečti z tabulky, Nₐ = 6,022 · 10²³ mol⁻¹, Vₘ ≈ 22,4 dm³/mol za normálních podmínek."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Molární hmotnost CO₂ v g/mol (C = 12, O = 16) =",
+      "answers": [
+        "44"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Molární hmotnost H₂SO₄ v g/mol (H = 1, S = 32, O = 16) =",
+      "answers": [
+        "98"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik molů je 54 g vody? (M = 18 g/mol)",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Hmotnost 0,5 mol NaOH v g? (M = 40 g/mol)",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Objem 2 mol ideálního plynu za normálních podmínek v dm³ (Vₘ = 22,4 dm³/mol)?",
+      "answers": [
+        "44,8",
+        "44.8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik molů je 11,2 dm³ kyslíku za normálních podmínek?",
+      "answers": [
+        "0,5",
+        "0.5"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kolik molekul obsahuje 1 mol vody?",
+      "options": [
+        "6,022 · 10²³",
+        "18",
+        "6,022 · 10⁻²³",
+        "22,4"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "1 mol vodíku H₂ i 1 mol kyslíku O₂ mají za stejných podmínek přibližně stejný objem.",
+      "answer": true,
+      "explanation": "Avogadrův zákon – stejný objem plynů obsahuje stejný počet molekul."
+    },
+    {
+      "type": "truefalse",
+      "question": "1 mol železa a 1 mol hliníku mají stejnou hmotnost.",
+      "answer": false,
+      "explanation": "Mají stejný počet atomů, ale různou molární hmotnost (56 vs. 27 g/mol)."
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu s jednotkou.",
+      "pairs": [
+        [
+          "látkové množství n",
+          "mol"
+        ],
+        [
+          "molární hmotnost M",
+          "g/mol"
+        ],
+        [
+          "molární objem Vₘ",
+          "dm³/mol"
+        ],
+        [
+          "Avogadrova konstanta",
+          "mol⁻¹"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co je mol a k čemu je dobrý?",
+      "answer": "Mol je jednotka látkového množství, odpovídá 6,022 · 10²³ částic. Umožňuje převádět hmotnost látky na počet částic, které v reakcích skutečně reagují."
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš počet atomů v 10 g vápníku (M = 40 g/mol)?",
+      "answer": "n = m / M = 10 / 40 = 0,25 mol. N = n · Nₐ = 0,25 · 6,022 · 10²³ ≈ 1,5 · 10²³ atomů."
+    }
+  ]
+}

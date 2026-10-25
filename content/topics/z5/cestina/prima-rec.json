@@ -1,0 +1,318 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "prima-rec",
+  "title": "Přímá řeč",
+  "emoji": "💬",
+  "explanations": [
+    {
+      "title": "Bublina",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V komiksu má každá postava **bublinu** se svými slovy. V knížce bubliny nejsou – místo nich máme **uvozovky**."
+        },
+        {
+          "type": "text",
+          "text": "Když píšeš příběh nebo sloh, postavy v něm mluví. Musíš umět zapsat, co přesně řekly a kdo to řekl."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přímá řeč",
+          "definition": "Přesná slova, která někdo řekl. Píšeme je do uvozovek.",
+          "example": "„Pojď domů.“"
+        },
+        {
+          "type": "term",
+          "term": "Uvozovky",
+          "definition": "Značky okolo přímé řeči. V češtině jsou na začátku **dole** „ a na konci **nahoře** “.",
+          "example": "„Ahoj.“"
+        },
+        {
+          "type": "term",
+          "term": "Uvozovací věta",
+          "definition": "Věta, která říká, **kdo** mluví a jak.",
+          "example": "*řekla maminka*, *zeptal se táta*"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "👩 💬",
+            "➡️",
+            "„Pojď domů,“ řekla maminka."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Tři místa pro uvozovací větu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "kde je uvozovací věta",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "před",
+              "Maminka řekla: „Pojď domů.“"
+            ],
+            [
+              "za",
+              "„Pojď domů,“ řekla maminka."
+            ],
+            [
+              "uprostřed",
+              "„Pojď,“ řekla maminka, „bude oběd.“"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Zapiš: Babička řekla dobrou noc (uvozovací věta před).",
+          "answer": "Za uvozovací větou dvojtečka, přímá řeč velkým písmenem: **Babička řekla: „Dobrou noc.“**"
+        },
+        {
+          "type": "example",
+          "question": "Zapiš: Ondra řekl, že má rád zmrzlinu (uvozovací věta za).",
+          "answer": "Tečka se změní na čárku uvnitř uvozovek, uvozovací věta malým písmenem: **„Mám rád zmrzlinu,“ řekl Ondra.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Babička řekla „Dobrou noc.“",
+          "right": "Babička řekla: „Dobrou noc.“",
+          "why": "Když je uvozovací věta **před** přímou řečí, píšeme za ní dvojtečku."
+        },
+        {
+          "type": "summary",
+          "text": "Přímá řeč je v uvozovkách „ “. Uvozovací věta říká, kdo mluví – může být před, za nebo uprostřed."
+        }
+      ]
+    },
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Přímá řeč má přesná pravidla jako dopravní značky. Kde je dvojtečka, kde čárka, kde velké písmeno."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se je krok za krokem a pak už je budeš psát automaticky."
+        },
+        {
+          "type": "term",
+          "term": "Přímá řeč",
+          "definition": "Doslovná slova postavy v uvozovkách „ “.",
+          "example": "„Mám hlad.“"
+        },
+        {
+          "type": "term",
+          "term": "Uvozovací věta",
+          "definition": "Kdo mluví: *řekl Petr, zeptala se Ema*.",
+          "example": "zeptal se táta"
+        },
+        {
+          "type": "term",
+          "term": "Dvojtečka",
+          "definition": "Dvě tečky nad sebou (:). Ohlašuje, že přijde přímá řeč.",
+          "example": "Petr řekl: „Mám hlad.“"
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Uvozovací věta **před**: za ní **dvojtečka**, pak „Velké písmeno…“",
+            "Uvozovací věta **za**: tečku v přímé řeči změň na **čárku**: „Pojď domů,“ řekla.",
+            "Otazník a vykřičník zůstávají: „Kde jsi?“ zeptal se táta.",
+            "Uvozovací věta za přímou řečí začíná **malým** písmenem."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Správně, nebo chybně?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "správně ✅",
+              "chybně ❌"
+            ],
+            "items": [
+              {
+                "text": "Petr řekl: „Mám hlad.“",
+                "group": 0
+              },
+              {
+                "text": "„Mám hlad,“ řekl Petr.",
+                "group": 0
+              },
+              {
+                "text": "„Mám hlad.“ řekl Petr.",
+                "group": 1
+              },
+              {
+                "text": "„Máš hlad?“ zeptal se Petr.",
+                "group": 0
+              },
+              {
+                "text": "Petr řekl „mám hlad.“",
+                "group": 1
+              },
+              {
+                "text": "„Mám hlad,“ Řekl Petr.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Oprav: „Kolik je hodin,“ zeptala se Ema.",
+          "answer": "Je to otázka – otazník zůstává: **„Kolik je hodin?“ zeptala se Ema.**"
+        },
+        {
+          "type": "example",
+          "question": "Přepiš do přímé řeči: Maminka řekla, ať si uklidím pokoj.",
+          "answer": "Přesná slova maminky: **Maminka řekla: „Ukliď si pokoj.“** nebo **„Ukliď si pokoj,“ řekla maminka.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Jdu ven.“ řekl Tom.",
+          "right": "„Jdu ven,“ řekl Tom.",
+          "why": "Když po přímé řeči pokračuje uvozovací věta, tečka se mění na čárku (a píše se před koncové uvozovky)."
+        },
+        {
+          "type": "summary",
+          "text": "Před přímou řečí dvojtečka. Za přímou řečí tečka → čárka, otazník a vykřičník zůstávají, pak malé písmeno."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je napsané správně?",
+      "options": [
+        "„Jdu ven,“ řekl Tom.",
+        "„Jdu ven.“ řekl Tom.",
+        "„Jdu ven“, řekl Tom."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je napsané správně?",
+      "options": [
+        "Babička řekla: „Dobrou noc.“",
+        "Babička řekla „Dobrou noc.“",
+        "Babička řekla: „dobrou noc.“"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je napsané správně?",
+      "options": [
+        "„Kolik je hodin?“ zeptala se Ema.",
+        "„Kolik je hodin,“ zeptala se Ema.",
+        "„Kolik je hodin?“ Zeptala se Ema."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje věta, která říká, kdo mluví?",
+      "options": [
+        "uvozovací",
+        "přímá",
+        "tázací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jaké znaménko píšeme za uvozovací větou, když stojí před přímou řečí?",
+      "answers": [
+        ":",
+        "dvojtečka",
+        "dvojtecku",
+        "dvojtečku"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Najdi uvozovací větu: „Pozor, auto!“ vykřikla Jana.",
+      "answers": [
+        "vykřikla Jana",
+        "vykrikla jana"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Přímou řeč dáváme do uvozovek.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Když je uvozovací věta za přímou řečí, začíná velkým písmenem.",
+      "answer": false,
+      "explanation": "Začíná malým písmenem: „Ahoj,“ řekl Petr."
+    },
+    {
+      "type": "order",
+      "question": "Slož přímou řeč se správným pořadím.",
+      "items": [
+        "„Půjdeš",
+        "se mnou?“",
+        "zeptal se",
+        "Jirka."
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj začátek s pokračováním.",
+      "pairs": [
+        [
+          "„Mám rád zmrzlinu,“",
+          "řekl Ondra."
+        ],
+        [
+          "„Kde je můj sešit?“",
+          "ptala se Lucie."
+        ],
+        [
+          "„Utíkej!“",
+          "zavolal táta."
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Přepiš do přímé řeči: Maminka řekla, ať si uklidím pokoj.",
+      "answer": "Maminka řekla: „Ukliď si pokoj.“ (nebo: „Ukliď si pokoj,“ řekla maminka.)"
+    },
+    {
+      "type": "open",
+      "question": "Co se stane s tečkou na konci přímé řeči, když za ní následuje uvozovací věta?",
+      "answer": "Tečka se změní na čárku, která se píše před koncovými uvozovkami: „Jdu ven,“ řekl Tom."
+    }
+  ]
+}

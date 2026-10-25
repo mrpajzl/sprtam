@@ -1,0 +1,453 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "conditionals-0-1-2",
+  "title": "Podmínkové věty 0, 1, 2",
+  "emoji": "🔀",
+  "explanations": [
+    {
+      "title": "Podle reality",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každý den říkáš věty s „když“, „jestli“ nebo „kdyby“. *Když zmáčkneš vypínač, rozsvítí se.* *Jestli bude pršet, zůstanu doma.* *Kdybych měl milion, cestoval bych.*"
+        },
+        {
+          "type": "text",
+          "text": "Všechny tři věty mají podmínku, ale každá je jinak **reálná**. První platí vždycky. Druhá se klidně může stát. Třetí je jen sen. Angličtina tenhle rozdíl ukazuje **tvarem slovesa** – a posluchač podle něj hned pozná, jak to myslíš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podmínková věta (conditional)",
+          "definition": "Souvětí ze dvou částí: **podmínka** (co se musí stát) a **důsledek** (co z toho vyplyne). Česky se jí říká i kondicionál.",
+          "example": "*If it rains, I'll stay at home.* = Jestli bude pršet, zůstanu doma."
+        },
+        {
+          "type": "term",
+          "term": "If-část a hlavní věta",
+          "definition": "**If-část** je ta, která začíná slovem *if* (jestli, když, kdyby) – to je podmínka. **Hlavní věta** je ta druhá – říká, co se stane.",
+          "example": "[*If it rains*] = if-část, [*I'll stay at home*] = hlavní věta."
+        },
+        {
+          "type": "term",
+          "term": "Sloveso a infinitiv",
+          "definition": "**Sloveso** říká, co kdo dělá nebo co se děje. **Infinitiv** je jeho základní tvar, jak ho najdeš ve slovníku.",
+          "example": "*go, stay, have, be* – to jsou infinitivy."
+        },
+        {
+          "type": "term",
+          "term": "Present simple a past simple",
+          "definition": "**Present simple** = prostý přítomný čas (*I stay, she stays*). **Past simple** = prostý minulý čas (*I stayed, I had, I went*).",
+          "example": "*it rains* (prší) × *it rained* (pršelo)"
+        },
+        {
+          "type": "term",
+          "term": "will a would",
+          "definition": "*will* + infinitiv = budoucnost („budu, bude“). *would* + infinitiv = „by“ (česky *dělal bych*). Zkráceně *'ll* a *'d*.",
+          "example": "*I'll stay* = zůstanu. *I'd travel* = cestoval bych."
+        },
+        {
+          "type": "heading",
+          "text": "Tři úrovně reality"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Typ",
+            "Kdy",
+            "Příklad",
+            "Česky"
+          ],
+          "rows": [
+            [
+              "0",
+              "platí vždycky (pravidlo, fakt)",
+              "If you heat ice, it melts.",
+              "Když zahřeješ led, roztaje."
+            ],
+            [
+              "1",
+              "reálně se to může stát",
+              "If it rains, I'll stay at home.",
+              "Jestli bude pršet, zůstanu doma."
+            ],
+            [
+              "2",
+              "nereálné, smyšlené, nepravděpodobné",
+              "If I had a million, I'd travel the world.",
+              "Kdybych měl milion, cestoval bych po světě."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor na typ 2. Mluví o **přítomnosti** (milion teď nemám), a přesto je v if-části minulý tvar *had*. Tady minulý tvar neznamená minulost. Je to signál: **„tohle je jen představa“**. Česky tomu odpovídá „kdyby … by“."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věty do typů. U každé se zeptej: Platí to vždycky (0)? Může se to opravdu stát (1)? Je to jen představa (2)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "0",
+              "1",
+              "2"
+            ],
+            "items": [
+              {
+                "text": "If you mix red and white, you get pink.",
+                "group": 0
+              },
+              {
+                "text": "If water reaches 100 °C, it boils.",
+                "group": 0
+              },
+              {
+                "text": "If you hurry, you'll catch the bus.",
+                "group": 1
+              },
+              {
+                "text": "If she calls, I'll tell her.",
+                "group": 1
+              },
+              {
+                "text": "If I were you, I'd apologise.",
+                "group": 2
+              },
+              {
+                "text": "If dogs could talk, they'd complain.",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jestli dnes dostanu výplatu, koupím ti dárek. Který typ a jak to řekneš anglicky?",
+          "answer": "Výplatu dnes opravdu dostat můžu → **typ 1**. If-část v present simple: *If I get paid today,* hlavní věta *will* + infinitiv: *I'll buy you a present.*"
+        },
+        {
+          "type": "example",
+          "question": "Kdybych byl tebou, omluvil bych se. Který typ a jak anglicky?",
+          "answer": "Tebou nikdy nebudu → nereálné → **typ 2**. If-část v past simple, hlavní věta *would* + infinitiv: *If I were you, I'd apologise.* U slovesa *be* se v typu 2 píše *were* i u *I, he, she* (hovorově se slyší i *was*)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "If it will rain, I'll stay at home.",
+          "right": "If it rains, I'll stay at home.",
+          "why": "Česky říkáme „jestli **bude** pršet“, ale v anglické if-části se *will* nepoužívá. Budoucnost tam vyjádří present simple."
+        },
+        {
+          "type": "summary",
+          "text": "Čím méně reálná situace, tím víc „do minulosti“ posuneš tvar: typ 0 = pravidlo, typ 1 = reálná budoucnost s *will*, typ 2 = představa s past simple a *would*."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Podmínková věta je jako stavebnice ze dvou dílů. Pro každý typ platí pevný vzorec. Když vzorce znáš, větu poskládáš skoro mechanicky – stačí rozhodnout, který typ potřebuješ."
+        },
+        {
+          "type": "text",
+          "text": "Hodí se to v testu (doplň tvar), v e-mailu (*If you have any questions, …*) i v ústní zkoušce (*What would you do if…?*)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podmínková věta",
+          "definition": "Věta se dvěma částmi: **if-část** (podmínka, začíná slovem *if*) a **hlavní věta** (co se stane). Pořadí můžeš prohodit.",
+          "example": "*If it rains, I'll stay.* = *I'll stay if it rains.* Když je if-část první, píše se za ní čárka."
+        },
+        {
+          "type": "term",
+          "term": "Infinitiv",
+          "definition": "Základní tvar slovesa ze slovníku, tady bez *to*.",
+          "example": "*go, help, be, have*"
+        },
+        {
+          "type": "term",
+          "term": "Present simple",
+          "definition": "Prostý přítomný čas. U *he, she, it* přidáš *-s*.",
+          "example": "*I study, she studies, it works*"
+        },
+        {
+          "type": "term",
+          "term": "Past simple",
+          "definition": "Prostý minulý čas. Pravidelná slovesa mají *-ed*, nepravidelná se učí zpaměti.",
+          "example": "*I worked, I knew, I had, I was*"
+        },
+        {
+          "type": "term",
+          "term": "will / would",
+          "definition": "*will* = „budu, bude“ (budoucnost). *would* = „by“ (podmiňovací způsob). Po obou je infinitiv bez *to*.",
+          "example": "*I will help* = pomůžu. *I would help* = pomohl bych."
+        },
+        {
+          "type": "term",
+          "term": "unless",
+          "definition": "Znamená *if not* – „pokud ne, ledaže“. Zápor už v sobě má.",
+          "example": "*You'll fail unless you study.* = Neuspěješ, pokud se nebudeš učit."
+        },
+        {
+          "type": "heading",
+          "text": "Tři vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Typ",
+            "if-část",
+            "hlavní věta"
+          ],
+          "rows": [
+            [
+              "0 (vždy platí)",
+              "present simple",
+              "present simple"
+            ],
+            [
+              "1 (reálné)",
+              "present simple",
+              "will + infinitiv"
+            ],
+            [
+              "2 (nereálné)",
+              "past simple",
+              "would + infinitiv"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozhodni, jak reálná situace je: pravidlo (0), reálná možnost (1), nebo představa (2)?",
+            "Do if-části dej správný čas. **Nikdy tam nedávej *will* ani *would*.**",
+            "Do hlavní věty dej present simple (0), *will* + infinitiv (1), nebo *would* + infinitiv (2).",
+            "Když začínáš if-částí, napiš za ni čárku."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Doplň: If you ___ (press) this button, the machine ___ (start).",
+          "answer": "Stroj se spustí pokaždé – je to pravidlo → **typ 0**. Obě části present simple: *If you press this button, the machine starts.*"
+        },
+        {
+          "type": "example",
+          "question": "Doplň (odpověď neznám): If I ___ (know) the answer, I ___ (tell) you.",
+          "answer": "Odpověď neznám → nereálné → **typ 2**. If-část past simple *knew*, hlavní věta *would tell*: *If I knew the answer, I would tell you.*"
+        },
+        {
+          "type": "example",
+          "question": "Přepiš pomocí unless: If you don't hurry, you'll miss the bus.",
+          "answer": "*unless* = *if not*, takže zápor *don't* zmizí: *Unless you hurry, you'll miss the bus.*"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň mezery. U každé si nejdřív řekni typ, teprve potom vyber tvar."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "If I",
+                "after": "time tomorrow, I'll help you.",
+                "options": [
+                  "have",
+                  "will have",
+                  "had"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "If I were taller, I",
+                "after": "play basketball.",
+                "options": [
+                  "would",
+                  "will",
+                  "am"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "If I",
+                "after": "you, I'd accept the offer.",
+                "options": [
+                  "were",
+                  "am",
+                  "would be"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "You'll fail",
+                "after": "you study.",
+                "options": [
+                  "unless",
+                  "if",
+                  "when"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "If I would have time, I would help you.",
+          "right": "If I had time, I would help you.",
+          "why": "*would* patří jen do hlavní věty. V if-části typu 2 je past simple."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Unless you don't study, you'll fail.",
+          "right": "Unless you study, you'll fail.",
+          "why": "*unless* už znamená „pokud ne“. Druhý zápor by větu otočil."
+        },
+        {
+          "type": "summary",
+          "text": "Typ 0: present + present. Typ 1: present + *will*. Typ 2: past + *would*. V if-části nikdy *will* ani *would*. *Unless* = *if not*."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "If you ___ water, it freezes at 0 °C.",
+      "options": [
+        "cool",
+        "will cool",
+        "cooled"
+      ],
+      "answer": 0,
+      "explanation": "Obecná pravda → nultý kondicionál."
+    },
+    {
+      "type": "choice",
+      "question": "If it ___ tomorrow, we'll cancel the trip.",
+      "options": [
+        "rains",
+        "will rain",
+        "rained"
+      ],
+      "answer": 0,
+      "explanation": "V *if*-větě 1. kondicionálu present simple."
+    },
+    {
+      "type": "choice",
+      "question": "If I ___ his number, I would call him.",
+      "options": [
+        "knew",
+        "know",
+        "would know"
+      ],
+      "answer": 0,
+      "explanation": "Nereálná přítomnost → past simple."
+    },
+    {
+      "type": "choice",
+      "question": "I won't go ___ you come with me.",
+      "options": [
+        "unless",
+        "if",
+        "when"
+      ],
+      "answer": 0,
+      "explanation": "*unless* = pokud ne."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: If I ___ (be) you, I'd see a doctor.",
+      "answers": [
+        "were",
+        "was"
+      ],
+      "explanation": "Ve formálním stylu *were* pro všechny osoby."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: If she studies hard, she ___ (pass). – dvě slova",
+      "answers": [
+        "will pass",
+        "'ll pass"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: What ___ you do if you won the lottery?",
+      "answers": [
+        "would"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„If I will see him, I will tell him.“ je správně.",
+      "answer": false,
+      "explanation": "Správně: *If I see him, I'll tell him.*"
+    },
+    {
+      "type": "truefalse",
+      "question": "Druhý kondicionál mluví o situaci, která je nepravděpodobná nebo nereálná.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj začátek s koncem.",
+      "pairs": [
+        [
+          "If you press this button,",
+          "the machine starts."
+        ],
+        [
+          "If you don't hurry,",
+          "you'll be late."
+        ],
+        [
+          "If I lived by the sea,",
+          "I'd swim every day."
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi „If I have time, I'll come“ a „If I had time, I'd come“?",
+      "answer": "První věta (1. kondicionál) je reálná možnost – čas možná mít budu. Druhá (2. kondicionál) je nereálná – čas nemám, takže nepřijdu."
+    },
+    {
+      "type": "open",
+      "question": "Co bys dělal/a, kdybys mohl/a změnit jednu věc ve škole? Odpověz anglicky.",
+      "answer": "Např.: *If I could change one thing, I would start lessons later, because students would be less tired.*"
+    }
+  ]
+}

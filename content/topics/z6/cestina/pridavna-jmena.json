@@ -1,0 +1,455 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pridavna-jmena",
+  "title": "Přídavná jména",
+  "emoji": "🎨",
+  "explanations": [
+    {
+      "title": "Druhy a vzory",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když říkáš „mám psa“, nikdo neví, jakého. Když řekneš „mám **velkého černého** psa“, každý si ho hned představí."
+        },
+        {
+          "type": "text",
+          "text": "Slova, která říkají, **jaký** někdo nebo něco je, nebo **čí** to je, se jmenují **přídavná jména**. Když víš, do které skupiny patří, správně napíšeš i/í/y/ý na konci."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přídavné jméno",
+          "definition": "Slovo, které popisuje vlastnost, nebo říká, komu něco patří. Ptáš se **jaký? jaká? jaké? čí?**",
+          "example": "velký, rychlá, zimní, Petrův"
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Připomenutí: název osoby, zvířete nebo věci (kdo? co?). Přídavné jméno stojí obvykle u něj.",
+          "example": "**zelený** strom – *strom* je podstatné jméno"
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Slovo, podle kterého se jiná slova ohýbají. Má stejné koncovky.",
+          "example": "*malý* se mění jako *mladý*."
+        },
+        {
+          "type": "heading",
+          "text": "Tři druhy přídavných jmen"
+        },
+        {
+          "type": "term",
+          "term": "Tvrdé přídavné jméno",
+          "definition": "V 1. pádě končí na **-ý, -á, -é**. Vzor **mladý**.",
+          "example": "mladý muž, mladá žena, mladé kotě; zelený, kamenný"
+        },
+        {
+          "type": "term",
+          "term": "Měkké přídavné jméno",
+          "definition": "Končí ve všech rodech stejně na **-í**. Vzor **jarní**.",
+          "example": "jarní den, jarní noc, jarní počasí; podzimní, cizí"
+        },
+        {
+          "type": "term",
+          "term": "Přivlastňovací přídavné jméno",
+          "definition": "Říká, **čí** něco je – komu to patří. Vytvoříme ho od jména osoby nebo zvířete.",
+          "example": "otcův, Petrův (od muže); matčin, Janin (od ženy)"
+        },
+        {
+          "type": "text",
+          "text": "Od mužů tvoříme přivlastňovací jména příponou **-ův** (vzor *otcův*), od žen příponou **-in** (vzor *matčin*). Někdy se poslední souhláska změní: *sestra → sestřin*, *matka → matčin*."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď slova do tří skupin. Pomůže ti konec slova."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "tvrdé",
+              "měkké",
+              "přivlastňovací"
+            ],
+            "items": [
+              {
+                "text": "zelený",
+                "group": 0
+              },
+              {
+                "text": "rychlý",
+                "group": 0
+              },
+              {
+                "text": "malý",
+                "group": 0
+              },
+              {
+                "text": "letní",
+                "group": 1
+              },
+              {
+                "text": "ranní",
+                "group": 1
+              },
+              {
+                "text": "cizí",
+                "group": 1
+              },
+              {
+                "text": "bratrův",
+                "group": 2
+              },
+              {
+                "text": "sestřin",
+                "group": 2
+              },
+              {
+                "text": "Pavlův",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Přídavné jméno se řídí podstatným"
+        },
+        {
+          "type": "term",
+          "term": "Shoda",
+          "definition": "Přídavné jméno přebírá od podstatného jména rod, číslo a pád. Podle toho mění koncovku.",
+          "example": "velk**ý** pes, velk**á** kočka, velk**é** kotě"
+        },
+        {
+          "type": "text",
+          "text": "V množném čísle mužského životného rodu (lidé a zvířata) mají tvrdá přídavná jména koncovku **-í**. Někdy se změní i souhláska před ní: *velký → velcí*, *hezký → hezcí*."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Podstatné jméno (množné č.)",
+            "Tvrdé",
+            "Přivlastňovací"
+          ],
+          "rows": [
+            [
+              "psi (mužský životný)",
+              "velcí psi",
+              "Petrovi psi"
+            ],
+            [
+              "stromy (mužský neživotný)",
+              "velké stromy",
+              "Petrovy stromy"
+            ],
+            [
+              "knihy (ženský)",
+              "velké knihy",
+              "Petrovy knihy"
+            ],
+            [
+              "kola (střední)",
+              "velká kola",
+              "Petrova kola"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Petrov_ knihy*",
+          "answer": "Čí knihy? Petrovy. *Knihy* jsou ženského rodu v množném čísle, proto **-y**: Petrov**y** knihy. (Petrovi by bylo jen u mužského životného: Petrovi bratři.)"
+        },
+        {
+          "type": "example",
+          "question": "Urči druh a vzor: *podzimní*, *kamenný*, *matčin*",
+          "answer": "*podzimní* končí na -í ve všech rodech → měkké, vzor jarní. *kamenný* – kamenná, kamenné → tvrdé, vzor mladý. *matčin* – čí? od matky → přivlastňovací, vzor matčin."
+        },
+        {
+          "type": "mistake",
+          "wrong": "velký psi",
+          "right": "velcí psi",
+          "why": "*Psi* jsou mužský životný rod v množném čísle. Tvrdé přídavné jméno tam má -í a k se mění na c."
+        },
+        {
+          "type": "summary",
+          "text": "Přídavná jména jsou tvrdá (mladý), měkká (jarní) a přivlastňovací (otcův, matčin). Koncovku řídí podstatné jméno, ke kterému patří."
+        }
+      ]
+    },
+    {
+      "title": "Stupňováním",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Tvoje kolo je **rychlé**. Kamarádovo je **rychlejší**. Ale bráchovo je **nejrychlejší**. Takhle pořád porovnáváme – kdo je vyšší, co je levnější, která pizza je nejlepší."
+        },
+        {
+          "type": "text",
+          "text": "K porovnávání používáme **přídavná jména**. Tady se naučíš, co to je, jak je porovnáváme (stupňujeme) a jaké druhy přídavných jmen máme."
+        },
+        {
+          "type": "term",
+          "term": "Přídavné jméno",
+          "definition": "Slovo, které říká, **jaký** někdo nebo něco je, nebo **čí** to je.",
+          "example": "rychlé kolo, chytrá holka, tátova bunda"
+        },
+        {
+          "type": "heading",
+          "text": "Tři stupně"
+        },
+        {
+          "type": "term",
+          "term": "Stupňování",
+          "definition": "Měnění přídavného jména, když porovnáváme. Má **tři stupně**.",
+          "example": "rychlý → rychlejší → nejrychlejší"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**1. stupeň** – základní tvar, nic neporovnáváš: *Pes je rychlý.*",
+            "**2. stupeň** – porovnáváš dva: *Zajíc je rychlejší než pes.* Obvykle přidáš **-ejší, -ější** nebo **-ší**.",
+            "**3. stupeň** – je to „ze všech nejvíc“: *Gepard je nejrychlejší.* Vždy začíná na **nej-**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Některá přídavná jména se stupňují **nepravidelně** – úplně jiným slovem. Klepni na kartu a hádej druhý a třetí stupeň."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "dobrý",
+                "back": "lepší → nejlepší"
+              },
+              {
+                "front": "zlý",
+                "back": "horší → nejhorší"
+              },
+              {
+                "front": "velký",
+                "back": "větší → největší"
+              },
+              {
+                "front": "malý",
+                "back": "menší → nejmenší"
+              },
+              {
+                "front": "rychlý",
+                "back": "rychlejší → nejrychlejší (pravidelně)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Ne všechno se dá stupňovat. Věc je buď ze dřeva, nebo není – „dřevěnější“ nedává smysl. Stejně tak *jarní*, *zlatý (ze zlata)*, *Petrův*."
+        },
+        {
+          "type": "example",
+          "question": "Vystupňuj *chytrý* a *dlouhý*.",
+          "answer": "chytrý → chytřejší → nejchytřejší (r se mění na ř). dlouhý → delší → nejdelší (nepravidelně)."
+        },
+        {
+          "type": "heading",
+          "text": "Tři druhy podle konce slova"
+        },
+        {
+          "type": "text",
+          "text": "Přídavná jména dělíme do tří skupin. Každá má svůj **vzor** – slovo, podle kterého se ostatní ohýbají."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Jak poznáš",
+            "Vzor",
+            "Příklady"
+          ],
+          "rows": [
+            [
+              "tvrdé",
+              "končí -ý, -á, -é",
+              "mladý",
+              "velký, kamenný"
+            ],
+            [
+              "měkké",
+              "končí vždy -í",
+              "jarní",
+              "podzimní, cizí"
+            ],
+            [
+              "přivlastňovací",
+              "čí? od osoby",
+              "otcův, matčin",
+              "Petrův, Janin"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Přivlastňovací přídavné jméno",
+          "definition": "Říká, komu věc patří. Od muže přidáš **-ův**, od ženy **-in**.",
+          "example": "Pavel → Pavlův míč; sestra → sestřin sešit"
+        },
+        {
+          "type": "example",
+          "question": "Patří *sestřin* a *jarní* do stejné skupiny?",
+          "answer": "Ne. *Sestřin* říká čí (od sestry) → přivlastňovací. *Jarní* říká jaký a končí na -í → měkké."
+        },
+        {
+          "type": "mistake",
+          "wrong": "nejvíc nejlepší",
+          "right": "nejlepší",
+          "why": "3. stupeň už „nejvíc“ obsahuje (předpona nej-). Přidat ještě *nejvíc* je zbytečné a chybné."
+        },
+        {
+          "type": "mistake",
+          "wrong": "sestrův sešit",
+          "right": "sestřin sešit",
+          "why": "Sestra je žena, proto -in. A r se před -in mění na ř."
+        },
+        {
+          "type": "summary",
+          "text": "Přídavná jména stupňujeme: 1. rychlý, 2. rychlejší, 3. nejrychlejší. Pozor na nepravidelné (dobrý – lepší – nejlepší). Druhy: tvrdá (mladý), měkká (jarní), přivlastňovací (otcův, matčin)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Podle kterého vzoru skloňujeme *kamenný*?",
+      "options": [
+        "mladý",
+        "jarní",
+        "otcův"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Podle kterého vzoru skloňujeme *podzimní*?",
+      "options": [
+        "mladý",
+        "jarní",
+        "matčin"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "2. stupeň přídavného jména *dobrý* je…",
+      "answers": [
+        "lepší"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3. stupeň přídavného jména *zlý* je…",
+      "answers": [
+        "nejhorší"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "*Matčin* je přídavné jméno přivlastňovací.",
+      "answer": true,
+      "explanation": "Říká, čí to je – od slova matka."
+    },
+    {
+      "type": "choice",
+      "question": "Které přídavné jméno nelze stupňovat?",
+      "options": [
+        "dřevěný",
+        "vysoký",
+        "chytrý"
+      ],
+      "answer": 0,
+      "explanation": "Věc je ze dřeva, nebo není."
+    },
+    {
+      "type": "choice",
+      "question": "Jak je správně?",
+      "options": [
+        "velcí psi",
+        "velký psi",
+        "velky psi"
+      ],
+      "answer": 0,
+      "explanation": "Mužský životný v množném čísle: velcí psi."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Petrov_ knihy*",
+      "options": [
+        "Petrovy",
+        "Petrovi",
+        "Petrova"
+      ],
+      "answer": 0,
+      "explanation": "knihy – ženský rod, množné číslo → -y."
+    },
+    {
+      "type": "match",
+      "question": "Spoj 1. a 2. stupeň.",
+      "pairs": [
+        [
+          "malý",
+          "menší"
+        ],
+        [
+          "dobrý",
+          "lepší"
+        ],
+        [
+          "zlý",
+          "horší"
+        ],
+        [
+          "velký",
+          "větší"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak zní přivlastňovací přídavné jméno od *sestra*?",
+      "options": [
+        "sestřin",
+        "sestrův",
+        "sestrový"
+      ],
+      "answer": 0,
+      "explanation": "Od ženy -in, r se mění na ř: sestřin."
+    },
+    {
+      "type": "open",
+      "question": "Jaké znáš druhy přídavných jmen? Uveď vzory.",
+      "answer": "Tvrdá (vzor mladý), měkká (vzor jarní) a přivlastňovací (vzory otcův a matčin)."
+    },
+    {
+      "type": "open",
+      "question": "Vystupňuj přídavné jméno *rychlý* a pojmenuj stupně.",
+      "answer": "1. stupeň rychlý, 2. stupeň rychlejší, 3. stupeň nejrychlejší."
+    }
+  ]
+}

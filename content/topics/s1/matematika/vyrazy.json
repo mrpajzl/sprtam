@@ -1,0 +1,374 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vyrazy",
+  "title": "Algebraické výrazy",
+  "emoji": "🧮",
+  "generator": "expressions",
+  "explanations": [
+    {
+      "title": "Čtvercem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Lístek do kina stojí 180 Kč a popcorn 90 Kč. Pro x lidí zaplatíš 180x + 90x = 270x korun. Vzorec s písmenem funguje pro libovolný počet lidí – je to **recept**, do kterého jen dosadíš."
+        },
+        {
+          "type": "text",
+          "text": "S výrazy se učíš zacházet proto, abys pak uměl řešit rovnice, upravovat vzorce z fyziky a počítat chytře zpaměti – třeba 101² − 99² bez kalkulačky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Proměnná",
+          "definition": "Písmeno, za které můžeš dosadit různá čísla.",
+          "example": "V 270x je proměnná x = počet lidí."
+        },
+        {
+          "type": "term",
+          "term": "Výraz",
+          "definition": "Zápis z čísel, proměnných, znamének a závorek. Nemá v sobě rovnítko.",
+          "example": "2x² − 3x"
+        },
+        {
+          "type": "term",
+          "term": "Hodnota výrazu",
+          "definition": "Číslo, které dostaneš, když za proměnnou dosadíš konkrétní číslo a vypočítáš.",
+          "example": "2x² − 3x pro x = −2: 2 · 4 − 3 · (−2) = 8 + 6 = 14."
+        },
+        {
+          "type": "term",
+          "term": "Člen",
+          "definition": "Část výrazu oddělená znaménkem + nebo −. Členy se stejnou proměnnou ve stejné mocnině jsou **podobné** a jde je sečíst.",
+          "example": "3x + 5x = 8x, ale 3x + 5x² už sečíst nejde."
+        },
+        {
+          "type": "heading",
+          "text": "Roznásobení závorek"
+        },
+        {
+          "type": "text",
+          "text": "Číslo před závorkou vynásobí **každý** člen uvnitř: 3(x + 2) = 3x + 6. Dvě závorky násobíš „každý s každým“: (x + 2)(x + 3) = x · x + x · 3 + 2 · x + 2 · 3 = x² + 5x + 6."
+        },
+        {
+          "type": "heading",
+          "text": "Proč (a + b)² není a² + b²"
+        },
+        {
+          "type": "text",
+          "text": "Představ si čtverec o straně a + b. Rozdělíš ho čarami na čtverec a × a, čtverec b × b a **dva** obdélníky a × b. Dohromady: (a + b)² = a² + 2ab + b²."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si to na tečkách. Nastav mřížku 5 × 5 = 25. V duchu ji rozděl na a = 3 a b = 2: 3 · 3 + 2 · 2 + 2 · (3 · 2) = 9 + 4 + 12 = 25. Bez dvou obdélníků (12 teček) by ti vyšlo jen 13."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 5,
+            "columns": 5,
+            "max": 10
+          }
+        },
+        {
+          "type": "summary",
+          "text": "(a + b)² = a² + 2ab + b² – dvojnásobný součin nezapomeň!"
+        },
+        {
+          "type": "example",
+          "question": "Umocni (x + 3)².",
+          "answer": "a = x, b = 3. a² = x², 2ab = 2 · x · 3 = 6x, b² = 9. Výsledek **x² + 6x + 9**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "(a + b)² = a² + b²",
+          "right": "(a + b)² = a² + 2ab + b²",
+          "why": "Zapomněl jsi dva obdélníky. Zkouška čísly: (3 + 2)² = 25, ale 3² + 2² = 13."
+        },
+        {
+          "type": "heading",
+          "text": "Opačný směr: rozklad na součin"
+        },
+        {
+          "type": "term",
+          "term": "Rozklad na součin",
+          "definition": "Přepsat výraz jako násobení několika závorek. Je to roznásobení pozpátku.",
+          "example": "x² + 5x + 6 = (x + 2)(x + 3)"
+        },
+        {
+          "type": "text",
+          "text": "Nejužitečnější je a² − b² = (a − b)(a + b). Roznásob si pravou stranu: a² + ab − ab − b² – prostřední členy se vyruší."
+        },
+        {
+          "type": "example",
+          "question": "Spočítej zpaměti 101² − 99².",
+          "answer": "Podle a² − b² = (a − b)(a + b): (101 − 99)(101 + 99) = 2 · 200 = **400**."
+        },
+        {
+          "type": "summary",
+          "text": "Výraz = recept s proměnnou. Závorky roznásobuj „každý s každým“. (a + b)² = a² + 2ab + b², a² − b² = (a − b)(a + b)."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce a postup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "S výrazy dělá matematik tři věci: **roznásobí** je (odstraní závorky), **rozloží** je (vyrobí závorky) a **zkrátí** zlomky s proměnnou. Rozklad je klíč k rovnicím: součin je nula, jen když je nula některý činitel."
+        },
+        {
+          "type": "text",
+          "text": "Tady máš vzorce jako tahák a přesný postup, v jakém pořadí je zkoušet."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mnohočlen",
+          "definition": "Součet členů tvaru číslo · proměnná na přirozenou mocninu (a případně samotné číslo).",
+          "example": "x² + 5x + 6 je mnohočlen se třemi členy – trojčlen."
+        },
+        {
+          "type": "term",
+          "term": "Vytýkání",
+          "definition": "Vytažení společného činitele před závorku. Opak roznásobení.",
+          "example": "6x² + 9x = 3x(2x + 3)"
+        },
+        {
+          "type": "term",
+          "term": "Lomený výraz",
+          "definition": "Zlomek, v jehož jmenovateli (dole) je proměnná.",
+          "example": "(x² − 4)/(x − 2)"
+        },
+        {
+          "type": "term",
+          "term": "Podmínka",
+          "definition": "Hodnoty proměnné, které nesmíme dosadit, protože by byl jmenovatel nula. Nulou dělit nejde.",
+          "example": "U 1/(x − 3) je podmínka x ≠ 3."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "text",
+          "text": "Zkus si vzorec vybavit, pak kartičku otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "(a + b)²",
+                "back": "a² + 2ab + b²"
+              },
+              {
+                "front": "(a − b)²",
+                "back": "a² − 2ab + b²"
+              },
+              {
+                "front": "a² − b²",
+                "back": "(a − b)(a + b)"
+              },
+              {
+                "front": "(a + b)³",
+                "back": "a³ + 3a²b + 3ab² + b³"
+              },
+              {
+                "front": "(a − b)³",
+                "back": "a³ − 3a²b + 3ab² − b³"
+              },
+              {
+                "front": "a³ − b³",
+                "back": "(a − b)(a² + ab + b²)"
+              },
+              {
+                "front": "a³ + b³",
+                "back": "(a + b)(a² − ab + b²)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Postup rozkladu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vytkni, co mají všechny členy společné.",
+            "Dva členy se znaménkem minus a druhými mocninami? Použij a² − b².",
+            "Tři členy? Zkontroluj, jestli to není (a ± b)².",
+            "Trojčlen x² + px + q: hledej dvě čísla m, n, kde m + n = p a m · n = q. Pak x² + px + q = (x + m)(x + n)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rozlož x² + 5x + 6.",
+          "answer": "Hledám čísla se součtem 5 a součinem 6: to jsou 2 a 3. Výsledek **(x + 2)(x + 3)**. Zkouška roznásobením: x² + 3x + 2x + 6 ✓."
+        },
+        {
+          "type": "example",
+          "question": "Najdi a, aby 4x² − 12x + 9 = (ax − 3)².",
+          "answer": "(ax − 3)² = a²x² − 6ax + 9. Porovnám: a² = 4 a −6a = −12 → **a = 2**."
+        },
+        {
+          "type": "heading",
+          "text": "Krácení lomených výrazů"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš podmínky: jmenovatel ≠ 0.",
+            "Rozlož čitatele i jmenovatele na součin.",
+            "Zkrať stejné **závorky** (činitele)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Zjednoduš (x² − 4)/(x − 2).",
+          "answer": "Podmínka x ≠ 2. Čitatel rozložím: (x − 2)(x + 2). Zkrátím (x − 2): výsledek **x + 2, pro x ≠ 2**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "(x + 2)/2 = x + 1",
+          "right": "(x + 2)/2 = x/2 + 1",
+          "why": "Krátit smíš jen činitele (věci spojené násobením), ne sčítance. Dvojka dole dělí celý čitatel, tedy i x."
+        },
+        {
+          "type": "summary",
+          "text": "Rozklad: vytkni → zkus vzorec → trojčlen přes součet a součin. U lomených výrazů nejdřív podmínky, pak rozklad, pak krácení celých závorek."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "(a + b)² =",
+      "options": [
+        "a² + 2ab + b²",
+        "a² + b²",
+        "a² + ab + b²",
+        "2a + 2b"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "(x − 3)² =",
+      "options": [
+        "x² − 6x + 9",
+        "x² − 9",
+        "x² + 9",
+        "x² − 3x + 9"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Rozlož x² − 25.",
+      "options": [
+        "(x − 5)(x + 5)",
+        "(x − 5)²",
+        "(x − 25)(x + 1)",
+        "nelze"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Rozlož x² + 5x + 6.",
+      "options": [
+        "(x + 2)(x + 3)",
+        "(x + 1)(x + 6)",
+        "(x − 2)(x − 3)",
+        "(x + 5)(x + 1)"
+      ],
+      "answer": 0,
+      "explanation": "2 + 3 = 5, 2 · 3 = 6"
+    },
+    {
+      "type": "input",
+      "question": "101² − 99² =",
+      "answers": [
+        "400"
+      ],
+      "explanation": "(101 − 99)(101 + 99) = 2 · 200"
+    },
+    {
+      "type": "truefalse",
+      "question": "(a + b)² = a² + b²",
+      "answer": false,
+      "explanation": "Chybí člen 2ab."
+    },
+    {
+      "type": "input",
+      "question": "Hodnota výrazu 2x² − 3x pro x = −2:",
+      "answers": [
+        "14"
+      ],
+      "explanation": "2·4 + 6 = 14"
+    },
+    {
+      "type": "choice",
+      "question": "(x² − 4)/(x − 2) =",
+      "options": [
+        "x + 2, x ≠ 2",
+        "x − 2",
+        "x + 2 pro všechna x",
+        "x² − 2"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Výraz 1/(x − 3) není definován pro x = 3.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "4x² − 12x + 9 = (ax − 3)², a =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "(a − b)³ =",
+      "options": [
+        "a³ − 3a²b + 3ab² − b³",
+        "a³ − b³",
+        "a³ − 3ab + b³",
+        "a³ + 3a²b − 3ab² − b³"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Proč u lomených výrazů určujeme podmínky?",
+      "answer": "Nulou dělit nelze. Podmínky vylučují hodnoty proměnné, pro které by byl některý jmenovatel (i během úprav) roven nule."
+    },
+    {
+      "type": "open",
+      "question": "Jaké znáš způsoby rozkladu mnohočlenu na součin?",
+      "answer": "Vytýkání, užití vzorců (a² − b², (a ± b)²), rozklad kvadratického trojčlenu podle Vietových vzorců a postupné vytýkání po skupinách."
+    }
+  ]
+}

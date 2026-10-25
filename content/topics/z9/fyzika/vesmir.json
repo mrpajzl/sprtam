@@ -1,0 +1,403 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vesmir",
+  "title": "Vesmír",
+  "emoji": "🪐",
+  "explanations": [
+    {
+      "title": "Cesta od Země",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Za jasné noci vidíš na obloze tisíce světel. Některá jsou hvězdy, jiná planety, jedno je Měsíc. Vydáme se na cestu od Země stále dál – až za hranice naší galaxie."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hvězda",
+          "definition": "Obří koule z rozžhaveného plynu, která **vyzařuje vlastní světlo**. Energii jí dodává jaderná **syntéza** (slučování jader vodíku na helium) v nitru.",
+          "example": "Slunce je hvězda – nám nejbližší."
+        },
+        {
+          "type": "term",
+          "term": "Planeta",
+          "definition": "Velké těleso, které **obíhá kolem hvězdy** a samo nesvítí – jen odráží její světlo.",
+          "example": "Země, Mars, Jupiter."
+        },
+        {
+          "type": "term",
+          "term": "Měsíc (družice)",
+          "definition": "Těleso, které obíhá kolem planety.",
+          "example": "Náš Měsíc obíhá Zemi asi za 27 dní; fáze se opakují asi po 29,5 dnech."
+        },
+        {
+          "type": "heading",
+          "text": "Sluneční soustava"
+        },
+        {
+          "type": "text",
+          "text": "Kolem Slunce obíhá **8 planet**. Od Slunce: **Merkur, Venuše, Země, Mars, Jupiter, Saturn, Uran, Neptun**. Pomůcka: „**M**ůj **V**elký **Z**ápas **M**á **J**en **S**obota **U** **N**ás.“"
+        },
+        {
+          "type": "text",
+          "text": "Porovnej velikosti planet (průměr Země = 1). Která je největší? A kolikrát je větší než Země?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "průměr Země = 1",
+            "items": [
+              {
+                "label": "Merkur",
+                "value": 0.38
+              },
+              {
+                "label": "Venuše",
+                "value": 0.95
+              },
+              {
+                "label": "Země",
+                "value": 1
+              },
+              {
+                "label": "Mars",
+                "value": 0.53
+              },
+              {
+                "label": "Jupiter",
+                "value": 11.2
+              },
+              {
+                "label": "Saturn",
+                "value": 9.4
+              },
+              {
+                "label": "Uran",
+                "value": 4
+              },
+              {
+                "label": "Neptun",
+                "value": 3.9
+              }
+            ]
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "Země oběhne Slunce za **asi 365 dní** (1 rok) a kolem své osy se otočí za **24 hodin** (1 den).",
+            "**Jupiter** je největší planeta.",
+            "**Saturn** má nápadné prstence z ledu a kamenů.",
+            "**Merkur** je nejblíž Slunci."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Dál než Slunce"
+        },
+        {
+          "type": "term",
+          "term": "Galaxie",
+          "definition": "Obrovská soustava **miliard hvězd**, plynu a prachu, které drží pohromadě gravitace.",
+          "example": "Naše galaxie je **Mléčná dráha**. Za tmavé noci ji vidíš jako světlý pruh na obloze."
+        },
+        {
+          "type": "example",
+          "question": "Proč Venuši vidíme jasně, i když nesvítí?",
+          "answer": "Je blízko a odráží velmi dobře světlo **Slunce**. Je to planeta, ne hvězda."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejmenšího: galaxie, planeta, sluneční soustava, Měsíc.",
+          "answer": "**Měsíc → planeta → sluneční soustava → galaxie.** Sluneční soustava je jen nepatrná část Mléčné dráhy."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Slunce je planeta.",
+          "right": "Slunce je hvězda.",
+          "why": "Slunce svítí vlastním světlem díky jaderné syntéze. Planety samy nesvítí a obíhají kolem hvězdy."
+        },
+        {
+          "type": "summary",
+          "text": "Slunce je hvězda, kolem něj obíhá 8 planet (Merkur až Neptun). Největší je Jupiter. Jsme v galaxii Mléčná dráha."
+        }
+      ]
+    },
+    {
+      "title": "Vzdálenosti",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve vesmíru jsou vzdálenosti tak obrovské, že kilometry přestávají stačit. Kdybychom psali vzdálenost k nejbližší hvězdě v km, měla by číslo se 14 číslicemi. Proto astronomové měří vzdálenosti **světlem**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rychlost světla",
+          "definition": "Světlo letí vakuem asi **300 000 km za sekundu**. Nic není rychlejší.",
+          "example": "Ze Slunce k Zemi letí asi 8 minut."
+        },
+        {
+          "type": "term",
+          "term": "Světelný rok",
+          "definition": "Jednotka **vzdálenosti** (ne času!): kolik světlo urazí za jeden rok. Je to asi **9,5 bilionu km**.",
+          "example": "Nejbližší hvězda za Sluncem (Proxima Centauri) je asi 4,2 světelného roku daleko."
+        },
+        {
+          "type": "term",
+          "term": "Hvězda, planeta, měsíc, galaxie",
+          "definition": "**Hvězda** svítí sama, **planeta** obíhá hvězdu, **měsíc** obíhá planetu, **galaxie** je soustava miliard hvězd."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se počítá světelný rok"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Za 1 sekundu urazí světlo 300 000 km.",
+            "Rok má asi 365 · 24 · 3 600 ≈ 31 500 000 sekund.",
+            "Vynásob: 300 000 · 31 500 000 ≈ 9 450 000 000 000 km.",
+            "To je asi **9,5 bilionu km** = 1 světelný rok."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Měřítko vesmíru"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Cesta",
+            "Jak dlouho letí světlo"
+          ],
+          "rows": [
+            [
+              "Země → Měsíc",
+              "asi 1,3 sekundy"
+            ],
+            [
+              "Slunce → Země",
+              "asi 8 minut"
+            ],
+            [
+              "Slunce → Neptun",
+              "asi 4 hodiny"
+            ],
+            [
+              "Slunce → nejbližší hvězda",
+              "asi 4,2 roku"
+            ],
+            [
+              "napříč Mléčnou dráhou",
+              "asi 100 000 let"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Když se díváš na hvězdu, vidíš světlo, které z ní vyletělo před lety. Díváš se tedy do minulosti."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "hvězda",
+                "back": "vyzařuje vlastní světlo"
+              },
+              {
+                "front": "planeta",
+                "back": "obíhá kolem hvězdy"
+              },
+              {
+                "front": "měsíc",
+                "back": "obíhá kolem planety"
+              },
+              {
+                "front": "galaxie",
+                "back": "soustava miliard hvězd"
+              },
+              {
+                "front": "světelný rok",
+                "back": "vzdálenost, kterou světlo urazí za rok"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Zkus každý pojem vysvětlit vlastními slovy a pak kartu otoč."
+        },
+        {
+          "type": "example",
+          "question": "Hvězda je 10 světelných let daleko. Kdy z ní vyletělo světlo, které vidíš dnes?",
+          "answer": "Světlo letí 1 světelný rok za 1 rok. Vyletělo tedy před **10 lety**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik planet má sluneční soustava a která je nejblíže Slunci?",
+          "answer": "**8 planet**; nejblíže Slunci je **Merkur**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Světelný rok je jednotka času.",
+          "right": "Světelný rok je jednotka vzdálenosti.",
+          "why": "Slovo „rok“ mate. Je to dráha, kterou světlo urazí za rok – stejně jako „hodina cesty“ může znamenat vzdálenost."
+        },
+        {
+          "type": "summary",
+          "text": "Světelný rok je vzdálenost (asi 9,5 bilionu km), kterou světlo urazí za rok. Vesmír je tak velký, že se díváme do minulosti."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik planet má sluneční soustava?",
+      "answers": [
+        "8",
+        "osm"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď planety od Slunce.",
+      "items": [
+        "Merkur",
+        "Venuše",
+        "Země",
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která planeta je největší?",
+      "options": [
+        "Jupiter",
+        "Saturn",
+        "Země",
+        "Neptun"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je Slunce?",
+      "options": [
+        "hvězda",
+        "planeta",
+        "galaxie",
+        "kometa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Světelný rok je jednotka času.",
+      "answer": false,
+      "explanation": "Je to vzdálenost, kterou světlo urazí za rok."
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje naše galaxie?",
+      "options": [
+        "Mléčná dráha",
+        "Andromeda",
+        "Velký vůz",
+        "Orion"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která planeta je nejblíže Slunci?",
+      "options": [
+        "Merkur",
+        "Venuše",
+        "Mars",
+        "Země"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Měsíc svítí vlastním světlem.",
+      "answer": false
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem s popisem.",
+      "pairs": [
+        [
+          "hvězda",
+          "vyzařuje vlastní světlo"
+        ],
+        [
+          "planeta",
+          "obíhá kolem hvězdy"
+        ],
+        [
+          "měsíc",
+          "obíhá kolem planety"
+        ],
+        [
+          "galaxie",
+          "soustava miliard hvězd"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak dlouho trvá Zemi jeden oběh kolem Slunce?",
+      "options": [
+        "asi 365 dní",
+        "24 hodin",
+        "asi 29,5 dne",
+        "12 let"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která planeta je známá výraznými prstenci?",
+      "options": [
+        "Saturn",
+        "Mars",
+        "Merkur",
+        "Venuše"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi hvězdou a planetou?",
+      "answer": "Hvězda vyzařuje vlastní světlo díky jaderné syntéze v nitru (Slunce). Planeta nesvítí, jen odráží světlo a obíhá kolem hvězdy."
+    },
+    {
+      "type": "open",
+      "question": "Co je světelný rok?",
+      "answer": "Vzdálenost, kterou světlo urazí ve vakuu za jeden rok, asi 9,5 bilionu km. Používá se pro vzdálenosti hvězd."
+    }
+  ]
+}

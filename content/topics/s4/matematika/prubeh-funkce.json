@@ -1,0 +1,367 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "prubeh-funkce",
+  "title": "Průběh funkce a extrémy",
+  "emoji": "⛰️",
+  "explanations": [
+    {
+      "title": "Túra po grafu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jdeš po horském hřebeni zleva doprava. Když stoupáš, je sklon kladný. Když klesáš, záporný. Na **vrcholu** i na dně **údolí** jdeš na okamžik po rovině – sklon je nula."
+        },
+        {
+          "type": "text",
+          "text": "Derivace je právě ten sklon. Díky ní najdeš maximum zisku, minimum nákladů, nejmenší spotřebu materiálu – kdekoli hledáš „nejvíc“ nebo „nejméně“."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Derivace f′(x)",
+          "definition": "Sklon grafu v bodě x (směrnice tečny). f′ > 0: graf stoupá, f′ < 0: klesá.",
+          "example": "f(x) = x²: f′(x) = 2x. Pro x = −1 je sklon −2 (klesá), pro x = 1 je +2 (stoupá)."
+        },
+        {
+          "type": "term",
+          "term": "Lokální maximum a minimum",
+          "definition": "Vrchol kopce (maximum) a dno údolí (minimum) – v okolí bodu není graf výš (resp. níž). Společně se jim říká **extrémy**."
+        },
+        {
+          "type": "term",
+          "term": "Stacionární bod",
+          "definition": "Bod, kde f′(x) = 0 – sklon je vodorovný.",
+          "example": "f(x) = x² − 6x: f′ = 2x − 6 = 0 → x = 3."
+        },
+        {
+          "type": "heading",
+          "text": "Najdi vrchol"
+        },
+        {
+          "type": "text",
+          "text": "Parabola y = −x² + 4x je kopec. Najdi na grafu vrchol: x = 2, výška 4. V něm tečna leží vodorovně. Zkus změnit b – vrchol se posune."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": -1,
+            "b": 4,
+            "c": 0
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jaká je maximální hodnota f(x) = −x² + 4x?",
+          "answer": "f′(x) = −2x + 4 = 0 → x = 2. Vlevo od 2 je f′ > 0 (stoupá), vpravo f′ < 0 (klesá) → vrchol, maximum. f(2) = −4 + 8 = **4**."
+        },
+        {
+          "type": "heading",
+          "text": "Pozor na rovinku, která není vrchol"
+        },
+        {
+          "type": "text",
+          "text": "f(x) = x³: f′(x) = 3x², v nule je f′(0) = 0. Ale x³ stoupá před nulou i za ní – v nule je jen na chvíli „rovinka“, žádný kopec ani údolí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "f′(a) = 0, takže v a je extrém.",
+          "right": "Extrém je tam jen tehdy, když f′ v bodě a **mění znaménko**.",
+          "why": "U x³ je f′ = 3x² vlevo i vpravo od nuly kladná. Funkce pořád roste, extrém nemá."
+        },
+        {
+          "type": "example",
+          "question": "f(x) = x³ − 3x. Kolik má stacionárních bodů a kde je lokální maximum?",
+          "answer": "f′ = 3x² − 3 = 0 → x = −1 nebo x = 1 (**2 body**). Před −1 je f′ > 0, mezi −1 a 1 záporná → v −1 maximum, f(−1) = −1 + 3 = **2**. V 1 je minimum f(1) = −2."
+        },
+        {
+          "type": "heading",
+          "text": "Prohnutí: miska a deštník"
+        },
+        {
+          "type": "term",
+          "term": "Konvexní a konkávní",
+          "definition": "Konvexní graf je prohnutý jako miska (∪), konkávní jako deštník (∩). Rozhoduje druhá derivace f″ (derivace derivace): f″ > 0 konvexní, f″ < 0 konkávní."
+        },
+        {
+          "type": "term",
+          "term": "Inflexní bod",
+          "definition": "Místo, kde se miska mění na deštník nebo naopak. f″ tam mění znaménko.",
+          "example": "x³: f″ = 6x, mění znaménko v 0 → inflexní bod x = 0."
+        },
+        {
+          "type": "example",
+          "question": "Obdélník má obvod 20 cm. Jaký největší obsah může mít?",
+          "answer": "Strany x a 10 − x. Obsah S = x(10 − x) = 10x − x². S′ = 10 − 2x = 0 → x = 5. Čtverec 5 × 5, obsah **25 cm²**."
+        },
+        {
+          "type": "summary",
+          "text": "f′ > 0 roste, f′ < 0 klesá. Extrémy hledej v bodech f′ = 0, ale jen tam, kde f′ mění znaménko (+ → − maximum, − → + minimum). f″ určuje prohnutí, inflexe = změna prohnutí."
+        }
+      ]
+    },
+    {
+      "title": "Algoritmus",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Vyšetři průběh funkce“ je klasická maturitní úloha. Zní složitě, ale je to pevný seznam kroků – jako recept. Kdo ho dodrží, nic nevynechá."
+        },
+        {
+          "type": "text",
+          "text": "Stejný postup používá inženýr, když hledá nejlevnější tvar nádoby, nebo ekonom, když hledá cenu s největším ziskem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Derivace a druhá derivace",
+          "definition": "f′ je derivace (sklon grafu), f″ je derivace z f′ (jak se mění sklon).",
+          "example": "f = x³ − 3x: f′ = 3x² − 3, f″ = 6x."
+        },
+        {
+          "type": "term",
+          "term": "Stacionární bod",
+          "definition": "Bod, kde f′(x) = 0."
+        },
+        {
+          "type": "term",
+          "term": "Lokální extrém",
+          "definition": "Lokální maximum (v okolí nejvyšší hodnota) nebo minimum (nejnižší)."
+        },
+        {
+          "type": "term",
+          "term": "Konvexní / konkávní / inflexní bod",
+          "definition": "f″ > 0: konvexní (∪). f″ < 0: konkávní (∩). Inflexní bod: f″ v něm mění znaménko."
+        },
+        {
+          "type": "heading",
+          "text": "Souvislosti"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Podmínka",
+            "Význam"
+          ],
+          "rows": [
+            [
+              "f′ > 0 na intervalu",
+              "f tam roste"
+            ],
+            [
+              "f′ < 0 na intervalu",
+              "f tam klesá"
+            ],
+            [
+              "f′ mění znaménko + → −",
+              "lokální maximum"
+            ],
+            [
+              "f′ mění znaménko − → +",
+              "lokální minimum"
+            ],
+            [
+              "f′(a) = 0 a f″(a) > 0",
+              "lokální minimum"
+            ],
+            [
+              "f′(a) = 0 a f″(a) < 0",
+              "lokální maximum"
+            ],
+            [
+              "f″ mění znaménko",
+              "inflexní bod"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Urči definiční obor.",
+            "Spočítej f′ a vyřeš f′ = 0 → stacionární body.",
+            "Na ose vyznač stacionární body a urči znaménko f′ v každém intervalu (dosaď číslo).",
+            "Z tabulky znamének přečti, kde f roste, klesá a kde jsou extrémy. Spočítej jejich hodnoty.",
+            "Spočítej f″, najdi kde mění znaménko → prohnutí a inflexní body.",
+            "Načrtni graf."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "f(x) = x³ − 12x. Kde je lokální minimum?",
+          "answer": "f′ = 3x² − 12 = 0 → x = ±2. Znaménka f′: pro x = −3: 15 > 0; pro x = 0: −12 < 0; pro x = 3: 15 > 0. V −2 je + → − (maximum), v **x = 2** je − → + (**minimum**). f(2) = 8 − 24 = −16."
+        },
+        {
+          "type": "example",
+          "question": "f(x) = x² − 6x: stacionární bod a jeho typ?",
+          "answer": "f′ = 2x − 6 = 0 → **x = 3**. f″ = 2 > 0 → minimum, f(3) = −9."
+        },
+        {
+          "type": "text",
+          "text": "Na grafu je y = x² − 6x + 6 – tatáž funkce posunutá o 6 nahoru, aby se vrchol vešel do obrázku. Vrchol je v [3; −3]: stacionární bod x = 3 se posunem nezměnil. Hýbej c a sleduj, že vrchol zůstává nad x = 3."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": -6,
+            "c": 6
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Slovní úloha na extrém"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vyjádři veličinu, kterou chceš maximalizovat/minimalizovat, jako funkci jedné proměnné.",
+            "Najdi stacionární bod.",
+            "Ověř, že jde o maximum/minimum.",
+            "Odpověz na otázku ze zadání."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Obdélník s obvodem 20 cm a největším obsahem?",
+          "answer": "S(x) = x(10 − x). S′ = 10 − 2x = 0 → x = 5, S″ = −2 < 0 → maximum. Obsah **25 cm²**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "f(x) = x³ má v 0 extrém, protože f′(0) = 0.",
+          "right": "Nemá – je tam inflexní bod.",
+          "why": "f′ = 3x² je kolem nuly kladná na obou stranách, funkce pořád roste. Nulová derivace je jen nutná podmínka, ne postačující."
+        },
+        {
+          "type": "summary",
+          "text": "Algoritmus: D(f) → f′ = 0 → znaménka f′ → extrémy → f″ → prohnutí a inflexe → graf. Extrém je jen tam, kde f′ mění znaménko."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "f′(x) > 0 na intervalu I znamená, že f je na I:",
+      "options": [
+        "rostoucí",
+        "klesající",
+        "konstantní",
+        "konvexní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "f(x) = x² − 6x. Stacionární bod x =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "f(x) = −x² + 4x. Maximální hodnota =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Je-li f′(a) = 0, má f v bodě a vždy extrém.",
+      "answer": false,
+      "explanation": "f(x) = x³: f′(0) = 0, ale funkce stále roste."
+    },
+    {
+      "type": "choice",
+      "question": "f′(a) = 0 a f″(a) > 0. V bodě a je:",
+      "options": [
+        "lokální minimum",
+        "lokální maximum",
+        "inflexní bod"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "f(x) = x³ − 3x. Hodnota lokálního maxima =",
+      "answers": [
+        "2"
+      ],
+      "explanation": "f′ = 3x² − 3 = 0 → x = ±1, maximum v −1: f(−1) = 2"
+    },
+    {
+      "type": "input",
+      "question": "Kolik stacionárních bodů má f(x) = x³ − 3x?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "f″(x) > 0 na intervalu znamená, že f je tam:",
+      "options": [
+        "konvexní",
+        "konkávní",
+        "klesající",
+        "rostoucí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Obdélník s obvodem 20 cm. Největší možný obsah (cm²) =",
+      "answers": [
+        "25"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "f(x) = x³. Inflexní bod x =",
+      "answers": [
+        "0"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "f(x) = x³ je rostoucí na celém ℝ.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "f(x) = x³ − 12x. x-ová souřadnice lokálního minima =",
+      "answers": [
+        "2"
+      ],
+      "explanation": "f′ = 3x² − 12 = 0 → x = ±2; f′ mění znaménko v 2 z − na +."
+    },
+    {
+      "type": "open",
+      "question": "Jak pomocí derivace najdeš lokální extrémy funkce?",
+      "answer": "Najdu stacionární body (f′ = 0) a body, kde f′ neexistuje. Kde f′ mění znaménko z + na −, je maximum, z − na + minimum. Lze použít i znaménko f″."
+    },
+    {
+      "type": "open",
+      "question": "Co je inflexní bod?",
+      "answer": "Bod, ve kterém funkce přechází z konvexní na konkávní nebo naopak. Druhá derivace v něm mění znaménko."
+    }
+  ]
+}

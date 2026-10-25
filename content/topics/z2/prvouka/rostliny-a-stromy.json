@@ -1,0 +1,374 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rostliny-a-stromy",
+  "title": "Rostliny a stromy",
+  "emoji": "🌳",
+  "explanations": [
+    {
+      "title": "Listy a jehlice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V zimě vypadá les zvláštně. Některé stromy jsou holé, bez listí. Jiné jsou pořád zelené. Proč?"
+        },
+        {
+          "type": "text",
+          "text": "Stromy se dělí podle toho, co mají na větvích. Když to víš, poznáš strom na procházce i v zimě."
+        },
+        {
+          "type": "term",
+          "term": "Strom",
+          "definition": "Velká rostlina s jedním silným dřevěným **kmenem**.",
+          "example": "dub, smrk, lípa"
+        },
+        {
+          "type": "term",
+          "term": "Listnatý strom",
+          "definition": "Strom s širokými plochými **listy**. Na podzim listí obvykle shodí.",
+          "example": "dub, lípa, bříza, buk"
+        },
+        {
+          "type": "term",
+          "term": "Jehličnatý strom",
+          "definition": "Strom s úzkými špičatými **jehlicemi**. Většinou je zelený celý rok.",
+          "example": "smrk, borovice, jedle"
+        },
+        {
+          "type": "term",
+          "term": "Jehlice",
+          "definition": "Úzký, tvrdý a špičatý „lístek“ jehličnatého stromu.",
+          "example": "Smrkové jehlice píchají."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď stromy: má listy, nebo jehlice?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Listnatý 🍃",
+              "Jehličnatý 🌲"
+            ],
+            "items": [
+              {
+                "text": "dub",
+                "group": 0
+              },
+              {
+                "text": "lípa",
+                "group": 0
+              },
+              {
+                "text": "bříza",
+                "group": 0
+              },
+              {
+                "text": "buk",
+                "group": 0
+              },
+              {
+                "text": "smrk",
+                "group": 1
+              },
+              {
+                "text": "borovice",
+                "group": 1
+              },
+              {
+                "text": "jedle",
+                "group": 1
+              },
+              {
+                "text": "modřín",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Výjimka: modřín"
+        },
+        {
+          "type": "text",
+          "text": "**Modřín** má jehlice, je to tedy jehličnatý strom. Ale jako jediný u nás na podzim jehlice shazuje. V zimě je holý."
+        },
+        {
+          "type": "example",
+          "question": "V zimě vidíš strom se zelenými jehlicemi. Je listnatý, nebo jehličnatý?",
+          "answer": "Má **jehlice** a je zelený i v zimě → **jehličnatý**. Může to být smrk nebo borovice."
+        },
+        {
+          "type": "example",
+          "question": "Bříza má bílou kůru a malé listy. Je jehličnatá?",
+          "answer": "Bříza má **listy**, ne jehlice → je **listnatá**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Smrk na podzim shazuje jehlice.",
+          "right": "Smrk je zelený celý rok. Jehlice na zimu shazuje modřín.",
+          "why": "Většina jehličnanů je stále zelená. Modřín je výjimka."
+        },
+        {
+          "type": "text",
+          "text": "Stromy jsou pro nás důležité: vyrábějí **kyslík**, který dýcháme, a dávají stín a dřevo."
+        },
+        {
+          "type": "summary",
+          "text": "Listnaté stromy mají listy a na podzim je shazují. Jehličnaté mají jehlice a jsou zelené i v zimě – kromě modřínu."
+        }
+      ]
+    },
+    {
+      "title": "Strom, keř, bylina",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pampeliška, líska a dub jsou všechno rostliny. Ale vypadají úplně jinak. Pampeliška je malá, dub obrovský."
+        },
+        {
+          "type": "text",
+          "text": "Rostliny dělíme do tří skupin podle toho, jak vypadá jejich stonek. Stačí se podívat zespodu, jak rostlina roste ze země."
+        },
+        {
+          "type": "term",
+          "term": "Stonek",
+          "definition": "Část rostliny, která nese listy a květy. U stromu je ze dřeva a říká se mu **kmen**.",
+          "example": "Stonek pampelišky je měkký, kmen dubu tvrdý."
+        },
+        {
+          "type": "term",
+          "term": "Strom",
+          "definition": "Vysoká rostlina s **jedním silným dřevěným kmenem**. Větve rostou až výš.",
+          "example": "dub, jabloň, smrk"
+        },
+        {
+          "type": "term",
+          "term": "Keř",
+          "definition": "Rostlina, ze které vyrůstá **víc tenkých dřevěných větví hned od země**.",
+          "example": "líska, šípek, rybíz"
+        },
+        {
+          "type": "term",
+          "term": "Bylina",
+          "definition": "Rostlina s **měkkým zeleným stonkem**, bez dřeva. Bývá malá.",
+          "example": "pampeliška, sedmikráska, tráva"
+        },
+        {
+          "type": "heading",
+          "text": "Jak poznám, co to je"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je stonek měkký a zelený? → **bylina**.",
+            "Je dřevěný? Podívám se k zemi.",
+            "Jeden silný kmen → **strom**.",
+            "Víc větví hned od země → **keř**."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rostlina",
+            "Jak vypadá",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "strom",
+              "jeden silný kmen",
+              "dub"
+            ],
+            [
+              "keř",
+              "víc tenkých větví od země",
+              "líska"
+            ],
+            [
+              "bylina",
+              "měkký zelený stonek",
+              "pampeliška"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Plody stromů a keřů"
+        },
+        {
+          "type": "term",
+          "term": "Plod",
+          "definition": "Část rostliny, ve které jsou semena. Z nich může vyrůst nová rostlina.",
+          "example": "jablko, žalud, oříšek"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky a poznej plody."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Plod dubu",
+                "back": "žalud"
+              },
+              {
+                "front": "Plod kaštanu (jírovce)",
+                "back": "kaštan"
+              },
+              {
+                "front": "Plod lísky",
+                "back": "lískový oříšek"
+              },
+              {
+                "front": "Plod jabloně",
+                "back": "jablko"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Rostlina má měkký zelený stonek a žlutý květ. Co to je?",
+          "answer": "Měkký zelený stonek → **bylina**. Je to třeba pampeliška."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejmenšího: strom, bylina, keř.",
+          "answer": "Bylina je nízká, keř vyšší, strom nejvyšší: **bylina → keř → strom**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Líska je malý strom, protože je ze dřeva.",
+          "right": "Líska je keř.",
+          "why": "Ze dřeva je strom i keř. Rozhoduje, jestli má jeden kmen (strom), nebo víc větví od země (keř)."
+        },
+        {
+          "type": "summary",
+          "text": "Strom má jeden silný kmen. Keř má víc větví od země. Bylina má měkký zelený stonek."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který strom je jehličnatý?",
+      "options": [
+        "smrk",
+        "dub",
+        "lípa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který strom je listnatý?",
+      "options": [
+        "bříza",
+        "borovice",
+        "jedle"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje plod dubu?",
+      "answers": [
+        "žalud",
+        "žaludy"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Pampeliška je bylina.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Smrk na podzim shazuje jehlice.",
+      "answer": false,
+      "explanation": "Smrk je zelený celý rok. Jehlice shazuje modřín."
+    },
+    {
+      "type": "choice",
+      "question": "Který jehličnan na zimu shazuje jehlice?",
+      "options": [
+        "modřín",
+        "smrk",
+        "jedle"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj strom a plod.",
+      "pairs": [
+        [
+          "dub",
+          "žalud"
+        ],
+        [
+          "líska",
+          "oříšek"
+        ],
+        [
+          "jabloň",
+          "jablko"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co má strom a keř nemá?",
+      "options": [
+        "jeden silný kmen",
+        "listy",
+        "kořeny"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "bylina",
+        "keř",
+        "strom"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Stromy vyrábějí kyslík, který dýcháme.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš listnatý a jehličnatý strom?",
+      "answer": "Listnatý má široké listy a na podzim je shazuje. Jehličnatý má jehlice a většinou je zelený i v zimě."
+    },
+    {
+      "type": "open",
+      "question": "Jmenuj strom, keř a bylinu.",
+      "answer": "Například strom dub, keř líska a bylina pampeliška."
+    }
+  ]
+}

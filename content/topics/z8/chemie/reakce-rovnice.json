@@ -1,0 +1,402 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "reakce-rovnice",
+  "title": "Chemické reakce a rovnice",
+  "emoji": "⚖️",
+  "explanations": [
+    {
+      "title": "Jako recept",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Z mouky, vajec a mléka upečeš palačinku. Zpátky na mouku a vajíčka ji už nerozložíš – vzniklo něco **nového**. Stejně dřevo shoří na popel a kouř a železo zrezaví."
+        },
+        {
+          "type": "text",
+          "text": "Takovým dějům se říká **chemické reakce**. Probíhají při vaření, v motoru auta, v tvém žaludku i v listech stromů. Chemik je umí zapsat stručně jako recept – **chemickou rovnicí**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Chemická reakce",
+          "definition": "Děj, při kterém z jedněch látek vznikají **úplně nové látky** s jinými vlastnostmi.",
+          "example": "Hoření dřeva, rezavění železa, pečení chleba, kysnutí mléka."
+        },
+        {
+          "type": "term",
+          "term": "Fyzikální děj",
+          "definition": "Děj, při kterém se látka změní jen na pohled (tvar, skupenství), ale **zůstane stejnou látkou**.",
+          "example": "Tání ledu – je to pořád voda. Rozpouštění cukru – odpařením ho dostaneš zpět."
+        },
+        {
+          "type": "term",
+          "term": "Reaktanty",
+          "definition": "Látky, které do reakce **vstupují** – „suroviny“ receptu.",
+          "example": "Při hoření dřeva: dřevo a kyslík ze vzduchu."
+        },
+        {
+          "type": "term",
+          "term": "Produkty",
+          "definition": "Látky, které reakcí **vzniknou** – „hotové jídlo“.",
+          "example": "Při hoření dřeva: oxid uhličitý, voda, popel."
+        },
+        {
+          "type": "heading",
+          "text": "Jak poznat, že proběhla reakce"
+        },
+        {
+          "type": "list",
+          "items": [
+            "změní se barva (jablko zhnědne)",
+            "vzniká plyn – bublinky (šumivá tableta)",
+            "vzniká sraženina – zakalení",
+            "uvolní se teplo nebo světlo (oheň)",
+            "objeví se nový zápach (zkažené vejce)"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď děje. U každého se zeptej: Vznikla nová látka, nebo je to pořád ta stejná?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "chemický děj",
+              "fyzikální děj"
+            ],
+            "items": [
+              {
+                "text": "hoření dřeva",
+                "group": 0
+              },
+              {
+                "text": "rezavění železa",
+                "group": 0
+              },
+              {
+                "text": "kysnutí mléka",
+                "group": 0
+              },
+              {
+                "text": "pečení chleba",
+                "group": 0
+              },
+              {
+                "text": "tání ledu",
+                "group": 1
+              },
+              {
+                "text": "rozpouštění cukru",
+                "group": 1
+              },
+              {
+                "text": "lámání skla",
+                "group": 1
+              },
+              {
+                "text": "var vody",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Teplo a urychlovač"
+        },
+        {
+          "type": "term",
+          "term": "Exotermní a endotermní reakce",
+          "definition": "**Exotermní** reakce teplo **uvolňuje** (hoření). **Endotermní** reakce teplo **spotřebovává** – musíš ho dodávat (pálení vápence na vápno)."
+        },
+        {
+          "type": "term",
+          "term": "Katalyzátor",
+          "definition": "Látka, která reakci **urychlí**, ale sama se **nespotřebuje**.",
+          "example": "Katalyzátor ve výfuku auta, enzymy ve slinách, které štěpí škrob."
+        },
+        {
+          "type": "heading",
+          "text": "Nic se neztratí"
+        },
+        {
+          "type": "text",
+          "text": "Při reakci se atomy jen **přeskupí** – jako kostičky stavebnice rozebrané a složené jinak. Žádná kostička nezmizí a žádná nepřibude. Proto hmotnost reaktantů = hmotnost produktů. Tomu se říká **zákon zachování hmotnosti**."
+        },
+        {
+          "type": "example",
+          "question": "Spálíš 12 g uhlíku a spotřebuje se 32 g kyslíku. Kolik gramů oxidu uhličitého vznikne?",
+          "answer": "Hmotnost se zachová: 12 g + 32 g = **44 g** oxidu uhličitého."
+        },
+        {
+          "type": "example",
+          "question": "Je rozpouštění cukru v čaji chemická reakce?",
+          "answer": "Není. Cukr nezmizel, jen se rozptýlil ve vodě. Když vodu odpaříš, cukr dostaneš zpátky. Nová látka nevznikla – je to **fyzikální děj**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Tání ledu je chemická reakce, protože se led mění.",
+          "right": "Tání je **fyzikální děj** – led i voda jsou stejná látka.",
+          "why": "Chemická reakce musí vytvořit novou látku. Změna skupenství novou látku nevytvoří."
+        },
+        {
+          "type": "summary",
+          "text": "Při chemické reakci vznikají z reaktantů nové látky – produkty. Atomy se jen přeskupí, proto se hmotnost zachovává."
+        }
+      ]
+    },
+    {
+      "title": "Vyčísli rovnici",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každá chemická reakce se dá zapsat jedním řádkem – **chemickou rovnicí**. Je to jako recept: vlevo suroviny, vpravo výsledek. Chemik z ní pozná, kolik čeho přesně potřebuje."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se rovnici přečíst a hlavně **vyčíslit** – doplnit čísla tak, aby seděla. Bez toho by továrna na hnojiva nevěděla, kolik surovin nakoupit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Chemická reakce",
+          "definition": "Děj, při kterém vznikají nové látky. Látky na začátku jsou **reaktanty**, nové látky **produkty**."
+        },
+        {
+          "type": "term",
+          "term": "Chemická rovnice",
+          "definition": "Zápis reakce: reaktanty vlevo, šipka →, produkty vpravo.",
+          "example": "H₂ + O₂ → H₂O (vodík a kyslík dávají vodu – zatím nevyčísleno)"
+        },
+        {
+          "type": "term",
+          "term": "Index",
+          "definition": "Malé číslo **dole za značkou**. Říká, kolik atomů je v jedné molekule. Ten **nesmíš měnit** – změnil bys látku.",
+          "example": "H₂O: index 2 u H → 2 atomy vodíku."
+        },
+        {
+          "type": "term",
+          "term": "Koeficient",
+          "definition": "Velké číslo **před vzorcem**. Říká, kolik molekul bereš. To měnit smíš.",
+          "example": "2 H₂O = dvě molekuly vody = 4 atomy H a 2 atomy O."
+        },
+        {
+          "type": "term",
+          "term": "Zákon zachování hmotnosti",
+          "definition": "Atomy při reakci nevznikají ani nezanikají. Každého prvku musí být **vlevo i vpravo stejně atomů**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak vyčíslit rovnici"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš vzorce: H₂ + O₂ → H₂O",
+            "Spočítej kyslík: vlevo 2, vpravo 1 → před H₂O dej **2**: H₂ + O₂ → 2 H₂O",
+            "Spočítej vodík: vpravo teď 2 · 2 = 4, vlevo 2 → před H₂ dej **2**",
+            "Kontrola: H 4 = 4, O 2 = 2 ✓ → **2 H₂ + O₂ → 2 H₂O**"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Koeficient 1 se nepíše. Vyzkoušej si doplnit chybějící koeficienty."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "2 H₂ + O₂ → ",
+                "after": " H₂O",
+                "options": [
+                  "2",
+                  "1",
+                  "4"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "N₂ + ",
+                "after": " H₂ → 2 NH₃",
+                "options": [
+                  "3",
+                  "2",
+                  "6"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "",
+                "after": " Na + Cl₂ → 2 NaCl",
+                "options": [
+                  "2",
+                  "1",
+                  "4"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "2 Mg + O₂ → ",
+                "after": " MgO",
+                "options": [
+                  "2",
+                  "1",
+                  "3"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Vyčísli: Mg + O₂ → MgO",
+          "answer": "Kyslík: vlevo 2, vpravo 1 → 2 MgO. Hořčík: vpravo 2, vlevo 1 → 2 Mg. Výsledek **2 Mg + O₂ → 2 MgO**. Kontrola: Mg 2 = 2, O 2 = 2 ✓"
+        },
+        {
+          "type": "example",
+          "question": "Vyčísli hoření metanu: CH₄ + O₂ → CO₂ + H₂O",
+          "answer": "Uhlík: 1 = 1 ✓. Vodík: vlevo 4 → 2 H₂O. Kyslík vpravo: 2 (v CO₂) + 2 (ve 2 H₂O) = 4 → vlevo 2 O₂. **CH₄ + 2 O₂ → CO₂ + 2 H₂O**."
+        },
+        {
+          "type": "heading",
+          "text": "Teplo a katalyzátor"
+        },
+        {
+          "type": "term",
+          "term": "Exotermní / endotermní",
+          "definition": "Exotermní reakce teplo **uvolňuje** (hoření metanu). Endotermní teplo **spotřebovává** (rozklad vápence CaCO₃ → CaO + CO₂)."
+        },
+        {
+          "type": "term",
+          "term": "Katalyzátor",
+          "definition": "Látka, která reakci urychlí a sama se nespotřebuje. Píše se nad šipku.",
+          "example": "Peroxid vodíku se s burelem (MnO₂) rychle rozkládá: 2 H₂O₂ → 2 H₂O + O₂."
+        },
+        {
+          "type": "mistake",
+          "wrong": "H₂ + O₂ → H₂O₂ (změním index, aby kyslík seděl)",
+          "right": "2 H₂ + O₂ → 2 H₂O (měním jen koeficienty)",
+          "why": "H₂O₂ je peroxid vodíku – úplně jiná látka než voda. Změnou indexu měníš látku, změnou koeficientu jen počet molekul."
+        },
+        {
+          "type": "summary",
+          "text": "Rovnice: reaktanty → produkty. Vyčíslíš ji tak, aby každého prvku bylo vlevo i vpravo stejně atomů. Měníš jen koeficienty před vzorci, nikdy indexy."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je chemická reakce?",
+      "options": [
+        "děj, při kterém vznikají nové látky",
+        "změna skupenství",
+        "rozpouštění látky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Tání ledu je chemická reakce.",
+      "answer": false,
+      "explanation": "Je to jen změna skupenství, voda zůstává vodou."
+    },
+    {
+      "type": "truefalse",
+      "question": "Hoření svíčky je chemická reakce.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Doplň koeficient: 2 H₂ + O₂ → ? H₂O",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň koeficient: N₂ + ? H₂ → 2 NH₃",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň koeficient: ? Na + Cl₂ → 2 NaCl",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývají látky, které do reakce vstupují?",
+      "options": [
+        "reaktanty",
+        "produkty",
+        "katalyzátory"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Reakce, při které se teplo uvolňuje, je…",
+      "options": [
+        "exotermní",
+        "endotermní",
+        "neutrální"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co dělá katalyzátor?",
+      "options": [
+        "urychlí reakci a sám se nespotřebuje",
+        "je produktem reakce",
+        "zastaví reakci"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která rovnice je vyčíslená správně?",
+      "options": [
+        "C + O₂ → CO₂",
+        "2 C + O₂ → CO₂",
+        "C + O₂ → 2 CO₂"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co říká zákon zachování hmotnosti?",
+      "answer": "Hmotnost reaktantů se rovná hmotnosti produktů. Atomy se při reakci nevytváří ani neničí, jen se přeskupí."
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš, že proběhla chemická reakce?",
+      "answer": "Vznikne nová látka. Často se změní barva, vznikne plyn nebo sraženina, uvolní se teplo nebo světlo."
+    }
+  ]
+}

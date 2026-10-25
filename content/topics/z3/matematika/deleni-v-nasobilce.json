@@ -1,0 +1,321 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "deleni-v-nasobilce",
+  "title": "Dělení v násobilce",
+  "emoji": "➗",
+  "generator": "div-table",
+  "explanations": [
+    {
+      "title": "Rozdělování",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš 24 kuliček a 6 sáčků. Chceš, aby v každém sáčku bylo stejně. Kolik dáš do jednoho?"
+        },
+        {
+          "type": "text",
+          "text": "To je **dělení**. Potřebuješ ho, když se něco dělí mezi kamarády, když tvoříte družstva nebo když zjišťuješ, kolik věcí koupíš za své peníze."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dělení ( : )",
+          "definition": "Rozdělení věcí na stejně velké skupiny. Znak je dvojtečka, čteme „děleno“.",
+          "example": "24 : 6 = 4 – dvacet čtyři děleno šesti je čtyři."
+        },
+        {
+          "type": "term",
+          "term": "Spravedlivě",
+          "definition": "Každá skupina dostane úplně stejně. Nic nezbude."
+        },
+        {
+          "type": "heading",
+          "text": "Rozdáváme kuličky"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Do každého sáčku dej 1 kuličku. Rozdáno 6.",
+            "Další kolo: rozdáno 12.",
+            "Další kolo: rozdáno 18.",
+            "Další kolo: rozdáno 24 – došly.",
+            "Proběhla 4 kola, v každém sáčku jsou **4**. **24 : 6 = 4**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Každá řada je jeden sáček. 6 sáčků po 4 kuličkách. Spočítej všechny puntíky – je jich 24?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 6,
+            "columns": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dva druhy otázek"
+        },
+        {
+          "type": "text",
+          "text": "**Rozdělit** na 6 skupin: kolik je v jedné? 24 : 6 = 4. **Rozdělit** po 6 kusech: kolik je skupin? 24 : 6 = 4. Oboje je dělení."
+        },
+        {
+          "type": "example",
+          "question": "32 žáků se rozdělí do 4 stejných družstev. Kolik je v družstvu?",
+          "answer": "32 : 4. Kolik musí být v každém družstvu, aby 4 družstva měla 32? 4 · 8 = 32, takže **8 žáků**."
+        },
+        {
+          "type": "example",
+          "question": "Tužka stojí 6 Kč. Kolik tužek koupíš za 36 Kč?",
+          "answer": "Kolikrát se 6 Kč vejde do 36 Kč? 36 : 6 = **6 tužek**, protože 6 · 6 = 36."
+        },
+        {
+          "type": "example",
+          "question": "0 : 5 =",
+          "answer": "Nemám nic. Pět sáčků zůstane prázdných: **0**."
+        },
+        {
+          "type": "summary",
+          "text": "Dělení = rozdělení na stejné skupiny. 24 : 6 = 4."
+        }
+      ]
+    },
+    {
+      "title": "Hledám číslo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozdávat po jedné kuličce je pomalé. Kdo umí násobilku, umí i dělit – a mnohem rychleji."
+        },
+        {
+          "type": "text",
+          "text": "Dělení je totiž **násobení pozpátku**. Každý příklad na dělení přeložíš na otázku z násobilky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dělení ( : )",
+          "definition": "Rozdělení na stejné skupiny.",
+          "example": "56 : 8 = 7"
+        },
+        {
+          "type": "term",
+          "term": "Násobení ( · )",
+          "definition": "Spojení stejných skupin dohromady. Je to opak dělení.",
+          "example": "8 · 7 = 56"
+        },
+        {
+          "type": "term",
+          "term": "Zkouška",
+          "definition": "Kontrola výsledku. U dělení výsledek vynásobíš a musí vyjít číslo, které jsi dělil.",
+          "example": "56 : 8 = 7. Zkouška: 8 · 7 = 56 ✔"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "text",
+          "text": "56 : 8 = ? Zeptej se: **8 krát kolik je 56?**"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "8 · 6 = 48 – málo.",
+            "8 · 7 = 56 – sedí!",
+            "Takže **56 : 8 = 7**.",
+            "Zkouška: 8 · 7 = 56 ✔"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každého příkladu se zeptej „krát kolik?“ a klepni na správné číslo."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "42 : 6 =",
+                "after": "",
+                "options": [
+                  "6",
+                  "7",
+                  "8"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "81 : 9 =",
+                "after": "",
+                "options": [
+                  "8",
+                  "9",
+                  "7"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "36 : 4 =",
+                "after": "",
+                "options": [
+                  "9",
+                  "8",
+                  "6"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "63 : 9 =",
+          "answer": "9 krát kolik je 63? 9 · 7 = 63. **63 : 9 = 7**."
+        },
+        {
+          "type": "example",
+          "question": "70 : 10 =",
+          "answer": "10 krát kolik je 70? 10 · 7 = 70. **7**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "45 : 9 = 6",
+          "right": "45 : 9 = **5**",
+          "why": "Zkouška to prozradí: 9 · 6 = 54, ne 45. Správně 9 · 5 = 45."
+        },
+        {
+          "type": "summary",
+          "text": "Dělení = násobení pozpátku. Zeptej se „krát kolik?“ a výsledek ověř zkouškou."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "18 : 3 =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "42 : 7 =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "63 : 9 =",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "48 : 8 =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "54 : 6 =",
+      "answers": [
+        "9"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "70 : 10 =",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "72 : 8 =",
+      "options": [
+        "8",
+        "9",
+        "7"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "49 : 7 =",
+      "options": [
+        "7",
+        "6",
+        "8"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "0 : 5 = 0",
+      "answer": true,
+      "explanation": "Když nic nerozděluji, každý dostane 0."
+    },
+    {
+      "type": "truefalse",
+      "question": "45 : 9 = 6",
+      "answer": false,
+      "explanation": "9 · 5 = 45, takže 45 : 9 = 5."
+    },
+    {
+      "type": "input",
+      "question": "32 žáků se rozdělí do 4 stejných družstev. Kolik žáků je v družstvu?",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Tužka stojí 6 Kč. Kolik tužek koupíš za 36 Kč?",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak si ověříš, že 56 : 8 = 7?",
+      "answer": "Vynásobím 8 · 7 = 56. Výsledek sedí."
+    },
+    {
+      "type": "open",
+      "question": "Vymysli slovní úlohu na 20 : 4.",
+      "answer": "Například: 20 bonbonů rozdělím 4 dětem. Každé dostane 5."
+    }
+  ]
+}

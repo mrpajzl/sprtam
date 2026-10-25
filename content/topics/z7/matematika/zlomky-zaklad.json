@@ -1,0 +1,352 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zlomky-zaklad",
+  "title": "Zlomky – krácení a porovnání",
+  "emoji": "🍕",
+  "generator": "frac-simplify",
+  "explanations": [
+    {
+      "title": "Na pizze",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pizzu nakrájíš na 4 stejné kusy a sníš 2. Snědl jsi půlku. Kdyby byla nakrájená na 8 kusů a ty snědl 4, snědl bys taky půlku. Stejné množství jídla se dá zapsat různě."
+        },
+        {
+          "type": "text",
+          "text": "Přesně o tom jsou **zlomky**. Potřebuješ je v kuchyni (půl hrnku mouky), v obchodě (čtvrt kila sýra) i v hodinách (čtvrt na pět)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zlomek",
+          "definition": "Zápis části celku. Píše se dvě čísla nad sebou nebo s lomítkem: 3/4.",
+          "example": "3/4 pizzy = pizza rozdělená na 4 díly, z nich máš 3."
+        },
+        {
+          "type": "term",
+          "term": "Jmenovatel",
+          "definition": "Číslo **dole** (za lomítkem). Říká, na kolik stejných dílů je celek rozdělený – „jmenuje“ dílky.",
+          "example": "Ve 3/4 je jmenovatel 4: čtvrtiny."
+        },
+        {
+          "type": "term",
+          "term": "Čitatel",
+          "definition": "Číslo **nahoře** (před lomítkem). Říká, kolik dílků máš – „čítá“ je.",
+          "example": "Ve 3/4 je čitatel 3: tři čtvrtiny."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Nastav 2/4. Pak zkus 1/2 a 4/8. Všimni si: vybarvená část je pořád stejně velká."
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 2,
+            "denominator": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Krácení a rozšiřování"
+        },
+        {
+          "type": "term",
+          "term": "Rozšířit zlomek",
+          "definition": "Vynásobit čitatele i jmenovatele **stejným** číslem. Dílky se rozkrájí na menší, ale množství je stejné.",
+          "example": "1/2 → (· 2) → 2/4"
+        },
+        {
+          "type": "term",
+          "term": "Krátit zlomek",
+          "definition": "Vydělit čitatele i jmenovatele **stejným** číslem. Malé dílky se slepí do větších.",
+          "example": "4/8 → (: 4) → 1/2"
+        },
+        {
+          "type": "term",
+          "term": "Základní tvar",
+          "definition": "Zlomek, který už nejde dál krátit.",
+          "example": "1/2 je základní tvar zlomku 4/8."
+        },
+        {
+          "type": "example",
+          "question": "Zkrať 12/16 na základní tvar.",
+          "answer": "12 i 16 jdou vydělit 4. 12 : 4 = 3, 16 : 4 = 4. Výsledek **3/4**. Dál krátit nejde."
+        },
+        {
+          "type": "heading",
+          "text": "Co je víc?"
+        },
+        {
+          "type": "text",
+          "text": "Co je víc: 2/3 nebo 3/4 pizzy? Podívej se, **kolik chybí** do celé pizzy. U 2/3 chybí třetina, u 3/4 jen čtvrtina. Čtvrtina je menší kus než třetina, takže u 3/4 chybí méně → **3/4 je víc**."
+        },
+        {
+          "type": "text",
+          "text": "Spolehlivější je převést oba zlomky na stejné dílky (stejný jmenovatel): 2/3 = 8/12 a 3/4 = 9/12. Teď stačí porovnat čitatele: 9 > 8."
+        },
+        {
+          "type": "heading",
+          "text": "Víc než celá pizza"
+        },
+        {
+          "type": "text",
+          "text": "Máš 7 třetin pizzy, tedy 7/3. Ze 6 třetin složíš 2 celé pizzy a 1 třetina zbyde. Zapíšeš to jako **2 1/3** (dvě celé a jedna třetina). Tomu se říká smíšené číslo."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1/3 je víc než 1/2, protože 3 je víc než 2.",
+          "right": "1/2 > 1/3",
+          "why": "Větší jmenovatel = celek rozkrájený na víc kousků = každý kousek je **menší**. Polovina pizzy je víc než třetina."
+        },
+        {
+          "type": "summary",
+          "text": "Zlomek = kolik dílků (čitatel) z kolika (jmenovatel). Krácení i rozšiřování mění jen velikost dílků, ne množství."
+        }
+      ]
+    },
+    {
+      "title": "Postup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zlomky jsou čísla jako každá jiná – dají se zjednodušit a porovnat. Tady je přesný postup, který funguje vždycky, i u zlomků, které si nedokážeš představit jako pizzu."
+        },
+        {
+          "type": "text",
+          "text": "Když umíš krátit a porovnávat, budeš později snadno sčítat a násobit zlomky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čitatel a jmenovatel",
+          "definition": "Ve zlomku a/b je a **čitatel** (nahoře, kolik dílů mám) a b **jmenovatel** (dole, na kolik dílů je celek rozdělen).",
+          "example": "5/8: čitatel 5, jmenovatel 8."
+        },
+        {
+          "type": "term",
+          "term": "NSD – připomenutí",
+          "definition": "Největší společný dělitel dvou čísel: největší číslo, které obě dělí beze zbytku. Píše se D(a, b).",
+          "example": "D(12, 18) = 6"
+        },
+        {
+          "type": "term",
+          "term": "Společný jmenovatel",
+          "definition": "Číslo, na které lze rozšířit oba zlomky. Nejlepší je nejmenší společný násobek jmenovatelů.",
+          "example": "Pro 2/3 a 3/4 je společný jmenovatel 12."
+        },
+        {
+          "type": "term",
+          "term": "Smíšené číslo",
+          "definition": "Zápis celých částí a zbylého zlomku vedle sebe.",
+          "example": "2 1/3 = dvě celé a jedna třetina = 7/3"
+        },
+        {
+          "type": "heading",
+          "text": "Krácení na základní tvar"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi NSD čitatele a jmenovatele: 12/18 → D(12, 18) = 6.",
+            "Vyděl čitatele i jmenovatele tímto číslem: 12 : 6 = 2, 18 : 6 = 3.",
+            "Výsledek 2/3 už krátit nejde – je v **základním tvaru**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Nevidíš hned NSD? Krať postupně menšími čísly (2, 3, 5…), dokud to jde. Výsledek bude stejný."
+        },
+        {
+          "type": "heading",
+          "text": "Porovnání zlomků"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi společný jmenovatel: 2/3 a 3/4 → 12.",
+            "Rozšiř první: 2/3 = 8/12 (· 4).",
+            "Rozšiř druhý: 3/4 = 9/12 (· 3).",
+            "Porovnej čitatele: 8 < 9, tedy 2/3 < 3/4."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Platí 3/5 > 2/3?",
+          "answer": "Společný jmenovatel 15: 3/5 = 9/15, 2/3 = 10/15. 9 < 10, takže **neplatí** – 3/5 je menší."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: 3/7 = ?/21",
+          "answer": "7 · 3 = 21, rozšiřuji tedy třemi. Čitatel 3 · 3 = **9**."
+        },
+        {
+          "type": "heading",
+          "text": "Smíšená čísla"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Zlomek → smíšené: 11/4 → 11 : 4 = 2, zbytek 3 → **2 3/4**.",
+            "Smíšené → zlomek: 2 1/5 → 2 · 5 + 1 = 11 → **11/5**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zlomky si ukaž i na číselné ose. Mezi 0 a 1 jsou čtvrtiny, mezi 1 a 2 také. Kde leží 3/4? A kde 1 1/2?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 2,
+            "step": 0.25
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "12/18 = 6/9 a hotovo.",
+          "right": "12/18 = 2/3",
+          "why": "6/9 jde ještě krátit třemi. Krať, dokud to jde – jen tak je zlomek v základním tvaru."
+        },
+        {
+          "type": "summary",
+          "text": "Krátíš dělením, rozšiřuješ násobením – vždy nahoře i dole stejně. Porovnávat jde jen zlomky se stejným jmenovatelem."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Zkrať na základní tvar: 12/16",
+      "answers": [
+        "3/4"
+      ],
+      "explanation": "Vyděl 4."
+    },
+    {
+      "type": "input",
+      "question": "Zkrať na základní tvar: 15/25",
+      "answers": [
+        "3/5"
+      ],
+      "explanation": "Vyděl 5."
+    },
+    {
+      "type": "choice",
+      "question": "Který zlomek se rovná 2/3?",
+      "options": [
+        "8/12",
+        "4/9",
+        "6/8",
+        "3/2"
+      ],
+      "answer": 0,
+      "explanation": "2 · 4 = 8, 3 · 4 = 12"
+    },
+    {
+      "type": "truefalse",
+      "question": "3/5 > 2/3",
+      "answer": false,
+      "explanation": "3/5 = 9/15, 2/3 = 10/15"
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "2/3",
+        "3/4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Převeď 11/4 na smíšené číslo.",
+      "answers": [
+        "2 3/4"
+      ],
+      "explanation": "11 : 4 = 2, zbytek 3."
+    },
+    {
+      "type": "choice",
+      "question": "2 1/5 jako zlomek:",
+      "options": [
+        "11/5",
+        "7/5",
+        "3/5",
+        "12/5"
+      ],
+      "answer": 0,
+      "explanation": "2 · 5 + 1 = 11"
+    },
+    {
+      "type": "match",
+      "question": "Spoj stejné hodnoty.",
+      "pairs": [
+        [
+          "1/2",
+          "0,5"
+        ],
+        [
+          "3/4",
+          "0,75"
+        ],
+        [
+          "1/5",
+          "0,2"
+        ],
+        [
+          "3/2",
+          "1,5"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "4/4 = 1",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Doplň: 3/7 = ?/21",
+      "answers": [
+        "9"
+      ],
+      "explanation": "7 · 3 = 21, tedy 3 · 3 = 9."
+    },
+    {
+      "type": "open",
+      "question": "Co znamená krátit a rozšiřovat zlomek?",
+      "answer": "Krátit = vydělit čitatele i jmenovatele stejným číslem. Rozšiřovat = obě vynásobit stejným číslem. Hodnota zlomku se nemění."
+    },
+    {
+      "type": "open",
+      "question": "Jak porovnáš zlomky 3/4 a 5/6?",
+      "answer": "Převedu je na společného jmenovatele 12: 9/12 a 10/12. Větší je 5/6."
+    }
+  ]
+}

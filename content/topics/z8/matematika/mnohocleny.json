@@ -1,0 +1,391 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mnohocleny",
+  "title": "Mnohočleny a vzorce",
+  "emoji": "🧱",
+  "generator": "expressions",
+  "explanations": [
+    {
+      "title": "Obdélníky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš čtvercovou zahradu se stranou a. Zvětšíš ji na každou stranu o b metrů. Jakou bude mít plochu? Mnoho lidí řekne a² + b² – a je to chyba. Obrázek ukáže proč."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se násobit výrazy se závorkami a poznáš tři vzorce, které ušetří spoustu počítání."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Proměnná",
+          "definition": "Písmeno, které zastupuje číslo.",
+          "example": "a, b, x"
+        },
+        {
+          "type": "term",
+          "term": "Člen",
+          "definition": "Část výrazu mezi znaménky + a −.",
+          "example": "Ve výrazu a² + 2ab + b² jsou tři členy."
+        },
+        {
+          "type": "term",
+          "term": "Mnohočlen",
+          "definition": "Výraz, který je součtem několika členů. Dvojčlen má dva členy, trojčlen tři.",
+          "example": "a + b je dvojčlen, x² + 5x + 6 je trojčlen."
+        },
+        {
+          "type": "term",
+          "term": "Roznásobit",
+          "definition": "Odstranit závorky tak, že vynásobíš každý člen.",
+          "example": "3(x + 2) = 3x + 6"
+        },
+        {
+          "type": "heading",
+          "text": "Obsah zvětšeného čtverce"
+        },
+        {
+          "type": "text",
+          "text": "Velký čtverec má stranu a + b. Rozděl ho čarami na 4 části:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "čtverec a × a → obsah **a²**",
+            "čtverec b × b → obsah **b²**",
+            "dva obdélníky a × b → obsah **2ab**"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Proto (a + b)² = a² + 2ab + b². Vyzkoušej si: čtverec 5 × 5 si rozděl na 3 + 2. Obsah 25 = 9 + 4 + 2 · 6."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "square",
+            "a": 5
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Obdélník se závorkami"
+        },
+        {
+          "type": "text",
+          "text": "Obdélník (x + 2) × (x + 3) rozdělíš na 4 kusy: x · x, x · 3, 2 · x a 2 · 3. Dohromady **x² + 3x + 2x + 6 = x² + 5x + 6**. Každý kus první strany „potká“ každý kus druhé."
+        },
+        {
+          "type": "example",
+          "question": "(x + 3)² = ?",
+          "answer": "Podle čtverce: x² + 2 · 3 · x + 3² = **x² + 6x + 9**."
+        },
+        {
+          "type": "example",
+          "question": "Spočítej chytře 21² − 19².",
+          "answer": "Platí další vzorec: (a + b)(a − b) = a² − b² (roznásob a prostřední členy se odečtou). Tedy 21² − 19² = (21 + 19)(21 − 19) = 40 · 2 = **80**. (Ověření: 441 − 361 = 80.)"
+        },
+        {
+          "type": "mistake",
+          "wrong": "(a + b)² = a² + b²",
+          "right": "(a + b)² = a² + 2ab + b²",
+          "why": "Zapomněl jsi na dva obdélníky ab. Zkus a = 3, b = 2: (3 + 2)² = 25, ale 9 + 4 = 13."
+        },
+        {
+          "type": "heading",
+          "text": "A obráceně: vytýkání"
+        },
+        {
+          "type": "text",
+          "text": "Někdy chceš závorku zase vytvořit: 6x + 9 = 3(2x + 3). Najdeš číslo, které dělí všechny členy, a „vytáhneš“ ho před závorku."
+        },
+        {
+          "type": "summary",
+          "text": "(a + b)² = a² + 2ab + b² – nezapomeň na 2ab! Závorka krát závorka: každý člen s každým."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V algebře se pořád dokola násobí závorky. Tři případy jsou tak časté, že mají vlastní vzorce. Kdo je zná, počítá rychle a bez chyb – a umí i opačný krok: rozložit výraz na součin."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mnohočlen",
+          "definition": "Součet několika členů s proměnnými a čísly.",
+          "example": "3x² + 2x − 5"
+        },
+        {
+          "type": "term",
+          "term": "Člen",
+          "definition": "Jedna část mnohočlenu, oddělená + nebo −. Znaménko k němu patří.",
+          "example": "Ve 3x² + 2x − 5 jsou členy 3x², 2x a −5."
+        },
+        {
+          "type": "term",
+          "term": "Stupeň mnohočlenu",
+          "definition": "Nejvyšší exponent proměnné, který se v mnohočlenu vyskytuje.",
+          "example": "x² + 2x je druhého stupně, 4x − 1 prvního."
+        },
+        {
+          "type": "term",
+          "term": "Podobné členy",
+          "definition": "Členy se stejnou proměnnou ve stejné mocnině. Jen ty se dají sečíst.",
+          "example": "3x² a −x² jsou podobné: dohromady 2x²."
+        },
+        {
+          "type": "term",
+          "term": "Vytýkání",
+          "definition": "Opak roznásobení: společný činitel všech členů napíšeš před závorku.",
+          "example": "4x + 12 = 4(x + 3)"
+        },
+        {
+          "type": "heading",
+          "text": "Násobení"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Člen · člen:** čísla vynásob, mocniny stejné proměnné sečti v exponentu. 2x · 3x² = 6x³.",
+            "**Člen · závorka:** násob každý člen. 2x(x − 4) = 2x² − 8x.",
+            "**Závorka · závorka:** každý s každým, pak sečti podobné členy."
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "(x + 2)(x + 5)",
+            "x · x = x²",
+            "x · 5 = 5x",
+            "2 · x = 2x",
+            "2 · 5 = 10",
+            "Sečti: x² + 5x + 2x + 10 = x² + 7x + 10"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Tři vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "vzorec",
+            "rozepsáno",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "(a + b)²",
+              "a² + 2ab + b²",
+              "(x + 3)² = x² + 6x + 9"
+            ],
+            [
+              "(a − b)²",
+              "a² − 2ab + b²",
+              "(a − 5)² = a² − 10a + 25"
+            ],
+            [
+              "(a + b)(a − b)",
+              "a² − b²",
+              "(y + 4)(y − 4) = y² − 16"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Odečti (3x² + 2x) − (x² − 4x).",
+          "answer": "Mínus před druhou závorkou otočí znaménka: 3x² + 2x − x² + 4x. Podobné členy: **2x² + 6x**."
+        },
+        {
+          "type": "example",
+          "question": "Rozlož x² − 9 na součin.",
+          "answer": "x² − 9 = x² − 3² – to je rozdíl čtverců. Podle třetího vzorce: **(x − 3)(x + 3)**."
+        },
+        {
+          "type": "example",
+          "question": "Vytkni 4x + 12.",
+          "answer": "Oba členy dělí 4: 4x = 4 · x, 12 = 4 · 3. Výsledek **4(x + 3)**. Kontrola roznásobením ✓."
+        },
+        {
+          "type": "text",
+          "text": "Procvič vzorce: otoč kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "(a + b)²",
+                "back": "a² + 2ab + b²"
+              },
+              {
+                "front": "(a − b)²",
+                "back": "a² − 2ab + b²"
+              },
+              {
+                "front": "(a + b)(a − b)",
+                "back": "a² − b²"
+              },
+              {
+                "front": "6x + 9 vytknuto",
+                "back": "3(2x + 3)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "(a − 5)² = a² − 25",
+          "right": "(a − 5)² = a² − 10a + 25",
+          "why": "Na druhou se umocňuje celá závorka: (a − 5)(a − 5). Chybí prostřední člen −2 · 5 · a a poslední je (−5)² = +25."
+        },
+        {
+          "type": "summary",
+          "text": "Závorka · závorka: každý člen s každým. (a ± b)² = a² ± 2ab + b², (a + b)(a − b) = a² − b². Vytýkání je opak roznásobení."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "(x + 3)² =",
+      "options": [
+        "x² + 6x + 9",
+        "x² + 9",
+        "x² + 3x + 9",
+        "2x + 6"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "(a − 5)² =",
+      "options": [
+        "a² − 10a + 25",
+        "a² − 25",
+        "a² + 25",
+        "a² − 5a + 25"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "(y + 4)(y − 4) =",
+      "options": [
+        "y² − 16",
+        "y² + 16",
+        "y² − 8y − 16",
+        "y² − 8"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "(x + 2)(x + 5) =",
+      "options": [
+        "x² + 7x + 10",
+        "x² + 10",
+        "x² + 7x + 7",
+        "2x + 7"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Vytkni: 4x + 12 =",
+      "options": [
+        "4(x + 3)",
+        "4(x + 12)",
+        "2(x + 6)",
+        "x(4 + 12)"
+      ],
+      "answer": 0,
+      "explanation": "Vytkni největšího společného dělitele 4."
+    },
+    {
+      "type": "choice",
+      "question": "Rozlož: x² − 9 =",
+      "options": [
+        "(x − 3)(x + 3)",
+        "(x − 3)²",
+        "(x − 9)(x + 1)",
+        "x(x − 9)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "(a + b)² = a² + b²",
+      "answer": false,
+      "explanation": "Chybí 2ab."
+    },
+    {
+      "type": "choice",
+      "question": "2x · 3x² =",
+      "options": [
+        "6x³",
+        "5x³",
+        "6x²",
+        "5x²"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Spočítej chytře: 21² − 19² =",
+      "answers": [
+        "80"
+      ],
+      "explanation": "(21 + 19)(21 − 19) = 40 · 2"
+    },
+    {
+      "type": "choice",
+      "question": "(3x² + 2x) − (x² − 4x) =",
+      "options": [
+        "2x² + 6x",
+        "2x² − 2x",
+        "4x² + 6x",
+        "2x² + 2x"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "x² + 2x je mnohočlen druhého stupně.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak roznásobíš dva dvojčleny?",
+      "answer": "Každý člen prvního dvojčlenu vynásobím každým členem druhého a výsledky sečtu. Pak sečtu podobné členy."
+    },
+    {
+      "type": "open",
+      "question": "Napiš a vysvětli vzorec pro (a − b)².",
+      "answer": "(a − b)² = a² − 2ab + b². Je to (a − b)(a − b): a · a, dvakrát −ab a (−b)(−b) = b²."
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stavba-slova-z4",
+  "title": "Předpona, kořen, přípona",
+  "emoji": "🧩",
+  "explanations": [
+    {
+      "title": "Stavebnice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ze stavebnice postavíš auto: podvozek, kabina, kola. Slova se taky staví z dílků."
+        },
+        {
+          "type": "text",
+          "text": "Když umíš slovo rozložit, víš, kde končí předpona a kde začíná kořen. To se hodí při psaní: *vyletět* má y, protože *vy-* je předpona."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Připomenutí: hlavní část slova, kterou mají všechna slova z rodiny.",
+          "example": "běh: běhat, přeběhnout, běžec"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Dílek **před kořenem**. Mění význam slova.",
+          "example": "**pře**běhnout, **vy**letět, **do**psat"
+        },
+        {
+          "type": "term",
+          "term": "Příponová část",
+          "definition": "Všechno, co je **za kořenem**.",
+          "example": "les**ník**, přeběh**nout**"
+        },
+        {
+          "type": "heading",
+          "text": "Podívej se na barvy"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na dílek a přečti si, jak se jmenuje."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "pře",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "běh",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "nout",
+                    "label": "příponová část"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "do",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "pis",
+                    "label": "kořen"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "les",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "ník",
+                    "label": "příponová část"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Ne každé slovo má všechny dílky. *Dopis* nemá příponovou část, *lesník* nemá předponu. Kořen má ale každé slovo."
+        },
+        {
+          "type": "example",
+          "question": "Rozděl: podzemí",
+          "answer": "Kořen je **zem** (země, zemský). Před ním **pod** – předpona. Za ním **í** – příponová část. **pod – zem – í**."
+        },
+        {
+          "type": "example",
+          "question": "Rozděl: nosič",
+          "answer": "Kořen **nos** (nosit, nošení). Před ním nic. Za ním **ič** – příponová část. **nos – ič**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "ve slově „nosič“ je „ič“ předpona",
+          "right": "„ič“ je příponová část",
+          "why": "Předpona stojí **před** kořenem. *-ič* je až za kořenem *nos*, takže je to příponová část."
+        },
+        {
+          "type": "summary",
+          "text": "Předpona – před kořenem. Kořen – společná část rodiny. Příponová část – za kořenem."
+        }
+      ]
+    },
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozložit slovo je jako loupat cibuli. Nejdřív najdeš střed – kořen. Pak odloupneš, co je před ním a za ním."
+        },
+        {
+          "type": "text",
+          "text": "Bez kořene nejde nic. Proto vždycky začínáme u něj."
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Společná část příbuzných slov.",
+          "example": "let: letadlo, letět, výlet"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Část před kořenem. Často je to *vy-, za-, při-, od-, pod-, pře-, roz-, na-*.",
+          "example": "**vy**letět"
+        },
+        {
+          "type": "term",
+          "term": "Příponová část",
+          "definition": "Část za kořenem.",
+          "example": "vylet**ět**"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi příbuzná slova: *vyletět – let – letadlo*.",
+            "Co mají společné, je **kořen**: *let*.",
+            "Co je před ním, je **předpona**: *vy*.",
+            "Co je za ním, je **příponová část**: *ět*."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "slovo",
+            "předpona",
+            "kořen",
+            "příponová část"
+          ],
+          "rows": [
+            [
+              "vyletět",
+              "vy",
+              "let",
+              "ět"
+            ],
+            [
+              "podvozek",
+              "pod",
+              "voz",
+              "ek"
+            ],
+            [
+              "rybář",
+              "–",
+              "ryb",
+              "ář"
+            ],
+            [
+              "zalesnit",
+              "za",
+              "les",
+              "nit"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rozděl: podvozek",
+          "answer": "Příbuzná: *vůz, vozit, vozík* → kořen **voz**. Před ním **pod**. Za ním **ek**. **pod – voz – ek**."
+        },
+        {
+          "type": "example",
+          "question": "Rozděl: rybář",
+          "answer": "Příbuzná: *ryba, rybník* → kořen **ryb**. Před ním nic. Za ním **ář**. **ryb – ář**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„odjet“: předpona „odje“",
+          "right": "předpona „od“, kořen „je“",
+          "why": "Nejdřív najdi kořen pomocí příbuzných slov: *jet, jezdit*. Předpona je jen to, co je před ním: *od*."
+        },
+        {
+          "type": "summary",
+          "text": "Nejdřív najdi kořen (podle příbuzných slov), pak předponu před ním a příponovou část za ním."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je předpona ve slově „odjet“?",
+      "options": [
+        "od",
+        "je",
+        "odje"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je kořen ve slově „rybník“?",
+      "options": [
+        "ryb",
+        "ník",
+        "rybn"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo má předponu?",
+      "options": [
+        "přepsat",
+        "psát",
+        "písař"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Napiš předponu slova „vyskočit“.",
+      "answers": [
+        "vy"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš předponu slova „podzemí“.",
+      "answers": [
+        "pod"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Předpona stojí před kořenem.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve slově „nosič“ je „ič“ předpona.",
+      "answer": false,
+      "explanation": "-ič je za kořenem nos – je to přípona."
+    },
+    {
+      "type": "order",
+      "question": "Slož slovo „zalesnit“.",
+      "items": [
+        "za",
+        "les",
+        "nit"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj slovo s předponou.",
+      "pairs": [
+        [
+          "nalít",
+          "na"
+        ],
+        [
+          "rozbít",
+          "roz"
+        ],
+        [
+          "přiletět",
+          "při"
+        ],
+        [
+          "ubrat",
+          "u"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která slova mají stejný kořen?",
+      "options": [
+        "nosit, nosič, přenos",
+        "nos, noc, nosit",
+        "pes, peří, pec"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Z jakých částí se skládá slovo „předběhnout“?",
+      "answer": "Z předpony před, kořene běh a příponové části nout."
+    },
+    {
+      "type": "open",
+      "question": "Řekni tři slova s předponou „vy-“.",
+      "answer": "Například vyletět, vyskočit, vyprávět."
+    }
+  ]
+}

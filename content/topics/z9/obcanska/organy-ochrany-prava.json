@@ -1,0 +1,394 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "organy-ochrany-prava",
+  "title": "Soudy a ochrana práva",
+  "emoji": "👩‍⚖️",
+  "explanations": [
+    {
+      "title": "Cesta případu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ukradnou ti kolo. Komu to nahlásit? Kdo zloděje najde, kdo ho obviní a kdo ho potrestá? A kam jít, když tě nespravedlivě odbyde úřad?"
+        },
+        {
+          "type": "text",
+          "text": "Ochranou práva se zabývá celá řada institucí. Projdeme je podle toho, jak za sebou přicházejí na řadu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Orgány ochrany práva",
+          "definition": "Instituce, které dohlížejí, aby se dodržovalo právo, a pomáhají lidem, kterým se křivdí.",
+          "example": "Policie, státní zastupitelství, soudy, ombudsman."
+        },
+        {
+          "type": "term",
+          "term": "Policie ČR",
+          "definition": "Chrání bezpečnost a pořádek, vyšetřuje trestné činy a hledá pachatele."
+        },
+        {
+          "type": "term",
+          "term": "Státní zástupce",
+          "definition": "Zastupuje stát v trestním řízení. Dohlíží na vyšetřování a podává k soudu **obžalobu**."
+        },
+        {
+          "type": "term",
+          "term": "Soud",
+          "definition": "Nezávislá instituce, která rozhoduje spory a o vině a trestu. Soudce rozhoduje jen podle zákona a důkazů."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta ukradeného kola"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Nahlásíš krádež na **policii** (tísňová linka 158 nebo osobně).",
+            "Policie **vyšetřuje**: kamery, svědci, stopy. Najde podezřelého.",
+            "**Státní zástupce** zváží důkazy a podá **obžalobu** k soudu.",
+            "Obžalovaného hájí **advokát** jako obhájce.",
+            "**Soud** rozhodne o vině a trestu.",
+            "Když soud uloží vězení, následuje **výkon trestu**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kdo ještě pomáhá"
+        },
+        {
+          "type": "term",
+          "term": "Advokát",
+          "definition": "Právník, který radí klientům a zastupuje je – u soudu i mimo něj."
+        },
+        {
+          "type": "term",
+          "term": "Notář",
+          "definition": "Právník, který ověřuje listiny a podpisy, sepisuje důležité dokumenty a vede dědické řízení."
+        },
+        {
+          "type": "term",
+          "term": "Ombudsman",
+          "definition": "Veřejný ochránce práv. Pomáhá lidem, když s nimi úřad jednal nespravedlivě. Sídlí v Brně."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zkus ke každé profesi říct, co dělá. Pak otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "advokát",
+                "back": "hájí klienta, radí mu"
+              },
+              {
+                "front": "notář",
+                "back": "ověřuje listiny, vede dědické řízení"
+              },
+              {
+                "front": "policista",
+                "back": "vyšetřuje"
+              },
+              {
+                "front": "státní zástupce",
+                "back": "podává obžalobu"
+              },
+              {
+                "front": "soudce",
+                "back": "rozhoduje"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Babička zemřela a zanechala byt. Kdo vede dědické řízení?",
+          "answer": "Dědické řízení vede **notář** (z pověření soudu)."
+        },
+        {
+          "type": "example",
+          "question": "Úřad ti měsíce nevyřizuje žádost a nikdo ti neodpoví. Kdo ti může pomoci?",
+          "answer": "**Ombudsman** – veřejný ochránce práv. Prověří, jestli úřad postupuje správně."
+        },
+        {
+          "type": "mistake",
+          "wrong": "O vině rozhoduje policie.",
+          "right": "Policie vyšetřuje, státní zástupce obžalovává, o vině a trestu rozhoduje jen soud.",
+          "why": "Kdyby jeden orgán vyšetřoval i soudil, nikdo by ho nekontroloval. Proto jsou role oddělené."
+        },
+        {
+          "type": "summary",
+          "text": "Policie vyšetřuje → státní zástupce podá obžalobu → soud rozhodne → výkon trestu. Advokát hájí, notář ověřuje listiny a vede dědictví, ombudsman pomáhá proti úřadům."
+        }
+      ]
+    },
+    {
+      "title": "Soustava soudů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když s rozhodnutím soudu nesouhlasíš, nemusí to být konec. Můžeš se odvolat k vyššímu soudu. Soudy proto tvoří „žebřík“ od nejnižších po nejvyšší."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, jak je soustava soudů uspořádaná, čím je zvláštní Ústavní soud a proč musí být soudy nezávislé."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Soud",
+          "definition": "Instituce, která rozhoduje spory a o vině a trestu."
+        },
+        {
+          "type": "term",
+          "term": "Odvolání",
+          "definition": "Žádost, aby rozhodnutí soudu přezkoumal vyšší soud."
+        },
+        {
+          "type": "term",
+          "term": "Nezávislost soudů",
+          "definition": "Soudce rozhoduje jen podle zákona a důkazů. Nikdo – ani vláda, ani prezident – mu nesmí přikazovat."
+        },
+        {
+          "type": "term",
+          "term": "Ústavní soud",
+          "definition": "Zvláštní soud, který chrání Ústavu a základní práva. Může zrušit zákon, který je v rozporu s Ústavou."
+        },
+        {
+          "type": "heading",
+          "text": "Žebřík soudů"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Nejníž jsou **okresní soudy** – tam začíná většina případů.",
+            "Nad nimi jsou **krajské soudy** a další vyšší soudy, které rozhodují o odvoláních.",
+            "Na vrcholu je **Nejvyšší soud** v Brně.",
+            "Stranou stojí **Ústavní soud** v Brně – nehodnotí běžné spory, ale chrání Ústavu."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Ústavní soud v číslech"
+        },
+        {
+          "type": "table",
+          "head": [
+            "co",
+            "údaj"
+          ],
+          "rows": [
+            [
+              "sídlo",
+              "Brno"
+            ],
+            [
+              "počet soudců",
+              "15"
+            ],
+            [
+              "funkční období",
+              "10 let"
+            ],
+            [
+              "kdo jmenuje",
+              "prezident se souhlasem Senátu"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Porovnej v grafu dvě čísla o Ústavním soudu: kolik má soudců a na kolik let je soudce jmenován."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "soudců Ústavního soudu",
+                "value": 15
+              },
+              {
+                "label": "let ve funkci",
+                "value": 10
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Další ochránci práva"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**policie** – vyšetřuje",
+            "**státní zastupitelství** – podává obžalobu",
+            "**advokát** – hájí klienta",
+            "**notář** – ověřuje listiny, vede dědické řízení",
+            "**ombudsman** (veřejný ochránce práv) – pomáhá proti nespravedlivým úřadům"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Okresní soud ti nařídí zaplatit 50 000 Kč a ty myslíš, že se spletl. Co uděláš?",
+          "answer": "Podám **odvolání**. O věci pak rozhodne **vyšší soud** (obvykle krajský)."
+        },
+        {
+          "type": "example",
+          "question": "Proč musí být soudy nezávislé?",
+          "answer": "Aby rozhodovaly jen podle zákona a důkazů. Kdyby jim mohla vláda přikazovat, mocní by vždy vyhráli a spravedlnost by nebyla pro všechny."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ústavní soud sídlí v Praze a soudci jsou jmenováni doživotně.",
+          "right": "Ústavní soud sídlí v Brně a soudci jsou jmenováni na 10 let.",
+          "why": "Brno je sídlem nejvyšších soudních institucí ČR – Ústavního, Nejvyššího i Nejvyššího správního soudu."
+        },
+        {
+          "type": "summary",
+          "text": "Soudy: okresní → krajské a vyšší → Nejvyšší soud. Ústavní soud (Brno, 15 soudců na 10 let) chrání Ústavu. Soudy jsou nezávislé."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo podává obžalobu k soudu?",
+      "options": [
+        "státní zástupce",
+        "advokát",
+        "notář",
+        "svědek"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde sídlí Ústavní soud?",
+      "options": [
+        "v Brně",
+        "v Praze",
+        "v Ostravě",
+        "v Olomouci"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik soudců má Ústavní soud?",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Na jak dlouho jsou jmenováni ústavní soudci?",
+      "options": [
+        "10 let",
+        "5 let",
+        "doživotně",
+        "4 roky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj profesi a činnost.",
+      "pairs": [
+        [
+          "advokát",
+          "hájí klienta"
+        ],
+        [
+          "notář",
+          "ověřuje listiny"
+        ],
+        [
+          "policista",
+          "vyšetřuje"
+        ],
+        [
+          "soudce",
+          "rozhoduje"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Soudy jsou nezávislé a vláda jim nemůže přikazovat.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jak se jinak říká veřejnému ochránci práv?",
+      "answers": [
+        "ombudsman"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď, jak postupuje trestní případ.",
+      "items": [
+        "policie vyšetřuje",
+        "státní zástupce podá obžalobu",
+        "soud rozhodne",
+        "výkon trestu"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Nejnižším stupněm obecných soudů jsou okresní soudy.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kdo vede dědické řízení?",
+      "options": [
+        "notář",
+        "policie",
+        "prezident",
+        "státní zástupce"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaké role mají v trestním řízení policie, státní zástupce a soud?",
+      "answer": "Policie vyšetřuje a zjišťuje pachatele. Státní zástupce podá obžalobu. Soud rozhodne o vině a trestu."
+    },
+    {
+      "type": "open",
+      "question": "Proč musí být soudy nezávislé?",
+      "answer": "Aby rozhodovaly jen podle zákona a důkazů. Nikdo, ani vláda, je nesmí ovlivňovat. Jinak by nebyla spravedlnost pro všechny."
+    }
+  ]
+}

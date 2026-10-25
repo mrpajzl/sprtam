@@ -1,0 +1,314 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "souradnice",
+  "title": "Čtvercová síť a souřadnice",
+  "emoji": "🗺️",
+  "explanations": [
+    {
+      "title": "Lodě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hraješ Lodě? Řekneš „B3“ a soupeř hned ví, kam střílíš. Stejně fungují mapy, šachovnice nebo sedadla v kině (řada 5, místo 12)."
+        },
+        {
+          "type": "text",
+          "text": "Dvěma údaji přesně určíš jedno místo v **síti**. Tomu se říká **souřadnice**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čtvercová síť",
+          "definition": "Papír nebo plán rozdělený na stejné čtverečky – jako sešit z matiky."
+        },
+        {
+          "type": "term",
+          "term": "Sloupec a řádek",
+          "definition": "Sloupec jde shora dolů (označený písmenem). Řádek jde zleva doprava (označený číslem)."
+        },
+        {
+          "type": "term",
+          "term": "Souřadnice",
+          "definition": "Dvojice údajů, která určí přesné místo.",
+          "example": "B3 = sloupec B, řádek 3."
+        },
+        {
+          "type": "heading",
+          "text": "Mapa ostrova"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "rows": [
+            [
+              "3",
+              "",
+              "🚢",
+              "",
+              ""
+            ],
+            [
+              "2",
+              "",
+              "",
+              "",
+              "🏝️"
+            ],
+            [
+              "1",
+              "⭐",
+              "",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi sloupec (písmeno nahoře): **B**.",
+            "Jdi v něm na řádek (číslo vlevo): **3**.",
+            "Na průsečíku je loď 🚢. Loď je na **B3**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kde je ostrov 🏝️?",
+          "answer": "Sloupec D, řádek 2 → **D2**."
+        },
+        {
+          "type": "example",
+          "question": "Co leží na A1?",
+          "answer": "Sloupec A, řádek 1 → **hvězda ⭐**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Loď je na 3B, ostrov na 2D – je to jedno.",
+          "right": "Píšeme vždy stejně: nejdřív sloupec, pak řádek – **B3**, **D2**.",
+          "why": "Domluvené pořadí zajistí, že si všichni rozumí. U čísel [x; y] by prohození vedlo na úplně jiné místo."
+        },
+        {
+          "type": "summary",
+          "text": "Souřadnice určí místo: nejdřív sloupec (vodorovně), pak řádek (svisle)."
+        }
+      ]
+    },
+    {
+      "title": "Osy x a y",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V matematice místo písmen používáme dvě **čísla**. Pak můžeme bod nejen najít, ale i spočítat, jak daleko je od jiného bodu."
+        },
+        {
+          "type": "text",
+          "text": "Tak fungují GPS v mobilu, plány měst i grafy, které uvidíš ve vyšších třídách."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Osa x",
+          "definition": "Vodorovná číselná osa – „chodba“. Čísla rostou doprava."
+        },
+        {
+          "type": "term",
+          "term": "Osa y",
+          "definition": "Svislá číselná osa – „schody“. Čísla rostou nahoru."
+        },
+        {
+          "type": "term",
+          "term": "Počátek",
+          "definition": "Bod, kde se osy protínají. Má souřadnice **[0; 0]**."
+        },
+        {
+          "type": "term",
+          "term": "Souřadnice bodu [x; y]",
+          "definition": "První číslo říká, kolik kroků **doprava**, druhé kolik **nahoru**.",
+          "example": "[4; 2] = 4 doprava, 2 nahoru"
+        },
+        {
+          "type": "heading",
+          "text": "Jak najít bod [4; 2]"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Začni v počátku [0; 0].",
+            "Jdi doprava po ose x o první číslo: **4**.",
+            "Pak nahoru o druhé číslo: **2**.",
+            "Nakresli bod."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pomůcka: **„Nejdřív po chodbě, pak po schodech.“**"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tohle je osa x. Žabka jde z počátku 4 kroky doprava – první souřadnice bodu [4; 2]. Odtud by vyšla 2 kroky nahoru."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "start": 0,
+            "hop": 4
+          }
+        },
+        {
+          "type": "example",
+          "question": "Body [1; 1] a [6; 1] spojíš úsečkou. Kolik dílků měří?",
+          "answer": "Oba mají y = 1, leží na stejné výšce. Liší se x: 6 − 1 = **5 dílků**."
+        },
+        {
+          "type": "example",
+          "question": "Čtverec má vrcholy [0; 0], [3; 0], [3; 3]. Kde je čtvrtý?",
+          "answer": "Chybí roh vlevo nahoře: x = 0, y = 3 → **[0; 3]**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "[2; 5] a [5; 2] je stejný bod.",
+          "right": "Jsou to **dva různé** body.",
+          "why": "[2; 5] = 2 doprava, 5 nahoru. [5; 2] = 5 doprava, 2 nahoru. Na pořadí záleží – x je vždy první."
+        },
+        {
+          "type": "summary",
+          "text": "[x; y] – nejdřív doprava (x), pak nahoru (y). Počátek je [0; 0]."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co znamená první číslo v [3; 5]?",
+      "options": [
+        "kolik doprava",
+        "kolik nahoru"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Bod [6; 1]: kolik kroků jdeš nahoru?",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Bod [6; 1]: kolik kroků jdeš doprava?",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Body [2; 5] a [5; 2] jsou stejné.",
+      "answer": false,
+      "explanation": "Záleží na pořadí: x je první."
+    },
+    {
+      "type": "truefalse",
+      "question": "Počátek má souřadnice [0; 0].",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Bod leží na ose x. Jaké má souřadnice?",
+      "options": [
+        "[4; 0]",
+        "[0; 4]",
+        "[4; 4]"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Z bodu [2; 3] jdeš o 3 doprava. Jaké je nové x?",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Z bodu [2; 3] jdeš o 2 dolů. Jaké je nové y?",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Body [1; 1] a [6; 1] spojíš úsečkou. Kolik dílků měří?",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Čtverec má vrcholy [0; 0], [3; 0], [3; 3]. Kde je čtvrtý?",
+      "options": [
+        "[0; 3]",
+        "[3; 6]",
+        "[6; 0]"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj s polohou.",
+      "pairs": [
+        [
+          "[0; 0]",
+          "počátek"
+        ],
+        [
+          "[5; 0]",
+          "na ose x"
+        ],
+        [
+          "[0; 5]",
+          "na ose y"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak najdeš ve čtvercové síti bod [4; 2]?",
+      "answer": "Začnu v počátku, jdu 4 dílky doprava a potom 2 dílky nahoru."
+    },
+    {
+      "type": "open",
+      "question": "Kde se v životě používají souřadnice?",
+      "answer": "Na mapách a plánech měst, v GPS, v šachu (e4), ve hře Lodě nebo v tabulkách."
+    }
+  ]
+}

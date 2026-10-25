@@ -1,0 +1,437 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "shoda-prisudku",
+  "title": "Shoda přísudku s podmětem",
+  "emoji": "🤝",
+  "explanations": [
+    {
+      "title": "Pravidlem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "*Psi štěkali*, ale *kočky mňoukaly* a *kuřata pípala*. Vyslovíš to skoro stejně, ale píše se to jinak. Proč?"
+        },
+        {
+          "type": "text",
+          "text": "Sloveso v minulém čase se musí **shodovat** s tím, kdo děj dělá. Je to jako uniforma: každý tým má svou barvu. Naučíš se, kdy na konec napsat **-i**, **-y** nebo **-a**. Je to jedna z nejčastějších chyb v diktátech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Připomenutí: slovo, které říká, **kdo nebo co** děj dělá. Ptáš se kdo? co?",
+          "example": "**Psi** štěkali."
+        },
+        {
+          "type": "term",
+          "term": "Přísudek",
+          "definition": "Připomenutí: slovo, které říká, **co** podmět **dělá**.",
+          "example": "Psi **štěkali**."
+        },
+        {
+          "type": "term",
+          "term": "Příčestí minulé",
+          "definition": "Tvar slovesa, kterým tvoříme minulý čas. Končí na **-l** a za ním přichází koncovka.",
+          "example": "psal, psala, psali, psaly"
+        },
+        {
+          "type": "term",
+          "term": "Shoda přísudku s podmětem",
+          "definition": "Koncovka příčestí minulého se řídí **rodem** podmětu.",
+          "example": "Kluci psal**i**. Holky psal**y**."
+        },
+        {
+          "type": "term",
+          "term": "Rod",
+          "definition": "Připomenutí: zjistíš ho slovy ten/ta/to. Mužský rod je **životný** (lidé, zvířata) nebo **neživotný** (věci).",
+          "example": "ten pes – mužský životný, ten vlak – mužský neživotný, ta kočka – ženský, to kuře – střední"
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo v tabulce"
+        },
+        {
+          "type": "text",
+          "text": "Pravidlo platí pro **množné číslo** (víc kusů):"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Podmět",
+            "Koncovka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "mužský životný (lidé, zvířata)",
+              "-i",
+              "Psi štěkali. Kluci běhali."
+            ],
+            [
+              "mužský neživotný (věci)",
+              "-y",
+              "Stromy rostly. Vlaky jezdily."
+            ],
+            [
+              "ženský",
+              "-y",
+              "Ženy zpívaly. Kočky mňoukaly."
+            ],
+            [
+              "střední",
+              "-a",
+              "Kuřata pípala. Auta jezdila."
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi přísudek v minulém čase: *Koně se pásl_*.",
+            "Najdi podmět: kdo se pásl? **koně**.",
+            "Urči rod: **ten** kůň → mužský, je to zvíře → životný.",
+            "Podle tabulky: mužský životný → **-i**. *Koně se pásli.*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Víc podmětů najednou"
+        },
+        {
+          "type": "term",
+          "term": "Několikanásobný podmět",
+          "definition": "Ve větě je víc podmětů, které dělají totéž.",
+          "example": "**Chlapci a dívky** si hráli."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Je mezi nimi aspoň jeden **mužský životný** → **-i**: *Psi a kočky se honili.*",
+            "Žádný mužský životný, ale je tam ženský nebo mužský neživotný → **-y**: *Stromy a keře kvetly.*",
+            "Všechny jsou **středního** rodu → **-a**: *Kuřata a koťata spala.*"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Chlapci a dívky si hrál_.*",
+          "answer": "Podměty: chlapci (mužský životný) a dívky (ženský). Je tam mužský životný → **hráli**."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Ovce se pásl_ na louce.*",
+          "answer": "Podmět *ovce* – **ta** ovce → ženský rod → **pásly**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Děti si hráli.",
+          "right": "Děti si hrály.",
+          "why": "Slovo *děti* se v množném čísle ohýbá jako ženský rod (jako *kosti*). Proto -y."
+        },
+        {
+          "type": "summary",
+          "text": "Mužský životný → -i, mužský neživotný a ženský → -y, střední → -a. Je-li v několikanásobném podmětu mužský životný, vždy -i."
+        }
+      ]
+    },
+    {
+      "title": "Otázkou ten/ta/to",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když píšeš o tom, co se **stalo**, používáš slova jako *běhal, zpívala, hráli*. Na jejich konci často zaváháš: **i**, nebo **y**? Sluchem to nepoznáš – zní to stejně."
+        },
+        {
+          "type": "text",
+          "text": "Naštěstí existuje jednoduchý postup. Stačí vědět, **kdo** děj dělal, a položit si jednu otázku: je to **ten, ta, nebo to**?"
+        },
+        {
+          "type": "term",
+          "term": "Minulý čas",
+          "definition": "Tvar slovesa pro to, co už se stalo. Tvoříme ho slovem na **-l** + koncovkou. Tomuto slovu se říká **příčestí minulé**.",
+          "example": "běhal, běhala, běhali, běhaly"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo nebo co děj dělal. Zeptáš se **kdo? co?** + sloveso.",
+          "example": "*Ptáci zpívali.* Kdo zpíval? **ptáci**"
+        },
+        {
+          "type": "term",
+          "term": "Shoda",
+          "definition": "Koncovka slovesa „poslouchá“ podmět: podle jeho rodu dostane -i, -y nebo -a.",
+          "example": "ptáci zpívali, ptačice zpívaly"
+        },
+        {
+          "type": "heading",
+          "text": "Postup ve čtyřech krocích"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Kdo to dělal?** Najdi podmět. *Auta jezdil_* → kdo jezdil? **auta**.",
+            "**Ten, ta, nebo to?** Dej podmět do jednotného čísla a přidej ten/ta/to: **to** auto → střední.",
+            "**Je to ten?** Jestli ano, zeptej se: je to živá bytost? Ano → **-i**. Věc → **-y**.",
+            "**Ta → -y. To → -a.** *Auta jezdila.*"
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Ten (živý)",
+            "Ten (věc)",
+            "Ta",
+            "To"
+          ],
+          "rows": [
+            [
+              "-i",
+              "-y",
+              "-y",
+              "-a"
+            ],
+            [
+              "psi štěkali",
+              "vlaky jezdily",
+              "kočky mňoukaly",
+              "kuřata pípala"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Teď ty. U každé věty si potichu řekni ten/ta/to a vyber koncovku."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Ptáci zpíval",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Kočky mňoukal",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Auta jezdil",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 2
+              },
+              {
+                "before": "Děti si hrál",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Lidé odešl",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pasti"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**děti** → píšeš **-y**. Slovo děti se v množném čísle chová jako ženský rod: *Děti si hrály.*",
+            "**lidé** → **-i**. Je to množné číslo od *člověk* (ten člověk): *Lidé odešli.*",
+            "**koně** → **-i**. Ten kůň je zvíře: *Koně se pásli.*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Když dělá děj víc podmětů"
+        },
+        {
+          "type": "text",
+          "text": "Někdy děj dělá víc lidí nebo věcí najednou: *Psi a kočky se honil_.* Takový podmět je **několikanásobný**. Stačí, aby mezi nimi byl jeden „ten živý“ (mužský životný), a píšeš **-i**: *Psi a kočky se honili.*"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Ženy a děti odešl_.*",
+          "answer": "*Ta* žena → -y. *Děti* → -y. Žádný mužský životný → **odešly**."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Vlaky přijížděl_.*",
+          "answer": "**Ten** vlak – je to věc, ne živá bytost → mužský neživotný → **přijížděly**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Stromy rostli.",
+          "right": "Stromy rostly.",
+          "why": "*Ten strom* je mužský rod. Strom sice roste, ale v mluvnici patří do životného rodu jen lidé a zvířata. Strom je tedy mužský **neživotný** → -y."
+        },
+        {
+          "type": "summary",
+          "text": "Řekni ten/ta/to. Ten + živý → -i, ten + věc → -y, ta → -y, to → -a. Pozor: děti → -y, lidé → -i."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Doplň: *Chlapci běhal_.*",
+      "options": [
+        "i",
+        "y",
+        "a"
+      ],
+      "answer": 0,
+      "explanation": "chlapci – mužský životný."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Vlaky přijížděl_.*",
+      "options": [
+        "i",
+        "y",
+        "a"
+      ],
+      "answer": 1,
+      "explanation": "vlaky – mužský neživotný."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Koťata spal_.*",
+      "options": [
+        "i",
+        "y",
+        "a"
+      ],
+      "answer": 2,
+      "explanation": "koťata – střední rod."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Děti si hrál_ na písku.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 1,
+      "explanation": "Slovo děti se v množném čísle chová jako ženský rod."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Psi a kočky se honil_.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 0,
+      "explanation": "Je tam mužský životný (psi) → -i."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Stromy a keře kvetl_.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 1,
+      "explanation": "Oba mužský neživotný → -y."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve větě *Lidé odešli.* je správně -i.",
+      "answer": true,
+      "explanation": "lidé – mužský životný."
+    },
+    {
+      "type": "choice",
+      "question": "Které zájmeno patří ke slovu *dívky*?",
+      "options": [
+        "ony",
+        "oni",
+        "ona"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Koně se pásl_.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 0,
+      "explanation": "kůň – mužský životný."
+    },
+    {
+      "type": "input",
+      "question": "Doplň koncovku: *Ovce se pásl_ na louce.* Napiš jen písmeno.",
+      "answers": [
+        "y"
+      ],
+      "explanation": "ovce – ženský rod."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Ženy a děti odešl_.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 1,
+      "explanation": "Ženy i děti se chovají jako ženský rod → -y."
+    },
+    {
+      "type": "open",
+      "question": "Jak rozhodneš, jestli v příčestí napsat -i, -y, nebo -a?",
+      "answer": "Najdu podmět a určím jeho rod. Mužský životný → -i, mužský neživotný a ženský → -y, střední → -a."
+    },
+    {
+      "type": "open",
+      "question": "Co napíšeš, když je podmět několikanásobný?",
+      "answer": "Když je mezi podměty aspoň jeden mužský životný, píšu -i (*Chlapci a dívky běhali*). Mužský neživotný a ženský dávají -y (*Stromy a keře rostly*)."
+    }
+  ]
+}

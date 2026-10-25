@@ -1,0 +1,422 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "desetinna-cisla",
+  "title": "Desetinná čísla",
+  "emoji": "💰",
+  "generator": "decimal",
+  "explanations": [
+    {
+      "title": "Peníze a metr",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na cenovce stojí 12,50 Kč. Na krejčovském metru 1,5 m. Na teploměru 36,6 °C. Všude je **čárka**."
+        },
+        {
+          "type": "text",
+          "text": "Čísla s čárkou se jmenují **desetinná čísla**. Umí zapsat i kousky menší než jedna – desetiny a setiny."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desetinná čárka",
+          "definition": "Odděluje **celé** části (vlevo) od kousků menších než 1 (vpravo).",
+          "example": "12,50 Kč = 12 korun a 50 haléřů"
+        },
+        {
+          "type": "term",
+          "term": "Desetina",
+          "definition": "Jeden díl z celku rozděleného na 10. Píše se 0,1 nebo 1/10.",
+          "example": "1 dm je desetina metru: 0,1 m."
+        },
+        {
+          "type": "term",
+          "term": "Setina",
+          "definition": "Jeden díl z celku rozděleného na 100. Píše se 0,01 nebo 1/100.",
+          "example": "1 cm je setina metru: 0,01 m."
+        },
+        {
+          "type": "heading",
+          "text": "Zlomky a desetinná čísla"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zlomek",
+            "Desetinné číslo",
+            "Čteme"
+          ],
+          "rows": [
+            [
+              "1/10",
+              "0,1",
+              "jedna desetina"
+            ],
+            [
+              "3/10",
+              "0,3",
+              "tři desetiny"
+            ],
+            [
+              "1/2 = 5/10",
+              "0,5",
+              "pět desetin"
+            ],
+            [
+              "1/100",
+              "0,01",
+              "jedna setina"
+            ],
+            [
+              "25/100",
+              "0,25",
+              "dvacet pět setin"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Celek je rozdělený na 10 dílů, 3 jsou vybarvené – to je 3/10 = 0,3. Zkus nastavit 5/10. Jaké je to desetinné číslo?"
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 3,
+            "denominator": 10
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání a odčítání pod sebou: čárka pod čárku"
+        },
+        {
+          "type": "term",
+          "term": "Čárka pod čárku",
+          "definition": "Při počítání pod sebou píšeš čísla tak, aby **desetinné čárky byly přesně pod sebou**. Pak jsou koruny pod korunami a haléře pod haléři – desetiny pod desetinami, setiny pod setinami.",
+          "example": "12,50 a pod tím 3,20: čárka pod čárkou, 2 pod 2."
+        },
+        {
+          "type": "text",
+          "text": "Připomenutí: pod sebou počítáš zprava. Když ve sloupci vyjde 10 a víc, píšeš jednotky a **1 si pamatuješ** do dalšího sloupce. Odčítáš **doplňováním**: „dolní číslice a kolik je horní?“"
+        },
+        {
+          "type": "text",
+          "text": "Sešit za 12,50 Kč a pravítko za 3,20 Kč. Kolik zaplatíš? Klepej na **Další krok** a počítej se mnou. Čárka ve výsledku je zase pod čárkami."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": "12,50",
+            "b": "3,20",
+            "op": "+"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Platíš dvacetikorunou. Kolik ti vrátí? 20 Kč je 20,00 Kč – nuly za čárkou si doplníš (jsou světlejší). Pak počítáš jako obvykle."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 20,
+            "b": "15,70",
+            "op": "-"
+          }
+        },
+        {
+          "type": "example",
+          "question": "Rohlík stojí 2,50 Kč. Kolik zaplatíš za 4 rohlíky?",
+          "answer": "2 Kč · 4 = 8 Kč. 50 haléřů · 4 = 200 haléřů = 2 Kč. 8 + 2 = **10 Kč**."
+        },
+        {
+          "type": "example",
+          "question": "Co znamená 3,7 m?",
+          "answer": "3 celé metry a 7 desetin metru. Desetina metru je 1 dm, takže **3 m a 7 dm**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "0,3 > 0,30",
+          "right": "0,3 = 0,30",
+          "why": "3 desetiny = 30 setin. Nula na konci za čárkou nic nemění – jako 3 desetikoruny = 30 korun."
+        },
+        {
+          "type": "summary",
+          "text": "Čárka odděluje celé části od desetin a setin. 0,1 = 1/10, 0,01 = 1/100."
+        }
+      ]
+    },
+    {
+      "title": "Na ose",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mezi 0 a 1 nejsou na ose žádná celá čísla. Ale je tam spousta **desetinných** čísel: 0,1, 0,2 … 0,9."
+        },
+        {
+          "type": "text",
+          "text": "Když je vidíš na ose, snadno je porovnáš, sečteš i odečteš. Funguje to stejně jako u celých čísel."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desetinné číslo",
+          "definition": "Číslo s desetinnou čárkou. Vlevo celé, vpravo desetiny, setiny…",
+          "example": "1,3 = 1 celá a 3 desetiny"
+        },
+        {
+          "type": "term",
+          "term": "Desetiny a setiny",
+          "definition": "První číslice za čárkou jsou desetiny, druhá setiny. 10 desetin = 1 celek, 10 setin = 1 desetina."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Každý dílek osy je jedna desetina. Žabka začne na 0,6 a skočí o 0,7. Přeskočí 1?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 2,
+            "step": 0.1,
+            "start": 0.6,
+            "hop": 0.7
+          }
+        },
+        {
+          "type": "text",
+          "text": "0,6 + 0,7 = **1,3**. 6 desetin + 7 desetin = 13 desetin = 1 celek a 3 desetiny."
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání a porovnávání"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš čísla pod sebe – **čárku pod čárku**.",
+            "Když jedno číslo má méně míst za čárkou, doplň nulu: 2,4 = 2,40.",
+            "Sčítej (odčítej) jako celá čísla, zprava.",
+            "Čárku ve výsledku dej pod čárky."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Pod sebou a „1 si pamatuji“",
+          "definition": "Připomenutí: pod sebou počítáš zprava, sloupec po sloupci. Když ve sloupci vyjde 10 a víc, napíšeš jednotky a 1 si pamatuješ do dalšího sloupce vlevo. Odčítáš doplňováním: „3 a kolik je 10?“",
+          "example": "6 + 7 = 13 desetin → píšu 3, 1 si pamatuji (to je 1 celek)."
+        },
+        {
+          "type": "text",
+          "text": "Klepej na **Další krok** a počítej se mnou: 2,4 + 1,35. Číslo 2,4 má jen desetiny, proto si doplní nulu: 2,40 (je světlejší)."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": "2,4",
+            "b": "1,35",
+            "op": "+"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Odčítání s celým číslem: 5 − 0,3. Z pětky uděláš 5,0 a doplňuješ: „3 a kolik je 10?“"
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 5,
+            "b": "0,3",
+            "op": "-"
+          }
+        },
+        {
+          "type": "example",
+          "question": "Co je větší: 0,5, nebo 0,45?",
+          "answer": "Doplň nulu: 0,50 a 0,45. 50 setin > 45 setin. **0,5 je větší**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "0,45 > 0,5, protože 45 > 5.",
+          "right": "0,45 < 0,5",
+          "why": "Porovnávej po řádech zleva: desetiny 4 < 5. Délka čísla za čárkou o velikosti nerozhoduje."
+        },
+        {
+          "type": "summary",
+          "text": "Při sčítání a odčítání piš čárku pod čárku. Porovnávej po řádech zleva, klidně si doplň nuly."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Zapiš jako desetinné číslo: 7/10",
+      "answers": [
+        "0,7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Zapiš jako desetinné číslo: 25/100",
+      "answers": [
+        "0,25"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "0,4 + 0,5 =",
+      "answers": [
+        "0,9"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 0,8 + 0,6 =",
+      "answers": [
+        "1,4"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": "0,8",
+          "b": "0,6",
+          "op": "+"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 3,5 − 1,2 =",
+      "answers": [
+        "2,3"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": "3,5",
+          "b": "1,2",
+          "op": "-"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 2,4 + 1,35 =",
+      "answers": [
+        "3,75"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": "2,4",
+          "b": "1,35",
+          "op": "+"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 5 − 0,3 =",
+      "answers": [
+        "4,7"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 5,
+          "b": "0,3",
+          "op": "-"
+        }
+      }
+    },
+    {
+      "type": "choice",
+      "question": "Co je větší?",
+      "options": [
+        "0,5",
+        "0,45",
+        "jsou stejné"
+      ],
+      "answer": 0,
+      "explanation": "0,5 = 0,50 > 0,45."
+    },
+    {
+      "type": "choice",
+      "question": "Kolik setin má jedna desetina?",
+      "options": [
+        "10",
+        "100",
+        "1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "0,5 = 1/2",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "0,3 > 0,30",
+      "answer": false,
+      "explanation": "0,3 = 0,30. Nula na konci nic nemění."
+    },
+    {
+      "type": "input",
+      "question": "Rohlík stojí 2,50 Kč. Kolik zaplatíš za 4 rohlíky?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "0,09",
+        "0,1",
+        "0,25",
+        "0,5",
+        "1,2"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co znamená číslo 3,7? Vysvětli na penězích nebo metrech.",
+      "answer": "Tři celé a sedm desetin. Například 3,7 m = 3 metry a 7 decimetrů."
+    },
+    {
+      "type": "open",
+      "question": "Proč je 0,5 větší než 0,45, i když 45 je víc než 5?",
+      "answer": "0,5 je pět desetin = padesát setin. 0,45 je jen čtyřicet pět setin. Porovnávám po řádech."
+    }
+  ]
+}

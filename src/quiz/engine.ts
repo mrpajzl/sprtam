@@ -28,17 +28,17 @@ const shuffle = <T,>(xs: T[]) => xs.map((x) => [Math.random(), x] as const).sort
 /** Builds the question list for a mode from one topic (or all topics of a subject for the test). */
 export function build(mode: ModeId, topics: { key: string; t: Topic }[]): Item[] {
   const m = MODES[mode]
-  const all = (pred: (q: Question) => boolean) => topics.flatMap(({ key, t }) => t.qs.filter(pred).map((q) => ({ q, topic: key })))
-  const gen = (n: number) => topics.flatMap(({ key, t }) => (t.gen && GENERATORS[t.gen] ? Array.from({ length: n }, () => ({ q: GENERATORS[t.gen!](), topic: key })) : []))
+  const all = (pred: (q: Question) => boolean) => topics.flatMap(({ key, t }) => t.questions.filter(pred).map((q) => ({ q, topic: key })))
+  const gen = (n: number) => topics.flatMap(({ key, t }) => (t.generator && GENERATORS[t.generator] ? Array.from({ length: n }, () => ({ q: GENERATORS[t.generator!](), topic: key })) : []))
 
   if (mode === 'zkouseni') {
     // Oral exam: real open questions first, then other questions asked "aloud".
-    const open = shuffle(all((q) => q.t === 'open'))
-    const rest = shuffle(all((q) => q.t === 'choice' || q.t === 'input' || q.t === 'tf'))
+    const open = shuffle(all((q) => q.type === 'open'))
+    const rest = shuffle(all((q) => q.type === 'choice' || q.type === 'input' || q.type === 'truefalse'))
     return [...open, ...rest].slice(0, m.count)
   }
 
-  const closed = all((q) => q.t !== 'open')
+  const closed = all((q) => q.type !== 'open')
   if (mode === 'test' || mode === 'mix') {
     // Spread evenly across topics.
     const per = Math.max(1, Math.ceil(m.count / topics.length))
@@ -73,12 +73,12 @@ export const GRADE_WORD = ['', 'výborně', 'chvalitebně', 'dobře', 'dostateč
 
 /** Short text form of the correct answer (for feedback and the oral exam). */
 export function answerText(q: Question): string {
-  switch (q.t) {
-    case 'choice': return q.o[q.a]
-    case 'tf': return q.a ? 'Pravda' : 'Nepravda'
-    case 'input': return q.a[0]
+  switch (q.type) {
+    case 'choice': return q.options[q.answer]
+    case 'truefalse': return q.answer ? 'Pravda' : 'Nepravda'
+    case 'input': return q.answers[0]
     case 'order': return q.items.join(' → ')
-    case 'pair': return q.pairs.map(([a, b]) => `${a} – ${b}`).join(', ')
-    case 'open': return q.a
+    case 'match': return q.pairs.map(([a, b]) => `${a} – ${b}`).join(', ')
+    case 'open': return q.answer
   }
 }

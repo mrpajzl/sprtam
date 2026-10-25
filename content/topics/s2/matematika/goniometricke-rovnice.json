@@ -1,0 +1,369 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "goniometricke-rovnice",
+  "title": "Goniometrické rovnice",
+  "emoji": "🔁",
+  "explanations": [
+    {
+      "title": "Na kružnici",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sedíš na ruském kole a ptáš se: „Kdy budu ve výšce přesně poloviny poloměru?“ Odpovědí není jeden okamžik – během každé otočky jsi v té výšce **dvakrát** (cestou nahoru a cestou dolů). A kolo se točí dál, takže znovu a znovu."
+        },
+        {
+          "type": "text",
+          "text": "Goniometrické rovnice hledají úhly, pro které má sinus, kosinus nebo tangens danou hodnotu. Potřebuje je fyzika kmitů, elektrotechnika i navigace."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jednotková kružnice",
+          "definition": "Kružnice s poloměrem 1 a středem v [0; 0]. Bod otočený z [1; 0] o úhel x (proti směru hodin) má souřadnice [cos x; sin x]. Sinus je tedy výška bodu, kosinus vodorovná poloha."
+        },
+        {
+          "type": "term",
+          "term": "Radián",
+          "definition": "Jednotka úhlu: 180° = π rad. Tedy 30° = π/6, 90° = π/2, 360° = 2π."
+        },
+        {
+          "type": "term",
+          "term": "Goniometrická rovnice",
+          "definition": "Rovnice, kde je neznámá uvnitř sin, cos nebo tg.",
+          "example": "sin x = 1/2"
+        },
+        {
+          "type": "heading",
+          "text": "Hledání na kružnici"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "sin x = c: nakresli vodorovnou čáru ve výšce c. Kde protne kružnici, tam jsou řešení.",
+            "cos x = c: nakresli svislou čáru ve vzdálenosti c od osy y.",
+            "Urči úhly těch průsečíků (v jedné otočce ⟨0; 2π)).",
+            "Přidej „+ 2kπ“ (k je libovolné celé číslo) – po každé celé otočce jsi na stejném místě."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Řeš sin x = 1/2 v ⟨0; 2π).",
+          "answer": "Vodorovná čára ve výšce 1/2 protne kružnici dvakrát: vpravo při 30° = π/6 a zrcadlově vlevo při 180° − 30° = 150° = 5π/6. Řešení **π/6 a 5π/6**."
+        },
+        {
+          "type": "text",
+          "text": "Nastav úhel 30° a pak 150°. Konec ramena je v obou případech ve stejné výšce – obě hodnoty jsou řešením sin x = 1/2."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 30
+          }
+        },
+        {
+          "type": "example",
+          "question": "Řeš cos x = 0 v ⟨0; 2π).",
+          "answer": "Svislá čára x = 0 je osa y. Protne kružnici nahoře (90° = π/2) a dole (270° = 3π/2). Řešení **π/2 a 3π/2**."
+        },
+        {
+          "type": "heading",
+          "text": "Zvláštní případy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "sin x = 1: čára se kružnice jen dotkne nahoře → jediné řešení π/2 v jedné otočce.",
+            "cos x = −1: jen bod úplně vlevo → x = π + 2kπ.",
+            "sin x = 2: čára ve výšce 2 je nad kružnicí → **žádné řešení**. Sinus nikdy nepřesáhne 1."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "sin x = 1/2 má jediné řešení x = π/6.",
+          "right": "x = π/6 + 2kπ nebo x = 5π/6 + 2kπ",
+          "why": "V každé otočce jsou dva body v dané výšce, a otoček je nekonečně mnoho. Kalkulačka ukáže jen jeden z nich."
+        },
+        {
+          "type": "heading",
+          "text": "Tangens"
+        },
+        {
+          "type": "text",
+          "text": "tg x = sin x / cos x. Body naproti sobě (x a x + π) mají tangens stejný, proto u tangentu přidáváme jen **+ kπ**. Například tg x = 1 → x = π/4 + kπ."
+        },
+        {
+          "type": "example",
+          "question": "Kolik řešení má sin² x = 1/4 v ⟨0; 2π)?",
+          "answer": "sin x = 1/2 nebo sin x = −1/2. Každá výška dá dva body: π/6, 5π/6 a 7π/6, 11π/6. Celkem **4 řešení**."
+        },
+        {
+          "type": "text",
+          "text": "Při úpravách se hodí dvě rovnosti. Z Pythagorovy věty na kružnici: sin² x + cos² x = 1, tedy cos² x = 1 − sin² x. A vzorec pro dvojnásobný úhel: sin 2x = 2 sin x cos x."
+        },
+        {
+          "type": "summary",
+          "text": "Řešení najdi na jednotkové kružnici: pro sin vodorovná čára, pro cos svislá. Většinou dva body za otočku, pak + 2kπ (u tg + kπ). Pro |c| > 1 nemá sin x = c ani cos x = c řešení."
+        }
+      ]
+    },
+    {
+      "title": "Postupem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Složitější rovnice jako 2 sin² x − sin x − 1 = 0 vypadají děsivě. Ale jsou to vlastně obyčejné rovnice v přestrojení. Stačí je správně „svléknout“."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se přesný postup: upravit rovnici na tvar sin x = číslo a pak najít všechna řešení."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "sin, cos, tg",
+          "definition": "Funkce úhlu. Na jednotkové kružnici (poloměr 1) je cos x vodorovná a sin x svislá souřadnice bodu otočeného o úhel x. tg x = sin x / cos x."
+        },
+        {
+          "type": "term",
+          "term": "Periodicita",
+          "definition": "Hodnoty se opakují: sin a cos po 2π (celá otočka), tg po π. k v zápisu „+ 2kπ“ je libovolné celé číslo (…, −1, 0, 1, 2, …)."
+        },
+        {
+          "type": "term",
+          "term": "Substituce",
+          "definition": "Dočasné nahrazení složitého výrazu jedním písmenem.",
+          "example": "Za sin x napíšeš t a řešíš obyčejnou rovnici s t."
+        },
+        {
+          "type": "heading",
+          "text": "Základní hodnoty"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rovnice",
+            "Řešení v ⟨0; 2π)",
+            "Všechna řešení"
+          ],
+          "rows": [
+            [
+              "sin x = 1/2",
+              "π/6, 5π/6",
+              "π/6 + 2kπ, 5π/6 + 2kπ"
+            ],
+            [
+              "sin x = −1/2",
+              "7π/6, 11π/6",
+              "7π/6 + 2kπ, 11π/6 + 2kπ"
+            ],
+            [
+              "sin x = 1",
+              "π/2",
+              "π/2 + 2kπ"
+            ],
+            [
+              "cos x = 0",
+              "π/2, 3π/2",
+              "π/2 + kπ"
+            ],
+            [
+              "cos x = −1",
+              "π",
+              "π + 2kπ"
+            ],
+            [
+              "tg x = 1",
+              "π/4, 5π/4",
+              "π/4 + kπ"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Uprav rovnici tak, aby na jedné straně zůstala jen goniometrická funkce (sin x = …).",
+            "Pokud se v ní objevuje sin² x a sin x, použij substituci t = sin x a vyřeš kvadratickou rovnici.",
+            "Zahoď hodnoty mimo ⟨−1; 1⟩ – sin ani cos je nenabývají.",
+            "Najdi úhly v jedné otočce a přidej periodu."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Řeš 2 sin x − 1 = 0.",
+          "answer": "2 sin x = 1 → sin x = 1/2 → **x = π/6 + 2kπ nebo x = 5π/6 + 2kπ**."
+        },
+        {
+          "type": "example",
+          "question": "Řeš 2 sin² x − sin x − 1 = 0.",
+          "answer": "Substituce t = sin x: 2t² − t − 1 = 0. D = 1 + 8 = 9, t = (1 ± 3)/4 → t = 1 nebo t = −1/2. sin x = 1 → x = π/2 + 2kπ. sin x = −1/2 → x = 7π/6 + 2kπ nebo 11π/6 + 2kπ."
+        },
+        {
+          "type": "text",
+          "text": "Nastav úhel 210° (7π/6) a 330° (11π/6). Rameno míří dolů – výška je záporná, sin = −1/2."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 210
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Užitečné vzorce"
+        },
+        {
+          "type": "list",
+          "items": [
+            "sin² x + cos² x = 1, tedy cos² x = 1 − sin² x – převede rovnici jen na sin.",
+            "sin 2x = 2 sin x cos x",
+            "cos 2x = cos² x − sin² x"
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "sin x = 2 má řešení, jen je těžké ho najít.",
+          "right": "Rovnice nemá řešení.",
+          "why": "Sinus je výška bodu na kružnici s poloměrem 1, takže −1 ≤ sin x ≤ 1. Hodnotu 2 nikdy nenabude."
+        },
+        {
+          "type": "summary",
+          "text": "Uprav na sin x = c (případně substitucí). Je-li |c| > 1, řešení není. Jinak najdi úhly v jedné otočce a přidej + 2kπ (u tg + kπ)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "sin x = 1/2, x ∈ ⟨0; 2π):",
+      "options": [
+        "π/6 a 5π/6",
+        "π/3 a 2π/3",
+        "π/6 a 7π/6",
+        "jen π/6"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "cos x = 0, x ∈ ⟨0; 2π):",
+      "options": [
+        "π/2 a 3π/2",
+        "0 a π",
+        "jen π/2",
+        "π a 2π"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik řešení má sin x = 1/2 v ⟨0; 2π)?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Rovnice sin x = 2 nemá řešení.",
+      "answer": true,
+      "explanation": "−1 ≤ sin x ≤ 1"
+    },
+    {
+      "type": "choice",
+      "question": "Všechna řešení tg x = 1:",
+      "options": [
+        "π/4 + kπ",
+        "π/4 + 2kπ",
+        "π/2 + kπ",
+        "kπ"
+      ],
+      "answer": 0,
+      "explanation": "Perioda tg je π."
+    },
+    {
+      "type": "input",
+      "question": "Kolik řešení má sin x = 1 v ⟨0; 2π)?",
+      "answers": [
+        "1"
+      ],
+      "explanation": "Jen x = π/2."
+    },
+    {
+      "type": "choice",
+      "question": "Všechna řešení cos x = −1:",
+      "options": [
+        "π + 2kπ",
+        "kπ",
+        "π/2 + kπ",
+        "2kπ"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "2 sin x − 1 = 0 je totéž jako:",
+      "options": [
+        "sin x = 1/2",
+        "sin x = 2",
+        "sin x = −1/2",
+        "sin x = 1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik řešení má sin² x = 1/4 v ⟨0; 2π)?",
+      "answers": [
+        "4"
+      ],
+      "explanation": "sin x = 1/2 (2 řešení) nebo sin x = −1/2 (2 řešení)."
+    },
+    {
+      "type": "truefalse",
+      "question": "cos² x = 1 − sin² x",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "sin 2x =",
+      "options": [
+        "2 sin x cos x",
+        "2 sin x",
+        "sin² x − cos² x",
+        "sin x + cos x"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Proč má goniometrická rovnice obvykle nekonečně mnoho řešení?",
+      "answer": "Goniometrické funkce jsou periodické. Když x je řešení, je jím i x + 2kπ (u tg x + kπ) pro každé celé k."
+    },
+    {
+      "type": "open",
+      "question": "Popiš řešení rovnice 2 sin² x − sin x − 1 = 0.",
+      "answer": "Substituce t = sin x: 2t² − t − 1 = 0, t = 1 nebo t = −1/2. Pak sin x = 1 dává π/2 + 2kπ, sin x = −1/2 dává 7π/6 + 2kπ a 11π/6 + 2kπ."
+    }
+  ]
+}

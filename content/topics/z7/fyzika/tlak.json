@@ -1,0 +1,338 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "tlak",
+  "title": "Tlak",
+  "emoji": "👠",
+  "explanations": [
+    {
+      "title": "Ve sněhu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V hlubokém sněhu se v botách boříš až po kolena. Na lyžích stejný člověk po sněhu klouže. Váží pořád stejně – tak čím to je?"
+        },
+        {
+          "type": "text",
+          "text": "Záleží na tom, na jak **velkou plochu** se síla rozloží. To vysvětluje, proč krájí ostrý nůž, proč mají tanky pásy a proč se tenký podpatek boří do trávníku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tlaková síla",
+          "definition": "Síla, kterou těleso tlačí kolmo na nějakou plochu. Měří se v newtonech (N).",
+          "example": "Když stojíš, tlačíš na podlahu svou tíhou."
+        },
+        {
+          "type": "term",
+          "term": "Obsah plochy",
+          "definition": "Jak velká je plocha, na kterou síla tlačí. Měří se v m² nebo cm².",
+          "example": "Podrážka boty má asi 150 cm², lyže asi 1 500 cm²."
+        },
+        {
+          "type": "term",
+          "term": "Tlak",
+          "definition": "Jak moc je síla **natěsnaná** na plochu – kolik síly připadá na každý kousek plochy.",
+          "example": "Hrot jehly je malinký, takže i malá síla dá obrovský tlak."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s plastelínou"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Polož na plastelínu kostku na velkou stěnu a zatlač. Udělá jen mělký otisk.",
+            "Polož ji na hranu a zatlač stejně silně. Zaboří se hluboko.",
+            "Síla byla stejná, ale plocha menší → tlak větší."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pravidlo: **menší plocha = větší tlak**, **větší plocha = menší tlak**. A taky: **větší síla = větší tlak**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věci: chceme u nich tlak zvětšit (aby pronikly), nebo zmenšit (aby se nebořily, netlačily)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "tlak zvětšujeme",
+              "tlak zmenšujeme"
+            ],
+            "items": [
+              {
+                "text": "ostrý nůž",
+                "group": 0
+              },
+              {
+                "text": "hrot hřebíku",
+                "group": 0
+              },
+              {
+                "text": "jehla",
+                "group": 0
+              },
+              {
+                "text": "zub pily",
+                "group": 0
+              },
+              {
+                "text": "lyže",
+                "group": 1
+              },
+              {
+                "text": "pásy tanku",
+                "group": 1
+              },
+              {
+                "text": "sněžnice",
+                "group": 1
+              },
+              {
+                "text": "široké popruhy batohu",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč se tupým nožem špatně krájí?",
+          "answer": "Tupé ostří má **větší plochu**. Stejná síla se rozloží na víc místa, tlak je menší a nůž do chleba nepronikne."
+        },
+        {
+          "type": "example",
+          "question": "Proč bolí taška s tenkým uchem víc než se širokým?",
+          "answer": "Tenké ucho má **malou plochu**, takže tíha tašky vytvoří na dlani velký tlak. Široké ucho tlak rozloží."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Lyže pomáhají, protože člověk na nich váží méně.",
+          "right": "Člověk váží stejně, ale jeho tíha se rozloží na větší plochu.",
+          "why": "Tlaková síla se nemění. Mění se plocha – a tím tlak."
+        },
+        {
+          "type": "summary",
+          "text": "Tlak říká, jak je síla rozložená na plochu. Menší plocha nebo větší síla = větší tlak."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Stavitel musí vědět, jaký tlak unese základová deska domu. Hasič, jak velký tlak je v hadici. Tlak se dá přesně spočítat a vyjádřit číslem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tlaková síla `F`",
+          "definition": "Síla působící kolmo na plochu, v newtonech (N).",
+          "example": "Člověk 60 kg tlačí na zem silou asi 600 N."
+        },
+        {
+          "type": "term",
+          "term": "Obsah plochy `S`",
+          "definition": "Velikost plochy, na kterou síla působí, ve čtverečních metrech (m²).",
+          "example": "Stůl 1 m × 2 m má obsah 2 m²."
+        },
+        {
+          "type": "term",
+          "term": "Tlak `p`",
+          "definition": "Síla připadající na **1 m²** plochy. Jednotka **pascal (Pa)**: 1 Pa = 1 N na 1 m².",
+          "example": "1 Pa je malý tlak – asi jako list papíru ležící na stole."
+        },
+        {
+          "type": "heading",
+          "text": "Odkud vzorec"
+        },
+        {
+          "type": "text",
+          "text": "Síla 600 N tlačí na plochu 2 m². Na každý 1 m² připadá 600 : 2 = 300 N. Tlak je tedy 300 Pa. Dělíme sílu plochou: `p = F : S`."
+        },
+        {
+          "type": "text",
+          "text": "Z toho také: síla `F = p · S` a plocha `S = F : p`."
+        },
+        {
+          "type": "heading",
+          "text": "Jednotky"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**kPa** (kilopascal) = 1 000 Pa",
+            "**MPa** (megapascal) = 1 000 000 Pa",
+            "Pozor na plochu: **1 m² = 10 000 cm²** (čtverec 100 cm × 100 cm). Takže 300 cm² = 0,03 m²."
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Sílu měj v N, plochu převeď na **m²**.",
+            "Dosaď do p = F : S.",
+            "Výsledek je v Pa; velká čísla převeď na kPa (děl 1 000)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Člověk tlačí silou 600 N, plocha obou bot je 0,03 m². Jaký je tlak?",
+          "answer": "p = 600 : 0,03 = **20 000 Pa = 20 kPa**."
+        },
+        {
+          "type": "example",
+          "question": "Síla 500 N působí na plochu 0,1 m². Tlak?",
+          "answer": "p = 500 : 0,1 = **5 000 Pa**."
+        },
+        {
+          "type": "example",
+          "question": "Tlak 2 000 Pa působí na plochu 0,5 m². Jak velká je tlaková síla?",
+          "answer": "F = p · S = 2 000 · 0,5 = **1 000 N**."
+        },
+        {
+          "type": "text",
+          "text": "Když plochu zmenšíš na polovinu a síla zůstane, tlak se **zdvojnásobí** – dělíš menším číslem."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Bota 300 cm², síla 600 N → p = 600 : 300 = 2 Pa",
+          "right": "300 cm² = 0,03 m² → p = 600 : 0,03 = 20 000 Pa",
+          "why": "Pascal je newton na **metr** čtvereční. Plochu musíš nejdřív převést na m²."
+        },
+        {
+          "type": "summary",
+          "text": "`p = F : S`, jednotka pascal (Pa = N/m²). 1 kPa = 1 000 Pa, 1 m² = 10 000 cm²."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec tlaku?",
+      "options": [
+        "p = F / S",
+        "p = F · S",
+        "p = S / F",
+        "p = m / V"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka tlaku?",
+      "options": [
+        "pascal",
+        "newton",
+        "joule",
+        "watt"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Síla 200 N působí na plochu 2 m². Tlak v Pa =",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Síla 500 N působí na plochu 0,1 m². Tlak v Pa =",
+      "answers": [
+        "5000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik Pa je 3 kPa?",
+      "answers": [
+        "3000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Tlak 2 000 Pa působí na plochu 0,5 m². Tlaková síla v N =",
+      "answers": [
+        "1000"
+      ],
+      "explanation": "F = p · S = 2 000 · 0,5"
+    },
+    {
+      "type": "truefalse",
+      "question": "Lyže zmenšují tlak na sníh, protože zvětšují plochu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní tlak, když se plocha zmenší na polovinu a síla zůstane?",
+      "options": [
+        "zdvojnásobí se",
+        "klesne na polovinu",
+        "nezmění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Proč se tupým nožem špatně krájí?",
+      "options": [
+        "ostří má větší plochu, tlak je menší",
+        "nůž je lehčí",
+        "je větší tření"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu se značkou a jednotkou.",
+      "pairs": [
+        [
+          "tlak",
+          "p – Pa"
+        ],
+        [
+          "síla",
+          "F – N"
+        ],
+        [
+          "plocha",
+          "S – m²"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Na čem závisí tlak a jak ho vypočítáš?",
+      "answer": "Závisí na tlakové síle a na ploše, na kterou působí. p = F / S. Větší síla nebo menší plocha znamená větší tlak."
+    },
+    {
+      "type": "open",
+      "question": "Uveď příklady, kde tlak záměrně zvětšujeme a kde zmenšujeme.",
+      "answer": "Zvětšujeme: ostrý nůž, jehla, hřebík. Zmenšujeme: lyže, sněžnice, pásy tanku, široké popruhy."
+    }
+  ]
+}

@@ -1,0 +1,380 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stavba-rostlin",
+  "title": "Stavba rostlin",
+  "emoji": "🌿",
+  "explanations": [
+    {
+      "title": "Rostlina jako továrna",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rostlina nemůže jít do obchodu ani lovit. Přesto roste a sílí. Jídlo si vyrobí sama – ze vzduchu, vody a slunečního světla. Je to jako továrna, kde každá část má svou práci."
+        },
+        {
+          "type": "text",
+          "text": "Poznáš jednotlivé části rostliny a pochopíš, jak spolupracují. Hlavně uvidíš, jak rostlina „vaří“ svou potravu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Orgán rostliny",
+          "definition": "Část rostliny, která má určitou práci.",
+          "example": "Kořen, stonek, list, květ, plod, semeno."
+        },
+        {
+          "type": "term",
+          "term": "Minerální látky",
+          "definition": "Látky rozpuštěné ve vodě v půdě. Rostlina je potřebuje k růstu, podobně jako my vitamíny."
+        },
+        {
+          "type": "term",
+          "term": "Chlorofyl",
+          "definition": "Zelené barvivo v listech. Zachytává světlo – je to „solární panel“ rostliny."
+        },
+        {
+          "type": "term",
+          "term": "Fotosyntéza",
+          "definition": "Výroba cukru v listech. Rostlina vezme **oxid uhličitý** (plyn ze vzduchu) a **vodu**, a pomocí **světla** a chlorofylu z nich vyrobí **cukr (glukózu)** a **kyslík**."
+        },
+        {
+          "type": "term",
+          "term": "Průduchy",
+          "definition": "Drobné otvůrky hlavně na spodní straně listu. Jimi vstupuje oxid uhličitý a odchází kyslík a vodní pára."
+        },
+        {
+          "type": "heading",
+          "text": "Oddělení továrny"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Kořen** = sklad surovin a kotva. Drží rostlinu v zemi a nasává vodu s minerálními látkami.",
+            "**Stonek** = potrubí a nosná konstrukce. Nese listy a vede vodu nahoru a cukry z listů jinam.",
+            "**List** = výrobní hala. Probíhá v něm fotosyntéza.",
+            "**Květ, plod, semeno** = oddělení pro nové rostliny (rozmnožování)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Výroba v listu"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj, odkud se berou suroviny a kam jdou výrobky."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "kořen nasaje vodu",
+              "stonek ji dopraví do listu",
+              "průduchy přijmou oxid uhličitý",
+              "světlo + chlorofyl: vznikne cukr a kyslík",
+              "kyslík odchází průduchy ven, cukr rozvádí stonek"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Slovně: **oxid uhličitý + voda → (světlo, chlorofyl) → cukr + kyslík**."
+        },
+        {
+          "type": "example",
+          "question": "Proč kytka na tmavé chodbě po čase zežloutne a uhyne?",
+          "answer": "Bez **světla** nemůže probíhat fotosyntéza. Rostlina si nevyrobí cukr – nemá „jídlo“. Postupně zeslábne a uhyne."
+        },
+        {
+          "type": "example",
+          "question": "Proč v létě zemina v květináči s rajčetem rychle vysychá?",
+          "answer": "Kořen nasaje vodu, stonek ji vede do listů a průduchy se voda jako pára odpařuje do vzduchu. Rostlina tak vodu stále „pumpuje“ ze země ven."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rostliny při fotosyntéze spotřebovávají kyslík.",
+          "right": "Při fotosyntéze rostliny kyslík **uvolňují**. Spotřebovávají ho při dýchání.",
+          "why": "Fotosyntéza kyslík vyrábí. Dýchání (ve dne i v noci) ho spotřebovává – ale ve dne rostlina vyrobí kyslíku víc, než spotřebuje."
+        },
+        {
+          "type": "summary",
+          "text": "Kořen nasává vodu, stonek ji vede, list fotosyntetizuje: oxid uhličitý + voda → (světlo, chlorofyl) → cukr + kyslík."
+        }
+      ]
+    },
+    {
+      "title": "Orgány a jejich proměny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Brambora je kořen, nebo stonek? A mrkev? Odpověď tě možná překvapí. Rostlinné orgány se umějí „převléknout“ do jiné podoby, aby uložily zásoby nebo přežily zimu."
+        },
+        {
+          "type": "text",
+          "text": "Nejdřív si popíšeme, co každý orgán normálně dělá. Pak se podíváme na jeho přeměny, které znáš z kuchyně."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Orgán",
+          "definition": "Část těla rostliny s určitou prací.",
+          "example": "List vyrábí cukr, kořen nasává vodu."
+        },
+        {
+          "type": "term",
+          "term": "Vegetativní orgány",
+          "definition": "Orgány, které rostlinu **vyživují**: kořen, stonek, list."
+        },
+        {
+          "type": "term",
+          "term": "Rozmnožovací orgány",
+          "definition": "Orgány pro vznik nových rostlin: **květ**, z něj **plod** a **semeno**."
+        },
+        {
+          "type": "term",
+          "term": "Fotosyntéza",
+          "definition": "Výroba cukru a kyslíku z oxidu uhličitého a vody za pomoci světla a zeleného barviva **chlorofylu**. Probíhá hlavně v listech."
+        },
+        {
+          "type": "term",
+          "term": "Pupen (očko)",
+          "definition": "Malý zárodek nového výhonu. Vyrůstá jen na **stonku**."
+        },
+        {
+          "type": "heading",
+          "text": "Co který orgán dělá"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Orgán",
+            "Hlavní úkol"
+          ],
+          "rows": [
+            [
+              "kořen",
+              "upevňuje rostlinu, přijímá vodu s minerálními látkami"
+            ],
+            [
+              "stonek",
+              "nese listy a květy, vede vodu nahoru a cukry dolů"
+            ],
+            [
+              "list",
+              "fotosyntéza, výměna plynů průduchy, odpařování vody"
+            ],
+            [
+              "květ",
+              "rozmnožování"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak poznat přeměněný orgán"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Má na sobě **pupeny (očka)**? → je to **stonek**. Kořen pupeny nemá.",
+            "Je to ztlustlá podzemní část, ze které rostou kořínky, a nemá očka? → **kořen**.",
+            "Skládá se z dužnatých šupin (vrstev)? → **cibule** – krátký stonek s přeměněnými listy."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď zeleninu podle toho, který orgán jíme."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Kořen",
+              "Stonek",
+              "List"
+            ],
+            "items": [
+              {
+                "text": "mrkev",
+                "group": 0
+              },
+              {
+                "text": "brambora (hlíza)",
+                "group": 1
+              },
+              {
+                "text": "hlávkový salát",
+                "group": 2
+              },
+              {
+                "text": "petržel (kořen)",
+                "group": 0
+              },
+              {
+                "text": "kedluben",
+                "group": 1
+              },
+              {
+                "text": "špenát",
+                "group": 2
+              },
+              {
+                "text": "ředkvička",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je brambora kořen, nebo stonek?",
+          "answer": "Brambora má **očka** – z nich vyrostou nové výhony. Očka jsou pupeny a ty má jen stonek. Brambora je **hlíza = podzemní stonek**."
+        },
+        {
+          "type": "example",
+          "question": "Proč je mrkev oranžová a sladká?",
+          "answer": "Mrkev je **ztlustlý kořen**. Ukládá do něj zásoby cukru na příští rok, kdy chce kvést. Oranžovou barvu jí dává barvivo karoten."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Všechno, co roste pod zemí, je kořen.",
+          "right": "Pod zemí může být i stonek – brambora (hlíza) nebo cibule.",
+          "why": "Rozhoduje stavba, ne místo. Pupeny (očka) prozradí stonek."
+        },
+        {
+          "type": "summary",
+          "text": "Kořen, stonek a list rostlinu vyživují, květ slouží k rozmnožování. Brambora je hlíza (stonek), mrkev ztlustlý kořen, cibule stonek s dužnatými listy."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kde probíhá hlavně fotosyntéza?",
+      "options": [
+        "v listech",
+        "v kořenech",
+        "v semenech"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co vzniká při fotosyntéze?",
+      "options": [
+        "cukr a kyslík",
+        "oxid uhličitý a voda",
+        "jen voda"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Kořen přijímá vodu s minerálními látkami.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Otvory na listu pro výměnu plynů jsou…",
+      "answers": [
+        "průduchy",
+        "pruduchy"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj orgán s úkolem.",
+      "pairs": [
+        [
+          "kořen",
+          "příjem vody"
+        ],
+        [
+          "stonek",
+          "vedení látek"
+        ],
+        [
+          "list",
+          "fotosyntéza"
+        ],
+        [
+          "květ",
+          "rozmnožování"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který orgán je rozmnožovací?",
+      "options": [
+        "květ",
+        "list",
+        "kořen"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Bramborová hlíza je přeměněný stonek.",
+      "answer": true,
+      "explanation": "Hlíza je podzemní stonek s očky (pupeny)."
+    },
+    {
+      "type": "choice",
+      "question": "Mrkev má…",
+      "options": [
+        "ztlustlý kořen",
+        "hlízu (stonek)",
+        "cibuli"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Rostliny při fotosyntéze spotřebovávají kyslík.",
+      "answer": false,
+      "explanation": "Kyslík uvolňují. Spotřebovávají ho při dýchání."
+    },
+    {
+      "type": "choice",
+      "question": "Zelené barvivo v listech je…",
+      "options": [
+        "chlorofyl",
+        "karoten",
+        "melanin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Napiš slovy rovnici fotosyntézy.",
+      "answer": "Oxid uhličitý a voda se za pomoci světla a chlorofylu mění na glukózu (cukr) a kyslík."
+    },
+    {
+      "type": "open",
+      "question": "Jakou funkci má stonek?",
+      "answer": "Nese listy a květy, vede vodu z kořenů nahoru a cukry z listů do ostatních částí. Může i zásobit látky."
+    }
+  ]
+}

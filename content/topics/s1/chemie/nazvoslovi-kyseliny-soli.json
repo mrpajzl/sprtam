@@ -1,0 +1,472 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nazvoslovi-kyseliny-soli",
+  "title": "Názvosloví kyselin a solí",
+  "emoji": "📛",
+  "explanations": [
+    {
+      "title": "Liché a sudé",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kyselina sírová v autobaterii, dusičná na výrobu hnojiv, chlorná v bělidle. Názvy kyselin vypadají složitě, ale skrývá se v nich jednoduchý trik – stačí vědět, jestli je číslo **liché, nebo sudé**."
+        },
+        {
+          "type": "text",
+          "text": "Z kyselin pak vznikají soli, které potkáváš všude: hypermangan, jedlá soda, modrá skalice."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo (OČ)",
+          "definition": "Formální náboj atomu ve sloučenině. Koncovka názvu prozradí OČ: I -ná, II -natá, III -itá, IV -ičitá, V -ečná/-ičná, VI -ová, VII -istá, VIII -ičelá."
+        },
+        {
+          "type": "term",
+          "term": "Kyslíkatá kyselina",
+          "definition": "Kyselina, která obsahuje vodík, **centrální atom** a kyslík: HₓYOᵧ.",
+          "example": "H₂SO₄ – centrální atom je síra."
+        },
+        {
+          "type": "term",
+          "term": "Bezkyslíkatá kyselina",
+          "definition": "Kyselina bez kyslíku – vodný roztok sloučeniny vodíku s nekovem. Název končí na -vodíková.",
+          "example": "HCl kyselina chlorovodíková"
+        },
+        {
+          "type": "heading",
+          "text": "Trik s lichým a sudým"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Z koncovky zjisti OČ centrálního atomu.",
+            "Je OČ **liché** → kyselina má **1 vodík**. Je **sudé** → **2 vodíky**.",
+            "Kyslíků je **(počet H + OČ) / 2** – protože každý kyslík „vyrovná“ dva kladné náboje."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Napiš vzorec kyseliny chloristé.",
+          "answer": "-istá → Cl^VII. Liché → 1 H. Kyslíky (1 + 7) / 2 = 4. **HClO₄**."
+        },
+        {
+          "type": "example",
+          "question": "Napiš vzorec kyseliny siřičité.",
+          "answer": "-ičitá → S^IV. Sudé → 2 H. Kyslíky (2 + 4) / 2 = 3. **H₂SO₃**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "OČ",
+            "Kyselina",
+            "Vzorec"
+          ],
+          "rows": [
+            [
+              "I",
+              "chlorná",
+              "HClO"
+            ],
+            [
+              "III",
+              "chloritá",
+              "HClO₂"
+            ],
+            [
+              "V",
+              "chlorečná",
+              "HClO₃"
+            ],
+            [
+              "VII",
+              "chloristá",
+              "HClO₄"
+            ],
+            [
+              "IV",
+              "siřičitá",
+              "H₂SO₃"
+            ],
+            [
+              "VI",
+              "sírová",
+              "H₂SO₄"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Výjimky mají víc vodíků a nesou to v názvu: H₃PO₄ kyselina **trihydrogenfosforečná** (běžně „fosforečná“), H₃BO₃ **trihydrogenboritá**."
+        },
+        {
+          "type": "heading",
+          "text": "Z kyseliny sůl"
+        },
+        {
+          "type": "term",
+          "term": "Sůl",
+          "definition": "Sloučenina, kde vodíky kyseliny nahradil kov (nebo NH₄⁺). Z kyseliny zbude **anion** se záporným nábojem = počtu odebraných H.",
+          "example": "H₂SO₄ → SO₄²⁻ (síran)"
+        },
+        {
+          "type": "text",
+          "text": "Název aniontu: koncovka kyseliny **-á → -an**. Sírová → síran, dusičná → dusičnan, chlorná → chlornan. Bezkyslíkaté: -vodíková → **-id** (chlorid)."
+        },
+        {
+          "type": "example",
+          "question": "Napiš vzorec dusičnanu vápenatého.",
+          "answer": "Kyselina dusičná: N^V liché → HNO₃. Anion NO₃⁻ (1−). Vápenatý: Ca²⁺. Na 2+ potřebuju dva anionty: **Ca(NO₃)₂**."
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu a ověř si názvy známých solí."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "KMnO₄",
+                "back": "manganistan draselný (hypermangan)"
+              },
+              {
+                "front": "NaClO",
+                "back": "chlornan sodný (bělidlo)"
+              },
+              {
+                "front": "NaHCO₃",
+                "back": "hydrogenuhličitan sodný (jedlá soda)"
+              },
+              {
+                "front": "CuSO₄ · 5 H₂O",
+                "back": "pentahydrát síranu měďnatého"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kyselina dusitá = HNO₃",
+          "right": "Kyselina dusitá = **HNO₂** (N^III). HNO₃ je dusičná (N^V).",
+          "why": "-itá znamená III. Liché → 1 H, kyslíky (1 + 3) / 2 = 2."
+        },
+        {
+          "type": "summary",
+          "text": "Liché OČ → 1 H, sudé → 2 H, kyslíků (H + OČ) / 2. Sůl: -á → -an (sírová → síran), -vodíková → -id."
+        }
+      ]
+    },
+    {
+      "title": "Kyselina → sůl",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Soli jsou nejpočetnější skupina anorganických látek: hnojiva, minerály, léky, přísady do potravin. Všechny se pojmenovávají podle kyseliny, ze které jsou odvozené."
+        },
+        {
+          "type": "text",
+          "text": "Tady se naučíš spolehlivý postup pro každou sůl – i pro hydrogensoli a hydráty, které na jednoduchá pravidla nestačí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kyslíkatá kyselina",
+          "definition": "Látka HₓYOᵧ: vodík, centrální atom Y, kyslík. Ve vodě odštěpuje H⁺."
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo (OČ)",
+          "definition": "Formální náboj atomu. V kyselině: H má I, O má −II, centrální atom dopočítáš tak, aby součet byl 0.",
+          "example": "H₂SO₄: 2 · 1 + S + 4 · (−2) = 0 → S = VI."
+        },
+        {
+          "type": "term",
+          "term": "Anion kyseliny",
+          "definition": "Co zbude po odtržení vodíků. Náboj = počet odtržených H.",
+          "example": "HNO₃ → NO₃⁻, H₃PO₄ → PO₄³⁻"
+        },
+        {
+          "type": "term",
+          "term": "Sůl",
+          "definition": "Kation kovu (nebo NH₄⁺) + anion kyseliny. Název: anion (podstatné jméno) + kation (přídavné jméno s koncovkou podle OČ: -ný, -natý, -itý…)."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se tvoří název aniontu"
+        },
+        {
+          "type": "text",
+          "text": "Koncovka kyseliny **-á** se změní na **-an**:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kyselina",
+            "Anion",
+            "Název aniontu"
+          ],
+          "rows": [
+            [
+              "HClO chlorná",
+              "ClO⁻",
+              "chlornan"
+            ],
+            [
+              "HNO₂ dusitá",
+              "NO₂⁻",
+              "dusitan"
+            ],
+            [
+              "H₂CO₃ uhličitá",
+              "CO₃²⁻",
+              "uhličitan"
+            ],
+            [
+              "HNO₃ dusičná",
+              "NO₃⁻",
+              "dusičnan"
+            ],
+            [
+              "H₂SO₄ sírová",
+              "SO₄²⁻",
+              "síran"
+            ],
+            [
+              "HClO₄ chloristá",
+              "ClO₄⁻",
+              "chloristan"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup od názvu ke vzorci"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Z aniontu odvoď kyselinu (dusičnan → kyselina dusičná → HNO₃).",
+            "Odtrhni vodíky → anion s nábojem (NO₃⁻).",
+            "Z koncovky kationtu zjisti jeho náboj (vápenatý → Ca²⁺).",
+            "Vyrovnej náboje na nulu. Víceatomový anion dej do závorky: **Ca(NO₃)₂**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Napiš vzorec síranu hlinitého.",
+          "answer": "Síran SO₄²⁻, hlinitý Al³⁺. Nejmenší společný násobek 2 a 3 je 6: 2 Al³⁺ (+6) a 3 SO₄²⁻ (−6). **Al₂(SO₄)₃**."
+        },
+        {
+          "type": "heading",
+          "text": "Hydrogensoli"
+        },
+        {
+          "type": "term",
+          "term": "Hydrogensůl",
+          "definition": "Sůl, ve které v aniontu **zůstal vodík** z kyseliny. Počet zbylých H řekne předpona: **hydrogen-** (1), **dihydrogen-** (2).",
+          "example": "NaHCO₃ hydrogenuhličitan sodný; KH₂PO₄ dihydrogenfosforečnan draselný"
+        },
+        {
+          "type": "example",
+          "question": "Napiš vzorec hydrogenuhličitanu vápenatého.",
+          "answer": "H₂CO₃ ztratí jen jeden H → HCO₃⁻ (1−). Ca²⁺ potřebuje dva: **Ca(HCO₃)₂**."
+        },
+        {
+          "type": "heading",
+          "text": "Hydráty"
+        },
+        {
+          "type": "term",
+          "term": "Hydrát",
+          "definition": "Sůl s vodou pevně vázanou v krystalu. Název: číslovka + „hydrát“ + název soli ve 2. pádě.",
+          "example": "CuSO₄ · 5 H₂O pentahydrát síranu měďnatého"
+        },
+        {
+          "type": "text",
+          "text": "Ověř si: zakryj zadní stranu a zkus název říct sám."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "KMnO₄",
+                "back": "manganistan draselný"
+              },
+              {
+                "front": "K₂Cr₂O₇",
+                "back": "dichroman draselný"
+              },
+              {
+                "front": "NaClO",
+                "back": "chlornan sodný"
+              },
+              {
+                "front": "NaHCO₃",
+                "back": "hydrogenuhličitan sodný"
+              },
+              {
+                "front": "Fe₂(SO₄)₃",
+                "back": "síran železitý"
+              },
+              {
+                "front": "CuSO₄ · 5 H₂O",
+                "back": "pentahydrát síranu měďnatého"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Síran hlinitý = Al(SO₄)₃",
+          "right": "Síran hlinitý = **Al₂(SO₄)₃**",
+          "why": "Jeden Al³⁺ (+3) nevyrovná tři SO₄²⁻ (−6). Potřebuješ dva hliníky."
+        },
+        {
+          "type": "summary",
+          "text": "Kyselina -á → anion -an. Víceatomový anion do závorky, náboje na nulu. Zbylý vodík → hydrogen-, dihydrogen-. Vázaná voda → hydrát."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Vzorec kyseliny chlorečné?",
+      "options": [
+        "HClO₃",
+        "HClO₄",
+        "HClO₂",
+        "H₂ClO₃"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Vzorec kyseliny dusité?",
+      "options": [
+        "HNO₂",
+        "HNO₃",
+        "H₂NO₂",
+        "HNO"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Název HMnO₄ (kyselina …)",
+      "answers": [
+        "kyselina manganistá",
+        "manganistá"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Název H₂SO₃ (kyselina …)",
+      "answers": [
+        "kyselina siřičitá",
+        "siřičitá"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Název KNO₂ (dusitan …)",
+      "answers": [
+        "dusitan draselný",
+        "draselný"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Vzorec síranu hlinitého?",
+      "options": [
+        "Al₂(SO₄)₃",
+        "Al(SO₄)₃",
+        "Al₃(SO₄)₂",
+        "AlSO₄"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Vzorec hydrogenuhličitanu vápenatého?",
+      "options": [
+        "Ca(HCO₃)₂",
+        "CaHCO₃",
+        "Ca₂HCO₃",
+        "CaH₂CO₃"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Název KH₂PO₄?",
+      "options": [
+        "dihydrogenfosforečnan draselný",
+        "hydrogenfosforečnan draselný",
+        "fosforečnan draselný",
+        "dihydrogenfosforitan draselný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "K₂Cr₂O₇ je dichroman draselný.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj kyselinu s aniontem soli.",
+      "pairs": [
+        [
+          "HClO₄",
+          "chloristan"
+        ],
+        [
+          "H₂CO₃",
+          "uhličitan"
+        ],
+        [
+          "HNO₃",
+          "dusičnan"
+        ],
+        [
+          "H₂SO₃",
+          "siřičitan"
+        ],
+        [
+          "HClO",
+          "chlornan"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Ukaž postup tvorby vzorce kyseliny chloristé.",
+      "answer": "Koncovka -istá → Cl má VII. Liché OČ → jeden vodík. Kyslíků je (1 + 7) / 2 = 4. Vzorec HClO₄."
+    },
+    {
+      "type": "open",
+      "question": "Jak vznikne název a vzorec hydrátu? Uveď příklad.",
+      "answer": "Počet molekul vody vyjádří číslovková předpona + „hydrát“, pak název soli ve 2. pádě. CuSO₄ · 5 H₂O je pentahydrát síranu měďnatého."
+    }
+  ]
+}

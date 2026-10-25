@@ -1,0 +1,366 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "porovnavani",
+  "title": "Větší, menší, rovno",
+  "emoji": "🐊",
+  "explanations": [
+    {
+      "title": "Hladový krokodýl",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ty máš 7 bonbonů. Kamarád má 3. Kdo má víc? Ty!"
+        },
+        {
+          "type": "text",
+          "text": "V matematice to zapíšeme krátce – pomocí **znaku**. Hodí se to, když porovnáváš body, ceny nebo věk."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Porovnat",
+          "definition": "Zjistit, čeho je víc a čeho míň. Nebo jestli je toho stejně.",
+          "example": "5 aut a 2 auta: víc je 5 aut."
+        },
+        {
+          "type": "term",
+          "term": "Znak >",
+          "definition": "Čteme „je větší než“. Větší číslo stojí vlevo.",
+          "example": "7 > 3 – sedm je větší než tři."
+        },
+        {
+          "type": "term",
+          "term": "Znak <",
+          "definition": "Čteme „je menší než“. Menší číslo stojí vlevo.",
+          "example": "3 < 7 – tři je menší než sedm."
+        },
+        {
+          "type": "term",
+          "term": "Znak =",
+          "definition": "Čteme „rovná se“. Na obou stranách je stejně.",
+          "example": "4 = 4"
+        },
+        {
+          "type": "heading",
+          "text": "Krokodýl"
+        },
+        {
+          "type": "text",
+          "text": "Znaky > a < vypadají jako **otevřená pusa krokodýla**. Krokodýl má hlad. Chce sníst **víc**. Proto otevírá pusu k **většímu** číslu."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "7",
+            ">",
+            "3"
+          ],
+          "caption": "Pusa je otevřená k 7. Sedm je větší než tři."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "2",
+            "<",
+            "9"
+          ],
+          "caption": "Pusa je otevřená k 9. Dvě je menší než devět."
+        },
+        {
+          "type": "heading",
+          "text": "Jak na to"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podívej se na obě čísla.",
+            "Najdi to **větší**.",
+            "Otevři k němu pusu krokodýla.",
+            "Když jsou čísla stejná, krokodýl se nerozhodne. Napíšeš **=**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "4 ? 9",
+          "answer": "9 je větší. Pusa se otevře k 9: **4 < 9**. Čteme: čtyři je menší než devět."
+        },
+        {
+          "type": "example",
+          "question": "8 ? 5",
+          "answer": "8 je větší. Pusa se otevře k 8: **8 > 5**."
+        },
+        {
+          "type": "example",
+          "question": "6 ? 6",
+          "answer": "Čísla jsou stejná: **6 = 6**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "3 > 4",
+          "right": "3 < 4",
+          "why": "Pusa musí být otevřená k většímu číslu. Větší je 4, ne 3."
+        },
+        {
+          "type": "summary",
+          "text": "Pusa krokodýla (> nebo <) se otevírá k většímu číslu. Stejná čísla spojí =."
+        }
+      ]
+    },
+    {
+      "title": "Dvojice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Je víc lžic, nebo talířů? Nemusíš ani počítat! Ke každému talíři dáš jednu lžíci. Co zbude?"
+        },
+        {
+          "type": "text",
+          "text": "Takhle porovnáš cokoli: děti a židle, opice a banány, ponožky a boty."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dvojice",
+          "definition": "Dvě věci, které dáš k sobě – jednu z každé skupiny.",
+          "example": "Talíř a lžíce. Opice a banán."
+        },
+        {
+          "type": "term",
+          "term": "Víc, míň, stejně",
+          "definition": "Ve skupině, kde něco zbude bez dvojice, je toho **víc**. V druhé je **míň**. Když nic nezbude, je toho **stejně**."
+        },
+        {
+          "type": "heading",
+          "text": "Párujeme"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🍌",
+            "🍌",
+            "🍌",
+            "🍌",
+            "|",
+            "🐒",
+            "🐒"
+          ],
+          "caption": "4 banány a 2 opice"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Dej první opici první banán.",
+            "Dej druhé opici druhý banán.",
+            "Opice došly. Zbyly 2 banány.",
+            "Banánů je víc."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Znaky"
+        },
+        {
+          "type": "term",
+          "term": "Znaky > < =",
+          "definition": "Krátký zápis porovnání. Otevřená strana znaku je vždy u **většího** čísla."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Znak",
+            "Čteme",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              ">",
+              "je větší než",
+              "4 > 2"
+            ],
+            [
+              "<",
+              "je menší než",
+              "2 < 4"
+            ],
+            [
+              "=",
+              "rovná se",
+              "3 = 3"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Děti sbíraly kaštany. Kdo jich má nejvíc? Kdo má stejně?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "Anna",
+                "value": 6
+              },
+              {
+                "label": "Ben",
+                "value": 4
+              },
+              {
+                "label": "Cyril",
+                "value": 6
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Anna má 6 kaštanů, Ben 4. Kdo má víc?",
+          "answer": "Udělám dvojice: vyjdou 4 dvojice. Anně zbydou 2. **Anna má víc: 6 > 4.**"
+        },
+        {
+          "type": "example",
+          "question": "Anna má 6 kaštanů, Cyril také 6. Porovnej.",
+          "answer": "Každý kaštan má dvojici, nic nezbude. **6 = 6.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Jeden velký meloun je víc než jedna malá jahoda: 1 > 1.",
+          "right": "1 = 1. Je jich stejně.",
+          "why": "Porovnáváme, **kolik** věcí je, ne jak jsou velké. Meloun a jahoda tvoří dvojici a nic nezbude."
+        },
+        {
+          "type": "summary",
+          "text": "Udělej dvojice. Kde něco zbude, tam je víc. Když nic nezbude, je to stejně (=)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "5 ? 8",
+      "options": [
+        "<",
+        ">",
+        "="
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "9 ? 2",
+      "options": [
+        "<",
+        ">",
+        "="
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "6 ? 6",
+      "options": [
+        "<",
+        ">",
+        "="
+      ],
+      "answer": 2
+    },
+    {
+      "type": "choice",
+      "question": "10 ? 7",
+      "options": [
+        "<",
+        ">",
+        "="
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "3 > 4",
+      "answer": false,
+      "explanation": "3 je menší než 4: 3 < 4."
+    },
+    {
+      "type": "truefalse",
+      "question": "0 < 1",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Které číslo je větší než 6?",
+      "options": [
+        "5",
+        "6",
+        "8"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "choice",
+      "question": "Které číslo je menší než 3?",
+      "options": [
+        "2",
+        "3",
+        "7"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Anna má 🍬🍬🍬🍬🍬, Ben 🍬🍬🍬. Kolik má víc Anna?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj znak a slovo.",
+      "pairs": [
+        [
+          ">",
+          "větší"
+        ],
+        [
+          "<",
+          "menší"
+        ],
+        [
+          "=",
+          "rovná se"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš, kam otočit znak > nebo <?",
+      "answer": "Otevřená strana (pusa krokodýla) je u většího čísla."
+    },
+    {
+      "type": "open",
+      "question": "Máš 5 jablek a 5 hrušek. Čeho je víc?",
+      "answer": "Ničeho, je jich stejně: 5 = 5."
+    }
+  ]
+}

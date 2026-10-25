@@ -1,0 +1,376 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "trojuhelnik",
+  "title": "Trojúhelník",
+  "emoji": "🔺",
+  "explanations": [
+    {
+      "title": "Utrhni rohy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Střecha domu, kus pizzy, dopravní značka „pozor“ – všechno trojúhelníky. Je to nejjednodušší obrazec s rovnými stranami a zároveň nejpevnější: proto ho stavitelé dávají do mostů a jeřábů."
+        },
+        {
+          "type": "text",
+          "text": "Trojúhelníky mají několik pravidel, která platí **vždycky**. Když je znáš, dopočítáš chybějící úhel nebo poznáš, jestli trojúhelník vůbec jde nakreslit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Trojúhelník",
+          "definition": "Obrazec ze tří rovných čar (stran), které se spojují ve třech bodech.",
+          "example": "Značí se △ABC podle jeho tří rohů A, B, C."
+        },
+        {
+          "type": "term",
+          "term": "Vrchol",
+          "definition": "Roh trojúhelníku – bod, kde se potkají dvě strany. Trojúhelník má 3 vrcholy.",
+          "example": "A, B, C"
+        },
+        {
+          "type": "term",
+          "term": "Úhel a stupeň",
+          "definition": "Úhel říká, jak moc jsou dvě strany v rohu rozevřené. Měří se ve stupních (°). Pravý úhel (roh sešitu) má 90°, rovná čára 180°.",
+          "example": "Ostrý roh pizzy má třeba 45°."
+        },
+        {
+          "type": "term",
+          "term": "Vnitřní úhly",
+          "definition": "Tři úhly uvnitř trojúhelníku, v každém vrcholu jeden. Značí se řeckými písmeny α, β, γ (alfa, beta, gama).",
+          "example": "V rovnostranném trojúhelníku má každý 60°."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus: utrhni rohy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vystřihni z papíru libovolný trojúhelník.",
+            "Každý roh trochu obarvi a pak všechny tři utrhni.",
+            "Přilož utržené rohy k sobě špičkami do jednoho bodu.",
+            "Vždy dohromady vytvoří **rovnou čáru** – a ta má 180°."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Posuň úhel na 180° a podívej se: ramena tvoří jednu rovnou čáru. Přesně tolik dají tři rohy trojúhelníku."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 180
+          }
+        },
+        {
+          "type": "example",
+          "question": "Dva úhly trojúhelníku mají 50° a 60°. Kolik má třetí?",
+          "answer": "Všechny tři dají 180°. 180 − 50 − 60 = **70°**."
+        },
+        {
+          "type": "example",
+          "question": "Rovnostranný trojúhelník má všechny úhly stejné. Kolik má každý?",
+          "answer": "180 : 3 = **60°**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Trojúhelník může mít dva pravé úhly.",
+          "right": "Nemůže. 90° + 90° = 180° a na třetí úhel by nezbylo nic.",
+          "why": "Součet všech tří úhlů je přesně 180°, takže nejvýš jeden úhel může mít 90° nebo víc."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus se špejlemi"
+        },
+        {
+          "type": "text",
+          "text": "Zkus složit trojúhelník ze špejlí 3 cm, 4 cm a 8 cm. Nejde to! Dvě kratší jsou dohromady jen 7 cm a nedosáhnou na konce té dlouhé."
+        },
+        {
+          "type": "text",
+          "text": "Pravidlo: **součet dvou stran musí být vždy větší než třetí strana.** Říká se mu trojúhelníková nerovnost."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se trojúhelníky jmenují"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Podle stran: **různostranný** (každá jiná), **rovnoramenný** (dvě stejné – ramena), **rovnostranný** (všechny stejné).",
+            "Podle největšího úhlu: **ostroúhlý** (všechny menší než 90°), **pravoúhlý** (jeden přesně 90°), **tupoúhlý** (jeden větší než 90°).",
+            "V pravoúhlém trojúhelníku se nejdelší strana naproti pravému úhlu jmenuje **přepona**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ještě dvě čáry: **výška** vede z vrcholu kolmo (pod pravým úhlem) na protější stranu, **těžnice** vede z vrcholu do středu protější strany."
+        },
+        {
+          "type": "summary",
+          "text": "Vnitřní úhly trojúhelníku dají vždy 180°. Dvě strany dohromady musí být delší než třetí."
+        }
+      ]
+    },
+    {
+      "title": "Druhy a čáry",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Trojúhelníky nejsou všechny stejné. Některé jsou štíhlé a špičaté, jiné ploché, jiné mají roh přesně jako sešit. Podle stran a úhlů je umíme pojmenovat."
+        },
+        {
+          "type": "text",
+          "text": "K tomu má každý trojúhelník několik důležitých čar – výšku a těžnici. Výšku budeš potřebovat třeba k výpočtu obsahu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Strany a vrcholy",
+          "definition": "Trojúhelník ABC má vrcholy (rohy) A, B, C a strany a, b, c. Strana a leží naproti vrcholu A.",
+          "example": "Strana c spojuje vrcholy A a B."
+        },
+        {
+          "type": "term",
+          "term": "Druhy úhlů",
+          "definition": "**Ostrý** úhel je menší než 90°, **pravý** má přesně 90° (roh sešitu), **tupý** je větší než 90°.",
+          "example": "45° ostrý, 90° pravý, 120° tupý."
+        },
+        {
+          "type": "term",
+          "term": "Obvod",
+          "definition": "Součet délek všech stran – jak dlouhý by byl plot kolem.",
+          "example": "Strany 5, 7 a 9 cm → obvod 21 cm."
+        },
+        {
+          "type": "heading",
+          "text": "Druhy trojúhelníků"
+        },
+        {
+          "type": "table",
+          "head": [
+            "podle stran",
+            "co to znamená"
+          ],
+          "rows": [
+            [
+              "různostranný",
+              "každá strana jinak dlouhá"
+            ],
+            [
+              "rovnoramenný",
+              "dvě strany stejné – říká se jim **ramena**, třetí je **základna**"
+            ],
+            [
+              "rovnostranný",
+              "všechny tři strany stejné"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "podle úhlů",
+            "co to znamená"
+          ],
+          "rows": [
+            [
+              "ostroúhlý",
+              "všechny úhly ostré"
+            ],
+            [
+              "pravoúhlý",
+              "jeden úhel pravý; strana naproti němu je **přepona**"
+            ],
+            [
+              "tupoúhlý",
+              "jeden úhel tupý"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Důležité čáry"
+        },
+        {
+          "type": "term",
+          "term": "Výška",
+          "definition": "Čára z vrcholu na protější stranu, která na ni dopadá **kolmo** (pod pravým úhlem). Jako olovnice spuštěná ze špičky střechy.",
+          "example": "Výška ze špičky stanu na zem."
+        },
+        {
+          "type": "term",
+          "term": "Těžnice",
+          "definition": "Čára z vrcholu do **středu** protější strany.",
+          "example": "Všechny tři těžnice se protnou v jednom bodě – těžišti. Tam trojúhelník udržíš na prstu."
+        },
+        {
+          "type": "text",
+          "text": "Pohraj si s trojúhelníkem: měň délky a sleduj obvod a obsah."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "triangle",
+            "a": 6,
+            "b": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla, která platí vždy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Součet vnitřních úhlů je **180°**.",
+            "Součet dvou stran je větší než třetí: a + b > c (trojúhelníková nerovnost).",
+            "V rovnoramenném trojúhelníku jsou úhly u základny stejné."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rovnoramenný trojúhelník má u hlavního vrcholu (mezi rameny) úhel 40°. Jak velké jsou úhly u základny?",
+          "answer": "Na dva stejné úhly zbývá 180 − 40 = 140°. Každý má 140 : 2 = **70°**."
+        },
+        {
+          "type": "example",
+          "question": "Jde sestrojit trojúhelník se stranami 5 cm, 6 cm a 7 cm?",
+          "answer": "Dvě nejkratší: 5 + 6 = 11 > 7. Nerovnost platí → **ano**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Těžnice a výška jsou totéž.",
+          "right": "Výška dopadá kolmo, těžnice míří do středu strany.",
+          "why": "Obvykle jsou to dvě různé čáry. Splývají jen ve zvláštních případech, třeba v rovnostranném trojúhelníku."
+        },
+        {
+          "type": "summary",
+          "text": "Podle stran: různostranný, rovnoramenný, rovnostranný. Podle úhlů: ostroúhlý, pravoúhlý, tupoúhlý. Výška = kolmo na stranu, těžnice = do středu strany."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Dva úhly trojúhelníku mají 40° a 75°. Kolik stupňů má třetí?",
+      "answers": [
+        "65"
+      ],
+      "explanation": "180 − 40 − 75 = 65"
+    },
+    {
+      "type": "truefalse",
+      "question": "Lze sestrojit trojúhelník se stranami 3 cm, 4 cm, 8 cm.",
+      "answer": false,
+      "explanation": "3 + 4 = 7 < 8"
+    },
+    {
+      "type": "truefalse",
+      "question": "Lze sestrojit trojúhelník se stranami 5 cm, 6 cm, 7 cm.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Trojúhelník s úhlem 100° je…",
+      "options": [
+        "tupoúhlý",
+        "ostroúhlý",
+        "pravoúhlý",
+        "rovnostranný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik stupňů má každý úhel rovnostranného trojúhelníku?",
+      "answers": [
+        "60"
+      ],
+      "explanation": "180 : 3 = 60"
+    },
+    {
+      "type": "input",
+      "question": "Rovnoramenný trojúhelník má úhel při hlavním vrcholu 40°. Kolik stupňů má úhel při základně?",
+      "answers": [
+        "70"
+      ],
+      "explanation": "(180 − 40) : 2 = 70"
+    },
+    {
+      "type": "input",
+      "question": "Obvod trojúhelníku se stranami 5 cm, 7 cm a 9 cm je (v cm):",
+      "answers": [
+        "21"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je těžnice?",
+      "options": [
+        "spojnice vrcholu a středu protější strany",
+        "kolmice z vrcholu na protější stranu",
+        "osa úhlu",
+        "nejdelší strana"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Trojúhelník může mít dva pravé úhly.",
+      "answer": false,
+      "explanation": "90 + 90 = 180, na třetí úhel nezbude nic."
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem s popisem.",
+      "pairs": [
+        [
+          "výška",
+          "kolmice z vrcholu na stranu"
+        ],
+        [
+          "těžnice",
+          "vrchol → střed strany"
+        ],
+        [
+          "přepona",
+          "strana proti pravému úhlu"
+        ],
+        [
+          "ramena",
+          "shodné strany rovnoramenného △"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co říká trojúhelníková nerovnost?",
+      "answer": "Součet délek libovolných dvou stran trojúhelníku je větší než délka třetí strany. Jinak trojúhelník nelze sestrojit."
+    },
+    {
+      "type": "open",
+      "question": "Jak rozdělujeme trojúhelníky?",
+      "answer": "Podle stran na různostranné, rovnoramenné a rovnostranné. Podle úhlů na ostroúhlé, pravoúhlé a tupoúhlé."
+    }
+  ]
+}

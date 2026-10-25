@@ -1,0 +1,378 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "migrace",
+  "title": "Migrace",
+  "emoji": "🧳",
+  "explanations": [
+    {
+      "title": "Tlačí a táhne",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč někdo opustí domov, rodinu a jazyk a odjede jinam? Možná doma zuří válka. Možná tam není práce. A možná ho láká vyšší plat nebo dobrá univerzita v cizině. Většinou je to kombinace obojího."
+        },
+        {
+          "type": "text",
+          "text": "Stěhování lidí mění státy: kde lidé ubývají, kde přibývají, kdo pracuje v továrnách i kdo pečuje o seniory. Proto je migrace jedním z hlavních témat současného světa."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Migrace",
+          "definition": "Stěhování lidí z místa na místo, obvykle se změnou bydliště.",
+          "example": "Rodina se přestěhuje z Ukrajiny do Česka."
+        },
+        {
+          "type": "term",
+          "term": "Emigrace a imigrace",
+          "definition": "**Emigrace** = vystěhování ze země. **Imigrace** = přistěhování do země.",
+          "example": "Pro Ukrajinu je to emigrace, pro Česko imigrace."
+        },
+        {
+          "type": "term",
+          "term": "Push faktory (vypuzující)",
+          "definition": "Důvody, které člověka **tlačí** pryč z domova.",
+          "example": "Válka, chudoba, nezaměstnanost, sucho."
+        },
+        {
+          "type": "term",
+          "term": "Pull faktory (přitahující)",
+          "definition": "Důvody, které člověka **táhnou** do cílové země.",
+          "example": "Vyšší mzdy, bezpečí, vzdělání, rodina."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď faktory. Ptej se: je to důvod odejít (push), nebo důvod přijít (pull)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Push (vypuzující)",
+              "Pull (přitahující)"
+            ],
+            "items": [
+              {
+                "text": "válka",
+                "group": 0
+              },
+              {
+                "text": "nezaměstnanost",
+                "group": 0
+              },
+              {
+                "text": "sucho a hlad",
+                "group": 0
+              },
+              {
+                "text": "pronásledování",
+                "group": 0
+              },
+              {
+                "text": "vyšší mzdy",
+                "group": 1
+              },
+              {
+                "text": "bezpečí",
+                "group": 1
+              },
+              {
+                "text": "rodina už v cílové zemi",
+                "group": 1
+              },
+              {
+                "text": "kvalitní vzdělání",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Co migrace způsobí"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Zdrojová země** ztrácí pracovníky a často vzdělané lidi – **odliv mozků (brain drain)**. Získává ale **remitence** – peníze, které migranti posílají domů rodinám.",
+            "**Cílová země** získává pracovní sílu a zmírňuje stárnutí. Musí ale řešit začlenění (integraci) nových obyvatel."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "V rozvojových zemích je nejsilnější vnitřní migrace **z venkova do měst**. V Česku jsou nejpočetnější skupinou cizinců **Ukrajinci**."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Lékařka z Rumunska odejde pracovat do Německa. Jaké push a pull faktory asi hrály roli?",
+          "answer": "Push: nižší plat a horší podmínky v rumunských nemocnicích. Pull: vyšší mzda, lepší vybavení v Německu. Pro Rumunsko je to **odliv mozků**."
+        },
+        {
+          "type": "example",
+          "question": "Proč jsou remitence pro chudé země důležité?",
+          "answer": "Migranti posílají domů část výdělku. V některých zemích (např. Nepál, Tádžikistán) tvoří tyto peníze velkou část příjmů celé ekonomiky – rodiny z nich platí jídlo, školu a bydlení."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Každý cizinec, který přijde do jiné země, je uprchlík.",
+          "right": "Uprchlík je jen ten, kdo musel opustit svou zemi kvůli pronásledování nebo válce. Kdo jede za prací, je ekonomický migrant.",
+          "why": "Pojem uprchlík přesně vymezuje mezinárodní právo (Ženevská úmluva z roku 1951) a uprchlíkům dává zvláštní ochranu."
+        },
+        {
+          "type": "summary",
+          "text": "Migrace = push faktory v zemi původu + pull faktory v cílové zemi. Zdrojová země ztrácí lidi, ale získává remitence. Cílová získává pracovníky."
+        }
+      ]
+    },
+    {
+      "title": "Typy a počty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Student na Erasmu, rodina utíkající před válkou, Slovák dojíždějící do Brna a pracovník na sezónní sklizni jahod ve Španělsku. Všichni se pohybují – ale každý jinak."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, jak migraci třídit, jak ji spočítat a kdo je podle práva uprchlík."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Migrace",
+          "definition": "Přesun lidí spojený se změnou bydliště. V širším smyslu (**prostorová mobilita**) i pravidelné dojíždění.",
+          "example": "Stěhování z Ostravy do Prahy, dojížďka do školy."
+        },
+        {
+          "type": "term",
+          "term": "Emigrace / imigrace",
+          "definition": "Vystěhování ze země / přistěhování do země.",
+          "example": "Emigrant odchází, imigrant přichází."
+        },
+        {
+          "type": "term",
+          "term": "Saldo migrace",
+          "definition": "Přistěhovalí − vystěhovalí. Kladné = lidí přibylo, záporné = ubylo.",
+          "example": "5 000 − 3 000 = +2 000."
+        },
+        {
+          "type": "term",
+          "term": "Uprchlík",
+          "definition": "Osoba, která kvůli pronásledování (pro rasu, náboženství, názor…) nebo válce opustila **svou zemi** a nemůže se vrátit. Vymezuje ho **Ženevská úmluva z roku 1951**.",
+          "example": "Lidé prchající ze Sýrie do Turecka."
+        },
+        {
+          "type": "term",
+          "term": "Vnitřně vysídlená osoba",
+          "definition": "Člověk, který musel opustit domov, ale zůstal **ve vlastní zemi**.",
+          "example": "Ukrajinci, kteří utekli z východu na západ Ukrajiny."
+        },
+        {
+          "type": "heading",
+          "text": "Jak migraci třídit"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Hledisko",
+            "Typy"
+          ],
+          "rows": [
+            [
+              "hranice",
+              "vnitřní × mezinárodní"
+            ],
+            [
+              "dobrovolnost",
+              "dobrovolná × nucená (uprchlíci)"
+            ],
+            [
+              "doba",
+              "trvalá × dočasná × sezonní"
+            ],
+            [
+              "denní pohyb",
+              "dojížďka za prací a do škol"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak spočítat saldo"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti počet přistěhovalých.",
+            "Zjisti počet vystěhovalých.",
+            "Odečti: přistěhovalí − vystěhovalí.",
+            "Kladné číslo = populace stěhováním roste."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Proč lidé odcházejí? Některé věci je **tlačí** z domova (**push**: válka, chudoba), jiné **táhnou** jinam (**pull**: práce, bezpečí). Zdrojové zemi pak chybí lidé (**odliv mozků**), ale dostává **remitence** – peníze posílané domů."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Přistěhovalo se 5 000, vystěhovalo 3 000 lidí. Saldo migrace?",
+          "answer": "5 000 − 3 000 = **+2 000**. Stěhováním přibylo 2 000 lidí."
+        },
+        {
+          "type": "example",
+          "question": "Zařaď: Polák jezdí každé léto na 3 měsíce sbírat jahody do Německa.",
+          "answer": "Mezinárodní (přes hranici), dobrovolná, **sezonní** migrace za prací."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Saldo migrace = vystěhovalí − přistěhovalí.",
+          "right": "Saldo migrace = přistěhovalí − vystěhovalí.",
+          "why": "Saldo má ukázat, o kolik lidí v zemi stěhováním **přibylo**. Proto začínáme těmi, kdo přišli."
+        },
+        {
+          "type": "summary",
+          "text": "Saldo migrace = přistěhovalí − vystěhovalí. Migrace je vnitřní/mezinárodní, dobrovolná/nucená, trvalá/dočasná/sezonní. Uprchlíka definuje Ženevská úmluva (1951)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který faktor je typicky „pull“?",
+      "options": [
+        "válka",
+        "vyšší mzdy",
+        "hladomor",
+        "diskriminace"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Dojížďka do práce je forma migrace v širším smyslu (prostorová mobilita).",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Přistěhovalo se 5 000, vystěhovalo 3 000 lidí. Saldo migrace =",
+      "answers": [
+        "2000",
+        "2 000"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo je podle mezinárodního práva uprchlík?",
+      "options": [
+        "osoba prchající před pronásledováním mimo svou zemi",
+        "každý cizinec",
+        "turista",
+        "sezonní pracovník"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je odliv mozků (brain drain)?",
+      "options": [
+        "odchod vzdělaných lidí do bohatších zemí",
+        "stárnutí populace",
+        "pokles porodnosti",
+        "zánik škol"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a popis.",
+      "pairs": [
+        [
+          "emigrace",
+          "vystěhování"
+        ],
+        [
+          "imigrace",
+          "přistěhování"
+        ],
+        [
+          "remitence",
+          "peníze posílané domů"
+        ],
+        [
+          "vnitřně vysídlená osoba",
+          "uprchlík ve vlastní zemi"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Největší skupinou cizinců v Česku jsou Ukrajinci.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je hlavní směr vnitřní migrace v rozvojových zemích?",
+      "options": [
+        "z venkova do měst",
+        "z měst na venkov",
+        "do hor",
+        "na ostrovy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která úmluva definuje status uprchlíka?",
+      "options": [
+        "Ženevská (1951)",
+        "Kjótský protokol",
+        "Pařížská dohoda",
+        "Maastrichtská smlouva"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Remitence jsou pro některé chudé země významným zdrojem příjmů.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jaké důsledky má migrace pro zdrojovou a cílovou zemi?",
+      "answer": "Zdrojová země ztrácí pracovní sílu a vzdělané lidi, ale získává remitence. Cílová země získává pracovníky a zmírňuje stárnutí, musí však řešit integraci a případné napětí."
+    },
+    {
+      "type": "open",
+      "question": "Uveď příklady push a pull faktorů.",
+      "answer": "Push: válka, pronásledování, chudoba, nezaměstnanost, přírodní katastrofy. Pull: bezpečí, práce a vyšší mzdy, vzdělání, svoboda, rodinné vazby."
+    }
+  ]
+}

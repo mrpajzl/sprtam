@@ -1,0 +1,454 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "tuky-bilkoviny",
+  "title": "Tuky, bílkoviny a vitaminy",
+  "emoji": "🥚",
+  "explanations": [
+    {
+      "title": "Na talíři",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sportovec jí hodně tvarohu a masa. Na horách si lidé berou čokoládu a ořechy. A když chybí ovoce a zelenina, začne člověk marodit. Každá z těch věcí dodává tělu něco jiného."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, co v jídle je, víš, k čemu tělu slouží – a proč se má jíst pestře."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Živiny",
+          "definition": "Látky z potravy, které tělo potřebuje: **sacharidy, tuky a bílkoviny**. K nim patří i vitaminy, minerály a voda."
+        },
+        {
+          "type": "term",
+          "term": "Tuk",
+          "definition": "Živina, která dává **nejvíc energie**. Tělo si ji ukládá do zásoby a chrání se jí před chladem.",
+          "example": "máslo, sádlo, olej, ořechy"
+        },
+        {
+          "type": "term",
+          "term": "Bílkovina",
+          "definition": "Živina, ze které je **postavené tělo** – svaly, kůže, vlasy, krev.",
+          "example": "maso, tvaroh, vejce, luštěniny"
+        },
+        {
+          "type": "term",
+          "term": "Vitamin",
+          "definition": "Látka, kterou tělo potřebuje jen v nepatrném množství, ale bez ní onemocní.",
+          "example": "vitamin C v citrusech a paprice"
+        },
+        {
+          "type": "term",
+          "term": "Kilojoule (kJ)",
+          "definition": "Jednotka energie. Na obalech potravin ukazuje, kolik energie jídlo tělu dá."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď potraviny podle toho, které živiny v nich je nejvíc."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "hlavně tuky",
+              "hlavně bílkoviny",
+              "hlavně sacharidy"
+            ],
+            "items": [
+              {
+                "text": "máslo",
+                "group": 0
+              },
+              {
+                "text": "olej",
+                "group": 0
+              },
+              {
+                "text": "sádlo",
+                "group": 0
+              },
+              {
+                "text": "tvaroh",
+                "group": 1
+              },
+              {
+                "text": "kuřecí maso",
+                "group": 1
+              },
+              {
+                "text": "vaječný bílek",
+                "group": 1
+              },
+              {
+                "text": "rýže",
+                "group": 2
+              },
+              {
+                "text": "chleba",
+                "group": 2
+              },
+              {
+                "text": "med",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Tuky"
+        },
+        {
+          "type": "text",
+          "text": "1 g tuku dá asi **38 kJ**, 1 g cukru nebo bílkoviny jen asi **17 kJ**. Tuky také izolují (zahřívají) a rozpouštějí se v nich vitaminy A, D, E, K. Živočišné tuky (máslo, sádlo) bývají pevné, rostlinné oleje kapalné."
+        },
+        {
+          "type": "example",
+          "question": "Kolik energie dá 10 g oleje a kolik 10 g cukru?",
+          "answer": "Olej je tuk: 10 · 38 = **380 kJ**. Cukr: 10 · 17 = **170 kJ**. Tuk dá víc než dvakrát tolik."
+        },
+        {
+          "type": "text",
+          "text": "Z tuku se dá vyrobit i **mýdlo**: tuk se vaří s hydroxidem (silnou zásadou, např. louhem). Tomu se říká **zmýdelnění**."
+        },
+        {
+          "type": "heading",
+          "text": "Bílkoviny"
+        },
+        {
+          "type": "text",
+          "text": "Bílkovina je jako dlouhý řetízek z korálků. Korálkům se říká **aminokyseliny**. Některé bílkoviny – **enzymy** – navíc v těle urychlují chemické reakce, třeba trávení."
+        },
+        {
+          "type": "term",
+          "term": "Denaturace",
+          "definition": "Trvalé poškození bílkoviny teplem, kyselinou, alkoholem nebo jedovatými kovy. Bílkovina ztratí svůj tvar i funkci a už se nevrátí.",
+          "example": "Vaječný bílek při vaření zbělá a ztuhne."
+        },
+        {
+          "type": "example",
+          "question": "Proč má horečka nad 42 °C být pro člověka smrtelná?",
+          "answer": "Tak vysoká teplota začne **denaturovat** bílkoviny v těle, hlavně enzymy. Ty přestanou fungovat a reakce v těle se zastaví."
+        },
+        {
+          "type": "heading",
+          "text": "Vitaminy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vitamin",
+            "Kde",
+            "Když chybí"
+          ],
+          "rows": [
+            [
+              "C",
+              "citrusy, paprika, zelí",
+              "kurděje (krvácení dásní)"
+            ],
+            [
+              "D",
+              "ryby; vzniká v kůži na slunci",
+              "křivice (měkké kosti)"
+            ],
+            [
+              "A",
+              "mrkev, játra",
+              "šeroslepost"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Uvařené vajíčko se po vychladnutí zase změní v syrové.",
+          "right": "Denaturace bílkoviny je **nevratná**.",
+          "why": "Teplo rozbije tvar řetízku bílkoviny. Zpátky do původního tvaru se sám nesloží."
+        },
+        {
+          "type": "summary",
+          "text": "Tuky = nejvíc energie a zásoba. Bílkoviny = stavební látky těla z aminokyselin, teplem se denaturují. Vitaminy stačí v malém množství, ale jsou nezbytné."
+        }
+      ]
+    },
+    {
+      "title": "Chemicky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Z čeho je vlastně máslo a z čeho sval? Chemici to rozebrali na dílky. Ukázalo se, že tuk je spojení dvou druhů molekul a bílkovina je dlouhý řetěz z dvaceti druhů „článků“."
+        },
+        {
+          "type": "text",
+          "text": "Díky tomu víme, proč se z tuku dá vyrobit mýdlo, proč vajíčko při vaření ztuhne a jak fungují enzymy v pracím prášku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy – tuky"
+        },
+        {
+          "type": "term",
+          "term": "Glycerol",
+          "definition": "Alkohol se třemi skupinami –OH. Hustá, nasládlá kapalina."
+        },
+        {
+          "type": "term",
+          "term": "Mastná kyselina",
+          "definition": "Karboxylová kyselina (se skupinou –COOH) s dlouhým uhlíkovým řetězcem.",
+          "example": "kyselina palmitová, stearová, olejová"
+        },
+        {
+          "type": "term",
+          "term": "Ester",
+          "definition": "Látka, která vznikne spojením kyseliny a alkoholu (uvolní se přitom voda)."
+        },
+        {
+          "type": "term",
+          "term": "Tuk",
+          "definition": "**Ester glycerolu a tří mastných kyselin.** Na jeden glycerol jsou navázané tři mastné kyseliny jako tři prsty na dlani."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Živočišné tuky (sádlo, máslo) jsou většinou **pevné**.",
+            "Rostlinné oleje jsou většinou **kapalné**.",
+            "Tuky dávají asi 38 kJ na gram (kilojoule = jednotka energie), sacharidy a bílkoviny asi 17 kJ."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Zmýdelnění",
+          "definition": "Rozklad tuku vařením se silnou zásadou (hydroxidem). Vznikne **mýdlo** (sůl mastné kyseliny) a **glycerol**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy – bílkoviny"
+        },
+        {
+          "type": "term",
+          "term": "Aminokyselina",
+          "definition": "Malá molekula, která má skupinu –NH₂ (aminoskupinu) i –COOH. Je „článkem“ bílkoviny. V bílkovinách je 20 druhů."
+        },
+        {
+          "type": "term",
+          "term": "Peptidová vazba",
+          "definition": "Spojení dvou aminokyselin. Skupina –COOH jedné se spojí s –NH₂ druhé a uvolní se voda."
+        },
+        {
+          "type": "term",
+          "term": "Bílkovina",
+          "definition": "Dlouhý řetězec mnoha aminokyselin spojených **peptidovými vazbami**. Řetězec se složí do přesného tvaru."
+        },
+        {
+          "type": "term",
+          "term": "Enzym",
+          "definition": "Bílkovina, která **urychluje** chemické reakce v těle. Sama se při tom nespotřebuje.",
+          "example": "Enzym ve slinách štěpí škrob, enzymy v pracím prášku rozkládají skvrny."
+        },
+        {
+          "type": "term",
+          "term": "Denaturace",
+          "definition": "Nevratné poškození tvaru bílkoviny – teplem, kyselinami, alkoholem nebo solemi těžkých kovů (např. olova, rtuti). Bílkovina ztratí funkci."
+        },
+        {
+          "type": "heading",
+          "text": "Postup: co se stane s tukem a bílkovinou"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Tuk + voda + enzymy v trávení → glycerol + mastné kyseliny → energie nebo zásoba.",
+            "Tuk + hydroxid (vaření) → mýdlo + glycerol.",
+            "Bílkovina v trávení → rozštěpí se na aminokyseliny → tělo z nich staví vlastní bílkoviny.",
+            "Bílkovina + teplo → denaturace (bílek zbělá)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik peptidových vazeb je v řetězci z 5 aminokyselin?",
+          "answer": "Vazba je vždy **mezi** dvěma sousedy. Pět článků má mezi sebou 4 mezery → **4 peptidové vazby**."
+        },
+        {
+          "type": "example",
+          "question": "Proč se prací prášek s enzymy nemá používat při vaření prádla na 90 °C?",
+          "answer": "Enzymy jsou bílkoviny. Při vysoké teplotě se **denaturují** a přestanou fungovat. Proto se takové prášky dávají na nižší teploty."
+        },
+        {
+          "type": "heading",
+          "text": "Vitaminy"
+        },
+        {
+          "type": "term",
+          "term": "Vitamin",
+          "definition": "Látka potřebná v malém množství. Dělíme je na **rozpustné ve vodě** (C, skupina B) a **rozpustné v tucích** (A, D, E, K)."
+        },
+        {
+          "type": "text",
+          "text": "Spoj si vitamin s tím, co způsobí jeho nedostatek – klepni na kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "vitamin C",
+                "back": "kurděje; rozpustný ve vodě"
+              },
+              {
+                "front": "vitamin D",
+                "back": "křivice; tvoří se v kůži na slunci"
+              },
+              {
+                "front": "vitamin A",
+                "back": "šeroslepost; rozpustný v tucích"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vitamin C je rozpustný v tucích, stejně jako vitamin D.",
+          "right": "Vitamin C je rozpustný **ve vodě**. V tucích se rozpouštějí A, D, E, K.",
+          "why": "Proto se vitamin C neukládá do zásoby a musíme ho přijímat stále. Pomůcka pro tukové: „DEKA“."
+        },
+        {
+          "type": "summary",
+          "text": "Tuk = ester glycerolu a mastných kyselin; s hydroxidem dá mýdlo. Bílkovina = řetězec aminokyselin spojených peptidovou vazbou; teplem se denaturuje. Enzymy jsou bílkoviny."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Z čeho jsou složeny bílkoviny?",
+      "options": [
+        "z aminokyselin",
+        "z glukózy",
+        "z glycerolu",
+        "z mastných kyselin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co vzniká zmýdelněním tuků?",
+      "options": [
+        "mýdlo a glycerol",
+        "cukr a voda",
+        "bílkoviny",
+        "škrob"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Rostlinné oleje jsou za běžné teploty většinou kapalné.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Vařením vajíčka se bílkovina denaturuje.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Které živiny poskytují na 1 g nejvíc energie?",
+      "options": [
+        "tuky",
+        "bílkoviny",
+        "sacharidy",
+        "vitaminy"
+      ],
+      "answer": 0,
+      "explanation": "Tuky asi 38 kJ/g, sacharidy a bílkoviny asi 17 kJ/g."
+    },
+    {
+      "type": "choice",
+      "question": "Co jsou enzymy?",
+      "options": [
+        "bílkoviny urychlující reakce",
+        "druh tuku",
+        "vitaminy",
+        "minerální látky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj vitamin s příznakem nedostatku.",
+      "pairs": [
+        [
+          "vitamin C",
+          "kurděje"
+        ],
+        [
+          "vitamin D",
+          "křivice"
+        ],
+        [
+          "vitamin A",
+          "šeroslepost"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který vitamin si tělo vytváří v kůži působením slunce?",
+      "options": [
+        "D",
+        "C",
+        "B₁₂",
+        "K"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vitamin C je rozpustný v tucích.",
+      "answer": false,
+      "explanation": "Vitamin C je rozpustný ve vodě. V tucích jsou rozpustné A, D, E, K."
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá vazba spojující aminokyseliny?",
+      "options": [
+        "peptidová",
+        "iontová",
+        "kovová",
+        "vodíková"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jakou úlohu mají v těle tuky a bílkoviny?",
+      "answer": "Tuky jsou zásobou energie, tepelně izolují a rozpouštějí vitaminy A, D, E, K. Bílkoviny jsou stavební látky svalů, kůže a vlasů a jako enzymy a protilátky řídí a chrání tělo."
+    },
+    {
+      "type": "open",
+      "question": "Co je denaturace bílkovin? Uveď příklad.",
+      "answer": "Nevratné poškození struktury bílkoviny teplem, kyselinami, alkoholem nebo solemi těžkých kovů. Bílkovina ztratí funkci – třeba bílek při vaření zbělá a ztuhne."
+    }
+  ]
+}

@@ -1,12 +1,13 @@
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { tsImport } from 'tsx/esm/api'
 import type { Plugin } from 'vite'
 import type * as Curriculum from '../src/content/curriculum'
 import type * as Seo from '../src/seo'
+import type * as Widgets from '../src/widgets'
 import type { Block, Subject, SubjectId } from '../src/content/types'
-import type { VocabSet } from '../src/vocab/types'
+import { readSubjects, readVocab } from './content'
 
 // Writes a real HTML page for every public route, so links are shareable with proper
 // previews and search engines get content, titles and descriptions without running JS:
@@ -31,24 +32,20 @@ const HOME = icon('M4 11l8-7 8 7M6.5 9v11h11V9M10 20v-5h4v5')
 const GRID = icon('M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z')
 const SEARCH = icon('M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.5 15.5L20 20')
 
-function block(b: Block): string {
-  switch (b.t) {
-    case 'h': return `<h3 class="bh">${inline(b.text)}</h3>`
-    case 'p': return `<p>${inline(b.text)}</p>`
-    case 'term': return `<div class="term"><b>${inline(b.term)}</b><span>${inline(b.def)}</span>${b.ex ? `<small>${inline(b.ex)}</small>` : ''}</div>`
+function block(b: Block, widgets: typeof Widgets.WIDGETS): string {
+  switch (b.type) {
+    case 'heading': return `<h3 class="bh">${inline(b.text)}</h3>`
+    case 'text': return `<p>${inline(b.text)}</p>`
+    case 'term': return `<div class="term"><b>${inline(b.term)}</b><span>${inline(b.definition)}</span>${b.example ? `<small>${inline(b.example)}</small>` : ''}</div>`
     case 'mistake': return `<div class="card mistake"><div class="wrong"><span>✗</span><span>${inline(b.wrong)}</span></div><div class="right"><span>✓</span><span>${inline(b.right)}</span></div><p>${inline(b.why)}</p></div>`
-    case 'key': return `<div class="key">${inline(b.text)}</div>`
+    case 'summary': return `<div class="key">${inline(b.text)}</div>`
     case 'list': return `<ul>${b.items.map((x) => `<li>${inline(x)}</li>`).join('')}</ul>`
     case 'steps': return `<div class="card steps">${b.items.map((x) => `<div class="s"><span>${inline(x)}</span></div>`).join('')}</div>`
-    case 'example': return `<div class="card example"><div class="q">${inline(b.q)}</div><div class="a">${inline(b.a)}</div></div>`
-    case 'pic': return `<div class="pic" role="img"${b.caption ? ` aria-label="${esc(b.caption)}"` : ''}>${esc(b.items.join(' '))}${b.caption ? `<small>${esc(b.caption)}</small>` : ''}</div>`
+    case 'example': return `<div class="card example"><div class="q">${inline(b.question)}</div><div class="a">${inline(b.answer)}</div></div>`
+    case 'picture': return `<div class="pic" role="img"${b.caption ? ` aria-label="${esc(b.caption)}"` : ''}>${esc(b.items.join(' '))}${b.caption ? `<small>${esc(b.caption)}</small>` : ''}</div>`
     case 'table': return `<div class="card table-wrap"><table><thead><tr>${b.head.map((h) => `<th>${inline(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.map((r) => `<tr>${r.map((c) => `<td>${inline(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`
-    case 'w':
-      // Interactive widgets: only those that carry text worth reading.
-      if (b.w === 'timeline') return `<ul>${b.p.events.map((e) => `<li><b>${e.year}</b> ${inline(e.label)}</li>`).join('')}</ul>`
-      if (b.w === 'flip') return `<ul>${b.p.cards.map((c) => `<li><b>${inline(c.front)}</b> – ${inline(c.back)}</li>`).join('')}</ul>`
-      if (b.w === 'cycle') return `<ol>${b.p.steps.map((x) => `<li>${inline(x)}</li>`).join('')}</ol>`
-      return ''
+    // Interactive widgets: only those that carry text worth reading (WidgetDef.html).
+    case 'widget': return widgets[b.widget]?.html?.(b.props, inline) ?? ''
   }
 }
 
@@ -76,14 +73,9 @@ async function pages(): Promise<Page[]> {
   const { STAGES, GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } = await tsImport(src('content/curriculum.ts'), import.meta.url) as typeof Curriculum
   const { titles, summary, plain, gradeLabel, gradeFor, SITE_NAME } = await tsImport(src('seo.ts'), import.meta.url) as typeof Seo
 
-  const dataDir = join(root, 'src', 'content', 'data')
-  const subjects = new Map<string, Subject>()
-  for (const g of readdirSync(dataDir)) for (const f of readdirSync(join(dataDir, g))) {
-    const s = (await tsImport(pathToFileURL(join(dataDir, g, f)).href, import.meta.url) as { default: Subject }).default
-    subjects.set(`${s.grade}/${s.subject}`, s)
-  }
-  const vocabDir = join(root, 'src', 'vocab', 'data')
-  const vocab = await Promise.all(readdirSync(vocabDir).sort().map(async (f) => (await tsImport(pathToFileURL(join(vocabDir, f)).href, import.meta.url) as { default: VocabSet }).default))
+  const { WIDGETS } = await tsImport(src('widgets/index.tsx'), import.meta.url) as typeof Widgets
+  const subjects = new Map<string, Subject>(readSubjects().map((s) => [`${s.grade}/${s.subject}`, s]))
+  const vocab = readVocab()
 
   const home: [string, string] = [SITE_NAME, '/']
   const out: Page[] = []
@@ -126,17 +118,17 @@ async function pages(): Promise<Page[]> {
       })
 
       subj.topics.forEach((t, i) => {
-        const key = t.ex[0].blocks.find((b): b is Extract<Block, { t: 'key' }> => b.t === 'key')
+        const key = t.explanations[0].blocks.find((b): b is Extract<Block, { type: 'summary' }> => b.type === 'summary')
         const tPath = `${sPath}/${t.id}`
         const prev = subj.topics[i - 1], next = subj.topics[i + 1]
         const nav = [prev && `<a class="row" href="${sPath}/${prev.id}"><span class="em">${prev.emoji}</span><b>${esc(prev.title)}</b></a>`, next && `<a class="row" href="${sPath}/${next.id}"><span class="em">${next.emoji}</span><b>${esc(next.title)}</b></a>`].filter(Boolean).join('')
         out.push({
           path: tPath,
           title: titles.topic(g, s, t.title),
-          description: summary(t.ex[0].blocks) || `${t.title} – ${SUBJECTS[s].name}, ${gradeLabel(g)}.`,
+          description: summary(t.explanations[0].blocks) || `${t.title} – ${SUBJECTS[s].name}, ${gradeLabel(g)}.`,
           crumbs: [...sCrumbs, [t.title, tPath]],
           type: 'article',
-          body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [SUBJECTS[s].name, sPath]])}${t.ex.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map(block).join('')}</div></section>`).join('')}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
+          body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [SUBJECTS[s].name, sPath]])}${t.explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
           ld: {
             '@type': 'LearningResource', name: t.title, inLanguage: 'cs', learningResourceType: 'Explanation', isAccessibleForFree: true,
             educationalLevel: GRADE_NAME[g], about: SUBJECTS[s].name, url: `${SITE}${tPath}`,
@@ -160,9 +152,9 @@ async function pages(): Promise<Page[]> {
     out.push({
       path,
       title: titles.vocabLevel(v.level),
-      description: `Anglická slovíčka ${v.level}: ${v.groups.map((gr) => gr.name.toLowerCase()).slice(0, 8).join(', ')}${v.groups.length > 8 ? ' a další' : ''}. Například ${v.groups[0].words.slice(0, 4).map((w) => `${w[0]} – ${w[1]}`).join(', ')}.`,
+      description: `Anglická slovíčka ${v.level}: ${v.groups.map((gr) => gr.name.toLowerCase()).slice(0, 8).join(', ')}${v.groups.length > 8 ? ' a další' : ''}. Například ${v.groups[0].words.slice(0, 4).map((w) => `${w.cz} – ${w.en}`).join(', ')}.`,
       crumbs: [...vCrumbs, [v.level, path]],
-      body: `<div class="page" style="${style('purple')}">${bar(v.level, '/slovicka', [['Slovíčka', '/slovicka']])}<a class="btn block mix" href="${path}/vse">Míchat vše<small class="btn-count">${v.groups.reduce((n, gr) => n + gr.words.length, 0)}</small></a><div class="tiles">${v.groups.map((gr, i) => `<a class="tile vocab-tile" href="${path}/${i}"><span class="tile-face em">${gr.emoji}</span><b>${esc(gr.name)}</b><small class="sample">${esc(gr.words.slice(0, 6).map((w) => `${w[0]} – ${w[1]}`).join(', '))}…</small></a>`).join('')}</div></div>${tabbar('vocab')}`,
+      body: `<div class="page" style="${style('purple')}">${bar(v.level, '/slovicka', [['Slovíčka', '/slovicka']])}<a class="btn block mix" href="${path}/vse">Míchat vše<small class="btn-count">${v.groups.reduce((n, gr) => n + gr.words.length, 0)}</small></a><div class="tiles">${v.groups.map((gr, i) => `<a class="tile vocab-tile" href="${path}/${i}"><span class="tile-face em">${gr.emoji}</span><b>${esc(gr.name)}</b><small class="sample">${esc(gr.words.slice(0, 6).map((w) => `${w.cz} – ${w.en}`).join(', '))}…</small></a>`).join('')}</div></div>${tabbar('vocab')}`,
     })
   }
   return out

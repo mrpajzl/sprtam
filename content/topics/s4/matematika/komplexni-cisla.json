@@ -1,0 +1,383 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "komplexni-cisla",
+  "title": "Komplexní čísla",
+  "emoji": "🌀",
+  "explanations": [
+    {
+      "title": "Nová osa",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kdysi lidé říkali: „3 − 5 nejde spočítat.“ Pak vymysleli záporná čísla. Dnes říkáš: „√(−4) nejde spočítat – žádné číslo na druhou nedá záporný výsledek.“ Matematici to vyřešili stejně: **vymysleli nové číslo**."
+        },
+        {
+          "type": "text",
+          "text": "Komplexní čísla zní exoticky, ale bez nich by nefungovala elektrotechnika (střídavý proud), kvantová fyzika ani zpracování zvuku a obrazu v mobilu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Imaginární jednotka i",
+          "definition": "Nové číslo s vlastností **i² = −1**. Žádné reálné číslo to neumí – proto je i „mimo“ číselnou osu.",
+          "example": "√(−4) = 2i, protože (2i)² = 4 · i² = −4."
+        },
+        {
+          "type": "term",
+          "term": "Komplexní číslo",
+          "definition": "Číslo z = a + bi, kde a, b jsou reálná čísla. Množinu všech komplexních čísel značíme ℂ.",
+          "example": "3 − 7i, 2i, 5 (to je 5 + 0i)."
+        },
+        {
+          "type": "term",
+          "term": "Reálná a imaginární část",
+          "definition": "V z = a + bi je Re(z) = a (reálná část) a Im(z) = b (imaginární část – číslo **bez** i).",
+          "example": "Re(3 − 7i) = 3, Im(3 − 7i) = −7."
+        },
+        {
+          "type": "text",
+          "text": "Každé reálné číslo je komplexní s b = 0. Proto ℝ ⊂ ℂ – reálná čísla jsou uvnitř komplexních."
+        },
+        {
+          "type": "heading",
+          "text": "Gaussova rovina: číselná osa dostane druhý rozměr"
+        },
+        {
+          "type": "text",
+          "text": "Reálná čísla leží na vodorovné ose. Imaginární (2i, −i, …) postavíme na **svislou** osu. Číslo a + bi je pak bod [a; b] – a doprava, b nahoru."
+        },
+        {
+          "type": "term",
+          "term": "Absolutní hodnota |z|",
+          "definition": "Vzdálenost bodu z od počátku. Podle Pythagorovy věty |a + bi| = √(a² + b²).",
+          "example": "|3 + 4i| = √(9 + 16) = 5."
+        },
+        {
+          "type": "text",
+          "text": "Nastav odvěsny 3 a 4 – to je reálná a imaginární část. Přepona je |3 + 4i| = 5."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 3,
+            "b": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Počítání: jako s mnohočleny, jen i² = −1"
+        },
+        {
+          "type": "example",
+          "question": "(2 + 3i) + (1 − i) = ?",
+          "answer": "Reálné zvlášť, imaginární zvlášť: (2 + 1) + (3 − 1)i = **3 + 2i**."
+        },
+        {
+          "type": "example",
+          "question": "(1 + i)² = ?",
+          "answer": "Podle (a + b)²: 1 + 2i + i² = 1 + 2i − 1 = **2i**."
+        },
+        {
+          "type": "heading",
+          "text": "Mocniny i se točí dokola"
+        },
+        {
+          "type": "text",
+          "text": "i¹ = i, i² = −1, i³ = i² · i = −i, i⁴ = (i²)² = 1, a pak znovu i, −1, −i, 1… Opakuje se to po čtyřech. Proto i¹⁰⁰ = 1 (100 je dělitelné 4)."
+        },
+        {
+          "type": "example",
+          "question": "Řeš x² + 4 = 0.",
+          "answer": "x² = −4. V reálných číslech řešení není, v komplexních ano: x = ±√(−4) = **±2i**. Zkouška: (2i)² = −4 ✓."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Im(3 − 7i) = −7i",
+          "right": "Im(3 − 7i) = −7",
+          "why": "Imaginární část je reálné číslo, které stojí u i. Samotné i se do ní nepíše."
+        },
+        {
+          "type": "summary",
+          "text": "i² = −1. Komplexní číslo a + bi je bod [a; b] v Gaussově rovině, |z| = √(a² + b²). Počítá se jako s mnohočleny, i² nahradíš −1. Mocniny i se opakují po 4."
+        }
+      ]
+    },
+    {
+      "title": "Algebraický tvar",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kvadratická rovnice se záporným diskriminantem „nemá řešení“ – v reálných číslech. V komplexních číslech má **každá** kvadratická rovnice řešení. Komplexní čísla tak dělají algebru úplnou."
+        },
+        {
+          "type": "text",
+          "text": "Tady se naučíš čtyři základní operace a kdy použít komplexně sdružené číslo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Imaginární jednotka",
+          "definition": "Číslo i, pro které i² = −1."
+        },
+        {
+          "type": "term",
+          "term": "Algebraický tvar",
+          "definition": "z = a + bi, kde a = Re(z) je reálná část a b = Im(z) imaginární část (obě reálná čísla).",
+          "example": "z = 3 − 7i: Re = 3, Im = −7."
+        },
+        {
+          "type": "term",
+          "term": "Komplexně sdružené číslo z̄",
+          "definition": "Číslo se stejnou reálnou částí a opačnou imaginární: k a + bi je to a − bi. V Gaussově rovině je to zrcadlo podle vodorovné osy.",
+          "example": "K 2 − 5i je sdružené 2 + 5i."
+        },
+        {
+          "type": "term",
+          "term": "Absolutní hodnota",
+          "definition": "|a + bi| = √(a² + b²) – vzdálenost od počátku.",
+          "example": "|3 + 4i| = 5."
+        },
+        {
+          "type": "heading",
+          "text": "Operace"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Operace",
+            "Jak",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "sčítání",
+              "reálné + reálné, imaginární + imaginární",
+              "(2 + 3i) + (1 − i) = 3 + 2i"
+            ],
+            [
+              "násobení",
+              "roznásob, i² = −1",
+              "(1 + i)(1 − i) = 1 − i² = 2"
+            ],
+            [
+              "z · z̄",
+              "vždy reálné: a² + b²",
+              "(3 + 4i)(3 − 4i) = 25"
+            ],
+            [
+              "dělení",
+              "rozšiř zlomek sdruženým jmenovatelem",
+              "viz příklad níže"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup dělení"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi číslo komplexně sdružené ke jmenovateli.",
+            "Vynásob jím čitatele i jmenovatele.",
+            "Jmenovatel je teď reálný: a² + b².",
+            "Roznásob čitatel, nahraď i² = −1 a zapiš výsledek."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "(2 + i)/(1 − i) = ?",
+          "answer": "Rozšířím (1 + i): čitatel (2 + i)(1 + i) = 2 + 2i + i + i² = 1 + 3i. Jmenovatel (1 − i)(1 + i) = 1 + 1 = 2. Výsledek **(1 + 3i)/2**."
+        },
+        {
+          "type": "heading",
+          "text": "Kvadratická rovnice v ℂ"
+        },
+        {
+          "type": "text",
+          "text": "Postupuješ jako obvykle, jen pro D < 0 je √D = i · √|D|. Kořeny jsou pak dvojice komplexně sdružených čísel."
+        },
+        {
+          "type": "example",
+          "question": "Řeš x² + 4 = 0 a x² + 2x + 5 = 0.",
+          "answer": "x² = −4 → **x = ±2i**. Druhá: D = 4 − 20 = −16, √D = 4i, x = (−2 ± 4i)/2 = **−1 ± 2i**."
+        },
+        {
+          "type": "text",
+          "text": "Parabola y = x² + 2x + 5 osu x neprotíná – proto nemá reálné kořeny. Posuň c dolů, dokud se osy nedotkne (D = 0), a uvidíš hranici mezi reálnými a komplexními kořeny."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": 2,
+            "c": 5
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "(1 + i)(1 − i) = 1 − i² = 1 − 1 = 0",
+          "right": "1 − i² = 1 − (−1) = 2",
+          "why": "i² není 1, ale −1. Mínus před i² se tak změní na plus."
+        },
+        {
+          "type": "text",
+          "text": "Mocniny i se opakují: i, −1, −i, 1. Proto i³ = −i a i¹⁰⁰ = (i⁴)²⁵ = 1."
+        },
+        {
+          "type": "summary",
+          "text": "z = a + bi, i² = −1. Sčítej po částech, násob roznásobením. Děl rozšířením sdruženým číslem jmenovatele. Pro D < 0 má kvadratická rovnice dva komplexně sdružené kořeny."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "i² =",
+      "answers": [
+        "−1",
+        "-1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "i³ =",
+      "answers": [
+        "−i",
+        "-i"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "i¹⁰⁰ =",
+      "answers": [
+        "1"
+      ],
+      "explanation": "100 je násobek 4."
+    },
+    {
+      "type": "choice",
+      "question": "(2 + 3i) + (1 − i) =",
+      "options": [
+        "3 + 2i",
+        "3 + 4i",
+        "1 + 4i",
+        "2 − 3i"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "(1 + i)(1 − i) =",
+      "options": [
+        "2",
+        "0",
+        "1 − i²",
+        "2i"
+      ],
+      "answer": 0,
+      "explanation": "1 − i² = 1 + 1"
+    },
+    {
+      "type": "input",
+      "question": "|3 + 4i| =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Komplexně sdružené číslo k 2 − 5i:",
+      "options": [
+        "2 + 5i",
+        "−2 + 5i",
+        "−2 − 5i",
+        "5 − 2i"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kořeny rovnice x² + 4 = 0 v ℂ:",
+      "options": [
+        "±2i",
+        "±2",
+        "±4i",
+        "nemá kořeny"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Re(3 − 7i) =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Im(3 − 7i) =",
+      "answers": [
+        "−7",
+        "-7"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "(1 + i)² =",
+      "options": [
+        "2i",
+        "2",
+        "1 + i²",
+        "2 + 2i"
+      ],
+      "answer": 0,
+      "explanation": "1 + 2i + i² = 2i"
+    },
+    {
+      "type": "choice",
+      "question": "(2 + i)/(1 − i) =",
+      "options": [
+        "(1 + 3i)/2",
+        "(3 + i)/2",
+        "2 + i",
+        "(1 − 3i)/2"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "ℝ ⊂ ℂ",
+      "answer": true,
+      "explanation": "Reálné číslo je komplexní s b = 0."
+    },
+    {
+      "type": "open",
+      "question": "Co je komplexní číslo a jak ho zobrazíš?",
+      "answer": "Číslo z = a + bi, kde a, b jsou reálná a i² = −1. Zobrazíme ho jako bod [a; b] v Gaussově rovině."
+    },
+    {
+      "type": "open",
+      "question": "Jak vydělíš dvě komplexní čísla v algebraickém tvaru?",
+      "answer": "Zlomek rozšířím číslem komplexně sdruženým ke jmenovateli. Jmenovatel se stane reálným (a² + b²), pak roznásobím čitatel."
+    }
+  ]
+}

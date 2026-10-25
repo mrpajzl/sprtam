@@ -1,0 +1,402 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kombinatorika",
+  "title": "Kombinatorika",
+  "emoji": "🎲",
+  "explanations": [
+    {
+      "title": "Šatník a závody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolik různých oblečení vytvoříš ze 3 triček a 2 kalhot? Kolik je možných PIN kódů? Jaká je šance trefit Sportku? Kombinatorika je umění **počítat možnosti**, aniž bys je musel všechny vypsat."
+        },
+        {
+          "type": "text",
+          "text": "Potřebuje ji pravděpodobnost, bezpečnost hesel, plánování rozvrhů i genetika."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pravidlo součinu",
+          "definition": "Když první volbu uděláš m způsoby a ke každé druhou n způsoby, je všech možností m · n.",
+          "example": "3 trička · 2 kalhoty = 6 oblečení."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si to na tečkách: řádky jsou trička, sloupce kalhoty. Každá tečka je jedno oblečení. Přidej čtvrté tričko – kolik oblečení přibude?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 2,
+            "max": 10
+          }
+        },
+        {
+          "type": "term",
+          "term": "Faktoriál n!",
+          "definition": "Součin n · (n − 1) · … · 2 · 1. Udává, kolika způsoby seřadíš n různých věcí. Dohodou 0! = 1.",
+          "example": "4! = 4 · 3 · 2 · 1 = 24; 5! = 120."
+        },
+        {
+          "type": "example",
+          "question": "Kolika způsoby seřadíš 4 knihy na poličku?",
+          "answer": "Na první místo 4 možnosti, na druhé zbydou 3, pak 2, pak 1. 4 · 3 · 2 · 1 = **24**."
+        },
+        {
+          "type": "heading",
+          "text": "Závody: záleží na pořadí"
+        },
+        {
+          "type": "text",
+          "text": "Z 5 běžců rozdáváš zlatou a stříbrnou medaili. Zlato může dostat 5 lidí, stříbro pak už jen 4. Celkem 5 · 4 = **20** možností. Petr zlato a Jana stříbro je **jiný** výsledek než naopak."
+        },
+        {
+          "type": "term",
+          "term": "Variace",
+          "definition": "Výběr k věcí z n, kde **záleží na pořadí**, nic se neopakuje. V(n, k) = n · (n − 1) · … (k činitelů).",
+          "example": "Předseda a místopředseda z 5 lidí: 5 · 4 = 20."
+        },
+        {
+          "type": "heading",
+          "text": "Tým: na pořadí nezáleží"
+        },
+        {
+          "type": "text",
+          "text": "Teď z 5 lidí vybíráš dvojici do týmu. Petr + Jana = Jana + Petr – je to tentýž tým. Z 20 „medailových“ dvojic tedy počítáš každou dvakrát: 20 : 2 = **10**."
+        },
+        {
+          "type": "term",
+          "term": "Kombinace C(n, k)",
+          "definition": "Výběr k věcí z n, kde **nezáleží na pořadí**. C(n, k) = V(n, k) / k! – vydělíš počtem pořadí, ve kterých jde stejnou skupinu seřadit. Čte se „n nad k“.",
+          "example": "C(5, 2) = 20 / 2 = 10."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď situace: záleží na pořadí (variace), nebo ne (kombinace)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "záleží na pořadí",
+              "nezáleží na pořadí"
+            ],
+            "items": [
+              {
+                "text": "medaile v závodě",
+                "group": 0
+              },
+              {
+                "text": "předseda a pokladník",
+                "group": 0
+              },
+              {
+                "text": "trojciferné číslo",
+                "group": 0
+              },
+              {
+                "text": "kód k zámku",
+                "group": 0
+              },
+              {
+                "text": "tah Sportky",
+                "group": 1
+              },
+              {
+                "text": "výběr 3 knih na dovolenou",
+                "group": 1
+              },
+              {
+                "text": "podání rukou",
+                "group": 1
+              },
+              {
+                "text": "dvojice do lavice",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik podání rukou proběhne mezi 6 lidmi?",
+          "answer": "Podání je dvojice, pořadí nehraje roli: C(6, 2) = 6 · 5 / 2 = **15**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Podání rukou mezi 6 lidmi: 6 · 5 = 30.",
+          "right": "C(6, 2) = 15",
+          "why": "Když Adam podá ruku Báře, Bára ji podá Adamovi – to je jedno podání. Součin 6 · 5 počítá každé dvakrát."
+        },
+        {
+          "type": "text",
+          "text": "Když se prvky **smějí opakovat** (PIN 0–9, čtyři místa), na každé místo je 10 možností: 10 · 10 · 10 · 10 = 10 000."
+        },
+        {
+          "type": "summary",
+          "text": "Pravidlo součinu: m · n. Seřazení n věcí: n!. Výběr, kde záleží na pořadí: variace. Kde nezáleží: kombinace C(n, k) = V(n, k)/k!."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce a rozhodování",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "U každé kombinatorické úlohy si polož dvě otázky: **Záleží na pořadí? Mohou se prvky opakovat?** Podle odpovědí vybereš vzorec. Celá kombinatorika je vlastně tahle rozhodovací tabulka."
+        },
+        {
+          "type": "text",
+          "text": "Pomocí ní spočítáš počet hesel, výsledků losování nebo rozvržení lidí do skupin."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Faktoriál",
+          "definition": "n! = n · (n − 1) · … · 1, 0! = 1.",
+          "example": "5! = 120."
+        },
+        {
+          "type": "term",
+          "term": "Permutace",
+          "definition": "Seřazení všech n prvků. Počet P(n) = n!.",
+          "example": "Seřazení 4 knih: 24."
+        },
+        {
+          "type": "term",
+          "term": "Variace",
+          "definition": "Uspořádaný výběr k prvků z n bez opakování: V(n, k) = n! / (n − k)!.",
+          "example": "V(5, 3) = 5 · 4 · 3 = 60."
+        },
+        {
+          "type": "term",
+          "term": "Kombinace",
+          "definition": "Neuspořádaný výběr k prvků z n bez opakování: C(n, k) = n! / (k! · (n − k)!).",
+          "example": "C(10, 3) = 10 · 9 · 8 / 6 = 120."
+        },
+        {
+          "type": "heading",
+          "text": "Rozhodovací tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Záleží na pořadí",
+            "Nezáleží na pořadí"
+          ],
+          "rows": [
+            [
+              "bez opakování",
+              "variace V(n, k) = n!/(n − k)!",
+              "kombinace C(n, k) = n!/(k!(n − k)!)"
+            ],
+            [
+              "s opakováním",
+              "variace s opakováním nᵏ",
+              "(na SŠ méně časté)"
+            ],
+            [
+              "všechny prvky",
+              "permutace n!",
+              "—"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti, z kolika prvků vybíráš (n) a kolik (k).",
+            "Prohoď dva vybrané prvky. Je to jiný výsledek? → záleží na pořadí.",
+            "Smí se prvek použít víckrát? → s opakováním.",
+            "Vyber vzorec z tabulky a dosaď."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené úlohy"
+        },
+        {
+          "type": "example",
+          "question": "Kolik trojciferných čísel sestavíš z číslic 1–5 bez opakování?",
+          "answer": "Záleží na pořadí (123 ≠ 321), bez opakování: V(5, 3) = 5 · 4 · 3 = **60**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik je čtyřmístných PIN kódů z číslic 0–9?",
+          "answer": "Záleží na pořadí, číslice se opakovat smějí: 10⁴ = **10 000**."
+        },
+        {
+          "type": "example",
+          "question": "Tah Sportky (6 čísel ze 49): variace, nebo kombinace?",
+          "answer": "Na pořadí vytažení nezáleží, výhra závisí jen na tom, která čísla padla → **kombinace** C(49, 6)."
+        },
+        {
+          "type": "text",
+          "text": "Pravidlo součinu na tečkách: 4 předkrmy × 5 hlavních jídel = 20 menu. Nastav to a spočítej tečky."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 4,
+            "columns": 5,
+            "max": 10
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Užitečné vlastnosti"
+        },
+        {
+          "type": "list",
+          "items": [
+            "C(n, k) = C(n, n − k): vybrat 2 ze 5, kdo pojedou, je totéž jako vybrat 3, kdo zůstanou.",
+            "Permutace s opakováním: slovo z písmen A, A, B, B: 4! / (2! · 2!) = 24 / 4 = 6 (prohození stejných písmen nic nemění).",
+            "0! = 1, aby vzorce fungovaly i pro k = 0 nebo k = n."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Z 5 lidí vybírám předsedu a místopředsedu: C(5, 2) = 10.",
+          "right": "V(5, 2) = 20",
+          "why": "Funkce jsou různé – Petr předseda a Jana místopředsedkyně je jiný výsledek než naopak. Záleží na pořadí, takže variace."
+        },
+        {
+          "type": "summary",
+          "text": "Záleží na pořadí → variace (n!/(n − k)!), s opakováním nᵏ. Nezáleží → kombinace C(n, k) = n!/(k!(n − k)!). Seřazení všech → n!."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "5! =",
+      "answers": [
+        "120"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolika způsoby lze seřadit 4 knihy?",
+      "answers": [
+        "24"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "C(5, 2) =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Z 5 lidí volíme předsedu a místopředsedu. Kolik možností?",
+      "answers": [
+        "20"
+      ],
+      "explanation": "5 · 4"
+    },
+    {
+      "type": "input",
+      "question": "Kolik trojciferných čísel z číslic 1–5 bez opakování?",
+      "answers": [
+        "60"
+      ],
+      "explanation": "5 · 4 · 3"
+    },
+    {
+      "type": "input",
+      "question": "C(10, 3) =",
+      "answers": [
+        "120"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Vybíráme k prvků z n, záleží na pořadí, bez opakování:",
+      "options": [
+        "variace",
+        "kombinace",
+        "permutace s opakováním"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik podání rukou proběhne mezi 6 lidmi?",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik je čtyřmístných PIN kódů (číslice 0–9, mohou se opakovat)?",
+      "answers": [
+        "10000"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "C(n, k) = C(n, n − k)",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Kolik různých „slov“ vznikne přeskládáním písmen A, A, B, B?",
+      "answers": [
+        "6"
+      ],
+      "explanation": "4! / (2! · 2!)"
+    },
+    {
+      "type": "input",
+      "question": "0! =",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Tah Sportky (6 čísel ze 49) je:",
+      "options": [
+        "kombinace",
+        "variace",
+        "permutace"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi variací a kombinací?",
+      "answer": "U variace záleží na pořadí vybraných prvků, u kombinace ne. Proto C(n, k) = V(n, k) / k!."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli pravidlo součinu na příkladu.",
+      "answer": "Když první volbu lze udělat m způsoby a ke každé druhou n způsoby, je všech možností m · n. Např. 3 trička a 2 kalhoty dají 6 oblečení."
+    }
+  ]
+}

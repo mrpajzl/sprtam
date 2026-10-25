@@ -1,0 +1,410 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "majetek",
+  "title": "Majetek a vlastnictví",
+  "emoji": "🏠",
+  "explanations": [
+    {
+      "title": "Ondrovo kolo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš kolo, mobil, batoh. Jsou tvoje – a nikdo ti je nesmí vzít. Ale co kniha z knihovny, kterou máš doma? A smíš si stáhnout písničku a prodávat ji?"
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, co znamená něco **vlastnit**, jaké druhy majetku existují a kde vlastnictví končí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Majetek",
+          "definition": "Všechno, co někomu patří: věci, peníze, pozemky."
+        },
+        {
+          "type": "term",
+          "term": "Vlastník",
+          "definition": "Ten, komu věc patří. Smí ji používat, půjčit, prodat, darovat i zahodit.",
+          "example": "Ondra dostal kolo k narozeninám. Je jeho vlastník."
+        },
+        {
+          "type": "term",
+          "term": "Půjčení (užívání)",
+          "definition": "Věc smíš používat, ale nepatří ti. Musíš ji vrátit.",
+          "example": "Kniha z knihovny – vlastníkem zůstává knihovna."
+        },
+        {
+          "type": "heading",
+          "text": "Příběh kola"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ondra dostane kolo od dědy. Teď je **vlastník**.",
+            "Jezdí na něm – smí ho **užívat**.",
+            "Půjčí ho na týden Matějovi. Matěj ho jen **užívá**, vlastníkem je stále Ondra.",
+            "Za rok kolo **prodá** sousedce za 2 000 Kč. Vlastníkem je teď sousedka.",
+            "Ondra si za peníze koupí helmu. Peníze byly jeho, smí s nimi naložit, jak chce."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Movité a nemovité věci"
+        },
+        {
+          "type": "term",
+          "term": "Movitá věc",
+          "definition": "Věc, kterou lze přenést nebo převézt, aniž by se zničila.",
+          "example": "Kolo, auto, počítač."
+        },
+        {
+          "type": "term",
+          "term": "Nemovitá věc (nemovitost)",
+          "definition": "Věc pevně spojená se zemí, nelze ji přenést.",
+          "example": "Pozemek, dům."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věci podle toho, jestli se dají odnést nebo odvézt."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "movitá věc",
+              "nemovitá věc"
+            ],
+            "items": [
+              {
+                "text": "kolo",
+                "group": 0
+              },
+              {
+                "text": "auto",
+                "group": 0
+              },
+              {
+                "text": "počítač",
+                "group": 0
+              },
+              {
+                "text": "gauč",
+                "group": 0
+              },
+              {
+                "text": "pozemek",
+                "group": 1
+              },
+              {
+                "text": "rodinný dům",
+                "group": 1
+              },
+              {
+                "text": "les",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Výtvory mysli"
+        },
+        {
+          "type": "term",
+          "term": "Duševní vlastnictví",
+          "definition": "Vlastnictví k něčemu, co člověk vymyslel: píseň, kniha, film, vynález."
+        },
+        {
+          "type": "term",
+          "term": "Autorské právo",
+          "definition": "Pravidla, která chrání autory. Jejich dílo nesmí nikdo bez svolení kopírovat a prodávat."
+        },
+        {
+          "type": "example",
+          "question": "Půjčíš si od kamarádky deskovou hru. Smíš ji prodat?",
+          "answer": "Hru jen **užíváš**, vlastnicí je kamarádka. Prodat ji smí jen ona. Ty ne."
+        },
+        {
+          "type": "example",
+          "question": "Kluk stáhne nový film a prodává ho spolužákům. Je to v pořádku?",
+          "answer": "Film je **duševní vlastnictví** autorů. Prodávat ho bez svolení porušuje **autorské právo**. Není to v pořádku."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vlastník smí se svou věcí dělat cokoli.",
+          "right": "Vlastník smí věc užívat a nakládat s ní, ale nesmí tím škodit druhým.",
+          "why": "Na vlastní zahradě smíš grilovat, ale ne tak, aby kouř dusil sousedy nebo hrozil požár."
+        },
+        {
+          "type": "summary",
+          "text": "Vlastník smí věc užívat, půjčit, prodat i darovat – ale nesmí škodit druhým. Věci jsou movité a nemovité. Výtvory mysli chrání autorské právo."
+        }
+      ]
+    },
+    {
+      "title": "Kdo co vlastní",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Projdi se ulicí. Chodník, lavička, obchod, auto u silnice, dálnice za městem – každá z těch věcí má svého vlastníka. Někdy člověka, někdy firmu, obec nebo stát."
+        },
+        {
+          "type": "text",
+          "text": "Uspořádáme si, co vlastnictví znamená, jaké druhy majetku rozlišujeme a kdo je vlastníkem čeho."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vlastnictví",
+          "definition": "Vztah člověka (nebo firmy, obce, státu) k věci, která mu patří."
+        },
+        {
+          "type": "term",
+          "term": "Vlastník",
+          "definition": "Ten, komu věc patří."
+        },
+        {
+          "type": "term",
+          "term": "Movitá a nemovitá věc",
+          "definition": "Movitá se dá přenést (kolo). Nemovitá je pevně spojená se zemí (pozemek, dům)."
+        },
+        {
+          "type": "term",
+          "term": "Duševní vlastnictví",
+          "definition": "Výtvory mysli – písně, knihy, filmy, vynálezy. Chrání je **autorské právo** (a u vynálezů patent)."
+        },
+        {
+          "type": "heading",
+          "text": "Co smí vlastník"
+        },
+        {
+          "type": "table",
+          "head": [
+            "právo vlastníka",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "držet věc",
+              "mít kolo doma"
+            ],
+            [
+              "užívat ji",
+              "jezdit na něm"
+            ],
+            [
+              "brát z ní užitek",
+              "pronajmout byt a dostávat nájem"
+            ],
+            [
+              "nakládat s ní",
+              "prodat, darovat, zničit"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Vše vždy jen v mezích zákona a bez škody druhým."
+        },
+        {
+          "type": "heading",
+          "text": "Kdo je vlastník"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**soukromé** vlastnictví – patří člověku nebo firmě (tvůj batoh, obchod na rohu)",
+            "**obecní** – patří obci (místní park, většinou i základní škola)",
+            "**státní** – patří státu (dálnice, armádní technika)"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zkus si spojit věci s vlastníkem: nejdřív odpověz, pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "dálnice",
+                "back": "stát"
+              },
+              {
+                "front": "místní park",
+                "back": "obec"
+              },
+              {
+                "front": "tvůj batoh",
+                "back": "ty"
+              },
+              {
+                "front": "obchod na rohu",
+                "back": "soukromá firma"
+              },
+              {
+                "front": "kniha v knihovně",
+                "back": "knihovna (ty ji jen užíváš)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Duševní vlastnictví"
+        },
+        {
+          "type": "text",
+          "text": "Autor písně vlastní svou píseň, i když ji „nelze osahat“. Kdo ji chce použít, třeba v reklamě, musí mít svolení autora a obvykle zaplatit."
+        },
+        {
+          "type": "example",
+          "question": "Je byt v paneláku movitá, nebo nemovitá věc?",
+          "answer": "Byt je součást domu, a dům je pevně spojený se zemí. Byt odnést nelze → **nemovitá věc**."
+        },
+        {
+          "type": "example",
+          "question": "Proč je fér platit za hudbu a filmy?",
+          "answer": "Autoři z toho žijí. Kdyby se jejich díla volně kopírovala, nedostali by za práci nic a neměli by z čeho tvořit dál."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když mám knihu z knihovny doma, jsem její vlastník.",
+          "right": "Knihu jen užívám, vlastníkem je knihovna.",
+          "why": "Mít věc u sebe neznamená, že ti patří. Rozhoduje, komu patří, ne kdo ji drží."
+        },
+        {
+          "type": "summary",
+          "text": "Vlastník smí věc držet, užívat, brát z ní užitek a nakládat s ní – v mezích zákona. Vlastnictví je soukromé, obecní nebo státní. Duševní vlastnictví chrání autorské právo."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která věc je nemovitá?",
+      "options": [
+        "pozemek",
+        "auto",
+        "počítač",
+        "kolo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Když si půjčíš knihu z knihovny, jsi její vlastník.",
+      "answer": false,
+      "explanation": "Jen ji užíváš. Vlastníkem je knihovna."
+    },
+    {
+      "type": "choice",
+      "question": "Co je duševní vlastnictví?",
+      "options": [
+        "výtvor mysli – píseň, vynález",
+        "jen pozemky",
+        "peníze v bance",
+        "hračky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj věc s vlastníkem.",
+      "pairs": [
+        [
+          "dálnice",
+          "stát"
+        ],
+        [
+          "místní park",
+          "obec"
+        ],
+        [
+          "tvůj batoh",
+          "ty"
+        ],
+        [
+          "obchod na rohu",
+          "soukromá firma"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Vlastník smí svou věc prodat nebo darovat.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co chrání autorské právo?",
+      "options": [
+        "písně, knihy, filmy",
+        "domy a pozemky",
+        "auta",
+        "státní hranice"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Stáhnout a prodávat cizí film bez svolení je v pořádku.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Kdo vlastní místní základní školu obvykle?",
+      "options": [
+        "obec",
+        "stát",
+        "ředitel",
+        "rodiče žáků"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje věc, kterou nelze přenést (třeba dům)? (… věc)",
+      "answers": [
+        "nemovitá",
+        "nemovita vec",
+        "nemovitost"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Vlastník smí se svou věcí dělat cokoli, i ohrožovat sousedy.",
+      "answer": false,
+      "explanation": "Vlastnictví má meze – nesmí škodit druhým."
+    },
+    {
+      "type": "open",
+      "question": "Jaká práva má vlastník věci?",
+      "answer": "Smí věc držet, užívat, brát z ní užitek a nakládat s ní – prodat, darovat nebo zničit. Vždy v mezích zákona a bez škody druhým."
+    },
+    {
+      "type": "open",
+      "question": "Proč je důležité chránit duševní vlastnictví?",
+      "answer": "Autoři a vynálezci za svou práci zaslouží odměnu. Kdyby se jejich díla volně kopírovala, neměli by z čeho žít ani důvod tvořit."
+    }
+  ]
+}

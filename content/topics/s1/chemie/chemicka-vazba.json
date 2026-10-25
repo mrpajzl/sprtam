@@ -1,0 +1,488 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "chemicka-vazba",
+  "title": "Chemická vazba a interakce",
+  "emoji": "🔗",
+  "explanations": [
+    {
+      "title": "Přirovnáním",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sůl se rozpustí ve vodě, ale ne v oleji. Měď vede proud, cukr ne. Voda vře při 100 °C, ale mnohem těžší sirovodík už při −60 °C. Všechny tyhle rozdíly mají jednu příčinu: **jak jsou atomy navzájem spojené**."
+        },
+        {
+          "type": "text",
+          "text": "Spojení atomů se říká **chemická vazba**. Pochopit ji je klíč k celé chemii – proč látky vznikají a jaké mají vlastnosti."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Chemická vazba",
+          "definition": "Síla, která drží atomy pohromadě. Vzniká díky **valenčním elektronům** – elektronům v nejvyšší vrstvě atomu."
+        },
+        {
+          "type": "term",
+          "term": "Elektronový pár",
+          "definition": "Dva elektrony, které spolu tvoří vazbu. Vazbu kreslíme čárkou: H–H."
+        },
+        {
+          "type": "term",
+          "term": "Elektronegativita X",
+          "definition": "Jak silně atom táhne elektrony ve vazbě k sobě. Nejvíc fluor (asi 4,0), málo kovy jako sodík (0,9)."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři způsoby, jak se atomy drží"
+        },
+        {
+          "type": "term",
+          "term": "Kovalentní vazba",
+          "definition": "Dva atomy **sdílejí** elektronový pár – jako dva sousedé společný plot.",
+          "example": "H₂, Cl₂, H₂O, CH₄"
+        },
+        {
+          "type": "text",
+          "text": "Když oba atomy táhnou stejně (stejná nebo podobná elektronegativita), pár je uprostřed → **nepolární** vazba (H₂). Když jeden táhne víc, pár je posunutý k němu → **polární** vazba. Silnější atom je trochu záporný, slabší trochu kladný (H–Cl)."
+        },
+        {
+          "type": "term",
+          "term": "Iontová vazba",
+          "definition": "Rozdíl v tahání je tak velký, že jeden atom elektron prakticky **převezme**. Vzniknou kation (+) a anion (−) a drží je přitažlivost opačných nábojů – jako magnety.",
+          "example": "NaCl: Na⁺ a Cl⁻"
+        },
+        {
+          "type": "term",
+          "term": "Kovová vazba",
+          "definition": "Atomy kovu odevzdají valenční elektrony „do společné kasy“. Volné elektrony se pohybují mezi kationty jako plyn.",
+          "example": "Proto kovy vedou proud a dají se kovat."
+        },
+        {
+          "type": "term",
+          "term": "Vodíkový můstek",
+          "definition": "Slabé přitahování mezi **molekulami**, ne uvnitř nich. Vzniká mezi vodíkem navázaným na F, O nebo N a sousedním takovým atomem. Funguje jako suchý zip.",
+          "example": "Molekuly vody se drží vodíkovými můstky – proto voda vře až při 100 °C."
+        },
+        {
+          "type": "heading",
+          "text": "Jak poznat typ vazby"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi elektronegativity obou atomů v tabulce.",
+            "Odečti větší − menší: dostaneš ΔX.",
+            "ΔX menší než 0,4 → nepolární kovalentní.",
+            "ΔX 0,4 až 1,7 → polární kovalentní.",
+            "ΔX větší než 1,7 → iontová."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jaká vazba je v HCl? (X(H) = 2,2, X(Cl) = 3,16)",
+          "answer": "ΔX = 3,16 − 2,2 ≈ 0,96. To je mezi 0,4 a 1,7 → **polární kovalentní**. Elektrony jsou posunuté k chloru."
+        },
+        {
+          "type": "example",
+          "question": "Jaká vazba je v NaCl? (X(Na) = 0,93, X(Cl) = 3,16)",
+          "answer": "ΔX = 3,16 − 0,93 = 2,23 → víc než 1,7 → **iontová**."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď látky podle typu vazby. U prvku se stejnými atomy je ΔX = 0."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "nepolární",
+              "polární",
+              "iontová"
+            ],
+            "items": [
+              {
+                "text": "O₂",
+                "group": 0
+              },
+              {
+                "text": "Cl₂",
+                "group": 0
+              },
+              {
+                "text": "N₂",
+                "group": 0
+              },
+              {
+                "text": "HCl",
+                "group": 1
+              },
+              {
+                "text": "H₂O",
+                "group": 1
+              },
+              {
+                "text": "NH₃",
+                "group": 1
+              },
+              {
+                "text": "NaCl",
+                "group": 2
+              },
+              {
+                "text": "KF",
+                "group": 2
+              },
+              {
+                "text": "CaO",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jednoduchá, dvojná, trojná"
+        },
+        {
+          "type": "text",
+          "text": "Atomy mohou sdílet i dva nebo tři elektronové páry. Čím víc párů, tím je vazba **pevnější** a **kratší**: C≡C je pevnější než C=C a ta je pevnější než C–C. Energie potřebná k roztržení vazby se jmenuje **vazebná energie**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Voda vře při 100 °C, protože se při varu trhají vazby mezi H a O.",
+          "right": "Při varu se trhají jen **vodíkové můstky mezi molekulami**. Molekuly H₂O zůstanou celé.",
+          "why": "Pára je pořád voda H₂O. Vazby uvnitř molekuly jsou mnohem silnější a varem se neruší."
+        },
+        {
+          "type": "summary",
+          "text": "Kovalentní vazba = sdílený pár (nepolární nebo polární), iontová = předaný elektron a přitažlivost iontů, kovová = společné elektrony. Vodíkové můstky drží molekuly u sebe."
+        }
+      ]
+    },
+    {
+      "title": "Klasifikace",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vazby se dají přesně roztřídit podle tří otázek: **jak velký je rozdíl elektronegativit**, **kolik párů atomy sdílejí** a **kdo dodal elektrony**. Plus zvlášť slabé síly mezi molekulami."
+        },
+        {
+          "type": "text",
+          "text": "Z typu vazby pak předpovíš vlastnosti látky: teplotu tání, rozpustnost, vodivost."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Valenční elektrony",
+          "definition": "Elektrony v nejvyšší vrstvě atomu – ty tvoří vazby."
+        },
+        {
+          "type": "term",
+          "term": "Kovalentní vazba",
+          "definition": "Vazba tvořená **sdíleným elektronovým párem** mezi dvěma atomy.",
+          "example": "H–H"
+        },
+        {
+          "type": "term",
+          "term": "Elektronegativita X",
+          "definition": "Schopnost atomu přitahovat vazebné elektrony. Rozdíl elektronegativit ΔX určuje polaritu vazby."
+        },
+        {
+          "type": "term",
+          "term": "Dipól",
+          "definition": "Molekula, která má jeden konec trochu kladný a druhý trochu záporný. Takové molekule se říká **polární**."
+        },
+        {
+          "type": "heading",
+          "text": "1. Podle rozdílu elektronegativit"
+        },
+        {
+          "type": "table",
+          "head": [
+            "ΔX",
+            "Vazba",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "< 0,4",
+              "nepolární kovalentní",
+              "H₂, CH₄"
+            ],
+            [
+              "0,4–1,7",
+              "polární kovalentní",
+              "H₂O, HCl"
+            ],
+            [
+              "> 1,7",
+              "iontová",
+              "NaCl, KF"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor: polární vazby ještě neznamenají polární molekulu. Záleží i na tvaru."
+        },
+        {
+          "type": "example",
+          "question": "Je molekula CO₂ polární?",
+          "answer": "Vazby C=O jsou polární (kyslík táhne víc). Ale molekula je **lineární** O=C=O: oba kyslíky táhnou stejně silně na opačné strany. Tahy se vyruší → molekula je **nepolární**."
+        },
+        {
+          "type": "heading",
+          "text": "2. Podle počtu sdílených párů"
+        },
+        {
+          "type": "term",
+          "term": "Vazba σ (sigma)",
+          "definition": "Vazba, kde je nejvíc elektronů přímo **na spojnici jader**. Je v každé vazbě jako první. Kolem ní se atomy mohou otáčet."
+        },
+        {
+          "type": "term",
+          "term": "Vazba π (pí)",
+          "definition": "Vazba s elektrony **nad a pod spojnicí** jader. Je slabší a přidává se k σ."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vazba",
+            "Složení",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "jednoduchá",
+              "σ",
+              "C–C v ethanu"
+            ],
+            [
+              "dvojná",
+              "σ + π",
+              "C=C v ethenu"
+            ],
+            [
+              "trojná",
+              "σ + 2π",
+              "N≡N, C≡C"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Více párů = **kratší a pevnější** vazba (vyšší **vazebná energie** – energie potřebná k rozštěpení vazby)."
+        },
+        {
+          "type": "example",
+          "question": "Kolik σ a π vazeb má molekula CH₄ a kolik N₂?",
+          "answer": "CH₄: čtyři jednoduché vazby C–H → **4 σ, 0 π**. N₂: jedna trojná vazba N≡N → **1 σ + 2 π**."
+        },
+        {
+          "type": "heading",
+          "text": "3. Podle původu elektronů"
+        },
+        {
+          "type": "term",
+          "term": "Koordinační vazba",
+          "definition": "Kovalentní vazba, kde **oba elektrony páru dodá jeden atom** (donor). Druhý atom (akceptor) nabídne jen prázdný orbital.",
+          "example": "NH₃ + H⁺ → NH₄⁺: dusík dá svůj volný pár vodíkovému kationtu, který nemá žádný elektron."
+        },
+        {
+          "type": "heading",
+          "text": "4. Další vazby a síly"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Iontová vazba** – elektrostatická přitažlivost kationtů a aniontů (NaCl). Látky mají vysoké teploty tání; v tavenině a roztoku vedou proud.",
+            "**Kovová vazba** – delokalizované (volně pohyblivé) elektrony mezi kationty kovu. Kovy vedou proud a jsou kujné.",
+            "**Vodíkové můstky** – slabé síly mezi molekulami s H na F, O, N (voda, led).",
+            "**Van der Waalsovy síly** – nejslabší přitahování mezi všemi molekulami."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď molekuly. Pozor u CO₂ a CH₄: vazby jsou polární, ale tvar je souměrný."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "nepolární molekula",
+              "polární molekula"
+            ],
+            "items": [
+              {
+                "text": "O₂",
+                "group": 0
+              },
+              {
+                "text": "CO₂",
+                "group": 0
+              },
+              {
+                "text": "CH₄",
+                "group": 0
+              },
+              {
+                "text": "N₂",
+                "group": 0
+              },
+              {
+                "text": "H₂O",
+                "group": 1
+              },
+              {
+                "text": "HCl",
+                "group": 1
+              },
+              {
+                "text": "NH₃",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Trojná vazba = tři σ vazby.",
+          "right": "Trojná vazba = **1 σ + 2 π**.",
+          "why": "Na spojnici jader se vejde jen jedna σ vazba. Další páry se musí umístit mimo ni – jako π."
+        },
+        {
+          "type": "summary",
+          "text": "ΔX < 0,4 nepolární, 0,4–1,7 polární, > 1,7 iontová. Dvojná = σ + π, trojná = σ + 2π. Koordinační vazba: pár dodá jen donor. Mezi molekulami působí vodíkové můstky."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik vazeb π je v trojné vazbě?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik vazeb σ obsahuje molekula CH₄?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaká vazba vzniká mezi NH₃ a H⁺ v NH₄⁺?",
+      "options": [
+        "koordinační",
+        "iontová",
+        "kovová",
+        "vodíkový můstek"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Proč má voda neobvykle vysokou teplotu varu?",
+      "options": [
+        "kvůli vodíkovým můstkům",
+        "kvůli iontové vazbě",
+        "kvůli kovové vazbě",
+        "kvůli malé molární hmotnosti"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Rozdíl elektronegativit je 2,1. Jaká vazba převažuje?",
+      "options": [
+        "iontová",
+        "nepolární",
+        "polární kovalentní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Kovy vedou proud díky delokalizovaným elektronům.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Molekula CO₂ je polární.",
+      "answer": false,
+      "explanation": "Vazby C=O jsou polární, ale molekula je lineární a dipóly se vyruší."
+    },
+    {
+      "type": "match",
+      "question": "Spoj látku s převažující vazbou či interakcí.",
+      "pairs": [
+        [
+          "měď",
+          "kovová"
+        ],
+        [
+          "NaCl",
+          "iontová"
+        ],
+        [
+          "diamant",
+          "kovalentní"
+        ],
+        [
+          "led",
+          "vodíkové můstky mezi molekulami"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je vazebná energie?",
+      "options": [
+        "energie potřebná k rozštěpení vazby",
+        "energie elektronu v jádře",
+        "teplo reakce"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která vazba je nejpevnější?",
+      "options": [
+        "trojná C≡C",
+        "dvojná C=C",
+        "jednoduchá C–C"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi vazbou σ a π.",
+      "answer": "Vazba σ má maximum elektronové hustoty na spojnici jader a je v každé vazbě. Vazba π leží mimo spojnici, je slabší a vzniká jako druhá a třetí vazba v násobných vazbách."
+    },
+    {
+      "type": "open",
+      "question": "Jak typ vazby ovlivňuje vlastnosti látek?",
+      "answer": "Iontové látky mají vysoké teploty tání a v tavenině či roztoku vedou proud. Kovy vedou proud a jsou kujné. Molekulové látky s kovalentní vazbou mají nižší teploty tání a varu."
+    }
+  ]
+}

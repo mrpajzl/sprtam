@@ -1,0 +1,403 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "delba-moci",
+  "title": "Dělba moci",
+  "emoji": "⚖️",
+  "explanations": [
+    {
+      "title": "Tři hlídači",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si třídu, kde jeden žák vymýšlí pravidla, sám je vynucuje a sám rozhoduje, kdo je porušil. Byl by spravedlivý? Asi těžko. Měl by moc, kterou nikdo nehlídá."
+        },
+        {
+          "type": "text",
+          "text": "Proto je moc ve státě rozdělená na tři části, které se navzájem kontrolují. Tomu se říká **dělba moci**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Státní moc",
+          "definition": "Právo státu vydávat pravidla, řídit zemi a trestat porušení pravidel."
+        },
+        {
+          "type": "term",
+          "term": "Zákonodárná moc",
+          "definition": "Moc **tvořit zákony**. V Česku ji má **Parlament**."
+        },
+        {
+          "type": "term",
+          "term": "Výkonná moc",
+          "definition": "Moc zákony **provádět** a řídit stát. Patří **vládě** a **prezidentovi**."
+        },
+        {
+          "type": "term",
+          "term": "Soudní moc",
+          "definition": "Moc **rozhodovat spory** a o vině a trestu. Patří nezávislým **soudům**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se hlídají"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Parlament schválí zákon.",
+            "Prezident ho může vrátit (**veto**). Poslanci ho pak mohou znovu schválit, když pro něj hlasuje aspoň **101** z 200.",
+            "Vláda zákon provádí. Když vláda selhává, Poslanecká sněmovna jí může vyslovit **nedůvěru** a vláda musí odstoupit.",
+            "Když je zákon v rozporu s Ústavou, **Ústavní soud** ho zruší.",
+            "Nikdo nemá všechnu moc – každý je hlídán někým jiným."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď orgány a činnosti do správné moci."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "zákonodárná",
+              "výkonná",
+              "soudní"
+            ],
+            "items": [
+              {
+                "text": "Poslanecká sněmovna",
+                "group": 0
+              },
+              {
+                "text": "Senát",
+                "group": 0
+              },
+              {
+                "text": "schvalování zákonů",
+                "group": 0
+              },
+              {
+                "text": "vláda",
+                "group": 1
+              },
+              {
+                "text": "ministerstva",
+                "group": 1
+              },
+              {
+                "text": "prezident",
+                "group": 1
+              },
+              {
+                "text": "okresní soud",
+                "group": 2
+              },
+              {
+                "text": "Ústavní soud",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Čísla, která se vyplatí znát"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Poslanecká sněmovna: **200 poslanců** na **4 roky**, zvolen může být člověk od 21 let.",
+            "Senát: **81 senátorů** na **6 let**, každé 2 roky se volí třetina, zvolen může být člověk od 40 let.",
+            "Prezident: volen **přímo občany** (od roku 2013) na **5 let**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Prezident vrátí zákon. Kolik poslanců ho musí znovu schválit, aby platil?",
+          "answer": "Nadpoloviční většina všech 200 poslanců: 200 : 2 = 100, a ještě 1 → **101 poslanců**."
+        },
+        {
+          "type": "example",
+          "question": "Které moci patří soud, který rozhoduje o krádeži?",
+          "answer": "Rozhoduje o vině a trestu → **soudní moc**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Senát se volí celý najednou každé 4 roky.",
+          "right": "Senátor je volen na 6 let a každé 2 roky se volí třetina Senátu.",
+          "why": "Díky tomu se Senát nikdy nevymění celý najednou a zůstává v něm zkušenost."
+        },
+        {
+          "type": "summary",
+          "text": "Moc je rozdělená: zákonodárná (Parlament) tvoří zákony, výkonná (vláda, prezident) je provádí, soudní (soudy) rozhoduje spory. Navzájem se kontrolují, aby nikdo nemohl moc zneužít."
+        }
+      ]
+    },
+    {
+      "title": "Mapa moci",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve zprávách slyšíš: „Sněmovna schválila“, „Senát vrátil“, „prezident jmenoval“, „vláda rozhodla“. Kdo je kdo a kdo komu co může?"
+        },
+        {
+          "type": "text",
+          "text": "Uděláme si mapu: každá moc, kdo ji má, kolik má členů a jak se volí. Myšlenku dělby moci popsal francouzský myslitel **Montesquieu** v 18. století."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dělba moci",
+          "definition": "Státní moc je rozdělená na tři části – zákonodárnou, výkonnou a soudní – aby se navzájem kontrolovaly."
+        },
+        {
+          "type": "term",
+          "term": "Parlament ČR",
+          "definition": "Má dvě komory: **Poslaneckou sněmovnu** a **Senát**. Schvaluje zákony."
+        },
+        {
+          "type": "term",
+          "term": "Vláda",
+          "definition": "Předseda vlády (premiér) a ministři. Řídí stát a ministerstva."
+        },
+        {
+          "type": "term",
+          "term": "Veto",
+          "definition": "Odmítnutí zákona – prezident ho vrátí Sněmovně."
+        },
+        {
+          "type": "heading",
+          "text": "Mapa"
+        },
+        {
+          "type": "table",
+          "head": [
+            "moc",
+            "kdo",
+            "počet a volba"
+          ],
+          "rows": [
+            [
+              "zákonodárná",
+              "Poslanecká sněmovna",
+              "200 poslanců, 4 roky, od 21 let"
+            ],
+            [
+              "zákonodárná",
+              "Senát",
+              "81 senátorů, 6 let (třetina každé 2 roky), od 40 let"
+            ],
+            [
+              "výkonná",
+              "prezident",
+              "přímá volba od 2013, 5 let, od 40 let"
+            ],
+            [
+              "výkonná",
+              "vláda",
+              "premiéra jmenuje prezident, vláda potřebuje důvěru Sněmovny"
+            ],
+            [
+              "soudní",
+              "soudy",
+              "soudce nevolí lidé, jsou nezávislí"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Velikost komor"
+        },
+        {
+          "type": "text",
+          "text": "Porovnej v grafu, kolik členů má každá komora Parlamentu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "členů",
+            "items": [
+              {
+                "label": "Poslanecká sněmovna",
+                "value": 200
+              },
+              {
+                "label": "Senát",
+                "value": 81
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Cesta zákona"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Návrh zákona projedná a schválí **Poslanecká sněmovna**.",
+            "Pak ho projedná **Senát**. Když ho zamítne, Sněmovna ho může přehlasovat (101 poslanců).",
+            "Zákon podepíše **prezident** – nebo ho vrátí (veto). I veto může Sněmovna přehlasovat 101 hlasy.",
+            "Zákon se vyhlásí ve Sbírce zákonů a začne platit."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Vláda je odpovědná Poslanecké sněmovně. Co to znamená?",
+          "answer": "Vláda potřebuje **důvěru** Sněmovny. Když jí Sněmovna vysloví nedůvěru, vláda musí odstoupit."
+        },
+        {
+          "type": "example",
+          "question": "Ve 25 letech chce Eva kandidovat. Může do Sněmovny, nebo do Senátu?",
+          "answer": "Poslancem může být člověk od 21 let → **ano, do Sněmovny**. Senátorem až od 40 let → do Senátu zatím ne."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Prezident je nejvyšší a může sám rozhodnout o čemkoli.",
+          "right": "Prezident má jen pravomoci, které mu dává Ústava. Zákony schvaluje Parlament a jeho veto lze přehlasovat.",
+          "why": "Kdyby měl jeden člověk všechnu moc, nikdo by ho nekontroloval – právě tomu dělba moci brání."
+        },
+        {
+          "type": "summary",
+          "text": "Parlament = Sněmovna (200, 4 roky) + Senát (81, 6 let, třetina každé 2 roky). Prezident: přímá volba, 5 let. Vláda je odpovědná Sněmovně. Soudy jsou nezávislé."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik poslanců má Poslanecká sněmovna?",
+      "answers": [
+        "200"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik senátorů má Senát?",
+      "answers": [
+        "81"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Na jak dlouho je volen senátor?",
+      "options": [
+        "6 let",
+        "4 roky",
+        "5 let",
+        "10 let"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Na jak dlouho je volen prezident?",
+      "options": [
+        "5 let",
+        "4 roky",
+        "6 let",
+        "7 let"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která moc tvoří zákony?",
+      "options": [
+        "zákonodárná",
+        "výkonná",
+        "soudní",
+        "žádná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj moc a orgán.",
+      "pairs": [
+        [
+          "zákonodárná",
+          "Parlament"
+        ],
+        [
+          "výkonná",
+          "vláda"
+        ],
+        [
+          "soudní",
+          "soudy"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Vláda je odpovědná Poslanecké sněmovně.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Od kolika let se může člověk stát poslancem?",
+      "options": [
+        "21",
+        "18",
+        "40",
+        "25"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Prezidenta ČR volí od roku 2013 přímo občané.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kolik poslanců je třeba k přehlasování veta prezidenta?",
+      "options": [
+        "101",
+        "120",
+        "81",
+        "200"
+      ],
+      "answer": 0,
+      "explanation": "Nadpoloviční většina všech 200 poslanců."
+    },
+    {
+      "type": "truefalse",
+      "question": "Senát se volí celý najednou každé 4 roky.",
+      "answer": false,
+      "explanation": "Každé 2 roky se volí třetina senátorů, každý na 6 let."
+    },
+    {
+      "type": "open",
+      "question": "Proč je státní moc rozdělena na tři části?",
+      "answer": "Aby se jednotlivé moci navzájem kontrolovaly a nikdo nemohl moc zneužít. Zákonodárná tvoří zákony, výkonná je provádí, soudní rozhoduje spory."
+    },
+    {
+      "type": "open",
+      "question": "Z čeho se skládá Parlament ČR a na jak dlouho se volí?",
+      "answer": "Z Poslanecké sněmovny (200 poslanců na 4 roky) a Senátu (81 senátorů na 6 let, každé 2 roky se volí třetina)."
+    }
+  ]
+}

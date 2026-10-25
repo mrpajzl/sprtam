@@ -1,0 +1,341 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "druhy-vet",
+  "title": "Druhy vět",
+  "emoji": "❓",
+  "explanations": [
+    {
+      "title": "Čtyři tváře",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Někdy něco **vyprávíš**: „Venku prší.“ Někdy se **ptáš**: „Kde je Ema?“ Někdy **chceš**, aby někdo něco udělal: „Zavři okno!“ A někdy si něco **přeješ**: „Kéž by bylo léto!“"
+        },
+        {
+          "type": "text",
+          "text": "Věty mají různé úkoly. Podle úkolu dáš na konec správné znaménko. Tak čtenář pozná, jak větu myslíš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Věta oznamovací 📢",
+          "definition": "Něco oznamuje, vypráví. Na konci je **tečka**.",
+          "example": "Babička peče buchty."
+        },
+        {
+          "type": "term",
+          "term": "Věta tázací ❓",
+          "definition": "Ptá se. Na konci je **otazník**.",
+          "example": "Kolik je hodin?"
+        },
+        {
+          "type": "term",
+          "term": "Věta rozkazovací 👉",
+          "definition": "Přikazuje nebo prosí, aby někdo něco udělal. Na konci je **vykřičník** (nebo tečka).",
+          "example": "Ukliď si pokoj!"
+        },
+        {
+          "type": "term",
+          "term": "Věta přací 🌠",
+          "definition": "Vyjadřuje přání. Často začíná slovem *kéž* nebo *ať*. Na konci bývá **vykřičník**.",
+          "example": "Ať se ti daří!"
+        },
+        {
+          "type": "table",
+          "head": [
+            "věta",
+            "co dělá",
+            "na konci"
+          ],
+          "rows": [
+            [
+              "oznamovací 📢",
+              "něco oznamuje",
+              "."
+            ],
+            [
+              "tázací ❓",
+              "ptá se",
+              "?"
+            ],
+            [
+              "rozkazovací 👉",
+              "přikazuje, prosí",
+              "! nebo ."
+            ],
+            [
+              "přací 🌠",
+              "něco si přeje",
+              "!"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti větu.",
+            "Zeptej se: Co ta věta chce?",
+            "Oznamuje → tečka. Ptá se → otazník.",
+            "Přikazuje → vykřičník. Přeje si → vykřičník."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jaká je věta „Svítí slunce“? Jaké znaménko dáš?",
+          "answer": "Věta jen oznamuje, co se děje. Je **oznamovací**. Na konec dáme **tečku**: Svítí slunce."
+        },
+        {
+          "type": "example",
+          "question": "Jaká je věta „Kéž by sněžilo“?",
+          "answer": "Začíná *kéž* a vyjadřuje přání. Je **přací**: Kéž by sněžilo!"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kdy přijdeš.",
+          "right": "Kdy přijdeš?",
+          "why": "Věta se ptá – je tázací. Tázací věta končí vždycky otazníkem."
+        },
+        {
+          "type": "summary",
+          "text": "Oznamovací (.), tázací (?), rozkazovací (!), přací (!). Podle toho, co věta chce, dáš znaménko."
+        }
+      ]
+    },
+    {
+      "title": "Poslouchej hlas",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Řekni nahlas: „Pes spí.“ Hlas na konci klesne dolů. Teď řekni: „Pes spí?“ Hlas na konci vyskočí nahoru."
+        },
+        {
+          "type": "text",
+          "text": "Hlas ti napoví, jaká věta to je. A podle druhu věty víš, jaké znaménko napsat."
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Připomenutí: slova, která společně něco řeknou. Začíná velkým písmenem, končí znaménkem.",
+          "example": "Pes spí."
+        },
+        {
+          "type": "term",
+          "term": "Znaménko na konci věty",
+          "definition": "Značka na konci věty: tečka (.), otazník (?), vykřičník (!).",
+          "example": "Pes spí. Pes spí? Spi!"
+        },
+        {
+          "type": "term",
+          "term": "Čtyři druhy vět",
+          "definition": "**Oznamovací** – oznamuje. **Tázací** – ptá se. **Rozkazovací** – přikazuje. **Přací** – přeje si.",
+          "example": "Prší. / Prší? / Vezmi deštník! / Kéž by nepršelo!"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "📢 .",
+            "❓ ?",
+            "👉 !",
+            "🌠 !"
+          ],
+          "caption": "oznamovací – tázací – rozkazovací – přací"
+        },
+        {
+          "type": "heading",
+          "text": "Roztřiď věty"
+        },
+        {
+          "type": "text",
+          "text": "Řekni větu nahlas a dej ji do správného kbelíku."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "oznamovací",
+              "tázací",
+              "rozkazovací"
+            ],
+            "items": [
+              {
+                "text": "Venku prší.",
+                "group": 0
+              },
+              {
+                "text": "Kde je Ema?",
+                "group": 1
+              },
+              {
+                "text": "Zavři okno!",
+                "group": 2
+              },
+              {
+                "text": "Pes spí.",
+                "group": 0
+              },
+              {
+                "text": "Půjdeš ven?",
+                "group": 1
+              },
+              {
+                "text": "Přines mi míč!",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Udělej z věty „Pes štěká.“ otázku.",
+          "answer": "Prohodíme slova a hlas zvedneme: **Štěká pes?** Na konec otazník."
+        },
+        {
+          "type": "example",
+          "question": "Udělej z věty „Jdeš domů.“ rozkaz.",
+          "answer": "Přikážeme: **Jdi domů!** Na konec vykřičník."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Ať se ti daří!“ je rozkazovací věta.",
+          "right": "Je to věta přací.",
+          "why": "Nikomu nic nepřikazuje. Jen něco přeje. Přací věty často začínají *ať* nebo *kéž*."
+        },
+        {
+          "type": "summary",
+          "text": "Hlas dolů a tečka – oznamuju. Hlas nahoru a otazník – ptám se. Vykřičník – přikazuju nebo si přeju."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je věta „Kolik je hodin?“",
+      "options": [
+        "oznamovací",
+        "tázací",
+        "přací"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je věta „Ukliď si pokoj!“",
+      "options": [
+        "rozkazovací",
+        "přací",
+        "tázací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je věta „Ať se ti daří!“",
+      "options": [
+        "oznamovací",
+        "přací",
+        "tázací"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je věta „Babička peče buchty.“",
+      "options": [
+        "oznamovací",
+        "rozkazovací",
+        "tázací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jaké znaménko patří na konec: „Kdy přijdeš“",
+      "answers": [
+        "?",
+        "otazník",
+        "otaznik"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Tázací věta končí tečkou.",
+      "answer": false,
+      "explanation": "Tázací věta končí otazníkem."
+    },
+    {
+      "type": "truefalse",
+      "question": "Oznamovací věta končí tečkou.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj větu s druhem.",
+      "pairs": [
+        [
+          "Svítí slunce.",
+          "oznamovací"
+        ],
+        [
+          "Máš hlad?",
+          "tázací"
+        ],
+        [
+          "Sedni si!",
+          "rozkazovací"
+        ],
+        [
+          "Kéž by sněžilo!",
+          "přací"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je tázací?",
+      "options": [
+        "Jdu domů.",
+        "Jdeš domů?",
+        "Jdi domů!"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Kterým slovem často začíná věta přací?",
+      "options": [
+        "kéž",
+        "kde",
+        "proč"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaké znáš druhy vět? Řekni ke každé příklad.",
+      "answer": "Oznamovací: Prší. Tázací: Prší? Rozkazovací: Vezmi deštník! Přací: Kéž by nepršelo!"
+    },
+    {
+      "type": "open",
+      "question": "Udělej z věty „Pes štěká.“ otázku.",
+      "answer": "Štěká pes? (nebo: Proč pes štěká?)"
+    }
+  ]
+}

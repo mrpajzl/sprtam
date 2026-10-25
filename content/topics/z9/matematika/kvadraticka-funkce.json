@@ -1,0 +1,316 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kvadraticka-funkce",
+  "title": "Kvadratická funkce",
+  "emoji": "🏹",
+  "explanations": [
+    {
+      "title": "Hozený míč",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hoď míč šikmo vzhůru. Letí nahoru, zpomalí, v nejvyšším bodě se otočí a padá dolů. Jeho dráha je oblouk. Stejný tvar má proud vody z fontány nebo lano mostu."
+        },
+        {
+          "type": "text",
+          "text": "Ten oblouk se jmenuje **parabola** a popisuje ho **kvadratická funkce**. Pomocí ní inženýři počítají dráhy, tvary antén i zisk firem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Funkce",
+          "definition": "Pravidlo, které každému x přiřadí právě jedno y.",
+          "example": "y = x²: pro x = 3 je y = 9."
+        },
+        {
+          "type": "term",
+          "term": "Kvadratická funkce",
+          "definition": "Funkce, ve které je x na druhou (x²). Obecně y = ax² + bx + c, kde a ≠ 0.",
+          "example": "y = x², y = −x² + 4, y = 2x² − x"
+        },
+        {
+          "type": "term",
+          "term": "Parabola",
+          "definition": "Graf kvadratické funkce – souměrný oblouk.",
+          "example": "Dráha hozeného míče."
+        },
+        {
+          "type": "term",
+          "term": "Vrchol paraboly",
+          "definition": "Nejvyšší nebo nejnižší bod oblouku – kde se graf „otočí“.",
+          "example": "Nejvyšší bod letu míče."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje y = −x² + 4. Posouvej **a**: kladné a dá „úsměv“ ∪ (otevřený nahoru), záporné „mračouna“ ∩ (dolů). Posouvej **c**: celá parabola jezdí nahoru a dolů."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": -1,
+            "b": 0,
+            "c": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Proč je to oblouk"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi y = x². Pro x = 2 je y = 4, ale pro x = −2 taky 4, protože (−2)² = 4. Kladná i záporná x dají stejné y. Proto je parabola **souměrná** podle svislé osy a v nule má vrchol."
+        },
+        {
+          "type": "example",
+          "question": "y = x². Kolik je y pro x = −3?",
+          "answer": "(−3)² = (−3) · (−3) = **9**."
+        },
+        {
+          "type": "example",
+          "question": "Kde je vrchol paraboly y = x² + 2?",
+          "answer": "x² je nejmenší pro x = 0 (je 0). Pak y = 0 + 2 = 2. Vrchol **[0; 2]** – parabola y = x² posunutá o 2 nahoru."
+        },
+        {
+          "type": "mistake",
+          "wrong": "y = 3x + 2 je kvadratická funkce.",
+          "right": "Je lineární, graf je přímka.",
+          "why": "Kvadratická funkce musí obsahovat x² (s a ≠ 0). Bez druhé mocniny není oblouk."
+        },
+        {
+          "type": "summary",
+          "text": "Kvadratická funkce y = ax² + bx + c (a ≠ 0) má graf parabolu. a > 0 otevřená nahoru, a < 0 dolů. Vrchol je bod otočení."
+        }
+      ]
+    },
+    {
+      "title": "Tabulka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Parabolu nakreslíš z tabulky hodnot. Pak uvidíš, jak čísla v předpisu mění tvar a polohu grafu – a budeš umět najít vrchol i průsečíky s osou x."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kvadratická funkce",
+          "definition": "y = ax² + bx + c, kde a, b, c jsou čísla a a ≠ 0.",
+          "example": "y = x² − 4: a = 1, b = 0, c = −4"
+        },
+        {
+          "type": "term",
+          "term": "Parabola a vrchol",
+          "definition": "Parabola je graf kvadratické funkce. Vrchol je její nejnižší (nebo nejvyšší) bod.",
+          "example": "y = x² má vrchol [0; 0]."
+        },
+        {
+          "type": "term",
+          "term": "Osa souměrnosti",
+          "definition": "Svislá přímka vrcholem. Graf je podle ní zrcadlově stejný.",
+          "example": "U y = x² je to osa y."
+        },
+        {
+          "type": "term",
+          "term": "Průsečík s osou x",
+          "definition": "Bod, kde graf protne vodorovnou osu, tedy kde y = 0.",
+          "example": "y = x² − 9 protne osu x v x = 3 a x = −3."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka pro y = x²"
+        },
+        {
+          "type": "table",
+          "head": [
+            "x",
+            "−2",
+            "−1",
+            "0",
+            "1",
+            "2"
+          ],
+          "rows": [
+            [
+              "y = x²",
+              "4",
+              "1",
+              "0",
+              "1",
+              "4"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vyber několik x kolem nuly (−2 až 2).",
+            "Dosaď do předpisu a spočítej y.",
+            "Zakresli body do grafu.",
+            "Spoj je plynulým obloukem (ne rovnými čarami)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak čísla mění graf"
+        },
+        {
+          "type": "list",
+          "items": [
+            "y = x² + c: posun o c nahoru (c > 0) nebo dolů (c < 0). Vrchol [0; c].",
+            "a > 0: otevřená nahoru, vrchol je nejnižší bod. a < 0: otevřená dolů.",
+            "Čím větší |a|, tím je parabola užší."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Graf je y = x² − 4. Najdi, kde protíná osu x. Pak změň c a sleduj posun."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": 0,
+            "c": -4
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kde protne parabola y = x² − 9 osu x (kladný průsečík)?",
+          "answer": "y = 0: x² − 9 = 0 → x² = 9 → x = 3 nebo x = −3. Kladný: **x = 3**."
+        },
+        {
+          "type": "example",
+          "question": "Jaká je nejmenší hodnota funkce y = x² + 5?",
+          "answer": "x² je vždy aspoň 0, nejmenší pro x = 0. Pak y = **5**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "y = 2x² pro x = 3: (2 · 3)² = 36",
+          "right": "2 · 3² = 2 · 9 = 18",
+          "why": "Na druhou se umocňuje jen x, ne dvojka. Mocnina má přednost před násobením."
+        },
+        {
+          "type": "summary",
+          "text": "y = ax² + bx + c, a ≠ 0. Graf parabola souměrná podle svislé osy vrcholem. c posouvá nahoru/dolů, znaménko a určuje směr otevření."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "y = x². Kolik je y pro x = −3?",
+      "answers": [
+        "9"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "y = x² − 4. Kolik je y pro x = 0?",
+      "answers": [
+        "-4",
+        "−4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Vrchol paraboly y = x² + 2:",
+      "options": [
+        "[0; 2]",
+        "[2; 0]",
+        "[0; −2]",
+        "[−2; 0]"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Parabola y = −2x² + 1 je otevřená…",
+      "options": [
+        "dolů",
+        "nahoru",
+        "doleva",
+        "doprava"
+      ],
+      "answer": 0,
+      "explanation": "a = −2 < 0"
+    },
+    {
+      "type": "input",
+      "question": "Kladný průsečík paraboly y = x² − 9 s osou x: x =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Graf y = x² je souměrný podle osy y.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "y = 3x + 2 je kvadratická funkce.",
+      "answer": false,
+      "explanation": "Chybí x², je lineární."
+    },
+    {
+      "type": "choice",
+      "question": "Která funkce je kvadratická?",
+      "options": [
+        "y = 2x² − x",
+        "y = 2/x",
+        "y = 2x − 1",
+        "y = √x"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "y = 2x². Kolik je y pro x = 3?",
+      "answers": [
+        "18"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Nejmenší hodnota funkce y = x² + 5 je…",
+      "options": [
+        "5",
+        "0",
+        "−5",
+        "nemá"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak vypadá graf y = x² a jaké má vlastnosti?",
+      "answer": "Parabola s vrcholem v počátku, otevřená nahoru, souměrná podle osy y. Funkční hodnoty jsou nezáporné."
+    },
+    {
+      "type": "open",
+      "question": "Co se stane s grafem y = x², když ho změníš na y = x² − 3?",
+      "answer": "Celá parabola se posune o 3 dolů. Vrchol bude v bodě [0; −3]."
+    }
+  ]
+}

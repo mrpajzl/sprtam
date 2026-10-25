@@ -1,0 +1,405 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cesko-v-regionu",
+  "title": "Česko a jeho regiony",
+  "emoji": "🇨🇿",
+  "explanations": [
+    {
+      "title": "Patra správy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Bydlíš v obci, ta leží v okrese, okres v kraji, kraj v Česku a Česko v EU. Každé patro rozhoduje o něčem jiném – obec o chodnících, kraj o středních školách, EU o dotacích."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, jak je Česko územně členěné, proč máme tolik obcí a jak se do toho promítá statistika EU."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obec",
+          "definition": "Nejmenší samosprávný celek se starostou a zastupitelstvem.",
+          "example": "Vesnice se 150 obyvateli i Brno jsou obce."
+        },
+        {
+          "type": "term",
+          "term": "Kraj",
+          "definition": "Vyšší samosprávný celek s hejtmanem. Česko má **14 krajů** (včetně Prahy).",
+          "example": "Jihomoravský kraj."
+        },
+        {
+          "type": "term",
+          "term": "NUTS",
+          "definition": "Systém EU, který dělí státy na srovnatelné statistické jednotky. Podle něj se porovnávají regiony a rozdělují peníze z fondů EU.",
+          "example": "NUTS 3 = kraje."
+        },
+        {
+          "type": "term",
+          "term": "Region soudržnosti (NUTS 2)",
+          "definition": "Uměle vytvořený celek z jednoho až tří krajů, aby byl dost velký pro čerpání peněz EU.",
+          "example": "Severozápad = Karlovarský + Ústecký kraj."
+        },
+        {
+          "type": "heading",
+          "text": "Hierarchie"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Úroveň",
+            "Jednotka",
+            "Počet"
+          ],
+          "rows": [
+            [
+              "NUTS 1",
+              "Česko",
+              "1"
+            ],
+            [
+              "NUTS 2",
+              "regiony soudržnosti",
+              "8"
+            ],
+            [
+              "NUTS 3",
+              "kraje",
+              "14"
+            ],
+            [
+              "LAU",
+              "okresy a obce",
+              "asi 6 250 obcí"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Proč tolik obcí"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Česko má historicky hustou síť malých vesnic.",
+            "Po roce 1990 se mnoho dříve sloučených obcí znovu osamostatnilo.",
+            "Dnes máme přes 6 000 obcí, většina má pod 1 000 obyvatel.",
+            "Patříme k nejrozdrobenějším státům Evropy – malé obce mají málo peněz i úředníků."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Regiony se liší i bohatstvím. Jádrem je **Praha** (patří k nejbohatším regionům EU podle HDP na obyvatele), dále Brno, Plzeň a Ostrava. Zaostávají hlavně **Ústecký a Karlovarský kraj**."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Kolik regionů soudržnosti a kolik krajů má Česko?",
+          "answer": "**8** regionů soudržnosti (NUTS 2) a **14** krajů (NUTS 3)."
+        },
+        {
+          "type": "example",
+          "question": "Proč se kraje spojovaly do regionů soudržnosti?",
+          "answer": "EU porovnává a podporuje regiony určité velikosti. Malé české kraje by byly příliš malé, proto se některé spojily (např. Olomoucký + Zlínský = Střední Morava)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Regiony soudržnosti (NUTS 2) a kraje jsou totéž.",
+          "right": "Krajů je 14, regionů soudržnosti 8. Region soudržnosti často zahrnuje 2–3 kraje.",
+          "why": "Kraje jsou samosprávy s hejtmanem. Regiony soudržnosti jsou jen statistické a dotační celky pro EU."
+        },
+        {
+          "type": "summary",
+          "text": "Česko má 14 krajů (NUTS 3), 8 regionů soudržnosti (NUTS 2) a přes 6 000 obcí – patří k nejrozdrobenějším v Evropě."
+        }
+      ]
+    },
+    {
+      "title": "Jádro a periferie",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V Praze firmy hledají lidi, byty jsou drahé a dálnice ucpané. V některých obcích na Jesenicku nebo Mostecku naopak chybí práce, mladí odcházejí a domy stojí prázdné. Česko má svá „jádra“ a své „periferie“."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, proč se regiony liší a co s tím mají společného uhlí, auta a odsun Němců."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jádro",
+          "definition": "Rozvinutá oblast s prací, firmami a službami, kam se lidé stěhují.",
+          "example": "Praha a její okolí."
+        },
+        {
+          "type": "term",
+          "term": "Periferie",
+          "definition": "Zaostávající oblast s menším počtem pracovních míst, odkud lidé odcházejí.",
+          "example": "Jesenicko, části pohraničí."
+        },
+        {
+          "type": "term",
+          "term": "Vnitřní periferie",
+          "definition": "Zaostávající území **uvnitř** státu, často na hranicích krajů, daleko od velkých měst.",
+          "example": "Pomezí Čech a Moravy na Vysočině."
+        },
+        {
+          "type": "term",
+          "term": "Strukturálně postižený region",
+          "definition": "Oblast, která závisela na jednom odvětví (uhlí, těžký průmysl), a když to upadlo, zůstaly problémy – nezaměstnanost, zničená krajina.",
+          "example": "Ústecký, Karlovarský a Moravskoslezský kraj."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď oblasti: táhnou rozvoj, nebo zaostávají?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Rozvojové oblasti",
+              "Strukturálně postižené / periferní"
+            ],
+            "items": [
+              {
+                "text": "Praha a okolí",
+                "group": 0
+              },
+              {
+                "text": "Brněnská metropolitní oblast",
+                "group": 0
+              },
+              {
+                "text": "Plzeňsko",
+                "group": 0
+              },
+              {
+                "text": "Ústecký kraj",
+                "group": 1
+              },
+              {
+                "text": "Karlovarský kraj",
+                "group": 1
+              },
+              {
+                "text": "pohraničí Jesenicka",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Proč pohraničí zaostává"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Po roce 1945 byla většina Němců z pohraničí **odsunuta** (asi 3 miliony lidí).",
+            "Nové osídlení nemělo k místu vazby, mnoho obcí zaniklo.",
+            "Na Mostecku a Sokolovsku těžba hnědého uhlí zničila krajinu a obce.",
+            "Útlum těžby a těžkého průmyslu po roce 1990 přinesl nezaměstnanost."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Specializace regionů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Region",
+            "Specializace"
+          ],
+          "rows": [
+            [
+              "Mladoboleslavsko",
+              "automobilový průmysl (Škoda)"
+            ],
+            [
+              "Mostecko",
+              "těžba hnědého uhlí"
+            ],
+            [
+              "Ostravsko",
+              "dříve černé uhlí a hutnictví, dnes restrukturalizace"
+            ],
+            [
+              "Karlovarsko",
+              "lázeňství"
+            ],
+            [
+              "jižní Morava",
+              "vinařství"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pro připomenutí členění: Česko má **14 krajů** (NUTS 3), **8 regionů soudržnosti** (NUTS 2) a přes **6 000 obcí**. Kolem Prahy probíhá **suburbanizace** – rostou satelitní obce a dojížďka."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Proč je Ústecký kraj strukturálně postižený?",
+          "answer": "Závisel na těžbě uhlí, chemii a energetice. Ty upadají. Zůstala poškozená krajina, nižší vzdělanost a vyšší nezaměstnanost, k tomu přerušené vazby po odsunu Němců."
+        },
+        {
+          "type": "example",
+          "question": "Jaké je postavení Česka v Evropě?",
+          "answer": "Malá otevřená **průmyslová** ekonomika napojená hlavně na Německo. Silný automobilový a strojírenský průmysl, nízká nezaměstnanost, ale méně vlastních značek a výzkumu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Periferie je vždycky jen u státní hranice.",
+          "right": "Periferie může být i uvnitř státu – vnitřní periferie, často na hranicích krajů.",
+          "why": "Rozhoduje vzdálenost od center a dopravních tras, ne poloha u hranice. Naopak Plzeňsko, nedaleko hranice s Německem, se rozvíjí díky blízkosti německého trhu."
+        },
+        {
+          "type": "summary",
+          "text": "Rozvoj táhnou velká města (Praha, Brno, Plzeň), problémy mají pánevní oblasti (Ústecko, Karlovarsko) a vnitřní periferie. Pohraničí poznamenal odsun Němců a těžba uhlí."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik regionů soudržnosti (NUTS 2) má Česko?",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik krajů (NUTS 3) má Česko?",
+      "answers": [
+        "14"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který kraj patří ke strukturálně postiženým?",
+      "options": [
+        "Ústecký",
+        "Praha",
+        "Jihomoravský",
+        "Středočeský"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Česko má velmi rozdrobenou sídelní strukturu s více než 6 000 obcemi.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co výrazně ovlivnilo osídlení českého pohraničí po roce 1945?",
+      "options": [
+        "odsun Němců",
+        "tání ledovců",
+        "vznik EU",
+        "privatizace"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je vnitřní periferie?",
+      "options": [
+        "zaostávající území uvnitř státu, často na hranicích krajů",
+        "centrum Prahy",
+        "hraniční přechod",
+        "průmyslová zóna"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj region a hospodářskou specializaci.",
+      "pairs": [
+        [
+          "Mladoboleslavsko",
+          "automobilový průmysl"
+        ],
+        [
+          "Mostecko",
+          "těžba hnědého uhlí"
+        ],
+        [
+          "Karlovarsko",
+          "lázeňství"
+        ],
+        [
+          "jižní Morava",
+          "vinařství"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Praha patří mezi nejbohatší regiony EU podle HDP na obyvatele (PPP).",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Která oblast prošla útlumem těžby černého uhlí a hutnictví?",
+      "options": [
+        "Ostravsko",
+        "Třeboňsko",
+        "Šumava",
+        "Vysočina"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je typické pro suburbanizaci kolem Prahy?",
+      "options": [
+        "růst satelitních obcí a dojížďky",
+        "vylidňování okolí",
+        "zánik dálnic",
+        "pokles cen bytů"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Proč jsou Ústecký a Karlovarský kraj strukturálně postižené?",
+      "answer": "Závisely na těžbě uhlí a těžkém průmyslu, které upadají. Mají poškozenou krajinu, nižší vzdělanost, vyšší nezaměstnanost a sociální problémy, částečně i kvůli odsunu Němců a přerušení vazeb osídlení."
+    },
+    {
+      "type": "open",
+      "question": "Zhodnoť postavení Česka v evropském a světovém hospodářství.",
+      "answer": "Česko je malá otevřená průmyslová ekonomika napojená hlavně na Německo. Silný je automobilový a strojírenský průmysl, slabší podíl domácích značek a výzkumu. Patří k vyspělým zemím s nízkou nezaměstnaností."
+    }
+  ]
+}

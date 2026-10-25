@@ -1,0 +1,415 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ochrana-prirody",
+  "title": "Ochrana přírody a životního prostředí",
+  "emoji": "♻️",
+  "explanations": [
+    {
+      "title": "Co přírodě škodí",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Léta jsou teplejší, v moři plavou plasty a některé druhy zvířat úplně mizí. Člověk dokáže přírodu měnit víc než kterýkoli jiný tvor. Často jí škodí, aniž by o tom věděl."
+        },
+        {
+          "type": "text",
+          "text": "Když pochopíš, co se děje a proč, můžeš sám rozhodnout, jak se chovat. Projdeme hlavní problémy životního prostředí jeden po druhém."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Životní prostředí",
+          "definition": "Všechno kolem nás, co ovlivňuje život: vzduch, voda, půda, rostliny, živočichové i města."
+        },
+        {
+          "type": "term",
+          "term": "Fosilní paliva",
+          "definition": "Uhlí, ropa a zemní plyn. Vznikla před miliony let ze zbytků organismů. Při spalování uvolňují CO₂ a další plyny."
+        },
+        {
+          "type": "term",
+          "term": "Skleníkový efekt",
+          "definition": "Některé plyny v atmosféře (hlavně CO₂ a metan) zadržují teplo u povrchu Země – jako sklo ve skleníku. Bez nich by byla na Zemi velká zima. Když jich přibývá, Země se otepluje."
+        },
+        {
+          "type": "term",
+          "term": "Ozonová vrstva",
+          "definition": "Vrstva plynu ozonu vysoko v atmosféře. Zachytává většinu škodlivého **UV záření** ze Slunce."
+        },
+        {
+          "type": "term",
+          "term": "Biotop",
+          "definition": "Místo, kde určitý druh žije a má vše, co potřebuje.",
+          "example": "Mokřad pro žáby, starý les pro datla."
+        },
+        {
+          "type": "heading",
+          "text": "Hlavní problémy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Problém",
+            "Příčina",
+            "Následek"
+          ],
+          "rows": [
+            [
+              "zesílený skleníkový efekt",
+              "CO₂ ze spalování fosilních paliv",
+              "oteplování, sucha, tání ledovců"
+            ],
+            [
+              "kyselé deště",
+              "oxidy síry a dusíku z elektráren a aut",
+              "odumírání lesů, kyselé půdy a vody"
+            ],
+            [
+              "ozonová díra",
+              "freony (dříve ve sprejích a ledničkách)",
+              "víc UV záření"
+            ],
+            [
+              "mizení druhů",
+              "ničení biotopů, znečištění",
+              "chudší příroda, narušené ekosystémy"
+            ],
+            [
+              "odpady a plasty",
+              "jednorázové obaly",
+              "znečištěná moře a půda"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď zdroje energie: obnoví se samy, nebo jednou dojdou?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Obnovitelné",
+              "Neobnovitelné"
+            ],
+            "items": [
+              {
+                "text": "slunce",
+                "group": 0
+              },
+              {
+                "text": "uhlí",
+                "group": 1
+              },
+              {
+                "text": "vítr",
+                "group": 0
+              },
+              {
+                "text": "ropa",
+                "group": 1
+              },
+              {
+                "text": "tekoucí voda",
+                "group": 0
+              },
+              {
+                "text": "zemní plyn",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč se ozonová díra začala zmenšovat?",
+          "answer": "Státy se v roce 1987 dohodly (Montrealský protokol) na zákazu **freonů**. Ozonová vrstva se od té doby pomalu obnovuje. Je to důkaz, že společná dohoda může pomoci."
+        },
+        {
+          "type": "example",
+          "question": "Jak spalování uhlí v elektrárně souvisí s oteplováním?",
+          "answer": "Při spalování vzniká **CO₂**. Ten zesiluje **skleníkový efekt** – v atmosféře se zadrží víc tepla a Země se otepluje."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ozonová díra a skleníkový efekt je totéž.",
+          "right": "Jsou to dva různé problémy s jinými příčinami.",
+          "why": "Ozonovou díru způsobily freony a vede k většímu UV záření. Skleníkový efekt zesiluje CO₂ a vede k oteplování."
+        },
+        {
+          "type": "summary",
+          "text": "Skleníkový efekt zesiluje CO₂ z fosilních paliv, kyselé deště oxidy síry, ozonovou vrstvu poškozovaly freony. Druhy mizí hlavně ničením biotopů."
+        }
+      ]
+    },
+    {
+      "title": "Jak přírodu chránit",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V Krkonoších nesmíš sejít z cesty, v rezervaci trhat květiny a v národním parku stanovat kde se ti zlíbí. Tato pravidla nejsou proto, aby ti někdo něco zakazoval. Chrání vzácná místa, která by jinak zmizela."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se, jak je příroda u nás chráněná zákonem, a hlavně co můžeš pro přírodu udělat ty sám."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Chráněné území",
+          "definition": "Místo, kde platí zvláštní pravidla na ochranu přírody."
+        },
+        {
+          "type": "term",
+          "term": "Národní park (NP)",
+          "definition": "Rozsáhlé území s nejcennější přírodou, nejpřísněji chráněné.",
+          "example": "Krkonošský národní park – nejstarší u nás (1963)."
+        },
+        {
+          "type": "term",
+          "term": "Chráněná krajinná oblast (CHKO)",
+          "definition": "Rozsáhlé území s cennou krajinou. **Žijí v ní lidé**, jsou tam obce i pole, jen se hospodaří šetrně.",
+          "example": "CHKO Český ráj, CHKO Beskydy."
+        },
+        {
+          "type": "term",
+          "term": "Červený seznam",
+          "definition": "Seznam ohrožených druhů rostlin a živočichů. Ukazuje, které druhy potřebují ochranu."
+        },
+        {
+          "type": "term",
+          "term": "Recyklace",
+          "definition": "Znovu využití odpadu jako suroviny – ze starého papíru se vyrobí nový."
+        },
+        {
+          "type": "heading",
+          "text": "Národní parky ČR"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Krkonošský (nejstarší, 1963)",
+            "Šumava",
+            "Podyjí",
+            "České Švýcarsko (nejmladší, 2000)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Co můžeš dělat ty"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Třiď odpad** – papír do modrého, plasty do žlutého, sklo do zeleného (čiré do bílého) kontejneru.",
+            "**Omez obaly** – vlastní taška, láhev na pití, méně jednorázových věcí.",
+            "**Šetři energii a vodu** – zhasínej, sprcha místo vany.",
+            "**Choď pěšky, jezdi na kole nebo MHD.**",
+            "V chráněném území **dodržuj pravidla** – choď po cestách, netrhej rostliny."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Kam patří odpad? Roztřiď ho do kontejnerů."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Modrý (papír)",
+              "Žlutý (plast)",
+              "Zelený (sklo)"
+            ],
+            "items": [
+              {
+                "text": "noviny",
+                "group": 0
+              },
+              {
+                "text": "PET láhev",
+                "group": 1
+              },
+              {
+                "text": "láhev od kečupu (sklo)",
+                "group": 2
+              },
+              {
+                "text": "krabice od bot",
+                "group": 0
+              },
+              {
+                "text": "kelímek od jogurtu",
+                "group": 1
+              },
+              {
+                "text": "zavařovací sklenice",
+                "group": 2
+              },
+              {
+                "text": "sešit",
+                "group": 0
+              },
+              {
+                "text": "igelitový sáček",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kamarád tvrdí, že v CHKO nikdo nesmí bydlet. Má pravdu?",
+          "answer": "Nemá. V **CHKO** jsou obce a lidé tam žijí a hospodaří. Musí jen dodržovat pravidla šetrného hospodaření."
+        },
+        {
+          "type": "example",
+          "question": "Proč je lepší pít vodu z vlastní láhve než kupovat balenou?",
+          "answer": "Ušetříš plastovou láhev. Méně plastu znamená méně odpadu i méně ropy a energie na výrobu a dopravu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Jeden člověk přírodě nepomůže, je to jen na státu.",
+          "right": "Každodenní rozhodnutí milionů lidí mají velký dopad.",
+          "why": "Když každý třídí a šetří, ušetří se obrovské množství surovin a energie. Stát a lidé se doplňují."
+        },
+        {
+          "type": "summary",
+          "text": "Přírodu chrání národní parky (nejstarší Krkonošský), CHKO (žijí v nich lidé) a červené seznamy. Ty můžeš třídit, omezovat obaly a šetřit energií."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Nejstarší národní park v ČR je…",
+      "options": [
+        "Krkonošský",
+        "Šumava",
+        "Podyjí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Do jaké barvy kontejneru patří papír?",
+      "options": [
+        "modré",
+        "žluté",
+        "zelené"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Spalování fosilních paliv zesiluje skleníkový efekt.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Seznam ohrožených druhů se nazývá … seznam.",
+      "answers": [
+        "červený",
+        "cerveny"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ozonovou vrstvu poškozovaly…",
+      "options": [
+        "freony",
+        "kyslík",
+        "vodní pára"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj problém s příčinou.",
+      "pairs": [
+        [
+          "kyselé deště",
+          "oxidy síry"
+        ],
+        [
+          "ozonová díra",
+          "freony"
+        ],
+        [
+          "skleníkový efekt",
+          "CO₂ ze spalování"
+        ],
+        [
+          "mizení druhů",
+          "ničení biotopů"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ozonová vrstva chrání Zemi před UV zářením.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který zdroj energie je obnovitelný?",
+      "options": [
+        "slunce",
+        "uhlí",
+        "zemní plyn"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V CHKO nesmí žít lidé.",
+      "answer": false,
+      "explanation": "V CHKO jsou obce a lidé hospodaří šetrně."
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená zkratka CHKO?",
+      "options": [
+        "chráněná krajinná oblast",
+        "chráněná kulturní oblast",
+        "centrální hospodářská komora"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co můžeš sám udělat pro životní prostředí?",
+      "answer": "Třídit odpad, omezit obaly a plasty, šetřit vodou a energií, chodit pěšky nebo jezdit MHD a na kole, nekupovat zbytečnosti."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, co je skleníkový efekt a proč se zesiluje.",
+      "answer": "Plyny jako CO₂ zadržují teplo u povrchu Země. Spalováním uhlí, ropy a plynu jich přibývá, a tak se Země otepluje."
+    }
+  ]
+}

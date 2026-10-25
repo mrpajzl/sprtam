@@ -1,0 +1,352 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "den-a-tyden",
+  "title": "Den a týden",
+  "emoji": "📅",
+  "explanations": [
+    {
+      "title": "Hodiny a den",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ráno vstáváš, v poledne obědváš, večer jdeš spát. Každý den se to opakuje."
+        },
+        {
+          "type": "text",
+          "text": "Když znáš části dne a umíš se podívat na hodiny, víš, kdy jít do školy a kdy je čas na spaní."
+        },
+        {
+          "type": "heading",
+          "text": "Části dne"
+        },
+        {
+          "type": "term",
+          "term": "Ráno",
+          "definition": "Začátek dne. Vstáváme a snídáme.",
+          "example": "Ráno se umyji a nasnídám."
+        },
+        {
+          "type": "term",
+          "term": "Dopoledne",
+          "definition": "Čas mezi ránem a polednem. Jsme ve škole.",
+          "example": "Dopoledne máme čtení a počty."
+        },
+        {
+          "type": "term",
+          "term": "Poledne",
+          "definition": "Prostředek dne. Obědváme.",
+          "example": "V poledne jím polévku."
+        },
+        {
+          "type": "term",
+          "term": "Odpoledne",
+          "definition": "Čas po obědě. Hrajeme si, jdeme ven.",
+          "example": "Odpoledne hraju fotbal."
+        },
+        {
+          "type": "term",
+          "term": "Večer a noc",
+          "definition": "Večer se stmívá a chystáme se spát. V noci je tma a spíme.",
+          "example": "Večer si vyčistím zuby."
+        },
+        {
+          "type": "text",
+          "text": "Části dne jdou pořád dokola. Podívej se, jak jdou za sebou."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "ráno 🌅",
+              "dopoledne 🏫",
+              "poledne 🍲",
+              "odpoledne ⚽",
+              "večer 🌆",
+              "noc 🌙"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Hodiny"
+        },
+        {
+          "type": "term",
+          "term": "Ručičky",
+          "definition": "Dvě šipky na hodinách. **Malá** ukazuje hodiny. **Velká** ukazuje minuty.",
+          "example": "Malá na 7, velká na 12 = 7 hodin."
+        },
+        {
+          "type": "text",
+          "text": "Když je velká ručička nahoře na **12**, je celá hodina. Pak stačí přečíst, kam ukazuje malá. Posouvej ručičky a zkus nastavit 8 hodin."
+        },
+        {
+          "type": "widget",
+          "widget": "clock",
+          "props": {
+            "hours": 7,
+            "minutes": 0
+          }
+        },
+        {
+          "type": "example",
+          "question": "Velká ručička je nahoře na 12, malá na 8. Kolik je?",
+          "answer": "Velká na 12 → celá hodina. Malá na 8 → **8 hodin**."
+        },
+        {
+          "type": "example",
+          "question": "Malá ručička je na 3, velká na 12. Kolik je hodin?",
+          "answer": "Velká na 12 → celá hodina. Malá na 3 → **3 hodiny**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Velká ručička ukazuje hodiny.",
+          "right": "Malá ručička ukazuje hodiny, velká minuty.",
+          "why": "Velká ručička obíhá rychle – za hodinu oběhne celé kolo. Malá jde pomalu a ukazuje hodiny."
+        },
+        {
+          "type": "summary",
+          "text": "Den: ráno, dopoledne, poledne, odpoledne, večer, noc. Malá ručička ukazuje hodiny, velká minuty."
+        }
+      ]
+    },
+    {
+      "title": "Týden",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Některé dny jdeš do školy. Jiné dny jsi doma s rodinou. Jak poznáš, který den je který?"
+        },
+        {
+          "type": "text",
+          "text": "Dny mají jména. Jdou pořád ve stejném pořadí. Sedm dní dohromady je jeden týden."
+        },
+        {
+          "type": "term",
+          "term": "Den",
+          "definition": "Čas od rána do rána. Den a noc dohromady.",
+          "example": "Dnes je pondělí, zítra bude úterý."
+        },
+        {
+          "type": "term",
+          "term": "Týden",
+          "definition": "Sedm dní za sebou. Pak začíná nový týden.",
+          "example": "Od pondělí do neděle."
+        },
+        {
+          "type": "heading",
+          "text": "Dny v týdnu"
+        },
+        {
+          "type": "text",
+          "text": "Dny jdou v tomto pořadí. Klepej a čti si je nahlas."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "pondělí",
+            "úterý",
+            "středa",
+            "čtvrtek",
+            "pátek",
+            "sobota",
+            "neděle"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pomůcka: **úterý** je druhý den, **čtvrtek** je čtvrtý, **pátek** pátý. Středa je uprostřed pracovních dnů."
+        },
+        {
+          "type": "term",
+          "term": "Víkend",
+          "definition": "Sobota a neděle. Nechodíme do školy.",
+          "example": "O víkendu jedeme k babičce."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď dny: kdy jdeš do školy a kdy je víkend?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Škola 🏫",
+              "Víkend 🎈"
+            ],
+            "items": [
+              {
+                "text": "pondělí",
+                "group": 0
+              },
+              {
+                "text": "úterý",
+                "group": 0
+              },
+              {
+                "text": "středa",
+                "group": 0
+              },
+              {
+                "text": "čtvrtek",
+                "group": 0
+              },
+              {
+                "text": "pátek",
+                "group": 0
+              },
+              {
+                "text": "sobota",
+                "group": 1
+              },
+              {
+                "text": "neděle",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Včera, dnes, zítra"
+        },
+        {
+          "type": "term",
+          "term": "Včera, dnes, zítra",
+          "definition": "**Dnes** je teď. **Včera** byl den předtím. **Zítra** bude den potom.",
+          "example": "Dnes je středa. Včera bylo úterý. Zítra bude čtvrtek."
+        },
+        {
+          "type": "example",
+          "question": "Dnes je pondělí. Jaký den bude zítra?",
+          "answer": "Po pondělí jde v řadě **úterý**."
+        },
+        {
+          "type": "example",
+          "question": "Který den je před pátkem?",
+          "answer": "Řekni dny popořadě: …středa, čtvrtek, pátek. Před pátkem je **čtvrtek**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Po neděli přijde sobota.",
+          "right": "Po neděli přijde pondělí.",
+          "why": "Neděle je poslední den týdne. Pak začíná nový týden zase pondělím."
+        },
+        {
+          "type": "summary",
+          "text": "Týden má 7 dní: pondělí, úterý, středa, čtvrtek, pátek, sobota, neděle. Sobota a neděle jsou víkend."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik dní má týden?",
+      "answers": [
+        "7",
+        "sedm"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který den je po pondělí?",
+      "options": [
+        "úterý",
+        "středa",
+        "neděle"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který den je před pátkem?",
+      "options": [
+        "čtvrtek",
+        "sobota",
+        "středa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď dny.",
+      "items": [
+        "pondělí",
+        "úterý",
+        "středa",
+        "čtvrtek"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Sobota a neděle jsou víkend.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "V noci je světlo.",
+      "answer": false,
+      "explanation": "V noci je tma a spíme."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď části dne.",
+      "items": [
+        "ráno",
+        "poledne",
+        "večer",
+        "noc"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdy obědváme?",
+      "options": [
+        "v poledne",
+        "v noci",
+        "ráno"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která ručička ukazuje hodiny?",
+      "options": [
+        "malá",
+        "velká"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Malá ručička je na 3, velká na 12. Kolik je hodin?",
+      "answers": [
+        "3",
+        "tři",
+        "15"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co děláš ráno a co večer?",
+      "answer": "Ráno vstanu, umyji se, nasnídám se a jdu do školy. Večer se umyji, vyčistím si zuby a jdu spát."
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj dny v týdnu.",
+      "answer": "Pondělí, úterý, středa, čtvrtek, pátek, sobota, neděle."
+    }
+  ]
+}

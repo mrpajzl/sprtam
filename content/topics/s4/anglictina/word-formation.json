@@ -1,0 +1,477 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "word-formation",
+  "title": "Tvoření slov",
+  "emoji": "🧱",
+  "explanations": [
+    {
+      "title": "Rozlož slovo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky ze slova „pomoc“ uděláš „bezmocný“, „pomocník“, „pomoci“. Přidáváš kousky na začátek a na konec. Angličtina to dělá úplně stejně: z *help* vznikne *helpful*, *unhelpful*, *helpless*, *helper*."
+        },
+        {
+          "type": "text",
+          "text": "Když umíš slova rozkládat, poznáš význam i neznámého slova – a v maturitní úloze „utvoř správný tvar slova“ získáš body. Stačí znát pár kousků a jeden postup."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Základní část slova, která nese hlavní význam.",
+          "example": "*help* v *unhelpful*"
+        },
+        {
+          "type": "term",
+          "term": "Předpona (prefix)",
+          "definition": "Kousek **před** kořenem. Mění **význam**, často dělá zápor.",
+          "example": "***un**happy* = nešťastný, ***dis**agree* = nesouhlasit"
+        },
+        {
+          "type": "term",
+          "term": "Přípona (suffix)",
+          "definition": "Kousek **za** kořenem. Mění **slovní druh**.",
+          "example": "*care* → *care**ful*** (podst. jméno → přídavné jméno)"
+        },
+        {
+          "type": "term",
+          "term": "Slovní druh",
+          "definition": "Druh slova podle toho, co dělá ve větě: **podstatné jméno** (věc: *kindness*), **přídavné jméno** (vlastnost: *kind*), **sloveso** (děj: *develop*), **příslovce** (jak: *kindly*).",
+          "example": "*care* (péče) → *careful* (pečlivý) → *carefully* (pečlivě)"
+        },
+        {
+          "type": "heading",
+          "text": "Rozložená slova"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na barevné části. Zkus každé slovo přeložit tak, že přeložíš kousky zvlášť a pak je složíš."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "un",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "help",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "ful",
+                    "label": "přípona"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "dis",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "agree",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "ment",
+                    "label": "přípona"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "care",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "less",
+                    "label": "přípona"
+                  },
+                  {
+                    "text": "ness",
+                    "label": "přípona"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "*un-help-ful* = ne + pomoc + plný → neochotný, nenápomocný",
+            "*dis-agree-ment* = ne + souhlasit + (podst. jméno) → nesouhlas",
+            "*care-less-ness* = péče + bez + (podst. jméno) → nedbalost"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Záporné předpony"
+        },
+        {
+          "type": "list",
+          "items": [
+            "*un-*: *unhappy, unlikely*",
+            "*in-*: *incorrect*; před p, m, b se mění na *im-*: *impossible, immature*",
+            "před r *ir-*: *irregular, irresponsible*; před l *il-*: *illegal*",
+            "*dis-*: *dishonest, disagree, disappear*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup v testu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti celou větu, ne jen mezeru.",
+            "Urči, jaký **slovní druh** do mezery patří (za *the* → podstatné jméno; před podstatným jménem → přídavné jméno; u slovesa „jak?“ → příslovce).",
+            "Zvaž, jestli věta nechce **zápor** (předpona) nebo **množné číslo**.",
+            "Přidej správnou příponu nebo předponu a zkontroluj pravopis."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "*The ___ (KIND) of strangers surprised me.*",
+          "answer": "Za *the* a před *of* → podstatné jméno. *kind* + *-ness* = ***kindness*** (laskavost)."
+        },
+        {
+          "type": "example",
+          "question": "*Please drive ___ (CARE).*",
+          "answer": "Říká, **jak** řídit → příslovce. *care* → *careful* → ***carefully***."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Please drive careful.",
+          "right": "Please drive carefully.",
+          "why": "Sloveso (*drive*) popisuje příslovce (*-ly*), ne přídavné jméno."
+        },
+        {
+          "type": "summary",
+          "text": "Nejdřív zjisti, jaký slovní druh do mezery patří. Přípona mění slovní druh, předpona mění význam (často zápor)."
+        }
+      ]
+    },
+    {
+      "title": "Přípony a předpony",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Anglické přípony a předpony nejsou náhodné. Každá přípona patří k určitému slovnímu druhu a každá záporná předpona má svá pravidla. Tady je máš přehledně v tabulkách."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Část slova **před** kořenem.",
+          "example": "***im**possible*"
+        },
+        {
+          "type": "term",
+          "term": "Přípona",
+          "definition": "Část slova **za** kořenem.",
+          "example": "*develop**ment***"
+        },
+        {
+          "type": "term",
+          "term": "Slovní druh",
+          "definition": "Podstatné jméno (věc, jev), přídavné jméno (jaký), sloveso (co dělá), příslovce (jak).",
+          "example": "*danger* – *dangerous* – *endanger* – *dangerously*"
+        },
+        {
+          "type": "heading",
+          "text": "Přípony podle slovního druhu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Slovní druh",
+            "Přípony",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "podstatné jméno",
+              "-ness, -ment, -tion/-sion, -ity, -ance, -al",
+              "happiness, development, decision, arrival"
+            ],
+            [
+              "přídavné jméno",
+              "-ful, -less, -ous, -able, -al",
+              "dangerous, reliable, homeless"
+            ],
+            [
+              "sloveso",
+              "-ise/-ize, -en, -ify",
+              "widen, simplify"
+            ],
+            [
+              "příslovce",
+              "-ly",
+              "carefully"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor na *-less*: znamená „bez“. *homeless* = bez domova, *careless* = nedbalý (bez péče)."
+        },
+        {
+          "type": "heading",
+          "text": "Záporné předpony"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Předpona",
+            "Kdy",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "un-",
+              "nejčastější",
+              "unhappy, unlikely, uncomfortable"
+            ],
+            [
+              "in-",
+              "hlavně u slov latinského původu",
+              "incorrect, invisible"
+            ],
+            [
+              "im-",
+              "před p, m, b",
+              "impossible, immature, impatient"
+            ],
+            [
+              "ir-",
+              "před r",
+              "irregular, irresponsible"
+            ],
+            [
+              "il-",
+              "před l",
+              "illegal, illogical"
+            ],
+            [
+              "dis-",
+              "u sloves i přídavných jmen",
+              "disagree, dishonest, dislike, disappear"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Které z *un-* / *in-* / *dis-* se použije, se nedá vždy odvodit – učí se se slovíčkem. Pravidla pro *im-, ir-, il-* ale platí spolehlivě."
+        },
+        {
+          "type": "example",
+          "question": "Opak slova *legal*?",
+          "answer": "Začíná na *l* → *il-*: ***illegal***."
+        },
+        {
+          "type": "example",
+          "question": "Podstatné jméno od *decide*?",
+          "answer": "*decide* → *decision* (přípona *-sion*, *d* se mění na *s*). ***decision***"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Ke každému slovu přiřaď správnou zápornou předponu."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "un-",
+              "in- / im-",
+              "dis-"
+            ],
+            "items": [
+              {
+                "text": "___likely",
+                "group": 0
+              },
+              {
+                "text": "___comfortable",
+                "group": 0
+              },
+              {
+                "text": "___possible",
+                "group": 1
+              },
+              {
+                "text": "___correct",
+                "group": 1
+              },
+              {
+                "text": "___patient",
+                "group": 1
+              },
+              {
+                "text": "___honest",
+                "group": 2
+              },
+              {
+                "text": "___appear",
+                "group": 2
+              },
+              {
+                "text": "___like",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "unresponsible",
+          "right": "irresponsible",
+          "why": "Před *r* se používá *ir-*."
+        },
+        {
+          "type": "summary",
+          "text": "Přípona prozradí slovní druh (*-ness* podst. jméno, *-ful* přídavné jméno, *-ly* příslovce). *im-* před p, m, b; *ir-* před r; *il-* před l."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "The ___ (KIND) of strangers surprised me.",
+      "answers": [
+        "kindness"
+      ],
+      "explanation": "Za členem the → podstatné jméno."
+    },
+    {
+      "type": "input",
+      "question": "It is ___ (POSSIBLE) to finish it today. (zápor)",
+      "answers": [
+        "impossible"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Please drive ___ (CARE).",
+      "answers": [
+        "carefully"
+      ],
+      "explanation": "Způsob → příslovce."
+    },
+    {
+      "type": "choice",
+      "question": "Opak slova *legal*:",
+      "options": [
+        "illegal",
+        "unlegal",
+        "inlegal",
+        "dislegal"
+      ],
+      "answer": 0,
+      "explanation": "Před l → il-."
+    },
+    {
+      "type": "choice",
+      "question": "Podstatné jméno od *develop*:",
+      "options": [
+        "development",
+        "developness",
+        "developation",
+        "developity"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Přídavné jméno od *danger*:",
+      "options": [
+        "dangerous",
+        "dangerful",
+        "dangerly",
+        "dangerness"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Přípona *-less* znamená „bez“: *homeless* = bez domova.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Opak slova *responsible* je *unresponsible*.",
+      "answer": false,
+      "explanation": "Správně: irresponsible."
+    },
+    {
+      "type": "match",
+      "question": "Spoj sloveso s podstatným jménem.",
+      "pairs": [
+        [
+          "decide",
+          "decision"
+        ],
+        [
+          "improve",
+          "improvement"
+        ],
+        [
+          "arrive",
+          "arrival"
+        ],
+        [
+          "refuse",
+          "refusal"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď části slova „unbelievable“.",
+      "items": [
+        "un",
+        "believ",
+        "able"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak postupuješ v úloze na tvoření slov?",
+      "answer": "Přečtu celou větu a podle okolí určím slovní druh (za členem podstatné jméno, u slovesa příslovce…). Pak zvážím, zda nepotřebuji zápor nebo množné číslo, a připojím správnou příponu či předponu."
+    },
+    {
+      "type": "open",
+      "question": "Uveď tři záporné předpony a ke každé příklad.",
+      "answer": "Např. un- (unhappy), in- / im- (incorrect, impossible), dis- (dishonest), ir- (irregular), il- (illegal)."
+    }
+  ]
+}

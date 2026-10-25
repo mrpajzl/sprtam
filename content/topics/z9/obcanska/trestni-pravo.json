@@ -1,0 +1,407 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "trestni-pravo",
+  "title": "Trestní právo",
+  "emoji": "🚔",
+  "explanations": [
+    {
+      "title": "Rozbité auto",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Šestnáctiletý Marek s kamarády v noci rozbije zrcátka u deseti aut. Druhý den ho najde policie. Co se s ním stane? Jde do vězení? A co kdyby mu bylo 13?"
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, co je trestný čin, od kolika let za něj člověk odpovídá a jak probíhá trestní řízení."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Trestní právo",
+          "definition": "Část práva, která říká, co je trestný čin a jaký trest za něj hrozí. Hlavní zákon je **trestní zákoník**."
+        },
+        {
+          "type": "term",
+          "term": "Trestný čin",
+          "definition": "Závažné protiprávní jednání, které zákon označuje za trestné.",
+          "example": "Krádež, loupež, poškození cizí věci velké hodnoty."
+        },
+        {
+          "type": "term",
+          "term": "Přestupek",
+          "definition": "Méně závažné porušení zákona. Řeší ho **úřad** (např. obecní úřad, policie), obvykle pokutou.",
+          "example": "Rušení nočního klidu, přejití na červenou."
+        },
+        {
+          "type": "term",
+          "term": "Trestní odpovědnost",
+          "definition": "Povinnost nést trest za trestný čin. Začíná v **15 letech**."
+        },
+        {
+          "type": "heading",
+          "text": "Co se stane s Markem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Policie** případ vyšetřuje: sbírá důkazy, vyslechne svědky.",
+            "**Státní zástupce** podá k soudu **obžalobu** – návrh, aby soud Marka potrestal.",
+            "Marek má **obhájce**, který ho hájí.",
+            "Dokud soud nerozhodne, hledí se na Marka jako na nevinného – **presumpce neviny**.",
+            "**Soud** rozhodne o vině a trestu.",
+            "Markovi je 16 → je **mladistvý**. Soud pro mládež mu dá spíš výchovné opatření nebo mírnější trest, často i povinnost nahradit škodu."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Podle věku"
+        },
+        {
+          "type": "table",
+          "head": [
+            "věk",
+            "jak se nazývá",
+            "co hrozí"
+          ],
+          "rows": [
+            [
+              "do 15 let",
+              "dítě – nemůže spáchat trestný čin, jen „čin jinak trestný“",
+              "výchovná opatření (soud pro mládež)"
+            ],
+            [
+              "15–18 let",
+              "mladistvý",
+              "mírnější tresty a opatření"
+            ],
+            [
+              "od 18 let",
+              "dospělý",
+              "plné tresty podle trestního zákoníku"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď jednání: přestupek, nebo trestný čin?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "přestupek",
+              "trestný čin"
+            ],
+            "items": [
+              {
+                "text": "rušení nočního klidu",
+                "group": 0
+              },
+              {
+                "text": "přejití na červenou",
+                "group": 0
+              },
+              {
+                "text": "odhození odpadků na ulici",
+                "group": 0
+              },
+              {
+                "text": "loupež",
+                "group": 1
+              },
+              {
+                "text": "vražda",
+                "group": 1
+              },
+              {
+                "text": "vydírání",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Třináctiletá Eva ukradne v obchodě drahý parfém. Spáchala trestný čin?",
+          "answer": "Je jí méně než 15 → není trestně odpovědná. Jde o **čin jinak trestný**. Soud pro mládež jí může uložit výchovné opatření."
+        },
+        {
+          "type": "example",
+          "question": "Kdo rozhodne, jestli je Marek vinen?",
+          "answer": "Policie jen vyšetřuje a státní zástupce obžalobu podává. O vině a trestu rozhoduje vždy **soud**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když policie někoho zadrží, je jasné, že je vinen.",
+          "right": "Vinu může vyslovit jen soud. Do té doby platí presumpce neviny.",
+          "why": "Policie se může mýlit. Proto o vině rozhoduje nezávislý soud po zvážení důkazů."
+        },
+        {
+          "type": "summary",
+          "text": "Trestní odpovědnost od 15 let; 15–18 = mladistvý. Přestupek je méně závažný (řeší úřad), trestný čin závažnější (rozhoduje soud). Platí presumpce neviny."
+        }
+      ]
+    },
+    {
+      "title": "Pojmy a pravidla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve zprávách zazní: „Obviněný mladistvý spáchal přečin, hrozí mu podmínka.“ Abys tomu rozuměl, potřebuješ pár přesných pojmů."
+        },
+        {
+          "type": "text",
+          "text": "Uspořádáme si je od nejlehčího porušení po nejtěžší a ukážeme, kdo co v trestním řízení dělá."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Protiprávní jednání",
+          "definition": "Jednání, které porušuje zákon."
+        },
+        {
+          "type": "term",
+          "term": "Přestupek",
+          "definition": "Lehčí protiprávní jednání. Řeší ho úřad, trestem bývá napomenutí nebo pokuta."
+        },
+        {
+          "type": "term",
+          "term": "Trestný čin",
+          "definition": "Závažné protiprávní jednání popsané v **trestním zákoníku**. Rozhoduje o něm soud."
+        },
+        {
+          "type": "term",
+          "term": "Přečin a zločin",
+          "definition": "Dva druhy trestných činů. **Přečin** je méně závažný, **zločin** závažnější (hrozí delší vězení)."
+        },
+        {
+          "type": "term",
+          "term": "Presumpce neviny",
+          "definition": "Na obviněného se hledí jako na nevinného, dokud ho soud pravomocně neodsoudí."
+        },
+        {
+          "type": "heading",
+          "text": "Schody závažnosti"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Přestupek** – řeší úřad (pokuta). Např. rušení nočního klidu.",
+            "**Přečin** – lehčí trestný čin, rozhoduje soud.",
+            "**Zločin** – těžší trestný čin, rozhoduje soud, hrozí delší vězení.",
+            "**Zvlášť závažný zločin** – nejtěžší činy, např. vražda."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Věk a odpovědnost"
+        },
+        {
+          "type": "list",
+          "items": [
+            "do 15 let: **dítě**, není trestně odpovědné – jeho čin se nazývá „čin jinak trestný“",
+            "15–18 let: **mladistvý**, odpovídá, ale platí mírnější pravidla",
+            "od 18 let: plná trestní odpovědnost"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kdo je kdo u soudu"
+        },
+        {
+          "type": "text",
+          "text": "Zkus říct roli, pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "soudce",
+                "back": "rozhoduje o vině a trestu"
+              },
+              {
+                "front": "státní zástupce",
+                "back": "podává obžalobu"
+              },
+              {
+                "front": "obhájce",
+                "back": "hájí obžalovaného"
+              },
+              {
+                "front": "svědek",
+                "back": "vypovídá, co viděl"
+              },
+              {
+                "front": "poškozený",
+                "back": "ten, komu čin způsobil škodu"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Druhy trestů"
+        },
+        {
+          "type": "text",
+          "text": "Soud může uložit například: odnětí svobody (vězení), podmíněný trest („podmínka“ – do vězení jde, jen když znovu poruší zákon), obecně prospěšné práce, peněžitý trest nebo zákaz činnosti (třeba řízení)."
+        },
+        {
+          "type": "example",
+          "question": "Řidič dostal od soudu zákaz řízení na 2 roky. Kterou moc a který zákon to připomíná?",
+          "answer": "Rozhodl **soud** (soudní moc) podle **trestního zákoníku**. Zákaz činnosti je jeden z trestů."
+        },
+        {
+          "type": "example",
+          "question": "Jaký je rozdíl mezi přestupkem a trestným činem?",
+          "answer": "Přestupek je **méně závažný**, řeší ho úřad a trestá pokutou. Trestný čin je **závažnější**, rozhoduje soud a hrozí i vězení."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dítě mladší 15 let může za cokoli dostat vězení.",
+          "right": "Dítě do 15 let není trestně odpovědné. Soud pro mládež mu může uložit jen výchovná opatření.",
+          "why": "Zákon počítá s tím, že dítě ještě není dost vyspělé. Má být hlavně vychováno, ne potrestáno vězením."
+        },
+        {
+          "type": "summary",
+          "text": "Přestupek (úřad) < přečin < zločin (soud). Trestní odpovědnost od 15 let, mladistvý 15–18. Hlavní zákon: trestní zákoník. Presumpce neviny chrání každého obviněného."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Od kolika let je člověk trestně odpovědný?",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo rozhoduje o vině a trestu za trestný čin?",
+      "options": [
+        "soud",
+        "policie",
+        "starosta",
+        "škola"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Přestupek je méně závažný než trestný čin.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak se dělí trestné činy?",
+      "options": [
+        "přečiny a zločiny",
+        "přestupky a delikty",
+        "malé a velké",
+        "úmyslné a vrozené"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Mladistvý je podle zákona člověk ve věku…",
+      "options": [
+        "15–18 let",
+        "12–15 let",
+        "18–21 let",
+        "6–15 let"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Presumpce neviny znamená, že na obviněného se hledí jako na nevinného, dokud soud nerozhodne.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj osobu v trestním řízení a roli.",
+      "pairs": [
+        [
+          "soudce",
+          "rozhoduje"
+        ],
+        [
+          "státní zástupce",
+          "podává obžalobu"
+        ],
+        [
+          "obhájce",
+          "hájí obžalovaného"
+        ],
+        [
+          "svědek",
+          "vypovídá, co viděl"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je přestupek?",
+      "options": [
+        "rušení nočního klidu",
+        "loupež",
+        "vražda",
+        "vydírání"
+      ],
+      "answer": 0,
+      "explanation": "Rušení nočního klidu je méně závažné jednání, řeší ho úřad pokutou. Ostatní jsou trestné činy."
+    },
+    {
+      "type": "truefalse",
+      "question": "Dítě mladší 15 let nemůže spáchat trestný čin, ale jen čin jinak trestný.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který zákon upravuje trestné činy a tresty?",
+      "options": [
+        "trestní zákoník",
+        "občanský zákoník",
+        "Ústava",
+        "zákoník práce"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi přestupkem a trestným činem?",
+      "answer": "Přestupek je méně závažné jednání, řeší ho úřad a trestá např. pokutou. Trestný čin je závažnější, rozhoduje o něm soud a hrozí i vězení."
+    },
+    {
+      "type": "open",
+      "question": "Co znamená, že je člověk trestně odpovědný od 15 let?",
+      "answer": "Od 15 let může být za trestný čin souzen a potrestán. Do 18 let je mladistvý a platí pro něj mírnější pravidla."
+    }
+  ]
+}

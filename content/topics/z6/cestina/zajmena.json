@@ -1,0 +1,521 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zajmena",
+  "title": "Zájmena",
+  "emoji": "👉",
+  "explanations": [
+    {
+      "title": "Náhradníci",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zkus si přečíst: *Petr přišel domů. Petr si dal svačinu. Petrovi chutnala.* Zní to hrozně, že? Lepší je: *Petr přišel domů. **On** si dal svačinu. **Jemu** chutnala.*"
+        },
+        {
+          "type": "text",
+          "text": "Slova jako *on, jemu, můj, ten, někdo* jsou **náhradníci**. Zastoupí jméno, abychom ho pořád neopakovali. Jmenují se **zájmena**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zájmeno",
+          "definition": "Slovo, které **zastupuje** podstatné nebo přídavné jméno, nebo na něco ukazuje.",
+          "example": "já, ty, on, můj, ten, kdo, nikdo"
+        },
+        {
+          "type": "term",
+          "term": "Osoba",
+          "definition": "Kdo mluví. **1. osoba** = já/my (mluvím já). **2. osoba** = ty/vy (mluvím k tobě). **3. osoba** = on, ona, ono/oni, ony, ona (mluvím o někom).",
+          "example": "já jdu (1.), ty jdeš (2.), on jde (3.)"
+        },
+        {
+          "type": "heading",
+          "text": "Druhy zájmen"
+        },
+        {
+          "type": "text",
+          "text": "Zájmen je sedm druhů. Každý druh dělá jinou práci."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Co dělá",
+            "Příklady"
+          ],
+          "rows": [
+            [
+              "osobní",
+              "zastupuje osobu nebo věc",
+              "já, ty, on, ona, ono, my, vy, oni"
+            ],
+            [
+              "přivlastňovací",
+              "říká, čí něco je",
+              "můj, tvůj, jeho, její, náš, váš, jejich, svůj"
+            ],
+            [
+              "ukazovací",
+              "ukazuje na něco",
+              "ten, tento, onen, takový"
+            ],
+            [
+              "tázací",
+              "ptá se",
+              "kdo? co? jaký? čí? který?"
+            ],
+            [
+              "vztažná",
+              "připojuje další část věty",
+              "který, jenž, co (To je pes, který štěká.)"
+            ],
+            [
+              "neurčitá",
+              "neví přesně kdo, co",
+              "někdo, něco, některý, nějaký"
+            ],
+            [
+              "záporná",
+              "říká, že nikdo, nic",
+              "nikdo, nic, žádný"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Fígl na zapamatování: neurčitá zájmena začínají **ně-** (někdo), záporná **ni-** (nikdo)."
+        },
+        {
+          "type": "term",
+          "term": "Zvratné zájmeno",
+          "definition": "**se, si, sebe, sobě** – děj se „vrací“ k tomu, kdo ho dělá. A **svůj** – patří tomu, kdo ve větě něco dělá.",
+          "example": "Myje **se**. (myje sám sebe) Vzal si **svůj** batoh."
+        },
+        {
+          "type": "text",
+          "text": "Zkus roztřídit zájmena do tří druhů."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "osobní",
+              "přivlastňovací",
+              "ukazovací"
+            ],
+            "items": [
+              {
+                "text": "já",
+                "group": 0
+              },
+              {
+                "text": "oni",
+                "group": 0
+              },
+              {
+                "text": "my",
+                "group": 0
+              },
+              {
+                "text": "můj",
+                "group": 1
+              },
+              {
+                "text": "jejich",
+                "group": 1
+              },
+              {
+                "text": "svůj",
+                "group": 1
+              },
+              {
+                "text": "tento",
+                "group": 2
+              },
+              {
+                "text": "onen",
+                "group": 2
+              },
+              {
+                "text": "takový",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Oni, ony, ona"
+        },
+        {
+          "type": "text",
+          "text": "V množném čísle mají osobní zájmena 3. osoby tři tvary. Vybíráš podle toho, koho zastupují:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**oni** – muži, chlapci, psi (mužský životný): *Kluci přišli a **oni** se smáli.*",
+            "**ony** – ženy a věci mužského rodu: *Dívky přišly a **ony** se smály.* *Stromy – **ony** rostou.*",
+            "**ona** – střední rod: *Kuřata pípají, **ona** mají hlad.*"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči druh zájmen ve větě: *Nikdo neví, kdo vzal můj sešit.*",
+          "answer": "*Nikdo* – začíná ni- → záporné. *kdo* – tady se neptá, ale připojuje část věty → vztažné. *můj* – čí? → přivlastňovací."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Dívky přišly a ___ se smály.* (oni / ony)",
+          "answer": "Dívky jsou ženy → **ony**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dívky přišly a oni se smály.",
+          "right": "Dívky přišly a ony se smály.",
+          "why": "*Oni* je jen pro mužský životný rod. Pro ženy je *ony*."
+        },
+        {
+          "type": "summary",
+          "text": "Zájmena zastupují jména. Druhy: osobní, přivlastňovací, ukazovací, tázací, vztažná, neurčitá (ně-), záporná (ni-). Zvratná: se, si, sebe, svůj."
+        }
+      ]
+    },
+    {
+      "title": "Mě, nebo mně?",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "*Dej to mě,* nebo *dej to mně*? Tuhle chybu dělají i dospělí. Za chvíli ji už dělat nebudeš. Nejdřív si ale řekneme, co jsou slova *já, mě, mně* vůbec zač."
+        },
+        {
+          "type": "term",
+          "term": "Zájmeno",
+          "definition": "Slovo, které zastupuje jméno, abychom ho neopakovali, nebo na něco ukazuje či se ptá.",
+          "example": "*Eva* přišla. *Ona* přišla. – *ona* je zájmeno."
+        },
+        {
+          "type": "term",
+          "term": "Osobní zájmeno",
+          "definition": "Zastupuje osobu: **já, ty, on, ona, ono, my, vy, oni, ony, ona**.",
+          "example": "*Já* jdu domů."
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar slova podle otázky, kterou na něj položíš. Pádů je sedm.",
+          "example": "já (1. pád), beze mě (2. pád), ke mně (3. pád)"
+        },
+        {
+          "type": "heading",
+          "text": "Jak se mění slovo já"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Pád",
+            "já",
+            "ty"
+          ],
+          "rows": [
+            [
+              "1. kdo?",
+              "já",
+              "ty"
+            ],
+            [
+              "2. bez koho?",
+              "mě",
+              "tebe"
+            ],
+            [
+              "3. ke komu?",
+              "mně",
+              "tobě"
+            ],
+            [
+              "4. vidím koho?",
+              "mě",
+              "tebe"
+            ],
+            [
+              "6. o kom?",
+              "mně",
+              "tobě"
+            ],
+            [
+              "7. s kým?",
+              "mnou",
+              "tebou"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Všimni si: kde je u *ty* tvar **tebe**, je u *já* tvar **mě**. Kde je **tobě**, je **mně**. To je celý trik."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ve větě nahraď *mě/mně* slovem **tebe** nebo **tobě**.",
+            "Poslouchej, co zní správně.",
+            "Zní **tebe** → napiš **mě**. Zní **tobě** → napiš **mně**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Pojď ke m_.",
+          "answer": "Pojď ke **tobě** (ne ke tebe) → **mně**. Pojď ke mně."
+        },
+        {
+          "type": "example",
+          "question": "Bez m_ nikam nechoď.",
+          "answer": "Bez **tebe** → **mě**. Bez mě nikam nechoď."
+        },
+        {
+          "type": "text",
+          "text": "Teď ty. Ťukni na správný tvar. U každé věty si potichu řekni *tebe/tobě*."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Pojď ke ",
+                "after": ".",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Bez ",
+                "after": " nechoď.",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Mluvili o ",
+                "after": ".",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Pozval ",
+                "after": " na oslavu.",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Půjč ",
+                "after": " pero.",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dej to mě.",
+          "right": "Dej to mně.",
+          "why": "Dej to **tobě** – je to 3. pád, proto *mně*."
+        },
+        {
+          "type": "heading",
+          "text": "A další druhy zájmen"
+        },
+        {
+          "type": "text",
+          "text": "Zájmen je víc druhů. Klepni na kartu a podívej se, co který druh dělá."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "osobní",
+                "back": "já, ty, on, my, vy, oni – zastupují osoby"
+              },
+              {
+                "front": "přivlastňovací",
+                "back": "můj, tvůj, jeho, náš, jejich, svůj – čí to je"
+              },
+              {
+                "front": "ukazovací",
+                "back": "ten, tento, onen, takový – ukazují"
+              },
+              {
+                "front": "tázací",
+                "back": "kdo? co? jaký? čí? – ptají se"
+              },
+              {
+                "front": "vztažná",
+                "back": "který, jenž, co – připojují část věty: pes, který štěká"
+              },
+              {
+                "front": "neurčitá / záporná",
+                "back": "někdo, něco (ně-) / nikdo, nic, žádný (ni-)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Zvláštní je zájmeno **se, si, sebe** a **svůj**. Říká, že děj se vrací k tomu, kdo ho dělá: *Myje **se**.* Proto je to **zvratné** zájmeno."
+        },
+        {
+          "type": "summary",
+          "text": "Tebe → mě, tobě → mně. Zájmena zastupují jména; druhy: osobní, přivlastňovací, ukazovací, tázací, vztažná, neurčitá, záporná, a zvratné se/si/svůj."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký druh zájmena je *někdo*?",
+      "options": [
+        "neurčité",
+        "záporné",
+        "tázací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký druh zájmena je *nikdo*?",
+      "options": [
+        "záporné",
+        "neurčité",
+        "osobní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Půjč ___ pero.*",
+      "options": [
+        "mně",
+        "mě"
+      ],
+      "answer": 0,
+      "explanation": "Půjč tobě → mně."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Pozdravil ___ ve škole.*",
+      "options": [
+        "mě",
+        "mně"
+      ],
+      "answer": 0,
+      "explanation": "Pozdravil tebe → mě."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve větě *To je můj batoh.* je *můj* zájmeno přivlastňovací.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Napiš osobní zájmeno pro 1. osobu množného čísla.",
+      "answers": [
+        "my"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které zájmeno je vztažné? *To je pes, ___ štěká.*",
+      "options": [
+        "který",
+        "takový",
+        "někdo"
+      ],
+      "answer": 0,
+      "explanation": "Vztažné zájmeno připojuje další část věty."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Dívky přišly a ___ se smály.*",
+      "options": [
+        "ony",
+        "oni",
+        "ona"
+      ],
+      "answer": 0,
+      "explanation": "dívky – ženský rod → ony."
+    },
+    {
+      "type": "match",
+      "question": "Spoj zájmeno s druhem.",
+      "pairs": [
+        [
+          "ten",
+          "ukazovací"
+        ],
+        [
+          "kdo?",
+          "tázací"
+        ],
+        [
+          "nic",
+          "záporné"
+        ],
+        [
+          "jejich",
+          "přivlastňovací"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve které větě je zvratné zájmeno *se*?",
+      "options": [
+        "Myje se.",
+        "Myje ho.",
+        "Myje mě."
+      ],
+      "answer": 0,
+      "explanation": "Se/sebe = zvratné zájmeno, děj se vrací k tomu, kdo ho dělá."
+    },
+    {
+      "type": "open",
+      "question": "Kdy napíšeš *mně* a kdy *mě*?",
+      "answer": "*Mně* ve 3. a 6. pádě – dá se nahradit slovem *tobě*. *Mě* ve 2. a 4. pádě – dá se nahradit slovem *tebe*."
+    },
+    {
+      "type": "open",
+      "question": "K čemu slouží zájmena? Uveď tři druhy.",
+      "answer": "Zastupují jména, abychom je pořád neopakovali. Druhy: osobní (já), přivlastňovací (můj), ukazovací (ten)."
+    }
+  ]
+}

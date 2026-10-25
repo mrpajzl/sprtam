@@ -1,0 +1,407 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "past-tenses",
+  "title": "Minulé časy ve vyprávění",
+  "emoji": "📖",
+  "explanations": [
+    {
+      "title": "Příběhem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každý příběh má tři vrstvy. **Kulisu** – co se zrovna dělo (pršelo, lidé spěchali). **Hlavní události** – co se stalo (vešel muž, zakřičel). A **minulost před minulostí** – co se stalo ještě dřív (vlak už odjel)."
+        },
+        {
+          "type": "text",
+          "text": "Čeština vystačí s jedním minulým časem a pořadí dovodíš ze souvislostí. Angličtina má na každou vrstvu vlastní čas. Když je umíš, tvoje vyprávění bude jasné a živé – v slohu i v ústní maturitě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Past simple (minulý čas prostý)",
+          "definition": "Pro **hlavní události**, které jdou jedna za druhou. Pravidelná slovesa *-ed*, nepravidelná 2. tvar.",
+          "example": "She opened the door, came in and sat down."
+        },
+        {
+          "type": "term",
+          "term": "Past continuous (minulý čas průběhový)",
+          "definition": "*was / were + -ing*. Pro **kulisu** – děj, který zrovna probíhal.",
+          "example": "It was raining and people were hurrying home."
+        },
+        {
+          "type": "term",
+          "term": "Past perfect (předminulý čas)",
+          "definition": "*had + 3. tvar slovesa*. Pro děj, který se stal **ještě dřív** než jiný minulý děj.",
+          "example": "When I got to the station, the train had left."
+        },
+        {
+          "type": "term",
+          "term": "3. tvar slovesa (příčestí minulé)",
+          "definition": "Pravidelná slovesa *-ed*, nepravidelná ze 3. sloupce tabulky.",
+          "example": "leave – left – left, sleep – slept – slept"
+        },
+        {
+          "type": "heading",
+          "text": "Příběh na ose"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na body osy. Všimni si, že v příběhu se o odjezdu vlaku dozvíš až po příchodu na nádraží – ale stal se dřív."
+        },
+        {
+          "type": "widget",
+          "widget": "timeline",
+          "props": {
+            "events": [
+              {
+                "year": 1,
+                "label": "the train left (had left)"
+              },
+              {
+                "year": 2,
+                "label": "it was raining (kulisa)"
+              },
+              {
+                "year": 3,
+                "label": "I got to the station"
+              },
+              {
+                "year": 4,
+                "label": "I took a taxi"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "*It **was raining**. When I **got** to the station, the train **had left**, so I **took** a taxi.*"
+        },
+        {
+          "type": "heading",
+          "text": "Tři vrstvy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vrstva",
+            "Čas",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "kulisa, probíhající děj",
+              "past continuous",
+              "I was watching TV…"
+            ],
+            [
+              "hlavní událost",
+              "past simple",
+              "…when the lights went out."
+            ],
+            [
+              "dřívější událost",
+              "past perfect",
+              "…because a storm had damaged the cables."
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Doplň: When we arrived, the film ___ already ___ (start).",
+          "answer": "Film začal **dřív** než náš příchod → past perfect: *had already started*."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: He was tired because he ___ (not sleep) well.",
+          "answer": "Špatný spánek předcházel únavě → past perfect, zápor: *hadn't slept*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "She opened the door, was coming in and sat down.",
+          "right": "She opened the door, came in and sat down.",
+          "why": "Řada událostí, které jdou po sobě, je celá v past simple. Continuous je jen pro kulisu."
+        },
+        {
+          "type": "summary",
+          "text": "Kulisa = **past continuous**, události = **past simple**, ještě dřív = **past perfect** (*had + 3. tvar*)."
+        }
+      ]
+    },
+    {
+      "title": "Tvary",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Abys mohl vyprávět, musíš minulé časy umět i postavit – v kladné větě, záporu, otázce. A musíš znát tvary nepravidelných sloves. Tady je to pohromadě, s postupem, jak čas vybrat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pomocné sloveso",
+          "definition": "Sloveso, které staví čas, zápor a otázku: *did* (past simple), *was/were* (past continuous), *had* (past perfect).",
+          "example": "Did you go? Were you going? Had you gone?"
+        },
+        {
+          "type": "term",
+          "term": "Nepravidelné sloveso",
+          "definition": "Sloveso s vlastními tvary pro minulý čas (2. tvar) a příčestí (3. tvar).",
+          "example": "catch – caught – caught, go – went – gone"
+        },
+        {
+          "type": "term",
+          "term": "Stavové sloveso",
+          "definition": "Sloveso pro stav (*know, want, like, believe*). Ani v minulosti obvykle nemá průběhový tvar.",
+          "example": "I knew the answer. (ne *was knowing*)"
+        },
+        {
+          "type": "heading",
+          "text": "Přehled tvarů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Čas",
+            "Kladně",
+            "Zápor",
+            "Otázka"
+          ],
+          "rows": [
+            [
+              "past simple",
+              "I worked / went",
+              "I didn't work / go",
+              "Did you work / go?"
+            ],
+            [
+              "past continuous",
+              "I was working",
+              "I wasn't working",
+              "Were you working?"
+            ],
+            [
+              "past perfect",
+              "I had worked / gone",
+              "I hadn't worked / gone",
+              "Had you worked / gone?"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup výběru"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je to stavové sloveso? → simple (ne continuous).",
+            "Probíhal děj, když se stalo něco jiného (často po *while*)? → past continuous.",
+            "Je to hlavní událost nebo řada událostí po sobě? → past simple.",
+            "Stal se děj **před** jiným minulým dějem (často *already, because, before, by the time*)? → past perfect."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber správný čas. Ptej se, do které vrstvy příběhu děj patří."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "I",
+                "after": "TV when the lights went out.",
+                "options": [
+                  "was watching",
+                  "watched",
+                  "had watched"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "While I",
+                "after": ", I fell asleep.",
+                "options": [
+                  "was reading",
+                  "read",
+                  "had read"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "I",
+                "after": "my homework before I went out.",
+                "options": [
+                  "had finished",
+                  "was finishing"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "I",
+                "after": "the answer.",
+                "options": [
+                  "knew",
+                  "was knowing"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Seřaď chronologicky: „When I got to the station, the train had left, so I took a taxi.“",
+          "answer": "*Had left* je nejdřív (past perfect). Pak *got to the station*, pak *took a taxi*: 1) the train left, 2) I got to the station, 3) I took a taxi."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: While I ___ (read), I fell asleep.",
+          "answer": "*While* + probíhající děj → past continuous: *While I was reading, I fell asleep.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "I finished my homework before I had gone out.",
+          "right": "I had finished my homework before I went out.",
+          "why": "Past perfect patří **dřívějšímu** ději (úkol), ne pozdějšímu (odchod). Pozdější děj je v past simple."
+        },
+        {
+          "type": "summary",
+          "text": "**did** + základní tvar, **was/were + -ing**, **had + 3. tvar**. Past perfect jen pro to, co bylo dřív."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "I ___ TV when the lights went out.",
+      "options": [
+        "was watching",
+        "watched",
+        "had watched"
+      ],
+      "answer": 0,
+      "explanation": "Probíhající děj přerušený jiným."
+    },
+    {
+      "type": "choice",
+      "question": "When we arrived, the film ___ already ___.",
+      "options": [
+        "had … started",
+        "was … starting",
+        "has … started"
+      ],
+      "answer": 0,
+      "explanation": "Začal dřív než náš příchod → past perfect."
+    },
+    {
+      "type": "choice",
+      "question": "She opened the door, ___ in and sat down.",
+      "options": [
+        "came",
+        "was coming",
+        "had come"
+      ],
+      "answer": 0,
+      "explanation": "Řada událostí za sebou → past simple."
+    },
+    {
+      "type": "input",
+      "question": "Doplň 2. tvar: catch → ___",
+      "answers": [
+        "caught"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: While I ___ (read), I fell asleep.",
+      "answers": [
+        "was reading"
+      ],
+      "explanation": "*while* + děj v průběhu → past continuous."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: He was tired because he ___ (not sleep) well.",
+      "answers": [
+        "hadn't slept",
+        "had not slept"
+      ],
+      "explanation": "Příčina v předminulosti → past perfect."
+    },
+    {
+      "type": "truefalse",
+      "question": "„I was knowing the answer.“ je správně.",
+      "answer": false,
+      "explanation": "*know* je stavové → *I knew the answer.*"
+    },
+    {
+      "type": "order",
+      "question": "Seřaď události chronologicky: „When I got to the station, the train had left, so I took a taxi.“",
+      "items": [
+        "the train left",
+        "I got to the station",
+        "I took a taxi"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj čas s funkcí.",
+      "pairs": [
+        [
+          "past simple",
+          "hlavní událost"
+        ],
+        [
+          "past continuous",
+          "kulisa příběhu"
+        ],
+        [
+          "past perfect",
+          "dřívější událost"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které je správně?",
+      "options": [
+        "I had finished my homework before I went out.",
+        "I finished my homework before I had gone out.",
+        "I was finishing my homework before I had went out."
+      ],
+      "answer": 0,
+      "explanation": "Dřívější děj → past perfect, pozdější → past simple."
+    },
+    {
+      "type": "open",
+      "question": "Jak se liší past simple a past perfect? Uveď příklad.",
+      "answer": "Past simple vyjadřuje událost v minulosti, past perfect událost, která proběhla ještě před ní. *When I arrived, she had left.* – odešla dřív, než jsem přišel."
+    },
+    {
+      "type": "open",
+      "question": "K čemu slouží past continuous ve vyprávění?",
+      "answer": "Popisuje pozadí a děje, které právě probíhaly, když se stalo něco jiného. *The sun was shining and birds were singing when…*"
+    }
+  ]
+}

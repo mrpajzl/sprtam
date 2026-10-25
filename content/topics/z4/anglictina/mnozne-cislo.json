@@ -1,0 +1,421 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mnozne-cislo",
+  "title": "Množné číslo",
+  "emoji": "🐑",
+  "explanations": [
+    {
+      "title": "Přidej -s",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky řekneš „jedna kočka“, ale „dvě kočky“. Slovo se změní, když je věcí víc. V angličtině je to jednodušší: většinou stačí přidat na konec **-s**."
+        },
+        {
+          "type": "text",
+          "text": "Potřebuješ to pořád: „Mám dva bratry.“ „Na stole jsou tři knihy.“ Bez toho bys uměl říct jen o jedné věci."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Slovo pro člověka, zvíře, věc nebo místo. Ptáš se na něj **kdo? co?**",
+          "example": "dog, book, girl, house"
+        },
+        {
+          "type": "term",
+          "term": "Jednotné číslo",
+          "definition": "Tvar slova, když je věc **jedna**.",
+          "example": "a cat = kočka"
+        },
+        {
+          "type": "term",
+          "term": "Množné číslo",
+          "definition": "Tvar slova, když je věcí **víc** (dvě a víc).",
+          "example": "cats = kočky"
+        },
+        {
+          "type": "term",
+          "term": "Samohláska a souhláska",
+          "definition": "Samohlásky jsou **a, e, i, o, u**. Všechna ostatní písmena jsou souhlásky.",
+          "example": "v *toy* je před y samohláska o, v *baby* souhláska b"
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo 1: přidej -s"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🐱",
+            "➡️",
+            "🐱",
+            "🐱"
+          ],
+          "caption": "a cat → two cats"
+        },
+        {
+          "type": "text",
+          "text": "Skoro u všech slov: **cat → cats, dog → dogs, book → books, toy → toys**."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo 2: syčivý konec → -es"
+        },
+        {
+          "type": "text",
+          "text": "Když slovo končí na **s, x, sh, ch**, samotné -s by nešlo vyslovit. Přidáš **-es**: *bus → buses, box → boxes, dish → dishes, watch → watches*."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo 3: souhláska + y → -ies"
+        },
+        {
+          "type": "text",
+          "text": "Když je na konci **y** a před ním souhláska, y se změní na **ies**: *baby → babies, lady → ladies*. Když je před y samohláska, jen přidáš -s: *toy → toys, boy → boys*."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si, jak se slova rozpadají na kousky: slovo a konec množného čísla."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "dog",
+                    "label": "slovo"
+                  },
+                  {
+                    "text": "s",
+                    "label": "množné č."
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "box",
+                    "label": "slovo"
+                  },
+                  {
+                    "text": "es",
+                    "label": "množné č."
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "bab",
+                    "label": "slovo"
+                  },
+                  {
+                    "text": "ies",
+                    "label": "y → ies"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Množné číslo od „bus“?",
+          "answer": "Končí na **s** → syčivý konec → **-es**: **buses**."
+        },
+        {
+          "type": "example",
+          "question": "Množné číslo od „baby“ a od „toy“?",
+          "answer": "*baby*: před y je souhláska b → **babies**. *toy*: před y je samohláska o → jen -s → **toys**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "two boxs",
+          "right": "two boxes",
+          "why": "Po **x** (a také po s, sh, ch) se přidává **-es**, jinak by se konec nedal vyslovit."
+        },
+        {
+          "type": "text",
+          "text": "Pár slov se mění úplně jinak (child → children, man → men). Ta najdeš v druhém vysvětlení."
+        },
+        {
+          "type": "summary",
+          "text": "Množné číslo: většinou **-s**. Po s, x, sh, ch **-es**. Souhláska + y → **-ies**."
+        }
+      ]
+    },
+    {
+      "title": "Výjimky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "I česky jsou zvláštní slova: jeden **člověk**, ale dva **lidé**. Nikdo neřekne „dva člověci“. Angličtina má taková slova taky."
+        },
+        {
+          "type": "text",
+          "text": "Nejdřív si připomeneme obyčejné pravidlo, a pak se naučíš ta slova, která ho neposlouchají. Jsou to slova, která používáš pořád: děti, muži, zuby, nohy."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Množné číslo",
+          "definition": "Tvar slova pro **víc** věcí, lidí nebo zvířat.",
+          "example": "jeden pes → dva psi; a dog → two dogs"
+        },
+        {
+          "type": "term",
+          "term": "Pravidlo",
+          "definition": "Co platí pro většinu slov. Anglicky: přidej **-s** (po s, x, sh, ch **-es**, souhláska + y → **-ies**).",
+          "example": "book → books, box → boxes, baby → babies"
+        },
+        {
+          "type": "term",
+          "term": "Výjimka",
+          "definition": "Slovo, které pravidlo neposlouchá. Musíš se ho naučit zpaměti.",
+          "example": "child → children (ne *childs*)"
+        },
+        {
+          "type": "heading",
+          "text": "Skupina 1: změní se samohláska uvnitř"
+        },
+        {
+          "type": "list",
+          "items": [
+            "man → **men** (muži)",
+            "woman → **women** (ženy)",
+            "foot → **feet** (chodidla, nohy)",
+            "tooth → **teeth** (zuby)",
+            "mouse → **mice** (myši)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Skupina 2: úplně jiné slovo"
+        },
+        {
+          "type": "list",
+          "items": [
+            "child → **children** (děti)",
+            "person → **people** (lidé)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Skupina 3: nezmění se vůbec"
+        },
+        {
+          "type": "list",
+          "items": [
+            "sheep → **sheep** (ovce)",
+            "fish → **fish** (ryby)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Řekni množné číslo nahlas. Pak klepni na kartičku a zkontroluj se."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "man",
+                "back": "men"
+              },
+              {
+                "front": "woman",
+                "back": "women"
+              },
+              {
+                "front": "child",
+                "back": "children"
+              },
+              {
+                "front": "foot",
+                "back": "feet"
+              },
+              {
+                "front": "tooth",
+                "back": "teeth"
+              },
+              {
+                "front": "mouse",
+                "back": "mice"
+              },
+              {
+                "front": "sheep",
+                "back": "sheep"
+              },
+              {
+                "front": "person",
+                "back": "people"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: tři děti.",
+          "answer": "*child* je výjimka → **children**. Výsledek: **three children**."
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: dvě ovce a dvě krabice.",
+          "answer": "*sheep* se nemění → **two sheep**. *box* je obyčejné slovo, končí na x → **-es** → **two boxes**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "two mans, three childs",
+          "right": "two men, three children",
+          "why": "**man** a **child** jsou výjimky. Pravidlo s -s u nich neplatí."
+        },
+        {
+          "type": "summary",
+          "text": "Výjimky se učíš zpaměti: **man → men, woman → women, child → children, foot → feet, tooth → teeth, mouse → mice, sheep → sheep**."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Množné číslo: book",
+      "answers": [
+        "books"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Množné číslo: bus",
+      "answers": [
+        "buses"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Množné číslo: child",
+      "answers": [
+        "children"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Množné číslo: baby",
+      "options": [
+        "babies",
+        "babys",
+        "babyes"
+      ],
+      "answer": 0,
+      "explanation": "souhláska + y → ies"
+    },
+    {
+      "type": "choice",
+      "question": "Množné číslo: foot",
+      "options": [
+        "feet",
+        "foots",
+        "feets"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Množné číslo: mouse",
+      "options": [
+        "mice",
+        "mouses",
+        "mices"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Množné číslo od „sheep“ je „sheep“.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Množné číslo od „man“ je „mans“.",
+      "answer": false,
+      "explanation": "man → men"
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "woman",
+          "women"
+        ],
+        [
+          "tooth",
+          "teeth"
+        ],
+        [
+          "box",
+          "boxes"
+        ],
+        [
+          "toy",
+          "toys"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je správně?",
+      "options": [
+        "three dogs",
+        "three dog",
+        "three doges"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Množné číslo: watch",
+      "answers": [
+        "watches"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak se v angličtině tvoří množné číslo? Řekni pravidlo a 2 výjimky.",
+      "answer": "Většinou přidáme -s, po s, x, sh, ch -es. Výjimky: child – children, man – men."
+    },
+    {
+      "type": "open",
+      "question": "Řekni anglicky, kolik máš rukou, nohou a zubů (přibližně).",
+      "answer": "I have got two hands, two feet and about twenty teeth."
+    }
+  ]
+}

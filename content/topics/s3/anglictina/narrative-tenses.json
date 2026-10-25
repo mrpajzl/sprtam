@@ -1,0 +1,406 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "narrative-tenses",
+  "title": "Časy ve vyprávění",
+  "emoji": "📖",
+  "explanations": [
+    {
+      "title": "Na příběhu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když vyprávíš zážitek, nejde jen o to, **co se stalo**. Musíš taky popsat, **co se kolem dělo** (pršelo), **co se stalo předtím** (někdo mi ukradl deštník) a **jak dlouho** něco trvalo (čekal jsem hodinu)."
+        },
+        {
+          "type": "text",
+          "text": "Čeština to zvládne skoro jedním minulým časem. Angličtina má na vyprávění **čtyři minulé časy** a každý má svou roli. Bez nich zní příběh ploše – a v písemce nebo u maturity za to přicházíš o body."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "3. tvar slovesa",
+          "definition": "Třetí tvar z řady sloves. Pravidelná *-ed*, nepravidelná se učí.",
+          "example": "*steal – stole – **stolen***, *wait – waited – **waited***"
+        },
+        {
+          "type": "term",
+          "term": "Past simple",
+          "definition": "Prostý minulý čas. **Hlavní události** příběhu, jedna po druhé.",
+          "example": "*The bus **arrived**. I **got** on.*"
+        },
+        {
+          "type": "term",
+          "term": "Past continuous",
+          "definition": "*was / were* + *-ing*. Děj, který **zrovna probíhal** – kulisa, pozadí.",
+          "example": "*It **was raining**.* = Pršelo (celou dobu)."
+        },
+        {
+          "type": "term",
+          "term": "Past perfect",
+          "definition": "*had* + 3. tvar. Děj, který se stal **ještě před** jinou minulou událostí.",
+          "example": "*Somebody **had stolen** my umbrella.* = Někdo mi (předtím) ukradl deštník."
+        },
+        {
+          "type": "term",
+          "term": "Past perfect continuous",
+          "definition": "*had been* + *-ing*. **Dlouhý** děj, který trval až do určitého minulého okamžiku.",
+          "example": "*I **had been waiting** for an hour.* = Čekal jsem (už) hodinu."
+        },
+        {
+          "type": "heading",
+          "text": "Příběh na zastávce"
+        },
+        {
+          "type": "text",
+          "text": "*It **was raining**. I **had been waiting** for an hour when the bus finally **arrived**. Somebody **had stolen** my umbrella, so I was wet.*"
+        },
+        {
+          "type": "list",
+          "items": [
+            "*was raining* – pozadí, kulisa (past continuous)",
+            "*had been waiting* – dlouhé čekání až do příjezdu autobusu (past perfect continuous)",
+            "*arrived* – hlavní událost (past simple)",
+            "*had stolen* – stalo se ještě dřív (past perfect)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si časovou osu. Seřaď si v hlavě, co se stalo nejdřív a co nakonec – a který čas k tomu patří."
+        },
+        {
+          "type": "widget",
+          "widget": "timeline",
+          "props": {
+            "events": [
+              {
+                "year": 1,
+                "label": "umbrella stolen (had stolen)"
+              },
+              {
+                "year": 2,
+                "label": "waiting starts (had been waiting)"
+              },
+              {
+                "year": 3,
+                "label": "pozadí: it was raining"
+              },
+              {
+                "year": 4,
+                "label": "bus arrived (arrived)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *I ___ (walk) home when I saw the accident.*",
+          "answer": "Chůze probíhala, nehoda ji „přerušila“ → past continuous: ***I was walking** home when I saw the accident.*"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *When we arrived, the party ___ (finish). Everyone had gone home.*",
+          "answer": "Večírek skončil **před** naším příchodem → past perfect: ***had finished***."
+        },
+        {
+          "type": "mistake",
+          "wrong": "I was waking up, I was getting dressed and I was leaving.",
+          "right": "I woke up, got dressed and left.",
+          "why": "Hlavní události, které jdou po sobě, patří do past simple. Past continuous je jen pro pozadí."
+        },
+        {
+          "type": "summary",
+          "text": "Past simple = hlavní děj. Past continuous = pozadí. Past perfect = stalo se dřív. Past perfect continuous = dlouhý děj až do minulého okamžiku."
+        }
+      ]
+    },
+    {
+      "title": "Čtyři časy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si film. **Hlavní záběry** posouvají děj dopředu. **Kulisa** v pozadí ukazuje, co se kolem děje. **Flashback** se vrací do dřívější doby. Angličtina má pro každou z těchto rolí jeden minulý čas."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, jakou roli děj ve vyprávění hraje, vybereš čas skoro automaticky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čas slovesa",
+          "definition": "Tvar slovesa, který říká, kdy se děj stal a jestli probíhal, nebo byl hotový.",
+          "example": "*walked* × *was walking* × *had walked*"
+        },
+        {
+          "type": "term",
+          "term": "-ing tvar",
+          "definition": "Sloveso s koncovkou *-ing*. Ukazuje, že děj **probíhal**.",
+          "example": "*walking, waiting*"
+        },
+        {
+          "type": "term",
+          "term": "3. tvar slovesa",
+          "definition": "Příčestí minulé: pravidelná *-ed*, nepravidelná se učí.",
+          "example": "*walk – walked – **walked***, *begin – began – **begun***"
+        },
+        {
+          "type": "term",
+          "term": "Výraz *by the time*",
+          "definition": "„Než, do té doby, než“. Za ním často přijde past perfect: děj byl hotový dřív.",
+          "example": "*By the time the police arrived, the thief **had escaped**.*"
+        },
+        {
+          "type": "heading",
+          "text": "Přehled"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Čas",
+            "Tvar",
+            "Role ve vyprávění",
+            "Česky"
+          ],
+          "rows": [
+            [
+              "past simple",
+              "walked",
+              "hlavní události",
+              "šel"
+            ],
+            [
+              "past continuous",
+              "was walking",
+              "pozadí, probíhající děj",
+              "(zrovna) šel"
+            ],
+            [
+              "past perfect",
+              "had walked",
+              "dřívější událost",
+              "(předtím) šel"
+            ],
+            [
+              "past perfect continuous",
+              "had been walking",
+              "dlouhý děj do určitého bodu",
+              "šel (už nějakou dobu)"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je to **hlavní událost**, která posouvá děj? → past simple.",
+            "Je to **pozadí**, něco, co právě probíhalo? → past continuous.",
+            "Stalo se to **ještě dřív** než jiná minulá událost? → past perfect.",
+            "Trvalo to **dlouho** až do jiného minulého okamžiku (často je vidět výsledek)? → past perfect continuous."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "*Her eyes were red. She ___ (cry).*",
+          "answer": "Dlouhý děj před minulým okamžikem, výsledek (červené oči) je vidět → ***had been crying***."
+        },
+        {
+          "type": "example",
+          "question": "Jaký je rozdíl: *I had read the book.* × *I had been reading the book.*",
+          "answer": "První = kniha byla **dočtená** (výsledek). Druhá = nějakou dobu jsem ji **četl** (důraz na trvání, nemusel jsem dočíst)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň. U každé věty urči roli děje: hlavní, pozadí, dřív, nebo dlouho předtím."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "She was out of breath because she",
+                "after": ".",
+                "options": [
+                  "had been running",
+                  "was run",
+                  "has run"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "When I got to the cinema, the film",
+                "after": ".",
+                "options": [
+                  "had already started",
+                  "already starts",
+                  "has already started"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "While we",
+                "after": "dinner, the lights went out.",
+                "options": [
+                  "were having",
+                  "had",
+                  "have had"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "When I got to the cinema, the film has already started.",
+          "right": "When I got to the cinema, the film had already started.",
+          "why": "Celý příběh je v minulosti. Děj, který se stal před jiným minulým dějem, patří do past perfect (*had*), ne do present perfect (*has*)."
+        },
+        {
+          "type": "summary",
+          "text": "Hlavní děj → past simple, pozadí → past continuous, dřív → past perfect, dlouho předtím → past perfect continuous."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Her eyes were red. She ___.",
+      "options": [
+        "had been crying",
+        "has been crying",
+        "cried",
+        "was cry"
+      ],
+      "answer": 0,
+      "explanation": "Dlouhý děj před minulým okamžikem s viditelným výsledkem."
+    },
+    {
+      "type": "choice",
+      "question": "When we arrived, the party ___. Everyone had gone home.",
+      "options": [
+        "had finished",
+        "finished",
+        "was finishing",
+        "has finished"
+      ],
+      "answer": 0,
+      "explanation": "Skončilo dřív než náš příchod."
+    },
+    {
+      "type": "input",
+      "question": "I ___ (walk) home when I saw the accident.",
+      "answers": [
+        "was walking"
+      ],
+      "explanation": "Probíhající děj přerušený jiným."
+    },
+    {
+      "type": "input",
+      "question": "They had been ___ (play) for two hours when it started to rain.",
+      "answers": [
+        "playing"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Past perfect continuous se tvoří: had been + -ing.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve vyprávění se hlavní události, které jdou po sobě, dávají do past continuous.",
+      "answer": false,
+      "explanation": "Hlavní události po sobě = past simple."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "I",
+        "had been",
+        "working there",
+        "for years",
+        "before",
+        "I left."
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj tvar s časem.",
+      "pairs": [
+        [
+          "had been sleeping",
+          "past perfect continuous"
+        ],
+        [
+          "was sleeping",
+          "past continuous"
+        ],
+        [
+          "had slept",
+          "past perfect"
+        ],
+        [
+          "slept",
+          "past simple"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "By the time the police arrived, the thief ___.",
+      "options": [
+        "had escaped",
+        "escaped",
+        "was escaping"
+      ],
+      "answer": 0,
+      "explanation": "By the time → dřívější děj v past perfect."
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je rozdíl? „I had read the book.“ × „I had been reading the book.“",
+      "options": [
+        "první = dočteno, druhé = četl jsem nějakou dobu",
+        "žádný",
+        "první = čtu teď"
+      ],
+      "answer": 0,
+      "explanation": "Simple = výsledek, continuous = trvání."
+    },
+    {
+      "type": "open",
+      "question": "Kdy ve vyprávění použiješ past perfect continuous? Uveď příklad.",
+      "answer": "Pro dlouhý děj, který probíhal až do jiného minulého okamžiku. Např.: We had been driving for hours when the car broke down."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli roli čtyř minulých časů ve vyprávění.",
+      "answer": "Past simple nese hlavní děj, past continuous popisuje pozadí. Past perfect vrací do dřívější doby a past perfect continuous zdůrazňuje trvání před minulým bodem."
+    }
+  ]
+}

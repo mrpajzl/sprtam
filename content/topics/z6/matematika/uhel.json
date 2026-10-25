@@ -1,0 +1,331 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "uhel",
+  "title": "Úhel a jeho velikost",
+  "emoji": "📐",
+  "explanations": [
+    {
+      "title": "Otáčením",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Otevři dveře, roztáhni nůžky nebo se podívej na ručičky hodin. Pokaždé se něco **otočí kolem jednoho bodu**. A pokaždé se dá říct, *o kolik* se to otočilo – trochu, napůl, úplně dokola."
+        },
+        {
+          "type": "text",
+          "text": "Právě tohle „o kolik“ je **úhel**. Úhly potřebuje truhlář, architekt, pilot i hráč kulečníku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Úhel",
+          "definition": "Dvě rovné čáry, které vycházejí ze stejného bodu. Úhel říká, jak moc jsou od sebe „rozevřené“.",
+          "example": "Rozevřené nůžky tvoří úhel. Čím víc je rozevřeš, tím je úhel větší."
+        },
+        {
+          "type": "term",
+          "term": "Vrchol",
+          "definition": "Bod, ze kterého obě čáry vycházejí – „kloub“, kolem kterého se otáčí.",
+          "example": "U nůžek je vrchol šroubek uprostřed."
+        },
+        {
+          "type": "term",
+          "term": "Ramena",
+          "definition": "Ty dvě čáry, které z vrcholu vycházejí.",
+          "example": "U hodin jsou ramena malá a velká ručička."
+        },
+        {
+          "type": "term",
+          "term": "Stupeň (°)",
+          "definition": "Jednotka, kterou úhly měříme. Celé otočení dokola rozdělíme na **360 stejných dílků** – jeden dílek je 1 stupeň, píše se 1°.",
+          "example": "Proč zrovna 360? Počítali tak už staří Babyloňané – a 360 se navíc dá beze zbytku dělit 2, 3, 4, 5, 6, 8, 9, 10, 12…"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Pohni posuvníkem. Sleduj, jak se rameno otáčí a jak se mění číslo i název úhlu."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 60
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Druhy úhlů podle velikosti"
+        },
+        {
+          "type": "text",
+          "text": "Nejdůležitější je **pravý úhel – 90°**. Je to čtvrt otočky, roh sešitu nebo roh dveří. Ostatní úhly s ním porovnáváme:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Název",
+            "Velikost",
+            "Jak vypadá"
+          ],
+          "rows": [
+            [
+              "ostrý",
+              "menší než 90°",
+              "špička, užší než roh sešitu"
+            ],
+            [
+              "pravý",
+              "přesně 90°",
+              "roh sešitu"
+            ],
+            [
+              "tupý",
+              "mezi 90° a 180°",
+              "rozevřený víc než roh"
+            ],
+            [
+              "přímý",
+              "přesně 180°",
+              "rovná čára – půl otočky"
+            ],
+            [
+              "plný",
+              "360°",
+              "celá otočka dokola"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Velká ručička hodin se posune z 12 na 3. O jaký úhel se otočila?",
+          "answer": "Z 12 na 3 je čtvrtina ciferníku. Čtvrtina z 360° je 90° – pravý úhel."
+        },
+        {
+          "type": "example",
+          "question": "A z 12 na 6?",
+          "answer": "Polovina ciferníku: 360° : 2 = 180° – přímý úhel."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Úhel je větší, když má delší ramena.",
+          "right": "Velikost úhlu závisí jen na tom, jak moc jsou ramena rozevřená.",
+          "why": "Malé i obří nůžky rozevřené stejně svírají stejný úhel. Délka ramen nehraje roli."
+        },
+        {
+          "type": "summary",
+          "text": "Úhel = jak moc jsou dvě čáry ze stejného bodu rozevřené. Měříme ho ve stupních: pravý 90°, přímý 180°, plný 360°."
+        }
+      ]
+    },
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V geometrii kreslíme úhly přesně a měříme je **úhloměrem**. Naučíš se, jak se úhel jmenuje, jak se značí, jak ho změřit a jak s úhly počítat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Polopřímka",
+          "definition": "Rovná čára, která má začátek, ale nemá konec – běží jedním směrem donekonečna.",
+          "example": "Jako paprsek baterky: začíná u baterky a svítí pořád dál."
+        },
+        {
+          "type": "term",
+          "term": "Úhel",
+          "definition": "Útvar ze dvou polopřímek se **společným začátkem**. Ten začátek se jmenuje **vrchol**, polopřímky jsou **ramena**.",
+          "example": "Úhel s vrcholem V a rameny VA a VB zapíšeme ∢AVB. Vrchol je vždy uprostřed zápisu."
+        },
+        {
+          "type": "term",
+          "term": "Úhloměr",
+          "definition": "Průhledné pravítko ve tvaru půlkruhu se stupnicí od 0° do 180°."
+        },
+        {
+          "type": "heading",
+          "text": "Jak změřit úhel"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Střed úhloměru (malý křížek nebo otvor) polož přesně na **vrchol** úhlu.",
+            "Nulovou čáru úhloměru polož na **jedno rameno**.",
+            "Podívej se, kde **druhé rameno** protne stupnici.",
+            "Čti na té stupnici, která na prvním rameni začíná nulou – tak nespleteš 50° a 130°."
+          ]
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 130
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Menší jednotka: minuta"
+        },
+        {
+          "type": "term",
+          "term": "Úhlová minuta (′)",
+          "definition": "Šedesátina stupně. Jeden stupeň má **60 minut**, stejně jako hodina.",
+          "example": "1° = 60′, takže 1,5° = 1° 30′."
+        },
+        {
+          "type": "example",
+          "question": "35° 40′ + 20° 30′ = ?",
+          "answer": "Stupně zvlášť, minuty zvlášť: 55° 70′. Ale 70′ = 60′ + 10′ = 1° 10′. Výsledek je **56° 10′**."
+        },
+        {
+          "type": "heading",
+          "text": "Dvojice úhlů"
+        },
+        {
+          "type": "text",
+          "text": "Když se dvě přímky protnou, vzniknou **čtyři úhly**. Mezi nimi jsou dva důležité vztahy:"
+        },
+        {
+          "type": "term",
+          "term": "Vedlejší úhly",
+          "definition": "Dva úhly, které leží **vedle sebe** a mají jedno rameno společné. Ta zbylá dvě ramena tvoří rovnou čáru, proto mají dohromady **180°**.",
+          "example": "Jeden má 70°, druhý tedy 180° − 70° = 110°."
+        },
+        {
+          "type": "term",
+          "term": "Vrcholové úhly",
+          "definition": "Dva úhly, které jsou **naproti sobě** přes vrchol – jako písmeno X. Jsou vždy **stejně velké**.",
+          "example": "Když má jeden 70°, ten naproti má také 70°."
+        },
+        {
+          "type": "mistake",
+          "wrong": "35° 40′ + 20° 30′ = 55° 70′ (a konec)",
+          "right": "55° 70′ = 56° 10′",
+          "why": "Minut může být nejvýš 59. Každých 60′ převeď na 1°."
+        },
+        {
+          "type": "summary",
+          "text": "Úhel = dvě polopřímky ze společného vrcholu. Měř úhloměrem od nuly. 1° = 60′. Vedlejší úhly mají dohromady 180°, vrcholové jsou shodné."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Úhel 120° je…",
+      "options": [
+        "tupý",
+        "ostrý",
+        "pravý",
+        "přímý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik stupňů má pravý úhel?",
+      "answers": [
+        "90"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Úhel má 50°. Kolik stupňů má jeho vedlejší úhel?",
+      "answers": [
+        "130"
+      ],
+      "explanation": "180 − 50 = 130"
+    },
+    {
+      "type": "input",
+      "question": "Úhel má 70°. Kolik stupňů má úhel k němu vrcholový?",
+      "answers": [
+        "70"
+      ],
+      "explanation": "Vrcholové úhly jsou shodné."
+    },
+    {
+      "type": "truefalse",
+      "question": "1° = 100′",
+      "answer": false,
+      "explanation": "1° = 60′"
+    },
+    {
+      "type": "choice",
+      "question": "25°50′ + 14°20′ =",
+      "options": [
+        "40°10′",
+        "39°70′",
+        "39°10′",
+        "40°70′"
+      ],
+      "answer": 0,
+      "explanation": "39°70′ = 40°10′"
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "ostrý",
+        "pravý",
+        "tupý",
+        "přímý",
+        "plný"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik stupňů urazí minutová ručička za 15 minut?",
+      "answers": [
+        "90"
+      ],
+      "explanation": "Čtvrtina z 360°."
+    },
+    {
+      "type": "choice",
+      "question": "Kolik minut je 1,5°?",
+      "options": [
+        "90′",
+        "150′",
+        "15′",
+        "60′"
+      ],
+      "answer": 0,
+      "explanation": "1,5 · 60 = 90"
+    },
+    {
+      "type": "truefalse",
+      "question": "Osa úhlu ho dělí na dva shodné úhly.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jaké druhy úhlů znáš podle velikosti?",
+      "answer": "Ostrý (menší než 90°), pravý (90°), tupý (mezi 90° a 180°), přímý (180°) a plný (360°)."
+    },
+    {
+      "type": "open",
+      "question": "Co jsou vedlejší a vrcholové úhly?",
+      "answer": "Vedlejší úhly mají společné rameno a dohromady dají 180°. Vrcholové úhly leží proti sobě u společného vrcholu a jsou stejně velké."
+    }
+  ]
+}

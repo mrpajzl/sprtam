@@ -41,11 +41,13 @@ Kompletní seznam závislostí: [`package.json`](../package.json).
 src/
   app.tsx, main.tsx     vstup aplikace, výběr obrazovky podle adresy
   router.tsx            směrování přes History API
-  content/              učivo
-    types.ts            schéma obsahu (zdroj pravdy)
+  content/              načítání a formát učiva
+    format.ts           formát JSON souborů (zdroj pravdy: typy, kontrola, JSON Schema)
+    schema.ts           malý nástroj na schémata (typ + kontrola + JSON Schema z jedné definice)
+    examples.ts         ukázka každého bloku a otázky (galerie, FORMAT.md)
     curriculum.ts       ročníky, předměty, barvy
-    data/<ročník>/<předmět>.ts
-  vocab/                anglická slovíčka A1–C1, přehrávání výslovnosti (speak.ts)
+    index.ts            načtení předmětu (jeden chunk na předmět)
+  vocab/                slovíčka: načítání, přehrávání výslovnosti (speak.ts)
   quiz/                 režimy, vyhodnocení odpovědí, generátory příkladů
   progress/
     store.ts            pokrok v localStorage, slučování
@@ -53,10 +55,17 @@ src/
     p2p.ts              propojení zařízení přes WebRTC
     recommend.ts        doporučení „Na řadě“
   screens/              obrazovky
-  widgets/              interaktivní pomůcky ve výkladu
+  widgets/              interaktivní pomůcky: <název>.tsx = jeden widget, kit.tsx = standard a sdílené ovládání,
+                        index.tsx = seznam
   ui/                   ikony, maskot, lišty
   stats.ts              denní anonymní ping
+content/                učivo jako JSON (viz CONTENT.md)
+  topics/<ročník>/<předmět>/_subject.json, <téma>.json
+  vocab/<úroveň>.json
+  schema/               JSON Schema pro editory (generované)
 plugins/
+  content.ts            čtení content/ v Node (pro build a skripty)
+  content-modules.ts    virtual:content – jeden chunk na předmět
   prerender.ts          HTML stránka pro každé téma (sdílení, vyhledávače)
   topic-index.ts        lehký index všech témat pro hledání
 server/index.mjs        produkční server
@@ -69,7 +78,7 @@ docs/                   tato dokumentace
 
 1. Prohlížeč otevře např. `/g/z5/matematika/zlomky`. Server vrátí **předrenderovanou stránku** s obsahem tématu ([`plugins/prerender.ts`](../plugins/prerender.ts)). Obsah je vidět hned, i bez JavaScriptu, a vyhledávače i náhledy odkazů dostanou titulek a popis.
 2. Načte se aplikace a vykreslí stejnou obrazovku interaktivně.
-3. Service worker na pozadí uloží celé učivo všech ročníků do cache. Každý předmět je samostatný soubor, takže se načítá jen to, co je potřeba, ale offline je k dispozici všechno.
+3. Service worker na pozadí uloží celé učivo všech ročníků do cache. Každý předmět je při buildu spojený z JSON souborů svých témat do jednoho souboru ([`plugins/content-modules.ts`](../plugins/content-modules.ts)), takže se načítá jen to, co je potřeba, ale offline je k dispozici všechno.
 4. Zavolá se denní ping ([Statistiky](STATISTIKY.md)).
 
 Obrazovky bez vlastní stránky (kvíz, hledání, přenos pokroku) dostanou prázdnou kostru `app.html` s `noindex`. Neznámé adresy vrací 404.
@@ -89,6 +98,7 @@ Obrazovky bez vlastní stránky (kvíz, hledání, přenos pokroku) dostanou pr�
 | `/hledat?q=…` | Hledání |
 | `/mix` | Mix připnutých témat |
 | `/sdilet` | Přenos pokroku |
+| `/widgety`, `/widgety/<název>` | Galerie widgetů, bloků a otázek pro autory obsahu |
 | `/#/p/<kód>`, `/#/spojit/<kód>`, `/#/presun/<kód>` | Import pokroku, párování, přechod ze staré domény (za `#`, server je nevidí) |
 
 Staré odkazy z doby, kdy aplikace používala adresy za `#` (`/#/g/z5`), se automaticky převedou na nové ([`src/router.tsx`](../src/router.tsx)).
@@ -130,7 +140,7 @@ Produkce běží v Dockeru na vlastním serveru spravovaném přes [Coolify](htt
 1. Změna se dostane do větve `main` přes pull request.
 2. Coolify automaticky sestaví [`Dockerfile`](../Dockerfile):
    - `npm ci`,
-   - `npm run check:content` (kontrola učiva; když selže, nasazení se zastaví),
+   - `npm run check:content` (kontrola učiva a widgetů; když selže, nasazení se zastaví),
    - `npm run build` (kontrola typů a produkční build),
    - výsledný obraz obsahuje jen `dist/` a `server/`.
 3. Spustí kontejner s volume `/data` pro statistiky a ověří `/healthz`.
@@ -154,7 +164,9 @@ Produkční verze se tedy vždy staví přímo z veřejného zdrojového kódu t
 ```sh
 npm install
 npm run dev              # http://localhost:5173
-npm run check:content    # kontrola učiva (schéma, odpovědi, počty otázek)
+npm run check:content    # kontrola učiva (formát, widgety, odpovědi, pravidla výkladu)
+npm run content:generate # content/schema/*.json, docs/FORMAT.md, docs/WIDGETY.md
+npm run content:format   # sjednotí formátování JSON v content/
 npm run build            # typy + produkční build do dist/
 node server/index.mjs    # produkční server nad dist/ na :8080
 ```
@@ -163,7 +175,9 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 
 | Skript | Co ověřuje |
 |---|---|
-| `scripts/check-content.ts` | schéma a správnost učiva (`npm run check:content`) |
+| `scripts/check-content.ts` | formát a správnost učiva, seznam widgetů, aktuálnost generovaných souborů (`npm run check:content`) |
+| `scripts/content-generate.ts` | vygeneruje JSON Schema a reference FORMAT.md, WIDGETY.md (`npm run content:generate`) |
+| `scripts/content-format.ts` | sjednotí formátování JSON (`npm run content:format`) |
 | `scripts/check-quiz.ts` | že každá napsaná odpověď projde vlastní kontrolou |
 | `scripts/flow.mjs` | průchod kvízem |
 | `scripts/vocab-test.mjs` | slovíčka |
@@ -174,6 +188,6 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/routing-test.mjs` | adresy a navigace nad produkčním buildem |
 | `scripts/verify-prod.mjs` | že produkce ukazuje všechna témata |
 | `scripts/crawl.mjs` | otevře každé téma a hlásí chyby za běhu |
-| `scripts/shots.mjs`, `widget-sheet.mjs` | snímky obrazovek a přehled pomůcek |
+| `scripts/shots.mjs` | snímky obrazovek (přehled widgetů je v aplikaci na `/widgety`) |
 
 Jak psát učivo: [CONTENT.md](CONTENT.md).

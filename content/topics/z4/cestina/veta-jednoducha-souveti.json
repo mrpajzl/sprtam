@@ -1,0 +1,316 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "veta-jednoducha-souveti",
+  "title": "Věta jednoduchá a souvětí",
+  "emoji": "🚃",
+  "explanations": [
+    {
+      "title": "Vláček",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Někdy řekneš krátce: *Prší.* Jindy víc věcí najednou: *Prší, proto jsem doma.* První je jedna věta, druhé jsou dvě věty spojené dohromady."
+        },
+        {
+          "type": "text",
+          "text": "Když poznáš, kolik vět je spojených, víš, kam napsat **čárku**. A umíš z krátkých vět udělat delší a zajímavější."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přísudek",
+          "definition": "Připomenutí: sloveso, které říká, co se děje. Je v tvaru, který ukazuje, kdo to dělá (*jdu, šel jsem, budeš číst*). Takovému tvaru říkáme **sloveso v určitém tvaru**.",
+          "example": "Pes **štěká**."
+        },
+        {
+          "type": "term",
+          "term": "Věta jednoduchá",
+          "definition": "Věta s **jedním** přísudkem.",
+          "example": "Pes štěká."
+        },
+        {
+          "type": "term",
+          "term": "Souvětí",
+          "definition": "Dvě nebo víc vět spojených dohromady. Má **víc přísudků**.",
+          "example": "Pes štěká a kočka utíká."
+        },
+        {
+          "type": "term",
+          "term": "Spojka",
+          "definition": "Slovo, které spojuje věty (nebo slova).",
+          "example": "a, ale, protože, když, že"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🚃 Pes štěká",
+            "🔗 a",
+            "🚃 kočka utíká."
+          ],
+          "caption": "věta + spojka + věta = souvětí"
+        },
+        {
+          "type": "heading",
+          "text": "Jak spočítat věty"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi všechny přísudky (co se děje?).",
+            "Pozor: *šel jsem*, *budu číst* je **jeden** přísudek, i když má dvě slova.",
+            "Kolik přísudků, tolik vět.",
+            "Jedna věta → věta jednoduchá. Víc → souvětí."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik vět má: „Přišel jsem domů, najedl jsem se a šel jsem spát.“?",
+          "answer": "Přísudky: **přišel jsem**, **najedl jsem se**, **šel jsem** spát. Tři přísudky → **3 věty**. Je to souvětí."
+        },
+        {
+          "type": "example",
+          "question": "Je „Ráno jsme jeli k babičce.“ souvětí?",
+          "answer": "Přísudek: **jeli jsme**. Jen jeden → **věta jednoduchá**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Budu číst“ jsou dvě věty, protože jsou tam dvě slovesná slova.",
+          "right": "„Budu číst“ je jeden přísudek – jedna věta.",
+          "why": "*Budu* a *číst* tvoří dohromady jeden tvar budoucího času. Počítáme ho jako jeden přísudek."
+        },
+        {
+          "type": "summary",
+          "text": "Kolik přísudků, tolik vět. Jeden přísudek = věta jednoduchá, víc = souvětí."
+        }
+      ]
+    },
+    {
+      "title": "Spojky a čárky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Věty v souvětí drží pohromadě **spojky** – jako spojovací háčky mezi vagony. A před většinou z nich píšeme **čárku**."
+        },
+        {
+          "type": "text",
+          "text": "Když poznáš souvětí a jeho spojky, budeš psát čárky správně. To je v diktátech hodně důležité."
+        },
+        {
+          "type": "term",
+          "term": "Souvětí",
+          "definition": "Víc vět spojených dohromady (víc přísudků).",
+          "example": "Chtěl jsem psa, ale máme kočku."
+        },
+        {
+          "type": "term",
+          "term": "Věta jednoduchá",
+          "definition": "Jen jeden přísudek.",
+          "example": "Ema čte knihu."
+        },
+        {
+          "type": "term",
+          "term": "Spojka",
+          "definition": "Slovo, které spojí věty: *a, ale, protože, když, že, proto*.",
+          "example": "Vím, **že** zítra je test."
+        },
+        {
+          "type": "heading",
+          "text": "Roztřiď"
+        },
+        {
+          "type": "text",
+          "text": "Spočítej přísudky a dej větu do správného kbelíku."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "věta jednoduchá",
+              "souvětí"
+            ],
+            "items": [
+              {
+                "text": "Prší.",
+                "group": 0
+              },
+              {
+                "text": "Prší, proto jsem doma.",
+                "group": 1
+              },
+              {
+                "text": "Ema čte knihu.",
+                "group": 0
+              },
+              {
+                "text": "Ema čte a Petr kreslí.",
+                "group": 1
+              },
+              {
+                "text": "Ráno jsme jeli k babičce.",
+                "group": 0
+              },
+              {
+                "text": "Když přijdeš, půjdeme ven.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo pro čárku"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Před **ale, protože, když, že, proto** v souvětí píšeme čárku: *Chtěl jsem jít ven**,** ale pršelo.*",
+            "Před **a** většinou čárku nepíšeme: *Ema čte a Petr kreslí.*",
+            "Začíná-li souvětí spojkou (*Když…*), čárka je mezi větami: *Když přijdeš**,** půjdeme ven.*"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kam patří čárka? „Chtěl jsem jít ven ale pršelo.“",
+          "answer": "Dva přísudky (*chtěl jsem jít*, *pršelo*) → souvětí. Spojka *ale* → čárka před ní: **ven, ale pršelo**."
+        },
+        {
+          "type": "example",
+          "question": "Spoj do souvětí: „Bylo teplo.“ „Šli jsme k vodě.“",
+          "answer": "Najdeme spojku, která sedí: **Protože bylo teplo, šli jsme k vodě.** Nebo: **Bylo teplo, a tak jsme šli k vodě.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ema čte, a Petr kreslí.",
+          "right": "Ema čte a Petr kreslí.",
+          "why": "Před obyčejným *a* (které jen přidává další věc) čárku nepíšeme."
+        },
+        {
+          "type": "summary",
+          "text": "Souvětí spojují spojky. Před ale, protože, když, že píšeme čárku, před obyčejným a ne."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je „Maminka vaří a tatínek uklízí.“?",
+      "options": [
+        "věta jednoduchá",
+        "souvětí"
+      ],
+      "answer": 1,
+      "explanation": "Dvě slovesa: vaří, uklízí."
+    },
+    {
+      "type": "choice",
+      "question": "Co je „Na stromě sedí kos.“?",
+      "options": [
+        "věta jednoduchá",
+        "souvětí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik vět má souvětí „Přišel jsem domů, najedl jsem se a šel jsem spát.“?",
+      "answers": [
+        "3",
+        "tři"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik vět má „Venku sněží.“?",
+      "answers": [
+        "1",
+        "jedna",
+        "jednu"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kam patří čárka? „Chtěl jsem jít ven ale pršelo.“",
+      "options": [
+        "před „ale“",
+        "za „ale“",
+        "nikam"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která spojka spojuje věty v souvětí „Nešel jsem ven, protože jsem byl nemocný.“?",
+      "options": [
+        "protože",
+        "jsem",
+        "ven"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Souvětí obsahuje aspoň dvě slovesa v určitém tvaru.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Před spojkou „a“ píšeme vždy čárku.",
+      "answer": false,
+      "explanation": "Před „a“ v běžném výčtu ani v jednoduchém spojení čárku nepíšeme."
+    },
+    {
+      "type": "order",
+      "question": "Slož souvětí.",
+      "items": [
+        "Když",
+        "zazvoní",
+        "zvonek,",
+        "jdeme",
+        "na",
+        "oběd."
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj začátek s koncem souvětí.",
+      "pairs": [
+        [
+          "Venku prší,",
+          "proto jsem doma."
+        ],
+        [
+          "Vím,",
+          "že zítra je test."
+        ],
+        [
+          "Chtěl jsem psa,",
+          "ale máme kočku."
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi větou jednoduchou a souvětím?",
+      "answer": "Věta jednoduchá má jedno sloveso v určitém tvaru. Souvětí má dvě nebo více vět, tedy víc určitých sloves."
+    },
+    {
+      "type": "open",
+      "question": "Spoj dvě věty do souvětí: „Bylo teplo.“ „Šli jsme k vodě.“",
+      "answer": "Například: Bylo teplo, a tak jsme šli k vodě. / Protože bylo teplo, šli jsme k vodě."
+    }
+  ]
+}

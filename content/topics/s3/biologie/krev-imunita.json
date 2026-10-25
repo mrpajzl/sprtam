@@ -1,0 +1,437 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "krev-imunita",
+  "title": "Krev a imunita",
+  "emoji": "🩸",
+  "explanations": [
+    {
+      "title": "Krevní skupiny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Při transfuzi nelze dát krev komukoli. Kdyby lékař spletl skupinu, krvinky by se v těle příjemce shlukly a mohl by zemřít. Proč? Krvinky mají na povrchu „jmenovky“ a tělo cizí jmenovky napadá."
+        },
+        {
+          "type": "text",
+          "text": "Nejdřív projdeme, z čeho krev je, pak krevní skupiny a Rh faktor – a nakonec to, jak tělo cizí částice pozná, tedy základ imunity."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Krevní plazma",
+          "definition": "Tekutá část krve (asi 55 %), hlavně voda s rozpuštěnými látkami. Ve zbytku plavou krvinky."
+        },
+        {
+          "type": "term",
+          "term": "Erytrocyty (červené krvinky)",
+          "definition": "Krvinky bez jádra plné **hemoglobinu** – bílkoviny se železem, která přenáší kyslík. Žijí asi **120 dní**."
+        },
+        {
+          "type": "term",
+          "term": "Leukocyty a trombocyty",
+          "definition": "**Leukocyty** (bílé krvinky) brání tělo. **Trombocyty** (krevní destičky) zastavují krvácení."
+        },
+        {
+          "type": "term",
+          "term": "Antigen",
+          "definition": "Látka (často na povrchu buňky), kterou imunitní systém rozpozná jako „vlastní“ nebo „cizí“ – jmenovka."
+        },
+        {
+          "type": "term",
+          "term": "Protilátka",
+          "definition": "Bílkovina, která se přesně naváže na určitý antigen a označí ho ke zničení."
+        },
+        {
+          "type": "term",
+          "term": "Aglutinace",
+          "definition": "Shlukování krvinek, když se na jejich antigeny navážou protilátky. Při transfuzi je životu nebezpečné."
+        },
+        {
+          "type": "heading",
+          "text": "Systém AB0"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Antigen na krvinkách",
+            "Protilátky v plazmě"
+          ],
+          "rows": [
+            [
+              "A",
+              "A",
+              "anti-B"
+            ],
+            [
+              "B",
+              "B",
+              "anti-A"
+            ],
+            [
+              "AB",
+              "A i B",
+              "žádné"
+            ],
+            [
+              "0",
+              "žádný",
+              "anti-A i anti-B"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pravidlo: v plazmě jsou vždy protilátky proti tomu antigenu, který člověk **nemá**."
+        },
+        {
+          "type": "heading",
+          "text": "Rh faktor"
+        },
+        {
+          "type": "term",
+          "term": "Rh faktor",
+          "definition": "Další antigen na erytrocytech (antigen D). Kdo ho má, je **Rh+**, kdo ne, **Rh−**. Protilátky proti němu si Rh− člověk vytvoří až po kontaktu s Rh+ krví."
+        },
+        {
+          "type": "text",
+          "text": "**Rh-inkompatibilita**: matka **Rh−** čeká dítě **Rh+**. Při porodu se krev dítěte dostane k matce, ta si vytvoří protilátky. V dalším těhotenství by mohly napadat krvinky dalšího Rh+ plodu. Proto matka dostává po porodu ochrannou injekci (anti-D)."
+        },
+        {
+          "type": "example",
+          "question": "Proč nelze dát krev skupiny A člověku se skupinou B?",
+          "answer": "Člověk se skupinou B má v plazmě **anti-A**. Ty by se navázaly na antigen A darovaných krvinek a způsobily **aglutinaci**."
+        },
+        {
+          "type": "example",
+          "question": "Proč je 0 Rh− univerzální dárce červených krvinek?",
+          "answer": "Jeho erytrocyty nemají **žádný** z antigenů A, B ani D. Protilátky příjemce nemají na co se navázat. Naopak **AB Rh+** je univerzální příjemce – nemá anti-A ani anti-B."
+        },
+        {
+          "type": "text",
+          "text": "Ověř se – zkus odpovědět a pak otoč karty."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "skupina A – protilátky?",
+                "back": "anti-B"
+              },
+              {
+                "front": "skupina 0 – antigen?",
+                "back": "žádný"
+              },
+              {
+                "front": "skupina AB – protilátky?",
+                "back": "žádné"
+              },
+              {
+                "front": "univerzální dárce erytrocytů",
+                "back": "0 Rh−"
+              },
+              {
+                "front": "riziková kombinace Rh",
+                "back": "matka Rh−, plod Rh+"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Srážení krve"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Při poranění se **destičky** nalepí na ránu a uvolní faktory srážení.",
+            "Řetězem reakcí vznikne enzym **trombin**.",
+            "Trombin změní rozpustný **fibrinogen** na vláknitý **fibrin**.",
+            "Fibrinová síť zachytí krvinky – vznikne **krevní sraženina**."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Člověk se skupinou 0 má protilátky anti-0.",
+          "right": "Skupina 0 nemá žádný antigen a má protilátky **anti-A i anti-B**.",
+          "why": "Antigen „0“ neexistuje – 0 znamená „nic“. Proto lze 0 krvinky dát skoro komukoli."
+        },
+        {
+          "type": "summary",
+          "text": "V plazmě jsou protilátky proti antigenu, který člověk nemá. 0 Rh− je univerzální dárce erytrocytů, AB Rh+ univerzální příjemce. Riziko: matka Rh−, plod Rh+."
+        }
+      ]
+    },
+    {
+      "title": "Armáda těla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každou minutu se do tebe snaží dostat bakterie, viry a plísně. Většinou o tom ani nevíš, protože tvé tělo má **armádu**: hlídky na hranicích, pěchotu, která sežere vetřelce, a speciální jednotky, které si nepřítele pamatují roky."
+        },
+        {
+          "type": "text",
+          "text": "Ta armáda žije v **krvi**. Proto si nejdřív řekneme, co krev obsahuje, a pak jak funguje imunita, očkování a co dělá HIV."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Krev",
+          "definition": "Dospělý má asi **5–6 litrů** krve. Tvoří ji **plazma** (tekutina) a krvinky: **erytrocyty** (přenos kyslíku hemoglobinem, žijí asi 120 dní), **leukocyty** (obrana) a **trombocyty** (srážení)."
+        },
+        {
+          "type": "term",
+          "term": "Krvetvorba",
+          "definition": "Vznik krvinek. U dospělého probíhá v **červené kostní dřeni** (např. v hrudní kosti, pánvi, obratlích)."
+        },
+        {
+          "type": "term",
+          "term": "Patogen a antigen",
+          "definition": "**Patogen** je původce nemoci (bakterie, virus). **Antigen** je jeho „poznávací znak“, na který reaguje imunitní systém."
+        },
+        {
+          "type": "term",
+          "term": "Fagocytóza",
+          "definition": "Pohlcení a strávení vetřelce buňkou – „sežrání“."
+        },
+        {
+          "type": "heading",
+          "text": "Dvě linie obrany"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Nespecifická imunita",
+            "Specifická imunita"
+          ],
+          "rows": [
+            [
+              "jaká je",
+              "vrozená, stejná proti všem",
+              "získaná, na konkrétní antigen"
+            ],
+            [
+              "kdo",
+              "kůže, sliznice, fagocyty (neutrofily, makrofágy), zánět, horečka",
+              "B-lymfocyty, T-lymfocyty, protilátky"
+            ],
+            [
+              "rychlost",
+              "okamžitě",
+              "napoprvé dny"
+            ],
+            [
+              "paměť",
+              "ne",
+              "ano – paměťové buňky"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jednotky armády"
+        },
+        {
+          "type": "text",
+          "text": "Ke každé jednotce si řekni její úkol, pak otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "neutrofily",
+                "back": "nejčastější bílé krvinky, fagocytóza"
+              },
+              {
+                "front": "makrofágy",
+                "back": "pohlcují mikroby (fagocytóza), ukazují antigeny lymfocytům"
+              },
+              {
+                "front": "B-lymfocyty",
+                "back": "tvoří protilátky"
+              },
+              {
+                "front": "T-lymfocyty",
+                "back": "řídí imunitu (pomocné), ničí napadené buňky"
+              },
+              {
+                "front": "paměťové buňky",
+                "back": "pamatují si antigen – rychlá reakce příště"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Průběh nákazy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Patogen projde kůží nebo sliznicí.",
+            "**Fagocyty** ho pohlcují, vzniká **zánět** (zarudnutí, otok) a třeba horečka.",
+            "**Pomocné T-lymfocyty** rozpoznají antigen a „zburcují“ ostatní.",
+            "**B-lymfocyty** tvoří **protilátky**, cytotoxické T-lymfocyty ničí napadené buňky.",
+            "Zůstanou **paměťové buňky** – příště je reakce rychlá a člověk často ani neonemocní."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Očkování a sérum"
+        },
+        {
+          "type": "term",
+          "term": "Aktivní a pasivní imunizace",
+          "definition": "**Aktivní** – tělo si protilátky vytvoří **samo** (prodělaná nemoc, **očkování**); vzniká paměť. **Pasivní** – tělo dostane **hotové** protilátky (sérum, protilátky z mateřského mléka); působí hned, ale krátce."
+        },
+        {
+          "type": "example",
+          "question": "Proč obvykle nedostaneš plané neštovice dvakrát?",
+          "answer": "Po první nemoci zůstanou **paměťové buňky**. Při druhém setkání imunita zareaguje tak rychle, že nemoc nepropukne."
+        },
+        {
+          "type": "example",
+          "question": "Proč je AIDS tak nebezpečné?",
+          "answer": "HIV ničí **pomocné T-lymfocyty**, které řídí celou specifickou imunitu. Armáda ztratí velení a tělo podléhá i běžným infekcím."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Očkování je pasivní imunizace.",
+          "right": "Očkování je **aktivní** imunizace.",
+          "why": "Vakcína obsahuje antigen, ne hotové protilátky. Tělo si protilátky a paměťové buňky vytvoří samo."
+        },
+        {
+          "type": "summary",
+          "text": "Nespecifická imunita je vrozená (kůže, fagocyty), specifická cílí na antigen (B-lymfocyty → protilátky, T-lymfocyty) a má paměť. Očkování = aktivní imunizace. Krvinky vznikají v červené kostní dřeni."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo je univerzální dárce erytrocytů?",
+      "options": [
+        "0 Rh−",
+        "AB Rh+",
+        "A Rh+"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Protilátky tvoří…",
+      "options": [
+        "B-lymfocyty",
+        "erytrocyty",
+        "trombocyty"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Skupina AB nemá v plazmě protilátky anti-A ani anti-B.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Přibližná životnost červené krvinky ve dnech je…",
+      "answers": [
+        "120"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj složku krve s funkcí.",
+      "pairs": [
+        [
+          "hemoglobin",
+          "přenos O₂"
+        ],
+        [
+          "fibrinogen",
+          "srážení"
+        ],
+        [
+          "trombocyty",
+          "zástava krvácení"
+        ],
+        [
+          "neutrofily",
+          "fagocytóza"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Očkování je pasivní imunizace.",
+      "answer": false,
+      "explanation": "Očkování je aktivní imunizace – tělo si samo vytvoří protilátky."
+    },
+    {
+      "type": "choice",
+      "question": "Kde vznikají krvinky dospělého?",
+      "options": [
+        "v červené kostní dřeni",
+        "ve slezině",
+        "v ledvinách"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kolik krve má přibližně dospělý člověk?",
+      "options": [
+        "5–6 litrů",
+        "1–2 litry",
+        "10–12 litrů"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "HIV ničí pomocné T-lymfocyty.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Rh-inkompatibilita hrozí, když je…",
+      "options": [
+        "matka Rh−, plod Rh+",
+        "matka Rh+, plod Rh−",
+        "oba Rh+"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi nespecifickou a specifickou imunitou?",
+      "answer": "Nespecifická je vrozená a působí proti všem patogenům stejně (kůže, fagocyty, zánět). Specifická je získaná, cílí na konkrétní antigen (lymfocyty, protilátky) a má paměť."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, jak probíhá srážení krve.",
+      "answer": "Při poranění se destičky shluknou a uvolní faktory. Kaskádou vznikne trombin, který mění rozpustný fibrinogen na vláknitý fibrin. Fibrinová síť zachytí krvinky a vytvoří krevní sraženinu."
+    }
+  ]
+}

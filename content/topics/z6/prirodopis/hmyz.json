@@ -1,0 +1,374 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hmyz",
+  "title": "Hmyz",
+  "emoji": "🐝",
+  "explanations": [
+    {
+      "title": "Proměna",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Housenka a motýl vypadají, jako by to byla dvě různá zvířata. Housenka leze a žere listy, motýl létá a saje nektar. Přitom jde o tutéž bytost – jen v jiném období života."
+        },
+        {
+          "type": "text",
+          "text": "Té velké změně říkáme **proměna**. Pochopíš, jak hmyz roste a proč některý hmyz prochází kuklou a jiný ne."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hmyz",
+          "definition": "Členovci (živočichové s článkovanýma nohama a tvrdým krunýřem) se **6 nohama** a tělem ze tří částí: hlava, hruď, zadeček.",
+          "example": "Včela, moucha, brouk, motýl."
+        },
+        {
+          "type": "term",
+          "term": "Larva",
+          "definition": "Mládě hmyzu, které se líhne z vajíčka. Často vypadá úplně jinak než dospělý jedinec.",
+          "example": "Housenka je larva motýla, ponrava je larva chrousta."
+        },
+        {
+          "type": "term",
+          "term": "Kukla",
+          "definition": "Klidová fáze mezi larvou a dospělcem. Kukla nežere a skoro se nehýbe. Uvnitř se tělo kompletně přestaví."
+        },
+        {
+          "type": "term",
+          "term": "Dospělec",
+          "definition": "Dospělý hmyz, který se už umí rozmnožovat.",
+          "example": "Motýl."
+        },
+        {
+          "type": "heading",
+          "text": "Dokonalá proměna – s kuklou"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj, jak se z vajíčka stane motýl."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "vajíčko",
+              "larva (housenka)",
+              "kukla",
+              "dospělec (motýl)"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Proměně se čtyřmi fázemi, včetně kukly, říkáme **dokonalá proměna**. Má ji motýl, brouk, včela, moucha nebo komár."
+        },
+        {
+          "type": "heading",
+          "text": "Nedokonalá proměna – bez kukly"
+        },
+        {
+          "type": "term",
+          "term": "Nymfa",
+          "definition": "Larva hmyzu, která už se podobá dospělci, jen je menší a nemá hotová křídla."
+        },
+        {
+          "type": "text",
+          "text": "U **nedokonalé proměny** kukla chybí: vajíčko → larva (nymfa) → dospělec. Larva se několikrát svlékne a s každým svlékáním se víc podobá dospělci. Takto se vyvíjí kobylka, šváb nebo vážka."
+        },
+        {
+          "type": "example",
+          "question": "Z vajíčka mouchy se vylíhne bílý „červíček“, pak vznikne hnědý soudeček a z něj vyleze moucha. Jaká je to proměna?",
+          "answer": "Bílý červíček = larva, hnědý soudeček = **kukla**. Má kuklu, je to **dokonalá** proměna."
+        },
+        {
+          "type": "example",
+          "question": "Z vajíčka kobylky se vylíhne malá kobylka bez křídel. Jaká je to proměna?",
+          "answer": "Mládě se podobá dospělci a postupně dorůstá, kukla chybí. Je to **nedokonalá** proměna."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Housenka je samostatný druh zvířete, jako třeba žížala.",
+          "right": "Housenka je larva motýla – mládě, ze kterého bude motýl.",
+          "why": "Larva a dospělec jsou tentýž živočich v různém věku. Liší se tvarem i potravou."
+        },
+        {
+          "type": "summary",
+          "text": "Dokonalá proměna: vajíčko → larva → kukla → dospělec. Nedokonalá proměna nemá kuklu: vajíčko → larva (nymfa) → dospělec."
+        }
+      ]
+    },
+    {
+      "title": "Tělo hmyzu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hmyzu je na Zemi víc druhů než všech ostatních živočichů dohromady. Bez včel by nebyla jablka ani třešně. Bez much a brouků by se nerozkládaly zbytky v přírodě."
+        },
+        {
+          "type": "text",
+          "text": "Hmyz je zvláštně postavený: kostru má venku, dýchá bez plic a jeho „ústa“ jsou jako sada nástrojů. Projdeme tělo hmyzu od hlavy po zadeček."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hmyz",
+          "definition": "Bezobratlí živočichové se 6 nohama (3 páry) a tvrdým povrchem těla – krunýřem z látky **chitin**."
+        },
+        {
+          "type": "term",
+          "term": "Tykadla",
+          "definition": "Dvě pohyblivá „anténky“ na hlavě. Hmyz jimi čichá a hmatá."
+        },
+        {
+          "type": "term",
+          "term": "Složené oči",
+          "definition": "Oči z tisíců malých oček. Každé vidí kousek obrazu, dohromady vznikne mozaika.",
+          "example": "Moucha díky nim vidí skoro dokola – proto se těžko plácá."
+        },
+        {
+          "type": "term",
+          "term": "Ústní ústrojí",
+          "definition": "Části kolem úst, kterými hmyz přijímá potravu. Každý hmyz ho má přizpůsobené své potravě."
+        },
+        {
+          "type": "term",
+          "term": "Vzdušnice",
+          "definition": "Tenké trubičky, které vedou vzduch z otvorů na těle přímo k orgánům. Hmyz nemá plíce."
+        },
+        {
+          "type": "heading",
+          "text": "Tři části těla"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Část",
+            "Co na ní je"
+          ],
+          "rows": [
+            [
+              "hlava",
+              "tykadla, složené oči, ústní ústrojí"
+            ],
+            [
+              "hruď",
+              "3 páry nohou, křídla (většinou 2 páry)"
+            ],
+            [
+              "zadeček",
+              "trávení, rozmnožování, otvory vzdušnic"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Ústa jako nástroje"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**kousací** – brouk, kobylka (kousne list),",
+            "**sací sosák** – motýl (pije nektar jako brčkem),",
+            "**bodavě sací** – komár (propíchne kůži a saje krev),",
+            "**lízací** – moucha (olizuje tekutou potravu)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď hmyz podle proměny. Prochází kuklou, nebo ne?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "S kuklou",
+              "Bez kukly"
+            ],
+            "items": [
+              {
+                "text": "motýl",
+                "group": 0
+              },
+              {
+                "text": "kobylka",
+                "group": 1
+              },
+              {
+                "text": "včela",
+                "group": 0
+              },
+              {
+                "text": "vážka",
+                "group": 1
+              },
+              {
+                "text": "brouk",
+                "group": 0
+              },
+              {
+                "text": "šváb",
+                "group": 1
+              },
+              {
+                "text": "moucha",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Pozor: proměna s kuklou se jmenuje **dokonalá**, bez kukly **nedokonalá**."
+        },
+        {
+          "type": "example",
+          "question": "Živočich má 6 nohou, 2 páry křídel a sosák stočený do spirály. Co je to a čím se živí?",
+          "answer": "6 nohou → hmyz. Stočený sací sosák → **motýl**. Saje sladký nektar z květů."
+        },
+        {
+          "type": "example",
+          "question": "Proč včely a mravence nazýváme „společenským“ hmyzem?",
+          "answer": "Žijí ve velkých skupinách – **společenstvech**. Každý má svou práci: královna klade vajíčka, dělnice shánějí potravu a starají se o mláďata."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hmyz má nohy na zadečku.",
+          "right": "Všechny 3 páry nohou i křídla vyrůstají z **hrudi**.",
+          "why": "Hruď je „motor“ hmyzu – jsou v ní svaly pro chůzi a let."
+        },
+        {
+          "type": "summary",
+          "text": "Hmyz: hlava (tykadla, oči, ústa), hruď (6 nohou, křídla), zadeček. Dýchá vzdušnicemi. Opyluje rostliny a je potravou mnoha živočichů."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik nohou má hmyz?",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď vývoj motýla.",
+      "items": [
+        "vajíčko",
+        "housenka",
+        "kukla",
+        "motýl"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo má nedokonalou proměnu?",
+      "options": [
+        "kobylka",
+        "motýl",
+        "včela"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Čím dýchá hmyz?",
+      "options": [
+        "vzdušnicemi",
+        "plícemi",
+        "žábrami"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Tělo hmyzu má hlavu, hruď a zadeček.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Včela je škůdce.",
+      "answer": false,
+      "explanation": "Včela opyluje rostliny a dává med."
+    },
+    {
+      "type": "match",
+      "question": "Spoj hmyz s ústním ústrojím.",
+      "pairs": [
+        [
+          "motýl",
+          "sací sosák"
+        ],
+        [
+          "brouk",
+          "kousací"
+        ],
+        [
+          "komár",
+          "bodavě sací"
+        ],
+        [
+          "moucha",
+          "lízací"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Larva motýla se nazývá…",
+      "options": [
+        "housenka",
+        "ponrava",
+        "nymfa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Mravenci a včely žijí ve společenstvech.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kde na těle hmyzu jsou křídla?",
+      "options": [
+        "na hrudi",
+        "na hlavě",
+        "na zadečku"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi dokonalou a nedokonalou proměnou.",
+      "answer": "Dokonalá proměna má stadium kukly (vajíčko, larva, kukla, dospělec). Nedokonalá kuklu nemá, larva se postupně mění v dospělce."
+    },
+    {
+      "type": "open",
+      "question": "Proč je hmyz pro přírodu a člověka důležitý?",
+      "answer": "Opyluje rostliny, je potravou ptáků a dalších živočichů, rozkládá zbytky. Včely dávají med a vosk."
+    }
+  ]
+}

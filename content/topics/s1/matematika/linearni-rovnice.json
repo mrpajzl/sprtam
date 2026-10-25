@@ -1,0 +1,351 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "linearni-rovnice",
+  "title": "Lineární rovnice a nerovnice",
+  "emoji": "⚖️",
+  "generator": "linear-eq",
+  "explanations": [
+    {
+      "title": "Na vahách",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Za 3 stejné sešity a pravítko za 2 Kč jsi zaplatil 14 Kč. Kolik stál sešit? Takovou hádanku přepíšeš jako 3x + 2 = 14 a vyřešíš ji postupem, který funguje vždy."
+        },
+        {
+          "type": "text",
+          "text": "Rovnice jsou základní nástroj pro výpočet čehokoli neznámého – ceny, rychlosti, času, množství. Bez nich se neobejde fyzika, chemie ani ekonomie."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rovnice",
+          "definition": "Dva výrazy spojené rovnítkem. Tvrdí, že levá strana se rovná pravé.",
+          "example": "3x + 2 = 14"
+        },
+        {
+          "type": "term",
+          "term": "Neznámá",
+          "definition": "Písmeno v rovnici, jehož hodnotu hledáme.",
+          "example": "V 3x + 2 = 14 je neznámá x."
+        },
+        {
+          "type": "term",
+          "term": "Řešení (kořen)",
+          "definition": "Číslo, které po dosazení za neznámou dá pravdivou rovnost.",
+          "example": "x = 4: 3 · 4 + 2 = 14 ✓"
+        },
+        {
+          "type": "term",
+          "term": "Lineární rovnice",
+          "definition": "Rovnice, kde je neznámá jen v první mocnině – žádné x², žádné x ve jmenovateli.",
+          "example": "2(x − 1) = x + 4 je lineární, x² = 4 ne."
+        },
+        {
+          "type": "heading",
+          "text": "Rovnice jako váhy"
+        },
+        {
+          "type": "text",
+          "text": "Rovnice jsou váhy v rovnováze. Smíš s nimi dělat cokoli, co **udržíš na obou miskách stejně**: přidat, ubrat, vynásobit, vydělit (ne nulou). Takovým krokům se říká **ekvivalentní úpravy** – nemění řešení."
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej: nejdřív z obou misek uber 2, pak obě strany vyděl 3. Co zbude na levé misce?"
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 3,
+            "b": 2,
+            "c": 14
+          }
+        },
+        {
+          "type": "example",
+          "question": "Řeš 2(x − 1) = x + 4.",
+          "answer": "Roznásobím: 2x − 2 = x + 4. Od obou stran odečtu x: x − 2 = 4. K oběma přičtu 2: **x = 6**. Zkouška: 2 · 5 = 10 a 6 + 4 = 10 ✓."
+        },
+        {
+          "type": "text",
+          "text": "Někdy x úplně zmizí. 0 · x = 5 je nepravda pro každé x → **žádné řešení**. 2(x + 1) = 2x + 2 vede na 0 = 0, což platí vždy → **nekonečně mnoho řešení**."
+        },
+        {
+          "type": "heading",
+          "text": "Nerovnice: váhy, které se převažují"
+        },
+        {
+          "type": "term",
+          "term": "Nerovnice",
+          "definition": "Jako rovnice, ale místo = je <, >, ≤ nebo ≥. Řešením je obvykle celý úsek čísel (interval).",
+          "example": "3x − 1 < 11 → x < 4"
+        },
+        {
+          "type": "text",
+          "text": "Úpravy jsou stejné jako u rovnic, s jedinou výjimkou. 3 > 1 je pravda. Vynásob obě strany −1: −3 a −1. Teď je −3 **menší** než −1. Násobení nebo dělení **záporným číslem otočí znak**."
+        },
+        {
+          "type": "example",
+          "question": "Řeš −2x > 6.",
+          "answer": "Dělím −2, proto otočím znak: x < 6 : (−2), tedy **x < −3**. Kontrola: x = −4 → −2 · (−4) = 8 > 6 ✓."
+        },
+        {
+          "type": "mistake",
+          "wrong": "−2x > 6 → x > −3",
+          "right": "−2x > 6 → x < −3",
+          "why": "Při dělení záporným číslem se pořadí čísel na ose obrátí, takže se musí otočit i znak nerovnosti."
+        },
+        {
+          "type": "heading",
+          "text": "Dvě neznámé – soustava"
+        },
+        {
+          "type": "term",
+          "term": "Soustava rovnic",
+          "definition": "Několik rovnic, které musí platit **zároveň**. Na dvě neznámé potřebuješ dvě rovnice.",
+          "example": "x + y = 10 a x − y = 2"
+        },
+        {
+          "type": "example",
+          "question": "Řeš x + y = 10, x − y = 2.",
+          "answer": "Sečtu levé strany a pravé strany: (x + y) + (x − y) = 10 + 2, tedy 2x = 12, x = 6. Dosadím: 6 + y = 10, **y = 4**. (Sčítací metoda.)"
+        },
+        {
+          "type": "summary",
+          "text": "S oběma stranami dělej totéž. Výsledek ověř zkouškou. U nerovnic otoč znak, když násobíš nebo dělíš záporným číslem."
+        }
+      ]
+    },
+    {
+      "title": "Grafem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mobilní tarif stojí 200 Kč měsíčně plus 2 Kč za minutu. Druhý tarif 300 Kč a 1 Kč za minutu. Od kolika minut je druhý výhodnější? Když oba tarify nakreslíš jako čáry, odpověď uvidíš tam, kde se protnou."
+        },
+        {
+          "type": "text",
+          "text": "Graf ti ukáže, **proč** má rovnice jedno, žádné nebo nekonečně mnoho řešení a jak vypadá řešení nerovnice."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rovnice a řešení",
+          "definition": "Rovnice je rovnost s neznámou x. Řešení je číslo, které ji po dosazení splní.",
+          "example": "2x − 4 = 0 má řešení x = 2."
+        },
+        {
+          "type": "term",
+          "term": "Souřadnicový systém",
+          "definition": "Dvě kolmé číselné osy: vodorovná osa x a svislá osa y. Každý bod má dvě souřadnice [x; y].",
+          "example": "Bod [2; 0] leží na ose x, dva dílky vpravo od počátku."
+        },
+        {
+          "type": "term",
+          "term": "Graf y = kx + q",
+          "definition": "Všechny body [x; y], kde y vypočítáš z x podle předpisu. Je to vždy přímka. q je místo, kde přímka protne osu y, k říká, o kolik y vzroste, když se x zvětší o 1.",
+          "example": "y = 2x − 4 prochází bodem [0; −4] a každý krok doprava stoupá o 2."
+        },
+        {
+          "type": "heading",
+          "text": "Rovnice = kde přímka protne osu x"
+        },
+        {
+          "type": "text",
+          "text": "Rovnice 2x − 4 = 0 se ptá: pro jaké x je y = 2x − 4 rovno nule? Tedy kde přímka **protne osu x**. Na grafu je to x = 2."
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej: měň q a sleduj, jak se průsečík s osou x posouvá. Pak nastav k = 0 – přímka je vodorovná a osu x buď neprotne vůbec, nebo s ní splyne."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 2,
+            "q": -4
+          }
+        },
+        {
+          "type": "text",
+          "text": "Tak vidíš i zvláštní případy: vodorovná přímka mimo osu (např. 0 · x = 5) → **žádné řešení**. Přímka ležící na ose (0 = 0) → **nekonečně mnoho řešení**."
+        },
+        {
+          "type": "heading",
+          "text": "Nerovnice = kde je přímka nad osou"
+        },
+        {
+          "type": "text",
+          "text": "2x − 4 > 0 znamená: kde je přímka **nad** osou x? Vpravo od 2, tedy x > 2. Pro „< 0“ hledáš část pod osou: x < 2."
+        },
+        {
+          "type": "mistake",
+          "wrong": "−2x > 6, vydělím −2 → x > −3",
+          "right": "x < −3",
+          "why": "Přímka y = −2x klesá: velké y má pro malá x. Při dělení záporným číslem se proto znak nerovnosti otáčí."
+        },
+        {
+          "type": "heading",
+          "text": "Soustava = průsečík dvou přímek"
+        },
+        {
+          "type": "term",
+          "term": "Soustava dvou rovnic",
+          "definition": "Dvě rovnice se dvěma neznámými, které musí platit zároveň. Každá rovnice je přímka, řešení je jejich společný bod.",
+          "example": "2x + y = 7 a x − y = 2 se protínají v [3; 1]."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Z jedné rovnice vyjádři jednu neznámou (např. x = y + 2).",
+            "Dosaď ji do druhé rovnice – zbude jedna neznámá.",
+            "Vyřeš ji.",
+            "Dopočítej druhou neznámou a udělej zkoušku v obou rovnicích."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Řeš 2x + y = 7, x − y = 2 dosazovací metodou.",
+          "answer": "Z druhé: x = y + 2. Dosadím: 2(y + 2) + y = 7 → 3y + 4 = 7 → y = 1. Pak x = 3. Zkouška: 6 + 1 = 7 ✓, 3 − 1 = 2 ✓. Řešení **[3; 1]**."
+        },
+        {
+          "type": "text",
+          "text": "Druhá možnost je **sčítací metoda**: rovnice sečteš tak, aby jedna neznámá zmizela. (2x + y) + (x − y) = 7 + 2 → 3x = 9 → x = 3. Výsledek je stejný."
+        },
+        {
+          "type": "text",
+          "text": "Rovnoběžné přímky se neprotnou → soustava nemá řešení. Totožné přímky → nekonečně mnoho řešení."
+        },
+        {
+          "type": "example",
+          "question": "Tarif A: 200 + 2t, tarif B: 300 + t (t = minuty). Kdy stojí stejně?",
+          "answer": "200 + 2t = 300 + t → t = 100. Při 100 minutách stojí oba 400 Kč; nad 100 minut je levnější B."
+        },
+        {
+          "type": "summary",
+          "text": "Řešení rovnice = průsečík přímky s osou x. Řešení nerovnice = část, kde je přímka nad/pod osou. Řešení soustavy = průsečík dvou přímek (dosazovací nebo sčítací metoda)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "3x + 5 = 20, x =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "2(x − 1) = x + 4, x =",
+      "answers": [
+        "6"
+      ],
+      "explanation": "2x − 2 = x + 4"
+    },
+    {
+      "type": "input",
+      "question": "x/3 + 1 = 5, x =",
+      "answers": [
+        "12"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "−2x > 6",
+      "options": [
+        "x < −3",
+        "x > −3",
+        "x < 3",
+        "x > 3"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vynásobíme-li nerovnici záporným číslem, znak nerovnosti se otočí.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Rovnice 0 · x = 5 má:",
+      "options": [
+        "žádné řešení",
+        "jedno řešení x = 0",
+        "nekonečně mnoho řešení"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Rovnice 2(x + 1) = 2x + 2 má nekonečně mnoho řešení.",
+      "answer": true,
+      "explanation": "Po úpravě 0 = 0."
+    },
+    {
+      "type": "choice",
+      "question": "Soustava x + y = 10, x − y = 2:",
+      "options": [
+        "x = 6, y = 4",
+        "x = 4, y = 6",
+        "x = 5, y = 5",
+        "x = 8, y = 2"
+      ],
+      "answer": 0,
+      "explanation": "Sečtením 2x = 12."
+    },
+    {
+      "type": "input",
+      "question": "Soustava 2x + y = 7, x − y = 2. y =",
+      "answers": [
+        "1"
+      ],
+      "explanation": "Sečtením 3x = 9, x = 3, y = 1."
+    },
+    {
+      "type": "input",
+      "question": "Největší celé x, pro které 3x − 1 < 11:",
+      "answers": [
+        "3"
+      ],
+      "explanation": "3x < 12, x < 4."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď kroky řešení 2(x + 3) = 14.",
+      "items": [
+        "2x + 6 = 14",
+        "2x = 8",
+        "x = 4",
+        "zkouška: 2·7 = 14"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co jsou ekvivalentní úpravy rovnice?",
+      "answer": "Úpravy, které nemění množinu řešení: přičtení stejného výrazu k oběma stranám, násobení obou stran nenulovým číslem."
+    },
+    {
+      "type": "open",
+      "question": "Jakými metodami lze řešit soustavu dvou lineárních rovnic?",
+      "answer": "Dosazovací (vyjádřím neznámou a dosadím), sčítací (rovnice vynásobím a sečtu, aby neznámá vypadla) a grafická (průsečík dvou přímek)."
+    }
+  ]
+}

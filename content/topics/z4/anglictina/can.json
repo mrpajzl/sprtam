@@ -1,0 +1,398 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "can",
+  "title": "Can / can’t",
+  "emoji": "🏊",
+  "explanations": [
+    {
+      "title": "Co umím",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Umíš plavat? Jezdit na kole? Hrát na kytaru? Každý něco umí a něco ne. Česky řekneš „umím“ nebo „neumím“."
+        },
+        {
+          "type": "text",
+          "text": "Anglicky na to stačí jedno slovíčko: **can**. Hodí se, když o sobě vyprávíš nebo když chceš někoho poprosit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Slovo, které říká, co kdo dělá.",
+          "example": "swim (plavat), sing (zpívat), run (běhat)"
+        },
+        {
+          "type": "term",
+          "term": "can",
+          "definition": "Anglicky „umím / můžu“. Dáš ho před jiné sloveso.",
+          "example": "I can swim. = Umím plavat."
+        },
+        {
+          "type": "term",
+          "term": "can’t",
+          "definition": "Zkrácené **cannot** = neumím / nemůžu. Je to **zápor** – věta s „ne“.",
+          "example": "I can’t sing. = Neumím zpívat."
+        },
+        {
+          "type": "heading",
+          "text": "Umím"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🏊",
+            "🚴",
+            "🎸"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**I can swim.** = Umím plavat. **I can ride a bike.** = Umím jezdit na kole."
+        },
+        {
+          "type": "heading",
+          "text": "Neumím"
+        },
+        {
+          "type": "text",
+          "text": "**I can’t play the guitar.** = Neumím hrát na kytaru. Dlouhý tvar **cannot** se píše jako jedno slovo."
+        },
+        {
+          "type": "heading",
+          "text": "Pro všechny stejné"
+        },
+        {
+          "type": "text",
+          "text": "**can** se nikdy nemění: *I can, you can, he can, she can, we can, they can*. Žádné -s na konci."
+        },
+        {
+          "type": "text",
+          "text": "A sloveso za ním se taky nemění: *She can **swim**.* – ne *swims*."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Je věta správně, nebo špatně? Roztřiď je."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "správně ✅",
+              "špatně ❌"
+            ],
+            "items": [
+              {
+                "text": "She can swim.",
+                "group": 0
+              },
+              {
+                "text": "She cans swim.",
+                "group": 1
+              },
+              {
+                "text": "He can’t ski.",
+                "group": 0
+              },
+              {
+                "text": "He can skis.",
+                "group": 1
+              },
+              {
+                "text": "Can you dance?",
+                "group": 0
+              },
+              {
+                "text": "Do you can dance?",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Můj pes umí plavat.",
+          "answer": "Umí = **can**, plavat = **swim** (beze změny). Věta: **My dog can swim.**"
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Tučňáci neumí létat. (tučňák = penguin, létat = fly)",
+          "answer": "Neumí = **can’t**. Tučňáků je víc → **penguins**. Věta: **Penguins can’t fly.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "He can plays football.",
+          "right": "He can play football.",
+          "why": "Za **can** je sloveso vždy beze změny – bez -s, i když mluvíš o něm nebo o ní."
+        },
+        {
+          "type": "summary",
+          "text": "**can** + sloveso beze změny = umím. **can’t** = neumím. Nikdy *cans*."
+        }
+      ]
+    },
+    {
+      "title": "Otázka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vybíráš spoluhráče do týmu. Potřebuješ vědět: „Umíš chytat? Umíš rychle běhat?“"
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se anglicky zeptat, co kdo umí, a krátce odpovědět. Stejnou otázkou můžeš i prosit: „Můžeš mi pomoct?“"
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "can",
+          "definition": "Umím / můžu. Stojí před slovesem – slovem, které říká, co kdo dělá.",
+          "example": "You can ride a bike. = Umíš jezdit na kole."
+        },
+        {
+          "type": "term",
+          "term": "Otázka",
+          "definition": "Věta, kterou se ptáš. Anglicky se v ní často přehodí pořadí slov.",
+          "example": "Can you swim? = Umíš plavat?"
+        },
+        {
+          "type": "term",
+          "term": "Krátká odpověď",
+          "definition": "Ano / ne + kousek otázky.",
+          "example": "Yes, I can. / No, I can’t."
+        },
+        {
+          "type": "heading",
+          "text": "Krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Věta: **You can ride a bike.**",
+            "Přesuň **can** na začátek: **Can you ride a bike?**",
+            "Ano: **Yes, I can.**",
+            "Ne: **No, I can’t.**"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor: ptáš se na *you* (ty), kamarád odpovídá o sobě – *I*."
+        },
+        {
+          "type": "heading",
+          "text": "Prosba"
+        },
+        {
+          "type": "text",
+          "text": "**Can you help me?** = Můžeš mi pomoct? **Can I go to the toilet?** = Můžu jít na záchod?"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň. Pamatuj: za can je sloveso beze změny."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "",
+                "after": " you play the piano?",
+                "options": [
+                  "Can",
+                  "Do",
+                  "Are"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "My dog can ",
+                "after": ".",
+                "options": [
+                  "run",
+                  "runs",
+                  "running"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Fish ",
+                "after": " walk.",
+                "options": [
+                  "can’t",
+                  "don’t can",
+                  "not can"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Yes, I ",
+                "after": ".",
+                "options": [
+                  "can",
+                  "do",
+                  "am"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Zeptej se: Umí tvůj brácha vařit? (vařit = cook)",
+          "answer": "**Can** dám na začátek, pak kdo, pak sloveso: **Can your brother cook?**"
+        },
+        {
+          "type": "example",
+          "question": "Can you ski? Ty lyžovat neumíš. Odpověz.",
+          "answer": "Odpovídám o sobě → **I**. Ne → **can’t**. **No, I can’t.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Do you can dance?",
+          "right": "Can you dance?",
+          "why": "S **can** se neptáš pomocí *do*. Stačí **can** přesunout na začátek."
+        },
+        {
+          "type": "summary",
+          "text": "Otázka: **Can** + kdo + sloveso? Odpověď: **Yes, I can. / No, I can’t.**"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "She ___ swim very well.",
+      "options": [
+        "can",
+        "cans",
+        "can to"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Can you ski? (ne)",
+      "options": [
+        "No, I can’t.",
+        "No, I don’t.",
+        "No, I can."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Doplň: Birds ___ fly.",
+      "answers": [
+        "can"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň zápor: Penguins ___ fly.",
+      "answers": [
+        "can’t",
+        "can't",
+        "cannot",
+        "cant",
+        "can not"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„He can plays football.“ je správně.",
+      "answer": false,
+      "explanation": "Po can sloveso beze změny: He can play."
+    },
+    {
+      "type": "truefalse",
+      "question": "„cannot“ znamená totéž co „can’t“.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Slož otázku.",
+      "items": [
+        "Can",
+        "you",
+        "ride",
+        "a",
+        "horse?"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se řekne „Umí tvůj brácha vařit?“",
+      "options": [
+        "Can your brother cook?",
+        "Does your brother can cook?",
+        "Your brother cans cook?"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "I can",
+          "umím"
+        ],
+        [
+          "I can’t",
+          "neumím"
+        ],
+        [
+          "Can you…?",
+          "Umíš…?"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co umí ryba?",
+      "options": [
+        "A fish can swim.",
+        "A fish can climb.",
+        "A fish can sing."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Řekni anglicky 2 věci, které umíš, a 1, kterou neumíš.",
+      "answer": "I can swim. I can play football. I can’t play the guitar."
+    },
+    {
+      "type": "open",
+      "question": "Zeptej se kamaráda anglicky, jestli umí plavat, a odpověz za něj.",
+      "answer": "Can you swim? Yes, I can. / No, I can’t."
+    }
+  ]
+}

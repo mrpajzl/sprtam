@@ -1,0 +1,356 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pridavna-jmena",
+  "title": "Přídavná jména",
+  "emoji": "🎨",
+  "explanations": [
+    {
+      "title": "Tři druhy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pes. Jaký pes? *Velký, chlupatý, sousedův.* Slova, která popisují, jaké něco je nebo čí je, dělají vyprávění barevné."
+        },
+        {
+          "type": "text",
+          "text": "Těmto slovům říkáme **přídavná jména**. Dělí se na tři druhy a každý se píše trochu jinak. Když druh poznáš, napíšeš správně konec."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přídavné jméno",
+          "definition": "Slovo, které říká, **jaký** něco je, nebo **čí** to je. Je to 2. slovní druh.",
+          "example": "modrý, jarní, otcův"
+        },
+        {
+          "type": "term",
+          "term": "Tvrdé přídavné jméno (vzor mladý)",
+          "definition": "Mění konec podle rodu: -ý, -á, -é.",
+          "example": "mladý kluk, mladá dívka, mladé kotě"
+        },
+        {
+          "type": "term",
+          "term": "Měkké přídavné jméno (vzor jarní)",
+          "definition": "Má v 1. pádě ve všech rodech stejně **-í**.",
+          "example": "jarní den, jarní noc, jarní ráno"
+        },
+        {
+          "type": "term",
+          "term": "Přivlastňovací přídavné jméno",
+          "definition": "Říká, **čí** věc je – komu patří. Vzory **otcův** (patří muži) a **matčin** (patří ženě).",
+          "example": "otcův klobouk, matčina kabelka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "druh",
+            "vzor",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "tvrdá",
+              "mladý",
+              "mladý, mladá, mladé"
+            ],
+            [
+              "měkká",
+              "jarní",
+              "jarní den, jarní noc, jarní ráno"
+            ],
+            [
+              "přivlastňovací",
+              "otcův, matčin",
+              "otcův klobouk, matčina kabelka"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak druh poznat"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zeptej se **čí?** Odpovídá? → **přivlastňovací** (Petrův, Janin).",
+            "Ne? Zkus ho dát k *den, noc, ráno*.",
+            "Mění konec (zelený, zelená, zelené)? → **mladý**.",
+            "Zůstává -í (zimní, zimní, zimní)? → **jarní**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Podle jakého vzoru je „letní“?",
+          "answer": "Letní den, letní noc, letní ráno – pořád **-í** → vzor **jarní**."
+        },
+        {
+          "type": "example",
+          "question": "Je to stark_ hrad – ý, nebo í?",
+          "answer": "Starý hrad, stará věž, staré město – mění se → vzor **mladý** → **ý**: starý."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Bratrský“ je přivlastňovací.",
+          "right": "Přivlastňovací je „bratrův“.",
+          "why": "Bratrův míč = míč patří bratrovi (čí?). Bratrská láska = jaká? Bratrský je tvrdé přídavné jméno (mladý)."
+        },
+        {
+          "type": "summary",
+          "text": "Jaký? → mladý (mění -ý/-á/-é) nebo jarní (pořád -í). Čí? → přivlastňovací (otcův, matčin)."
+        }
+      ]
+    },
+    {
+      "title": "Roztřiď",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si tři kamarády: **Mladý**, **Jarní** a **Otcův**. Každé přídavné jméno se k jednomu z nich přidá – podle toho, jak se chová."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, ke komu slovo patří, víš, jak napsat jeho konec: *zelený* s ý, *cizí* s í, *Petrův* s ů."
+        },
+        {
+          "type": "term",
+          "term": "Přídavné jméno",
+          "definition": "Popisuje podstatné jméno: jaké je nebo čí je.",
+          "example": "veselá holka, Petrův míč"
+        },
+        {
+          "type": "term",
+          "term": "Vzor mladý",
+          "definition": "Tvrdá přídavná jména. Konec se mění podle rodu.",
+          "example": "veselý, veselá, veselé"
+        },
+        {
+          "type": "term",
+          "term": "Vzor jarní",
+          "definition": "Měkká přídavná jména. Konec -í zůstává.",
+          "example": "cizí, zimní, ptačí"
+        },
+        {
+          "type": "term",
+          "term": "Přivlastňovací",
+          "definition": "Odpovídají na **čí?** Tvoří se od jména člověka nebo zvířete.",
+          "example": "Petrův, sestřin, babiččin"
+        },
+        {
+          "type": "heading",
+          "text": "Roztřiď"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "mladý",
+              "jarní",
+              "přivlastňovací"
+            ],
+            "items": [
+              {
+                "text": "zelený",
+                "group": 0
+              },
+              {
+                "text": "cizí",
+                "group": 1
+              },
+              {
+                "text": "Petrův",
+                "group": 2
+              },
+              {
+                "text": "veselá",
+                "group": 0
+              },
+              {
+                "text": "zimní",
+                "group": 1
+              },
+              {
+                "text": "sestřin",
+                "group": 2
+              },
+              {
+                "text": "velké",
+                "group": 0
+              },
+              {
+                "text": "ptačí",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak se tvoří přivlastňovací"
+        },
+        {
+          "type": "table",
+          "head": [
+            "komu patří",
+            "přídavné jméno",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "muži / zvířeti rodu mužského",
+              "-ův, -ova, -ovo",
+              "Pavlův, Pavlova, Pavlovo"
+            ],
+            [
+              "ženě",
+              "-in, -ina, -ino",
+              "Janin, Janina, Janino"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Vytvoř přivlastňovací přídavné jméno od „Jana“ k slovu „kolo“.",
+          "answer": "Patří ženě → -in. Kolo je *to* (střední rod) → **Janino kolo**."
+        },
+        {
+          "type": "example",
+          "question": "Babiččin, nebo babičkův koláč?",
+          "answer": "Koláč patří babičce – ženě → **-in**. Z babičk- se stane babičč-: **babiččin** koláč."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Matčin“ je tvrdé přídavné jméno.",
+          "right": "„Matčin“ je přivlastňovací.",
+          "why": "Odpovídá na *čí?* – matčin = patří matce. To je znak přivlastňovacího přídavného jména."
+        },
+        {
+          "type": "summary",
+          "text": "Mladý = tvrdá (-ý, -á, -é). Jarní = měkká (vždy -í). Otcův / matčin = přivlastňovací (čí?)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru je „modrý“?",
+      "options": [
+        "mladý",
+        "jarní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru je „letní“?",
+      "options": [
+        "mladý",
+        "jarní"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Které přídavné jméno je přivlastňovací?",
+      "options": [
+        "bratrův",
+        "bratrský",
+        "velký"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Na jakou otázku odpovídá přivlastňovací přídavné jméno?",
+      "options": [
+        "jaký?",
+        "čí?",
+        "kolik?"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Napiš vzor pro „cizí“.",
+      "answers": [
+        "jarní",
+        "jarni"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň ý/í: „Je to stark_ hrad.“",
+      "answers": [
+        "ý",
+        "y"
+      ],
+      "explanation": "Tvrdé přídavné jméno, vzor mladý."
+    },
+    {
+      "type": "truefalse",
+      "question": "Měkká přídavná jména mají ve všech rodech v 1. pádě j. č. koncovku -í.",
+      "answer": true,
+      "explanation": "Jarní den, jarní noc, jarní ráno."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Matčin“ je tvrdé přídavné jméno.",
+      "answer": false,
+      "explanation": "Matčin je přivlastňovací."
+    },
+    {
+      "type": "match",
+      "question": "Spoj přídavné jméno s podstatným.",
+      "pairs": [
+        [
+          "otcova",
+          "čepice"
+        ],
+        [
+          "otcův",
+          "svetr"
+        ],
+        [
+          "otcovo",
+          "kolo"
+        ],
+        [
+          "otcovy",
+          "boty"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je správně?",
+      "options": [
+        "Babiččin koláč",
+        "Babičkův koláč"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaké druhy přídavných jmen znáš?",
+      "answer": "Tvrdá (vzor mladý), měkká (vzor jarní) a přivlastňovací (otcův, matčin)."
+    },
+    {
+      "type": "open",
+      "question": "Vytvoř přivlastňovací přídavné jméno od slov „Pavel“ a „Jana“.",
+      "answer": "Pavlův (Pavlova, Pavlovo) a Janin (Janina, Janino)."
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rovnomerny-pohyb",
+  "title": "Rovnoměrný přímočarý pohyb",
+  "emoji": "🚆",
+  "explanations": [
+    {
+      "title": "Grafem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sedíš ve vlaku na rovné trati. Tachometr ukazuje pořád 72 km/h. Každou minutu vlak ujede stejný kus cesty. Takový pohyb je nejjednodušší, jaký existuje – a proto jím fyzika začíná."
+        },
+        {
+          "type": "text",
+          "text": "Když ho pochopíš, spočítáš, kdy dorazíš do cíle, kdy se potkají dva vlaky nebo jak dlouho letí světlo z Měsíce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pohyb",
+          "definition": "Těleso se pohybuje, když se mění jeho poloha vůči něčemu jinému (vůči zemi, nádraží, stromu).",
+          "example": "Vůči nádraží se vlak pohybuje. Vůči tobě, když sedíš uvnitř, je v klidu."
+        },
+        {
+          "type": "term",
+          "term": "Dráha s",
+          "definition": "Délka cesty, kterou těleso urazilo. Jednotka metr (m).",
+          "example": "Za hodinu vlak urazil dráhu 72 km."
+        },
+        {
+          "type": "term",
+          "term": "Rychlost v",
+          "definition": "Kolik metrů těleso urazí za jednu sekundu. Jednotka m/s.",
+          "example": "20 m/s = každou sekundu 20 metrů (to je 72 km/h)."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoměrný přímočarý pohyb",
+          "definition": "**Přímočarý** = po přímce, bez zatáček. **Rovnoměrný** = rychlost se nemění, za stejné časy těleso urazí stejné dráhy.",
+          "example": "Vlak na rovné trati se zapnutým tempomatem."
+        },
+        {
+          "type": "text",
+          "text": "Protože se rychlost nemění, je **zrychlení** (jak rychle se mění rychlost) nulové: `a = 0`."
+        },
+        {
+          "type": "heading",
+          "text": "Graf dráhy: s(t)"
+        },
+        {
+          "type": "term",
+          "term": "Graf s(t)",
+          "definition": "Obrázek, kde na vodorovné ose je čas t a na svislé ose dráha s. Každý bod říká: v tomto čase bylo těleso tak daleko.",
+          "example": "Bod (2 s; 8 m) znamená: po 2 sekundách je těleso 8 m od startu."
+        },
+        {
+          "type": "term",
+          "term": "Počáteční dráha s₀",
+          "definition": "Kde těleso bylo v čase 0, když jsme začali měřit.",
+          "example": "Startuješ 2 m za čárou, tedy s₀ = 2 m."
+        },
+        {
+          "type": "text",
+          "text": "Těleso, které jede 3 m/s, má po každé sekundě o 3 m víc. Body leží na **přímce**. Graf ukazuje `s = 2 + 3 · t`. Na widgetu je `k` rychlost a `q` počáteční dráha. Zvětšuj k a sleduj, jak přímka víc stoupá. Pak změň q – přímka se jen posune nahoru nebo dolů."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 3,
+            "q": 2
+          }
+        },
+        {
+          "type": "term",
+          "term": "Směrnice (strmost) grafu",
+          "definition": "O kolik graf stoupne, když se posuneš o 1 doprava. U grafu s(t) je to přesně **rychlost**.",
+          "example": "Přímka stoupá o 3 m za každou 1 s → v = 3 m/s."
+        },
+        {
+          "type": "heading",
+          "text": "Graf rychlosti: v(t)"
+        },
+        {
+          "type": "text",
+          "text": "Když nakreslíš rychlost v čase, dostaneš **vodorovnou čáru** – rychlost je pořád stejná. Pod čarou vznikne obdélník s výškou v a šířkou t. Jeho obsah `v · t` je přesně uražená dráha."
+        },
+        {
+          "type": "example",
+          "question": "Těleso jede 15 m/s po dobu 8 s. Jakou dráhu urazí? Ukaž to na grafu v(t).",
+          "answer": "Obdélník pod grafem má výšku 15 m/s a šířku 8 s. Obsah = 15 · 8 = **120 m**."
+        },
+        {
+          "type": "example",
+          "question": "Graf s(t) prochází body (0 s; 5 m) a (10 s; 25 m). Jaká je rychlost?",
+          "answer": "Za 10 s přibylo 25 − 5 = 20 m. Rychlost = 20 m : 10 s = **2 m/s**. Počáteční dráha s₀ = 5 m."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Graf s(t) vypadá jako cesta, kterou těleso jelo – když stoupá, jede těleso do kopce.",
+          "right": "Graf s(t) neukazuje tvar cesty. Stoupání grafu = rychlost.",
+          "why": "Na vodorovné ose je čas, ne místo. Strmější přímka znamená rychlejší pohyb, i když těleso jede po rovině."
+        },
+        {
+          "type": "summary",
+          "text": "Rovnoměrný přímočarý pohyb: rychlost stálá, zrychlení nulové. Graf s(t) je přímka, její strmost je rychlost. Graf v(t) je vodorovná čára, plocha pod ní je dráha."
+        }
+      ]
+    },
+    {
+      "title": "Výpočty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jedeš na kole stále 20 km/h a do cíle zbývá 10 km. Odhadneš, že to bude půl hodiny. Přesně tohle počítá fyzika – jen pečlivě a s jednotkami."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se tři věci: spočítat dráhu, čas nebo rychlost; určit, kde těleso bude; a správně spočítat **průměrnou rychlost**, ve které dělá chybu skoro každý."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dráha s, čas t, rychlost v",
+          "definition": "Dráha = jak daleko (m), čas = jak dlouho (s), rychlost = kolik metrů za sekundu (m/s).",
+          "example": "Za 5 s urazíš 50 m → rychlost 10 m/s."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoměrný přímočarý pohyb",
+          "definition": "Pohyb po přímce se stálou rychlostí. Rychlost se nemění, takže **zrychlení je nulové**.",
+          "example": "Auto na dálnici s tempomatem."
+        },
+        {
+          "type": "term",
+          "term": "Průměrná rychlost",
+          "definition": "Jaká stálá rychlost by tě dovezla do cíle za stejný čas. Počítá se jako **celá dráha děleno celý čas**.",
+          "example": "Ujel jsi 100 km za 2 h (i se zastávkou) → průměrně 50 km/h."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "text",
+          "text": "Ze zkušenosti: dráha = rychlost × čas, tedy `s = v · t`. Z toho úpravou `v = s / t` a `t = s / v`."
+        },
+        {
+          "type": "text",
+          "text": "Když těleso na začátku není na nule, přičteme počáteční polohu `s₀`: `s = s₀ + v · t`."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vypiš, co znáš, i s jednotkami.",
+            "Převeď na stejné jednotky (m a s, nebo km a h – nemíchat).",
+            "Vyber vzorec, ve kterém je jen jedna neznámá.",
+            "Dosaď a spočítej.",
+            "Zkontroluj, jestli výsledek dává smysl."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kde bude těleso v čase t = 10 s, když platí s = 5 + 2t (s v m, t v s)?",
+          "answer": "s₀ = 5 m, v = 2 m/s. s = 5 + 2 · 10 = 5 + 20 = **25 m**."
+        },
+        {
+          "type": "example",
+          "question": "Dva vlaky jedou proti sobě rychlostmi 20 m/s a 30 m/s. Jsou od sebe 1 km. Za jak dlouho se potkají?",
+          "answer": "Každou sekundu se k sobě přiblíží o 20 + 30 = 50 m. 1 km = 1 000 m. t = 1 000 : 50 = **20 s**."
+        },
+        {
+          "type": "example",
+          "question": "Světlo letí 3 · 10⁸ m/s. Za jak dlouho doletí z Měsíce na Zemi (384 000 km)?",
+          "answer": "384 000 km = 3,84 · 10⁸ m. t = s / v = 3,84 · 10⁸ / 3 · 10⁸ = **1,28 s**."
+        },
+        {
+          "type": "heading",
+          "text": "Průměrná rychlost – past"
+        },
+        {
+          "type": "text",
+          "text": "Auto jede 60 km rychlostí 60 km/h a dalších 60 km rychlostí 30 km/h. Vypadá to na průměr 45 km/h. Spočítej to ale poctivě:"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "1. úsek: t₁ = 60 km : 60 km/h = 1 h.",
+            "2. úsek: t₂ = 60 km : 30 km/h = 2 h.",
+            "Celkem: dráha 120 km, čas 3 h.",
+            "Průměrná rychlost = 120 : 3 = 40 km/h."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Průměrná rychlost = (60 + 30) : 2 = 45 km/h",
+          "right": "Průměrná rychlost = celá dráha : celý čas = 120 km : 3 h = 40 km/h",
+          "why": "Pomalým úsekem jedeš déle, takže na průměr má větší vliv. Obyčejný průměr rychlostí by platil jen tehdy, kdybys oběma rychlostmi jel stejně dlouhou dobu."
+        },
+        {
+          "type": "text",
+          "text": "Na grafu: dráha v čase je přímka (`s = s₀ + v · t`), jejíž strmost je rychlost. Zkus nastavit k = 2 a q = 5 – dostaneš příklad výše. Odečti, kde je přímka v čase 10."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 2,
+            "q": 5
+          }
+        },
+        {
+          "type": "summary",
+          "text": "`s = s₀ + v · t`, zrychlení je nulové. Průměrná rychlost = celá dráha / celý čas, nikdy ne průměr rychlostí."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Těleso jede stálou rychlostí 15 m/s. Dráha v m za 8 s =",
+      "answers": [
+        "120"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Pro s = 5 + 2t (s v m, t v s) urči dráhu v m v čase t = 10 s.",
+      "answers": [
+        "25"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Cyklista jel 20 km za 1 h a pak 20 km za 30 min. Průměrná rychlost v km/h (na desetiny) =",
+      "answers": [
+        "26,7"
+      ],
+      "explanation": "40 km : 1,5 h ≈ 26,7 km/h"
+    },
+    {
+      "type": "choice",
+      "question": "Co udává směrnice grafu s(t)?",
+      "options": [
+        "rychlost",
+        "zrychlení",
+        "dráhu",
+        "čas"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak vypadá graf v(t) rovnoměrného pohybu?",
+      "options": [
+        "vodorovná přímka",
+        "rostoucí přímka",
+        "parabola",
+        "hyperbola"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Při rovnoměrném přímočarém pohybu je zrychlení nulové.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Průměrná rychlost je vždy aritmetický průměr rychlostí jednotlivých úseků.",
+      "answer": false,
+      "explanation": "Je to celá dráha / celý čas."
+    },
+    {
+      "type": "input",
+      "question": "Dva vlaky jedou proti sobě 20 m/s a 30 m/s, vzdálenost 1 km. Za kolik sekund se potkají?",
+      "answers": [
+        "20"
+      ],
+      "explanation": "1 000 : (20 + 30) = 20 s"
+    },
+    {
+      "type": "choice",
+      "question": "Co představuje plocha pod grafem v(t)?",
+      "options": [
+        "dráhu",
+        "zrychlení",
+        "sílu",
+        "čas"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Světlo letí 3 · 10⁸ m/s. Za kolik sekund urazí 384 000 km (Země–Měsíc)?",
+      "answers": [
+        "1,28"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Popiš grafy s(t) a v(t) rovnoměrného přímočarého pohybu.",
+      "answer": "s(t) je přímka, jejíž směrnice je rychlost. v(t) je vodorovná přímka, plocha pod ní je uražená dráha."
+    },
+    {
+      "type": "open",
+      "question": "Proč průměrná rychlost obecně není průměrem rychlostí?",
+      "answer": "Na pomalejším úseku stráví těleso víc času. Průměrná rychlost je celková dráha dělená celkovým časem, úseky se tak váží časem."
+    }
+  ]
+}

@@ -1,0 +1,460 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "neohebne-slovni-druhy",
+  "title": "Neohebné slovní druhy",
+  "emoji": "🧱",
+  "explanations": [
+    {
+      "title": "Pět druhů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Slovo *pes* se mění: *psa, psovi, psy*. Slovo *včera* zůstane pořád stejné, ať ho dáš do jakékoli věty. A stejně tak *pod, ale, kéž, haf*."
+        },
+        {
+          "type": "text",
+          "text": "Čeština má deset slovních druhů. Prvních pět se ohýbá, posledních pět **ne**. Těm se říká **neohebné**. Když je poznáš, umíš rozebrat celou větu a nespleteš si třeba *dobře* s *dobrý*."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Slovní druh",
+          "definition": "Připomenutí: skupina slov se stejnou úlohou ve větě. Je jich deset.",
+          "example": "podstatná jména, slovesa, předložky…"
+        },
+        {
+          "type": "term",
+          "term": "Ohebné slovo",
+          "definition": "Slovo, které mění tvar – skloňuje se (pes, psa) nebo časuje (píšu, píšeš).",
+          "example": "podstatná a přídavná jména, zájmena, číslovky, slovesa"
+        },
+        {
+          "type": "term",
+          "term": "Neohebné slovo",
+          "definition": "Slovo, které má pořád **stejný tvar**.",
+          "example": "včera, na, a, kéž, au"
+        },
+        {
+          "type": "heading",
+          "text": "Pět neohebných druhů"
+        },
+        {
+          "type": "term",
+          "term": "6. Příslovce",
+          "definition": "Říká **okolnosti** děje: kde, kdy, jak, jak moc, proč. Obvykle stojí u slovesa.",
+          "example": "Běžel **rychle**. Bydlím **tady**. Přijdu **zítra**."
+        },
+        {
+          "type": "term",
+          "term": "7. Předložka",
+          "definition": "Krátké slovo, které stojí **před** podstatným jménem nebo zájmenem a určuje jeho pád.",
+          "example": "**na** stole, **pod** mostem, **kvůli** dešti, **bez** cukru"
+        },
+        {
+          "type": "term",
+          "term": "8. Spojka",
+          "definition": "Slovo, které **spojuje** slova nebo věty.",
+          "example": "pes **a** kočka; Nešel jsem ven, **protože** pršelo."
+        },
+        {
+          "type": "term",
+          "term": "9. Částice",
+          "definition": "Slovo, které uvádí větu a vyjadřuje **postoj** mluvčího – přání, pochybnost, zprávu z druhé ruky.",
+          "example": "**Kéž** by pršelo! **Ať** přijde. **Prý** je nemocný."
+        },
+        {
+          "type": "term",
+          "term": "10. Citoslovce",
+          "definition": "Vyjadřuje **zvuky** a **city**.",
+          "example": "**au**, **haf**, **bác**, **hurá**, **fuj**"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď slova do tří skupin. Ptej se: říká okolnost? stojí před jménem? spojuje?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "příslovce",
+              "předložka",
+              "spojka"
+            ],
+            "items": [
+              {
+                "text": "včera",
+                "group": 0
+              },
+              {
+                "text": "venku",
+                "group": 0
+              },
+              {
+                "text": "pomalu",
+                "group": 0
+              },
+              {
+                "text": "pod",
+                "group": 1
+              },
+              {
+                "text": "kvůli",
+                "group": 1
+              },
+              {
+                "text": "bez",
+                "group": 1
+              },
+              {
+                "text": "ale",
+                "group": 2
+              },
+              {
+                "text": "protože",
+                "group": 2
+              },
+              {
+                "text": "nebo",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Druhy příslovcí"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Příslovce",
+            "Otázka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "místa",
+              "kde? kam?",
+              "doma, nahoře"
+            ],
+            [
+              "času",
+              "kdy?",
+              "ráno, zítra"
+            ],
+            [
+              "způsobu",
+              "jak?",
+              "rychle, hezky"
+            ],
+            [
+              "míry",
+              "jak moc? kolik?",
+              "velmi, málo"
+            ],
+            [
+              "příčiny",
+              "proč?",
+              "proto, náhodou"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči slovní druhy: *Ach, prý zítra pojedeme k babičce.*",
+          "answer": "*Ach* – vyjadřuje cit → citoslovce. *prý* – zpráva z druhé ruky → částice. *zítra* – kdy? → příslovce času. *k* – stojí před jménem → předložka. (*pojedeme* je sloveso, *babičce* podstatné jméno – ta jsou ohebná.)"
+        },
+        {
+          "type": "example",
+          "question": "Najdi předložku: *Rychle utíkal k lesu.*",
+          "answer": "**k** – stojí před podstatným jménem *lesu*. *Rychle* je příslovce (jak?)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Kvůli* je spojka, protože vysvětluje příčinu.",
+          "right": "*Kvůli* je předložka.",
+          "why": "Stojí před podstatným jménem a určuje jeho pád: *kvůli dešti* (3. pád). Spojka by spojovala věty (*protože pršelo*)."
+        },
+        {
+          "type": "summary",
+          "text": "Neohebné druhy: 6. příslovce (kde, kdy, jak), 7. předložky (před jménem), 8. spojky (spojují), 9. částice (postoj: kéž, ať, prý), 10. citoslovce (zvuky, city)."
+        }
+      ]
+    },
+    {
+      "title": "Příslovce zblízka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Věta *Běžel.* je chudá. Věta *Běžel **včera** **venku** **velmi** **rychle**.* nám řekne mnohem víc. Ta tučná slova přidávají **okolnosti**: kdy, kde, jak moc, jak."
+        },
+        {
+          "type": "text",
+          "text": "Jsou to **příslovce** – nejčastější neohebný slovní druh. Projdeme je pořádně a pak se podíváme i na ostatní neohebná slova."
+        },
+        {
+          "type": "term",
+          "term": "Neohebné slovo",
+          "definition": "Slovo, které nemění tvar – neskloňuje se ani nečasuje.",
+          "example": "*venku* zůstane *venku* v každé větě"
+        },
+        {
+          "type": "term",
+          "term": "Příslovce",
+          "definition": "Neohebné slovo, které říká okolnosti děje. Většinou se váže ke slovesu.",
+          "example": "běží **rychle**, přijde **zítra**"
+        },
+        {
+          "type": "heading",
+          "text": "Pět otázek na příslovce"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Kde? Kam?** → příslovce místa: *doma, nahoru, venku*.",
+            "**Kdy?** → příslovce času: *ráno, zítra, včera, brzy*.",
+            "**Jak?** → příslovce způsobu: *rychle, hezky, potichu*.",
+            "**Jak moc? Kolik?** → příslovce míry: *velmi, málo, trochu*.",
+            "**Proč?** → příslovce příčiny: *proto, náhodou*."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Stupňování příslovcí"
+        },
+        {
+          "type": "term",
+          "term": "Stupňování",
+          "definition": "Tvoření tvarů pro porovnávání: 1. stupeň (rychle), 2. stupeň (rychleji), 3. stupeň (nejrychleji).",
+          "example": "Běží rychle. Běží rychleji než já. Běží nejrychleji ze všech."
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu a zkontroluj 2. a 3. stupeň. Nejdřív ho řekni sám."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "rychle",
+                "back": "rychleji → nejrychleji"
+              },
+              {
+                "front": "dobře",
+                "back": "lépe (líp) → nejlépe (nejlíp)"
+              },
+              {
+                "front": "daleko",
+                "back": "dále (dál) → nejdále (nejdál)"
+              },
+              {
+                "front": "málo",
+                "back": "méně (míň) → nejméně (nejmíň)"
+              },
+              {
+                "front": "zle",
+                "back": "hůře (hůř) → nejhůře (nejhůř)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Dobře* je přídavné jméno.",
+          "right": "*Dobře* je příslovce, *dobrý* je přídavné jméno.",
+          "why": "Zeptej se: *dobrý* odpovídá na **jaký?** (dobrý oběd) → přídavné jméno. *Dobře* odpovídá na **jak?** (vaří dobře) → příslovce."
+        },
+        {
+          "type": "heading",
+          "text": "Ostatní neohebná slova"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Číslo",
+            "Druh",
+            "Co dělá",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "7.",
+              "předložka",
+              "stojí před jménem",
+              "na, pod, bez, kvůli"
+            ],
+            [
+              "8.",
+              "spojka",
+              "spojuje slova a věty",
+              "a, ale, nebo, protože, že"
+            ],
+            [
+              "9.",
+              "částice",
+              "uvádí větu, vyjadřuje přání či pochybnost",
+              "ať, kéž, prý, asi"
+            ],
+            [
+              "10.",
+              "citoslovce",
+              "zvuky a city",
+              "au, haf, bum, bác"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči druh příslovcí: *Včera jsem doma velmi dobře spal.*",
+          "answer": "*Včera* – kdy? → času. *doma* – kde? → místa. *velmi* – jak moc? → míry. *dobře* – jak? → způsobu."
+        },
+        {
+          "type": "example",
+          "question": "Urči slovní druh slova *kéž*: *Kéž by už byly prázdniny!*",
+          "answer": "Uvádí větu a vyjadřuje přání → **částice**."
+        },
+        {
+          "type": "summary",
+          "text": "Příslovce říká kde, kdy, jak, jak moc, proč; některá se stupňují (dobře – lépe – nejlépe). Další neohebné druhy: předložky, spojky, částice, citoslovce."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký slovní druh je *kvůli*?",
+      "options": [
+        "předložka",
+        "příslovce",
+        "spojka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký slovní druh je *protože*?",
+      "options": [
+        "spojka",
+        "předložka",
+        "částice"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký slovní druh je *kéž* (Kéž by už byly prázdniny!)?",
+      "options": [
+        "částice",
+        "citoslovce",
+        "spojka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký slovní druh je *bác*?",
+      "options": [
+        "citoslovce",
+        "příslovce",
+        "částice"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "2. stupeň příslovce *dobře* je…",
+      "answers": [
+        "lépe",
+        "líp"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Neohebné slovní druhy mění tvar podle pádu.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Jaké příslovce je *zítra*?",
+      "options": [
+        "času",
+        "místa",
+        "způsobu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj slovo se slovním druhem.",
+      "pairs": [
+        [
+          "doma",
+          "příslovce"
+        ],
+        [
+          "nad",
+          "předložka"
+        ],
+        [
+          "ale",
+          "spojka"
+        ],
+        [
+          "au",
+          "citoslovce"
+        ],
+        [
+          "ať",
+          "částice"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo ve větě *Rychle utíkal k lesu.* je předložka?",
+      "options": [
+        "k",
+        "rychle",
+        "lesu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď neohebné slovní druhy podle čísla (6.–10.).",
+      "items": [
+        "příslovce",
+        "předložky",
+        "spojky",
+        "částice",
+        "citoslovce"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Které slovní druhy jsou neohebné? Ke každému uveď příklad.",
+      "answer": "Příslovce (včera), předložky (na), spojky (a), částice (ať) a citoslovce (haf)."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi *dobrý – lepší* a *dobře – lépe*?",
+      "answer": "*Dobrý – lepší* je přídavné jméno (jaký?). *Dobře – lépe* je příslovce (jak?). Obě se stupňují, ale jsou to jiné slovní druhy."
+    }
+  ]
+}

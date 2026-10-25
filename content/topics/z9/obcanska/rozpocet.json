@@ -1,0 +1,401 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rozpocet",
+  "title": "Rodinný rozpočet",
+  "emoji": "💰",
+  "explanations": [
+    {
+      "title": "Rodina Novákových",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každá domácnost musí řešit: kolik peněz přijde, kolik odejde a co když se něco pokazí. Kdo to nesleduje, snadno se ocitne v dluzích."
+        },
+        {
+          "type": "text",
+          "text": "Za pár let budeš hospodařit sám. Naučíš se sestavit rodinný rozpočet a připravit se na nečekané výdaje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Domácnost",
+          "definition": "Lidé, kteří spolu bydlí a společně hospodaří s penězi."
+        },
+        {
+          "type": "term",
+          "term": "Rozpočet",
+          "definition": "Plán příjmů a výdajů na určité období, obvykle na měsíc."
+        },
+        {
+          "type": "term",
+          "term": "Hrubá a čistá mzda",
+          "definition": "Hrubá mzda = částka ve smlouvě. Z ní se strhne **daň** a **pojištění** (sociální a zdravotní). Co zbude a přijde na účet, je **čistá mzda**."
+        },
+        {
+          "type": "term",
+          "term": "Finanční rezerva",
+          "definition": "Peníze odložené stranou na nečekané situace. Doporučuje se mít rezervu na **3–6 měsíců** výdajů."
+        },
+        {
+          "type": "heading",
+          "text": "Měsíc Novákových"
+        },
+        {
+          "type": "text",
+          "text": "Novákovi mají dohromady čistý příjem 50 000 Kč. Podívej se na graf jejich výdajů a najdi největší položku."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Kč",
+            "items": [
+              {
+                "label": "nájem a energie",
+                "value": 18000
+              },
+              {
+                "label": "jídlo",
+                "value": 14000
+              },
+              {
+                "label": "doprava",
+                "value": 4000
+              },
+              {
+                "label": "kroužky dětí",
+                "value": 3000
+              },
+              {
+                "label": "ostatní",
+                "value": 6000
+              },
+              {
+                "label": "spoření",
+                "value": 5000
+              }
+            ]
+          }
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Výdaje bez spoření: 18 000 + 14 000 + 4 000 + 3 000 + 6 000 = 45 000 Kč.",
+            "Příjem 50 000 − výdaje 45 000 = 5 000 Kč.",
+            "Těch 5 000 Kč hned na začátku měsíce pošlou na spořicí účet.",
+            "Rozpočet je **přebytkový** – příjmy jsou vyšší než výdaje."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pračka se rozbila"
+        },
+        {
+          "type": "text",
+          "text": "Najednou se rozbije pračka. Nová stojí 12 000 Kč. Novákovi mají rezervu, takže si nemusí půjčovat. Bez rezervy by museli vzít úvěr a platit úroky."
+        },
+        {
+          "type": "heading",
+          "text": "Druhy výdajů"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**pravidelné** – každý měsíc stejně: nájem, energie, kroužky",
+            "**nepravidelné** – nejsou každý měsíc, ale dají se čekat: dovolená, oblečení, dárky",
+            "**mimořádné** – nečekané: rozbitá pračka, oprava auta, nemoc"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Příjem 40 000 Kč, výdaje 35 000 Kč. Kolik zbyde a jaký je to rozpočet?",
+          "answer": "40 000 − 35 000 = **5 000 Kč**. Příjmy > výdaje → **přebytkový**."
+        },
+        {
+          "type": "example",
+          "question": "Kapesné 500 Kč měsíčně, sluchátka stojí 1 500 Kč. Za kolik měsíců na ně našetříš, když spoříš vše?",
+          "answer": "1 500 : 500 = **3 měsíce**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejdřív utratím, co potřebuju, a spořit budu, co zbude.",
+          "right": "Spoř hned po výplatě pevnou částku.",
+          "why": "Na konci měsíce obvykle nic nezbude. Co odložíš hned, už neutratíš."
+        },
+        {
+          "type": "summary",
+          "text": "Rozpočet = příjmy a výdaje. Přebytkový, vyrovnaný, schodkový. Výdaje jsou pravidelné, nepravidelné a mimořádné. Rezerva na 3–6 měsíců chrání před dluhy."
+        }
+      ]
+    },
+    {
+      "title": "Tabulka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozpočet je jako tabulka v sešitě: vlevo, co přijde, vpravo, co odejde. Dole spočítáš rozdíl. Jednoduché – a přesto ho spousta lidí nikdy nesestaví."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme přesný postup, druhy příjmů a výdajů a jak hodnotit výsledek."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rozpočet",
+          "definition": "Přehled plánovaných příjmů a výdajů."
+        },
+        {
+          "type": "term",
+          "term": "Příjem domácnosti",
+          "definition": "Peníze, které domácnost dostane.",
+          "example": "Mzda, důchod, rodičovský příspěvek, výhra."
+        },
+        {
+          "type": "term",
+          "term": "Výdaj domácnosti",
+          "definition": "Peníze, které domácnost zaplatí.",
+          "example": "Nájem, jídlo, energie, telefon."
+        },
+        {
+          "type": "term",
+          "term": "Hrubá a čistá mzda",
+          "definition": "Z hrubé mzdy se strhne daň a pojištění. Zbytek je čistá mzda – ta, která opravdu přijde."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Sepiš všechny příjmy (počítej s čistou mzdou).",
+            "Sepiš pravidelné výdaje.",
+            "Odhadni nepravidelné výdaje (dovolená, oblečení) a rozpočítej je na měsíce.",
+            "Odečti: příjmy − výdaje.",
+            "Rozhodni: kolik spořit a co škrtnout, kdyby chybělo."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Typy rozpočtu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "typ",
+            "vztah",
+            "co dělat"
+          ],
+          "rows": [
+            [
+              "přebytkový",
+              "příjmy > výdaje",
+              "spořit, budovat rezervu"
+            ],
+            [
+              "vyrovnaný",
+              "příjmy = výdaje",
+              "zkusit ušetřit na rezervu"
+            ],
+            [
+              "schodkový",
+              "příjmy < výdaje",
+              "omezit výdaje, hrozí dluhy"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď výdaje podle druhu."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "pravidelný",
+              "nepravidelný",
+              "mimořádný"
+            ],
+            "items": [
+              {
+                "text": "nájem",
+                "group": 0
+              },
+              {
+                "text": "internet a telefon",
+                "group": 0
+              },
+              {
+                "text": "dovolená",
+                "group": 1
+              },
+              {
+                "text": "zimní bunda",
+                "group": 1
+              },
+              {
+                "text": "vánoční dárky",
+                "group": 1
+              },
+              {
+                "text": "rozbitá pračka",
+                "group": 2
+              },
+              {
+                "text": "oprava auta po nehodě",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Rodina má příjem 38 000 Kč, výdaje 41 000 Kč. Co s tím?",
+          "answer": "38 000 − 41 000 = −3 000 Kč → **schodkový** rozpočet. Musí škrtnout zbytné výdaje (např. předplatné, jídlo z restaurace), jinak se zadluží."
+        },
+        {
+          "type": "example",
+          "question": "Výdaje domácnosti jsou 30 000 Kč měsíčně. Jak velkou rezervu by měla mít?",
+          "answer": "Na 3–6 měsíců: 3 · 30 000 = **90 000 Kč** až 6 · 30 000 = **180 000 Kč**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Do rozpočtu počítám hrubou mzdu.",
+          "right": "Do rozpočtu počítám čistou mzdu.",
+          "why": "Hrubá mzda není to, co přijde na účet – strhne se z ní daň a pojištění. S hrubou mzdou by rozpočet vyšel lépe, než je skutečnost."
+        },
+        {
+          "type": "summary",
+          "text": "Rozpočet: příjmy (čistá mzda) − výdaje. Přebytek → spořit, schodek → škrtat. Rezerva aspoň na 3 měsíce výdajů."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Když jsou výdaje vyšší než příjmy, rozpočet je…",
+      "options": [
+        "schodkový",
+        "přebytkový",
+        "vyrovnaný",
+        "stabilní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Mzda je příjem domácnosti.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Která položka je výdaj?",
+      "options": [
+        "nájem",
+        "mzda",
+        "důchod",
+        "výhra"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Příjem 40 000 Kč, výdaje 35 000 Kč. Kolik Kč zbyde?",
+      "answers": [
+        "5000",
+        "5 000"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj výdaj a jeho druh.",
+      "pairs": [
+        [
+          "nájem",
+          "pravidelný"
+        ],
+        [
+          "dovolená",
+          "nepravidelný"
+        ],
+        [
+          "rozbitá pračka",
+          "mimořádný"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Finanční rezerva by měla pokrýt aspoň 3 měsíce výdajů.",
+      "answer": true,
+      "explanation": "Doporučuje se rezerva na 3–6 měsíců."
+    },
+    {
+      "type": "choice",
+      "question": "Rozpočet, kde příjmy převyšují výdaje, je…",
+      "options": [
+        "přebytkový",
+        "schodkový",
+        "vyrovnaný",
+        "deficitní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Rozdíl mezi hrubou a čistou mzdou tvoří hlavně…",
+      "options": [
+        "daň a pojištění",
+        "nájem",
+        "spoření",
+        "kapesné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kapesné 500 Kč měsíčně, chceš sluchátka za 1 500 Kč. Kolik měsíců musíš šetřit vše?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Nejdřív utratit a pak spořit, co zbude, je nejlepší strategie.",
+      "answer": false,
+      "explanation": "Spoř hned po výplatě – jinak obvykle nezbude nic."
+    },
+    {
+      "type": "open",
+      "question": "Jaké jsou typy rozpočtu podle poměru příjmů a výdajů?",
+      "answer": "Vyrovnaný (příjmy = výdaje), přebytkový (příjmy větší), schodkový (výdaje větší)."
+    },
+    {
+      "type": "open",
+      "question": "Proč je dobré mít finanční rezervu?",
+      "answer": "Kvůli nečekaným výdajům, např. nemoci, ztrátě práce nebo opravě. Nemusím si pak půjčovat."
+    }
+  ]
+}

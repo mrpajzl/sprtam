@@ -1,0 +1,472 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "alkeny-alkyny",
+  "title": "Alkeny, alkadieny a alkyny",
+  "emoji": "🧷",
+  "explanations": [
+    {
+      "title": "Dvojná vazba",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Z **ethenu** se vyrábí polyethylen – tašky, fólie, lahve. Ethen také urychluje dozrávání ovoce: banán v sáčku s jablkem rychleji zežloutne. Gumu v pneumatikách dává **kaučuk** z isoprenu. Svářeči řežou ocel plamenem **acetylenu**."
+        },
+        {
+          "type": "text",
+          "text": "Všechny tyhle látky mají **násobnou vazbu** – a ta je jejich slabé (a užitečné) místo: snadno se na ni něco připojí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Alken",
+          "definition": "Uhlovodík s jednou **dvojnou vazbou** C=C. Obecně **CₙH₂ₙ**, koncovka **-en**.",
+          "example": "ethen CH₂=CH₂, propen CH₂=CH–CH₃"
+        },
+        {
+          "type": "term",
+          "term": "Alkyn",
+          "definition": "Uhlovodík s **trojnou vazbou** C≡C. Obecně **CₙH₂ₙ₋₂**, koncovka **-yn**.",
+          "example": "ethyn (acetylen) HC≡CH"
+        },
+        {
+          "type": "term",
+          "term": "Alkadien",
+          "definition": "Uhlovodík se **dvěma** dvojnými vazbami, koncovka **-dien**.",
+          "example": "buta-1,3-dien CH₂=CH–CH=CH₂"
+        },
+        {
+          "type": "term",
+          "term": "Vazby σ a π",
+          "definition": "Dvojná vazba = jedna pevná **σ** + jedna slabší **π**. Trojná = σ + **2 π**. Elektrony vazby π jsou nad a pod rovinou atomů – snadno dostupné pro útočníka."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmenování"
+        },
+        {
+          "type": "text",
+          "text": "Řetězec číslujeme tak, aby násobná vazba měla co nejnižší číslo. Číslo vložíme před koncovku: **but-1-en** (CH₂=CH–CH₂–CH₃), **but-2-en** (CH₃–CH=CH–CH₃)."
+        },
+        {
+          "type": "term",
+          "term": "Izomerie cis-trans",
+          "definition": "Kolem dvojné vazby se nedá otáčet. Když má každý uhlík dvojné vazby dvě **různé** skupiny, vzniknou dvě látky: **cis** (stejné skupiny na stejné straně) a **trans** (na opačných).",
+          "example": "cis- a trans-but-2-en"
+        },
+        {
+          "type": "example",
+          "question": "Má but-1-en cis a trans formu?",
+          "answer": "But-1-en: CH₂=CH–CH₂CH₃. Na prvním uhlíku dvojné vazby jsou **dva vodíky** – dvě stejné skupiny. Prohození nic nezmění → **nemá**. Cis-trans izomerii má but-2-en."
+        },
+        {
+          "type": "heading",
+          "text": "Typická reakce: adice"
+        },
+        {
+          "type": "term",
+          "term": "Elektrofilní adice",
+          "definition": "Na dvojnou vazbu se připojí molekula. Útočí **elektrofil** (částice lačná po elektronech, např. H⁺) na elektrony vazby π. Dvojná vazba se změní na jednoduchou."
+        },
+        {
+          "type": "list",
+          "items": [
+            "+ H₂ (hydrogenace): CH₂=CH₂ + H₂ → CH₃–CH₃ (ethan)",
+            "+ Br₂: CH₂=CH₂ + Br₂ → CH₂Br–CH₂Br (1,2-dibromethan)",
+            "+ H₂O (hydratace): CH₂=CH₂ + H₂O → CH₃CH₂OH (ethanol)",
+            "+ HCl: CH₂=CH₂ + HCl → CH₃CH₂Cl"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Důkaz násobné vazby: přidáš hnědou **bromovou vodu** – brom se aduje a roztok se **odbarví**."
+        },
+        {
+          "type": "term",
+          "term": "Markovnikovo pravidlo",
+          "definition": "Při adici HX na nesymetrický alken se **vodík připojí na ten uhlík dvojné vazby, který už má víc vodíků**.",
+          "example": "Bohatý bohatne."
+        },
+        {
+          "type": "example",
+          "question": "Co vznikne adicí HCl na propen CH₂=CH–CH₃?",
+          "answer": "C1 má 2 H, C2 má 1 H. Vodík jde na C1 (víc vodíků), chlor na C2: CH₃–CHCl–CH₃ = **2-chlorpropan**."
+        },
+        {
+          "type": "heading",
+          "text": "Polymerace"
+        },
+        {
+          "type": "text",
+          "text": "Molekuly alkenu se mohou adovat **na sebe navzájem** do obřího řetězce: n CH₂=CH₂ → (–CH₂–CH₂–)ₙ **polyethylen**. Podobně polypropylen, PVC, polystyren. Z **isoprenu** (2-methylbuta-1,3-dienu) je přírodní kaučuk."
+        },
+        {
+          "type": "heading",
+          "text": "Alkyny"
+        },
+        {
+          "type": "text",
+          "text": "Acetylen se připravuje z **karbidu vápenatého a vody**: CaC₂ + 2 H₂O → C₂H₂ + Ca(OH)₂. Hoří velmi horkým plamenem (přes 3 000 °C s kyslíkem) – svařování a řezání kovů."
+        },
+        {
+          "type": "text",
+          "text": "Spoj reakci s produktem – otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "ethen + H₂",
+                "back": "ethan"
+              },
+              {
+                "front": "ethen + H₂O",
+                "back": "ethanol"
+              },
+              {
+                "front": "ethen + Br₂",
+                "back": "1,2-dibromethan"
+              },
+              {
+                "front": "polymerace ethenu",
+                "back": "polyethylen"
+              },
+              {
+                "front": "CaC₂ + 2 H₂O",
+                "back": "acetylen + Ca(OH)₂"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "HCl + propen → 1-chlorpropan",
+          "right": "Hlavní produkt je **2-chlorpropan**.",
+          "why": "Markovnikovo pravidlo: vodík jde na uhlík s více vodíky (C1), chlor na C2. Příčinou je, že vzniklý mezistupeň (kation na C2) je stabilnější."
+        },
+        {
+          "type": "summary",
+          "text": "Alkeny CₙH₂ₙ (C=C, σ + π), alkyny CₙH₂ₙ₋₂ (C≡C, σ + 2π). Typická reakce elektrofilní adice (Markovnikovo pravidlo), důkaz odbarvením bromové vody, polymerace na plasty."
+        }
+      ]
+    },
+    {
+      "title": "Přehledem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Nenasycené uhlovodíky jsou surovina chemického průmyslu číslo jedna. Tady máš systematicky: stavbu, názvosloví, izomerii, reakce, přípravu a použití alkenů, alkadienů i alkynů."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Nenasycený uhlovodík",
+          "definition": "Uhlovodík s alespoň jednou **násobnou** (dvojnou nebo trojnou) vazbou C–C. Má méně vodíků než alkan se stejným počtem uhlíků."
+        },
+        {
+          "type": "term",
+          "term": "Vazba π",
+          "definition": "Druhá (a třetí) vazba v násobné vazbě; elektrony leží mimo spojnici jader. Je slabší než σ a snadno se štěpí."
+        },
+        {
+          "type": "term",
+          "term": "Elektrofil",
+          "definition": "Částice s nedostatkem elektronů (H⁺, Br^δ+), která útočí na místa bohatá na elektrony – např. vazbu π."
+        },
+        {
+          "type": "heading",
+          "text": "Srovnání skupin"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Vazba",
+            "Vzorec",
+            "Koncovka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "alkeny",
+              "jedna C=C (σ + π)",
+              "CₙH₂ₙ",
+              "-en",
+              "propen C₃H₆"
+            ],
+            [
+              "alkadieny",
+              "dvě C=C",
+              "CₙH₂ₙ₋₂",
+              "-dien",
+              "buta-1,3-dien C₄H₆"
+            ],
+            [
+              "alkyny",
+              "jedna C≡C (σ + 2π)",
+              "CₙH₂ₙ₋₂",
+              "-yn",
+              "ethyn C₂H₂"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik vodíků má alken se 4 uhlíky?",
+          "answer": "CₙH₂ₙ → 2 · 4 = **8**. Butenu odpovídá vzorec C₄H₈."
+        },
+        {
+          "type": "heading",
+          "text": "Názvosloví"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vyber nejdelší řetězec, který **obsahuje násobnou vazbu**.",
+            "Čísluj tak, aby násobná vazba měla **nejnižší lokant**.",
+            "Lokant vazby vlož před koncovku: but-**2**-en, buta-**1,3**-dien.",
+            "Větve přidej jako u alkanů: 2-methylbuta-1,3-dien (isopren)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Pojmenuj CH₂=CH–CH=CH₂.",
+          "answer": "Čtyři uhlíky (buta-), dvě dvojné vazby (-dien) začínající na C1 a C3 → **buta-1,3-dien**."
+        },
+        {
+          "type": "heading",
+          "text": "Reakce: elektrofilní adice"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Elektrofil (např. H⁺ z HBr) se přiblíží k elektronům vazby π.",
+            "Vazba π se otevře, H se naváže na jeden uhlík; na druhém vznikne kladný náboj (karbokation).",
+            "Nukleofil (Br⁻) se naváže na kladný uhlík.",
+            "Výsledek: dvojná vazba zmizela, připojilo se H a Br."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Markovnikovo pravidlo",
+          "definition": "U nesymetrického alkenu jde H na uhlík s **více vodíky**, X na uhlík s méně vodíky – protože tak vzniká stabilnější karbokation."
+        },
+        {
+          "type": "example",
+          "question": "Napiš adici HBr na propen.",
+          "answer": "CH₂=CH–CH₃ + HBr → CH₃–CHBr–CH₃. Hlavním produktem je **2-brompropan**."
+        },
+        {
+          "type": "text",
+          "text": "Doplň produkt nebo činidlo."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "CH₂=CH₂ + H₂ → ",
+                "after": "",
+                "options": [
+                  "ethan",
+                  "ethyn",
+                  "ethanol"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "CH₂=CH₂ + H₂O → ",
+                "after": "",
+                "options": [
+                  "ethanol",
+                  "ethan",
+                  "ethanal"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Násobnou vazbu dokážeme ",
+                "after": " bromové vody",
+                "options": [
+                  "odbarvením",
+                  "zmodráním",
+                  "vysrážením"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Ethyn obsahuje ",
+                "after": " vazby π",
+                "options": [
+                  "2",
+                  "1",
+                  "3"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Příprava a použití"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Ethen**: z ropy (krakováním); polyethylen, ethanol, ethylenglykol; rostlinný hormon zrání.",
+            "**Propen**: polypropylen.",
+            "**Buta-1,3-dien, isopren**: syntetický a přírodní kaučuk.",
+            "**Ethyn**: CaC₂ + 2 H₂O → C₂H₂ + Ca(OH)₂; svařování, výroba PVC."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Alkeny reagují hlavně radikálovou substitucí jako alkany.",
+          "right": "Typická reakce alkenů je **elektrofilní adice**.",
+          "why": "Vazba π je zdroj snadno dostupných elektronů a láká elektrofily. Adicí se slabší π vazba nahradí dvěma pevnými σ vazbami – je to energeticky výhodné."
+        },
+        {
+          "type": "summary",
+          "text": "Alkeny CₙH₂ₙ, alkadieny a alkyny CₙH₂ₙ₋₂. Násobná vazba má nejnižší lokant. Elektrofilní adice podle Markovnikova, polymerace, důkaz bromovou vodou. Acetylen z karbidu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký hlavní produkt vzniká adicí HCl na propen?",
+      "options": [
+        "2-chlorpropan",
+        "1-chlorpropan",
+        "1,2-dichlorpropan",
+        "propan"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jakým typem reakce reagují alkeny nejčastěji?",
+      "options": [
+        "elektrofilní adicí",
+        "radikálovou substitucí",
+        "nukleofilní substitucí",
+        "eliminací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Čím dokážeš násobnou vazbu?",
+      "options": [
+        "odbarvením bromové vody",
+        "zmodráním lakmusu",
+        "jodovou tinkturou",
+        "Fehlingovým činidlem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Z čeho se v laboratoři připraví acetylen?",
+      "options": [
+        "z karbidu vápenatého a vody",
+        "z ethanolu a NaOH",
+        "z methanu a chloru",
+        "z vápence"
+      ],
+      "answer": 0,
+      "explanation": "CaC₂ + 2 H₂O → C₂H₂ + Ca(OH)₂"
+    },
+    {
+      "type": "truefalse",
+      "question": "Isopren (2-methylbuta-1,3-dien) je stavební jednotkou přírodního kaučuku.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "But-1-en má cis a trans izomery.",
+      "answer": false,
+      "explanation": "Na C1 jsou dva vodíky; cis-trans izomerii má but-2-en."
+    },
+    {
+      "type": "input",
+      "question": "Kolik atomů vodíku má alken se 4 atomy uhlíku?",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj reakci s produktem.",
+      "pairs": [
+        [
+          "ethen + H₂",
+          "ethan"
+        ],
+        [
+          "ethen + H₂O",
+          "ethanol"
+        ],
+        [
+          "ethen + Br₂",
+          "1,2-dibromethan"
+        ],
+        [
+          "polymerace ethenu",
+          "polyethylen"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje CH₂=CH–CH=CH₂?",
+      "options": [
+        "buta-1,3-dien",
+        "but-2-en",
+        "butyn",
+        "buta-1,2-dien"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kolik vazeb π je v molekule ethynu?",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "0"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli Markovnikovo pravidlo na adici HBr na propen.",
+      "answer": "Při adici H–X na nesymetrický alken se vodík připojí na uhlík dvojné vazby, který má více vodíků, halogen na ten s méně vodíky. Z propenu tak vzniká hlavně 2-brompropan."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je průmyslový význam alkenů?",
+      "answer": "Jsou surovinou pro polymery – polyethylen, polypropylen, PVC, polystyren, syntetický kaučuk. Z ethenu se vyrábí i ethanol a ethylenglykol. Ethen je také rostlinný hormon zrání."
+    }
+  ]
+}

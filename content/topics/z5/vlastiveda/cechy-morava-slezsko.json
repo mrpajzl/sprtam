@@ -1,0 +1,362 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cechy-morava-slezsko",
+  "title": "Čechy, Morava a Slezsko",
+  "emoji": "🦁",
+  "explanations": [
+    {
+      "title": "Ve znaku",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když se Brňák a Pražák baví, často si dělají legraci z toho, jak kdo mluví. Říkají „u nás na Moravě“ a „u vás v Čechách“. Kde se to vzalo?"
+        },
+        {
+          "type": "text",
+          "text": "Naše republika vznikla ze tří starých zemí. Každá měla dlouho vlastní dějiny, zvyky i znak. Dodnes je to znát."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Historická země",
+          "definition": "Území, které mělo po stovky let své jméno, hranice a vlastní znak. Dnes už nemá svou vládu, ale lidé ho pořád tak nazývají.",
+          "example": "Čechy, Morava a Slezsko jsou tři historické země."
+        },
+        {
+          "type": "term",
+          "term": "Znak (erb)",
+          "definition": "Obrázek na štítu, který patří zemi, městu nebo rodu.",
+          "example": "Ve znaku Čech je lev."
+        },
+        {
+          "type": "term",
+          "term": "Velký státní znak",
+          "definition": "Znak ČR. Je rozdělen na **4 pole**: dvakrát český lev, jednou moravská a jednou slezská orlice."
+        },
+        {
+          "type": "heading",
+          "text": "Tři země a jejich znaky"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Země",
+            "Ve znaku",
+            "Velká města"
+          ],
+          "rows": [
+            [
+              "Čechy",
+              "stříbrný lev se dvěma ocasy na červeném",
+              "Praha, Plzeň"
+            ],
+            [
+              "Morava",
+              "červenobíle šachovaná orlice na modrém",
+              "Brno, Olomouc"
+            ],
+            [
+              "Slezsko",
+              "černá orlice na zlatém",
+              "Opava, Karviná"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor: **většina Slezska dnes leží v Polsku**. K nám patří jen jeho malý kousek."
+        },
+        {
+          "type": "example",
+          "question": "Proč je ve velkém státním znaku lev dvakrát?",
+          "answer": "Znak má 4 pole a země jsou jen 3. Čechy jsou největší, proto se jejich **lev** opakuje."
+        },
+        {
+          "type": "example",
+          "question": "Ve kterém poli hledáš Opavu?",
+          "answer": "Opava je **historické hlavní město Slezska** → pole s **černou orlicí**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Spoj si každý znak se zemí. Pak kartičku otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "stříbrný lev",
+                "back": "Čechy"
+              },
+              {
+                "front": "šachovaná orlice",
+                "back": "Morava"
+              },
+              {
+                "front": "černá orlice",
+                "back": "Slezsko"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Moravská orlice je černá.",
+          "right": "Moravská orlice je **červenobíle šachovaná**. Černá je **slezská**.",
+          "why": "Obě země mají orlici, proto se pletou. Pomůcka: Morava = šachovnice."
+        },
+        {
+          "type": "summary",
+          "text": "ČR tvoří tři historické země: Čechy (lev), Morava (šachovaná orlice), Slezsko (černá orlice). Většina Slezska leží v Polsku."
+        }
+      ]
+    },
+    {
+      "title": "Na mapě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si mapu ČR jako koláč nakrájený na tři kusy: velký kus vlevo, menší vpravo a malý kousek nahoře vpravo. Každý kus má jméno."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, kde které město leží, rozumíš dějinám, nářečím i tomu, proč se kraje jmenují tak, jak se jmenují."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Historická země",
+          "definition": "Staré území se svým jménem a znakem. ČR tvoří tři: **Čechy** (lev), **Morava** (šachovaná orlice) a **Slezsko** (černá orlice)."
+        },
+        {
+          "type": "term",
+          "term": "Národopisná oblast",
+          "definition": "Kraj, kde lidé mají své nářečí, kroje, písničky a zvyky.",
+          "example": "Na Moravě: **Haná, Valašsko, Slovácko**. V Čechách třeba **Chodsko** u Domažlic."
+        },
+        {
+          "type": "term",
+          "term": "Nářečí",
+          "definition": "Způsob mluvy typický pro jeden kraj.",
+          "example": "Hanák, Valach a Pražák mluví každý trochu jinak – jinak vyslovují a používají jiná slova."
+        },
+        {
+          "type": "heading",
+          "text": "Kde co leží"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Čechy** – západ republiky, největší část. Hlavní řeky: Vltava a Labe.",
+            "**Morava** – východ. Hlavní řeka: **Morava**.",
+            "**Slezsko** – malý kousek na severovýchodě, u Polska.",
+            "Hranice mezi Čechami a Moravou vede zhruba přes **Českomoravskou vrchovinu**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď města do správné země. Když váháš, vzpomeň si: západ = Čechy, východ = Morava."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Čechy",
+              "Morava",
+              "Slezsko"
+            ],
+            "items": [
+              {
+                "text": "Plzeň",
+                "group": 0
+              },
+              {
+                "text": "Liberec",
+                "group": 0
+              },
+              {
+                "text": "Hradec Králové",
+                "group": 0
+              },
+              {
+                "text": "Brno",
+                "group": 1
+              },
+              {
+                "text": "Olomouc",
+                "group": 1
+              },
+              {
+                "text": "Zlín",
+                "group": 1
+              },
+              {
+                "text": "Opava",
+                "group": 2
+              },
+              {
+                "text": "Karviná",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Ve které zemi leží Olomouc?",
+          "answer": "Olomouc je na východě, u řeky Moravy, na Hané → **Morava**."
+        },
+        {
+          "type": "example",
+          "question": "Proč se kraj kolem Ostravy jmenuje Moravskoslezský?",
+          "answer": "Leží zčásti na **Moravě** a zčásti ve **Slezsku**. Jméno spojuje obě země."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Chodsko je na Moravě, jako Haná.",
+          "right": "**Chodsko** je v Čechách u Domažlic. Na Moravě je Haná, Valašsko a Slovácko.",
+          "why": "Národopisné oblasti jsou ve všech zemích. Chodové hlídali hranici Čech s Bavorskem."
+        },
+        {
+          "type": "summary",
+          "text": "Čechy = západ (Vltava, Labe), Morava = východ (řeka Morava), Slezsko = severovýchod. Na Moravě jsou Haná, Valašsko a Slovácko."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik historických zemí tvoří ČR?",
+      "answers": [
+        "3",
+        "tři"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je ve znaku Čech?",
+      "options": [
+        "lev",
+        "orlice",
+        "medvěd"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které město je největší na Moravě?",
+      "options": [
+        "Brno",
+        "Olomouc",
+        "Zlín",
+        "Jihlava"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Většina Slezska leží dnes v Polsku.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Ve které zemi leží Plzeň?",
+      "options": [
+        "v Čechách",
+        "na Moravě",
+        "ve Slezsku"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Ve které zemi leží Olomouc?",
+      "options": [
+        "na Moravě",
+        "v Čechách",
+        "ve Slezsku"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj zemi se znakem.",
+      "pairs": [
+        [
+          "Čechy",
+          "stříbrný lev"
+        ],
+        [
+          "Morava",
+          "šachovaná orlice"
+        ],
+        [
+          "Slezsko",
+          "černá orlice"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která oblast leží na Moravě?",
+      "options": [
+        "Haná",
+        "Chodsko",
+        "Krkonoše"
+      ],
+      "answer": 0,
+      "explanation": "Chodsko je v Čechách u Domažlic."
+    },
+    {
+      "type": "truefalse",
+      "question": "Opava je historické město Slezska.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kde v ČR leží Morava?",
+      "options": [
+        "na východě",
+        "na západě",
+        "na jihozápadě"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš tři země ve velkém státním znaku?",
+      "answer": "Dvakrát je tam český lev, pak moravská červenobílá šachovaná orlice a slezská černá orlice."
+    },
+    {
+      "type": "open",
+      "question": "Jmenuj aspoň dvě města v Čechách a dvě na Moravě.",
+      "answer": "Čechy: Praha, Plzeň, Liberec. Morava: Brno, Olomouc, Zlín."
+    }
+  ]
+}

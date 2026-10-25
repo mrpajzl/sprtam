@@ -1,0 +1,388 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "osova-soumernost",
+  "title": "Osová souměrnost",
+  "emoji": "🦋",
+  "explanations": [
+    {
+      "title": "Zrcadlem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na motýla. Levé křídlo vypadá úplně stejně jako pravé, jen obráceně – jako v zrcadle. Stejné je to u listu stromu, u obličeje nebo u písmene A."
+        },
+        {
+          "type": "text",
+          "text": "Takovým tvarům říkáme **osově souměrné**. Souměrnost využívají architekti, návrháři log, ale i příroda. A v geometrii podle ní umíme přesně „zrcadlit“ obrázky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Osa souměrnosti",
+          "definition": "Rovná čára, podle které je obrazec souměrný. Kdybys na ni postavil zrcátko, uvidíš celý obrazec.",
+          "example": "U písmene A je osa svislá čára přesně uprostřed."
+        },
+        {
+          "type": "term",
+          "term": "Osově souměrný obrazec",
+          "definition": "Obrazec, který jde přeložit podle osy tak, že se obě poloviny přesně kryjí.",
+          "example": "Srdce přeložené napůl – obě půlky na sebe sednou."
+        },
+        {
+          "type": "term",
+          "term": "Obraz",
+          "definition": "Bod nebo obrazec, který vznikne „zrcadlením“. Označuje se čárkou: obraz bodu A je A′.",
+          "example": "Tvůj odraz v zrcadle je tvůj obraz."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s papírem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přelož papír napůl.",
+            "Na jednu polovinu kápni barvu.",
+            "Papír přeložený přimáčkni.",
+            "Rozlož ho: otisk je na druhé straně přesně zrcadlově. Ohyb je osa."
+          ]
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🦋"
+          ],
+          "caption": "Motýl je osově souměrný – osa vede jeho tělem."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď obrazce. U každého si představ zrcátko: dá se postavit tak, aby obrázek vypadal celý?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "souměrné",
+              "nesouměrné"
+            ],
+            "items": [
+              {
+                "text": "čtverec",
+                "group": 0
+              },
+              {
+                "text": "kruh",
+                "group": 0
+              },
+              {
+                "text": "písmeno A",
+                "group": 0
+              },
+              {
+                "text": "písmeno F",
+                "group": 1
+              },
+              {
+                "text": "srdce",
+                "group": 0
+              },
+              {
+                "text": "písmeno G",
+                "group": 1
+              },
+              {
+                "text": "písmeno H",
+                "group": 0
+              },
+              {
+                "text": "číslo 7",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kolik os může obrazec mít"
+        },
+        {
+          "type": "text",
+          "text": "Některé obrazce jdou přeložit víc způsoby. Čtverec můžeš přeložit svisle, vodorovně a po obou úhlopříčkách (z rohu do rohu) – má **4 osy**. Obdélník jen svisle a vodorovně – **2 osy**. Kruh přeložíš přes střed jakkoli – os je **nekonečně mnoho**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik os má písmeno H?",
+          "answer": "Svislá osa uprostřed – ano. Vodorovná osa uprostřed – také, horní a dolní půlka jsou stejné. **2 osy**."
+        },
+        {
+          "type": "example",
+          "question": "Je písmeno M osově souměrné?",
+          "answer": "Svislá čára uprostřed ho rozdělí na dvě zrcadlové půlky. **Ano, má 1 osu.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obdélník má 4 osy, stejně jako čtverec – i po úhlopříčkách.",
+          "right": "Obdélník (který není čtverec) má jen 2 osy.",
+          "why": "Když obdélník přeložíš po úhlopříčce, rohy na sebe nesednou. Zkus to s listem papíru A4."
+        },
+        {
+          "type": "heading",
+          "text": "Jak daleko je odraz"
+        },
+        {
+          "type": "text",
+          "text": "Stoupni si 1 metr před zrcadlo. Tvůj odraz vypadá, jako by stál 1 metr **za** zrcadlem – mezi vámi jsou 2 metry. Stejně v geometrii: bod a jeho obraz jsou od osy stejně daleko, každý z jedné strany, a spojnice mezi nimi je k ose kolmá (svírá s ní pravý úhel). Bod, který leží přímo na ose, se nehne."
+        },
+        {
+          "type": "summary",
+          "text": "Osově souměrný obrazec jde přeložit podle osy tak, že se obě poloviny kryjí. Bod a jeho obraz jsou od osy stejně daleko. Čtverec má 4 osy, obdélník 2, kruh nekonečně mnoho."
+        }
+      ]
+    },
+    {
+      "title": "Konstrukce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zrcadlit obrázek od oka jde, ale nepřesně. V geometrii se to dělá přesně pomocí pravítka s ryskou. Stačí umět najít obraz jednoho bodu – celý obrazec pak poskládáš z bodů."
+        },
+        {
+          "type": "text",
+          "text": "Takhle se kreslí plány budov, vzory dlaždic nebo souměrná loga."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Osa (o)",
+          "definition": "Přímka, podle které zrcadlíme. Značí se malým písmenem o.",
+          "example": "Na papíře je to rovná čára přes celou stránku."
+        },
+        {
+          "type": "term",
+          "term": "Kolmice",
+          "definition": "Přímka, která protíná jinou přímku pod **pravým úhlem** (90°, jako roh sešitu). Rýsuje se pravítkem s ryskou.",
+          "example": "Svislá a vodorovná čára na čtverečkovaném papíře jsou na sebe kolmé."
+        },
+        {
+          "type": "term",
+          "term": "Obraz bodu A′",
+          "definition": "Bod, kam se A „přenese“ zrcadlením. Čte se „A s čárkou“.",
+          "example": "Když je A 3 cm vlevo od osy, je A′ 3 cm vpravo."
+        },
+        {
+          "type": "term",
+          "term": "Vzdálenost od osy",
+          "definition": "Délka nejkratší cesty z bodu k ose – vždy po kolmici.",
+          "example": "|AP| = 3 cm znamená, že úsečka AP je dlouhá 3 cm."
+        },
+        {
+          "type": "heading",
+          "text": "Obraz bodu krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Bodem A veď **kolmici** k ose o.",
+            "Kde kolmice protne osu, označ bod P.",
+            "Změř vzdálenost |AP|, třeba kružítkem.",
+            "Stejnou vzdálenost nanes z P **na druhou stranu** osy.",
+            "Tam je obraz A′."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Celý obrazec: najdi obrazy všech jeho rohů a spoj je ve stejném pořadí."
+        },
+        {
+          "type": "heading",
+          "text": "Co platí vždycky"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Bod a jeho obraz leží na jedné kolmici k ose.",
+            "Bod a obraz jsou od osy **stejně daleko**.",
+            "Bod, který leží **na ose**, je sám sobě obrazem.",
+            "Délky se nemění – úsečka a její obraz jsou stejně dlouhé."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Bod A je 3 cm od osy. Jak daleko je od A jeho obraz A′?",
+          "answer": "A je 3 cm od osy na jedné straně, A′ 3 cm na druhé. Mezi nimi je 3 + 3 = **6 cm**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "obrazec",
+            "počet os"
+          ],
+          "rows": [
+            [
+              "čtverec",
+              "4"
+            ],
+            [
+              "obdélník",
+              "2"
+            ],
+            [
+              "rovnostranný △ (všechny strany stejné)",
+              "3"
+            ],
+            [
+              "rovnoramenný △ (dvě strany stejné)",
+              "1"
+            ],
+            [
+              "kruh",
+              "nekonečně"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik os má rovnoramenný trojúhelník, který není rovnostranný?",
+          "answer": "Jen jednu – vede z vrcholu mezi stejnými stranami do středu protější strany. **1 osa**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obraz bodu najdu tak, že ho přenesu šikmo přes osu, jak to vypadá od oka.",
+          "right": "Obraz leží vždy na **kolmici** k ose, ve stejné vzdálenosti na druhé straně.",
+          "why": "Když nepůjdeš po kolmici, obraz se posune a obrazec se zdeformuje."
+        },
+        {
+          "type": "summary",
+          "text": "Obraz bodu: kolmice k ose, stejná vzdálenost na druhou stranu. Bod na ose zůstává na místě. Délky se zrcadlením nemění."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik os souměrnosti má čtverec?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik os souměrnosti má obdélník (ne čtverec)?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které písmeno je osově souměrné?",
+      "options": [
+        "M",
+        "N",
+        "S",
+        "Z"
+      ],
+      "answer": 0,
+      "explanation": "M má svislou osu. N, S, Z jsou jen středově souměrná."
+    },
+    {
+      "type": "truefalse",
+      "question": "Bod ležící na ose je sám sobě obrazem.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Úsečka a její obraz v osové souměrnosti mají stejnou délku.",
+      "answer": true,
+      "explanation": "Osová souměrnost zachovává délky."
+    },
+    {
+      "type": "input",
+      "question": "Bod A je 3 cm od osy. Jak daleko (v cm) je od A jeho obraz A′?",
+      "answers": [
+        "6"
+      ],
+      "explanation": "3 + 3 = 6"
+    },
+    {
+      "type": "choice",
+      "question": "Kolik os souměrnosti má rovnostranný trojúhelník?",
+      "options": [
+        "3",
+        "1",
+        "0",
+        "6"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kolik os souměrnosti má rovnoramenný (ne rovnostranný) trojúhelník?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Kruh má právě 2 osy souměrnosti.",
+      "answer": false,
+      "explanation": "Každá přímka středem je osa – je jich nekonečně mnoho."
+    },
+    {
+      "type": "match",
+      "question": "Spoj obrazec s počtem os.",
+      "pairs": [
+        [
+          "čtverec",
+          "4"
+        ],
+        [
+          "obdélník",
+          "2"
+        ],
+        [
+          "rovnoramenný △",
+          "1"
+        ],
+        [
+          "rovnostranný △",
+          "3"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak sestrojíš obraz bodu v osové souměrnosti?",
+      "answer": "Z bodu vedu kolmici k ose. Vzdálenost bodu od osy přenesu na kolmici na druhou stranu osy. Tam je obraz."
+    },
+    {
+      "type": "open",
+      "question": "Uveď tři osově souměrné věci z okolí.",
+      "answer": "Například motýl, list stromu, lidský obličej, dveře, čtverec, písmeno A."
+    }
+  ]
+}

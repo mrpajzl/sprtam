@@ -1,0 +1,452 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "trojuhelniky",
+  "title": "Trojúhelníky",
+  "emoji": "📐",
+  "generator": "pythagoras",
+  "explanations": [
+    {
+      "title": "Obrázkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Střecha, most, stojan na kolo, jeřáb – všude uvidíš trojúhelníky. Trojúhelník je totiž **tuhý**: když ho svaříš ze tří tyčí, nejde zdeformovat. Čtyřúhelník se zkosí."
+        },
+        {
+          "type": "text",
+          "text": "Kdo umí s trojúhelníky počítat, umí změřit výšku stromu, vzdálenost přes řeku nebo délku žebříku. Tady jsou nejdůležitější pravidla a proč platí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vrcholy, strany, úhly",
+          "definition": "Trojúhelník ABC má tři vrcholy (rohy) A, B, C. Strana proti vrcholu A se značí a, proti B je b, proti C je c. Úhly u vrcholů jsou α, β, γ.",
+          "example": "Strana a spojuje body B a C."
+        },
+        {
+          "type": "term",
+          "term": "Pravoúhlý trojúhelník",
+          "definition": "Trojúhelník s jedním pravým úhlem (90°, roh sešitu). Strana naproti pravému úhlu je **přepona** (nejdelší), dvě strany u pravého úhlu jsou **odvěsny**.",
+          "example": "Žebřík opřený o zeď: zeď a zem jsou odvěsny, žebřík přepona."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoramenný trojúhelník",
+          "definition": "Má dvě stejně dlouhé strany (ramena). Třetí strana je základna a úhly u ní jsou stejné."
+        },
+        {
+          "type": "heading",
+          "text": "Úhly: vždy 180°"
+        },
+        {
+          "type": "text",
+          "text": "Ustřihni z papíru trojúhelník, utrhni mu všechny tři rohy a přilož je k sobě. Vždy vytvoří rovnou čáru – přímý úhel **180°**."
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej si, jak vypadá 50°, 60° a 70°. Když je přiložíš k sobě, 50 + 60 + 70 = 180."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 60
+          }
+        },
+        {
+          "type": "example",
+          "question": "Dva úhly trojúhelníku mají 50° a 60°. Kolik má třetí?",
+          "answer": "180° − 50° − 60° = **70°**."
+        },
+        {
+          "type": "heading",
+          "text": "Délky: trojúhelníková nerovnost"
+        },
+        {
+          "type": "text",
+          "text": "Zkus postavit trojúhelník ze špejlí 3 cm, 4 cm a 8 cm. Kratší dvě se položí na nejdelší a nedosáhnou na sebe. Platí: **součet dvou stran musí být větší než třetí**."
+        },
+        {
+          "type": "heading",
+          "text": "Pythagorova věta"
+        },
+        {
+          "type": "text",
+          "text": "Nad každou stranu pravoúhlého trojúhelníku postav čtverec. Dva menší čtverce mají dohromady **stejný obsah** jako ten velký. Hýbej posuvníky a sleduj čísla: a² + b² je vždy c²."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 3,
+            "b": 4
+          }
+        },
+        {
+          "type": "summary",
+          "text": "c² = a² + b², kde c je přepona. Platí jen v pravoúhlém trojúhelníku."
+        },
+        {
+          "type": "example",
+          "question": "Odvěsny měří 6 a 8. Jak dlouhá je přepona?",
+          "answer": "c² = 36 + 64 = 100, c = **10**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Z úseček 3, 4, 8 sestrojím trojúhelník, protože 3 + 4 + 8 je kladné číslo.",
+          "right": "Nesestrojíš: 3 + 4 = 7 < 8.",
+          "why": "Každé dvě strany dohromady musí být delší než třetí – jinak se nepotkají."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři významné body"
+        },
+        {
+          "type": "term",
+          "term": "Těžnice a těžiště",
+          "definition": "Těžnice je úsečka z vrcholu do středu protější strany. Všechny tři se protnou v **těžišti** T. Na špičce tužky v těžišti by papírový trojúhelník balancoval. Těžiště dělí těžnici v poměru 2 : 1 – dva díly od vrcholu, jeden od strany.",
+          "example": "Těžnice 9 cm → od vrcholu k těžišti 6 cm."
+        },
+        {
+          "type": "term",
+          "term": "Výška a ortocentrum",
+          "definition": "Výška je kolmice (svírá pravý úhel) z vrcholu na protější stranu. Tři výšky (nebo jejich prodloužení) se protnou v **ortocentru**."
+        },
+        {
+          "type": "term",
+          "term": "Kružnice opsaná",
+          "definition": "Kružnice, která prochází všemi třemi vrcholy. Její střed je průsečík **os stran** (kolmic vedených středy stran). Je stejně daleko od všech vrcholů."
+        },
+        {
+          "type": "term",
+          "term": "Kružnice vepsaná",
+          "definition": "Kružnice uvnitř, která se dotýká všech tří stran. Její střed je průsečík **os úhlů** (přímek, které úhly půlí). Je stejně daleko od všech stran."
+        },
+        {
+          "type": "text",
+          "text": "Obsah trojúhelníku: S = strana · výška k ní / 2 (je to polovina obdélníku). Strana 10 cm a výška 6 cm → S = 30 cm²."
+        },
+        {
+          "type": "heading",
+          "text": "Stejné a podobné"
+        },
+        {
+          "type": "term",
+          "term": "Shodné trojúhelníky",
+          "definition": "Dají se na sebe přesně přiložit. Stačí ověřit tři strany (sss), dvě strany a úhel mezi nimi (sus), stranu a dva úhly při ní (usu), nebo dvě strany a úhel proti větší z nich (Ssu)."
+        },
+        {
+          "type": "term",
+          "term": "Podobné trojúhelníky",
+          "definition": "Stejný tvar, jiná velikost – jako fotka a její zvětšenina. Stačí, aby měly stejné úhly. Strany jsou k-krát větší, obsah k²-krát.",
+          "example": "Zvětšíš-li trojúhelník 2×, obsah vzroste 4×."
+        },
+        {
+          "type": "text",
+          "text": "V pravoúhlém trojúhelníku rozdělí výška v na přeponu přeponu na úseky cₐ a c_b. Vzniknou dva menší trojúhelníky podobné tomu velkému, a z toho plyne **Euklidova věta**: v² = cₐ · c_b. Například úseky 4 a 9 → v² = 36, v = 6."
+        },
+        {
+          "type": "summary",
+          "text": "Úhly dají 180°, dvě strany jsou vždy delší než třetí, v pravoúhlém c² = a² + b². Těžiště = průsečík těžnic (2 : 1), střed opsané kružnice = osy stran, vepsané = osy úhlů."
+        }
+      ]
+    },
+    {
+      "title": "Přehledem vět",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zeměměřič nemůže přejít přes řeku, ale změří úhly a jednu vzdálenost – a zbytek dopočítá. Funguje to díky větám o trojúhelnících: z několika údajů jde určit všechny ostatní."
+        },
+        {
+          "type": "text",
+          "text": "Tady je přehled vět, které na SŠ budeš používat pořád, a vždy k nim, k čemu se hodí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Trojúhelník ABC",
+          "definition": "Tři body, které neleží na jedné přímce, spojené úsečkami. Strany a, b, c leží proti vrcholům A, B, C; úhly značíme α, β, γ."
+        },
+        {
+          "type": "term",
+          "term": "Shodné trojúhelníky",
+          "definition": "Mají stejný tvar i velikost – dají se na sebe přesně přiložit."
+        },
+        {
+          "type": "term",
+          "term": "Podobné trojúhelníky",
+          "definition": "Mají stejný tvar, ale mohou mít jinou velikost. Všechny strany jsou zvětšené stejným **poměrem podobnosti k**.",
+          "example": "Trojúhelník 3–4–5 a 6–8–10 jsou podobné s k = 2."
+        },
+        {
+          "type": "heading",
+          "text": "Základní věty"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Součet úhlů**: α + β + γ = 180°.",
+            "**Trojúhelníková nerovnost**: a + b > c (a stejně pro ostatní dvojice).",
+            "**Rovnoramenný**: úhly při základně jsou shodné.",
+            "**Obsah**: S = a · vₐ / 2, kde vₐ je výška na stranu a."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kdy jsou dva trojúhelníky shodné"
+        },
+        {
+          "type": "text",
+          "text": "Nemusíš porovnávat všech 6 údajů. Stačí 3 správně vybrané (s = strana, u = úhel):"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Věta",
+            "Co se shoduje"
+          ],
+          "rows": [
+            [
+              "sss",
+              "všechny tři strany"
+            ],
+            [
+              "sus",
+              "dvě strany a úhel **mezi** nimi"
+            ],
+            [
+              "usu",
+              "strana a oba úhly **při ní**"
+            ],
+            [
+              "Ssu",
+              "dvě strany a úhel proti **větší** z nich"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Trojúhelníky se stejnými úhly (uuu) jsou shodné.",
+          "right": "Jsou jen podobné.",
+          "why": "Malý a velký rovnostranný trojúhelník mají oba úhly 60°, ale různou velikost."
+        },
+        {
+          "type": "text",
+          "text": "U podobnosti s poměrem k jsou strany k-krát větší, ale **obsahy k²-krát** větší (zvětšuje se do délky i do šířky)."
+        },
+        {
+          "type": "example",
+          "question": "Trojúhelníky jsou podobné s poměrem 2. Menší má obsah 5 cm². Jaký obsah má větší?",
+          "answer": "Obsahy jsou v poměru k² = 4. 5 · 4 = **20 cm²**."
+        },
+        {
+          "type": "heading",
+          "text": "Pravoúhlý trojúhelník"
+        },
+        {
+          "type": "term",
+          "term": "Přepona a odvěsny",
+          "definition": "Přepona c leží proti pravému úhlu, odvěsny a, b ho svírají. Výška v na přeponu ji rozdělí na dva úseky: cₐ (u strany a) a c_b (u strany b)."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Pythagorova věta**: c² = a² + b².",
+            "**Euklidova věta o výšce**: v² = cₐ · c_b.",
+            "**Euklidova věta o odvěsně**: a² = c · cₐ, b² = c · c_b."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Prověř Pythagorovu větu: nastav odvěsny 6 a 8 a podívej se, jaká vyjde přepona."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 6,
+            "b": 8
+          }
+        },
+        {
+          "type": "example",
+          "question": "Úseky přepony jsou cₐ = 4, c_b = 9. Jak vysoká je výška na přeponu?",
+          "answer": "v² = 4 · 9 = 36, v = **6**."
+        },
+        {
+          "type": "heading",
+          "text": "Významné body"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Bod",
+            "Průsečík čeho",
+            "Vlastnost"
+          ],
+          "rows": [
+            [
+              "těžiště T",
+              "těžnic (vrchol → střed protější strany)",
+              "dělí těžnici 2 : 1 od vrcholu"
+            ],
+            [
+              "ortocentrum",
+              "výšek (kolmice z vrcholu na stranu)",
+              "—"
+            ],
+            [
+              "střed kružnice opsané",
+              "os stran (kolmice středem strany)",
+              "stejně daleko od vrcholů"
+            ],
+            [
+              "střed kružnice vepsané",
+              "os úhlů (půlí úhel)",
+              "stejně daleko od stran"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Těžnice měří 9 cm. Jak daleko je těžiště od vrcholu?",
+          "answer": "Těžnici rozdělím na 3 díly po 3 cm. Od vrcholu jsou 2 díly: **6 cm**."
+        },
+        {
+          "type": "summary",
+          "text": "Úhly 180°, a + b > c. Shodnost: sss, sus, usu, Ssu; stejné úhly dají jen podobnost (obsahy v poměru k²). Pravoúhlý: c² = a² + b², v² = cₐ · c_b."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Dva úhly trojúhelníku mají 50° a 60°. Třetí úhel (°) =",
+      "answers": [
+        "70"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Z úseček 3 cm, 4 cm a 8 cm lze sestrojit trojúhelník.",
+      "answer": false,
+      "explanation": "3 + 4 < 8"
+    },
+    {
+      "type": "input",
+      "question": "Odvěsny 6 a 8. Přepona =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Těžiště je průsečík:",
+      "options": [
+        "těžnic",
+        "výšek",
+        "os stran",
+        "os úhlů"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj bod s přímkami, které se v něm protínají.",
+      "pairs": [
+        [
+          "těžiště",
+          "těžnice"
+        ],
+        [
+          "ortocentrum",
+          "výšky"
+        ],
+        [
+          "střed kružnice opsané",
+          "osy stran"
+        ],
+        [
+          "střed kružnice vepsané",
+          "osy úhlů"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která trojice NENÍ věta o shodnosti trojúhelníků?",
+      "options": [
+        "uuu",
+        "sss",
+        "sus",
+        "usu"
+      ],
+      "answer": 0,
+      "explanation": "Stejné úhly zaručí jen podobnost."
+    },
+    {
+      "type": "input",
+      "question": "Trojúhelníky jsou podobné s poměrem 2. Menší má obsah 5 cm². Obsah většího (cm²) =",
+      "answers": [
+        "20"
+      ],
+      "explanation": "Obsahy v poměru k² = 4."
+    },
+    {
+      "type": "input",
+      "question": "Úseky přepony c_a = 4, c_b = 9. Výška na přeponu =",
+      "answers": [
+        "6"
+      ],
+      "explanation": "v² = 4 · 9 = 36"
+    },
+    {
+      "type": "truefalse",
+      "question": "V rovnoramenném trojúhelníku jsou úhly při základně shodné.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Strana 10 cm, výška k ní 6 cm. Obsah (cm²) =",
+      "answers": [
+        "30"
+      ],
+      "explanation": "S = a · v / 2"
+    },
+    {
+      "type": "input",
+      "question": "Těžnice měří 9 cm. Vzdálenost těžiště od vrcholu (cm) =",
+      "answers": [
+        "6"
+      ],
+      "explanation": "Těžiště dělí těžnici v poměru 2 : 1 od vrcholu."
+    },
+    {
+      "type": "open",
+      "question": "Co říká trojúhelníková nerovnost?",
+      "answer": "Součet délek libovolných dvou stran trojúhelníku je větší než délka třetí strany."
+    },
+    {
+      "type": "open",
+      "question": "Vyslov Pythagorovu větu a řekni, kdy platí.",
+      "answer": "V pravoúhlém trojúhelníku je obsah čtverce nad přeponou roven součtu obsahů čtverců nad odvěsnami: c² = a² + b². Platí jen pro pravoúhlé trojúhelníky."
+    }
+  ]
+}

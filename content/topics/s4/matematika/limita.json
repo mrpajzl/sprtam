@@ -1,0 +1,389 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "limita",
+  "title": "Limita",
+  "emoji": "🎯",
+  "explanations": [
+    {
+      "title": "Přibližování",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jdeš ke zdi a pokaždé ujdeš polovinu zbývající vzdálenosti. Zdi se nikdy přesně nedotkneš, ale **blížíš se jí** libovolně těsně. Matematik řekne: limita tvé vzdálenosti je 0."
+        },
+        {
+          "type": "text",
+          "text": "Limita je základ celé vyšší matematiky. Bez ní nejde definovat okamžitou rychlost (derivaci), plochu pod křivkou (integrál) ani číslo e."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Limita posloupnosti",
+          "definition": "Číslo, ke kterému se členy posloupnosti blíží, když n roste nade všechny meze. Zápis lim (n→∞) aₙ = L.",
+          "example": "1/n: 1, 1/2, 1/3, … 1/1000 … se blíží 0. lim (n→∞) 1/n = 0."
+        },
+        {
+          "type": "term",
+          "term": "Limita funkce v bodě",
+          "definition": "lim (x→a) f(x) = L znamená: když se x blíží k a (ale **není** rovno a), hodnoty f(x) se blíží k L. Co se děje přímo v a, je jedno."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se, jak členy 1/n rychle klesají k nule. Nikdy jí nedosáhnou, ale dostanou se k ní libovolně blízko."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "1/1",
+                "value": 1
+              },
+              {
+                "label": "1/2",
+                "value": 0.5
+              },
+              {
+                "label": "1/4",
+                "value": 0.25
+              },
+              {
+                "label": "1/10",
+                "value": 0.1
+              },
+              {
+                "label": "1/20",
+                "value": 0.05
+              },
+              {
+                "label": "1/100",
+                "value": 0.01
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Díra v grafu"
+        },
+        {
+          "type": "text",
+          "text": "f(x) = (x² − 4)/(x − 2). Pro x = 2 dostaneš 0/0 – to nejde. Ale zkus se přiblížit: x = 1,9 → 3,9; x = 1,99 → 3,99; x = 2,01 → 4,01. Hodnoty se blíží ke **4**."
+        },
+        {
+          "type": "text",
+          "text": "Proč? x² − 4 = (x − 2)(x + 2), takže pro x ≠ 2 je f(x) = x + 2. Graf je přímka y = x + 2 s „dírou“ v bodě [2; 4]. Limita je 4, i když f(2) neexistuje."
+        },
+        {
+          "type": "example",
+          "question": "lim (x→1) (x² − 1)/(x − 1) = ?",
+          "answer": "Rozložím: (x − 1)(x + 1)/(x − 1) = x + 1 pro x ≠ 1. Dosadím: 1 + 1 = **2**."
+        },
+        {
+          "type": "heading",
+          "text": "Zleva a zprava"
+        },
+        {
+          "type": "text",
+          "text": "Pro 1/x: když se x blíží k 0 zprava (0,1; 0,01; …), hodnoty jsou 10, 100, … → **+∞**. Zleva (−0,1; −0,01) jsou −10, −100 → **−∞**. Zleva a zprava vyjde něco jiného, a proto lim (x→0) 1/x **neexistuje**."
+        },
+        {
+          "type": "term",
+          "term": "Spojitost",
+          "definition": "Funkce je spojitá v bodě a, když lim (x→a) f(x) = f(a) – graf jde „nakreslit jedním tahem“ bez díry a skoku.",
+          "example": "2x + 1 je spojitá: lim (x→3) (2x + 1) = 7 = f(3)."
+        },
+        {
+          "type": "heading",
+          "text": "Dvě slavné limity"
+        },
+        {
+          "type": "list",
+          "items": [
+            "lim (x→0) sin x / x = 1 – pro malé úhly v radiánech je sin x ≈ x.",
+            "lim (x→∞) (1 + 1/x)ˣ = e ≈ 2,718 – Eulerovo číslo, vzniká třeba u úroku připisovaného stále častěji."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "lim (x→2) (x² − 4)/(x − 2) neexistuje, protože vyjde 0/0.",
+          "right": "Limita je 4.",
+          "why": "„0/0“ je jen signál, že musíš výraz upravit (zkrátit). Limita se ptá, co se děje **blízko** bodu 2, ne v něm."
+        },
+        {
+          "type": "summary",
+          "text": "Limita = hodnota, ke které se funkce blíží, když se x blíží k a (nebo k ∞). Typ 0/0 vyřeš rozkladem a zkrácením. Funkce je spojitá, když limita = funkční hodnota."
+        }
+      ]
+    },
+    {
+      "title": "Výpočetní triky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ekonom se ptá: k čemu se blíží průměrné náklady na kus, když vyrábíme pořád víc? Fyzik: jaká je rychlost v jednom okamžiku? Obojí jsou limity a počítají se několika standardními triky."
+        },
+        {
+          "type": "text",
+          "text": "Tady je přehled typů limit a postup pro každý z nich."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Limita",
+          "definition": "lim (x→a) f(x) = L: f(x) se libovolně blíží k L, když se x blíží k a (x ≠ a). Místo a může být i ∞ („x roste nade všechny meze“)."
+        },
+        {
+          "type": "term",
+          "term": "Nevlastní limita",
+          "definition": "Když hodnoty rostou nade všechny meze, píšeme limitu +∞ (nebo −∞ při klesání).",
+          "example": "lim (x→0⁺) 1/x = +∞ (0⁺ = blížím se k nule zprava, z kladných čísel)."
+        },
+        {
+          "type": "term",
+          "term": "Neurčitý výraz",
+          "definition": "Tvar jako 0/0 nebo ∞/∞, ze kterého výsledek nepoznáš – výraz musíš nejdřív upravit."
+        },
+        {
+          "type": "heading",
+          "text": "Postupy podle typu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Typ",
+            "Postup",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "spojitá funkce, x → a",
+              "prostě dosaď",
+              "lim (x→3) (2x + 1) = 7"
+            ],
+            [
+              "0/0 u mnohočlenů",
+              "rozlož, zkrať, dosaď",
+              "lim (x→2) (x² − 4)/(x − 2) = 4"
+            ],
+            [
+              "∞/∞ u mnohočlenů",
+              "vyděl nejvyšší mocninou",
+              "lim (n→∞) (2n + 1)/(n + 3) = 2"
+            ],
+            [
+              "1/x, 1/x² pro x → ∞",
+              "jsou 0",
+              "lim (x→∞) 1/x² = 0"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Limita v nekonečnu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi nejvyšší mocninu n ve jmenovateli.",
+            "Vyděl jí čitatele i jmenovatele.",
+            "Členy typu 1/n, 1/n² jdou k nule – nahraď je nulou.",
+            "Spočítej, co zbylo."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "lim (n→∞) (2n + 1)/(n + 3) = ?",
+          "answer": "Dělím n: (2 + 1/n)/(1 + 3/n). 1/n → 0 a 3/n → 0, zbyde 2/1 = **2**."
+        },
+        {
+          "type": "example",
+          "question": "lim (n→∞) (3n² − n)/(n² + 5) = ?",
+          "answer": "Dělím n²: (3 − 1/n)/(1 + 5/n²) → 3/1 = **3**."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se, jak se (2n + 1)/(n + 3) pro rostoucí n přibližuje ke 2."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "n = 1",
+                "value": 0.75
+              },
+              {
+                "label": "n = 2",
+                "value": 1
+              },
+              {
+                "label": "n = 5",
+                "value": 1.375
+              },
+              {
+                "label": "n = 10",
+                "value": 1.615
+              },
+              {
+                "label": "n = 100",
+                "value": 1.951
+              },
+              {
+                "label": "n = 1000",
+                "value": 1.995
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Typ 0/0"
+        },
+        {
+          "type": "example",
+          "question": "lim (x→2) (x² − 4)/(x − 2) = ?",
+          "answer": "Dosazením 0/0. Rozložím: (x − 2)(x + 2)/(x − 2) = x + 2. Dosadím: **4**."
+        },
+        {
+          "type": "heading",
+          "text": "Spojitost a jednostranné limity"
+        },
+        {
+          "type": "list",
+          "items": [
+            "f je spojitá v a ⇔ lim (x→a) f(x) = f(a).",
+            "Limita existuje, jen když limita zleva = limita zprava. U 1/x v nule: zleva −∞, zprava +∞ → neexistuje.",
+            "Známé limity: lim (x→0) sin x / x = 1, lim (x→∞) (1 + 1/x)ˣ = e."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "lim (n→∞) (2n + 1)/(n + 3) = 1, protože nahoře i dole je ∞.",
+          "right": "Limita je 2.",
+          "why": "∞/∞ není 1 – je to neurčitý výraz. Rozhoduje poměr koeficientů u nejvyšší mocniny (2 : 1)."
+        },
+        {
+          "type": "summary",
+          "text": "Spojitá funkce: dosaď. 0/0: rozlož a zkrať. ∞/∞: vyděl nejvyšší mocninou. Limita existuje, jen když se shodují limity zleva a zprava."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "lim (n→∞) 1/n =",
+      "answers": [
+        "0"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "lim (n→∞) (2n + 1)/(n + 3) =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "lim (x→2) (x² − 4)/(x − 2) =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "lim (x→3) (2x + 1) =",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "lim (x→0) sin x / x = 1",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "lim (x→0⁺) 1/x =",
+      "options": [
+        "+∞",
+        "0",
+        "−∞",
+        "1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "lim (n→∞) (3n² − n)/(n² + 5) =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "f je spojitá v bodě a, právě když lim (x→a) f(x) = f(a).",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "lim (x→1) (x² − 1)/(x − 1) =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "lim (x→∞) (1 + 1/x)ˣ =",
+      "options": [
+        "e",
+        "1",
+        "∞",
+        "0"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "lim (x→∞) 1/x² =",
+      "answers": [
+        "0"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Funkce 1/x má v bodě 0 stejnou limitu zleva i zprava.",
+      "answer": false,
+      "explanation": "Zleva −∞, zprava +∞ – limita neexistuje."
+    },
+    {
+      "type": "open",
+      "question": "Co intuitivně znamená lim (x→a) f(x) = L?",
+      "answer": "Když se x blíží k a (ale není rovno a), hodnoty f(x) se libovolně blíží k L. Hodnota f(a) přitom nemusí existovat."
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš limitu typu „0/0“ u podílu mnohočlenů?",
+      "answer": "Čitatel i jmenovatel rozložím na součin, zkrátím společného činitele (např. x − a) a pak dosadím."
+    }
+  ]
+}

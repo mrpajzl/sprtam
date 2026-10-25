@@ -1,0 +1,344 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hustota",
+  "title": "Hustota",
+  "emoji": "🪨",
+  "explanations": [
+    {
+      "title": "Stejná kostka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi do jedné ruky kostku ze dřeva a do druhé stejně velkou kostku ze železa. Železná je mnohem těžší. Přitom zabírají stejně místa."
+        },
+        {
+          "type": "text",
+          "text": "Tomu, jak „natěsnaná“ je látka, říkáme **hustota**. Díky ní víme, co bude plavat a co se potopí, nebo jestli prsten je opravdu ze zlata."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hmotnost",
+          "definition": "Kolik látky těleso obsahuje – zjistíš ji na vahách. Značka `m`, jednotky g nebo kg.",
+          "example": "Jablko má asi 150 g."
+        },
+        {
+          "type": "term",
+          "term": "Objem",
+          "definition": "Kolik místa těleso zabírá. Značka `V`, jednotky třeba cm³ nebo litry.",
+          "example": "Kostka s hranou 1 cm má objem 1 cm³."
+        },
+        {
+          "type": "term",
+          "term": "Hustota",
+          "definition": "Kolik gramů váží **1 cm³** dané látky. Říká, jak těžká je látka „na stejný kousek“. Značka `ρ` (řecké písmeno ró).",
+          "example": "Voda má hustotu 1 g/cm³: kostička vody 1 cm³ váží 1 g."
+        },
+        {
+          "type": "heading",
+          "text": "Stejně velké kostky, různá hmotnost"
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje, kolik gramů váží kostička 1 cm³ z různých látek. Najdi vodu. Které látky jsou lehčí než voda a které těžší?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "g/cm³",
+            "items": [
+              {
+                "label": "dřevo",
+                "value": 0.5
+              },
+              {
+                "label": "led",
+                "value": 0.92
+              },
+              {
+                "label": "voda",
+                "value": 1
+              },
+              {
+                "label": "hliník",
+                "value": 2.7
+              },
+              {
+                "label": "železo",
+                "value": 7.8
+              },
+              {
+                "label": "olovo",
+                "value": 11.3
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Plave, nebo se potopí?"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Látka s **menší** hustotou než voda **plave** (dřevo, korek, led).",
+            "Látka s **větší** hustotou než voda **klesne ke dnu** (železo, kámen, olovo)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč kostka ledu plave ve vodě?",
+          "answer": "Hustota ledu je asi 0,92 g/cm³, hustota vody 1 g/cm³. Led má **menší** hustotu, proto plave."
+        },
+        {
+          "type": "example",
+          "question": "Kostka 1 cm³ hliníku váží 2,7 g. Kolik váží 10 takových kostek (10 cm³)?",
+          "answer": "Každá kostička má 2,7 g, deset kostiček: 10 · 2,7 = **27 g**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kilogram železa je těžší než kilogram peří.",
+          "right": "Obojí má hmotnost 1 kg. Peří jen zabírá mnohem víc místa.",
+          "why": "Železo má větší **hustotu**, ne větší hmotnost. Stejná hmotnost lehké látky se roztáhne do většího objemu."
+        },
+        {
+          "type": "summary",
+          "text": "Hustota = hmotnost jednoho kousku 1 cm³ látky. Co má menší hustotu než voda (1 g/cm³), plave."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Našel jsi lesklý kov a chceš zjistit, co je to za látku. Barva ani tvar nestačí. Ale můžeš ho zvážit, změřit jeho objem a spočítat hustotu. Pak ji najdeš v tabulce."
+        },
+        {
+          "type": "text",
+          "text": "Takhle prý Archimédes ověřoval, jestli je královská koruna z čistého zlata."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hmotnost `m`",
+          "definition": "Kolik látky těleso obsahuje (měříme na vahách), v gramech nebo kilogramech."
+        },
+        {
+          "type": "term",
+          "term": "Objem `V`",
+          "definition": "Kolik místa těleso zabírá, v cm³ nebo m³. Měříme odměrným válcem nebo počítáme."
+        },
+        {
+          "type": "term",
+          "term": "Hustota `ρ`",
+          "definition": "Hmotnost připadající na jednu jednotku objemu – třeba na 1 cm³. Čte se „ró“.",
+          "example": "Železo má ρ = 7,8 g/cm³: každý cm³ železa má 7,8 g."
+        },
+        {
+          "type": "heading",
+          "text": "Odkud se vezme vzorec"
+        },
+        {
+          "type": "text",
+          "text": "Kousek látky má 54 g a 20 cm³. Kolik gramů připadá na jeden cm³? Rozdělíme hmotnost rovným dílem na 20 kostiček: 54 : 20 = 2,7 g. To je hustota."
+        },
+        {
+          "type": "text",
+          "text": "Proto: `ρ = m : V` (hmotnost děleno objemem). Z toho jde vyjádřit i ostatní: `m = ρ · V` a `V = m : ρ`."
+        },
+        {
+          "type": "heading",
+          "text": "Jednotky hustoty"
+        },
+        {
+          "type": "text",
+          "text": "Jednotka vznikne z dělení: **g/cm³** (gramy na krychlový centimetr) nebo **kg/m³**. Platí **1 g/cm³ = 1 000 kg/m³**."
+        },
+        {
+          "type": "text",
+          "text": "Proč? Do 1 m³ se vejde 1 000 000 kostiček po 1 cm³. Když každá váží 1 g, je to 1 000 000 g = 1 000 kg."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vypiš, co znáš: m = …, V = …",
+            "Napiš vzorec: ρ = m : V.",
+            "Dosaď čísla a vypočítej.",
+            "Připiš jednotku (g/cm³ nebo kg/m³).",
+            "Porovnej s tabulkou: o jakou látku jde?"
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Látka",
+            "g/cm³",
+            "kg/m³"
+          ],
+          "rows": [
+            [
+              "vzduch",
+              "0,0013",
+              "1,3"
+            ],
+            [
+              "voda",
+              "1",
+              "1 000"
+            ],
+            [
+              "hliník",
+              "2,7",
+              "2 700"
+            ],
+            [
+              "železo",
+              "7,8",
+              "7 800"
+            ],
+            [
+              "olovo",
+              "11,3",
+              "11 300"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Těleso má m = 54 g a V = 20 cm³. Jaká je jeho hustota a z čeho je?",
+          "answer": "ρ = m : V = 54 : 20 = **2,7 g/cm³**. Podle tabulky je to **hliník**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik gramů má 3 cm³ železa (ρ = 7,8 g/cm³)?",
+          "answer": "m = ρ · V = 7,8 · 3 = **23,4 g**."
+        },
+        {
+          "type": "example",
+          "question": "Jaký objem má 39 g železa?",
+          "answer": "V = m : ρ = 39 : 7,8 = **5 cm³**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "ρ = V : m (objem děleno hmotností)",
+          "right": "ρ = m : V (hmotnost děleno objemem)",
+          "why": "Hustota říká, kolik **gramů** připadá na **1 cm³**. Gramy (hmotnost) jsou nahoře, cm³ (objem) dole – stejně jako v jednotce g/cm³."
+        },
+        {
+          "type": "summary",
+          "text": "`ρ = m : V`, `m = ρ · V`, `V = m : ρ`. Jednotky g/cm³ nebo kg/m³, 1 g/cm³ = 1 000 kg/m³."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec pro hustotu?",
+      "options": [
+        "ρ = m / V",
+        "ρ = m · V",
+        "ρ = V / m",
+        "ρ = m + V"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Hustota vody v kg/m³ =",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Těleso má hmotnost 40 g a objem 5 cm³. Hustota v g/cm³ =",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik gramů má 10 cm³ hliníku (ρ = 2,7 g/cm³)?",
+      "answers": [
+        "27"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jaký objem v cm³ má 39 g železa (ρ = 7,8 g/cm³)?",
+      "answers": [
+        "5"
+      ],
+      "explanation": "V = 39 : 7,8 = 5"
+    },
+    {
+      "type": "truefalse",
+      "question": "Led plave na vodě, protože má menší hustotu než voda.",
+      "answer": true,
+      "explanation": "Led má asi 920 kg/m³, voda 1 000 kg/m³."
+    },
+    {
+      "type": "choice",
+      "question": "Co se ve vodě potopí?",
+      "options": [
+        "železný hřebík",
+        "korková zátka",
+        "smrkové dřevo",
+        "led"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenší hustoty.",
+      "items": [
+        "vzduch",
+        "dřevo",
+        "voda",
+        "hliník",
+        "olovo"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Převeď 2,7 g/cm³ na kg/m³.",
+      "answers": [
+        "2700"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Kilogram železa má větší hmotnost než kilogram peří.",
+      "answer": false,
+      "explanation": "Oba mají 1 kg. Peří jen zabírá větší objem."
+    },
+    {
+      "type": "open",
+      "question": "Co vyjadřuje hustota a jak ji vypočítáš?",
+      "answer": "Hustota říká, jakou hmotnost má jednotkový objem látky. Vypočítá se ρ = m / V, jednotka kg/m³ nebo g/cm³."
+    },
+    {
+      "type": "open",
+      "question": "Proč dřevo plave a železo se potopí?",
+      "answer": "Dřevo má menší hustotu než voda, proto plave. Železo má hustotu mnohem větší než voda, proto klesne."
+    }
+  ]
+}

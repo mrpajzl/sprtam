@@ -1,0 +1,432 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "svetadily-a-oceany",
+  "title": "Světadíly a oceány",
+  "emoji": "🌐",
+  "explanations": [
+    {
+      "title": "Podle velikosti",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když se podíváš na glóbus, uvidíš hlavně modrou vodu a mezi ní několik velkých kusů souše. Na těch kusech žijí všichni lidé světa."
+        },
+        {
+          "type": "text",
+          "text": "Celý rok budeme cestovat po světadílech. Nejdřív se proto musíš naučit, které to jsou, jak jsou velké a jaké oceány je oddělují."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pevnina (souš)",
+          "definition": "Část povrchu Země, která není pod vodou – kde se dá chodit."
+        },
+        {
+          "type": "term",
+          "term": "Světadíl",
+          "definition": "Velký celek pevniny, který lidé považují za jeden „díl světa“ – i s ostrovy kolem.",
+          "example": "Evropa, Asie, Afrika."
+        },
+        {
+          "type": "term",
+          "term": "Oceán",
+          "definition": "Obrovská slaná vodní plocha mezi světadíly.",
+          "example": "Atlantský oceán leží mezi Evropou a Amerikou."
+        },
+        {
+          "type": "term",
+          "term": "km² (kilometr čtvereční)",
+          "definition": "Jednotka plochy: čtverec, který má každou stranu dlouhou 1 km. **mil. km²** = milion takových čtverců.",
+          "example": "Česko má asi 79 000 km² – to je méně než desetina milionu."
+        },
+        {
+          "type": "heading",
+          "text": "Kolik je souše a kolik vody"
+        },
+        {
+          "type": "text",
+          "text": "Pevnina tvoří jen asi **29 %** povrchu Země – necelou třetinu. Zbytek, asi **71 %**, jsou moře a oceány."
+        },
+        {
+          "type": "widget",
+          "widget": "percent",
+          "props": {
+            "percent": 29
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Sedm světadílů podle velikosti"
+        },
+        {
+          "type": "text",
+          "text": "Porovnej délku sloupců. Všimni si, že Asie je větší než Evropa, Antarktida a Austrálie dohromady."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "mil. km²",
+            "items": [
+              {
+                "label": "Asie",
+                "value": 44
+              },
+              {
+                "label": "Afrika",
+                "value": 30
+              },
+              {
+                "label": "Severní Amerika",
+                "value": 24
+              },
+              {
+                "label": "Jižní Amerika",
+                "value": 18
+              },
+              {
+                "label": "Antarktida",
+                "value": 14
+              },
+              {
+                "label": "Evropa",
+                "value": 10
+              },
+              {
+                "label": "Austrálie a Oceánie",
+                "value": 9
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pět oceánů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Oceán (od největšího)",
+            "Kde leží"
+          ],
+          "rows": [
+            [
+              "Tichý",
+              "mezi Asií a Austrálií na západě a Amerikou na východě"
+            ],
+            [
+              "Atlantský",
+              "mezi Evropou s Afrikou a Amerikou"
+            ],
+            [
+              "Indický",
+              "mezi Afrikou, Asií a Austrálií"
+            ],
+            [
+              "Jižní",
+              "kolem Antarktidy"
+            ],
+            [
+              "Severní ledový",
+              "kolem severního pólu, v Arktidě"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Je Antarktida větší než Evropa?",
+          "answer": "Podívej se do grafu: Antarktida má asi 14 mil. km², Evropa asi 10 mil. km². Ano, Antarktida je větší."
+        },
+        {
+          "type": "example",
+          "question": "Kolikrát je Asie větší než Evropa?",
+          "answer": "Asie má asi 44 mil. km², Evropa asi 10 mil. km². 44 : 10 = 4,4. Asie je víc než 4× větší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na Zemi je víc souše než vody.",
+          "right": "Voda pokrývá asi 71 % povrchu, souš jen asi 29 %.",
+          "why": "Na mapách souš vypadá velká, ale oceány jsou mnohem rozlehlejší. Sám Tichý oceán je větší než všechna souš dohromady."
+        },
+        {
+          "type": "summary",
+          "text": "Souš tvoří asi 29 % povrchu Země. Největší světadíl je Asie, nejmenší Austrálie s Oceánií. Největší oceán je Tichý, nejmenší Severní ledový."
+        }
+      ]
+    },
+    {
+      "title": "Kontinent a světadíl",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zeptej se tří lidí, kolik je na Zemi „kontinentů“. Jeden řekne 6, druhý 7 a třetí 5. Kdo má pravdu? Záleží na tom, co přesně počítáme."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si rozdíl mezi **kontinentem** a **světadílem** a rozdělíme si svět na čtvrtiny pomocí polokoulí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kontinent",
+          "definition": "**Souvislý** kus pevniny – dá se po něm dojít pěšky z jednoho konce na druhý, bez moře mezi tím. Počítá se jen podle přírody.",
+          "example": "Eurasie je jeden kontinent: z Prahy dojdeš pěšky až do Pekingu."
+        },
+        {
+          "type": "term",
+          "term": "Světadíl",
+          "definition": "Část světa, kterou lidé odedávna chápou jako celek podle **historie a kultury**. Patří k ní i blízké ostrovy.",
+          "example": "Evropa a Asie jsou dva světadíly, i když leží na jednom kontinentu."
+        },
+        {
+          "type": "term",
+          "term": "Polokoule",
+          "definition": "Polovina Země. **Rovník** (myšlená kružnice kolem středu Země) ji dělí na severní a jižní. **Nultý poledník** (myšlená čára od pólu k pólu přes Londýn) na východní a západní."
+        },
+        {
+          "type": "heading",
+          "text": "Spočítáme to"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kontinenty (6)",
+            "Světadíly (7)"
+          ],
+          "rows": [
+            [
+              "Eurasie",
+              "Evropa + Asie"
+            ],
+            [
+              "Afrika",
+              "Afrika"
+            ],
+            [
+              "Severní Amerika",
+              "Severní Amerika"
+            ],
+            [
+              "Jižní Amerika",
+              "Jižní Amerika"
+            ],
+            [
+              "Austrálie",
+              "Austrálie a Oceánie"
+            ],
+            [
+              "Antarktida",
+              "Antarktida"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej souvislé pevniny: vyjde **6 kontinentů**.",
+            "Eurasii rozděl na Evropu a Asii podle dějin a kultury.",
+            "Tak dostaneš **7 světadílů**.",
+            "Hranici mezi Evropou a Asií tvoří hlavně pohoří **Ural**, dál na jih řeka Ural a Kaspické moře."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik je kontinentů a kolik světadílů?",
+          "answer": "Kontinentů je 6 (Eurasie, Afrika, Severní Amerika, Jižní Amerika, Austrálie, Antarktida). Světadílů 7, protože Eurasie se dělí na Evropu a Asii."
+        },
+        {
+          "type": "heading",
+          "text": "Kde světadíly leží"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď světadíly podle toho, na které polokouli leží (celé nebo z větší části)."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Severní polokoule",
+              "Jižní polokoule"
+            ],
+            "items": [
+              {
+                "text": "Evropa",
+                "group": 0
+              },
+              {
+                "text": "Severní Amerika",
+                "group": 0
+              },
+              {
+                "text": "Antarktida",
+                "group": 1
+              },
+              {
+                "text": "Austrálie",
+                "group": 1
+              },
+              {
+                "text": "většina Asie",
+                "group": 0
+              },
+              {
+                "text": "většina Jižní Ameriky",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Který světadíl leží celý na jižní polokouli a celý kolem pólu?",
+          "answer": "Antarktida. Leží kolem jižního pólu, takže je celá na jižní polokouli."
+        },
+        {
+          "type": "heading",
+          "text": "Oceány mezi nimi"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Tichý** – největší, mezi Asií a Amerikou.",
+            "**Atlantský** – mezi Evropou a Amerikou.",
+            "**Indický** – mezi Afrikou a Austrálií.",
+            "**Jižní** – kolem Antarktidy.",
+            "**Severní ledový** – nejmenší, v Arktidě."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Evropa je samostatný kontinent, oddělený od Asie mořem.",
+          "right": "Evropa a Asie tvoří jeden kontinent – Eurasii.",
+          "why": "Mezi nimi není moře, jen pohoří Ural a další hranice, které určili lidé. Jsou to dva světadíly, ne dva kontinenty."
+        },
+        {
+          "type": "summary",
+          "text": "Kontinent = souvislá pevnina (6), světadíl = kulturní celek i s ostrovy (7). Eurasie je jeden kontinent, ale dva světadíly."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který světadíl je největší?",
+      "options": [
+        "Afrika",
+        "Asie",
+        "Severní Amerika",
+        "Evropa"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Který oceán je největší?",
+      "options": [
+        "Atlantský",
+        "Indický",
+        "Tichý",
+        "Severní ledový"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "input",
+      "question": "Kolik procent povrchu Země zhruba tvoří pevnina?",
+      "answers": [
+        "29",
+        "30"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Evropa a Asie leží na jednom kontinentu.",
+      "answer": true,
+      "explanation": "Tvoří kontinent Eurasie."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od největšího světadílu.",
+      "items": [
+        "Asie",
+        "Afrika",
+        "Severní Amerika",
+        "Evropa"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj oceán se světadíly, které omývá.",
+      "pairs": [
+        [
+          "Atlantský",
+          "Evropa a Amerika"
+        ],
+        [
+          "Indický",
+          "Afrika a Austrálie"
+        ],
+        [
+          "Tichý",
+          "Asie a Amerika"
+        ],
+        [
+          "Severní ledový",
+          "Arktida"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Antarktida je větší než Evropa.",
+      "answer": true,
+      "explanation": "Asi 14 mil. km² proti asi 10 mil. km²."
+    },
+    {
+      "type": "choice",
+      "question": "Který světadíl leží celý na jižní polokouli?",
+      "options": [
+        "Afrika",
+        "Antarktida",
+        "Asie",
+        "Jižní Amerika"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje kontinent tvořený Evropou a Asií?",
+      "answers": [
+        "Eurasie"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi kontinentem a světadílem?",
+      "answer": "Kontinent je souvislá pevnina. Světadíl je kulturně-historický celek včetně ostrovů. Proto Eurasie je jeden kontinent, ale dva světadíly – Evropa a Asie."
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj oceány od největšího.",
+      "answer": "Tichý, Atlantský, Indický, Jižní a Severní ledový."
+    }
+  ]
+}

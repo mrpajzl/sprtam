@@ -1,0 +1,317 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nasobeni-uvod",
+  "title": "Co je násobení",
+  "emoji": "✖️",
+  "explanations": [
+    {
+      "title": "Stejné skupiny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na stole jsou 3 talíře. Na každém leží 4 jahody. Kolik je jahod? Můžeš počítat 4 + 4 + 4. Ale co kdyby bylo talířů 10?"
+        },
+        {
+          "type": "text",
+          "text": "Pro **stejně velké skupiny** máme zkratku: **násobení**. Potřebuješ ho při nákupu (3 rohlíky po 4 Kč), při počítání nohou, kol, oken…"
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Skupina",
+          "definition": "Hromádka věcí, které patří k sobě.",
+          "example": "Talíř se 4 jahodami je jedna skupina."
+        },
+        {
+          "type": "term",
+          "term": "Násobení",
+          "definition": "Sčítání stejných čísel zkráceně.",
+          "example": "4 + 4 + 4 = 3 · 4"
+        },
+        {
+          "type": "term",
+          "term": "Krát ( · )",
+          "definition": "Znak násobení. Píšeme tečku uprostřed řádku. 3 · 4 čteme „tři krát čtyři“.",
+          "example": "3 · 4 = tři skupiny po čtyřech."
+        },
+        {
+          "type": "heading",
+          "text": "Jahody na talířích"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🍓🍓🍓🍓",
+            "🍓🍓🍓🍓",
+            "🍓🍓🍓🍓"
+          ],
+          "caption": "3 talíře po 4 jahodách"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kolik je skupin? **3** talíře.",
+            "Kolik je v každé skupině? **4** jahody.",
+            "Sečti: 4 + 4 + 4 = **12**.",
+            "Krátce: **3 · 4 = 12**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jednička a nula"
+        },
+        {
+          "type": "text",
+          "text": "**1 · 7** = jedna skupina po sedmi = 7. **0 · 5** = žádná skupina = 0. Když nejsou talíře, nejsou ani jahody."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Hýbej posuvníky. Každá řada je jedna skupina. Zkus 3 řady po 4 – vyjde 12?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik nohou mají 3 slepice?",
+          "answer": "Slepice = skupina, má 2 nohy. 2 + 2 + 2 = 6. Krátce **3 · 2 = 6**."
+        },
+        {
+          "type": "example",
+          "question": "Jak zapíšeš 5 + 5 + 5 + 5?",
+          "answer": "Čtyři pětky → **4 · 5 = 20**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "3 · 5 = 8",
+          "right": "3 · 5 = **15**",
+          "why": "3 · 5 neznamená „3 a 5“. Znamená tři pětky: 5 + 5 + 5 = 15. To 8 je 3 + 5."
+        },
+        {
+          "type": "summary",
+          "text": "Násobení = sčítání stejných čísel. 3 · 4 = 4 + 4 + 4 = 12."
+        }
+      ]
+    },
+    {
+      "title": "Řádky a sloupce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na čokoládu. Kostičky jsou v řadách. Nebo na krabičku vajec. Nebo na lavice ve třídě."
+        },
+        {
+          "type": "text",
+          "text": "Když jsou věci srovnané v řadách, spočítáš je rychle **násobením**. Nemusíš počítat každou zvlášť."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Řada",
+          "definition": "Věci vedle sebe, zleva doprava.",
+          "example": "🔵🔵🔵🔵🔵 je jedna řada po 5."
+        },
+        {
+          "type": "term",
+          "term": "Sloupec",
+          "definition": "Věci pod sebou, shora dolů."
+        },
+        {
+          "type": "term",
+          "term": "Násobení ( · )",
+          "definition": "Počet řad krát počet věcí v řadě. Čteme „krát“.",
+          "example": "2 řady po 5 = 2 · 5 = 10."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vidíš 2 řady po 5 puntících. Spočítej je. Pak posuvníky nastav 5 řad po 2. Změnil se počet puntíků?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 2,
+            "columns": 5
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Otočení nic nezmění"
+        },
+        {
+          "type": "text",
+          "text": "Když obrázek otočíš, řady se stanou sloupci. Puntíků je pořád stejně. Proto **2 · 5 = 5 · 2 = 10**. Na pořadí čísel při násobení nezáleží."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej řady.",
+            "Spočítej, kolik je v jedné řadě.",
+            "Vynásob: řady · počet v řadě.",
+            "Zkontroluj sčítáním: 5 + 5 = 10."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Čokoláda má 3 řady po 4 kostičkách. Kolik kostiček?",
+          "answer": "3 · 4 = 4 + 4 + 4 = **12 kostiček**."
+        },
+        {
+          "type": "example",
+          "question": "🐞🐞 🐞🐞 🐞🐞 – kolik je berušek?",
+          "answer": "3 skupiny po 2. **3 · 2 = 6**. Stejně jako 2 + 2 + 2."
+        },
+        {
+          "type": "example",
+          "question": "0 · 5 a 1 · 7",
+          "answer": "0 řad = žádné puntíky: **0**. Jedna řada po 7 = **7**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "4 · 2 a 2 · 4 dají jiný výsledek.",
+          "right": "4 · 2 = 2 · 4 = **8**",
+          "why": "4 řady po 2 a 2 řady po 4 je ten samý obdélník, jen otočený. Puntíků je stejně."
+        },
+        {
+          "type": "summary",
+          "text": "Řady · počet v řadě = všechny věci. Pořadí nevadí: 2 · 5 = 5 · 2."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "2 + 2 + 2 = 3 · 2 =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "5 + 5 + 5 + 5 = 4 · 5 =",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak zapíšeš 3 + 3 + 3 + 3?",
+      "options": [
+        "4 · 3",
+        "3 · 3",
+        "3 + 4"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "🐞🐞 🐞🐞 🐞🐞 – kolik je to?",
+      "options": [
+        "3 · 2 = 6",
+        "2 · 2 = 4",
+        "3 + 2 = 5"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "4 · 2 = 2 · 4",
+      "answer": true,
+      "explanation": "Při násobení nezáleží na pořadí."
+    },
+    {
+      "type": "truefalse",
+      "question": "3 · 5 = 8",
+      "answer": false,
+      "explanation": "3 · 5 = 5 + 5 + 5 = 15. 8 je 3 + 5."
+    },
+    {
+      "type": "input",
+      "question": "Kolik nohou mají 3 slepice?",
+      "answers": [
+        "6"
+      ],
+      "explanation": "3 · 2 = 6."
+    },
+    {
+      "type": "input",
+      "question": "Kolik koleček mají 4 jízdní kola?",
+      "answers": [
+        "8"
+      ],
+      "explanation": "Každé kolo má 2 kola: 4 · 2 = 8."
+    },
+    {
+      "type": "input",
+      "question": "1 · 7 =",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "0 · 5 =",
+      "answers": [
+        "0"
+      ],
+      "explanation": "Nula skupin = nic."
+    },
+    {
+      "type": "match",
+      "question": "Spoj stejné.",
+      "pairs": [
+        [
+          "2 · 3",
+          "3 + 3"
+        ],
+        [
+          "3 · 2",
+          "2 + 2 + 2"
+        ],
+        [
+          "4 · 1",
+          "1 + 1 + 1 + 1"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co znamená 3 · 4? Vysvětli na obrázku.",
+      "answer": "Tři skupiny po čtyřech, třeba 3 talíře se 4 jahodami. Je to 4 + 4 + 4 = 12."
+    },
+    {
+      "type": "open",
+      "question": "Proč je 2 · 5 stejně jako 5 · 2?",
+      "answer": "2 řady po 5 puntících je totéž jako 5 sloupců po 2. Puntíků je pořád 10."
+    }
+  ]
+}

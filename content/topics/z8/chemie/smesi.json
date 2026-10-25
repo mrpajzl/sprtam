@@ -1,0 +1,426 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "smesi",
+  "title": "Směsi a jejich oddělování",
+  "emoji": "🥣",
+  "explanations": [
+    {
+      "title": "V kuchyni",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sladký čaj, müsli s mlékem, polévka, vzduch v pokoji. Ve všech je víc látek najednou. Takovým „mixům“ chemik říká **směsi**. Skoro všechno kolem nás jsou směsi."
+        },
+        {
+          "type": "text",
+          "text": "Často potřebujeme směs zase **rozdělit**: slít vodu z těstovin, získat sůl z mořské vody, vyčistit vodu k pití. V kuchyni to děláš běžně – jen nevíš, že jde o chemické metody."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Látka",
+          "definition": "Materiál, ze kterého jsou věci – voda, cukr, sůl, písek, železo."
+        },
+        {
+          "type": "term",
+          "term": "Čistá látka",
+          "definition": "Je v ní jen jediná látka, nic jiného.",
+          "example": "destilovaná voda, čistý kyslík, ryzí zlato"
+        },
+        {
+          "type": "term",
+          "term": "Směs",
+          "definition": "Dvě nebo více látek smíchaných dohromady. Každá v ní zůstává sama sebou – dá se zase oddělit.",
+          "example": "Sladký čaj = voda + cukr + látky z čaje."
+        },
+        {
+          "type": "term",
+          "term": "Stejnorodá směs",
+          "definition": "Směs, ve které jednotlivé látky **nerozeznáš** – ani lupou, ani mikroskopem. Všude vypadá stejně.",
+          "example": "slaná voda, sladký čaj, vzduch, mosaz (slitina mědi a zinku)"
+        },
+        {
+          "type": "term",
+          "term": "Roztok",
+          "definition": "Stejnorodá směs, ve které je jedna látka **rozpuštěná** v druhé.",
+          "example": "Cukr rozpuštěný ve vodě je roztok."
+        },
+        {
+          "type": "term",
+          "term": "Různorodá směs",
+          "definition": "Směs, ve které jednotlivé látky **vidíš** – okem, lupou nebo mikroskopem.",
+          "example": "müsli s mlékem, písek ve vodě, žula (vidíš v ní různá zrnka)"
+        },
+        {
+          "type": "heading",
+          "text": "Roztřiď to"
+        },
+        {
+          "type": "text",
+          "text": "Ptej se: Je tam jen jedna látka? → čistá látka. Víc látek a nerozeznám je? → stejnorodá. Víc látek a vidím je? → různorodá. Roztřiď položky."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "čistá látka",
+              "stejnorodá směs",
+              "různorodá směs"
+            ],
+            "items": [
+              {
+                "text": "destilovaná voda",
+                "group": 0
+              },
+              {
+                "text": "kyslík",
+                "group": 0
+              },
+              {
+                "text": "zlato",
+                "group": 0
+              },
+              {
+                "text": "slaná voda",
+                "group": 1
+              },
+              {
+                "text": "vzduch",
+                "group": 1
+              },
+              {
+                "text": "mosaz",
+                "group": 1
+              },
+              {
+                "text": "písek s vodou",
+                "group": 2
+              },
+              {
+                "text": "mlha",
+                "group": 2
+              },
+              {
+                "text": "žula",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak směs rozdělit – kuchyňsky"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Usazování** – kalnou vodu necháš stát, písek klesne ke dnu a vodu opatrně slij.",
+            "**Filtrace** – těstoviny slíváš přes cedník. V laboratoři místo cedníku slouží filtrační papír. Co projde, je **filtrát**.",
+            "**Odpařování a krystalizace** – necháš slanou vodu odpařit, na dně zůstanou krystalky soli.",
+            "**Destilace** – voda se vaří, pára se na studené pokličce srazí do kapek. Kapky jsou čistá voda bez soli."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Do vody ti spadl písek. Jak ho oddělíš?",
+          "answer": "Písek se ve vodě nerozpustil, je vidět – je to různorodá směs. Stačí ji nechat **usadit** a slít, nebo **přefiltrovat**. Písek zůstane na filtru, voda proteče."
+        },
+        {
+          "type": "example",
+          "question": "Jak dostaneš sůl ze slané vody? A jak čistou vodu?",
+          "answer": "Sůl je rozpuštěná, filtrem projde. Sůl získáš **odpařením** vody – vznikne sůl v krystalcích (krystalizace). Čistou vodu získáš **destilací**: vodu odpaříš a páru ochladíš, sůl zůstane v nádobě."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Slanou vodu přefiltruju a sůl zůstane na filtru.",
+          "right": "Sůl je rozpuštěná a filtrem projde. Oddělí ji až odpaření nebo destilace.",
+          "why": "Filtr zachytí jen částečky, které jsou ve vodě vidět (písek, kal). Rozpuštěná látka se rozptýlí na nepatrné částice, které filtr propustí."
+        },
+        {
+          "type": "summary",
+          "text": "Směs = více látek dohromady. Stejnorodou nerozeznáš, různorodou vidíš. Oddělujeme usazováním, filtrací, odpařováním (krystalizací) a destilací."
+        }
+      ]
+    },
+    {
+      "title": "Metoda → směs",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Úpravna vody, rafinerie ropy, výroba soli nebo lihovar – všude se oddělují látky ze směsí. Každá metoda využívá nějaký **rozdíl** mezi látkami: v hustotě, velikosti částic nebo teplotě varu."
+        },
+        {
+          "type": "text",
+          "text": "Kdo ten rozdíl najde, ví, jakou metodu použít. Tady si to projdeme přesně, jako v laboratoři."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Směs",
+          "definition": "Dvě nebo více látek dohromady. Opak je **čistá látka** – jen jedna látka (destilovaná voda, zlato)."
+        },
+        {
+          "type": "term",
+          "term": "Stejnorodá a různorodá směs",
+          "definition": "Ve stejnorodé složky nerozeznáš ani mikroskopem (slaná voda, vzduch). V různorodé je vidíš (písek ve vodě).",
+          "example": "Stejnorodé směsi, kde je látka rozpuštěná, se říká **roztok**."
+        },
+        {
+          "type": "term",
+          "term": "Teplota varu",
+          "definition": "Teplota, při které kapalina začne vřít – mění se v plyn. Každá látka ji má jinou.",
+          "example": "Voda vře při 100 °C, líh (ethanol) už asi při 78 °C."
+        },
+        {
+          "type": "heading",
+          "text": "Druhy různorodých směsí"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Název",
+            "Co v čem",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "suspenze",
+              "pevné částice v kapalině",
+              "bahno, křídová voda"
+            ],
+            [
+              "emulze",
+              "kapičky kapaliny v jiné kapalině",
+              "mléko, majonéza"
+            ],
+            [
+              "pěna",
+              "bublinky plynu v kapalině",
+              "šlehačka, mýdlová pěna"
+            ],
+            [
+              "aerosol",
+              "kapičky nebo částice v plynu",
+              "mlha (kapky), dým (pevné částice)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Která metoda na co"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Metoda",
+            "Na co",
+            "Využívá"
+          ],
+          "rows": [
+            [
+              "usazování",
+              "písek ve vodě",
+              "různou hustotu – těžší klesne"
+            ],
+            [
+              "filtrace",
+              "pevná látka v kapalině",
+              "velikost částic"
+            ],
+            [
+              "destilace",
+              "líh a voda, čistá voda ze slané",
+              "různou teplotu varu"
+            ],
+            [
+              "krystalizace",
+              "sůl z roztoku",
+              "po odpaření vody vzniknou krystaly"
+            ],
+            [
+              "sublimace",
+              "jód z písku",
+              "jód přejde rovnou v plyn"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Filtrace krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Do nálevky vlož složený filtrační papír a postav ji nad kádinku.",
+            "Směs lij **po skleněné tyčince**, aby nestříkala.",
+            "Pevná látka zůstane na filtru.",
+            "Kapalina, která proteče, se jmenuje **filtrát**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Destilace krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Směs zahříváš v baňce.",
+            "Látka s **nižší teplotou varu** se vypaří dřív.",
+            "Páry jdou do **chladiče**, kde se ochladí a zkapalní.",
+            "Kapalina, která vyteče z chladiče, je **destilát**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kterou metodou oddělíš líh od vody?",
+          "answer": "Obě látky jsou kapaliny a jsou dokonale smíchané – filtr nepomůže. Liší se ale teplotou varu (líh asi 78 °C, voda 100 °C). Proto **destilace**: líh se odpaří dřív a v chladiči zkapalní."
+        },
+        {
+          "type": "example",
+          "question": "Směs písku a jódu. Jak ji rozdělíš?",
+          "answer": "Jód při zahřívání **sublimuje** – mění se rovnou v plyn. Na studené ploše nad směsí se zase změní v krystalky. Písek zůstane dole."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Mléko je stejnorodá směs, protože vypadá všude stejně.",
+          "right": "Mléko je **emulze** – různorodá směs.",
+          "why": "Pod mikroskopem jsou v mléce vidět kapičky tuku. Stejnorodá směs nesmí mít složky rozeznatelné ani mikroskopem."
+        },
+        {
+          "type": "summary",
+          "text": "Usazování – hustota, filtrace – velikost částic, destilace – teplota varu, krystalizace – rozpuštěná látka po odpaření, sublimace – přechod pevné → plynné."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak oddělíš písek od vody nejjednodušeji?",
+      "options": [
+        "filtrací",
+        "destilací",
+        "sublimací",
+        "krystalizací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak získáš čistou vodu ze slané vody?",
+      "options": [
+        "destilací",
+        "filtrací",
+        "usazováním"
+      ],
+      "answer": 0,
+      "explanation": "Sůl projde filtrem, je rozpuštěná. Destilací se odpaří jen voda."
+    },
+    {
+      "type": "choice",
+      "question": "Na čem je založena destilace?",
+      "options": [
+        "na různé teplotě varu",
+        "na různé barvě",
+        "na různé velikosti částic"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vzduch je stejnorodá směs.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Destilovaná voda je směs.",
+      "answer": false,
+      "explanation": "Je to čistá látka – jen molekuly vody."
+    },
+    {
+      "type": "match",
+      "question": "Spoj směs s typem.",
+      "pairs": [
+        [
+          "mlha",
+          "aerosol (kapky v plynu)"
+        ],
+        [
+          "pěna",
+          "plyn v kapalině"
+        ],
+        [
+          "mléko",
+          "emulze"
+        ],
+        [
+          "bahno",
+          "suspenze"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje kapalina, která proteče filtrem?",
+      "answers": [
+        "filtrát"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak získáš sůl z mořské vody?",
+      "options": [
+        "krystalizací (odpařením vody)",
+        "filtrací",
+        "usazováním"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je roztok?",
+      "options": [
+        "stejnorodá směs",
+        "různorodá směs",
+        "čistá látka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď kroky filtrace.",
+      "items": [
+        "připrav nálevku s filtračním papírem",
+        "lij směs po tyčince",
+        "pevná látka zůstane na filtru",
+        "jímej filtrát do kádinky"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi stejnorodou a různorodou směsí?",
+      "answer": "Ve stejnorodé směsi nerozlišíme složky ani mikroskopem, např. slaná voda. V různorodé složky vidíme, např. písek ve vodě."
+    },
+    {
+      "type": "open",
+      "question": "Popiš, jak funguje destilace.",
+      "answer": "Směs zahříváme. Látka s nižší teplotou varu se odpaří, páry se v chladiči ochladí a zkapalní. Vznikne destilát."
+    }
+  ]
+}

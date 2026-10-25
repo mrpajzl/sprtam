@@ -1,0 +1,417 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nervy-smysly",
+  "title": "Nervy, smysly a hormony",
+  "emoji": "🧠",
+  "explanations": [
+    {
+      "title": "Telefonní síť těla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dotkneš se horké plotny a ruka ucukne dřív, než si stihneš pomyslet „au“. Kdo dal ruce povel? Tvoje **nervová soustava** – rychlá „telefonní síť“, která propojuje celé tělo."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, jak nervy přenášejí zprávy, co dělá mozek a mícha a proč některé reakce probíhají úplně samy."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Neuron",
+          "definition": "Nervová buňka. Má tělo a dlouhé výběžky, kterými předává zprávy dalším buňkám – jako kabel."
+        },
+        {
+          "type": "term",
+          "term": "Vzruch",
+          "definition": "Zpráva, která běží po nervu. Je to drobný elektrický signál."
+        },
+        {
+          "type": "term",
+          "term": "Nerv",
+          "definition": "Svazek výběžků mnoha neuronů, jako svazek kabelů."
+        },
+        {
+          "type": "term",
+          "term": "Receptor",
+          "definition": "Místo, které zachytí podnět – teplo, světlo, zvuk, dotek – a změní ho na vzruch."
+        },
+        {
+          "type": "heading",
+          "text": "Ústředna a vedení"
+        },
+        {
+          "type": "text",
+          "text": "**Mozek** a **mícha** jsou ústředna. Rozhodují, co se udělá. Nervy, které vedou do celého těla, jsou vedení."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Část mozku",
+            "Co řídí"
+          ],
+          "rows": [
+            [
+              "velký mozek",
+              "myšlení, paměť, řeč, vědomé pohyby"
+            ],
+            [
+              "mozeček",
+              "rovnováhu a souhru pohybů"
+            ],
+            [
+              "prodloužená mícha",
+              "dýchání, tep, polykání, kašel"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Reflex – rychlá odpověď"
+        },
+        {
+          "type": "term",
+          "term": "Reflex",
+          "definition": "Automatická rychlá reakce na podnět, o které nerozhoduješ. Často ji řídí jen mícha, mozek se o ní dozví až potom.",
+          "example": "Ucuknutí ruky, mrknutí, kýchnutí."
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj cestu vzruchu při ucuknutí od plotny. Této cestě se říká **reflexní oblouk**."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "receptor v kůži zachytí horko",
+              "dostředivý nerv vede vzruch do míchy",
+              "mícha vyšle povel",
+              "odstředivý nerv vede povel ke svalu",
+              "sval se stáhne – ruka ucukne"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč ucukneš od horkého hrnku dřív, než ucítíš bolest?",
+          "answer": "Reflex řídí **mícha**, která je blíž než mozek. Povel ke svalu jde hned. Zpráva o bolesti dojde do mozku až o chviličku později."
+        },
+        {
+          "type": "example",
+          "question": "Po úderu do hlavy se člověk motá a nemůže chodit rovně. Která část mozku mohla být zasažena?",
+          "answer": "Rovnováhu a souhru pohybů řídí **mozeček**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "O každém pohybu těla rozhoduje vědomě mozek.",
+          "right": "Reflexy probíhají automaticky, často je řídí jen mícha.",
+          "why": "Kdybys o mrknutí nebo ucuknutí musel přemýšlet, zranil by ses dřív, než by ses rozhodl."
+        },
+        {
+          "type": "summary",
+          "text": "Neurony vedou vzruchy. Mozek a mícha řídí, nervy vedou zprávy. Reflex: receptor → dostředivý nerv → mícha → odstředivý nerv → sval."
+        }
+      ]
+    },
+    {
+      "title": "Smysly a hormony",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jak víš, že je venku tma, že voní oběd nebo že na tebe někdo volá? Informace o světě ti přinášejí **smysly**. A proč se ti při strachu rozbuší srdce? Za to můžou **hormony**."
+        },
+        {
+          "type": "text",
+          "text": "Tělo má dva řídicí systémy: rychlé nervy a pomalejší hormony. Tady se podíváme na smyslové orgány a na hormony."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Smyslový orgán",
+          "definition": "Orgán, který zachytí podnět z okolí a pošle zprávu nervem do mozku.",
+          "example": "Oko zachytí světlo, ucho zvuk."
+        },
+        {
+          "type": "term",
+          "term": "Sítnice",
+          "definition": "Vrstva na zadní stěně oka se světlocitlivými buňkami. Na ní vzniká obraz. Zrakový nerv ho pošle do mozku."
+        },
+        {
+          "type": "term",
+          "term": "Hormon",
+          "definition": "Látka, kterou vyrábí **žláza** a roznáší ji krev. Působí na orgány v celém těle – pomaleji než nervy, ale déle."
+        },
+        {
+          "type": "term",
+          "term": "Žláza s vnitřní sekrecí",
+          "definition": "Orgán, který vypouští hormony přímo do krve."
+        },
+        {
+          "type": "heading",
+          "text": "Pět smyslů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Smysl",
+            "Orgán",
+            "Zajímavost"
+          ],
+          "rows": [
+            [
+              "zrak",
+              "oko",
+              "světlo projde rohovkou, zornicí a čočkou, obraz vznikne na sítnici"
+            ],
+            [
+              "sluch",
+              "ucho",
+              "ve vnitřním uchu je i **rovnovážné ústrojí**"
+            ],
+            [
+              "čich",
+              "nos",
+              "čichové buňky v horní části nosní dutiny"
+            ],
+            [
+              "chuť",
+              "jazyk",
+              "chuťové pohárky: sladké, slané, kyselé, hořké, umami"
+            ],
+            [
+              "hmat",
+              "kůže",
+              "vnímá dotek, tlak, teplo a bolest"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Hormony"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Žláza",
+            "Hormon",
+            "Co dělá"
+          ],
+          "rows": [
+            [
+              "slinivka břišní",
+              "inzulin",
+              "snižuje množství cukru v krvi"
+            ],
+            [
+              "nadledviny",
+              "adrenalin",
+              "při strachu a stresu zrychlí srdce a dech"
+            ],
+            [
+              "štítná žláza",
+              "tyroxin",
+              "řídí rychlost látkové přeměny"
+            ],
+            [
+              "hypofýza (v mozku)",
+              "růstový hormon a další",
+              "řídí růst a ostatní žlázy"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď: řídí to rychle nervy, nebo pomaleji hormony?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Nervy",
+              "Hormony"
+            ],
+            "items": [
+              {
+                "text": "ucuknutí od plotny",
+                "group": 0
+              },
+              {
+                "text": "růst v pubertě",
+                "group": 1
+              },
+              {
+                "text": "mrknutí",
+                "group": 0
+              },
+              {
+                "text": "hladina cukru v krvi",
+                "group": 1
+              },
+              {
+                "text": "chytání míče",
+                "group": 0
+              },
+              {
+                "text": "bušení srdce po leknutí",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč musí lidé s cukrovkou 1. typu dostávat inzulin?",
+          "answer": "Jejich **slinivka** netvoří dost inzulinu. Bez něj zůstává v krvi moc cukru a poškozuje tělo. Inzulin si proto dodávají injekcí nebo pumpou."
+        },
+        {
+          "type": "example",
+          "question": "Proč se ti na kolotoči točí hlava?",
+          "answer": "**Rovnovážné ústrojí** ve vnitřním uchu vnímá polohu a pohyb hlavy. Při točení dostává zmatené zprávy a mozek je nestihne zpracovat."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obraz vzniká v čočce oka.",
+          "right": "Obraz vzniká na sítnici. Čočka světlo jen zaostří.",
+          "why": "Čočka funguje jako lupa. Světlocitlivé buňky, které obraz „vidí“, jsou až v sítnici."
+        },
+        {
+          "type": "summary",
+          "text": "Smysly: zrak (obraz na sítnici), sluch a rovnováha (ucho), čich, chuť, hmat. Hormony roznáší krev: inzulin (slinivka), adrenalin (nadledviny), tyroxin (štítná žláza)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Nervová buňka se jmenuje…",
+      "answers": [
+        "neuron"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která část mozku řídí rovnováhu?",
+      "options": [
+        "mozeček",
+        "velký mozek",
+        "prodloužená mícha"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Inzulin tvoří…",
+      "options": [
+        "slinivka břišní",
+        "štítná žláza",
+        "játra"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Při cukrovce 1. typu tělo netvoří dost inzulinu.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj smysl s orgánem.",
+      "pairs": [
+        [
+          "zrak",
+          "oko"
+        ],
+        [
+          "sluch",
+          "ucho"
+        ],
+        [
+          "čich",
+          "nos"
+        ],
+        [
+          "chuť",
+          "jazyk"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kde v oku vzniká obraz?",
+      "options": [
+        "na sítnici",
+        "na rohovce",
+        "v čočce"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Hormony se roznášejí krví.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Rovnovážné ústrojí je…",
+      "options": [
+        "ve vnitřním uchu",
+        "ve středním uchu",
+        "v nose"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď reflexní oblouk.",
+      "items": [
+        "receptor",
+        "dostředivý nerv",
+        "mícha",
+        "odstředivý nerv",
+        "sval"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který hormon se vyplavuje při strachu?",
+      "options": [
+        "adrenalin",
+        "inzulin",
+        "tyroxin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je reflex? Uveď příklad.",
+      "answer": "Rychlá, automatická reakce na podnět bez vědomého rozhodnutí. Např. ucuknutí ruky od horké plotny, mrknutí, kýchnutí."
+    },
+    {
+      "type": "open",
+      "question": "Jak se liší řízení nervy a hormony?",
+      "answer": "Nervy předávají zprávy rychle elektrickými vzruchy. Hormony jsou látky roznášené krví, působí pomaleji, ale déle."
+    }
+  ]
+}

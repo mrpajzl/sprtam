@@ -1,0 +1,335 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "houby",
+  "title": "Houby",
+  "emoji": "🍄",
+  "explanations": [
+    {
+      "title": "Co je pod zemí",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když v lese najdeš hřib, máš v ruce jen malý kousek houby. Většina houby zůstala schovaná v zemi – a může být větší než celý strom."
+        },
+        {
+          "type": "text",
+          "text": "Houby jsou zvláštní živé organismy. Nejsou rostliny ani zvířata. A bez nich by les zarostl spadaným listím."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Houba",
+          "definition": "Živý organismus, který nemá zelené listy a sám si potravu nevyrobí. Bere ji z odumřelých zbytků nebo od kořenů stromů.",
+          "example": "hřib, liška, plíseň, kvasinky"
+        },
+        {
+          "type": "term",
+          "term": "Podhoubí",
+          "definition": "Síť tenkých bílých vláken v půdě nebo ve dřevě. **Tady houba hlavně žije.** Vědecky se jí říká mycelium.",
+          "example": "bílé nitky pod mechem"
+        },
+        {
+          "type": "term",
+          "term": "Plodnice",
+          "definition": "Část houby nad zemí, kterou sbíráme. Vyroste jen na čas, aby rozšířila výtrusy.",
+          "example": "hřib, bedla"
+        },
+        {
+          "type": "term",
+          "term": "Výtrusy",
+          "definition": "Drobounká zrníčka, menší než prach. Z nich vyroste nová houba. Houby se jimi **rozmnožují**.",
+          "example": "Výtrusy se tvoří pod kloboukem."
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky a poznej části houby."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "klobouk",
+                "back": "horní část plodnice"
+              },
+              {
+                "front": "třeň",
+                "back": "noha houby"
+              },
+              {
+                "front": "podhoubí",
+                "back": "vlákna v zemi – houba žije hlavně tady"
+              },
+              {
+                "front": "výtrusy",
+                "back": "drobná zrníčka, ze kterých roste nová houba"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Co houby dělají"
+        },
+        {
+          "type": "text",
+          "text": "Většina hub **rozkládá** spadané listí, jehličí a dřevo. Vrací živiny zpět do půdy. Některé houby žijí ve spolupráci s kořeny stromů a vyměňují si s nimi látky."
+        },
+        {
+          "type": "example",
+          "question": "Na starém chlebu je zelený chlupatý povlak. Co to je?",
+          "answer": "Je to **plíseň**. Plísně jsou také houby – živí se tím chlebem."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď části houby odshora.",
+          "answer": "**klobouk → třeň → podhoubí** (pod zemí)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Houby jsou rostliny.",
+          "right": "Houby tvoří samostatnou skupinu organismů.",
+          "why": "Nemají zelené barvivo ani listy, takže si na světle nevyrobí potravu jako rostliny. A semena nemají – rozmnožují se výtrusy."
+        },
+        {
+          "type": "summary",
+          "text": "Houba = podhoubí v zemi + plodnice nad zemí. Rozmnožuje se výtrusy. Houby nejsou rostliny."
+        }
+      ]
+    },
+    {
+      "title": "Jedlá, nebo jedovatá?",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Houbaření je u nás oblíbené. Smaženice nebo houbová polévka voní. Každý rok se ale někdo otráví, protože si spletl houbu."
+        },
+        {
+          "type": "text",
+          "text": "Proto se naučíme pár hlavních hub a hlavně pravidla, jak se otravě vyhnout."
+        },
+        {
+          "type": "term",
+          "term": "Plodnice",
+          "definition": "Část houby nad zemí – ta, kterou sbíráme. Má **klobouk** a **třeň** (nohu).",
+          "example": "plodnice hřibu"
+        },
+        {
+          "type": "term",
+          "term": "Lupeny",
+          "definition": "Tenké plátky pod kloboukem některých hub, jako stránky knížky.",
+          "example": "Muchomůrka má bílé lupeny."
+        },
+        {
+          "type": "term",
+          "term": "Rourky",
+          "definition": "Pod kloboukem hřibů je místo lupenů houbovitá vrstva z drobných trubiček.",
+          "example": "Hřib smrkový má pod kloboukem rourky."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď houby. Jedovaté si zapamatuj obzvlášť dobře."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Jedlá",
+              "Jedovatá"
+            ],
+            "items": [
+              {
+                "text": "hřib smrkový",
+                "group": 0
+              },
+              {
+                "text": "muchomůrka zelená",
+                "group": 1
+              },
+              {
+                "text": "bedla vysoká",
+                "group": 0
+              },
+              {
+                "text": "muchomůrka červená",
+                "group": 1
+              },
+              {
+                "text": "liška obecná",
+                "group": 0
+              },
+              {
+                "text": "muchomůrka tygrovaná",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Nejnebezpečnější houba"
+        },
+        {
+          "type": "text",
+          "text": "**Muchomůrka zelená** je smrtelně jedovatá. Má zelenavý klobouk, **bílé lupeny**, na třeni prsten a u země hlízu v blanité pochvě. Otrava se projeví až po mnoha hodinách."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla houbaře"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Sbírám jen houby, které **bezpečně znám**.",
+            "Houbu opatrně vykroutím nebo uříznu, podhoubí nepošlapu.",
+            "Staré, nahnilé a neznámé houby nechám v lese.",
+            "Když si nejsem jistý, ukážu houbu odborníkovi."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kamarád našel bílou houbu s bílými lupeny a myslí si, že je to žampion. Co uděláte?",
+          "answer": "Bílé lupeny má i **muchomůrka zelená**. Když houbu **bezpečně neznáme, nesbíráme ji**."
+        },
+        {
+          "type": "example",
+          "question": "Proč se houby nesbírají do igelitky?",
+          "answer": "V igelitce se houby zapaří a začnou se kazit. Nosíme je v **košíku**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když houbu ožral slimák, je jedlá.",
+          "right": "Slimák sní i jedovatou houbu – podle toho se jedlost poznat nedá.",
+          "why": "Na slimáka jed nepůsobí stejně jako na člověka. Spolehlivé je jen bezpečné poznání houby."
+        },
+        {
+          "type": "summary",
+          "text": "Houbu, kterou bezpečně neznáš, nesbírej. Muchomůrka zelená je smrtelně jedovatá."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Houby jsou rostliny.",
+      "answer": false,
+      "explanation": "Houby nemají zelené barvivo a potravu si nevyrobí. Jsou samostatná říše."
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje noha houby?",
+      "options": [
+        "třeň",
+        "stonek",
+        "kořen"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenují vlákna houby v půdě?",
+      "answers": [
+        "podhoubí",
+        "mycelium"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která houba je smrtelně jedovatá?",
+      "options": [
+        "muchomůrka zelená",
+        "hřib smrkový",
+        "liška obecná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Čím se houby rozmnožují?",
+      "options": [
+        "výtrusy",
+        "semeny",
+        "cibulkami"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Neznámou houbu je lepší nesbírat.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj houbu s tím, jaká je.",
+      "pairs": [
+        [
+          "hřib smrkový",
+          "jedlý"
+        ],
+        [
+          "muchomůrka zelená",
+          "smrtelně jedovatá"
+        ],
+        [
+          "bedla vysoká",
+          "jedlá"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Plíseň na chlebu je také houba.",
+      "answer": true,
+      "explanation": "Plísně i kvasinky patří mezi houby."
+    },
+    {
+      "type": "choice",
+      "question": "Co dělá většina hub v lese?",
+      "options": [
+        "rozkládá spadané listí a dřevo",
+        "vyrábí kyslík",
+        "loví hmyz"
+      ],
+      "answer": 0,
+      "explanation": "Houby rozkládají odumřelé zbytky a vrací živiny do půdy."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď části houby odshora.",
+      "items": [
+        "klobouk",
+        "třeň",
+        "podhoubí"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak se správně chovat při sbírání hub?",
+      "answer": "Sbírám jen houby, které bezpečně znám. Houbu opatrně vykroutím nebo uříznu a nešlapu po podhoubí. Neznámé a staré houby nechám v lese."
+    },
+    {
+      "type": "open",
+      "question": "Proč houby nejsou rostliny?",
+      "answer": "Nemají zelené barvivo a listy, takže si na světle nevyrobí potravu. Živí se rozkladem zbytků nebo žijí s kořeny stromů."
+    }
+  ]
+}

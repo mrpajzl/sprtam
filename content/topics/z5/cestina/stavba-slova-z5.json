@@ -1,0 +1,370 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stavba-slova-z5",
+  "title": "Stavba slova",
+  "emoji": "🧩",
+  "explanations": [
+    {
+      "title": "Barvy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Slovo je jako vlak. Má lokomotivu, vagony a poslední vagon. Každý díl má svou práci."
+        },
+        {
+          "type": "text",
+          "text": "Když znáš díly slova, víš, kde je šev mezi předponou a kořenem (*ob-jet*), a podle koncovky poznáš, jaký tvar slovo má. To se hodí při psaní *bje/bě*, *s/z* i *i/y*."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Hlavní část slova. Mají ji všechna **příbuzná slova** (slova ze stejné rodiny).",
+          "example": "**zem**: země, pod**zem**ní, **zem**ský"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Část **před kořenem**. Mění význam slova.",
+          "example": "**pod**zemní, **do**pis"
+        },
+        {
+          "type": "term",
+          "term": "Přípona",
+          "definition": "Část **za kořenem**, která vytváří nové slovo.",
+          "example": "ryb**ník**, zem**n**í"
+        },
+        {
+          "type": "term",
+          "term": "Koncovka",
+          "definition": "Úplně poslední část. **Mění se**, když slovo skloňuješ (měníš pád) nebo časuješ (měníš osobu).",
+          "example": "hrad**y** – hrad**ů**; podzemn**í** – podzemn**ího**"
+        },
+        {
+          "type": "heading",
+          "text": "Podívej se na barvy"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na každý díl a přečti si jeho jméno."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "pod",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "zem",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "n",
+                    "label": "přípona"
+                  },
+                  {
+                    "text": "í",
+                    "label": "koncovka"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "ryb",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "ník",
+                    "label": "přípona"
+                  },
+                  {
+                    "text": "y",
+                    "label": "koncovka"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "do",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "pis",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "y",
+                    "label": "koncovka"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Ne každé slovo má všechny díly. Kořen ale má každé."
+        },
+        {
+          "type": "example",
+          "question": "Rozděl: nádražní",
+          "answer": "Příbuzná: *dráha, nádraží* → kořen **draž** (mění se z *drah*). Před ním **ná** – předpona. Za ním **n** – přípona. Na konci **í** – koncovka (nádražní – nádražního). **ná – draž – n – í**."
+        },
+        {
+          "type": "example",
+          "question": "Rozděl: rybníky",
+          "answer": "Kořen **ryb** (ryba, rybář). Přípona **ník** (z ryby udělala rybník). Koncovka **y** (rybníky – rybníků). Předpona žádná."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Voda“ a „vodit“ mají stejný kořen.",
+          "right": "Nemají – jen vypadají podobně.",
+          "why": "Kořen mají jen **příbuzná** slova, která spolu souvisí významem. Voda a vodit (psa) spolu nesouvisí."
+        },
+        {
+          "type": "summary",
+          "text": "Předpona – kořen – přípona – koncovka. Kořen je společný pro příbuzná slova, koncovka se mění při skloňování a časování."
+        }
+      ]
+    },
+    {
+      "title": "Postup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozložit slovo umíš už od 4. třídy: předpona, kořen, příponová část. Teď příponovou část rozdělíme ještě na dvě: **přípona** a **koncovka**."
+        },
+        {
+          "type": "text",
+          "text": "Pomůže to v pravopisu: koncovka rozhoduje o i/y na konci slov, kořen o vyjmenovaných slovech."
+        },
+        {
+          "type": "term",
+          "term": "Koncovka",
+          "definition": "Konec slova, který se **mění** podle pádu, čísla nebo osoby.",
+          "example": "les**ní** – les**ního** – les**nímu**"
+        },
+        {
+          "type": "term",
+          "term": "Přípona",
+          "definition": "Část mezi kořenem a koncovkou. Z jednoho slova udělá jiné (z *les* → *lesník*, *lesní*).",
+          "example": "les**n**í, les**ník**"
+        },
+        {
+          "type": "term",
+          "term": "Kořen a předpona",
+          "definition": "Připomenutí: kořen je společný pro rodinu slov, předpona stojí před ním.",
+          "example": "**pře**-**skoč**-it"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi **koncovku**: změň tvar slova (*lesní – lesního*). Co se změnilo = koncovka.",
+            "Najdi příbuzná slova (*les, lesník*). Společná část = **kořen**.",
+            "Co je před kořenem = **předpona**.",
+            "Co zbylo mezi kořenem a koncovkou = **přípona**."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "slovo",
+            "předpona",
+            "kořen",
+            "přípona",
+            "koncovka"
+          ],
+          "rows": [
+            [
+              "podzemní",
+              "pod",
+              "zem",
+              "n",
+              "í"
+            ],
+            [
+              "rybníky",
+              "–",
+              "ryb",
+              "ník",
+              "y"
+            ],
+            [
+              "dopisy",
+              "do",
+              "pis",
+              "–",
+              "y"
+            ],
+            [
+              "lesní",
+              "–",
+              "les",
+              "n",
+              "í"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Najdi koncovku slova „hrady“.",
+          "answer": "Změň tvar: *hrady – hradů – hradům*. Mění se poslední písmeno: koncovka je **y**."
+        },
+        {
+          "type": "example",
+          "question": "Rozděl: přeskočit",
+          "answer": "Příbuzná: *skok, skočit* → kořen **skoč**. Před ním **pře** – předpona. Na konci zůstalo **it** (skočit – skočím mění konec). **pře – skoč – it**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Předpona slova „rozbít“ je „ro“.",
+          "right": "Předpona je „roz“.",
+          "why": "Kořen je *bí* (bít, bitva). Všechno před ním je předpona: *roz*."
+        },
+        {
+          "type": "summary",
+          "text": "Nejdřív změň tvar a najdi koncovku. Pak podle příbuzných slov kořen. Před ním předpona, mezi kořenem a koncovkou přípona."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký je kořen slova „podzemní“?",
+      "options": [
+        "pod",
+        "zem",
+        "zemn"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je předpona slova „rozbít“?",
+      "options": [
+        "ro",
+        "roz",
+        "rozb"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Která část slova se mění při skloňování?",
+      "options": [
+        "kořen",
+        "předpona",
+        "koncovka"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "input",
+      "question": "Napiš kořen slov: ryba, rybník, rybář.",
+      "answers": [
+        "ryb"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš předponu slova „přeskočit“.",
+      "answers": [
+        "pře"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš koncovku slova „hrady“.",
+      "answers": [
+        "y"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Přípona stojí za kořenem.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Slova „voda“ a „vodit“ mají stejný kořen.",
+      "answer": false,
+      "explanation": "Významy spolu nesouvisejí – nejsou příbuzná."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď části slova „podzemní“.",
+      "items": [
+        "pod",
+        "zem",
+        "n",
+        "í"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj část slova s příkladem ve slově „nádražní“.",
+      "pairs": [
+        [
+          "předpona",
+          "ná"
+        ],
+        [
+          "kořen",
+          "draž"
+        ],
+        [
+          "přípona",
+          "n"
+        ],
+        [
+          "koncovka",
+          "í"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo má předponu i příponu?",
+      "options": [
+        "podzemní",
+        "zem",
+        "zemí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaké jsou části slova? Ukaž je na slově „podzemní“.",
+      "answer": "Předpona pod, kořen zem, přípona n, koncovka í."
+    },
+    {
+      "type": "open",
+      "question": "Jak najdeš koncovku?",
+      "answer": "Slovo vyskloňuju nebo vyčasuju. Část na konci, která se mění, je koncovka."
+    }
+  ]
+}

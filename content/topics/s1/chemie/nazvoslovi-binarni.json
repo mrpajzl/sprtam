@@ -1,0 +1,510 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nazvoslovi-binarni",
+  "title": "Názvosloví: oxidy, halogenidy, hydroxidy",
+  "emoji": "🏷️",
+  "explanations": [
+    {
+      "title": "Rozebrat název",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na pytli stojí „oxid vápenatý“, v návodu „chlorid železitý“, v učebnici „oxid dusičitý“. Každý takový název je vlastně zašifrovaný vzorec. Když umíš šifru, napíšeš vzorec bez učení nazpaměť."
+        },
+        {
+          "type": "text",
+          "text": "České chemické názvosloví je velmi logické – koncovka přesně říká, kolik „nábojů“ prvek má."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo (OČ)",
+          "definition": "Náboj, který atomu ve sloučenině „připíšeme“, kdyby všechny vazby byly iontové. Píše se římsky nahoru: Fe^III, O^−II.",
+          "example": "V Fe₂O₃ má železo III a kyslík −II."
+        },
+        {
+          "type": "term",
+          "term": "Binární sloučenina",
+          "definition": "Sloučenina ze **dvou** prvků.",
+          "example": "oxidy (prvek + kyslík), chloridy (prvek + chlor)"
+        },
+        {
+          "type": "term",
+          "term": "Kation a anion",
+          "definition": "**Kationtová část** = prvek s kladným OČ (obvykle kov, píše se ve vzorci první). **Aniontová část** = záporná (O, Cl, S…, píše se druhá)."
+        },
+        {
+          "type": "heading",
+          "text": "Název má dvě části"
+        },
+        {
+          "type": "text",
+          "text": "**Podstatné jméno** říká, co je záporná část (oxid, chlorid, sulfid…). **Přídavné jméno** říká, který prvek je kladný a jaké má OČ – podle koncovky."
+        },
+        {
+          "type": "text",
+          "text": "Klepni na barevné části slov a podívej se, co která znamená."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "oxid",
+                    "label": "anion O^−II"
+                  },
+                  {
+                    "text": " dus",
+                    "label": "kmen prvku"
+                  },
+                  {
+                    "text": "ičitý",
+                    "label": "OČ IV"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "chlorid",
+                    "label": "anion Cl^−I"
+                  },
+                  {
+                    "text": " želez",
+                    "label": "kmen prvku"
+                  },
+                  {
+                    "text": "itý",
+                    "label": "OČ III"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "hydroxid",
+                    "label": "anion OH⁻"
+                  },
+                  {
+                    "text": " vápe",
+                    "label": "kmen prvku"
+                  },
+                  {
+                    "text": "natý",
+                    "label": "OČ II"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Osm koncovek"
+        },
+        {
+          "type": "table",
+          "head": [
+            "OČ",
+            "Koncovka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "I",
+              "-ný",
+              "sodný"
+            ],
+            [
+              "II",
+              "-natý",
+              "vápenatý"
+            ],
+            [
+              "III",
+              "-itý",
+              "hlinitý"
+            ],
+            [
+              "IV",
+              "-ičitý",
+              "uhličitý"
+            ],
+            [
+              "V",
+              "-ečný / -ičný",
+              "fosforečný, dusičný"
+            ],
+            [
+              "VI",
+              "-ový",
+              "sírový"
+            ],
+            [
+              "VII",
+              "-istý",
+              "manganistý"
+            ],
+            [
+              "VIII",
+              "-ičelý",
+              "osmičelý"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Záporné části"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**oxid** – O^−II",
+            "**peroxid** – skupina O₂ s nábojem 2− (každý kyslík −I)",
+            "**sulfid** – S^−II",
+            "**halogenidy**: fluorid, chlorid, bromid, jodid – F, Cl, Br, I s −I",
+            "**hydrid** – vodík s −I (jen se silně kladnými kovy: NaH, CaH₂)",
+            "**hydroxid** – skupina OH s nábojem 1−"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Z názvu vzorec"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Z koncovky zjisti OČ kladného prvku.",
+            "Zapiš OČ záporné části.",
+            "Najdi nejmenší počty atomů, aby součet OČ byl **0** (křížové pravidlo: OČ jednoho dej jako index druhému a zkrať).",
+            "Zkontroluj součet."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Napiš vzorec oxidu hlinitého.",
+          "answer": "Hlinitý → Al^III. Oxid → O^−II. Křížem: Al₂O₃. Kontrola: 2 · 3 + 3 · (−2) = 6 − 6 = 0 ✓."
+        },
+        {
+          "type": "example",
+          "question": "Napiš vzorec sulfidu bismutitého.",
+          "answer": "Bismutitý → Bi^III, sulfid → S^−II. Křížem: **Bi₂S₃**. Kontrola: 6 − 6 = 0 ✓."
+        },
+        {
+          "type": "example",
+          "question": "Pojmenuj MnO₂.",
+          "answer": "Kyslík −II, dva kyslíky −4. Mangan tedy +IV → -ičitý. **Oxid manganičitý.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "NO₂ je oxid dusnatý.",
+          "right": "NO₂ je oxid **dusičitý** (N^IV). Oxid dusnatý je NO (N^II).",
+          "why": "Dva kyslíky = −4, takže dusík má IV → koncovka -ičitý. Koncovka -natý patří k II."
+        },
+        {
+          "type": "summary",
+          "text": "Název = záporná část (oxid, sulfid, chlorid…) + prvek s koncovkou podle OČ: I -ný, II -natý, III -itý, IV -ičitý, V -ečný/-ičný, VI -ový, VII -istý, VIII -ičelý. Součet OČ = 0."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Tohle vysvětlení je „tahák na zeď“: všechna pravidla v tabulkách a jeden postup, který funguje vždy – oběma směry, od vzorce k názvu i zpátky."
+        },
+        {
+          "type": "text",
+          "text": "Názvosloví potřebuješ ve všech dalších kapitolách chemie. Bez něj nepřečteš rovnici."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo (OČ)",
+          "definition": "Formální náboj atomu ve sloučenině. Kladné u prvku vlevo ve vzorci, záporné u prvku vpravo."
+        },
+        {
+          "type": "term",
+          "term": "Pravidla pro OČ",
+          "definition": "1) Prvek samotný (Fe, O₂) má 0. 2) Součet OČ v neutrální sloučenině je 0. 3) Kyslík má většinou −II (v peroxidech −I). 4) Vodík má I (v hydridech kovů −I). 5) Alkalické kovy (Na, K) I, kovy alkalických zemin (Mg, Ca) II."
+        },
+        {
+          "type": "term",
+          "term": "Koncovky přídavného jména",
+          "definition": "I -ný, II -natý, III -itý, IV -ičitý, V -ečný/-ičný, VI -ový, VII -istý, VIII -ičelý."
+        },
+        {
+          "type": "heading",
+          "text": "Skupiny binárních sloučenin a hydroxidy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Záporná část",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "oxidy",
+              "O^−II",
+              "Cr₂O₃ oxid chromitý"
+            ],
+            [
+              "peroxidy",
+              "O₂²⁻ (O^−I)",
+              "Na₂O₂ peroxid sodný"
+            ],
+            [
+              "sulfidy",
+              "S^−II",
+              "PbS sulfid olovnatý"
+            ],
+            [
+              "halogenidy",
+              "F, Cl, Br, I (−I)",
+              "KBr bromid draselný"
+            ],
+            [
+              "hydridy",
+              "H^−I",
+              "CaH₂ hydrid vápenatý"
+            ],
+            [
+              "hydroxidy",
+              "OH⁻",
+              "Fe(OH)₃ hydroxid železitý"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Hydroxidy nejsou binární (mají tři prvky), ale pojmenovávají se stejně. Je-li skupin OH víc, dávají se do závorky: Al(OH)₃."
+        },
+        {
+          "type": "heading",
+          "text": "Ze vzorce název"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Určí záporná část (O → oxid, Cl → chlorid…).",
+            "Spočítej její celkový záporný náboj: OČ × počet atomů.",
+            "Vyděl počtem atomů kladného prvku → jeho OČ.",
+            "Přidej koncovku podle tabulky."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Pojmenuj Cr₂O₃.",
+          "answer": "Oxid. Tři kyslíky: 3 · (−2) = −6. Dva chromy: +6 / 2 = +3 → III → -itý. **Oxid chromitý.**"
+        },
+        {
+          "type": "example",
+          "question": "Napiš vzorec chloridu cíničitého.",
+          "answer": "Cíničitý → Sn^IV. Chlorid → Cl^−I. Na vyrovnání +4 potřebuju 4 chloridy: **SnCl₄**."
+        },
+        {
+          "type": "example",
+          "question": "Napiš vzorec peroxidu barnatého.",
+          "answer": "Barnatý → Ba^II. Peroxid je skupina O₂ s nábojem 2−. 2+ a 2− se vyrovnají 1 : 1 → **BaO₂** (ne BaO – to by byl oxid)."
+        },
+        {
+          "type": "text",
+          "text": "Doplň koncovku. Spočítej OČ kladného prvku podle postupu výše."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "MnO₂ = oxid mangan",
+                "after": "",
+                "options": [
+                  "ičitý",
+                  "atý",
+                  "istý"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "SF₆ = fluorid sír",
+                "after": "",
+                "options": [
+                  "ový",
+                  "ičitý",
+                  "natý"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Cu₂O = oxid měď",
+                "after": "",
+                "options": [
+                  "ný",
+                  "natý",
+                  "itý"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "PCl₅ = chlorid fosfor",
+                "after": "",
+                "options": [
+                  "ečný",
+                  "itý",
+                  "ový"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hydroxid hlinitý = AlOH₃",
+          "right": "Hydroxid hlinitý = **Al(OH)₃**",
+          "why": "OH je skupina, která se opakuje celá. Bez závorky by trojka patřila jen k vodíku."
+        },
+        {
+          "type": "summary",
+          "text": "Součet OČ ve sloučenině je 0. Záporná část dá podstatné jméno, OČ kladného prvku dá koncovku přídavného jména."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Název Fe₂O₃ (oxid …)",
+      "answers": [
+        "oxid železitý",
+        "železitý"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Název PbS (sulfid …)",
+      "answers": [
+        "sulfid olovnatý",
+        "olovnatý"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Vzorec chloridu cíničitého?",
+      "options": [
+        "SnCl₄",
+        "SnCl₂",
+        "Sn₄Cl",
+        "SnCl₃"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Vzorec oxidu manganistého?",
+      "options": [
+        "Mn₂O₇",
+        "MnO₇",
+        "MnO₂",
+        "Mn₇O₂"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Vzorec peroxidu barnatého?",
+      "options": [
+        "BaO₂",
+        "BaO",
+        "Ba₂O₂",
+        "Ba₂O"
+      ],
+      "answer": 0,
+      "explanation": "Peroxidový anion O₂²⁻ + Ba²⁺ → BaO₂."
+    },
+    {
+      "type": "choice",
+      "question": "Vzorec hydroxidu hlinitého?",
+      "options": [
+        "Al(OH)₃",
+        "AlOH₃",
+        "Al₃OH",
+        "Al(OH)₂"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Oxidační číslo chromu v Cr₂O₃ (arabskou číslicí)?",
+      "answers": [
+        "3",
+        "III"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "V hydridech kovů (např. NaH) má vodík oxidační číslo −I.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "NO₂ je oxid dusnatý.",
+      "answer": false,
+      "explanation": "N má IV → oxid dusičitý. Oxid dusnatý je NO."
+    },
+    {
+      "type": "match",
+      "question": "Spoj vzorec s názvem.",
+      "pairs": [
+        [
+          "CuCl₂",
+          "chlorid měďnatý"
+        ],
+        [
+          "Na₂O₂",
+          "peroxid sodný"
+        ],
+        [
+          "CaH₂",
+          "hydrid vápenatý"
+        ],
+        [
+          "NH₄Cl",
+          "chlorid amonný"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Popiš postup tvorby vzorce z názvu na příkladu sulfid bismutitý.",
+      "answer": "Bismutitý → Bi má III, sulfid S má −II. Křížovým pravidlem: Bi₂S₃. Kontrola: 2 · 3 + 3 · (−2) = 0."
+    },
+    {
+      "type": "open",
+      "question": "Jak určíš název sloučeniny ze vzorce? Ukaž na MnO₂.",
+      "answer": "Kyslík má −II, dva kyslíky dávají −4, takže Mn má IV. Koncovka pro IV je -ičitý: oxid manganičitý."
+    }
+  ]
+}

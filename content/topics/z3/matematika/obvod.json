@@ -1,0 +1,313 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obvod",
+  "title": "Obvod",
+  "emoji": "🐜",
+  "explanations": [
+    {
+      "title": "Mravenec",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mravenec se vydá na procházku po kraji zahrady. Jde podél plotu, až se vrátí tam, kde začal. Jak dlouhou cestu ušel?"
+        },
+        {
+          "type": "text",
+          "text": "Té cestě dokola říkáme **obvod**. Potřebuješ ho, když kupuješ plot, lepíš krajku kolem obrázku nebo běháš kolečka kolem hřiště."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Strana",
+          "definition": "Rovná čára od rohu k rohu tvaru.",
+          "example": "Obdélník má 4 strany."
+        },
+        {
+          "type": "term",
+          "term": "Obvod",
+          "definition": "Délka čáry kolem celého tvaru. Sečteš délky všech stran.",
+          "example": "Obvod zahrady = délka celého plotu."
+        },
+        {
+          "type": "heading",
+          "text": "Mravenec krok za krokem"
+        },
+        {
+          "type": "text",
+          "text": "Zahrada je obdélník: dlouhá strana 5 cm, krátká 3 cm (na plánku)."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Mravenec jde po dlouhé straně: **5 cm**.",
+            "Zahne a jde po krátké: **3 cm**.",
+            "Zase dlouhá: **5 cm**.",
+            "A krátká zpátky na start: **3 cm**.",
+            "Celkem: 5 + 3 + 5 + 3 = **16 cm**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Hýbej posuvníky a sleduj obvod. Co se stane, když prodloužíš jen jednu stranu?"
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "rect",
+            "a": 5,
+            "b": 3
+          }
+        },
+        {
+          "type": "example",
+          "question": "Trojúhelník má strany 3 cm, 4 cm a 5 cm. Obvod?",
+          "answer": "Sečtu všechny tři strany: 3 + 4 + 5 = **12 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Zahrada 20 m × 15 m. Kolik metrů plotu potřebuješ?",
+          "answer": "Plot jde kolem dokola: 20 + 15 + 20 + 15 = **70 m**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obdélník 4 cm × 3 cm má obvod 4 + 3 = 7 cm.",
+          "right": "4 + 3 + 4 + 3 = **14 cm**",
+          "why": "Obdélník má 4 strany, ne 2. Každá délka je tam dvakrát. Mravenec musí obejít celý tvar."
+        },
+        {
+          "type": "summary",
+          "text": "Obvod = součet všech stran. Je to délka cesty kolem tvaru."
+        }
+      ]
+    },
+    {
+      "title": "Vzorec",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sčítat všechny strany jde vždycky. Ale u čtverce a obdélníku to jde rychleji – stačí jedno násobení."
+        },
+        {
+          "type": "text",
+          "text": "Takovému zkrácenému návodu říkáme **vzorec**. Hodí se třeba pro výpočet, kolik lišty je potřeba kolem pokoje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obvod",
+          "definition": "Součet délek všech stran tvaru."
+        },
+        {
+          "type": "term",
+          "term": "Čtverec",
+          "definition": "Tvar se 4 stranami, které jsou **všechny stejně dlouhé**, a 4 pravými rohy.",
+          "example": "Strany značíme a."
+        },
+        {
+          "type": "term",
+          "term": "Obdélník",
+          "definition": "Tvar se 4 pravými rohy. Protější strany jsou stejné: dvě delší (a) a dvě kratší (b)."
+        },
+        {
+          "type": "term",
+          "term": "Rovnostranný trojúhelník",
+          "definition": "Trojúhelník, který má všechny 3 strany stejně dlouhé."
+        },
+        {
+          "type": "term",
+          "term": "Vzorec",
+          "definition": "Krátký zápis, jak něco spočítat. Písmena v něm zastupují délky stran.",
+          "example": "Obvod čtverce = 4 · a"
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tvar",
+            "Obvod",
+            "Proč"
+          ],
+          "rows": [
+            [
+              "trojúhelník",
+              "a + b + c",
+              "tři různé strany"
+            ],
+            [
+              "rovnostranný trojúhelník",
+              "3 · a",
+              "tři stejné strany"
+            ],
+            [
+              "čtverec",
+              "4 · a",
+              "čtyři stejné strany"
+            ],
+            [
+              "obdélník",
+              "2 · a + 2 · b",
+              "dvě strany a, dvě strany b"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Čtverec má stranu 4 cm. Spočítej obvod sám, pak se podívej. Změň stranu na 5."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "square",
+            "a": 4
+          }
+        },
+        {
+          "type": "example",
+          "question": "Čtverec se stranou 4 cm. Obvod?",
+          "answer": "4 · a = 4 · 4 = **16 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Obdélník 10 cm a 7 cm. Obvod?",
+          "answer": "2 · 10 + 2 · 7 = 20 + 14 = **34 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Obvod čtverce je 12 cm. Jak dlouhá je strana?",
+          "answer": "Obvod jsou 4 stejné strany. 12 : 4 = **3 cm**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Čtverec 9 m: obvod = 9 m.",
+          "right": "4 · 9 = **36 m**",
+          "why": "9 m je jen jedna strana. Obvod jde kolem celého čtverce – přes všechny 4 strany."
+        },
+        {
+          "type": "summary",
+          "text": "Obvod čtverce = 4 · a. Obvod obdélníku = 2 · a + 2 · b. Výsledek má jednotku délky (cm, m)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Trojúhelník má strany 3 cm, 4 cm a 5 cm. Obvod v cm =",
+      "answers": [
+        "12"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Čtverec se stranou 5 cm. Obvod v cm =",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Obdélník 6 cm a 2 cm. Obvod v cm =",
+      "answers": [
+        "16"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Čtverec se stranou 9 m. Obvod v m =",
+      "answers": [
+        "36"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Obdélník 10 cm a 7 cm. Obvod v cm =",
+      "answers": [
+        "34"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Obvod čtverce je 12 cm. Strana v cm =",
+      "answers": [
+        "3"
+      ],
+      "explanation": "12 : 4 = 3."
+    },
+    {
+      "type": "choice",
+      "question": "Co je obvod?",
+      "options": [
+        "délka čáry kolem tvaru",
+        "plocha uvnitř tvaru",
+        "nejdelší strana"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Rovnostranný trojúhelník má stranu 7 cm. Obvod?",
+      "options": [
+        "14 cm",
+        "21 cm",
+        "28 cm"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Obvod čtverce = 4 · strana.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Obdélník 4 cm × 3 cm má obvod 12 cm.",
+      "answer": false,
+      "explanation": "4 + 3 + 4 + 3 = 14 cm."
+    },
+    {
+      "type": "input",
+      "question": "Zahrada má tvar obdélníku 20 m × 15 m. Kolik metrů plotu potřebuješ?",
+      "answers": [
+        "70"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš obvod obdélníku se stranami 5 cm a 3 cm?",
+      "answer": "Sečtu všechny čtyři strany: 5 + 3 + 5 + 3 = 16 cm."
+    },
+    {
+      "type": "open",
+      "question": "Proč stačí u čtverce znát jen jednu stranu?",
+      "answer": "Všechny 4 strany čtverce jsou stejné, takže obvod je 4 · strana."
+    }
+  ]
+}

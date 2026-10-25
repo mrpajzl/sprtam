@@ -1,0 +1,380 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "tuhe-teleso",
+  "title": "Mechanika tuhého tělesa",
+  "emoji": "🔧",
+  "explanations": [
+    {
+      "title": "Klíčem a houpačkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zkus otevřít dveře tlakem těsně u pantů. Jde to strašně ztuha. U kliky stačí jeden prst. Síla je stejná – rozdíl je v tom, **kde** působí. Stejně tak matku povolíš snáz dlouhým klíčem a na houpačce tě těžší kamarád „přehoupne“, jen když si sedne blíž ke středu."
+        },
+        {
+          "type": "text",
+          "text": "Když věci nejen posouváme, ale i **otáčíme**, nestačí znát velikost síly. Tohle téma ti ukáže, co ještě potřebuješ."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tuhé těleso",
+          "definition": "Těleso, které se působením sil nedeformuje – nemění tvar. Je to zjednodušení, ale pro dveře, páku nebo kolo funguje výborně.",
+          "example": "Dveře, klíč, prkno houpačky."
+        },
+        {
+          "type": "term",
+          "term": "Osa otáčení",
+          "definition": "Přímka (nebo bod), kolem které se těleso otáčí.",
+          "example": "U dveří panty, u houpačky podpěra uprostřed."
+        },
+        {
+          "type": "term",
+          "term": "Rameno síly d",
+          "definition": "Vzdálenost od osy k přímce, na které síla leží – měřeno **kolmo**.",
+          "example": "Klika je od pantů asi 0,8 m – síla kolmo na dveře má rameno 0,8 m."
+        },
+        {
+          "type": "term",
+          "term": "Moment síly M",
+          "definition": "Otáčivý účinek síly: `M = F · d`. Jednotka **N·m** (newtonmetr).",
+          "example": "Síla 50 N na rameni 0,2 m: M = 10 N·m."
+        },
+        {
+          "type": "heading",
+          "text": "Delší rameno = větší účinek"
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje moment stejné síly 50 N na různě dlouhém klíči. Dvojnásobná délka = dvojnásobný moment. Najdi, kolik N·m dá klíč 0,4 m."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "N·m",
+            "items": [
+              {
+                "label": "50 N × 0,1 m",
+                "value": 5
+              },
+              {
+                "label": "50 N × 0,2 m",
+                "value": 10
+              },
+              {
+                "label": "50 N × 0,4 m",
+                "value": 20
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Když přímka síly prochází osou (tlačíš přímo do pantu), je rameno nulové a moment také. Dveře se nepohnou, ať tlačíš jakkoli silně."
+        },
+        {
+          "type": "heading",
+          "text": "Houpačka v rovnováze"
+        },
+        {
+          "type": "text",
+          "text": "Na houpačce otáčí jeden doleva, druhý doprava. Houpačka je v klidu, když jsou oba momenty stejné: `F₁ · d₁ = F₂ · d₂`. Tomu se říká **momentová věta**."
+        },
+        {
+          "type": "example",
+          "question": "Táta (800 N) sedí 1 m od středu houpačky. Jak daleko si musí sednout syn (400 N)?",
+          "answer": "Moment táty: 800 · 1 = 800 N·m. Syn: 400 · d = 800 → d = **2 m**. Lehčí sedí dál."
+        },
+        {
+          "type": "example",
+          "question": "Na páce působí 300 N na rameni 0,4 m. Jak velká síla na rameni 1,2 m ji vyrovná?",
+          "answer": "300 · 0,4 = 120 N·m. F · 1,2 = 120 → F = **100 N**. Trojnásobné rameno = třetinová síla."
+        },
+        {
+          "type": "heading",
+          "text": "Proč se věci převrhnou"
+        },
+        {
+          "type": "term",
+          "term": "Těžiště",
+          "definition": "Bod, ve kterém jako by působila celá tíha tělesa. Když těleso podepřeš přímo pod těžištěm, udržíš ho v rovnováze.",
+          "example": "Pravítko udržíš na prstu, když prst dáš pod jeho střed."
+        },
+        {
+          "type": "text",
+          "text": "Těleso se převrhne, když se svislice z těžiště dostane mimo podstavu. Proto je stabilní věc s **nízkým těžištěm a širokou podstavou** – závodní auto, pyramida, rozkročený zápasník."
+        },
+        {
+          "type": "text",
+          "text": "Rovnovážné polohy: kulička v důlku se po šťouchnutí vrátí (**stálá** poloha), kulička na vrcholu kopce spadne (**vratká**), kulička na rovném stole zůstane, kam ji posuneš (**volná**)."
+        },
+        {
+          "type": "term",
+          "term": "Dvojice sil",
+          "definition": "Dvě stejně velké opačné síly, které neleží na jedné přímce. Těleso neposunou, ale roztočí.",
+          "example": "Ruce na volantu – jedna tlačí nahoru, druhá dolů."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Moment síly = síla × délka páky, ať síla míří kamkoli.",
+          "right": "Moment = síla × rameno, a rameno se měří kolmo od osy k přímce síly.",
+          "why": "Když táhneš klíč šikmo, je kolmá vzdálenost menší než délka klíče a moment je menší. Když táhneš podél klíče, je moment nulový."
+        },
+        {
+          "type": "summary",
+          "text": "Otáčivý účinek síly = moment M = F·d (d kolmo od osy). Rovnováha na houpačce: F₁·d₁ = F₂·d₂. Stabilita: nízké těžiště, široká podstava."
+        }
+      ]
+    },
+    {
+      "title": "Momentová věta",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Most, jeřáb nebo police na zdi se nesmí posunout ani otočit. Statik musí ověřit, že je stavba v **rovnováze**. U bodu stačí, aby se síly vyrušily. U skutečného tělesa to nestačí – musí se vyrušit i otáčivé účinky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tuhé těleso",
+          "definition": "Model tělesa, které nemění tvar, ať na něj působí jakékoli síly. Může se posouvat i otáčet."
+        },
+        {
+          "type": "term",
+          "term": "Osa otáčení",
+          "definition": "Přímka, kolem které se těleso otáčí (pant, osa kola, podpěra páky)."
+        },
+        {
+          "type": "term",
+          "term": "Vektorová přímka síly",
+          "definition": "Přímka, na které leží šipka síly – prodloužená na obě strany."
+        },
+        {
+          "type": "term",
+          "term": "Rameno síly d",
+          "definition": "**Kolmá** vzdálenost osy otáčení od vektorové přímky síly.",
+          "example": "Když přímka síly prochází osou, d = 0."
+        },
+        {
+          "type": "term",
+          "term": "Moment síly M",
+          "definition": "`M = F · d`, jednotka N·m. Momenty otáčející jedním směrem bereme kladně, opačným záporně.",
+          "example": "F = 20 N, d = 0,5 m → M = 10 N·m."
+        },
+        {
+          "type": "heading",
+          "text": "Podmínky rovnováhy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Výslednice všech sil je nulová → těleso se neposouvá.",
+            "Součet všech momentů vzhledem k ose je nulový → těleso se neotáčí. To je **momentová věta**.",
+            "Musí platit obě podmínky současně."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Páka v rovnováze je jako rovnice. V příkladu níže platí F · 1,2 = 300 · 0,4 = 120. Když obě strany vynásobíme 10, dostaneme 12 · F = 1 200. Na vahách (neznámá F je tu označená x) udělej s oběma stranami stejnou operaci, aby zbylo samotné x."
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 12,
+            "b": 0,
+            "c": 1200
+          }
+        },
+        {
+          "type": "example",
+          "question": "Moment síly je 12 N·m, síla 40 N. Jak dlouhé je rameno?",
+          "answer": "M = F · d → d = M / F = 12 / 40 = **0,3 m**."
+        },
+        {
+          "type": "example",
+          "question": "Páka: 300 N na rameni 0,4 m vlevo. Jaká síla na rameni 1,2 m vpravo zajistí rovnováhu?",
+          "answer": "Momentová věta: 300 · 0,4 = F · 1,2 → 120 = 1,2 F → F = **100 N**."
+        },
+        {
+          "type": "heading",
+          "text": "Dvojice sil"
+        },
+        {
+          "type": "term",
+          "term": "Dvojice sil",
+          "definition": "Dvě stejně velké síly opačného směru, které **neleží na jedné přímce**. Výslednice je nulová (těleso se neposouvá), ale moment ne – těleso se otáčí.",
+          "example": "Obě ruce na volantu: jedna tlačí nahoru, druhá dolů."
+        },
+        {
+          "type": "heading",
+          "text": "Těžiště a stabilita"
+        },
+        {
+          "type": "term",
+          "term": "Těžiště T",
+          "definition": "Působiště tíhové síly – bod, kde jako by byla soustředěna celá tíha tělesa."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rovnovážná poloha",
+            "Co se stane po vychýlení",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "stálá (stabilní)",
+              "těleso se vrátí zpět, těžiště se zvedlo",
+              "kulička v důlku"
+            ],
+            [
+              "vratká (labilní)",
+              "těleso se převrhne, těžiště kleslo",
+              "kulička na vrcholu kopce"
+            ],
+            [
+              "volná (indiferentní)",
+              "těleso zůstane v nové poloze, těžiště ve stejné výšce",
+              "kulička na vodorovné ploše"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Stabilita je tím větší, čím níž je těžiště a čím širší je podstava."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když je výslednice sil nulová, je těleso v rovnováze.",
+          "right": "Musí být nulová výslednice sil **i** výsledný moment.",
+          "why": "Dvojice sil má nulovou výslednici, a přesto těleso roztočí – jako volant."
+        },
+        {
+          "type": "summary",
+          "text": "M = F·d, d je kolmá vzdálenost osy od přímky síly. Rovnováha tuhého tělesa: výslednice sil = 0 a součet momentů = 0. Nízké těžiště a široká podstava = stabilita."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Síla 20 N působí kolmo na rameni 0,5 m. Moment síly v N·m =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Páka: 300 N na rameni 0,4 m. Jak velká síla v N na rameni 1,2 m zajistí rovnováhu?",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Moment síly 12 N·m, síla 40 N. Rameno v m =",
+      "answers": [
+        "0,3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdy je tuhé těleso v rovnováze?",
+      "options": [
+        "výslednice sil i výsledný moment jsou nulové",
+        "jen výslednice sil je nulová",
+        "jen moment je nulový",
+        "těleso je v klidu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je rameno síly?",
+      "options": [
+        "kolmá vzdálenost přímky síly od osy",
+        "délka vektoru síly",
+        "vzdálenost působiště od těžiště",
+        "délka páky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Síla, jejíž přímka prochází osou otáčení, má nulový moment.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kdy je těleso stabilnější?",
+      "options": [
+        "nízké těžiště, široká podstava",
+        "vysoké těžiště, úzká podstava",
+        "na stabilitu nemá vliv"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka momentu síly?",
+      "options": [
+        "N·m",
+        "J/s",
+        "N/m",
+        "kg·m"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj druh rovnovážné polohy s příkladem.",
+      "pairs": [
+        [
+          "stálá",
+          "kulička v důlku"
+        ],
+        [
+          "vratká",
+          "kulička na vrcholu kopce"
+        ],
+        [
+          "volná",
+          "kulička na vodorovné ploše"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Dvojice sil (stejně velké, opačné, ne na jedné přímce) má nenulový moment, ale nulovou výslednici.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj momentovou větu a uveď příklad.",
+      "answer": "Těleso otáčivé kolem osy je v rovnováze, když součet momentů sil vzhledem k ose je nulový. Např. houpačka: F₁·d₁ = F₂·d₂."
+    },
+    {
+      "type": "open",
+      "question": "Co je těžiště a jak souvisí se stabilitou?",
+      "answer": "Těžiště je působiště tíhové síly tělesa. Těleso je stabilnější, má-li nízko těžiště a velkou podstavu."
+    }
+  ]
+}

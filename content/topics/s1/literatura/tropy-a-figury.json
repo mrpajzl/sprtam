@@ -1,0 +1,464 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "tropy-a-figury",
+  "title": "Tropy a figury",
+  "emoji": "🎭",
+  "explanations": [
+    {
+      "title": "Detektiv",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Říkáš „noha stolu“, i když stůl nechodí. Řekneš „celá třída se smála“, i když se smáli žáci, ne místnost. Mluvíš obrazně každý den, jen si toho nevšímáš."
+        },
+        {
+          "type": "text",
+          "text": "Básníci tyhle triky používají naplno. Když je poznáš, pochopíš, proč báseň působí silně – a u maturity v rozboru ukázky napíšeš, jaké **jazykové prostředky** autor použil."
+        },
+        {
+          "type": "heading",
+          "text": "Dvě velké skupiny"
+        },
+        {
+          "type": "term",
+          "term": "Jazykový (umělecký) prostředek",
+          "definition": "Způsob, jakým autor slova vybere nebo poskládá, aby text byl živější, krásnější nebo silnější.",
+          "example": "Místo „je velmi silný“ napíše „silný jako býk“."
+        },
+        {
+          "type": "term",
+          "term": "Trop",
+          "definition": "Prostředek, který mění **význam** slova. Slovo neznamená to, co obvykle, ale něco přeneseného.",
+          "example": "„zub času“ – čas nemá zuby, ale „kouše“ do věcí jako zub."
+        },
+        {
+          "type": "term",
+          "term": "Figura",
+          "definition": "Prostředek, který mění **uspořádání** slov – jejich pořadí nebo opakování. Význam slov zůstává normální.",
+          "example": "„Krásná je to země“ místo „Je to krásná země“."
+        },
+        {
+          "type": "text",
+          "text": "Detektivní otázka zní: **Změnil se význam slova?** Pokud ano → trop. **Změnilo se jen, kde slova stojí nebo kolikrát se opakují?** → figura."
+        },
+        {
+          "type": "heading",
+          "text": "Tropy – slova v přestrojení"
+        },
+        {
+          "type": "term",
+          "term": "Metafora",
+          "definition": "Přenesení pojmenování podle **podobnosti** (vypadá to podobně, chová se to podobně).",
+          "example": "„noha stolu“, „zlaté ručičky“, „zub času“"
+        },
+        {
+          "type": "term",
+          "term": "Personifikace",
+          "definition": "Věc, zvíře nebo příroda dostane **lidské vlastnosti**.",
+          "example": "„Les mlčí a čeká.“ „Slunce se usmívá.“"
+        },
+        {
+          "type": "term",
+          "term": "Metonymie",
+          "definition": "Přenesení podle **souvislosti** – věci k sobě patří (místo a lidé, autor a kniha).",
+          "example": "„Celá škola tleskala“ (žáci ve škole). „Čtu Čapka“ (knihu od Čapka)."
+        },
+        {
+          "type": "text",
+          "text": "Další tropy: **hyperbola** (nadsázka – „říkám ti to po tisící“), **oxymóron** (spojení protikladů – „živá mrtvola“), **eufemismus** (zjemnění – „odešel na věčnost“ místo „zemřel“)."
+        },
+        {
+          "type": "heading",
+          "text": "Figury – slova jinak poskládaná"
+        },
+        {
+          "type": "term",
+          "term": "Anafora",
+          "definition": "Stejné slovo na **začátku** několika veršů za sebou.",
+          "example": "„**Já** jsem tu byl, / **já** jsem to viděl.“"
+        },
+        {
+          "type": "term",
+          "term": "Inverze",
+          "definition": "Obrácený, neobvyklý **slovosled** (pořadí slov).",
+          "example": "„Krásná je to země.“"
+        },
+        {
+          "type": "text",
+          "text": "Další figury: **epifora** (opakování na konci veršů), **epizeuxis** (stejné slovo hned za sebou – „sám, sám, sám“), **řečnická otázka** (otázka, na kterou nikdo nečeká odpověď – „Kdo by to nevěděl?“)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každého pojmu se zeptej detektivní otázkou: mění se význam (trop), nebo uspořádání (figura)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "trop (význam)",
+              "figura (uspořádání)"
+            ],
+            "items": [
+              {
+                "text": "metafora",
+                "group": 0
+              },
+              {
+                "text": "anafora",
+                "group": 1
+              },
+              {
+                "text": "personifikace",
+                "group": 0
+              },
+              {
+                "text": "řečnická otázka",
+                "group": 1
+              },
+              {
+                "text": "metonymie",
+                "group": 0
+              },
+              {
+                "text": "inverze",
+                "group": 1
+              },
+              {
+                "text": "oxymóron",
+                "group": 0
+              },
+              {
+                "text": "epizeuxis",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "„Les mlčí a čeká.“ Co to je?",
+          "answer": "Mlčet a čekat umí člověk, les ne. Les dostal lidské vlastnosti → změnil se význam → trop, konkrétně **personifikace**."
+        },
+        {
+          "type": "example",
+          "question": "„Celé město spalo.“ Metafora, nebo metonymie?",
+          "answer": "Město nespí – spí lidé, kteří v něm bydlí. Město a jeho obyvatelé spolu **souvisí**, nejsou si podobní → **metonymie**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Noha stolu“ je metonymie.",
+          "right": "„Noha stolu“ je metafora.",
+          "why": "Noha stolu vypadá a funguje **podobně** jako lidská noha (drží tělo). Podobnost = metafora. Souvislost (lidé ve městě, autor a jeho kniha) = metonymie."
+        },
+        {
+          "type": "summary",
+          "text": "Trop mění význam slova (metafora = podobnost, metonymie = souvislost, personifikace = polidštění). Figura mění pořadí nebo opakování slov (anafora, inverze)."
+        }
+      ]
+    },
+    {
+      "title": "Karty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Reklama „Rozpustí se na jazyku jako sníh na slunci“ nebo titulek „Praha ztratila trpělivost“ používají stejné triky jako básníci. Kdo je zná, nenechá se jen tak zmanipulovat – a umí psát živěji."
+        },
+        {
+          "type": "text",
+          "text": "Tady máš přehled jako sadu kartiček: název, co znamená, příklad. Nauč se poznávat je v textu – to je přesně úloha z maturitního testu i ústní zkoušky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obrazné pojmenování (trop)",
+          "definition": "Slovo použité v **přeneseném** významu – neznamená doslova to, co říká.",
+          "example": "„Má srdce ze zlata.“ – srdce není ze zlata, je to obraz dobroty."
+        },
+        {
+          "type": "term",
+          "term": "Figura",
+          "definition": "Hra s **pořadím** nebo **opakováním** slov. Slova si nechávají svůj normální význam.",
+          "example": "„Sám, sám, sám.“"
+        },
+        {
+          "type": "term",
+          "term": "Verš",
+          "definition": "Jeden řádek básně. Potřebuješ ho u figur, které se opakují na začátku nebo konci verše.",
+          "example": "Báseň o čtyřech řádcích má 4 verše."
+        },
+        {
+          "type": "heading",
+          "text": "Karty: obrazná pojmenování"
+        },
+        {
+          "type": "text",
+          "text": "Nejdřív si přečti přední stranu a zkus si vybavit význam. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "metafora",
+                "back": "přenesení podle vnější podobnosti: zlaté ručičky, zub času"
+              },
+              {
+                "front": "metonymie",
+                "back": "přenesení podle souvislosti: celá škola tleskala, čtu Čapka"
+              },
+              {
+                "front": "personifikace",
+                "back": "polidštění věci: slunce se usmívá"
+              },
+              {
+                "front": "přirovnání",
+                "back": "srovnání pomocí „jako“: silný jako býk"
+              },
+              {
+                "front": "hyperbola",
+                "back": "nadsázka: říkám ti to po tisící"
+              },
+              {
+                "front": "oxymóron",
+                "back": "spojení protikladů: živá mrtvola, hlasité ticho"
+              },
+              {
+                "front": "eufemismus",
+                "back": "zjemnění: odešel na věčnost (= zemřel)"
+              },
+              {
+                "front": "apostrofa",
+                "back": "oslovení nepřítomného nebo neživého: Ó lásko! Ó vlasti má!"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Karty: figury a zvuk"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Prostředek",
+            "Co to je",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "anafora",
+              "opakování na začátku veršů",
+              "„Je tma. / Je zima. / Je ticho.“"
+            ],
+            [
+              "epifora",
+              "opakování na konci veršů",
+              "„…a nikdo nepřišel. / …a nikdo nepřišel.“"
+            ],
+            [
+              "epizeuxis",
+              "stejné slovo hned za sebou",
+              "„Sám, sám, sám.“"
+            ],
+            [
+              "inverze",
+              "obrácený slovosled",
+              "„Krásná je to země.“"
+            ],
+            [
+              "řečnická otázka",
+              "otázka bez čekání na odpověď",
+              "„Kdo by tomu věřil?“"
+            ],
+            [
+              "epiteton",
+              "básnický přívlastek",
+              "„šedivé ráno“, „zlatá Praha“"
+            ],
+            [
+              "aliterace",
+              "stejné hlásky na začátku slov",
+              "„**v**ítr **v**ane **v**olně“"
+            ],
+            [
+              "onomatopoie",
+              "zvukomalba – slova napodobují zvuk",
+              "„bum, prásk, šustí“"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup při rozboru ukázky"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi místo, které „není normální“ – zní zvláštně, básnicky.",
+            "Zeptej se: znamená slovo doslova to, co říká? Pokud ne → hledej mezi tropy.",
+            "Je to podobnost (metafora), souvislost (metonymie), polidštění (personifikace), nadsázka (hyperbola)?",
+            "Pokud význam sedí, ale slova se opakují nebo jsou přeházená → hledej mezi figurami.",
+            "Napiš název prostředku **a** proč tam podle tebe je (co zdůrazňuje)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "„Čekám tu na tebe sto let.“ Co to je?",
+          "answer": "Doslova sto let nečeká – přehání, aby zdůraznil, jak dlouho to trvá. Nadsázka = **hyperbola**."
+        },
+        {
+          "type": "example",
+          "question": "„Ó, matko Vltavo, kam spěcháš?“ Najdi dva prostředky.",
+          "answer": "Oslovuje řeku, která neslyší → **apostrofa**. Řeka je „matka“ a „spěchá“ jako člověk → **personifikace**. (Otázka, na kterou nikdo nečeká odpověď, je navíc řečnická otázka.)"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Přirovnání a metafora jsou totéž.",
+          "right": "Přirovnání má slovo „jako“ (silný **jako** býk). Metafora „jako“ vynechá a rovnou věc pojmenuje jinak (je to **býk**).",
+          "why": "Přirovnání otevřeně srovnává dvě věci. Metafora je „zkrácené přirovnání“ – podobnost musíš objevit sám."
+        },
+        {
+          "type": "summary",
+          "text": "Metafora = podobnost, metonymie = souvislost. Přirovnání má „jako“. Anafora na začátku veršů, epifora na konci. Tropy mění význam, figury uspořádání."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "„Slunce se usmívá.“ Jde o:",
+      "options": [
+        "personifikaci",
+        "metonymii",
+        "hyperbolu",
+        "anaforu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "„Čekám tu na tebe sto let.“ Jde o:",
+      "options": [
+        "hyperbolu",
+        "oxymóron",
+        "eufemismus",
+        "přirovnání"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "„Hlasité ticho“ je:",
+      "options": [
+        "oxymóron",
+        "epiteton",
+        "metonymie",
+        "aliterace"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "„Celé město spalo.“ Jde o:",
+      "options": [
+        "metonymii",
+        "metaforu",
+        "hyperbolu",
+        "apostrofu"
+      ],
+      "answer": 0,
+      "explanation": "Město = lidé ve městě, přenesení podle souvislosti."
+    },
+    {
+      "type": "choice",
+      "question": "„Odešel na věčnost“ místo „zemřel“ je:",
+      "options": [
+        "eufemismus",
+        "hyperbola",
+        "ironie",
+        "oxymóron"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Anafora je opakování slova na začátku veršů.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Přirovnání je figura, protože mění pořadí slov.",
+      "answer": false,
+      "explanation": "Přirovnání je obrazné pojmenování (srovnání pomocí „jako“), nikoli změna slovosledu."
+    },
+    {
+      "type": "match",
+      "question": "Spoj prostředek s příkladem.",
+      "pairs": [
+        [
+          "přirovnání",
+          "bílý jako sníh"
+        ],
+        [
+          "apostrofa",
+          "Ó vlasti má!"
+        ],
+        [
+          "onomatopoie",
+          "bum, prásk"
+        ],
+        [
+          "metafora",
+          "zub času"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá obrácený slovosled (např. „Krásná je to země“)?",
+      "answers": [
+        "inverze"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je rozdíl mezi metaforou a metonymií?",
+      "options": [
+        "metafora podle podobnosti, metonymie podle souvislosti",
+        "metafora je figura, metonymie trop",
+        "žádný",
+        "metafora vždy obsahuje „jako“"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi metaforou a metonymií a uveď příklady.",
+      "answer": "Metafora přenáší pojmenování na základě vnější podobnosti (noha stolu, zub času). Metonymie na základě věcné souvislosti (čtu Čapka, celá škola tleskala)."
+    },
+    {
+      "type": "open",
+      "question": "Co jsou tropy a figury? Uveď ke každé skupině tři příklady.",
+      "answer": "Tropy jsou obrazná pojmenování, mění význam slova (metafora, metonymie, personifikace). Figury pracují s uspořádáním a opakováním slov (anafora, epifora, řečnická otázka)."
+    }
+  ]
+}

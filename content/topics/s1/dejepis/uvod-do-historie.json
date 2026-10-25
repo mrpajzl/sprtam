@@ -1,0 +1,415 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "uvod-do-historie",
+  "title": "Prameny, chronologie a pomocné vědy",
+  "emoji": "🔎",
+  "explanations": [
+    {
+      "title": "Jako detektiv",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Historik je vlastně detektiv. U „činu“ nebyl, svědci jsou dávno mrtví. Zbyly jen stopy: mince v zemi, listina s pečetí, kronika, zbytek domu. Z nich musí poskládat, co se stalo – a poznat, které stopě se dá věřit."
+        },
+        {
+          "type": "text",
+          "text": "Tohle téma je základ celého dějepisu na střední škole. Vysvětlí, **odkud** vůbec víme, co víme, a **jak** historici s informacemi pracují."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Historický pramen",
+          "definition": "Cokoli, co vzniklo v minulosti a nese o ní informaci.",
+          "example": "Římská mince, středověká listina, fotografie z roku 1918, vzpomínky pamětníka."
+        },
+        {
+          "type": "term",
+          "term": "Primární a sekundární pramen",
+          "definition": "**Primární** pramen vznikl v době události nebo ho vytvořil přímý účastník. **Sekundární** (odvozený) vznikl později a čerpá z jiných zdrojů.",
+          "example": "Dopis vojáka z bitvy = primární. Kronika napsaná o 300 let později = sekundární."
+        },
+        {
+          "type": "term",
+          "term": "Kritika pramene",
+          "definition": "Pečlivé posouzení: kdo pramen vytvořil, kdy, proč a jestli mohl lhát nebo se mýlit."
+        },
+        {
+          "type": "heading",
+          "text": "Druhy pramenů podle formy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Příklady"
+          ],
+          "rows": [
+            [
+              "hmotné",
+              "nástroje, zbraně, stavby, hroby, mince"
+            ],
+            [
+              "písemné",
+              "listiny, kroniky, dopisy, zákony, nápisy"
+            ],
+            [
+              "obrazové",
+              "malby, mapy, fotografie"
+            ],
+            [
+              "ústní (a zvukové)",
+              "pověsti, vzpomínky pamětníků, nahrávky"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pomocné vědy historické"
+        },
+        {
+          "type": "text",
+          "text": "Na každý druh pramene existuje specialista. Těmto oborům se říká **pomocné vědy historické** – „pomáhají“ historikovi pramen správně přečíst a ověřit."
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. Pomůcka: většina názvů pochází z řečtiny nebo latiny a název napovídá (*numisma* = mince, *sfragis* = pečeť, *genea* = rod, *paleo* = starý)."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "numismatika",
+                "back": "mince a platidla"
+              },
+              {
+                "front": "sfragistika",
+                "back": "pečeti"
+              },
+              {
+                "front": "heraldika",
+                "back": "erby"
+              },
+              {
+                "front": "genealogie",
+                "back": "rodokmeny"
+              },
+              {
+                "front": "paleografie",
+                "back": "vývoj písma"
+              },
+              {
+                "front": "diplomatika",
+                "back": "listiny"
+              },
+              {
+                "front": "epigrafika",
+                "back": "nápisy na tvrdém materiálu (kámen, kov)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Najdeš listinu krále Přemysla Otakara II. s pečetí. Které pomocné vědy využiješ?",
+          "answer": "**Diplomatika** posoudí listinu (je pravá? jak je sestavená?). **Paleografie** pomůže přečíst písmo. **Sfragistika** prozkoumá pečeť. Pokud je na pečeti erb, přidá se **heraldika**."
+        },
+        {
+          "type": "example",
+          "question": "Kronikář popisuje bitvu, ve které jeho pán zvítězil. Jak k tomu přistoupíš?",
+          "answer": "Provedeš **kritiku pramene**: kronikář sloužil vítězi, mohl přehánět jeho slávu. Porovnáš kroniku s dalšími prameny – třeba se zprávou druhé strany nebo s archeologickými nálezy z bojiště."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Starší pramen je vždy pravdivější.",
+          "right": "I současník mohl lhát, přehánět nebo nevědět. Každý pramen je třeba **kriticky ověřit** a porovnat s jinými.",
+          "why": "Primární pramen je blíž události, ale autor mohl mít zájem věci překroutit (propaganda, osobní spory)."
+        },
+        {
+          "type": "summary",
+          "text": "Pramen = stopa minulosti (hmotná, písemná, obrazová, ústní). Primární vznikl v době události, sekundární později. Pomocné vědy historické pomáhají prameny číst a ověřovat."
+        }
+      ]
+    },
+    {
+      "title": "Jak měříme čas",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Píšeš datum do sešitu a nepřemýšlíš o něm. Ale proč je zrovna rok 2026? Od čeho se počítá? A jak archeolog pozná, že je kost stará 5 000 let? Na to odpovídá **chronologie** – nauka o měření času."
+        },
+        {
+          "type": "text",
+          "text": "Bez ní by dějiny byly hromada příběhů bez pořadí. S ní můžeš události seřadit a hledat příčiny a důsledky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Chronologie",
+          "definition": "Pomocná věda historická o měření času a kalendářích. Také: řazení událostí podle času."
+        },
+        {
+          "type": "term",
+          "term": "Letopočet, n. l. a př. n. l.",
+          "definition": "**Letopočet** = způsob číslování let. My počítáme od (předpokládaného) narození Krista: **n. l.** = našeho letopočtu, **př. n. l.** = před naším letopočtem.",
+          "example": "Roky př. n. l. se počítají pozpátku: rok 500 př. n. l. je starší než 400 př. n. l. Rok 0 neexistuje – po 1 př. n. l. hned následuje 1 n. l."
+        },
+        {
+          "type": "term",
+          "term": "Kalendář",
+          "definition": "Systém, jak rozdělit rok na měsíce a dny a kdy přidat přestupný den."
+        },
+        {
+          "type": "term",
+          "term": "Periodizace",
+          "definition": "Rozdělení dějin na období. Hranice jsou dohoda historiků – svět se jeden den nezměnil."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Od čeho počítáme"
+        },
+        {
+          "type": "text",
+          "text": "Počítání let od narození Krista navrhl v 6. století mnich **Dionysius Exiguus**. Spočítal to ale nepřesně – Ježíš se nejspíš narodil o několik let dřív."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Kalendáře"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Juliánský kalendář** – zavedl **Gaius Julius Caesar**, platil od roku **45 př. n. l.** Rok má 365 dní, každý 4. rok přestupný.",
+            "Juliánský rok je o 11 minut delší než skutečný. Za staletí se nasčítalo několik dní chyby.",
+            "**Gregoriánský kalendář** – vyhlásil papež **Řehoř XIII.** roku **1582**. Z kalendáře se vypustilo 10 dní a upravila se pravidla pro přestupné roky.",
+            "V českých zemích platí od roku **1584**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: Jak určit stáří nálezu"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Radiokarbonová metoda (C14)** – živé organismy obsahují radioaktivní uhlík. Po smrti se pomalu rozpadá. Podle zbylého množství se určí stáří kostí, dřeva, látek.",
+            "**Dendrochronologie** – stáří dřeva podle **letokruhů**. Každý rok přibude jeden, široký v dobrém roce, úzký ve špatném. Vzor se porovná s tabulkou."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krok 4: Velká období (pro Evropu)"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Období",
+            "Hranice (pro Evropu)"
+          ],
+          "rows": [
+            [
+              "pravěk",
+              "do vzniku písma"
+            ],
+            [
+              "starověk",
+              "do roku 476 (pád Západořímské říše)"
+            ],
+            [
+              "středověk",
+              "476–1492 (objevení Ameriky)"
+            ],
+            [
+              "novověk",
+              "od 1492"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Na ose jsou roky př. n. l. záporné. Projdi ji a všimni si, že mezi 45 př. n. l. a 476 n. l. je 520 let, ne 431 (rok 0 chybí, ale 45 + 476 − 1 = 520)."
+        },
+        {
+          "type": "widget",
+          "widget": "timeline",
+          "props": {
+            "events": [
+              {
+                "year": -45,
+                "label": "juliánský kalendář"
+              },
+              {
+                "year": 476,
+                "label": "konec starověku"
+              },
+              {
+                "year": 525,
+                "label": "Dionysius Exiguus (asi)"
+              },
+              {
+                "year": 1492,
+                "label": "začátek novověku"
+              },
+              {
+                "year": 1582,
+                "label": "gregoriánský kalendář"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik let uplynulo od roku 30 př. n. l. do roku 70 n. l.?",
+          "answer": "30 + 70 = 100, ale rok 0 neexistuje, takže odečteme 1: **99 let**."
+        },
+        {
+          "type": "example",
+          "question": "Archeolog najde trám ze středověkého domu. Kterou metodou určí rok, kdy byl strom pokácen?",
+          "answer": "**Dendrochronologií**. Porovná vzor letokruhů s tabulkou pro danou oblast a najde přesný rok posledního letokruhu – tedy kdy strom přestal růst."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rok 400 př. n. l. byl později než rok 300 př. n. l., protože 400 je větší číslo.",
+          "right": "Rok 400 př. n. l. byl **dřív** než 300 př. n. l.",
+          "why": "Před naším letopočtem se počítá pozpátku k nule. Čím větší číslo, tím dál v minulosti."
+        },
+        {
+          "type": "summary",
+          "text": "Letopočet od narození Krista (Dionysius Exiguus). Juliánský kalendář (Caesar, 45 př. n. l.) → gregoriánský (Řehoř XIII., 1582, u nás 1584). Stáří nálezů: C14 a dendrochronologie. Periodizace je dohoda: starověk do 476, středověk do 1492."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která věda zkoumá pečeti?",
+      "options": [
+        "sfragistika",
+        "heraldika",
+        "numismatika"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která věda zkoumá erby?",
+      "options": [
+        "heraldika",
+        "genealogie",
+        "diplomatika"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje pomocná věda o mincích?",
+      "answers": [
+        "numismatika"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Gregoriánský kalendář vyhlásil papež Řehoř XIII. v roce 1582.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Která metoda určuje stáří dřeva podle letokruhů?",
+      "options": [
+        "dendrochronologie",
+        "radiokarbonová metoda",
+        "stratigrafie"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď historická období.",
+      "items": [
+        "pravěk",
+        "starověk",
+        "středověk",
+        "novověk"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Kronika sepsaná o 300 let později je primárním pramenem k popisovaným událostem.",
+      "answer": false,
+      "explanation": "Vznikla dlouho po události – je to odvozený (sekundární) pramen."
+    },
+    {
+      "type": "match",
+      "question": "Spoj vědu s předmětem.",
+      "pairs": [
+        [
+          "paleografie",
+          "vývoj písma"
+        ],
+        [
+          "genealogie",
+          "rodokmeny"
+        ],
+        [
+          "epigrafika",
+          "nápisy"
+        ],
+        [
+          "diplomatika",
+          "listiny"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo zavedl juliánský kalendář?",
+      "options": [
+        "Gaius Julius Caesar",
+        "Augustus",
+        "Konstantin Veliký"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kterým rokem se obvykle končí starověk?",
+      "options": [
+        "476",
+        "1492",
+        "800"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak se dělí historické prameny? Uveď příklady.",
+      "answer": "Podle formy na hmotné (nástroje, stavby), písemné (listiny, kroniky), obrazové a ústní. Podle vztahu k události na primární (z dané doby) a sekundární (pozdější zpracování)."
+    },
+    {
+      "type": "open",
+      "question": "Proč je třeba prameny kriticky hodnotit?",
+      "answer": "Autor mohl být neobjektivní, mohl mít politický zájem, chybné informace nebo psal s velkým odstupem. Pramen je nutné porovnat s dalšími."
+    }
+  ]
+}

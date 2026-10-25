@@ -1,0 +1,369 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "teplo",
+  "title": "Teplo a jeho šíření",
+  "emoji": "🔥",
+  "explanations": [
+    {
+      "title": "V kuchyni",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Necháš lžičku v horkém čaji a za chvíli pálí. Nad topením se třepotá záclona. Slunce tě hřeje, i když je venku zima. Ve všech případech se někam **přesouvá teplo**."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, jak teplo putuje, víš i, jak ho udržet: proč termoska udrží čaj teplý, proč se nosí vrstvy oblečení a proč se zateplují domy."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Teplota",
+          "definition": "Jak je těleso teplé, ve stupních Celsia (°C). Měří se teploměrem.",
+          "example": "Čaj má 80 °C, lžička 20 °C."
+        },
+        {
+          "type": "term",
+          "term": "Teplo",
+          "definition": "Energie, která **přechází** z teplejšího tělesa na chladnější. Značka `Q`, jednotka joule (J).",
+          "example": "Z horkého čaje přechází teplo do lžičky."
+        },
+        {
+          "type": "text",
+          "text": "Teplo samo vždy putuje **z teplejšího na chladnější** – nikdy obráceně. Přestane, až mají obě tělesa stejnou teplotu."
+        },
+        {
+          "type": "heading",
+          "text": "Tři cesty tepla"
+        },
+        {
+          "type": "term",
+          "term": "Vedení",
+          "definition": "Teplo se šíří **pevnou látkou** od částice k částici, jako když si lidé v řadě podávají kbelík.",
+          "example": "Rukojeť pánve se zahřeje od plotny."
+        },
+        {
+          "type": "term",
+          "term": "Proudění",
+          "definition": "Teplá kapalina nebo plyn **stoupá nahoru** a nese teplo s sebou. Studená klesá dolů.",
+          "example": "Teplý vzduch nad radiátorem stoupá ke stropu."
+        },
+        {
+          "type": "term",
+          "term": "Záření",
+          "definition": "Teplo letí prostorem jako neviditelné paprsky. Nepotřebuje žádnou látku, funguje i ve vesmíru.",
+          "example": "Slunce, táborák, rozpálená kamna."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď situace podle toho, jakou cestou se teplo šíří."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "vedení",
+              "proudění",
+              "záření"
+            ],
+            "items": [
+              {
+                "text": "rozpálená pánev pálí v ruce",
+                "group": 0
+              },
+              {
+                "text": "studené kovové zábradlí",
+                "group": 0
+              },
+              {
+                "text": "teplý vzduch nad radiátorem",
+                "group": 1
+              },
+              {
+                "text": "vítr u moře",
+                "group": 1
+              },
+              {
+                "text": "ohřívání vody v hrnci zespodu",
+                "group": 1
+              },
+              {
+                "text": "hřejivé slunce",
+                "group": 2
+              },
+              {
+                "text": "teplo od táboráku do obličeje",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Tepelný vodič a izolant",
+          "definition": "**Vodič** vede teplo dobře (kovy). **Izolant** špatně (vzduch, peří, vlna, polystyren, dřevo).",
+          "example": "Péřová bunda hřeje díky vzduchu uvězněnému mezi peříčky."
+        },
+        {
+          "type": "example",
+          "question": "Proč je radiátor pod oknem u podlahy?",
+          "answer": "Teplý vzduch od radiátoru **stoupá** nahoru, u stropu se rozlije, chladne a klesá. Celá místnost se ohřeje **prouděním**."
+        },
+        {
+          "type": "example",
+          "question": "Jak termoska udrží čaj teplý?",
+          "answer": "Má dvojitou stěnu a mezi stěnami je **vakuum** (žádný vzduch) – zastaví vedení i proudění. Lesklý povrch odráží **záření** zpátky."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kovové zábradlí je v zimě studenější než dřevěné.",
+          "right": "Obojí má stejnou teplotu. Kov jen rychleji odvádí teplo z ruky.",
+          "why": "Kov je dobrý vodič tepla. Proto ruka ztrácí teplo rychle a my to cítíme jako „studené“."
+        },
+        {
+          "type": "summary",
+          "text": "Teplo přechází z teplejšího na chladnější. Šíří se vedením, prouděním a zářením. Vzduch je dobrý izolant."
+        }
+      ]
+    },
+    {
+      "title": "Kolik tepla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč se hrnec s vodou ohřívá tak dlouho, zatímco prázdný hrnec je rozpálený hned? Kolik energie stojí koupel ve vaně? Teplo umíme spočítat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Teplo `Q`",
+          "definition": "Energie, kterou těleso přijme nebo odevzdá, když se ohřívá nebo ochlazuje. V joulech (J).",
+          "example": "Voda na čaj přijme ze sporáku teplo."
+        },
+        {
+          "type": "term",
+          "term": "Změna teploty `Δt`",
+          "definition": "O kolik stupňů se teplota změní: konečná minus počáteční. Δ („delta“) znamená „změna“.",
+          "example": "Z 20 °C na 70 °C: Δt = 50 °C."
+        },
+        {
+          "type": "term",
+          "term": "Měrná tepelná kapacita `c`",
+          "definition": "Kolik joulů potřebuje **1 kg** látky, aby se ohřál o **1 °C**. Každá látka má jinou.",
+          "example": "Voda potřebuje 4 200 J – hodně. Měď jen 380 J."
+        },
+        {
+          "type": "heading",
+          "text": "Porovnej látky"
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje, kolik joulů potřebuje 1 kg látky na ohřátí o 1 °C. Která látka se stejným teplem ohřeje nejvíc?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "J/(kg·°C)",
+            "items": [
+              {
+                "label": "voda",
+                "value": 4200
+              },
+              {
+                "label": "hliník",
+                "value": 900
+              },
+              {
+                "label": "železo",
+                "value": 450
+              },
+              {
+                "label": "měď",
+                "value": 380
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Měď má c nejmenší – se stejným teplem se ohřeje nejvíc. Voda se ohřívá pomalu a pomalu i chladne. Proto se jí plní radiátory a termofory."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorec ze zkušenosti"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Dvakrát víc vody → potřebuješ dvakrát víc tepla (hmotnost `m`).",
+            "Ohřát o 20 °C místo o 10 °C → dvakrát víc tepla (`Δt`).",
+            "Jiná látka → jiné množství (`c`)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Všechno vynásobíme: `Q = m · c · Δt`."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Hmotnost v kg (1 litr vody ≈ 1 kg).",
+            "Najdi c látky (voda 4 200 J/(kg·°C)).",
+            "Spočítej Δt = konečná − počáteční teplota.",
+            "Vynásob Q = m · c · Δt.",
+            "Velká čísla převeď na kJ (děl 1 000)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik tepla potřebuješ k ohřátí 3 kg vody o 20 °C?",
+          "answer": "Q = 3 · 4 200 · 20 = 252 000 J = **252 kJ**."
+        },
+        {
+          "type": "example",
+          "question": "O kolik °C se ohřeje 0,5 kg vody, dodáš-li 21 000 J?",
+          "answer": "Δt = Q : (m · c) = 21 000 : (0,5 · 4 200) = 21 000 : 2 100 = **10 °C**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Voda z 20 °C na 80 °C: Δt = 80 °C",
+          "right": "Δt = 80 − 20 = 60 °C",
+          "why": "Do vzorce patří **změna** teploty, ne konečná teplota."
+        },
+        {
+          "type": "summary",
+          "text": "`Q = m · c · Δt`. Voda má velkou měrnou tepelnou kapacitu (4 200 J/(kg·°C)), proto se ohřívá i chladne pomalu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se šíří teplo ze Slunce na Zemi?",
+      "options": [
+        "zářením",
+        "vedením",
+        "prouděním",
+        "vůbec"
+      ],
+      "answer": 0,
+      "explanation": "Vesmírem je vakuum, vedení ani proudění tam nefungují."
+    },
+    {
+      "type": "input",
+      "question": "Kolik tepla v J je potřeba k ohřátí 1 kg vody o 1 °C?",
+      "answers": [
+        "4200"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik kJ tepla potřebuješ k ohřátí 3 kg vody o 20 °C? (c = 4 200 J/(kg·°C))",
+      "answers": [
+        "252"
+      ],
+      "explanation": "3 · 4 200 · 20 = 252 000 J"
+    },
+    {
+      "type": "truefalse",
+      "question": "Teplo samovolně přechází z chladnějšího tělesa na teplejší.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Co je dobrý tepelný izolant?",
+      "options": [
+        "vzduch v peří",
+        "měď",
+        "hliník",
+        "železo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Proč je radiátor u podlahy pod oknem?",
+      "options": [
+        "teplý vzduch stoupá a místnost se ohřívá prouděním",
+        "aby nepřekážel",
+        "kvůli záření ze Slunce"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik °C se ohřeje 0,5 kg vody, dodáme-li 21 000 J? (c = 4 200 J/(kg·°C))",
+      "answers": [
+        "10"
+      ],
+      "explanation": "Δt = 21 000 : (0,5 · 4 200) = 10"
+    },
+    {
+      "type": "truefalse",
+      "question": "Termoska omezuje vedení, proudění i záření tepla.",
+      "answer": true,
+      "explanation": "Vakuum mezi stěnami a lesklý povrch."
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu s jednotkou.",
+      "pairs": [
+        [
+          "teplo Q",
+          "J"
+        ],
+        [
+          "teplota t",
+          "°C"
+        ],
+        [
+          "měrná tepelná kapacita c",
+          "J/(kg·°C)"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které těleso se stejným teplem ohřeje nejvíc (stejné hmotnosti)?",
+      "options": [
+        "měď",
+        "voda",
+        "hliník"
+      ],
+      "answer": 0,
+      "explanation": "Měď má nejmenší c."
+    },
+    {
+      "type": "open",
+      "question": "Jakými třemi způsoby se šíří teplo? Ke každému příklad.",
+      "answer": "Vedením (lžička v čaji), prouděním (teplý vzduch nad topením) a zářením (Slunce, táborák)."
+    },
+    {
+      "type": "open",
+      "question": "Na čem závisí teplo potřebné k ohřátí tělesa?",
+      "answer": "Na hmotnosti, na látce (měrné tepelné kapacitě) a na tom, o kolik ho ohříváme: Q = m · c · Δt."
+    }
+  ]
+}

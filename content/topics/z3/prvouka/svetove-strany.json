@@ -1,0 +1,315 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "svetove-strany",
+  "title": "Světové strany a orientace",
+  "emoji": "🧭",
+  "explanations": [
+    {
+      "title": "Podle Slunce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ztratit se v lese nebo v cizím městě není příjemné. Lidé si proto už dávno vymysleli směry, které platí všude na světě."
+        },
+        {
+          "type": "text",
+          "text": "Těm směrům říkáme světové strany. Nejstarší pomocník, jak je poznat, je Slunce. To máš na obloze skoro každý den."
+        },
+        {
+          "type": "term",
+          "term": "Světové strany",
+          "definition": "Čtyři hlavní směry: **sever (S)**, **jih (J)**, **východ (V)** a **západ (Z)**.",
+          "example": "Polsko je od nás na sever."
+        },
+        {
+          "type": "term",
+          "term": "Orientace",
+          "definition": "Umět zjistit, kde jsem a kterým směrem mám jít.",
+          "example": "Orientuji se podle Slunce nebo mapy."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta Slunce po obloze"
+        },
+        {
+          "type": "text",
+          "text": "Slunce ráno **vychází na východě**, v poledne je u nás **na jihu** a večer **zapadá na západě**. Na severu u nás Slunce nikdy nestojí. Klepni a sleduj jeho cestu."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "ráno: východ ☀️",
+              "poledne: jih 🌞",
+              "večer: západ 🌇",
+              "noc: Slunce není vidět 🌙"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak najdu sever"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "V poledne se postavím čelem ke Slunci.",
+            "Před sebou mám **jih**.",
+            "Za zády mám **sever**.",
+            "Vlevo je **východ**, vpravo **západ**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Je ráno a Slunce právě vychází. Kterým směrem se díváš, když se na něj díváš?",
+          "answer": "Slunce vychází na východě. Dívám se na **východ**."
+        },
+        {
+          "type": "example",
+          "question": "V poledne stojíš zády ke Slunci. Kam se díváš?",
+          "answer": "V poledne je Slunce na jihu. Jih mám za zády, takže se dívám na **sever**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V poledne je Slunce na severu.",
+          "right": "V poledne je u nás Slunce na jihu.",
+          "why": "Česko leží na severní polovině Země. Slunce tu v poledne vidíme vždy jižním směrem."
+        },
+        {
+          "type": "summary",
+          "text": "Slunce vychází na východě, v poledne je na jihu a zapadá na západě. Sever je naproti jihu."
+        }
+      ]
+    },
+    {
+      "title": "Kompas",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Co když je zataženo a Slunce není vidět? Pak pomůže kompas. Ten ukazuje směr za každého počasí, ve dne i v noci."
+        },
+        {
+          "type": "text",
+          "text": "S kompasem a mapou najdeš cestu i v neznámém lese."
+        },
+        {
+          "type": "term",
+          "term": "Kompas",
+          "definition": "Přístroj s otáčivou střelkou. Jeden konec střelky ukazuje vždy na **sever**.",
+          "example": "Turisté nosí kompas v batohu."
+        },
+        {
+          "type": "term",
+          "term": "Střelka",
+          "definition": "Malá šipka v kompasu. Bývá napůl obarvená; obarvený konec (často červený) míří na sever.",
+          "example": "Červená špička střelky ukazuje S."
+        },
+        {
+          "type": "term",
+          "term": "Zkratky stran",
+          "definition": "Světové strany píšeme prvním písmenem: **S** sever, **J** jih, **V** východ, **Z** západ.",
+          "example": "Na kompasu je nahoře S."
+        },
+        {
+          "type": "heading",
+          "text": "Jak použít kompas"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kompas polož vodorovně na dlaň nebo na zem.",
+            "Počkej, až se střelka uklidní.",
+            "Obarvený konec střelky ukazuje na **sever**.",
+            "Otoč se čelem k severu. Za zády máš **jih**.",
+            "Po pravé ruce je **východ**, po levé **západ**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sever na mapě"
+        },
+        {
+          "type": "text",
+          "text": "Na mapách bývá **sever nahoře**, jih dole, východ vpravo a západ vlevo. Jako když stojíš čelem k severu."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Naproti severu je ",
+                "after": ".",
+                "options": [
+                  "jih",
+                  "východ"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Stojím čelem k severu. Vpravo mám ",
+                "after": ".",
+                "options": [
+                  "východ",
+                  "západ"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Na mapě je nahoře ",
+                "after": ".",
+                "options": [
+                  "sever",
+                  "jih"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Stojíš čelem k severu. Co máš po pravé ruce?",
+          "answer": "Čelem k severu: vpravo **východ**, vlevo západ, za zády jih."
+        },
+        {
+          "type": "example",
+          "question": "Na mapě je Polsko nad Českem. Kterým směrem je od nás?",
+          "answer": "Nahoře na mapě je sever. Polsko je od nás na **sever**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kompas ukazuje tam, kam chci jít.",
+          "right": "Kompas ukazuje vždy na sever.",
+          "why": "Střelka se natáčí podle Země, ne podle tebe. Svůj směr si odvodíš od severu."
+        },
+        {
+          "type": "summary",
+          "text": "Střelka kompasu ukazuje na sever. Čelem k severu: vzadu jih, vpravo východ, vlevo západ. Na mapě je sever nahoře."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik je hlavních světových stran?",
+      "answers": [
+        "4",
+        "čtyři"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kde Slunce vychází?",
+      "options": [
+        "na východě",
+        "na západě",
+        "na severu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde Slunce zapadá?",
+      "options": [
+        "na západě",
+        "na východě",
+        "na jihu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kam ukazuje střelka kompasu?",
+      "options": [
+        "na sever",
+        "na jih",
+        "na západ"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Na mapě je sever nahoře.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "V poledne je u nás Slunce na severu.",
+      "answer": false,
+      "explanation": "V poledne je Slunce na jihu."
+    },
+    {
+      "type": "match",
+      "question": "Spoj zkratku.",
+      "pairs": [
+        [
+          "S",
+          "sever"
+        ],
+        [
+          "J",
+          "jih"
+        ],
+        [
+          "V",
+          "východ"
+        ],
+        [
+          "Z",
+          "západ"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která strana je naproti severu?",
+      "options": [
+        "jih",
+        "východ",
+        "západ"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď, kde je Slunce během dne.",
+      "items": [
+        "východ",
+        "jih",
+        "západ"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Stojíš čelem k severu. Co máš vlevo?",
+      "options": [
+        "západ",
+        "východ",
+        "jih"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak určíš sever bez kompasu?",
+      "answer": "Podle Slunce: v poledne je na jihu, takže sever mám za zády. Ráno je Slunce na východě."
+    },
+    {
+      "type": "open",
+      "question": "Jak se používá kompas?",
+      "answer": "Položím ho vodorovně. Střelka ukáže sever, za mnou je jih, vpravo východ a vlevo západ."
+    }
+  ]
+}

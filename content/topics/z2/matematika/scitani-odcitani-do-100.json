@@ -1,0 +1,308 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "scitani-odcitani-do-100",
+  "title": "Plus a mínus do 100 bez přechodu",
+  "emoji": "🧱",
+  "generator": "add100",
+  "explanations": [
+    {
+      "title": "Zvlášť",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V jednom pytlíku je 34 kuliček, v druhém 25. Kolik jich je dohromady? Spočítat to po jedné by trvalo dlouho."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se rychlý způsob: **desítky počítáš zvlášť a jednotky zvlášť**. Hodí se to třeba při placení desetikorunami a korunami."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desítky a jednotky",
+          "definition": "Desítky = balíčky po 10. Jednotky = volné kusy.",
+          "example": "34 = 3 desítky (30) a 4 jednotky."
+        },
+        {
+          "type": "term",
+          "term": "Rozložit číslo",
+          "definition": "Rozdělit ho na desítky a jednotky.",
+          "example": "25 = 20 + 5"
+        },
+        {
+          "type": "term",
+          "term": "Bez přechodu",
+          "definition": "Jednotky se sečtou nanejvýš do 9 (nebo se dají odečíst), takže nevznikne nová desítka.",
+          "example": "4 + 5 = 9 – to je bez přechodu."
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání: 34 + 25"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozlož: 34 = 30 + 4, 25 = 20 + 5.",
+            "Desítky: 30 + 20 = **50**.",
+            "Jednotky: 4 + 5 = **9**.",
+            "Dohromady: 50 + 9 = **59**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Odčítání: 87 − 42"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozlož: 87 = 80 + 7, 42 = 40 + 2.",
+            "Desítky: 80 − 40 = **40**.",
+            "Jednotky: 7 − 2 = **5**.",
+            "Dohromady: 40 + 5 = **45**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je výsledek 59: 5 tyček a 9 kostiček. Kolik tyček přidalo číslo 25? A kolik kostiček?"
+        },
+        {
+          "type": "widget",
+          "widget": "place-value",
+          "props": {
+            "value": 59
+          }
+        },
+        {
+          "type": "example",
+          "question": "45 + 32 =",
+          "answer": "Desítky: 40 + 30 = 70. Jednotky: 5 + 2 = 7. **77**."
+        },
+        {
+          "type": "example",
+          "question": "40 + 30 =",
+          "answer": "Jsou to 4 desítky a 3 desítky = 7 desítek = **70**. Jako 4 + 3 = 7, jen s desítkami."
+        },
+        {
+          "type": "mistake",
+          "wrong": "23 + 6 = 83",
+          "right": "23 + 6 = **29**",
+          "why": "6 jsou jednotky, ne desítky. Přičítají se k jednotkám: 3 + 6 = 9. Desítky zůstanou 2."
+        },
+        {
+          "type": "summary",
+          "text": "Desítky k desítkám, jednotky k jednotkám. Nakonec obojí spoj."
+        }
+      ]
+    },
+    {
+      "title": "Skoky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kniha má 85 stran. Přečetl jsi 40. Kolik stran ti zbývá? Dá se to „doskákat“."
+        },
+        {
+          "type": "text",
+          "text": "Na čáře s čísly můžeš dělat **velké skoky po deseti** a **malé skoky po jedné**. Tak spočítáš i velká čísla v hlavě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Číselná osa",
+          "definition": "Čára s čísly. Doprava rostou, doleva klesají."
+        },
+        {
+          "type": "term",
+          "term": "Velký skok",
+          "definition": "Skok o 10 – o jednu desítku.",
+          "example": "Z 76 velkým skokem doleva na 66."
+        },
+        {
+          "type": "term",
+          "term": "Malý skok",
+          "definition": "Skok o 1.",
+          "example": "Z 66 malým skokem doleva na 65."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Stoupni si na první číslo.",
+            "Udělej **velké skoky** – tolik, kolik má druhé číslo desítek.",
+            "Udělej **malé skoky** – tolik, kolik má druhé číslo jednotek.",
+            "Plus = doprava, mínus = doleva."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Počítáme 76 − 30. Na ose jsou jen desítky, tak začneme na 70. Žabka skočí 3 velké skoky doleva. Kde přistane?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "start": 70,
+            "hop": -30
+          }
+        },
+        {
+          "type": "text",
+          "text": "70 − 30 = 40. Jednotek 6 jsme si schovali, teď je přidáme: **76 − 30 = 46**."
+        },
+        {
+          "type": "example",
+          "question": "58 − 23 =",
+          "answer": "Ze 58 dva velké skoky doleva: 48, **38**. Pak tři malé: 37, 36, **35**. **58 − 23 = 35**."
+        },
+        {
+          "type": "example",
+          "question": "61 + 27 =",
+          "answer": "Z 61 dva velké skoky doprava: 71, 81. Pak sedm malých: 82 … 88. **61 + 27 = 88**."
+        },
+        {
+          "type": "example",
+          "question": "Kniha má 85 stran. Přečetl jsi 40. Kolik zbývá?",
+          "answer": "Zbývá → mínus. Z 85 čtyři velké skoky doleva: 75, 65, 55, 45. **Zbývá 45 stran.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "76 − 24 = 42",
+          "right": "76 − 24 = **52**",
+          "why": "Dva velké skoky z 76 jsou 66, 56. Pak 4 malé: 55, 54, 53, 52. Chyba vzniká, když uděláš o velký skok víc."
+        },
+        {
+          "type": "summary",
+          "text": "Nejdřív skoč desítky (velké skoky), pak jednotky (malé skoky)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "40 + 30 =",
+      "answers": [
+        "70"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "90 − 50 =",
+      "answers": [
+        "40"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "23 + 6 =",
+      "answers": [
+        "29"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "45 + 32 =",
+      "answers": [
+        "77"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "68 − 5 =",
+      "answers": [
+        "63"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "87 − 42 =",
+      "answers": [
+        "45"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "50 + 50 =",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "61 + 27 =",
+      "options": [
+        "88",
+        "78",
+        "86"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "99 − 33 =",
+      "options": [
+        "63",
+        "66",
+        "76"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "54 + 14 = 68",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "76 − 24 = 42",
+      "answer": false,
+      "explanation": "76 − 20 = 56, 56 − 4 = 52."
+    },
+    {
+      "type": "input",
+      "question": "Kniha má 85 stran. Přečetl jsi 40. Kolik stran zbývá?",
+      "answers": [
+        "45"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, jak spočítáš 34 + 25.",
+      "answer": "Sečtu desítky 30 + 20 = 50 a jednotky 4 + 5 = 9. Dohromady 59."
+    },
+    {
+      "type": "open",
+      "question": "Proč je 40 + 30 podobné jako 4 + 3?",
+      "answer": "Počítám desítky: 4 desítky a 3 desítky je 7 desítek, tedy 70."
+    }
+  ]
+}

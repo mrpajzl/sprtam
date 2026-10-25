@@ -1,0 +1,493 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "slovesa",
+  "title": "Slovesa",
+  "emoji": "🏃",
+  "explanations": [
+    {
+      "title": "Čtyři otázky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Bez sloves by věta nefungovala. Zkus říct jen *Já … do školy.* Nevíme, jestli jdeš, jedeš, nebo nechceš. Teprve slovo **jdu** dá větě smysl."
+        },
+        {
+          "type": "text",
+          "text": "Slova, která říkají, co kdo **dělá** nebo co se **děje**, se jmenují **slovesa**. Mění se podle toho, kdo to dělá, kolik jich je, kdy se to děje a jestli to je skutečnost, rozkaz, nebo přání. Tyto údaje se naučíš určovat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Slovo, které vyjadřuje činnost (běžet), stav (spát) nebo změnu (zčervenat). Ptáš se **co dělá? co se děje?**",
+          "example": "píšu, spí, prší, zbledl"
+        },
+        {
+          "type": "term",
+          "term": "Infinitiv",
+          "definition": "Základní tvar slovesa, jako ve slovníku. Končí na **-t** (dříve i -ti).",
+          "example": "psát, číst, běhat, jít"
+        },
+        {
+          "type": "term",
+          "term": "Mluvnické kategorie",
+          "definition": "Údaje, které u slova určujeme. U sloves to jsou **osoba, číslo, čas a způsob**."
+        },
+        {
+          "type": "heading",
+          "text": "1. Osoba – kdo to dělá?"
+        },
+        {
+          "type": "term",
+          "term": "Osoba",
+          "definition": "**1. osoba** – mluvčí sám (já, my). **2. osoba** – ten, ke komu mluvím (ty, vy). **3. osoba** – ten, o kom mluvím (on, ona, ono, oni).",
+          "example": "jdu (1.), jdeš (2.), jde (3.)"
+        },
+        {
+          "type": "heading",
+          "text": "2. Číslo – kolik jich je?"
+        },
+        {
+          "type": "term",
+          "term": "Číslo",
+          "definition": "**Jednotné** – jeden (já, ty, on). **Množné** – víc (my, vy, oni).",
+          "example": "čtu – čteme"
+        },
+        {
+          "type": "heading",
+          "text": "3. Čas – kdy se to děje?"
+        },
+        {
+          "type": "term",
+          "term": "Čas",
+          "definition": "**Minulý** – už se to stalo. **Přítomný** – děje se to teď. **Budoucí** – teprve se to stane.",
+          "example": "četl jsem – čtu – budu číst"
+        },
+        {
+          "type": "term",
+          "term": "Složený tvar",
+          "definition": "Tvar slovesa, který má **víc slov** než jedno.",
+          "example": "*budu číst*, *četl jsem*, *četl bych*. Jednoduchý tvar: *čtu*."
+        },
+        {
+          "type": "heading",
+          "text": "4. Způsob – je to skutečnost, rozkaz, nebo přání?"
+        },
+        {
+          "type": "term",
+          "term": "Způsob",
+          "definition": "**Oznamovací** – oznamuji, co se děje (píšu). **Rozkazovací** – rozkazuji nebo prosím (piš!). **Podmiňovací** – co by se stalo, přání (psal bych).",
+          "example": "čtu / čti! / četl bych"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi sloveso: *čteme*.",
+            "Osoba: kdo? **my** → 1. osoba.",
+            "Číslo: my = víc lidí → **množné**.",
+            "Čas: děje se teď → **přítomný**.",
+            "Způsob: oznamuji skutečnost → **oznamovací**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči osobu, číslo, čas a způsob: *jdeš*",
+          "answer": "**ty** jdeš → 2. osoba, jednotné číslo, přítomný čas, způsob oznamovací."
+        },
+        {
+          "type": "example",
+          "question": "Urči: *přišli bychom*",
+          "answer": "**my** bychom přišli → 1. osoba, množné číslo. Je tam *bychom* – co by se stalo → způsob **podmiňovací**. (Čas se u podmiňovacího způsobu v 6. třídě obvykle neurčuje.)"
+        },
+        {
+          "type": "text",
+          "text": "Zkus to sám: zařaď tvary podle způsobu."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "oznamovací",
+              "rozkazovací",
+              "podmiňovací"
+            ],
+            "items": [
+              {
+                "text": "píšu",
+                "group": 0
+              },
+              {
+                "text": "šel jsem",
+                "group": 0
+              },
+              {
+                "text": "budu spát",
+                "group": 0
+              },
+              {
+                "text": "piš!",
+                "group": 1
+              },
+              {
+                "text": "pojďme!",
+                "group": 1
+              },
+              {
+                "text": "zavolej!",
+                "group": 1
+              },
+              {
+                "text": "psal bych",
+                "group": 2
+              },
+              {
+                "text": "šli bychom",
+                "group": 2
+              },
+              {
+                "text": "zavolali byste",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Zvratné sloveso",
+          "definition": "Sloveso, které má u sebe **se** nebo **si**.",
+          "example": "bát se, smát se, hrát si"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kdybychom měli čas, šli bysme ven.",
+          "right": "Kdybychom měli čas, šli bychom ven.",
+          "why": "*Bysme* je hovorové. Spisovně: bych, bys, by, **bychom**, **byste**, by."
+        },
+        {
+          "type": "summary",
+          "text": "U slovesa určuješ osobu (já/ty/on), číslo (jeden/víc), čas (minulý, přítomný, budoucí) a způsob (oznamovací, rozkazovací, podmiňovací)."
+        }
+      ]
+    },
+    {
+      "title": "Na časové ose",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si včerejšek, dnešek a zítřek. Včera jsi **hrál** fotbal. Dnes **hraješ** na počítači. Zítra **budeš hrát** na kytaru. Pořád stejná činnost, ale slovo se mění."
+        },
+        {
+          "type": "text",
+          "text": "Slovo, které říká, co kdo **dělá**, je **sloveso**. Podle tvaru slovesa poznáš, **kdy** se to děje, **kdo** to dělá a jestli jde o **rozkaz** nebo **přání**."
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Slovo pro činnost nebo děj. Ptáš se **co dělá? co se děje?**",
+          "example": "hraje, roste, sněží"
+        },
+        {
+          "type": "term",
+          "term": "Infinitiv",
+          "definition": "Neurčitý tvar slovesa – nevíš z něj, kdo to dělá ani kdy. Končí na **-t**. Tak sloveso najdeš ve slovníku.",
+          "example": "píšu → **psát**, jdu → **jít**"
+        },
+        {
+          "type": "heading",
+          "text": "Kdy: tři časy"
+        },
+        {
+          "type": "text",
+          "text": "Seřaď si časy na ose od včerejška do zítřka:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Minulý (včera)",
+            "Přítomný (teď)",
+            "Budoucí (zítra)"
+          ],
+          "rows": [
+            [
+              "četl jsem",
+              "čtu",
+              "budu číst"
+            ],
+            [
+              "hráli jsme",
+              "hrajeme",
+              "budeme hrát"
+            ],
+            [
+              "šel jsi",
+              "jdeš",
+              "půjdeš"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Některé tvary mají jedno slovo (*čtu*), jiné víc slov (*budu číst*, *četl jsem*). Tvarům z víc slov říkáme **složené**."
+        },
+        {
+          "type": "heading",
+          "text": "Kdo: osoba a číslo"
+        },
+        {
+          "type": "text",
+          "text": "Sloveso prozradí, kdo to dělá, i když to ve větě není napsané. *Čtu* – to jsem já. *Čtete* – to jste vy."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Osoba",
+            "Jednotné číslo (jeden)",
+            "Množné číslo (víc)"
+          ],
+          "rows": [
+            [
+              "1. (mluvím já)",
+              "já čtu",
+              "my čteme"
+            ],
+            [
+              "2. (mluvím k tobě)",
+              "ty čteš",
+              "vy čtete"
+            ],
+            [
+              "3. (mluvím o někom)",
+              "on čte",
+              "oni čtou"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak: tři způsoby"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Oznamovací** – říkám, co se děje, stalo nebo stane: *Píšu úkol.*",
+            "**Rozkazovací** – rozkazuji, prosím: *Piš! Pišme! Pište!*",
+            "**Podmiňovací** – co by bylo, kdyby; přání: *Psal bych, kdybych měl pero.*"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Podmiňovací způsob se tvoří se slovíčky **bych, bys, by, bychom, byste, by**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Šli bysme ven.",
+          "right": "Šli bychom ven.",
+          "why": "*Bysme* je hovorové. Spisovně je jen **bychom** (my) a **byste** (vy)."
+        },
+        {
+          "type": "heading",
+          "text": "Zvratná slovesa"
+        },
+        {
+          "type": "term",
+          "term": "Zvratné sloveso",
+          "definition": "Sloveso, které má u sebe **se** nebo **si**. Bez nich buď nedává smysl, nebo znamená něco jiného.",
+          "example": "bát se, smát se, hrát si, myslet si"
+        },
+        {
+          "type": "example",
+          "question": "Najdi infinitiv a urči čas: *půjdeme*",
+          "answer": "Infinitiv: **jít**. My půjdeme – stane se to teprve → **budoucí** čas, 1. osoba, množné číslo, oznamovací způsob."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od minulosti: *budu číst, četl jsem, čtu*",
+          "answer": "Nejdřív minulost **četl jsem**, pak teď **čtu**, nakonec budoucnost **budu číst**."
+        },
+        {
+          "type": "text",
+          "text": "Zkus to: doplň tvar slovesa podle času nebo způsobu."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Včera jsem ",
+                "after": " knihu. (minulý)",
+                "options": [
+                  "četl",
+                  "čtu",
+                  "budu číst"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Zítra ",
+                "after": " do kina. (budoucí)",
+                "options": [
+                  "půjdu",
+                  "jdu",
+                  "šel jsem"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "",
+                "after": " okno! (rozkazovací)",
+                "options": [
+                  "Zavři",
+                  "Zavřel bych",
+                  "Zavřu"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Kdybych měl čas, ",
+                "after": " ti. (podmiňovací)",
+                "options": [
+                  "pomohl bych",
+                  "pomůžu",
+                  "pomoz"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "summary",
+          "text": "Sloveso prozradí kdo (osoba, číslo), kdy (minulý, přítomný, budoucí čas) a jak (oznamovací, rozkazovací, podmiňovací způsob). Spisovně: bychom, byste."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký čas má *budeme hrát*?",
+      "options": [
+        "budoucí",
+        "přítomný",
+        "minulý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký způsob má *Zavři okno!*?",
+      "options": [
+        "rozkazovací",
+        "oznamovací",
+        "podmiňovací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak je to spisovně?",
+      "options": [
+        "Šli bychom ven.",
+        "Šli bysme ven.",
+        "Šli by jsme ven."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Napiš infinitiv slovesa *píšu*.",
+      "answers": [
+        "psát"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "*Byste* je spisovný tvar (vy byste šli).",
+      "answer": true,
+      "explanation": "Nespisovné je jen *bysme*."
+    },
+    {
+      "type": "choice",
+      "question": "Kolikátá osoba je *jdeš*?",
+      "options": [
+        "1.",
+        "2.",
+        "3."
+      ],
+      "answer": 1,
+      "explanation": "ty jdeš → 2. osoba."
+    },
+    {
+      "type": "match",
+      "question": "Spoj tvar s časem.",
+      "pairs": [
+        [
+          "psal jsem",
+          "minulý"
+        ],
+        [
+          "píšu",
+          "přítomný"
+        ],
+        [
+          "budu psát",
+          "budoucí"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které sloveso je zvratné?",
+      "options": [
+        "bát se",
+        "běhat",
+        "skákat"
+      ],
+      "answer": 0,
+      "explanation": "Má u sebe zvratné *se* nebo *si*."
+    },
+    {
+      "type": "choice",
+      "question": "Který tvar je **složený** (má víc slov)?",
+      "options": [
+        "budu číst",
+        "čtu",
+        "čti"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od minulosti po budoucnost.",
+      "items": [
+        "četl jsem",
+        "čtu",
+        "budu číst"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Urči osobu, číslo a způsob u *přišli bychom*.",
+      "answer": "1. osoba, číslo množné, způsob podmiňovací."
+    },
+    {
+      "type": "open",
+      "question": "Jaké mluvnické kategorie určujeme u sloves?",
+      "answer": "Osobu, číslo, čas a způsob. (V 7. třídě přibude vid a rod.)"
+    }
+  ]
+}

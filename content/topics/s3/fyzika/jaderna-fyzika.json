@@ -1,0 +1,390 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "jaderna-fyzika",
+  "title": "Jaderná fyzika",
+  "emoji": "☢️",
+  "explanations": [
+    {
+      "title": "Datování uhlíkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Archeologové najdou kus dřeva z pravěkého ohniště. Jak poznají, že je 10 000 let staré? Pomůže jim radioaktivní uhlík, který se v něm pomalu rozpadá – jako přesné přírodní hodiny."
+        },
+        {
+          "type": "text",
+          "text": "Jaderná fyzika vysvětluje, proč svítí Slunce, jak funguje jaderná elektrárna v Temelíně, jak lékaři léčí nádory zářením i proč je radioaktivita nebezpečná."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jádro atomu",
+          "definition": "Malinký střed atomu, ve kterém je skoro celá jeho hmotnost. Skládá se z **protonů** (kladné) a **neutronů** (bez náboje). Obojím se říká **nukleony**."
+        },
+        {
+          "type": "term",
+          "term": "Protonové číslo Z",
+          "definition": "Počet protonů. Určuje, o jaký prvek jde.",
+          "example": "Z = 6 je vždy uhlík, Z = 92 uran."
+        },
+        {
+          "type": "term",
+          "term": "Nukleonové číslo A",
+          "definition": "Počet všech nukleonů (protony + neutrony). Neutronů je `N = A − Z`.",
+          "example": "¹⁴C: A = 14, Z = 6, neutronů 8."
+        },
+        {
+          "type": "term",
+          "term": "Izotopy",
+          "definition": "Atomy stejného prvku (stejné Z) s různým počtem neutronů (různé A).",
+          "example": "¹²C a ¹⁴C jsou izotopy uhlíku."
+        },
+        {
+          "type": "term",
+          "term": "Radioaktivita",
+          "definition": "Některá jádra jsou nestabilní a sama se rozpadají na jiná, přitom vyzáří záření."
+        },
+        {
+          "type": "heading",
+          "text": "Poločas rozpadu"
+        },
+        {
+          "type": "text",
+          "text": "Nikdo neví, kdy se rozpadne jedno konkrétní jádro. Ale u obrovského množství jader platí přesné pravidlo: za určitou dobu se rozpadne vždy polovina."
+        },
+        {
+          "type": "term",
+          "term": "Poločas rozpadu T",
+          "definition": "Doba, za kterou se rozpadne polovina jader. Pro ¹⁴C je to 5 730 let."
+        },
+        {
+          "type": "text",
+          "text": "Sleduj graf: po každém poločase zbude polovina toho, co bylo. Kolik procent zbude po 3 poločasech?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "% jader",
+            "items": [
+              {
+                "label": "0 T",
+                "value": 100
+              },
+              {
+                "label": "1 T",
+                "value": 50
+              },
+              {
+                "label": "2 T",
+                "value": 25
+              },
+              {
+                "label": "3 T",
+                "value": 12.5
+              },
+              {
+                "label": "4 T",
+                "value": 6.25
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Živý strom stále přijímá uhlík ze vzduchu, takže má stálý podíl ¹⁴C. Po smrti příjem skončí a ¹⁴C ubývá. Ze zbylého množství se spočítá stáří."
+        },
+        {
+          "type": "example",
+          "question": "Ve vzorku dřeva zbyla čtvrtina původního ¹⁴C. Jak je staré?",
+          "answer": "Čtvrtina = ½ · ½ = 2 poločasy. 2 · 5 730 = **11 460 let**."
+        },
+        {
+          "type": "heading",
+          "text": "Druhy záření"
+        },
+        {
+          "type": "text",
+          "text": "**α** (alfa) – jádra helia (2 protony + 2 neutrony); zastaví je list papíru. **β** (beta) – elektrony nebo pozitrony; zastaví je hliníkový plech. **γ** (gama) – fotony s velkou energií; zeslabí je až olovo nebo beton. Chrání nás **vzdálenost, krátký čas a stínění**."
+        },
+        {
+          "type": "heading",
+          "text": "Odkud se bere jaderná energie"
+        },
+        {
+          "type": "text",
+          "text": "Nukleony v jádře drží pohromadě obrovská jaderná síla. Nejpevněji jsou svázané jádra kolem **železa**. Proto se energie uvolní, když se těžké jádro (uran) **rozštěpí**, i když se lehká jádra (vodík) **sloučí** – v obou případech vzniknou jádra pevněji vázaná. Elektrárny štěpí uran, Slunce slučuje vodík na helium."
+        },
+        {
+          "type": "example",
+          "question": "Kolik neutronů má jádro ²³⁵₉₂U?",
+          "answer": "N = A − Z = 235 − 92 = **143**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Po dvou poločasech se rozpadne všechno.",
+          "right": "Po dvou poločasech zbude čtvrtina (25 %).",
+          "why": "Každý poločas se půlí to, co zbylo, ne původní množství. 100 % → 50 % → 25 % → 12,5 %… Nikdy to neklesne přesně na nulu."
+        },
+        {
+          "type": "summary",
+          "text": "Jádro = Z protonů + (A − Z) neutronů. Za každý poločas zbude polovina jader. Energii uvolní štěpení těžkých i slučování lehkých jader."
+        }
+      ]
+    },
+    {
+      "title": "Jádro a rozpady",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když se jádro rozpadne, změní se v jiný prvek – to, o co se marně snažili alchymisté. Abys věděl, co z rozpadu vznikne, stačí umět „účetnictví“ protonů a neutronů. Tady se ho naučíš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Nukleon",
+          "definition": "Částice jádra: proton nebo neutron."
+        },
+        {
+          "type": "term",
+          "term": "Nuklid a jeho zápis",
+          "definition": "Druh jádra s daným počtem protonů a neutronů. Zápis ²³⁵₉₂U: nahoře **nukleonové číslo A** (všechny nukleony), dole **protonové číslo Z** (protony). Neutrony `N = A − Z`."
+        },
+        {
+          "type": "term",
+          "term": "Izotopy",
+          "definition": "Nuklidy se stejným Z a různým A (stejný prvek, různý počet neutronů)."
+        },
+        {
+          "type": "term",
+          "term": "Aktivita",
+          "definition": "Počet rozpadů za sekundu. Jednotka **becquerel (Bq)** = 1 rozpad za sekundu."
+        },
+        {
+          "type": "term",
+          "term": "Vazebná energie a hmotnostní schodek",
+          "definition": "Energie potřebná k rozebrání jádra na jednotlivé nukleony. Jádro váží o něco **méně** než volné nukleony – tento **hmotnostní schodek** odpovídá vazebné energii podle `E = m · c²`."
+        },
+        {
+          "type": "heading",
+          "text": "Rozpady"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rozpad",
+            "Co vyletí",
+            "Změna A",
+            "Změna Z"
+          ],
+          "rows": [
+            [
+              "α",
+              "jádro helia ⁴₂He",
+              "−4",
+              "−2"
+            ],
+            [
+              "β⁻",
+              "elektron (neutron se změní na proton)",
+              "0",
+              "+1"
+            ],
+            [
+              "β⁺",
+              "pozitron (proton se změní na neutron)",
+              "0",
+              "−1"
+            ],
+            [
+              "γ",
+              "foton",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zapiš A a Z původního jádra.",
+            "Podle tabulky odečti nebo přičti.",
+            "Podle nového Z najdi prvek v periodické tabulce.",
+            "Kontrola: součet A i součet Z na obou stranách reakce musí sedět."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "²³⁸₉₂U se rozpadne rozpadem α. Co vznikne?",
+          "answer": "A = 238 − 4 = 234, Z = 92 − 2 = 90. Z = 90 je thorium: **²³⁴₉₀Th**."
+        },
+        {
+          "type": "example",
+          "question": "¹⁴₆C se rozpadne β⁻. Co vznikne?",
+          "answer": "A zůstane 14, Z = 6 + 1 = 7 → dusík **¹⁴₇N**."
+        },
+        {
+          "type": "text",
+          "text": "Rozpad α je jako rovnice se dvěma neznámými. Vyzkoušej si Z: na vahách x − 2 = 90 (x je původní protonové číslo). Zjisti x."
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 1,
+            "b": -2,
+            "c": 90
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Zákon rozpadu"
+        },
+        {
+          "type": "text",
+          "text": "`N = N₀ · 2^(−t/T)`. N₀ = počáteční počet jader, T = poločas. Po t = T zbude ½, po 2T ¼, po 3T ⅛ (12,5 %)."
+        },
+        {
+          "type": "heading",
+          "text": "Štěpení a syntéza"
+        },
+        {
+          "type": "text",
+          "text": "Vazebná energie na jeden nukleon je největší u jader kolem **železa a niklu**. Štěpením těžkých jader (uran v elektrárně) i slučováním lehkých (**termojaderná syntéza** vodíku na helium ve Slunci) vznikají pevněji vázaná jádra a rozdíl energie se uvolní."
+        },
+        {
+          "type": "text",
+          "text": "Záření: α zastaví papír, β hliníkový plech, γ zeslabí olovo či beton. Ochrana: vzdálenost, čas, stínění."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Při rozpadu β⁻ se A zmenší o 1, protože vyletí elektron.",
+          "right": "Při β⁻ se A nemění a Z vzroste o 1.",
+          "why": "Elektron není nukleon. V jádře se jeden neutron změní na proton – počet nukleonů zůstane, protonů přibude."
+        },
+        {
+          "type": "summary",
+          "text": "N = A − Z. α: A − 4, Z − 2. β⁻: Z + 1. γ: beze změny. N = N₀ · 2^(−t/T). Nejpevněji vázaná jsou jádra kolem železa."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik neutronů má jádro ²³⁵₉₂U?",
+      "answers": [
+        "143"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "²³⁸₉₂U se rozpadne α. Protonové číslo produktu =",
+      "answers": [
+        "90"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "¹⁴₆C se rozpadne β⁻. Protonové číslo produktu =",
+      "answers": [
+        "7"
+      ],
+      "explanation": "Vznikne dusík ¹⁴₇N."
+    },
+    {
+      "type": "input",
+      "question": "Kolik procent jader zbude po 3 poločasech?",
+      "answers": [
+        "12,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Ze vzorku zbyla čtvrtina ¹⁴C (T = 5 730 let). Stáří vzorku v letech =",
+      "answers": [
+        "11460"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "U kterých jader je vazebná energie na nukleon největší?",
+      "options": [
+        "u železa a niklu",
+        "u vodíku",
+        "u uranu",
+        "u helia"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která reakce probíhá ve Slunci?",
+      "options": [
+        "termojaderná syntéza vodíku na helium",
+        "štěpení uranu",
+        "rozpad α",
+        "elektrolýza"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Hmotnost jádra je menší než součet hmotností volných nukleonů.",
+      "answer": true,
+      "explanation": "Hmotnostní schodek odpovídá vazebné energii."
+    },
+    {
+      "type": "truefalse",
+      "question": "Záření γ mění protonové číslo jádra.",
+      "answer": false
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a význam.",
+      "pairs": [
+        [
+          "izotopy",
+          "stejné Z, různé A"
+        ],
+        [
+          "nukleon",
+          "proton nebo neutron"
+        ],
+        [
+          "poločas",
+          "rozpad poloviny jader"
+        ],
+        [
+          "aktivita",
+          "počet rozpadů za sekundu (Bq)"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Proč se energie uvolňuje při štěpení těžkých i při slučování lehkých jader?",
+      "answer": "Vazebná energie na nukleon je největší u jader kolem železa. Štěpením těžkých i slučováním lehkých jader vznikají jádra pevněji vázaná a rozdíl energie se uvolní."
+    },
+    {
+      "type": "open",
+      "question": "Popiš druhy radioaktivního záření a ochranu před nimi.",
+      "answer": "α – jádra helia, zastaví papír. β – elektrony nebo pozitrony, zastaví hliníkový plech. γ – fotony, zeslabí olovo nebo beton. Chrání vzdálenost, čas a stínění."
+    }
+  ]
+}

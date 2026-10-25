@@ -1,0 +1,396 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mocniny-odmocniny",
+  "title": "Mocniny a odmocniny",
+  "emoji": "⚡",
+  "generator": "power",
+  "explanations": [
+    {
+      "title": "Proč to tak je",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Bakterie se každou hodinu rozdělí na dvě. Po 10 hodinách jich je 2 · 2 · 2 · 2 · 2 · 2 · 2 · 2 · 2 · 2 = 1024krát víc. Psát deset dvojek je otrava – proto existuje zkratka **mocnina**."
+        },
+        {
+          "type": "text",
+          "text": "Mocniny potřebuješ u růstu (úroky, epidemie), u velmi velkých a velmi malých čísel (vzdálenost hvězd, velikost atomu) i v každém vzorci s plochou a objemem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mocnina aⁿ",
+          "definition": "Zkratka pro násobení stejného čísla: a · a · … · a, celkem n-krát.",
+          "example": "2⁵ = 2 · 2 · 2 · 2 · 2 = 32."
+        },
+        {
+          "type": "term",
+          "term": "Základ a exponent",
+          "definition": "Základ je číslo, které násobíme (dole). Exponent je malé číslo nahoře – říká, kolikrát.",
+          "example": "V 5³ je 5 základ a 3 exponent; 5³ = 125."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla si odvodíš sám"
+        },
+        {
+          "type": "text",
+          "text": "**Násobení:** 2³ · 2² = (2 · 2 · 2) · (2 · 2) = 2⁵. Prostě spočítáš dvojky: exponenty se **sčítají**."
+        },
+        {
+          "type": "text",
+          "text": "**Mocnina mocniny:** (2²)³ = 2² · 2² · 2² = 2⁶. Třikrát po dvou dvojkách: exponenty se **násobí**."
+        },
+        {
+          "type": "text",
+          "text": "**Dělení:** 2⁵ : 2² = (2 · 2 · 2 · 2 · 2) : (2 · 2) = 2³. Dvě dvojky se vykrátí: exponenty se **odčítají**."
+        },
+        {
+          "type": "heading",
+          "text": "Nula a záporný exponent"
+        },
+        {
+          "type": "text",
+          "text": "Co je 2³ : 2³? Každé číslo děleno samo sebou je 1. Podle pravidla o dělení je to ale 2³⁻³ = 2⁰. Aby pravidla platila dál, musí být **a⁰ = 1** (pro a ≠ 0)."
+        },
+        {
+          "type": "text",
+          "text": "A 2² : 2³? To je 4 : 8 = 1/2. Podle pravidla 2²⁻³ = 2⁻¹. Proto **2⁻¹ = 1/2** a obecně a⁻ⁿ = 1/aⁿ."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na sloupce odspodu nahoru a zpátky: každý krok nahoru je polovina předchozího. Řada pokračuje i pod 2⁰."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "2⁻¹",
+                "value": 0.5
+              },
+              {
+                "label": "2⁰",
+                "value": 1
+              },
+              {
+                "label": "2¹",
+                "value": 2
+              },
+              {
+                "label": "2²",
+                "value": 4
+              },
+              {
+                "label": "2³",
+                "value": 8
+              },
+              {
+                "label": "2⁴",
+                "value": 16
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Spočítej 3⁻² a 10⁻³.",
+          "answer": "3⁻² = 1/3² = **1/9**. 10⁻³ = 1/10³ = 1/1000 = **0,001**."
+        },
+        {
+          "type": "heading",
+          "text": "Odmocnina – cesta zpátky"
+        },
+        {
+          "type": "term",
+          "term": "Druhá odmocnina √a",
+          "definition": "Nezáporné číslo, které po umocnění na druhou dá a. Odmocňujeme jen nezáporná čísla.",
+          "example": "√49 = 7, protože 7² = 49."
+        },
+        {
+          "type": "term",
+          "term": "Třetí odmocnina ∛a",
+          "definition": "Číslo, které po umocnění na třetí dá a.",
+          "example": "∛27 = 3, protože 3³ = 27."
+        },
+        {
+          "type": "text",
+          "text": "Odmocninu jde zapsat i exponentem: √a = a^(1/2), protože (a^(1/2))² = a^(1/2 · 2) = a¹. Podobně a^(m/n) = ⁿ√(aᵐ)."
+        },
+        {
+          "type": "example",
+          "question": "Spočítej 8^(2/3).",
+          "answer": "Jmenovatel 3 = třetí odmocnina, čitatel 2 = druhá mocnina. ∛8 = 2, pak 2² = **4**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "√(a²) = a pro každé a",
+          "right": "√(a²) = |a|",
+          "why": "Odmocnina je vždy nezáporná. Pro a = −3: √((−3)²) = √9 = 3, ne −3. |a| je absolutní hodnota – číslo bez znaménka minus."
+        },
+        {
+          "type": "summary",
+          "text": "Při násobení se exponenty sčítají, při dělení odčítají, mocnina mocniny je násobí. a⁰ = 1, a⁻ⁿ = 1/aⁿ, a^(m/n) = ⁿ√(aᵐ)."
+        }
+      ]
+    },
+    {
+      "title": "Pravidla v praxi",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Fyzik zapíše hmotnost elektronu jako 9,1 · 10⁻³¹ kg. Kdyby psal nuly, zabralo by to půl řádku. Chemik, inženýr i programátor se s mocninami a odmocninami potkávají denně."
+        },
+        {
+          "type": "text",
+          "text": "Tady máš sadu pravidel jako nářadí a ke každému ukázku, kdy ho vzít do ruky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mocnina",
+          "definition": "aⁿ znamená a vynásobené samo sebou n-krát. a je základ, n exponent.",
+          "example": "10³ = 10 · 10 · 10 = 1000."
+        },
+        {
+          "type": "term",
+          "term": "Odmocnina",
+          "definition": "Opak mocnění. ⁿ√a je číslo, jehož n-tá mocnina je a. Druhou odmocninu píšeme jen √.",
+          "example": "√16 = 4, ∛8 = 2."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla"
+        },
+        {
+          "type": "text",
+          "text": "Otoč každou kartičku až poté, co si pravidlo zkusíš vybavit. Platí pro a, b ≠ 0."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "aʳ · aˢ",
+                "back": "aʳ⁺ˢ"
+              },
+              {
+                "front": "aʳ : aˢ",
+                "back": "aʳ⁻ˢ"
+              },
+              {
+                "front": "(aʳ)ˢ",
+                "back": "aʳ·ˢ"
+              },
+              {
+                "front": "(a·b)ʳ",
+                "back": "aʳ · bʳ"
+              },
+              {
+                "front": "a⁰ a a⁻ⁿ",
+                "back": "1 a 1/aⁿ"
+              },
+              {
+                "front": "a^(m/n)",
+                "back": "ⁿ√(aᵐ)"
+              },
+              {
+                "front": "√(a²)",
+                "back": "|a|"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Zjednoduš a³ · a⁴ a (a²)³.",
+          "answer": "a³ · a⁴ = a³⁺⁴ = **a⁷**. (a²)³ = a²·³ = **a⁶**."
+        },
+        {
+          "type": "heading",
+          "text": "Vědecký zápis"
+        },
+        {
+          "type": "term",
+          "term": "Vědecký zápis",
+          "definition": "Číslo zapíšeme jako a · 10ⁿ, kde 1 ≤ a < 10. Exponent n říká, o kolik míst se posunula desetinná čárka.",
+          "example": "300 000 = 3 · 10⁵; 0,00045 = 4,5 · 10⁻⁴."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Posuň čárku tak, aby před ní byla jedna nenulová číslice.",
+            "Spočítej, o kolik míst jsi ji posunul.",
+            "Posun doleva (číslo bylo velké) → exponent kladný. Posun doprava (číslo bylo malé) → exponent záporný."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Úpravy odmocnin"
+        },
+        {
+          "type": "term",
+          "term": "Částečné odmocnění",
+          "definition": "Číslo pod odmocninou rozložíš na součin, kde jeden činitel je druhá mocnina, a ten odmocníš. Využívá pravidlo √(a · b) = √a · √b.",
+          "example": "√50 = √(25 · 2) = 5√2."
+        },
+        {
+          "type": "term",
+          "term": "Usměrnění zlomku",
+          "definition": "Odstranění odmocniny ze jmenovatele (spodní části zlomku). Zlomek rozšíříš – čitatele i jmenovatele vynásobíš toutéž odmocninou.",
+          "example": "1/√2 = (1 · √2)/(√2 · √2) = √2/2."
+        },
+        {
+          "type": "example",
+          "question": "Zjednoduš √72 a usměrni 6/√3.",
+          "answer": "√72 = √(36 · 2) = **6√2**. 6/√3 = 6√3/(√3 · √3) = 6√3/3 = **2√3**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "√(9 + 16) = √9 + √16 = 7",
+          "right": "√(9 + 16) = √25 = 5",
+          "why": "Odmocnina se dá rozdělit jen u **součinu**, ne u součtu. Stejně tak (a + b)² ≠ a² + b²."
+        },
+        {
+          "type": "summary",
+          "text": "Exponenty: násobení → sčítám, dělení → odčítám, mocnina mocniny → násobím. Vědecký zápis a · 10ⁿ s 1 ≤ a < 10. Odmocninu dělím jen u součinu; usměrnění = rozšířit zlomek odmocninou."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "2⁵ =",
+      "answers": [
+        "32"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3⁻² = (zapiš zlomkem)",
+      "answers": [
+        "1/9"
+      ],
+      "explanation": "1/3² = 1/9"
+    },
+    {
+      "type": "choice",
+      "question": "a³ · a⁴ =",
+      "options": [
+        "a⁷",
+        "a¹²",
+        "a¹",
+        "2a⁷"
+      ],
+      "answer": 0,
+      "explanation": "Exponenty se sčítají."
+    },
+    {
+      "type": "choice",
+      "question": "(a²)³ =",
+      "options": [
+        "a⁶",
+        "a⁵",
+        "a⁸",
+        "a⁹"
+      ],
+      "answer": 0,
+      "explanation": "Exponenty se násobí."
+    },
+    {
+      "type": "input",
+      "question": "5⁰ =",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "√50 = k·√2, k =",
+      "answers": [
+        "5"
+      ],
+      "explanation": "50 = 25 · 2"
+    },
+    {
+      "type": "input",
+      "question": "∛27 =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "8^(2/3) =",
+      "answers": [
+        "4"
+      ],
+      "explanation": "∛8 = 2, 2² = 4"
+    },
+    {
+      "type": "truefalse",
+      "question": "√(a²) = a pro všechna reálná a.",
+      "answer": false,
+      "explanation": "Platí √(a²) = |a|, např. √((−3)²) = 3."
+    },
+    {
+      "type": "choice",
+      "question": "10⁻³ =",
+      "options": [
+        "0,001",
+        "−1000",
+        "0,0001",
+        "−0,001"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Usměrněný tvar 1/√2:",
+      "options": [
+        "√2/2",
+        "2/√2",
+        "√2",
+        "1/2"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "0,00045 = 4,5 · 10ⁿ, n =",
+      "answers": [
+        "−4",
+        "-4"
+      ],
+      "explanation": "Desetinná čárka se posune o 4 místa doprava."
+    },
+    {
+      "type": "open",
+      "question": "Proč platí a⁰ = 1 a a⁻ⁿ = 1/aⁿ (a ≠ 0)?",
+      "answer": "Plyne to z pravidla aʳ : aˢ = aʳ⁻ˢ. aⁿ : aⁿ = a⁰ a zároveň = 1. a⁰ : aⁿ = a⁻ⁿ a zároveň = 1/aⁿ."
+    },
+    {
+      "type": "open",
+      "question": "Co znamená usměrnit zlomek a jak se to dělá?",
+      "answer": "Odstranit odmocninu ze jmenovatele. Zlomek rozšíříme vhodnou odmocninou, např. 1/√3 = √3/3."
+    }
+  ]
+}

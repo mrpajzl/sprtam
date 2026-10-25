@@ -1,0 +1,369 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pohyb-po-kruznici",
+  "title": "Pohyb po kružnici",
+  "emoji": "🎠",
+  "explanations": [
+    {
+      "title": "Kolotoč",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sedíš na kolotoči, který se točí pořád stejně rychle. Tachometr by ukazoval stále stejné číslo. A přesto tě to tlačí ven a musíš se držet. Proč, když se rychlost „nemění“?"
+        },
+        {
+          "type": "text",
+          "text": "Po kružnici se pohybují kola, pračka při ždímání, auto v zatáčce i Měsíc kolem Země. Naučíš se, jak tyto pohyby popsat a proč jsou vlastně zrychlené."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kružnice a poloměr r",
+          "definition": "Kružnice je čára, jejíž všechny body jsou stejně daleko od středu. Ta vzdálenost je **poloměr r**.",
+          "example": "Sedačka kolotoče 3 m od osy jezdí po kružnici s r = 3 m."
+        },
+        {
+          "type": "term",
+          "term": "Obvod kružnice",
+          "definition": "Délka jednoho celého kola: `o = 2 · π · r`, kde π ≈ 3,14.",
+          "example": "Pro r = 1 m je jedno kolo dlouhé asi 6,28 m."
+        },
+        {
+          "type": "term",
+          "term": "Perioda T",
+          "definition": "Doba jednoho celého oběhu. Jednotka sekunda.",
+          "example": "Kolotoč se otočí jednou za 4 s → T = 4 s."
+        },
+        {
+          "type": "term",
+          "term": "Frekvence f",
+          "definition": "Kolik oběhů proběhne za 1 sekundu. Jednotka **hertz (Hz)** = 1/s. Platí `f = 1 / T`.",
+          "example": "Kolo se otočí 5× za sekundu → f = 5 Hz, T = 1/5 = 0,2 s."
+        },
+        {
+          "type": "term",
+          "term": "Obvodová rychlost v",
+          "definition": "Jak rychle se bod pohybuje po kružnici: dráha jednoho oběhu děleno jeho doba, `v = 2πr / T`.",
+          "example": "r = 1 m, T = 1 s → v ≈ 6,28 m/s."
+        },
+        {
+          "type": "heading",
+          "text": "Dál od středu = rychleji"
+        },
+        {
+          "type": "text",
+          "text": "Všichni na kolotoči se otočí za stejnou dobu. Kdo sedí dál, musí ale za tu dobu objet větší kruh – jede tedy rychleji. Graf ukazuje rychlost při jedné otáčce za sekundu. Porovnej: dvojnásobný poloměr = dvojnásobná rychlost."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "m/s",
+            "items": [
+              {
+                "label": "r = 1 m",
+                "value": 6.3
+              },
+              {
+                "label": "r = 2 m",
+                "value": 12.6
+              },
+              {
+                "label": "r = 3 m",
+                "value": 18.8
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Proč je to zrychlený pohyb"
+        },
+        {
+          "type": "text",
+          "text": "Rychlost je vektor – má velikost i **směr**. Na kružnici se směr pohybu mění v každém okamžiku. Kdyby tě nic nedrželo, letěl bys rovně pryč (tečně ke kružnici). Aby ses pořád zatáčel, musí tě něco tlačit **do středu**."
+        },
+        {
+          "type": "term",
+          "term": "Dostředivé zrychlení",
+          "definition": "Zrychlení, které mění jen směr rychlosti. Míří vždy do středu kružnice. Velikost `a_d = v² / r`.",
+          "example": "V zatáčce tě do středu „táhne“ tření pneumatik o silnici."
+        },
+        {
+          "type": "example",
+          "question": "Auto jede rychlostí 10 m/s zatáčkou o poloměru 50 m. Jaké je dostředivé zrychlení?",
+          "answer": "a_d = v² / r = 10² / 50 = 100 / 50 = **2 m/s²**."
+        },
+        {
+          "type": "example",
+          "question": "Jak se změní dostředivé zrychlení, když auto pojede v téže zatáčce dvakrát rychleji?",
+          "answer": "Rychlost je ve vzorci na druhou: (2v)² = 4v². Zrychlení bude **4× větší**. Proto se v zatáčce zpomaluje."
+        },
+        {
+          "type": "term",
+          "term": "Radián a úhlová rychlost ω",
+          "definition": "Úhly se ve fyzice často měří v radiánech: celá otáčka = 2π rad ≈ 6,28 rad. **Úhlová rychlost** ω říká, o kolik radiánů se těleso otočí za sekundu: `ω = 2π / T`. Všichni na kolotoči mají stejné ω, ale různé v: `v = ω · r`.",
+          "example": "Kolotoč s T = 4 s: ω = 6,28 / 4 ≈ 1,57 rad/s."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kolotoč se točí stále stejně rychle, takže zrychlení je nulové.",
+          "right": "Zrychlení je nenulové a míří do středu.",
+          "why": "Zrychlení je změna rychlosti – a rychlost se mění, protože se mění její směr. Nulové zrychlení má jen pohyb rovně se stálou rychlostí."
+        },
+        {
+          "type": "summary",
+          "text": "Rovnoměrný pohyb po kružnici: velikost rychlosti stálá, směr se mění, proto existuje dostředivé zrychlení a = v²/r. f = 1/T. Dál od středu = větší obvodová rychlost."
+        }
+      ]
+    },
+    {
+      "title": "Veličiny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pračka ždímá 1 200 otáček za minutu. Kolo auta se točí desetkrát za sekundu. Abychom mohli o otáčení přesně mluvit a počítat, potřebujeme několik veličin. Tady je postupně poskládáš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rovnoměrný pohyb po kružnici",
+          "definition": "Těleso obíhá po kružnici a za stejné časy urazí stejně dlouhé oblouky.",
+          "example": "Bod na kole jedoucího cyklisty, vzhledem k ose kola."
+        },
+        {
+          "type": "term",
+          "term": "Perioda T a frekvence f",
+          "definition": "T = doba jednoho oběhu (s). f = počet oběhů za sekundu (Hz). Jsou převrácené: `f = 1/T`, `T = 1/f`.",
+          "example": "T = 0,5 s → f = 1 / 0,5 = 2 Hz."
+        },
+        {
+          "type": "term",
+          "term": "Radián (rad)",
+          "definition": "Jiná jednotka úhlu než stupeň. 1 rad je úhel, při kterém je oblouk stejně dlouhý jako poloměr. Celá otáčka = `2π rad ≈ 6,28 rad` = 360°.",
+          "example": "1 rad ≈ 57°. Půl otáčky = π rad = 180°."
+        },
+        {
+          "type": "text",
+          "text": "Widget ukazuje úhel 57°, tedy přibližně 1 radián. Posuň ho na 180° – to je π ≈ 3,14 rad. Na 360° je to 2π ≈ 6,28 rad."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 57
+          }
+        },
+        {
+          "type": "term",
+          "term": "Úhlová rychlost ω (omega)",
+          "definition": "O jaký úhel (v radiánech) se těleso otočí za 1 sekundu. `ω = 2π / T = 2π · f`, jednotka rad/s.",
+          "example": "Jedna otáčka za sekundu: ω = 2π ≈ 6,28 rad/s."
+        },
+        {
+          "type": "term",
+          "term": "Obvodová rychlost v",
+          "definition": "Skutečná rychlost bodu po kružnici v m/s. `v = ω · r`.",
+          "example": "ω = 4 rad/s, r = 0,5 m → v = 2 m/s."
+        },
+        {
+          "type": "term",
+          "term": "Dostředivé zrychlení a_d",
+          "definition": "Zrychlení mířící do středu. Mění směr rychlosti. `a_d = v² / r = ω² · r`.",
+          "example": "v = 20 m/s, r = 100 m → a_d = 400/100 = 4 m/s²."
+        },
+        {
+          "type": "heading",
+          "text": "Přehled"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Veličina",
+            "Vztah",
+            "Jednotka"
+          ],
+          "rows": [
+            [
+              "perioda T",
+              "doba 1 oběhu",
+              "s"
+            ],
+            [
+              "frekvence f",
+              "f = 1 / T",
+              "Hz"
+            ],
+            [
+              "úhlová rychlost ω",
+              "ω = 2π / T = 2πf",
+              "rad/s"
+            ],
+            [
+              "obvodová rychlost v",
+              "v = ω · r",
+              "m/s"
+            ],
+            [
+              "dostředivé zrychlení",
+              "a = v² / r = ω² · r",
+              "m/s²"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Z počtu otáček zjisti f nebo T (f = 1/T).",
+            "Spočítej ω = 2π · f.",
+            "Obvodová rychlost v = ω · r (r v metrech).",
+            "Dostředivé zrychlení a = v² / r."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolo se otočí 5× za sekundu. Jaká je perioda?",
+          "answer": "f = 5 Hz. T = 1 / f = 1 / 5 = **0,2 s**."
+        },
+        {
+          "type": "example",
+          "question": "Úhlová rychlost je 4 rad/s, poloměr 0,5 m. Jaká je obvodová rychlost a dostředivé zrychlení?",
+          "answer": "v = ω · r = 4 · 0,5 = **2 m/s**. a = ω² · r = 16 · 0,5 = **8 m/s²** (kontrola: v²/r = 4/0,5 = 8 ✓)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "f = T (perioda a frekvence je totéž)",
+          "right": "f = 1 / T",
+          "why": "Čím déle trvá jeden oběh (velké T), tím méně oběhů stihne za sekundu (malé f). Jsou to převrácené hodnoty."
+        },
+        {
+          "type": "summary",
+          "text": "`f = 1/T`, `ω = 2π/T`, `v = ω·r`, `a_d = v²/r` míří do středu. Celá otáčka = 2π rad ≈ 6,28 rad."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolo se otočí 5× za sekundu. Perioda v s =",
+      "answers": [
+        "0,2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Perioda je 0,5 s. Frekvence v Hz =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Auto jede rychlostí 20 m/s zatáčkou o poloměru 100 m. Dostředivé zrychlení v m/s² =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Úhlová rychlost 4 rad/s, poloměr 0,5 m. Obvodová rychlost v m/s =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kam míří dostředivé zrychlení?",
+      "options": [
+        "do středu kružnice",
+        "ve směru pohybu",
+        "ven ze středu",
+        "proti pohybu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Při rovnoměrném pohybu po kružnici je zrychlení nulové.",
+      "answer": false,
+      "explanation": "Mění se směr rychlosti, existuje dostředivé zrychlení."
+    },
+    {
+      "type": "choice",
+      "question": "Dva body na otáčejícím se kotouči. Který má větší obvodovou rychlost?",
+      "options": [
+        "ten dál od středu",
+        "ten blíž středu",
+        "stejnou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní dostředivé zrychlení při dvojnásobné rychlosti (stejný poloměr)?",
+      "options": [
+        "4×",
+        "2×",
+        "½×",
+        "nezmění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu s jednotkou.",
+      "pairs": [
+        [
+          "perioda",
+          "s"
+        ],
+        [
+          "frekvence",
+          "Hz"
+        ],
+        [
+          "úhlová rychlost",
+          "rad/s"
+        ],
+        [
+          "dostředivé zrychlení",
+          "m/s²"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik radiánů je jedna celá otáčka (na setiny)?",
+      "answers": [
+        "6,28"
+      ],
+      "explanation": "2π ≈ 6,28"
+    },
+    {
+      "type": "open",
+      "question": "Proč je rovnoměrný pohyb po kružnici pohybem zrychleným?",
+      "answer": "Velikost rychlosti je stálá, ale její směr se neustále mění. Změnu směru způsobuje dostředivé zrychlení a = v²/r mířící do středu."
+    },
+    {
+      "type": "open",
+      "question": "Jak spolu souvisí perioda, frekvence, úhlová a obvodová rychlost?",
+      "answer": "f = 1/T, ω = 2π/T = 2πf, obvodová rychlost v = ω·r."
+    }
+  ]
+}

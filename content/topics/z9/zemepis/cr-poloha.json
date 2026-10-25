@@ -1,0 +1,381 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cr-poloha",
+  "title": "Poloha a rozloha Česka",
+  "emoji": "📍",
+  "explanations": [
+    {
+      "title": "Srdce Evropy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když někomu v cizině popisuješ, odkud jsi, řekneš: „Z Česka, to je uprostřed Evropy, mezi Německem a Slovenskem.“ Právě jsi popsal **polohu** Česka."
+        },
+        {
+          "type": "text",
+          "text": "Poloha ovlivňuje, jaké máme podnebí, s kým obchodujeme, kudy vedou dálnice a jestli můžeme mít přístav. Proto se jí zeměpis věnuje jako první."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Poloha",
+          "definition": "Údaj, kde přesně něco leží – vzhledem ke světu, k sousedům nebo k mořím.",
+          "example": "Česko leží ve střední Evropě a sousedí se čtyřmi státy."
+        },
+        {
+          "type": "term",
+          "term": "Vnitrozemský stát",
+          "definition": "Stát, který nemá vlastní pobřeží. Ze všech stran ho obklopují jiné státy.",
+          "example": "Česko, Slovensko, Rakousko, Švýcarsko."
+        },
+        {
+          "type": "term",
+          "term": "Rozloha",
+          "definition": "Jak velké území stát zabírá. Měří se v km² – to je čtverec 1 km × 1 km.",
+          "example": "Česko má asi 78 900 km²."
+        },
+        {
+          "type": "term",
+          "term": "Státní hranice",
+          "definition": "Čára, kde končí jeden stát a začíná druhý. Na mapě bývá vyznačená tečkovanou nebo čárkovanou čarou.",
+          "example": "Hranice s Německem vede z velké části po hřebenech Krušných hor a Šumavy."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Kde v Evropě"
+        },
+        {
+          "type": "text",
+          "text": "Česko leží ve **střední Evropě**, na severní polokouli. K nejbližšímu moři (Baltskému) je to asi 300 km. Je to tedy **vnitrozemský stát**."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Jak je velké"
+        },
+        {
+          "type": "text",
+          "text": "Česko má rozlohu asi **78 900 km²** (zaokrouhleně 79 000 km²). V Evropě je to středně velký stát – je asi sedmkrát menší než Francie, a o něco menší než Rakousko."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: Sousedé a hranice"
+        },
+        {
+          "type": "text",
+          "text": "Máme **čtyři** sousedy. Porovnej v grafu, jak dlouhá je hranice s každým z nich. Která je nejdelší a která nejkratší?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "km hranice",
+            "items": [
+              {
+                "label": "Německo",
+                "value": 810
+              },
+              {
+                "label": "Polsko",
+                "value": 796
+              },
+              {
+                "label": "Rakousko",
+                "value": 466
+              },
+              {
+                "label": "Slovensko",
+                "value": 252
+              }
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "head": [
+            "Soused",
+            "Hlavní město",
+            "Kde od nás leží"
+          ],
+          "rows": [
+            [
+              "Německo",
+              "Berlín",
+              "západ a sever"
+            ],
+            [
+              "Polsko",
+              "Varšava",
+              "sever"
+            ],
+            [
+              "Slovensko",
+              "Bratislava",
+              "východ"
+            ],
+            [
+              "Rakousko",
+              "Vídeň",
+              "jih"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "O kolik kilometrů je hranice s Německem delší než se Slovenskem?",
+          "answer": "810 − 252 = **558 km**. Hranice s Německem je víc než třikrát delší."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď sousedy od nejdelší hranice.",
+          "answer": "Podle grafu: Německo (810 km) → Polsko (796 km) → Rakousko (466 km) → Slovensko (252 km)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejdelší hranici máme se Slovenskem, protože jsme byli jeden stát.",
+          "right": "Se Slovenskem máme naopak hranici nejkratší (asi 250 km). Nejdelší je s Německem.",
+          "why": "Společná historie s délkou hranice nesouvisí. Slovensko na nás navazuje jen krátkým úsekem na východě."
+        },
+        {
+          "type": "summary",
+          "text": "Česko je vnitrozemský stát ve střední Evropě o rozloze asi 79 000 km². Má 4 sousedy, nejdelší hranici s Německem, nejkratší se Slovenskem."
+        }
+      ]
+    },
+    {
+      "title": "Výhody a nevýhody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si dům uprostřed vesnice u křižovatky. Všude to máš blízko, ale chybí ti zahrada u rybníka. S Českem je to podobné: leží uprostřed Evropy, ale nemá moře."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, jak polohu přesně popsat a co nám přináší dobrého i špatného."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zeměpisné souřadnice",
+          "definition": "Dvě čísla, která přesně určují místo na Zemi. Jsou to **šířka** (jak daleko na sever nebo jih od rovníku) a **délka** (jak daleko na východ nebo západ od nultého poledníku v Londýně).",
+          "example": "Praha leží asi na 50° severní šířky (s. š.) a 14° východní délky (v. d.)."
+        },
+        {
+          "type": "term",
+          "term": "Vnitrozemský stát",
+          "definition": "Stát bez vlastního mořského pobřeží.",
+          "example": "Česko – zboží z lodí se k nám musí dovézt z cizích přístavů, např. z Hamburku."
+        },
+        {
+          "type": "term",
+          "term": "EU a NATO",
+          "definition": "**EU** (Evropská unie) je spolek 27 států, které spolu obchodují a spolupracují. **NATO** je obranná aliance – státy si slíbily, že se při napadení budou bránit společně.",
+          "example": "Česko je v NATO od roku 1999 a v EU od roku 2004."
+        },
+        {
+          "type": "heading",
+          "text": "Poloha v číslech"
+        },
+        {
+          "type": "list",
+          "items": [
+            "severní polokoule, střední Evropa",
+            "zhruba **48,5° až 51° s. š.** a **12° až 19° v. d.**",
+            "rozloha asi **78 900 km²**",
+            "sousedé: **Německo, Polsko, Slovensko, Rakousko**",
+            "nejdelší hranice s Německem, nejkratší se Slovenskem"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Výhody a nevýhody"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď kartičky. U každé si řekni: pomáhá to Česku, nebo mu to něco ztěžuje?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Výhoda polohy",
+              "Nevýhoda polohy"
+            ],
+            "items": [
+              {
+                "text": "křižovatka evropských cest",
+                "group": 0
+              },
+              {
+                "text": "blízko bohatých trhů (Německo)",
+                "group": 0
+              },
+              {
+                "text": "členství v EU a NATO",
+                "group": 0
+              },
+              {
+                "text": "chybí přístup k moři",
+                "group": 1
+              },
+              {
+                "text": "dovoz ropy a plynu potrubím",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Přes Česko vedou cesty ze severu na jih i ze západu na východ Evropy. Hned vedle je Německo – největší obchodní partner. Nevýhodou je, že nemáme moře a jen málo vlastní ropy a plynu, takže je musíme dovážet potrubím."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Popiš polohu Česka třemi větami.",
+          "answer": "Česko leží ve střední Evropě na severní polokouli, kolem 50° s. š. a 12–19° v. d. Je vnitrozemské. Sousedí s Německem, Polskem, Slovenskem a Rakouskem."
+        },
+        {
+          "type": "example",
+          "question": "Firma z Plzně posílá stroj do Ameriky. Proč to pro ni je složitější než pro firmu z Hamburku?",
+          "answer": "Hamburk má námořní přístav. Plzeň ne – stroj se musí nejdřív odvézt vlakem nebo kamionem do cizího přístavu. To stojí čas a peníze."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Česko leží v západní Evropě.",
+          "right": "Česko leží ve **střední** Evropě.",
+          "why": "Západní Evropa jsou státy u Atlantiku (Francie, Británie, Benelux). Česko je uprostřed mezi západem a východem."
+        },
+        {
+          "type": "summary",
+          "text": "Česko je vnitrozemí, ale na křižovatce Evropy. Výhody: dopravní cesty, blízké trhy, EU (2004) a NATO (1999). Nevýhody: chybí moře, ropu a plyn dovážíme."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Se kterým státem má Česko nejdelší hranici?",
+      "options": [
+        "Polsko",
+        "Německo",
+        "Rakousko",
+        "Slovensko"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je přibližná rozloha Česka?",
+      "options": [
+        "asi 49 000 km²",
+        "asi 79 000 km²",
+        "asi 130 000 km²",
+        "asi 300 000 km²"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Česko je vnitrozemský stát.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Kolik sousedních států má Česko?",
+      "answers": [
+        "4",
+        "čtyři",
+        "ctyri"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď sousedy podle délky hranice od nejdelší.",
+      "items": [
+        "Německo",
+        "Polsko",
+        "Rakousko",
+        "Slovensko"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "V kterém roce vstoupilo Česko do NATO?",
+      "answers": [
+        "1999"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "V jaké části Evropy leží Česko?",
+      "options": [
+        "západní",
+        "střední",
+        "jižní",
+        "severní"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Česko leží na jižní polokouli.",
+      "answer": false
+    },
+    {
+      "type": "match",
+      "question": "Spoj sousední stát a hlavní město.",
+      "pairs": [
+        [
+          "Německo",
+          "Berlín"
+        ],
+        [
+          "Polsko",
+          "Varšava"
+        ],
+        [
+          "Rakousko",
+          "Vídeň"
+        ],
+        [
+          "Slovensko",
+          "Bratislava"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Zhodnoť výhody a nevýhody polohy Česka.",
+      "answer": "Výhodou je poloha ve středu Evropy, na křižovatce dopravních cest a v EU. Nevýhodou je, že nemá moře, a suroviny jako ropu a plyn musí dovážet."
+    },
+    {
+      "type": "open",
+      "question": "Popiš polohu Česka pomocí souřadnic a sousedů.",
+      "answer": "Česko leží ve střední Evropě kolem 50° s. š. a 12–19° v. d. Sousedí s Německem, Polskem, Slovenskem a Rakouskem."
+    }
+  ]
+}

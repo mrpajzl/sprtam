@@ -1,0 +1,495 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pisemne-scitani-odcitani",
+  "title": "Písemné sčítání a odčítání",
+  "emoji": "📝",
+  "generator": "add1000",
+  "explanations": [
+    {
+      "title": "Pod sebou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve městě žije 8 450 lidí, z toho 3 975 dětí. Kolik je dospělých? S tak velkými čísly se v hlavě snadno spleteš."
+        },
+        {
+          "type": "text",
+          "text": "Proto čísla píšeme **pod sebe** a počítáme sloupec po sloupci. Tomu říkáme **písemné sčítání a odčítání**. Funguje pro jakkoli velká čísla."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Řád",
+          "definition": "Místo číslice: jednotky (J), desítky (D), stovky (S), tisíce (T)…",
+          "example": "V 2 746 je 6 jednotek, 4 desítky, 7 stovek a 2 tisíce."
+        },
+        {
+          "type": "term",
+          "term": "Psát pod sebe",
+          "definition": "Jednotky přesně pod jednotky, desítky pod desítky… Čísla zarovnáš **vpravo**. Každý sloupec je pak jeden řád.",
+          "example": "Pod 2 746 napíšeš 589 tak, že 9 je pod 6 – ne pod 2."
+        },
+        {
+          "type": "text",
+          "text": "Proč tak přesně? Sčítat smíš jen stejné řády: jednotky s jednotkami, stovky se stovkami. Když číslo ujede o sloupec, sčítáš třeba stovky s tisíci a výsledek je úplně špatně."
+        },
+        {
+          "type": "term",
+          "term": "„1 si pamatuji“",
+          "definition": "Do sloupce se vejde jen **jedna číslice**. Když ve sloupci vyjde 10 a víc, je to jedna desítka navíc. Napíšeš jen jednotky a 1 si **pamatuješ** – v sešitě malou 1 nad další sloupec vlevo. Tam ji přičteš.",
+          "example": "6 + 9 = 15 → píšu 5, 1 si pamatuji."
+        },
+        {
+          "type": "term",
+          "term": "Doplňování",
+          "definition": "Tak se v Česku odčítá pod sebou. Neptáš se „kolik zbude“, ale „**kolik chybí**“: dolní číslo a kolik je horní?",
+          "example": "8 − 3: „3 a kolik je 8?“ Chybí 5."
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání bez pamatování: 3 421 + 1 352"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na **Další krok** a počítej se mnou. Začínáme vždycky **vpravo**, u jednotek."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 3421,
+            "b": 1352,
+            "op": "+"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání s pamatováním: 2 746 + 1 589"
+        },
+        {
+          "type": "text",
+          "text": "Tady vyjde 10 a víc hned ve třech sloupcích. Sleduj malou 1 nad sloupcem – to je ta, kterou si pamatuješ."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 2746,
+            "b": 1589,
+            "op": "+"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Odčítání doplňováním: 832 − 457"
+        },
+        {
+          "type": "text",
+          "text": "U jednotek je nahoře 2, dole 7. „7 a kolik je 2?“ nejde – 7 je víc. Tak doplňuješ do čísla o desítku většího: „7 a kolik je **12**?“ Chybí 5. Píšu 5."
+        },
+        {
+          "type": "text",
+          "text": "Tu desítku navíc si pamatuješ: **1 si pamatuji**. V dalším sloupci ji přičteš k **dolnímu** číslu: 5 + 1 = 6. Pak „6 a kolik je 13?“ – 7. Klepej a počítej se mnou."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 832,
+            "b": 457,
+            "op": "-"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Možná znáš i „půjčování“ (12 − 7 a nahoře o 1 méně). Vyjde to stejně. My počítáme doplňováním, protože tak se to většinou učí v českých školách a hodí se ke zkoušce sčítáním."
+        },
+        {
+          "type": "example",
+          "question": "Ve městě žije 8 450 lidí, z toho 3 975 dětí. Kolik je dospělých?",
+          "answer": "Dospělí = všichni − děti, tedy **8 450 − 3 975**. Vyjde **4 475 dospělých**. Zkouška: 4 475 + 3 975 = 8 450 ✔ Spočítej to pod sebou se mnou – tady si pamatuješ 1 ve třech sloupcích za sebou.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 8450,
+              "b": 3975,
+              "op": "-"
+            }
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 506 + 2 897: zapomenu na 1, kterou si pamatuji → 3 393",
+          "right": "1 506 + 2 897 = **4 403**",
+          "why": "V jednotkách, desítkách i stovkách vyjde 10 a víc. Pokaždé musíš 1 přičíst v dalším sloupci. Piš si ji malou nad sloupec. Klepej na výpočet pod tímto rámečkem a uvidíš ji."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 1506,
+            "b": 2897,
+            "op": "+"
+          }
+        },
+        {
+          "type": "summary",
+          "text": "Řád pod řád, počítej zprava. Vyjde 10 a víc → píšu jednotky, 1 si pamatuji. Odčítám doplňováním („7 a kolik je 12?“) a 1 přičtu k dolnímu číslu v dalším sloupci."
+        }
+      ]
+    },
+    {
+      "title": "Doplňování",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Prodavačka vrací peníze tak, že **doplňuje**: „Zboží za 457 Kč, platíte 832 Kč… 457 a kolik je 832?“"
+        },
+        {
+          "type": "text",
+          "text": "Takhle se dá odčítat i písemně. Místo „kolik zbude“ se ptáš „**kolik chybí**“. A výsledek pak snadno ověříš zkouškou – sčítáním pod sebou."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Menšenec",
+          "definition": "Číslo, **ze kterého** odčítáš (to první, nahoře).",
+          "example": "V 832 − 457 je menšenec 832."
+        },
+        {
+          "type": "term",
+          "term": "Menšitel",
+          "definition": "Číslo, **které** odčítáš (to druhé, dole).",
+          "example": "V 832 − 457 je menšitel 457."
+        },
+        {
+          "type": "term",
+          "term": "Rozdíl",
+          "definition": "Výsledek odčítání.",
+          "example": "832 − 457 = 375, rozdíl je 375."
+        },
+        {
+          "type": "term",
+          "term": "Psát pod sebe",
+          "definition": "Menšitel napíšeš pod menšenec tak, aby jednotky byly pod jednotkami, desítky pod desítkami… Zarovnáváš **vpravo**.",
+          "example": "5 000 − 1 236: 6 je pod poslední nulou."
+        },
+        {
+          "type": "term",
+          "term": "„1 si pamatuji“",
+          "definition": "Když je dolní číslice větší než horní, doplňuješ do čísla o 10 většího (místo do 2 do 12). Tu desítku navíc si **pamatuješ** a v dalším sloupci ji přičteš k dolní číslici.",
+          "example": "7 a kolik je 12? 5. Píšu 5, 1 si pamatuji."
+        },
+        {
+          "type": "term",
+          "term": "Zkouška",
+          "definition": "Kontrola výsledku jiným výpočtem. U odčítání: rozdíl + menšitel = menšenec."
+        },
+        {
+          "type": "heading",
+          "text": "Doplňování bez pamatování: 4 785 − 2 341"
+        },
+        {
+          "type": "text",
+          "text": "V každém sloupci se ptáš: **dolní číslice a kolik je horní?** „1 a kolik je 5?“ – 4. Klepej na **Další krok** a počítej se mnou. Začínáme vpravo."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 4785,
+            "b": 2341,
+            "op": "-"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Doplňování s pamatováním: 832 − 457"
+        },
+        {
+          "type": "text",
+          "text": "„7 a kolik je 2?“ nejde. Tak „7 a kolik je **12**?“ – 5, a 1 si pamatuji. V dalším sloupci: 5 + 1 = 6, „6 a kolik je 13?“ – 7, a zase 1 si pamatuji. Klepej a sleduj malé jedničky nad sloupci."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 832,
+            "b": 457,
+            "op": "-"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Zkouška sčítáním"
+        },
+        {
+          "type": "text",
+          "text": "Sečti rozdíl a menšitel pod sebou. Musí vyjít menšenec. Klepej a počítej se mnou: 375 + 457. Když ve sloupci vyjde 10 a víc, píšeš jednotky a 1 si pamatuješ."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 375,
+            "b": 457,
+            "op": "+"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Vyšlo 832 – to je menšenec. Výsledek 375 je tedy správně ✔"
+        },
+        {
+          "type": "heading",
+          "text": "Těžší: samé nuly"
+        },
+        {
+          "type": "text",
+          "text": "Nahoře jsou samé nuly, takže doplňuješ do 10 v každém sloupci. Klepej a počítej se mnou: 5 000 − 1 236."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 5000,
+            "b": 1236,
+            "op": "-"
+          }
+        },
+        {
+          "type": "example",
+          "question": "Zboží stojí 457 Kč, platíš 832 Kč. Kolik ti vrátí?",
+          "answer": "Prodavačka doplňuje: 457 a kolik je 832? To je přesně **832 − 457**, které jsme spočítali pod sebou výše: vrátí **375 Kč**."
+        },
+        {
+          "type": "example",
+          "question": "Sečti tři čísla: 1 200 + 350 + 48",
+          "answer": "Všechna tři napíšeš pod sebe, zarovnaná vpravo (tabulka níže). Jednotky: 0 + 0 + 8 = 8. Desítky: 0 + 5 + 4 = 9. Stovky: 2 + 3 = 5. Tisíce: 1. **1 598**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "T",
+            "S",
+            "D",
+            "J"
+          ],
+          "rows": [
+            [
+              "",
+              "1",
+              "2",
+              "0",
+              "0"
+            ],
+            [
+              "+",
+              "",
+              "3",
+              "5",
+              "0"
+            ],
+            [
+              "+",
+              "",
+              "",
+              "4",
+              "8"
+            ],
+            [
+              "=",
+              "1",
+              "5",
+              "9",
+              "8"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "4 000 − 1 = 3 000",
+          "right": "4 000 − 1 = **3 999**",
+          "why": "Ubíráš jen jednu jednotku. Zkouška: 3 000 + 1 = 3 001, ne 4 000. Správně 3 999 + 1 = 4 000."
+        },
+        {
+          "type": "summary",
+          "text": "Odčítání = doplňování „kolik chybí“: dolní číslice a kolik je horní? Když to nejde, doplň do čísla o 10 většího a 1 si pamatuj. Zkouška: rozdíl + menšitel = menšenec."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 345 + 278 =",
+      "answers": [
+        "623"
+      ],
+      "explanation": "5 + 8 = 13, píšu 3, 1 si pamatuji. 4 + 7 + 1 = 12, píšu 2, 1 si pamatuji. 3 + 2 + 1 = 6.",
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 345,
+          "b": 278,
+          "op": "+"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 1 506 + 2 897 =",
+      "answers": [
+        "4403",
+        "4 403"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 1506,
+          "b": 2897,
+          "op": "+"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 6 250 + 3 750 =",
+      "answers": [
+        "10000",
+        "10 000"
+      ],
+      "explanation": "Ve třech sloupcích vyjde 10 – píšu 0, 1 si pamatuji. Nakonec 6 + 3 + 1 = 10.",
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 6250,
+          "b": 3750,
+          "op": "+"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 832 − 457 =",
+      "answers": [
+        "375"
+      ],
+      "explanation": "7 a kolik je 12? 5. 6 a kolik je 13? 7. 5 a kolik je 8? 3.",
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 832,
+          "b": 457,
+          "op": "-"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 5 000 − 1 236 =",
+      "answers": [
+        "3764",
+        "3 764"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 5000,
+          "b": 1236,
+          "op": "-"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 7 421 − 2 618 =",
+      "answers": [
+        "4803",
+        "4 803"
+      ],
+      "explanation": "8 a kolik je 11? 3. 2 a kolik je 2? 0. 6 a kolik je 14? 8. 3 a kolik je 7? 4.",
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 7421,
+          "b": 2618,
+          "op": "-"
+        }
+      }
+    },
+    {
+      "type": "choice",
+      "question": "2 999 + 1 =",
+      "options": [
+        "3 000",
+        "2 900",
+        "3 999"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "904 − 367 =",
+      "options": [
+        "537",
+        "547",
+        "637"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "1 999 + 2 001 = 4 000",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "4 000 − 1 = 3 000",
+      "answer": false,
+      "explanation": "4 000 − 1 = 3 999."
+    },
+    {
+      "type": "input",
+      "question": "Sečti tři čísla: 1 200 + 350 + 48 =",
+      "answers": [
+        "1598",
+        "1 598"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Ve městě žije 8 450 lidí, 3 975 jsou děti. Kolik je dospělých?",
+      "answers": [
+        "4475",
+        "4 475"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Proč musíš psát čísla přesně pod sebe?",
+      "answer": "Aby se sčítaly stejné řády – jednotky s jednotkami, desítky s desítkami. Jinak vyjde špatný výsledek."
+    },
+    {
+      "type": "open",
+      "question": "Jak uděláš zkoušku výsledku 832 − 457 = 375?",
+      "answer": "Sečtu výsledek a menšitel: 375 + 457 = 832. Vyšel menšenec, takže je to správně."
+    }
+  ]
+}

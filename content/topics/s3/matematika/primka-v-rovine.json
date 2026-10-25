@@ -1,0 +1,390 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "primka-v-rovine",
+  "title": "Přímka v rovině",
+  "emoji": "📍",
+  "explanations": [
+    {
+      "title": "Pohybem po přímce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Loď vypluje z přístavu a pluje pořád stejným směrem. Kde bude za hodinu? Za dvě? Její dráha je přímka. Když znáš **start** a **směr**, umíš spočítat každý bod cesty."
+        },
+        {
+          "type": "text",
+          "text": "Analytická geometrie popisuje přímky rovnicemi. Díky tomu počítač zjistí, jestli se dvě trasy zkříží, jak daleko je bod od silnice nebo kde se protnou dvě úsečky na obrazovce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vektor",
+          "definition": "Šipka se směrem a délkou zapsaná souřadnicemi, např. (2; 4) = 2 doprava, 4 nahoru. Vektor z A do B je B − A."
+        },
+        {
+          "type": "term",
+          "term": "Směrový vektor s",
+          "definition": "Vektor, který ukazuje směr přímky.",
+          "example": "A[1; 1], B[3; 5]: s = B − A = (2; 4)."
+        },
+        {
+          "type": "term",
+          "term": "Parametr t",
+          "definition": "Číslo, které říká, kolik kroků po směrovém vektoru jsi ušel. t = 0 je start, t = 1 jeden krok, t = −1 krok zpět."
+        },
+        {
+          "type": "heading",
+          "text": "Parametrická rovnice: start + kroky"
+        },
+        {
+          "type": "text",
+          "text": "Bod přímky = start A + t · s. Po souřadnicích: x = a₁ + t·s₁, y = a₂ + t·s₂."
+        },
+        {
+          "type": "example",
+          "question": "Přímka x = 1 + t, y = 2 − t. Který bod dostaneš pro t = 3?",
+          "answer": "x = 1 + 3 = 4, y = 2 − 3 = −1. Bod **[4; −1]**."
+        },
+        {
+          "type": "heading",
+          "text": "Obecná rovnice: kolmá šipka"
+        },
+        {
+          "type": "term",
+          "term": "Normálový vektor n",
+          "definition": "Vektor **kolmý** k přímce. Ze směrového s = (s₁; s₂) ho dostaneš prohozením souřadnic a změnou jednoho znaménka: n = (−s₂; s₁).",
+          "example": "s = (1; 2) → n = (−2; 1) nebo (2; −1)."
+        },
+        {
+          "type": "term",
+          "term": "Obecná rovnice",
+          "definition": "ax + by + c = 0, kde (a; b) je normálový vektor. Číslo c dopočítáš dosazením bodu přímky.",
+          "example": "x − 3y + 2 = 0 má n = (1; −3)."
+        },
+        {
+          "type": "example",
+          "question": "Napiš přímku s n = (2; −1), která prochází bodem [0; −1].",
+          "answer": "Rovnice 2x − y + c = 0. Dosadím bod: 2 · 0 − (−1) + c = 0 → c = −1. Výsledek **2x − y − 1 = 0**."
+        },
+        {
+          "type": "heading",
+          "text": "Směrnicová rovnice: jak to znáš z funkcí"
+        },
+        {
+          "type": "text",
+          "text": "y = kx + q: k je sklon, q místo, kde přímka protne osu y. Z obecné rovnice ji dostaneš vyjádřením y: 2x − y + 3 = 0 → y = 2x + 3, tedy k = 2."
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej: nastav k = 2 a q = 0 (přímka y = 2x). Pak k = −0,5 (přímka y = −x/2). Uvidíš, že na sebe jsou kolmé."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 2,
+            "q": 0
+          }
+        },
+        {
+          "type": "text",
+          "text": "Pravidlo: přímky jsou kolmé, když součin směrnic je −1. Tady 2 · (−1/2) = −1 ✓. Rovnoběžné jsou, když mají stejné k."
+        },
+        {
+          "type": "heading",
+          "text": "Průsečík a vzdálenost"
+        },
+        {
+          "type": "example",
+          "question": "Kde se protnou x + y = 5 a x − y = 1?",
+          "answer": "Průsečík splňuje obě rovnice. Sečtu je: 2x = 6 → **x = 3**, pak y = 2. Bod [3; 2]."
+        },
+        {
+          "type": "text",
+          "text": "Vzdálenost bodu [x₀; y₀] od přímky ax + by + c = 0 je |ax₀ + by₀ + c| / √(a² + b²). Svislé čáry znamenají absolutní hodnotu (číslo bez znaménka)."
+        },
+        {
+          "type": "example",
+          "question": "Vzdálenost počátku [0; 0] od 3x + 4y − 10 = 0?",
+          "answer": "|0 + 0 − 10| / √(9 + 16) = 10/5 = **2**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Přímka x − 3y + 2 = 0 má normálový vektor (1; 3).",
+          "right": "n = (1; −3)",
+          "why": "Koeficienty u x a y se berou i se znaménkem. −3y znamená b = −3."
+        },
+        {
+          "type": "summary",
+          "text": "Parametrická rovnice = bod + t · směrový vektor. Obecná ax + by + c = 0, kde (a; b) je normálový vektor (kolmý). Směrnicová y = kx + q. Kolmé přímky: k₁ · k₂ = −1."
+        }
+      ]
+    },
+    {
+      "title": "Tři tvary rovnice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Stejnou přímku můžeš zapsat třemi způsoby – jako adresu domu jde popsat ulicí, souřadnicemi GPS nebo „třetí dům za kostelem“. Každý zápis se hodí na něco jiného."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se mezi nimi přecházet a podle úlohy vybrat ten nejvhodnější: pro body na přímce, pro vzájemnou polohu, pro vzdálenost."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Směrový vektor s",
+          "definition": "Vektor rovnoběžný s přímkou. Spočítáš ho ze dvou bodů: s = B − A."
+        },
+        {
+          "type": "term",
+          "term": "Normálový vektor n",
+          "definition": "Vektor kolmý k přímce. V rovině z s = (s₁; s₂) dostaneš n = (−s₂; s₁).",
+          "example": "s = (2; 4) → n = (−4; 2), lépe zkráceně (−2; 1)."
+        },
+        {
+          "type": "term",
+          "term": "Kolineární vektory",
+          "definition": "Jeden je násobkem druhého – mají stejný nebo opačný směr.",
+          "example": "(2; −1) a (4; −2)."
+        },
+        {
+          "type": "heading",
+          "text": "Tři tvary"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tvar",
+            "Zápis",
+            "Co z něj vidíš",
+            "Hodí se na"
+          ],
+          "rows": [
+            [
+              "parametrický",
+              "x = a₁ + t·s₁, y = a₂ + t·s₂",
+              "bod A a směr s",
+              "výpočet bodů, úsečky, polopřímky"
+            ],
+            [
+              "obecný",
+              "ax + by + c = 0",
+              "normálový vektor (a; b)",
+              "vzájemná poloha, vzdálenost"
+            ],
+            [
+              "směrnicový",
+              "y = kx + q",
+              "sklon k, úsek q",
+              "graf, kolmost (k₁ · k₂ = −1)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup: rovnice přímky AB"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "s = B − A.",
+            "Parametricky: x = a₁ + t·s₁, y = a₂ + t·s₂.",
+            "Obecně: n = (−s₂; s₁), rovnice n₁x + n₂y + c = 0.",
+            "c dopočítej dosazením bodu A.",
+            "Směrnicově: z obecné rovnice vyjádři y."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Napiš přímku AB pro A[1; 1], B[3; 5] ve všech tvarech.",
+          "answer": "s = (2; 4). Parametricky: x = 1 + 2t, y = 1 + 4t. Normála n = (−4; 2) ~ (2; −1): 2x − y + c = 0, dosadím A: 2 − 1 + c = 0 → c = −1. Obecně **2x − y − 1 = 0**. Směrnicově y = 2x − 1."
+        },
+        {
+          "type": "text",
+          "text": "Zkontroluj směrnicový tvar v grafu: nastav k = 2 a q = −1. Přímka musí procházet bodem A[1; 1] a průsečíkem s osou y [0; −1]."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 1,
+            "q": 0
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vzájemná poloha dvou přímek"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Porovnej normálové vektory.",
+            "Nejsou kolineární → přímky jsou **různoběžné** (jeden průsečík – vyřeš soustavu).",
+            "Jsou kolineární → zkus, zda je jedna rovnice násobkem druhé. Ano → **totožné**. Ne → **rovnoběžné různé**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jak leží 2x − y + 1 = 0 a 4x − 2y + 5 = 0?",
+          "answer": "n₁ = (2; −1), n₂ = (4; −2) = 2 · n₁ → kolineární. Vynásobím první rovnici 2: 4x − 2y + 2 = 0 ≠ druhá rovnice. Přímky jsou **rovnoběžné různé**."
+        },
+        {
+          "type": "heading",
+          "text": "Vzdálenost bodu od přímky"
+        },
+        {
+          "type": "text",
+          "text": "d = |a·x₀ + b·y₀ + c| / √(a² + b²). Do obecné rovnice dosadíš bod a vydělíš velikostí normálového vektoru."
+        },
+        {
+          "type": "example",
+          "question": "Kde protne 3x + 4y − 12 = 0 osu x? A jak daleko je od ní počátek?",
+          "answer": "Na ose x je y = 0: 3x = 12 → **x = 4**. Vzdálenost počátku: |−12| / 5 = 2,4."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Přímky s kolineárními normálovými vektory jsou vždy rovnoběžné různé.",
+          "right": "Mohou být i totožné.",
+          "why": "Stejný směr mají i totožné přímky. Rozhodne, jestli mají společný bod (jestli je jedna rovnice násobkem druhé)."
+        },
+        {
+          "type": "summary",
+          "text": "Parametrický tvar: bod + t·s. Obecný: ax + by + c = 0 s normálou (a; b). Směrnicový: y = kx + q. Polohu určíš porovnáním normálových vektorů, vzdálenost vzorcem |ax₀ + by₀ + c|/√(a² + b²)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Směrový vektor přímky AB, A[1; 1], B[3; 5]:",
+      "options": [
+        "(2; 4)",
+        "(4; 6)",
+        "(1; 1)",
+        "(4; −2)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Přímka s n = (2; −1) procházející [0; −1]:",
+      "options": [
+        "2x − y − 1 = 0",
+        "2x − y + 1 = 0",
+        "x + 2y + 2 = 0",
+        "−x + 2y = 0"
+      ],
+      "answer": 0,
+      "explanation": "2 · 0 − (−1) + c = 0 → c = −1"
+    },
+    {
+      "type": "input",
+      "question": "3x + 4y − 12 = 0. Průsečík s osou x: x =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Vzdálenost bodu [0; 0] od přímky 3x + 4y − 10 = 0 =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Přímky 2x − y + 1 = 0 a 4x − 2y + 5 = 0 jsou rovnoběžné různé.",
+      "answer": true,
+      "explanation": "Normálové vektory (2; −1) a (4; −2) jsou kolineární, rovnice nejsou násobky."
+    },
+    {
+      "type": "choice",
+      "question": "Normálový vektor přímky x − 3y + 2 = 0:",
+      "options": [
+        "(1; −3)",
+        "(3; 1)",
+        "(1; 3)",
+        "(−3; 2)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Směrnice přímky 2x − y + 3 = 0: k =",
+      "answers": [
+        "2"
+      ],
+      "explanation": "y = 2x + 3"
+    },
+    {
+      "type": "choice",
+      "question": "Přímka x = 1 + t, y = 2 − t. Bod pro t = 3:",
+      "options": [
+        "[4; −1]",
+        "[3; −1]",
+        "[4; 5]",
+        "[−2; 5]"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Průsečík přímek x + y = 5 a x − y = 1: x =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Přímky y = 2x a y = −x/2 jsou kolmé.",
+      "answer": true,
+      "explanation": "2 · (−1/2) = −1"
+    },
+    {
+      "type": "match",
+      "question": "Spoj tvar rovnice s příkladem.",
+      "pairs": [
+        [
+          "parametrický",
+          "x = 1 + t, y = 2t"
+        ],
+        [
+          "obecný",
+          "2x − y + 3 = 0"
+        ],
+        [
+          "směrnicový",
+          "y = 2x + 3"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi směrovým a normálovým vektorem přímky?",
+      "answer": "Směrový vektor leží ve směru přímky, normálový je na ni kolmý. V rovině z s = (s₁; s₂) dostanu n = (−s₂; s₁)."
+    },
+    {
+      "type": "open",
+      "question": "Jak zjistíš vzájemnou polohu dvou přímek v rovině?",
+      "answer": "Porovnám normálové (směrové) vektory: nejsou-li kolineární, jsou přímky různoběžné. Jsou-li, ověřím společný bod: totožné, jinak rovnoběžné různé."
+    }
+  ]
+}

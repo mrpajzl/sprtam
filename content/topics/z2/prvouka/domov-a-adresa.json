@@ -1,0 +1,352 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "domov-a-adresa",
+  "title": "Domov a adresa",
+  "emoji": "🏠",
+  "explanations": [
+    {
+      "title": "Dopis domů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Babička ti chce poslat dopis k narozeninám. Jak pošťák pozná, do kterého domu ho má donést? Domů je přece tolik!"
+        },
+        {
+          "type": "text",
+          "text": "Každý dům má svou přesnou „cedulku“ – adresu. Podle ní tě najde pošťák, kamarád, ale i sanitka, když je potřeba."
+        },
+        {
+          "type": "heading",
+          "text": "Nová slova"
+        },
+        {
+          "type": "term",
+          "term": "Domov",
+          "definition": "Místo, kde bydlíš se svou rodinou. Může to být **byt** v domě s více rodinami, nebo **rodinný dům**.",
+          "example": "Bydlím v bytě ve třetím patře."
+        },
+        {
+          "type": "term",
+          "term": "Adresa",
+          "definition": "Přesný popis, kde bydlíš. Skládá se z několika částí, které jdou vždy ve stejném pořadí.",
+          "example": "Jana Nováková, Lipová 12, 123 45 Horní Ves"
+        },
+        {
+          "type": "term",
+          "term": "Obec",
+          "definition": "Vesnice nebo město, kde stojí tvůj dům.",
+          "example": "Horní Ves, Brno, Praha"
+        },
+        {
+          "type": "term",
+          "term": "PSČ",
+          "definition": "Poštovní směrovací číslo. Pět číslic, podle kterých pošta pozná, kam dopis poslat.",
+          "example": "123 45"
+        },
+        {
+          "type": "heading",
+          "text": "Jak se píše adresa"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "1. řádek: **jméno a příjmení** – Jana Nováková",
+            "2. řádek: **ulice a číslo domu** – Lipová 12",
+            "3. řádek: **PSČ a obec** – 123 45 Horní Ves"
+          ]
+        },
+        {
+          "type": "picture",
+          "items": [
+            "✉️",
+            "➡️",
+            "📮",
+            "➡️",
+            "🏠"
+          ],
+          "caption": "Dopis → pošta → můj dům"
+        },
+        {
+          "type": "example",
+          "question": "Petr Král bydlí v Lesní ulici v domě číslo 5 v obci Dolany s PSČ 783 16. Napiš jeho adresu.",
+          "answer": "Jde to v pořadí jméno, ulice, obec: **Petr Král / Lesní 5 / 783 16 Dolany**."
+        },
+        {
+          "type": "example",
+          "question": "Co nepatří do adresy: ulice, číslo domu, nebo oblíbená barva?",
+          "answer": "Adresa říká, **kde** bydlíš. Barva s tím nesouvisí – **oblíbená barva** do adresy nepatří."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Stačí napsat „Jana, Horní Ves“.",
+          "right": "Jana Nováková, Lipová 12, 123 45 Horní Ves",
+          "why": "V obci žije mnoho lidí. Bez ulice a čísla domu by pošťák nevěděl, kam jít."
+        },
+        {
+          "type": "summary",
+          "text": "Adresa: jméno a příjmení, ulice a číslo domu, PSČ a obec. Svou adresu znám nazpaměť."
+        }
+      ]
+    },
+    {
+      "title": "Bezpečně doma",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Doma se cítíš v bezpečí. Ale i tady jsou věci, které můžou ublížit. Horký sporák, ostrý nůž, zásuvka."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, co je nebezpečné, nic se ti nestane. A víš, kde co v bytě je a k čemu slouží."
+        },
+        {
+          "type": "heading",
+          "text": "Místnosti v bytě"
+        },
+        {
+          "type": "term",
+          "term": "Místnost",
+          "definition": "Část bytu se stěnami a dveřmi. Každá slouží k něčemu jinému.",
+          "example": "kuchyně, ložnice, koupelna, obývák"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Místnost",
+            "Co tam dělám"
+          ],
+          "rows": [
+            [
+              "kuchyně",
+              "vařím, jím"
+            ],
+            [
+              "ložnice",
+              "spím"
+            ],
+            [
+              "koupelna",
+              "myju se"
+            ],
+            [
+              "obývací pokoj",
+              "odpočívám s rodinou"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Co je nebezpečné"
+        },
+        {
+          "type": "term",
+          "term": "Zásuvka",
+          "definition": "Díra ve zdi, do které se strká zástrčka. Je v ní elektrický proud.",
+          "example": "Do zásuvky zapojujeme lampu nebo nabíječku."
+        },
+        {
+          "type": "term",
+          "term": "Elektrický proud",
+          "definition": "Neviditelná síla, která pohání lampu nebo pračku. Když projde tělem, může vážně zranit, i zabít.",
+          "example": "Proto do zásuvky nikdy nic nestrkám."
+        },
+        {
+          "type": "list",
+          "items": [
+            "zásuvky – nestrkám do nich prsty ani věci",
+            "sporák a trouba – můžu se spálit",
+            "nože a nůžky – můžu se říznout",
+            "zápalky a zapalovač – můžu způsobit požár",
+            "léky a čisticí prostředky – můžou otrávit"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď činnosti: je to bezpečné, nebo nebezpečné?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Bezpečné ✅",
+              "Nebezpečné ⚠️"
+            ],
+            "items": [
+              {
+                "text": "hrát si s kostkami",
+                "group": 0
+              },
+              {
+                "text": "sahat do zásuvky",
+                "group": 1
+              },
+              {
+                "text": "hrát si se zápalkami",
+                "group": 1
+              },
+              {
+                "text": "číst si knížku",
+                "group": 0
+              },
+              {
+                "text": "otevřít cizímu",
+                "group": 1
+              },
+              {
+                "text": "pít neznámé lahvičky",
+                "group": 1
+              },
+              {
+                "text": "malovat",
+                "group": 0
+              },
+              {
+                "text": "zalévat kytky",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jsi doma sám a někdo zvoní. Nevíš, kdo to je. Co uděláš?",
+          "answer": "Neznámému člověku **neotvírám**. Zavolám mámě nebo tátovi a zeptám se, co dělat."
+        },
+        {
+          "type": "example",
+          "question": "Ucítíš doma kouř. Co uděláš?",
+          "answer": "Kouř může znamenat požár. **Řeknu to hned dospělému** a **odejdu ven**. Neschovávám se – tam by mě nenašli."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když je lahvička barevná a voní, můžu ji ochutnat.",
+          "right": "Neznámé lahvičky a léky nepiju.",
+          "why": "Čisticí prostředky a léky můžou vypadat jako sirup. I malé množství může otrávit."
+        },
+        {
+          "type": "summary",
+          "text": "Doma nesahám do zásuvek, nehraju si se zápalkami, nepiju neznámé lahvičky a cizím neotvírám."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co nepatří do adresy?",
+      "options": [
+        "oblíbená barva",
+        "ulice",
+        "číslo domu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo nosí dopisy?",
+      "options": [
+        "pošťák",
+        "hasič",
+        "kuchař"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Do zásuvky nestrkám prsty ani věci.",
+      "answer": true,
+      "explanation": "Elektrický proud může zabít."
+    },
+    {
+      "type": "truefalse",
+      "question": "Když zazvoní cizí člověk, otevřu mu.",
+      "answer": false,
+      "explanation": "Cizím lidem neotvírám. Zavolám rodiče."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď adresu shora dolů.",
+      "items": [
+        "jméno a příjmení",
+        "ulice a číslo",
+        "PSČ a obec"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je byt?",
+      "options": [
+        "místo, kde bydlím",
+        "obchod",
+        "škola"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj místnost a co tam dělám.",
+      "pairs": [
+        [
+          "kuchyně",
+          "vařím"
+        ],
+        [
+          "ložnice",
+          "spím"
+        ],
+        [
+          "koupelna",
+          "myju se"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Ve které místnosti se myju?",
+      "answers": [
+        "koupelna",
+        "v koupelně",
+        "koupelně"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Neznámé lahvičky a léky nepiju.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co uděláš, když ucítíš doma kouř?",
+      "options": [
+        "řeknu to dospělému a odejdu ven",
+        "schovám se pod postel",
+        "nic"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Řekni svou adresu.",
+      "answer": "Jméno, ulice, číslo domu, PSČ a obec, kde bydlím."
+    },
+    {
+      "type": "open",
+      "question": "Co doma může být nebezpečné?",
+      "answer": "Zásuvky, sporák, nože, zápalky, léky a čisticí prostředky."
+    }
+  ]
+}

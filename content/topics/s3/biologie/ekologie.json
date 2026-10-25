@@ -1,0 +1,423 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ekologie",
+  "title": "Ekologie",
+  "emoji": "🌎",
+  "explanations": [
+    {
+      "title": "Pyramida energie",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč je v lese mnohem víc myší než sov? Proč by bylo na Zemi víc jídla, kdyby lidé jedli méně masa? Odpověď je v tom, jak v přírodě proudí **energie** – ze slunce přes rostliny k býložravcům a dravcům."
+        },
+        {
+          "type": "text",
+          "text": "Ekologie zkoumá vztahy organismů mezi sebou a s prostředím. Začneme tokem energie, pak vztahy mezi druhy a jak se mění populace."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ekologie",
+          "definition": "Věda o vztazích organismů k sobě navzájem a k prostředí. (Není to totéž co ochrana přírody.)"
+        },
+        {
+          "type": "term",
+          "term": "Abiotické a biotické faktory",
+          "definition": "**Abiotické** – neživé: teplota, světlo, voda, pH. **Biotické** – živé: potrava, predátoři, parazité, konkurenti."
+        },
+        {
+          "type": "term",
+          "term": "Populace, společenstvo, ekosystém",
+          "definition": "**Populace** – jedinci jednoho druhu na jednom místě. **Společenstvo** – všechny populace na místě. **Ekosystém** – společenstvo + neživé prostředí."
+        },
+        {
+          "type": "term",
+          "term": "Producenti, konzumenti, rozkladači",
+          "definition": "**Producenti** (rostliny, řasy) vyrábějí organické látky fotosyntézou. **Konzumenti** je jedí (býložravci, masožravci). **Rozkladači** (bakterie, houby) rozkládají mrtvá těla."
+        },
+        {
+          "type": "term",
+          "term": "Trofická úroveň",
+          "definition": "Patro v potravním řetězci: producenti → býložravci → masožravci I. řádu → masožravci II. řádu."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo 10 %"
+        },
+        {
+          "type": "text",
+          "text": "Na vyšší trofickou úroveň přejde jen asi **10 %** energie. Zbytek se spotřebuje na život (dýchání, pohyb) a ztratí jako **teplo**. Prohlédni si graf."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "kJ",
+            "items": [
+              {
+                "label": "producenti",
+                "value": 10000
+              },
+              {
+                "label": "býložravci",
+                "value": 1000
+              },
+              {
+                "label": "masožravci I.",
+                "value": 100
+              },
+              {
+                "label": "masožravci II.",
+                "value": 10
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Tráva na louce zachytí 50 000 kJ. Kolik energie se asi dostane k lišce, která jí myši, které jedí semena?",
+          "answer": "Tráva 50 000 → myši asi 10 % = **5 000 kJ** → liška asi 10 % = **500 kJ**."
+        },
+        {
+          "type": "text",
+          "text": "Proto bývají potravní řetězce **krátké (4–5 článků)** a dravců je málo."
+        },
+        {
+          "type": "heading",
+          "text": "Vztahy mezi druhy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vztah",
+            "Kdo z toho má co",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "mutualismus",
+              "oba prospěch",
+              "mykorhiza (houba a strom)"
+            ],
+            [
+              "komenzalismus",
+              "jeden prospěch, druhému je to jedno",
+              "štítovec přisátý k žralokovi"
+            ],
+            [
+              "parazitismus",
+              "parazit prospěch, hostitel škodu",
+              "tasemnice"
+            ],
+            [
+              "predace",
+              "predátor loví kořist",
+              "rys a srnec"
+            ],
+            [
+              "konkurence",
+              "oba škodu – soupeří o zdroj",
+              "smrk a buk o světlo"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Populace a strategie"
+        },
+        {
+          "type": "text",
+          "text": "Populace nemůže růst donekonečna. Zpočátku roste rychle, pak se zpomalí a ustálí na **kapacitě prostředí K** – tolik jedinců, kolik prostředí uživí (**logistická křivka**)."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**r-stratégové** – mnoho potomků, žádná péče, krátký život (myš, hmyz)",
+            "**K-stratégové** – málo potomků, velká péče, dlouhý život (slon, člověk)"
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na vyšší úroveň přejde polovina energie.",
+          "right": "Přejde jen asi **10 %**.",
+          "why": "Většinu energie organismus spotřebuje na vlastní život a ztratí jako teplo. Jen malá část se uloží do těla, které sní další článek."
+        },
+        {
+          "type": "summary",
+          "text": "Na vyšší trofickou úroveň přejde asi 10 % energie – proto jsou řetězce krátké. Vztahy: mutualismus, komenzalismus, parazitismus, predace, konkurence. Populace roste k kapacitě K."
+        }
+      ]
+    },
+    {
+      "title": "Koloběh dusíku",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Energie ekosystémem jen **proteče** a odejde jako teplo. **Látky** se ale **recyklují** dokola – atomy dusíku ve tvém těle byly kdysi ve vzduchu, v bakterii i v listu. Tohle vysvětlení jde na ekologii přes koloběhy látek a změny v krajině."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, proč zemědělci hnojí, proč se rybníky „zelenají“ a jak se z holé skály stane les."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ekosystém",
+          "definition": "Společenstvo organismů a jejich neživé prostředí (půda, voda, vzduch, světlo – **abiotické faktory**) jako jeden celek."
+        },
+        {
+          "type": "term",
+          "term": "Producenti, konzumenti, rozkladači",
+          "definition": "Rostliny vyrábějí organické látky, živočichové je jedí, **rozkladači** (bakterie, houby) je vracejí do půdy jako minerální látky."
+        },
+        {
+          "type": "term",
+          "term": "Fixace dusíku",
+          "definition": "Přeměna vzdušného **N₂**, který rostliny neumějí využít, na **amonné ionty**. Umějí to jen některé bakterie – **hlízkové bakterie** na kořenech bobovitých a **sinice**."
+        },
+        {
+          "type": "term",
+          "term": "Nitrifikace a denitrifikace",
+          "definition": "**Nitrifikace** – bakterie mění amonné ionty na **dusičnany**, které rostliny přijímají. **Denitrifikace** – jiné bakterie mění dusičnany zpět na **N₂** do vzduchu."
+        },
+        {
+          "type": "term",
+          "term": "Amonifikace",
+          "definition": "Rozklad bílkovin z mrtvých těl a výkalů na **amoniak** (amonné ionty)."
+        },
+        {
+          "type": "heading",
+          "text": "Koloběh dusíku"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj, kde pracují bakterie."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "N₂ ve vzduchu",
+              "fixace (hlízkové bakterie, sinice)",
+              "amonné ionty → nitrifikace na dusičnany",
+              "příjem rostlinami, stavba bílkovin",
+              "amonifikace odumřelé hmoty",
+              "denitrifikace zpět na N₂"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč se jetel nebo hrách zařazují do osevního postupu?",
+          "answer": "Na jejich kořenech žijí **hlízkové bakterie**, které **fixují** vzdušný dusík. Půda se obohatí o dusík pro další plodinu."
+        },
+        {
+          "type": "heading",
+          "text": "Když je živin moc"
+        },
+        {
+          "type": "term",
+          "term": "Eutrofizace",
+          "definition": "Obohacení vod živinami (dusík, fosfor z hnojiv a odpadních vod). Přemnoží se **řasy a sinice**, po jejich odumření rozkladači spotřebují kyslík a ryby se dusí."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se mění společenstvo"
+        },
+        {
+          "type": "term",
+          "term": "Sukcese",
+          "definition": "Postupná změna společenstva na jednom místě v čase.",
+          "example": "Opuštěné pole: plevele → keře → světlomilné stromy → les."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Pionýrské stadium** – první osídlenci (lišejníky na skále, plevele na poli).",
+            "Přechodná stadia – půda se prohlubuje, přicházejí keře a stromy.",
+            "**Klimax** – konečné, relativně stálé stadium (u nás většinou les)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Populace a biomy"
+        },
+        {
+          "type": "text",
+          "text": "Populace roste, dokud nenarazí na **kapacitu prostředí K** (logistická křivka). **r-stratégové** (myš, hmyz) mají mnoho potomků bez péče, **K-stratégové** (slon, člověk) málo potomků s velkou péčí. Nejvíce druhů (nejvyšší **biodiverzitu**) má **tropický deštný les**."
+        },
+        {
+          "type": "text",
+          "text": "Spoj vztahy mezi druhy s příkladem – otoč karty."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "mutualismus",
+                "back": "oba mají prospěch – mykorhiza"
+              },
+              {
+                "front": "komenzalismus",
+                "back": "jeden má prospěch, druhému nevadí – štítovec u žraloka"
+              },
+              {
+                "front": "parazitismus",
+                "back": "tasemnice"
+              },
+              {
+                "front": "predace",
+                "back": "rys a srnec"
+              },
+              {
+                "front": "energie mezi úrovněmi",
+                "back": "asi 10 %"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Do rybníka u pole se splachují hnojiva. Co se stane v létě?",
+          "answer": "**Eutrofizace**: živiny způsobí přemnožení sinic a řas (vodní květ). Po jejich odumření rozklad spotřebuje kyslík a ryby mohou hynout."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nitrifikace vrací dusík do vzduchu.",
+          "right": "Do vzduchu ho vrací **denitrifikace**. Nitrifikace mění amonné ionty na **dusičnany**.",
+          "why": "Pořadí: fixace (N₂ → amonné ionty), nitrifikace (→ dusičnany), denitrifikace (dusičnany → N₂)."
+        },
+        {
+          "type": "summary",
+          "text": "Dusík: fixace (bakterie, sinice) → nitrifikace na dusičnany → rostliny → amonifikace → denitrifikace na N₂. Sukcese vede od pionýrů ke klimaxu. Eutrofizace = přebytek živin ve vodě."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kolik energie přibližně přejde na vyšší trofickou úroveň?",
+      "options": [
+        "10 %",
+        "50 %",
+        "90 %"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Přeměna amonných iontů na dusičnany je…",
+      "options": [
+        "nitrifikace",
+        "denitrifikace",
+        "fixace"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Slon je typický r-stratég.",
+      "answer": false,
+      "explanation": "Slon má málo potomků s velkou péčí – K-stratég."
+    },
+    {
+      "type": "input",
+      "question": "Postupná změna společenstva na stanovišti v čase se nazývá…",
+      "answers": [
+        "sukcese"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj vztah s příkladem.",
+      "pairs": [
+        [
+          "mutualismus",
+          "mykorhiza"
+        ],
+        [
+          "komenzálismus",
+          "štítovec u žraloka"
+        ],
+        [
+          "parazitismus",
+          "tasemnice"
+        ],
+        [
+          "predace",
+          "rys a srnec"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Konečné stadium sukcese je…",
+      "options": [
+        "klimax",
+        "pionýrské stadium",
+        "eutrofizace"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Eutrofizace je obohacení vod živinami, které vede k přemnožení řas a sinic.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Logistická křivka růstu populace se ustálí na…",
+      "options": [
+        "kapacitě prostředí K",
+        "nule",
+        "nekonečnu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který biom má nejvyšší biodiverzitu?",
+      "options": [
+        "tropický deštný les",
+        "tundra",
+        "poušť"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Abiotickými faktory jsou například teplota, světlo a pH.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Popiš koloběh dusíku.",
+      "answer": "Vzdušný N₂ fixují bakterie (hlízkové, sinice). Amonné ionty nitrifikační bakterie mění na dusičnany, které přijímají rostliny. Z odumřelé hmoty vzniká amoniak (amonifikace). Denitrifikace vrací N₂ do atmosféry."
+    },
+    {
+      "type": "open",
+      "question": "Porovnej r- a K-strategii.",
+      "answer": "r-stratégové mají hodně potomků bez péče, krátký život a rychle osidlují nová místa. K-stratégové mají málo potomků s velkou péčí, dlouhý život a populaci blízko kapacity prostředí."
+    }
+  ]
+}

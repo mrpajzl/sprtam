@@ -1,0 +1,518 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "soli",
+  "title": "Soli",
+  "emoji": "🧂",
+  "explanations": [
+    {
+      "title": "Ze života",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když řekneš „sůl“, myslíš tu, kterou solíš polévku. Chemik ale slovem **sůl** myslí celou velkou rodinu látek. Kuchyňská sůl je jen jedna z nich."
+        },
+        {
+          "type": "text",
+          "text": "Soli jsou všude kolem tebe: vápenec ve skalách, křída na tabuli, sádra na zlomenou ruku, hnojivo na zahradě i jedlá soda do bábovky. Když soli rozumíš, přečteš si z obalu, co v něm je."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ion",
+          "definition": "Atom (nebo malá skupinka atomů), který má elektrický náboj. Vznikne tak, že atom získá nebo ztratí elektrony – drobné záporně nabité částice z obalu atomu.",
+          "example": "Atom sodíku ztratí jeden elektron a stane se z něj ion Na⁺."
+        },
+        {
+          "type": "term",
+          "term": "Kation",
+          "definition": "Ion s **kladným** nábojem (+). V solích je to skoro vždy kov.",
+          "example": "Na⁺ (sodný), Ca²⁺ (vápenatý), Cu²⁺ (měďnatý). Výjimka bez kovu: amonný kation NH₄⁺."
+        },
+        {
+          "type": "term",
+          "term": "Kyselina",
+          "definition": "Látka, která ve vodě uvolňuje vodíkové kationty H⁺. Proto chutná kysele a leptá.",
+          "example": "Kyselina chlorovodíková HCl je v žaludku, kyselina sírová H₂SO₄ v autobaterii."
+        },
+        {
+          "type": "term",
+          "term": "Anion",
+          "definition": "Ion se **záporným** nábojem (−). V solích je to „zbytek kyseliny“ – co z ní zbude, když odejdou vodíky.",
+          "example": "Z HCl zbude Cl⁻ (chloridový anion), z H₂SO₄ zbude SO₄²⁻ (síranový anion)."
+        },
+        {
+          "type": "term",
+          "term": "Sůl",
+          "definition": "Látka složená z kationtů (kovu nebo NH₄⁺) a aniontů kyseliny. Kladné a záporné náboje se v ní přesně vyrovnají.",
+          "example": "Kuchyňská sůl NaCl = Na⁺ a Cl⁻."
+        },
+        {
+          "type": "heading",
+          "text": "Jak sůl drží pohromadě"
+        },
+        {
+          "type": "text",
+          "text": "Opačné náboje se přitahují – jako dva magnety. Kation (+) a anion (−) se proto drží u sebe. Miliony takových dvojic tvoří krystal soli."
+        },
+        {
+          "type": "text",
+          "text": "Celkový náboj soli musí být **nula**. Když má kation náboj 2+ a anion jen 1−, potřebuje kation anionty dva."
+        },
+        {
+          "type": "example",
+          "question": "Proč se chlorid vápenatý píše CaCl₂, a ne CaCl?",
+          "answer": "Vápník tvoří kation Ca²⁺ – má dva kladné náboje. Chloridový anion Cl⁻ má jen jeden záporný. Na vyrovnání potřebuju dva: 2+ a 2 × (1−) dá nulu. Proto CaCl₂."
+        },
+        {
+          "type": "term",
+          "term": "Hydrát",
+          "definition": "Sůl, která má ve svých krystalech pevně zabudovanou vodu. Ve vzorci se ta voda píše za tečku.",
+          "example": "Modrá skalice CuSO₄ · 5 H₂O má na každou jednotku síranu měďnatého pět molekul vody. Sádra je hydrát síranu vápenatého."
+        },
+        {
+          "type": "heading",
+          "text": "Soli kolem nás"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na každou kartu. Uvidíš chemický název soli, kterou znáš z domova."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "NaCl",
+                "back": "chlorid sodný (kuchyňská sůl)"
+              },
+              {
+                "front": "CaCO₃",
+                "back": "uhličitan vápenatý (vápenec, křída)"
+              },
+              {
+                "front": "CuSO₄ · 5 H₂O",
+                "back": "pentahydrát síranu měďnatého (modrá skalice)"
+              },
+              {
+                "front": "KNO₃",
+                "back": "dusičnan draselný (ledek, hnojivo)"
+              },
+              {
+                "front": "NaHCO₃",
+                "back": "hydrogenuhličitan sodný (jedlá soda)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak soli vznikají"
+        },
+        {
+          "type": "term",
+          "term": "Hydroxid",
+          "definition": "Látka, která obsahuje skupinu OH (hydroxidový anion OH⁻). Ve vodě tvoří **zásadu** – opak kyseliny. Je kluzká na omak a také leptá.",
+          "example": "Hydroxid sodný NaOH je v čističích odpadů."
+        },
+        {
+          "type": "term",
+          "term": "Neutralizace",
+          "definition": "Reakce kyseliny s hydroxidem. Kyselina i zásada se navzájem „vyruší“ a vznikne sůl a voda.",
+          "example": "NaOH + HCl → NaCl + H₂O"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**kyselina + hydroxid → sůl + voda** (neutralizace)",
+            "**kov + kyselina → sůl + vodík**, např. Zn + 2 HCl → ZnCl₂ + H₂",
+            "**kov + nekov → sůl**, např. 2 Na + Cl₂ → 2 NaCl"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Hodíš kousek zinku do kyseliny chlorovodíkové. Co uvidíš a co vznikne?",
+          "answer": "Uvidíš bublinky – to je plyn vodík. Zinek „vystrčí“ vodík z kyseliny a sám se naváže na chlor: Zn + 2 HCl → ZnCl₂ + H₂. Vzniká sůl chlorid zinečnatý a vodík."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Sůl = kuchyňská sůl, kterou se solí jídlo.",
+          "right": "Sůl je celá skupina látek z kationtu a aniontu kyseliny. Kuchyňská sůl NaCl je jen jedna z nich.",
+          "why": "Vápenec, sádra i modrá skalice jsou také soli. Modrá skalice je dokonce jedovatá – „sůl“ tedy neznamená „dá se jíst“."
+        },
+        {
+          "type": "summary",
+          "text": "Sůl = kation kovu (nebo NH₄⁺) + anion kyseliny, náboje se vyrovnají na nulu. Vzniká neutralizací, reakcí kovu s kyselinou nebo kovu s nekovem."
+        }
+      ]
+    },
+    {
+      "title": "Jak se jmenují",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každá sůl má jméno ze dvou slov: **síran měďnatý**, **chlorid sodný**, **dusičnan draselný**. První slovo prozradí, z jaké kyseliny sůl vznikla. Druhé slovo prozradí kov."
+        },
+        {
+          "type": "text",
+          "text": "Když znáš pravidla, přečteš i vzorec, který jsi nikdy neviděl – na hnojivu, na minerálce nebo v učebnici. A obráceně z názvu sestavíš vzorec."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kyselina",
+          "definition": "Látka, jejíž molekula obsahuje vodík, který ve vodě odštěpí jako kation H⁺.",
+          "example": "HCl, H₂SO₄, HNO₃"
+        },
+        {
+          "type": "term",
+          "term": "Anion kyseliny",
+          "definition": "To, co z kyseliny zbude, když odejdou všechny vodíky. Má tolik záporných nábojů, kolik vodíků odešlo.",
+          "example": "H₂SO₄ ztratí 2 H⁺ → zbude SO₄²⁻ (dva záporné náboje)."
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo",
+          "definition": "Číslo, které říká, s jakým nábojem je atom ve sloučenině „započítaný“. U kovu v soli je to přesně náboj jeho kationtu. Píše se římskou číslicí nahoru.",
+          "example": "V NaCl je sodík Na^I, v CaCl₂ je vápník Ca^II."
+        },
+        {
+          "type": "term",
+          "term": "Sůl",
+          "definition": "Sloučenina z kationtu kovu (nebo NH₄⁺) a aniontu kyseliny. Součet nábojů je nula.",
+          "example": "Na₂SO₄ = dva Na⁺ a jeden SO₄²⁻."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: první slovo podle kyseliny"
+        },
+        {
+          "type": "text",
+          "text": "Z přídavného jména kyseliny uděláš podstatné jméno. Kyselina sír**ová** → **síran**, dusič**ná** → dusič**nan**. U kyselin bez kyslíku (končí na *-ovodíková*) je koncovka **-id**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kyselina",
+            "Anion",
+            "Sůl se jmenuje"
+          ],
+          "rows": [
+            [
+              "HCl chlorovodíková",
+              "Cl⁻",
+              "chlorid"
+            ],
+            [
+              "H₂S sulfanová (sirovodíková)",
+              "S²⁻",
+              "sulfid"
+            ],
+            [
+              "H₂SO₄ sírová",
+              "SO₄²⁻",
+              "síran"
+            ],
+            [
+              "HNO₃ dusičná",
+              "NO₃⁻",
+              "dusičnan"
+            ],
+            [
+              "H₂CO₃ uhličitá",
+              "CO₃²⁻",
+              "uhličitan"
+            ],
+            [
+              "H₃PO₄ fosforečná",
+              "PO₄³⁻",
+              "fosforečnan"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: druhé slovo podle kovu"
+        },
+        {
+          "type": "text",
+          "text": "Kov dostane koncovku podle svého oxidačního čísla:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Oxidační číslo",
+            "Koncovka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "I",
+              "-ný",
+              "sodný, draselný, stříbrný"
+            ],
+            [
+              "II",
+              "-natý",
+              "vápenatý, měďnatý, zinečnatý"
+            ],
+            [
+              "III",
+              "-itý",
+              "hlinitý, železitý"
+            ],
+            [
+              "IV",
+              "-ičitý",
+              "olovičitý"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Sodík a draslík mají vždy I, vápník, hořčík a zinek vždy II, hliník vždy III. Železo a měď mohou mít různá čísla – proto existuje chlorid železnatý (Fe^II) i chlorid železitý (Fe^III)."
+        },
+        {
+          "type": "heading",
+          "text": "Od vzorce k názvu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Odděl kov od zbytku. Zbytek je anion – podle tabulky určíš první slovo.",
+            "Zjisti náboj aniontu a spočítej, kolik záporných nábojů je ve vzorci celkem.",
+            "Kov musí mít stejně kladných nábojů. Vyděl počtem atomů kovu – dostaneš jeho oxidační číslo.",
+            "Podle oxidačního čísla přidej koncovku."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jak se jmenuje FeCl₃?",
+          "answer": "Anion Cl⁻ → chlorid. Tři Cl⁻ dají dohromady 3−. Jedno železo tedy musí mít 3+ → oxidační číslo III → koncovka -itý. **Chlorid železitý.**"
+        },
+        {
+          "type": "example",
+          "question": "Napiš vzorec síranu sodného.",
+          "answer": "Síran = SO₄²⁻ (2−). Sodný = Na⁺ (1+). Abych vyrovnal 2−, potřebuju dva sodíky: **Na₂SO₄**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň správnou koncovku kovu. Nejdřív si spočítej náboj kovu podle aniontu."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "CaSO₄ = síran vápe",
+                "after": "",
+                "options": [
+                  "natý",
+                  "ný",
+                  "itý"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "K₂CO₃ = uhličitan draseln",
+                "after": "",
+                "options": [
+                  "ý",
+                  "atý",
+                  "itý"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "FeCl₃ = chlorid želez",
+                "after": "",
+                "options": [
+                  "itý",
+                  "natý",
+                  "ičitý"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "AgNO₃ = dusičnan stříbr",
+                "after": "",
+                "options": [
+                  "ný",
+                  "natý",
+                  "itý"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak soli vznikají"
+        },
+        {
+          "type": "term",
+          "term": "Hydroxid",
+          "definition": "Sloučenina kovu se skupinou OH. Ve vodě tvoří zásadu, která kyselinu „vyruší“.",
+          "example": "NaOH – hydroxid sodný"
+        },
+        {
+          "type": "list",
+          "items": [
+            "kyselina + hydroxid → sůl + voda (tomu se říká **neutralizace**): NaOH + HCl → NaCl + H₂O",
+            "kov + kyselina → sůl + vodík: Zn + 2 HCl → ZnCl₂ + H₂",
+            "kov + nekov → sůl: 2 Na + Cl₂ → 2 NaCl"
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Síran sodný = NaSO₄",
+          "right": "Síran sodný = Na₂SO₄",
+          "why": "Síranový anion má náboj 2−, sodík jen 1+. Jeden sodík by náboj nevyrovnal – musí být dva."
+        },
+        {
+          "type": "summary",
+          "text": "Název soli = anion (-id, -an, -ičnan, -ičitan…) + kov s koncovkou podle oxidačního čísla (-ný, -natý, -itý, -ičitý). Náboje ve vzorci dávají dohromady nulu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jak se chemicky jmenuje kuchyňská sůl NaCl?",
+      "answers": [
+        "chlorid sodný"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec uhličitanu vápenatého?",
+      "options": [
+        "CaCO₃",
+        "CaC₂",
+        "Ca(CO₃)₂",
+        "CaCO₂"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje CuSO₄?",
+      "options": [
+        "síran měďnatý",
+        "siřičitan měďnatý",
+        "sulfid měďnatý",
+        "síran měďný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje sůl kyseliny dusičné a draslíku?",
+      "options": [
+        "dusičnan draselný",
+        "dusitan draselný",
+        "nitrid draselný",
+        "dusičnan draslíku"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj kyselinu s názvem její soli.",
+      "pairs": [
+        [
+          "HCl",
+          "chlorid"
+        ],
+        [
+          "H₂SO₄",
+          "síran"
+        ],
+        [
+          "HNO₃",
+          "dusičnan"
+        ],
+        [
+          "H₂CO₃",
+          "uhličitan"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Sádra je hydrát síranu vápenatého.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Reakcí zinku s kyselinou chlorovodíkovou vzniká chlorid zinečnatý a kyslík.",
+      "answer": false,
+      "explanation": "Vzniká vodík: Zn + 2 HCl → ZnCl₂ + H₂."
+    },
+    {
+      "type": "choice",
+      "question": "Jaký plyn vzniká reakcí kovu (např. zinku) se zředěnou kyselinou?",
+      "options": [
+        "vodík",
+        "kyslík",
+        "chlor",
+        "oxid uhličitý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá „modrá skalice“?",
+      "options": [
+        "pentahydrát síranu měďnatého",
+        "síran železnatý",
+        "chlorid měďnatý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Vzorec síranu sodného je…",
+      "options": [
+        "Na₂SO₄",
+        "NaSO₄",
+        "Na₂SO₃",
+        "Na₂S"
+      ],
+      "answer": 0,
+      "explanation": "SO₄²⁻ má náboj −2, sodík +1 → dva sodíky."
+    },
+    {
+      "type": "open",
+      "question": "Uveď tři způsoby, jak mohou vzniknout soli.",
+      "answer": "Neutralizací kyseliny hydroxidem, reakcí neušlechtilého kovu s kyselinou (uvolní se vodík), přímou reakcí kovu s nekovem, např. sodíku s chlorem."
+    },
+    {
+      "type": "open",
+      "question": "Uveď tři soli z běžného života a k čemu slouží.",
+      "answer": "Chlorid sodný – k solení a na posyp silnic. Uhličitan vápenatý – vápenec na stavby a výrobu vápna. Dusičnany – průmyslová hnojiva. Hydrogenuhličitan sodný – jedlá soda do pečiva."
+    }
+  ]
+}

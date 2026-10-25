@@ -1,0 +1,422 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "be-bje-ve-vje-me-mne",
+  "title": "Bě/bje, vě/vje, mě/mně",
+  "emoji": "🧭",
+  "explanations": [
+    {
+      "title": "Šev mezi díly",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Řekni *objet* a *oběd*. Zní skoro stejně: „objet“, „objed“. A přesto jedno píšeme s **bje** a druhé s **bě**."
+        },
+        {
+          "type": "text",
+          "text": "Rozdíl je ve stavbě slova. Kde se potkají dva díly, je **šev** – a právě tam se píše *bje* nebo *vje*. Podobně u *mě* a *mně* rozhoduje, z čeho slovo vzniklo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Předpona a kořen",
+          "definition": "Připomenutí: předpona je část před kořenem, kořen je společný pro příbuzná slova.",
+          "example": "**ob** + **jet** = objet"
+        },
+        {
+          "type": "term",
+          "term": "Šev",
+          "definition": "Místo, kde předpona končí a kořen začíná.",
+          "example": "ob|jet, v|jezd"
+        },
+        {
+          "type": "term",
+          "term": "bje, vje",
+          "definition": "Píšeme jen na švu: předpona **ob-** nebo **v-** + kořen, který začíná na **je-**.",
+          "example": "objet, objem, objevit, vjet, vjezd"
+        },
+        {
+          "type": "term",
+          "term": "bě, vě",
+          "definition": "Píšeme všude jinde.",
+          "example": "oběd, oběhnout, běhat, věc, květ"
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "ob",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "jet",
+                    "label": "kořen + konec"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "v",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "jezd",
+                    "label": "kořen"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "ob",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "běh",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "nout",
+                    "label": "příponová část"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Postup pro bje/vje"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je ve slově předpona **ob-** nebo **v-**?",
+            "Začíná kořen za ní na **je-** (jet, jem, jev)?",
+            "Obojí ano → **bje / vje**.",
+            "Ne → **bě / vě**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Objet, nebo obět?",
+          "answer": "Ob + **jet** (jet autem). Kořen začíná na je- → **objet**."
+        },
+        {
+          "type": "example",
+          "question": "Objehnout, nebo oběhnout?",
+          "answer": "Ob + **běh** + nout. Kořen začíná na b, ne na je- → **oběhnout**."
+        },
+        {
+          "type": "heading",
+          "text": "A co mě, mně?"
+        },
+        {
+          "type": "text",
+          "text": "Ve slovech píšeme **mně** jen tehdy, když je **mn** v příbuzném slově: *zapomenout → zapomněl*, *jemný → jemně*. Jinde **mě**: *město, měsíc, změna*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "zapoměl",
+          "right": "zapomněl",
+          "why": "Příbuzné slovo je *zapomenout* – je v něm **m-n**. Proto mně."
+        },
+        {
+          "type": "summary",
+          "text": "bje, vje jen na švu ob-/v- + je-. Jinak bě, vě. Mně ve slově jen tam, kde je mn v příbuzném slově."
+        }
+      ]
+    },
+    {
+      "title": "Mě, nebo mně?",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Pojď ke mně.“ „Nikdo mě neviděl.“ Obě slova znějí stejně – „mňe“. Ale znamenají něco jiného, a tak se jinak píšou."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se jednoduchý trik s **tebe/tobě**. A zopakuješ si i *bje/vje*."
+        },
+        {
+          "type": "term",
+          "term": "Zájmeno já",
+          "definition": "Slovo, kterým mluvíš o sobě. V různých pádech má různé tvary.",
+          "example": "já, mě, mně, mnou"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Připomenutí: tvar slova podle otázky (2. bez koho, 3. komu, 4. koho/co, 6. o kom).",
+          "example": "bez mě (2.), ke mně (3.)"
+        },
+        {
+          "type": "term",
+          "term": "Trik tebe/tobě",
+          "definition": "Místo já řekni tvar od ty. Hodí se **tebe** → napiš **mě**. Hodí se **tobě** → napiš **mně**.",
+          "example": "bez tebe → bez mě; k tobě → ke mně"
+        },
+        {
+          "type": "table",
+          "head": [
+            "píšu",
+            "kdy",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "mě",
+              "běžně ve slovech",
+              "město, měsíc, změna"
+            ],
+            [
+              "mně",
+              "ve slově, kde je v příbuzném slově mn",
+              "zapomněl (zapomenout), jemně (jemný)"
+            ],
+            [
+              "mě",
+              "zájmeno 2. a 4. pád (tebe)",
+              "bez mě, vidíš mě"
+            ],
+            [
+              "mně",
+              "zájmeno 3. a 6. pád (tobě)",
+              "dej mně, o mně"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup u zájmena"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi „mě/mně“, které znamená *já*.",
+            "Dej místo něj *tebe*, nebo *tobě*.",
+            "Sedí **tebe** → **mě**.",
+            "Sedí **tobě** → **mně**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Pojď ke m_.",
+          "answer": "Pojď k **tobě**? Ano, sedí *tobě*. Píšeme **ke mně**."
+        },
+        {
+          "type": "example",
+          "question": "Nikdo m_ neviděl.",
+          "answer": "Nikdo **tebe** neviděl. Sedí *tebe*. Píšeme **mě**."
+        },
+        {
+          "type": "heading",
+          "text": "Doplň"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Na ná",
+                "after": "stí je kašna.",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Zapo",
+                "after": "l jsem klíče.",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Auto ",
+                "after": "elo do garáže.",
+                "options": [
+                  "vje",
+                  "vě"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Musím o",
+                "after": "hnout hřiště.",
+                "options": [
+                  "bje",
+                  "bě"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Pojď ke ",
+                "after": ".",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Řekni to mě.",
+          "right": "Řekni to mně.",
+          "why": "Řekni to **tobě** – sedí *tobě*, je to 3. pád. Proto mně."
+        },
+        {
+          "type": "summary",
+          "text": "Zájmeno: tebe → mě, tobě → mně. Ve slovech mně jen s mn v příbuzném slově. Bje/vje jen na švu ob-/v- + je-."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které slovo je napsané správně?",
+      "options": [
+        "objet",
+        "obět"
+      ],
+      "answer": 0,
+      "explanation": "ob + jet = objet."
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsané správně?",
+      "options": [
+        "vjezd",
+        "vězd"
+      ],
+      "answer": 0,
+      "explanation": "v + jezd = vjezd."
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsané správně?",
+      "options": [
+        "objehnout",
+        "oběhnout"
+      ],
+      "answer": 1,
+      "explanation": "ob + běhnout – kořen začíná na b, ne na je."
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsané správně?",
+      "options": [
+        "zapomněl",
+        "zapoměl"
+      ],
+      "answer": 0,
+      "explanation": "Zapomenout – v kořeni je mn."
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsané správně?",
+      "options": [
+        "mněsto",
+        "město"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: „Pojď ke …“",
+      "options": [
+        "mě",
+        "mně"
+      ],
+      "answer": 1,
+      "explanation": "Ke komu? 3. pád → mně."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: „Nikdo … neviděl.“",
+      "options": [
+        "mě",
+        "mně"
+      ],
+      "answer": 0,
+      "explanation": "Koho neviděl? 4. pád → mě."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Objevit“ píšeme s bje, protože je tam předpona ob-.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve slově „věda“ píšeme vje.",
+      "answer": false,
+      "explanation": "Není tam předpona v- + kořen je-. Píšeme vě."
+    },
+    {
+      "type": "match",
+      "question": "Spoj pád zájmena já s tvarem.",
+      "pairs": [
+        [
+          "2. pád (bez …)",
+          "mě"
+        ],
+        [
+          "3. pád (k …)",
+          "mně"
+        ],
+        [
+          "4. pád (vidím …)",
+          "mě"
+        ],
+        [
+          "6. pád (o …)",
+          "mně"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsané správně?",
+      "options": [
+        "jemně",
+        "jemě"
+      ],
+      "answer": 0,
+      "explanation": "Jemný – je tam mn."
+    },
+    {
+      "type": "open",
+      "question": "Kdy píšeme bje a vje?",
+      "answer": "Na švu předpony ob- nebo v- a kořene, který začíná na je-. Například objet, objem, vjet, vjezd."
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš, jestli napsat zájmeno mě, nebo mně?",
+      "answer": "Nahradím ho tvarem tebe/tobě. Tebe → mě (2. a 4. pád), tobě → mně (3. a 6. pád)."
+    }
+  ]
+}

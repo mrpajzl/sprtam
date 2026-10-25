@@ -1,0 +1,372 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "frazeologie-prejata-slova",
+  "title": "Frazémy, přejatá slova, význam",
+  "emoji": "📖",
+  "explanations": [
+    {
+      "title": "Kartičky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když někdo „nosí dříví do lesa“, nemá v ruce ani poleno. A kdo „má máslo na hlavě“, nemusí mít nic na vlasech. Celé spojení znamená něco jiného než jednotlivá slova."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? V testu se ptají na význam ustálených spojení. A v textu je pak poznáš a pochopíš."
+        },
+        {
+          "type": "term",
+          "term": "Frazém",
+          "definition": "Ustálené spojení slov s **přeneseným** významem. Význam má celek, ne jednotlivá slova.",
+          "example": "*nosit dříví do lesa* = dělat zbytečnou věc"
+        },
+        {
+          "type": "term",
+          "term": "Přenesený význam",
+          "definition": "Význam, který nevyplývá doslova ze slov, ale z obrazu, který vytvářejí.",
+          "example": "*věšet hlavu* = být smutný (smutný člověk má hlavu skloněnou)"
+        },
+        {
+          "type": "heading",
+          "text": "Jak frazém rozluštit"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Představ si doslovný obraz: *házet hrách na zeď*.",
+            "Co se stane? Hrách se odrazí a nic se nezmění.",
+            "Přenes to na lidi: snaha, která nemá žádný účinek.",
+            "Význam: **marně někoho přesvědčovat**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zkus si u každého frazému představit obraz a odhadnout význam. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "házet hrách na zeď",
+                "back": "mluvit marně"
+              },
+              {
+                "front": "nosit dříví do lesa",
+                "back": "dělat zbytečnou věc"
+              },
+              {
+                "front": "mít máslo na hlavě",
+                "back": "mít se za co stydět"
+              },
+              {
+                "front": "nechat na holičkách",
+                "back": "opustit v nouzi"
+              },
+              {
+                "front": "dělat z komára velblouda",
+                "back": "přehánět"
+              },
+              {
+                "front": "chodit kolem horké kaše",
+                "back": "vyhýbat se podstatě věci"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Co znamená *dělat z komára velblouda*?",
+          "answer": "Obraz: z malého komára udělám obrovského velblouda. Přeneseně: **zveličovat, přehánět** malý problém."
+        },
+        {
+          "type": "example",
+          "question": "Co znamená *pověsit něco na hřebík*?",
+          "answer": "Obraz: věc, kterou už nepoužívám, pověsím na zeď. Přeneseně: **přestat s něčím** (*pověsil fotbal na hřebík*)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "nosit dřevo do lesa / mít na hlavě máslíčko",
+          "right": "nosit dříví do lesa / mít máslo na hlavě",
+          "why": "Frazém je ustálený – slova v něm neměníme. Změnou se ztratí srozumitelnost a působí to jako chyba."
+        },
+        {
+          "type": "summary",
+          "text": "Frazém je ustálené spojení s přeneseným významem. Neměníme ho ani nepřekládáme doslova. Význam rozluštíš přes obraz, který vytváří."
+        }
+      ]
+    },
+    {
+      "title": "Slovníkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V novinách čteš „relevantní argument“, „eliminovat riziko“, „dosáhnout konsenzu“. Přejatá slova jsou všude – a v testu se ptají, co znamenají."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Kdo rozumí přejatým slovům, rozumí odborným i publicistickým textům. A nesplete si *efektní* s *efektivní*."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přejaté slovo",
+          "definition": "Slovo převzaté z cizího jazyka.",
+          "example": "*konsenzus* (z latiny), *víkend* (z angličtiny)"
+        },
+        {
+          "type": "term",
+          "term": "Paronyma",
+          "definition": "Slova, která znějí podobně, ale mají jiný význam.",
+          "example": "*efektní* (působivý) × *efektivní* (účinný)"
+        },
+        {
+          "type": "term",
+          "term": "Kontext",
+          "definition": "Okolí slova – věta a text, ve kterém stojí. Podle něj poznáš, jaký význam autor myslí.",
+          "example": "*relevantní* argument = argument, který se týká věci"
+        },
+        {
+          "type": "heading",
+          "text": "Slovníček"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Slovo",
+            "Význam"
+          ],
+          "rows": [
+            [
+              "eliminovat",
+              "odstranit, vyloučit"
+            ],
+            [
+              "relevantní",
+              "podstatný, mající vztah k věci"
+            ],
+            [
+              "ambivalentní",
+              "rozpolcený, dvojznačný"
+            ],
+            [
+              "konsenzus",
+              "shoda"
+            ],
+            [
+              "prioritní",
+              "přednostní"
+            ],
+            [
+              "deklarovat",
+              "prohlásit, vyhlásit"
+            ],
+            [
+              "empatie",
+              "vcítění"
+            ],
+            [
+              "efektivní × efektní",
+              "účinný × působivý"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozřaď: je to ustálené spojení s přeneseným významem, nebo jedno slovo z cizího jazyka?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "frazém",
+              "přejaté slovo"
+            ],
+            "items": [
+              {
+                "text": "věšet hlavu",
+                "group": 0
+              },
+              {
+                "text": "konsenzus",
+                "group": 1
+              },
+              {
+                "text": "mít z něčeho těžkou hlavu",
+                "group": 0
+              },
+              {
+                "text": "prioritní",
+                "group": 1
+              },
+              {
+                "text": "chodit kolem horké kaše",
+                "group": 0
+              },
+              {
+                "text": "deklarovat",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Nová metoda je velmi ___ – ušetří polovinu času.* (efektní / efektivní)",
+          "answer": "Kontext: šetří čas → je **účinná** → **efektivní**."
+        },
+        {
+          "type": "example",
+          "question": "Co znamená *Má k té práci ambivalentní vztah.*?",
+          "answer": "*Ambivalentní* = rozpolcený. Práci má zároveň rád i nerad – **neví, co k ní cítí**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ambivalentní = jednoznačný, vyhraněný.",
+          "right": "Ambivalentní = rozpolcený, dvojznačný.",
+          "why": "*Ambi-* znamená „oba“ (jako ambidextr – člověk šikovný na obě ruce). Ambivalentní postoj míří na obě strany zároveň."
+        },
+        {
+          "type": "summary",
+          "text": "Přejatá slova a paronyma posuzuj podle kontextu. Zapamatuj si: eliminovat = odstranit, relevantní = podstatný, ambivalentní = rozpolcený, konsenzus = shoda, efektivní = účinný."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co znamená „házet hrách na zeď“?",
+      "options": [
+        "dělat hluk",
+        "marně někoho přesvědčovat",
+        "plýtvat jídlem"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená „chodit kolem horké kaše“?",
+      "options": [
+        "vyhýbat se podstatě",
+        "mít hlad",
+        "spěchat"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je synonymem k „relevantní“?",
+      "options": [
+        "podstatný",
+        "nahodilý",
+        "zastaralý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: „Nová metoda je velmi ___ – ušetří polovinu času.“",
+      "options": [
+        "efektní",
+        "efektivní"
+      ],
+      "answer": 1,
+      "explanation": "Efektivní = účinný; efektní = působivý."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Konsenzus“ znamená shodu.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„Ambivalentní“ znamená jednoznačný.",
+      "answer": false,
+      "explanation": "Znamená rozpolcený, dvojznačný."
+    },
+    {
+      "type": "match",
+      "question": "Spoj frazém s významem.",
+      "pairs": [
+        [
+          "věšet hlavu",
+          "být smutný"
+        ],
+        [
+          "mít máslo na hlavě",
+          "mít se za co stydět"
+        ],
+        [
+          "nosit dříví do lesa",
+          "dělat zbytečnost"
+        ],
+        [
+          "dělat z komára velblouda",
+          "přehánět"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "České slovo pro „empatie“ (jedno slovo):",
+      "answers": [
+        "vcítění",
+        "soucítění"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je paronymum?",
+      "options": [
+        "slovo opačného významu",
+        "slovo podobně znějící s jiným významem",
+        "slovo stejného významu"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená „eliminovat“?",
+      "options": [
+        "zvýraznit",
+        "odstranit",
+        "zopakovat"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "open",
+      "question": "Co je frazém? Uveď dva příklady s významem.",
+      "answer": "Ustálené víceslovné spojení s přeneseným významem celku. Např. „mít máslo na hlavě“ = mít se za co stydět; „nosit dříví do lesa“ = dělat zbytečnou věc."
+    },
+    {
+      "type": "open",
+      "question": "Proč se v textu vyplatí ověřit význam slova z kontextu?",
+      "answer": "Mnohá slova jsou mnohoznačná nebo mají podobně znějící dvojníky (efektní/efektivní). Teprve okolní věty ukážou, který význam autor myslí, a na tom stojí správná odpověď v testu."
+    }
+  ]
+}

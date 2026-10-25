@@ -1,0 +1,403 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hydrosfera-s",
+  "title": "Hydrosféra",
+  "emoji": "🌊",
+  "explanations": [
+    {
+      "title": "Oceán",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V Mrtvém moři se dá ležet na hladině jako na matraci, v Baltu skoro necítíš sůl. Golfský proud hřeje Norsko, zatímco u Chile je moře studené i v létě. Oceán není jedna stejná voda – liší se slaností, teplotou i pohybem."
+        },
+        {
+          "type": "text",
+          "text": "Oceán pokrývá asi 71 % povrchu Země a řídí podnebí na pevnině. Proto ho geografie zkoumá podrobně."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hydrosféra",
+          "definition": "Všechna voda na Zemi: oceány, moře, řeky, jezera, ledovce, podzemní voda, vodní pára.",
+          "example": "Asi 97 % vody je slaná voda v oceánech."
+        },
+        {
+          "type": "term",
+          "term": "Salinita (slanost)",
+          "definition": "Kolik gramů rozpuštěných solí je v 1 kg (zhruba v 1 litru) vody. Udává se v promile (‰) – tisícinách.",
+          "example": "35 ‰ = 35 g solí v litru vody."
+        },
+        {
+          "type": "term",
+          "term": "Výpar",
+          "definition": "Přeměna vody na páru. Sůl se nevypaří – zůstává ve vodě.",
+          "example": "Když se vypaří slaná voda z misky, zbude na dně sůl."
+        },
+        {
+          "type": "term",
+          "term": "Mořský proud",
+          "definition": "Trvalé proudění vody v oceánu. **Teplý** teče od rovníku k pólům, **studený** od pólů k rovníku.",
+          "example": "Golfský proud je teplý, Humboldtův (Peruánský) u Jižní Ameriky studený."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Proč je někde víc soli"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Výpar odebírá vodu, sůl zůstává → slanost **roste**.",
+            "Srážky a přítok řek přidávají sladkou vodu → slanost **klesá**.",
+            "Teplé uzavřené moře bez řek = velký výpar → velmi slané (Rudé moře).",
+            "Chladné moře s mnoha řekami = malý výpar → málo slané (Baltské moře)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Porovnej slanost. Kolikrát je Mrtvé moře slanější než průměrný oceán?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "‰ (asi)",
+            "items": [
+              {
+                "label": "Baltské moře",
+                "value": 7
+              },
+              {
+                "label": "světový oceán",
+                "value": 35
+              },
+              {
+                "label": "Rudé moře",
+                "value": 40
+              },
+              {
+                "label": "Mrtvé moře",
+                "value": 340
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Pohyby vody"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Mořské proudy** – teplé (Golfský, Kurošio, Brazilský), studené (Humboldtův, Benguelský, Labradorský).",
+            "**Příliv a odliv** – způsobuje gravitace Měsíce a Slunce, hladina stoupá a klesá asi dvakrát denně.",
+            "**Tsunami** – obří vlna vyvolaná podmořským zemětřesením nebo sesuvem."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Kolikrát je Mrtvé moře slanější než oceán?",
+          "answer": "340 : 35 ≈ 9,7. Asi **desetkrát**. Proto je voda tak hustá, že v ní člověk nadnáší."
+        },
+        {
+          "type": "example",
+          "question": "Proč je v poušti Atacama v Chile tak sucho, když leží u oceánu?",
+          "answer": "Podél pobřeží teče studený **Humboldtův proud**. Ochlazuje vzduch zespodu, ten nestoupá a nevznikají mraky. Neprší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Golfský proud je teplý vítr od Mexika.",
+          "right": "Golfský proud je teplý mořský proud – proudí v něm voda, ne vzduch.",
+          "why": "Teplo z vody ale předává vzduchu nad sebou a západní větry ho nesou nad Evropu. Proto se proud a vítr pletou."
+        },
+        {
+          "type": "summary",
+          "text": "Průměrná salinita oceánu je asi 35 ‰. Zvyšuje ji výpar, snižují srážky a přítok řek. Teplé proudy podnebí oteplují a zvlhčují, studené ochlazují a vysušují."
+        }
+      ]
+    },
+    {
+      "title": "Řeka a koloběh",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Voda, kterou dnes piješ, mohla před sto lety být v oceánu, v mraku nad Afrikou nebo v ledovci. Voda na Zemi pořád koluje. Řeky jsou jednou z cest, kterými se vrací do moře."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, jak voda koluje, jak se popisuje řeka a proč má řeka někdy povodeň a jindy skoro vyschne."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hydrosféra",
+          "definition": "Všechna voda na Zemi – v oceánech, řekách, jezerech, ledovcích, pod zemí i ve vzduchu.",
+          "example": "Většina **sladké** vody je zamrzlá v ledovcích (Antarktida, Grónsko)."
+        },
+        {
+          "type": "term",
+          "term": "Povodí",
+          "definition": "Území, ze kterého voda odtéká do jedné řeky.",
+          "example": "Povodí Labe."
+        },
+        {
+          "type": "term",
+          "term": "Rozvodnice",
+          "definition": "Hranice mezi dvěma povodími, obvykle po hřebenech.",
+          "example": "Hřeben Krkonoš dělí povodí Labe a Odry."
+        },
+        {
+          "type": "term",
+          "term": "Průtok",
+          "definition": "Objem vody, který proteče daným místem řeky za 1 sekundu. Jednotka m³/s.",
+          "example": "Vltava v Praze má průměrně asi 150 m³/s."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Koloběh vody"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj, kudy voda putuje."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "srážky na povodí",
+              "vsak a povrchový odtok",
+              "podzemní voda",
+              "řeka – průtok",
+              "moře – výpar"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Jak řeka končí"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Delta** – řeka se u ústí rozvětví do mnoha ramen (Nil, Dunaj). Vzniká tam, kde řeka nese hodně usazenin a moře je klidné.",
+            "**Estuár** – nálevkovité ústí, které příliv a odliv udržují otevřené (Labe u Hamburku, Temže).",
+            "**Endoreická (bezodtoká) oblast** – území, ze kterého voda do oceánu vůbec neodteče. Končí v jezeře nebo se vypaří (Kaspické moře)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: Na čem závisí průtok"
+        },
+        {
+          "type": "text",
+          "text": "Průtok se mění během roku podle **srážek**, **tání sněhu a ledovců**, **výparu**, **propustnosti podloží** (písek vodu vsákne, jíl ne), **vegetace** a zásahů člověka (přehrady, odběr vody)."
+        },
+        {
+          "type": "heading",
+          "text": "Moře a proudy"
+        },
+        {
+          "type": "text",
+          "text": "Řeky přinášejí do moře sladkou vodu a snižují jeho **salinitu** (slanost, v promile ‰; průměr oceánu je asi 35 ‰). Roztřiď mořské proudy – teplé tečou od rovníku, studené od pólů."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Teplý proud",
+              "Studený proud"
+            ],
+            "items": [
+              {
+                "text": "Golfský",
+                "group": 0
+              },
+              {
+                "text": "Kurošio",
+                "group": 0
+              },
+              {
+                "text": "Humboldtův (Peruánský)",
+                "group": 1
+              },
+              {
+                "text": "Benguelský",
+                "group": 1
+              },
+              {
+                "text": "Labradorský",
+                "group": 1
+              },
+              {
+                "text": "Brazilský",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Proč má Baltské moře nízkou salinitu?",
+          "answer": "Vlévá se do něj mnoho řek (sladká voda), je chladné (malý výpar) a s oceánem je spojené jen úzkými průlivy. Slanost je asi jen **7 ‰**."
+        },
+        {
+          "type": "example",
+          "question": "Kdy má řeka v Česku obvykle nejvyšší průtok?",
+          "answer": "Na **jaře** – taje sníh z hor a půda je nasycená vodou. V létě a na podzim je průtok nižší kvůli výparu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Většina sladké vody na Zemi je v řekách a jezerech.",
+          "right": "Většina sladké vody (asi dvě třetiny) je v ledovcích. Řeky a jezera mají jen malý zlomek.",
+          "why": "Antarktida a Grónsko jsou pokryté ledem silným až kilometry. To je obrovská zásoba sladké vody."
+        },
+        {
+          "type": "summary",
+          "text": "Povodí = území, ze kterého voda odtéká do řeky, rozvodnice je jeho hranice. Průtok se měří v m³/s. Studené proudy u pobřeží → pouště, teplé → mírnější a vlhčí podnebí."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Průměrná salinita světového oceánu je asi kolik promile?",
+      "answers": [
+        "35"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč má Baltské moře nízkou salinitu?",
+      "options": [
+        "velký přítok řek a malý výpar",
+        "vysoký výpar",
+        "sopečná činnost",
+        "je to jezero"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který proud je studený?",
+      "options": [
+        "Golfský",
+        "Kurošio",
+        "Humboldtův",
+        "Brazilský"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "truefalse",
+      "question": "Rozvodnice je hranice mezi povodími.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "V jakých jednotkách se udává průtok?",
+      "options": [
+        "m³/s",
+        "km/h",
+        "mm",
+        "m²"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a definici.",
+      "pairs": [
+        [
+          "salinita",
+          "slanost vody"
+        ],
+        [
+          "povodí",
+          "území odvodňované řekou"
+        ],
+        [
+          "delta",
+          "ústí rozvětvené do ramen"
+        ],
+        [
+          "estuár",
+          "nálevkovité ústí"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co způsobuje příliv a odliv?",
+      "options": [
+        "gravitace Měsíce a Slunce",
+        "vítr",
+        "zemětřesení",
+        "mořské proudy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Většina sladké vody je v ledovcích.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá vlna vzniklá podmořským zemětřesením?",
+      "options": [
+        "tsunami",
+        "příboj",
+        "seiche",
+        "tornádo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je endoreická oblast?",
+      "options": [
+        "území bez odtoku do oceánu",
+        "povodí s deltou",
+        "ledovcová oblast",
+        "krasové území"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak ovlivňují mořské proudy podnebí pevniny?",
+      "answer": "Teplé proudy oteplují a zvlhčují pobřeží (Golfský proud v západní Evropě). Studené proudy ochlazují vzduch, ten nemůže stoupat a vznikají pobřežní pouště (Atacama, Namib)."
+    },
+    {
+      "type": "open",
+      "question": "Na čem závisí průtok řeky během roku?",
+      "answer": "Na srážkách, tání sněhu a ledovců, výparu, propustnosti podloží, vegetaci a zásahu člověka (přehrady, odběry)."
+    }
+  ]
+}

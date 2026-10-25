@@ -1,0 +1,429 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "d-prvky-vyznamne",
+  "title": "Železo, měď, zinek a další kovy",
+  "emoji": "🪙",
+  "explanations": [
+    {
+      "title": "Kov po kovu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ocelový most, měděný drát v nabíječce, pozinkovaný plot, stříbrný řetízek, wolframové vlákno v žárovce, titanový kloub v koleni. Každý z těch kovů byl vybrán kvůli jedné své výjimečné vlastnosti."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme nejdůležitější d-prvky jeden po druhém: z čeho se vyrábějí, co umějí a k čemu slouží."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "d-prvky",
+          "definition": "Kovy 3.–12. skupiny periodické tabulky (přechodné kovy). Mívají více oxidačních čísel a barevné sloučeniny."
+        },
+        {
+          "type": "term",
+          "term": "Ruda",
+          "definition": "Hornina, ze které se kov vyrábí; kov je v ní ve sloučenině (oxid, sulfid)."
+        },
+        {
+          "type": "term",
+          "term": "Ušlechtilý kov",
+          "definition": "Kov, který málo reaguje (nekoroduje, nerozpouští se ve zředěných kyselinách).",
+          "example": "Cu, Ag, Au, Pt"
+        },
+        {
+          "type": "term",
+          "term": "Koroze",
+          "definition": "Postupné narušování kovu vzduchem a vodou."
+        },
+        {
+          "type": "heading",
+          "text": "Železo Fe"
+        },
+        {
+          "type": "text",
+          "text": "Nejpoužívanější kov. Ruda **hematit Fe₂O₃**, vyrábí se ve vysoké peci redukcí oxidem uhelnatým. Ocel = železo s méně než asi 2 % uhlíku. **Nerezová ocel** obsahuje chrom (a obvykle nikl). **Zelená skalice** je FeSO₄ · 7 H₂O."
+        },
+        {
+          "type": "heading",
+          "text": "Měď Cu a stříbro Ag"
+        },
+        {
+          "type": "text",
+          "text": "Měď skvěle vede proud – na dráty. Na vzduchu se pokryje zelenou **měděnkou** (zásaditý uhličitan měďnatý) – proto jsou staré střechy zelené. **Stříbro** vede proud **nejlépe ze všech kovů**, ale je drahé. AgNO₃ se říká lápis."
+        },
+        {
+          "type": "heading",
+          "text": "Zinek Zn a ochrana železa"
+        },
+        {
+          "type": "text",
+          "text": "Ruda **sfalerit ZnS**. Zinkem se **pozinkovává** železo. Zinek je méně ušlechtilý než železo, takže když se vrstva poškrábe, koroduje **přednostně zinek** a železo zůstane chráněné."
+        },
+        {
+          "type": "example",
+          "question": "Proč pozinkovaný plot nerezaví ani tam, kde je zinek oškrábaný?",
+          "answer": "Zinek je v řadě kovů víc vlevo než železo – ochotněji odevzdává elektrony. Při kontaktu s vodou se tedy oxiduje **zinek místo železa**. Je to „obětovaná“ ochrana."
+        },
+        {
+          "type": "heading",
+          "text": "Další významné kovy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Wolfram W** – **nejvyšší teplota tání** ze všech kovů (přes 3 400 °C); vlákna žárovek.",
+            "**Titan Ti** – lehký, pevný, nekoroduje; implantáty, letectví.",
+            "**Chrom Cr** – chromování, nerezová ocel.",
+            "**Mangan Mn** – ruda burel MnO₂; **KMnO₄** (hypermangan, Mn^VII) dezinfikuje.",
+            "**Rtuť Hg** – kapalná; ruda rumělka HgS; **páry jsou jedovaté** (nervy, ledviny).",
+            "**Zlato Au** – nejušlechtilejší; rozpustí ho jen **lučavka královská** (HCl + HNO₃ 3 : 1)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jaké oxidační číslo má mangan v KMnO₄?",
+          "answer": "K: +1, O: 4 · (−2) = −8. 1 + Mn − 8 = 0 → **Mn = VII**. To je nejvyšší možné OČ manganu – proto je KMnO₄ silné oxidační činidlo."
+        },
+        {
+          "type": "text",
+          "text": "Spoj kov s rudou – otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "železo",
+                "back": "hematit Fe₂O₃"
+              },
+              {
+                "front": "zinek",
+                "back": "sfalerit ZnS"
+              },
+              {
+                "front": "rtuť",
+                "back": "rumělka HgS"
+              },
+              {
+                "front": "mangan",
+                "back": "burel MnO₂"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejlépe vede elektrický proud měď, proto jsou z ní dráty.",
+          "right": "Nejlépe vede proud **stříbro**, měď je druhá.",
+          "why": "Měď se na dráty používá, protože je mnohem levnější a vede jen o málo hůř."
+        },
+        {
+          "type": "summary",
+          "text": "Fe – ocel, hematit. Cu – vodiče, měděnka. Ag – nejlepší vodič. Zn – pozinkování (obětovaná ochrana). W – nejvyšší teplota tání. Ti – implantáty. Hg – jedovaté páry. Au – jen lučavka královská."
+        }
+      ]
+    },
+    {
+      "title": "Podle vlastností",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Inženýr nevybírá kov podle jména, ale podle toho, co potřebuje: vodivost, pevnost, lehkost, odolnost proti korozi, teplotu tání. Seřadíme si proto významné d-prvky podle toho, v čem vynikají."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přechodné kovy (d-prvky)",
+          "definition": "Kovy 3.–12. skupiny. Zaplňují d-orbitaly, mají více oxidačních čísel, barevné sloučeniny a tvoří komplexy."
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo (OČ)",
+          "definition": "Formální náboj atomu ve sloučenině. Vysoké OČ = atom „chce“ elektrony zpět → silné oxidační činidlo."
+        },
+        {
+          "type": "term",
+          "term": "Pasivace",
+          "definition": "Ochrana kovu tenkou souvislou vrstvou oxidu.",
+          "example": "Chrom v nerezové oceli vytvoří na povrchu ochrannou vrstvičku."
+        },
+        {
+          "type": "term",
+          "term": "Hydrát (skalice)",
+          "definition": "Sůl s vázanou vodou v krystalu. Skalice jsou hydráty síranů.",
+          "example": "modrá skalice CuSO₄ · 5 H₂O, zelená skalice FeSO₄ · 7 H₂O"
+        },
+        {
+          "type": "heading",
+          "text": "Kdo v čem vyniká"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vlastnost",
+            "Kov",
+            "Využití"
+          ],
+          "rows": [
+            [
+              "nejlepší elektrická vodivost",
+              "Ag (pak Cu)",
+              "kontakty; Cu na dráty"
+            ],
+            [
+              "nejvyšší teplota tání",
+              "W",
+              "vlákna žárovek"
+            ],
+            [
+              "lehký, pevný, nekoroduje",
+              "Ti",
+              "implantáty, letadla"
+            ],
+            [
+              "odolnost proti korozi",
+              "Cr, Ni (v nerezu)",
+              "nerezová ocel, chromování"
+            ],
+            [
+              "pevnost a cena",
+              "Fe (ocel)",
+              "stavby, stroje"
+            ],
+            [
+              "kapalný",
+              "Hg",
+              "dříve teploměry"
+            ],
+            [
+              "nejušlechtilejší",
+              "Au, Pt",
+              "šperky, elektronika, katalyzátory"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Výroba z rud"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Sulfidické rudy (ZnS, HgS) se nejdřív **praží** – zahřívají na vzduchu: 2 ZnS + 3 O₂ → 2 ZnO + 2 SO₂.",
+            "Oxid se **redukuje** uhlíkem nebo CO: ZnO + C → Zn + CO; Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂.",
+            "Velmi čisté kovy (Cu) se rafinují **elektrolýzou**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Koroze a ochrana"
+        },
+        {
+          "type": "example",
+          "question": "Proč chrání zinek železo, i když je jeho vrstva poškrábaná – a proč to cín neumí?",
+          "answer": "Zinek je **méně ušlechtilý** než železo → oxiduje se přednostně a železo šetří. Cín je **ušlechtilejší** než železo → po poškrábání naopak koroduje železo rychleji. Proto pocínovaná konzerva v místě rýhy rychle rezaví."
+        },
+        {
+          "type": "text",
+          "text": "Měď na vzduchu zezelená – vzniká **měděnka** (zásaditý uhličitan měďnatý). Stříbro černá působením sulfanu H₂S (vzniká Ag₂S)."
+        },
+        {
+          "type": "heading",
+          "text": "Sloučeniny, které musíš znát"
+        },
+        {
+          "type": "text",
+          "text": "Zkus si nejdřív vzpomenout, pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "zelená skalice",
+                "back": "FeSO₄ · 7 H₂O – heptahydrát síranu železnatého"
+              },
+              {
+                "front": "modrá skalice",
+                "back": "CuSO₄ · 5 H₂O"
+              },
+              {
+                "front": "KMnO₄",
+                "back": "manganistan draselný, Mn^VII, fialový"
+              },
+              {
+                "front": "lápis",
+                "back": "AgNO₃ dusičnan stříbrný"
+              },
+              {
+                "front": "měděnka",
+                "back": "zásaditý uhličitan měďnatý"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč je KMnO₄ silné oxidační činidlo?",
+          "answer": "Mangan má v něm OČ **VII** – nejvyšší možné. Snadno přijímá elektrony a redukuje se (v kyselém prostředí až na Mn^II), přitom oxiduje jiné látky. Proto dezinfikuje a používá se v titraci."
+        },
+        {
+          "type": "heading",
+          "text": "Bezpečnost"
+        },
+        {
+          "type": "text",
+          "text": "**Rtuť** se odpařuje už za pokojové teploty a její páry poškozují nervy a ledviny. Rozbitý rtuťový teploměr se nesmí vysávat; kuličky se seberou a odevzdají jako nebezpečný odpad."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zlato se rozpustí ve zředěné kyselině chlorovodíkové jako železo.",
+          "right": "Zlato je ušlechtilé – rozpustí ho jen **lučavka královská** (HCl + HNO₃ v poměru 3 : 1).",
+          "why": "Zlato je v řadě kovů daleko za vodíkem, vodík z kyseliny nevytěsní."
+        },
+        {
+          "type": "summary",
+          "text": "Ag nejlepší vodič, W nejvyšší teplota tání, Ti lehký a odolný, Cr + Ni nerez, Zn obětovaná ochrana železa. Mn^VII v KMnO₄ silně oxiduje. Páry Hg jsou jedovaté, Au rozpustí jen lučavka."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který kov má nejvyšší teplotu tání?",
+      "options": [
+        "wolfram",
+        "železo",
+        "platina",
+        "titan"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který kov nejlépe vede elektrický proud?",
+      "options": [
+        "stříbro",
+        "měď",
+        "zlato",
+        "hliník"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je zelená skalice?",
+      "options": [
+        "heptahydrát síranu železnatého",
+        "pentahydrát síranu měďnatého",
+        "uhličitan měďnatý",
+        "oxid chromitý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá zelený povlak na mědi (střechy)?",
+      "options": [
+        "měděnka",
+        "rez",
+        "patina zinku",
+        "lápis"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Nerezová ocel obsahuje chrom (a obvykle nikl).",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Zlato se rozpouští ve zředěné kyselině chlorovodíkové.",
+      "answer": false,
+      "explanation": "Zlato je ušlechtilé, rozpouští se v lučavce královské."
+    },
+    {
+      "type": "input",
+      "question": "Jaké oxidační číslo (arabskou číslicí) má mangan v KMnO₄?",
+      "answers": [
+        "7",
+        "VII"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj kov s rudou.",
+      "pairs": [
+        [
+          "železo",
+          "hematit Fe₂O₃"
+        ],
+        [
+          "zinek",
+          "sfalerit ZnS"
+        ],
+        [
+          "rtuť",
+          "rumělka HgS"
+        ],
+        [
+          "mangan",
+          "burel MnO₂"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč je pozinkované železo chráněno, i když se vrstva zinku poškrábe?",
+      "options": [
+        "zinek je méně ušlechtilý a koroduje přednostně",
+        "zinek je ušlechtilejší",
+        "zinek neodolává vodě",
+        "zinek odpuzuje kyslík"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Proč jsou páry rtuti nebezpečné?",
+      "options": [
+        "jsou toxické, poškozují nervy a ledviny",
+        "jsou výbušné",
+        "jsou radioaktivní",
+        "nejsou nebezpečné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Uveď tři významné d-prvky, jejich vlastnosti a využití.",
+      "answer": "Železo – pevné, kujné, ve formě oceli na stavby a stroje. Měď – výborně vede proud, na vodiče a slitiny. Titan – lehký, pevný a odolný, na implantáty a v letectví."
+    },
+    {
+      "type": "open",
+      "question": "Proč je KMnO₄ silné oxidační činidlo?",
+      "answer": "Mangan v něm má nejvyšší oxidační číslo VII, takže se snadno redukuje (na Mn^II v kyselém prostředí) a přitom oxiduje jiné látky. Používá se k dezinfekci a v titraci."
+    }
+  ]
+}

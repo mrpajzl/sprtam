@@ -1,15 +1,46 @@
-import type { Widget } from '../content/types'
-import { Angle, Balance, Clock, Counter, Fraction, Linear, Multiply, NumberLine, Percent, PlaceValue, Pythagoras, Quadratic, Shape } from './math'
-import { Bars, Cycle, Flip, Gap, Parts, Sort, Timeline } from './generic'
-import { Column } from './column'
+import type { WidgetDef } from './kit'
+import angle from './angle'
+import balance from './balance'
+import bars from './bars'
+import clock from './clock'
+import column from './column'
+import counter from './counter'
+import cycle from './cycle'
+import flip from './flip'
+import fraction from './fraction'
+import gap from './gap'
+import linear from './linear'
+import multiply from './multiply'
+import numberLine from './number-line'
+import parts from './parts'
+import percent from './percent'
+import placeValue from './place-value'
+import pythagoras from './pythagoras'
+import quadratic from './quadratic'
+import shape from './shape'
+import sort from './sort'
+import timeline from './timeline'
 
-const MAP: Record<Widget['w'], (p: any) => preact.JSX.Element> = {
-  counter: Counter, numberline: NumberLine, fraction: Fraction, placevalue: PlaceValue, clock: Clock,
-  multiply: Multiply, balance: Balance, angle: Angle, pythagoras: Pythagoras, linear: Linear, quadratic: Quadratic,
-  percent: Percent, shape: Shape, timeline: Timeline, flip: Flip, sort: Sort, cycle: Cycle, parts: Parts, gap: Gap, bars: Bars, column: Column,
+// Every widget, by name. A new widget = a new file + one line here (scripts/check-content.ts
+// fails when a file in src/widgets is missing from this list). Grouped as in the gallery (/widgety).
+export const WIDGET_GROUPS: { name: string; widgets: WidgetDef[] }[] = [
+  { name: 'Čísla a počítání', widgets: [counter, numberLine, placeValue, column, multiply, fraction, percent, clock] },
+  { name: 'Geometrie a funkce', widgets: [angle, shape, pythagoras, balance, linear, quadratic] },
+  { name: 'Text, třídění a souvislosti', widgets: [flip, sort, gap, parts, cycle, timeline, bars] },
+]
+
+export const WIDGETS: Record<string, WidgetDef> = Object.fromEntries(WIDGET_GROUPS.flatMap((g) => g.widgets).map((w) => [w.name, w]))
+
+/** A widget as used in content: name + props. */
+export interface WidgetRef { widget: string; props: Record<string, unknown> }
+
+export function WidgetView({ w }: { w: WidgetRef }) {
+  const C = WIDGETS[w.widget]?.Component
+  return C ? <C {...w.props} /> : null
 }
 
-export function WidgetView({ w }: { w: Widget }) {
-  const C = MAP[w.w]
-  return C ? <C {...w.p} /> : null
+/** The widget's task above a quiz question (never shows the answer). */
+export function WidgetQuestion({ w }: { w: WidgetRef }) {
+  const C = WIDGETS[w.widget]?.Question
+  return C ? <C {...w.props} /> : null
 }

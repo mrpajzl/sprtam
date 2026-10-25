@@ -1,0 +1,410 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cr-obyvatelstvo",
+  "title": "Obyvatelstvo a sídla Česka",
+  "emoji": "👥",
+  "explanations": [
+    {
+      "title": "Česko v číslech",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolik nás v Česku je? Kde nás žije nejvíc? A kolik dětí dnes chodí do školy oproti důchodcům? Odpovědi na tyhle otázky zajímají starosty, ministry i firmy."
+        },
+        {
+          "type": "text",
+          "text": "Podle nich se plánují školy, nemocnice, byty i to, kolik bude stát důchod. Naučíš se čísla číst a chápat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obyvatelstvo",
+          "definition": "Všichni lidé, kteří trvale žijí na nějakém území.",
+          "example": "Obyvatelstvo Česka je asi 10,9 milionu lidí."
+        },
+        {
+          "type": "term",
+          "term": "Hustota zalidnění",
+          "definition": "Kolik lidí v průměru připadá na 1 km². Počítá se: počet obyvatel : rozloha.",
+          "example": "Česko: 10 900 000 : 78 900 ≈ 138 obyv./km²."
+        },
+        {
+          "type": "term",
+          "term": "Sídlo",
+          "definition": "Místo, kde lidé trvale bydlí – samota, vesnice, město.",
+          "example": "Brno je sídlo, tvoje vesnice taky."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Kolik nás je"
+        },
+        {
+          "type": "text",
+          "text": "V Česku žije asi **10,9 milionu** lidí. Hustota zalidnění je asi **140 obyv./km²** – to je víc než průměr Evropy."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Největší města"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf. Kolikrát je Praha větší než Brno?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "tis. obyv. (asi)",
+            "items": [
+              {
+                "label": "Praha",
+                "value": 1400
+              },
+              {
+                "label": "Brno",
+                "value": 400
+              },
+              {
+                "label": "Ostrava",
+                "value": 285
+              },
+              {
+                "label": "Plzeň",
+                "value": 185
+              },
+              {
+                "label": "Liberec",
+                "value": 105
+              },
+              {
+                "label": "Olomouc",
+                "value": 100
+              }
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "head": [
+            "Město",
+            "Řeka"
+          ],
+          "rows": [
+            [
+              "Praha",
+              "Vltava"
+            ],
+            [
+              "Brno",
+              "Svratka a Svitava"
+            ],
+            [
+              "Ostrava",
+              "Odra a Ostravice"
+            ],
+            [
+              "Olomouc",
+              "Morava"
+            ],
+            [
+              "Ústí nad Labem",
+              "Labe"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: Kde lidé žijí"
+        },
+        {
+          "type": "text",
+          "text": "Asi **tři čtvrtiny** lidí žijí ve městech. Nejhustěji osídlené jsou oblasti velkých měst: Praha, Brněnsko, Ostravsko. Nejřidčeji hory a pohraničí – třeba **Šumava**."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Kolikrát je Praha zhruba větší než Brno?",
+          "answer": "1 400 000 : 400 000 = 3,5. Praha má asi **třiapůlkrát** víc obyvatel."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od největšího: Plzeň, Brno, Praha, Ostrava.",
+          "answer": "Praha (1,4 mil.) → Brno (400 tis.) → Ostrava (285 tis.) → Plzeň (185 tis.)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Druhé největší město Česka je Ostrava.",
+          "right": "Druhé je Brno (asi 400 tisíc lidí), třetí Ostrava.",
+          "why": "Ostrava je velká průmyslová aglomerace, ale samotné město má méně obyvatel než Brno."
+        },
+        {
+          "type": "summary",
+          "text": "Česko má asi 10,9 mil. obyvatel a hustotu kolem 140 obyv./km². Největší města: Praha, Brno, Ostrava, Plzeň. Asi 3/4 lidí žijí ve městech."
+        }
+      ]
+    },
+    {
+      "title": "Jak se Česko mění",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zeptej se babičky, kolik měla sourozenců. Pravděpodobně víc než ty. A kolik lidí dnes kolem tebe mluví ukrajinsky nebo vietnamsky? Obyvatelstvo Česka se rychle mění."
+        },
+        {
+          "type": "text",
+          "text": "Podíváme se na tři velké změny – stárnutí, stěhování za město a příchod cizinců – a na to, co pro nás znamenají."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obyvatelstvo (populace)",
+          "definition": "Všichni lidé žijící na určitém území.",
+          "example": "Česko má asi 10,9 milionu obyvatel."
+        },
+        {
+          "type": "term",
+          "term": "Stárnutí populace",
+          "definition": "Ve státě přibývá starých lidí a ubývá dětí.",
+          "example": "V Česku je dnes víc lidí nad 65 let než dětí do 15 let."
+        },
+        {
+          "type": "term",
+          "term": "Přistěhovalec (imigrant)",
+          "definition": "Člověk, který se přestěhoval z jiného státu, aby tu žil.",
+          "example": "Ukrajinci, Slováci, Vietnamci žijící v Česku."
+        },
+        {
+          "type": "term",
+          "term": "Suburbanizace",
+          "definition": "Stěhování lidí z velkého města do obcí v jeho okolí.",
+          "example": "Rodina z Brna si postaví dům v obci u Brna a do města dojíždí."
+        },
+        {
+          "type": "heading",
+          "text": "Změna 1: Stárneme"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rodí se méně dětí než dřív.",
+            "Lidé se díky lékařské péči dožívají vyššího věku.",
+            "Přibývá seniorů, ubývá mladých.",
+            "Bude méně pracujících, kteří platí daně na důchody a zdravotnictví."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Změna 2: Ze sídliště za město"
+        },
+        {
+          "type": "text",
+          "text": "Lidé chtějí bydlet v rodinném domě, v klidu a blízko přírody. Stěhují se proto z měst do okolních obcí – to je **suburbanizace**. Do práce pak dojíždějí autem nebo vlakem."
+        },
+        {
+          "type": "heading",
+          "text": "Změna 3: Přibývá cizinců"
+        },
+        {
+          "type": "text",
+          "text": "Nejvíc cizinců v Česku jsou **Ukrajinci**, dále **Slováci** a **Vietnamci**. Počet obyvatel Česka dnes roste hlavně díky nim – dětí se rodí málo."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď oblasti. Pomůcka: je tam velké město, nebo hory a lesy?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Hustě osídleno",
+              "Řídce osídleno"
+            ],
+            "items": [
+              {
+                "text": "Praha a okolí",
+                "group": 0
+              },
+              {
+                "text": "Ostravsko",
+                "group": 0
+              },
+              {
+                "text": "Brněnsko",
+                "group": 0
+              },
+              {
+                "text": "Šumava",
+                "group": 1
+              },
+              {
+                "text": "Vysočina",
+                "group": 1
+              },
+              {
+                "text": "jižní Čechy",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Pro přehled: největší města jsou **Praha (1,4 mil.), Brno, Ostrava, Plzeň**. Ve městech žijí asi **3/4** obyvatel."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Obec u Prahy měla před 20 lety 500 obyvatel, dnes 1 500. Co se stalo?",
+          "answer": "Lidé z Prahy se přestěhovali do nových rodinných domů v obci. To je **suburbanizace**. Obec se ztrojnásobila."
+        },
+        {
+          "type": "example",
+          "question": "Proč stárnutí populace trápí stát?",
+          "answer": "Důchody a péči o seniory platí hlavně ti, kdo pracují. Když seniorů přibývá a pracujících ubývá, je na to méně peněz."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Suburbanizace je stěhování z vesnic do měst.",
+          "right": "Suburbanizace je stěhování z města do jeho **okolí**. Stěhování do měst je urbanizace.",
+          "why": "Předpona *sub-* znamená „pod, u“. Lidé se stěhují do obcí „u města“."
+        },
+        {
+          "type": "summary",
+          "text": "Česká populace stárne a roste hlavně díky přistěhovalcům (nejvíc Ukrajinců). Lidé se stěhují z měst do okolních obcí – suburbanizace."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kolik obyvatel má Česko?",
+      "options": [
+        "asi 5 mil.",
+        "asi 10,9 mil.",
+        "asi 15 mil.",
+        "asi 38 mil."
+      ],
+      "answer": 1
+    },
+    {
+      "type": "order",
+      "question": "Seřaď města podle počtu obyvatel od největšího.",
+      "items": [
+        "Praha",
+        "Brno",
+        "Ostrava",
+        "Plzeň"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Které je druhé největší město Česka?",
+      "answers": [
+        "Brno"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Česká populace stárne.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Která skupina cizinců je v Česku nejpočetnější?",
+      "options": [
+        "Ukrajinci",
+        "Němci",
+        "Američané",
+        "Číňané"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je suburbanizace?",
+      "options": [
+        "stěhování z města do jeho okolí",
+        "stěhování z vesnic do měst",
+        "zánik měst",
+        "stavba sídlišť"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Většina obyvatel Česka žije ve městech.",
+      "answer": true,
+      "explanation": "Asi tři čtvrtiny."
+    },
+    {
+      "type": "choice",
+      "question": "Která oblast je osídlena nejřidčeji?",
+      "options": [
+        "Šumava",
+        "Praha",
+        "Ostravsko",
+        "Brno"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj město a řeku.",
+      "pairs": [
+        [
+          "Praha",
+          "Vltava"
+        ],
+        [
+          "Ostrava",
+          "Odra"
+        ],
+        [
+          "Olomouc",
+          "Morava"
+        ],
+        [
+          "Ústí nad Labem",
+          "Labe"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Proč česká populace stárne a co to znamená?",
+      "answer": "Rodí se málo dětí a lidé se dožívají vyššího věku. Bude méně pracujících, kteří platí důchody a zdravotní péči pro rostoucí počet seniorů."
+    },
+    {
+      "type": "open",
+      "question": "Proč se lidé stěhují z velkých měst do okolních obcí?",
+      "answer": "Chtějí bydlet v rodinném domě, v klidu a blízko přírody. Bydlení je tam levnější a do města mohou dojíždět za prací."
+    }
+  ]
+}

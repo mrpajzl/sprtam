@@ -1,0 +1,444 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "bilkoviny-enzymy",
+  "title": "Bílkoviny a enzymy",
+  "emoji": "🥩",
+  "explanations": [
+    {
+      "title": "Stavebnice života",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Svaly, vlasy, nehty, protilátky proti chřipce, hemoglobin v krvi, inzulin i trávicí enzymy – to všechno jsou **bílkoviny** (proteiny). Jsou nejvšestrannější molekuly v těle."
+        },
+        {
+          "type": "text",
+          "text": "Přitom jsou všechny postavené z jediné stavebnice o 20 druzích dílků. Jak je možné, že z nich vznikne tolik různých věcí?"
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Aminokyselina",
+          "definition": "Molekula, která má na jednom uhlíku (α-uhlík) skupinu **–NH₂** (aminoskupina) i **–COOH** (karboxyl) a k tomu postranní řetězec, který se liší.",
+          "example": "glycin (nejjednodušší), alanin, cystein"
+        },
+        {
+          "type": "term",
+          "term": "Amfion",
+          "definition": "Forma aminokyseliny, kdy –COOH odevzdá H⁺ a –NH₂ ho přijme. Molekula má **zároveň kladný i záporný náboj** (–NH₃⁺ a –COO⁻). Jinak též zwitterion."
+        },
+        {
+          "type": "term",
+          "term": "Peptidová vazba",
+          "definition": "Vazba –CO–NH– mezi karboxylem jedné aminokyseliny a aminoskupinou druhé; uvolní se voda."
+        },
+        {
+          "type": "term",
+          "term": "Bílkovina",
+          "definition": "Dlouhý řetězec (obvykle přes 100) aminokyselin spojených peptidovými vazbami, složený do přesného tvaru. Kratším řetězcům se říká peptidy."
+        },
+        {
+          "type": "heading",
+          "text": "Jako abeceda"
+        },
+        {
+          "type": "text",
+          "text": "Z 26 písmen abecedy složíš všechna slova češtiny. Z **20 kódovaných aminokyselin** příroda skládá všechny bílkoviny. O tom, co bílkovina dělá, rozhoduje **pořadí** aminokyselin – jako pořadí písmen ve slově."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři patra struktury"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Primární** – pořadí aminokyselin v řetězci (jako písmena ve větě).",
+            "**Sekundární** – řetězec se stočí do **α-šroubovice** nebo poskládá do **β-skládaného listu**. Drží to **vodíkové můstky**.",
+            "**Terciární** – celý řetězec se složí do prostorového klubka s přesným tvarem.",
+            "**Kvartérní** – několik řetězců (podjednotek) se spojí. Hemoglobin má 4 podjednotky."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Denaturace",
+          "definition": "Rozpad prostorové struktury (sekundární až kvartérní) teplem, kyselinou, alkoholem nebo těžkými kovy. **Peptidové vazby zůstanou**, ale bílkovina ztratí tvar i funkci.",
+          "example": "Bílek při vaření zbělá."
+        },
+        {
+          "type": "heading",
+          "text": "Co bílkoviny dělají"
+        },
+        {
+          "type": "text",
+          "text": "Spoj bílkovinu s funkcí – otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "hemoglobin",
+                "back": "přenos kyslíku krví"
+              },
+              {
+                "front": "kolagen",
+                "back": "pevnost šlach, kůže, kostí"
+              },
+              {
+                "front": "inzulin",
+                "back": "hormon, snižuje hladinu cukru v krvi"
+              },
+              {
+                "front": "protilátky",
+                "back": "imunita"
+              },
+              {
+                "front": "aktin a myosin",
+                "back": "stah svalu"
+              },
+              {
+                "front": "enzymy",
+                "back": "urychlují reakce"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Enzymy – biokatalyzátory"
+        },
+        {
+          "type": "term",
+          "term": "Enzym",
+          "definition": "Bílkovina, která **urychluje** chemickou reakci tím, že **snižuje aktivační energii** (energetický „kopec“ před reakcí). Sama se nespotřebuje."
+        },
+        {
+          "type": "text",
+          "text": "Látka, kterou enzym zpracovává (**substrát**), zapadne do **aktivního místa** jako klíč do zámku. Proto je každý enzym **specifický** – pracuje jen se „svým“ substrátem."
+        },
+        {
+          "type": "example",
+          "question": "Proč pepsin funguje v žaludku, ale ve střevě už ne?",
+          "answer": "Každý enzym má **pH optimum**. Pepsin pracuje nejlépe asi při **pH 2** – v kyselém žaludku. Ve střevě je pH zhruba neutrální až mírně zásadité, pepsin tam ztrácí aktivitu; bílkoviny tam štěpí trypsin."
+        },
+        {
+          "type": "example",
+          "question": "Proč je vysoká horečka (nad 42 °C) životu nebezpečná?",
+          "answer": "Enzymy mají teplotní optimum kolem **37 °C**. Při vyšší teplotě se začnou **denaturovat** – ztratí tvar aktivního místa a přestanou fungovat."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Při denaturaci se štěpí peptidové vazby.",
+          "right": "Denaturace ničí **prostorovou** strukturu, **primární** (pořadí a peptidové vazby) zůstává.",
+          "why": "Peptidové vazby jsou pevné kovalentní vazby. Teplo trhá hlavně slabší vodíkové můstky a další interakce, které drží tvar."
+        },
+        {
+          "type": "summary",
+          "text": "Bílkoviny = řetězce z 20 aminokyselin spojených peptidovou vazbou. Struktura primární až kvartérní; denaturace ničí tvar, ne pořadí. Enzymy snižují aktivační energii, jsou specifické, mají teplotní a pH optimum."
+        }
+      ]
+    },
+    {
+      "title": "Enzymy podrobně",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Bez enzymů by trávení i další reakce v těle probíhaly nepředstavitelně pomalu. Enzymy je urychlují mnohamilionkrát. Prací prášky, výroba sýra a piva, testy na cukrovku – i tam pracují enzymy."
+        },
+        {
+          "type": "text",
+          "text": "Abychom pochopili, jak fungují, musíme nejdřív vědět, jak je postavená každá bílkovina."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "α-aminokyselina",
+          "definition": "Karboxylová kyselina, která má na uhlíku vedle –COOH (α-uhlík) navázanou aminoskupinu –NH₂. V bílkovinách je **20** kódovaných aminokyselin."
+        },
+        {
+          "type": "term",
+          "term": "Amfion (zwitterion)",
+          "definition": "Aminokyselina s nábojem + i − současně: H₃N⁺–CH(R)–COO⁻. V této formě je v roztoku i v krystalu."
+        },
+        {
+          "type": "term",
+          "term": "Peptidová vazba",
+          "definition": "Amidová vazba –CO–NH– vzniklá reakcí –COOH a –NH₂ za odštěpení vody."
+        },
+        {
+          "type": "term",
+          "term": "Aktivační energie",
+          "definition": "Minimální energie, kterou musí reagující částice mít, aby reakce proběhla."
+        },
+        {
+          "type": "heading",
+          "text": "Struktura bílkovin v tabulce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Úroveň",
+            "Co popisuje",
+            "Co ji drží"
+          ],
+          "rows": [
+            [
+              "primární",
+              "pořadí aminokyselin",
+              "peptidové vazby"
+            ],
+            [
+              "sekundární",
+              "α-šroubovice, β-skládaný list",
+              "vodíkové můstky"
+            ],
+            [
+              "terciární",
+              "prostorové složení řetězce",
+              "disulfidové můstky, iontové, hydrofobní interakce"
+            ],
+            [
+              "kvartérní",
+              "spojení více řetězců",
+              "stejné slabé interakce"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik peptidových vazeb má tripeptid a kolik molekul vody se při jeho vzniku uvolní?",
+          "answer": "Tři aminokyseliny spojí **2 vazby** (mezi 1.–2. a 2.–3.). Každá vazba uvolní jednu molekulu vody → **2 H₂O**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak enzym pracuje"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Substrát** se naváže do **aktivního místa** enzymu (model zámku a klíče).",
+            "Vznikne komplex **enzym–substrát** (ES).",
+            "Enzym usnadní přestavbu vazeb → **sníží aktivační energii**.",
+            "Uvolní se **produkt** a enzym je volný pro další molekulu: E + S → ES → E + P."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Enzym **neposouvá rovnováhu** a nemění energii reakce – jen ji urychlí."
+        },
+        {
+          "type": "heading",
+          "text": "Co ovlivňuje aktivitu"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**teplota** – optimum u člověka asi 37 °C; vyšší → denaturace",
+            "**pH** – pepsin asi 2 (žaludek), trypsin asi 8 (tenké střevo)",
+            "**koncentrace substrátu** – víc substrátu, rychlejší reakce, dokud nejsou všechna aktivní místa obsazená",
+            "**inhibitory** – látky, které enzym blokují (některé jedy, léky)",
+            "**aktivátory a kofaktory**"
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Kofaktor a koenzym",
+          "definition": "Nebílkovinná součást, kterou některé enzymy potřebují. Kovové ionty (Zn²⁺, Mg²⁺) nebo organické **koenzymy** – často odvozené z **vitaminů skupiny B**."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď podmínky podle toho, jestli aktivitu enzymu v těle typicky zvýší, nebo sníží."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "zvýší (do optima)",
+              "sníží"
+            ],
+            "items": [
+              {
+                "text": "teplota z 20 na 37 °C",
+                "group": 0
+              },
+              {
+                "text": "víc substrátu",
+                "group": 0
+              },
+              {
+                "text": "pH blízko optima",
+                "group": 0
+              },
+              {
+                "text": "teplota 70 °C",
+                "group": 1
+              },
+              {
+                "text": "přidání inhibitoru",
+                "group": 1
+              },
+              {
+                "text": "soli těžkých kovů",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč se vařením ananasu zabrání tomu, aby želé s ním neztuhlo?",
+          "answer": "Syrový ananas obsahuje enzym bromelain, který štěpí bílkovinu želatiny. Vařením se enzym **denaturuje** a přestane štěpit – želé ztuhne."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Enzym urychlí reakci tím, že zvýší teplotu v buňce.",
+          "right": "Enzym **snižuje aktivační energii**, teplotu nemění.",
+          "why": "Enzymy právě umožňují rychlé reakce při mírných 37 °C. Vyšší teplota by je naopak zničila."
+        },
+        {
+          "type": "summary",
+          "text": "Bílkovina: 20 aminokyselin, peptidová vazba, struktura primární–kvartérní. Enzym: E + S → ES → E + P, snižuje aktivační energii, je specifický; aktivitu řídí teplota, pH, substrát, inhibitory; koenzymy z vitaminů B."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se nazývá vazba mezi aminokyselinami v bílkovině?",
+      "options": [
+        "peptidová",
+        "glykosidová",
+        "esterová",
+        "fosfodiesterová"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co určuje primární struktura bílkoviny?",
+      "options": [
+        "pořadí aminokyselin",
+        "α-šroubovici",
+        "spojení podjednotek",
+        "tvar aktivního místa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik základních (kódovaných) aminokyselin tvoří bílkoviny?",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Sekundární strukturu stabilizují vodíkové můstky.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Při denaturaci se štěpí peptidové vazby.",
+      "answer": false,
+      "explanation": "Rozpadá se prostorová struktura; primární struktura zůstává."
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá forma aminokyseliny s nábojem + i − současně?",
+      "options": [
+        "amfion (zwitterion)",
+        "kation",
+        "anion",
+        "radikál"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak enzym urychluje reakci?",
+      "options": [
+        "snižuje aktivační energii",
+        "zvyšuje teplotu",
+        "posouvá rovnováhu",
+        "spotřebovává se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj bílkovinu s funkcí.",
+      "pairs": [
+        [
+          "hemoglobin",
+          "přenos kyslíku"
+        ],
+        [
+          "kolagen",
+          "pevnost šlach a kůže"
+        ],
+        [
+          "inzulin",
+          "hormon – snižuje glykémii"
+        ],
+        [
+          "protilátky",
+          "imunita"
+        ],
+        [
+          "aktin a myosin",
+          "stah svalu"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaké pH optimum má pepsin?",
+      "options": [
+        "asi 2",
+        "asi 7",
+        "asi 8",
+        "asi 12"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Z čeho se často odvozují koenzymy?",
+      "options": [
+        "z vitaminů skupiny B",
+        "z mastných kyselin",
+        "z cholesterolu",
+        "z celulózy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Popiš čtyři úrovně struktury bílkovin.",
+      "answer": "Primární – pořadí aminokyselin. Sekundární – α-šroubovice a β-skládaný list držené vodíkovými můstky. Terciární – prostorové složení celého řetězce. Kvartérní – spojení více podjednotek, např. u hemoglobinu."
+    },
+    {
+      "type": "open",
+      "question": "Jak působí enzymy a co ovlivňuje jejich aktivitu?",
+      "answer": "Enzym naváže substrát do aktivního místa a snižuje aktivační energii reakce, sám se nespotřebuje. Aktivitu ovlivňuje teplota, pH, koncentrace substrátu, inhibitory a aktivátory."
+    }
+  ]
+}

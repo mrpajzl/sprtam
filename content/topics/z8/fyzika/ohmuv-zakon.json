@@ -1,0 +1,345 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ohmuv-zakon",
+  "title": "Ohmův zákon",
+  "emoji": "📐",
+  "explanations": [
+    {
+      "title": "Pokusem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč žárovka na 4,5 V svítí slaběji, když ji připojíš na 1,5 V baterii? A proč se stejnou baterií jedna žárovka svítí jasně a jiná sotva? Odpověď našel německý učitel Georg Simon Ohm."
+        },
+        {
+          "type": "text",
+          "text": "Jeho zákon používá každý elektrikář i konstruktér elektroniky – bez něj by se nedala navrhnout ani nabíječka mobilu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Napětí `U`",
+          "definition": "„Tlak“, kterým zdroj žene proud obvodem. Ve voltech (V).",
+          "example": "Plochá baterie 4,5 V."
+        },
+        {
+          "type": "term",
+          "term": "Proud `I`",
+          "definition": "Kolik náboje proteče za sekundu. V ampérech (A).",
+          "example": "Žárovkou teče 0,3 A."
+        },
+        {
+          "type": "term",
+          "term": "Elektrický odpor `R`",
+          "definition": "Jak moc vodič nebo spotřebič **brání** proudu. Jednotka **ohm (Ω)**.",
+          "example": "Úzká trubka brání vodě víc než široká. Tenký drát brání proudu víc než tlustý."
+        },
+        {
+          "type": "term",
+          "term": "Rezistor",
+          "definition": "Součástka, která má přesně daný odpor.",
+          "example": "Malý váleček s barevnými proužky na desce elektroniky."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zapoj rezistor, ampérmetr (měří proud) a zdroj, u kterého jde měnit napětí.",
+            "Voltmetrem měř napětí na rezistoru.",
+            "Napětí postupně zvyšuj a zapisuj proud."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Napětí U",
+            "Proud I"
+          ],
+          "rows": [
+            [
+              "2 V",
+              "0,1 A"
+            ],
+            [
+              "4 V",
+              "0,2 A"
+            ],
+            [
+              "6 V",
+              "0,3 A"
+            ],
+            [
+              "8 V",
+              "0,4 A"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Vidíš to? **Dvojnásobné napětí → dvojnásobný proud.** Trojnásobné → trojnásobný. Proud je napětí **přímo úměrný**."
+        },
+        {
+          "type": "text",
+          "text": "A když vyděl napětí proudem, vyjde pokaždé stejně: 2 : 0,1 = 20, 4 : 0,2 = 20… To číslo je odpor rezistoru: **20 Ω**."
+        },
+        {
+          "type": "heading",
+          "text": "Graf"
+        },
+        {
+          "type": "text",
+          "text": "Když zakreslíš proud v závislosti na napětí, vyjde **přímka z počátku**. Na grafu měň sklon: strmější přímka = menší odpor (stejné napětí protlačí větší proud)."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 1,
+            "q": 0
+          }
+        },
+        {
+          "type": "example",
+          "question": "Při stálém odporu zvýšíš napětí z 3 V na 6 V. Co se stane s proudem?",
+          "answer": "Napětí se zdvojnásobilo → proud se **zdvojnásobí**."
+        },
+        {
+          "type": "example",
+          "question": "Při stejném napětí vyměníš rezistor za jiný s dvojnásobným odporem. Proud?",
+          "answer": "Větší odpor víc brání → proud **klesne na polovinu**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Větší odpor = větší proud.",
+          "right": "Větší odpor = menší proud.",
+          "why": "Odpor proudu brání. Čím víc brání, tím méně ho proteče."
+        },
+        {
+          "type": "summary",
+          "text": "Proud je přímo úměrný napětí: dvojnásobné napětí → dvojnásobný proud. Větší odpor → menší proud. Graf I–U je přímka z počátku."
+        }
+      ]
+    },
+    {
+      "title": "Trojúhelníkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš zdroj 12 V a rezistor 4 Ω. Jaký proud poteče? Vydrží ho součástka? Na tohle stačí jeden vzorec – Ohmův zákon – a malý trik, jak si ho zapamatovat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Napětí `U`",
+          "definition": "Jak silně zdroj žene proud. Ve voltech (V)."
+        },
+        {
+          "type": "term",
+          "term": "Proud `I`",
+          "definition": "Kolik náboje proteče za sekundu. V ampérech (A)."
+        },
+        {
+          "type": "term",
+          "term": "Odpor `R`",
+          "definition": "Jak moc spotřebič brání proudu. V ohmech (Ω). Odpor 1 Ω má vodič, kterým při napětí 1 V teče proud 1 A."
+        },
+        {
+          "type": "heading",
+          "text": "Ohmův zákon"
+        },
+        {
+          "type": "text",
+          "text": "`I = U : R` – proud je napětí děleno odporem. Větší napětí víc tlačí (proud roste), větší odpor víc brání (proud klesá)."
+        },
+        {
+          "type": "text",
+          "text": "Trik **trojúhelník**: nahoru napiš U, dolů vedle sebe I a R. Zakryj prstem, co hledáš: U = I · R (dole vedle sebe = násobíš), I = U : R, R = U : I (nahoře nad dolním = dělíš)."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vypiš, co znáš: U, I, nebo R.",
+            "Z trojúhelníku vyber vzorec pro neznámou.",
+            "Proud dosazuj v **ampérech** (250 mA = 0,25 A).",
+            "Vypočítej a připiš jednotku."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Napětí 12 V, odpor 4 Ω. Jaký teče proud?",
+          "answer": "I = U : R = 12 : 4 = **3 A**."
+        },
+        {
+          "type": "example",
+          "question": "Proud 0,5 A, odpor 20 Ω. Jaké je napětí?",
+          "answer": "U = I · R = 0,5 · 20 = **10 V**."
+        },
+        {
+          "type": "example",
+          "question": "Žárovkou při 6 V teče 0,2 A. Jaký má odpor?",
+          "answer": "R = U : I = 6 : 0,2 = **30 Ω**."
+        },
+        {
+          "type": "example",
+          "question": "Napětí 4,5 V, odpor 15 Ω. Proud?",
+          "answer": "I = 4,5 : 15 = **0,3 A**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak odpor změřit"
+        },
+        {
+          "type": "text",
+          "text": "Rezistor zapoj do obvodu. **Ampérmetrem** (sériově) změř proud, **voltmetrem** (paralelně k rezistoru) napětí. Pak spočítej R = U : I."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "U = ?",
+                "back": "U = I · R"
+              },
+              {
+                "front": "I = ?",
+                "back": "I = U : R"
+              },
+              {
+                "front": "R = ?",
+                "back": "R = U : I"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Zakryj si vzorce a vybav je z trojúhelníku. Pak karty otoč."
+        },
+        {
+          "type": "mistake",
+          "wrong": "I = U · R",
+          "right": "I = U : R",
+          "why": "Větší odpor musí proud **zmenšit**. Kdybys násobil, s větším odporem by proud rostl – to nedává smysl."
+        },
+        {
+          "type": "summary",
+          "text": "Ohmův zákon: `I = U : R`, z toho `U = I · R` a `R = U : I`. Odpor v ohmech (Ω)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Napětí 12 V, odpor 4 Ω. Proud v A =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Proud 0,5 A, odpor 20 Ω. Napětí ve V =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napětí 230 V, proud 2 A. Odpor v Ω =",
+      "answers": [
+        "115"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napětí 4,5 V, odpor 15 Ω. Proud v A =",
+      "answers": [
+        "0,3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak zní Ohmův zákon?",
+      "options": [
+        "I = U / R",
+        "I = U · R",
+        "I = R / U",
+        "U = I / R"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Při stálém odporu dvojnásobné napětí dává dvojnásobný proud.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka odporu?",
+      "options": [
+        "ohm",
+        "volt",
+        "ampér",
+        "watt"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní proud, když při stejném napětí zdvojnásobíš odpor?",
+      "options": [
+        "klesne na polovinu",
+        "zdvojnásobí se",
+        "nezmění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Žárovkou při 6 V teče 0,2 A. Odpor v Ω =",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak vypadá graf závislosti proudu na napětí pro rezistor?",
+      "options": [
+        "přímka procházející počátkem",
+        "vodorovná přímka",
+        "parabola",
+        "kružnice"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj Ohmův zákon.",
+      "answer": "Proud v kovovém vodiči je přímo úměrný napětí mezi jeho konci: I = U / R, kde R je odpor vodiče."
+    },
+    {
+      "type": "open",
+      "question": "Jak experimentálně zjistíš odpor rezistoru?",
+      "answer": "Zapojím ho do obvodu, ampérmetrem změřím proud a voltmetrem napětí na rezistoru. Odpor vypočítám R = U / I."
+    }
+  ]
+}

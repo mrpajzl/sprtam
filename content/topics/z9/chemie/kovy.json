@@ -1,0 +1,495 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kovy",
+  "title": "Kovy, výroba železa a koroze",
+  "emoji": "⚙️",
+  "explanations": [
+    {
+      "title": "Řada kovů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zlatý prsten najdou archeologové po tisících let pořád lesklý. Železný hřebík na dešti zrezaví za pár týdnů. A sodík se musí schovávat pod petrolej, jinak zreaguje se vzduchem."
+        },
+        {
+          "type": "text",
+          "text": "Kovy jsou různě „ochotné“ reagovat. Když to víš, pochopíš, proč se šperky dělají ze zlata, proč se natírají ploty a proč se železo musí vyrábět v obří peci."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kov",
+          "definition": "Prvek, který je lesklý, dobře vede elektřinu a teplo a dá se kovat a ohýbat. Za běžné teploty jsou všechny kovy pevné – kromě **rtuti**, která je kapalná.",
+          "example": "železo, měď, hliník, zlato"
+        },
+        {
+          "type": "term",
+          "term": "Ušlechtilý kov",
+          "definition": "Kov, který jen velmi nerad reaguje – se vzduchem, s vodou ani se zředěnými kyselinami.",
+          "example": "měď, stříbro, zlato, platina"
+        },
+        {
+          "type": "term",
+          "term": "Neušlechtilý kov",
+          "definition": "Kov, který reaguje ochotně: rezaví, rozpouští se v kyselinách, některé reagují i s vodou.",
+          "example": "draslík, sodík, hořčík, hliník, zinek, železo"
+        },
+        {
+          "type": "heading",
+          "text": "Řada kovů"
+        },
+        {
+          "type": "text",
+          "text": "Chemici seřadili kovy podle ochoty reagovat. Této řadě se říká **Beketovova řada**. Vlevo jsou nejochotnější, vpravo nejušlechtilejší:"
+        },
+        {
+          "type": "text",
+          "text": "K Ca Na Mg Al Zn Fe Sn Pb **H** Cu Hg Ag Pt Au"
+        },
+        {
+          "type": "text",
+          "text": "Uprostřed je **vodík H**. Není to kov, ale slouží jako hranice: co je před ním, je neušlechtilé, co je za ním, ušlechtilé."
+        },
+        {
+          "type": "heading",
+          "text": "Co z řady vyčteš"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kovy **před vodíkem** reagují se zředěnými kyselinami a uvolňují **vodík**: Zn + 2 HCl → ZnCl₂ + H₂.",
+            "Kovy **za vodíkem** (Cu, Ag, Au) se zředěnou kyselinou chlorovodíkovou nereagují.",
+            "Kov, který je v řadě **víc vlevo**, vytlačí z roztoku soli kov, který je víc vpravo: Fe + CuSO₄ → FeSO₄ + Cu."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď kovy podle toho, jestli jsou v řadě před vodíkem, nebo za ním."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "neušlechtilý (před H)",
+              "ušlechtilý (za H)"
+            ],
+            "items": [
+              {
+                "text": "zinek",
+                "group": 0
+              },
+              {
+                "text": "železo",
+                "group": 0
+              },
+              {
+                "text": "hořčík",
+                "group": 0
+              },
+              {
+                "text": "hliník",
+                "group": 0
+              },
+              {
+                "text": "měď",
+                "group": 1
+              },
+              {
+                "text": "stříbro",
+                "group": 1
+              },
+              {
+                "text": "zlato",
+                "group": 1
+              },
+              {
+                "text": "platina",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Bude měď reagovat se zředěnou kyselinou chlorovodíkovou?",
+          "answer": "Najdi měď v řadě: je **za vodíkem** → je ušlechtilá. Vodík z kyseliny nevytlačí. Reakce neproběhne, žádné bublinky."
+        },
+        {
+          "type": "example",
+          "question": "Zinkový plíšek ponoříš do modrého roztoku síranu měďnatého. Co se stane?",
+          "answer": "Zinek je v řadě **vlevo** od mědi → je méně ušlechtilý → měď z roztoku vytlačí. Na plíšku se objeví červenohnědá měď: Zn + CuSO₄ → ZnSO₄ + Cu."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se kovy získávají"
+        },
+        {
+          "type": "term",
+          "term": "Ruda",
+          "definition": "Hornina, ze které se vyplatí kov vyrábět. Kov v ní není čistý, ale vázaný ve sloučenině – nejčastěji s kyslíkem (oxid).",
+          "example": "Krevel Fe₂O₃ je ruda železa, bauxit je ruda hliníku."
+        },
+        {
+          "type": "text",
+          "text": "Ušlechtilé kovy (zlato) se v přírodě najdou i čisté. Neušlechtilé jen v rudách. **Železo** se z rudy vyrábí ve **vysoké peci**: uhlík z koksu (oxid uhelnatý CO) odebere rudě kyslík. **Hliník** se vyrábí z bauxitu elektrickým proudem – **elektrolýzou**."
+        },
+        {
+          "type": "heading",
+          "text": "Slitiny"
+        },
+        {
+          "type": "term",
+          "term": "Slitina",
+          "definition": "Směs kovu s jiným kovem (nebo s uhlíkem), vzniklá roztavením a smícháním. Má lepší vlastnosti než čistý kov.",
+          "example": "Ocel je pevnější než čisté železo."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Slitina",
+            "Složení",
+            "Použití"
+          ],
+          "rows": [
+            [
+              "mosaz",
+              "měď + zinek",
+              "kliky, hudební nástroje"
+            ],
+            [
+              "bronz",
+              "měď + cín",
+              "sochy, zvony, medaile"
+            ],
+            [
+              "ocel",
+              "železo + uhlík (do asi 2 %)",
+              "stavby, nářadí, auta"
+            ],
+            [
+              "amalgám",
+              "rtuť + jiný kov",
+              "dříve zubní plomby"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Koroze"
+        },
+        {
+          "type": "term",
+          "term": "Koroze",
+          "definition": "Pomalé narušování kovu působením vody a kyslíku ze vzduchu. U železa se jí říká rezavění.",
+          "example": "Zrezivělý plot, prorezlý blatník auta."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**nátěr** barvou – voda a vzduch se ke kovu nedostanou",
+            "**pozinkování** – potažení vrstvou zinku; zinek je méně ušlechtilý, koroduje místo železa",
+            "**nerezová ocel** – ocel s chromem a niklem, která nerezaví"
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Čím víc vlevo je kov v řadě, tím je ušlechtilejší.",
+          "right": "Čím víc vlevo, tím je kov **méně** ušlechtilý – reaguje ochotněji.",
+          "why": "Draslík úplně vlevo bouřlivě reaguje už s vodou. Zlato úplně vpravo nereaguje skoro s ničím."
+        },
+        {
+          "type": "summary",
+          "text": "Kovy před vodíkem jsou neušlechtilé – uvolňují z kyselin vodík. Kov vlevo vytlačí z roztoku soli kov vpravo. Železo chráníme před korozí nátěrem, zinkem nebo nerezovou ocelí."
+        }
+      ]
+    },
+    {
+      "title": "Vysoká pec",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Auto, most, kolejnice, příbor – všude je železo nebo ocel. V přírodě ale kousek čistého železa skoro nenajdeš. Železo je schované v kamení jako sloučenina s kyslíkem."
+        },
+        {
+          "type": "text",
+          "text": "Jak z kamene udělat kov? To se děje ve **vysoké peci**. A až kov máš, musíš ho chránit, aby ti zase nezrezavěl."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ruda",
+          "definition": "Hornina, ve které je kov vázaný ve sloučenině. Železné rudy jsou hlavně oxidy železa.",
+          "example": "krevel Fe₂O₃, magnetit Fe₃O₄"
+        },
+        {
+          "type": "term",
+          "term": "Redukce",
+          "definition": "Tady jednoduše: odebrání kyslíku z oxidu kovu. Kov tím získá zpět své elektrony a stane se z něj zase čistý kov.",
+          "example": "Fe₂O₃ → Fe"
+        },
+        {
+          "type": "term",
+          "term": "Koks",
+          "definition": "Skoro čistý uhlík, vyrobený z černého uhlí zahřátím bez přístupu vzduchu."
+        },
+        {
+          "type": "term",
+          "term": "Vysoká pec",
+          "definition": "Věž vysoká desítky metrů. Uvnitř je teplota přes tisíc stupňů Celsia. Shora se plní, zdola se z ní vypouští roztavené železo."
+        },
+        {
+          "type": "term",
+          "term": "Struska",
+          "definition": "Roztavený odpad z hlušiny (nepotřebné horniny) a vápence. Je lehčí, takže plave na železe.",
+          "example": "Používá se třeba při stavbě silnic."
+        },
+        {
+          "type": "heading",
+          "text": "Co se v peci děje"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Shora se sype **ruda, koks a vápenec**.",
+            "Zdola se vhání **horký vzduch**.",
+            "Koks hoří: C + O₂ → CO₂. Oxid uhličitý reaguje s dalším koksem: CO₂ + C → 2 CO.",
+            "**Oxid uhelnatý CO** odebere rudě kyslík: Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂.",
+            "Vápenec na sebe naváže hlušinu a vznikne struska.",
+            "Dole se vypouští (odpichuje) **surové železo** a nad ním struska."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kdo je ve vysoké peci redukční činidlo – tedy ten, kdo rudě kyslík bere?",
+          "answer": "Podívej se na rovnici Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂. Kyslík z rudy přešel na CO a vzniklo CO₂. Rudu tedy redukuje **oxid uhelnatý CO**, který vzniká z koksu."
+        },
+        {
+          "type": "heading",
+          "text": "Ze surového železa ocel"
+        },
+        {
+          "type": "term",
+          "term": "Surové železo",
+          "definition": "Železo přímo z vysoké pece. Obsahuje kolem 4 % uhlíku, a proto je **křehké** – při úderu praskne."
+        },
+        {
+          "type": "term",
+          "term": "Ocel",
+          "definition": "Slitina železa s menším množstvím uhlíku (do asi 2 %). Je pevná, pružná a dá se kovat.",
+          "example": "Ze surového železa se vyrábí tak, že se do roztaveného kovu vhání kyslík a ten „spálí“ přebytečný uhlík. Tomu se říká **zkujňování**."
+        },
+        {
+          "type": "example",
+          "question": "Proč se kolejnice nedělají ze surového železa?",
+          "answer": "Surové železo má hodně uhlíku → je křehké → pod těžkým vlakem by prasklo. Ocel má uhlíku méně, je pevná a pružná. Proto kolejnice jsou z oceli."
+        },
+        {
+          "type": "heading",
+          "text": "Jiné kovy a slitiny"
+        },
+        {
+          "type": "text",
+          "text": "**Hliník** se nevyrábí v peci, ale z rudy **bauxitu** elektrickým proudem – **elektrolýzou**. **Rtuť** je jediný kov, který je při pokojové teplotě kapalný."
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu a zjisti, z čeho je slitina – tedy směs kovu s dalším kovem nebo uhlíkem."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "mosaz",
+                "back": "měď + zinek"
+              },
+              {
+                "front": "bronz",
+                "back": "měď + cín"
+              },
+              {
+                "front": "ocel",
+                "back": "železo + uhlík (do asi 2 %)"
+              },
+              {
+                "front": "amalgám",
+                "back": "rtuť + jiný kov"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Proč železo rezaví"
+        },
+        {
+          "type": "text",
+          "text": "Kovy se dají seřadit podle ochoty reagovat (Beketovova řada): K Ca Na Mg Al Zn Fe Sn Pb **H** Cu Hg Ag Pt Au. Vlevo **neušlechtilé** (reagují ochotně), za vodíkem **ušlechtilé** (reagují nerady). Kovy před vodíkem uvolňují z kyselin vodík a kov vlevo vytlačí z roztoku soli kov vpravo."
+        },
+        {
+          "type": "term",
+          "term": "Koroze",
+          "definition": "Pomalé narušování kovu vodou a kyslíkem. Železo je neušlechtilé, a proto koroduje (rezaví) snadno."
+        },
+        {
+          "type": "list",
+          "items": [
+            "nátěr – kov se zakryje",
+            "pozinkování – zinek je v řadě víc vlevo než železo, takže koroduje dřív a železo ušetří",
+            "nerezová ocel – přidaný chrom a nikl"
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ocel je čisté železo.",
+          "right": "Ocel je **slitina** železa s malým množstvím uhlíku (do asi 2 %), často i s dalšími kovy.",
+          "why": "Právě ten správný (malý) obsah uhlíku dělá ocel pevnou. Čisté železo je měkké, surové železo s hodně uhlíkem křehké."
+        },
+        {
+          "type": "summary",
+          "text": "Ve vysoké peci redukuje CO z koksu železnou rudu na surové železo. Zkujňováním (snížením uhlíku) vzniká ocel. Před korozí ji chrání nátěr, zinek nebo nerez."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který kov je nejušlechtilejší?",
+      "options": [
+        "zlato",
+        "železo",
+        "zinek",
+        "hliník"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Měď reaguje se zředěnou HCl a uvolňuje vodík.",
+      "answer": false,
+      "explanation": "Měď je ušlechtilý kov, je v řadě za vodíkem."
+    },
+    {
+      "type": "choice",
+      "question": "Co je redukčním činidlem ve vysoké peci?",
+      "options": [
+        "oxid uhelnatý (z koksu)",
+        "kyslík",
+        "vápenec",
+        "struska"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje slitina mědi a zinku?",
+      "options": [
+        "mosaz",
+        "bronz",
+        "ocel",
+        "amalgám"
+      ],
+      "answer": 0,
+      "explanation": "Bronz je měď + cín."
+    },
+    {
+      "type": "match",
+      "question": "Spoj slitinu se složením.",
+      "pairs": [
+        [
+          "mosaz",
+          "Cu + Zn"
+        ],
+        [
+          "bronz",
+          "Cu + Sn"
+        ],
+        [
+          "ocel",
+          "Fe + C (do 2 %)"
+        ],
+        [
+          "amalgám",
+          "Hg + jiný kov"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který kov je za běžných podmínek kapalný?",
+      "options": [
+        "rtuť",
+        "olovo",
+        "cín",
+        "sodík"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který kov se vyrábí elektrolýzou z bauxitu?",
+      "options": [
+        "hliník",
+        "železo",
+        "měď",
+        "zlato"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ocel má méně uhlíku než surové železo.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co chrání železo před korozí pozinkováním?",
+      "options": [
+        "vrstva zinku",
+        "vrstva rzi",
+        "olej",
+        "kyslík"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď kovy od nejméně ušlechtilého.",
+      "items": [
+        "draslík",
+        "hořčík",
+        "železo",
+        "měď",
+        "zlato"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Popiš výrobu železa ve vysoké peci.",
+      "answer": "Do pece se shora sype železná ruda, koks a vápenec, zdola se vhání horký vzduch. Z koksu vzniká CO, který redukuje oxidy železa na železo. Dole se odpichuje surové železo a struska."
+    },
+    {
+      "type": "open",
+      "question": "Co je koroze a jak železo chráníme?",
+      "answer": "Koroze je pozvolné narušování kovu působením vody a kyslíku – železo rezaví. Chráníme ho nátěrem, pokovením (zinkem, cínem) nebo použitím nerezové oceli."
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "elektromagneticka-indukce",
+  "title": "Elektromagnetická indukce",
+  "emoji": "🌀",
+  "explanations": [
+    {
+      "title": "Magnet a cívka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proud vytváří magnetické pole. Napadlo to i obráceně: může magnet vyrobit proud? Michael Faraday to v roce 1831 dokázal – a tím otevřel cestu k elektrárnám. Téměř všechna elektřina v zásuvce vzniká právě tak."
+        },
+        {
+          "type": "text",
+          "text": "Stejný jev používá indukční varná deska, bezdrátová nabíječka mobilu, transformátor i dynamo na kole."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Cívka a závit",
+          "definition": "Cívka je drát navinutý do smyček. Jedna smyčka = **závit**."
+        },
+        {
+          "type": "term",
+          "term": "Galvanometr",
+          "definition": "Citlivý přístroj na malé proudy. Ručička se vychýlí podle toho, kterým směrem a jak silně proud teče."
+        },
+        {
+          "type": "term",
+          "term": "Magnetický indukční tok Φ (fí)",
+          "definition": "Kolik magnetického pole „prochází“ plochou cívky – podle síly pole a velikosti plochy. Jednotka weber (Wb).",
+          "example": "Silnější magnet blíž u cívky = větší tok."
+        },
+        {
+          "type": "term",
+          "term": "Elektromagnetická indukce",
+          "definition": "Vznik napětí v cívce, když se **mění** magnetický tok, který jí prochází."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Cívku připoj ke galvanometru. Žádný zdroj.",
+            "Zasuň do cívky magnet – ručička se vychýlí.",
+            "Nech magnet v klidu uvnitř – ručička je na nule.",
+            "Vysuň magnet – ručička se vychýlí na opačnou stranu.",
+            "Pohybuj rychleji – výchylka je větší."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Závěr: napětí vzniká jen při **změně** – ne podle toho, jak silný magnet je, ale jak rychle se pole v cívce mění. Víc závitů = větší napětí."
+        },
+        {
+          "type": "heading",
+          "text": "Indukovaný proud se brání"
+        },
+        {
+          "type": "term",
+          "term": "Lenzův zákon",
+          "definition": "Indukovaný proud teče vždy tak, aby svým magnetickým polem **bránil změně**, která ho vyvolala.",
+          "example": "Zasouváš severní pól → cívka vytvoří na své straně také severní pól a magnet odpuzuje."
+        },
+        {
+          "type": "text",
+          "text": "Pusť silný magnet do měděné trubky. Padá podivně pomalu! Měď magnetická není, ale v trubce se indukují proudy, které pád brzdí. To jsou **vířivé proudy**. Využívá je indukční varná deska (vířivé proudy ohřívají dno hrnce) a indukční brzdy vlaků."
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a zkus si ke každé vzpomenout na jeden pokus nebo spotřebič."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Lenzův zákon",
+                "back": "indukovaný proud působí proti změně, která ho vyvolala"
+              },
+              {
+                "front": "vířivé proudy",
+                "back": "indukční brzdy, indukční varné desky"
+              },
+              {
+                "front": "jednotka toku Φ",
+                "back": "weber, Wb = T·m²"
+              },
+              {
+                "front": "vlastní indukce",
+                "back": "cívka brání změně svého vlastního proudu"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vlastní indukce"
+        },
+        {
+          "type": "text",
+          "text": "I když měníš proud v samotné cívce, mění se její vlastní magnetické pole – a v ní samé se indukuje napětí, které změně brání. Po zapnutí proud roste pomalu, při vypnutí přeskočí jiskra. Jak silně to cívka dělá, udává **indukčnost L** (jednotka henry, H)."
+        },
+        {
+          "type": "text",
+          "text": "Ve vzorcích: tok `Φ = B · S` (pole kolmo na plochu S), indukované napětí `Uᵢ = −N · ΔΦ / Δt` (minus = Lenzův zákon), u vlastní indukce `Uᵢ = −L · ΔI / Δt` a energie cívky `E = ½ · L · I²`."
+        },
+        {
+          "type": "example",
+          "question": "Magnet leží v klidu uvnitř cívky. Indukuje se napětí?",
+          "answer": "**Ne.** Tok sice je velký, ale nemění se. Indukce potřebuje změnu."
+        },
+        {
+          "type": "example",
+          "question": "Cívka má 100 závitů a tok každým závitem se změní o 0,01 Wb za 0,1 s. Jaké napětí se indukuje?",
+          "answer": "Rychlost změny toku: 0,01 / 0,1 = 0,1 Wb/s. Na 100 závitech: 100 · 0,1 = **10 V**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Silný magnet v cívce vytváří stálé napětí.",
+          "right": "Napětí se indukuje jen při změně magnetického toku.",
+          "why": "Proto se v elektrárně generátor musí točit – otáčením se tok neustále mění."
+        },
+        {
+          "type": "summary",
+          "text": "Měnící se magnetický tok indukuje v cívce napětí – čím rychleji a čím víc závitů, tím větší. Indukovaný proud brání změně (Lenzův zákon)."
+        }
+      ]
+    },
+    {
+      "title": "Vztahy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolik voltů dá generátor? Jakou energii uchová cívka? Jak velkou jiskru vyrobí zapalovací cívka v autě? Elektromagnetickou indukci umíme přesně spočítat – tady jsou vzorce a jejich smysl."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Magnetická indukce B",
+          "definition": "Síla magnetického pole, jednotka tesla (T)."
+        },
+        {
+          "type": "term",
+          "term": "Magnetický indukční tok Φ",
+          "definition": "`Φ = B · S · cos α` – „kolik pole prochází plochou S“. α je úhel mezi indukčními čarami a kolmicí k ploše (kolmo k ploše: cos 0° = 1). Jednotka **weber**: 1 Wb = 1 T·m²."
+        },
+        {
+          "type": "term",
+          "term": "Indukované napětí Uᵢ",
+          "definition": "Napětí, které vznikne v cívce při změně toku."
+        },
+        {
+          "type": "term",
+          "term": "Indukčnost L",
+          "definition": "Vlastnost cívky: jaký vlastní tok vytvoří proud 1 A, `Φ = L · I`. Jednotka **henry (H)**. Velká u cívek s mnoha závity a železným jádrem."
+        },
+        {
+          "type": "heading",
+          "text": "Faradayův zákon"
+        },
+        {
+          "type": "text",
+          "text": "`Uᵢ = −N · ΔΦ / Δt`. N je počet závitů, ΔΦ změna toku, Δt doba změny. **Minus** vyjadřuje Lenzův zákon – indukované napětí působí proti změně."
+        },
+        {
+          "type": "text",
+          "text": "Indukované napětí je tím větší, čím rychleji se tok mění. Graf ukazuje stejnou změnu toku 0,01 Wb na 100 závitech za různou dobu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "V",
+            "items": [
+              {
+                "label": "za 1 s",
+                "value": 1
+              },
+              {
+                "label": "za 0,5 s",
+                "value": 2
+              },
+              {
+                "label": "za 0,1 s",
+                "value": 10
+              },
+              {
+                "label": "za 0,05 s",
+                "value": 20
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Plocha 0,05 m² stojí kolmo k čarám pole 0,2 T. Jaký je magnetický tok?",
+          "answer": "Φ = B · S · cos 0° = 0,2 · 0,05 · 1 = **0,01 Wb**."
+        },
+        {
+          "type": "example",
+          "question": "Cívka 100 závitů, tok se změní o 0,01 Wb za 0,1 s. Indukované napětí?",
+          "answer": "|Uᵢ| = 100 · 0,01 / 0,1 = **10 V**."
+        },
+        {
+          "type": "heading",
+          "text": "Vlastní indukce"
+        },
+        {
+          "type": "text",
+          "text": "Změna vlastního proudu cívky indukuje napětí: `Uᵢ = −L · ΔI / Δt`. Energie magnetického pole cívky: `E = ½ · L · I²`."
+        },
+        {
+          "type": "example",
+          "question": "Proud cívkou s L = 0,2 H klesne o 4 A za 0,1 s. Jaké napětí se indukuje?",
+          "answer": "|Uᵢ| = 0,2 · 4 / 0,1 = **8 V**."
+        },
+        {
+          "type": "example",
+          "question": "Cívka L = 0,5 H, proud 2 A. Energie pole?",
+          "answer": "E = ½ · 0,5 · 2² = ½ · 0,5 · 4 = **1 J**."
+        },
+        {
+          "type": "heading",
+          "text": "Vířivé proudy"
+        },
+        {
+          "type": "text",
+          "text": "V masivním kovu v proměnném poli vznikají **vířivé (Foucaultovy) proudy**. Užitečné: indukční varná deska, indukční brzdy. Škodlivé: ohřívají jádra transformátorů – proto se jádra skládají z tenkých **izolovaných plechů**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Uᵢ = N · Φ / Δt (dosadím celý tok).",
+          "right": "Uᵢ = N · ΔΦ / Δt – dosazuje se **změna** toku.",
+          "why": "Když se tok nemění, je napětí nulové, ať je tok jakkoli velký. Rozhoduje jen to, o kolik se změní a za jak dlouho."
+        },
+        {
+          "type": "summary",
+          "text": "`Φ = BS cos α` (Wb), `Uᵢ = −N·ΔΦ/Δt`, `Uᵢ = −L·ΔI/Δt`, `E = ½LI²`. Minus = Lenzův zákon."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Plocha 0,05 m² kolmo v poli 0,2 T. Magnetický indukční tok ve Wb =",
+      "answers": [
+        "0,01"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Cívka 100 závitů, tok se změní o 0,01 Wb za 0,1 s. Indukované napětí ve V =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Cívka s indukčností 0,5 H, proud 2 A. Energie magnetického pole v J =",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Proud cívkou s L = 0,2 H klesne o 4 A za 0,1 s. Indukované napětí ve V (velikost) =",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Magnet ležící v klidu uvnitř cívky indukuje stálé napětí.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Co říká Lenzův zákon?",
+      "options": [
+        "indukovaný proud působí proti změně, která ho vyvolala",
+        "proud je úměrný napětí",
+        "náboj se zachovává"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka indukčnosti?",
+      "options": [
+        "henry",
+        "tesla",
+        "weber",
+        "farad"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde se využívají vířivé (Foucaultovy) proudy?",
+      "options": [
+        "indukční varná deska",
+        "žárovka",
+        "baterie",
+        "dioda"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Jádra transformátorů se skládají z izolovaných plechů, aby se omezily vířivé proudy.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu s jednotkou.",
+      "pairs": [
+        [
+          "indukční tok",
+          "Wb"
+        ],
+        [
+          "magnetická indukce",
+          "T"
+        ],
+        [
+          "indukčnost",
+          "H"
+        ],
+        [
+          "indukované napětí",
+          "V"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj Faradayův zákon elektromagnetické indukce.",
+      "answer": "Indukované elektromotorické napětí je rovno záporně vzaté časové změně magnetického indukčního toku: Uᵢ = −ΔΦ/Δt (u cívky násobeno počtem závitů)."
+    },
+    {
+      "type": "open",
+      "question": "Co je vlastní indukce a jak se projevuje?",
+      "answer": "Změna proudu v cívce mění její vlastní magnetický tok a indukuje napětí, které změně brání. Projevuje se zpožděným nárůstem proudu po zapnutí a jiskrou při vypnutí."
+    }
+  ]
+}

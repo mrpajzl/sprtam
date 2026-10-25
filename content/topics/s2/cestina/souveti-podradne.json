@@ -1,0 +1,432 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "souveti-podradne",
+  "title": "Podřadné souvětí a vedlejší věty",
+  "emoji": "🌳",
+  "explanations": [
+    {
+      "title": "Věta místo slova",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Můžeš říct *Přijdu zítra.* Nebo *Přijdu, až skončí škola.* Slovo *zítra* jsi nahradil celou větou *až skončí škola*. Taková věta „hraje roli“ slova – a podle toho, jakou roli hraje, dostane jméno."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Určování vedlejších vět je klasická úloha testu. A pomáhá i s čárkami: vedlejší věta se vždy odděluje."
+        },
+        {
+          "type": "term",
+          "term": "Souvětí",
+          "definition": "Spojení více vět. Kolik sloves v určitém tvaru (*šel, píšu, budou*), tolik vět.",
+          "example": "*Přijdu, až skončí škola.* – 2 věty"
+        },
+        {
+          "type": "term",
+          "term": "Podřadné souvětí",
+          "definition": "Souvětí, kde jedna věta závisí na druhé – „visí“ na ní.",
+          "example": "*Vím, že to zvládneš.*"
+        },
+        {
+          "type": "term",
+          "term": "Věta řídící",
+          "definition": "Věta, na které jiná věta závisí. Od ní se ptáme.",
+          "example": "*Vím*, že to zvládneš."
+        },
+        {
+          "type": "term",
+          "term": "Vedlejší věta (VV)",
+          "definition": "Věta, která závisí na řídící větě a nahrazuje v ní jeden větný člen. Sama by nedávala smysl.",
+          "example": "Vím, *že to zvládneš*."
+        },
+        {
+          "type": "term",
+          "term": "Větný člen",
+          "definition": "Role slova ve větě: podmět (kdo?), předmět (koho? co?), příslovečné určení (kde? kdy? jak? proč?), přívlastek (jaký?), doplněk.",
+          "example": "Čtu *knihu* – předmět"
+        },
+        {
+          "type": "heading",
+          "text": "Jak to funguje"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vezmi jednoduchou větu: *Vím **to**.* – *to* je předmět (vím co?).",
+            "Nahraď předmět celou větou: *Vím, **že to zvládneš**.*",
+            "Vedlejší věta teď dělá práci předmětu → je to **VV předmětná**.",
+            "Stejně: *Přijdu **zítra**.* (kdy? – PU času) → *Přijdu, **až skončí škola**.* → **VV příslovečná časová**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Druhy vedlejších vět"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh VV",
+            "Otázka z řídící věty",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "podmětná",
+              "kdo? co?",
+              "Kdo lže, ten krade."
+            ],
+            [
+              "přísudková",
+              "jaký je? čím je?",
+              "Byl, jaký byl."
+            ],
+            [
+              "předmětná",
+              "pádová otázka (koho? co? o čem?…)",
+              "Řekl, že přijde."
+            ],
+            [
+              "přívlastková",
+              "jaký? který?",
+              "Dům, který stojí na kopci, je starý."
+            ],
+            [
+              "příslovečná",
+              "kde? kdy? jak? proč?…",
+              "Když prší, zůstanu doma."
+            ],
+            [
+              "doplňková",
+              "jaký? (ke jménu i ke slovesu)",
+              "Viděl ho, jak utíká."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Polož otázku z řídící věty na zvýrazněnou vedlejší větu."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "předmětná",
+              "přívlastková",
+              "příslovečná"
+            ],
+            "items": [
+              {
+                "text": "Vím, *že to zvládneš*.",
+                "group": 0
+              },
+              {
+                "text": "Kniha, *kterou čtu*, je dlouhá.",
+                "group": 1
+              },
+              {
+                "text": "Odešel, *protože byl unavený*.",
+                "group": 2
+              },
+              {
+                "text": "Zeptal se, *kolik je hodin*.",
+                "group": 0
+              },
+              {
+                "text": "Místo, *kde jsem vyrůstal*, se změnilo.",
+                "group": 1
+              },
+              {
+                "text": "Přijdu, *až skončí škola*.",
+                "group": 2
+              },
+              {
+                "text": "Bojím se, *aby nepršelo*.",
+                "group": 0
+              },
+              {
+                "text": "Učím se, *abych prošel*.",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Urči VV: *Kdo jinému jámu kopá, sám do ní padá.*",
+          "answer": "Řídící věta: *sám do ní padá*. Ptám se: **kdo** padá? → *kdo jinému jámu kopá*. Odpovídá na *kdo?* → **VV podmětná**."
+        },
+        {
+          "type": "example",
+          "question": "Urči VV: *Pes, který štěká, nekouše.*",
+          "answer": "Řídící: *Pes nekouše*. Ptám se od slova *pes*: **jaký** pes? → *který štěká* → **VV přívlastková**. Je vložená, proto čárky z obou stran."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Bojím se, aby nepršelo.* – VV účelová, protože začíná *aby*.",
+          "right": "Je to VV předmětná.",
+          "why": "Druh neurčuj podle spojky, ale podle otázky: bojím se **čeho?** → předmět. Účelová by odpovídala na *za jakým účelem?* (*Učím se, abych prošel.*)."
+        },
+        {
+          "type": "summary",
+          "text": "Vedlejší věta nahrazuje větný člen řídící věty. Druh zjistíš otázkou z řídící věty, ne podle spojky. Vedlejší věta se odděluje čárkou, vložená z obou stran."
+        }
+      ]
+    },
+    {
+      "title": "Rozbor krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dlouhé souvětí vypadá jako klubko. Když ale víš, za který konec tahat, rozmotáš ho za minutu. Tady je přesný postup a mapa všech příslovečných vět."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Rozbor souvětí je typická úloha testu i ústní zkoušky. A kdo umí souvětí rozebrat, ví, kam patří čárky."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Určité sloveso",
+          "definition": "Sloveso, ze kterého poznáš osobu: *přišel, zjistil, vzal*. Infinitiv (*jít*) to není.",
+          "example": "*Chci jít ven.* – jen jedno určité sloveso (*chci*)"
+        },
+        {
+          "type": "term",
+          "term": "Hlavní věta",
+          "definition": "Věta, která na žádné jiné nezávisí. Mohla by stát sama.",
+          "example": "*zjistil jsem*"
+        },
+        {
+          "type": "term",
+          "term": "Vedlejší věta",
+          "definition": "Věta závislá na jiné (řídící) větě. Zastupuje v ní větný člen.",
+          "example": "*že mi někdo vzal kolo* (zjistil co?)"
+        },
+        {
+          "type": "term",
+          "term": "Příslovečná vedlejší věta",
+          "definition": "VV, která zastupuje příslovečné určení – říká okolnost děje (kde, kdy, jak, proč…).",
+          "example": "*Když prší*, zůstanu doma. (kdy?)"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Souvětí: *Když jsem přišel domů, zjistil jsem, že mi někdo vzal kolo.*",
+            "Najdi určitá slovesa: *přišel, zjistil, vzal* → **3 věty**.",
+            "Najdi větu, která na nikom nezávisí: *zjistil jsem* → **hlavní věta**.",
+            "Ptej se z hlavní věty na ostatní: zjistil jsem **kdy?** → *když jsem přišel domů* → **VV příslovečná časová**.",
+            "Zjistil jsem **co?** → *že mi někdo vzal kolo* → **VV předmětná**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mapa příslovečných vět"
+        },
+        {
+          "type": "text",
+          "text": "Přečti druh, vzpomeň si na otázku a vymysli příklad. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "místní",
+                "back": "kde, kam, odkud? *Jdi, kam chceš.*"
+              },
+              {
+                "front": "časová",
+                "back": "kdy? *Až přijdeš, zavolej.*"
+              },
+              {
+                "front": "způsobová",
+                "back": "jak? *Udělal to, jak uměl.*"
+              },
+              {
+                "front": "příčinná",
+                "back": "proč? *Nepřišel, protože byl nemocný.*"
+              },
+              {
+                "front": "účelová",
+                "back": "za jakým účelem? *Učí se, aby uspěl.*"
+              },
+              {
+                "front": "podmínková",
+                "back": "za jaké podmínky? *Kdyby pršelo, zůstali bychom doma.*"
+              },
+              {
+                "front": "přípustková",
+                "back": "navzdory čemu? *Přestože pršelo, šli jsme ven.*"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik vět má souvětí *Když skončila hodina, žáci, kteří měli hlad, běželi do jídelny.*? Urči je.",
+          "answer": "Slovesa: *skončila, měli, běželi* → **3 věty**. Hlavní: *žáci běželi do jídelny*. *Když skončila hodina* – kdy? → VV **časová**. *kteří měli hlad* – jací žáci? → VV **přívlastková** (vložená, čárky z obou stran)."
+        },
+        {
+          "type": "example",
+          "question": "Urči VV: *Přestože byl unavený, dokončil práci.*",
+          "answer": "Ptám se: dokončil práci **navzdory čemu?** → *přestože byl unavený* → VV **přípustková**. Typické spojky: *přestože, ačkoli, i když*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Šetří aby si koupil kolo.",
+          "right": "Šetří, aby si koupil kolo.",
+          "why": "Vedlejší věta se od řídící **vždy** odděluje čárkou. Tady jde o VV účelovou (za jakým účelem šetří?)."
+        },
+        {
+          "type": "summary",
+          "text": "Spočítej určitá slovesa → najdi hlavní větu → ptej se z řídící věty na každou vedlejší. Příslovečné VV: místní, časová, způsobová, příčinná, účelová, podmínková, přípustková."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "*Řekl, že přijde.* – druh VV:",
+      "options": [
+        "podmětná",
+        "předmětná",
+        "přívlastková"
+      ],
+      "answer": 1,
+      "explanation": "Řekl co?"
+    },
+    {
+      "type": "choice",
+      "question": "*Kdo jinému jámu kopá, sám do ní padá.* – druh VV:",
+      "options": [
+        "podmětná",
+        "předmětná",
+        "příslovečná"
+      ],
+      "answer": 0,
+      "explanation": "Kdo padá? → podmět."
+    },
+    {
+      "type": "choice",
+      "question": "*Pes, který štěká, nekouše.* – druh VV:",
+      "options": [
+        "přívlastková",
+        "doplňková",
+        "předmětná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "*Přestože byl unavený, dokončil práci.* – druh VV:",
+      "options": [
+        "příčinná",
+        "přípustková",
+        "podmínková"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "*Šetří, aby si koupil kolo.* – druh VV:",
+      "options": [
+        "účelová",
+        "příčinná",
+        "předmětná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "*Zůstal, kde byl.* – druh VV:",
+      "options": [
+        "místní",
+        "časová",
+        "způsobová"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik vět má souvětí *Když skončila hodina, žáci, kteří měli hlad, běželi do jídelny.*?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj spojku s typickým druhem VV.",
+      "pairs": [
+        [
+          "protože",
+          "příčinná"
+        ],
+        [
+          "kdyby",
+          "podmínková"
+        ],
+        [
+          "ačkoli",
+          "přípustková"
+        ],
+        [
+          "až",
+          "časová"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Vztažné zájmeno *který* uvozuje nejčastěji větu přívlastkovou.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Vložená vedlejší věta se odděluje čárkami z obou stran.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Která VV odpovídá na otázku *za jaké podmínky?*",
+      "options": [
+        "podmínková",
+        "přípustková",
+        "časová"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj druhy vedlejších vět a vysvětli, jak je určíš.",
+      "answer": "Podmětná, přísudková, předmětná, přívlastková, příslovečná (místní, časová, způsobová, příčinná, účelová, podmínková, přípustková) a doplňková. Určím je otázkou z věty řídící."
+    },
+    {
+      "type": "open",
+      "question": "Rozeber souvětí *Když jsem přišel domů, zjistil jsem, že mi někdo vzal kolo.*",
+      "answer": "Tři věty. Hlavní *zjistil jsem*. *Když jsem přišel domů* – VV příslovečná časová (kdy?). *Že mi někdo vzal kolo* – VV předmětná (co?)."
+    }
+  ]
+}

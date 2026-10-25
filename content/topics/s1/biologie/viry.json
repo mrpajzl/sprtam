@@ -1,0 +1,426 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "viry",
+  "title": "Viry",
+  "emoji": "🧫",
+  "explanations": [
+    {
+      "title": "Únos továrny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chřipka, rýma, covid, opar, plané neštovice – všechno způsobují **viry**. Jsou tak malé, že je neuvidíš ani běžným mikroskopem, a přesto dokážou ochromit celý svět."
+        },
+        {
+          "type": "text",
+          "text": "Virus je zvláštní: sám nejí, nedýchá, neroste. Je to jen **zabalený návod**. Teprve když se dostane do buňky, „unese“ ji a donutí ji vyrábět nové viry. Pochopíš, proč na viry nefungují antibiotika a jak funguje očkování."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Nukleová kyselina",
+          "definition": "Molekula s dědičnou informací. Jsou dvě: **DNA** a **RNA**. Virus má vždy **jen jednu z nich**."
+        },
+        {
+          "type": "term",
+          "term": "Kapsida",
+          "definition": "Bílkovinný obal, který chrání nukleovou kyselinu viru – jako krabička."
+        },
+        {
+          "type": "term",
+          "term": "Virion",
+          "definition": "Kompletní virová částice mimo buňku: nukleová kyselina + kapsida (někdy ještě obal z membrány)."
+        },
+        {
+          "type": "term",
+          "term": "Hostitelská buňka",
+          "definition": "Buňka, kterou virus napadne a ve které se množí."
+        },
+        {
+          "type": "heading",
+          "text": "Virus jako flash disk"
+        },
+        {
+          "type": "text",
+          "text": "Představ si flash disk s programem. Sám o sobě nic neudělá. Když ho ale zasuneš do počítače, program se spustí a počítač začne vyrábět kopie disku. Virus je ten disk, buňka je počítač."
+        },
+        {
+          "type": "heading",
+          "text": "Jak virus množí"
+        },
+        {
+          "type": "text",
+          "text": "Klepej a sleduj kroky. Takto probíhá **lytický cyklus** – končí rozpadem buňky."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "adsorpce – virus se přichytí na buňku",
+              "průnik – nukleová kyselina vnikne dovnitř",
+              "syntéza – buňka vyrábí virové součásti",
+              "skládání – vznikají nové viriony",
+              "uvolnění – buňka praskne (lyze)"
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Lyzogenní cyklus",
+          "definition": "Virus buňku hned nezničí. Jeho DNA se **vřadí do DNA hostitele** a tiše se kopíruje s ní. Až později se probudí a spustí lytický cyklus.",
+          "example": "Typické pro některé bakteriofágy. Podobně se do DNA lidské buňky vkládá i HIV."
+        },
+        {
+          "type": "term",
+          "term": "Bakteriofág",
+          "definition": "Virus, který napadá **bakterie**."
+        },
+        {
+          "type": "heading",
+          "text": "Je virus živý?"
+        },
+        {
+          "type": "text",
+          "text": "Virus **nemá buňku ani vlastní metabolismus** a **mimo hostitelskou buňku se nemnoží**. Proto ho nepovažujeme za plnohodnotný organismus."
+        },
+        {
+          "type": "heading",
+          "text": "Obrana"
+        },
+        {
+          "type": "term",
+          "term": "Antibiotika vs. antivirotika",
+          "definition": "**Antibiotika** ničí bakterie (jejich stěnu, ribozomy). Virus tyto části nemá – na něj nefungují. Proti virům jsou **antivirotika** a hlavně **očkování**."
+        },
+        {
+          "type": "term",
+          "term": "Očkování",
+          "definition": "Do těla se vpraví **vakcína** – oslabený či usmrcený virus nebo jeho část. Tělo si vytvoří **protilátky** a **paměťové buňky**. Při skutečné nákaze pak zasáhne rychle."
+        },
+        {
+          "type": "example",
+          "question": "Máš chřipku. Pomůže ti antibiotikum?",
+          "answer": "Ne. Chřipku způsobuje **virus**. Antibiotika míří na části bakterií, které virus nemá."
+        },
+        {
+          "type": "example",
+          "question": "Proč se virus chřipky nemnoží na klice dveří?",
+          "answer": "Virus nemá vlastní metabolismus. K výrobě kopií potřebuje živou **hostitelskou buňku**. Na klice jen přečkává, dokud se nedostane do těla."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Virus obsahuje DNA i RNA jako buňka.",
+          "right": "Virus má **buď DNA, nebo RNA**.",
+          "why": "Buňky mají obojí. Virus je jen minimální balíček – jedna nukleová kyselina a kapsida."
+        },
+        {
+          "type": "summary",
+          "text": "Virus = nukleová kyselina (DNA nebo RNA) + bílkovinná kapsida. Množí se jen v hostitelské buňce. Proti virům očkování a antivirotika, ne antibiotika."
+        }
+      ]
+    },
+    {
+      "title": "Přehled",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Viry jsou původci mnoha nemocí – od rýmy po AIDS. Lékař i biolog je třídí podle toho, jakou mají dědičnou informaci, koho napadají a jak se množí. Tady je přehled, který potřebuješ znát."
+        },
+        {
+          "type": "text",
+          "text": "Přidáme i ještě zvláštnější infekční částice – **priony**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Virus",
+          "definition": "Nebuněčná infekční částice. Skládá se z **nukleové kyseliny** (DNA nebo RNA – molekuly s návodem) a bílkovinného obalu – **kapsidy**. Kompletní částice mimo buňku = **virion**."
+        },
+        {
+          "type": "term",
+          "term": "Hostitel",
+          "definition": "Organismus nebo buňka, ve které se virus množí. Virus mimo hostitele nemá metabolismus a nemnoží se."
+        },
+        {
+          "type": "term",
+          "term": "Bakteriofág",
+          "definition": "Virus napadající bakterie. Má typickou „hlavičku“ s DNA a nožky, kterými se přichytí."
+        },
+        {
+          "type": "term",
+          "term": "Retrovirus",
+          "definition": "RNA virus, který svou RNA **přepíše do DNA** enzymem **reverzní transkriptáza** a tu vloží do DNA hostitele.",
+          "example": "HIV"
+        },
+        {
+          "type": "term",
+          "term": "Enzym",
+          "definition": "Bílkovina, která urychluje určitou chemickou reakci v buňce."
+        },
+        {
+          "type": "heading",
+          "text": "Dva způsoby množení"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Cyklus",
+            "Co se děje",
+            "Výsledek"
+          ],
+          "rows": [
+            [
+              "lytický",
+              "adsorpce → průnik → syntéza → skládání → uvolnění",
+              "buňka praskne (lyze)"
+            ],
+            [
+              "lyzogenní",
+              "DNA viru se vřadí do DNA hostitele a „čeká“",
+              "buňka žije, později může přejít do lytického"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Viry a nemoci"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Virus",
+            "Nukleová kyselina",
+            "Nemoc"
+          ],
+          "rows": [
+            [
+              "HIV (retrovirus)",
+              "RNA",
+              "AIDS"
+            ],
+            [
+              "virus chřipky",
+              "RNA",
+              "chřipka"
+            ],
+            [
+              "SARS-CoV-2",
+              "RNA",
+              "covid-19"
+            ],
+            [
+              "virus vztekliny",
+              "RNA",
+              "vzteklina"
+            ],
+            [
+              "herpesviry",
+              "DNA",
+              "opar, plané neštovice (virus varicella-zoster)"
+            ],
+            [
+              "papilomaviry (HPV)",
+              "DNA",
+              "bradavice, rakovina děložního čípku"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zkus si spojit virus s nemocí – nejdřív odpověz, pak otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "HIV",
+                "back": "AIDS"
+              },
+              {
+                "front": "HPV",
+                "back": "rakovina děložního čípku, bradavice"
+              },
+              {
+                "front": "varicella-zoster",
+                "back": "plané neštovice"
+              },
+              {
+                "front": "SARS-CoV-2",
+                "back": "covid-19"
+              },
+              {
+                "front": "bakteriofág",
+                "back": "napadá bakterie"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Priony"
+        },
+        {
+          "type": "term",
+          "term": "Prion",
+          "definition": "Infekční **bílkovina bez nukleové kyseliny**. Špatně poskládaná bílkovina „nutí“ zdravé bílkoviny, aby se poskládaly stejně špatně.",
+          "example": "BSE – nemoc šílených krav; u člověka Creutzfeldtova-Jakobova nemoc."
+        },
+        {
+          "type": "heading",
+          "text": "Prevence a léčba"
+        },
+        {
+          "type": "text",
+          "text": "**Očkování** naučí imunitní systém virus poznat (vznikají protilátky a paměťové buňky). **Antivirotika** brzdí množení viru. **Antibiotika na viry nefungují** – působí jen na bakterie."
+        },
+        {
+          "type": "example",
+          "question": "Proč HIV potřebuje reverzní transkriptázu?",
+          "answer": "HIV má **RNA**, ale DNA hostitele je **DNA**. Aby se do ní mohl vložit, musí svou RNA nejdřív přepsat do DNA – a to umí právě reverzní transkriptáza."
+        },
+        {
+          "type": "example",
+          "question": "Proti HPV se očkuje už dospívající. Proč?",
+          "answer": "HPV může způsobit **rakovinu děložního čípku**. Očkování před možnou nákazou vytvoří imunitu dřív, než se člověk s virem setká."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Priony jsou malé viry.",
+          "right": "Priony nejsou viry – jsou to **jen bílkoviny** bez DNA i RNA.",
+          "why": "Virus má vždy nukleovou kyselinu a kapsidu. Prion je jediná chybně složená bílkovina."
+        },
+        {
+          "type": "summary",
+          "text": "Virus = DNA nebo RNA + kapsida, množí se lyticky nebo lyzogenně. Retroviry (HIV) přepisují RNA do DNA reverzní transkriptázou. Priony = infekční bílkoviny. Na viry očkování, ne antibiotika."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Virus obsahuje současně DNA i RNA.",
+      "answer": false,
+      "explanation": "Virus má buď DNA, nebo RNA."
+    },
+    {
+      "type": "choice",
+      "question": "Virus napadající bakterie je…",
+      "options": [
+        "bakteriofág",
+        "prion",
+        "viroid"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Bílkovinný obal viru je…",
+      "answers": [
+        "kapsida",
+        "kapsid"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Enzym retrovirů přepisující RNA do DNA je…",
+      "options": [
+        "reverzní transkriptáza",
+        "DNA polymeráza",
+        "amyláza"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď lytický cyklus bakteriofága.",
+      "items": [
+        "adsorpce",
+        "průnik",
+        "syntéza",
+        "skládání",
+        "uvolnění"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj virus s nemocí.",
+      "pairs": [
+        [
+          "HIV",
+          "AIDS"
+        ],
+        [
+          "HPV",
+          "rakovina děložního čípku"
+        ],
+        [
+          "virus varicella-zoster",
+          "plané neštovice"
+        ],
+        [
+          "virus vztekliny",
+          "vzteklina"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Priony jsou infekční bílkoviny bez nukleové kyseliny.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Lyzogenní cyklus znamená, že…",
+      "options": [
+        "DNA viru se vřadí do DNA hostitele a čeká",
+        "buňka hned praskne",
+        "virus se sám dělí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Antibiotika jsou účinná proti virovým infekcím.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Kompletní virová částice mimo buňku se nazývá…",
+      "options": [
+        "virion",
+        "kapsomera",
+        "plazmid"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Proč viry nepovažujeme za plnohodnotné organismy?",
+      "answer": "Nemají buněčnou stavbu ani vlastní metabolismus a rozmnožují se jen uvnitř hostitelské buňky."
+    },
+    {
+      "type": "open",
+      "question": "Jak funguje očkování?",
+      "answer": "Vakcína obsahuje oslabený či usmrcený patogen nebo jeho část. Imunitní systém si vytvoří protilátky a paměťové buňky, takže při skutečné nákaze reaguje rychle."
+    }
+  ]
+}

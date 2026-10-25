@@ -1,0 +1,338 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "slova-nadrazena-podrazena",
+  "title": "Slova nadřazená a podřazená",
+  "emoji": "🌳",
+  "explanations": [
+    {
+      "title": "Krabice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V kuchyni je krabice s nápisem **OVOCE**. Uvnitř je jablko, hruška, banán a třešně."
+        },
+        {
+          "type": "text",
+          "text": "Slova jsou uspořádaná stejně: některé slovo je jako krabice, jiná jsou věci v ní. Pomáhá to třídit myšlenky a dobře popsat věci."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Slovo nadřazené",
+          "definition": "Krabice. Společný název pro víc věcí.",
+          "example": "ovoce, zvířata, nábytek"
+        },
+        {
+          "type": "term",
+          "term": "Slovo podřazené",
+          "definition": "Věc v krabici. Patří pod nadřazené slovo.",
+          "example": "jablko, hruška – patří pod *ovoce*"
+        },
+        {
+          "type": "term",
+          "term": "Slova souřadná",
+          "definition": "Věci ze stejné krabice. Jsou na stejné úrovni.",
+          "example": "jablko a hruška"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "📦 ovoce",
+            "🍎",
+            "🍐",
+            "🍌",
+            "🍒"
+          ],
+          "caption": "krabice ovoce: jablko, hruška, banán, třešně"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podívej se na slova.",
+            "Najdi společný název – krabici. To je **nadřazené** slovo.",
+            "Ostatní slova jsou v krabici – **podřazená**.",
+            "Slova ze stejné krabice jsou mezi sebou **souřadná**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jaké je nadřazené slovo k: růže, tulipán, sedmikráska?",
+          "answer": "Co mají společné? Všechno to jsou **květiny**. Květiny je krabice – nadřazené slovo."
+        },
+        {
+          "type": "example",
+          "question": "Které slovo nepatří do krabice ovoce: jablko, švestka, brambora?",
+          "answer": "Jablko a švestka jsou ovoce. **Brambora** je zelenina – patří do jiné krabice."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Pes“ je nadřazené slovo ke slovu „zvíře“.",
+          "right": "„Zvíře“ je nadřazené, „pes“ podřazené.",
+          "why": "Krabice je větší než věc v ní. Do krabice zvířata patří pes, kočka, kůň – ne naopak."
+        },
+        {
+          "type": "summary",
+          "text": "Nadřazené slovo je krabice (ovoce). Podřazená slova jsou věci v ní (jablko). Věci ze stejné krabice jsou souřadné."
+        }
+      ]
+    },
+    {
+      "title": "Třídění",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když uklízíš pokoj, dáš hračky k hračkám a oblečení k oblečení. Třídíš."
+        },
+        {
+          "type": "text",
+          "text": "Se slovy to jde taky. Každá skupina má svůj **společný název**. Pomůže ti to, když hledáš správné slovo nebo něco vysvětluješ."
+        },
+        {
+          "type": "term",
+          "term": "Nadřazené slovo",
+          "definition": "Společný název skupiny. Je „nahoře“.",
+          "example": "nábytek"
+        },
+        {
+          "type": "term",
+          "term": "Podřazené slovo",
+          "definition": "Jedna věc ze skupiny. Je „dole“, pod společným názvem.",
+          "example": "stůl, židle, skříň"
+        },
+        {
+          "type": "term",
+          "term": "Souřadná slova",
+          "definition": "Slova ze stejné skupiny, vedle sebe.",
+          "example": "stůl – židle"
+        },
+        {
+          "type": "table",
+          "head": [
+            "nadřazené (nahoře)",
+            "podřazená (dole)"
+          ],
+          "rows": [
+            [
+              "zvířata",
+              "pes, kočka, kůň"
+            ],
+            [
+              "nábytek",
+              "stůl, židle, skříň"
+            ],
+            [
+              "zelenina",
+              "mrkev, okurka, cibule"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Roztřiď"
+        },
+        {
+          "type": "text",
+          "text": "Dej každé slovo pod jeho společný název."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "zvířata 🐾",
+              "nábytek 🪑",
+              "zelenina 🥕"
+            ],
+            "items": [
+              {
+                "text": "pes",
+                "group": 0
+              },
+              {
+                "text": "stůl",
+                "group": 1
+              },
+              {
+                "text": "mrkev",
+                "group": 2
+              },
+              {
+                "text": "kočka",
+                "group": 0
+              },
+              {
+                "text": "židle",
+                "group": 1
+              },
+              {
+                "text": "okurka",
+                "group": 2
+              },
+              {
+                "text": "kůň",
+                "group": 0
+              },
+              {
+                "text": "skříň",
+                "group": 1
+              },
+              {
+                "text": "cibule",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Nadřazené slovo k: pondělí, úterý, středa?",
+          "answer": "Všechno jsou to **dny v týdnu**."
+        },
+        {
+          "type": "example",
+          "question": "Která slova jsou souřadná: pes – kočka, nebo zvíře – pes?",
+          "answer": "**Pes a kočka** jsou oba ve skupině zvířata, vedle sebe. Zvíře – pes je krabice a věc v ní."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Batoh je podřazené slovo k „oblečení“.",
+          "right": "Batoh není oblečení. K oblečení patří tričko, kalhoty, svetr.",
+          "why": "Batoh není oblečení – nosíš v něm věci. Patří do jiné skupiny: tašky a zavazadla."
+        },
+        {
+          "type": "summary",
+          "text": "Nadřazené slovo je společný název (nahoře). Podřazená slova patří pod něj (dole). Slova vedle sebe jsou souřadná."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které slovo je nadřazené ke slovům: růže, tulipán, sedmikráska?",
+      "options": [
+        "květiny",
+        "stromy",
+        "zahrada"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je nadřazené ke slovům: auto, vlak, autobus?",
+      "options": [
+        "hračky",
+        "dopravní prostředky",
+        "silnice"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo NEPATŘÍ k ovoci?",
+      "options": [
+        "jablko",
+        "švestka",
+        "brambora"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "input",
+      "question": "Nadřazené slovo k: pondělí, úterý, středa",
+      "answers": [
+        "dny",
+        "dny v týdnu",
+        "dny týdne"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Nadřazené slovo k: červená, modrá, zelená",
+      "answers": [
+        "barvy",
+        "barva"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Slovo „nábytek“ je nadřazené slovu „stůl“.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Slovo „pes“ je nadřazené slovu „zvíře“.",
+      "answer": false,
+      "explanation": "Je to naopak: zvíře je nadřazené, pes podřazené."
+    },
+    {
+      "type": "match",
+      "question": "Spoj podřazené slovo s nadřazeným.",
+      "pairs": [
+        [
+          "dub",
+          "strom"
+        ],
+        [
+          "kapr",
+          "ryba"
+        ],
+        [
+          "housle",
+          "hudební nástroj"
+        ],
+        [
+          "sýkora",
+          "pták"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která slova jsou souřadná?",
+      "options": [
+        "pes – kočka",
+        "zvíře – pes",
+        "ovoce – jablko"
+      ],
+      "answer": 0,
+      "explanation": "Pes a kočka jsou na stejné úrovni – obě jsou zvířata."
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je podřazené slovu „oblečení“?",
+      "options": [
+        "bota",
+        "tričko",
+        "batoh"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "open",
+      "question": "Co je slovo nadřazené? Řekni příklad.",
+      "answer": "Je to společný název pro více věcí. Například zelenina je nadřazené slovo k mrkev, okurka, paprika."
+    },
+    {
+      "type": "open",
+      "question": "Řekni tři slova podřazená ke slovu „hračky“.",
+      "answer": "Například panenka, míč, autíčko."
+    }
+  ]
+}

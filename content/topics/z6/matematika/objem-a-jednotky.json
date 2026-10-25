@@ -1,0 +1,394 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "objem-a-jednotky",
+  "title": "Objem a jednotky objemu",
+  "emoji": "🧃",
+  "generator": "volume",
+  "explanations": [
+    {
+      "title": "Kostičky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolik vody se vejde do akvária? Kolik písku přiveze auto? Kolik džusu je v krabici? To jsou otázky na **objem**."
+        },
+        {
+          "type": "text",
+          "text": "Obsah měří plochu (kolik čtverečků pokryje podlahu). Objem měří prostor (kolik kostiček zaplní krabici). Plocha je placka, prostor má i výšku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Objem (V)",
+          "definition": "Kolik místa věc zabírá, nebo kolik se do ní vejde. Značí se písmenem V.",
+          "example": "Do hrnku se vejde 250 ml čaje."
+        },
+        {
+          "type": "term",
+          "term": "Krychle",
+          "definition": "Kostka, která má všechny hrany stejně dlouhé – jako hrací kostka.",
+          "example": "Kostka cukru."
+        },
+        {
+          "type": "term",
+          "term": "Krychlový centimetr (cm³)",
+          "definition": "Kostička 1 cm × 1 cm × 1 cm. Malé ³ znamená „krychlový“ – měříme ve třech směrech: délka, šířka, výška.",
+          "example": "Kostka cukru má zhruba 1 cm³."
+        },
+        {
+          "type": "term",
+          "term": "Litr (l)",
+          "definition": "Jednotka objemu pro tekutiny. Vejde se do krychle 10 cm × 10 cm × 10 cm.",
+          "example": "Krabice mléka má 1 l."
+        },
+        {
+          "type": "heading",
+          "text": "Plníme krabici"
+        },
+        {
+          "type": "text",
+          "text": "Krabice je 4 cm dlouhá, 3 cm široká a 2 cm vysoká. Kolik kostiček 1 cm³ se do ní vejde?"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Na dno dáš řadu po **4** kostičkách.",
+            "Takových řad se na dno vejde **3**: 4 · 3 = 12 kostiček v jedné vrstvě.",
+            "Krabice je 2 cm vysoká, vejdou se **2** vrstvy.",
+            "12 · 2 = **24** kostiček. Objem je **24 cm³**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Nastav si jednu vrstvu na dně. Pak ji v duchu vynásob počtem vrstev."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 4,
+            "columns": 3
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Velké a malé jednotky"
+        },
+        {
+          "type": "text",
+          "text": "Pro malé věci stačí cm³, pro bazén nebo pokoj potřebuješ větší kostku. Krychle s hranou 1 dm (10 cm) je **1 dm³** a vejde se do ní přesně **1 litr**. Krychle s hranou 1 m je **1 m³** – to je 1 000 litrů."
+        },
+        {
+          "type": "example",
+          "question": "Krabička je 5 cm × 2 cm × 3 cm. Jaký má objem?",
+          "answer": "Vrstva na dně: 5 · 2 = 10 kostiček. Vrstvy: 3. 10 · 3 = **30 cm³**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik kostiček 1 cm³ je v krychli 1 dm³?",
+          "answer": "1 dm = 10 cm. Vrstva: 10 · 10 = 100 kostiček. Vrstev 10: 100 · 10 = **1 000 cm³**. Proto 1 l = 1 000 cm³ = 1 000 ml."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Objem krabice je 24 cm².",
+          "right": "Objem krabice je **24 cm³**.",
+          "why": "cm² jsou čtverečky – plocha. Objem se skládá z kostiček, proto krychlové jednotky se ³."
+        },
+        {
+          "type": "summary",
+          "text": "Objem = kolik kostiček se vejde dovnitř. Jednotky cm³, dm³, m³; u tekutin litry: 1 l = 1 dm³ = 1 000 cm³."
+        }
+      ]
+    },
+    {
+      "title": "Převody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Lék se dávkuje v mililitrech, voda v lahvi v litrech, beton pro stavbu v krychlových metrech. Často musíš jednu jednotku převést na druhou – třeba když víš rozměry nádrže v metrech a chceš vědět, kolik litrů se do ní vejde."
+        },
+        {
+          "type": "text",
+          "text": "Pozor: jednotky objemu se převádějí **po tisících**, ne po desítkách jako délka. Tady vzniká nejvíc chyb."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Objem",
+          "definition": "Kolik místa věc zabírá nebo kolik se do ní vejde.",
+          "example": "Lahev s 1,5 l vody."
+        },
+        {
+          "type": "term",
+          "term": "mm³, cm³, dm³, m³",
+          "definition": "Krychle s hranou 1 mm, 1 cm, 1 dm, 1 m. Malé ³ čti „krychlový“.",
+          "example": "1 m³ = krychle 1 m × 1 m × 1 m."
+        },
+        {
+          "type": "term",
+          "term": "hl, l, dl, cl, ml",
+          "definition": "Jednotky objemu pro tekutiny: hektolitr, litr, decilitr, centilitr, mililitr.",
+          "example": "Sud piva 0,5 hl, sklenice 2 dl, lžička 5 ml."
+        },
+        {
+          "type": "term",
+          "term": "Převodní číslo",
+          "definition": "Kolik menších jednotek se vejde do jedné větší.",
+          "example": "1 dm³ = 1 000 cm³ → převodní číslo je 1 000."
+        },
+        {
+          "type": "heading",
+          "text": "Proč po tisících"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "1 dm = 10 cm.",
+            "Krychle 1 dm³ má hranu 10 cm.",
+            "Vejde se do ní 10 · 10 · 10 kostiček po 1 cm³.",
+            "10 · 10 · 10 = **1 000**. Proto 1 dm³ = 1 000 cm³."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka převodů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Krychlové jednotky",
+            "Tekutiny"
+          ],
+          "rows": [
+            [
+              "1 m³ = 1 000 dm³",
+              "1 m³ = 1 000 l = 10 hl"
+            ],
+            [
+              "1 dm³ = 1 000 cm³",
+              "1 dm³ = **1 l**"
+            ],
+            [
+              "1 cm³ = 1 000 mm³",
+              "1 cm³ = **1 ml**"
+            ],
+            [
+              "",
+              "1 hl = 100 l, 1 l = 10 dl = 100 cl = 1 000 ml"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi převodní číslo v tabulce.",
+            "Na **menší** jednotku **násob** (čárka doprava).",
+            "Na **větší** jednotku **děl** (čárka doleva).",
+            "Mezi krychlovými jednotkami a litry použij most: 1 dm³ = 1 l, 1 cm³ = 1 ml."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "0,75 l = ? ml",
+          "answer": "1 l = 1 000 ml, na menší → násobím. 0,75 · 1 000 = **750 ml**."
+        },
+        {
+          "type": "example",
+          "question": "3 500 cm³ = ? l",
+          "answer": "Na větší → dělím. 3 500 : 1 000 = 3,5 dm³, a 1 dm³ = 1 l, takže **3,5 l**."
+        },
+        {
+          "type": "example",
+          "question": "Nádrž má objem 2 m³. Kolik je to litrů?",
+          "answer": "1 m³ = 1 000 dm³ = 1 000 l. 2 · 1 000 = **2 000 l**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Řekni převod nahlas, pak kartičku otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "1 m³ = ? dm³",
+                "back": "1 000 dm³"
+              },
+              {
+                "front": "1 dm³ = ? l",
+                "back": "1 l"
+              },
+              {
+                "front": "1 cm³ = ? ml",
+                "back": "1 ml"
+              },
+              {
+                "front": "1 hl = ? l",
+                "back": "100 l"
+              },
+              {
+                "front": "2,5 l = ? cm³",
+                "back": "2 500 cm³"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 dm³ = 10 cm³",
+          "right": "1 dm³ = **1 000 cm³**",
+          "why": "10 platí pro délku (1 dm = 10 cm). Krychle má tři rozměry: 10 · 10 · 10 = 1 000."
+        },
+        {
+          "type": "summary",
+          "text": "Krychlové jednotky převádíš po 1 000. 1 dm³ = 1 l, 1 cm³ = 1 ml, 1 m³ = 1 000 l."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "1 dm³ = ? cm³",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "1 m³ = ? dm³",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "1 cm³ = ? mm³",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "2,5 l = ? ml",
+      "answers": [
+        "2500"
+      ],
+      "explanation": "2,5 · 1 000 = 2 500"
+    },
+    {
+      "type": "input",
+      "question": "750 ml = ? l",
+      "answers": [
+        "0,75"
+      ],
+      "explanation": "750 : 1 000 = 0,75"
+    },
+    {
+      "type": "input",
+      "question": "3 500 cm³ = ? l",
+      "answers": [
+        "3,5"
+      ],
+      "explanation": "3 500 cm³ = 3,5 dm³ = 3,5 l"
+    },
+    {
+      "type": "input",
+      "question": "2 m³ = ? l",
+      "answers": [
+        "2000"
+      ],
+      "explanation": "1 m³ = 1 000 l"
+    },
+    {
+      "type": "input",
+      "question": "1 hl = ? l",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Krabička 5 cm × 2 cm × 3 cm. Objem v cm³ =",
+      "answers": [
+        "30"
+      ],
+      "explanation": "5 · 2 · 3 = 30"
+    },
+    {
+      "type": "choice",
+      "question": "1 ml je stejně jako…",
+      "options": [
+        "1 cm³",
+        "1 dm³",
+        "1 mm³",
+        "10 cm³"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "V čem nejspíš uvedeš objem bazénu?",
+      "options": [
+        "m³",
+        "cm³",
+        "ml",
+        "m²"
+      ],
+      "answer": 0,
+      "explanation": "Bazén je velký, m² je navíc plocha, ne objem."
+    },
+    {
+      "type": "truefalse",
+      "question": "1 dm³ = 100 cm³",
+      "answer": false,
+      "explanation": "10 · 10 · 10 = 1 000 cm³."
+    },
+    {
+      "type": "truefalse",
+      "question": "1 litr je totéž co 1 dm³.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího objemu po největší.",
+      "items": [
+        "500 cm³",
+        "0,8 l",
+        "2 dm³",
+        "0,01 m³"
+      ],
+      "explanation": "0,8 l = 800 cm³, 2 dm³ = 2 000 cm³, 0,01 m³ = 10 dm³ = 10 000 cm³."
+    },
+    {
+      "type": "open",
+      "question": "Proč je 1 dm³ = 1 000 cm³, a ne 10 cm³?",
+      "answer": "Krychle 1 dm³ má hranu 10 cm. Vejde se do ní 10 · 10 · 10 = 1 000 kostiček po 1 cm³."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi obsahem a objemem?",
+      "answer": "Obsah měří plochu ve čtverečcích, třeba cm². Objem měří prostor v kostičkách, třeba cm³ nebo litrech."
+    }
+  ]
+}

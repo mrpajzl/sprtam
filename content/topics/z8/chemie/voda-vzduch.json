@@ -1,0 +1,423 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "voda-vzduch",
+  "title": "Voda a vzduch",
+  "emoji": "💧",
+  "explanations": [
+    {
+      "title": "Ze života",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Bez jídla člověk vydrží týdny, bez vody pár dní, bez vzduchu jen pár minut. Voda a vzduch jsou dvě látky, které potřebujeme nejvíc – a obě umíme snadno zničit."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme si, jakou vodu kde máme, kudy putuje, jak se čistí, z čeho je vzduch a co ho špiní."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Směs",
+          "definition": "Víc látek smíchaných dohromady. Opak je **čistá látka** – jen jedna látka.",
+          "example": "Voda z kohoutku je směs – je v ní rozpuštěná trocha solí a plynů."
+        },
+        {
+          "type": "term",
+          "term": "Destilovaná voda",
+          "definition": "Úplně čistá voda – nic v ní není rozpuštěné. Vyrábí se destilací: voda se odpaří a pára zase zkapalní.",
+          "example": "Patří do žehličky, aby se v ní neusazoval vodní kámen."
+        },
+        {
+          "type": "term",
+          "term": "Pitná a minerální voda",
+          "definition": "**Pitná** voda je bezpečná k pití (z kohoutku). **Minerální** voda má hodně rozpuštěných solí (minerálů) z podzemí.",
+          "example": "Minerálky z obchodu bývají minerální vody."
+        },
+        {
+          "type": "term",
+          "term": "Odpadní voda",
+          "definition": "Voda znečištěná po použití – ze záchodů, praček, továren."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta vody přírodou"
+        },
+        {
+          "type": "text",
+          "text": "Voda pořád koluje dokola. Klepni a projdi si kroky koloběhu."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "slunce ohřeje moře, voda se vypařuje",
+              "pára vystoupá a ochladí se – vzniknou mraky",
+              "z mraků padají srážky",
+              "voda odtéká řekami zpátky do moře"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Cesta vody k nám a od nás"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Voda se nabere z řeky, přehrady nebo z podzemí.",
+            "**Úpravna vody** z ní udělá pitnou: odstraní hrubé nečistoty, nechá kal usadit, vodu přefiltruje přes písek a nakonec **dezinfikuje** (zabije choroboplodné zárodky), třeba chlorem nebo ozonem.",
+            "Potrubím teče do domů.",
+            "Použitá odpadní voda odteče kanalizací do **čistírny odpadních vod (ČOV)**.",
+            "Čistírna ji zbaví nečistot – hrubých i těch, které rozloží bakterie – a vrátí ji do řeky."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vzduch, který dýcháš"
+        },
+        {
+          "type": "text",
+          "text": "Vzduch je směs plynů. Nejvíc je v něm **dusíku** (asi 78 %), pak **kyslíku** (asi 21 %). Zbytek je hlavně argon a malinko oxidu uhličitého. Kyslík potřebujeme k dýchání a **podporuje hoření** – bez něj oheň zhasne."
+        },
+        {
+          "type": "term",
+          "term": "Ozonová vrstva",
+          "definition": "Vrstva vysoko v atmosféře (ve stratosféře), kde je plyn **ozon O₃**. Zachytí velkou část nebezpečného **UV záření** ze Slunce.",
+          "example": "Bez ní by nás slunce spálilo mnohem víc."
+        },
+        {
+          "type": "example",
+          "question": "Proč se do žehličky nemá lít voda z kohoutku?",
+          "answer": "Voda z kohoutku je směs – obsahuje rozpuštěné soli. Když se voda v žehličce odpaří, soli zůstanou a vytvoří **vodní kámen**. Destilovaná voda žádné soli nemá."
+        },
+        {
+          "type": "example",
+          "question": "Hořící svíčku přikryješ sklenicí. Proč za chvíli zhasne?",
+          "answer": "Hoření spotřebovává **kyslík**. Pod sklenicí ho je jen málo a nový se tam nedostane. Když kyslík dojde, plamen zhasne."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pitná voda je čistá látka.",
+          "right": "Pitná voda je směs – jsou v ní rozpuštěné soli a plyny.",
+          "why": "Čistá látka je jen destilovaná voda. Pitná voda „jen“ neobsahuje nic škodlivého."
+        },
+        {
+          "type": "heading",
+          "text": "Co vodu a vzduch špiní"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**výfukové plyny** aut a **spalování uhlí** – smog a kyselé deště",
+            "**oxid uhličitý** z pálení uhlí, ropy a plynu – zesiluje **skleníkový efekt** (oteplování)",
+            "odpadní vody, hnojiva a ropa v řekách"
+          ]
+        },
+        {
+          "type": "summary",
+          "text": "Pitnou vodu vyrábí úpravna, odpadní čistí čistírna. Vzduch je směs: asi 78 % dusíku a 21 % kyslíku. Ozonová vrstva chrání před UV zářením."
+        }
+      ]
+    },
+    {
+      "title": "V číslech",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Voda pokrývá asi dvě třetiny povrchu Země a vzduch nás obaluje jako peřina. Chemik se ptá: Z čeho přesně jsou? A jak poznáme, že jsou znečištěné?"
+        },
+        {
+          "type": "text",
+          "text": "Tohle vysvětlení jde na to přes čísla, vzorce a tabulky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atom a molekula",
+          "definition": "**Atom** je nejmenší kousek prvku (třeba vodíku nebo kyslíku). **Molekula** vznikne, když se několik atomů pevně spojí.",
+          "example": "Molekula vody H₂O = 2 atomy vodíku (H) + 1 atom kyslíku (O)."
+        },
+        {
+          "type": "term",
+          "term": "Chemický vzorec",
+          "definition": "Zkratka, která ukazuje, z jakých atomů je molekula. Malé číslo dole říká, kolik atomů daného druhu tam je.",
+          "example": "O₂ = kyslík (2 atomy kyslíku), CO₂ = oxid uhličitý (1 uhlík, 2 kyslíky)."
+        },
+        {
+          "type": "term",
+          "term": "Objemová procenta",
+          "definition": "Kolik ze 100 litrů vzduchu připadá na daný plyn.",
+          "example": "78 % dusíku znamená: ve 100 litrech vzduchu je 78 litrů dusíku."
+        },
+        {
+          "type": "heading",
+          "text": "Složení suchého vzduchu"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf. Všimni si, jak málo je oxidu uhličitého – a přesto právě jeho nárůst otepluje planetu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "%",
+            "items": [
+              {
+                "label": "dusík N₂",
+                "value": 78
+              },
+              {
+                "label": "kyslík O₂",
+                "value": 21
+              },
+              {
+                "label": "argon Ar",
+                "value": 0.93
+              },
+              {
+                "label": "oxid uhličitý CO₂",
+                "value": 0.04
+              }
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "head": [
+            "Plyn",
+            "Vzorec",
+            "Co dělá"
+          ],
+          "rows": [
+            [
+              "dusík",
+              "N₂",
+              "nejvíc ho je, nehoří a hoření nepodporuje"
+            ],
+            [
+              "kyslík",
+              "O₂",
+              "dýcháme ho, podporuje hoření"
+            ],
+            [
+              "argon",
+              "Ar",
+              "vzácný plyn, s ničím nereaguje"
+            ],
+            [
+              "oxid uhličitý",
+              "CO₂",
+              "vydechujeme ho, rostliny ho potřebují, skleníkový plyn"
+            ],
+            [
+              "ozon",
+              "O₃",
+              "ve stratosféře chrání před UV zářením"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Druhy vody"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Voda",
+            "Rozpuštěné látky",
+            "Použití"
+          ],
+          "rows": [
+            [
+              "destilovaná",
+              "žádné – čistá látka",
+              "žehlička, laboratoř"
+            ],
+            [
+              "pitná",
+              "málo, nic škodlivého",
+              "pití, vaření"
+            ],
+            [
+              "minerální",
+              "hodně solí",
+              "pití, lázně"
+            ],
+            [
+              "odpadní",
+              "nečistoty po použití",
+              "musí do čistírny"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Znečištění v číslech a vzorcích"
+        },
+        {
+          "type": "term",
+          "term": "Skleníkový efekt",
+          "definition": "Některé plyny (hlavně **CO₂**, metan a vodní pára) zadržují teplo u Země jako sklo ve skleníku. Bez nich by byla Země zmrzlá. Když jich člověk přidá, Země se otepluje.",
+          "example": "CO₂ přibývá spalováním uhlí, ropy a zemního plynu."
+        },
+        {
+          "type": "term",
+          "term": "Kyselé deště",
+          "definition": "Déšť, ve kterém jsou rozpuštěné **oxidy síry** (SO₂) a **oxidy dusíku**. Vznikají spalováním uhlí a ve výfucích. Poškozují lesy, vody a budovy."
+        },
+        {
+          "type": "example",
+          "question": "Kolik litrů kyslíku je v místnosti, kde je 50 000 litrů vzduchu?",
+          "answer": "Kyslíku je asi 21 %. 1 % z 50 000 l je 500 l. 21 · 500 l = **10 500 litrů** kyslíku."
+        },
+        {
+          "type": "example",
+          "question": "Kolik atomů je v molekule CO₂ a jakých?",
+          "answer": "C bez čísla = 1 atom uhlíku. O₂ = 2 atomy kyslíku. Celkem **3 atomy**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vzduch je hlavně kyslík.",
+          "right": "Vzduch je hlavně dusík (78 %). Kyslíku je asi 21 %.",
+          "why": "Kyslík je pro nás nejdůležitější, ale není ho nejvíc. Dusíku je skoro čtyřikrát víc."
+        },
+        {
+          "type": "summary",
+          "text": "Vzduch: 78 % N₂, 21 % O₂, necelé 1 % Ar, 0,04 % CO₂. Voda H₂O: 2 vodíky + 1 kyslík. CO₂ zesiluje skleníkový efekt, oxidy síry a dusíku způsobují kyselé deště."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik procent objemu vzduchu tvoří dusík (zaokrouhleně)?",
+      "answers": [
+        "78"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik procent objemu vzduchu tvoří kyslík (zaokrouhleně)?",
+      "answers": [
+        "21"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který plyn hoření podporuje?",
+      "options": [
+        "kyslík",
+        "dusík",
+        "oxid uhličitý",
+        "argon"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kterou vodu nalijeme do žehličky?",
+      "options": [
+        "destilovanou",
+        "minerální",
+        "mořskou",
+        "odpadní"
+      ],
+      "answer": 0,
+      "explanation": "Neobsahuje rozpuštěné soli, které by vytvořily vodní kámen."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ozonová vrstva chrání Zemi před UV zářením.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Pitná voda je čistá látka.",
+      "answer": false,
+      "explanation": "Obsahuje rozpuštěné soli a plyny – je to směs."
+    },
+    {
+      "type": "match",
+      "question": "Spoj druh vody s popisem.",
+      "pairs": [
+        [
+          "destilovaná",
+          "bez rozpuštěných látek"
+        ],
+        [
+          "minerální",
+          "hodně rozpuštěných solí"
+        ],
+        [
+          "odpadní",
+          "znečištěná po použití"
+        ],
+        [
+          "pitná",
+          "vhodná k pití"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který plyn nejvíce přispívá k zesilování skleníkového efektu z lidské činnosti?",
+      "options": [
+        "oxid uhličitý",
+        "kyslík",
+        "dusík",
+        "argon"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co způsobuje kyselé deště?",
+      "options": [
+        "oxidy síry a dusíku",
+        "kyslík",
+        "argon",
+        "vodní pára"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď složky vzduchu od největšího zastoupení.",
+      "items": [
+        "dusík",
+        "kyslík",
+        "argon",
+        "oxid uhličitý"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak se vyrábí pitná voda v úpravně?",
+      "answer": "Voda z řeky nebo nádrže se zbaví hrubých nečistot, usazuje se a filtruje přes písek. Nakonec se dezinfikuje, třeba chlorem nebo ozonem."
+    },
+    {
+      "type": "open",
+      "question": "Uveď zdroje znečištění vzduchu a jak je omezit.",
+      "answer": "Znečišťují ho výfukové plyny, spalování uhlí v elektrárnách a topeništích a průmysl. Pomáhá veřejná doprava, filtry a odsiřování v elektrárnách a úspory energie."
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "scitani-do-10",
+  "title": "Sčítání do 10",
+  "emoji": "➕",
+  "generator": "add10",
+  "explanations": [
+    {
+      "title": "Přidáváme",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš 3 balonky. Táta ti dá další 2. Kolik jich máš teď? Je jich víc!"
+        },
+        {
+          "type": "text",
+          "text": "Když se něco **přidá**, počítáme **sčítání**. Potřebuješ ho v obchodě, ve hře i při uklízení hraček."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sčítání",
+          "definition": "Dáš dvě skupiny věcí dohromady a spočítáš, kolik jich je celkem.",
+          "example": "3 balonky a 2 balonky jsou dohromady 5 balonků."
+        },
+        {
+          "type": "term",
+          "term": "Plus (+)",
+          "definition": "Znak, který znamená „přidej“.",
+          "example": "3 + 2 čteme „tři plus dvě“."
+        },
+        {
+          "type": "term",
+          "term": "Rovná se (=)",
+          "definition": "Za tento znak napíšeš výsledek – kolik to dělá.",
+          "example": "3 + 2 = 5"
+        },
+        {
+          "type": "heading",
+          "text": "Krok za krokem"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🎈",
+            "🎈",
+            "🎈",
+            "➕",
+            "🎈",
+            "🎈"
+          ],
+          "caption": "3 + 2"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej první skupinu: **3** balonky.",
+            "Přidej druhou skupinu a počítej dál: čtyři, pět.",
+            "Celkem je **5**.",
+            "Zapíšeš: **3 + 2 = 5**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Jsou tu 3 balonky. Klepni a přidej 2. Kolik jich je? Pak zkus 3 + 4."
+        },
+        {
+          "type": "widget",
+          "widget": "counter",
+          "props": {
+            "emoji": "🎈",
+            "start": 3,
+            "max": 10
+          }
+        },
+        {
+          "type": "example",
+          "question": "Na stromě sedí 4 ptáci. Přiletí 2. Kolik jich je?",
+          "answer": "Ptáci přibyli, tak sčítám. Mám 4 a počítám dál: pět, šest. **4 + 2 = 6.**"
+        },
+        {
+          "type": "example",
+          "question": "5 + 5 =",
+          "answer": "Jedna ruka a druhá ruka. Dohromady **10** prstů."
+        },
+        {
+          "type": "example",
+          "question": "0 + 7 =",
+          "answer": "Nula je nic. Když k 7 nepřidám nic, zůstane **7**."
+        },
+        {
+          "type": "summary",
+          "text": "+ znamená přidat. Spočítej první skupinu a počítej dál o tolik, kolik přidáváš."
+        }
+      ]
+    },
+    {
+      "title": "Skoky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hraješ hru s kostkou. Figurka stojí na políčku 4. Hodíš 3. Kam doskočíš?"
+        },
+        {
+          "type": "text",
+          "text": "Přesně takhle se dá sčítat – **skákáním po čáře s čísly**. Nepotřebuješ k tomu žádné věci."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Číselná osa",
+          "definition": "Čára s čísly. Vlevo je 0. Každý dílek doprava je o 1 víc."
+        },
+        {
+          "type": "term",
+          "term": "Sčítání (+)",
+          "definition": "Přidávání. Na ose to znamená **skákat doprava**.",
+          "example": "4 + 3: z čísla 4 uděláš tři skoky doprava."
+        },
+        {
+          "type": "heading",
+          "text": "Jak skáčeme"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Stoupni si na první číslo: **4**.",
+            "Druhé číslo říká, kolik skoků uděláš: **3**.",
+            "Skákej doprava: 5, 6, 7.",
+            "Kde stojíš, to je výsledek: **4 + 3 = 7**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Žabka začíná na 4 a skočí o 3. Kam dopadne? Počítej skoky nahlas."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "start": 4,
+            "hop": 3
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Šikovný trik"
+        },
+        {
+          "type": "text",
+          "text": "Je jedno, v jakém pořadí čísla sčítáš. 2 + 6 je stejně jako 6 + 2. Proto začni na **větším** čísle. Skoků bude míň."
+        },
+        {
+          "type": "example",
+          "question": "2 + 6 =",
+          "answer": "Větší je 6. Stoupnu si na 6 a skočím 2×: 7, 8. **2 + 6 = 8.**"
+        },
+        {
+          "type": "example",
+          "question": "Kolik musíš přidat k 7, aby bylo 10?",
+          "answer": "Stoupnu si na 7 a skáču, dokud nejsem na 10: 8, 9, 10. To jsou 3 skoky. **7 + 3 = 10.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "4 + 3: počítám „čtyři, pět, šest“ → 6.",
+          "right": "Počítám až skoky: pět, šest, sedm → **7**.",
+          "why": "Číslo, na kterém stojíš, není skok. První skok tě dostane z 4 na 5."
+        },
+        {
+          "type": "summary",
+          "text": "Plus = skákej doprava. Začni na větším čísle a udělej tolik skoků, kolik je menší číslo."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "2 + 1 =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "4 + 4 =",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "5 + 3 =",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "6 + 4 =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "0 + 7 =",
+      "answers": [
+        "7"
+      ],
+      "explanation": "Přidat nulu = nic se nezmění."
+    },
+    {
+      "type": "choice",
+      "question": "3 + 6 =",
+      "options": [
+        "8",
+        "9",
+        "10"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "5 + 5 = 10",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "2 + 7 = 8",
+      "answer": false,
+      "explanation": "2 + 7 = 9."
+    },
+    {
+      "type": "match",
+      "question": "Spoj se stejným výsledkem.",
+      "pairs": [
+        [
+          "1 + 4",
+          "5"
+        ],
+        [
+          "3 + 3",
+          "6"
+        ],
+        [
+          "7 + 2",
+          "9"
+        ],
+        [
+          "8 + 2",
+          "10"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik musíš přidat k 7, aby bylo 10?",
+      "answers": [
+        "3"
+      ],
+      "explanation": "7 + 3 = 10."
+    },
+    {
+      "type": "input",
+      "question": "Na stromě sedí 4 ptáci. Přiletí 2. Kolik jich je?",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš 2 + 6 skoky na číselné ose?",
+      "answer": "Stoupnu si na 6 a skočím 2× doprava. Jsem na 8."
+    },
+    {
+      "type": "open",
+      "question": "Řekni všechny dvojice čísel, které dají dohromady 10.",
+      "answer": "0 + 10, 1 + 9, 2 + 8, 3 + 7, 4 + 6, 5 + 5."
+    }
+  ]
+}

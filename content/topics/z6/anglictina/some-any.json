@@ -1,0 +1,389 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "some-any",
+  "title": "Some / any",
+  "emoji": "🛒",
+  "explanations": [
+    {
+      "title": "V obchodě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Než jdete nakupovat, kontrolujete s mámou lednici: „**Nějaká** vejce máme. Mléko **žádné** nemáme. Máme **nějaký** chleba?“"
+        },
+        {
+          "type": "text",
+          "text": "Česky říkáš *nějaký* i *žádný*. Anglicky na to máš **some** a **any**. Hodí se při nákupu, vaření i když něco nabízíš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "some",
+          "definition": "„Nějaký, několik, trochu“. Hlavně v **kladných** větách.",
+          "example": "We have got some eggs. = Máme nějaká vejce."
+        },
+        {
+          "type": "term",
+          "term": "any",
+          "definition": "V **záporu** = „žádný“, v **otázce** = „nějaký“.",
+          "example": "We haven’t got any milk. = Nemáme žádné mléko."
+        },
+        {
+          "type": "term",
+          "term": "Kladná věta, zápor, otázka",
+          "definition": "Kladná věta něco oznamuje. Zápor obsahuje „ne“ (not, n’t). Otázka se ptá a končí otazníkem.",
+          "example": "I have. / I haven’t. / Have you?"
+        },
+        {
+          "type": "heading",
+          "text": "Kontrola lednice"
+        },
+        {
+          "type": "text",
+          "text": "*We have got **some** eggs.* = Máme nějaká vejce. (kladná věta → some)"
+        },
+        {
+          "type": "text",
+          "text": "*We haven’t got **any** milk.* = Nemáme žádné mléko. (zápor → any)"
+        },
+        {
+          "type": "text",
+          "text": "*Have we got **any** bread?* = Máme nějaký chleba? (otázka → any)"
+        },
+        {
+          "type": "heading",
+          "text": "Výjimka: nabídka a prosba"
+        },
+        {
+          "type": "text",
+          "text": "Když někomu něco **nabízíš** nebo o něco **prosíš**, použiješ **some**, i když je to otázka: *Would you like **some** tea?* = Dáš si čaj? *Can I have **some** water, please?* = Můžu dostat vodu?"
+        },
+        {
+          "type": "text",
+          "text": "Proč? Čekáš, že odpověď bude „ano“ – a *some* zní vlídně."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti větu. Je kladná, nebo je to zápor či otázka? Podle toho ji dej do kbelíku."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "some",
+              "any"
+            ],
+            "items": [
+              {
+                "text": "There are ___ cars.",
+                "group": 0
+              },
+              {
+                "text": "I have ___ money.",
+                "group": 0
+              },
+              {
+                "text": "Would you like ___ tea?",
+                "group": 0
+              },
+              {
+                "text": "I haven’t got ___ pets.",
+                "group": 1
+              },
+              {
+                "text": "Is there ___ juice?",
+                "group": 1
+              },
+              {
+                "text": "There isn’t ___ sugar.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: I bought ___ new shoes.",
+          "answer": "Kladná věta (koupil jsem) → **some**: **I bought some new shoes.**"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: Are there ___ questions?",
+          "answer": "Otázka, nic nenabízím → **any**: **Are there any questions?**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "There isn’t some water.",
+          "right": "There isn’t any water.",
+          "why": "Ve větě je zápor (*isn’t*) → **any**."
+        },
+        {
+          "type": "summary",
+          "text": "Kladná věta → **some**. Zápor a otázka → **any**. Nabídka a prosba → **some**."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Plánujete oslavu a píšete seznam: co máte, co nemáte, na co se zeptat. U každé věty musíš vybrat mezi **some** a **any**."
+        },
+        {
+          "type": "text",
+          "text": "Pravidlo se dá shrnout do tabulky se čtyřmi řádky. Naučíš se, jak poznat typ věty a podle něj vybrat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "some / any",
+          "definition": "Obě slova znamenají „nějaký / několik / trochu“. V záporu je *any* „žádný“. Dávají se před **množné číslo** (apples) nebo před **nepočitatelné** věci (milk, water).",
+          "example": "some apples, any milk"
+        },
+        {
+          "type": "term",
+          "term": "Typ věty",
+          "definition": "Kladná (oznamuje), záporná (s *not / n’t*), otázka (s otazníkem).",
+          "example": "I’ve got. / I haven’t got. / Have you got?"
+        },
+        {
+          "type": "term",
+          "term": "Nabídka, prosba",
+          "definition": "Nabídka: chceš někomu něco dát (*Would you like…?* = Dáš si…?). Prosba: o něco žádáš (*Can I have…?* = Můžu dostat…?).",
+          "example": "Would you like some cake?"
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Věta",
+            "Slovo",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "kladná",
+              "some",
+              "I’ve got some apples."
+            ],
+            [
+              "záporná",
+              "any",
+              "I haven’t got any apples."
+            ],
+            [
+              "otázka",
+              "any",
+              "Have you got any apples?"
+            ],
+            [
+              "nabídka / prosba",
+              "some",
+              "Would you like some apples?"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je ve větě **not / n’t**? → **any**.",
+            "Je to otázka? Nabízíš nebo prosíš? → **some**. Jinak → **any**.",
+            "Je to obyčejná kladná věta? → **some**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Projdi postup a vyber slovo."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "There aren’t ",
+                "after": " chairs.",
+                "options": [
+                  "any",
+                  "some"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Can I have ",
+                "after": " cake, please?",
+                "options": [
+                  "some",
+                  "any"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Are there ",
+                "after": " questions?",
+                "options": [
+                  "any",
+                  "some"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "We’ve got ",
+                "after": " balloons.",
+                "options": [
+                  "some",
+                  "any"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Would you like ___ coffee?",
+          "answer": "Je to otázka, ale **nabízím** → **some**: **Would you like some coffee?**"
+        },
+        {
+          "type": "example",
+          "question": "I don’t have ___ brothers.",
+          "answer": "Je tam **don’t** = zápor → **any**: **I don’t have any brothers.** = Nemám žádné bratry."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Can I have any water, please?",
+          "right": "Can I have some water, please?",
+          "why": "Je to **prosba** – v ní se používá **some**, i když končí otazníkem."
+        },
+        {
+          "type": "summary",
+          "text": "Výjimka, kterou si zapamatuj: nabídka a prosba mají **some**. Jinak otázka a zápor **any**."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "There are ___ books on the table.",
+      "options": [
+        "some",
+        "any"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "I don't have ___ brothers.",
+      "options": [
+        "any",
+        "some"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Is there ___ milk?",
+      "options": [
+        "any",
+        "some"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Would you like ___ coffee?",
+      "options": [
+        "some",
+        "any"
+      ],
+      "answer": 0,
+      "explanation": "Nabídka → some."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: We haven't got ___ bread.",
+      "answers": [
+        "any"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: I bought ___ new shoes.",
+      "answers": [
+        "some"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„Have you got any pens?“ je správně.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„There isn't some water.“ je správně.",
+      "answer": false,
+      "explanation": "Zápor → any: There isn't any water."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: Can I have ___ water, please?",
+      "answers": [
+        "some"
+      ],
+      "explanation": "Prosba → some."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "There",
+        "aren't",
+        "any",
+        "eggs."
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Kdy použiješ some a kdy any?",
+      "answer": "Some v kladných větách a v nabídkách či prosbách. Any v záporných větách a otázkách."
+    },
+    {
+      "type": "open",
+      "question": "Řekni anglicky, co máš a nemáš v penále (some / any).",
+      "answer": "I have got some pencils. I haven't got any scissors."
+    }
+  ]
+}

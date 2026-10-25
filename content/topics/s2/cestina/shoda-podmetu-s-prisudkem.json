@@ -1,0 +1,409 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "shoda-podmetu-s-prisudkem",
+  "title": "Shoda podmětu s přísudkem",
+  "emoji": "🤝",
+  "explanations": [
+    {
+      "title": "Kdo dělá, tak píšu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "*Kluci hráli*, ale *holky hrály*. Zní to úplně stejně, ale píše se to jinak. Koncovka slovesa v minulém čase se řídí tím, **kdo** děj dělá."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Shoda je jedna z nejčastějších chyb v diktátech, písemkách i v maturitním testu. Přitom stačí jeden jednoduchý postup."
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo nebo co ve větě něco dělá. Ptáme se *kdo? co?*",
+          "example": "*Psi* štěkali."
+        },
+        {
+          "type": "term",
+          "term": "Přísudek",
+          "definition": "Co podmět dělá. Často je to sloveso.",
+          "example": "Psi *štěkali*."
+        },
+        {
+          "type": "term",
+          "term": "Shoda podmětu s přísudkem",
+          "definition": "Koncovka přísudku (v minulém čase -i, -y, -a) se přizpůsobí rodu a číslu podmětu.",
+          "example": "*Psi štěkali. Kočky mňoukaly. Kuřata pípala.*"
+        },
+        {
+          "type": "term",
+          "term": "Rod",
+          "definition": "Mluvnický „druh“ podstatného jména. Mužský životný (lidé, zvířata), mužský neživotný (věci), ženský, střední.",
+          "example": "*pes* (m. živ.), *strom* (m. neživ.), *kočka* (ž.), *kuře* (stř.)"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi přísudek v minulém čase: *Kluci hrál_ fotbal.*",
+            "Zeptej se, kdo to dělal → podmět: *kluci*.",
+            "Urči rod podmětu v jednotném čísle: *kluk* – mužský životný.",
+            "Doplň koncovku podle tabulky: mužský životný → **-i**: *hráli*."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rod podmětu (mn. č.)",
+            "Koncovka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "mužský životný",
+              "-i",
+              "Psi štěkali."
+            ],
+            [
+              "mužský neživotný",
+              "-y",
+              "Stromy rostly."
+            ],
+            [
+              "ženský",
+              "-y",
+              "Ženy zpívaly."
+            ],
+            [
+              "střední",
+              "-a",
+              "Města rostla."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každé věty projdi všechny čtyři kroky postupu."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Kluci hrál",
+                "after": " fotbal.",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Lodě plul",
+                "after": " po řece.",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Kuřata pípal",
+                "after": ".",
+                "options": [
+                  "a",
+                  "y"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Ponožky ležel",
+                "after": " na zemi.",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Vlaky jezdil",
+                "after": " včas.",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Vlaky přijížděl_ včas.*",
+          "answer": "Podmět: *vlaky*. Jednotné číslo *vlak* – věc → mužský neživotný. Koncovka **-y**: *přijížděly*."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Děti si hrál_ na zahradě.*",
+          "answer": "Podmět: *děti*. Pozor: v množném čísle je *děti* **ženského rodu** (skloňuje se jako *kost*: dětmi, dětem). Koncovka **-y**: *hrály*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Psy štěkaly.",
+          "right": "Psi štěkali.",
+          "why": "*Pes* je zvíře → mužský životný. V 1. pádě množného čísla je *psi* a přísudek má -i."
+        },
+        {
+          "type": "summary",
+          "text": "Najdi podmět → urči rod → mužský životný -i, mužský neživotný a ženský -y, střední -a. Děti = ženský rod."
+        }
+      ]
+    },
+    {
+      "title": "Víc podmětů naráz",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jednoduché je to, když podmět je jeden. Co ale, když *rodiče a děti* odešl_? Nebo *kuřata a husy* běhal_? Tady se nejčastěji chybuje."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Několikanásobný podmět je oblíbený chyták testů. Naučíš se jedno pořadí důležitosti a vyřešíš každou větu."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Shoda",
+          "definition": "Koncovka přísudku v minulém čase (-i, -y, -a) odpovídá rodu podmětu.",
+          "example": "*Ženy zpívaly.*"
+        },
+        {
+          "type": "term",
+          "term": "Rod",
+          "definition": "mužský životný (lidé, zvířata), mužský neživotný (věci), ženský, střední.",
+          "example": "*kůň* m. živ., *stůl* m. neživ., *židle* ž., *okno* stř."
+        },
+        {
+          "type": "term",
+          "term": "Několikanásobný podmět",
+          "definition": "Podmět složený z více jmen, obvykle spojených spojkou *a*.",
+          "example": "*Muži a ženy* přišli."
+        },
+        {
+          "type": "heading",
+          "text": "Žebříček důležitosti"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je mezi podměty aspoň jeden **mužský životný**? → **-i**. Má vždy přednost. *Muži a ženy přišli.*",
+            "Není? Je tam aspoň jeden **ženský nebo mužský neživotný**? → **-y**. *Stoly a židle stály. Okna a dveře byly otevřené.*",
+            "Jsou **všechny** podměty středního rodu? → **-a**. *Kotě a štěně si hrála.*"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**Pořadí slov ve větě nerozhoduje.** *Na louce se pásli krávy a koně* – *koně* jsou mužský životný, i když stojí až na konci."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zařaď věty podle správné koncovky. Rodiče, lidé a koně jsou mužský životný."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "-i",
+              "-y",
+              "-a"
+            ],
+            "items": [
+              {
+                "text": "Rodiče přišl_",
+                "group": 0
+              },
+              {
+                "text": "Děti spal_",
+                "group": 1
+              },
+              {
+                "text": "Auta stál_",
+                "group": 2
+              },
+              {
+                "text": "Lidé čekal_",
+                "group": 0
+              },
+              {
+                "text": "Myši utekl_",
+                "group": 1
+              },
+              {
+                "text": "Koně běžel_",
+                "group": 0
+              },
+              {
+                "text": "Hory se tyčil_",
+                "group": 1
+              },
+              {
+                "text": "Vejce se vařil_",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Kuřata a husy běhal_ po dvoře.*",
+          "answer": "Mužský životný? Ne. Ženský nebo m. neživotný? Ano – *husy* jsou ženského rodu. → **-y**: *běhaly*."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Slunce a měsíc svítil_.*",
+          "answer": "*Slunce* je střední, *měsíc* mužský neživotný. Mužský životný tam není, ale je tu m. neživotný → **-y**: *svítily*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pásly se krávy a koně.",
+          "right": "Pásli se krávy a koně.",
+          "why": "Mezi podměty je *koně* – mužský životný – a ten má vždy přednost. Že stojí až na konci věty, nevadí."
+        },
+        {
+          "type": "summary",
+          "text": "Několikanásobný podmět: mužský životný → -i (vždy vyhrává). Jinak ženský nebo m. neživotný → -y. Jen samé střední → -a. Pořadí ve větě nerozhoduje."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "*Vlaky přijížděl_ včas.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 1,
+      "explanation": "*Vlak* je mužský neživotný."
+    },
+    {
+      "type": "choice",
+      "question": "*Rodiče a děti odešl_.*",
+      "options": [
+        "i",
+        "y",
+        "a"
+      ],
+      "answer": 0,
+      "explanation": "*Rodiče* jsou mužský životný – ten má přednost."
+    },
+    {
+      "type": "choice",
+      "question": "*Kuřata a husy běhal_ po dvoře.*",
+      "options": [
+        "i",
+        "y",
+        "a"
+      ],
+      "answer": 1,
+      "explanation": "Střední + ženský → -y."
+    },
+    {
+      "type": "choice",
+      "question": "*Dívky a chlapci zpíval_.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Doplň písmeno: *Děti si hrál_ na zahradě.*",
+      "answers": [
+        "y"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň písmeno: *Slunce a měsíc svítil_.*",
+      "answers": [
+        "y"
+      ],
+      "explanation": "Střední + mužský neživotný → -y."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve větě *Stromy a keře kvetly.* je koncovka správně.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Věta *Psy štěkaly.* je napsaná správně.",
+      "answer": false,
+      "explanation": "Správně *Psi štěkali.* – mužský životný."
+    },
+    {
+      "type": "choice",
+      "question": "*Vejce a mléko se zkazil_.*",
+      "options": [
+        "i",
+        "y",
+        "a"
+      ],
+      "answer": 2,
+      "explanation": "Oba podměty jsou středního rodu."
+    },
+    {
+      "type": "choice",
+      "question": "*Na louce se pásl_ krávy a koně.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 0,
+      "explanation": "*Koně* jsou mužský životný; na pořadí nezáleží."
+    },
+    {
+      "type": "input",
+      "question": "Doplň písmeno: *Jablka spadl_ ze stromu.*",
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli pravidla shody přísudku s několikanásobným podmětem.",
+      "answer": "Je-li mezi podměty mužský životný, píšeme -i. Jinak u ženského a mužského neživotného (i ve spojení se středním) -y. Jen když jsou všechny podměty středního rodu, píšeme -a."
+    },
+    {
+      "type": "open",
+      "question": "Proč píšeme *Děti si hrály* s -y?",
+      "answer": "Podstatné jméno *děti* je v množném čísle rodu ženského (skloňuje se podle vzoru kost), proto přísudek končí na -y."
+    }
+  ]
+}

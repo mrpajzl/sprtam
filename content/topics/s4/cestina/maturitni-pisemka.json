@@ -1,0 +1,351 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "maturitni-pisemka",
+  "title": "Maturitní písemná práce",
+  "emoji": "📝",
+  "explanations": [
+    {
+      "title": "Postup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Písemná práce je samostatná část maturity z češtiny. Dostaneš několik zadání, jedno si vybereš a napíšeš text. Hodnotí se, jestli jsi splnil zadání, jak je text postavený a jak je napsaný."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Nejvíc bodů se ztrácí ne pravopisem, ale tím, že text **neodpovídá zadání**. S dobrým postupem se tomu vyhneš."
+        },
+        {
+          "type": "term",
+          "term": "Zadání",
+          "definition": "Úkol, který říká téma, útvar a často i situaci a adresáta.",
+          "example": "*Napište úvahu na téma Má smysl číst knihy?*"
+        },
+        {
+          "type": "term",
+          "term": "Slohový útvar",
+          "definition": "Druh textu s typickou stavbou.",
+          "example": "úvaha, vypravování, popis, charakteristika, dopis, fejeton"
+        },
+        {
+          "type": "term",
+          "term": "Komunikační situace",
+          "definition": "Kdo píše, komu, proč a kde text vyjde.",
+          "example": "dopis řediteli školy × článek do školního časopisu"
+        },
+        {
+          "type": "term",
+          "term": "Osnova",
+          "definition": "Plán textu v bodech: úvod, stať, závěr.",
+          "example": "1. problém, 2. argument pro, 3. argument proti, 4. můj názor"
+        },
+        {
+          "type": "heading",
+          "text": "Krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Pozorně přečti **zadání** – podtrhni útvar, téma, situaci, adresáta.",
+            "Vyber téma, které umíš rozvinout (máš co říct a víš příklady).",
+            "Napiš **osnovu**: úvod, stať, závěr.",
+            "Piš s ohledem na útvar (dopis má oslovení a podpis, úvaha argumenty, vypravování děj).",
+            "Dodrž rozsah – **nejméně 250 slov**.",
+            "Na konci **zkontroluj** pravopis, interpunkci a návaznost (koheze)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Projdi koloběh psaní. U každého kroku si řekni, kolik času mu dáš."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "zadání",
+              "osnova",
+              "psaní",
+              "kontrola"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Zadání: *Napište úvahu „Má smysl číst knihy?“* Jak bude vypadat osnova?",
+          "answer": "**Úvod**: otázka, proč se dnes čte méně. **Stať**: argumenty pro (slovní zásoba, představivost) s příklady; protiargument (čas, internet) a jeho vyvrácení. **Závěr**: vlastní postoj."
+        },
+        {
+          "type": "example",
+          "question": "Zadání žádá *formální dopis řediteli*. Co musí text obsahovat?",
+          "answer": "Adresáta, místo a datum, věc, oslovení (*Vážený pane řediteli,*), stručný věcný text, pozdrav a podpis. Žádné hovorové výrazy."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zadání: úvaha. Student napíše příběh o tom, jak četl knihu.",
+          "right": "Úvaha musí zvažovat problém a vyjádřit zdůvodněný názor.",
+          "why": "Text neodpovídá zadanému útvaru. To je nejčastější a nejdražší chyba – i bezchybně napsaný příběh pak ztrácí body."
+        },
+        {
+          "type": "summary",
+          "text": "Přečti zadání (útvar, téma, adresát) → osnova → psaní → kontrola. Nejméně 250 slov. Nejčastější chyba: text neodpovídá zadanému útvaru nebo tématu."
+        }
+      ]
+    },
+    {
+      "title": "Útvary",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každý slohový útvar má své povinné znaky. Vypravování bez děje není vypravování, žádost bez věci a podpisu není žádost. Hodnotitel tyto znaky hledá."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když víš, co útvar musí mít, nic podstatného nevynecháš."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Slohový útvar",
+          "definition": "Druh textu s typickou stavbou a jazykem.",
+          "example": "úvaha, popis, fejeton"
+        },
+        {
+          "type": "term",
+          "term": "Pointa",
+          "definition": "Překvapivý, vtipný nebo silný závěr textu.",
+          "example": "nečekané rozuzlení na konci fejetonu"
+        },
+        {
+          "type": "term",
+          "term": "Nadsázka",
+          "definition": "Zveličení, které zdůrazní nebo zesměšní.",
+          "example": "*Čekal jsem na autobus sto let.*"
+        },
+        {
+          "type": "term",
+          "term": "Argument",
+          "definition": "Zdůvodnění názoru (důvod + doklad).",
+          "example": "*Čtení rozvíjí slovní zásobu – ukazují to výzkumy.*"
+        },
+        {
+          "type": "heading",
+          "text": "Povinné znaky útvarů"
+        },
+        {
+          "type": "text",
+          "text": "Přečti útvar, vybav si, co nesmí chybět, a pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "úvaha",
+                "back": "vlastní názor, argumenty, závěr"
+              },
+              {
+                "front": "vypravování",
+                "back": "děj, napětí, přímá řeč, pointa"
+              },
+              {
+                "front": "charakteristika",
+                "back": "vnější a vnitřní rysy osoby"
+              },
+              {
+                "front": "popis",
+                "back": "vlastnosti, části, uspořádání"
+              },
+              {
+                "front": "formální dopis / žádost",
+                "back": "adresát, datum, věc, oslovení, podpis"
+              },
+              {
+                "front": "fejeton",
+                "back": "aktuální téma, vtip, nadsázka, pointa"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vypravování × popis"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Vypravování",
+            "Popis"
+          ],
+          "rows": [
+            [
+              "co zachycuje",
+              "děj v čase",
+              "vlastnosti a uspořádání"
+            ],
+            [
+              "otázka",
+              "co se stalo dál?",
+              "jaké to je?"
+            ],
+            [
+              "typická slova",
+              "dějová slovesa",
+              "přídavná jména"
+            ],
+            [
+              "stavba",
+              "úvod, zápletka, vrchol, rozuzlení, závěr",
+              "celek → části → celkový dojem"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Který útvar má obvykle pointu a napětí?",
+          "answer": "**Vypravování** (napětí roste k vrcholu) a **fejeton** (pointa na konci). Žádost ani životopis pointu nemají."
+        },
+        {
+          "type": "example",
+          "question": "Kam v úvaze patří shrnutí a vlastní postoj?",
+          "answer": "Do **závěru**. Úvod představí problém, stať zvažuje argumenty, závěr přinese tvůj zdůvodněný postoj."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Charakteristika: „Babička má šedé vlasy, modré oči a nosí zástěru.“ – a konec.",
+          "right": "Charakteristika: vnější rysy + vnitřní (povaha): „…Je trpělivá – nikdy nezvýší hlas, ani když rozbiju hrnek.“",
+          "why": "Charakteristika musí obsahovat i **vnitřní** vlastnosti, ideálně doložené jednáním. Samotný vzhled je jen popis."
+        },
+        {
+          "type": "summary",
+          "text": "Útvar určuje stavbu i jazyk. Úvaha: názor a argumenty. Vypravování: děj a napětí. Popis: vlastnosti. Charakteristika: vzhled i povaha. Formální dopis: adresát, datum, věc, oslovení, podpis. Fejeton: vtip a pointa."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jaký je minimální rozsah maturitní písemné práce z češtiny? (počet slov)",
+      "answers": [
+        "250"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "V úvaze nestačí popsat fakta – je třeba vyjádřit a zdůvodnit názor.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co musí obsahovat formální dopis?",
+      "options": [
+        "přímou řeč",
+        "adresáta, datum, oslovení a podpis",
+        "pointu"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Který útvar má obvykle pointu a napětí?",
+      "options": [
+        "žádost",
+        "vypravování",
+        "životopis"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "order",
+      "question": "Seřaď kroky psaní.",
+      "items": [
+        "přečíst zadání",
+        "napsat osnovu",
+        "napsat text",
+        "zkontrolovat chyby"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Charakteristika se zaměřuje na…",
+      "options": [
+        "děj",
+        "vlastnosti osoby",
+        "postup práce"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Když text nedosáhne předepsaného rozsahu, nemá to vliv na hodnocení.",
+      "answer": false,
+      "explanation": "Nedodržení minimálního rozsahu je zásadní nedostatek."
+    },
+    {
+      "type": "match",
+      "question": "Spoj útvar s typickým znakem.",
+      "pairs": [
+        [
+          "úvaha",
+          "argumenty"
+        ],
+        [
+          "popis",
+          "vlastnosti věci"
+        ],
+        [
+          "fejeton",
+          "nadsázka"
+        ],
+        [
+          "žádost",
+          "věc a podpis"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kde je správné místo pro shrnutí a vlastní postoj v úvaze?",
+      "options": [
+        "jen v nadpisu",
+        "v závěru",
+        "nikde"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Osnova pomáhá udržet logickou stavbu textu.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Popiš, jak bys postupoval při psaní úvahy na téma „Má smysl číst knihy?“.",
+      "answer": "Nejdřív si ujasním vlastní názor a sepíšu argumenty pro i proti. V úvodu představím problém, ve stati rozvedu argumenty s příklady a vyvrátím protiargumenty, v závěru shrnu postoj. Na konci zkontroluji rozsah, pravopis a návaznost."
+    },
+    {
+      "type": "open",
+      "question": "Čím se liší vypravování od popisu?",
+      "answer": "Vypravování zachycuje děj v čase, má zápletku, napětí, přímou řeč a pointu. Popis zachycuje vlastnosti a uspořádání předmětu, osoby nebo místa bez děje."
+    }
+  ]
+}

@@ -1,0 +1,475 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pisemne-nasobeni",
+  "title": "Písemné násobení",
+  "emoji": "🧮",
+  "generator": "written-mul",
+  "explanations": [
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Krabice má 48 pastelek. Kolik pastelek je v 7 krabicích? Násobilka končí u 10 · 10, tohle už v ní není."
+        },
+        {
+          "type": "text",
+          "text": "Velká čísla násobíme **písemně pod sebou**. Stačí k tomu malá násobilka a „pamatování“ – podobně jako u sčítání."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Činitelé",
+          "definition": "Čísla, která spolu násobíme.",
+          "example": "V 247 · 3 jsou činitelé 247 a 3."
+        },
+        {
+          "type": "term",
+          "term": "Součin",
+          "definition": "Výsledek násobení.",
+          "example": "247 · 3 = 741, součin je 741."
+        },
+        {
+          "type": "term",
+          "term": "Psát pod sebe",
+          "definition": "Větší číslo napíšeš nahoru. Jednociferné číslo napíšeš pod něj **vpravo, pod jednotky**. Pod čáru pak píšeš výsledek – každou číslici do správného sloupce.",
+          "example": "247 a pod sedmičkou 3."
+        },
+        {
+          "type": "term",
+          "term": "„2 si pamatuji“",
+          "definition": "Do sloupce se vejde jen jedna číslice. Když vyjde dvojciferné číslo, napíšeš jen jednotky a desítky si **pamatuješ** – malou číslicí nad další sloupec. Tam je přičteš **až po vynásobení**. Může to být 1, ale i 2, 3… 8.",
+          "example": "3 · 7 = 21 → píšu 1, 2 si pamatuji."
+        },
+        {
+          "type": "heading",
+          "text": "Bez pamatování: 123 · 3"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na **Další krok** a počítej se mnou. Začínáme **vpravo**: 3 · 3, pak 3 · 2, pak 3 · 1."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 123,
+            "b": 3,
+            "op": "·"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "S pamatováním: 247 · 3"
+        },
+        {
+          "type": "text",
+          "text": "Tady 3 · 7 = 21. Píšeš 1 a 2 si pamatuješ. V dalším sloupci nejdřív vynásobíš (3 · 4 = 12) a teprve pak přičteš ty 2. Klepej a sleduj malé číslice nad sloupci."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 247,
+            "b": 3,
+            "op": "·"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "První krok příkladu 247 · 3 je 3 · 7. Spočítej puntíky v mřížce. Kolik píšeš a kolik si pamatuješ?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 7
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dvojciferným: 23 · 12"
+        },
+        {
+          "type": "text",
+          "text": "Když má i dolní číslo dvě číslice, násobíš dvakrát. Nejdřív jednotkami (2): 23 · 2 = 46. Pak desítkami (1): 23 · 1 = 23 – ale to jsou ve skutečnosti 23 desítky = 230. Proto ho napíšeš o **jedno místo doleva**. Nakonec oba řádky sečteš pod sebou."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 23,
+            "b": 12,
+            "op": "·"
+          }
+        },
+        {
+          "type": "example",
+          "question": "Krabice má 48 pastelek. Kolik pastelek je v 7 krabicích?",
+          "answer": "7 krabic po 48 → **48 · 7**. Vyjde **336 pastelek**. Klepej na **Další krok** a počítej pod sebou se mnou.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 48,
+              "b": 7,
+              "op": "·"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "text": "Těžší: nula uprostřed. 6 · 0 = 0, ale ta 5, kterou si pamatuješ, se přičte i k nule. Klepej: 409 · 6."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 409,
+            "b": 6,
+            "op": "·"
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "64 · 3 = 182 (3 · 6 = 18, na 1, co si pamatuji, jsem zapomněl)",
+          "right": "64 · 3 = **192**",
+          "why": "3 · 4 = 12 → píšu 2, 1 si pamatuji. 3 · 6 = 18 a **ještě + 1** = 19. Nejdřív vynásob, pak přičti, co si pamatuješ."
+        },
+        {
+          "type": "summary",
+          "text": "Násob zprava. Nejdřív vynásob, pak přičti, co si pamatuješ. U dvojciferného činitele druhý řádek posuň o místo doleva a řádky sečti."
+        }
+      ]
+    },
+    {
+      "title": "Rozložením",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč písemné násobení funguje? Protože velké číslo se dá **rozložit** na stovky, desítky a jednotky a každou část vynásobit zvlášť."
+        },
+        {
+          "type": "text",
+          "text": "Když tomu rozumíš, spočítáš mnoho příkladů i zpaměti. A díky **odhadu** hned poznáš, jestli je výsledek rozumný."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rozložit číslo",
+          "definition": "Rozepsat ho na stovky, desítky a jednotky.",
+          "example": "247 = 200 + 40 + 7"
+        },
+        {
+          "type": "term",
+          "term": "Součin",
+          "definition": "Výsledek násobení."
+        },
+        {
+          "type": "term",
+          "term": "Odhad",
+          "definition": "Přibližný výsledek spočítaný se zaokrouhlenými čísly.",
+          "example": "247 · 3 je asi 250 · 3 = 750."
+        },
+        {
+          "type": "term",
+          "term": "Pod sebou a „pamatuji si“",
+          "definition": "Při písemném násobení píšeš čísla pod sebe – jednotky pod jednotky. Když v jednom sloupci vyjde 10 a víc, napíšeš jen jednotky a desítky si **pamatuješ** pro další sloupec vlevo.",
+          "example": "3 · 7 = 21 → píšu 1, 2 si pamatuji."
+        },
+        {
+          "type": "heading",
+          "text": "Každá část zvlášť: 247 · 3"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Část",
+            "· 3"
+          ],
+          "rows": [
+            [
+              "200",
+              "600"
+            ],
+            [
+              "40",
+              "120"
+            ],
+            [
+              "7",
+              "21"
+            ],
+            [
+              "celkem",
+              "741"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Písemné násobení dělá přesně tohle – jen začíná od jednotek. Z 21 napíše 1 jednotku a 2 desítky si pamatuje. Ty přidá k 120 (12 desítek) → 14 desítek. Klepej na **Další krok** a porovnej s tabulkou."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 247,
+            "b": 3,
+            "op": "·"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Mřížka ukazuje 3 · 7 = 21 – poslední řádek tabulky. Změň ji na 3 · 4. Vyjde 12 – a to jsou ty 4 desítky z čísla 40, tedy 120."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 7
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dvojciferným činitelem"
+        },
+        {
+          "type": "text",
+          "text": "34 · 12: rozlož 12 = 10 + 2. 34 · 2 = 68, 34 · 10 = 340. Sečti: 68 + 340 = **408**."
+        },
+        {
+          "type": "text",
+          "text": "Pod sebou je to úplně stejné. První řádek je 34 · 2 = 68. Druhý řádek je 34 · 1 desítka = 34 desítek – proto začíná o místo vlevo, ve sloupci desítek. Klepej a počítej se mnou: 34 · 12."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 34,
+            "b": 12,
+            "op": "·"
+          }
+        },
+        {
+          "type": "example",
+          "question": "45 · 21 =",
+          "answer": "21 = 20 + 1. 45 · 20 = 900, 45 · 1 = 45. 900 + 45 = **945**. Pod sebou je to totéž: první řádek 45 · 1 = 45, druhý 45 · 2 desítky = 90 desítek (posunutý o místo doleva).",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 45,
+              "b": 21,
+              "op": "·"
+            }
+          }
+        },
+        {
+          "type": "example",
+          "question": "Odhadni 398 · 5.",
+          "answer": "398 je asi 400. 400 · 5 = 2 000. Výsledek bude **asi 2 000**. Přesně to spočítáš pod sebou: 1 990 – odhad sedí.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 398,
+              "b": 5,
+              "op": "·"
+            }
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "216 · 5 = 1 016 (200 · 5 = 1 000 a k tomu 16)",
+          "right": "216 · 5 = 1 000 + 50 + 30 = **1 080**",
+          "why": "Násobit musíš **každou** část: 200 · 5, 10 · 5 i 6 · 5. Odhad 200 · 5 = 1 000 ukazuje, že výsledek musí být víc než 1 000."
+        },
+        {
+          "type": "summary",
+          "text": "Rozlož číslo, vynásob každou část a sečti – písemné násobení dělá totéž pod sebou. Před výpočtem udělej odhad: 247 · 3 ≈ 250 · 3 = 750."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 123 · 3 =",
+      "answers": [
+        "369"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 123,
+          "b": 3,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 58 · 4 =",
+      "answers": [
+        "232"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 58,
+          "b": 4,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 216 · 5 =",
+      "answers": [
+        "1080",
+        "1 080"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 216,
+          "b": 5,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 409 · 6 =",
+      "answers": [
+        "2454",
+        "2 454"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 409,
+          "b": 6,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 1 250 · 4 =",
+      "answers": [
+        "5000",
+        "5 000"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 1250,
+          "b": 4,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 23 · 12 =",
+      "answers": [
+        "276"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 23,
+          "b": 12,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 45 · 21 =",
+      "answers": [
+        "945"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 45,
+          "b": 21,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "choice",
+      "question": "137 · 7 =",
+      "options": [
+        "959",
+        "949",
+        "859"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Odhadni 398 · 5.",
+      "options": [
+        "asi 200",
+        "asi 2 000",
+        "asi 20 000"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "75 · 4 = 300",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "64 · 3 = 182",
+      "answer": false,
+      "explanation": "3 · 4 = 12 → píšu 2, 1 si pamatuji. 3 · 6 = 18, + 1 = 19 → 192."
+    },
+    {
+      "type": "input",
+      "question": "Krabice má 48 pastelek. Kolik pastelek je v 7 krabicích?",
+      "answers": [
+        "336"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli postup výpočtu 247 · 3 pod sebou.",
+      "answer": "3 napíšu pod jednotky čísla 247. 3 · 7 = 21, píšu 1 a 2 si pamatuji. 3 · 4 = 12 a 2 je 14, píšu 4 a 1 si pamatuji. 3 · 2 = 6 a 1 je 7. Výsledek 741."
+    },
+    {
+      "type": "open",
+      "question": "K čemu je dobré udělat odhad výsledku?",
+      "answer": "Hned poznám velkou chybu. Když vyjde něco úplně jiného než odhad, musím počítat znovu."
+    }
+  ]
+}

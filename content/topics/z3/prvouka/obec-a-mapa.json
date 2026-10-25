@@ -1,0 +1,340 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obec-a-mapa",
+  "title": "Obec, plán a mapa",
+  "emoji": "🗺️",
+  "explanations": [
+    {
+      "title": "Pohled ptáka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že letíš jako pták vysoko nad svou obcí. Domy vypadají jako krabičky, silnice jako šedé čáry a řeka jako modrá stužka."
+        },
+        {
+          "type": "text",
+          "text": "Přesně takový obrázek zachycuje mapa. Pomůže ti najít cestu na místo, kde jsi nikdy nebyl, a naplánovat výlet."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Plán",
+          "definition": "Obrázek **malého** místa nakreslený shora. Je na něm hodně podrobností.",
+          "example": "plán třídy, plán obce, plán zoo"
+        },
+        {
+          "type": "term",
+          "term": "Mapa",
+          "definition": "Zmenšený obrázek **velkého** území shora: kraje, státu, celého světa.",
+          "example": "mapa České republiky"
+        },
+        {
+          "type": "term",
+          "term": "Mapová značka",
+          "definition": "Malý obrázek nebo čára, která na mapě znamená určitou věc.",
+          "example": "Křížek může znamenat kostel, černá čára s příčkami železnici."
+        },
+        {
+          "type": "term",
+          "term": "Legenda",
+          "definition": "Vysvětlivky na kraji mapy. Říkají, co znamenají barvy a značky.",
+          "example": "V legendě najdu: modrá = voda."
+        },
+        {
+          "type": "heading",
+          "text": "Barvy na mapě"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. Tyto barvy platí na většině map, které uvidíš ve škole."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "modrá",
+                "back": "voda – řeky, rybníky, moře"
+              },
+              {
+                "front": "zelená",
+                "back": "nížiny – nízko položená rovná krajina"
+              },
+              {
+                "front": "žlutá a světle hnědá",
+                "back": "vyšší krajina – pahorkatiny"
+              },
+              {
+                "front": "tmavě hnědá",
+                "back": "hory"
+              },
+              {
+                "front": "černá čára s příčkami",
+                "back": "železnice"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Na mapě vidíš modrou klikatou čáru. Co to je?",
+          "answer": "Modrá barva znamená vodu. Klikatá čára je **řeka**."
+        },
+        {
+          "type": "example",
+          "question": "Chceš na výlet do hor. Kterou barvu na mapě hledáš?",
+          "answer": "Hory jsou na mapě **hnědé**. Čím tmavší hnědá, tím vyšší hory."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Mapa ukazuje krajinu zboku, jako fotka z ulice.",
+          "right": "Mapa ukazuje krajinu shora.",
+          "why": "Jen shora jsou vidět všechny cesty a jak jdou místa vedle sebe."
+        },
+        {
+          "type": "summary",
+          "text": "Plán ukazuje malé místo, mapa velké území – oboje shora. Co značky znamenají, najdu v legendě. Modrá = voda, zelená = nížiny, hnědá = hory."
+        }
+      ]
+    },
+    {
+      "title": "Moje obec",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Žiješ v nějaké obci. Někdo se musí starat o silnice, veřejné osvětlení, školu nebo popelnice. Kdo to dělá?"
+        },
+        {
+          "type": "text",
+          "text": "A kdyby k tobě přijel kamarád z jiného města, jak mu vysvětlíš cestu? Pomůže ti plán obce."
+        },
+        {
+          "type": "term",
+          "term": "Obec",
+          "definition": "Vesnice nebo město s vlastním názvem a vlastním vedením.",
+          "example": "Malá obec = vesnice, velká obec = město."
+        },
+        {
+          "type": "term",
+          "term": "Starosta",
+          "definition": "Člověk, který obec vede a jedná za ni.",
+          "example": "Starosta podepsal smlouvu na nové hřiště."
+        },
+        {
+          "type": "term",
+          "term": "Zastupitelstvo",
+          "definition": "Skupina lidí, které si občané zvolí. Společně rozhodují o důležitých věcech obce.",
+          "example": "Zastupitelstvo rozhodlo opravit školu."
+        },
+        {
+          "type": "term",
+          "term": "Obecní úřad",
+          "definition": "Budova, kde pracuje starosta a úředníci. Ve městě se jmenuje **městský úřad** nebo radnice.",
+          "example": "Na úřadě se hlásí trvalé bydliště."
+        },
+        {
+          "type": "heading",
+          "text": "Co v obci najdeš"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď místa: slouží k vyřizování a službám, nebo k volnému času?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Úřady a služby 🏛️",
+              "Volný čas ⚽"
+            ],
+            "items": [
+              {
+                "text": "obecní úřad",
+                "group": 0
+              },
+              {
+                "text": "pošta",
+                "group": 0
+              },
+              {
+                "text": "lékárna",
+                "group": 0
+              },
+              {
+                "text": "policie",
+                "group": 0
+              },
+              {
+                "text": "hřiště",
+                "group": 1
+              },
+              {
+                "text": "kino",
+                "group": 1
+              },
+              {
+                "text": "bazén",
+                "group": 1
+              },
+              {
+                "text": "park",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak popsat cestu podle plánu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdu na plánu, kde jsem (start).",
+            "Najdu cíl.",
+            "Projedu prstem po ulicích, kudy půjdu.",
+            "Řeknu, kolem čeho jdu a kde zahnu.",
+            "Upozorním, kde se přechází silnice."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Popiš cestu: Ze školy vyjdu, jdu rovně kolem pošty, u lékárny zahnu doprava a druhý dům je knihovna. Kolem čeho jdu?",
+          "answer": "Kolem **pošty** a **lékárny**. U lékárny zahýbám doprava a hned je **knihovna**."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejmenšího: obec, třída, stát, škola.",
+          "answer": "Třída je část školy, škola stojí v obci a obec je ve státě: **třída → škola → obec → stát**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obec vede ředitel školy.",
+          "right": "Obec vede starosta se zastupitelstvem.",
+          "why": "Ředitel vede jen školu. O celou obec se stará starosta."
+        },
+        {
+          "type": "summary",
+          "text": "Obec vede starosta a zastupitelstvo. Sídlí na obecním (městském) úřadě. Velká obec je město, malá vesnice."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo vede obec?",
+      "options": [
+        "starosta",
+        "ředitel školy",
+        "policista"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jakou barvou je na mapě voda?",
+      "options": [
+        "modrou",
+        "hnědou",
+        "zelenou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jakou barvou jsou na mapě hory?",
+      "options": [
+        "hnědou",
+        "modrou",
+        "zelenou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Plán zobrazuje menší místo než mapa.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Mapa zobrazuje krajinu zboku.",
+      "answer": false,
+      "explanation": "Mapa ukazuje krajinu shora."
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje vysvětlivka značek na mapě? (začíná na „l“)",
+      "answers": [
+        "legenda"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj barvu na mapě.",
+      "pairs": [
+        [
+          "modrá",
+          "voda"
+        ],
+        [
+          "zelená",
+          "nížina"
+        ],
+        [
+          "hnědá",
+          "hory"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "třída",
+        "škola",
+        "obec",
+        "stát"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kde sídlí starosta?",
+      "options": [
+        "na obecním úřadě",
+        "na poště",
+        "v nemocnici"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Každá obec má svůj název.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi plánem a mapou?",
+      "answer": "Oba ukazují místo shora. Plán ukazuje malé místo (třeba obec), mapa velké území (kraj, stát)."
+    },
+    {
+      "type": "open",
+      "question": "Popiš cestu z domova do školy.",
+      "answer": "Řeknu, kudy jdu, kolem čeho, kde přecházím silnici a jak dlouho to trvá."
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "treni",
+  "title": "Tření",
+  "emoji": "🛷",
+  "explanations": [
+    {
+      "title": "Na sáňkách",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sáňky na sněhu kloužou krásně, na asfaltu skoro vůbec. Na ledu ti ujíždějí nohy. Za všechno může **tření**."
+        },
+        {
+          "type": "text",
+          "text": "Tření je někdy nepřítel (opotřebuje motor, brzdí kolo) a někdy přítel (bez něj bys neušel ani krok). Naučíš se ho zvětšit i zmenšit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla",
+          "definition": "Působení jednoho tělesa na druhé – tlačení, tahání. Měří se v newtonech (N).",
+          "example": "Když táhneš sáňky, působíš na ně silou."
+        },
+        {
+          "type": "term",
+          "term": "Tření a třecí síla",
+          "definition": "Když se dva povrchy po sobě posouvají, drobné nerovnosti se o sebe zachytávají. Vzniká **třecí síla**, která míří vždy **proti pohybu** a brzdí ho.",
+          "example": "Pod lupou vypadá i hladký stůl jako hrbolatá krajina."
+        },
+        {
+          "type": "term",
+          "term": "Smykové a valivé tření",
+          "definition": "**Smykové** vzniká, když těleso klouže (bedna po podlaze). **Valivé**, když se kutálí (kolo). Valivé je **mnohem menší**.",
+          "example": "Proto má kufr kolečka – vléct ho po zemi by bylo mnohem těžší."
+        },
+        {
+          "type": "heading",
+          "text": "Na čem tření záleží"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Na **materiálu a drsnosti**: led klouže víc než asfalt.",
+            "Na tom, jak **silně** těleso tlačí na podložku: plné sáňky táhneš hůř než prázdné.",
+            "Na velikosti styčné plochy (kolik se povrchy dotýkají) **nezáleží**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď příklady: chceme tření zvětšit, nebo zmenšit?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "tření chceme zvětšit",
+              "tření chceme zmenšit"
+            ],
+            "items": [
+              {
+                "text": "posyp chodníku pískem",
+                "group": 0
+              },
+              {
+                "text": "vzorek pneumatik",
+                "group": 0
+              },
+              {
+                "text": "kopačky s kolíky",
+                "group": 0
+              },
+              {
+                "text": "brzdy kola",
+                "group": 0
+              },
+              {
+                "text": "mazání řetězu",
+                "group": 1
+              },
+              {
+                "text": "ložiska s kuličkami",
+                "group": 1
+              },
+              {
+                "text": "vosk na lyže",
+                "group": 1
+              },
+              {
+                "text": "kolečka u kufru",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč se v zimě sypou chodníky pískem?",
+          "answer": "Led je hladký a tření malé – boty kloužou. Písek povrch **zdrsní**, tření se zvětší a neuklouzneš."
+        },
+        {
+          "type": "example",
+          "question": "Proč se řetěz kola maže olejem?",
+          "answer": "Olej vyplní nerovnosti a části po sobě kloužou snáz. Tření se **zmenší** – šlape se lehčeji a řetěz se tolik neopotřebuje."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Bez tření by se nám chodilo snadněji.",
+          "right": "Bez tření bychom nemohli chodit vůbec.",
+          "why": "Při chůzi se nohou odrážíš od země. Bez tření by noha jen klouzala – jako na náledí, jen ještě hůř."
+        },
+        {
+          "type": "summary",
+          "text": "Třecí síla míří proti pohybu. Je větší na drsném povrchu a u těžšího tělesa; valivé tření je menší než smykové."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Stěhováci chtějí vědět, jakou silou musí tlačit skříň. Konstruktér brzd zase, jak rychle auto zastaví. Tření se dá **spočítat**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Třecí síla `Ft`",
+          "definition": "Síla, která brzdí posouvání dvou povrchů po sobě. Míří proti pohybu. Jednotka newton (N).",
+          "example": "Když táhneš bednu, tření ji drží zpátky."
+        },
+        {
+          "type": "term",
+          "term": "Tlaková síla `Fn`",
+          "definition": "Síla, kterou těleso tlačí kolmo na podložku. Na vodorovné podlaze se rovná gravitační síle tělesa (`m · g`).",
+          "example": "Bedna 40 kg tlačí na podlahu silou asi 400 N."
+        },
+        {
+          "type": "term",
+          "term": "Součinitel tření `f`",
+          "definition": "Číslo bez jednotky, které říká, jak moc dva povrchy „drhnou“. Malé číslo = klouže, velké = drží.",
+          "example": "Ocel na ledu má f asi 0,02, guma na suchém asfaltu asi 0,7."
+        },
+        {
+          "type": "heading",
+          "text": "Odkud vzorec"
+        },
+        {
+          "type": "text",
+          "text": "Pokus: táhni siloměrem kvádr po stole. Pak na něj polož druhý stejný – siloměr ukáže **dvakrát** víc. Třecí síla roste stejně jako tlaková síla. Kolikrát, to určuje materiál – součinitel `f`."
+        },
+        {
+          "type": "text",
+          "text": "Proto: `Ft = f · Fn`."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti tlakovou sílu Fn (na rovině = m · g).",
+            "Najdi součinitel tření f (bývá zadaný).",
+            "Vynásob: Ft = f · Fn.",
+            "Odpověď v newtonech."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Bedna tlačí na podlahu silou 400 N, f = 0,3. Jak velká je třecí síla?",
+          "answer": "Ft = f · Fn = 0,3 · 400 = **120 N**. Abys bednu posouval stálou rychlostí, musíš tlačit taky 120 N."
+        },
+        {
+          "type": "example",
+          "question": "Bedna tlačí silou 300 N, třecí síla je 60 N. Jaký je součinitel tření?",
+          "answer": "Z Ft = f · Fn plyne f = Ft : Fn = 60 : 300 = **0,2**."
+        },
+        {
+          "type": "heading",
+          "text": "Co tření neovlivní"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Plocha: bedna položená na užší stěnu má **stejné** tření jako na široké.",
+            "Rychlost tažení na tření (u běžných rychlostí) skoro nemá vliv.",
+            "Valivé tření je mnohem menší než smykové – proto kola a **kuličková ložiska** (kroužky s kuličkami, po kterých se otáčí hřídel)."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když bednu převrátím na menší stěnu, tření se zmenší.",
+          "right": "Tření zůstane stejné.",
+          "why": "Třecí síla závisí jen na tlakové síle a na materiálech. Bedna má pořád stejnou hmotnost, tlačí na podlahu stejně."
+        },
+        {
+          "type": "summary",
+          "text": "`Ft = f · Fn`. Tření roste s tlakovou silou a závisí na materiálech, ne na velikosti plochy."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kam míří třecí síla?",
+      "options": [
+        "proti pohybu",
+        "ve směru pohybu",
+        "nahoru",
+        "dolů"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Tlaková síla 500 N, součinitel tření 0,2. Třecí síla v N =",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Tlaková síla 80 N, součinitel tření 0,5. Třecí síla v N =",
+      "answers": [
+        "40"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Valivé tření je menší než smykové.",
+      "answer": true,
+      "explanation": "Proto používáme kola a ložiska."
+    },
+    {
+      "type": "truefalse",
+      "question": "Třecí síla závisí na velikosti styčné plochy.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Jak zmenšíme tření?",
+      "options": [
+        "namazáním",
+        "posypáním pískem",
+        "zdrsněním",
+        "přitlačením"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde je tření užitečné?",
+      "options": [
+        "při chůzi a brzdění",
+        "v ložiscích motoru",
+        "mezi písty a válcem",
+        "v pantech dveří"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdy je třecí síla větší?",
+      "options": [
+        "bedna je těžší",
+        "bedna je lehčí",
+        "táhneme ji pomaleji",
+        "bedna je obrácená na menší stěnu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Bedna tlačí na podlahu silou 300 N, třecí síla je 60 N. Součinitel tření =",
+      "answers": [
+        "0,2"
+      ],
+      "explanation": "f = 60 : 300 = 0,2"
+    },
+    {
+      "type": "match",
+      "question": "Spoj opatření s účinkem.",
+      "pairs": [
+        [
+          "olej v motoru",
+          "menší tření"
+        ],
+        [
+          "zimní pneumatiky",
+          "větší tření"
+        ],
+        [
+          "kuličková ložiska",
+          "menší tření"
+        ],
+        [
+          "posyp pískem",
+          "větší tření"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Na čem závisí velikost třecí síly?",
+      "answer": "Na tlakové síle, kterou těleso tlačí na podložku, a na materiálu a drsnosti povrchů. Nezávisí na velikosti styčné plochy."
+    },
+    {
+      "type": "open",
+      "question": "Uveď, kdy je tření užitečné a kdy škodlivé.",
+      "answer": "Užitečné je při chůzi, brzdění nebo držení předmětů. Škodlivé je v motorech a strojích – zahřívá a opotřebovává součástky."
+    }
+  ]
+}

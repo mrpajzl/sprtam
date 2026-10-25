@@ -1,0 +1,484 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zaklady-organicke",
+  "title": "Základy organické chemie",
+  "emoji": "🔬",
+  "explanations": [
+    {
+      "title": "Proč uhlík",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Anorganických látek známe stovky tisíc. **Organických** – tedy sloučenin uhlíku – přes sto milionů. Patří mezi ně cukr, benzín, plasty, léky i DNA. Proč zrovna uhlík?"
+        },
+        {
+          "type": "text",
+          "text": "Ještě začátkem 19. století se věřilo, že organické látky umí vyrobit jen živé organismy („životní síla“). V roce **1828** ale **Friedrich Wöhler** připravil v laboratoři močovinu z anorganické látky. Tím začala moderní organická chemie."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Organická chemie",
+          "definition": "Chemie sloučenin uhlíku (kromě nejjednodušších, jako CO, CO₂, uhličitany)."
+        },
+        {
+          "type": "term",
+          "term": "Čtyřvaznost uhlíku",
+          "definition": "Atom uhlíku tvoří vždy **4 kovalentní vazby** (sdílené elektronové páry). Vodík 1, kyslík 2, dusík 3."
+        },
+        {
+          "type": "term",
+          "term": "Uhlíkový řetězec",
+          "definition": "Atomy uhlíku spojené za sebou. Může být přímý, rozvětvený nebo uzavřený do kruhu, s jednoduchými, dvojnými i trojnými vazbami."
+        },
+        {
+          "type": "heading",
+          "text": "Stavebnice s nekonečnem dílů"
+        },
+        {
+          "type": "text",
+          "text": "Uhlík je jako dílek stavebnice se čtyřmi úchyty. Umí se pevně spojovat **sám se sebou** do dlouhých řetězců, větví a kruhů. K tomu si přibere H, O, N, S nebo halogeny. Kombinací je prakticky nekonečně."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se zapisují vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vzorec",
+            "Co ukazuje",
+            "Ethanol"
+          ],
+          "rows": [
+            [
+              "souhrnný (molekulový)",
+              "jen počty atomů",
+              "C₂H₆O"
+            ],
+            [
+              "racionální",
+              "skupiny atomů za sebou",
+              "CH₃CH₂OH"
+            ],
+            [
+              "strukturní",
+              "všechny vazby",
+              "H₃C–CH₂–O–H (rozepsané do všech vazeb)"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Izomery",
+          "definition": "Látky se **stejným souhrnným vzorcem**, ale jinou stavbou – a proto jinými vlastnostmi.",
+          "example": "C₂H₆O je ethanol CH₃CH₂OH (kapalina, pije se) i dimethylether CH₃OCH₃ (plyn)."
+        },
+        {
+          "type": "example",
+          "question": "Kolik vodíků může mít uhlík uprostřed řetězce C–C–C (propan)?",
+          "answer": "Prostřední uhlík má 2 vazby na sousední uhlíky. Zbývají 2 z jeho 4 vazeb → **2 vodíky**. Krajní mají po 3. Racionální vzorec: **CH₃CH₂CH₃**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak reakce probíhají"
+        },
+        {
+          "type": "text",
+          "text": "Při reakci se nějaká vazba roztrhne. Pár elektronů se může rozdělit **napůl** (každý atom si vezme jeden – vzniknou **radikály**), nebo si ho **celý** vezme jeden atom (vzniknou **ionty**)."
+        },
+        {
+          "type": "term",
+          "term": "Radikál",
+          "definition": "Částice s **nepárovým elektronem**. Je velmi reaktivní.",
+          "example": "Cl· (tečka = nepárový elektron)"
+        },
+        {
+          "type": "term",
+          "term": "Elektrofil a nukleofil",
+          "definition": "**Elektrofil** „miluje elektrony“ – je to částice s nedostatkem elektronů (kation). **Nukleofil** „miluje jádra“ (kladná místa) – má volný elektronový pár (anion, NH₃, H₂O)."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři typy reakcí"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Adice** – na násobnou vazbu se něco připojí (dvojná → jednoduchá).",
+            "**Eliminace** – z molekuly se odštěpí malá molekula a vznikne násobná vazba.",
+            "**Substituce** – jeden atom nebo skupina se nahradí jiným.",
+            "**Přesmyk** – atomy v molekule se přeskupí."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď reakce podle typu. Sleduj, jestli vazba mizí, vzniká, nebo se jen něco vyměnilo."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "adice",
+              "eliminace",
+              "substituce"
+            ],
+            "items": [
+              {
+                "text": "CH₂=CH₂ + Br₂ → CH₂Br–CH₂Br",
+                "group": 0
+              },
+              {
+                "text": "CH₂=CH₂ + H₂ → CH₃–CH₃",
+                "group": 0
+              },
+              {
+                "text": "CH₃CH₂OH → CH₂=CH₂ + H₂O",
+                "group": 1
+              },
+              {
+                "text": "CH₃CH₂Br → CH₂=CH₂ + HBr",
+                "group": 1
+              },
+              {
+                "text": "CH₄ + Cl₂ → CH₃Cl + HCl",
+                "group": 2
+              },
+              {
+                "text": "CH₃Br + OH⁻ → CH₃OH + Br⁻",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Izomery jsou různé zápisy téže látky.",
+          "right": "Izomery jsou **různé látky** se stejným souhrnným vzorcem.",
+          "why": "Ethanol a dimethylether mají oba C₂H₆O, ale jeden je kapalina s teplotou varu 78 °C a druhý plyn. Jsou to opravdu jiné molekuly."
+        },
+        {
+          "type": "summary",
+          "text": "Uhlík je čtyřvazný a tvoří řetězce a kruhy – proto miliony sloučenin. Izomery: stejný souhrnný vzorec, jiná stavba. Reakce: adice, eliminace, substituce, přesmyk."
+        }
+      ]
+    },
+    {
+      "title": "Pojmy a pravidla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Organická chemie má vlastní slovník. Kdo ho ovládá, rozumí každé další kapitole – alkanům, alkoholům, bílkovinám. Tady jsou základní pojmy pohromadě: vzorce, izomerie, štěpení vazeb, činidla a typy reakcí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Organická sloučenina",
+          "definition": "Sloučenina uhlíku, typicky s vodíkem; často i s O, N, S, halogeny. Uhlík je v ní **čtyřvazný**."
+        },
+        {
+          "type": "term",
+          "term": "Kovalentní vazba",
+          "definition": "Vazba tvořená sdíleným elektronovým párem. V organických látkách převládá."
+        },
+        {
+          "type": "heading",
+          "text": "1. Druhy vzorců"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**souhrnný**: C₃H₈ – jen složení",
+            "**racionální**: CH₃CH₂CH₃ – skupiny v pořadí",
+            "**strukturní**: všechny vazby vykreslené",
+            "**skeletový** (čárový): jen lomená čára, uhlíky ve vrcholech, vodíky se nepíšou"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "2. Izomerie"
+        },
+        {
+          "type": "term",
+          "term": "Izomerie",
+          "definition": "Jev, kdy látky mají **stejný souhrnný vzorec**, ale jinou strukturu."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Liší se",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "řetězová",
+              "tvarem řetězce",
+              "butan × 2-methylpropan"
+            ],
+            [
+              "polohová",
+              "polohou skupiny nebo vazby",
+              "propan-1-ol × propan-2-ol"
+            ],
+            [
+              "skupinová (funkční)",
+              "druhem funkční skupiny",
+              "ethanol × dimethylether"
+            ],
+            [
+              "geometrická (cis-trans)",
+              "uspořádáním kolem dvojné vazby",
+              "cis- a trans-but-2-en"
+            ],
+            [
+              "optická",
+              "zrcadlovým uspořádáním",
+              "dvě formy kyseliny mléčné"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč but-2-en má cis a trans formu?",
+          "answer": "Kolem dvojné vazby se atomy nemohou otáčet. Na každém z obou uhlíků dvojné vazby je jeden CH₃ a jeden H. Skupiny CH₃ mohou být na **stejné straně** (cis), nebo na **opačných** (trans) – dvě různé látky."
+        },
+        {
+          "type": "heading",
+          "text": "3. Štěpení vazby"
+        },
+        {
+          "type": "term",
+          "term": "Homolýza",
+          "definition": "Vazebný pár se rozdělí rovnoměrně, každý atom dostane 1 elektron → vznikají **radikály**. Typicky za světla nebo vysoké teploty.",
+          "example": "Cl–Cl → 2 Cl·"
+        },
+        {
+          "type": "term",
+          "term": "Heterolýza",
+          "definition": "Celý pár si vezme elektronegativnější atom → vznikají **ionty** (kation a anion).",
+          "example": "H–Cl → H⁺ + Cl⁻"
+        },
+        {
+          "type": "heading",
+          "text": "4. Činidla"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Činidlo",
+            "Charakter",
+            "Příklady"
+          ],
+          "rows": [
+            [
+              "radikál",
+              "má nepárový elektron",
+              "Cl·, CH₃·"
+            ],
+            [
+              "elektrofil",
+              "hledá elektrony (kation, Lewisova kyselina)",
+              "H⁺, Br⁺, NO₂⁺"
+            ],
+            [
+              "nukleofil",
+              "má volný elektronový pár (anion, Lewisova zásada)",
+              "OH⁻, Cl⁻, NH₃, H₂O"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "5. Typy reakcí"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zmizela násobná vazba a připojily se atomy? → **adice**.",
+            "Vznikla násobná vazba a odešla malá molekula (H₂O, HX)? → **eliminace**.",
+            "Jeden atom/skupina nahradil(a) jiný? → **substituce**.",
+            "Stejné atomy, jen přeskupené? → **přesmyk**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Zařaď: CH₃CH₂OH → CH₂=CH₂ + H₂O.",
+          "answer": "Odešla molekula vody a vznikla dvojná vazba → **eliminace** (konkrétně dehydratace)."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si pojmy na kartách."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "homolýza",
+                "back": "vznikají radikály"
+              },
+              {
+                "front": "heterolýza",
+                "back": "vznikají ionty"
+              },
+              {
+                "front": "elektrofil",
+                "back": "částice s nedostatkem elektronů"
+              },
+              {
+                "front": "nukleofil",
+                "back": "částice s volným elektronovým párem"
+              },
+              {
+                "front": "adice",
+                "back": "připojení na násobnou vazbu"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Homolytickým štěpením vznikají ionty.",
+          "right": "Homolýzou vznikají **radikály**, heterolýzou **ionty**.",
+          "why": "Homo- = stejný: oba atomy dostanou stejně (po jednom elektronu), žádný náboj nevznikne. Hetero- = různý: jeden dostane oba elektrony."
+        },
+        {
+          "type": "summary",
+          "text": "Vzorce: souhrnný, racionální, strukturní. Izomerie: řetězová, polohová, skupinová, cis-trans, optická. Homolýza → radikály, heterolýza → ionty. Reakce: adice, eliminace, substituce, přesmyk."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo připravil roku 1828 močovinu z anorganické látky?",
+      "options": [
+        "F. Wöhler",
+        "A. Kekulé",
+        "D. I. Mendělejev",
+        "L. Pasteur"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co mají izomery společné?",
+      "options": [
+        "souhrnný vzorec",
+        "strukturní vzorec",
+        "teplotu varu",
+        "funkční skupinu vždy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký typ reakce je CH₂=CH₂ + Br₂ → CH₂Br–CH₂Br?",
+      "options": [
+        "adice",
+        "substituce",
+        "eliminace",
+        "přesmyk"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký typ reakce je CH₃CH₂OH → CH₂=CH₂ + H₂O?",
+      "options": [
+        "eliminace",
+        "adice",
+        "substituce",
+        "oxidace"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ethanol a dimethylether jsou izomery.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Homolytickým štěpením vazby vznikají ionty.",
+      "answer": false,
+      "explanation": "Homolýzou vznikají radikály; heterolýzou ionty."
+    },
+    {
+      "type": "match",
+      "question": "Spoj činidlo s popisem.",
+      "pairs": [
+        [
+          "radikál",
+          "má nepárový elektron"
+        ],
+        [
+          "elektrofil",
+          "hledá elektrony (kation, Lewisova kyselina)"
+        ],
+        [
+          "nukleofil",
+          "má volný elektronový pár (anion, Lewisova zásada)"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik kovalentních vazeb tvoří atom uhlíku v organických sloučeninách?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který druh izomerie mají but-2-en cis a trans?",
+      "options": [
+        "geometrickou (cis-trans)",
+        "řetězovou",
+        "polohovou",
+        "optickou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je racionální vzorec propanu?",
+      "options": [
+        "CH₃CH₂CH₃",
+        "C₃H₈",
+        "CH₃CH₃",
+        "CH₂CH₂CH₂"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Proč existuje tolik organických sloučenin?",
+      "answer": "Uhlík je čtyřvazný a jeho atomy se mohou spojovat do dlouhých řetězců, větví a kruhů jednoduchými i násobnými vazbami. Navíc se váže s H, O, N, S, halogeny. Vzniká obrovské množství kombinací a izomerů."
+    },
+    {
+      "type": "open",
+      "question": "Popiš základní typy organických reakcí s příklady.",
+      "answer": "Adice – připojení na násobnou vazbu (ethen + Br₂). Eliminace – odštěpení malé molekuly za vzniku násobné vazby (dehydratace ethanolu). Substituce – náhrada atomu (chlorace methanu). Přesmyk – přeskupení uvnitř molekuly."
+    }
+  ]
+}

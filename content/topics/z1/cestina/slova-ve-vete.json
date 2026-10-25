@@ -1,0 +1,280 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "slova-ve-vete",
+  "title": "Slova ve větě",
+  "emoji": "💬",
+  "explanations": [
+    {
+      "title": "Kostičky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ze stavebnice postavíš domeček. Z kostiček."
+        },
+        {
+          "type": "text",
+          "text": "Když něco říkáš, taky stavíš – ze **slov** skládáš **větu**. Když víš, kde slovo končí, umíš větu správně napsat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Slovo",
+          "definition": "Skupina hlásek, která něco znamená.",
+          "example": "máma, pes, běží, na"
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Několik slov za sebou, která společně něco řeknou.",
+          "example": "Máma vaří polévku."
+        },
+        {
+          "type": "term",
+          "term": "Mezera",
+          "definition": "Prázdné místo mezi slovy, když píšeš.",
+          "example": "Pes_štěká. (_ je mezera)"
+        },
+        {
+          "type": "heading",
+          "text": "Věta jako stavba"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🟥 Máma",
+            "🟦 vaří",
+            "🟩 polévku."
+          ],
+          "caption": "Každá kostička je jedno slovo."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Řekni větu: Máma vaří polévku.",
+            "Za každé slovo polož jednu kostičku: 🟥 🟦 🟩.",
+            "Mezi kostičkami nech mezeru.",
+            "Věta má **3 slova**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik slov má věta „Táta spí.“?",
+          "answer": "Táta 🟥 – spí 🟦. Dvě kostičky: **2 slova**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik slov má věta „Pes a kočka spí.“?",
+          "answer": "Pes 🟥 – a 🟦 – kočka 🟩 – spí 🟨. **4 slova**. I malé „a“ je slovo."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pesštěká.",
+          "right": "Pes štěká.",
+          "why": "Mezi slovy musí být mezera. Jinak nepoznáš, kde jedno slovo končí a druhé začíná."
+        },
+        {
+          "type": "summary",
+          "text": "Věta se skládá ze slov. Mezi slovy píšeme mezeru."
+        }
+      ]
+    },
+    {
+      "title": "Počítání",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pojď si hrát na počítání slov. Řekneš větu a počítáš, kolik má slov."
+        },
+        {
+          "type": "text",
+          "text": "Až budeš psát, budeš vědět, kolikrát udělat mezeru. A uvidíš, že i malé slovíčko se počítá."
+        },
+        {
+          "type": "term",
+          "term": "Slovo",
+          "definition": "Jeden kousek věty, který něco znamená. Mezi slovy se při mluvení dá na chvilku zastavit.",
+          "example": "Ema – má – míč."
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Slova za sebou, která dohromady něco sdělují.",
+          "example": "Ema má míč."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "m",
+            "➡️",
+            "máma",
+            "➡️",
+            "Máma spí."
+          ],
+          "caption": "písmeno – slovo – věta"
+        },
+        {
+          "type": "heading",
+          "text": "Jak počítat"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Řekni větu pomalu.",
+            "Po každém slově se na chvilku zastav.",
+            "Za každé slovo klepni na kostku.",
+            "Spočítej kostky."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zkus to: řekni „Ema má malou kočku.“ a za každé slovo přidej kostku."
+        },
+        {
+          "type": "widget",
+          "widget": "counter",
+          "props": {
+            "emoji": "🧱",
+            "start": 0,
+            "max": 6
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik slov má věta „Ema má malou kočku.“?",
+          "answer": "Ema – má – malou – kočku. Čtyři kostky: **4 slova**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik slov má věta „Jdu s tátou do lesa.“?",
+          "answer": "Jdu – s – tátou – do – lesa. **5 slov**. „S“ a „do“ jsou malá, ale jsou to slova."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Věta „Jdu s tátou.“ má 2 slova.",
+          "right": "Má 3 slova: Jdu – s – tátou.",
+          "why": "Malé slovíčko „s“ je samostatné slovo. Píše se s mezerami okolo a počítá se."
+        },
+        {
+          "type": "summary",
+          "text": "Za každé slovo jedna kostka. Kolik kostek, tolik slov. I malé slovíčko je slovo."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik slov má věta: *Táta spí.*",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik slov má věta: *Ema má míč.*",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kolik slov má věta: *Malý pes běží domů.*",
+      "options": [
+        "3",
+        "4",
+        "5"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "order",
+      "question": "Slož větu.",
+      "items": [
+        "Máma",
+        "vaří",
+        "oběd."
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Slož větu.",
+      "items": [
+        "Kočka",
+        "pije",
+        "mléko."
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Mezi slovy píšeme mezeru.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "*Pesštěká* je správně napsáno.",
+      "answer": false,
+      "explanation": "Mezi slovy chybí mezera: Pes štěká."
+    },
+    {
+      "type": "choice",
+      "question": "Co je slovo?",
+      "options": [
+        "les",
+        "l",
+        "Les je velký."
+      ],
+      "answer": 0,
+      "explanation": "l je písmeno, „Les je velký.“ je věta."
+    },
+    {
+      "type": "choice",
+      "question": "Co je věta?",
+      "options": [
+        "pes",
+        "Pes štěká.",
+        "p"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "match",
+      "question": "Spoj se správným názvem.",
+      "pairs": [
+        [
+          "m",
+          "písmeno"
+        ],
+        [
+          "máma",
+          "slovo"
+        ],
+        [
+          "Máma spí.",
+          "věta"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Řekni větu o svém kamarádovi. Kolik má slov?",
+      "answer": "Například: Tom hraje fotbal. Ta věta má 3 slova."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi slovem a větou?",
+      "answer": "Věta se skládá ze slov. Věta něco sděluje celé."
+    }
+  ]
+}

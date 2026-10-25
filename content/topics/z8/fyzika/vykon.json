@@ -1,0 +1,331 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vykon",
+  "title": "Výkon a účinnost",
+  "emoji": "🏎️",
+  "explanations": [
+    {
+      "title": "Kdo je rychlejší",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ty a táta vynesete do 3. patra stejně těžké tašky. Vykonali jste stejnou práci. Táta to ale zvládl za půl minuty, ty za dvě. Táta měl **větší výkon**."
+        },
+        {
+          "type": "text",
+          "text": "Výkon najdeš na každém spotřebiči, na motoru auta i na vysavači. Podle něj poznáš, jak „silný“ stroj je."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Práce",
+          "definition": "Když silou posuneš těleso, koná se práce. Měří se v joulech (J).",
+          "example": "Zvednout 1 kg o 1 m je práce asi 10 J."
+        },
+        {
+          "type": "term",
+          "term": "Výkon",
+          "definition": "Jak **rychle** se práce koná – kolik joulů za jednu sekundu. Značka `P`, jednotka **watt (W)**.",
+          "example": "1 W = 1 J za 1 sekundu."
+        },
+        {
+          "type": "term",
+          "term": "Kilowatt (kW)",
+          "definition": "1 kW = 1 000 W.",
+          "example": "Rychlovarná konvice má asi 2 kW = 2 000 W."
+        },
+        {
+          "type": "heading",
+          "text": "Porovnej výkony"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf. Kolikrát větší výkon má konvice než LED žárovka? Zkus odhadnout, kolik lidí běžících do schodů by „utáhlo“ jednu konvici."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "W",
+            "items": [
+              {
+                "label": "LED žárovka",
+                "value": 8
+              },
+              {
+                "label": "notebook",
+                "value": 60
+              },
+              {
+                "label": "člověk (chůze do schodů)",
+                "value": 300
+              },
+              {
+                "label": "rychlovarná konvice",
+                "value": 2000
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Stroje nejsou dokonalé"
+        },
+        {
+          "type": "term",
+          "term": "Příkon",
+          "definition": "Kolik energie stroj každou sekundu **odebírá** (ze zásuvky, z paliva). Také ve wattech.",
+          "example": "Konvice s příkonem 2 kW odebere každou sekundu 2 000 J."
+        },
+        {
+          "type": "term",
+          "term": "Účinnost",
+          "definition": "Kolik procent z odebrané energie stroj **užitečně využije**. Zbytek se ztratí – nejčastěji jako teplo.",
+          "example": "Motor, který z každých 100 J využije 80 J, má účinnost 80 %."
+        },
+        {
+          "type": "text",
+          "text": "Žádný stroj nemá účinnost **100 %** ani víc. Vždycky se kousek energie přemění na teplo, například třením."
+        },
+        {
+          "type": "example",
+          "question": "Dva jeřáby zvednou stejný panel. První za 20 s, druhý za 40 s. Který má větší výkon?",
+          "answer": "Práce je stejná. **První** ji udělal za poloviční čas, má tedy **dvojnásobný** výkon."
+        },
+        {
+          "type": "example",
+          "question": "Proč je motor po jízdě horký?",
+          "answer": "Část energie z paliva se nepřemění na pohyb, ale na **teplo**. Proto má motor účinnost menší než 100 %."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kdo vykoná víc práce, má vždy větší výkon.",
+          "right": "Výkon záleží i na čase.",
+          "why": "Výkon říká, jak **rychle** se práce koná. Malou práci za velmi krátký čas může mít větší výkon než velká práce za hodinu."
+        },
+        {
+          "type": "summary",
+          "text": "Výkon = jak rychle se koná práce, jednotka watt (1 W = 1 J/s). Účinnost je vždy menší než 100 %."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jak výkonný motor potřebuje výtah? Kolik energie spotřebuje konvice za minutu? Kolik se ztratí? Odpovědi dávají tři krátké vzorce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Práce `W`",
+          "definition": "Síla krát dráha, v joulech (J). Při zvedání `W = m · g · h` (g ≈ 10 N/kg).",
+          "example": "2 kg zvednout o 3 m: 2 · 10 · 3 = 60 J."
+        },
+        {
+          "type": "term",
+          "term": "Čas `t`",
+          "definition": "Jak dlouho práce trvala, v sekundách (s)."
+        },
+        {
+          "type": "term",
+          "term": "Výkon `P`",
+          "definition": "Práce vykonaná za 1 sekundu. Jednotka watt (W).",
+          "example": "600 J za 30 s → každou sekundu 20 J → 20 W."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorec výkonu"
+        },
+        {
+          "type": "text",
+          "text": "Když chceš vědět, kolik práce připadá na 1 sekundu, vydělíš práci časem: `P = W : t`. Opačně: `W = P · t`."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej práci W (u zvedání m · g · h).",
+            "Čas převeď na sekundy.",
+            "Vyděl: P = W : t.",
+            "Výsledek ve wattech; 1 kW = 1 000 W."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Práce 600 J byla vykonána za 30 s. Jaký byl výkon?",
+          "answer": "P = 600 : 30 = **20 W**."
+        },
+        {
+          "type": "example",
+          "question": "Jeřáb zvedne 200 kg do výšky 15 m za 30 s. Jaký má výkon?",
+          "answer": "W = 200 · 10 · 15 = 30 000 J. P = 30 000 : 30 = **1 000 W = 1 kW**."
+        },
+        {
+          "type": "example",
+          "question": "Motor s výkonem 500 W pracuje 10 s. Kolik práce vykoná?",
+          "answer": "W = P · t = 500 · 10 = **5 000 J**."
+        },
+        {
+          "type": "heading",
+          "text": "Účinnost"
+        },
+        {
+          "type": "term",
+          "term": "Příkon `P₀`",
+          "definition": "Výkon, který stroj **odebírá** ze zdroje.",
+          "example": "Vrtačka odebírá ze zásuvky 1 000 W."
+        },
+        {
+          "type": "term",
+          "term": "Účinnost `η`",
+          "definition": "Podíl užitečného výkonu a příkonu, v procentech: `η = P : P₀ · 100 %`. Čte se „éta“.",
+          "example": "LED žárovka má mnohem větší účinnost než stará žárovka s vláknem, která většinu energie promění na teplo."
+        },
+        {
+          "type": "example",
+          "question": "Motor má příkon 1 000 W a užitečný výkon 800 W. Účinnost?",
+          "answer": "η = 800 : 1 000 · 100 % = **80 %**. Zbylých 200 W se mění hlavně na teplo."
+        },
+        {
+          "type": "widget",
+          "widget": "percent",
+          "props": {
+            "percent": 80
+          }
+        },
+        {
+          "type": "text",
+          "text": "Mřížka ukazuje 80 %: tolik ze 100 dílků energie motor využije. Kolik dílků se ztratí?"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Příkon 1 000 W, výkon 800 W → η = 1 000 : 800 = 125 %",
+          "right": "η = 800 : 1 000 = 0,8 = 80 %",
+          "why": "Užitečný výkon je vždy menší než příkon. Dělí se výkonem **užitečným** lomeno příkonem, výsledek musí být pod 100 %."
+        },
+        {
+          "type": "summary",
+          "text": "`P = W : t`, `W = P · t`; 1 W = 1 J/s. Účinnost `η = P : P₀ · 100 %` je vždy menší než 100 %."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka výkonu?",
+      "options": [
+        "watt",
+        "joule",
+        "volt",
+        "newton"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Práce 600 J byla vykonána za 30 s. Výkon ve W =",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik W je 2,5 kW?",
+      "answers": [
+        "2500"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Motor s výkonem 500 W pracuje 10 s. Vykonaná práce v J =",
+      "answers": [
+        "5000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jeřáb zvedne 200 kg do výšky 15 m za 30 s. Výkon ve W? (g = 10 N/kg)",
+      "answers": [
+        "1000"
+      ],
+      "explanation": "W = 200 · 10 · 15 = 30 000 J; P = 30 000 : 30 = 1 000 W"
+    },
+    {
+      "type": "truefalse",
+      "question": "Kdo vykoná stejnou práci za kratší dobu, má větší výkon.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Účinnost stroje může být větší než 100 %.",
+      "answer": false,
+      "explanation": "Část energie se vždy přemění na teplo."
+    },
+    {
+      "type": "input",
+      "question": "Motor má příkon 1 000 W a užitečný výkon 800 W. Účinnost v % =",
+      "answers": [
+        "80"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu se značkou.",
+      "pairs": [
+        [
+          "výkon",
+          "P"
+        ],
+        [
+          "práce",
+          "W"
+        ],
+        [
+          "čas",
+          "t"
+        ],
+        [
+          "účinnost",
+          "η"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená, že konvice má příkon 2 kW?",
+      "options": [
+        "každou sekundu odebere 2 000 J energie",
+        "za hodinu odebere 2 J",
+        "vaří 2 litry vody"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi prací a výkonem?",
+      "answer": "Práce říká, kolik energie se přemění. Výkon říká, jak rychle se práce koná: P = W / t."
+    },
+    {
+      "type": "open",
+      "question": "Co je účinnost a proč je vždy menší než 100 %?",
+      "answer": "Účinnost je poměr užitečného výkonu a příkonu. Je menší než 100 %, protože část energie se ztratí, hlavně jako teplo třením."
+    }
+  ]
+}

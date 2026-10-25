@@ -1,0 +1,380 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "konstrukcni-ulohy",
+  "title": "Konstrukční úlohy",
+  "emoji": "✏️",
+  "explanations": [
+    {
+      "title": "Plán",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Truhlář nezačne hned řezat. Nejdřív si nakreslí náčrt, rozmyslí postup a teprve pak pracuje. V geometrii je to stejné: chceš narýsovat trojúhelník, o kterém víš jen pár údajů."
+        },
+        {
+          "type": "text",
+          "text": "Takovým úlohám se říká **konstrukční úlohy**. Naučí tě plánovat – a přesně rýsovat pravítkem a kružítkem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Konstrukce",
+          "definition": "Přesné narýsování útvaru pomocí pravítka a kružítka.",
+          "example": "Narýsovat trojúhelník se stranami 6, 5 a 4 cm."
+        },
+        {
+          "type": "term",
+          "term": "Náčrt",
+          "definition": "Rychlý obrázek od ruky, nemusí být přesný. Vyznačíš do něj, co znáš.",
+          "example": "Trojúhelník nakreslený bez pravítka, s popsanými délkami."
+        },
+        {
+          "type": "term",
+          "term": "Kružnice k(A; 5 cm)",
+          "definition": "Kružnice se středem v bodě A a poloměrem 5 cm. Všechny její body jsou od A vzdálené přesně 5 cm.",
+          "example": "Kružítko roztáhneš na 5 cm a zapíchneš do A."
+        },
+        {
+          "type": "term",
+          "term": "Průsečík",
+          "definition": "Bod, ve kterém se dvě čáry protnou.",
+          "example": "Dvě kružnice se mohou protnout ve dvou bodech."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři kroky"
+        },
+        {
+          "type": "text",
+          "text": "Klikni na kroky a projdi si je dokola. Tak se řeší každá konstrukční úloha."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "Rozbor (náčrt)",
+              "Zápis postupu",
+              "Konstrukce",
+              "Zkouška a diskuse"
+            ]
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Rozbor:** náčrt od ruky, vyznačíš známé údaje a vymyslíš, jak na to.",
+            "**Zápis postupu:** krátce, krok za krokem, co budeš rýsovat.",
+            "**Konstrukce:** samotné rýsování.",
+            "**Diskuse:** kolik má úloha řešení – žádné, jedno, nebo víc?"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Trojúhelník ze tří stran"
+        },
+        {
+          "type": "example",
+          "question": "Sestroj trojúhelník ABC: c = |AB| = 6 cm, b = |AC| = 5 cm, a = |BC| = 4 cm.",
+          "answer": "1. Narýsuj úsečku AB dlouhou 6 cm. 2. Bod C je 5 cm od A → kružnice k(A; 5 cm). 3. Bod C je 4 cm od B → kružnice k(B; 4 cm). 4. C je průsečík kružnic. 5. Spoj A, B, C."
+        },
+        {
+          "type": "text",
+          "text": "Diskuse: kružnice se protnou ve dvou bodech – nad úsečkou a pod ní. Oba trojúhelníky jsou ale stejné (shodné), jen převrácené. Úloha má tedy jedno řešení."
+        },
+        {
+          "type": "text",
+          "text": "Proč to šlo? Protože 5 + 4 > 6. Kdyby součet dvou kratších stran nebyl větší než nejdelší strana, kružnice by se nepotkaly a trojúhelník by neexistoval."
+        },
+        {
+          "type": "example",
+          "question": "Proč používáme kružnici, a ne jen pravítko?",
+          "answer": "Nevíme, kterým směrem bod C leží. Kružnice ukáže **všechna** místa ve správné vzdálenosti. Kde se dvě takové kružnice potkají, tam C musí být."
+        },
+        {
+          "type": "heading",
+          "text": "Další pomocné čáry"
+        },
+        {
+          "type": "text",
+          "text": "Kružnice ukáže body v dané vzdálenosti. Podobně fungují další čáry: **osa úsečky AB** (kolmice středem AB) obsahuje body stejně daleko od A i B. **Osa úhlu** ho půlí. **Thaletova kružnice** nad AB (AB je její průměr) obsahuje vrcholy všech pravých úhlů nad AB – hodí se pro pravoúhlé trojúhelníky."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Začnu hned rýsovat a uvidím.",
+          "right": "Nejdřív náčrt a rozbor.",
+          "why": "Bez plánu často zjistíš v půlce, že jsi začal špatnou stranou, a musíš rýsovat znovu."
+        },
+        {
+          "type": "summary",
+          "text": "Rozbor → postup → konstrukce → diskuse. Hledaný bod je průsečík dvou čar (často kružnic)."
+        }
+      ]
+    },
+    {
+      "title": "Množiny bodů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hledáš místo na stan, které je stejně daleko od dvou stromů a zároveň 10 m od potoka. Každá podmínka určí jednu čáru možných míst. Kde se čáry protnou, tam je řešení."
+        },
+        {
+          "type": "text",
+          "text": "Tyhle čáry se jmenují **množiny bodů** a jsou klíčem ke všem konstrukčním úlohám."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Množina bodů",
+          "definition": "Všechny body, které splňují nějakou podmínku. Obvykle tvoří čáru.",
+          "example": "Všechny body 3 cm od bodu S tvoří kružnici."
+        },
+        {
+          "type": "term",
+          "term": "Osa úsečky",
+          "definition": "Přímka, která prochází středem úsečky a je k ní kolmá (svírá pravý úhel).",
+          "example": "Každý bod na ose úsečky AB je stejně daleko od A jako od B."
+        },
+        {
+          "type": "term",
+          "term": "Osa úhlu",
+          "definition": "Polopřímka z vrcholu, která dělí úhel na dvě stejné poloviny.",
+          "example": "Osa pravého úhlu ho dělí na 45° a 45°."
+        },
+        {
+          "type": "term",
+          "term": "Thaletova kružnice",
+          "definition": "Kružnice, jejímž průměrem je úsečka AB (střed je uprostřed AB). Z každého jejího bodu (kromě A a B) je AB vidět pod pravým úhlem.",
+          "example": "Pravoúhlý trojúhelník s přeponou AB má vrchol C na Thaletově kružnici."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka množin"
+        },
+        {
+          "type": "table",
+          "head": [
+            "body, které…",
+            "leží na"
+          ],
+          "rows": [
+            [
+              "mají od S vzdálenost r",
+              "kružnici k(S; r)"
+            ],
+            [
+              "mají stejnou vzdálenost od A a B",
+              "ose úsečky AB"
+            ],
+            [
+              "mají stejnou vzdálenost od ramen úhlu",
+              "ose úhlu"
+            ],
+            [
+              "vidí AB pod pravým úhlem",
+              "Thaletově kružnici nad AB"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Nastav úhel na 90°. Představ si, že ramena procházejí body A a B. Vrchol úhlu pak leží na Thaletově kružnici nad AB."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 90
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Postup s množinami"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti podmínky pro hledaný bod.",
+            "Každou podmínku přelož na množinu bodů (kružnice, osa, Thaletova kružnice).",
+            "Obě množiny narýsuj.",
+            "Hledaný bod je jejich průsečík.",
+            "Spočítej průsečíky – to je počet řešení (diskuse)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Sestroj pravoúhlý trojúhelník ABC s přeponou |AB| = 6 cm a odvěsnou |AC| = 4 cm.",
+          "answer": "1. AB, 6 cm. 2. Thaletova kružnice nad AB (střed uprostřed AB, poloměr 3 cm) – tam je C, protože u C je pravý úhel. 3. k(A; 4 cm). 4. C je průsečík. 5. Trojúhelník ABC."
+        },
+        {
+          "type": "heading",
+          "text": "Významné body trojúhelníku"
+        },
+        {
+          "type": "table",
+          "head": [
+            "bod",
+            "průsečík"
+          ],
+          "rows": [
+            [
+              "střed kružnice opsané (prochází vrcholy)",
+              "os stran"
+            ],
+            [
+              "střed kružnice vepsané (dotýká se stran)",
+              "os úhlů"
+            ],
+            [
+              "těžiště",
+              "těžnic (vrchol → střed protější strany)"
+            ],
+            [
+              "ortocentrum",
+              "výšek"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Trojúhelník je určený (dá se sestrojit) třemi stranami – věta **sss**, dvěma stranami a úhlem mezi nimi – **sus**, nebo stranou a dvěma úhly u ní – **usu**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Střed kružnice vepsané je průsečík výšek.",
+          "right": "Je to průsečík **os úhlů**.",
+          "why": "Střed vepsané kružnice musí být stejně daleko od všech tří stran – a to splňují právě body na osách úhlů."
+        },
+        {
+          "type": "summary",
+          "text": "Každá podmínka = jedna množina bodů. Hledaný bod je průsečík dvou množin. Thaletova kružnice = vrcholy pravých úhlů nad AB."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Body se stejnou vzdáleností od bodů A a B leží na…",
+      "options": [
+        "ose úsečky AB",
+        "kružnici se středem A",
+        "přímce AB",
+        "ose úhlu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Thaletova kružnice nad průměrem AB je množina vrcholů…",
+      "options": [
+        "pravých úhlů",
+        "ostrých úhlů",
+        "tupých úhlů",
+        "přímých úhlů"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď části konstrukční úlohy.",
+      "items": [
+        "rozbor",
+        "zápis postupu",
+        "konstrukce",
+        "diskuse"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Střed kružnice opsané trojúhelníku je průsečík os stran.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Střed kružnice vepsané trojúhelníku je průsečík výšek.",
+      "answer": false,
+      "explanation": "Je to průsečík os úhlů."
+    },
+    {
+      "type": "choice",
+      "question": "Kterou větou sestrojíš trojúhelník ze tří stran?",
+      "options": [
+        "sss",
+        "usu",
+        "sus",
+        "Ssu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Kružnice k(S; 3 cm) obsahuje všechny body vzdálené od S právě 3 cm.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená zápis k(A; 4 cm)?",
+      "options": [
+        "kružnice se středem A a poloměrem 4 cm",
+        "kruh o průměru 4 cm",
+        "úsečka A dlouhá 4 cm",
+        "úhel A = 4°"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj střed s průsečíkem.",
+      "pairs": [
+        [
+          "kružnice opsaná",
+          "os stran"
+        ],
+        [
+          "kružnice vepsaná",
+          "os úhlů"
+        ],
+        [
+          "těžiště",
+          "těžnic"
+        ],
+        [
+          "ortocentrum",
+          "výšek"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Úloha může mít víc než jedno řešení.",
+      "answer": true,
+      "explanation": "Proto se dělá diskuse."
+    },
+    {
+      "type": "open",
+      "question": "Co je rozbor konstrukční úlohy?",
+      "answer": "Náčrt hledaného útvaru od ruky, do kterého vyznačím zadané údaje. Podle něj vymyslím, jak útvar sestrojit."
+    },
+    {
+      "type": "open",
+      "question": "Jak sestrojíš pravoúhlý trojúhelník, když znáš přeponu?",
+      "answer": "Narýsuji přeponu AB a nad ní Thaletovu kružnici (střed ve středu AB). Vrchol C s pravým úhlem leží na ní, podle dalšího údaje ho určím."
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "voda-vzduch-puda",
+  "title": "Voda, vzduch, půda",
+  "emoji": "💧",
+  "explanations": [
+    {
+      "title": "Koloběh vody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Po dešti jsou na chodníku louže. Za pár hodin jsou pryč. Kam se ta voda poděla? A odkud se vlastně vzal déšť?"
+        },
+        {
+          "type": "text",
+          "text": "Voda na Zemi pořád putuje dokola: z moře do mraků, z mraků na zem a zase zpátky. Díky tomu máme vodu v řekách i ve studnách."
+        },
+        {
+          "type": "term",
+          "term": "Vypařování",
+          "definition": "Když se voda zahřeje a mění se v páru, která stoupá do vzduchu.",
+          "example": "Louže na slunci zmizí – vypaří se."
+        },
+        {
+          "type": "term",
+          "term": "Pára",
+          "definition": "Voda, která se změnila v neviditelný plyn ve vzduchu.",
+          "example": "Nad hrncem s vroucí vodou stoupá pára."
+        },
+        {
+          "type": "term",
+          "term": "Srážky",
+          "definition": "Voda, která padá z mraků: déšť, sníh, kroupy.",
+          "example": "Dnes byly srážky – pršelo."
+        },
+        {
+          "type": "term",
+          "term": "Koloběh vody",
+          "definition": "Nekonečná cesta vody: vypaří se, vytvoří mraky, spadne a odteče.",
+          "example": "Stejná voda koluje na Zemi miliony let."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta kapky"
+        },
+        {
+          "type": "text",
+          "text": "Klepej a sleduj kapku vody na její cestě."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "Slunce ohřeje vodu ☀️",
+              "voda se vypaří ♨️",
+              "vzniknou mraky ☁️",
+              "prší nebo sněží 🌧️",
+              "voda teče do řek a moří 🌊"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč prádlo na šňůře uschne?",
+          "answer": "Voda z mokrého prádla se teplem a větrem **vypaří**. Pára odejde do vzduchu."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď: déšť, mraky, řeka, vypaření.",
+          "answer": "Voda se **vypaří**, vzniknou **mraky**, spadne **déšť** a odteče do **řeky**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Voda z louže zmizí navždy.",
+          "right": "Voda se vypaří a později spadne jako déšť nebo sníh.",
+          "why": "Voda se neztrácí, jen mění podobu a místo. Proto mluvíme o koloběhu."
+        },
+        {
+          "type": "heading",
+          "text": "Vzduch a půda"
+        },
+        {
+          "type": "text",
+          "text": "**Vzduch** potřebujeme k dýchání. Není vidět, ale cítíme ho jako vítr. **Půda** je vrchní vrstva země. Rostou v ní kořeny a žijí v ní žížaly."
+        },
+        {
+          "type": "summary",
+          "text": "Voda se vypaří, vytvoří mraky a spadne jako déšť nebo sníh. Pak teče do řek a moří a cesta začíná znovu."
+        }
+      ]
+    },
+    {
+      "title": "Tři podoby vody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V zimě kloužeš po ledu. V létě se koupeš ve vodě. Když maminka vaří, z hrnce stoupá pára. Je to pořád ta samá voda?"
+        },
+        {
+          "type": "text",
+          "text": "Ano! Voda umí mít tři podoby. Mění se podle toho, jak je teplá. Spolu s ní se podíváme i na vzduch a půdu – bez nich by nebyl život."
+        },
+        {
+          "type": "term",
+          "term": "Skupenství",
+          "definition": "Podoba, ve které látka je: **pevná**, **kapalná** (tekutá), nebo **plynná**.",
+          "example": "Led je pevný, voda kapalná, pára plynná."
+        },
+        {
+          "type": "term",
+          "term": "Teplota",
+          "definition": "Jak je něco teplé nebo studené. Měříme ji ve **stupních Celsia (°C)**.",
+          "example": "V létě bývá 25 °C."
+        },
+        {
+          "type": "heading",
+          "text": "Led, voda, pára"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupenství",
+            "Příklad",
+            "Jaké je"
+          ],
+          "rows": [
+            [
+              "pevné",
+              "led, sníh",
+              "drží tvar"
+            ],
+            [
+              "kapalné",
+              "voda v řece",
+              "teče, dá se nalít"
+            ],
+            [
+              "plynné",
+              "pára",
+              "rozletí se do vzduchu"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Pod **0 °C** voda **mrzne** – vzniká led.",
+            "Nad 0 °C led **taje** – vzniká voda.",
+            "Při **100 °C** se voda **vaří** a rychle se mění v páru."
+          ]
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "pevné",
+              "kapalné",
+              "plynné"
+            ],
+            "items": [
+              {
+                "text": "rampouch",
+                "group": 0
+              },
+              {
+                "text": "sněhová vločka",
+                "group": 0
+              },
+              {
+                "text": "déšť",
+                "group": 1
+              },
+              {
+                "text": "voda v hrnku",
+                "group": 1
+              },
+              {
+                "text": "pára z konvice",
+                "group": 2
+              },
+              {
+                "text": "kostka ledu",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Co se stane s ledem v teplé místnosti?",
+          "answer": "V místnosti je víc než 0 °C. Led **roztaje** a změní se na vodu – z pevného na kapalné."
+        },
+        {
+          "type": "example",
+          "question": "Venku je −5 °C. Co se stane s louží?",
+          "answer": "−5 °C je pod nulou. Voda **zamrzne** na led."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pára a led jsou jiné látky než voda.",
+          "right": "Led, voda i pára jsou stejná látka – voda.",
+          "why": "Mění se jen skupenství podle teploty. Když led roztaje, je z něj zase voda."
+        },
+        {
+          "type": "heading",
+          "text": "Vzduch a půda"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Vzduch** je neviditelný. Dýcháme ho. Pohyb vzduchu je vítr.",
+            "**Půda** je vrchní vrstva země. Živí rostliny, žijí v ní žížaly.",
+            "Voda v moři je **slaná**, pijeme jen **sladkou** vodu z řek a studní – a té je málo."
+          ]
+        },
+        {
+          "type": "summary",
+          "text": "Voda má tři skupenství: led (pevné), voda (kapalné), pára (plynné). Pod 0 °C mrzne, při 100 °C se vaří."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Při kolika stupních mrzne voda?",
+      "options": [
+        "0 °C",
+        "100 °C",
+        "20 °C"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Při kolika °C se voda vaří?",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Led je voda ve skupenství…",
+      "options": [
+        "pevném",
+        "kapalném",
+        "plynném"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Pára je voda ve skupenství…",
+      "options": [
+        "plynném",
+        "pevném",
+        "kapalném"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď koloběh vody.",
+      "items": [
+        "vypaření",
+        "mraky",
+        "déšť",
+        "řeka"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Vzduch je vidět.",
+      "answer": false,
+      "explanation": "Vzduch je neviditelný, ale cítíme ho třeba jako vítr."
+    },
+    {
+      "type": "truefalse",
+      "question": "Bez vzduchu nemůžeme žít.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Voda v moři je slaná.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "led",
+          "pevné"
+        ],
+        [
+          "voda",
+          "kapalné"
+        ],
+        [
+          "pára",
+          "plynné"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kde žijí žížaly a roste kořen?",
+      "options": [
+        "v půdě",
+        "ve vzduchu",
+        "v mracích"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Popiš koloběh vody.",
+      "answer": "Slunce ohřeje vodu, ta se vypaří. Pára vytvoří mraky. Z mraků prší nebo sněží a voda teče do řek a moří."
+    },
+    {
+      "type": "open",
+      "question": "Proč musíme šetřit vodou?",
+      "answer": "Čisté pitné vody je málo a potřebují ji lidé, zvířata i rostliny."
+    }
+  ]
+}

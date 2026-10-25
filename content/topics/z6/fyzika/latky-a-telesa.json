@@ -1,0 +1,410 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "latky-a-telesa",
+  "title": "Látky a tělesa",
+  "emoji": "🧊",
+  "explanations": [
+    {
+      "title": "Kolem sebe",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozhlédni se po kuchyni. Je tam hrnek, lžíce, stůl, okno. A taky voda v kohoutku a vzduch v místnosti."
+        },
+        {
+          "type": "text",
+          "text": "Fyzika potřebuje o všech těch věcech mluvit přesně. Proto rozlišuje dvě věci: **co to je za předmět** a **z čeho je vyrobený**. Pomůže ti to třeba při třídění odpadu nebo když vybíráš materiál na výrobek."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Těleso",
+          "definition": "Jeden konkrétní předmět. Má svůj tvar a dá se ukázat prstem: „tohle“.",
+          "example": "Hrnek, lžíce, míč, cihla, kapka vody."
+        },
+        {
+          "type": "term",
+          "term": "Látka",
+          "definition": "Materiál, ze kterého je těleso. Látku poznáš otázkou „Z čeho to je?“.",
+          "example": "Hrnek je z porcelánu, lžíce z oceli, míč z gumy."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🥄",
+            "➡️",
+            "⚙️"
+          ],
+          "caption": "Lžíce je těleso. Ocel, ze které je, je látka."
+        },
+        {
+          "type": "heading",
+          "text": "Jak je rozlišit"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ukaž na věc a zeptej se: „Co to je?“ Odpověď je **těleso** (třeba láhev).",
+            "Zeptej se: „Z čeho to je?“ Odpověď je **látka** (třeba sklo).",
+            "Pozor: z jedné látky může být mnoho těles. Ze dřeva je stůl, tužka i vařečka."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Skleněná láhev s vodou. Co je těleso a co látka?",
+          "answer": "Zeptám se „co to je?“ → láhev, to je **těleso**. „Z čeho je?“ → ze **skla**, to je látka. Uvnitř je **voda** – také látka."
+        },
+        {
+          "type": "heading",
+          "text": "Tři podoby látek"
+        },
+        {
+          "type": "text",
+          "text": "Dej kostku ledu do sklenice. Led drží tvar kostky. Když roztaje, voda se rozlije po dně sklenice. Když vodu vaříš, stoupá z ní pára a rozletí se po celé kuchyni."
+        },
+        {
+          "type": "term",
+          "term": "Skupenství",
+          "definition": "Podoba, ve které látka zrovna je: **pevná**, **kapalná** (tekutá jako voda) nebo **plynná** (jako vzduch).",
+          "example": "Voda může být pevná (led), kapalná (voda) i plynná (pára)."
+        },
+        {
+          "type": "term",
+          "term": "Objem",
+          "definition": "Kolik místa těleso nebo látka zabírá.",
+          "example": "Plná sklenice vody zabírá víc místa než lžička vody – má větší objem."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Pevná** látka (led, kámen) drží svůj tvar i objem.",
+            "**Kapalina** (voda, olej) má stálý objem, ale tvar si vezme od nádoby.",
+            "**Plyn** (vzduch, pára) nemá stálý tvar ani objem – vyplní celý prostor, který má."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Tekutina",
+          "definition": "Společné jméno pro kapaliny a plyny. Obojí **teče** a mění tvar.",
+          "example": "Voda teče z kohoutku, vzduch proudí oknem."
+        },
+        {
+          "type": "example",
+          "question": "Nafoukneš balonek. Proč je vzduch uvnitř všude, i v úplném okraji?",
+          "answer": "Vzduch je **plyn**. Plyn nemá vlastní tvar ani objem, takže vyplní celý prostor balonku."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Voda v hrnku je těleso.",
+          "right": "Hrnek je těleso, voda je látka.",
+          "why": "Na otázku „Z čeho to je?“ odpovídá látka. Voda je materiál, ne předmět s vlastním tvarem."
+        },
+        {
+          "type": "summary",
+          "text": "Těleso = předmět („co to je?“). Látka = materiál („z čeho to je?“). Látky bývají pevné, kapalné nebo plynné; kapaliny a plyny jsou tekutiny."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Fyzika zkoumá všechno, co nás obklopuje. Aby se v tom vyznala, třídí věci do skupin – podobně jako ty třídíš oblečení do šuplíků."
+        },
+        {
+          "type": "text",
+          "text": "První třídění: je to předmět, nebo materiál? Druhé třídění: drží to tvar, teče to, nebo se to rozletí?"
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Těleso",
+          "definition": "Konkrétní předmět, který má hranice – víš, kde začíná a kde končí.",
+          "example": "Hřebík, okno, pneumatika, svíčka."
+        },
+        {
+          "type": "term",
+          "term": "Látka",
+          "definition": "To, z čeho je těleso složené.",
+          "example": "Železo, sklo, guma, vosk."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Těleso",
+            "Látka"
+          ],
+          "rows": [
+            [
+              "hřebík",
+              "železo"
+            ],
+            [
+              "okno",
+              "sklo"
+            ],
+            [
+              "pneumatika",
+              "guma"
+            ],
+            [
+              "svíčka",
+              "vosk"
+            ],
+            [
+              "plechovka",
+              "hliník"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Druhé třídění: skupenství"
+        },
+        {
+          "type": "term",
+          "term": "Skupenství",
+          "definition": "Stav látky: pevné, kapalné, nebo plynné.",
+          "example": "Kámen je pevný, mléko kapalné, vzduch plynný."
+        },
+        {
+          "type": "term",
+          "term": "Tvar a objem",
+          "definition": "**Tvar** = jak věc vypadá (kulatá, hranatá). **Objem** = kolik místa zabírá.",
+          "example": "Kostka cukru má tvar krychle a malý objem."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupenství",
+            "Tvar",
+            "Objem",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "pevné",
+              "stálý",
+              "stálý",
+              "kámen, led"
+            ],
+            [
+              "kapalné",
+              "podle nádoby",
+              "stálý",
+              "voda, olej"
+            ],
+            [
+              "plynné",
+              "podle nádoby",
+              "vyplní celý prostor",
+              "vzduch, pára"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Kapaliny a plyny mají něco společného: tečou. Proto jim společně říkáme **tekutiny**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď látky podle skupenství. U každé si polož otázku: drží tvar? Má stálý objem?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "pevné",
+              "kapalné",
+              "plynné"
+            ],
+            "items": [
+              {
+                "text": "kámen",
+                "group": 0
+              },
+              {
+                "text": "led",
+                "group": 0
+              },
+              {
+                "text": "mléko",
+                "group": 1
+              },
+              {
+                "text": "olej",
+                "group": 1
+              },
+              {
+                "text": "vzduch",
+                "group": 2
+              },
+              {
+                "text": "pára",
+                "group": 2
+              },
+              {
+                "text": "dřevo",
+                "group": 0
+              },
+              {
+                "text": "rtuť",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Rtuť je zvláštní: je to kov, a přesto je za pokojové teploty kapalná."
+        },
+        {
+          "type": "example",
+          "question": "Přeliješ 1 litr vody z hrnce do konvice. Co se změní a co ne?",
+          "answer": "Změní se **tvar** – voda se přizpůsobí konvici. **Objem** zůstane 1 litr. Tak se chová kapalina."
+        },
+        {
+          "type": "example",
+          "question": "Kostka ledu, voda a pára – jsou to tři různé látky?",
+          "answer": "Ne. Je to **jedna látka** (voda) ve třech skupenstvích: pevném, kapalném a plynném."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kapalina má stálý tvar, protože ve sklenici vypadá pořád stejně.",
+          "right": "Kapalina má stálý objem, ale tvar podle nádoby.",
+          "why": "Přelij ji do talíře a tvar se hned změní. Ve sklenici jen kopíruje tvar sklenice."
+        },
+        {
+          "type": "summary",
+          "text": "Těleso je předmět, látka je materiál. Pevné látky drží tvar i objem, kapaliny jen objem, plyny ani jedno. Kapaliny a plyny = tekutiny."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co z toho je těleso?",
+      "options": [
+        "židle",
+        "dřevo",
+        "voda",
+        "železo"
+      ],
+      "answer": 0,
+      "explanation": "Židle je věc. Ostatní jsou látky."
+    },
+    {
+      "type": "choice",
+      "question": "Co z toho je látka?",
+      "options": [
+        "hliník",
+        "plechovka",
+        "kolo",
+        "hrnek"
+      ],
+      "answer": 0,
+      "explanation": "Hliník je materiál, z něhož je třeba plechovka."
+    },
+    {
+      "type": "truefalse",
+      "question": "Kapalina má stálý tvar.",
+      "answer": false,
+      "explanation": "Kapalina se přizpůsobí tvaru nádoby. Stálý má jen objem."
+    },
+    {
+      "type": "truefalse",
+      "question": "Plyn vyplní celý prostor, který má k dispozici.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Které skupenství má stálý tvar i objem?",
+      "options": [
+        "pevné",
+        "kapalné",
+        "plynné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj těleso s látkou.",
+      "pairs": [
+        [
+          "hřebík",
+          "železo"
+        ],
+        [
+          "okno",
+          "sklo"
+        ],
+        [
+          "pneumatika",
+          "guma"
+        ],
+        [
+          "svíčka",
+          "vosk"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jedním slovem: jak se společně nazývají kapaliny a plyny?",
+      "answers": [
+        "tekutiny",
+        "tekutina"
+      ],
+      "explanation": "Obojí teče, proto tekutiny."
+    },
+    {
+      "type": "truefalse",
+      "question": "Jedna látka může tvořit různá tělesa.",
+      "answer": true,
+      "explanation": "Ze dřeva je stůl, tužka i lžička."
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém skupenství je voda v ledničce v mrazáku?",
+      "options": [
+        "pevném",
+        "kapalném",
+        "plynném"
+      ],
+      "answer": 0,
+      "explanation": "Zmrzlá voda je led – pevná látka."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi látkou a tělesem? Uveď příklad.",
+      "answer": "Těleso je konkrétní předmět, látka je materiál, ze kterého je. Například hrnek (těleso) je z porcelánu (látka)."
+    },
+    {
+      "type": "open",
+      "question": "Porovnej pevné, kapalné a plynné látky podle tvaru a objemu.",
+      "answer": "Pevné mají stálý tvar i objem. Kapaliny mají stálý objem, ale tvar podle nádoby. Plyny nemají stálý tvar ani objem, vyplní celý prostor."
+    }
+  ]
+}

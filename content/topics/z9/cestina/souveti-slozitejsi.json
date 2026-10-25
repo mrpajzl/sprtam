@@ -1,0 +1,348 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "souveti-slozitejsi",
+  "title": "Složitější souvětí",
+  "emoji": "🕸️",
+  "explanations": [
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V přijímačkách často dostaneš dlouhé souvětí a máš říct, kolik má vět, které jsou hlavní a kam patří čárky. Vypadá to hrozivě, ale existuje postup, který funguje vždycky."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si ho na souvětí: *Když jsme přišli domů, máma vařila a táta četl noviny, které ráno koupil.*"
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso v určitém tvaru",
+          "definition": "Sloveso, ze kterého poznáš osobu (já, ty, on…). Infinitiv (číst) se nepočítá.",
+          "example": "přišli jsme, vařila, četl"
+        },
+        {
+          "type": "term",
+          "term": "Věta jednoduchá a souvětí",
+          "definition": "Věta jednoduchá má **jedno** sloveso v určitém tvaru. Souvětí jich má víc – každé sloveso = jedna věta.",
+          "example": "*Prší.* × *Prší a fouká.*"
+        },
+        {
+          "type": "term",
+          "term": "Věta hlavní",
+          "definition": "Věta, která na žádné jiné nezávisí. Souvětí jich může mít i víc.",
+          "example": "*máma vařila*, *táta četl noviny*"
+        },
+        {
+          "type": "term",
+          "term": "Věta vedlejší",
+          "definition": "Věta, která závisí na jiné (řídící) větě a odpovídá na otázku z ní. Může záviset i na jiné vedlejší větě.",
+          "example": "*které ráno koupil*"
+        },
+        {
+          "type": "term",
+          "term": "Poměr",
+          "definition": "Vztah mezi rovnocennými (souřadnými) větami: slučovací, odporovací, důsledkový…",
+          "example": "*máma vařila a táta četl* – slučovací"
+        },
+        {
+          "type": "heading",
+          "text": "Postup ve čtyřech krocích"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Spočítej slovesa**: *přišli jsme, vařila, četl, koupil* → **4 věty**.",
+            "**Najdi hlavní věty**: *máma vařila* a *táta četl noviny*. Jsou mezi sebou spojené *a* → poměr **slučovací**.",
+            "**Ptej se na vedlejší**: Kdy máma vařila a táta četl? → *když jsme přišli domů* → VV **časová** (patří k oběma hlavním).",
+            "Které noviny? → *které ráno koupil* → VV **přívlastková** (rozvíjí slovo *noviny*)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Čárky"
+        },
+        {
+          "type": "text",
+          "text": "Mezi větami píšeš čárku, **kromě** slučovacího *a* mezi hlavními větami: *Když jsme přišli domů**,** máma vařila a táta četl noviny**,** které ráno koupil.* → 2 čárky."
+        },
+        {
+          "type": "example",
+          "question": "Kolik vět má souvětí: *Když zazvonilo, děti vyběhly ven a učitel zavřel okno, které bylo otevřené.*",
+          "answer": "Slovesa: *zazvonilo, vyběhly, zavřel, bylo* → **4 věty**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik hlavních vět má: *Prší a fouká, protože přišla bouřka.*",
+          "answer": "*Prší* a *fouká* nezávisí na ničem → **2 hlavní** věty. *protože přišla bouřka* je VV příčinná."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Petr a Jana šli do kina.* je souvětí, protože tam je *a*.",
+          "right": "Je to věta jednoduchá.",
+          "why": "Má jen jedno sloveso (*šli*). *Petr a Jana* je několikanásobný podmět, ne dvě věty."
+        },
+        {
+          "type": "summary",
+          "text": "Spočítej slovesa v určitém tvaru → najdi hlavní věty a jejich poměr → na vedlejší se ptej z řídící věty → doplň čárky."
+        }
+      ]
+    },
+    {
+      "title": "Schématem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když se ve městě ztratíš, pomůže mapa. U složitého souvětí je takovou mapou **schéma**: nakreslíš, která věta je hlavní a která na které visí."
+        },
+        {
+          "type": "text",
+          "text": "Schéma ti ukáže stavbu souvětí na první pohled. A když ho umíš nakreslit, žádné souvětí tě v testu nezaskočí."
+        },
+        {
+          "type": "term",
+          "term": "Souvětí",
+          "definition": "Celek z víc vět. Kolik sloves v určitém tvaru (*přišel, vařila*), tolik vět.",
+          "example": "*Vím, že přijdeš.* – 2 věty"
+        },
+        {
+          "type": "term",
+          "term": "Hlavní a vedlejší věta",
+          "definition": "**Hlavní** věta nezávisí na žádné jiné. **Vedlejší** závisí na své **řídící** větě – odpovídá na otázku z ní.",
+          "example": "hlavní *máma vařila*; vedlejší *když jsme přišli domů*"
+        },
+        {
+          "type": "term",
+          "term": "Schéma souvětí",
+          "definition": "Nákres, kde hlavní věty jsou nahoře a vedlejší věty pod nimi, spojené s větou, na které závisí.",
+          "example": "Věty si očísluješ podle pořadí."
+        },
+        {
+          "type": "term",
+          "term": "Věta vložená",
+          "definition": "Věta vsunutá doprostřed jiné věty. Odděluje se čárkami z obou stran.",
+          "example": "Dům, **který stojí na kopci**, je starý."
+        },
+        {
+          "type": "heading",
+          "text": "Schéma v tabulce"
+        },
+        {
+          "type": "text",
+          "text": "Souvětí: *(1) Když jsme přišli domů, (2) máma vařila a (3) táta četl noviny, (4) které ráno koupil.*"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Věta",
+            "Druh",
+            "Závisí na"
+          ],
+          "rows": [
+            [
+              "1 když jsme přišli domů",
+              "VV časová",
+              "2 a 3"
+            ],
+            [
+              "2 máma vařila",
+              "hlavní",
+              "–"
+            ],
+            [
+              "3 táta četl noviny",
+              "hlavní",
+              "–"
+            ],
+            [
+              "4 které ráno koupil",
+              "VV přívlastková",
+              "3"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Nakresleno: nahoře vedle sebe **2** a **3** spojené *a* (slučovací poměr). Pod nimi **1**, spojená s oběma. Pod **3** visí **4**."
+        },
+        {
+          "type": "heading",
+          "text": "Věta, nebo souvětí?"
+        },
+        {
+          "type": "text",
+          "text": "Nejdřív vždycky zjisti, jestli vůbec jde o souvětí. Roztřiď: počítej slovesa v určitém tvaru."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "věta jednoduchá",
+              "souvětí"
+            ],
+            "items": [
+              {
+                "text": "Ráno svítilo slunce.",
+                "group": 0
+              },
+              {
+                "text": "Petr a Jana šli do kina.",
+                "group": 0
+              },
+              {
+                "text": "Po škole jsem šel na trénink.",
+                "group": 0
+              },
+              {
+                "text": "Prší a fouká.",
+                "group": 1
+              },
+              {
+                "text": "Vím, že přijdeš.",
+                "group": 1
+              },
+              {
+                "text": "Až skončí škola, pojedeme k moři.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Nakresli schéma: *(1) Řekl, (2) že přijde, (3) až dodělá úkol.*",
+          "answer": "Nahoře hlavní **1**. Pod ní **2** (co řekl? – předmětná). Pod **2** visí **3** (kdy přijde? – časová). Vedlejší věta tedy může záviset na jiné vedlejší."
+        },
+        {
+          "type": "example",
+          "question": "Doplň čárky a urči vloženou větu: *Kniha kterou mi půjčil je napínavá.*",
+          "answer": "*Kniha, kterou mi půjčil, je napínavá.* Věta *kterou mi půjčil* je **vložená** do hlavní věty *Kniha je napínavá* → čárky z obou stran."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kniha, kterou mi půjčil je napínavá.",
+          "right": "Kniha, kterou mi půjčil, je napínavá.",
+          "why": "Vložená věta se odděluje z **obou** stran – druhá čárka ji „zavírá“."
+        },
+        {
+          "type": "summary",
+          "text": "Očísluj věty, hlavní dej nahoru, vedlejší pod větu, na které závisí. Souvětí může mít víc hlavních vět a vedlejší věta může viset na jiné vedlejší."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik vět má souvětí *Když zazvonilo, děti vyběhly ven a učitel zavřel okno, které bylo otevřené.*?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Je *Petr a Jana šli do kina.* souvětí?",
+      "options": [
+        "ne, je to věta jednoduchá",
+        "ano, má dvě věty"
+      ],
+      "answer": 0,
+      "explanation": "Má jen jedno sloveso – podmět je několikanásobný."
+    },
+    {
+      "type": "choice",
+      "question": "Kolik hlavních vět má souvětí *Prší a fouká, protože přišla bouřka.*?",
+      "options": [
+        "2",
+        "1",
+        "3"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Urči druh VV: *Táta četl noviny, které ráno koupil.*",
+      "options": [
+        "přívlastková",
+        "předmětná",
+        "časová"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Souvětí může mít víc hlavních vět.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Vedlejší věta může záviset na jiné vedlejší větě.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jaký poměr je mezi větami *Máma vařila a táta četl.*?",
+      "options": [
+        "slučovací",
+        "odporovací",
+        "důsledkový"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kolik čárek patří do souvětí *Když jsme přišli domů máma vařila a táta četl noviny které ráno koupil.*?",
+      "options": [
+        "2",
+        "1",
+        "3"
+      ],
+      "answer": 0,
+      "explanation": "Za *domů* a před *které*. Před slučovacím *a* ne."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď postup rozboru souvětí.",
+      "items": [
+        "spočítám slovesa v určitém tvaru",
+        "najdu hlavní věty",
+        "určím vedlejší věty otázkou",
+        "zakreslím schéma"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je věta vložená?",
+      "options": [
+        "věta vsunutá doprostřed jiné věty",
+        "věta na konci souvětí",
+        "věta bez slovesa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak postupuješ při rozboru složitějšího souvětí?",
+      "answer": "Spočítám slovesa v určitém tvaru (počet vět), najdu hlavní věty, z řídících vět se ptám na vedlejší a určím jejich druh. Nakonec zakreslím schéma."
+    },
+    {
+      "type": "open",
+      "question": "Rozeber souvětí *Když jsme přišli domů, máma vařila a táta četl noviny, které ráno koupil.*",
+      "answer": "Čtyři věty. Hlavní: máma vařila, táta četl noviny (slučovací poměr). VV časová: když jsme přišli domů. VV přívlastková: které ráno koupil (rozvíjí slovo noviny)."
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vychozi-text-vypravec",
+  "title": "Vypravěč, kompozice, jazyk textu",
+  "emoji": "🧭",
+  "explanations": [
+    {
+      "title": "Kdo vypráví?",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Stejný příběh může vyprávět hlavní hrdina („Utíkal jsem…“), nezúčastněný pozorovatel („Utíkal…“), nebo někdo, kdo vidí do hlavy všem postavám. Každá volba změní, co se čtenář dozví."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? U uměleckého výchozího textu v testu se skoro vždy ptají, kdo vypráví a jakou formou. A u ústní maturity to patří do rozboru knihy."
+        },
+        {
+          "type": "term",
+          "term": "Vypravěč",
+          "definition": "Ten, kdo v textu příběh vypráví. Není to totéž co autor.",
+          "example": "V *Malém princi* vypráví pilot, autorem je Antoine de Saint-Exupéry."
+        },
+        {
+          "type": "term",
+          "term": "Ich-forma",
+          "definition": "Vypravěč je postava příběhu a mluví v **1. osobě** (já).",
+          "example": "*Šel jsem domů a přemýšlel.*"
+        },
+        {
+          "type": "term",
+          "term": "Er-forma",
+          "definition": "Vypravěč stojí mimo děj a mluví o postavách ve **3. osobě** (on, ona).",
+          "example": "*Šel domů a přemýšlel.*"
+        },
+        {
+          "type": "term",
+          "term": "Vševědoucí vypravěč",
+          "definition": "Zná myšlenky a city všech postav, ví i to, co postavy nevědí.",
+          "example": "*Marie se usmívala, ale Petr netušil, že ho nenávidí.*"
+        },
+        {
+          "type": "term",
+          "term": "Personální vypravěč",
+          "definition": "Vypráví ve 3. osobě, ale vidí svět očima **jedné** postavy.",
+          "example": "Víme jen to, co ví a cítí Petr."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podívej se na slovesa: *šel jsem* (1. os.) → ich-forma; *šel* (3. os.) → er-forma.",
+            "U er-formy zjisti: zná vypravěč myšlenky víc postav? → **vševědoucí**.",
+            "Vidíme jen do hlavy jedné postavy? → **personální**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozřaď věty podle formy vyprávění."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "ich-forma",
+              "er-forma"
+            ],
+            "items": [
+              {
+                "text": "Šel jsem domů a přemýšlel.",
+                "group": 0
+              },
+              {
+                "text": "Šel domů a přemýšlel.",
+                "group": 1
+              },
+              {
+                "text": "Nikdy jsem nevěřil na zázraky.",
+                "group": 0
+              },
+              {
+                "text": "Marie zavřela okno.",
+                "group": 1
+              },
+              {
+                "text": "Vědělo se o něm, že lže.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "„Ráno jsem se probudil a nevěděl, kde jsem.“ Jaká forma?",
+          "answer": "Slovesa v 1. osobě (*probudil jsem se*) → **ich-forma**. Vypravěč je postava."
+        },
+        {
+          "type": "example",
+          "question": "„Jana se bála. Tomáš si myslel, že je jen unavená.“ Jaký vypravěč?",
+          "answer": "Er-forma a vypravěč zná myšlenky **dvou** postav (Jana, Tomáš) → **vševědoucí**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ich-forma znamená, že vypráví autor o sobě.",
+          "right": "Ich-forma znamená, že vypráví postava v 1. osobě – nemusí to být autor.",
+          "why": "Vypravěč je vymyšlená postava. Autor může psát „já“ za kohokoli – dítě, psa, vraha."
+        },
+        {
+          "type": "summary",
+          "text": "Ich-forma = vypravěč je postava (1. osoba). Er-forma = vypravěč mimo děj (3. osoba). Vševědoucí zná myšlenky všech, personální vidí očima jedné postavy."
+        }
+      ]
+    },
+    {
+      "title": "Kompozice a jazyk",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kromě vypravěče se v rozboru textu ptáme: **jak je příběh uspořádaný** a **jakým jazykem** je napsaný. Jestli jde děj po sobě, nebo skáče do minulosti. Jestli postavy mluví spisovně, nebo „pudu domů“."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? To jsou další standardní otázky k výchozímu textu i k ústní maturitě."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kompozice",
+          "definition": "Uspořádání textu – v jakém pořadí se události podávají.",
+          "example": "chronologická, retrospektivní"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kompozice",
+            "Jak funguje"
+          ],
+          "rows": [
+            [
+              "chronologická",
+              "děj jde v časovém sledu"
+            ],
+            [
+              "retrospektivní",
+              "začne později a vrací se do minulosti"
+            ],
+            [
+              "rámcová",
+              "příběh v příběhu (rámec)"
+            ],
+            [
+              "řetězová",
+              "volně navazující epizody"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řeč postav"
+        },
+        {
+          "type": "term",
+          "term": "Přímá řeč",
+          "definition": "Doslovná slova postavy v uvozovkách.",
+          "example": "„Půjdu,“ řekl."
+        },
+        {
+          "type": "term",
+          "term": "Nepřímá řeč",
+          "definition": "Vypravěč slova postavy přetlumočí, obvykle vedlejší větou.",
+          "example": "Řekl, že půjde."
+        },
+        {
+          "type": "term",
+          "term": "Polopřímá řeč",
+          "definition": "Myšlenky postavy ve 3. osobě, bez uvozovek a bez uvozovací věty. Splývá s textem vypravěče.",
+          "example": "Půjde. Proč by nešel?"
+        },
+        {
+          "type": "term",
+          "term": "Vnitřní monolog",
+          "definition": "Zachycení myšlenek postavy, jak jí běží hlavou.",
+          "example": "Mám jít? Nemám? Co když…"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti ukázku nebo pojem a urči, o co jde. Pak otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "„Půjdu,“ řekl.",
+                "back": "přímá řeč"
+              },
+              {
+                "front": "Řekl, že půjde.",
+                "back": "nepřímá řeč"
+              },
+              {
+                "front": "Půjde. Proč by nešel?",
+                "back": "polopřímá řeč"
+              },
+              {
+                "front": "pudu, dyť, vokno",
+                "back": "obecná čeština"
+              },
+              {
+                "front": "halapartna",
+                "back": "historismus (zaniklá věc)"
+              },
+              {
+                "front": "lučba",
+                "back": "archaismus (věc trvá, slovo zastaralo)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kniha začíná pohřbem hrdiny a pak vypráví jeho život od dětství. Jaká kompozice?",
+          "answer": "Začíná se koncem a vracíme se do minulosti → **retrospektivní**."
+        },
+        {
+          "type": "example",
+          "question": "„Neodejde. Proč by měl odcházet?“ Jaký typ řeči?",
+          "answer": "Myšlenky postavy ve 3. osobě, bez uvozovek a bez *řekl/pomyslel si* → **polopřímá** řeč."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Halapartna je archaismus.",
+          "right": "Halapartna je historismus.",
+          "why": "Zbraň halapartna už zanikla. Slovo pro zaniklou věc = historismus. Archaismus je staré slovo pro věc, která existuje dál (lučba = chemie)."
+        },
+        {
+          "type": "summary",
+          "text": "Kompozice: chronologická, retrospektivní, rámcová, řetězová. Řeč: přímá (uvozovky), nepřímá (že…), polopřímá (myšlenky ve 3. osobě bez uvozovek). Jazyk: spisovný × obecná čeština, archaismy, historismy, neologismy."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "„Ráno jsem se probudil a nevěděl, kde jsem.“ Jaká je forma vyprávění?",
+      "options": [
+        "er-forma",
+        "ich-forma",
+        "du-forma"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Vypravěč, který zná myšlenky všech postav, je…",
+      "options": [
+        "personální",
+        "vševědoucí",
+        "nespolehlivý"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Kompozice, která začíná koncem a vrací se zpět, je…",
+      "options": [
+        "chronologická",
+        "retrospektivní",
+        "řetězová"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Rámcová kompozice = příběh vložený do jiného příběhu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "„Neodejde. Proč by měl odcházet?“ – o jaký typ řeči jde?",
+      "options": [
+        "přímá",
+        "nepřímá",
+        "polopřímá"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "match",
+      "question": "Spoj jazykový prostředek s příkladem.",
+      "pairs": [
+        [
+          "historismus",
+          "halapartna"
+        ],
+        [
+          "obecná čeština",
+          "pudu domů"
+        ],
+        [
+          "slang",
+          "matika"
+        ],
+        [
+          "neologismus",
+          "nové slovo"
+        ]
+      ],
+      "explanation": "Archaismus = zastaralé slovo, historismus = zaniklá věc."
+    },
+    {
+      "type": "truefalse",
+      "question": "Er-forma znamená vyprávění ve 3. osobě.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co je vnitřní monolog?",
+      "options": [
+        "rozhovor dvou postav",
+        "zachycení myšlenek postavy",
+        "popis krajiny"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Text obsahuje „pudem“, „dyť“, „vokno“. Jde o…",
+      "options": [
+        "spisovnou češtinu",
+        "obecnou češtinu",
+        "odborný jazyk"
+      ],
+      "answer": 1,
+      "explanation": "Protetické v-, krácení – obecná čeština."
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá typ kompozice složený z volně navazujících epizod? (jedno slovo)",
+      "answers": [
+        "řetězová",
+        "epizodická"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak určíš typ vypravěče ve výchozím textu?",
+      "answer": "Podle osoby sloves: 1. osoba = ich-forma (vypravěč je postava), 3. osoba = er-forma. Pak sleduji, zda zná myšlenky všech postav (vševědoucí), nebo vidí svět jen očima jedné postavy (personální)."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi archaismem a historismem?",
+      "answer": "Archaismus je zastaralé slovo pro věc, která stále existuje (např. lučba = chemie). Historismus pojmenovává věc, která už zanikla (halapartna, robota)."
+    }
+  ]
+}

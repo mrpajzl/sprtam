@@ -1,0 +1,350 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zdravi",
+  "title": "Zdraví a hygiena",
+  "emoji": "🧼",
+  "explanations": [
+    {
+      "title": "Co je zdravé",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Auto potřebuje benzín, aby jelo. Tvoje tělo potřebuje jídlo a pití, abys mohl běhat, růst a učit se."
+        },
+        {
+          "type": "text",
+          "text": "Ne každé jídlo je ale pro tělo stejně dobré. Některé ti dá sílu. Jiné je dobré jen trochu."
+        },
+        {
+          "type": "term",
+          "term": "Zdraví",
+          "definition": "Když tě nic nebolí, máš sílu a dobře se cítíš.",
+          "example": "Zdravé dítě si může hrát a chodit do školy."
+        },
+        {
+          "type": "term",
+          "term": "Zdravé jídlo",
+          "definition": "Jídlo, které tělu dává sílu a pomáhá mu růst.",
+          "example": "Ovoce, zelenina, chléb, mléko, voda."
+        },
+        {
+          "type": "term",
+          "term": "Sladkosti",
+          "definition": "Jídla s hodně cukrem. Chutnají, ale kazí zuby. Jíme je jen trochu.",
+          "example": "Bonbony, čokoláda, limonáda."
+        },
+        {
+          "type": "heading",
+          "text": "Často, nebo jen trochu?"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď jídla: co můžeš jíst často a co jen trochu."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Často 🥕",
+              "Jen trochu 🍭"
+            ],
+            "items": [
+              {
+                "text": "jablko 🍎",
+                "group": 0
+              },
+              {
+                "text": "mrkev 🥕",
+                "group": 0
+              },
+              {
+                "text": "chléb 🍞",
+                "group": 0
+              },
+              {
+                "text": "voda 💧",
+                "group": 0
+              },
+              {
+                "text": "bonbony 🍬",
+                "group": 1
+              },
+              {
+                "text": "čokoláda 🍫",
+                "group": 1
+              },
+              {
+                "text": "limonáda 🥤",
+                "group": 1
+              },
+              {
+                "text": "hranolky 🍟",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Co ještě tělo potřebuje"
+        },
+        {
+          "type": "list",
+          "items": [
+            "pít hlavně **vodu** 💧",
+            "**hýbat se** – nejlépe venku ⚽",
+            "dost **spát** – malé dítě asi 10 hodin 😴"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Máš žízeň. Co si dáš: limonádu, nebo vodu?",
+          "answer": "Limonáda má hodně cukru. **Voda** uhasí žízeň a nekazí zuby. Vyberu vodu."
+        },
+        {
+          "type": "example",
+          "question": "Šimon jde spát v 8 večer a vstává v 6 ráno. Spí dost?",
+          "answer": "Od 8 do 6 je to **10 hodin**. To je pro malé dítě akorát."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Sladkosti jsou zakázané.",
+          "right": "Sladkosti můžu, ale jen trochu.",
+          "why": "Kousek čokolády nevadí. Škodí, když jich je moc a často."
+        },
+        {
+          "type": "summary",
+          "text": "Jím ovoce a zeleninu, piju vodu, hýbu se a dost spím. Sladkosti jen trochu."
+        }
+      ]
+    },
+    {
+      "title": "Čistota",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chytáš kliku, hračky, zábradlí. Na všem jsou malinkaté věci, které nevidíš. Říkáme jim bacily."
+        },
+        {
+          "type": "text",
+          "text": "Když se dostanou do pusy, můžeš onemocnět. Proto se myjeme. Mýdlo a voda bacily smyjí."
+        },
+        {
+          "type": "term",
+          "term": "Bacily",
+          "definition": "Maličcí tvorové, tak malí, že je nevidíš. Některé způsobují nemoci.",
+          "example": "Bacily na rukou po hraní venku."
+        },
+        {
+          "type": "term",
+          "term": "Hygiena",
+          "definition": "Všechno, co děláme pro čistotu těla: mytí, čištění zubů, čisté oblečení.",
+          "example": "Ranní mytí a čištění zubů je hygiena."
+        },
+        {
+          "type": "heading",
+          "text": "Jak si myju ruce"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Namočím ruce.",
+            "Namydlím je 🧼.",
+            "Dobře je promnu – i mezi prsty.",
+            "Opláchnu.",
+            "Utřu do ručníku."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ruce myju **po záchodě**, **před jídlem** a když přijdu zvenku."
+        },
+        {
+          "type": "heading",
+          "text": "Zuby"
+        },
+        {
+          "type": "text",
+          "text": "Zuby si čistím **aspoň 2× denně**: ráno a večer před spaním. Kartáček a pasta odstraní zbytky jídla."
+        },
+        {
+          "type": "heading",
+          "text": "Když kýchám"
+        },
+        {
+          "type": "text",
+          "text": "Při kýchání lítají bacily daleko. Dám si před pusu kapesník nebo loket."
+        },
+        {
+          "type": "heading",
+          "text": "Co je správně"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Správně ✅",
+              "Špatně ❌"
+            ],
+            "items": [
+              {
+                "text": "myju ruce před jídlem",
+                "group": 0
+              },
+              {
+                "text": "jím neumytýma rukama",
+                "group": 1
+              },
+              {
+                "text": "čistím zuby večer",
+                "group": 0
+              },
+              {
+                "text": "kýchám na kamaráda",
+                "group": 1
+              },
+              {
+                "text": "kýchám do kapesníku",
+                "group": 0
+              },
+              {
+                "text": "po záchodě ruce nemyju",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Přišel jsi ze hřiště a hned chceš svačinu. Co uděláš nejdřív?",
+          "answer": "Na rukou mám bacily ze hřiště. Nejdřív si **umyju ruce mýdlem**, pak jím."
+        },
+        {
+          "type": "example",
+          "question": "Kolikrát za den si čistím zuby?",
+          "answer": "**Aspoň 2×** – ráno po snídani a večer před spaním."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ruce jsou čisté, nic na nich nevidím.",
+          "right": "Ruce si stejně umyju mýdlem.",
+          "why": "Bacily jsou tak malé, že je nevidíš. Ruka může vypadat čistá a bacily na ní jsou."
+        },
+        {
+          "type": "heading",
+          "text": "Když jsem nemocný"
+        },
+        {
+          "type": "text",
+          "text": "Ležím v posteli, odpočívám a piju. Nechodím mezi děti, abych je nenakazil."
+        },
+        {
+          "type": "summary",
+          "text": "Ruce myju mýdlem po záchodě a před jídlem. Zuby čistím ráno a večer."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdy si myju ruce?",
+      "options": [
+        "před jídlem",
+        "jen v neděli",
+        "nikdy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je zdravější?",
+      "options": [
+        "jablko",
+        "bonbon",
+        "limonáda"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolikrát denně si čistím zuby? (číslo)",
+      "answers": [
+        "2",
+        "dvakrát"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Po záchodě si myju ruce.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Nejlepší pití je sladká limonáda.",
+      "answer": false,
+      "explanation": "Nejlepší pití je voda."
+    },
+    {
+      "type": "truefalse",
+      "question": "Když kýchám, dám si ruku nebo kapesník před pusu.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď mytí rukou.",
+      "items": [
+        "namočím",
+        "namydlím",
+        "opláchnu",
+        "utřu"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co dělám, když jsem nemocný?",
+      "options": [
+        "ležím v posteli",
+        "běžím ven",
+        "jdu do bazénu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kolik hodin by mělo spát malé dítě?",
+      "options": [
+        "asi 10 hodin",
+        "3 hodiny",
+        "20 hodin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Pohyb venku je zdravý.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Co děláš pro své zdraví?",
+      "answer": "Jím ovoce a zeleninu, piju vodu, myju si ruce, čistím zuby, hýbu se a dost spím."
+    },
+    {
+      "type": "open",
+      "question": "Proč si myjeme ruce?",
+      "answer": "Na rukou jsou bacily. Mýdlo je smyje, a tak nebudu nemocný."
+    }
+  ]
+}

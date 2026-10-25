@@ -1,0 +1,502 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "psp",
+  "title": "Periodická soustava prvků",
+  "emoji": "🗺️",
+  "explanations": [
+    {
+      "title": "Bloky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Periodická tabulka visí v každé učebně chemie. Není to jen seznam prvků – je to **mapa**. Z místa, kde prvek leží, poznáš, jak se chová, kolik má valenčních elektronů a jestli je to kov."
+        },
+        {
+          "type": "text",
+          "text": "Tabulku sestavil v roce 1869 ruský chemik **Dmitrij Ivanovič Mendělejev**. Nechal v ní dokonce prázdná místa pro prvky, které ještě nikdo neobjevil – a měl pravdu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Protonové číslo Z",
+          "definition": "Počet protonů v jádře atomu. Prvky jsou v tabulce seřazené podle Z.",
+          "example": "H má Z = 1, He Z = 2, Li Z = 3…"
+        },
+        {
+          "type": "term",
+          "term": "Perioda",
+          "definition": "**Vodorovný řádek** tabulky. Je jich 7. Číslo periody = číslo nejvyšší vrstvy, ve které má atom elektrony.",
+          "example": "Sodík je ve 3. periodě – jeho elektrony jsou až ve 3. vrstvě."
+        },
+        {
+          "type": "term",
+          "term": "Skupina",
+          "definition": "**Svislý sloupec** tabulky. Je jich 18. Prvky ve skupině mají podobné uspořádání valenčních elektronů, a proto podobné vlastnosti.",
+          "example": "Li, Na, K v 1. skupině – všechny bouřlivě reagují s vodou."
+        },
+        {
+          "type": "term",
+          "term": "Valenční elektrony",
+          "definition": "Elektrony v nejvyšší vrstvě atomu. Účastní se chemických reakcí."
+        },
+        {
+          "type": "term",
+          "term": "Orbitaly s, p, d, f",
+          "definition": "Typy „místeček“ pro elektrony v obalu. Do s se vejdou 2 elektrony, do p 6, do d 10, do f 14."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka je složená z bloků"
+        },
+        {
+          "type": "text",
+          "text": "Podle toho, který typ orbitalu se v atomu zaplňuje jako poslední, se tabulka dělí na **4 bloky**. Šířka bloku odpovídá počtu elektronů, které se do orbitalu vejdou: s 2 sloupce, p 6, d 10, f 14."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Blok",
+            "Skupiny",
+            "Příklady"
+          ],
+          "rows": [
+            [
+              "s",
+              "1, 2 (+ He)",
+              "Na, Ca"
+            ],
+            [
+              "p",
+              "13–18",
+              "C, O, Cl"
+            ],
+            [
+              "d",
+              "3–12",
+              "Fe, Cu, Zn"
+            ],
+            [
+              "f",
+              "lanthanoidy, aktinoidy (dva řádky dole)",
+              "Ce, U"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď prvky do bloků. Pomůže ti číslo skupiny: 1–2 je s, 3–12 je d, 13–18 je p."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "s-prvek",
+              "p-prvek",
+              "d-prvek"
+            ],
+            "items": [
+              {
+                "text": "K",
+                "group": 0
+              },
+              {
+                "text": "Mg",
+                "group": 0
+              },
+              {
+                "text": "Li",
+                "group": 0
+              },
+              {
+                "text": "S",
+                "group": 1
+              },
+              {
+                "text": "Al",
+                "group": 1
+              },
+              {
+                "text": "Br",
+                "group": 1
+              },
+              {
+                "text": "Cr",
+                "group": 2
+              },
+              {
+                "text": "Ag",
+                "group": 2
+              },
+              {
+                "text": "Mn",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Co z polohy vyčteš"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Perioda** = číslo valenční vrstvy.",
+            "**Skupina 1 a 2**: počet valenčních elektronů = číslo skupiny.",
+            "**Skupina 13–18**: počet valenčních elektronů = číslo skupiny − 10 (helium má jen 2)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Prvek má konfiguraci [Ne] 3s² 3p². Kde leží?",
+          "answer": "Nejvyšší vrstva je 3 → **3. perioda**. Poslední se plní p → **p-blok**. Valenčních elektronů 2 + 2 = 4 → skupina 4 + 10 = **14**. Je to křemík Si."
+        },
+        {
+          "type": "example",
+          "question": "Kolik valenčních elektronů mají halogeny (17. skupina)?",
+          "answer": "17 − 10 = **7**. Proto snadno přijmou jeden elektron a tvoří anionty F⁻, Cl⁻."
+        },
+        {
+          "type": "heading",
+          "text": "Jména skupin"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Název"
+          ],
+          "rows": [
+            [
+              "1 (bez vodíku)",
+              "alkalické kovy"
+            ],
+            [
+              "2",
+              "kovy alkalických zemin"
+            ],
+            [
+              "16",
+              "chalkogeny"
+            ],
+            [
+              "17",
+              "halogeny"
+            ],
+            [
+              "18",
+              "vzácné plyny"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Trendy v kostce"
+        },
+        {
+          "type": "term",
+          "term": "Elektronegativita",
+          "definition": "Schopnost atomu přitahovat k sobě elektrony ve vazbě. Roste **doprava a nahoru** – nejvyšší má fluor."
+        },
+        {
+          "type": "text",
+          "text": "Atomový poloměr naopak roste **doleva a dolů** – největší atomy jsou vlevo dole (cesium)."
+        },
+        {
+          "type": "term",
+          "term": "Periodický zákon",
+          "definition": "Vlastnosti prvků se periodicky opakují v závislosti na protonovém čísle. Příčina: periodicky se opakuje podobné uspořádání valenčních elektronů."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Číslo periody = počet valenčních elektronů.",
+          "right": "Číslo periody = číslo **valenční vrstvy**. Počet valenčních elektronů určuje **skupina**.",
+          "why": "Sodík i chlor jsou ve 3. periodě, ale sodík má 1 valenční elektron a chlor 7."
+        },
+        {
+          "type": "summary",
+          "text": "Perioda = valenční vrstva, skupina = podobné valenční elektrony. Bloky s, p, d, f podle posledního zaplňovaného orbitalu. Elektronegativita roste doprava nahoru, poloměr doleva dolů."
+        }
+      ]
+    },
+    {
+      "title": "Trendy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč je fluor nejagresivnější prvek a cesium tak reaktivní kov, že vybuchne ve vodě? Obojí se dá předpovědět jen z polohy v tabulce – bez učení nazpaměť."
+        },
+        {
+          "type": "text",
+          "text": "Stačí pochopit dvě věci: jak daleko jsou valenční elektrony od jádra a jak silně je jádro přitahuje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Periodická soustava prvků (PSP)",
+          "definition": "Tabulka, kde jsou prvky seřazené podle protonového čísla Z (počtu protonů). Řádky = **periody** (číslo = počet elektronových vrstev), sloupce = **skupiny** (podobné valenční elektrony)."
+        },
+        {
+          "type": "term",
+          "term": "Valenční elektrony",
+          "definition": "Elektrony v nejvzdálenější vrstvě. Jsou nejslaběji vázané a účastní se vazeb."
+        },
+        {
+          "type": "term",
+          "term": "Atomový poloměr",
+          "definition": "Velikost atomu – vzdálenost od jádra k vnějšímu okraji obalu."
+        },
+        {
+          "type": "term",
+          "term": "Ionizační energie",
+          "definition": "Energie potřebná k **odtržení** elektronu z atomu. Malá = atom elektron snadno ztratí (typické pro kovy)."
+        },
+        {
+          "type": "term",
+          "term": "Elektronegativita X",
+          "definition": "Schopnost atomu přitahovat elektrony ve vazbě. Bezrozměrné číslo (Paulingova stupnice), fluor má asi 4,0."
+        },
+        {
+          "type": "term",
+          "term": "Kovový charakter",
+          "definition": "Jak moc se prvek chová jako kov – ochotně odevzdává elektrony a tvoří kationty."
+        },
+        {
+          "type": "heading",
+          "text": "Proč se vlastnosti mění"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**V periodě zleva doprava** přibývají protony v jádře, ale elektrony jdou do **stejné** vrstvy.",
+            "Silnější jádro přitáhne obal víc k sobě → atom se **zmenšuje**.",
+            "Elektrony jsou držené pevněji → ionizační energie a elektronegativita **rostou**.",
+            "**Ve skupině shora dolů** přibývají vrstvy → atom je **větší**.",
+            "Valenční elektrony jsou dál od jádra a stíněné vnitřními vrstvami → snáz se odtrhnou → ionizační energie a elektronegativita **klesají**, kovový charakter roste."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Elektronegativita a ionizační energie: rostou **doprava a nahoru** (maximum F).",
+            "Atomový poloměr a kovový charakter: rostou **doleva a dolů** (maximum Cs, Fr)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Podívej se na čísla"
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje elektronegativitu prvků 3. periody. Sleduj, jak roste zleva doprava – od sodíku po chlor."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "X (Pauling)",
+            "items": [
+              {
+                "label": "Na",
+                "value": 0.93
+              },
+              {
+                "label": "Mg",
+                "value": 1.31
+              },
+              {
+                "label": "Al",
+                "value": 1.61
+              },
+              {
+                "label": "Si",
+                "value": 1.9
+              },
+              {
+                "label": "P",
+                "value": 2.19
+              },
+              {
+                "label": "S",
+                "value": 2.58
+              },
+              {
+                "label": "Cl",
+                "value": 3.16
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Který atom je větší: Na, nebo Cl?",
+          "answer": "Oba jsou ve 3. periodě (stejný počet vrstev). Cl má o 6 protonů víc → přitahuje obal silněji → je **menší**. Větší je **Na**."
+        },
+        {
+          "type": "example",
+          "question": "Který atom je největší: Li, Na, K, nebo Cs?",
+          "answer": "Všechny jsou v 1. skupině. Shora dolů přibývají vrstvy: Li (2), Na (3), K (4), Cs (6). Největší je **Cs**."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď podle rostoucí elektronegativity: F, Na, P, Al, Cl.",
+          "answer": "Na, Al, P, Cl jsou ve 3. periodě → rostou zleva doprava. F je nad Cl → ještě vyšší. Pořadí: **Na < Al < P < Cl < F**."
+        },
+        {
+          "type": "heading",
+          "text": "Periodický zákon"
+        },
+        {
+          "type": "term",
+          "term": "Periodický zákon",
+          "definition": "Vlastnosti prvků jsou periodickou funkcí jejich protonového čísla. Platí proto, že se periodicky opakuje podobná konfigurace valenčních elektronů. Sestavil ho **D. I. Mendělejev (1869)**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Atomový poloměr ve skupině shora dolů klesá, protože jádro je těžší.",
+          "right": "Poloměr ve skupině shora dolů **roste**.",
+          "why": "S každou periodou přibude jedna elektronová vrstva. Ta zvětší atom víc, než ho stáhne větší náboj jádra."
+        },
+        {
+          "type": "summary",
+          "text": "Doprava a nahoru roste elektronegativita a ionizační energie (max. F). Doleva a dolů roste poloměr a kovový charakter (max. Cs). Příčina: náboj jádra a počet vrstev."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který prvek má největší elektronegativitu?",
+      "options": [
+        "F",
+        "O",
+        "Cl",
+        "Cs"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který atom má největší poloměr?",
+      "options": [
+        "Cs",
+        "Na",
+        "Li",
+        "K"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Do kterého bloku patří železo?",
+      "options": [
+        "d",
+        "s",
+        "p",
+        "f"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik valenčních elektronů mají prvky 17. skupiny?",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Ve které periodě je prvek s konfigurací [Ne] 3s² 3p²?",
+      "answers": [
+        "3",
+        "třetí"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ionizační energie v periodě zleva doprava obecně roste.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Atomový poloměr ve skupině shora dolů klesá.",
+      "answer": false,
+      "explanation": "Přibývají vrstvy, poloměr roste."
+    },
+    {
+      "type": "match",
+      "question": "Spoj skupinu s triviálním názvem.",
+      "pairs": [
+        [
+          "1. skupina (bez H)",
+          "alkalické kovy"
+        ],
+        [
+          "2. skupina",
+          "kovy alkalických zemin"
+        ],
+        [
+          "16. skupina",
+          "chalkogeny"
+        ],
+        [
+          "17. skupina",
+          "halogeny"
+        ],
+        [
+          "18. skupina",
+          "vzácné plyny"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď podle rostoucí elektronegativity.",
+      "items": [
+        "Na",
+        "Al",
+        "P",
+        "Cl",
+        "F"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo sestavil první periodickou tabulku (1869)?",
+      "options": [
+        "D. I. Mendělejev",
+        "J. Dalton",
+        "E. Rutherford",
+        "N. Bohr"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Formuluj periodický zákon a vysvětli, proč platí.",
+      "answer": "Vlastnosti prvků jsou periodickou funkcí protonového čísla. Příčinou je periodické opakování podobné konfigurace valenčních elektronů."
+    },
+    {
+      "type": "open",
+      "question": "Jak se mění elektronegativita a atomový poloměr v PSP?",
+      "answer": "Elektronegativita roste v periodě zleva doprava a ve skupině zdola nahoru. Poloměr se mění opačně – roste doleva a dolů."
+    }
+  ]
+}

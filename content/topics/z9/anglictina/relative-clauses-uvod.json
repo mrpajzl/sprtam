@@ -1,0 +1,404 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "relative-clauses-uvod",
+  "title": "Who, which, that, where",
+  "emoji": "🔗",
+  "explanations": [
+    {
+      "title": "Hádankou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hraješ hádanky: „Je to **člověk, který** léčí zuby.“ – zubař. „Je to **věc, která** chladí jídlo.“ – lednička. „Je to **místo, kde** si půjčuješ knihy.“ – knihovna."
+        },
+        {
+          "type": "text",
+          "text": "Slova *který, která, kde* připojují k osobě, věci nebo místu bližší popis. Anglicky jsou to **who, which, that, where**. Díky nim vysvětlíš i slovo, které anglicky neznáš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Slovo pro osobu, věc, zvíře nebo místo.",
+          "example": "a person, a machine, a dog, a place"
+        },
+        {
+          "type": "term",
+          "term": "Vztažná věta",
+          "definition": "Kousek věty, který blíž popisuje podstatné jméno před sebou. Česky začíná slovem *který, která, které, kde*.",
+          "example": "člověk, *který léčí zuby*"
+        },
+        {
+          "type": "term",
+          "term": "Vztažné zájmeno",
+          "definition": "Slovo, kterým vztažná věta začíná.",
+          "example": "who, which, that, where"
+        },
+        {
+          "type": "heading",
+          "text": "Kdo, co, kde"
+        },
+        {
+          "type": "table",
+          "head": [
+            "O čem mluvíš",
+            "Slovo",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "člověk",
+              "who (nebo that)",
+              "A dentist is a person **who** looks after teeth."
+            ],
+            [
+              "věc, zvíře",
+              "which (nebo that)",
+              "A fridge is a machine **which** keeps food cold."
+            ],
+            [
+              "místo",
+              "where",
+              "A library is a place **where** you can borrow books."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "*That* je univerzální – hodí se k lidem i věcem. Pro místo, kde se něco děje, je ale *where*."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď, ke kterému slovu patří *who*, *which* nebo *where*."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "who",
+              "which",
+              "where"
+            ],
+            "items": [
+              {
+                "text": "a teacher",
+                "group": 0
+              },
+              {
+                "text": "a pilot",
+                "group": 0
+              },
+              {
+                "text": "my sister",
+                "group": 0
+              },
+              {
+                "text": "a book",
+                "group": 1
+              },
+              {
+                "text": "a dog",
+                "group": 1
+              },
+              {
+                "text": "a phone",
+                "group": 1
+              },
+              {
+                "text": "a café (we met there)",
+                "group": 2
+              },
+              {
+                "text": "a school (I study there)",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Vysvětli anglicky slovo *pilot*.",
+          "answer": "Pilot je člověk → *who*: *A pilot is a person who flies planes.*"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: I lost the book ___ you gave me.",
+          "answer": "Kniha je věc → *which* (nebo *that*): *I lost the book which you gave me.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "This is the boy which broke the window.",
+          "right": "This is the boy who broke the window.",
+          "why": "Kluk je člověk, proto *who* (nebo *that*). *Which* je pro věci a zvířata."
+        },
+        {
+          "type": "summary",
+          "text": "Člověk → **who**, věc a zvíře → **which**, místo → **where**. **That** jde k lidem i věcem."
+        }
+      ]
+    },
+    {
+      "title": "Spojováním vět",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Místo dvou krátkých vět „To je ta holka. Vyhrála závod.“ můžeš říct jednu: „To je ta holka, **která** vyhrála závod.“ Zní to plynule a dospěleji."
+        },
+        {
+          "type": "text",
+          "text": "Anglicky to uděláš pomocí *who, which, that, where*. Naučíš se dvě věty slepit do jedné krok za krokem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Skupina slov, která dává smysl a obvykle má sloveso.",
+          "example": "She won the race."
+        },
+        {
+          "type": "term",
+          "term": "Vztažná věta",
+          "definition": "Věta, která se „přilepí“ k podstatnému jménu (osobě, věci, místu) a blíž ho popíše.",
+          "example": "the girl *who won the race*"
+        },
+        {
+          "type": "term",
+          "term": "who / which / that / where",
+          "definition": "Lepidla. *who* = který (o lidech), *which* = který (o věcech a zvířatech), *that* = který (o lidech i věcech), *where* = kde.",
+          "example": "the café where we met = kavárna, kde jsme se potkali"
+        },
+        {
+          "type": "heading",
+          "text": "Postup lepení"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Dvě věty: *She is the girl. She won.*",
+            "Najdi, co mají společné: *the girl* = *she*.",
+            "Ve druhé větě nahraď *she* správným lepidlem. Holka je člověk → *who*.",
+            "Slep: *She is the girl who won.*"
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Dvě věty",
+            "Jedna věta"
+          ],
+          "rows": [
+            [
+              "This is the café. We met there.",
+              "This is the café **where** we met."
+            ],
+            [
+              "A fridge is a machine. It keeps food cold.",
+              "A fridge is a machine **that** keeps food cold."
+            ],
+            [
+              "The dog lives next door. It barks a lot.",
+              "The dog **which** lives next door barks a lot."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň správné lepidlo. Ptej se: člověk, věc, nebo místo?"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "This is the boy",
+                "after": "broke the window.",
+                "options": [
+                  "who",
+                  "which",
+                  "where"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "This is the café",
+                "after": "we met.",
+                "options": [
+                  "where",
+                  "which",
+                  "who"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "A fridge is a machine",
+                "after": "keeps food cold.",
+                "options": [
+                  "that",
+                  "where",
+                  "who"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Slep: A library is a place. You can borrow books there.",
+          "answer": "*There* (tam) ukazuje na místo → *where*: *A library is a place where you can borrow books.*"
+        },
+        {
+          "type": "example",
+          "question": "Slep: The dog lives next door. It is very old.",
+          "answer": "Pes je zvíře → *which* (nebo *that*): *The dog which lives next door is very old.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "This is the café where we met there.",
+          "right": "This is the café where we met.",
+          "why": "*Where* už znamená „kde“. Slovo *there* (tam) při lepení vypadne – jinak by tam místo bylo dvakrát."
+        },
+        {
+          "type": "summary",
+          "text": "Slep dvě věty: společné slovo nahraď **who** (lidé), **which** (věci, zvířata), **that** (obojí) nebo **where** (místo)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "This is the boy ___ broke the window.",
+      "options": [
+        "who",
+        "which",
+        "where"
+      ],
+      "answer": 0,
+      "explanation": "boy = člověk."
+    },
+    {
+      "type": "choice",
+      "question": "I lost the book ___ you gave me.",
+      "options": [
+        "which",
+        "who",
+        "where"
+      ],
+      "answer": 0,
+      "explanation": "book = věc."
+    },
+    {
+      "type": "choice",
+      "question": "This is the café ___ we met.",
+      "options": [
+        "where",
+        "which",
+        "who"
+      ],
+      "answer": 0,
+      "explanation": "Místo, kde se něco stalo → where."
+    },
+    {
+      "type": "truefalse",
+      "question": "„that“ můžeme použít pro lidi i pro věci.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„The dog who lives next door…“ je ve školní angličtině preferovaná varianta.",
+      "answer": false,
+      "explanation": "Pro zvířata používáme which nebo that."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: A pilot is a person ___ flies planes.",
+      "answers": [
+        "who",
+        "that"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: A library is a place ___ you can borrow books.",
+      "answers": [
+        "where"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "a person",
+          "who"
+        ],
+        [
+          "a thing",
+          "which"
+        ],
+        [
+          "a place",
+          "where"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "She",
+        "is",
+        "the",
+        "girl",
+        "who",
+        "won."
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "A fridge is a machine ___ keeps food cold.",
+      "options": [
+        "that",
+        "where",
+        "who"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Kdy použiješ who, which a where?",
+      "answer": "Who pro lidi, which pro věci a zvířata, where pro místa. That jde použít pro lidi i věci."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli anglicky jednou větou, co je „dentist“.",
+      "answer": "A dentist is a person who looks after people’s teeth."
+    }
+  ]
+}

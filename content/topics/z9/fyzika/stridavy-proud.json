@@ -1,0 +1,340 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stridavy-proud",
+  "title": "Střídavý proud",
+  "emoji": "〰️",
+  "explanations": [
+    {
+      "title": "Tam a zpět",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Baterie i zásuvka dávají elektřinu. Ale je to jiná elektřina. V baterii teče proud pořád jedním směrem. V zásuvce se směr proudu stále mění – tam a zpátky, padesátkrát za sekundu."
+        },
+        {
+          "type": "text",
+          "text": "Proč to tak je? Protože takový proud se snadno vyrábí v elektrárnách a dobře se přenáší na velké vzdálenosti."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektrický proud",
+          "definition": "Pohyb nabitých částic (elektronů) vodičem. Měří se v ampérech (A).",
+          "example": "Proud teče drátem k lampičce."
+        },
+        {
+          "type": "term",
+          "term": "Stejnosměrný proud",
+          "definition": "Teče **stále jedním směrem**, od + k −.",
+          "example": "Baterie, akumulátor v mobilu, solární panel."
+        },
+        {
+          "type": "term",
+          "term": "Střídavý proud",
+          "definition": "Pravidelně **mění směr** – chvíli teče jedním směrem, chvíli opačným.",
+          "example": "Proud ze zásuvky."
+        },
+        {
+          "type": "term",
+          "term": "Alternátor",
+          "definition": "Generátor v elektrárně: točí se v něm magnet uvnitř cívek. Při otáčení se v cívkách mění magnetické pole a vzniká střídavý proud.",
+          "example": "Alternátor roztáčí pára, voda nebo vítr."
+        },
+        {
+          "type": "heading",
+          "text": "Proč se proud střídá"
+        },
+        {
+          "type": "text",
+          "text": "Magnet v alternátoru se točí. K cívce se otáčí jednou severním pólem, pak jižním. Proto proud teče jednou jedním a pak druhým směrem. Jedna otáčka = jedno celé „tam a zpět“ = jeden **kmit**."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta z elektrárny domů"
+        },
+        {
+          "type": "text",
+          "text": "Klikej na kroky a sleduj, kudy elektřina putuje."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "elektrárna: alternátor",
+              "transformátor zvýší napětí",
+              "dálkové vedení",
+              "transformátor sníží napětí",
+              "zásuvka 230 V"
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Transformátor",
+          "definition": "Přístroj, který střídavé napětí zvýší nebo sníží.",
+          "example": "Trafostanice u vesnice snižuje napětí z vedení."
+        },
+        {
+          "type": "text",
+          "text": "Proč se napětí na vedení zvyšuje až na stovky tisíc voltů? Při vysokém napětí stačí přenést stejnou energii **menším proudem**. A menší proud méně zahřívá dráty – ztratí se méně energie."
+        },
+        {
+          "type": "example",
+          "question": "Jaký proud dává baterie a jaký zásuvka?",
+          "answer": "Baterie **stejnosměrný** (stále jedním směrem). Zásuvka **střídavý** (mění směr)."
+        },
+        {
+          "type": "example",
+          "question": "Proč nabíječka mobilu něco „předělává“?",
+          "answer": "Mobil potřebuje malé **stejnosměrné** napětí (kolem 5 V). Nabíječka sníží napětí ze zásuvky a změní střídavý proud na stejnosměrný."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Elektřina se přenáší vysokým napětím, aby byla rychlejší.",
+          "right": "Vysoké napětí znamená menší proud a menší ztráty teplem.",
+          "why": "Rychlost tu nehraje roli. Dráty se proudem zahřívají – čím menší proud, tím menší ztráta."
+        },
+        {
+          "type": "summary",
+          "text": "Stejnosměrný proud teče jedním směrem (baterie), střídavý mění směr (zásuvka). Vyrábí ho alternátor; přenáší se vysokým napětím kvůli menším ztrátám."
+        }
+      ]
+    },
+    {
+      "title": "Čísly",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na nabíječce je napsáno „230 V ~ 50 Hz“. Vlnovka znamená střídavý proud a 50 Hz říká, jak rychle se střídá. Naučíš se tyto údaje přečíst a spočítat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Střídavý proud",
+          "definition": "Proud, který pravidelně mění směr. Zakreslen v grafu vypadá jako vlnovka.",
+          "example": "Proud v zásuvce."
+        },
+        {
+          "type": "term",
+          "term": "Kmit",
+          "definition": "Jedno celé opakování: proud jde tam, pak zpátky a je zase na začátku.",
+          "example": "Jako jedno celé zhoupnutí houpačky tam a zpět."
+        },
+        {
+          "type": "term",
+          "term": "Perioda `T`",
+          "definition": "Jak dlouho trvá **jeden kmit**. V sekundách (s).",
+          "example": "V síti ČR 0,02 s."
+        },
+        {
+          "type": "term",
+          "term": "Frekvence `f`",
+          "definition": "Kolik kmitů proběhne **za 1 sekundu**. Jednotka **hertz (Hz)**: 1 Hz = 1 kmit za sekundu.",
+          "example": "V síti ČR 50 Hz."
+        },
+        {
+          "type": "term",
+          "term": "Efektivní napětí",
+          "definition": "Napětí střídavého proudu se pořád mění. Efektivní hodnota říká, jakému stálému napětí odpovídá svými účinky (hřeje stejně).",
+          "example": "V zásuvce je efektivní napětí 230 V."
+        },
+        {
+          "type": "heading",
+          "text": "Vztah periody a frekvence"
+        },
+        {
+          "type": "text",
+          "text": "Když trvá jeden kmit 0,02 s, kolik jich stihne za 1 s? 1 : 0,02 = 50. Proto `f = 1 : T` a naopak `T = 1 : f`."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Veličina",
+            "Značka",
+            "Jednotka",
+            "V síti ČR"
+          ],
+          "rows": [
+            [
+              "frekvence",
+              "f",
+              "Hz",
+              "50 Hz"
+            ],
+            [
+              "perioda",
+              "T",
+              "s",
+              "0,02 s"
+            ],
+            [
+              "efektivní napětí",
+              "U",
+              "V",
+              "230 V"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jaká je perioda střídavého proudu 50 Hz?",
+          "answer": "T = 1 : f = 1 : 50 = **0,02 s**."
+        },
+        {
+          "type": "example",
+          "question": "Perioda je 0,01 s. Jaká je frekvence?",
+          "answer": "f = 1 : T = 1 : 0,01 = **100 Hz**."
+        },
+        {
+          "type": "example",
+          "question": "Kolikrát za sekundu se v síti 50 Hz zopakuje celý kmit?",
+          "answer": "**50krát** – přesně to frekvence 50 Hz znamená."
+        },
+        {
+          "type": "heading",
+          "text": "Přenos elektřiny"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Alternátor** v elektrárně vyrobí střídavý proud.",
+            "**Zvyšovací transformátor** zvýší napětí (na stovky tisíc voltů).",
+            "**Dálkové vedení** přenese elektřinu přes celou zemi.",
+            "**Snižovací transformátory** napětí postupně sníží.",
+            "Do **zásuvky** dorazí 230 V."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "50 Hz znamená, že kmit trvá 50 sekund.",
+          "right": "50 Hz = 50 kmitů za sekundu, jeden trvá 0,02 s.",
+          "why": "Frekvence je počet kmitů za sekundu, perioda je doba jednoho kmitu. Jsou to převrácené hodnoty."
+        },
+        {
+          "type": "summary",
+          "text": "Frekvence f (Hz) = počet kmitů za sekundu, perioda T (s) = doba jednoho kmitu, `f = 1 : T`. V ČR 230 V a 50 Hz."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jaká je frekvence střídavého proudu v síti ČR v Hz?",
+      "answers": [
+        "50"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jaká je perioda střídavého proudu 50 Hz v sekundách?",
+      "answers": [
+        "0,02"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký proud dává baterie?",
+      "options": [
+        "stejnosměrný",
+        "střídavý",
+        "oba"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Střídavý proud se vyrábí v alternátorech elektráren.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Proč se elektřina přenáší dálkovým vedením při velmi vysokém napětí?",
+      "options": [
+        "při menším proudu jsou menší ztráty teplem",
+        "aby byla rychlejší",
+        "aby se nezkratovala",
+        "kvůli bleskům"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Perioda je 0,01 s. Frekvence v Hz =",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu s jednotkou.",
+      "pairs": [
+        [
+          "frekvence",
+          "Hz"
+        ],
+        [
+          "perioda",
+          "s"
+        ],
+        [
+          "napětí",
+          "V"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "V zásuvce v ČR je efektivní napětí 230 V.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kolikrát za sekundu se v síti 50 Hz zopakuje celý kmit?",
+      "options": [
+        "50×",
+        "100×",
+        "230×",
+        "1×"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď cestu elektřiny z elektrárny domů.",
+      "items": [
+        "alternátor",
+        "zvyšovací transformátor",
+        "dálkové vedení",
+        "snižovací transformátor",
+        "zásuvka"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi stejnosměrným a střídavým proudem?",
+      "answer": "Stejnosměrný teče stále jedním směrem (baterie). Střídavý pravidelně mění směr, v ČR 50× za sekundu (zásuvka)."
+    },
+    {
+      "type": "open",
+      "question": "Popiš cestu elektřiny z elektrárny do zásuvky.",
+      "answer": "Alternátor vyrobí proud, transformátor zvýší napětí, dálkovým vedením se přenese, snižovací transformátory ho sníží na 230 V do zásuvek."
+    }
+  ]
+}

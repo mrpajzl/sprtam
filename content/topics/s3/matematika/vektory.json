@@ -1,0 +1,372 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vektory",
+  "title": "Vektory",
+  "emoji": "➡️",
+  "explanations": [
+    {
+      "title": "Šipky a cesty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mapa pokladu: „Od dubu 3 kroky na východ a 4 na sever.“ Nezáleží, kde přesně dub stojí – pokyn říká **směr a vzdálenost**. Takový pokyn je vektor."
+        },
+        {
+          "type": "text",
+          "text": "Vektory popisují posunutí, rychlost větru, sílu, kterou táhneš kufr. Používá je fyzika, navigace, počítačové hry (pohyb postavy) i robotika."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vektor",
+          "definition": "Šipka, která má **směr** a **délku**. Nezáleží, kde začíná – stejné šipky posunuté jinam jsou stejný vektor. Zapisujeme souřadnicemi: u = (3; 4) = 3 doprava, 4 nahoru.",
+          "example": "Pokyn k pokladu je vektor (3; 4)."
+        },
+        {
+          "type": "term",
+          "term": "Vektor AB",
+          "definition": "Šipka z bodu A do bodu B. Souřadnice: **koncový bod minus počáteční**, AB = B − A.",
+          "example": "A[1; 2], B[4; 6]: AB = (4 − 1; 6 − 2) = (3; 4)."
+        },
+        {
+          "type": "term",
+          "term": "Velikost |u|",
+          "definition": "Délka šipky. Podle Pythagorovy věty |u| = √(u₁² + u₂²).",
+          "example": "|(3; 4)| = √(9 + 16) = 5."
+        },
+        {
+          "type": "text",
+          "text": "Vektor (3; 4) je přepona pravoúhlého trojúhelníku s odvěsnami 3 a 4. Zkontroluj si délku na obrázku. Pak zkus (6; 8) – délka vyjde 10."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 3,
+            "b": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Skládání cest"
+        },
+        {
+          "type": "text",
+          "text": "**Sčítání**: nejdřív jdi podle u, pak podle v. Výsledek je jedna šipka od začátku do konce: (1; 2) + (3; −1) = (4; 1). Sčítáš zvlášť x a zvlášť y."
+        },
+        {
+          "type": "text",
+          "text": "**Násobení číslem**: 2 · (1; 2) = (2; 4) – stejný směr, dvojnásobná délka. Vektory, z nichž jeden je násobkem druhého, leží na rovnoběžkách – jsou **kolineární**."
+        },
+        {
+          "type": "example",
+          "question": "A[2; 4], B[6; 8]. Kde je střed úsečky AB?",
+          "answer": "Střed je „průměr“ bodů: [(2 + 6)/2; (4 + 8)/2] = **[4; 6]**."
+        },
+        {
+          "type": "heading",
+          "text": "Skalární součin: jak moc míří stejně"
+        },
+        {
+          "type": "term",
+          "term": "Skalární součin u · v",
+          "definition": "Číslo u₁v₁ + u₂v₂. Je velký, když šipky míří podobně, nula, když jsou **kolmé**, a záporný, když míří proti sobě.",
+          "example": "(1; 2) · (3; −1) = 3 − 2 = 1."
+        },
+        {
+          "type": "example",
+          "question": "Který vektor je kolmý k (2; −1): (1; 2), nebo (2; 1)?",
+          "answer": "(2; −1) · (1; 2) = 2 − 2 = 0 → **kolmý**. (2; −1) · (2; 1) = 4 − 1 = 3 ≠ 0 → kolmý není."
+        },
+        {
+          "type": "text",
+          "text": "Ze skalárního součinu spočítáš i úhel: cos φ = (u · v) / (|u| · |v|)."
+        },
+        {
+          "type": "example",
+          "question": "Úhel vektorů u = (1; 0) a v = (1; 1)?",
+          "answer": "u · v = 1. |u| = 1, |v| = √2. cos φ = 1/√2 = √2/2 → **φ = 45°**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "AB = A − B",
+          "right": "AB = B − A",
+          "why": "Vektor říká, jak se dostat z A do B: kolik přidat k A, abys byl v B. To je „cíl minus start“."
+        },
+        {
+          "type": "text",
+          "text": "V prostoru má vektor tři souřadnice a velikost √(u₁² + u₂² + u₃²). Například |(1; 2; 2)| = √9 = 3."
+        },
+        {
+          "type": "summary",
+          "text": "Vektor = směr + délka. AB = B − A, |u| = √(u₁² + u₂²). Skalární součin u₁v₁ + u₂v₂ je 0 právě pro kolmé vektory."
+        }
+      ]
+    },
+    {
+      "title": "Souřadnicemi",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Počítač nevidí obrázky – vidí čísla. Aby hra spočítala, jestli střela trefí cíl, nebo GPS, kterým směrem jedeš, převádí se geometrie na **výpočty se souřadnicemi**. Vektory jsou k tomu základní nástroj."
+        },
+        {
+          "type": "text",
+          "text": "Tady je přehled všech operací s vektory jako recepty."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Souřadnice bodu",
+          "definition": "A[a₁; a₂] – poloha bodu v rovině (vodorovně; svisle). V prostoru přibude třetí souřadnice."
+        },
+        {
+          "type": "term",
+          "term": "Vektor",
+          "definition": "Posunutí o určitý kus daným směrem, zapsané u = (u₁; u₂). Kulaté závorky = vektor, hranaté = bod."
+        },
+        {
+          "type": "term",
+          "term": "Kolineární vektory",
+          "definition": "Jeden je násobkem druhého (leží na rovnoběžných přímkách).",
+          "example": "(2; 4) = 2 · (1; 2) → kolineární."
+        },
+        {
+          "type": "heading",
+          "text": "Recepty"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Co",
+            "Vzorec",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "vektor AB",
+              "B − A = (b₁ − a₁; b₂ − a₂)",
+              "A[1; 2], B[4; 6] → (3; 4)"
+            ],
+            [
+              "velikost",
+              "|u| = √(u₁² + u₂²)",
+              "|(6; 8)| = 10"
+            ],
+            [
+              "střed úsečky AB",
+              "[(a₁ + b₁)/2; (a₂ + b₂)/2]",
+              "A[2; 4], B[6; 8] → [4; 6]"
+            ],
+            [
+              "součet",
+              "(u₁ + v₁; u₂ + v₂)",
+              "(1; 2) + (3; −1) = (4; 1)"
+            ],
+            [
+              "násobek",
+              "k · u = (ku₁; ku₂)",
+              "2 · (1; 2) = (2; 4)"
+            ],
+            [
+              "skalární součin",
+              "u₁v₁ + u₂v₂",
+              "(1; 2) · (3; −1) = 1"
+            ],
+            [
+              "úhel",
+              "cos φ = u · v / (|u| · |v|)",
+              "(1; 0), (1; 1) → 45°"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vzdálenost dvou bodů"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej vektor AB = B − A.",
+            "Spočítej jeho velikost |AB| = √(rozdíl x² + rozdíl y²).",
+            "To je délka úsečky AB."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "A[1; 2], B[4; 6]. Jak je dlouhá úsečka AB?",
+          "answer": "AB = (3; 4). |AB| = √(9 + 16) = √25 = **5**."
+        },
+        {
+          "type": "text",
+          "text": "Ten výpočet je čistá Pythagorova věta: rozdíl x a rozdíl y jsou odvěsny. Nastav 6 a 8 – vyjde |(6; 8)| = 10."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 6,
+            "b": 8
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kolmost a úhel"
+        },
+        {
+          "type": "term",
+          "term": "Skalární součin",
+          "definition": "Číslo u · v = u₁v₁ + u₂v₂ = |u| · |v| · cos φ, kde φ je úhel vektorů. Pro kolmé vektory je cos 90° = 0, proto u · v = 0."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kolmost: spočítej u · v. Vyšla 0 → kolmé.",
+            "Úhel: spočítej u · v, |u|, |v| a dosaď do cos φ = u · v / (|u| · |v|).",
+            "Z hodnoty cos φ urči úhel (tabulka nebo kalkulačka)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "u = (1; 2), v = (3; −1). Spočítej u · v. Jsou kolmé?",
+          "answer": "1 · 3 + 2 · (−1) = 3 − 2 = **1**. Není to 0, takže kolmé nejsou."
+        },
+        {
+          "type": "example",
+          "question": "Najdi vektor kolmý k (2; −1).",
+          "answer": "Trik: prohoď souřadnice a u jedné změň znaménko → (1; 2). Kontrola: 2 · 1 + (−1) · 2 = 0 ✓."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Skalární součin (1; 2) · (3; −1) = (3; −2)",
+          "right": "(1; 2) · (3; −1) = 3 + (−2) = 1",
+          "why": "Výsledkem skalárního součinu je **číslo** (skalár), ne vektor. Součiny souřadnic se ještě sečtou."
+        },
+        {
+          "type": "text",
+          "text": "V prostoru stejně, jen se třemi souřadnicemi: |(1; 2; 2)| = √(1 + 4 + 4) = 3."
+        },
+        {
+          "type": "summary",
+          "text": "AB = B − A, |u| = √(u₁² + u₂²), střed = průměr souřadnic. u · v = u₁v₁ + u₂v₂ je číslo; u · v = 0 ⇔ vektory jsou kolmé."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "A[1; 2], B[4; 6]. Vektor AB =",
+      "options": [
+        "(3; 4)",
+        "(5; 8)",
+        "(−3; −4)",
+        "(4; 3)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "A[1; 2], B[4; 6]. |AB| =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "A[2; 4], B[6; 8]. x-ová souřadnice středu úsečky AB =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "u = (1; 2), v = (3; −1). u·v =",
+      "answers": [
+        "1"
+      ],
+      "explanation": "3 − 2"
+    },
+    {
+      "type": "truefalse",
+      "question": "Nenulové vektory jsou kolmé, právě když je jejich skalární součin 0.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který vektor je kolmý k (2; −1)?",
+      "options": [
+        "(1; 2)",
+        "(2; 1)",
+        "(−2; 1)",
+        "(1; −2)"
+      ],
+      "answer": 0,
+      "explanation": "2 · 1 + (−1) · 2 = 0"
+    },
+    {
+      "type": "input",
+      "question": "|u| pro u = (6; 8) =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Úhel vektorů u = (1; 0) a v = (1; 1) (°) =",
+      "answers": [
+        "45"
+      ],
+      "explanation": "cos φ = 1/√2"
+    },
+    {
+      "type": "choice",
+      "question": "(1; 2) + (3; −1) =",
+      "options": [
+        "(4; 1)",
+        "(4; 3)",
+        "(3; −2)",
+        "(2; 1)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vektory (2; 4) a (1; 2) jsou kolineární.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "|u| pro u = (1; 2; 2) =",
+      "answers": [
+        "3"
+      ],
+      "explanation": "√(1 + 4 + 4)"
+    },
+    {
+      "type": "open",
+      "question": "Co je skalární součin a k čemu slouží?",
+      "answer": "u·v = u₁v₁ + u₂v₂ (= |u|·|v|·cos φ). Výsledkem je číslo. Slouží k výpočtu úhlu vektorů a k ověření kolmosti (u·v = 0)."
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš velikost vektoru AB ze souřadnic bodů?",
+      "answer": "Spočítám souřadnice AB = B − A a pak |AB| = √((b₁ − a₁)² + (b₂ − a₂)²) – je to Pythagorova věta."
+    }
+  ]
+}

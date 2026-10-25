@@ -1,0 +1,388 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rozbor-dila-maturita",
+  "title": "Rozbor díla k ústní maturitě",
+  "emoji": "🎓",
+  "explanations": [
+    {
+      "title": "Tři roviny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "U ústní maturity z češtiny si vytáhneš číslo knihy ze svého seznamu a dostaneš **výňatek** (úryvek) z ní. Máš 20 minut na přípravu a asi 15 minut na odpověď. Zkoušející nechce slyšet převyprávěný děj – chce vidět, že knize **rozumíš**."
+        },
+        {
+          "type": "text",
+          "text": "Dobrá zpráva: každý rozbor má stejnou kostru. Stačí ji jednou pochopit a pak ji použiješ na jakoukoli knihu – Máj, Švejka i Gatsbyho."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Výňatek",
+          "definition": "Úryvek z díla, který dostaneš u zkoušky a podle kterého začínáš.",
+          "example": "Jedna strana z Ostře sledovaných vlaků."
+        },
+        {
+          "type": "term",
+          "term": "Téma",
+          "definition": "**O čem** dílo je – hlavní myšlenka nebo předmět celého díla.",
+          "example": "Romeo, Julie a tma: láska v době nacistického teroru."
+        },
+        {
+          "type": "term",
+          "term": "Motiv",
+          "definition": "Menší, často opakovaný prvek, ze kterého se téma skládá.",
+          "example": "motiv tmy, úkrytu, strachu, smrti"
+        },
+        {
+          "type": "term",
+          "term": "Časoprostor",
+          "definition": "**Kdy a kde** se děj odehrává.",
+          "example": "Praha, jaro 1942."
+        },
+        {
+          "type": "term",
+          "term": "Kompozice",
+          "definition": "Jak je dílo **poskládané**: pořadí událostí a částí.",
+          "example": "**Chronologická** (po sobě, jak šly), **retrospektivní** (vrací se do minulosti), **rámcová** (příběh v příběhu)."
+        },
+        {
+          "type": "term",
+          "term": "Kontext",
+          "definition": "Souvislosti kolem díla: **život autora, doba, literární směr, další díla**.",
+          "example": "Máj: romantismus, 1836, Mácha zemřel ve 25 letech."
+        },
+        {
+          "type": "heading",
+          "text": "Tři roviny rozboru"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rovina",
+            "Na co se ptá",
+            "Co sem patří"
+          ],
+          "rows": [
+            [
+              "literární (dílo jako celek)",
+              "O čem a jak je dílo postavené?",
+              "téma, motivy, časoprostor, kompozice, druh a žánr, vypravěč, postavy"
+            ],
+            [
+              "jazyková (výňatek)",
+              "Jak je napsaný úryvek?",
+              "spisovný/hovorový jazyk, tropy a figury, typy promluv"
+            ],
+            [
+              "kontext",
+              "Kdo, kdy a proč to napsal?",
+              "život autora, doba, literární směr, další díla"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Připomenutí pojmů z jazyka: **tropy** = slova v přeneseném významu (metafora = přenesení podle podobnosti, „zub času“); **figury** = hra s pořadím a opakováním slov (anafora = opakování na začátku veršů). **Typy promluv** = přímá řeč, nepřímá řeč, vnitřní monolog."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď, do které roviny rozboru položka patří."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "literární složka",
+              "jazyková složka",
+              "kontext"
+            ],
+            "items": [
+              {
+                "text": "téma a motivy",
+                "group": 0
+              },
+              {
+                "text": "časoprostor",
+                "group": 0
+              },
+              {
+                "text": "vypravěč, postavy",
+                "group": 0
+              },
+              {
+                "text": "tropy a figury",
+                "group": 1
+              },
+              {
+                "text": "typy promluv",
+                "group": 1
+              },
+              {
+                "text": "život autora",
+                "group": 2
+              },
+              {
+                "text": "literární směr",
+                "group": 2
+              },
+              {
+                "text": "další díla autora",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Urči téma a dva motivy Máchova Máje.",
+          "answer": "Téma (o čem celé dílo je): **vina, smrt a pomíjivost lidského života** proti krásné přírodě. Motivy (menší prvky): motiv **noci a jezera**, motiv **vězení**, motiv **nicoty**. Téma je „velké“, motivy jsou kousky, ze kterých se skládá."
+        },
+        {
+          "type": "example",
+          "question": "Kniha začíná dnem popravy hrdiny a pak se vrací do jeho dětství. Jaká je kompozice?",
+          "answer": "Děj nejde po sobě od začátku, ale skočí zpět do minulosti → **retrospektivní** kompozice."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Téma a motiv je totéž.",
+          "right": "**Téma** je hlavní myšlenka celého díla. **Motivy** jsou menší opakující se prvky, ze kterých se téma skládá.",
+          "why": "Téma Romea, Julie a tmy je láska za heydrichiády. Motivy jsou tma, úkryt, strach, rádio s hlášením poprav."
+        },
+        {
+          "type": "summary",
+          "text": "Rozbor má tři roviny: literární (téma, motivy, časoprostor, kompozice, druh a žánr, vypravěč, postavy), jazykovou (výňatek: jazyk, tropy, figury, promluvy) a kontext (autor, doba, směr, další díla)."
+        }
+      ]
+    },
+    {
+      "title": "Osnova",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pilot před startem prochází **kontrolní seznam** – bod po bodu, aby na nic nezapomněl. Rozbor díla u maturity je stejný: máš osnovu, jdeš bod po bodu a nic nevynecháš. Nervozita pak tolik nevadí."
+        },
+        {
+          "type": "text",
+          "text": "Tady dostaneš osnovu krok za krokem a hned ji vyzkoušíme na skutečném díle – Hrabalových Ostře sledovaných vlacích."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Literární druh",
+          "definition": "Tři velké skupiny: **lyrika** (pocity), **epika** (vypravěč vypráví děj), **drama** (děj hraný na jevišti).",
+          "example": "Román patří do epiky."
+        },
+        {
+          "type": "term",
+          "term": "Žánr",
+          "definition": "Konkrétní typ díla uvnitř druhu.",
+          "example": "Epika: román, novela, povídka. Lyrika: óda, elegie. Drama: tragédie, komedie."
+        },
+        {
+          "type": "term",
+          "term": "Novela a román",
+          "definition": "**Novela** je kratší, má jednu hlavní dějovou linii a často pointu (překvapivý závěr). **Román** je delší, má víc postav a dějových linií.",
+          "example": "Ostře sledované vlaky = novela. Válka s mloky = román."
+        },
+        {
+          "type": "term",
+          "term": "Ich-forma a er-forma",
+          "definition": "**Ich-forma** = vypráví postava v 1. osobě („já“). **Er-forma** = vypravěč mimo děj ve 3. osobě („on“).",
+          "example": "Miloš Hrma vypráví v ich-formě."
+        },
+        {
+          "type": "heading",
+          "text": "Osnova krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Zasazení výňatku** do děje – co se stalo předtím a potom.",
+            "**Téma a motivy** – o čem dílo je.",
+            "**Časoprostor** – kdy a kde.",
+            "**Kompozice** – chronologická, retrospektivní, rámcová…",
+            "**Literární druh a žánr** – lyrika/epika/drama; román, novela, povídka…",
+            "**Vypravěč a postavy** – ich/er-forma, charakteristika hlavních postav.",
+            "**Jazyk výňatku** – spisovný/hovorový, tropy a figury, typy řeči.",
+            "**Kontext** – autor, doba, směr, další díla."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kolečko rozboru"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kroky a projdi kolečko: vždy začínáš u výňatku, rozšíříš na celé dílo, vrátíš se k jazyku výňatku a skončíš u autora a doby."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "výňatek",
+              "dílo",
+              "jazyk",
+              "autor a doba"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Projdi osnovu na Ostře sledovaných vlacích (stručně).",
+          "answer": "Téma: dospívání a hrdinství za války. Časoprostor: 1945, malé nádraží. Kompozice: chronologická s návraty do minulosti. Druh a žánr: epika, novela. Vypravěč: ich-forma, Miloš Hrma. Jazyk: hovorový, humor i tragika, dlouhá souvětí. Kontext: Bohumil Hrabal, 60. léta, film Jiřího Menzela (Oscar)."
+        },
+        {
+          "type": "example",
+          "question": "Ve výňatku stojí: „Slunce se usmívalo na kolejích.“ Jak to okomentuješ v jazykové části?",
+          "answer": "Slunce se nemůže usmívat – dostává lidskou vlastnost → **personifikace** (trop). Dodej proč: vytváří klidnou, laskavou atmosféru před dramatickou událostí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rozbor = převyprávět celý děj knihy.",
+          "right": "Děj stačí shrnout krátce. Hlavní je **vysvětlit**: téma, kompozici, postavy, jazyk a kontext – vždy s konkrétním příkladem z díla.",
+          "why": "Zkoušející chce vidět, že dílu rozumíš, ne že si pamatuješ obsah. Ke každému tvrzení přidej příklad."
+        },
+        {
+          "type": "summary",
+          "text": "Osnova: výňatek → téma a motivy → časoprostor → kompozice → druh a žánr → vypravěč a postavy → jazyk → kontext. Ke každému tvrzení dej konkrétní příklad z díla."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je téma díla?",
+      "options": [
+        "místo děje",
+        "to, o čem dílo pojednává",
+        "jméno vypravěče"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Časoprostor znamená…",
+      "options": [
+        "kdy a kde se děj odehrává",
+        "délku knihy",
+        "počet kapitol"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Motiv je menší tematická jednotka (např. motiv cesty, smrti).",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj literární druh se žánrem.",
+      "pairs": [
+        [
+          "epika",
+          "román"
+        ],
+        [
+          "lyrika",
+          "óda"
+        ],
+        [
+          "drama",
+          "tragédie"
+        ],
+        [
+          "epika",
+          "povídka"
+        ]
+      ],
+      "explanation": "Jeden druh může mít víc žánrů."
+    },
+    {
+      "type": "choice",
+      "question": "Kam patří „život autora a jeho další díla“?",
+      "options": [
+        "jazyková rovina",
+        "literárněhistorický kontext",
+        "kompozice"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Rozdíl mezi novelou a románem:",
+      "options": [
+        "novela je kratší, s jednou dějovou linií a pointou",
+        "novela je vždy veršem",
+        "román nemá postavy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve výňatku se hodnotí i jazykové prostředky (metafora, přirovnání, archaismy).",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá kompozice, kdy se děj vrací do minulosti? (jedno slovo)",
+      "answers": [
+        "retrospektivní",
+        "retrospektiva"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď doporučený postup rozboru.",
+      "items": [
+        "zasadit výňatek do děje",
+        "téma a kompozice",
+        "postavy a vypravěč",
+        "jazyk výňatku",
+        "kontext autora a doby"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je metafora?",
+      "options": [
+        "přenesení pojmenování na základě podobnosti",
+        "opakování slova na začátku verše",
+        "nadsázka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Rozeber podle osnovy jedno dílo ze svého seznamu četby (stručně).",
+      "answer": "Např. Hrabal – Ostře sledované vlaky: téma dospívání a hrdinství za války; časoprostor 1945, malé nádraží; kompozice chronologická s retrospektivou; epika, novela; ich-forma, vypravěč Miloš Hrma; jazyk hovorový, humor i tragika; kontext – 60. léta, Hrabal, film Jiřího Menzela."
+    },
+    {
+      "type": "open",
+      "question": "Jak rozlišíš téma a motiv?",
+      "answer": "Téma je hlavní myšlenka nebo předmět celého díla (např. láska za války). Motivy jsou menší opakující se prvky, z nichž se téma skládá (motiv tmy, úkrytu, smrti)."
+    }
+  ]
+}

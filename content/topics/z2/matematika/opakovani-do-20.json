@@ -1,0 +1,367 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "opakovani-do-20",
+  "title": "Sčítání a odčítání do 20",
+  "emoji": "🌉",
+  "generator": "sub20",
+  "explanations": [
+    {
+      "title": "Přes desítku",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš 7 kartiček a dostaneš 6. Kolik jich máš? Výsledek je víc než 10, takže prsty nestačí."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se spolehlivý trik: **nejdřív dojdi na 10, pak pokračuj**. S desítkou se počítá nejsnáz. Budeš ho potřebovat i u větších čísel."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desítka",
+          "definition": "Deset kusů pohromadě. Číslo 10.",
+          "example": "13 = 1 desítka a 3 jednotky (volné kusy)."
+        },
+        {
+          "type": "term",
+          "term": "Přechod přes desítku",
+          "definition": "Při počítání „přejdeš“ přes číslo 10.",
+          "example": "7 + 6 = 13: z 7 jdeš přes 10 až na 13."
+        },
+        {
+          "type": "term",
+          "term": "Rozložit číslo",
+          "definition": "Rozdělit ho na dvě menší čísla.",
+          "example": "6 = 3 + 3, 7 = 4 + 3"
+        },
+        {
+          "type": "heading",
+          "text": "Kamarádi desítky"
+        },
+        {
+          "type": "text",
+          "text": "Tyhle dvojice dají vždy 10. Když je znáš zpaměti, trik je hračka."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Číslo",
+            "Do 10 chybí"
+          ],
+          "rows": [
+            [
+              "9",
+              "1"
+            ],
+            [
+              "8",
+              "2"
+            ],
+            [
+              "7",
+              "3"
+            ],
+            [
+              "6",
+              "4"
+            ],
+            [
+              "5",
+              "5"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání: 7 + 6"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kolik chybí 7 do 10? **3**.",
+            "Šestku rozlož: 6 = **3** + **3**.",
+            "7 + 3 = **10**.",
+            "10 + 3 = **13**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Žabka stojí na 7 a skočí o 6. Spočítej, kolik skoků je do 10 a kolik za 10."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "start": 7,
+            "hop": 6
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Odčítání: 14 − 9"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kolik uberu, abych byl na 10? **4**.",
+            "Devítku rozlož: 9 = **4** + **5**.",
+            "14 − 4 = **10**.",
+            "10 − 5 = **5**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "9 + 6 =",
+          "answer": "Devítce chybí 1. Šestka = 1 + 5. 9 + 1 = 10, 10 + 5 = **15**."
+        },
+        {
+          "type": "example",
+          "question": "12 − 5 =",
+          "answer": "Na 10 uberu 2. Pětka = 2 + 3. 12 − 2 = 10, 10 − 3 = **7**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "11 − 3 = 9",
+          "right": "11 − 3 = **8**",
+          "why": "Na 10 uberu jen 1. Pak zbývá ubrat ještě 2: 10 − 2 = 8. Kontrola: 8 + 3 = 11."
+        },
+        {
+          "type": "summary",
+          "text": "Rozlož druhé číslo tak, abys nejdřív trefil desítku. Pak přidej nebo uber zbytek."
+        }
+      ]
+    },
+    {
+      "title": "Dvojčata",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Do krabice dáš 8 autíček a pak dalších 5. Je jich 13. Teď 5 vyndáš. Kolik jich zůstane? Zase 8 – vrátil ses na začátek."
+        },
+        {
+          "type": "text",
+          "text": "Sčítání a odčítání jsou jako **dvojčata**. Jedno přidává, druhé ubírá to samé zpátky. Když znáš jedno, znáš i druhé. A můžeš si tak každý výsledek zkontrolovat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sčítání (+)",
+          "definition": "Přidávání. Dáváš věci dohromady.",
+          "example": "8 + 5 = 13"
+        },
+        {
+          "type": "term",
+          "term": "Odčítání (−)",
+          "definition": "Ubírání. Bereš věci pryč.",
+          "example": "13 − 5 = 8"
+        },
+        {
+          "type": "term",
+          "term": "Rodina příkladů",
+          "definition": "Čtyři příklady ze stejných tří čísel – dva na plus a dva na mínus.",
+          "example": "Z čísel 8, 5 a 13: 8 + 5 = 13, 5 + 8 = 13, 13 − 5 = 8, 13 − 8 = 5."
+        },
+        {
+          "type": "heading",
+          "text": "Jak rodina vznikne"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "8 + 5 = 13",
+            "↔",
+            "13 − 5 = 8"
+          ],
+          "caption": "Co přidáš, to zase ubereš."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Největší číslo (výsledek sčítání) je vždy „celek“: **13**.",
+            "Dvě menší čísla jsou „části“: **8** a **5**.",
+            "Plus: část + část = celek.",
+            "Mínus: celek − jedna část = druhá část."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Na kartičce je příklad na plus. Zkus říct jeho dvojče na mínus. Pak kartičku otoč a zkontroluj se."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "9 + 4 = 13",
+                "back": "13 − 4 = 9"
+              },
+              {
+                "front": "6 + 8 = 14",
+                "back": "14 − 8 = 6"
+              },
+              {
+                "front": "7 + 9 = 16",
+                "back": "16 − 9 = 7"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "16 − 7 = ?",
+          "answer": "Hledám: 7 + ? = 16. Vím, že 7 + 9 = 16. Takže **16 − 7 = 9**."
+        },
+        {
+          "type": "example",
+          "question": "Víš, že 9 + 7 = 16. Které dva příklady na mínus z toho plynou?",
+          "answer": "Celek 16, části 9 a 7. **16 − 7 = 9** a **16 − 9 = 7**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "8 + 5 = 13, tak 13 − 8 = 13.",
+          "right": "13 − 8 = **5**",
+          "why": "Když od celku odebereš jednu část, zbude ta **druhá** část. Celek nemůže zůstat stejný, něco jsi přece ubral."
+        },
+        {
+          "type": "summary",
+          "text": "Když znáš plus, znáš i mínus: 8 + 5 = 13, takže 13 − 5 = 8 a 13 − 8 = 5."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "9 + 6 =",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "8 + 8 =",
+      "answers": [
+        "16"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "7 + 4 =",
+      "answers": [
+        "11"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "14 − 9 =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "16 − 7 =",
+      "answers": [
+        "9"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "12 − 5 =",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "6 + 7 =",
+      "options": [
+        "12",
+        "13",
+        "14"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "17 − 8 =",
+      "options": [
+        "9",
+        "11",
+        "8"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "5 + 9 = 14",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "11 − 3 = 9",
+      "answer": false,
+      "explanation": "11 − 1 = 10, 10 − 2 = 8."
+    },
+    {
+      "type": "match",
+      "question": "Spoj se stejným výsledkem.",
+      "pairs": [
+        [
+          "9 + 2",
+          "11"
+        ],
+        [
+          "8 + 4",
+          "12"
+        ],
+        [
+          "7 + 8",
+          "15"
+        ],
+        [
+          "9 + 8",
+          "17"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, jak sečteš 8 + 5 přes desítku.",
+      "answer": "8 doplním do 10 dvojkou, z pětky zbydou 3. 10 + 3 = 13."
+    },
+    {
+      "type": "open",
+      "question": "Víš, že 9 + 7 = 16. Které dva příklady na odčítání z toho plynou?",
+      "answer": "16 − 7 = 9 a 16 − 9 = 7."
+    }
+  ]
+}

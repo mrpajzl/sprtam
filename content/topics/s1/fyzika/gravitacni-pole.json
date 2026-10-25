@@ -1,0 +1,371 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "gravitacni-pole",
+  "title": "Gravitační pole",
+  "emoji": "🌍",
+  "explanations": [
+    {
+      "title": "Měsíc a jablko",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jablko spadne ze stromu na zem. Měsíc nespadne – obíhá Zemi už miliardy let. Isaac Newton si položil otázku: není to vlastně stejný jev? Odpověď zní ano, a z ní vyrostla celá kosmonautika."
+        },
+        {
+          "type": "text",
+          "text": "Díky tomu umíme vypustit družice pro GPS a počasí, poslat sondu k Marsu a spočítat, jak dlouho trvá rok na Jupiteru."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Gravitace (gravitační síla)",
+          "definition": "Přitažlivá síla mezi každými dvěma tělesy, která mají hmotnost. Je tím větší, čím jsou tělesa hmotnější a čím jsou blíž u sebe.",
+          "example": "Země přitahuje tebe a ty přitahuješ Zemi. Mezi dvěma lidmi je síla nepatrná, u planet obrovská."
+        },
+        {
+          "type": "term",
+          "term": "Gravitační pole",
+          "definition": "Prostor kolem tělesa, ve kterém na jiná tělesa působí jeho gravitace.",
+          "example": "Gravitační pole Země sahá i k Měsíci."
+        },
+        {
+          "type": "term",
+          "term": "Družice",
+          "definition": "Těleso, které obíhá kolem planety. Přirozená je Měsíc, umělé vypouštějí lidé.",
+          "example": "Mezinárodní vesmírná stanice ISS obíhá asi 400 km nad Zemí."
+        },
+        {
+          "type": "heading",
+          "text": "Proč Měsíc nespadne"
+        },
+        {
+          "type": "text",
+          "text": "Představ si dělo na vysoké hoře. Vystřelíš kouli vodorovně – dopadne kousek dál. Silněji – dopadne dál. Při určité rychlosti koule padá stejně rychle, jako se pod ní zakřivuje povrch Země. Nikdy nedopadne – **obíhá**."
+        },
+        {
+          "type": "text",
+          "text": "Měsíc i družice pořád padají k Zemi, ale letí bokem tak rychle, že ji neustále míjejí."
+        },
+        {
+          "type": "term",
+          "term": "Kosmické rychlosti",
+          "definition": "**1. kosmická** (7,9 km/s): rychlost na kruhové dráze těsně u povrchu Země. **2. kosmická** (11,2 km/s): úniková – těleso od Země odletí navždy. **3. kosmická** (16,7 km/s): opustí i Sluneční soustavu."
+        },
+        {
+          "type": "text",
+          "text": "Porovnej sloupce. 7,9 km/s je asi 28 000 km/h – z Prahy do Brna za necelou půlminutu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "km/s",
+            "items": [
+              {
+                "label": "1. kosmická (kruhová)",
+                "value": 7.9
+              },
+              {
+                "label": "2. kosmická (úniková)",
+                "value": 11.2
+              },
+              {
+                "label": "3. kosmická (ze Sluneční soustavy)",
+                "value": 16.7
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Čím dál, tím slaběji"
+        },
+        {
+          "type": "text",
+          "text": "Gravitační síla slábne se **druhou mocninou vzdálenosti**. Dvakrát dál = 2² = 4× slabší. Třikrát dál = 9× slabší. Je to jako světlo baterky – rozprostře se na čím dál větší plochu."
+        },
+        {
+          "type": "example",
+          "question": "Jak se změní gravitační síla mezi dvěma tělesy, když vzdálenost zdvojnásobíme?",
+          "answer": "Síla závisí na 1/r². Dvojnásobná vzdálenost → 2² = 4 → síla se **zmenší 4×**."
+        },
+        {
+          "type": "example",
+          "question": "Jak se změní síla, když hmotnost jednoho tělesa zdvojnásobíme?",
+          "answer": "Síla je přímo úměrná hmotnosti → **zvětší se 2×**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Astronauti na ISS se vznášejí, protože tam už gravitace nepůsobí.",
+          "right": "Gravitace tam působí skoro stejně silně jako na zemi (asi 90 %). Astronauti jsou v beztíži, protože spolu se stanicí neustále padají kolem Země.",
+          "why": "Když padáš spolu s místností, nic tě netlačí do podlahy – stejně jako v padajícím výtahu. To je beztíže, ne chybějící gravitace."
+        },
+        {
+          "type": "term",
+          "term": "Geostacionární družice",
+          "definition": "Družice nad rovníkem, která oběhne Zemi přesně za jeden den (asi 24 h). Z povrchu se zdá, že stojí na místě.",
+          "example": "Družice pro satelitní televizi – parabola na střeše míří stále stejným směrem."
+        },
+        {
+          "type": "heading",
+          "text": "Jak obíhají planety"
+        },
+        {
+          "type": "term",
+          "term": "Keplerovy zákony",
+          "definition": "Tři pravidla pro pohyb planet: 1. obíhají po **elipsách** (ováloch), Slunce je v jednom ohnisku; 2. blízko Slunce (v přísluní) letí rychleji než daleko (v odsluní); 3. čím dál od Slunce, tím déle trvá oběh: `T² = a³` (T v letech, a = průměrná vzdálenost v astronomických jednotkách, 1 au ≈ 150 milionů km).",
+          "example": "Planeta ve vzdálenosti 4 au: T² = 64, T = 8 let."
+        },
+        {
+          "type": "term",
+          "term": "Intenzita gravitačního pole",
+          "definition": "Jak silně pole táhne každý kilogram: síla děleno hmotnost, jednotka **N/kg**. U povrchu Země asi 9,8 N/kg."
+        },
+        {
+          "type": "summary",
+          "text": "Gravitace přitahuje všechna tělesa s hmotností a slábne s druhou mocninou vzdálenosti. Družice obíhá, protože padá a zároveň letí bokem – u Země rychlostí 7,9 km/s."
+        }
+      ]
+    },
+    {
+      "title": "Zákony",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Astronomové po staletí zapisovali, kde jsou na obloze planety. Johannes Kepler z těch čísel kolem roku 1600 vyčetl tři pravidla. Isaac Newton pak ukázal, že všechna plynou z jediného zákona gravitace."
+        },
+        {
+          "type": "text",
+          "text": "Podle těchto zákonů dnes NASA i ESA plánují dráhy sond a družic."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Gravitační síla F_g",
+          "definition": "Přitažlivá síla mezi dvěma tělesy s hmotností. Jednotka newton (N)."
+        },
+        {
+          "type": "term",
+          "term": "Gravitační konstanta κ (kappa)",
+          "definition": "Číslo, které je pro celý vesmír stejné: `κ = 6,67 · 10⁻¹¹ N·m²·kg⁻²`. Je nepatrné, proto gravitaci mezi běžnými věcmi necítíme."
+        },
+        {
+          "type": "term",
+          "term": "Intenzita gravitačního pole K",
+          "definition": "Gravitační síla na každý 1 kg tělesa: `K = F_g / m`. Jednotka **N/kg**. U povrchu Země asi 9,8 N/kg.",
+          "example": "Těleso 5 kg u povrchu Země: F = 5 · 9,8 = 49 N."
+        },
+        {
+          "type": "term",
+          "term": "Elipsa a ohnisko",
+          "definition": "Elipsa je „protáhlá kružnice“, ovál. Má dva význačné body uvnitř – **ohniska**. Kružnice je elipsa, jejíž ohniska splynula ve středu."
+        },
+        {
+          "type": "term",
+          "term": "Velká poloosa a",
+          "definition": "Polovina nejdelšího průměru elipsy – „průměrná vzdálenost“ planety od Slunce."
+        },
+        {
+          "type": "term",
+          "term": "Astronomická jednotka (au)",
+          "definition": "Střední vzdálenost Země od Slunce, asi 150 milionů km.",
+          "example": "Mars má velkou poloosu asi 1,5 au."
+        },
+        {
+          "type": "heading",
+          "text": "Newtonův gravitační zákon"
+        },
+        {
+          "type": "text",
+          "text": "`F_g = κ · m₁ · m₂ / r²`. Síla roste s hmotnostmi obou těles a klesá s druhou mocninou vzdálenosti r jejich středů."
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje, kolik zbude ze síly, když vzdálenost zvětšuješ. Všimni si, jak rychle síla klesá."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "% síly",
+            "items": [
+              {
+                "label": "r",
+                "value": 100
+              },
+              {
+                "label": "2r",
+                "value": 25
+              },
+              {
+                "label": "3r",
+                "value": 11.1
+              },
+              {
+                "label": "4r",
+                "value": 6.25
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Tři Keplerovy zákony"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "1. Planety obíhají po **elipsách**, Slunce je v jednom ohnisku.",
+            "2. Spojnice planeta–Slunce (průvodič) opíše za stejný čas stejnou plochu. Proto planeta blízko Slunce (v **přísluní**) letí rychleji než daleko (v **odsluní**).",
+            "3. Druhá mocnina doby oběhu je úměrná třetí mocnině velké poloosy. Měříme-li T v letech a a v au, platí `T² = a³`."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Planeta má velkou poloosu 4 au. Jak dlouho obíhá kolem Slunce?",
+          "answer": "T² = a³ = 4³ = 64. T = √64 = **8 let**."
+        },
+        {
+          "type": "example",
+          "question": "Jak se změní gravitační síla, když se vzdálenost ztrojnásobí?",
+          "answer": "Síla závisí na 1/r²: 3² = 9. Síla se **zmenší 9×**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dvojnásobná vzdálenost = poloviční gravitační síla.",
+          "right": "Dvojnásobná vzdálenost = čtvrtinová síla.",
+          "why": "Ve vzorci je r², ne r. Vzdálenost se umocní: 2² = 4."
+        },
+        {
+          "type": "text",
+          "text": "Kosmické rychlosti u Země: 1. (kruhová u povrchu) 7,9 km/s, 2. (úniková) 11,2 km/s, 3. (opuštění Sluneční soustavy) 16,7 km/s."
+        },
+        {
+          "type": "summary",
+          "text": "`F_g = κ·m₁·m₂/r²`. Keplerovy zákony: elipsy se Sluncem v ohnisku, v přísluní rychleji, T² ~ a³. Intenzita pole K = F/m v N/kg."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se změní gravitační síla mezi tělesy, když vzdálenost zdvojnásobíme?",
+      "options": [
+        "zmenší se 4×",
+        "zmenší se 2×",
+        "zvětší se 4×",
+        "nezmění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní gravitační síla, když hmotnost jednoho tělesa zdvojnásobíme?",
+      "options": [
+        "zvětší se 2×",
+        "zvětší se 4×",
+        "zmenší se 2×"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "První kosmická rychlost u Země v km/s (na desetiny) =",
+      "answers": [
+        "7,9"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Druhá kosmická rychlost u Země v km/s (na desetiny) =",
+      "answers": [
+        "11,2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Planeta má velkou poloosu 4 au. Kolik let trvá její oběh kolem Slunce?",
+      "answers": [
+        "8"
+      ],
+      "explanation": "T² = a³ = 64 → T = 8 let"
+    },
+    {
+      "type": "truefalse",
+      "question": "Podle 2. Keplerova zákona se planeta v přísluní pohybuje rychleji než v odsluní.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Astronauti na ISS jsou ve stavu beztíže, protože tam na ně nepůsobí gravitace.",
+      "answer": false,
+      "explanation": "Gravitace působí, astronauti spolu se stanicí neustále padají kolem Země."
+    },
+    {
+      "type": "choice",
+      "question": "Jaký tvar mají podle 1. Keplerova zákona dráhy planet?",
+      "options": [
+        "elipsy",
+        "kružnice se Sluncem uprostřed",
+        "paraboly",
+        "přímky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka intenzity gravitačního pole?",
+      "options": [
+        "N/kg",
+        "N",
+        "kg",
+        "J"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a význam.",
+      "pairs": [
+        [
+          "1. kosmická rychlost",
+          "kruhová dráha u povrchu"
+        ],
+        [
+          "2. kosmická rychlost",
+          "opuštění Země"
+        ],
+        [
+          "geostacionární družice",
+          "oběh 24 h nad rovníkem"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj Newtonův gravitační zákon.",
+      "answer": "Dva hmotné body se přitahují silou přímo úměrnou součinu jejich hmotností a nepřímo úměrnou druhé mocnině vzdálenosti: Fg = κ·m₁·m₂/r²."
+    },
+    {
+      "type": "open",
+      "question": "Uveď tři Keplerovy zákony.",
+      "answer": "1. Planety obíhají po elipsách, Slunce je v ohnisku. 2. Průvodič opíše za stejný čas stejnou plochu. 3. Poměr T² / a³ je pro všechny planety stejný."
+    }
+  ]
+}

@@ -1,0 +1,412 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "simple-vs-continuous",
+  "title": "Obvykle × právě teď",
+  "emoji": "⚖️",
+  "explanations": [
+    {
+      "title": "Fotbalista",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky řekneš „Petr hraje fotbal“ – a nevíš, jestli ho hraje **každou sobotu**, nebo **právě teď**. Angličtina to rozlišuje dvěma různými tvary."
+        },
+        {
+          "type": "text",
+          "text": "Když je umíš od sebe poznat, bude ti každý rozumět: jestli mluvíš o svém zvyku, nebo o tom, co se děje teď."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Present simple",
+          "definition": "Přítomný čas prostý. Pro to, co děláš **obvykle, pravidelně**. Tvar: sloveso (u he / she / it s **-s**).",
+          "example": "Petr plays football. = Petr hraje fotbal (pravidelně)."
+        },
+        {
+          "type": "term",
+          "term": "Present continuous",
+          "definition": "Přítomný čas průběhový. Pro to, co se děje **právě teď**. Tvar: **am / is / are** + sloveso **-ing**.",
+          "example": "Petr is playing football. = Petr (právě) hraje fotbal."
+        },
+        {
+          "type": "term",
+          "term": "Signální slovo",
+          "definition": "Slovo ve větě, které ti napoví, který čas použít.",
+          "example": "every day (každý den), now (teď)"
+        },
+        {
+          "type": "heading",
+          "text": "Příběh: Petr"
+        },
+        {
+          "type": "text",
+          "text": "**Petr plays football every Saturday.** = Petr hraje fotbal každou sobotu. To je jeho **zvyk** → present simple."
+        },
+        {
+          "type": "text",
+          "text": "**But today he is watching TV.** = Ale dnes se dívá na televizi. To se děje **teď**, výjimečně → present continuous."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "⚽",
+            "📅",
+            "↔️",
+            "📺",
+            "⏰"
+          ],
+          "caption": "every Saturday → plays · today, now → is watching"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď signální slova: patří k zvyku (simple), nebo k ději teď (continuous)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "obvykle (simple)",
+              "teď (continuous)"
+            ],
+            "items": [
+              {
+                "text": "every day",
+                "group": 0
+              },
+              {
+                "text": "now",
+                "group": 1
+              },
+              {
+                "text": "usually",
+                "group": 0
+              },
+              {
+                "text": "at the moment",
+                "group": 1
+              },
+              {
+                "text": "on Mondays",
+                "group": 0
+              },
+              {
+                "text": "Look!",
+                "group": 1
+              },
+              {
+                "text": "never",
+                "group": 0
+              },
+              {
+                "text": "right now",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Look! It ___ (snow).",
+          "answer": "**Look!** (Podívej!) znamená, že se to děje teď → continuous. It → **is** + snow**ing**: **It is snowing.**"
+        },
+        {
+          "type": "example",
+          "question": "My mum ___ (work) in a hospital. (Je to její práce.)",
+          "answer": "Je to její práce – platí to pořád, ne jen teď → simple. Máma = she → **-s**: **My mum works in a hospital.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "I am going to school every day.",
+          "right": "I go to school every day.",
+          "why": "**every day** = zvyk → present simple. Continuous je jen pro to, co se děje právě teď."
+        },
+        {
+          "type": "summary",
+          "text": "Pravidelně, obvykle → **simple** (I play). Právě teď → **continuous** (I am playing)."
+        }
+      ]
+    },
+    {
+      "title": "Signální slova",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Detektiv hledá stopy. Ty při výběru času taky: ve větě skoro vždycky najdeš malou **stopu**, která ti řekne, jaký čas použít."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se ty stopy poznávat a pak už jen podle nich vybereš správný tvar slovesa."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Slovo, které říká, co kdo dělá.",
+          "example": "play, read, drink"
+        },
+        {
+          "type": "term",
+          "term": "Present simple",
+          "definition": "Pro zvyky a pravdy, které platí pořád. Tvar: **I play**, **she plays**.",
+          "example": "Cats like milk. = Kočky mají rády mléko."
+        },
+        {
+          "type": "term",
+          "term": "Present continuous",
+          "definition": "Pro děj, který probíhá právě teď. Tvar: **am / is / are + -ing**.",
+          "example": "I am drinking tea now. = Teď piju čaj."
+        },
+        {
+          "type": "term",
+          "term": "Signální slovo",
+          "definition": "Stopa ve větě, podle které poznáš čas.",
+          "example": "always → simple, now → continuous"
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka stop"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Present simple",
+            "Present continuous"
+          ],
+          "rows": [
+            [
+              "I play",
+              "I am playing"
+            ],
+            [
+              "every day, every week, on Mondays",
+              "now, right now, at the moment"
+            ],
+            [
+              "always, usually, often, sometimes, never",
+              "Look! Listen! (Podívej! Poslouchej!)"
+            ],
+            [
+              "zvyky, práce, pravdy",
+              "děj probíhá teď"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi ve větě stopu (every day? now? Look?).",
+            "Stopa pro zvyk → **simple**: sloveso, u he / she / it **-s**.",
+            "Stopa pro „teď“ → **continuous**: **am / is / are + -ing**.",
+            "Žádná stopa? Zeptej se: děje se to právě teď, nebo pořád?"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor: slova jako **like, love, know, want** (mít rád, milovat, vědět, chtít) dávají v present simple, i když platí teď: *I like it.* – ne *I am liking it.*"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Najdi stopu a vyber tvar."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "She ",
+                "after": " to school every day.",
+                "options": [
+                  "walks",
+                  "is walking"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Listen! Somebody ",
+                "after": ".",
+                "options": [
+                  "sings",
+                  "is singing"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "I ",
+                "after": " tea now.",
+                "options": [
+                  "drink",
+                  "am drinking"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Cats ",
+                "after": " milk.",
+                "options": [
+                  "like",
+                  "are liking"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "He usually ___ (go) to bed at 9.",
+          "answer": "Stopa **usually** → simple. He → **-es** (po o): **He usually goes to bed at 9.**"
+        },
+        {
+          "type": "example",
+          "question": "At the moment, I ___ (read) a book.",
+          "answer": "Stopa **at the moment** (v tuto chvíli) → continuous. I → **am** + **reading**: **At the moment, I am reading a book.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Shh! The baby sleeps.",
+          "right": "Shh! The baby is sleeping.",
+          "why": "„Pst!“ znamená, že miminko spí **právě teď** → continuous."
+        },
+        {
+          "type": "summary",
+          "text": "Hledej stopu: **every day, usually** → simple. **now, at the moment, Look!** → continuous."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "I ___ my bike every day.",
+      "options": [
+        "ride",
+        "am riding"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Look! It ___.",
+      "options": [
+        "snows",
+        "is snowing"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "My mum ___ in a hospital. (je to její práce)",
+      "options": [
+        "works",
+        "is working"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Shh! The baby ___.",
+      "options": [
+        "sleeps",
+        "is sleeping"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Doplň (read): At the moment, I am ___ a book.",
+      "answers": [
+        "reading"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň (go): He usually ___ to bed at 9.",
+      "answers": [
+        "goes"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„every Monday“ patří k present simple.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„I am going to school every day.“ je správně pro pravidelný zvyk.",
+      "answer": false,
+      "explanation": "Zvyk = present simple: I go to school every day."
+    },
+    {
+      "type": "match",
+      "question": "Spoj tvar s významem.",
+      "pairs": [
+        [
+          "I play",
+          "hraju (obvykle)"
+        ],
+        [
+          "I am playing",
+          "hraju (teď)"
+        ],
+        [
+          "She reads",
+          "čte (obvykle)"
+        ],
+        [
+          "She is reading",
+          "čte (teď)"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Slož větu.",
+      "items": [
+        "They",
+        "are",
+        "playing",
+        "chess",
+        "now."
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi „I play tennis“ a „I am playing tennis“?",
+      "answer": "I play tennis = hraju tenis pravidelně. I am playing tennis = hraju ho právě teď."
+    },
+    {
+      "type": "open",
+      "question": "Řekni anglicky, co obvykle děláš v sobotu a co děláš teď.",
+      "answer": "On Saturdays I usually play football. Now I am doing my homework."
+    }
+  ]
+}

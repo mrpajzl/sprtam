@@ -1,0 +1,423 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "deleni-se-zbytkem",
+  "title": "Dělení se zbytkem",
+  "emoji": "🍪",
+  "generator": "written-div",
+  "explanations": [
+    {
+      "title": "Sušenky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš 17 sušenek a 5 kamarádů. Každý má dostat stejně. Dáš každému 3 – ale 2 sušenky zbydou. Na všechny už nevyjdou."
+        },
+        {
+          "type": "text",
+          "text": "Ne každé dělení vyjde „hladce“. Často něco **zbude**. Tomu se říká **dělení se zbytkem** a potkáš ho pořád: děti do aut, vajíčka do krabiček, peníze mezi sourozence."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dělenec",
+          "definition": "Číslo, které dělíš (co rozděluješ).",
+          "example": "17 sušenek"
+        },
+        {
+          "type": "term",
+          "term": "Dělitel",
+          "definition": "Číslo, kterým dělíš (na kolik částí).",
+          "example": "5 kamarádů"
+        },
+        {
+          "type": "term",
+          "term": "Podíl",
+          "definition": "Kolik dostane každý – výsledek dělení.",
+          "example": "3 sušenky"
+        },
+        {
+          "type": "term",
+          "term": "Zbytek",
+          "definition": "Co zbude a nedá se už spravedlivě rozdělit.",
+          "example": "2 sušenky"
+        },
+        {
+          "type": "heading",
+          "text": "Rozdáváme"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🍪🍪🍪",
+            "🍪🍪🍪",
+            "🍪🍪🍪",
+            "🍪🍪🍪",
+            "🍪🍪🍪",
+            "➕",
+            "🍪🍪"
+          ],
+          "caption": "5 dětí po 3 sušenkách a 2 zbydou"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Každému dám 1 → rozdáno 5, zbývá 12.",
+            "Každému další → rozdáno 10, zbývá 7.",
+            "Každému další → rozdáno 15, zbývají 2.",
+            "2 sušenky na 5 dětí nevyjdou. Konec.",
+            "Zápis: **17 : 5 = 3 (zbytek 2)**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**Zbytek je vždy menší než dělitel.** Kdyby zbylo 5 a víc, dostal by každý ještě jednu."
+        },
+        {
+          "type": "heading",
+          "text": "Větší čísla – rozložením"
+        },
+        {
+          "type": "text",
+          "text": "96 : 4 → rozlož 96 = 80 + 16. 80 : 4 = 20, 16 : 4 = 4. Dohromady **24**. A 135 : 5 → 100 + 35: 20 + 7 = **27**."
+        },
+        {
+          "type": "heading",
+          "text": "Na papíře: písemné dělení"
+        },
+        {
+          "type": "term",
+          "term": "Písemné dělení",
+          "definition": "Dělení po kouscích zleva. Vezmeš první číslici (nebo dvě), vydělíš je a **zbytek napíšeš pod ně**. K zbytku pak **připíšeš** další číslici dělence a dělíš znovu.",
+          "example": "96 : 4 → 9 : 4 = 2, zbytek 1. Připíšu 6 → 16. 16 : 4 = 4."
+        },
+        {
+          "type": "text",
+          "text": "Klepej na **Další krok** a počítej se mnou: 96 : 4. Podíl se píše za rovnítko, zbytky pod dělenec."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 96,
+            "b": 4,
+            "op": ":"
+          }
+        },
+        {
+          "type": "text",
+          "text": "A teď příklad, kde na konci něco zbude: 139 : 4. Poslední číslo pod dělencem je zbytek."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 139,
+            "b": 4,
+            "op": ":"
+          }
+        },
+        {
+          "type": "example",
+          "question": "30 dětí jede na výlet. Do auta se vejdou 4. Kolik aut potřebují?",
+          "answer": "30 : 4 = 7 (zb. 2). 7 aut odveze 28 dětí. 2 děti zbydou – potřebují další auto. **8 aut**.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 30,
+              "b": 4,
+              "op": ":"
+            }
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jaký největší zbytek může být při dělení 6?",
+          "answer": "Zbytek musí být menší než 6. Největší je **5**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "31 : 5 = 5 (zb. 6)",
+          "right": "31 : 5 = **6 (zb. 1)**",
+          "why": "Zbytek 6 je větší než dělitel 5 – každý mohl dostat ještě jeden kus. 5 · 6 = 30, zbude 1."
+        },
+        {
+          "type": "summary",
+          "text": "17 : 5 = 3 (zb. 2). Zbytek je vždy menší než dělitel."
+        }
+      ]
+    },
+    {
+      "title": "Násobilka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozdávat po jedné je pomalé. S násobilkou to jde hned: najdeš, kolik se toho „vejde“, a zbytek dopočítáš."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se postup, který funguje vždy, i **písemné dělení** větších čísel a **zkoušku**, která ti řekne, jestli máš správně."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dělenec : dělitel = podíl",
+          "definition": "Co dělím : čím dělím = výsledek.",
+          "example": "38 : 7 = 5 (zb. 3) – dělenec 38, dělitel 7, podíl 5."
+        },
+        {
+          "type": "term",
+          "term": "Zbytek",
+          "definition": "Co zbude po dělení. Musí být menší než dělitel."
+        },
+        {
+          "type": "term",
+          "term": "Násobek",
+          "definition": "Výsledek násobení daným číslem.",
+          "example": "Násobky 5: 5, 10, 15, 20…"
+        },
+        {
+          "type": "heading",
+          "text": "Postup: 17 : 5"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi **největší násobek 5**, který se vejde do 17: 5 · 3 = **15** (5 · 4 = 20 už je moc).",
+            "Podíl je **3**.",
+            "Zbytek: 17 − 15 = **2**.",
+            "Zkouška: 5 · 3 + 2 = 17 ✔"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Žabka skáče po 5. Kolik celých skoků udělá, než přeskočí 17? Kolik jí chybí do 17 po posledním skoku?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "start": 0,
+            "hop": 5
+          }
+        },
+        {
+          "type": "example",
+          "question": "38 : 7 =",
+          "answer": "Největší násobek 7 do 38: 7 · 5 = 35. Zbytek 38 − 35 = 3. **5 (zb. 3)**. Zkouška: 7 · 5 + 3 = 38 ✔",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 38,
+              "b": 7,
+              "op": ":"
+            }
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Písemné dělení: 96 : 4"
+        },
+        {
+          "type": "term",
+          "term": "Připsat číslici",
+          "definition": "Ke zbytku napíšeš zprava další číslici dělence. Ze zbytku 1 a číslice 6 tak vznikne 16.",
+          "example": "9 : 4 = 2, zbytek 1 → připíšu 6 → 16."
+        },
+        {
+          "type": "text",
+          "text": "Větší čísla dělíš po kouscích zleva a pokaždé použiješ postup s násobilkou. Zbytek napíšeš **pod** číslice, které jsi dělil, a připíšeš k němu další číslici. Klepej na **Další krok** a počítej se mnou: 96 : 4."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 96,
+            "b": 4,
+            "op": ":"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Těžší: 135 : 5. Jednička je menší než 5, proto začneš rovnou dvěma číslicemi: 13 : 5."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 135,
+            "b": 5,
+            "op": ":"
+          }
+        },
+        {
+          "type": "text",
+          "text": "A se zbytkem na konci: 87 : 6. Poslední číslo pod dělencem je zbytek – musí být menší než 6."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 87,
+            "b": 6,
+            "op": ":"
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "38 : 8 = 4 (zb. 8)",
+          "right": "38 : 8 = **4 (zb. 6)**",
+          "why": "8 · 4 = 32, zbytek 38 − 32 = 6. Zbytek nikdy nemůže být stejný jako dělitel – pak by se vešel ještě jednou."
+        },
+        {
+          "type": "summary",
+          "text": "Najdi největší násobek dělitele, který se vejde. Zkouška: podíl · dělitel + zbytek = dělenec."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "17 : 5 = 3, zbytek =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "23 : 4 = ? (jen celý podíl)",
+      "answers": [
+        "5"
+      ],
+      "explanation": "4 · 5 = 20, zbytek 3."
+    },
+    {
+      "type": "input",
+      "question": "Zbytek po dělení 29 : 6 =",
+      "answers": [
+        "5"
+      ],
+      "explanation": "6 · 4 = 24, 29 − 24 = 5."
+    },
+    {
+      "type": "input",
+      "question": "Zbytek po dělení 50 : 7 =",
+      "answers": [
+        "1"
+      ],
+      "explanation": "7 · 7 = 49."
+    },
+    {
+      "type": "input",
+      "question": "Zbytek po dělení 45 : 9 =",
+      "answers": [
+        "0"
+      ],
+      "explanation": "9 · 5 = 45, dělí se beze zbytku."
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 96 : 4 =",
+      "answers": [
+        "24"
+      ],
+      "explanation": "9 : 4 = 2, zbytek 1. Připíšu 6 → 16. 16 : 4 = 4.",
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 96,
+          "b": 4,
+          "op": ":"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 135 : 5 =",
+      "answers": [
+        "27"
+      ],
+      "explanation": "13 : 5 = 2, zbytek 3. Připíšu 5 → 35. 35 : 5 = 7.",
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 135,
+          "b": 5,
+          "op": ":"
+        }
+      }
+    },
+    {
+      "type": "choice",
+      "question": "38 : 8 =",
+      "options": [
+        "4 (zb. 6)",
+        "5 (zb. 2)",
+        "4 (zb. 8)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký největší zbytek může být při dělení 6?",
+      "options": [
+        "5",
+        "6",
+        "7"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "26 : 3 = 8 (zb. 2)",
+      "answer": true,
+      "explanation": "3 · 8 + 2 = 26."
+    },
+    {
+      "type": "truefalse",
+      "question": "31 : 5 = 5 (zb. 6)",
+      "answer": false,
+      "explanation": "Zbytek musí být menší než 5: 31 : 5 = 6 (zb. 1)."
+    },
+    {
+      "type": "input",
+      "question": "30 dětí jede na výlet autem. Do auta se vejdou 4. Kolik aut potřebují?",
+      "answers": [
+        "8"
+      ],
+      "explanation": "30 : 4 = 7 (zb. 2) – pro 2 děti je potřeba další auto."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, jak vypočítáš 38 : 7 a jak uděláš zkoušku.",
+      "answer": "Největší násobek 7 do 38 je 35 = 7 · 5. Zbytek 38 − 35 = 3. Zkouška: 7 · 5 + 3 = 38."
+    },
+    {
+      "type": "open",
+      "question": "Proč musí být zbytek menší než dělitel?",
+      "answer": "Kdyby byl stejný nebo větší, mohl bych každému dát ještě jeden kus."
+    }
+  ]
+}

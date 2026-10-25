@@ -1,0 +1,368 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ery-zeme",
+  "title": "Vývoj Země – geologické éry",
+  "emoji": "🦕",
+  "explanations": [
+    {
+      "title": "Kalendář Země",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Země je stará asi **4,6 miliardy let**. To je číslo, které si nikdo neumí představit. Zkusme to jinak: kdyby celé dějiny Země byly jeden rok, dinosauři by žili až v polovině prosince a dnešní lidé by se objevili až asi půl hodiny před půlnocí 31. prosince."
+        },
+        {
+          "type": "text",
+          "text": "Aby se v tak dlouhé době dalo vyznat, rozdělili ji geologové na úseky – **éry**. Poznáš je a ke každé si zapamatuješ, co v ní žilo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Geologická éra",
+          "definition": "Velmi dlouhý úsek dějin Země – desítky milionů až miliardy let. Éry se oddělují podle velkých změn v životě na Zemi."
+        },
+        {
+          "type": "term",
+          "term": "Miliarda",
+          "definition": "Tisíc milionů (1 000 000 000)."
+        },
+        {
+          "type": "term",
+          "term": "Zkamenělina (fosilie)",
+          "definition": "Zbytek nebo otisk dávného organismu zachovaný v hornině.",
+          "example": "Otisk kapradiny v uhlí nebo kostra dinosaura."
+        },
+        {
+          "type": "heading",
+          "text": "Éry od nejstarší"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Éra",
+            "Kdy (přibližně)",
+            "Co je typické"
+          ],
+          "rows": [
+            [
+              "prahory",
+              "do 2,5 miliardy let zpět",
+              "první jednoduchý život – bakterie, sinice"
+            ],
+            [
+              "starohory",
+              "2,5 mld – 541 mil. let",
+              "první mnohobuněční živočichové"
+            ],
+            [
+              "prvohory",
+              "541–252 mil. let",
+              "trilobiti, ryby, výstup na souš, uhelné pralesy"
+            ],
+            [
+              "druhohory",
+              "252–66 mil. let",
+              "dinosauři, první savci a ptáci"
+            ],
+            [
+              "třetihory",
+              "66–2,6 mil. let",
+              "rozvoj savců a kvetoucích rostlin"
+            ],
+            [
+              "čtvrtohory",
+              "2,6 mil. let – dnes",
+              "doby ledové, mamut, člověk"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Sloupce ukazují, před kolika miliony let která éra začala. Všimni si, jak nepatrný je sloupec čtvrtohor – a člověk se objevil až v nich."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "mil. let",
+            "items": [
+              {
+                "label": "začátek prvohor",
+                "value": 541
+              },
+              {
+                "label": "začátek druhohor",
+                "value": 252
+              },
+              {
+                "label": "začátek třetihor (konec dinosaurů)",
+                "value": 66
+              },
+              {
+                "label": "začátek čtvrtohor",
+                "value": 2.6
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Mohl pračlověk lovit dinosaury?",
+          "answer": "Ne. Dinosauři vymřeli před **66 miliony let** (konec druhohor). Člověk se objevil ve **čtvrtohorách**, desítky milionů let později."
+        },
+        {
+          "type": "example",
+          "question": "Proč je černé uhlí hlavně v prvohorních vrstvách?",
+          "answer": "V prvohorách rostly obrovské pralesy plavuní a přesliček. Jejich zbytky se nahromadily v bažinách, byly zasypány a za miliony let se přeměnily v **černé uhlí**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dinosauři a mamuti žili ve stejné době.",
+          "right": "Dinosauři žili v druhohorách, mamuti ve čtvrtohorách.",
+          "why": "Mezi nimi je přes 60 milionů let."
+        },
+        {
+          "type": "summary",
+          "text": "Éry od nejstarší: prahory, starohory, prvohory (trilobiti, uhlí), druhohory (dinosauři), třetihory (savci), čtvrtohory (doby ledové, člověk). Země je stará asi 4,6 miliardy let."
+        }
+      ]
+    },
+    {
+      "title": "Čtení ve vrstvách",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když skládáš noviny na hromádku, dole jsou nejstarší a nahoře nejnovější. Horniny se usazují stejně – vrstva na vrstvu. Skalní stěna je proto jako kniha, kterou geolog čte odspodu nahoru."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, jak geologové poznávají stáří hornin a co jim o minulosti prozradí zkameněliny."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Usazená hornina",
+          "definition": "Hornina, která vznikla ukládáním drobných částic nebo schránek ve vrstvách, třeba na dně moře."
+        },
+        {
+          "type": "term",
+          "term": "Zkamenělina (fosilie)",
+          "definition": "Zbytek nebo otisk organismu z dávné doby, zachovaný v hornině."
+        },
+        {
+          "type": "term",
+          "term": "Vůdčí zkamenělina",
+          "definition": "Zkamenělina organismu, který žil jen v určitém krátkém období. Podle ní se pozná stáří vrstvy.",
+          "example": "Trilobiti prozrazují prvohory."
+        },
+        {
+          "type": "term",
+          "term": "Geologická éra",
+          "definition": "Dlouhé období dějin Země: prahory, starohory, prvohory, druhohory, třetihory, čtvrtohory."
+        },
+        {
+          "type": "heading",
+          "text": "Jak vzniká zkamenělina"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Živočich uhyne a klesne na dno moře.",
+            "Rychle ho zasype bahno nebo písek. Měkké části se rozloží.",
+            "Tvrdé části (schránka, kosti) zůstanou ve vrstvě.",
+            "Vrstva se během milionů let zpevní v horninu a zbytek se v ní zachová nebo zanechá otisk."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Typické zkameněliny ér"
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "trilobit",
+                "back": "prvohory – mořský členovec"
+              },
+              {
+                "front": "otisky plavuní a přesliček v uhlí",
+                "back": "prvohory"
+              },
+              {
+                "front": "amonit, dinosaurus",
+                "back": "druhohory"
+              },
+              {
+                "front": "zkameněliny prvních velkých savců",
+                "back": "třetihory"
+              },
+              {
+                "front": "mamut",
+                "back": "čtvrtohory – doby ledové"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Přečti zkamenělinu na kartě a zkus odhadnout éru dřív, než kartu otočíš."
+        },
+        {
+          "type": "text",
+          "text": "Ve **čtvrtohorách** se střídaly **doby ledové** (ledovce pokrývaly sever Evropy) a teplejší **meziledové** doby. V nich žili mamuti a srstnatí nosorožci a objevil se **člověk moudrý**."
+        },
+        {
+          "type": "example",
+          "question": "Ve skalní stěně najdeš dole vrstvu s trilobity a výš vrstvu s amonity. Co z toho plyne?",
+          "answer": "Spodní vrstva je starší – **prvohory** (trilobiti). Horní je mladší – **druhohory** (amonity). Pořadí vrstev i zkameněliny souhlasí."
+        },
+        {
+          "type": "example",
+          "question": "V Česku se v horninách najdou zkameněliny mořských živočichů. Co to znamená?",
+          "answer": "Na našem území bylo kdysi **moře**. Zkameněliny nám tak prozradí i dávné prostředí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zkamenělina je kámen, který jen vypadá jako zvíře.",
+          "right": "Zkamenělina je skutečný zbytek nebo otisk organismu, který kdysi žil.",
+          "why": "Tvar vznikl z těla živočicha nebo rostliny – kámen ho jen „zakonzervoval“."
+        },
+        {
+          "type": "summary",
+          "text": "Spodní vrstvy jsou starší. Vůdčí zkameněliny určují stáří vrstev: trilobiti – prvohory, dinosauři a amoniti – druhohory, mamut – čtvrtohory."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "order",
+      "question": "Seřaď éry od nejstarší.",
+      "items": [
+        "prahory",
+        "starohory",
+        "prvohory",
+        "druhohory",
+        "třetihory",
+        "čtvrtohory"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve které éře žili dinosauři?",
+      "options": [
+        "druhohory",
+        "prvohory",
+        "čtvrtohory"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdy vymřeli dinosauři?",
+      "options": [
+        "před 66 miliony let",
+        "před 6 600 lety",
+        "před 2 miliardami let"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Trilobiti jsou typické zkameněliny prvohor.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Ve které éře se objevil člověk moudrý? (…hory)",
+      "answers": [
+        "čtvrtohory",
+        "ctvrtohory"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj éru s typickým organismem.",
+      "pairs": [
+        [
+          "prvohory",
+          "trilobit"
+        ],
+        [
+          "druhohory",
+          "dinosaurus"
+        ],
+        [
+          "třetihory",
+          "rozvoj savců"
+        ],
+        [
+          "čtvrtohory",
+          "mamut"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Černé uhlí v Česku vzniklo hlavně v prvohorách.",
+      "answer": true,
+      "explanation": "Z pralesů plavuní a přesliček v karbonu."
+    },
+    {
+      "type": "choice",
+      "question": "Jak stará je Země?",
+      "options": [
+        "asi 4,6 miliardy let",
+        "asi 6 000 let",
+        "asi 100 milionů let"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Zkamenělý otisk nebo zbytek organismu je…",
+      "options": [
+        "zkamenělina (fosilie)",
+        "krystal",
+        "magma"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve čtvrtohorách se střídaly doby ledové a meziledové.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj geologické éry od nejstarší a ke každé něco typického.",
+      "answer": "Prahory – první život, starohory – mnohobuněční, prvohory – trilobiti a uhlí, druhohory – dinosauři, třetihory – savci, čtvrtohory – doby ledové a člověk."
+    },
+    {
+      "type": "open",
+      "question": "Proč jsou zkameněliny pro geology důležité?",
+      "answer": "Podle nich poznáme stáří vrstev hornin a jak se vyvíjel život a prostředí v minulosti."
+    }
+  ]
+}

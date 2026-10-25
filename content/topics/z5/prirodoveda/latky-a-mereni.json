@@ -1,0 +1,375 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "latky-a-mereni",
+  "title": "Látky a jejich měření",
+  "emoji": "⚖️",
+  "explanations": [
+    {
+      "title": "Pokusy v kuchyni",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč se cukr v čaji ztratí, ale písek zůstane na dně? Proč dřevo plave a hřebík se potopí? Na to přijdeš jednoduchými pokusy."
+        },
+        {
+          "type": "text",
+          "text": "Všechno kolem nás je z nějaké látky. Každá látka má své vlastnosti. Když je znáš, víš, k čemu se hodí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Těleso a látka",
+          "definition": "**Těleso** je konkrétní věc. **Látka** je to, z čeho je vyrobené.",
+          "example": "Hrnek (těleso) je z porcelánu (látka)."
+        },
+        {
+          "type": "term",
+          "term": "Vlastnost látky",
+          "definition": "Čím se látka vyznačuje: barva, tvrdost, jestli plave, jestli se rozpouští…",
+          "example": "Sklo je průhledné a křehké."
+        },
+        {
+          "type": "term",
+          "term": "Skupenství",
+          "definition": "Podoba látky: **pevné** (drží tvar), **kapalné** (teče), **plynné** (rozptýlí se).",
+          "example": "kámen – voda – vzduch"
+        },
+        {
+          "type": "term",
+          "term": "Rozpouštění",
+          "definition": "Když se látka ve vodě „ztratí“ a voda zůstane průhledná.",
+          "example": "Sůl a cukr se rozpouštějí, písek ne."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus: rozpustí se?"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Nalij do sklenice vodu.",
+            "Přidej lžičku látky a zamíchej.",
+            "Látka zmizela a voda je průhledná → **rozpustila se** (cukr, sůl).",
+            "Látka zůstala na dně → **nerozpustila se** (písek)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Plave, nebo se potopí? Přitáhne ji magnet?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "plave na vodě",
+              "potopí se"
+            ],
+            "items": [
+              {
+                "text": "dřevo",
+                "group": 0
+              },
+              {
+                "text": "korek",
+                "group": 0
+              },
+              {
+                "text": "led",
+                "group": 0
+              },
+              {
+                "text": "kámen",
+                "group": 1
+              },
+              {
+                "text": "železný hřebík",
+                "group": 1
+              },
+              {
+                "text": "skleněná kulička",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "**Magnet** přitahuje **železo** (hřebík, kancelářskou sponku). Dřevo, plast ani papír nepřitáhne."
+        },
+        {
+          "type": "example",
+          "question": "Vzduch je látka. Jaké má skupenství?",
+          "answer": "Vzduch nemá tvar a rozptýlí se do celé místnosti → **plynné**."
+        },
+        {
+          "type": "example",
+          "question": "Smícháš písek se solí. Jak je oddělíš?",
+          "answer": "Přidám vodu: **sůl se rozpustí**, písek ne. Vodu sliju přes filtr – písek zůstane. Ze slané vody se voda odpaří a zbude sůl."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Cukr se ve vodě rozpustil, takže zmizel.",
+          "right": "Cukr ve vodě zůstal, jen ho nevidíme.",
+          "why": "Rozpuštěná látka se rozptýlí na nepatrné částečky. Proto je čaj sladký."
+        },
+        {
+          "type": "summary",
+          "text": "Látky mají vlastnosti: skupenství, rozpustnost, jestli plavou, jestli je přitáhne magnet. Cukr a sůl se ve vodě rozpouštějí, písek ne."
+        }
+      ]
+    },
+    {
+      "title": "Měříme",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Recept říká: 250 g mouky, půl litru mléka, péct 30 minut při 180 °C. Bez měření by se buchta nepovedla."
+        },
+        {
+          "type": "text",
+          "text": "Měření používáme v kuchyni, u lékaře, ve sportu i ve škole. Aby si všichni rozuměli, používají stejné jednotky."
+        },
+        {
+          "type": "term",
+          "term": "Veličina",
+          "definition": "Vlastnost, kterou můžeme změřit.",
+          "example": "délka, hmotnost, objem, teplota, čas"
+        },
+        {
+          "type": "term",
+          "term": "Jednotka",
+          "definition": "Dohodnutá míra, ve které měříme.",
+          "example": "metr, kilogram, litr"
+        },
+        {
+          "type": "heading",
+          "text": "Veličiny, měřidla a jednotky"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Veličina",
+            "Měřidlo",
+            "Jednotky"
+          ],
+          "rows": [
+            [
+              "délka",
+              "metr, pravítko",
+              "mm, cm, m, km"
+            ],
+            [
+              "hmotnost",
+              "váha",
+              "g, kg, t"
+            ],
+            [
+              "objem",
+              "odměrka",
+              "ml, l"
+            ],
+            [
+              "teplota",
+              "teploměr",
+              "°C"
+            ],
+            [
+              "čas",
+              "hodiny, stopky",
+              "s, min, h"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Převody"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 kg = **1000 g**",
+            "1 t (tuna) = **1000 kg**",
+            "1 l = **1000 ml**",
+            "1 m = 100 cm, 1 km = 1000 m",
+            "1 min = 60 s, 1 h = 60 min"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Všimni si: předpona **kilo-** znamená tisíc, **mili-** znamená tisícinu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "°C",
+            "items": [
+              {
+                "label": "mrznutí vody",
+                "value": 0
+              },
+              {
+                "label": "pokoj",
+                "value": 21
+              },
+              {
+                "label": "zdravý člověk",
+                "value": 37
+              },
+              {
+                "label": "var vody",
+                "value": 100
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Láhev má 1,5 l. Kolik je to mililitrů?",
+          "answer": "1 l = 1000 ml, půl litru = 500 ml. 1000 + 500 = **1500 ml**."
+        },
+        {
+          "type": "example",
+          "question": "Teploměr ukazuje 38,5 °C. Je člověk zdravý?",
+          "answer": "Zdravý člověk má asi **36–37 °C**. 38,5 °C je **horečka**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Objem mléka měříme v kilogramech.",
+          "right": "Objem měříme v litrech a mililitrech.",
+          "why": "Kilogram je jednotka hmotnosti (jak je to těžké). Litr říká, kolik místa tekutina zabere."
+        },
+        {
+          "type": "summary",
+          "text": "Délka (m), hmotnost (kg), objem (l), teplota (°C), čas (s). 1 kg = 1000 g, 1 l = 1000 ml, 1 t = 1000 kg."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Čím měříme teplotu?",
+      "options": [
+        "teploměrem",
+        "váhou",
+        "pravítkem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik gramů je 1 kilogram?",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik mililitrů je 1 litr?",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "V jakých jednotkách měříme objem?",
+      "options": [
+        "v litrech",
+        "v kilogramech",
+        "v metrech"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Písek se ve vodě rozpustí.",
+      "answer": false,
+      "explanation": "Písek se nerozpustí, usadí se na dně."
+    },
+    {
+      "type": "truefalse",
+      "question": "Magnet přitáhne železný hřebík.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu s jednotkou.",
+      "pairs": [
+        [
+          "hmotnost",
+          "kilogram"
+        ],
+        [
+          "délka",
+          "metr"
+        ],
+        [
+          "teplota",
+          "stupeň Celsia"
+        ],
+        [
+          "čas",
+          "sekunda"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jakou teplotu má zdravý člověk?",
+      "options": [
+        "asi 36–37 °C",
+        "asi 20 °C",
+        "asi 42 °C"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "1 g",
+        "1 kg",
+        "1 t"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které skupenství má vzduch?",
+      "options": [
+        "plynné",
+        "kapalné",
+        "pevné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Dřevo na vodě plave.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak zjistíš, jestli se látka rozpouští ve vodě?",
+      "answer": "Dám ji do sklenice s vodou a zamíchám. Když zmizí a voda je průhledná, rozpustila se (cukr, sůl). Když zůstane na dně, nerozpustila se (písek)."
+    },
+    {
+      "type": "open",
+      "question": "Co a čím můžeš měřit? Uveď tři příklady.",
+      "answer": "Délku měřím metrem v metrech, hmotnost váhou v kilogramech, teplotu teploměrem ve stupních Celsia, objem odměrkou v litrech a čas hodinami."
+    }
+  ]
+}

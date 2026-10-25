@@ -1,0 +1,382 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "proud-a-napeti",
+  "title": "Proud a napětí",
+  "emoji": "🔋",
+  "explanations": [
+    {
+      "title": "Jako voda",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na baterii je napsáno 1,5 V, na zásuvce 230 V, na nabíječce 2 A. Co ta čísla znamenají a proč je zásuvka nebezpečná, když tužková baterie ne?"
+        },
+        {
+          "type": "text",
+          "text": "Elektřinu nevidíš, ale můžeš si ji představit jako **vodu v trubkách**. Hodně to pomůže."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektron",
+          "definition": "Nepatrná částice se záporným nábojem. V kovech jsou některé elektrony **volné** – mohou se pohybovat.",
+          "example": "V měděném drátu je volných elektronů obrovské množství."
+        },
+        {
+          "type": "term",
+          "term": "Elektrický proud",
+          "definition": "Usměrněný pohyb nabitých částic (v kovech volných elektronů). Říká, kolik náboje proteče za sekundu. Značka `I`, jednotka **ampér (A)**.",
+          "example": "Jako množství vody, které proteče trubkou za sekundu."
+        },
+        {
+          "type": "term",
+          "term": "Elektrické napětí",
+          "definition": "„Tlak“, kterým zdroj žene proud obvodem. Značka `U`, jednotka **volt (V)**.",
+          "example": "Jako tlak čerpadla, které tlačí vodu do trubek."
+        },
+        {
+          "type": "heading",
+          "text": "Porovnání s vodou"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Voda",
+            "Elektřina"
+          ],
+          "rows": [
+            [
+              "čerpadlo",
+              "zdroj (baterie)"
+            ],
+            [
+              "tlak čerpadla",
+              "napětí U (volty)"
+            ],
+            [
+              "kolik vody proteče za sekundu",
+              "proud I (ampéry)"
+            ],
+            [
+              "trubky",
+              "vodiče"
+            ],
+            [
+              "vodní kolo",
+              "spotřebič (žárovka)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak velká napětí potkáváš"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf. Kolikrát má zásuvka větší napětí než autobaterie?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "V",
+            "items": [
+              {
+                "label": "tužková baterie",
+                "value": 1.5
+              },
+              {
+                "label": "plochá baterie",
+                "value": 4.5
+              },
+              {
+                "label": "autobaterie",
+                "value": 12
+              },
+              {
+                "label": "zásuvka",
+                "value": 230
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Napětí v zásuvce v Česku je **230 V** – to už je pro člověka životu nebezpečné."
+        },
+        {
+          "type": "heading",
+          "text": "Kterým směrem proud teče"
+        },
+        {
+          "type": "text",
+          "text": "Fyzici se dávno **dohodli**, že proud teče od **kladného pólu (+)** zdroje k **zápornému (−)**. Později se zjistilo, že elektrony se ve skutečnosti pohybují opačně, od − k +. Dohoda ale zůstala."
+        },
+        {
+          "type": "example",
+          "question": "Proč se na tužkovou baterii můžeš bez obav dotknout, na zásuvku ne?",
+          "answer": "Baterie má malé napětí **1,5 V** – nedokáže protlačit tělem nebezpečný proud. Zásuvka má **230 V**, to protlačí tělem proud, který může zastavit srdce."
+        },
+        {
+          "type": "example",
+          "question": "Co v kovovém drátu vlastně „teče“?",
+          "answer": "**Volné elektrony.** Atomy ani protony se nehýbou, jen elektrony se posouvají drátem."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Proud a napětí jsou totéž.",
+          "right": "Napětí je to, co žene; proud je to, co teče.",
+          "why": "Jako u vody: tlak čerpadla (napětí) a množství protékající vody (proud) jsou dvě různé věci."
+        },
+        {
+          "type": "summary",
+          "text": "Proud I (ampér) = kolik náboje proteče za sekundu. Napětí U (volt) = „tlak“ zdroje, který proud žene. V zásuvce je 230 V."
+        }
+      ]
+    },
+    {
+      "title": "Měřením",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Elektrikář nehádá – měří. Pro proud má **ampérmetr**, pro napětí **voltmetr**. Každý se ale zapojuje jinak. Když to spleteš, přístroj ukáže nesmysl nebo se rozbije."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektrický proud `I`",
+          "definition": "Kolik náboje proteče vodičem za 1 sekundu. Jednotka **ampér (A)**; 1 A = 1 000 mA (miliampér).",
+          "example": "Žárovkou v baterce teče asi 0,25 A = 250 mA."
+        },
+        {
+          "type": "term",
+          "term": "Napětí `U`",
+          "definition": "Jak silně zdroj žene náboj obvodem. Jednotka **volt (V)**; 1 kV (kilovolt) = 1 000 V.",
+          "example": "Plochá baterie 4,5 V."
+        },
+        {
+          "type": "term",
+          "term": "Náboj `Q` a odpor `R`",
+          "definition": "**Náboj** je to, co proudí (měří se v coulombech, C). **Odpor** říká, jak moc spotřebič proudu brání (měří se v ohmech, Ω).",
+          "example": "Tenké vlákno žárovky má velký odpor, silný měděný drát malý."
+        },
+        {
+          "type": "term",
+          "term": "Sériové a paralelní zapojení",
+          "definition": "**Sériově** = za sebou v jedné řadě, proud prochází jedním po druhém. **Paralelně** = vedle sebe, každý má vlastní větev.",
+          "example": "Sériově jako vagony vlaku, paralelně jako pruhy dálnice."
+        },
+        {
+          "type": "heading",
+          "text": "Jak zapojit ampérmetr"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozpoj obvod v místě, kde chceš proud měřit.",
+            "Ampérmetr vlož **do mezery** – zapojíš ho **sériově** se spotřebičem.",
+            "Proud musí projít přes ampérmetr, jen tak ho změří.",
+            "Nikdy ho nepřipojuj přímo na zdroj bez spotřebiče – zničil by se."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak zapojit voltmetr"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Obvod nerozpojuj.",
+            "Dva vodiče voltmetru přilož **na oba konce** spotřebiče.",
+            "Voltmetr je **paralelně** ke spotřebiči – měří rozdíl „tlaku“ mezi konci."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "V sériovém obvodu je proud **ve všech místech stejný** – nikde se neztrácí. Je jedno, kam ampérmetr vložíš."
+        },
+        {
+          "type": "example",
+          "question": "Kolik mA je 0,25 A?",
+          "answer": "1 A = 1 000 mA → 0,25 · 1 000 = **250 mA**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik voltů je 1,5 kV?",
+          "answer": "1 kV = 1 000 V → 1,5 · 1 000 = **1 500 V**."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "proud",
+                "back": "I – ampér (A) – ampérmetr sériově"
+              },
+              {
+                "front": "napětí",
+                "back": "U – volt (V) – voltmetr paralelně"
+              },
+              {
+                "front": "odpor",
+                "back": "R – ohm (Ω)"
+              },
+              {
+                "front": "náboj",
+                "back": "Q – coulomb (C)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Ke každé veličině zkus říct značku, jednotku a měřidlo. Pak kartu otoč."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Voltmetr zapojím do série jako ampérmetr.",
+          "right": "Voltmetr patří paralelně ke spotřebiči.",
+          "why": "Voltmetr měří rozdíl mezi dvěma místy obvodu, proto ho připojíš k oběma koncům spotřebiče. V sérii by obvod skoro přerušil."
+        },
+        {
+          "type": "summary",
+          "text": "Proud I v ampérech měří ampérmetr zapojený sériově. Napětí U ve voltech měří voltmetr zapojený paralelně. Dohodnutý směr proudu: od + k −."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka elektrického proudu?",
+      "options": [
+        "ampér",
+        "volt",
+        "ohm",
+        "watt"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka elektrického napětí?",
+      "options": [
+        "volt",
+        "ampér",
+        "ohm",
+        "coulomb"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak zapojíme ampérmetr?",
+      "options": [
+        "sériově se spotřebičem",
+        "paralelně ke spotřebiči",
+        "přímo na zdroj bez spotřebiče"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak zapojíme voltmetr?",
+      "options": [
+        "paralelně ke spotřebiči",
+        "sériově",
+        "kamkoli"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik mA je 0,25 A?",
+      "answers": [
+        "250"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jaké je napětí v zásuvce v ČR ve voltech?",
+      "answers": [
+        "230"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Dohodnutý směr proudu je od kladného pólu k zápornému.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu se značkou.",
+      "pairs": [
+        [
+          "proud",
+          "I"
+        ],
+        [
+          "napětí",
+          "U"
+        ],
+        [
+          "odpor",
+          "R"
+        ],
+        [
+          "náboj",
+          "Q"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik V je 1,5 kV?",
+      "answers": [
+        "1500"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve stejném sériovém obvodu je proud ve všech místech stejný.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co v kovech vede proud?",
+      "options": [
+        "volné elektrony",
+        "protony",
+        "neutrony",
+        "atomy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi proudem a napětím.",
+      "answer": "Napětí je „tlak“ zdroje, který žene náboj obvodem (ve voltech). Proud je množství náboje, které proteče za sekundu (v ampérech)."
+    },
+    {
+      "type": "open",
+      "question": "Jak se zapojuje ampérmetr a voltmetr?",
+      "answer": "Ampérmetr zapojujeme sériově, aby jím procházel stejný proud. Voltmetr zapojujeme paralelně ke spotřebiči."
+    }
+  ]
+}

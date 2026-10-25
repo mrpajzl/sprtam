@@ -1,0 +1,352 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "lomena-funkce",
+  "title": "Lomená funkce",
+  "emoji": "〰️",
+  "explanations": [
+    {
+      "title": "Nepřímá úměrnost",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Šest dělníků postaví plot za 10 dní. Kdyby jich bylo víc, bude to rychlejší; kdyby méně, potrvá to déle. Čím víc jednoho, tím **méně** druhého."
+        },
+        {
+          "type": "text",
+          "text": "Stejně funguje rychlost a čas na stejné trase nebo počet lidí a velikost dílku pizzy. Takovou závislost popisuje lomená funkce y = k/x."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Nepřímá úměrnost",
+          "definition": "Kolikrát zvětšíš x, tolikrát se zmenší y. Součin x · y je pořád stejné číslo k. Předpis y = k/x.",
+          "example": "6 dělníků · 10 dní = 60 „dělníkodní“. 5 dělníků: 60 : 5 = 12 dní."
+        },
+        {
+          "type": "term",
+          "term": "Lomená funkce",
+          "definition": "Funkce, která má proměnnou x ve jmenovateli zlomku. Nejjednodušší je y = k/x (k ≠ 0).",
+          "example": "y = 12/x: f(4) = 12/4 = 3."
+        },
+        {
+          "type": "heading",
+          "text": "Stálý součin na tečkách"
+        },
+        {
+          "type": "text",
+          "text": "Nastav obdélník 3 × 4 = 12 teček. Teď zkus najít jiné obdélníky, které mají taky 12 teček: 2 × 6, 6 × 2, 1 × 12… Když jednu stranu zvětšíš, druhá se musí zmenšit – to je nepřímá úměrnost."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4,
+            "max": 12
+          }
+        },
+        {
+          "type": "example",
+          "question": "Auto ujede 120 km. Při 60 km/h mu to trvá 2 h. Jak dlouho při 80 km/h?",
+          "answer": "Dráha = rychlost · čas = 120, tedy čas t = 120/v. t = 120/80 = **1,5 h**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak vypadá graf"
+        },
+        {
+          "type": "term",
+          "term": "Hyperbola",
+          "definition": "Graf y = k/x. Má dvě oddělené větve. Pro k > 0 leží v I. kvadrantu (x i y kladné) a III. kvadrantu (x i y záporné).",
+          "example": "y = 1/x: body [1; 1], [2; 0,5], [0,5; 2], [−1; −1], [−2; −0,5]."
+        },
+        {
+          "type": "term",
+          "term": "Kvadrant",
+          "definition": "Čtvrtina roviny, kterou oddělí osy. I. vpravo nahoře, II. vlevo nahoře, III. vlevo dole, IV. vpravo dole."
+        },
+        {
+          "type": "term",
+          "term": "Asymptota",
+          "definition": "Přímka, ke které se graf donekonečna přibližuje, ale nikdy se jí nedotkne.",
+          "example": "y = 1/x se blíží ose x (y = 0) i ose y (x = 0)."
+        },
+        {
+          "type": "text",
+          "text": "Proč? x = 0 dosadit nejde (nulou nedělíme), proto graf osu y nikdy neprotne. A k/x nikdy není přesně 0, proto graf neprotne ani osu x."
+        },
+        {
+          "type": "mistake",
+          "wrong": "y = 1/x je klesající na celém definičním oboru.",
+          "right": "Klesá zvlášť na (−∞; 0) a zvlášť na (0; ∞).",
+          "why": "Vezmi −1 < 1: f(−1) = −1 a f(1) = 1. Hodnota vzrostla, takže na celém oboru klesající není."
+        },
+        {
+          "type": "heading",
+          "text": "Posunutá hyperbola"
+        },
+        {
+          "type": "text",
+          "text": "y = 1/(x − 2) + 3 je hyperbola y = 1/x posunutá o 2 doprava a o 3 nahoru. Asymptoty se posunou s ní: svislá **x = 2**, vodorovná **y = 3**."
+        },
+        {
+          "type": "example",
+          "question": "Urči D(f) a asymptoty y = 3/(x + 2).",
+          "answer": "Jmenovatel ≠ 0: x ≠ −2, D(f) = ℝ ∖ {−2}. Svislá asymptota x = −2, vodorovná y = 0."
+        },
+        {
+          "type": "summary",
+          "text": "y = k/x: nepřímá úměrnost, součin x · y = k je stálý. Graf je hyperbola se dvěma větvemi (k > 0: I. a III. kvadrant). y = k/(x − m) + n má asymptoty x = m a y = n."
+        }
+      ]
+    },
+    {
+      "title": "Rozbor předpisu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V technice a ekonomii se objevují funkce jako y = (2x + 1)/(x − 1). Abys věděl, jak se chovají – kde nejsou definované, k čemu se blíží – musíš předpis umět rozebrat."
+        },
+        {
+          "type": "text",
+          "text": "Klíčová dovednost: převést zlomek na tvar „hyperbola y = k/x, posunutá“. Z něj vše přečteš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Lomená funkce",
+          "definition": "Funkce, kde x je ve jmenovateli. Základní tvar y = k/x, k ≠ 0."
+        },
+        {
+          "type": "term",
+          "term": "Definiční obor D(f)",
+          "definition": "Čísla, která smíš dosadit. U zlomku musí být jmenovatel různý od nuly. ℝ ∖ {a} znamená „všechna reálná čísla kromě a“.",
+          "example": "y = 3/(x + 2): x ≠ −2."
+        },
+        {
+          "type": "term",
+          "term": "Hyperbola",
+          "definition": "Graf y = k/x: dvě větve. k > 0 → I. a III. kvadrant (pravý horní a levý dolní), k < 0 → II. a IV."
+        },
+        {
+          "type": "term",
+          "term": "Asymptota",
+          "definition": "Přímka, ke které se větve grafu blíží, ale nedotknou se jí. Svislá je tam, kde je jmenovatel nula. Vodorovná ukazuje, k čemu se blíží y pro hodně velká x."
+        },
+        {
+          "type": "heading",
+          "text": "Tvar s posunem"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Předpis",
+            "Svislá asymptota",
+            "Vodorovná asymptota"
+          ],
+          "rows": [
+            [
+              "y = k/x",
+              "x = 0",
+              "y = 0"
+            ],
+            [
+              "y = k/(x − m)",
+              "x = m",
+              "y = 0"
+            ],
+            [
+              "y = k/x + n",
+              "x = 0",
+              "y = n"
+            ],
+            [
+              "y = k/(x − m) + n",
+              "x = m",
+              "y = n"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "y = 1/(x − 2) + 3. Urči asymptoty.",
+          "answer": "m = 2, n = 3. Svislá **x = 2**, vodorovná **y = 3**. Střed hyperboly je v bodě [2; 3]."
+        },
+        {
+          "type": "heading",
+          "text": "Převedení na tvar s posunem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš čitatel jako „násobek jmenovatele + zbytek“.",
+            "Rozděl zlomek na dva.",
+            "Přečti n (číslo navíc), m (z jmenovatele) a k (zbytek v čitateli)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči vodorovnou asymptotu y = (2x + 1)/(x − 1).",
+          "answer": "2x + 1 = 2(x − 1) + 3. Tedy y = 2(x − 1)/(x − 1) + 3/(x − 1) = **2 + 3/(x − 1)**. Vodorovná asymptota y = 2, svislá x = 1."
+        },
+        {
+          "type": "heading",
+          "text": "Vlastnosti y = k/x"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Lichá**: k/(−x) = −k/x, graf souměrný podle počátku.",
+            "Pro k > 0 klesá na (−∞; 0) a zvlášť na (0; ∞) – ne na celém D(f).",
+            "Nepřímá úměrnost: x · y = k. Dvojnásobné x → poloviční y."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Nepřímou úměrnost si ověř na tečkách: najdi co nejvíc obdélníků se 12 tečkami. Součin řádků a sloupců je vždy 12."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 2,
+            "columns": 6,
+            "max": 12
+          }
+        },
+        {
+          "type": "example",
+          "question": "6 dělníků to zvládne za 10 dní. Za kolik dní 5 dělníků?",
+          "answer": "Součin je stálý: 6 · 10 = 60. 5 · t = 60 → t = **12 dní**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vodorovná asymptota y = (2x + 1)/(x − 1) je y = 1.",
+          "right": "Je y = 2.",
+          "why": "Pro velká x se 2x + 1 chová jako 2x a x − 1 jako x, takže zlomek se blíží 2x/x = 2. Spolehlivě to ukáže rozklad 2 + 3/(x − 1)."
+        },
+        {
+          "type": "summary",
+          "text": "Jmenovatel ≠ 0 dává D(f) i svislou asymptotu. Převeď na y = k/(x − m) + n: asymptoty x = m, y = n. y = k/x je lichá, popisuje nepřímou úměrnost."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "y = 12/x. f(4) =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Grafem y = k/x (k ≠ 0) je:",
+      "options": [
+        "hyperbola",
+        "parabola",
+        "přímka",
+        "kružnice"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Pro k > 0 leží graf y = k/x v I. a III. kvadrantu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "D(f) pro y = 3/(x + 2):",
+      "options": [
+        "ℝ ∖ {−2}",
+        "ℝ ∖ {2}",
+        "ℝ ∖ {0}",
+        "ℝ"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "y = 1/(x − 2) + 3. Vodorovná asymptota y =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "y = 1/(x − 2) + 3. Svislá asymptota x =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "6 dělníků to zvládne za 10 dní. Za kolik dní 5 dělníků?",
+      "answers": [
+        "12"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "y = 1/x je klesající na celém definičním oboru.",
+      "answer": false,
+      "explanation": "Klesá na (−∞; 0) i na (0; ∞) zvlášť, ale f(−1) = −1 < f(1) = 1."
+    },
+    {
+      "type": "choice",
+      "question": "Vodorovná asymptota y = (2x + 1)/(x − 1):",
+      "options": [
+        "y = 2",
+        "y = 1",
+        "y = −1",
+        "x = 1"
+      ],
+      "answer": 0,
+      "explanation": "(2x + 1)/(x − 1) = 2 + 3/(x − 1)"
+    },
+    {
+      "type": "truefalse",
+      "question": "Funkce y = 1/x je lichá.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Auto jede 120 km. Při rychlosti 60 km/h jede 2 h. Při 80 km/h:",
+      "options": [
+        "1,5 h",
+        "2,5 h",
+        "1 h",
+        "2,67 h"
+      ],
+      "answer": 0,
+      "explanation": "t = 120/v"
+    },
+    {
+      "type": "open",
+      "question": "Co je nepřímá úměrnost? Uveď příklad.",
+      "answer": "Funkce y = k/x: kolikrát se zvětší x, tolikrát se zmenší y, součin x · y je stálý. Příklad: čas jízdy a rychlost při stejné vzdálenosti."
+    },
+    {
+      "type": "open",
+      "question": "Jak určíš asymptoty funkce y = k/(x − m) + n?",
+      "answer": "Je to hyperbola y = k/x posunutá o m ve směru x a o n ve směru y. Svislá asymptota je x = m, vodorovná y = n."
+    }
+  ]
+}

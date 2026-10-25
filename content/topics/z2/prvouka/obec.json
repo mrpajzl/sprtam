@@ -1,0 +1,345 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obec",
+  "title": "Naše obec",
+  "emoji": "🏘️",
+  "explanations": [
+    {
+      "title": "Procházkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolem tvého domu jsou další domy, ulice, obchody, škola. Všechno to dohromady tvoří místo, kde žiješ."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, kde co je, umíš si poradit. Víš, kam jít pro léky, kde si půjčit knížku nebo kam poslat balík."
+        },
+        {
+          "type": "term",
+          "term": "Obec",
+          "definition": "Místo, kde žije víc lidí pohromadě. Je to **vesnice** nebo **město**.",
+          "example": "Moje obec se jmenuje Lhota."
+        },
+        {
+          "type": "term",
+          "term": "Starosta",
+          "definition": "Člověk, který obec vede. Stará se, aby tam byly cesty, škola a pořádek.",
+          "example": "Starosta otevřel nové hřiště."
+        },
+        {
+          "type": "term",
+          "term": "Obecní úřad",
+          "definition": "Budova, kde pracuje starosta a lidé, kteří se starají o obec. Ve městě se jí říká **radnice**.",
+          "example": "Na úřadě si rodiče vyřizují občanku."
+        },
+        {
+          "type": "heading",
+          "text": "Projdi se obcí"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. Dozvíš se, co se v které budově dělá."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "🏥 nemocnice",
+                "back": "Tady léčí nemocné."
+              },
+              {
+                "front": "💊 lékárna",
+                "back": "Tady koupíme léky."
+              },
+              {
+                "front": "🏤 pošta",
+                "back": "Tady posíláme dopisy a balíky."
+              },
+              {
+                "front": "🏛️ obecní úřad",
+                "back": "Tady pracuje starosta."
+              },
+              {
+                "front": "🚒 hasičská zbrojnice",
+                "back": "Tady mají hasiči auta."
+              },
+              {
+                "front": "📚 knihovna",
+                "back": "Tady si půjčíme knihy."
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Máma potřebuje léky na kašel. Kam půjde?",
+          "answer": "Léky se prodávají v **lékárně**. Knihovna půjčuje knihy, pošta posílá dopisy."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejmenšího: obec, dům, ulice.",
+          "answer": "V ulici stojí víc domů. V obci je víc ulic. Takže **dům → ulice → obec**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obec je jen vesnice.",
+          "right": "Obec je vesnice i město.",
+          "why": "Slovo obec znamená každé místo, kde lidé bydlí pohromadě a mají svého starostu – malé i velké."
+        },
+        {
+          "type": "text",
+          "text": "O svou obec pečujeme všichni: odpadky dáváme do koše, neničíme lavičky ani stromy."
+        },
+        {
+          "type": "summary",
+          "text": "Obec je vesnice nebo město. V čele obce je starosta. V obci je pošta, lékárna, knihovna, škola a další budovy."
+        }
+      ]
+    },
+    {
+      "title": "Vesnice a město",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Někdo bydlí na vesnici. Kolem jsou pole a za domem slepice. Jiný bydlí ve městě. Jezdí tramvají a kolem jsou vysoké domy."
+        },
+        {
+          "type": "text",
+          "text": "Obojí je obec, ale každá je jiná. Když znáš rozdíly, umíš popsat, kde žiješ ty."
+        },
+        {
+          "type": "term",
+          "term": "Vesnice",
+          "definition": "Menší obec. Žije v ní méně lidí. Kolem bývají pole, louky a statky.",
+          "example": "Vesnice s kostelem a návsí."
+        },
+        {
+          "type": "term",
+          "term": "Město",
+          "definition": "Větší obec. Žije v něm hodně lidí. Jsou tam vyšší domy, víc obchodů a často městská doprava.",
+          "example": "Brno, Ostrava, Plzeň"
+        },
+        {
+          "type": "term",
+          "term": "Statek",
+          "definition": "Zemědělský dvůr s poli, kde se chovají zvířata.",
+          "example": "Na statku chovají krávy a slepice."
+        },
+        {
+          "type": "heading",
+          "text": "Porovnej"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Vesnice",
+            "Město"
+          ],
+          "rows": [
+            [
+              "lidí",
+              "málo",
+              "hodně"
+            ],
+            [
+              "domy",
+              "nízké, se zahradou",
+              "vysoké, paneláky"
+            ],
+            [
+              "doprava",
+              "autobus",
+              "autobus, tramvaj, metro"
+            ],
+            [
+              "kolem",
+              "pole, louky, les",
+              "ulice, parky"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď: patří to spíš k vesnici, nebo k městu?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Spíš vesnice 🐄",
+              "Spíš město 🏙️"
+            ],
+            "items": [
+              {
+                "text": "pole a statky",
+                "group": 0
+              },
+              {
+                "text": "tramvaj",
+                "group": 1
+              },
+              {
+                "text": "málo lidí",
+                "group": 0
+              },
+              {
+                "text": "vysoké domy",
+                "group": 1
+              },
+              {
+                "text": "hodně obchodů",
+                "group": 1
+              },
+              {
+                "text": "kravín",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Hlavní město",
+          "definition": "Nejdůležitější město státu. Sídlí v něm vláda a prezident.",
+          "example": "Hlavní město České republiky je **Praha**."
+        },
+        {
+          "type": "example",
+          "question": "Ema jezdí do školy tramvají a bydlí v osmém patře. Žije spíš na vesnici, nebo ve městě?",
+          "answer": "Tramvaje a vysoké domy jsou typické pro **město**."
+        },
+        {
+          "type": "example",
+          "question": "Kuba vidí z okna pole a sousedovy krávy. Kde bydlí?",
+          "answer": "Pole a krávy na statku jsou typické pro **vesnici**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Tramvaje jezdí na vesnici.",
+          "right": "Tramvaje jezdí ve velkých městech.",
+          "why": "Tramvaj potřebuje koleje a hodně cestujících. To se vyplatí jen ve velkém městě."
+        },
+        {
+          "type": "summary",
+          "text": "Vesnice i město jsou obce. Město je větší a žije v něm víc lidí. Hlavní město ČR je Praha."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo stojí v čele obce?",
+      "options": [
+        "starosta",
+        "ředitel",
+        "lékař"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde si půjčíme knížku?",
+      "options": [
+        "v knihovně",
+        "na poště",
+        "v lékárně"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde koupíme léky?",
+      "options": [
+        "v lékárně",
+        "v knihovně",
+        "na úřadě"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vesnice je obvykle menší než město.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Tramvaje jezdí hlavně na vesnici.",
+      "answer": false,
+      "explanation": "Tramvaje jezdí ve velkých městech."
+    },
+    {
+      "type": "match",
+      "question": "Spoj budovu a co se tam dělá.",
+      "pairs": [
+        [
+          "pošta",
+          "dopisy"
+        ],
+        [
+          "nemocnice",
+          "léčení"
+        ],
+        [
+          "škola",
+          "učení"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje hlavní město naší republiky?",
+      "answers": [
+        "Praha"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Obec je…",
+      "options": [
+        "vesnice nebo město",
+        "jen les",
+        "jen řeka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Odpadky házím do koše, ne na zem.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "dům",
+        "ulice",
+        "obec"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co zajímavého je ve tvé obci?",
+      "answer": "Například kostel, náměstí, park, hřiště, řeka nebo hrad."
+    },
+    {
+      "type": "open",
+      "question": "Čím se liší vesnice od města?",
+      "answer": "Město je větší, žije v něm víc lidí a jsou tam vyšší domy a víc obchodů. Na vesnici jsou pole a statky."
+    }
+  ]
+}

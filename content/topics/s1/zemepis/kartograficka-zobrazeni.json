@@ -1,0 +1,413 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kartograficka-zobrazeni",
+  "title": "Kartografická zobrazení",
+  "emoji": "🗺️",
+  "explanations": [
+    {
+      "title": "Pomerančová slupka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zkus oloupat pomeranč a slupku rozložit naplocho na stůl, aby se nikde nepotrhala ani nezvlnila. Nepůjde to. Přesně tenhle problém řeší kartografové: jak přenést kulatou Zemi na plochý papír nebo displej."
+        },
+        {
+          "type": "text",
+          "text": "Každá mapa proto něco zkresluje. Když víš co, nenaletíš – třeba tomu, že Grónsko je velké jako Afrika."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kartografie",
+          "definition": "Obor, který se zabývá tvorbou map.",
+          "example": "Kartograf rozhoduje, jak bude mapa vypadat a co zkreslí."
+        },
+        {
+          "type": "term",
+          "term": "Kartografické zobrazení",
+          "definition": "Matematické pravidlo, jak body z povrchu Země (koule nebo elipsoidu) převést na rovinu mapy.",
+          "example": "Mercatorovo zobrazení, Křovákovo zobrazení."
+        },
+        {
+          "type": "term",
+          "term": "Zkreslení",
+          "definition": "Rozdíl mezi skutečností a mapou – v délkách, plochách nebo úhlech.",
+          "example": "Na mapě světa vypadá Grónsko obrovské, ve skutečnosti je asi 14× menší než Afrika."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Na co Zemi „promítneme“"
+        },
+        {
+          "type": "text",
+          "text": "Představ si průsvitný glóbus se žárovkou uvnitř. Stíny pevnin dopadají na papír, který kolem glóbu obtočíme. Papír pak rozvineme do roviny. Papír můžeme tvarovat třemi způsoby:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zobrazovací plocha",
+            "Vhodné pro",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "válec (obtočený kolem rovníku)",
+              "oblasti u rovníku, celý svět",
+              "Mercatorovo"
+            ],
+            [
+              "kužel (jako čepice)",
+              "státy ve středních šířkách",
+              "Křovákovo (mapy ČR)"
+            ],
+            [
+              "rovina (azimutální, dotýká se v jednom bodě)",
+              "polární oblasti",
+              "gnómonické"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pravidlo: zkreslení je nejmenší tam, kde se plocha glóbu dotýká. Proto kužel sedí na střední šířky (Česko) a rovina položená na pól na polární oblasti."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Co mapa zachová"
+        },
+        {
+          "type": "term",
+          "term": "Konformní (úhlojevné) zobrazení",
+          "definition": "Zachová úhly – tvary malých území vypadají správně. Plochy ale zkreslí.",
+          "example": "Mercatorovo zobrazení – kurz lodi se z mapy dá přímo odečíst."
+        },
+        {
+          "type": "term",
+          "term": "Ekvivalentní (plochojevné) zobrazení",
+          "definition": "Zachová poměr ploch – stát dvakrát větší je na mapě dvakrát větší. Tvary jsou ale pokřivené.",
+          "example": "Mollweidovo zobrazení."
+        },
+        {
+          "type": "term",
+          "term": "Ekvidistantní (délkojevné) zobrazení",
+          "definition": "Zachová délky jen v některých směrech (např. podél poledníků).",
+          "example": "Mapa, ze které se dá měřit vzdálenost od jednoho středu."
+        },
+        {
+          "type": "term",
+          "term": "Kompenzační zobrazení",
+          "definition": "Nezachová přesně nic, ale všechna zkreslení drží malá a vyvážená. Hodí se na mapy světa do atlasu.",
+          "example": "Robinsonovo zobrazení."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Proč je Grónsko na Mercatorově mapě tak velké?",
+          "answer": "Mercator je válcové konformní zobrazení. Aby zachoval úhly, roztahuje mapu směrem k pólům do šířky i výšky. Plochy se tam zvětšují. Ve skutečnosti je Afrika asi **14× větší** než Grónsko."
+        },
+        {
+          "type": "example",
+          "question": "Jaké zobrazení vybereš na mapu hustoty zalidnění světa?",
+          "answer": "Hustota je počet lidí na plochu. Plochy musí být ve správném poměru – tedy **ekvivalentní** zobrazení."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dobrá mapa zachová úhly, plochy i délky zároveň.",
+          "right": "Žádné zobrazení nezachová všechno najednou. Vždy volíme, co je pro daný účel nejdůležitější.",
+          "why": "Povrch koule nejde rozvinout do roviny bez natažení nebo smrštění – stejně jako slupka pomeranče."
+        },
+        {
+          "type": "summary",
+          "text": "Zobrazovací plochy: válec (rovník, svět), kužel (střední šířky, Křovák), rovina (póly). Konformní = úhly, ekvivalentní = plochy, ekvidistantní = vybrané délky. Všechno zachovat nejde."
+        }
+      ]
+    },
+    {
+      "title": "Mapa jako nástroj",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kapitán lodi, turista v horách a demograf potřebují úplně jinou mapu. Kapitán chce správné směry, turista vzdálenosti a výšky, demograf plochy. Ukážeme si, jak vybrat správnou mapu podle účelu a jak z ní číst."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se počítat s měřítkem, číst vrstevnice a vybrat zobrazení pro konkrétní úkol."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kartografické zobrazení",
+          "definition": "Způsob, jak převést zakřivený povrch Země do roviny mapy. Vždy přitom něco zkreslí.",
+          "example": "Mercatorovo, Křovákovo, Mollweidovo."
+        },
+        {
+          "type": "term",
+          "term": "Měřítko mapy",
+          "definition": "Poměr, kolikrát je mapa menší než skutečnost. 1 : 25 000 znamená: 1 cm na mapě = 25 000 cm (250 m) ve skutečnosti.",
+          "example": "Turistické mapy mívají 1 : 50 000."
+        },
+        {
+          "type": "term",
+          "term": "Vrstevnice",
+          "definition": "Čára na mapě, která spojuje místa se stejnou nadmořskou výškou.",
+          "example": "Hustě u sebe = strmý svah, daleko od sebe = mírný svah."
+        },
+        {
+          "type": "term",
+          "term": "Loxodroma",
+          "definition": "Čára na Zemi, která protíná všechny poledníky pod stejným úhlem. Kdo po ní pluje, drží pořád stejný kurz podle kompasu.",
+          "example": "Na Mercatorově mapě je loxodroma rovná čára."
+        },
+        {
+          "type": "heading",
+          "text": "Jak počítat s měřítkem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vezmi vzdálenost na mapě v cm.",
+            "Vynásob ji číslem za dvojtečkou – dostaneš cm ve skutečnosti.",
+            "Převeď: 100 000 cm = 1 km (škrtni 5 nul)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Měřítko 1 : 25 000. Na mapě 8 cm. Kolik je to km?",
+          "answer": "8 × 25 000 = 200 000 cm. Škrtnu 5 nul → **2 km**."
+        },
+        {
+          "type": "text",
+          "text": "Pozor: čím **menší číslo** za dvojtečkou, tím **podrobnější** mapa. 1 : 50 000 je podrobnější než 1 : 1 000 000."
+        },
+        {
+          "type": "heading",
+          "text": "Mapa podle účelu"
+        },
+        {
+          "type": "text",
+          "text": "Zobrazení se dělí podle toho, co zachovávají: **konformní** úhly, **ekvivalentní** plochy, **ekvidistantní** vybrané délky, **kompenzační** jen vyvažuje zkreslení. Roztřiď kartičky."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Konformní (úhlojevné)",
+              "Ekvivalentní (plochojevné)"
+            ],
+            "items": [
+              {
+                "text": "Mercatorovo zobrazení",
+                "group": 0
+              },
+              {
+                "text": "námořní navigace",
+                "group": 0
+              },
+              {
+                "text": "Grónsko vypadá velké jako Afrika",
+                "group": 0
+              },
+              {
+                "text": "mapy hustoty zalidnění",
+                "group": 1
+              },
+              {
+                "text": "Mollweidovo zobrazení",
+                "group": 1
+              },
+              {
+                "text": "srovnání rozloh států",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "head": [
+            "Úkol",
+            "Zobrazení",
+            "Proč"
+          ],
+          "rows": [
+            [
+              "navigace lodi",
+              "Mercatorovo (válcové konformní)",
+              "loxodroma je přímka, úhly sedí"
+            ],
+            [
+              "mapa Česka",
+              "Křovákovo (kuželové konformní, systém S-JTSK)",
+              "kužel sedí na střední šířky"
+            ],
+            [
+              "Antarktida",
+              "azimutální (rovina na pólu)",
+              "nejmenší zkreslení kolem pólu"
+            ],
+            [
+              "rozlohy, hustota",
+              "ekvivalentní (Mollweidovo)",
+              "plochy ve správném poměru"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Vybíráš zobrazení pro mapu Arktidy. Válec, kužel, nebo rovina?",
+          "answer": "Válec se dotýká u rovníku, u pólu by byl zkreslený nejvíc. Nejlepší je **rovina (azimutální)** položená na pól."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Mapa 1 : 1 000 000 je podrobnější, protože má větší číslo.",
+          "right": "Podrobnější je mapa s menším číslem za dvojtečkou, např. 1 : 50 000.",
+          "why": "Na mapě 1 : 1 000 000 je 1 cm = 10 km, na 1 : 50 000 je 1 cm = 500 m. Druhá mapa ukáže mnohem víc detailů."
+        },
+        {
+          "type": "summary",
+          "text": "Zobrazení vybírej podle účelu: navigace – konformní (Mercator), rozlohy – ekvivalentní, ČR – Křovák, póly – azimutální. Měřítko: menší číslo = podrobnější mapa."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které zobrazení zachovává úhly?",
+      "options": [
+        "ekvivalentní",
+        "konformní",
+        "ekvidistantní",
+        "kompenzační"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Mercatorovo zobrazení je…",
+      "options": [
+        "válcové konformní",
+        "kuželové ekvivalentní",
+        "azimutální ekvidistantní",
+        "nepravé"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Na Mercatorově mapě jsou plochy u pólů zvětšené.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jaké zobrazení se používá pro mapy ČR (S-JTSK)?",
+      "options": [
+        "Mercatorovo",
+        "Křovákovo",
+        "Mollweidovo",
+        "Robinsonovo"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Pro mapy polárních oblastí je nejvhodnější zobrazení…",
+      "options": [
+        "válcové",
+        "kuželové",
+        "azimutální",
+        "Mercatorovo"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "match",
+      "question": "Spoj typ zobrazení a co zachovává.",
+      "pairs": [
+        [
+          "konformní",
+          "úhly"
+        ],
+        [
+          "ekvivalentní",
+          "plochy"
+        ],
+        [
+          "ekvidistantní",
+          "vybrané délky"
+        ],
+        [
+          "kompenzační",
+          "nic přesně, zkreslení vyvažuje"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Měřítko 1 : 25 000. Na mapě 8 cm. Kolik je to km ve skutečnosti?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Mapa v měřítku 1 : 1 000 000 je podrobnější než mapa 1 : 50 000.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Které zobrazení je vhodné pro mapu hustoty zalidnění světa?",
+      "options": [
+        "ekvivalentní",
+        "konformní",
+        "gnómonické",
+        "Mercatorovo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývají čáry spojující místa se stejnou nadmořskou výškou?",
+      "options": [
+        "izotermy",
+        "vrstevnice",
+        "izobary",
+        "izohyety"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "open",
+      "question": "Proč neexistuje mapa bez zkreslení?",
+      "answer": "Povrch koule či elipsoidu nelze rozvinout do roviny bez natažení nebo smrštění. Lze zachovat jen některou vlastnost – úhly, plochy, nebo vybrané délky."
+    },
+    {
+      "type": "open",
+      "question": "Jak bys vybral zobrazení pro námořní navigaci a pro srovnání rozloh států?",
+      "answer": "Pro navigaci konformní (Mercatorovo), protože loxodroma je přímka a úhly sedí. Pro rozlohy ekvivalentní, které zachovává poměr ploch."
+    }
+  ]
+}

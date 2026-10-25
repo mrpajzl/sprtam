@@ -1,0 +1,405 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "goniometricke-funkce",
+  "title": "Goniometrické funkce",
+  "emoji": "🎡",
+  "explanations": [
+    {
+      "title": "Ruské kolo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sedíš na ruském kole. Kolo se otáčí a ty jsi chvíli vysoko, chvíli nízko, chvíli vpravo, chvíli vlevo – a pořád dokola. Tvoje výška se **opakuje** s každou otáčkou."
+        },
+        {
+          "type": "text",
+          "text": "Funkce sinus a kosinus popisují právě takové opakující se děje: kmitání pružiny, střídavý proud v zásuvce, příliv a odliv, zvukové vlny."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jednotková kružnice",
+          "definition": "Kružnice se středem v počátku souřadnic [0; 0] a poloměrem 1. To je naše ruské kolo."
+        },
+        {
+          "type": "term",
+          "term": "Úhel otočení α",
+          "definition": "Začínáš v bodě [1; 0] (vpravo) a otáčíš se **proti směru hodinových ručiček** o úhel α. Celá otočka je 360°."
+        },
+        {
+          "type": "term",
+          "term": "Sinus a kosinus",
+          "definition": "Po otočení o α jsi v nějakém bodě kružnice. Jeho **x-ová** souřadnice (vlevo–vpravo) je cos α, **y-ová** (výška) je sin α.",
+          "example": "Po otočení o 90° jsi nahoře v [0; 1]: cos 90° = 0, sin 90° = 1."
+        },
+        {
+          "type": "term",
+          "term": "Tangens",
+          "definition": "tg α = sin α / cos α. Je to sklon spojnice středu s tvým bodem. Pro cos α = 0 (90°, 270°) neexistuje.",
+          "example": "tg 45° = 1 – spojnice stoupá pod úhlem 45°."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej otáčení"
+        },
+        {
+          "type": "text",
+          "text": "Posouvej úhel a představ si, že konec ramena je tvoje sedačka. Kdy je nejvýš (sin = 1)? Kdy nejvíc vpravo (cos = 1)? Kdy je výška záporná?"
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 30
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "Výška ani vodorovná poloha nepřesáhne poloměr 1: sin i cos jsou vždy v ⟨−1; 1⟩.",
+            "Pythagorova věta v trojúhelníku se stranami cos α, sin α a 1: **sin² α + cos² α = 1**.",
+            "Po celé otočce (360°) jsi zpátky – hodnoty se opakují. Říkáme, že sin a cos mají **periodu** 360°."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Radián (rad)",
+          "definition": "Jiná jednotka úhlu: měří, jak dlouhý oblouk po kole ujedeš. Obvod kola s poloměrem 1 je 2π, proto celá otočka = 2π rad, půl otočky **180° = π rad**, čtvrt otočky 90° = π/2.",
+          "example": "Perioda sinu a kosinu je tedy 2π."
+        },
+        {
+          "type": "text",
+          "text": "Proč je sin 30° = 1/2? Vezmi body pro +30° a −30°. Se středem tvoří trojúhelník se dvěma stranami 1 a úhlem 60° mezi nimi – tedy rovnostranný. Vzdálenost těch bodů je 1 a každý z nich je v polovině: výška 1/2. Podobně bod pro 60° tvoří se středem a bodem [1; 0] rovnostranný trojúhelník, takže leží přesně nad polovinou poloměru: cos 60° = 1/2. A pro 45° jsou x i y stejné, proto tg 45° = 1."
+        },
+        {
+          "type": "heading",
+          "text": "Souměrnosti na kole"
+        },
+        {
+          "type": "text",
+          "text": "Otočení o 30° a o 150° tě dostane do **stejné výšky** (zrcadlově vlevo). Proto sin 150° = sin 30° = 1/2. Kosinus se ale změní na opačné číslo: cos 120° = −cos 60° = −1/2."
+        },
+        {
+          "type": "text",
+          "text": "Otočení o −α (po směru hodin) dá stejné x, opačné y. Proto cos(−α) = cos α – kosinus je **sudá** funkce. Sinus je lichá: sin(−α) = −sin α."
+        },
+        {
+          "type": "example",
+          "question": "Kolik je sin 150°?",
+          "answer": "150° = 180° − 30°. Bod je zrcadlově k bodu pro 30°, ve stejné výšce. sin 150° = sin 30° = **1/2**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik je cos 120°?",
+          "answer": "120° = 180° − 60°. Bod je vlevo, zrcadlově k 60°. Výška stejná, ale x opačné: cos 120° = −cos 60° = **−1/2**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "sin 150° = −1/2, protože je to „za devadesátkou“.",
+          "right": "sin 150° = 1/2",
+          "why": "Bod pro 150° je ve II. kvadrantu (vlevo nahoře). Je pořád nad osou x, takže výška (sinus) je kladná. Záporný je jen kosinus."
+        },
+        {
+          "type": "summary",
+          "text": "Na jednotkové kružnici: cos α = x-ová souřadnice, sin α = y-ová. Hodnoty jsou v ⟨−1; 1⟩, sin² α + cos² α = 1, po 360° se opakují."
+        }
+      ]
+    },
+    {
+      "title": "Radiány a tabulka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve vyšší matematice a fyzice se úhly neměří ve stupních, ale v **radiánech** – je to přirozenější jednotka, protože vychází z délky oblouku. Kalkulačka v módu RAD a DEG dává úplně jiné výsledky."
+        },
+        {
+          "type": "text",
+          "text": "Tady se naučíš převádět jednotky, zapamatovat si hodnoty pro nejčastější úhly a znát vlastnosti funkcí sin, cos, tg."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jednotková kružnice",
+          "definition": "Kružnice s poloměrem 1 a středem v [0; 0]. Bod otočený z [1; 0] o úhel α má souřadnice [cos α; sin α]."
+        },
+        {
+          "type": "term",
+          "term": "Radián (rad)",
+          "definition": "Úhel, jehož oblouk na jednotkové kružnici je dlouhý 1. Celá kružnice má obvod 2π, proto 360° = 2π rad a **180° = π rad**.",
+          "example": "90° = π/2, 60° = π/3, 45° = π/4, 30° = π/6."
+        },
+        {
+          "type": "term",
+          "term": "Perioda",
+          "definition": "Nejmenší posun, po kterém se hodnoty funkce začnou opakovat.",
+          "example": "sin a cos mají periodu 2π, tg má periodu π."
+        },
+        {
+          "type": "heading",
+          "text": "Převod jednotek"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Stupně → radiány: vynásob π/180.",
+            "Radiány → stupně: vynásob 180/π.",
+            "Rychlá kontrola: π rad = 180°."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Převeď 90° na radiány a 2π/3 na stupně.",
+          "answer": "90 · π/180 = **π/2**. 2π/3 · 180/π = 360/3 = **120°**."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka hodnot"
+        },
+        {
+          "type": "table",
+          "head": [
+            "α",
+            "0°",
+            "30° (π/6)",
+            "45° (π/4)",
+            "60° (π/3)",
+            "90° (π/2)"
+          ],
+          "rows": [
+            [
+              "sin α",
+              "0",
+              "1/2",
+              "√2/2",
+              "√3/2",
+              "1"
+            ],
+            [
+              "cos α",
+              "1",
+              "√3/2",
+              "√2/2",
+              "1/2",
+              "0"
+            ],
+            [
+              "tg α",
+              "0",
+              "√3/3",
+              "1",
+              "√3",
+              "neexistuje"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pomůcka: sinus pro 0°, 30°, 45°, 60°, 90° je √0/2, √1/2, √2/2, √3/2, √4/2. Kosinus je ta samá řada pozpátku."
+        },
+        {
+          "type": "text",
+          "text": "Nastav úhel 60° a odhadni, jak vysoko je konec ramena oproti jeho délce – mělo by to být asi 0,87 (√3/2)."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 60
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vlastnosti"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "sin x",
+            "cos x",
+            "tg x"
+          ],
+          "rows": [
+            [
+              "obor hodnot",
+              "⟨−1; 1⟩",
+              "⟨−1; 1⟩",
+              "ℝ"
+            ],
+            [
+              "perioda",
+              "2π",
+              "2π",
+              "π"
+            ],
+            [
+              "sudá / lichá",
+              "lichá",
+              "sudá",
+              "lichá"
+            ],
+            [
+              "kde neexistuje",
+              "—",
+              "—",
+              "π/2 + kπ"
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "sin² x + cos² x = 1",
+            "sin(180° − α) = sin α, cos(180° − α) = −cos α"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Spočítej sin 150° a cos 120°.",
+          "answer": "sin 150° = sin(180° − 30°) = sin 30° = **1/2**. cos 120° = cos(180° − 60°) = −cos 60° = **−1/2**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejmenší perioda tg x je 2π, stejně jako u sinu.",
+          "right": "Perioda tg x je π.",
+          "why": "Body pro α a α + 180° leží přesně naproti sobě. Sinus i kosinus mají opačná znaménka, a jejich podíl tg je tedy stejný."
+        },
+        {
+          "type": "summary",
+          "text": "180° = π rad. sin a cos: hodnoty v ⟨−1; 1⟩, perioda 2π, cos sudá, sin lichá. tg = sin/cos s periodou π. Vždy platí sin² x + cos² x = 1."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "sin 30° =",
+      "options": [
+        "1/2",
+        "√3/2",
+        "√2/2",
+        "1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "cos 60° =",
+      "answers": [
+        "1/2",
+        "0,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "tg 45° =",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "π rad = ? °",
+      "answers": [
+        "180"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "90° v radiánech =",
+      "answers": [
+        "π/2",
+        "pi/2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "sin² x + cos² x = 1 pro každé x.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Nejmenší perioda funkce sin x:",
+      "options": [
+        "2π",
+        "π",
+        "π/2",
+        "360"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Nejmenší perioda funkce tg x:",
+      "options": [
+        "π",
+        "2π",
+        "π/2",
+        "4π"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "sin 150° =",
+      "answers": [
+        "1/2",
+        "0,5"
+      ],
+      "explanation": "sin(180° − 30°) = sin 30°"
+    },
+    {
+      "type": "choice",
+      "question": "cos 120° =",
+      "options": [
+        "−1/2",
+        "1/2",
+        "√3/2",
+        "−√3/2"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Funkce cos x je sudá.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "H(f) funkce sin x:",
+      "options": [
+        "⟨−1; 1⟩",
+        "ℝ",
+        "⟨0; 1⟩",
+        "(−1; 1)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak jsou definovány sin a cos na jednotkové kružnici?",
+      "answer": "Otočíme bod [1; 0] o úhel α kolem počátku po kružnici s poloměrem 1. cos α je x-ová a sin α y-ová souřadnice tohoto bodu."
+    },
+    {
+      "type": "open",
+      "question": "Jak převedeš stupně na radiány a zpět?",
+      "answer": "Platí 180° = π rad. Stupně násobím π/180, radiány násobím 180/π. Např. 60° = π/3."
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "integral",
+  "title": "Integrál – úvod",
+  "emoji": "🧱",
+  "explanations": [
+    {
+      "title": "Plocha pod křivkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Auto jede stálou rychlostí 50 km/h po dobu 2 hodin – ujede 100 km. Na grafu rychlosti je to **obdélník** 2 × 50 a jeho obsah je ujetá dráha. Co když ale rychlost pořád kolísá? Pak je dráha obsah plochy pod křivou čarou."
+        },
+        {
+          "type": "text",
+          "text": "Integrál umí spočítat obsah pod libovolnou křivkou. Fyzik z něj počítá dráhu, práci nebo spotřebu energie, inženýr objem nádrže, statistik pravděpodobnosti."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Určitý integrál ∫ₐᵇ f(x) dx",
+          "definition": "Obsah plochy mezi grafem f, osou x a svislými čarami x = a a x = b (pro f ≥ 0). Znak ∫ je protažené S jako „suma“, dx připomíná, že sčítáme po tenkých proužcích ve směru x.",
+          "example": "∫₁³ 2 dx = obdélník šířky 2 a výšky 2 = 4."
+        },
+        {
+          "type": "term",
+          "term": "Meze a, b",
+          "definition": "Začátek a konec úseku na ose x, přes který plochu počítáme."
+        },
+        {
+          "type": "heading",
+          "text": "Nejdřív obdélníky"
+        },
+        {
+          "type": "text",
+          "text": "Pod vodorovnou čarou y = 2 od x = 1 do x = 3 je obdélník. Nastav strany 2 a 2 a podívej se na obsah – to je ∫₁³ 2 dx = 4."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "rect",
+            "a": 2,
+            "b": 2
+          }
+        },
+        {
+          "type": "text",
+          "text": "Pod šikmou čarou y = x od 0 do 2 je trojúhelník se stranami 2 a 2: obsah 2 · 2 / 2 = **2**. Tedy ∫₀² x dx = 2."
+        },
+        {
+          "type": "heading",
+          "text": "Pod křivkou: tenké proužky"
+        },
+        {
+          "type": "text",
+          "text": "Pod parabolou y = x² obdélníky nesedí. Rozdělíš plochu na hodně úzkých proužků, každý je skoro obdélník. Čím užší, tím přesněji. Limita tohoto součtu je integrál."
+        },
+        {
+          "type": "heading",
+          "text": "Zkratka: primitivní funkce"
+        },
+        {
+          "type": "term",
+          "term": "Primitivní funkce F",
+          "definition": "Funkce, jejíž derivace je f: F′ = f. Integrování je derivování „pozpátku“.",
+          "example": "K f(x) = x² je primitivní F(x) = x³/3, protože (x³/3)′ = x²."
+        },
+        {
+          "type": "text",
+          "text": "Velká věta analýzy (Newtonova–Leibnizova formule) říká: **∫ₐᵇ f(x) dx = F(b) − F(a)**. Nemusíš sčítat proužky – stačí najít primitivní funkci a dosadit meze."
+        },
+        {
+          "type": "example",
+          "question": "Obsah plochy pod y = x² na ⟨0; 3⟩?",
+          "answer": "F(x) = x³/3. F(3) − F(0) = 27/3 − 0 = **9**."
+        },
+        {
+          "type": "example",
+          "question": "∫₀^π sin x dx = ?",
+          "answer": "Primitivní k sin x je −cos x (protože (−cos x)′ = sin x). [−cos x]₀^π = −cos π − (−cos 0) = 1 + 1 = **2**."
+        },
+        {
+          "type": "text",
+          "text": "Primitivních funkcí je víc – liší se o konstantu, protože derivace konstanty je 0. Proto píšeme „+ C“ (C je libovolné číslo). Ze základních: ∫ xⁿ dx = xⁿ⁺¹/(n + 1) + C, ∫ cos x dx = sin x + C, ∫ eˣ dx = eˣ + C, ∫ 1/x dx = ln|x| + C (e ≈ 2,718, ln je logaritmus se základem e)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "∫ x² dx = 2x + C",
+          "right": "∫ x² dx = x³/3 + C",
+          "why": "2x je **derivace** x². Integrál jde opačným směrem: hledáš funkci, jejíž derivace je x². Exponent se zvětší o 1 a vydělíš novým exponentem."
+        },
+        {
+          "type": "text",
+          "text": "Pozor: části grafu **pod** osou x se v integrálu počítají záporně. Plocha mezi dvěma křivkami je integrál z rozdílu „horní − dolní“: mezi y = x a y = x² na ⟨0; 1⟩ je to 1/2 − 1/3 = 1/6."
+        },
+        {
+          "type": "summary",
+          "text": "Určitý integrál = obsah plochy pod grafem. Spočítáš ho primitivní funkcí: ∫ₐᵇ f dx = F(b) − F(a), kde F′ = f."
+        }
+      ]
+    },
+    {
+      "title": "Derivace pozpátku",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Znáš rychlost auta v každém okamžiku a chceš zjistit, kde je. Z dráhy jsi dosud derivací počítal rychlost. Teď potřebuješ opak: **z rychlosti zpátky dráhu**. To je integrování."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se primitivní funkce – „antiderivace“ – a jak s nimi spočítat obsah plochy."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Derivace",
+          "definition": "f′ udává okamžitou rychlost změny funkce f (sklon grafu).",
+          "example": "(x²)′ = 2x."
+        },
+        {
+          "type": "term",
+          "term": "Primitivní funkce",
+          "definition": "F je primitivní k f, když F′ = f. Je jich nekonečně mnoho – liší se o konstantu, protože derivace konstanty je 0.",
+          "example": "x², x² + 5, x² − 1 mají všechny derivaci 2x."
+        },
+        {
+          "type": "term",
+          "term": "Neurčitý integrál ∫ f(x) dx",
+          "definition": "Zápis všech primitivních funkcí: F(x) + C, kde C je libovolná konstanta.",
+          "example": "∫ 2x dx = x² + C."
+        },
+        {
+          "type": "term",
+          "term": "Určitý integrál ∫ₐᵇ f(x) dx",
+          "definition": "Číslo F(b) − F(a). Pro f ≥ 0 je to obsah plochy pod grafem mezi x = a a x = b."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka – stačí číst derivace pozpátku"
+        },
+        {
+          "type": "text",
+          "text": "Než otočíš kartičku, zkus si říct: čí derivace je tohle?"
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "∫ xⁿ dx (n ≠ −1)",
+                "back": "xⁿ⁺¹/(n + 1) + C"
+              },
+              {
+                "front": "∫ x² dx",
+                "back": "x³/3 + C"
+              },
+              {
+                "front": "∫ 1/x dx",
+                "back": "ln|x| + C"
+              },
+              {
+                "front": "∫ cos x dx",
+                "back": "sin x + C"
+              },
+              {
+                "front": "∫ sin x dx",
+                "back": "−cos x + C"
+              },
+              {
+                "front": "∫ eˣ dx",
+                "back": "eˣ + C"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Výpočet určitého integrálu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi primitivní funkci F (konstantu C vynech).",
+            "Dosaď horní mez: F(b).",
+            "Dosaď dolní mez: F(a).",
+            "Odečti: F(b) − F(a)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "∫₀² (2x + 1) dx = ?",
+          "answer": "F(x) = x² + x. F(2) − F(0) = (4 + 2) − 0 = **6**."
+        },
+        {
+          "type": "example",
+          "question": "∫₀¹ 3x² dx = ?",
+          "answer": "F(x) = x³. F(1) − F(0) = **1**."
+        },
+        {
+          "type": "example",
+          "question": "Obsah plochy mezi y = x a y = x² na ⟨0; 1⟩?",
+          "answer": "Na ⟨0; 1⟩ je x nad x². Integruj rozdíl: ∫₀¹ (x − x²) dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3 = **1/6**."
+        },
+        {
+          "type": "text",
+          "text": "Kontrola selským rozumem: ∫₁³ 2 dx je obdélník 2 × 2. Nastav ho a ověř, že obsah je 4. Primitivní funkce 2x dává 6 − 2 = 4 ✓."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "rect",
+            "a": 2,
+            "b": 2
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "∫ sin x dx = cos x + C",
+          "right": "∫ sin x dx = −cos x + C",
+          "why": "Ověř derivací: (cos x)′ = −sin x, ale (−cos x)′ = sin x. Zkouška derivováním odhalí každou chybu ve znaménku."
+        },
+        {
+          "type": "summary",
+          "text": "Integrál je opak derivace: F′ = f. ∫ xⁿ dx = xⁿ⁺¹/(n + 1) + C. Určitý integrál = F(b) − F(a) = obsah plochy pod grafem (části pod osou x záporně)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "∫ x² dx =",
+      "options": [
+        "x³/3 + C",
+        "2x + C",
+        "x³ + C",
+        "3x³ + C"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "∫₀² x dx =",
+      "answers": [
+        "2"
+      ],
+      "explanation": "[x²/2]₀² = 2"
+    },
+    {
+      "type": "input",
+      "question": "∫₀¹ 3x² dx =",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "∫ cos x dx =",
+      "options": [
+        "sin x + C",
+        "−sin x + C",
+        "cos x + C",
+        "−cos x + C"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "∫ 1/x dx =",
+      "options": [
+        "ln|x| + C",
+        "−1/x² + C",
+        "x⁰ + C",
+        "eˣ + C"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "∫₁³ 2 dx =",
+      "answers": [
+        "4"
+      ],
+      "explanation": "Obdélník 2 × 2."
+    },
+    {
+      "type": "truefalse",
+      "question": "Primitivní funkce je určena jednoznačně až na přičtenou konstantu.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "∫₀^π sin x dx =",
+      "answers": [
+        "2"
+      ],
+      "explanation": "[−cos x]₀^π = 1 − (−1)"
+    },
+    {
+      "type": "input",
+      "question": "Obsah plochy pod y = x² na ⟨0; 3⟩ =",
+      "answers": [
+        "9"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "∫ eˣ dx =",
+      "options": [
+        "eˣ + C",
+        "x · eˣ⁻¹ + C",
+        "ln x + C",
+        "eˣ⁺¹ + C"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "∫₀² (2x + 1) dx =",
+      "answers": [
+        "6"
+      ],
+      "explanation": "[x² + x]₀² = 6"
+    },
+    {
+      "type": "input",
+      "question": "Obsah plochy mezi y = x a y = x² na ⟨0; 1⟩ =",
+      "answers": [
+        "1/6"
+      ],
+      "explanation": "1/2 − 1/3"
+    },
+    {
+      "type": "open",
+      "question": "Jaký je vztah mezi derivací a integrálem?",
+      "answer": "Integrování je opačná operace k derivování. F je primitivní k f, když F′ = f. Určitý integrál spočítám jako F(b) − F(a)."
+    },
+    {
+      "type": "open",
+      "question": "Co geometricky vyjadřuje určitý integrál ∫ₐᵇ f(x) dx?",
+      "answer": "Pro nezápornou funkci obsah plochy mezi grafem, osou x a přímkami x = a, x = b. Části pod osou x se počítají záporně."
+    }
+  ]
+}

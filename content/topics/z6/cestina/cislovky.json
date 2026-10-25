@@ -1,0 +1,423 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cislovky",
+  "title": "Číslovky",
+  "emoji": "🔢",
+  "explanations": [
+    {
+      "title": "Otázkami",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve sportu jsi doběhl **třetí**, máš **dva** bratry, na trénink chodíš **dvakrát** týdně a máš **troje** tenisky. Všechna tučná slova vyjadřují počet nebo pořadí."
+        },
+        {
+          "type": "text",
+          "text": "Takovým slovům říkáme **číslovky**. Naučíš se je poznat, roztřídit a správně ohýbat (*se dvěma*, ne *se dvěmi*)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Číslovka",
+          "definition": "Slovo, které vyjadřuje **počet**, **pořadí** nebo **kolikrát** se něco stalo.",
+          "example": "pět, pátý, pětkrát, několik"
+        },
+        {
+          "type": "term",
+          "term": "Určitá číslovka",
+          "definition": "Říká přesné číslo.",
+          "example": "tři, desátý, dvakrát"
+        },
+        {
+          "type": "term",
+          "term": "Neurčitá číslovka",
+          "definition": "Říká počet nepřesně.",
+          "example": "několik, mnoho, málo, pár, hodně"
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři druhy podle otázky"
+        },
+        {
+          "type": "text",
+          "text": "Určité číslovky dělíme do čtyř druhů. Druh poznáš podle otázky, na kterou číslovka odpovídá."
+        },
+        {
+          "type": "term",
+          "term": "Základní",
+          "definition": "Odpovídá na **kolik?**",
+          "example": "Mám **pět** korun."
+        },
+        {
+          "type": "term",
+          "term": "Řadová",
+          "definition": "Odpovídá na **kolikátý?** Říká pořadí. Číslicí ji píšeme **s tečkou**.",
+          "example": "Byl jsem **pátý**. = Byl jsem 5."
+        },
+        {
+          "type": "term",
+          "term": "Druhová",
+          "definition": "Odpovídá na **kolikerý? kolikery?** Říká, kolik druhů nebo kolik kusů u věcí, které jsou v páru nebo jsou pomnožné.",
+          "example": "**dvojí** chleba (dva druhy), **troje** boty (tři páry)"
+        },
+        {
+          "type": "term",
+          "term": "Násobná",
+          "definition": "Odpovídá na **kolikrát? kolikanásobný?**",
+          "example": "**třikrát** týdně, **dvojnásobný** počet"
+        },
+        {
+          "type": "text",
+          "text": "Zeptej se otázkou a roztřiď číslovky."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "základní",
+              "řadové",
+              "násobné"
+            ],
+            "items": [
+              {
+                "text": "tři",
+                "group": 0
+              },
+              {
+                "text": "sto",
+                "group": 0
+              },
+              {
+                "text": "deset",
+                "group": 0
+              },
+              {
+                "text": "třetí",
+                "group": 1
+              },
+              {
+                "text": "sedmý",
+                "group": 1
+              },
+              {
+                "text": "první",
+                "group": 1
+              },
+              {
+                "text": "třikrát",
+                "group": 2
+              },
+              {
+                "text": "dvakrát",
+                "group": 2
+              },
+              {
+                "text": "stokrát",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Urči druh: *Ve čtvrtek jsem byl dvakrát v obchodě a koupil troje ponožky.*",
+          "answer": "*dvakrát* – kolikrát? → násobná. *troje* – kolikery? → druhová. (*čtvrtek* je podstatné jméno, název dne, ne číslovka.)"
+        },
+        {
+          "type": "example",
+          "question": "Jak přečteš *Přišel 3. a odešel po 3 hodinách*?",
+          "answer": "*3.* s tečkou = řadová: „třetí“. *3* bez tečky = základní: „po třech hodinách“."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Doběhl jsem 3 v pořadí.",
+          "right": "Doběhl jsem 3. (třetí).",
+          "why": "Pořadí je řadová číslovka. Když ji píšeš číslicí, musíš dát tečku."
+        },
+        {
+          "type": "summary",
+          "text": "Číslovky: základní (kolik?), řadové (kolikátý?, s tečkou), druhové (kolikery?), násobné (kolikrát?). Přesné jsou určité, nepřesné (několik) neurčité."
+        }
+      ]
+    },
+    {
+      "title": "Pozor na tvary",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Slyšel jsi někdy *se dvěmi kamarády* nebo *se třema psama*? V hovoru to tak lidé říkají. Ve škole, v dopise nebo v písemce ale musíš psát **spisovně**."
+        },
+        {
+          "type": "term",
+          "term": "Spisovná čeština",
+          "definition": "Správná, „úřední“ podoba češtiny. Píšeme ji ve škole, v novinách, mluvíme ji ve zprávách.",
+          "example": "spisovně *se dvěma*, hovorově *se dvouma*"
+        },
+        {
+          "type": "term",
+          "term": "Číslovka",
+          "definition": "Slovo, které vyjadřuje počet nebo pořadí.",
+          "example": "dva, druhý, dvakrát, mnoho"
+        },
+        {
+          "type": "heading",
+          "text": "Jaké číslovky jsou"
+        },
+        {
+          "type": "text",
+          "text": "Číslovky dělíme dvakrát. Podle přesnosti: **určité** (přesné číslo: *pět*) a **neurčité** (nepřesně: *několik, mnoho, málo*)."
+        },
+        {
+          "type": "text",
+          "text": "A podle toho, co vyjadřují. Klepni na kartu a zjisti, jakou otázkou který druh poznáš."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "základní",
+                "back": "kolik? – pět, sto"
+              },
+              {
+                "front": "řadová",
+                "back": "kolikátý? – pátý (= 5.)"
+              },
+              {
+                "front": "druhová",
+                "back": "kolikerý? kolikery? – dvojí, troje boty"
+              },
+              {
+                "front": "násobná",
+                "back": "kolikrát? – pětkrát, dvojnásobný"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Těžké tvary: dva, oba, tři, čtyři"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar slova podle otázky (kdo? bez koho? s kým?…). Pádů je sedm. Číslovky se podle pádů mění.",
+          "example": "dva – bez dvou – se dvěma"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Pád",
+            "dva",
+            "oba",
+            "tři",
+            "čtyři"
+          ],
+          "rows": [
+            [
+              "1. kdo? co?",
+              "dva",
+              "oba",
+              "tři",
+              "čtyři"
+            ],
+            [
+              "2. bez koho?",
+              "dvou",
+              "obou",
+              "tří",
+              "čtyř"
+            ],
+            [
+              "3. komu?",
+              "dvěma",
+              "oběma",
+              "třem",
+              "čtyřem"
+            ],
+            [
+              "6. o kom?",
+              "dvou",
+              "obou",
+              "třech",
+              "čtyřech"
+            ],
+            [
+              "7. s kým?",
+              "dvěma",
+              "oběma",
+              "třemi",
+              "čtyřmi"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Dva a oba mají ve 3. a 7. pádě **-ma**: *dvěma, oběma*.",
+            "Tři a čtyři mají v 7. pádě **-mi**: *třemi, čtyřmi*.",
+            "Tvary *dvěmi, třema, čtyřma, obouma* jsou nespisovné."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Doplň spisovně: *Šel jsem ven se (2) kamarády a (3) psy.*",
+          "answer": "s kým? → 7. pád. Se **dvěma** kamarády a **třemi** psy."
+        },
+        {
+          "type": "example",
+          "question": "Napiš slovy 25 a 21.",
+          "answer": "Dvě možnosti: **dvacet pět** nebo **pětadvacet**; **dvacet jedna** nebo **jednadvacet**. První tvar zvlášť, obrácený dohromady."
+        },
+        {
+          "type": "mistake",
+          "wrong": "se třema kamarády",
+          "right": "se třemi kamarády",
+          "why": "Tvar *třema* je hovorový. Spisovně má číslovka tři v 7. pádě *třemi*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Držel to obouma rukama.",
+          "right": "Držel to oběma rukama.",
+          "why": "Číslovka oba má v 7. pádě *oběma*, stejně jako *dvěma*."
+        },
+        {
+          "type": "summary",
+          "text": "Spisovně: se dvěma, s oběma, se třemi, se čtyřmi. Druhy číslovek: základní, řadové, druhové, násobné; určité a neurčité."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "*Pátý* je číslovka…",
+      "options": [
+        "řadová",
+        "základní",
+        "násobná"
+      ],
+      "answer": 0,
+      "explanation": "Kolikátý? → řadová."
+    },
+    {
+      "type": "choice",
+      "question": "*Několik* je číslovka…",
+      "options": [
+        "neurčitá",
+        "určitá",
+        "řadová"
+      ],
+      "answer": 0,
+      "explanation": "Neříká přesný počet."
+    },
+    {
+      "type": "choice",
+      "question": "Jak je to spisovně?",
+      "options": [
+        "se dvěma kamarády",
+        "se dvěmi kamarády",
+        "se dvouma kamarády"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak je to spisovně?",
+      "options": [
+        "se třemi psy",
+        "se třema psy",
+        "se tři psy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Zápis *3. místo* čteme „třetí místo“.",
+      "answer": true,
+      "explanation": "Tečka za číslicí = řadová číslovka."
+    },
+    {
+      "type": "input",
+      "question": "Napiš slovem násobnou číslovku *kolikrát?* od čísla 2.",
+      "answers": [
+        "dvakrát"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolikátý měsíc v roce je červen? Napiš slovem.",
+      "answers": [
+        "šestý"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj číslovku s druhem.",
+      "pairs": [
+        [
+          "třikrát",
+          "násobná"
+        ],
+        [
+          "troje",
+          "druhová"
+        ],
+        [
+          "třetí",
+          "řadová"
+        ],
+        [
+          "tři",
+          "základní"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která číslovka je druhová?",
+      "options": [
+        "dvoje",
+        "druhý",
+        "dvakrát"
+      ],
+      "answer": 0,
+      "explanation": "dvoje boty – kolikery?"
+    },
+    {
+      "type": "choice",
+      "question": "Jak správně napíšeš slovy 21?",
+      "options": [
+        "dvacet jedna",
+        "dvacetjedna",
+        "dvacet-jedna"
+      ],
+      "answer": 0,
+      "explanation": "Zvlášť, nebo dohromady obráceně: jednadvacet."
+    },
+    {
+      "type": "open",
+      "question": "Jaké znáš druhy číslovek? Ke každému uveď příklad.",
+      "answer": "Základní (pět), řadové (pátý), druhové (dvojí, troje) a násobné (pětkrát). Podle přesnosti určité a neurčité (několik)."
+    },
+    {
+      "type": "open",
+      "question": "Jak zní spisovně 7. pád číslovek *dva* a *oba*? Uveď příklad.",
+      "answer": "Dvěma a oběma: šel jsem se dvěma kamarády, držel to oběma rukama."
+    }
+  ]
+}

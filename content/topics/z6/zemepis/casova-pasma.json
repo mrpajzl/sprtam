@@ -1,0 +1,317 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "casova-pasma",
+  "title": "Časová pásma",
+  "emoji": "🕐",
+  "explanations": [
+    {
+      "title": "Výpočtem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když u nás je poledne, v Japonsku už je večer a v New Yorku teprve ráno. Kdyby všude na světě platil stejný čas, v Japonsku by bylo „poledne“ uprostřed noci."
+        },
+        {
+          "type": "text",
+          "text": "Proto se Země dělí na **časová pásma**. Hodí se to, když letíš na dovolenou, voláš babičce do Kanady nebo sleduješ zápas v Austrálii."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Poledne",
+          "definition": "Okamžik, kdy je Slunce na obloze **nejvýš**. Na každém místě nastává v jinou dobu, protože se Země otáčí."
+        },
+        {
+          "type": "term",
+          "term": "Poledník",
+          "definition": "Myšlená čára na Zemi od severního k jižnímu pólu. Všechna místa na jednom poledníku mají poledne ve stejnou chvíli."
+        },
+        {
+          "type": "term",
+          "term": "Zeměpisná délka",
+          "definition": "Číslo ve stupních (0°–180°), které říká, jak daleko na východ (v. d.) nebo na západ (z. d.) leží místo od **nultého poledníku** v Greenwichi u Londýna."
+        },
+        {
+          "type": "term",
+          "term": "Časové pásmo",
+          "definition": "Pruh Země od pólu k pólu, ve kterém platí **stejný čas** na hodinkách.",
+          "example": "Česko, Německo a Francie jsou ve stejném pásmu."
+        },
+        {
+          "type": "heading",
+          "text": "Spočítáme, proč je pásem 24"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Země se otočí jednou dokola, tedy o **360°**.",
+            "Trvá jí to **24 hodin**.",
+            "Za 1 hodinu se otočí o 360° : 24 = **15°**.",
+            "Proto má jedno pásmo asi 15° zeměpisné délky.",
+            "Pásem je stejně jako hodin: **24**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Země se točí k východu. Kdo leží víc na východ, toho Slunce osvítí dřív. Proto na **východ čas přibývá** a na **západ ubývá**."
+        },
+        {
+          "type": "heading",
+          "text": "Výchozí čas: UTC"
+        },
+        {
+          "type": "term",
+          "term": "UTC",
+          "definition": "Světový čas, od kterého se počítají všechny ostatní. Platí v pásmu kolem nultého poledníku (např. v zimě v Londýně)."
+        },
+        {
+          "type": "term",
+          "term": "SEČ",
+          "definition": "**Středoevropský čas** = UTC+1. Platí u nás v zimě. Jsme o 1 hodinu napřed před Londýnem."
+        },
+        {
+          "type": "term",
+          "term": "Letní čas",
+          "definition": "V létě si posuneme hodiny o hodinu dopředu, aby bylo déle světlo večer. U nás pak platí **UTC+2**."
+        },
+        {
+          "type": "example",
+          "question": "V Londýně je 12:00 (zima). Kolik je v Praze?",
+          "answer": "Praha je o 1 pásmo na východ (SEČ = UTC+1). Na východ čas přibývá: 12 + 1 = **13:00**."
+        },
+        {
+          "type": "example",
+          "question": "Tokio má UTC+9. V Praze je poledne (SEČ, UTC+1). Kolik je v Tokiu?",
+          "answer": "Rozdíl: 9 − 1 = 8 hodin. Tokio je na východ, čas přibývá: 12 + 8 = **20:00** – večer."
+        },
+        {
+          "type": "heading",
+          "text": "Datová hranice"
+        },
+        {
+          "type": "term",
+          "term": "Datová hranice",
+          "definition": "Čára v **Tichém oceánu**, zhruba podél poledníku 180°. Když ji přejedeš, změní se **datum** (den v kalendáři).",
+          "example": "Pluješ na západ → přeskočíš o den dopředu. Pluješ na východ → o den zpět."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hranice pásem vedou vždy přesně po polednících.",
+          "right": "Hranice pásem se často ohýbají podle hranic států.",
+          "why": "Bylo by nepraktické, kdyby jeden stát měl uprostřed dva časy. Proto třeba celá Čína používá jediný čas."
+        },
+        {
+          "type": "summary",
+          "text": "Země se otočí o 15° za hodinu, proto je 24 časových pásem po 15°. Na východ čas přibývá, na západ ubývá. U nás platí SEČ = UTC+1."
+        }
+      ]
+    },
+    {
+      "title": "Hodinky na cestách",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Letíš z Prahy do New Yorku. Odlétáš v poledne, letíš 9 hodin – a přistaneš ve 3 odpoledne místního času. Jak je to možné? Hodinky na místě jdou jinak."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, jak časová pásma fungují, nespleteš si čas odletu, nepřijdeš pozdě na spoj a nebudeš kamarádům volat ve 3 ráno."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Místní čas",
+          "definition": "Čas podle Slunce na konkrétním místě: poledne je, když je Slunce nejvýš. Každé místo víc na východ má poledne dřív."
+        },
+        {
+          "type": "term",
+          "term": "Časové pásmo",
+          "definition": "Velký pruh Země, ve kterém se lidé dohodli na **stejném čase**. Je jich **24** – jedno na každou hodinu dne."
+        },
+        {
+          "type": "term",
+          "term": "UTC",
+          "definition": "Světový čas na nultém poledníku (čára přes Greenwich u Londýna). Ostatní pásma se píšou jako UTC+1, UTC−5 atd.",
+          "example": "UTC+1 = o hodinu víc než v Londýně v zimě."
+        },
+        {
+          "type": "term",
+          "term": "SEČ",
+          "definition": "Středoevropský čas, **UTC+1**. Platí u nás v zimě. V létě máme **letní čas UTC+2**."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo pro cestovatele"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti, kolik má cíl cesty „UTC + kolik“.",
+            "Odečti, kolik máš ty – to je rozdíl v hodinách.",
+            "Cíl je na **východ** → hodinky posuneš **dopředu**.",
+            "Cíl je na **západ** → hodinky posuneš **dozadu**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Praha (SEČ, UTC+1) → New York (UTC−5). O kolik posuneš hodinky?",
+          "answer": "Rozdíl: z +1 na −5 je 6 hodin. New York je na západ, takže hodinky posuneš o **6 hodin dozadu**. Z 12:00 v Praze je 6:00 v New Yorku."
+        },
+        {
+          "type": "text",
+          "text": "Nastav ručičky: v Praze je 12:00. Kolik ukazují hodinky v New Yorku? Posuň je o 6 hodin zpět a zkontroluj, že vyjde 6:00."
+        },
+        {
+          "type": "widget",
+          "widget": "clock",
+          "props": {
+            "hours": 12,
+            "minutes": 0
+          }
+        },
+        {
+          "type": "example",
+          "question": "Odlétáš z Prahy ve 12:00 SEČ, let trvá 9 hodin. Kolik bude v New Yorku při přistání?",
+          "answer": "Podle pražských hodinek přistaneš ve 12 + 9 = 21:00. New York je o 6 hodin pozadu: 21 − 6 = **15:00** místního času."
+        },
+        {
+          "type": "heading",
+          "text": "Kde je nejdřív ráno"
+        },
+        {
+          "type": "text",
+          "text": "Země se točí k východu, proto Slunce vychází nejdřív na východě. Pořadí měst od východu: **Tokio → Moskva → Praha → Londýn → New York**."
+        },
+        {
+          "type": "heading",
+          "text": "Datová hranice"
+        },
+        {
+          "type": "text",
+          "text": "Pokud bys pořád letěl na východ a posouval hodinky, po obletu Země bys „přidal“ celý den navíc. Proto existuje **datová hranice** v Tichém oceánu."
+        },
+        {
+          "type": "term",
+          "term": "Datová hranice",
+          "definition": "Čára v Tichém oceánu, kde se mění datum. Přejedeš-li ji **na západ**, přeskočíš den **dopředu**; **na východ** se o den **vrátíš**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Letím na západ, takže si hodinky posunu dopředu.",
+          "right": "Na západ hodinky posouvám dozadu, na východ dopředu.",
+          "why": "Místa na východě vidí Slunce dřív, mají tedy „pozdější“ čas. Na západě je čas o hodiny zpátky."
+        },
+        {
+          "type": "summary",
+          "text": "Na východ hodinky dopředu, na západ dozadu. Jedno pásmo = 1 hodina = asi 15°. U nás platí SEČ (UTC+1), v létě UTC+2."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik je na Zemi základních časových pásem?",
+      "answers": [
+        "24"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik stupňů zeměpisné délky odpovídá 1 hodině?",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký čas platí v Česku v zimě?",
+      "options": [
+        "UTC+1 (SEČ)",
+        "UTC+2",
+        "UTC",
+        "UTC−1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Když cestujeme na východ, posouváme hodinky dopředu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kde vede datová hranice?",
+      "options": [
+        "v Atlantském oceánu",
+        "v Tichém oceánu",
+        "přes Londýn",
+        "přes Indii"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "V Praze je 10:00 (SEČ). Kolik hodin je v Londýně (UTC)?",
+      "answers": [
+        "9",
+        "9:00",
+        "09:00"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "V Praze je poledne. Kde je teď večer?",
+      "options": [
+        "v Japonsku",
+        "v USA",
+        "ve Velké Británii",
+        "v Brazílii"
+      ],
+      "answer": 0,
+      "explanation": "Japonsko leží daleko na východ, čas tam běží napřed."
+    },
+    {
+      "type": "truefalse",
+      "question": "Hranice časových pásem vedou vždy přesně po polednících.",
+      "answer": false,
+      "explanation": "Často sledují hranice států."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď města podle toho, kde je nejdřív ráno (od východu).",
+      "items": [
+        "Tokio",
+        "Moskva",
+        "Praha",
+        "Londýn",
+        "New York"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Proč na Zemi existují časová pásma?",
+      "answer": "Země se otáčí, takže Slunce není všude ve stejný čas nejvýš. Aby poledne odpovídalo Slunci, rozdělila se Země na 24 pásem po 15°."
+    },
+    {
+      "type": "open",
+      "question": "Co se stane s datem, když loď přepluje datovou hranici?",
+      "answer": "Při plavbě na západ se datum posune o den dopředu, při plavbě na východ o den zpět."
+    }
+  ]
+}

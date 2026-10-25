@@ -1,0 +1,337 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vyrazy",
+  "title": "Výrazy s proměnnou",
+  "emoji": "🔤",
+  "generator": "expressions",
+  "explanations": [
+    {
+      "title": "Krabičky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na stole jsou 3 zavřené krabičky bonbonů a vedle 2 volné bonbony. Ve všech krabičkách je stejně bonbonů, ale nevíš kolik. Jak zapíšeš, kolik bonbonů je na stole celkem?"
+        },
+        {
+          "type": "text",
+          "text": "Neznámý počet označíš písmenem, třeba x. Celkem je to **3x + 2**. Takový zápis je **výraz s proměnnou**. Používají se ve vzorcích, v tabulkách v počítači i v programování."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Proměnná",
+          "definition": "Písmeno, které zastupuje číslo. To číslo se může měnit nebo ho zatím neznáme.",
+          "example": "x = počet bonbonů v jedné krabičce."
+        },
+        {
+          "type": "term",
+          "term": "Výraz",
+          "definition": "Zápis z čísel, proměnných a početních znamének. Nemá v sobě rovnítko.",
+          "example": "3x + 2, 2a − b, 5"
+        },
+        {
+          "type": "term",
+          "term": "3x",
+          "definition": "Znamená 3 · x. Znak krát mezi číslem a písmenem se nepíše.",
+          "example": "3x = x + x + x (tři krabičky)"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "📦",
+            "📦",
+            "📦",
+            "🍬",
+            "🍬"
+          ],
+          "caption": "3x + 2"
+        },
+        {
+          "type": "heading",
+          "text": "Dosazení: otevři krabičky"
+        },
+        {
+          "type": "text",
+          "text": "Otevřeš krabičku a zjistíš, že v ní je 5 bonbonů. Teď víš, že x = 5. Dosadíš: 3 · 5 + 2 = **17 bonbonů**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik je 2x + 5, když x = 4?",
+          "answer": "Místo x napiš 4: 2 · 4 + 5 = 8 + 5 = **13**."
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání: jen stejné věci"
+        },
+        {
+          "type": "text",
+          "text": "2 krabičky + 3 krabičky = 5 krabiček: **2x + 3x = 5x**. Ale 2 krabičky + 3 bonbony? To jsou různé věci. 2x + 3 už nejde zjednodušit."
+        },
+        {
+          "type": "text",
+          "text": "Stejně jablka a hrušky: 2a + 3h + a = 3a + 3h. Sečteš jablka s jablky, hrušky zvlášť."
+        },
+        {
+          "type": "example",
+          "question": "Zjednoduš 4a + 3b − a + 2b.",
+          "answer": "Jablka: 4a − a = 3a. Hrušky: 3b + 2b = 5b. Výsledek **3a + 5b**."
+        },
+        {
+          "type": "heading",
+          "text": "Závorka: balíček"
+        },
+        {
+          "type": "text",
+          "text": "3 balíčky, v každém je 1 krabička a 2 bonbony: 3(x + 2). Celkem máš 3 krabičky a 6 bonbonů: **3x + 6**. Číslo před závorkou násobí všechno uvnitř."
+        },
+        {
+          "type": "mistake",
+          "wrong": "2x + 3y = 5xy",
+          "right": "2x + 3y nejde zjednodušit.",
+          "why": "x a y jsou různé věci – jako jablka a hrušky. Sčítat lze jen členy se stejným písmenem."
+        },
+        {
+          "type": "summary",
+          "text": "Písmeno zastupuje číslo. Dosadit = napsat číslo místo písmene. Sčítat jdou jen stejné věci: 2x + 3x = 5x, ale 2x + 3 zůstane."
+        }
+      ]
+    },
+    {
+      "title": "Pravidla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Obvod obdélníku je a + b + a + b. Kratší je napsat 2a + 2b nebo 2(a + b). Úpravy výrazů = přepisování do jednodušší podoby, aniž by se změnila hodnota."
+        },
+        {
+          "type": "text",
+          "text": "Bez toho nevyřešíš rovnice – a ty jsou v 8. a 9. třídě všude."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Proměnná",
+          "definition": "Písmeno (x, a, n…), za které můžeš dosadit číslo.",
+          "example": "V 2n + 3 je proměnná n."
+        },
+        {
+          "type": "term",
+          "term": "Výraz",
+          "definition": "Zápis z čísel, proměnných, znamének a závorek – bez rovnítka.",
+          "example": "4a + 3b − a + 2b"
+        },
+        {
+          "type": "term",
+          "term": "Člen",
+          "definition": "Část výrazu oddělená znaménkem + nebo −. Znaménko před členem k němu patří.",
+          "example": "Ve 4a + 3b − a jsou členy 4a, 3b a −a."
+        },
+        {
+          "type": "term",
+          "term": "Koeficient",
+          "definition": "Číslo před proměnnou. Když tam žádné není, je to 1.",
+          "example": "Ve 4a je koeficient 4, v −a je −1."
+        },
+        {
+          "type": "term",
+          "term": "Hodnota výrazu",
+          "definition": "Číslo, které vyjde po dosazení čísel za proměnné.",
+          "example": "Hodnota 2x + 1 pro x = 3 je 7."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři pravidla"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Dosazení:** za proměnnou napiš číslo, záporné do závorky. a² − 3a pro a = −2: (−2)² − 3 · (−2) = 4 + 6 = 10.",
+            "**Sčítání:** sečti koeficienty členů se stejnou proměnnou. 5x + 2x − 3x = 4x.",
+            "**Roznásobení závorky:** číslo před závorkou vynásob každým členem uvnitř. 3(2a − 1) = 6a − 3.",
+            "**Mínus před závorkou:** změní znaménko všech členů v ní. −(x − 7) = −x + 7."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup zjednodušení"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Odstraň závorky (roznásob).",
+            "Najdi členy se stejnou proměnnou a podtrhni je stejnou barvou.",
+            "Sečti jejich koeficienty.",
+            "Napiš výsledek, čísla bez proměnné nakonec."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Zjednoduš 2(x + 4) − 3x.",
+          "answer": "Roznásob: 2x + 8 − 3x. Sečti x: 2x − 3x = −x. Výsledek **−x + 8**."
+        },
+        {
+          "type": "example",
+          "question": "Zapiš výrazem: „o 3 větší než dvojnásobek čísla n“.",
+          "answer": "Dvojnásobek n je 2n. O 3 větší: **2n + 3**."
+        },
+        {
+          "type": "text",
+          "text": "Pozor na rozdíl: x · x = x² (x na druhou), ale x + x = 2x."
+        },
+        {
+          "type": "text",
+          "text": "Procvič si: otoč kartičku a zkontroluj úpravu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "5x + 2x − 3x",
+                "back": "4x"
+              },
+              {
+                "front": "3(2a − 1)",
+                "back": "6a − 3"
+              },
+              {
+                "front": "−(x − 7)",
+                "back": "−x + 7"
+              },
+              {
+                "front": "x · x",
+                "back": "x²"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "3(x + 2) = 3x + 2",
+          "right": "3(x + 2) = 3x + 6",
+          "why": "Číslo před závorkou násobí **každý** člen v ní – i tu dvojku."
+        },
+        {
+          "type": "summary",
+          "text": "Sčítej jen členy se stejnou proměnnou. Číslo před závorkou násobí každý člen. Mínus před závorkou otočí všechna znaménka."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Hodnota výrazu 2x + 5 pro x = 4:",
+      "answers": [
+        "13"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Hodnota výrazu a² − 3a pro a = −2:",
+      "answers": [
+        "10"
+      ],
+      "explanation": "4 + 6 = 10"
+    },
+    {
+      "type": "choice",
+      "question": "5x + 2x − 3x =",
+      "options": [
+        "4x",
+        "10x",
+        "4",
+        "7x − 3"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "3(2a − 1) =",
+      "options": [
+        "6a − 3",
+        "6a − 1",
+        "5a − 3",
+        "6a + 3"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "−(x − 7) =",
+      "options": [
+        "−x + 7",
+        "−x − 7",
+        "x − 7",
+        "x + 7"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "2x + 3y = 5xy",
+      "answer": false,
+      "explanation": "Různé proměnné nelze sečíst."
+    },
+    {
+      "type": "choice",
+      "question": "Zjednoduš 4a + 3b − a + 2b",
+      "options": [
+        "3a + 5b",
+        "5a + 5b",
+        "8ab",
+        "3a + b"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Obvod obdélníku se stranami a a b zapsaný výrazem bez závorek: 2a + ?",
+      "answers": [
+        "2b"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "x · x = x²",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Výraz „o 3 větší než dvojnásobek čísla n“:",
+      "options": [
+        "2n + 3",
+        "2(n + 3)",
+        "3n + 2",
+        "n + 3 · 2"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co znamená dosadit do výrazu?",
+      "answer": "Za každou proměnnou napíšu dané číslo a výraz spočítám. Např. 2x + 1 pro x = 3: 2 · 3 + 1 = 7."
+    },
+    {
+      "type": "open",
+      "question": "Které členy výrazu můžeš sečíst?",
+      "answer": "Jen členy se stejnou proměnnou ve stejné mocnině, např. 3x a 5x. Členy 3x a 5x² ani 3x a 5 sečíst nejde."
+    }
+  ]
+}

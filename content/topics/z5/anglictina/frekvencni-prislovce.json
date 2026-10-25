@@ -1,0 +1,364 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "frekvencni-prislovce",
+  "title": "Always, usually, never",
+  "emoji": "📅",
+  "explanations": [
+    {
+      "title": "Teploměr",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zuby si čistíš **vždycky**. Do kina chodíš **někdy**. Kávu nepiješ **nikdy**. Slova jako *vždy, často, někdy, nikdy* říkají, **jak často** něco děláš."
+        },
+        {
+          "type": "text",
+          "text": "Anglicky je potřebuješ, když vyprávíš o svém týdnu, koníčcích nebo zvycích."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Příslovce četnosti",
+          "definition": "Slovo, které odpovídá na otázku **Jak často?**",
+          "example": "always = vždy, never = nikdy"
+        },
+        {
+          "type": "term",
+          "term": "Přítomný čas prostý",
+          "definition": "Tvar slovesa pro věci, které děláš pravidelně. U he / she / it má sloveso -s.",
+          "example": "I play. She plays."
+        },
+        {
+          "type": "heading",
+          "text": "Teploměr četnosti"
+        },
+        {
+          "type": "text",
+          "text": "Představ si teploměr. Nahoře je 100 % – děláš to pokaždé. Dole 0 % – neděláš to vůbec. Čísla jsou jen přibližná."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "%",
+            "items": [
+              {
+                "label": "always",
+                "value": 100
+              },
+              {
+                "label": "usually",
+                "value": 80
+              },
+              {
+                "label": "often",
+                "value": 60
+              },
+              {
+                "label": "sometimes",
+                "value": 40
+              },
+              {
+                "label": "never",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "**always** = vždy",
+            "**usually** = obvykle",
+            "**often** = často",
+            "**sometimes** = někdy",
+            "**never** = nikdy"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kam slovo dát"
+        },
+        {
+          "type": "text",
+          "text": "Většinou **před** sloveso, které říká, co děláš: *I **always** brush my teeth.* = Vždycky si čistím zuby."
+        },
+        {
+          "type": "text",
+          "text": "Výjimka: když je ve větě **am / is / are**, dáš ho **za** ně: *I am **never** late.* = Nikdy nechodím pozdě."
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Často hraju fotbal.",
+          "answer": "Často = **often**. Dám ho před sloveso *play*. Věta: **I often play football.**"
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Můj táta obvykle vaří večeři. (vařit = cook)",
+          "answer": "Obvykle = **usually**, před sloveso. Táta = he → **cooks**. Věta: **My dad usually cooks dinner.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "He never doesn’t eat meat.",
+          "right": "He never eats meat.",
+          "why": "**never** už samo znamená „nikdy“ – je to zápor. Česky říkáme „nikdy **ne**jí“, anglicky jen **never eats**. Dva zápory se v angličtině nedávají."
+        },
+        {
+          "type": "summary",
+          "text": "**always** 100 %, **usually**, **often**, **sometimes**, **never** 0 %. Stojí před slovesem, ale za am / is / are."
+        }
+      ]
+    },
+    {
+      "title": "Kam patří",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky můžeš říct „Vždycky vstávám v sedm“ i „Vstávám vždycky v sedm“. Angličtina je přísnější – slovo *always* má ve větě **své místo**."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se pět slov pro „jak často“ a hlavně dvě pravidla, kam je ve větě postavit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Příslovce četnosti",
+          "definition": "Slova, která říkají, jak často se něco děje.",
+          "example": "always (vždy), usually (obvykle), often (často), sometimes (někdy), never (nikdy)"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Slovo, které říká, co kdo dělá.",
+          "example": "get up (vstávat), play (hrát), eat (jíst)"
+        },
+        {
+          "type": "term",
+          "term": "be (am, is, are)",
+          "definition": "Sloveso „být“. Neříká, co děláš, ale jaký jsi nebo kde jsi.",
+          "example": "I am late. = Jdu pozdě."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo 1: před obyčejné sloveso"
+        },
+        {
+          "type": "text",
+          "text": "Kdo + **how often** + sloveso: *I **always** get up at 7.* *She **often** reads.*"
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo 2: za am / is / are"
+        },
+        {
+          "type": "text",
+          "text": "Kdo + **am / is / are** + how often: *She is **never** late.* *We are **usually** hungry.*"
+        },
+        {
+          "type": "heading",
+          "text": "Skládáme větu"
+        },
+        {
+          "type": "example",
+          "question": "Poskládej: I / always / get up / at 7",
+          "answer": "Je tu obyčejné sloveso *get up* → always jde **před** něj: **I always get up at 7.**"
+        },
+        {
+          "type": "example",
+          "question": "Poskládej: She / is / never / late",
+          "answer": "Je tu **is** → never jde **za** něj: **She is never late.**"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Podle české nápovědy vyber správné slovo."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "I ",
+                "after": " eat breakfast. (vždy)",
+                "options": [
+                  "always",
+                  "never"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "He is ",
+                "after": " tired. (často)",
+                "options": [
+                  "often",
+                  "sometimes"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "We ",
+                "after": " go to the cinema. (někdy)",
+                "options": [
+                  "usually",
+                  "sometimes"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "My cat ",
+                "after": " sleeps on my bed. (obvykle)",
+                "options": [
+                  "usually",
+                  "never"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "She always is happy.",
+          "right": "She is always happy.",
+          "why": "S **am / is / are** stojí příslovce **za** slovesem, ne před ním."
+        },
+        {
+          "type": "summary",
+          "text": "*I **often** play.* (před sloveso) ale *I am **often** late.* (za am / is / are)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co znamená „never“?",
+      "options": [
+        "nikdy",
+        "někdy",
+        "vždy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je správně?",
+      "options": [
+        "I usually walk to school.",
+        "I walk usually to school.",
+        "Usually I walk school."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je správně?",
+      "options": [
+        "She is always happy.",
+        "She always is happy.",
+        "Always she happy."
+      ],
+      "answer": 0,
+      "explanation": "S be stojí příslovce za slovesem."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejčastějšího.",
+      "items": [
+        "always",
+        "usually",
+        "often",
+        "sometimes",
+        "never"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jak se řekne „někdy“?",
+      "answers": [
+        "sometimes"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jak se řekne „obvykle“?",
+      "answers": [
+        "usually"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„often“ znamená „často“.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„He never doesn’t eat meat.“ je správně.",
+      "answer": false,
+      "explanation": "never už je zápor: He never eats meat."
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "always",
+          "vždy"
+        ],
+        [
+          "usually",
+          "obvykle"
+        ],
+        [
+          "sometimes",
+          "někdy"
+        ],
+        [
+          "never",
+          "nikdy"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Slož větu.",
+      "items": [
+        "My",
+        "dad",
+        "often",
+        "cooks",
+        "dinner."
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Řekni anglicky, co děláš vždy, často a nikdy.",
+      "answer": "I always brush my teeth. I often play games. I never drink coffee."
+    },
+    {
+      "type": "open",
+      "question": "Kam ve větě dáváme slova always, never apod.?",
+      "answer": "Před běžné sloveso (I always play), ale za am/is/are (I am always late)."
+    }
+  ]
+}

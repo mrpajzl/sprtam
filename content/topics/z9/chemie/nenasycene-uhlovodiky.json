@@ -1,0 +1,485 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nenasycene-uhlovodiky",
+  "title": "Alkeny, alkyny, areny a ropa",
+  "emoji": "🛢️",
+  "explanations": [
+    {
+      "title": "Ropa v rafinerii",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Benzín v autě, asfalt na silnici, plastová taška i acetylen, kterým svářeč řeže železo – to všechno začíná u jedné černé, páchnoucí kapaliny: **ropy**."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, jak se ropa rozdělí na užitečné části a jaké „rodiny“ uhlovodíků v ní a z ní vznikají."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Uhlovodík",
+          "definition": "Látka složená jen z uhlíku a vodíku. Uhlík tvoří vždy 4 vazby (spojení), vodík 1.",
+          "example": "methan CH₄"
+        },
+        {
+          "type": "term",
+          "term": "Ropa",
+          "definition": "Hustá kapalina z hlubin země. Je to **směs** stovek různých uhlovodíků. Vznikla před miliony let z odumřelých drobných organismů."
+        },
+        {
+          "type": "term",
+          "term": "Fosilní palivo",
+          "definition": "Palivo, které vzniklo před miliony let z odumřelých organismů. Nové za lidského života nevznikne – zásoby se vyčerpávají.",
+          "example": "uhlí, ropa, zemní plyn"
+        },
+        {
+          "type": "term",
+          "term": "Destilace",
+          "definition": "Oddělování kapalin podle **teploty varu**. Směs se zahřeje, látky se postupně vypaří a pak zase zkapalní.",
+          "example": "Tak se pálí i slivovice."
+        },
+        {
+          "type": "term",
+          "term": "Frakce",
+          "definition": "Část ropy, která se vypaří v určitém rozmezí teplot. Není to jedna látka, ale skupina podobných.",
+          "example": "benzín, petrolej, nafta"
+        },
+        {
+          "type": "heading",
+          "text": "Frakční destilace"
+        },
+        {
+          "type": "text",
+          "text": "Ropa se v rafinerii zahřeje a páry stoupají vysokou věží. Nahoře je chladněji. Každá látka zkapalní v té výšce, kde je teplota pod její teplotou varu."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na graf. Látky s krátkými molekulami vřou nízko a jdou až nahoru, látky s dlouhými zůstávají dole."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "°C (přibližná teplota varu)",
+            "items": [
+              {
+                "label": "plyny",
+                "value": 20
+              },
+              {
+                "label": "benzín",
+                "value": 120
+              },
+              {
+                "label": "petrolej",
+                "value": 220
+              },
+              {
+                "label": "nafta",
+                "value": 300
+              },
+              {
+                "label": "mazut",
+                "value": 400
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Co zbude úplně dole, je hustý **asfalt** – použije se na silnice."
+        },
+        {
+          "type": "example",
+          "question": "Proč odchází benzín z věže výš než nafta?",
+          "answer": "Benzín má nižší teplotu varu (kratší molekuly). Zůstane plynem i ve vyšších, chladnějších patrech a zkapalní až tam. Nafta vře výš, takže zkapalní už níž."
+        },
+        {
+          "type": "heading",
+          "text": "Tři druhy vazeb"
+        },
+        {
+          "type": "text",
+          "text": "Uhlíky se mohou držet jednou, dvěma i třemi „rukama“ najednou. Podle toho dělíme uhlovodíky:"
+        },
+        {
+          "type": "term",
+          "term": "Alkan",
+          "definition": "Mezi uhlíky jsou jen **jednoduché vazby** (C–C). Koncovka **-an**. Hlavní složka ropy.",
+          "example": "ethan C₂H₆"
+        },
+        {
+          "type": "term",
+          "term": "Alken",
+          "definition": "Má aspoň jednu **dvojnou vazbu** (C=C). Koncovka **-en**.",
+          "example": "ethen C₂H₄ (ethylen) – z něj se vyrábí plast polyethylen; urychluje i dozrávání ovoce."
+        },
+        {
+          "type": "term",
+          "term": "Alkyn",
+          "definition": "Má aspoň jednu **trojnou vazbu** (C≡C). Koncovka **-yn**.",
+          "example": "ethyn C₂H₂ (acetylen) – hoří velmi horkým plamenem, používá se ke svařování a řezání kovů."
+        },
+        {
+          "type": "term",
+          "term": "Aren",
+          "definition": "Uhlovodík s **benzenovým jádrem** – prstencem ze **6 uhlíků**.",
+          "example": "benzen C₆H₆; naftalen (dva prstence) se dříve dával proti molům."
+        },
+        {
+          "type": "text",
+          "text": "Alkenům a alkynům se říká **nenasycené** uhlovodíky: kvůli násobné vazbě mají méně vodíků, než by se na uhlíky vešlo."
+        },
+        {
+          "type": "example",
+          "question": "Proč má ethen jen 4 vodíky, když ethan jich má 6?",
+          "answer": "V ethenu se dva uhlíky drží dvojnou vazbou – každý na to spotřebuje 2 ruce ze 4. Zbydou mu 2 ruce → 2 vodíky. Dva uhlíky × 2 = 4 vodíky: C₂H₄. V ethanu je vazba jednoduchá, zbydou 3 ruce → 6 vodíků."
+        },
+        {
+          "type": "text",
+          "text": "Pozor: **benzen** je jedovatý a **karcinogenní** – může způsobit rakovinu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ropa, uhlí a zemní plyn jsou obnovitelné zdroje – příroda je vyrábí pořád.",
+          "right": "Jsou to **fosilní** paliva. Vznikala miliony let a jejich zásoby se vyčerpávají.",
+          "why": "Co spálíme za den, vznikalo neskutečně dlouho. Za lidský život se nic nového nedoplní."
+        },
+        {
+          "type": "summary",
+          "text": "Ropa je směs uhlovodíků, dělí se frakční destilací podle teploty varu. Alkany mají jednoduché vazby (-an), alkeny dvojnou (-en), alkyny trojnou (-yn), areny benzenové jádro."
+        }
+      ]
+    },
+    {
+      "title": "Vazby",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ethan, ethen a ethyn – tři skoro stejná slova, ale tři úplně jiné látky. Liší se jedinou věcí: **jak pevně se drží jejich dva uhlíky**."
+        },
+        {
+          "type": "text",
+          "text": "Když pochopíš vazby, poznáš z názvu, jak molekula vypadá, a spočítáš její vzorec. Na konci uvidíš, kde se všechny tyhle látky berou – v ropě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Uhlovodík",
+          "definition": "Sloučenina jen z uhlíku a vodíku."
+        },
+        {
+          "type": "term",
+          "term": "Vazba",
+          "definition": "Spojení dvou atomů. Uhlík tvoří vždy **4 vazby**, vodík **1**. Mezi dvěma uhlíky může být vazba jednoduchá (–), dvojná (=) nebo trojná (≡).",
+          "example": "Dvojná vazba je jako držet se oběma rukama."
+        },
+        {
+          "type": "term",
+          "term": "Nasycený / nenasycený",
+          "definition": "**Nasycený** uhlovodík má jen jednoduché vazby – víc vodíků už se nevejde. **Nenasycený** má dvojnou nebo trojnou vazbu – má vodíků méně."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka skupin"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Vazba",
+            "Koncovka",
+            "Obecný vzorec",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "alkany",
+              "jen jednoduché",
+              "-an",
+              "CₙH₂ₙ₊₂",
+              "ethan C₂H₆"
+            ],
+            [
+              "alkeny",
+              "jedna dvojná",
+              "-en",
+              "CₙH₂ₙ",
+              "ethen C₂H₄"
+            ],
+            [
+              "alkyny",
+              "jedna trojná",
+              "-yn",
+              "CₙH₂ₙ₋₂",
+              "ethyn C₂H₂"
+            ],
+            [
+              "areny",
+              "benzenové jádro",
+              "–",
+              "–",
+              "benzen C₆H₆"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Benzenové jádro",
+          "definition": "Prstenec ze **6 uhlíků**, na každém je jeden vodík. Molekuly s ním se jmenují **areny**.",
+          "example": "benzen C₆H₆"
+        },
+        {
+          "type": "heading",
+          "text": "Jak z názvu poznat vzorec"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Začátek názvu řekne počet uhlíků: meth- 1, eth- 2, prop- 3, but- 4.",
+            "Koncovka řekne vazbu: -an jednoduchá, -en dvojná, -yn trojná.",
+            "Dosaď do obecného vzorce a spočítej vodíky."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jaký vzorec má propen?",
+          "answer": "prop- = 3 uhlíky. -en = jedna dvojná vazba → CₙH₂ₙ. 2 · 3 = 6. Propen je **C₃H₆**."
+        },
+        {
+          "type": "example",
+          "question": "Jaký vzorec má propyn?",
+          "answer": "prop- = 3 uhlíky. -yn = trojná vazba → CₙH₂ₙ₋₂. 2 · 3 − 2 = 4. Propyn je **C₃H₄**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď látky podle vazby. Pomůže ti koncovka názvu nebo spočítání vodíků."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "alkan (jednoduchá)",
+              "alken (dvojná)",
+              "alkyn (trojná)"
+            ],
+            "items": [
+              {
+                "text": "ethan",
+                "group": 0
+              },
+              {
+                "text": "C₃H₈",
+                "group": 0
+              },
+              {
+                "text": "butan",
+                "group": 0
+              },
+              {
+                "text": "ethen",
+                "group": 1
+              },
+              {
+                "text": "C₃H₆",
+                "group": 1
+              },
+              {
+                "text": "ethylen",
+                "group": 1
+              },
+              {
+                "text": "ethyn",
+                "group": 2
+              },
+              {
+                "text": "acetylen",
+                "group": 2
+              },
+              {
+                "text": "C₃H₄",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "K čemu jsou"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**ethen (ethylen)** – výroba plastu polyethylenu; urychluje dozrávání ovoce",
+            "**ethyn (acetylen)** – svařování a řezání kovů",
+            "**benzen** – surovina v chemickém průmyslu; je jedovatý a **karcinogenní** (může vyvolat rakovinu)",
+            "**naftalen** – dříve proti molům"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Odkud se berou: ropa"
+        },
+        {
+          "type": "term",
+          "term": "Ropa",
+          "definition": "Kapalná směs uhlovodíků z hlubin země. Spolu s uhlím a zemním plynem patří mezi **fosilní paliva** – vznikla před miliony let a nedoplňují se."
+        },
+        {
+          "type": "text",
+          "text": "V rafinerii se ropa dělí **frakční destilací** – zahřeje se a jednotlivé části (frakce) se oddělí podle teploty varu. Od nejnižší: plyny, benzín, petrolej, nafta, mazut. Zbytek je asfalt."
+        },
+        {
+          "type": "mistake",
+          "wrong": "C₂H₂ je ethen.",
+          "right": "C₂H₂ je **ethyn** (acetylen). Ethen je C₂H₄.",
+          "why": "Méně vodíků = víc „rukou“ spotřebovaných mezi uhlíky. Dva vodíky znamenají trojnou vazbu → koncovka -yn."
+        },
+        {
+          "type": "summary",
+          "text": "-an jednoduchá, -en dvojná, -yn trojná vazba. Areny mají benzenové jádro ze 6 uhlíků. Všechny se získávají hlavně z ropy, která se dělí frakční destilací."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jakou vazbu obsahují alkeny?",
+      "options": [
+        "dvojnou",
+        "trojnou",
+        "jen jednoduché"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec ethynu (acetylenu)?",
+      "options": [
+        "C₂H₂",
+        "C₂H₄",
+        "C₂H₆",
+        "C₆H₆"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje C₂H₄?",
+      "answers": [
+        "ethen",
+        "ethylen",
+        "eten"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který uhlovodík se používá ke svařování?",
+      "options": [
+        "acetylen",
+        "methan",
+        "benzen",
+        "hexan"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Benzen je zdraví škodlivý a karcinogenní.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak se ropa dělí na frakce?",
+      "options": [
+        "frakční destilací",
+        "filtrací",
+        "krystalizací",
+        "elektrolýzou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď frakce ropy od nejnižší teploty varu.",
+      "items": [
+        "plyny",
+        "benzín",
+        "petrolej",
+        "nafta",
+        "mazut"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj látku s použitím.",
+      "pairs": [
+        [
+          "ethen",
+          "výroba polyethylenu"
+        ],
+        [
+          "acetylen",
+          "svařování"
+        ],
+        [
+          "propan-butan",
+          "vaření v kempu"
+        ],
+        [
+          "asfalt",
+          "silnice"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Fosilní paliva jsou obnovitelný zdroj energie.",
+      "answer": false,
+      "explanation": "Vznikala miliony let, jejich zásoby se vyčerpávají."
+    },
+    {
+      "type": "choice",
+      "question": "Kolik atomů uhlíku tvoří benzenové jádro?",
+      "options": [
+        "6",
+        "4",
+        "5",
+        "8"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi alkany, alkeny a alkyny?",
+      "answer": "Liší se vazbami mezi uhlíky. Alkany mají jen jednoduché, alkeny aspoň jednu dvojnou a alkyny aspoň jednu trojnou vazbu."
+    },
+    {
+      "type": "open",
+      "question": "Co je ropa a jak se zpracovává?",
+      "answer": "Ropa je kapalná směs uhlovodíků, fosilní surovina. V rafinerii se frakční destilací dělí podle teploty varu na plyny, benzín, petrolej, naftu a mazut."
+    }
+  ]
+}

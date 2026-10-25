@@ -1,0 +1,340 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "predlozky-a-predpony",
+  "title": "Předložky a předpony",
+  "emoji": "🔗",
+  "explanations": [
+    {
+      "title": "Zvlášť a dohromady",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Napíšeš *na stůl*, nebo *nastůl*? *Napsat*, nebo *na psat*? Na začátku je pokaždé „na“, ale jednou zvlášť a jednou dohromady."
+        },
+        {
+          "type": "text",
+          "text": "Rozdíl je v tom, jestli je „na“ samostatné slovo, nebo jen kousek slova. Když to poznáš, nikdy se nespleteš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Předložka",
+          "definition": "Samostatné **krátké slovo** před podstatným jménem nebo zájmenem. Říká, kde, kam nebo s kým. Píše se **zvlášť**.",
+          "example": "**na** stůl, **do** lesa, **pod** stromem, **s** tebou"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Kousek slova **před kořenem**. Je součástí slova, píše se **dohromady**.",
+          "example": "**na**psat, **od**jet, **pod**epsat"
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Připomenutí: hlavní část slova, společná pro celou rodinu.",
+          "example": "psát – na**ps**at"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "předložka",
+            "předpona"
+          ],
+          "rows": [
+            [
+              "co to je",
+              "samostatné slovo",
+              "část slova"
+            ],
+            [
+              "kde stojí",
+              "před podstatným jménem nebo zájmenem",
+              "před kořenem"
+            ],
+            [
+              "jak píšu",
+              "zvlášť: *na stůl*",
+              "dohromady: *nalít*"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Zkouška vložením"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zkus mezi „na“ a další slovo vložit jiné slovo.",
+            "*na stůl* → *na **velký** stůl* – jde to! Je to **předložka**, píšu zvlášť.",
+            "*napsat* → *na velký psat*? Nejde to. Je to **předpona**, píšu dohromady."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Napiš správně: „Šli jsme (do lesa / dolesa).“",
+          "answer": "Vložíme slovo: *do **hlubokého** lesa* – jde to. *Do* je předložka. Píšeme **do lesa**."
+        },
+        {
+          "type": "example",
+          "question": "Napiš správně: „Vlak (od jel / odjel) včas.“",
+          "answer": "*Od velký jel*? Nedává smysl. *Od* je předpona. Píšeme **odjel**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Odešel odnás brzy.",
+          "right": "Odešel od nás brzy.",
+          "why": "*Od nás* – mezi ně jde vložit: *od **všech** nás*. Je to předložka, píše se zvlášť. *Odešel* má předponu – dohromady."
+        },
+        {
+          "type": "summary",
+          "text": "Předložka je samostatné slovo – píšu zvlášť. Předpona je část slova – píšu dohromady. Pomůže zkouška vložením."
+        }
+      ]
+    },
+    {
+      "title": "Doplň",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si předložku jako **malou cedulku**, kterou postavíš před jméno: *pod* mostem, *nad* městem. Cedulku můžeš posunout a dát mezi ni a jméno další slovo."
+        },
+        {
+          "type": "text",
+          "text": "Předpona je naopak **přilepená** ke slovu. Bez ní by slovo znamenalo něco jiného: *psát × podepsat*."
+        },
+        {
+          "type": "term",
+          "term": "Předložka",
+          "definition": "Samostatné slovo před jménem. Zvlášť.",
+          "example": "nad městem, u domu"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Přilepená část slova. Dohromady.",
+          "example": "nadepsat, utéct"
+        },
+        {
+          "type": "term",
+          "term": "Předložky ke, se, ve, ze",
+          "definition": "Předložka, ke které přidáme **e**, aby se dala vyslovit: *k → ke, s → se, v → ve, z → ze*.",
+          "example": "ke kamarádovi, ve vodě, se sestrou, ze zahrady"
+        },
+        {
+          "type": "heading",
+          "text": "Doplň"
+        },
+        {
+          "type": "text",
+          "text": "Vyber, jestli se píše zvlášť, nebo dohromady."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Kočka skočila ",
+                "after": ".",
+                "options": [
+                  "na stůl",
+                  "nastůl"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Musím ",
+                "after": " úkol.",
+                "options": [
+                  "na psát",
+                  "napsat"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Šli jsme ",
+                "after": ".",
+                "options": [
+                  "do lesa",
+                  "dolesa"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Vlak ",
+                "after": " včas.",
+                "options": [
+                  "od jel",
+                  "odjel"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Sedím ",
+                "after": ".",
+                "options": [
+                  "pod stromem",
+                  "podstromem"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kdy přidat -e"
+        },
+        {
+          "type": "text",
+          "text": "Kdyby se předložka špatně vyslovovala, přidáme e. Zkus říct *k kamarádovi* – zadrhne se ti jazyk. Proto **ke** kamarádovi."
+        },
+        {
+          "type": "example",
+          "question": "v vodě, nebo ve vodě?",
+          "answer": "*V vodě* se vyslovit nedá. Přidáme e: **ve vodě**."
+        },
+        {
+          "type": "example",
+          "question": "Najdi předložku i předponu: „Nalil jsem vodu na zahradu.“",
+          "answer": "*Na-lil* – přilepené, **předpona**. *Na zahradu* – samostatné, dá se vložit *na **velkou** zahradu* → **předložka**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "k kamarádovi",
+          "right": "ke kamarádovi",
+          "why": "Dvě k za sebou se nedají dobře vyslovit. Předložka dostane e: ke."
+        },
+        {
+          "type": "summary",
+          "text": "Cedulka (předložka) stojí zvlášť, přilepený kousek (předpona) je dohromady. K, s, v, z dostanou e, když se špatně vyslovují."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Ve které větě je předložka?",
+      "options": [
+        "Jdu do školy.",
+        "Dopiš úkol.",
+        "Odešel."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém slově je předpona?",
+      "options": [
+        "na stole",
+        "nalít",
+        "na zahradě"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Co je napsané správně?",
+      "options": [
+        "ke kamarádovi",
+        "k kamarádovi",
+        "kekamarádovi"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je napsané správně?",
+      "options": [
+        "v vodě",
+        "ve vodě",
+        "vevodě"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Předložku píšeme se slovem dohromady.",
+      "answer": false,
+      "explanation": "Předložka je samostatné slovo – píšeme ji zvlášť."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve slově „přiletěl“ je „při“ předpona.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Je „pod“ ve spojení „pod mostem“ předložka, nebo předpona?",
+      "answers": [
+        "předložka",
+        "predlozka"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Je „pod“ ve slově „podepsat“ předložka, nebo předpona?",
+      "answers": [
+        "předpona",
+        "predpona"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "nad městem",
+          "předložka"
+        ],
+        [
+          "nadepsat",
+          "předpona"
+        ],
+        [
+          "u domu",
+          "předložka"
+        ],
+        [
+          "utéct",
+          "předpona"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je napsaná správně?",
+      "options": [
+        "Odešel od nás brzy.",
+        "Odešel odnás brzy.",
+        "Od šel od nás brzy."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš předložku od předpony?",
+      "answer": "Předložka je samostatné slovo před podstatným jménem nebo zájmenem a dá se mezi ně vložit jiné slovo. Předpona je část slova."
+    },
+    {
+      "type": "open",
+      "question": "Řekni větu, kde bude „na“ jako předložka i jako předpona.",
+      "answer": "Například: Nalil jsem vodu na zahradu."
+    }
+  ]
+}

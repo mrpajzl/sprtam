@@ -1,0 +1,402 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "logaritmus",
+  "title": "Logaritmus",
+  "emoji": "🪵",
+  "generator": "log",
+  "explanations": [
+    {
+      "title": "Otázkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Víš, že 2³ = 8. Ale co když znáš výsledek 8 a základ 2 a ptáš se: **na kolikátou** musím 2 umocnit? Na tuhle otázku odpovídá logaritmus."
+        },
+        {
+          "type": "text",
+          "text": "Používá se všude, kde se věci násobí: za kolik let se zdvojnásobí úspory, kolikrát silnější je zemětřesení (Richterova stupnice), jak hlasitý je zvuk (decibely), jak kyselý je roztok (pH)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Logaritmus logₐ x",
+          "definition": "Exponent, na který musíš umocnit základ a, abys dostal x. Čti „logaritmus x při základu a“.",
+          "example": "log₂ 8 = 3, protože 2³ = 8."
+        },
+        {
+          "type": "term",
+          "term": "Základ a",
+          "definition": "Číslo, které umocňujeme. Musí být kladné a různé od 1.",
+          "example": "V log₃ 27 je základ 3."
+        },
+        {
+          "type": "term",
+          "term": "Dekadický logaritmus log",
+          "definition": "Logaritmus se základem 10. Základ se nepíše.",
+          "example": "log 1000 = 3, protože 10³ = 1000."
+        },
+        {
+          "type": "term",
+          "term": "Přirozený logaritmus ln",
+          "definition": "Logaritmus se základem e ≈ 2,718 (Eulerovo číslo – důležitá konstanta podobně jako π).",
+          "example": "ln e = 1, protože e¹ = e."
+        },
+        {
+          "type": "heading",
+          "text": "Vždy se zeptej: „Na kolikátou?“"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti log₂ 16 jako otázku: „2 na kolikátou je 16?“",
+            "Zkoušej: 2¹ = 2, 2² = 4, 2³ = 8, 2⁴ = 16.",
+            "Odpověď: 4. Tedy log₂ 16 = 4."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Procvič si to. Na kartičce je otázka, otoč ji a zkontroluj odpověď."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "log₂ 8",
+                "back": "3 (2³ = 8)"
+              },
+              {
+                "front": "log 100",
+                "back": "2 (10² = 100)"
+              },
+              {
+                "front": "log₃ 27",
+                "back": "3 (3³ = 27)"
+              },
+              {
+                "front": "log₅ 1",
+                "back": "0 (5⁰ = 1)"
+              },
+              {
+                "front": "log₃ (1/9)",
+                "back": "−2 (3⁻² = 1/9)"
+              },
+              {
+                "front": "ln e",
+                "back": "1 (e¹ = e)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Řeš log₂ x = 4.",
+          "answer": "Otázka zní: „2 na čtvrtou je x.“ x = 2⁴ = **16**."
+        },
+        {
+          "type": "heading",
+          "text": "Co logaritmovat nejde"
+        },
+        {
+          "type": "text",
+          "text": "Kladné číslo umocněné na cokoli je vždy kladné. Proto nikdy nedostaneš 0 ani záporné číslo – a **logaritmus nuly ani záporného čísla neexistuje**."
+        },
+        {
+          "type": "example",
+          "question": "Urči definiční obor y = log(x − 3).",
+          "answer": "Logaritmovat lze jen kladné číslo: x − 3 > 0 → x > 3. D(f) = **(3; ∞)**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "log₅ 1 = 1",
+          "right": "log₅ 1 = 0",
+          "why": "5 na kolikátou je 1? Na nultou: 5⁰ = 1. Logaritmus jedničky je při každém základu 0."
+        },
+        {
+          "type": "text",
+          "text": "Logaritmus a exponenciální funkce jsou navzájem **inverzní** – jedna dělá opak druhé. Jejich grafy jsou souměrné podle přímky y = x."
+        },
+        {
+          "type": "summary",
+          "text": "logₐ x = y ⇔ aʸ = x. Logaritmus odpovídá na otázku „na kolikátou?“. Existuje jen pro x > 0; logₐ 1 = 0, logₐ a = 1."
+        }
+      ]
+    },
+    {
+      "title": "Pravidla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Než existovaly kalkulačky, násobili inženýři velká čísla pomocí logaritmických tabulek a logaritmického pravítka. Trik: logaritmus **mění násobení na sčítání**, které je mnohem snazší."
+        },
+        {
+          "type": "text",
+          "text": "Dnes ta pravidla potřebuješ k úpravám výrazů a k řešení rovnic, kde je neznámá v exponentu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Logaritmus",
+          "definition": "logₐ x = y znamená aʸ = x. Podmínky: a > 0, a ≠ 1, x > 0.",
+          "example": "log₃ 9 = 2, protože 3² = 9."
+        },
+        {
+          "type": "term",
+          "term": "log a ln",
+          "definition": "log bez základu = základ 10. ln = základ e ≈ 2,718.",
+          "example": "log 10 = 1, ln e = 1."
+        },
+        {
+          "type": "term",
+          "term": "Logaritmická funkce",
+          "definition": "y = logₐ x. Je inverzní k y = aˣ: D(f) = (0; ∞), H(f) = ℝ. Graf prochází bodem [1; 0]."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Pravidlo",
+            "Proč platí",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "logₐ (x · y) = logₐ x + logₐ y",
+              "při násobení mocnin se exponenty sčítají",
+              "log 2 + log 50 = log 100 = 2"
+            ],
+            [
+              "logₐ (x / y) = logₐ x − logₐ y",
+              "při dělení se exponenty odčítají",
+              "log₂ 32 − log₂ 4 = log₂ 8 = 3"
+            ],
+            [
+              "logₐ xⁿ = n · logₐ x",
+              "mocnina mocniny exponenty násobí",
+              "log₂ 8 = log₂ 2³ = 3 · log₂ 2 = 3"
+            ],
+            [
+              "logₐ 1 = 0, logₐ a = 1",
+              "a⁰ = 1, a¹ = a",
+              "log₅ 1 = 0"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "log a + log b = log(a + b)",
+          "right": "log a + log b = log(a · b)",
+          "why": "Logaritmus mění **součin** na součet. Pro součet žádné pravidlo neexistuje: log 1 + log 1 = 0, ale log 2 ≠ 0."
+        },
+        {
+          "type": "heading",
+          "text": "Výpočty"
+        },
+        {
+          "type": "example",
+          "question": "Spočítej log 2 + log 50.",
+          "answer": "Součet logaritmů = logaritmus součinu: log(2 · 50) = log 100 = **2**."
+        },
+        {
+          "type": "example",
+          "question": "Spočítej log₂ 32 − log₂ 4.",
+          "answer": "Rozdíl = logaritmus podílu: log₂ (32/4) = log₂ 8 = **3**. Kontrola: 5 − 2 = 3 ✓."
+        },
+        {
+          "type": "example",
+          "question": "Kolik je log₃ (1/9)?",
+          "answer": "1/9 = 3⁻², takže log₃ (1/9) = **−2**."
+        },
+        {
+          "type": "heading",
+          "text": "Logaritmus jako stupnice"
+        },
+        {
+          "type": "text",
+          "text": "Logaritmus „stlačí“ obrovská čísla na malá. Podívej se: čísla 10 až 1 000 000 se liší statisíckrát, jejich logaritmy jen o pár jednotek. Proto se jím měří hlasitost nebo síla zemětřesení."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "log 10",
+                "value": 1
+              },
+              {
+                "label": "log 100",
+                "value": 2
+              },
+              {
+                "label": "log 1 000",
+                "value": 3
+              },
+              {
+                "label": "log 10 000",
+                "value": 4
+              },
+              {
+                "label": "log 1 000 000",
+                "value": 6
+              }
+            ]
+          }
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rovnici logₐ x = c přepiš na x = aᶜ.",
+            "Ověř podmínku x > 0."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Řeš log₂ x = 4.",
+          "answer": "x = 2⁴ = **16**. 16 > 0 ✓."
+        },
+        {
+          "type": "summary",
+          "text": "logₐ x = y ⇔ aʸ = x, jen pro x > 0. Součet logaritmů = log součinu, rozdíl = log podílu, log xⁿ = n · log x. Logaritmus je inverzní k aˣ."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "log₂ 8 =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "log 1000 =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "log₃ (1/9) =",
+      "answers": [
+        "−2",
+        "-2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "log a + log b =",
+      "options": [
+        "log(ab)",
+        "log(a + b)",
+        "log a · log b",
+        "log(a/b)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "log₅ 1 =",
+      "answers": [
+        "0"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Logaritmus záporného čísla (v ℝ) není definován.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "log₂ x = 4, x =",
+      "answers": [
+        "16"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "log 2 + log 50 =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "D(f) pro y = log(x − 3):",
+      "options": [
+        "(3; ∞)",
+        "⟨3; ∞)",
+        "ℝ",
+        "(0; ∞)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "log₂ 32 − log₂ 4 =",
+      "answers": [
+        "3"
+      ],
+      "explanation": "log₂ 8 = 3"
+    },
+    {
+      "type": "match",
+      "question": "Spoj s hodnotou.",
+      "pairs": [
+        [
+          "log 100",
+          "2"
+        ],
+        [
+          "log₂ 16",
+          "4"
+        ],
+        [
+          "log₃ 27",
+          "3"
+        ],
+        [
+          "ln e",
+          "1"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "log₂ 8 = 3 · log₂ 2",
+      "answer": true,
+      "explanation": "log₂ 2³ = 3 · log₂ 2 = 3"
+    },
+    {
+      "type": "open",
+      "question": "Co je logaritmus čísla x při základu a?",
+      "answer": "Je to exponent y, na který musím umocnit základ a, abych dostal x: logₐ x = y ⇔ aʸ = x (a > 0, a ≠ 1, x > 0)."
+    },
+    {
+      "type": "open",
+      "question": "Jak spolu souvisí exponenciální a logaritmická funkce?",
+      "answer": "Jsou navzájem inverzní. Grafy y = aˣ a y = logₐ x jsou souměrné podle přímky y = x, definiční obor a obor hodnot se prohodí."
+    }
+  ]
+}

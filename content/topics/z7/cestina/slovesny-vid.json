@@ -1,0 +1,391 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "slovesny-vid",
+  "title": "Slovesný vid",
+  "emoji": "⏳",
+  "explanations": [
+    {
+      "title": "Hotovo, nebo ne?",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Porovnej dvě věty: *Psal jsem úkol.* a *Napsal jsem úkol.* Obě jsou v minulém čase. Ale jen z té druhé víš, že úkol je **hotový**. U první možná psaní nedokončil."
+        },
+        {
+          "type": "text",
+          "text": "Tento rozdíl se jmenuje **slovesný vid**. Každé sloveso ho má. Když vid znáš, nesplete tě tvar jako *budu napsat* (to je chyba) a líp rozumíš, co se ve větě děje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Připomenutí: slovo, které říká, co kdo dělá nebo co se děje.",
+          "example": "psát, běžet, pršet"
+        },
+        {
+          "type": "term",
+          "term": "Vid",
+          "definition": "Vlastnost slovesa, která říká, jestli je děj **dokončený**, nebo jestli **probíhá**.",
+          "example": "psát (probíhá) × napsat (dokončí se)"
+        },
+        {
+          "type": "term",
+          "term": "Nedokonavé sloveso",
+          "definition": "Děj **probíhá**, trvá nebo se opakuje. Nevíme, jestli skončil.",
+          "example": "psát, číst, kupovat, skákat"
+        },
+        {
+          "type": "term",
+          "term": "Dokonavé sloveso",
+          "definition": "Děj se **dokončí**, má výsledek nebo proběhne jednou.",
+          "example": "napsat, přečíst, koupit, skočit"
+        },
+        {
+          "type": "term",
+          "term": "Vidová dvojice",
+          "definition": "Dvě slovesa se stejným významem, jedno nedokonavé a druhé dokonavé.",
+          "example": "psát – napsat, brát – vzít"
+        },
+        {
+          "type": "heading",
+          "text": "Jak vidové dvojice vznikají"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Nedokonavé",
+            "Dokonavé",
+            "Jak"
+          ],
+          "rows": [
+            [
+              "psát",
+              "napsat",
+              "přidáme předponu"
+            ],
+            [
+              "dělat",
+              "udělat",
+              "přidáme předponu"
+            ],
+            [
+              "kupovat",
+              "koupit",
+              "jiná přípona"
+            ],
+            [
+              "skákat",
+              "skočit",
+              "jiná přípona"
+            ],
+            [
+              "brát",
+              "vzít",
+              "úplně jiné slovo"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vid a čas"
+        },
+        {
+          "type": "text",
+          "text": "Tady je nejdůležitější rozdíl. **Dokonavé sloveso nemá přítomný čas.** Proč? Děj, který „je hotový“, nemůže zrovna teď probíhat."
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Minulý",
+            "Přítomný",
+            "Budoucí"
+          ],
+          "rows": [
+            [
+              "nedokonavé",
+              "psal jsem",
+              "píšu",
+              "budu psát"
+            ],
+            [
+              "dokonavé",
+              "napsal jsem",
+              "—",
+              "napíšu"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Tvar *napíšu* vypadá jako přítomný, ale znamená budoucnost: *Zítra ti napíšu.*"
+        },
+        {
+          "type": "example",
+          "question": "Urči vid: *zavolat*, *nést*.",
+          "answer": "*zavolat* – telefonát se uskuteční a skončí → dokonavé. *nést* – teď nesu tašku, děj probíhá → nedokonavé."
+        },
+        {
+          "type": "example",
+          "question": "Jaký čas je *Koupím chleba.*?",
+          "answer": "*Koupit* je dokonavé, přítomný čas nemá. *Koupím* proto znamená **budoucí** čas."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zítra budu přečíst knihu.",
+          "right": "Zítra přečtu knihu. / Zítra budu číst knihu.",
+          "why": "K dokonavému slovesu se *budu* nepřidává. Dokonavé sloveso tvoří budoucí čas samo (přečtu)."
+        },
+        {
+          "type": "summary",
+          "text": "Nedokonavé sloveso = děj probíhá (psát). Dokonavé = děj se dokončí (napsat). Dokonavé nemá přítomný čas a nepojí se s budu."
+        }
+      ]
+    },
+    {
+      "title": "Zkouška „teď“",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si dva obrázky. Na prvním kluk **skáče** přes švihadlo – pořád dokola. Na druhém kluk jednou **skočí** do bazénu – šplouch, a je to. Obě slova mluví o skákání, ale každé jinak."
+        },
+        {
+          "type": "text",
+          "text": "Čeština to rozlišuje u skoro každého slovesa. Tomu rozdílu se říká **vid**. Naučíš se ho poznat jednoduchou zkouškou, kterou zvládneš za dvě vteřiny."
+        },
+        {
+          "type": "term",
+          "term": "Vid slovesa",
+          "definition": "Říká, jestli děj **probíhá** (nedokonavý vid), nebo jestli se **dokončí** (dokonavý vid).",
+          "example": "skákat – skočit"
+        },
+        {
+          "type": "term",
+          "term": "Nedokonavé sloveso",
+          "definition": "Děj trvá, opakuje se, ještě není hotový. Jako film, který běží.",
+          "example": "skákat, vařit, nosit"
+        },
+        {
+          "type": "term",
+          "term": "Dokonavé sloveso",
+          "definition": "Děj má konec nebo výsledek. Jako fotka hotové věci.",
+          "example": "skočit, uvařit, přinést"
+        },
+        {
+          "type": "heading",
+          "text": "Zkouška ve dvou krocích"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Řekni větu se slovem **teď**: *Teď vařím.* Dává smysl? Pokud ano, sloveso je **nedokonavé**.",
+            "Ještě ověř se slovem **budu**: *Budu vařit.* Jde to → nedokonavé.",
+            "Zkus to s *uvařit*: *Teď uvařím?* Ne, to znamená „za chvíli“. *Budu uvařit?* Nesmysl. → **dokonavé**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Proveď zkoušku u každého slovesa a zařaď ho."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "nedokonavé",
+              "dokonavé"
+            ],
+            "items": [
+              {
+                "text": "číst",
+                "group": 0
+              },
+              {
+                "text": "běhat",
+                "group": 0
+              },
+              {
+                "text": "vařit",
+                "group": 0
+              },
+              {
+                "text": "nosit",
+                "group": 0
+              },
+              {
+                "text": "přečíst",
+                "group": 1
+              },
+              {
+                "text": "vyběhnout",
+                "group": 1
+              },
+              {
+                "text": "uvařit",
+                "group": 1
+              },
+              {
+                "text": "přinést",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Proč dokonavé sloveso neprojde zkouškou"
+        },
+        {
+          "type": "text",
+          "text": "Dokonavé sloveso **nemá přítomný čas**. Má jen minulý (*uvařil*) a budoucí (*uvařím*). Proto k němu nemůžeš dát *teď* ani *budu*."
+        },
+        {
+          "type": "text",
+          "text": "Slovesa, která mají stejný význam a liší se jen videm, tvoří **vidovou dvojici**: *volat – zavolat*, *dávat – dát*, *brát – vzít*."
+        },
+        {
+          "type": "example",
+          "question": "Proveď zkoušku: *plavat*",
+          "answer": "*Teď plavu.* ✔ *Budu plavat.* ✔ → **nedokonavé**."
+        },
+        {
+          "type": "example",
+          "question": "Která věta má dokonavé sloveso? *Zavřel dveře. / Zavíral dveře.*",
+          "answer": "*Zavřel* – dveře jsou zavřené, hotovo → **dokonavé**. *Zavíral* – děj probíhal (možná pomalu) → nedokonavé."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Jít* je dokonavé, protože člověk někam dojde.",
+          "right": "*Jít* je nedokonavé, dokonavé je *dojít*.",
+          "why": "Zkouška: *Teď jdu* ✔, *budu jít* (půjdu) ✔. Děj probíhá. Až předpona do- udělá děj hotový: dojít."
+        },
+        {
+          "type": "summary",
+          "text": "Zkouška: jde to s „teď“ a „budu“? → nedokonavé. Nejde? → dokonavé. Dokonavé sloveso má jen minulý a budoucí čas."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký vid má sloveso *napsat*?",
+      "options": [
+        "dokonavý",
+        "nedokonavý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký vid má sloveso *plavat*?",
+      "options": [
+        "dokonavý",
+        "nedokonavý"
+      ],
+      "answer": 1,
+      "explanation": "Teď plavu, budu plavat → nedokonavé."
+    },
+    {
+      "type": "truefalse",
+      "question": "Tvar *koupím* vyjadřuje budoucí čas.",
+      "answer": true,
+      "explanation": "Koupit je dokonavé, nemá přítomný čas."
+    },
+    {
+      "type": "input",
+      "question": "Napiš dokonavý protějšek ke slovesu *dělat*.",
+      "answers": [
+        "udělat"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš nedokonavý protějšek ke slovesu *koupit*.",
+      "answers": [
+        "kupovat"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který tvar je chybný?",
+      "options": [
+        "budu přečíst",
+        "budu číst",
+        "přečtu"
+      ],
+      "answer": 0,
+      "explanation": "K dokonavému slovesu nepřidáváme *budu*."
+    },
+    {
+      "type": "match",
+      "question": "Spoj vidové dvojice.",
+      "pairs": [
+        [
+          "psát",
+          "napsat"
+        ],
+        [
+          "skákat",
+          "skočit"
+        ],
+        [
+          "dávat",
+          "dát"
+        ],
+        [
+          "brát",
+          "vzít"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve které větě je sloveso dokonavé?",
+      "options": [
+        "Zavřel dveře.",
+        "Zavíral dveře.",
+        "Zavírá dveře."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Slovesa *nést* a *jít* jsou dokonavá.",
+      "answer": false,
+      "explanation": "Teď nesu, teď jdu → nedokonavá."
+    },
+    {
+      "type": "choice",
+      "question": "Jaké časy má dokonavé sloveso?",
+      "options": [
+        "minulý a budoucí",
+        "minulý, přítomný a budoucí",
+        "jen přítomný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš dokonavé sloveso?",
+      "answer": "Vyjadřuje ukončený děj. Nemá přítomný čas a nepojí se s *budu*: *napíšu* je už budoucí čas."
+    },
+    {
+      "type": "open",
+      "question": "Utvoř vidovou dvojici ke slovesu *volat* a vysvětli rozdíl.",
+      "answer": "*Volat* (nedokonavé) – *zavolat* (dokonavé). Volat = děj probíhá, zavolat = děj se dokončí."
+    }
+  ]
+}

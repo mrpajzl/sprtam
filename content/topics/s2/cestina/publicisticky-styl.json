@@ -1,0 +1,403 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "publicisticky-styl",
+  "title": "Publicistický styl",
+  "emoji": "📰",
+  "explanations": [
+    {
+      "title": "Redakce novin",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Otevřeš zpravodajský web. Nahoře zpráva o povodních, vedle komentář, proč vláda selhala, dole vtipný sloupek o nakupování. Všechno jsou to novinové texty, ale každý chce něco jiného."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Kdo pozná rozdíl mezi zprávou a názorem, nenechá se snadno zmanipulovat. A u maturity se na žánry publicistiky ptají často."
+        },
+        {
+          "type": "term",
+          "term": "Publicistika",
+          "definition": "Texty v novinách, časopisech, rozhlase, televizi a na zpravodajských webech.",
+          "example": "zpráva, reportáž, komentář"
+        },
+        {
+          "type": "term",
+          "term": "Publicistický styl",
+          "definition": "Styl těchto textů. Má dvě funkce: **informovat** a **přesvědčovat**.",
+          "example": "zpráva informuje, komentář přesvědčuje"
+        },
+        {
+          "type": "term",
+          "term": "Persvazivní funkce",
+          "definition": "Přesvědčovací funkce – text chce ovlivnit názor čtenáře.",
+          "example": "komentář, úvodník, reklama"
+        },
+        {
+          "type": "term",
+          "term": "Žánr",
+          "definition": "Druh textu s typickou stavbou a cílem.",
+          "example": "zpráva, fejeton, rozhovor"
+        },
+        {
+          "type": "heading",
+          "text": "Tři oddělení redakce"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Zpravodajské žánry** – jen fakta, bez názoru autora: *zpráva*, *oznámení*.",
+            "**Analytické (úvahové) žánry** – rozebírají a hodnotí: *úvodník* (názor redakce), *komentář* (podepsaný názor autora), *recenze* (hodnocení nového díla – knihy, filmu).",
+            "**Beletristické (umělecko-publicistické) žánry** – baví a nutí k zamyšlení: *fejeton* (vtipná úvaha s pointou), *soudnička* (humorné zpracování soudního případu), *causerie* (lehké povídání o drobnosti)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Na pomezí stojí **reportáž** (autor byl na místě a živě líčí, co viděl) a **interview** (rozhovor)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zařaď žánry. Ptej se: jen informuje? hodnotí? nebo baví?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "zpravodajské",
+              "analytické",
+              "beletristické"
+            ],
+            "items": [
+              {
+                "text": "zpráva",
+                "group": 0
+              },
+              {
+                "text": "oznámení",
+                "group": 0
+              },
+              {
+                "text": "úvodník",
+                "group": 1
+              },
+              {
+                "text": "komentář",
+                "group": 1
+              },
+              {
+                "text": "recenze",
+                "group": 1
+              },
+              {
+                "text": "fejeton",
+                "group": 2
+              },
+              {
+                "text": "soudnička",
+                "group": 2
+              },
+              {
+                "text": "causerie",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je to zpráva, nebo komentář? *Vláda včera schválila zvýšení minimální mzdy od ledna.*",
+          "answer": "Text jen sděluje fakt (kdo, co, kdy) a neříká, jestli je to dobře → **zpráva**."
+        },
+        {
+          "type": "example",
+          "question": "Je to zpráva, nebo komentář? *Zvýšení minimální mzdy je krok správným směrem, ale přichází pozdě.*",
+          "answer": "Autor **hodnotí** („správným směrem“, „pozdě“) → **komentář**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zpráva: *Neschopná radnice konečně opravila most.*",
+          "right": "Zpráva: *Radnice v pondělí dokončila opravu mostu.*",
+          "why": "Zpráva má být objektivní. Hodnocení (*neschopná, konečně*) patří do komentáře."
+        },
+        {
+          "type": "summary",
+          "text": "Publicistický styl informuje a přesvědčuje. Zpravodajské žánry podávají fakta, analytické hodnotí, beletristické baví a nutí k zamyšlení."
+        }
+      ]
+    },
+    {
+      "title": "Zpráva × fejeton",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zpráva a fejeton jsou dva protipóly novin. Jeden je chladný jako fotka z bezpečnostní kamery, druhý vtipný jako stand-up. Když je porovnáš, pochopíš celou publicistiku."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Naučíš se poznat, jak je zpráva postavená, a odlišit fakta od názoru. To se hodí v testu i v běžném životě na internetu."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Publicistický styl",
+          "definition": "Styl médií (noviny, TV, zpravodajské weby). Funkce: informovat a přesvědčovat.",
+          "example": "zpráva, komentář, reportáž"
+        },
+        {
+          "type": "term",
+          "term": "Zpráva",
+          "definition": "Krátký objektivní text o nové události. Odpovídá na otázky **kdo, co, kdy, kde, jak, proč**.",
+          "example": "*V sobotu ráno vykolejil v Brně vlak. Nikdo nebyl zraněn.*"
+        },
+        {
+          "type": "term",
+          "term": "Obrácená pyramida",
+          "definition": "Stavba zprávy: nejdůležitější informace jsou **na začátku**, podrobnosti dál. Když text zkrátíš odzadu, podstata zůstane.",
+          "example": "první věta: co se stalo; poslední: drobné detaily"
+        },
+        {
+          "type": "term",
+          "term": "Perex (lead)",
+          "definition": "Zvýrazněný úvodní odstavec článku, který shrnuje to podstatné.",
+          "example": "tučný odstavec pod titulkem"
+        },
+        {
+          "type": "term",
+          "term": "Fejeton",
+          "definition": "Krátká vtipná úvaha o drobném, všedním tématu, zakončená pointou (překvapivým závěrem). Mistrem českého fejetonu byl **Jan Neruda**.",
+          "example": "fejeton o tom, proč se v tramvaji nikdo nedívá do očí"
+        },
+        {
+          "type": "heading",
+          "text": "Srovnání"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Zpráva",
+            "Fejeton"
+          ],
+          "rows": [
+            [
+              "cíl",
+              "informovat",
+              "pobavit a přimět k zamyšlení"
+            ],
+            [
+              "postoj",
+              "objektivní",
+              "subjektivní"
+            ],
+            [
+              "jazyk",
+              "neutrální, věcný",
+              "hravý, vtipný"
+            ],
+            [
+              "stavba",
+              "obrácená pyramida",
+              "volná, pointa na konci"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Další žánry"
+        },
+        {
+          "type": "text",
+          "text": "Přečti žánr, řekni si, čím se vyznačuje, a kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Úvodník",
+                "back": "hodnotí aktuální téma, vyjadřuje stanovisko redakce"
+              },
+              {
+                "front": "Komentář",
+                "back": "podepsaný subjektivní rozbor aktuální události"
+              },
+              {
+                "front": "Reportáž",
+                "back": "autor byl na místě; živé líčení, přímá řeč"
+              },
+              {
+                "front": "Interview",
+                "back": "rozhovor – otázky a odpovědi"
+              },
+              {
+                "front": "Recenze",
+                "back": "hodnocení nového díla (knihy, filmu, alba)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Jazyk publicistiky láká čtenáře: **poutavé titulky**, slovní hříčky, nová a módní slova. Extrémem je **bulvár** – senzace, emoce, zveličování."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď informace do zprávy podle obrácené pyramidy: (a) policie hledá svědky, (b) v noci shořela stodola v Kostelci, (c) majitel ji koupil před deseti lety.",
+          "answer": "Nejdůležitější je, **co se stalo**: (b). Pak důležitá souvislost: (a). Nakonec detail, bez kterého se zpráva obejde: (c)."
+        },
+        {
+          "type": "example",
+          "question": "Proč zpráva nemá odpovídat na otázku „co si o tom myslí autor“?",
+          "answer": "Zpráva má být **objektivní** – předává fakta, aby si čtenář udělal názor sám. Hodnocení patří do komentáře."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Reportáž = zpráva napsaná delší.",
+          "right": "Reportáž je založena na tom, že autor byl na místě a živě líčí, co viděl a slyšel.",
+          "why": "Zpráva je neosobní a stručná. Reportáž je osobní svědectví – obsahuje dojmy, atmosféru, přímou řeč."
+        },
+        {
+          "type": "summary",
+          "text": "Zpráva je objektivní, odpovídá na kdo/co/kdy/kde/jak/proč a má stavbu obrácené pyramidy. Fejeton je subjektivní a vtipný, s pointou. Komentář a úvodník hodnotí, reportáž je svědectví z místa."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Na kterou otázku zpráva NEodpovídá?",
+      "options": [
+        "kdo",
+        "kde",
+        "co si o tom myslí autor",
+        "kdy"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "choice",
+      "question": "Žánr vyjadřující stanovisko redakce:",
+      "options": [
+        "úvodník",
+        "zpráva",
+        "inzerát"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo je považován za mistra českého fejetonu 19. století?",
+      "options": [
+        "Jan Neruda",
+        "Josef Jungmann",
+        "Karel Hynek Mácha"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Reportáž je založena na autorově přímém pozorování na místě.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Zpráva má obsahovat autorovo hodnocení.",
+      "answer": false,
+      "explanation": "Zpráva je objektivní; hodnotí komentář."
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá úvodní zvýrazněný odstavec článku, který shrnuje to podstatné?",
+      "answers": [
+        "perex",
+        "lead"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj žánr s popisem.",
+      "pairs": [
+        [
+          "zpráva",
+          "objektivní informace"
+        ],
+        [
+          "komentář",
+          "hodnocení události"
+        ],
+        [
+          "fejeton",
+          "vtipná úvaha s pointou"
+        ],
+        [
+          "interview",
+          "rozhovor"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je typické pro jazyk publicistiky?",
+      "options": [
+        "poutavé titulky a aktualizovaná pojmenování",
+        "výhradně odborné termíny",
+        "archaismy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Recenze hodnotí:",
+      "options": [
+        "nové umělecké dílo",
+        "počasí",
+        "výsledky voleb"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Bulvár je typický senzacechtivostí a důrazem na emoce.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená persvazivní funkce?",
+      "options": [
+        "přesvědčovací",
+        "zábavná",
+        "popisná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Porovnej zprávu a komentář.",
+      "answer": "Zpráva objektivně informuje o události (kdo, co, kdy, kde, jak, proč), bez názoru autora. Komentář je podepsaný, událost rozebírá a hodnotí, vyjadřuje autorův názor."
+    },
+    {
+      "type": "open",
+      "question": "Jaké jsou funkce publicistického stylu a jeho hlavní žánry?",
+      "answer": "Funkce informativní a persvazivní. Zpravodajské žánry (zpráva, oznámení), analytické (úvodník, komentář, recenze), beletristické (fejeton, soudnička, causerie); dále reportáž a interview."
+    }
+  ]
+}

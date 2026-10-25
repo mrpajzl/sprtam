@@ -1,0 +1,469 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "halogen-hydroxy",
+  "title": "Halogenderiváty, alkoholy a fenoly",
+  "emoji": "🍺",
+  "explanations": [
+    {
+      "title": "Z praxe",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Teflonová pánev, PVC okna, nemrznoucí směs do auta, dezinfekce, pivo, krém na ruce. Všechno to jsou **deriváty uhlovodíků** – uhlovodíky, kterým jsme jeden nebo víc vodíků vyměnili za halogen nebo za skupinu –OH."
+        },
+        {
+          "type": "text",
+          "text": "Tak malá změna, a přitom z plynu methanu je jedovatá kapalina methanol. Ukážeme si, proč."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Derivát uhlovodíku",
+          "definition": "Látka odvozená z uhlovodíku nahrazením vodíku jiným atomem nebo skupinou (**funkční skupinou**)."
+        },
+        {
+          "type": "term",
+          "term": "Halogenderivát",
+          "definition": "Derivát s halogenem (F, Cl, Br, I) místo vodíku: R–X (R = uhlovodíkový zbytek).",
+          "example": "chloroform CHCl₃, teflon, PVC, freony"
+        },
+        {
+          "type": "term",
+          "term": "Alkohol",
+          "definition": "Derivát se skupinou **–OH** na uhlíku, který není v benzenovém jádře. Koncovka **-ol**.",
+          "example": "ethanol CH₃CH₂OH"
+        },
+        {
+          "type": "term",
+          "term": "Fenol",
+          "definition": "Látka se skupinou –OH přímo na **benzenovém jádře**.",
+          "example": "fenol C₆H₅OH – dříve „karbol“ k dezinfekci"
+        },
+        {
+          "type": "heading",
+          "text": "Halogenderiváty v životě"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**teflon** (polytetrafluorethylen) – nepřilnavé nádobí",
+            "**PVC** (polyvinylchlorid) – okna, trubky",
+            "**freony** – dříve chladiva a spreje; v horní atmosféře z nich UV záření uvolňuje radikály chloru, které rozkládají **ozon**. Proto byly zakázány (Montrealský protokol, 1987).",
+            "**chloroform** – rozpouštědlo, dříve k uspávání"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Halogen táhne elektrony k sobě, uhlík pod ním je trochu kladný. Na něj útočí **nukleofil** (částice s volným elektronovým párem) a halogen vytlačí – **nukleofilní substituce**."
+        },
+        {
+          "type": "example",
+          "question": "Co vznikne z bromethanu a hydroxidu sodného?",
+          "answer": "OH⁻ (nukleofil) napadne uhlík s bromem a vytlačí Br⁻: **CH₃CH₂Br + OH⁻ → CH₃CH₂OH + Br⁻**. Vzniká ethanol."
+        },
+        {
+          "type": "heading",
+          "text": "Alkoholy v životě"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**methanol** CH₃OH – prudce jedovatý (slepota, smrt)",
+            "**ethanol** C₂H₅OH – nápoje, dezinfekce, palivo. Vzniká **kvašením**: C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂",
+            "**ethylenglykol** (ethan-1,2-diol, 2× –OH) – nemrznoucí směs",
+            "**glycerol** (propan-1,2,3-triol, 3× –OH, tedy **trojsytný**) – kosmetika, výroba nitroglycerinu"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Alkoholy vřou mnohem výš než podobně velké alkany – skupiny –OH se navzájem drží **vodíkovými můstky**. Ethanol vře při 78 °C, propan (podobně těžký) při −42 °C."
+        },
+        {
+          "type": "heading",
+          "text": "Oxidace alkoholů"
+        },
+        {
+          "type": "text",
+          "text": "Rozhoduje, kolik uhlíků je navázaných na uhlík s –OH:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**primární** (1 sousední C): oxiduje se na **aldehyd** a dál na **kyselinu**. Ethanol → ethanal → kyselina octová (proto víno zoctovatí).",
+            "**sekundární** (2 sousední C): na **keton**. Propan-2-ol → propanon (aceton).",
+            "**terciární** (3 sousední C): uhlík s OH nemá vodík → běžně se **neoxiduje**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď alkoholy. Spočítej, kolik uhlíků sousedí s uhlíkem nesoucím –OH."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "primární",
+              "sekundární",
+              "terciární"
+            ],
+            "items": [
+              {
+                "text": "ethanol",
+                "group": 0
+              },
+              {
+                "text": "propan-1-ol",
+                "group": 0
+              },
+              {
+                "text": "butan-1-ol",
+                "group": 0
+              },
+              {
+                "text": "propan-2-ol",
+                "group": 1
+              },
+              {
+                "text": "butan-2-ol",
+                "group": 1
+              },
+              {
+                "text": "cyklohexanol",
+                "group": 1
+              },
+              {
+                "text": "2-methylpropan-2-ol",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik molekul CO₂ vznikne kvašením jedné glukózy?",
+          "answer": "C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂. Kontrola: C 6 = 4 + 2; H 12 = 12; O 6 = 2 + 4. Vznikají **2 molekuly CO₂**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Terciární alkoholy se snadno oxidují na ketony.",
+          "right": "Terciární alkoholy se běžnými činidly **neoxidují**.",
+          "why": "Při oxidaci se z uhlíku s –OH odebírá vodík. Terciární uhlík žádný vodík nemá."
+        },
+        {
+          "type": "summary",
+          "text": "Halogenderiváty R–X: nukleofilní substituce; freony ničí ozon. Alkoholy R–OH: vodíkové můstky, primární → aldehyd → kyselina, sekundární → keton, terciární se neoxidují. Fenoly: OH na jádře."
+        }
+      ]
+    },
+    {
+      "title": "Systematicky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Halogenderiváty, alkoholy a fenoly mají společné to, že na uhlík je navázán **elektronegativní atom** (halogen nebo kyslík). Vazba je polární a to určuje všechno ostatní: teplotu varu, rozpustnost, kyselost i reakce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Funkční skupina",
+          "definition": "Atom nebo skupina, která nahradila vodík v uhlovodíku a určuje vlastnosti látky.",
+          "example": "–X (halogen), –OH (hydroxyl)"
+        },
+        {
+          "type": "term",
+          "term": "Polární vazba",
+          "definition": "Vazba, ve které je pár elektronů posunutý k elektronegativnějšímu atomu. Uhlík je pak částečně kladný (δ+).",
+          "example": "C^δ+–Cl^δ−"
+        },
+        {
+          "type": "term",
+          "term": "Nukleofil",
+          "definition": "Částice s volným elektronovým párem (OH⁻, NH₃, H₂O), která útočí na kladné místo."
+        },
+        {
+          "type": "term",
+          "term": "Sytnost alkoholu",
+          "definition": "Počet skupin –OH v molekule: jednosytný, dvojsytný, trojsytný.",
+          "example": "glycerol je trojsytný"
+        },
+        {
+          "type": "heading",
+          "text": "Halogenderiváty"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Reakce",
+            "Podstata",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "nukleofilní substituce",
+              "nukleofil vytlačí halogen",
+              "CH₃CH₂Br + OH⁻ → CH₃CH₂OH + Br⁻"
+            ],
+            [
+              "eliminace",
+              "odštěpí se HX, vznikne dvojná vazba",
+              "CH₃CH₂Br → CH₂=CH₂ + HBr (KOH v ethanolu)"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Využití: teflon, PVC, chloroform; freony zakázány kvůli ozonové vrstvě – nahrazují se uhlovodíky nebo fluorovanými látkami bez chloru."
+        },
+        {
+          "type": "heading",
+          "text": "Alkoholy – dělení"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Typ",
+            "Uhlík s –OH má",
+            "Příklad",
+            "Oxidace"
+          ],
+          "rows": [
+            [
+              "primární",
+              "1 sousední C",
+              "ethanol",
+              "→ aldehyd → karboxylová kyselina"
+            ],
+            [
+              "sekundární",
+              "2 sousední C",
+              "propan-2-ol",
+              "→ keton"
+            ],
+            [
+              "terciární",
+              "3 sousední C",
+              "2-methylpropan-2-ol",
+              "neoxiduje se"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi uhlík, na kterém sedí –OH.",
+            "Spočítej uhlíky, které jsou na něj přímo navázané.",
+            "1 → primární, 2 → sekundární, 3 → terciární.",
+            "Podle typu urči produkt oxidace."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Co vznikne oxidací propan-2-olu?",
+          "answer": "CH₃–CH(OH)–CH₃: uhlík s OH má dva sousední uhlíky → **sekundární** → oxidací vznikne **keton**: CH₃–CO–CH₃ = **propanon (aceton)**."
+        },
+        {
+          "type": "example",
+          "question": "Co vznikne mírnou oxidací ethanolu?",
+          "answer": "Ethanol je primární → mírnou oxidací vznikne **aldehyd ethanal** (acetaldehyd) CH₃CHO. Další oxidací by vznikla kyselina octová."
+        },
+        {
+          "type": "heading",
+          "text": "Vlastnosti alkoholů"
+        },
+        {
+          "type": "list",
+          "items": [
+            "vodíkové můstky → vysoké teploty varu",
+            "nižší alkoholy se mísí s vodou (–OH je hydrofilní), s délkou řetězce rozpustnost klesá",
+            "jsou velmi slabé kyseliny – s Na uvolňují vodík: 2 C₂H₅OH + 2 Na → 2 C₂H₅ONa + H₂"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Fenoly"
+        },
+        {
+          "type": "text",
+          "text": "–OH přímo na benzenovém jádře. Fenol je **kyselejší** než ethanol: po odštěpení H⁺ se záporný náboj fenolátového aniontu rozprostře do kruhu (delokalizuje) a anion je stabilnější. Fenol reaguje i s NaOH, ethanol ne."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si využití látek – otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "freony",
+                "back": "poškozují ozonovou vrstvu"
+              },
+              {
+                "front": "teflon",
+                "back": "nepřilnavé nádobí"
+              },
+              {
+                "front": "ethylenglykol",
+                "back": "nemrznoucí směs"
+              },
+              {
+                "front": "glycerol",
+                "back": "kosmetika, nitroglycerin"
+              },
+              {
+                "front": "fenol",
+                "back": "dezinfekce, výroba plastů"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ethanol je kyselejší než fenol, protože má kratší řetězec.",
+          "right": "**Fenol** je kyselejší.",
+          "why": "Rozhoduje stabilita aniontu po odštěpení H⁺. Fenolátový anion rozprostře náboj do benzenového kruhu, ethoxidový anion to nedokáže."
+        },
+        {
+          "type": "summary",
+          "text": "Polární vazba C–X a C–O. Halogenderiváty: nukleofilní substituce nebo eliminace. Alkoholy: primární → aldehyd → kyselina, sekundární → keton, terciární ne. Fenol je kyselejší než alkoholy."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co vznikne oxidací propan-2-olu?",
+      "options": [
+        "propanon (aceton)",
+        "propanal",
+        "kyselina propanová",
+        "propen"
+      ],
+      "answer": 0,
+      "explanation": "Je to sekundární alkohol → keton."
+    },
+    {
+      "type": "choice",
+      "question": "Co vznikne mírnou oxidací ethanolu?",
+      "options": [
+        "ethanal (acetaldehyd)",
+        "aceton",
+        "methanol",
+        "ethan"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který alkohol je trojsytný?",
+      "options": [
+        "glycerol (propan-1,2,3-triol)",
+        "ethanol",
+        "ethylenglykol",
+        "methanol"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jakým mechanismem reaguje bromethan s hydroxidovým aniontem na ethanol?",
+      "options": [
+        "nukleofilní substituce",
+        "elektrofilní adice",
+        "radikálová substituce",
+        "přesmyk"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Fenol je kyselejší než ethanol.",
+      "answer": true,
+      "explanation": "Fenolátový anion je stabilizován delokalizací do kruhu."
+    },
+    {
+      "type": "truefalse",
+      "question": "Terciární alkoholy se snadno oxidují na ketony.",
+      "answer": false,
+      "explanation": "Uhlík s OH nemá vodík, běžně se neoxidují."
+    },
+    {
+      "type": "choice",
+      "question": "Jaký typ alkoholu je 2-methylpropan-2-ol?",
+      "options": [
+        "terciární",
+        "primární",
+        "sekundární"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj látku s využitím či rizikem.",
+      "pairs": [
+        [
+          "freony",
+          "poškozují ozonovou vrstvu"
+        ],
+        [
+          "teflon",
+          "nepřilnavé nádobí"
+        ],
+        [
+          "ethylenglykol",
+          "nemrznoucí směs"
+        ],
+        [
+          "glycerol",
+          "kosmetika, výroba nitroglycerinu"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč mají alkoholy vyšší teplotu varu než alkany s podobnou Mr?",
+      "options": [
+        "tvoří vodíkové můstky",
+        "jsou iontové",
+        "mají π vazby",
+        "mají vyšší hustotu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik molekul CO₂ vznikne kvašením jedné molekuly glukózy?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Porovnej oxidaci primárních, sekundárních a terciárních alkoholů.",
+      "answer": "Primární alkoholy se oxidují na aldehydy a dále na karboxylové kyseliny. Sekundární na ketony. Terciární nemají na uhlíku s OH vodík, a proto se za běžných podmínek neoxidují."
+    },
+    {
+      "type": "open",
+      "question": "Proč jsou freony nebezpečné a čím se nahrazují?",
+      "answer": "V stratosféře se z nich UV zářením uvolňují radikály chloru, které katalyticky rozkládají ozon. Montrealský protokol je zakázal; nahrazují se např. uhlovodíky nebo fluorovanými látkami bez chloru."
+    }
+  ]
+}

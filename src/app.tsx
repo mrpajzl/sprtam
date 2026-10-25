@@ -15,6 +15,7 @@ import { MixScreen, QuizScreen, TopicScreen } from './screens/TopicScreen'
 import { LEVELS, VocabHome, VocabLevel, VocabDrill } from './screens/Vocab'
 import type { Level } from './vocab/types'
 import { TabBar } from './ui/TabBar'
+import { useAsync } from './ui/useAsync'
 
 export function App() {
   const r = useRoute()
@@ -39,6 +40,7 @@ export function App() {
   if (a === 'spojit' && b) return <SyncScreen offer={b} />
   if (a === 'hledat') return <><Search /><TabBar active="search" /></>
   if (a === 'sdilet') return <><SyncScreen /><TabBar /></>
+  if (a === 'widgety') return <><GalleryScreen key={b} name={b} /><TabBar /></>
   if (a === 'slovicka') {
     const lvl = LEVELS.find((l) => l.id === b)?.id as Level | undefined
     if (lvl && c) return <VocabDrill level={lvl} group={c} />
@@ -58,6 +60,7 @@ export function App() {
 /** Title of screens that know it without loading content; `null` = the screen sets it (topics). */
 function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'hledat') return 'Hledat'
+  if (a === 'widgety') return 'Galerie widgetů'
   if (a === 'slovicka') return b ? titles.vocabLevel(b) : titles.vocab()
   if (a === 'g' && ALL_GRADES.includes(b as GradeId)) {
     const g = b as GradeId
@@ -65,6 +68,12 @@ function routeTitle([a, b, c, d]: string[]): string | null | undefined {
     return titles.grade(g)
   }
   return undefined
+}
+
+/** The gallery is for authors: its code loads only when opened. */
+function GalleryScreen({ name }: { name?: string }) {
+  const m = useAsync(() => import('./screens/Gallery'), [])
+  return m ? <m.Gallery name={name} /> : <div class="page" />
 }
 
 /** Opening a shared progress link imports it (the code is in the #fragment, never sent to a server). */

@@ -1,0 +1,306 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pythagorova-veta",
+  "title": "Pythagorova věta",
+  "emoji": "📐",
+  "generator": "pythagoras",
+  "explanations": [
+    {
+      "title": "Čtverce na stranách",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Opíráš žebřík o zeď. Jak vysoko dosáhne? Jak dlouhá je úhlopříčka televize? Jak daleko je to přes park šikmo, místo kolem dokola?"
+        },
+        {
+          "type": "text",
+          "text": "Všechno to jsou otázky na **pravoúhlý trojúhelník**. Už před 2 500 lety si řecký matematik Pythagoras (a před ním třeba Babyloňané) všimli úžasného pravidla, které o něm platí vždycky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pravoúhlý trojúhelník",
+          "definition": "Trojúhelník, který má jeden **pravý úhel** (90°, jako roh sešitu).",
+          "example": "Zeď, zem a opřený žebřík tvoří pravoúhlý trojúhelník."
+        },
+        {
+          "type": "term",
+          "term": "Odvěsny (a, b)",
+          "definition": "Dvě strany, které svírají pravý úhel – „odvěsí“ se z rohu.",
+          "example": "U žebříku: výška na zdi a vzdálenost paty od zdi."
+        },
+        {
+          "type": "term",
+          "term": "Přepona (c)",
+          "definition": "Strana **naproti pravému úhlu**. Je vždy nejdelší.",
+          "example": "U žebříku je přeponou sám žebřík."
+        },
+        {
+          "type": "term",
+          "term": "Druhá mocnina",
+          "definition": "Číslo krát samo sebe = obsah čtverce s takovou stranou. Píše se ².",
+          "example": "3² = 9 (čtverec 3 × 3 má 9 políček)."
+        },
+        {
+          "type": "heading",
+          "text": "Čtverce na stranách"
+        },
+        {
+          "type": "text",
+          "text": "Na každou stranu trojúhelníku postav čtverec. U trojúhelníku se stranami 3, 4 a 5 mají čtverce 9, 16 a 25 políček. A hle: **9 + 16 = 25**!"
+        },
+        {
+          "type": "text",
+          "text": "Měň délky odvěsen posuvníky. Pokaždé sečti obsahy dvou menších čtverců a porovnej s velkým. Vždy to sedí."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 3,
+            "b": 4
+          }
+        },
+        {
+          "type": "text",
+          "text": "Tohle je **Pythagorova věta**: dva malé čtverce (nad odvěsnami) mají dohromady stejný obsah jako velký čtverec nad přeponou. Zapisuje se **c² = a² + b²**."
+        },
+        {
+          "type": "example",
+          "question": "Odvěsny jsou 6 cm a 8 cm. Jak dlouhá je přepona?",
+          "answer": "c² = 6² + 8² = 36 + 64 = 100. Hledám číslo, které na druhou dá 100 (odmocnina): c = **10 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Je trojúhelník 5, 12, 13 pravoúhlý?",
+          "answer": "Nejdelší je 13. Platí 5² + 12² = 13²? 25 + 144 = 169 a 13² = 169. **Ano.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Odvěsny 3 a 4 → přepona 3 + 4 = 7.",
+          "right": "c² = 9 + 16 = 25, c = 5.",
+          "why": "Sčítají se **čtverce** (druhé mocniny), ne samotné délky. A přepona je vždy kratší než součet odvěsen – jinak by trojúhelník nešel složit."
+        },
+        {
+          "type": "summary",
+          "text": "V pravoúhlém trojúhelníku: c² = a² + b² (c je přepona, naproti pravému úhlu). Platí jen pro pravoúhlé trojúhelníky."
+        }
+      ]
+    },
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pythagorova věta je nejčastěji používaný vzorec geometrie. Umožní spočítat třetí stranu pravoúhlého trojúhelníku, když znáš dvě. Tady je postup, jak na to – ať hledáš kteroukoli stranu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přepona c",
+          "definition": "Nejdelší strana pravoúhlého trojúhelníku, leží naproti pravému úhlu (90°).",
+          "example": "V trojúhelníku 6, 8, 10 je přepona 10."
+        },
+        {
+          "type": "term",
+          "term": "Odvěsny a, b",
+          "definition": "Dvě kratší strany, které spolu svírají pravý úhel.",
+          "example": "6 a 8"
+        },
+        {
+          "type": "term",
+          "term": "Druhá mocnina a odmocnina",
+          "definition": "a² = a · a. Odmocnina √ je opak: √25 = 5, protože 5² = 25.",
+          "example": "√144 = 12"
+        },
+        {
+          "type": "term",
+          "term": "Pythagorova věta",
+          "definition": "V každém pravoúhlém trojúhelníku platí c² = a² + b².",
+          "example": "5² = 3² + 4², tedy 25 = 9 + 16."
+        },
+        {
+          "type": "heading",
+          "text": "Který vzorec použít"
+        },
+        {
+          "type": "table",
+          "head": [
+            "hledám",
+            "vzorec",
+            "slovy"
+          ],
+          "rows": [
+            [
+              "přeponu c",
+              "c = √(a² + b²)",
+              "sečti čtverce odvěsen, odmocni"
+            ],
+            [
+              "odvěsnu a",
+              "a = √(c² − b²)",
+              "od čtverce přepony odečti čtverec druhé odvěsny, odmocni"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Nakresli náčrt a vyznač pravý úhel.",
+            "Najdi přeponu – stranu naproti pravému úhlu.",
+            "Rozhodni, jestli hledáš přeponu (sčítáš) nebo odvěsnu (odčítáš).",
+            "Dosaď druhé mocniny a spočítej.",
+            "Odmocni.",
+            "Zkontroluj: přepona musí vyjít nejdelší."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Žebřík dlouhý 5 m stojí patou 3 m od zdi. Do jaké výšky sahá?",
+          "answer": "Žebřík je přepona: c = 5. Pata od zdi je odvěsna a = 3. Hledám odvěsnu b: b² = 25 − 9 = 16, b = √16 = **4 m**."
+        },
+        {
+          "type": "example",
+          "question": "Obdélník má strany 8 cm a 6 cm. Jak dlouhá je úhlopříčka?",
+          "answer": "Úhlopříčka rozdělí obdélník na dva pravoúhlé trojúhelníky a je jejich přeponou. c² = 64 + 36 = 100, c = **10 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Úhlopříčka čtverce se stranou 1 m?",
+          "answer": "c² = 1 + 1 = 2, c = √2 ≐ **1,41 m**. Tahle odmocnina nevyjde přesně, proto zaokrouhlujeme."
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej si: nastav odvěsny 6 a 8 a ověř, že přepona je 10."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 6,
+            "b": 8
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hledám odvěsnu: a = √(c² + b²)",
+          "right": "a = √(c² − b²)",
+          "why": "Odvěsna je kratší než přepona, takže musíš **odčítat**. Kdybys sčítal, vyšla by delší než přepona."
+        },
+        {
+          "type": "summary",
+          "text": "Přepona: sečti čtverce odvěsen a odmocni. Odvěsna: od čtverce přepony odečti čtverec druhé odvěsny a odmocni."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Odvěsny 6 cm a 8 cm. Přepona v cm?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Přepona 13 cm, odvěsna 5 cm. Druhá odvěsna v cm?",
+      "answers": [
+        "12"
+      ],
+      "explanation": "169 − 25 = 144"
+    },
+    {
+      "type": "input",
+      "question": "Odvěsny 9 a 12. Přepona?",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Trojúhelník se stranami 5, 12, 13 je pravoúhlý.",
+      "answer": true,
+      "explanation": "25 + 144 = 169"
+    },
+    {
+      "type": "truefalse",
+      "question": "Trojúhelník se stranami 4, 5, 6 je pravoúhlý.",
+      "answer": false,
+      "explanation": "16 + 25 = 41 ≠ 36"
+    },
+    {
+      "type": "choice",
+      "question": "Která strana je přepona?",
+      "options": [
+        "proti pravému úhlu",
+        "nejkratší",
+        "u pravého úhlu",
+        "libovolná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Úhlopříčka čtverce se stranou 1 m je (zaokrouhli na setiny, v m):",
+      "answers": [
+        "1,41"
+      ],
+      "explanation": "√2 ≐ 1,41"
+    },
+    {
+      "type": "input",
+      "question": "Obdélník 8 cm × 6 cm. Délka úhlopříčky v cm?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Žebřík 10 m stojí 6 m od zdi. Do jaké výšky sahá?",
+      "options": [
+        "8 m",
+        "4 m",
+        "16 m",
+        "11,7 m"
+      ],
+      "answer": 0,
+      "explanation": "100 − 36 = 64"
+    },
+    {
+      "type": "truefalse",
+      "question": "Pythagorova věta platí pro každý trojúhelník.",
+      "answer": false,
+      "explanation": "Jen pro pravoúhlý."
+    },
+    {
+      "type": "open",
+      "question": "Co říká Pythagorova věta?",
+      "answer": "V pravoúhlém trojúhelníku je obsah čtverce nad přeponou roven součtu obsahů čtverců nad odvěsnami: c² = a² + b²."
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš odvěsnu, když znáš přeponu a druhou odvěsnu?",
+      "answer": "Od druhé mocniny přepony odečtu druhou mocninu známé odvěsny a výsledek odmocním: a = √(c² − b²)."
+    }
+  ]
+}

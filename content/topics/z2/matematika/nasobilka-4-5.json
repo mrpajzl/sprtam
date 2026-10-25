@@ -1,0 +1,407 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nasobilka-4-5",
+  "title": "Násobilka 4 a 5, dělení",
+  "emoji": "🖐️",
+  "generator": "mul-table",
+  "explanations": [
+    {
+      "title": "Ruce a nohy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pes má 4 nohy. Ruka má 5 prstů. Kolik nohou má 6 psů? Kolik prstů má 7 rukou?"
+        },
+        {
+          "type": "text",
+          "text": "Tohle spočítá **násobilka 4 a 5**. A když ji znáš, umíš hned i **dělit** – třeba rozdělit bonbony spravedlivě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Násobení ( · )",
+          "definition": "Sčítání stejných čísel zkráceně. Čteme „krát“.",
+          "example": "3 · 4 = 4 + 4 + 4 = 12"
+        },
+        {
+          "type": "term",
+          "term": "Násobek",
+          "definition": "Výsledek násobení daným číslem.",
+          "example": "Násobky 5: 5, 10, 15, 20…"
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "kolikrát",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "rows": [
+            [
+              "· 4",
+              "4",
+              "8",
+              "12",
+              "16",
+              "20",
+              "24",
+              "28",
+              "32",
+              "36",
+              "40"
+            ],
+            [
+              "· 5",
+              "5",
+              "10",
+              "15",
+              "20",
+              "25",
+              "30",
+              "35",
+              "40",
+              "45",
+              "50"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Násobky 5 končí vždy na **0** nebo **5**. Násobky 4 jsou dvakrát větší než násobky 2: 2 · 3 = 6, a proto 4 · 3 = 12."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je 4 · 5 = 20 puntíků. Změň posuvníky na 4 · 7. Kolik puntíků vidíš?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 4,
+            "columns": 5
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dělení – násobení pozpátku"
+        },
+        {
+          "type": "term",
+          "term": "Dělení ( : )",
+          "definition": "Rozdělit věci na stejné hromádky. Znak je dvojtečka, čteme „děleno“.",
+          "example": "20 : 4 = 5 – dvacet rozdělím do čtyř hromádek, v každé je 5."
+        },
+        {
+          "type": "text",
+          "text": "U dělení se ptáš: **kolikrát** se číslo vejde? 20 : 4 → kolik krát 4 je 20? 4 · 5 = 20, takže **5**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik nohou má 6 psů?",
+          "answer": "6 · 4 = 24. Pomůžu si: 5 · 4 = 20, ještě jeden pes: 20 + 4 = **24**."
+        },
+        {
+          "type": "example",
+          "question": "32 : 4 =",
+          "answer": "Kolikrát 4 je 32? Najdu v řádku · 4: **8**, protože 4 · 8 = 32."
+        },
+        {
+          "type": "mistake",
+          "wrong": "24 : 4 = 8",
+          "right": "24 : 4 = **6**",
+          "why": "Ověř násobením: 4 · 8 = 32, ne 24. Správně 4 · 6 = 24."
+        },
+        {
+          "type": "summary",
+          "text": "Násobky 4: 4, 8 … 40. Násobky 5 končí na 0 nebo 5. Dělení je násobení pozpátku."
+        }
+      ]
+    },
+    {
+      "title": "Dělení spravedlivě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš 12 bonbonů a 4 kamarády. Chceš, aby každý dostal stejně. Kolik dáš každému?"
+        },
+        {
+          "type": "text",
+          "text": "Rozdělit spravedlivě znamená **dělit**. A nejrychleji to spočítáš, když umíš násobilku – tady násobilku 4 a 5."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dělení ( : )",
+          "definition": "Rozdělení věcí na stejně velké hromádky. Čteme „děleno“.",
+          "example": "12 : 4 = 3"
+        },
+        {
+          "type": "term",
+          "term": "Spravedlivě",
+          "definition": "Každý dostane úplně stejně."
+        },
+        {
+          "type": "term",
+          "term": "Násobení ( · )",
+          "definition": "Opak dělení. Spojí stejné hromádky dohromady.",
+          "example": "4 · 3 = 12"
+        },
+        {
+          "type": "heading",
+          "text": "Rozdáváme"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Dej každému dítěti 1 bonbon. Rozdal jsi 4.",
+            "Dej každému další. Rozdal jsi 8.",
+            "A ještě jeden. Rozdal jsi 12 – bonbony došly.",
+            "Každé dítě má **3**. Píšeme **12 : 4 = 3**."
+          ]
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🍬🍬🍬",
+            "🍬🍬🍬",
+            "🍬🍬🍬",
+            "🍬🍬🍬"
+          ],
+          "caption": "12 bonbonů pro 4 děti – každé má 3"
+        },
+        {
+          "type": "heading",
+          "text": "Rychleji pomocí násobilky"
+        },
+        {
+          "type": "text",
+          "text": "Rozdávat po jednom je pomalé. Zeptej se: **4 krát kolik je 12?** Z násobilky víš 4 · 3 = 12. Takže 12 : 4 = 3."
+        },
+        {
+          "type": "table",
+          "head": [
+            "kolikrát",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "rows": [
+            [
+              "· 4",
+              "4",
+              "8",
+              "12",
+              "16",
+              "20",
+              "24",
+              "28",
+              "32",
+              "36",
+              "40"
+            ],
+            [
+              "· 5",
+              "5",
+              "10",
+              "15",
+              "20",
+              "25",
+              "30",
+              "35",
+              "40",
+              "45",
+              "50"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Nastav posuvníky na 5 řad po 3. Je to 15 jablek v 5 košících. Kolik je v jednom košíku?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 5,
+            "columns": 3
+          }
+        },
+        {
+          "type": "example",
+          "question": "35 : 5 =",
+          "answer": "Kolikrát 5 je 35? 5 · 7 = 35. Takže **7**."
+        },
+        {
+          "type": "example",
+          "question": "15 jablek rozdělíš do 5 košíků. Kolik jich je v jednom?",
+          "answer": "15 : 5. Víme, že 5 · 3 = 15. **3 jablka.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "25 : 5 = 20",
+          "right": "25 : 5 = **5**",
+          "why": "20 by vyšlo, kdybys pětku odečetl (25 − 5). Dělení se ptá, kolikrát se 5 vejde do 25: 5 · 5 = 25."
+        },
+        {
+          "type": "summary",
+          "text": "Dělení = rozdělit spravedlivě. Výsledek najdeš v násobilce a ověříš násobením: 12 : 4 = 3, protože 4 · 3 = 12."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "4 · 3 =",
+      "answers": [
+        "12"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "4 · 7 =",
+      "answers": [
+        "28"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "4 · 9 =",
+      "answers": [
+        "36"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "5 · 6 =",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "5 · 9 =",
+      "answers": [
+        "45"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "20 : 4 =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "40 : 5 =",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "32 : 4 =",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "4 · 8 =",
+      "options": [
+        "32",
+        "28",
+        "36"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "25 : 5 =",
+      "options": [
+        "4",
+        "5",
+        "20"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "5 · 8 = 40",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "24 : 4 = 8",
+      "answer": false,
+      "explanation": "4 · 6 = 24, takže 24 : 4 = 6."
+    },
+    {
+      "type": "input",
+      "question": "Kolik nohou má 6 psů?",
+      "answers": [
+        "24"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "15 jablek rozdělíš do 5 košíků. Kolik jich je v jednom?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak si ověříš, že 30 : 5 = 6?",
+      "answer": "Vynásobím zpátky: 5 · 6 = 30. Sedí to."
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš násobek čísla 5?",
+      "answer": "Končí na 0 nebo na 5, třeba 15, 20, 45."
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "koule",
+  "title": "Koule",
+  "emoji": "⚽",
+  "generator": "circle",
+  "explanations": [
+    {
+      "title": "Míč a pomeranč",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Míč, pomeranč, kulička, planeta Země. Koule je nejdokonalejší těleso – ze středu je to ke kterémukoli místu na povrchu stejně daleko."
+        },
+        {
+          "type": "text",
+          "text": "Kolik vzduchu je v míči? Kolik kůže je potřeba na jeho ušití? Na to existují dva krásné vzorce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Střed a poloměr r",
+          "definition": "Střed je bod uprostřed koule. Poloměr je vzdálenost ze středu na povrch. Průměr d = 2r.",
+          "example": "Míč s průměrem 12 cm má r = 6 cm."
+        },
+        {
+          "type": "term",
+          "term": "Kulová plocha",
+          "definition": "Jen povrch koule – „slupka“. Body ve vzdálenosti přesně r od středu.",
+          "example": "Kůže míče."
+        },
+        {
+          "type": "term",
+          "term": "Koule",
+          "definition": "Kulová plocha i celý vnitřek. Body ve vzdálenosti nejvýš r od středu.",
+          "example": "Plná kulička z oceli."
+        },
+        {
+          "type": "term",
+          "term": "π (pí)",
+          "definition": "Číslo asi 3,14. Obsah kruhu je π · r².",
+          "example": "Kruh s r = 5: 3,14 · 25 = 78,5"
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s pomerančem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozkroj pomeranč napůl a obkresli řez na papír 4krát – vzniknou 4 kruhy s poloměrem pomeranče.",
+            "Oloupej pomeranč.",
+            "Slupkou vyplňuj nakreslené kruhy.",
+            "Slupka vyplní přibližně právě **4 kruhy**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Proto **povrch koule = 4 kruhy = 4πr²**. Měň poloměr kruhu a sleduj obsah – povrch koule je čtyřikrát tolik."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "circle",
+            "a": 5
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Objem"
+        },
+        {
+          "type": "text",
+          "text": "Objem koule je **V = 4/3 · π · r³** (r³ = r · r · r). Odvodit ho umí až vyšší matematika, ale dá se ověřit: koule se vejde do krychle se stranou 2r a zabere asi polovinu jejího objemu."
+        },
+        {
+          "type": "example",
+          "question": "Míček má r = 1 cm. Povrch?",
+          "answer": "S = 4 · 3,14 · 1 · 1 = **12,56 cm²**."
+        },
+        {
+          "type": "example",
+          "question": "Koule s r = 1 dm. Kolik litrů se do ní vejde?",
+          "answer": "V = 4/3 · 3,14 · 1 ≐ 4,19 dm³ = **asi 4,19 l**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kulová plocha a koule jsou totéž.",
+          "right": "Kulová plocha je jen povrch, koule i vnitřek.",
+          "why": "Stejně jako kružnice (čára) a kruh (čára i plocha)."
+        },
+        {
+          "type": "summary",
+          "text": "Povrch koule = 4 kruhy: S = 4πr². Objem V = 4/3 · πr³."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pro kouli stačí dva vzorce a pozor na jednu věc: v povrchu je r na druhou, v objemu na třetí. Z toho plyne, jak rychle roste objem s velikostí koule."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Koule a kulová plocha",
+          "definition": "Koule = všechny body ve vzdálenosti nejvýš r od středu. Kulová plocha = body ve vzdálenosti přesně r (jen povrch).",
+          "example": "Plná kulička × bublina."
+        },
+        {
+          "type": "term",
+          "term": "r² a r³",
+          "definition": "r² = r · r (druhá mocnina), r³ = r · r · r (třetí mocnina).",
+          "example": "r = 3: r² = 9, r³ = 27"
+        },
+        {
+          "type": "term",
+          "term": "Řez koule",
+          "definition": "Plocha, která vznikne rozříznutím koule rovinou. Je to vždy kruh.",
+          "example": "Rozkrojený pomeranč."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "co",
+            "vzorec",
+            "jednotka"
+          ],
+          "rows": [
+            [
+              "povrch",
+              "S = 4πr²",
+              "cm²"
+            ],
+            [
+              "objem",
+              "V = 4/3 · πr³",
+              "cm³"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti poloměr (z průměru: r = d : 2).",
+            "Povrch: 4 · 3,14 · r · r.",
+            "Objem: 4 · 3,14 · r · r · r : 3.",
+            "Připiš jednotky."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Koule r = 3 cm. Objem?",
+          "answer": "r³ = 27. V = 4/3 · 3,14 · 27 = 4 · 3,14 · 9 = **113,04 cm³**."
+        },
+        {
+          "type": "example",
+          "question": "Koule r = 10 cm. Povrch?",
+          "answer": "S = 4 · 3,14 · 100 = **1 256 cm²**."
+        },
+        {
+          "type": "heading",
+          "text": "Co se stane při zvětšení"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Dvojnásobný poloměr → povrch 2² = **4krát** větší.",
+            "Dvojnásobný poloměr → objem 2³ = **8krát** větší."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Procvič si – otoč kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "povrch koule",
+                "back": "S = 4πr²"
+              },
+              {
+                "front": "objem koule",
+                "back": "V = 4/3 · πr³"
+              },
+              {
+                "front": "r · 2 → objem",
+                "back": "8krát větší"
+              },
+              {
+                "front": "průměr 12 cm → r",
+                "back": "6 cm"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Průměr 12 cm, dosadím r = 12.",
+          "right": "r = 12 : 2 = 6 cm.",
+          "why": "Vzorce pracují s poloměrem. S průměrem by vyšel objem 8krát větší."
+        },
+        {
+          "type": "summary",
+          "text": "S = 4πr², V = 4/3 · πr³. Povrch s r², objem s r³."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Koule r = 10 cm, π ≈ 3,14. Povrch v cm²?",
+      "answers": [
+        "1256"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Koule r = 1 cm, π ≈ 3,14. Povrch v cm²?",
+      "answers": [
+        "12,56"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Koule r = 3 cm, π ≈ 3,14. Objem v cm³?",
+      "answers": [
+        "113,04"
+      ],
+      "explanation": "4/3 · 3,14 · 27 = 113,04"
+    },
+    {
+      "type": "choice",
+      "question": "Vzorec pro objem koule:",
+      "options": [
+        "4/3 · πr³",
+        "4πr²",
+        "πr²v",
+        "1/3 · πr²v"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Když poloměr koule zdvojnásobím, objem se…",
+      "options": [
+        "zosminásobí",
+        "zdvojnásobí",
+        "zečtyřnásobí",
+        "nezmění"
+      ],
+      "answer": 0,
+      "explanation": "2³ = 8"
+    },
+    {
+      "type": "choice",
+      "question": "Když poloměr koule zdvojnásobím, povrch se…",
+      "options": [
+        "zečtyřnásobí",
+        "zdvojnásobí",
+        "zosminásobí",
+        "nezmění"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Kulová plocha a koule jsou totéž.",
+      "answer": false,
+      "explanation": "Kulová plocha je jen povrch, koule i vnitřek."
+    },
+    {
+      "type": "input",
+      "question": "Průměr koule je 12 cm. Poloměr v cm?",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Řez koule rovinou je vždy kruh.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Koule r = 1 dm má objem asi…",
+      "options": [
+        "4,19 l",
+        "12,56 l",
+        "3,14 l",
+        "1 l"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Napiš vzorce pro povrch a objem koule.",
+      "answer": "Povrch S = 4πr², objem V = 4/3 · πr³, kde r je poloměr koule."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi koulí a kulovou plochou?",
+      "answer": "Kulová plocha jsou body ve vzdálenosti přesně r od středu – jen „slupka“. Koule obsahuje i celý vnitřek."
+    }
+  ]
+}

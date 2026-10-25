@@ -1,0 +1,448 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hydroxidy-ph",
+  "title": "Hydroxidy, pH a neutralizace",
+  "emoji": "🧼",
+  "explanations": [
+    {
+      "title": "Stupnice pH",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ocet chutná kysele, mýdlo klouže v rukou a štípe v očích. Ocet je **kyselý**, mýdlo **zásadité** – to je opak kyselého. Mezi nimi stojí čistá voda."
+        },
+        {
+          "type": "text",
+          "text": "Jak moc je co kyselé nebo zásadité, se měří číslem **pH**. Hlídá se v bazénu, v akváriu, v půdě na zahrádce i v kosmetice („pH neutrální“)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kyselina",
+          "definition": "Látka, která ve vodě uvolňuje **H⁺** (kladně nabitý vodík). Chutná kysele.",
+          "example": "ocet, citronová šťáva, žaludeční šťáva"
+        },
+        {
+          "type": "term",
+          "term": "Hydroxid",
+          "definition": "Látka, která ve vodě uvolňuje **OH⁻** – hydroxidový anion (záporně nabitá dvojice kyslík + vodík). Roztoky hydroxidů jsou **zásadité**, kluzké na omak a žíravé.",
+          "example": "hydroxid sodný NaOH (louh na čištění odpadů), hydroxid vápenatý (hašené vápno)"
+        },
+        {
+          "type": "term",
+          "term": "pH",
+          "definition": "Číslo od 0 do 14, které říká, jak je roztok kyselý nebo zásaditý. **7 = neutrální**, méně = kyselé, více = zásadité."
+        },
+        {
+          "type": "heading",
+          "text": "Stupnice pH"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf. Najdi čistou vodu (7) a všimni si, co je od ní vlevo a co vpravo."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "pH",
+            "items": [
+              {
+                "label": "žaludeční šťáva",
+                "value": 1.5
+              },
+              {
+                "label": "citronová šťáva",
+                "value": 2.5
+              },
+              {
+                "label": "ocet",
+                "value": 3
+              },
+              {
+                "label": "čistá voda",
+                "value": 7
+              },
+              {
+                "label": "krev",
+                "value": 7.4
+              },
+              {
+                "label": "mýdlo",
+                "value": 10
+              },
+              {
+                "label": "čpavek",
+                "value": 11.5
+              },
+              {
+                "label": "hydroxid sodný (roztok)",
+                "value": 14
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Čím **dál od 7**, tím je roztok silnější: pH 1 je mnohem kyselejší než pH 5, pH 13 mnohem zásaditější než pH 9."
+        },
+        {
+          "type": "heading",
+          "text": "Jak pH zjistit"
+        },
+        {
+          "type": "term",
+          "term": "Indikátor",
+          "definition": "Látka, která změní barvu podle pH.",
+          "example": "**Univerzální indikátorový papírek** se zbarví červeně v kyselině a modře až fialově v zásadě. **Fenolftalein** je v kyselém i neutrálním bezbarvý, v zásaditém **fialový (růžový)**."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď látky. Kyselé chutná kysele (ocet, citron); zásadité jsou mýdla a čisticí prostředky."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "kyselé (pH < 7)",
+              "zásadité (pH > 7)"
+            ],
+            "items": [
+              {
+                "text": "ocet",
+                "group": 0
+              },
+              {
+                "text": "citron",
+                "group": 0
+              },
+              {
+                "text": "cola",
+                "group": 0
+              },
+              {
+                "text": "kyselé zelí",
+                "group": 0
+              },
+              {
+                "text": "mýdlo",
+                "group": 1
+              },
+              {
+                "text": "čpavek",
+                "group": 1
+              },
+              {
+                "text": "prací prášek",
+                "group": 1
+              },
+              {
+                "text": "vápenná voda",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Když se kyselina potká se zásadou"
+        },
+        {
+          "type": "term",
+          "term": "Neutralizace",
+          "definition": "Reakce kyseliny s hydroxidem. Navzájem se „vyruší“ – vznikne **sůl a voda** a pH se blíží 7.",
+          "example": "Při pálení žáhy pomáhají léky, které přebytečnou žaludeční kyselinu neutralizují."
+        },
+        {
+          "type": "example",
+          "question": "Roztok má pH 2. Jaký je?",
+          "answer": "2 je méně než 7 → **kyselý**. A je hodně daleko od 7, takže **silně** kyselý – asi jako citronová šťáva."
+        },
+        {
+          "type": "example",
+          "question": "Do roztoku kápneš fenolftalein a zbarví se fialově. Co víš?",
+          "answer": "Fenolftalein je fialový jen v **zásaditém** roztoku. pH je tedy větší než 7 – v roztoku je asi hydroxid."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Mýdlo je kyselé, protože štípe v očích.",
+          "right": "Mýdlo je **zásadité** (pH asi 9–10).",
+          "why": "Štípat a leptat umí kyseliny i zásady. O tom, které to je, rozhoduje pH: nad 7 zásadité."
+        },
+        {
+          "type": "summary",
+          "text": "pH < 7 kyselé, 7 neutrální, pH > 7 zásadité. Kyseliny uvolňují H⁺, hydroxidy OH⁻. Kyselina + hydroxid = sůl + voda (neutralizace)."
+        }
+      ]
+    },
+    {
+      "title": "Rovnicí",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když se v laboratoři rozlije kyselina, posype se něčím zásaditým – třeba vápnem nebo sodou. Kyselina se tím **zneškodní**. Proč to funguje, ukáže jedna jednoduchá rovnice."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se, co jsou hydroxidy, jak napsat jejich vzorec, co je pH a co přesně se děje při neutralizaci."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kation a anion",
+          "definition": "Částice s nábojem. **Kation** je kladný (+), **anion** záporný (−).",
+          "example": "Na⁺ je kation sodíku, Cl⁻ anion chloru."
+        },
+        {
+          "type": "term",
+          "term": "Hydroxid",
+          "definition": "Sloučenina **kovu** a skupiny **OH** (kyslík + vodík). Ve vodě uvolňuje anionty **OH⁻**.",
+          "example": "NaOH hydroxid sodný, KOH hydroxid draselný, Ca(OH)₂ hydroxid vápenatý"
+        },
+        {
+          "type": "term",
+          "term": "Kyselina",
+          "definition": "Látka, která ve vodě uvolňuje kationty **H⁺**.",
+          "example": "HCl, H₂SO₄, HNO₃"
+        },
+        {
+          "type": "term",
+          "term": "pH",
+          "definition": "Stupnice 0–14: pod 7 kyselé (víc H⁺), 7 neutrální, nad 7 zásadité (víc OH⁻)."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorec hydroxidu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Z koncovky urči oxidační číslo kovu: vápen**atý** → II.",
+            "Skupina OH má dohromady −I.",
+            "Kolik je číslo kovu, tolik skupin OH: Ca a 2× OH.",
+            "Víc skupin dej do **závorky** s indexem: **Ca(OH)₂**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Vzorec hydroxidu hlinitého?",
+          "answer": "Hlin**itý** → III → tři skupiny OH → **Al(OH)₃**. Kontrola: +3 + 3 · (−1) = 0 ✓"
+        },
+        {
+          "type": "heading",
+          "text": "Neutralizace"
+        },
+        {
+          "type": "term",
+          "term": "Sůl",
+          "definition": "Sloučenina z kationtu kovu a aniontu z kyseliny. Vzniká při neutralizaci.",
+          "example": "NaCl chlorid sodný (kuchyňská sůl), KNO₃ dusičnan draselný"
+        },
+        {
+          "type": "text",
+          "text": "**Kyselina + hydroxid → sůl + voda.** Vodík z kyseliny a OH z hydroxidu se spojí na vodu. Zbytky – kov a zbytek kyseliny – dají sůl."
+        },
+        {
+          "type": "text",
+          "text": "Podstata každé neutralizace je jediná rovnice: `H⁺ + OH⁻ → H₂O`."
+        },
+        {
+          "type": "example",
+          "question": "HCl + NaOH → ?",
+          "answer": "H z HCl a OH z NaOH dají H₂O. Zbude Na a Cl → NaCl. **HCl + NaOH → NaCl + H₂O** (chlorid sodný a voda)."
+        },
+        {
+          "type": "example",
+          "question": "HNO₃ + KOH → ?",
+          "answer": "H + OH → H₂O. Zbude K a NO₃ → KNO₃. **HNO₃ + KOH → KNO₃ + H₂O** (dusičnan draselný a voda)."
+        },
+        {
+          "type": "heading",
+          "text": "Ověř si"
+        },
+        {
+          "type": "text",
+          "text": "Doplň, co chybí. Pomůže ti pravidlo kyselina + hydroxid → sůl + voda."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "HCl + NaOH → NaCl + ",
+                "after": "",
+                "options": [
+                  "H₂O",
+                  "H₂",
+                  "O₂"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "hydroxid vápenatý = Ca",
+                "after": "",
+                "options": [
+                  "(OH)₂",
+                  "OH",
+                  "OH₂"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "pH 7 = ",
+                "after": "",
+                "options": [
+                  "neutrální",
+                  "kyselé",
+                  "zásadité"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "hydroxidy uvolňují ",
+                "after": "",
+                "options": [
+                  "OH⁻",
+                  "H⁺",
+                  "Cl⁻"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hydroxid vápenatý = CaOH₂",
+          "right": "Hydroxid vápenatý = **Ca(OH)₂**",
+          "why": "Bez závorky by index 2 patřil jen k vodíku. Dvojka ale patří celé skupině OH – proto závorka."
+        },
+        {
+          "type": "summary",
+          "text": "Hydroxidy = kov + OH, uvolňují OH⁻ a jsou zásadité (pH > 7). Neutralizace: kyselina + hydroxid → sůl + voda, podstatou je H⁺ + OH⁻ → H₂O."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jaké pH má neutrální roztok?",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Roztok má pH 2. Je…",
+      "options": [
+        "silně kyselý",
+        "neutrální",
+        "zásaditý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec hydroxidu vápenatého?",
+      "options": [
+        "Ca(OH)₂",
+        "CaOH",
+        "CaO",
+        "Ca₂OH"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje NaOH? (hydroxid …)",
+      "answers": [
+        "hydroxid sodný",
+        "sodný"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co vznikne neutralizací HCl a NaOH?",
+      "options": [
+        "NaCl a H₂O",
+        "Na a HCl",
+        "NaOH a H₂",
+        "Cl₂ a H₂O"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Fenolftalein se v zásaditém roztoku zbarví fialově (růžově).",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Mýdlo má pH menší než 7.",
+      "answer": false,
+      "explanation": "Mýdlo je zásadité, pH kolem 9–10."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejkyselejšího.",
+      "items": [
+        "žaludeční šťáva",
+        "ocet",
+        "čistá voda",
+        "mýdlo",
+        "roztok NaOH"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co vznikne neutralizací HNO₃ a KOH?",
+      "options": [
+        "KNO₃ a H₂O",
+        "KOH a H₂",
+        "K₂O a HNO₃",
+        "KNO₂ a O₂"
+      ],
+      "answer": 0,
+      "explanation": "Kyselina + hydroxid → sůl (dusičnan draselný) + voda."
+    },
+    {
+      "type": "choice",
+      "question": "Jaký ion uvolňují hydroxidy ve vodě?",
+      "options": [
+        "OH⁻",
+        "H⁺",
+        "Cl⁻",
+        "Na⁻"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je neutralizace? Uveď rovnici.",
+      "answer": "Reakce kyseliny s hydroxidem, při které vzniká sůl a voda. Např. HCl + NaOH → NaCl + H₂O."
+    },
+    {
+      "type": "open",
+      "question": "Co vyjadřuje pH a jak se měří?",
+      "answer": "pH vyjadřuje kyselost nebo zásaditost roztoku na stupnici 0–14. Měří se indikátorovým papírkem, indikátory jako fenolftalein nebo pH-metrem."
+    }
+  ]
+}

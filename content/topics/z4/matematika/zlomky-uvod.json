@@ -1,0 +1,362 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zlomky-uvod",
+  "title": "Zlomky – úvod",
+  "emoji": "🍕",
+  "generator": "frac-of",
+  "explanations": [
+    {
+      "title": "Na pizze",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pizzu rozkrojíš na 4 stejné dílky a sníš jeden. Kolik pizzy jsi snědl? Ne celou, jen **kousek** z ní."
+        },
+        {
+          "type": "text",
+          "text": "Na zapsání části celku máme **zlomky**. Potkáš je v kuchyni (půl hrnku mouky), u hodin (čtvrt hodiny) i v obchodě (půl kila)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Celek",
+          "definition": "To, co dělíme: celá pizza, celý dort, celá čokoláda."
+        },
+        {
+          "type": "term",
+          "term": "Zlomek",
+          "definition": "Zápis části celku. Píšeme dvě čísla nad sebou nebo s lomítkem.",
+          "example": "1/4 – jedna čtvrtina"
+        },
+        {
+          "type": "term",
+          "term": "Jmenovatel",
+          "definition": "Spodní číslo. Říká, na **kolik stejných dílů** je celek rozdělený.",
+          "example": "V 1/4 je jmenovatel 4."
+        },
+        {
+          "type": "term",
+          "term": "Čitatel",
+          "definition": "Horní číslo. Říká, **kolik dílů beru**.",
+          "example": "V 1/4 je čitatel 1."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je pizza na 4 díly, 1 je vybarvený – to je 1/4. Přidej čitatel na 3. Pak změň jmenovatel na 8. Jak se změnily dílky?"
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 1,
+            "denominator": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak zlomky čteme"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zlomek",
+            "Čteme"
+          ],
+          "rows": [
+            [
+              "1/2",
+              "jedna polovina"
+            ],
+            [
+              "1/3",
+              "jedna třetina"
+            ],
+            [
+              "1/4",
+              "jedna čtvrtina"
+            ],
+            [
+              "3/4",
+              "tři čtvrtiny"
+            ],
+            [
+              "1/10",
+              "jedna desetina"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Který díl je větší?"
+        },
+        {
+          "type": "text",
+          "text": "Čím na **víc** dílů pizzu rozkrojíš, tím **menší** je každý dílek. Proto 1/2 > 1/4 > 1/10."
+        },
+        {
+          "type": "example",
+          "question": "Dort je na 8 dílů, snědl jsi 3. Jaký zlomek jsi snědl?",
+          "answer": "Celek rozdělený na 8 → jmenovatel 8. Snědl jsi 3 → čitatel 3. **3/8**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik čtvrtin tvoří celou pizzu?",
+          "answer": "Pizza je na 4 díly. Celá = všechny 4 → **4/4 = 1 celek**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1/5 je víc než 1/3, protože 5 je víc než 3.",
+          "right": "1/5 < 1/3",
+          "why": "Pětina vznikne, když pizzu dělíš mezi 5 lidí. Třetina – mezi 3. Při dělení mezi méně lidí dostane každý víc."
+        },
+        {
+          "type": "summary",
+          "text": "Jmenovatel (dole) = na kolik dílů. Čitatel (nahoře) = kolik dílů beru. Víc dílů = menší dílek."
+        }
+      ]
+    },
+    {
+      "title": "Z čísla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve třídě je 24 žáků. Polovina jsou dívky. Kolik je to dívek? Zlomky se nepoužívají jen na pizzu – můžeš vzít část z **jakéhokoli počtu**."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se spočítat „třetinu z 12“ nebo „tři čtvrtiny z 20“. Hodí se to u slev, receptů i při dělení věcí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zlomek",
+          "definition": "Zápis části celku, třeba 2/3."
+        },
+        {
+          "type": "term",
+          "term": "Jmenovatel",
+          "definition": "Spodní číslo – na kolik stejných částí dělím.",
+          "example": "V 2/3 je jmenovatel 3."
+        },
+        {
+          "type": "term",
+          "term": "Čitatel",
+          "definition": "Horní číslo – kolik částí beru.",
+          "example": "V 2/3 je čitatel 2."
+        },
+        {
+          "type": "term",
+          "term": "Část z čísla",
+          "definition": "Kolik je zlomek z nějakého počtu.",
+          "example": "1/3 z 12 = 4"
+        },
+        {
+          "type": "heading",
+          "text": "Bonbony do hromádek"
+        },
+        {
+          "type": "text",
+          "text": "Kolik je **1/3 z 12**? Rozděl 12 bonbonů na 3 stejné hromádky."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🍬🍬🍬🍬",
+            "🍬🍬🍬🍬",
+            "🍬🍬🍬🍬"
+          ],
+          "caption": "12 bonbonů ve 3 hromádkách"
+        },
+        {
+          "type": "text",
+          "text": "V jedné hromádce jsou **4**. Takže 1/3 z 12 = 4. A **2/3 z 12** = 2 hromádky = **8**."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Vyděl** jmenovatelem: 12 : 3 = 4 (jedna část).",
+            "**Vynásob** čitatelem: 4 · 2 = 8 (tolik částí beru)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Nastav zlomek 2/3. Kdyby celek byl 12 bonbonů, kolik by měl každý dílek? A kolik je vybarveno?"
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 2,
+            "denominator": 3
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik je 3/4 z 12?",
+          "answer": "12 : 4 = 3 (jedna čtvrtina). 3 · 3 = **9**."
+        },
+        {
+          "type": "example",
+          "question": "Třída má 24 žáků, 1/2 jsou dívky. Kolik je dívek?",
+          "answer": "24 : 2 = 12. Čitatel je 1, takže · 1. **12 dívek**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "3/4 z 12 = 12 : 3 · 4 = 16",
+          "right": "3/4 z 12 = 12 : **4** · **3** = 9",
+          "why": "Dělí se **jmenovatelem** (spodním číslem), násobí **čitatelem** (horním). Kontrola: část nemůže být víc než celek."
+        },
+        {
+          "type": "summary",
+          "text": "Část z čísla: vyděl spodním číslem (jmenovatelem), vynásob horním (čitatelem)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Dort je na 8 dílů, snědl jsi 3. Jaký zlomek jsi snědl?",
+      "options": [
+        "3/8",
+        "8/3",
+        "5/8"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se řekne 1/2?",
+      "options": [
+        "polovina",
+        "třetina",
+        "dvojka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik je 1/2 z 10?",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik je 1/4 z 20?",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik je 1/3 z 18?",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik je 3/4 z 12?",
+      "answers": [
+        "9"
+      ],
+      "explanation": "12 : 4 = 3, 3 · 3 = 9."
+    },
+    {
+      "type": "input",
+      "question": "Kolik čtvrtin tvoří celek?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "1/2 je víc než 1/4.",
+      "answer": true,
+      "explanation": "Čím na méně dílů, tím větší dílek."
+    },
+    {
+      "type": "truefalse",
+      "question": "1/5 je víc než 1/3.",
+      "answer": false,
+      "explanation": "Pětina je menší dílek než třetina."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "1/10",
+        "1/5",
+        "1/4",
+        "1/2"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj stejné.",
+      "pairs": [
+        [
+          "1/2",
+          "polovina"
+        ],
+        [
+          "1/3",
+          "třetina"
+        ],
+        [
+          "1/4",
+          "čtvrtina"
+        ],
+        [
+          "1/10",
+          "desetina"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Třída má 24 žáků, 1/2 jsou dívky. Kolik je dívek?",
+      "answers": [
+        "12"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co znamenají čísla v zlomku 3/5?",
+      "answer": "Celek je rozdělen na 5 stejných dílů (jmenovatel) a beru 3 z nich (čitatel)."
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš 2/3 z 15?",
+      "answer": "15 : 3 = 5, to je jedna třetina. Dvě třetiny: 5 · 2 = 10."
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kategorie-sloves",
+  "title": "Mluvnické kategorie sloves",
+  "emoji": "🏃",
+  "explanations": [
+    {
+      "title": "Šest otázek na sloveso",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ze slovesa *psát* vyrobíš desítky tvarů: *píšu, psali jsme, napiš, psal bys, bylo napsáno*. Každý tvar nese informaci: kdo píše, kdy, jestli je to rozkaz nebo přání, jestli to už je hotové."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když umíš tyhle informace rozluštit, zvládneš rozbor slovesa v testu a vyhneš se chybám jako *bysme* nebo *budu jít*."
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Slovo, které vyjadřuje děj nebo stav. Ptáme se na něj *co dělá? co se s ním děje?*",
+          "example": "*psát, běžet, spát, být*"
+        },
+        {
+          "type": "term",
+          "term": "Mluvnická kategorie slovesa",
+          "definition": "Vlastnost slovesného tvaru, kterou zjistíš otázkou. Sloveso jich má šest.",
+          "example": "*psali* – kdo? kolik? kdy?"
+        },
+        {
+          "type": "heading",
+          "text": "Šest otázek"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Kdo?** – **osoba**: 1. (já, my), 2. (ty, vy), 3. (on, ona, oni). *píšu – píšeš – píše*",
+            "**Kolik?** – **číslo**: jednotné, množné. *píše – píšou*",
+            "**Kdy?** – **čas**: minulý, přítomný, budoucí. *psal – píše – bude psát*",
+            "**Jak to mluvčí myslí?** – **způsob**: oznamovací (skutečnost: *píše*), rozkazovací (rozkaz: *piš!*), podmiňovací (možnost, přání: *psal by*).",
+            "**Kdo děj dělá?** – **rod**: činný (dělá to podmět: *Petr napsal dopis*), trpný (podmětu se to děje: *Dopis byl napsán*).",
+            "**Je děj ukončený?** – **vid**: nedokonavý (probíhá: *psát*), dokonavý (je ukončený: *napsat*)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vid podrobněji"
+        },
+        {
+          "type": "term",
+          "term": "Nedokonavý vid",
+          "definition": "Děj, který probíhá nebo se opakuje. Má minulý, přítomný i budoucí čas.",
+          "example": "*psát*: psal – píše – bude psát"
+        },
+        {
+          "type": "term",
+          "term": "Dokonavý vid",
+          "definition": "Děj, který je (nebo bude) ukončený. Nemá přítomný čas – tvar „přítomný“ znamená budoucnost.",
+          "example": "*napsat*: napsal – **napíšu** (= zítra)"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zeptej se: dá se říct *Teď právě ___*? Pokud ano, je sloveso nedokonavé."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "nedokonavý vid",
+              "dokonavý vid"
+            ],
+            "items": [
+              {
+                "text": "psát",
+                "group": 0
+              },
+              {
+                "text": "napsat",
+                "group": 1
+              },
+              {
+                "text": "skočit",
+                "group": 1
+              },
+              {
+                "text": "skákat",
+                "group": 0
+              },
+              {
+                "text": "koupit",
+                "group": 1
+              },
+              {
+                "text": "kupovat",
+                "group": 0
+              },
+              {
+                "text": "přečíst",
+                "group": 1
+              },
+              {
+                "text": "číst",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Urči kategorie: *čtete*.",
+          "answer": "Kdo? vy → **2. osoba**, **množné číslo**. Kdy? teď → **přítomný čas**. Skutečnost → **oznamovací způsob**. Dělá to podmět → **činný rod**. Děj probíhá → **nedokonavý vid**."
+        },
+        {
+          "type": "example",
+          "question": "Urči kategorie: *Dům byl postaven loni.*",
+          "answer": "Podmětu (dům) se děj děje, nestaví sám → **trpný rod**. 3. osoba, jednotné číslo, minulý čas, oznamovací způsob, vid dokonavý (*postavit*)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zítra budu jít do kina.",
+          "right": "Zítra půjdu do kina.",
+          "why": "Slovesa pohybu (*jít, jet, běžet, nést, vézt, letět*) tvoří budoucí čas předponou *pů-/po-*: *půjdu, pojedu, poběžím*."
+        },
+        {
+          "type": "summary",
+          "text": "Sloveso má šest kategorií: osobu, číslo, čas, způsob, rod a vid. Dokonavá slovesa nemají přítomný čas – jejich přítomný tvar vyjadřuje budoucnost."
+        }
+      ]
+    },
+    {
+      "title": "Rozbor a chytáky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Slovo *bysme* slyšíš denně, a přesto je nespisovné. V testu i v maturitní práci ti ho opraví. Tady se podíváme na slovesné tvary, ve kterých se chybuje nejčastěji, a na to, jak sloveso rozebrat."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Spisovné tvary jsou povinné v písemné maturitě. A rozbor slovesa je klasická úloha testu."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kategorie slovesa",
+          "definition": "Osoba (kdo), číslo (kolik), čas (kdy), způsob (skutečnost / rozkaz / podmínka), rod (činný / trpný), vid (probíhá / ukončeno).",
+          "example": "*napsal jsem*: 1. os., j. č., minulý, oznamovací, činný, dokonavý"
+        },
+        {
+          "type": "term",
+          "term": "Podmiňovací způsob",
+          "definition": "Vyjadřuje podmínku, přání nebo možnost. Tvoří se pomocí *bych, bys, by, bychom, byste, by*.",
+          "example": "*Šel bych ven.*"
+        },
+        {
+          "type": "term",
+          "term": "Podmiňovací minulý",
+          "definition": "Podmínka, která se už nesplnila (v minulosti).",
+          "example": "*Byl bych přišel, kdybys zavolal.*"
+        },
+        {
+          "type": "term",
+          "term": "Slovesná třída",
+          "definition": "Skupina sloves podle koncovky ve 3. osobě jednotného čísla přítomného času. Tříd je pět.",
+          "example": "*tiskne* → 2. třída (-ne)"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Třída",
+            "3. os. j. č.",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "1.",
+              "-e",
+              "nese, bere"
+            ],
+            [
+              "2.",
+              "-ne",
+              "tiskne, mine"
+            ],
+            [
+              "3.",
+              "-je",
+              "kryje, kupuje"
+            ],
+            [
+              "4.",
+              "-í",
+              "prosí, trpí"
+            ],
+            [
+              "5.",
+              "-á",
+              "dělá, volá"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Rozbor krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Tvar: *byli bychom pozváni*.",
+            "Kdo? my → **1. osoba, množné číslo**.",
+            "Je tu *bychom* → **podmiňovací způsob** (přítomný – podmínka platí teď nebo obecně).",
+            "Čas neurčujeme – čas má jen způsob oznamovací.",
+            "Podmět sám nezve, zvou ho → **rod trpný**. Sloveso *pozvat* je ukončený děj → **vid dokonavý**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber spisovný tvar. Pamatuj: *bychom, byste, abychom, kdybyste*."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "My ",
+                "after": " to nevěděli.",
+                "options": [
+                  "bysme",
+                  "bychom"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Vy ",
+                "after": " to zvládli.",
+                "options": [
+                  "byste",
+                  "by jste"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Byli bychom rádi, ",
+                "after": " přišli.",
+                "options": [
+                  "kdyby jste",
+                  "kdybyste"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Zítra ",
+                "after": " do kina.",
+                "options": [
+                  "půjdu",
+                  "budu jít"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Urči způsob a čas: *četl bych* × *byl bych četl*.",
+          "answer": "*Četl bych* – podmiňovací **přítomný** (teď bych četl). *Byl bych četl* – podmiňovací **minulý** (v minulosti bych četl, ale nestalo se). Čas se u podmiňovacího způsobu neurčuje."
+        },
+        {
+          "type": "example",
+          "question": "Proč *přečtu* není přítomný čas?",
+          "answer": "*Přečíst* je dokonavé (děj bude ukončený). Dokonavá slovesa přítomný čas nemají, tvar *přečtu* znamená **budoucnost**: *Zítra to přečtu.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kdyby jste přišli, byli bysme rádi.",
+          "right": "Kdybyste přišli, byli bychom rádi.",
+          "why": "*Kdybyste* se píše dohromady jako jedno slovo. Spisovný tvar 1. os. mn. č. je *bychom*, ne *bysme*."
+        },
+        {
+          "type": "summary",
+          "text": "Spisovně: bychom, byste, abychom, kdybyste; půjdu (ne budu jít). Čas určujeme jen u oznamovacího způsobu. Slovesné třídy podle 3. os.: -e, -ne, -je, -í, -á."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký vid má sloveso *přečíst*?",
+      "options": [
+        "dokonavý",
+        "nedokonavý"
+      ],
+      "answer": 0,
+      "explanation": "Vyjadřuje ukončený děj."
+    },
+    {
+      "type": "truefalse",
+      "question": "Dokonavá slovesa nemají přítomný čas; tvar *přečtu* vyjadřuje budoucnost.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který tvar je spisovný?",
+      "options": [
+        "abysme",
+        "abychom",
+        "abychme"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Urči slovesný rod: *Dům byl postaven loni.* (činný/trpný)",
+      "answers": [
+        "trpný"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký způsob je *Zavři okno!*?",
+      "options": [
+        "oznamovací",
+        "rozkazovací",
+        "podmiňovací"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "match",
+      "question": "Spoj tvar s určením.",
+      "pairs": [
+        [
+          "četl jsem",
+          "oznamovací, minulý"
+        ],
+        [
+          "budu číst",
+          "oznamovací, budoucí"
+        ],
+        [
+          "četl bych",
+          "podmiňovací přítomný"
+        ],
+        [
+          "byl bych četl",
+          "podmiňovací minulý"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď tvary od minulosti k budoucnosti.",
+      "items": [
+        "psal jsem",
+        "píšu",
+        "budu psát"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která slovesná třída má ve 3. os. j. č. přítomného času zakončení *-ne* (*tiskne*)?",
+      "options": [
+        "1.",
+        "2.",
+        "3.",
+        "5."
+      ],
+      "answer": 1,
+      "explanation": "Třídy: 1. -e, 2. -ne, 3. -je, 4. -í, 5. -á."
+    },
+    {
+      "type": "input",
+      "question": "Napiš budoucí čas slovesa *jít* v 1. os. j. č.",
+      "answers": [
+        "půjdu"
+      ],
+      "explanation": "*Budu jít* je nesprávně."
+    },
+    {
+      "type": "truefalse",
+      "question": "Tvar *vidíme* je 1. osoba množného čísla.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj mluvnické kategorie sloves a ke každé uveď příklad.",
+      "answer": "Osoba (*píšu/píšeš*), číslo (*píše/píšou*), čas (*psal, píše, bude psát*), způsob (*píše, piš, psal by*), rod (*napsal / byl napsán*), vid (*psát / napsat*)."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi dokonavým a nedokonavým videm.",
+      "answer": "Nedokonavá slovesa vyjadřují děj probíhající nebo opakovaný (*psát*) a mají tři časy. Dokonavá vyjadřují děj ukončený (*napsat*); tvar přítomného času u nich znamená budoucnost (*napíšu*)."
+    }
+  ]
+}

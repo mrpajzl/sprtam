@@ -1,0 +1,382 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stavba-zeme",
+  "title": "Stavba Země",
+  "emoji": "🌍",
+  "explanations": [
+    {
+      "title": "Země jako broskev",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozkroj broskev: navrchu tenká slupka, pod ní silná dužina a uprostřed tvrdá pecka. Země je uvnitř postavená podobně – ve vrstvách."
+        },
+        {
+          "type": "text",
+          "text": "Nikdo se do středu Země nikdy nedostal. Přesto víme, co tam je. Pochopíš, z jakých vrstev se Země skládá a jak to vědci zjistili. Je to základ pro pochopení sopek, zemětřesení i vzniku hor."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zemská kůra",
+          "definition": "Nejsvrchnější, nejtenčí pevná vrstva Země. Stojíme na ní. Pod oceány má jen asi 5–10 km, pod pevninami 30–70 km.",
+          "example": "Slupka broskve."
+        },
+        {
+          "type": "term",
+          "term": "Zemský plášť",
+          "definition": "Nejsilnější vrstva pod kůrou, sahá asi do hloubky 2 900 km. Je z horkých hornin, které se velmi pomalu pohybují – jako hodně hustá kaše.",
+          "example": "Dužina broskve."
+        },
+        {
+          "type": "term",
+          "term": "Zemské jádro",
+          "definition": "Střed Země, hlavně ze **železa a niklu**. Má dvě části: **vnější jádro** je tekuté, **vnitřní jádro** pevné.",
+          "example": "Pecka."
+        },
+        {
+          "type": "term",
+          "term": "Poloměr",
+          "definition": "Vzdálenost od středu koule k jejímu povrchu. Země má poloměr asi **6 370 km**."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta do středu Země"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "0 km – povrch: zemská kůra (pod oceánem tenčí, pod horami nejsilnější).",
+            "Asi 5–70 km – začíná **plášť**. Horniny jsou horké a částečně tvárné.",
+            "Asi 2 900 km – začíná **vnější jádro**: tekuté železo a nikl.",
+            "Asi 5 100 km – **vnitřní jádro**: pevné, i když je velmi horké. Udrží ho obrovský tlak.",
+            "Asi 6 370 km – střed Země."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Porovnej tloušťku vrstev. Sloupce ukazují přibližnou tloušťku v kilometrech."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "km",
+            "items": [
+              {
+                "label": "kůra (pevnina)",
+                "value": 35
+              },
+              {
+                "label": "plášť",
+                "value": 2865
+              },
+              {
+                "label": "vnější jádro",
+                "value": 2200
+              },
+              {
+                "label": "vnitřní jádro",
+                "value": 1270
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Nejhlubší vrt na světě má asi 12 km. Kam až se dostal?",
+          "answer": "Pevninská kůra má 30–70 km. Vrt tedy **neprovrtal ani kůru** – je to jen škrábnutí do slupky."
+        },
+        {
+          "type": "example",
+          "question": "Jak tedy víme, co je uvnitř Země?",
+          "answer": "Ze **zemětřesných vln**. Vlny se různými vrstvami šíří různě rychle a na hranicích vrstev se lámou a odrážejí. Přístroje je zaznamenají po celé Zemi. Podle toho vědci vrstvy „spočítali“."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejsilnější vrstvou Země je kůra.",
+          "right": "Kůra je nejtenčí vrstva. Nejsilnější je plášť.",
+          "why": "Kůra má desítky kilometrů, plášť skoro 3 000 km."
+        },
+        {
+          "type": "summary",
+          "text": "Země: tenká kůra, silný plášť (do asi 2 900 km), tekuté vnější a pevné vnitřní jádro ze železa a niklu. Poloměr asi 6 370 km."
+        }
+      ]
+    },
+    {
+      "title": "Obaly Země",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Země nejsou jen kameny. Kolem ní je vzduch, na ní voda a všude kolem život. Geologové i biologové proto mluví o několika „obalech“ Země, které se navzájem ovlivňují."
+        },
+        {
+          "type": "text",
+          "text": "Nejdůležitější pro geologii je pevný obal – **litosféra**. Je rozlámaný na kusy, které se pohybují. To vysvětluje, proč jsou na Zemi hory, sopky a zemětřesení."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Litosféra",
+          "definition": "Pevný kamenný obal Země. Tvoří ji **zemská kůra a svrchní část pláště**. Je silná zhruba 100 km."
+        },
+        {
+          "type": "term",
+          "term": "Hydrosféra",
+          "definition": "Vodní obal – oceány, řeky, jezera, podzemní voda i led."
+        },
+        {
+          "type": "term",
+          "term": "Atmosféra",
+          "definition": "Vzdušný obal Země."
+        },
+        {
+          "type": "term",
+          "term": "Biosféra",
+          "definition": "Část Země, kde je život – od hlubin oceánu po vzduch nad námi."
+        },
+        {
+          "type": "term",
+          "term": "Litosférické desky",
+          "definition": "Velké kusy, na které je litosféra rozlámaná. Pomalu se pohybují po tvárné vrstvě pláště pod nimi – rychlostí několika centimetrů za rok.",
+          "example": "Asi tak rychle, jako ti rostou nehty."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři obaly"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Obal",
+            "Z čeho je",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "litosféra",
+              "horniny",
+              "skály, hory, dno oceánu"
+            ],
+            [
+              "hydrosféra",
+              "voda",
+              "moře, řeky, ledovce"
+            ],
+            [
+              "atmosféra",
+              "vzduch",
+              "mraky, vítr"
+            ],
+            [
+              "biosféra",
+              "život",
+              "les, korálový útes"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přiřaď věci k obalu Země, ke kterému patří."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Litosféra",
+              "Hydrosféra",
+              "Atmosféra"
+            ],
+            "items": [
+              {
+                "text": "žulová skála",
+                "group": 0
+              },
+              {
+                "text": "Vltava",
+                "group": 1
+              },
+              {
+                "text": "oblak",
+                "group": 2
+              },
+              {
+                "text": "písek na poušti",
+                "group": 0
+              },
+              {
+                "text": "ledovec",
+                "group": 1
+              },
+              {
+                "text": "kyslík ve vzduchu",
+                "group": 2
+              },
+              {
+                "text": "podzemní voda",
+                "group": 1
+              },
+              {
+                "text": "hora Sněžka",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč jsou kontinenty dnes jinde, než byly před 200 miliony let?",
+          "answer": "Kontinenty leží na **litosférických deskách**. Desky se pohybují o centimetry za rok. Za miliony let to dá tisíce kilometrů."
+        },
+        {
+          "type": "example",
+          "question": "Proč je kůra pod oceánem tenčí než pod Himálajem?",
+          "answer": "Oceánská kůra je tenká (5–10 km). Pod vysokými horami se kůra při srážce desek nahrnula a ztloustla – až na zhruba 70 km."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Litosféra je totéž co zemská kůra.",
+          "right": "Litosféra = zemská kůra + svrchní pevná část pláště.",
+          "why": "Desky tvoří kůra spolu s pevným kusem pláště pod ní. Pohybují se jako jeden celek."
+        },
+        {
+          "type": "summary",
+          "text": "Obaly Země: litosféra (horniny), hydrosféra (voda), atmosféra (vzduch), biosféra (život). Litosféra = kůra + svrchní plášť, je rozdělená na pohyblivé desky."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "order",
+      "question": "Seřaď vrstvy od povrchu do středu.",
+      "items": [
+        "zemská kůra",
+        "zemský plášť",
+        "vnější jádro",
+        "vnitřní jádro"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která vrstva je tekutá?",
+      "options": [
+        "vnější jádro",
+        "vnitřní jádro",
+        "kůra"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde je zemská kůra nejtenčí?",
+      "options": [
+        "pod oceány",
+        "pod Himálajem",
+        "pod Alpami"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Jádro Země je hlavně ze železa a niklu.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Pevný obal Země z kůry a svrchní části pláště je…",
+      "answers": [
+        "litosféra",
+        "litosfera"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj obal Země s tím, co tvoří.",
+      "pairs": [
+        [
+          "litosféra",
+          "horniny"
+        ],
+        [
+          "hydrosféra",
+          "voda"
+        ],
+        [
+          "atmosféra",
+          "vzduch"
+        ],
+        [
+          "biosféra",
+          "život"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Litosféra je rozdělena na desky, které se pohybují.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Přibližný poloměr Země je…",
+      "options": [
+        "6 370 km",
+        "637 km",
+        "63 700 km"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Nejsilnější vrstvou Země je kůra.",
+      "answer": false,
+      "explanation": "Kůra je nejtenčí. Nejsilnější je plášť."
+    },
+    {
+      "type": "choice",
+      "question": "Jak víme, jak vypadá nitro Země?",
+      "options": [
+        "ze šíření zemětřesných vln",
+        "z vrtů do jádra",
+        "z fotografií"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Popiš stavbu Země.",
+      "answer": "Na povrchu je tenká zemská kůra, pod ní plášť do hloubky asi 2 900 km. Uprostřed je jádro – vnější tekuté a vnitřní pevné, hlavně ze železa a niklu."
+    },
+    {
+      "type": "open",
+      "question": "Co je litosféra a proč je důležitá?",
+      "answer": "Pevný obal Země z kůry a svrchní části pláště. Je rozdělena na desky, jejichž pohyb způsobuje zemětřesení, sopky a vznik pohoří."
+    }
+  ]
+}

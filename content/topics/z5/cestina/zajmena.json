@@ -1,0 +1,341 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zajmena",
+  "title": "Zájmena",
+  "emoji": "👉",
+  "explanations": [
+    {
+      "title": "Místo jména",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Přečti si: *Petr má psa. Petr psa venčí. Petr psa krmí.* Pořád Petr, pořád pes. Zní to nudně."
+        },
+        {
+          "type": "text",
+          "text": "Lepší je: *Petr má psa. **On** **ho** venčí.* Slova *on* a *ho* zastoupila jména. Takovým slovům říkáme **zájmena**. Díky nim se v textu slova neopakují."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zájmeno",
+          "definition": "Slovo, které **zastupuje** jméno nebo na něj **ukazuje**. Je to 3. slovní druh.",
+          "example": "já, on, můj, ten, kdo"
+        },
+        {
+          "type": "term",
+          "term": "Osobní zájmena",
+          "definition": "Zastupují osoby a věci: kdo?",
+          "example": "já, ty, on, ona, ono, my, vy, oni, ony, ona"
+        },
+        {
+          "type": "term",
+          "term": "Přivlastňovací zájmena",
+          "definition": "Říkají, **čí** něco je.",
+          "example": "můj, tvůj, jeho, její, náš, váš, svůj"
+        },
+        {
+          "type": "term",
+          "term": "Ukazovací zájmena",
+          "definition": "Ukazují na něco: **ten** tam!",
+          "example": "ten, tento, tamten, takový"
+        },
+        {
+          "type": "term",
+          "term": "Tázací a záporná zájmena",
+          "definition": "Tázací se ptají (kdo? co? který?). Záporná říkají, že nikdo nebo nic.",
+          "example": "kdo, co, čí / nikdo, nic, žádný"
+        },
+        {
+          "type": "table",
+          "head": [
+            "druh",
+            "příklady"
+          ],
+          "rows": [
+            [
+              "osobní",
+              "já, ty, on, ona, ono, my, vy, oni"
+            ],
+            [
+              "přivlastňovací",
+              "můj, tvůj, jeho, její, náš, váš, svůj"
+            ],
+            [
+              "ukazovací",
+              "ten, tento, tamten, takový"
+            ],
+            [
+              "tázací",
+              "kdo, co, jaký, který, čí"
+            ],
+            [
+              "záporná",
+              "nikdo, nic, žádný"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Nahraď opakované slovo: „Mám kočku. Kočka ráda spí.“",
+          "answer": "Kočka je *ta* (ženský rod, jedna) → **ona**: *Mám kočku. **Ona** ráda spí.*"
+        },
+        {
+          "type": "example",
+          "question": "Nahraď zájmenem: „Ema a Tereza jdou ven.“",
+          "answer": "Dvě dívky → ženský rod, množné číslo → **ony**: *Ony jdou ven.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Holky, oni šli ven.",
+          "right": "Holky, ony šly ven.",
+          "why": "**Oni** používáme pro muže nebo smíšenou skupinu. Pro dívky a ženy **ony**."
+        },
+        {
+          "type": "summary",
+          "text": "Zájmeno zastupuje jméno nebo na něj ukazuje. Druhy: osobní, přivlastňovací, ukazovací, tázací, záporná."
+        }
+      ]
+    },
+    {
+      "title": "Roztřiď",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zájmena jsou jako náhradníci ve fotbale. Když hráč (jméno) odejde, náhradník zaskočí za něj."
+        },
+        {
+          "type": "text",
+          "text": "Každý náhradník má jinou práci: jeden říká **kdo**, druhý **čí**, třetí **ukazuje**. Podle práce je roztřídíme."
+        },
+        {
+          "type": "term",
+          "term": "Zájmeno",
+          "definition": "Slovo, které stojí **za jméno** (proto *zá-jmeno*).",
+          "example": "Mám kolo. **Moje** kolo je modré. **To** kolo je nové."
+        },
+        {
+          "type": "term",
+          "term": "Otázka, která pomůže",
+          "definition": "Kdo? → osobní. Čí? → přivlastňovací. Který (ten)? → ukazovací.",
+          "example": "ty – kdo; náš – čí; tamten – který"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🙋 já",
+            "🎒 můj",
+            "👉 ten"
+          ],
+          "caption": "kdo – čí – který"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi slovo, které zastupuje jméno nebo na něj ukazuje.",
+            "Zeptej se: říká **kdo**? → osobní.",
+            "Říká **čí**? → přivlastňovací.",
+            "Ukazuje (**ten**, tamten)? → ukazovací. Ptá se? → tázací. Říká *nikdo, nic*? → záporné."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Roztřiď"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "osobní",
+              "přivlastňovací",
+              "ukazovací"
+            ],
+            "items": [
+              {
+                "text": "ty",
+                "group": 0
+              },
+              {
+                "text": "můj",
+                "group": 1
+              },
+              {
+                "text": "tento",
+                "group": 2
+              },
+              {
+                "text": "oni",
+                "group": 0
+              },
+              {
+                "text": "náš",
+                "group": 1
+              },
+              {
+                "text": "tamten",
+                "group": 2
+              },
+              {
+                "text": "ona",
+                "group": 0
+              },
+              {
+                "text": "svůj",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jaké zájmeno je „tvůj“?",
+          "answer": "Zeptej se: tvůj míč – **čí** míč? → **přivlastňovací**."
+        },
+        {
+          "type": "example",
+          "question": "Jaké zájmeno je „nic“?",
+          "answer": "Říká, že není vůbec nic → **záporné**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„My“ je podstatné jméno, protože jsou to lidé.",
+          "right": "„My“ je osobní zájmeno.",
+          "why": "*My* neříká jméno nikoho, jen ho zastupuje (já a ostatní). Proto je to zájmeno."
+        },
+        {
+          "type": "summary",
+          "text": "Kdo? → osobní. Čí? → přivlastňovací. Ten, tamten → ukazovací."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které slovo je zájmeno?",
+      "options": [
+        "my",
+        "myš",
+        "mýt"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaké zájmeno je „tvůj“?",
+      "options": [
+        "osobní",
+        "přivlastňovací",
+        "ukazovací"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaké zájmeno je „kdo“?",
+      "options": [
+        "tázací",
+        "osobní",
+        "záporné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaké zájmeno je „nic“?",
+      "options": [
+        "ukazovací",
+        "záporné",
+        "osobní"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Jakým slovním druhem jsou zájmena? Kolikátým?",
+      "answers": [
+        "3",
+        "třetím",
+        "tretim",
+        "třetí"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Nahraď zájmenem: „Ema a Tereza“ jdou ven. → … jdou ven.",
+      "answers": [
+        "ony"
+      ],
+      "explanation": "Ženský rod mn. č. → ony."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Ten“ je zájmeno ukazovací.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„Oni“ používáme pro dívky.",
+      "answer": false,
+      "explanation": "Pro dívky „ony“. „Oni“ je pro muže nebo smíšenou skupinu."
+    },
+    {
+      "type": "match",
+      "question": "Spoj osobní zájmeno s přivlastňovacím.",
+      "pairs": [
+        [
+          "já",
+          "můj"
+        ],
+        [
+          "ty",
+          "tvůj"
+        ],
+        [
+          "my",
+          "náš"
+        ],
+        [
+          "vy",
+          "váš"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je správně? (mluvíme o dívkách)",
+      "options": [
+        "Ony šly ven.",
+        "Oni šli ven."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "K čemu jsou zájmena? Řekni příklad.",
+      "answer": "Zastupují podstatná jména, abychom je neopakovali. Například: Mám kočku. Ona ráda spí."
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj osobní zájmena.",
+      "answer": "Já, ty, on, ona, ono, my, vy, oni, ony, ona."
+    }
+  ]
+}

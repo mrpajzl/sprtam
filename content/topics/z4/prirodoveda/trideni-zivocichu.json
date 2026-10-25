@@ -1,0 +1,425 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "trideni-zivocichu",
+  "title": "Třídění živočichů",
+  "emoji": "🐾",
+  "explanations": [
+    {
+      "title": "Podle páteře",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Přejeď si rukou po zádech. Cítíš hrbolky? To je tvoje páteř. Ne každý živočich ji má – žížala nebo moucha ne."
+        },
+        {
+          "type": "text",
+          "text": "Podle páteře dělíme všechny živočichy na dvě velké skupiny. Obratlovce pak dělíme ještě na pět menších. Pomůže ti to poznat každé zvíře."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Páteř",
+          "definition": "Řada malých kostí (obratlů) podél zad. Drží tělo a chrání míchu.",
+          "example": "páteř člověka, ryby, psa"
+        },
+        {
+          "type": "term",
+          "term": "Obratlovci",
+          "definition": "Živočichové, kteří **mají páteř**.",
+          "example": "ryba, žába, ještěrka, pták, pes"
+        },
+        {
+          "type": "term",
+          "term": "Bezobratlí",
+          "definition": "Živočichové **bez páteře**.",
+          "example": "hmyz, pavouk, žížala, hlemýžď"
+        },
+        {
+          "type": "heading",
+          "text": "Pět skupin obratlovců"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Obratlovci",
+            "Poznávací znak"
+          ],
+          "rows": [
+            [
+              "ryby",
+              "šupiny, žábry, ploutve"
+            ],
+            [
+              "obojživelníci",
+              "holá vlhká kůže, pulci ve vodě"
+            ],
+            [
+              "plazi",
+              "suchá kůže se šupinami"
+            ],
+            [
+              "ptáci",
+              "peří, zobák, křídla"
+            ],
+            [
+              "savci",
+              "srst, mláďata sají mléko"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Kojení",
+          "definition": "Když matka krmí mláďata mlékem ze svého těla. Dělají to jen savci.",
+          "example": "Kočka kojí koťata."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď. Nenech se splést tím, kde zvíře žije nebo jestli létá."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Savec",
+              "Pták",
+              "Plaz"
+            ],
+            "items": [
+              {
+                "text": "netopýr",
+                "group": 0
+              },
+              {
+                "text": "tučňák",
+                "group": 1
+              },
+              {
+                "text": "ještěrka",
+                "group": 2
+              },
+              {
+                "text": "velryba",
+                "group": 0
+              },
+              {
+                "text": "čáp",
+                "group": 1
+              },
+              {
+                "text": "želva",
+                "group": 2
+              },
+              {
+                "text": "ježek",
+                "group": 0
+              },
+              {
+                "text": "slepýš",
+                "group": 2
+              },
+              {
+                "text": "sova",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kam patří velryba?",
+          "answer": "Velryba dýchá **plícemi** a **kojí** mláďata. Je to **savec**, i když žije v moři."
+        },
+        {
+          "type": "example",
+          "question": "Kdo je obojživelník: čolek, ještěrka, nebo kapr?",
+          "answer": "Čolek má holou vlhkou kůži a jeho larvy žijí ve vodě → **obojživelník**. Ještěrka je plaz, kapr ryba."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Slepýš je had.",
+          "right": "Slepýš je beznohá ještěrka.",
+          "why": "Slepýš nemá nohy, ale má pohyblivá víčka a stavbu těla ještěrky. Hadům víčka chybí. Plaz je to ale tak jako tak."
+        },
+        {
+          "type": "summary",
+          "text": "Obratlovci mají páteř: ryby, obojživelníci, plazi, ptáci, savci. Bezobratlí páteř nemají."
+        }
+      ]
+    },
+    {
+      "title": "Počítej nohy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Bezobratlých živočichů je na světě mnohem víc než obratlovců. Lezou v trávě, v hlíně, ve vodě. Jsou malí, a tak je snadno přehlédneš."
+        },
+        {
+          "type": "text",
+          "text": "Jak je od sebe rozeznat? Nejjednodušší je spočítat nohy a podívat se na tělo."
+        },
+        {
+          "type": "term",
+          "term": "Bezobratlí",
+          "definition": "Živočichové, kteří nemají páteř (řadu kůstek podél zad).",
+          "example": "moucha, pavouk, žížala"
+        },
+        {
+          "type": "term",
+          "term": "Krunýř",
+          "definition": "Tvrdý obal na povrchu těla, který chrání měkké tělo.",
+          "example": "krunýř raka"
+        },
+        {
+          "type": "term",
+          "term": "Ulita",
+          "definition": "Tvrdý „domeček“, který si nosí měkkýš na zádech.",
+          "example": "ulita hlemýždě"
+        },
+        {
+          "type": "heading",
+          "text": "Skupiny bezobratlých"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "hmyz",
+                "back": "6 nohou, tělo ze 3 částí (moucha, včela, brouk)"
+              },
+              {
+                "front": "pavouci",
+                "back": "8 nohou"
+              },
+              {
+                "front": "korýši",
+                "back": "krunýř, např. rak"
+              },
+              {
+                "front": "měkkýši",
+                "back": "měkké tělo, často ulita (hlemýžď)"
+              },
+              {
+                "front": "kroužkovci",
+                "back": "tělo z kroužků (žížala)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Tělo hmyzu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**hlava** – oči, tykadla, ústní ústrojí",
+            "**hruď** – 6 nohou, často křídla",
+            "**zadeček** – trávení a dýchání"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Obratlovec, nebo bezobratlý?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Obratlovec",
+              "Bezobratlý"
+            ],
+            "items": [
+              {
+                "text": "kapr",
+                "group": 0
+              },
+              {
+                "text": "žížala",
+                "group": 1
+              },
+              {
+                "text": "skokan",
+                "group": 0
+              },
+              {
+                "text": "pavouk",
+                "group": 1
+              },
+              {
+                "text": "vrabec",
+                "group": 0
+              },
+              {
+                "text": "hlemýžď",
+                "group": 1
+              },
+              {
+                "text": "liška",
+                "group": 0
+              },
+              {
+                "text": "motýl",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Beruška má 6 nohou. Kam patří?",
+          "answer": "6 nohou = **hmyz**. Beruška je brouk."
+        },
+        {
+          "type": "example",
+          "question": "Kolik nohou má pavouk a je to hmyz?",
+          "answer": "Pavouk má **8 nohou**. Hmyz má 6. Pavouk tedy **není hmyz**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Žížala je had, protože je dlouhá.",
+          "right": "Žížala je bezobratlý kroužkovec.",
+          "why": "Had je plaz a má páteř. Žížala páteř nemá a tělo má složené z kroužků."
+        },
+        {
+          "type": "summary",
+          "text": "Hmyz má 6 nohou a tělo z hlavy, hrudi a zadečku. Pavouk má 8 nohou. Žížala, hlemýžď a rak jsou bezobratlí."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Netopýr je pták.",
+      "answer": false,
+      "explanation": "Netopýr má srst a mláďata kojí – je to savec."
+    },
+    {
+      "type": "choice",
+      "question": "Kolik nohou má hmyz?",
+      "options": [
+        "6",
+        "8",
+        "4",
+        "10"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik nohou má pavouk? Napiš číslo.",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kam patří velryba?",
+      "options": [
+        "savci",
+        "ryby",
+        "obojživelníci"
+      ],
+      "answer": 0,
+      "explanation": "Velryba dýchá plícemi a kojí mláďata."
+    },
+    {
+      "type": "choice",
+      "question": "Kdo je obojživelník?",
+      "options": [
+        "čolek",
+        "ještěrka",
+        "kapr"
+      ],
+      "answer": 0,
+      "explanation": "Čolek má vlhkou kůži a larvy ve vodě."
+    },
+    {
+      "type": "match",
+      "question": "Spoj skupinu se znakem.",
+      "pairs": [
+        [
+          "ptáci",
+          "peří"
+        ],
+        [
+          "savci",
+          "srst"
+        ],
+        [
+          "ryby",
+          "žábry"
+        ],
+        [
+          "plazi",
+          "suché šupiny"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Slepýš je had.",
+      "answer": false,
+      "explanation": "Slepýš je beznohá ještěrka. Je to ale plaz."
+    },
+    {
+      "type": "choice",
+      "question": "Kdo je bezobratlý?",
+      "options": [
+        "žížala",
+        "žába",
+        "vrána"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Tučňák je pták, i když nelétá.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď části těla hmyzu odpředu.",
+      "items": [
+        "hlava",
+        "hruď",
+        "zadeček"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Podle čeho poznáš savce?",
+      "answer": "Savci mají srst a mláďata krmí mlékem. Dýchají plícemi a většina rodí živá mláďata."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi obratlovci a bezobratlými? Uveď příklady.",
+      "answer": "Obratlovci mají páteř, například ryba, žába, pták nebo pes. Bezobratlí páteř nemají, například hmyz, pavouk, žížala nebo hlemýžď."
+    }
+  ]
+}

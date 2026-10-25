@@ -1,0 +1,433 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "traveni-vylucovani",
+  "title": "Trávení a vylučování",
+  "emoji": "🧪",
+  "explanations": [
+    {
+      "title": "Enzymy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sníš rohlík se sýrem. Za pár hodin z něj tvoje buňky staví bílkoviny a berou energii. Jenže rohlík je z velkých molekul, které by do krve neprošly. Tělo je musí nejdřív **rozstříhat** na malé kousky. To je trávení."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme trávicí trubici od úst ke konečníku, poznáme „nůžky“, které molekuly stříhají, a kde se živiny vstřebávají. Na konci krátce i to, jak tělo odpad vyloučí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Živiny",
+          "definition": "Hlavní složky potravy: **cukry** (např. škrob), **tuky** a **bílkoviny**. Jsou to velké molekuly složené z menších."
+        },
+        {
+          "type": "term",
+          "term": "Enzym",
+          "definition": "Bílkovina, která urychlí určitou chemickou reakci. Trávicí enzymy **štěpí** velké molekuly na malé – jsou to molekulární nůžky."
+        },
+        {
+          "type": "term",
+          "term": "Vstřebávání",
+          "definition": "Přechod rozštěpených živin ze střeva do krve nebo do mízy."
+        },
+        {
+          "type": "term",
+          "term": "Emulgace",
+          "definition": "Rozbití velkých kapek tuku na drobné kapénky. Enzymy pak mají větší plochu, na které můžou pracovat."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta potravy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Ústa** – zuby drtí, sliny se **slinnou amylázou** začnou štěpit škrob.",
+            "**Jícen** – vlnovité stahy (peristaltika) posunou sousto do žaludku.",
+            "**Žaludek** – kyselina chlorovodíková ničí mikroby, **pepsin** štěpí bílkoviny.",
+            "**Dvanáctník** – přitéká **žluč** z jater a šťáva ze **slinivky** s mnoha enzymy.",
+            "**Tenké střevo** – dokončí štěpení a živiny se **vstřebají**.",
+            "**Tlusté střevo** – vstřebá **vodu**, bakterie tvoří např. vitamin K."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Nůžky v tabulce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Enzym",
+            "Kde",
+            "Štěpí"
+          ],
+          "rows": [
+            [
+              "slinná amyláza",
+              "ústa",
+              "škrob"
+            ],
+            [
+              "pepsin",
+              "žaludek",
+              "bílkoviny"
+            ],
+            [
+              "trypsin",
+              "slinivka → dvanáctník",
+              "bílkoviny"
+            ],
+            [
+              "lipáza",
+              "slinivka → dvanáctník",
+              "tuky"
+            ],
+            [
+              "žluč (není enzym)",
+              "játra → dvanáctník",
+              "emulguje tuky"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a ověř, co který enzym štěpí."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "pepsin",
+                "back": "bílkoviny v žaludku"
+              },
+              {
+                "front": "slinná amyláza",
+                "back": "škrob v ústech"
+              },
+              {
+                "front": "lipáza",
+                "back": "tuky na glycerol a mastné kyseliny"
+              },
+              {
+                "front": "žluč",
+                "back": "emulguje tuky, není enzym"
+              },
+              {
+                "front": "klky",
+                "back": "zvětšují povrch tenkého střeva"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vstřebávání"
+        },
+        {
+          "type": "text",
+          "text": "Tenké střevo má sliznici zřasenou do **klků** a jejich buňky ještě do **mikroklků**. Plocha je tak obrovská. Cukry a aminokyseliny jdou do krve a nejdřív do **jater**; tuky jdou hlavně do **mízy**."
+        },
+        {
+          "type": "term",
+          "term": "Játra",
+          "definition": "Největší žláza těla. Tvoří **žluč**, odbourávají jedy (**detoxikace**), ukládají glukózu jako **glykogen** a z odpadního dusíku z bílkovin tvoří **močovinu**."
+        },
+        {
+          "type": "example",
+          "question": "Popiš trávení tuků krok za krokem.",
+          "answer": "V dvanáctníku **žluč** tuk **emulguje** na drobné kapénky. **Lipáza** ze slinivky je štěpí na **glycerol a mastné kyseliny**. Ty se vstřebají v tenkém střevě do **mízy**."
+        },
+        {
+          "type": "example",
+          "question": "Proč chléb po dlouhém žvýkání začne sládnout?",
+          "answer": "**Slinná amyláza** štěpí škrob na menší cukry, které chutnají sladce."
+        },
+        {
+          "type": "heading",
+          "text": "A co odpad?"
+        },
+        {
+          "type": "text",
+          "text": "Odpadní dusík se v játrech mění na **močovinu** a krev ji odnese do **ledvin**. Ty krev filtrují v milionech drobných jednotek – **nefronech** – a odpad odchází **močí**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Žluč je trávicí enzym, který štěpí tuky.",
+          "right": "Žluč **není enzym**. Tuky jen **emulguje**, štěpí je lipáza.",
+          "why": "Žluč tuky chemicky nemění, jen je rozbije na kapénky. Díky tomu lipáza pracuje rychleji."
+        },
+        {
+          "type": "summary",
+          "text": "Amyláza – škrob, pepsin a trypsin – bílkoviny, lipáza – tuky; žluč tuky jen emulguje. Vstřebávání v tenkém střevě (klky, mikroklky), voda v tlustém střevě."
+        }
+      ]
+    },
+    {
+      "title": "Nefron jako síto",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ledviny jsou dva orgány velké asi jako pěst, kterými za den proteče přes tisíc litrů krve. Čistí ji od odpadu a hlídají, kolik vody a solí v těle zůstane. Kdo ledviny ztratí, musí na dialýzu."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si nefron – drobné „síto s třídírnou“ – a čísla, která ukazují, jak úsporně ledvina pracuje. A protože většina odpadu vzniká trávením a přeměnou živin, začneme krátce u trávení."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Trávení",
+          "definition": "Štěpení potravy na malé molekuly pomocí **enzymů** (bílkovin urychlujících reakce): **amyláza** štěpí škrob, **pepsin** a **trypsin** bílkoviny, **lipáza** tuky. **Žluč** z jater tuky jen emulguje (rozbije na kapénky)."
+        },
+        {
+          "type": "term",
+          "term": "Močovina",
+          "definition": "Odpadní látka, ve které tělo vylučuje dusík z rozložených bílkovin. Vzniká v játrech."
+        },
+        {
+          "type": "term",
+          "term": "Nefron",
+          "definition": "Funkční jednotka ledviny. Každá ledvina jich má kolem milionu. Skládá se z **klubíčka** vlásečnic (**glomerulu**) v pohárku a dlouhého **kanálku**."
+        },
+        {
+          "type": "term",
+          "term": "Primární a definitivní moč",
+          "definition": "**Primární** moč je tekutina právě přefiltrovaná z krve – je v ní i spousta užitečných látek. **Definitivní** moč je to, co nakonec odchází z těla."
+        },
+        {
+          "type": "term",
+          "term": "ADH (antidiuretický hormon)",
+          "definition": "Hormon, který **zvyšuje zpětné vstřebávání vody** v ledvinách. Při žízni ho přibývá a moč je koncentrovanější."
+        },
+        {
+          "type": "heading",
+          "text": "Síto + třídírna"
+        },
+        {
+          "type": "text",
+          "text": "Nefron nejdřív propustí sítem skoro všechno kromě krvinek a velkých bílkovin (síto). Pak v kanálku pečlivě vybere zpět vše užitečné (třídírna)."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Glomerulus** – filtrace krve, vzniká **primární moč**.",
+            "**Proximální kanálek** – zpětné vstřebání **glukózy**, aminokyselin, iontů a velké části vody.",
+            "**Henleova klička** – další vstřebávání vody a solí, moč se zahušťuje.",
+            "**Sběrný kanálek** – **ADH** řídí, kolik vody se ještě vstřebá. Vzniká **definitivní moč**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Čísla za den"
+        },
+        {
+          "type": "text",
+          "text": "Porovnej obě hodnoty v grafu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "litrů za den",
+            "items": [
+              {
+                "label": "primární moč",
+                "value": 170
+              },
+              {
+                "label": "definitivní moč",
+                "value": 1.5
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Z asi **170 l** primární moči zbude asi **1,5 l** definitivní. Víc než 99 % vody se vrátí do krve."
+        },
+        {
+          "type": "example",
+          "question": "Proč ve zdravé moči není glukóza, i když v primární moči je?",
+          "answer": "Glukóza se v **proximálním kanálku** úplně vstřebá zpět. Objeví se v moči, jen když je jí v krvi příliš – např. při neléčené **cukrovce**."
+        },
+        {
+          "type": "example",
+          "question": "Po horkém dni piješ málo a moč je tmavá. Proč?",
+          "answer": "Tělu chybí voda, vyplaví se víc **ADH**. Ve sběrném kanálku se vstřebá víc vody, moči je **méně a je koncentrovanější**."
+        },
+        {
+          "type": "heading",
+          "text": "Spolupracující orgány"
+        },
+        {
+          "type": "text",
+          "text": "Spoj si orgány s úkolem – otoč karty."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "játra",
+                "back": "tvorba žluči, detoxikace, glykogen, močovina"
+              },
+              {
+                "front": "slinivka",
+                "back": "trávicí enzymy a inzulin"
+              },
+              {
+                "front": "tlusté střevo",
+                "back": "vstřebávání vody"
+              },
+              {
+                "front": "glomerulus",
+                "back": "filtrace krve"
+              },
+              {
+                "front": "tenké střevo",
+                "back": "vstřebávání živin – klky a mikroklky"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ledvina vyrobí za den jen 1,5 l moči, víc nefiltruje.",
+          "right": "Filtruje se asi **170 l** primární moči, ven odchází asi **1,5 l**.",
+          "why": "Ledvina nejdřív propustí skoro vše a pak vybere zpět, co je užitečné. Je to spolehlivější než lovit z krve jednotlivé jedy."
+        },
+        {
+          "type": "summary",
+          "text": "Nefron: glomerulus filtruje (asi 170 l primární moči za den), kanálky vstřebávají zpět glukózu, ionty a vodu; ADH zvyšuje vstřebání vody. Zbude asi 1,5 l definitivní moči s močovinou."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který enzym štěpí bílkoviny v žaludku?",
+      "options": [
+        "pepsin",
+        "amyláza",
+        "lipáza"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Žluč je trávicí enzym.",
+      "answer": false,
+      "explanation": "Žluč neobsahuje enzymy, tuky jen emulguje."
+    },
+    {
+      "type": "input",
+      "question": "Funkční jednotka ledviny je…",
+      "answers": [
+        "nefron"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kolik primární moči se vytvoří za den?",
+      "options": [
+        "asi 170 l",
+        "asi 1,5 l",
+        "asi 17 l"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj orgán s funkcí.",
+      "pairs": [
+        [
+          "játra",
+          "tvorba žluči, detoxikace"
+        ],
+        [
+          "slinivka",
+          "trávicí enzymy a inzulin"
+        ],
+        [
+          "tlusté střevo",
+          "vstřebávání vody"
+        ],
+        [
+          "glomerulus",
+          "filtrace krve"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Hormon ADH…",
+      "options": [
+        "zvyšuje zpětné vstřebávání vody",
+        "zvyšuje tvorbu moči",
+        "štěpí tuky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Zásobní forma glukózy v játrech je glykogen.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Konečný produkt rozkladu bílkovin vylučovaný močí je hlavně…",
+      "options": [
+        "močovina",
+        "glukóza",
+        "glykogen"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve zdravé definitivní moči se běžně vyskytuje glukóza.",
+      "answer": false,
+      "explanation": "Glukóza se zpětně vstřebá. V moči se objevuje např. při cukrovce."
+    },
+    {
+      "type": "choice",
+      "question": "Povrch tenkého střeva zvětšují…",
+      "options": [
+        "klky a mikroklky",
+        "řasy",
+        "zuby"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Popiš trávení tuků.",
+      "answer": "Žluč z jater tuky v dvanáctníku emulguje na drobné kapénky. Pankreatická lipáza je štěpí na glycerol a mastné kyseliny, které se vstřebají v tenkém střevě do mízy."
+    },
+    {
+      "type": "open",
+      "question": "Jak vzniká moč v nefronu?",
+      "answer": "V glomerulu se z krve filtruje primární moč. V kanálcích se zpětně vstřebává glukóza, ionty a většina vody, část látek se vylučuje. Ve sběrném kanálku vzniká definitivní moč."
+    }
+  ]
+}

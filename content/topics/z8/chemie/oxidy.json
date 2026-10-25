@@ -1,0 +1,459 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "oxidy",
+  "title": "Oxidační číslo a oxidy",
+  "emoji": "🔥",
+  "explanations": [
+    {
+      "title": "Koncovky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rez na kole, písek na pláži, bublinky v limonádě, vápno na stavbě. Všechno to jsou **oxidy** – látky, ve kterých je spojený kyslík s jiným prvkem."
+        },
+        {
+          "type": "text",
+          "text": "České chemické názvosloví je chytré: z **koncovky** názvu poznáš vzorec a ze vzorce název. Stačí znát jednu řadu koncovek."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Prvek a sloučenina",
+          "definition": "**Prvek** je látka z jednoho druhu atomů (kyslík, železo). **Sloučenina** je látka, kde jsou chemicky spojené atomy **dvou a více prvků**.",
+          "example": "Kyslík O₂ je prvek. Voda H₂O je sloučenina."
+        },
+        {
+          "type": "term",
+          "term": "Oxid",
+          "definition": "Sloučenina **kyslíku** s jedním dalším prvkem.",
+          "example": "CO₂ oxid uhličitý, CaO oxid vápenatý"
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo",
+          "definition": "Číslo, které říká, kolik elektronů atom ve sloučenině „dal“ (kladné) nebo „vzal“ (záporné). Píše se **římskými číslicemi**.",
+          "example": "Kyslík v oxidech má vždy **−II** – „vzal“ si 2 elektrony."
+        },
+        {
+          "type": "text",
+          "text": "Připomenutí římských číslic: I = 1, II = 2, III = 3, IV = 4, V = 5, VI = 6, VII = 7, VIII = 8."
+        },
+        {
+          "type": "heading",
+          "text": "Řada koncovek"
+        },
+        {
+          "type": "text",
+          "text": "Druhý prvek dostane v názvu přídavné jméno s koncovkou podle svého oxidačního čísla. Nauč se řadu jako básničku: **-ný, -natý, -itý, -ičitý, -ečný (-ičný), -ový, -istý, -ičelý**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Oxidační číslo",
+            "Koncovka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "I",
+              "-ný",
+              "Na₂O oxid sodný"
+            ],
+            [
+              "II",
+              "-natý",
+              "CaO oxid vápenatý"
+            ],
+            [
+              "III",
+              "-itý",
+              "Al₂O₃ oxid hlinitý"
+            ],
+            [
+              "IV",
+              "-ičitý",
+              "CO₂ oxid uhličitý"
+            ],
+            [
+              "V",
+              "-ečný / -ičný",
+              "P₂O₅ oxid fosforečný"
+            ],
+            [
+              "VI",
+              "-ový",
+              "SO₃ oxid sírový"
+            ],
+            [
+              "VII",
+              "-istý",
+              "Cl₂O₇ oxid chloristý"
+            ],
+            [
+              "VIII",
+              "-ičelý",
+              "OsO₄ oxid osmičelý"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Ze vzorce název"
+        },
+        {
+          "type": "text",
+          "text": "Součet všech oxidačních čísel ve sloučenině je vždy **0**. Kyslíky dají dohromady záporné číslo a druhý prvek ho musí vyrovnat."
+        },
+        {
+          "type": "example",
+          "question": "Jak se jmenuje CO₂?",
+          "answer": "Dva kyslíky: 2 · (−2) = −4. Uhlík musí mít +4 → **IV** → koncovka -ičitý → **oxid uhličitý**."
+        },
+        {
+          "type": "example",
+          "question": "Jak se jmenuje Fe₂O₃?",
+          "answer": "Tři kyslíky: 3 · (−2) = −6. Dvě železa musí dát +6, jedno tedy +3 → **III** → -itý → **oxid železitý**. (Je ho hodně v rzi.)"
+        },
+        {
+          "type": "text",
+          "text": "Doplň koncovky. Nejdřív spočítej oxidační číslo, pak vyber."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "MgO = oxid hořeč",
+                "after": "",
+                "options": [
+                  "natý",
+                  "itý",
+                  "ičitý"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "SO₂ = oxid siř",
+                "after": "",
+                "options": [
+                  "ičitý",
+                  "ový",
+                  "natý"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Fe₂O₃ = oxid želez",
+                "after": "",
+                "options": [
+                  "itý",
+                  "natý",
+                  "ičitý"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "N₂O₅ = oxid dusi",
+                "after": "",
+                "options": [
+                  "čný",
+                  "tý",
+                  "čitý"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Oxidy kolem nás"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**CO₂** oxid uhličitý – vydechujeme ho, je v sodovce, skleníkový plyn",
+            "**CO** oxid uhelnatý – jedovatý plyn bez barvy a zápachu, vzniká při špatném hoření",
+            "**SO₂** oxid siřičitý – ze spalování uhlí, způsobuje kyselé deště",
+            "**CaO** oxid vápenatý – pálené vápno pro stavbu",
+            "**SiO₂** oxid křemičitý – křemen, hlavní součást písku"
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "SO₂ je oxid sírový.",
+          "right": "SO₂ je oxid **siřičitý** (síra IV). Oxid sírový je SO₃ (síra VI).",
+          "why": "Dva kyslíky dají −4, takže síra má IV → -ičitý. Koncovka -ový patří k VI."
+        },
+        {
+          "type": "summary",
+          "text": "Kyslík má v oxidech −II, součet oxidačních čísel je 0. Koncovky I–VIII: -ný, -natý, -itý, -ičitý, -ečný/-ičný, -ový, -istý, -ičelý."
+        }
+      ]
+    },
+    {
+      "title": "Křížové pravidlo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Učitelka řekne „oxid hlinitý“ a ty máš napsat vzorec. Hádat nemusíš – existuje jednoduchý trik, **křížové pravidlo**. Funguje jako recept o čtyřech krocích."
+        },
+        {
+          "type": "text",
+          "text": "Oxidy jsou všude: rez (oxid železitý), písek (oxid křemičitý), vápno (oxid vápenatý). Kdo umí jejich vzorce, zvládne pak i kyseliny a další sloučeniny."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Oxid",
+          "definition": "Sloučenina kyslíku s jedním dalším prvkem. **Sloučenina** = látka z atomů dvou a více prvků spojených dohromady."
+        },
+        {
+          "type": "term",
+          "term": "Index",
+          "definition": "Malé číslo dole za značkou – kolik atomů daného prvku ve vzorci je.",
+          "example": "Al₂O₃: 2 atomy hliníku, 3 atomy kyslíku."
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo",
+          "definition": "Číslo psané římsky, které říká, kolik elektronů atom ve sloučenině „dal“ (+) nebo „vzal“ (−). Kyslík v oxidech má vždy **−II**."
+        },
+        {
+          "type": "term",
+          "term": "Pravidlo nuly",
+          "definition": "Součet oxidačních čísel všech atomů ve sloučenině je **0**. Plusy a minusy se vyrovnají."
+        },
+        {
+          "type": "heading",
+          "text": "Koncovka prozradí číslo"
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty: koncovka → oxidační číslo. Zkus si je nejdřív říct z hlavy."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "-ný",
+                "back": "I"
+              },
+              {
+                "front": "-natý",
+                "back": "II"
+              },
+              {
+                "front": "-itý",
+                "back": "III"
+              },
+              {
+                "front": "-ičitý",
+                "back": "IV"
+              },
+              {
+                "front": "-ečný / -ičný",
+                "back": "V"
+              },
+              {
+                "front": "-ový",
+                "back": "VI"
+              },
+              {
+                "front": "-istý",
+                "back": "VII"
+              },
+              {
+                "front": "-ičelý",
+                "back": "VIII"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Křížové pravidlo krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Z koncovky urči oxidační číslo: oxid hlin**itý** → hliník III, kyslík −II.",
+            "Napiš značky vedle sebe: Al O, nad ně čísla 3 a 2 (bez znamének).",
+            "Čísla **překřiž** do indexů: trojka jde ke kyslíku, dvojka k hliníku → **Al₂O₃**.",
+            "Kontrola nuly: 2 · 3 + 3 · (−2) = 6 − 6 = 0 ✓"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Vzorec oxidu siřičitého?",
+          "answer": "Síra -ičitý → IV, kyslík −II. Překřížení: S₂O₄. Oba indexy jdou vydělit 2 → **SO₂**. Kontrola: 4 + 2 · (−2) = 0 ✓"
+        },
+        {
+          "type": "example",
+          "question": "Vzorec oxidu fosforečného?",
+          "answer": "Fosfor -ečný → V, kyslík −II. Překřížení: **P₂O₅**. Krátit nejde (5 a 2 nemají společného dělitele). Kontrola: 2 · 5 − 5 · 2 = 0 ✓"
+        },
+        {
+          "type": "example",
+          "question": "Vzorec oxidu vápenatého?",
+          "answer": "Vápník -natý → II, kyslík −II. Překřížení: Ca₂O₂ → vydělit 2 → **CaO**."
+        },
+        {
+          "type": "heading",
+          "text": "A obráceně: ze vzorce název"
+        },
+        {
+          "type": "text",
+          "text": "Ve vzorci NO₂ dají dva kyslíky −4. Dusík musí mít +4 → IV → -ičitý → **oxid dusičitý**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Oxid siřičitý = S₂O₄",
+          "right": "Oxid siřičitý = SO₂",
+          "why": "Když mají oba indexy společného dělitele, vzorec se **zkrátí**. S₂O₄ i SO₂ mají stejný poměr, ale správný zápis je ten nejjednodušší."
+        },
+        {
+          "type": "summary",
+          "text": "Koncovka → oxidační číslo → překřížit do indexů → zkrátit → zkontrolovat, že součet je 0. Kyslík má vždy −II."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaké oxidační číslo má kyslík v oxidech?",
+      "options": [
+        "−II",
+        "II",
+        "−I",
+        "0"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje CO₂? (oxid …)",
+      "answers": [
+        "oxid uhličitý",
+        "uhličitý"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje CaO? (oxid …)",
+      "answers": [
+        "oxid vápenatý",
+        "vápenatý"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec oxidu sírového?",
+      "options": [
+        "SO₃",
+        "SO₂",
+        "S₂O₃",
+        "SO"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec oxidu sodného?",
+      "options": [
+        "Na₂O",
+        "NaO",
+        "NaO₂",
+        "Na₂O₃"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jaké oxidační číslo (arabskou číslicí) má hliník v Al₂O₃?",
+      "answers": [
+        "3",
+        "III"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jaké oxidační číslo (arabskou číslicí) má dusík v NO₂?",
+      "answers": [
+        "4",
+        "IV"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj oxidační číslo s koncovkou.",
+      "pairs": [
+        [
+          "I",
+          "-ný"
+        ],
+        [
+          "II",
+          "-natý"
+        ],
+        [
+          "III",
+          "-itý"
+        ],
+        [
+          "IV",
+          "-ičitý"
+        ],
+        [
+          "VI",
+          "-ový"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Oxid uhelnatý CO je jedovatý plyn bez barvy a zápachu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který oxid je hlavní součástí písku?",
+      "options": [
+        "oxid křemičitý",
+        "oxid vápenatý",
+        "oxid hlinitý",
+        "oxid železitý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak sestavíš vzorec oxidu z jeho názvu? Ukaž na oxidu fosforečném.",
+      "answer": "Z koncovky -ečný určím oxidační číslo fosforu V, kyslík má −II. Čísla překřížím do indexů: P₂O₅. Součet je 2 · 5 − 5 · 2 = 0."
+    },
+    {
+      "type": "open",
+      "question": "Uveď dva významné oxidy a jejich využití nebo vliv.",
+      "answer": "Oxid uhličitý – v sycených nápojích, vydechujeme ho, skleníkový plyn. Oxid vápenatý (pálené vápno) – ve stavebnictví. Oxid siřičitý – způsobuje kyselé deště."
+    }
+  ]
+}

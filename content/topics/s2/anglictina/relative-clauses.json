@@ -1,0 +1,451 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "relative-clauses",
+  "title": "Vztažné věty",
+  "emoji": "🔗",
+  "explanations": [
+    {
+      "title": "Bez čárek a s čárkami",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky řekneš: „Holka, **která bydlí vedle**, zpívá v kapele.“ Část „která bydlí vedle“ ti prozradí, **kterou** holku myslíš. Bez ní by posluchač nevěděl, o kom je řeč."
+        },
+        {
+          "type": "text",
+          "text": "Jindy taková část jen přidává zajímavost navíc: „Moje máma, **která je zdravotní sestra**, pracuje v noci.“ Mámu máš jednu – víš, o koho jde, i bez dodatku. Angličtina tyhle dva případy přísně rozlišuje: jinak píše čárky a jinak vybírá slova."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Slovo pro člověka, zvíře, věc nebo místo.",
+          "example": "*girl, dog, book, Prague*"
+        },
+        {
+          "type": "term",
+          "term": "Vztažná věta (relative clause)",
+          "definition": "Vedlejší věta, která blíž popisuje podstatné jméno těsně před ní. Česky začíná slovem „který, jenž, kde“.",
+          "example": "*the girl **who lives next door*** = holka, **která bydlí vedle**"
+        },
+        {
+          "type": "term",
+          "term": "Vztažné zájmeno",
+          "definition": "Slovo, kterým vztažná věta začíná. Nejčastější: *who* (o lidech), *which* (o věcech a zvířatech), *that* (o lidech i věcech).",
+          "example": "*the man **who** called*, *the book **which** I read*"
+        },
+        {
+          "type": "term",
+          "term": "Určující vztažná věta (defining)",
+          "definition": "Říká, **o koho nebo o co** jde. Bez ní by věta nedávala smysl. Píše se **bez čárek**.",
+          "example": "*The girl who lives next door is a singer.*"
+        },
+        {
+          "type": "term",
+          "term": "Neurčující vztažná věta (non-defining)",
+          "definition": "Jen **přidává informaci navíc**. I bez ní víme, o koho jde. Píše se **mezi čárkami**.",
+          "example": "*My sister, who lives in Brno, is a singer.*"
+        },
+        {
+          "type": "heading",
+          "text": "Test zakrytím"
+        },
+        {
+          "type": "text",
+          "text": "Nevíš, který druh to je? Zakryj vztažnou větu prstem. Pak se zeptej: Vím pořád přesně, o koho nebo o co jde?"
+        },
+        {
+          "type": "example",
+          "question": "*The girl who lives next door is a singer.* Určující, nebo neurčující?",
+          "answer": "Zakryju: *The girl is a singer.* Která holka? Nevím. Vztažná věta je tedy nutná → **určující**, bez čárek."
+        },
+        {
+          "type": "example",
+          "question": "*My sister, who lives in Brno, is a singer.* Určující, nebo neurčující?",
+          "answer": "Zakryju: *My sister is a singer.* Sestru mám jednu, vím, o koho jde → **neurčující**, v čárkách. (Kdybych měl sester víc a chtěl říct, kterou myslím, napsal bych větu bez čárek.)"
+        },
+        {
+          "type": "heading",
+          "text": "Dvě přísná pravidla pro neurčující věty"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Nikdy v nich nepoužiješ *that*. Jen *who*, *which*, *whose*…",
+            "Zájmeno nikdy nevynecháš."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Které zájmeno a kdy ho vynechat"
+        },
+        {
+          "type": "text",
+          "text": "*who* = lidé, *which* = věci a zvířata, *that* = obojí (jen bez čárek), *whose* = čí (jehož, jejíž), *where* = kde, *when* = kdy."
+        },
+        {
+          "type": "text",
+          "text": "V určující větě smíš zájmeno vynechat, když za ním hned stojí někdo, kdo děj dělá: *The book (that) **I** read was great.* Když za zájmenem hned následuje sloveso, vynechat ho nesmíš: *The boy **who won** the race is my cousin.*"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věty. U každé použij test zakrytím."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "určující (bez čárek)",
+              "neurčující (s čárkami)"
+            ],
+            "items": [
+              {
+                "text": "The man who called you is here.",
+                "group": 0
+              },
+              {
+                "text": "I lost the book that you gave me.",
+                "group": 0
+              },
+              {
+                "text": "Students who cheat will fail.",
+                "group": 0
+              },
+              {
+                "text": "Prague, which is my home, is beautiful.",
+                "group": 1
+              },
+              {
+                "text": "My dad, who is 50, runs marathons.",
+                "group": 1
+              },
+              {
+                "text": "Mr Novák, whose son I know, is a vet.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "My mother, that is a nurse, works nights.",
+          "right": "My mother, who is a nurse, works nights.",
+          "why": "Věta v čárkách je neurčující a v ní se *that* nesmí použít."
+        },
+        {
+          "type": "summary",
+          "text": "Určující věta říká, o koho jde – bez čárek, smí být *that*. Neurčující jen přidává informaci – v čárkách, nikdy *that*, zájmeno nevynecháš."
+        }
+      ]
+    },
+    {
+      "title": "Zájmena",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vztažná věta funguje jako lepidlo: spojí dvě krátké věty do jedné. *I met a man. He is a pilot.* → *I met a man **who** is a pilot.* (Potkal jsem muže, který je pilot.)"
+        },
+        {
+          "type": "text",
+          "text": "Aby lepidlo drželo, musíš vybrat správné spojovací slovo. A někdy ho můžeš úplně vynechat – Angličané to dělají v řeči pořád."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vztažná věta",
+          "definition": "Část věty, která blíž popisuje člověka nebo věc těsně před ní.",
+          "example": "*the hotel **where we stayed*** = hotel, **kde jsme bydleli**"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo nebo co dělá děj. V angličtině stojí před slovesem.",
+          "example": "*The boy won.* – podmět je *the boy*."
+        },
+        {
+          "type": "term",
+          "term": "Předmět",
+          "definition": "Koho nebo co děj zasáhne. Stojí za slovesem.",
+          "example": "*We saw **the film**.* – předmět je *the film*."
+        },
+        {
+          "type": "term",
+          "term": "Vztažné zájmeno",
+          "definition": "Slovo, které vztažnou větu připojí. Vybírá se podle toho, o co jde (tabulka níže).",
+          "example": "*who, which, that, whose, where, when*"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zájmeno",
+            "Použiješ pro",
+            "Česky"
+          ],
+          "rows": [
+            [
+              "who",
+              "osoby",
+              "který, která"
+            ],
+            [
+              "which",
+              "věci, zvířata",
+              "který, které"
+            ],
+            [
+              "that",
+              "osoby i věci (jen v určujících větách bez čárek)",
+              "který"
+            ],
+            [
+              "whose",
+              "přivlastnění",
+              "jehož, jejíž, jejichž"
+            ],
+            [
+              "where",
+              "místo",
+              "kde"
+            ],
+            [
+              "when",
+              "čas",
+              "kdy"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Lepení krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi slovo, které se v obou větách opakuje: *a man – **he***.",
+            "Zeptej se: je to osoba, věc, místo, čas, nebo „čí“?",
+            "Vyber zájmeno z tabulky.",
+            "Nahraď jím opakované slovo a dej ho hned za podstatné jméno."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Spoj: *This is the hotel. We stayed there.*",
+          "answer": "Opakuje se místo (*there*) → *where*. ***This is the hotel where we stayed.***"
+        },
+        {
+          "type": "example",
+          "question": "Spoj: *That's the woman. Her car was stolen.*",
+          "answer": "*her* = čí auto → *whose*. ***That's the woman whose car was stolen.*** = To je ta žena, jejíž auto ukradli."
+        },
+        {
+          "type": "heading",
+          "text": "Kdy zájmeno vynechat"
+        },
+        {
+          "type": "text",
+          "text": "V určující větě smíš zájmeno vynechat, když je **předmětem**. Poznáš to tak, že hned za zájmenem stojí jiný podmět."
+        },
+        {
+          "type": "text",
+          "text": "*The film (that) **we** saw was boring.* – za *that* je podmět *we* → *that* smíš vynechat. *The boy who **won** the race…* – za *who* hned následuje sloveso, *who* je podmět → vynechat **nesmíš**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň správné zájmeno. U každé věty si nejdřív řekni: osoba, věc, místo, nebo „čí“?"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "That's the woman",
+                "after": "car was stolen.",
+                "options": [
+                  "whose",
+                  "who",
+                  "which"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "This is the hotel",
+                "after": "we stayed.",
+                "options": [
+                  "where",
+                  "which",
+                  "when"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Our teacher,",
+                "after": "is very strict, gave us a test.",
+                "options": [
+                  "who",
+                  "that",
+                  "whose"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "The film",
+                "after": "we saw was boring.",
+                "options": [
+                  "that",
+                  "who",
+                  "where"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "I met a girl who's father is a pilot.",
+          "right": "I met a girl whose father is a pilot.",
+          "why": "*who's* je zkratka *who is*. Pro „čí, jejíž“ se píše *whose*. Vyslovují se stejně, proto se pletou."
+        },
+        {
+          "type": "summary",
+          "text": "*who* = lidé, *which* = věci, *that* = obojí (jen bez čárek), *whose* = čí, *where* = kde, *when* = kdy. Zájmeno-předmět v určující větě smíš vynechat."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "The man ___ fixed my car was very friendly.",
+      "options": [
+        "who",
+        "which",
+        "whose"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Is this the phone ___ you bought yesterday?",
+      "options": [
+        "that",
+        "who",
+        "where"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "I met a girl ___ father is a pilot.",
+      "options": [
+        "whose",
+        "who's",
+        "which"
+      ],
+      "answer": 0,
+      "explanation": "Přivlastnění → *whose*."
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je správně?",
+      "options": [
+        "London, which is the capital, is huge.",
+        "London, that is the capital, is huge.",
+        "London which is the capital is huge."
+      ],
+      "answer": 0,
+      "explanation": "Neurčující věta: čárky a *which*, ne *that*."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: 2004 was the year ___ the Czech Republic joined the EU.",
+      "answers": [
+        "when",
+        "that",
+        "in which"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: That's the café ___ we first met.",
+      "answers": [
+        "where"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve větě „The book (which) I'm reading is great.“ lze *which* vynechat.",
+      "answer": true,
+      "explanation": "Zájmeno je předmět a věta je určující."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve větě „The boy who won the race is my cousin.“ lze *who* vynechat.",
+      "answer": false,
+      "explanation": "*who* je tu podmět vedlejší věty → nelze vynechat."
+    },
+    {
+      "type": "truefalse",
+      "question": "„My mother, that is a nurse, works nights.“ je správně.",
+      "answer": false,
+      "explanation": "V neurčující větě nelze *that* → *who*."
+    },
+    {
+      "type": "match",
+      "question": "Spoj zájmeno s použitím.",
+      "pairs": [
+        [
+          "who",
+          "osoby"
+        ],
+        [
+          "which",
+          "věci"
+        ],
+        [
+          "whose",
+          "přivlastnění"
+        ],
+        [
+          "where",
+          "místo"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi určující a neurčující vztažnou větou?",
+      "answer": "Určující věta říká, o koho nebo o co jde, a nepíše se v čárkách. Neurčující přidává doplňující informaci, je oddělena čárkami a nesmí v ní být *that*."
+    },
+    {
+      "type": "open",
+      "question": "Kdy lze vztažné zájmeno vynechat? Uveď příklad.",
+      "answer": "V určující vztažné větě, když je zájmeno předmětem: *The girl (who) I met was French.* Je-li podmětem, vynechat ho nelze."
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "prvocisla",
+  "title": "Prvočísla a rozklad",
+  "emoji": "💎",
+  "explanations": [
+    {
+      "title": "Kostičky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Některá čísla se dají poskládat z menších kousků mnoha způsoby. Jiná jsou „tvrdohlavá“ – nejdou rozdělit na stejné skupiny nijak."
+        },
+        {
+          "type": "text",
+          "text": "Těm tvrdohlavým se říká **prvočísla**. Jsou to stavební kostky všech čísel. Používají se při krácení zlomků a dokonce i k šifrování zpráv na internetu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dělitel",
+          "definition": "Číslo, kterým dané číslo vydělíš beze zbytku (nic nezbude).",
+          "example": "Dělitelé 6 jsou 1, 2, 3 a 6."
+        },
+        {
+          "type": "term",
+          "term": "Prvočíslo",
+          "definition": "Číslo, které má **přesně dva** dělitele: jedničku a samo sebe.",
+          "example": "7 jde vydělit jen 1 a 7. Je to prvočíslo."
+        },
+        {
+          "type": "term",
+          "term": "Složené číslo",
+          "definition": "Číslo, které má **víc než dva** dělitele.",
+          "example": "6 má dělitele 1, 2, 3, 6 – je složené."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s kostičkami"
+        },
+        {
+          "type": "text",
+          "text": "Zkus složit 7 kostiček do obdélníku. Jde jen jedna dlouhá řada 1 × 7. Nastav na mřížce jiné rozměry – 7 teček nedostaneš."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 1,
+            "columns": 7
+          }
+        },
+        {
+          "type": "text",
+          "text": "Šest kostiček ale složíš i jako 2 × 3. Proto je 6 složené a 7 je prvočíslo."
+        },
+        {
+          "type": "heading",
+          "text": "Prvočísla do 30"
+        },
+        {
+          "type": "text",
+          "text": "**2, 3, 5, 7, 11, 13, 17, 19, 23, 29.** Dvojka je jediné sudé prvočíslo – každé jiné sudé číslo jde vydělit dvěma, takže má víc dělitelů."
+        },
+        {
+          "type": "example",
+          "question": "Je 51 prvočíslo?",
+          "answer": "Vypadá tak, ale zkusíme dělit: 51 : 3 = 17 beze zbytku. Má tedy dělitele 1, 3, 17, 51 → **složené**."
+        },
+        {
+          "type": "example",
+          "question": "Je 13 prvočíslo?",
+          "answer": "Zkusím 2, 3, 5, 7, 11, 12 – nic nedělí beze zbytku. Dělitelé jsou jen 1 a 13 → **prvočíslo**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 je prvočíslo.",
+          "right": "1 není prvočíslo ani složené číslo.",
+          "why": "Jednička má jen jednoho dělitele (sebe). Prvočíslo musí mít přesně dva."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď čísla: prvočíslo, nebo složené?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "prvočíslo",
+              "složené"
+            ],
+            "items": [
+              {
+                "text": "2",
+                "group": 0
+              },
+              {
+                "text": "9",
+                "group": 1
+              },
+              {
+                "text": "11",
+                "group": 0
+              },
+              {
+                "text": "15",
+                "group": 1
+              },
+              {
+                "text": "17",
+                "group": 0
+              },
+              {
+                "text": "21",
+                "group": 1
+              },
+              {
+                "text": "23",
+                "group": 0
+              },
+              {
+                "text": "27",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Rozbíjení na kostky"
+        },
+        {
+          "type": "text",
+          "text": "Každé složené číslo jde rozbít na součin prvočísel. 12 kostiček = 2 řady po 6, a 6 = 2 · 3. Takže 12 = 2 · 2 · 3. Tomu se říká **rozklad na prvočinitele**. Stejná čísla se dají zkrátit: 2 · 2 = 2² (čti „dvě na druhou“)."
+        },
+        {
+          "type": "summary",
+          "text": "Prvočíslo má přesně dva dělitele: 1 a samo sebe. Složené číslo jich má víc a dá se rozložit na součin prvočísel. Jednička není ani jedno."
+        }
+      ]
+    },
+    {
+      "title": "Rozkladový strom",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každé složené číslo se dá rozbít na menší čísla, která už rozbít nejdou. Je to jako rozebrat stavebnici na jednotlivé kostky."
+        },
+        {
+          "type": "text",
+          "text": "Tomu se říká **rozklad na prvočinitele**. Hodí se k hledání společných dělitelů a ke krácení zlomků."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Prvočíslo",
+          "definition": "Číslo, které jde beze zbytku vydělit jen jedničkou a samo sebou. Má přesně dva dělitele.",
+          "example": "2, 3, 5, 7, 11, 13, 17, 19…"
+        },
+        {
+          "type": "term",
+          "term": "Složené číslo",
+          "definition": "Číslo větší než 1, které prvočíslem není – dá se zapsat jako součin menších čísel.",
+          "example": "15 = 3 · 5"
+        },
+        {
+          "type": "term",
+          "term": "Prvočinitel",
+          "definition": "Prvočíslo, které se objeví v rozkladu čísla na součin.",
+          "example": "V 60 = 2 · 2 · 3 · 5 jsou prvočinitelé 2, 3 a 5."
+        },
+        {
+          "type": "term",
+          "term": "Mocnina (zkratka)",
+          "definition": "Když stejné číslo násobíš víckrát, zapíšeš to kratčeji. Malé číslo nahoře říká, kolikrát.",
+          "example": "2 · 2 = 2², 2 · 2 · 2 = 2³, 3 · 3 = 3²."
+        },
+        {
+          "type": "heading",
+          "text": "Postup rozkladu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zkus číslo vydělit nejmenším prvočíslem 2.",
+            "Jde to? Zapiš to a pokračuj s výsledkem.",
+            "Nejde to? Zkus 3, pak 5, 7, 11…",
+            "Skonči, až zbude samo prvočíslo.",
+            "Zapiš součin všech prvočinitelů, stejné spoj do mocniny."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rozlož 60 na prvočinitele.",
+          "answer": "60 : 2 = 30, 30 : 2 = 15, 15 : 3 = 5 a 5 je prvočíslo. Takže 60 = 2 · 2 · 3 · 5 = **2² · 3 · 5**."
+        },
+        {
+          "type": "example",
+          "question": "Rozlož 36.",
+          "answer": "36 : 2 = 18, 18 : 2 = 9, 9 : 3 = 3. Takže 36 = 2 · 2 · 3 · 3 = **2² · 3²**."
+        },
+        {
+          "type": "example",
+          "question": "Rozlož 40.",
+          "answer": "40 = 2 · 20 = 2 · 2 · 10 = 2 · 2 · 2 · 5 = **2³ · 5**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "36 = 4 · 9 je rozklad na prvočinitele.",
+          "right": "36 = 2 · 2 · 3 · 3 = 2² · 3²",
+          "why": "4 ani 9 nejsou prvočísla – dají se rozložit dál. Rozklad končí, až jsou všechna čísla prvočísla."
+        },
+        {
+          "type": "heading",
+          "text": "Kontrola"
+        },
+        {
+          "type": "text",
+          "text": "Rozklad si vždycky ověř: vynásob prvočinitele zpátky. 2 · 2 · 3 · 5 = 60 ✓. Rozklad každého čísla je jen jeden – nezáleží, čím začneš."
+        },
+        {
+          "type": "text",
+          "text": "Procvič rozpoznání: přetáhni čísla do správného kbelíku."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "prvočíslo",
+              "složené"
+            ],
+            "items": [
+              {
+                "text": "3",
+                "group": 0
+              },
+              {
+                "text": "4",
+                "group": 1
+              },
+              {
+                "text": "19",
+                "group": 0
+              },
+              {
+                "text": "25",
+                "group": 1
+              },
+              {
+                "text": "29",
+                "group": 0
+              },
+              {
+                "text": "33",
+                "group": 1
+              },
+              {
+                "text": "91",
+                "group": 1
+              },
+              {
+                "text": "7",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "summary",
+          "text": "Rozklad: děl postupně prvočísly 2, 3, 5, 7…, dokud nezbudou jen prvočísla. Stejné prvočinitele zapiš mocninou: 2 · 2 = 2²."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které číslo je prvočíslo?",
+      "options": [
+        "13",
+        "15",
+        "21",
+        "27"
+      ],
+      "answer": 0,
+      "explanation": "13 má jen dělitele 1 a 13."
+    },
+    {
+      "type": "truefalse",
+      "question": "1 je prvočíslo.",
+      "answer": false,
+      "explanation": "1 má jen jednoho dělitele, prvočíslo musí mít dva."
+    },
+    {
+      "type": "truefalse",
+      "question": "2 je jediné sudé prvočíslo.",
+      "answer": true,
+      "explanation": "Každé jiné sudé číslo je dělitelné 2."
+    },
+    {
+      "type": "input",
+      "question": "Kolik prvočísel je menších než 20?",
+      "answers": [
+        "8"
+      ],
+      "explanation": "2, 3, 5, 7, 11, 13, 17, 19"
+    },
+    {
+      "type": "choice",
+      "question": "Rozklad čísla 36 na prvočinitele:",
+      "options": [
+        "2² · 3²",
+        "4 · 9",
+        "2 · 3 · 6",
+        "2³ · 3"
+      ],
+      "answer": 0,
+      "explanation": "36 = 2 · 2 · 3 · 3. 4, 9 a 6 nejsou prvočísla."
+    },
+    {
+      "type": "input",
+      "question": "2 · 3 · 7 =",
+      "answers": [
+        "42"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které číslo je složené?",
+      "options": [
+        "51",
+        "41",
+        "43",
+        "47"
+      ],
+      "answer": 0,
+      "explanation": "51 = 3 · 17"
+    },
+    {
+      "type": "order",
+      "question": "Seřaď prvočísla od nejmenšího.",
+      "items": [
+        "2",
+        "3",
+        "5",
+        "7",
+        "11"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Největší prvočíslo menší než 30?",
+      "answers": [
+        "29"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "91 je prvočíslo.",
+      "answer": false,
+      "explanation": "91 = 7 · 13"
+    },
+    {
+      "type": "open",
+      "question": "Co je prvočíslo a co složené číslo?",
+      "answer": "Prvočíslo má právě dva dělitele – jedničku a sebe (2, 3, 5, 7…). Složené číslo má víc než dva dělitele (4, 6, 8, 9…). Číslo 1 není ani jedno."
+    },
+    {
+      "type": "open",
+      "question": "Jak rozložíš číslo 40 na prvočinitele?",
+      "answer": "Postupně dělím prvočísly: 40 = 2 · 20 = 2 · 2 · 10 = 2 · 2 · 2 · 5, tedy 40 = 2³ · 5."
+    }
+  ]
+}

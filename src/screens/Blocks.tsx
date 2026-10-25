@@ -1,22 +1,21 @@
 import { useState } from 'preact/hooks'
 import type { Block } from '../content/types'
 import { Inline } from '../ui/Inline'
-import { WidgetView } from '../widgets'
-import { Column } from '../widgets/column'
+import { WidgetView, type WidgetRef } from '../widgets'
 
 export function Blocks({ blocks }: { blocks: Block[] }) {
   return <div class="blocks">{blocks.map((b, i) => <BlockView key={i} b={b} />)}</div>
 }
 
-function BlockView({ b }: { b: Block }) {
-  switch (b.t) {
-    case 'h': return <h3 class="bh"><Inline text={b.text} /></h3>
-    case 'p': return <p><Inline text={b.text} /></p>
+export function BlockView({ b }: { b: Block }) {
+  switch (b.type) {
+    case 'heading': return <h3 class="bh"><Inline text={b.text} /></h3>
+    case 'text': return <p><Inline text={b.text} /></p>
     case 'term': return (
       <div class="term">
         <b><Inline text={b.term} /></b>
-        <span><Inline text={b.def} /></span>
-        {b.ex && <small><Inline text={b.ex} /></small>}
+        <span><Inline text={b.definition} /></span>
+        {b.example && <small><Inline text={b.example} /></small>}
       </div>
     )
     case 'mistake': return (
@@ -26,18 +25,18 @@ function BlockView({ b }: { b: Block }) {
         <p><Inline text={b.why} /></p>
       </div>
     )
-    case 'key': return <div class="key"><Inline text={b.text} /></div>
+    case 'summary': return <div class="key"><Inline text={b.text} /></div>
     case 'list': return <ul>{b.items.map((x, i) => <li key={i}><Inline text={x} /></li>)}</ul>
     case 'steps': return <Steps items={b.items} />
-    case 'example': return <Example q={b.q} a={b.a} col={b.col} />
-    case 'pic': return <div class="pic" role="img" aria-label={b.caption}>{b.items.join(' ')}{b.caption && <small>{b.caption}</small>}</div>
+    case 'example': return <Example question={b.question} answer={b.answer} widget={b.widget} />
+    case 'picture': return <div class="pic" role="img" aria-label={b.caption}>{b.items.join(' ')}{b.caption && <small>{b.caption}</small>}</div>
     case 'table': return (
       <div class="card table-wrap"><table>
         <thead><tr>{b.head.map((h, i) => <th key={i}><Inline text={h} /></th>)}</tr></thead>
         <tbody>{b.rows.map((r, i) => <tr key={i}>{r.map((c, j) => <td key={j}><Inline text={c} /></td>)}</tr>)}</tbody>
       </table></div>
     )
-    case 'w': return <WidgetView w={b} />
+    case 'widget': return <WidgetView w={b} />
   }
 }
 
@@ -51,12 +50,12 @@ function Steps({ items }: { items: string[] }) {
   )
 }
 
-function Example({ q, a, col }: { q: string; a: string; col?: Extract<Block, { t: 'example' }>['col'] }) {
+function Example({ question, answer, widget }: { question: string; answer: string; widget?: WidgetRef }) {
   const [open, setOpen] = useState(false)
   return (
     <div class="card example">
-      <div class="q"><Inline text={q} /></div>
-      {open ? <><div class="a"><Inline text={a} /></div>{col && <Column {...col} />}</> : <button class="reveal" onClick={() => setOpen(true)}>Ukázat řešení</button>}
+      <div class="q"><Inline text={question} /></div>
+      {open ? <><div class="a"><Inline text={answer} /></div>{widget && <WidgetView w={widget} />}</> : <button class="reveal" onClick={() => setOpen(true)}>Ukázat řešení</button>}
     </div>
   )
 }

@@ -1,0 +1,369 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "magneticke-pole",
+  "title": "Stacionární magnetické pole",
+  "emoji": "🧲",
+  "explanations": [
+    {
+      "title": "Pokusy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Magnet na lednici drží, kompas ukazuje na sever. To zná každý. Méně známé je, že i obyčejný drát, kterým teče proud, se chová jako magnet – vychýlí střelku kompasu postavenou vedle."
+        },
+        {
+          "type": "text",
+          "text": "Na tomhle objevu stojí elektromotory v pračce, autě i větráku, reproduktory, magnetická rezonance v nemocnici a urychlovače částic."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Magnetické pole",
+          "definition": "Prostor kolem magnetu nebo vodiče s proudem, ve kterém působí síla na jiné magnety, železo a pohybující se náboje."
+        },
+        {
+          "type": "term",
+          "term": "Magnetické indukční čáry",
+          "definition": "Myšlené čáry, podle kterých se natočí malá magnetka. Jsou vždy **uzavřené** – nemají začátek ani konec. Mimo magnet vedou od severního pólu k jižnímu.",
+          "example": "Železné piliny kolem magnetu se seřadí podél indukčních čar."
+        },
+        {
+          "type": "term",
+          "term": "Magnetická indukce B",
+          "definition": "Jak silné je magnetické pole. Jednotka **tesla (T)**.",
+          "example": "Magnetické pole Země asi 50 μT, magnet na lednici asi 5 mT, MRI 1,5–3 T."
+        },
+        {
+          "type": "heading",
+          "text": "Proud dělá magnetické pole"
+        },
+        {
+          "type": "text",
+          "text": "Kolem přímého vodiče s proudem vedou indukční čáry v soustředných kružnicích. Směr určíš **Ampérovým pravidlem pravé ruky**: palec ve směru proudu, zahnuté prsty ukazují směr čar."
+        },
+        {
+          "type": "text",
+          "text": "Když drát navineš do **cívky**, pole jednotlivých závitů se sečtou – cívka se chová jako tyčový magnet. Vložíš-li do ní železné (**feromagnetické**) jádro, pole se mnohonásobně zesílí: vznikne **elektromagnet**."
+        },
+        {
+          "type": "heading",
+          "text": "Pole tlačí na proud"
+        },
+        {
+          "type": "text",
+          "text": "Vodič s proudem v poli podkovovitého magnetu se vychýlí – působí na něj **magnetická síla**. Je největší, když vodič vede kolmo k indukčním čarám, a nulová, když s nimi vede rovnoběžně. Směr: **Flemingovo pravidlo levé ruky**."
+        },
+        {
+          "type": "text",
+          "text": "Proto se přitahují dva rovnoběžné vodiče se souhlasnými proudy (a odpuzují s opačnými) – každý je v poli toho druhého."
+        },
+        {
+          "type": "text",
+          "text": "Velikost síly na vodič: `F = B · I · l · sin α` (l = délka vodiče v poli, α = úhel vodiče s čarami; kolmo sin 90° = 1, rovnoběžně sin 0° = 0). Pole přímého vodiče slábne se vzdáleností: `B = μ₀ · I / (2π · d)`, μ₀ = 4π · 10⁻⁷ T·m/A."
+        },
+        {
+          "type": "term",
+          "term": "Lorentzova síla",
+          "definition": "Síla, kterou magnetické pole působí na jednotlivý nabitý pohybující se náboj (elektron, iont). Je kolmá k jeho rychlosti, proto ho stáčí do kruhu.",
+          "example": "Polární záře: částice ze Slunce stáčí magnetické pole Země k pólům."
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a u pravidel ruky si to rovnou zkus vlastníma rukama."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Ampérovo pravidlo pravé ruky",
+                "back": "palec ve směru proudu, prsty ukazují indukční čáry"
+              },
+              {
+                "front": "Flemingovo pravidlo levé ruky",
+                "back": "prsty ve směru proudu, čáry vstupují do dlaně, palec = směr síly"
+              },
+              {
+                "front": "Lorentzova síla",
+                "back": "F = Q · v · B · sin α"
+              },
+              {
+                "front": "magnetická indukce",
+                "back": "B, jednotka tesla (T)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Elektron vletí kolmo do homogenního magnetického pole. Po jaké dráze se bude pohybovat?",
+          "answer": "Lorentzova síla je stále kolmá na rychlost – mění jen směr, ne velikost. Přesně to dělá dostředivá síla, takže elektron opisuje **kružnici**."
+        },
+        {
+          "type": "example",
+          "question": "Dva rovnoběžné vodiče, proudy mají opačný směr. Přitahují se?",
+          "answer": "**Ne, odpuzují se.** Souhlasné proudy se přitahují, opačné odpuzují (u nábojů je to naopak, pozor)."
+        },
+        {
+          "type": "heading",
+          "text": "Látky v magnetickém poli"
+        },
+        {
+          "type": "text",
+          "text": "**Feromagnetické** látky (železo, nikl, kobalt) pole silně zesilují a magnet je přitáhne. **Paramagnetické** (hliník) je zesilují nepatrně. **Diamagnetické** (měď, voda) ho nepatrně zeslabují."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Indukční čáry začínají na severním pólu a končí na jižním.",
+          "right": "Indukční čáry jsou uzavřené – uvnitř magnetu pokračují od jižního pólu k severnímu.",
+          "why": "Na rozdíl od elektrických siločar nemají začátek ani konec. Samostatný severní pól (bez jižního) neexistuje – rozlomený magnet má zase oba póly."
+        },
+        {
+          "type": "summary",
+          "text": "Magnetické pole vzniká kolem pohybujících se nábojů (proudu). Působí silou na vodič s proudem a na pohybující se náboje. Indukční čáry jsou uzavřené, indukce B v teslách."
+        }
+      ]
+    },
+    {
+      "title": "Vztahy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Konstruktér elektromotoru potřebuje vědět, jakou silou bude pole tlačit na vinutí. Fyzik u urychlovače musí spočítat, jak silný magnet ohne dráhu protonů. K tomu slouží několik vzorců."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Magnetické pole a indukční čáry",
+          "definition": "Pole kolem magnetů a proudů. Znázorňujeme ho uzavřenými indukčními čarami (směr ukáže magnetka)."
+        },
+        {
+          "type": "term",
+          "term": "Magnetická indukce B",
+          "definition": "Vektor popisující sílu a směr pole. Jednotka tesla (T). 1 μT = 10⁻⁶ T."
+        },
+        {
+          "type": "term",
+          "term": "Úhel α",
+          "definition": "Úhel mezi vodičem (nebo rychlostí náboje) a indukčními čarami. **sin α**: sin 90° = 1 (kolmo – největší síla), sin 0° = 0 (rovnoběžně – žádná síla)."
+        },
+        {
+          "type": "term",
+          "term": "Permeabilita vakua μ₀",
+          "definition": "Konstanta pro magnetické pole ve vakuu: `μ₀ = 4π · 10⁻⁷ T·m/A`."
+        },
+        {
+          "type": "heading",
+          "text": "Síly"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Situace",
+            "Vztah"
+          ],
+          "rows": [
+            [
+              "síla na vodič s proudem",
+              "F = B · I · l · sin α"
+            ],
+            [
+              "síla na náboj (Lorentzova)",
+              "F = Q · v · B · sin α"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Úhel α nastav na 90° (kolmo – síla je největší) a pak na 0° (rovnoběžně – síla zmizí). Ve vzorci se to projeví přes sin α."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 90
+          }
+        },
+        {
+          "type": "example",
+          "question": "B = 0,5 T, I = 4 A, délka vodiče v poli 0,2 m, vodič kolmo k čarám. Jaká je síla?",
+          "answer": "sin 90° = 1. F = 0,5 · 4 · 0,2 · 1 = **0,4 N**."
+        },
+        {
+          "type": "example",
+          "question": "Náboj 2 μC letí rychlostí 1 000 m/s kolmo do pole 0,5 T. Lorentzova síla?",
+          "answer": "F = 2 · 10⁻⁶ · 1 000 · 0,5 = 10⁻³ N = **1 mN**."
+        },
+        {
+          "type": "heading",
+          "text": "Pole vodičů a cívek"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zdroj pole",
+            "Indukce"
+          ],
+          "rows": [
+            [
+              "dlouhý přímý vodič, vzdálenost d",
+              "B = μ₀ · I / (2π · d)"
+            ],
+            [
+              "dlouhá cívka (N závitů, délka l)",
+              "B = μ₀ · N · I / l"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Přímým vodičem teče 10 A. Jaká je indukce 0,1 m od něj?",
+          "answer": "B = 4π · 10⁻⁷ · 10 / (2π · 0,1). π se zkrátí: B = 2 · 10⁻⁷ · 10 / 0,1 = 2 · 10⁻⁵ T = **20 μT**."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti úhel mezi vodičem (rychlostí) a čarami a jeho sinus.",
+            "Převeď jednotky (μC → C, cm → m).",
+            "Dosaď do vzorce.",
+            "Směr síly urči pravidlem levé ruky."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Cívku zesílí **feromagnetické jádro** (železo). Látky dělíme na feromagnetické (železo), paramagnetické (hliník) a diamagnetické (měď)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vodič rovnoběžný s indukčními čarami: F = B · I · l.",
+          "right": "F = B · I · l · sin 0° = 0.",
+          "why": "Síla vzniká jen tehdy, když vodič indukční čáry „protíná“. Rovnoběžně s čarami na něj pole nepůsobí."
+        },
+        {
+          "type": "summary",
+          "text": "`F = BIl sin α`, `F = QvB sin α`, přímý vodič `B = μ₀I/(2πd)`. Náboj kolmo do pole letí po kružnici."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "B = 0,5 T, I = 4 A, l = 0,2 m, vodič kolmo k indukčním čarám. Síla v N =",
+      "answers": [
+        "0,4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Přímý vodič s proudem 10 A. Magnetická indukce ve vzdálenosti 0,1 m v μT? (μ₀ = 4π · 10⁻⁷ T·m/A)",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "B = 0,2 T, I = 5 A, l = 0,5 m, vodič rovnoběžně s indukčními čarami. Síla v N =",
+      "answers": [
+        "0"
+      ],
+      "explanation": "sin 0° = 0"
+    },
+    {
+      "type": "input",
+      "question": "Náboj 2 μC letí rychlostí 1 000 m/s kolmo do pole 0,5 T. Lorentzova síla v mN =",
+      "answers": [
+        "1"
+      ],
+      "explanation": "2 · 10⁻⁶ · 1 000 · 0,5 = 10⁻³ N"
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka magnetické indukce?",
+      "options": [
+        "tesla",
+        "weber",
+        "henry",
+        "farad"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Indukční čáry magnetického pole jsou uzavřené křivky.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Po jaké trajektorii se pohybuje elektron vletující kolmo do homogenního magnetického pole?",
+      "options": [
+        "po kružnici",
+        "po přímce",
+        "po parabole",
+        "po spirále vždy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Dva rovnoběžné vodiče s proudy opačného směru se přitahují.",
+      "answer": false,
+      "explanation": "Opačné proudy se odpuzují, souhlasné přitahují."
+    },
+    {
+      "type": "match",
+      "question": "Spoj látku s magnetickými vlastnostmi.",
+      "pairs": [
+        [
+          "železo",
+          "feromagnetická"
+        ],
+        [
+          "hliník",
+          "paramagnetická"
+        ],
+        [
+          "měď",
+          "diamagnetická"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co zesílí magnetické pole cívky?",
+      "options": [
+        "feromagnetické jádro",
+        "měděné jádro",
+        "delší cívka se stejným N",
+        "menší proud"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Na čem závisí magnetická síla na vodič s proudem?",
+      "answer": "F = B·I·l·sin α: na magnetické indukci, proudu, délce vodiče v poli a úhlu mezi vodičem a indukčními čarami. Směr určí Flemingovo pravidlo levé ruky."
+    },
+    {
+      "type": "open",
+      "question": "Co je Lorentzova síla a kde se uplatňuje?",
+      "answer": "Síla působící na náboj pohybující se v magnetickém poli: F = QvB sin α. Uplatňuje se v urychlovačích, hmotnostním spektrografu a u polární záře."
+    }
+  ]
+}

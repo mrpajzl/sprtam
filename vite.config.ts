@@ -1,12 +1,14 @@
 import { defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { contentModules } from './plugins/content-modules'
 import { prerender } from './plugins/prerender'
 import { topicIndex } from './plugins/topic-index'
 
 export default defineConfig({
   plugins: [
     preact(),
+    contentModules(),
     topicIndex(),
     prerender(),
     VitePWA({

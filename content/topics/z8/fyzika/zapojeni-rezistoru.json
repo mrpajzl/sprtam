@@ -1,0 +1,365 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zapojeni-rezistoru",
+  "title": "Zapojení rezistorů",
+  "emoji": "🔌",
+  "explanations": [
+    {
+      "title": "Řada a větve",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na starém vánočním stromku zhasne jedna žárovička a s ní celý řetěz. Doma ale můžeš vypnout lampu a lednička jede dál. Rozdíl je v tom, jak jsou spotřebiče **zapojené**."
+        },
+        {
+          "type": "text",
+          "text": "Když pochopíš dva základní způsoby zapojení, pochopíš elektřinu v celém domě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Proud a napětí",
+          "definition": "**Proud** (I, ampéry) = kolik náboje proteče za sekundu. **Napětí** (U, volty) = jak silně zdroj proud žene.",
+          "example": "Zásuvka má 230 V."
+        },
+        {
+          "type": "term",
+          "term": "Odpor a rezistor",
+          "definition": "**Odpor** (R, ohmy Ω) = jak moc součástka brání proudu. **Rezistor** = součástka s daným odporem. Platí `I = U : R`.",
+          "example": "Rezistor 10 Ω."
+        },
+        {
+          "type": "term",
+          "term": "Sériové zapojení",
+          "definition": "Součástky **za sebou** v jedné řadě. Proud má jen **jednu cestu**.",
+          "example": "Starý vánoční řetěz."
+        },
+        {
+          "type": "term",
+          "term": "Paralelní zapojení",
+          "definition": "Součástky **vedle sebe**, každá ve své **větvi**. Proud se rozdělí do více cest.",
+          "example": "Spotřebiče v bytě."
+        },
+        {
+          "type": "heading",
+          "text": "Sériově: jedna cesta"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Celý proud musí projít jednou součástkou po druhé → **proud je všude stejný**.",
+            "Každá součástka „spotřebuje“ kus napětí → **napětí se dělí**, jednotlivá napětí dají dohromady napětí zdroje.",
+            "Překážky se sčítají → **celkový odpor je součet**: R = R₁ + R₂.",
+            "Jedna praskne → přeruší cestu → **nefungují všechny**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Paralelně: víc cest"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Každá větev je připojená přímo ke zdroji → **napětí je všude stejné**.",
+            "Proud se rozdělí do větví a pak zase spojí → **proud se dělí**, proudy větvemi dají dohromady celkový.",
+            "Víc cest = proud teče snáz → **celkový odpor je menší** než nejmenší z odporů.",
+            "Jedna větev vypadne → ostatní fungují dál."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď vlastnosti: patří k sériovému, nebo paralelnímu zapojení?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "sériové",
+              "paralelní"
+            ],
+            "items": [
+              {
+                "text": "proud všude stejný",
+                "group": 0
+              },
+              {
+                "text": "napětí se dělí",
+                "group": 0
+              },
+              {
+                "text": "R = R₁ + R₂",
+                "group": 0
+              },
+              {
+                "text": "napětí všude stejné",
+                "group": 1
+              },
+              {
+                "text": "proud se dělí",
+                "group": 1
+              },
+              {
+                "text": "1/R = 1/R₁ + 1/R₂",
+                "group": 1
+              },
+              {
+                "text": "zásuvky v bytě",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč jsou spotřebiče v domácnosti zapojeny paralelně?",
+          "answer": "Každý dostane **plné napětí 230 V** a můžeš ho zapnout či vypnout, aniž bys ovlivnil ostatní."
+        },
+        {
+          "type": "example",
+          "question": "Rezistory 10 Ω, 20 Ω a 30 Ω jsou zapojené sériově. Celkový odpor?",
+          "answer": "Sériově se odpory sčítají: 10 + 20 + 30 = **60 Ω**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Paralelně zapojené odpory se sčítají, takže celkový odpor je větší.",
+          "right": "Paralelně je celkový odpor menší než nejmenší z odporů.",
+          "why": "Každá další větev je nová cesta pro proud. Víc cest = proud teče snáz = menší odpor."
+        },
+        {
+          "type": "summary",
+          "text": "Sériově: proud stejný, napětí se dělí, R = R₁ + R₂. Paralelně: napětí stejné, proud se dělí, celkový odpor je menší než nejmenší."
+        }
+      ]
+    },
+    {
+      "title": "Výpočty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Elektrotechnik má v šuplíku jen rezistory 10 Ω, ale potřebuje 5 Ω nebo 20 Ω. Stačí je správně zapojit a spočítat. Naučíš se to krok za krokem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ohmův zákon",
+          "definition": "Vztah mezi napětím U (V), proudem I (A) a odporem R (Ω): `I = U : R`, `U = I · R`, `R = U : I`.",
+          "example": "12 V na 6 Ω → I = 2 A."
+        },
+        {
+          "type": "term",
+          "term": "Celkový (výsledný) odpor",
+          "definition": "Odpor jednoho rezistoru, kterým bys mohl nahradit celou skupinu, aniž by se v obvodu cokoli změnilo.",
+          "example": "Dva rezistory 10 Ω sériově nahradí jeden 20 Ω."
+        },
+        {
+          "type": "term",
+          "term": "Sériové a paralelní zapojení",
+          "definition": "**Sériově** = za sebou, jedna cesta. **Paralelně** = vedle sebe, každý ve své větvi."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Sériově",
+            "Paralelně"
+          ],
+          "rows": [
+            [
+              "proud",
+              "všude stejný",
+              "I = I₁ + I₂"
+            ],
+            [
+              "napětí",
+              "U = U₁ + U₂",
+              "všude stejné"
+            ],
+            [
+              "odpor",
+              "R = R₁ + R₂",
+              "1/R = 1/R₁ + 1/R₂"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pro **dva** paralelní rezistory je rychlejší vzorec: `R = (R₁ · R₂) : (R₁ + R₂)` (součin lomeno součtem)."
+        },
+        {
+          "type": "example",
+          "question": "Rezistory 6 Ω a 3 Ω paralelně. Celkový odpor?",
+          "answer": "R = (6 · 3) : (6 + 3) = 18 : 9 = **2 Ω**. Kontrola: je menší než 3 Ω, jak má být."
+        },
+        {
+          "type": "example",
+          "question": "Dva rezistory po 10 Ω paralelně. Celkový odpor?",
+          "answer": "R = (10 · 10) : (10 + 10) = 100 : 20 = **5 Ω** – dva stejné paralelně dají polovinu."
+        },
+        {
+          "type": "heading",
+          "text": "Celý obvod"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej celkový odpor.",
+            "Ohmovým zákonem celkový proud: I = U : R.",
+            "U sériového: napětí na každém rezistoru U₁ = I · R₁.",
+            "U paralelního: na každém je napětí zdroje, proud větví I₁ = U : R₁."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rezistory 4 Ω a 8 Ω sériově na zdroji 6 V. Jaký teče proud?",
+          "answer": "R = 4 + 8 = 12 Ω. I = 6 : 12 = **0,5 A**."
+        },
+        {
+          "type": "example",
+          "question": "Sériové rezistory 2 Ω a 4 Ω na 12 V. Jaké je napětí na rezistoru 4 Ω?",
+          "answer": "R = 6 Ω, I = 12 : 6 = 2 A. U = I · R = 2 · 4 = **8 V**. (Na 2 Ω zbývá 4 V, dohromady 12 V.)"
+        },
+        {
+          "type": "example",
+          "question": "Rezistory 12 Ω a 12 Ω paralelně na 6 V. Celkový proud?",
+          "answer": "R = 144 : 24 = 6 Ω. I = 6 : 6 = **1 A** (každou větví 0,5 A)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "6 Ω a 3 Ω paralelně: 1/R = 1/6 + 1/3 = 1/2, tedy R = 1/2 Ω",
+          "right": "1/R = 1/2, tedy R = 2 Ω",
+          "why": "Vzorec dává převrácenou hodnotu 1/R. Na konci ji musíš ještě otočit."
+        },
+        {
+          "type": "summary",
+          "text": "Sériově R = R₁ + R₂, paralelně 1/R = 1/R₁ + 1/R₂ (pro dva: součin : součet). Pak Ohmův zákon I = U : R."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Rezistory 10 Ω, 20 Ω a 30 Ω sériově. Celkový odpor v Ω =",
+      "answers": [
+        "60"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Rezistory 6 Ω a 3 Ω paralelně. Celkový odpor v Ω =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Dva rezistory po 10 Ω paralelně. Celkový odpor v Ω =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Rezistory 4 Ω a 8 Ω sériově na zdroji 6 V. Proud v A =",
+      "answers": [
+        "0,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Rezistory 12 Ω a 12 Ω paralelně na 6 V. Celkový proud v A =",
+      "answers": [
+        "1"
+      ],
+      "explanation": "R = 6 Ω, I = 6 : 6 = 1 A"
+    },
+    {
+      "type": "truefalse",
+      "question": "Při sériovém zapojení je proud všemi rezistory stejný.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Při paralelním zapojení je celkový odpor větší než největší z rezistorů.",
+      "answer": false,
+      "explanation": "Je menší než nejmenší z nich."
+    },
+    {
+      "type": "choice",
+      "question": "Na sériových rezistorech 2 Ω a 4 Ω je celkem 12 V. Napětí na 4 Ω?",
+      "options": [
+        "8 V",
+        "4 V",
+        "6 V",
+        "12 V"
+      ],
+      "answer": 0,
+      "explanation": "I = 12 : 6 = 2 A; U = 4 · 2 = 8 V"
+    },
+    {
+      "type": "choice",
+      "question": "Jak jsou zapojeny žárovky ve vánočním řetězu, kde při prasknutí jedné zhasnou všechny?",
+      "options": [
+        "sériově",
+        "paralelně"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj zapojení s vlastností.",
+      "pairs": [
+        [
+          "sériově – proud",
+          "všude stejný"
+        ],
+        [
+          "sériově – napětí",
+          "sčítá se"
+        ],
+        [
+          "paralelně – napětí",
+          "všude stejné"
+        ],
+        [
+          "paralelně – proud",
+          "sčítá se"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Porovnej sériové a paralelní zapojení rezistorů.",
+      "answer": "Sériově: stejný proud, napětí se dělí, odpory se sčítají. Paralelně: stejné napětí, proud se dělí, převrácené hodnoty odporů se sčítají a výsledný odpor je menší."
+    },
+    {
+      "type": "open",
+      "question": "Proč jsou spotřebiče v domácnosti zapojeny paralelně?",
+      "answer": "Každý dostane plné napětí 230 V a lze ho zapnout či vypnout nezávisle na ostatních."
+    }
+  ]
+}

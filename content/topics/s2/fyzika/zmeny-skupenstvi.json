@@ -1,0 +1,360 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zmeny-skupenstvi",
+  "title": "Změny skupenství",
+  "emoji": "🧊",
+  "explanations": [
+    {
+      "title": "Koloběh",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Led v nápoji taje, louže na slunci zmizí, ráno je na trávě rosa a v zimě na oknech jinovatka. Voda pořád mění podobu: pevnou, kapalnou, plynnou."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, proč se při tání nemění teplota, proč tě chladí pot, proč se v tlakovém hrnci vaří rychleji a proč na horách trvá uvaření vajíčka déle."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Skupenství",
+          "definition": "Podoba látky: **pevné** (drží tvar), **kapalné** (teče, drží objem), **plynné** (vyplní celou nádobu)."
+        },
+        {
+          "type": "term",
+          "term": "Změna skupenství",
+          "definition": "Přechod látky z jednoho skupenství do jiného.",
+          "example": "Tání: pevné → kapalné. Tuhnutí: kapalné → pevné."
+        },
+        {
+          "type": "term",
+          "term": "Vypařování a var",
+          "definition": "**Vypařování** = kapalina se mění v plyn na povrchu, při jakékoli teplotě. **Var** = pára vzniká v celém objemu (bubliny), jen při **teplotě varu**.",
+          "example": "Prádlo na šňůře schne vypařováním, voda v hrnci vře při 100 °C."
+        },
+        {
+          "type": "term",
+          "term": "Kondenzace (kapalnění)",
+          "definition": "Plyn se mění v kapalinu.",
+          "example": "Rosa, orosená sklenice ledové limonády."
+        },
+        {
+          "type": "term",
+          "term": "Sublimace a desublimace",
+          "definition": "**Sublimace**: pevné → rovnou plynné. **Desublimace**: plynné → rovnou pevné.",
+          "example": "Suchý led (pevný CO₂) sublimuje. Jinovatka vzniká desublimací vodní páry."
+        },
+        {
+          "type": "text",
+          "text": "Sleduj koloběh skupenství vody. U každého kroku si vzpomeň na příklad z domova."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "tání (pevné → kapalné)",
+              "vypařování (kapalné → plynné)",
+              "kondenzace (plynné → kapalné)",
+              "tuhnutí (kapalné → pevné)"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Proč teplota stojí"
+        },
+        {
+          "type": "text",
+          "text": "Dej led z mrazáku do hrnce a zahřívej. Teploměr ukazuje: −10 °C, −5 °C, 0 °C… a pak **dlouho 0 °C**, dokud neroztaje všechen led. Teprve potom teplota stoupá dál. U 100 °C se to opakuje – teplota stojí, dokud se nevyvaří všechna voda."
+        },
+        {
+          "type": "text",
+          "text": "Kam jde dodávané teplo? Na **rozbití vazeb** mezi částicemi. Částice se nezrychlují (teplota neroste), ale vzdalují se od sebe. Vnitřní energie roste, i když teplota stojí."
+        },
+        {
+          "type": "term",
+          "term": "Skupenské teplo L",
+          "definition": "Teplo potřebné ke změně skupenství tělesa za stálé teploty. `L = m · l`, kde l je **měrné skupenské teplo** (kolik J na 1 kg).",
+          "example": "Roztát 1 kg ledu 0 °C stojí 334 kJ."
+        },
+        {
+          "type": "example",
+          "question": "Kolik tepla potřebuješ na roztátí 0,5 kg ledu 0 °C (l = 334 kJ/kg)?",
+          "answer": "L = m · l = 0,5 · 334 = **167 kJ**."
+        },
+        {
+          "type": "example",
+          "question": "Proč tě chladí pot?",
+          "answer": "Pot se z kůže vypařuje. Na vypaření potřebuje skupenské teplo – a bere ho z tvé kůže. Kůže tím ztrácí energii a chladne."
+        },
+        {
+          "type": "heading",
+          "text": "Var a tlak"
+        },
+        {
+          "type": "text",
+          "text": "Teplota varu závisí na tlaku nad kapalinou. **Vyšší tlak = vyšší teplota varu.** V tlakovém (Papinově) hrnci vře voda asi při 120 °C, jídlo se uvaří rychleji. Na horách je tlak nižší a voda vře pod 100 °C – na Sněžce asi při 95 °C."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když přidám plamen pod vařící vodu, bude mít víc než 100 °C.",
+          "right": "Vařící voda (při normálním tlaku) má stále 100 °C, jen se rychleji vyvařuje.",
+          "why": "Dodané teplo jde na přeměnu vody v páru, ne na zvýšení teploty. Teplotu varu zvýší jen vyšší tlak."
+        },
+        {
+          "type": "summary",
+          "text": "Při změně skupenství stojí teplota, teplo jde na rozrušení vazeb: L = m·l. Vypařování ochlazuje. Vyšší tlak = vyšší teplota varu."
+        }
+      ]
+    },
+    {
+      "title": "Výpočty a diagram",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolik plynu spotřebuje kotel, aby z ledu udělal páru? Proč se kovy dají odlévat při přesné teplotě a sklo měkne postupně? Při jakém tlaku může voda existovat ve všech třech podobách najednou? Odpovědi dá pár vztahů a jeden graf."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Skupenství a jejich změny",
+          "definition": "Pevné ↔ kapalné: **tání / tuhnutí**. Kapalné ↔ plynné: **vypařování, var / kondenzace**. Pevné ↔ plynné: **sublimace / desublimace**."
+        },
+        {
+          "type": "term",
+          "term": "Měrná tepelná kapacita c",
+          "definition": "Teplo na ohřátí 1 kg látky o 1 K. Ohřátí bez změny skupenství: `Q = m · c · Δt`."
+        },
+        {
+          "type": "term",
+          "term": "Měrné skupenské teplo l",
+          "definition": "Teplo na změnu skupenství 1 kg látky při stálé teplotě (J/kg). Celkové **skupenské teplo** `L = m · l`."
+        },
+        {
+          "type": "term",
+          "term": "Krystalická a amorfní látka",
+          "definition": "**Krystalická** má částice v pravidelné mřížce a taje při přesné teplotě tání (led, kovy). **Amorfní** má částice neuspořádané a při ohřevu postupně měkne (sklo, vosk, asfalt)."
+        },
+        {
+          "type": "heading",
+          "text": "Hodnoty pro vodu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Děj (voda)",
+            "Měrné skupenské teplo"
+          ],
+          "rows": [
+            [
+              "tání ledu při 0 °C",
+              "334 kJ/kg"
+            ],
+            [
+              "vypařování při 100 °C",
+              "2 260 kJ/kg"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Porovnej: ohřát 1 kg vody z 0 °C na 100 °C stojí 420 kJ. Ale vypařit ji stojí 2 260 kJ – víc než pětkrát tolik."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "kJ",
+            "items": [
+              {
+                "label": "roztát 1 kg ledu",
+                "value": 334
+              },
+              {
+                "label": "ohřát 1 kg vody o 100 °C",
+                "value": 420
+              },
+              {
+                "label": "vypařit 1 kg vody",
+                "value": 2260
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Postup pro více kroků"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozděl děj na úseky: ohřev – změna skupenství – ohřev…",
+            "Na ohřev použij Q = m · c · Δt.",
+            "Na změnu skupenství použij L = m · l.",
+            "Všechna tepla sečti (pozor na stejné jednotky J nebo kJ)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik tepla potřebuješ na ohřátí 1 kg vody z 0 °C na 100 °C a její úplné vypaření? (c = 4,2 kJ/(kg·K), l = 2 260 kJ/kg)",
+          "answer": "Ohřev: 1 · 4,2 · 100 = 420 kJ. Vypaření: 1 · 2 260 = 2 260 kJ. Celkem **2 680 kJ**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik tepla roztaví 2 kg ledu 0 °C?",
+          "answer": "L = 2 · 334 = **668 kJ**."
+        },
+        {
+          "type": "heading",
+          "text": "Fázový diagram"
+        },
+        {
+          "type": "term",
+          "term": "Fázový diagram",
+          "definition": "Graf tlaku (svisle) proti teplotě (vodorovně), na kterém tři křivky oddělují oblasti pevné, kapalné a plynné látky: **křivka tání**, **křivka syté páry** (varu) a **sublimační křivka**."
+        },
+        {
+          "type": "term",
+          "term": "Trojný bod",
+          "definition": "Jediný bod (tlak a teplota), kde se všechny tři křivky potkají. Látka tam může být ve všech třech skupenstvích současně v rovnováze.",
+          "example": "Voda: asi 0,01 °C a 611 Pa."
+        },
+        {
+          "type": "text",
+          "text": "Z křivky varu je vidět, že s rostoucím tlakem roste teplota varu: v tlakovém hrnci vře voda nad 100 °C, na horách pod 100 °C."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na ohřátí 1 kg vody na 100 °C a vypaření stačí Q = m · c · Δt = 420 kJ.",
+          "right": "Musíš přičíst i skupenské teplo: 420 + 2 260 = 2 680 kJ.",
+          "why": "Q = m·c·Δt platí jen tam, kde se mění teplota. Během varu se teplota nemění, a přesto se spotřebuje obrovské teplo."
+        },
+        {
+          "type": "summary",
+          "text": "Ohřev: Q = m·c·Δt. Změna skupenství: L = m·l, teplota stojí. Krystalické látky mají teplotu tání, amorfní měknou. V trojném bodě jsou v rovnováze všechna tři skupenství."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik kJ tepla roztaví 2 kg ledu 0 °C? (l = 334 kJ/kg)",
+      "answers": [
+        "668"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik kJ tepla přemění 0,1 kg vody 100 °C na páru? (l = 2 260 kJ/kg)",
+      "answers": [
+        "226"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik kJ tepla potřebuješ k ohřátí 1 kg vody z 0 °C na 100 °C a jejímu úplnému vypaření? (c = 4,2 kJ/(kg·K), l = 2 260 kJ/kg)",
+      "answers": [
+        "2680"
+      ],
+      "explanation": "420 + 2 260 = 2 680 kJ"
+    },
+    {
+      "type": "truefalse",
+      "question": "Se stoupajícím vnějším tlakem teplota varu vody roste.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Na horách voda vře při vyšší teplotě než u moře.",
+      "answer": false,
+      "explanation": "Nižší tlak, nižší teplota varu."
+    },
+    {
+      "type": "choice",
+      "question": "Co je trojný bod?",
+      "options": [
+        "stav, kdy jsou v rovnováze všechna tři skupenství",
+        "teplota varu",
+        "kritický bod",
+        "bod tání"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který děj je sublimace?",
+      "options": [
+        "pevné → plynné",
+        "plynné → pevné",
+        "kapalné → plynné",
+        "pevné → kapalné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Proč chladí pocení?",
+      "options": [
+        "vypařování odebírá kůži skupenské teplo",
+        "pot je studený",
+        "pot odráží světlo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj děj s příkladem.",
+      "pairs": [
+        [
+          "sublimace",
+          "suchý led"
+        ],
+        [
+          "desublimace",
+          "jinovatka"
+        ],
+        [
+          "kondenzace",
+          "rosa"
+        ],
+        [
+          "tuhnutí",
+          "odlévání kovu"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Krystalická látka taje při určité teplotě, amorfní postupně měkne.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Proč se během tání ledu nemění teplota, i když teplo dodáváme?",
+      "answer": "Dodané teplo se spotřebuje na rozrušení krystalové mřížky (zvětšení potenciální energie částic), ne na zvýšení jejich kinetické energie."
+    },
+    {
+      "type": "open",
+      "question": "Jak závisí teplota varu na tlaku? Uveď využití.",
+      "answer": "S rostoucím tlakem teplota varu roste. Využívá se v tlakovém (Papinově) hrnci, kde voda vře nad 100 °C. Na horách vře pod 100 °C."
+    }
+  ]
+}

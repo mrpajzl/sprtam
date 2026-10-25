@@ -1,0 +1,450 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "alkany-cykloalkany",
+  "title": "Alkany a cykloalkany",
+  "emoji": "⛽",
+  "explanations": [
+    {
+      "title": "Pojmenuj mě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zemní plyn, propan-butan, benzín, parafín ve svíčce – všechno **alkany**. Patří k nejjednodušším organickým látkám, a proto se na nich učí to nejdůležitější: jak organické látky **pojmenovat**."
+        },
+        {
+          "type": "text",
+          "text": "Stejná pravidla pak použiješ u všech dalších skupin. Navíc pochopíš, proč má benzín „oktanové číslo“."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Alkan",
+          "definition": "Uhlovodík (jen C a H) pouze s **jednoduchými vazbami** C–C a C–H. Je **nasycený**. Obecný vzorec **CₙH₂ₙ₊₂**, koncovka **-an**.",
+          "example": "propan C₃H₈"
+        },
+        {
+          "type": "term",
+          "term": "Alkyl",
+          "definition": "Zbytek alkanu, kterému chybí jeden vodík – „větev“ na řetězci. Koncovka **-yl**.",
+          "example": "methyl –CH₃, ethyl –CH₂CH₃, propyl –CH₂CH₂CH₃, isopropyl –CH(CH₃)₂"
+        },
+        {
+          "type": "term",
+          "term": "Lokant",
+          "definition": "Číslo, které říká, na kterém uhlíku hlavního řetězce větev sedí.",
+          "example": "2-methylbutan: methyl je na 2. uhlíku."
+        },
+        {
+          "type": "heading",
+          "text": "Názvy prvních alkanů"
+        },
+        {
+          "type": "text",
+          "text": "Methan (1 C), ethan (2), propan (3), butan (4), pentan (5), hexan (6), heptan (7), oktan (8), nonan (9), dekan (10)."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla pro rozvětvený alkan"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi **nejdelší řetězec** uhlíků – dá základ názvu.",
+            "Očísluj ho z té strany, aby větve měly **co nejnižší lokanty**.",
+            "Pojmenuj větve (methyl, ethyl…). Stejné větve spoj předponou **di-, tri-, tetra-**.",
+            "Větve seřaď **abecedně**, před každou dej lokant. Čísla odděl čárkou, číslo od slova pomlčkou."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Pojmenuj CH₃–CH(CH₃)–CH(CH₃)–CH₃.",
+          "answer": "Nejdelší řetězec: 4 uhlíky → **butan**. Na C2 a C3 je methyl → dvě stejné větve → dimethyl. Lokanty 2,3 (z obou stran stejně). **2,3-dimethylbutan**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik izomerů má pentan C₅H₁₂ a jak se jmenují?",
+          "answer": "Řetězec 5 C: **pentan**. Řetězec 4 C + methyl: **2-methylbutan**. Řetězec 3 C + dva methyly na prostředním: **2,2-dimethylpropan**. Celkem **3 izomery**."
+        },
+        {
+          "type": "text",
+          "text": "Zkontroluj si alkyly – otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "methyl",
+                "back": "–CH₃"
+              },
+              {
+                "front": "ethyl",
+                "back": "–CH₂CH₃"
+              },
+              {
+                "front": "propyl",
+                "back": "–CH₂CH₂CH₃"
+              },
+              {
+                "front": "isopropyl",
+                "back": "–CH(CH₃)₂"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vlastnosti"
+        },
+        {
+          "type": "text",
+          "text": "S délkou řetězce **roste teplota varu**: C1–C4 plyny, C5–C16 kapaliny, delší pevné. Rozvětvené izomery vřou níž než nerozvětvené – molekuly se k sobě nemohou tolik přiblížit."
+        },
+        {
+          "type": "text",
+          "text": "Alkany jsou **málo reaktivní** – mají jen pevné, nepolární σ vazby. Hoří a za světla reagují s halogeny (substitucí přes radikály)."
+        },
+        {
+          "type": "term",
+          "term": "Oktanové číslo",
+          "definition": "Míra odolnosti benzínu proti samovznícení („klepání“) v motoru. Isooktan (2,2,4-trimethylpentan) má **100**, heptan **0**.",
+          "example": "Benzín Natural 95 se při zkoušce chová jako směs 95 % isooktanu a 5 % heptanu."
+        },
+        {
+          "type": "heading",
+          "text": "Cykloalkany"
+        },
+        {
+          "type": "term",
+          "term": "Cykloalkan",
+          "definition": "Alkan uzavřený do kruhu. Kruh „spotřebuje“ dva vodíky → vzorec **CₙH₂ₙ**. Předpona cyklo-.",
+          "example": "cyklohexan C₆H₁₂; nejstabilnější je jeho tvar **židličky**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "CH₃–CH(CH₃)–CH(CH₃)–CH₃ = 2,3-methylbutan",
+          "right": "**2,3-dimethylbutan**",
+          "why": "Dvě stejné větve se musí označit předponou di-. Dva lokanty = dvě větve."
+        },
+        {
+          "type": "summary",
+          "text": "Alkany CₙH₂ₙ₊₂, cykloalkany CₙH₂ₙ. Název: nejdelší řetězec, nejnižší lokanty, větve abecedně s di-/tri-. Teplota varu roste s délkou řetězce. Málo reaktivní."
+        }
+      ]
+    },
+    {
+      "title": "Reakce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Alkany se jinak latinsky nazývají **parafíny** – „málo slučivé“. Opravdu se jim většina činidel vyhýbá. Přesto umějí dvě důležité věci: **hořet** (a pohánět auta i elektrárny) a za světla **vyměnit vodík za halogen**."
+        },
+        {
+          "type": "text",
+          "text": "Na chloraci methanu se naučíš, jak probíhá řetězová reakce s radikály – stejný princip ničí ozonovou vrstvu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Alkan",
+          "definition": "Nasycený uhlovodík s jednoduchými vazbami, CₙH₂ₙ₊₂ (n = počet uhlíků)."
+        },
+        {
+          "type": "term",
+          "term": "Vazba σ",
+          "definition": "Jednoduchá kovalentní vazba s elektrony na spojnici jader. Vazby C–C a C–H jsou pevné a skoro nepolární – proto je alkany těžko napadnou ionty."
+        },
+        {
+          "type": "term",
+          "term": "Radikál",
+          "definition": "Částice s nepárovým elektronem, velmi reaktivní. Značí se tečkou: Cl·."
+        },
+        {
+          "type": "term",
+          "term": "Substituce",
+          "definition": "Reakce, při níž se atom nahradí jiným atomem."
+        },
+        {
+          "type": "heading",
+          "text": "Proč jsou alkany líné"
+        },
+        {
+          "type": "text",
+          "text": "Uhlík a vodík mají podobnou elektronegativitu (schopnost přitahovat elektrony). Vazby C–H jsou proto skoro nepolární – nemají kladné ani záporné místo, kam by mohl zaútočit ion. Zaútočit může jen agresivní radikál."
+        },
+        {
+          "type": "heading",
+          "text": "Radikálová substituce – chlorace methanu"
+        },
+        {
+          "type": "text",
+          "text": "Celkově: `CH₄ + Cl₂ → CH₃Cl + HCl` (za světla). Probíhá ve třech fázích:"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Iniciace:** světlo rozštěpí Cl₂ na dva radikály: Cl₂ → 2 Cl·",
+            "**Propagace:** Cl· vytrhne vodík z methanu: CH₄ + Cl· → CH₃· + HCl",
+            "**Propagace:** methylový radikál vezme chlor: CH₃· + Cl₂ → CH₃Cl + Cl· – nový Cl· pokračuje dál (řetězová reakce)",
+            "**Terminace:** dva radikály se srazí a řetěz skončí: Cl· + Cl· → Cl₂, CH₃· + Cl· → CH₃Cl, CH₃· + CH₃· → C₂H₆"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč stačí málo světla na přeměnu velkého množství methanu?",
+          "answer": "Jeden radikál Cl· vytvořený světlem spustí **řetěz**: v každém kroku propagace vzniká nový radikál. Tisíce molekul zreagují, než řetěz skončí terminací."
+        },
+        {
+          "type": "heading",
+          "text": "Hoření"
+        },
+        {
+          "type": "example",
+          "question": "Napiš dokonalé hoření butanu.",
+          "answer": "2 C₄H₁₀ + 13 O₂ → 8 CO₂ + 10 H₂O. Kontrola: C 8 = 8; H 20 = 20; O 26 = 16 + 10."
+        },
+        {
+          "type": "text",
+          "text": "Při nedostatku kyslíku vzniká jedovatý CO nebo saze (C)."
+        },
+        {
+          "type": "heading",
+          "text": "Vlastnosti a řada alkanů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "n",
+            "Název",
+            "Skupenství",
+            "Použití"
+          ],
+          "rows": [
+            [
+              "1–4",
+              "methan–butan",
+              "plyn",
+              "zemní plyn, propan-butan"
+            ],
+            [
+              "5–16",
+              "pentan–hexadekan",
+              "kapalina",
+              "benzín, nafta"
+            ],
+            [
+              "nad 17",
+              "vyšší alkany",
+              "pevné",
+              "parafín, vazelína"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik vodíků má alkan s 12 uhlíky?",
+          "answer": "CₙH₂ₙ₊₂: 2 · 12 + 2 = **26** (dodekan C₁₂H₂₆)."
+        },
+        {
+          "type": "text",
+          "text": "Doplň chybějící údaje."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Cykloalkany mají obecný vzorec ",
+                "after": "",
+                "options": [
+                  "CₙH₂ₙ",
+                  "CₙH₂ₙ₊₂",
+                  "CₙH₂ₙ₋₂"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Nejstabilnější konformace cyklohexanu je ",
+                "after": "",
+                "options": [
+                  "židličková",
+                  "vaničková",
+                  "rovinná"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Oktanové číslo isooktanu je ",
+                "after": "",
+                "options": [
+                  "100",
+                  "0",
+                  "8"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "S delším řetězcem teplota varu alkanů ",
+                "after": "",
+                "options": [
+                  "roste",
+                  "klesá",
+                  "se nemění"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak se alkany jmenují"
+        },
+        {
+          "type": "text",
+          "text": "Nejdelší řetězec dá základ, číslujeme tak, aby větve (alkyly: methyl, ethyl…) měly nejnižší čísla, stejné větve spojí di-/tri-, seřadíme abecedně. Např. 2,3-dimethylbutan."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Chlorace methanu je elektrofilní adice.",
+          "right": "Je to **radikálová substituce** (S_R).",
+          "why": "Alkan nemá násobnou vazbu, na kterou by se dalo něco přidat – vodík se jen **vymění** za chlor. A útočí radikály, ne ionty."
+        },
+        {
+          "type": "summary",
+          "text": "Alkany mají pevné nepolární σ vazby → málo reaktivní. Reagují hořením a radikálovou substitucí (iniciace, propagace, terminace). Cykloalkany CₙH₂ₙ, cyklohexan v židličce."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký mechanismus má chlorace methanu na světle?",
+      "options": [
+        "radikálová substituce",
+        "elektrofilní adice",
+        "nukleofilní substituce",
+        "eliminace"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik strukturních izomerů má pentan?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Správný název CH₃–CH(CH₃)–CH(CH₃)–CH₃?",
+      "options": [
+        "2,3-dimethylbutan",
+        "2,3-methylbutan",
+        "hexan",
+        "1,2-dimethylbutan"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký obecný vzorec mají cykloalkany?",
+      "options": [
+        "CₙH₂ₙ",
+        "CₙH₂ₙ₊₂",
+        "CₙH₂ₙ₋₂",
+        "CₙHₙ"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Isooktan má oktanové číslo 100.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Teplota varu nerozvětvených alkanů s délkou řetězce klesá.",
+      "answer": false,
+      "explanation": "Roste – silnější mezimolekulové síly."
+    },
+    {
+      "type": "choice",
+      "question": "Která konformace cyklohexanu je nejstabilnější?",
+      "options": [
+        "židličková",
+        "vaničková",
+        "planární"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik atomů vodíku má alkan s 12 atomy uhlíku?",
+      "answers": [
+        "26"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj alkyl se vzorcem.",
+      "pairs": [
+        [
+          "methyl",
+          "–CH₃"
+        ],
+        [
+          "ethyl",
+          "–CH₂CH₃"
+        ],
+        [
+          "propyl",
+          "–CH₂CH₂CH₃"
+        ],
+        [
+          "isopropyl",
+          "–CH(CH₃)₂"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč jsou alkany málo reaktivní?",
+      "options": [
+        "mají jen pevné nepolární σ vazby",
+        "mají π vazby",
+        "jsou iontové",
+        "mají volné elektronové páry"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Popiš postup tvorby názvu rozvětveného alkanu.",
+      "answer": "Najdu nejdelší uhlíkatý řetězec, ten dá základ názvu. Očísluji ho, aby substituenty měly co nejnižší lokanty. Substituenty uvedu abecedně s lokanty a násobícími předponami, např. 2,3-dimethylbutan."
+    },
+    {
+      "type": "open",
+      "question": "Popiš mechanismus radikálové substituce na chloraci methanu.",
+      "answer": "Iniciace: světlo štěpí Cl₂ na dva radikály Cl·. Propagace: Cl· odtrhne H z methanu, vznikne CH₃· a HCl; CH₃· reaguje s Cl₂ na CH₃Cl a nový Cl·. Terminace: radikály se spojí."
+    }
+  ]
+}

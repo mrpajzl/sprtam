@@ -12,10 +12,10 @@ Učivo je rozdělené **stupeň → ročník → předmět → téma**:
 Každé téma má:
 
 - **dvě různá vysvětlení**. Když první nesedí, tlačítko *„Nerozumím – vysvětli to jinak“* ukáže druhé, třeba „na pizze“ místo „na číselné ose“. Aplikace si zapamatuje, které ti víc pomohlo.
-- **interaktivní pomůcky**: číselnou osu, zlomky na koláči, váhy na rovnice, hodiny, časovou osu, třídění do skupin, písemné počítání pod sebou krok za krokem a další.
+- **interaktivní pomůcky**: číselnou osu, zlomky na koláči, váhy na rovnice, hodiny, časovou osu, třídění do skupin, písemné počítání pod sebou krok za krokem a další. Všechny jsou v [galerii](https://sprtam.cz/widgety).
 - **otázky** různých typů: výběr z možností, pravda/nepravda, napiš odpověď, seřaď, spoj dvojice a ústní otázky.
 
-Obsah je v souborech [`src/content/data/<ročník>/<předmět>.ts`](../src/content/data). Pravidla, podle kterých se píše, jsou v [CONTENT.md](CONTENT.md). Před každým nasazením ho automaticky kontroluje `npm run check:content`, aby u každé otázky existovala správná odpověď a bylo dost otázek.
+Obsah je ve složce [`content/`](../content): každé téma je jeden soubor `content/topics/<ročník>/<předmět>/<téma>.json`. Pravidla, podle kterých se píše, jsou v [CONTENT.md](CONTENT.md). Před každým nasazením ho automaticky kontroluje `npm run check:content`, aby u každé otázky existovala správná odpověď, bylo dost otázek a každé vysvětlení začínalo od nuly.
 
 ## Režimy procvičování
 
@@ -75,7 +75,7 @@ Na úvodní obrazovce aplikace doporučí až 5 témat, nejvýš 2 z jednoho př
 
 ## Anglická slovíčka
 
-Přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního rámce, rozdělených do tematických skupin. Kód: [`src/screens/Vocab.tsx`](../src/screens/Vocab.tsx), data v [`src/vocab/data`](../src/vocab/data).
+Přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního rámce, rozdělených do tematických skupin. Kód: [`src/screens/Vocab.tsx`](../src/screens/Vocab.tsx), data v [`content/vocab`](../content/vocab).
 
 - Otázka zní česky: *„Jak se řekne ‚pták‘?“*
 - **Nové slovo** vybíráš ze tří podobných možností (*bird / bard / parrot*): správné, podobně vypadající a příbuzné.

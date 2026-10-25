@@ -1,0 +1,292 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rovnice-neznama-ve-jmenovateli",
+  "title": "Rovnice s neznámou ve jmenovateli",
+  "emoji": "🔍",
+  "explanations": [
+    {
+      "title": "Odstraň zlomek",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "12 bonbonů rozdělíš mezi děti a každé dostane 4. Kolik bylo dětí? Zapsáno: 12/x = 4. Neznámá je tady **ve jmenovateli** – dole ve zlomku."
+        },
+        {
+          "type": "text",
+          "text": "Takové rovnice vznikají u úloh o společné práci, rychlosti a čase nebo o dělení. Trik je jednoduchý: zbavit se zlomku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rovnice",
+          "definition": "Zápis, kde se levá a pravá strana rovnají. Hledáme číslo x, pro které to platí.",
+          "example": "12/x = 4"
+        },
+        {
+          "type": "term",
+          "term": "Jmenovatel",
+          "definition": "Číslo nebo výraz dole ve zlomku (za lomítkem).",
+          "example": "V 12/x je jmenovatel x."
+        },
+        {
+          "type": "term",
+          "term": "Podmínka",
+          "definition": "Hodnota, kterou x nesmí mít, protože by jmenovatel byl 0 (nulou dělit nejde).",
+          "example": "U 12/x platí x ≠ 0."
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Číslo, které rovnici splňuje – její řešení.",
+          "example": "Kořen rovnice 12/x = 4 je 3."
+        },
+        {
+          "type": "heading",
+          "text": "Úvaha"
+        },
+        {
+          "type": "text",
+          "text": "12 děleno kolika dá 4? Protože 12 : 3 = 4, je **x = 3**. U jednoduchých rovnic to vidíš hned. U složitějších pomůže trik."
+        },
+        {
+          "type": "heading",
+          "text": "Trik: vynásob jmenovatelem"
+        },
+        {
+          "type": "text",
+          "text": "Když obě strany rovnice 12/x = 4 vynásobíš x, zlomek zmizí: **12 = 4x**. To je obyčejná rovnice. Zkus ji vyřešit na vahách – rozděl obě misky na 4 díly."
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 4,
+            "b": 0,
+            "c": 12
+          }
+        },
+        {
+          "type": "example",
+          "question": "6/x = 2",
+          "answer": "Podmínka x ≠ 0. Vynásob x: 6 = 2x. Vyděl 2: **x = 3**. Kontrola: 6/3 = 2 ✓."
+        },
+        {
+          "type": "example",
+          "question": "4/(x + 2) = 1",
+          "answer": "Podmínka x ≠ −2. Vynásob (x + 2): 4 = x + 2. **x = 2**. Kontrola: 4/4 = 1 ✓."
+        },
+        {
+          "type": "heading",
+          "text": "Pozor na zakázané číslo"
+        },
+        {
+          "type": "text",
+          "text": "Rovnice x/(x − 2) = 2/(x − 2). Vynásobíš (x − 2) a vyjde x = 2. Ale pro x = 2 je jmenovatel 0! Takové číslo je zakázané. Rovnice **nemá řešení**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vyšlo x = 2, hotovo.",
+          "right": "Porovnej výsledek s podmínkou. Je-li zakázaný, není to řešení.",
+          "why": "Násobením výrazem s x se může objevit „falešný“ kořen, pro který by v původní rovnici byl jmenovatel nula."
+        },
+        {
+          "type": "summary",
+          "text": "Napiš podmínku, vynásob rovnici jmenovatelem, vyřeš a ověř, že kořen není zakázaný."
+        }
+      ]
+    },
+    {
+      "title": "Postup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rovnice s neznámou ve jmenovateli se řeší vždy stejně: převedeš je na obyčejnou lineární rovnici. Postup má pět kroků a poslední – kontrola podmínky – je nejdůležitější."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Lineární rovnice",
+          "definition": "Rovnice, kde je x jen v první mocnině, třeba 3x + 1 = 7. Řeší se úpravami na obou stranách.",
+          "example": "x + 1 = 3x − 3"
+        },
+        {
+          "type": "term",
+          "term": "Lomený výraz",
+          "definition": "Zlomek s proměnnou ve jmenovateli.",
+          "example": "(x + 1)/(x − 1)"
+        },
+        {
+          "type": "term",
+          "term": "Podmínka",
+          "definition": "x nesmí mít hodnotu, pro kterou je některý jmenovatel 0.",
+          "example": "(x + 1)/(x − 1): x ≠ 1"
+        },
+        {
+          "type": "term",
+          "term": "Společný jmenovatel",
+          "definition": "Výraz, který jde vydělit všemi jmenovateli v rovnici. Vynásobením jím zmizí všechny zlomky.",
+          "example": "Pro 1/x a 1/(2x) je to 2x."
+        },
+        {
+          "type": "heading",
+          "text": "Pět kroků"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zadání: (x + 1)/(x − 1) = 3",
+            "Podmínka: x − 1 ≠ 0 → x ≠ 1.",
+            "Vynásob obě strany (x − 1): x + 1 = 3(x − 1) = 3x − 3.",
+            "Vyřeš: 1 + 3 = 3x − x → 4 = 2x → x = 2.",
+            "Porovnej s podmínkou: 2 ≠ 1 ✓. Kořen je x = 2."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "3/x + 1 = 4",
+          "answer": "Podmínka x ≠ 0. Odečti 1: 3/x = 3. Vynásob x: 3 = 3x. **x = 1** ✓."
+        },
+        {
+          "type": "example",
+          "question": "1/x + 1/(2x) = 3",
+          "answer": "Podmínka x ≠ 0. Společný jmenovatel 2x. Vynásob: 2 + 1 = 6x. 3 = 6x, **x = 1/2 = 0,5** ✓."
+        },
+        {
+          "type": "example",
+          "question": "(2x − 1)/3 = (x + 4)/2",
+          "answer": "Tady je x jen v čitateli, podmínka žádná. Vynásob 6: 2(2x − 1) = 3(x + 4). 4x − 2 = 3x + 12. **x = 14**."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si poslední krok prvního příkladu na vahách: 2x = 4."
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 2,
+            "b": 0,
+            "c": 4
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "1/x + 1/(2x) = 3 → vynásobím x: 1 + 1/2 = 3x … a zlomek zůstal.",
+          "right": "Násob **společným jmenovatelem** 2x: 2 + 1 = 6x.",
+          "why": "Aby zmizely všechny zlomky, musí jít číslo, kterým násobíš, vydělit každým jmenovatelem."
+        },
+        {
+          "type": "summary",
+          "text": "Podmínka → násob společným jmenovatelem → vyřeš → ověř podmínku. Kořen, který porušuje podmínku, není řešení."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "6/x = 2, x =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "(x + 1)/(x − 1) = 3, x =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "4/(x + 2) = 1, x =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3/x + 1 = 4, x =",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "10/(2x) = 5, x =",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je podmínka rovnice 5/(x + 4) = 1?",
+      "options": [
+        "x ≠ −4",
+        "x ≠ 4",
+        "x ≠ 0",
+        "x ≠ 5"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Rovnice x/(x − 2) = 2/(x − 2) má řešení x = 2.",
+      "answer": false,
+      "explanation": "x = 2 porušuje podmínku x ≠ 2 – rovnice nemá řešení."
+    },
+    {
+      "type": "input",
+      "question": "(2x − 1)/3 = (x + 4)/2, x =",
+      "answers": [
+        "14"
+      ],
+      "explanation": "2(2x − 1) = 3(x + 4) → 4x − 2 = 3x + 12"
+    },
+    {
+      "type": "choice",
+      "question": "Čím vynásobíš rovnici 1/x + 1/(2x) = 3, aby zmizely zlomky?",
+      "options": [
+        "2x",
+        "x",
+        "3",
+        "x²"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "1/x + 1/(2x) = 3, x =",
+      "answers": [
+        "0,5",
+        "1/2"
+      ],
+      "explanation": "2 + 1 = 6x → x = 1/2"
+    },
+    {
+      "type": "open",
+      "question": "Jak řešíš rovnici s neznámou ve jmenovateli?",
+      "answer": "Stanovím podmínky, vynásobím obě strany společným jmenovatelem a vyřeším vzniklou rovnici. Nakonec ověřím, že kořen splňuje podmínky."
+    },
+    {
+      "type": "open",
+      "question": "Proč musíš kořen porovnat s podmínkami?",
+      "answer": "Násobením výrazem s neznámou může vzniknout kořen, pro který by byl jmenovatel nulový. Takový kořen řešením není."
+    }
+  ]
+}

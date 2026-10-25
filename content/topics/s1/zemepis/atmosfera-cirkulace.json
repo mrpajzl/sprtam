@@ -1,0 +1,360 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "atmosfera-cirkulace",
+  "title": "Atmosféra a její cirkulace",
+  "emoji": "🌬️",
+  "explanations": [
+    {
+      "title": "Patro po patře",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Letadlo letí v 10 km a venku je −50 °C. Meteorologický balon vystoupá do 30 km a najde tam ozon. Polární záře svítí ve výšce přes 100 km. Vzduch kolem Země má „patra“ – a každé se chová jinak."
+        },
+        {
+          "type": "text",
+          "text": "Když pochopíš stavbu atmosféry a tlak vzduchu, porozumíš počasí: proč někdy prší a jindy je týden jasno."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atmosféra",
+          "definition": "Plynný obal Země. Suchý vzduch tvoří hlavně **dusík (asi 78 %)** a **kyslík (asi 21 %)**, zbytek je argon, CO₂ a další plyny.",
+          "example": "Vzduch, který dýcháš."
+        },
+        {
+          "type": "term",
+          "term": "Ozon",
+          "definition": "Zvláštní forma kyslíku (O₃). Pohlcuje škodlivé UV záření ze Slunce.",
+          "example": "Ozonová vrstva leží ve stratosféře, asi 20–30 km vysoko."
+        },
+        {
+          "type": "term",
+          "term": "Tlak vzduchu",
+          "definition": "Váha sloupce vzduchu nad námi, která tlačí na povrch. Měří se v hektopascalech (hPa).",
+          "example": "Průměrně u hladiny moře asi 1 013 hPa."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Vrstvy atmosféry"
+        },
+        {
+          "type": "text",
+          "text": "Porovnej, kde zhruba končí jednotlivé vrstvy. Všimni si, jak tenká je troposféra – a přitom se v ní odehrává všechno počasí."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "km (horní hranice, asi)",
+            "items": [
+              {
+                "label": "troposféra",
+                "value": 12
+              },
+              {
+                "label": "stratosféra",
+                "value": 50
+              },
+              {
+                "label": "mezosféra",
+                "value": 85
+              },
+              {
+                "label": "termosféra",
+                "value": 500
+              }
+            ]
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Troposféra** (do asi 8–18 km, nad póly nižší, nad rovníkem vyšší) – je v ní skoro všechna vodní pára, vzniká počasí. Teplota klesá asi o **0,65 °C na 100 m**.",
+            "**Stratosféra** (do asi 50 km) – je v ní **ozonosféra**. Ozon pohlcuje UV záření, a proto teplota s výškou **roste**.",
+            "**Mezosféra** (do asi 85 km) – teplota znovu klesá, shoří v ní většina meteorů.",
+            "**Termosféra** – velmi řídký vzduch, polární záře.",
+            "**Exosféra** – nejvyšší vrstva, plynule přechází do vesmíru."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Tlaková výše a níže"
+        },
+        {
+          "type": "term",
+          "term": "Tlaková výše (anticyklona)",
+          "definition": "Oblast s vyšším tlakem. Vzduch v ní **klesá**, otepluje se, mraky se rozpouštějí. Bývá jasno a stálé počasí.",
+          "example": "Letní týden bez mráčku."
+        },
+        {
+          "type": "term",
+          "term": "Tlaková níže (cyklona)",
+          "definition": "Oblast s nižším tlakem. Vzduch v ní **stoupá**, chladne, vznikají mraky a srážky. Na severní polokouli se točí proti směru hodinových ručiček.",
+          "example": "Deštivé větrné dny."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Na zemi je 15 °C. Kolik bude zhruba v 3 km výšky?",
+          "answer": "3 000 m = 30 × 100 m. 30 × 0,65 = 19,5 °C. 15 − 19,5 ≈ **−4,5 °C**."
+        },
+        {
+          "type": "example",
+          "question": "Proč ve stratosféře teplota s výškou roste, když v troposféře klesá?",
+          "answer": "Ozon ve stratosféře pohlcuje UV záření Slunce a přeměňuje ho na teplo. Vzduch se tak ohřívá shora, ne od zemského povrchu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Čím výš, tím je vždycky chladněji.",
+          "right": "To platí v troposféře a mezosféře. Ve stratosféře a termosféře teplota s výškou roste.",
+          "why": "Troposféru ohřívá zemský povrch zespodu. Stratosféru ohřívá ozon, který pohlcuje UV záření."
+        },
+        {
+          "type": "summary",
+          "text": "Vrstvy od povrchu: troposféra (počasí), stratosféra (ozon), mezosféra, termosféra, exosféra. Tlaková výše (anticyklona) = vzduch klesá, jasno. Tlaková níže (cyklona) = vzduch stoupá, oblačno a srážky."
+        }
+      ]
+    },
+    {
+      "title": "Velký koloběh vzduchu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč je Sahara poušť a Amazonie deštný prales? Proč u nás nejčastěji fouká od západu? Proč plachetnice při objevných plavbách pluly do Ameriky nejdřív na jih ke Kanárským ostrovům? Odpověď je jedna: vzduch nad Zemí koluje v obřích smyčkách."
+        },
+        {
+          "type": "text",
+          "text": "Tomuto pohybu se říká **všeobecná cirkulace atmosféry**. Jakmile ho pochopíš, vysvětlíš rozložení pouští, pralesů i větrů na celé planetě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atmosféra",
+          "definition": "Vzduchový obal Země. Počasí vzniká v nejnižší vrstvě – **troposféře**.",
+          "example": "Nad troposférou je stratosféra s ozonem."
+        },
+        {
+          "type": "term",
+          "term": "Tlaková výše a níže",
+          "definition": "Kde vzduch **stoupá**, je u země nižší tlak (**níže, cyklona**) – mraky a déšť. Kde vzduch **klesá**, je vyšší tlak (**výše, anticyklona**) – jasno a sucho.",
+          "example": "Vítr fouká z výše do níže, jako vzduch z nafouknutého balonku."
+        },
+        {
+          "type": "term",
+          "term": "Cirkulace",
+          "definition": "Koloběh – pohyb dokola.",
+          "example": "Teplý vzduch nahoru, studený dolů a zpět."
+        },
+        {
+          "type": "term",
+          "term": "Obratník",
+          "definition": "Rovnoběžka asi 23,5° severně nebo jižně od rovníku.",
+          "example": "Obratník Raka vede Saharou."
+        },
+        {
+          "type": "heading",
+          "text": "Krok za krokem kolem planety"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rovník: Slunce hřeje nejvíc, ohřátý vlhký vzduch **stoupá** → níže, mraky, vydatné deště (prales).",
+            "Ve výšce vzduch proudí k pólům a cestou chladne.",
+            "Kolem **30° š.** suchý vzduch **klesá** → **subtropická výše**, jasno, sucho – **pouště** (Sahara).",
+            "Od 30° zpět k rovníku vanou při zemi **pasáty**. Coriolisova síla je stáčí – na severní polokouli vanou od severovýchodu.",
+            "Mezi 30° a 60° vanou **západní větry** mírných šířek (i nad Českem).",
+            "Kolem **60° š.** se studený polární vzduch potkává s teplejším – **polární fronta**, níže, časté deště.",
+            "Na **pólech** studený těžký vzduch klesá → **polární výše**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Smyčka mezi rovníkem a 30° se jmenuje **Hadleyova buňka**. Klepej na kroky a sleduj, jak se uzavírá."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "výstup na rovníku",
+              "proudění k pólům ve výšce",
+              "sestup kolem 30°",
+              "pasáty zpět k rovníku"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Fronty a místní větry"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Fronta** – rozhraní teplého a studeného vzduchu. Na **teplé frontě** se teplý vzduch nasouvá na studený, na **studené** se studený vzduch podsouvá pod teplý.",
+            "**Föhn** – teplý suchý vítr, který padá z hor na závětrné straně (Alpy)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Proč jsou pouště kolem obratníků?",
+          "answer": "Kolem 30° š. sestupuje suchý vzduch Hadleyovy buňky. Při klesání se otepluje a mraky se v něm rozpouštějí – vzniká **subtropická výše**, téměř neprší."
+        },
+        {
+          "type": "example",
+          "question": "Proč v Česku fouká nejčastěji od západu?",
+          "answer": "Česko leží asi na 50° s. š. – v pásu **západních větrů** mírných šířek mezi 30° a 60°."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pasáty vanou od rovníku k obratníkům.",
+          "right": "Pasáty vanou od obratníků (subtropické výše) **k rovníku**.",
+          "why": "Vítr vane z vyššího tlaku do nižšího. Výše je kolem 30°, níže na rovníku."
+        },
+        {
+          "type": "summary",
+          "text": "Rovník: vzduch stoupá, prší. 30°: vzduch klesá, pouště. Pasáty vanou k rovníku, mezi 30° a 60° západní větry, na 60° polární fronta, na pólech polární výše."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "order",
+      "question": "Seřaď vrstvy atmosféry od povrchu.",
+      "items": [
+        "troposféra",
+        "stratosféra",
+        "mezosféra",
+        "termosféra",
+        "exosféra"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve které vrstvě je ozonosféra?",
+      "options": [
+        "troposféra",
+        "stratosféra",
+        "mezosféra",
+        "termosféra"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "V tlakové výši vzduch klesá a převládá jasno.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenují stálé větry vanoucí od obratníků k rovníku?",
+      "options": [
+        "monzuny",
+        "pasáty",
+        "západní větry",
+        "föhn"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Proč jsou kolem obratníků pouště?",
+      "options": [
+        "sestupuje tam suchý vzduch subtropické výše",
+        "je tam chladno",
+        "fouká tam monzun",
+        "je tam vysoká nadmořská výška"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a popis.",
+      "pairs": [
+        [
+          "cyklona",
+          "tlaková níže"
+        ],
+        [
+          "anticyklona",
+          "tlaková výše"
+        ],
+        [
+          "teplá fronta",
+          "teplý vzduch nasouvá na studený"
+        ],
+        [
+          "föhn",
+          "teplý padavý vítr"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Na severní polokouli proudí vzduch v cykloně proti směru hodinových ručiček.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Kolem které zeměpisné šířky (ve stupních) klesá vzduch Hadleyovy buňky?",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se mění teplota v troposféře s výškou?",
+      "options": [
+        "klesá asi o 0,65 °C na 100 m",
+        "roste",
+        "nemění se",
+        "klesá o 10 °C na 100 m"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které plyny tvoří suchý vzduch převážně?",
+      "options": [
+        "dusík a kyslík",
+        "kyslík a CO₂",
+        "argon a dusík",
+        "vodík a helium"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Popiš všeobecnou cirkulaci atmosféry.",
+      "answer": "Na rovníku vzduch stoupá, kolem 30° klesá (subtropická výše), pasáty se vracejí k rovníku – Hadleyova buňka. Mezi 30° a 60° vanou západní větry, na 60° je polární fronta a u pólů polární výše."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi cyklonou a anticyklonou?",
+      "answer": "Cyklona je tlaková níže, vzduch v ní stoupá, tvoří se oblaka a srážky. Anticyklona je tlaková výše, vzduch klesá a převládá jasné, stálé počasí."
+    }
+  ]
+}

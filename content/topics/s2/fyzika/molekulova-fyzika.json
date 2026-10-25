@@ -1,0 +1,418 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "molekulova-fyzika",
+  "title": "Kinetická teorie látek",
+  "emoji": "⚛️",
+  "explanations": [
+    {
+      "title": "Důkazy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Někdo v kuchyni upeče bábovku a za chvíli ji cítíš i v pokoji. Nikdo vůni nenesl – přišla sama. Kapka inkoustu ve sklenici vody se rozleje do celé sklenice, i když nemícháš."
+        },
+        {
+          "type": "text",
+          "text": "Tyto jevy vysvětluje představa, že každá látka se skládá z nepatrných částic, které se neustále hýbou. Je to základ celé nauky o teple, plynech a skupenstvích."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Částice",
+          "definition": "Nejmenší kousky látky – atomy, molekuly nebo ionty. Jsou tak malé, že jedna kapka vody jich obsahuje asi 10²¹ – jedničku s 21 nulami.",
+          "example": "Molekula vody H₂O je složená ze dvou atomů vodíku a jednoho kyslíku."
+        },
+        {
+          "type": "term",
+          "term": "Kinetická teorie látek",
+          "definition": "Tři tvrzení: 1. látky se skládají z částic, 2. částice se **neustále a neuspořádaně** pohybují, 3. částice na sebe působí silami (přitahují se a na velmi malou vzdálenost odpuzují)."
+        },
+        {
+          "type": "heading",
+          "text": "Jak víme, že se částice hýbou"
+        },
+        {
+          "type": "term",
+          "term": "Difuze",
+          "definition": "Samovolné pronikání částic jedné látky mezi částice druhé, bez míchání.",
+          "example": "Vůně bábovky v celém bytě, čaj zbarví vodu kolem sáčku."
+        },
+        {
+          "type": "term",
+          "term": "Brownův pohyb",
+          "definition": "Pod mikroskopem pozorované chaotické poskakování drobných zrnek (např. pylu) ve vodě. Do zrnek nepravidelně narážejí molekuly vody, které samy nevidíme."
+        },
+        {
+          "type": "term",
+          "term": "Tlak plynu",
+          "definition": "Molekuly plynu neustále bombardují stěny nádoby. Součet všech těch nárazů cítíme jako tlak.",
+          "example": "Nafouknutý balonek drží tvar díky nárazům molekul zevnitř."
+        },
+        {
+          "type": "text",
+          "text": "Podobně se vysvětluje i **osmóza** – pronikání vody přes tenkou blánu, např. do buněk. Všechno jsou to projevy neustálého pohybu částic."
+        },
+        {
+          "type": "heading",
+          "text": "Tři skupenství"
+        },
+        {
+          "type": "text",
+          "text": "V **pevné látce** jsou částice těsně u sebe a jen kmitají na místě, často v pravidelné **krystalové mřížce** (jako vojáci v šiku). V **kapalině** jsou také blízko, ale přesouvají se – pravidelnost drží jen mezi nejbližšími sousedy. V **plynu** jsou daleko od sebe a volně létají."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď vlastnosti ke skupenstvím. U každé si představ, jak hustě jsou částice u sebe."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "pevná látka",
+              "kapalina",
+              "plyn"
+            ],
+            "items": [
+              {
+                "text": "částice kmitají kolem stálých míst",
+                "group": 0
+              },
+              {
+                "text": "krystalová mřížka",
+                "group": 0
+              },
+              {
+                "text": "pravidelnost jen mezi sousedy",
+                "group": 1
+              },
+              {
+                "text": "stálý objem, tvar nádoby",
+                "group": 1
+              },
+              {
+                "text": "velké vzdálenosti mezi částicemi",
+                "group": 2
+              },
+              {
+                "text": "vyplní celou nádobu",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Teplota = rychlost částic"
+        },
+        {
+          "type": "text",
+          "text": "Čím je látka teplejší, tím rychleji se její částice v průměru pohybují. Proto se cukr rozpustí rychleji v teplém čaji. Fyzikálně: s teplotou roste **střední kinetická energie** částic (průměrná energie pohybu)."
+        },
+        {
+          "type": "term",
+          "term": "Termodynamická teplota T (kelvin)",
+          "definition": "Teplota měřená od **absolutní nuly**, kdy by se částice přestaly pohybovat. 0 K = −273,15 °C. Krok 1 K je stejně velký jako 1 °C. `T = t + 273,15`.",
+          "example": "27 °C = 27 + 273,15 = 300,15 K."
+        },
+        {
+          "type": "example",
+          "question": "Kolik je 0 K ve stupních Celsia?",
+          "answer": "t = T − 273,15 = 0 − 273,15 = **−273,15 °C**. Chladněji to nejde."
+        },
+        {
+          "type": "heading",
+          "text": "Jak počítat částice"
+        },
+        {
+          "type": "term",
+          "term": "Mol",
+          "definition": "Balík částic, jako je tucet balík 12 kusů. 1 mol = **6,02 · 10²³** částic (Avogadrova konstanta N_A). Množství látky v molech se jmenuje **látkové množství n**."
+        },
+        {
+          "type": "term",
+          "term": "Molární hmotnost M_m",
+          "definition": "Kolik váží 1 mol dané látky. Voda 18 g/mol, kyslík O₂ 32 g/mol."
+        },
+        {
+          "type": "example",
+          "question": "Kolik molů je 36 g vody (M_m = 18 g/mol)?",
+          "answer": "Jeden mol váží 18 g. 36 : 18 = **2 mol**, tedy 2 · 6,02 · 10²³ ≈ 1,2 · 10²⁴ molekul."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V pevné látce částice stojí na místě.",
+          "right": "V pevné látce částice neustále kmitají kolem stálých míst.",
+          "why": "Pohyb částic se nikdy nezastaví (k absolutní nule se jen blížíme). V pevné látce jen nemohou opustit své místo v mřížce."
+        },
+        {
+          "type": "summary",
+          "text": "Látky jsou z částic, které se neustále neuspořádaně pohybují a působí na sebe silami. Důkazy: difuze, Brownův pohyb, tlak plynu. Vyšší teplota = rychlejší částice. 1 mol = 6,02 · 10²³ částic."
+        }
+      ]
+    },
+    {
+      "title": "Veličiny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chemik potřebuje přesně tolik molekul kyslíku, aby shořel všechen vodík. Molekuly ale nespočítá po jedné – je jich obrovské množství. Fyzika a chemie proto zavádějí veličiny, kterými se částice „počítají vážením“."
+        },
+        {
+          "type": "text",
+          "text": "Zároveň potřebujeme teplotní stupnici, která začíná tam, kde se pohyb částic zastavuje. To je Kelvinova stupnice."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Částice a kinetická teorie",
+          "definition": "Látky jsou složené z atomů, molekul nebo iontů. Ty se neustále neuspořádaně pohybují (dokazuje to difuze a Brownův pohyb) a působí na sebe silami."
+        },
+        {
+          "type": "term",
+          "term": "Látkové množství n",
+          "definition": "Udává, kolik částic látka obsahuje, ale ne v kusech, nýbrž v **molech**. Jednotka mol.",
+          "example": "2 mol vody = dvakrát 6,02 · 10²³ molekul."
+        },
+        {
+          "type": "term",
+          "term": "Avogadrova konstanta N_A",
+          "definition": "Počet částic v 1 molu: `N_A = 6,02 · 10²³ mol⁻¹`. (mol⁻¹ znamená „na mol“.)"
+        },
+        {
+          "type": "term",
+          "term": "Molární hmotnost M_m",
+          "definition": "Hmotnost 1 molu látky, jednotka kg/mol (běžně g/mol). Určíš ji z tabulek nebo periodické tabulky.",
+          "example": "H₂O: 2 · 1 + 16 = 18 g/mol."
+        },
+        {
+          "type": "term",
+          "term": "Termodynamická teplota T",
+          "definition": "Teplota v kelvinech (K), měřená od absolutní nuly. `T = t + 273,15`, kde t je teplota ve °C."
+        },
+        {
+          "type": "heading",
+          "text": "Vztahy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Veličina",
+            "Vztah",
+            "Jednotka"
+          ],
+          "rows": [
+            [
+              "látkové množství",
+              "n = N / N_A = m / M_m",
+              "mol"
+            ],
+            [
+              "Avogadrova konstanta",
+              "N_A = 6,02 · 10²³",
+              "mol⁻¹"
+            ],
+            [
+              "molární hmotnost",
+              "M_m = m / n",
+              "kg/mol"
+            ],
+            [
+              "termodynamická teplota",
+              "T = t + 273,15",
+              "K"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "N je počet částic, m hmotnost vzorku. Oba vzorce pro n říkají totéž: „kolik balíků po 6,02 · 10²³ částicích to je“."
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a zkus si každý vztah říct dřív, než ho uvidíš."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "n z hmotnosti",
+                "back": "n = m / M_m"
+              },
+              {
+                "front": "n z počtu částic",
+                "back": "n = N / N_A"
+              },
+              {
+                "front": "°C → K",
+                "back": "T = t + 273,15"
+              },
+              {
+                "front": "1 mol",
+                "back": "6,02 · 10²³ částic"
+              }
+            ]
+          }
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi molární hmotnost látky (g/mol).",
+            "Hmotnost vzorku vyděl molární hmotností → n v molech.",
+            "Chceš-li počet částic, vynásob n číslem 6,02 · 10²³."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik molů je 64 g kyslíku O₂ (M_m = 32 g/mol)?",
+          "answer": "n = m / M_m = 64 / 32 = **2 mol**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik molů je 9 g vody? Kolik je to molekul?",
+          "answer": "n = 9 / 18 = **0,5 mol**. N = 0,5 · 6,02 · 10²³ = 3,01 · 10²³ molekul."
+        },
+        {
+          "type": "example",
+          "question": "Převeď 27 °C na kelviny.",
+          "answer": "T = 27 + 273,15 = **300,15 K**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ohřátí o 10 °C je ohřátí o 283,15 K.",
+          "right": "Ohřátí o 10 °C je ohřátí o 10 K.",
+          "why": "Stupnice jsou jen posunuté, krok mají stejný. 273,15 se přičítá jen u teploty samotné, ne u jejího rozdílu."
+        },
+        {
+          "type": "text",
+          "text": "Skupenství podle částic: v pevné látce kmitají kolem stálých poloh (krystalová mřížka), v kapalině se přesouvají a mají stálý objem, v plynu jsou daleko od sebe, působí na sebe nejméně a vyplní celou nádobu. S rostoucí teplotou roste průměrná kinetická energie částic."
+        },
+        {
+          "type": "summary",
+          "text": "n = m / M_m = N / N_A, 1 mol = 6,02 · 10²³ částic. T = t + 273,15; rozdíl 1 °C = 1 K."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik molů je 64 g kyslíku O₂ (M_m = 32 g/mol)?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik molů je 9 g vody (M_m = 18 g/mol)?",
+      "answers": [
+        "0,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Teplota 27 °C v kelvinech (na setiny) =",
+      "answers": [
+        "300,15"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Teplota 0 K ve °C (na setiny) =",
+      "answers": [
+        "-273,15",
+        "−273,15"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co dokazuje Brownův pohyb?",
+      "options": [
+        "neuspořádaný pohyb částic kapaliny",
+        "existenci gravitace",
+        "vlnovou povahu světla"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "S rostoucí teplotou roste střední kinetická energie částic.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Změna teploty o 1 °C je stejná jako změna o 1 K.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kolik částic obsahuje 1 mol látky?",
+      "options": [
+        "6,02 · 10²³",
+        "6,02 · 10²³ kg",
+        "1,6 · 10⁻¹⁹",
+        "22,4"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu s jednotkou.",
+      "pairs": [
+        [
+          "látkové množství",
+          "mol"
+        ],
+        [
+          "molární hmotnost",
+          "kg/mol"
+        ],
+        [
+          "termodynamická teplota",
+          "K"
+        ],
+        [
+          "Avogadrova konstanta",
+          "mol⁻¹"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "V jakém skupenství mají částice nejmenší vzájemné působení?",
+      "options": [
+        "plynném",
+        "kapalném",
+        "pevném"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Uveď tři poznatky kinetické teorie látek a jejich experimentální důkazy.",
+      "answer": "Látky se skládají z částic (pozorování mikroskopem), částice se neustále neuspořádaně pohybují (Brownův pohyb, difuze) a vzájemně na sebe působí silami (soudržnost pevných látek a kapalin)."
+    },
+    {
+      "type": "open",
+      "question": "Co je látkové množství a jak ho vypočítáš?",
+      "answer": "Udává počet částic vztažený k Avogadrově konstantě. n = N / N_A nebo n = m / M_m, jednotka mol."
+    }
+  ]
+}

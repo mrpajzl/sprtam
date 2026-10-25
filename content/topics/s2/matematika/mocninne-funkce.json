@@ -1,0 +1,407 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mocninne-funkce",
+  "title": "Mocninné funkce",
+  "emoji": "🪜",
+  "generator": "sqrt",
+  "explanations": [
+    {
+      "title": "Rodina grafů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zvětšíš stranu kostky dvakrát. Plocha stěny vzroste 4× (2²), objem kostky 8× (2³). Proto slon nemůže mít tenké nohy jako srnka – váha roste rychleji než síla nohou."
+        },
+        {
+          "type": "text",
+          "text": "Funkce y = x², y = x³, y = 1/x nebo y = √x tvoří jednu rodinu: **mocninné funkce**. Když znáš jejich grafy, poznáš i spoustu dalších."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mocninná funkce",
+          "definition": "Funkce y = xⁿ, kde exponent n je pevné číslo. x je základ, který se mění.",
+          "example": "y = x³: f(2) = 8, f(−2) = −8."
+        },
+        {
+          "type": "term",
+          "term": "Sudá a lichá funkce",
+          "definition": "Sudá: f(−x) = f(x), graf je zrcadlový podle osy y. Lichá: f(−x) = −f(x), graf je souměrný podle počátku [0; 0]."
+        },
+        {
+          "type": "heading",
+          "text": "Sudý exponent: x², x⁴, …"
+        },
+        {
+          "type": "text",
+          "text": "Záporné číslo na sudou mocninu je kladné: (−2)² = 4 = 2². Graf vypadá jako U, je souměrný podle osy y – funkce je **sudá**. Hodnoty nikdy nejsou záporné."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na y = x² (parabola). Pak zvětši a na 2 nebo 3 – tak se chová i strmější x⁴: kolem nuly je plochý, dál prudce stoupá."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": 0,
+            "c": 0
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Lichý exponent: x³, x⁵, …"
+        },
+        {
+          "type": "text",
+          "text": "Znaménko zůstane: (−2)³ = −8. Graf jde zleva zdola doprava nahoru, je souměrný podle počátku – funkce je **lichá** a na celém ℝ **rostoucí**."
+        },
+        {
+          "type": "heading",
+          "text": "Mezi nulou a jedničkou je to naopak"
+        },
+        {
+          "type": "text",
+          "text": "Všechny grafy y = xⁿ procházejí bodem [1; 1], protože 1ⁿ = 1. Pro x > 1 je vyšší mocnina větší. Ale pro x mezi 0 a 1 je vyšší mocnina **menší**. Podívej se na hodnoty pro x = 0,5:"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "x = 0,5",
+                "value": 0.5
+              },
+              {
+                "label": "x² = 0,25",
+                "value": 0.25
+              },
+              {
+                "label": "x³ = 0,125",
+                "value": 0.125
+              },
+              {
+                "label": "x⁴ = 0,0625",
+                "value": 0.0625
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Záporný exponent: hyperboly"
+        },
+        {
+          "type": "term",
+          "term": "Záporný exponent",
+          "definition": "x⁻ⁿ = 1/xⁿ. Graf je hyperbola – dvě větve, x = 0 dosadit nejde.",
+          "example": "f(x) = x⁻²: f(2) = 1/2² = 1/4."
+        },
+        {
+          "type": "heading",
+          "text": "Odmocnina: parabola na boku"
+        },
+        {
+          "type": "term",
+          "term": "Druhá odmocnina √x",
+          "definition": "Nezáporné číslo, které na druhou dá x. Definovaná jen pro x ≥ 0, protože žádné reálné číslo na druhou nedá záporný výsledek.",
+          "example": "√25 = 5, tedy rovnice √x = 5 má řešení x = 25."
+        },
+        {
+          "type": "text",
+          "text": "Graf y = √x je **polovina paraboly** y = x² překlopená podle přímky y = x. √x je totiž inverzní funkce k x² na ⟨0; ∞)."
+        },
+        {
+          "type": "example",
+          "question": "Řeš ∛x = −2.",
+          "answer": "Třetí odmocnina „vrací“ třetí mocninu. Umocním obě strany na třetí: x = (−2)³ = **−8**. U třetí odmocniny jsou záporná čísla v pořádku."
+        },
+        {
+          "type": "mistake",
+          "wrong": "x³ > x² pro každé kladné x",
+          "right": "Pro x ∈ (0; 1) je x³ < x².",
+          "why": "Násobíš číslem menším než 1, takže výsledek se zmenšuje: 0,5³ = 0,125 < 0,25 = 0,5²."
+        },
+        {
+          "type": "summary",
+          "text": "Sudé n: graf tvaru U, funkce sudá, hodnoty ≥ 0. Liché n: funkce lichá, rostoucí. Záporné n: hyperboly. Všechny grafy procházejí [1; 1]. √x je inverzní k x² pro x ≥ 0."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou vlastností",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve fyzice uvidíš E = mv²/2 (kinetická energie roste s druhou mocninou rychlosti), u gravitace F ~ 1/r² (síla klesá s druhou mocninou vzdálenosti). Zdvojnásobíš rychlost auta – brzdná dráha vzroste čtyřikrát."
+        },
+        {
+          "type": "text",
+          "text": "Pro všechny mocninné funkce si stačí zapamatovat pár pravidel podle toho, jaký je exponent. Tady jsou v přehledu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mocninná funkce",
+          "definition": "f(x) = xⁿ s pevným exponentem n. Pro n přirozené jde o násobení, pro záporné o převrácenou hodnotu, pro zlomek o odmocninu.",
+          "example": "x⁻¹ = 1/x, x^(1/2) = √x."
+        },
+        {
+          "type": "term",
+          "term": "Definiční obor D(f) a obor hodnot H(f)",
+          "definition": "D(f) = co smím dosadit za x. H(f) = jaká čísla mohou vyjít."
+        },
+        {
+          "type": "term",
+          "term": "Inverzní funkce",
+          "definition": "Funkce, která vrací vstup z výstupu. Graf vznikne překlopením podle přímky y = x.",
+          "example": "Inverzní k y = x² na ⟨0; ∞) je y = √x."
+        },
+        {
+          "type": "heading",
+          "text": "Přehled"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Exponent",
+            "Příklad",
+            "D(f)",
+            "H(f)",
+            "Vlastnosti",
+            "Graf"
+          ],
+          "rows": [
+            [
+              "n sudé kladné",
+              "x², x⁴",
+              "ℝ",
+              "⟨0; ∞)",
+              "sudá",
+              "parabola"
+            ],
+            [
+              "n liché kladné",
+              "x³, x⁵",
+              "ℝ",
+              "ℝ",
+              "lichá, rostoucí",
+              "kubická parabola"
+            ],
+            [
+              "n = −1",
+              "x⁻¹ = 1/x",
+              "ℝ ∖ {0}",
+              "ℝ ∖ {0}",
+              "lichá",
+              "hyperbola"
+            ],
+            [
+              "n = −2",
+              "x⁻² = 1/x²",
+              "ℝ ∖ {0}",
+              "(0; ∞)",
+              "sudá",
+              "hyperbola (obě větve nahoře)"
+            ],
+            [
+              "n = 1/2",
+              "√x",
+              "⟨0; ∞)",
+              "⟨0; ∞)",
+              "rostoucí",
+              "větev paraboly"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ověř si první řádek: y = x² má nejnižší hodnotu 0 a je souměrná podle osy y. Nastav a = −1 a uvidíš −x² – obor hodnot se otočí na (−∞; 0⟩."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": 0,
+            "c": 0
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak poznat sudou a lichou"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Dosaď −x.",
+            "(−x)ⁿ = xⁿ, když je n sudé → funkce sudá.",
+            "(−x)ⁿ = −xⁿ, když je n liché → funkce lichá."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Je y = x⁴ sudá? A je y = x³ rostoucí na celém ℝ?",
+          "answer": "(−x)⁴ = x⁴ → **sudá**. x³: větší x vždy dá větší x³ (i pro záporná: −3 < −2 a −27 < −8) → **rostoucí**."
+        },
+        {
+          "type": "example",
+          "question": "f(x) = x⁻². Kolik je f(2)?",
+          "answer": "x⁻² = 1/x². f(2) = 1/4 = **0,25**."
+        },
+        {
+          "type": "example",
+          "question": "Řeš √x = 5 a ∛x = −2.",
+          "answer": "Umocním: x = 5² = **25**. Umocním na třetí: x = (−2)³ = **−8**."
+        },
+        {
+          "type": "text",
+          "text": "Společný bod: 1ⁿ = 1 pro každé n, proto všechny grafy y = xⁿ procházejí bodem **[1; 1]**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "√x jde spočítat i pro x = −4, vyjde −2.",
+          "right": "√(−4) v reálných číslech neexistuje.",
+          "why": "(−2)² = 4, ne −4. Druhá mocnina reálného čísla není nikdy záporná, proto D(√x) = ⟨0; ∞)."
+        },
+        {
+          "type": "summary",
+          "text": "Sudý exponent → sudá funkce, H = ⟨0; ∞). Lichý → lichá, rostoucí, H = ℝ. Záporný → hyperbola, x ≠ 0. √x jen pro x ≥ 0. Všechny grafy procházejí [1; 1]."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "y = x⁴ je sudá funkce.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "y = x³ je rostoucí na celém ℝ.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "D(f) pro y = √x:",
+      "options": [
+        "⟨0; ∞)",
+        "(0; ∞)",
+        "ℝ",
+        "ℝ ∖ {0}"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "f(x) = x⁻². f(2) =",
+      "answers": [
+        "1/4",
+        "0,25"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kterým bodem prochází grafy všech y = xⁿ?",
+      "options": [
+        "[1; 1]",
+        "[0; 1]",
+        "[1; 0]",
+        "[−1; 1]"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Grafem y = x⁻¹ je:",
+      "options": [
+        "hyperbola",
+        "parabola",
+        "přímka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "√x = 5, x =",
+      "answers": [
+        "25"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Pro x ∈ (0; 1) platí x³ < x².",
+      "answer": true,
+      "explanation": "Např. 0,125 < 0,25."
+    },
+    {
+      "type": "choice",
+      "question": "Inverzní funkce k y = x² na ⟨0; ∞):",
+      "options": [
+        "y = √x",
+        "y = 1/x²",
+        "y = −x²",
+        "y = x/2"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "∛x = −2, x =",
+      "answers": [
+        "−8",
+        "-8"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj funkci s grafem.",
+      "pairs": [
+        [
+          "y = x²",
+          "parabola"
+        ],
+        [
+          "y = x⁻¹",
+          "hyperbola"
+        ],
+        [
+          "y = √x",
+          "větev paraboly"
+        ],
+        [
+          "y = 2x",
+          "přímka"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak se liší grafy y = xⁿ pro sudé a liché n?",
+      "answer": "Pro sudé n je funkce sudá, graf souměrný podle osy y, H(f) = ⟨0; ∞). Pro liché n je lichá, rostoucí, souměrná podle počátku, H(f) = ℝ."
+    },
+    {
+      "type": "open",
+      "question": "Proč je √x definována jen pro x ≥ 0?",
+      "answer": "Druhá odmocnina je číslo, jehož druhá mocnina je x. Druhá mocnina reálného čísla není nikdy záporná, proto pro x < 0 reálná odmocnina neexistuje."
+    }
+  ]
+}

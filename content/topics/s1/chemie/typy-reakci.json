@@ -1,0 +1,498 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "typy-reakci",
+  "title": "Typy chemických reakcí",
+  "emoji": "💥",
+  "explanations": [
+    {
+      "title": "Tanečním párem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chemických reakcí jsou miliony. Kdyby se každá musela učit zvlášť, nikdo by chemii nezvládl. Naštěstí se dají roztřídit do několika typů – a když poznáš typ, odhadneš, co vznikne."
+        },
+        {
+          "type": "text",
+          "text": "Představ si atomy a skupiny atomů jako tanečníky na plese. Reakce je jen to, že se páry spojují, rozcházejí a mění partnery."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Chemická reakce",
+          "definition": "Děj, při kterém se z jedněch látek stávají jiné. Atomy se nevytvářejí ani neztrácejí, jen se jinak pospojují."
+        },
+        {
+          "type": "term",
+          "term": "Reaktanty a produkty",
+          "definition": "Reaktanty vstupují do reakce (vlevo od šipky), produkty vznikají (vpravo)."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři taneční figury"
+        },
+        {
+          "type": "term",
+          "term": "Skladba (syntéza)",
+          "definition": "Dva se spojí v pár. **A + B → AB**",
+          "example": "2 H₂ + O₂ → 2 H₂O"
+        },
+        {
+          "type": "term",
+          "term": "Rozklad",
+          "definition": "Pár se rozejde. **AB → A + B**",
+          "example": "CaCO₃ → CaO + CO₂ (pálení vápence)"
+        },
+        {
+          "type": "term",
+          "term": "Substituce (vytěsnění)",
+          "definition": "Někdo přijde a „přebere“ partnera. **AB + C → AC + B**",
+          "example": "Zn + CuSO₄ → ZnSO₄ + Cu"
+        },
+        {
+          "type": "term",
+          "term": "Podvojná záměna",
+          "definition": "Dva páry si vymění partnery. **AB + CD → AD + CB**",
+          "example": "AgNO₃ + NaCl → AgCl + NaNO₃"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď reakce. Dívej se, kolik látek je vlevo a vpravo a kdo s kým skončil."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "skladba",
+              "rozklad",
+              "substituce",
+              "podvojná záměna"
+            ],
+            "items": [
+              {
+                "text": "2 H₂ + O₂ → 2 H₂O",
+                "group": 0
+              },
+              {
+                "text": "CaO + CO₂ → CaCO₃",
+                "group": 0
+              },
+              {
+                "text": "2 H₂O₂ → 2 H₂O + O₂",
+                "group": 1
+              },
+              {
+                "text": "CaCO₃ → CaO + CO₂",
+                "group": 1
+              },
+              {
+                "text": "Zn + CuSO₄ → ZnSO₄ + Cu",
+                "group": 2
+              },
+              {
+                "text": "Fe + 2 HCl → FeCl₂ + H₂",
+                "group": 2
+              },
+              {
+                "text": "AgNO₃ + NaCl → AgCl + NaNO₃",
+                "group": 3
+              },
+              {
+                "text": "HCl + NaOH → NaCl + H₂O",
+                "group": 3
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jaký typ je Fe + 2 HCl → FeCl₂ + H₂?",
+          "answer": "Vlevo prvek Fe a sloučenina HCl. Železo „přebralo“ chlor a vodík zůstal sám. To je **substituce** (AB + C → AC + B)."
+        },
+        {
+          "type": "heading",
+          "text": "Co se při tanci předává"
+        },
+        {
+          "type": "text",
+          "text": "Druhý pohled: co přechází mezi částicemi."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Acidobazická** reakce – přechází **proton H⁺** (kladný vodíkový ion). **Kyselina** H⁺ odevzdává, **zásada** ho přijímá (Brønstedova teorie). HCl + NH₃ → NH₄Cl",
+            "**Redoxní** – přecházejí **elektrony**, mění se oxidační čísla (náboje, které atomům „připisujeme“). 2 Na + Cl₂ → 2 NaCl",
+            "**Srážecí** – vzniká nerozpustná pevná látka, **sraženina** (↓). AgNO₃ + NaCl → AgCl↓ (bílá) + NaNO₃",
+            "**Komplexotvorná** – vzniká **komplex**, centrální atom obklopený molekulami nebo ionty. Cu²⁺ + 4 NH₃ → [Cu(NH₃)₄]²⁺ (tmavě modrý)"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Je neutralizace HCl + NaOH → NaCl + H₂O redoxní?",
+          "answer": "Oxidační čísla: Na I → I, Cl −I → −I, H I → I, O −II → −II. Nic se nemění → **není redoxní**. Přechází H⁺ z kyseliny na OH⁻ → je **acidobazická**."
+        },
+        {
+          "type": "heading",
+          "text": "Teplo a rychlost"
+        },
+        {
+          "type": "term",
+          "term": "Exotermní / endotermní",
+          "definition": "**Exotermní** reakce teplo **uvolňuje** (hoření). **Endotermní** teplo **spotřebuje** (pálení vápence). Reakční teplo se značí ΔH: exotermní ΔH < 0, endotermní ΔH > 0."
+        },
+        {
+          "type": "term",
+          "term": "Katalyzátor",
+          "definition": "Látka, která reakci **urychlí**, ale sama se nespotřebuje. Snižuje **aktivační energii** – „kopec“, který musí částice při reakci překonat.",
+          "example": "Katalyzátor v autě, enzymy v těle."
+        },
+        {
+          "type": "text",
+          "text": "Reakci dále urychlí vyšší **teplota**, vyšší **koncentrace** a **rozdrcení** pevné látky (větší povrch)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "HCl + NaOH → NaCl + H₂O je substituce, protože vzniká sůl.",
+          "right": "Je to **podvojná záměna**: H⁺ a Na⁺ si vymění partnery (Cl⁻ a OH⁻).",
+          "why": "Vlevo jsou dvě sloučeniny, vpravo dvě sloučeniny. Při substituci vstupuje do reakce volný prvek."
+        },
+        {
+          "type": "summary",
+          "text": "Podle změny: skladba, rozklad, substituce, podvojná záměna. Podle podstaty: acidobazická (H⁺), redoxní (elektrony), srážecí, komplexotvorná. Exotermní ΔH < 0."
+        }
+      ]
+    },
+    {
+      "title": "Podle podstaty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Reakce můžeš třídit podle toho, jak vypadají (co se s čím spojilo), ale chemika víc zajímá **proč** proběhly – co mezi částicemi skutečně přešlo. To pak určuje, jak reakci řídit a urychlit."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme čtyři hlediska: podstatu, vnější změnu, teplo a rychlost."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Proton H⁺",
+          "definition": "Vodíkový kation – atom vodíku bez elektronu, tedy samotný proton."
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo",
+          "definition": "Náboj, který by atom měl, kdyby všechny vazby byly iontové. Pomáhá sledovat, kam se přesunuly elektrony."
+        },
+        {
+          "type": "term",
+          "term": "Kyselina a zásada (Brønsted)",
+          "definition": "**Kyselina** je látka, která **odevzdává** proton H⁺. **Zásada** proton **přijímá**.",
+          "example": "HCl (kyselina) + NH₃ (zásada) → NH₄⁺ + Cl⁻"
+        },
+        {
+          "type": "term",
+          "term": "Konjugovaný pár",
+          "definition": "Kyselina a to, co z ní zbude po odevzdání H⁺ (její **konjugovaná zásada**).",
+          "example": "HCl → Cl⁻: Cl⁻ je konjugovaná zásada HCl."
+        },
+        {
+          "type": "heading",
+          "text": "1. Podle podstaty"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Typ",
+            "Co se přenáší / děje",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "acidobazická",
+              "proton H⁺",
+              "HCl + NH₃ → NH₄Cl"
+            ],
+            [
+              "redoxní",
+              "elektrony (mění se oxidační čísla)",
+              "2 Na + Cl₂ → 2 NaCl"
+            ],
+            [
+              "srážecí",
+              "vzniká nerozpustná sraženina",
+              "Ag⁺ + Cl⁻ → AgCl↓"
+            ],
+            [
+              "komplexotvorná",
+              "vzniká komplex",
+              "Cu²⁺ + 4 NH₃ → [Cu(NH₃)₄]²⁺"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej oxidační čísla vlevo a vpravo. Změnila se? → **redoxní**.",
+            "Nezměnila se, ale přešel H⁺? → **acidobazická**.",
+            "Vznikla nerozpustná pevná látka (↓)? → **srážecí**.",
+            "Vznikla částice s centrálním atomem obklopeným molekulami (v hranaté závorce)? → **komplexotvorná**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Zařaď Zn + CuSO₄ → ZnSO₄ + Cu.",
+          "answer": "Zn⁰ → Zn^II, Cu^II → Cu⁰: oxidační čísla se mění → **redoxní**. Podle vnější změny je to **substituce** (zinek vytěsnil měď)."
+        },
+        {
+          "type": "heading",
+          "text": "2. Podle vnější změny"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**skladba** A + B → AB",
+            "**rozklad** AB → A + B",
+            "**substituce** AB + C → AC + B",
+            "**podvojná záměna** AB + CD → AD + CB"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď reakce podle vnější změny."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "skladba",
+              "rozklad",
+              "substituce",
+              "podvojná záměna"
+            ],
+            "items": [
+              {
+                "text": "2 Mg + O₂ → 2 MgO",
+                "group": 0
+              },
+              {
+                "text": "CaO + H₂O → Ca(OH)₂",
+                "group": 0
+              },
+              {
+                "text": "2 HgO → 2 Hg + O₂",
+                "group": 1
+              },
+              {
+                "text": "CaCO₃ → CaO + CO₂",
+                "group": 1
+              },
+              {
+                "text": "Zn + 2 HCl → ZnCl₂ + H₂",
+                "group": 2
+              },
+              {
+                "text": "Cl₂ + 2 KBr → 2 KCl + Br₂",
+                "group": 2
+              },
+              {
+                "text": "BaCl₂ + Na₂SO₄ → BaSO₄ + 2 NaCl",
+                "group": 3
+              },
+              {
+                "text": "HCl + NaOH → NaCl + H₂O",
+                "group": 3
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "3. Podle tepla"
+        },
+        {
+          "type": "term",
+          "term": "Reakční teplo ΔH",
+          "definition": "Teplo, které reakce vymění s okolím. **Exotermní**: teplo se uvolní, ΔH < 0. **Endotermní**: teplo se spotřebuje, ΔH > 0.",
+          "example": "Hoření je exotermní, rozklad vápence endotermní."
+        },
+        {
+          "type": "heading",
+          "text": "4. Rychlost reakce"
+        },
+        {
+          "type": "term",
+          "term": "Aktivační energie",
+          "definition": "Minimální energie, kterou musí částice při srážce mít, aby zreagovaly – „kopec“ před reakcí."
+        },
+        {
+          "type": "term",
+          "term": "Katalyzátor",
+          "definition": "Látka, která **sníží aktivační energii** a tím reakci urychlí. Sama se nespotřebuje a **nemění ΔH**."
+        },
+        {
+          "type": "list",
+          "items": [
+            "vyšší **teplota** → víc částic má dost energie",
+            "vyšší **koncentrace** (u plynů tlak) → víc srážek",
+            "větší **povrch** pevné látky (prášek místo kusu) → víc srážek",
+            "**katalyzátor** → nižší kopec"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč se cukr rozpustí a zreaguje rychleji jako moučka než jako kostka?",
+          "answer": "Moučka má mnohem **větší povrch**. Víc částic je v kontaktu s okolím, víc srážek za sekundu → reakce je rychlejší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Katalyzátor zvýší teplotu, a tím reakci urychlí.",
+          "right": "Katalyzátor **snižuje aktivační energii**. Teplotu ani ΔH nemění.",
+          "why": "Nabídne reakci „jinou cestu přes nižší kopec“. Proto funguje i za pokojové teploty (enzymy v těle)."
+        },
+        {
+          "type": "summary",
+          "text": "Acidobazická = přenos H⁺, redoxní = přenos elektronů, srážecí = sraženina, komplexotvorná = komplex. Exotermní ΔH < 0. Katalyzátor snižuje aktivační energii."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký typ reakce je CaCO₃ → CaO + CO₂?",
+      "options": [
+        "rozklad",
+        "skladba",
+        "substituce",
+        "podvojná záměna"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký typ reakce je Zn + CuSO₄ → ZnSO₄ + Cu?",
+      "options": [
+        "substituce (a redoxní)",
+        "podvojná záměna",
+        "skladba",
+        "rozklad"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Podle Brønstedovy teorie je kyselina látka, která…",
+      "options": [
+        "odevzdává proton",
+        "přijímá proton",
+        "odevzdává elektrony",
+        "přijímá OH⁻"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co vznikne smícháním roztoků AgNO₃ a NaCl?",
+      "options": [
+        "bílá sraženina AgCl",
+        "plynný chlor",
+        "kovové stříbro",
+        "nic"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Exotermní reakce má ΔH < 0.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Při acidobazické reakci se mění oxidační čísla.",
+      "answer": false,
+      "explanation": "Přenáší se jen proton H⁺; oxidační čísla se mění u redoxních reakcí."
+    },
+    {
+      "type": "match",
+      "question": "Spoj typ reakce s tím, co se přenáší.",
+      "pairs": [
+        [
+          "acidobazická",
+          "proton"
+        ],
+        [
+          "redoxní",
+          "elektrony"
+        ],
+        [
+          "srážecí",
+          "vzniká sraženina"
+        ],
+        [
+          "komplexotvorná",
+          "vzniká komplex"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak katalyzátor urychluje reakci?",
+      "options": [
+        "snižuje aktivační energii",
+        "zvyšuje teplotu",
+        "mění ΔH reakce",
+        "zvyšuje koncentraci"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co obecně zvýší rychlost reakce?",
+      "options": [
+        "vyšší teplota",
+        "nižší koncentrace",
+        "větší kusy pevné látky",
+        "ochlazení"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá konjugovaná zásada kyseliny HCl?",
+      "options": [
+        "Cl⁻",
+        "H₃O⁺",
+        "OH⁻",
+        "H₂"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Rozděl reakce podle vnější změny a uveď příklady.",
+      "answer": "Skladba (2 H₂ + O₂ → 2 H₂O), rozklad (CaCO₃ → CaO + CO₂), substituce (Zn + CuSO₄ → ZnSO₄ + Cu), podvojná záměna (AgNO₃ + NaCl → AgCl + NaNO₃)."
+    },
+    {
+      "type": "open",
+      "question": "Na čem závisí rychlost chemické reakce?",
+      "answer": "Na koncentraci reaktantů, teplotě, velikosti povrchu pevných látek, tlaku u plynů a na katalyzátoru, který snižuje aktivační energii."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import { useEffect } from 'preact/hooks'
 import { GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } from '../content/curriculum'
 import { hasSubject, loadSubject, topicKey } from '../content'
-import type { GradeId, SubjectId, Subject } from '../content/types'
+import type { GradeId, SubjectId } from '../content/types'
 import { isPinned, setGrade, stars, useProgress } from '../progress/store'
 import { Link } from '../router'
 import { Bar, Meter, Stars } from '../ui/Bar'
@@ -10,16 +10,16 @@ import { IPin, ITest } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
 
 /** Average stars → 0–100 for a subject's meter. */
-function useSubjectPct(g: GradeId, s: SubjectId, subj: Subject | undefined | null) {
+function useSubjectPct(g: GradeId, s: SubjectId, ids: string[] | undefined | null) {
   const p = useProgress()
-  if (!subj) return 0
-  const total = subj.topics.reduce((sum, t) => sum + stars(p.t[topicKey(g, s, t)]?.s), 0)
-  return (total / (subj.topics.length * 3)) * 100
+  if (!ids?.length) return 0
+  const total = ids.reduce((sum, id) => sum + stars(p.t[topicKey(g, s, id)]?.s), 0)
+  return (total / (ids.length * 3)) * 100
 }
 
 function SubjectTile({ g, s }: { g: GradeId; s: SubjectId }) {
-  const subj = useAsync(() => loadSubject(g, s), [g, s])
-  const pct = useSubjectPct(g, s, subj)
+  const ids = useAsync(() => loadSubject(g, s).then((subj) => subj.topics.map((t) => t.id)), [g, s])
+  const pct = useSubjectPct(g, s, ids)
   const G = GLYPHS[s]
   return (
     <Link class="tile" style={subjectStyle(s)} href={`/g/${g}/${s}`}>

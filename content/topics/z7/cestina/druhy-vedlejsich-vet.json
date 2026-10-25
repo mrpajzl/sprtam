@@ -1,0 +1,444 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "druhy-vedlejsich-vet",
+  "title": "Druhy vedlejších vět",
+  "emoji": "🔗",
+  "explanations": [
+    {
+      "title": "Otázkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "*Nešel jsem ven, protože pršelo.* Tohle nejsou dvě samostatné věty. Druhá část odpovídá na otázku k té první: **proč** jsem nešel ven? Protože pršelo."
+        },
+        {
+          "type": "text",
+          "text": "Části souvětí, které odpovídají na otázku k jiné části, se jmenují **vedlejší věty**. Podle otázky poznáš, jaký druh to je – a to se ptají v testech i u přijímaček."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso v určitém tvaru",
+          "definition": "Sloveso, ze kterého poznáš osobu a číslo. Ne infinitiv (psát).",
+          "example": "píšu, šel jsem, budeme číst"
+        },
+        {
+          "type": "term",
+          "term": "Věta jednoduchá",
+          "definition": "Věta s **jedním** slovesem v určitém tvaru.",
+          "example": "*Pršelo.*"
+        },
+        {
+          "type": "term",
+          "term": "Souvětí",
+          "definition": "Spojení dvou nebo více vět. Kolik sloves v určitém tvaru, tolik vět.",
+          "example": "*Nešel jsem ven, protože pršelo.* – 2 slovesa, 2 věty"
+        },
+        {
+          "type": "term",
+          "term": "Věta řídící",
+          "definition": "Věta, ze které se ptáme. „Velí“ vedlejší větě.",
+          "example": "*Nešel jsem ven*"
+        },
+        {
+          "type": "term",
+          "term": "Věta vedlejší",
+          "definition": "Věta, která **závisí** na řídící – odpovídá na otázku z ní. Sama by nedávala úplný smysl.",
+          "example": "*protože pršelo*"
+        },
+        {
+          "type": "term",
+          "term": "Spojovací výraz",
+          "definition": "Slovo na začátku vedlejší věty, které ji připojuje: spojka nebo zájmeno.",
+          "example": "že, protože, aby, když, který, kdo"
+        },
+        {
+          "type": "heading",
+          "text": "Druhy vedlejších vět"
+        },
+        {
+          "type": "text",
+          "text": "Druh určuje otázka, kterou položíš z řídící věty. Vedlejší věta zastupuje větný člen – proto se jmenuje podobně."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Otázka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "podmětná",
+              "kdo? co?",
+              "**Kdo lže**, ten krade."
+            ],
+            [
+              "předmětná",
+              "pádová otázka (koho? co? čeho?…)",
+              "Vím, **že přijdeš**. (vím co?)"
+            ],
+            [
+              "přívlastková",
+              "jaký? který?",
+              "Mám psa, **který štěká**."
+            ],
+            [
+              "místní",
+              "kde? kam? odkud?",
+              "Jdu, **kam chci**."
+            ],
+            [
+              "časová",
+              "kdy?",
+              "**Když prší**, sedím doma."
+            ],
+            [
+              "příčinná",
+              "proč?",
+              "Nešel ven, **protože pršelo**."
+            ],
+            [
+              "účelová",
+              "za jakým účelem? proč (abych…)?",
+              "Učím se, **abych prošel**."
+            ],
+            [
+              "podmínková",
+              "za jaké podmínky?",
+              "**Pokud bude pršet**, zůstanu doma."
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej slovesa v určitém tvaru → víš, kolik je vět.",
+            "Najdi vedlejší větu – obvykle začíná spojovacím výrazem.",
+            "Najdi řídící větu a polož z ní otázku na vedlejší.",
+            "Podle otázky urči druh."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči druh: *Když zazvonil zvonek, děti vyběhly.*",
+          "answer": "Slovesa: *zazvonil, vyběhly* → 2 věty. Řídící: *děti vyběhly*. Kdy vyběhly? *když zazvonil zvonek* → **časová**."
+        },
+        {
+          "type": "example",
+          "question": "Urči druh: *Kdo se směje naposled, ten se směje nejlépe.*",
+          "answer": "Řídící: *ten se směje nejlépe*. **Kdo** se směje nejlépe? *kdo se směje naposled* → **podmětná**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Nevím, kde bydlí.* – vedlejší věta je místní, protože začíná *kde*.",
+          "right": "Je **předmětná**.",
+          "why": "Rozhoduje otázka, ne spojovací slovo. Nevím **co**? → kde bydlí. Otázka *co?* (4. pád) = předmětná."
+        },
+        {
+          "type": "summary",
+          "text": "Vedlejší věta závisí na řídící. Druh zjistíš otázkou z řídící věty: kdo? → podmětná, pádová otázka → předmětná, jaký? → přívlastková, kde/kdy/proč/za jakým účelem/za jaké podmínky → příslovečné."
+        }
+      ]
+    },
+    {
+      "title": "Spojkou a čárkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Souvětí jsou jako vagony vlaku. Některé vagony jsou samostatné, jiné jsou k nim **připojené** a bez nich by nikam nejely. Ty připojené vagony jsou **vedlejší věty**."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se je najít podle „spřáhla“ – spojky na začátku – a pak určit, jaký druh to je. Navíc pochopíš, kam patří čárka."
+        },
+        {
+          "type": "term",
+          "term": "Souvětí",
+          "definition": "Několik vět spojených dohromady. Počet vět = počet sloves v určitém tvaru (takových, ze kterých poznáš osobu: *jdu, šel, bude*).",
+          "example": "*Šetří, aby si koupil kolo.* – šetří, koupil → 2 věty"
+        },
+        {
+          "type": "term",
+          "term": "Věta řídící a vedlejší",
+          "definition": "Vedlejší věta **závisí** na řídící – odpovídá na otázku, kterou z řídící položíš.",
+          "example": "Šetří (řídící) – proč? za jakým účelem? – aby si koupil kolo (vedlejší)"
+        },
+        {
+          "type": "term",
+          "term": "Spojka",
+          "definition": "Slovo, které věty spojuje. Na začátku vedlejší věty často napoví její druh.",
+          "example": "protože, aby, když, že, pokud"
+        },
+        {
+          "type": "heading",
+          "text": "Spojky – nápověda"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Začíná…",
+            "Často bývá",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "který, jenž, jehož",
+              "přívlastková",
+              "Kniha, **kterou čtu**, je dobrá."
+            ],
+            [
+              "protože, poněvadž",
+              "příčinná",
+              "Spal, **protože byl unavený**."
+            ],
+            [
+              "aby",
+              "účelová",
+              "Běžel, **aby nepřišel pozdě**."
+            ],
+            [
+              "když, až, jakmile",
+              "časová",
+              "**Až přijdeš**, zavolej."
+            ],
+            [
+              "jestli, pokud, kdyby",
+              "podmínková",
+              "**Pokud budeš chtít**, přijď."
+            ],
+            [
+              "že",
+              "předmětná nebo podmětná",
+              "Řekl, **že přijde**."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Spoj začátky vedlejších vět s druhem. Rozhoduj podle spojky i podle smyslu."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "přívlastková",
+              "příčinná",
+              "účelová"
+            ],
+            "items": [
+              {
+                "text": "Kniha, kterou čtu…",
+                "group": 0
+              },
+              {
+                "text": "Dům, jenž stojí na kopci…",
+                "group": 0
+              },
+              {
+                "text": "Kluk, jehož znám…",
+                "group": 0
+              },
+              {
+                "text": "…protože byl unavený.",
+                "group": 1
+              },
+              {
+                "text": "…poněvadž spěchal.",
+                "group": 1
+              },
+              {
+                "text": "…protože měl hlad.",
+                "group": 1
+              },
+              {
+                "text": "…aby nepřišel pozdě.",
+                "group": 2
+              },
+              {
+                "text": "…abych se to naučil.",
+                "group": 2
+              },
+              {
+                "text": "…aby viděla moře.",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Spojka napoví, otázka rozhodne"
+        },
+        {
+          "type": "text",
+          "text": "Spojka je jen nápověda. Přesně druh určíš otázkou: *Jdu, kam chci.* – Kam jdu? → **místní**. *Vím, kam jde.* – Co vím? → **předmětná**. Stejné *kam*, jiný druh!"
+        },
+        {
+          "type": "text",
+          "text": "Další druhy podle otázky: **podmětná** (kdo? co? – *Kdo lže, ten krade.*), **předmětná** (pádová otázka – *Vím, že přijdeš.*), **místní** (kde? kam?)."
+        },
+        {
+          "type": "heading",
+          "text": "Čárka"
+        },
+        {
+          "type": "text",
+          "text": "Vedlejší větu **vždy oddělíš čárkou** od řídící věty. Když je vedlejší věta uprostřed, má čárku na obou stranách: *Kniha, kterou čtu, je dobrá.*"
+        },
+        {
+          "type": "example",
+          "question": "Urči druh a doplň čárky: *Šetří aby si koupil kolo.*",
+          "answer": "Šetří – za jakým účelem? → **účelová**. Čárka před *aby*: *Šetří, aby si koupil kolo.*"
+        },
+        {
+          "type": "example",
+          "question": "Urči druh: *Mám kamaráda, který hraje na kytaru.*",
+          "answer": "Jakého kamaráda mám? → *který hraje na kytaru* → **přívlastková** (rozvíjí podstatné jméno *kamaráda*)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kniha, kterou čtu je dobrá.",
+          "right": "Kniha, kterou čtu, je dobrá.",
+          "why": "Vedlejší věta vložená doprostřed řídící věty se odděluje čárkami z obou stran."
+        },
+        {
+          "type": "summary",
+          "text": "Vedlejší věta je „připojený vagon“ – odpovídá na otázku z řídící věty a odděluje se čárkou. Spojka napoví (který → přívlastková, protože → příčinná, aby → účelová), ale rozhoduje otázka."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Urči druh vedlejší věty: *Mám kamaráda, který hraje na kytaru.*",
+      "options": [
+        "přívlastková",
+        "předmětná",
+        "časová"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Urči druh vedlejší věty: *Nevím, kde bydlí.*",
+      "options": [
+        "předmětná",
+        "místní",
+        "přívlastková"
+      ],
+      "answer": 0,
+      "explanation": "Co nevím? → předmětná. Slovo *kde* klame."
+    },
+    {
+      "type": "choice",
+      "question": "Urči druh vedlejší věty: *Když zazvonil zvonek, děti vyběhly.*",
+      "options": [
+        "časová",
+        "příčinná",
+        "podmětná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Urči druh vedlejší věty: *Šel spát, protože byl unavený.*",
+      "options": [
+        "příčinná",
+        "účelová",
+        "časová"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Urči druh vedlejší věty: *Kdo se směje naposled, ten se směje nejlépe.*",
+      "options": [
+        "podmětná",
+        "předmětná",
+        "přívlastková"
+      ],
+      "answer": 0,
+      "explanation": "Kdo se směje nejlépe? → podmětná."
+    },
+    {
+      "type": "choice",
+      "question": "Urči druh vedlejší věty: *Šetří, aby si koupil kolo.*",
+      "options": [
+        "účelová",
+        "příčinná",
+        "předmětná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vedlejší věta se od věty řídící odděluje čárkou.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Napiš spojku, kterou často začíná vedlejší věta účelová.",
+      "answers": [
+        "aby"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj otázku s druhem vedlejší věty.",
+      "pairs": [
+        [
+          "proč?",
+          "příčinná"
+        ],
+        [
+          "kdy?",
+          "časová"
+        ],
+        [
+          "jaký? který?",
+          "přívlastková"
+        ],
+        [
+          "kde?",
+          "místní"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kolik vět má souvětí *Když jsem přišel domů, máma vařila.*?",
+      "options": [
+        "2",
+        "1",
+        "3"
+      ],
+      "answer": 0,
+      "explanation": "Počet vět = počet sloves v určitém tvaru (přišel jsem, vařila)."
+    },
+    {
+      "type": "open",
+      "question": "Jak určíš druh vedlejší věty?",
+      "answer": "Najdu větu řídící a zeptám se z ní na větu vedlejší. Podle otázky (kdo?, co?, jaký?, kdy?, proč?…) určím druh."
+    },
+    {
+      "type": "open",
+      "question": "Utvoř souvětí s vedlejší větou příčinnou.",
+      "answer": "Např.: *Zůstal doma, protože byl nemocný.* Vedlejší věta odpovídá na otázku proč?"
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "proud-v-kovech",
+  "title": "Elektrický proud v kovech",
+  "emoji": "🔌",
+  "explanations": [
+    {
+      "title": "Baterka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Nová plochá baterie má na sobě 4,5 V. Změříš ji voltmetrem a opravdu ukáže 4,5 V. Pak k ní připojíš silnou žárovku – a voltmetr najednou ukazuje méně. Baterie se přece za vteřinu nevybila. Co se stalo?"
+        },
+        {
+          "type": "text",
+          "text": "Tady pochopíš, jak teče proud v drátech, proč se zdroj při zatížení „prohne“, jak se proud dělí v rozvětveném obvodu a kolik zaplatíš za elektřinu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektrický proud I",
+          "definition": "Uspořádaný pohyb nábojů. Udává, kolik náboje projde vodičem za sekundu: `I = Q / t`. Jednotka **ampér (A)**.",
+          "example": "V kovech tečou volné elektrony – jako voda v trubce."
+        },
+        {
+          "type": "term",
+          "term": "Napětí U",
+          "definition": "„Tlak“, který žene náboje obvodem – práce na každý coulomb. Jednotka volt (V)."
+        },
+        {
+          "type": "term",
+          "term": "Odpor R",
+          "definition": "Jak moc vodič brání průchodu proudu. Jednotka **ohm (Ω)**. **Ohmův zákon**: `I = U / R`.",
+          "example": "Na rezistor 10 Ω připojíš 5 V → teče 0,5 A."
+        },
+        {
+          "type": "term",
+          "term": "Elektromotorické napětí Uₑ",
+          "definition": "Napětí, které zdroj „umí vyrobit“ – naměříš ho, když z něj neteče proud.",
+          "example": "Plochá baterie: Uₑ = 4,5 V."
+        },
+        {
+          "type": "term",
+          "term": "Vnitřní odpor Rᵢ",
+          "definition": "Odpor uvnitř samotného zdroje (chemikálie, kontakty). Proud jím prochází také a „ukousne“ si část napětí."
+        },
+        {
+          "type": "term",
+          "term": "Svorkové napětí U",
+          "definition": "Napětí, které zdroj skutečně dává na svých vývodech (svorkách), když z něj teče proud: `U = Uₑ − Rᵢ · I`."
+        },
+        {
+          "type": "heading",
+          "text": "Proč napětí klesne"
+        },
+        {
+          "type": "text",
+          "text": "Proud teče celým okruhem – spotřebičem **i zdrojem**. Na vnitřním odporu se ztratí napětí `Rᵢ · I`. Čím větší proud, tím větší ztráta. Proto silná žárovka „srazí“ napětí víc."
+        },
+        {
+          "type": "text",
+          "text": "Celkový odpor obvodu je R + Rᵢ, proto: `I = Uₑ / (R + Rᵢ)`. To je **Ohmův zákon pro celý obvod**."
+        },
+        {
+          "type": "example",
+          "question": "Zdroj Uₑ = 12 V, Rᵢ = 1 Ω, spotřebič R = 5 Ω. Jaký teče proud a jaké je svorkové napětí?",
+          "answer": "I = 12 / (5 + 1) = **2 A**. Na vnitřním odporu se ztratí 1 · 2 = 2 V, takže U = 12 − 2 = **10 V**."
+        },
+        {
+          "type": "term",
+          "term": "Zkrat",
+          "definition": "Svorky zdroje spojíš drátem bez odporu (R = 0). Proud omezuje jen vnitřní odpor: `I_k = Uₑ / Rᵢ`. Bývá obrovský a nebezpečný.",
+          "example": "Uₑ = 6 V, Rᵢ = 0,5 Ω → I_k = 12 A."
+        },
+        {
+          "type": "heading",
+          "text": "Rozvětvený obvod"
+        },
+        {
+          "type": "term",
+          "term": "Uzel",
+          "definition": "Místo, kde se vodiče větví – stýkají se aspoň tři."
+        },
+        {
+          "type": "text",
+          "text": "Elektrony se v uzlu nehromadí ani neztrácejí. **Kolik proudu do uzlu přiteče, tolik odteče** (1. Kirchhoffův zákon). A v každé uzavřené smyčce se napětí na spotřebičích sečtou na napětí zdrojů (2. Kirchhoffův zákon)."
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a zkus si ke každému zákonu nakreslit malý obvod."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Ohmův zákon pro celý obvod",
+                "back": "I = Uₑ / (R + Rᵢ)"
+              },
+              {
+                "front": "1. Kirchhoffův zákon",
+                "back": "součet proudů do uzlu = součet proudů z uzlu"
+              },
+              {
+                "front": "2. Kirchhoffův zákon",
+                "back": "ve smyčce: součet napětí na rezistorech = součet elektromotorických napětí"
+              },
+              {
+                "front": "výkon",
+                "back": "P = U · I = R · I²"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Do uzlu přitéká 3 A a 2 A, odtéká 1 A a neznámý proud I. Kolik je I?",
+          "answer": "Přitéká 3 + 2 = 5 A. Odtéká 1 + I. 5 = 1 + I → I = **4 A**."
+        },
+        {
+          "type": "heading",
+          "text": "Teplo a účet za elektřinu"
+        },
+        {
+          "type": "text",
+          "text": "Elektrony narážejí do atomů kovu a předávají jim energii – drát se zahřívá. Výkon `P = U · I`, energie `W = P · t`. Na účtu za elektřinu je energie v kWh: 1 kWh = 3,6 MJ."
+        },
+        {
+          "type": "text",
+          "text": "S rostoucí teplotou atomy kmitají víc a elektronům víc překážejí – odpor kovu **roste**. Některé látky naopak při velmi nízké teplotě ztratí odpor úplně: **supravodivost**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zdroj dává vždy napětí, které má napsané na sobě.",
+          "right": "Při odběru proudu je svorkové napětí menší: U = Uₑ − Rᵢ · I.",
+          "why": "Proud prochází i vnitřním odporem zdroje a na něm se část napětí ztratí. Jen bez proudu je U = Uₑ."
+        },
+        {
+          "type": "summary",
+          "text": "I = Uₑ/(R + Rᵢ), svorkové napětí U = Uₑ − Rᵢ·I. V uzlu: kolik přiteče, tolik odteče. P = U·I. Odpor kovu s teplotou roste."
+        }
+      ]
+    },
+    {
+      "title": "Výpočty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Elektrikář musí spočítat, jak tlustý drát dát do zásuvky, aby se nepřehříval. Konstruktér auta potřebuje vědět, jaký proud dá akumulátor startéru. Ty chceš vědět, kolik stojí běh rychlovarné konvice. Na to vše jsou jednoduché vzorce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Proud, napětí, odpor",
+          "definition": "Proud I (A) = náboj za sekundu. Napětí U (V) = práce na 1 C. Odpor R (Ω) = jak vodič brání proudu. Ohmův zákon: `U = R · I`."
+        },
+        {
+          "type": "term",
+          "term": "Měrný odpor ρ",
+          "definition": "Vlastnost materiálu: odpor drátu délky 1 m s průřezem 1 m². Jednotka Ω·m. Měď 1,7 · 10⁻⁸ Ω·m (velmi dobrý vodič)."
+        },
+        {
+          "type": "term",
+          "term": "Průřez S",
+          "definition": "Plocha „řezu“ drátem. 1 mm² = 10⁻⁶ m²."
+        },
+        {
+          "type": "term",
+          "term": "Zdroj: Uₑ a Rᵢ",
+          "definition": "Každý skutečný zdroj má **elektromotorické napětí** Uₑ (napětí naprázdno) a **vnitřní odpor** Rᵢ."
+        },
+        {
+          "type": "term",
+          "term": "Výkon a příkon P",
+          "definition": "Energie za sekundu: `P = U · I = R · I²`, jednotka watt (W)."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Co",
+            "Vztah"
+          ],
+          "rows": [
+            [
+              "odpor drátu",
+              "R = ρ · l / S"
+            ],
+            [
+              "Ohmův zákon pro celý obvod",
+              "I = Uₑ / (R + Rᵢ)"
+            ],
+            [
+              "svorkové napětí",
+              "U = Uₑ − Rᵢ · I"
+            ],
+            [
+              "zkratový proud",
+              "I_k = Uₑ / Rᵢ"
+            ],
+            [
+              "energie",
+              "W = U · I · t = P · t"
+            ],
+            [
+              "teplota a odpor",
+              "R = R₀ · (1 + α · Δt)"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ve vzorci R = ρ · l / S: delší drát = větší odpor (elektrony mají delší cestu), tlustší drát = menší odpor (víc místa). Roste-li teplota, odpor kovů roste (α > 0)."
+        },
+        {
+          "type": "example",
+          "question": "Měděný drát: ρ = 1,7 · 10⁻⁸ Ω·m, délka 100 m, průřez 1 mm². Jaký má odpor?",
+          "answer": "S = 1 mm² = 10⁻⁶ m². R = 1,7 · 10⁻⁸ · 100 / 10⁻⁶ = 1,7 · 10⁻⁶ / 10⁻⁶ = **1,7 Ω**."
+        },
+        {
+          "type": "example",
+          "question": "Zdroj Uₑ = 12 V, Rᵢ = 1 Ω, vnější R = 5 Ω. Proud a svorkové napětí?",
+          "answer": "I = 12 / 6 = **2 A**; U = 12 − 1 · 2 = **10 V**."
+        },
+        {
+          "type": "example",
+          "question": "Spotřebič 2 kW běží 3 h. Kolik energie spotřebuje?",
+          "answer": "W = P · t = 2 kW · 3 h = **6 kWh** (= 6 · 3,6 MJ = 21,6 MJ)."
+        },
+        {
+          "type": "text",
+          "text": "Ohmův zákon pro celý obvod je rovnice. Na vahách: (R + Rᵢ) · I = Uₑ, tedy 6 · I = 12. Najdi I (widget ho značí x)."
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 6,
+            "b": 0,
+            "c": 12
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kirchhoffovy zákony"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**1. zákon (uzly):** součet proudů, které do uzlu vtékají, se rovná součtu proudů, které vytékají.",
+            "**2. zákon (smyčky):** v každé uzavřené smyčce je součet napětí na rezistorech roven součtu elektromotorických napětí zdrojů.",
+            "Pomocí nich spočítáš i složité rozvětvené obvody."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**Supravodivost**: některé materiály mají pod tzv. kritickou teplotou nulový odpor. Využívá se v magnetické rezonanci (MRI)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "R = ρ · l / S s průřezem dosazeným jako 1 (mm²).",
+          "right": "Průřez převeď na m²: 1 mm² = 10⁻⁶ m².",
+          "why": "Měrný odpor je v Ω·m, takže délka musí být v metrech a průřez v m². Jinak vyjde odpor milionkrát menší."
+        },
+        {
+          "type": "summary",
+          "text": "`R = ρl/S`, `I = Uₑ/(R + Rᵢ)`, `U = Uₑ − RᵢI`, `P = UI`, 1 kWh = 3,6 MJ. Kirchhoff: proudy v uzlu se vyrovnají, napětí ve smyčce také."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Zdroj Uₑ = 12 V, Rᵢ = 1 Ω, vnější odpor 5 Ω. Proud v A =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Zdroj Uₑ = 12 V, Rᵢ = 1 Ω, vnější odpor 5 Ω. Svorkové napětí ve V =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Zdroj Uₑ = 6 V, Rᵢ = 0,5 Ω. Zkratový proud v A =",
+      "answers": [
+        "12"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Do uzlu přitéká 3 A a 2 A, odtéká 1 A a I. Proud I v A =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Měděný drát: ρ = 1,7 · 10⁻⁸ Ω·m, délka 100 m, průřez 1 mm². Odpor v Ω =",
+      "answers": [
+        "1,7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Spotřebič 2 kW běží 3 h. Spotřebovaná energie v kWh =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Spotřebičem při 230 V teče 0,5 A. Příkon ve W =",
+      "answers": [
+        "115"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Odpor kovového vodiče s rostoucí teplotou klesá.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Co je supravodivost?",
+      "options": [
+        "nulový odpor pod kritickou teplotou",
+        "vedení proudu ionty",
+        "nulový proud",
+        "vysoký odpor"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu s jednotkou.",
+      "pairs": [
+        [
+          "měrný odpor",
+          "Ω·m"
+        ],
+        [
+          "odpor",
+          "Ω"
+        ],
+        [
+          "elektrická energie",
+          "J"
+        ],
+        [
+          "výkon",
+          "W"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj Ohmův zákon pro uzavřený obvod a vysvětli svorkové napětí.",
+      "answer": "I = Uₑ/(R + Rᵢ). Svorkové napětí U = Uₑ − Rᵢ·I je menší než elektromotorické o úbytek na vnitřním odporu zdroje; při zatížení klesá."
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj Kirchhoffovy zákony.",
+      "answer": "1. Součet proudů vstupujících do uzlu se rovná součtu proudů vystupujících. 2. V uzavřené smyčce je součet úbytků napětí na rezistorech roven součtu elektromotorických napětí zdrojů."
+    }
+  ]
+}

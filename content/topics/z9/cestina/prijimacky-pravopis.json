@@ -1,0 +1,441 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "prijimacky-pravopis",
+  "title": "Přijímačky: pravopis",
+  "emoji": "🎯",
+  "explanations": [
+    {
+      "title": "Nejčastější chyby",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V přijímacích zkouškách z češtiny se pravopis objevuje skoro v každé úloze. A chyby se opakují pořád stejné: *děti si hráli*, *dej to mě*, *spomínka*, *oběvit*."
+        },
+        {
+          "type": "text",
+          "text": "Dobrá zpráva: na každou z těch chyb existuje jednoduchý fígl. Projdeme šest nejčastějších jevů, ke každému pravidlo a test."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy (připomenutí)"
+        },
+        {
+          "type": "term",
+          "term": "Podmět a přísudek",
+          "definition": "Podmět = kdo? co? (1. pád). Přísudek = co dělá? V minulém čase má přísudek tvar na **-l** + koncovka (**příčestí minulé**).",
+          "example": "**Ptáci** (podmět) **odlétli** (přísudek)."
+        },
+        {
+          "type": "term",
+          "term": "Rod",
+          "definition": "Určíš ho slovy ten/ta/to. Mužský rod je životný (lidé, zvířata) nebo neživotný (věci).",
+          "example": "ten pes, ten strom, ta kočka, to kuře"
+        },
+        {
+          "type": "term",
+          "term": "Předpona a kořen",
+          "definition": "**Kořen** je hlavní část slova, **předpona** stojí před ním.",
+          "example": "**ob**-**jev**-it"
+        },
+        {
+          "type": "heading",
+          "text": "1. Shoda přísudku s podmětem"
+        },
+        {
+          "type": "text",
+          "text": "Mužský životný → **-i** (*psi štěkali*), mužský neživotný a ženský → **-y** (*stromy rostly, ženy zpívaly*), střední → **-a** (*kuřata pípala*). Je-li v několikanásobném podmětu aspoň jeden mužský životný → **-i**. Pozor: *děti* → -y, *lidé* → -i."
+        },
+        {
+          "type": "heading",
+          "text": "2. Mě, nebo mně"
+        },
+        {
+          "type": "text",
+          "text": "Dosaď **tebe / tobě**: tebe → **mě**, tobě → **mně**. *Dej to (tobě) mně.* *Vidíš (tebe) mě?*"
+        },
+        {
+          "type": "heading",
+          "text": "3. Předpony s-, z-, vz-"
+        },
+        {
+          "type": "text",
+          "text": "**s-** = dolů, dohromady (*sjet, spojit*). **z-** = změna stavu (*zčervenat, zmrznout*). **vz-** = nahoru (*vzlétnout*) a také ve slovech *vzpomínka, vzpomenout*."
+        },
+        {
+          "type": "heading",
+          "text": "4. bě/bje, vě/vje"
+        },
+        {
+          "type": "text",
+          "text": "**bje, vje** jen tam, kde se potká předpona **ob-/v-** s kořenem na **j**: *ob-jevit, v-jezd*. Jinde **bě, vě**: *oběd, věc*."
+        },
+        {
+          "type": "heading",
+          "text": "5. Koncovky přídavných jmen"
+        },
+        {
+          "type": "text",
+          "text": "Přídavné jméno se řídí podstatným: *velcí psi* (mužský životný), *velké stromy*. Přivlastňovací: *Petrovi bratři* (mužský životný), *Petrovy knihy*, *Petrovy psy* (4. pád)."
+        },
+        {
+          "type": "heading",
+          "text": "6. Velká písmena"
+        },
+        {
+          "type": "text",
+          "text": "Velké písmeno: začátek věty, **vlastní jména** (Karel, Vltava, Česká republika, Karlův most), **svátky** (Vánoce, Velikonoce), obyvatelé (Pražan). Malé: **měsíce, dny, jazyky** (leden, pondělí, česky) a přídavná jména jako *český, pražský*."
+        },
+        {
+          "type": "text",
+          "text": "Teď test. U každé mezery použij fígl, který k jevu patří."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Ptáci odlétl",
+                "after": " na jih.",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Řekni to ",
+                "after": " hned.",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Raketa ",
+                "after": "létla k nebi.",
+                "options": [
+                  "s",
+                  "z",
+                  "vz"
+                ],
+                "answer": 2
+              },
+              {
+                "before": "Ob",
+                "after": "evil chybu.",
+                "options": [
+                  "j",
+                  "ě"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Stromy rozkvetl",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Viděl jsem Petrov",
+                "after": " psy.",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Ženy a muži přišl_.*",
+          "answer": "Mezi podměty je *muži* – mužský životný → **přišli**."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Tomáš _červenal studem.*",
+          "answer": "Změna stavu (byl bledý, je červený) → **z**: *zčervenal*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Děti si hráli na zahradě.",
+          "right": "Děti si hrály na zahradě.",
+          "why": "*Děti* se v množném čísle chovají jako ženský rod → -y."
+        },
+        {
+          "type": "summary",
+          "text": "Shoda: najdi podmět a urči rod. Mě/mně: dosaď tebe/tobě. s- dolů, z- změna, vz- nahoru. bje jen ob- + j. Velké písmeno u vlastních jmen a svátků."
+        }
+      ]
+    },
+    {
+      "title": "Kontrolní otázky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pilot před startem projde **kontrolní seznam**: palivo, klapky, motory. Nespoléhá na pocit. U přijímaček to můžeš udělat stejně: u každého zrádného místa si položíš jednu kontrolní otázku."
+        },
+        {
+          "type": "text",
+          "text": "Tady máš šest kontrolních otázek na nejčastější pravopisné chyby. Ke každé vysvětlíme, proč funguje."
+        },
+        {
+          "type": "term",
+          "term": "Pravopisný jev",
+          "definition": "Místo ve slově nebo větě, kde se často chybuje a kde rozhoduje pravidlo.",
+          "example": "i/y v koncovce, mě/mně, velké písmeno"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo nebo co ve větě děj dělá (1. pád, kdo? co?).",
+          "example": "*Ptáci odlétli.* – ptáci"
+        },
+        {
+          "type": "term",
+          "term": "Vlastní jméno",
+          "definition": "Jméno konkrétní osoby, místa, stavby, svátku – jedinečné věci. Píše se s velkým písmenem.",
+          "example": "Karel, Krkonoše, Karlův most, Vánoce"
+        },
+        {
+          "type": "heading",
+          "text": "Kontrolní seznam"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Koncovka -i/-y/-a v minulém čase?** → Kdo to dělal (podmět)? Ten (živý) → -i, ten (věc) a ta → -y, to → -a. Je tam jeden mužský životný? → -i.",
+            "**mě, nebo mně?** → Dosaď *tebe/tobě*. Tobě → mně.",
+            "**s, z, nebo vz?** → Dolů/dohromady → s. Změna → z. Nahoru → vz.",
+            "**bě, nebo bje?** → Je tam předpona ob-/v- a kořen na j? Ano → bje. Ne → bě.",
+            "**Koncovka přídavného jména?** → K jakému podstatnému jménu patří? Určí jeho rod a pád.",
+            "**Velké písmeno?** → Je to jedinečné jméno nebo svátek? Ano → velké. Měsíc, den, jazyk, přídavné jméno *český* → malé."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Velká písmena v testu"
+        },
+        {
+          "type": "text",
+          "text": "Vyber správné písmeno. Ptej se: je to jedinečné jméno?"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Přijeď na ",
+                "after": "ánoce.",
+                "options": [
+                  "V",
+                  "v"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Mluvíme ",
+                "after": "esky.",
+                "options": [
+                  "Č",
+                  "č"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Bydlím v ",
+                "after": "eské republice.",
+                "options": [
+                  "Č",
+                  "č"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Narodil se v ",
+                "after": "ednu.",
+                "options": [
+                  "L",
+                  "l"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Prošli jsme se po ",
+                "after": "arlově mostě.",
+                "options": [
+                  "K",
+                  "k"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Jsem rodilý ",
+                "after": "ražan.",
+                "options": [
+                  "P",
+                  "p"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Která věta je správně? *O Vánocích pojedeme do Krkonoš.* / *O vánocích pojedeme do krkonoš.*",
+          "answer": "Vánoce = svátek → velké V. Krkonoše = jméno pohoří → velké K. Správně: **O Vánocích pojedeme do Krkonoš.**"
+        },
+        {
+          "type": "example",
+          "question": "Projdi seznam u věty: *Ptáci a včely odlétl_ a m_ bylo smutno.*",
+          "answer": "Koncovka: kdo odlétl? *ptáci* (mužský životný) a *včely* → je tam mužský životný → **odlétli**. *mě/mně*: *tobě bylo smutno* → **mně**. Správně: *Ptáci a včely odlétli a mně bylo smutno.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "spomínka",
+          "right": "vzpomínka",
+          "why": "Slova *vzpomínka, vzpomenout, vzpomněl* píšeme s **vz-**. Je to ustálený pravopis – nauč se je jako celek."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Mluvíme Česky.",
+          "right": "Mluvíme česky.",
+          "why": "*česky* je příslovce, ne vlastní jméno. Názvy jazyků a přídavná jména jako *český* píšeme malým písmenem."
+        },
+        {
+          "type": "summary",
+          "text": "U každého zrádného místa si polož kontrolní otázku: kdo to dělal (shoda)? tebe/tobě (mě/mně)? jaký směr (s/z/vz)? předpona + j (bje)? jedinečné jméno (velké písmeno)?"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Doplň: *Děti si hrál_ na zahradě.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 1,
+      "explanation": "Děti se v množném čísle chovají jako ženský rod."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Pošli ___ dopis.*",
+      "options": [
+        "mně",
+        "mě"
+      ],
+      "answer": 0,
+      "explanation": "Pošli tobě → mně."
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsané správně?",
+      "options": [
+        "vzpomínka",
+        "spomínka",
+        "zpomínka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsané správně?",
+      "options": [
+        "zmrzlina",
+        "smrzlina"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které spojení je napsané správně?",
+      "options": [
+        "Petrovy knihy",
+        "Petrovi knihy",
+        "Petrový knihy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Názvy měsíců píšeme s malým písmenem.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Doplň ě, nebo je a napiš celé slovo: *ob_d*",
+      "answers": [
+        "oběd"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Psi a kočky se honil_.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 0,
+      "explanation": "Je tam mužský životný (psi) → -i."
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je napsaná správně?",
+      "options": [
+        "O Vánocích pojedeme do Krkonoš.",
+        "O vánocích pojedeme do krkonoš.",
+        "O Vánocích pojedeme do krkonoš."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Doplň předponu: *Tomáš ___červenal studem.*",
+      "answers": [
+        "z"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Ženy a muži přišl_.*",
+      "options": [
+        "i",
+        "y"
+      ],
+      "answer": 0,
+      "explanation": "muži – mužský životný → -i."
+    },
+    {
+      "type": "open",
+      "question": "Jak postupuješ, když nevíš, jestli v příčestí napsat *-i*, nebo *-y*?",
+      "answer": "Najdu podmět a určím jeho rod. Mužský životný → -i, mužský neživotný a ženský → -y, střední → -a. U několikanásobného podmětu stačí jeden mužský životný a píšu -i."
+    },
+    {
+      "type": "open",
+      "question": "Kdy píšeme velké písmeno? Uveď příklady.",
+      "answer": "Na začátku věty a u vlastních jmen: osob (Karel), zeměpisných názvů (Česká republika, Vltava), staveb (Karlův most), svátků (Vánoce). Malé u měsíců, dnů, jazyků a přídavných jmen typu český."
+    }
+  ]
+}

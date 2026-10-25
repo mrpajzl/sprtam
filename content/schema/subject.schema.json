@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sprtam.cz/schema/subject.schema.json",
+  "title": "Šprtám – seznam témat předmětu",
+  "$comment": "Generováno z src/content/format.ts a src/widgets/ (npm run content:generate). Needitovat ručně.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "format": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1,
+      "description": "Verze formátu, teď 1."
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "minItems": 1,
+      "description": "Id témat v pořadí, v jakém se během roku učí. Každé má soubor <id>.json vedle."
+    }
+  },
+  "required": [
+    "format",
+    "topics"
+  ],
+  "additionalProperties": false,
+  "description": "Pořadí témat jednoho předmětu v jednom ročníku."
+}

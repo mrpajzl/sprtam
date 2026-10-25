@@ -1,0 +1,381 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vyvoj-populace",
+  "title": "Vývoj populace a demografický přechod",
+  "emoji": "📈",
+  "explanations": [
+    {
+      "title": "Příběh jedné země",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Tvoje prababička měla možná šest sourozenců, z nichž dva zemřeli jako malé děti. Babička měla tři sourozence. Ty máš jednoho, nebo žádného. Takhle se během sto let změnila skoro každá evropská rodina."
+        },
+        {
+          "type": "text",
+          "text": "Stejnou cestou dnes procházejí země Afriky a Asie. Geografové jí říkají **demografický přechod**. Když ho pochopíš, vysvětlíš, proč Afrika rychle roste a Evropa stárne."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Demografie",
+          "definition": "Věda o obyvatelstvu – kolik lidí se rodí, umírá, stěhuje a jak jsou staří.",
+          "example": "Statistický úřad zveřejňuje demografická data."
+        },
+        {
+          "type": "term",
+          "term": "Porodnost a úmrtnost (‰)",
+          "definition": "Počet živě narozených (nebo zemřelých) za rok na **1 000 obyvatel**. Promile (‰) = na tisíc.",
+          "example": "Porodnost 10 ‰ = na 1 000 lidí se za rok narodí 10 dětí."
+        },
+        {
+          "type": "term",
+          "term": "Přirozený přírůstek",
+          "definition": "Porodnost − úmrtnost. Kladný = populace roste, záporný = ubývá.",
+          "example": "12 ‰ − 10 ‰ = 2 ‰."
+        },
+        {
+          "type": "term",
+          "term": "Demografický přechod",
+          "definition": "Změna od vysoké porodnosti i úmrtnosti (tradiční společnost) k nízké porodnosti i úmrtnosti (moderní společnost).",
+          "example": "Česko jím prošlo v 19. a 20. století."
+        },
+        {
+          "type": "heading",
+          "text": "Fáze přechodu krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**1. fáze**: vysoká porodnost i úmrtnost → populace skoro neroste. Rodí se hodně dětí, ale hodně jich umírá.",
+            "**2. fáze**: úmrtnost klesá (hygiena, čistá voda, očkování, víc jídla), porodnost zůstává vysoká → **prudký růst**.",
+            "**3. fáze**: klesá i porodnost (města, vzdělání žen, antikoncepce, děti už nejsou potřeba jako pracovní síla) → růst se zpomaluje.",
+            "**4. fáze**: obě nízké → populace stagnuje a **stárne**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Klíčové je pořadí: úmrtnost klesne **dřív** než porodnost. Mezi tím se rodí hodně dětí a skoro všechny přežijí – proto populace roste nejrychleji."
+        },
+        {
+          "type": "heading",
+          "text": "Jak to poznat z čísel"
+        },
+        {
+          "type": "term",
+          "term": "Úhrnná plodnost",
+          "definition": "Průměrný počet dětí na jednu ženu. Aby se populace bez stěhování udržela, je potřeba asi **2,1**.",
+          "example": "Niger asi 6 (2.–3. fáze), Česko asi 1,4 (4. fáze)."
+        },
+        {
+          "type": "term",
+          "term": "Věková pyramida",
+          "definition": "Graf počtu lidí podle věku – nejmladší dole, nejstarší nahoře.",
+          "example": "Ve 2. fázi je to trojúhelník (hodně dětí), ve 4. fázi urna (málo dětí, hodně starých)."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Ve které fázi je Niger a ve které Česko?",
+          "answer": "Niger: úmrtnost už klesla, ale ženy mají v průměru asi 6 dětí – **2. až 3. fáze**, rychlý růst. Česko: nízká porodnost i úmrtnost – **4. fáze**."
+        },
+        {
+          "type": "example",
+          "question": "Porodnost 12 ‰, úmrtnost 10 ‰. Jaký je přirozený přírůstek?",
+          "answer": "12 − 10 = **2 ‰**. Na každých 1 000 obyvatel přibudou za rok 2 lidé."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Populace v chudých zemích roste, protože se tam rodí víc dětí než dřív.",
+          "right": "Dětí se rodí podobně nebo méně než dřív. Populace roste hlavně proto, že výrazně klesla úmrtnost.",
+          "why": "Dřív hodně dětí umíralo. Dnes díky očkování a hygieně přežijí – porodnost se ale přizpůsobuje až s odstupem."
+        },
+        {
+          "type": "summary",
+          "text": "Demografický přechod: 1. obě vysoké, 2. klesá úmrtnost (prudký růst), 3. klesá porodnost, 4. obě nízké (stárnutí). Úmrtnost klesá dřív než porodnost."
+        }
+      ]
+    },
+    {
+      "title": "Ukazatele a pyramidy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ministerstvo plánuje, kolik bude za 20 let potřeba škol a kolik domovů pro seniory. Na to potřebuje čísla – a umět je číst. Naučíš se hlavní demografické ukazatele a věkovou pyramidu."
+        },
+        {
+          "type": "text",
+          "text": "Z pár čísel pak poznáš, jestli populace roste, stárne, nebo ubývá."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Populace",
+          "definition": "Všichni obyvatelé určitého území.",
+          "example": "Světová populace má přes 8 miliard lidí."
+        },
+        {
+          "type": "term",
+          "term": "Úhrnná plodnost",
+          "definition": "Kolik dětí by měla průměrně jedna žena za život.",
+          "example": "Česko asi 1,4, Niger asi 6."
+        },
+        {
+          "type": "term",
+          "term": "Prostá reprodukce",
+          "definition": "Stav, kdy děti přesně nahradí generaci rodičů a populace (bez stěhování) neroste ani neklesá. Potřebná úhrnná plodnost je asi **2,1** – dvě děti nahradí rodiče, 0,1 vyrovná úmrtí v dětství.",
+          "example": "Česko je pod touto hranicí."
+        },
+        {
+          "type": "term",
+          "term": "Naděje dožití",
+          "definition": "Kolik let se průměrně dožije právě narozené dítě.",
+          "example": "V Česku asi 79 let."
+        },
+        {
+          "type": "term",
+          "term": "Věková pyramida",
+          "definition": "Graf, který ukazuje, kolik lidí je v jakém věku. Muži vlevo, ženy vpravo, nejmladší dole.",
+          "example": "Široká dole = hodně dětí."
+        },
+        {
+          "type": "heading",
+          "text": "Ukazatele v tabulce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Ukazatel",
+            "Význam"
+          ],
+          "rows": [
+            [
+              "porodnost (‰)",
+              "živě narození na 1 000 obyv. za rok"
+            ],
+            [
+              "úmrtnost (‰)",
+              "zemřelí na 1 000 obyv. za rok"
+            ],
+            [
+              "úhrnná plodnost",
+              "průměrný počet dětí na ženu"
+            ],
+            [
+              "naděje dožití",
+              "průměrný očekávaný věk při narození"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Tři tvary pyramidy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Progresivní (trojúhelník)** – široká základna, úzký vrchol → rostoucí populace (Niger).",
+            "**Stacionární (zvon)** – podobně dětí i dospělých → stabilní populace.",
+            "**Regresivní (urna)** – základna užší než střed → ubývající, stárnoucí populace (Česko, Japonsko)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Nejlidnatější státy"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf. Které dva státy výrazně vyčnívají? Kolik lidí z 8 miliard žije jen v nich?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "mil. obyv. (asi)",
+            "items": [
+              {
+                "label": "Indie",
+                "value": 1450
+              },
+              {
+                "label": "Čína",
+                "value": 1410
+              },
+              {
+                "label": "USA",
+                "value": 340
+              },
+              {
+                "label": "Indonésie",
+                "value": 280
+              },
+              {
+                "label": "Pákistán",
+                "value": 250
+              },
+              {
+                "label": "Nigérie",
+                "value": 230
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Od roku 2023 má nejvíc obyvatel **Indie**, předběhla Čínu. Nejvyšší plodnost má **subsaharská Afrika**. Tyto změny vysvětluje **demografický přechod**: úmrtnost klesá dřív než porodnost, proto populace nějakou dobu prudce roste."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Indie a Čína dohromady mají kolik procent světové populace (8,1 mld.)?",
+          "answer": "1,45 + 1,41 = 2,86 mld. 2,86 : 8,1 ≈ 0,35 → asi **35 %**, tedy víc než třetina lidstva."
+        },
+        {
+          "type": "example",
+          "question": "Úhrnná plodnost v Česku je 1,4. Co se stane bez přistěhovalců?",
+          "answer": "1,4 je pod 2,1. Každá generace dětí je menší než generace rodičů – populace bude **stárnout a ubývat**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pro zachování populace stačí, když má každá žena v průměru 2 děti.",
+          "right": "Potřeba je asi 2,1 dítěte na ženu.",
+          "why": "Část dětí zemře před dospělostí a chlapců se rodí o trochu víc než dívek. Těch 0,1 to vyrovnává."
+        },
+        {
+          "type": "summary",
+          "text": "Úhrnná plodnost 2,1 = prostá reprodukce. Pyramida: trojúhelník roste, zvon stabilní, urna ubývá. Nejlidnatější je Indie, pak Čína."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je typické pro 2. fázi demografického přechodu?",
+      "options": [
+        "klesá úmrtnost, porodnost zůstává vysoká",
+        "obě nízké",
+        "obě vysoké",
+        "roste úmrtnost"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jaká úhrnná plodnost zhruba zajišťuje prostou reprodukci?",
+      "answers": [
+        "2,1",
+        "2.1"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Indie má dnes víc obyvatel než Čína.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jaký tvar má věková pyramida rychle rostoucí populace?",
+      "options": [
+        "široká základna, úzký vrchol",
+        "úzká základna",
+        "obdélník",
+        "urna"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Porodnost 12 ‰, úmrtnost 10 ‰. Přirozený přírůstek v ‰ =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj typ věkové pyramidy a populaci.",
+      "pairs": [
+        [
+          "progresivní (trojúhelník)",
+          "rostoucí"
+        ],
+        [
+          "stacionární (zvon)",
+          "stabilní"
+        ],
+        [
+          "regresivní (urna)",
+          "ubývající"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která oblast má dnes nejvyšší úhrnnou plodnost?",
+      "options": [
+        "subsaharská Afrika",
+        "Evropa",
+        "východní Asie",
+        "Severní Amerika"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Úhrnná plodnost v Česku je pod hranicí prosté reprodukce.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kolik obyvatel má svět přibližně?",
+      "options": [
+        "asi 6 mld.",
+        "přes 8 mld.",
+        "asi 10 mld.",
+        "asi 12 mld."
+      ],
+      "answer": 1
+    },
+    {
+      "type": "order",
+      "question": "Seřaď fáze demografického přechodu.",
+      "items": [
+        "vysoká porodnost i úmrtnost",
+        "pokles úmrtnosti",
+        "pokles porodnosti",
+        "nízká porodnost i úmrtnost"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Popiš demografický přechod a jeho příčiny.",
+      "answer": "Nejdřív klesá úmrtnost díky lepší hygieně, výživě a medicíně, porodnost zůstává vysoká a populace rychle roste. Později s urbanizací, vzděláním žen a antikoncepcí klesá i porodnost a růst se zastaví."
+    },
+    {
+      "type": "open",
+      "question": "Jaké důsledky má stárnutí populace?",
+      "answer": "Klesá podíl pracujících, rostou výdaje na důchody a zdravotní péči, chybí pracovní síla. Řešení: pozdější odchod do důchodu, podpora rodin, imigrace, automatizace."
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nasobek-delitel",
+  "title": "Násobek a dělitel",
+  "emoji": "🧩",
+  "explanations": [
+    {
+      "title": "Kostičky a řady",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš 12 bonbonů a chceš je spravedlivě rozdělit. Mezi 2, 3, 4 nebo 6 dětí to jde – nic nezbude. Mezi 5 dětí ne – 2 bonbony zbydou."
+        },
+        {
+          "type": "text",
+          "text": "Matematika na to má dvě slova: **dělitel** a **násobek**. Pomáhají při dělení věcí na stejné části, při plánování a později i při počítání se zlomky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Beze zbytku",
+          "definition": "Dělení vyjde přesně, nic nezbude.",
+          "example": "12 : 3 = 4 beze zbytku. 12 : 5 = 2, zbytek 2."
+        },
+        {
+          "type": "term",
+          "term": "Dělitel",
+          "definition": "Číslo, kterým dané číslo vydělíš **beze zbytku**.",
+          "example": "3 je dělitel čísla 12, protože 12 : 3 = 4 a nic nezbude."
+        },
+        {
+          "type": "term",
+          "term": "Násobek",
+          "definition": "Číslo, které dostaneš, když dané číslo vynásobíš 1, 2, 3, 4…",
+          "example": "Násobky 4: 4, 8, 12, 16, 20…"
+        },
+        {
+          "type": "heading",
+          "text": "Dělitele najdeš skládáním obdélníků"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi 12 kostiček a skládej je do obdélníků. Jde to 1 × 12, 2 × 6 a 3 × 4. Délky stran jsou právě dělitelé čísla 12."
+        },
+        {
+          "type": "text",
+          "text": "Zkus si to: nastav mřížku tak, aby měla 12 teček. Které rozměry fungují? Zkus pak 5 řad – nevyjde to."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4
+          }
+        },
+        {
+          "type": "text",
+          "text": "Dělitelé 12 jsou tedy **1, 2, 3, 4, 6, 12** – celkem šest. Číslo 1 a číslo samo jsou děliteli vždycky."
+        },
+        {
+          "type": "heading",
+          "text": "Násobky a dělitelé patří k sobě"
+        },
+        {
+          "type": "text",
+          "text": "Když je 4 dělitel čísla 12, je zároveň 12 násobek čísla 4. Je to jedna a táž věc z druhé strany: 4 · 3 = 12."
+        },
+        {
+          "type": "example",
+          "question": "Je 45 násobkem čísla 9?",
+          "answer": "Hledám, jestli 9 · něco = 45. 9 · 5 = 45, takže **ano**. Zároveň je 9 dělitelem 45."
+        },
+        {
+          "type": "example",
+          "question": "Najdi nejmenší násobek čísla 7, který je větší než 50.",
+          "answer": "Násobky 7: …, 42, 49, 56. 49 je ještě menší než 50, další je **56**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "36 je dělitelem čísla 18.",
+          "right": "36 je **násobek** 18 (18 · 2 = 36). Dělitel 18 je například 6.",
+          "why": "Dělitel nemůže být větší než samotné číslo. Násobky jsou stejné nebo větší, dělitelé stejné nebo menší."
+        },
+        {
+          "type": "heading",
+          "text": "Rychlé triky"
+        },
+        {
+          "type": "text",
+          "text": "Dělit velká čísla je pracné. U některých dělitelů stačí trik: **2** – číslo končí sudou číslicí. **5** – končí 0 nebo 5. **10** – končí 0. **3** – součet všech číslic (ciferný součet) je dělitelný 3. Třeba 471: 4 + 7 + 1 = 12, a to je dělitelné 3, takže i 471."
+        },
+        {
+          "type": "summary",
+          "text": "Dělitel dělí číslo beze zbytku (je menší nebo stejný). Násobek vznikne násobením (je větší nebo stejný)."
+        }
+      ]
+    },
+    {
+      "title": "Znaky dělitelnosti",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Je 1 236 dělitelné 4? Dělit to celé by trvalo. Existují ale rychlé triky: stačí se podívat na poslední číslice nebo je sečíst."
+        },
+        {
+          "type": "text",
+          "text": "Těmto trikům se říká **znaky dělitelnosti**. Ušetří spoustu počítání – hlavně později u krácení zlomků."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dělitelné",
+          "definition": "Číslo jde vydělit jiným číslem beze zbytku.",
+          "example": "15 je dělitelné 5 (15 : 5 = 3). 16 dělitelné 5 není."
+        },
+        {
+          "type": "term",
+          "term": "Dělitel a násobek",
+          "definition": "Když je 18 dělitelné 6, říkáme, že 6 je **dělitel** čísla 18 a 18 je **násobek** čísla 6.",
+          "example": "6 · 3 = 18"
+        },
+        {
+          "type": "term",
+          "term": "Číslice",
+          "definition": "Znak 0 až 9, ze kterých se skládá číslo.",
+          "example": "Číslo 534 má číslice 5, 3 a 4."
+        },
+        {
+          "type": "term",
+          "term": "Ciferný součet",
+          "definition": "Součet všech číslic čísla.",
+          "example": "Ciferný součet 534 je 5 + 3 + 4 = 12."
+        },
+        {
+          "type": "term",
+          "term": "Poslední dvojčíslí",
+          "definition": "Číslo složené z posledních dvou číslic.",
+          "example": "U čísla 1 236 je poslední dvojčíslí 36."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka triků"
+        },
+        {
+          "type": "table",
+          "head": [
+            "dělitelné",
+            "když"
+          ],
+          "rows": [
+            [
+              "2",
+              "poslední číslice je sudá (0, 2, 4, 6, 8)"
+            ],
+            [
+              "3",
+              "ciferný součet je dělitelný 3"
+            ],
+            [
+              "4",
+              "poslední dvojčíslí je dělitelné 4"
+            ],
+            [
+              "5",
+              "končí 0 nebo 5"
+            ],
+            [
+              "6",
+              "je dělitelné 2 i 3 zároveň"
+            ],
+            [
+              "9",
+              "ciferný součet je dělitelný 9"
+            ],
+            [
+              "10",
+              "končí 0"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak na to krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podívej se, kterým číslem máš dělit.",
+            "V tabulce najdi jeho trik.",
+            "Udělej, co trik říká (poslední číslice, dvojčíslí, nebo ciferný součet).",
+            "Rozhodni: platí → dělitelné, neplatí → není."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Je 534 dělitelné 3?",
+          "answer": "Ciferný součet: 5 + 3 + 4 = 12. 12 je dělitelné 3 (12 : 3 = 4). Takže **534 je dělitelné 3**."
+        },
+        {
+          "type": "example",
+          "question": "Je 234 dělitelné 6?",
+          "answer": "Musí platit dvě věci. Je sudé? Končí 4, ano. Ciferný součet 2 + 3 + 4 = 9, ten je dělitelný 3. Obojí platí → **ano**."
+        },
+        {
+          "type": "example",
+          "question": "Je 7 246 dělitelné 9?",
+          "answer": "Ciferný součet 7 + 2 + 4 + 6 = 19. 19 není dělitelné 9. → **ne**."
+        },
+        {
+          "type": "text",
+          "text": "Procvič si to na kartičkách: otoč kartu a zkontroluj, jestli trik znáš."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "dělitelné 2",
+                "back": "poslední číslice sudá"
+              },
+              {
+                "front": "dělitelné 3",
+                "back": "ciferný součet dělitelný 3"
+              },
+              {
+                "front": "dělitelné 4",
+                "back": "poslední dvojčíslí dělitelné 4"
+              },
+              {
+                "front": "dělitelné 5",
+                "back": "končí 0 nebo 5"
+              },
+              {
+                "front": "dělitelné 9",
+                "back": "ciferný součet dělitelný 9"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Číslo 1 236 je dělitelné 4, protože končí 6 a 6 je sudé.",
+          "right": "Rozhoduje poslední **dvojčíslí**: 36 : 4 = 9 → dělitelné.",
+          "why": "Sudá poslední číslice stačí jen pro dělitelnost 2. Třeba 26 je sudé, ale 4 ho nedělí."
+        },
+        {
+          "type": "summary",
+          "text": "Dvojka, pětka, desítka: koukni na poslední číslici. Čtyřka: poslední dvojčíslí. Trojka a devítka: ciferný součet. Šestka: dvojka i trojka zároveň."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které číslo je dělitelem 18?",
+      "options": [
+        "6",
+        "4",
+        "5",
+        "36"
+      ],
+      "answer": 0,
+      "explanation": "18 : 6 = 3 beze zbytku. 36 je násobek, ne dělitel."
+    },
+    {
+      "type": "truefalse",
+      "question": "45 je násobkem čísla 9.",
+      "answer": true,
+      "explanation": "9 · 5 = 45"
+    },
+    {
+      "type": "input",
+      "question": "Kolik dělitelů má číslo 12?",
+      "answers": [
+        "6"
+      ],
+      "explanation": "1, 2, 3, 4, 6, 12"
+    },
+    {
+      "type": "choice",
+      "question": "Které číslo je dělitelné 3?",
+      "options": [
+        "471",
+        "472",
+        "473",
+        "475"
+      ],
+      "answer": 0,
+      "explanation": "4 + 7 + 1 = 12, to je dělitelné 3."
+    },
+    {
+      "type": "truefalse",
+      "question": "1 236 je dělitelné 4.",
+      "answer": true,
+      "explanation": "Poslední dvojčíslí 36 je dělitelné 4."
+    },
+    {
+      "type": "choice",
+      "question": "Které číslo je dělitelné 6?",
+      "options": [
+        "234",
+        "236",
+        "135",
+        "322"
+      ],
+      "answer": 0,
+      "explanation": "234 je sudé a 2 + 3 + 4 = 9 je dělitelné 3."
+    },
+    {
+      "type": "input",
+      "question": "Napiš nejmenší násobek čísla 7 větší než 50.",
+      "answers": [
+        "56"
+      ],
+      "explanation": "7 · 8 = 56"
+    },
+    {
+      "type": "truefalse",
+      "question": "Každé číslo je dělitelné 1 a samo sebou.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj číslo se znakem dělitelnosti.",
+      "pairs": [
+        [
+          "5",
+          "končí 0 nebo 5"
+        ],
+        [
+          "2",
+          "sudá poslední číslice"
+        ],
+        [
+          "9",
+          "ciferný součet dělitelný 9"
+        ],
+        [
+          "10",
+          "končí 0"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "7 246 je dělitelné 9.",
+      "answer": false,
+      "explanation": "7 + 2 + 4 + 6 = 19 a 19 není dělitelné 9."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi násobkem a dělitelem?",
+      "answer": "Dělitel čísla ho dělí beze zbytku (dělitel 12 je 4). Násobek vznikne vynásobením čísla celým číslem (násobek 4 je 12)."
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš, že je číslo dělitelné 6?",
+      "answer": "Musí být dělitelné 2 i 3 zároveň: je sudé a jeho ciferný součet je dělitelný 3."
+    }
+  ]
+}

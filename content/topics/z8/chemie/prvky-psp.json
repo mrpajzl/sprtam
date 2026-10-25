@@ -1,0 +1,423 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "prvky-psp",
+  "title": "Prvky a periodická tabulka",
+  "emoji": "🗂️",
+  "explanations": [
+    {
+      "title": "Kartičkami",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Všechny věci na světě – tvoje tělo, vzduch, telefon – jsou poskládané z pouhých asi 118 druhů „kostiček“. Každý druh má jméno a krátkou zkratku, kterou rozumí chemik v Česku stejně jako v Japonsku."
+        },
+        {
+          "type": "text",
+          "text": "Zkratky se vyplatí znát: najdeš je na lécích, na obalech, v receptech na hnojivo i v každé chemické rovnici."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atom",
+          "definition": "Nejmenší kousek, ze kterého jsou látky složené – jako kostička stavebnice."
+        },
+        {
+          "type": "term",
+          "term": "Prvek",
+          "definition": "Látka, která se skládá jen z **jednoho druhu atomů**.",
+          "example": "Zlato je jen z atomů zlata. Kyslík jen z atomů kyslíku."
+        },
+        {
+          "type": "term",
+          "term": "Značka prvku",
+          "definition": "Zkratka prvku: 1 nebo 2 písmena, většinou z **latinského** názvu. První písmeno je velké, druhé malé.",
+          "example": "Fe z latinského *ferrum* = železo. Na z *natrium* = sodík."
+        },
+        {
+          "type": "heading",
+          "text": "Proč někdy značka nesedí na český název"
+        },
+        {
+          "type": "text",
+          "text": "Značky vznikly z latiny, ne z češtiny. Proto je draslík **K** (*kalium*), zlato **Au** (*aurum*), stříbro **Ag** (*argentum*), rtuť **Hg** (*hydrargyrum*), olovo **Pb** (*plumbum*)."
+        },
+        {
+          "type": "text",
+          "text": "Otáčej karty. Nejdřív zkus říct název nahlas, teprve pak otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "H",
+                "back": "vodík"
+              },
+              {
+                "front": "O",
+                "back": "kyslík"
+              },
+              {
+                "front": "C",
+                "back": "uhlík"
+              },
+              {
+                "front": "N",
+                "back": "dusík"
+              },
+              {
+                "front": "Na",
+                "back": "sodík"
+              },
+              {
+                "front": "Fe",
+                "back": "železo"
+              },
+              {
+                "front": "Cu",
+                "back": "měď"
+              },
+              {
+                "front": "Ag",
+                "back": "stříbro"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kovy a nekovy"
+        },
+        {
+          "type": "term",
+          "term": "Kov",
+          "definition": "Prvek, který je lesklý, dá se kout a ohýbat a vede teplo i elektrický proud. Skoro všechny kovy jsou za běžné teploty pevné – výjimkou je **rtuť**, ta je kapalná.",
+          "example": "železo Fe, měď Cu, hliník Al, sodík Na, zlato Au"
+        },
+        {
+          "type": "term",
+          "term": "Nekov",
+          "definition": "Prvek bez kovového lesku, který většinou nevede proud. Často jsou to plyny nebo křehké pevné látky.",
+          "example": "kyslík O, dusík N, síra S, chlor Cl, fosfor P"
+        },
+        {
+          "type": "example",
+          "question": "Jaký prvek má značku K? A jaký Ca?",
+          "answer": "K = **draslík** (z latinského *kalium*). Ca = **vápník** (*calcium*). Pozor: K není vápník, i když to tak „zní“."
+        },
+        {
+          "type": "example",
+          "question": "Jak se správně napíše značka chloru?",
+          "answer": "**Cl** – velké C, malé l. Kdybys napsal CL, vypadalo by to jako dva prvky: uhlík C a „L“ (takový prvek neexistuje)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "S je značka sodíku.",
+          "right": "S je **síra** (*sulfur*). Sodík je **Na** (*natrium*).",
+          "why": "Značky se tvoří z latiny. Si je křemík, Sn cín, Sr stroncium – stojí za to je hlídat."
+        },
+        {
+          "type": "summary",
+          "text": "Prvek = látka z jednoho druhu atomů. Značka má 1–2 písmena z latiny: první velké, druhé malé (Ca, ne CA)."
+        }
+      ]
+    },
+    {
+      "title": "Mapou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si knihovnu, kde jsou knihy seřazené tak chytře, že podle poličky poznáš, o čem kniha je. Přesně tak funguje **periodická tabulka prvků** – mapa všech prvků. Sestavil ji ruský chemik **Dmitrij Mendělejev** v roce 1869."
+        },
+        {
+          "type": "text",
+          "text": "Kdo umí tabulku číst, z jediného pohledu pozná, jestli je prvek kov, jak se bude chovat a s čím ochotně reaguje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Prvek",
+          "definition": "Látka z jednoho druhu atomů. Má svou značku (H, O, Fe…). Dnes jich známe 118."
+        },
+        {
+          "type": "term",
+          "term": "Protonové číslo",
+          "definition": "Pořadové číslo prvku. Říká, kolik má jeho atom v jádře **protonů** (drobných kladně nabitých částic). Každý prvek má jiné.",
+          "example": "vodík 1, helium 2, uhlík 6, kyslík 8"
+        },
+        {
+          "type": "term",
+          "term": "Perioda",
+          "definition": "**Řádek** tabulky. Tabulka má **7 period**."
+        },
+        {
+          "type": "term",
+          "term": "Skupina",
+          "definition": "**Sloupec** tabulky. Tabulka má **18 skupin**. Prvky v jedné skupině mají **podobné vlastnosti** – jsou jako sourozenci."
+        },
+        {
+          "type": "heading",
+          "text": "Jak je tabulka poskládaná"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Prvky jdou za sebou podle **rostoucího protonového čísla**: H (1), He (2), Li (3)…",
+            "Když řádek skončí, pokračuje se dalším – nová perioda.",
+            "Pod sebou tak vycházejí prvky, které se chovají podobně – tvoří skupinu.",
+            "Vlevo a uprostřed jsou **kovy**, vpravo nahoře **nekovy**. Na hranici jsou **polokovy** (např. křemík Si)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Důležité skupiny"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Název",
+            "Příklady",
+            "Vlastnost"
+          ],
+          "rows": [
+            [
+              "1.",
+              "alkalické kovy",
+              "Li, Na, K",
+              "měkké, prudce reagují s vodou"
+            ],
+            [
+              "2.",
+              "kovy alkalických zemin",
+              "Ca, Ba",
+              "reaktivní kovy"
+            ],
+            [
+              "17.",
+              "halogeny",
+              "F, Cl, Br, I",
+              "reaktivní nekovy"
+            ],
+            [
+              "18.",
+              "vzácné plyny",
+              "He, Ne, Ar",
+              "skoro s ničím nereagují"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor: vodík H stojí v 1. skupině, ale je to nekov a mezi alkalické kovy nepatří."
+        },
+        {
+          "type": "heading",
+          "text": "Kov, nebo nekov?"
+        },
+        {
+          "type": "term",
+          "term": "Kov a nekov",
+          "definition": "**Kovy** jsou lesklé, kujné a vedou proud i teplo. **Nekovy** většinou nevedou a nejsou kujné. Rtuť Hg je kov, ale za běžné teploty kapalný."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď značky. Když si nevíš rady, vzpomeň si: kovy vlevo a uprostřed tabulky, nekovy vpravo nahoře."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "kov",
+              "nekov"
+            ],
+            "items": [
+              {
+                "text": "Fe",
+                "group": 0
+              },
+              {
+                "text": "Na",
+                "group": 0
+              },
+              {
+                "text": "Al",
+                "group": 0
+              },
+              {
+                "text": "Cu",
+                "group": 0
+              },
+              {
+                "text": "S",
+                "group": 1
+              },
+              {
+                "text": "Cl",
+                "group": 1
+              },
+              {
+                "text": "O",
+                "group": 1
+              },
+              {
+                "text": "N",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Sodík a draslík jsou ve stejné skupině. Co z toho plyne?",
+          "answer": "Prvky ve skupině mají podobné vlastnosti. Oba jsou **alkalické kovy**: měkké a prudce reagují s vodou. Kdo zná sodík, odhadne i draslík."
+        },
+        {
+          "type": "example",
+          "question": "Kyslík má protonové číslo 8. Které číslo má prvek hned za ním?",
+          "answer": "Prvky jdou podle protonového čísla po jedné: za kyslíkem (8) je prvek s číslem **9** – fluor F."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Perioda je sloupec a skupina řádek.",
+          "right": "Perioda = **řádek** (7), skupina = **sloupec** (18).",
+          "why": "Pomůcka: ve **skupině** stojí prvky **pod sebou** jako skupinka lidí ve frontě."
+        },
+        {
+          "type": "summary",
+          "text": "Tabulka řadí prvky podle protonového čísla do 7 period (řádků) a 18 skupin (sloupců). Ve skupině jsou podobné prvky. Kovy vlevo a uprostřed, nekovy vpravo nahoře."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jaký prvek má značku Fe?",
+      "answers": [
+        "železo"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jaký prvek má značku K?",
+      "answers": [
+        "draslík"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je značka zlata?",
+      "options": [
+        "Au",
+        "Ag",
+        "Zn",
+        "Al"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je značka síry?",
+      "options": [
+        "S",
+        "Si",
+        "Sr",
+        "Sn"
+      ],
+      "answer": 0,
+      "explanation": "Si je křemík, Sn cín, Sr stroncium."
+    },
+    {
+      "type": "match",
+      "question": "Spoj značku s prvkem.",
+      "pairs": [
+        [
+          "Ca",
+          "vápník"
+        ],
+        [
+          "Cl",
+          "chlor"
+        ],
+        [
+          "Pb",
+          "olovo"
+        ],
+        [
+          "Hg",
+          "rtuť"
+        ],
+        [
+          "Zn",
+          "zinek"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik skupin má periodická tabulka?",
+      "answers": [
+        "18"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývají prvky 18. skupiny?",
+      "options": [
+        "vzácné plyny",
+        "halogeny",
+        "alkalické kovy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Prvky jsou v tabulce seřazeny podle protonového čísla.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Rtuť je kov, který je za běžné teploty kapalný.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který prvek je nekov?",
+      "options": [
+        "fosfor",
+        "hořčík",
+        "hliník",
+        "olovo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak je uspořádána periodická tabulka?",
+      "answer": "Prvky jsou seřazeny podle rostoucího protonového čísla do 7 period (řádků) a 18 skupin (sloupců). Prvky ve skupině mají podobné vlastnosti."
+    },
+    {
+      "type": "open",
+      "question": "Jak se liší kovy a nekovy?",
+      "answer": "Kovy jsou lesklé, kujné, vedou teplo i elektrický proud. Nekovy jsou často plyny nebo křehké látky a proud většinou nevedou."
+    }
+  ]
+}

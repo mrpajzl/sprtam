@@ -1,0 +1,325 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rodina-a-pribuzni",
+  "title": "Rodina a příbuzní",
+  "emoji": "👪",
+  "explanations": [
+    {
+      "title": "Rodokmen",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na oslavě narozenin se sejde hodně lidí. Babička, strejda, teta, bratranec. Jak se jmenuje, kdo je komu kým?"
+        },
+        {
+          "type": "text",
+          "text": "Rodinu si můžeš nakreslit jako strom. Dole jsi ty, nad tebou rodiče, ještě výš prarodiče. Tomu obrázku říkáme rodokmen."
+        },
+        {
+          "type": "term",
+          "term": "Příbuzní",
+          "definition": "Lidé, kteří patří do tvé rodiny – blízcí i vzdálenější.",
+          "example": "babička, teta, bratranec"
+        },
+        {
+          "type": "term",
+          "term": "Rodokmen",
+          "definition": "Obrázek rodiny jako strom. Ukazuje, kdo je čí dítě a čí rodič.",
+          "example": "Nakreslím sebe, rodiče a prarodiče."
+        },
+        {
+          "type": "term",
+          "term": "Generace",
+          "definition": "Lidé v rodině, kteří jsou zhruba stejně staří. Jedno „patro“ rodokmenu.",
+          "example": "Já a sourozenci = jedna generace. Rodiče = další."
+        },
+        {
+          "type": "heading",
+          "text": "Patra rodokmenu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "já a **sourozenci** (bratři a sestry) 🧒",
+            "**rodiče**: máma a táta 👩👨",
+            "**prarodiče**: babičky a dědečkové 👵👴"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Každý má dvě babičky a dva dědečky: rodiče mámy a rodiče táty."
+        },
+        {
+          "type": "example",
+          "question": "Kdo je máma mé mámy?",
+          "answer": "Je to rodič mojí mámy, o patro výš. Je to moje **babička**."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejmladší generace: prarodiče, děti, rodiče.",
+          "answer": "Nejmladší jsou **děti**, pak **rodiče**, nejstarší **prarodiče**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Bratranec je syn mé babičky.",
+          "right": "Syn babičky je můj táta nebo strýc. Bratranec je syn tety nebo strýce.",
+          "why": "Babička je o dvě patra výš. Její děti jsou generace mých rodičů, ne moje."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky a zkus nejdřív říct sám, kdo to je."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "rodiče mých rodičů",
+                "back": "prarodiče"
+              },
+              {
+                "front": "bratři a sestry",
+                "back": "sourozenci"
+              },
+              {
+                "front": "máma táty",
+                "back": "babička"
+              }
+            ]
+          }
+        },
+        {
+          "type": "summary",
+          "text": "Rodokmen má patra: já a sourozenci, rodiče, prarodiče. Rodiče mých rodičů jsou moji prarodiče."
+        }
+      ]
+    },
+    {
+      "title": "Kdo je kdo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Tvoje máma nebo táta mají často sourozence. A ti mají zase děti. Pro tyhle lidi máme zvláštní jména."
+        },
+        {
+          "type": "text",
+          "text": "Když je znáš, řekneš rychle: „To je moje sestřenice.“ A každý ví, jak jste příbuzní."
+        },
+        {
+          "type": "term",
+          "term": "Sourozenci",
+          "definition": "Bratři a sestry – děti stejných rodičů.",
+          "example": "Já a můj bratr jsme sourozenci."
+        },
+        {
+          "type": "heading",
+          "text": "Sourozenci mých rodičů"
+        },
+        {
+          "type": "term",
+          "term": "Teta",
+          "definition": "Sestra mé mámy nebo mého táty.",
+          "example": "Máma má sestru Evu. Eva je moje teta."
+        },
+        {
+          "type": "term",
+          "term": "Strýc",
+          "definition": "Bratr mé mámy nebo mého táty.",
+          "example": "Táta má bratra Karla. Karel je můj strýc."
+        },
+        {
+          "type": "heading",
+          "text": "Jejich děti"
+        },
+        {
+          "type": "term",
+          "term": "Bratranec",
+          "definition": "Syn mé tety nebo mého strýce.",
+          "example": "Teta Eva má syna Jakuba. Jakub je můj bratranec."
+        },
+        {
+          "type": "term",
+          "term": "Sestřenice",
+          "definition": "Dcera mé tety nebo mého strýce.",
+          "example": "Strýc Karel má dceru Lucii. Lucie je moje sestřenice."
+        },
+        {
+          "type": "heading",
+          "text": "Postup: jak to zjistím"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdu, přes koho jsme příbuzní (máma, nebo táta?).",
+            "Je to jeho sourozenec? → **teta** (žena), **strýc** (muž).",
+            "Je to dítě tety nebo strýce? → **sestřenice** (holka), **bratranec** (kluk)."
+          ]
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "teta",
+                "back": "sestra mámy nebo táty"
+              },
+              {
+                "front": "strýc",
+                "back": "bratr mámy nebo táty"
+              },
+              {
+                "front": "bratranec",
+                "back": "syn tety nebo strýce"
+              },
+              {
+                "front": "sestřenice",
+                "back": "dcera tety nebo strýce"
+              },
+              {
+                "front": "sourozenci",
+                "back": "bratři a sestry"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Tvoje máma má sestru Evu. Kdo je Eva tobě?",
+          "answer": "Eva je sestra mámy – sourozenec mého rodiče, žena. Je to **teta**."
+        },
+        {
+          "type": "example",
+          "question": "Dcera mého strýce je moje…?",
+          "answer": "Strýc je bratr rodiče. Jeho dítě, holka → **sestřenice**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Syn mé tety je můj bratr.",
+          "right": "Syn mé tety je můj bratranec.",
+          "why": "Bratr má stejné rodiče jako já. Bratranec má jiné rodiče – mou tetu nebo strýce."
+        },
+        {
+          "type": "summary",
+          "text": "Teta a strýc jsou sourozenci mých rodičů. Bratranec a sestřenice jsou jejich děti."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo je sestra mého táty?",
+      "options": [
+        "teta",
+        "babička",
+        "sestřenice"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo je bratr mé mámy?",
+      "options": [
+        "strýc",
+        "dědeček",
+        "bratranec"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo je syn mé tety?",
+      "options": [
+        "bratranec",
+        "strýc",
+        "bratr"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Dcera mého strýce je moje ………",
+      "answers": [
+        "sestřenice"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Prarodiče jsou rodiče mých rodičů.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Bratranec je syn mé babičky.",
+      "answer": false,
+      "explanation": "Syn babičky je táta nebo strýc. Bratranec je syn tety nebo strýce."
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "sestra mámy",
+          "teta"
+        ],
+        [
+          "bratr táty",
+          "strýc"
+        ],
+        [
+          "máma mámy",
+          "babička"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmladší generace.",
+      "items": [
+        "děti",
+        "rodiče",
+        "prarodiče"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se říká bratrům a sestrám dohromady?",
+      "options": [
+        "sourozenci",
+        "prarodiče",
+        "sousedé"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V rodině si pomáháme a respektujeme se.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Kdo je teta a kdo strýc?",
+      "answer": "Teta je sestra mámy nebo táty. Strýc je bratr mámy nebo táty."
+    },
+    {
+      "type": "open",
+      "question": "Jak slavíte v rodině svátky nebo narozeniny?",
+      "answer": "Například se sejdeme, dáme si dárky, upečeme dort a přejeme si."
+    }
+  ]
+}
