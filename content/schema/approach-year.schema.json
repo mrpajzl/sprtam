@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sprtam.cz/schema/approach-year.schema.json",
+  "title": "Šprtám – plán ročníku v přístupu k výuce",
+  "$comment": "Generováno z src/content/format.ts a src/widgets/ (npm run content:generate). Needitovat ručně.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "format": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1,
+      "description": "Verze formátu, teď 1."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Název ročníku v tomto přístupu, např. \"1. třída\" nebo \"11. třída (lyceum)\"."
+    },
+    "epochs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "$schema": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "description": "Kebab-case ASCII, jedinečné v roce. Je v adrese (/waldorf/z1/<id>), nemění se."
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Název epochy, např. \"Svět rovných a oblých čar\"."
+          },
+          "emoji": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Jedno emoji."
+          },
+          "month": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Kdy se epocha učí, např. \"září\" nebo \"listopad–prosinec\". U průběžných předmětů chybí."
+          },
+          "about": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Odstavec."
+            },
+            "minItems": 1,
+            "description": "Co se v epoše dělá, pro děti a rodiče; 1–3 krátké odstavce."
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[a-z0-9]+/[a-z]+/[a-z0-9]+(-[a-z0-9]+)*$",
+              "description": "Téma jako <ročník>/<předmět>/<id>, třeba z jiného ročníku."
+            },
+            "description": "Témata aplikace, která k epoše patří, v pořadí probírání. Smí být prázdné."
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "emoji",
+          "about",
+          "topics"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "description": "Epochy hlavního vyučování v pořadí školního roku."
+    },
+    "ongoing": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "$schema": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "description": "Kebab-case ASCII, jedinečné v roce. Je v adrese (/waldorf/z1/<id>), nemění se."
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Název epochy, např. \"Svět rovných a oblých čar\"."
+          },
+          "emoji": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Jedno emoji."
+          },
+          "month": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Kdy se epocha učí, např. \"září\" nebo \"listopad–prosinec\". U průběžných předmětů chybí."
+          },
+          "about": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Odstavec."
+            },
+            "minItems": 1,
+            "description": "Co se v epoše dělá, pro děti a rodiče; 1–3 krátké odstavce."
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[a-z0-9]+/[a-z]+/[a-z0-9]+(-[a-z0-9]+)*$",
+              "description": "Téma jako <ročník>/<předmět>/<id>, třeba z jiného ročníku."
+            },
+            "description": "Témata aplikace, která k epoše patří, v pořadí probírání. Smí být prázdné."
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "emoji",
+          "about",
+          "topics"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Předměty, které běží celý rok mimo epochy (cizí jazyky, cvičné hodiny)."
+    }
+  },
+  "required": [
+    "format",
+    "title",
+    "epochs"
+  ],
+  "additionalProperties": false,
+  "description": "Plán jednoho ročníku v přístupu k výuce: epochy a průběžné předměty, každé s tématy aplikace."
+}

@@ -1,7 +1,7 @@
 // Content types. The format of the files themselves is defined in ./format.ts (content/**/*.json);
 // how to write content: docs/CONTENT.md.
 
-export type { Block, Explanation, Question, SubjectFile, TopicFile, VocabFile } from './format'
+export type { ApproachFile, ApproachYearFile, Block, Explanation, Question, SubjectFile, TopicFile, VocabFile, YearBlock } from './format'
 import type { TopicFile } from './format'
 
 /** Grade id: z1–z9 = základní škola, s1–s4 = střední škola (gymnázium). */

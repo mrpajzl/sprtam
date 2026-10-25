@@ -24,6 +24,7 @@ Než vytvoříš nový widget, projdi tenhle seznam – nejspíš už existuje. 
 - [`place-value`](#place-value) – Stovky, desítky, jednotky
 - [`column`](#column) – Písemné počítání pod sebou
 - [`multiply`](#multiply) – Násobení v mřížce
+- [`multiple-circle`](#multiple-circle) – Kruh násobků
 - [`fraction`](#fraction) – Zlomek
 - [`percent`](#percent) – Procenta
 - [`clock`](#clock) – Hodiny
@@ -162,6 +163,30 @@ Mřížka teček: obarvené tečky tvoří obdélník řádky × sloupce. Posuvn
   "props": {
     "rows": 3,
     "columns": 4
+  }
+}
+```
+
+<a id="multiple-circle"></a>
+
+### `multiple-circle` – Kruh násobků
+
+Kruh s deseti body 0–9. Dítě po jednom přidává násobky a čára spojuje jejich poslední číslice; každá násobková řada nakreslí svůj obrazec (řada 3 hvězdu, řada 2 pětiúhelník).
+
+**Kdy ho použít:** Násobilka a násobkové řady, rytmus násobků, souvislost řad (2 a 8, 3 a 7 kreslí stejný obrazec opačným směrem); typická pomůcka waldorfské školy.
+
+Živá ukázka: [/widgety/multiple-circle](https://sprtam.cz/widgety/multiple-circle)
+
+| Pole | Typ | Povinné | Popis |
+|---|---|---|---|
+| `number` | celé číslo 1–9 | ano | Které násobky se kreslí (násobková řada 1–9). Dítě ho může tlačítky změnit. |
+
+```json
+{
+  "type": "widget",
+  "widget": "multiple-circle",
+  "props": {
+    "number": 3
   }
 }
 ```

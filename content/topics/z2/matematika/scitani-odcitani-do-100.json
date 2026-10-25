@@ -204,6 +204,143 @@
           "text": "Nejdřív skoč desítky (velké skoky), pak jednotky (malé skoky)."
         }
       ]
+    },
+    {
+      "title": "Plus a Mínus",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na podzim se sklízejí jablka. Sadař je dává do bedýnek. Do každé bedýnky se vejde přesně 10 jablek."
+        },
+        {
+          "type": "text",
+          "text": "Uvidíš, jak štědrý Plus jablka přináší a Mínus je odnáší. Tak se naučíš sčítat a odčítat do 100. Nemusíš přitom počítat každé jablko zvlášť."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desítka",
+          "definition": "Plná bedýnka. Je v ní 10 jablek.",
+          "example": "3 bedýnky = 3 desítky = 30 jablek."
+        },
+        {
+          "type": "term",
+          "term": "Jednotka",
+          "definition": "Jedno volné jablko mimo bedýnku.",
+          "example": "34 jablek = 3 bedýnky a 4 volná jablka."
+        },
+        {
+          "type": "term",
+          "term": "Plus (+)",
+          "definition": "Štědrý Plus rád přidává. Když přijde, jablek přibude. Tomu říkáme **sčítání**.",
+          "example": "30 + 20 = 50"
+        },
+        {
+          "type": "term",
+          "term": "Mínus (−)",
+          "definition": "Mínus ubírá a odnáší. Když přijde, jablek ubude. Tomu říkáme **odčítání**.",
+          "example": "50 − 20 = 30"
+        },
+        {
+          "type": "term",
+          "term": "Bez přechodu",
+          "definition": "Volných jablek zůstane nejvýš 9. Žádná nová bedýnka se nenaplní a žádnou nemusíš otevírat.",
+          "example": "4 + 5 = 9 volných jablek. To je bez přechodu."
+        },
+        {
+          "type": "heading",
+          "text": "Plus přináší: 34 + 25"
+        },
+        {
+          "type": "text",
+          "text": "Sadař má 3 bedýnky a 4 volná jablka. To je 34. Štědrý Plus přinese 2 bedýnky a 5 jablek. To je 25."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Bedýnky k bedýnkám: 3 + 2 = 5 bedýnek. To je **50**.",
+            "Jablka k jablkům: 4 + 5 = **9**.",
+            "Dohromady: 50 + 9 = **59**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Plus může přinést nejdřív jablka a pak bedýnky. Výsledek je stejný: 25 + 34 = 59. Při sčítání na pořadí nezáleží."
+        },
+        {
+          "type": "heading",
+          "text": "Mínus odnáší: 87 − 42"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ve sklepě je 8 bedýnek a 7 volných jablek. To je 87.",
+            "Mínus odnese 4 bedýnky: 8 − 4 = 4 bedýnky. To je **40**.",
+            "Pak odnese 2 volná jablka: 7 − 2 = **5**.",
+            "Zůstane 40 + 5 = **45**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Bedýnka je velká jednička"
+        },
+        {
+          "type": "text",
+          "text": "4 bedýnky a 3 bedýnky jsou 7 bedýnek. Proto 40 + 30 = 70, stejně jako 4 + 3 = 7. Jen počítáš bedýnky místo jablek."
+        },
+        {
+          "type": "text",
+          "text": "Zkus to tělem. Za každou bedýnku udělej velký krok a řekni desítku: 10, 20, 30. Za každé jablko udělej malý krůček: 31, 32, 33, 34. Tak dojdeš ke 34."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je 59 jablek. Tyčky jsou bedýnky, kostičky volná jablka. Hraj si na Mínus: uber 4 tyčky a 2 kostičky. Kolik jablek zbylo?"
+        },
+        {
+          "type": "widget",
+          "widget": "place-value",
+          "props": {
+            "value": 59
+          }
+        },
+        {
+          "type": "example",
+          "question": "45 + 32 =",
+          "answer": "Bedýnky: 4 + 3 = 7, to je 70. Jablka: 5 + 2 = 7. Dohromady **77**."
+        },
+        {
+          "type": "example",
+          "question": "68 − 5 =",
+          "answer": "Mínus odnese jen 5 volných jablek: 8 − 5 = 3. Bedýnky zůstanou všechny: 6. **63**."
+        },
+        {
+          "type": "example",
+          "question": "Kniha má 85 stran. Přečetl jsi 40. Kolik stran zbývá?",
+          "answer": "Zbývá – to je práce pro Mínus. 85 = 8 desítek a 5. Odeber 4 desítky: 8 − 4 = 4 desítky, to je 40. Jednotky zůstanou: 5. **Zbývá 45 stran.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "68 − 5 = 18",
+          "right": "68 − 5 = **63**",
+          "why": "Mínus odnesl 5 volných jablek, ne 5 bedýnek. Jablka se berou od jablek: 8 − 5 = 3. Bedýnek zůstane 6."
+        },
+        {
+          "type": "summary",
+          "text": "Bedýnky k bedýnkám, jablka k jablkům. Plus přidává, Mínus odnáší. Nakonec obojí spoj: 34 + 25 = 59 a 87 − 42 = 45."
+        }
+      ]
     }
   ],
   "questions": [

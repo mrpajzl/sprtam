@@ -35,6 +35,12 @@
       "minLength": 1,
       "description": "Generátor dalších příkladů z src/quiz/generators.ts (jen matematika a fyzika)."
     },
+    "approach": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Téma jen pro jeden přístup k výuce (např. \"waldorf\"): v běžném seznamu předmětu se neukáže, jen v plánu toho přístupu."
+    },
     "explanations": {
       "type": "array",
       "items": {
@@ -47,6 +53,12 @@
             "type": "string",
             "minLength": 1,
             "description": "Krátký název přístupu, 1–3 slova: \"Na pizze\", \"Krok za krokem\"."
+          },
+          "approach": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "description": "Vysvětlení v duchu jednoho přístupu k výuce (složka v content/approaches), např. \"waldorf\". Dětem, které ten přístup zvolily, se ukáže jako první; ostatním se neukazuje."
           },
           "blocks": {
             "type": "array",
@@ -385,6 +397,7 @@
                               "place-value",
                               "column",
                               "multiply",
+                              "multiple-circle",
                               "fraction",
                               "percent",
                               "clock",
@@ -712,6 +725,53 @@
                               ],
                               "additionalProperties": false,
                               "description": "Násobení v mřížce: Mřížka teček: obarvené tečky tvoří obdélník řádky × sloupce. Posuvníky mění oba činitele a výsledek se hned přepočítá."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "multiple-circle"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "multiple-circle"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "number": {
+                                      "type": "integer",
+                                      "minimum": 1,
+                                      "maximum": 9,
+                                      "description": "Které násobky se kreslí (násobková řada 1–9). Dítě ho může tlačítky změnit."
+                                    }
+                                  },
+                                  "required": [
+                                    "number"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Kruh násobků: Kruh s deseti body 0–9. Dítě po jednom přidává násobky a čára spojuje jejich poslední číslice; každá násobková řada nakreslí svůj obrazec (řada 3 hvězdu, řada 2 pětiúhelník)."
                             }
                           },
                           {
@@ -1862,6 +1922,7 @@
                           "place-value",
                           "column",
                           "multiply",
+                          "multiple-circle",
                           "fraction",
                           "percent",
                           "clock",
@@ -2209,6 +2270,57 @@
                           ],
                           "additionalProperties": false,
                           "description": "Násobení v mřížce: Mřížka teček: obarvené tečky tvoří obdélník řádky × sloupce. Posuvníky mění oba činitele a výsledek se hned přepočítá."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "multiple-circle"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "multiple-circle"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "number": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 9,
+                                  "description": "Které násobky se kreslí (násobková řada 1–9). Dítě ho může tlačítky změnit."
+                                }
+                              },
+                              "required": [
+                                "number"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Kruh násobků: Kruh s deseti body 0–9. Dítě po jednom přidává násobky a čára spojuje jejich poslední číslice; každá násobková řada nakreslí svůj obrazec (řada 3 hvězdu, řada 2 pětiúhelník)."
                         }
                       },
                       {
@@ -3308,8 +3420,8 @@
         "additionalProperties": false
       },
       "minItems": 2,
-      "maxItems": 2,
-      "description": "Přesně dvě vysvětlení, každé jinou cestou."
+      "maxItems": 6,
+      "description": "Přesně dvě obecná vysvětlení (bez \"approach\"), každé jinou cestou. Navíc nejvýš jedno pro každý přístup k výuce."
     },
     "questions": {
       "type": "array",

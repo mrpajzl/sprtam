@@ -207,6 +207,140 @@
           "text": "Desítka = 10 jednotek. Když jednotky nestačí, rozměň desítku. Když jich je 10 a víc, vyměň je za desítku."
         }
       ]
+    },
+    {
+      "title": "Krokem",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si cestu lesem. U každého desátého kroku leží velký kámen: u 10, 20, 30 … až u 100."
+        },
+        {
+          "type": "text",
+          "text": "Když jdeš kolem kamene, je dobré se u něj zastavit. Tak spočítáš příklady na plus i mínus, které přejdou do další desítky. Hodí se to třeba při placení v obchodě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Celá desítka",
+          "definition": "Číslo, které končí nulou: 10, 20, 30 … 90. Na naší cestě u něj leží velký kámen.",
+          "example": "Nejbližší kámen za 38 je 40."
+        },
+        {
+          "type": "term",
+          "term": "Přechod přes desítku",
+          "definition": "Cestou přejdeš kolem kamene. Výsledek je v jiné desítce než začátek.",
+          "example": "38 + 5 = 43: ze třicítek jdeš přes 40 do čtyřicítek."
+        },
+        {
+          "type": "term",
+          "term": "Rozložit číslo",
+          "definition": "Rozdělit ho na dvě menší čísla.",
+          "example": "5 = 2 + 3"
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo cesty"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Postav se na první číslo.",
+            "Dojdi ke kameni. Spočítej, kolik kroků to bylo.",
+            "U kamene se zastav a dupni.",
+            "Dojdi zbylé kroky.",
+            "Plus jde dopředu, Mínus couvá."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Plus jde dopředu: 38 + 5"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Plus stojí na 38 a má ujít 5 kroků.",
+            "Ke kameni 40 jsou to **2** kroky: 39, 40. Dup!",
+            "Z pěti kroků zbývají **3**: 5 = 2 + 3.",
+            "Jde dál: 41, 42, 43.",
+            "38 + 5 = **43**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mínus couvá: 43 − 6"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Mínus stojí na 43 a couvá o 6 kroků.",
+            "Ke kameni 40 jsou to **3** kroky: 42, 41, 40. Dup!",
+            "Ze šesti kroků zbývají **3**: 6 = 3 + 3.",
+            "Couvá dál: 39, 38, 37.",
+            "43 − 6 = **37**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zkus to doma na chodbě nebo venku na dvoře. Pak se podívej na žabku. Stojí na 43 a skočí o 6 zpátky. Kolik je to kroků ke kameni 40? A kolik za ním? Kde přistane?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 30,
+            "max": 50,
+            "step": 1,
+            "start": 43,
+            "hop": -6
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dlouhá cesta"
+        },
+        {
+          "type": "text",
+          "text": "Když má Plus ujít 25 kroků, jde nejdřív **velkými skoky** po deseti. To jsou 2 skoky. Pak zbylých 5 kroků jde po jednom, přes kámen."
+        },
+        {
+          "type": "example",
+          "question": "38 + 25 =",
+          "answer": "Dva velké skoky: 48, 58. Zbývá 5 kroků. Ke kameni 60 jsou 2: 59, 60. Pak ještě 3: 61, 62, 63. **38 + 25 = 63**."
+        },
+        {
+          "type": "example",
+          "question": "64 − 28 =",
+          "answer": "Dva velké skoky zpátky: 54, 44. Zbývá 8 kroků. Ke kameni 40 jsou 4. Pak ještě 4: 39, 38, 37, 36. **64 − 28 = 36**."
+        },
+        {
+          "type": "example",
+          "question": "Lístek stojí 35 Kč. Platíš 50 Kč. Kolik dostaneš zpátky?",
+          "answer": "Prodavačka jde od 35 dopředu až k 50. Ke kameni 40 je to 5. Od 40 k 50 je jeden velký skok, tedy 10. 5 + 10 = **15 Kč**. Kontrola: 50 − 35 = 15."
+        },
+        {
+          "type": "mistake",
+          "wrong": "80 − 13 = 73",
+          "right": "80 − 13 = **67**",
+          "why": "Po velkém skoku zpátky jsi na 70. Pak musíš ještě 3 kroky **zpátky**: 69, 68, 67. Mínus pořád couvá. Kontrola: 67 + 13 = 80."
+        },
+        {
+          "type": "summary",
+          "text": "Dojdi nejdřív ke kameni – k celé desítce. Tam dupni a dojdi zbytek. U velkých čísel jdi napřed velkými skoky po deseti, pak malými kroky."
+        }
+      ]
     }
   ],
   "questions": [

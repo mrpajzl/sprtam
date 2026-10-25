@@ -220,6 +220,133 @@
           "text": "Porovnej nejdřív desítky. Když jsou stejné, porovnej jednotky. Na ose je větší číslo víc vpravo."
         }
       ]
+    },
+    {
+      "title": "Říše čísel",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na podzim nasbíráš v lese hromadu klacíků. Je jich moc. Po jednom bys je počítal dlouho a snadno by ses spletl."
+        },
+        {
+          "type": "text",
+          "text": "Dnes vstoupíš do **říše čísel do sta**. Naučíš se velké číslo rychle spočítat, zapsat a porovnat s jiným."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desítka",
+          "definition": "Svazek deseti kusů. Deset klacíků svážeš provázkem do jednoho svazku.",
+          "example": "4 svazky jsou 4 desítky. To je 40 klacíků."
+        },
+        {
+          "type": "term",
+          "term": "Jednotky",
+          "definition": "Volné kusy, které se do svazku nevešly. Je jich nejvýš 9. Kdyby jich bylo 10, svážeš další svazek.",
+          "example": "Ke 4 svazkům leží ještě 7 volných klacíků. To je 7 jednotek."
+        },
+        {
+          "type": "term",
+          "term": "Číslice",
+          "definition": "Znaky 0 až 9, kterými píšeme čísla.",
+          "example": "Číslo 47 se píše dvěma číslicemi: 4 a 7."
+        },
+        {
+          "type": "heading",
+          "text": "Od celku: hromada klacíků"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vysyp všechny klacíky na zem. To je celek.",
+            "Odpočítej 10 a svaž je. Máš první desítku.",
+            "Svazuj dál, dokud to jde.",
+            "Spočítej svazky: **4**.",
+            "Spočítej volné klacíky: **7**.",
+            "Máš **47** klacíků: 4 desítky a 7 jednotek."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "V zápisu čísla stojí **desítky vpředu** a **jednotky vzadu**. V čísle 47 říká čtyřka svazky a sedmička volné klacíky."
+        },
+        {
+          "type": "heading",
+          "text": "Rytmus desítek"
+        },
+        {
+          "type": "term",
+          "term": "Sto (100)",
+          "definition": "Deset svazků po deseti. Píše se třemi číslicemi: 1, 0, 0.",
+          "example": "100 = 10 desítek."
+        },
+        {
+          "type": "text",
+          "text": "Postav se. Při každém kroku řekni jednu desítku: 10, 20, 30, 40, 50, 60, 70, 80, 90, **100**. Deset kroků, deset svazků – jsi u sta. Pak jdi pozpátku: 100, 90, 80 … až k nule."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je 47. Tyčky jsou svazky, kostičky volné klacíky. Přidávej kostičky po jedné. Co se stane, když jich má být 10? Kolik je pak tyček?"
+        },
+        {
+          "type": "widget",
+          "widget": "place-value",
+          "props": {
+            "value": 47
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kdo má víc?"
+        },
+        {
+          "type": "term",
+          "term": "Porovnat",
+          "definition": "Zjistit, které číslo je větší. Znaky > a < jsou jako otevřený zobák. Zobák se otevírá vždy k většímu číslu.",
+          "example": "46 < 64"
+        },
+        {
+          "type": "text",
+          "text": "Dva sběrači porovnávají úlovek. Kdo má víc svazků, má víc klacíků. Volné klacíky rozhodují, jen když mají oba svazků stejně."
+        },
+        {
+          "type": "example",
+          "question": "6 desítek a 3 jednotky je číslo…",
+          "answer": "6 svazků a 3 volné klacíky. Svazky napíšu dopředu, volné klacíky za ně: **63**."
+        },
+        {
+          "type": "example",
+          "question": "Ema má 46 kaštanů, Petr 64. Kdo má víc?",
+          "answer": "Svazky: Ema 4, Petr 6. Petr má víc svazků, takže víc kaštanů. **46 < 64**."
+        },
+        {
+          "type": "example",
+          "question": "Které číslo je hned po 79? A které hned před 100?",
+          "answer": "79 = 7 svazků a 9 volných. Přidám 1 a volných je 10. Svážu je a mám 8 svazků: **80**. Před 100 je **99**, o jeden klacík méně."
+        },
+        {
+          "type": "mistake",
+          "wrong": "38 > 83, protože 8 je víc než 3.",
+          "right": "38 < 83",
+          "why": "Nejdřív se porovnávají svazky – desítky. 3 svazky jsou méně než 8 svazků. Na volných klacících už nezáleží."
+        },
+        {
+          "type": "summary",
+          "text": "Desítka je svazek deseti. První číslice říká desítky, druhá jednotky: 47 = 4 desítky a 7 jednotek. 100 = 10 desítek. Porovnej nejdřív desítky, pak jednotky."
+        }
+      ]
     }
   ],
   "questions": [

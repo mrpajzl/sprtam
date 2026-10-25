@@ -197,6 +197,180 @@
           "text": "Plus = skákej doprava. Začni na větším čísle a udělej tolik skoků, kolik je menší číslo."
         }
       ]
+    },
+    {
+      "title": "Od celku",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš v dlaních 10 kaštanů. To je celek. Rozdělíš je do dvou hromádek. A zase je shrneš k sobě."
+        },
+        {
+          "type": "text",
+          "text": "Celek je pak zase celý. Tak zjistíš, kolik je čeho dohromady. Hodí se to při sklizni, ve hře i při prostírání."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Celek",
+          "definition": "Všechno dohromady. Nic nechybí.",
+          "example": "Všech 10 kaštanů v dlaních."
+        },
+        {
+          "type": "term",
+          "term": "Sčítání",
+          "definition": "Dáš dvě hromádky k sobě. Pak zjistíš, kolik jich je dohromady.",
+          "example": "3 kaštany a 2 kaštany jsou dohromady 5."
+        },
+        {
+          "type": "term",
+          "term": "Plus (+)",
+          "definition": "Znak sčítání. Říká: dej k sobě.",
+          "example": "3 + 2"
+        },
+        {
+          "type": "term",
+          "term": "Rovná se (=)",
+          "definition": "Za tento znak napíšeš, kolik to dělá.",
+          "example": "3 + 2 = 5"
+        },
+        {
+          "type": "heading",
+          "text": "Štědrý Plus"
+        },
+        {
+          "type": "text",
+          "text": "Plus je štědrý sběrač. Chodí po lese a všechno sbírá do košíku. Nic neztratí."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🌰",
+            "🌰",
+            "🌰",
+            "➕",
+            "🌰",
+            "🌰"
+          ],
+          "caption": "Plus dá k sobě 3 kaštany a 2 kaštany."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "V košíku jsou **3** kaštany.",
+            "Plus najde další **2**.",
+            "Počítá dál od tří: čtyři, pět.",
+            "V košíku je **5**. Zapíšeš: **3 + 2 = 5**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Deset kaštanů, mnoho cest"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi 10 kaštanů. Rozděl je do dvou dlaní. Pak to zkus jinak. Celek je pořád 10."
+        },
+        {
+          "type": "table",
+          "head": [
+            "V levé dlani",
+            "V pravé dlani",
+            "Celek"
+          ],
+          "rows": [
+            [
+              "10",
+              "0",
+              "10"
+            ],
+            [
+              "9",
+              "1",
+              "10"
+            ],
+            [
+              "8",
+              "2",
+              "10"
+            ],
+            [
+              "7",
+              "3",
+              "10"
+            ],
+            [
+              "6",
+              "4",
+              "10"
+            ],
+            [
+              "5",
+              "5",
+              "10"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Řekni dvojice nahlas a u každé tleskni: devět a jedna – tlesk. Osm a dvě – tlesk. Až po pět a pět."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "V košíku jsou 3 kaštany. Klepnutím přidej 2. Kolik jich je? Pak udělej 7 kaštanů a přidávej, dokud jich nebude 10. Kolikrát jsi klepl?"
+        },
+        {
+          "type": "widget",
+          "widget": "counter",
+          "props": {
+            "emoji": "🌰",
+            "start": 3,
+            "max": 10
+          }
+        },
+        {
+          "type": "example",
+          "question": "Na zemi leží 4 žaludy. Veverka přinese další 2. Kolik jich je?",
+          "answer": "Žaludů přibylo, je tu Plus. Mám 4 a počítám dál: pět, šest. **4 + 2 = 6.**"
+        },
+        {
+          "type": "example",
+          "question": "5 + 3 =",
+          "answer": "Začnu na větším čísle, na 5. Počítám dál o 3: šest, sedm, osm. **5 + 3 = 8.**"
+        },
+        {
+          "type": "example",
+          "question": "Kolik musíš přidat k 7, aby bylo 10?",
+          "answer": "Celek je 10. V jedné dlani je 7. Dopočítám: osm, devět, deset. To jsou 3 kaštany. **7 + 3 = 10.**"
+        },
+        {
+          "type": "example",
+          "question": "0 + 7 =",
+          "answer": "Nula je prázdný košík. Plus do něj dá 7 a nic víc. **0 + 7 = 7.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "4 + 3: počítám „čtyři, pět, šest“ → 6.",
+          "right": "4 + 3: počítám „pět, šest, sedm“ → **7**.",
+          "why": "Čtyři kaštany už máš. Nové kaštany počítáš až od pětky."
+        },
+        {
+          "type": "summary",
+          "text": "Celek se dá rozdělit na dvě části a zase složit: 10 = 7 + 3. Plus dává k sobě. Začni větším číslem a počítej dál."
+        }
+      ]
     }
   ],
   "questions": [

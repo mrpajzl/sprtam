@@ -1,9 +1,14 @@
+import { readdirSync } from 'node:fs'
+import { join } from 'node:path'
 import { defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { contentModules } from './plugins/content-modules'
 import { prerender } from './plugins/prerender'
 import { topicIndex } from './plugins/topic-index'
+
+// Prerendered pages of teaching approaches (/waldorf/…), like g/** above.
+const APPROACH_PAGES = readdirSync(join(import.meta.dirname, 'content', 'approaches')).map((id) => `${id}/**`)
 
 export default defineConfig({
   plugins: [
@@ -36,7 +41,7 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
         // Pages are never served from the precache while online (a cached page can point at assets of an
         // older deploy). Only the empty shell app.html is precached, as the offline fallback for any route.
-        globIgnores: ['audio/**', 'g/**', 'slovicka/**', 'index.html', 'boot-check.js', 'move.js'],
+        globIgnores: ['audio/**', 'g/**', 'slovicka/**', ...APPROACH_PAGES, 'index.html', 'boot-check.js', 'move.js'],
         navigateFallback: null,
         runtimeCaching: [{
           urlPattern: ({ request, url }) => request.mode === 'navigate' && !url.pathname.startsWith('/api/') && !/\.(xml|txt)$/.test(url.pathname),

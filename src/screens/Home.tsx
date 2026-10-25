@@ -1,3 +1,4 @@
+import { APPROACHES, useApproach } from '../approach'
 import { GRADE_NAME, STAGES, SUBJECTS } from '../content/curriculum'
 import { useIndex, refFor, type TopicRef } from '../content/library'
 import { recommend, streak, type Why } from '../progress/recommend'
@@ -20,7 +21,8 @@ export function Home() {
   const [theme, toggleTheme] = useTheme()
   const dark = theme === 'dark'
   const pins = all ? pinnedKeys(p).flatMap((k) => refFor(k) ?? []) : []
-  const recs = all ? recommend(p, all) : []
+  const recs = all ? recommend(p, all.filter((r) => !r.approach)) : []
+  const approach = useApproach()
 
   return (
     <div class="page home">
@@ -84,6 +86,14 @@ export function Home() {
         <span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span>
         <IArrow />
       </Link>
+
+      {APPROACHES.map((a) => (
+        <Link key={a.id} class="row approach-key" style={keyStyle('green')} href={`/${a.id}`}>
+          <span class="skey m" style={keyStyle('green')}><b class="em">{a.emoji}</b></span>
+          <span class="txt"><b>{a.name}</b><small>{approach === a.id ? 'zapnuto · epochy a výklad' : 'epochy a výklad'}</small></span>
+          <IArrow />
+        </Link>
+      ))}
     </div>
   )
 }

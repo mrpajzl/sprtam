@@ -205,6 +205,147 @@
           "text": "Řady · počet v řadě = všechny věci. Pořadí nevadí: 2 · 5 = 5 · 2."
         }
       ]
+    },
+    {
+      "title": "Rychlý Krát",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na stole stojí 3 talíře. Na každém leží 4 jablka. Kolik jablek je na stole?"
+        },
+        {
+          "type": "text",
+          "text": "Štědrý Plus je sčítá: 4 a 4 a 4. Jeho bratr **rychlý Krát** to umí zkrátit. Hodí se to vždy, když je víc stejných hromádek: nohy, kola, okna, rohlíky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Skupina",
+          "definition": "Hromádka věcí, které patří k sobě.",
+          "example": "Talíř se 4 jablky je jedna skupina."
+        },
+        {
+          "type": "term",
+          "term": "Násobení",
+          "definition": "Sčítání stejných čísel zkráceně. To umí rychlý Krát.",
+          "example": "4 + 4 + 4 = 3 · 4"
+        },
+        {
+          "type": "term",
+          "term": "Krát ( · )",
+          "definition": "Znak násobení. Je to tečka uprostřed řádku. 3 · 4 čteme „tři krát čtyři“.",
+          "example": "3 · 4 = tři skupiny po čtyřech"
+        },
+        {
+          "type": "heading",
+          "text": "Příběh o rychlém Krát"
+        },
+        {
+          "type": "text",
+          "text": "Plus a Krát mají spočítat jablka na 3 talířích. Na každém talíři jsou 4."
+        },
+        {
+          "type": "text",
+          "text": "Plus počítá po kouscích: 4, pak 4 a 4 je 8, pak 8 a 4 je 12. Krát se jen podívá: 3 talíře po 4. A hned ví: **3 · 4 = 12**."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🍎🍎🍎🍎",
+            "🍎🍎🍎🍎",
+            "🍎🍎🍎🍎"
+          ],
+          "caption": "3 talíře po 4 jablkách: 3 · 4 = 12"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kolik je skupin? **3** talíře.",
+            "Kolik je v každé skupině? **4** jablka.",
+            "Zapiš: **3 · 4**.",
+            "Spočítej: 4 + 4 + 4 = **12**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Rytmem"
+        },
+        {
+          "type": "text",
+          "text": "Postav se a kráčej. Počítej nahlas: 1, 2, 3, **4** – na čtyřce dupni. Pak dál: 5, 6, 7, **8**, 9, 10, 11, **12**. Dupnul jsi třikrát a jsi na 12. To je 3 · 4 = 12."
+        },
+        {
+          "type": "heading",
+          "text": "Pořadí nevadí"
+        },
+        {
+          "type": "term",
+          "term": "Řada",
+          "definition": "Věci vedle sebe v jedné čáře.",
+          "example": "🍎🍎🍎🍎 je jedna řada po 4."
+        },
+        {
+          "type": "text",
+          "text": "Krát má rád pořádek. Jablka srovná do 3 řad po 4. Když se na ně podíváš z boku, vidíš 4 řady po 3. Jablek je pořád 12. Proto **3 · 4 = 4 · 3**."
+        },
+        {
+          "type": "heading",
+          "text": "Jedna a nula"
+        },
+        {
+          "type": "text",
+          "text": "Krát přinese 1 talíř se 7 jablky: **1 · 7 = 7**. A když nepřinese žádný talíř? **0 · 5 = 0**. Žádný talíř, žádná jablka."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Každá řada puntíků je jeden talíř. Nastav posuvníky na 3 řady po 4. Pak na 4 řady po 3. Je puntíků pořád stejně?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik nohou mají 3 slepice?",
+          "answer": "Každá slepice má 2 nohy. To jsou 3 skupiny po 2. 2 + 2 + 2 = 6. Krát to řekne hned: **3 · 2 = 6**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik koleček mají 4 jízdní kola?",
+          "answer": "Každé kolo má 2 kolečka. 4 skupiny po 2: 2 + 2 + 2 + 2 = 8. **4 · 2 = 8**."
+        },
+        {
+          "type": "example",
+          "question": "Jak zapíšeš 5 + 5 + 5 + 5?",
+          "answer": "Jsou to čtyři pětky. Krát to zkrátí: **4 · 5 = 20**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "3 · 5 = 8",
+          "right": "3 · 5 = **15**",
+          "why": "Takhle by počítal Plus: 3 + 5 = 8. Krát bere tři pětky: 5 + 5 + 5 = 15."
+        },
+        {
+          "type": "summary",
+          "text": "Rychlý Krát sčítá stejné hromádky zkráceně: 3 · 4 = 4 + 4 + 4 = 12. Na pořadí nezáleží: 3 · 4 = 4 · 3. A platí 1 · 7 = 7 a 0 · 5 = 0."
+        }
+      ]
     }
   ],
   "questions": [

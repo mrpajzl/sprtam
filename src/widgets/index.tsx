@@ -11,6 +11,7 @@ import fraction from './fraction'
 import gap from './gap'
 import linear from './linear'
 import multiply from './multiply'
+import multipleCircle from './multiple-circle'
 import numberLine from './number-line'
 import parts from './parts'
 import percent from './percent'
@@ -24,7 +25,7 @@ import timeline from './timeline'
 // Every widget, by name. A new widget = a new file + one line here (scripts/check-content.ts
 // fails when a file in src/widgets is missing from this list). Grouped as in the gallery (/widgety).
 export const WIDGET_GROUPS: { name: string; widgets: WidgetDef[] }[] = [
-  { name: 'Čísla a počítání', widgets: [counter, numberLine, placeValue, column, multiply, fraction, percent, clock] },
+  { name: 'Čísla a počítání', widgets: [counter, numberLine, placeValue, column, multiply, multipleCircle, fraction, percent, clock] },
   { name: 'Geometrie a funkce', widgets: [angle, shape, pythagoras, balance, linear, quadratic] },
   { name: 'Text, třídění a souvislosti', widgets: [flip, sort, gap, parts, cycle, timeline, bars] },
 ]

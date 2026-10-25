@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from 'preact/hooks'
 import type { Question, Topic } from '../content/types'
-import { build, strictFor, grade, GRADE_WORD, MODES, answerText, type Item, type ModeId } from '../quiz/engine'
+import { approachById, getApproach } from '../approach'
+import { build, strictFor, grade, GRADE_WORD, MODES, answerText, verbal, type Item, type ModeId } from '../quiz/engine'
 import { QuestionView } from '../quiz/QuestionView'
 import { recordTopic, stars } from '../progress/store'
 import { back } from '../router'
@@ -41,12 +42,14 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
     const pct = Math.round((firstTry.filter((a) => a.ok).length / firstTry.length) * 100)
     const g = grade(pct)
     const wrong = firstTry.filter((a) => !a.ok)
+    // Approaches without marks (Waldorf) get a sentence instead of a grade.
+    const words = !m.instant && approachById(getApproach())?.grading === 'verbal'
     return (
       <div class="page">
         <div class="result">
           <Mascot mood={pct >= 90 ? 'happy' : pct >= 60 ? 'wow' : 'sad'} size={96} />
-          {m.instant ? <BigStars n={stars(pct)} /> : <div class={`mark m${g}`}>{g}</div>}
-          <h2>{m.instant ? (pct >= 90 ? 'Výborně!' : pct >= 60 ? 'Dobře!' : 'Ještě to procvič') : GRADE_WORD[g]}</h2>
+          {m.instant || words ? <BigStars n={stars(pct)} /> : <div class={`mark m${g}`}>{g}</div>}
+          <h2>{words ? verbal(pct) : m.instant ? (pct >= 90 ? 'Výborně!' : pct >= 60 ? 'Dobře!' : 'Ještě to procvič') : GRADE_WORD[g]}</h2>
           <div class="pct">{firstTry.filter((a) => a.ok).length} / {firstTry.length} · {pct} %</div>
           <div class="actions">
             <button class="btn block" onClick={() => setRound(round + 1)}>Znovu</button>

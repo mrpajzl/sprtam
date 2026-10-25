@@ -216,6 +216,127 @@
           "text": "Dělení = násobení pozpátku. Zeptej se „krát kolik?“ a výsledek ověř zkouškou."
         }
       ]
+    },
+    {
+      "title": "Spravedlivé Děleno",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Po sklizni obilí upekl rolník 24 koláčů. Pomáhalo mu 6 sousedů. Každý má dostat stejně, aby nikdo nebyl ošizený. Kolik koláčů dostane jeden soused?"
+        },
+        {
+          "type": "text",
+          "text": "Začínáme **celkem**: všech 24 koláčů leží na stole. Teprve pak ho rozdělíme na stejné části. Tomu se říká **dělení**. Potřebuješ ho pokaždé, když se něco dělí mezi lidi nebo do skupin."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Celek",
+          "definition": "Všechno dohromady, ještě nerozdělené.",
+          "example": "24 koláčů na stole"
+        },
+        {
+          "type": "term",
+          "term": "Dělení ( : )",
+          "definition": "Rozdělení celku na stejně velké části. Znak je dvojtečka, čteme „děleno“.",
+          "example": "24 : 6 = 4 – dvacet čtyři děleno šesti jsou čtyři."
+        },
+        {
+          "type": "term",
+          "term": "Spravedlivě",
+          "definition": "Každý dostane úplně stejně a nic nezbude."
+        },
+        {
+          "type": "heading",
+          "text": "Příběh o Dělenu"
+        },
+        {
+          "type": "text",
+          "text": "Počty mají své postavy. Štědrý **Plus** všechno sbírá. **Mínus** ubírá. Rychlý **Krát** násobí. A **Děleno** je spravedlivé: rozdělí všem stejně a nikomu nedá víc."
+        },
+        {
+          "type": "text",
+          "text": "Děleno rozdává koláče po kolech. V každém kole dá každému sousedovi jeden koláč."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "1. kolo: každý soused má 1 koláč. Rozdáno 6.",
+            "2. kolo: rozdáno 12.",
+            "3. kolo: rozdáno 18.",
+            "4. kolo: rozdáno 24 – koláče došly.",
+            "Proběhla 4 kola, každý soused má **4**. **24 : 6 = 4**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi 24 kaštanů, fazolí nebo kamínků a 6 misek. Rozdávej po jednom, jako Děleno. Pak se podívej na mřížku: každá řada je jedna miska. Posuň posuvník řádků na 4. Kolik teček musí být v řadě, aby jich bylo zase 24?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 6,
+            "columns": 4,
+            "max": 10
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Děleno se ptá Krát"
+        },
+        {
+          "type": "text",
+          "text": "Rozdávat po jednom je pomalé. Děleno si proto volá rychlého Krát a ptá se ho: „Šest krát kolik je 24?“ Krát odpoví: „Šest krát čtyři je 24.“ Takže **24 : 6 = 4**."
+        },
+        {
+          "type": "term",
+          "term": "Zkouška",
+          "definition": "Kontrola dělení násobením. Výsledek vynásobíš počtem částí. Musí vyjít celek.",
+          "example": "24 : 6 = 4. Zkouška: 6 · 4 = 24 ✔"
+        },
+        {
+          "type": "text",
+          "text": "Děleno umí dvě otázky. **Na kolik částí?** 24 koláčů pro 6 sousedů – každý dostane 4. **Po kolika?** 24 koláčů do košíků po 6 – naplníš 4 košíky. Obojí je 24 : 6 = 4."
+        },
+        {
+          "type": "example",
+          "question": "32 žáků se rozdělí do 4 stejných družstev. Kolik žáků je v družstvu?",
+          "answer": "Celek je 32, dělím na 4 stejné části: 32 : 4. Ptám se: „4 krát kolik je 32?“ 4 · 8 = 32. V družstvu je **8 žáků**. Zkouška: 4 · 8 = 32 ✔"
+        },
+        {
+          "type": "example",
+          "question": "Tužka stojí 6 Kč. Kolik tužek koupíš za 36 Kč?",
+          "answer": "Tady se ptám „po kolika“: kolikrát se 6 Kč vejde do 36 Kč? Řada 6: 6, 12, 18, 24, 30, 36 – šest kroků. 36 : 6 = **6 tužek**. Zkouška: 6 · 6 = 36 ✔"
+        },
+        {
+          "type": "example",
+          "question": "0 : 5 =",
+          "answer": "Na stole není nic. Děleno nemá co rozdat. Každý z pěti dostane **0**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "45 : 9 = 6",
+          "right": "45 : 9 = **5**",
+          "why": "Zkouška to prozradí: 9 · 6 = 54, a to je víc než 45. Správně 9 · 5 = 45."
+        },
+        {
+          "type": "summary",
+          "text": "Děleno rozdělí celek spravedlivě na stejné části. Výsledek najdeš otázkou „krát kolik?“ a ověříš ho zkouškou násobením."
+        }
+      ]
     }
   ],
   "questions": [

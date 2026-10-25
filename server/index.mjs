@@ -25,6 +25,8 @@ async function isAppRoute(path) {
   if (p[0] === 'g' && p.length === 4 && p[3] === '~test') return page(...p.slice(0, 3))
   if (p[0] === 'g' && p.length === 5 && MODES.includes(p[4])) return page(...p.slice(0, 4))
   if (p[0] === 'slovicka' && p.length === 3) return page(...p.slice(0, 2))
+  // Practice of one epoch of a teaching approach: /waldorf/z1/<epoch>/test
+  if (p.length === 4 && p[0] !== 'g' && p[3] === 'test') return page(...p.slice(0, 3))
   return false
 }
 

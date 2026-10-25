@@ -1,6 +1,6 @@
 declare module 'virtual:topic-index' {
   import type { GradeId, SubjectId } from './types'
-  const rows: [GradeId, SubjectId, string, string, string][]
+  const rows: [GradeId, SubjectId, string, string, string, string?][]
   export default rows
 }
 declare module 'virtual:topic-text' {

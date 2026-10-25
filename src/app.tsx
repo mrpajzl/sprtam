@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
+import { approachById } from './approach'
 import { ALL_GRADES, GRADE_SUBJECTS } from './content/curriculum'
 import type { GradeId, SubjectId } from './content/types'
 import { decodeProgress, unpack } from './progress/code'
@@ -7,6 +8,7 @@ import { MODES, type ModeId } from './quiz/engine'
 import { go, useRoute } from './router'
 import { fullTitle, titles } from './seo'
 import { setTheme } from './theme'
+import { ApproachScreen } from './screens/Approach'
 import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
 import { Search } from './screens/Search'
@@ -41,6 +43,11 @@ export function App() {
   if (a === 'hledat') return <><Search /><TabBar active="search" /></>
   if (a === 'sdilet') return <><SyncScreen /><TabBar /></>
   if (a === 'widgety') return <><GalleryScreen key={b} name={b} /><TabBar /></>
+  if (approachById(a)) {
+    if (c && d === 'test') return <ApproachScreen id={a} g={b} block={c} test />
+    const g = ALL_GRADES.includes(b as GradeId) ? (b as GradeId) : undefined
+    return <><ApproachScreen key={`${b}/${c}`} id={a} g={b} block={c} />{g ? <TabBar active="grade" grade={g} /> : <TabBar />}</>
+  }
   if (a === 'slovicka') {
     const lvl = LEVELS.find((l) => l.id === b)?.id as Level | undefined
     if (lvl && c) return <VocabDrill level={lvl} group={c} />
@@ -61,6 +68,7 @@ export function App() {
 function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'hledat') return 'Hledat'
   if (a === 'widgety') return 'Galerie widgetů'
+  if (approachById(a)) return null
   if (a === 'slovicka') return b ? titles.vocabLevel(b) : titles.vocab()
   if (a === 'g' && ALL_GRADES.includes(b as GradeId)) {
     const g = b as GradeId

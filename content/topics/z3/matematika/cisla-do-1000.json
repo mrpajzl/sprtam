@@ -220,6 +220,169 @@
           "text": "Porovnávej zleva: stovky, pak desítky, pak jednotky. Rozhoduje první číslice, která se liší."
         }
       ]
+    },
+    {
+      "title": "Od tisíce",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si hromadu tisíce zrn obilí. Po jednom bys je počítal celé odpoledne. Rolník to dělá chytřeji: každých **deset** věcí spojí do jedné větší."
+        },
+        {
+          "type": "text",
+          "text": "Tak se stavějí všechna velká čísla. Pochopíš, z čeho se skládá každé číslo do 1 000, jak se zapisuje a jak dvě čísla porovnat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jednotka (J)",
+          "definition": "Jedno zrnko. Jeden kus."
+        },
+        {
+          "type": "term",
+          "term": "Desítka (D)",
+          "definition": "Sáček s 10 zrny.",
+          "example": "10 jednotek = 1 desítka."
+        },
+        {
+          "type": "term",
+          "term": "Stovka (S)",
+          "definition": "Pytel s 10 sáčky, tedy se 100 zrny.",
+          "example": "10 desítek = 1 stovka."
+        },
+        {
+          "type": "term",
+          "term": "Tisíc",
+          "definition": "Vůz s 10 pytli. To je 1 000 zrn.",
+          "example": "10 stovek = 1 000."
+        },
+        {
+          "type": "heading",
+          "text": "Od celku k částem"
+        },
+        {
+          "type": "text",
+          "text": "Začni celkem. Na voze je 1 000 zrn. Složíš je do 10 pytlů po stovce. Každý pytel se dá vysypat do 10 sáčků po desítce. A v každém sáčku je 10 zrnek."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "1 000 = 10 stovek.",
+            "1 stovka = 10 desítek.",
+            "1 desítka = 10 jednotek.",
+            "Pořád stejný rytmus: **deset menších dá jedno větší**."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Řád",
+          "definition": "Místo číslice v čísle. Zleva: stovky, desítky, jednotky.",
+          "example": "V čísle 352 jsou 3 stovky, 5 desítek a 2 jednotky."
+        },
+        {
+          "type": "text",
+          "text": "V komoře zbyly 3 pytle, 5 sáčků a 2 volná zrnka. Zapíšeš to jako **352**. Každá číslice říká, kolik je čeho."
+        },
+        {
+          "type": "table",
+          "head": [
+            "S (pytle)",
+            "D (sáčky)",
+            "J (zrnka)",
+            "Číslo"
+          ],
+          "rows": [
+            [
+              "3",
+              "5",
+              "2",
+              "352"
+            ],
+            [
+              "4",
+              "0",
+              "7",
+              "407"
+            ],
+            [
+              "6",
+              "3",
+              "0",
+              "630"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Nula drží místo"
+        },
+        {
+          "type": "text",
+          "text": "Když sáčky chybí, napíšeš na jejich místo **0**. 4 pytle a 7 zrnek je 407. Bez nuly by vyšlo 47 – úplně jiné, mnohem menší číslo."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je 352: velké čtverce jsou pytle, tyčky sáčky, kostičky zrnka. Přidej jednu tyčku a jednu kostičku. Jaké číslo vzniklo? Pak zkus složit 407."
+        },
+        {
+          "type": "widget",
+          "widget": "place-value",
+          "props": {
+            "value": 352
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kdo má víc?"
+        },
+        {
+          "type": "term",
+          "term": "Znaky > < =",
+          "definition": "> znamená větší než, < menší než, = rovná se. Otevřená strana míří k většímu číslu.",
+          "example": "628 < 682"
+        },
+        {
+          "type": "text",
+          "text": "Dva rolníci porovnávají úrodu. Nejdřív počítají **pytle**. Kdo jich má víc, má víc obilí. Když mají pytlů stejně, rozhodují **sáčky**. Až nakonec **zrnka**. Číslo 99 nemá ani jeden pytel, proto je menší než 190."
+        },
+        {
+          "type": "example",
+          "question": "628 ? 682",
+          "answer": "Pytle: 6 a 6, stejně. Sáčky: 2 a 8, 2 je méně. Takže **628 < 682**."
+        },
+        {
+          "type": "example",
+          "question": "7 stovek a 4 jednotky je číslo…",
+          "answer": "7 pytlů, žádný sáček, 4 zrnka. Na místo sáčků napíšu 0: **704**."
+        },
+        {
+          "type": "example",
+          "question": "Které číslo je hned po 599?",
+          "answer": "Přidám jedno zrnko. Zrnek je 10 → svážu je do nového sáčku. Sáčků je 10 → nasypu je do nového pytle. Mám 6 pytlů, 0 sáčků a 0 zrnek: **600**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V čísle 208 jsou 2 desítky.",
+          "right": "208 = 2 stovky, 0 desítek, 8 jednotek.",
+          "why": "Dvojka stojí na prvním místě, tedy na místě stovek. Desítky ukazuje prostřední číslice, a ta je 0."
+        },
+        {
+          "type": "summary",
+          "text": "Deset jednotek je desítka, deset desítek stovka, deset stovek tisíc. Číslice zleva: stovky, desítky, jednotky. Porovnáváš zleva – rozhoduje první číslice, která se liší."
+        }
+      ]
     }
   ],
   "questions": [

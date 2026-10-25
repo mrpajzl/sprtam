@@ -213,6 +213,159 @@
           "text": "Rozhoduje číslice hned vpravo: 0–4 nech, 5–9 přidej 1. Vpravo dej nuly. Píšeme ≈ (přibližně)."
         }
       ]
+    },
+    {
+      "title": "Kameny u cesty",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rolník jde z vesnice na pole. U cesty stojí každých deset kroků kámen: na 10, na 20, na 30… Když se ho soused zeptá, kde je, neřekne „na 47. kroku“. Řekne: „Skoro u padesátky.“"
+        },
+        {
+          "type": "text",
+          "text": "Takovému zjednodušení říkáme **zaokrouhlování**. Hodí se, když potřebuješ rychle odhadnout cenu, čas nebo vzdálenost."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Celá desítka",
+          "definition": "Číslo, které končí nulou: 10, 20, 30… Na cestě je to kámen.",
+          "example": "Mezi kameny 40 a 50 leží 41 až 49."
+        },
+        {
+          "type": "term",
+          "term": "Celá stovka",
+          "definition": "Číslo, které končí dvěma nulami: 100, 200, 300…"
+        },
+        {
+          "type": "term",
+          "term": "Zaokrouhlit",
+          "definition": "Nahradit číslo nejbližší celou desítkou nebo stovkou.",
+          "example": "47 zaokrouhlím na desítky → 50."
+        },
+        {
+          "type": "term",
+          "term": "Přibližně ( ≈ )",
+          "definition": "Znak „vlnité rovná se“. Říká, že čísla jsou skoro stejná.",
+          "example": "47 ≈ 50"
+        },
+        {
+          "type": "heading",
+          "text": "Projdi to nohama"
+        },
+        {
+          "type": "text",
+          "text": "Zkus si to doma. Polož na zem dvě boty asi deset kroků od sebe. První bota je kámen 40, druhá kámen 50."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Postav se k botě 40. Udělej 7 kroků a počítej: 41, 42… 47.",
+            "Kolik kroků je zpátky ke 40? **Sedm.**",
+            "Kolik kroků je dopředu k 50? **Tři.**",
+            "Blíž je 50. Proto **47 ≈ 50**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Udělej teď jen 5 kroků. Stojíš na 45, přesně uprostřed: k oběma botám je to 5 kroků. Pro tenhle případ platí dohoda: jdeme **dopředu**. 45 ≈ 50."
+        },
+        {
+          "type": "list",
+          "items": [
+            "41, 42, 43, 44 → zpátky na **40**.",
+            "45, 46, 47, 48, 49 → dopředu na **50**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Táhni tečku po ose jako po cestě. Postav ji na 43, pak na 45, pak na 48. Ke kterému kameni má pokaždé blíž?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 40,
+            "max": 50,
+            "step": 1,
+            "start": 47
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Velké kameny po stovkách"
+        },
+        {
+          "type": "text",
+          "text": "Na dlouhé cestě stojí velké kameny po stovkách: 300, 400, 500… Pak už nepočítáš jednotlivé kroky. Díváš se, kolik **desítek** jsi ušel od posledního velkého kamene."
+        },
+        {
+          "type": "term",
+          "term": "Rozhodující číslice",
+          "definition": "Číslice hned **vpravo** od místa, na které zaokrouhluješ. Ta rozhodne, jestli jdeš zpátky, nebo dopředu.",
+          "example": "438 na stovky → rozhoduje desítka 3."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi, na co zaokrouhluješ: na desítky, nebo na stovky.",
+            "Podívej se na číslici hned vpravo – to je rozhodující číslice.",
+            "0, 1, 2, 3, 4 → zpátky: číslici vlevo od ní nech, jak je.",
+            "5, 6, 7, 8, 9 → dopředu: k číslici vlevo od ní přidej 1.",
+            "Všechno vpravo nahraď nulami."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Zaokrouhli 23 na desítky.",
+          "answer": "23 leží mezi kameny 20 a 30. Ke 20 jsou 3 kroky, ke 30 jich je 7. **23 ≈ 20**."
+        },
+        {
+          "type": "example",
+          "question": "Zaokrouhli 96 na desítky.",
+          "answer": "96 leží mezi 90 a 100. Ke 100 jsou jen 4 kroky. **96 ≈ 100**."
+        },
+        {
+          "type": "example",
+          "question": "Zaokrouhli 438 na stovky.",
+          "answer": "Mezi velkými kameny 400 a 500. Rozhoduje desítka 3 → zpátky. **438 ≈ 400**."
+        },
+        {
+          "type": "example",
+          "question": "Zaokrouhli 750 na stovky.",
+          "answer": "Mezi 700 a 800. Rozhoduje desítka 5 → dopředu. **750 ≈ 800**."
+        },
+        {
+          "type": "heading",
+          "text": "Odhad na trhu"
+        },
+        {
+          "type": "text",
+          "text": "Na trhu chceš koupit sýr za 48 Kč a med za 31 Kč. Máš stovku. Stačí? Zaokrouhli: 48 ≈ 50, 31 ≈ 30. 50 + 30 = 80. Stovka stačí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "549 na stovky: na konci je 9, tak dopředu → 600.",
+          "right": "549 ≈ **500**",
+          "why": "Rozhoduje jen číslice hned vpravo od stovek, tedy desítka 4. Od kamene 500 jsi ušel jen 4 desítky – 500 je blíž než 600."
+        },
+        {
+          "type": "summary",
+          "text": "Číslo dojde k bližšímu kameni: rozhoduje číslice hned vpravo. 0–4 zpátky, 5–9 dopředu, vpravo dej nuly. Píšeme ≈ (přibližně)."
+        }
+      ]
     }
   ],
   "questions": [

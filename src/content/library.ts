@@ -14,6 +14,8 @@ export interface TopicRef {
   key: string
   /** Position within its subject (school-year order). */
   i: number
+  /** Set for topics that belong to one teaching approach only (not in the regular subject list). */
+  approach?: string
 }
 
 let refs: Promise<TopicRef[]> | undefined
@@ -22,10 +24,10 @@ let byKey: Map<string, TopicRef> | undefined
 export function loadIndex(): Promise<TopicRef[]> {
   return (refs ??= import('virtual:topic-index').then((m) => {
     const n = new Map<string, number>()
-    const out = m.default.map(([g, s, id, title, emoji]) => {
+    const out = m.default.map(([g, s, id, title, emoji, approach]) => {
       const i = n.get(g + s) ?? 0
       n.set(g + s, i + 1)
-      return { g, s, id, title, emoji, key: topicKey(g, s, id), i }
+      return { g, s, id, title, emoji, key: topicKey(g, s, id), i, ...(approach ? { approach } : {}) }
     })
     byKey = new Map(out.map((r) => [r.key, r]))
     return out

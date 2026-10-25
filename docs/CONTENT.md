@@ -10,6 +10,7 @@ Celé učivo jsou **JSON soubory ve složce [`content/`](../content)**. Nejsou v
 | [FORMAT.md](FORMAT.md) | reference všech polí souborů, bloků a otázek (generovaná) |
 | [WIDGETY.md](WIDGETY.md) | reference všech widgetů (generovaná) |
 | [sprtam.cz/widgety](https://sprtam.cz/widgety) | galerie: každý widget, blok a typ otázky živě, s JSON ke zkopírování |
+| [PRISTUPY.md](PRISTUPY.md) | přístupy k výuce (waldorfská škola): plány ročníků, vysvětlení a témata pro přístup |
 | [`src/content/format.ts`](../src/content/format.ts) | jediná definice formátu; z ní vznikají typy, kontrola i JSON Schema |
 
 ## Soubory
@@ -20,6 +21,7 @@ content/
     _subject.json            pořadí témat
     <id-tématu>.json         jedno téma (vysvětlení + otázky)
   vocab/<úroveň>.json        anglická slovíčka a1, a2, b1, b2, c1
+  approaches/<přístup>/      přístup k výuce: approach.json a plán každého ročníku (viz PRISTUPY.md)
   schema/*.schema.json       JSON Schema pro editory (generované)
 ```
 
@@ -63,18 +65,23 @@ Formátování je pevné: JSON odsazený dvěma mezerami, na konci nový řádek
 - Skupiny se odkazují pořadím (`/slovicka/A1/0`). Nové přidávej **na konec**.
 - Nové nebo změněné slovo potřebuje nahrávku výslovnosti: `ELEVENLABS_API_KEY=… npx tsx scripts/vocab-audio.ts gen`, pak `build` a `check` (viz [ARCHITEKTURA.md](ARCHITEKTURA.md#vývoj)). Nahrávky a `src/vocab/audio.ts` patří do stejného commitu.
 
+### Přístup k výuce (waldorfská škola)
+
+Plán ročníku, vysvětlení v duchu přístupu i témata jen pro přístup: [PRISTUPY.md](PRISTUPY.md). Vysvětlení pro přístup je třetí položka v `explanations` s polem `"approach": "waldorf"` a platí pro ni stejná pravidla jako pro obě obecná.
+
 ### Co se nesmí měnit
 
 - **`id` tématu a název jeho souboru.** Je na nich uložený pokrok dětí a vedou na ně odkazy. Téma jde přejmenovat (`title`), přesunout v pořadí i přepsat, ale ne změnit `id`.
 - **Anglické slovo (`en`)** a pořadí skupin slovíček (viz výše).
 - **Název widgetu** (`"widget": "fraction"`).
+- **`id` epochy** v plánu přístupu (je v adrese `/waldorf/z1/<id>`).
 
 ## Téma
 
 - **Pořadí témat** = pořadí, v jakém se učí během školního roku. 6–10 témat na předmět a ročník, pokryj celé učivo ročníku podle RVP/běžného ŠVP. Témata nesmí být příliš široká („Celá mluvnice“) ani mikroskopická.
 - `id` kebab-case ASCII (`vyjmenovana-slova-b`), stejné jako název souboru.
 - `emoji`: jedno výstižné emoji.
-- `explanations`: **přesně dvě vysvětlení, každé jiným způsobem** (viz Výklad níže).
+- `explanations`: **přesně dvě obecná vysvětlení, každé jiným způsobem** (viz Výklad níže). Navíc smí být jedno pro každý přístup k výuce (`"approach"`).
 - `questions`: **alespoň 10 otázek** (8 je tvrdý limit kontroly), mix typů. **Alespoň 2 otázky `open`** (pro režim Zkoušení: ústní otázka a vzorová odpověď v 1–3 větách). Otázky od lehkých po těžší.
 - `generator`: jen u matematiky a fyziky, pokud se hodí některý generátor z [`src/quiz/generators.ts`](../src/quiz/generators.ts): add10, sub10, add20, sub20, add100, sub100, add1000, mul-table, div-table, written-mul, written-div, round, compare, frac-of, frac-add, frac-simplify, decimal, percent, integers, power, sqrt, linear-eq, pythagoras, perimeter-area, circle, units, units-dec, volume, ratio, expressions, quadratic, log. Generátor přidává do procvičování nekonečno dalších příkladů.
 

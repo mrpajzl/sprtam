@@ -6,8 +6,8 @@ import type { Plugin } from 'vite'
 import type * as Curriculum from '../src/content/curriculum'
 import type * as Seo from '../src/seo'
 import type * as Widgets from '../src/widgets'
-import type { Block, Subject, SubjectId } from '../src/content/types'
-import { readSubjects, readVocab } from './content'
+import type { Block, Subject, SubjectId, YearBlock } from '../src/content/types'
+import { readApproaches, readSubjects, readVocab } from './content'
 
 // Writes a real HTML page for every public route, so links are shareable with proper
 // previews and search engines get content, titles and descriptions without running JS:
@@ -64,7 +64,7 @@ const bar = (title: string, up?: string, crumbs: [string, string][] = []) =>
   `<header class="bar">${up ? `<a class="icon-btn" href="${up}" aria-label="Zpět">${BACK}</a>` : '<span class="spacer"></span>'}<div class="bar-title">${crumbs.length ? `<nav class="crumbs" aria-label="Kde jsem">${crumbs.map(([name, path]) => `<a href="${path}">${esc(name)}</a>`).join('')}</nav>` : ''}<h1>${esc(title)}</h1></div><span class="spacer"></span></header>`
 
 /** The app's TabBar (src/ui/TabBar.tsx); the class tab only where the grade is known. */
-const tabbar = (active: 'home' | 'grade' | 'vocab', grade?: [string, string]) => {
+const tabbar = (active: 'home' | 'grade' | 'vocab' | undefined, grade?: [string, string]) => {
   const tab = (t: string, href: string, glyph: string, label: string) => `<a href="${href}"${t === active ? ' aria-current="page"' : ''}>${glyph}<span>${esc(label)}</span></a>`
   return `<nav class="tabbar" aria-label="Hlavní nabídka">${tab('home', '/', HOME, 'Domů')}${grade ? tab('grade', grade[1], GRID, grade[0]) : ''}${tab('search', '/hledat', SEARCH, 'Hledat')}${tab('vocab', '/slovicka', '<b class="aa" aria-hidden="true">Aa</b>', 'Slovíčka')}</nav>`
 }
@@ -107,28 +107,33 @@ async function pages(): Promise<Page[]> {
       const subj = subjects.get(`${g}/${s}`)!
       const sPath = `${gPath}/${s}`
       const sCrumbs: [string, string][] = [...gCrumbs, [SUBJECTS[s].name, sPath]]
-      const names = subj.topics.map((t) => t.title)
+      // Approach-only topics (docs/PRISTUPY.md) have pages, but are listed only in their approach's plan.
+      const listedTopics = subj.topics.filter((t) => !t.approach)
+      const names = listedTopics.map((t) => t.title)
       out.push({
         path: sPath,
         title: titles.subject(g, s),
-        description: `${SUBJECTS[s].name} pro ${gradeFor(g)}: ${names.slice(0, 6).join(', ')}${names.length > 6 ? ' a další' : ''}. ${subj.topics.length} ${subj.topics.length <= 4 ? 'témata' : 'témat'} s vysvětlením a kvízy.`,
+        description: `${SUBJECTS[s].name} pro ${gradeFor(g)}: ${names.slice(0, 6).join(', ')}${names.length > 6 ? ' a další' : ''}. ${listedTopics.length} ${listedTopics.length <= 4 ? 'témata' : 'témat'} s vysvětlením a kvízy.`,
         crumbs: sCrumbs,
-        body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(SUBJECTS[s].name, gPath, [[GRADE_NAME[g], gPath]])}<div class="list">${subj.topics.map((t, i) => `<a class="row" href="${sPath}/${t.id}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="em">${t.emoji}</span><b>${esc(t.title)}</b></a>`).join('')}</div></div>${gTab}`,
-        ld: { '@type': 'ItemList', itemListElement: subj.topics.map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${sPath}/${t.id}`, name: t.title })) },
+        body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(SUBJECTS[s].name, gPath, [[GRADE_NAME[g], gPath]])}<div class="list">${listedTopics.map((t, i) => `<a class="row" href="${sPath}/${t.id}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="em">${t.emoji}</span><b>${esc(t.title)}</b></a>`).join('')}</div></div>${gTab}`,
+        ld: { '@type': 'ItemList', itemListElement: listedTopics.map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${sPath}/${t.id}`, name: t.title })) },
       })
 
-      subj.topics.forEach((t, i) => {
-        const key = t.explanations[0].blocks.find((b): b is Extract<Block, { type: 'summary' }> => b.type === 'summary')
+      subj.topics.forEach((t) => {
+        // As in the app: the general explanations only (an approach's own explanation shows to its pupils).
+        const explanations = t.explanations.filter((x) => !x.approach)
+        const key = explanations[0].blocks.find((b): b is Extract<Block, { type: 'summary' }> => b.type === 'summary')
         const tPath = `${sPath}/${t.id}`
-        const prev = subj.topics[i - 1], next = subj.topics[i + 1]
+        const i = listedTopics.indexOf(t)
+        const prev = i > 0 ? listedTopics[i - 1] : undefined, next = i >= 0 ? listedTopics[i + 1] : undefined
         const nav = [prev && `<a class="row" href="${sPath}/${prev.id}"><span class="em">${prev.emoji}</span><b>${esc(prev.title)}</b></a>`, next && `<a class="row" href="${sPath}/${next.id}"><span class="em">${next.emoji}</span><b>${esc(next.title)}</b></a>`].filter(Boolean).join('')
         out.push({
           path: tPath,
           title: titles.topic(g, s, t.title),
-          description: summary(t.explanations[0].blocks) || `${t.title} – ${SUBJECTS[s].name}, ${gradeLabel(g)}.`,
+          description: summary(explanations[0].blocks) || `${t.title} – ${SUBJECTS[s].name}, ${gradeLabel(g)}.`,
           crumbs: [...sCrumbs, [t.title, tPath]],
           type: 'article',
-          body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [SUBJECTS[s].name, sPath]])}${t.explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
+          body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [SUBJECTS[s].name, sPath]])}${explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
           ld: {
             '@type': 'LearningResource', name: t.title, inLanguage: 'cs', learningResourceType: 'Explanation', isAccessibleForFree: true,
             educationalLevel: GRADE_NAME[g], about: SUBJECTS[s].name, url: `${SITE}${tPath}`,
@@ -156,6 +161,48 @@ async function pages(): Promise<Page[]> {
       crumbs: [...vCrumbs, [v.level, path]],
       body: `<div class="page" style="${style('purple')}">${bar(v.level, '/slovicka', [['Slovíčka', '/slovicka']])}<a class="btn block mix" href="${path}/vse">Míchat vše<small class="btn-count">${v.groups.reduce((n, gr) => n + gr.words.length, 0)}</small></a><div class="tiles">${v.groups.map((gr, i) => `<a class="tile vocab-tile" href="${path}/${i}"><span class="tile-face em">${gr.emoji}</span><b>${esc(gr.name)}</b><small class="sample">${esc(gr.words.slice(0, 6).map((w) => `${w.cz} – ${w.en}`).join(', '))}…</small></a>`).join('')}</div></div>${tabbar('vocab')}`,
     })
+  }
+  // Teaching approaches: /waldorf, /waldorf/<grade>, /waldorf/<grade>/<epoch> (markup as src/screens/Approach.tsx).
+  const topicRef = new Map<string, { t: Subject['topics'][number]; g: string; s: SubjectId }>()
+  for (const subj of subjects.values()) for (const t of subj.topics) topicRef.set(`${subj.grade}/${subj.subject}/${t.id}`, { t, g: subj.grade, s: subj.subject })
+  const green = style('green')
+  const ARROW = icon('M9 5l7 7-7 7')
+  for (const a of readApproaches(STAGES.flatMap((st) => st.grades))) {
+    const aPath = `/${a.id}`
+    const aCrumbs: [string, string][] = [home, [a.name, aPath]]
+    out.push({
+      path: aPath,
+      title: titles.approach(a.name),
+      description: plain(a.about[0]).slice(0, 155),
+      crumbs: aCrumbs,
+      body: `<div class="page" style="${green}">${bar(`${a.emoji} ${a.name}`, '/')}<div class="blocks approach-about">${a.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div><h2 class="label">Ročníky</h2><div class="list">${a.years.map(([g, y]) => `<a class="row" href="${aPath}/${g}"><span class="num">${esc(y.title.split('.')[0])}</span><span class="txt"><b>${esc(y.title)}</b><small>${esc(y.epochs.map((e) => e.title).slice(0, 3).join(' · '))}…</small></span>${ARROW}</a>`).join('')}</div></div>${tabbar(undefined)}`,
+    })
+    for (const [g, y] of a.years) {
+      const yPath = `${aPath}/${g}`
+      const yCrumbs: [string, string][] = [...aCrumbs, [y.title, yPath]]
+      const gTab = tabbar('grade', [GRADE_NAME[g], `/g/${g}`])
+      const row = (b: YearBlock) => `<a class="row epoch" href="${yPath}/${b.id}"><span class="em">${b.emoji}</span><span class="txt"><b>${esc(b.title)}</b>${b.month ? `<small>${esc(b.month)}</small>` : ''}</span></a>`
+      out.push({
+        path: yPath,
+        title: titles.approachYear(a.name, y.title),
+        description: `${a.name}, ${y.title}: ${y.epochs.map((e) => (e.month ? `${e.title} (${e.month})` : e.title)).slice(0, 6).join(', ')}. Témata k procvičení ke každé epoše.`,
+        crumbs: yCrumbs,
+        body: `<div class="page" style="${green}">${bar(y.title, aPath, [[a.short, aPath]])}<h2 class="label">${a.emoji} Epochy</h2><div class="list">${y.epochs.map(row).join('')}</div>${y.ongoing?.length ? `<h2 class="label next-label">Celý rok</h2><div class="list">${y.ongoing.map(row).join('')}</div>` : ''}</div>${gTab}`,
+        ld: { '@type': 'ItemList', itemListElement: y.epochs.map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${yPath}/${e.id}`, name: e.title })) },
+      })
+      for (const b of [...y.epochs, ...(y.ongoing ?? [])]) {
+        const bPath = `${yPath}/${b.id}`
+        const refs = b.topics.map((k) => ({ k, ...topicRef.get(k)! }))
+        out.push({
+          path: bPath,
+          title: titles.approachBlock(a.name, y.title, b.title),
+          description: `${b.month ? `${b.month}: ` : ''}${plain(b.about.join(' '))}`.slice(0, 155),
+          crumbs: [...yCrumbs, [b.title, bPath]],
+          type: 'article',
+          body: `<div class="page" style="${green}">${bar(`${b.emoji} ${b.title}`, yPath, [[a.short, aPath], [y.title, yPath]])}${b.month ? `<div class="label">${esc(b.month)}</div>` : ''}<div class="blocks approach-about">${b.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>${refs.length ? `<h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(SUBJECTS[r.s].c)}" href="/g/${r.k}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(SUBJECTS[r.s].name)}</small></span></a>`).join('')}</div>` : '<p class="muted epoch-empty">K téhle epoše zatím v aplikaci nejsou témata k procvičení.</p>'}</div>${gTab}`,
+        })
+      }
+    }
   }
   return out
 }

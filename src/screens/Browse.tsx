@@ -1,5 +1,6 @@
 import { useEffect } from 'preact/hooks'
 import { GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } from '../content/curriculum'
+import { approachById, listed, useApproach } from '../approach'
 import { hasSubject, loadSubject, topicKey } from '../content'
 import type { GradeId, SubjectId } from '../content/types'
 import { isPinned, setGrade, stars, useProgress } from '../progress/store'
@@ -8,6 +9,7 @@ import { Bar, Meter, Stars } from '../ui/Bar'
 import { GLYPHS, keyStyle, subjectStyle } from '../ui/glyphs'
 import { IPin, ITest } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
+import { YearBlocks } from './Approach'
 
 /** Average stars → 0–100 for a subject's meter. */
 function useSubjectPct(g: GradeId, s: SubjectId, ids: string[] | undefined | null) {
@@ -18,7 +20,7 @@ function useSubjectPct(g: GradeId, s: SubjectId, ids: string[] | undefined | nul
 }
 
 function SubjectTile({ g, s }: { g: GradeId; s: SubjectId }) {
-  const ids = useAsync(() => loadSubject(g, s).then((subj) => subj.topics.map((t) => t.id)), [g, s])
+  const ids = useAsync(() => loadSubject(g, s).then((subj) => subj.topics.filter(listed).map((t) => t.id)), [g, s])
   const pct = useSubjectPct(g, s, ids)
   const G = GLYPHS[s]
   return (
@@ -33,9 +35,13 @@ function SubjectTile({ g, s }: { g: GradeId; s: SubjectId }) {
 export function GradeScreen({ g }: { g: GradeId }) {
   useEffect(() => setGrade(g), [g])
   const subjects = GRADE_SUBJECTS[g].filter((s) => hasSubject(g, s))
+  const p = useProgress()
+  const a = approachById(useApproach())
+  const plan = a?.grades.includes(g) ? a : undefined
   return (
     <div class="page">
       <Bar title={GRADE_NAME[g]} />
+      {plan && <div class="approach-year"><YearBlocks a={plan} g={g} p={p} /><h2 class="label next-label">Předměty</h2></div>}
       {subjects.length ? (
         <div class="tiles">
           {subjects.map((s) => <SubjectTile key={s} g={g} s={s} />)}
@@ -58,7 +64,7 @@ export function SubjectScreen({ g, s }: { g: GradeId; s: SubjectId }) {
       {subj && (
         <>
           <div class="list">
-            {subj.topics.map((t, i) => {
+            {subj.topics.filter(listed).map((t, i) => {
               const key = topicKey(g, s, t)
               return (
                 <Link key={t.id} class="row" href={`/g/${g}/${s}/${t.id}`}>

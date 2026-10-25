@@ -215,6 +215,161 @@
           "text": "Obvod čtverce = 4 · a. Obvod obdélníku = 2 · a + 2 · b. Výsledek má jednotku délky (cm, m)."
         }
       ]
+    },
+    {
+      "title": "Kolem pole",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rolník chce ohradit pole plotem, aby mu do něj nechodily kozy. Kolik metrů plotu má koupit? Musí znát délku cesty kolem celého pole."
+        },
+        {
+          "type": "text",
+          "text": "Té cestě dokola se říká **obvod**. Potřebuje ho i stavitel, když vyměřuje zdi domu, nebo švadlena, když lemuje ubrus."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Strana",
+          "definition": "Rovná čára od rohu k rohu tvaru.",
+          "example": "Pole tvaru obdélníku má 4 strany."
+        },
+        {
+          "type": "term",
+          "term": "Obvod",
+          "definition": "Délka čáry kolem celého tvaru. Sečteš délky všech stran.",
+          "example": "Obvod pole = délka celého plotu."
+        },
+        {
+          "type": "term",
+          "term": "Čtverec",
+          "definition": "Tvar se 4 pravými rohy a 4 stranami, které jsou **všechny stejně dlouhé**."
+        },
+        {
+          "type": "term",
+          "term": "Obdélník",
+          "definition": "Tvar se 4 pravými rohy. Protější strany jsou stejně dlouhé: dvě delší a dvě kratší."
+        },
+        {
+          "type": "term",
+          "term": "Rovnostranný trojúhelník",
+          "definition": "Trojúhelník, který má všechny 3 strany stejně dlouhé."
+        },
+        {
+          "type": "heading",
+          "text": "Obejdi to"
+        },
+        {
+          "type": "text",
+          "text": "Obvod se dá projít nohama. Vyber si koberec nebo stůl a obejdi ho."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Postav se k jednomu rohu. Jdi podél první strany a počítej kroky.",
+            "Na rohu zastav a řekni nahlas, kolik kroků měla strana.",
+            "Takhle obejdi všechny strany, až se vrátíš na start.",
+            "Všechny strany sečti. To je obvod v krocích."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Obvod je celek, strany jsou jeho části. Proto platí: **obvod = součet všech stran**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Hýbej posuvníky a sleduj obvod. Prodluž jednu stranu o 1. O kolik se obvod zvětšil? O 2 – ta strana je v obdélníku totiž dvakrát."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "rect",
+            "a": 5,
+            "b": 3
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Zkratky pro pravidelné tvary"
+        },
+        {
+          "type": "text",
+          "text": "U čtverce jsou všechny strany stejné. Nemusíš je sčítat, stačí násobit. Je to jako rytmus: krok, krok, krok, krok – čtyřikrát stejně."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tvar",
+            "Obvod",
+            "Proč"
+          ],
+          "rows": [
+            [
+              "trojúhelník",
+              "sečti 3 strany",
+              "strany mohou být různé"
+            ],
+            [
+              "rovnostranný trojúhelník",
+              "3 · strana",
+              "tři stejné strany"
+            ],
+            [
+              "čtverec",
+              "4 · strana",
+              "čtyři stejné strany"
+            ],
+            [
+              "obdélník",
+              "2 · delší + 2 · kratší",
+              "každá délka je tam dvakrát"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Pole má tvar obdélníku 20 m × 15 m. Kolik metrů plotu potřebuje rolník?",
+          "answer": "Plot jde kolem dokola: 20 + 15 + 20 + 15 = **70 m**. Zkratkou: 2 · 20 + 2 · 15 = 40 + 30 = 70 m."
+        },
+        {
+          "type": "example",
+          "question": "Trojúhelníkový záhon má strany 3 m, 4 m a 5 m. Jaký je obvod?",
+          "answer": "Sečtu všechny tři strany: 3 + 4 + 5 = **12 m**."
+        },
+        {
+          "type": "example",
+          "question": "Čtvercová stodola má stranu 9 m. Jaký je obvod?",
+          "answer": "Čtyři stejné strany: 4 · 9 = **36 m**."
+        },
+        {
+          "type": "example",
+          "question": "Čtvercový ovčín má obvod 12 m. Jak dlouhá je jedna strana?",
+          "answer": "Plot se spravedlivě dělí na 4 stejné strany: 12 : 4 = **3 m**. Zkouška: 4 · 3 = 12 ✔"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obdélník 4 cm × 3 cm má obvod 4 · 3 = 12 cm.",
+          "right": "4 + 3 + 4 + 3 = **14 cm**",
+          "why": "Obvod je cesta kolem tvaru, tedy součet všech čtyř stran. Násobit 4 · 3 je jiný výpočet, obvod to není."
+        },
+        {
+          "type": "summary",
+          "text": "Obvod je cesta kolem celého tvaru: sečti všechny strany. Čtverec = 4 · strana, rovnostranný trojúhelník = 3 · strana, obdélník = 2 · delší + 2 · kratší."
+        }
+      ]
     }
   ],
   "questions": [
