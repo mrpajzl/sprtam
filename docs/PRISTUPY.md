@@ -6,7 +6,7 @@ Co přístup v aplikaci mění:
 
 | Co | Jak |
 |---|---|
-| Pořadí látky | Ročník se ukazuje jako **epochy** v pořadí školního roku, každá s tématy aplikace, i z jiných ročníků ([`/waldorf`](https://sprtam.cz/waldorf)). |
+| Pořadí látky | Ročník se ukazuje jako **epochy** v obvyklém pořadí (třídy si je každý rok skládají jinak, proto bez měsíců), každá s tématy aplikace, i z jiných ročníků ([`/waldorf`](https://sprtam.cz/waldorf)). |
 | Výklad | Téma může mít navíc **vysvětlení v duchu přístupu**. Dětem, které přístup zvolily, se ukáže jako první. |
 | Vlastní témata | Přístup smí mít témata, která v běžném učivu nejsou (např. Parsifal). V běžném seznamu předmětu se neukazují. |
 | Hodnocení | Písemka končí **slovním hodnocením** místo známky (když to přístup a ročník chce). |
@@ -18,11 +18,11 @@ Přístup si dítě zvolí na úvodní obrazovce. Volba se pamatuje jen v zaří
 ```
 content/approaches/waldorf/
   approach.json    název, popis, výchozí hodnocení
-  z1.json … z9.json, s2.json, s3.json
-                   plán ročníku: epochy (měsíc, popis, témata) a průběžné předměty
+  z1.json … z9.json, s1.json, s2.json, s3.json
+                   plán ročníku: epochy (popis, témata) a průběžné předměty
 ```
 
-Ročníky se jmenují jako v aplikaci: `z1`–`z9` je 1.–9. třída, waldorfské lyceum 11. a 12. třída je `s2` a `s3` (2. a 3. ročník SŠ). Pole viz [FORMAT.md](FORMAT.md#přístup-k-výuce-contentapproachespřístupapproachjson).
+Ročníky se jmenují jako v aplikaci: `z1`–`z9` je 1.–9. třída, waldorfské lyceum 10.–12. třída je `s1`–`s3` (1.–3. ročník SŠ). Pole viz [FORMAT.md](FORMAT.md#přístup-k-výuce-contentapproachespřístupapproachjson).
 
 Téma v epoše se zapisuje jako `<ročník>/<předmět>/<id>`, třeba `z2/matematika/nasobilka-2-3`. Tím se řeší, že se učivo **protíná**: waldorfská 1. třída probírá násobkové řady a čísla do 100, které jsou v aplikaci ve 2. třídě. Epocha na ně jen odkáže a pokrok je pořád jeden.
 
@@ -30,7 +30,9 @@ Vysvětlení pro přístup je běžné vysvětlení s polem `"approach": "waldor
 
 ## Podklady
 
-Plány ročníků vycházejí z tematických plánů waldorfské základní školy a lycea (školní roky 2023/24–2025/26), které poskytla učitelka waldorfské školy. Převzatá jsou **jen témata a jejich pořadí**, žádná jména ani údaje o konkrétní škole. Místní látka (dějiny a pověsti vlastního města) je zobecněná. 10. třída v plánech měla jen němčinu, proto chybí.
+Plány ročníků vycházejí z tematických plánů waldorfské základní školy a lycea (školní roky 2023/24–2025/26), které poskytla učitelka waldorfské školy. Převzatá jsou **jen témata a jejich pořadí**, žádná jména ani údaje o konkrétní škole. Místní látka (dějiny a pověsti vlastního města) je zobecněná. Měsíce epoch převzaté nejsou: třídy si epochy každý rok skládají jinak.
+
+Plán 10. třídy obsahoval jen němčinu (ta je v plánu převzatá). Epochy 10. třídy proto vycházejí z veřejných dokumentů: [školní vzdělávací program Waldorfského lycea](https://wlyceum.cz/soubory/svp-2023.pdf) (1. ročník: poetika, starověká literatura a antika, starověké civilizace, egyptské a řecké umění, antropologie, soli, kyseliny a zásady, mechanika, planeta Země, goniometrie a trigonometrie, planimetrie, zeměměřičské praktikum) a [waldorfský učební plán (Richter)](https://wlyceum.cz/soubory/0richter.pdf) pro 10. třídu. Stránka ročníku to uvádí.
 
 Plány se ve třídách liší rok od roku i škola od školy. Plán v aplikaci je proto vzor, ne předpis. Úprava = upravit JSON a `npm run check:content`.
 

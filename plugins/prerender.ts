@@ -181,13 +181,13 @@ async function pages(): Promise<Page[]> {
       const yPath = `${aPath}/${g}`
       const yCrumbs: [string, string][] = [...aCrumbs, [y.title, yPath]]
       const gTab = tabbar('grade', [GRADE_NAME[g], `/g/${g}`])
-      const row = (b: YearBlock) => `<a class="row epoch" href="${yPath}/${b.id}"><span class="em">${b.emoji}</span><span class="txt"><b>${esc(b.title)}</b>${b.month ? `<small>${esc(b.month)}</small>` : ''}</span></a>`
+      const row = (b: YearBlock) => `<a class="row epoch" href="${yPath}/${b.id}"><span class="em">${b.emoji}</span><b>${esc(b.title)}</b></a>`
       out.push({
         path: yPath,
         title: titles.approachYear(a.name, y.title),
-        description: `${a.name}, ${y.title}: ${y.epochs.map((e) => (e.month ? `${e.title} (${e.month})` : e.title)).slice(0, 6).join(', ')}. Témata k procvičení ke každé epoše.`,
+        description: `${a.name}, ${y.title}: ${y.epochs.map((e) => e.title).slice(0, 6).join(', ')}. Témata k procvičení ke každé epoše.`,
         crumbs: yCrumbs,
-        body: `<div class="page" style="${green}">${bar(y.title, aPath, [[a.short, aPath]])}<h2 class="label">${a.emoji} Epochy</h2><div class="list">${y.epochs.map(row).join('')}</div>${y.ongoing?.length ? `<h2 class="label next-label">Celý rok</h2><div class="list">${y.ongoing.map(row).join('')}</div>` : ''}</div>${gTab}`,
+        body: `<div class="page" style="${green}">${bar(y.title, aPath, [[a.short, aPath]])}${y.about ? `<div class="blocks approach-about">${y.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>` : ''}<h2 class="label">${a.emoji} Epochy</h2><div class="list">${y.epochs.map(row).join('')}</div>${y.ongoing?.length ? `<h2 class="label next-label">Celý rok</h2><div class="list">${y.ongoing.map(row).join('')}</div>` : ''}</div>${gTab}`,
         ld: { '@type': 'ItemList', itemListElement: y.epochs.map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${yPath}/${e.id}`, name: e.title })) },
       })
       for (const b of [...y.epochs, ...(y.ongoing ?? [])]) {
@@ -196,10 +196,10 @@ async function pages(): Promise<Page[]> {
         out.push({
           path: bPath,
           title: titles.approachBlock(a.name, y.title, b.title),
-          description: `${b.month ? `${b.month}: ` : ''}${plain(b.about.join(' '))}`.slice(0, 155),
+          description: plain(b.about.join(' ')).slice(0, 155),
           crumbs: [...yCrumbs, [b.title, bPath]],
           type: 'article',
-          body: `<div class="page" style="${green}">${bar(`${b.emoji} ${b.title}`, yPath, [[a.short, aPath], [y.title, yPath]])}${b.month ? `<div class="label">${esc(b.month)}</div>` : ''}<div class="blocks approach-about">${b.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>${refs.length ? `<h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(SUBJECTS[r.s].c)}" href="/g/${r.k}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(SUBJECTS[r.s].name)}</small></span></a>`).join('')}</div>` : '<p class="muted epoch-empty">K téhle epoše zatím v aplikaci nejsou témata k procvičení.</p>'}</div>${gTab}`,
+          body: `<div class="page" style="${green}">${bar(`${b.emoji} ${b.title}`, yPath, [[a.short, aPath], [y.title, yPath]])}<div class="blocks approach-about">${b.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>${refs.length ? `<h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(SUBJECTS[r.s].c)}" href="/g/${r.k}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(SUBJECTS[r.s].name)}</small></span></a>`).join('')}</div>` : '<p class="muted epoch-empty">K téhle epoše zatím v aplikaci nejsou témata k procvičení.</p>'}</div>${gTab}`,
         })
       }
     }

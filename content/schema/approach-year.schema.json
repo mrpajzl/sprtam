@@ -19,6 +19,16 @@
       "minLength": 1,
       "description": "Název ročníku v tomto přístupu, např. \"1. třída\" nebo \"11. třída (lyceum)\"."
     },
+    "about": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Odstavec."
+      },
+      "minItems": 1,
+      "description": "Poznámka k celému ročníku, např. odkud plán pochází."
+    },
     "epochs": {
       "type": "array",
       "items": {
@@ -42,11 +52,6 @@
             "type": "string",
             "minLength": 1,
             "description": "Jedno emoji."
-          },
-          "month": {
-            "type": "string",
-            "minLength": 1,
-            "description": "Kdy se epocha učí, např. \"září\" nebo \"listopad–prosinec\". U průběžných předmětů chybí."
           },
           "about": {
             "type": "array",
@@ -79,7 +84,7 @@
         "additionalProperties": false
       },
       "minItems": 1,
-      "description": "Epochy hlavního vyučování v pořadí školního roku."
+      "description": "Epochy hlavního vyučování v obvyklém pořadí. Třídy si je každý rok skládají jinak, proto bez měsíců."
     },
     "ongoing": {
       "type": "array",
@@ -104,11 +109,6 @@
             "type": "string",
             "minLength": 1,
             "description": "Jedno emoji."
-          },
-          "month": {
-            "type": "string",
-            "minLength": 1,
-            "description": "Kdy se epocha učí, např. \"září\" nebo \"listopad–prosinec\". U průběžných předmětů chybí."
           },
           "about": {
             "type": "array",
