@@ -17,6 +17,17 @@ Každé téma má:
 
 Obsah je ve složce [`content/`](../content): každé téma je jeden soubor `content/topics/<ročník>/<předmět>/<téma>.json`. Pravidla, podle kterých se píše, jsou v [CONTENT.md](CONTENT.md). Před každým nasazením ho automaticky kontroluje `npm run check:content`, aby u každé otázky existovala správná odpověď, bylo dost otázek a každé vysvětlení začínalo od nuly.
 
+## Waldorfská škola
+
+Kdo chodí do waldorfské školy, zapne si to na úvodní obrazovce ([sprtam.cz/waldorf](https://sprtam.cz/waldorf)). Pak:
+
+- **Ročník ukazuje epochy** v pořadí školního roku (září až červen) a ke každé témata k procvičení, i když jsou v aplikaci zařazená v jiném ročníku. Waldorfská 1. třída třeba probírá násobkové řady, které jsou v běžné škole ve 2. třídě.
+- **Vysvětlení v duchu waldorfské školy** (od celku k částem, rytmus, příběh, přírodniny) se ukáže jako první. Zatím je u matematiky 1.–3. třídy.
+- **Témata navíc**, která běžná škola nemá, např. Od zrna ke chlebu, Stavba domu, Platónská tělesa, Parsifal nebo Faust.
+- **Písemka a test končí slovním hodnocením** místo známky.
+
+Plány vycházejí z tematických plánů waldorfské školy. Volba se pamatuje jen v tvém zařízení. Podrobnosti: [Přístupy k výuce](PRISTUPY.md).
+
 ## Režimy procvičování
 
 | Režim | Otázek | Jak to probíhá |

@@ -12,6 +12,7 @@
 - **Dvě vysvětlení ke každému tématu** a 21 interaktivních pomůcek (číselná osa, zlomky, rovnice na vahách, hodiny…) – všechny v **[galerii](https://sprtam.cz/widgety)**.
 - **Šest režimů:** Rychlý kvíz, Opakování, Písemka se známkou, Zkoušení nahlas, Test z předmětu a Mix.
 - **Anglická slovíčka A1–C1** s výslovností a opakováním podle Leitnerova systému.
+- **Waldorfská škola:** učivo po epochách podle waldorfského plánu, vysvětlení v duchu waldorfské pedagogiky a slovní hodnocení – **[sprtam.cz/waldorf](https://sprtam.cz/waldorf)**.
 - **Doporučení „Na řadě“:** co zopakovat, co ti nejde a na jakém základu z nižšího ročníku to stojí.
 - **Hledání** ve všech ročnících a předmětech.
 
@@ -43,6 +44,7 @@ Podrobně: **[Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md)**
 | [Architektura](docs/ARCHITEKTURA.md) | vývojáři | Technologie, struktura kódu, server, nasazení, testy |
 | [Jak psát učivo](docs/CONTENT.md) | autoři obsahu | Postup, pravidla výkladu, nový widget, změny formátu |
 | [Formát obsahu](docs/FORMAT.md) | autoři obsahu | Reference všech polí JSON souborů v `content/` (generovaná) |
+| [Přístupy k výuce](docs/PRISTUPY.md) | autoři obsahu, rodiče | Waldorfská škola: epochy, vlastní výklad a témata |
 | [Widgety](docs/WIDGETY.md) | autoři obsahu | Reference interaktivních pomůcek (generovaná), živě v [galerii](https://sprtam.cz/widgety) |
 
 ## Našli jste chybu?

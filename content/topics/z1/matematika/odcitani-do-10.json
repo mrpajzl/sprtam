@@ -197,6 +197,154 @@
           "text": "Mínus = skákej doleva. Výsledek ověříš sčítáním: 9 − 4 = 5, protože 5 + 4 = 9."
         }
       ]
+    },
+    {
+      "title": "Z celku",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Neseš v košíku 8 kaštanů. Košík má díru. Cestou 3 kaštany vypadnou. Kolik jich doneseš domů?"
+        },
+        {
+          "type": "text",
+          "text": "Na začátku je celek. Kus z něj odejde. Ty zjistíš, kolik zůstalo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Celek",
+          "definition": "Všechno, co máš na začátku.",
+          "example": "8 kaštanů v košíku."
+        },
+        {
+          "type": "term",
+          "term": "Odčítání",
+          "definition": "Z celku něco ubereš. Pak zjistíš, kolik zůstalo.",
+          "example": "Z 8 kaštanů 3 vypadnou. Zůstane 5."
+        },
+        {
+          "type": "term",
+          "term": "Mínus (−)",
+          "definition": "Znak odčítání. Říká: uber.",
+          "example": "8 − 3"
+        },
+        {
+          "type": "term",
+          "term": "Rovná se (=)",
+          "definition": "Za tento znak napíšeš, kolik to dělá.",
+          "example": "8 − 3 = 5"
+        },
+        {
+          "type": "heading",
+          "text": "Mínus ztrácí"
+        },
+        {
+          "type": "text",
+          "text": "Mínus je smolař. Má díru v kapse. Co nese, to mu cestou vypadává."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🌰",
+            "🌰",
+            "🌰",
+            "🌰",
+            "🌰",
+            "❌",
+            "❌",
+            "❌"
+          ],
+          "caption": "Z 8 kaštanů 3 vypadly. Zůstalo 5."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Na začátku je celek: **8**.",
+            "**3** kaštany vypadnou. Přeškrtni je.",
+            "Spočítej, co zůstalo: **5**.",
+            "Zapíšeš: **8 − 3 = 5**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kroky zpátky"
+        },
+        {
+          "type": "text",
+          "text": "Odčítat jde i nohama. Každý krok zpátky je o 1 míň."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Postav se a řekni: **devět**.",
+            "Mínus chce ubrat 4. Udělej 4 kroky zpátky.",
+            "U každého kroku dupni: osm, sedm, šest, pět.",
+            "Kde stojíš, to zůstalo: **9 − 4 = 5**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "V košíku je 8 kaštanů. Klepnutím 3 uber. Kolik jich zůstalo? Pak zkus ubrat všechny."
+        },
+        {
+          "type": "widget",
+          "widget": "counter",
+          "props": {
+            "emoji": "🌰",
+            "start": 8,
+            "max": 10
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Plus vrací, co Mínus ztratil"
+        },
+        {
+          "type": "text",
+          "text": "Mínus ztratí z 9 kaštanů 3. Zůstane 6. Štědrý Plus je najde a vrátí: 6 + 3 = 9. Celek je zase celý."
+        },
+        {
+          "type": "text",
+          "text": "Tak si každý výsledek zkontroluješ: co zůstalo a co se ztratilo, dá dohromady celek."
+        },
+        {
+          "type": "example",
+          "question": "V lese leží 10 šišek. Veverka 6 odnese. Kolik jich zůstane?",
+          "answer": "Šišek ubude, je tu Mínus. Od 10 udělám 6 kroků zpátky: 9, 8, 7, 6, 5, 4. **10 − 6 = 4.** Kontrola: 4 + 6 = 10."
+        },
+        {
+          "type": "example",
+          "question": "9 − 9 =",
+          "answer": "Mínus ztratí všechno. Nezůstane nic: **9 − 9 = 0**."
+        },
+        {
+          "type": "example",
+          "question": "8 − 0 =",
+          "answer": "Mínus neztratí nic. Celek zůstane celý: **8 − 0 = 8**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "7 − 3 je totéž jako 3 − 7.",
+          "right": "7 − 3 = 4. Čísla u mínus nesmíš prohodit.",
+          "why": "Nejdřív je celek (7). Až potom z něj ubíráš (3). Ze 3 kaštanů 7 neubereš."
+        },
+        {
+          "type": "summary",
+          "text": "Odčítání začíná celkem. Mínus z něj ubere a ty spočítáš, co zůstalo. Kontrola: co zůstalo + co se ubralo = celek."
+        }
+      ]
     }
   ],
   "questions": [

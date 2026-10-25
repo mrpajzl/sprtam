@@ -48,6 +48,7 @@ src/
     curriculum.ts       ročníky, předměty, barvy
     index.ts            načtení předmětu (jeden chunk na předmět)
   vocab/                slovíčka: načítání, přehrávání výslovnosti (speak.ts)
+  approach.ts           přístupy k výuce (waldorf): data a volba dítěte (localStorage)
   quiz/                 režimy, vyhodnocení odpovědí, generátory příkladů
   progress/
     store.ts            pokrok v localStorage, slučování
@@ -62,6 +63,7 @@ src/
 content/                učivo jako JSON (viz CONTENT.md)
   topics/<ročník>/<předmět>/_subject.json, <téma>.json
   vocab/<úroveň>.json
+  approaches/<přístup>/ approach.json, <ročník>.json (plán: epochy a témata)
   schema/               JSON Schema pro editory (generované)
 plugins/
   content.ts            čtení content/ v Node (pro build a skripty)
@@ -99,6 +101,8 @@ Obrazovky bez vlastní stránky (kvíz, hledání, přenos pokroku) dostanou pr�
 | `/mix` | Mix připnutých témat |
 | `/sdilet` | Přenos pokroku |
 | `/widgety`, `/widgety/<název>` | Galerie widgetů, bloků a otázek pro autory obsahu |
+| `/waldorf`, `/waldorf/z1`, `/waldorf/z1/<epocha>` | Přístup k výuce: popis a volba, plán ročníku, epocha s tématy |
+| `/waldorf/z1/<epocha>/test` | Procvičení všech témat epochy |
 | `/#/p/<kód>`, `/#/spojit/<kód>`, `/#/presun/<kód>` | Import pokroku, párování, přechod ze staré domény (za `#`, server je nevidí) |
 
 Staré odkazy z doby, kdy aplikace používala adresy za `#` (`/#/g/z5`), se automaticky převedou na nové ([`src/router.tsx`](../src/router.tsx)).

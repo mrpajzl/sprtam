@@ -256,6 +256,176 @@
           "text": "Násobení = stejné skoky. Neznáš výsledek? Vezmi ten předchozí a přidej jeden skok."
         }
       ]
+    },
+    {
+      "title": "Rytmem",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dvojka je číslo dvojic. Máme dvě ruce, dvě nohy a dvě oči. Den a noc. Trojka je číslo pohádek: tři bratři, tři přání, tři úkoly."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se řady dvojek a trojek. Naučíš se je tělem – chůzí, dupáním a tleskáním. Pak je budeš umět zpaměti jako básničku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Násobení ( · )",
+          "definition": "Sčítání stejných čísel zkráceně. Čteme „krát“.",
+          "example": "3 · 2 = 2 + 2 + 2 = 6"
+        },
+        {
+          "type": "term",
+          "term": "Násobková řada",
+          "definition": "Čísla, na která dojdeš, když od nuly přidáváš pořád stejné číslo.",
+          "example": "Řada dvojek: 2, 4, 6, 8…"
+        },
+        {
+          "type": "term",
+          "term": "Násobek",
+          "definition": "Jedno číslo z násobkové řady.",
+          "example": "6 je násobek 2 i násobek 3."
+        },
+        {
+          "type": "heading",
+          "text": "Řada dvojek chůzí"
+        },
+        {
+          "type": "text",
+          "text": "Postav se a choď po pokoji. Na každý první krok šeptej „raz“. Na každý druhý krok dupni a řekni nahlas číslo: raz, **DVA**, raz, **ČTYŘI**, raz, **ŠEST**…"
+        },
+        {
+          "type": "text",
+          "text": "Jdi, dokud neřekneš **DVACET**. Celá řada zní: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20. Pak ji jdi pozpátku: 20, 18, 16 … až 2."
+        },
+        {
+          "type": "heading",
+          "text": "Řada trojek tleskáním"
+        },
+        {
+          "type": "text",
+          "text": "Teď počítej po třech. Na „raz“ a „dva“ šeptej, na třetí dobu tleskni a řekni číslo: raz, dva, **TŘI**, raz, dva, **ŠEST**, raz, dva, **DEVĚT**… Skonči u čísla **třicet**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "kolikrát",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "rows": [
+            [
+              "· 2",
+              "2",
+              "4",
+              "6",
+              "8",
+              "10",
+              "12",
+              "14",
+              "16",
+              "18",
+              "20"
+            ],
+            [
+              "· 3",
+              "3",
+              "6",
+              "9",
+              "12",
+              "15",
+              "18",
+              "21",
+              "24",
+              "27",
+              "30"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kruh násobků"
+        },
+        {
+          "type": "term",
+          "term": "Poslední číslice",
+          "definition": "Číslice úplně vpravo, na místě jednotek.",
+          "example": "U čísla 18 je poslední číslice 8."
+        },
+        {
+          "type": "text",
+          "text": "Každá řada má i svůj obraz. Na kruhu jsou čísla 0 až 9. Čára spojuje poslední číslice násobků. U 14 jde čára na 4, u 21 na 1."
+        },
+        {
+          "type": "text",
+          "text": "Klepej na „Další násobek“ a říkej řadu dvojek nahlas. Jaký obrazec vznikne? Pak přepni na řadu 3 a kresli znovu."
+        },
+        {
+          "type": "widget",
+          "widget": "multiple-circle",
+          "props": {
+            "number": 2
+          }
+        },
+        {
+          "type": "text",
+          "text": "Řada 2 nakreslí **pětiúhelník** – obrazec s pěti rohy. Řada 3 nakreslí **hvězdu** s deseti cípy. Čára přitom oběhne kruh třikrát dokola."
+        },
+        {
+          "type": "heading",
+          "text": "Když zapomeneš"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi násobek, který znáš. Třeba 3 · 6 = 18.",
+            "O krok dál = přidej 3: 3 · 7 = 18 + 3 = **21**.",
+            "O krok zpátky = uber 3: 3 · 5 = 18 − 3 = **15**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "2 · 7 =",
+          "answer": "Jdu řadou dvojek a dupnutí počítám na prstech: 2, 4, 6, 8, 10, 12, 14. Sedm dupnutí. **2 · 7 = 14**."
+        },
+        {
+          "type": "example",
+          "question": "3 · 8 =",
+          "answer": "Tleskám řadu trojek: 3, 6, 9, 12, 15, 18, 21, 24. Osm tlesknutí. **3 · 8 = 24**."
+        },
+        {
+          "type": "example",
+          "question": "7 · 3 =",
+          "answer": "Připomenutí: při násobení nezáleží na pořadí, 7 · 3 = 3 · 7. Vím, že 3 · 6 = 18. O krok dál: 18 + 3 = **21**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "2 · 8 = 18",
+          "right": "2 · 8 = **16**",
+          "why": "18 je až devátý krok řady dvojek. Osmý krok je 16: 2, 4, 6, 8, 10, 12, 14, 16."
+        },
+        {
+          "type": "summary",
+          "text": "Řada dvojek: 2, 4, 6 … 20. Řada trojek: 3, 6, 9 … 30. Říkej je v rytmu tam i zpět. Zapomeneš? Vezmi předchozí násobek a přidej jeden krok."
+        }
+      ]
     }
   ],
   "questions": [

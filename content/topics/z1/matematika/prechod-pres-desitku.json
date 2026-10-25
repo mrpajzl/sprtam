@@ -265,6 +265,203 @@
           "text": "Nejdřív zaplň krabičku do 10, pak přidej zbytek. Při ubírání vezmi nejdřív to, co leží vedle, pak ber z krabičky."
         }
       ]
+    },
+    {
+      "title": "Krokem přes 10",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš 8 kaštanů. Najdeš dalších 5. Prsty ti nestačí. Co teď?"
+        },
+        {
+          "type": "text",
+          "text": "Pomůže ti desítka. Je jako zastávka na cestě. Nejdřív dojdeš k ní. Pak jdeš dál."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desítka",
+          "definition": "Připomenutí: deset věcí pohromadě. Tady je to plná miska kaštanů.",
+          "example": "🔟 = 10 kaštanů"
+        },
+        {
+          "type": "term",
+          "term": "Doplnit do 10",
+          "definition": "Zjistit, kolik chybí, aby bylo 10.",
+          "example": "Osmi kaštanům chybí do 10 dva."
+        },
+        {
+          "type": "term",
+          "term": "Rozložit číslo",
+          "definition": "Rozdělit ho na dvě menší části.",
+          "example": "5 = 2 + 3"
+        },
+        {
+          "type": "term",
+          "term": "Přechod přes desítku",
+          "definition": "Výsledek je za desítkou. Cestou desítku překročíš.",
+          "example": "8 + 5 = 13"
+        },
+        {
+          "type": "heading",
+          "text": "Kamarádi desítky"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi 10 kaštanů. Rozděl je do dvou dlaní. Tyhle dvojice dají vždycky celek 10."
+        },
+        {
+          "type": "table",
+          "head": [
+            "V jedné dlani",
+            "Ve druhé dlani",
+            "Celek"
+          ],
+          "rows": [
+            [
+              "9",
+              "1",
+              "10"
+            ],
+            [
+              "8",
+              "2",
+              "10"
+            ],
+            [
+              "7",
+              "3",
+              "10"
+            ],
+            [
+              "6",
+              "4",
+              "10"
+            ],
+            [
+              "5",
+              "5",
+              "10"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Přes desítku s kaštany"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🌰",
+            "🌰",
+            "🌰",
+            "🌰",
+            "🌰",
+            "🌰",
+            "🌰",
+            "🌰",
+            "➕",
+            "🌰",
+            "🌰",
+            "🌰",
+            "🌰",
+            "🌰"
+          ],
+          "caption": "8 kaštanů a 5 kaštanů"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "V misce je 8 kaštanů. Do 10 chybí **2**.",
+            "Z pěti kaštanů vezmi 2 a dej je do misky. Miska je plná: **10**.",
+            "Vedle zůstaly **3** kaštany. Pětku jsi rozložil: 5 = 2 + 3.",
+            "Plná miska a 3: **13**. Takže **8 + 5 = 13**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krokem přes desítku"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Stoupni si na krok 8. Máš ujít 5 kroků.",
+            "Jdi: devět, **deset**. Na desítce dupni.",
+            "Ušel jsi 2 kroky. Zbývají 3.",
+            "Jdi dál: jedenáct, dvanáct, třináct.",
+            "Stojíš na **13**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Žabka stojí na 7. Klepni šestkrát, ať udělá 6 kroků. Na desítce se zastav. Kolik kroků ještě zbývá? Kde žabka skončí?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "start": 7,
+            "hop": 1
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Zpátky přes desítku"
+        },
+        {
+          "type": "text",
+          "text": "Máš 13 kaštanů: plnou misku a 3 vedle. Veverka si vezme 5."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Nejdřív vezme **3** kaštany, co leží vedle. Zůstane plná miska: **10**.",
+            "Z pětky zbývá ještě **2**.",
+            "Vezme 2 z misky: 10 − 2 = **8**.",
+            "Takže **13 − 5 = 8**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "7 + 6 =",
+          "answer": "Sedmičce chybí do 10 trojka. Šestku rozložím: 6 = 3 + 3. 7 + 3 = 10. 10 + 3 = **13**."
+        },
+        {
+          "type": "example",
+          "question": "15 − 7 =",
+          "answer": "Nejdřív uberu 5 kaštanů, co leží vedle: 15 − 5 = 10. Ze sedmičky zbývají 2. 10 − 2 = **8**."
+        },
+        {
+          "type": "example",
+          "question": "9 + 9 =",
+          "answer": "Devítce chybí do 10 jednička. Druhou devítku rozložím: 9 = 1 + 8. 9 + 1 = 10. 10 + 8 = **18**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "13 − 5: 3 − 5 nejde, tak počítám 5 − 3 = 2. Výsledek je 12.",
+          "right": "13 − 5 = **8**",
+          "why": "Čísla nesmíš prohodit. Uber nejdřív 3 kaštany vedle. Pak 2 z misky."
+        },
+        {
+          "type": "summary",
+          "text": "Přes desítku: nejdřív dojdi na 10 a dupni. Pak přidej nebo uber zbytek."
+        }
+      ]
     }
   ],
   "questions": [

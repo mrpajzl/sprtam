@@ -235,6 +235,189 @@
           "text": "1 hodina = 60 minut, půl hodiny = 30 minut, čtvrt hodiny = 15 minut. Den má 24 hodin."
         }
       ]
+    },
+    {
+      "title": "Rytmus dne",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Slunce ráno vychází a večer zapadá. Pak přijde noc a zase ráno. Čas se točí dokola jako kolo."
+        },
+        {
+          "type": "text",
+          "text": "Čas má svůj rytmus. Naučíš se ho číst na hodinách. Pak víš, kdy začíná škola a kdy je čas jít spát."
+        },
+        {
+          "type": "heading",
+          "text": "Od celku: kolo roku"
+        },
+        {
+          "type": "term",
+          "term": "Rok",
+          "definition": "Velké kolo času. Jaro, léto, podzim, zima – a zase jaro. Rok má **12 měsíců**.",
+          "example": "Leden, únor, březen … listopad, prosinec. To je 12 měsíců."
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kolo roku. Které roční období je teď? Které přijde potom?"
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "jaro",
+              "léto",
+              "podzim",
+              "zima"
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Den",
+          "definition": "Menší kolo času. Ráno, poledne, odpoledne, večer, noc – a zase ráno.",
+          "example": "Ráno vstáváš, večer jdeš spát."
+        },
+        {
+          "type": "heading",
+          "text": "Hodina a minuta"
+        },
+        {
+          "type": "term",
+          "term": "Minuta",
+          "definition": "Krátký čas.",
+          "example": "Vyčistit si zuby trvá asi 2 minuty."
+        },
+        {
+          "type": "term",
+          "term": "Hodina",
+          "definition": "Delší čas. Hodina má **60 minut**.",
+          "example": "Den má **24 hodin**."
+        },
+        {
+          "type": "term",
+          "term": "Ciferník",
+          "definition": "Kulatá tvář hodin. Dokola na ní jsou čísla 1 až 12."
+        },
+        {
+          "type": "term",
+          "term": "Malá ručička",
+          "definition": "Kratší ručička. Ukazuje **hodiny**. Jde pomalu jako želva."
+        },
+        {
+          "type": "term",
+          "term": "Velká ručička",
+          "definition": "Delší ručička. Ukazuje **minuty**. Jde rychleji jako zajíc. Celé kolo oběhne za 1 hodinu."
+        },
+        {
+          "type": "text",
+          "text": "Malá ručička oběhne ciferník za den **dvakrát**: jednou dopoledne, jednou odpoledne. Proto je 7 hodin dvakrát – **ráno** a **večer**. Večerních 7 hodin píšeme také **19:00**."
+        },
+        {
+          "type": "heading",
+          "text": "Kolo velké ručičky"
+        },
+        {
+          "type": "term",
+          "term": "Čtvrt, půl, tři čtvrtě",
+          "definition": "Kousky kola velké ručičky. **Čtvrt hodiny** = 15 minut. **Půl hodiny** = 30 minut. **Tři čtvrtě hodiny** = 45 minut.",
+          "example": "Půl hodiny je půlka kola."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Velká ručička na",
+            "Říkáme",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "12",
+              "celá hodina",
+              "3:00 = tři hodiny"
+            ],
+            [
+              "3",
+              "čtvrt na…",
+              "3:15 = čtvrt na čtyři"
+            ],
+            [
+              "6",
+              "půl…",
+              "3:30 = půl čtvrté"
+            ],
+            [
+              "9",
+              "tři čtvrtě na…",
+              "3:45 = tři čtvrtě na čtyři"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "U čtvrt, půl a tři čtvrtě říkáme hodinu, **ke které jdeme**. Ve 3:30 jdeme ke čtyřem, proto „půl **čtvrté**“."
+        },
+        {
+          "type": "heading",
+          "text": "Hodiny tělem"
+        },
+        {
+          "type": "text",
+          "text": "Postav se. Natáhni ruku nahoru – to je 12, celá hodina. Pomalu ji spouštěj doprava. Ruka vodorovně je 3: čtvrt. Ruka dolů je 6: půl. Ruka vlevo je 9: tři čtvrtě. A zase nahoru: další celá hodina."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Hodiny ukazují 3:00. Táhni velkou ručičku pomalu dokola. Zastav se na 3, na 6 a na 9. Co hodiny řeknou slovy? Kam se posunula malá ručička?"
+        },
+        {
+          "type": "widget",
+          "widget": "clock",
+          "props": {
+            "hours": 3,
+            "minutes": 0
+          }
+        },
+        {
+          "type": "example",
+          "question": "Velká ručička je na 12, malá na 5. Kolik je hodin?",
+          "answer": "Velká na 12 = celá hodina. Malá ukazuje 5. Je **5 hodin (5:00)**."
+        },
+        {
+          "type": "example",
+          "question": "Co je 6:30?",
+          "answer": "Velká ručička je dole na 6 – půl. Šest hodin už bylo, jdeme k sedmé. Je **půl sedmé**."
+        },
+        {
+          "type": "example",
+          "question": "Co je 2:45?",
+          "answer": "Velká ručička je na 9 – tři čtvrtě. Jdeme ke třem. Je **tři čtvrtě na tři**."
+        },
+        {
+          "type": "example",
+          "question": "Film začal v 5:00 a trval 2 hodiny. Kdy skončil?",
+          "answer": "Malá ručička popojde o dvě čísla: z 5 na 7. Film skončil v **7 hodin**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "8:15 je čtvrt na osm.",
+          "right": "8:15 je **čtvrt na devět**.",
+          "why": "Osm hodin už bylo. Velká ručička ušla čtvrt kola na cestě k devíti. Říkáme hodinu, ke které jdeme."
+        },
+        {
+          "type": "summary",
+          "text": "Rok má 12 měsíců, den 24 hodin, hodina 60 minut. Malá ručička ukazuje hodiny, velká minuty: na 12 celá, na 3 čtvrt (15 minut), na 6 půl (30 minut), na 9 tři čtvrtě (45 minut)."
+        }
+      ]
     }
   ],
   "questions": [

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sprtam.cz/schema/approach.schema.json",
+  "title": "Šprtám – přístup k výuce",
+  "$comment": "Generováno z src/content/format.ts a src/widgets/ (npm run content:generate). Needitovat ručně.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "format": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1,
+      "description": "Verze formátu, teď 1."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Celý název, např. \"Waldorfská škola\"."
+    },
+    "short": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Krátký název do lišty, např. \"Waldorf\"."
+    },
+    "emoji": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Jedno emoji."
+    },
+    "choose": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Text přepínače, kterým si dítě přístup zvolí, např. \"Chodím do waldorfské školy\"."
+    },
+    "about": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Odstavec."
+      },
+      "minItems": 1,
+      "description": "Co je pro přístup typické a jak s ním aplikace pracuje."
+    },
+    "grading": {
+      "enum": [
+        "marks",
+        "verbal"
+      ],
+      "description": "Hodnocení písemky a testu: \"marks\" známka 1–5, \"verbal\" slovní hodnocení."
+    }
+  },
+  "required": [
+    "format",
+    "name",
+    "short",
+    "emoji",
+    "choose",
+    "about",
+    "grading"
+  ],
+  "additionalProperties": false,
+  "description": "Přístup k výuce (např. waldorfská škola): jeho popis. Plány ročníků jsou v souborech <ročník>.json vedle."
+}

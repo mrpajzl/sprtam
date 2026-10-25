@@ -1,0 +1,554 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stavba-domu",
+  "title": "Stavba domu",
+  "emoji": "🏠",
+  "approach": "waldorf",
+  "explanations": [
+    {
+      "title": "Od základů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Bydlíš v domě, nebo v bytě v domě. Máš nad hlavou střechu, kolem sebe zdi a pod nohama pevnou zem. Kdo ten dům postavil? A jak?"
+        },
+        {
+          "type": "text",
+          "text": "Dům roste zespodu nahoru, podobně jako strom. Nejdřív kořeny, pak kmen, nakonec koruna. Projdeme stavbu krok za krokem a potkáme všechny, kdo na ní pracují."
+        },
+        {
+          "type": "term",
+          "term": "Plán domu",
+          "definition": "Nákres, na kterém je vidět, jak bude dům vypadat a kde budou místnosti, okna a dveře. Kreslí ho **architekt**.",
+          "example": "Na plánu je kuchyň, dva pokoje a koupelna."
+        },
+        {
+          "type": "term",
+          "term": "Základy",
+          "definition": "Nejspodnější část domu, schovaná v zemi. Nesou celý dům, aby se nebořil a nepraskal.",
+          "example": "Pro základy se vykope hluboká rýha a vylije se betonem."
+        },
+        {
+          "type": "term",
+          "term": "Beton",
+          "definition": "Směs cementu, písku, štěrku a vody. Nejdřív je řídká jako kaše, pak ztvrdne jako kámen.",
+          "example": "Z betonu jsou základy, mosty i chodníky."
+        },
+        {
+          "type": "term",
+          "term": "Zeď a malta",
+          "definition": "**Zeď** je stěna domu. Staví se z cihel nebo kamenů. Spojuje je **malta** – lepivá kaše z písku, vápna nebo cementu a vody.",
+          "example": "Zedník klade cihlu na cihlu a mezi ně dává maltu."
+        },
+        {
+          "type": "term",
+          "term": "Krov a krytina",
+          "definition": "**Krov** je dřevěná kostra střechy ze šikmých trámů. **Krytina** je to, co krov zakryje navrchu, aby dovnitř nepršelo.",
+          "example": "Krytinou bývají tašky, plech, břidlice, šindel nebo sláma."
+        },
+        {
+          "type": "heading",
+          "text": "Dům jako člověk"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🪨",
+            "🧱",
+            "🏠"
+          ],
+          "caption": "Základy jako nohy, zdi jako tělo, střecha jako klobouk"
+        },
+        {
+          "type": "text",
+          "text": "Představ si dům jako člověka. **Základy** jsou nohy, které pevně stojí na zemi. **Zdi** jsou tělo. **Střecha** je klobouk, který chrání před deštěm. **Okna** jsou oči, kterými dům vidí ven."
+        },
+        {
+          "type": "heading",
+          "text": "Stavíme krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Architekt** nakreslí plán domu.",
+            "Bagr vykope jámu a rýhy. Do nich se vylijí **základy** z betonu.",
+            "**Zedník** staví zdi z cihel a spojuje je maltou.",
+            "Na zdi se položí **strop**. Je to zároveň podlaha dalšího patra.",
+            "**Tesař** postaví z trámů **krov**.",
+            "**Pokrývač** položí na krov **krytinu**, třeba tašky.",
+            "**Klempíř** připevní okapy z plechu, aby voda ze střechy stékala pryč.",
+            "Osadí se **okna a dveře**. Dřevěné vyrábí **truhlář**.",
+            "**Elektrikář** zavede elektřinu, **instalatér** vodu a topení.",
+            "Zdi se omítnou, **malíř** je vymaluje. A můžeme se nastěhovat!"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. Nejdřív zkus říct sám, kdo tu práci dělá."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Staví zdi z cihel.",
+                "back": "zedník"
+              },
+              {
+                "front": "Staví krov z trámů.",
+                "back": "tesař"
+              },
+              {
+                "front": "Kryje střechu taškami.",
+                "back": "pokrývač"
+              },
+              {
+                "front": "Dělá okapy z plechu.",
+                "back": "klempíř"
+              },
+              {
+                "front": "Vyrábí dřevěná okna a dveře.",
+                "back": "truhlář"
+              },
+              {
+                "front": "Zavádí elektřinu.",
+                "back": "elektrikář"
+              },
+              {
+                "front": "Nakreslí plán domu.",
+                "back": "architekt"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč se staví nejdřív základy a ne střecha?",
+          "answer": "Střecha musí na něčem ležet – na zdech. Zdi musí stát na něčem pevném – na základech. Bez základů by se zdi do země bořily a praskaly. Proto se staví **zespodu nahoru**: základy → zdi → krov → krytina."
+        },
+        {
+          "type": "example",
+          "question": "Zedník staví zeď dlouhou 6 metrů. Do jednoho metru se vejdou v řadě 4 cihly. Kolik cihel potřebuje na jednu řadu? A na 3 řady?",
+          "answer": "Jedna řada: 6 metrů a v každém 4 cihly, tedy 6 · 4 = **24 cihel**. Tři řady: 3 · 24 = **72 cihel**."
+        },
+        {
+          "type": "heading",
+          "text": "Dříve a dnes"
+        },
+        {
+          "type": "text",
+          "text": "Dříve si lidé na vesnici stavěli dům sami a pomáhali jim sousedé. Brali to, co bylo blízko: kámen z lomu, dřevo z lesa, hlínu a slámu z polí. Ze dřeva vznikaly **roubenky** – domy z trámů položených na sebe."
+        },
+        {
+          "type": "text",
+          "text": "Ve staré chalupě byla hlavní místnost **jizba**. Stála v ní velká pec, u které se vařilo, pekl se chleba a v zimě se na ní i spalo. Voda se nosila ze studny a svítilo se svíčkou nebo petrolejovou lampou. Dnes máme elektřinu, vodu z kohoutku, topení a víc místností."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Krov a krytina jsou totéž.",
+          "right": "**Krov** je dřevěná kostra střechy. **Krytina** jsou tašky nebo plech, které krov zakryjí navrchu.",
+          "why": "Nejdřív tesař postaví krov, teprve potom na něj pokrývač položí krytinu."
+        },
+        {
+          "type": "summary",
+          "text": "Dům se staví zespodu nahoru: plán, základy, zdi, strop, krov, krytina, okna a dveře, elektřina a voda, omítka. Staví ho architekt, zedník, tesař, pokrývač, klempíř, truhlář, elektrikář, instalatér a malíř."
+        }
+      ]
+    },
+    {
+      "title": "Tři prasátka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Znáš pohádku o třech prasátkách? První postavilo domek ze slámy, druhé ze dřeva, třetí z cihel. Vlk sfoukl slámu i dřevo. Cihlový domek vydržel."
+        },
+        {
+          "type": "text",
+          "text": "V pohádce je kus pravdy: každý materiál je jiný. Podíváme se, z čeho lidé stavěli dříve a z čeho staví dnes. A proč si vybrali právě to."
+        },
+        {
+          "type": "term",
+          "term": "Materiál",
+          "definition": "To, z čeho se něco vyrábí nebo staví.",
+          "example": "Kámen, dřevo, cihla, beton."
+        },
+        {
+          "type": "term",
+          "term": "Vlastnost",
+          "definition": "Jaké něco je.",
+          "example": "Kámen je **pevný** a **těžký**, dřevo je **lehké** a **teplé**."
+        },
+        {
+          "type": "heading",
+          "text": "Materiály z přírody"
+        },
+        {
+          "type": "text",
+          "text": "Dříve stavěli lidé z toho, co měli blízko. Dovézt materiál zdaleka bylo těžké a drahé."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Kámen** z lomu nebo z pole. Je pevný a nehoří, ale je těžký a v domě z něj bývá chladno.",
+            "**Dřevo** z lesa. Je lehké, hřeje a dobře se opracuje. Může ale shořet a ve vlhku shnít.",
+            "**Hlína a sláma** z polí. Hlína se smíchala se slámou a usušila na slunci. Je levná a hřeje, ale bojí se vody."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Roubenka",
+          "definition": "Dům ze dřevěných trámů položených vodorovně na sebe. Spáry mezi nimi se ucpaly mechem a hlínou.",
+          "example": "Roubenky stojí dodnes v horách, kde je hodně lesů."
+        },
+        {
+          "type": "term",
+          "term": "Došky",
+          "definition": "Střecha ze svazků slámy nebo rákosu.",
+          "example": "Na starých chalupách v nížinách bývaly došky."
+        },
+        {
+          "type": "heading",
+          "text": "Materiály, které vyrobil člověk"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Pálená cihla** – hlína vytvarovaná do kvádru a vypálená v peci. Je pevná, nehoří a dlouho vydrží.",
+            "**Beton** – směs cementu, písku, štěrku a vody. Nejdřív je jako řídká kaše, pak ztvrdne jako kámen. Dá se nalít do jakéhokoli tvaru.",
+            "**Panel** – velký hotový kus zdi z betonu. Vyrobí se v továrně a na stavbě se skládá jako stavebnice. Z panelů jsou **paneláky**.",
+            "**Sklo** do oken, **ocel** a **plech** na střechy a okapy."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "materiál",
+            "co je na něm dobré",
+            "co mu vadí"
+          ],
+          "rows": [
+            [
+              "kámen",
+              "pevný, nehoří, vydrží stovky let",
+              "těžký, chladný, pomalá práce"
+            ],
+            [
+              "dřevo",
+              "lehké, hřeje, dobře se opracuje",
+              "oheň a vlhko"
+            ],
+            [
+              "hlína se slámou",
+              "levná, hřeje, je všude kolem",
+              "voda – rozmočí se"
+            ],
+            [
+              "pálená cihla",
+              "pevná, nehoří, drží teplo",
+              "musí se vypálit v peci"
+            ],
+            [
+              "beton",
+              "velmi pevný, dá se odlít do tvaru",
+              "těžký, sám moc nehřeje"
+            ],
+            [
+              "panel",
+              "dům se postaví rychle",
+              "domy vypadají všechny stejně"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zkus roztřídit kartičky: dala ten materiál přímo příroda, nebo ho vyrobil člověk?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "z přírody",
+              "vyrobil člověk"
+            ],
+            "items": [
+              {
+                "text": "kámen",
+                "group": 0
+              },
+              {
+                "text": "dřevo",
+                "group": 0
+              },
+              {
+                "text": "hlína",
+                "group": 0
+              },
+              {
+                "text": "sláma",
+                "group": 0
+              },
+              {
+                "text": "rákos",
+                "group": 0
+              },
+              {
+                "text": "pálená cihla",
+                "group": 1
+              },
+              {
+                "text": "beton",
+                "group": 1
+              },
+              {
+                "text": "panel",
+                "group": 1
+              },
+              {
+                "text": "sklo",
+                "group": 1
+              },
+              {
+                "text": "plech",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Vesnice leží v horách u velkého lesa. Kamení je málo. Z čeho si tu lidé dříve stavěli domy?",
+          "answer": "Podívám se, co je blízko: **les**, tedy dřevo. Z dřevěných trámů postaví **roubenky**. Kámen, kterého je málo, dají jen dospod, aby trámy neležely na vlhké zemi."
+        },
+        {
+          "type": "example",
+          "question": "Vesnice leží v rovině u řeky. Les ani lom tu nejsou, ale kolem jsou pole. Z čeho budou stavět?",
+          "answer": "Z polí mají **hlínu a slámu**. Hlínu smíchají se slámou a postaví z ní zdi. Střechu pokryjí slámou nebo rákosem od řeky – **došky**."
+        },
+        {
+          "type": "heading",
+          "text": "Kdo s materiálem pracuje"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Zedník** staví z cihel a kamene, spojuje je maltou – lepivou kaší z písku, vápna nebo cementu a vody.",
+            "**Tesař** staví ze dřevěných trámů roubenky a krovy – dřevěné kostry střech.",
+            "**Pokrývač** kryje střechu taškami, břidlicí, šindelem nebo došky.",
+            "**Truhlář** vyrábí okna a dveře, **klempíř** okapy z plechu, **elektrikář** zavádí elektřinu."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak se bydlelo"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "dříve v chalupě",
+            "dnes"
+          ],
+          "rows": [
+            [
+              "místnosti",
+              "hlavně jedna – jizba",
+              "kuchyň, pokoje, koupelna"
+            ],
+            [
+              "teplo",
+              "velká pec na dřevo",
+              "topení"
+            ],
+            [
+              "voda",
+              "ze studny",
+              "z kohoutku"
+            ],
+            [
+              "světlo",
+              "svíčka, petrolejová lampa",
+              "elektrické světlo"
+            ],
+            [
+              "zvířata",
+              "často pod stejnou střechou",
+              "většinou jinde"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dřevěnému domu voda nevadí.",
+          "right": "Dřevo se musí chránit před vlhkem. Roubenka proto stojí na kamenné **podezdívce** a má střechu, která přesahuje přes zdi.",
+          "why": "Mokré dřevo hnije. Kámen dole drží trámy nad vlhkou zemí a přesah střechy chrání zdi před deštěm."
+        },
+        {
+          "type": "summary",
+          "text": "Dříve se stavělo z toho, co bylo blízko: kámen, dřevo (roubenky), hlína a sláma (došky). Dnes hlavně z pálených cihel, betonu a panelů. Každý materiál má dobré vlastnosti i slabiny."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kterou část domu stavbaři postaví jako první?",
+      "options": [
+        "základy",
+        "střechu",
+        "okna",
+        "komín"
+      ],
+      "answer": 0,
+      "explanation": "Dům se staví zespodu nahoru. Na základech stojí zdi, na zdech střecha."
+    },
+    {
+      "type": "truefalse",
+      "question": "Roubenka je dům z dřevěných trámů položených na sebe.",
+      "answer": true,
+      "explanation": "Spáry mezi trámy se ucpávaly mechem a hlínou."
+    },
+    {
+      "type": "match",
+      "question": "Spoj řemeslníka s prací.",
+      "pairs": [
+        [
+          "zedník",
+          "staví zdi"
+        ],
+        [
+          "tesař",
+          "staví krov"
+        ],
+        [
+          "pokrývač",
+          "kryje střechu"
+        ],
+        [
+          "klempíř",
+          "dělá okapy"
+        ],
+        [
+          "elektrikář",
+          "zavádí elektřinu"
+        ]
+      ],
+      "explanation": "Na stavbě domu pracuje mnoho řemeslníků, každý umí něco jiného."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď, jak se staví dům.",
+      "items": [
+        "nakreslit plán",
+        "vylít základy",
+        "postavit zdi",
+        "postavit krov",
+        "položit krytinu",
+        "vymalovat pokoje"
+      ],
+      "explanation": "Dům roste zespodu nahoru a malování přijde až na konec."
+    },
+    {
+      "type": "choice",
+      "question": "Z čeho se vyrábí pálená cihla?",
+      "options": [
+        "z hlíny",
+        "z betonu",
+        "ze dřeva",
+        "ze slámy"
+      ],
+      "answer": 0,
+      "explanation": "Hlína se vytvaruje do kvádru a vypálí v peci."
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje dřevěná kostra střechy?",
+      "answers": [
+        "krov"
+      ],
+      "explanation": "Krov staví tesař. Na krov se pak položí krytina."
+    },
+    {
+      "type": "truefalse",
+      "question": "Beton se míchá z cementu, písku, štěrku a vody.",
+      "answer": true,
+      "explanation": "Nejdřív je řídký jako kaše, pak ztvrdne jako kámen."
+    },
+    {
+      "type": "choice",
+      "question": "Proč stávaly roubenky na kamenné podezdívce?",
+      "options": [
+        "aby dřevo neleželo na vlhké zemi a neshnilo",
+        "aby byl dům hezčí",
+        "aby se do něj vešlo víc lidí",
+        "aby se dalo topit"
+      ],
+      "answer": 0,
+      "explanation": "Kámen se vlhka nebojí. Drží dřevěné trámy nad mokrou zemí."
+    },
+    {
+      "type": "choice",
+      "question": "Co je panel?",
+      "options": [
+        "velký hotový kus zdi z betonu z továrny",
+        "malá cihla z hlíny",
+        "dřevěný trám",
+        "střecha ze slámy"
+      ],
+      "answer": 0,
+      "explanation": "Panely se vyrobí v továrně a na stavbě se skládají jako stavebnice."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve staré chalupě se svítilo svíčkou nebo petrolejovou lampou.",
+      "answer": true,
+      "explanation": "Elektřina tehdy na vesnice ještě nevedla."
+    },
+    {
+      "type": "input",
+      "question": "Do 1 metru zdi se vejdou v řadě 4 cihly. Kolik cihel je v řadě dlouhé 5 metrů?",
+      "answers": [
+        "20"
+      ],
+      "explanation": "5 · 4 = 20 cihel."
+    },
+    {
+      "type": "choice",
+      "question": "Ves leží v horách u velkého lesa. Z čeho tam lidé dříve nejspíš stavěli?",
+      "options": [
+        "ze dřeva",
+        "z betonu",
+        "z panelů",
+        "ze skla"
+      ],
+      "answer": 0,
+      "explanation": "Stavělo se z toho, co bylo blízko. V lese je dřevo – vznikaly roubenky."
+    },
+    {
+      "type": "open",
+      "question": "Popiš, jak se staví dům od základů po střechu.",
+      "answer": "Architekt nakreslí plán. Pak se vylijí základy, zedník postaví zdi, tesař krov a pokrývač položí krytinu. Nakonec se osadí okna a dveře, zavede elektřina a voda a dům se vymaluje."
+    },
+    {
+      "type": "open",
+      "question": "Porovnej dům ze dřeva a dům z cihel. Co je na každém dobré a co ne?",
+      "answer": "Dřevo je lehké, hřeje a dobře se opracuje, ale může shořet a ve vlhku shnít. Cihla je pevná, nehoří a dlouho vydrží, ale musí se vypálit v peci a stavba je těžší."
+    },
+    {
+      "type": "open",
+      "question": "Jak se bydlelo ve staré chalupě a jak bydlíš ty?",
+      "answer": "V chalupě byla hlavně jedna místnost, jizba, s velkou pecí. Voda se nosila ze studny a svítilo se svíčkou. Dnes máme víc místností, topení, vodu z kohoutku a elektrické světlo."
+    }
+  ]
+}

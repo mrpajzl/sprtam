@@ -216,6 +216,143 @@
           "text": "Velký příklad = malý příklad + desítka. 16 + 3 → 6 + 3 = 9 → 19."
         }
       ]
+    },
+    {
+      "title": "Spící desítka",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na zahradě stojí plný koš s 10 jablky. Vedle leží 3 jablka. Přineseš další 4. Kolik jich je?"
+        },
+        {
+          "type": "text",
+          "text": "Koš se nehne. Počítáš jen jablka vedle. Tak spočítáš i čísla do 20."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desítka",
+          "definition": "Deset věcí pohromadě. Tady je to plný koš.",
+          "example": "V čísle 13 je to ta 1 vpředu."
+        },
+        {
+          "type": "term",
+          "term": "Jednotky",
+          "definition": "Volné kusy vedle desítky.",
+          "example": "V čísle 13 jsou to 3 jablka vedle koše."
+        },
+        {
+          "type": "term",
+          "term": "Bez přechodu",
+          "definition": "Počítáš jen s jednotkami. Desítka zůstane celá.",
+          "example": "13 + 4: koš zůstane, 3 + 4 = 7."
+        },
+        {
+          "type": "heading",
+          "text": "Příběh o spící desítce"
+        },
+        {
+          "type": "text",
+          "text": "V koši spí desítka. Celé léto rostla na stromě a je unavená. Nikdo ji nebudí."
+        },
+        {
+          "type": "text",
+          "text": "Kolem koše si hrají jednotky. Štědrý Plus jim přivádí kamarády. Mínus je odvádí pryč. Desítka spí dál."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🧺",
+            "🍎",
+            "🍎",
+            "🍎",
+            "➕",
+            "🍎",
+            "🍎",
+            "🍎",
+            "🍎"
+          ],
+          "caption": "Koš s 10 jablky a 3 jablka vedle. Plus přinese 4."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "13 je koš (10) a 3 jablka.",
+            "Koš nech spát.",
+            "Sečti jednotky: 3 + 4 = **7**.",
+            "Koš a 7 jablek: **17**. Takže 13 + 4 = 17."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mínus odvádí"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "18 − 3: koš (10) a 8 jablek vedle.",
+            "Mínus vezme 3 jablka z těch vedle: 8 − 3 = **5**.",
+            "Koš a 5 jablek: **15**. Takže 18 − 3 = 15."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Řekni to jako říkanku a tleskej: „Tři a čtyři – sedm. Třináct a čtyři – sedmnáct.“ Malý příklad a velký příklad zní skoro stejně."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je 13: jedna tyčka (spící desítka) a 3 kostičky. Přidej 4 kostičky. Desítka zůstala? Kolik to je?"
+        },
+        {
+          "type": "widget",
+          "widget": "place-value",
+          "props": {
+            "value": 13
+          }
+        },
+        {
+          "type": "example",
+          "question": "12 + 5 =",
+          "answer": "Desítka spí. Jednotky: 2 + 5 = 7. Desítka a 7: **12 + 5 = 17.**"
+        },
+        {
+          "type": "example",
+          "question": "Na poli stojí 14 snopů. 3 odvezou na voze. Kolik jich zůstane?",
+          "answer": "Snopů ubude, je tu Mínus. Jednotky: 4 − 3 = 1. Desítka zůstane: **14 − 3 = 11.**"
+        },
+        {
+          "type": "example",
+          "question": "17 − 7 =",
+          "answer": "Mínus odvede všech 7 jednotek. Zůstane jen spící desítka: **17 − 7 = 10.**"
+        },
+        {
+          "type": "example",
+          "question": "11 + 8 =",
+          "answer": "Jednotky: 1 + 8 = 9. Desítka a 9: **11 + 8 = 19.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "15 − 2 = 3",
+          "right": "15 − 2 = 13",
+          "why": "Desítka spí, ale nesmíš na ni zapomenout. Na konci ji vždycky přidej."
+        },
+        {
+          "type": "summary",
+          "text": "Desítka spí, počítáš jen jednotky. Nakonec desítku zase přidej: 13 + 4 → 3 + 4 = 7 → 17."
+        }
+      ]
     }
   ],
   "questions": [

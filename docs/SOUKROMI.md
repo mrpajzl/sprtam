@@ -13,6 +13,7 @@ Aplikace používá úložiště prohlížeče (`localStorage`). Data v něm vid
 | `sprtam:progress` | Tvůj pokrok: u každého procvičeného tématu nejlepší výsledek, výsledek posledního kola, počet kol a den posledního procvičení, které z obou vysvětlení ti víc sedí; přihrádky slovíček (0–5); připnutá i odepnutá témata (s časem změny); posledních 120 dní, kdy jsi procvičoval (kvůli sérii dní); naposledy zvolený ročník. | [`src/progress/store.ts`](../src/progress/store.ts) |
 | `sprtam:seen` | Datum, kdy aplikace naposledy poslala denní anonymní ping (viz níže). | [`src/stats.ts`](../src/stats.ts) |
 | `sprtam-theme` | `dark` nebo `light`, pokud sis přepnul vzhled. | [`src/theme.ts`](../src/theme.ts) |
+| `sprtam-approach` | `waldorf`, pokud sis zapnul waldorfskou školu. | [`src/approach.ts`](../src/approach.ts) |
 | `sprtam-heal` | Čas posledního automatického „uzdravení“ po nasazení nové verze (aby se stránka nepřenačítala dokola). | [`public/boot-check.js`](../public/boot-check.js) |
 
 Kromě toho:

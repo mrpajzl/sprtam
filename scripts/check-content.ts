@@ -6,12 +6,12 @@
 //   5. the widget registry (every widget file registered, examples valid)
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { join, relative } from 'node:path'
-import { CONTENT, ROOT, TOPICS, VOCAB } from '../plugins/content'
-import { GRADE_SUBJECTS } from '../src/content/curriculum'
+import { APPROACHES, CONTENT, ROOT, TOPICS, VOCAB } from '../plugins/content'
+import { ALL_GRADES, GRADE_SUBJECTS } from '../src/content/curriculum'
 import { BLOCK_EXAMPLES, QUESTION_EXAMPLES } from '../src/content/examples'
-import { block, LEVELS, question, subjectFile, topicFile, vocabFile } from '../src/content/format'
+import { approachFile, approachYearFile, block, LEVELS, question, subjectFile, topicFile, vocabFile } from '../src/content/format'
 import { validate, type S } from '../src/content/schema'
-import type { Block, Question, SubjectFile, TopicFile, VocabFile } from '../src/content/types'
+import type { ApproachFile, ApproachYearFile, Block, Question, SubjectFile, TopicFile, VocabFile } from '../src/content/types'
 import { GENERATOR_NAMES } from '../src/quiz/generators'
 import { WIDGETS } from '../src/widgets'
 import type { WidgetRef } from '../src/widgets'
@@ -74,7 +74,22 @@ function checkQuestion(q: Question, where: string) {
   }
 }
 
+// Teaching approaches are folders in content/approaches; their ids are also top-level URLs (/waldorf).
+const APPROACH_IDS = ls(APPROACHES).filter((f) => isDir(join(APPROACHES, f)))
+const RESERVED = ['g', 'p', 'hledat', 'mix', 'sdilet', 'slovicka', 'spojit', 'presun', 'widgety', 'api', 'assets', 'audio', 'healthz']
+/** Every topic key that exists (grade/subject/id) and the approach of approach-only topics. */
+const topicKeys = new Map<string, string | undefined>()
+
 function checkTopic(t: TopicFile, where: string) {
+  const general = t.explanations.filter((x) => !x.approach)
+  if (general.length !== 2) err(where, `needs exactly 2 explanations without "approach" (has ${general.length})`)
+  const seen = new Set<string>()
+  for (const x of t.explanations) if (x.approach) {
+    if (!APPROACH_IDS.includes(x.approach)) err(where, `unknown approach "${x.approach}" (content/approaches)`)
+    if (seen.has(x.approach)) err(where, `more than one explanation for approach "${x.approach}"`)
+    seen.add(x.approach)
+  }
+  if (t.approach && !APPROACH_IDS.includes(t.approach)) err(where, `unknown approach "${t.approach}" (content/approaches)`)
   t.explanations.forEach((x, i) => {
     const w = `${where} explanations[${i}]`
     x.blocks.forEach((b, j) => checkBlock(b, `${w}.blocks[${j}]`))
@@ -118,6 +133,7 @@ for (const g of ls(TOPICS)) {
       topics++
       if (!t) continue
       if (t.id !== id) err(where, `id "${t.id}" differs from the file name`)
+      topicKeys.set(`${g}/${s}/${id}`, t.approach)
       rules(where, () => checkTopic(t, where))
     }
     for (const id of listed) if (!existsSync(join(dir, `${id}.json`))) err(rel(listFile), `lists "${id}" but ${id}.json does not exist`)
@@ -128,6 +144,40 @@ for (const g of ls(TOPICS)) {
 if (!filter) for (const [g, subs] of Object.entries(GRADE_SUBJECTS)) for (const s of subs) {
   if (!existsSync(join(TOPICS, g, s, '_subject.json'))) errors.push(`missing content/topics/${g}/${s}/_subject.json`)
 }
+
+// ——— Teaching approaches ———
+
+const reached = new Set<string>()
+for (const id of APPROACH_IDS) {
+  const dir = join(APPROACHES, id)
+  if (filter && !rel(dir).includes(filter) && !filter.includes(rel(dir))) continue
+  if (RESERVED.includes(id) || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(id)) err(rel(dir), 'approach id must be kebab-case and not a reserved route')
+  if (!existsSync(join(dir, 'approach.json'))) { err(rel(dir), 'missing approach.json'); continue }
+  load<ApproachFile>(join(dir, 'approach.json'), approachFile, '../../schema/approach.schema.json')
+  for (const f of ls(dir)) {
+    if (f === 'approach.json') continue
+    const file = join(dir, f), where = rel(file)
+    const g = f.replace(/\.json$/, '')
+    if (!f.endsWith('.json') || !(ALL_GRADES as string[]).includes(g)) { err(where, 'expected <grade>.json (z1…z9, s1…s4)'); continue }
+    const y = load<ApproachYearFile>(file, approachYearFile, '../../schema/approach-year.schema.json')
+    if (!y) continue
+    rules(where, () => {
+      const ids = new Set<string>()
+      for (const b of [...y.epochs, ...(y.ongoing ?? [])]) {
+        if (ids.has(b.id)) err(where, `duplicate id "${b.id}"`)
+        ids.add(b.id)
+        if (new Set(b.topics).size !== b.topics.length) err(where, `${b.id}: a topic is listed twice`)
+        for (const k of b.topics) {
+          reached.add(k)
+          if (!topicKeys.has(k)) { if (!filter) err(where, `${b.id}: topic ${k} does not exist`) }
+          else if (topicKeys.get(k) && topicKeys.get(k) !== id) err(where, `${b.id}: ${k} belongs to approach "${topicKeys.get(k)}"`)
+        }
+      }
+    })
+  }
+}
+// An approach-only topic is reachable only through its approach's plan.
+if (!filter) for (const [k, a] of topicKeys) if (a && !reached.has(k)) err(`content/topics/${k}.json`, `approach-only topic is not in any year of content/approaches/${a}`)
 
 // ——— Vocabulary ———
 
@@ -150,7 +200,7 @@ for (const l of LEVELS) {
   } })
 }
 for (const f of ls(VOCAB)) if (!LEVELS.some((l) => `${l.toLowerCase()}.json` === f)) err(rel(join(VOCAB, f)), 'unexpected file')
-for (const f of ls(CONTENT)) if (!['topics', 'vocab', 'schema', 'README.md'].includes(f)) err(rel(join(CONTENT, f)), 'unexpected file')
+for (const f of ls(CONTENT)) if (!['topics', 'vocab', 'approaches', 'schema', 'README.md'].includes(f)) err(rel(join(CONTENT, f)), 'unexpected file')
 
 // ——— Widget registry ———
 

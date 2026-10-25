@@ -6,7 +6,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { BLOCK_EXAMPLES, QUESTION_EXAMPLES } from '../src/content/examples'
-import { block, FORMAT, question, subjectFile, topicFile, vocabFile } from '../src/content/format'
+import { approachFile, approachYearFile, block, FORMAT, question, subjectFile, topicFile, vocabFile } from '../src/content/format'
 import { fieldRows, toJsonSchema, type ObjectS, type S, type VariantsS } from '../src/content/schema'
 import { WIDGET_GROUPS } from '../src/widgets'
 import type { WidgetDef } from '../src/widgets/kit'
@@ -52,6 +52,8 @@ Verze formátu: **${FORMAT}** (pole \`format\` v každém souboru).
 | \`content/topics/<ročník>/<předmět>/_subject.json\` | pořadí témat předmětu v ročníku | \`content/schema/subject.schema.json\` |
 | \`content/topics/<ročník>/<předmět>/<id-tématu>.json\` | jedno téma | \`content/schema/topic.schema.json\` |
 | \`content/vocab/<úroveň>.json\` | anglická slovíčka jedné úrovně (a1–c1) | \`content/schema/vocab.schema.json\` |
+| \`content/approaches/<přístup>/approach.json\` | přístup k výuce (např. waldorf) | \`content/schema/approach.schema.json\` |
+| \`content/approaches/<přístup>/<ročník>.json\` | plán ročníku v tom přístupu: epochy a témata | \`content/schema/approach-year.schema.json\` |
 
 Ročníky: \`z1\`–\`z9\` (základní škola), \`s1\`–\`s4\` (gymnázium). Předměty ročníku: \`GRADE_SUBJECTS\` v \`src/content/curriculum.ts\`.
 Každý soubor začíná polem \`"$schema"\` s relativní cestou ke schématu – editor (VS Code, JetBrains) pak sám napovídá a hlásí chyby.
@@ -65,6 +67,12 @@ ${table(subjectFile)}
 ### Slovíčka (\`content/vocab/<úroveň>.json\`)
 
 ${table(vocabFile)}
+### Přístup k výuce (\`content/approaches/<přístup>/approach.json\`)
+
+${table(approachFile)}
+### Plán ročníku (\`content/approaches/<přístup>/<ročník>.json\`)
+
+${table(approachYearFile)}
 ## Bloky vysvětlení (\`explanations[].blocks[]\`)
 
 Každý blok má pole \`type\` a další pole podle typu. Text smí obsahovat **tučné** (\`**…**\`), *kurzívu* (\`*…*\`), \`vzorec\` (\`\\\`…\\\`\`) a horní index (\`^2\`, \`^II\`).
@@ -109,6 +117,8 @@ export function generated(): Record<string, string> {
     'content/schema/topic.schema.json': schemaFile(topicFile, 'topic.schema.json', 'Šprtám – téma'),
     'content/schema/subject.schema.json': schemaFile(subjectFile, 'subject.schema.json', 'Šprtám – seznam témat předmětu'),
     'content/schema/vocab.schema.json': schemaFile(vocabFile, 'vocab.schema.json', 'Šprtám – anglická slovíčka'),
+    'content/schema/approach.schema.json': schemaFile(approachFile, 'approach.schema.json', 'Šprtám – přístup k výuce'),
+    'content/schema/approach-year.schema.json': schemaFile(approachYearFile, 'approach-year.schema.json', 'Šprtám – plán ročníku v přístupu k výuce'),
     'docs/FORMAT.md': formatDoc(),
     'docs/WIDGETY.md': widgetDoc(),
   }

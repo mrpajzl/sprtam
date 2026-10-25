@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { GRADE_NAME, SUBJECTS, type KeyColor } from '../content/curriculum'
+import { approachById, listed, useApproach } from '../approach'
 import { loadSubject, loadTopic, topicKey } from '../content'
 import { loadIndex, refFor } from '../content/library'
 import type { GradeId, SubjectId, Topic } from '../content/types'
@@ -22,25 +23,41 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
   const subj = useAsync(() => loadSubject(g, s), [g, s])
   const p = useProgress()
   const key = topicKey(g, s, id)
-  const initial = () => (query().get('ex') === '1' ? 1 : query().get('ex') === '0' ? 0 : p.t[key]?.e ?? 0) as 0 | 1
-  const [ex, setEx] = useState<0 | 1>(initial)
-  useEffect(() => setEx(initial()), [key])
+  const approach = useApproach()
   const topic = subj?.topics.find((t) => t.id === id)
+  // The two general explanations, plus the one for the child's teaching approach – shown first.
+  const general = topic ? topic.explanations.flatMap((x, i) => (x.approach ? [] : [i])) : []
+  const own = topic && approach ? topic.explanations.findIndex((x) => x.approach === approach) : -1
+  const shown = own >= 0 ? [own, ...general] : general
+  const initial = () => {
+    const q = query().get('ex')
+    if (q === '0' || q === '1') return general[Number(q)] ?? 0
+    return own >= 0 ? own : general[p.t[key]?.e ?? 0] ?? 0
+  }
+  const [ex, setEx] = useState(initial)
+  // Re-evaluate once the topic has loaded: the choice depends on its explanations.
+  useEffect(() => setEx(initial()), [key, own, !!topic])
   useTitle(topic && titles.topic(g, s, topic.title))
   if (subj === undefined) return <div class="page" />
   if (!topic) return <div class="page"><Bar title={SUBJECTS[s].name} /><div class="empty">Téma nenalezeno.</div></div>
 
-  const switchTo = (e: 0 | 1) => { setEx(e); preferExplanation(key, e); scrollTo({ top: 0, behavior: 'smooth' }) }
-  const other = (1 - ex) as 0 | 1
-  const next = subj?.topics[subj.topics.indexOf(topic) + 1]
+  const switchTo = (i: number) => {
+    setEx(i)
+    if (general.includes(i)) preferExplanation(key, general.indexOf(i) as 0 | 1)
+    scrollTo({ top: 0, behavior: 'smooth' })
+  }
+  const current = shown.includes(ex) ? ex : shown[0]
+  const other = shown[(shown.indexOf(current) + 1) % shown.length]
+  const rest = (subj?.topics ?? []).filter(listed)
+  const next = listed(topic) ? rest[rest.indexOf(topic) + 1] : undefined
 
   return (
     <div class="page" style={subjectStyle(s)}>
       <Bar title={`${topic.emoji} ${topic.title}`} crumbs={[{ href: `/g/${g}`, label: GRADE_NAME[g] }, { href: `/g/${g}/${s}`, label: SUBJECTS[s].name }]} right={<PinButton k={key} />} />
       <div class="seg" role="tablist">
-        {topic.explanations.map((x, i) => <button key={i} role="tab" aria-selected={ex === i} class={ex === i ? 'on' : ''} onClick={() => switchTo(i as 0 | 1)}>{x.title}</button>)}
+        {shown.map((i) => <button key={i} role="tab" aria-selected={current === i} class={current === i ? 'on' : ''} onClick={() => switchTo(i)}>{i === own ? `${approachById(approach)?.emoji} ` : ''}{topic.explanations[i].title}</button>)}
       </div>
-      <Blocks key={ex} blocks={topic.explanations[ex].blocks} />
+      <Blocks key={current} blocks={topic.explanations[current].blocks} />
       <button class="other" onClick={() => switchTo(other)}><IBulb />Nerozumím – vysvětli to jinak: {topic.explanations[other].title}</button>
       <div class="modes">
         {(['kviz', 'opakovani', 'pisemka', 'zkouseni'] as ModeId[]).map((m) => {
@@ -64,7 +81,7 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
 
 export function QuizScreen({ g, s, id, mode }: { g: GradeId; s: SubjectId; id: string; mode: ModeId }) {
   const subj = useAsync(() => loadSubject(g, s), [g, s])
-  const topics = useMemo(() => subj && (id === '~test' ? subj.topics : subj.topics.filter((t) => t.id === id)).map((t) => ({ key: topicKey(g, s, t), t })), [subj, id])
+  const topics = useMemo(() => subj && (id === '~test' ? subj.topics.filter(listed) : subj.topics.filter((t) => t.id === id)).map((t) => ({ key: topicKey(g, s, t), t })), [subj, id])
   if (!topics) return <div class="page" />
   return <div style={subjectStyle(s)}><Quiz key={`${id}/${mode}`} mode={mode} topics={topics} /></div>
 }

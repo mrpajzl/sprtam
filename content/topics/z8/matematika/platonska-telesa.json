@@ -1,0 +1,700 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "platonska-telesa",
+  "title": "Platónská tělesa",
+  "emoji": "💎",
+  "approach": "waldorf",
+  "explanations": [
+    {
+      "title": "Rukama",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hrací kostka. Krystal kuchyňské soli pod lupou. Krystal kamence, který vyroste ve sklenici jako dva jehlany slepené k sobě. Taková tělesa vypadají ze všech stran stejně. Když je otočíš, nepoznáš, na kterou stěnu se díváš."
+        },
+        {
+          "type": "text",
+          "text": "Takových dokonale pravidelných těles je jen **pět**. Znali je staří Řekové a psal o nich filozof Platón, proto se jim říká **platónská tělesa**. Postavíme je z papíru a uvidíme, proč šesté být nemůže."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mnohostěn",
+          "definition": "Těleso, které je ze všech stran ohraničené rovnými plochami ve tvaru mnohoúhelníků (trojúhelníků, čtverců…). Nemá žádnou zakřivenou plochu.",
+          "example": "Krychle, kvádr nebo jehlan jsou mnohostěny. Koule a válec ne."
+        },
+        {
+          "type": "term",
+          "term": "Stěna (S)",
+          "definition": "Jedna rovná plocha mnohostěnu.",
+          "example": "Hrací kostka má 6 stěn – na každé jsou jiné tečky."
+        },
+        {
+          "type": "term",
+          "term": "Hrana (H)",
+          "definition": "Úsečka, ve které se potkají dvě sousední stěny.",
+          "example": "Krychle má 12 hran – 4 nahoře, 4 dole a 4 svislé."
+        },
+        {
+          "type": "term",
+          "term": "Vrchol (V)",
+          "definition": "Roh tělesa – bod, ve kterém se potká několik hran a stěn.",
+          "example": "Krychle má 8 vrcholů."
+        },
+        {
+          "type": "term",
+          "term": "Pravidelný mnohoúhelník",
+          "definition": "Mnohoúhelník, který má všechny strany stejně dlouhé a všechny vnitřní úhly stejně velké.",
+          "example": "Rovnostranný trojúhelník (úhly 60°), čtverec (90°), pravidelný pětiúhelník (108°)."
+        },
+        {
+          "type": "term",
+          "term": "Platónské těleso (pravidelný mnohostěn)",
+          "definition": "Vypouklý mnohostěn (bez prohlubní), jehož stěny jsou **shodné pravidelné mnohoúhelníky** a v **každém vrcholu** se jich stýká **stejně mnoho**.",
+          "example": "Krychle: 6 shodných čtverců, v každém vrcholu 3. Kvádr 2 × 3 × 4 cm ne – jeho stěny nejsou shodné."
+        },
+        {
+          "type": "term",
+          "term": "Úhly u vrcholu",
+          "definition": "Když rozložíš stěny kolem jednoho vrcholu naplocho, jejich úhly se sečtou. Připomenutí: celý kruh kolem bodu je **plný úhel 360°**.",
+          "example": "Tři čtverce u rohu krychle: 3 · 90° = 270°."
+        },
+        {
+          "type": "heading",
+          "text": "Stavíme z trojúhelníků"
+        },
+        {
+          "type": "text",
+          "text": "Vystřihni z tvrdého papíru dvacet stejných rovnostranných trojúhelníků. Každý jejich úhel má 60°. Skládej je špičkami k jednomu bodu – to bude vrchol."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**3 trojúhelníky**: 3 · 60° = 180°. Mezi nimi zbude mezera. Když ji zavřeš, papír se zvedne do špičky. Dokonči těleso a vznikne **čtyřstěn** – 4 stěny.",
+            "**4 trojúhelníky**: 4 · 60° = 240°. Vznikne **osmistěn** – 8 stěn, jako dva jehlany slepené podstavou.",
+            "**5 trojúhelníků**: 5 · 60° = 300°. Vznikne **dvacetistěn** – 20 stěn, skoro kulatý.",
+            "**6 trojúhelníků**: 6 · 60° = 360°. Leží naplocho jako dlaždice. Mezera nezbude, špička nevznikne. Těleso z toho není."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej si to: nastav úhel 300°. To je pět trojúhelníků u vrcholu. Zbývající mezera 60° se při slepení zavře. Pak nastav 360°. Mezera zmizí a není co ohnout."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 300
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Čtverce a pětiúhelníky"
+        },
+        {
+          "type": "text",
+          "text": "Čtverec má úhly 90°. **Tři čtverce** u vrcholu: 270° – vznikne **krychle**. Čtyři čtverce: 360° – zase rovina, jako dlažba v koupelně."
+        },
+        {
+          "type": "text",
+          "text": "Pravidelný pětiúhelník rozdělíš úhlopříčkami z jednoho vrcholu na 3 trojúhelníky. Jejich úhly mají dohromady 3 · 180° = 540°. Jeden úhel pětiúhelníku je 540° : 5 = **108°**."
+        },
+        {
+          "type": "text",
+          "text": "**Tři pětiúhelníky** u vrcholu: 3 · 108° = 324° – vznikne **dvanáctistěn**. Čtyři: 432°. To je víc než plný úhel, nevejdou se ani do roviny."
+        },
+        {
+          "type": "text",
+          "text": "Šestiúhelník má úhly 120°. Už tři dají 360° – rovina, jako včelí plástev. Mnohoúhelníky s víc stranami mají ještě větší úhly. Proto další platónské těleso neexistuje."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Těleso",
+            "Stěny",
+            "Stěn u vrcholu",
+            "Součet úhlů u vrcholu"
+          ],
+          "rows": [
+            [
+              "čtyřstěn",
+              "trojúhelníky",
+              "3",
+              "180°"
+            ],
+            [
+              "osmistěn",
+              "trojúhelníky",
+              "4",
+              "240°"
+            ],
+            [
+              "dvacetistěn",
+              "trojúhelníky",
+              "5",
+              "300°"
+            ],
+            [
+              "krychle",
+              "čtverce",
+              "3",
+              "270°"
+            ],
+            [
+              "dvanáctistěn",
+              "pětiúhelníky",
+              "3",
+              "324°"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč nejde postavit pravidelný mnohostěn ze šestiúhelníků?",
+          "answer": "Ve vrcholu musí být aspoň 3 stěny, jinak se těleso neuzavře. Úhel šestiúhelníku je 120°. Tři úhly: 3 · 120° = 360°. To je plný úhel, stěny leží v rovině a vrchol se nezvedne. **Ze šestiúhelníků těleso nevznikne.**"
+        },
+        {
+          "type": "example",
+          "question": "Půjde postavit pravidelné těleso, kde se v každém vrcholu stýkají 4 čtverce?",
+          "answer": "4 · 90° = 360°. Součet úhlů u vrcholu musí být **menší** než 360°, aby se stěny zvedly do špičky. **Nepůjde** – vznikne jen rovná dlažba."
+        },
+        {
+          "type": "heading",
+          "text": "Síť krychle"
+        },
+        {
+          "type": "term",
+          "term": "Síť tělesa",
+          "definition": "Všechny stěny tělesa rozložené vedle sebe do roviny tak, aby z nich šlo těleso složit.",
+          "example": "Rozstřižená a rozložená krabice od bot."
+        },
+        {
+          "type": "text",
+          "text": "Krychli složíš ze šesti čtverců, třeba ve tvaru kříže: čtyři v řadě a po jednom nad a pod druhým. Krychle má **11** různých sítí. Zkus jich na čtverečkovaný papír nakreslit co nejvíc."
+        },
+        {
+          "type": "example",
+          "question": "Nakreslíš síť krychle s hranou 3 cm. Kolik čtverců potřebuješ a kolik cm² papíru zabere?",
+          "answer": "Krychle má 6 stěn, tedy **6 čtverců**. Jeden čtverec má obsah 3 · 3 = 9 cm². Všechny: 6 · 9 = **54 cm²**. To je povrch krychle."
+        },
+        {
+          "type": "heading",
+          "text": "Platón a čtyři živly"
+        },
+        {
+          "type": "text",
+          "text": "Řecký filozof **Platón** žil asi v letech 427–347 př. n. l. Řekové tehdy věřili, že svět je ze čtyř **živlů**: ohně, země, vzduchu a vody. Platón každému živlu přiřadil jedno těleso. Byla to jeho představa, ne poznatek dnešní vědy. Dnes víme, že látky jsou složené z atomů."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "čtyřstěn",
+                "back": "4 trojúhelníky, 4 vrcholy, 6 hran. U Platóna **oheň** – ostrý jako plamen."
+              },
+              {
+                "front": "krychle",
+                "back": "6 čtverců, 8 vrcholů, 12 hran. U Platóna **země** – pevně stojí."
+              },
+              {
+                "front": "osmistěn",
+                "back": "8 trojúhelníků, 6 vrcholů, 12 hran. U Platóna **vzduch**."
+              },
+              {
+                "front": "dvacetistěn",
+                "back": "20 trojúhelníků, 12 vrcholů, 30 hran. U Platóna **voda** – nejkulatější, kutálí se."
+              },
+              {
+                "front": "dvanáctistěn",
+                "back": "12 pětiúhelníků, 20 vrcholů, 30 hran. U Platóna celý **vesmír**."
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. Nejdřív zkus z hlavy říct, z jakých stěn těleso je."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dvanáctistěn má 12 vrcholů.",
+          "right": "Dvanáctistěn má 12 **stěn**, 20 vrcholů a 30 hran.",
+          "why": "Název tělesa říká počet stěn, ne vrcholů. 12 vrcholů má dvacetistěn."
+        },
+        {
+          "type": "summary",
+          "text": "Platónských těles je pět: čtyřstěn, krychle, osmistěn, dvanáctistěn a dvacetistěn. Víc jich není, protože součet úhlů stěn u vrcholu musí být menší než 360°."
+        }
+      ]
+    },
+    {
+      "title": "Počítáním",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi kostku cukru a spočítej její rohy, hrany a stěny. Dostaneš 8, 12 a 6. Švýcarský matematik **Leonhard Euler** si v 18. století všiml, že tahle tři čísla spolu tajně souvisejí."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Počty u složitých těles zjistíš bez počítání každé hrany. Ověříš, že ses nespletl. A objevíš, proč jsou některá tělesa jako dvojčata."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mnohostěn",
+          "definition": "Těleso, které je ze všech stran ohraničené rovnými plochami ve tvaru mnohoúhelníků (trojúhelníků, čtverců…). Nemá žádnou zakřivenou plochu.",
+          "example": "Krychle, kvádr nebo jehlan jsou mnohostěny. Koule a válec ne."
+        },
+        {
+          "type": "term",
+          "term": "Stěna (S)",
+          "definition": "Jedna rovná plocha mnohostěnu.",
+          "example": "Hrací kostka má 6 stěn – na každé jsou jiné tečky."
+        },
+        {
+          "type": "term",
+          "term": "Hrana (H)",
+          "definition": "Úsečka, ve které se potkají dvě sousední stěny.",
+          "example": "Krychle má 12 hran – 4 nahoře, 4 dole a 4 svislé."
+        },
+        {
+          "type": "term",
+          "term": "Vrchol (V)",
+          "definition": "Roh tělesa – bod, ve kterém se potká několik hran a stěn.",
+          "example": "Krychle má 8 vrcholů."
+        },
+        {
+          "type": "term",
+          "term": "Pravidelný mnohoúhelník",
+          "definition": "Mnohoúhelník, který má všechny strany stejně dlouhé a všechny vnitřní úhly stejně velké.",
+          "example": "Rovnostranný trojúhelník (úhly 60°), čtverec (90°), pravidelný pětiúhelník (108°)."
+        },
+        {
+          "type": "term",
+          "term": "Platónské těleso (pravidelný mnohostěn)",
+          "definition": "Vypouklý mnohostěn (bez prohlubní), jehož stěny jsou **shodné pravidelné mnohoúhelníky** a v **každém vrcholu** se jich stýká **stejně mnoho**.",
+          "example": "Krychle: 6 shodných čtverců, v každém vrcholu 3. Kvádr 2 × 3 × 4 cm ne – jeho stěny nejsou shodné."
+        },
+        {
+          "type": "heading",
+          "text": "Pět těles v číslech"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Těleso",
+            "Tvar stěny",
+            "Stěny S",
+            "Hrany H",
+            "Vrcholy V",
+            "Stěn u vrcholu"
+          ],
+          "rows": [
+            [
+              "čtyřstěn",
+              "trojúhelník",
+              "4",
+              "6",
+              "4",
+              "3"
+            ],
+            [
+              "krychle",
+              "čtverec",
+              "6",
+              "12",
+              "8",
+              "3"
+            ],
+            [
+              "osmistěn",
+              "trojúhelník",
+              "8",
+              "12",
+              "6",
+              "4"
+            ],
+            [
+              "dvanáctistěn",
+              "pětiúhelník",
+              "12",
+              "30",
+              "20",
+              "3"
+            ],
+            [
+              "dvacetistěn",
+              "trojúhelník",
+              "20",
+              "30",
+              "12",
+              "5"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak hrany a vrcholy spočítat"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vynásob počet stěn počtem stran jedné stěny. Dostaneš strany všech stěn dohromady.",
+            "Každá hrana patří **dvěma** stěnám, takže je započítaná dvakrát. Výsledek vyděl 2 – máš počet hran H.",
+            "Každý roh stěny leží v nějakém vrcholu. Počet rohů všech stěn vyděl počtem stěn u vrcholu – máš počet vrcholů V."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Dvanáctistěn má 12 pětiúhelníků a v každém vrcholu se stýkají 3. Kolik má hran a vrcholů?",
+          "answer": "Stran všech stěn: 12 · 5 = 60. Hrany: 60 : 2 = **30**. Rohy stěn jsou také 60, v každém vrcholu jsou 3: 60 : 3 = **20 vrcholů**."
+        },
+        {
+          "type": "example",
+          "question": "Dvacetistěn má 20 trojúhelníků a v každém vrcholu se stýká 5. Kolik má hran a vrcholů?",
+          "answer": "Stran všech stěn: 20 · 3 = 60. Hrany: 60 : 2 = **30**. Vrcholy: 60 : 5 = **12**."
+        },
+        {
+          "type": "heading",
+          "text": "Eulerův vztah"
+        },
+        {
+          "type": "term",
+          "term": "Eulerův vztah",
+          "definition": "Pro každý vypouklý mnohostěn platí `V − H + S = 2` (vrcholy minus hrany plus stěny je vždy 2).",
+          "example": "Krychle: 8 − 12 + 6 = 2."
+        },
+        {
+          "type": "example",
+          "question": "Ověř Eulerův vztah pro osmistěn a dvanáctistěn.",
+          "answer": "Osmistěn: V = 6, H = 12, S = 8. 6 − 12 + 8 = **2**. Dvanáctistěn: V = 20, H = 30, S = 12. 20 − 30 + 12 = **2**. Platí."
+        },
+        {
+          "type": "example",
+          "question": "Mnohostěn má 12 vrcholů a 30 hran. Kolik má stěn?",
+          "answer": "Dosadím do V − H + S = 2: 12 − 30 + S = 2, tedy −18 + S = 2, a proto S = 20. Má **20 stěn** – je to dvacetistěn."
+        },
+        {
+          "type": "heading",
+          "text": "Dvojčata: dualita"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na počty hran. Jsou ve dvojicích."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "hran",
+            "items": [
+              {
+                "label": "čtyřstěn",
+                "value": 6
+              },
+              {
+                "label": "krychle",
+                "value": 12
+              },
+              {
+                "label": "osmistěn",
+                "value": 12
+              },
+              {
+                "label": "dvanáctistěn",
+                "value": 30
+              },
+              {
+                "label": "dvacetistěn",
+                "value": 30
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Duální těleso",
+          "definition": "Těleso, které vznikne, když doprostřed každé stěny dáš bod a body sousedních stěn spojíš. Počty stěn a vrcholů se přitom vymění, počet hran zůstane.",
+          "example": "Uvnitř krychle tak vznikne osmistěn."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**krychle ↔ osmistěn**: 6 stěn a 8 vrcholů ↔ 8 stěn a 6 vrcholů, oba 12 hran",
+            "**dvanáctistěn ↔ dvacetistěn**: 12 stěn a 20 vrcholů ↔ 20 stěn a 12 vrcholů, oba 30 hran",
+            "**čtyřstěn ↔ čtyřstěn**: 4 stěny a 4 vrcholy – je duální sám sobě"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Zlatý řez v pětiúhelníku"
+        },
+        {
+          "type": "term",
+          "term": "Úhlopříčka",
+          "definition": "Připomenutí: úsečka, která spojuje dva vrcholy mnohoúhelníku, jež nejsou sousední.",
+          "example": "Pět úhlopříček pravidelného pětiúhelníku nakreslí pěticípou hvězdu."
+        },
+        {
+          "type": "term",
+          "term": "Zlatý řez φ",
+          "definition": "Zvláštní poměr dvou délek: `φ = (1 + √5) : 2 ≈ 1,618`. Úsečka je rozdělená zlatým řezem, když se celá úsečka má k delší části jako delší část ke kratší.",
+          "example": "Kreditní karta má strany v poměru blízkém zlatému řezu."
+        },
+        {
+          "type": "text",
+          "text": "V pravidelném pětiúhelníku je každá úhlopříčka **φ-krát delší** než strana. Pětiúhelníky tvoří stěny dvanáctistěnu, takže zlatý řez je v něm všude. A dvanáct vrcholů dvacetistěnu leží v rozích tří **zlatých obdélníků** se stranami v poměru 1 : φ, které se navzájem kolmo protínají."
+        },
+        {
+          "type": "example",
+          "question": "Pravidelný pětiúhelník má stranu 5 cm. Jak dlouhá je jeho úhlopříčka?",
+          "answer": "Úhlopříčka = strana · φ = 5 · 1,618 ≈ **8,09 cm**. Ověř si to: nakresli pětiúhelník a úhlopříčku změř."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď tělesa a jejich popisy podle tvaru stěn. Pomoz si tabulkou nahoře."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "stěny trojúhelníky",
+              "stěny čtverce",
+              "stěny pětiúhelníky"
+            ],
+            "items": [
+              {
+                "text": "čtyřstěn",
+                "group": 0
+              },
+              {
+                "text": "osmistěn",
+                "group": 0
+              },
+              {
+                "text": "dvacetistěn",
+                "group": 0
+              },
+              {
+                "text": "krychle",
+                "group": 1
+              },
+              {
+                "text": "dvanáctistěn",
+                "group": 2
+              },
+              {
+                "text": "hrací kostka",
+                "group": 1
+              },
+              {
+                "text": "20 stěn, 12 vrcholů",
+                "group": 0
+              },
+              {
+                "text": "12 stěn, 20 vrcholů",
+                "group": 2
+              },
+              {
+                "text": "6 stěn, 8 vrcholů",
+                "group": 1
+              },
+              {
+                "text": "8 stěn, 6 vrcholů",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dvanáctistěn má 12 · 5 = 60 hran.",
+          "right": "12 · 5 = 60 jsou strany všech stěn. Hran je 60 : 2 = 30.",
+          "why": "Každá hrana patří dvěma sousedním stěnám, proto ji v součinu počítáš dvakrát."
+        },
+        {
+          "type": "summary",
+          "text": "Pět platónských těles má počty stěn 4, 6, 8, 12 a 20. Pro všechna platí V − H + S = 2. Krychle a osmistěn i dvanáctistěn a dvacetistěn jsou duální dvojice a v pětiúhelníku dvanáctistěnu se skrývá zlatý řez φ ≈ 1,618."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kolik je platónských těles?",
+      "options": [
+        "5",
+        "4",
+        "12",
+        "nekonečně mnoho"
+      ],
+      "answer": 0,
+      "explanation": "Čtyřstěn, krychle, osmistěn, dvanáctistěn a dvacetistěn."
+    },
+    {
+      "type": "input",
+      "question": "Kolik hran má krychle?",
+      "answers": [
+        "12"
+      ],
+      "explanation": "4 nahoře, 4 dole a 4 svislé."
+    },
+    {
+      "type": "input",
+      "question": "Kolik vrcholů má dvanáctistěn?",
+      "answers": [
+        "20"
+      ],
+      "explanation": "12 · 5 = 60 rohů stěn, v každém vrcholu 3: 60 : 3 = 20."
+    },
+    {
+      "type": "match",
+      "question": "Spoj těleso s jeho stěnami.",
+      "pairs": [
+        [
+          "čtyřstěn",
+          "4 trojúhelníky"
+        ],
+        [
+          "krychle",
+          "6 čtverců"
+        ],
+        [
+          "osmistěn",
+          "8 trojúhelníků"
+        ],
+        [
+          "dvanáctistěn",
+          "12 pětiúhelníků"
+        ],
+        [
+          "dvacetistěn",
+          "20 trojúhelníků"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Pro dvacetistěn platí V − H + S = 12 − 30 + 20 = 2.",
+      "answer": true,
+      "explanation": "Dvacetistěn má 12 vrcholů, 30 hran a 20 stěn."
+    },
+    {
+      "type": "choice",
+      "question": "Proč nejde postavit pravidelný mnohostěn ze šestiúhelníků?",
+      "options": [
+        "Tři úhly po 120° dají 360°, stěny leží v rovině.",
+        "Šestiúhelník nemá všechny strany stejné.",
+        "Šestiúhelníků by bylo potřeba nekonečně mnoho."
+      ],
+      "answer": 0,
+      "explanation": "Součet úhlů u vrcholu musí být menší než 360°."
+    },
+    {
+      "type": "input",
+      "question": "Mnohostěn má 8 vrcholů a 12 hran. Kolik má podle Eulerova vztahu stěn?",
+      "answers": [
+        "6"
+      ],
+      "explanation": "8 − 12 + S = 2, takže S = 6."
+    },
+    {
+      "type": "choice",
+      "question": "Které těleso je duální ke krychli?",
+      "options": [
+        "osmistěn",
+        "čtyřstěn",
+        "dvanáctistěn"
+      ],
+      "answer": 0,
+      "explanation": "Krychle má 6 stěn a 8 vrcholů, osmistěn 8 stěn a 6 vrcholů."
+    },
+    {
+      "type": "input",
+      "question": "Jak velký je jeden vnitřní úhel pravidelného pětiúhelníku? Napiš číslo ve stupních.",
+      "answers": [
+        "108"
+      ],
+      "explanation": "3 · 180° = 540°, 540° : 5 = 108°."
+    },
+    {
+      "type": "truefalse",
+      "question": "Platón přiřadil krychli živlu země a dnešní věda to potvrzuje.",
+      "answer": false,
+      "explanation": "Platón to tak opravdu přiřadil, ale byla to jeho představa. Dnes víme, že látky jsou z atomů."
+    },
+    {
+      "type": "input",
+      "question": "Pravidelný pětiúhelník má stranu 10 cm. Jak dlouhá je jeho úhlopříčka v cm, zaokrouhleno na desetiny?",
+      "answers": [
+        "16,2"
+      ],
+      "explanation": "10 · 1,618 = 16,18 ≈ 16,2 cm."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď tělesa podle počtu stěn od nejmenšího.",
+      "items": [
+        "čtyřstěn",
+        "krychle",
+        "osmistěn",
+        "dvanáctistěn",
+        "dvacetistěn"
+      ],
+      "explanation": "4, 6, 8, 12, 20 stěn."
+    },
+    {
+      "type": "choice",
+      "question": "Kolik stěn se stýká v každém vrcholu dvacetistěnu?",
+      "options": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ],
+      "answer": 0,
+      "explanation": "5 · 60° = 300°, to je ještě méně než 360°."
+    },
+    {
+      "type": "input",
+      "question": "Kolik různých sítí má krychle?",
+      "answers": [
+        "11"
+      ],
+      "explanation": "Krychle má 11 různých sítí."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, proč existuje právě pět platónských těles.",
+      "answer": "Ve vrcholu se musí stýkat aspoň 3 stěny a součet jejich úhlů musí být menší než 360°. To splní jen 3, 4 nebo 5 trojúhelníků (180°, 240°, 300°), 3 čtverce (270°) a 3 pětiúhelníky (324°). Šestiúhelníky už dají 360° a leží v rovině."
+    },
+    {
+      "type": "open",
+      "question": "Co je dualita? Ukaž ji na krychli a osmistěnu.",
+      "answer": "Duální těleso vznikne, když do středu každé stěny dáš bod a sousední body spojíš. Stěny a vrcholy si vymění počty: krychle má 6 stěn a 8 vrcholů, osmistěn 8 stěn a 6 vrcholů. Oba mají 12 hran."
+    }
+  ]
+}

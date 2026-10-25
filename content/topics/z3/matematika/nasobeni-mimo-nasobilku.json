@@ -263,6 +263,168 @@
           "text": "Rozlož na desítky a jednotky, každou část vynásob (vyděl) zvlášť a výsledky sečti."
         }
       ]
+    },
+    {
+      "title": "Na stavbě",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve vsi se staví nový dům. Na stavbu přijíždějí cihly, tašky na střechu a prkna. Zedník musí spočítat, kolik čeho potřebuje. Čísla jsou větší než v násobilce."
+        },
+        {
+          "type": "text",
+          "text": "Přesto to zvládne zpaměti. Stačí mu násobilka a jeden trik: velké číslo **rozloží** na menší kousky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Násobení ( · )",
+          "definition": "Zkrácené sčítání stejných skupin. Čteme „krát“.",
+          "example": "3 · 24 = 24 + 24 + 24"
+        },
+        {
+          "type": "term",
+          "term": "Dělení ( : )",
+          "definition": "Spravedlivé rozdělení celku na stejné části. Čteme „děleno“.",
+          "example": "80 : 4 – rozdělím 80 cihel 4 zedníkům."
+        },
+        {
+          "type": "term",
+          "term": "Desítka",
+          "definition": "Balík 10 cihel. Cihly přijíždějí svázané po deseti.",
+          "example": "30 cihel = 3 balíky = 3 desítky."
+        },
+        {
+          "type": "term",
+          "term": "Rozložit číslo",
+          "definition": "Rozdělit číslo na desítky a jednotky.",
+          "example": "24 = 20 + 4 – dva balíky a čtyři volné cihly."
+        },
+        {
+          "type": "heading",
+          "text": "Celé balíky"
+        },
+        {
+          "type": "text",
+          "text": "Zedník staví 4 sloupky. Na každý potřebuje 30 cihel, tedy 3 balíky. Kolik cihel potřebuje? Počítá balíky jako jednotky."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "30 cihel jsou **3 balíky**.",
+            "4 · 3 balíky = **12 balíků**.",
+            "12 balíků po deseti = **120 cihel**.",
+            "Zkratka: 4 · 3 = 12 a připíšu nulu → **120**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na mřížku. Každá tečka je jeden balík 10 cihel. Kolik balíků vidíš? Kolik je to cihel? Pak nastav 6 řad a 7 sloupců a spočítej 6 · 70."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 4,
+            "columns": 3
+          }
+        },
+        {
+          "type": "text",
+          "text": "Dělení jde stejně. 80 cihel je 8 balíků. Rozdělíš je 4 zedníkům: každý dostane 2 balíky, tedy **20 cihel**. A 360 : 6? To je 36 balíků : 6 = 6 balíků = **60**."
+        },
+        {
+          "type": "heading",
+          "text": "Balíky a volné cihly"
+        },
+        {
+          "type": "text",
+          "text": "Na jednu řadu zdi potřebuje zedník 24 cihel: 2 balíky a 4 volné cihly. Kolik cihel potřebuje na 3 řady? Balíky a volné cihly spočítá zvlášť."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozlož 24 = **20** + **4**.",
+            "Balíky: 3 · 20 = **60**.",
+            "Volné cihly: 3 · 4 = **12**.",
+            "Sečti: 60 + 12 = **72 cihel**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Dělit se dá taky po kouscích. 96 tašek na střechu rozdělí spravedlivě 3 pokrývači – řemeslníci, kteří kladou střechu. 96 = 90 + 6. 90 : 3 = 30 a 6 : 3 = 2. Každý dostane 30 + 2 = **32 tašek**."
+        },
+        {
+          "type": "heading",
+          "text": "Pod sebou na papíře"
+        },
+        {
+          "type": "term",
+          "term": "„1 si pamatuji“",
+          "definition": "Když pod sebou u jednotek vyjde 10 nebo víc, napíšeš jen jednotky. Desítky si pamatuješ a přičteš je ve sloupci desítek.",
+          "example": "4 · 3 = 12 → píšu 2, 1 si pamatuji."
+        },
+        {
+          "type": "text",
+          "text": "Rozklad se dá zapsat i pod sebou. Klepej na **Další krok** a počítej se mnou: 24 · 3. Těch 12 volných cihel z rozkladu je tu znovu: 2 napíšeš, 1 balík si pamatuješ."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 24,
+            "b": 3,
+            "op": "·"
+          }
+        },
+        {
+          "type": "example",
+          "question": "5 · 13 =",
+          "answer": "13 = 10 + 3. 5 · 10 = 50, 5 · 3 = 15. Sečtu: 50 + 15 = **65**."
+        },
+        {
+          "type": "example",
+          "question": "Na každé ze 4 oken potřebuje tesař 15 prken. Kolik prken to je?",
+          "answer": "15 · 4. Pod sebou: 5 · 4 = 20, píšu 0 a 2 si pamatuji. 1 · 4 = 4, 4 + 2 = 6. Výsledek **60 prken**. Zpaměti: 4 · 10 = 40, 4 · 5 = 20, 40 + 20 = 60 ✔",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 15,
+              "b": 4,
+              "op": "·"
+            }
+          }
+        },
+        {
+          "type": "example",
+          "question": "Lístek do kina stojí 80 Kč. Kolik zaplatí 3 děti?",
+          "answer": "80 Kč je 8 desetikorun. 3 · 8 = 24 desetikorun. Připíšu nulu: **240 Kč**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "3 · 24 = 3 · 20 + 4 = 64",
+          "right": "3 · 24 = 3 · 20 + 3 · 4 = **72**",
+          "why": "Volné cihly patří do každé ze tří řad. Násobit musíš **obě** části – balíky i volné cihly."
+        },
+        {
+          "type": "mistake",
+          "wrong": "7 · 30 = 2 100",
+          "right": "7 · 30 = **210**",
+          "why": "30 jsou jen 3 balíky, jedna nula. 7 · 3 = 21 balíků a 21 balíků je 210 cihel."
+        },
+        {
+          "type": "summary",
+          "text": "Velké číslo rozlož na desítky a jednotky. Každou část vynásob (nebo vyděl) zvlášť a výsledky sečti. Celé desítky počítej jako balíky: 4 · 30 = 12 balíků = 120."
+        }
+      ]
     }
   ],
   "questions": [

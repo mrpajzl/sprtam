@@ -258,6 +258,192 @@
           "text": "Za 10 počítáme dál: 11, 12 … 19 (-náct = deset a ještě něco), pak 20. Vpravo na ose jsou větší čísla."
         }
       ]
+    },
+    {
+      "title": "Krokem do dvaceti",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pod kaštanem leží spousta kaštanů. Víc, než máš prstů. Jak je spočítat a nesplést se?"
+        },
+        {
+          "type": "text",
+          "text": "Deset kaštanů dáš na jednu hromádku. Pak počítáš dál. Až do dvaceti."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desítka",
+          "definition": "Deset věcí pohromadě. Jedna hromádka nebo jeden svazek.",
+          "example": "10 klacíků svázaných provázkem."
+        },
+        {
+          "type": "term",
+          "term": "Jednotky",
+          "definition": "Volné kusy, které leží vedle desítky.",
+          "example": "Desítka a vedle 4 kaštany: to jsou 4 jednotky."
+        },
+        {
+          "type": "term",
+          "term": "Číslice",
+          "definition": "Znak, kterým číslo píšeš: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.",
+          "example": "Číslo 14 má dvě číslice: 1 a 4."
+        },
+        {
+          "type": "term",
+          "term": "-náct",
+          "definition": "Konec názvu čísel 11 až 19. Znamená „deset a ještě něco“.",
+          "example": "šestnáct = 10 a 6"
+        },
+        {
+          "type": "heading",
+          "text": "Hromádka a kousky"
+        },
+        {
+          "type": "text",
+          "text": "V čísle 14 říká první číslice (**1**), kolik je desítek. Druhá číslice (**4**) říká, kolik je jednotek."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🔟",
+            "🌰",
+            "🌰",
+            "🌰",
+            "🌰"
+          ],
+          "caption": "1 desítka a 4 kaštany = 14"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Číslo",
+            "Desítky",
+            "Jednotky",
+            "Čteme"
+          ],
+          "rows": [
+            [
+              "11",
+              "1",
+              "1",
+              "jedenáct"
+            ],
+            [
+              "12",
+              "1",
+              "2",
+              "dvanáct"
+            ],
+            [
+              "14",
+              "1",
+              "4",
+              "čtrnáct"
+            ],
+            [
+              "15",
+              "1",
+              "5",
+              "patnáct"
+            ],
+            [
+              "17",
+              "1",
+              "7",
+              "sedmnáct"
+            ],
+            [
+              "20",
+              "2",
+              "0",
+              "dvacet"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor: říkáme **pat**náct (ne pětnáct) a **čtr**náct (ne čtyřnáct)."
+        },
+        {
+          "type": "heading",
+          "text": "Krokem do dvaceti"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Postav se. Kráčej a počítej: jedna, dvě… deset.",
+            "Na desítce dupni. Jedna desítka je hotová.",
+            "Kráčej dál: jedenáct, dvanáct… devatenáct.",
+            "Na dvacítce dupni znovu. Máš dvě desítky.",
+            "Vrať se pozpátku: dvacet, devatenáct… až jedna.",
+            "Teď po dvou: jedno číslo zašeptej, druhé řekni nahlas a tleskni. Nahlas zazní 2, 4, 6, 8… až 20."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je 14: jedna tyčka (desítka) a 4 kostičky (jednotky). Přidávej kostičky až na 19. Pak přidej ještě jednu. Co se stane?"
+        },
+        {
+          "type": "widget",
+          "widget": "place-value",
+          "props": {
+            "value": 14
+          }
+        },
+        {
+          "type": "text",
+          "text": "Žabka skáče po dvou. Klepej a počítej s ní nahlas: dvě, čtyři, šest… Kam doskáče?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "start": 0,
+            "hop": 2
+          }
+        },
+        {
+          "type": "example",
+          "question": "Z čeho se skládá číslo 17?",
+          "answer": "První číslice 1: jedna desítka. Druhá číslice 7: sedm jednotek. **17 = 10 + 7.**"
+        },
+        {
+          "type": "example",
+          "question": "Které číslo je před 15 a které po 15?",
+          "answer": "Stojím na 15. Krok zpátky: **14**. Krok dopředu: **16**."
+        },
+        {
+          "type": "example",
+          "question": "Co je víc: 12, nebo 18?",
+          "answer": "Obě čísla mají jednu desítku. Porovnám jednotky: 2 a 8. 8 je víc. **18 > 12.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "12 = 1 + 2",
+          "right": "12 = 10 + 2",
+          "why": "Jednička vpředu není jeden kaštan. Je to celá desítka – celá hromádka."
+        },
+        {
+          "type": "summary",
+          "text": "Čísla 11 až 19 jsou 1 desítka a pár jednotek (-náct = deset a ještě něco). 20 jsou dvě desítky. Krokem jdeš dopředu i zpátky, po jedné i po dvou."
+        }
+      ]
     }
   ],
   "questions": [

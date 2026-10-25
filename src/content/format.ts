@@ -8,6 +8,8 @@ import { WIDGETS } from '../widgets'
 //   content/topics/<grade>/<subject>/_subject.json   order of the topics   → SubjectFile
 //   content/topics/<grade>/<subject>/<topic-id>.json  one topic             → TopicFile
 //   content/vocab/<level>.json                        English vocabulary    → VocabFile
+//   content/approaches/<id>/approach.json             a teaching approach   → ApproachFile
+//   content/approaches/<id>/<grade>.json              its plan of one year  → ApproachYearFile
 //
 // Compatibility: an app build only reads the format it was built with. Adding an optional field or a new
 // block/widget/question type keeps FORMAT. Anything that changes the meaning of existing files (a renamed
@@ -63,8 +65,12 @@ export const block = s.variants('type', {
   widget: widgetRef,
 }, { description: 'Blok vysvětlení.' })
 
+const ID = '^[a-z0-9]+(-[a-z0-9]+)*$'
+const approachRef = (description: string) => s.string({ pattern: ID, description })
+
 export const explanation = s.object({
   title: s.string({ description: 'Krátký název přístupu, 1–3 slova: "Na pizze", "Krok za krokem".' }),
+  approach: s.optional(approachRef('Vysvětlení v duchu jednoho přístupu k výuce (složka v content/approaches), např. "waldorf". Dětem, které ten přístup zvolily, se ukáže jako první; ostatním se neukazuje.')),
   blocks: s.array(block, { min: 1 }),
 })
 
@@ -114,7 +120,8 @@ export const topicFile = s.object({
   title: s.string({ description: 'Název tématu.' }),
   emoji: s.string({ description: 'Jedno výstižné emoji.' }),
   generator: s.optional(s.string({ description: 'Generátor dalších příkladů z src/quiz/generators.ts (jen matematika a fyzika).' })),
-  explanations: s.array(explanation, { min: 2, max: 2, description: 'Přesně dvě vysvětlení, každé jinou cestou.' }),
+  approach: s.optional(approachRef('Téma jen pro jeden přístup k výuce (např. "waldorf"): v běžném seznamu předmětu se neukáže, jen v plánu toho přístupu.')),
+  explanations: s.array(explanation, { min: 2, max: 6, description: 'Přesně dvě obecná vysvětlení (bez "approach"), každé jinou cestou. Navíc nejvýš jedno pro každý přístup k výuce.' }),
   questions: s.array(question, { min: 8 }),
 }, { description: 'Jedno téma: dvě vysvětlení a otázky.' })
 
@@ -141,9 +148,38 @@ export const vocabFile = s.object({
   }), { min: 1, description: 'Okruhy. Odkazují se pořadím (/slovicka/A1/0) – nové přidávej na konec.' }),
 }, { description: 'Anglická slovíčka jedné úrovně.' })
 
+const blockOfYear = s.object({
+  id: s.string({ pattern: ID, description: 'Kebab-case ASCII, jedinečné v roce. Je v adrese (/waldorf/z1/<id>), nemění se.' }),
+  title: s.string({ description: 'Název epochy, např. "Svět rovných a oblých čar".' }),
+  emoji: s.string({ description: 'Jedno emoji.' }),
+  month: s.optional(s.string({ description: 'Kdy se epocha učí, např. "září" nebo "listopad–prosinec". U průběžných předmětů chybí.' })),
+  about: s.array(text('Odstavec.'), { min: 1, description: 'Co se v epoše dělá, pro děti a rodiče; 1–3 krátké odstavce.' }),
+  topics: s.array(s.string({ pattern: '^[a-z0-9]+/[a-z]+/[a-z0-9]+(-[a-z0-9]+)*$', description: 'Téma jako <ročník>/<předmět>/<id>, třeba z jiného ročníku.' }), { description: 'Témata aplikace, která k epoše patří, v pořadí probírání. Smí být prázdné.' }),
+})
+
+export const approachFile = s.object({
+  format: s.int({ min: FORMAT, max: FORMAT, description: `Verze formátu, teď ${FORMAT}.` }),
+  name: s.string({ description: 'Celý název, např. "Waldorfská škola".' }),
+  short: s.string({ description: 'Krátký název do lišty, např. "Waldorf".' }),
+  emoji: s.string({ description: 'Jedno emoji.' }),
+  choose: s.string({ description: 'Text přepínače, kterým si dítě přístup zvolí, např. "Chodím do waldorfské školy".' }),
+  about: s.array(text('Odstavec.'), { min: 1, description: 'Co je pro přístup typické a jak s ním aplikace pracuje.' }),
+  grading: s.enum(['marks', 'verbal'], { description: 'Hodnocení písemky a testu: "marks" známka 1–5, "verbal" slovní hodnocení.' }),
+}, { description: 'Přístup k výuce (např. waldorfská škola): jeho popis. Plány ročníků jsou v souborech <ročník>.json vedle.' })
+
+export const approachYearFile = s.object({
+  format: s.int({ min: FORMAT, max: FORMAT, description: `Verze formátu, teď ${FORMAT}.` }),
+  title: s.string({ description: 'Název ročníku v tomto přístupu, např. "1. třída" nebo "11. třída (lyceum)".' }),
+  epochs: s.array(blockOfYear, { min: 1, description: 'Epochy hlavního vyučování v pořadí školního roku.' }),
+  ongoing: s.optional(s.array(blockOfYear, { description: 'Předměty, které běží celý rok mimo epochy (cizí jazyky, cvičné hodiny).' })),
+}, { description: 'Plán jednoho ročníku v přístupu k výuce: epochy a průběžné předměty, každé s tématy aplikace.' })
+
 export type Block = Infer<typeof block>
 export type Explanation = Infer<typeof explanation>
 export type Question = Infer<typeof question>
 export type TopicFile = Infer<typeof topicFile>
 export type SubjectFile = Infer<typeof subjectFile>
 export type VocabFile = Infer<typeof vocabFile>
+export type ApproachFile = Infer<typeof approachFile>
+export type ApproachYearFile = Infer<typeof approachYearFile>
+export type YearBlock = ApproachYearFile['epochs'][number]

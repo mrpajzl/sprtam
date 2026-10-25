@@ -12,6 +12,8 @@ Verze formátu: **1** (pole `format` v každém souboru).
 | `content/topics/<ročník>/<předmět>/_subject.json` | pořadí témat předmětu v ročníku | `content/schema/subject.schema.json` |
 | `content/topics/<ročník>/<předmět>/<id-tématu>.json` | jedno téma | `content/schema/topic.schema.json` |
 | `content/vocab/<úroveň>.json` | anglická slovíčka jedné úrovně (a1–c1) | `content/schema/vocab.schema.json` |
+| `content/approaches/<přístup>/approach.json` | přístup k výuce (např. waldorf) | `content/schema/approach.schema.json` |
+| `content/approaches/<přístup>/<ročník>.json` | plán ročníku v tom přístupu: epochy a témata | `content/schema/approach-year.schema.json` |
 
 Ročníky: `z1`–`z9` (základní škola), `s1`–`s4` (gymnázium). Předměty ročníku: `GRADE_SUBJECTS` v `src/content/curriculum.ts`.
 Každý soubor začíná polem `"$schema"` s relativní cestou ke schématu – editor (VS Code, JetBrains) pak sám napovídá a hlásí chyby.
@@ -25,8 +27,10 @@ Každý soubor začíná polem `"$schema"` s relativní cestou ke schématu – 
 | `title` | text | ano | Název tématu. |
 | `emoji` | text | ano | Jedno výstižné emoji. |
 | `generator` | text | – | Generátor dalších příkladů z src/quiz/generators.ts (jen matematika a fyzika). |
-| `explanations` | seznam (objekt) 2 položek | ano | Přesně dvě vysvětlení, každé jinou cestou. |
+| `approach` | text | – | Téma jen pro jeden přístup k výuce (např. "waldorf"): v běžném seznamu předmětu se neukáže, jen v plánu toho přístupu. |
+| `explanations` | seznam (objekt) 2–6 položek | ano | Přesně dvě obecná vysvětlení (bez "approach"), každé jinou cestou. Navíc nejvýš jedno pro každý přístup k výuce. |
 | `explanations[].title` | text | ano | Krátký název přístupu, 1–3 slova: "Na pizze", "Krok za krokem". |
+| `explanations[].approach` | text | – | Vysvětlení v duchu jednoho přístupu k výuce (složka v content/approaches), např. "waldorf". Dětem, které ten přístup zvolily, se ukáže jako první; ostatním se neukazuje. |
 | `explanations[].blocks` | seznam (objekt podle "type") ≥ 1 položek | ano |  |
 | `questions` | seznam (objekt podle "type") ≥ 8 položek | ano |  |
 
@@ -52,6 +56,39 @@ Každý soubor začíná polem `"$schema"` s relativní cestou ke schématu – 
 | `groups[].words[].en` | text | ano | Správně anglicky. Musí být jedinečné napříč všemi úrovněmi (je na něm uložený pokrok). |
 | `groups[].words[].similar` | text | ano | Špatná možnost, která podobně vypadá nebo zní (bird → bard). |
 | `groups[].words[].related` | text | ano | Špatná možnost, která souvisí významem (bird → parrot). |
+
+### Přístup k výuce (`content/approaches/<přístup>/approach.json`)
+
+| Pole | Typ | Povinné | Popis |
+|---|---|---|---|
+| `format` | celé číslo 1 | ano | Verze formátu, teď 1. |
+| `name` | text | ano | Celý název, např. "Waldorfská škola". |
+| `short` | text | ano | Krátký název do lišty, např. "Waldorf". |
+| `emoji` | text | ano | Jedno emoji. |
+| `choose` | text | ano | Text přepínače, kterým si dítě přístup zvolí, např. "Chodím do waldorfské školy". |
+| `about` | seznam (text) ≥ 1 položek | ano | Co je pro přístup typické a jak s ním aplikace pracuje. |
+| `grading` | "marks" \| "verbal" | ano | Hodnocení písemky a testu: "marks" známka 1–5, "verbal" slovní hodnocení. |
+
+### Plán ročníku (`content/approaches/<přístup>/<ročník>.json`)
+
+| Pole | Typ | Povinné | Popis |
+|---|---|---|---|
+| `format` | celé číslo 1 | ano | Verze formátu, teď 1. |
+| `title` | text | ano | Název ročníku v tomto přístupu, např. "1. třída" nebo "11. třída (lyceum)". |
+| `epochs` | seznam (objekt) ≥ 1 položek | ano | Epochy hlavního vyučování v pořadí školního roku. |
+| `epochs[].id` | text | ano | Kebab-case ASCII, jedinečné v roce. Je v adrese (/waldorf/z1/<id>), nemění se. |
+| `epochs[].title` | text | ano | Název epochy, např. "Svět rovných a oblých čar". |
+| `epochs[].emoji` | text | ano | Jedno emoji. |
+| `epochs[].month` | text | – | Kdy se epocha učí, např. "září" nebo "listopad–prosinec". U průběžných předmětů chybí. |
+| `epochs[].about` | seznam (text) ≥ 1 položek | ano | Co se v epoše dělá, pro děti a rodiče; 1–3 krátké odstavce. |
+| `epochs[].topics` | seznam (text) | ano | Témata aplikace, která k epoše patří, v pořadí probírání. Smí být prázdné. |
+| `ongoing` | seznam (objekt) | – | Předměty, které běží celý rok mimo epochy (cizí jazyky, cvičné hodiny). |
+| `ongoing[].id` | text | ano | Kebab-case ASCII, jedinečné v roce. Je v adrese (/waldorf/z1/<id>), nemění se. |
+| `ongoing[].title` | text | ano | Název epochy, např. "Svět rovných a oblých čar". |
+| `ongoing[].emoji` | text | ano | Jedno emoji. |
+| `ongoing[].month` | text | – | Kdy se epocha učí, např. "září" nebo "listopad–prosinec". U průběžných předmětů chybí. |
+| `ongoing[].about` | seznam (text) ≥ 1 položek | ano | Co se v epoše dělá, pro děti a rodiče; 1–3 krátké odstavce. |
+| `ongoing[].topics` | seznam (text) | ano | Témata aplikace, která k epoše patří, v pořadí probírání. Smí být prázdné. |
 
 ## Bloky vysvětlení (`explanations[].blocks[]`)
 

@@ -230,6 +230,149 @@
           "text": "· 10 připiš nulu, · 9 = · 10 bez jedné skupiny, · 6 = · 5 a jedna skupina navíc. Pořadí čísel nevadí."
         }
       ]
+    },
+    {
+      "title": "Rytmem a hvězdou",
+      "approach": "waldorf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pekař ráno skládá bochníky do košů. Do každého koše dá 8 bochníků. Kolik bochníků je v 7 koších? Pekař je nepočítá po jednom. Počítá po osmi: 8, 16, 24…"
+        },
+        {
+          "type": "text",
+          "text": "Takové počítání po skupinách má svůj **rytmus**. Dá se chodit, tleskat i nakreslit. Když ho máš v nohou a v rukou, výsledek si vybavíš zpaměti."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Násobení ( · )",
+          "definition": "Zkrácené sčítání stejných skupin. Znak je tečka, čteme „krát“.",
+          "example": "7 · 8 = sedm košů po 8 bochnících = 8 + 8 + 8 + 8 + 8 + 8 + 8 = 56"
+        },
+        {
+          "type": "term",
+          "term": "Násobková řada",
+          "definition": "Čísla, která dostaneš, když pořád přidáváš stejné číslo.",
+          "example": "Řada 6: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60."
+        },
+        {
+          "type": "heading",
+          "text": "Řada v nohou"
+        },
+        {
+          "type": "text",
+          "text": "Řadu si nejdřív projdi celým tělem. Postav se a jdi pomalu po místnosti."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kroky 1 až 5 jen šeptej. Na šestém kroku dupni a řekni nahlas **šest**.",
+            "Šeptej dál 7 až 11. Na dvanáctém kroku dupni: **dvanáct**.",
+            "Takhle dojdi až k **60**. Dupneš desetkrát – to je deset šestek.",
+            "Pak couvej a říkej řadu pozpátku: 60, 54, 48, 42… až k 6.",
+            "Stejně si projdi řadu 7 (tleskej), řadu 8 (skákej) a řadu 9 (luskni prsty)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Počítej dupnutí. Když dupneš potřetí, jsi na 18. Tři dupnutí jsou tři šestky: 3 · 6 = 18. **Počet dupnutí říká, kolikrát násobíš.**"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Řada",
+            "Násobky"
+          ],
+          "rows": [
+            [
+              "6",
+              "6, 12, 18, 24, 30, 36, 42, 48, 54, 60"
+            ],
+            [
+              "7",
+              "7, 14, 21, 28, 35, 42, 49, 56, 63, 70"
+            ],
+            [
+              "8",
+              "8, 16, 24, 32, 40, 48, 56, 64, 72, 80"
+            ],
+            [
+              "9",
+              "9, 18, 27, 36, 45, 54, 63, 72, 81, 90"
+            ],
+            [
+              "10",
+              "10, 20, 30, 40, 50, 60, 70, 80, 90, 100"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řada nakreslí obrazec"
+        },
+        {
+          "type": "term",
+          "term": "Kruh násobků",
+          "definition": "Kruh s deseti body, které mají čísla 0 až 9. U každého násobku se díváš jen na **poslední číslici**. Body postupně spojuješ čarou.",
+          "example": "Řada 6: 6, 12, 18 → spojíš body 6, 2 a 8."
+        },
+        {
+          "type": "text",
+          "text": "Přidávej tlačítkem násobky šestky a sleduj čáru. Vznikne pěticípá hvězda. Pak přepni na 4. Nakreslí stejnou hvězdu, jen opačným směrem. Zkus i dvojice 7 a 3, 8 a 2, 9 a 1."
+        },
+        {
+          "type": "widget",
+          "widget": "multiple-circle",
+          "props": {
+            "number": 6
+          }
+        },
+        {
+          "type": "text",
+          "text": "Řady tvoří dvojice. Řada 7 a řada 3 kreslí stejnou desetcípou hvězdu, každá na jinou stranu. Řady 8 a 2 kreslí tvar s pěti rohy, řady 9 a 1 tvar s deseti rohy. Řada 5 skáče jen tam a zpátky po jedné čáře. A řada 10 stojí pořád v nule – každý její násobek končí nulou."
+        },
+        {
+          "type": "heading",
+          "text": "Řada pomáhá počítat"
+        },
+        {
+          "type": "text",
+          "text": "Nevíš výsledek? Projdi řadu a počítej kroky. Nemusíš začínat od začátku: pětku každé řady znáš, od ní dojdeš zbytek."
+        },
+        {
+          "type": "example",
+          "question": "Kolik bochníků je v 7 koších po 8?",
+          "answer": "7 · 8. Jdu řadou 8: 8, 16, 24, 32, **40** – to je pět košů. Ještě dva kroky: 48, **56**. Sedm kroků → **56 bochníků**."
+        },
+        {
+          "type": "example",
+          "question": "6 · 9 =",
+          "answer": "Šest devítek. Řada 9: 9, 18, 27, 36, 45, 54. Šestý krok je **54**. Kontrola: deset šestek je 60, bez jedné šestky 60 − 6 = 54 ✔"
+        },
+        {
+          "type": "example",
+          "question": "Týden má 7 dní. Kolik dní mají 4 týdny?",
+          "answer": "Čtyři kroky řady 7: 7, 14, 21, 28. Čtyři týdny mají **28 dní**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "7 · 6 = 36",
+          "right": "7 · 6 = **42**",
+          "why": "36 je jen šest šestek. Sedm šestek je o jednu šestku víc: 36 + 6 = 42. V řadě 6 dupneš sedmkrát: 6, 12, 18, 24, 30, 36, 42."
+        },
+        {
+          "type": "summary",
+          "text": "Násobková řada je rytmus: dupni na každé šestce, tleskni na každé sedmičce. Počet kroků řady říká, kolikrát násobíš. Každá řada nakreslí v kruhu svůj obrazec."
+        }
+      ]
     }
   ],
   "questions": [
