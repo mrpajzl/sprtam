@@ -1,0 +1,78 @@
+# Soukromí: co Šprtám ví a co ne
+
+> **Ve zkratce:** Šprtám nemá účty, nepoužívá cookies, reklamy ani analytické služby třetích stran. Tvůj pokrok zůstává v tvém zařízení. Kromě běžného stažení stránek se na server jednou denně pošle jediná informace: „aplikaci dnes někdo otevřel, poprvé ano/ne“. Nic víc.
+
+Tenhle dokument popisuje úplně všechno, co aplikace ukládá a posílá. Každé tvrzení odkazuje na kód, takže si ho může kdokoli ověřit.
+
+## Co se ukládá ve tvém zařízení
+
+Aplikace používá úložiště prohlížeče (`localStorage`). Data v něm vidí jen tvůj prohlížeč na adrese `sprtam.cz`. Nikam se samy neposílají.
+
+| Klíč | Co obsahuje | Kód |
+|---|---|---|
+| `sprtam:progress` | Tvůj pokrok: u každého procvičeného tématu nejlepší výsledek, výsledek posledního kola, počet kol a den posledního procvičení, které z obou vysvětlení ti víc sedí; přihrádky slovíček (0–5); připnutá i odepnutá témata (s časem změny); posledních 120 dní, kdy jsi procvičoval (kvůli sérii dní); naposledy zvolený ročník. | [`src/progress/store.ts`](../src/progress/store.ts) |
+| `sprtam:seen` | Datum, kdy aplikace naposledy poslala denní anonymní ping (viz níže). | [`src/stats.ts`](../src/stats.ts) |
+| `sprtam-theme` | `dark` nebo `light`, pokud sis přepnul vzhled. | [`src/theme.ts`](../src/theme.ts) |
+| `sprtam-heal` | Čas posledního automatického „uzdravení“ po nasazení nové verze (aby se stránka nepřenačítala dokola). | [`public/boot-check.js`](../public/boot-check.js) |
+
+Kromě toho:
+
+- `sessionStorage` → `sprtam:trail`: seznam obrazovek, kterými jsi v aktuální záložce prošel, aby fungovalo tlačítko Zpět. Smaže se zavřením záložky. Kód: [`src/router.tsx`](../src/router.tsx).
+- **Cache service workeru**: kopie aplikace a veškerého učiva, aby fungovala offline, a navíc až 30 naposledy otevřených stránek (jde z nich poznat, která témata jsi otevřel, ale zůstávají jen v zařízení).
+
+**Nic z toho nevíme my.** Neexistuje žádná databáze uživatelů. Když vymažeš data prohlížeče nebo aplikaci odinstaluješ, pokrok zmizí a nikdo ho neobnoví. Proto existuje [kód pokroku a propojení zařízení](PROPOJENI-ZARIZENI.md).
+
+### Jak data smazat
+
+- V nastavení prohlížeče vymaž data webu `sprtam.cz` (Chrome: Nastavení → Soukromí a zabezpečení → Data webů; Safari na iPhonu: Nastavení → Safari → Pokročilé → Data webových stránek).
+- **Android:** aplikace na ploše sdílí data s Chromem, maže se tedy stejně. Samotné odebrání ikony data nesmaže.
+- **iPhone:** aplikace přidaná na plochu má vlastní úložiště, oddělené od Safari. Smazáním ikony se smaže i její pokrok.
+
+## Co se posílá ven
+
+Úplný seznam. Nic jiného aplikace sama neposílá.
+
+| Kam | Kdy | Co | Podrobně |
+|---|---|---|---|
+| `sprtam.cz` (náš server) | Při otevření nebo přenačtení stránky | Běžné stažení aplikace a učiva (HTML, JS, CSS, obrázky). Server přitom vidí adresu stránky, viz [níže](#co-vidí-server-a-síť). | [Architektura](ARCHITEKTURA.md) |
+| `sprtam.cz/api/ping` | Nejvýš jednou denně | `{"new":true}` nebo `{"new":false}`. Žádné ID, žádný pokrok. | [Statistiky](STATISTIKY.md) |
+| Druhé zařízení (napřímo) | Jen když sám spustíš **Propojit dvě zařízení** | Tvůj pokrok, šifrovaně, přímo do druhého zařízení. To se přitom dozví tvou veřejnou IP adresu. | [Propojení zařízení](PROPOJENI-ZARIZENI.md) |
+| STUN server Googlu a Cloudflaru | Jen při **Propojit dvě zařízení** | Dotaz „jakou mám veřejnou adresu?“ Žádná data o tobě ani o pokroku. | [Propojení zařízení](PROPOJENI-ZARIZENI.md#stun-server) |
+
+Co aplikace **nedělá**:
+
+- Nepoužívá cookies. Aplikace ani server žádné nenastavují, takže se žádné ani neposílají.
+- Nenačítá nic z cizích domén: písma, ikony i knihovny jsou součástí aplikace. Vynucuje to hlavička `Content-Security-Policy` (mimo jiné `default-src 'self'` a `connect-src 'self'`; kromě vlastní domény povoluje jen obsah vytvořený přímo v zařízení, `data:` a `blob:`), viz [`server/index.mjs`](../server/index.mjs). Prohlížeč by požadavek na cizí server zablokoval. Na dvě věci se tato hlavička nevztahuje: dotaz na STUN server při propojování zařízení (je v tabulce výše) a případné online hlasy pro výslovnost (viz níže).
+- Neobsahuje Google Analytics, Facebook Pixel, Sentry, reklamy ani nic podobného.
+- Neposílá, jak ti to jde, jak dlouho se učíš ani na jakém zařízení. Které stránky otevíráš, server vidí jen při jejich stažení (viz [níže](#co-vidí-server-a-síť)). Procvičování samo nic neposílá.
+- **Výslovnost slovíček** obstarává hlasová syntéza prohlížeče (`speechSynthesis`). Aplikace kvůli ní nic neposílá a hlas nevybírá, nechává ho na prohlížeči. Většinou je hlas přímo v zařízení. Některé prohlížeče (např. Chrome nebo Edge s online hlasy Googlu či Microsoftu) ale mohou samotné anglické slovo poslat ke zpracování svému poskytovateli. Kód: [`src/screens/Vocab.tsx`](../src/screens/Vocab.tsx).
+- **Kamera** (skenování QR kódu) se zapne jen na obrazovce skenování. Obraz se zpracovává v zařízení a nikam se neposílá.
+
+## Co vidí server a síť
+
+Když otevřeš jakoukoli webovou stránku, server se nutně dozví tvou IP adresu a typ prohlížeče, jinak by ti nemohl odpovědět. U Šprtámu je to takhle:
+
+1. **Cloudflare.** Doména `sprtam.cz` jde přes síť Cloudflare (ochrana a zrychlení). Cloudflare vidí IP adresy návštěvníků a zpracovává je podle [svých zásad](https://www.cloudflare.com/privacypolicy/). Nevkládá do stránky žádné skripty ani cookies (ověřeno 25. 10. 2026).
+2. **Reverzní proxy** (Traefik v Coolify na našem serveru) předává požadavky aplikaci. Přístupové logy má vypnuté (ověřeno 25. 10. 2026).
+3. **Server aplikace** ([`server/index.mjs`](../server/index.mjs)) nevede žádný log požadavků, neukládá IP adresy a nemá žádnou databázi. Jediné, co zapisuje na disk, jsou denní součty z pingu (`stats.json`).
+
+Při stažení stránky se server a Cloudflare dozví i její adresu, například `/g/z5/matematika/zlomky` nebo `/hledat?q=zlomky`. To se stane, když stránku otevřeš z odkazu, přenačteš ji nebo když se poprvé stahuje učivo předmětu. Při klikání uvnitř už spuštěné aplikace se nic neposílá a po uložení učiva do zařízení funguje i úplně offline. Tyto adresy nikde neukládáme.
+
+## Odkazy s kódem
+
+Kód pokroku (`/#/p/…`), párovací kód (`/#/spojit/…`) a přenos ze staré domény (`/#/presun/…`) jsou vždy za znakem `#`. Část adresy za `#` (fragment) prohlížeč **nikdy neposílá na server**, takže je server ani Cloudflare nevidí.
+
+Pozor ale na jednu věc: když odkaz zkopíruješ nebo pošleš tlačítkem Sdílet přes WhatsApp, Messenger nebo e-mail, vidí ho celý ta služba, přes kterou ho posíláš. Kód **není šifrovaný**, jen zabalený (podrobně v [Propojení zařízení](PROPOJENI-ZARIZENI.md#je-kód-tajný)). Obsahuje ale jen učební pokrok, nic osobního.
+
+## Jak si to ověřit sám
+
+1. Otevři `sprtam.cz` na počítači a stiskni **F12** (vývojářské nástroje).
+2. Záložka **Network (Síť)**: uvidíš, že všechny požadavky jdou jen na `sprtam.cz`. Jednou denně uvidíš `ping` s obsahem `{"new":false}`.
+3. Záložka **Application → Local Storage**: uvidíš přesně klíče z tabulky výše.
+4. Záložka **Application → Cookies**: prázdno.
+
+Zdrojový kód je celý veřejný v tomto repozitáři. Produkční verze se staví přímo z něj ([`Dockerfile`](../Dockerfile)).
+
+## Nesledovat (Do Not Track, Global Privacy Control)
+
+Pokud prohlížeč žádá o nesledování, aplikace neposílá ani denní ping. Funguje to s nastavením **Do Not Track** (např. Chrome) i **Global Privacy Control** (např. Firefox, Brave). Safari ani jedno nepodporuje, tam ping vypneš jen blokátorem obsahu (viz [Statistiky](STATISTIKY.md#jak-ping-vypnout)). Kód: [`src/stats.ts`](../src/stats.ts).

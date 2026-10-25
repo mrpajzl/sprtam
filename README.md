@@ -2,39 +2,58 @@
 
 # Šprtám
 
-Opakování učiva základní a střední školy jako PWA. Bez účtů, bez reklam, bez ukládání dat na server.
+**Opakování učiva základní a střední školy. Zdarma, bez účtů, bez reklam a bez sledování.**
 
-- **Stupeň → třída → předmět → téma**, obsah podle RVP ZV a RVP G (`src/content/data/<třída>/<předmět>.ts`).
-- Každé téma má **dvě různá vysvětlení** („Nerozumím – vysvětli to jinak“) s interaktivními widgety.
-- Režimy: **Rychlý kvíz**, **Opakování** (chyby se vracejí, dokud to neumíš), **Písemka** (známka 1–5), **Zkoušení** (ústní otázky, sebehodnocení) a **Test** z celého předmětu.
-- **Anglická slovíčka** podle úrovně A1–C1: „Jak se řekne ‚pták‘?“ Nová slova se vybírají ze tří podobných (bird / bard / parrot), slova, která už žák umí (Leitnerova přihrádka ≥ 2), se píšou s nápovědou prvního písmene (překlep o jedno písmeno projde). Chybné slovo se ve stejném kole vrátí o tři karty později k napsání. Výslovnost se přehraje po odpovědi. Slova se opakují podle Leitnerova systému.
-- **Hledání v celé databázi** (`/` nebo lupa): všechna témata všech ročníků podle názvu, pojmů a hlavních pravidel, plus všechna anglická slovíčka. Bez diakritiky, s filtrem stupně. Index staví při buildu `plugins/topic-index.ts` (`virtual:topic-index`, `virtual:topic-text`), takže se nenačítají všechny předměty.
-- **Připnutá témata** (špendlík u tématu) a **Mix**: jedno kolo otázek ze všech připnutých témat.
-- **Na řadě**: doporučení podle toho, co si žák opakoval (`src/progress/recommend.ts`): opakování s rozestupy podle posledního výsledku (připnutá dřív), slabá témata, další téma v pořadí a základ z nižšího ročníku, na kterém slabé téma staví.
-- Vzhled ve stylu malého přístroje (inspirace Teenage Engineering): barevné klávesy předmětů s vlastními SVG glyfy (`src/ui/glyphs.tsx`), maskot Šprťa (`src/ui/Mascot.tsx`), displej se sérií dní.
-- Funguje **offline** (service worker má v cache celý obsah).
-- **Sdílitelné adresy**: každá obrazovka má vlastní cestu (`/g/z5/matematika/zlomky`, `/slovicka/A1`, `/hledat?q=zlomky`; History API, `src/router.tsx`, odkazy jsou skutečné `<a href>`). Build předrenderuje stránku pro každý ročník, předmět, téma a úroveň slovíček (`plugins/prerender.ts`: obsah, `<title>`, popis, canonical, Open Graph, JSON-LD) a vytvoří `sitemap.xml` a `robots.txt`. Staré odkazy `#/…` se přesměrují. Kód pokroku a párování zařízení zůstávají ve fragmentu (`#/p/…`, `#/spojit/…`).
+👉 **[sprtam.cz](https://sprtam.cz)**
 
-## Soukromí
+Šprtám vysvětlí každé téma dvěma různými způsoby, nechá tě ho procvičit v kvízu, písemce nebo ústním zkoušení a podle výsledků ti řekne, co zopakovat. Funguje v prohlížeči i jako aplikace na ploše, online i offline.
 
-- Pokrok je jen v `localStorage` zařízení.
-- **Kód pokroku**: kompaktní binární zápis (3 bajty na položku: 21bitový hash názvu + stav) s kontrolním součtem SHA-256, jako QR kód nebo odkaz `#/p/<kód>`. Kód je ve fragmentu URL, takže se nikdy neposílá na server.
-- **Propojení dvou zařízení (peer-to-peer)**: WebRTC DataChannel. Nabídku a odpověď si zařízení vymění naskenováním QR kódů (žádný signalizační server). Data jdou přímo mezi zařízeními, šifrovaně (DTLS). Veřejný STUN server (Google/Cloudflare) zařízení jen sdělí jeho veřejnou adresu, data nevidí. Pokrok obou zařízení se sloučí (lepší výsledek vyhrává).
-- **Statistiky**: jednou denně anonymní `POST /api/ping` s `{ "new": true|false }`, bez ID, cookies a IP. Server ukládá jen denní součty (`data/stats.json`). Vypnuto, pokud chybí `VITE_STATS_URL`; respektuje Do Not Track.
+- **13 ročníků:** 1.–9. třída ZŠ a 1.–4. ročník gymnázia, přes 800 témat a přes 10 000 otázek.
+- **Dvě vysvětlení ke každému tématu** a interaktivní pomůcky (číselná osa, zlomky, rovnice na vahách, hodiny…).
+- **Šest režimů:** Rychlý kvíz, Opakování, Písemka se známkou, Zkoušení nahlas, Test z předmětu a Mix.
+- **Anglická slovíčka A1–C1** s výslovností a opakováním podle Leitnerova systému.
+- **Doporučení „Na řadě“:** co zopakovat, co ti nejde a na jakém základu z nižšího ročníku to stojí.
+- **Hledání** ve všech ročnících a předmětech.
+
+Podrobně: **[Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md)**
+
+## Transparentnost
+
+Šprtám je postavený tak, aby o tobě nemusel nic vědět. A protože je zdrojový kód veřejný, nemusíš nám to věřit, můžeš si to ověřit.
+
+| | |
+|---|---|
+| 👤 **Účty** | Žádné. Nikde se nepřihlašuješ a nic o sobě nevyplňuješ. |
+| 💾 **Tvůj pokrok** | Jen ve tvém zařízení (`localStorage`). Na serveru není žádná databáze uživatelů. |
+| 🍪 **Cookies, reklamy, analytika** | Žádné. Žádný Google Analytics, žádné skripty třetích stran. |
+| 📊 **Statistiky** | Jednou denně zpráva `{"new":true}` nebo `{"new":false}`, bez ID. Server si pamatuje jen dvě čísla za den. → [Statistiky](docs/STATISTIKY.md) |
+| 📱 **Přenos mezi zařízeními** | Napřímo ze zařízení do zařízení přes QR kódy, šifrovaně, bez našeho serveru. → [Propojení zařízení](docs/PROPOJENI-ZARIZENI.md) |
+| 🔍 **Ověřitelnost** | Produkční verze se staví přímo z tohoto repozitáře. → [Architektura](docs/ARCHITEKTURA.md) |
+
+Úplný seznam toho, co se kde ukládá a kam se co posílá: **[Soukromí](docs/SOUKROMI.md)**
+
+## Dokumentace
+
+| Dokument | Pro koho | O čem |
+|---|---|---|
+| [Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md) | žáci, rodiče, učitelé | Učivo, režimy, známky, doporučení, slovíčka |
+| [Soukromí](docs/SOUKROMI.md) | všichni | Co aplikace ukládá, co posílá a komu, jak si to ověřit |
+| [Propojení zařízení](docs/PROPOJENI-ZARIZENI.md) | všichni | Přenos pokroku přes QR kódy a WebRTC, kód pokroku |
+| [Statistiky](docs/STATISTIKY.md) | všichni | Jak přesně funguje počítání uživatelů |
+| [Architektura](docs/ARCHITEKTURA.md) | vývojáři | Technologie, struktura kódu, server, nasazení, testy |
+| [Jak psát učivo](docs/CONTENT.md) | autoři obsahu | Pravidla a schéma pro témata a otázky |
+
+## Našli jste chybu?
+
+Ať už jde o chybu v učivu, nebo v aplikaci, založte prosím **[issue](https://github.com/mrpajzl/sprtam/issues/new)**. U chyby v učivu pomůže odkaz na téma, znění otázky a jak by to mělo být správně.
 
 ## Vývoj
 
 ```sh
 npm install
 npm run dev              # http://localhost:5173
-npm run check:content    # validace obsahu (schéma, odpovědi, počty otázek)
-npm run build            # typy + produkční build do dist/
+npm run check:content    # kontrola učiva (schéma, odpovědi, počty otázek)
+npm run build            # kontrola typů + produkční build do dist/
 ```
 
-Pravidla pro psaní obsahu: [docs/CONTENT.md](docs/CONTENT.md).
-
-Pomocné skripty pro vývoj (potřebují běžící dev server na :5179 a Playwright Chromium): `scripts/shots.mjs` (snímky obrazovek), `scripts/flow.mjs` (průchod kvízem), `scripts/p2p-test.mjs` (spojení dvou prohlížečů), `scripts/code-test.mjs` (kód pokroku), `scripts/routing-test.mjs` (adresy a navigace proti produkčnímu buildu), `scripts/vocab-test.mjs` (slovíčka), `scripts/widget-sheet.mjs` (přehled widgetů).
-
-## Nasazení
-
-`Dockerfile` sestaví aplikaci a spustí malý Node server (`server/index.mjs`): předrenderované stránky (neznámé cesty vrací 404, koncové `/` přesměruje 301; obrazovky bez vlastní stránky, např. kvíz nebo hledání, dostanou prázdný `app.html` s `noindex`), statické soubory + `/api/ping`, `/api/stats` (volitelně chráněné `STATS_TOKEN`) a `/healthz`. Data statistik ve volume `/data`.
+Struktura kódu, testy a nasazení: [Architektura](docs/ARCHITEKTURA.md). Pravidla pro učivo: [CONTENT.md](docs/CONTENT.md).
