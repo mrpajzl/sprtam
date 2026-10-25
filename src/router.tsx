@@ -27,11 +27,28 @@ interface State { i: number; y?: number }
 const state = (): State => (history.state as State | null) ?? { i: 0 }
 const NAV = 'sprtam:navigate'
 
+// The path of every in-app history entry (index = State.i), so `jump` can return to a screen
+// that is already behind us instead of stacking a new copy on top of it.
+const TRAIL = 'sprtam:trail'
+const here = () => location.pathname + location.search
+function trail(): string[] {
+  try { return JSON.parse(sessionStorage.getItem(TRAIL) ?? '[]') } catch { return [] }
+}
+function mark(cut = false) {
+  const { i } = state()
+  const t = cut ? trail().slice(0, i) : trail()
+  t[i] = here()
+  try { sessionStorage.setItem(TRAIL, JSON.stringify(t)) } catch { /* private mode: plain navigation */ }
+}
+// A fresh entry (no state yet) starts a new trail; a reload keeps it.
+mark(history.state === null)
+
 export function useRoute(): string[] {
   const [parts, setParts] = useState(read)
   useEffect(() => {
     const on = (e: Event) => {
       fromLegacyHash()
+      if (e.type !== NAV) mark()
       setParts(read())
       // Back/forward: return to where the user was once the screen has rendered.
       const y = e.type === 'popstate' ? state().y ?? 0 : 0
@@ -53,7 +70,20 @@ export function go(path: string, replace = false) {
     history.replaceState({ ...s, y: scrollY }, '')
     history.pushState({ i: s.i + 1 }, '', path)
   }
+  mark(!replace)
   dispatchEvent(new Event(NAV))
+}
+
+const pathOf = (p: string) => p.split(/[?#]/)[0].replace(/(.)\/$/, '$1')
+
+/** Go to a main screen: back through history when it is already behind us (like a native tab bar), otherwise forward. */
+export function jump(path: string) {
+  const want = pathOf(path)
+  if (pathOf(location.pathname) === want && !location.hash) return scrollTo({ top: 0, behavior: 'smooth' })
+  const { i } = state()
+  const t = trail()
+  for (let j = i - 1; j >= 0; j--) if (t[j] && pathOf(t[j]) === want) return history.go(j - i)
+  go(path)
 }
 
 /** Back within the app; a page opened directly from a link goes one level up instead of leaving the app. */
@@ -69,13 +99,14 @@ export const query = () => new URLSearchParams(location.search)
 export const setQuery = (qs: URLSearchParams) => history.replaceState(history.state, '', `${location.pathname}${qs.size ? `?${qs}` : ''}`)
 
 /** A real link (crawlable, opens in a new tab with ⌘/Ctrl), handled in-app on a plain click. */
-export function Link({ href, onClick, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
+export function Link({ href, onClick, jump: j, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string; jump?: boolean }) {
   return (
     <a href={href} {...rest} onClick={(e) => {
       onClick?.(e)
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
       e.preventDefault()
-      go(href)
+      if (j) jump(href)
+      else go(href)
     }} />
   )
 }

@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useState } from 'preact/hooks'
-import { SUBJECTS, type KeyColor } from '../content/curriculum'
+import { GRADE_NAME, SUBJECTS, type KeyColor } from '../content/curriculum'
 import { loadSubject, topicKey } from '../content'
 import { loadIndex, refFor } from '../content/library'
 import type { GradeId, SubjectId, Topic } from '../content/types'
 import { MODES, type ModeId } from '../quiz/engine'
 import { getProgress, isPinned, pinnedKeys, preferExplanation, togglePin, useProgress } from '../progress/store'
-import { back, go, Link, query } from '../router'
+import { back, Link, query } from '../router'
 import { titles, useTitle } from '../seo'
 import { Bar } from '../ui/Bar'
 import { keyStyle, subjectStyle } from '../ui/glyphs'
-import { IBolt, IBulb, IMic, IPencil, IPin, IRepeat } from '../ui/icons'
+import { IArrow, IBolt, IBulb, IMic, IPencil, IPin, IRepeat } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
 import { Blocks } from './Blocks'
 import { Quiz } from './Quiz'
@@ -32,10 +32,11 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
 
   const switchTo = (e: 0 | 1) => { setEx(e); preferExplanation(key, e); scrollTo({ top: 0, behavior: 'smooth' }) }
   const other = (1 - ex) as 0 | 1
+  const next = subj?.topics[subj.topics.indexOf(topic) + 1]
 
   return (
     <div class="page" style={subjectStyle(s)}>
-      <Bar title={`${topic.emoji} ${topic.title}`} onBack={() => go(`/g/${g}/${s}`)} right={<PinButton k={key} />} />
+      <Bar title={`${topic.emoji} ${topic.title}`} crumbs={[{ href: `/g/${g}`, label: GRADE_NAME[g] }, { href: `/g/${g}/${s}`, label: SUBJECTS[s].name }]} right={<PinButton k={key} />} />
       <div class="seg" role="tablist">
         {topic.ex.map((x, i) => <button key={i} role="tab" aria-selected={ex === i} class={ex === i ? 'on' : ''} onClick={() => switchTo(i as 0 | 1)}>{x.title}</button>)}
       </div>
@@ -51,6 +52,12 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
           )
         })}
       </div>
+      {next && (
+        <>
+          <h2 class="label next-label">Další téma</h2>
+          <Link class="row" href={`/g/${g}/${s}/${next.id}`}><span class="em">{next.emoji}</span><b>{next.title}</b><IArrow /></Link>
+        </>
+      )}
     </div>
   )
 }

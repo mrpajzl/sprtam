@@ -3,7 +3,7 @@ import { renderSVG } from 'uqr'
 import { decodeProgress, encodeProgress, shareUrl } from '../progress/code'
 import { codeFrom, Link } from '../progress/p2p'
 import { getProgress, importProgress, type Progress } from '../progress/store'
-import { go } from '../router'
+import { back, jump } from '../router'
 import { Bar } from '../ui/Bar'
 import { ICamera, ICopy, ILink, IQr, IShare } from '../ui/icons'
 import { Mascot } from '../ui/Mascot'
@@ -36,7 +36,7 @@ export function SyncScreen({ offer }: { offer?: string }) {
   const title = { menu: 'Přenést pokrok', code: 'Kód pokroku', load: 'Načíst kód', host: 'Propojit', join: 'Propojit', done: 'Hotovo' }[view]
   return (
     <div class="page">
-      <Bar title={title} onBack={() => (view === 'menu' || view === 'done' ? go('/') : setView('menu'))} />
+      <Bar title={title} onBack={() => (view === 'menu' ? back() : view === 'done' ? jump('/') : setView('menu'))} />
       {view === 'menu' && (
         <div class="list">
           <button class="row" onClick={() => setView('host')}><span class="skey m"><ILink /></span><b>Propojit dvě zařízení</b></button>
@@ -55,7 +55,7 @@ export function SyncScreen({ offer }: { offer?: string }) {
         <div class="stack" style={{ paddingTop: '40px' }}>
           <div class="ok-big"><Mascot mood="happy" size={110} /></div>
           <p class="center"><b>Pokrok je spojený.</b></p>
-          <button class="btn block" onClick={() => go('/')}>Hotovo</button>
+          <button class="btn block" onClick={() => jump('/')}>Hotovo</button>
         </div>
       )}
     </div>

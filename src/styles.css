@@ -144,6 +144,14 @@ mark { background: color-mix(in oklab, var(--k-yellow) 55%, transparent); color:
 /* Top bar */
 .bar { display: flex; align-items: center; gap: 6px; min-height: 58px; margin-bottom: 8px; position: sticky; top: 0; z-index: var(--z-bar); background: var(--bg); padding-top: env(safe-area-inset-top); margin-top: calc(-1 * env(safe-area-inset-top)); }
 .bar h1 { flex: 1; font-size: 1.1rem; font-weight: 850; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-title { flex: 1; min-width: 0; display: grid; justify-items: center; }
+.bar-title h1 { max-width: 100%; }
+/* Where am I: the path above the title, each step a link */
+.crumbs { display: flex; max-width: 100%; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--ink-3); white-space: nowrap; overflow: hidden; }
+.crumbs a { padding: 2px 3px; border-radius: 6px; overflow: hidden; text-overflow: ellipsis; flex: 0 1 auto; min-width: 0; }
+.crumbs a + a::before { content: '›'; margin: 0 6px 0 3px; opacity: 0.6; }
+.crumbs a:active { color: var(--ink); }
+@media (hover: hover) { .crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; } }
 .bar .spacer { width: 44px; flex: none; }
 .icon-btn { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; color: var(--ink-2); flex: none; transition: background 0.15s, color 0.15s, transform 0.1s; }
 .icon-btn:active { background: var(--line); transform: scale(0.94); }
@@ -309,6 +317,8 @@ th { font-family: var(--mono); font-weight: 700; color: var(--ink-2); font-size:
 .other svg { width: 22px; height: 22px; flex: none; color: var(--accent-ink); }
 
 .modes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 26px; }
+.next-label { margin-top: 30px; }
+.row > svg { width: 22px; height: 22px; flex: none; color: var(--ink-3); }
 .mode { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px; border-radius: var(--r); text-align: left; }
 .mode .skey svg { width: 24px; height: 24px; }
 .mode b { font-weight: 850; }
@@ -392,6 +402,29 @@ th { font-family: var(--mono); font-weight: 700; color: var(--ink-2); font-size:
 .dock { position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 18px calc(env(safe-area-inset-bottom) + 16px); background: linear-gradient(transparent, var(--bg) 30%); z-index: var(--z-dock); }
 .dock > * { max-width: 584px; margin: 0 auto; }
 .pad-dock { height: 100px; }
+
+/* ── Tab bar: home, class, search and vocabulary are one tap away from every screen ── */
+.tabbar {
+  position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 10px); transform: translateX(-50%); z-index: var(--z-dock);
+  width: min(calc(100% - 24px), 440px); display: flex; gap: 4px; padding: 6px; border-radius: 22px;
+  background: var(--card);
+  box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge), 0 12px 32px rgb(0 0 0 / 0.14);
+}
+.tabbar a {
+  flex: 1 1 0; min-width: 0; position: relative; display: grid; justify-items: center; gap: 3px; padding: 8px 4px 7px; border-radius: 16px;
+  color: var(--ink-3); font-family: var(--mono); font-size: 0.68rem; font-weight: 700;
+  transition: background 0.15s, color 0.15s, transform 0.09s var(--ease);
+}
+.tabbar a span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tabbar svg { width: 24px; height: 24px; }
+.tabbar .aa { font-size: 1.05rem; font-weight: 800; height: 24px; line-height: 24px; }
+.tabbar a:active { transform: scale(0.94); }
+.tabbar a[aria-current] { color: var(--ink); background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 2px 0 var(--key-edge); }
+/* the lit LED of the current screen */
+.tabbar a[aria-current]::after { content: ''; position: absolute; top: 6px; left: calc(50% + 15px); width: 6px; height: 6px; border-radius: 50%; background: var(--k-orange); box-shadow: 0 0 6px var(--k-orange); }
+@media (hover: hover) { .tabbar a:not([aria-current]):hover { color: var(--ink); background: color-mix(in oklab, var(--key) 60%, transparent); } }
+body:has(.tabbar) .page { padding-bottom: calc(env(safe-area-inset-bottom) + 112px); }
+body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 
 .oral { display: grid; gap: 16px; }
 .oral .ans { animation: in 0.25s var(--ease); }
