@@ -27,7 +27,7 @@ Ověření: `npm run check:content -- data/z6` (filtr podle cesty). Musí skonč
 - `emoji` – jedno výstižné emoji.
 - `ex` – **přesně dvě vysvětlení, každé jiným způsobem** (viz Výklad níže).
 - `qs` – **alespoň 10 otázek** (min. 8 je tvrdý limit validátoru), mix typů. **Alespoň 2 otázky `open`** (pro režim Zkoušení – ústní otázka a vzorová odpověď v 1–3 větách). Otázky od lehkých po těžší.
-- `gen` – jen u matematiky/fyziky, pokud se hodí některý generátor z `src/quiz/generators.ts` (`GENERATOR_NAMES`): add10, sub10, add20, sub20, add100, sub100, add1000, mul-table, div-table, written-mul, written-div, round, compare, frac-of, frac-add, frac-simplify, decimal, percent, integers, power, sqrt, linear-eq, pythagoras, perimeter-area, circle, units, ratio, expressions, quadratic, log.
+- `gen` – jen u matematiky/fyziky, pokud se hodí některý generátor z `src/quiz/generators.ts` (`GENERATOR_NAMES`): add10, sub10, add20, sub20, add100, sub100, add1000, mul-table, div-table, written-mul, written-div, round, compare, frac-of, frac-add, frac-simplify, decimal, percent, integers, power, sqrt, linear-eq, pythagoras, perimeter-area, circle, units, units-dec, volume, ratio, expressions, quadratic, log.
 
 ## Výklad – nejdůležitější pravidlo: OD ÚPLNÉ NULY
 
