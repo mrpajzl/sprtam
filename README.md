@@ -46,6 +46,7 @@ Podrobně: **[Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md)**
 | [Formát obsahu](docs/FORMAT.md) | autoři obsahu | Reference všech polí JSON souborů v `content/` (generovaná) |
 | [Přístupy k výuce](docs/PRISTUPY.md) | autoři obsahu, rodiče | Waldorfská škola: epochy, vlastní výklad a témata |
 | [Widgety](docs/WIDGETY.md) | autoři obsahu | Reference interaktivních pomůcek (generovaná), živě v [galerii](https://sprtam.cz/widgety) |
+| [Moderace](docs/MODERACE.md) | moderátoři, správci | Editor učiva s živým náhledem, přihlášení klíčem, schvalování přes pull requesty |
 
 ## Našli jste chybu?
 

@@ -1,0 +1,5 @@
+/* Preview frame only: mark the block being edited. */
+html { scroll-behavior: smooth; }
+.blocks > .mod-focus { outline: 2px dashed var(--k-orange); outline-offset: 6px; border-radius: 6px; animation: mod-flash 0.9s var(--ease); }
+@keyframes mod-flash { 0% { outline-color: transparent; } 30% { outline-color: var(--k-orange); } }
+.row { pointer-events: none; opacity: 0.5; }

@@ -71,6 +71,7 @@ plugins/
   prerender.ts          HTML stránka pro každé téma (sdílení, vyhledávače)
   topic-index.ts        lehký index všech témat pro hledání
 server/index.mjs        produkční server
+moderator/              moderace: editor učiva pro pozvané moderátory (docs/MODERACE.md)
 public/                 statické soubory, ikony, pomocné skripty
 scripts/                kontroly obsahu a testy v prohlížeči
 docs/                   tato dokumentace
@@ -138,6 +139,10 @@ Server nevede log požadavků, nenastavuje cookies a jediné, co zapisuje na dis
 
 Stará adresa `sprtam.ondrejzraly.cz` vede na stejný server. Prohlížeči pošle skript, který přenese pokrok na `sprtam.cz` ([Propojení zařízení](PROPOJENI-ZARIZENI.md#přechod-ze-staré-adresy)), a ostatním (vyhledávačům) trvalé přesměrování 301.
 
+## Moderace
+
+Učivo upravují pozvaní moderátoři v samostatné aplikaci [moderace.sprtam.cz](https://moderace.sprtam.cz) ([`moderator/`](../moderator), vlastní Dockerfile a kontejner). Přihlašuje se jen klíčem (passkey) a změny posílá jako pull requesty. Hlavní aplikace ani její server o moderaci nic neví. Podrobně: [Moderace](MODERACE.md).
+
 ## Nasazení
 
 Produkce běží v Dockeru na vlastním serveru spravovaném přes [Coolify](https://coolify.io), před ním je Cloudflare.
@@ -193,6 +198,7 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/routing-test.mjs` | adresy a navigace nad produkčním buildem |
 | `scripts/verify-prod.mjs` | že produkce ukazuje všechna témata |
 | `scripts/crawl.mjs` | otevře každé téma a hlásí chyby za běhu |
+| `scripts/moderator-test.mjs` | moderace: přihlášení klíčem, bezpečnostní pravidla, editor a náhled (spouští vlastní server, napřed `npm run moderator:build`) |
 | `scripts/shots.mjs` | snímky obrazovek (přehled widgetů je v aplikaci na `/widgety`) |
 
 Jak psát učivo: [CONTENT.md](CONTENT.md).

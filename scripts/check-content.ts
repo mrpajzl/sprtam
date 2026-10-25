@@ -10,11 +10,10 @@ import { APPROACHES, CONTENT, ROOT, TOPICS, VOCAB } from '../plugins/content'
 import { ALL_GRADES, GRADE_SUBJECTS } from '../src/content/curriculum'
 import { BLOCK_EXAMPLES, QUESTION_EXAMPLES } from '../src/content/examples'
 import { approachFile, approachYearFile, block, LEVELS, question, subjectFile, topicFile, vocabFile } from '../src/content/format'
+import { topicIssues } from '../src/content/rules'
 import { validate, type S } from '../src/content/schema'
-import type { ApproachFile, ApproachYearFile, Block, Question, SubjectFile, TopicFile, VocabFile } from '../src/content/types'
-import { GENERATOR_NAMES } from '../src/quiz/generators'
+import type { ApproachFile, ApproachYearFile, SubjectFile, TopicFile, VocabFile } from '../src/content/types'
 import { WIDGETS } from '../src/widgets'
-import type { WidgetRef } from '../src/widgets'
 import { generated } from './content-generate'
 
 const filter = process.argv[2] ?? ''
@@ -43,36 +42,7 @@ function load<T>(file: string, schema: S, schemaPath: string): T | null {
 /** Content rules also run on files with format errors (to report everything at once); a crash there only means the format is broken. */
 const rules = (where: string, f: () => void) => { const n = errors.length; try { f() } catch { if (errors.length === n) err(where, 'cannot check the rules until the format errors are fixed') } }
 
-// ——— Widgets ———
-
-function checkWidget(w: WidgetRef, where: string) {
-  const def = WIDGETS[w.widget]
-  if (!def) return // already reported by the format check
-  for (const m of def.check?.(w.props as never) ?? []) err(where, `widget ${w.widget}: ${m}`)
-}
-
 // ——— Topics ———
-
-function checkBlock(b: Block, where: string) {
-  if (b.type === 'table' && !b.rows.every((r) => r.length === b.head.length)) err(where, 'table row width differs from head')
-  if (b.type === 'widget') checkWidget(b, where)
-  if (b.type === 'example' && b.widget) checkWidget(b.widget, where)
-}
-
-function checkQuestion(q: Question, where: string) {
-  switch (q.type) {
-    case 'choice':
-      if (q.answer >= q.options.length) err(where, 'choice answer out of range')
-      if (new Set(q.options).size !== q.options.length) err(where, 'duplicate options')
-      break
-    case 'input':
-      if (q.widget) {
-        checkWidget(q.widget, where)
-        for (const m of WIDGETS[q.widget.widget]?.checkQuestion?.(q.widget.props as never, q.answers) ?? []) err(where, `widget ${q.widget.widget}: ${m}`)
-      }
-      break
-  }
-}
 
 // Teaching approaches are folders in content/approaches; their ids are also top-level URLs (/waldorf).
 const APPROACH_IDS = ls(APPROACHES).filter((f) => isDir(join(APPROACHES, f)))
@@ -81,30 +51,8 @@ const RESERVED = ['g', 'p', 'hledat', 'mix', 'sdilet', 'slovicka', 'spojit', 'pr
 const topicKeys = new Map<string, string | undefined>()
 
 function checkTopic(t: TopicFile, where: string) {
-  const general = t.explanations.filter((x) => !x.approach)
-  if (general.length !== 2) err(where, `needs exactly 2 explanations without "approach" (has ${general.length})`)
-  const seen = new Set<string>()
-  for (const x of t.explanations) if (x.approach) {
-    if (!APPROACH_IDS.includes(x.approach)) err(where, `unknown approach "${x.approach}" (content/approaches)`)
-    if (seen.has(x.approach)) err(where, `more than one explanation for approach "${x.approach}"`)
-    seen.add(x.approach)
-  }
-  if (t.approach && !APPROACH_IDS.includes(t.approach)) err(where, `unknown approach "${t.approach}" (content/approaches)`)
-  t.explanations.forEach((x, i) => {
-    const w = `${where} explanations[${i}]`
-    x.blocks.forEach((b, j) => checkBlock(b, `${w}.blocks[${j}]`))
-    // Depth: every explanation must stand on its own and start from zero (docs/CONTENT.md).
-    const has = (k: Block['type']) => x.blocks.some((b) => b.type === k)
-    if (x.blocks.length < 8) err(w, `too shallow (${x.blocks.length} blocks, need ≥ 8)`)
-    if (x.blocks[0]?.type !== 'heading' || x.blocks[1]?.type !== 'text') err(w, 'must start with a heading ("O čem to je") and a text')
-    if (!has('term')) err(w, 'no term block – new terms must be explained')
-    if (!has('summary')) err(w, 'no summary')
-    if (!has('example') && !has('steps') && !has('widget')) err(w, 'needs an example, steps or a widget')
-  })
-  if (!t.explanations.some((x) => x.blocks.some((b) => b.type === 'mistake'))) err(where, 'needs a mistake block')
-  if (t.generator && !GENERATOR_NAMES.includes(t.generator)) err(where, `unknown generator ${t.generator} (src/quiz/generators.ts)`)
-  if (!t.questions.some((q) => q.type === 'open')) err(where, 'needs ≥ 1 open question')
-  t.questions.forEach((q, i) => { questions++; checkQuestion(q, `${where} questions[${i}]`) })
+  for (const i of topicIssues(t, APPROACH_IDS)) err(i.path ? `${where} ${i.path}` : where, i.message)
+  questions += t.questions.length
 }
 
 for (const g of ls(TOPICS)) {
