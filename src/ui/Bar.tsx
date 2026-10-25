@@ -1,6 +1,7 @@
 import type { ComponentChildren } from 'preact'
 import { back, Link } from '../router'
 import { IBack, IStar } from './icons'
+import { QrButton } from './QrShare'
 
 /** A step up the path to the current screen. */
 export interface Crumb { href: string; label: string }
@@ -9,11 +10,13 @@ export function Bar({ title, crumbs, onBack = back, right }: { title?: string; c
   return (
     <header class="bar">
       <button class="icon-btn" onClick={onBack} aria-label="Zpět"><IBack /></button>
+      {right && <span class="spacer balance" />}
       <div class="bar-title">
         {crumbs?.length ? <nav class="crumbs" aria-label="Kde jsem">{crumbs.map((c) => <Link key={c.href} href={c.href} jump>{c.label}</Link>)}</nav> : null}
         <h1>{title}</h1>
       </div>
-      {right ?? <span class="spacer" />}
+      {right}
+      <QrButton />
     </header>
   )
 }

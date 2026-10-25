@@ -20,6 +20,7 @@ export const ICamera = P('M4 8h3l2-3h6l2 3h3v12H4zM12 17a4 4 0 1 0 0-8 4 4 0 0 0
 export const IQr = P('M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2v2h-2zM18 14h2M14 18h2M18 18h2v2h-2z')
 export const ILink = P('M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1')
 export const ICopy = P('M9 9h11v11H9zM5 15H4V4h11v1')
+export const IDownload = P('M12 3v12M7 10l5 5 5-5M5 20h14')
 export const IShare = P('M12 3v12M7 8l5-5 5 5M5 14v6h14v-6')
 export const IPlay = P('M7 4l13 8-13 8z')
 export const ISun = P('M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4')

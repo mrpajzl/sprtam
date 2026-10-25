@@ -6,6 +6,7 @@ import { recordTopic, stars } from '../progress/store'
 import { back } from '../router'
 import { BigStars } from '../ui/Bar'
 import { IClose, ICheck, IX } from '../ui/icons'
+import { QrButton } from '../ui/QrShare'
 import { Mascot } from '../ui/Mascot'
 import { Inline } from '../ui/Inline'
 
@@ -78,6 +79,7 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
         <button class="icon-btn" onClick={back} aria-label="Ukončit"><IClose /></button>
         <Progress queue={queue} answers={answers} i={i} instant={m.instant} />
         {mode === 'test' ? <Timer since={start} /> : <span class="timer">{i + 1}/{queue.length}</span>}
+        <QrButton />
       </div>
       {mode === 'zkouseni' ? <Oral q={item.q} onAnswer={(ok) => { setAnswers([...answers, { item, ok }]); next() }} />
         : <QuestionView q={item.q} reveal={m.instant} strict={strictFor(item.topic)} onAnswer={onAnswer} />}

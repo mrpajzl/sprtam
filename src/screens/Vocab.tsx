@@ -7,6 +7,7 @@ import { back, go, Link } from '../router'
 import { Bar, BigStars, Meter } from '../ui/Bar'
 import { keyStyle } from '../ui/glyphs'
 import { IClose, IShuffle } from '../ui/icons'
+import { QrButton } from '../ui/QrShare'
 import { useAsync } from '../ui/useAsync'
 
 const load = loadLevel
@@ -138,6 +139,7 @@ export function VocabDrill({ level, group }: { level: Level; group: string }) {
         <button class="icon-btn" onClick={back} aria-label="Ukončit"><IClose /></button>
         <div class="steps-meter">{queue.map((_, k) => <i key={k} class={k < i ? (marks[k] ? 'ok' : 'bad') : k === i ? 'now' : ''} />)}</div>
         <span class="timer">{i + 1}/{queue.length}</span>
+        <QrButton />
       </div>
       {c && <WordCard key={`${round}-${i}`} c={c} onDone={(ok) => {
         if (!c.again) {

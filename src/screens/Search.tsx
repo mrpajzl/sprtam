@@ -6,6 +6,7 @@ import { back, go, Link, query, setQuery } from '../router'
 import { Stars } from '../ui/Bar'
 import { SubjectKey, subjectStyle } from '../ui/glyphs'
 import { IBack, IClose, ISearch } from '../ui/icons'
+import { QrButton } from '../ui/QrShare'
 import { useAsync } from '../ui/useAsync'
 import { loadWordRefs, type WordRef } from '../vocab'
 import { topicPath } from './Home'
@@ -53,6 +54,7 @@ export function Search() {
             onKeyDown={(e) => { if (e.key === 'Enter' && hits[0]) go(topicPath(hits[0].ref)); if (e.key === 'Escape') q ? setQ('') : back() }} />
           {q && <button class="clear" onClick={() => { setQ(''); input.current?.focus() }} aria-label="Smazat"><IClose /></button>}
         </label>
+        <QrButton />
       </div>
 
       <div class="chips scope" role="radiogroup" aria-label="Kde hledat">
