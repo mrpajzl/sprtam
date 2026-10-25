@@ -94,6 +94,7 @@ Přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního
 - **Offline**: po první návštěvě má aplikace v zařízení celé učivo všech ročníků a funguje i bez internetu.
 - **Instalace**: v prohlížeči jde aplikace „přidat na plochu“ a pak se chová jako běžná aplikace.
 - **Sdílitelné adresy**: každé téma má vlastní odkaz, např. [`sprtam.cz/g/z5/matematika/zlomky`](https://sprtam.cz/g/z5/matematika/zlomky). Učitel ho může poslat žákům.
+- **QR kód stránky**: tlačítko vpravo nahoře na každé obrazovce ukáže QR kód právě otevřené stránky v rukou maskota Šprti. Učitel ho může promítnout ve třídě, nebo si ho uložit jako obrázek (PNG) a vytisknout. Kód se vytváří v zařízení a obsahuje jen adresu stránky (nikdy kód pokroku).
 - **Přenos pokroku** mezi zařízeními bez účtu: viz [Propojení zařízení](PROPOJENI-ZARIZENI.md).
 
 ## Našli jste chybu v učivu?

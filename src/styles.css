@@ -153,6 +153,8 @@ mark { background: color-mix(in oklab, var(--k-yellow) 55%, transparent); color:
 .crumbs a:active { color: var(--ink); }
 @media (hover: hover) { .crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; } }
 .bar .spacer { width: 44px; flex: none; }
+/* Keeps the title centred when there are two buttons on the right; narrow phones need the room for the title. */
+@media (max-width: 419px) { .bar .spacer.balance { display: none; } }
 .icon-btn { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; color: var(--ink-2); flex: none; transition: background 0.15s, color 0.15s, transform 0.1s; }
 .icon-btn:active { background: var(--line); transform: scale(0.94); }
 .icon-btn svg { width: 24px; height: 24px; }
@@ -161,6 +163,7 @@ mark { background: color-mix(in oklab, var(--k-yellow) 55%, transparent); color:
 @keyframes pin-in { 0% { transform: translateY(-6px) rotate(-18deg); } 100% { transform: none; } }
 
 /* Home */
+.bar .brand { flex: none; }
 .brand { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; }
 .search-key {
   width: 100%; display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 14px 0 16px;
@@ -475,6 +478,21 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 /* Sync */
 .qr { background: #fff; padding: 14px; border-radius: var(--r); width: min(100%, 320px); margin: 0 auto; box-shadow: inset 0 0 0 1px var(--line); }
 .qr svg { display: block; width: 100%; height: auto; }
+/* Page QR code: Šprťa holding the code on his screen */
+.qr-sheet { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; color: var(--ink); overflow: auto; overscroll-behavior: contain; }
+.qr-sheet::backdrop { background: color-mix(in oklab, var(--bg) 78%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); animation: fade 0.2s ease; }
+.qr-sheet[open] .qr-body { animation: qr-up 0.42s var(--ease); }
+.qr-body { position: relative; min-height: 100%; display: grid; place-content: center; justify-items: center; gap: 22px; padding: calc(env(safe-area-inset-top) + 64px) 20px calc(env(safe-area-inset-bottom) + 28px); }
+.qr-x { position: fixed; top: calc(env(safe-area-inset-top) + 8px); right: 10px; background: var(--key); box-shadow: inset 0 0 0 1px var(--line); }
+.qr-card { width: min(78vw, 320px, calc((100dvh - 230px) * 0.75)); min-width: 220px; filter: drop-shadow(0 14px 22px rgb(20 21 24 / 0.22)); }
+.qr-card svg { display: block; width: 100%; height: auto; }
+.qr-card g.qr-limb { fill: var(--ink); }
+.qr-card path.qr-limb { stroke: var(--ink); }
+.qr-card .qr-tip { animation: glow 1.6s ease-in-out 0.4s 2; }
+.qr-actions { display: flex; gap: 10px; width: min(100%, 340px); }
+.qr-actions .btn { flex: 1; padding: 0 16px; }
+@keyframes qr-up { from { opacity: 0; transform: translateY(28px) scale(0.96); } }
+@keyframes fade { from { opacity: 0; } }
 .codebox { width: 100%; min-height: 80px; border-radius: var(--r-s); border: 2px solid var(--line); background: var(--card); padding: 12px; font: 600 0.8rem var(--mono); word-break: break-all; resize: none; }
 .video { width: min(100%, 360px); aspect-ratio: 1; border-radius: var(--r); overflow: hidden; background: #000; margin: 0 auto; }
 .video video { width: 100%; height: 100%; object-fit: cover; }

@@ -8,6 +8,7 @@ import { Stars } from '../ui/Bar'
 import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
 import { IArrow, IMoon, IPin, ISearch, IShuffle, ISun, ISync } from '../ui/icons'
 import { Mascot } from '../ui/Mascot'
+import { QrButton } from '../ui/QrShare'
 
 const STAGE_LABEL = { zs1: 'ZŠ · 1. stupeň', zs2: 'ZŠ · 2. stupeň', ss: 'SŠ · ročník' }
 
@@ -28,6 +29,7 @@ export function Home() {
         <span class="grow" />
         <button class="icon-btn" onClick={toggleTheme} aria-label={dark ? 'Světlý režim' : 'Tmavý režim'} aria-pressed={dark}>{dark ? <ISun /> : <IMoon />}</button>
         <button class="icon-btn" onClick={() => go('/sdilet')} aria-label="Přenést pokrok"><ISync /></button>
+        <QrButton />
       </header>
 
       <Link class="search-key" href="/hledat">
