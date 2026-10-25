@@ -1,0 +1,376 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "delka",
+  "title": "Měření délky",
+  "emoji": "📏",
+  "generator": "units",
+  "explanations": [
+    {
+      "title": "Pravítkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vejde se skříň do pokoje? Je ti tričko krátké? Jak daleko je to do školy? Na všechno potřebuješ znát **délku**."
+        },
+        {
+          "type": "text",
+          "text": "Kdysi lidé měřili na lokty a stopy. Jenže každý má jinak dlouhou ruku. Proto se dohodli na stejné míře pro celý svět."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Veličina",
+          "definition": "Vlastnost, kterou jde **změřit** a vyjádřit číslem.",
+          "example": "Délka, hmotnost, čas, teplota jsou veličiny. Barva není – tu číslem nezměříš."
+        },
+        {
+          "type": "term",
+          "term": "Jednotka",
+          "definition": "Domluvená „míra“, se kterou porovnáváme. Měřit znamená zjistit, kolikrát se jednotka vejde do měřené věci.",
+          "example": "Lavice je dlouhá 120 cm = centimetr se do ní vejde 120krát."
+        },
+        {
+          "type": "term",
+          "term": "Délka a metr",
+          "definition": "**Délka** říká, jak je něco dlouhé nebo jak daleko. Značí se `l`. Hlavní jednotka je **metr** (m).",
+          "example": "Dveře jsou vysoké asi 2 m."
+        },
+        {
+          "type": "term",
+          "term": "Stupnice",
+          "definition": "Řada čárek s čísly na pravítku nebo metru. Z ní čteme výsledek.",
+          "example": "Na pravítku jsou dlouhé čárky po centimetrech a krátké po milimetrech."
+        },
+        {
+          "type": "heading",
+          "text": "Jak správně měřit"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vyber měřidlo: na sešit pravítko, na chodbu svinovací pásmo.",
+            "Přilož **nulu** stupnice přesně k začátku předmětu (ne okraj pravítka!).",
+            "Podívej se na stupnici **kolmo shora**, ne ze strany.",
+            "Odečti číslo u konce předmětu.",
+            "Zapiš **číslo i jednotku**, např. 7 cm."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Chyba z paralaxy",
+          "definition": "Chyba, která vznikne, když se na stupnici díváš šikmo. Konec předmětu se ti pak „posune“ na jinou čárku.",
+          "example": "Sedíš u řidiče na místě spolujezdce a tachometr ti ukazuje jinou rychlost než jemu."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Osa je jako pravítko. Skok začíná na nule a končí na konci „předmětu“. Kolik centimetrů je předmět dlouhý?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "start": 0,
+            "hop": 7
+          }
+        },
+        {
+          "type": "example",
+          "question": "Gumu jsi přiložil začátkem k čárce 2 cm a konec je u čárky 6 cm. Jak je dlouhá?",
+          "answer": "Nezačínal jsi od nuly, takže odečtu: 6 − 2 = **4 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Tři spolužáci změřili lavici: 120 cm, 121 cm, 122 cm. Jaký výsledek zapíšeš?",
+          "answer": "Spočítám **průměr**: sečtu a vydělím počtem měření. (120 + 121 + 122) : 3 = 363 : 3 = **121 cm**. Průměr je přesnější než jedno měření."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Přiložím okraj pravítka k začátku předmětu.",
+          "right": "Přiložím čárku s nulou.",
+          "why": "U mnoha pravítek je před nulou ještě kousek plastu. Měření od okraje pak vyjde špatně."
+        },
+        {
+          "type": "summary",
+          "text": "Délka (l) se měří v metrech. Měř od nuly, dívej se kolmo, zapiš číslo i jednotku. Víc měření → spočítej průměr."
+        }
+      ]
+    },
+    {
+      "title": "Jednotky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mravenec je dlouhý pár milimetrů, cesta do Prahy má stovky kilometrů. Kdybychom všechno měřili jen v metrech, vycházela by nepraktická čísla."
+        },
+        {
+          "type": "text",
+          "text": "Proto máme větší a menší jednotky délky. Musíš umět mezi nimi **převádět** – třeba když nákupní seznam říká metry a pravítko centimetry."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Délka",
+          "definition": "Jak je něco dlouhé, široké, vysoké nebo daleko. Značka `l`.",
+          "example": "Délka sešitu je asi 30 cm."
+        },
+        {
+          "type": "term",
+          "term": "Metr (m)",
+          "definition": "Hlavní jednotka délky. Je to zhruba velký krok dospělého.",
+          "example": "Výška dveří je asi 2 m."
+        },
+        {
+          "type": "term",
+          "term": "Předpony",
+          "definition": "Začátky slov, které mění velikost jednotky. **kilo-** = tisíckrát víc, **deci-** = desetina, **centi-** = setina, **mili-** = tisícina.",
+          "example": "kilometr = 1 000 m, centimetr = setina metru."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jednotka",
+            "Značka",
+            "V metrech",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "kilometr",
+              "km",
+              "1 000 m",
+              "cesta do školy"
+            ],
+            [
+              "metr",
+              "m",
+              "1 m",
+              "velký krok"
+            ],
+            [
+              "decimetr",
+              "dm",
+              "0,1 m",
+              "šířka dlaně"
+            ],
+            [
+              "centimetr",
+              "cm",
+              "0,01 m",
+              "šířka nehtu"
+            ],
+            [
+              "milimetr",
+              "mm",
+              "0,001 m",
+              "tloušťka mince"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak převádět"
+        },
+        {
+          "type": "text",
+          "text": "Mezi m, dm, cm a mm je vždy krok **10**. Mezi km a m je krok **1 000**."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti, jestli jdeš na **menší** jednotku (např. m → cm), nebo **větší** (cm → m).",
+            "Na menší jednotku → číslo bude **větší** → **násobíš**.",
+            "Na větší jednotku → číslo bude **menší** → **dělíš**.",
+            "Kolikrát? Spočítej kroky: m → cm jsou 2 kroky po 10, tedy · 100."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Převeď 2,5 m na cm.",
+          "answer": "Jdu na menší jednotku → násobím. 1 m = 100 cm, takže 2,5 · 100 = **250 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Převeď 85 cm na m.",
+          "answer": "Jdu na větší jednotku → dělím. 85 : 100 = **0,85 m**."
+        },
+        {
+          "type": "example",
+          "question": "Převeď 2,4 km na m.",
+          "answer": "1 km = 1 000 m → násobím: 2,4 · 1 000 = **2 400 m**."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "1 km",
+                "back": "1 000 m"
+              },
+              {
+                "front": "1 m",
+                "back": "10 dm = 100 cm = 1 000 mm"
+              },
+              {
+                "front": "1 dm",
+                "back": "10 cm"
+              },
+              {
+                "front": "1 cm",
+                "back": "10 mm"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a zkus si říct odpověď dřív, než je otočíš."
+        },
+        {
+          "type": "mistake",
+          "wrong": "2,5 m = 25 cm",
+          "right": "2,5 m = 250 cm",
+          "why": "Z metrů na centimetry jsou dva kroky po 10, tedy násobíš 100, ne 10."
+        },
+        {
+          "type": "summary",
+          "text": "1 km = 1 000 m; 1 m = 10 dm = 100 cm = 1 000 mm. Na menší jednotku násob, na větší děl."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je hlavní jednotka délky?",
+      "options": [
+        "metr",
+        "centimetr",
+        "kilometr",
+        "litr"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik cm je 3 m?",
+      "answers": [
+        "300"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik mm je 4,5 cm?",
+      "answers": [
+        "45"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik m je 2,4 km?",
+      "answers": [
+        "2400"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik m je 85 cm?",
+      "answers": [
+        "0,85"
+      ],
+      "explanation": "85 : 100 = 0,85"
+    },
+    {
+      "type": "truefalse",
+      "question": "1 dm = 10 cm.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejkratší délky.",
+      "items": [
+        "8 mm",
+        "2 cm",
+        "1 dm",
+        "50 cm",
+        "1 m"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Čím nejlépe změříš délku školní chodby?",
+      "options": [
+        "svinovacím pásmem",
+        "pravítkem",
+        "posuvným měřítkem",
+        "teploměrem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj stejné délky.",
+      "pairs": [
+        [
+          "1 km",
+          "1 000 m"
+        ],
+        [
+          "1 m",
+          "100 cm"
+        ],
+        [
+          "1 cm",
+          "10 mm"
+        ],
+        [
+          "1 dm",
+          "10 cm"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč se při čtení stupnice díváme kolmo?",
+      "options": [
+        "abychom neodečetli špatnou hodnotu",
+        "aby se pravítko nehýbalo",
+        "kvůli světlu"
+      ],
+      "answer": 0,
+      "explanation": "Šikmý pohled posune hodnotu – chyba z paralaxy."
+    },
+    {
+      "type": "open",
+      "question": "Jak správně změříš délku sešitu?",
+      "answer": "Přiložím nulu pravítka k jednomu okraji, dívám se kolmo na stupnici a odečtu hodnotu u druhého okraje. Zapíšu číslo s jednotkou, např. 29,7 cm."
+    },
+    {
+      "type": "open",
+      "question": "Proč měříme vícekrát a počítáme průměr?",
+      "answer": "Každé měření má malou chybu. Průměr z více měření je přesnější než jedno měření."
+    }
+  ]
+}

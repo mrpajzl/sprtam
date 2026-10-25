@@ -1,0 +1,398 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "funkce-vlastnosti",
+  "title": "Funkce a její vlastnosti",
+  "emoji": "📈",
+  "explanations": [
+    {
+      "title": "Jako automat",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Automat na nápoje: vhodíš číslo tlačítka a vypadne **přesně jedna** věc. Stiskneš 12, dostaneš vodu. Stiskneš 12 znovu – zase vodu, ne jednou vodu a jednou colu."
+        },
+        {
+          "type": "text",
+          "text": "Funkce je takový matematický automat: vložíš číslo, dostaneš číslo. Funkcemi popisujeme, jak jedna veličina závisí na druhé – cena na počtu kusů, dráha na čase, teplota na hodině dne."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Funkce",
+          "definition": "Pravidlo, které každému povolenému vstupu x přiřadí **právě jeden** výstup y. Zapisujeme y = f(x) – „f z x“.",
+          "example": "f(x) = 2x² − 3. Pro x = −2: f(−2) = 2 · 4 − 3 = 5."
+        },
+        {
+          "type": "term",
+          "term": "Definiční obor D(f)",
+          "definition": "Všechna x, která smíš do automatu vložit – pro která má předpis smysl.",
+          "example": "U f(x) = 1/(x − 1) nesmíš dát x = 1 (dělil bys nulou). D(f) = ℝ ∖ {1}, tedy všechna reálná čísla kromě 1."
+        },
+        {
+          "type": "term",
+          "term": "Obor hodnot H(f)",
+          "definition": "Všechna y, která z automatu mohou vypadnout.",
+          "example": "f(x) = x² + 1: x² je vždy aspoň 0, takže výsledek je aspoň 1. H(f) = ⟨1; ∞)."
+        },
+        {
+          "type": "term",
+          "term": "Graf",
+          "definition": "Obrázek funkce: pro každé x nakreslíš bod [x; f(x)] do souřadnic (vodorovná osa x, svislá osa y)."
+        },
+        {
+          "type": "heading",
+          "text": "Co automat nesnese"
+        },
+        {
+          "type": "text",
+          "text": "Při hledání D(f) hlídej dvě zakázané věci: **dělení nulou** a **sudou odmocninu ze záporného čísla**."
+        },
+        {
+          "type": "example",
+          "question": "Urči D(f) pro f(x) = √(x + 2).",
+          "answer": "Pod odmocninou nesmí být záporné číslo: x + 2 ≥ 0, tedy x ≥ −2. D(f) = **⟨−2; ∞)**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se automat chová"
+        },
+        {
+          "type": "term",
+          "term": "Rostoucí / klesající",
+          "definition": "Rostoucí: větší vstup → větší výstup (graf jde zleva doprava nahoru). Klesající: větší vstup → menší výstup.",
+          "example": "y = x² na ⟨0; ∞) roste, na (−∞; 0⟩ klesá – na celém ℝ tedy rostoucí není."
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej si to na přímce: když je k kladné, graf stoupá (rostoucí). Posuň k do záporu – graf klesá."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 1,
+            "q": 0
+          }
+        },
+        {
+          "type": "term",
+          "term": "Sudá funkce",
+          "definition": "Pro x a −x dává stejný výsledek: f(−x) = f(x). Graf je zrcadlově souměrný podle osy y.",
+          "example": "x²: (−3)² = 3² = 9."
+        },
+        {
+          "type": "term",
+          "term": "Lichá funkce",
+          "definition": "Pro −x dává opačný výsledek: f(−x) = −f(x). Graf je souměrný podle počátku [0; 0] (otočení o 180°).",
+          "example": "x³: (−2)³ = −8 = −(2³)."
+        },
+        {
+          "type": "term",
+          "term": "Prostá funkce",
+          "definition": "Různé vstupy dávají vždy různé výstupy. Žádná vodorovná přímka neprotne graf víckrát než jednou.",
+          "example": "x³ je prostá. x² prostá není: 2 i −2 dají 4."
+        },
+        {
+          "type": "term",
+          "term": "Omezená funkce",
+          "definition": "Shora omezená: existuje číslo h, nad které hodnoty nikdy nevyskočí (f(x) ≤ h). Zdola omezená: hodnoty nikdy neklesnou pod nějaké d.",
+          "example": "x² + 1 je zdola omezená číslem 1."
+        },
+        {
+          "type": "heading",
+          "text": "Automat pozpátku"
+        },
+        {
+          "type": "term",
+          "term": "Inverzní funkce f⁻¹",
+          "definition": "Automat, který dělá opak: z výstupu vrátí původní vstup. Existuje jen u prosté funkce (jinak by nevěděl, kterou z více možností vrátit).",
+          "example": "f(x) = 3x − 6 (krát 3, minus 6). Opak: plus 6, děleno 3 → f⁻¹(y) = (y + 6)/3."
+        },
+        {
+          "type": "example",
+          "question": "f(x) = 3x − 6. Kolik je f⁻¹(0)?",
+          "answer": "Hledám x, pro které 3x − 6 = 0. To je x = 2. Nebo dosadím: (0 + 6)/3 = **2**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "f⁻¹(x) = 1/f(x)",
+          "right": "f⁻¹ je funkce „pozpátku“, ne převrácená hodnota.",
+          "why": "Mínus jednička tady neznamená mocninu. Pro f(x) = 3x − 6 je f⁻¹(x) = (x + 6)/3, ne 1/(3x − 6)."
+        },
+        {
+          "type": "summary",
+          "text": "Funkce = každému x právě jedno y. D(f) = co smím vložit, H(f) = co může vyjít. Sudá f(−x) = f(x), lichá f(−x) = −f(x). Inverzní funkce existuje jen k prosté."
+        }
+      ]
+    },
+    {
+      "title": "Podle grafu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Graf teploty během dne, graf ceny akcie, křivka rychlosti auta. Z obrázku hned poznáš, kdy teplota stoupala, kdy byla nejvyšší a jestli se dvakrát opakovala stejná hodnota."
+        },
+        {
+          "type": "text",
+          "text": "Všechny vlastnosti funkcí jdou **přečíst z grafu**. Naučíš se, co kde hledat – a jak to pak ověřit výpočtem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Souřadnicový systém",
+          "definition": "Vodorovná osa x a svislá osa y, protnuté v počátku [0; 0]. Bod [2; 5] leží 2 doprava a 5 nahoru."
+        },
+        {
+          "type": "term",
+          "term": "Funkce a její graf",
+          "definition": "Funkce f přiřazuje každému x z definičního oboru právě jedno číslo f(x). Graf jsou všechny body [x; f(x)]. Proto každá svislá přímka protne graf **nejvýš jednou**.",
+          "example": "Kružnice není graf funkce – svislá přímka ji protne dvakrát."
+        },
+        {
+          "type": "heading",
+          "text": "Co čteš na osách"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vlastnost",
+            "Kde ji uvidíš na grafu"
+          ],
+          "rows": [
+            [
+              "D(f) – definiční obor",
+              "stín grafu na ose x (kam až graf sahá doleva a doprava)"
+            ],
+            [
+              "H(f) – obor hodnot",
+              "stín grafu na ose y (jak nízko a jak vysoko sahá)"
+            ],
+            [
+              "rostoucí",
+              "zleva doprava jde graf nahoru"
+            ],
+            [
+              "klesající",
+              "zleva doprava jde graf dolů"
+            ],
+            [
+              "shora / zdola omezená",
+              "graf se vejde pod / nad nějakou vodorovnou čáru"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči H(f) pro f(x) = x² + 1.",
+          "answer": "Graf je parabola y = x² posunutá o 1 nahoru. Nejníž je v bodě [0; 1], jinak jde nahoru donekonečna. Stín na ose y: **⟨1; ∞)**."
+        },
+        {
+          "type": "heading",
+          "text": "Souměrnost: sudá a lichá"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Dosaď do předpisu −x místo x.",
+            "Vyšlo přesně f(x)? Funkce je **sudá** – graf souměrný podle osy y.",
+            "Vyšlo −f(x)? Funkce je **lichá** – graf souměrný podle počátku.",
+            "Ani jedno? Funkce není sudá ani lichá."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rozhodni o x³, x² a x + 1.",
+          "answer": "(−x)³ = −x³ → **lichá**. (−x)² = x² → **sudá**. −x + 1 není ani x + 1, ani −(x + 1) = −x − 1 → **ani sudá, ani lichá**."
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej na parabole: s b = 0 je graf souměrný podle osy y (sudá funkce). Jakmile nastavíš b ≠ 0, souměrnost se posune pryč z osy y."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": 0,
+            "c": -2
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Prostá funkce a inverze"
+        },
+        {
+          "type": "term",
+          "term": "Prostá funkce",
+          "definition": "x₁ ≠ x₂ ⇒ f(x₁) ≠ f(x₂). Test: žádná **vodorovná** přímka neprotne graf dvakrát.",
+          "example": "Rostoucí funkce je vždy prostá."
+        },
+        {
+          "type": "term",
+          "term": "Inverzní funkce f⁻¹",
+          "definition": "Funkce, která vrací vstup z výstupu. Její graf dostaneš **překlopením grafu f podle přímky y = x**; D a H se přitom prohodí."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš y = f(x).",
+            "Vyjádři z rovnice x.",
+            "Prohoď písmena x a y."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Najdi inverzní funkci k f(x) = 3x − 6 a spočítej f⁻¹(0).",
+          "answer": "y = 3x − 6 → x = (y + 6)/3 → f⁻¹(x) = (x + 6)/3. f⁻¹(0) = 6/3 = **2**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "f(x) = x² je rostoucí, protože jde nahoru.",
+          "right": "Na ℝ rostoucí není: na (−∞; 0⟩ klesá, na ⟨0; ∞) roste.",
+          "why": "Rostoucí musí být na celém zkoumaném intervalu. Graf čti vždy zleva doprava – levá větev paraboly jde dolů."
+        },
+        {
+          "type": "summary",
+          "text": "D(f) = stín grafu na ose x, H(f) = stín na ose y. Sudá = zrcadlo podle osy y, lichá = souměrnost podle počátku. Inverzní graf = překlopení podle y = x, jen u prosté funkce."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "f(x) = 2x² − 3. f(−2) =",
+      "answers": [
+        "5"
+      ],
+      "explanation": "2 · 4 − 3"
+    },
+    {
+      "type": "choice",
+      "question": "D(f) pro f(x) = 1/(x − 1):",
+      "options": [
+        "ℝ ∖ {1}",
+        "ℝ",
+        "(1; ∞)",
+        "ℝ ∖ {0}"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "D(f) pro f(x) = √(x + 2):",
+      "options": [
+        "⟨−2; ∞)",
+        "(−2; ∞)",
+        "⟨2; ∞)",
+        "ℝ"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "f(x) = x² je sudá.",
+      "answer": true,
+      "explanation": "(−x)² = x²"
+    },
+    {
+      "type": "truefalse",
+      "question": "f(x) = x³ je prostá.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Která funkce je lichá?",
+      "options": [
+        "x³",
+        "x²",
+        "x + 1",
+        "|x|"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "H(f) pro f(x) = x² + 1:",
+      "options": [
+        "⟨1; ∞)",
+        "ℝ",
+        "⟨0; ∞)",
+        "(1; ∞)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "f(x) = x² je rostoucí na celém ℝ.",
+      "answer": false,
+      "explanation": "Na (−∞; 0⟩ klesá."
+    },
+    {
+      "type": "input",
+      "question": "f(x) = 3x − 6. f⁻¹(0) =",
+      "answers": [
+        "2"
+      ],
+      "explanation": "f⁻¹(y) = (y + 6)/3"
+    },
+    {
+      "type": "choice",
+      "question": "Graf sudé funkce je souměrný podle:",
+      "options": [
+        "osy y",
+        "osy x",
+        "počátku",
+        "přímky y = x"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj vlastnost s podmínkou.",
+      "pairs": [
+        [
+          "sudá",
+          "f(−x) = f(x)"
+        ],
+        [
+          "lichá",
+          "f(−x) = −f(x)"
+        ],
+        [
+          "prostá",
+          "x₁ ≠ x₂ ⇒ f(x₁) ≠ f(x₂)"
+        ],
+        [
+          "shora omezená",
+          "f(x) ≤ h pro všechna x"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co je funkce? Uveď definiční obor a obor hodnot.",
+      "answer": "Funkce je předpis, který každému x z definičního oboru D(f) přiřadí právě jedno reálné číslo y. Obor hodnot H(f) je množina všech takto získaných y."
+    },
+    {
+      "type": "open",
+      "question": "Kdy existuje inverzní funkce a jak souvisí její graf s grafem původní funkce?",
+      "answer": "Inverzní funkce existuje jen k prosté funkci. Její graf je souměrný s grafem původní funkce podle přímky y = x; D a H se prohodí."
+    }
+  ]
+}

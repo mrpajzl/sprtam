@@ -1,0 +1,378 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "velka-a-mala-pismena",
+  "title": "Velká a malá písmena",
+  "emoji": "🔠",
+  "explanations": [
+    {
+      "title": "Máma a mládě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Velký pes a malé štěňátko jsou oba psi. Jen jeden je velký a druhý malý."
+        },
+        {
+          "type": "text",
+          "text": "S písmeny je to stejné. Každé písmeno má **velkou** a **malou** podobu. Musíš znát obě, jinak nepřečteš knížku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Písmeno",
+          "definition": "Připomenutí: značka pro hlásku.",
+          "example": "A, M, S"
+        },
+        {
+          "type": "term",
+          "term": "Velké písmeno",
+          "definition": "Větší podoba písmene. Píšeme ho třeba na začátek věty a jména.",
+          "example": "A, M, E – **E**ma"
+        },
+        {
+          "type": "term",
+          "term": "Malé písmeno",
+          "definition": "Menší podoba písmene. Je ho v textu nejvíc.",
+          "example": "a, m, e – E**ma**"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🐘",
+            "A",
+            "🐭",
+            "a"
+          ],
+          "caption": "velké A a malé a"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🐘",
+            "M",
+            "🐭",
+            "m"
+          ],
+          "caption": "velké M a malé m"
+        },
+        {
+          "type": "heading",
+          "text": "Čteme je stejně"
+        },
+        {
+          "type": "text",
+          "text": "Velké A i malé a řekneš stejně: „a“. Mění se jen tvar, ne zvuk."
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartu. Ukaž, jak vypadá malé písmeno k velkému."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "A",
+                "back": "a"
+              },
+              {
+                "front": "E",
+                "back": "e"
+              },
+              {
+                "front": "L",
+                "back": "l"
+              },
+              {
+                "front": "T",
+                "back": "t"
+              },
+              {
+                "front": "D",
+                "back": "d"
+              },
+              {
+                "front": "B",
+                "back": "b"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jak přečteš slovo MÁMA a slovo máma?",
+          "answer": "Úplně **stejně**: „máma“. Jedno je napsané velkými písmeny, druhé malými."
+        },
+        {
+          "type": "example",
+          "question": "Jak vypadá jméno Ema? Které písmeno je velké?",
+          "answer": "**E**ma. První písmeno je velké, protože je to jméno. Ostatní (m, a) jsou malá."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Malé písmeno k D je b.",
+          "right": "Malé písmeno k D je d.",
+          "why": "b a d vypadají podobně, jen jsou otočené. U malého **d** je bříško vlevo, u **b** vpravo – jako u velkého B."
+        },
+        {
+          "type": "summary",
+          "text": "Každé písmeno má velkou a malou podobu. Čteme je stejně. Pozor na b a d!"
+        }
+      ]
+    },
+    {
+      "title": "Podobné a jiné",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Některá malá písmena vypadají jako zmenšená velká. Jiná vypadají úplně jinak."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, která jsou jiná, rychleji je poznáš v knížce i na cedulích venku."
+        },
+        {
+          "type": "term",
+          "term": "Velké písmeno",
+          "definition": "Větší tvar písmene.",
+          "example": "O, S, A, B"
+        },
+        {
+          "type": "term",
+          "term": "Malé písmeno",
+          "definition": "Menší tvar téhož písmene. Zní stejně jako velké.",
+          "example": "o, s, a, b"
+        },
+        {
+          "type": "heading",
+          "text": "Skoro stejná"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "O o",
+            "S s",
+            "C c",
+            "V v",
+            "Z z"
+          ],
+          "caption": "malé je jen menší"
+        },
+        {
+          "type": "heading",
+          "text": "Úplně jiná"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "A a",
+            "B b",
+            "D d",
+            "E e"
+          ],
+          "caption": "malé má jiný tvar"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď dvojice. Vypadá malé písmeno jako zmenšené velké, nebo jinak?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "skoro stejné",
+              "úplně jiné"
+            ],
+            "items": [
+              {
+                "text": "O o",
+                "group": 0
+              },
+              {
+                "text": "S s",
+                "group": 0
+              },
+              {
+                "text": "C c",
+                "group": 0
+              },
+              {
+                "text": "Z z",
+                "group": 0
+              },
+              {
+                "text": "A a",
+                "group": 1
+              },
+              {
+                "text": "B b",
+                "group": 1
+              },
+              {
+                "text": "D d",
+                "group": 1
+              },
+              {
+                "text": "E e",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Najdi malé písmeno k velkému B: d, b, p?",
+          "answer": "Velké B má bříška vpravo. Malé **b** má taky bříško vpravo a nožičku nahoru. Je to **b**."
+        },
+        {
+          "type": "example",
+          "question": "Najdi malé písmeno k velkému E: e, a, c?",
+          "answer": "Malé e vypadá jinak než velké E. Je to kulaté písmenko s čárkou uvnitř: **e**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Velké písmeno se čte jinak než malé.",
+          "right": "Velké i malé písmeno čteme stejně.",
+          "why": "Mění se jen velikost a tvar. Zvuk zůstává: A i a je pořád „a“."
+        },
+        {
+          "type": "summary",
+          "text": "Velké i malé písmeno zní stejně. Některá malá vypadají jako zmenšená velká (O o), jiná úplně jinak (A a, E e)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "match",
+      "question": "Spoj velké a malé písmeno.",
+      "pairs": [
+        [
+          "A",
+          "a"
+        ],
+        [
+          "M",
+          "m"
+        ],
+        [
+          "L",
+          "l"
+        ],
+        [
+          "S",
+          "s"
+        ]
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj velké a malé písmeno.",
+      "pairs": [
+        [
+          "B",
+          "b"
+        ],
+        [
+          "D",
+          "d"
+        ],
+        [
+          "P",
+          "p"
+        ],
+        [
+          "E",
+          "e"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které je malé písmeno k D?",
+      "options": [
+        "b",
+        "d",
+        "p"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Které je velké písmeno k b?",
+      "options": [
+        "D",
+        "P",
+        "B"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "truefalse",
+      "question": "A a a čteme stejně.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Malé písmeno k T je l.",
+      "answer": false,
+      "explanation": "K T patří malé t."
+    },
+    {
+      "type": "input",
+      "question": "Napiš malé písmeno k velkému O.",
+      "answers": [
+        "o"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš malé písmeno k velkému S.",
+      "answers": [
+        "s"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsané celé velkými písmeny?",
+      "options": [
+        "MÁMA",
+        "máma",
+        "Máma"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Slož slovo LES velkými písmeny.",
+      "items": [
+        "L",
+        "E",
+        "S"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Která písmena si snadno spleteš? Proč?",
+      "answer": "Například b a d nebo p a b, protože vypadají podobně, jen jsou otočená."
+    },
+    {
+      "type": "open",
+      "question": "Řekni, jak vypadá velké a malé písmeno M.",
+      "answer": "Velké M má dvě špičky nahoře. Malé m má dva obloučky."
+    }
+  ]
+}

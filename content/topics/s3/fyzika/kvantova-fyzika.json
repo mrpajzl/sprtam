@@ -1,0 +1,390 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kvantova-fyzika",
+  "title": "Kvantová fyzika a atom",
+  "emoji": "💡",
+  "explanations": [
+    {
+      "title": "Fotoefekt",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolem roku 1900 fyzici mysleli, že rozumí skoro všemu. Pak narazili na pokusy, které nedávaly smysl: silné červené světlo nevyrazí z kovu ani jeden elektron, slabé ultrafialové ano. Vysvětlení změnilo pohled na svět – světlo přichází po kouscích."
+        },
+        {
+          "type": "text",
+          "text": "Na kvantové fyzice stojí solární panely, fotoaparát v mobilu, lasery, LED i všechna elektronika."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Foton",
+          "definition": "Nejmenší „balíček“ světla. Světlo přichází po fotonech, jako déšť po kapkách. Energie jednoho fotonu závisí jen na **frekvenci** (barvě): `E = h · f`.",
+          "example": "Fialový foton nese víc energie než červený."
+        },
+        {
+          "type": "term",
+          "term": "Planckova konstanta h",
+          "definition": "`h = 6,63 · 10⁻³⁴ J·s`. Nepatrné číslo – proto si „zrnitosti“ světla v běžném životě nevšimneme."
+        },
+        {
+          "type": "term",
+          "term": "Elektronvolt (eV)",
+          "definition": "Malá jednotka energie pro atomy: `1 eV = 1,6 · 10⁻¹⁹ J`."
+        },
+        {
+          "type": "term",
+          "term": "Fotoelektrický jev (fotoefekt)",
+          "definition": "Světlo vyráží elektrony z povrchu kovu."
+        },
+        {
+          "type": "term",
+          "term": "Výstupní práce W_v",
+          "definition": "Energie potřebná k vytržení elektronu z kovu. Pro zinek asi 4,3 eV."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus se zinkem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Svítíš na zinkovou desku červeným světlem – i velmi silným. Nic.",
+            "Svítíš ultrafialovou lampou – i slabou. Elektrony vyletují.",
+            "Zesílíš UV – vyletuje víc elektronů, ale nejsou rychlejší.",
+            "Použiješ UV s vyšší frekvencí – elektrony jsou rychlejší."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Vysvětlení (Einstein, 1905): jeden foton předá energii jednomu elektronu. Když má foton méně energie než je výstupní práce, elektron neuvolní – a nepomůže, že fotonů je hodně. Silnější světlo = víc fotonů = víc elektronů. Vyšší frekvence = energičtější foton = rychlejší elektron."
+        },
+        {
+          "type": "text",
+          "text": "Porovnej energii fotonů s výstupní prací zinku. Který foton elektron uvolní?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "eV",
+            "items": [
+              {
+                "label": "červený foton (700 nm)",
+                "value": 1.8
+              },
+              {
+                "label": "zelený (530 nm)",
+                "value": 2.3
+              },
+              {
+                "label": "fialový (400 nm)",
+                "value": 3.1
+              },
+              {
+                "label": "výstupní práce Zn",
+                "value": 4.3
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Žádný viditelný – na zinek musí ultrafialové. Energetická bilance: `h · f = W_v + E_k` (energie fotonu = výstupní práce + pohybová energie elektronu)."
+        },
+        {
+          "type": "example",
+          "question": "Foton s energií 5 eV dopadne na kov s výstupní prací 2 eV. Jakou nejvyšší kinetickou energii má elektron?",
+          "answer": "E_k = 5 − 2 = **3 eV**."
+        },
+        {
+          "type": "heading",
+          "text": "Atom má schody"
+        },
+        {
+          "type": "text",
+          "text": "Elektron v atomu nemůže mít libovolnou energii – jen určité hodnoty, **energetické hladiny**, jako schody. Když seskočí na nižší schod, vyzáří foton s energií přesně rovnou výšce schodu. Proto svítící plyn nedává duhu, ale jen několik barevných čar – **čárové spektrum**."
+        },
+        {
+          "type": "example",
+          "question": "Elektron ve vodíku seskočí z hladiny −3,4 eV na −13,6 eV. Jakou energii má vyzářený foton?",
+          "answer": "Rozdíl: −3,4 − (−13,6) = **10,2 eV** (ultrafialový foton)."
+        },
+        {
+          "type": "heading",
+          "text": "Vlna, nebo částice?"
+        },
+        {
+          "type": "text",
+          "text": "Světlo interferuje jako vlna, ale při fotoefektu se chová jako částice. A obráceně: elektrony, „zaručené částice“, při průchodu krystalem interferují jako vlny. Tomu se říká **dualismus vlna–částice**."
+        },
+        {
+          "type": "text",
+          "text": "Ve vzorcích: hladiny vodíku `E_n = −13,6 eV / n²` (n = 1, 2, 3…), vlnová délka částice s hybností p je `λ = h / p` (Louis de Broglie). Kvantum energie objevil Max Planck, model atomu s hladinami Niels Bohr."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když fotoefekt nenastává, stačí světlo zesílit.",
+          "right": "Je potřeba zvýšit frekvenci (posunout barvu k UV), ne intenzitu.",
+          "why": "Každý foton jedná sám za sebe. Tisíc slabých fotonů nemůže spojit síly a vyrazit jeden elektron."
+        },
+        {
+          "type": "summary",
+          "text": "Světlo přichází po fotonech s energií E = hf. Fotoefekt závisí na frekvenci, ne na intenzitě: hf = W_v + E_k. Atom má hladiny energie, přechody dávají čárové spektrum."
+        }
+      ]
+    },
+    {
+      "title": "Vztahy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Astronomové z čar ve spektru hvězdy poznají, z čeho je složená. Inženýři počítají, jaké světlo zachytí solární článek. Elektronový mikroskop vidí detaily, na které světelný nestačí. Vše stojí na několika kvantových vztazích."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kvantum a foton",
+          "definition": "Kvantum = nejmenší dávka energie. Max Planck (1900) zjistil, že těleso vyzařuje energii po dávkách `E = h · f`. Foton je kvantum světla."
+        },
+        {
+          "type": "term",
+          "term": "Planckova konstanta h",
+          "definition": "`h = 6,63 · 10⁻³⁴ J·s`."
+        },
+        {
+          "type": "term",
+          "term": "Výstupní práce W_v",
+          "definition": "Nejmenší energie potřebná k uvolnění elektronu z kovu (eV). Z ní plyne **mezní frekvence**: nižší frekvence fotoefekt nevyvolá."
+        },
+        {
+          "type": "term",
+          "term": "Hybnost p",
+          "definition": "Hmotnost krát rychlost. Mají ji i fotony a podle ní se určuje vlnová délka částic."
+        },
+        {
+          "type": "term",
+          "term": "Energetická hladina",
+          "definition": "Dovolená hodnota energie elektronu v atomu. Číslujeme je n = 1, 2, 3, … (n = 1 je nejnižší, základní stav)."
+        },
+        {
+          "type": "heading",
+          "text": "Vztahy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Co",
+            "Vztah"
+          ],
+          "rows": [
+            [
+              "energie fotonu",
+              "E = h · f = h · c / λ"
+            ],
+            [
+              "Einsteinova rovnice fotoefektu",
+              "h · f = W_v + E_k"
+            ],
+            [
+              "de Broglieho vlnová délka částice",
+              "λ = h / p"
+            ],
+            [
+              "hladiny atomu vodíku (Bohr)",
+              "E_n = −13,6 eV / n²"
+            ],
+            [
+              "foton při přechodu",
+              "h · f = E_vyšší − E_nižší"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Foton o frekvenci 5 · 10¹⁴ Hz – jakou má energii?",
+          "answer": "E = h · f = 6,63 · 10⁻³⁴ · 5 · 10¹⁴ = 33,15 · 10⁻²⁰ ≈ **3,3 · 10⁻¹⁹ J** (asi 2,1 eV)."
+        },
+        {
+          "type": "example",
+          "question": "Jaká je energie elektronu ve vodíku na hladině n = 2?",
+          "answer": "E₂ = −13,6 / 2² = −13,6 / 4 = **−3,4 eV**."
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje hladiny vodíku (v absolutní hodnotě). Výška schodu mezi n = 2 a n = 1 je 13,6 − 3,4 = 10,2 eV. Najdi i schod mezi n = 3 a n = 2."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "|E| v eV",
+            "items": [
+              {
+                "label": "n = 1",
+                "value": 13.6
+              },
+              {
+                "label": "n = 2",
+                "value": 3.4
+              },
+              {
+                "label": "n = 3",
+                "value": 1.51
+              },
+              {
+                "label": "n = 4",
+                "value": 0.85
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Elektron přejde z n = 2 na n = 1. Energie fotonu?",
+          "answer": "E = E₂ − E₁ = −3,4 − (−13,6) = **10,2 eV**."
+        },
+        {
+          "type": "heading",
+          "text": "Dualismus a neurčitost"
+        },
+        {
+          "type": "text",
+          "text": "Světlo i částice mají vlnové i částicové vlastnosti (**dualismus**). Louis de Broglie navrhl, že každá částice má vlnovou délku λ = h/p – elektrony proto interferují a ohýbají se. Werner Heisenberg ukázal (**relace neurčitosti**), že polohu a hybnost částice nelze současně určit libovolně přesně. Niels Bohr sestavil model atomu s hladinami."
+        },
+        {
+          "type": "mistake",
+          "wrong": "E_k = h · f (celá energie fotonu jde do pohybu elektronu).",
+          "right": "E_k = h · f − W_v.",
+          "why": "Část energie fotonu se spotřebuje na vytržení elektronu z kovu (výstupní práce). Zbytek je pohybová energie elektronu."
+        },
+        {
+          "type": "summary",
+          "text": "`E = hf`, `hf = W_v + E_k`, `λ = h/p`, vodík `E_n = −13,6 eV/n²`. Přechod mezi hladinami = foton s energií rozdílu hladin."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Foton 5 eV dopadne na kov s výstupní prací 2 eV. Maximální kinetická energie elektronu v eV =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Energie elektronu atomu vodíku na hladině n = 2 v eV (E₁ = −13,6 eV) =",
+      "answers": [
+        "-3,4",
+        "−3,4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Elektron ve vodíku přejde z n = 2 na n = 1. Energie vyzářeného fotonu v eV =",
+      "answers": [
+        "10,2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Foton o frekvenci 5 · 10¹⁴ Hz má energii x · 10⁻¹⁹ J (h = 6,63 · 10⁻³⁴ J·s). x na desetiny =",
+      "answers": [
+        "3,3"
+      ],
+      "explanation": "6,63 · 10⁻³⁴ · 5 · 10¹⁴ ≈ 3,3 · 10⁻¹⁹ J"
+    },
+    {
+      "type": "choice",
+      "question": "Na čem závisí, zda nastane fotoefekt?",
+      "options": [
+        "na frekvenci světla",
+        "na intenzitě světla",
+        "na době osvětlení",
+        "na teplotě kovu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Zvýšením intenzity světla nad mezní frekvencí roste počet emitovaných elektronů.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Elektrony mohou vykazovat interferenci a ohyb.",
+      "answer": true,
+      "explanation": "Vlnové vlastnosti částic – de Broglie."
+    },
+    {
+      "type": "choice",
+      "question": "Kdo vysvětlil fotoefekt pomocí fotonů?",
+      "options": [
+        "Albert Einstein",
+        "Max Planck",
+        "Niels Bohr",
+        "Ernest Rutherford"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj vědce s přínosem.",
+      "pairs": [
+        [
+          "Planck",
+          "kvantum energie"
+        ],
+        [
+          "Bohr",
+          "model atomu s hladinami"
+        ],
+        [
+          "de Broglie",
+          "vlnové vlastnosti částic"
+        ],
+        [
+          "Heisenberg",
+          "relace neurčitosti"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč plyny vyzařují čárové spektrum?",
+      "options": [
+        "elektrony přecházejí mezi diskrétními hladinami",
+        "atomy se srážejí",
+        "plyn je průhledný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli fotoelektrický jev a Einsteinovu rovnici.",
+      "answer": "Světlo uvolňuje elektrony z kovu jen nad mezní frekvencí. Foton předá energii hf jednomu elektronu: hf = W_v + E_k, kde W_v je výstupní práce."
+    },
+    {
+      "type": "open",
+      "question": "Co je dualismus vlna–částice?",
+      "answer": "Světlo i hmotné částice mají vlnové i částicové vlastnosti. Světlo interferuje i se chová jako fotony, elektrony mají vlnovou délku λ = h/p."
+    }
+  ]
+}

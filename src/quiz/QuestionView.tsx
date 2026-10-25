@@ -3,7 +3,7 @@ import type { Question } from '../content/types'
 import { Inline } from '../ui/Inline'
 import { IDown, IUp } from '../ui/icons'
 import { checkInput } from './engine'
-import { ColumnProblem } from '../widgets/column'
+import { WidgetQuestion } from '../widgets'
 
 const shuffle = <T,>(xs: T[]) => xs.map((x) => [Math.random(), x] as const).sort((a, b) => a[0] - b[0]).map((x) => x[1])
 
@@ -16,50 +16,50 @@ export function QuestionView({ q, reveal, strict = true, onAnswer }: { q: Questi
   const answer = (ok: boolean) => { if (done) return; setDone(true); onAnswer(ok) }
   return (
     <div>
-      <h2 class="question"><Inline text={q.q} /></h2>
-      {q.t === 'input' && q.col && <ColumnProblem {...q.col} />}
-      {q.t === 'choice' && <Choice q={q} done={done} reveal={reveal} answer={answer} />}
-      {q.t === 'tf' && <TrueFalse q={q} done={done} reveal={reveal} answer={answer} />}
-      {q.t === 'input' && <Input q={q} done={done} reveal={reveal} answer={answer} strict={strict} />}
-      {q.t === 'order' && <Order q={q} done={done} reveal={reveal} answer={answer} />}
-      {q.t === 'pair' && <Pair q={q} done={done} answer={answer} />}
+      <h2 class="question"><Inline text={q.question} /></h2>
+      {q.type === 'input' && q.widget && <WidgetQuestion w={q.widget} />}
+      {q.type === 'choice' && <Choice q={q} done={done} reveal={reveal} answer={answer} />}
+      {q.type === 'truefalse' && <TrueFalse q={q} done={done} reveal={reveal} answer={answer} />}
+      {q.type === 'input' && <Input q={q} done={done} reveal={reveal} answer={answer} strict={strict} />}
+      {q.type === 'order' && <Order q={q} done={done} reveal={reveal} answer={answer} />}
+      {q.type === 'match' && <Pair q={q} done={done} answer={answer} />}
     </div>
   )
 }
 
 type P<T> = { q: T; done: boolean; reveal: boolean; answer: (ok: boolean) => void }
 
-function Choice({ q, done, reveal, answer }: P<Extract<Question, { t: 'choice' }>>) {
-  const order = useMemo(() => shuffle(q.o.map((_, i) => i)), [q])
+function Choice({ q, done, reveal, answer }: P<Extract<Question, { type: 'choice' }>>) {
+  const order = useMemo(() => shuffle(q.options.map((_, i) => i)), [q])
   const [pick, setPick] = useState<number | null>(null)
   return (
     <div class="opts">
       {order.map((i) => {
-        const cls = !done ? '' : reveal ? (i === q.a ? 'ok' : i === pick ? 'bad' : '') : i === pick ? 'sel' : ''
-        return <button key={i} class={`opt ${cls}`} onClick={() => { if (done) return; setPick(i); answer(i === q.a) }}><Inline text={q.o[i]} /></button>
+        const cls = !done ? '' : reveal ? (i === q.answer ? 'ok' : i === pick ? 'bad' : '') : i === pick ? 'sel' : ''
+        return <button key={i} class={`opt ${cls}`} onClick={() => { if (done) return; setPick(i); answer(i === q.answer) }}><Inline text={q.options[i]} /></button>
       })}
     </div>
   )
 }
 
-function TrueFalse({ q, done, reveal, answer }: P<Extract<Question, { t: 'tf' }>>) {
+function TrueFalse({ q, done, reveal, answer }: P<Extract<Question, { type: 'truefalse' }>>) {
   const [pick, setPick] = useState<boolean | null>(null)
-  const cls = (v: boolean) => (!done ? '' : reveal ? (v === q.a ? 'ok' : v === pick ? 'bad' : '') : v === pick ? 'sel' : '')
+  const cls = (v: boolean) => (!done ? '' : reveal ? (v === q.answer ? 'ok' : v === pick ? 'bad' : '') : v === pick ? 'sel' : '')
   return (
     <div class="tf">
-      <button class={`opt ${cls(true)}`} onClick={() => { if (done) return; setPick(true); answer(q.a) }}>Pravda</button>
-      <button class={`opt ${cls(false)}`} onClick={() => { if (done) return; setPick(false); answer(!q.a) }}>Nepravda</button>
+      <button class={`opt ${cls(true)}`} onClick={() => { if (done) return; setPick(true); answer(q.answer) }}>Pravda</button>
+      <button class={`opt ${cls(false)}`} onClick={() => { if (done) return; setPick(false); answer(!q.answer) }}>Nepravda</button>
     </div>
   )
 }
 
-function Input({ q, done, reveal, answer, strict }: P<Extract<Question, { t: 'input' }>> & { strict: boolean }) {
+function Input({ q, done, reveal, answer, strict }: P<Extract<Question, { type: 'input' }>> & { strict: boolean }) {
   const [v, setV] = useState('')
   const [ok, setOk] = useState<boolean | null>(null)
   const ref = useRef<HTMLInputElement>(null)
   useEffect(() => { ref.current?.focus({ preventScroll: true }) }, [q])
-  const numeric = q.a.every((a) => /^[−-]?[\d\s]+([,.]\d+)?$/.test(a))
-  const submit = (e?: Event) => { e?.preventDefault(); if (done || !v.trim()) return; const r = checkInput(v, q.a, strict); setOk(r); answer(r) }
+  const numeric = q.answers.every((a) => /^[−-]?[\d\s]+([,.]\d+)?$/.test(a))
+  const submit = (e?: Event) => { e?.preventDefault(); if (done || !v.trim()) return; const r = checkInput(v, q.answers, strict); setOk(r); answer(r) }
   return (
     <form class="stack" onSubmit={submit}>
       <input ref={ref} class={`answer-input ${done && reveal ? (ok ? 'ok' : 'bad') : ''}`} value={v} onInput={(e) => setV(e.currentTarget.value)} disabled={done}
@@ -69,7 +69,7 @@ function Input({ q, done, reveal, answer, strict }: P<Extract<Question, { t: 'in
   )
 }
 
-function Order({ q, done, reveal, answer }: P<Extract<Question, { t: 'order' }>>) {
+function Order({ q, done, reveal, answer }: P<Extract<Question, { type: 'order' }>>) {
   const [list, setList] = useState(() => { let s = shuffle(q.items); while (s.length > 1 && s.every((x, i) => x === q.items[i])) s = shuffle(q.items); return s })
   const move = (i: number, d: number) => { const j = i + d; if (j < 0 || j >= list.length) return; const n = [...list]; [n[i], n[j]] = [n[j], n[i]]; setList(n) }
   return (
@@ -90,7 +90,7 @@ function Order({ q, done, reveal, answer }: P<Extract<Question, { t: 'order' }>>
   )
 }
 
-function Pair({ q, done, answer }: Omit<P<Extract<Question, { t: 'pair' }>>, 'reveal'>) {
+function Pair({ q, done, answer }: Omit<P<Extract<Question, { type: 'match' }>>, 'reveal'>) {
   const right = useMemo(() => shuffle(q.pairs.map((_, i) => i)), [q])
   const [l, setL] = useState<number | null>(null)
   const [matched, setMatched] = useState<Set<number>>(new Set())

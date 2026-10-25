@@ -1,0 +1,494 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "fyzikalni-veliciny",
+  "title": "Fyzikální veličiny a jednotky",
+  "emoji": "📏",
+  "generator": "units",
+  "explanations": [
+    {
+      "title": "Měříme svět",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když kamarád řekne „je to 5 daleko“, nevíš nic. Pět minut? Pět kilometrů? Pět kroků? Každé měření musí říct dvě věci: **kolik** a **čeho**."
+        },
+        {
+          "type": "text",
+          "text": "Fyzika popisuje svět čísly. Aby si rozuměli lidé na celém světě, dohodli se na stejných jednotkách. Díky tomu do sebe zapadnou součástky letadla vyrobené v pěti různých zemích."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Fyzikální veličina",
+          "definition": "Vlastnost věci nebo děje, kterou umíme změřit a vyjádřit číslem.",
+          "example": "Délka stolu, hmotnost jablka, čas běhu, teplota vody."
+        },
+        {
+          "type": "term",
+          "term": "Jednotka",
+          "definition": "Dohodnutý „kousek“ veličiny, se kterým porovnáváme. Měřit znamená zjistit, kolikrát se jednotka vejde do měřené věci.",
+          "example": "Stůl je dlouhý 2 m – metr se do jeho délky vejde dvakrát."
+        },
+        {
+          "type": "term",
+          "term": "Značka",
+          "definition": "Krátké písmeno pro veličinu nebo jednotku, aby se zápis nemusel vypisovat slovy.",
+          "example": "Délka má značku l a jednotku m (metr). Čas má značku t a jednotku s (sekunda)."
+        },
+        {
+          "type": "text",
+          "text": "Zápis `l = 2 m` čteme „délka je 2 metry“. Hodnota veličiny je vždy **číslo krát jednotka**. Samotné číslo 2 nic neříká."
+        },
+        {
+          "type": "heading",
+          "text": "Soustava SI"
+        },
+        {
+          "type": "term",
+          "term": "Soustava SI",
+          "definition": "Mezinárodní dohoda o jednotkách, kterou používá skoro celý svět. Má **7 základních jednotek**, ze kterých se skládají všechny ostatní.",
+          "example": "Metr, kilogram, sekunda, ampér, kelvin, mol, kandela."
+        },
+        {
+          "type": "text",
+          "text": "Na každé kartě je veličina. Nejdřív zkus říct její základní jednotku sám, pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "délka",
+                "back": "metr (m)"
+              },
+              {
+                "front": "hmotnost",
+                "back": "kilogram (kg)"
+              },
+              {
+                "front": "čas",
+                "back": "sekunda (s)"
+              },
+              {
+                "front": "elektrický proud",
+                "back": "ampér (A)"
+              },
+              {
+                "front": "termodynamická teplota",
+                "back": "kelvin (K)"
+              },
+              {
+                "front": "látkové množství",
+                "back": "mol (mol)"
+              },
+              {
+                "front": "svítivost",
+                "back": "kandela (cd)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Odvozená jednotka",
+          "definition": "Jednotka poskládaná ze základních jednotek násobením nebo dělením.",
+          "example": "Rychlost = dráha děleno čas, proto má jednotku m/s. Hustota = hmotnost děleno objem, proto kg/m³."
+        },
+        {
+          "type": "text",
+          "text": "Zápis se zápornou mocninou znamená „děleno“: `m·s⁻¹` je totéž co m/s, `kg·m⁻³` je totéž co kg/m³. Také **newton** (N), jednotka síly, je odvozený: `1 N = 1 kg·m·s⁻²`."
+        },
+        {
+          "type": "heading",
+          "text": "Předpony: velké a malé kusy"
+        },
+        {
+          "type": "text",
+          "text": "Místo 0,001 m říkáme 1 mm. **Předpona** před jednotkou říká, kolikrát je jednotka větší nebo menší."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Předpona",
+            "Značka",
+            "Krát",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "giga",
+              "G",
+              "10⁹ = 1 000 000 000",
+              "1 GB"
+            ],
+            [
+              "mega",
+              "M",
+              "10⁶ = 1 000 000",
+              "1 MW"
+            ],
+            [
+              "kilo",
+              "k",
+              "10³ = 1 000",
+              "1 km = 1 000 m"
+            ],
+            [
+              "centi",
+              "c",
+              "10⁻² = 0,01",
+              "1 cm = 0,01 m"
+            ],
+            [
+              "mili",
+              "m",
+              "10⁻³ = 0,001",
+              "1 mm = 0,001 m"
+            ],
+            [
+              "mikro",
+              "μ",
+              "10⁻⁶ = 0,000 001",
+              "1 μm"
+            ],
+            [
+              "nano",
+              "n",
+              "10⁻⁹",
+              "1 nm"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "`10³` znamená jednička a za ní 3 nuly. `10⁻³` znamená 1 děleno 1 000, tedy 0,001."
+        },
+        {
+          "type": "example",
+          "question": "Kolik kilogramů je 350 g?",
+          "answer": "Kilo = tisíc, takže 1 kg = 1 000 g. Z gramů na kilogramy tedy dělíme tisícem: 350 : 1 000 = **0,35 kg**."
+        },
+        {
+          "type": "example",
+          "question": "Auto jede 54 km/h. Kolik je to m/s?",
+          "answer": "1 km = 1 000 m a 1 h = 3 600 s. Takže 54 km/h = 54 · 1 000 m / 3 600 s = 54 000 / 3 600 = **15 m/s**. Zkratka: z km/h na m/s dělíme 3,6."
+        },
+        {
+          "type": "mistake",
+          "wrong": "15 m/s = 15 : 3,6 ≈ 4,2 km/h",
+          "right": "15 m/s = 15 · 3,6 = 54 km/h",
+          "why": "Kdo jede 1 m/s, ujede za hodinu (3 600 s) 3 600 m = 3,6 km. Číslo v km/h je tedy vždy větší – z m/s na km/h násobíme 3,6."
+        },
+        {
+          "type": "heading",
+          "text": "Záleží i na směru?"
+        },
+        {
+          "type": "term",
+          "term": "Skalár",
+          "definition": "Veličina, kterou úplně popíše číslo s jednotkou. Směr nemá.",
+          "example": "Hmotnost 5 kg, čas 10 s, teplota 20 °C, energie 100 J."
+        },
+        {
+          "type": "term",
+          "term": "Vektor",
+          "definition": "Veličina, u které je důležitá **velikost i směr**. Kreslíme ji šipkou: délka šipky = velikost, natočení = směr.",
+          "example": "Síla 10 N doprava, rychlost 50 km/h na sever, zrychlení."
+        },
+        {
+          "type": "text",
+          "text": "Dva psi táhnou sáňky: jeden silou 3 N na východ, druhý 4 N na sever. Výsledná síla není 7 N! Šipky jsou na sebe kolmé a výsledek je přepona pravoúhlého trojúhelníku. Pohni posuvníky a sleduj, jak se mění přepona."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 3,
+            "b": 4
+          }
+        },
+        {
+          "type": "example",
+          "question": "Síly 3 N a 4 N působí kolmo na sebe. Jak velká je výsledná síla?",
+          "answer": "Připomenutí: Pythagorova věta c² = a² + b². Tedy F² = 3² + 4² = 9 + 16 = 25, F = √25 = **5 N**."
+        },
+        {
+          "type": "summary",
+          "text": "Hodnota veličiny = číslo × jednotka. SI má 7 základních jednotek, ostatní jsou odvozené. Předpony násobí mocninami deseti. Vektor má velikost i směr, skalár jen velikost."
+        }
+      ]
+    },
+    {
+      "title": "Postup převodu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V receptu stojí 0,25 kg mouky, ale váha ukazuje gramy. Lék se dávkuje v mikrogramech, rychlost na dálnici v km/h, ve fyzice v m/s. Kdo neumí převádět jednotky, spočítá nesmysl – i když vzorec zná."
+        },
+        {
+          "type": "text",
+          "text": "Fyzici proto všechno nejdřív převedou do **základních jednotek**. Jednotky jim navíc slouží jako kontrola: když vyjde rychlost v kilogramech, je ve výpočtu chyba."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Veličina",
+          "definition": "Cokoli měřitelného: délka, čas, hmotnost, síla. Zapisujeme ji značkou (l, t, m, F).",
+          "example": "m = 3 kg čteme „hmotnost je 3 kilogramy“."
+        },
+        {
+          "type": "term",
+          "term": "Jednotka a soustava SI",
+          "definition": "Jednotka je dohodnutá míra. SI je světová dohoda se 7 základními jednotkami: m, kg, s, A, K, mol, cd.",
+          "example": "Délka v metrech, hmotnost v kilogramech, čas v sekundách."
+        },
+        {
+          "type": "term",
+          "term": "Odvozená jednotka",
+          "definition": "Vznikne ze základních násobením a dělením podle vzorce, kterým je veličina definovaná.",
+          "example": "Hustota ρ = m / V, proto kg/m³. Síla F = m · a, proto kg · m/s² = N (newton)."
+        },
+        {
+          "type": "term",
+          "term": "Mocnina deseti",
+          "definition": "Zkratka pro velká a malá čísla. 10³ = 1 000 (tři nuly), 10⁶ = milion. 10⁻³ = 0,001 (jednička na 3. místě za čárkou), 10⁻⁶ = 0,000 001.",
+          "example": "2,5 · 10⁻⁶ = 0,000 002 5"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Slovo před jednotkou, které ji násobí mocninou deseti: kilo 10³, mega 10⁶, giga 10⁹, mili 10⁻³, mikro (μ) 10⁻⁶, nano 10⁻⁹.",
+          "example": "3 km = 3 · 10³ m = 3 000 m"
+        },
+        {
+          "type": "heading",
+          "text": "Převod jednotky krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti, co předpona znamená (např. μ = 10⁻⁶).",
+            "Předponu nahraď tímto číslem: 2,5 μm = 2,5 · 10⁻⁶ m.",
+            "Vynásob. Záporná mocnina posouvá desetinnou čárku doleva, kladná doprava.",
+            "Zkontroluj selským rozumem: menší jednotka = větší číslo, větší jednotka = menší číslo."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik metrů je 2,5 μm? Zapiš desetinným číslem.",
+          "answer": "μ = 10⁻⁶. 2,5 μm = 2,5 · 10⁻⁶ m. Čárku posuneme o 6 míst doleva: **0,000 002 5 m**. Kontrola: mikrometr je malinký, číslo v metrech musí být malé. ✓"
+        },
+        {
+          "type": "heading",
+          "text": "Pozor na plochy a objemy"
+        },
+        {
+          "type": "text",
+          "text": "U čtverečních a krychlových jednotek se převodní číslo umocní. Představ si krychli o hraně 1 dm = 10 cm. Do jedné řady se vejde 10 kostiček o hraně 1 cm, do vrstvy 10 · 10 = 100, do celé krychle 10 · 10 · 10 = 1 000."
+        },
+        {
+          "type": "example",
+          "question": "Kolik cm³ je 1 dm³?",
+          "answer": "1 dm = 10 cm, takže 1 dm³ = 10 cm · 10 cm · 10 cm = **1 000 cm³**. (1 dm³ je přesně 1 litr.)"
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 dm³ = 10 cm³",
+          "right": "1 dm³ = 10³ cm³ = 1 000 cm³",
+          "why": "Převádí se každý ze tří rozměrů krychle zvlášť. U m² se převodní číslo umocní na druhou, u m³ na třetí."
+        },
+        {
+          "type": "heading",
+          "text": "Skalár, nebo vektor?"
+        },
+        {
+          "type": "term",
+          "term": "Skalár a vektor",
+          "definition": "**Skalár** stačí říct číslem a jednotkou (čas, hmotnost, teplota, práce, energie). **Vektor** potřebuje i směr (síla, rychlost, zrychlení, hybnost) – kreslíme ho šipkou.",
+          "example": "„Tlačím silou 20 N“ nestačí – musíš říct i kam."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď veličiny do dvou kbelíků. U každé se zeptej: má smysl říct „kterým směrem“?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "skalár",
+              "vektor"
+            ],
+            "items": [
+              {
+                "text": "hmotnost",
+                "group": 0
+              },
+              {
+                "text": "čas",
+                "group": 0
+              },
+              {
+                "text": "teplota",
+                "group": 0
+              },
+              {
+                "text": "práce",
+                "group": 0
+              },
+              {
+                "text": "síla",
+                "group": 1
+              },
+              {
+                "text": "rychlost",
+                "group": 1
+              },
+              {
+                "text": "zrychlení",
+                "group": 1
+              },
+              {
+                "text": "hybnost",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Vektory se nesčítají jako obyčejná čísla. Dvě kolmé síly 3 N a 4 N dají dohromady podle Pythagorovy věty `√(3² + 4²) = 5 N`, ne 7 N. Stejným směrem by daly 7 N, opačným 1 N."
+        },
+        {
+          "type": "summary",
+          "text": "Převod: předponu nahraď mocninou deseti a vynásob. U ploch a objemů převodní číslo umocni. Skaláry sčítáme jako čísla, vektory jako šipky."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která jednotka není základní jednotkou SI?",
+      "options": [
+        "newton",
+        "kelvin",
+        "ampér",
+        "mol"
+      ],
+      "answer": 0,
+      "explanation": "N = kg·m·s⁻² je odvozená."
+    },
+    {
+      "type": "input",
+      "question": "Kolik m/s je 108 km/h?",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik m je 2,5 μm? Zapiš jako desetinné číslo.",
+      "answers": [
+        "0,0000025"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik kg je 350 g?",
+      "answers": [
+        "0,35"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která veličina je vektorová?",
+      "options": [
+        "síla",
+        "hmotnost",
+        "čas",
+        "energie"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj předponu s násobkem.",
+      "pairs": [
+        [
+          "mega",
+          "10⁶"
+        ],
+        [
+          "mili",
+          "10⁻³"
+        ],
+        [
+          "mikro",
+          "10⁻⁶"
+        ],
+        [
+          "giga",
+          "10⁹"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik cm³ je 1 dm³?",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Jednotku newton lze vyjádřit jako kg·m·s⁻².",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka hustoty v SI?",
+      "options": [
+        "kg·m⁻³",
+        "g·cm⁻³",
+        "kg·m⁻²",
+        "N·m⁻³"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Dvě kolmé síly 3 N a 4 N. Velikost výslednice v N =",
+      "answers": [
+        "5"
+      ],
+      "explanation": "√(3² + 4²) = 5"
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi skalární a vektorovou veličinou? Uveď příklady.",
+      "answer": "Skalár je určen jen velikostí (hmotnost, čas, teplota). Vektor má velikost i směr (síla, rychlost, zrychlení)."
+    },
+    {
+      "type": "open",
+      "question": "Co jsou základní a odvozené jednotky SI?",
+      "answer": "Základních jednotek je 7 (m, kg, s, A, K, mol, cd). Odvozené vznikají jejich kombinací, např. N = kg·m·s⁻², J = N·m."
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "newtonovy-zakony-hybnost",
+  "title": "Newtonovy zákony a hybnost",
+  "emoji": "🎱",
+  "explanations": [
+    {
+      "title": "Kulečník a raketa",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč tě v autobuse při brzdění hodí dopředu? Proč plná nákupní taška jde hůř roztlačit než prázdná? Proč pistole „kopne“ dozadu? Odpovědi dávají tři zákony, které sepsal Isaac Newton před víc než 300 lety."
+        },
+        {
+          "type": "text",
+          "text": "Podle nich inženýři počítají brzdy aut, motory raket i bezpečnostní pásy."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla F",
+          "definition": "Působení, které může změnit pohyb tělesa (rozjet ho, zastavit, zatočit) nebo ho zdeformovat. Je to vektor. Jednotka **newton (N)**.",
+          "example": "Na 100g čokoládu působí Země silou asi 1 N."
+        },
+        {
+          "type": "term",
+          "term": "Výslednice sil",
+          "definition": "Jedna síla, která má stejný účinek jako všechny působící síly dohromady.",
+          "example": "Táhneš doprava 10 N, kamarád doleva 4 N → výslednice 6 N doprava."
+        },
+        {
+          "type": "term",
+          "term": "Setrvačnost",
+          "definition": "Vlastnost těles „chtít“ zůstat v tom, co dělají: stojící stát, jedoucí jet dál stejně.",
+          "example": "Při prudkém brzdění tvoje tělo jede dál – proto pásy."
+        },
+        {
+          "type": "heading",
+          "text": "Tři Newtonovy zákony"
+        },
+        {
+          "type": "text",
+          "text": "Otoč každou kartu a zkus si pro zákon vymyslet vlastní příklad z ulice nebo ze sportu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "1. zákon setrvačnosti",
+                "back": "Když je výslednice sil nulová, těleso zůstává v klidu nebo jede rovně stálou rychlostí."
+              },
+              {
+                "front": "2. zákon síly",
+                "back": "F = m · a – čím větší síla, tím větší zrychlení; čím větší hmotnost, tím menší."
+              },
+              {
+                "front": "3. zákon akce a reakce",
+                "back": "Když A tlačí na B, tlačí B na A stejně velkou silou opačným směrem."
+              },
+              {
+                "front": "hybnost",
+                "back": "p = m · v, jednotka kg·m/s"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Pozor u 3. zákona: akce a reakce působí **každá na jiné těleso**, proto se nevyruší. Ty tlačíš na zeď, zeď tlačí na tebe."
+        },
+        {
+          "type": "term",
+          "term": "Inerciální soustava",
+          "definition": "Místo, odkud pozorujeme, které samo nezrychluje ani se netočí. Jen v něm platí Newtonovy zákony v tomhle jednoduchém tvaru.",
+          "example": "Nádraží je (přibližně) inerciální. Brzdící autobus není – v něm se věci „samy“ rozjedou dopředu."
+        },
+        {
+          "type": "heading",
+          "text": "Hybnost"
+        },
+        {
+          "type": "term",
+          "term": "Hybnost p",
+          "definition": "Hmotnost krát rychlost: `p = m · v`. Říká, jak těžké je těleso zastavit. Je to vektor, míří ve směru pohybu.",
+          "example": "Kamion v 10 km/h zastavíš hůř než kolo v 10 km/h – má větší hybnost."
+        },
+        {
+          "type": "term",
+          "term": "Izolovaná soustava",
+          "definition": "Skupina těles, na kterou nepůsobí žádné vnější síly (nebo se vyruší). Tělesa na sebe působí jen navzájem.",
+          "example": "Dvě kulečníkové koule při srážce."
+        },
+        {
+          "type": "text",
+          "text": "Koule narazí čelně do stojící koule. První se zastaví, druhá odjede. Hybnost se předala – nic se neztratilo. **V izolované soustavě se celková hybnost nemění.**"
+        },
+        {
+          "type": "example",
+          "question": "Puška 4 kg vystřelí kulku 10 g rychlostí 400 m/s. Jak rychle puška couvne?",
+          "answer": "Před výstřelem stálo všechno: hybnost 0. Po výstřelu musí být součet také 0: hybnost kulky = hybnost pušky. 0,01 kg · 400 m/s = 4 kg·m/s = 4 kg · v → v = **1 m/s** dozadu."
+        },
+        {
+          "type": "example",
+          "question": "Vozík 2 kg jede 3 m/s, narazí do stojícího vozíku 1 kg a spojí se. Jak rychle jedou spolu?",
+          "answer": "Hybnost před: 2 · 3 = 6 kg·m/s. Po srážce je hmotnost 3 kg a hybnost stále 6: v = 6 : 3 = **2 m/s**."
+        },
+        {
+          "type": "term",
+          "term": "Tření",
+          "definition": "Síla, která brzdí klouzání po podložce. Je tím větší, čím víc těleso tlačí na podložku a čím drsnější jsou povrchy: `F_t = f · F_n` (f = součinitel tření, F_n = síla kolmo na podložku, na rovině m · g).",
+          "example": "Bedna 50 kg, f = 0,4: F_t = 0,4 · 500 = 200 N."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Akce a reakce se vyruší, takže se nic nepohne.",
+          "right": "Akce a reakce se nevyruší, protože působí na dvě různá tělesa.",
+          "why": "Rušit se mohou jen síly na stejné těleso. Kůň táhne vůz a vůz táhne koně – ale kůň se odráží i od země, proto se celé spřežení rozjede."
+        },
+        {
+          "type": "summary",
+          "text": "1. Bez výsledné síly se pohyb nemění. 2. F = m·a. 3. Akce a reakce jsou stejně velké, opačné, na různých tělesech. Hybnost p = m·v se v izolované soustavě zachovává."
+        }
+      ]
+    },
+    {
+      "title": "Výpočty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jakou sílu musí vyvinout motor auta, aby se rozjelo? Jak velké tření brzdí bednu na podlaze? Jakou silou tě tlačí podlaha výtahu? Na to všechno stačí několik vzorců – když víš, co znamenají."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla a newton",
+          "definition": "Síla mění pohyb tělesa. 1 N je síla, která tělesu o hmotnosti 1 kg udělí zrychlení 1 m/s².",
+          "example": "1 N = 1 kg·m/s²"
+        },
+        {
+          "type": "term",
+          "term": "Výsledná síla",
+          "definition": "Součet všech sil na těleso (jako šipek). Stejným směrem se sčítají, opačným odečítají.",
+          "example": "Motor 3 000 N dopředu, odpor 600 N dozadu → výsledná 2 400 N dopředu."
+        },
+        {
+          "type": "term",
+          "term": "Zrychlení a",
+          "definition": "O kolik se změní rychlost za sekundu (m/s²).",
+          "example": "a = 2 m/s²: každou sekundu +2 m/s."
+        },
+        {
+          "type": "term",
+          "term": "Tíhová síla",
+          "definition": "Síla, kterou Země přitahuje těleso: `F_G = m · g`, g ≈ 10 m/s².",
+          "example": "Člověk 70 kg: F_G = 70 · 10 = 700 N."
+        },
+        {
+          "type": "heading",
+          "text": "2. Newtonův zákon v praxi"
+        },
+        {
+          "type": "text",
+          "text": "`F = m · a`. Zrychlení vyvolává jen **výsledná** síla. Když je výsledná síla nulová, těleso stojí nebo jede rovnoměrně (1. zákon)."
+        },
+        {
+          "type": "example",
+          "question": "Auto o hmotnosti 1 200 kg zrychluje 2 m/s². Jak velká je výsledná síla?",
+          "answer": "F = m · a = 1 200 · 2 = **2 400 N**."
+        },
+        {
+          "type": "example",
+          "question": "Výtah stojí, v něm člověk 70 kg (g = 10 m/s²). Jakou silou na něj tlačí podlaha?",
+          "answer": "Člověk nezrychluje, výsledná síla je 0. Podlaha tedy tlačí nahoru stejně, jako tíha táhne dolů: **700 N**."
+        },
+        {
+          "type": "heading",
+          "text": "Tření"
+        },
+        {
+          "type": "term",
+          "term": "Tlaková (normálová) síla F_n",
+          "definition": "Síla, kterou těleso tlačí kolmo na podložku. Na vodorovné podlaze `F_n = m · g`.",
+          "example": "Bedna 50 kg: F_n = 500 N."
+        },
+        {
+          "type": "term",
+          "term": "Součinitel smykového tření f",
+          "definition": "Číslo bez jednotky, které říká, jak moc dva povrchy „drhnou“. Led na ledu asi 0,03, guma na asfaltu kolem 0,7."
+        },
+        {
+          "type": "text",
+          "text": "Třecí síla: `F_t = f · F_n`. Míří vždy proti pohybu."
+        },
+        {
+          "type": "example",
+          "question": "Bednu 50 kg táhneš po podlaze, f = 0,4, g = 10 m/s². Jak velká je třecí síla?",
+          "answer": "F_n = 50 · 10 = 500 N. F_t = 0,4 · 500 = **200 N**."
+        },
+        {
+          "type": "heading",
+          "text": "Setrvačnost a akce s reakcí"
+        },
+        {
+          "type": "term",
+          "term": "1. a 3. Newtonův zákon",
+          "definition": "**1. zákon (setrvačnosti):** bez výsledné síly těleso stojí, nebo jede rovně stálou rychlostí. Platí v **inerciální soustavě** – takové, která sama nezrychluje. **3. zákon (akce a reakce):** síly, kterými na sebe působí dvě tělesa, jsou stejně velké a opačné a působí každá na jiné těleso.",
+          "example": "Plavec odráží vodu dozadu, voda tlačí plavce dopředu."
+        },
+        {
+          "type": "heading",
+          "text": "Hybnost a srážky"
+        },
+        {
+          "type": "term",
+          "term": "Hybnost p",
+          "definition": "`p = m · v`, jednotka kg·m/s. Výsledná síla je změna hybnosti za čas: `F = Δp / Δt`.",
+          "example": "Airbag prodlouží dobu nárazu Δt, a tím zmenší sílu."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej hybnost všech těles před srážkou (směr doprava +, doleva −).",
+            "Sečti je.",
+            "Po srážce musí být součet stejný (zákon zachování hybnosti).",
+            "Z rovnice vyjádři neznámou rychlost."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej si to na vahách: vlevo je hybnost po srážce (spojené vozíky 6 kg krát neznámá rychlost x), vpravo hybnost před srážkou (4 kg · 3 m/s = 12). Udělej na obou stranách stejnou operaci a zjisti x."
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 6,
+            "b": 0,
+            "c": 12
+          }
+        },
+        {
+          "type": "example",
+          "question": "Vozík 4 kg jede 3 m/s, narazí do stojícího vozíku 2 kg a spojí se. Společná rychlost?",
+          "answer": "Před: 4 · 3 + 2 · 0 = 12 kg·m/s. Po: (4 + 2) · v = 12 → v = **2 m/s**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na stojící těleso nepůsobí žádné síly.",
+          "right": "Na stojící těleso mohou působit síly, jen jejich výslednice je nulová.",
+          "why": "Na knihu na stole působí tíha dolů a stůl nahoru. Obě síly jsou stejně velké, proto kniha stojí."
+        },
+        {
+          "type": "summary",
+          "text": "`F = m·a` (F je výsledná síla), `F_t = f·F_n`, `p = m·v`. Při srážce se celková hybnost nemění."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Auto 1 200 kg zrychluje 2 m/s². Výsledná síla v N =",
+      "answers": [
+        "2400"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Na těleso 5 kg působí výsledná síla 20 N. Zrychlení v m/s² =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Hybnost tělesa 2 kg pohybujícího se rychlostí 3 m/s v kg·m/s =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Vozík 4 kg jede 3 m/s a narazí do stojícího vozíku 2 kg, spojí se. Společná rychlost v m/s =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Bedna 50 kg je tažena po podlaze, f = 0,4, g = 10 m/s². Třecí síla v N =",
+      "answers": [
+        "200"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Síly akce a reakce působí na různá tělesa.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Ve které soustavě platí Newtonovy zákony v jednoduchém tvaru?",
+      "options": [
+        "inerciální",
+        "zrychlující",
+        "rotující",
+        "v každé"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Puška 4 kg vystřelí kulku 10 g rychlostí 400 m/s. Rychlost zpětného rázu pušky?",
+      "options": [
+        "1 m/s",
+        "4 m/s",
+        "0,1 m/s",
+        "10 m/s"
+      ],
+      "answer": 0,
+      "explanation": "0,01 · 400 = 4 · v → v = 1 m/s"
+    },
+    {
+      "type": "truefalse",
+      "question": "Výsledná síla je rovna změně hybnosti za jednotku času.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Výtah stojí. Na člověka 70 kg působí podlaha silou (g = 10 m/s²)…",
+      "options": [
+        "700 N",
+        "70 N",
+        "0 N",
+        "7 000 N"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj tři Newtonovy pohybové zákony.",
+      "answer": "1. Bez výslednice sil setrvává těleso v klidu nebo rovnoměrném přímočarém pohybu. 2. F = m·a. 3. Síly akce a reakce jsou stejně velké, opačné a působí na různá tělesa."
+    },
+    {
+      "type": "open",
+      "question": "Co je hybnost a kdy se zachovává?",
+      "answer": "Hybnost p = m·v je vektor ve směru rychlosti. Celková hybnost izolované soustavy (bez vnějších sil) se nemění."
+    }
+  ]
+}

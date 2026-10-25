@@ -1,0 +1,346 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "trigonometrie",
+  "title": "Trigonometrie",
+  "emoji": "🗻",
+  "explanations": [
+    {
+      "title": "Měříme svět",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jak vysoký je strom, když na jeho vrcholek nevylezeš? Postavíš se 20 m od něj a změříš, pod jakým úhlem se díváš na špičku. Zbytek dopočítáš. Přesně tak měřili zeměměřiči výšky hor."
+        },
+        {
+          "type": "text",
+          "text": "Trigonometrie spojuje **úhly a délky** v trojúhelníku. Bez ní by nebyla GPS, navigace lodí ani stavba střech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pravoúhlý trojúhelník",
+          "definition": "Trojúhelník s pravým úhlem (90°). Nejdelší strana naproti pravému úhlu je **přepona**, dvě kratší jsou **odvěsny**."
+        },
+        {
+          "type": "term",
+          "term": "Protilehlá a přilehlá odvěsna",
+          "definition": "Vzhledem k ostrému úhlu α: protilehlá odvěsna leží **naproti** α, přilehlá je **u** α (tvoří jeho rameno).",
+          "example": "U stromu: výška stromu je protilehlá k úhlu pohledu, vzdálenost od stromu přilehlá."
+        },
+        {
+          "type": "term",
+          "term": "sin, cos, tg ostrého úhlu",
+          "definition": "Poměry stran: **sin α = protilehlá / přepona**, **cos α = přilehlá / přepona**, **tg α = protilehlá / přilehlá**. Pro daný úhel jsou vždy stejné, ať je trojúhelník velký nebo malý.",
+          "example": "Trojúhelník 3, 4, 5: pro úhel naproti straně 3 je sin α = 3/5, cos α = 4/5, tg α = 3/4."
+        },
+        {
+          "type": "text",
+          "text": "Pomůcka: v trojúhelníku 3–4–5 nastav odvěsny a = 3, b = 4 a podívej se na přeponu. Pak zkus 6 a 8 – úhly zůstanou stejné, jen je trojúhelník dvakrát větší, a poměry stran se nezmění."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 3,
+            "b": 4
+          }
+        },
+        {
+          "type": "example",
+          "question": "Strom: stojíš 20 m od něj a na špičku se díváš pod úhlem 45°. Jak je vysoký (bez výšky očí)?",
+          "answer": "Hledám protilehlou (výšku v), znám přilehlou (20 m). tg 45° = v / 20. tg 45° = 1, takže **v = 20 m**."
+        },
+        {
+          "type": "example",
+          "question": "Žebřík dlouhý 5 m svírá se zemí úhel 60°. Jak daleko od zdi je jeho pata?",
+          "answer": "Žebřík je přepona, vzdálenost od zdi je přilehlá k úhlu u země. cos 60° = d / 5 → d = 5 · 1/2 = **2,5 m**."
+        },
+        {
+          "type": "heading",
+          "text": "Když trojúhelník není pravoúhlý"
+        },
+        {
+          "type": "text",
+          "text": "Obecný trojúhelník rozdělíš výškou na dva pravoúhlé. Z toho vzniknou dvě věty, které fungují pro každý trojúhelník (a, b, c jsou strany, α, β, γ úhly naproti nim)."
+        },
+        {
+          "type": "term",
+          "term": "Sinová věta",
+          "definition": "a / sin α = b / sin β = c / sin γ. Poměr strany a sinu úhlu naproti ní je v trojúhelníku všude stejný.",
+          "example": "Použij, když znáš dva úhly a stranu."
+        },
+        {
+          "type": "term",
+          "term": "Kosinová věta",
+          "definition": "c² = a² + b² − 2ab · cos γ. „Pythagorova věta s opravou“ pro úhel γ, který není pravý.",
+          "example": "Použij, když znáš dvě strany a úhel mezi nimi."
+        },
+        {
+          "type": "example",
+          "question": "a = 5, b = 8, γ = 60°. Jak dlouhá je c?",
+          "answer": "c² = 25 + 64 − 2 · 5 · 8 · cos 60° = 89 − 80 · 1/2 = 89 − 40 = 49 → **c = 7**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "sin α = přilehlá / přepona",
+          "right": "sin α = protilehlá / přepona, cos α = přilehlá / přepona",
+          "why": "Sinus patří ke straně **naproti** úhlu, kosinus ke straně, která k úhlu **přiléhá** (tvoří jeho rameno). Vždy si nakresli obrázek a úhel vyznač obloučkem – pak hned vidíš, která strana je která."
+        },
+        {
+          "type": "text",
+          "text": "Pro γ = 90° je cos γ = 0 a kosinová věta se změní na c² = a² + b² – Pythagorovu větu."
+        },
+        {
+          "type": "summary",
+          "text": "V pravoúhlém △: sin = protilehlá/přepona, cos = přilehlá/přepona, tg = protilehlá/přilehlá. V obecném △: sinová věta (dva úhly + strana) a kosinová věta (dvě strany + úhel mezi nimi)."
+        }
+      ]
+    },
+    {
+      "title": "Kterou větu vzít",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Úloha řekne tři údaje o trojúhelníku a chce čtvrtý. Celé umění je **poznat, který vzorec použít**. Tady je rozhodovací tabulka a postupy."
+        },
+        {
+          "type": "text",
+          "text": "„Vyřešit trojúhelník“ znamená dopočítat všechny strany a úhly. Tři vhodné údaje vždy stačí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Značení",
+          "definition": "Vrcholy A, B, C. Strana a leží naproti vrcholu A (a úhlu α), b naproti B (β), c naproti C (γ)."
+        },
+        {
+          "type": "term",
+          "term": "Goniometrické funkce v pravoúhlém △",
+          "definition": "Pro ostrý úhel α: sin α = protilehlá odvěsna / přepona, cos α = přilehlá odvěsna / přepona, tg α = protilehlá / přilehlá.",
+          "example": "Odvěsny 3 a 4, přepona 5: sin α = 3/5 = 0,6."
+        },
+        {
+          "type": "term",
+          "term": "Hodnoty pro známé úhly",
+          "definition": "sin 30° = 1/2, cos 60° = 1/2, sin 60° = cos 30° = √3/2, sin 45° = cos 45° = √2/2, tg 45° = 1, sin 90° = 1, cos 90° = 0."
+        },
+        {
+          "type": "heading",
+          "text": "Rozhodovací tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Znám",
+            "Hledám",
+            "Použij"
+          ],
+          "rows": [
+            [
+              "pravoúhlý △, strany",
+              "úhel",
+              "sin / cos / tg"
+            ],
+            [
+              "pravoúhlý △, úhel + strana",
+              "jinou stranu",
+              "sin / cos / tg"
+            ],
+            [
+              "2 úhly + 1 stranu",
+              "další stranu",
+              "sinová věta a/sin α = b/sin β"
+            ],
+            [
+              "2 strany + úhel **mezi nimi**",
+              "třetí stranu",
+              "kosinová věta c² = a² + b² − 2ab cos γ"
+            ],
+            [
+              "3 strany",
+              "úhel",
+              "kosinová věta, vyjádři cos γ"
+            ],
+            [
+              "2 strany + úhel mezi nimi",
+              "obsah",
+              "S = ½ · a · b · sin γ"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Pravoúhlý △: protilehlá 3, přilehlá 4, přepona 5. Urči sin α, cos α, tg α.",
+          "answer": "sin α = 3/5 = **0,6**, cos α = 4/5 = **0,8**, tg α = 3/4 = **0,75**."
+        },
+        {
+          "type": "example",
+          "question": "a = 10, α = 30°, β = 90°. Urči b.",
+          "answer": "Dva úhly a strana → sinová věta: b = a · sin β / sin α = 10 · 1 / 0,5 = **20**."
+        },
+        {
+          "type": "example",
+          "question": "a = 5, b = 8, γ = 60°. Urči c.",
+          "answer": "Dvě strany a úhel mezi nimi → kosinová věta: c² = 25 + 64 − 80 · 0,5 = 49 → **c = 7**."
+        },
+        {
+          "type": "example",
+          "question": "a = 4, b = 6, γ = 30°. Urči obsah.",
+          "answer": "S = ½ · 4 · 6 · sin 30° = ½ · 24 · ½ = **6**."
+        },
+        {
+          "type": "heading",
+          "text": "Proč vzorec pro obsah funguje"
+        },
+        {
+          "type": "text",
+          "text": "Obsah = ½ · základna · výška. Výška na stranu a je v = b · sin γ (výška je protilehlá k γ, b je přepona malého pravoúhlého trojúhelníku). Proto S = ½ · a · b · sin γ."
+        },
+        {
+          "type": "text",
+          "text": "Nastav úhel 30°, pak 90° a 150°. Při 90° je sin největší (1) – trojúhelník se stejnými stranami má největší obsah, když svírají pravý úhel."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 30
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kosinová věta: c² = a² + b² + 2ab cos γ",
+          "right": "c² = a² + b² − 2ab cos γ",
+          "why": "Pro tupý úhel γ (cos γ < 0) musí vyjít c delší než podle Pythagorovy věty. To zajistí právě minus: − 2ab · (záporné číslo) = plus."
+        },
+        {
+          "type": "summary",
+          "text": "Pravoúhlý △ → sin, cos, tg. Dva úhly + strana → sinová věta. Dvě strany + úhel mezi nimi nebo tři strany → kosinová věta. Obsah S = ½ab sin γ."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Pravoúhlý trojúhelník: protilehlá 3, přepona 5. sin α =",
+      "answers": [
+        "3/5",
+        "0,6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Pravoúhlý trojúhelník: přilehlá 4, přepona 5. cos α =",
+      "answers": [
+        "4/5",
+        "0,8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Pravoúhlý trojúhelník: protilehlá 3, přilehlá 4. tg α =",
+      "answers": [
+        "3/4",
+        "0,75"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Sinová věta:",
+      "options": [
+        "a/sin α = b/sin β",
+        "a · sin α = b · sin β",
+        "a² = b² + c²",
+        "sin α + sin β = 1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kosinová věta:",
+      "options": [
+        "c² = a² + b² − 2ab cos γ",
+        "c² = a² + b² + 2ab cos γ",
+        "c = a cos γ + b",
+        "c² = a² − b²"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "a = 5, b = 8, γ = 60°. c =",
+      "answers": [
+        "7"
+      ],
+      "explanation": "c² = 25 + 64 − 2·5·8·½ = 49"
+    },
+    {
+      "type": "truefalse",
+      "question": "Pro γ = 90° přejde kosinová věta v Pythagorovu.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "a = 4, b = 6, γ = 30°. Obsah S =",
+      "answers": [
+        "6"
+      ],
+      "explanation": "½ · 4 · 6 · ½"
+    },
+    {
+      "type": "input",
+      "question": "Žebřík dlouhý 5 m svírá se zemí úhel 60°. Vzdálenost paty od zdi (m) =",
+      "answers": [
+        "2,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "a = 10, α = 30°, β = 90°. b =",
+      "answers": [
+        "20"
+      ],
+      "explanation": "b = a · sin β / sin α = 10 · 1 / 0,5"
+    },
+    {
+      "type": "choice",
+      "question": "Znáš dva úhly a jednu stranu. Použiješ:",
+      "options": [
+        "sinovou větu",
+        "kosinovou větu",
+        "Pythagorovu větu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak jsou definovány sin, cos a tg v pravoúhlém trojúhelníku?",
+      "answer": "sin α = protilehlá odvěsna / přepona, cos α = přilehlá odvěsna / přepona, tg α = protilehlá / přilehlá odvěsna."
+    },
+    {
+      "type": "open",
+      "question": "Kdy použiješ kosinovou větu?",
+      "answer": "Když znám dvě strany a úhel jimi sevřený (počítám třetí stranu), nebo všechny tři strany (počítám úhel)."
+    }
+  ]
+}

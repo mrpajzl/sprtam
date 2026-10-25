@@ -1,0 +1,358 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stridavy-proud",
+  "title": "Střídavý proud",
+  "emoji": "〰️",
+  "explanations": [
+    {
+      "title": "Alternátor",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Baterie dává proud, který teče pořád jedním směrem. V zásuvce je to jinak: proud mění směr 100× za sekundu – tam a zpět. Proč? Protože ho tak vyrábějí generátory v elektrárnách a protože se takový proud snadno transformuje na vysoké napětí pro dálková vedení."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, co znamená „230 V, 50 Hz“, proč se cívka a kondenzátor chovají ve střídavém obvodu jinak než v baterkovém a jak se ladí rádio."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Stejnosměrný proud",
+          "definition": "Teče stále stejným směrem.",
+          "example": "Baterie, akumulátor."
+        },
+        {
+          "type": "term",
+          "term": "Střídavý proud",
+          "definition": "Pravidelně mění směr i velikost. Nejčastěji podle funkce sinus (hladká vlnovka).",
+          "example": "Proud v zásuvce."
+        },
+        {
+          "type": "term",
+          "term": "Alternátor (generátor)",
+          "definition": "Stroj, ve kterém se cívka (závit) otáčí v magnetickém poli (nebo magnet uvnitř cívek). Mění se magnetický tok, a indukuje se tak napětí."
+        },
+        {
+          "type": "heading",
+          "text": "Jak vzniká sinusové napětí"
+        },
+        {
+          "type": "text",
+          "text": "Sleduj, jak se mění napětí při jedné otáčce závitu. Napětí je největší, když se tok mění nejrychleji, a nulové, když se na okamžik nemění."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "začátek otáčky: u = 0",
+              "čtvrt otáčky: u = +Uₘ (největší)",
+              "půl otáčky: u = 0",
+              "tři čtvrtě: u = −Uₘ (největší opačným směrem)"
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Amplituda Uₘ a frekvence f",
+          "definition": "**Amplituda** = největší hodnota napětí. **Frekvence** = kolik celých kmitů proběhne za sekundu (Hz).",
+          "example": "V síti ČR je f = 50 Hz – 50 kmitů, tedy 100 změn směru za sekundu."
+        },
+        {
+          "type": "heading",
+          "text": "Efektivní hodnota"
+        },
+        {
+          "type": "text",
+          "text": "Napětí v zásuvce chvíli je nula, chvíli 325 V. Které číslo na zásuvku napsat? Dohodli jsme se na hodnotě, která ohřeje vařič stejně jako stejnosměrné napětí – na **efektivní hodnotě**."
+        },
+        {
+          "type": "term",
+          "term": "Efektivní hodnota U",
+          "definition": "Stejnosměrné napětí, které by na rezistoru vyvinulo stejné teplo. U sinusového průběhu `U = Uₘ / √2 ≈ 0,707 · Uₘ`.",
+          "example": "Zásuvka: amplituda ≈ 325 V, efektivní 325 / 1,414 ≈ 230 V."
+        },
+        {
+          "type": "example",
+          "question": "Amplituda napětí je 325 V. Jaké je efektivní napětí?",
+          "answer": "U = 325 / √2 = 325 / 1,414 ≈ **230 V**."
+        },
+        {
+          "type": "heading",
+          "text": "Cívka a kondenzátor"
+        },
+        {
+          "type": "text",
+          "text": "**Cívka** se brání změnám proudu (vlastní indukce). Čím rychleji se proud mění (vyšší frekvence), tím víc ho brzdí. Stejnosměrný proud propustí bez potíží."
+        },
+        {
+          "type": "text",
+          "text": "**Kondenzátor** má mezi deskami izolant – stejnosměrný proud jím neprojde. Střídavý ano: desky se pořád nabíjejí a vybíjejí. Čím vyšší frekvence, tím snáz."
+        },
+        {
+          "type": "text",
+          "text": "Ve vzorcích: „odpor“ cívky (induktance) `X_L = 2π · f · L` roste s frekvencí, „odpor“ kondenzátoru (kapacitance) `X_C = 1 / (2π · f · C)` klesá. U cívky se proud za napětím zpožďuje o čtvrt periody (π/2), u kondenzátoru o čtvrt periody předbíhá."
+        },
+        {
+          "type": "term",
+          "term": "Rezonance obvodu RLC",
+          "definition": "Při jedné určité frekvenci se účinky cívky a kondenzátoru přesně vyruší a obvodem teče největší proud.",
+          "example": "Ladění rádia: otáčením knoflíku měníš rezonanční frekvenci, až se shoduje s frekvencí stanice."
+        },
+        {
+          "type": "text",
+          "text": "Trojfázová soustava: do domů vedou tři fáze posunuté o třetinu periody. Mezi fází a nulovým vodičem je 230 V, mezi dvěma fázemi **400 V**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V zásuvce je stále 230 V.",
+          "right": "230 V je efektivní hodnota. Okamžité napětí kmitá mezi +325 V a −325 V.",
+          "why": "Efektivní hodnota je „průměr“ podle tepelného účinku. Okamžitá hodnota se mění 50× za sekundu dokola."
+        },
+        {
+          "type": "summary",
+          "text": "Střídavý proud vzniká otáčením v magnetickém poli. Síť ČR: 50 Hz, 230 V efektivně, amplituda ≈ 325 V. U = Uₘ/√2. Cívka brzdí vysoké frekvence, kondenzátor nízké."
+        }
+      ]
+    },
+    {
+      "title": "Obvody RLC",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Výhybka v reproduktorové soustavě pošle hluboké tóny do basového reproduktoru a vysoké do výškového. Udělá to jen cívkou a kondenzátorem. Jak? Protože jejich „odpor“ závisí na frekvenci. Tady to spočítáš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Střídavé napětí",
+          "definition": "Napětí, které se mění podle sinu: `u = Uₘ · sin(ωt)`. u je okamžitá hodnota, Uₘ amplituda, `ω = 2πf` úhlová frekvence."
+        },
+        {
+          "type": "term",
+          "term": "Efektivní hodnota",
+          "definition": "Hodnota stejnosměrného napětí (proudu) se stejným tepelným účinkem: `U = Uₘ / √2`, `I = Iₘ / √2`."
+        },
+        {
+          "type": "term",
+          "term": "Reaktance X",
+          "definition": "„Odpor“ cívky nebo kondenzátoru vůči střídavému proudu. Jednotka ohm. Na rozdíl od běžného odporu závisí na frekvenci a energii nespotřebovává, jen ji střídavě ukládá a vrací."
+        },
+        {
+          "type": "term",
+          "term": "Fázový posun φ",
+          "definition": "O kolik se proud „opožďuje“ nebo „předbíhá“ oproti napětí. Celá perioda odpovídá 2π, čtvrt periody je π/2."
+        },
+        {
+          "type": "term",
+          "term": "Impedance Z",
+          "definition": "Celkový „odpor“ obvodu se střídavým proudem – složený z odporu R a reaktancí."
+        },
+        {
+          "type": "heading",
+          "text": "Tři prvky"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Prvek",
+            "Reaktance",
+            "Fáze proudu"
+          ],
+          "rows": [
+            [
+              "rezistor",
+              "R (nezávisí na f)",
+              "ve fázi s napětím"
+            ],
+            [
+              "cívka",
+              "X_L = ωL = 2πfL",
+              "zpožďuje se o π/2"
+            ],
+            [
+              "kondenzátor",
+              "X_C = 1 / (ωC) = 1 / (2πfC)",
+              "předbíhá o π/2"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Induktance X_L **roste** s frekvencí, kapacitance X_C **klesá**. Pro stejnosměrný proud (f = 0) je cívka jako drát a kondenzátor jako přerušený obvod."
+        },
+        {
+          "type": "example",
+          "question": "Cívka 0,1 H při 50 Hz. Jaká je induktance?",
+          "answer": "X_L = 2π · 50 · 0,1 = 10π ≈ **31,4 Ω**."
+        },
+        {
+          "type": "example",
+          "question": "Kondenzátor 100 μF při 50 Hz. Kapacitance?",
+          "answer": "X_C = 1 / (2π · 50 · 10⁻⁴) = 1 / 0,0314 ≈ **31,8 Ω**."
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje induktanci cívky 0,1 H pro různé frekvence. Dvojnásobná frekvence = dvojnásobná induktance."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Ω",
+            "items": [
+              {
+                "label": "50 Hz",
+                "value": 31.4
+              },
+              {
+                "label": "100 Hz",
+                "value": 62.8
+              },
+              {
+                "label": "200 Hz",
+                "value": 125.7
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Rezonance a výkon"
+        },
+        {
+          "type": "text",
+          "text": "V sériovém obvodu RLC je při rezonanci `X_L = X_C`, reaktance se vyruší, impedance je nejmenší (rovná se R) a proud největší. Rezonanční frekvence: `f₀ = 1 / (2π √(LC))`."
+        },
+        {
+          "type": "text",
+          "text": "Činný výkon (ten, který se opravdu mění v teplo a práci): `P = U · I · cos φ`. cos φ se jmenuje **účiník**."
+        },
+        {
+          "type": "example",
+          "question": "Efektivní napětí 230 V, proud 2 A, cos φ = 0,8. Činný výkon?",
+          "answer": "P = 230 · 2 · 0,8 = **368 W**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kondenzátor propouští stejnosměrný proud stejně jako střídavý.",
+          "right": "Stejnosměrný proud kondenzátor nepropustí (po nabití proud ustane), střídavý ano.",
+          "why": "Mezi deskami je izolant. Střídavý proud jen desky střídavě nabíjí a vybíjí, takže v obvodu proud teče."
+        },
+        {
+          "type": "summary",
+          "text": "`U = Uₘ/√2`. `X_L = ωL` roste s f, `X_C = 1/(ωC)` klesá. Rezonance: X_L = X_C, `f₀ = 1/(2π√(LC))`. `P = UI cos φ`."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Amplituda napětí 325 V. Efektivní napětí ve V (zaokrouhli na celé) =",
+      "answers": [
+        "230"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Cívka 0,1 H při 50 Hz. Induktance v Ω (na desetiny) =",
+      "answers": [
+        "31,4"
+      ],
+      "explanation": "X_L = 2π · 50 · 0,1 ≈ 31,4 Ω"
+    },
+    {
+      "type": "input",
+      "question": "Kondenzátor 100 μF při 50 Hz. Kapacitance v Ω (na desetiny) =",
+      "answers": [
+        "31,8"
+      ],
+      "explanation": "1 / (2π · 50 · 10⁻⁴) ≈ 31,8 Ω"
+    },
+    {
+      "type": "input",
+      "question": "Efektivní napětí 230 V, proud 2 A, cos φ = 0,8. Činný výkon ve W =",
+      "answers": [
+        "368"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se mění induktance cívky s rostoucí frekvencí?",
+      "options": [
+        "roste",
+        "klesá",
+        "nemění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se mění kapacitance s rostoucí frekvencí?",
+      "options": [
+        "klesá",
+        "roste",
+        "nemění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V obvodu s ideální cívkou se proud zpožďuje za napětím o π/2.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Kondenzátor propouští stejnosměrný proud.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Co platí v sériovém obvodu RLC při rezonanci?",
+      "options": [
+        "X_L = X_C, impedance je minimální",
+        "proud je nulový",
+        "R = 0"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaké napětí je mezi dvěma fázovými vodiči trojfázové soustavy v ČR?",
+      "options": [
+        "400 V",
+        "230 V",
+        "325 V",
+        "110 V"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je efektivní hodnota střídavého napětí?",
+      "answer": "Hodnota stejnosměrného napětí, které by na rezistoru vyvinulo stejné teplo. Pro sinusový průběh U = Uₘ/√2."
+    },
+    {
+      "type": "open",
+      "question": "Jak se chová cívka a kondenzátor ve střídavém obvodu?",
+      "answer": "Cívka má induktanci X_L = ωL, roste s frekvencí, proud se zpožďuje o π/2. Kondenzátor má kapacitanci X_C = 1/(ωC), klesá s frekvencí, proud předbíhá o π/2."
+    }
+  ]
+}

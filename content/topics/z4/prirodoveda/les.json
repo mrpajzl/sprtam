@@ -1,0 +1,380 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "les",
+  "title": "Les",
+  "emoji": "🌲",
+  "explanations": [
+    {
+      "title": "Les má patra",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Panelový dům má patra a v každém bydlí jiná rodina. Les je postavený podobně – od korun stromů až po kořeny pod zemí."
+        },
+        {
+          "type": "text",
+          "text": "Každé patro má své rostliny a zvířata. Když víš, kde co hledat, uvidíš na procházce mnohem víc."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Les",
+          "definition": "Velké území porostlé stromy, kde žije mnoho rostlin, hub a živočichů pohromadě.",
+          "example": "smrkový les, bukový les"
+        },
+        {
+          "type": "term",
+          "term": "Patro lesa",
+          "definition": "Vrstva lesa v určité výšce. Les má pět pater.",
+          "example": "Borůvky rostou v bylinném patře."
+        },
+        {
+          "type": "term",
+          "term": "Jehličnatý a listnatý strom",
+          "definition": "**Jehličnatý** má jehlice a většinou je zelený celý rok. **Listnatý** má listy a na podzim je shazuje.",
+          "example": "smrk – jehličnatý, buk – listnatý"
+        },
+        {
+          "type": "heading",
+          "text": "Pět pater"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Patro",
+            "Co tam je"
+          ],
+          "rows": [
+            [
+              "stromové",
+              "smrk, buk, dub, datel"
+            ],
+            [
+              "keřové",
+              "líska, bez, šípek"
+            ],
+            [
+              "bylinné",
+              "borůvky, kapradí, jahody"
+            ],
+            [
+              "mechové",
+              "mech, houby, mravenci"
+            ],
+            [
+              "kořenové",
+              "kořeny, žížaly, krtek"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Stromy lesa"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď stromy. Pozor na modřín – má jehlice, ale na zimu je shazuje."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Jehličnatý strom",
+              "Listnatý strom"
+            ],
+            "items": [
+              {
+                "text": "smrk",
+                "group": 0
+              },
+              {
+                "text": "dub",
+                "group": 1
+              },
+              {
+                "text": "borovice",
+                "group": 0
+              },
+              {
+                "text": "buk",
+                "group": 1
+              },
+              {
+                "text": "jedle",
+                "group": 0
+              },
+              {
+                "text": "bříza",
+                "group": 1
+              },
+              {
+                "text": "modřín",
+                "group": 0
+              },
+              {
+                "text": "lípa",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Ve kterém patře najdeš borůvky?",
+          "answer": "Borůvky jsou nízké keříčky u země, ale nad mechem → **bylinné** patro."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď patra odshora.",
+          "answer": "**stromové → keřové → bylinné → mechové → kořenové**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Smrk a jedle jsou stejné stromy.",
+          "right": "Smrku šišky visí dolů, jedli stojí vzhůru.",
+          "why": "Oba jsou jehličnaté, ale liší se. Šišky jsou nejjednodušší rozlišovací znak."
+        },
+        {
+          "type": "summary",
+          "text": "Patra lesa: stromové, keřové, bylinné, mechové a kořenové. Každé má své obyvatele."
+        }
+      ]
+    },
+    {
+      "title": "Kdo koho jí",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V lese nikdo nejde do obchodu. Každý tvor si potravu najde sám – a často sám slouží jako potrava někomu dalšímu."
+        },
+        {
+          "type": "text",
+          "text": "Když jeden článek zmizí, chybí potrava dalším. Proto je les jako velká síť, kde všechno souvisí se vším."
+        },
+        {
+          "type": "term",
+          "term": "Potravní řetězec",
+          "definition": "Řada organismů, kde jeden slouží jako potrava dalšímu. Na začátku je vždy rostlina.",
+          "example": "list → housenka → sýkora → jestřáb"
+        },
+        {
+          "type": "term",
+          "term": "Býložravec",
+          "definition": "Živočich, který jí rostliny.",
+          "example": "housenka, srnec, zajíc"
+        },
+        {
+          "type": "term",
+          "term": "Masožravec (dravec)",
+          "definition": "Živočich, který loví a jí jiné živočichy.",
+          "example": "jestřáb, liška, rys"
+        },
+        {
+          "type": "heading",
+          "text": "Řetězec krok za krokem"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🌿",
+            "➡️",
+            "🐛",
+            "➡️",
+            "🐦",
+            "➡️",
+            "🦅"
+          ],
+          "caption": "list → housenka → sýkora → jestřáb"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**List** vyroste díky světlu.",
+            "**Housenka** (býložravec) list sežere.",
+            "**Sýkora** chytí housenku.",
+            "**Jestřáb** (dravec) uloví sýkoru."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Zajímaví obyvatelé lesa"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "smrk, nebo jedle?",
+                "back": "Smrku šišky visí, jedli stojí nahoru."
+              },
+              {
+                "front": "modřín",
+                "back": "jehličnan, který na zimu shazuje jehlice"
+              },
+              {
+                "front": "datel",
+                "back": "tluče do kůry a vybírá hmyz"
+              },
+              {
+                "front": "mravenec lesní",
+                "back": "staví mraveniště, je chráněný"
+              },
+              {
+                "front": "veverka",
+                "back": "schovává oříšky a semena na zimu"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Co by se stalo, kdyby z lesa zmizely sýkory?",
+          "answer": "Jestřáb by měl méně potravy. A housenek by bylo moc – **sežraly by víc listů**."
+        },
+        {
+          "type": "example",
+          "question": "Proč je les důležitý pro lidi?",
+          "answer": "Les **vyrábí kyslík**, čistí vzduch, **zadržuje vodu** jako houba, chrání půdu a dává dřevo."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Potravní řetězec může začínat liškou.",
+          "right": "Potravní řetězec vždy začíná rostlinou.",
+          "why": "Jen rostliny umějí vyrobit potravu ze světla. Všichni ostatní ji dostávají od nich – přímo nebo přes jiná zvířata."
+        },
+        {
+          "type": "summary",
+          "text": "V lese jeden živí druhého – potravní řetězec začíná rostlinou. Les čistí vzduch, zadržuje vodu a je domovem zvířat."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který strom je jehličnatý?",
+      "options": [
+        "smrk",
+        "dub",
+        "bříza",
+        "buk"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Modřín na zimu shazuje jehlice.",
+      "answer": true,
+      "explanation": "Modřín je jediný náš jehličnan, který na zimu opadá."
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém patře lesa rostou borůvky?",
+      "options": [
+        "bylinném",
+        "stromovém",
+        "kořenovém"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď patra lesa odshora.",
+      "items": [
+        "stromové",
+        "keřové",
+        "bylinné",
+        "mechové"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kterému stromu šišky stojí vzhůru?",
+      "options": [
+        "jedli",
+        "smrku",
+        "borovici"
+      ],
+      "answer": 0,
+      "explanation": "Šišky jedle stojí, šišky smrku visí."
+    },
+    {
+      "type": "match",
+      "question": "Spoj zvíře s tím, co dělá.",
+      "pairs": [
+        [
+          "datel",
+          "tluče do kůry"
+        ],
+        [
+          "veverka",
+          "schovává oříšky"
+        ],
+        [
+          "mravenec",
+          "staví mraveniště"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď potravní řetězec.",
+      "items": [
+        "list",
+        "housenka",
+        "sýkora",
+        "jestřáb"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Líska je keř.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje strom, který má plody žaludy?",
+      "answers": [
+        "dub"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co les NEdělá?",
+      "options": [
+        "vyrábí kyslík",
+        "zadržuje vodu",
+        "vyrábí plast"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "open",
+      "question": "Proč je les pro člověka důležitý?",
+      "answer": "Les vyrábí kyslík a čistí vzduch. Zadržuje vodu a chrání půdu. Dává dřevo, plody a je domovem mnoha zvířat."
+    },
+    {
+      "type": "open",
+      "question": "Jak se máš chovat v lese?",
+      "answer": "Neodhazuji odpadky, nekřičím a neruším zvířata. Nerozdělávám oheň, kde se nesmí, a nelámu stromy."
+    }
+  ]
+}

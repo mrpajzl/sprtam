@@ -1,0 +1,368 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zvuk",
+  "title": "Zvuk",
+  "emoji": "🔊",
+  "explanations": [
+    {
+      "title": "Kmitáním",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Polož prsty na krk a řekni „ááá“. Cítíš, jak se něco chvěje? To kmitají tvé hlasivky. Každý zvuk vzniká **kmitáním**."
+        },
+        {
+          "type": "text",
+          "text": "Zvuk slouží k mluvení, hudbě, varování. Ale může taky škodit – hluk poškozuje sluch. Proto je dobré mu rozumět."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kmitání",
+          "definition": "Rychlý pohyb tam a zpět kolem jednoho místa.",
+          "example": "Struna kytary po drnknutí, blána bubnu, hlasivky."
+        },
+        {
+          "type": "term",
+          "term": "Zdroj zvuku",
+          "definition": "Těleso, které kmitá a tím rozkmitá vzduch kolem sebe.",
+          "example": "Reproduktor, ladička, zvon."
+        },
+        {
+          "type": "term",
+          "term": "Zvukové vlnění",
+          "definition": "Kmitající těleso postrkuje částice vzduchu, ty postrkují sousední a tak dál. Kmitání se šíří prostředím jako vlna, zatímco vzduch zůstává na místě.",
+          "example": "Jako vlna, která projde řadou lidí na stadionu – lidé neodcházejí, jen se zvednou a sednou."
+        },
+        {
+          "type": "heading",
+          "text": "Kudy zvuk projde"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Zvuk potřebuje **látku**: vzduch, vodu, pevné látky.",
+            "Ve **vakuu** (prázdnu, kde nejsou částice) se **nešíří**. Ve vesmíru je ticho.",
+            "V pevných látkách je nejrychlejší, ve vzduchu nejpomalejší."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Porovnej rychlosti v grafu. Kolikrát je zvuk v oceli rychlejší než ve vzduchu?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "m/s",
+            "items": [
+              {
+                "label": "vzduch",
+                "value": 340
+              },
+              {
+                "label": "voda",
+                "value": 1500
+              },
+              {
+                "label": "ocel",
+                "value": 5000
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Bouřka a ozvěna"
+        },
+        {
+          "type": "example",
+          "question": "Hrom zazněl 5 s po blesku. Jak daleko je bouřka?",
+          "answer": "Světlo dorazí skoro hned, zvuk letí 340 m/s. s = v · t = 340 · 5 = **1 700 m**."
+        },
+        {
+          "type": "term",
+          "term": "Ozvěna",
+          "definition": "Zvuk, který se odrazí od překážky (skály, zdi) a vrátí se zpátky.",
+          "example": "Zavoláš do lesa a les ti „odpoví“."
+        },
+        {
+          "type": "example",
+          "question": "Ozvěna se vrátila za 2 s. Jak daleko je skála?",
+          "answer": "Zvuk urazil 340 · 2 = 680 m – ale **tam i zpátky**. Ke skále je polovina: **340 m**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ozvěna za 2 s → skála je 340 · 2 = 680 m daleko.",
+          "right": "Skála je 340 m daleko.",
+          "why": "Zvuk letí ke skále a zase zpátky, tedy dvě cesty. Vzdálenost je polovina dráhy."
+        },
+        {
+          "type": "summary",
+          "text": "Zvuk vzniká kmitáním a šíří se látkou jako vlnění, ve vakuu ne. Ve vzduchu asi 340 m/s, ve vodě a v oceli rychleji."
+        }
+      ]
+    },
+    {
+      "title": "Vlastnosti tónu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč housle znějí jinak než flétna, i když hrají stejnou notu? Proč pískání netopýra neslyšíš? A kolik decibelů už škodí? Zvuk má několik vlastností, které jdou změřit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kmit",
+          "definition": "Jeden celý pohyb kmitajícího tělesa tam a zpět.",
+          "example": "Struna jednou tam a jednou zpátky."
+        },
+        {
+          "type": "term",
+          "term": "Frekvence `f`",
+          "definition": "Kolik kmitů proběhne za 1 sekundu. Jednotka **hertz (Hz)**.",
+          "example": "Komorní a (ladička) kmitá 440krát za sekundu = 440 Hz."
+        },
+        {
+          "type": "term",
+          "term": "Amplituda",
+          "definition": "Jak **velký** je rozkmit – jak daleko se těleso vychýlí.",
+          "example": "Silnější drnknutí do struny = větší amplituda."
+        },
+        {
+          "type": "term",
+          "term": "Decibel (dB)",
+          "definition": "Jednotka hladiny hlasitosti.",
+          "example": "Šepot asi 30 dB, sbíječka asi 100 dB."
+        },
+        {
+          "type": "heading",
+          "text": "Vlastnosti tónu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vlastnost",
+            "Závisí na",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "výška tónu",
+              "frekvenci (Hz)",
+              "pískání má velkou frekvenci, bručení malou"
+            ],
+            [
+              "hlasitost",
+              "amplitudě, měří se v dB",
+              "šepot 30 dB, sbíječka 100 dB"
+            ],
+            [
+              "barva",
+              "tónech přidaných k základnímu",
+              "housle vs. flétna"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Co slyšíme a co ne"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Člověk slyší zhruba od **16–20 Hz** do **20 000 Hz**.",
+            "**Infrazvuk** – pod hranicí slyšení (např. zemětřesení, sloni se jím dorozumívají).",
+            "**Ultrazvuk** – nad 20 000 Hz. Používají ho **netopýři** a **delfíni** k orientaci (echolokace) a lékaři při **sonografii**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Hluk"
+        },
+        {
+          "type": "text",
+          "text": "Porovnej hlasitosti. Od asi 85 dB při dlouhém poslechu hrozí poškození sluchu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "dB",
+            "items": [
+              {
+                "label": "šepot",
+                "value": 30
+              },
+              {
+                "label": "rozhovor",
+                "value": 60
+              },
+              {
+                "label": "hustý provoz",
+                "value": 80
+              },
+              {
+                "label": "sbíječka",
+                "value": 100
+              },
+              {
+                "label": "start letadla zblízka",
+                "value": 130
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Ochrana: ztlumit hluk u zdroje, protihlukové stěny, izolační okna, chrániče sluchu."
+        },
+        {
+          "type": "example",
+          "question": "Kytarista utáhne strunu a ta začne kmitat rychleji. Co uslyšíš?",
+          "answer": "Větší frekvence → **vyšší tón**."
+        },
+        {
+          "type": "example",
+          "question": "Proč netopýra skoro neslyšíme, i když v noci „křičí“?",
+          "answer": "Vydává **ultrazvuk** – frekvenci nad 20 000 Hz, kterou lidské ucho neslyší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hlasitější zvuk je i vyšší.",
+          "right": "Hlasitost závisí na amplitudě, výška na frekvenci.",
+          "why": "Bručet můžeš potichu i nahlas – tón zůstane hluboký. Mění se jen síla rozkmitu."
+        },
+        {
+          "type": "summary",
+          "text": "Výška tónu = frekvence (Hz), hlasitost = amplituda (dB). Slyšíme asi 20–20 000 Hz; nad tím je ultrazvuk, pod tím infrazvuk."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Rychlost zvuku ve vzduchu v m/s (zaokrouhleně) =",
+      "answers": [
+        "340"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Hrom zazněl 5 s po blesku. Vzdálenost bouřky v m? (rychlost zvuku 340 m/s)",
+      "answers": [
+        "1700"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Ozvěna se vrátila za 2 s. Jak daleko v m je skála? (340 m/s)",
+      "answers": [
+        "340"
+      ],
+      "explanation": "Zvuk letí tam i zpět: 340 · 2 : 2 = 340 m"
+    },
+    {
+      "type": "truefalse",
+      "question": "Zvuk se šíří vakuem.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Na čem závisí výška tónu?",
+      "options": [
+        "na frekvenci",
+        "na amplitudě",
+        "na rychlosti zvuku"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá zvuk s frekvencí nad 20 000 Hz?",
+      "options": [
+        "ultrazvuk",
+        "infrazvuk",
+        "tón",
+        "hluk"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém prostředí se zvuk šíří nejrychleji?",
+      "options": [
+        "v oceli",
+        "ve vodě",
+        "ve vzduchu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "V jakých jednotkách měříme hladinu hlasitosti?",
+      "options": [
+        "decibelech",
+        "hertzích",
+        "wattech",
+        "newtonech"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj zvíře nebo přístroj s využitím ultrazvuku.",
+      "pairs": [
+        [
+          "netopýr",
+          "orientace v noci"
+        ],
+        [
+          "delfín",
+          "echolokace ve vodě"
+        ],
+        [
+          "lékař",
+          "sonografie"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejtiššího.",
+      "items": [
+        "šepot",
+        "rozhovor",
+        "hustý provoz",
+        "sbíječka",
+        "start letadla"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak vzniká a jak se šíří zvuk?",
+      "answer": "Zvuk vzniká kmitáním tělesa. Šíří se jako vlnění v látce (vzduch, voda, pevné látky), ve vakuu se nešíří."
+    },
+    {
+      "type": "open",
+      "question": "Jak se chráníme před hlukem?",
+      "answer": "Snížíme hluk u zdroje, postavíme protihlukové stěny, použijeme izolační okna a chrániče sluchu."
+    }
+  ]
+}

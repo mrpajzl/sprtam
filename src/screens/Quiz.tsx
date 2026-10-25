@@ -55,7 +55,7 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
           {!m.instant && wrong.length > 0 && (
             <div class="mistakes">
               {wrong.map((a, k) => (
-                <div key={k} class="card"><b><Inline text={a.item.q.q} /></b><span><Inline text={answerText(a.item.q)} /></span></div>
+                <div key={k} class="card"><b><Inline text={a.item.q.question} /></b><span><Inline text={answerText(a.item.q)} /></span></div>
               ))}
             </div>
           )}
@@ -88,8 +88,8 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
         <div class={`sheet ${last ? 'ok' : 'bad'}`}>
           <div>
             <div class="verdict">{last ? <ICheck /> : <IX />}{last ? 'Správně' : 'Špatně'}</div>
-            {!last && <div class="why"><b><Inline text={answerText(item.q)} /></b>{'why' in item.q && item.q.why ? <> — <Inline text={item.q.why} /></> : null}</div>}
-            {last && 'why' in item.q && item.q.why && <div class="why"><Inline text={item.q.why} /></div>}
+            {!last && <div class="why"><b><Inline text={answerText(item.q)} /></b>{'explanation' in item.q && item.q.explanation ? <> — <Inline text={item.q.explanation} /></> : null}</div>}
+            {last && 'explanation' in item.q && item.q.explanation && <div class="why"><Inline text={item.q.explanation} /></div>}
             <button class="btn block" onClick={next} autoFocus>Dál</button>
           </div>
         </div>
@@ -119,8 +119,8 @@ function Oral({ q, onAnswer }: { q: Question; onAnswer: (ok: boolean) => void })
   const [shown, setShown] = useState(false)
   return (
     <div class="oral">
-      <h2 class="question"><Inline text={q.q} /></h2>
-      {q.t === 'choice' && !shown && <div class="muted">Odpověz nahlas, bez možností.</div>}
+      <h2 class="question"><Inline text={q.question} /></h2>
+      {q.type === 'choice' && !shown && <div class="muted">Odpověz nahlas, bez možností.</div>}
       {!shown ? <button class="btn block" onClick={() => setShown(true)}>Ukázat odpověď</button> : (
         <>
           <div class="card ans"><Inline text={answerText(q)} /></div>

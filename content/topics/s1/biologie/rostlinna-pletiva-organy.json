@@ -1,0 +1,443 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rostlinna-pletiva-organy",
+  "title": "Pletiva a orgány rostlin",
+  "emoji": "🌿",
+  "explanations": [
+    {
+      "title": "Pletiva",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Strom vysoký 30 metrů dostane vodu z kořenů až do posledního listu. Mrkev si v kořeni ukládá zásoby a dub každý rok ztloustne o jeden letokruh. To všechno zařizují různé druhy buněk, které spolu pracují."
+        },
+        {
+          "type": "text",
+          "text": "Když pochopíš, jaké „týmy“ buněk rostlina má, rozumíš, jak roste, pije, dýchá a proč se dřevo dá řezat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Buňka",
+          "definition": "Nejmenší živá jednotka. Rostlinná buňka má pevnou stěnu z celulózy."
+        },
+        {
+          "type": "term",
+          "term": "Pletivo",
+          "definition": "Skupina rostlinných buněk se **stejnou stavbou a funkcí** – „tým“. U živočichů se tomu říká tkáň."
+        },
+        {
+          "type": "term",
+          "term": "Orgán",
+          "definition": "Část rostliny složená z více pletiv, která má určitou úlohu. Rostlina má **kořen, stonek, list** (a pro rozmnožování květ, plod, semeno)."
+        },
+        {
+          "type": "heading",
+          "text": "Pět týmů buněk"
+        },
+        {
+          "type": "term",
+          "term": "Dělivá pletiva (meristémy)",
+          "definition": "Buňky, které se pořád dělí a tvoří nové. Jsou na **vrcholu stonku a kořene** (rostlina roste do délky) a ve stonku jako **kambium** (rostlina tloustne)."
+        },
+        {
+          "type": "term",
+          "term": "Krycí pletiva",
+          "definition": "Chrání povrch. **Pokožka** s voskovou vrstvou – **kutikulou**, která brání vysychání. Na stromech **korek**."
+        },
+        {
+          "type": "term",
+          "term": "Průduch",
+          "definition": "Malý otvor v pokožce, hlavně na spodní straně listu. Otevírají a zavírají ho dvě **svěrací buňky**. Proudí jím CO₂ dovnitř a kyslík a vodní pára ven."
+        },
+        {
+          "type": "term",
+          "term": "Vodivá pletiva",
+          "definition": "„Potrubí“ rostliny. **Xylém** (dřevo) vede **vodu a minerální látky** od kořene nahoru – tvoří ho mrtvé trubice **cévy** a **cévice**. **Floém** (lýko) vede **organické látky** (cukry) z listů – tvoří ho **sítkovice**."
+        },
+        {
+          "type": "term",
+          "term": "Základní pletiva",
+          "definition": "**Parenchym** – živé buňky pro fotosyntézu nebo zásoby. **Zpevňovací pletiva**: **kolenchym** (živé buňky, mladé stonky) a **sklerenchym** (mrtvé buňky se ztlustlými stěnami, např. pecka třešně)."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Pletivo",
+            "Funkce",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "dělivé (meristémy)",
+              "tvorba nových buněk",
+              "vrchol stonku a kořene, kambium"
+            ],
+            [
+              "krycí",
+              "ochrana",
+              "pokožka, průduchy, korek"
+            ],
+            [
+              "vodivé – xylém",
+              "voda a minerály nahoru",
+              "cévy, cévice (dřevo)"
+            ],
+            [
+              "vodivé – floém",
+              "organické látky",
+              "sítkovice (lýko)"
+            ],
+            [
+              "základní",
+              "fotosyntéza, zásoba, opora",
+              "parenchym, kolenchym, sklerenchym"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ověř se: řekni, co pletivo dělá, a otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "xylém",
+                "back": "voda a minerály nahoru (dřevo)"
+              },
+              {
+                "front": "floém",
+                "back": "cukry z listů (lýko)"
+              },
+              {
+                "front": "kambium",
+                "back": "dělivé pletivo, tloustnutí stonku"
+              },
+              {
+                "front": "kutikula",
+                "back": "vosková vrstva, omezuje výpar"
+              },
+              {
+                "front": "sklerenchym",
+                "back": "mrtvé buňky se silnými stěnami, zpevnění"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč se kmen stromu každý rok rozšíří o letokruh?",
+          "answer": "**Kambium** mezi dřevem a lýkem se dělí a tvoří dovnitř nové dřevo. Na jaře vzniká světlé dřevo, v létě tmavší – jeden **letokruh = jedno vegetační období**."
+        },
+        {
+          "type": "example",
+          "question": "Mšice saje cukernatou šťávu. Do kterého pletiva zapíchne sosák?",
+          "answer": "Do **floému** (lýka) – ten vede cukry z listů. Xylém vede hlavně vodu s minerály."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Xylém vede cukry, floém vodu.",
+          "right": "**X**ylém vede vodu (dřevo), **f**loém vede cukry (lýko).",
+          "why": "Pomůcka: floém = „food“ (potrava). Voda jde xylémem od kořene nahoru."
+        },
+        {
+          "type": "summary",
+          "text": "Pletiva: dělivá (meristémy, kambium), krycí (pokožka, průduchy, korek), vodivá (xylém – voda nahoru, floém – cukry), základní (parenchym, kolenchym, sklerenchym)."
+        }
+      ]
+    },
+    {
+      "title": "Řez listem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mrkev, brambora a cibule vypadají jako tři zeleniny. Botanik ale vidí kořen, stonek a list – jen přestavěné k ukládání zásob. Rostlina má jen několik orgánů, ale umí je přizpůsobit téměř všemu."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme kořen, stonek a list zevnitř i zvenku. Pochopíš, kde se vyrábí cukr, kudy jde voda a jak poznat přeměněné orgány."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Orgán rostliny",
+          "definition": "Část těla s určitou úlohou. **Vegetativní** orgány (kořen, stonek, list) slouží k výživě a růstu."
+        },
+        {
+          "type": "term",
+          "term": "Pletivo",
+          "definition": "Skupina buněk se stejnou stavbou a funkcí. Orgán je složený z více pletiv."
+        },
+        {
+          "type": "term",
+          "term": "Parenchym",
+          "definition": "Pletivo z živých buněk s tenkou stěnou. V listu provádí fotosyntézu."
+        },
+        {
+          "type": "term",
+          "term": "Chloroplast",
+          "definition": "Zelené tělísko v buňce, kde probíhá **fotosyntéza** – výroba cukru ze světla, vody a CO₂."
+        },
+        {
+          "type": "term",
+          "term": "Xylém a floém",
+          "definition": "Vodivá pletiva. **Xylém** (dřevo) vede vodu a minerály nahoru, **floém** (lýko) vede cukry z listů."
+        },
+        {
+          "type": "heading",
+          "text": "List na řezu – od shora dolů"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Svrchní pokožka** s voskovou **kutikulou** – chrání a omezuje výpar.",
+            "**Palisádový parenchym** – podlouhlé buňky jako palisáda, **nejvíc chloroplastů**.",
+            "**Houbovitý parenchym** – volně uspořádané buňky s **mezibuněčnými prostory** pro plyny.",
+            "**Cévní svazky** (žilky) – xylém a floém.",
+            "**Spodní pokožka** s **průduchy**; každý průduch otevírají a zavírají dvě **svěrací buňky**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kořen a stonek"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Kořen**: na špičce **kořenová čepička** chrání dělivé buňky; kousek výš **kořenové vlásky** přijímají vodu a minerály.",
+            "**Stonek**: má **uzliny** (odkud vyrůstají listy) a **články** (mezi uzlinami). Dřeviny v něm mají **kambium** a tvoří **letokruhy**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď struktury podle orgánu, kam patří."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Kořen",
+              "Stonek",
+              "List"
+            ],
+            "items": [
+              {
+                "text": "kořenová čepička",
+                "group": 0
+              },
+              {
+                "text": "kambium",
+                "group": 1
+              },
+              {
+                "text": "průduchy",
+                "group": 2
+              },
+              {
+                "text": "kořenové vlásky",
+                "group": 0
+              },
+              {
+                "text": "uzliny a články",
+                "group": 1
+              },
+              {
+                "text": "palisádový parenchym",
+                "group": 2
+              },
+              {
+                "text": "letokruhy",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Přeměněné orgány"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Útvar",
+            "Je to přeměněný…",
+            "Úkol"
+          ],
+          "rows": [
+            [
+              "mrkev, řepa",
+              "kořen",
+              "zásoba"
+            ],
+            [
+              "bramborová hlíza",
+              "podzemní stonek",
+              "zásoba"
+            ],
+            [
+              "cibule",
+              "zkrácený stonek s dužnatými listy",
+              "zásoba"
+            ],
+            [
+              "úponky hrachu",
+              "list",
+              "přichycení"
+            ],
+            [
+              "trny kaktusu",
+              "list",
+              "ochrana, menší výpar"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč je palisádový parenchym nahoře a ne dole?",
+          "answer": "Svrchní strana listu dostává **nejvíc světla**. Buňky s nejvíce chloroplasty jsou tam, kde se fotosyntéza nejvíc vyplatí."
+        },
+        {
+          "type": "example",
+          "question": "Jak dokážeš, že brambora není kořen?",
+          "answer": "Na hlíze jsou **očka** – pupeny, ze kterých raší nové výhony. Pupeny vyrůstají ze stonku, ne z kořene. Hlíza je **přeměněný podzemní stonek**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Bramborová hlíza je kořen, protože roste v zemi.",
+          "right": "Hlíza je **přeměněný podzemní stonek**.",
+          "why": "O tom, jaký je to orgán, nerozhoduje, kde roste, ale stavba – hlíza má pupeny (očka) jako stonek."
+        },
+        {
+          "type": "summary",
+          "text": "List: pokožka s kutikulou, palisádový parenchym (nejvíc chloroplastů), houbovitý parenchym, cévní svazky, spodní pokožka s průduchy. Kambium umožňuje tloustnutí – vznikají letokruhy."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které pletivo vede vodu s minerály?",
+      "options": [
+        "xylém",
+        "floém",
+        "kolenchym"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde je v listu nejvíce chloroplastů?",
+      "options": [
+        "v palisádovém parenchymu",
+        "v pokožce",
+        "v houbovitém parenchymu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Dělivé pletivo, které způsobuje druhotné tloustnutí stonku, je…",
+      "answers": [
+        "kambium"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Floém je součástí lýka.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj strukturu s funkcí.",
+      "pairs": [
+        [
+          "kořenové vlásky",
+          "příjem vody"
+        ],
+        [
+          "kořenová čepička",
+          "ochrana vrcholu"
+        ],
+        [
+          "svěrací buňky",
+          "otevírání průduchů"
+        ],
+        [
+          "kutikula",
+          "omezení výparu"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Letokruh vzniká za…",
+      "options": [
+        "jedno vegetační období",
+        "jeden měsíc",
+        "deset let"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Průduchy bývají častěji na spodní straně listu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Úponky hrachu jsou přeměněné…",
+      "options": [
+        "listy",
+        "kořeny",
+        "květy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Pletivo z odumřelých buněk se ztlustlými stěnami, které zpevňuje, je…",
+      "options": [
+        "sklerenchym",
+        "meristém",
+        "parenchym"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Bramborová hlíza je přeměněný kořen.",
+      "answer": false,
+      "explanation": "Je to přeměněný podzemní stonek."
+    },
+    {
+      "type": "open",
+      "question": "Popiš vnitřní stavbu listu.",
+      "answer": "Svrchní pokožka s kutikulou, palisádový parenchym, houbovitý parenchym s mezibuněčnými prostory, cévní svazky, spodní pokožka s průduchy."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi xylémem a floémem?",
+      "answer": "Xylém (dřevo) vede vodu a minerální látky od kořenů nahoru, tvoří ho cévy a cévice. Floém (lýko) vede organické látky z listů, tvoří ho sítkovice."
+    }
+  ]
+}

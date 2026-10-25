@@ -1,0 +1,355 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "archimeduv-zakon",
+  "title": "Archimédův zákon",
+  "emoji": "🛟",
+  "explanations": [
+    {
+      "title": "Ve vaně",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve vodě uneseš kamaráda, kterého na souši sotva zvedneš. Míč do vody zatlačíš jen silou a pak ti vyskočí ven. Voda **nadnáší**."
+        },
+        {
+          "type": "text",
+          "text": "Podle pověsti na to přišel řecký učenec Archimédés ve vaně a vyběhl prý nahý na ulici s výkřikem „Heuréka!“ – „Našel jsem!“. Díky tomu chápeme, proč plavou lodě a létají balony."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla",
+          "definition": "Tlačení nebo tahání, měří se v newtonech (N). Měříme ji **siloměrem** – pružinou se stupnicí.",
+          "example": "Kámen visící na siloměru ho natáhne, třeba na 12 N."
+        },
+        {
+          "type": "term",
+          "term": "Vztlaková síla",
+          "definition": "Síla, kterou kapalina tlačí ponořené těleso **nahoru**.",
+          "example": "Proto ti ve vodě připadá kamarád lehčí."
+        },
+        {
+          "type": "term",
+          "term": "Hustota",
+          "definition": "Jak „natěsnaná“ je látka – kolik váží kousek určité velikosti. Voda má 1 g/cm³.",
+          "example": "Železo má větší hustotu než voda, korek menší."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus se siloměrem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Pověs kámen na siloměr. Ve vzduchu ukáže 12 N.",
+            "Ponoř kámen celý do vody. Siloměr ukáže jen 7 N.",
+            "Rozdíl 12 − 7 = 5 N je **vztlaková síla** – tolik nadnáší voda."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Když kámen ponoříš, vytlačí kus vody. Archimédés zjistil: **vztlaková síla je stejná jako tíha vytlačené vody**. Čím větší těleso, tím víc vody vytlačí a tím víc ho voda nadnáší."
+        },
+        {
+          "type": "heading",
+          "text": "Plave, nebo se potopí?"
+        },
+        {
+          "type": "text",
+          "text": "Pokud je těleso „řidší“ než voda (má menší hustotu), voda ho vytlačí nahoru – plave. Je-li hustší, klesne."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "ve vodě plave",
+              "ve vodě klesne"
+            ],
+            "items": [
+              {
+                "text": "korek",
+                "group": 0
+              },
+              {
+                "text": "led",
+                "group": 0
+              },
+              {
+                "text": "smrkové dřevo",
+                "group": 0
+              },
+              {
+                "text": "polystyren",
+                "group": 0
+              },
+              {
+                "text": "železo",
+                "group": 1
+              },
+              {
+                "text": "kámen",
+                "group": 1
+              },
+              {
+                "text": "sklo",
+                "group": 1
+              },
+              {
+                "text": "olovo",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď látky. U každé si řekni: je hustší než voda?"
+        },
+        {
+          "type": "example",
+          "question": "Proč plave obří ocelová loď, když železný hřebík klesne?",
+          "answer": "Loď je uvnitř **dutá a plná vzduchu**. Loď i se vzduchem má dohromady menší průměrnou hustotu než voda. A její velký trup vytlačí obrovské množství vody – vztlak je velký."
+        },
+        {
+          "type": "example",
+          "question": "Proč se v moři plave snáz než v rybníce?",
+          "answer": "Slaná voda má **větší hustotu**. Vytlačená mořská voda je těžší, takže vztlaková síla je větší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Lehké věci plavou, těžké se potopí.",
+          "right": "Plavou věci s menší hustotou než voda.",
+          "why": "Obrovský dřevěný vor plave, malý kamínek klesne. Rozhoduje hustota, ne hmotnost."
+        },
+        {
+          "type": "summary",
+          "text": "Kapalina nadnáší ponořené těleso vztlakovou silou, která se rovná tíze vytlačené kapaliny. Těleso s menší hustotou než kapalina plave."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Konstruktér lodi musí spočítat, kolik nákladu loď unese, než se potopí. Potápěč, kolik závaží potřebuje. K tomu slouží Archimédův zákon a jeho vzorec."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vztlaková síla `Fvz`",
+          "definition": "Síla, kterou kapalina (nebo plyn) tlačí ponořené těleso vzhůru. V newtonech (N).",
+          "example": "Nafukovací kruh drží plavce nad vodou."
+        },
+        {
+          "type": "term",
+          "term": "Objem ponořené části `V`",
+          "definition": "Kolik m³ tělesa je pod hladinou. Přesně tolik kapaliny těleso vytlačí.",
+          "example": "Loď ponořená napůl vytlačí vodu o objemu své spodní poloviny."
+        },
+        {
+          "type": "term",
+          "term": "Hustota kapaliny `ρk`",
+          "definition": "Hmotnost 1 m³ kapaliny. Voda: 1 000 kg/m³.",
+          "example": "Mořská voda asi 1 025 kg/m³."
+        },
+        {
+          "type": "term",
+          "term": "Tíhové zrychlení `g`",
+          "definition": "Síla, kterou Země táhne každý kilogram: asi 10 N/kg.",
+          "example": "2 kg vody tlačí dolů silou 20 N."
+        },
+        {
+          "type": "heading",
+          "text": "Proč to tak je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si ve vodě „balíček vody“ tvaru kamene. Ten se nehýbe – okolní voda ho tedy drží silou rovnou jeho tíze. Když místo balíčku vložíš kámen, okolní voda tlačí úplně stejně. Vztlak = **tíha vytlačené kapaliny**."
+        },
+        {
+          "type": "text",
+          "text": "Tíha vody = hmotnost · g = (objem · hustota) · g. Proto: `Fvz = V · ρk · g`."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Objem převeď na **m³** (1 m³ = 1 000 000 cm³, tedy 500 cm³ = 0,0005 m³).",
+            "Dosaď hustotu kapaliny (voda 1 000 kg/m³).",
+            "Vynásob: Fvz = V · ρk · g.",
+            "Porovnej s gravitační silou tělesa Fg."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Těleso o objemu 0,002 m³ je celé ve vodě. Jak velká je vztlaková síla?",
+          "answer": "Fvz = 0,002 · 1 000 · 10 = **20 N**."
+        },
+        {
+          "type": "example",
+          "question": "Těleso má objem 500 cm³ a je celé ve vodě. Vztlak?",
+          "answer": "500 cm³ = 0,0005 m³. Fvz = 0,0005 · 1 000 · 10 = **5 N**."
+        },
+        {
+          "type": "heading",
+          "text": "Tři možnosti"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Porovnání sil",
+            "Porovnání hustot",
+            "Těleso"
+          ],
+          "rows": [
+            [
+              "Fg > Fvz",
+              "ρ tělesa > ρ kapaliny",
+              "klesá ke dnu"
+            ],
+            [
+              "Fg = Fvz",
+              "ρ tělesa = ρ kapaliny",
+              "vznáší se"
+            ],
+            [
+              "Fg < Fvz",
+              "ρ tělesa < ρ kapaliny",
+              "stoupá a plave"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zákon platí i v **plynech**. Horký vzduch v balonu má menší hustotu než okolní studený vzduch, proto balon stoupá."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ve vzorci je hustota tělesa.",
+          "right": "Ve vzorci je hustota **kapaliny** ρk.",
+          "why": "Vztlak je tíha vytlačené kapaliny. Železná i dřevěná kulička stejného objemu, obě úplně ponořené, mají stejný vztlak."
+        },
+        {
+          "type": "summary",
+          "text": "`Fvz = V · ρk · g` = tíha vytlačené kapaliny. Fg > Fvz klesá, Fg = Fvz vznáší se, Fg < Fvz plave."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Těleso o objemu 0,001 m³ je celé ponořené ve vodě. Vztlaková síla v N? (g = 10 N/kg)",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Těleso o objemu 500 cm³ je celé ponořené ve vodě. Vztlaková síla v N? (g = 10 N/kg)",
+      "answers": [
+        "5"
+      ],
+      "explanation": "500 cm³ = 0,0005 m³; 0,0005 · 1 000 · 10 = 5 N"
+    },
+    {
+      "type": "input",
+      "question": "Kámen má na siloměru ve vzduchu 12 N, ve vodě 7 N. Vztlaková síla v N =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdy těleso ve vodě plave?",
+      "options": [
+        "když má menší hustotu než voda",
+        "když je velké",
+        "když je kovové",
+        "když má větší hustotu než voda"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vztlaková síla závisí na hustotě kapaliny.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "V mořské vodě se plave snáz než ve sladké.",
+      "answer": true,
+      "explanation": "Slaná voda má větší hustotu, vztlak je větší."
+    },
+    {
+      "type": "choice",
+      "question": "Proč ocelová loď plave?",
+      "options": [
+        "má dutý trup s vzduchem, průměrná hustota je menší než vody",
+        "ocel je lehčí než voda",
+        "loď se pohybuje"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co se stane s tělesem, když Fg = Fvz?",
+      "options": [
+        "vznáší se",
+        "klesne",
+        "vystoupí nad hladinu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Archimédův zákon platí i v plynech.",
+      "answer": true,
+      "explanation": "Proto stoupá horkovzdušný balon."
+    },
+    {
+      "type": "match",
+      "question": "Spoj symbol s významem ve vzorci Fvz = V · ρk · g.",
+      "pairs": [
+        [
+          "V",
+          "objem ponořené části"
+        ],
+        [
+          "ρk",
+          "hustota kapaliny"
+        ],
+        [
+          "g",
+          "tíhové zrychlení"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj Archimédův zákon.",
+      "answer": "Těleso ponořené do kapaliny je nadlehčováno vztlakovou silou, která se rovná tíze kapaliny stejného objemu, jako je ponořená část tělesa."
+    },
+    {
+      "type": "open",
+      "question": "Kdy těleso v kapalině klesá, vznáší se a plave?",
+      "answer": "Klesá, když je jeho hustota větší než hustota kapaliny. Vznáší se při stejné hustotě. Plave, když je hustota tělesa menší."
+    }
+  ]
+}

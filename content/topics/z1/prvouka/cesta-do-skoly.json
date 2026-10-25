@@ -1,0 +1,340 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cesta-do-skoly",
+  "title": "Bezpečná cesta do školy",
+  "emoji": "🚦",
+  "explanations": [
+    {
+      "title": "Semafor",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Po silnici jezdí auta. Jsou velká, těžká a rychlá. Řidič nemůže zastavit hned."
+        },
+        {
+          "type": "text",
+          "text": "Proto platí pravidla. Kdo je zná, dojde do školy v bezpečí."
+        },
+        {
+          "type": "heading",
+          "text": "Nová slova"
+        },
+        {
+          "type": "term",
+          "term": "Chodec",
+          "definition": "Člověk, který jde pěšky.",
+          "example": "Když jdu do školy pěšky, jsem chodec."
+        },
+        {
+          "type": "term",
+          "term": "Chodník",
+          "definition": "Cesta vedle silnice. Je jen pro chodce.",
+          "example": "Jdu po chodníku, auta jezdí po silnici."
+        },
+        {
+          "type": "term",
+          "term": "Přechod",
+          "definition": "Bílé pruhy přes silnici. Tady smí chodec přejít.",
+          "example": "Říká se mu i „zebra“, protože má pruhy."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🚶",
+            "⬜",
+            "⬛",
+            "⬜",
+            "⬛",
+            "⬜"
+          ],
+          "caption": "Přechod má bílé pruhy"
+        },
+        {
+          "type": "term",
+          "term": "Semafor",
+          "definition": "Světla u přechodu. Říkají, kdy smíš jít.",
+          "example": "Pro chodce má červeného a zeleného panáčka."
+        },
+        {
+          "type": "heading",
+          "text": "Co říká semafor"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. Zapamatuj si, co znamená která barva."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "🔴 Červený panáček",
+                "back": "Stůj! Nesmíš jít."
+              },
+              {
+                "front": "🟢 Zelený panáček",
+                "back": "Můžeš jít. Ale stejně se rozhlédni."
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Když zelená začne **blikat**, už na přechod nevstupuj. Brzy bude červená."
+        },
+        {
+          "type": "example",
+          "question": "Stojíš u přechodu. Svítí červený panáček, ale žádné auto nejede. Co uděláš?",
+          "answer": "Svítí **červená**, tak **stojím**. Počkám na zelenou. I když nic nejede."
+        },
+        {
+          "type": "example",
+          "question": "Rozsvítí se zelená. Můžeš hned vyběhnout?",
+          "answer": "Ne. Nejdřív se **rozhlédnu**. Nějaké auto možná nezastavilo. Pak přejdu klidným krokem."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na červenou můžu jít, když nic nejede.",
+          "right": "Na červenou vždycky stojím.",
+          "why": "Auto se může objevit rychle zpoza rohu. Červená platí pořád."
+        },
+        {
+          "type": "heading",
+          "text": "Ve tmě"
+        },
+        {
+          "type": "term",
+          "term": "Reflexní prvek",
+          "definition": "Pásek nebo přívěsek, který ve tmě svítí, když na něj posvítí auto.",
+          "example": "Reflexní pásek na rukávu nebo na aktovce."
+        },
+        {
+          "type": "summary",
+          "text": "Chodec chodí po chodníku. Silnici přechází po přechodu. Na červenou stojím, na zelenou jdu."
+        }
+      ]
+    },
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ne každý přechod má semafor. Tam se musíš rozhodnout sám. Proto je dobré znát přesný postup."
+        },
+        {
+          "type": "text",
+          "text": "Uděláš ho pokaždé stejně. Pak ho nikdy nezapomeneš."
+        },
+        {
+          "type": "term",
+          "term": "Přechod",
+          "definition": "Místo s bílými pruhy přes silnici. Tady se silnice přechází.",
+          "example": "Přechod u školy."
+        },
+        {
+          "type": "term",
+          "term": "Rozhlédnout se",
+          "definition": "Otočit hlavu a podívat se, jestli něco nejede.",
+          "example": "Podívám se vlevo a vpravo."
+        },
+        {
+          "type": "heading",
+          "text": "Jak přejít silnici"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Dojdu k přechodu.",
+            "Zastavím se na kraji chodníku.",
+            "Podívám se **vlevo**.",
+            "Podívám se **vpravo**.",
+            "Znovu se podívám **vlevo**.",
+            "Když nic nejede, jdu **rovně** a klidně. Neběžím."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Proč se dívám dvakrát vlevo? U nás jezdí auta vpravo. Nejbližší auto proto přijede zleva."
+        },
+        {
+          "type": "heading",
+          "text": "Co je správně"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď, co je bezpečné a co ne."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Správně ✅",
+              "Špatně ❌"
+            ],
+            "items": [
+              {
+                "text": "jdu po chodníku",
+                "group": 0
+              },
+              {
+                "text": "hraju si u silnice",
+                "group": 1
+              },
+              {
+                "text": "přecházím po přechodu",
+                "group": 0
+              },
+              {
+                "text": "běžím přes silnici",
+                "group": 1
+              },
+              {
+                "text": "počkám na zelenou",
+                "group": 0
+              },
+              {
+                "text": "jdu na červenou",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Míč ti utekl na silnici. Co uděláš?",
+          "answer": "Za míčem **neběžím**. Zastavím se a zavolám dospělého. Míč se dá koupit nový."
+        },
+        {
+          "type": "example",
+          "question": "Před přechodem stojí velké auto a nic za ním nevidíš. Co dál?",
+          "answer": "Řidič mě taky nevidí. Počkám, až auto odjede, nebo dojdu tam, kde je dobře vidět."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Přes přechod přeběhnu co nejrychleji.",
+          "right": "Přes přechod jdu klidným krokem.",
+          "why": "Při běhu můžu zakopnout a upadnout. Řidič taky nečeká, že vyběhnu."
+        },
+        {
+          "type": "heading",
+          "text": "Cizí lidé"
+        },
+        {
+          "type": "term",
+          "term": "Cizí člověk",
+          "definition": "Někdo, koho neznáš ty ani tvoji rodiče.",
+          "example": "Pán na ulici, kterého nikdy nevidíš."
+        },
+        {
+          "type": "text",
+          "text": "S cizím člověkem nikam nechodím. Nic si od něj neberu. Řeknu to rodičům nebo paní učitelce."
+        },
+        {
+          "type": "summary",
+          "text": "Zastavím se, podívám se vlevo, vpravo a znovu vlevo. Když nic nejede, přejdu po přechodu klidným krokem."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Na jakou barvu chodec stojí?",
+      "options": [
+        "červenou",
+        "zelenou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Na jakou barvu chodec jde?",
+      "options": [
+        "zelenou",
+        "červenou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde chodí chodec?",
+      "options": [
+        "po chodníku",
+        "po silnici",
+        "po kolejích"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Přes přechod běžím co nejrychleji.",
+      "answer": false,
+      "explanation": "Přes přechod jdu, neběžím. Mohl bych upadnout."
+    },
+    {
+      "type": "truefalse",
+      "question": "Před přechodem se podívám vlevo a vpravo.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Míčem si hraju na hřišti, ne u silnice.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Silnici přecházím po ……… (doplň slovo)",
+      "answers": [
+        "přechodu",
+        "prechodu"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď, jak přecházím.",
+      "items": [
+        "zastavím se",
+        "rozhlédnu se",
+        "přejdu"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Neznámý člověk ti nabízí bonbon. Co uděláš?",
+      "options": [
+        "nevezmu si ho a odejdu",
+        "půjdu s ním",
+        "vezmu si ho"
+      ],
+      "answer": 0,
+      "explanation": "S cizími lidmi nikam nechodím."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve tmě je dobré mít reflexní prvky.",
+      "answer": true,
+      "explanation": "Řidič mě ve tmě lépe uvidí."
+    },
+    {
+      "type": "open",
+      "question": "Jak bezpečně přejdeš silnici?",
+      "answer": "Půjdu na přechod, zastavím se, podívám se vlevo, vpravo a znovu vlevo. Když nic nejede, přejdu."
+    },
+    {
+      "type": "open",
+      "question": "Co uděláš, když tě osloví cizí člověk?",
+      "answer": "Nikam s ním nepůjdu, nic si od něj nevezmu a řeknu to rodičům nebo učitelce."
+    }
+  ]
+}

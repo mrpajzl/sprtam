@@ -1,0 +1,411 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kultura",
+  "title": "Kultura a umění",
+  "emoji": "🎭",
+  "explanations": [
+    {
+      "title": "Jeden den",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ráno pozdravíš souseda, ve škole píšeš perem, odpoledne jdeš do kina a večer čteš knihu. Všechno tohle vymysleli a vytvořili lidé. Tomu se říká **kultura**."
+        },
+        {
+          "type": "text",
+          "text": "Kultura nás odlišuje od zvířat a spojuje nás s předky. Když jí rozumíš, víš, proč chráníme hrady, proč chodíme do divadla a proč má smysl umění."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kultura",
+          "definition": "Všechno, co vytvořil člověk – na rozdíl od přírody, která vznikla sama.",
+          "example": "Strom v lese je příroda. Stůl vyrobený ze dřeva je kultura."
+        },
+        {
+          "type": "term",
+          "term": "Hmotná kultura",
+          "definition": "Věci, které člověk vyrobil a které si můžeš osahat.",
+          "example": "Hrad, kroj, mobil, obraz, most."
+        },
+        {
+          "type": "term",
+          "term": "Duchovní kultura",
+          "definition": "Věci, které nejsou z hmoty – myšlenky, jazyk, víra, zvyky, pravidla chování, příběhy.",
+          "example": "Čeština, pohádka vyprávěná babičkou, zvyk zdobit stromeček."
+        },
+        {
+          "type": "heading",
+          "text": "Den plný kultury"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ráno pozdravíš: „Dobrý den.“ Pravidla slušného chování jsou **duchovní kultura**.",
+            "Ve škole mluvíš česky. **Jazyk** je duchovní kultura.",
+            "Píšeš do sešitu tužkou. Sešit i tužka jsou **hmotná kultura**.",
+            "Odpoledne jdeš do kina. Budova kina je hmotná kultura, příběh filmu je duchovní.",
+            "Večer čteš knihu. Papír je věc, ale příběh je výtvor mysli."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď: dá se to osahat (hmotná kultura), nebo je to myšlenka či zvyk (duchovní kultura)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "hmotná kultura",
+              "duchovní kultura"
+            ],
+            "items": [
+              {
+                "text": "katedrála",
+                "group": 0
+              },
+              {
+                "text": "kroj",
+                "group": 0
+              },
+              {
+                "text": "nástroje a stroje",
+                "group": 0
+              },
+              {
+                "text": "hrad",
+                "group": 0
+              },
+              {
+                "text": "pohádka vyprávěná ústně",
+                "group": 1
+              },
+              {
+                "text": "víra",
+                "group": 1
+              },
+              {
+                "text": "jazyk",
+                "group": 1
+              },
+              {
+                "text": "zvyky a tradice",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Umění"
+        },
+        {
+          "type": "term",
+          "term": "Umění",
+          "definition": "Část kultury, kterou lidé tvoří proto, aby vyjádřili pocity a myšlenky a zasáhli jimi druhé.",
+          "example": "Píseň, obraz, román, divadelní hra."
+        },
+        {
+          "type": "term",
+          "term": "Kýč",
+          "definition": "Napodobenina umění, která chce rychle zapůsobit, ale nemá skutečnou hodnotu ani nic nového neříká.",
+          "example": "Sériově vyráběný obrázek koťátka s třpytkami."
+        },
+        {
+          "type": "example",
+          "question": "Je vánoční zvyk lití olova hmotná, nebo duchovní kultura?",
+          "answer": "Olovo je věc, ale **zvyk** – co se dělá a proč – je myšlenka předávaná mezi lidmi. Je to **duchovní kultura**."
+        },
+        {
+          "type": "example",
+          "question": "Patří Krkonoše ke kultuře?",
+          "answer": "Hory vznikly bez člověka → jsou to **příroda**. Ke kultuře patří třeba chata nebo turistická značka, kterou tam lidé postavili."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kultura je jen divadlo, opera a galerie.",
+          "right": "Kultura je všechno, co vytvořil člověk – i jazyk, zvyky, nástroje nebo slušné chování.",
+          "why": "Umění je jen jedna část kultury. Kulturou je i to, jak zdravíš nebo jak se slaví Vánoce."
+        },
+        {
+          "type": "summary",
+          "text": "Kultura = vše, co vytvořil člověk. Hmotná kultura jsou věci, duchovní kultura myšlenky, jazyk, víra a zvyky. Umění je její část."
+        }
+      ]
+    },
+    {
+      "title": "Druhy umění",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč lidé malují, zpívají nebo píšou básně, když z toho nemají jídlo ani střechu nad hlavou? Protože chtějí vyjádřit, co cítí a co si myslí – a sdílet to s ostatními."
+        },
+        {
+          "type": "text",
+          "text": "Tady si utřídíme umění podle druhů a ukážeme, kde se s ním můžeš setkat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kultura",
+          "definition": "Vše, co vytvořil člověk: věci (hmotná kultura) i myšlenky, jazyk a zvyky (duchovní kultura)."
+        },
+        {
+          "type": "term",
+          "term": "Umění",
+          "definition": "Lidská tvorba, která vyjadřuje myšlenky a pocity tak, aby zasáhly druhé."
+        },
+        {
+          "type": "term",
+          "term": "Kulturní instituce",
+          "definition": "Místo nebo organizace, která kulturu uchovává a zpřístupňuje lidem.",
+          "example": "Muzeum, galerie, divadlo, knihovna, kino."
+        },
+        {
+          "type": "heading",
+          "text": "Druhy umění"
+        },
+        {
+          "type": "text",
+          "text": "Zkus u každého druhu říct příklad. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Výtvarné umění",
+                "back": "malířství, sochařství, grafika"
+              },
+              {
+                "front": "Hudba",
+                "back": "umění tónů – skladba, zpěv"
+              },
+              {
+                "front": "Literatura",
+                "back": "umění slova – poezie, próza, drama"
+              },
+              {
+                "front": "Architektura",
+                "back": "umění stavět – domy, mosty, chrámy"
+              },
+              {
+                "front": "Divadlo a film",
+                "back": "spojují herectví, slovo, hudbu i obraz"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kde umění najdeš"
+        },
+        {
+          "type": "table",
+          "head": [
+            "instituce",
+            "co tam najdeš"
+          ],
+          "rows": [
+            [
+              "galerie",
+              "obrazy, sochy – výtvarné umění"
+            ],
+            [
+              "muzeum",
+              "předměty z historie, přírody nebo techniky"
+            ],
+            [
+              "knihovna",
+              "knihy k půjčení"
+            ],
+            [
+              "divadlo",
+              "hry, opery, balet"
+            ],
+            [
+              "kino",
+              "filmy"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Národní divadlo"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "V 19. století chtěli Češi vlastní velké divadlo v češtině.",
+            "Peníze na něj posílali obyčejní lidé ze sbírek. Proto je nad oponou heslo **„Národ sobě“**.",
+            "Divadlo bylo otevřeno v roce **1881**.",
+            "Ještě téhož roku vyhořelo.",
+            "Lidé znovu přispěli a divadlo bylo znovu otevřeno v roce **1883**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Umění, nebo kýč?"
+        },
+        {
+          "type": "term",
+          "term": "Kýč",
+          "definition": "Napodobenina umění bez skutečné hodnoty. Bývá přeslazený, laciný a hraje jen na první dojem."
+        },
+        {
+          "type": "example",
+          "question": "Do kterého druhu umění patří Karlův most?",
+          "answer": "Je to stavba → **architektura**."
+        },
+        {
+          "type": "example",
+          "question": "Kam půjdeš, když chceš vidět originál obrazu, a kam, když si chceš půjčit román?",
+          "answer": "Obrazy vystavuje **galerie**. Knihy půjčuje **knihovna**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Národní divadlo zaplatil panovník.",
+          "right": "Národní divadlo vzniklo hlavně ze sbírek obyčejných lidí – proto heslo „Národ sobě“.",
+          "why": "Heslo říká, že si národ divadlo postavil sám pro sebe."
+        },
+        {
+          "type": "summary",
+          "text": "Umění vyjadřuje myšlenky a pocity: výtvarné umění, hudba, literatura, architektura, divadlo a film. Národní divadlo („Národ sobě“) otevřeno 1881 a po požáru znovu 1883."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je kultura?",
+      "options": [
+        "vše, co vytvořil člověk",
+        "jen divadlo a opera",
+        "jen příroda kolem nás",
+        "jen náboženství"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Jazyk patří ke kultuře.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co patří do hmotné kultury?",
+      "options": [
+        "hrad",
+        "víra",
+        "pohádka",
+        "zvyk"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj druh umění s příkladem.",
+      "pairs": [
+        [
+          "literatura",
+          "román"
+        ],
+        [
+          "výtvarné umění",
+          "socha"
+        ],
+        [
+          "architektura",
+          "most"
+        ],
+        [
+          "hudba",
+          "symfonie"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaké heslo je spojeno s Národním divadlem?",
+      "options": [
+        "Národ sobě",
+        "Pravda vítězí",
+        "Kde domov můj",
+        "Svoboda a rovnost"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde si můžeš půjčit knihu?",
+      "options": [
+        "v knihovně",
+        "v galerii",
+        "v divadle",
+        "v muzeu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Kýč je hodnotné původní umělecké dílo.",
+      "answer": false,
+      "explanation": "Kýč napodobuje umění, ale chybí mu hodnota."
+    },
+    {
+      "type": "input",
+      "question": "V jakém roce bylo Národní divadlo znovu otevřeno po požáru?",
+      "answers": [
+        "1883"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která instituce vystavuje obrazy?",
+      "options": [
+        "galerie",
+        "knihovna",
+        "kino",
+        "archiv"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vánoční zvyky jsou součástí duchovní kultury.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi hmotnou a duchovní kulturou?",
+      "answer": "Hmotná kultura jsou věci, které člověk vyrobil (stavby, nástroje). Duchovní kultura jsou myšlenky, jazyk, víra, zvyky a umění."
+    },
+    {
+      "type": "open",
+      "question": "K čemu je umění dobré?",
+      "answer": "Vyjadřuje pocity a myšlenky, přináší krásu a zážitky, nutí přemýšlet a uchovává paměť národa."
+    }
+  ]
+}

@@ -1,0 +1,469 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obojzivelnici-plazi",
+  "title": "Obojživelníci a plazi",
+  "emoji": "🐊",
+  "explanations": [
+    {
+      "title": "Krok na souš",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že jsi ryba a chceš žít na souši. Vyschneš, nemůžeš dýchat žábrami a tvá vajíčka bez vody zahynou. Obojživelníci tenhle krok udělali napůl, plazi celý."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, proč žáby musí na jaře k rybníku, zatímco ještěrka klade vejce do suché hlíny – a co přesně plazi „vynalezli“."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obojživelníci",
+          "definition": "Obratlovci, kteří žijí část života ve vodě a část na souši. Mají **holou vlhkou kůži**.",
+          "example": "žáby, čolci, mloci"
+        },
+        {
+          "type": "term",
+          "term": "Plazi",
+          "definition": "Obratlovci s **suchou kůží se šupinami**, plně přizpůsobení souši.",
+          "example": "ještěrky, hadi, želvy, krokodýli"
+        },
+        {
+          "type": "term",
+          "term": "Proměna",
+          "definition": "Mládě vypadá a žije jinak než dospělec a postupně se přestaví.",
+          "example": "Pulec žije ve vodě a dýchá žábrami, žába na souši dýchá plícemi a kůží."
+        },
+        {
+          "type": "term",
+          "term": "Amniotické vejce",
+          "definition": "Vejce se **zárodečnými obaly** (hlavní je **amnion** – vak s tekutinou) a skořápkou. Zárodek v něm má „vlastní rybníček“, takže vejce může ležet na souši."
+        },
+        {
+          "type": "heading",
+          "text": "Srovnání"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Obojživelníci",
+            "Plazi"
+          ],
+          "rows": [
+            [
+              "kůže",
+              "holá, se žlázami, dýchá",
+              "suchá, šupiny"
+            ],
+            [
+              "dýchání",
+              "plíce + kůže (larvy žábry)",
+              "jen plíce"
+            ],
+            [
+              "srdce",
+              "2 síně + 1 komora (3 oddíly)",
+              "2 síně + neúplně přepažená komora"
+            ],
+            [
+              "vejce",
+              "bez obalů, ve vodě",
+              "amniotické, na souši"
+            ],
+            [
+              "vývoj",
+              "proměna (pulec)",
+              "přímý"
+            ],
+            [
+              "oplození",
+              "většinou vnější",
+              "vnitřní"
+            ],
+            [
+              "vylučování dusíku",
+              "močovina",
+              "kyselina močová – šetří vodu"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Krokodýli jsou výjimka: mají komoru **úplně přepaženou** – srdce se 4 oddíly jako ptáci."
+        },
+        {
+          "type": "heading",
+          "text": "Proč jsou obojživelníci vázáni na vodu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Holá kůže je propustná – na suchu **vysychá**.",
+            "Kůží zároveň dýchají – musí být **vlhká**.",
+            "Vajíčka nemají obaly – kladou je **do vody**.",
+            "Larvy (pulci) dýchají **žábrami** – žijí ve vodě."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Čím plazi dobyli souš"
+        },
+        {
+          "type": "text",
+          "text": "Šupiny proti vysychání, dýchání jen plícemi, **vnitřní oplození**, **amniotické vejce** a vylučování **kyseliny močové** (skoro bez vody). Plazi jsou proto první **amniota** – obratlovci, jejichž vejce nepotřebuje vodu."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď znaky."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Obojživelníci",
+              "Plazi"
+            ],
+            "items": [
+              {
+                "text": "holá kůže se žlázami",
+                "group": 0
+              },
+              {
+                "text": "pulec",
+                "group": 0
+              },
+              {
+                "text": "dýchání kůží",
+                "group": 0
+              },
+              {
+                "text": "vajíčka ve vodě",
+                "group": 0
+              },
+              {
+                "text": "šupiny",
+                "group": 1
+              },
+              {
+                "text": "amniotické vejce",
+                "group": 1
+              },
+              {
+                "text": "kyselina močová",
+                "group": 1
+              },
+              {
+                "text": "vnitřní oplození",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč najdeš žáby na jaře u rybníka, i když jinak žijí v lese?",
+          "answer": "Jejich vajíčka **nemají obaly** a vyschla by. Žáby proto táhnou ke klení do vody, kde se vylíhnou pulci dýchající žábrami."
+        },
+        {
+          "type": "example",
+          "question": "Proč plazi vylučují kyselinu močovou, a ne močovinu?",
+          "answer": "Kyselina močová se vylučuje jako bílá kašovitá hmota **skoro bez vody**. Na suché souši tak plaz šetří vodu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Žába dýchá jen plícemi jako ještěrka.",
+          "right": "Žába dýchá plícemi **i kůží**.",
+          "why": "Plíce obojživelníků jsou jednoduché a nestačí. Proto musí mít kůži stále vlhkou."
+        },
+        {
+          "type": "summary",
+          "text": "Obojživelníci: holá kůže, dýchání kůží, vajíčka ve vodě, proměna, srdce 3 oddíly. Plazi: šupiny, amniotické vejce, vnitřní oplození, kyselina močová – první amniota."
+        }
+      ]
+    },
+    {
+      "title": "Řády",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Slepýš vypadá jako had, mlok jako ještěrka a krokodýl je příbuznější vrabci než ještěrce. U obojživelníků a plazů vzhled často klame. Tady se naučíš řády a jejich typické zástupce, včetně těch z Česka."
+        },
+        {
+          "type": "text",
+          "text": "Pro pořádek nejdřív připomeneme, čím se obě třídy liší."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obojživelníci a plazi",
+          "definition": "**Obojživelníci** mají holou vlhkou kůži, dýchají i kůží a vajíčka kladou do vody (larva – pulec). **Plazi** mají suchou kůži se šupinami a kladou **amniotické vejce** – vejce s obaly, které vydrží na souši."
+        },
+        {
+          "type": "term",
+          "term": "Řád",
+          "definition": "Skupina příbuzných čeledí v systému. Několik řádů tvoří třídu."
+        },
+        {
+          "type": "term",
+          "term": "Amnion",
+          "definition": "Vodní obal, který v amniotickém vejci chrání zárodek."
+        },
+        {
+          "type": "heading",
+          "text": "Řády obojživelníků"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**ocasatí** – s ocasem i v dospělosti: čolek, mlok",
+            "**žáby** – bez ocasu: skokan, ropucha, rosnička, **kuňka**",
+            "**červoři** – beznozí, žijí v půdě tropů"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řády plazů"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**želvy** – krunýř: želva bahenní, mořská **kareta**",
+            "**krokodýli** – srdce se 4 oddíly (úplně přepažená komora)",
+            "**šupinatí** – ještěři (ještěrka, **slepýš** – beznohý ještěr) a hadi (**užovka**, zmije)",
+            "**haterie** – jediný žijící rod, Nový Zéland, „živoucí fosilie“"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď řády do tříd."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Obojživelníci",
+              "Plazi"
+            ],
+            "items": [
+              {
+                "text": "červoři",
+                "group": 0
+              },
+              {
+                "text": "želvy",
+                "group": 1
+              },
+              {
+                "text": "ocasatí",
+                "group": 0
+              },
+              {
+                "text": "krokodýli",
+                "group": 1
+              },
+              {
+                "text": "žáby",
+                "group": 0
+              },
+              {
+                "text": "šupinatí",
+                "group": 1
+              },
+              {
+                "text": "haterie",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a zkus nejdřív odpovědět."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "amnion",
+                "back": "vodní obal chránící zárodek"
+              },
+              {
+                "front": "krokodýli",
+                "back": "srdce se 4 oddíly (úplně přepažená komora)"
+              },
+              {
+                "front": "haterie",
+                "back": "„živoucí fosilie“ z Nového Zélandu"
+              },
+              {
+                "front": "Jacobsonův orgán",
+                "back": "čich hadů a ještěrů pomocí jazyka"
+              },
+              {
+                "front": "slepýš",
+                "back": "beznohý ještěr, ne had"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Plazi a ptáci"
+        },
+        {
+          "type": "text",
+          "text": "Krokodýli, dinosauři a ptáci patří do jedné větve (archosauři). Proto jsou **krokodýli nejbližší žijící příbuzní ptáků** – bližší než ještěři nebo želvy."
+        },
+        {
+          "type": "example",
+          "question": "Jak poznáš, že slepýš není had?",
+          "answer": "Slepýš má **pohyblivá oční víčka** (mrká), hadi ne. Umí také odvrhnout ocas. Je to **beznohý ještěr**."
+        },
+        {
+          "type": "example",
+          "question": "Proč had kmitá jazykem?",
+          "answer": "Jazykem sbírá pachové částice a přenáší je do **Jacobsonova orgánu** na patře. Tak „čichá“."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Slepýš je had.",
+          "right": "Slepýš je **beznohý ještěr**.",
+          "why": "Má oční víčka a stavbu těla ještěra. Nohy během vývoje druhu ztratil, stejně jako hadi – nezávisle na nich."
+        },
+        {
+          "type": "summary",
+          "text": "Obojživelníci: ocasatí, žáby, červoři. Plazi: želvy, krokodýli, šupinatí (ještěři a hadi), haterie. Krokodýli mají čtyřoddílné srdce a jsou nejbližší příbuzní ptáků."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kolik oddílů má srdce obojživelníků?",
+      "options": [
+        "3",
+        "2",
+        "4"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Úplně přepaženou komoru mají z plazů…",
+      "options": [
+        "krokodýli",
+        "želvy",
+        "hadi"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Plazi mají amniotické vejce.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Řád beznohých obojživelníků tropů se nazývá…",
+      "answers": [
+        "červoři",
+        "cervori"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj živočicha s řádem.",
+      "pairs": [
+        [
+          "čolek",
+          "ocasatí"
+        ],
+        [
+          "kuňka",
+          "žáby"
+        ],
+        [
+          "užovka",
+          "šupinatí"
+        ],
+        [
+          "kareta",
+          "želvy"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Obojživelníci dýchají i kůží.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Plazi vylučují dusík hlavně jako…",
+      "options": [
+        "kyselinu močovou",
+        "amoniak",
+        "močovinu výhradně"
+      ],
+      "answer": 0,
+      "explanation": "Šetří tím vodu."
+    },
+    {
+      "type": "choice",
+      "question": "Haterie žije na…",
+      "options": [
+        "Novém Zélandu",
+        "Madagaskaru",
+        "Galapágách"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Slepýš je had.",
+      "answer": false,
+      "explanation": "Slepýš je beznohý ještěr."
+    },
+    {
+      "type": "choice",
+      "question": "Nejbližší žijící příbuzní ptáků jsou…",
+      "options": [
+        "krokodýli",
+        "želvy",
+        "ještěři"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak jsou plazi přizpůsobeni životu na souši?",
+      "answer": "Suchá kůže se šupinami proti ztrátám vody, dýchání plícemi, amniotické vejce s obaly, vnitřní oplození, vylučování kyseliny močové."
+    },
+    {
+      "type": "open",
+      "question": "Proč jsou obojživelníci vázáni na vodu?",
+      "answer": "Mají holou propustnou kůži, která vysychá, vajíčka bez obalů kladou do vody a larvy (pulci) dýchají žábrami."
+    }
+  ]
+}

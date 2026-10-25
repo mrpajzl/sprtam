@@ -1,0 +1,423 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "protista",
+  "title": "Protista",
+  "emoji": "🧪",
+  "explanations": [
+    {
+      "title": "Pestrá skupina",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Nabereš kapku vody z rybníka a podíváš se mikroskopem. Uvidíš spoustu drobných tvorů: jeden pluje pomocí řasinek, druhý se přelévá jako kapka slizu, třetí je zelený a otáčí se za světlem. To jsou **protista**."
+        },
+        {
+          "type": "text",
+          "text": "Jsou nenápadná, ale zásadní: řasy v mořích vyrábějí velkou část kyslíku na Zemi a některá protista způsobují nemoci, třeba malárii, na kterou ročně umírají statisíce lidí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Eukaryota",
+          "definition": "Organismy, jejichž buňky mají **jádro** a další organely obalené membránou. Patří sem rostliny, živočichové, houby – i protista."
+        },
+        {
+          "type": "term",
+          "term": "Protista",
+          "definition": "Eukaryota, která **nejsou** rostlinami, živočichy ani houbami. Většinou jednobuněčná, některá jednoduše mnohobuněčná."
+        },
+        {
+          "type": "term",
+          "term": "Autotrofní a heterotrofní",
+          "definition": "**Autotrofní** organismus si potravu vyrobí sám fotosyntézou (ze světla, vody a CO₂). **Heterotrofní** musí přijímat hotovou potravu.",
+          "example": "Rostlina je autotrofní, ty jsi heterotrofní."
+        },
+        {
+          "type": "term",
+          "term": "Mixotrofie",
+          "definition": "Organismus umí obojí – fotosyntetizovat i přijímat potravu.",
+          "example": "**Krásnoočko** (*Euglena*) na světle fotosyntetizuje, ve tmě pohlcuje potravu."
+        },
+        {
+          "type": "heading",
+          "text": "Dvě velké „kapsy“"
+        },
+        {
+          "type": "text",
+          "text": "Pro přehled protista dělíme na **prvoky** (heterotrofní, „živočišní“) a **řasy** (autotrofní, „rostlinné“). Pozor: je to jen praktické třídění. Protista **nejsou přirozenou příbuzenskou skupinou** – patří sem organismy, které spolu příbuzné vůbec být nemusí."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď organismy podle výživy."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Heterotrofní (prvoci)",
+              "Autotrofní (řasy)"
+            ],
+            "items": [
+              {
+                "text": "trepka",
+                "group": 0
+              },
+              {
+                "text": "rozsivky",
+                "group": 1
+              },
+              {
+                "text": "měňavka",
+                "group": 0
+              },
+              {
+                "text": "chaluhy",
+                "group": 1
+              },
+              {
+                "text": "trypanozoma",
+                "group": 0
+              },
+              {
+                "text": "ruduchy",
+                "group": 1
+              },
+              {
+                "text": "zimnička (Plasmodium)",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak se pohybují"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**brvy (řasinky)** – tisíce krátkých vlásků, které veslují: **trepka**",
+            "**panožky** – výběžky buňky, do kterých se přelévá cytoplazma: **měňavka**",
+            "**bičík** – dlouhý bič, který se vlní: **trypanozoma**, krásnoočko",
+            "**bez pohybových útvarů** – parazit **zimnička** v krvi"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Trepka zblízka"
+        },
+        {
+          "type": "text",
+          "text": "Trepka má **dvě jádra**: velké **makronukleus** řídí běžný chod buňky (metabolismus), malé **mikronukleus** slouží k rozmnožování. Přebytečnou vodu vypumpovává **pulzující (stažitelná) vakuola**."
+        },
+        {
+          "type": "heading",
+          "text": "Řasy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**rozsivky** – jednobuněčné, mají **křemitou schránku**, hlavní složka planktonu",
+            "**ruduchy** – červené mořské řasy, získává se z nich **agar** (želírující látka pro laboratoře i kuchyň)",
+            "**chaluhy** – hnědé řasy, mohou dorůst **desítek metrů** (podmořské „lesy“)"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč trepka ve sladké vodě potřebuje pulzující vakuolu?",
+          "answer": "Do buňky pořád vniká voda z okolí. Kdyby ji trepka neodčerpávala, nabobtnala by a praskla. Pulzující vakuola vodu sbírá a vystřikuje ven."
+        },
+        {
+          "type": "example",
+          "question": "Je krásnoočko rostlina, nebo živočich?",
+          "answer": "Ani jedno – je to **protist**. Má chloroplasty (fotosyntéza) i umí pohlcovat potravu – je **mixotrofní**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Protista jsou jedna příbuzenská skupina, něco jako „prazvířata“.",
+          "right": "Protista jsou **umělá** skupina – „vše eukaryotní, co nezbylo jinam“.",
+          "why": "Některá protista jsou bližší živočichům, jiná rostlinám. Spojuje je jen to, že jsou jednoduchá."
+        },
+        {
+          "type": "summary",
+          "text": "Protista = eukaryota mimo rostliny, živočichy a houby; umělá skupina. Prvoci jsou heterotrofní (trepka, měňavka), řasy autotrofní (rozsivky, ruduchy, chaluhy). Krásnoočko je mixotrofní."
+        }
+      ]
+    },
+    {
+      "title": "Paraziti člověka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Malárie, spavá nemoc, toxoplazmóza – nemoci, které nezpůsobují bakterie ani viry, ale **jednobuněčná protista**. Malárie patří mezi nejsmrtelnější infekce světa."
+        },
+        {
+          "type": "text",
+          "text": "Zároveň jiná protista – řasy – vyrábějí kyslík a krmí celé oceány. Projdeme si obě tváře: parazity i užitečné řasy."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Protista",
+          "definition": "Organismy s buňkami s jádrem (**eukaryota**), které nejsou rostlinami, živočichy ani houbami. Většinou jednobuněčné."
+        },
+        {
+          "type": "term",
+          "term": "Parazit",
+          "definition": "Organismus, který žije **na úkor hostitele** – bere mu živiny a škodí mu."
+        },
+        {
+          "type": "term",
+          "term": "Přenašeč",
+          "definition": "Živočich, který nemoc přenese z jednoho hostitele na druhého, nejčastěji sáním krve.",
+          "example": "komár, moucha tse-tse, klíště"
+        },
+        {
+          "type": "term",
+          "term": "Prvoci a řasy",
+          "definition": "**Prvoci** jsou protista, která přijímají hotovou potravu (heterotrofní). **Řasy** fotosyntetizují (autotrofní)."
+        },
+        {
+          "type": "heading",
+          "text": "Nemoci způsobené protisty"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Původce",
+            "Nemoc",
+            "Přenos"
+          ],
+          "rows": [
+            [
+              "Plasmodium (zimnička)",
+              "malárie",
+              "komár Anopheles"
+            ],
+            [
+              "Trypanosoma brucei",
+              "spavá nemoc",
+              "moucha tse-tse"
+            ],
+            [
+              "Toxoplasma gondii",
+              "toxoplazmóza",
+              "kočičí trus, syrové maso"
+            ],
+            [
+              "Giardia",
+              "giardióza (průjem)",
+              "kontaminovaná voda"
+            ],
+            [
+              "Trichomonas vaginalis",
+              "trichomoniáza",
+              "pohlavní styk"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Malárie krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Samička komára **Anopheles** při sání vstříkne zimničky do krve člověka.",
+            "Zimničky se nejdřív pomnoží v **játrech**.",
+            "Pak napadají **červené krvinky** a množí se v nich.",
+            "Krvinky hromadně praskají – člověk dostává **záchvaty horečky**.",
+            "Komár při sání nasaje pohlavní stadia parazita a cyklus pokračuje v něm."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Spoj organismus s tím, čím se pohybuje – otoč karty."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "trepka",
+                "back": "brvy (řasinky)"
+              },
+              {
+                "front": "měňavka",
+                "back": "panožky"
+              },
+              {
+                "front": "trypanozoma",
+                "back": "bičík"
+              },
+              {
+                "front": "zimnička",
+                "back": "bez pohybových útvarů"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Užitečná protista"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Řasy (**fytoplankton**) vyrábějí velkou část kyslíku a jsou základem vodních potravních řetězců.",
+            "**Rozsivky** mají křemité schránky; jejich usazeniny tvoří křemelinu.",
+            "Z **ruduch** se získává **agar**.",
+            "**Chaluhy** dorůstají desítek metrů a tvoří podmořské lesy.",
+            "Prvoci se podílejí na rozkladu a jsou potravou drobných živočichů."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Těhotným ženám se radí nečistit kočičí záchod a nejíst syrové maso. Proč?",
+          "answer": "Hrozí nákaza **toxoplazmou**. Ta může přejít na plod a poškodit ho. Kočka vylučuje její stadia trusem, v syrovém mase mohou být cysty."
+        },
+        {
+          "type": "example",
+          "question": "Turista v horách pil vodu z potoka a dostal vleklý průjem. Co mohlo být příčinou?",
+          "answer": "Nejspíš **giardie** – prvok, který se šíří kontaminovanou vodou a usazuje se v tenkém střevě."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Malárii způsobuje komár.",
+          "right": "Malárii způsobuje prvok **zimnička (Plasmodium)**. Komár Anopheles ji jen **přenáší**.",
+          "why": "Přenašeč a původce jsou dva různé organismy. Bez zimničky by štípnutí komárem malárii nezpůsobilo."
+        },
+        {
+          "type": "summary",
+          "text": "Malárie – zimnička, přenáší komár Anopheles; spavá nemoc – trypanozoma, moucha tse-tse; toxoplazmóza – kočičí trus a syrové maso. Řasy jsou hlavní producenti kyslíku ve vodě."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Malárii přenáší…",
+      "options": [
+        "komár Anopheles",
+        "moucha tse-tse",
+        "klíště"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Agar se získává z…",
+      "options": [
+        "ruduch",
+        "rozsivek",
+        "trepek"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Protista tvoří jednu přirozenou příbuzenskou skupinu.",
+      "answer": false,
+      "explanation": "Jde o umělou (parafyletickou až polyfyletickou) skupinu."
+    },
+    {
+      "type": "input",
+      "question": "Jádro trepky řídící metabolismus je…",
+      "answers": [
+        "makronukleus",
+        "makronucleus",
+        "velké jádro"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj organismus s pohybovým útvarem.",
+      "pairs": [
+        [
+          "trepka",
+          "brvy"
+        ],
+        [
+          "měňavka",
+          "panožky"
+        ],
+        [
+          "trypanozoma",
+          "bičík"
+        ],
+        [
+          "zimnička",
+          "bez pohybových útvarů"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Křemitou schránku mají…",
+      "options": [
+        "rozsivky",
+        "ruduchy",
+        "měňavky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Toxoplazmou se lze nakazit z kočičího trusu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Spavou nemoc způsobuje…",
+      "options": [
+        "trypanozoma",
+        "giardie",
+        "trepka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Chaluhy (hnědé řasy) mohou dorůst desítek metrů.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Organel trepky k vylučování přebytečné vody je…",
+      "options": [
+        "pulzující (stažitelná) vakuola",
+        "chloroplast",
+        "bičík"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Proč jsou protista ekologicky důležitá?",
+      "answer": "Řasy vyrábějí velkou část kyslíku a tvoří fytoplankton – základ vodních potravních řetězců. Prvoci se podílejí na rozkladu a jsou potravou dalších organismů."
+    },
+    {
+      "type": "open",
+      "question": "Popiš životní cyklus původce malárie zjednodušeně.",
+      "answer": "Komár Anopheles vstříkne zimničku do krve člověka. Ta se množí v játrech a pak v červených krvinkách, které rozpadem vyvolávají horečky. Komár při sání nasaje gamety a cyklus pokračuje."
+    }
+  ]
+}

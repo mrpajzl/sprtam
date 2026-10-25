@@ -1,0 +1,347 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zdravi-a-smysly",
+  "title": "Tělo, zdraví a úraz",
+  "emoji": "🩹",
+  "explanations": [
+    {
+      "title": "Tísňové linky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Někdy se stane něco vážného. Někdo upadne a nehýbe se. Hoří. Nebo se děje něco zlého. Pak je potřeba rychle zavolat pomoc."
+        },
+        {
+          "type": "text",
+          "text": "Na to máme zvláštní telefonní čísla. Jsou krátká, aby se dala snadno zapamatovat. Volání na ně je zdarma."
+        },
+        {
+          "type": "term",
+          "term": "Úraz",
+          "definition": "Když si tělo ublíží: odřenina, zlomenina, popálenina.",
+          "example": "Spadl jsem z kola a odřel si koleno."
+        },
+        {
+          "type": "term",
+          "term": "Tísňová linka",
+          "definition": "Telefonní číslo, na které voláš, když jde o život, zdraví nebo nebezpečí.",
+          "example": "155 – záchranka"
+        },
+        {
+          "type": "term",
+          "term": "Záchranka",
+          "definition": "Auto s lékařem a pomocníky, které přijede k nemocnému nebo zraněnému.",
+          "example": "Záchranka odvezla babičku do nemocnice."
+        },
+        {
+          "type": "heading",
+          "text": "Čísla, která musíš znát"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. Opakuj si čísla nahlas, dokud je neumíš."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "155",
+                "back": "záchranka 🚑"
+              },
+              {
+                "front": "150",
+                "back": "hasiči 🚒"
+              },
+              {
+                "front": "158",
+                "back": "policie 🚓"
+              },
+              {
+                "front": "112",
+                "back": "jedno číslo pro všechno, platí v celé Evropě"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Co řeknu do telefonu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Kdo jsem**: „Jmenuji se Ema Malá.“",
+            "**Kde jsem**: „Jsem v Lipové ulici číslo 12, v Horní Vsi.“",
+            "**Co se stalo**: „Děda upadl a nemluví.“",
+            "Nezavěsím, dokud mi neřeknou, že můžu."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Na zahradě u souseda hoří kůlna. Jaké číslo zavoláš?",
+          "answer": "Požár hasí **hasiči – 150**. Kdybych si nevzpomněl, zavolám **112**."
+        },
+        {
+          "type": "example",
+          "question": "Kamarád spadl z prolézačky a hodně ho bolí ruka. Co uděláš?",
+          "answer": "Nejdřív **řeknu dospělému**. Když tam nikdo není a je to vážné, volám **155**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na tísňovou linku můžu zavolat pro legraci.",
+          "right": "Na tísňovou linku volám jen v nouzi.",
+          "why": "Zatímco by se mnou mluvili, nemusel by se dovolat někdo, kdo pomoc opravdu potřebuje."
+        },
+        {
+          "type": "summary",
+          "text": "155 záchranka, 150 hasiči, 158 policie, 112 pro všechno. Řeknu: kdo jsem, kde jsem a co se stalo."
+        }
+      ]
+    },
+    {
+      "title": "Zdravý den",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když jsi nemocný, nemůžeš ven ani do školy. Je lepší nemoci a úrazům předcházet."
+        },
+        {
+          "type": "text",
+          "text": "Pro zdraví můžeš hodně udělat sám: co jíš, jak se hýbeš, kolik spíš a jak se chráníš."
+        },
+        {
+          "type": "term",
+          "term": "Zdraví",
+          "definition": "Když tělo dobře funguje, nic tě nebolí a máš sílu.",
+          "example": "Zdravý člověk má chuť si hrát a učit se."
+        },
+        {
+          "type": "term",
+          "term": "Pestrá strava",
+          "definition": "Jíst různá jídla, ne pořád to samé. Každé dává tělu něco jiného.",
+          "example": "Zelenina, ovoce, pečivo, mléko, ryba."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🥦",
+            "🍎",
+            "🍞",
+            "🥛",
+            "🐟"
+          ],
+          "caption": "Pestrá strava"
+        },
+        {
+          "type": "heading",
+          "text": "Co pomáhá a co škodí"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď: pomáhá to zdraví, nebo škodí?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Pomáhá zdraví 💪",
+              "Škodí zdraví 🤒"
+            ],
+            "items": [
+              {
+                "text": "spánek",
+                "group": 0
+              },
+              {
+                "text": "sport",
+                "group": 0
+              },
+              {
+                "text": "zelenina",
+                "group": 0
+              },
+              {
+                "text": "mytí rukou",
+                "group": 0
+              },
+              {
+                "text": "celý den u tabletu",
+                "group": 1
+              },
+              {
+                "text": "hodně sladkostí",
+                "group": 1
+              },
+              {
+                "text": "málo spánku",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak se chránit"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Na slunci: čepice a opalovací krém ☀️",
+            "Na kole: přilba 🚲",
+            "V zimě: teplé oblečení 🧤",
+            "Před jídlem: umyté ruce 🧼"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Malý úraz"
+        },
+        {
+          "type": "term",
+          "term": "Odřenina",
+          "definition": "Když si sedřeš kůži, třeba na koleni. Trochu krvácí a pálí.",
+          "example": "Upadl jsem na hřišti a odřel si koleno."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Řeknu to dospělému.",
+            "Ránu opláchneme čistou vodou.",
+            "Dospělý ji ošetří a přelepí náplastí 🩹."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Co je zdravější svačina: chipsy, nebo chléb a jablko?",
+          "answer": "Chipsy jsou slané a mastné. **Chléb a jablko** dají tělu sílu na dlouho."
+        },
+        {
+          "type": "example",
+          "question": "Jedeš na kole k babičce. Co si nasadíš?",
+          "answer": "Kdybych spadl, chrání hlavu **přilba**. Nasadím si ji vždycky."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když kamarád spadne, nebudu nic říkat.",
+          "right": "Řeknu to hned dospělému.",
+          "why": "Dospělý pozná, jestli je zranění vážné, a umí ho ošetřit."
+        },
+        {
+          "type": "summary",
+          "text": "Jím pestře, hýbu se a dost spím. Na slunci a na kole se chráním. Při úrazu to řeknu dospělému."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jaké číslo má záchranka?",
+      "answers": [
+        "155"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jaké číslo mají hasiči?",
+      "answers": [
+        "150"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaké číslo má policie?",
+      "options": [
+        "158",
+        "155",
+        "150"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "155",
+          "záchranka"
+        ],
+        [
+          "150",
+          "hasiči"
+        ],
+        [
+          "158",
+          "policie"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Číslo 112 platí v celé Evropě.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Na tísňovou linku můžu volat pro legraci.",
+      "answer": false,
+      "explanation": "Zdržel bych pomoc pro někoho, kdo ji opravdu potřebuje."
+    },
+    {
+      "type": "choice",
+      "question": "Kamarád si odřel koleno. Co uděláš?",
+      "options": [
+        "řeknu to dospělému",
+        "utíkám pryč",
+        "směju se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je zdravá svačina?",
+      "options": [
+        "chléb a jablko",
+        "chipsy",
+        "bonbony"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Na slunci nosím čepici a mažu se krémem.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Co řeknu při volání?",
+      "items": [
+        "kdo jsem",
+        "kde jsem",
+        "co se stalo"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co řekneš, když voláš záchranku?",
+      "answer": "Řeknu své jméno, kde jsem a co se stalo. Nezavěsím, dokud mi to neřeknou."
+    },
+    {
+      "type": "open",
+      "question": "Jak se chráníš před nemocí?",
+      "answer": "Myju si ruce, jím ovoce a zeleninu, sportuji, dost spím a obléknu se podle počasí."
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kyseliny",
+  "title": "Kyseliny",
+  "emoji": "🍋",
+  "explanations": [
+    {
+      "title": "Ze života",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Citron, ocet, kyselé zelí, sodovka. Kyselou chuť způsobují **kyseliny**. Jsou v jídle, v tvém žaludku, v autobaterii i v kyselém dešti."
+        },
+        {
+          "type": "text",
+          "text": "Některé jsou neškodné, jiné ti propálí kůži i oblečení. Proto se je naučíme poznat, pojmenovat a bezpečně s nimi zacházet."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kyselina",
+          "definition": "Látka, která ve vodě uvolňuje částice **H⁺** – vodíkové kationty. Právě ony dělají kyselou chuť a leptají.",
+          "example": "Kyselina citronová v citronu, octová v octu, mléčná v kysaném zelí."
+        },
+        {
+          "type": "term",
+          "term": "Kation H⁺",
+          "definition": "Atom vodíku, který ztratil svůj jediný elektron, a má proto kladný náboj (+). Ve vodě se hned naváže na molekulu vody – vznikne **oxoniový kation H₃O⁺**."
+        },
+        {
+          "type": "term",
+          "term": "Žíravina",
+          "definition": "Látka, která leptá (rozkládá) kůži, oči i jiné materiály.",
+          "example": "Koncentrovaná kyselina sírová nebo chlorovodíková."
+        },
+        {
+          "type": "term",
+          "term": "Indikátor",
+          "definition": "Látka, která **změní barvu** podle toho, jestli je roztok kyselý. Prozradí kyselinu bez ochutnávání.",
+          "example": "Modrý **lakmusový papírek** v kyselině **zčervená**."
+        },
+        {
+          "type": "heading",
+          "text": "Kyseliny kolem nás"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kyselina",
+            "Vzorec",
+            "Kde ji najdeš"
+          ],
+          "rows": [
+            [
+              "chlorovodíková",
+              "HCl",
+              "v žaludeční šťávě – pomáhá trávit"
+            ],
+            [
+              "sírová",
+              "H₂SO₄",
+              "v autobaterii, v průmyslu"
+            ],
+            [
+              "dusičná",
+              "HNO₃",
+              "výroba hnojiv a výbušnin"
+            ],
+            [
+              "uhličitá",
+              "H₂CO₃",
+              "v sodovce a limonádách (bublinky CO₂)"
+            ],
+            [
+              "fosforečná",
+              "H₃PO₄",
+              "v coca-cole, výroba hnojiv"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty. Zkus nejdřív podle vzorce říct název kyseliny."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "HCl",
+                "back": "kyselina chlorovodíková"
+              },
+              {
+                "front": "H₂SO₄",
+                "back": "kyselina sírová"
+              },
+              {
+                "front": "HNO₃",
+                "back": "kyselina dusičná"
+              },
+              {
+                "front": "H₂CO₃",
+                "back": "kyselina uhličitá"
+              },
+              {
+                "front": "H₃PO₄",
+                "back": "kyselina fosforečná"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dva druhy kyselin"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Bezkyslíkaté** – v molekule není kyslík: HCl (chlorovodíková), HF (fluorovodíková), H₂S (sirovodíková). Název končí na **-vodíková**.",
+            "**Kyslíkaté** – mají vodík, jeden „hlavní“ prvek a kyslík: H₂SO₄, HNO₃, H₂CO₃."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Bezpečnost"
+        },
+        {
+          "type": "text",
+          "text": "Když se koncentrovaná kyselina ředí vodou, uvolní se hodně tepla. Kdybys lil vodu do kyseliny, voda by se na povrchu prudce vařila a vystříkla i s kyselinou."
+        },
+        {
+          "type": "example",
+          "question": "Potřebuješ zředit kyselinu sírovou. Co lít do čeho?",
+          "answer": "**Kyselinu do vody**, pomalu a za míchání. Teplo se rozptýlí ve velkém množství vody. Pomůcka: nejdřív voda, potom kyselina."
+        },
+        {
+          "type": "example",
+          "question": "Kamarád si polil ruku kyselinou. Co uděláš?",
+          "answer": "Hned oplachuj zasažené místo **velkým množstvím studené tekoucí vody**, sundej potřísněné oblečení a zavolej učitele nebo lékaře. Při zasažení očí vždy k lékaři."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kyselinu zředím tak, že do ní naleju vodu.",
+          "right": "Vždy lij **kyselinu do vody**.",
+          "why": "Voda nalitá na kyselinu se okamžitě ohřeje a vystříkne i s kyselinou – hrozí poleptání."
+        },
+        {
+          "type": "summary",
+          "text": "Kyseliny ve vodě uvolňují H⁺. Lakmus v nich zčervená. Silné kyseliny jsou žíraviny. Ředíme vždy kyselinu do vody, nikdy naopak!"
+        }
+      ]
+    },
+    {
+      "title": "Stavba vzorce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kyseliny jsou látky, které ve vodě uvolňují vodíkové kationty a chutnají kysele (citron, ocet). V chemii je ale potřeba umět z názvu napsat vzorec a naopak – přesně jako u oxidů."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si postup, kterým vzorec kyslíkaté kyseliny spočítáš bez učení nazpaměť."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kyselina",
+          "definition": "Látka, která ve vodě odštěpuje **kationty H⁺** (kladně nabité vodíky). Ty se hned navážou na vodu: vznikne **oxoniový kation H₃O⁺**.",
+          "example": "HCl ve vodě → H⁺ + Cl⁻"
+        },
+        {
+          "type": "term",
+          "term": "Bezkyslíkatá kyselina",
+          "definition": "Kyselina **bez kyslíku**: vodík + jeden prvek. Název končí na -vodíková.",
+          "example": "HCl kyselina chlorovodíková, HF fluorovodíková"
+        },
+        {
+          "type": "term",
+          "term": "Kyslíkatá kyselina",
+          "definition": "Kyselina z **vodíku, centrálního prvku a kyslíku** – vždy v tomto pořadí.",
+          "example": "H₂SO₄: H – vodík, S – centrální prvek síra, O – kyslík"
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo",
+          "definition": "Připomenutí: číslo (římsky), kolik elektronů atom ve sloučenině „dal“ nebo „vzal“. Vodík má **I**, kyslík **−II**, součet ve sloučenině je **0**."
+        },
+        {
+          "type": "text",
+          "text": "Koncovka názvu prozradí oxidační číslo centrálního prvku – stejně jako u oxidů: -ná I, -natá II, -itá III, -ičitá IV, -ečná/-ičná V, -ová VI, -istá VII."
+        },
+        {
+          "type": "heading",
+          "text": "Postup pro kyslíkatou kyselinu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Z koncovky urči oxidační číslo centrálního prvku: kyselina sír**ová** → S má VI.",
+            "Je-li číslo **sudé**, dej 2 vodíky; je-li **liché**, dej 1 vodík: H₂S…",
+            "Sečti kladné: 2 · I + VI = 8.",
+            "Každý kyslík má −II, takže počet kyslíků = 8 : 2 = **4**.",
+            "Výsledek: **H₂SO₄**. Kontrola: 2 + 6 − 8 = 0 ✓"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Vzorec kyseliny dusičné?",
+          "answer": "-ičná → N má **V** (liché) → 1 vodík. Kladné: 1 + 5 = 6. Kyslíků 6 : 2 = 3. **HNO₃**. Kontrola: 1 + 5 − 6 = 0 ✓"
+        },
+        {
+          "type": "example",
+          "question": "Vzorec kyseliny uhličité?",
+          "answer": "-ičitá → C má **IV** (sudé) → 2 vodíky. Kladné: 2 + 4 = 6. Kyslíků 3. **H₂CO₃**."
+        },
+        {
+          "type": "example",
+          "question": "Jaké oxidační číslo má síra v H₂SO₃ a jak se kyselina jmenuje?",
+          "answer": "Kyslíky: 3 · (−2) = −6. Vodíky +2. Síra musí dorovnat: −6 + 2 + x = 0 → x = 4 → **IV** → -ičitá → **kyselina siřičitá**."
+        },
+        {
+          "type": "text",
+          "text": "Výjimku si zapamatuj: kyselina fosforečná má 3 vodíky – **H₃PO₄**."
+        },
+        {
+          "type": "heading",
+          "text": "Procvič si"
+        },
+        {
+          "type": "text",
+          "text": "Doplň chybějící část. Nejdřív spočítej, pak klepni."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "kyselina sírová = H₂SO",
+                "after": "",
+                "options": [
+                  "₄",
+                  "₃",
+                  "₂"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "kyselina siřičitá = H₂SO",
+                "after": "",
+                "options": [
+                  "₃",
+                  "₄",
+                  "₂"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "kyselina dusičná = HNO",
+                "after": "",
+                "options": [
+                  "₃",
+                  "₂",
+                  "₄"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "HF = kyselina fluoro",
+                "after": "",
+                "options": [
+                  "vodíková",
+                  "vá",
+                  "itá"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pozor při práci"
+        },
+        {
+          "type": "text",
+          "text": "Silné kyseliny jsou **žíraviny** – leptají kůži. Ředí se vždy **kyselina do vody**. Kyselinu prozradí indikátor: modrý lakmus v ní zčervená."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kyseliny ve vodě uvolňují OH⁻.",
+          "right": "Kyseliny uvolňují **H⁺**. Ionty OH⁻ uvolňují hydroxidy.",
+          "why": "Vodík je na začátku každého vzorce kyseliny (HCl, H₂SO₄) – právě ten se odštěpí."
+        },
+        {
+          "type": "summary",
+          "text": "Kyselina = vodík + (centrální prvek) + kyslík. Liché číslo → 1 H, sudé → 2 H, kyslíků je polovina součtu kladných čísel. Výjimka H₃PO₄."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jak se jmenuje H₂SO₄? (kyselina …)",
+      "answers": [
+        "kyselina sírová",
+        "sírová"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje HCl? (kyselina …)",
+      "answers": [
+        "kyselina chlorovodíková",
+        "chlorovodíková"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec kyseliny dusičné?",
+      "options": [
+        "HNO₃",
+        "HNO₂",
+        "H₂NO₃",
+        "NH₃"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která kyselina je v žaludeční šťávě?",
+      "options": [
+        "chlorovodíková",
+        "sírová",
+        "octová",
+        "dusičná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak správně ředit koncentrovanou kyselinu?",
+      "options": [
+        "kyselinu lít do vody",
+        "vodu lít do kyseliny",
+        "je to jedno"
+      ],
+      "answer": 0,
+      "explanation": "Ředění uvolňuje teplo. Voda nalitá do kyseliny může vystříknout i s kyselinou."
+    },
+    {
+      "type": "truefalse",
+      "question": "Kyselina uhličitá je v sycených nápojích.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Kyseliny ve vodě odštěpují ionty OH⁻.",
+      "answer": false,
+      "explanation": "Kyseliny odštěpují H⁺. OH⁻ uvolňují hydroxidy."
+    },
+    {
+      "type": "input",
+      "question": "Jaké oxidační číslo (arabskou číslicí) má síra v H₂SO₄?",
+      "answers": [
+        "6",
+        "VI"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj vzorec s názvem.",
+      "pairs": [
+        [
+          "HF",
+          "kyselina fluorovodíková"
+        ],
+        [
+          "H₂SO₃",
+          "kyselina siřičitá"
+        ],
+        [
+          "H₂CO₃",
+          "kyselina uhličitá"
+        ],
+        [
+          "HNO₃",
+          "kyselina dusičná"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se zbarví modrý lakmusový papírek v kyselině?",
+      "options": [
+        "červeně",
+        "modře zůstane",
+        "zeleně"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak se chovat při polití kyselinou?",
+      "answer": "Zasažené místo hned oplachovat velkým množstvím studené vody. Sundat potřísněný oděv a vyhledat lékaře, u očí vždy."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi kyslíkatou a bezkyslíkatou kyselinou? Uveď příklady.",
+      "answer": "Kyslíkatá obsahuje v molekule kyslík, např. H₂SO₄ nebo HNO₃. Bezkyslíkatá kyslík nemá, např. HCl nebo H₂S."
+    }
+  ]
+}

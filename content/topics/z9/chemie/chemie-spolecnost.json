@@ -1,0 +1,514 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "chemie-spolecnost",
+  "title": "Chemie a společnost",
+  "emoji": "♻️",
+  "explanations": [
+    {
+      "title": "Doma",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozhlédni se po kuchyni. Lahev od vody, sáček na pečivo, kelímek od jogurtu, prášek na praní, prášek na bolest hlavy. Všechno vyrobila chemie."
+        },
+        {
+          "type": "text",
+          "text": "Chemie nám život ulehčuje, ale její výrobky mohou škodit, když s nimi zacházíme špatně. Ukážeme si, co je co a jak se k tomu chovat."
+        },
+        {
+          "type": "heading",
+          "text": "Plasty"
+        },
+        {
+          "type": "term",
+          "term": "Plast",
+          "definition": "Umělá látka, kterou lze tvarovat. Skládá se z obrovských molekul.",
+          "example": "PET lahev, igelitová taška"
+        },
+        {
+          "type": "term",
+          "term": "Monomer",
+          "definition": "Malá molekula – jeden „korálek“.",
+          "example": "ethen C₂H₄"
+        },
+        {
+          "type": "term",
+          "term": "Polymer",
+          "definition": "Obří molekula z tisíců monomerů spojených za sebou – „náhrdelník“. Plasty jsou polymery.",
+          "example": "polyethylen z ethenu"
+        },
+        {
+          "type": "term",
+          "term": "Polymerace",
+          "definition": "Reakce, při které se monomery spojují do polymeru."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zkratka",
+            "Název",
+            "Kde ho máš"
+          ],
+          "rows": [
+            [
+              "PET",
+              "polyethylentereftalát",
+              "lahve od nápojů"
+            ],
+            [
+              "PE",
+              "polyethylen",
+              "sáčky, tašky"
+            ],
+            [
+              "PP",
+              "polypropylen",
+              "víčka, krabičky"
+            ],
+            [
+              "PVC",
+              "polyvinylchlorid",
+              "okenní rámy, trubky"
+            ],
+            [
+              "PS",
+              "polystyren",
+              "kelímky, pěnový obal"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Plasty se v přírodě rozkládají stovky let a rozpadají se na drobné **mikroplasty**, které se dostanou až do jídla. Proto je třídíme – a ještě líp: méně kupujeme."
+        },
+        {
+          "type": "heading",
+          "text": "Kam s odpadem"
+        },
+        {
+          "type": "term",
+          "term": "Nebezpečný odpad",
+          "definition": "Odpad, který obsahuje jedovaté nebo jinak škodlivé látky. Nepatří do běžné popelnice – odevzdává se ve sběrném dvoře nebo na určených místech.",
+          "example": "baterie, zbytky barev, léky"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věci: co patří do žlutého kontejneru na plasty a co do nebezpečného odpadu?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "do žlutého kontejneru (plasty)",
+              "do nebezpečného odpadu"
+            ],
+            "items": [
+              {
+                "text": "PET lahev",
+                "group": 0
+              },
+              {
+                "text": "igelitová taška",
+                "group": 0
+              },
+              {
+                "text": "kelímek od jogurtu",
+                "group": 0
+              },
+              {
+                "text": "polystyren z krabice",
+                "group": 0
+              },
+              {
+                "text": "baterie",
+                "group": 1
+              },
+              {
+                "text": "prošlé léky",
+                "group": 1
+              },
+              {
+                "text": "zbytky barev",
+                "group": 1
+              },
+              {
+                "text": "úsporná zářivka",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Prošlé léky se vracejí do **lékárny**. Baterie do sběrných boxů v obchodech."
+        },
+        {
+          "type": "heading",
+          "text": "Léky"
+        },
+        {
+          "type": "term",
+          "term": "Analgetikum",
+          "definition": "Lék proti **bolesti**.",
+          "example": "paracetamol, ibuprofen"
+        },
+        {
+          "type": "term",
+          "term": "Antibiotikum",
+          "definition": "Lék, který ničí **bakterie**. Na **viry** (chřipka, rýma) nepůsobí.",
+          "example": "penicilin"
+        },
+        {
+          "type": "example",
+          "question": "Máš chřipku. Pomohou ti antibiotika?",
+          "answer": "Chřipku způsobuje **virus**. Antibiotika ničí jen bakterie, na viry nepůsobí. Nepomohou – jen zbytečně zatíží tělo. Pomůže odpočinek, pití a léky na horečku."
+        },
+        {
+          "type": "heading",
+          "text": "Na zahradě a na poli"
+        },
+        {
+          "type": "term",
+          "term": "Hnojivo",
+          "definition": "Látka, která rostlinám dodá prvky potřebné k růstu. Nejdůležitější jsou **dusík (N), fosfor (P) a draslík (K)** – proto „NPK“."
+        },
+        {
+          "type": "term",
+          "term": "Pesticid",
+          "definition": "Látka, která hubí škůdce. **Herbicid** ničí plevel, **insekticid** hmyz, **fungicid** plísně a houby."
+        },
+        {
+          "type": "heading",
+          "text": "Paliva"
+        },
+        {
+          "type": "text",
+          "text": "Uhlí, ropa a zemní plyn jsou **fosilní** paliva – vznikala miliony let a dojdou. Při jejich spalování vzniká **CO₂**, který otepluje planetu. **Bioplyn** (z kejdy, zbytků rostlin) je **obnovitelný** – můžeme ho vyrábět stále znovu."
+        },
+        {
+          "type": "example",
+          "question": "Na lahvi čističe je výstražný symbol s rukou, na kterou kape kapalina. Co s ním?",
+          "answer": "Symbol znamená **žíravá látka** – leptá kůži. Používej rukavice, nemíchej s jinými čističi, skladuj v původní lahvi mimo dosah dětí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na chřipku si vezmu antibiotika, ta zaberou na všechno.",
+          "right": "Antibiotika ničí jen **bakterie**, ne viry.",
+          "why": "Zbytečné užívání antibiotik navíc vede k tomu, že si na ně bakterie zvyknou (stanou se odolnými) a pak nezaberou, když je opravdu potřebuješ."
+        },
+        {
+          "type": "summary",
+          "text": "Plasty vznikají polymerací – třiď je. Prošlé léky vracej do lékárny. Antibiotika ničí bakterie, ne viry. Hnojiva NPK, pesticidy proti škůdcům."
+        }
+      ]
+    },
+    {
+      "title": "Přehled",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chemický průmysl je jako obrovská kuchyně. Z ropy, zemního plynu, vzduchu a hornin „vaří“ plasty, paliva, léky, hnojiva a prostředky na ochranu rostlin."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme jednotlivé oblasti jednu po druhé: co to je, k čemu to je a co je na tom nebezpečné."
+        },
+        {
+          "type": "heading",
+          "text": "1. Plasty"
+        },
+        {
+          "type": "term",
+          "term": "Monomer a polymer",
+          "definition": "**Monomer** je malá molekula. **Polymer** je obří molekula z tisíců monomerů spojených za sebou.",
+          "example": "Monomer ethen → polymer polyethylen."
+        },
+        {
+          "type": "term",
+          "term": "Polymerace",
+          "definition": "Reakce, při které se monomery spojují do dlouhých řetězců – polymerů. Takto vzniká většina plastů."
+        },
+        {
+          "type": "example",
+          "question": "Jak vzniká polyethylen?",
+          "answer": "Ethen má mezi uhlíky dvojnou vazbu CH₂=CH₂. Ta se „rozepne“ a každá molekula chytí sousední. Vznikne řetěz –CH₂–CH₂–CH₂–CH₂–… z tisíců jednotek."
+        },
+        {
+          "type": "text",
+          "text": "Zkratky plastů: **PE** polyethylen, **PP** polypropylen, **PVC** polyvinylchlorid, **PS** polystyren, **PET** (lahve od nápojů)."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si zkratky – zkus říct název dřív, než kartu otočíš."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "PE",
+                "back": "polyethylen – sáčky"
+              },
+              {
+                "front": "PP",
+                "back": "polypropylen – víčka"
+              },
+              {
+                "front": "PVC",
+                "back": "polyvinylchlorid – okna, trubky"
+              },
+              {
+                "front": "PS",
+                "back": "polystyren – kelímky"
+              },
+              {
+                "front": "PET",
+                "back": "lahve od nápojů"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "2. Paliva"
+        },
+        {
+          "type": "term",
+          "term": "Fosilní a obnovitelné palivo",
+          "definition": "**Fosilní** vznikla před miliony let a dojdou (uhlí, ropa, zemní plyn). **Obnovitelné** můžeme vyrábět stále (bioplyn, dřevo)."
+        },
+        {
+          "type": "text",
+          "text": "Spalováním fosilních paliv vzniká CO₂, který přispívá k oteplování planety."
+        },
+        {
+          "type": "heading",
+          "text": "3. Léčiva"
+        },
+        {
+          "type": "term",
+          "term": "Analgetika a antibiotika",
+          "definition": "**Analgetika** tlumí bolest. **Antibiotika** ničí bakterie – na viry nefungují. **Vakcíny** (očkování) učí tělo bránit se nemoci dopředu."
+        },
+        {
+          "type": "heading",
+          "text": "4. Zemědělství"
+        },
+        {
+          "type": "term",
+          "term": "Hnojiva",
+          "definition": "Dodávají rostlinám živiny. Hlavní prvky jsou **N** (dusík), **P** (fosfor), **K** (draslík)."
+        },
+        {
+          "type": "term",
+          "term": "Pesticidy",
+          "definition": "Látky proti škůdcům: **herbicidy** proti plevelu, **insekticidy** proti hmyzu, **fungicidy** proti plísním a houbám."
+        },
+        {
+          "type": "text",
+          "text": "Přehnojení nebo přemíra pesticidů škodí: látky se splachují do řek a podzemní vody."
+        },
+        {
+          "type": "heading",
+          "text": "Shrnutí v tabulce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Oblast",
+            "Příklady"
+          ],
+          "rows": [
+            [
+              "plasty",
+              "PE, PP, PVC, PS, PET"
+            ],
+            [
+              "paliva",
+              "uhlí, zemní plyn, benzín, nafta, bioplyn"
+            ],
+            [
+              "léčiva",
+              "analgetika, antibiotika, vakcíny"
+            ],
+            [
+              "hnojiva",
+              "dusíkatá, fosforečná, draselná"
+            ],
+            [
+              "pesticidy",
+              "herbicidy, insekticidy, fungicidy"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Bezpečnost"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti si **výstražný symbol** na obalu (žíravé, hořlavé, toxické, nebezpečné pro životní prostředí).",
+            "Skladuj v původním obalu, mimo dosah dětí a jídla.",
+            "Nemíchej čisticí prostředky – mohou uvolnit jedovatý plyn.",
+            "Zbytky chemikálií a baterie odnes do sběru nebezpečného odpadu, léky do lékárny."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč se nesmí míchat bělicí čistič s chlornanem a kyselý čistič na WC?",
+          "answer": "Spolu reagují a uvolní se **jedovatý chlor**. Ten poleptá plíce. Proto každý čistič používej zvlášť."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Prošlé léky spláchnu do záchodu, rozpustí se.",
+          "right": "Prošlé léky vrať do **lékárny**.",
+          "why": "Z kanalizace se léčiva dostanou do řek, škodí rybám a mohou se vrátit do pitné vody. Lékárna je předá k bezpečné likvidaci."
+        },
+        {
+          "type": "summary",
+          "text": "Plasty = polymery z monomerů (polymerace). Fosilní paliva dojdou a uvolňují CO₂. Antibiotika jen na bakterie. Hnojiva NPK, pesticidy proti škůdcům. U chemikálií čti výstražné symboly a nemíchej je."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se nazývá děj, kterým vznikají plasty z malých molekul?",
+      "options": [
+        "polymerace",
+        "neutralizace",
+        "destilace",
+        "fotosyntéza"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Z jakého plastu jsou nejčastěji lahve od nápojů?",
+      "options": [
+        "PET",
+        "PVC",
+        "polystyren",
+        "bakelit"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Antibiotika pomáhají proti chřipce a nachlazení způsobenému viry.",
+      "answer": false,
+      "explanation": "Antibiotika působí jen na bakterie."
+    },
+    {
+      "type": "choice",
+      "question": "Kam patří prošlé léky?",
+      "options": [
+        "do lékárny",
+        "do směsného odpadu",
+        "do záchodu",
+        "do žlutého kontejneru"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj pesticid s tím, proti čemu působí.",
+      "pairs": [
+        [
+          "herbicid",
+          "plevel"
+        ],
+        [
+          "insekticid",
+          "hmyz"
+        ],
+        [
+          "fungicid",
+          "plísně a houby"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které palivo je obnovitelné?",
+      "options": [
+        "bioplyn",
+        "uhlí",
+        "zemní plyn",
+        "nafta"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Spalováním fosilních paliv vzniká oxid uhličitý.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Které tři prvky obsahují běžná průmyslová hnojiva NPK?",
+      "options": [
+        "dusík, fosfor, draslík",
+        "sodík, fosfor, kyslík",
+        "neon, platina, krypton"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je analgetikum?",
+      "options": [
+        "lék proti bolesti",
+        "lék proti bakteriím",
+        "vitamin",
+        "očkovací látka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj zkratku plastu s názvem.",
+      "pairs": [
+        [
+          "PE",
+          "polyethylen"
+        ],
+        [
+          "PVC",
+          "polyvinylchlorid"
+        ],
+        [
+          "PS",
+          "polystyren"
+        ],
+        [
+          "PP",
+          "polypropylen"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaké problémy způsobují plasty v přírodě a jak je řešit?",
+      "answer": "Rozkládají se stovky let, hromadí se v mořích a jako mikroplasty se dostávají do potravy. Řešením je méně jednorázových plastů, třídění a recyklace."
+    },
+    {
+      "type": "open",
+      "question": "Jak se bezpečně chovat k chemikáliím v domácnosti?",
+      "answer": "Číst výstražné symboly a návod, skladovat v původních obalech mimo dosah dětí a potravin, nemíchat čisticí prostředky a používat rukavice. Zbytky odevzdat do sběru nebezpečného odpadu."
+    }
+  ]
+}

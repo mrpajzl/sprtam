@@ -1,0 +1,421 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "trh-nabidka-poptavka",
+  "title": "Trh, nabídka a poptávka",
+  "emoji": "🏪",
+  "explanations": [
+    {
+      "title": "Jahody na trhu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V červnu jsou jahody všude a kilo stojí 60 Kč. V prosinci je skoro nikde neseženeš a kilo dovezených stojí 250 Kč. Nikdo z úřadu ceny neurčil. Kdo je tedy nastavil?"
+        },
+        {
+          "type": "text",
+          "text": "Ceny vznikají na **trhu** – setkáním těch, kdo chtějí kupovat, a těch, kdo chtějí prodávat. Když tomu rozumíš, pochopíš, proč něco zdražuje, a umíš lépe nakupovat i podnikat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Trh",
+          "definition": "Místo nebo situace, kde se setkávají **kupující** a **prodávající** a vzniká **cena**. Nemusí to být tržnice – i e-shop je trh.",
+          "example": "Trh s jahodami, s byty, s prací."
+        },
+        {
+          "type": "term",
+          "term": "Poptávka",
+          "definition": "Kolik zboží jsou kupující **ochotni a schopni koupit** při různých cenách.",
+          "example": "Při ceně 40 Kč za kilo lidé koupí 90 kg jahod, při 120 Kč jen 15 kg."
+        },
+        {
+          "type": "term",
+          "term": "Nabídka",
+          "definition": "Kolik zboží jsou prodávající **ochotni prodat** při různých cenách.",
+          "example": "Při vysoké ceně se pěstitelům vyplatí sklízet a prodávat víc."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo poptávky"
+        },
+        {
+          "type": "text",
+          "text": "Čím je něco **dražší**, tím **méně** toho lidé koupí. Podívej se, kolik kilogramů jahod lidé koupí při jednotlivých cenách:"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "kg",
+            "items": [
+              {
+                "label": "40 Kč",
+                "value": 90
+              },
+              {
+                "label": "60 Kč",
+                "value": 70
+              },
+              {
+                "label": "80 Kč",
+                "value": 50
+              },
+              {
+                "label": "100 Kč",
+                "value": 30
+              },
+              {
+                "label": "120 Kč",
+                "value": 15
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Všimni si, jak sloupce s rostoucí cenou klesají. Tomu se říká **zákon klesající poptávky**."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo nabídky"
+        },
+        {
+          "type": "text",
+          "text": "U prodávajících je to naopak: čím **vyšší cena**, tím **víc** jsou ochotni nabídnout – víc se jim to vyplatí."
+        },
+        {
+          "type": "heading",
+          "text": "Kde se cena ustálí"
+        },
+        {
+          "type": "term",
+          "term": "Rovnovážná cena",
+          "definition": "Cena, při které se **nabízené množství rovná poptávanému**. Všichni, kdo za tu cenu chtějí koupit, koupí, a všichni, kdo chtějí prodat, prodají.",
+          "example": "Pěstitelé nabídnou 50 kg za 80 Kč a lidé za 80 Kč koupí právě 50 kg."
+        },
+        {
+          "type": "term",
+          "term": "Přebytek",
+          "definition": "Zboží zbývá, protože je cena **nad** rovnováhou – prodávající nabízejí víc, než lidé chtějí koupit.",
+          "example": "Stánkař má večer neprodané jahody, příště zlevní."
+        },
+        {
+          "type": "term",
+          "term": "Nedostatek",
+          "definition": "Zboží chybí, protože je cena **pod** rovnováhou – lidé chtějí víc, než je nabízeno.",
+          "example": "Fronty na levné vstupenky, které se rychle vyprodají."
+        },
+        {
+          "type": "example",
+          "question": "Úroda brambor je rekordní. Co se stane s cenou?",
+          "answer": "Brambor je víc – **nabídka vzrostla**. Při staré ceně by vznikl přebytek, prodávající proto zlevní. Cena **klesne**."
+        },
+        {
+          "type": "example",
+          "question": "Před Vánoci chce kapra koupit mnohem víc lidí než jindy. Co se stane s cenou kapra?",
+          "answer": "**Poptávka vzrostla.** Při staré ceně by kapři chyběli (nedostatek), prodávající mohou zdražit. Cena **vzroste**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ceny určuje obchodník, jak se mu zachce.",
+          "right": "Obchodník cenu nastaví, ale když je moc vysoko, zboží neprodá (přebytek) a musí zlevnit.",
+          "why": "Na trhu s více prodávajícími rozhodují o ceně nakonec nabídka a poptávka. Výjimkou může být monopol – jediný prodejce."
+        },
+        {
+          "type": "text",
+          "text": "Poptávku ovlivňují i jiné zboží: **substituty** se navzájem nahrazují (máslo a margarín), **komplementy** se doplňují (auto a benzín)."
+        },
+        {
+          "type": "summary",
+          "text": "Čím vyšší cena, tím menší poptávané a tím větší nabízené množství. Rovnovážná cena = nabízené množství se rovná poptávanému. Cena nad rovnováhou → přebytek, pod ní → nedostatek."
+        }
+      ]
+    },
+    {
+      "title": "Pojmy a typy trhů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zdraží káva a lidé začnou pít víc čaje. Zdraží benzín a lidé méně jezdí autem. V jednom městě je jen jediná firma na vodu – a cenu si nastavuje skoro sama. Proč?"
+        },
+        {
+          "type": "text",
+          "text": "**Ekonomie** – věda o tom, jak lidé hospodaří s omezenými zdroji – na to má jasná pravidla. Když je znáš, umíš předvídat, co se stane s cenami, a rozumíš zprávám o ekonomice."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Statek",
+          "definition": "Cokoli, co uspokojuje potřeby lidí – věc nebo služba.",
+          "example": "Chleba, kolo, oprava auta, koncert."
+        },
+        {
+          "type": "term",
+          "term": "Výrobní faktory",
+          "definition": "To, z čeho se vyrábí. Klasicky tři: **práce** (lidé), **půda** (přírodní zdroje) a **kapitál** (stroje, budovy, nástroje).",
+          "example": "Pekárna: pekaři (práce), obilí z polí (půda), pece (kapitál)."
+        },
+        {
+          "type": "term",
+          "term": "Poptávka a nabídka",
+          "definition": "**Poptávka** = kolik chtějí kupující koupit při různých cenách. **Nabídka** = kolik chtějí prodávající prodat. Když cena roste, poptávané množství klesá a nabízené roste.",
+          "example": "Drahé jahody kupuje méně lidí, ale pěstitelé jich nabízejí víc."
+        },
+        {
+          "type": "heading",
+          "text": "Rovnováha krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Prodávající nastaví vysokou cenu → kupujících je málo → zboží zbývá (**přebytek**).",
+            "Aby zboží prodali, **zlevní**.",
+            "Když je cena moc nízko → kupujících je moc → zboží chybí (**nedostatek**).",
+            "Prodávající **zdraží**.",
+            "Cena se ustálí tam, kde se **nabízené množství rovná poptávanému** → **rovnovážná cena**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak spolu zboží souvisí"
+        },
+        {
+          "type": "term",
+          "term": "Substituty",
+          "definition": "Zboží, které se **navzájem nahrazuje**. Když jedno zdraží, lidé kupují víc toho druhého.",
+          "example": "Máslo a margarín, čaj a káva, vlak a autobus."
+        },
+        {
+          "type": "term",
+          "term": "Komplementy",
+          "definition": "Zboží, které se **doplňuje** – používá se spolu. Když jedno zdraží, lidé kupují méně obojího.",
+          "example": "Auto a benzín, tiskárna a toner, mobil a nabíječka."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď dvojice. Zeptej se: použiju jedno místo druhého, nebo jedno potřebuju k druhému?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Substituty",
+              "Komplementy"
+            ],
+            "items": [
+              {
+                "text": "máslo – margarín",
+                "group": 0
+              },
+              {
+                "text": "auto – benzín",
+                "group": 1
+              },
+              {
+                "text": "čaj – káva",
+                "group": 0
+              },
+              {
+                "text": "tiskárna – toner",
+                "group": 1
+              },
+              {
+                "text": "vlak – autobus",
+                "group": 0
+              },
+              {
+                "text": "lyže – vázání",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Zdraží káva. Co se nejspíš stane s poptávkou po čaji?",
+          "answer": "Čaj je **substitut** kávy. Část lidí přejde na čaj → poptávka po čaji **vzroste**."
+        },
+        {
+          "type": "example",
+          "question": "Zdraží benzín. Co se stane s poptávkou po autech?",
+          "answer": "Auto a benzín jsou **komplementy**. Provoz auta zdraží, takže poptávka po autech spíše **klesne**."
+        },
+        {
+          "type": "heading",
+          "text": "Kolik je na trhu prodejců"
+        },
+        {
+          "type": "table",
+          "head": [
+            "typ trhu",
+            "počet prodejců",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "dokonalá konkurence",
+              "mnoho malých",
+              "zelinářské stánky na tržnici"
+            ],
+            [
+              "oligopol",
+              "několik velkých",
+              "mobilní operátoři"
+            ],
+            [
+              "monopol",
+              "jeden jediný",
+              "místní vodárna"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když zdraží káva, klesne poptávka i po čaji, protože všechno zdražuje.",
+          "right": "Po čaji poptávka vzroste, protože je to substitut kávy.",
+          "why": "U substitutů lidé přecházejí z dražšího na levnější. Opačně (pokles obojího) se chovají komplementy."
+        },
+        {
+          "type": "summary",
+          "text": "Výrobní faktory: práce, půda, kapitál. Rovnovážná cena: nabízené = poptávané množství. Substituty se nahrazují, komplementy doplňují. Monopol = 1 prodejce, oligopol = několik, dokonalá konkurence = mnoho."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Při růstu ceny poptávané množství obvykle klesá.",
+      "answer": true,
+      "explanation": "Zákon klesající poptávky."
+    },
+    {
+      "type": "choice",
+      "question": "Co nastane, když je cena nad rovnovážnou cenou?",
+      "options": [
+        "Přebytek zboží",
+        "Nedostatek zboží",
+        "Inflace",
+        "Nic"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které statky jsou komplementy?",
+      "options": [
+        "Mobil a nabíječka",
+        "Kola a koloběžka",
+        "Máslo a margarín",
+        "Tramvaj a metro"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Zdraží káva. Co se nejspíš stane s poptávkou po čaji?",
+      "options": [
+        "Vzroste",
+        "Klesne",
+        "Nezmění se",
+        "Klesne na nulu"
+      ],
+      "answer": 0,
+      "explanation": "Čaj je substitut kávy."
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje cena, při které se nabízené množství rovná poptávanému? … cena",
+      "answers": [
+        "rovnovazna",
+        "rovnovážná"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj typ trhu s popisem.",
+      "pairs": [
+        [
+          "dokonalá konkurence",
+          "mnoho malých firem"
+        ],
+        [
+          "monopol",
+          "jediný prodejce"
+        ],
+        [
+          "oligopol",
+          "několik velkých firem"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který z nich je výrobní faktor?",
+      "options": [
+        "Práce",
+        "Daň",
+        "Inflace",
+        "Poptávka"
+      ],
+      "answer": 0,
+      "explanation": "Klasické výrobní faktory: práce, půda, kapitál."
+    },
+    {
+      "type": "truefalse",
+      "question": "Při růstu ceny výrobci obvykle nabízejí více.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Úroda brambor je rekordní. Co se stane s cenou brambor?",
+      "options": [
+        "Klesne",
+        "Vzroste",
+        "Nezmění se",
+        "Stát ji musí zvýšit"
+      ],
+      "answer": 0,
+      "explanation": "Nabídka vzrostla."
+    },
+    {
+      "type": "input",
+      "question": "Kolik firem působí na trhu při monopolu?",
+      "answers": [
+        "1",
+        "jedna",
+        "jedna firma"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, jak vzniká rovnovážná cena.",
+      "answer": "Kupující chtějí při nižší ceně koupit víc, prodávající při vyšší ceně prodat víc. Cena se ustálí tam, kde se nabízené množství rovná poptávanému – v průsečíku křivek nabídky a poptávky."
+    },
+    {
+      "type": "open",
+      "question": "Co jsou substituty a komplementy? Uveď příklady.",
+      "answer": "Substituty se navzájem nahrazují (máslo a margarín) – zdražení jednoho zvýší poptávku po druhém. Komplementy se doplňují (auto a benzín) – zdražení jednoho sníží poptávku po druhém."
+    }
+  ]
+}

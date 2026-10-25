@@ -1,0 +1,424 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pravopis-souhrn",
+  "title": "Pravopis – souhrn a chytáky",
+  "emoji": "✍️",
+  "explanations": [
+    {
+      "title": "Past po pasti",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Didaktický test z češtiny nezkouší celý pravopis. Míří na **pasti** – místa, kde se chybuje nejčastěji: *mě/mně*, *n/nn*, *s/z*, zdvojené souhlásky, *i/y*, velká písmena."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když znáš pasti dopředu, projdeš kolem nich. Skoro všechny se dají vyřešit jedním trikem: rozložit slovo na části."
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Základ slova, společný všem příbuzným slovům.",
+          "example": "*den* ve *den, denní, dennice*"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Část před kořenem.",
+          "example": "*roz-* v *rozzlobit*, *s-* v *sjet*"
+        },
+        {
+          "type": "term",
+          "term": "Přípona",
+          "definition": "Část za kořenem, tvoří nové slovo.",
+          "example": "*-ní* v *denní*, *-ný* v *kamenný*"
+        },
+        {
+          "type": "term",
+          "term": "Šev",
+          "definition": "Místo, kde se dvě části slova stýkají. Písmena se tu **sčítají**, nic se neztrácí.",
+          "example": "*roz|zlobit* → zz"
+        },
+        {
+          "type": "heading",
+          "text": "Trik: rozlož slovo"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi kořen pomocí příbuzného slova: *denní* ← *den*.",
+            "Odděl předponu a příponu: *den|ní*.",
+            "Sečti písmena na švu: *n + n* → **nn**.",
+            "Stejně u předpon: *roz + zlobit* → *rozzlobit*, *od + dálit* → *oddálit*, *nej + jasnější* → *nejjasnější*."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pasti s významem"
+        },
+        {
+          "type": "text",
+          "text": "Některá slova znějí stejně, ale liší se významem i pravopisem: *výskat* (křičet radostí) × *vískat* (probírat vlasy, srst); *výr* (sova) × *vír* (víření vody); *sýrový* (ze sýra) × *sírový* (ze síry)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každé mezery slovo rozlož nebo si najdi příbuzné slovo."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "zapom",
+                "after": "l jsem",
+                "options": [
+                  "ě",
+                  "ně"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "ka",
+                "after": "ý most",
+                "options": [
+                  "menn",
+                  "men"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "",
+                "after": "lézt ze stromu",
+                "options": [
+                  "s",
+                  "z"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "v",
+                "after": "skat radostí",
+                "options": [
+                  "ý",
+                  "í"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "be",
+                "after": "ubý stařec",
+                "options": [
+                  "zz",
+                  "z"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč *ranní* se dvěma n?",
+          "answer": "Příbuzné slovo *ráno* → kořen *ran-*. Přípona *-ní*. Na švu se sejdou dvě n: *ran|ní* → **ranní**."
+        },
+        {
+          "type": "example",
+          "question": "Proč *bezzubý* se dvěma z?",
+          "answer": "Předpona *bez-* + kořen *zub*. Na švu *z + z* → **bezzubý**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "kamený most",
+          "right": "kamenný most",
+          "why": "Kořen *kamen* (kámen, kamene) + přípona *-ný*. Na švu se sejdou dvě n."
+        },
+        {
+          "type": "summary",
+          "text": "Pravopis odvoď ze stavby slova: najdi kořen, předponu a příponu – písmena na švu se sčítají. U slov se stejným zvukem rozhoduje význam."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Před testem se hodí mít všechny pravopisné chytáky na jednom místě. Tady je máš v tabulce – s pravidlem a příkladem."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Rychlé zopakování před maturitou a přehled, který si můžeš projít znovu a znovu."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar slova podle otázky (kdo? koho? komu?…). Čeština má 7 pádů.",
+          "example": "3. pád: komu? – *mně*"
+        },
+        {
+          "type": "term",
+          "term": "Kořen, předpona, přípona",
+          "definition": "Části slova. Kořen = základ, předpona = před ním, přípona = za ním.",
+          "example": "*s|jet*, *den|ní*"
+        },
+        {
+          "type": "term",
+          "term": "Vlastní jméno",
+          "definition": "Jméno jedné konkrétní osoby, místa, instituce nebo svátku. Píše se velkým písmenem.",
+          "example": "*Pražský hrad, Vánoce*"
+        },
+        {
+          "type": "heading",
+          "text": "Přehled"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jev",
+            "Pravidlo",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "mě / mně",
+              "mně = 3. a 6. pád zájmena já; jinde podle kořene (n v příbuzném slově)",
+              "dej mně, zapomněl, změna"
+            ],
+            [
+              "n / nn",
+              "kořen na -n + přípona -ný/-ní",
+              "cenný, ranní, kamenný"
+            ],
+            [
+              "s / z / vz",
+              "s = dolů, z povrchu, dohromady; z = změna stavu; vz = vzhůru",
+              "sjet, zčervenat, vzlétnout"
+            ],
+            [
+              "zdvojené souhlásky",
+              "předpona + kořen se stejnou hláskou",
+              "rozzlobit, oddálit, nejjasnější"
+            ],
+            [
+              "velká písmena",
+              "vlastní jména, svátky; v názvu první slovo",
+              "Pražský hrad, Vánoce, Nový rok"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Velká písmena – jeden chyták"
+        },
+        {
+          "type": "text",
+          "text": "*Nový rok* (1. leden, svátek) píšeme velkým N, *nový rok* (celý příští rok) malým. *Severní Amerika* je název světadílu, *severní Čechy* jen popis oblasti."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozhodni: je to vlastní jméno (název), nebo jen popis?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "velké písmeno",
+              "malé písmeno"
+            ],
+            "items": [
+              {
+                "text": "(V)elikonoce",
+                "group": 0
+              },
+              {
+                "text": "(N)árodní divadlo (budova)",
+                "group": 0
+              },
+              {
+                "text": "(s)everní Čechy",
+                "group": 1
+              },
+              {
+                "text": "(Č)eská republika",
+                "group": 0
+              },
+              {
+                "text": "(n)ový rok (období)",
+                "group": 1
+              },
+              {
+                "text": "(p)ražský rodák",
+                "group": 1
+              },
+              {
+                "text": "(S)everní Amerika",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "*Sjet*, nebo *zjet* z kopce?",
+          "answer": "Pohyb **dolů** → předpona *s-*: **sjet z kopce**."
+        },
+        {
+          "type": "example",
+          "question": "*Změna* – proč s *mě*, když tam slyšíme [mň]?",
+          "answer": "Rozložím: *z + měna*. Žádné příbuzné slovo s *n* v kořeni → **mě**. Naopak *zapomněl* má *n* v *zapomenout*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ve vánoce jsme doma.",
+          "right": "O Vánocích jsme doma. / Ve Vánoce jsme doma.",
+          "why": "Svátky jsou vlastní jména – píšeme je velkým písmenem."
+        },
+        {
+          "type": "summary",
+          "text": "mně = komu? o kom? / n v kořeni. nn na švu kořene a přípony. s = dolů, z = změna, vz = nahoru. Velké písmeno = vlastní jméno (svátek, název)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která varianta je správně?",
+      "options": [
+        "vzpoměl si",
+        "vzpomněl si",
+        "vspomněl si"
+      ],
+      "answer": 1,
+      "explanation": "Kořen -mn- (vzpomenout) → vzpomněl."
+    },
+    {
+      "type": "choice",
+      "question": "Vyber správný tvar.",
+      "options": [
+        "Řekni to mě.",
+        "Řekni to mně.",
+        "Řekni to mňe."
+      ],
+      "answer": 1,
+      "explanation": "3. pád (komu) zájmena já = mně."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve slově „ranní“ se píše nn.",
+      "answer": true,
+      "explanation": "rán|o → ran + -ní."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Kamený“ je správně.",
+      "answer": false,
+      "explanation": "kamen + -ný → kamenný."
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsáno chybně?",
+      "options": [
+        "zčervenat",
+        "vzlétnout",
+        "shrnout",
+        "zjet z kopce"
+      ],
+      "answer": 3,
+      "explanation": "Pohyb dolů = s-: sjet z kopce."
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená „vískat“?",
+      "options": [
+        "radostně křičet",
+        "probírat (vlasy, srst)",
+        "zívat"
+      ],
+      "answer": 1,
+      "explanation": "„Výskat“ s ý je křičet radostí."
+    },
+    {
+      "type": "input",
+      "question": "Doplň písmeno: „s_rová pomazánka“ (ze sýra). Napiš jen písmeno.",
+      "answers": [
+        "ý"
+      ],
+      "explanation": "sýr → sýrový; sírový je od síry."
+    },
+    {
+      "type": "choice",
+      "question": "Kde je chyba ve velkých písmenech?",
+      "options": [
+        "Karlův most",
+        "Ministerstvo zdravotnictví ČR",
+        "Ve vánoce jsme doma.",
+        "ulice Na Příkopě"
+      ],
+      "answer": 2,
+      "explanation": "Svátky se píší s velkým písmenem: Vánoce."
+    },
+    {
+      "type": "match",
+      "question": "Spoj dvojice slov s jejich významem.",
+      "pairs": [
+        [
+          "výr",
+          "sova"
+        ],
+        [
+          "vír",
+          "víření vody"
+        ],
+        [
+          "býlí",
+          "plevel"
+        ],
+        [
+          "bílí",
+          "bílé barvy"
+        ]
+      ],
+      "explanation": "Ý/í rozlišuje význam."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Nejjasnější“ se píše se dvěma j.",
+      "answer": true,
+      "explanation": "Předpona nej- + jasný."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, jak se rozhoduješ mezi „mě“ a „mně“.",
+      "answer": "U zájmena já píšu mně ve 3. a 6. pádě (komu, o kom), mě ve 2. a 4. pádě. V ostatních slovech rozhoduje kořen: pokud obsahuje -mn- (zapomenout → zapomněl), píšu mně, jinak mě (změna = z + měna)."
+    },
+    {
+      "type": "open",
+      "question": "Kdy píšeme předponu s- a kdy z-?",
+      "answer": "S- píšeme u významu dolů, z povrchu pryč nebo dohromady (sjet, shrnout). Z- u změny stavu nebo dokončení děje (zčervenat, zchladit). Vz- u pohybu vzhůru (vzlétnout)."
+    }
+  ]
+}

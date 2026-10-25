@@ -1,0 +1,415 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ptaci",
+  "title": "Ptáci",
+  "emoji": "🦅",
+  "explanations": [
+    {
+      "title": "Dvojité dýchání",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Husy přelétají Himálaj ve výškách, kde člověk bez kyslíkové masky sotva chodí. Pták při letu spotřebuje obrovské množství energie, a tedy i kyslíku. Jeho tělo je proto přestavěné na **létající stroj**: lehké, výkonné a s geniálními plícemi."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme, jak funguje ptačí dýchání a co všechno se kvůli letu v ptačím těle změnilo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vzdušné vaky",
+          "definition": "Tenkostěnné vaky napojené na plíce, rozložené v těle i v kostech. Fungují jako **měchy** – pumpují vzduch, samy ale kyslík do krve nepředávají."
+        },
+        {
+          "type": "term",
+          "term": "Pneumatizované kosti",
+          "definition": "Kosti **duté**, vyplněné vzduchem z vaků. Jsou lehké, ale díky vnitřním vzpěrám pevné."
+        },
+        {
+          "type": "term",
+          "term": "Hřeben hrudní kosti",
+          "definition": "Vysoká lišta na hrudní kosti, na kterou se upínají mohutné **letové svaly**."
+        },
+        {
+          "type": "term",
+          "term": "Kloaka",
+          "definition": "Společný vývod trávicí, vylučovací a pohlavní soustavy."
+        },
+        {
+          "type": "heading",
+          "text": "Dýchání krok za krokem"
+        },
+        {
+          "type": "text",
+          "text": "Sleduj jeden „doušek“ vzduchu. Potřebuje dva nádechy a dva výdechy, než projde celým tělem. Klepej na kroky."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "1. nádech: vzduch do zadních vaků",
+              "1. výdech: ze zadních vaků do plic",
+              "2. nádech: z plic do předních vaků",
+              "2. výdech: z předních vaků ven"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Výsledek: plícemi proudí vzduch **jedním směrem** a čerstvý vzduch je v nich **při nádechu i výdechu**. Krev se okysličuje pořád – proto **dvojité dýchání**."
+        },
+        {
+          "type": "heading",
+          "text": "Další přizpůsobení letu"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**peří** – nosná plocha křídel a tepelná izolace",
+            "**duté kosti** a **srostlé kosti** (pevná a lehká kostra)",
+            "**hřeben hrudní kosti** pro letové svaly",
+            "lehký **zobák bez zubů** – potravu drtí až **svalnatý žaludek**",
+            "chybí **močový měchýř**, dusík se vylučuje jako **kyselina močová**",
+            "srdce se **4 oddíly** (s **pravým** obloukem aorty), stálá tělesná teplota"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč pták nemusí nést zuby a těžké čelisti?",
+          "answer": "Potravu polyká celou a drtí ji **svalnatý žaludek**, často s polykanými kamínky. Těžiště je tak u středu těla, ne v hlavě – lepší pro let."
+        },
+        {
+          "type": "example",
+          "question": "Proč je ptačí dýchání účinnější než naše?",
+          "answer": "Naše plíce se nadechují a vydechují stejnou cestou a část vydýchaného vzduchu v nich zůstává. Ptačími plícemi proudí vzduch **jedním směrem** a čerstvý vzduch je v nich i při výdechu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vzdušné vaky jsou další plíce, ve kterých se okysličuje krev.",
+          "right": "Vzdušné vaky jen **pumpují** vzduch. Krev se okysličuje **v plicích**.",
+          "why": "Stěny vaků jsou tenké a nemají síť drobných cév pro výměnu plynů. Fungují jako měchy."
+        },
+        {
+          "type": "summary",
+          "text": "Vzdušné vaky zajišťují jednosměrný proud vzduchu plícemi – výměna plynů při nádechu i výdechu. Pták je odlehčený: duté kosti, bez zubů, bez močového měchýře."
+        }
+      ]
+    },
+    {
+      "title": "Přehled znaků",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pták je dinosaurus, který přežil. Zní to jako vtip, ale je to vědecký závěr. Fosilie ukazují celou řadu přechodů od opeřených dinosaurů po dnešní ptáky."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme znaky ptáků soustavu po soustavě, rozdělíme je na krmivé a nekrmivé a naučíme se hlavní řády."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Oblouk aorty",
+          "definition": "Aorta je hlavní tepna, která vede krev ze srdce do těla. Hned u srdce se ohýbá do oblouku – u ptáků **doprava**, u savců **doleva**."
+        },
+        {
+          "type": "term",
+          "term": "Vole a žaludek",
+          "definition": "**Vole** je rozšíření jícnu, kde se potrava hromadí a měkne. Žaludek má dvě části: **žláznatou** (trávicí šťávy) a **svalnatou** (mechanicky drtí)."
+        },
+        {
+          "type": "term",
+          "term": "Kloaka",
+          "definition": "Společný vývod trávicí, vylučovací a pohlavní soustavy."
+        },
+        {
+          "type": "term",
+          "term": "Krmiví a nekrmiví",
+          "definition": "Mláďata **krmivých** se líhnou holá a slepá a rodiče je v hnízdě krmí. Mláďata **nekrmivých** se líhnou opeřená a hned běhají a sbírají potravu."
+        },
+        {
+          "type": "term",
+          "term": "Teropodi",
+          "definition": "Skupina dravých dvounohých dinosaurů (např. velociraptor). Z nich se vyvinuli ptáci."
+        },
+        {
+          "type": "heading",
+          "text": "Znaky soustavu po soustavě"
+        },
+        {
+          "type": "text",
+          "text": "U každé karty si nejdřív zkus znak vybavit."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "srdce",
+                "back": "4 oddíly, pravý oblouk aorty"
+              },
+              {
+                "front": "kostra",
+                "back": "pneumatizované kosti, hřeben hrudní kosti, srostlé obratle"
+              },
+              {
+                "front": "dýchání",
+                "back": "plíce + vzdušné vaky, výměna plynů při nádechu i výdechu"
+              },
+              {
+                "front": "trávení",
+                "back": "vole, žláznatý a svalnatý žaludek, kloaka"
+              },
+              {
+                "front": "vylučování",
+                "back": "kyselina močová, bez močového měchýře"
+              },
+              {
+                "front": "smysly",
+                "back": "vynikající zrak, slabý čich"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Sovy nestravitelné zbytky (kosti, chlupy) **vyvrhují** zobákem jako **vývržky**."
+        },
+        {
+          "type": "heading",
+          "text": "Krmiví a nekrmiví"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Krmiví",
+              "Nekrmiví"
+            ],
+            "items": [
+              {
+                "text": "pěvci",
+                "group": 0
+              },
+              {
+                "text": "hrabaví",
+                "group": 1
+              },
+              {
+                "text": "dravci",
+                "group": 0
+              },
+              {
+                "text": "vrubozobí",
+                "group": 1
+              },
+              {
+                "text": "šplhavci",
+                "group": 0
+              },
+              {
+                "text": "běžci",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Řády"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Řád",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "pěvci (nejpočetnější řád)",
+              "vrabec, kos, sýkora"
+            ],
+            [
+              "dravci",
+              "káně, jestřáb"
+            ],
+            [
+              "sovy",
+              "puštík, sova pálená"
+            ],
+            [
+              "hrabaví",
+              "koroptev, bažant"
+            ],
+            [
+              "vrubozobí",
+              "kachna divoká, labuť"
+            ],
+            [
+              "šplhavci",
+              "strakapoud, datel"
+            ],
+            [
+              "běžci",
+              "pštros"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Ptáci a dinosauři"
+        },
+        {
+          "type": "text",
+          "text": "**Archaeopteryx** žil v **juře** (druhohory, asi před 150 miliony let). Měl peří a křídla, ale také **zuby**, drápy na křídlech a dlouhý kostěný ocas. Ptáci sdílejí s teropody stavbu kostry, duté kosti a vzdušné vaky."
+        },
+        {
+          "type": "example",
+          "question": "Kachňata hned po vylíhnutí plavou za matkou. Je kachna krmivá?",
+          "answer": "Ne – mláďata se líhnou opeřená a samostatná, kachna je **nekrmivá** (řád vrubozobí)."
+        },
+        {
+          "type": "example",
+          "question": "Proč se Archaeopteryx považuje za přechodný článek?",
+          "answer": "Kombinuje znaky **plazů** (zuby, dlouhý ocas, drápy) a **ptáků** (peří, křídla). Ukazuje cestu od dinosaurů k ptákům."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ptáci mají výborný čich, proto najdou potravu.",
+          "right": "Většina ptáků má **výborný zrak a slabý čich**.",
+          "why": "Pták hledá potravu hlavně očima, často z výšky. Dravci vidí několikrát ostřeji než člověk."
+        },
+        {
+          "type": "summary",
+          "text": "Ptáci: peří, duté kosti, hřeben hrudní kosti, vzdušné vaky, srdce 4 oddíly s pravým obloukem aorty, vole a svalnatý žaludek, kloaka, kyselina močová. Pocházejí z teropodních dinosaurů."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který oblouk aorty mají ptáci?",
+      "options": [
+        "pravý",
+        "levý",
+        "oba"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "U ptáků dochází k výměně plynů při nádechu i výdechu.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Společný vývod trávicí, vylučovací a pohlavní soustavy ptáků je…",
+      "answers": [
+        "kloaka"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj ptáka s řádem.",
+      "pairs": [
+        [
+          "kachna divoká",
+          "vrubozobí"
+        ],
+        [
+          "strakapoud",
+          "šplhavci"
+        ],
+        [
+          "koroptev",
+          "hrabaví"
+        ],
+        [
+          "pštros",
+          "běžci"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Nejrozsáhlejší řád ptáků je…",
+      "options": [
+        "pěvci",
+        "dravci",
+        "sovy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ptáci mají vyvinutý čich lépe než zrak.",
+      "answer": false,
+      "explanation": "Většina ptáků má výborný zrak a slabý čich."
+    },
+    {
+      "type": "choice",
+      "question": "Archaeopteryx žil v…",
+      "options": [
+        "juře (druhohory)",
+        "kambriu",
+        "čtvrtohorách"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde se mechanicky drtí potrava ptáků?",
+      "options": [
+        "ve svalnatém žaludku",
+        "ve voleti",
+        "v zobáku zuby"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Sovy vyvrhují nestravitelné zbytky jako vývržky.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Ptáci vylučují dusík hlavně jako…",
+      "options": [
+        "kyselinu močovou",
+        "amoniak",
+        "močovinu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Popiš přizpůsobení ptáků k letu.",
+      "answer": "Peří, pneumatizované kosti, srůsty kostí, hřeben hrudní kosti pro letové svaly, vzdušné vaky a dvojité dýchání, lehký zobák bez zubů, chybí močový měchýř."
+    },
+    {
+      "type": "open",
+      "question": "Proč se ptáci považují za potomky dinosaurů?",
+      "answer": "Fosilie jako Archaeopteryx a opeření dinosauři ukazují přechodné znaky; ptáci sdílejí s teropody stavbu kostry, vzdušné vaky a duté kosti."
+    }
+  ]
+}

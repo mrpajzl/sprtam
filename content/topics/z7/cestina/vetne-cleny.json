@@ -1,0 +1,391 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vetne-cleny",
+  "title": "Předmět, přívlastek, příslovečné určení",
+  "emoji": "🏗️",
+  "explanations": [
+    {
+      "title": "Otázkami",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Věta *Tomáš snědl.* je divná. Co snědl? Věta *Malý Tomáš ráno snědl rohlík.* je jasná. Slova *malý, ráno, rohlík* větu **rozvíjejí** – doplňují informace."
+        },
+        {
+          "type": "text",
+          "text": "Těm doplňujícím slovům se říká **rozvíjející větné členy**. Když je umíš najít, rozumíš stavbě věty a správně píšeš čárky a koncovky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Větný člen",
+          "definition": "Slovo nebo skupina slov, která má ve větě určitou úlohu.",
+          "example": "podmět, přísudek, předmět…"
+        },
+        {
+          "type": "term",
+          "term": "Podmět a přísudek",
+          "definition": "Připomenutí: kostra věty. Podmět = kdo? co? dělá. Přísudek = co dělá.",
+          "example": "*Tomáš* (podmět) *snědl* (přísudek)"
+        },
+        {
+          "type": "term",
+          "term": "Rozvíjející větný člen",
+          "definition": "Člen, který **doplňuje** jiný člen. Bez něj věta stojí, ale je chudší.",
+          "example": "*malý* rozvíjí *Tomáš*"
+        },
+        {
+          "type": "term",
+          "term": "Předmět",
+          "definition": "Rozvíjí **sloveso**. Říká, koho nebo čeho se děj týká. Ptáš se **pádovou otázkou** kromě 1. a 5. pádu (koho? čeho? komu? čemu? koho? co? o kom? s kým?…).",
+          "example": "Čtu **knihu**. (čtu co?) Pomáhám **bratrovi**. (komu?)"
+        },
+        {
+          "type": "term",
+          "term": "Přívlastek",
+          "definition": "Rozvíjí **podstatné jméno**. Říká, jaké je nebo čí je. Ptáš se **jaký? který? čí?**",
+          "example": "**malý** pes, pes **souseda**"
+        },
+        {
+          "type": "term",
+          "term": "Příslovečné určení (PU)",
+          "definition": "Rozvíjí hlavně **sloveso**. Říká **okolnosti** děje: kde, kdy, jak, proč.",
+          "example": "Spím **doma**. Přijdu **zítra**. Běží **rychle**."
+        },
+        {
+          "type": "heading",
+          "text": "Druhy příslovečného určení"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Ptáme se",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "PU místa",
+              "kde? kam? odkud?",
+              "Hraje si **na zahradě**."
+            ],
+            [
+              "PU času",
+              "kdy? jak dlouho?",
+              "Přijel **ráno**."
+            ],
+            [
+              "PU způsobu",
+              "jak?",
+              "Mluví **potichu**."
+            ],
+            [
+              "PU příčiny",
+              "proč? z jaké příčiny?",
+              "**Kvůli dešti** zůstal doma."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup rozboru"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi **přísudek** (co se děje?) a **podmět** (kdo? co?).",
+            "Ke slovesu se zeptej pádovou otázkou → **předmět**.",
+            "Ke slovesu se zeptej kde? kdy? jak? proč? → **příslovečné určení**.",
+            "K podstatným jménům se zeptej jaký? čí? → **přívlastek**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rozeber: *Malý Tomáš ráno snědl rohlík.*",
+          "answer": "Přísudek: *snědl*. Podmět: *Tomáš*. Snědl co? *rohlík* → předmět. Snědl kdy? *ráno* → PU času. Jaký Tomáš? *malý* → přívlastek."
+        },
+        {
+          "type": "example",
+          "question": "Rozeber: *Zítra pojedeme k moři.*",
+          "answer": "Přísudek: *pojedeme*. Podmět nevyjádřený (my). Kdy? *zítra* → PU času. Kam? *k moři* → PU místa (ne předmět – ptáme se kam?)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V *Zítra pojedeme k moři* je *k moři* předmět, protože je to podstatné jméno.",
+          "right": "*k moři* je PU místa.",
+          "why": "Rozhoduje otázka, ne slovní druh. Ptáme se *kam?* – to je místo."
+        },
+        {
+          "type": "summary",
+          "text": "Předmět rozvíjí sloveso (pádová otázka). Přívlastek rozvíjí podstatné jméno (jaký? čí?). Příslovečné určení říká okolnosti (kde, kdy, jak, proč)."
+        }
+      ]
+    },
+    {
+      "title": "Barvami",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si větu jako vánoční stromeček. Kmen je **podmět a přísudek** (kdo a co dělá). Na kmen pak věšíme ozdoby: **co**, **jaký**, **kde**, **kdy**, **jak**. Bez ozdob strom stojí, ale je holý."
+        },
+        {
+          "type": "text",
+          "text": "Těm „ozdobám“ říkáme **rozvíjející větné členy**. Každý druh dostane svou barvu a svou otázku."
+        },
+        {
+          "type": "term",
+          "term": "Větný člen",
+          "definition": "Část věty se svou úlohou. Hlavní jsou podmět (kdo? co?) a přísudek (co dělá?).",
+          "example": "*Rybář chytil.*"
+        },
+        {
+          "type": "heading",
+          "text": "Tři ozdoby"
+        },
+        {
+          "type": "term",
+          "term": "Předmět",
+          "definition": "Visí na **slovese**. Na co nebo na koho děj míří. Zeptáš se pádovou otázkou: koho? co? komu? čemu? s kým?… (ne kdo? co? z 1. pádu)",
+          "example": "chytil **kapra** (koho? co?)"
+        },
+        {
+          "type": "term",
+          "term": "Přívlastek",
+          "definition": "Visí na **podstatném jménu**. Říká, jaké nebo čí je.",
+          "example": "**starý** rybář (jaký?)"
+        },
+        {
+          "type": "term",
+          "term": "Příslovečné určení",
+          "definition": "Visí na **slovese**. Říká okolnosti: místo (kde?), čas (kdy?), způsob (jak?), příčinu (proč?).",
+          "example": "chytil **v rybníce** (kde?)"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se, jak jsou členy ve větě *Starý rybář chytil kapra v rybníce* obarvené. Ke každé barvě si polož otázku."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "Starý",
+                    "label": "přívlastek"
+                  },
+                  {
+                    "text": " rybář",
+                    "label": "podmět"
+                  },
+                  {
+                    "text": " chytil",
+                    "label": "přísudek"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "kapra",
+                    "label": "předmět"
+                  },
+                  {
+                    "text": " v rybníce",
+                    "label": "PU místa"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dva druhy přívlastku"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Přívlastek",
+            "Kde stojí",
+            "Mění tvar s podstatným jménem?"
+          ],
+          "rows": [
+            [
+              "shodný",
+              "obvykle před jménem",
+              "ano: malý pes – malého psa"
+            ],
+            [
+              "neshodný",
+              "obvykle za jménem",
+              "ne: pes souseda – psa souseda"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**Shodný** přívlastek se s podstatným jménem „shoduje“ – mění se s ním. **Neshodný** zůstává pořád stejný."
+        },
+        {
+          "type": "heading",
+          "text": "Druhy příslovečného určení"
+        },
+        {
+          "type": "list",
+          "items": [
+            "kde? kam? odkud? → **PU místa**: *na hřišti*",
+            "kdy? jak dlouho? → **PU času**: *včera*",
+            "jak? → **PU způsobu**: *klidně*",
+            "proč? → **PU příčiny**: *kvůli nemoci*"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Obarvi větu: *Včera jsme na hřišti hráli fotbal.*",
+          "answer": "Přísudek *hráli jsme*, podmět nevyjádřený (my). *Včera* – kdy? → PU času. *na hřišti* – kde? → PU místa. *fotbal* – hráli co? → předmět."
+        },
+        {
+          "type": "example",
+          "question": "Jaký je přívlastek ve spojení *zelený strom* a *strom u cesty*?",
+          "answer": "*zelený* – zelený strom, zeleného stromu – mění se → **shodný**. *u cesty* – strom u cesty, stromu u cesty – nemění se → **neshodný**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ve větě *Petr čte knihu* je *knihu* podmět.",
+          "right": "*knihu* je předmět.",
+          "why": "Podmět je v 1. pádě (kdo čte? Petr). *Knihu* odpovídá na *čte co?* (4. pád) → předmět."
+        },
+        {
+          "type": "summary",
+          "text": "Kmen: podmět + přísudek. Ozdoby: předmět (pádová otázka), přívlastek shodný/neshodný (jaký? čí?), příslovečné určení místa, času, způsobu, příčiny."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký větný člen je *knihu* ve větě *Petr čte knihu.*?",
+      "options": [
+        "předmět",
+        "podmět",
+        "přívlastek"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký větný člen je *zítra* ve větě *Zítra pojedeme k moři.*?",
+      "options": [
+        "PU času",
+        "PU místa",
+        "předmět"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký větný člen je *k moři* ve větě *Zítra pojedeme k moři.*?",
+      "options": [
+        "PU místa",
+        "předmět",
+        "přívlastek"
+      ],
+      "answer": 0,
+      "explanation": "Kam pojedeme? → místo."
+    },
+    {
+      "type": "choice",
+      "question": "Jaký přívlastek je *souseda* ve spojení *pes souseda*?",
+      "options": [
+        "neshodný",
+        "shodný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký přívlastek je *zelený* ve spojení *zelený strom*?",
+      "options": [
+        "shodný",
+        "neshodný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Na předmět se ptáme pádovými otázkami kromě 1. a 5. pádu.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Napiš předmět věty: *Maminka uvařila polévku.*",
+      "answers": [
+        "polévku"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš příslovečné určení způsobu: *Kůň klidně odpočíval.*",
+      "answers": [
+        "klidně"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaké příslovečné určení je *kvůli nemoci* ve větě *Kvůli nemoci nepřišel.*?",
+      "options": [
+        "příčiny",
+        "způsobu",
+        "času"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj otázku s větným členem.",
+      "pairs": [
+        [
+          "kde?",
+          "PU místa"
+        ],
+        [
+          "kdy?",
+          "PU času"
+        ],
+        [
+          "jak?",
+          "PU způsobu"
+        ],
+        [
+          "proč?",
+          "PU příčiny"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi přívlastkem shodným a neshodným?",
+      "answer": "Shodný stojí obvykle před podstatným jménem a mění se s ním (malý pes – malého psa). Neshodný stojí obvykle za ním a tvar nemění (pes souseda – psa souseda)."
+    },
+    {
+      "type": "open",
+      "question": "Rozeber větu *Včera jsme na hřišti hráli fotbal.*",
+      "answer": "Podmět nevyjádřený (my), přísudek hráli jsme, včera – PU času, na hřišti – PU místa, fotbal – předmět."
+    }
+  ]
+}

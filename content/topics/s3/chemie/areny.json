@@ -1,0 +1,451 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "areny",
+  "title": "Areny",
+  "emoji": "💍",
+  "explanations": [
+    {
+      "title": "Záhada benzenu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Benzen C₆H₆ byl chemikům v 19. století záhadou. Podle vzorce by měl mít spoustu dvojných vazeb a reagovat jako alkeny – ale nereaguje. **August Kekulé** navrhl šestiúhelník a podle legendy ho k tomu inspiroval sen o hadovi, který se kousl do ocasu."
+        },
+        {
+          "type": "text",
+          "text": "Látkám s benzenovým jádrem říkáme **areny** (aromatické uhlovodíky). Z nich se vyrábí polystyren, léky, barviva i výbušnina TNT."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Aren",
+          "definition": "Uhlovodík, který obsahuje **benzenové jádro** – kruh ze 6 uhlíků se zvláštními vazbami.",
+          "example": "benzen, toluen, naftalen"
+        },
+        {
+          "type": "term",
+          "term": "Vazba π",
+          "definition": "Druhá vazba v dvojné vazbě, její elektrony leží nad a pod rovinou atomů."
+        },
+        {
+          "type": "term",
+          "term": "Delokalizace",
+          "definition": "Elektrony nepatří jedné vazbě, ale jsou rozprostřené po více atomech – v benzenu po celém kruhu."
+        },
+        {
+          "type": "heading",
+          "text": "Jak benzen opravdu vypadá"
+        },
+        {
+          "type": "text",
+          "text": "Kekulé kreslil střídavě jednoduché a dvojné vazby. Měření ale ukázala, že **všech šest vazeb C–C je stejně dlouhých** – něco mezi jednoduchou a dvojnou."
+        },
+        {
+          "type": "text",
+          "text": "Vysvětlení: 6 elektronů vazeb π (6 **π elektronů**) netvoří tři oddělené dvojné vazby, ale jeden společný „oblak“ nad a pod kruhem. Proto se benzen kreslí jako šestiúhelník s **kroužkem** uvnitř."
+        },
+        {
+          "type": "term",
+          "term": "Aromaticita",
+          "definition": "Zvláštní stabilita kruhu s delokalizovanými elektrony. Podmínky (Hückelovo pravidlo): kruh je **rovinný**, má **střídavé (konjugované) dvojné vazby** a **4n + 2** π elektronů (n = 0, 1, 2…).",
+          "example": "Benzen: 6 = 4 · 1 + 2 ✓"
+        },
+        {
+          "type": "heading",
+          "text": "Proč substituce, a ne adice"
+        },
+        {
+          "type": "text",
+          "text": "Kdyby se na benzen něco adovalo, „rozbil“ by se aromatický oblak a molekula by přišla o svou stabilitu. To se nevyplatí. Proto benzen **neodbarví bromovou vodu** a místo adice volí **substituci**: vodík se vymění a kruh zůstane celý."
+        },
+        {
+          "type": "term",
+          "term": "Elektrofilní substituce",
+          "definition": "Na elektronový oblak kruhu zaútočí **elektrofil** (částice lačná po elektronech) a nahradí jeden vodík."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**halogenace**: C₆H₆ + Cl₂ → C₆H₅Cl + HCl (katalyzátor FeCl₃)",
+            "**nitrace**: C₆H₆ + HNO₃ → C₆H₅NO₂ + H₂O (nitrační směs HNO₃ + H₂SO₄)",
+            "**sulfonace**: C₆H₆ + H₂SO₄ → C₆H₅SO₃H + H₂O",
+            "**alkylace**: navázání alkylu, např. vznik ethylbenzenu"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Co vznikne nitrací benzenu a co je elektrofil?",
+          "answer": "Kyselina sírová z HNO₃ vytvoří **nitroniový kation NO₂⁺** – to je elektrofil. Nahradí jeden vodík: vzniká **nitrobenzen** C₆H₅NO₂ a voda."
+        },
+        {
+          "type": "heading",
+          "text": "Polohy na jádře"
+        },
+        {
+          "type": "text",
+          "text": "Když jsou na jádře dvě skupiny, rozlišujeme jejich polohu: **ortho** (1,2 – vedle sebe), **meta** (1,3 – ob jeden), **para** (1,4 – naproti)."
+        },
+        {
+          "type": "text",
+          "text": "První skupina řídí, kam půjde druhá: –CH₃, –OH, –NH₂ a halogeny posílají ji do **ortho a para**; –NO₂, –COOH, –SO₃H do **meta**."
+        },
+        {
+          "type": "heading",
+          "text": "Známé areny"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartu a zjisti, k čemu se aren používá."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "benzen",
+                "back": "surovina chemie; karcinogenní"
+              },
+              {
+                "front": "toluen (methylbenzen)",
+                "back": "rozpouštědlo, výroba TNT"
+              },
+              {
+                "front": "xylen (dimethylbenzen)",
+                "back": "rozpouštědlo"
+              },
+              {
+                "front": "styren (vinylbenzen)",
+                "back": "polystyren"
+              },
+              {
+                "front": "naftalen",
+                "back": "dva kruhy; dříve proti molům"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Benzen má tři kratší dvojné a tři delší jednoduché vazby.",
+          "right": "Všech šest vazeb C–C v benzenu je **stejně dlouhých**.",
+          "why": "π elektrony jsou delokalizované po celém kruhu. Kekulého střídavé vazby jsou jen zjednodušený obrázek."
+        },
+        {
+          "type": "summary",
+          "text": "Benzen C₆H₆: rovinný kruh, 6 delokalizovaných π elektronů (4n + 2), stejné vazby. Areny reagují elektrofilní substitucí (halogenace s FeCl₃, nitrace nitrační směsí). Polohy ortho, meta, para."
+        }
+      ]
+    },
+    {
+      "title": "Reakce krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Aromatické látky jsou v lécích (paracetamol, aspirin), barvivech, plastech i výbušninách. Aby je chemik vyrobil, musí umět na benzenové jádro „přišroubovat“ správnou skupinu na správné místo. Tady je postup."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Benzenové jádro",
+          "definition": "Rovinný šestičlenný kruh uhlíků, každý s jedním vodíkem (v benzenu). Šest **π elektronů** (elektronů z násobných vazeb) je **delokalizováno** – rozprostřeno po celém kruhu."
+        },
+        {
+          "type": "term",
+          "term": "Aromaticita (Hückelovo pravidlo)",
+          "definition": "Cyklický, rovinný systém s konjugovanými dvojnými vazbami a **4n + 2** π elektrony je mimořádně stabilní."
+        },
+        {
+          "type": "term",
+          "term": "Elektrofil",
+          "definition": "Částice s nedostatkem elektronů (kation), která útočí na elektronový oblak.",
+          "example": "Cl⁺, NO₂⁺, SO₃"
+        },
+        {
+          "type": "term",
+          "term": "Katalyzátor",
+          "definition": "Látka, která urychlí reakci a sama se nespotřebuje."
+        },
+        {
+          "type": "heading",
+          "text": "Mechanismus elektrofilní substituce"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Katalyzátor vytvoří silný elektrofil (např. FeCl₃ z Cl₂ udělá Cl⁺).",
+            "Elektrofil se naváže na jeden uhlík jádra – aromatický oblak se na chvíli přeruší.",
+            "Ze stejného uhlíku odejde H⁺.",
+            "Aromatický systém se obnoví – kruh je zase stabilní, jen s novou skupinou."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Reakce",
+            "Činidlo + katalyzátor",
+            "Produkt"
+          ],
+          "rows": [
+            [
+              "chlorace",
+              "Cl₂ + FeCl₃",
+              "chlorbenzen C₆H₅Cl"
+            ],
+            [
+              "nitrace",
+              "HNO₃ + H₂SO₄ (nitrační směs)",
+              "nitrobenzen C₆H₅NO₂"
+            ],
+            [
+              "sulfonace",
+              "H₂SO₄ (SO₃)",
+              "kyselina benzensulfonová"
+            ],
+            [
+              "alkylace",
+              "halogenalkan + AlCl₃",
+              "alkylbenzen (např. toluen)"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč se benzen chloruje s FeCl₃, ale ne za světla jako methan?",
+          "answer": "Za světla vznikají radikály, které by vedly k **adici** a rozbily aromatický systém (na hexachlorcyklohexan). FeCl₃ vytvoří elektrofil Cl⁺, který dá **substituci** a jádro zachová – chlorbenzen."
+        },
+        {
+          "type": "heading",
+          "text": "Kam půjde druhá skupina"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina na jádře",
+            "Řídí do",
+            "Příklady"
+          ],
+          "rows": [
+            [
+              "I. třídy",
+              "ortho a para",
+              "–CH₃, –OH, –NH₂, –Cl"
+            ],
+            [
+              "II. třídy",
+              "meta",
+              "–NO₂, –COOH, –SO₃H, –CHO"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Nitruješ nitrobenzen. Kam se naváže druhá skupina NO₂?",
+          "answer": "Skupina –NO₂ je II. třídy → řídí do polohy **meta**. Vznikne hlavně 1,3-dinitrobenzen."
+        },
+        {
+          "type": "example",
+          "question": "Nitruješ toluen. Kam půjde skupina NO₂?",
+          "answer": "–CH₃ je I. třídy → **ortho a para**. Postupnou nitrací až na tři skupiny vznikne 2,4,6-trinitrotoluen – **TNT**."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď skupiny podle toho, kam řídí další substituci."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "ortho a para",
+              "meta"
+            ],
+            "items": [
+              {
+                "text": "–CH₃",
+                "group": 0
+              },
+              {
+                "text": "–OH",
+                "group": 0
+              },
+              {
+                "text": "–NH₂",
+                "group": 0
+              },
+              {
+                "text": "–Cl",
+                "group": 0
+              },
+              {
+                "text": "–NO₂",
+                "group": 1
+              },
+              {
+                "text": "–COOH",
+                "group": 1
+              },
+              {
+                "text": "–SO₃H",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Polohy a názvy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "ortho = 1,2; meta = 1,3; para = 1,4",
+            "toluen = methylbenzen, xylen = dimethylbenzen, styren = vinylbenzen",
+            "naftalen – dvě spojená jádra"
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Benzen ochotně odbarví bromovou vodu jako alkeny.",
+          "right": "Benzen bromovou vodu **neodbarví** – adice by zničila aromatický systém.",
+          "why": "Delokalizace dává benzenu velkou stabilitu. S bromem reaguje až za katalyzátoru (FeBr₃), a to substitucí."
+        },
+        {
+          "type": "summary",
+          "text": "Elektrofilní substituce: vznik elektrofilu (katalyzátor) → navázání → odchod H⁺ → obnovení aromaticity. –CH₃, –OH, –NH₂, halogeny řídí do o/p, –NO₂, –COOH, –SO₃H do meta."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jakým typem reakce typicky reagují areny?",
+      "options": [
+        "elektrofilní substitucí",
+        "elektrofilní adicí",
+        "radikálovou substitucí",
+        "eliminací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje methylbenzen?",
+      "options": [
+        "toluen",
+        "xylen",
+        "styren",
+        "anilin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik π elektronů má benzenové jádro?",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jakou směsí se nitruje benzen?",
+      "options": [
+        "HNO₃ + H₂SO₄ (nitrační směs)",
+        "HNO₃ + HCl",
+        "NaNO₃ + H₂O",
+        "HNO₂ + NaOH"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Skupina –NO₂ řídí další substituci do polohy meta.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Benzen ochotně odbarvuje bromovou vodu jako alkeny.",
+      "answer": false,
+      "explanation": "Aromatický systém je stabilní, adice probíhá jen výjimečně."
+    },
+    {
+      "type": "choice",
+      "question": "Jak se označuje poloha 1,4 na benzenovém jádře?",
+      "options": [
+        "para",
+        "ortho",
+        "meta"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj arén s použitím.",
+      "pairs": [
+        [
+          "toluen",
+          "rozpouštědlo, výroba TNT"
+        ],
+        [
+          "styren",
+          "polystyren"
+        ],
+        [
+          "naftalen",
+          "dříve proti molům"
+        ],
+        [
+          "benzen",
+          "surovina, karcinogen"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které tvrzení o benzenu je pravdivé?",
+      "options": [
+        "všechny vazby C–C mají stejnou délku",
+        "má tři kratší a tři delší vazby",
+        "je nepravidelný šestiúhelník"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký katalyzátor se používá při chloraci benzenu?",
+      "options": [
+        "FeCl₃",
+        "Pt",
+        "H₂SO₄",
+        "světlo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaké podmínky musí splňovat aromatická sloučenina?",
+      "answer": "Musí mít cyklický planární systém s konjugovanými dvojnými vazbami a celkem (4n + 2) delokalizovaných π elektronů – Hückelovo pravidlo. Benzen má 6."
+    },
+    {
+      "type": "open",
+      "question": "Proč areny reagují substitucí, a ne adicí jako alkeny?",
+      "answer": "Delokalizované π elektrony dávají kruhu velkou stabilitu. Při substituci se aromatický systém zachová, při adici by se porušil, což je energeticky nevýhodné."
+    }
+  ]
+}

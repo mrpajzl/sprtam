@@ -1,0 +1,387 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obeh-dychani",
+  "title": "Oběhová a dýchací soustava",
+  "emoji": "🫀",
+  "explanations": [
+    {
+      "title": "Elektrika srdce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Srdce udělá za život asi 2,5 miliardy úderů a nikdy si neodpočine. Zajímavé je, že **nečeká na pokyn z mozku** – má vlastní „generátor“. Proto může srdce při transplantaci bít i v těle jiného člověka."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, kudy krev v těle teče, jak srdce pumpuje a jak se elektrický signál šíří srdcem. Dýchání, které krvi dodá kyslík, probere druhé vysvětlení – ale základ uvidíš i tady."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síně a komory",
+          "definition": "Srdce má 4 oddíly: 2 **síně** (nahoře, krev přijímají) a 2 **komory** (dole, krev vypuzují). Pravá polovina pumpuje odkysličenou krev, levá okysličenou."
+        },
+        {
+          "type": "term",
+          "term": "Tepna a žíla",
+          "definition": "**Tepna** vede krev **od srdce**, **žíla** **k srdci**. Nezáleží na tom, jestli je krev okysličená.",
+          "example": "Plicní žíly vedou okysličenou krev z plic do srdce."
+        },
+        {
+          "type": "term",
+          "term": "Chlopně",
+          "definition": "Ventily, které pouštějí krev jen jedním směrem. Mezi levou síní a komorou je **dvojcípá (mitrální)**, vpravo **trojcípá**, u výstupu do tepen **poloměsíčité**."
+        },
+        {
+          "type": "term",
+          "term": "Systola a diastola",
+          "definition": "**Systola** je stah komor (vypuzení krve). **Diastola** je jejich ochabnutí (plnění)."
+        },
+        {
+          "type": "term",
+          "term": "Vzruch",
+          "definition": "Elektrický signál, který se šíří po buňkách a vyvolá jejich stah."
+        },
+        {
+          "type": "heading",
+          "text": "Dva okruhy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Malý (plicní) oběh**: pravá komora → plicní tepna → plíce (krev se okysličí) → plicní žíly → levá síň.",
+            "**Velký (tělní) oběh**: levá komora → aorta → tělo (krev odevzdá kyslík) → duté žíly → pravá síň."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Převodní systém srdce"
+        },
+        {
+          "type": "term",
+          "term": "Automacie",
+          "definition": "Schopnost srdce samo si vytvářet vzruchy. Nervy rytmus jen **zrychlují nebo zpomalují**."
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj cestu vzruchu."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "SA uzel v pravé síni vyšle vzruch",
+              "vzruch se šíří síněmi – stah síní",
+              "AV uzel – krátké zdržení",
+              "Hisův svazek, Tawarova raménka, Purkyňova vlákna",
+              "stah komor (systola)",
+              "ochabnutí (diastola)"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Zdržení v AV uzlu je důležité: síně stihnou dotlačit krev do komor dřív, než se komory stáhnou."
+        },
+        {
+          "type": "term",
+          "term": "EKG",
+          "definition": "Elektrokardiogram – záznam elektrické aktivity srdce ze snímačů na kůži. Lékař z něj pozná poruchy rytmu nebo infarkt."
+        },
+        {
+          "type": "heading",
+          "text": "Tlak a poruchy"
+        },
+        {
+          "type": "text",
+          "text": "Normální krevní tlak je asi **120/80 mmHg**: vyšší číslo při systole, nižší při diastole. Trvale vysoký tlak je **hypertenze**. **Infarkt** je odumření části srdečního svalu, když se ucpe tepna, která ho vyživuje."
+        },
+        {
+          "type": "example",
+          "question": "Vyjmenuj cestu krve z pravé síně zpět do pravé síně.",
+          "answer": "Pravá síň → pravá komora → plicní tepna → plíce → plicní žíly → levá síň → levá komora → aorta → tělo → duté žíly → **pravá síň**."
+        },
+        {
+          "type": "example",
+          "question": "Proč běžci zrychlí tep, i když srdce na mozku nezávisí?",
+          "answer": "Srdce si rytmus tvoří samo, ale nervy (sympatikus) a hormon adrenalin **zrychlí** SA uzel. Mozek tedy rytmus jen upravuje."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Tepny vedou vždy okysličenou krev a žíly odkysličenou.",
+          "right": "Tepna = **od srdce**, žíla = **k srdci**.",
+          "why": "Plicní tepna vede odkysličenou krev a plicní žíly okysličenou. Rozhoduje směr, ne obsah kyslíku."
+        },
+        {
+          "type": "summary",
+          "text": "Rytmus tvoří SA uzel (automacie): SA → AV uzel → Hisův svazek → Tawarova raménka → Purkyňova vlákna. Systola = stah komor. Tlak asi 120/80 mmHg."
+        }
+      ]
+    },
+    {
+      "title": "Plíce v číslech",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Za den se nadechneš zhruba dvacettisíckrát a vůbec na to nemyslíš. Kdo to řídí? A jak se kyslík ze vzduchu dostane do krve a odtud do svalu?"
+        },
+        {
+          "type": "text",
+          "text": "Projdeme cestu vzduchu, výměnu plynů, čísla o plicích, řízení dýchání a nakonec jak krev s kyslíkem rozváží srdce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Plicní sklípky",
+          "definition": "Drobné váčky na konci dýchacích cest, obalené sítí vlásečnic (nejtenčích cév). Jsou jich stovky milionů a mají plochu desítek m²."
+        },
+        {
+          "type": "term",
+          "term": "Difúze",
+          "definition": "Samovolný pohyb látky z místa, kde jí je **víc**, tam, kde jí je **méně**. Nepotřebuje energii."
+        },
+        {
+          "type": "term",
+          "term": "Hemoglobin",
+          "definition": "Bílkovina v červených krvinkách, která váže a přenáší kyslík."
+        },
+        {
+          "type": "term",
+          "term": "Bránice",
+          "definition": "Plochý sval mezi hrudníkem a břichem. Při nádechu se stáhne a oploští – hrudník se zvětší a vzduch vnikne do plic."
+        },
+        {
+          "type": "term",
+          "term": "Prodloužená mícha",
+          "definition": "Část mozku nad míchou. Sídlí v ní centrum dýchání a centrum řídící činnost srdce."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta vzduchu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "nosní dutina – vzduch se ohřeje, zvlhčí a očistí",
+            "hltan a hrtan (hlasivky)",
+            "průdušnice",
+            "průdušky a průdušinky",
+            "**plicní sklípky** – výměna plynů"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Výměna plynů"
+        },
+        {
+          "type": "text",
+          "text": "Ve sklípku je hodně O₂ a málo CO₂, v krvi přitékající z těla naopak. Proto **difúzí** přechází O₂ do krve a CO₂ z krve do sklípku. Žádná pumpa není potřeba."
+        },
+        {
+          "type": "heading",
+          "text": "Plíce v číslech"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si objemy plic dospělého."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "litry",
+            "items": [
+              {
+                "label": "dechový objem (klid)",
+                "value": 0.5
+              },
+              {
+                "label": "vitální kapacita",
+                "value": 4.5
+              },
+              {
+                "label": "reziduální objem",
+                "value": 1.2
+              },
+              {
+                "label": "celková kapacita plic",
+                "value": 5.7
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Vitální kapacita",
+          "definition": "Kolik vzduchu **maximálně vydechneš po maximálním nádechu**. U dospělého asi 3,5–5 l, u sportovců víc."
+        },
+        {
+          "type": "term",
+          "term": "Reziduální objem",
+          "definition": "Vzduch, který v plicích zůstane i po nejhlubším výdechu – plíce nikdy nesplasknou."
+        },
+        {
+          "type": "heading",
+          "text": "Kdo řídí dech"
+        },
+        {
+          "type": "text",
+          "text": "Dýchací centrum v **prodloužené míše** hlídá hlavně **CO₂** (a s ním pH) v krvi. Když CO₂ stoupne, dýchání se zrychlí a prohloubí. Vůlí můžeš dech na chvíli zadržet, ale ne natrvalo."
+        },
+        {
+          "type": "heading",
+          "text": "Navázání na srdce"
+        },
+        {
+          "type": "text",
+          "text": "Okysličená krev jde z plic **plicními žilami** do levé síně, levá komora ji vypudí aortou do těla. Rytmus srdce si tvoří samo – **SA uzel** v pravé síni (automacie); vzruch jde přes **AV uzel**, **Hisův svazek** a **Purkyňova vlákna** do komor. Stah komor je **systola**, ochabnutí **diastola**."
+        },
+        {
+          "type": "example",
+          "question": "Proč se po zadržení dechu musíš nadechnout, i když máš kyslíku ještě dost?",
+          "answer": "V krvi se hromadí **CO₂**. Právě na něj reaguje dýchací centrum v prodloužené míše a nutí tě k nádechu."
+        },
+        {
+          "type": "example",
+          "question": "Vitální kapacita je 4,5 l a reziduální objem 1,2 l. Jaká je celková kapacita plic?",
+          "answer": "4,5 + 1,2 = **5,7 l**. Celková kapacita = vzduch, který vydechneš, + vzduch, který v plicích vždy zůstane."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nádech spouští hlavně nedostatek kyslíku.",
+          "right": "Hlavním podnětem je **zvýšený CO₂** v krvi.",
+          "why": "Dýchací centrum je na CO₂ (a pH) mnohem citlivější než na pokles O₂."
+        },
+        {
+          "type": "summary",
+          "text": "Plyny se ve sklípcích vyměňují difúzí. Vitální kapacita = max. výdech po max. nádechu. Dýchání řídí prodloužená mícha podle CO₂. Plicní žíly vedou okysličenou krev."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kde vzniká vzruch udávající srdeční rytmus?",
+      "options": [
+        "v SA uzlu",
+        "v AV uzlu",
+        "v mozku"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Stah komor se nazývá…",
+      "options": [
+        "systola",
+        "diastola",
+        "fibrilace"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Plicní žíly vedou okysličenou krev.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Centrum dýchání je v prodloužené…",
+      "answers": [
+        "míše",
+        "mise",
+        "mícha"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď převodní systém srdce.",
+      "items": [
+        "SA uzel",
+        "AV uzel",
+        "Hisův svazek",
+        "Purkyňova vlákna"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem s významem.",
+      "pairs": [
+        [
+          "EKG",
+          "záznam elektrické aktivity srdce"
+        ],
+        [
+          "vitální kapacita",
+          "max. výdech po max. nádechu"
+        ],
+        [
+          "hypertenze",
+          "vysoký krevní tlak"
+        ],
+        [
+          "infarkt",
+          "odumření části srdečního svalu"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Hlavním podnětem pro dýchací centrum je zvýšená koncentrace CO₂.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Chlopně mezi levou síní a komorou se nazývají…",
+      "options": [
+        "dvojcípá (mitrální)",
+        "trojcípá",
+        "poloměsíčitá"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Plyny se v plicních sklípcích vyměňují…",
+      "options": [
+        "difúzí",
+        "aktivním transportem",
+        "filtrací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Srdce potřebuje k činnosti stálé impulzy z mozku.",
+      "answer": false,
+      "explanation": "Srdce má automacii, nervy jen upravují frekvenci."
+    },
+    {
+      "type": "open",
+      "question": "Popiš převodní systém srdce.",
+      "answer": "Vzruch vzniká v SA uzlu v pravé síni a šíří se síněmi. V AV uzlu se zdrží, pak jde Hisovým svazkem, Tawarovými raménky a Purkyňovými vlákny do svaloviny komor, které se stáhnou."
+    },
+    {
+      "type": "open",
+      "question": "Jak je řízeno dýchání?",
+      "answer": "Dýchací centrum v prodloužené míše reaguje hlavně na koncentraci CO₂ (a pH) v krvi. Při zvýšení CO₂ se dýchání zrychlí a prohloubí. Částečně ho lze ovlivnit i vůlí."
+    }
+  ]
+}

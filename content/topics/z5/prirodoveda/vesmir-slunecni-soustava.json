@@ -1,0 +1,400 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vesmir-slunecni-soustava",
+  "title": "Vesmír a sluneční soustava",
+  "emoji": "🪐",
+  "explanations": [
+    {
+      "title": "Rodina Slunce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Za jasné noci vidíš na nebi tisíce světelných teček. Některé jsou hvězdy, jiné planety. A jedna z planet je naše Země."
+        },
+        {
+          "type": "text",
+          "text": "Země není ve vesmíru sama. Patří do „rodiny“ kolem Slunce. Když tu rodinu znáš, rozumíš, proč máme den, rok i roční období."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vesmír",
+          "definition": "Všechno, co existuje: hvězdy, planety, prach a obrovský prázdný prostor mezi nimi.",
+          "example": "Slunce je jedna z miliard hvězd ve vesmíru."
+        },
+        {
+          "type": "term",
+          "term": "Hvězda",
+          "definition": "Obrovská žhavá koule plynu, která **sama svítí a hřeje**.",
+          "example": "Slunce je nám nejbližší hvězda."
+        },
+        {
+          "type": "term",
+          "term": "Planeta",
+          "definition": "Velké kulaté těleso, které **obíhá kolem hvězdy**. Samo nesvítí – jen odráží světlo hvězdy.",
+          "example": "Země, Mars, Jupiter"
+        },
+        {
+          "type": "term",
+          "term": "Obíhat",
+          "definition": "Pohybovat se pořád dokola kolem něčeho.",
+          "example": "Země obíhá kolem Slunce."
+        },
+        {
+          "type": "term",
+          "term": "Sluneční soustava",
+          "definition": "Slunce a všechno, co kolem něj obíhá: 8 planet, jejich měsíce, trpasličí planety, planetky a komety.",
+          "example": "Země je součástí sluneční soustavy."
+        },
+        {
+          "type": "heading",
+          "text": "Osm planet popořadě"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "☀️",
+            "⚫",
+            "🟡",
+            "🌍",
+            "🔴",
+            "🟠",
+            "🪐",
+            "🔵",
+            "🔵"
+          ],
+          "caption": "Slunce a planety od nejbližší"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Merkur",
+            "Venuše",
+            "Země",
+            "Mars",
+            "Jupiter",
+            "Saturn",
+            "Uran",
+            "Neptun"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pomůcka: **M**oje **V**elká **Z**ahrada **M**á **J**en **S**kvělé **U**vnitř **N**ápady."
+        },
+        {
+          "type": "term",
+          "term": "Trpasličí planeta",
+          "definition": "Menší těleso, které obíhá kolem Slunce, ale za planetu se nepočítá.",
+          "example": "Pluto bylo dřív 9. planeta. Dnes je trpasličí planeta."
+        },
+        {
+          "type": "example",
+          "question": "Kolikátá planeta od Slunce je Země?",
+          "answer": "Merkur (1.), Venuše (2.), **Země (3.)**."
+        },
+        {
+          "type": "example",
+          "question": "Která planeta je od Slunce nejdál?",
+          "answer": "Poslední v řadě je **Neptun** (8.)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Slunce je planeta, protože je kulaté.",
+          "right": "Slunce je hvězda.",
+          "why": "Kulaté jsou hvězdy i planety. Rozhoduje, že Slunce samo svítí a hřeje. Planety jen odrážejí jeho světlo."
+        },
+        {
+          "type": "summary",
+          "text": "Sluneční soustava = Slunce (hvězda) + 8 planet: Merkur, Venuše, Země, Mars, Jupiter, Saturn, Uran, Neptun. Země je třetí."
+        }
+      ]
+    },
+    {
+      "title": "Porovnej velikost",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zemi považujeme za obrovskou. Ale do Jupiteru by se vešlo přes tisíc Zemí! A Slunce je ještě mnohem větší."
+        },
+        {
+          "type": "text",
+          "text": "Porovnáme planety podle velikosti, ukážeme si, čím jsou zvláštní, a vysvětlíme, proč se mění tvar Měsíce."
+        },
+        {
+          "type": "term",
+          "term": "Planeta",
+          "definition": "Velké těleso, které obíhá kolem Slunce a samo nesvítí.",
+          "example": "Mars"
+        },
+        {
+          "type": "term",
+          "term": "Průměr",
+          "definition": "Délka „napříč“ koulí přes její střed. Říká, jak je koule velká.",
+          "example": "Průměr Země je asi 13 tisíc km."
+        },
+        {
+          "type": "heading",
+          "text": "Velikosti planet"
+        },
+        {
+          "type": "text",
+          "text": "Průměr planet v tisících kilometrů. Najdi největší a nejmenší sloupec."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "tis. km",
+            "items": [
+              {
+                "label": "Merkur",
+                "value": 5
+              },
+              {
+                "label": "Venuše",
+                "value": 12
+              },
+              {
+                "label": "Země",
+                "value": 13
+              },
+              {
+                "label": "Mars",
+                "value": 7
+              },
+              {
+                "label": "Jupiter",
+                "value": 143
+              },
+              {
+                "label": "Saturn",
+                "value": 121
+              },
+              {
+                "label": "Uran",
+                "value": 51
+              },
+              {
+                "label": "Neptun",
+                "value": 50
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "První čtyři planety jsou malé a kamenné. Další čtyři jsou obří a skládají se hlavně z plynů."
+        },
+        {
+          "type": "heading",
+          "text": "Poznávačka"
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Měsíc",
+                "back": "přirozená družice Země, sám nesvítí"
+              },
+              {
+                "front": "Jupiter",
+                "back": "největší planeta"
+              },
+              {
+                "front": "Saturn",
+                "back": "má výrazné prstence"
+              },
+              {
+                "front": "Mars",
+                "back": "rudá planeta"
+              },
+              {
+                "front": "Neptun",
+                "back": "nejvzdálenější planeta"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Měsíc a jeho fáze"
+        },
+        {
+          "type": "term",
+          "term": "Družice",
+          "definition": "Těleso, které obíhá kolem planety. **Měsíc** je přirozená družice Země.",
+          "example": "Umělé družice vypustili lidé – třeba pro GPS."
+        },
+        {
+          "type": "term",
+          "term": "Fáze Měsíce",
+          "definition": "Tvar osvětlené části Měsíce, jak ho vidíme ze Země. Mění se, jak Měsíc obíhá a Slunce ho osvětluje z jiného směru.",
+          "example": "úplněk, nov"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**nov** – Měsíc není vidět",
+            "**první čtvrť** – svítí pravá polovina",
+            "**úplněk** – svítí celý kotouč",
+            "**poslední čtvrť** – svítí levá polovina",
+            "Asi za měsíc začíná vše znovu."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Která planeta je největší?",
+          "answer": "Nejvyšší sloupec má **Jupiter** – asi 143 tisíc km."
+        },
+        {
+          "type": "example",
+          "question": "Proč Měsíc v noci svítí, když sám nesvítí?",
+          "answer": "Měsíc **odráží světlo Slunce**, jako zrcadlo. Proto vidíme jen tu část, kterou Slunce osvětluje."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Při novu Měsíc zmizí, protože ho zakryje stín Země.",
+          "right": "Při novu je Měsíc mezi Zemí a Sluncem. K nám je otočený neosvětlenou stranou.",
+          "why": "Fáze nezpůsobuje stín Země, ale to, z jakého směru Slunce Měsíc osvětluje."
+        },
+        {
+          "type": "summary",
+          "text": "Největší planeta je Jupiter, nejmenší Merkur. Měsíc je družice Země, sám nesvítí. Fáze: nov, první čtvrť, úplněk, poslední čtvrť."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Slunce je hvězda.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Kolik planet má sluneční soustava? Napiš číslo.",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která planeta je nejblíž Slunci?",
+      "options": [
+        "Merkur",
+        "Venuše",
+        "Mars",
+        "Země"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která planeta je největší?",
+      "options": [
+        "Jupiter",
+        "Saturn",
+        "Země",
+        "Neptun"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď planety od Slunce.",
+      "items": [
+        "Merkur",
+        "Venuše",
+        "Země",
+        "Mars",
+        "Jupiter"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolikátá planeta od Slunce je Země?",
+      "answers": [
+        "3",
+        "třetí"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Měsíc sám svítí jako Slunce.",
+      "answer": false,
+      "explanation": "Měsíc jen odráží světlo Slunce."
+    },
+    {
+      "type": "match",
+      "question": "Spoj planetu s popisem.",
+      "pairs": [
+        [
+          "Mars",
+          "rudá planeta"
+        ],
+        [
+          "Saturn",
+          "výrazné prstence"
+        ],
+        [
+          "Neptun",
+          "nejvzdálenější planeta"
+        ],
+        [
+          "Jupiter",
+          "největší planeta"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je Měsíc?",
+      "options": [
+        "družice Země",
+        "planeta",
+        "hvězda"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď fáze Měsíce.",
+      "items": [
+        "nov",
+        "první čtvrť",
+        "úplněk",
+        "poslední čtvrť"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Pluto je dnes zařazeno mezi trpasličí planety.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Co tvoří sluneční soustavu?",
+      "answer": "Slunce a osm planet, které kolem něj obíhají: Merkur, Venuše, Země, Mars, Jupiter, Saturn, Uran a Neptun. Patří k ní i měsíce planet, trpasličí planety, planetky a komety."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi hvězdou a planetou?",
+      "answer": "Hvězda sama svítí a hřeje, jako Slunce. Planeta nesvítí, jen odráží světlo hvězdy a obíhá kolem ní."
+    }
+  ]
+}

@@ -1,0 +1,413 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "polohove-ulohy",
+  "title": "Polohové a metrické vztahy v prostoru",
+  "emoji": "🧊",
+  "explanations": [
+    {
+      "title": "V krabici",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozhlédni se po pokoji. Hrana stropu a hrana podlahy na stejné stěně jsou rovnoběžné. Svislý roh místnosti a hrana podlahy se protínají. Ale hrana stropu nad oknem a svislý roh v protějším koutě? Ty se nikdy nepotkají – a přitom rovnoběžné nejsou."
+        },
+        {
+          "type": "text",
+          "text": "V prostoru jsou tedy možnosti, které na papíře neexistují. Stavař, architekt, konstruktér i grafik ve 3D hrách musí přesně vědět, jak spolu přímky a roviny leží a jak daleko od sebe jsou."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Krychle ABCDEFGH",
+          "definition": "Dolní stěna je ABCD (proti směru hodin), horní EFGH tak, že E je nad A, F nad B, G nad C, H nad D.",
+          "example": "Hrana AE je svislá, hrana AB vodorovná vpředu dole."
+        },
+        {
+          "type": "term",
+          "term": "Rovina",
+          "definition": "Neomezená rovná plocha – jako stěna krychle, která pokračuje do nekonečna.",
+          "example": "Rovina BCG je rovina stěny BCGF."
+        },
+        {
+          "type": "heading",
+          "text": "Jak mohou ležet dvě přímky"
+        },
+        {
+          "type": "term",
+          "term": "Různoběžné",
+          "definition": "Mají právě jeden společný bod.",
+          "example": "AB a BF se protnou v B."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoběžné",
+          "definition": "Leží v jedné rovině a nemají společný bod (nebo splývají – pak jsou totožné).",
+          "example": "AB a HG (obě vodorovné, na protějších stranách krychle)."
+        },
+        {
+          "type": "term",
+          "term": "Mimoběžné",
+          "definition": "Nemají společný bod a **neleží v jedné rovině**. To jde jen v prostoru.",
+          "example": "AB a CG: AB vede vpředu dole, CG je svislá hrana vzadu vpravo."
+        },
+        {
+          "type": "text",
+          "text": "Představ si krychli a roztřiď hrany podle polohy vůči hraně AB."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "rovnoběžná s AB",
+              "různoběžná s AB",
+              "mimoběžná s AB"
+            ],
+            "items": [
+              {
+                "text": "DC",
+                "group": 0
+              },
+              {
+                "text": "HG",
+                "group": 0
+              },
+              {
+                "text": "EF",
+                "group": 0
+              },
+              {
+                "text": "AD",
+                "group": 1
+              },
+              {
+                "text": "AE",
+                "group": 1
+              },
+              {
+                "text": "BF",
+                "group": 1
+              },
+              {
+                "text": "CG",
+                "group": 2
+              },
+              {
+                "text": "DH",
+                "group": 2
+              },
+              {
+                "text": "EH",
+                "group": 2
+              },
+              {
+                "text": "FG",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Spočítej: krychle má 12 hran. Kromě AB samotné jsou 3 rovnoběžné, 4 různoběžné (BC, AD, AE, BF) a **4 mimoběžné**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "AB a CG jsou rovnoběžné, protože se nikdy nepotkají.",
+          "right": "Jsou mimoběžné.",
+          "why": "Rovnoběžky musí ležet v jedné rovině. Žádná rovina neobsahuje zároveň AB i CG."
+        },
+        {
+          "type": "heading",
+          "text": "Dvě roviny"
+        },
+        {
+          "type": "text",
+          "text": "Dvě různé roviny jsou buď rovnoběžné (podlaha a strop), nebo se protínají v **přímce** (dvě sousední stěny se potkají v hraně)."
+        },
+        {
+          "type": "heading",
+          "text": "Úhly a vzdálenosti"
+        },
+        {
+          "type": "term",
+          "term": "Odchylka přímek",
+          "definition": "Úhel mezi nimi (ten menší, nejvýš 90°). U mimoběžek jednu z nich posuneš rovnoběžně, aby se protnuly.",
+          "example": "AB a CG: posuň CG na BF. AB ⟂ BF, odchylka 90°."
+        },
+        {
+          "type": "example",
+          "question": "Jaká je odchylka přímek AB a EG?",
+          "answer": "EG je úhlopříčka horní stěny, je rovnoběžná s AC. Úhel mezi AB a AC v dolním čtverci je **45°**."
+        },
+        {
+          "type": "term",
+          "term": "Stěnová a tělesová úhlopříčka",
+          "definition": "Stěnová spojuje protější rohy jedné stěny: u = a√2 (Pythagorova věta ve čtverci). Tělesová vede napříč krychlí, např. AG: u = a√3.",
+          "example": "Hrana 2 → tělesová úhlopříčka 2√3."
+        },
+        {
+          "type": "example",
+          "question": "Krychle s hranou 4. Jak daleko je bod A od roviny BCG?",
+          "answer": "Rovina BCG je pravá stěna BCGF. Nejkratší cesta z A na ni je hrana AB, kolmá na tu stěnu. Vzdálenost **4**."
+        },
+        {
+          "type": "summary",
+          "text": "Dvě přímky v prostoru: různoběžné, rovnoběžné, nebo mimoběžné (bez společného bodu a ne v jedné rovině). Dvě roviny: rovnoběžné, nebo se protnou v přímce. Úhlopříčky krychle: a√2 a a√3."
+        }
+      ]
+    },
+    {
+      "title": "Pravidla a postupy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve stereometrii (geometrii prostoru) řešíš tři typy úloh: **polohové** (jak spolu objekty leží, co je řez tělesa), **odchylky** (úhly) a **vzdálenosti**. Všechny se nakonec převedou na rovinný trojúhelník."
+        },
+        {
+          "type": "text",
+          "text": "Tady jsou pravidla, na kterých to stojí, a postupy krok za krokem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Bod, přímka, rovina",
+          "definition": "Základní útvary prostoru. Přímka je určena dvěma body, rovina třemi body, které neleží na jedné přímce.",
+          "example": "Rovina ABC je dolní podstava krychle."
+        },
+        {
+          "type": "term",
+          "term": "Kolmost přímky a roviny",
+          "definition": "Přímka je kolmá k rovině, když je kolmá ke **dvěma různoběžkám** v té rovině. Pak je kolmá ke všem přímkám roviny.",
+          "example": "Hrana AE je kolmá k AB i k AD, proto je kolmá k celé podstavě ABCD."
+        },
+        {
+          "type": "term",
+          "term": "Řez tělesa",
+          "definition": "Mnohoúhelník, který vznikne, když těleso „rozřízneš“ rovinou."
+        },
+        {
+          "type": "heading",
+          "text": "Vzájemné polohy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Útvary",
+            "Možné polohy"
+          ],
+          "rows": [
+            [
+              "dvě přímky",
+              "totožné, rovnoběžné různé, různoběžné (1 bod), mimoběžné (0 bodů, nejsou v jedné rovině)"
+            ],
+            [
+              "přímka a rovina",
+              "přímka leží v rovině, je s ní rovnoběžná, nebo ji protíná v 1 bodě"
+            ],
+            [
+              "dvě roviny",
+              "totožné, rovnoběžné, nebo se protínají v přímce"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup: odchylka dvou přímek"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Jsou-li různoběžné, měř úhel přímo v jejich průsečíku.",
+            "Jsou-li mimoběžné, nahraď jednu z nich rovnoběžkou, která tu druhou protne.",
+            "Najdi trojúhelník, ve kterém ten úhel leží, a dopočítej ho (Pythagoras, sin, cos).",
+            "Odchylka je vždy mezi 0° a 90°."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Krychle: odchylka AE a BC?",
+          "answer": "Posunu AE na BF (rovnoběžná). BF ⟂ BC (hrana svislá, hrana vodorovná ve stěně). Odchylka **90°**."
+        },
+        {
+          "type": "heading",
+          "text": "Postup: vzdálenost"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vzdálenost bodu od roviny = délka kolmice z bodu na rovinu.",
+            "Hledej hranu nebo úsečku, která je k rovině kolmá.",
+            "Délku dopočítej v pravoúhlém trojúhelníku."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Krychle s hranou a: spočítej tělesovou úhlopříčku AG.",
+          "answer": "Stěnová úhlopříčka AC = √(a² + a²) = a√2. Trojúhelník ACG je pravoúhlý (CG ⟂ podstava): AG = √(2a² + a²) = **a√3**."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si první krok: nastav odvěsny 1 a 1 – přepona (stěnová úhlopříčka krychle s hranou 1) je √2 ≈ 1,41. Pro hranu 3 nastav 3 a 3: vyjde √18 = 3√2."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 1,
+            "b": 1
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Řez krychle"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spoj dva body roviny, které leží ve stejné stěně.",
+            "Rovnoběžné stěny protne rovina v rovnoběžných úsečkách.",
+            "Když body ve stejné stěně nejsou, prodluž hrany a hledej jejich průsečíky s rovinou řezu."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dvě přímky bez společného bodu jsou vždy rovnoběžné.",
+          "right": "V prostoru mohou být i mimoběžné.",
+          "why": "Rovnoběžnost vyžaduje, aby obě přímky ležely v jedné rovině. Bez toho jde o mimoběžky."
+        },
+        {
+          "type": "summary",
+          "text": "Přímky v prostoru: totožné, rovnoběžné, různoběžné, mimoběžné. Odchylku mimoběžek měř po rovnoběžném posunutí. Vzdálenost = délka kolmice. Vše převeď na pravoúhlý trojúhelník."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Dvě přímky bez společného bodu, které neleží v jedné rovině, jsou:",
+      "options": [
+        "mimoběžné",
+        "rovnoběžné",
+        "různoběžné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Dvě různé roviny jsou buď rovnoběžné, nebo se protínají v přímce.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Krychle ABCDEFGH: přímky AB a CG jsou:",
+      "options": [
+        "mimoběžné",
+        "rovnoběžné",
+        "různoběžné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Krychle ABCDEFGH: přímky AB a HG jsou:",
+      "options": [
+        "rovnoběžné",
+        "mimoběžné",
+        "různoběžné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Krychle: odchylka přímek AB a CG (°) =",
+      "answers": [
+        "90"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Krychle: odchylka přímek AB a EG (°) =",
+      "answers": [
+        "45"
+      ],
+      "explanation": "EG ∥ AC"
+    },
+    {
+      "type": "input",
+      "question": "Krychle s hranou 2. Tělesová úhlopříčka = k·√3, k =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Krychle s hranou 4. Vzdálenost bodu A od roviny BCG =",
+      "answers": [
+        "4"
+      ],
+      "explanation": "Rovina BCG je stěna BCGF, kolmice z A je hrana AB."
+    },
+    {
+      "type": "input",
+      "question": "Kolik hran krychle je mimoběžných s hranou AB?",
+      "answers": [
+        "4"
+      ],
+      "explanation": "12 − 1 (AB) − 3 rovnoběžné − 4 různoběžné."
+    },
+    {
+      "type": "truefalse",
+      "question": "Přímka kolmá ke dvěma různoběžkám roviny je kolmá k této rovině.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj úlohu s výsledkem (krychle s hranou a).",
+      "pairs": [
+        [
+          "stěnová úhlopříčka",
+          "a√2"
+        ],
+        [
+          "tělesová úhlopříčka",
+          "a√3"
+        ],
+        [
+          "vzdálenost protějších stěn",
+          "a"
+        ],
+        [
+          "odchylka AE a BC",
+          "90°"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaké mohou být vzájemné polohy dvou přímek v prostoru?",
+      "answer": "Totožné, rovnoběžné různé, různoběžné (jeden společný bod) a mimoběžné (žádný společný bod a neleží v jedné rovině)."
+    },
+    {
+      "type": "open",
+      "question": "Jak sestrojíš řez krychle rovinou?",
+      "answer": "Spojuji body roviny ležící v téže stěně. Využívám, že rovnoběžné stěny protne rovina v rovnoběžných přímkách, a průsečíky prodloužených hran."
+    }
+  ]
+}

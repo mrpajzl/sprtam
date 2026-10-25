@@ -1,0 +1,446 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "alkany",
+  "title": "Uhlovodíky – alkany",
+  "emoji": "⛽",
+  "explanations": [
+    {
+      "title": "Ze života",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když doma zapálíš plynový sporák, hoří **zemní plyn**. Na chatě vaříš na kartuši s **propan-butanem**. Do auta se tankuje **benzín** nebo **nafta**."
+        },
+        {
+          "type": "text",
+          "text": "Všechny tyhle látky jsou postavené jen ze dvou druhů atomů: uhlíku a vodíku. Jsou to naše nejdůležitější paliva – a umí být i nebezpečné."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Uhlovodík",
+          "definition": "Látka, jejíž molekuly jsou složené **jen z uhlíku (C) a vodíku (H)**.",
+          "example": "methan CH₄ – jeden uhlík a čtyři vodíky"
+        },
+        {
+          "type": "term",
+          "term": "Vazba",
+          "definition": "Pevné spojení mezi dvěma atomy. Kreslí se jako čárka: C–H.",
+          "example": "Představ si ji jako dvě ruce, které se drží."
+        },
+        {
+          "type": "term",
+          "term": "Čtyřvazný uhlík",
+          "definition": "Uhlík tvoří vždy **4 vazby** – má „čtyři ruce“. Vodík tvoří jen **1** vazbu.",
+          "example": "V methanu drží uhlík čtyřmi rukama čtyři vodíky."
+        },
+        {
+          "type": "term",
+          "term": "Alkan",
+          "definition": "Uhlovodík, ve kterém jsou mezi atomy **jen jednoduché vazby** (jedna čárka). Jména alkanů končí na **-an**.",
+          "example": "methan, ethan, propan, butan"
+        },
+        {
+          "type": "heading",
+          "text": "Stavíme molekuly"
+        },
+        {
+          "type": "text",
+          "text": "Uhlíky se dají řetězit za sebe jako vagonky. Každý uhlík má 4 ruce. Ty, které nedrží jiný uhlík, drží vodík."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "⚫",
+            "➖",
+            "⚫",
+            "➖",
+            "⚫"
+          ],
+          "caption": "řetězec tří uhlíků – propan"
+        },
+        {
+          "type": "example",
+          "question": "Kolik vodíků má propan (3 uhlíky v řadě)?",
+          "answer": "Krajní uhlíky drží jednou rukou souseda, zbudou jim 3 ruce → 3 vodíky každý. Prostřední drží dva sousedy, zbudou mu 2 ruce → 2 vodíky. Celkem 3 + 2 + 3 = **8**. Propan je C₃H₈."
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu: na přední straně je vzorec, na zadní jméno. Všimni si, že s každým uhlíkem navíc přibudou vždy dva vodíky."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "CH₄",
+                "back": "methan"
+              },
+              {
+                "front": "C₂H₆",
+                "back": "ethan"
+              },
+              {
+                "front": "C₃H₈",
+                "back": "propan"
+              },
+              {
+                "front": "C₄H₁₀",
+                "back": "butan"
+              },
+              {
+                "front": "C₅H₁₂",
+                "back": "pentan"
+              },
+              {
+                "front": "C₆H₁₄",
+                "back": "hexan"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "K čemu jsou"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**methan** – hlavní složka zemního plynu (vaření, topení)",
+            "**propan a butan** – plyn v kartuších a lahvích",
+            "**benzín, nafta** – směsi delších alkanů, vyrábějí se z **ropy** (černé kapaliny z hlubin země)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Hoření"
+        },
+        {
+          "type": "term",
+          "term": "Hoření",
+          "definition": "Rychlá reakce látky s kyslíkem, při které se uvolňuje teplo a světlo."
+        },
+        {
+          "type": "term",
+          "term": "Exotermní reakce",
+          "definition": "Reakce, při které se teplo **uvolňuje** do okolí.",
+          "example": "Hoření plynu ohřeje hrnec."
+        },
+        {
+          "type": "example",
+          "question": "Co vznikne, když methan hoří a má dost vzduchu?",
+          "answer": "Uhlík se spojí s kyslíkem na oxid uhličitý, vodík s kyslíkem na vodu: CH₄ + 2 O₂ → CO₂ + 2 H₂O. Kontrola: vlevo 1 C, 4 H, 4 O; vpravo 1 C, 4 H, 2 + 2 = 4 O."
+        },
+        {
+          "type": "term",
+          "term": "Nedokonalé hoření",
+          "definition": "Hoření, když je **málo kyslíku**. Místo oxidu uhličitého vzniká **oxid uhelnatý CO** – jedovatý plyn bez barvy a zápachu.",
+          "example": "Kamna nebo karma, které špatně táhnou. Proto se doma dávají hlásiče CO."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Propan je C₃H₆.",
+          "right": "Propan je **C₃H₈**.",
+          "why": "Každý uhlík musí mít 4 vazby. Spočítej je: krajní uhlíky mají po 3 vodících, prostřední 2 → 8 vodíků."
+        },
+        {
+          "type": "summary",
+          "text": "Alkany jsou uhlovodíky jen s jednoduchými vazbami, jména končí na -an. Uhlík je čtyřvazný. Při dokonalém hoření vzniká CO₂ a voda, při nedokonalém jedovatý CO."
+        }
+      ]
+    },
+    {
+      "title": "Řada alkanů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Alkany tvoří řadu jako schody: každý další má o jeden uhlík víc. Díky tomu stačí znát **jeden vzorec** a spočítáš složení kteréhokoli z nich."
+        },
+        {
+          "type": "text",
+          "text": "To se hodí, když chceš vědět, co hoří ve sporáku, v kartuši nebo v motoru – a co při tom vzniká."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Uhlovodík",
+          "definition": "Sloučenina jen z uhlíku a vodíku.",
+          "example": "CH₄, C₃H₈"
+        },
+        {
+          "type": "term",
+          "term": "Vaznost",
+          "definition": "Kolik vazeb (spojení) atom vytváří. Uhlík je **čtyřvazný**, vodík **jednovazný**.",
+          "example": "H–C: vodík má jednu čárku, uhlík jich má celkem čtyři."
+        },
+        {
+          "type": "term",
+          "term": "Jednoduchá vazba",
+          "definition": "Spojení dvou atomů jedním párem elektronů. Kreslí se jednou čárkou C–C."
+        },
+        {
+          "type": "term",
+          "term": "Alkan",
+          "definition": "Uhlovodík jen s jednoduchými vazbami. Říká se mu také **nasycený** uhlovodík – víc vodíků už se na něj nevejde.",
+          "example": "ethan CH₃–CH₃"
+        },
+        {
+          "type": "heading",
+          "text": "Obecný vzorec"
+        },
+        {
+          "type": "text",
+          "text": "Má-li alkan **n** uhlíků, má **2n + 2** vodíků. Zapisuje se to `CₙH₂ₙ₊₂`."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti počet uhlíků n.",
+            "Vynásob ho dvěma.",
+            "Přičti 2. To je počet vodíků."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik vodíků má oktan (8 uhlíků)?",
+          "answer": "n = 8. 2 · 8 = 16. 16 + 2 = **18**. Oktan je C₈H₁₈."
+        },
+        {
+          "type": "heading",
+          "text": "Jména"
+        },
+        {
+          "type": "text",
+          "text": "Prvním čtyřem se říká starými jmény, od pěti uhlíků se používají řecké číslovky."
+        },
+        {
+          "type": "table",
+          "head": [
+            "n",
+            "Název",
+            "Vzorec",
+            "Za běžné teploty"
+          ],
+          "rows": [
+            [
+              "1",
+              "methan",
+              "CH₄",
+              "plyn"
+            ],
+            [
+              "2",
+              "ethan",
+              "C₂H₆",
+              "plyn"
+            ],
+            [
+              "3",
+              "propan",
+              "C₃H₈",
+              "plyn"
+            ],
+            [
+              "4",
+              "butan",
+              "C₄H₁₀",
+              "plyn"
+            ],
+            [
+              "5",
+              "pentan",
+              "C₅H₁₂",
+              "kapalina"
+            ],
+            [
+              "6",
+              "hexan",
+              "C₆H₁₄",
+              "kapalina"
+            ],
+            [
+              "8",
+              "oktan",
+              "C₈H₁₈",
+              "kapalina (v benzínu)"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Čím delší řetězec, tím výš je teplota varu: krátké alkany jsou plyny, delší kapaliny, nejdelší pevné (parafín ve svíčkách)."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si to na kartách: zkus si vždy nejdřív spočítat jméno z počtu uhlíků a pak teprve kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "CH₄",
+                "back": "methan – zemní plyn"
+              },
+              {
+                "front": "C₂H₆",
+                "back": "ethan"
+              },
+              {
+                "front": "C₃H₈",
+                "back": "propan – kartuše"
+              },
+              {
+                "front": "C₄H₁₀",
+                "back": "butan – kartuše, zapalovač"
+              },
+              {
+                "front": "C₈H₁₈",
+                "back": "oktan – benzín"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Hoření alkanů"
+        },
+        {
+          "type": "text",
+          "text": "Alkany hoří a uvolňují přitom teplo – reakce je **exotermní** (teplo jde ven). Při dostatku kyslíku vzniká **oxid uhličitý a voda**. Při nedostatku kyslíku vzniká jedovatý **oxid uhelnatý CO**."
+        },
+        {
+          "type": "example",
+          "question": "Napiš hoření propanu.",
+          "answer": "C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O. Kontrola: uhlíky 3 = 3, vodíky 8 = 4 · 2, kyslíky 5 · 2 = 10 a vpravo 3 · 2 + 4 = 10."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obecný vzorec alkanů je CₙH₂ₙ.",
+          "right": "Alkany mají vzorec **CₙH₂ₙ₊₂**.",
+          "why": "Dva krajní uhlíky mají každý o jeden vodík navíc. CₙH₂ₙ mají uhlovodíky s jednou dvojnou vazbou (alkeny)."
+        },
+        {
+          "type": "summary",
+          "text": "Alkan = jen jednoduché vazby, koncovka -an, vzorec CₙH₂ₙ₊₂. Methan, ethan, propan, butan, pentan, hexan… Hoří na CO₂ a vodu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jak se jmenuje CH₄?",
+      "answers": [
+        "methan",
+        "metan"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec propanu?",
+      "options": [
+        "C₃H₈",
+        "C₃H₆",
+        "C₃H₄",
+        "C₄H₁₀"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik atomů vodíku má molekula butanu?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik atomů vodíku má alkan s 8 uhlíky?",
+      "answers": [
+        "18"
+      ],
+      "explanation": "2 · 8 + 2 = 18 (oktan C₈H₁₈)."
+    },
+    {
+      "type": "truefalse",
+      "question": "Uhlík je v organických sloučeninách čtyřvazný.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co je hlavní složkou zemního plynu?",
+      "options": [
+        "methan",
+        "propan",
+        "butan",
+        "ethen"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co vzniká při dokonalém hoření alkanů?",
+      "options": [
+        "oxid uhličitý a voda",
+        "oxid uhelnatý a vodík",
+        "uhlík a kyslík"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Proč je nebezpečné nedokonalé spalování (např. v kamnech bez tahu)?",
+      "options": [
+        "vzniká jedovatý oxid uhelnatý",
+        "vzniká kyslík",
+        "vzniká voda"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď podle počtu uhlíků.",
+      "items": [
+        "methan",
+        "ethan",
+        "propan",
+        "butan",
+        "pentan"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Alkany obsahují dvojné vazby.",
+      "answer": false,
+      "explanation": "Alkany mají jen jednoduché vazby."
+    },
+    {
+      "type": "open",
+      "question": "Co jsou alkany? Uveď příklady a použití.",
+      "answer": "Nasycené uhlovodíky jen s jednoduchými vazbami, obecný vzorec CₙH₂ₙ₊₂. Methan je v zemním plynu, propan-butan v kartuších a lahvích na vaření."
+    },
+    {
+      "type": "open",
+      "question": "Napiš a popiš hoření methanu.",
+      "answer": "CH₄ + 2 O₂ → CO₂ + 2 H₂O. Methan reaguje s kyslíkem, vzniká oxid uhličitý a voda a uvolňuje se teplo – reakce je exotermní."
+    }
+  ]
+}

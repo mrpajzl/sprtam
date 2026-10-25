@@ -1,0 +1,381 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "elektricky-naboj",
+  "title": "Elektrický náboj a Coulombův zákon",
+  "emoji": "⚡",
+  "explanations": [
+    {
+      "title": "Pokusy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Přetáhneš přes hlavu svetr a vlasy ti stojí. Pohladíš kočku a „kopne“ tě jiskra. Pravítko třené o rukáv přitahuje papírky. Za tím vším je elektrický náboj."
+        },
+        {
+          "type": "text",
+          "text": "Elektrický náboj je základ veškeré elektřiny – od blesku přes mobil až po to, proč drží pohromadě atomy a molekuly."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atom, elektron, proton",
+          "definition": "Každá látka je z atomů. Atom má uprostřed jádro s **protony** (kladný náboj) a kolem obíhají **elektrony** (záporný náboj). Normálně je jich stejně, a atom je tedy navenek neutrální."
+        },
+        {
+          "type": "term",
+          "term": "Elektrický náboj Q",
+          "definition": "Vlastnost částic, díky které se přitahují nebo odpuzují. Je kladný nebo záporný. Jednotka **coulomb (C)**.",
+          "example": "Elektron má náboj záporný, proton kladný."
+        },
+        {
+          "type": "text",
+          "text": "**Souhlasné** náboje (+ a +, − a −) se odpuzují. **Nesouhlasné** (+ a −) se přitahují."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se těleso nabije"
+        },
+        {
+          "type": "text",
+          "text": "Při tření pravítka o svetr přejdou některé elektrony ze svetru na pravítko. Pravítko má elektronů navíc – je nabité záporně. Svetr jich má nedostatek – je nabitý kladně. Nic nevzniklo ani nezaniklo, náboj se jen přesunul."
+        },
+        {
+          "type": "term",
+          "term": "Zákon zachování náboje",
+          "definition": "V izolované soustavě se celkový náboj nemění. Náboj se jen přesouvá z tělesa na těleso."
+        },
+        {
+          "type": "term",
+          "term": "Elementární náboj e",
+          "definition": "Náboj jednoho elektronu (se záporným znaménkem) nebo protonu: `e = 1,602 · 10⁻¹⁹ C`. Menší volný náboj neexistuje – každý náboj je celý násobek e.",
+          "example": "Náboj −3,2 · 10⁻¹⁹ C = 2 elektrony navíc."
+        },
+        {
+          "type": "heading",
+          "text": "Vodiče a izolanty"
+        },
+        {
+          "type": "term",
+          "term": "Vodič",
+          "definition": "Látka, ve které se náboje (u kovů elektrony) mohou volně pohybovat.",
+          "example": "Měď, hliník, zlato."
+        },
+        {
+          "type": "term",
+          "term": "Izolant",
+          "definition": "Látka bez volně pohyblivých nábojů. Náboje se v ní jen trochu posunou na místě (**polarizace**), ale netečou.",
+          "example": "Plast, sklo, suché dřevo."
+        },
+        {
+          "type": "term",
+          "term": "Elektrostatická indukce",
+          "definition": "Přiblížíš nabitou tyč ke kovu, aniž by se dotkla. Volné elektrony v kovu se přesunou – na bližší straně se nahromadí náboj opačný, na vzdálené souhlasný."
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a zkus si každý pojem vysvětlit vlastními slovy dřív, než uvidíš odpověď."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "elementární náboj",
+                "back": "e = 1,602 · 10⁻¹⁹ C"
+              },
+              {
+                "front": "zákon zachování náboje",
+                "back": "v izolované soustavě se celkový náboj nemění"
+              },
+              {
+                "front": "vodič",
+                "back": "má volné nosiče náboje"
+              },
+              {
+                "front": "izolant (dielektrikum)",
+                "back": "jen polarizace, náboje se nepřesouvají"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Na nabitém kovu se náboje navzájem odpuzují a utečou co nejdál od sebe – **na povrch**, nejvíc na **hroty**. Proto má hromosvod hrot."
+        },
+        {
+          "type": "heading",
+          "text": "Jak silně se náboje přitahují"
+        },
+        {
+          "type": "text",
+          "text": "Síla je tím větší, čím větší jsou náboje, a rychle slábne se vzdáleností – s její **druhou mocninou** (2× dál = 4× slabší). To je **Coulombův zákon**."
+        },
+        {
+          "type": "example",
+          "question": "Jak se změní síla mezi dvěma náboji, když je přiblížíme na polovinu vzdálenosti?",
+          "answer": "Síla závisí na 1/r². Poloviční r → (1/2)² = 1/4 ve jmenovateli → síla se **zvětší 4×**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik elektronů tvoří náboj −3,2 · 10⁻¹⁹ C?",
+          "answer": "3,2 · 10⁻¹⁹ : 1,6 · 10⁻¹⁹ = **2 elektrony**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Při tření vzniká nový náboj.",
+          "right": "Při tření se náboj jen přesouvá – elektrony přejdou z jednoho tělesa na druhé.",
+          "why": "Zákon zachování náboje: kolik záporného náboje získá pravítko, tolik ho ztratí svetr. Dohromady mají pořád nulu."
+        },
+        {
+          "type": "summary",
+          "text": "Náboj je kladný nebo záporný, souhlasné se odpuzují. Náboj se zachovává a je násobkem e = 1,6 · 10⁻¹⁹ C. Síla klesá s druhou mocninou vzdálenosti."
+        }
+      ]
+    },
+    {
+      "title": "Coulombův zákon",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Elektrická síla drží elektrony u jádra, molekuly v kapce vody i inkoust na papíře z tiskárny. Abychom ji mohli počítat, potřebujeme přesný zákon. Objevil ho Charles Coulomb v 18. století a má nápadně podobný tvar jako Newtonův gravitační zákon."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektrický náboj Q",
+          "definition": "Vlastnost těles, díky které na sebe působí elektrickou silou. Kladný nebo záporný, jednotka coulomb (C). Souhlasné se odpuzují, nesouhlasné přitahují."
+        },
+        {
+          "type": "term",
+          "term": "Bodový náboj",
+          "definition": "Nabité těleso tak malé vzhledem ke vzdálenosti, že ho bereme jako bod."
+        },
+        {
+          "type": "term",
+          "term": "Mikrocoulomb (μC)",
+          "definition": "1 μC = 10⁻⁶ C. Coulomb je obrovský náboj, v pokusech se pracuje s mikrocoulomby."
+        },
+        {
+          "type": "term",
+          "term": "Relativní permitivita εᵣ",
+          "definition": "Číslo, které říká, kolikrát slabší je elektrická síla v daném prostředí než ve vakuu. Vakuum (a přibližně vzduch) εᵣ = 1, voda εᵣ ≈ 81."
+        },
+        {
+          "type": "heading",
+          "text": "Coulombův zákon"
+        },
+        {
+          "type": "text",
+          "text": "`F = k · Q₁ · Q₂ / r²`, kde `k = 9 · 10⁹ N·m²/C²` (ve vakuu), r je vzdálenost nábojů v metrech."
+        },
+        {
+          "type": "text",
+          "text": "V prostředí s permitivitou εᵣ je síla εᵣ-krát menší. Proto se sůl ve vodě rozpadá na ionty – voda zeslabí jejich přitahování asi 81×."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Převeď náboje na coulomby (μC → · 10⁻⁶).",
+            "Vzdálenost převeď na metry a umocni na druhou.",
+            "Dosaď do F = k · Q₁ · Q₂ / r².",
+            "Mocniny deseti počítej zvlášť: sečti exponenty při násobení, odečti při dělení."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Dva náboje po 1 μC jsou ve vakuu 0,3 m od sebe. Jak velká je síla?",
+          "answer": "Q₁ · Q₂ = 10⁻⁶ · 10⁻⁶ = 10⁻¹². r² = 0,09. F = 9 · 10⁹ · 10⁻¹² / 0,09 = 9 · 10⁻³ / 0,09 = **0,1 N**."
+        },
+        {
+          "type": "example",
+          "question": "Náboje 2 μC a 5 μC jsou 1 m od sebe. Síla?",
+          "answer": "Q₁ · Q₂ = 10 · 10⁻¹². F = 9 · 10⁹ · 10 · 10⁻¹² / 1 = 90 · 10⁻³ = **0,09 N**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se síla mění"
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje sílu (v procentech) při rostoucí vzdálenosti. Porovnej r a 3r – síla klesne na devítinu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "% síly",
+            "items": [
+              {
+                "label": "r",
+                "value": 100
+              },
+              {
+                "label": "2r",
+                "value": 25
+              },
+              {
+                "label": "3r",
+                "value": 11.1
+              },
+              {
+                "label": "4r",
+                "value": 6.25
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Ztrojnásobíš jeden náboj → síla 3× větší (přímá úměrnost). Zmenšíš vzdálenost na polovinu → síla 4× větší."
+        },
+        {
+          "type": "heading",
+          "text": "Náboj v látkách"
+        },
+        {
+          "type": "text",
+          "text": "**Vodič** má volné nosiče náboje, **izolant** ne. Přiblížením nabitého tělesa se náboj ve vodiči přeskupí (**elektrostatická indukce**), v izolantu se částice jen natočí (**polarizace**). Na nabitém vodiči sedí náboj na povrchu, nejvíc na hrotech."
+        },
+        {
+          "type": "text",
+          "text": "Náboj je **kvantovaný**: každý volný náboj je celistvý násobek `e = 1,602 · 10⁻¹⁹ C`. A v izolované soustavě se celkový náboj nemění."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dosadím 1 μC jako Q = 1.",
+          "right": "Q = 1 μC = 10⁻⁶ C.",
+          "why": "Konstanta k je pro coulomby a metry. S mikrocoulomby dosazenými jako jednotky vyjde síla 10¹²× větší – tedy úplný nesmysl."
+        },
+        {
+          "type": "summary",
+          "text": "`F = k·Q₁·Q₂/r²`, k = 9 · 10⁹ N·m²/C². Souhlasné náboje se odpuzují. V prostředí je síla εᵣ-krát menší."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Dva náboje po 1 μC jsou ve vakuu 0,3 m od sebe. Síla v N? (k = 9 · 10⁹ N·m²/C²)",
+      "answers": [
+        "0,1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Dva náboje 2 μC a 5 μC jsou 1 m od sebe. Síla v N? (k = 9 · 10⁹ N·m²/C²)",
+      "answers": [
+        "0,09"
+      ],
+      "explanation": "9 · 10⁹ · 10 · 10⁻¹² = 0,09 N"
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní elektrická síla, když vzdálenost nábojů zmenšíme na polovinu?",
+      "options": [
+        "zvětší se 4×",
+        "zvětší se 2×",
+        "zmenší se 4×",
+        "nezmění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik elektronů tvoří náboj −3,2 · 10⁻¹⁹ C?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Náboj může mít hodnotu 0,5 e.",
+      "answer": false,
+      "explanation": "Volný náboj je celistvý násobek e."
+    },
+    {
+      "type": "choice",
+      "question": "Co je elektrostatická indukce?",
+      "options": [
+        "přeskupení náboje ve vodiči vlivem vnějšího pole",
+        "vznik proudu v cívce",
+        "polarizace izolantu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve vodě je elektrická síla mezi ionty mnohem menší než ve vakuu.",
+      "answer": true,
+      "explanation": "Voda má εᵣ ≈ 81."
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a význam.",
+      "pairs": [
+        [
+          "vodič",
+          "volné nosiče náboje"
+        ],
+        [
+          "izolant",
+          "bez volných nosičů"
+        ],
+        [
+          "coulomb",
+          "jednotka náboje"
+        ],
+        [
+          "e",
+          "elementární náboj"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní síla, když jeden náboj ztrojnásobíme?",
+      "options": [
+        "zvětší se 3×",
+        "zvětší se 9×",
+        "zmenší se 3×"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde se na nabitém vodiči hromadí náboj?",
+      "options": [
+        "na povrchu, nejvíc na hrotech",
+        "uvnitř",
+        "rovnoměrně v objemu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj Coulombův zákon.",
+      "answer": "Dva bodové náboje na sebe působí silou přímo úměrnou součinu nábojů a nepřímo úměrnou druhé mocnině jejich vzdálenosti: F = k·Q₁·Q₂/r². Souhlasné se odpuzují, nesouhlasné přitahují."
+    },
+    {
+      "type": "open",
+      "question": "Co říká zákon zachování elektrického náboje?",
+      "answer": "V izolované soustavě se celkový náboj nemění. Náboj nevzniká ani nezaniká, jen se přesouvá mezi tělesy."
+    }
+  ]
+}

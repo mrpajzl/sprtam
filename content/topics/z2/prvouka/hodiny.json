@@ -1,0 +1,320 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hodiny",
+  "title": "Hodiny a čas",
+  "emoji": "🕒",
+  "explanations": [
+    {
+      "title": "Ciferník",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Škola začíná v určitou dobu. Autobus odjíždí v určitou dobu. Abys nepřišel pozdě, musíš umět číst hodiny."
+        },
+        {
+          "type": "text",
+          "text": "Na hodinách s ručičkami se to naučíš krok za krokem."
+        },
+        {
+          "type": "term",
+          "term": "Ciferník",
+          "definition": "Kulatá „tvář“ hodin s čísly od 1 do 12.",
+          "example": "Nahoře je 12, dole 6."
+        },
+        {
+          "type": "term",
+          "term": "Malá ručička",
+          "definition": "Kratší ručička. Ukazuje **hodiny**. Jde pomalu.",
+          "example": "Ukazuje na 3 → jsou 3 hodiny."
+        },
+        {
+          "type": "term",
+          "term": "Velká ručička",
+          "definition": "Delší ručička. Ukazuje **minuty**. Za hodinu oběhne celé kolo.",
+          "example": "Ukazuje na 12 → celá hodina."
+        },
+        {
+          "type": "term",
+          "term": "Minuta",
+          "definition": "Krátký čas. Asi tak dlouho, jako když si pomalu napočítáš do šedesáti.",
+          "example": "1 hodina = 60 minut."
+        },
+        {
+          "type": "heading",
+          "text": "Kam ukazuje velká ručička"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Velká ručička na…",
+            "Říkáme",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "12",
+              "celá",
+              "3:00 = tři hodiny"
+            ],
+            [
+              "3",
+              "čtvrt na…",
+              "2:15 = čtvrt na tři"
+            ],
+            [
+              "6",
+              "půl…",
+              "3:30 = půl čtvrté"
+            ],
+            [
+              "9",
+              "tři čtvrtě na…",
+              "8:45 = tři čtvrtě na devět"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "U „čtvrt“, „půl“ a „tři čtvrtě“ říkáme vždy **příští** hodinu, ke které se blížíme."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Hodiny ukazují půl čtvrté. Malá ručička je mezi 3 a 4. Zkus nastavit čtvrt na šest."
+        },
+        {
+          "type": "widget",
+          "widget": "clock",
+          "props": {
+            "hours": 3,
+            "minutes": 30
+          }
+        },
+        {
+          "type": "example",
+          "question": "Velká ručička je na 6, malá mezi 7 a 8. Kolik je?",
+          "answer": "Velká na 6 → **půl**. Blížíme se k 8 → **půl osmé** (7:30)."
+        },
+        {
+          "type": "example",
+          "question": "Velká ručička je na 3, malá kousek za 5. Kolik je?",
+          "answer": "Velká na 3 → **čtvrt**. Další hodina je 6 → **čtvrt na šest** (5:15)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "7:30 je půl sedmé.",
+          "right": "7:30 je půl osmé.",
+          "why": "Sedm hodin už uběhlo a jdeme k osmé. „Půl osmé“ = půl cesty k osmé hodině."
+        },
+        {
+          "type": "summary",
+          "text": "Malá ručička = hodiny, velká = minuty. Velká na 12 celá, na 3 čtvrt, na 6 půl, na 9 tři čtvrtě."
+        }
+      ]
+    },
+    {
+      "title": "Jako pizza",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když rozkrojíš pizzu na půlky nebo na čtvrtky, dostaneš stejné kousky. S hodinou je to stejné."
+        },
+        {
+          "type": "text",
+          "text": "Hodinu můžeš „nakrájet“ na půlky a čtvrtky. Pak hned víš, kolik je to minut."
+        },
+        {
+          "type": "term",
+          "term": "Hodina",
+          "definition": "Čas, za který velká ručička oběhne celý ciferník. Má **60 minut**.",
+          "example": "Vyučovací hodina trvá 45 minut, celá hodina 60."
+        },
+        {
+          "type": "term",
+          "term": "Polovina (půl)",
+          "definition": "Jedna ze dvou stejných částí celku.",
+          "example": "Půl pizzy, půl hodiny."
+        },
+        {
+          "type": "term",
+          "term": "Čtvrtina (čtvrt)",
+          "definition": "Jedna ze čtyř stejných částí celku.",
+          "example": "Čtvrt pizzy, čtvrt hodiny."
+        },
+        {
+          "type": "heading",
+          "text": "Krájíme hodinu"
+        },
+        {
+          "type": "text",
+          "text": "Obrázek ukazuje čtvrtinu. Zkus přidat kousky a podívej se na půlku i tři čtvrtiny."
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 1,
+            "denominator": 4
+          }
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Celá hodina = **60 minut**.",
+            "Rozkrojím na 2 stejné půlky. 30 + 30 = 60 → **půl hodiny = 30 minut**.",
+            "Rozkrojím na 4 stejné čtvrtky. 15 + 15 + 15 + 15 = 60 → **čtvrt hodiny = 15 minut**.",
+            "Tři čtvrtky: 15 + 15 + 15 → **tři čtvrtě hodiny = 45 minut**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Větší a menší kousky času"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1 hodina = 60 minut",
+            "1 den = 24 hodin (den i noc dohromady)",
+            "1 týden = 7 dní"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Film začíná v 5:00 a trvá půl hodiny. Kdy skončí?",
+          "answer": "Půl hodiny = 30 minut. 5:00 + 30 minut = **5:30**, tedy půl šesté."
+        },
+        {
+          "type": "example",
+          "question": "Kolik minut jsou dvě čtvrthodiny?",
+          "answer": "Čtvrt hodiny = 15 minut. 15 + 15 = **30 minut** – to je půl hodiny."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Půl hodiny je 50 minut.",
+          "right": "Půl hodiny je 30 minut.",
+          "why": "Hodina má 60 minut, ne 100. Polovina ze 60 je 30."
+        },
+        {
+          "type": "summary",
+          "text": "Hodina má 60 minut: půl hodiny = 30 minut, čtvrt hodiny = 15 minut, tři čtvrtě = 45 minut. Den má 24 hodin."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik minut má hodina?",
+      "answers": [
+        "60"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik hodin má den?",
+      "answers": [
+        "24"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik minut je půl hodiny?",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik minut je čtvrt hodiny?",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Velká ručička je na 6. Je…",
+      "options": [
+        "půl",
+        "celá",
+        "čtvrt"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co ukazuje malá ručička?",
+      "options": [
+        "hodiny",
+        "minuty",
+        "dny"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "7:30 je…",
+      "options": [
+        "půl osmé",
+        "půl sedmé",
+        "tři čtvrtě na sedm"
+      ],
+      "answer": 0,
+      "explanation": "Je to půl cesty k osmé hodině."
+    },
+    {
+      "type": "truefalse",
+      "question": "Čtvrt na tři je 2:15.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejkratšího.",
+      "items": [
+        "minuta",
+        "hodina",
+        "den",
+        "týden"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "půl páté",
+          "4:30"
+        ],
+        [
+          "čtvrt na šest",
+          "5:15"
+        ],
+        [
+          "tři čtvrtě na devět",
+          "8:45"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš na hodinách „půl“?",
+      "answer": "Velká ručička ukazuje na 6. Malá je mezi dvěma čísly."
+    },
+    {
+      "type": "open",
+      "question": "V kolik hodin chodíš do školy a v kolik spát?",
+      "answer": "Například do školy v 7:30 a spát v 8 hodin večer."
+    }
+  ]
+}

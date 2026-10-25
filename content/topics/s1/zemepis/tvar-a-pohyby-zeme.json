@@ -1,0 +1,429 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "tvar-a-pohyby-zeme",
+  "title": "Tvar a pohyby Země",
+  "emoji": "🌍",
+  "explanations": [
+    {
+      "title": "Od koule k geoidu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na glóbu je Země dokonalá koule. Jenže když GPS v mobilu určuje polohu na metry přesně, „koule“ už nestačí – chyba by byla v kilometrech. Proto geografové používají přesnější modely tvaru Země."
+        },
+        {
+          "type": "text",
+          "text": "Zároveň se Země pořád pohybuje – otáčí se a obíhá Slunce. Z těchto pohybů plyne den a noc, roční období i časová pásma."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Model",
+          "definition": "Zjednodušená náhrada skutečnosti, se kterou se dá dobře počítat.",
+          "example": "Glóbus je model Země."
+        },
+        {
+          "type": "term",
+          "term": "Poloměr (R)",
+          "definition": "Vzdálenost ze středu koule na její povrch.",
+          "example": "Průměrný poloměr Země je asi 6 371 km."
+        },
+        {
+          "type": "term",
+          "term": "Rotační elipsoid",
+          "definition": "Těleso, které vznikne otáčením elipsy (zploštělého kruhu) kolem její kratší osy. Vypadá jako koule mírně „zmáčknutá“ shora a zdola.",
+          "example": "Země je na pólech zploštělá – poloměr k pólu je asi o 21 km kratší než k rovníku."
+        },
+        {
+          "type": "term",
+          "term": "Geoid",
+          "definition": "Plocha, kterou by tvořila klidná hladina moří, kdybychom ji pomyslně protáhli i pod pevninami. Je mírně zvlněná, protože gravitace není všude stejná.",
+          "example": "Od geoidu se měří nadmořská výška."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Tři modely"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Model",
+            "Popis",
+            "Použití"
+          ],
+          "rows": [
+            [
+              "koule",
+              "R ≈ 6 371 km",
+              "malá měřítka, glóbus"
+            ],
+            [
+              "rotační elipsoid",
+              "zploštělý na pólech (asi o 21 km)",
+              "mapování, GPS (elipsoid WGS 84)"
+            ],
+            [
+              "geoid",
+              "plocha střední hladiny moří",
+              "výšky (nadmořská výška)"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Geoid je skutečný fyzikální tvar, ale je nepravidelný a špatně se s ním počítá. Elipsoid je jeho matematická náhrada. Systém **WGS 84**, který používá GPS, je právě takový elipsoid."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Proč je Země zploštělá"
+        },
+        {
+          "type": "term",
+          "term": "Odstředivá síla",
+          "definition": "Síla, která při otáčení „odhání“ věci od osy otáčení ven.",
+          "example": "Na kolotoči tě to táhne ven z kruhu."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Země se otáčí kolem své osy.",
+            "Body na rovníku opisují největší kruh – jsou nejrychlejší.",
+            "Odstředivá síla je proto největší na rovníku.",
+            "Hmota se na rovníku mírně „vyboulila“ a na pólech zploštila."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: Země se pohybuje"
+        },
+        {
+          "type": "term",
+          "term": "Rotace a revoluce",
+          "definition": "**Rotace** = otáčení Země kolem vlastní osy (asi za den). **Revoluce** = oběh Země kolem Slunce (za rok).",
+          "example": "Rotace dává den a noc, revoluce spolu se sklonem osy roční období."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Rotace: střídání dne a noci, časová pásma, zploštění, **Coriolisova síla** (stáčí větry a proudy – na severní polokouli doprava, na jižní doleva).",
+            "Revoluce: osa je skloněná asi o **23,5°** od kolmice k rovině oběhu, proto vznikají roční období, polární den a noc (za polárními kruhy, 66,5°) a mění se délka dne.",
+            "Země je Slunci nejblíž začátkem ledna (perihélium) – roční období tedy vzdálenost nezpůsobuje."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Rovníkový poloměr je asi 6 378 km, polární asi 6 357 km. O kolik je Země zploštělá?",
+          "answer": "6 378 − 6 357 = **21 km**. To je jen asi 0,3 % – na glóbu okem nepoznáš."
+        },
+        {
+          "type": "example",
+          "question": "Nadmořská výška Sněžky je 1 603 m. Od jaké plochy se měří?",
+          "answer": "Od **geoidu** – od pomyslné střední hladiny moře (v ČR se vztahuje k hladině Baltského moře)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Geoid a elipsoid jsou totéž, jen jiný název.",
+          "right": "Geoid je skutečná nepravidelná plocha hladiny moří, elipsoid je pravidelné matematické těleso, které ho co nejlépe nahrazuje.",
+          "why": "Rozdíl mezi nimi je až kolem 100 m. Proto GPS výšku nad elipsoidem přepočítává na nadmořskou výšku nad geoidem."
+        },
+        {
+          "type": "summary",
+          "text": "Geoid = skutečný fyzikální tvar (hladina moří), elipsoid = matematická náhrada (GPS, WGS 84), koule = nejjednodušší model (R ≈ 6 371 km). Země je zploštělá rotací."
+        }
+      ]
+    },
+    {
+      "title": "Dva pohyby",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč je v Praze v prosinci tma už ve čtyři, a v červnu světlo do deseti? Proč je v New Yorku jiný čas než u nás? A proč za polárním kruhem slunce v létě vůbec nezapadá? Všechno má na svědomí to, jak se Země pohybuje."
+        },
+        {
+          "type": "text",
+          "text": "Země dělá dva pohyby zároveň. Když je od sebe oddělíš, každý jev snadno přiřadíš ke správnému z nich."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zemská osa",
+          "definition": "Pomyslná přímka, kolem které se Země otáčí. Prochází severním a jižním pólem.",
+          "example": "Jako špejle, na které se točí kulička."
+        },
+        {
+          "type": "term",
+          "term": "Rotace",
+          "definition": "Otáčení Země kolem vlastní osy. Jedna otočka trvá asi den.",
+          "example": "Jako když se točíš na místě."
+        },
+        {
+          "type": "term",
+          "term": "Revoluce (oběh)",
+          "definition": "Pohyb Země kolem Slunce. Jeden oběh trvá rok (asi 365,25 dne).",
+          "example": "Jako když obcházíš stůl, na kterém stojí lampa."
+        },
+        {
+          "type": "term",
+          "term": "Ekliptika",
+          "definition": "Rovina, ve které Země obíhá Slunce. Ze Země ji vidíme jako zdánlivou dráhu Slunce po obloze během roku.",
+          "example": "Představ si stůl – Země i Slunce leží „na desce stolu“."
+        },
+        {
+          "type": "term",
+          "term": "Coriolisova síla",
+          "definition": "Zdánlivá síla, která kvůli rotaci Země stáčí pohybující se vzduch a vodu – na severní polokouli doprava, na jižní doleva.",
+          "example": "Proto se větry v tlakových nížích točí."
+        },
+        {
+          "type": "text",
+          "text": "Připomenutí tvaru: Země není přesná koule. Rotací se na rovníku mírně vyboulila – je **zploštělá** asi o 21 km. Přesný tvar hladiny moří se jmenuje **geoid**, jeho matematická náhrada **rotační elipsoid** (GPS používá elipsoid WGS 84)."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Sklon osy"
+        },
+        {
+          "type": "text",
+          "text": "Osa není kolmá k ekliptice. Je od kolmice skloněná asi o **23,5°** a během oběhu míří pořád stejným směrem (k Polárce). Podívej se, jak velký je to úhel."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 23
+          }
+        },
+        {
+          "type": "text",
+          "text": "Ze sklonu plynou důležité rovnoběžky: **obratníky** (23,5° s. š. a j. š.) – nejdál od rovníku, kde je Slunce v poledne kolmo nad hlavou, a **polární kruhy** (66,5°) – odkud k pólu nastává polární den a noc."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Co způsobí který pohyb"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď jevy. Pomůcka: trvá ten jev den (rotace), nebo se mění během roku (revoluce)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Rotace (osa)",
+              "Revoluce (oběh)"
+            ],
+            "items": [
+              {
+                "text": "střídání dne a noci",
+                "group": 0
+              },
+              {
+                "text": "Coriolisova síla",
+                "group": 0
+              },
+              {
+                "text": "zploštění Země",
+                "group": 0
+              },
+              {
+                "text": "časová pásma",
+                "group": 0
+              },
+              {
+                "text": "roční období",
+                "group": 1
+              },
+              {
+                "text": "polární den a noc",
+                "group": 1
+              },
+              {
+                "text": "změna délky dne během roku",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: Jak vznikají roční období"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Osa je skloněná a míří stále stejně.",
+            "V červnu je ke Slunci přikloněná severní polokoule.",
+            "Paprsky na ni dopadají strměji a den je delší – víc energie = **léto**.",
+            "V prosinci je přikloněná jižní polokoule – u nás je **zima**, v Austrálii léto.",
+            "Mezi tím jsou **rovnodennosti** (asi 21. 3. a 23. 9.) – den i noc trvají všude asi 12 h."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krok 4: Přísluní a odsluní"
+        },
+        {
+          "type": "text",
+          "text": "Dráha Země je mírná elipsa. **Perihélium** (přísluní, nejblíž Slunci) je začátkem ledna, **afélium** (odsluní, nejdál) začátkem července. Rozdíl vzdálenosti je malý (asi 3 %), roční období neurčuje."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Proč je v lednu na severní polokouli zima, když je Země Slunci nejblíž?",
+          "answer": "Roční období nezpůsobuje vzdálenost, ale **sklon osy**. V lednu je severní polokoule od Slunce odkloněná: paprsky dopadají šikmo a den je krátký."
+        },
+        {
+          "type": "example",
+          "question": "Siderický den (otočka vůči hvězdám) trvá asi 23 h 56 min. Proč je sluneční den 24 h?",
+          "answer": "Během jedné otočky Země zároveň kus oběhne kolem Slunce. Aby bylo Slunce znovu v poledne nejvýš, musí se otočit ještě asi o 1° navíc – to trvá asi **4 minuty**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V létě je tepleji, protože je Země blíž ke Slunci.",
+          "right": "Léto je na polokouli, která je přikloněná ke Slunci – kvůli sklonu zemské osy.",
+          "why": "Kdyby rozhodovala vzdálenost, bylo by léto na obou polokoulích zároveň. Ve skutečnosti je v lednu u nás zima a v Austrálii léto."
+        },
+        {
+          "type": "summary",
+          "text": "Rotace (den): den a noc, časová pásma, Coriolisova síla (sever doprava, jih doleva), zploštění. Revoluce (rok) spolu se sklonem osy 23,5°: roční období, polární den a noc, délka dne."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se nazývá plocha střední hladiny moří protažená pod pevninami?",
+      "options": [
+        "elipsoid",
+        "geoid",
+        "sféroid",
+        "astroid"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "O kolik stupňů je zemská osa skloněna od kolmice k rovině ekliptiky (zaokrouhli na celé)?",
+      "answers": [
+        "23",
+        "23,5",
+        "23.5"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Coriolisova síla stáčí pohyb na severní polokouli doprava.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který jev je důsledkem revoluce Země?",
+      "options": [
+        "střídání dne a noci",
+        "roční období",
+        "zploštění Země",
+        "Coriolisova síla"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaký referenční elipsoid používá GPS?",
+      "options": [
+        "WGS 84",
+        "Křovák",
+        "Bessel",
+        "Mercator"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Na jaké zeměpisné šířce leží polární kruhy (zaokrouhli na celé stupně)?",
+      "answers": [
+        "66",
+        "66,5",
+        "67"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Země je nejblíže Slunci v lednu (perihélium).",
+      "answer": true,
+      "explanation": "Roční období nezpůsobuje vzdálenost, ale sklon osy."
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a definici.",
+      "pairs": [
+        [
+          "perihélium",
+          "přísluní"
+        ],
+        [
+          "afélium",
+          "odsluní"
+        ],
+        [
+          "ekliptika",
+          "zdánlivá dráha Slunce"
+        ],
+        [
+          "ekvinokcium",
+          "rovnodennost"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kde nastává polární den alespoň jeden den v roce?",
+      "options": [
+        "za polárním kruhem",
+        "mezi obratníky",
+        "jen na rovníku",
+        "všude na Zemi"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Siderický den je o něco kratší než sluneční den.",
+      "answer": true,
+      "explanation": "Asi 23 h 56 min."
+    },
+    {
+      "type": "open",
+      "question": "Proč je Země zploštělá na pólech?",
+      "answer": "Rotací vzniká odstředivá síla, která je největší na rovníku. Hmota se tam „vyboulila“, proto je rovníkový poloměr asi o 21 km větší než polární."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli vznik ročních období.",
+      "answer": "Zemská osa je skloněná a během oběhu si zachovává směr. Polokoule přivrácená ke Slunci má vyšší úhel dopadu paprsků a delší den, a proto léto."
+    }
+  ]
+}

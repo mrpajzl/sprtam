@@ -1,0 +1,361 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vodstvo-cr",
+  "title": "Řeky a vodstvo ČR",
+  "emoji": "🌊",
+  "explanations": [
+    {
+      "title": "Cesta kapky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když na horách prší, kam se ta voda podívá? Část vsákne do země, ale velká část se vydá na dlouhou cestu – až do moře."
+        },
+        {
+          "type": "text",
+          "text": "Z řek pijeme vodu, zaléváme pole a vyrábíme elektřinu. Proto je dobré vědět, odkud a kam tečou."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pramen",
+          "definition": "Místo, kde voda vytéká ze země. Tady řeka **začíná**.",
+          "example": "Pramen Labe je v Krkonoších na Labské louce."
+        },
+        {
+          "type": "term",
+          "term": "Potok",
+          "definition": "Malý tok vody. Dá se často přeskočit.",
+          "example": "Z pramene nejdřív teče potůček, pak potok."
+        },
+        {
+          "type": "term",
+          "term": "Řeka",
+          "definition": "Velký tok vody, do kterého se vlévají potoky a menší řeky.",
+          "example": "Vltava, Labe, Morava."
+        },
+        {
+          "type": "term",
+          "term": "Ústí",
+          "definition": "Místo, kde řeka **končí** – vlévá se do jiné řeky nebo do moře.",
+          "example": "Vltava ústí do Labe u Mělníka."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta jedné kapky"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj, jak voda putuje. Všimni si, že cesta se pořád opakuje dokola."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "pramen v horách",
+              "potok",
+              "řeka",
+              "větší řeka",
+              "moře",
+              "mrak a déšť"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Naše nejdůležitější řeka"
+        },
+        {
+          "type": "text",
+          "text": "**Vltava** pramení na **Šumavě**. Teče přes České Budějovice a Prahu. U **Mělníka** se vlévá do **Labe**."
+        },
+        {
+          "type": "text",
+          "text": "Vltava je **nejdelší řeka ČR** – měří asi 430 km. Celá teče jen po našem území."
+        },
+        {
+          "type": "example",
+          "question": "Kapka spadne na Šumavě do Vltavy. Kudy poteče?",
+          "answer": "Vltavou přes České Budějovice a Prahu → u Mělníka do **Labe** → Labe teče do Německa → **Severní moře**."
+        },
+        {
+          "type": "example",
+          "question": "Je Labe u Mělníka větší, nebo menší než nad Mělníkem?",
+          "answer": "Větší. U Mělníka do něj přiteče celá Vltava, takže v něm je potom víc vody."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ústí je místo, kde řeka začíná.",
+          "right": "Řeka začíná **pramenem** a končí **ústím**.",
+          "why": "Pomůcka: ústa jsou na konci cesty jídla – a ústí je na konci cesty řeky."
+        },
+        {
+          "type": "summary",
+          "text": "Řeka začíná pramenem a končí ústím. Vltava je nejdelší řeka ČR, pramení na Šumavě a u Mělníka se vlévá do Labe."
+        }
+      ]
+    },
+    {
+      "title": "Kam teče voda",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Naše republika nemá moře. Přesto voda z našich řek do moří doteče – dokonce do tří různých!"
+        },
+        {
+          "type": "text",
+          "text": "Lidé si navíc vodu zadržují v rybnících a přehradách. Pojďme zjistit, jak to funguje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pramen a ústí",
+          "definition": "Pramen je místo, kde řeka začíná (voda vyvěrá ze země). Ústí je místo, kde končí ve větší řece nebo v moři."
+        },
+        {
+          "type": "term",
+          "term": "Přítok",
+          "definition": "Řeka nebo potok, který se vlévá do jiné, větší řeky.",
+          "example": "Vltava je přítok Labe."
+        },
+        {
+          "type": "term",
+          "term": "Rybník",
+          "definition": "Vodní plocha, kterou **vykopali lidé**. Chovají v ní hlavně ryby.",
+          "example": "Rožmberk u Třeboně je **největší rybník** v ČR."
+        },
+        {
+          "type": "term",
+          "term": "Přehrada",
+          "definition": "Velká zeď (hráz) přes řeku. Za ní se nahromadí voda – vznikne **přehradní nádrž**.",
+          "example": "**Lipno** na Vltavě je naše největší přehradní nádrž."
+        },
+        {
+          "type": "heading",
+          "text": "Tři moře"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Řeka",
+            "Kam nakonec teče"
+          ],
+          "rows": [
+            [
+              "Labe (s Vltavou)",
+              "Severní moře"
+            ],
+            [
+              "Odra",
+              "Baltské moře"
+            ],
+            [
+              "Morava (přes Dunaj)",
+              "Černé moře"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Labe pramení v **Krkonoších**, Odra v **Oderských vrších**, Morava pod **Králickým Sněžníkem**."
+        },
+        {
+          "type": "example",
+          "question": "Kam doteče voda z řeky Moravy?",
+          "answer": "Morava se vlévá do Dunaje. Dunaj teče přes několik států a ústí do **Černého moře**."
+        },
+        {
+          "type": "example",
+          "question": "Proč stavíme přehrady?",
+          "answer": "Při velkém dešti zadrží vodu, a tak chrání před **povodní**. Za sucha vodu pouštějí. Vyrábějí elektřinu a dávají pitnou vodu."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď jména: je to řeka, nebo rybník či nádrž?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "řeka",
+              "rybník nebo nádrž"
+            ],
+            "items": [
+              {
+                "text": "Vltava",
+                "group": 0
+              },
+              {
+                "text": "Labe",
+                "group": 0
+              },
+              {
+                "text": "Odra",
+                "group": 0
+              },
+              {
+                "text": "Morava",
+                "group": 0
+              },
+              {
+                "text": "Rožmberk",
+                "group": 1
+              },
+              {
+                "text": "Lipno",
+                "group": 1
+              },
+              {
+                "text": "Orlík",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rybník a přehrada jsou totéž.",
+          "right": "Rybník je vykopaný hlavně pro chov ryb. Přehrada je hráz přes řeku, která zadrží hodně vody.",
+          "why": "Obojí udělali lidé, ale z jiného důvodu a jiným způsobem."
+        },
+        {
+          "type": "summary",
+          "text": "Labe → Severní moře, Odra → Baltské moře, Morava přes Dunaj → Černé moře. Lipno je největší nádrž, Rožmberk největší rybník."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která řeka je nejdelší v ČR?",
+      "options": [
+        "Vltava",
+        "Labe",
+        "Morava",
+        "Odra"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Do které řeky se vlévá Vltava?",
+      "options": [
+        "do Labe",
+        "do Moravy",
+        "do Odry",
+        "do Dunaje"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "U kterého města se Vltava vlévá do Labe?",
+      "answers": [
+        "Mělník",
+        "u Mělníka",
+        "Mělníka"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kde pramení Vltava?",
+      "options": [
+        "na Šumavě",
+        "v Krkonoších",
+        "v Beskydech"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde pramení Labe?",
+      "options": [
+        "v Krkonoších",
+        "na Šumavě",
+        "v Jeseníkách"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj řeku s mořem, kam nakonec teče.",
+      "pairs": [
+        [
+          "Labe",
+          "Severní moře"
+        ],
+        [
+          "Odra",
+          "Baltské moře"
+        ],
+        [
+          "Morava",
+          "Černé moře"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Rožmberk je největší rybník v ČR.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Která je největší přehradní nádrž v ČR?",
+      "options": [
+        "Lipno",
+        "Rožmberk",
+        "Máchovo jezero"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď cestu vody.",
+      "items": [
+        "pramen",
+        "potok",
+        "řeka",
+        "moře"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ústí je místo, kde řeka začíná.",
+      "answer": false,
+      "explanation": "Řeka začíná pramenem. Ústí je tam, kde končí."
+    },
+    {
+      "type": "open",
+      "question": "Do kterých moří odtéká voda z ČR?",
+      "answer": "Do Severního moře (Labe), Baltského moře (Odra) a Černého moře (Morava přes Dunaj)."
+    },
+    {
+      "type": "open",
+      "question": "K čemu jsou přehrady?",
+      "answer": "Zadržují vodu, chrání před povodněmi, vyrábějí elektřinu a dávají pitnou vodu."
+    }
+  ]
+}

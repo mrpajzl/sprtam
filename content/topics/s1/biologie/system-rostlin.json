@@ -1,0 +1,399 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "system-rostlin",
+  "title": "Systém a rozmnožování rostlin",
+  "emoji": "🌲",
+  "explanations": [
+    {
+      "title": "Rodozměna",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kapradina v lese vypadá jako „ta rostlina“. Jenže má i druhou podobu – drobný zelený lístek na zemi, kterého si nikdo nevšimne. Rostliny žijí ve **dvou střídajících se generacích**."
+        },
+        {
+          "type": "text",
+          "text": "Podle toho, která generace převládá, a jak se rostliny rozmnožují, je dělíme do hlavních skupin: mechorosty, kapraďorosty, nahosemenné a krytosemenné."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Haploidní (n) a diploidní (2n)",
+          "definition": "**Haploidní** buňka má jednu sadu chromozomů (nositelů dědičné informace). **Diploidní** má dvě – jednu od každého rodiče."
+        },
+        {
+          "type": "term",
+          "term": "Gameta",
+          "definition": "Pohlavní buňka (vaječná buňka, spermatozoid). Je haploidní. Spojením dvou gamet – **oplozením** – vznikne diploidní **zygota**."
+        },
+        {
+          "type": "term",
+          "term": "Výtrus (spora)",
+          "definition": "Jediná buňka, ze které vyroste nový jedinec **bez oplození**. U rostlin vzniká **meiózou** (dělením, které snižuje počet chromozomů na polovinu) – je tedy haploidní."
+        },
+        {
+          "type": "term",
+          "term": "Gametofyt a sporofyt",
+          "definition": "**Gametofyt** (n) je generace, která tvoří **gamety**. **Sporofyt** (2n) je generace, která tvoří **výtrusy**."
+        },
+        {
+          "type": "term",
+          "term": "Rodozměna",
+          "definition": "Pravidelné **střídání** gametofytu a sporofytu v životě rostliny."
+        },
+        {
+          "type": "heading",
+          "text": "Kruh rodozměny"
+        },
+        {
+          "type": "text",
+          "text": "Klepej a sleduj, jak se generace střídají a kde se mění n a 2n."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "gametofyt (n) tvoří gamety",
+              "oplození → zygota (2n)",
+              "zygota vyroste v sporofyt (2n)",
+              "sporofyt tvoří meiózou výtrusy (n)",
+              "výtrus vyklíčí v gametofyt"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Která generace převládá"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Převládá",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "mechorosty",
+              "gametofyt",
+              "ploník, rašeliník"
+            ],
+            [
+              "kapraďorosty",
+              "sporofyt",
+              "kapraď, přeslička, plavuň"
+            ],
+            [
+              "nahosemenné",
+              "sporofyt",
+              "smrk, borovice, jinan"
+            ],
+            [
+              "krytosemenné",
+              "sporofyt",
+              "dub, pšenice, růže"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Popiš rodozměnu kapradiny.",
+          "answer": "Velká kapradina je **sporofyt (2n)**. Na rubu listů tvoří meiózou **výtrusy (n)**. Z výtrusu vyroste drobná srdcovitá destička – **prothalium**, to je **gametofyt (n)**. Na něm vzniknou gamety, ve vlhku dojde k oplození a ze zygoty vyroste nová kapradina."
+        },
+        {
+          "type": "example",
+          "question": "Zelený mech na kameni – je to gametofyt, nebo sporofyt?",
+          "answer": "Zelené lodyžky mechu jsou **gametofyt** (n). Sporofyt je jen tobolka na štětu, která z mechu vyrůstá a je na něm závislá."
+        },
+        {
+          "type": "heading",
+          "text": "Co přinesla semena"
+        },
+        {
+          "type": "text",
+          "text": "Mechorosty a kapraďorosty potřebují k oplození **vodu** – spermatozoidy k vaječné buňce doplavou. Semenné rostliny (nahosemenné a krytosemenné) mají **pyl**, který přenese vítr nebo hmyz, a **semeno** se zásobou živin. Tím se od vody osvobodily."
+        },
+        {
+          "type": "mistake",
+          "wrong": "U všech rostlin převládá gametofyt, protože gamety jsou důležité.",
+          "right": "Gametofyt převládá **jen u mechorostů**. U všech ostatních převládá sporofyt.",
+          "why": "Strom, kapradina i obilí jsou sporofyty (2n). Jejich gametofyt je drobný a krátce žijící."
+        },
+        {
+          "type": "summary",
+          "text": "Rodozměna = střídání gametofytu (n, gamety) a sporofytu (2n, výtrusy vzniklé meiózou). Jen u mechorostů převládá gametofyt."
+        }
+      ]
+    },
+    {
+      "title": "Evoluční vynálezy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Před půl miliardou let byla souš holá – život byl jen ve vodě. Pak na ni vylezly první rostliny. Musely vyřešit tři problémy: jak **nevyschnout**, jak **dopravit vodu** do výšky a jak se **rozmnožit bez vody**."
+        },
+        {
+          "type": "text",
+          "text": "Každá velká skupina rostlin přinesla jeden „vynález“. Když je seřadíš, máš celý systém rostlin i jejich historii."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Cévní svazky",
+          "definition": "Trubice uvnitř rostliny – vedou vodu nahoru (xylém) a cukry (floém). Rostliny s nimi jsou **cévnaté**."
+        },
+        {
+          "type": "term",
+          "term": "Výtrus a semeno",
+          "definition": "**Výtrus** je jediná buňka bez zásob. **Semeno** obsahuje celý **zárodek** nové rostliny, **zásobu živin** a ochranný obal."
+        },
+        {
+          "type": "term",
+          "term": "Pyl",
+          "definition": "Pylová zrna nesou samčí buňky. Přenese je vítr nebo hmyz – k oplození není potřeba voda."
+        },
+        {
+          "type": "term",
+          "term": "Gametofyt a sporofyt",
+          "definition": "Dvě generace rostliny, které se střídají (**rodozměna**). **Gametofyt** (jedna sada chromozomů, n) tvoří pohlavní buňky, **sporofyt** (dvě sady, 2n) tvoří výtrusy."
+        },
+        {
+          "type": "term",
+          "term": "Semeník a plod",
+          "definition": "**Semeník** je spodní část květu, která obaluje vajíčka. Po oplození z něj vznikne **plod** chránící semena."
+        },
+        {
+          "type": "heading",
+          "text": "Časová osa"
+        },
+        {
+          "type": "text",
+          "text": "Přibližně před kolika miliony let se skupina objevila. Všimni si, jak pozdě přišly květy."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "milionů let zpět",
+            "items": [
+              {
+                "label": "mechorosty – přechod na souš",
+                "value": 470
+              },
+              {
+                "label": "cévnaté rostliny – cévní svazky",
+                "value": 430
+              },
+              {
+                "label": "semenné rostliny – semeno, pyl",
+                "value": 370
+              },
+              {
+                "label": "krytosemenné – květ, plod",
+                "value": 140
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři skupiny, čtyři vynálezy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Vynález",
+            "Převládá",
+            "Příklady"
+          ],
+          "rows": [
+            [
+              "mechorosty",
+              "život na souši, nemají cévní svazky",
+              "gametofyt",
+              "ploník, rašeliník"
+            ],
+            [
+              "kapraďorosty",
+              "cévní svazky",
+              "sporofyt",
+              "kapraď, přeslička, plavuň"
+            ],
+            [
+              "nahosemenné",
+              "semeno, pyl; vajíčka leží volně na šupinách",
+              "sporofyt",
+              "smrk, borovice, jinan, tis"
+            ],
+            [
+              "krytosemenné",
+              "květ, semeník, plod, dvojité oplození",
+              "sporofyt",
+              "dub, kukuřice, růže"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Dvojité oplození"
+        },
+        {
+          "type": "text",
+          "text": "Jen u krytosemenných. Pylové zrno přinese **dvě spermatické buňky**:"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "První spermatická buňka oplodí **vaječnou buňku** → vznikne **zárodek** (2n).",
+            "Druhá splyne s **centrální buňkou** (2n) → vznikne **endosperm** – živné pletivo (3n, triploidní).",
+            "Zásoba živin tak vzniká jen tehdy, když opravdu vzniká zárodek – rostlina neplýtvá."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč borovice nemá plody, i když má semena?",
+          "answer": "Borovice je **nahosemenná**: vajíčka leží volně na šupinách šišky, nemá **semeník**. Plod vzniká právě ze semeníku – proto ho nahosemenné nemají."
+        },
+        {
+          "type": "example",
+          "question": "Proč rostou mechy a kapradiny hlavně ve vlhku?",
+          "answer": "K oplození potřebují **vodu** – spermatozoidy musí doplavat k vaječné buňce. Mechy navíc nemají cévní svazky, takže nedopraví vodu do výšky."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Šiška smrku je plod.",
+          "right": "Šiška je soubor šupin se semeny – **plod to není**.",
+          "why": "Plod vzniká ze semeníku, a ten mají jen krytosemenné. Nahosemenné mají semena „nahá“."
+        },
+        {
+          "type": "summary",
+          "text": "Mechorosty → kapraďorosty (cévní svazky) → nahosemenné (semeno, pyl) → krytosemenné (květ, plod, dvojité oplození). Semeno osvobodilo rostliny od vody při oplození."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "U které skupiny převládá gametofyt?",
+      "options": [
+        "mechorosty",
+        "kapraďorosty",
+        "krytosemenné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Dvojité oplození je typické pro…",
+      "options": [
+        "krytosemenné",
+        "nahosemenné",
+        "mechorosty"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Výtrusy vznikají meiózou.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Střídání pohlavní a nepohlavní generace se nazývá…",
+      "answers": [
+        "rodozměna"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj rostlinu se skupinou.",
+      "pairs": [
+        [
+          "rašeliník",
+          "mechorosty"
+        ],
+        [
+          "přeslička",
+          "kapraďorosty"
+        ],
+        [
+          "jinan",
+          "nahosemenné"
+        ],
+        [
+          "kukuřice",
+          "krytosemenné"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď skupiny podle evolučního vzniku.",
+      "items": [
+        "mechorosty",
+        "kapraďorosty",
+        "nahosemenné",
+        "krytosemenné"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Kapraďorosty mají cévní svazky.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Endosperm krytosemenných je…",
+      "options": [
+        "triploidní živné pletivo",
+        "haploidní gametofyt",
+        "diploidní zárodek"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Prothalium kapradiny je…",
+      "options": [
+        "gametofyt",
+        "sporofyt",
+        "semeno"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Nahosemenné rostliny mají semeník.",
+      "answer": false,
+      "explanation": "Vajíčka leží volně na semenných šupinách."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rodozměnu na příkladu kapradiny.",
+      "answer": "Velká kapradina je sporofyt (2n), meiózou tvoří výtrusy. Z výtrusu vyroste drobný gametofyt – prothalium (n), na kterém vznikají gamety. Po oplození vyroste nový sporofyt."
+    },
+    {
+      "type": "open",
+      "question": "Co je dvojité oplození a proč je výhodné?",
+      "answer": "Jedna spermatická buňka oplodí vaječnou buňku (vznikne zárodek), druhá centrální buňku (vznikne triploidní endosperm). Živné pletivo vzniká jen při oplození, takže se nemrhá zásobami."
+    }
+  ]
+}

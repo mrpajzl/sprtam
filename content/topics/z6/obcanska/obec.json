@@ -1,0 +1,381 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obec",
+  "title": "Naše obec",
+  "emoji": "🏘️",
+  "explanations": [
+    {
+      "title": "Rozbitá lavička",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Svítí ti cestou ze školy lampy? Odvážejí se popelnice? Je v parku lavička? To všechno zařizuje místo, kde bydlíš – tvoje **obec**."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, jak obec funguje, víš, kdo o tvém okolí rozhoduje a jak ho můžeš ovlivnit – i ještě před 18. rokem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obec",
+          "definition": "Vesnice nebo město se svými obyvateli. Sama spravuje své věci a má vlastní majetek i peníze.",
+          "example": "Praha, Brno i malá vesnice se 100 obyvateli jsou obce."
+        },
+        {
+          "type": "term",
+          "term": "Volby",
+          "definition": "Lidé vybírají hlasováním, kdo bude rozhodovat za ně. Volit smí člověk od **18 let**."
+        },
+        {
+          "type": "term",
+          "term": "Zastupitelstvo obce",
+          "definition": "Skupina lidí zvolených občany. Rozhoduje o nejdůležitějších věcech obce. Volí se každé **4 roky**. Jeho člen je **zastupitel**."
+        },
+        {
+          "type": "term",
+          "term": "Starosta",
+          "definition": "Člověk, který stojí v čele obce a zastupuje ji navenek. Volí ho zastupitelstvo ze svých členů."
+        },
+        {
+          "type": "term",
+          "term": "Rozpočet obce",
+          "definition": "Plán, kolik peněz obec dostane a za co je utratí.",
+          "example": "Letos 2 miliony na opravu školy, 300 000 na park."
+        },
+        {
+          "type": "heading",
+          "text": "Příběh lavičky"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Jakub si všimne, že lavička v parku je rozbitá. Park patří obci, takže ji má opravit **obec**.",
+            "Jakub s mámou napíšou e-mail na **obecní úřad** – tam pracují úředníci, kteří vyřizují věci občanů.",
+            "Úřad zjistí, že oprava stojí 5 000 Kč. Peníze vezme z **rozpočtu obce**.",
+            "O rozpočtu rozhodlo **zastupitelstvo** – jeho členy si občané zvolili ve volbách.",
+            "Za týden je lavička opravená. **Starosta** to oznámí v obecních novinách."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kolečko rozhodování"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kroky a sleduj, jak se kruh uzavírá: občané volí, zvolení rozhodují a občané je po 4 letech hodnotí v dalších volbách."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "Občané volí zastupitelstvo",
+              "Zastupitelstvo volí starostu",
+              "Obec získá peníze (část daní, poplatky)",
+              "Obec platí služby: školy, parky, cesty",
+              "Občané hodnotí a znovu volí"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kdo zvolil starostu tvé obce?",
+          "answer": "Občané volili **zastupitelstvo**. Starostu pak vybrali **zastupitelé** ze svých řad. Občané tedy starostu volí jen nepřímo."
+        },
+        {
+          "type": "example",
+          "question": "Je ti 12. Jak můžeš ovlivnit dění v obci?",
+          "answer": "Volit ještě nesmíš. Můžeš ale napsat podnět na obecní úřad, přijít na veřejné setkání, zapojit se do brigády nebo do dětského zastupitelstva, pokud ho obec má."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Starostu volí přímo všichni občané.",
+          "right": "Starostu volí zastupitelstvo obce.",
+          "why": "Občané ve volbách vybírají zastupitele. Teprve ti si zvolí starostu."
+        },
+        {
+          "type": "summary",
+          "text": "Občané volí na 4 roky zastupitelstvo. Zastupitelstvo rozhoduje (třeba o rozpočtu) a volí starostu. Obecní úřad vyřizuje věci občanů."
+        }
+      ]
+    },
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česko je rozdělené na menší kousky. Ten nejmenší, kde lidé žijí, je **obec**. Obec se stará o to, co je blízko domova: ulice, lampy, školku, odpad."
+        },
+        {
+          "type": "text",
+          "text": "Postupně si ukážeme, kdo v obci rozhoduje, kdo ji vede a o co se stará – a co už je věc větších celků."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obec",
+          "definition": "Město nebo vesnice, které samy rozhodují o svých věcech. V Česku je přes 6 000 obcí."
+        },
+        {
+          "type": "term",
+          "term": "Orgán obce",
+          "definition": "Člověk nebo skupina lidí, kteří za obec rozhodují nebo jednají.",
+          "example": "Starosta, zastupitelstvo, obecní úřad."
+        },
+        {
+          "type": "term",
+          "term": "Kraj, stát, Evropská unie",
+          "definition": "Větší celky nad obcí. Kraj spojuje mnoho obcí, stát (Česká republika) všechny kraje a Evropská unie spojuje mnoho evropských států."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Kdo v obci rozhoduje"
+        },
+        {
+          "type": "table",
+          "head": [
+            "orgán",
+            "kdo to je",
+            "co dělá"
+          ],
+          "rows": [
+            [
+              "zastupitelstvo",
+              "zastupitelé zvolení občany na 4 roky",
+              "nejvyšší orgán obce, schvaluje rozpočet"
+            ],
+            [
+              "rada obce",
+              "starosta, místostarosta a radní (jen ve větších obcích)",
+              "řídí běžné věci mezi schůzemi"
+            ],
+            [
+              "starosta",
+              "zastupitel zvolený zastupitelstvem",
+              "stojí v čele obce, zastupuje ji"
+            ],
+            [
+              "obecní úřad",
+              "úředníci",
+              "vyřizuje žádosti a věci občanů"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ve **statutárních městech** – to jsou velká města jako Brno, Ostrava nebo Plzeň – se starosta jmenuje **primátor**. Primátora má i Praha."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Odkud má obec peníze"
+        },
+        {
+          "type": "list",
+          "items": [
+            "část daní, které lidé a firmy platí státu",
+            "místní poplatky – třeba za odpad nebo za psa",
+            "pronájem svého majetku (byty, nebytové prostory)",
+            "peníze od státu nebo EU na konkrétní projekty"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Jak se peníze utratí, určuje **rozpočet** – plán příjmů a výdajů. Schvaluje ho zastupitelstvo."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: O co se stará obec a o co ne"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď, co zařizuje obec a co patří státu."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "stará se obec",
+              "nestará se obec"
+            ],
+            "items": [
+              {
+                "text": "veřejné osvětlení",
+                "group": 0
+              },
+              {
+                "text": "místní ulice a chodníky",
+                "group": 0
+              },
+              {
+                "text": "základní škola",
+                "group": 0
+              },
+              {
+                "text": "odvoz odpadu",
+                "group": 0
+              },
+              {
+                "text": "armáda",
+                "group": 1
+              },
+              {
+                "text": "dálnice",
+                "group": 1
+              },
+              {
+                "text": "zákony státu",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejmenšího celku: stát, obec, Evropská unie, kraj.",
+          "answer": "Obec je nejmenší. Víc obcí tvoří kraj, kraje tvoří stát a státy se spojují v EU: **obec → kraj → stát → EU**."
+        },
+        {
+          "type": "example",
+          "question": "Obec chce postavit nové hřiště za 2 miliony. Kdo to musí schválit?",
+          "answer": "Jde o peníze obce, tedy o **rozpočet**. Ten schvaluje **zastupitelstvo**. Starosta pak zajistí, aby se to provedlo."
+        },
+        {
+          "type": "mistake",
+          "wrong": "O stavbě dálnice rozhoduje obec, kterou dálnice vede.",
+          "right": "Dálnice jsou věc státu.",
+          "why": "Dálnice slouží celé zemi, ne jedné obci. Obec se stará o místní ulice a chodníky."
+        },
+        {
+          "type": "summary",
+          "text": "Zastupitelstvo rozhoduje, starosta vede, úřad vyřizuje. Obec se stará o věci blízko domova; větší věci řeší kraj a stát."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo stojí v čele obce?",
+      "options": [
+        "starosta",
+        "hejtman",
+        "prezident",
+        "ředitel"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Po kolika letech se volí zastupitelstvo obce?",
+      "answers": [
+        "4",
+        "čtyři"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo volí starostu?",
+      "options": [
+        "zastupitelstvo obce",
+        "všichni občané přímo",
+        "prezident",
+        "vláda"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve statutárním městě se starosta nazývá primátor.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co schvaluje zastupitelstvo obce?",
+      "options": [
+        "rozpočet obce",
+        "zákony",
+        "státní hymnu",
+        "známky ve škole"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "O stavbě dálnice rozhoduje hlavně obec.",
+      "answer": false,
+      "explanation": "Dálnice jsou věc státu."
+    },
+    {
+      "type": "match",
+      "question": "Spoj orgán s jeho úkolem.",
+      "pairs": [
+        [
+          "zastupitelstvo",
+          "schvaluje rozpočet"
+        ],
+        [
+          "starosta",
+          "zastupuje obec"
+        ],
+        [
+          "obecní úřad",
+          "vyřizuje žádosti občanů"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co obvykle zajišťuje obec?",
+      "options": [
+        "veřejné osvětlení",
+        "armádu",
+        "měnu",
+        "policii celé ČR"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího celku.",
+      "items": [
+        "obec",
+        "kraj",
+        "stát",
+        "Evropská unie"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Volit do zastupitelstva obce může každý od 15 let.",
+      "answer": false,
+      "explanation": "Volit se smí od 18 let."
+    },
+    {
+      "type": "open",
+      "question": "Jak se obec řídí? Popiš, kdo koho volí.",
+      "answer": "Občané volí zastupitelstvo na 4 roky. Zastupitelstvo zvolí starostu (a radu). Obecní úřad pak vyřizuje běžné věci občanů."
+    },
+    {
+      "type": "open",
+      "question": "Jak můžeš ovlivnit dění ve své obci, i když ještě nemůžeš volit?",
+      "answer": "Můžu napsat podnět na úřad, zapojit se do brigád a spolků, chodit na veřejná setkání nebo do dětského zastupitelstva."
+    }
+  ]
+}

@@ -1,0 +1,397 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "gis-a-dpz",
+  "title": "GIS, GNSS a dálkový průzkum",
+  "emoji": "🛰️",
+  "explanations": [
+    {
+      "title": "Mapa z průsvitek",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mapy.cz ti ukážou silnice, zastávky, vrstevnice i letecký snímek. Můžeš si zapnout cyklotrasy a vypnout restaurace. Za tím stojí **GIS** – počítačový systém, který skládá informace o místech jako průsvitné fólie přes sebe."
+        },
+        {
+          "type": "text",
+          "text": "GIS používají hasiči, urbanisté, zemědělci i vědci. Pomáhá odpovídat na otázky typu „kde?“ a „co je poblíž?“."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Prostorová data",
+          "definition": "Informace, které mají kromě obsahu i polohu (souřadnice).",
+          "example": "Školy v Brně s adresou a počtem žáků."
+        },
+        {
+          "type": "term",
+          "term": "GIS (geografický informační systém)",
+          "definition": "Počítačový systém, který prostorová data ukládá, zobrazuje a analyzuje.",
+          "example": "Program, ve kterém zjistíš, kolik domů leží v záplavovém území."
+        },
+        {
+          "type": "term",
+          "term": "Vrstva",
+          "definition": "Jedna „fólie“ s daty jednoho druhu. Vrstvy se skládají přes sebe.",
+          "example": "Vrstva silnic, vrstva budov, vrstva řek."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Vrstvy"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🛣️",
+            "🏠",
+            "🌊",
+            "⛰️"
+          ],
+          "caption": "silnice + budovy + vodstvo + reliéf"
+        },
+        {
+          "type": "text",
+          "text": "Každá vrstva obsahuje jeden typ objektů. Když je položíš přes sebe, vznikne mapa – a hlavně můžeš vrstvy kombinovat a počítat s nimi."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Dva způsoby uložení dat"
+        },
+        {
+          "type": "term",
+          "term": "Vektorová data",
+          "definition": "Objekty popsané geometrií: **bod** (jedna poloha), **linie** (čára), **polygon** (uzavřená plocha).",
+          "example": "Zastávka = bod, řeka = linie, jezero nebo hranice lesa = polygon."
+        },
+        {
+          "type": "term",
+          "term": "Rastrová data",
+          "definition": "Mřížka čtverečků (pixelů). Každý má jednu hodnotu – barvu, výšku, teplotu.",
+          "example": "Letecký snímek, mapa teplot."
+        },
+        {
+          "type": "term",
+          "term": "Atributy",
+          "definition": "Tabulka vlastností objektu.",
+          "example": "U řeky: název, délka, průtok."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky – ke každému objektu si napřed zkus říct, jestli by byl bod, linie, nebo polygon."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "studna",
+                "back": "bod"
+              },
+              {
+                "front": "silnice",
+                "back": "linie"
+              },
+              {
+                "front": "les",
+                "back": "polygon"
+              },
+              {
+                "front": "zastávka",
+                "back": "bod"
+              },
+              {
+                "front": "řeka (na malé mapě)",
+                "back": "linie"
+              },
+              {
+                "front": "letecký snímek",
+                "back": "rastr"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: Analýza"
+        },
+        {
+          "type": "text",
+          "text": "Síla GIS je v kombinaci vrstev. Data o poloze se navíc dají získat z družic: **GNSS** (GPS, Galileo…) určí polohu, **dálkový průzkum Země** dodá snímky."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Obec hledá místo pro novou školu. Které vrstvy v GIS použije?",
+          "answer": "Vrstvu bydlišť dětí, stávajících škol, silnic a zastávek, volných pozemků a záplavových území. Hledá pozemek, který je volný, mimo záplavy a nejblíž co nejvíc dětem."
+        },
+        {
+          "type": "example",
+          "question": "Při povodni chtějí hasiči vědět, které domy jsou ohrožené. Jak?",
+          "answer": "Překryjí vrstvu **záplavového území** (polygon) s vrstvou **budov**. GIS vybere budovy uvnitř polygonu a z atributů ukáže adresy a počet obyvatel."
+        },
+        {
+          "type": "mistake",
+          "wrong": "GIS je jen jiný název pro digitální mapu.",
+          "right": "GIS data nejen zobrazuje, ale hlavně s nimi počítá – vybírá, překrývá, měří vzdálenosti.",
+          "why": "Mapa je jen výstup. Podstatou GIS je analýza: odpověď na otázku „kde a proč“."
+        },
+        {
+          "type": "summary",
+          "text": "GIS = data + poloha + analýza. Data jsou ve vrstvách: vektor (bod, linie, polygon) nebo rastr (pixely). Letecký snímek je rastr, řeka linie, jezero polygon."
+        }
+      ]
+    },
+    {
+      "title": "Z vesmíru",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mobil ví, kde jsi, i uprostřed lesa bez signálu operátora. Předpověď počasí ukazuje mraky nad Evropou z vesmíru. Obojí funguje díky družicím."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, jak družice určí tvoji polohu, jak „fotí“ Zemi a jak se jejich data zpracují v GIS."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Družice (satelit)",
+          "definition": "Umělé těleso, které obíhá kolem Země.",
+          "example": "Navigační, meteorologické, komunikační družice."
+        },
+        {
+          "type": "term",
+          "term": "GNSS",
+          "definition": "Globální družicové navigační systémy – určují polohu kdekoli na Zemi pomocí signálu z družic.",
+          "example": "GPS je jeden z nich."
+        },
+        {
+          "type": "term",
+          "term": "Dálkový průzkum Země (DPZ)",
+          "definition": "Získávání informací o Zemi **bez přímého kontaktu** – z družic, letadel nebo dronů.",
+          "example": "Družicový snímek ukáže, kde hoří les nebo kde je sucho."
+        },
+        {
+          "type": "term",
+          "term": "GIS",
+          "definition": "Geografický informační systém – počítačový systém pro ukládání a analýzu dat s polohou. Data skládá do vrstev.",
+          "example": "Vrstva silnic + vrstva řek + letecký snímek."
+        },
+        {
+          "type": "heading",
+          "text": "Jak GNSS určí polohu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Každá družice vysílá signál s přesným časem odeslání.",
+            "Přijímač změří, jak dlouho signál letěl, a z toho spočítá vzdálenost od družice.",
+            "Vzdálenosti od tří družic určí bod v prostoru (šířku, délku, výšku).",
+            "Hodiny v mobilu nejsou přesné jako atomové hodiny družic, proto je potřeba **čtvrtá družice** – dopočítá chybu času."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky: kdo který systém provozuje?"
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "GPS",
+                "back": "USA"
+              },
+              {
+                "front": "Galileo",
+                "back": "Evropská unie"
+              },
+              {
+                "front": "GLONASS",
+                "back": "Rusko"
+              },
+              {
+                "front": "BeiDou",
+                "back": "Čína"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Agentura EU pro vesmírný program (**EUSPA**), která řídí Galileo, sídlí v **Praze**."
+        },
+        {
+          "type": "heading",
+          "text": "Dálkový průzkum a GIS"
+        },
+        {
+          "type": "text",
+          "text": "Snímky z družic jsou **rastr** – mřížka pixelů. V GIS se kombinují s **vektory**: body (zastávka), liniemi (řeka) a polygony (jezero, hranice lesa)."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Proč GPS v mobilu určí polohu hůř mezi vysokými domy?",
+          "answer": "Domy zakrývají část oblohy, mobil vidí méně družic. Signál se navíc odráží od zdí, takže letí delší cestou a vzdálenost vyjde špatně."
+        },
+        {
+          "type": "example",
+          "question": "Jak zjistit z vesmíru, jestli je pole suché?",
+          "answer": "Družice snímá i záření, které lidské oko nevidí (např. infračervené). Zdravé rostliny ho odrážejí jinak než suché. Ze snímku (rastru) se tak dá spočítat, kde vegetace trpí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na určení polohy stačí jedna družice, mobil jen „zachytí“, kde je.",
+          "right": "Přijímač potřebuje signál nejméně ze 4 družic.",
+          "why": "Z jedné družice zná jen vzdálenost – mohl by být kdekoli na kouli kolem ní. Tři vzdálenosti určí bod, čtvrtá opraví chybu hodin."
+        },
+        {
+          "type": "summary",
+          "text": "GNSS (GPS – USA, Galileo – EU, GLONASS – Rusko, BeiDou – Čína) potřebuje aspoň 4 družice. DPZ = data bez kontaktu (snímky = rastr). EUSPA sídlí v Praze."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co znamená zkratka GIS?",
+      "options": [
+        "geografický informační systém",
+        "globální indexační síť",
+        "geologický institut státu",
+        "globální informační satelit"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj systém GNSS a provozovatele.",
+      "pairs": [
+        [
+          "GPS",
+          "USA"
+        ],
+        [
+          "Galileo",
+          "EU"
+        ],
+        [
+          "GLONASS",
+          "Rusko"
+        ],
+        [
+          "BeiDou",
+          "Čína"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se ukládá letecký snímek v GIS?",
+      "options": [
+        "jako rastr",
+        "jako vektor",
+        "jako atribut",
+        "jako topologie"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Řeka se ve vektorovém GIS obvykle ukládá jako linie.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Z kolika družic minimálně potřebuje přijímač signál pro určení polohy ve 3D včetně času?",
+      "answers": [
+        "4",
+        "čtyř",
+        "čtyři"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je dálkový průzkum Země?",
+      "options": [
+        "získávání dat bez přímého kontaktu",
+        "vrtání do kůry",
+        "měření pásmem",
+        "sčítání lidu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Agentura EU pro vesmírný program (Galileo) sídlí v Praze.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který objekt bys ve vektorovém GIS uložil jako polygon?",
+      "options": [
+        "hranici lesa",
+        "studnu",
+        "silnici",
+        "vysílač"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj typ vektorových dat a příklad.",
+      "pairs": [
+        [
+          "bod",
+          "zastávka"
+        ],
+        [
+          "linie",
+          "řeka"
+        ],
+        [
+          "polygon",
+          "jezero"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Uveď praktické využití GIS.",
+      "answer": "Plánování dopravy a výstavby, krizové řízení při povodních, navigace, správa sítí, ochrana přírody, analýza dostupnosti služeb."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi rastrovými a vektorovými daty?",
+      "answer": "Rastr je mřížka buněk (pixelů) s hodnotami, hodí se pro snímky a spojité jevy. Vektor popisuje objekty body, liniemi a polygony s atributy, hodí se pro ostré hranice."
+    }
+  ]
+}

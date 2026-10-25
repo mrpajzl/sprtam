@@ -1,0 +1,415 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obyvatelstvo-sveta",
+  "title": "Obyvatelstvo světa",
+  "emoji": "👨‍👩‍👧",
+  "explanations": [
+    {
+      "title": "Kolik nás je",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když se narodili tví praprarodiče, žily na Zemi asi 2 miliardy lidí. Dnes je nás přes **8 miliard**. Kde se vzalo tolik lidí? A kde všichni bydlí?"
+        },
+        {
+          "type": "text",
+          "text": "Počet lidí rozhoduje, kolik potřebujeme jídla, škol, nemocnic a bytů. Proto státy pečlivě sledují, kolik lidí se narodí, zemře a přistěhuje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Miliarda",
+          "definition": "Tisíc milionů. Píše se 1 000 000 000 (jednička a devět nul).",
+          "example": "Česko má asi 11 milionů lidí. Miliarda je asi 90 takových Česek."
+        },
+        {
+          "type": "term",
+          "term": "Porodnost a úmrtnost",
+          "definition": "**Porodnost** = kolik dětí se narodí. **Úmrtnost** = kolik lidí zemře. Obvykle se počítá za jeden rok.",
+          "example": "Ve městě se za rok narodilo 120 dětí a zemřelo 100 lidí."
+        },
+        {
+          "type": "term",
+          "term": "Přirozený přírůstek",
+          "definition": "Počet narozených mínus počet zemřelých. Ukazuje, o kolik lidí přibylo „samo od sebe“, bez stěhování.",
+          "example": "120 narozených − 100 zemřelých = přírůstek 20 lidí."
+        },
+        {
+          "type": "term",
+          "term": "Migrace",
+          "definition": "Stěhování lidí z jednoho místa na jiné – v rámci státu i do ciziny.",
+          "example": "Rodina se přestěhuje z vesnice do Prahy nebo z Ukrajiny do Česka."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Jak rychle nás přibývá"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf. Všimni se, jak se zkracuje doba, za kterou přibude další miliarda."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "mld.",
+            "items": [
+              {
+                "label": "1800",
+                "value": 1
+              },
+              {
+                "label": "1930",
+                "value": 2
+              },
+              {
+                "label": "1975",
+                "value": 4
+              },
+              {
+                "label": "2000",
+                "value": 6
+              },
+              {
+                "label": "2022",
+                "value": 8
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Proč? Lidé mají víc jídla, čistou vodu, léky a očkování. Umírá mnohem méně dětí a lidé žijí déle."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Kde přibývá a kde ne"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Afrika** – rodí se hodně dětí, počet lidí roste nejrychleji.",
+            "**Asie** – žije tu nejvíc lidí (Indie, Čína), růst se zpomaluje.",
+            "**Evropa** – rodí se málo dětí, počet lidí skoro neroste. Evropa **stárne**."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Stárnutí populace",
+          "definition": "Situace, kdy ve státě přibývá starých lidí a ubývá dětí.",
+          "example": "V Česku je dnes víc lidí nad 65 let než dětí do 15 let."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "V obci se za rok narodilo 30 dětí a zemřelo 45 lidí. Jaký je přirozený přírůstek?",
+          "answer": "30 − 45 = **−15**. Je záporný – lidí ubylo. Říká se tomu **úbytek**."
+        },
+        {
+          "type": "example",
+          "question": "Za kolik let přibyla miliarda mezi lety 2000 a 2022?",
+          "answer": "Z 6 na 8 miliard (to jsou 2 miliardy) za 22 let. Jedna miliarda tedy přibyla zhruba za **11–12 let**. V 19. století to trvalo přes sto let."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Přirozený přírůstek zahrnuje i lidi, kteří se přistěhovali.",
+          "right": "Přirozený přírůstek = jen narození − zemřelí. Stěhování (migrace) se počítá zvlášť.",
+          "why": "Slovo „přirozený“ znamená „samo od sebe“ – narozením a úmrtím, ne stěhováním."
+        },
+        {
+          "type": "summary",
+          "text": "Na Zemi žije přes 8 miliard lidí. Nejrychleji jich přibývá v Africe, Evropa stárne. Přirozený přírůstek = narození − zemřelí."
+        }
+      ]
+    },
+    {
+      "title": "Kde žijeme",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V Praze potkáš na ulici stovky lidí. Na Šumavě můžeš jít hodinu a nepotkáš nikoho. Lidé nejsou po Zemi rozmístění rovnoměrně."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se to spočítat (hustota zalidnění) a vysvětlit, proč lidé žijí právě tam, kde žijí. Podíváme se i na to, jaké mají lidé na světě náboženství."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obyvatelstvo (populace)",
+          "definition": "Všichni lidé, kteří žijí na nějakém území.",
+          "example": "Obyvatelstvo Česka je asi 11 milionů lidí."
+        },
+        {
+          "type": "term",
+          "term": "Rozloha a km²",
+          "definition": "Rozloha je velikost území. Měří se v km² – to je čtverec o straně 1 km.",
+          "example": "Česko má asi 79 000 km²."
+        },
+        {
+          "type": "term",
+          "term": "Hustota zalidnění",
+          "definition": "Kolik lidí v průměru připadá na 1 km². Počítá se: **počet obyvatel : rozloha**. Jednotka je obyv./km².",
+          "example": "Hustota 100 obyv./km² = na každém čtverečním kilometru žije průměrně 100 lidí."
+        },
+        {
+          "type": "heading",
+          "text": "Jak spočítat hustotu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti počet obyvatel (např. 10 000 000).",
+            "Zjisti rozlohu v km² (např. 100 000 km²).",
+            "Vyděl: počet obyvatel : rozloha.",
+            "Napiš jednotku obyv./km²."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Stát má 10 mil. obyvatel a 100 000 km². Jaká je hustota?",
+          "answer": "10 000 000 : 100 000 = **100 obyv./km²**. Tip: škrtni stejný počet nul – 10 000 000 : 100 000 je jako 100 : 1."
+        },
+        {
+          "type": "example",
+          "question": "Česko má asi 11 mil. obyvatel a 79 000 km². Jaká je zhruba hustota?",
+          "answer": "11 000 000 : 79 000 ≈ 139. Česko má asi **140 obyv./km²**."
+        },
+        {
+          "type": "heading",
+          "text": "Proč lidé žijí tam, kde žijí"
+        },
+        {
+          "type": "text",
+          "text": "Lidé se usazují tam, kde je **voda, úrodná půda, příjemné podnebí a práce**. Proto žijí hlavně v nížinách, u řek a moří, v mírném pásu a v jižní a východní Asii. Pouště, vysoké hory a mrazivý sever jsou skoro prázdné."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď místa. U každého se zeptej: je tu voda, teplo a úrodná půda?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Hustě osídleno",
+              "Řídce osídleno"
+            ],
+            "items": [
+              {
+                "text": "Bangladéš",
+                "group": 0
+              },
+              {
+                "text": "Nizozemsko",
+                "group": 0
+              },
+              {
+                "text": "východ Číny",
+                "group": 0
+              },
+              {
+                "text": "Sahara",
+                "group": 1
+              },
+              {
+                "text": "Sibiř",
+                "group": 1
+              },
+              {
+                "text": "vnitrozemí Austrálie",
+                "group": 1
+              },
+              {
+                "text": "Grónsko",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pohyb obyvatel a náboženství"
+        },
+        {
+          "type": "text",
+          "text": "Počet lidí se mění narozením a úmrtím (**přirozený přírůstek** = narození − zemřelí) a stěhováním (**migrace**). Na světě žije přes 8 miliard lidí, nejrychleji jich přibývá v Africe. Evropa **stárne** – rodí se málo dětí."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Náboženství",
+            "Kde převládá"
+          ],
+          "rows": [
+            [
+              "křesťanství (nejvíc věřících)",
+              "Evropa, Amerika"
+            ],
+            [
+              "islám",
+              "severní Afrika, Blízký východ"
+            ],
+            [
+              "hinduismus",
+              "Indie"
+            ],
+            [
+              "buddhismus",
+              "jihovýchodní a východní Asie (např. Thajsko)"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hustota = rozloha : počet obyvatel.",
+          "right": "Hustota = počet obyvatel : rozloha.",
+          "why": "Chceme vědět, kolik **lidí** připadá na 1 km². Lidi tedy dělíme kilometry, ne obráceně."
+        },
+        {
+          "type": "summary",
+          "text": "Hustota zalidnění = obyvatelé : rozloha (obyv./km²). Lidé žijí hlavně v nížinách, u řek a moří, v mírném pásu a v jižní a východní Asii. Pouště, hory a polární oblasti jsou prázdné."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kolik lidí žije přibližně na Zemi?",
+      "options": [
+        "asi 2 mld.",
+        "asi 5 mld.",
+        "přes 8 mld.",
+        "asi 20 mld."
+      ],
+      "answer": 2
+    },
+    {
+      "type": "input",
+      "question": "Stát má 20 mil. obyvatel a rozlohu 200 000 km². Hustota zalidnění (obyv./km²) =",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Přirozený přírůstek = narození minus zemřelí.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kde roste počet obyvatel nejrychleji?",
+      "options": [
+        "v Evropě",
+        "v Africe",
+        "v Severní Americe",
+        "v Austrálii"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Které místo je řídce osídlené?",
+      "options": [
+        "Bangladéš",
+        "Nizozemsko",
+        "Sibiř",
+        "Japonsko"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "match",
+      "question": "Spoj náboženství a oblast, kde převládá.",
+      "pairs": [
+        [
+          "křesťanství",
+          "Evropa a Amerika"
+        ],
+        [
+          "islám",
+          "severní Afrika a Blízký východ"
+        ],
+        [
+          "hinduismus",
+          "Indie"
+        ],
+        [
+          "buddhismus",
+          "Thajsko"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které náboženství má na světě nejvíc věřících?",
+      "options": [
+        "islám",
+        "křesťanství",
+        "hinduismus",
+        "buddhismus"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "V Evropě je hodně starších lidí a málo dětí.",
+      "answer": true,
+      "explanation": "Evropa stárne."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď, jak rostla populace světa.",
+      "items": [
+        "1 mld.",
+        "2 mld.",
+        "4 mld.",
+        "8 mld."
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je migrace?",
+      "options": [
+        "stěhování obyvatel",
+        "porodnost",
+        "stárnutí",
+        "hustota"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Proč jsou některá místa na Zemi hustě a jiná řídce osídlená?",
+      "answer": "Lidé se usazují tam, kde je příznivé podnebí, voda, úrodná půda a práce. Pouště, hory a polární oblasti jsou osídlené řídce."
+    },
+    {
+      "type": "open",
+      "question": "Co je stárnutí populace a jaké přináší problémy?",
+      "answer": "Rodí se málo dětí a lidé žijí déle, takže přibývá seniorů. Je méně pracujících, kteří platí důchody a zdravotní péči."
+    }
+  ]
+}

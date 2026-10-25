@@ -1,0 +1,402 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "podstatna-jmena-rod-cislo-pad",
+  "title": "Podstatná jména: rod, číslo, pád",
+  "emoji": "👨‍👩‍👧",
+  "explanations": [
+    {
+      "title": "Ten, ta, to",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Říkáš „ten pes“, ale „ta kočka“ a „to kuře“. Nikdo tě to neučil, a přesto to říkáš správně. Čeština si u každého jména pamatuje, jestli k němu patří *ten*, *ta*, nebo *to*."
+        },
+        {
+          "type": "text",
+          "text": "U jmen sledujeme tři věci: **rod**, **číslo** a **pád**. Až je budeš znát, budeš správně psát konce slov – třeba i/y na konci."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Připomenutí: jméno člověka, zvířete, věci nebo místa. Zeptáš se kdo? co?",
+          "example": "pes, škola, Praha"
+        },
+        {
+          "type": "term",
+          "term": "Rod",
+          "definition": "Skupina, do které jméno patří. Poznáš ji podle slova *ten, ta, to* před jménem.",
+          "example": "ten hrad, ta růže, to auto"
+        },
+        {
+          "type": "table",
+          "head": [
+            "rod",
+            "řekni",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "mužský",
+              "ten",
+              "ten pes, ten hrad"
+            ],
+            [
+              "ženský",
+              "ta",
+              "ta kočka, ta růže"
+            ],
+            [
+              "střední",
+              "to",
+              "to auto, to kuře"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Číslo",
+          "definition": "Říká, jestli je věc **jedna** (číslo jednotné), nebo **víc** (číslo množné).",
+          "example": "pes – jednotné, psi – množné"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar jména ve větě. Jméno mění konec podle toho, jak ho ve větě použiješ. Pádů je **7**.",
+          "example": "pes – bez psa – ke psovi – se psem"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej rod"
+        },
+        {
+          "type": "text",
+          "text": "Řekni před každé slovo *ten*, *ta*, nebo *to*. Pak ho dej do správného kbelíku."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "ten (mužský)",
+              "ta (ženský)",
+              "to (střední)"
+            ],
+            "items": [
+              {
+                "text": "stůl",
+                "group": 0
+              },
+              {
+                "text": "lavice",
+                "group": 1
+              },
+              {
+                "text": "okno",
+                "group": 2
+              },
+              {
+                "text": "kluk",
+                "group": 0
+              },
+              {
+                "text": "žirafa",
+                "group": 1
+              },
+              {
+                "text": "kotě",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pád v příběhu"
+        },
+        {
+          "type": "text",
+          "text": "Sleduj, jak se mění slovo *pes*: **Pes** běží (1. pád). Jdu bez **psa** (2.). Jdu ke **psovi** (3.). Vidím **psa** (4.). **Pse**, pojď! (5.). Mluvím o **psovi** (6.). Jdu se **psem** (7.)."
+        },
+        {
+          "type": "example",
+          "question": "Urči rod a číslo: „myši“.",
+          "answer": "Jedna je *ta myš* → rod **ženský**. Myši je jich víc → číslo **množné**."
+        },
+        {
+          "type": "example",
+          "question": "Urči rod a číslo: „kuře“.",
+          "answer": "Řekneme *to kuře* → rod **střední**. Je jedno → číslo **jednotné**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Psi“ je jednotné číslo, protože je to jeden druh zvířete.",
+          "right": "„Psi“ je číslo množné.",
+          "why": "Číslo neříká, kolik je druhů. Říká, kolik je kusů. Psi = víc psů."
+        },
+        {
+          "type": "summary",
+          "text": "Rod: ten (mužský), ta (ženský), to (střední). Číslo: jednotné (jeden), množné (víc). Pádů je 7."
+        }
+      ]
+    },
+    {
+      "title": "Pádové otázky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když mluvíš, slovo *máma* se mění: *máma, bez mámy, k mámě, s mámou*. Ty změny nejsou náhodné. Každá má svou otázku."
+        },
+        {
+          "type": "text",
+          "text": "Když znáš otázky, poznáš pád každého jména. V dalších ročnících podle pádu budeš psát správné koncovky."
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar podstatného jména. Je jich sedm a každý má číslo 1–7.",
+          "example": "7. pád: s mámou"
+        },
+        {
+          "type": "term",
+          "term": "Pádová otázka",
+          "definition": "Otázka, na kterou jméno v daném pádě odpovídá. Podle ní pád poznáš.",
+          "example": "S kým jdu? S mámou → 7. pád"
+        },
+        {
+          "type": "term",
+          "term": "Rod a číslo",
+          "definition": "Připomenutí: rod poznáš podle *ten/ta/to*. Číslo je jednotné (jeden) nebo množné (víc).",
+          "example": "ta máma – ženský rod, jednotné číslo"
+        },
+        {
+          "type": "heading",
+          "text": "Sedm otázek"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartu a řekni otázku dřív, než ji uvidíš."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "1. pád",
+                "back": "kdo, co"
+              },
+              {
+                "front": "2. pád",
+                "back": "(bez) koho, čeho"
+              },
+              {
+                "front": "3. pád",
+                "back": "(ke) komu, čemu"
+              },
+              {
+                "front": "4. pád",
+                "back": "(vidím) koho, co"
+              },
+              {
+                "front": "5. pád",
+                "back": "oslovujeme, voláme"
+              },
+              {
+                "front": "6. pád",
+                "back": "(o) kom, o čem"
+              },
+              {
+                "front": "7. pád",
+                "back": "(s) kým, čím"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi ve větě jméno.",
+            "Polož na něj otázku i se slovíčkem před ním: *ke komu? s kým?*",
+            "Najdi otázku v řadě 1–7.",
+            "Číslo otázky je číslo pádu."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jdu ke kamarádovi. Který pád je „kamarádovi“?",
+          "answer": "Ke **komu** jdu? Ke kamarádovi. Komu, čemu = **3. pád**."
+        },
+        {
+          "type": "example",
+          "question": "Hraju si s míčem. Který pád je „míčem“?",
+          "answer": "S **čím** si hraju? S míčem. Kým, čím = **7. pád**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Vidím psa“ je 2. pád, protože se ptám koho?",
+          "right": "Je to 4. pád.",
+          "why": "*Koho* je v 2. i 4. pádě. Pomůže slovíčko: 2. pád – **bez** koho, 4. pád – **vidím** koho. Vidím psa → 4. pád."
+        },
+        {
+          "type": "summary",
+          "text": "1. kdo, co – 2. koho, čeho – 3. komu, čemu – 4. koho, co – 5. oslovujeme – 6. o kom, o čem – 7. s kým, čím."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký rod má „židle“?",
+      "options": [
+        "mužský",
+        "ženský",
+        "střední"
+      ],
+      "answer": 1,
+      "explanation": "Ta židle."
+    },
+    {
+      "type": "choice",
+      "question": "Jaký rod má „kuře“?",
+      "options": [
+        "mužský",
+        "ženský",
+        "střední"
+      ],
+      "answer": 2,
+      "explanation": "To kuře."
+    },
+    {
+      "type": "choice",
+      "question": "Jaký rod má „slon“?",
+      "options": [
+        "mužský",
+        "ženský",
+        "střední"
+      ],
+      "answer": 0,
+      "explanation": "Ten slon."
+    },
+    {
+      "type": "choice",
+      "question": "V jakém čísle je slovo „domy“?",
+      "options": [
+        "jednotném",
+        "množném"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém pádě je „s kamarádem“?",
+      "options": [
+        "3. pád",
+        "6. pád",
+        "7. pád"
+      ],
+      "answer": 2,
+      "explanation": "S kým? → 7. pád"
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém pádě je „bez mámy“?",
+      "options": [
+        "2. pád",
+        "4. pád",
+        "1. pád"
+      ],
+      "answer": 0,
+      "explanation": "Bez koho? → 2. pád"
+    },
+    {
+      "type": "input",
+      "question": "Kolik je v češtině pádů?",
+      "answers": [
+        "7",
+        "sedm"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Který pád používáme, když voláme: „Petře!“?",
+      "answers": [
+        "5",
+        "pátý",
+        "5. pád"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„Okno“ je rodu středního.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„Myši“ je v jednotném čísle.",
+      "answer": false,
+      "explanation": "Myši = více myší, množné číslo."
+    },
+    {
+      "type": "match",
+      "question": "Spoj pád s otázkou.",
+      "pairs": [
+        [
+          "1. pád",
+          "kdo, co"
+        ],
+        [
+          "3. pád",
+          "komu, čemu"
+        ],
+        [
+          "6. pád",
+          "o kom, o čem"
+        ],
+        [
+          "7. pád",
+          "s kým, čím"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď pády podle čísla.",
+      "items": [
+        "kdo, co",
+        "koho, čeho",
+        "komu, čemu",
+        "koho, co",
+        "oslovujeme",
+        "o kom, o čem"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak zjistíš rod podstatného jména?",
+      "answer": "Řeknu před něj ten, ta, nebo to. Ten = mužský, ta = ženský, to = střední."
+    },
+    {
+      "type": "open",
+      "question": "Řekni pádové otázky všech sedmi pádů.",
+      "answer": "1. kdo, co; 2. koho, čeho; 3. komu, čemu; 4. koho, co; 5. oslovujeme, voláme; 6. o kom, o čem; 7. s kým, čím."
+    }
+  ]
+}

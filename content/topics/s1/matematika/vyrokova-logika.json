@@ -1,0 +1,461 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vyrokova-logika",
+  "title": "Výroková logika",
+  "emoji": "🧠",
+  "explanations": [
+    {
+      "title": "Ze života",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každý den říkáš věty se slovy „a“, „nebo“, „když…, tak…“. Většinou to stačí. Ale smlouva, pravidla soutěže nebo počítačový program musí být **naprosto jednoznačné** – jinak vznikne spor."
+        },
+        {
+          "type": "text",
+          "text": "Výroková logika přesně říká, kdy je složená věta pravdivá. Používá ji matematika v důkazech, programátor v podmínkách programu i právník ve smlouvě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Výrok",
+          "definition": "Věta, o které jde jednoznačně rozhodnout, jestli je pravdivá, nebo nepravdivá. Otázka, rozkaz ani přání výrok nejsou.",
+          "example": "„Praha je hlavní město ČR.“ je výrok (pravdivý). „7 je sudé číslo.“ je také výrok (nepravdivý)."
+        },
+        {
+          "type": "term",
+          "term": "Pravdivostní hodnota",
+          "definition": "Odpověď na otázku „platí to?“. Pravda se značí 1, nepravda 0.",
+          "example": "„2 + 2 = 4“ má hodnotu 1."
+        },
+        {
+          "type": "text",
+          "text": "Pozor na „x > 3“: dokud nevíš, co je x, nejde rozhodnout. Taková věta výrokem není. Vyzkoušej si třídění:"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "výrok",
+              "není výrok"
+            ],
+            "items": [
+              {
+                "text": "Praha je hlavní město ČR.",
+                "group": 0
+              },
+              {
+                "text": "7 je sudé číslo.",
+                "group": 0
+              },
+              {
+                "text": "2 + 2 = 4",
+                "group": 0
+              },
+              {
+                "text": "Kolik je hodin?",
+                "group": 1
+              },
+              {
+                "text": "Zavři okno!",
+                "group": 1
+              },
+              {
+                "text": "x > 3",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Negace (¬A)",
+          "definition": "Opak výroku. Platí přesně tehdy, když původní výrok neplatí. Bezpečně ji vytvoříš slovy „Není pravda, že…“.",
+          "example": "A: „Venku prší.“ ¬A: „Venku neprší.“"
+        },
+        {
+          "type": "heading",
+          "text": "Spojky v běžných situacích"
+        },
+        {
+          "type": "term",
+          "term": "Konjunkce (A ∧ B), „a zároveň“",
+          "definition": "Pravdivá jen tehdy, když platí oba výroky.",
+          "example": "„Je mi 16 a mám řidičák na auto.“ Stačí, aby jedna část neplatila, a celé je to nepravda."
+        },
+        {
+          "type": "term",
+          "term": "Disjunkce (A ∨ B), „nebo“",
+          "definition": "Pravdivá, když platí **aspoň jeden** výrok – klidně i oba. Matematické „nebo“ není „buď, anebo“.",
+          "example": "„K obědu bude polévka nebo dezert.“ Když dostaneš obojí, slib platí."
+        },
+        {
+          "type": "term",
+          "term": "Implikace (A ⇒ B), „jestliže A, pak B“",
+          "definition": "Funguje jako slib. Je nepravdivá jen v jediném případě: A nastalo a B ne.",
+          "example": "Slib: „Když prší, vezmu deštník.“"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Prší?",
+            "Deštník?",
+            "Slib porušen?"
+          ],
+          "rows": [
+            [
+              "ano",
+              "ano",
+              "ne – slib dodržen"
+            ],
+            [
+              "ano",
+              "ne",
+              "**ano – jediné porušení**"
+            ],
+            [
+              "ne",
+              "ano",
+              "ne – o suchu jsem nic neslíbil"
+            ],
+            [
+              "ne",
+              "ne",
+              "ne"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Ekvivalence (A ⇔ B), „právě tehdy, když“",
+          "definition": "Pravdivá, když mají oba výroky stejnou hodnotu – buď oba platí, nebo oba neplatí.",
+          "example": "„Číslo je sudé právě tehdy, když je dělitelné dvěma.“"
+        },
+        {
+          "type": "heading",
+          "text": "Jak vyvrátit „všichni“ a „někdo“"
+        },
+        {
+          "type": "text",
+          "text": "Učitel řekne: „Všichni napsali úkol.“ Abys ho vyvrátil, stačí **jeden** žák bez úkolu. Negace tedy zní „Aspoň jeden úkol nenapsal.“ A naopak: „Někdo umí plavat“ vyvrátíš jen tak, že **nikdo** neumí plavat."
+        },
+        {
+          "type": "example",
+          "question": "Je pravdivý výrok „Jestliže 2 + 2 = 5, pak je Měsíc z tvarohu.“?",
+          "answer": "Je to slib s podmínkou 2 + 2 = 5. Ta nikdy nenastane, takže slib nemůže být porušen. Implikace je **pravdivá**."
+        },
+        {
+          "type": "example",
+          "question": "Napiš negaci výroku „Někdo z nás umí plavat.“",
+          "answer": "Výrok vyvrátíš, jen když neumí plavat vůbec nikdo: „**Nikdo z nás neumí plavat.**“"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Negace „Všechna prvočísla jsou lichá.“ je „Žádné prvočíslo není liché.“",
+          "right": "Negace je „Aspoň jedno prvočíslo není liché.“",
+          "why": "K vyvrácení „všechna“ stačí jeden protipříklad (číslo 2). „Žádné“ tvrdí mnohem víc, než je potřeba."
+        },
+        {
+          "type": "summary",
+          "text": "∧ platí, jen když platí obojí. ∨ platí, když platí aspoň jedno. ⇒ je nepravdivá jen při „A ano, B ne“. Negace „všichni“ = „aspoň jeden ne“, negace „někdo“ = „nikdo“."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si výrok jako vypínač: buď svítí (1 = pravda), nebo nesvítí (0 = nepravda). Ze dvou vypínačů můžeš poskládat různé obvody – a výsledná žárovka svítí podle pravidla."
+        },
+        {
+          "type": "text",
+          "text": "Místo dohadování si prostě vypíšeš **všechny kombinace** do tabulky. Tak to dělá i počítač: každý jeho výpočet stojí na těchto pravidlech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Výrok",
+          "definition": "Tvrzení, o kterém lze rozhodnout, zda platí (1), nebo neplatí (0).",
+          "example": "„5 > 3“ je výrok s hodnotou 1."
+        },
+        {
+          "type": "term",
+          "term": "Logická spojka",
+          "definition": "Značka, která z jednoduchých výroků vyrobí složený: ¬ (negace, „ne“), ∧ (konjunkce, „a“), ∨ (disjunkce, „nebo“), ⇒ (implikace, „jestliže…, pak“), ⇔ (ekvivalence, „právě tehdy, když“)."
+        },
+        {
+          "type": "term",
+          "term": "Pravdivostní tabulka",
+          "definition": "Tabulka, kde v každém řádku je jedna kombinace hodnot výroků a vedle výsledek. Každý výrok má 2 možnosti, takže 2 výroky dávají 2 · 2 = 4 řádky, 3 výroky 2³ = 8 řádků."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka všech spojek"
+        },
+        {
+          "type": "table",
+          "head": [
+            "A",
+            "B",
+            "A ∧ B",
+            "A ∨ B",
+            "A ⇒ B",
+            "A ⇔ B"
+          ],
+          "rows": [
+            [
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "0",
+              "0",
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "1",
+              "0",
+              "1",
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0",
+              "0",
+              "1",
+              "1"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "∧: jednička jen v řádku 1 a 1.",
+            "∨: nula jen v řádku 0 a 0.",
+            "⇒: nula jen v řádku A = 1, B = 0.",
+            "⇔: jednička tam, kde jsou A a B stejné.",
+            "¬A: prostě otoč hodnotu A (1 ↔ 0)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "A je pravdivý, B nepravdivý. Urči A ∧ B, A ∨ B a A ⇒ B.",
+          "answer": "Najdi řádek A = 1, B = 0. Tam je A ∧ B = 0, A ∨ B = 1, A ⇒ B = 0."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se neguje složený výrok"
+        },
+        {
+          "type": "term",
+          "term": "De Morganova pravidla",
+          "definition": "Při negaci složeného výroku se ∧ mění na ∨ a naopak, a každá část se zneguje.",
+          "example": "¬(A ∧ B) = ¬A ∨ ¬B"
+        },
+        {
+          "type": "text",
+          "text": "Otáčej kartičky. Zkus nejdřív sám říct, co je na zadní straně."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "¬(A ∧ B)",
+                "back": "¬A ∨ ¬B"
+              },
+              {
+                "front": "¬(A ∨ B)",
+                "back": "¬A ∧ ¬B"
+              },
+              {
+                "front": "¬(A ⇒ B)",
+                "back": "A ∧ ¬B"
+              },
+              {
+                "front": "¬(všichni jsou…)",
+                "back": "aspoň jeden není…"
+              },
+              {
+                "front": "¬(aspoň jeden je…)",
+                "back": "žádný není…"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Ověř tabulkou pro A = 1, B = 0, že ¬(A ∧ B) má stejnou hodnotu jako ¬A ∨ ¬B.",
+          "answer": "A ∧ B = 0, takže ¬(A ∧ B) = 1. Dále ¬A = 0, ¬B = 1, a 0 ∨ 1 = 1. Obě strany dávají 1. (Stejně to vyjde i v ostatních třech řádcích.)"
+        },
+        {
+          "type": "heading",
+          "text": "Obměna implikace"
+        },
+        {
+          "type": "term",
+          "term": "Obměna",
+          "definition": "K implikaci A ⇒ B je to implikace ¬B ⇒ ¬A. Má vždy **stejnou** pravdivostní hodnotu jako původní.",
+          "example": "„Když prší, je mokro.“ → obměna „Když není mokro, neprší.“"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Z „Když prší, je mokro.“ plyne „Když je mokro, prší.“",
+          "right": "Plyne jen obměna: „Když není mokro, neprší.“",
+          "why": "B ⇒ A (obrácená implikace) může být nepravdivá – mokro může být i od kropení. Stejnou hodnotu má jen ¬B ⇒ ¬A."
+        },
+        {
+          "type": "summary",
+          "text": "Každý výrok má hodnotu 1 nebo 0; n výroků dává 2ⁿ řádků tabulky. Negace prohazuje ∧ ↔ ∨ a „všichni“ ↔ „aspoň jeden“. Implikace má stejnou hodnotu jako její obměna ¬B ⇒ ¬A."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "„Kolik je hodin?“ je výrok.",
+      "answer": false,
+      "explanation": "Otázce nelze přiřadit pravdivostní hodnotu."
+    },
+    {
+      "type": "choice",
+      "question": "Negace výroku „Všechna prvočísla jsou lichá.“",
+      "options": [
+        "Aspoň jedno prvočíslo není liché.",
+        "Žádné prvočíslo není liché.",
+        "Všechna prvočísla jsou sudá."
+      ],
+      "answer": 0,
+      "explanation": "Negace „všechny“ je „aspoň jeden ne“."
+    },
+    {
+      "type": "choice",
+      "question": "A je pravdivý, B nepravdivý. Pravdivostní hodnota A ∧ B:",
+      "options": [
+        "nepravda",
+        "pravda"
+      ],
+      "answer": 0,
+      "explanation": "Konjunkce platí, jen když platí oba."
+    },
+    {
+      "type": "truefalse",
+      "question": "Disjunkce A ∨ B je pravdivá, když platí aspoň jeden z výroků.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Výrok „Jestliže 2 + 2 = 5, pak je Měsíc z tvarohu.“ je pravdivý.",
+      "answer": true,
+      "explanation": "Z nepravdivého předpokladu plyne cokoliv – implikace je pravdivá."
+    },
+    {
+      "type": "choice",
+      "question": "Negace A ∧ B je:",
+      "options": [
+        "¬A ∨ ¬B",
+        "¬A ∧ ¬B",
+        "A ∨ B",
+        "¬A ⇒ ¬B"
+      ],
+      "answer": 0,
+      "explanation": "De Morganovo pravidlo."
+    },
+    {
+      "type": "choice",
+      "question": "Obměna implikace A ⇒ B je:",
+      "options": [
+        "¬B ⇒ ¬A",
+        "B ⇒ A",
+        "¬A ⇒ ¬B",
+        "A ∧ ¬B"
+      ],
+      "answer": 0,
+      "explanation": "Obměna má stejnou pravdivostní hodnotu jako původní implikace."
+    },
+    {
+      "type": "input",
+      "question": "Kolik řádků má pravdivostní tabulka pro 3 výroky?",
+      "answers": [
+        "8"
+      ],
+      "explanation": "2³ = 8 kombinací."
+    },
+    {
+      "type": "match",
+      "question": "Spoj spojku s názvem.",
+      "pairs": [
+        [
+          "∧",
+          "konjunkce"
+        ],
+        [
+          "∨",
+          "disjunkce"
+        ],
+        [
+          "⇒",
+          "implikace"
+        ],
+        [
+          "⇔",
+          "ekvivalence"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ekvivalence A ⇔ B je pravdivá, když mají A a B stejnou pravdivostní hodnotu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Negace „Někdo z nás umí plavat.“",
+      "options": [
+        "Nikdo z nás neumí plavat.",
+        "Někdo z nás neumí plavat.",
+        "Všichni umíme plavat."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je výrok? Uveď příklad výroku a věty, která výrokem není.",
+      "answer": "Výrok je tvrzení, o kterém lze rozhodnout, zda je pravdivé. „5 > 3“ je výrok, „Zavři dveře!“ výrokem není."
+    },
+    {
+      "type": "open",
+      "question": "Kdy je implikace A ⇒ B nepravdivá? Vysvětli na příkladu.",
+      "answer": "Jen když A platí a B neplatí. „Když prší, vezmu deštník“ je porušeno, jen když prší a deštník nevezmu."
+    }
+  ]
+}

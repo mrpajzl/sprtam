@@ -1,0 +1,396 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "skola",
+  "title": "Škola a školní řád",
+  "emoji": "🏫",
+  "explanations": [
+    {
+      "title": "Tomášův den",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve škole trávíš skoro polovinu dne. Sejde se tam stovka dětí a dospělých. Aby se všichni mohli v klidu učit, musí platit společná pravidla."
+        },
+        {
+          "type": "text",
+          "text": "Když pravidla znáš, víš, co smíš, co musíš a na koho se obrátit, když máš problém."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Právo",
+          "definition": "Něco, co **smíš** nebo co ti náleží. Nikdo ti to nesmí jen tak vzít.",
+          "example": "Máš právo říct svůj názor."
+        },
+        {
+          "type": "term",
+          "term": "Povinnost",
+          "definition": "Něco, co **musíš** udělat, i když se ti nechce.",
+          "example": "Máš povinnost chodit do školy."
+        },
+        {
+          "type": "term",
+          "term": "Školní řád",
+          "definition": "Sepsaná pravidla jedné školy: práva a povinnosti žáků, jak se omlouvá absence, jak se chovat. Vydává ho ředitel školy.",
+          "example": "Ve školním řádu stojí třeba: „Mobil během vyučování je vypnutý.“"
+        },
+        {
+          "type": "term",
+          "term": "Zákonný zástupce",
+          "definition": "Dospělý, který za dítě odpovídá a jedná za ně. Obvykle rodič.",
+          "example": "Omluvenku podepisuje máma nebo táta – zákonný zástupce."
+        },
+        {
+          "type": "heading",
+          "text": "Jeden den Tomáše"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "7:58 – Tomáš přiběhne do třídy na poslední chvíli. Přijít včas je jeho **povinnost**.",
+            "Včera chyběl kvůli horečce. Omluvenku zapomněl. Chybění musí **omluvit zákonný zástupce** – táta to pošle ještě dnes.",
+            "V hodině nesouhlasí s názorem spolužáka a slušně to řekne. To je jeho **právo**.",
+            "O přestávce si odpočine a svačí. I přestávka je jeho **právo**.",
+            "Kamarád kreslí fixou po lavici. Tomáš ho zastaví – žáci mají povinnost **šetřit školní majetek**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věty: je to právo žáka, nebo povinnost žáka?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "právo žáka",
+              "povinnost žáka"
+            ],
+            "items": [
+              {
+                "text": "vzdělávat se",
+                "group": 0
+              },
+              {
+                "text": "vyjádřit svůj názor",
+                "group": 0
+              },
+              {
+                "text": "být informován o známkách",
+                "group": 0
+              },
+              {
+                "text": "odpočívat o přestávce",
+                "group": 0
+              },
+              {
+                "text": "chodit včas do školy",
+                "group": 1
+              },
+              {
+                "text": "mít omluvenou nepřítomnost",
+                "group": 1
+              },
+              {
+                "text": "šetřit školní majetek",
+                "group": 1
+              },
+              {
+                "text": "dodržovat školní řád",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak dlouho se musí do školy"
+        },
+        {
+          "type": "term",
+          "term": "Povinná školní docházka",
+          "definition": "Doba, po kterou musí každé dítě v Česku chodit do školy. Trvá **9 let** a začíná obvykle v 6 letech.",
+          "example": "Většina dětí ji splní v 1.–9. třídě základní školy."
+        },
+        {
+          "type": "example",
+          "question": "Lucka nastoupila do 1. třídy v září, kdy jí bylo 6 let. Kdy skončí povinnou školní docházku?",
+          "answer": "Docházka trvá 9 let. Lucka ji splní po 9. třídě, tedy zhruba v 15 letech."
+        },
+        {
+          "type": "example",
+          "question": "Je „vyjádřit svůj názor“ právo, nebo povinnost?",
+          "answer": "Názor říct **smíš**, ale nemusíš. Je to tedy **právo**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Omlouvat nepřítomnost je dobrovolné.",
+          "right": "Omluvit nepřítomnost je povinnost. Omlouvá ji zákonný zástupce.",
+          "why": "Škola musí vědět, kde dítě je a že je v bezpečí. Proto je omluva povinná."
+        },
+        {
+          "type": "summary",
+          "text": "Školní řád určuje práva a povinnosti žáků. Každé právo jde ruku v ruce s povinností. Povinná školní docházka trvá 9 let."
+        }
+      ]
+    },
+    {
+      "title": "Kdo je kdo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Škola je jako malé město. Má svého „starostu“, svá pravidla a své zástupce žáků. Když víš, kdo co dělá, víš i, za kým jít s problémem."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme pravidla školy a pak lidi, kteří ve škole mají nějakou roli."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Povinná školní docházka",
+          "definition": "Každé dítě v ČR musí chodit do školy **9 let**. Začíná obvykle v 6 letech."
+        },
+        {
+          "type": "term",
+          "term": "Školní řád",
+          "definition": "Pravidla školy sepsaná na papíře. Vydává ho ředitel. Najdeš v něm, co žáci **smějí** (práva) a co **musejí** (povinnosti)."
+        },
+        {
+          "type": "term",
+          "term": "Právo a povinnost",
+          "definition": "Právo = co smíš nebo co ti náleží. Povinnost = co musíš udělat.",
+          "example": "Právo: dozvědět se své známky. Povinnost: nosit pomůcky."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla: práva a povinnosti"
+        },
+        {
+          "type": "table",
+          "head": [
+            "práva žáka",
+            "povinnosti žáka"
+          ],
+          "rows": [
+            [
+              "vzdělávat se",
+              "chodit do školy včas"
+            ],
+            [
+              "vyjádřit svůj názor (slušně)",
+              "dodržovat školní řád"
+            ],
+            [
+              "vědět, jaké má známky",
+              "šetřit školní majetek"
+            ],
+            [
+              "odpočinout si o přestávce",
+              "mít omluvenou každou nepřítomnost"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Nepřítomnost omlouvá **zákonný zástupce** – dospělý, který za dítě odpovídá, obvykle rodič."
+        },
+        {
+          "type": "heading",
+          "text": "Lidé ve škole"
+        },
+        {
+          "type": "text",
+          "text": "Přečti si název role a zkus říct, co ten člověk dělá. Pak kartičku otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Ředitel",
+                "back": "Vede celou školu a odpovídá za ni. Vydává školní řád."
+              },
+              {
+                "front": "Třídní učitel",
+                "back": "Stará se o jednu třídu, řeší omluvenky a problémy žáků."
+              },
+              {
+                "front": "Výchovný poradce",
+                "back": "Radí s problémy a s výběrem další školy."
+              },
+              {
+                "front": "Předseda třídy",
+                "back": "Žák zvolený spolužáky, zastupuje třídu."
+              },
+              {
+                "front": "Žákovský parlament",
+                "back": "Zástupci tříd, kteří jednají s vedením školy."
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Žákovský parlament",
+          "definition": "Skupina žáků zvolených za jednotlivé třídy. Sbírá nápady spolužáků a jedná o nich s ředitelem. Má ho mnoho škol, ale ne každá.",
+          "example": "Parlament navrhne, aby o velké přestávce šlo chodit na hřiště."
+        },
+        {
+          "type": "heading",
+          "text": "Za kým jít"
+        },
+        {
+          "type": "example",
+          "question": "Bojíš se, že tě spolužáci ve třídě šikanují. Za kým jít?",
+          "answer": "Nejbližší je **třídní učitel** – stará se o tvou třídu. Pomoci může i výchovný poradce nebo rodiče."
+        },
+        {
+          "type": "example",
+          "question": "Třída by chtěla na školním dvoře lavičky. Jak to prosadit?",
+          "answer": "Předseda třídy to řekne v **žákovském parlamentu**. Parlament návrh předá **řediteli**, který rozhoduje o škole."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Žákovský parlament může sám přepsat školní řád.",
+          "right": "Parlament může navrhovat změny. Školní řád vydává ředitel.",
+          "why": "Parlament zastupuje žáky a dává návrhy. Rozhodnutí patří vedení školy."
+        },
+        {
+          "type": "summary",
+          "text": "Školní řád vydává ředitel a určuje práva a povinnosti žáků. Třídní učitel se stará o třídu, žákovský parlament zastupuje žáky. Povinná docházka je 9 let."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik let trvá povinná školní docházka v ČR?",
+      "answers": [
+        "9",
+        "devět"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je školní řád?",
+      "options": [
+        "pravidla chování ve škole",
+        "rozvrh hodin",
+        "seznam učitelů",
+        "jídelníček"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vzdělávat se je právo žáka.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Omlouvat nepřítomnost je jen dobrovolné.",
+      "answer": false,
+      "explanation": "Je to povinnost – omlouvá zákonný zástupce."
+    },
+    {
+      "type": "choice",
+      "question": "Kdo vede celou školu?",
+      "options": [
+        "ředitel",
+        "třídní učitel",
+        "školník",
+        "předseda třídy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co dělá žákovský parlament?",
+      "options": [
+        "zastupuje žáky před vedením školy",
+        "dává známky",
+        "píše školní řád sám",
+        "vybírá učitele"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj osobu s úkolem.",
+      "pairs": [
+        [
+          "ředitel",
+          "vede školu"
+        ],
+        [
+          "třídní učitel",
+          "stará se o třídu"
+        ],
+        [
+          "výchovný poradce",
+          "radí s výběrem střední školy"
+        ],
+        [
+          "předseda třídy",
+          "zastupuje spolužáky"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která věc je povinnost žáka?",
+      "options": [
+        "šetřit školní majetek",
+        "vyjádřit názor",
+        "dostat informace o známkách",
+        "mít přestávku"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Povinná školní docházka obvykle začíná v 6 letech.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje dokument s pravidly školy? (dvě slova)",
+      "answers": [
+        "školní řád",
+        "skolni rad"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Uveď dvě práva a dvě povinnosti žáka.",
+      "answer": "Práva: vzdělávat se, vyjádřit svůj názor. Povinnosti: chodit včas do školy, dodržovat školní řád a šetřit majetek."
+    },
+    {
+      "type": "open",
+      "question": "Proč škola potřebuje pravidla?",
+      "answer": "Aby se všichni mohli v klidu učit, byli v bezpečí a věděli, co se od nich čeká. Bez pravidel by vznikal chaos a spory."
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "i-like",
+  "title": "I like / I don’t like",
+  "emoji": "❤️",
+  "explanations": [
+    {
+      "title": "Smajlíky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Někdo má rád pizzu, někdo brokolici. Když se s někým seznamuješ, často si řeknete, co máte rádi a co ne."
+        },
+        {
+          "type": "text",
+          "text": "Anglicky na to stačí dvě krátké věty: **I like** a **I don’t like**. Zvládneš pak mluvit o jídle, zvířatech, sportech i hrách."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "like",
+          "definition": "Anglicky „mít rád“. **I like** = mám rád / ráda.",
+          "example": "I like cats. = Mám rád kočky."
+        },
+        {
+          "type": "term",
+          "term": "Zápor",
+          "definition": "Věta s „ne“. Říká, že něco **ne**máš rád nebo **ne**děláš.",
+          "example": "Nemám rád déšť."
+        },
+        {
+          "type": "term",
+          "term": "don’t",
+          "definition": "Zkrácené **do not**. Je to slovíčko, se kterým v angličtině vyrobíš zápor.",
+          "example": "I don’t like = nemám rád"
+        },
+        {
+          "type": "heading",
+          "text": "Mám rád 😀"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "😀",
+            "🍕"
+          ],
+          "caption": "I like pizza."
+        },
+        {
+          "type": "text",
+          "text": "Řekneš **I like** a za to, co máš rád: **I like pizza.** = Mám rád pizzu."
+        },
+        {
+          "type": "heading",
+          "text": "Nemám rád 😖"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "😖",
+            "🥦"
+          ],
+          "caption": "I don’t like broccoli."
+        },
+        {
+          "type": "text",
+          "text": "Mezi **I** a **like** vložíš **don’t**: **I don’t like broccoli.** = Nemám rád brokolici."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti větu. Patří k veselému, nebo zamračenému smajlíkovi?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "😀 like",
+              "😖 don’t like"
+            ],
+            "items": [
+              {
+                "text": "I like cats.",
+                "group": 0
+              },
+              {
+                "text": "I don’t like rain.",
+                "group": 1
+              },
+              {
+                "text": "I like ice cream.",
+                "group": 0
+              },
+              {
+                "text": "I don’t like spiders.",
+                "group": 1
+              },
+              {
+                "text": "I like football.",
+                "group": 0
+              },
+              {
+                "text": "I don’t like milk.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Mám rád psy. (pes = dog)",
+          "answer": "Mám rád = **I like**. Psy = víc psů → **dogs**. Věta: **I like dogs.**"
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Nemám rád mléko. (mléko = milk)",
+          "answer": "Nemám rád = **I don’t like**. Věta: **I don’t like milk.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "I not like milk.",
+          "right": "I don’t like milk.",
+          "why": "Česky stačí přidat „ne“. Anglicky musíš použít **don’t** (do not). Samotné *not* tady nestačí."
+        },
+        {
+          "type": "summary",
+          "text": "**I like** = mám rád. **I don’t like** = nemám rád."
+        }
+      ]
+    },
+    {
+      "title": "Ptáme se",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chceš kamarádovi koupit dárek. Nejdřív zjistíš, co má rád: „Máš rád čokoládu?“ Ten ti odpoví ano, nebo ne."
+        },
+        {
+          "type": "text",
+          "text": "Anglicky se naučíš na to zeptat a krátce odpovědět. Pak už zvládneš i věty o tom, co máš rád ty."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "like",
+          "definition": "Mít rád. **I like** = mám rád.",
+          "example": "I like music. = Mám rád hudbu."
+        },
+        {
+          "type": "term",
+          "term": "Otázka",
+          "definition": "Věta, kterou se na něco ptáš. Na konci má otazník.",
+          "example": "Máš rád jablka?"
+        },
+        {
+          "type": "term",
+          "term": "do",
+          "definition": "Malé pomocné slovíčko. Česky se nepřekládá. Dáš ho na začátek otázky, aby bylo jasné, že se ptáš.",
+          "example": "**Do** you like apples? = Máš rád jablka?"
+        },
+        {
+          "type": "term",
+          "term": "don’t",
+          "definition": "Zkrácené **do not**. Dělá zápor – větu s „ne“.",
+          "example": "I don’t like = nemám rád"
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Věta"
+        },
+        {
+          "type": "text",
+          "text": "**I like apples.** = Mám rád jablka. **I don’t like apples.** = Nemám rád jablka."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Otázka"
+        },
+        {
+          "type": "text",
+          "text": "Česky jen zvedneš hlas: „Máš rád jablka?“ Anglicky dáš na začátek **Do**: **Do you like apples?**"
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: Krátká odpověď"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Otázka: **Do you like apples?** = Máš rád jablka?",
+            "Ano: **Yes, I do.**",
+            "Ne: **No, I don’t.**"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "V krátké odpovědi zopakuješ to slovíčko z otázky: **do**, nebo **don’t**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň otázku a odpovědi."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "",
+                "after": " you like dogs?",
+                "options": [
+                  "Do",
+                  "Are",
+                  "Is"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Yes, I ",
+                "after": ".",
+                "options": [
+                  "do",
+                  "like",
+                  "am"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "No, I ",
+                "after": ".",
+                "options": [
+                  "don’t",
+                  "not",
+                  "isn’t"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "I ",
+                "after": " like spiders.",
+                "options": [
+                  "don’t",
+                  "not",
+                  "no"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Zeptej se kamaráda, jestli má rád fotbal. (fotbal = football)",
+          "answer": "Začnu **Do**, pak **you like**, pak věc: **Do you like football?**"
+        },
+        {
+          "type": "example",
+          "question": "Kamarád se ptá: „Do you like pizza?“ Ty pizzu nemáš rád. Co odpovíš?",
+          "answer": "Odpověď je ne → **No, I don’t.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Do you like cats? – Yes, I like.",
+          "right": "Yes, I do.",
+          "why": "Krátká odpověď opakuje **do** z otázky, ne *like*. Ano = **Yes, I do.** Ne = **No, I don’t.**"
+        },
+        {
+          "type": "summary",
+          "text": "Otázka: **Do you like …?** Odpovědi: **Yes, I do.** / **No, I don’t.**"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Máš rád čokoládu. Řekneš:",
+      "options": [
+        "I like chocolate.",
+        "I don’t like chocolate.",
+        "I am chocolate."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Do you like cats? (ano)",
+      "options": [
+        "Yes, I do.",
+        "Yes, I am.",
+        "Yes, I like."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Doplň: I ___ like spiders. (nemám rád)",
+      "answers": [
+        "don’t",
+        "don't",
+        "do not",
+        "dont"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň otázku: ___ you like music?",
+      "answers": [
+        "do"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„I don’t like“ znamená „nemám rád“.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Na „Do you like pizza?“ odpovíš „No, I am not.“",
+      "answer": false,
+      "explanation": "Správně: No, I don’t."
+    },
+    {
+      "type": "order",
+      "question": "Slož otázku.",
+      "items": [
+        "Do",
+        "you",
+        "like",
+        "apples?"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "I like",
+          "mám rád"
+        ],
+        [
+          "I don’t like",
+          "nemám rád"
+        ],
+        [
+          "Do you like…?",
+          "Máš rád…?"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se řekne „Nemám rád mléko“?",
+      "options": [
+        "I don’t like milk.",
+        "I not like milk.",
+        "I no like milk."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Do you like broccoli? (ne)",
+      "options": [
+        "No, I don’t.",
+        "No, I doesn’t.",
+        "No, I not."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Řekni anglicky 2 věci, které máš rád, a 1, kterou nemáš rád.",
+      "answer": "I like pizza. I like dogs. I don’t like rain."
+    },
+    {
+      "type": "open",
+      "question": "Zeptej se kamaráda anglicky, jestli má rád fotbal, a odpověz za něj.",
+      "answer": "Do you like football? Yes, I do. / No, I don’t."
+    }
+  ]
+}

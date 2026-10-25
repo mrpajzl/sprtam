@@ -1,0 +1,443 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ciselne-obory",
+  "title": "Číselné obory",
+  "emoji": "🔢",
+  "explanations": [
+    {
+      "title": "Jak čísla vznikala",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Nejdřív lidé počítali ovce: 1, 2, 3… Pak si začali půjčovat a potřebovali zapsat dluh – vznikla záporná čísla. Pak dělili chleba na díly – vznikly zlomky. A nakonec zjistili, že úhlopříčku čtverce se stranou 1 nejde zapsat ani zlomkem."
+        },
+        {
+          "type": "text",
+          "text": "Každá nová skupina čísel vznikla, protože ta předchozí **nestačila**. Těmto skupinám říkáme číselné obory. Když víš, v jakém oboru počítáš, víš, jaké výsledky jsou vůbec možné."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přirozená čísla ℕ",
+          "definition": "Čísla, kterými počítáme kusy: 1, 2, 3, 4, … (v české škole se nula do ℕ obvykle nepočítá).",
+          "example": "Počet žáků ve třídě je vždy přirozené číslo."
+        },
+        {
+          "type": "term",
+          "term": "Celá čísla ℤ",
+          "definition": "Přirozená čísla, nula a čísla k nim opačná: …, −2, −1, 0, 1, 2, …",
+          "example": "Teplota −5 °C nebo dluh −200 Kč."
+        },
+        {
+          "type": "term",
+          "term": "Racionální čísla ℚ",
+          "definition": "Čísla, která jdou zapsat jako zlomek: celé číslo lomeno přirozeným číslem.",
+          "example": "0,75 = 3/4, −2,5 = −5/2, i 7 = 7/1."
+        },
+        {
+          "type": "term",
+          "term": "Iracionální čísla",
+          "definition": "Čísla na číselné ose, která **nejde** zapsat zlomkem.",
+          "example": "√2 ≈ 1,414… (úhlopříčka čtverce se stranou 1) nebo π ≈ 3,14159…"
+        },
+        {
+          "type": "term",
+          "term": "Reálná čísla ℝ",
+          "definition": "Racionální a iracionální čísla dohromady – všechny body číselné osy."
+        },
+        {
+          "type": "heading",
+          "text": "Matrjoška"
+        },
+        {
+          "type": "text",
+          "text": "Obory do sebe zapadají jako ruské panenky: každé přirozené číslo je celé, každé celé je racionální, každé racionální je reálné. Zapisujeme to znakem ⊂ („je obsažena v“):"
+        },
+        {
+          "type": "summary",
+          "text": "ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď čísla. Tip: nejdřív zkus číslo zjednodušit – √9 je přece 3."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "celé (ℤ)",
+              "racionální, ne celé",
+              "iracionální"
+            ],
+            "items": [
+              {
+                "text": "−3",
+                "group": 0
+              },
+              {
+                "text": "√9",
+                "group": 0
+              },
+              {
+                "text": "7",
+                "group": 0
+              },
+              {
+                "text": "0,75",
+                "group": 1
+              },
+              {
+                "text": "1/3",
+                "group": 1
+              },
+              {
+                "text": "−2,5",
+                "group": 1
+              },
+              {
+                "text": "√2",
+                "group": 2
+              },
+              {
+                "text": "π",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Desetinná čísla prozradí obor"
+        },
+        {
+          "type": "term",
+          "term": "Desetinný rozvoj",
+          "definition": "Číslo zapsané s desetinnou čárkou. Může být **ukončený** (0,75), **periodický** – nějaká skupina číslic se donekonečna opakuje (0,333… zapisujeme 0,(3)) – nebo nekonečný bez opakování (π)."
+        },
+        {
+          "type": "text",
+          "text": "Racionální čísla mají rozvoj ukončený nebo periodický. Iracionální mají rozvoj nekonečný a nikdy se neopakující."
+        },
+        {
+          "type": "example",
+          "question": "Jaký desetinný rozvoj má 5/11?",
+          "answer": "Vyděl 5 : 11 = 0,4545… Skupina 45 se pořád opakuje → **periodický**, 0,(45). Je to tedy racionální číslo (jako každý zlomek)."
+        },
+        {
+          "type": "heading",
+          "text": "Prvočísla – stavebnice přirozených čísel"
+        },
+        {
+          "type": "term",
+          "term": "Dělitel",
+          "definition": "Číslo, kterým jde jiné číslo vydělit beze zbytku.",
+          "example": "Dělitelé 12 jsou 1, 2, 3, 4, 6, 12."
+        },
+        {
+          "type": "term",
+          "term": "Prvočíslo",
+          "definition": "Přirozené číslo větší než 1, které má **právě dva** dělitele: 1 a samo sebe. Ostatní čísla větší než 1 jsou **složená**.",
+          "example": "2, 3, 5, 7, 11, 13 jsou prvočísla. 91 = 7 · 13 je složené, i když tak nevypadá."
+        },
+        {
+          "type": "term",
+          "term": "D(a, b) a n(a, b)",
+          "definition": "D je největší společný dělitel – největší číslo, které dělí obě. n je nejmenší společný násobek – nejmenší kladné číslo, které je dělitelné oběma.",
+          "example": "D(12, 18) = 6, n(12, 18) = 36."
+        },
+        {
+          "type": "example",
+          "question": "Urči D(24, 36).",
+          "answer": "Dělitelé 24: 1, 2, 3, 4, 6, 8, 12, 24. Dělitelé 36: 1, 2, 3, 4, 6, 9, 12, 18, 36. Největší společný je **12**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "π = 22/7 (nebo π = 3,14)",
+          "right": "π ≈ 22/7 ≈ 3,14 – jen přibližně",
+          "why": "π je iracionální, žádný zlomek ani ukončené desetinné číslo ho přesně nevyjádří. 22/7 = 3,142857…, kdežto π = 3,141592…"
+        },
+        {
+          "type": "summary",
+          "text": "ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ. Racionální číslo = zlomek, rozvoj ukončený nebo periodický. Iracionální (√2, π) zlomkem zapsat nejde. Prvočíslo má právě dva dělitele."
+        }
+      ]
+    },
+    {
+      "title": "Co v oboru jde spočítat",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V zadání často uvidíš „řeš v ℕ“ nebo „řeš v ℝ“. Výsledek na tom opravdu závisí. Rovnice x + 5 = 3 nemá řešení mezi přirozenými čísly, ale mezi celými ano (x = −2)."
+        },
+        {
+          "type": "text",
+          "text": "Na číselné obory se proto dívej jako na **sady nástrojů**: v každém větším oboru jde provést víc výpočtů."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Číselný obor",
+          "definition": "Množina čísel, se kterou zrovna pracujeme, i s početními operacemi.",
+          "example": "ℕ, ℤ, ℚ, ℝ."
+        },
+        {
+          "type": "term",
+          "term": "Uzavřenost",
+          "definition": "Operace v oboru „funguje vždy“, když výsledek z oboru nikdy nevyleze.",
+          "example": "Součet dvou přirozených čísel je vždy přirozený. Rozdíl ne: 3 − 5 = −2 ∉ ℕ."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Obor",
+            "Příklady",
+            "Vždy v něm jde",
+            "Co už nejde"
+          ],
+          "rows": [
+            [
+              "ℕ přirozená",
+              "1, 2, 3, …",
+              "sčítat, násobit",
+              "odečíst větší od menšího"
+            ],
+            [
+              "ℤ celá",
+              "−2, 0, 5",
+              "+ odčítat",
+              "dělit (1 : 2)"
+            ],
+            [
+              "ℚ racionální",
+              "1/2, −0,75",
+              "+ dělit (ne nulou)",
+              "odmocnit 2"
+            ],
+            [
+              "ℝ reálná",
+              "√2, π",
+              "+ odmocnit nezáporné číslo",
+              "odmocnit záporné číslo"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor, ℝ ∖ ℚ znamená „reálná čísla bez racionálních“ – tedy iracionální čísla. Otáčej kartičky a opakuj si přesné definice:"
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "ℕ",
+                "back": "přirozená: 1, 2, 3, …"
+              },
+              {
+                "front": "ℤ",
+                "back": "celá: …, −2, −1, 0, 1, 2, …"
+              },
+              {
+                "front": "ℚ",
+                "back": "racionální: p/q, kde p je celé a q přirozené"
+              },
+              {
+                "front": "ℝ ∖ ℚ",
+                "back": "iracionální: nekonečný neperiodický rozvoj (√2, π)"
+              },
+              {
+                "front": "ℝ",
+                "back": "reálná: všechny body číselné osy"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Periodické číslo na zlomek"
+        },
+        {
+          "type": "term",
+          "term": "Periodické číslo",
+          "definition": "Desetinné číslo, kde se skupina číslic (perioda) donekonečna opakuje. Zapisujeme ji do závorky.",
+          "example": "0,(3) = 0,333…; 0,(18) = 0,181818…"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Číslo označ x.",
+            "Vynásob x takovou mocninou deseti, aby se perioda posunula o jednu celou délku (perioda 1 číslice → ·10, 2 číslice → ·100).",
+            "Odečti původní x – nekonečné ocasy se odečtou.",
+            "Vyděl a zkrať zlomek."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Převeď 0,(3) na zlomek.",
+          "answer": "x = 0,333…; 10x = 3,333…; odečtu: 10x − x = 3, tedy 9x = 3, x = 3/9 = **1/3**."
+        },
+        {
+          "type": "example",
+          "question": "Převeď 0,(18) na zlomek.",
+          "answer": "Perioda má 2 číslice → ·100. 100x = 18,1818…; 100x − x = 18; 99x = 18; x = 18/99 = **2/11**."
+        },
+        {
+          "type": "heading",
+          "text": "Rozklad na prvočísla"
+        },
+        {
+          "type": "term",
+          "term": "Prvočíslo",
+          "definition": "Přirozené číslo větší než 1 s právě dvěma děliteli (1 a sebou). Každé jiné číslo větší než 1 jde jednoznačně rozložit na součin prvočísel.",
+          "example": "24 = 2 · 2 · 2 · 3 = 2³ · 3"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozlož obě čísla na prvočísla.",
+            "D (největší společný dělitel): vezmi prvočísla, která jsou v obou, s **menším** exponentem.",
+            "n (nejmenší společný násobek): vezmi všechna prvočísla s **větším** exponentem."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči D(24, 36) a n(12, 18).",
+          "answer": "24 = 2³ · 3, 36 = 2² · 3² → D = 2² · 3 = **12**. 12 = 2² · 3, 18 = 2 · 3² → n = 2² · 3² = **36**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Součet dvou iracionálních čísel je vždy iracionální.",
+          "right": "Může být i racionální: √2 + (−√2) = 0.",
+          "why": "Iracionální čísla nejsou uzavřená na sčítání. Jeden protipříklad stačí k vyvrácení tvrzení „vždy“."
+        },
+        {
+          "type": "summary",
+          "text": "Větší obor = víc operací, které jdou vždy provést. Racionální čísla mají ukončený nebo periodický rozvoj a jdou převést na zlomek. D bere společná prvočísla s menším exponentem, n všechna s větším."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Každé celé číslo je racionální.",
+      "answer": true,
+      "explanation": "n = n/1."
+    },
+    {
+      "type": "choice",
+      "question": "Které číslo je iracionální?",
+      "options": [
+        "√2",
+        "√16",
+        "0,5",
+        "22/7"
+      ],
+      "answer": 0,
+      "explanation": "√16 = 4, 22/7 je zlomek."
+    },
+    {
+      "type": "input",
+      "question": "Zapiš 0,(3) jako zlomek v základním tvaru.",
+      "answers": [
+        "1/3"
+      ],
+      "explanation": "9x = 3"
+    },
+    {
+      "type": "input",
+      "question": "Zapiš 0,25 jako zlomek v základním tvaru.",
+      "answers": [
+        "1/4"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "π = 22/7",
+      "answer": false,
+      "explanation": "22/7 je jen přibližná hodnota, π je iracionální."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď obory od nejmenšího.",
+      "items": [
+        "ℕ",
+        "ℤ",
+        "ℚ",
+        "ℝ"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které číslo je prvočíslo?",
+      "options": [
+        "59",
+        "51",
+        "57",
+        "91"
+      ],
+      "answer": 0,
+      "explanation": "51 = 3·17, 57 = 3·19, 91 = 7·13."
+    },
+    {
+      "type": "input",
+      "question": "D(24, 36) =",
+      "answers": [
+        "12"
+      ],
+      "explanation": "24 = 2³·3, 36 = 2²·3² → 2²·3 = 12"
+    },
+    {
+      "type": "input",
+      "question": "n(12, 18) =",
+      "answers": [
+        "36"
+      ],
+      "explanation": "12 = 2²·3, 18 = 2·3² → 2²·3² = 36"
+    },
+    {
+      "type": "truefalse",
+      "question": "Součet dvou iracionálních čísel je vždy iracionální.",
+      "answer": false,
+      "explanation": "√2 + (−√2) = 0."
+    },
+    {
+      "type": "choice",
+      "question": "Desetinný rozvoj čísla 5/11 je:",
+      "options": [
+        "periodický",
+        "ukončený",
+        "neperiodický nekonečný"
+      ],
+      "answer": 0,
+      "explanation": "5/11 = 0,4545… Jmenovatel obsahuje jiné prvočíslo než 2 a 5."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi racionálním a iracionálním číslem?",
+      "answer": "Racionální číslo lze zapsat jako zlomek p/q, jeho rozvoj je ukončený nebo periodický. Iracionální nelze, rozvoj je nekonečný neperiodický (√2, π)."
+    },
+    {
+      "type": "open",
+      "question": "Co je prvočíslo a co číslo složené?",
+      "answer": "Prvočíslo je přirozené číslo větší než 1, které má právě dva dělitele: 1 a sebe. Složené číslo má více než dva dělitele."
+    }
+  ]
+}

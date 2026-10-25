@@ -1,0 +1,349 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kruznice-mnohouhelniky",
+  "title": "Kružnice a mnohoúhelníky",
+  "emoji": "⭕",
+  "generator": "circle",
+  "explanations": [
+    {
+      "title": "Obrázkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolo, hodiny, pizza, kruhový objezd. A kolem nás i spousta mnohoúhelníků: dlaždice, včelí plástev ze šestiúhelníků, značka STOP je osmiúhelník."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, co všechno o kružnici platí „zadarmo“ – třeba že v ní vždy najdeš pravý úhel – a jak spočítat úhly v libovolném mnohoúhelníku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kružnice a kruh",
+          "definition": "Kružnice je čára: všechny body stejně daleko od středu S. Ta vzdálenost je **poloměr r**. Kruh je kružnice i s vnitřkem.",
+          "example": "Obruč je kružnice, placka je kruh."
+        },
+        {
+          "type": "term",
+          "term": "Průměr",
+          "definition": "Úsečka přes střed, která spojuje dva body kružnice. Je dlouhá 2r."
+        },
+        {
+          "type": "term",
+          "term": "Oblouk",
+          "definition": "Kus kružnice mezi dvěma jejími body."
+        },
+        {
+          "type": "term",
+          "term": "Středový a obvodový úhel",
+          "definition": "Oba „koukají“ na stejný oblouk. Středový má vrchol ve středu kružnice, obvodový má vrchol kdekoli na kružnici (mimo ten oblouk)."
+        },
+        {
+          "type": "heading",
+          "text": "Pravý úhel nad průměrem"
+        },
+        {
+          "type": "text",
+          "text": "Nakresli kružnici a průměr AB. Vyber libovolný další bod C na kružnici a spoj ho s A a B. Úhel u C bude vždy **90°** – ať vybereš C kdekoli. To je **Thaletova věta**."
+        },
+        {
+          "type": "text",
+          "text": "Tak vypadá pravý úhel, který při každém pokusu dostaneš. Posuň posuvník pryč a zpátky na 90°."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 90
+          }
+        },
+        {
+          "type": "text",
+          "text": "Proč? Průměr je vlastně „středový úhel“ 180° (přímá čára). A obvodový úhel je vždy **polovina** středového nad stejným obloukem: 180° : 2 = 90°."
+        },
+        {
+          "type": "example",
+          "question": "Středový úhel je 80°. Jak velký je obvodový úhel nad stejným obloukem?",
+          "answer": "Polovina: 80° : 2 = **40°**. Všechny obvodové úhly nad tím obloukem mají 40°."
+        },
+        {
+          "type": "term",
+          "term": "Tečna",
+          "definition": "Přímka, která se kružnice dotýká v jediném bodě. V bodě dotyku je vždy **kolmá** na poloměr.",
+          "example": "Kolo stojí na silnici: silnice je tečna, paprsek kola ve svislé poloze je na ni kolmý."
+        },
+        {
+          "type": "heading",
+          "text": "Úhly v mnohoúhelníku"
+        },
+        {
+          "type": "term",
+          "term": "Mnohoúhelník (n-úhelník)",
+          "definition": "Uzavřený obrazec z n rovných stran. Je **pravidelný**, když má všechny strany i úhly stejné.",
+          "example": "Čtverec je pravidelný 4úhelník."
+        },
+        {
+          "type": "text",
+          "text": "Z jednoho vrcholu nakresli úhlopříčky (spojnice nesousedních vrcholů). Šestiúhelník se rozpadne na 4 trojúhelníky, n-úhelník na n − 2. Každý trojúhelník má 180°, takže součet úhlů je **(n − 2) · 180°**."
+        },
+        {
+          "type": "example",
+          "question": "Jaký je vnitřní úhel pravidelného osmiúhelníku?",
+          "answer": "Součet: (8 − 2) · 180° = 1080°. Úhlů je 8 stejných: 1080° : 8 = **135°**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obvodový úhel je dvakrát větší než středový.",
+          "right": "Obvodový je **polovina** středového.",
+          "why": "Vrchol na kružnici je dál od oblouku než střed, a proto oblouk „vidí“ pod menším úhlem."
+        },
+        {
+          "type": "text",
+          "text": "Obsah kruhu S = πr² a obvod o = 2πr, kde π ≈ 3,14. Kruh s r = 5 má obsah 25π. Oblouk se středovým úhlem 60° je 60/360 = 1/6 obvodu."
+        },
+        {
+          "type": "text",
+          "text": "Úhlopříček má šestiúhelník 9: z každého ze 6 vrcholů vedou 3 (ne k sobě a ne ke dvěma sousedům), to je 18, ale každou jsme počítali z obou konců → 18 : 2 = 9. Obsah lichoběžníku je průměr obou základen krát výška: (a + c) · v / 2; kosočtverce polovina součinu úhlopříček."
+        },
+        {
+          "type": "summary",
+          "text": "Obvodový úhel = polovina středového; nad průměrem je pravý (Thalet). Tečna ⟂ poloměr. Součet úhlů n-úhelníku je (n − 2) · 180°."
+        }
+      ]
+    },
+    {
+      "title": "Vzorci",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolik plotu potřebuješ na kruhový záhon? Kolik dlažby na lichoběžníkovou terasu? Jak dlouhá je kolejnice v oblouku? Na to stačí sada vzorců – musíš ale vědět, co v nich která písmena znamenají."
+        },
+        {
+          "type": "text",
+          "text": "Vzorce si tady nejdřív vysvětlíme, pak je použijeme na příkladech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Poloměr r a π",
+          "definition": "Poloměr je vzdálenost středu kružnice od jejího okraje. π (pí) ≈ 3,14 je poměr obvodu kružnice a jejího průměru – stejný pro každou kružnici."
+        },
+        {
+          "type": "term",
+          "term": "Středový úhel α",
+          "definition": "Úhel s vrcholem ve středu kružnice. Vymezuje oblouk (kus kružnice) a výseč (kus kruhu, „dílek pizzy“)."
+        },
+        {
+          "type": "term",
+          "term": "Úhlopříčka",
+          "definition": "Úsečka spojující dva vrcholy mnohoúhelníku, které nejsou sousední.",
+          "example": "Čtverec má 2 úhlopříčky."
+        },
+        {
+          "type": "term",
+          "term": "Výška",
+          "definition": "Kolmá vzdálenost dvou rovnoběžných stran (nebo vrcholu od strany)."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "text",
+          "text": "Než otočíš kartičku, zkus si vzorec vybavit."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Obvod kruhu",
+                "back": "o = 2πr"
+              },
+              {
+                "front": "Obsah kruhu",
+                "back": "S = πr²"
+              },
+              {
+                "front": "Délka oblouku (α°)",
+                "back": "l = 2πr · α/360°"
+              },
+              {
+                "front": "Součet úhlů n-úhelníku",
+                "back": "(n − 2) · 180°"
+              },
+              {
+                "front": "Počet úhlopříček",
+                "back": "n(n − 3)/2"
+              },
+              {
+                "front": "Lichoběžník",
+                "back": "S = (a + c) · v / 2"
+              },
+              {
+                "front": "Kosočtverec",
+                "back": "S = u₁ · u₂ / 2"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Proč n(n − 3)/2? Z každého z n vrcholů vede úhlopříčka ke všem kromě sebe a dvou sousedů, tedy n − 3. Každou úhlopříčku jsme ale počítali dvakrát (z obou konců), proto dělíme 2."
+        },
+        {
+          "type": "example",
+          "question": "Kružnice r = 6, oblouk se středovým úhlem 60°. Jak je dlouhý?",
+          "answer": "60° je 60/360 = 1/6 celé kružnice. Celý obvod 2π · 6 = 12π. Oblouk: 12π : 6 = **2π**."
+        },
+        {
+          "type": "example",
+          "question": "Šestiúhelník: kolik má úhlopříček a jaký součet vnitřních úhlů?",
+          "answer": "Úhlopříčky: 6 · 3 / 2 = **9**. Úhly: (6 − 2) · 180° = **720°**."
+        },
+        {
+          "type": "example",
+          "question": "Kosočtverec má úhlopříčky 6 cm a 8 cm. Obsah?",
+          "answer": "6 · 8 / 2 = **24 cm²**. (Kosočtverec je polovina obdélníku 6 × 8 opsaného kolem něj.)"
+        },
+        {
+          "type": "heading",
+          "text": "Věty o kružnici"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Obvodový úhel** (vrchol na kružnici) je polovina **středového** nad stejným obloukem.",
+            "**Thaletova věta**: úhel nad průměrem s vrcholem na kružnici je pravý (90°).",
+            "**Tečna** (přímka s jediným společným bodem) je kolmá na poloměr v bodě dotyku.",
+            "Každému trojúhelníku jde opsat kružnici (procházející všemi vrcholy)."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "S = 2πr",
+          "right": "S = πr², obvod o = 2πr",
+          "why": "Obsah se měří v cm², proto v něm musí být r² (délka krát délka). Obvod je délka – r je tam jen jednou."
+        },
+        {
+          "type": "summary",
+          "text": "Kruh: o = 2πr, S = πr², oblouk = obvod · α/360°. n-úhelník: úhly (n − 2) · 180°, úhlopříčky n(n − 3)/2. Obvodový úhel = středový : 2."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Středový úhel 80°. Obvodový úhel nad stejným obloukem (°) =",
+      "answers": [
+        "40"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Obvodový úhel nad průměrem je pravý.",
+      "answer": true,
+      "explanation": "Thaletova věta."
+    },
+    {
+      "type": "input",
+      "question": "Součet vnitřních úhlů šestiúhelníku (°) =",
+      "answers": [
+        "720"
+      ],
+      "explanation": "(6 − 2) · 180°"
+    },
+    {
+      "type": "input",
+      "question": "Vnitřní úhel pravidelného osmiúhelníku (°) =",
+      "answers": [
+        "135"
+      ],
+      "explanation": "6 · 180° / 8"
+    },
+    {
+      "type": "choice",
+      "question": "Tečna svírá s poloměrem v bodě dotyku úhel:",
+      "options": [
+        "90°",
+        "45°",
+        "180°",
+        "záleží na poloměru"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kruh r = 5. Obsah = k·π, k =",
+      "answers": [
+        "25"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kružnice r = 6, oblouk se středovým úhlem 60°. Délka = k·π, k =",
+      "answers": [
+        "2"
+      ],
+      "explanation": "2π · 6 · 60/360 = 2π"
+    },
+    {
+      "type": "input",
+      "question": "Kolik úhlopříček má šestiúhelník?",
+      "answers": [
+        "9"
+      ],
+      "explanation": "6 · 3 / 2"
+    },
+    {
+      "type": "choice",
+      "question": "Obsah lichoběžníku se základnami a, c a výškou v:",
+      "options": [
+        "(a + c) · v / 2",
+        "a · c · v",
+        "(a + c) · v",
+        "a · v / 2"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kosočtverec má úhlopříčky 6 cm a 8 cm. Obsah (cm²) =",
+      "answers": [
+        "24"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Každému trojúhelníku lze opsat kružnici.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Vyslov Thaletovu větu.",
+      "answer": "Všechny úhly nad průměrem kružnice, jejichž vrcholy leží na kružnici, jsou pravé."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je vztah mezi obvodovým a středovým úhlem?",
+      "answer": "Obvodový úhel je roven polovině středového úhlu příslušného ke stejnému oblouku. Všechny obvodové úhly nad stejným obloukem jsou shodné."
+    }
+  ]
+}

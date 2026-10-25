@@ -1,0 +1,333 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "objem",
+  "title": "Měření objemu",
+  "emoji": "🧪",
+  "explanations": [
+    {
+      "title": "Odměrným válcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na krabici mléka je napsáno 1 l, na lahvičce sirupu 100 ml. To jsou údaje o **objemu**. Podle nich víš, kolik se toho do něčeho vejde."
+        },
+        {
+          "type": "text",
+          "text": "Objem potřebuje kuchař, lékárník, ale i ty, když chceš vědět, jestli se ti voda vejde do láhve."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Objem",
+          "definition": "Kolik místa těleso nebo kapalina zabírá. Značka `V`.",
+          "example": "Plný kýbl vody má větší objem než plná sklenice."
+        },
+        {
+          "type": "term",
+          "term": "Litr a mililitr",
+          "definition": "**Litr** (l) je běžná jednotka pro kapaliny. **Mililitr** (ml) je jeho tisícina: 1 l = 1 000 ml.",
+          "example": "Krabice mléka má 1 l, lžička pojme asi 5 ml."
+        },
+        {
+          "type": "term",
+          "term": "Odměrný válec",
+          "definition": "Průhledná vysoká nádoba se stupnicí. Na stupnici přečteš, kolik mililitrů kapaliny v ní je.",
+          "example": "Podobá se odměrce na pečení, ale je přesnější."
+        },
+        {
+          "type": "term",
+          "term": "Hladina",
+          "definition": "Horní plocha kapaliny v nádobě. U vody se u stěn trochu zvedá, takže je uprostřed prohnutá dolů.",
+          "example": "Podívej se zboku na vodu ve sklenici – u okraje vystoupá nahoru."
+        },
+        {
+          "type": "heading",
+          "text": "Jak změřit objem vody"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Postav válec na rovný stůl.",
+            "Oči dej do výšky hladiny – dívej se **kolmo**, ne shora.",
+            "Čti u **spodního okraje** prohnuté hladiny (u vody).",
+            "Zapiš číslo i jednotku, např. 50 ml."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Krychlový centimetr (cm³)",
+          "definition": "Objem kostičky, která má všechny hrany dlouhé 1 cm. Vejde se do ní přesně 1 ml vody, proto **1 ml = 1 cm³**.",
+          "example": "Kostka cukru má zhruba 1 až 2 cm³."
+        },
+        {
+          "type": "heading",
+          "text": "Jak změřit objem kamínku"
+        },
+        {
+          "type": "text",
+          "text": "Kamínek do válce nenaliješ. Ale můžeš ho do vody **ponořit**. Kamínek vytlačí vodu a hladina stoupne. Stoupne přesně o tolik, kolik místa kamínek zabírá."
+        },
+        {
+          "type": "example",
+          "question": "Voda sahala na 50 ml. S kamínkem sahá na 65 ml. Jaký objem má kamínek?",
+          "answer": "Rozdíl: 65 − 50 = **15 ml**. Kamínek zabírá 15 ml místa, to je **15 cm³**."
+        },
+        {
+          "type": "example",
+          "question": "Ve válci bylo 40 ml vody. Po vhození klíče je tam 46 ml. Objem klíče?",
+          "answer": "46 − 40 = **6 ml**."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 40,
+            "max": 60,
+            "step": 1,
+            "start": 40,
+            "hop": 6
+          }
+        },
+        {
+          "type": "text",
+          "text": "Na ose je hladina před vhozením (40 ml) a skok o objem klíče. Kde je nová hladina?"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Čtu hladinu, když se na válec dívám shora.",
+          "right": "Oči mám ve výšce hladiny a čtu u spodního okraje.",
+          "why": "Shora nebo zespodu se hladina „posune“ na jinou čárku a výsledek je špatně."
+        },
+        {
+          "type": "summary",
+          "text": "Objem (V) = kolik místa něco zabírá. Kapaliny měříme odměrným válcem; objem kamínku = o kolik stoupne hladina."
+        }
+      ]
+    },
+    {
+      "title": "Kostičkami",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolik vody pojme akvárium? Kolik písku se vejde na korbu auta? Tohle se nedá nalít do odměrky. Objem se ale dá **spočítat**."
+        },
+        {
+          "type": "text",
+          "text": "Stačí si představit, že těleso skládáme z malých kostiček stejné velikosti a počítáme je."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Objem",
+          "definition": "Kolik místa těleso zabírá. Značka `V`.",
+          "example": "Krabice od bot má větší objem než krabička od sirek."
+        },
+        {
+          "type": "term",
+          "term": "Krychlový centimetr (cm³)",
+          "definition": "Objem kostičky, která má každou hranu dlouhou 1 cm. Malá trojka znamená „tři rozměry“: délka, šířka, výška.",
+          "example": "Kostka cukru má zhruba 1 cm³ až 2 cm³."
+        },
+        {
+          "type": "term",
+          "term": "Kvádr",
+          "definition": "Těleso tvaru krabice: má 6 obdélníkových stěn. Rozměry kvádru jsou jeho délka `a`, šířka `b` a výška `c`.",
+          "example": "Krabice od bot, cihla, akvárium."
+        },
+        {
+          "type": "heading",
+          "text": "Spočítej kostičky"
+        },
+        {
+          "type": "text",
+          "text": "Dno krabice je 3 cm na 4 cm. Kolik kostiček 1 cm³ se vejde do jedné vrstvy? Pohraj si s mřížkou."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4
+          }
+        },
+        {
+          "type": "text",
+          "text": "Jedna vrstva = 3 · 4 = 12 kostiček. Když je krabice vysoká 5 cm, má 5 vrstev: 12 · 5 = 60 kostiček. Objem je **60 cm³**."
+        },
+        {
+          "type": "text",
+          "text": "Proto platí pro kvádr: `V = a · b · c` (délka krát šířka krát výška)."
+        },
+        {
+          "type": "heading",
+          "text": "Jednotky objemu"
+        },
+        {
+          "type": "text",
+          "text": "Hlavní jednotka je **m³** (kostka s hranou 1 metr). V kuchyni se používá **litr**. Důležité je: **1 litr = 1 dm³** – kostka s hranou 10 cm pojme přesně litr."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jednotka",
+            "Kolik"
+          ],
+          "rows": [
+            [
+              "1 m³",
+              "1 000 dm³ = 1 000 l"
+            ],
+            [
+              "1 hl (hektolitr)",
+              "100 l"
+            ],
+            [
+              "1 l",
+              "1 dm³ = 10 dl = 1 000 ml"
+            ],
+            [
+              "1 dl (decilitr)",
+              "100 ml"
+            ],
+            [
+              "1 ml",
+              "1 cm³"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kvádr má rozměry 2 cm, 3 cm a 5 cm. Jaký má objem?",
+          "answer": "`V = a · b · c` = 2 · 3 · 5 = **30 cm³**."
+        },
+        {
+          "type": "example",
+          "question": "Akvárium má rozměry 5 dm, 3 dm a 4 dm. Kolik litrů vody pojme?",
+          "answer": "V = 5 · 3 · 4 = 60 dm³. A protože 1 dm³ = 1 l, pojme **60 l**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik litrů je 250 ml?",
+          "answer": "1 l = 1 000 ml, jdu na větší jednotku → dělím: 250 : 1 000 = **0,25 l**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 m³ = 100 l",
+          "right": "1 m³ = 1 000 l",
+          "why": "Krychle s hranou 1 m = 10 dm. Vejde se do ní 10 · 10 · 10 = 1 000 kostek po 1 dm³, tedy 1 000 litrů."
+        },
+        {
+          "type": "summary",
+          "text": "Objem kvádru V = a · b · c. 1 l = 1 dm³, 1 ml = 1 cm³, 1 m³ = 1 000 l."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Čím měříme objem kapaliny?",
+      "options": [
+        "odměrným válcem",
+        "váhou",
+        "pravítkem",
+        "stopkami"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik ml je 2 l?",
+      "answers": [
+        "2000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik litrů je 1 m³?",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "1 ml = 1 cm³.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Hladina stoupla z 40 ml na 58 ml. Objem kamene v cm³ =",
+      "answers": [
+        "18"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kvádr má rozměry 2 cm, 3 cm a 5 cm. Objem v cm³ =",
+      "answers": [
+        "30"
+      ],
+      "explanation": "2 · 3 · 5 = 30"
+    },
+    {
+      "type": "input",
+      "question": "Kolik l je 250 ml?",
+      "answers": [
+        "0,25"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kolik dm³ je 3 l?",
+      "options": [
+        "3",
+        "30",
+        "300",
+        "3 000"
+      ],
+      "answer": 0,
+      "explanation": "1 l = 1 dm³"
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího objemu.",
+      "items": [
+        "5 ml",
+        "1 dl",
+        "1 l",
+        "1 hl",
+        "1 m³"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Při čtení stupnice odměrného válce u vody se díváme na spodní okraj prohnuté hladiny.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak změříš objem malého kamene?",
+      "answer": "Naliju vodu do odměrného válce a přečtu objem. Ponořím kámen a přečtu nový objem. Rozdíl je objem kamene."
+    },
+    {
+      "type": "open",
+      "question": "Jak spolu souvisí litr a krychlový decimetr?",
+      "answer": "Jsou si rovny: 1 l = 1 dm³. Krychle o hraně 1 dm pojme právě 1 litr."
+    }
+  ]
+}

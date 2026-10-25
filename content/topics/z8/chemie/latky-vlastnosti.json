@@ -1,0 +1,461 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "latky-vlastnosti",
+  "title": "Látky a jejich vlastnosti",
+  "emoji": "🧪",
+  "explanations": [
+    {
+      "title": "Kolem nás",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozhlédni se po kuchyni. Hrnek, lžička, okno, svíčka. Každá věc je z něčeho vyrobená – z porcelánu, z kovu, ze skla, z vosku. **Chemie** je věda, která zkoumá právě to „z čeho“: materiály, ze kterých je svět, a to, jak se mění."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když víš, z čeho věc je, víš, jak se bude chovat. Kovová lžička v horkém čaji zteplá, dřevěná skoro ne. Sklo se rozbije, plast se ohne. Podle toho se věci vyrábějí i používají."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Těleso",
+          "definition": "Předmět, který můžeš ukázat prstem nebo vzít do ruky. Má svůj tvar a hranice.",
+          "example": "hrnek, hřebík, sklenice, svíčka, kolejnice"
+        },
+        {
+          "type": "term",
+          "term": "Látka",
+          "definition": "To, z čeho je těleso vyrobené – jeho materiál. Látkou je i voda nebo vzduch.",
+          "example": "porcelán, železo, sklo, vosk, voda"
+        },
+        {
+          "type": "term",
+          "term": "Vlastnost látky",
+          "definition": "Něco, čím se látka liší od jiných látek. Zjistíš ji pozorováním, pokusem nebo měřením.",
+          "example": "barva, zápach, jestli se rozpustí ve vodě, jestli hoří"
+        },
+        {
+          "type": "heading",
+          "text": "Těleso, nebo látka?"
+        },
+        {
+          "type": "text",
+          "text": "Zeptej se: „Je to věc, nebo materiál?“ Hřebík je věc – těleso. Železo, ze kterého je, je látka. Ze stejné látky může být mnoho těles: ze železa je hřebík, klíč i kolejnice."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď položky do kbelíků. Pomůže otázka: „Dá se z toho něco vyrobit?“ Když ano, je to látka."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "těleso",
+              "látka"
+            ],
+            "items": [
+              {
+                "text": "hřebík",
+                "group": 0
+              },
+              {
+                "text": "železo",
+                "group": 1
+              },
+              {
+                "text": "sklenice",
+                "group": 0
+              },
+              {
+                "text": "sklo",
+                "group": 1
+              },
+              {
+                "text": "lžička",
+                "group": 0
+              },
+              {
+                "text": "voda",
+                "group": 1
+              },
+              {
+                "text": "svíčka",
+                "group": 0
+              },
+              {
+                "text": "vosk",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Podle čeho látky poznáme"
+        },
+        {
+          "type": "term",
+          "term": "Skupenství",
+          "definition": "Stav, ve kterém látka je: **pevné**, **kapalné** (teče) nebo **plynné** (rozletí se do celého prostoru).",
+          "example": "Led je pevný, voda kapalná, pára plynná – a pořád je to voda."
+        },
+        {
+          "type": "term",
+          "term": "Hustota",
+          "definition": "Říká, jak „těžká“ je látka, když porovnáme stejně velké kousky.",
+          "example": "Kostka železa je mnohem těžší než stejně velká kostka dřeva. Železo má větší hustotu – proto se ve vodě potopí, dřevo plave."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**skupenství** – pevné, kapalné, plynné",
+            "**barva a lesk** – zlato je žluté a lesklé",
+            "**zápach** – ocet je cítit, voda ne",
+            "**hustota** – železo je „těžší“ než dřevo",
+            "**rozpustnost ve vodě** – cukr se rozpustí, písek ne",
+            "**vodivost** – měď vede elektrický proud i teplo, plast ne",
+            "**hořlavost** – dřevo hoří, kámen ne",
+            "**teplota tání a varu** – led taje při 0 °C, voda vře při 100 °C"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Máš dva bílé zrnité prášky – cukr a jemný bílý písek. Jak je bezpečně rozlišíš?",
+          "answer": "Nasyp trochu každého do sklenice s vodou a zamíchej. Cukr se rozpustí a „zmizí“, písek klesne na dno. Rozhodla vlastnost **rozpustnost ve vodě**. (Ochutnávat v chemii neznámé látky nikdy nesmíš.)"
+        },
+        {
+          "type": "example",
+          "question": "Proč je drát v kabelu z mědi a obal z plastu?",
+          "answer": "Měď **vede** elektrický proud – proud teče drátem. Plast proud **nevede** – chrání nás, abychom proud nedostali. Každá látka je použitá podle své vlastnosti."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hřebík je látka.",
+          "right": "Hřebík je těleso. Látka je železo, ze kterého je.",
+          "why": "Látka je materiál, těleso je předmět z něj. Zeptej se „Z čeho to je?“ – odpověď je látka."
+        },
+        {
+          "type": "summary",
+          "text": "Těleso je předmět, látka je to, z čeho je. Látky rozlišujeme podle vlastností: skupenství, barvy, zápachu, hustoty, rozpustnosti, vodivosti, hořlavosti a teploty tání a varu."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V mrazáku je led, v hrnci voda a nad hrncem pára. Pořád je to stejná látka – voda. Mění se jen to, v jakém je stavu."
+        },
+        {
+          "type": "text",
+          "text": "Když tomu rozumíš, víš, proč schne prádlo, proč se orosí studená láhev z ledničky nebo proč led plave. A naučíš se látky popsat přesně, jako chemik."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Látka",
+          "definition": "Materiál, ze kterého jsou věci. Věci samotné (hrnek, hřebík) jsou **tělesa**.",
+          "example": "Hrnek je těleso, porcelán je látka."
+        },
+        {
+          "type": "term",
+          "term": "Částice",
+          "definition": "Každá látka se skládá z nepředstavitelně malých kousků. Nevidíš je ani běžným mikroskopem. Pořád se trochu pohybují.",
+          "example": "V jediné kapce vody jsou miliardy miliard částic vody."
+        },
+        {
+          "type": "term",
+          "term": "Skupenství",
+          "definition": "Stav látky: pevné, kapalné nebo plynné. Liší se tím, jak blízko a jak volně jsou částice.",
+          "example": "led – pevné, voda – kapalné, pára – plynné"
+        },
+        {
+          "type": "term",
+          "term": "Objem",
+          "definition": "Kolik místa látka zabírá. Měří se třeba v litrech nebo v cm³.",
+          "example": "Litr mléka má objem 1 litr v krabici i v hrnci."
+        },
+        {
+          "type": "heading",
+          "text": "Tři skupenství v tabulce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupenství",
+            "Částice",
+            "Tvar",
+            "Objem"
+          ],
+          "rows": [
+            [
+              "pevné",
+              "těsně u sebe, jen kmitají na místě",
+              "stálý",
+              "stálý"
+            ],
+            [
+              "kapalné",
+              "blízko, ale kloužou kolem sebe",
+              "podle nádoby",
+              "stálý"
+            ],
+            [
+              "plynné",
+              "daleko od sebe, volně létají",
+              "podle nádoby",
+              "vyplní celý prostor"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Přeliješ litr vody z hrnce do lahve. Změní se tvar? A objem?",
+          "answer": "Tvar ano – voda teď má tvar lahve. Objem ne – je to pořád 1 litr. Kapalina má **stálý objem**, ale **tvar podle nádoby**."
+        },
+        {
+          "type": "heading",
+          "text": "Přeměny skupenství"
+        },
+        {
+          "type": "term",
+          "term": "Var",
+          "definition": "Vypařování, které probíhá v celé kapalině najednou – tvoří se bubliny páry. Čistá voda vře při 100 °C (za normálního tlaku).",
+          "example": "Voda v rychlovarné konvici."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Děj",
+            "Změna",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "tání",
+              "pevné → kapalné",
+              "led taje (při 0 °C)"
+            ],
+            [
+              "tuhnutí",
+              "kapalné → pevné",
+              "voda v mrazáku zmrzne"
+            ],
+            [
+              "vypařování, var",
+              "kapalné → plynné",
+              "prádlo schne, voda vře"
+            ],
+            [
+              "kapalnění (kondenzace)",
+              "plynné → kapalné",
+              "orosená studená láhev"
+            ],
+            [
+              "sublimace",
+              "pevné → plynné",
+              "suchý led, jód"
+            ],
+            [
+              "desublimace",
+              "plynné → pevné",
+              "jinovatka na trávě"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty. Nejdřív si tipni, jakou změnu děj znamená, pak zkontroluj."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "tání",
+                "back": "pevné → kapalné"
+              },
+              {
+                "front": "tuhnutí",
+                "back": "kapalné → pevné"
+              },
+              {
+                "front": "vypařování",
+                "back": "kapalné → plynné"
+              },
+              {
+                "front": "kapalnění",
+                "back": "plynné → kapalné"
+              },
+              {
+                "front": "sublimace",
+                "back": "pevné → plynné"
+              },
+              {
+                "front": "desublimace",
+                "back": "plynné → pevné"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Hustota vzorcem"
+        },
+        {
+          "type": "term",
+          "term": "Hustota ρ (ró)",
+          "definition": "Kolik gramů váží 1 cm³ látky. Spočítáš ji `ρ = m / V`, kde **m** je hmotnost (kolik to váží) a **V** objem.",
+          "example": "Voda má hustotu asi **1 g/cm³** – 1 cm³ vody váží 1 g."
+        },
+        {
+          "type": "example",
+          "question": "Kostička kovu má objem 10 cm³ a váží 27 g. Jaká je její hustota?",
+          "answer": "`ρ = m / V` = 27 g : 10 cm³ = **2,7 g/cm³**. Takovou hustotu má hliník."
+        },
+        {
+          "type": "text",
+          "text": "Co má menší hustotu než voda, plave (dřevo, led, olej). Co má větší, klesne ke dnu (železo, kámen)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Voda se vypařuje až při 100 °C.",
+          "right": "Vypařovat se může při každé teplotě. Při 100 °C voda **vře**.",
+          "why": "Prádlo uschne i v pokoji. Vypařování probíhá jen z povrchu a pomalu, var v celé kapalině a s bublinami."
+        },
+        {
+          "type": "summary",
+          "text": "Pevná látka má stálý tvar i objem, kapalina stálý objem, plyn vyplní celý prostor. Tání, tuhnutí, vypařování, kapalnění a sublimace mění skupenství, ne látku. Hustota `ρ = m / V`, voda asi 1 g/cm³."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co z toho je látka (ne těleso)?",
+      "options": [
+        "měď",
+        "drát",
+        "mince",
+        "trubka"
+      ],
+      "answer": 0,
+      "explanation": "Drát, mince i trubka jsou předměty z mědi."
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá přechod z pevného skupenství přímo do plynného?",
+      "options": [
+        "sublimace",
+        "tání",
+        "var",
+        "kondenzace"
+      ],
+      "answer": 0,
+      "explanation": "Takhle mizí třeba jód nebo suchý led."
+    },
+    {
+      "type": "truefalse",
+      "question": "Kapalina má stálý objem, ale tvar podle nádoby.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Plyn má stálý tvar.",
+      "answer": false,
+      "explanation": "Plyn vyplní celý prostor nádoby."
+    },
+    {
+      "type": "match",
+      "question": "Spoj děj se změnou skupenství.",
+      "pairs": [
+        [
+          "tání",
+          "pevné → kapalné"
+        ],
+        [
+          "tuhnutí",
+          "kapalné → pevné"
+        ],
+        [
+          "kapalnění",
+          "plynné → kapalné"
+        ],
+        [
+          "vypařování",
+          "kapalné → plynné"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která vlastnost odliší cukr od písku nejsnáz?",
+      "options": [
+        "rozpustnost ve vodě",
+        "barva",
+        "skupenství"
+      ],
+      "answer": 0,
+      "explanation": "Cukr se ve vodě rozpustí, písek ne."
+    },
+    {
+      "type": "input",
+      "question": "Při jaké teplotě ve °C vře čistá voda za normálního tlaku?",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Při jaké teplotě ve °C taje led za normálního tlaku?",
+      "answers": [
+        "0"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která látka vede elektrický proud?",
+      "options": [
+        "měď",
+        "sklo",
+        "dřevo",
+        "plast"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Hořlavost je vlastnost látky.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi tělesem a látkou? Uveď příklad.",
+      "answer": "Těleso je předmět s určitým tvarem, látka je materiál, ze kterého je. Například hrnek je těleso, porcelán je látka."
+    },
+    {
+      "type": "open",
+      "question": "Podle jakých vlastností můžeme rozlišit látky?",
+      "answer": "Podle skupenství, barvy, zápachu, hustoty, rozpustnosti ve vodě, teploty tání a varu, vodivosti nebo hořlavosti."
+    }
+  ]
+}

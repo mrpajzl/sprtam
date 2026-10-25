@@ -1,0 +1,383 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "exponencialni-funkce",
+  "title": "Exponenciální funkce a rovnice",
+  "emoji": "🦠",
+  "explanations": [
+    {
+      "title": "Zdvojování",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Složíš papír napůl – má 2 vrstvy. Znovu – 4. Potřetí – 8. Po deseti přeloženích by měl 1024 vrstev. Každý krok **násobí** stejným číslem. Tak rostou bakterie, úspory v bance i šíření zprávy po internetu."
+        },
+        {
+          "type": "text",
+          "text": "Takový růst popisuje exponenciální funkce. A naopak pokles „pořád na polovinu“ – rozpad radioaktivních látek, chladnutí čaje – také."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Exponenciální funkce",
+          "definition": "Funkce y = aˣ, kde základ a je pevné kladné číslo různé od 1 a **proměnná x je v exponentu**.",
+          "example": "y = 2ˣ: f(3) = 2³ = 8."
+        },
+        {
+          "type": "term",
+          "term": "Základ a",
+          "definition": "Číslo, kterým se při každém kroku x o 1 násobí. a > 1 → růst, 0 < a < 1 → pokles.",
+          "example": "a = 2 je zdvojování, a = 1/2 je půlení."
+        },
+        {
+          "type": "text",
+          "text": "Proč a ≠ 1? Protože 1ˣ = 1 pro každé x – žádný růst ani pokles, jen konstanta. Taková funkce se exponenciální nenazývá."
+        },
+        {
+          "type": "heading",
+          "text": "Jak roste 2ˣ"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na sloupce. Každý je dvakrát delší než předchozí. A pod nulou: 2⁰ = 1, 2⁻¹ = 1/2, 2⁻² = 1/4 – pořád kladné, jen se blíží nule."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "2⁻²",
+                "value": 0.25
+              },
+              {
+                "label": "2⁻¹",
+                "value": 0.5
+              },
+              {
+                "label": "2⁰",
+                "value": 1
+              },
+              {
+                "label": "2¹",
+                "value": 2
+              },
+              {
+                "label": "2²",
+                "value": 4
+              },
+              {
+                "label": "2³",
+                "value": 8
+              },
+              {
+                "label": "2⁴",
+                "value": 16
+              },
+              {
+                "label": "2⁵",
+                "value": 32
+              }
+            ]
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "Graf vždy prochází bodem **[0; 1]**, protože a⁰ = 1.",
+            "Hodnoty jsou vždy **kladné**: H(f) = (0; ∞). Osu x graf nikdy neprotne.",
+            "a > 1: rostoucí. 0 < a < 1: klesající – (1/2)ˣ se každým krokem půlí."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "100 bakterií se každou hodinu zdvojnásobí. Kolik jich je po 5 hodinách?",
+          "answer": "100 · 2 · 2 · 2 · 2 · 2 = 100 · 2⁵ = 100 · 32 = **3200**."
+        },
+        {
+          "type": "example",
+          "question": "Vklad 10 000 Kč, úrok 10 % ročně (úrok se připisuje k vkladu). Kolik je na účtu po 2 letech?",
+          "answer": "Každý rok se částka násobí 1,1. 10 000 · 1,1 · 1,1 = 10 000 · 1,21 = **12 100 Kč**."
+        },
+        {
+          "type": "heading",
+          "text": "Exponenciální rovnice"
+        },
+        {
+          "type": "term",
+          "term": "Exponenciální rovnice",
+          "definition": "Rovnice, kde je neznámá v exponentu.",
+          "example": "2ˣ = 32"
+        },
+        {
+          "type": "text",
+          "text": "Ptáš se: kolikrát musím násobit dvojkou, abych dostal 32? 2, 4, 8, 16, 32 – pětkrát. x = 5."
+        },
+        {
+          "type": "mistake",
+          "wrong": "2ˣ = 32 → x = 32 : 2 = 16",
+          "right": "x = 5, protože 2⁵ = 32",
+          "why": "x není činitel, ale exponent. Nehledáš, kolikrát se 2 vejde do 32, ale kolikrát musíš 2 vynásobit samo sebou."
+        },
+        {
+          "type": "summary",
+          "text": "y = aˣ (a > 0, a ≠ 1): každý krok násobí základem. Prochází [0; 1], je vždy kladná. a > 1 roste, 0 < a < 1 klesá."
+        }
+      ]
+    },
+    {
+      "title": "Stejný základ",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Za kolik let se úspory zdvojnásobí? Kdy klesne radioaktivita na bezpečnou úroveň? Na to musíš umět řešit rovnice, kde je neznámá **v exponentu**."
+        },
+        {
+          "type": "text",
+          "text": "Mnoho takových rovnic vyřešíš jedním trikem: obě strany přepíšeš jako mocninu stejného čísla."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Exponenciální funkce",
+          "definition": "f(x) = aˣ, kde a > 0, a ≠ 1. D(f) = ℝ, H(f) = (0; ∞). Pro a > 1 rostoucí, pro 0 < a < 1 klesající.",
+          "example": "y = 3ˣ, y = (1/2)ˣ"
+        },
+        {
+          "type": "term",
+          "term": "Prostá funkce",
+          "definition": "Různé vstupy dávají různé výstupy. Exponenciální funkce je prostá, takže z aʳ = aˢ plyne r = s.",
+          "example": "2ˣ = 2⁵ ⇒ x = 5."
+        },
+        {
+          "type": "heading",
+          "text": "Připomenutí mocnin"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Pravidlo",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "a⁰ = 1",
+              "5⁰ = 1"
+            ],
+            [
+              "a⁻ⁿ = 1/aⁿ",
+              "1/9 = 1/3² = 3⁻²"
+            ],
+            [
+              "(aʳ)ˢ = aʳ·ˢ",
+              "4ˣ = (2²)ˣ = 2²ˣ"
+            ],
+            [
+              "aʳ · aˢ = aʳ⁺ˢ",
+              "5ˣ⁺¹ = 5ˣ · 5"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi společný základ obou stran (často 2, 3, 5 nebo 10).",
+            "Přepiš obě strany jako mocniny toho základu.",
+            "Porovnej exponenty (funkce je prostá).",
+            "Vyřeš obyčejnou rovnici pro exponent.",
+            "Ověř dosazením."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Řeš 3ˣ = 1/9.",
+          "answer": "1/9 = 1/3² = 3⁻². Tedy 3ˣ = 3⁻² → **x = −2**."
+        },
+        {
+          "type": "example",
+          "question": "Řeš 4ˣ = 8.",
+          "answer": "4 = 2², 8 = 2³. (2²)ˣ = 2³ → 2²ˣ = 2³ → 2x = 3 → **x = 3/2 = 1,5**. Zkouška: 4^1,5 = (√4)³ = 8 ✓."
+        },
+        {
+          "type": "example",
+          "question": "Řeš 5ˣ⁺¹ = 25.",
+          "answer": "25 = 5². 5ˣ⁺¹ = 5² → x + 1 = 2 → **x = 1**."
+        },
+        {
+          "type": "heading",
+          "text": "Růst a pokles v praxi"
+        },
+        {
+          "type": "text",
+          "text": "Obecně: počáteční množství · (násobitel)^(počet kroků). Úrok 10 % = násobitel 1,1. Pokles o 20 % = násobitel 0,8."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se, jak se 10 000 Kč s úrokem 10 % mění rok po roce. Přírůstek je každý rok větší – úrok se počítá i z dřívějších úroků."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Kč",
+            "items": [
+              {
+                "label": "start",
+                "value": 10000
+              },
+              {
+                "label": "1. rok",
+                "value": 11000
+              },
+              {
+                "label": "2. rok",
+                "value": 12100
+              },
+              {
+                "label": "3. rok",
+                "value": 13310
+              },
+              {
+                "label": "4. rok",
+                "value": 14641
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "100 bakterií, každou hodinu dvojnásobek. Kolik po 5 h?",
+          "answer": "100 · 2⁵ = **3200**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "4ˣ = 8 → x = 2 (protože 4 · 2 = 8)",
+          "right": "x = 1,5",
+          "why": "Exponent neříká „krát kolik“, ale „kolikrát se násobí“. 4² = 16, ne 8. Převedením na základ 2 vyjde 2x = 3."
+        },
+        {
+          "type": "summary",
+          "text": "aˣ je vždy kladné a prochází [0; 1]. Exponenciální rovnici řeš převedením obou stran na stejný základ a porovnáním exponentů."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "2ˣ = 32, x =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3ˣ = 1/9, x =",
+      "answers": [
+        "−2",
+        "-2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "y = (1/2)ˣ je:",
+      "options": [
+        "klesající",
+        "rostoucí",
+        "konstantní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Graf y = aˣ prochází bodem [0; 1].",
+      "answer": true,
+      "explanation": "a⁰ = 1"
+    },
+    {
+      "type": "choice",
+      "question": "H(f) pro y = 2ˣ:",
+      "options": [
+        "(0; ∞)",
+        "ℝ",
+        "⟨0; ∞)",
+        "⟨1; ∞)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "4ˣ = 8, x =",
+      "answers": [
+        "1,5",
+        "3/2"
+      ],
+      "explanation": "2²ˣ = 2³"
+    },
+    {
+      "type": "input",
+      "question": "100 bakterií se každou hodinu zdvojnásobí. Kolik jich je po 5 h?",
+      "answers": [
+        "3200"
+      ],
+      "explanation": "100 · 2⁵"
+    },
+    {
+      "type": "choice",
+      "question": "5ˣ⁺¹ = 25, x =",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "−1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Vklad 10 000 Kč, úrok 10 % ročně (složené úročení). Částka po 2 letech (Kč) =",
+      "answers": [
+        "12100"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "y = 1ˣ je exponenciální funkce.",
+      "answer": false,
+      "explanation": "Základ musí být a ≠ 1, jinak jde o konstantu."
+    },
+    {
+      "type": "truefalse",
+      "question": "2ˣ > 0 pro všechna reálná x.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Kdy je exponenciální funkce y = aˣ rostoucí a kdy klesající?",
+      "answer": "Pro a > 1 je rostoucí, pro 0 < a < 1 klesající. Vždy je kladná a prochází bodem [0; 1]."
+    },
+    {
+      "type": "open",
+      "question": "Jak řešíš exponenciální rovnici typu 4ˣ = 8?",
+      "answer": "Obě strany převedu na mocniny stejného základu (2²ˣ = 2³). Exponenciální funkce je prostá, proto se rovnají exponenty: 2x = 3, x = 3/2."
+    }
+  ]
+}

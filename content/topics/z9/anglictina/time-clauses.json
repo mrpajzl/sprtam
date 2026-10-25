@@ -1,0 +1,393 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "time-clauses",
+  "title": "When, as soon as, before + budoucnost",
+  "emoji": "🕐",
+  "explanations": [
+    {
+      "title": "Jako if",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Zavolám ti, **až** přijdu domů.“ „**Jakmile** skončí film, půjdeme.“ „Počkám, **dokud** nepřijdeš.“ Pořád plánuješ, co uděláš, až se stane něco jiného."
+        },
+        {
+          "type": "text",
+          "text": "Anglicky se takové věty řídí stejným pravidlem jako věty s *if*: za spojkou času je **přítomný čas**, i když mluvíš o budoucnosti. Když to umíš s *if*, umíš to i tady."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Spojka",
+          "definition": "Slovo, které spojuje dvě části věty.",
+          "example": "a, ale, když, až – anglicky and, but, when"
+        },
+        {
+          "type": "term",
+          "term": "Časová věta",
+          "definition": "Část souvětí, která říká, **kdy** se stane druhá věc. Začíná časovou spojkou.",
+          "example": "…až přijdu domů. = …when I get home."
+        },
+        {
+          "type": "term",
+          "term": "Hlavní věta",
+          "definition": "Ta část souvětí, která dává smysl i sama. Tady v ní je *will*.",
+          "example": "I'll phone you… = Zavolám ti…"
+        },
+        {
+          "type": "term",
+          "term": "Přítomný čas prostý",
+          "definition": "Základní tvar slovesa (u *he, she, it* s *-s*).",
+          "example": "I get, the film ends, he goes"
+        },
+        {
+          "type": "heading",
+          "text": "Časové spojky"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Spojka",
+            "Česky",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "when",
+              "až, když",
+              "I'll phone you when I get home."
+            ],
+            [
+              "as soon as",
+              "jakmile",
+              "As soon as the film ends, we'll go."
+            ],
+            [
+              "before",
+              "předtím než",
+              "Before he goes to bed, he'll brush his teeth."
+            ],
+            [
+              "after",
+              "potom co",
+              "After we eat, we'll play."
+            ],
+            [
+              "until",
+              "dokud ne, až do",
+              "I'll wait until you come."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Stejné pravidlo jako u if"
+        },
+        {
+          "type": "text",
+          "text": "Česky: „až **přijdu**“, „dokud **nepřijdeš**“ – zní to jako budoucnost. Anglicky ale za spojku dáš **přítomný čas**: *when I **get** home, until you **come***. *Will* patří jen do hlavní věty."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň. Za časovou spojkou žádné *will*."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "I'll phone you when I",
+                "after": "home.",
+                "options": [
+                  "get",
+                  "will get",
+                  "got"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "As soon as the film",
+                "after": ", we'll go.",
+                "options": [
+                  "ends",
+                  "will end"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "I'll wait until you",
+                "after": ".",
+                "options": [
+                  "come",
+                  "will come"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Before he goes to bed, he",
+                "after": "brush his teeth.",
+                "options": [
+                  "will",
+                  "is"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Až mi bude osmnáct, naučím se řídit.",
+          "answer": "Za *when* přítomný čas: *When I am eighteen,* … Hlavní věta s *will*: *I'll learn to drive.*"
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Zavolám ti, jakmile přistanu.",
+          "answer": "*I will call you as soon as I land.* – *land* (přistát) je v přítomném čase."
+        },
+        {
+          "type": "mistake",
+          "wrong": "I'll wait until you will come.",
+          "right": "I'll wait until you come.",
+          "why": "Po časové spojce (*until, when, as soon as…*) je přítomný čas, ne *will*."
+        },
+        {
+          "type": "summary",
+          "text": "**when / as soon as / before / after / until + přítomný čas**, hlavní věta **will**."
+        }
+      ]
+    },
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si plán na zítřek: nejdřív škola, pak oběd, pak trénink. Když ho popisuješ, spojuješ věci slovy „až“, „jakmile“, „předtím než“. V angličtině má taková věta dvě části a každá má svůj čas. Postavíme ji krok za krokem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Souvětí",
+          "definition": "Věta, která se skládá ze dvou (nebo více) menších vět.",
+          "example": "Až skončí škola, půjdu domů."
+        },
+        {
+          "type": "term",
+          "term": "Časová spojka",
+          "definition": "Slovo, které říká, jak spolu dvě věci souvisí v čase.",
+          "example": "when (až), before (předtím než), after (potom co), as soon as (jakmile), until (dokud ne)"
+        },
+        {
+          "type": "term",
+          "term": "Present simple",
+          "definition": "Přítomný čas prostý: *I finish, she finishes*.",
+          "example": "school finishes"
+        },
+        {
+          "type": "term",
+          "term": "will",
+          "definition": "Pomocné slovo pro budoucnost: *will* + sloveso.",
+          "example": "I will go home"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozděl české souvětí na dvě části. Část se spojkou „až, jakmile, předtím než…“ je časová věta.",
+            "Časovou větu přelož v **přítomném čase**: *as soon as school finishes*.",
+            "Druhou část (hlavní větu) přelož s **will**: *I will go home*.",
+            "Spoj je. Pokud začínáš časovou větou, dej čárku: *As soon as school finishes, I will go home.*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na spojku, řekni nahlas, co znamená, a kartičku otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "as soon as",
+                "back": "jakmile"
+              },
+              {
+                "front": "until",
+                "back": "dokud ne, až do"
+              },
+              {
+                "front": "before",
+                "back": "předtím než"
+              },
+              {
+                "front": "after",
+                "back": "potom co"
+              },
+              {
+                "front": "when",
+                "back": "až, když"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: Before he ___ (go) to bed, he will brush his teeth.",
+          "answer": "Časová věta s *before* → přítomný čas, *he* → *goes*. *Before he goes to bed, he will brush his teeth.*"
+        },
+        {
+          "type": "example",
+          "question": "Vyber: We'll start when everyone arrives. / We'll start when everyone will arrive.",
+          "answer": "První věta. Za *when* je přítomný čas *arrives*, *will* je jen v hlavní větě."
+        },
+        {
+          "type": "mistake",
+          "wrong": "When I will be eighteen, I'll learn to drive.",
+          "right": "When I'm eighteen, I'll learn to drive.",
+          "why": "Česky „až mi bude“, ale anglicky za *when* přítomný čas: *I'm (I am)*."
+        },
+        {
+          "type": "summary",
+          "text": "Časová věta = **přítomný čas**. Hlavní věta = **will**. Stejně jako u *if*."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "I’ll phone you when I ___ home.",
+      "options": [
+        "get",
+        "will get",
+        "got"
+      ],
+      "answer": 0,
+      "explanation": "Po when přítomný čas."
+    },
+    {
+      "type": "choice",
+      "question": "As soon as the film ___, we’ll go.",
+      "options": [
+        "ends",
+        "will end",
+        "ending"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "„I’ll wait until you will come.“ je správně.",
+      "answer": false,
+      "explanation": "Po until přítomný čas: until you come."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: Before he ___ (go) to bed, he will brush his teeth.",
+      "answers": [
+        "goes"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: When I ___ (be) eighteen, I’ll learn to drive.",
+      "answers": [
+        "am",
+        "'m"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj spojku s významem.",
+      "pairs": [
+        [
+          "as soon as",
+          "jakmile"
+        ],
+        [
+          "until",
+          "dokud ne"
+        ],
+        [
+          "before",
+          "předtím než"
+        ],
+        [
+          "after",
+          "potom co"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "I will",
+        "call you",
+        "as soon as",
+        "I",
+        "land."
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Vyber správně.",
+      "options": [
+        "We’ll start when everyone arrives.",
+        "We start when everyone will arrive.",
+        "We’ll start when everyone will arrive."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V hlavní větě (bez spojky) se o budoucnosti mluví pomocí will.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Přelož spojku „jakmile“ (3 slova).",
+      "answers": [
+        "as soon as"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký čas použiješ po spojkách when, before, as soon as, když mluvíš o budoucnosti?",
+      "answer": "Present simple, ne will. Např. I’ll call you when I arrive."
+    },
+    {
+      "type": "open",
+      "question": "Řekni anglicky, co uděláš, jakmile skončí škola.",
+      "answer": "Např. As soon as school finishes, I will go home and play football."
+    }
+  ]
+}

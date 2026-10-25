@@ -1,0 +1,411 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "sklonovani-obtiznych-jmen",
+  "title": "Skloňování obtížných jmen",
+  "emoji": "🧩",
+  "explanations": [
+    {
+      "title": "Pasti v tabulce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "*S dětma*, *s lidma*, *v muzeumu* – takhle to lidé často říkají. Ve škole, v písemce nebo v přihlášce to ale bude chyba."
+        },
+        {
+          "type": "text",
+          "text": "Několik podstatných jmen se skloňuje **nepravidelně** – nemají přesně tvary jako jejich vzor. Naučíš se je, protože se objevují v diktátech i v přijímačkách."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Skloňování",
+          "definition": "Připomenutí: měnění podstatného jména podle pádů a čísel.",
+          "example": "dítě – bez dítěte – s dítětem – s dětmi"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Připomenutí: tvar podle otázky. 1. kdo? co?, 2. koho? čeho?, 3. komu? čemu?, 4. koho? co?, 5. oslovení, 6. o kom? o čem?, 7. s kým? čím?"
+        },
+        {
+          "type": "term",
+          "term": "Spisovný tvar",
+          "definition": "Tvar, který je správný podle pravidel spisovné češtiny. Opak je tvar **hovorový** (běžný v řeči).",
+          "example": "spisovně *s dětmi*, hovorově *s dětma*"
+        },
+        {
+          "type": "heading",
+          "text": "Slova, na která pozor"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Slovo",
+            "Pozor na tvar"
+          ],
+          "rows": [
+            [
+              "oči, uši",
+              "s očima, s ušima (7. pád)"
+            ],
+            [
+              "ruce, nohy",
+              "rukama, nohama (7. pád, spisovně)"
+            ],
+            [
+              "lidé",
+              "lidé (1. pád), lidi (4. pád), s lidmi (7. pád)"
+            ],
+            [
+              "děti",
+              "s dětmi"
+            ],
+            [
+              "přítel",
+              "přátelé, bez přátel, s přáteli"
+            ],
+            [
+              "muzeum",
+              "v muzeu, muzea, bez muzeí"
+            ],
+            [
+              "téma",
+              "bez tématu, témata"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak si to zapamatovat"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Oči, uši, ruce, nohy** jsou části těla, které máme dvakrát. Mají zvláštní 7. pád na **-ma**: *očima, ušima, rukama, nohama*.",
+            "U ostatních slov je **-ma** v 7. pádě hovorové. Spisovně: *s lidmi, s dětmi, s přáteli*.",
+            "**Lidé** je 1. pád (kdo?): *Lidé čekali.* **Lidi** je 4. pád (koho?): *Viděl jsem lidi.*",
+            "U **muzeum** koncovka *-um* v ostatních pádech **odpadne**: muze-um → muze-a, v muze-u."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Vyber spisovný tvar."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Šel do kina s ",
+                "after": ".",
+                "options": [
+                  "přáteli",
+                  "přátelama",
+                  "přátelemi"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Mluvil s ",
+                "after": " z vesnice.",
+                "options": [
+                  "lidmi",
+                  "lidma",
+                  "lidemi"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Byli jsme v ",
+                "after": " techniky.",
+                "options": [
+                  "muzeu",
+                  "muzeumu",
+                  "muzeum"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Tleskal oběma ",
+                "after": ".",
+                "options": [
+                  "rukama",
+                  "rukami",
+                  "ruky"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Učitelka odešla s ",
+                "after": " na výlet.",
+                "options": [
+                  "dětmi",
+                  "dětma",
+                  "dětěmi"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Potkal jsem ___ ze sousedství.* (lidé/lidi)",
+          "answer": "Potkal jsem **koho?** → 4. pád → **lidi**."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Díval se na nás velk_ma očima.*",
+          "answer": "U *očí* má v 7. pádě i přídavné jméno koncovku -ma: **velkýma** očima."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Šli jsme na výlet s dětma.",
+          "right": "Šli jsme na výlet s dětmi.",
+          "why": "Koncovka -ma je spisovná jen u oči, uši, ruce, nohy (a oba, dva). U dětí je spisovně -mi."
+        },
+        {
+          "type": "summary",
+          "text": "Spisovně: s lidmi, s dětmi, s přáteli; ale očima, ušima, rukama, nohama. Lidé = 1. pád, lidi = 4. pád. Muzeum → v muzeu."
+        }
+      ]
+    },
+    {
+      "title": "Vlastní jména",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Napíšeš pozvánku: „Přijď s ___ (Hugo).“ S Hugem? S Hugou? Jména lidí se v češtině také skloňují – a u některých nevíme jak."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, jak najít správný tvar u vlastních jmen i u několika obtížných obecných slov. Klíčem je najít, které slovo se skloňuje stejně – **vzor**."
+        },
+        {
+          "type": "term",
+          "term": "Vlastní jméno",
+          "definition": "Jméno konkrétní osoby, místa nebo věci. Píše se s velkým písmenem.",
+          "example": "Hugo, Marie, Smetana, Praha"
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Připomenutí: známé slovo, podle kterého skloňujeme jiná slova se stejnými koncovkami.",
+          "example": "pán, předseda, žena, růže, jarní"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar podle otázky: bez koho? (2.), ke komu? (3.), s kým? (7.)…",
+          "example": "bez Huga, k Hugovi, s Hugem"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Urči rod: *Hugo* je muž → mužský životný.",
+            "Najdi vzor, který zní podobně v 2. pádě. *Hugo – bez Huga* jako *pán – bez pána*.",
+            "Dosaď koncovky vzoru: k pán**ovi** → k Hug**ovi**, s pán**em** → s Hug**em**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Klepni na jméno a zkontroluj tvary. Nejdřív je zkus říct nahlas."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Hugo (vzor pán)",
+                "back": "bez Huga, k Hugovi, s Hugem"
+              },
+              {
+                "front": "Jiří (jako přídavné jméno jarní)",
+                "back": "bez Jiřího, k Jiřímu, s Jiřím"
+              },
+              {
+                "front": "Zeus",
+                "back": "bez Dia, k Diovi, s Diem"
+              },
+              {
+                "front": "Marie (vzor růže)",
+                "back": "bez Marie, k Marii, s Marií"
+              },
+              {
+                "front": "Smetana (vzor předseda)",
+                "back": "bez Smetany, ke Smetanovi, se Smetanou"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "A obtížná obecná jména"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**přítel** – v množném čísle se mění kořen: *přátelé, bez přátel, s přáteli*.",
+            "**téma** – skloňuje se s -t-: *bez tématu, o tématu, témata*.",
+            "**muzeum** – *-um* odpadá: *muzea, v muzeu, bez muzeí*.",
+            "**oči, uši** – 7. pád *očima, ušima*; **lidé** – 1. pád *lidé*, 4. pád *lidi*, 7. pád *s lidmi*."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Napsal dopis ___ (Jiří).*",
+          "answer": "Napsal komu? → 3. pád. Jiří se skloňuje jako přídavné jméno *jarní* (jarnímu) → **Jiřímu**."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Mluvili jsme o ___ (Marie).*",
+          "answer": "O kom? → 6. pád. Vzor růže: o růži → o **Marii**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Šel jsem s Hugou.",
+          "right": "Šel jsem s Hugem.",
+          "why": "*Hugo* je muž, mužská jména na -o skloňujeme podle vzoru *pán*: s pánem → s Hugem. Tvar *Hugou* by patřil ženě."
+        },
+        {
+          "type": "summary",
+          "text": "U jména urči rod a najdi vzor: Hugo jako pán (s Hugem), Jiří jako jarní (Jiřímu), Marie jako růže (Marií), Smetana jako předseda. Zeus → Dia."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak je to spisovně?",
+      "options": [
+        "s dětmi",
+        "s dětma",
+        "s dětima"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak je to spisovně?",
+      "options": [
+        "s lidmi",
+        "s lidma",
+        "s lidema"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Díval se na mě smutnýma ___.*",
+      "options": [
+        "očima",
+        "očimi",
+        "očama"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Byl jsem v ___.* (muzeum)",
+      "options": [
+        "muzeu",
+        "muzeumu",
+        "muzeum"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Napiš 2. pád jednotného čísla od *téma* (bez čeho?).",
+      "answers": [
+        "tématu"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Věta *Lidé čekali na nádraží.* je spisovná.",
+      "answer": true,
+      "explanation": "V 1. pádě je spisovně *lidé*."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: *Potkal jsem ___ ze sousedství.*",
+      "options": [
+        "lidi",
+        "lidé",
+        "lidmi"
+      ],
+      "answer": 0,
+      "explanation": "Koho potkal? → 4. pád *lidi*."
+    },
+    {
+      "type": "input",
+      "question": "Napiš 1. pád množného čísla od *přítel*.",
+      "answers": [
+        "přátelé"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj jméno s tvarem.",
+      "pairs": [
+        [
+          "Hugo – 2. pád",
+          "Huga"
+        ],
+        [
+          "Jiří – 3. pád",
+          "Jiřímu"
+        ],
+        [
+          "Zeus – 2. pád",
+          "Dia"
+        ],
+        [
+          "Marie – 7. pád",
+          "Marií"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak zní 2. pád množného čísla od *muzeum*?",
+      "options": [
+        "muzeí",
+        "muzeumů",
+        "muzeumí"
+      ],
+      "answer": 0,
+      "explanation": "Koncovka -um v ostatních pádech odpadá: muzea, muzeí."
+    },
+    {
+      "type": "open",
+      "question": "Jak zní 7. pád množného čísla slov *oči* a *uši*? Uveď příklad.",
+      "answer": "Očima a ušima. Přídavné jméno také končí na -ma: *velkýma očima*, *vlastníma ušima*."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi *lidé* a *lidi*?",
+      "answer": "*Lidé* je 1. pád (Lidé čekali.), *lidi* je 4. pád (Viděl jsem lidi.). V 7. pádě je spisovně *s lidmi*."
+    }
+  ]
+}

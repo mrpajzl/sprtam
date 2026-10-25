@@ -1,0 +1,374 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stylove-chyby",
+  "title": "Stylové chyby",
+  "emoji": "🚫",
+  "explanations": [
+    {
+      "title": "Poznej chybu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Vrátil se zpátky.“ „Zúčastnil se na soutěži.“ „Ten kluk, já jsem mu dal knihu.“ Gramaticky to skoro projde, ale zní to neobratně. Jsou to **stylové chyby**."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? V maturitní písemné práci se hodnotí i styl. A v testu se ptají, jak se taková chyba jmenuje."
+        },
+        {
+          "type": "term",
+          "term": "Stylová chyba",
+          "definition": "Neobratné vyjádření: věta je zbytečně dlouhá, zdvojená nebo zmatená.",
+          "example": "*vrátit se zpět*"
+        },
+        {
+          "type": "term",
+          "term": "Pleonasmus",
+          "definition": "Zbytečné zdvojení významu – řekneš totéž dvakrát.",
+          "example": "*vrátit se zpět* (vrátit se = jít zpět)"
+        },
+        {
+          "type": "term",
+          "term": "Anakolut",
+          "definition": "Vyšinutí z větné vazby – věta začne jednou stavbou a pokračuje jinou.",
+          "example": "*Ten kluk, já jsem mu dal knihu.*"
+        },
+        {
+          "type": "term",
+          "term": "Kontaminace",
+          "definition": "Zkřížení dvou vazeb do jedné chybné.",
+          "example": "*zúčastnit se na něčem* (ze *zúčastnit se čeho* + *podílet se na čem*)"
+        },
+        {
+          "type": "term",
+          "term": "Vata",
+          "definition": "Prázdná slova, která nenesou žádnou informaci.",
+          "example": "*vlastně, jaksi, v podstatě, jakoby*"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti chybné spojení, urči chybu a pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "vrátit se zpět",
+                "back": "pleonasmus – „vrátit se“ už znamená zpět"
+              },
+              {
+                "front": "Ten kluk, já jsem mu dal knihu.",
+                "back": "anakolut – vyšinutí z větné vazby"
+              },
+              {
+                "front": "zúčastnit se na něčem",
+                "back": "kontaminace – zkřížení „zúčastnit se čeho“ a „podílet se na čem“"
+              },
+              {
+                "front": "V podstatě jaksi vlastně nevím.",
+                "back": "vata – prázdná slova"
+              },
+              {
+                "front": "nejoptimálnější",
+                "back": "chybné stupňování – optimální už znamená nejlepší"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Oprav: *Ten člověk, já jsem mu nevěřil.*",
+          "answer": "Věta začíná podmětem *ten člověk*, ale pokračuje jinou stavbou (anakolut). Sjednotíme ji: **Tomu člověku jsem nevěřil.**"
+        },
+        {
+          "type": "example",
+          "question": "Oprav: *Opět se znovu vrátil.*",
+          "answer": "*Opět* a *znovu* znamenají totéž (pleonasmus). Jedno vynecháme: **Opět se vrátil.** / **Znovu se vrátil.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Tohle je nejoptimálnější řešení.",
+          "right": "Tohle je optimální řešení.",
+          "why": "*Optimální* už znamená „nejlepší možný“. Stupňovat ho je jako říct „nejnejlepší“."
+        },
+        {
+          "type": "summary",
+          "text": "Pleonasmus = totéž dvakrát. Anakolut = vyšinutí z vazby. Kontaminace = dvě vazby slepené v jednu. Vata = prázdná slova. Co nenese informaci, škrtni."
+        }
+      ]
+    },
+    {
+      "title": "Oprava krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Napsat text je jen polovina práce. Druhá polovina je **revize** – přečíst ho znovu a vyčistit. Profesionální autoři škrtají třetinu toho, co napíšou."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Dostaneš postup, kterým stylové chyby najdeš ve svém textu. A v testu poznáš, která věta je chybná."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vazba",
+          "definition": "Spojení slova s určitým pádem nebo předložkou.",
+          "example": "*zúčastnit se* + 2. pád (*soutěže*); *podílet se na* + 6. pád (*na projektu*)"
+        },
+        {
+          "type": "term",
+          "term": "Pleonasmus",
+          "definition": "Nadbytečné zdvojení významu.",
+          "example": "*sestoupit dolů*"
+        },
+        {
+          "type": "term",
+          "term": "Kontaminace",
+          "definition": "Zkřížení dvou vazeb.",
+          "example": "*zúčastnit se na soutěži*"
+        },
+        {
+          "type": "term",
+          "term": "Anakolut",
+          "definition": "Věta začne jednou stavbou a skončí jinou.",
+          "example": "*Ten pán, mu jsem to řekl.*"
+        },
+        {
+          "type": "heading",
+          "text": "Postup revize"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "U každého slovesa pohybu se zeptej: neopakuji směr? (*vystoupat nahoru, sestoupit dolů, vrátit se zpět*) → pleonasmus, škrtni.",
+            "U sloves s předložkou zkontroluj vazbu ve slovníku nebo IJP (*zúčastnit se čeho*, ne *na čem*) → kontaminace.",
+            "Přečti větu od začátku do konce: hodí se konec k začátku? Pokud ne → anakolut, přestav větu.",
+            "Škrtni slova *vlastně, jaksi, v podstatě, jakoby* – pokud věta funguje i bez nich, byla to vata."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Chyba",
+            "Příklad",
+            "Oprava"
+          ],
+          "rows": [
+            [
+              "pleonasmus",
+              "stoupat nahoru",
+              "stoupat"
+            ],
+            [
+              "anakolut",
+              "Ten kluk, já jsem mu dal knihu.",
+              "Tomu klukovi jsem dal knihu."
+            ],
+            [
+              "kontaminace",
+              "zúčastnit se na něčem",
+              "zúčastnit se něčeho"
+            ],
+            [
+              "vata",
+              "Je to jakoby v podstatě dobré.",
+              "Je to dobré."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozřaď spojení. Pozor, některá jsou v pořádku."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "pleonasmus",
+              "kontaminace",
+              "v pořádku"
+            ],
+            "items": [
+              {
+                "text": "sestoupit dolů",
+                "group": 0
+              },
+              {
+                "text": "zúčastnit se na soutěži",
+                "group": 1
+              },
+              {
+                "text": "zúčastnit se soutěže",
+                "group": 2
+              },
+              {
+                "text": "hlavní protagonista",
+                "group": 0
+              },
+              {
+                "text": "podílet se na projektu",
+                "group": 2
+              },
+              {
+                "text": "vzájemně se navzájem",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč je *hlavní protagonista* pleonasmus?",
+          "answer": "*Protagonista* znamená hlavní postava. Slovo *hlavní* je tedy zdvojené – stačí **protagonista**."
+        },
+        {
+          "type": "example",
+          "question": "Oprav: *Vzájemně spolu spolupracovali.*",
+          "answer": "*Spolupracovat* už obsahuje *spolu* i *vzájemně*. Oprava: **Spolupracovali.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Studenti se zúčastnili na olympiádě.",
+          "right": "Studenti se zúčastnili olympiády.",
+          "why": "*Zúčastnit se* má vazbu s 2. pádem (čeho?). *Na* sem přeteklo ze slovesa *podílet se na*. To je kontaminace."
+        },
+        {
+          "type": "summary",
+          "text": "Revize: hledej zdvojený význam (pleonasmus), špatné vazby (kontaminace), rozbitou stavbu věty (anakolut) a prázdná slova (vata)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které spojení je pleonasmus?",
+      "options": [
+        "vystoupat nahoru",
+        "vystoupat na kopec",
+        "rychle běžet"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je anakolut?",
+      "options": [
+        "opakování slov",
+        "vyšinutí z větné vazby",
+        "cizí slovo"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Která vazba je správná?",
+      "options": [
+        "zúčastnit se na závodě",
+        "zúčastnit se závodu",
+        "zúčastnit se o závod"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "„Nejoptimálnější“ je správný tvar.",
+      "answer": false,
+      "explanation": "Optimální = nejlepší; nestupňuje se."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Vata“ jsou slova, která nenesou informaci.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj chybu s příkladem.",
+      "pairs": [
+        [
+          "pleonasmus",
+          "vrátit se zpět"
+        ],
+        [
+          "kontaminace",
+          "zúčastnit se na"
+        ],
+        [
+          "anakolut",
+          "Ten pán, mu jsem to řekl."
+        ],
+        [
+          "vata",
+          "jakoby v podstatě"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve které větě je pleonasmus?",
+      "options": [
+        "Opět se znovu vrátil.",
+        "Vrátil se domů.",
+        "Znovu se vrátil k práci."
+      ],
+      "answer": 0,
+      "explanation": "„Opět“ i „znovu“ znamenají totéž."
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá zkřížení dvou vazeb, např. „zúčastnit se na něčem“? (jedno slovo)",
+      "answers": [
+        "kontaminace"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak opravit „Ten člověk, já jsem mu nevěřil“?",
+      "options": [
+        "Tomu člověku jsem nevěřil.",
+        "Ten člověk, já nevěřil.",
+        "Ten člověk mu nevěřil."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "„Vzájemně spolu spolupracovat“ obsahuje pleonasmus.",
+      "answer": true,
+      "explanation": "Spolupracovat už znamená spolu, vzájemně."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli pojmy pleonasmus a anakolut a uveď příklady.",
+      "answer": "Pleonasmus je nadbytečné vyjádření téhož (vrátit se zpět, sestoupit dolů). Anakolut je vyšinutí z větné vazby, věta začne jednou konstrukcí a pokračuje jinou (Ten kluk, já jsem mu dal knihu)."
+    },
+    {
+      "type": "open",
+      "question": "Jak se ve slohové práci vyhneš vatě?",
+      "answer": "Po napsání text přečtu a škrtám slova bez obsahu (vlastně, jaksi, v podstatě), opakující se myšlenky a zbytečné úvody. Každá věta má přinést novou informaci."
+    }
+  ]
+}

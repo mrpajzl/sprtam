@@ -1,0 +1,334 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cislovky",
+  "title": "Číslovky",
+  "emoji": "🔢",
+  "explanations": [
+    {
+      "title": "Kolik a kolikátý",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš **tři** bonbony. Jsi **třetí** v řadě. Byl jsi tam **třikrát**. Pořád „tři“, ale pokaždé to znamená něco jiného."
+        },
+        {
+          "type": "text",
+          "text": "Slovům, která vyjadřují počet nebo pořadí, říkáme **číslovky**. Podle otázky poznáš jejich druh – a víš třeba, kdy za číslici napsat tečku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Číslovka",
+          "definition": "Slovo, které říká **počet** nebo **pořadí**. Je to 4. slovní druh.",
+          "example": "tři, třetí, třikrát"
+        },
+        {
+          "type": "term",
+          "term": "Základní číslovka",
+          "definition": "Odpovídá na **kolik?**",
+          "example": "jeden, tři, sto"
+        },
+        {
+          "type": "term",
+          "term": "Řadová číslovka",
+          "definition": "Odpovídá na **kolikátý?** – říká pořadí.",
+          "example": "první, třetí, 5."
+        },
+        {
+          "type": "term",
+          "term": "Druhová číslovka",
+          "definition": "Odpovídá na **kolikerý?** – kolik druhů.",
+          "example": "dvojí, trojí"
+        },
+        {
+          "type": "term",
+          "term": "Násobná číslovka",
+          "definition": "Odpovídá na **kolikrát?**",
+          "example": "dvakrát, třikrát, dvojnásobný"
+        },
+        {
+          "type": "table",
+          "head": [
+            "druh",
+            "otázka",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "základní",
+              "kolik?",
+              "jeden, tři, sto"
+            ],
+            [
+              "řadové",
+              "kolikátý?",
+              "první, třetí, 5."
+            ],
+            [
+              "druhové",
+              "kolikerý?",
+              "dvojí, trojí"
+            ],
+            [
+              "násobné",
+              "kolikrát?",
+              "dvakrát, třikrát, dvojnásobný"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Řadovou číslovku napsanou číslicí píšeme **s tečkou**: *1. září* (čteme „prvního září“)."
+        },
+        {
+          "type": "example",
+          "question": "Jaká číslovka je „sedm“?",
+          "answer": "Kolik? → sedm → **základní**."
+        },
+        {
+          "type": "example",
+          "question": "Jaká číslovka je v „5. května“?",
+          "answer": "Čteme *pátého* května. Kolikátého? → **řadová**. Proto je za 5 tečka."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Narodil jsem se 3 dubna.",
+          "right": "Narodil jsem se 3. dubna.",
+          "why": "Datum je pořadí dne (třetího) – řadová číslovka. Číslicí ji píšeme s tečkou."
+        },
+        {
+          "type": "summary",
+          "text": "Kolik? → základní. Kolikátý? → řadová (číslicí s tečkou). Kolikerý? → druhová. Kolikrát? → násobná."
+        }
+      ]
+    },
+    {
+      "title": "Kartičky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Z jednoho čísla – třeba pět – vyrobíš několik různých slov: *pět, pátý, pětkrát, patero*. Každé odpovídá na jinou otázku."
+        },
+        {
+          "type": "text",
+          "text": "A někdy přesně nevíš kolik: *mnoho, málo, několik*. I to jsou číslovky."
+        },
+        {
+          "type": "term",
+          "term": "Číslovka",
+          "definition": "Slovo, které vyjadřuje počet nebo pořadí.",
+          "example": "pět, pátý, mnoho"
+        },
+        {
+          "type": "term",
+          "term": "Určitá číslovka",
+          "definition": "Říká **přesně**, kolik.",
+          "example": "tři, desátý, dvakrát"
+        },
+        {
+          "type": "term",
+          "term": "Neurčitá číslovka",
+          "definition": "Říká počet **nepřesně**.",
+          "example": "mnoho, málo, několik, pár"
+        },
+        {
+          "type": "term",
+          "term": "Druhy podle otázky",
+          "definition": "Kolik? – základní. Kolikátý? – řadová. Kolikerý? – druhová. Kolikrát? – násobná.",
+          "example": "dva, druhý, dvojí, dvakrát"
+        },
+        {
+          "type": "heading",
+          "text": "Trénink"
+        },
+        {
+          "type": "text",
+          "text": "Polož si otázku a urči druh. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "pět",
+                "back": "základní (kolik?)"
+              },
+              {
+                "front": "pátý",
+                "back": "řadová (kolikátý?)"
+              },
+              {
+                "front": "pětkrát",
+                "back": "násobná (kolikrát?)"
+              },
+              {
+                "front": "patero",
+                "back": "druhová (kolikero?)"
+              },
+              {
+                "front": "několik",
+                "back": "neurčitá – přesně nevíme kolik"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jak se liší „tři“ a „třetí“?",
+          "answer": "*Tři* říká **kolik** (tři jablka) – základní. *Třetí* říká **pořadí** (třetí místo) – řadová."
+        },
+        {
+          "type": "example",
+          "question": "Napiš slovem řadovou číslovku k „4“.",
+          "answer": "Kolikátý? → **čtvrtý**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Několik“ je určitá číslovka.",
+          "right": "„Několik“ je neurčitá číslovka.",
+          "why": "Z „několik“ nepoznáš přesný počet (tři? pět?). Proto neurčitá."
+        },
+        {
+          "type": "summary",
+          "text": "Určitá číslovka = přesně (tři). Neurčitá = nepřesně (několik). Druh poznáš otázkou."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká číslovka je „sedm“?",
+      "options": [
+        "základní",
+        "řadová",
+        "násobná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaká číslovka je „druhý“?",
+      "options": [
+        "základní",
+        "řadová",
+        "druhová"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaká číslovka je „třikrát“?",
+      "options": [
+        "řadová",
+        "násobná",
+        "základní"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Která číslovka je neurčitá?",
+      "options": [
+        "mnoho",
+        "deset",
+        "desátý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Napiš slovem řadovou číslovku k „4“.",
+      "answers": [
+        "čtvrtý",
+        "ctvrty"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolikátý slovní druh jsou číslovky?",
+      "answers": [
+        "4",
+        "čtvrtý",
+        "ctvrty"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve spojení „5. května“ je řadová číslovka.",
+      "answer": true,
+      "explanation": "Čteme „pátého května“."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Několik“ je číslovka určitá.",
+      "answer": false,
+      "explanation": "Nevíme přesně kolik → neurčitá."
+    },
+    {
+      "type": "match",
+      "question": "Spoj číslovku s druhem.",
+      "pairs": [
+        [
+          "dva",
+          "základní"
+        ],
+        [
+          "druhý",
+          "řadová"
+        ],
+        [
+          "dvakrát",
+          "násobná"
+        ],
+        [
+          "dvojí",
+          "druhová"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď řadové číslovky od nejmenší.",
+      "items": [
+        "první",
+        "druhý",
+        "třetí",
+        "čtvrtý",
+        "pátý"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je napsané správně?",
+      "options": [
+        "Narodil jsem se 3. dubna.",
+        "Narodil jsem se 3 dubna."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaké znáš druhy číslovek? Řekni příklady.",
+      "answer": "Základní (tři), řadové (třetí), druhové (trojí), násobné (třikrát). A dělíme je na určité a neurčité (mnoho)."
+    },
+    {
+      "type": "open",
+      "question": "Jak se liší „tři“ a „třetí“?",
+      "answer": "Tři je základní číslovka – říká kolik. Třetí je řadová – říká pořadí, kolikátý."
+    }
+  ]
+}

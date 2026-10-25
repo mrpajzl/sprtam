@@ -1,0 +1,423 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "past-continuous",
+  "title": "Minulý čas průběhový",
+  "emoji": "🎬",
+  "explanations": [
+    {
+      "title": "Jako film",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že si celý včerejší den natočíš na video. Pak film zastavíš v 8 večer. Na obrazovce je jedna zastavená chvíle: táta zrovna vaří, ty zrovna čteš, pes zrovna spí."
+        },
+        {
+          "type": "text",
+          "text": "Angličtina má na takovou zastavenou chvíli v minulosti zvláštní tvar: **minulý čas průběhový** (anglicky *past continuous*). Hodí se, když vyprávíš příběh, píšeš sloh nebo když se tě někdo zeptá: „Co jsi dělal, když jsem ti volal?“"
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Slovo, které říká, co kdo dělá nebo co se děje.",
+          "example": "číst = read, vařit = cook, spát = sleep, hrát = play"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo nebo co tu činnost dělá. Najdeš ho otázkou „kdo? co?“.",
+          "example": "V „My mum was cooking.“ je podmět *my mum* (moje máma)."
+        },
+        {
+          "type": "term",
+          "term": "Gramatický čas",
+          "definition": "Tvar slovesa, který říká, **kdy** se něco děje: teď, dřív, nebo potom. Angličtina má časů víc než čeština, a proto rozlišuje i to, jestli děj zrovna probíhal.",
+          "example": "čtu (teď) – četl jsem (dřív) – budu číst (potom)"
+        },
+        {
+          "type": "term",
+          "term": "Průběhový děj",
+          "definition": "Děj, který byl v danou chvíli „v půlce“: začal dřív a skončil až potom.",
+          "example": "V 8 večer jsem byl uprostřed čtení. Začal jsem v 7, skončil v 9."
+        },
+        {
+          "type": "heading",
+          "text": "Zastav film"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si časovou osu. Klepni na jednotlivé body. Čtení začalo v 7 a skončilo v 9. V 8 hodin tedy zrovna probíhalo."
+        },
+        {
+          "type": "widget",
+          "widget": "timeline",
+          "props": {
+            "events": [
+              {
+                "year": 7,
+                "label": "7:00 start reading"
+              },
+              {
+                "year": 8,
+                "label": "8:00 I was reading"
+              },
+              {
+                "year": 9,
+                "label": "9:00 stop reading"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Anglicky to řekneš: *At 8 pm I **was reading**.* = Ve 20 hodin jsem (zrovna) četl."
+        },
+        {
+          "type": "heading",
+          "text": "Ze dvou kousků"
+        },
+        {
+          "type": "term",
+          "term": "was / were",
+          "definition": "Minulé tvary slovesa *be* (být). *Was* patří k **I, he, she, it**. *Were* patří k **you, we, they**.",
+          "example": "I was = byl jsem, they were = byli"
+        },
+        {
+          "type": "term",
+          "term": "Koncovka -ing",
+          "definition": "Kousek, který přilepíš na konec slovesa. Znamená „zrovna probíhá“.",
+          "example": "read → reading, cook → cooking, play → playing"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kdo?",
+            "Pomocník",
+            "Sloveso + ing",
+            "Česky"
+          ],
+          "rows": [
+            [
+              "I",
+              "was",
+              "reading",
+              "četl jsem"
+            ],
+            [
+              "she / he / it",
+              "was",
+              "cooking",
+              "vařila / vařil / vařilo"
+            ],
+            [
+              "we / you / they",
+              "were",
+              "playing",
+              "hráli jsme / hrál jsi / hráli"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Ve 3 odpoledne jsme hráli fotbal (zrovna jsme byli uprostřed hry).",
+          "answer": "1) Kdo? *my = we* → patří k tomu **were**. 2) Hrát = *play* → *playing*. 3) Čas dej na konec. Výsledek: *We were playing football at 3 pm.*"
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Včera v 10 večer Tom spal.",
+          "answer": "1) Tom je on = *he* → **was**. 2) Spát = *sleep* → *sleeping*. 3) *Tom was sleeping at 10 pm yesterday.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "I were sleeping.",
+          "right": "I was sleeping.",
+          "why": "K *I* patří vždycky *was*. *Were* je jen pro *you, we, they*."
+        },
+        {
+          "type": "summary",
+          "text": "Zastavená chvíle v minulosti = **was/were + sloveso s -ing**. *At 8 I was reading.* = V 8 jsem zrovna četl."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když v češtině řekneš „Včera v šest jsem se učil“, je jasné, že ses zrovna učil – byl jsi v půlce. Čeština na to nemá zvláštní tvar. Angličtina ano, a bez něj by Angličan nevěděl, jestli ses učil celou chvíli, nebo jsi jen něco udělal a hotovo."
+        },
+        {
+          "type": "text",
+          "text": "Tomuto tvaru se říká **minulý čas průběhový** (*past continuous*). Naučíš se ho postavit v oznamovací větě, v záporu i v otázce – stejně jako stavíš věc podle návodu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Slovo pro činnost nebo děj – co kdo dělá.",
+          "example": "watch (dívat se), swim (plavat), write (psát)"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Ten, kdo činnost dělá. Stojí v anglické větě na začátku.",
+          "example": "*They* were swimming. – podmět je *they* (oni)."
+        },
+        {
+          "type": "term",
+          "term": "Průběhový čas",
+          "definition": "Tvar slovesa, který říká, že děj **právě probíhal** – nebyl na začátku ani na konci, byl uprostřed.",
+          "example": "At 6 I was studying. = V šest jsem se zrovna učil."
+        },
+        {
+          "type": "term",
+          "term": "Pomocné sloveso",
+          "definition": "Sloveso, které ve větě samo nic nového neříká. Jen pomáhá postavit čas, zápor nebo otázku. Tady pomáhá **was / were** (minulý tvar od *be* = být).",
+          "example": "V „She was singing.“ je *was* pomocník, hlavní význam nese *singing*."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorec"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Věta",
+            "Vzorec",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "oznamovací",
+              "podmět + was/were + sloveso-ing",
+              "She was sleeping."
+            ],
+            [
+              "zápor",
+              "podmět + wasn't/weren't + sloveso-ing",
+              "We weren't playing."
+            ],
+            [
+              "otázka",
+              "Was/Were + podmět + sloveso-ing?",
+              "Were you working?"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "*Was* jde s **I, he, she, it**. *Were* jde s **you, we, they**. Zápor vznikne přidáním *not*: *was not = wasn't*, *were not = weren't*. Otázka vznikne tak, že pomocník skočí **před** podmět."
+        },
+        {
+          "type": "heading",
+          "text": "Jak přilepit -ing"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Většinou jen přidáš -ing: *read → reading, play → playing*.",
+            "Končí-li sloveso na němé *-e*, to *e* zmizí: *write → writing, make → making*.",
+            "Krátké sloveso se vzorem souhláska–samohláska–souhláska zdvojí poslední písmeno: *sit → sitting, swim → swimming, run → running*."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každé věty vyber správný kousek. Nejdřív najdi podmět, pak rozhodni was, nebo were."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "I",
+                "after": "watching TV at 6.",
+                "options": [
+                  "was",
+                  "were"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "They were",
+                "after": "football.",
+                "options": [
+                  "playing",
+                  "play",
+                  "played"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "It",
+                "after": "raining all day.",
+                "options": [
+                  "was",
+                  "were"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "",
+                "after": "you sleeping at midnight?",
+                "options": [
+                  "Were",
+                  "Did"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Udělej zápor: Ann was dancing.",
+          "answer": "Pomocník je *was*, přidám *not*: *Ann wasn't dancing.* (Ann netancovala.)"
+        },
+        {
+          "type": "example",
+          "question": "Udělej otázku a krátkou odpověď: They were swimming.",
+          "answer": "Pomocník *were* skočí před podmět: *Were they swimming?* Krátká odpověď zopakuje jen pomocníka: *Yes, they were.* / *No, they weren't.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Did you sleeping at midnight?",
+          "right": "Were you sleeping at midnight?",
+          "why": "V průběhovém čase je pomocníkem *was/were*, ne *did*. *Did* patří k minulému času prostému (*Did you sleep?*)."
+        },
+        {
+          "type": "summary",
+          "text": "Vzorec: **was/were + sloveso-ing**. Zápor *wasn't/weren't*, otázka *Was/Were + podmět…?*"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "At 7 o'clock she ___ dinner.",
+      "options": [
+        "was having",
+        "were having",
+        "was have"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "We ___ for the bus.",
+      "options": [
+        "were waiting",
+        "was waiting",
+        "were wait"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Doplň: They ___ (swim) in the lake at noon.",
+      "answers": [
+        "were swimming"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: He ___ (not / listen).",
+      "answers": [
+        "wasn't listening",
+        "was not listening"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„I were sleeping.“ je správně.",
+      "answer": false,
+      "explanation": "I → was: I was sleeping."
+    },
+    {
+      "type": "truefalse",
+      "question": "Minulý průběhový čas popisuje děj, který v daném okamžiku probíhal.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď otázku.",
+      "items": [
+        "What",
+        "were",
+        "you",
+        "doing",
+        "at 9?"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Krátká odpověď: Was she running? – Yes, she ___.",
+      "answers": [
+        "was"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Správný -ing tvar od „sit“:",
+      "options": [
+        "sitting",
+        "siting",
+        "sitteing"
+      ],
+      "answer": 0,
+      "explanation": "Krátká slabika → zdvojí se t."
+    },
+    {
+      "type": "match",
+      "question": "Spoj podmět se správným tvarem.",
+      "pairs": [
+        [
+          "I was writing",
+          "psal jsem"
+        ],
+        [
+          "you were writing",
+          "psal jsi"
+        ],
+        [
+          "they were writing",
+          "psali"
+        ],
+        [
+          "she was writing",
+          "psala"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak se tvoří minulý čas průběhový a kdy ho použiješ?",
+      "answer": "Was/were + sloveso s -ing. Použiju ho pro děj, který právě probíhal v určitém okamžiku v minulosti: At 5 pm I was doing my homework."
+    },
+    {
+      "type": "open",
+      "question": "Co jsi dělal(a) včera v 7 večer? Odpověz anglicky.",
+      "answer": "At 7 pm yesterday I was having dinner with my family."
+    }
+  ]
+}

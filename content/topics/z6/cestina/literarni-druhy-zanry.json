@@ -1,0 +1,386 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "literarni-druhy-zanry",
+  "title": "Pohádka, pověst, bajka",
+  "emoji": "📖",
+  "explanations": [
+    {
+      "title": "Tříděním",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V knihovně nejsou knihy naházené na hromadě. Jsou rozdělené: básničky zvlášť, pohádky zvlášť, divadelní hry zvlášť. Díky tomu najdeš, co hledáš."
+        },
+        {
+          "type": "text",
+          "text": "Stejně třídíme i texty v literatuře. Když poznáš, do které skupiny text patří, víš, co od něj čekat: kouzla, kus historie, nebo ponaučení."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Literatura",
+          "definition": "Texty, které někdo vymyslel a zapsal (nebo vyprávěl) – básně, příběhy, divadelní hry.",
+          "example": "pohádky, básničky, romány, divadelní hry"
+        },
+        {
+          "type": "term",
+          "term": "Literární druh",
+          "definition": "Tři největší „regály“ literatury: **lyrika**, **epika** a **drama**."
+        },
+        {
+          "type": "term",
+          "term": "Lyrika",
+          "definition": "Texty, které vyjadřují **city a nálady**. Nemají děj (nic se „neděje“).",
+          "example": "báseň o smutném podzimu"
+        },
+        {
+          "type": "term",
+          "term": "Epika",
+          "definition": "Texty, které **vyprávějí příběh** – mají děj, postavy, začátek a konec.",
+          "example": "pohádka, pověst, bajka, román"
+        },
+        {
+          "type": "term",
+          "term": "Drama",
+          "definition": "Texty psané jako **rozhovory postav**, určené k hraní na jevišti.",
+          "example": "divadelní hra, komedie, tragédie"
+        },
+        {
+          "type": "term",
+          "term": "Žánr",
+          "definition": "Menší „police“ uvnitř literárního druhu. Žánry epiky jsou třeba pohádka, pověst, bajka."
+        },
+        {
+          "type": "heading",
+          "text": "Tři žánry epiky"
+        },
+        {
+          "type": "term",
+          "term": "Pohádka",
+          "definition": "Vymyšlený příběh s **kouzly** a nadpřirozenými bytostmi. **Dobro vítězí nad zlem.** Často začíná „Bylo, nebylo…“.",
+          "example": "Sněhurka, Popelka, O Smolíčkovi"
+        },
+        {
+          "type": "term",
+          "term": "Pověst",
+          "definition": "Příběh, který se váže ke **skutečnému místu, osobě nebo události**. Má **jádro pravdy**, ale lidé ho vyprávěním přikrášlili.",
+          "example": "Praotec Čech na hoře Říp, Libuše, Blaničtí rytíři"
+        },
+        {
+          "type": "term",
+          "term": "Bajka",
+          "definition": "Krátký příběh, ve kterém **zvířata jednají jako lidé**. Na konci je **ponaučení** – rada do života.",
+          "example": "Liška a vrána: nevěř lichotníkům."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď vlastnosti a příběhy ke správnému žánru."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "pohádka",
+              "pověst",
+              "bajka"
+            ],
+            "items": [
+              {
+                "text": "Kouzelný dědeček pomůže hrdinovi",
+                "group": 0
+              },
+              {
+                "text": "Dobro zvítězí nad zlem",
+                "group": 0
+              },
+              {
+                "text": "Začíná „Bylo, nebylo…“",
+                "group": 0
+              },
+              {
+                "text": "Skutečné místo, např. Vyšehrad",
+                "group": 1
+              },
+              {
+                "text": "Má jádro pravdy",
+                "group": 1
+              },
+              {
+                "text": "Praotec Čech",
+                "group": 1
+              },
+              {
+                "text": "Zvířata jednají jako lidé",
+                "group": 2
+              },
+              {
+                "text": "Na konci je ponaučení",
+                "group": 2
+              },
+              {
+                "text": "Liška a vrána",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Báseň popisuje, jak je autorovi smutno, když padá listí. Do kterého druhu patří?",
+          "answer": "Nevypráví příběh, vyjadřuje náladu → **lyrika**."
+        },
+        {
+          "type": "example",
+          "question": "Příběh vypráví, jak na Blaníku spí rytíři, kteří pomohou Čechům v největší nouzi. Co to je?",
+          "answer": "Váže se ke skutečné hoře Blaník, ale rytíři jsou vymyšlení → **pověst** (epika)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pověst je skutečná historie.",
+          "right": "Pověst má jen jádro pravdy.",
+          "why": "Místo nebo postava mohou být skutečné, ale děj lidé přikrášlili a doplnili. Pověst není učebnice dějepisu."
+        },
+        {
+          "type": "summary",
+          "text": "Literární druhy: lyrika (city), epika (děj), drama (rozhovory, divadlo). Pohádka = kouzla, pověst = jádro pravdy, bajka = zvířata a ponaučení."
+        }
+      ]
+    },
+    {
+      "title": "Přes autory",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dřív lidé neměli televizi ani knihy. Večer si **vyprávěli příběhy**. Babička je řekla dětem, ty zase svým dětem. Tak vznikly pohádky a pověsti, jejichž autora nikdo nezná."
+        },
+        {
+          "type": "text",
+          "text": "Později přišli lidé, kteří tyto příběhy **sbírali a zapisovali**. A jiní začali psát své vlastní. Podle toho, kdo příběh vymyslel a jak vypadá, ho zařadíme."
+        },
+        {
+          "type": "term",
+          "term": "Lidová slovesnost",
+          "definition": "Příběhy, písně a říkadla, které si lidé předávali **ústně**, vyprávěním. Autora neznáme.",
+          "example": "lidové pohádky, pověsti, říkanky"
+        },
+        {
+          "type": "term",
+          "term": "Lidová pohádka",
+          "definition": "Pohádka z lidové slovesnosti. Někdo ji jen zapsal.",
+          "example": "Sněhurka (zapsali bratři Grimmové)"
+        },
+        {
+          "type": "term",
+          "term": "Autorská pohádka",
+          "definition": "Pohádka, kterou **vymyslel a napsal** konkrétní spisovatel.",
+          "example": "Malá mořská víla (H. Ch. Andersen)"
+        },
+        {
+          "type": "heading",
+          "text": "Tři druhy literatury"
+        },
+        {
+          "type": "text",
+          "text": "Všechny texty dělíme na tři velké skupiny – **literární druhy**:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**lyrika** – vyjadřuje city a nálady, nemá děj (báseň o jaru),",
+            "**epika** – vypráví příběh s dějem (pohádka, pověst, bajka),",
+            "**drama** – rozhovory postav, hraje se v divadle (komedie, tragédie)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Uvnitř epiky rozlišujeme menší skupiny – **žánry**: pohádku (kouzla, dobro vítězí), pověst (skutečné místo nebo osoba, jádro pravdy) a bajku (zvířata jako lidé, ponaučení)."
+        },
+        {
+          "type": "heading",
+          "text": "Kdo co napsal nebo sebral"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu a zjisti, čím se autor proslavil. Zkus nejdřív hádat žánr."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Bratři Grimmové",
+                "back": "sbírali německé lidové pohádky (Sněhurka, Popelka)"
+              },
+              {
+                "front": "K. J. Erben a B. Němcová",
+                "back": "sbírali a zapisovali české lidové pohádky"
+              },
+              {
+                "front": "H. Ch. Andersen",
+                "back": "dánský autor pohádek: Malá mořská víla, Ošklivé káčátko"
+              },
+              {
+                "front": "Karel Čapek",
+                "back": "autorské pohádky: Devatero pohádek"
+              },
+              {
+                "front": "Alois Jirásek",
+                "back": "Staré pověsti české (1894)"
+              },
+              {
+                "front": "Ezop",
+                "back": "starověký řecký autor bajek (Liška a vrána)"
+              },
+              {
+                "front": "Jean de La Fontaine",
+                "back": "francouzský autor bajek"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je *Malá mořská víla* lidová, nebo autorská pohádka?",
+          "answer": "Má známého autora, H. Ch. Andersena, který ji vymyslel → **autorská**."
+        },
+        {
+          "type": "example",
+          "question": "O čem jsou *Staré pověsti české* a proč to nejsou pohádky?",
+          "answer": "Alois Jirásek v nich převyprávěl pověsti o počátcích českého národa – praotec Čech, Libuše, Přemysl. Vážou se ke skutečným místům (Říp, Vyšehrad), mají jádro pravdy → **pověsti**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Bratři Grimmové pohádky vymysleli.",
+          "right": "Bratři Grimmové lidové pohádky **sebrali a zapsali**.",
+          "why": "Lidé si je vyprávěli dávno před nimi. Grimmové je jen sepsali, proto jsou to pohádky lidové."
+        },
+        {
+          "type": "summary",
+          "text": "Lidovou pohádku si lidé vyprávěli, autora neznáme (sběratelé: Grimmové, Erben, Němcová). Autorskou někdo napsal (Andersen, Čapek). Pověsti: Jirásek. Bajky: Ezop, La Fontaine."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Ve kterém žánru jednají zvířata jako lidé a na konci je ponaučení?",
+      "options": [
+        "bajka",
+        "pověst",
+        "pohádka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo napsal *Staré pověsti české*?",
+      "options": [
+        "Alois Jirásek",
+        "Karel Jaromír Erben",
+        "Božena Němcová"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Pověst má často jádro pravdy a váže se ke skutečnému místu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který literární druh je určený k hraní na jevišti?",
+      "options": [
+        "drama",
+        "lyrika",
+        "epika"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Báseň vyjadřuje smutnou podzimní náladu a nemá děj. Je to…",
+      "options": [
+        "lyrika",
+        "epika",
+        "drama"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo byl Ezop?",
+      "options": [
+        "starověký řecký autor bajek",
+        "dánský autor pohádek",
+        "český sběratel pověstí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj autora s dílem.",
+      "pairs": [
+        [
+          "H. Ch. Andersen",
+          "Malá mořská víla"
+        ],
+        [
+          "Alois Jirásek",
+          "Staré pověsti české"
+        ],
+        [
+          "Karel Čapek",
+          "Devatero pohádek"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Lidová pohádka má vždy známého autora.",
+      "answer": false,
+      "explanation": "Lidé si ji předávali vyprávěním, autora neznáme."
+    },
+    {
+      "type": "choice",
+      "question": "Která postava patří do české pověsti?",
+      "options": [
+        "praotec Čech",
+        "Sněhurka",
+        "ošklivé káčátko"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Doplň začátek pohádky: „Bylo, ___…“",
+      "answers": [
+        "nebylo"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi pohádkou a pověstí?",
+      "answer": "Pohádka je vymyšlená, má kouzla a dobro vítězí. Pověst vychází ze skutečného místa, osoby nebo události a má jádro pravdy."
+    },
+    {
+      "type": "open",
+      "question": "Co je bajka? Uveď příklad.",
+      "answer": "Krátký příběh, ve kterém zvířata jednají jako lidé. Končí ponaučením. Např. Ezopova bajka *Liška a vrána*."
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "elektricke-pole",
+  "title": "Elektrické pole a kondenzátor",
+  "emoji": "🔋",
+  "explanations": [
+    {
+      "title": "Siločáry",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Nabitý balonek přitáhne vlasy, i když se jich nedotkne. Jak „ví“, že tam vlasy jsou? Kolem každého náboje je prostor, ve kterém působí na jiné náboje. Fyzici mu říkají elektrické pole."
+        },
+        {
+          "type": "text",
+          "text": "S polem pracuje každá elektronika: kondenzátory v nabíječce, blesk fotoaparátu, dotykový displej mobilu. A díky poli tě kovová karoserie auta ochrání před bleskem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektrické pole",
+          "definition": "Prostor kolem nabitého tělesa, ve kterém na jiné náboje působí elektrická síla."
+        },
+        {
+          "type": "term",
+          "term": "Siločáry",
+          "definition": "Myšlené čáry, které ukazují, kam by se pohnul malý kladný náboj. Vycházejí z kladného náboje a míří do záporného. Kde jsou hustě, je pole silné.",
+          "example": "Krupice v oleji mezi dvěma elektrodami se seřadí přesně podél siločar."
+        },
+        {
+          "type": "term",
+          "term": "Intenzita E",
+          "definition": "Jak silné je pole v daném místě: síla na každý coulomb náboje, `E = F / Q`. Jednotka N/C = V/m.",
+          "example": "Na náboj 4 μC působí síla 0,02 N → E = 0,02 / 0,000 004 = 5 000 N/C."
+        },
+        {
+          "type": "term",
+          "term": "Homogenní pole",
+          "definition": "Pole, které je všude stejně silné a míří stejným směrem – siločáry jsou rovnoběžné a stejně husté.",
+          "example": "Mezi dvěma rovnoběžnými nabitými deskami."
+        },
+        {
+          "type": "heading",
+          "text": "Napětí"
+        },
+        {
+          "type": "text",
+          "text": "Když pole posune náboj, vykoná práci. Napětí říká, kolik práce připadne na každý coulomb."
+        },
+        {
+          "type": "term",
+          "term": "Elektrické napětí U",
+          "definition": "Práce elektrických sil při přenesení náboje mezi dvěma místy, dělená tím nábojem: `U = W / Q`. Jednotka **volt (V)** = J/C.",
+          "example": "Baterie 1,5 V: každý coulomb, který jí projde, dostane 1,5 J."
+        },
+        {
+          "type": "text",
+          "text": "V homogenním poli mezi deskami ve vzdálenosti d platí `U = E · d`."
+        },
+        {
+          "type": "example",
+          "question": "Mezi deskami vzdálenými 1 cm je napětí 200 V. Jaká je intenzita pole?",
+          "answer": "E = U / d = 200 / 0,01 = **20 000 V/m**."
+        },
+        {
+          "type": "example",
+          "question": "Náboj 2 C projde napětím 12 V. Kolik práce vykonají elektrické síly?",
+          "answer": "W = Q · U = 2 · 12 = **24 J**."
+        },
+        {
+          "type": "heading",
+          "text": "Kondenzátor – zásobník náboje"
+        },
+        {
+          "type": "term",
+          "term": "Kondenzátor",
+          "definition": "Dvě vodivé desky blízko u sebe, oddělené izolantem. Po připojení ke zdroji se jedna nabije kladně, druhá záporně – kondenzátor uchová náboj a energii.",
+          "example": "Blesk fotoaparátu se nabije z kondenzátoru během zlomku sekundy."
+        },
+        {
+          "type": "term",
+          "term": "Kapacita C",
+          "definition": "Kolik náboje kondenzátor pojme na každý volt: `C = Q / U`. Jednotka **farad (F)**, běžně μF.",
+          "example": "Náboj 2 · 10⁻⁴ C při 100 V → C = 2 · 10⁻⁶ F = 2 μF."
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a zopakuj si čtyři hlavní vztahy tohoto tématu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "intenzita E",
+                "back": "E = F / Q, jednotka V/m (= N/C)"
+              },
+              {
+                "front": "napětí U",
+                "back": "U = W / Q, jednotka V"
+              },
+              {
+                "front": "homogenní pole",
+                "back": "U = E · d"
+              },
+              {
+                "front": "kapacita C",
+                "back": "C = Q / U, jednotka F (farad)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Kapacita roste s plochou desek a s tím, jaký izolant (**dielektrikum**) je mezi nimi; klesá, když desky oddálíš."
+        },
+        {
+          "type": "text",
+          "text": "Nabitý kondenzátor uchovává energii `E = ½ · C · U²`. Kondenzátory zapojené **vedle sebe (paralelně)** se chovají jako jeden s větší plochou: kapacity se sečtou. Zapojené **za sebou (sériově)** mají kapacitu menší: `1/C = 1/C₁ + 1/C₂`."
+        },
+        {
+          "type": "heading",
+          "text": "Faradayova klec"
+        },
+        {
+          "type": "text",
+          "text": "Uvnitř kovového vodiče je pole nulové – náboje na povrchu se rozestaví tak, že se jejich účinky uvnitř vyruší. Proto jsi v autě při bouřce v bezpečí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Siločáry jsou skutečné dráty nebo paprsky vycházející z náboje.",
+          "right": "Siločáry jsou jen pomocné myšlené čáry pro znázornění pole.",
+          "why": "Pole je všude mezi čarami, ne jen na nich. Čáry kreslíme, abychom viděli směr a sílu pole – hustší čáry = silnější pole."
+        },
+        {
+          "type": "summary",
+          "text": "Pole působí na náboje silou. E = F/Q, U = W/Q, v homogenním poli U = E·d. Kondenzátor uchovává náboj: C = Q/U. Siločáry jdou z + do −."
+        }
+      ]
+    },
+    {
+      "title": "Kondenzátor",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V každém elektronickém přístroji jsou desítky kondenzátorů. Vyhlazují napětí v nabíječce, uchovají energii pro blesk fotoaparátu a v defibrilátoru dodají srdci silný impulz. Abys je pochopil, potřebuješ nejdřív vědět, co je elektrické pole a napětí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektrické pole a intenzita E",
+          "definition": "Pole je prostor, kde působí síla na náboje. Intenzita `E = F / Q` je síla na 1 C (jednotka V/m). Pole znázorňujeme **siločárami** od + k −."
+        },
+        {
+          "type": "term",
+          "term": "Napětí U",
+          "definition": "`U = W / Q` – práce elektrických sil na 1 C náboje. Jednotka volt. V homogenním poli (rovnoběžné siločáry) `U = E · d`."
+        },
+        {
+          "type": "term",
+          "term": "Elektronvolt (eV)",
+          "definition": "Energie, kterou získá elektron, když projde napětím 1 V: `1 eV = 1,6 · 10⁻¹⁹ J`. Hodí se pro atomy a částice."
+        },
+        {
+          "type": "term",
+          "term": "Kondenzátor a kapacita",
+          "definition": "Kondenzátor = dvě vodivé desky oddělené izolantem. Kapacita `C = Q / U` (farad, F). 1 μF = 10⁻⁶ F."
+        },
+        {
+          "type": "term",
+          "term": "Dielektrikum a permitivita",
+          "definition": "**Dielektrikum** = izolant mezi deskami. Zvětšuje kapacitu tolikrát, kolik je jeho **relativní permitivita εᵣ**. ε₀ = 8,85 · 10⁻¹² F/m je permitivita vakua."
+        },
+        {
+          "type": "heading",
+          "text": "Deskový kondenzátor"
+        },
+        {
+          "type": "text",
+          "text": "`C = ε₀ · εᵣ · S / d`. Větší plocha desek S = větší kapacita. Větší vzdálenost d = menší kapacita. Dielektrikum s velkým εᵣ = větší kapacita."
+        },
+        {
+          "type": "text",
+          "text": "Energie nabitého kondenzátoru: `E = ½ · C · U²`."
+        },
+        {
+          "type": "example",
+          "question": "Kondenzátor 10 μF je nabitý na 100 V. Jakou energii uchovává?",
+          "answer": "E = ½ · C · U² = ½ · 10⁻⁵ · 100² = ½ · 10⁻⁵ · 10⁴ = **0,05 J**."
+        },
+        {
+          "type": "heading",
+          "text": "Spojování kondenzátorů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zapojení",
+            "Výsledná kapacita",
+            "Proč"
+          ],
+          "rows": [
+            [
+              "paralelně (vedle sebe)",
+              "C = C₁ + C₂",
+              "jako by se sečetla plocha desek"
+            ],
+            [
+              "sériově (za sebou)",
+              "1/C = 1/C₁ + 1/C₂",
+              "jako by se zvětšila vzdálenost desek"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Paralelně: kapacity prostě sečti.",
+            "Sériově: sečti převrácené hodnoty 1/C₁ + 1/C₂.",
+            "Výsledek otoč (převrať) – dostaneš C.",
+            "Kontrola: sériová kapacita je vždy menší než nejmenší z nich."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kondenzátory 6 μF a 3 μF zapojíme sériově. Výsledná kapacita?",
+          "answer": "1/C = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2. C = **2 μF** (menší než 3 μF ✓)."
+        },
+        {
+          "type": "example",
+          "question": "Kondenzátory 2 μF a 3 μF paralelně?",
+          "answer": "C = 2 + 3 = **5 μF**."
+        },
+        {
+          "type": "text",
+          "text": "Sériový výpočet si ověř na zlomcích: nastav 1/6 a pak 2/6 (= 1/3) a sečti v hlavě – dohromady 3/6, tedy polovina."
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 3,
+            "denominator": 6
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Sériově: C = 6 + 3 = 9 μF.",
+          "right": "Sériově: 1/C = 1/6 + 1/3 → C = 2 μF.",
+          "why": "U kondenzátorů je to naopak než u rezistorů: sčítají se paralelně. Sériové zapojení se chová jako jeden kondenzátor s většími mezerami mezi deskami, a ten má menší kapacitu."
+        },
+        {
+          "type": "text",
+          "text": "Uvnitř kovového vodiče je intenzita pole nulová – na tom je založena **Faradayova klec** (auto při bouřce)."
+        },
+        {
+          "type": "summary",
+          "text": "`C = Q/U`, deskový `C = ε₀εᵣS/d`, energie `½CU²`. Paralelně se kapacity sčítají, sériově jejich převrácené hodnoty."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Na náboj 4 μC působí síla 0,02 N. Intenzita pole v N/C =",
+      "answers": [
+        "5000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Mezi deskami vzdálenými 1 cm je napětí 200 V. Intenzita v V/m =",
+      "answers": [
+        "20000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kondenzátor nese náboj 2 · 10⁻⁴ C při napětí 100 V. Kapacita v μF =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kondenzátory 6 μF a 3 μF sériově. Výsledná kapacita v μF =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kondenzátory 2 μF a 3 μF paralelně. Výsledná kapacita v μF =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Náboj 2 C projde napětím 12 V. Práce elektrických sil v J =",
+      "answers": [
+        "24"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní kapacita deskového kondenzátoru, když zdvojnásobíme vzdálenost desek?",
+      "options": [
+        "zmenší se na polovinu",
+        "zdvojnásobí se",
+        "nezmění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vložením dielektrika mezi desky se kapacita kondenzátoru zvětší.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kolik joulů je 1 eV?",
+      "options": [
+        "1,6 · 10⁻¹⁹ J",
+        "1 J",
+        "9 · 10⁹ J",
+        "6,02 · 10²³ J"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Uvnitř nabitého kovového vodiče je intenzita elektrického pole nulová.",
+      "answer": true,
+      "explanation": "Na tom je založena Faradayova klec."
+    },
+    {
+      "type": "open",
+      "question": "Co je intenzita elektrického pole a jak souvisí s napětím v homogenním poli?",
+      "answer": "Intenzita E = F/Q je síla působící na jednotkový kladný náboj (V/m nebo N/C). V homogenním poli U = E·d, kde d je vzdálenost ve směru siločar."
+    },
+    {
+      "type": "open",
+      "question": "Na čem závisí kapacita deskového kondenzátoru?",
+      "answer": "C = ε₀εᵣS/d: roste s plochou desek a permitivitou dielektrika, klesá se vzdáleností desek."
+    }
+  ]
+}

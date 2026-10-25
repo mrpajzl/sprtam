@@ -1,0 +1,389 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ekonomika",
+  "title": "Ekonomika a trh",
+  "emoji": "🏭",
+  "explanations": [
+    {
+      "title": "Trh s jahodami",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V květnu stojí košík jahod 120 Kč, v červenci 50 Kč. Jahody jsou pořád stejné – tak proč se cena tolik mění? Odpověď dává **ekonomika**."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, jak vzniká cena, proč zdražuje a kam jdou peníze z daní."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ekonomika",
+          "definition": "Všechno, co souvisí s výrobou, prodejem a nákupem zboží a služeb a s penězi."
+        },
+        {
+          "type": "term",
+          "term": "Trh",
+          "definition": "Místo (i internetové), kde se setkávají prodávající a kupující."
+        },
+        {
+          "type": "term",
+          "term": "Nabídka",
+          "definition": "Kolik zboží prodávající nabízejí."
+        },
+        {
+          "type": "term",
+          "term": "Poptávka",
+          "definition": "Kolik zboží chtějí kupující koupit."
+        },
+        {
+          "type": "heading",
+          "text": "Jahody krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Květen: jahod je málo (nízká **nabídka**), všichni je chtějí (vysoká **poptávka**) → cena je **vysoká**.",
+            "Červenec: jahody dozrály všude (vysoká nabídka) → prodejci soutěží o zákazníky → cena **klesá**.",
+            "Když chce zboží víc lidí, než ho je, cena roste.",
+            "Když je zboží víc, než lidé chtějí, cena klesá."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Porovnej ceny v grafu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Kč za košík",
+            "items": [
+              {
+                "label": "květen",
+                "value": 120
+              },
+              {
+                "label": "červen",
+                "value": 80
+              },
+              {
+                "label": "červenec",
+                "value": 50
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Když zdražuje všechno"
+        },
+        {
+          "type": "term",
+          "term": "Inflace",
+          "definition": "Růst cen většiny zboží a služeb. Za stejné peníze si koupíš méně.",
+          "example": "Loni stál rohlík 3 Kč, letos 4 Kč – za 12 Kč si koupíš místo 4 rohlíků jen 3."
+        },
+        {
+          "type": "heading",
+          "text": "Daně"
+        },
+        {
+          "type": "term",
+          "term": "Daň",
+          "definition": "Povinná platba státu. Stát z daní platí školy, nemocnice, silnice, důchody."
+        },
+        {
+          "type": "term",
+          "term": "DPH",
+          "definition": "Daň z přidané hodnoty. Je schovaná v ceně zboží. Základní sazba v ČR je **21 %**."
+        },
+        {
+          "type": "example",
+          "question": "Před Vánoci chce každý stejnou hračku, ale v obchodech jich je málo. Co se stane s cenou?",
+          "answer": "Poptávka roste, nabídka stejná → cena **stoupá**."
+        },
+        {
+          "type": "example",
+          "question": "Kdo v ČR vybírá daně?",
+          "answer": "Daně vybírá **finanční úřad**. Peníze jdou do státního rozpočtu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Při vysoké inflaci si za stejné peníze koupím víc.",
+          "right": "Při inflaci si za stejné peníze koupím méně.",
+          "why": "Ceny rostou, ale peníze v peněžence zůstávají stejné – mají menší hodnotu."
+        },
+        {
+          "type": "summary",
+          "text": "Cenu určuje nabídka a poptávka: nedostatek → dražší, přebytek → levnější. Inflace = růst cen. Daně (např. DPH 21 %) vybírá finanční úřad."
+        }
+      ]
+    },
+    {
+      "title": "Koloběh peněz",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máma pracuje v pekárně a dostane mzdu. Za ni koupí chleba – v té samé pekárně. Pekárna zaplatí daně státu a stát z nich postaví školu, kam chodíš. Peníze krouží dokola."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme, kdo v ekonomice vystupuje, jak peníze obíhají a odkud má peníze stát."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Domácnost",
+          "definition": "Lidé, kteří spolu žijí a hospodaří. Pracují a nakupují."
+        },
+        {
+          "type": "term",
+          "term": "Firma (podnik)",
+          "definition": "Vyrábí zboží nebo poskytuje služby a prodává je."
+        },
+        {
+          "type": "term",
+          "term": "Podnikatel",
+          "definition": "Člověk, který na vlastní účet a riziko podniká, aby vydělal."
+        },
+        {
+          "type": "term",
+          "term": "Státní rozpočet",
+          "definition": "Plán příjmů a výdajů státu na jeden rok. Schvaluje ho Poslanecká sněmovna."
+        },
+        {
+          "type": "heading",
+          "text": "Koloběh"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj, jak se peníze vracejí na začátek."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "Domácnosti pracují ve firmách",
+              "Firmy jim platí mzdy",
+              "Domácnosti za mzdy nakupují zboží firem",
+              "Domácnosti i firmy platí daně státu",
+              "Stát platí školy, silnice, důchody"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Fáze ekonomického procesu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Výroba** – pekař upeče chleba.",
+            "**Rozdělení** – chleba se rozveze do obchodů.",
+            "**Směna** – v obchodě ho vyměníš za peníze.",
+            "**Spotřeba** – sníš ho."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Státní rozpočet"
+        },
+        {
+          "type": "table",
+          "head": [
+            "příjmy státu",
+            "výdaje státu"
+          ],
+          "rows": [
+            [
+              "DPH (daň v ceně zboží, základní sazba 21 %)",
+              "důchody"
+            ],
+            [
+              "daň z příjmů",
+              "školství"
+            ],
+            [
+              "spotřební daně (benzin, alkohol, cigarety)",
+              "zdravotnictví, obrana, silnice"
+            ],
+            [
+              "pojistné",
+              "sociální dávky"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Daně vybírá **finanční úřad**."
+        },
+        {
+          "type": "heading",
+          "text": "Nabídka, poptávka, inflace"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**nabídka** = co prodejci nabízejí",
+            "**poptávka** = co lidé chtějí koupit",
+            "když poptávka roste a nabídka ne, cena stoupá",
+            "**inflace** = růst cenové hladiny – za stejné peníze koupíš méně"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jsou důchody příjem, nebo výdaj státního rozpočtu?",
+          "answer": "Stát je **vyplácí** lidem → **výdaj**. DPH nebo daň z příjmů stát vybírá → příjmy."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď: spotřeba, výroba, směna, rozdělení.",
+          "answer": "Nejdřív se vyrobí (**výroba**), pak rozveze (**rozdělení**), prodá (**směna**) a nakonec spotřebuje (**spotřeba**)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Podnikatel je každý, kdo pracuje.",
+          "right": "Podnikatel podniká na vlastní účet a riziko. Kdo pracuje pro firmu za mzdu, je zaměstnanec.",
+          "why": "Zaměstnanec dostane mzdu, i když se firmě nedaří. Podnikateli patří zisk, ale nese i ztrátu."
+        },
+        {
+          "type": "summary",
+          "text": "Domácnosti, firmy a stát si peníze předávají v koloběhu. Fáze: výroba → rozdělení → směna → spotřeba. Stát má příjmy z daní a platí z nich důchody, školy a silnice."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Když poptávka roste a nabídka zůstává stejná, cena…",
+      "options": [
+        "stoupá",
+        "klesá",
+        "se nemění",
+        "zmizí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Inflace znamená…",
+      "options": [
+        "růst cenové hladiny",
+        "pokles cen",
+        "růst zaměstnanosti",
+        "nový zákon"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "DPH je daň, kterou platíme v ceně zboží.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jaká je základní sazba DPH v ČR (v %)?",
+      "answers": [
+        "21"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a význam.",
+      "pairs": [
+        [
+          "nabídka",
+          "co prodejci nabízejí"
+        ],
+        [
+          "poptávka",
+          "co lidé chtějí koupit"
+        ],
+        [
+          "inflace",
+          "růst cen"
+        ],
+        [
+          "daň",
+          "povinná platba státu"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je výdaj státního rozpočtu?",
+      "options": [
+        "důchody",
+        "DPH",
+        "daň z příjmů",
+        "spotřební daň"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď fáze ekonomického procesu.",
+      "items": [
+        "výroba",
+        "rozdělení",
+        "směna",
+        "spotřeba"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Při vysoké inflaci si za stejnou částku koupíš více.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Kdo je v ekonomice podnikatel?",
+      "options": [
+        "ten, kdo na vlastní účet a riziko vydělává",
+        "státní úředník",
+        "důchodce",
+        "žák"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo vybírá daně v ČR?",
+      "options": [
+        "finanční úřad",
+        "ČNB",
+        "policie",
+        "soud"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak nabídka a poptávka ovlivňují cenu?",
+      "answer": "Když je zboží málo a lidé ho chtějí hodně, cena roste. Když je zboží hodně a zájem malý, cena klesá."
+    },
+    {
+      "type": "open",
+      "question": "Popiš koloběh peněz mezi domácnostmi, firmami a státem.",
+      "answer": "Domácnosti pracují ve firmách a dostávají mzdu. Za ni nakupují zboží od firem. Stát vybírá od obou daně a platí z nich služby, třeba školy nebo silnice."
+    }
+  ]
+}

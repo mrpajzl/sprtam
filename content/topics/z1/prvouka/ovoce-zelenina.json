@@ -1,0 +1,349 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ovoce-zelenina",
+  "title": "Ovoce, zelenina, rostliny",
+  "emoji": "🍎",
+  "explanations": [
+    {
+      "title": "Roztřiď",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V obchodě je oddělení s ovocem a zeleninou. Jablka, banány, mrkev, okurky. Všechno vyrostlo na rostlinách."
+        },
+        {
+          "type": "text",
+          "text": "Ovoce i zelenina jsou zdravé. Dávají tělu sílu. Je dobré je umět poznat a pojmenovat."
+        },
+        {
+          "type": "term",
+          "term": "Ovoce",
+          "definition": "Sladké nebo kyselé plody. Často je jíme syrové, jako svačinu nebo dezert.",
+          "example": "jablko, hruška, třešně, švestka, jahoda"
+        },
+        {
+          "type": "term",
+          "term": "Zelenina",
+          "definition": "Části rostlin, které jíme v salátu, polévce nebo jako přílohu. Není sladká jako ovoce.",
+          "example": "mrkev, brambory, okurka, zelí"
+        },
+        {
+          "type": "heading",
+          "text": "Kde co roste"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Jablka, hrušky, třešně a švestky rostou na **stromech** 🌳.",
+            "Rybíz a maliny rostou na **keřích**.",
+            "Jahody rostou nízko u země na **záhonu**.",
+            "Mrkev a brambory rostou **v zemi** 🟫.",
+            "Okurky a zelí rostou na **záhonu**."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Záhon",
+          "definition": "Kousek zahrady, kde je zrytá hlína a pěstujeme v ní rostliny.",
+          "example": "Záhon s mrkví."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď: je to ovoce, nebo zelenina?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Ovoce 🍎",
+              "Zelenina 🥕"
+            ],
+            "items": [
+              {
+                "text": "jablko",
+                "group": 0
+              },
+              {
+                "text": "hruška",
+                "group": 0
+              },
+              {
+                "text": "třešně",
+                "group": 0
+              },
+              {
+                "text": "švestka",
+                "group": 0
+              },
+              {
+                "text": "mrkev",
+                "group": 1
+              },
+              {
+                "text": "brambory",
+                "group": 1
+              },
+              {
+                "text": "okurka",
+                "group": 1
+              },
+              {
+                "text": "zelí",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je hruška ovoce, nebo zelenina?",
+          "answer": "Hruška je sladká a roste na stromě. Je to **ovoce**."
+        },
+        {
+          "type": "example",
+          "question": "Kde roste brambora?",
+          "answer": "Brambory vyhrabeme ze země. Rostou **v zemi** – jsou to zelenina."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ovoce a zeleninu můžu jíst rovnou z obchodu.",
+          "right": "Ovoce i zeleninu před jídlem umyji.",
+          "why": "Na slupce je prach a bacily. Voda je smyje."
+        },
+        {
+          "type": "summary",
+          "text": "Ovoce: jablko, hruška, švestka. Zelenina: mrkev, okurka, brambory. Obojí je zdravé a před jídlem ho umyju."
+        }
+      ]
+    },
+    {
+      "title": "Co rostlina potřebuje",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ty potřebuješ jíst a pít, abys rostl. Rostlina taky něco potřebuje. Jinak uschne."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, co rostlina potřebuje, umíš se postarat o kytku doma na okně."
+        },
+        {
+          "type": "term",
+          "term": "Rostlina",
+          "definition": "Živá věc, která roste ze země a nemůže chodit. Tráva, kytka, strom.",
+          "example": "Kytka v květináči je rostlina."
+        },
+        {
+          "type": "heading",
+          "text": "Tři věci pro rostlinu"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "☀️",
+            "💧",
+            "🟫",
+            "🌱"
+          ],
+          "caption": "Slunce + voda + půda = rostlina roste"
+        },
+        {
+          "type": "term",
+          "term": "Půda",
+          "definition": "Hlína, ve které rostlina roste. Má v ní kořeny.",
+          "example": "Hlína v květináči."
+        },
+        {
+          "type": "text",
+          "text": "Rostlina potřebuje **světlo** ze slunce, **vodu** a **půdu**. Bez vody uschne. Ve tmě zežloutne."
+        },
+        {
+          "type": "heading",
+          "text": "Z čeho se rostlina skládá"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. Každá část rostliny má svou práci."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "kořen",
+                "back": "Drží rostlinu v zemi a pije vodu."
+              },
+              {
+                "front": "stonek",
+                "back": "Nese listy a květy."
+              },
+              {
+                "front": "list",
+                "back": "Chytá sluníčko."
+              },
+              {
+                "front": "květ",
+                "back": "Z něj bude plod se semínky."
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Semínko",
+          "definition": "Malé zrníčko v plodu. Když ho zasadíš, vyroste z něj nová rostlina.",
+          "example": "Jádřinka v jablku."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zasadím semínko do hlíny.",
+            "Zaleju ho a dám na světlo.",
+            "Vyroste kořínek a malý lístek.",
+            "Rostlina roste a vykvete.",
+            "Z květu je plod s novými semínky."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kytka na okně má svěšené listy a hlína je suchá. Co jí chybí?",
+          "answer": "Suchá hlína = málo vody. Kytce chybí **voda**. Zaleju ji."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď části rostliny zdola nahoru.",
+          "answer": "Dole v zemi je **kořen**, nad ním **stonek** a nahoře **květ**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rostlina může růst bez vody.",
+          "right": "Bez vody rostlina uschne.",
+          "why": "Kořeny pijí vodu z půdy. Když voda chybí, rostlina vadne."
+        },
+        {
+          "type": "summary",
+          "text": "Rostlina potřebuje světlo, vodu a půdu. Má kořen, stonek, listy a květ."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je ovoce?",
+      "options": [
+        "hruška",
+        "mrkev",
+        "brambora"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je zelenina?",
+      "options": [
+        "okurka",
+        "jablko",
+        "třešně"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Brambory rostou v zemi.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Rostlina může růst bez vody.",
+      "answer": false,
+      "explanation": "Bez vody rostlina uschne."
+    },
+    {
+      "type": "choice",
+      "question": "Která část drží rostlinu v zemi?",
+      "options": [
+        "kořen",
+        "květ",
+        "list"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď zdola nahoru.",
+      "items": [
+        "kořen",
+        "stonek",
+        "květ"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Kde to roste?",
+      "pairs": [
+        [
+          "jablko",
+          "na stromě"
+        ],
+        [
+          "mrkev",
+          "v zemi"
+        ],
+        [
+          "jahoda",
+          "na záhonu"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Co rostlina potřebuje kromě vody a půdy? (slunce / tma)",
+      "answers": [
+        "slunce",
+        "světlo",
+        "sluníčko"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ze semínka vyroste…",
+      "options": [
+        "nová rostlina",
+        "kámen",
+        "zvíře"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ovoce před jídlem umyji.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jmenuj tři druhy ovoce a tři druhy zeleniny.",
+      "answer": "Ovoce: jablko, hruška, švestka. Zelenina: mrkev, okurka, brambory."
+    },
+    {
+      "type": "open",
+      "question": "Co potřebuje rostlina, aby rostla?",
+      "answer": "Světlo ze slunce, vodu a půdu."
+    }
+  ]
+}

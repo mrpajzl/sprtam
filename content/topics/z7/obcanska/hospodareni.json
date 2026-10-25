@@ -1,0 +1,397 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hospodareni",
+  "title": "Peníze a hospodaření",
+  "emoji": "💰",
+  "explanations": [
+    {
+      "title": "Kapesné",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dostaneš 400 Kč kapesného. Za týden máš prázdnou peněženku a nevíš, kam peníze zmizely. Znáš to?"
+        },
+        {
+          "type": "text",
+          "text": "S penězi se dá **hospodařit** – plánovat, kolik dostaneš a kolik utratíš. Pak si našetříš i na dražší věc."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Příjem",
+          "definition": "Peníze, které **dostaneš**.",
+          "example": "Kapesné, dárek od babičky k narozeninám."
+        },
+        {
+          "type": "term",
+          "term": "Výdaj",
+          "definition": "Peníze, které **utratíš**.",
+          "example": "Svačina, lístek do kina."
+        },
+        {
+          "type": "term",
+          "term": "Rozpočet",
+          "definition": "Plán příjmů a výdajů na určité období (třeba na měsíc)."
+        },
+        {
+          "type": "term",
+          "term": "Spoření",
+          "definition": "Odkládání peněz stranou, abys je měl později – na dražší věc nebo na horší časy."
+        },
+        {
+          "type": "heading",
+          "text": "Simonin měsíc"
+        },
+        {
+          "type": "text",
+          "text": "Simona dostává 500 Kč měsíčně. Podívej se, jak peníze rozdělila. Grafem uvidíš, co je největší."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Kč",
+            "items": [
+              {
+                "label": "svačiny",
+                "value": 200
+              },
+              {
+                "label": "kino",
+                "value": 150
+              },
+              {
+                "label": "spoření",
+                "value": 100
+              },
+              {
+                "label": "dárek pro bráchu",
+                "value": 50
+              }
+            ]
+          }
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Příjem: 500 Kč.",
+            "Výdaje: 200 + 150 + 50 = 400 Kč.",
+            "Spoření: 100 Kč.",
+            "400 + 100 = 500 Kč. Utratila a odložila přesně tolik, kolik dostala."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Tři druhy rozpočtu"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**vyrovnaný** – příjmy = výdaje",
+            "**přebytkový** – příjmy jsou větší, peníze zbudou",
+            "**schodkový** – výdaje jsou větší, peníze chybí"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Nutné a zbytečné výdaje"
+        },
+        {
+          "type": "term",
+          "term": "Nezbytný výdaj",
+          "definition": "Výdaj, bez kterého se nedá žít.",
+          "example": "Jídlo, bydlení, energie."
+        },
+        {
+          "type": "term",
+          "term": "Zbytný výdaj",
+          "definition": "Výdaj, bez kterého se obejdeš.",
+          "example": "Nová hra, třetí mikina."
+        },
+        {
+          "type": "example",
+          "question": "Simona chce sluchátka za 600 Kč. Spoří 100 Kč měsíčně. Za kolik měsíců na ně našetří?",
+          "answer": "600 : 100 = **6 měsíců**. Když omezí kino o 50 Kč a bude spořit 150 Kč, stihne to za 600 : 150 = 4 měsíce."
+        },
+        {
+          "type": "example",
+          "question": "Příjem 500 Kč, výdaje 350 Kč. Kolik zbyde a jaký je to rozpočet?",
+          "answer": "500 − 350 = **150 Kč** zbyde. Příjmy jsou větší → **přebytkový** rozpočet."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Spořit budu to, co zbude na konci měsíce.",
+          "right": "Částku na spoření odlož hned, jakmile peníze dostaneš.",
+          "why": "Na konci měsíce většinou nic nezbude. Co odložíš hned, nemůžeš omylem utratit."
+        },
+        {
+          "type": "summary",
+          "text": "Rozpočet = plán příjmů a výdajů. Vyrovnaný, přebytkový, schodkový. Spoř hned po výplatě a omez zbytné výdaje."
+        }
+      ]
+    },
+    {
+      "title": "Jako účetní",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "S penězi hospodaří každá rodina, firma, obec i stát. Postup je pořád stejný: sepsat, co přijde, sepsat, co odejde, a porovnat."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se sestavit rozpočet krok za krokem a poznat, jestli je v pořádku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rozpočet",
+          "definition": "Tabulka nebo plán: kolik peněz za určitou dobu přijde a kolik odejde."
+        },
+        {
+          "type": "term",
+          "term": "Příjmy a výdaje",
+          "definition": "Příjmy = peníze, které dostáváme. Výdaje = peníze, které platíme."
+        },
+        {
+          "type": "term",
+          "term": "Hotovost a bezhotovostní platba",
+          "definition": "Hotovost = mince a bankovky. Bezhotovostní platba = peníze se převedou z účtu v bance, třeba kartou nebo mobilem. Obojí jsou skutečné peníze."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Sepiš všechny **příjmy** za měsíc a sečti je.",
+            "Sepiš všechny **výdaje** a sečti je.",
+            "Odečti: příjmy − výdaje.",
+            "Vyjde-li kladné číslo → peníze zbydou. Nula → vyrovnáno. Záporné → peníze chybí.",
+            "Když chybí, škrtni nejdřív **zbytné** výdaje."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Typy rozpočtu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "typ",
+            "porovnání",
+            "co to znamená"
+          ],
+          "rows": [
+            [
+              "vyrovnaný",
+              "příjmy = výdaje",
+              "nic nezbývá, nic nechybí"
+            ],
+            [
+              "přebytkový",
+              "příjmy > výdaje",
+              "peníze zbývají – dají se spořit"
+            ],
+            [
+              "schodkový",
+              "příjmy < výdaje",
+              "peníze chybí – je třeba šetřit nebo si půjčit"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozhodni u každé položky, zda je pro žáka příjem, nebo výdaj."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "příjem",
+              "výdaj"
+            ],
+            "items": [
+              {
+                "text": "kapesné",
+                "group": 0
+              },
+              {
+                "text": "peníze k narozeninám",
+                "group": 0
+              },
+              {
+                "text": "odměna za pomoc sousedce",
+                "group": 0
+              },
+              {
+                "text": "prodej starých hraček",
+                "group": 0
+              },
+              {
+                "text": "lístek na autobus",
+                "group": 1
+              },
+              {
+                "text": "svačina",
+                "group": 1
+              },
+              {
+                "text": "kredit do mobilu",
+                "group": 1
+              },
+              {
+                "text": "dárek pro mámu",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Rodina má příjem 45 000 Kč. Nájem 15 000, jídlo 12 000, energie 5 000, ostatní 10 000 Kč. Jaký je rozpočet?",
+          "answer": "Výdaje: 15 000 + 12 000 + 5 000 + 10 000 = 42 000 Kč. 45 000 − 42 000 = 3 000 Kč zbývá → **přebytkový**."
+        },
+        {
+          "type": "example",
+          "question": "Ušetříš 150 Kč měsíčně. Kolik budeš mít za 6 měsíců?",
+          "answer": "150 · 6 = **900 Kč**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nájem je příjem toho, kdo v bytě bydlí.",
+          "right": "Nájemník nájem platí – je to jeho výdaj. Příjem je to pro majitele bytu.",
+          "why": "Stejná platba je pro jednoho výdaj a pro druhého příjem. Vždy se ptej: dostávám, nebo platím?"
+        },
+        {
+          "type": "summary",
+          "text": "Rozpočet: sečti příjmy, sečti výdaje, odečti. Kladný výsledek = přebytek, nula = vyrovnaný, záporný = schodek."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je rozpočet?",
+      "options": [
+        "plán příjmů a výdajů",
+        "účet v bance",
+        "druh daně",
+        "půjčka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Rozpočet, kde jsou výdaje větší než příjmy, je…",
+      "options": [
+        "schodkový",
+        "přebytkový",
+        "vyrovnaný",
+        "úsporný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Kapesné je příjem.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Nájem je příjem toho, kdo v bytě bydlí.",
+      "answer": false,
+      "explanation": "Nájemník nájem platí – je to jeho výdaj."
+    },
+    {
+      "type": "input",
+      "question": "Ušetříš 150 Kč měsíčně. Kolik Kč budeš mít za 6 měsíců?",
+      "answers": [
+        "900"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je nezbytný výdaj?",
+      "options": [
+        "jídlo",
+        "nová hra",
+        "kino",
+        "třetí mikina"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj typ rozpočtu s popisem.",
+      "pairs": [
+        [
+          "vyrovnaný",
+          "příjmy = výdaje"
+        ],
+        [
+          "přebytkový",
+          "zbývají peníze"
+        ],
+        [
+          "schodkový",
+          "peníze chybí"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Příjem 500 Kč, výdaje 350 Kč. Kolik Kč zbyde?",
+      "answers": [
+        "150"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je nejlepší postup při šetření?",
+      "options": [
+        "peníze na spoření odložit hned po výplatě",
+        "spořit, co zbude na konci měsíce",
+        "půjčit si a pak šetřit",
+        "nespořit vůbec"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Bezhotovostní platba kartou jsou také skutečné peníze.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak bys naplánoval, abys našetřil na dražší věc?",
+      "answer": "Zjistím cenu, sepíšu příjmy a výdaje, omezím zbytné výdaje a každý měsíc hned odložím pevnou částku. Spočítám, za kolik měsíců to stihnu."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi nezbytnými a zbytnými výdaji?",
+      "answer": "Nezbytné výdaje jsou nutné k životu – jídlo, bydlení, energie. Zbytné jsou ty, bez kterých se obejdu – zábava, další oblečení navíc."
+    }
+  ]
+}

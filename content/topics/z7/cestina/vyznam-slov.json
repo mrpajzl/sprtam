@@ -1,0 +1,376 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vyznam-slov",
+  "title": "Synonyma, antonyma, homonyma",
+  "emoji": "🔤",
+  "explanations": [
+    {
+      "title": "Vztahy mezi slovy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve slohové práci napíšeš pětkrát *hezký*: hezký den, hezký dům, hezká paní… Učitelka podtrhne: „Opakuješ se.“ Potřebuješ jiné slovo, které znamená totéž – *pěkný, krásný, půvabný*."
+        },
+        {
+          "type": "text",
+          "text": "Slova mají mezi sebou vztahy: některá znamenají totéž, jiná opak, další jen stejně znějí. Když tyto vztahy znáš, píšeš pestřeji a nespleteš se v porozumění textu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Význam slova",
+          "definition": "To, co slovo označuje – jakou věc, činnost nebo vlastnost si pod ním představíš.",
+          "example": "*pes* = zvíře, které štěká"
+        },
+        {
+          "type": "term",
+          "term": "Synonyma",
+          "definition": "Slova se **stejným nebo podobným** významem. Slova souznačná.",
+          "example": "hezký – pěkný, chlapec – hoch, začít – zahájit"
+        },
+        {
+          "type": "term",
+          "term": "Antonyma",
+          "definition": "Slova s **opačným** významem. Slova protikladná.",
+          "example": "velký – malý, den – noc, odvážný – bojácný"
+        },
+        {
+          "type": "term",
+          "term": "Homonyma",
+          "definition": "Slova, která **stejně znějí i se píšou**, ale jejich významy spolu **vůbec nesouvisí**. Slova souzvučná.",
+          "example": "*los* (zvíře) – *los* (v loterii)"
+        },
+        {
+          "type": "term",
+          "term": "Mnohoznačné slovo",
+          "definition": "Jedno slovo s **víc významy, které spolu souvisejí** – jeden vznikl přenesením z druhého podle podobnosti.",
+          "example": "*oko* (lidské) – *oko* na punčoše (je kulaté jako oko)"
+        },
+        {
+          "type": "term",
+          "term": "Jednoznačné slovo",
+          "definition": "Slovo, které má jen **jeden** význam. Často to jsou odborné termíny.",
+          "example": "trojúhelník, kyslík, fotosyntéza"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každé dvojice se zeptej: znamenají totéž, nebo opak?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "synonyma",
+              "antonyma"
+            ],
+            "items": [
+              {
+                "text": "rychlý – hbitý",
+                "group": 0
+              },
+              {
+                "text": "smutný – sklíčený",
+                "group": 0
+              },
+              {
+                "text": "chlapec – hoch",
+                "group": 0
+              },
+              {
+                "text": "mluvit – hovořit",
+                "group": 0
+              },
+              {
+                "text": "den – noc",
+                "group": 1
+              },
+              {
+                "text": "teplo – zima",
+                "group": 1
+              },
+              {
+                "text": "začátek – konec",
+                "group": 1
+              },
+              {
+                "text": "vysoký – nízký",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Homonymum, nebo mnohoznačné slovo?"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vezmi oba významy: *oko* (v hlavě) a *oko* (na punčoše).",
+            "Zeptej se: souvisí spolu? Je mezi nimi podobnost?",
+            "Ano (obojí je kulaté očko) → **mnohoznačné** slovo.",
+            "Ne, je to náhoda (*los* zvíře × *los* lístek) → **homonyma**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Najdi synonymum a antonymum ke slovu *začít*.",
+          "answer": "Synonymum (totéž): **zahájit**, *spustit*. Antonymum (opak): **skončit**, *přestat*."
+        },
+        {
+          "type": "example",
+          "question": "Ve které větě má *oko* přenesený význam? a) *Bolí mě levé oko.* b) *Na punčoše mi utíká oko.*",
+          "answer": "b) – oko na punčoše jen připomíná tvarem lidské oko. To je přenesený význam. V a) je základní význam."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Rychlý* a *pomalý* jsou synonyma, protože obě mluví o rychlosti.",
+          "right": "Jsou to antonyma.",
+          "why": "Synonyma znamenají **totéž**. *Rychlý* a *pomalý* znamenají **opak** – to jsou antonyma."
+        },
+        {
+          "type": "summary",
+          "text": "Synonyma = stejný význam (hezký – pěkný). Antonyma = opak (velký – malý). Homonyma = stejně znějí, nesouvisí (los – los). Mnohoznačné slovo = víc souvisejících významů (oko)."
+        }
+      ]
+    },
+    {
+      "title": "Hádankou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hádanka: „Sedí na stromě, roste v parku a staví domy.“ Co je to? **Jeřáb!** Pták jeřáb, strom jeřáb i stavební jeřáb."
+        },
+        {
+          "type": "text",
+          "text": "Takové hříčky fungují proto, že jedno slovo může mít víc významů – a naopak víc slov může znamenat totéž. Podíváme se, jak se těmto jevům říká a jak je poznáš."
+        },
+        {
+          "type": "term",
+          "term": "Kontext",
+          "definition": "Věta nebo situace, ve které slovo stojí. Podle ní poznáš, který význam se myslí.",
+          "example": "*Jeřáb zvedl panel.* – jasně stroj, ne pták."
+        },
+        {
+          "type": "heading",
+          "text": "Jedno slovo, víc významů"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu. Nejdřív zkus vymyslet všechny významy sám."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "jeřáb",
+                "back": "pták, strom i stavební stroj"
+              },
+              {
+                "front": "koruna",
+                "back": "na hlavě krále, na stromě, peníze"
+              },
+              {
+                "front": "list",
+                "back": "na stromě i list papíru"
+              },
+              {
+                "front": "los",
+                "back": "velké zvíře i lístek v loterii"
+              },
+              {
+                "front": "pila",
+                "back": "nástroj i tvar slovesa (ona pila vodu)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Tady jsou dva různé případy a je dobré je rozlišit:"
+        },
+        {
+          "type": "term",
+          "term": "Mnohoznačné slovo",
+          "definition": "Významy **spolu souvisejí**. Nový význam vznikl z původního, protože se mu podobá. Říkáme mu **přenesený význam**.",
+          "example": "*koruna* stromu vypadá nahoře jako královská koruna; *noha* stolu"
+        },
+        {
+          "type": "term",
+          "term": "Homonyma",
+          "definition": "Slova znějí stejně jen **náhodou**, významy spolu nesouvisí.",
+          "example": "*los* (zvíře) × *los* (loterie); *pila* (nástroj) × *pila* (od pít)"
+        },
+        {
+          "type": "term",
+          "term": "Jednoznačné slovo",
+          "definition": "Slovo jen s jedním významem. Hodí se tam, kde se nesmíme splést – ve vědě a technice.",
+          "example": "trojúhelník, teploměr"
+        },
+        {
+          "type": "heading",
+          "text": "Víc slov, jeden význam – a opak"
+        },
+        {
+          "type": "term",
+          "term": "Synonyma",
+          "definition": "Různá slova, která znamenají **totéž nebo skoro totéž**. Pomůžou ti neopakovat se.",
+          "example": "chlapec – hoch – kluk; mluvit – hovořit"
+        },
+        {
+          "type": "term",
+          "term": "Antonyma",
+          "definition": "Slova, která znamenají **opak**.",
+          "example": "světlo – tma; den – noc; začátek – konec"
+        },
+        {
+          "type": "example",
+          "question": "Jak se jmenuje vztah slov *hezký* a *pěkný*? A *hezký* a *ošklivý*?",
+          "answer": "*hezký – pěkný* znamenají totéž → **synonyma**. *hezký – ošklivý* znamenají opak → **antonyma**."
+        },
+        {
+          "type": "example",
+          "question": "Je *noha stolu* homonymum, nebo přenesený význam?",
+          "answer": "Noha stolu drží stůl, jako noha drží člověka. Významy souvisí → **mnohoznačné slovo, přenesený význam**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Oko* (v hlavě) a *oko* (na punčoše) jsou homonyma.",
+          "right": "Je to jedno mnohoznačné slovo.",
+          "why": "Očko na punčoše je malé a kulaté jako oko. Významy spolu souvisí podobností, nejde o náhodu."
+        },
+        {
+          "type": "summary",
+          "text": "Synonyma = totéž, antonyma = opak. Mnohoznačné slovo má víc souvisejících významů, homonyma znějí stejně náhodou. Který význam platí, poznáš z kontextu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které slovo je synonymum ke slovu *začít*?",
+      "options": [
+        "zahájit",
+        "skončit",
+        "přestat"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je antonymum ke slovu *odvážný*?",
+      "options": [
+        "bojácný",
+        "statečný",
+        "hrdinný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "*Los* (zvíře) a *los* (v loterii) jsou homonyma.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co jsou antonyma?",
+      "options": [
+        "slova opačného významu",
+        "slova stejného významu",
+        "slova, která stejně znějí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Napiš antonymum ke slovu *světlo*.",
+      "answers": [
+        "tma"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš synonymum ke slovu *chlapec*.",
+      "answers": [
+        "hoch",
+        "kluk",
+        "chlapík",
+        "mladík"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj dvojici s pojmem.",
+      "pairs": [
+        [
+          "hezký – pěkný",
+          "synonyma"
+        ],
+        [
+          "den – noc",
+          "antonyma"
+        ],
+        [
+          "jeřáb (pták) – jeřáb (stroj)",
+          "homonyma"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je jednoznačné (odborný termín)?",
+      "options": [
+        "trojúhelník",
+        "koruna",
+        "list"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Ve které větě má *oko* přenesený význam?",
+      "options": [
+        "Na punčoše mi utíká oko.",
+        "Mrkl na mě jedním okem.",
+        "Bolí mě levé oko."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "*Rychlý* a *pomalý* jsou synonyma.",
+      "answer": false,
+      "explanation": "Mají opačný význam → antonyma."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi synonymy a antonymy. Uveď příklady.",
+      "answer": "Synonyma mají stejný nebo podobný význam (hezký – pěkný). Antonyma mají význam opačný (velký – malý)."
+    },
+    {
+      "type": "open",
+      "question": "Co jsou homonyma? Uveď příklad.",
+      "answer": "Slova, která stejně znějí i se píšou, ale mají úplně jiný význam: *los* (zvíře) a *los* (v loterii), *jeřáb* (pták, strom, stroj)."
+    }
+  ]
+}

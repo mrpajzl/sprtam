@@ -1,0 +1,356 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pomer",
+  "title": "Poměr a měřítko",
+  "emoji": "⚖️",
+  "generator": "ratio",
+  "explanations": [
+    {
+      "title": "Šťáva",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na lahvi sirupu stojí: „Řeďte 1 : 4.“ Co to znamená? Na 1 hrnek sirupu přidej 4 hrnky vody. Ať děláš sklenici nebo celý kbelík, chuť bude stejná."
+        },
+        {
+          "type": "text",
+          "text": "Tomu se říká **poměr**. Používá se v receptech, při míchání barev, při dělení peněz i na mapách."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Poměr",
+          "definition": "Zápis, kolik dílů jedné věci připadá na kolik dílů druhé. Píše se s dvojtečkou a čte „ku“.",
+          "example": "1 : 4 (jedna ku čtyřem) – 1 díl sirupu na 4 díly vody."
+        },
+        {
+          "type": "term",
+          "term": "Díl",
+          "definition": "Stejně velká dávka. Velikost dílu si vybereš sám – lžička, hrnek, kbelík.",
+          "example": "Při poměru 1 : 4 je celkem 1 + 4 = 5 dílů."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🟥",
+            "🟦",
+            "🟦",
+            "🟦",
+            "🟦"
+          ],
+          "caption": "1 díl sirupu + 4 díly vody = 5 dílů"
+        },
+        {
+          "type": "heading",
+          "text": "Kolik čeho na 1 litr?"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Sečti díly: 1 + 4 = 5 dílů.",
+            "Vyděl celek počtem dílů: 1 000 ml : 5 = 200 ml je 1 díl.",
+            "Vynásob: sirup 1 · 200 = 200 ml, voda 4 · 200 = 800 ml.",
+            "Kontrola: 200 + 800 = 1 000 ml ✓"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Petr a Jana si dělí 450 Kč v poměru 4 : 5. Kolik dostane Jana?",
+          "answer": "Dílů je 4 + 5 = 9. Jeden díl 450 : 9 = 50 Kč. Jana má 5 dílů: 5 · 50 = **250 Kč**. (Petr 200 Kč.)"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na sloupce: Petr má 4 díly, Jana 5. Jeden díl je 50 Kč."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Kč",
+            "items": [
+              {
+                "label": "Petr",
+                "value": 200
+              },
+              {
+                "label": "Jana",
+                "value": 250
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Stejný poměr, jiná čísla"
+        },
+        {
+          "type": "text",
+          "text": "2 hrnky sirupu a 8 hrnků vody chutnají stejně jako 1 a 4. Poměr 2 : 8 = 1 : 4. Obě čísla můžeš vydělit (nebo vynásobit) stejným číslem – tomu se říká **krácení** poměru."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V poměru 2 : 5 tvoří první část 2/5 celku.",
+          "right": "První část tvoří 2/7 celku.",
+          "why": "Celek má 2 + 5 = 7 dílů, ne 5. Druhé číslo v poměru není celek, ale druhá část."
+        },
+        {
+          "type": "heading",
+          "text": "Mapa je zmenšenina"
+        },
+        {
+          "type": "text",
+          "text": "Mapa je skutečnost zmenšená v určitém poměru. Ten poměr se jmenuje **měřítko**. Měřítko 1 : 50 000 znamená: 1 cm na mapě je 50 000 cm = 500 m ve skutečnosti."
+        },
+        {
+          "type": "summary",
+          "text": "Poměr a : b = a dílů ku b dílům. Sečti díly, celek vyděl jejich počtem a vynásob."
+        }
+      ]
+    },
+    {
+      "title": "Měřítko mapy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Celé Česko se vejde na list papíru. Jak? Všechno je zmenšené stejně. A ze vzdálenosti na mapě zjistíš, jak daleko je to doopravdy – třeba kolik km půjdeš na výletě."
+        },
+        {
+          "type": "text",
+          "text": "K tomu potřebuješ porozumět **poměru** a **měřítku**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Poměr a : b",
+          "definition": "Porovnání dvou množství pomocí dílů. Čte se „a ku b“.",
+          "example": "12 dívek a 16 chlapců → poměr 12 : 16"
+        },
+        {
+          "type": "term",
+          "term": "Krácení poměru",
+          "definition": "Vydělení obou čísel stejným číslem. Poměr se nezmění, jen se zjednoduší. Základní tvar = dál krátit nejde.",
+          "example": "12 : 16 = 3 : 4 (vyděleno 4)"
+        },
+        {
+          "type": "term",
+          "term": "Měřítko",
+          "definition": "Poměr mezi délkou na mapě a skutečnou délkou. Vždy začíná 1.",
+          "example": "1 : 50 000 → 1 cm na mapě = 50 000 cm ve skutečnosti."
+        },
+        {
+          "type": "term",
+          "term": "Zvětšit / zmenšit v poměru",
+          "definition": "Vynásobit číslo zlomkem z poměru. Zvětšit 3 : 2 = vynásobit 3/2. Zmenšit 3 : 4 = vynásobit 3/4.",
+          "example": "20 zvětšené v poměru 3 : 2 = 20 · 3/2 = 30"
+        },
+        {
+          "type": "heading",
+          "text": "Převod jednotek – připomenutí"
+        },
+        {
+          "type": "table",
+          "head": [
+            "jednotka",
+            "v cm"
+          ],
+          "rows": [
+            [
+              "1 m",
+              "100 cm"
+            ],
+            [
+              "1 km",
+              "100 000 cm"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Tip: u čísla v cm škrtni 5 nul a máš km. 200 000 cm → 2 km."
+        },
+        {
+          "type": "heading",
+          "text": "Z mapy do skutečnosti"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Na mapě 1 : 50 000 naměříš 4 cm.",
+            "Vynásob měřítkem: 4 · 50 000 = 200 000 cm.",
+            "Převeď: 200 000 cm = 2 000 m = **2 km**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Ze skutečnosti do mapy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Skutečná vzdálenost 5 km, mapa 1 : 50 000.",
+            "Převeď na cm: 5 km = 500 000 cm.",
+            "Vyděl měřítkem: 500 000 : 50 000 = **10 cm**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Mapa 1 : 100 000, naměřeno 3 cm. Kolik je to ve skutečnosti?",
+          "answer": "3 · 100 000 = 300 000 cm = **3 km**."
+        },
+        {
+          "type": "example",
+          "question": "Zkrať poměr 12 : 18.",
+          "answer": "Obě čísla dělí 6: 12 : 6 = 2, 18 : 6 = 3. **2 : 3**."
+        },
+        {
+          "type": "text",
+          "text": "Porovnej sloupce: 12 : 18 a 2 : 3 vypadají jinak, ale díly jsou ve stejném poměru – druhý sloupec je vždy o polovinu delší."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "dílů",
+            "items": [
+              {
+                "label": "A (12)",
+                "value": 12
+              },
+              {
+                "label": "B (18)",
+                "value": 18
+              },
+              {
+                "label": "A (2)",
+                "value": 2
+              },
+              {
+                "label": "B (3)",
+                "value": 3
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "4 cm na mapě 1 : 50 000 je 200 000 km.",
+          "right": "200 000 **cm** = 2 km",
+          "why": "Číslo z měřítka je ve stejné jednotce, jakou měříš na mapě – tedy v cm. Pak teprve převáděj."
+        },
+        {
+          "type": "summary",
+          "text": "Poměr se nezmění, když obě čísla vynásobíš nebo vydělíš stejným číslem. Měřítko 1 : n: skutečnost = mapa · n."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Zkrať poměr 12 : 18 na základní tvar. Napiš ve tvaru a:b.",
+      "answers": [
+        "2:3",
+        "2 : 3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Rozděl 60 Kč v poměru 1 : 2. Kolik Kč dostane ten s menším dílem?",
+      "answers": [
+        "20"
+      ],
+      "explanation": "60 : 3 = 20"
+    },
+    {
+      "type": "input",
+      "question": "Rozděl 450 Kč v poměru 4 : 5. Kolik Kč je větší část?",
+      "answers": [
+        "250"
+      ],
+      "explanation": "450 : 9 = 50, 5 · 50 = 250"
+    },
+    {
+      "type": "choice",
+      "question": "Měřítko 1 : 100 000. Na mapě 3 cm je ve skutečnosti…",
+      "options": [
+        "3 km",
+        "300 m",
+        "30 km",
+        "3 000 km"
+      ],
+      "answer": 0,
+      "explanation": "300 000 cm = 3 km"
+    },
+    {
+      "type": "truefalse",
+      "question": "Poměr 3 : 4 je stejný jako 6 : 8.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Zvětši 20 v poměru 3 : 2.",
+      "answers": [
+        "30"
+      ],
+      "explanation": "20 · 3/2 = 30"
+    },
+    {
+      "type": "input",
+      "question": "Zmenši 40 v poměru 3 : 4.",
+      "answers": [
+        "30"
+      ],
+      "explanation": "40 · 3/4 = 30"
+    },
+    {
+      "type": "choice",
+      "question": "Ve třídě je 12 dívek a 16 chlapců. Poměr dívek k chlapcům je…",
+      "options": [
+        "3 : 4",
+        "4 : 3",
+        "12 : 28",
+        "3 : 7"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Vzdálenost 5 km je na mapě 1 : 50 000 dlouhá kolik cm?",
+      "answers": [
+        "10"
+      ],
+      "explanation": "500 000 cm : 50 000 = 10 cm"
+    },
+    {
+      "type": "truefalse",
+      "question": "V poměru 2 : 5 je první část 2/5 celku.",
+      "answer": false,
+      "explanation": "Celkem je 7 dílů, první část = 2/7."
+    },
+    {
+      "type": "open",
+      "question": "Jak rozdělíš 1 200 Kč v poměru 1 : 3?",
+      "answer": "Celkem 4 díly. Jeden díl = 1 200 : 4 = 300 Kč. První dostane 300 Kč, druhý 3 · 300 = 900 Kč."
+    },
+    {
+      "type": "open",
+      "question": "Co znamená měřítko mapy 1 : 25 000?",
+      "answer": "Každý 1 cm na mapě odpovídá 25 000 cm, tedy 250 m ve skutečnosti."
+    }
+  ]
+}

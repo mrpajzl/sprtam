@@ -1,0 +1,390 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vyklad-uvaha",
+  "title": "Výklad a úvaha",
+  "emoji": "💭",
+  "explanations": [
+    {
+      "title": "Srovnáním",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dvě otázky: *Jak vzniká duha?* a *Má smysl dělat domácí úkoly?* Na první existuje jedna správná odpověď – stačí ji vysvětlit. Na druhou ne – každý si myslí něco jiného a musí to zdůvodnit."
+        },
+        {
+          "type": "text",
+          "text": "Na první otázku se píše **výklad**, na druhou **úvaha**. Oba útvary se objevují ve slohových pracích i u přijímaček, a proto je potřeba je od sebe rozlišit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Výklad",
+          "definition": "Text, který **vysvětluje** nějaký jev: co to je, jak to funguje, proč to tak je. Patří do odborného stylu.",
+          "example": "*Jak vzniká duha*, *Proč padají listy*"
+        },
+        {
+          "type": "term",
+          "term": "Úvaha",
+          "definition": "Text, ve kterém se autor **zamýšlí** nad otázkou a vyjadřuje a **zdůvodňuje svůj názor**.",
+          "example": "*Je přátelství důležitější než úspěch?*"
+        },
+        {
+          "type": "term",
+          "term": "Argument",
+          "definition": "Důvod, který podpoří názor.",
+          "example": "Úkoly mají smysl, **protože si látku procvičím**."
+        },
+        {
+          "type": "term",
+          "term": "Řečnická otázka",
+          "definition": "Otázka, na kterou pisatel nečeká odpověď. Má čtenáře přimět k zamyšlení.",
+          "example": "*Kdo by nechtěl mít dobré přátele?*"
+        },
+        {
+          "type": "term",
+          "term": "Odborný termín",
+          "definition": "Přesné slovo z oboru s jedním významem.",
+          "example": "lom světla, fotosyntéza"
+        },
+        {
+          "type": "heading",
+          "text": "Srovnání"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Výklad",
+            "Úvaha"
+          ],
+          "rows": [
+            [
+              "cíl",
+              "vysvětlit, jak to je",
+              "zamyslet se, co si myslím"
+            ],
+            [
+              "osoba",
+              "neosobně: vědci zjistili…",
+              "já: myslím si, domnívám se…"
+            ],
+            [
+              "jazyk",
+              "termíny, přesnost",
+              "názory, argumenty, řečnické otázky"
+            ],
+            [
+              "téma",
+              "Jak vzniká duha",
+              "Má smysl dělat domácí úkoly?"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zařaď věty: vysvětlují fakt, nebo vyjadřují názor?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "výklad",
+              "úvaha"
+            ],
+            "items": [
+              {
+                "text": "Fotosyntéza probíhá v zelených listech.",
+                "group": 0
+              },
+              {
+                "text": "Duha vzniká lomem světla v kapkách.",
+                "group": 0
+              },
+              {
+                "text": "Sopky vznikají hlavně na okrajích desek.",
+                "group": 0
+              },
+              {
+                "text": "Myslím si, že sport je důležitý.",
+                "group": 1
+              },
+              {
+                "text": "Proč vlastně lidé lžou?",
+                "group": 1
+              },
+              {
+                "text": "Podle mého názoru je škola potřebná.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Hodí se název *Jak vzniká bouřka* pro výklad, nebo úvahu?",
+          "answer": "Na otázku existuje vědecká odpověď, kterou stačí vysvětlit → **výklad**."
+        },
+        {
+          "type": "example",
+          "question": "Hodí se název *Je přátelství důležitější než úspěch?* pro výklad, nebo úvahu?",
+          "answer": "Neexistuje jedna správná odpověď, záleží na názoru → **úvaha**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V úvaze se nesmí psát „já“.",
+          "right": "Úvaha je osobní – „myslím si, podle mě“ do ní patří.",
+          "why": "Neosobní má být výklad. Úvaha naopak ukazuje názor autora."
+        },
+        {
+          "type": "summary",
+          "text": "Výklad vysvětluje (jak? proč?), je neosobní, s termíny. Úvaha hodnotí – autor vyjadřuje a argumenty zdůvodňuje svůj názor, často s řečnickými otázkami."
+        }
+      ]
+    },
+    {
+      "title": "Postupem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dostaneš slohovku: *Potřebujeme mobil?* Sedíš nad prázdným papírem a nevíš, jak začít. Pomůže ti jednoduchý postup – stejně jako recept na bábovku."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, jak napsat **úvahu** (zamyšlení s vlastním názorem) a jak se liší od **výkladu** (vysvětlení jevu)."
+        },
+        {
+          "type": "term",
+          "term": "Úvaha",
+          "definition": "Text, ve kterém přemýšlíš o otázce, zvažuješ pro a proti a nakonec řekneš svůj zdůvodněný názor.",
+          "example": "*Potřebujeme mobil?*"
+        },
+        {
+          "type": "term",
+          "term": "Výklad",
+          "definition": "Text, který věcně vysvětluje jev a jeho příčiny. Názor autora v něm není.",
+          "example": "*Jak funguje mobilní síť*"
+        },
+        {
+          "type": "term",
+          "term": "Argument",
+          "definition": "Důvod, kterým názor podepřeš. Nejlépe s příkladem.",
+          "example": "Mobil je užitečný: když se ztratím, zavolám rodičům."
+        },
+        {
+          "type": "term",
+          "term": "Řečnická otázka",
+          "definition": "Otázka bez čekání na odpověď, která má čtenáře zaujmout.",
+          "example": "*Kolikrát denně se vlastně podívám na displej?*"
+        },
+        {
+          "type": "heading",
+          "text": "Postup úvahy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Úvod**: polož otázku nebo popiš problém. Klidně řečnickou otázkou.",
+            "**Stať**: zvaž argumenty **pro** a **proti**. Ke každému přidej příklad.",
+            "**Závěr**: řekni svůj názor a shrň, proč si to myslíš."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Napiš úvod úvahy na téma *Potřebujeme mobil?*",
+          "answer": "*Kolikrát denně se podívám na mobil? Bez něj si dnes život neumíme představit. Opravdu ho ale potřebujeme pořád?* – řečnická otázka + problém."
+        },
+        {
+          "type": "example",
+          "question": "Napiš jeden argument pro a jeden proti mobilu.",
+          "answer": "Pro: *Mobil mi pomůže v nouzi – můžu zavolat pomoc.* Proti: *Když jsem pořád na mobilu, méně se vidím s kamarády naživo.*"
+        },
+        {
+          "type": "heading",
+          "text": "A jak vypadá výklad"
+        },
+        {
+          "type": "text",
+          "text": "Výklad má také úvod, stať a závěr. Ale místo názorů v něm jsou **fakta** a **příčiny**: co jev je, jak vzniká, proč. Píše se neosobně a s odbornými termíny – patří do odborného stylu."
+        },
+        {
+          "type": "text",
+          "text": "Doplň, co do kterého útvaru patří."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "„Myslím si, že…“ patří do ",
+                "after": ".",
+                "options": [
+                  "úvahy",
+                  "výkladu"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "„Duha vzniká lomem světla…“ patří do ",
+                "after": ".",
+                "options": [
+                  "úvahy",
+                  "výkladu"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Řečnické otázky jsou typické pro ",
+                "after": ".",
+                "options": [
+                  "úvahu",
+                  "výklad"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Odborné termíny jsou typické pro ",
+                "after": ".",
+                "options": [
+                  "úvahu",
+                  "výklad"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Myslím, že sport je důležitý. Konec.",
+          "right": "Myslím, že sport je důležitý, protože posiluje zdraví – po tréninku se lépe soustředím i ve škole.",
+          "why": "Názor bez argumentu nikoho nepřesvědčí. V úvaze názor vždy zdůvodni."
+        },
+        {
+          "type": "summary",
+          "text": "Úvaha: otázka → argumenty pro a proti → můj názor. Výklad: věcně vysvětlí jev a jeho příčiny. V úvaze názor vždy zdůvodni argumentem."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je hlavním cílem výkladu?",
+      "options": [
+        "vysvětlit jev a jeho příčiny",
+        "vyjádřit vlastní názor",
+        "vyprávět příběh"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který útvar obsahuje řečnické otázky a osobní názor?",
+      "options": [
+        "úvaha",
+        "výklad",
+        "zpráva"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Výklad patří do odborného stylu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který název se hodí pro úvahu?",
+      "options": [
+        "Je přátelství důležitější než úspěch?",
+        "Jak funguje sopka",
+        "Pozvánka na koncert"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který název se hodí pro výklad?",
+      "options": [
+        "Jak vzniká bouřka",
+        "Proč mám rád léto",
+        "Můj nejhezčí den"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď části úvahy.",
+      "items": [
+        "položím otázku",
+        "zvážím argumenty pro a proti",
+        "vyjádřím a shrnu svůj názor"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "V úvaze se nesmí objevit 1. osoba (já).",
+      "answer": false,
+      "explanation": "Úvaha je osobní – myslím si, domnívám se."
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje otázka, na kterou pisatel nečeká odpověď? Napiš přídavné jméno.",
+      "answers": [
+        "řečnická"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je argument?",
+      "options": [
+        "důvod, který podpoří názor",
+        "nadpis textu",
+        "spojka mezi větami"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj, co text dělá, s útvarem.",
+      "pairs": [
+        [
+          "vysvětluje",
+          "výklad"
+        ],
+        [
+          "hodnotí",
+          "úvaha"
+        ],
+        [
+          "informuje o události",
+          "zpráva"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi výkladem a úvahou?",
+      "answer": "Výklad věcně vysvětluje jev, jeho příčiny a souvislosti, je neosobní a používá termíny. Úvaha je zamyšlení – autor vyjadřuje a zdůvodňuje vlastní názor, často v 1. osobě a s řečnickými otázkami."
+    },
+    {
+      "type": "open",
+      "question": "Vymysli úvod úvahy na téma „Potřebujeme mobil?“",
+      "answer": "Např.: Kolikrát denně se podívám na mobil? Bez něj si dnes život neumíme představit. Opravdu ho ale potřebujeme pořád?"
+    }
+  ]
+}

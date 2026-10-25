@@ -1,0 +1,429 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "to-be",
+  "title": "Sloveso be (am, is, are)",
+  "emoji": "🧍",
+  "explanations": [
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky říkáš: já **jsem**, ty **jsi**, on **je**, my **jsme**, oni **jsou**. Slovo „být“ se mění podle toho, o kom mluvíš. V angličtině je to podobné, jen tvary jsou tři: **am, is, are**."
+        },
+        {
+          "type": "text",
+          "text": "Se slovesem „být“ řekneš, kdo jsi, jaký jsi, kde jsi a kolik ti je. Naučíš se ho říct kladně, záporně i v otázce – a celé to vejde do jedné tabulky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Slovo, které říká, co kdo dělá nebo jaký je.",
+          "example": "běhat, spát, být"
+        },
+        {
+          "type": "term",
+          "term": "be",
+          "definition": "Anglicky „být“. Má tvary **am**, **is**, **are**.",
+          "example": "I am = já jsem"
+        },
+        {
+          "type": "term",
+          "term": "Osobní zájmena",
+          "definition": "Krátká slova místo jména: **I** já, **you** ty / vy, **he** on, **she** ona, **it** ono (věc, zvíře), **we** my, **they** oni.",
+          "example": "Tom a Eva → they"
+        },
+        {
+          "type": "term",
+          "term": "Zápor",
+          "definition": "Věta s „ne“ – říká, že něco **není** pravda. Anglicky přidáš slovo **not**.",
+          "example": "Nejsem unavený. = I am not tired."
+        },
+        {
+          "type": "term",
+          "term": "Otázka",
+          "definition": "Věta, kterou se ptáš. Na konci je otazník.",
+          "example": "Jsi unavený? = Are you tired?"
+        },
+        {
+          "type": "heading",
+          "text": "Celá tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kdo",
+            "Kladně",
+            "Zápor",
+            "Otázka"
+          ],
+          "rows": [
+            [
+              "I",
+              "I am (I’m)",
+              "I’m not",
+              "Am I?"
+            ],
+            [
+              "he / she / it",
+              "is (’s)",
+              "isn’t",
+              "Is she?"
+            ],
+            [
+              "you / we / they",
+              "are (’re)",
+              "aren’t",
+              "Are you?"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**isn’t** je zkrácené *is not*, **aren’t** je *are not*. Apostrof ’ ukazuje, kde chybí písmeno."
+        },
+        {
+          "type": "heading",
+          "text": "Jak tabulku použít"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi, **kdo** je ve větě (I, he, we…). Tom, máma nebo pes je jeden → jako **he / she / it**. Tom a Eva jsou dva → jako **they**.",
+            "Vyber řádek.",
+            "Rozhodni, jestli chceš kladnou větu, zápor, nebo otázku – a vezmi tvar ze sloupce."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň správný tvar. Nejdřív si řekni, do kterého řádku tabulky věta patří."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "We ",
+                "after": " friends.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "answer": 2
+              },
+              {
+                "before": "It ",
+                "after": " cold.",
+                "options": [
+                  "am",
+                  "is",
+                  "are"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "They ",
+                "after": " at school.",
+                "options": [
+                  "isn’t",
+                  "aren’t",
+                  "am not"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "",
+                "after": " you happy?",
+                "options": [
+                  "Is",
+                  "Are",
+                  "Am"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Moji rodiče jsou doma. (rodiče = parents, doma = at home)",
+          "answer": "Rodiče jsou dva → jako **they** → **are**. Věta: **My parents are at home.**"
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Moje kočka není černá.",
+          "answer": "Kočka je jedna → **it** → **is**. Zápor → **isn’t**. Věta: **My cat isn’t black.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "We is happy.",
+          "right": "We are happy.",
+          "why": "**we** (my) patří do řádku s **are**. **is** je jen pro jednoho: he, she, it."
+        },
+        {
+          "type": "summary",
+          "text": "**I am**, **he / she / it is**, **you / we / they are**. Zápor: přidej **not** (isn’t, aren’t). Otázka: tvar slovesa dej **dopředu**."
+        }
+      ]
+    },
+    {
+      "title": "Přehazování",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky z věty uděláš otázku jen hlasem: „Tom je nemocný.“ → „Tom je nemocný?“ Angličan to dělá jinak – **přehodí slova**."
+        },
+        {
+          "type": "text",
+          "text": "Když tenhle trik umíš, zeptáš se na cokoli: jestli je kamarád doma, jestli je pes hladový, jestli je ti zima."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "be (am, is, are)",
+          "definition": "Anglické sloveso „být“. Sloveso je slovo, které říká, co kdo dělá nebo jaký je. **am** patří k I (já), **is** k jednomu (on, ona, ono), **are** k you, we, they (ty, my, oni).",
+          "example": "I am, she is, they are"
+        },
+        {
+          "type": "term",
+          "term": "Oznamovací věta",
+          "definition": "Obyčejná věta, která něco oznamuje. Končí tečkou.",
+          "example": "Tom is ill. = Tom je nemocný."
+        },
+        {
+          "type": "term",
+          "term": "Otázka",
+          "definition": "Věta, kterou se ptáš. Končí otazníkem.",
+          "example": "Is Tom ill? = Je Tom nemocný?"
+        },
+        {
+          "type": "term",
+          "term": "Zápor",
+          "definition": "Věta, která říká, že něco **není**. Anglicky přidáš **not** (ne).",
+          "example": "Tom is not ill. = Tom není nemocný."
+        },
+        {
+          "type": "heading",
+          "text": "Trik 1: Otázka = přehoď dvě slova"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Oznámení: **Tom is ill.**",
+            "Najdi **is / am / are**.",
+            "Přesuň ho na začátek: **Is Tom ill?**"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Trik 2: Zápor = přidej not"
+        },
+        {
+          "type": "text",
+          "text": "**Tom is not ill.** Zkráceně: **Tom isn’t ill.** Podobně *are not* → **aren’t**. Pozor: *am not* se nezkracuje na jedno slovo, jen **I’m not**."
+        },
+        {
+          "type": "heading",
+          "text": "Trik 3: Krátká odpověď"
+        },
+        {
+          "type": "text",
+          "text": "Na otázku neodpovídáš jen „Yes“. Zopakuješ sloveso: **Is he tall? – Yes, he is. / No, he isn’t.**"
+        },
+        {
+          "type": "text",
+          "text": "**Are you ten? – Yes, I am. / No, I’m not.** Pozor: ptají se tě *you* (ty), ty odpovídáš o sobě *I* (já)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Udělej z věty otázku v hlavě. Pak klepni na kartičku a zkontroluj se."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "He is tall.",
+                "back": "Is he tall?"
+              },
+              {
+                "front": "You are ten.",
+                "back": "Are you ten?"
+              },
+              {
+                "front": "It is a dog.",
+                "back": "Is it a dog?"
+              },
+              {
+                "front": "They are here.",
+                "back": "Are they here?"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Udělej otázku: Your cat is black.",
+          "answer": "Najdu **is** a dám ho dopředu: **Is your cat black?**"
+        },
+        {
+          "type": "example",
+          "question": "Kamarád se ptá: „Are you hungry?“ Ty hlad nemáš. Odpověz krátce.",
+          "answer": "Ptá se na *you*, já odpovídám o sobě *I* → **I am**. Odpověď je ne → **No, I’m not.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Are you ten? – Yes, you are.",
+          "right": "Yes, I am.",
+          "why": "Když se ptají na *tebe* (you), odpovídáš o *sobě* – tedy **I am**."
+        },
+        {
+          "type": "summary",
+          "text": "Otázka: přehoď **am / is / are** na začátek. Zápor: přidej **not**. Krátká odpověď: **Yes, I am. / No, he isn’t.**"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "They ___ my friends.",
+      "options": [
+        "am",
+        "is",
+        "are"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "choice",
+      "question": "My dog ___ black.",
+      "options": [
+        "am",
+        "is",
+        "are"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Zápor: She ___ at home. (není)",
+      "answers": [
+        "isn’t",
+        "isn't",
+        "is not",
+        "isnt"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň otázku: ___ you nine?",
+      "answers": [
+        "are"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Is he your brother? (ano)",
+      "options": [
+        "Yes, he is.",
+        "Yes, he are.",
+        "Yes, is he."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Are you hungry? (ne)",
+      "options": [
+        "No, I’m not.",
+        "No, I isn’t.",
+        "No, I aren’t."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "„We is happy.“ je správně.",
+      "answer": false,
+      "explanation": "we → are: We are happy."
+    },
+    {
+      "type": "truefalse",
+      "question": "„aren’t“ = „are not“.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Slož otázku.",
+      "items": [
+        "Is",
+        "your",
+        "cat",
+        "black?"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "I",
+          "am"
+        ],
+        [
+          "she",
+          "is"
+        ],
+        [
+          "we",
+          "are"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: I ___ not tired.",
+      "answers": [
+        "am"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak z věty „You are tall.“ uděláš otázku a zápor?",
+      "answer": "Otázka: Are you tall? Zápor: You aren’t tall (You are not tall)."
+    },
+    {
+      "type": "open",
+      "question": "Popiš anglicky kamaráda 2 větami se slovesem be.",
+      "answer": "He is ten. He is funny and tall."
+    }
+  ]
+}

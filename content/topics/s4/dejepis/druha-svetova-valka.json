@@ -1,0 +1,428 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "druha-svetova-valka",
+  "title": "Druhá světová válka",
+  "emoji": "✈️",
+  "explanations": [
+    {
+      "title": "Zlomové bitvy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Druhá světová válka (1939–1945) je největší válka v dějinách. Zahynulo v ní přes 50 milionů lidí, víc civilistů než vojáků. Bojovalo se v Evropě, Africe, Asii i na oceánech."
+        },
+        {
+          "type": "text",
+          "text": "Války na takové ploše se nejlépe pochopí přes **zlomové bitvy** – momenty, kdy se změnilo, kdo vyhrává. Uvidíš, proč nejdřív vítězilo Německo a proč nakonec prohrálo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Osa",
+          "definition": "Útočníci: **Německo, Itálie a Japonsko** (a jejich spojenci)."
+        },
+        {
+          "type": "term",
+          "term": "Spojenci",
+          "definition": "Státy bojující proti Ose: hlavně **Británie**, od 1941 **SSSR** a **USA** (a mnoho dalších, včetně čs. exilu)."
+        },
+        {
+          "type": "term",
+          "term": "Blitzkrieg",
+          "definition": "„Blesková válka“: rychlý útok tanků a letadel, který prolomí frontu dřív, než se nepřítel zorganizuje."
+        },
+        {
+          "type": "term",
+          "term": "Fronta",
+          "definition": "Linie, kde proti sobě bojují nepřátelská vojska."
+        },
+        {
+          "type": "term",
+          "term": "Kapitulace",
+          "definition": "Bezpodmínečné vzdání se – konec boje poraženého."
+        },
+        {
+          "type": "heading",
+          "text": "Válka krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**1. 9. 1939** – Německo napadlo **Polsko** (blitzkrieg). Británie a Francie vyhlásily Německu válku.",
+            "**1940** – pád **Francie** (červen). **Bitva o Británii**: německé letectvo Británii nezlomilo.",
+            "**22. 6. 1941** – operace **Barbarossa**: útok na **SSSR**.",
+            "**7. 12. 1941** – Japonsko napadlo americkou základnu **Pearl Harbor** → USA vstupují do války.",
+            "**1942** – obrat: **Midway** (Tichomoří), **El Alamein** (Afrika).",
+            "**1942–1943** – **Stalingrad**: Němci ztratili celou armádu. **Kursk** 1943 – největší tanková bitva.",
+            "**6. 6. 1944** – vylodění v **Normandii** (operace **Overlord**) – druhá fronta na západě.",
+            "**8. 5. 1945** – kapitulace **Německa**. Po atomových bombách na **Hirošimu** (6. 8.) a Nagasaki kapitulace **Japonska** (2. 9. 1945)."
+          ]
+        },
+        {
+          "type": "widget",
+          "widget": "timeline",
+          "props": {
+            "events": [
+              {
+                "year": 1939,
+                "label": "Polsko"
+              },
+              {
+                "year": 1940,
+                "label": "pád Francie, bitva o Británii"
+              },
+              {
+                "year": 1941,
+                "label": "Barbarossa, Pearl Harbor"
+              },
+              {
+                "year": 1942,
+                "label": "Midway, El Alamein"
+              },
+              {
+                "year": 1943,
+                "label": "Stalingrad, Kursk"
+              },
+              {
+                "year": 1944,
+                "label": "Normandie"
+              },
+              {
+                "year": 1945,
+                "label": "kapitulace Německa a Japonska"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď bitvy podle bojiště:"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Evropa a Afrika",
+              "Tichomoří"
+            ],
+            "items": [
+              {
+                "text": "Stalingrad",
+                "group": 0
+              },
+              {
+                "text": "Midway",
+                "group": 1
+              },
+              {
+                "text": "El Alamein",
+                "group": 0
+              },
+              {
+                "text": "Pearl Harbor",
+                "group": 1
+              },
+              {
+                "text": "Kursk",
+                "group": 0
+              },
+              {
+                "text": "Iwodžima",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč jsou roky 1942–1943 obratem ve válce?",
+          "answer": "Osa byla zastavena na všech frontách: u **Midway** Japonsko ztratilo letadlové lodě, u **El Alameinu** Britové zastavili Němce v Africe a u **Stalingradu** Německo přišlo o celou armádu. Od té doby útočili Spojenci."
+        },
+        {
+          "type": "example",
+          "question": "Proč Hitler potřeboval porazit SSSR rychle?",
+          "answer": "SSSR měl obrovské území, lidi a suroviny. Německo nemělo síly na dlouhou válku na dvou frontách. Když se útok zastavil před Moskvou (zima 1941), dlouhá vyčerpávací válka začala hrát pro Spojence."
+        },
+        {
+          "type": "mistake",
+          "wrong": "SSSR bojoval na straně Spojenců od začátku války.",
+          "right": "V letech 1939–1941 SSSR spolupracoval s Německem (pakt); ke Spojencům se přidal po napadení v červnu 1941.",
+          "why": "Podle paktu Ribbentrop–Molotov si SSSR s Německem rozdělil Polsko."
+        },
+        {
+          "type": "summary",
+          "text": "1939 Polsko → 1940 Francie → 1941 Barbarossa a Pearl Harbor → obrat 1942–1943 (Midway, El Alamein, Stalingrad) → 1944 Normandie → 1945 kapitulace."
+        }
+      ]
+    },
+    {
+      "title": "Konference spojenců",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Válku nerozhodovaly jen bitvy, ale i stoly, u kterých seděli vůdci Spojenců. Tam se dohodli, kdy kde zaútočí – a hlavně, jak bude vypadat svět po válce. Jejich dohody určily naše dějiny na půl století."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme válku přes její velká rozhodnutí: konference Spojenců a také nejhorší zločin války – holocaust."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Spojenci a Osa",
+          "definition": "**Osa** = Německo, Itálie, Japonsko (agresoři). **Spojenci** = Británie, SSSR (od 1941), USA (od prosince 1941) a další."
+        },
+        {
+          "type": "term",
+          "term": "Velká trojka",
+          "definition": "Vůdci tří hlavních Spojenců: **Franklin D. Roosevelt** (USA), **Winston Churchill** (Británie), **Josif Stalin** (SSSR)."
+        },
+        {
+          "type": "term",
+          "term": "Druhá fronta",
+          "definition": "Útok Spojenců na Německo ze **západu**, aby SSSR nebojoval na východě sám."
+        },
+        {
+          "type": "term",
+          "term": "Okupační zóna",
+          "definition": "Část poraženého území, kterou spravuje armáda jednoho z vítězů."
+        },
+        {
+          "type": "term",
+          "term": "Holocaust (šoa)",
+          "definition": "Systematické vyvraždění evropských **Židů** nacisty. Zahynulo asi **6 milionů** lidí, hlavně ve vyhlazovacích táborech (Osvětim aj.). Vraždili i Romy a další skupiny."
+        },
+        {
+          "type": "heading",
+          "text": "Průběh války ve zkratce"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1939 útok na Polsko, 1940 pád Francie a bitva o Británii.",
+            "1941 útok na SSSR (**Barbarossa**), Japonsko napadlo **Pearl Harbor** → USA ve válce.",
+            "1942–1943 obrat: **Midway**, El Alamein, **Stalingrad**.",
+            "1944 vylodění v Normandii (**Overlord**), 1945 kapitulace Německa (8. 5.) a Japonska (září, po atomových bombách na Hirošimu a Nagasaki)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Konference krok za krokem"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Konference",
+            "Rok",
+            "Výsledek"
+          ],
+          "rows": [
+            [
+              "Atlantická charta",
+              "1941",
+              "cíle války (Roosevelt a Churchill), základ OSN"
+            ],
+            [
+              "Teherán",
+              "1943",
+              "dohoda o druhé frontě ve Francii"
+            ],
+            [
+              "Jalta",
+              "únor 1945",
+              "poválečné uspořádání, OSN, sféry vlivu"
+            ],
+            [
+              "Postupim",
+              "červenec–srpen 1945",
+              "Německo: 4 okupační zóny, odsun Němců"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor: v Postupimi už USA zastupoval **Harry Truman** (Roosevelt zemřel v dubnu 1945) a Churchilla během konference vystřídal **Clement Attlee**."
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky – ke konferenci řekni rok a výsledek:"
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Teherán",
+                "back": "1943 – druhá fronta"
+              },
+              {
+                "front": "Jalta",
+                "back": "únor 1945 – OSN, sféry vlivu"
+              },
+              {
+                "front": "Postupim",
+                "back": "léto 1945 – okupační zóny, odsun"
+              },
+              {
+                "front": "Wannsee",
+                "back": "1942 – organizace „konečného řešení“"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Holocaust"
+        },
+        {
+          "type": "text",
+          "text": "Na **wannseeské konferenci** (leden 1942) nacističtí úředníci koordinovali tzv. **„konečné řešení židovské otázky“** – tedy vyvraždění všech Židů v Evropě. Následovaly transporty do vyhlazovacích táborů."
+        },
+        {
+          "type": "example",
+          "question": "Proč Stalin na každé konferenci tlačil na druhou frontu?",
+          "answer": "SSSR nesl od roku 1941 hlavní tíhu bojů a měl obrovské ztráty. Útok Spojenců ze západu by odtáhl část německých sil. Slib v Teheránu se splnil vyloděním v Normandii 1944."
+        },
+        {
+          "type": "example",
+          "question": "Jak Postupim ovlivnila Československo?",
+          "answer": "Postupimská konference schválila **odsun** německého obyvatelstva z Československa, Polska a Maďarska. Z ČSR odešly asi 3 miliony Němců."
+        },
+        {
+          "type": "mistake",
+          "wrong": "O rozdělení Německa na okupační zóny se rozhodlo v Teheránu.",
+          "right": "Okupační zóny definitivně potvrdila Postupim (1945); Teherán (1943) řešil hlavně druhou frontu.",
+          "why": "V roce 1943 se ještě bojovalo daleko od Německa. O jeho správě se rozhodovalo až na konci války."
+        },
+        {
+          "type": "summary",
+          "text": "Velká trojka (Roosevelt, Churchill, Stalin): Teherán 1943 (druhá fronta), Jalta 1945 (poválečný svět). Postupim 1945 (za USA už Truman): zóny, odsun. Holocaust: asi 6 milionů zavražděných Židů."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se jmenovala operace německého útoku na SSSR?",
+      "options": [
+        "Barbarossa",
+        "Overlord",
+        "Anthropoid"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která operace označuje vylodění v Normandii?",
+      "options": [
+        "Overlord",
+        "Barbarossa",
+        "Torch"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Ve kterém roce se konala konference v Teheránu?",
+      "answers": [
+        "1943"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Postupimská konference rozhodla o rozdělení Německa na okupační zóny.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď chronologicky.",
+      "items": [
+        "útok na Polsko",
+        "bitva o Británii",
+        "Pearl Harbor",
+        "Stalingrad",
+        "vylodění v Normandii"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která bitva byla obratem v Tichomoří?",
+      "options": [
+        "Midway",
+        "Pearl Harbor",
+        "Okinawa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj konferenci s rokem.",
+      "pairs": [
+        [
+          "Teherán",
+          "1943"
+        ],
+        [
+          "Jalta",
+          "únor 1945"
+        ],
+        [
+          "Postupim",
+          "červenec–srpen 1945"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "SSSR byl od začátku války na straně Spojenců.",
+      "answer": false,
+      "explanation": "V letech 1939–1941 spolupracoval s Německem (pakt). Ke Spojencům se připojil po napadení v červnu 1941."
+    },
+    {
+      "type": "choice",
+      "question": "Co projednala wannseeská konference (1942)?",
+      "options": [
+        "organizaci vyvraždění Židů",
+        "otevření druhé fronty",
+        "založení OSN"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Na které japonské město byla 6. 8. 1945 svržena první atomová bomba?",
+      "answers": [
+        "Hirošima",
+        "Hirošimu"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Proč se roky 1942–1943 považují za obrat ve válce?",
+      "answer": "Spojenci zastavili Osu na všech frontách: u Midway v Tichomoří, u El Alameinu v Africe a u Stalingradu, kde Německo ztratilo celou armádu. Od té doby iniciativu drželi Spojenci."
+    },
+    {
+      "type": "open",
+      "question": "Jaké byly důsledky 2. světové války?",
+      "answer": "Desítky milionů mrtvých, holocaust, zničená Evropa. Vznikla OSN, Evropa se rozdělila na sféry vlivu USA a SSSR, začala studená válka a dekolonizace. Proběhly odsuny obyvatel a Norimberský proces."
+    }
+  ]
+}

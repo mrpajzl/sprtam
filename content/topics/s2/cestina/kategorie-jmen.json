@@ -1,0 +1,457 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kategorie-jmen",
+  "title": "Mluvnické kategorie jmen",
+  "emoji": "📐",
+  "explanations": [
+    {
+      "title": "Občanka slova",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každý člověk má v občance údaje: jméno, datum narození, pohlaví. Podstatná jména mají taky své „údaje“ – podle nich víme, jaký tvar slova použít a jak napsat koncovku."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Bez rodu nenapíšeš správně *Psi štěkali* × *Stromy rostly*. Bez vzoru nevíš, jestli *s učiteli*, nebo *s učitely*. Tyto údaje se jmenují **mluvnické kategorie**."
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Slovo, které pojmenovává osobu, zvíře, věc, vlastnost nebo děj. Ptáme se na něj *kdo? co?*",
+          "example": "*učitel, hrad, radost, běh*"
+        },
+        {
+          "type": "term",
+          "term": "Mluvnická kategorie",
+          "definition": "Vlastnost slova, která se projeví jeho tvarem (hlavně koncovkou).",
+          "example": "pád, číslo, rod, vzor"
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři údaje v občance"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar podle role ve větě. Je jich 7, poznáš je otázkou.",
+          "example": "*bez hradu* (2. pád: bez čeho?)"
+        },
+        {
+          "type": "term",
+          "term": "Číslo",
+          "definition": "Jednotné (jeden) nebo množné (víc). Zbytky starého **dvojného** čísla (pro páry) jsou v tvarech *očima, ušima, rukama, nohama*.",
+          "example": "*hrad – hrady*"
+        },
+        {
+          "type": "term",
+          "term": "Rod",
+          "definition": "Mluvnický „druh“ jména: mužský životný (lidé a zvířata), mužský neživotný (věci), ženský, střední.",
+          "example": "*pán* (m. živ.), *hrad* (m. neživ.), *žena* (ž.), *město* (stř.)"
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Vzorové slovo, podle kterého se jméno skloňuje stejně.",
+          "example": "*učitel* se skloňuje jako *muž*: muže – učitele"
+        },
+        {
+          "type": "heading",
+          "text": "Sedm pádů"
+        },
+        {
+          "type": "text",
+          "text": "Pády mají i latinské názvy. Používají se v učebnicích i v jazycích, jako je němčina nebo latina."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Řekni si otázku a latinský název pádu, pak otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "1. pád",
+                "back": "nominativ – kdo, co"
+              },
+              {
+                "front": "2. pád",
+                "back": "genitiv – koho, čeho"
+              },
+              {
+                "front": "3. pád",
+                "back": "dativ – komu, čemu"
+              },
+              {
+                "front": "4. pád",
+                "back": "akuzativ – koho, co"
+              },
+              {
+                "front": "5. pád",
+                "back": "vokativ – oslovujeme"
+              },
+              {
+                "front": "6. pád",
+                "back": "lokál – o kom, o čem"
+              },
+              {
+                "front": "7. pád",
+                "back": "instrumentál – kým, čím"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vzory"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rod",
+            "Vzory"
+          ],
+          "rows": [
+            [
+              "mužský životný",
+              "pán, muž, předseda, soudce"
+            ],
+            [
+              "mužský neživotný",
+              "hrad, stroj"
+            ],
+            [
+              "ženský",
+              "žena, růže, píseň, kost"
+            ],
+            [
+              "střední",
+              "město, moře, kuře, stavení"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči kategorie slova *učitelům*.",
+          "answer": "Otázka *komu?* → **3. pád**. Víc učitelů → **množné číslo**. Osoba mužského rodu → **mužský životný**. Končí měkkou souhláskou *l* (*učitel – učitele*) → vzor **muž**."
+        },
+        {
+          "type": "example",
+          "question": "Podle jakého vzoru se skloňuje *kolega*?",
+          "answer": "Je to muž (mužský životný), ale končí na **-a**. Takové slovo se skloňuje podle vzoru **předseda** (*předsedy – kolegy*)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Děti* jsou rodu středního, protože *dítě* je střední.",
+          "right": "V množném čísle je *děti* rodu ženského.",
+          "why": "*Dítě* (jedno) je střední, ale *děti* se skloňují jako ženské vzoru *kost*: *dětmi, dětem*. Proto *děti si hrály* s -y."
+        },
+        {
+          "type": "summary",
+          "text": "Podstatná jména mají pád (7), číslo (jednotné, množné; zbytky dvojného), rod (m. živ., m. neživ., ž., stř.) a vzor."
+        }
+      ]
+    },
+    {
+      "title": "Přídavná jména a shoda",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Přídavné jméno je jako stín: chodí za podstatným jménem a přizpůsobuje se mu. *Mladý muž, mladá žena, mladé kotě.* Mění se podle toho, ke komu patří."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Správný tvar přídavného jména je častý chyták v testu (*mladý × mladí*, *otcův × otcovi*). A aby ses v tom vyznal, potřebuješ znát pád, číslo a rod."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přídavné jméno",
+          "definition": "Slovo, které říká, **jaký** kdo nebo co je, nebo **čí** je.",
+          "example": "*zelený* strom, *otcův* klobouk"
+        },
+        {
+          "type": "term",
+          "term": "Pád, číslo, rod",
+          "definition": "Mluvnické kategorie jmen. Pád = tvar podle otázky (7 pádů), číslo = jednotné/množné, rod = mužský (životný a neživotný), ženský, střední.",
+          "example": "*mladému muži*: 3. pád, j. č., m. živ."
+        },
+        {
+          "type": "term",
+          "term": "Shoda",
+          "definition": "Přídavné jméno má stejný pád, číslo a rod jako podstatné jméno, ke kterému patří.",
+          "example": "*mladého muže*, *mladé ženě*"
+        },
+        {
+          "type": "heading",
+          "text": "Tři druhy přídavných jmen"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Vzor",
+            "Příklady"
+          ],
+          "rows": [
+            [
+              "tvrdá",
+              "mladý",
+              "zelený, malý, drahý"
+            ],
+            [
+              "měkká",
+              "jarní",
+              "cizí, letní, ranní"
+            ],
+            [
+              "přivlastňovací (čí?)",
+              "otcův, matčin",
+              "Petrův, sestřin"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Měkká mají ve všech rodech stejný 1. pád: *jarní muž, jarní žena, jarní město*. Přivlastňovací se tvoří od jmen osob příponou *-ův* (muž) nebo *-in* (žena)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozřaď přídavná jména. Zkus *ten ___ muž / ta ___ žena*: mění se konec? Pak je tvrdé."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "tvrdá (mladý)",
+              "měkká (jarní)",
+              "přivlastňovací (otcův, matčin)"
+            ],
+            "items": [
+              {
+                "text": "zelený",
+                "group": 0
+              },
+              {
+                "text": "cizí",
+                "group": 1
+              },
+              {
+                "text": "sestřin",
+                "group": 2
+              },
+              {
+                "text": "malý",
+                "group": 0
+              },
+              {
+                "text": "letní",
+                "group": 1
+              },
+              {
+                "text": "Petrův",
+                "group": 2
+              },
+              {
+                "text": "drahý",
+                "group": 0
+              },
+              {
+                "text": "ranní",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Stupňování"
+        },
+        {
+          "type": "term",
+          "term": "Stupňování",
+          "definition": "Vyjádření, že vlastnost je větší nebo největší. Má 3 stupně.",
+          "example": "dobrý – lepší – nejlepší"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1. stupeň **pozitiv**: *dobrý, mladý*",
+            "2. stupeň **komparativ** (srovnání): *lepší, mladší*",
+            "3. stupeň **superlativ** (nejvyšší): *nejlepší, nejmladší*"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Stupňovat jdou jen přídavná jména, která vyjadřují vlastnost. *Dřevěný* nebo *otcův* se stupňovat nedá."
+        },
+        {
+          "type": "example",
+          "question": "Urči druh a stupeň: *nejstarší*.",
+          "answer": "Tvoří se ze *starý* (tvrdé) a má předponu *nej-* → **superlativ** (3. stupeň)."
+        },
+        {
+          "type": "example",
+          "question": "Je *matčin* přivlastňovací, nebo *mateřský*?",
+          "answer": "*Matčin* odpovídá na otázku **čí?** a má příponu *-in* → **přivlastňovací**. *Mateřský* odpovídá na otázku *jaký?* (mateřská dovolená) – je to obyčejné tvrdé přídavné jméno."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Jarní* je tvrdé, protože končí na -í jako *mladí*.",
+          "right": "*Jarní* je měkké (vzor jarní).",
+          "why": "Rozhoduje, jestli se mění podle rodu: *mladý muž – mladá žena*, ale *jarní muž – jarní žena*. Měkké se nemění."
+        },
+        {
+          "type": "summary",
+          "text": "Přídavná jména jsou tvrdá (mladý), měkká (jarní) a přivlastňovací (otcův, matčin). Shodují se s podstatným jménem v pádě, čísle a rodě. Stupně: pozitiv, komparativ, superlativ."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kolik pádů má čeština?",
+      "options": [
+        "6",
+        "7",
+        "8"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Latinský název 4. pádu?",
+      "answers": [
+        "akuzativ"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je rodu mužského neživotného?",
+      "options": [
+        "hrad",
+        "pán",
+        "soudce",
+        "muž"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Tvary *očima, ušima* jsou zbytky dvojného čísla.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru se skloňuje *učitel*?",
+      "options": [
+        "pán",
+        "muž",
+        "předseda",
+        "soudce"
+      ],
+      "answer": 1,
+      "explanation": "Měkké zakončení, 1. pád končí souhláskou → muž."
+    },
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru se skloňuje *kolega*?",
+      "options": [
+        "pán",
+        "předseda",
+        "soudce"
+      ],
+      "answer": 1,
+      "explanation": "Mužský životný zakončený na -a."
+    },
+    {
+      "type": "input",
+      "question": "Napiš 2. stupeň přídavného jména *dobrý*.",
+      "answers": [
+        "lepší"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj pád s otázkou.",
+      "pairs": [
+        [
+          "2. pád",
+          "koho, čeho"
+        ],
+        [
+          "3. pád",
+          "komu, čemu"
+        ],
+        [
+          "6. pád",
+          "o kom, o čem"
+        ],
+        [
+          "7. pád",
+          "kým, čím"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které přídavné jméno je přivlastňovací?",
+      "options": [
+        "matčin",
+        "mateřský",
+        "jarní"
+      ],
+      "answer": 0,
+      "explanation": "Odpovídá na otázku *čí?* a má příponu -in/-ův."
+    },
+    {
+      "type": "truefalse",
+      "question": "Přídavné jméno *jarní* je tvrdé.",
+      "answer": false,
+      "explanation": "Je měkké (vzor jarní)."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď stupně přídavných jmen.",
+      "items": [
+        "pozitiv",
+        "komparativ",
+        "superlativ"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj mluvnické kategorie podstatných jmen a jejich hodnoty.",
+      "answer": "Pád (7 pádů), číslo (jednotné, množné, zbytky dvojného), rod (mužský životný a neživotný, ženský, střední) a vzor."
+    },
+    {
+      "type": "open",
+      "question": "Jak se dělí přídavná jména? Uveď příklady a vysvětli stupňování.",
+      "answer": "Tvrdá (*mladý*), měkká (*jarní*) a přivlastňovací (*otcův, matčin*). Stupňují se: pozitiv *dobrý*, komparativ *lepší*, superlativ *nejlepší*."
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "uver-urok",
+  "title": "Úvěr, úrok a spoření",
+  "emoji": "📈",
+  "explanations": [
+    {
+      "title": "Půjčka a spoření",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když si od kamaráda půjčíš 100 Kč, vrátíš 100 Kč. V bance to tak nefunguje – banka si za půjčení řekne o poplatek. A naopak: když bance peníze svěříš, zaplatí ona tobě."
+        },
+        {
+          "type": "text",
+          "text": "Tomu poplatku se říká **úrok**. Pochopíš, jak se počítá, kdy na něm vyděláš a kdy proděláš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Úvěr (půjčka)",
+          "definition": "Peníze, které si půjčíš a musíš vrátit."
+        },
+        {
+          "type": "term",
+          "term": "Úrok",
+          "definition": "Cena za půjčení peněz. Udává se v procentech za rok (např. 10 % ročně)."
+        },
+        {
+          "type": "term",
+          "term": "Dlužník a věřitel",
+          "definition": "Dlužník si peníze půjčil a úrok **platí**. Věřitel peníze půjčil a úrok **dostává**."
+        },
+        {
+          "type": "term",
+          "term": "Splátka",
+          "definition": "Pravidelná platba, kterou se dluh postupně vrací."
+        },
+        {
+          "type": "heading",
+          "text": "Dvě situace"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Spoření**: Ty uložíš do banky 10 000 Kč. Banka je může půjčit dál, a proto ti platí úrok. Ty jsi věřitel.",
+            "**Půjčka**: Ty si půjčíš 5 000 Kč. Banka ti půjčila, ty platíš úrok. Ty jsi dlužník.",
+            "Pravidlo: **úrok dostává ten, kdo peníze půjčuje nebo ukládá**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak spočítat úrok"
+        },
+        {
+          "type": "text",
+          "text": "Úrok je procento z částky. 1 % = jedna setina. Prohlédni si mřížku: 10 % je 10 políček ze 100."
+        },
+        {
+          "type": "widget",
+          "widget": "percent",
+          "props": {
+            "percent": 10,
+            "of": 5000
+          }
+        },
+        {
+          "type": "example",
+          "question": "Půjčíš si 5 000 Kč s úrokem 10 % na rok. Kolik celkem vrátíš?",
+          "answer": "10 % z 5 000 = 5 000 : 100 · 10 = 500 Kč úroku. Vrátíš 5 000 + 500 = **5 500 Kč**."
+        },
+        {
+          "type": "example",
+          "question": "Uložíš 10 000 Kč s úrokem 3 % ročně. Kolik úroku dostaneš za rok (bez daně)?",
+          "answer": "1 % z 10 000 = 100 Kč. 3 % = 3 · 100 = **300 Kč**. (Z úroků se navíc platí daň 15 %, takže reálně dostaneš o něco méně.)"
+        },
+        {
+          "type": "heading",
+          "text": "Úrok z úroku"
+        },
+        {
+          "type": "term",
+          "term": "Složené úročení",
+          "definition": "Úrok se přičte k penězům a příští rok se úročí i on. Peníze rostou čím dál rychleji."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Začátek: 1 000 Kč, úrok 10 % ročně.",
+            "Po 1. roce: 1 000 + 100 = 1 100 Kč.",
+            "Po 2. roce: 10 % z 1 100 = 110 Kč → 1 100 + 110 = **1 210 Kč**.",
+            "Druhý rok jsi dostal víc (110 Kč), protože se úročil i první úrok."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Půjčka „ihned, bez dokládání příjmu“ je výhodná, protože je rychlá.",
+          "right": "Takové půjčky mívají velmi vysoké úroky a pokuty.",
+          "why": "Kdo půjčuje bez prověření, počítá s tím, že část lidí nesplatí – a vysoké úroky mu to vynahradí."
+        },
+        {
+          "type": "summary",
+          "text": "Úrok = cena za půjčení peněz. Dlužník ho platí, věřitel (i ten, kdo spoří) dostává. Při složeném úročení se úročí i dřívější úroky."
+        }
+      ]
+    },
+    {
+      "title": "Než podepíšeš",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Reklama slibuje: „Nový telefon hned, jen 499 Kč měsíčně!“ Zní to levně. Kolik ale nakonec zaplatíš? A co se stane, když splácet přestaneš?"
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se úvěry porovnávat, poznat past a víš, kam vedou nesplácené dluhy."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Úvěr",
+          "definition": "Půjčka od banky nebo jiné firmy, kterou vracíš ve splátkách i s úrokem."
+        },
+        {
+          "type": "term",
+          "term": "Úrok",
+          "definition": "Cena za půjčené peníze, v procentech za rok."
+        },
+        {
+          "type": "term",
+          "term": "RPSN",
+          "definition": "Roční procentní sazba nákladů. Ukazuje **všechny** náklady úvěru – úrok i poplatky – v procentech za rok. Podle ní se úvěry nejlépe porovnávají."
+        },
+        {
+          "type": "term",
+          "term": "Hypotéka",
+          "definition": "Velký úvěr na bydlení, splácí se mnoho let (často 20–30)."
+        },
+        {
+          "type": "term",
+          "term": "Exekuce",
+          "definition": "Nucené vymáhání dluhu. Exekutor může zabavit část mzdy nebo majetek."
+        },
+        {
+          "type": "heading",
+          "text": "Porovnej dvě nabídky"
+        },
+        {
+          "type": "text",
+          "text": "Telefon za 10 000 Kč. Podívej se, kolik celkem zaplatíš u každé nabídky."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Kč",
+            "items": [
+              {
+                "label": "zaplatím hned (našetřeno)",
+                "value": 10000
+              },
+              {
+                "label": "banka: 12 × 900 Kč",
+                "value": 10800
+              },
+              {
+                "label": "rychlá půjčka: 24 × 650 Kč",
+                "value": 15600
+              }
+            ]
+          }
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Banka: 12 · 900 = 10 800 Kč. Přeplatíš 800 Kč.",
+            "Rychlá půjčka: 24 · 650 = 15 600 Kč. Přeplatíš 5 600 Kč!",
+            "Nižší měsíční splátka tedy **neznamená** levnější úvěr.",
+            "Porovnávej **RPSN** a celkovou zaplacenou částku."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Spirála dluhů"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Člověk přestane splácet.",
+            "Naskakují pokuty a poplatky – dluh roste.",
+            "Věřitel jde k soudu.",
+            "Nastoupí **exekutor** a zabaví část mzdy nebo majetek."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kontrolní seznam před úvěrem"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Opravdu to potřebuji, nebo můžu našetřit?",
+            "Zvládnu splácet i v horším měsíci?",
+            "Kolik je RPSN a kolik zaplatím celkem?",
+            "Přečetl jsem celou smlouvu, i pokuty za pozdní splátku?",
+            "Je věřitel ověřená banka?"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "1 000 Kč, úrok 10 % ročně, složené úročení. Kolik bude na účtu po 2 letech?",
+          "answer": "1. rok: 1 000 + 100 = 1 100. 2. rok: 1 100 + 110 = **1 210 Kč**."
+        },
+        {
+          "type": "example",
+          "question": "Kdo z úroku vydělává?",
+          "answer": "Ten, kdo peníze **půjčuje nebo ukládá** (věřitel). Dlužník úrok platí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejlevnější úvěr je ten s nejnižší měsíční splátkou.",
+          "right": "Nejlevnější je úvěr s nejnižší RPSN a nejnižší celkovou částkou.",
+          "why": "Nízká splátka často znamená delší splácení – a celkově zaplatíš mnohem víc."
+        },
+        {
+          "type": "summary",
+          "text": "Úvěry porovnávej podle RPSN a celkové částky, ne podle splátky. Hypotéka = úvěr na bydlení. Nesplácení vede k exekuci."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Uložíš 10 000 Kč s úrokem 3 % ročně. Kolik Kč úroku dostaneš za rok (bez daně)?",
+      "answers": [
+        "300"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Půjčíš si 5 000 Kč s úrokem 10 % na rok. Kolik Kč celkem vrátíš?",
+      "answers": [
+        "5500",
+        "5 500"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Podle čeho nejlépe porovnáš cenu úvěrů?",
+      "options": [
+        "RPSN",
+        "výše měsíční splátky",
+        "barva reklamy",
+        "délka smlouvy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Hypotéka je úvěr na bydlení.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co je exekuce?",
+      "options": [
+        "nucené vymáhání dluhu",
+        "druh spoření",
+        "pojištění",
+        "bankovní karta"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Při složeném úročení se úročí i dříve připsané úroky.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "1 000 Kč, úrok 10 % ročně, složené úročení. Kolik Kč bude na účtu po 2 letech?",
+      "answers": [
+        "1210",
+        "1 210"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo z úroku vydělává?",
+      "options": [
+        "ten, kdo peníze půjčuje nebo ukládá",
+        "dlužník",
+        "nikdo",
+        "jen stát"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Půjčka „bez dokládání příjmu ihned“ bývá obvykle levná.",
+      "answer": false,
+      "explanation": "Takové půjčky mívají velmi vysoké RPSN a sankce."
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem a význam.",
+      "pairs": [
+        [
+          "úvěr",
+          "půjčka"
+        ],
+        [
+          "úrok",
+          "cena půjčených peněz"
+        ],
+        [
+          "splátka",
+          "pravidelná platba dluhu"
+        ],
+        [
+          "vklad",
+          "uložené peníze"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co je úrok a kdo ho platí a kdo dostává?",
+      "answer": "Úrok je cena za půjčení peněz. Dlužník ho platí, věřitel ho dostává. Když ukládám peníze do banky, úrok dostávám já."
+    },
+    {
+      "type": "open",
+      "question": "Na co si dát pozor, než si vezmeš úvěr?",
+      "answer": "Zda ho opravdu potřebuji a zvládnu splácet. Porovnat RPSN, přečíst si smlouvu včetně sankcí a nepůjčovat si u neověřených firem."
+    }
+  ]
+}

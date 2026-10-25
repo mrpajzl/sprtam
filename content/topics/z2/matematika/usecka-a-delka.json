@@ -1,0 +1,344 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "usecka-a-delka",
+  "title": "Úsečka a měření délky",
+  "emoji": "📏",
+  "explanations": [
+    {
+      "title": "Pravítkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jak dlouhá je tvoje tužka? Vejde se sešit do penálu? Na to potřebuješ **měřit**."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se nakreslit rovnou čáru a změřit ji pravítkem. To potřebuje truhlář, švadlena i ty v geometrii."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Bod",
+          "definition": "Malá tečka nebo křížek na papíře. Značíme ho velkým písmenem.",
+          "example": "bod A, bod B"
+        },
+        {
+          "type": "term",
+          "term": "Úsečka",
+          "definition": "Rovná čára mezi dvěma body. Má začátek i konec.",
+          "example": "Úsečku mezi body A a B zapíšeme **AB**."
+        },
+        {
+          "type": "term",
+          "term": "Krajní body",
+          "definition": "Dva body na koncích úsečky.",
+          "example": "Úsečka AB má krajní body A a B."
+        },
+        {
+          "type": "term",
+          "term": "Centimetr (cm)",
+          "definition": "Malá jednotka délky. Asi tak široký je tvůj prst.",
+          "example": "Na pravítku jsou centimetry očíslované 0, 1, 2, 3…"
+        },
+        {
+          "type": "heading",
+          "text": "Jak změřit úsečku"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přilož pravítko podél úsečky.",
+            "Ryska s **0** musí být přesně na bodě A.",
+            "Podívej se, kde je bod B.",
+            "Přečti číslo pod bodem B. Třeba 6.",
+            "Napiš i jednotku: **6 cm**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že čára je pravítko. Úsečka začíná na 0 (bod A). Žabka doskočí na její konec (bod B). Jak je úsečka dlouhá?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "start": 0,
+            "hop": 6
+          }
+        },
+        {
+          "type": "example",
+          "question": "Úsečka AB začíná na 0 a končí na 7. Jak je dlouhá?",
+          "answer": "Měříme od nuly, takže čteme rovnou: **7 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Úsečka AB měří 4 cm, CD 9 cm. O kolik je CD delší?",
+          "answer": "O kolik delší → odečtu: 9 − 4 = **5 cm**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Přiložím pravítko krajem (ne nulou) na bod A a přečtu 7 cm.",
+          "right": "Nulu pravítka dej přesně na bod A.",
+          "why": "Před nulou bývá na pravítku kousek prázdného místa. Když měříš od kraje, vyjde číslo špatně."
+        },
+        {
+          "type": "summary",
+          "text": "Úsečka = rovná čára mezi dvěma body. Měř vždy od nuly a napiš jednotku (cm)."
+        }
+      ]
+    },
+    {
+      "title": "Jednotky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mravenec je malinký. Chodba je dlouhá. Měřit chodbu po centimetrech by trvalo věčnost."
+        },
+        {
+          "type": "text",
+          "text": "Proto máme **různé jednotky délky** – malé na malé věci, velké na velké. Musíš vědět, kterou vybrat a jak je převádět."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jednotka délky",
+          "definition": "Domluvený „kousek“, kterým měříme. Říká, kolikrát se kousek vejde do délky.",
+          "example": "Tužka měří 15 cm – centimetr se do ní vejde 15krát."
+        },
+        {
+          "type": "term",
+          "term": "Centimetr (cm)",
+          "definition": "Asi šířka prstu."
+        },
+        {
+          "type": "term",
+          "term": "Decimetr (dm)",
+          "definition": "10 centimetrů. Asi šířka dlaně."
+        },
+        {
+          "type": "term",
+          "term": "Metr (m)",
+          "definition": "100 centimetrů. Asi velký krok dospělého."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jednotka",
+            "Kolik cm",
+            "Měříme jím"
+          ],
+          "rows": [
+            [
+              "1 cm",
+              "1 cm",
+              "gumu, tužku, sešit"
+            ],
+            [
+              "1 dm",
+              "10 cm",
+              "krabici, knihu"
+            ],
+            [
+              "1 m",
+              "100 cm",
+              "třídu, auto, chodbu"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**1 m = 10 dm = 100 cm.**"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Čím bys to měřil – centimetry, nebo metry?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "cm",
+              "m"
+            ],
+            "items": [
+              {
+                "text": "gumu",
+                "group": 0
+              },
+              {
+                "text": "chodbu",
+                "group": 1
+              },
+              {
+                "text": "pastelku",
+                "group": 0
+              },
+              {
+                "text": "bazén",
+                "group": 1
+              },
+              {
+                "text": "mravence",
+                "group": 0
+              },
+              {
+                "text": "dům",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Co je delší: 1 m, nebo 90 cm?",
+          "answer": "Převedu na stejnou jednotku: 1 m = 100 cm. 100 cm > 90 cm, takže **1 m je delší**."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejkratšího: 1 m, 5 cm, 50 cm, 1 dm.",
+          "answer": "Vše na cm: 100, 5, 50, 10. Pořadí: **5 cm, 1 dm, 50 cm, 1 m**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 dm je delší než 50 cm, protože decimetr je větší jednotka.",
+          "right": "1 dm = 10 cm, a to je méně než 50 cm.",
+          "why": "Záleží na jednotce **i** na čísle. Než porovnáš, převeď obě délky na centimetry."
+        },
+        {
+          "type": "summary",
+          "text": "1 m = 10 dm = 100 cm. Malé věci měříme v cm, velké v m. Před porovnáním převeď na stejnou jednotku."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik centimetrů má 1 metr?",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik centimetrů má 1 decimetr?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik decimetrů má 1 metr?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Čím změříš délku sešitu?",
+      "options": [
+        "cm",
+        "m",
+        "km"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Čím změříš délku třídy?",
+      "options": [
+        "cm",
+        "m",
+        "kg"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Úsečka AB začíná v bodě A na 0 a končí v bodě B na 7. Jak je dlouhá?",
+      "options": [
+        "7 cm",
+        "8 cm",
+        "6 cm"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Úsečka má dva krajní body.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Úsečka může být křivá.",
+      "answer": false,
+      "explanation": "Úsečka je vždy rovná."
+    },
+    {
+      "type": "input",
+      "question": "Úsečka AB měří 4 cm, CD 9 cm. O kolik cm je CD delší?",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Spojíš úsečky 3 cm a 5 cm za sebe. Kolik cm měří?",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejkratší.",
+      "items": [
+        "5 cm",
+        "1 dm",
+        "50 cm",
+        "1 m"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak správně změříš úsečku pravítkem?",
+      "answer": "Nulu pravítka přiložím na první bod. Na druhém bodě přečtu číslo a napíšu cm."
+    },
+    {
+      "type": "open",
+      "question": "Co je delší, 1 m, nebo 90 cm? Proč?",
+      "answer": "1 m, protože 1 m je 100 cm a to je víc než 90 cm."
+    }
+  ]
+}

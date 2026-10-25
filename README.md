@@ -9,7 +9,7 @@
 Šprtám vysvětlí každé téma dvěma různými způsoby, nechá tě ho procvičit v kvízu, písemce nebo ústním zkoušení a podle výsledků ti řekne, co zopakovat. Funguje v prohlížeči i jako aplikace na ploše, online i offline.
 
 - **13 ročníků:** 1.–9. třída ZŠ a 1.–4. ročník gymnázia, přes 800 témat a přes 10 000 otázek.
-- **Dvě vysvětlení ke každému tématu** a interaktivní pomůcky (číselná osa, zlomky, rovnice na vahách, hodiny…).
+- **Dvě vysvětlení ke každému tématu** a 21 interaktivních pomůcek (číselná osa, zlomky, rovnice na vahách, hodiny…) – všechny v **[galerii](https://sprtam.cz/widgety)**.
 - **Šest režimů:** Rychlý kvíz, Opakování, Písemka se známkou, Zkoušení nahlas, Test z předmětu a Mix.
 - **Anglická slovíčka A1–C1** s výslovností a opakováním podle Leitnerova systému.
 - **Doporučení „Na řadě“:** co zopakovat, co ti nejde a na jakém základu z nižšího ročníku to stojí.
@@ -41,7 +41,9 @@ Podrobně: **[Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md)**
 | [Propojení zařízení](docs/PROPOJENI-ZARIZENI.md) | všichni | Přenos pokroku přes QR kódy a WebRTC, kód pokroku |
 | [Statistiky](docs/STATISTIKY.md) | všichni | Jak přesně funguje počítání uživatelů |
 | [Architektura](docs/ARCHITEKTURA.md) | vývojáři | Technologie, struktura kódu, server, nasazení, testy |
-| [Jak psát učivo](docs/CONTENT.md) | autoři obsahu | Pravidla a schéma pro témata a otázky |
+| [Jak psát učivo](docs/CONTENT.md) | autoři obsahu | Postup, pravidla výkladu, nový widget, změny formátu |
+| [Formát obsahu](docs/FORMAT.md) | autoři obsahu | Reference všech polí JSON souborů v `content/` (generovaná) |
+| [Widgety](docs/WIDGETY.md) | autoři obsahu | Reference interaktivních pomůcek (generovaná), živě v [galerii](https://sprtam.cz/widgety) |
 
 ## Našli jste chybu?
 
@@ -52,8 +54,11 @@ Ať už jde o chybu v učivu, nebo v aplikaci, založte prosím **[issue](https:
 ```sh
 npm install
 npm run dev              # http://localhost:5173
-npm run check:content    # kontrola učiva (schéma, odpovědi, počty otázek)
+npm run check:content    # kontrola učiva (formát, widgety, odpovědi, pravidla výkladu)
+npm run content:generate # JSON Schema a reference (FORMAT.md, WIDGETY.md) po změně formátu nebo widgetu
+npm run content:format   # sjednotí formátování JSON v content/
 npm run build            # kontrola typů + produkční build do dist/
 ```
 
-Struktura kódu, testy a nasazení: [Architektura](docs/ARCHITEKTURA.md). Pravidla pro učivo: [CONTENT.md](docs/CONTENT.md).
+Učivo jsou JSON soubory v [`content/`](content) – jedno téma = jeden soubor. Widgety jsou v `src/widgets/`, každý ve vlastním souboru.
+Struktura kódu, testy a nasazení: [Architektura](docs/ARCHITEKTURA.md). Jak přidat učivo nebo widget: [CONTENT.md](docs/CONTENT.md).

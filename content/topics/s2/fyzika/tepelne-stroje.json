@@ -1,0 +1,391 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "tepelne-stroje",
+  "title": "Kruhový děj a tepelné motory",
+  "emoji": "🚂",
+  "explanations": [
+    {
+      "title": "Motor auta",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Benzín v nádrži obsahuje energii. Motor ji mění na pohyb auta. Ale sáhni na kapotu po jízdě – je horká. A z výfuku jdou horké plyny. Velká část energie z benzínu se nezměnila na pohyb, ale na teplo, které odešlo pryč."
+        },
+        {
+          "type": "text",
+          "text": "Je to chyba konstruktérů? Ne. Je to přírodní zákon – a tady pochopíš proč."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tepelný motor",
+          "definition": "Stroj, který mění teplo na mechanickou práci (pohyb).",
+          "example": "Benzínový a dieselový motor, parní stroj, proudový motor letadla."
+        },
+        {
+          "type": "term",
+          "term": "Pracovní látka",
+          "definition": "Plyn nebo pára uvnitř motoru, která se ohřívá, rozpíná a tlačí na píst."
+        },
+        {
+          "type": "term",
+          "term": "Kruhový (cyklický) děj",
+          "definition": "Děj, při kterém se plyn po řadě změn vrátí do **původního stavu** – a pak se vše opakuje.",
+          "example": "Píst v motoru jezdí tam a zpět tisíckrát za minutu."
+        },
+        {
+          "type": "term",
+          "term": "Ohřívač a chladič",
+          "definition": "**Ohřívač** je teplé těleso, od kterého motor teplo bere (hořící palivo). **Chladič** je chladnější okolí, kam motor odevzdá zbytek tepla (vzduch, výfuk, chladicí kapalina)."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyřdobý motor"
+        },
+        {
+          "type": "text",
+          "text": "Sleduj cyklus benzínového motoru. U každého kroku si řekni, jestli se píst pohybuje dolů, nebo nahoru."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "sání: píst jde dolů, nasaje směs benzínu a vzduchu",
+              "komprese: píst jde nahoru, stlačí směs",
+              "zážeh a expanze: svíčka zapálí směs, horký plyn tlačí píst dolů – jediná pracovní doba",
+              "výfuk: píst jde nahoru, vytlačí spaliny"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Dieselový (**vznětový**) motor nemá svíčku: vzduch stlačí tak silně, že se zahřeje a vstříknutá nafta se sama vznítí. Benzínový je **zážehový** – zapaluje ho jiskra."
+        },
+        {
+          "type": "heading",
+          "text": "Proč se nedá využít všechno teplo"
+        },
+        {
+          "type": "text",
+          "text": "Aby se píst mohl vrátit a začít znovu, musí se plyn ochladit a stlačit. Část tepla musí vždy odejít do chladiče. Bez chladiče by motor pracoval jen jednou."
+        },
+        {
+          "type": "term",
+          "term": "Účinnost η",
+          "definition": "Jaká část přijatého tepla se změní na práci: `η = W / Q₁`. Vždy menší než 100 %.",
+          "example": "Motor přijme 1 000 J, vykoná práci 300 J → η = 30 %. Zbylých 700 J odejde do chladiče."
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje přibližné účinnosti různých strojů. Všimni si, že žádný tepelný motor se 100 % ani nepřibližuje."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "%",
+            "items": [
+              {
+                "label": "parní lokomotiva",
+                "value": 8
+              },
+              {
+                "label": "benzínový motor",
+                "value": 30
+              },
+              {
+                "label": "dieselový motor",
+                "value": 40
+              },
+              {
+                "label": "elektromotor (není tepelný)",
+                "value": 90
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Motor přijme 1 000 J tepla a vykoná práci 300 J. Jaká je účinnost a kolik tepla odevzdá chladiči?",
+          "answer": "η = 300 / 1 000 = **30 %**. Chladiči odevzdá 1 000 − 300 = **700 J**."
+        },
+        {
+          "type": "example",
+          "question": "Teplota spalin je 600 K, okolí 300 K. Jakou nejvyšší účinnost může motor mít?",
+          "answer": "Největší možná (Carnotova) účinnost: η = (T₁ − T₂) / T₁ = (600 − 300) / 600 = **50 %**. Skutečný motor má méně."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Lepší technologie jednou umožní motor se 100% účinností.",
+          "right": "Tepelný motor nikdy nemůže mít 100 % – to zakazuje 2. termodynamický zákon.",
+          "why": "Motor musí část tepla odevzdat chladiči, jinak by se nemohl vrátit do výchozího stavu. Stroj, který by teplo celé měnil v práci (perpetuum mobile 2. druhu), sestrojit nelze."
+        },
+        {
+          "type": "summary",
+          "text": "Tepelný motor opakuje kruhový děj, potřebuje ohřívač i chladič. Účinnost η = W/Q₁ je vždy pod 100 %. Čím větší rozdíl teplot, tím vyšší může být."
+        }
+      ]
+    },
+    {
+      "title": "Účinnost",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Elektrárna spálí uhlí za miliony korun. Kolik z té energie se dostane do elektrické sítě? Inženýr to umí spočítat ještě před stavbou. Stačí znát teploty, mezi kterými stroj pracuje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kruhový děj",
+          "definition": "Sled dějů, po kterém se plyn vrátí do počátečního stavu (stejné p, V, T). Proto je změna vnitřní energie za celý cyklus **nulová**."
+        },
+        {
+          "type": "term",
+          "term": "Q₁, Q₂, W",
+          "definition": "**Q₁** = teplo přijaté od ohřívače, **Q₂** = teplo odevzdané chladiči, **W** = práce vykonaná za cyklus. Ze zákona zachování energie: `W = Q₁ − Q₂`."
+        },
+        {
+          "type": "term",
+          "term": "p–V diagram",
+          "definition": "Graf tlaku (svisle) proti objemu (vodorovně). Kruhový děj v něm tvoří uzavřenou křivku. **Plocha uvnitř křivky = práce** vykonaná za jeden cyklus."
+        },
+        {
+          "type": "term",
+          "term": "Carnotův cyklus",
+          "definition": "Ideální (myšlený) kruhový děj ze dvou izotermických a dvou adiabatických dějů. Má největší možnou účinnost mezi dvěma danými teplotami."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce pro účinnost"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Co",
+            "Vztah"
+          ],
+          "rows": [
+            [
+              "účinnost",
+              "η = W / Q₁ = (Q₁ − Q₂) / Q₁"
+            ],
+            [
+              "největší možná (Carnot)",
+              "η_max = (T₁ − T₂) / T₁"
+            ],
+            [
+              "práce za cyklus",
+              "W = Q₁ − Q₂"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "T₁ je teplota ohřívače, T₂ chladiče – **v kelvinech**."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Převeď teploty na kelviny.",
+            "Dosaď do η_max = (T₁ − T₂) / T₁.",
+            "Vynásob 100 → procenta.",
+            "Ověř: výsledek musí být mezi 0 a 100 %."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Ohřívač má 500 K, chladič 300 K. Jaká je maximální účinnost?",
+          "answer": "η = (500 − 300) / 500 = 200 / 500 = 0,4 = **40 %**."
+        },
+        {
+          "type": "example",
+          "question": "Jak zvýšit účinnost? Porovnej ohřívač 600 K, chladič 300 K.",
+          "answer": "η = 300 / 600 = 50 %. Vyšší teplota ohřívače (nebo nižší teplota chladiče) dává vyšší účinnost. Zvětšit motor nepomůže."
+        },
+        {
+          "type": "text",
+          "text": "Spočítej Carnotovu účinnost pro ohřívač 500 K a chladič 300 K na čtverečkové síti: kolik políček ze 100 odpovídá výsledku?"
+        },
+        {
+          "type": "widget",
+          "widget": "percent",
+          "props": {
+            "percent": 40
+          }
+        },
+        {
+          "type": "heading",
+          "text": "2. termodynamický zákon"
+        },
+        {
+          "type": "text",
+          "text": "Nelze sestrojit periodicky pracující stroj, který by teplo jen přijímal od ohřívače a celé ho měnil v práci. Takový stroj by byl **perpetuum mobile 2. druhu** – a nejde postavit."
+        },
+        {
+          "type": "heading",
+          "text": "Druhy tepelných motorů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Motor",
+            "Typ"
+          ],
+          "rows": [
+            [
+              "parní stroj, parní turbína",
+              "s vnějším spalováním (palivo hoří mimo válec)"
+            ],
+            [
+              "benzínový",
+              "zážehový – zapálí svíčka"
+            ],
+            [
+              "dieselový",
+              "vznětový – nafta se vznítí stlačením"
+            ],
+            [
+              "proudový, raketový",
+              "reaktivní – plyny vyletují dozadu"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Doby čtyřdobého motoru: sání → komprese → expanze (pracovní) → výfuk."
+        },
+        {
+          "type": "mistake",
+          "wrong": "η_max = (227 − 27) / 227 ≈ 88 % (teploty ve °C)",
+          "right": "η_max = (500 − 300) / 500 = 40 % (227 °C = 500 K, 27 °C = 300 K)",
+          "why": "Ve vzorci se dělí teplotou, proto musí být v kelvinech. Se stupni Celsia vyjde nesmyslně vysoká účinnost."
+        },
+        {
+          "type": "summary",
+          "text": "`η = W/Q₁ = (Q₁ − Q₂)/Q₁`, maximum `(T₁ − T₂)/T₁` v kelvinech. Za cyklus ΔU = 0. Vždy η < 100 %."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Ohřívač 500 K, chladič 300 K. Maximální účinnost v % =",
+      "answers": [
+        "40"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Motor přijme 1 000 J tepla a vykoná práci 300 J. Účinnost v % =",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Motor přijme 1 000 J tepla a vykoná práci 300 J. Teplo odevzdané chladiči v J =",
+      "answers": [
+        "700"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Perpetuum mobile 2. druhu nelze sestrojit.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co představuje plocha uzavřená křivkou kruhového děje v p–V diagramu?",
+      "options": [
+        "práci vykonanou za cyklus",
+        "teplo předané chladiči",
+        "vnitřní energii"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak zvýšit účinnost Carnotova stroje?",
+      "options": [
+        "zvýšit teplotu ohřívače nebo snížit teplotu chladiče",
+        "zvýšit teplotu chladiče",
+        "zvětšit motor"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď doby čtyřdobého zážehového motoru.",
+      "items": [
+        "sání",
+        "komprese",
+        "expanze",
+        "výfuk"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Změna vnitřní energie plynu za celý kruhový děj je nulová.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Čím se liší vznětový motor od zážehového?",
+      "options": [
+        "palivo se vznítí kompresí, bez svíčky",
+        "nemá písty",
+        "pracuje bez paliva"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj motor s typem.",
+      "pairs": [
+        [
+          "parní stroj",
+          "motor s vnějším spalováním"
+        ],
+        [
+          "benzinový motor",
+          "zážehový"
+        ],
+        [
+          "dieselový motor",
+          "vznětový"
+        ],
+        [
+          "proudový motor",
+          "reaktivní"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj 2. termodynamický zákon.",
+      "answer": "Nelze sestrojit periodicky pracující tepelný stroj, který by jen přijímal teplo od ohřívače a celé ho měnil v práci. Část tepla musí odevzdat chladiči."
+    },
+    {
+      "type": "open",
+      "question": "Popiš činnost čtyřdobého zážehového motoru.",
+      "answer": "Sání směsi, komprese, zážeh svíčkou a expanze (koná práci), výfuk spalin. Cyklus se opakuje."
+    }
+  ]
+}

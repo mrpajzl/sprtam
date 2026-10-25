@@ -1,0 +1,415 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "utvary-cestiny",
+  "title": "Útvary národního jazyka",
+  "emoji": "🗺️",
+  "explanations": [
+    {
+      "title": "Šatník",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na pohřeb si vezmeš oblek, na fotbal dres, doma chodíš v teplákách. Nikdo neřekne, že tepláky jsou „špatné“. Jen se nehodí na pohřeb."
+        },
+        {
+          "type": "text",
+          "text": "Čeština funguje stejně. Neexistuje jen jedna. Máme několik podob a každá se hodí do jiné situace. K čemu to je? Abys v písemce, v žádosti nebo u maturity zvolil tu správnou – a věděl proč."
+        },
+        {
+          "type": "term",
+          "term": "Národní jazyk",
+          "definition": "Všechny podoby jazyka, kterými mluví jeden národ, dohromady.",
+          "example": "čeština v televizních zprávách, v hospodě na Hané i v chatu spolužáků"
+        },
+        {
+          "type": "term",
+          "term": "Útvar národního jazyka",
+          "definition": "Jedna z podob národního jazyka. Liší se tím, kdo ji používá a kde.",
+          "example": "spisovná čeština, nářečí, slang"
+        },
+        {
+          "type": "heading",
+          "text": "Co visí v šatníku"
+        },
+        {
+          "type": "term",
+          "term": "Spisovná čeština",
+          "definition": "Oblek. Podoba jazyka pro veřejné a oficiální situace. Její pravidla jsou sepsaná v příručkách.",
+          "example": "zprávy v televizi, učebnice, žádost na úřad: *malé okno*"
+        },
+        {
+          "type": "term",
+          "term": "Nespisovný",
+          "definition": "Takový, který nepatří do spisovné češtiny. Neznamená to „chybný“ – jen „ne do oficiální situace“.",
+          "example": "*vokno*, *dobrej*"
+        },
+        {
+          "type": "term",
+          "term": "Obecná čeština",
+          "definition": "Tepláky. Běžná nespisovná mluva hlavně v Čechách, používá se v hovoru doma a s kamarády.",
+          "example": "*malý vokno*, *s klukama*"
+        },
+        {
+          "type": "term",
+          "term": "Nářečí (dialekt)",
+          "definition": "Kroj. Mluva určitého kraje, předávaná v rodinách po generace.",
+          "example": "Na Hané řeknou *móka* místo *mouka*."
+        },
+        {
+          "type": "term",
+          "term": "Slang",
+          "definition": "Dres týmu. Slova jedné zájmové nebo profesní skupiny. Není tajný, jen „náš“.",
+          "example": "studenti: *matika*, *intr*; hráči: *lagovat*"
+        },
+        {
+          "type": "term",
+          "term": "Argot",
+          "definition": "Maskáč. Tajná mluva uzavřené skupiny, aby jí ostatní nerozuměli.",
+          "example": "mluva vězňů: *bachař* (dozorce)"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozřaď tvary. Ptej se: použil bych to ve zprávách v televizi?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "spisovné",
+              "nespisovné"
+            ],
+            "items": [
+              {
+                "text": "dobrý mlíko",
+                "group": 1
+              },
+              {
+                "text": "dobré mléko",
+                "group": 0
+              },
+              {
+                "text": "okno",
+                "group": 0
+              },
+              {
+                "text": "vokno",
+                "group": 1
+              },
+              {
+                "text": "s kamarády",
+                "group": 0
+              },
+              {
+                "text": "s kamarádama",
+                "group": 1
+              },
+              {
+                "text": "mladej kluk",
+                "group": 1
+              },
+              {
+                "text": "mladý kluk",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kam patří slovo *matika*?",
+          "answer": "Používají ho žáci a studenti – tedy jedna zájmová skupina. Není tajné. Je to **slang**."
+        },
+        {
+          "type": "example",
+          "question": "Babička z Ostravska říká slova s přízvukem na předposlední slabice. Jaký útvar to je?",
+          "answer": "Mluva určitého kraje předávaná po generace = **nářečí**. Konkrétně **slezské (lašské)**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obecná čeština je chybná čeština.",
+          "right": "Obecná čeština je nespisovný útvar, který je v běžném hovoru v pořádku.",
+          "why": "Chybou je jen použít ji v nevhodné situaci, třeba v žádosti nebo v maturitní práci. Tepláky nejsou špatné, jen se nehodí na pohřeb."
+        },
+        {
+          "type": "summary",
+          "text": "Spisovná čeština je pro veřejné a oficiální situace. Nespisovné útvary: obecná čeština, nářečí, slang, argot. Žádný není „špatný“ – jen se hodí jinam."
+        }
+      ]
+    },
+    {
+      "title": "Podle znaků",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kamarád z Prahy řekne *velkej dům*, moderátor zpráv *velký dům*. Babička z Hané místo *mouka* řekne *móka*. Všichni mluví česky, a přesto jinak."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Naučíš se podle konkrétních znaků poznat, do kterého útvaru češtiny slovo patří. To se hodí v testech i při kontrole vlastního textu."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Útvar jazyka",
+          "definition": "Jedna z podob češtiny. Liší se tím, kdo ji používá a kde.",
+          "example": "spisovná čeština, obecná čeština"
+        },
+        {
+          "type": "term",
+          "term": "Kodifikace",
+          "definition": "Sepsání pravidel jazyka do závazných příruček (pravidla pravopisu, slovníky). Kodifikovaná je jen spisovná čeština.",
+          "example": "*Pravidla českého pravopisu*"
+        },
+        {
+          "type": "term",
+          "term": "Interdialekt",
+          "definition": "Mluva, která vznikla smíšením nářečí a používá se na velkém území.",
+          "example": "obecná čeština – mluví se jí v celých Čechách"
+        },
+        {
+          "type": "heading",
+          "text": "Přehled útvarů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Útvar",
+            "Kdo / kde",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "spisovná čeština",
+              "veřejná, oficiální komunikace",
+              "malé okno"
+            ],
+            [
+              "obecná čeština",
+              "běžný hovor, hlavně v Čechách",
+              "malý vokno"
+            ],
+            [
+              "nářečí (dialekty)",
+              "určitý kraj",
+              "hanácké móka (= mouka)"
+            ],
+            [
+              "slang",
+              "zájmová / profesní skupina",
+              "matika, intr"
+            ],
+            [
+              "argot",
+              "uzavřené skupiny (vězni, zločinci)",
+              "bachař"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak poznat obecnou češtinu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**ý → ej**: *dobrý* → *dobrej*, *mladý* → *mladej*.",
+            "**é → ý/í**: *dobré mléko* → *dobrý mlíko*.",
+            "**Protetické v**: před *o* na začátku slova se přidá *v*: *okno* → *vokno*, *on* → *von*. (*Protetický* = přidaný na začátek.)",
+            "**Koncovka -ama/-ema v 7. pádě množného čísla**: *s kamarády* → *s kamarádama*."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Nářeční skupiny"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**česká** nářečí (Čechy),",
+            "**středomoravská (hanácká)** – Haná, okolí Olomouce a Prostějova,",
+            "**východomoravská** – Slovácko, Valašsko,",
+            "**slezská (lašská)** – Ostravsko; přízvuk na předposlední slabice."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartu a zkontroluj, jestli poznáš znak obecné češtiny."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "mladej",
+                "back": "ý → ej"
+              },
+              {
+                "front": "vokno",
+                "back": "protetické v"
+              },
+              {
+                "front": "s holkama",
+                "back": "koncovka -ama v 7. pádě mn. č."
+              },
+              {
+                "front": "mlíko",
+                "back": "é → í"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Urči útvar a znaky: „Von má velkej barák.“",
+          "answer": "*Von* – protetické v. *velkej* – ý → ej. *barák* je hovorové slovo. Jde o **obecnou češtinu**. Spisovně: *On má velký dům.*"
+        },
+        {
+          "type": "example",
+          "question": "Rozliš: *bachař* × *matika*.",
+          "answer": "*Bachař* pochází z mluvy vězňů – uzavřené skupiny, která chtěla, aby jí ostatní nerozuměli → **argot**. *Matika* je studentské slovo, nikdo ho netají → **slang**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Slang a argot jsou totéž.",
+          "right": "Slang je mluva zájmové skupiny a není tajný. Argot je tajná mluva uzavřené skupiny.",
+          "why": "Rozhoduje účel: slang spojuje skupinu, argot má navíc skrývat obsah před ostatními."
+        },
+        {
+          "type": "summary",
+          "text": "Spisovná čeština je kodifikovaná. Obecná čeština (ej, ý/í, vokno, -ama) je nespisovný interdialekt Čech. Nářečí patří kraji, slang skupině, argot je tajný."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který tvar patří do obecné češtiny?",
+      "options": [
+        "velkej dům",
+        "velký dům",
+        "veliký dům"
+      ],
+      "answer": 0,
+      "explanation": "Změna ý → ej je typická pro obecnou češtinu."
+    },
+    {
+      "type": "choice",
+      "question": "Co je argot?",
+      "options": [
+        "tajná mluva uzavřených skupin",
+        "mluva určitého regionu",
+        "mluva zájmové skupiny",
+        "spisovný jazyk"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Slang je nespisovný útvar zájmových nebo profesních skupin.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Obecná čeština je spisovná.",
+      "answer": false,
+      "explanation": "Je to nespisovný interdialekt, běžný hlavně v Čechách."
+    },
+    {
+      "type": "match",
+      "question": "Spoj útvar s příkladem.",
+      "pairs": [
+        [
+          "spisovná čeština",
+          "malé okno"
+        ],
+        [
+          "obecná čeština",
+          "malý vokno"
+        ],
+        [
+          "slang",
+          "matika"
+        ],
+        [
+          "argot",
+          "bachař"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje nářeční skupina na Hané (jedním slovem, přídavné jméno)?",
+      "answers": [
+        "středomoravská",
+        "hanácká"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které nářečí se mluví na Ostravsku?",
+      "options": [
+        "slezské (lašské)",
+        "hanácké",
+        "východomoravské",
+        "české"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde se běžně užívá spisovná čeština?",
+      "options": [
+        "ve zprávách a úředních textech",
+        "v hovoru s kamarády",
+        "jen v nářečí",
+        "jen v poezii"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je protetické v?",
+      "options": [
+        "v- přidané před o na začátku slova",
+        "předložka v",
+        "v uprostřed slova",
+        "zkratka"
+      ],
+      "answer": 0,
+      "explanation": "okno → vokno, on → von."
+    },
+    {
+      "type": "open",
+      "question": "Charakterizuj obecnou češtinu a uveď její typické znaky.",
+      "answer": "Nespisovný interdialekt užívaný hlavně v Čechách v běžném hovoru. Znaky: ý → ej (dobrej), é → ý/í (dobrý mlíko), protetické v (vokno), koncovka -ama (s klukama)."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi slangem a argotem.",
+      "answer": "Slang je mluva zájmových nebo profesních skupin (studenti, sportovci) a není tajná. Argot je tajná mluva sociálně uzavřených skupin, např. zločinců nebo vězňů."
+    }
+  ]
+}

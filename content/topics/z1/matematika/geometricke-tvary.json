@@ -1,0 +1,365 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "geometricke-tvary",
+  "title": "Tvary a tělesa",
+  "emoji": "🔺",
+  "explanations": [
+    {
+      "title": "Kolem nás",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozhlédni se. Talíř je kulatý. Okno je hranaté. Střecha má nahoře špičku."
+        },
+        {
+          "type": "text",
+          "text": "Každá věc má nějaký **tvar**. Když tvary znáš, umíš je popsat, nakreslit a najít – třeba při stavění z kostek."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tvar",
+          "definition": "Jak věc vypadá, když ji obkreslíš na papír.",
+          "example": "Obkreslíš minci – vyjde kolečko."
+        },
+        {
+          "type": "term",
+          "term": "Roh",
+          "definition": "Špička, kde se potkají dvě rovné čáry.",
+          "example": "Kniha má 4 rohy."
+        },
+        {
+          "type": "term",
+          "term": "Strana",
+          "definition": "Rovná čára od jednoho rohu k druhému.",
+          "example": "Kniha má 4 strany: dvě dlouhé a dvě krátké."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři tvary"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tvar",
+            "Jak vypadá",
+            "Najdeš ho"
+          ],
+          "rows": [
+            [
+              "kruh ⚪",
+              "kulatý, nemá rohy",
+              "talíř, kolo, mince"
+            ],
+            [
+              "čtverec 🟥",
+              "4 rohy, 4 stejně dlouhé strany",
+              "kostka cukru, dlaždička"
+            ],
+            [
+              "obdélník ▭",
+              "4 rohy, 2 dlouhé a 2 krátké strany",
+              "dveře, kniha"
+            ],
+            [
+              "trojúhelník 🔺",
+              "3 rohy, 3 strany",
+              "střecha, kousek pizzy"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věci. Je to kulaté, nebo hranaté (má rohy)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "kulaté",
+              "hranaté"
+            ],
+            "items": [
+              {
+                "text": "mince",
+                "group": 0
+              },
+              {
+                "text": "kniha",
+                "group": 1
+              },
+              {
+                "text": "kolo",
+                "group": 0
+              },
+              {
+                "text": "dveře",
+                "group": 1
+              },
+              {
+                "text": "talíř",
+                "group": 0
+              },
+              {
+                "text": "okno",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jaký tvar mají dveře?",
+          "answer": "Mají 4 rohy. Dvě strany jsou dlouhé, dvě krátké. Je to **obdélník**."
+        },
+        {
+          "type": "example",
+          "question": "Jaký tvar má kousek pizzy?",
+          "answer": "Spočítám rohy: jsou 3. Tři rohy má **trojúhelník**."
+        },
+        {
+          "type": "summary",
+          "text": "Kruh nemá rohy. Trojúhelník má 3 rohy. Čtverec a obdélník mají 4 rohy."
+        }
+      ]
+    },
+    {
+      "title": "Počítej rohy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hraješ si na detektiva. Dostaneš tajný tvar. Jak poznáš, co to je? Spočítáš jeho rohy a strany!"
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se taky rozdíl mezi plochým **tvarem** na papíře a „plným“ **tělesem**, které vezmeš do ruky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Roh",
+          "definition": "Špička, kde se potkají dvě rovné čáry."
+        },
+        {
+          "type": "term",
+          "term": "Strana",
+          "definition": "Rovná čára od rohu k rohu."
+        },
+        {
+          "type": "heading",
+          "text": "Detektivní postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je tvar kulatý a nemá rohy? Je to **kruh**.",
+            "Spočítej rohy. 3 rohy = **trojúhelník**.",
+            "Má 4 rohy? Podívej se na strany.",
+            "Všechny 4 strany stejně dlouhé = **čtverec**.",
+            "2 dlouhé a 2 krátké strany = **obdélník**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je trojúhelník. Hýbej posuvníkem. Trojúhelník se zvětšuje, ale rohy má pořád 3."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "triangle",
+            "a": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Tvary a tělesa"
+        },
+        {
+          "type": "term",
+          "term": "Těleso",
+          "definition": "Věc, která je „plná“. Dá se vzít do ruky. Není jen nakreslená.",
+          "example": "Míč, hrací kostka, plechovka."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Těleso",
+            "Najdeš ho"
+          ],
+          "rows": [
+            [
+              "koule",
+              "míč ⚽, pomeranč"
+            ],
+            [
+              "krychle",
+              "hrací kostka 🎲"
+            ],
+            [
+              "válec",
+              "plechovka 🥫"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Tajný tvar má 4 rohy a všechny strany stejné. Co je to?",
+          "answer": "4 rohy → čtverec, nebo obdélník. Strany jsou stejné → **čtverec**."
+        },
+        {
+          "type": "example",
+          "question": "Je míč kruh, nebo koule?",
+          "answer": "Míč je plný, vezmeš ho do ruky. Je to těleso – **koule**. Kruh je jen plochý obrázek."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Míč je kruh.",
+          "right": "Míč je koule. Kruh je plochý.",
+          "why": "Kruh nakreslíš na papír. Koule je „plná“ a můžeš ji kutálet. Když míč obkreslíš, vyjde kruh."
+        },
+        {
+          "type": "summary",
+          "text": "Počítej rohy: 0 = kruh, 3 = trojúhelník, 4 = čtverec nebo obdélník. Tělesa jsou plná: koule, krychle, válec."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kolik rohů má trojúhelník?",
+      "options": [
+        "3",
+        "4",
+        "0"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kolik rohů má kruh?",
+      "options": [
+        "1",
+        "0",
+        "4"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Kolik rohů má čtverec?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký tvar má kolo?",
+      "options": [
+        "čtverec",
+        "kruh",
+        "trojúhelník"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaký tvar má hrací kostka 🎲?",
+      "options": [
+        "koule",
+        "krychle",
+        "válec"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaký tvar má míč ⚽?",
+      "options": [
+        "koule",
+        "krychle",
+        "kruh"
+      ],
+      "answer": 0,
+      "explanation": "Míč je těleso – koule. Kruh je plochý."
+    },
+    {
+      "type": "truefalse",
+      "question": "Čtverec má všechny strany stejně dlouhé.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Obdélník má 3 strany.",
+      "answer": false,
+      "explanation": "Obdélník má 4 strany."
+    },
+    {
+      "type": "match",
+      "question": "Spoj tvar a věc.",
+      "pairs": [
+        [
+          "kruh",
+          "mince"
+        ],
+        [
+          "trojúhelník",
+          "střecha"
+        ],
+        [
+          "obdélník",
+          "dveře"
+        ],
+        [
+          "válec",
+          "plechovka"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který tvar má 4 rohy, ale ne všechny strany stejné?",
+      "options": [
+        "čtverec",
+        "obdélník",
+        "trojúhelník"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi čtvercem a obdélníkem?",
+      "answer": "Oba mají 4 rohy. Čtverec má všechny strany stejné, obdélník má dvě delší a dvě kratší."
+    },
+    {
+      "type": "open",
+      "question": "Najdi ve třídě něco kulatého a něco hranatého.",
+      "answer": "Například hodiny jsou kulaté (kruh), lavice nebo tabule je hranatá (obdélník)."
+    }
+  ]
+}

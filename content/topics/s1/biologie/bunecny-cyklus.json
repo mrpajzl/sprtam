@@ -1,0 +1,413 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "bunecny-cyklus",
+  "title": "Buněčný cyklus, mitóza a meióza",
+  "emoji": "➗",
+  "explanations": [
+    {
+      "title": "Cyklus",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Začínal jsi jako jediná buňka. Dnes máš desítky bilionů buněk – a pořád vznikají nové: když se ti zahojí odřené koleno nebo ti rostou vlasy. Každá nová buňka vznikla **rozdělením** jiné buňky."
+        },
+        {
+          "type": "text",
+          "text": "Aby obě nové buňky fungovaly, musí každá dostat **úplnou kopii** dědičné informace. Jak to buňka zařídí, je jeden z nejpřesnějších procesů v přírodě. A když se pokazí, může vzniknout nádor."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "DNA",
+          "definition": "Molekula, ve které je zapsaná dědičná informace – návod na stavbu těla."
+        },
+        {
+          "type": "term",
+          "term": "Chromozom",
+          "definition": "Útvar, do kterého je DNA svinutá – jako nit namotaná na cívky. Člověk má v tělních buňkách **46 chromozomů**."
+        },
+        {
+          "type": "term",
+          "term": "Chromatida",
+          "definition": "Před dělením se každý chromozom zkopíruje. Obě kopie drží u sebe v místě zvaném **centromera**, tvar připomíná X. Každá z těch dvou polovin je **chromatida**."
+        },
+        {
+          "type": "term",
+          "term": "Buněčný cyklus",
+          "definition": "Život buňky od jejího vzniku do jejího rozdělení. Má fázi přípravy (**interfáze**) a fázi dělení (**M**)."
+        },
+        {
+          "type": "heading",
+          "text": "Fáze cyklu"
+        },
+        {
+          "type": "text",
+          "text": "Projdi si kroky. Všimni si, že většinu času buňka nedělí, ale **roste a připravuje se**."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "G1 – buňka roste a pracuje",
+              "S – zdvojení (replikace) DNA",
+              "G2 – příprava na dělení",
+              "M – mitóza (dělení jádra)",
+              "cytokineze – rozdělení cytoplazmy"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Mitóza krok za krokem"
+        },
+        {
+          "type": "term",
+          "term": "Mitóza",
+          "definition": "Dělení jádra, při kterém vzniknou **dvě jádra se stejnými chromozomy**, jaké měla mateřská buňka."
+        },
+        {
+          "type": "term",
+          "term": "Dělicí vřeténko",
+          "definition": "Soustava vláken z bílkovinných trubiček (**mikrotubulů**), která chromozomy přitahuje k opačným koncům (pólům) buňky."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Profáze** – chromozomy se zkrátí a zhustí (jsou vidět), jaderný obal se rozpadne, tvoří se vřeténko.",
+            "**Metafáze** – chromozomy se seřadí doprostřed buňky do **rovníkové roviny**.",
+            "**Anafáze** – vřeténko rozdělí každý chromozom na dvě chromatidy a táhne je k opačným pólům.",
+            "**Telofáze** – kolem obou skupin se vytvoří jaderný obal, vzniknou dvě jádra."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pomůcka na pořadí: **PMAT** – profáze, metafáze, anafáze, telofáze. Pak cytokineze rozdělí cytoplazmu a jsou dvě buňky."
+        },
+        {
+          "type": "heading",
+          "text": "Meióza – dělení pro pohlavní buňky"
+        },
+        {
+          "type": "term",
+          "term": "Diploidní (2n) a haploidní (n)",
+          "definition": "**Diploidní** buňka má chromozomy v páru – jeden od mámy, jeden od táty (člověk 2n = 46). **Haploidní** má jen jednu sadu (n = 23)."
+        },
+        {
+          "type": "term",
+          "term": "Gameta",
+          "definition": "Pohlavní buňka – vajíčko nebo spermie. Je haploidní."
+        },
+        {
+          "type": "text",
+          "text": "**Meióza** jsou dvě dělení za sebou. Z jedné diploidní buňky vzniknou **4 haploidní** buňky, každá geneticky trochu jiná. Když pak spermie (23) oplodí vajíčko (23), vznikne zase 46."
+        },
+        {
+          "type": "example",
+          "question": "Buňka kůže má 46 chromozomů a rozdělí se mitózou. Kolik chromozomů mají nové buňky?",
+          "answer": "Mitóza kopíruje: obě nové buňky mají **46**, stejně jako původní."
+        },
+        {
+          "type": "example",
+          "question": "Kdyby gamety vznikaly mitózou, co by se stalo s počtem chromozomů dítěte?",
+          "answer": "Spermie i vajíčko by měly 46 → dítě 92, vnouče 184… Počet by se každou generaci zdvojil. Proto meióza **snižuje** počet na polovinu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "DNA se zdvojuje během mitózy.",
+          "right": "DNA se zdvojuje už předem, ve fázi **S** interfáze.",
+          "why": "Do mitózy vstupuje buňka s už zkopírovanými chromozomy (dvě chromatidy). Mitóza je jen rozdělí."
+        },
+        {
+          "type": "summary",
+          "text": "Cyklus: G1 → S (replikace DNA) → G2 → M. Mitóza PMAT dává 2 stejné buňky, meióza 4 haploidní různé. Nekontrolované dělení vede k nádorům."
+        }
+      ]
+    },
+    {
+      "title": "Srovnání",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Buňky se dělí dvěma způsoby. Jeden slouží k **růstu a hojení** – dělá přesné kopie. Druhý slouží k **pohlavnímu rozmnožování** – dělá buňky s poloviční výbavou a navíc dědičnou informaci zamíchá. Proto nejsi kopie rodičů ani sourozenců."
+        },
+        {
+          "type": "text",
+          "text": "Tohle vysvětlení postaví obě dělení vedle sebe a ukáže rozdíly v číslech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Chromozom",
+          "definition": "Svinutá molekula DNA s dědičnou informací. Před dělením se zdvojí – má pak dvě **chromatidy** spojené v **centromeře**."
+        },
+        {
+          "type": "term",
+          "term": "Homologní chromozomy",
+          "definition": "Dvojice chromozomů stejného tvaru a se stejnými geny – jeden od matky, druhý od otce.",
+          "example": "Oba chromozomy 1 v tvé buňce jsou homologní pár."
+        },
+        {
+          "type": "term",
+          "term": "2n a n",
+          "definition": "**Diploidní (2n)** buňka má páry homologních chromozomů (člověk 46). **Haploidní (n)** má z každého páru jen jeden (člověk 23)."
+        },
+        {
+          "type": "term",
+          "term": "Gamety",
+          "definition": "Pohlavní buňky – spermie a vajíčka. Jsou haploidní."
+        },
+        {
+          "type": "term",
+          "term": "Interfáze",
+          "definition": "Období mezi děleními: buňka roste (G1), zkopíruje DNA (S) a připraví se (G2)."
+        },
+        {
+          "type": "heading",
+          "text": "Mitóza a meióza vedle sebe"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Mitóza",
+            "Meióza"
+          ],
+          "rows": [
+            [
+              "počet dělení",
+              "1",
+              "2"
+            ],
+            [
+              "vzniklé buňky",
+              "2",
+              "4"
+            ],
+            [
+              "počet chromozomů",
+              "2n → 2n",
+              "2n → n"
+            ],
+            [
+              "genetická shoda",
+              "stejné jako mateřská",
+              "různé (crossing-over)"
+            ],
+            [
+              "kde",
+              "tělní buňky",
+              "tvorba pohlavních buněk (gamet)"
+            ],
+            [
+              "účel",
+              "růst, hojení, obnova",
+              "pohlavní rozmnožování"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři fáze dělení"
+        },
+        {
+          "type": "text",
+          "text": "Mitóza (i každé ze dvou dělení meiózy) má fáze **PMAT**: **profáze** (chromozomy se zhustí, jaderný obal zmizí), **metafáze** (chromozomy v **rovníkové rovině**), **anafáze** (rozchod k pólům), **telofáze** (vzniknou nová jádra). Pak **cytokineze** rozdělí cytoplazmu."
+        },
+        {
+          "type": "term",
+          "term": "Dělicí vřeténko",
+          "definition": "Vlákna z **mikrotubulů**, která chromozomy rozvádějí k pólům buňky."
+        },
+        {
+          "type": "heading",
+          "text": "Proč jsou gamety různé"
+        },
+        {
+          "type": "term",
+          "term": "Crossing-over",
+          "definition": "Na začátku meiózy se homologní chromozomy k sobě přiloží a **vymění si úseky**. Vzniknou chromozomy s novou kombinací genů od obou rodičů."
+        },
+        {
+          "type": "text",
+          "text": "Navíc se v prvním dělení páry rozcházejí **náhodně** – do jedné buňky může jít chromozom od matky, do druhé od otce, a to u každého z 23 párů zvlášť."
+        },
+        {
+          "type": "text",
+          "text": "Spoj pojmy s jejich významem – otoč karty a ověř se."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "haploidní",
+                "back": "n – jedna sada chromozomů"
+              },
+              {
+                "front": "diploidní",
+                "back": "2n – páry chromozomů"
+              },
+              {
+                "front": "cytokineze",
+                "back": "rozdělení cytoplazmy"
+              },
+              {
+                "front": "chromatida",
+                "back": "polovina zdvojeného chromozomu"
+              },
+              {
+                "front": "fáze S",
+                "back": "replikace (zdvojení) DNA"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik chromozomů má lidská spermie?",
+          "answer": "Vzniká meiózou → haploidní → **23** (n). Tělní buňka má 46 (2n)."
+        },
+        {
+          "type": "example",
+          "question": "Kolik buněk vznikne meiózou ze 3 buněk?",
+          "answer": "Každá dá 4 → 3 · 4 = **12** haploidních buněk."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Meióza je jen dvakrát rychlejší mitóza.",
+          "right": "Meióza snižuje počet chromozomů na polovinu a míchá geny.",
+          "why": "Mitóza dělá kopie (2n → 2n). Meióza z 2n dělá n a díky crossing-overu a náhodnému rozchodu vznikají geneticky různé gamety."
+        },
+        {
+          "type": "summary",
+          "text": "Mitóza kopíruje: 1 dělení, 2 stejné diploidní buňky. Meióza redukuje a míchá: 2 dělení, 4 haploidní různé buňky (gamety)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "order",
+      "question": "Seřaď fáze mitózy.",
+      "items": [
+        "profáze",
+        "metafáze",
+        "anafáze",
+        "telofáze"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve které fázi buněčného cyklu se replikuje DNA?",
+      "options": [
+        "S",
+        "G1",
+        "M"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kolik buněk vznikne meiózou z jedné buňky?",
+      "options": [
+        "4",
+        "2",
+        "8"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Mitózou vznikají geneticky shodné buňky.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Výměna úseků mezi homologními chromozomy v meióze je crossing-…",
+      "answers": [
+        "over",
+        "crossing-over",
+        "crossingover"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "V metafázi jsou chromozomy…",
+      "options": [
+        "v rovníkové rovině",
+        "u pólů",
+        "rozvolněné v jádře"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem s významem.",
+      "pairs": [
+        [
+          "haploidní",
+          "n"
+        ],
+        [
+          "diploidní",
+          "2n"
+        ],
+        [
+          "cytokineze",
+          "dělení cytoplazmy"
+        ],
+        [
+          "chromatida",
+          "polovina zdvojeného chromozomu"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Meióza probíhá při tvorbě gamet.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Nekontrolované dělení buněk vede ke vzniku…",
+      "options": [
+        "nádorů",
+        "gamet",
+        "tkání"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Dělicí vřeténko tvoří mikrotubuly.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Porovnej mitózu a meiózu.",
+      "answer": "Mitóza: jedno dělení, 2 geneticky shodné diploidní buňky, tělní buňky. Meióza: dvě dělení, 4 haploidní geneticky různé buňky, tvorba gamet, crossing-over."
+    },
+    {
+      "type": "open",
+      "question": "Proč je meióza důležitá pro pohlavní rozmnožování?",
+      "answer": "Snižuje počet chromozomů na polovinu, takže po oplození zůstává počet stálý. Crossing-over a náhodné rozchody chromozomů zvyšují genetickou rozmanitost."
+    }
+  ]
+}

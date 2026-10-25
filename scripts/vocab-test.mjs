@@ -7,7 +7,7 @@ const p = await b.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFa
 const errs = []; p.on('pageerror', (e) => errs.push(String(e)))
 await p.goto(base + 'slovicka/A1/0'); await p.waitForTimeout(800)
 await p.screenshot({ path: '/tmp/sprtam-shots/v-pick.png' })
-const en = (cz) => p.evaluate(async (cz) => { const m = await import('/src/vocab/data/a1.ts'); return m.default.groups.flatMap((g) => g.words).find((w) => w[0] === cz)?.[1] }, cz)
+const en = (cz) => p.evaluate(async (cz) => { const m = await import('/content/vocab/a1.json'); return m.default.groups.flatMap((g) => g.words).find((w) => w.cz === cz)?.en }, cz)
 let n = 0, typed = 0, wrongDone = false, shot = false
 for (; n < 80 && !(await p.locator('.result').count()); n++) {
   const cz = await p.locator('.ask h2').textContent(), right = await en(cz)
@@ -35,7 +35,7 @@ for (; n < 80 && !(await p.locator('.result').count()); n++) {
 await p.screenshot({ path: '/tmp/sprtam-shots/v-result.png' })
 console.log('cards', n, 'typed', typed, await p.locator('.result .pct').textContent(), Object.keys(JSON.parse(await p.evaluate(() => localStorage.getItem('sprtam:progress'))).w).length, 'words saved', errs)
 // Second session: words now in box ≥ 2 are typed.
-await p.evaluate(async () => { const m = await import('/src/vocab/data/a1.ts'); const s = JSON.parse(localStorage.getItem('sprtam:progress')); for (const w of m.default.groups[0].words) s.w[w[1]] = 3; localStorage.setItem('sprtam:progress', JSON.stringify(s)) })
+await p.evaluate(async () => { const m = await import('/content/vocab/a1.json'); const s = JSON.parse(localStorage.getItem('sprtam:progress')); for (const w of m.default.groups[0].words) s.w[w.en] = 3; localStorage.setItem('sprtam:progress', JSON.stringify(s)) })
 await p.goto(base + 'slovicka/A1/0'); await p.reload(); await p.waitForTimeout(800)
 console.log('known words typed:', await p.locator('.type').count() === 1)
 await b.close()

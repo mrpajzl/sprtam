@@ -1,0 +1,333 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "tabulky-diagramy",
+  "title": "Tabulky a diagramy",
+  "emoji": "📊",
+  "explanations": [
+    {
+      "title": "Sloupce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Třída hlasovala, jaké ovoce si dát na výlet. Hlasů je spousta. Jak rychle zjistit, co vyhrálo?"
+        },
+        {
+          "type": "text",
+          "text": "Nakreslíš **diagram**. Ukáže rozdíly na první pohled. Diagramy najdeš ve zprávách, na předpovědi počasí i ve sportu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Údaje (data)",
+          "definition": "Čísla, která jsme zjistili – spočítali, změřili, sesbírali.",
+          "example": "jablko 8 hlasů, banán 5 hlasů…"
+        },
+        {
+          "type": "term",
+          "term": "Sloupcový diagram",
+          "definition": "Obrázek, kde každý údaj má svůj sloupec. Čím vyšší sloupec, tím větší číslo."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na sloupce. Které ovoce vyhrálo? Které dopadlo nejhůř? O kolik vyhrála jahoda nad banánem?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "hlasů",
+            "items": [
+              {
+                "label": "jablko",
+                "value": 8
+              },
+              {
+                "label": "banán",
+                "value": 5
+              },
+              {
+                "label": "jahoda",
+                "value": 11
+              },
+              {
+                "label": "hruška",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak číst diagram"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti nadpis a popisky – o čem diagram je.",
+            "Najdi nejvyšší sloupec = **nejvíc** (jahoda 11).",
+            "Najdi nejnižší sloupec = **nejméně** (hruška 2).",
+            "Porovnej dva sloupce odečtením."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik dětí hlasovalo celkem?",
+          "answer": "Sečtu všechny sloupce: 8 + 5 + 11 + 2 = **26 dětí**."
+        },
+        {
+          "type": "example",
+          "question": "O kolik hlasů víc má jahoda než banán?",
+          "answer": "11 − 5 = **6 hlasů**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Seřadím ovoce podle toho, jak je napsané: jablko, banán, jahoda, hruška.",
+          "right": "Podle hlasů od nejvíc: **jahoda, jablko, banán, hruška**.",
+          "why": "Pořadí v diagramu je náhodné. Řadit musíš podle výšky sloupců – podle čísel."
+        },
+        {
+          "type": "summary",
+          "text": "Sloupcový diagram ukáže rozdíly na první pohled: nejvyšší sloupec = nejvíc."
+        }
+      ]
+    },
+    {
+      "title": "Tabulka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolik stránek jsi tento týden přečetl? Když si to zapisuješ do **tabulky**, máš všechna čísla přesně a přehledně."
+        },
+        {
+          "type": "text",
+          "text": "Z tabulky pak spočítáš součet nebo **průměr** – „kolik je to v průměru za den“. Tabulky jsou v rozvrhu, v jízdním řádu i ve sportovních výsledcích."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tabulka",
+          "definition": "Údaje uspořádané do řádků a sloupců."
+        },
+        {
+          "type": "term",
+          "term": "Průsečík",
+          "definition": "Políčko, kde se potká řádek se sloupcem. Tam najdeš hodnotu.",
+          "example": "Řádek „stránky“ a sloupec „St“ → 8."
+        },
+        {
+          "type": "term",
+          "term": "Průměr",
+          "definition": "Číslo, které by vyšlo, kdyby se všechno rozdělilo **rovnoměrně**. Všechna čísla sečti a vyděl tím, kolik jich je.",
+          "example": "(4 + 6) : 2 = 5"
+        },
+        {
+          "type": "heading",
+          "text": "Čtenářský týden"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Den",
+            "Po",
+            "Út",
+            "St",
+            "Čt",
+            "Pá"
+          ],
+          "rows": [
+            [
+              "Přečtené stránky",
+              "12",
+              "20",
+              "8",
+              "15",
+              "25"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi den (sloupec) a řádek. Ve středu: **8** stránek – nejméně.",
+            "Celkem: 12 + 20 + 8 + 15 + 25 = **80** stránek.",
+            "Dnů je 5.",
+            "Průměr: 80 : 5 = **16 stránek denně**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady jsou stejné údaje jako sloupce. Najdi den s nejvíc stránkami. Je průměr 16 někde mezi nejnižším a nejvyšším sloupcem?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "stran",
+            "items": [
+              {
+                "label": "Po",
+                "value": 12
+              },
+              {
+                "label": "Út",
+                "value": 20
+              },
+              {
+                "label": "St",
+                "value": 8
+              },
+              {
+                "label": "Čt",
+                "value": 15
+              },
+              {
+                "label": "Pá",
+                "value": 25
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Teploty: 4 °C, 6 °C, 8 °C, 2 °C. Průměrná teplota?",
+          "answer": "Součet 4 + 6 + 8 + 2 = 20. Čísel jsou 4. 20 : 4 = **5 °C**."
+        },
+        {
+          "type": "example",
+          "question": "Tabulka, nebo diagram?",
+          "answer": "Chci **přesná čísla** → tabulka. Chci **rychle porovnat** → diagram."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Průměr 12, 20, 8, 15, 25 je 80.",
+          "right": "Průměr je 80 : 5 = **16**.",
+          "why": "80 je **součet**. Průměr získáš, až součet vydělíš počtem čísel."
+        },
+        {
+          "type": "summary",
+          "text": "Tabulka = přesná čísla, diagram = rychlé srovnání. Průměr = součet : počet čísel."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Hlasování: jablko 8, banán 5, jahoda 11, hruška 2. Kolik dětí hlasovalo?",
+      "answers": [
+        "26"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "O kolik hlasů víc má jahoda (11) než banán (5)?",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které ovoce má nejméně hlasů (8, 5, 11, 2)?",
+      "options": [
+        "jablko",
+        "banán",
+        "hruška"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "input",
+      "question": "Stránky: Po 12, Út 20, St 8, Čt 15, Pá 25. Kolik stránek celkem?",
+      "answers": [
+        "80"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Stejné údaje: kolik je to průměrně za den?",
+      "answers": [
+        "16"
+      ],
+      "explanation": "80 : 5 = 16."
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém dni se četlo nejméně (12, 20, 8, 15, 25)?",
+      "options": [
+        "Po",
+        "St",
+        "Čt"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Nejvyšší sloupec v diagramu znamená nejvyšší hodnotu.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "V tabulce najdeš hodnotu na průsečíku řádku a sloupce.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Teploty: 4 °C, 6 °C, 8 °C, 2 °C. Průměrná teplota =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je lepší, když chceš rychle porovnat velikosti?",
+      "options": [
+        "sloupcový diagram",
+        "dlouhý text"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď ovoce podle hlasů od nejvíc (jablko 8, banán 5, jahoda 11, hruška 2).",
+      "items": [
+        "jahoda",
+        "jablko",
+        "banán",
+        "hruška"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš průměr z několika čísel?",
+      "answer": "Všechna čísla sečtu a součet vydělím tím, kolik jich je. Např. (4 + 6 + 8 + 2) : 4 = 5."
+    },
+    {
+      "type": "open",
+      "question": "K čemu je dobrý sloupcový diagram? Uveď příklad.",
+      "answer": "Rychle ukáže, co je největší a nejmenší. Třeba počet žáků ve třídách nebo hlasování o výletu."
+    }
+  ]
+}

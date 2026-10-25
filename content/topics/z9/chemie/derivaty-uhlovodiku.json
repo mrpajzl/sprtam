@@ -1,0 +1,481 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "derivaty-uhlovodiku",
+  "title": "Deriváty uhlovodíků",
+  "emoji": "🍷",
+  "explanations": [
+    {
+      "title": "Ze života",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V lékárničce je líh na dezinfekci, v kuchyni ocet, v koupelně odlakovač na nehty. Všechny tyhle látky vypadají úplně jinak než benzín nebo zemní plyn. A přece jsou to jejich „příbuzní“."
+        },
+        {
+          "type": "text",
+          "text": "Vznikly tak, že se do uhlovodíku přidal jiný atom nebo skupinka atomů. Ta malá změna úplně změní vlastnosti – z plynu je třeba kapalina, která se mísí s vodou."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Uhlovodík",
+          "definition": "Látka jen z uhlíku a vodíku.",
+          "example": "ethan C₂H₆"
+        },
+        {
+          "type": "term",
+          "term": "Derivát uhlovodíku",
+          "definition": "Látka „odvozená“ z uhlovodíku: místo jednoho nebo více vodíků je v ní jiný atom nebo skupina atomů.",
+          "example": "Z ethanu C₂H₆ vznikne ethanol C₂H₅OH – jeden vodík nahradila skupina OH."
+        },
+        {
+          "type": "term",
+          "term": "Funkční skupina",
+          "definition": "Ten „nový kousek“ v derivátu. Určuje, jak se látka chová.",
+          "example": "–OH u alkoholů, –COOH u kyselin."
+        },
+        {
+          "type": "heading",
+          "text": "Alkoholy (skupina –OH)"
+        },
+        {
+          "type": "term",
+          "term": "Alkohol",
+          "definition": "Derivát se skupinou **–OH**. Jména končí na **-ol**.",
+          "example": "ethanol, methanol, glycerol"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Ethanol** C₂H₅OH – v pivu a víně, dezinfekce, palivo. Vzniká **kvašením** cukrů (kvasinky mění cukr na alkohol a CO₂).",
+            "**Methanol** CH₃OH – vypadá i voní jako ethanol, ale je **prudce jedovatý**. Už malé množství způsobí slepotu nebo smrt.",
+            "**Glycerol** – hustá sladká kapalina, v kosmetice."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Karboxylové kyseliny (skupina –COOH)"
+        },
+        {
+          "type": "term",
+          "term": "Karboxylová kyselina",
+          "definition": "Derivát se skupinou **–COOH**. Chutná kysele.",
+          "example": "kyselina octová, kyselina mravenčí"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Kyselina octová** CH₃COOH – její zředěný roztok je **ocet**.",
+            "**Kyselina mravenčí** HCOOH – v jedu mravenců a v chloupcích kopřiv (proto pálí).",
+            "**Kyselina máselná** – páchne po žluklém másle."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Halogenderiváty"
+        },
+        {
+          "type": "term",
+          "term": "Halogenderivát",
+          "definition": "Derivát, ve kterém je místo vodíku atom **halogenu** – chloru (Cl), fluoru (F), bromu (Br) nebo jodu (I).",
+          "example": "chloroform CHCl₃; plast PVC"
+        },
+        {
+          "type": "text",
+          "text": "**Freony** (s chlorem a fluorem) se dříve dávaly do ledniček a sprejů. Poškozují **ozonovou vrstvu**, která nás chrání před UV zářením, proto jsou zakázané."
+        },
+        {
+          "type": "heading",
+          "text": "Ještě dva druhy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Aldehydy** (skupina –CHO): **formaldehyd** – jeho roztok formalín konzervuje preparáty.",
+            "**Ketony** (skupina C=O uvnitř řetězce): **aceton** – rozpouštědlo, odlakovač."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Teď roztřiď látky do skupin podle toho, co jsi právě přečetl."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "alkohol (-OH)",
+              "karboxylová kyselina (-COOH)",
+              "halogenderivát"
+            ],
+            "items": [
+              {
+                "text": "ethanol",
+                "group": 0
+              },
+              {
+                "text": "methanol",
+                "group": 0
+              },
+              {
+                "text": "glycerol",
+                "group": 0
+              },
+              {
+                "text": "kyselina octová",
+                "group": 1
+              },
+              {
+                "text": "kyselina mravenčí",
+                "group": 1
+              },
+              {
+                "text": "kyselina máselná",
+                "group": 1
+              },
+              {
+                "text": "chloroform",
+                "group": 2
+              },
+              {
+                "text": "freony",
+                "group": 2
+              },
+              {
+                "text": "PVC",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jak z ovoce vznikne alkohol?",
+          "answer": "Ovoce obsahuje cukr (glukózu). Kvasinky ho při **kvašení** rozloží na ethanol a oxid uhličitý: C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂. Proto kvasící ovoce bublá."
+        },
+        {
+          "type": "example",
+          "question": "Proč je nebezpečné pít „pálenku“ neznámého původu?",
+          "answer": "Může obsahovat **methanol** místo ethanolu nebo spolu s ním. Chutí ani čichem je nerozlišíš. Methanol se v těle mění na jedovaté látky, které poškodí zrak a mohou zabít."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Methanol a ethanol jsou skoro totéž, jen jeden je slabší.",
+          "right": "Ethanol je v nápojích, **methanol je prudký jed**.",
+          "why": "Liší se jen jedním uhlíkem, ale v těle se z methanolu stávají jedovaté látky (formaldehyd a kyselina mravenčí)."
+        },
+        {
+          "type": "summary",
+          "text": "Derivát = uhlovodík, kde místo vodíku je jiný atom nebo skupina. Alkoholy –OH (ethanol), kyseliny –COOH (octová), halogenderiváty –Cl, –F… (freony). Methanol je jed."
+        }
+      ]
+    },
+    {
+      "title": "Funkční skupiny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si uhlovodík jako tričko bez potisku. Když na něj přišiješ nášivku, tričko je pořád tričko, ale vypadá a „chová se“ jinak. U molekul je nášivkou **funkční skupina**."
+        },
+        {
+          "type": "text",
+          "text": "Stačí poznat pět skupin a rozumíš stovkám látek: lihu, octu, odlakovači, formalínu i vůním ovoce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Uhlovodík",
+          "definition": "Sloučenina jen z uhlíku a vodíku."
+        },
+        {
+          "type": "term",
+          "term": "Derivát uhlovodíku",
+          "definition": "Sloučenina, která vznikne z uhlovodíku nahrazením vodíku jiným atomem nebo skupinou atomů."
+        },
+        {
+          "type": "term",
+          "term": "Funkční skupina",
+          "definition": "Atom nebo skupina atomů, která v derivátu nahradila vodík. Určuje jeho vlastnosti a název.",
+          "example": "–OH dělá z látky alkohol."
+        },
+        {
+          "type": "term",
+          "term": "Halogen",
+          "definition": "Prvek ze skupiny fluor, chlor, brom, jod."
+        },
+        {
+          "type": "heading",
+          "text": "Pět důležitých skupin"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina derivátů",
+            "Funkční skupina",
+            "Příklad",
+            "Použití"
+          ],
+          "rows": [
+            [
+              "halogenderiváty",
+              "–Cl, –Br, –F…",
+              "CHCl₃ chloroform",
+              "rozpouštědlo; freony ničí ozon"
+            ],
+            [
+              "alkoholy",
+              "–OH",
+              "C₂H₅OH ethanol",
+              "nápoje, dezinfekce"
+            ],
+            [
+              "aldehydy",
+              "–CHO",
+              "HCHO formaldehyd",
+              "formalín – konzervace"
+            ],
+            [
+              "ketony",
+              "C=O uvnitř řetězce",
+              "CH₃COCH₃ aceton",
+              "odlakovač"
+            ],
+            [
+              "karboxylové kyseliny",
+              "–COOH",
+              "CH₃COOH kyselina octová",
+              "ocet"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak poznat skupinu ze vzorce"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi ve vzorci, co tam není z čistého uhlovodíku (O, Cl…).",
+            "Je tam –COOH? → karboxylová kyselina.",
+            "Je tam –CHO na konci? → aldehyd. C=O uprostřed? → keton.",
+            "Je tam jen –OH? → alkohol.",
+            "Je tam halogen (Cl, Br, F, I)? → halogenderivát."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Do jaké skupiny patří CH₃OH a jak se jmenuje?",
+          "answer": "Kromě C a H tam je jen –OH → **alkohol**. Jeden uhlík → meth-. Je to **methanol** – prudce jedovatý."
+        },
+        {
+          "type": "text",
+          "text": "Najdi ke každému vzorci jeho jméno a skupinu – zkus to nejdřív sám, pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "C₂H₅OH",
+                "back": "ethanol – alkohol"
+              },
+              {
+                "front": "CH₃COOH",
+                "back": "kyselina octová – karboxylová kyselina"
+              },
+              {
+                "front": "HCOOH",
+                "back": "kyselina mravenčí – v mravencích a kopřivách"
+              },
+              {
+                "front": "CH₃COCH₃",
+                "back": "aceton – keton"
+              },
+              {
+                "front": "CHCl₃",
+                "back": "chloroform – halogenderivát"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Esterifikace"
+        },
+        {
+          "type": "term",
+          "term": "Ester",
+          "definition": "Látka, která vznikne spojením karboxylové kyseliny a alkoholu. Estery často příjemně voní – po ovoci.",
+          "example": "Vůně banánu nebo jahod v bonbonech."
+        },
+        {
+          "type": "term",
+          "term": "Esterifikace",
+          "definition": "Reakce: **kyselina + alkohol → ester + voda**."
+        },
+        {
+          "type": "example",
+          "question": "Co vznikne z kyseliny octové a ethanolu?",
+          "answer": "Kyselina odevzdá –OH, alkohol odevzdá H – z nich je voda. Zbytky se spojí: CH₃COOH + C₂H₅OH → CH₃COOC₂H₅ + H₂O. Vzniká **ethylester kyseliny octové** (rozpouštědlo, voní ovocně) a voda."
+        },
+        {
+          "type": "heading",
+          "text": "Pár faktů navíc"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Ethanol vzniká **kvašením** cukrů pomocí kvasinek.",
+            "Methanol oslepuje a zabíjí – nikdy nepij neznámý alkohol.",
+            "Freony poškozují ozonovou vrstvu, proto se už nepoužívají."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Aceton je alkohol, protože se používá jako rozpouštědlo jako líh.",
+          "right": "Aceton je **keton** – má skupinu C=O uvnitř řetězce, ne –OH.",
+          "why": "O skupině rozhoduje funkční skupina ve vzorci, ne to, k čemu se látka používá."
+        },
+        {
+          "type": "summary",
+          "text": "Funkční skupina určuje vlastnosti: –OH alkohol, –CHO aldehyd, C=O keton, –COOH kyselina, halogen halogenderivát. Kyselina + alkohol → ester + voda."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jakou funkční skupinu mají alkoholy?",
+      "options": [
+        "–OH",
+        "–COOH",
+        "–CHO",
+        "–Cl"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který alkohol je prudce jedovatý a může způsobit slepotu?",
+      "options": [
+        "methanol",
+        "ethanol",
+        "glycerol"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje kyselina, jejímž roztokem je ocet?",
+      "answers": [
+        "kyselina octová",
+        "octová",
+        "kyselina ethanová",
+        "ethanová"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec ethanolu?",
+      "options": [
+        "C₂H₅OH",
+        "CH₃OH",
+        "CH₃COOH",
+        "C₂H₆"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co vzniká reakcí karboxylové kyseliny s alkoholem?",
+      "options": [
+        "ester a voda",
+        "sůl a voda",
+        "aldehyd",
+        "alkan"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Kyselina mravenčí je v jedu mravenců a v kopřivách.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Freony poškozují ozonovou vrstvu.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj látku s použitím.",
+      "pairs": [
+        [
+          "aceton",
+          "odlakovač, rozpouštědlo"
+        ],
+        [
+          "glycerol",
+          "kosmetika"
+        ],
+        [
+          "formaldehyd (formalín)",
+          "konzervace preparátů"
+        ],
+        [
+          "ethanol",
+          "dezinfekce, nápoje"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak vzniká ethanol v přírodě?",
+      "options": [
+        "kvašením cukrů",
+        "hořením",
+        "fotosyntézou",
+        "destilací ropy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Do které skupiny patří aceton?",
+      "options": [
+        "ketony",
+        "alkoholy",
+        "aldehydy",
+        "estery"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je derivát uhlovodíku? Uveď tři skupiny s příklady.",
+      "answer": "Látka odvozená od uhlovodíku nahrazením vodíku jiným atomem nebo skupinou. Halogenderiváty (chloroform), alkoholy (ethanol), karboxylové kyseliny (kyselina octová)."
+    },
+    {
+      "type": "open",
+      "question": "Proč je methanol nebezpečný a jak se liší od ethanolu?",
+      "answer": "Methanol vypadá i voní jako ethanol, ale je prudce jedovatý – už malé množství způsobí oslepnutí nebo smrt. Ethanol je v alkoholických nápojích a ve větším množství také škodí."
+    }
+  ]
+}

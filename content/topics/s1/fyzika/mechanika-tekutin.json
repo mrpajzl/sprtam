@@ -1,0 +1,363 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mechanika-tekutin",
+  "title": "Mechanika tekutin",
+  "emoji": "🌊",
+  "explanations": [
+    {
+      "title": "Hadice a křídlo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když se potápíš, v hloubce tě bolí uši. Ve vodě zvedneš kamaráda, kterého na souši neuneseš. Přimáčkneš konec zahradní hadice a voda vystříkne dál. A letadlo o hmotnosti stovek tun se udrží ve vzduchu."
+        },
+        {
+          "type": "text",
+          "text": "Všechny tyto jevy spojuje chování kapalin a plynů. Využívají ho hydraulické brzdy, lodě, vodovod i křídla letadel."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tekutina",
+          "definition": "Látka, která teče a nemá vlastní tvar – kapalina nebo plyn.",
+          "example": "Voda, olej, vzduch."
+        },
+        {
+          "type": "term",
+          "term": "Tlak p",
+          "definition": "Jak silně se tlačí na každý kousek plochy: síla děleno plocha, `p = F / S`. Jednotka **pascal (Pa)** = N/m².",
+          "example": "Ostrý nůž řeže lépe: stejná síla na menší ploše = větší tlak."
+        },
+        {
+          "type": "term",
+          "term": "Hustota ρ (ró)",
+          "definition": "Kolik kilogramů má 1 m³ látky. Jednotka kg/m³.",
+          "example": "Voda 1 000 kg/m³, led 900 kg/m³, železo asi 7 900 kg/m³."
+        },
+        {
+          "type": "heading",
+          "text": "Tlak v hloubce"
+        },
+        {
+          "type": "text",
+          "text": "Čím hlouběji jsi, tím víc vody je nad tebou a tím víc tlačí. Na každých 10 m vody přibude asi 100 kPa – tolik jako tlak celé atmosféry."
+        },
+        {
+          "type": "term",
+          "term": "Hydrostatický tlak",
+          "definition": "Tlak způsobený tíhou kapaliny nad daným místem: `p = h · ρ · g` (h = hloubka).",
+          "example": "Hloubka 10 m ve vodě: p = 10 · 1 000 · 10 = 100 000 Pa = 100 kPa."
+        },
+        {
+          "type": "heading",
+          "text": "Proč věci plavou"
+        },
+        {
+          "type": "text",
+          "text": "Těleso ponořené do vody vytlačí vodu. Ta voda „chce zpátky“ a tlačí těleso nahoru. To je **vztlak**."
+        },
+        {
+          "type": "term",
+          "term": "Archimédův zákon",
+          "definition": "Těleso ponořené v tekutině je nadlehčováno silou, která se rovná tíze tekutiny o objemu ponořené části tělesa: `F_vz = V · ρ_kapaliny · g`.",
+          "example": "Ponoříš 1 litr (1 dm³) – voda tě nadlehčí silou asi 10 N."
+        },
+        {
+          "type": "text",
+          "text": "Těleso plave, když je řidší než kapalina. Led (900 kg/m³) ve vodě (1 000 kg/m³) plave a ponořeno má 900/1 000 = 90 % objemu – proto je ledovec z větší části pod vodou."
+        },
+        {
+          "type": "heading",
+          "text": "Proudění: užší = rychlejší"
+        },
+        {
+          "type": "text",
+          "text": "Když přimáčkneš hadici, musí stejné množství vody za sekundu protéct menším otvorem. Jediný způsob: téct rychleji."
+        },
+        {
+          "type": "text",
+          "text": "A druhý překvapivý jev: kde tekutina proudí rychleji, je v ní **menší tlak**. Foukni mezi dva listy papíru – místo aby se rozletěly, přiblíží se k sobě."
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty se čtyřmi hlavními zákony. U každého si vzpomeň na jeden příklad z tohoto výkladu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Pascalův zákon",
+                "back": "tlak vyvolaný zvenčí se v kapalině šíří všemi směry stejně (hydraulika)"
+              },
+              {
+                "front": "Archimédův zákon",
+                "back": "F_vz = V · ρ · g"
+              },
+              {
+                "front": "rovnice kontinuity",
+                "back": "S₁ · v₁ = S₂ · v₂ – užší místo, rychlejší proud"
+              },
+              {
+                "front": "Bernoulliho rovnice",
+                "back": "p + ½ρv² = konst. – rychlejší proud, menší tlak"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Křídlo letadla je tvarované tak, že nad ním proudí vzduch rychleji než pod ním. Nahoře je menší tlak, dole větší – a křídlo je tlačeno vzhůru."
+        },
+        {
+          "type": "text",
+          "text": "Hydraulický zvedák využívá Pascalův zákon: zmáčkneš malý píst a stejný tlak se přenese na velký píst. Má-li velký píst 100× větší plochu, tlačí 100× větší silou."
+        },
+        {
+          "type": "example",
+          "question": "Hustota vody je 1 000 kg/m³, g = 10 m/s². Jaký je hydrostatický tlak v hloubce 10 m?",
+          "answer": "p = h · ρ · g = 10 · 1 000 · 10 = 100 000 Pa = **100 kPa**."
+        },
+        {
+          "type": "example",
+          "question": "Těleso o objemu 0,5 dm³ je celé ponořené ve vodě. Jak velký je vztlak?",
+          "answer": "0,5 dm³ = 0,000 5 m³. F_vz = 0,000 5 · 1 000 · 10 = **5 N**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kde tekutina proudí rychleji, tam víc tlačí.",
+          "right": "Kde proudí rychleji, tam je tlak menší.",
+          "why": "Zní to proti intuici, ale ukazují to listy papíru i křídlo. Energie tekutiny se dělí mezi tlak a pohyb – víc pohybu znamená méně tlaku."
+        },
+        {
+          "type": "summary",
+          "text": "Tlak v kapalině roste s hloubkou: p = hρg. Vztlak = tíha vytlačené kapaliny. V užším místě proudí tekutina rychleji a má menší tlak."
+        }
+      ]
+    },
+    {
+      "title": "Vztahy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Automechanik zvedne auto jednou rukou pomocí hydraulického zvedáku. Inženýr počítá, jak tlustou zeď musí mít přehrada a jak rychle poteče voda v potrubí. Na to vše stačí pár vztahů – když je postavíš krok za krokem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tekutina",
+          "definition": "Kapalina nebo plyn – látka, která teče."
+        },
+        {
+          "type": "term",
+          "term": "Ideální kapalina",
+          "definition": "Zjednodušený model: kapalina je **nestlačitelná** (nejde zmáčknout do menšího objemu) a **bez vnitřního tření** (teče bez brzdění).",
+          "example": "Voda se jí v praxi dost blíží."
+        },
+        {
+          "type": "term",
+          "term": "Tlak p",
+          "definition": "`p = F / S` – síla na jednotku plochy. Jednotka pascal: 1 Pa = 1 N/m². Prakticky kPa (1 000 Pa)."
+        },
+        {
+          "type": "term",
+          "term": "Hustota ρ",
+          "definition": "Hmotnost 1 m³ látky (kg/m³). Voda 1 000 kg/m³."
+        },
+        {
+          "type": "term",
+          "term": "Průřez S",
+          "definition": "Plocha „řezu“ trubkou – velikost otvoru, kterým kapalina teče (m² nebo cm²)."
+        },
+        {
+          "type": "term",
+          "term": "Objemový průtok Q",
+          "definition": "Kolik m³ kapaliny proteče průřezem za 1 s: `Q = S · v`.",
+          "example": "Kohoutek pustí 0,1 litru za sekundu."
+        },
+        {
+          "type": "heading",
+          "text": "Kapalina v klidu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zákon",
+            "Vztah",
+            "Využití"
+          ],
+          "rows": [
+            [
+              "hydrostatický tlak",
+              "p = h · ρ · g",
+              "potápění, přehrady"
+            ],
+            [
+              "Pascalův zákon",
+              "p = F₁/S₁ = F₂/S₂",
+              "hydraulický lis, brzdy"
+            ],
+            [
+              "Archimédův zákon",
+              "F_vz = V · ρ · g",
+              "lodě, balony"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Hydraulický zvedák: malý píst S₁ = 5 cm², velký S₂ = 500 cm², na malý tlačíme F₁ = 150 N. Jakou silou se zvedá velký píst?",
+          "answer": "Tlak je všude stejný: F₁/S₁ = F₂/S₂. Velký píst má 500 : 5 = 100× větší plochu, takže síla je 100× větší: F₂ = 150 · 100 = **15 000 N**."
+        },
+        {
+          "type": "text",
+          "text": "Plování: když je hustota tělesa menší než hustota kapaliny, těleso plave. Ponořená část objemu = ρ_tělesa / ρ_kapaliny."
+        },
+        {
+          "type": "heading",
+          "text": "Kapalina v pohybu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Rovnice kontinuity**: co do trubky přiteče, musí i odtéct. `S₁ · v₁ = S₂ · v₂`.",
+            "Z toho: v užším místě je rychlost větší.",
+            "**Bernoulliho rovnice** (vodorovná trubka): `p₁ + ½ρv₁² = p₂ + ½ρv₂²`.",
+            "Z toho: kde je rychlost větší, je tlak menší."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Rovnici kontinuity si vyzkoušej na vahách: vlevo užší průřez 2 cm² krát neznámá rychlost x, vpravo 6 cm² · 1 m/s = 6. Najdi x."
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 2,
+            "b": 0,
+            "c": 6
+          }
+        },
+        {
+          "type": "example",
+          "question": "Trubka se zúží z průřezu 4 cm² (rychlost 2 m/s) na 1 cm². Jaká je rychlost v užší části?",
+          "answer": "S₁ · v₁ = S₂ · v₂ → 4 · 2 = 1 · v₂ → v₂ = **8 m/s**. Průřez 4× menší, rychlost 4× větší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vztlak závisí na hmotnosti nebo materiálu ponořeného tělesa.",
+          "right": "Vztlak závisí jen na objemu ponořené části a hustotě kapaliny.",
+          "why": "Kilogram železa a kilogram dřeva ponořené celé mají různý objem, proto různý vztlak. Stejně velká koule ze železa a ze dřeva (celá ponořená) má vztlak stejný."
+        },
+        {
+          "type": "summary",
+          "text": "Klid: p = hρg, Pascal F₁/S₁ = F₂/S₂, Archimédes F_vz = Vρg. Pohyb: S·v = konst., a kde je v větší, je p menší."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Hydrostatický tlak vody v hloubce 10 m v kPa? (ρ = 1 000 kg/m³, g = 10 m/s²)",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Trubice z průřezu 6 cm² (rychlost 1 m/s) se zúží na 2 cm². Rychlost v m/s =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Těleso o objemu 0,5 dm³ je ponořené ve vodě (g = 10 m/s²). Vztlaková síla v N =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Hydraulický zvedák: S₁ = 5 cm², S₂ = 500 cm², F₁ = 150 N. F₂ v N =",
+      "answers": [
+        "15000"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "V užším místě vodorovné trubice je tlak proudící kapaliny menší.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Na jakém principu vzniká vztlak křídla letadla?",
+      "options": [
+        "nad křídlem proudí vzduch rychleji, tlak je menší",
+        "křídlo je lehčí než vzduch",
+        "Pascalův zákon"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co udává rovnice kontinuity?",
+      "options": [
+        "objemový průtok trubicí je stálý",
+        "tlak je všude stejný",
+        "kapalina je stlačitelná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ideální kapalina je nestlačitelná a bez vnitřního tření.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kdy těleso v kapalině plave částečně ponořené?",
+      "options": [
+        "ρ tělesa < ρ kapaliny",
+        "ρ tělesa > ρ kapaliny",
+        "ρ tělesa = ρ kapaliny"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Led (ρ = 900 kg/m³) plave ve vodě (ρ = 1 000 kg/m³). Kolik procent objemu je ponořeno?",
+      "answers": [
+        "90"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rovnici kontinuity a Bernoulliho rovnici.",
+      "answer": "Rovnice kontinuity: S₁v₁ = S₂v₂, v užším místě proudí kapalina rychleji. Bernoulli: součet tlaku a ½ρv² je stálý, kde je vyšší rychlost, je nižší tlak."
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj Pascalův a Archimédův zákon.",
+      "answer": "Pascal: tlak vyvolaný vnější silou je v kapalině všude stejný. Archimédes: těleso ponořené do tekutiny je nadlehčováno silou rovnou tíze tekutiny o objemu ponořené části."
+    }
+  ]
+}

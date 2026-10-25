@@ -1,0 +1,462 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "bunka-stavba",
+  "title": "Stavba buňky",
+  "emoji": "🔬",
+  "explanations": [
+    {
+      "title": "Prokaryota vs. eukaryota",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ať je to bakterie v jogurtu, list stromu nebo tvůj sval, všechno je z **buněk**. Buňka je nejmenší kousek, který ještě žije sám o sobě. Pod mikroskopem ale buňky nevypadají stejně: existují dva zásadně odlišné „stavební plány“."
+        },
+        {
+          "type": "text",
+          "text": "Rozdíl mezi nimi vysvětluje, proč antibiotika zabíjejí bakterie a nám neublíží, nebo odkud se v našich buňkách vzaly mitochondrie."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Buňka",
+          "definition": "Nejmenší živá jednotka. Má obal, uvnitř tekutou hmotu a dědičnou informaci."
+        },
+        {
+          "type": "term",
+          "term": "Mikrometr (µm)",
+          "definition": "Tisícina milimetru. V µm se měří buňky.",
+          "example": "Lidský vlas je silný asi 70 µm, bakterie má kolem 1–2 µm."
+        },
+        {
+          "type": "term",
+          "term": "Cytoplazmatická membrána",
+          "definition": "Tenký obal každé buňky. Je z **dvojvrstvy fosfolipidů** (tukům podobných molekul) s vloženými **bílkovinami**. Rozhoduje, co do buňky vejde a co ven."
+        },
+        {
+          "type": "term",
+          "term": "Cytoplazma",
+          "definition": "Polotekutý obsah buňky uvnitř membrány."
+        },
+        {
+          "type": "term",
+          "term": "DNA",
+          "definition": "Molekula s dědičnou informací – „návod“ na stavbu a chod buňky."
+        },
+        {
+          "type": "term",
+          "term": "Organela",
+          "definition": "Malá součást buňky se specializovanou funkcí – jako orgán v těle. **Membránové** organely mají vlastní obal z membrány.",
+          "example": "jádro, mitochondrie, chloroplast"
+        },
+        {
+          "type": "term",
+          "term": "Ribozom",
+          "definition": "Drobná částice, která vyrábí **bílkoviny**. Není obalená membránou. Má je každá buňka."
+        },
+        {
+          "type": "term",
+          "term": "Jednotka S (svedberg)",
+          "definition": "Číslo, které říká, jak rychle částice klesá v odstředivce – zhruba čím větší, tím větší číslo.",
+          "example": "Ribozomy 70S jsou menší než 80S."
+        },
+        {
+          "type": "heading",
+          "text": "Dva stavební plány"
+        },
+        {
+          "type": "term",
+          "term": "Prokaryotní buňka",
+          "definition": "Jednodušší a menší buňka **bez jádra**. DNA leží volně v cytoplazmě jako **nukleoid**.",
+          "example": "bakterie, archea"
+        },
+        {
+          "type": "term",
+          "term": "Eukaryotní buňka",
+          "definition": "Větší a složitější buňka **s jádrem** (DNA je uzavřená v jaderném obalu) a s membránovými organelami.",
+          "example": "buňky rostlin, živočichů, hub a protist"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Znak",
+            "Prokaryotní",
+            "Eukaryotní"
+          ],
+          "rows": [
+            [
+              "jádro",
+              "ne – nukleoid",
+              "ano, s jaderným obalem"
+            ],
+            [
+              "membránové organely",
+              "ne",
+              "ano"
+            ],
+            [
+              "ribozomy",
+              "70S",
+              "80S (v cytoplazmě)"
+            ],
+            [
+              "velikost",
+              "asi 1–10 µm",
+              "asi 10–100 µm"
+            ],
+            [
+              "buněčná stěna",
+              "peptidoglykan (bakterie)",
+              "rostliny celulóza, houby chitin, živočichové nemají"
+            ],
+            [
+              "příklad",
+              "bakterie, archea",
+              "rostliny, živočichové, houby, protista"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď znaky podle toho, ke kterému typu buňky patří."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "prokaryotní",
+              "eukaryotní",
+              "obě"
+            ],
+            "items": [
+              {
+                "text": "nukleoid",
+                "group": 0
+              },
+              {
+                "text": "ribozomy 70S v cytoplazmě",
+                "group": 0
+              },
+              {
+                "text": "jádro s obalem",
+                "group": 1
+              },
+              {
+                "text": "mitochondrie",
+                "group": 1
+              },
+              {
+                "text": "Golgiho aparát",
+                "group": 1
+              },
+              {
+                "text": "cytoplazmatická membrána",
+                "group": 2
+              },
+              {
+                "text": "DNA",
+                "group": 2
+              },
+              {
+                "text": "ribozomy",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "V mikroskopu vidíš buňku o velikosti 2 µm bez jádra. Co to nejspíš je?",
+          "answer": "Malá a bez jádra → **prokaryotní buňka**, nejspíš bakterie."
+        },
+        {
+          "type": "example",
+          "question": "Proč antibiotikum, které ničí peptidoglykanovou stěnu, neublíží lidským buňkám?",
+          "answer": "Peptidoglykan mají jen bakterie. Lidské buňky jsou eukaryotní a buněčnou stěnu nemají vůbec – antibiotikum v nich nemá co poškodit."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Prokaryota nemají ribozomy, protože nemají organely.",
+          "right": "Prokaryota ribozomy mají (70S). Chybí jim jen **membránové** organely.",
+          "why": "Ribozomy nejsou obalené membránou a bez nich by buňka nevyrobila žádnou bílkovinu – mají je všechny buňky."
+        },
+        {
+          "type": "summary",
+          "text": "Prokaryota (bakterie, archea): bez jádra, bez membránových organel, ribozomy 70S. Eukaryota: jádro, membránové organely, ribozomy 80S."
+        }
+      ]
+    },
+    {
+      "title": "Buňka jako město",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si eukaryotní buňku – třeba buňku tvých jater – jako **malé město**. Má radnici s plány, továrny, poštu, elektrárnu, sklady i odpadový dvůr. Každá „budova“ je **organela** a dělá svou práci."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, co která organela dělá, rozumíš, jak buňka vyrábí bílkoviny, získává energii nebo co se stane, když něco z toho selže."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Eukaryotní buňka",
+          "definition": "Buňka s **jádrem** a s organelami obalenými membránou. Mají ji rostliny, živočichové, houby i protista. (Bakterie mají jednodušší **prokaryotní** buňku bez jádra.)"
+        },
+        {
+          "type": "term",
+          "term": "Membrána",
+          "definition": "Tenká blanka z **dvojvrstvy fosfolipidů** a bílkovin. Obaluje celou buňku i většinu organel a hlídá, co projde."
+        },
+        {
+          "type": "term",
+          "term": "Organela",
+          "definition": "Součást buňky se specializovanou funkcí – „budova ve městě“."
+        },
+        {
+          "type": "term",
+          "term": "Bílkoviny (proteiny)",
+          "definition": "Hlavní „dělníci“ a stavební materiál buňky. Vyrábějí se podle návodu v DNA. Výroba bílkovin = **proteosyntéza**."
+        },
+        {
+          "type": "term",
+          "term": "ATP",
+          "definition": "Molekula, která slouží jako **energetické platidlo** buňky. Kde je potřeba práce, ATP se „utratí“."
+        },
+        {
+          "type": "heading",
+          "text": "Budovy města"
+        },
+        {
+          "type": "text",
+          "text": "Ke každé kartě si nejdřív řekni, co organela dělá, a pak otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "jádro",
+                "back": "radnice – uchovává DNA, řídí buňku"
+              },
+              {
+                "front": "jadérko",
+                "back": "v jádře – vznikají v něm součásti ribozomů (rRNA)"
+              },
+              {
+                "front": "ribozomy",
+                "back": "dílny – výroba bílkovin"
+              },
+              {
+                "front": "drsné ER",
+                "back": "výrobní linka posetá ribozomy"
+              },
+              {
+                "front": "hladké ER",
+                "back": "výroba lipidů (tuků), odbourávání jedů"
+              },
+              {
+                "front": "Golgiho aparát",
+                "back": "pošta – úprava, balení a odeslání látek"
+              },
+              {
+                "front": "lyzozomy",
+                "back": "recyklační dvůr – trávicí enzymy"
+              },
+              {
+                "front": "mitochondrie",
+                "back": "elektrárna – buněčné dýchání, vzniká ATP"
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Endoplazmatické retikulum (ER)",
+          "definition": "Síť kanálků z membrán. **Drsné ER** má na sobě ribozomy a vyrábí bílkoviny. **Hladké ER** ribozomy nemá a vyrábí lipidy."
+        },
+        {
+          "type": "heading",
+          "text": "Rostlinná buňka navíc"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**chloroplasty** – solární elektrárny, probíhá v nich fotosyntéza",
+            "**buněčná stěna z celulózy** – pevná hradba kolem buňky (houby ji mají z **chitinu**)",
+            "**velká vakuola** – zásobárna vody a látek"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Cesta jedné bílkoviny"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "V **jádře** se z DNA opíše návod.",
+            "Návod putuje k **ribozomům na drsném ER**, tam vznikne bílkovina.",
+            "Bílkovina jde v měchýřku do **Golgiho aparátu**, kde se upraví a zabalí.",
+            "Měchýřek ji odveze k membráně a vypustí ven z buňky (sekrece)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Odkud se vzaly elektrárny"
+        },
+        {
+          "type": "term",
+          "term": "Endosymbiotická teorie",
+          "definition": "Mitochondrie a chloroplasty byly kdysi samostatné **bakterie**, které pohltil předek eukaryot. Nestrávil je a začali spolupracovat.",
+          "example": "Důkazy: mají **dvojitou membránu**, **vlastní kruhovou DNA**, **ribozomy 70S** jako bakterie a dělí se samy."
+        },
+        {
+          "type": "example",
+          "question": "Buňky slinné žlázy vyrábějí a vylučují hodně bílkovin. Kterých organel mají hodně?",
+          "answer": "Hodně **drsného ER** (výroba bílkovin) a výrazný **Golgiho aparát** (úprava a odeslání ven)."
+        },
+        {
+          "type": "example",
+          "question": "Svalová buňka potřebuje hodně energie. Čeho bude mít nejvíc?",
+          "answer": "**Mitochondrií** – v nich probíhá buněčné dýchání a vzniká ATP."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rostlinné buňky nemají mitochondrie, protože mají chloroplasty.",
+          "right": "Rostlinné buňky mají **obojí** – chloroplasty i mitochondrie.",
+          "why": "Chloroplast vyrábí cukr ze světla. Energii z cukru (ATP) ale získávají i rostliny dýcháním v mitochondriích."
+        },
+        {
+          "type": "summary",
+          "text": "Jádro řídí, ribozomy a drsné ER vyrábějí bílkoviny, Golgi je upraví a odešle, lyzozomy tráví, mitochondrie dávají ATP, chloroplasty fotosyntetizují. Dvojitou membránu má jádro, mitochondrie a chloroplast."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kde probíhá buněčné dýchání?",
+      "options": [
+        "v mitochondrii",
+        "v Golgiho aparátu",
+        "v lyzozomu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které ribozomy mají prokaryota?",
+      "options": [
+        "70S",
+        "80S",
+        "nemají ribozomy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Prokaryota mají membránou ohraničené jádro.",
+      "answer": false,
+      "explanation": "DNA leží volně v cytoplazmě jako nukleoid."
+    },
+    {
+      "type": "input",
+      "question": "Organela s trávicími enzymy je…",
+      "answers": [
+        "lyzozom",
+        "lysozom",
+        "lyzozóm"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj organelu s funkcí.",
+      "pairs": [
+        [
+          "ribozom",
+          "proteosyntéza"
+        ],
+        [
+          "Golgiho aparát",
+          "úprava a sekrece"
+        ],
+        [
+          "hladké ER",
+          "syntéza lipidů"
+        ],
+        [
+          "chloroplast",
+          "fotosyntéza"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Mitochondrie mají vlastní DNA.",
+      "answer": true,
+      "explanation": "Podporuje to endosymbiotickou teorii."
+    },
+    {
+      "type": "choice",
+      "question": "Buněčná stěna hub je hlavně z…",
+      "options": [
+        "chitinu",
+        "celulózy",
+        "peptidoglykanu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Membrána je tvořena hlavně…",
+      "options": [
+        "dvojvrstvou fosfolipidů s bílkovinami",
+        "celulózou",
+        "DNA"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Buněčná stěna rostlin je hlavně z celulózy.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "V jadérku vznikají…",
+      "options": [
+        "ribozomy (rRNA)",
+        "lyzozomy",
+        "mitochondrie"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Porovnej prokaryotní a eukaryotní buňku.",
+      "answer": "Prokaryotní je menší, nemá jádro (jen nukleoid) ani membránové organely, má 70S ribozomy. Eukaryotní má jádro s obalem, membránové organely a 80S ribozomy."
+    },
+    {
+      "type": "open",
+      "question": "Co tvrdí endosymbiotická teorie a jaké má důkazy?",
+      "answer": "Mitochondrie a chloroplasty vznikly z prokaryot pohlcených předkem eukaryot. Důkazy: dvojitá membrána, vlastní kruhová DNA, 70S ribozomy, dělení podobné bakteriím."
+    }
+  ]
+}

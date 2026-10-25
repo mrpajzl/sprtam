@@ -1,0 +1,417 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nukleove-kyseliny",
+  "title": "Nukleové kyseliny",
+  "emoji": "🧬",
+  "explanations": [
+    {
+      "title": "Kuchařka buňky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč máš oči po mámě a nos po tátovi? Protože v každé tvé buňce je uložený „návod“ na stavbu celého těla. Ten návod je zapsaný v molekule **DNA** – a **RNA** podle něj v buňce vaří bílkoviny."
+        },
+        {
+          "type": "text",
+          "text": "Představ si knihovnu s kuchařkou (DNA), ze které se do kuchyně nosí jen okopírované recepty (mRNA). Kuchař (ribozom) podle nich vaří jídla (bílkoviny)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Nukleová kyselina",
+          "definition": "Dlouhý řetězec (polymer) z **nukleotidů**. Dva druhy: **DNA** (deoxyribonukleová) a **RNA** (ribonukleová)."
+        },
+        {
+          "type": "term",
+          "term": "Nukleotid",
+          "definition": "Dílek řetězce ze tří částí: **dusíkatá báze** + **pentóza** (cukr s 5 uhlíky) + **fosfát** (zbytek kyseliny fosforečné)."
+        },
+        {
+          "type": "term",
+          "term": "Báze",
+          "definition": "Část nukleotidu, která nese „písmeno“ informace: **A** adenin, **G** guanin, **C** cytosin, **T** thymin (jen DNA), **U** uracil (jen RNA)."
+        },
+        {
+          "type": "term",
+          "term": "Komplementarita",
+          "definition": "Báze se párují vždy stejně: **A s T** (v RNA A s U) a **G s C**. Drží je vodíkové můstky."
+        },
+        {
+          "type": "heading",
+          "text": "DNA – dvoušroubovice"
+        },
+        {
+          "type": "text",
+          "text": "DNA tvoří dvě vlákna stočená do **dvoušroubovice** jako točité schodiště. Zábradlí je z cukru a fosfátu, schody tvoří spárované báze. Strukturu popsali v roce **1953 James Watson a Francis Crick** (s využitím snímků Rosalind Franklinové)."
+        },
+        {
+          "type": "example",
+          "question": "Doplň druhé vlákno DNA k úseku ATTGC.",
+          "answer": "A ↔ T, T ↔ A, T ↔ A, G ↔ C, C ↔ G. Druhé vlákno: **TAACG**."
+        },
+        {
+          "type": "example",
+          "question": "V DNA je 20 % adeninu. Kolik je guaninu?",
+          "answer": "A se páruje s T → T je také 20 %. A + T = 40 %, na G + C zbývá 60 %. G = C → **G = 30 %**."
+        },
+        {
+          "type": "heading",
+          "text": "DNA a RNA – rozdíly"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "DNA",
+            "RNA"
+          ],
+          "rows": [
+            [
+              "cukr",
+              "deoxyribóza",
+              "ribóza"
+            ],
+            [
+              "báze",
+              "A, G, C, T",
+              "A, G, C, U"
+            ],
+            [
+              "vlákna",
+              "dvě (dvoušroubovice)",
+              "obvykle jedno"
+            ],
+            [
+              "úkol",
+              "uchovává informaci",
+              "přenáší a realizuje informaci"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Od genu k bílkovině"
+        },
+        {
+          "type": "text",
+          "text": "Sleduj kolečko krok po kroku."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "replikace: DNA se zdvojí",
+              "transkripce: úsek DNA se v jádře přepíše do mRNA",
+              "mRNA putuje k ribozomu",
+              "translace: tRNA přináší aminokyseliny podle kodonů",
+              "vznikne bílkovina"
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Kodon",
+          "definition": "Trojice nukleotidů (bází) v mRNA, která určuje jednu aminokyselinu.",
+          "example": "AUG = methionin (a start)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**mRNA** (mediátorová) – kopie receptu",
+            "**tRNA** (transferová) – přináší aminokyseliny na ribozom",
+            "**rRNA** (ribozomální) – součást ribozomu"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Bonus: ATP"
+        },
+        {
+          "type": "text",
+          "text": "**ATP** (adenosintrifosfát) je také nukleotid – s adeninem, ribózou a třemi fosfáty. Je to univerzální „baterka“ buňky: odštěpením fosfátu uvolní energii."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Translace (výroba bílkoviny) probíhá v jádře.",
+          "right": "V jádře probíhá **transkripce**. **Translace** probíhá na **ribozomech v cytoplazmě**.",
+          "why": "DNA z jádra neodchází – ven jde jen její kopie mRNA, ke kuchaři-ribozomu."
+        },
+        {
+          "type": "summary",
+          "text": "Nukleotid = báze + pentóza + fosfát. DNA: deoxyribóza, A–T, G–C, dvoušroubovice. RNA: ribóza, U místo T. Replikace (DNA → DNA), transkripce (DNA → mRNA, jádro), translace (mRNA → bílkovina, ribozom)."
+        }
+      ]
+    },
+    {
+      "title": "Molekulárně",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Testy otcovství, PCR test na viry, mRNA vakcíny, genetické choroby – to vše stojí na chemii nukleových kyselin. Tady je projdeme od stavby jednoho nukleotidu po syntézu bílkoviny."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pentóza",
+          "definition": "Cukr s 5 uhlíky. V RNA **ribóza**, v DNA **deoxyribóza** (na uhlíku 2′ chybí kyslík)."
+        },
+        {
+          "type": "term",
+          "term": "Nukleosid a nukleotid",
+          "definition": "**Nukleosid** = báze + pentóza. **Nukleotid** = nukleosid + fosfát.",
+          "example": "adenosin (nukleosid), ATP (nukleotid se třemi fosfáty)"
+        },
+        {
+          "type": "term",
+          "term": "Purinové a pyrimidinové báze",
+          "definition": "**Puriny** (dva kruhy): adenin A, guanin G. **Pyrimidiny** (jeden kruh): cytosin C, thymin T, uracil U."
+        },
+        {
+          "type": "term",
+          "term": "Fosfodiesterová vazba",
+          "definition": "Spojení nukleotidů v řetězci: fosfát spojuje cukr jednoho nukleotidu s cukrem dalšího. Vytváří „páteř“ vlákna."
+        },
+        {
+          "type": "heading",
+          "text": "Párování bází"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Pár",
+            "Vodíkové můstky",
+            "Kde"
+          ],
+          "rows": [
+            [
+              "A–T",
+              "2",
+              "DNA"
+            ],
+            [
+              "G–C",
+              "3",
+              "DNA i RNA"
+            ],
+            [
+              "A–U",
+              "2",
+              "RNA (a při transkripci)"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Z párování plyne **Chargaffovo pravidlo**: v DNA je A = T a G = C (v procentech)."
+        },
+        {
+          "type": "example",
+          "question": "Úsek vlákna DNA je ATTGC. Jaké je komplementární vlákno a jaká mRNA by vznikla, kdyby předlohou pro přepis byl tento úsek?",
+          "answer": "Komplementární DNA: **TAACG** (A–T, G–C). mRNA se k předloze páruje stejně, jen místo T obsahuje uracil: **UAACG**."
+        },
+        {
+          "type": "heading",
+          "text": "Tři procesy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Replikace** (jádro): dvoušroubovice se rozplete, ke každému vláknu se podle komplementarity doplní nové. Každá nová DNA má jedno staré a jedno nové vlákno → **semikonzervativní** replikace.",
+            "**Transkripce** (jádro): podle úseku DNA (genu) se syntetizuje **mRNA**.",
+            "**Translace** (ribozomy v cytoplazmě): ribozom čte mRNA po **kodonech** (trojicích bází). **tRNA** s odpovídajícím **antikodonem** přináší aminokyselinu. Aminokyseliny se spojují peptidovou vazbou."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik nukleotidů mRNA je potřeba na zakódování bílkoviny ze 100 aminokyselin (bez stop kodonu)?",
+          "answer": "Jedna aminokyselina = jeden kodon = **3 nukleotidy**. 100 · 3 = **300 nukleotidů**."
+        },
+        {
+          "type": "text",
+          "text": "Spoj děj s jeho popisem – otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "replikace",
+                "back": "zdvojení DNA (semikonzervativní)"
+              },
+              {
+                "front": "transkripce",
+                "back": "přepis DNA do mRNA, v jádře"
+              },
+              {
+                "front": "translace",
+                "back": "překlad mRNA do bílkoviny, na ribozomu"
+              },
+              {
+                "front": "tRNA",
+                "back": "přináší aminokyseliny, má antikodon"
+              },
+              {
+                "front": "ATP",
+                "back": "adenosintrifosfát – přenašeč energie"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Další nukleotidy"
+        },
+        {
+          "type": "text",
+          "text": "**ATP** – univerzální přenašeč energie: ATP → ADP + fosfát + energie. Nukleotidy jsou i součástí koenzymů (NAD⁺, FAD)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Replikace je konzervativní – vznikne jedna úplně stará a jedna úplně nová DNA.",
+          "right": "Replikace je **semikonzervativní** – každá nová molekula má jedno původní a jedno nové vlákno.",
+          "why": "Každé ze dvou rozpletených vláken slouží jako předloha, ke které se dostaví nové. Původní vlákna se tak rozdělí mezi obě kopie."
+        },
+        {
+          "type": "summary",
+          "text": "Nukleotid = báze + pentóza + fosfát. A–T (2 můstky), G–C (3), v RNA U. Replikace semikonzervativní, transkripce DNA → mRNA (jádro), translace mRNA → bílkovina (ribozom, kodon = 3 nukleotidy, tRNA)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Ze kterých tří částí se skládá nukleotid?",
+      "options": [
+        "báze, pentóza, fosfát",
+        "aminokyselina, cukr, fosfát",
+        "glycerol, mastná kyselina, fosfát",
+        "báze, glukóza, síran"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která báze je jen v RNA?",
+      "options": [
+        "uracil",
+        "thymin",
+        "adenin",
+        "guanin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Doplň komplementární vlákno DNA k úseku ATTGC.",
+      "answers": [
+        "TAACG"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "V DNA je 20 % adeninu. Kolik % je guaninu?",
+      "answers": [
+        "30"
+      ],
+      "explanation": "A = T = 20 %, na G + C zbývá 60 %, G = C = 30 %."
+    },
+    {
+      "type": "truefalse",
+      "question": "Replikace DNA je semikonzervativní.",
+      "answer": true,
+      "explanation": "Každá nová molekula má jedno původní a jedno nové vlákno."
+    },
+    {
+      "type": "truefalse",
+      "question": "Translace probíhá v jádře.",
+      "answer": false,
+      "explanation": "Translace probíhá na ribozomech v cytoplazmě (a na drsném ER)."
+    },
+    {
+      "type": "choice",
+      "question": "Kdo roku 1953 popsal dvoušroubovici DNA?",
+      "options": [
+        "Watson a Crick",
+        "Mendel",
+        "Darwin a Wallace",
+        "Pasteur"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik nukleotidů tvoří jeden kodon?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj děj s popisem.",
+      "pairs": [
+        [
+          "replikace",
+          "zdvojení DNA"
+        ],
+        [
+          "transkripce",
+          "přepis DNA do RNA"
+        ],
+        [
+          "translace",
+          "překlad mRNA do bílkoviny"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která molekula přináší aminokyseliny na ribozom?",
+      "options": [
+        "tRNA",
+        "mRNA",
+        "rRNA",
+        "DNA"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která látka je univerzálním přenašečem energie v buňce?",
+      "options": [
+        "ATP",
+        "DNA",
+        "glukóza",
+        "NaCl"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Porovnej DNA a RNA.",
+      "answer": "DNA obsahuje deoxyribózu a báze A, G, C, T, tvoří dvoušroubovici a uchovává genetickou informaci. RNA má ribózu, místo thyminu uracil, bývá jednovláknová a slouží k přenosu a realizaci informace (mRNA, tRNA, rRNA)."
+    },
+    {
+      "type": "open",
+      "question": "Popiš cestu od genu k bílkovině.",
+      "answer": "Při transkripci se úsek DNA v jádře přepíše do mRNA. Ta putuje k ribozomu, kde se při translaci podle kodonů řadí aminokyseliny, které přináší tRNA. Vzniká polypeptid."
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "roztoky-vypocty",
+  "title": "Složení roztoků",
+  "emoji": "🧃",
+  "explanations": [
+    {
+      "title": "Jako sirup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když ředíš sirup, nalješ trochu sirupu a doleješ vodou. Malinovka je pak slabší nebo silnější – podle toho, kolik vody přidáš. Chemik by řekl, že měníš **koncentraci roztoku**."
+        },
+        {
+          "type": "text",
+          "text": "V laboratoři, v lékárně i v kuchyni (lák na okurky, fyziologický roztok 0,9 % NaCl) se musí koncentrace přesně spočítat. Naučíš se dva způsoby, jak ji vyjádřit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Roztok",
+          "definition": "Stejnorodá směs, ve které je jedna látka rozptýlená v druhé až na jednotlivé molekuly nebo ionty.",
+          "example": "slaná voda, sirup s vodou"
+        },
+        {
+          "type": "term",
+          "term": "Rozpouštědlo",
+          "definition": "Látka, ve které rozpouštíme – obvykle je jí víc.",
+          "example": "voda"
+        },
+        {
+          "type": "term",
+          "term": "Rozpuštěná látka",
+          "definition": "Látka, kterou rozpouštíme.",
+          "example": "sůl, cukr"
+        },
+        {
+          "type": "term",
+          "term": "Hmotnostní zlomek w",
+          "definition": "Jaká část hmotnosti roztoku připadá na rozpuštěnou látku. w = m(látky) / m(roztoku). Vynásobený 100 dá procenta.",
+          "example": "w = 0,1 = 10 %"
+        },
+        {
+          "type": "heading",
+          "text": "Představ si to na čtverečcích"
+        },
+        {
+          "type": "text",
+          "text": "Mřížka má 100 políček = celý roztok. Obarvená políčka jsou rozpuštěná látka. Posuň posuvník na 10 % a sleduj, kolik gramů soli to je ve 200 g roztoku."
+        },
+        {
+          "type": "widget",
+          "widget": "percent",
+          "props": {
+            "percent": 10,
+            "of": 200
+          }
+        },
+        {
+          "type": "text",
+          "text": "10% roztok soli: ve 200 g roztoku je 20 g soli a 180 g vody."
+        },
+        {
+          "type": "example",
+          "question": "Rozpustíš 20 g soli ve 180 g vody. Jaký je hmotnostní zlomek?",
+          "answer": "Roztok váží 20 + 180 = **200 g** (sůl + voda!). w = 20 / 200 = 0,1 = **10 %**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik cukru potřebuješ na 500 g 4% roztoku?",
+          "answer": "m(cukru) = w · m(roztoku) = 0,04 · 500 = **20 g**. Vody pak 500 − 20 = 480 g."
+        },
+        {
+          "type": "heading",
+          "text": "Ředění"
+        },
+        {
+          "type": "text",
+          "text": "Když přileješ vodu, látky v roztoku **nepřibude ani neubude** – jen je ve větším množství roztoku. Koncentrace klesne."
+        },
+        {
+          "type": "example",
+          "question": "Smícháš 100 g 10% a 100 g 30% roztoku. Jaký vyjde?",
+          "answer": "Látky: 0,1 · 100 + 0,3 · 100 = 10 + 30 = 40 g. Roztoku: 200 g. w = 40 / 200 = **20 %**."
+        },
+        {
+          "type": "heading",
+          "text": "Druhý způsob: v molech"
+        },
+        {
+          "type": "term",
+          "term": "Molární koncentrace c",
+          "definition": "Kolik **molů** látky je v **1 dm³** (1 litru) roztoku. c = n / V, jednotka mol/dm³. Mol je „balení“ 6,022 · 10²³ částic.",
+          "example": "c = 2 mol/dm³: v každém litru jsou 2 moly látky."
+        },
+        {
+          "type": "example",
+          "question": "0,5 mol látky je ve 250 cm³ roztoku. Jaká je c?",
+          "answer": "250 cm³ = 0,25 dm³. c = 0,5 / 0,25 = **2 mol/dm³**."
+        },
+        {
+          "type": "heading",
+          "text": "Kolik se rozpustí"
+        },
+        {
+          "type": "term",
+          "term": "Nasycený roztok",
+          "definition": "Roztok, který při dané teplotě už **nerozpustí** další látku – zbytek zůstane na dně."
+        },
+        {
+          "type": "term",
+          "term": "Rozpustnost",
+          "definition": "Kolik látky se maximálně rozpustí. U většiny pevných látek s teplotou **roste**, u plynů **klesá**.",
+          "example": "Teplá limonáda rychle vyčpí – plyn CO₂ se v teplé vodě rozpouští hůř."
+        },
+        {
+          "type": "mistake",
+          "wrong": "20 g soli ve 180 g vody → w = 20 / 180 ≈ 11 %.",
+          "right": "w = 20 / **200** = 10 %.",
+          "why": "Ve jmenovateli je hmotnost **celého roztoku** (látka + rozpouštědlo), ne jen vody."
+        },
+        {
+          "type": "summary",
+          "text": "w = m(látky) / m(roztoku), c = n / V (V v dm³). Ředěním se nemění množství rozpuštěné látky, jen koncentrace."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V chemii neustále připravuješ roztoky přesné koncentrace: navážíš látku, rozpustíš, doplníš. Nebo máš koncentrovaný roztok a potřebuješ ho zředit."
+        },
+        {
+          "type": "text",
+          "text": "Všechny tyhle úlohy řeší čtyři vzorce. Tady je máš i s postupem, kdy který použít."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Roztok",
+          "definition": "Stejnorodá směs **rozpouštědla** (např. vody) a **rozpuštěné látky** (např. soli). m(roztoku) = m(látky) + m(rozpouštědla)."
+        },
+        {
+          "type": "term",
+          "term": "Hmotnostní zlomek w",
+          "definition": "Podíl hmotnosti rozpuštěné látky na hmotnosti roztoku. Bez jednotky, 0 až 1 (nebo 0–100 %)."
+        },
+        {
+          "type": "term",
+          "term": "Látkové množství n",
+          "definition": "Počet částic vyjádřený v molech; n = m / M (M = molární hmotnost v g/mol)."
+        },
+        {
+          "type": "term",
+          "term": "Molární koncentrace c",
+          "definition": "Látkové množství rozpuštěné látky v 1 dm³ roztoku. Jednotka mol/dm³."
+        },
+        {
+          "type": "heading",
+          "text": "Přehled vzorců"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Veličina",
+            "Vzorec",
+            "Jednotka"
+          ],
+          "rows": [
+            [
+              "hmotnostní zlomek",
+              "w = m(A) / m(roztoku)",
+              "– (nebo %)"
+            ],
+            [
+              "molární koncentrace",
+              "c = n(A) / V(roztoku)",
+              "mol/dm³"
+            ],
+            [
+              "ředění",
+              "c₁ · V₁ = c₂ · V₂",
+              "–"
+            ],
+            [
+              "směšování",
+              "m₁ · w₁ + m₂ · w₂ = (m₁ + m₂) · w",
+              "–"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ředicí i směšovací rovnice říkají totéž: **množství rozpuštěné látky před = po**."
+        },
+        {
+          "type": "heading",
+          "text": "Postup pro molární koncentraci"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Převeď hmotnost na moly: n = m / M.",
+            "Převeď objem na dm³ (1 dm³ = 1 000 cm³ = 1 l).",
+            "Vyděl: c = n / V."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "4 g NaOH (M = 40 g/mol) rozpustíš a doplníš na 500 cm³. Jaká je c?",
+          "answer": "n = 4 / 40 = 0,1 mol. V = 500 cm³ = 0,5 dm³. c = 0,1 / 0,5 = **0,2 mol/dm³**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik molů HCl je ve 200 cm³ roztoku o c = 0,5 mol/dm³?",
+          "answer": "n = c · V = 0,5 · 0,2 = **0,1 mol**."
+        },
+        {
+          "type": "example",
+          "question": "100 cm³ roztoku o c = 2 mol/dm³ zředíš na 400 cm³. Nová c?",
+          "answer": "c₁ · V₁ = c₂ · V₂ → 2 · 100 = c₂ · 400 → c₂ = 200 / 400 = **0,5 mol/dm³**. (Objemy se v poměru krátí, proto tu můžou zůstat v cm³.)"
+        },
+        {
+          "type": "example",
+          "question": "Jak připravíš 250 g 8% roztoku NaCl?",
+          "answer": "m(NaCl) = 0,08 · 250 = 20 g. Vody 250 − 20 = 230 g. Naváž **20 g NaCl** a rozpusť ve **230 g vody**."
+        },
+        {
+          "type": "text",
+          "text": "Procvič si: posuň mřížku na 8 % a ověř, že z 250 g roztoku je to 20 g."
+        },
+        {
+          "type": "widget",
+          "widget": "percent",
+          "props": {
+            "percent": 8,
+            "of": 250
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Rozpustnost"
+        },
+        {
+          "type": "term",
+          "term": "Nasycený roztok",
+          "definition": "Roztok, který při dané teplotě už další látku nerozpustí. Rozpustnost pevných látek obvykle s teplotou roste, plynů klesá."
+        },
+        {
+          "type": "mistake",
+          "wrong": "c = 0,1 mol / 500 cm³ = 0,0002 mol/dm³",
+          "right": "c = 0,1 mol / **0,5 dm³** = 0,2 mol/dm³",
+          "why": "Molární koncentrace je v mol/**dm³**. Objem v cm³ vždy nejdřív vyděl 1 000."
+        },
+        {
+          "type": "summary",
+          "text": "w = m(A) / m(roztoku), c = n / V v dm³. Při ředění a míchání platí: rozpuštěné látky je před i po stejně (c₁V₁ = c₂V₂)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Rozpustíš 20 g soli ve 180 g vody. Hmotnostní zlomek v % =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik gramů cukru potřebuješ na 500 g 4% roztoku?",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "0,5 mol látky je ve 250 cm³ roztoku. c v mol/dm³ =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik molů HCl je v 200 cm³ roztoku o c = 0,5 mol/dm³?",
+      "answers": [
+        "0,1",
+        "0.1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "100 cm³ roztoku o c = 2 mol/dm³ zředíš na 400 cm³. Nová c v mol/dm³ =",
+      "answers": [
+        "0,5",
+        "0.5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Smícháš 100 g 10% a 100 g 30% roztoku. Výsledná koncentrace v % =",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ředěním roztoku se množství rozpuštěné látky nemění.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Hmotnostní zlomek může být větší než 1.",
+      "answer": false,
+      "explanation": "Část nemůže být větší než celek; w ∈ ⟨0; 1⟩."
+    },
+    {
+      "type": "choice",
+      "question": "Co je nasycený roztok?",
+      "options": [
+        "při dané teplotě už další látku nerozpustí",
+        "obsahuje jen vodu",
+        "má koncentraci 100 %"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak obvykle roste rozpustnost pevných látek s teplotou?",
+      "options": [
+        "zvyšuje se",
+        "snižuje se",
+        "nemění se"
+      ],
+      "answer": 0,
+      "explanation": "U většiny pevných látek roste; u plynů naopak klesá."
+    },
+    {
+      "type": "open",
+      "question": "Jak připravíš 250 g 8% roztoku NaCl?",
+      "answer": "m(NaCl) = 0,08 · 250 = 20 g. Naváží se 20 g NaCl a rozpustí ve 230 g vody."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi hmotnostním zlomkem a molární koncentrací?",
+      "answer": "Hmotnostní zlomek je poměr hmotnosti látky a hmotnosti roztoku, je bezrozměrný. Molární koncentrace je látkové množství v 1 dm³ roztoku, v mol/dm³."
+    }
+  ]
+}

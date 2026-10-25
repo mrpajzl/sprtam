@@ -1,0 +1,342 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zlomky-nasobeni",
+  "title": "Násobení a dělení zlomků",
+  "emoji": "✖️",
+  "generator": "frac-of",
+  "explanations": [
+    {
+      "title": "Obrázkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve třídě je 28 dětí a 2/7 z nich jsou kluci. Kolik je kluků? Máš půlku čokolády a sníš z ní třetinu. Kolik celé čokolády jsi snědl?"
+        },
+        {
+          "type": "text",
+          "text": "To jsou úlohy na **násobení zlomků**. Slovo „krát“ tu znamená „z“ – bereš část z něčeho."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čitatel a jmenovatel",
+          "definition": "Ve zlomku 3/4 je **jmenovatel** 4 – na kolik dílů je celek rozdělen. **Čitatel** 3 – kolik dílů bereš.",
+          "example": "3/4 = 3 ze 4 stejných dílů"
+        },
+        {
+          "type": "term",
+          "term": "„Krát“ jako „z“",
+          "definition": "Násobit zlomkem znamená vzít z čísla tu část.",
+          "example": "3/4 · 20 = tři čtvrtiny z 20"
+        },
+        {
+          "type": "heading",
+          "text": "Část z čísla"
+        },
+        {
+          "type": "text",
+          "text": "Tři čtvrtiny z 20 Kč: nejdřív jednu čtvrtinu – 20 : 4 = 5 Kč. Tři čtvrtiny jsou 3 · 5 = **15 Kč**."
+        },
+        {
+          "type": "example",
+          "question": "Třída má 28 žáků, 2/7 jsou kluci. Kolik je kluků?",
+          "answer": "Jedna sedmina: 28 : 7 = 4. Dvě sedminy: 2 · 4 = **8 kluků**."
+        },
+        {
+          "type": "heading",
+          "text": "Část z části"
+        },
+        {
+          "type": "text",
+          "text": "Polovina ze třetiny: třetinu čokolády rozlomíš napůl. Kolik je to z celé? Kdybys tak rozlomil všechny tři třetiny, máš 6 stejných kousků. Tvůj kousek je **1/6**."
+        },
+        {
+          "type": "text",
+          "text": "Nastav na koláči 1/3 a pak ho rozděl na šestiny (jmenovatel 6). Jedna šestina je přesně polovina třetiny."
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 1,
+            "denominator": 6
+          }
+        },
+        {
+          "type": "text",
+          "text": "Proto: 1/2 · 1/3 = 1/6. Čitatele vynásob, jmenovatele vynásob."
+        },
+        {
+          "type": "heading",
+          "text": "Dělení: kolikrát se vejde"
+        },
+        {
+          "type": "text",
+          "text": "Kolik čtvrtek se vejde do půlky pizzy? Dvě. Proto 1/2 : 1/4 = **2**. Dělení zlomkem se ptá: „kolik takových kousků se tam vejde?“"
+        },
+        {
+          "type": "text",
+          "text": "Kolik půlek je ve 3 pizzách? Šest. 3 : 1/2 = 6. Dělit polovinou je totéž jako násobit dvěma."
+        },
+        {
+          "type": "example",
+          "question": "5/6 : 5 = ?",
+          "answer": "Pět šestin rozdělíš mezi 5 lidí. Každý dostane **1/6**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1/2 · 1/2 = 1",
+          "right": "1/2 · 1/2 = 1/4",
+          "why": "Polovina z poloviny je čtvrtina. Násobení číslem menším než 1 výsledek **zmenšuje**."
+        },
+        {
+          "type": "summary",
+          "text": "Násobit zlomkem = vzít část z něčeho. Dělit zlomkem = zjistit, kolikrát se ten kousek vejde."
+        }
+      ]
+    },
+    {
+      "title": "Pravidlo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Násobení a dělení zlomků je překvapivě snazší než sčítání – nepotřebuješ společného jmenovatele. Stačí dvě pravidla."
+        },
+        {
+          "type": "text",
+          "text": "Budeš je potřebovat při výpočtech procent, poměrů a v rovnicích."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čitatel / jmenovatel",
+          "definition": "Horní / dolní číslo zlomku.",
+          "example": "Ve 2/3 je čitatel 2, jmenovatel 3."
+        },
+        {
+          "type": "term",
+          "term": "Převrácený zlomek",
+          "definition": "Zlomek, ve kterém **prohodíš** čitatele a jmenovatele.",
+          "example": "Převrácený k 4/5 je 5/4. K 3/7 je 7/3. K číslu 5 (= 5/1) je 1/5."
+        },
+        {
+          "type": "term",
+          "term": "Krácení",
+          "definition": "Vydělení čitatele i jmenovatele stejným číslem – zlomek se zjednoduší, hodnota zůstane.",
+          "example": "6/15 = 2/5 (vyděleno 3)"
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla"
+        },
+        {
+          "type": "table",
+          "head": [
+            "operace",
+            "jak",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "a/b · c/d",
+              "čitatel · čitatel, jmenovatel · jmenovatel",
+              "2/3 · 3/5 = 6/15 = 2/5"
+            ],
+            [
+              "a/b : c/d",
+              "násob převráceným zlomkem: a/b · d/c",
+              "2/3 : 4/5 = 2/3 · 5/4"
+            ],
+            [
+              "číslo · zlomek",
+              "číslo napiš jako n/1",
+              "20 · 3/4 = 60/4 = 15"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Násobení krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zadání: 4/9 · 3/8.",
+            "Než násobíš, zkrať, co jde „křížem“: 4 a 8 vyděl 4 → 1 a 2; 3 a 9 vyděl 3 → 1 a 3.",
+            "Teď násob: 1/3 · 1/2 = 1/6.",
+            "Bez krácení by vyšlo 12/72 – a to je taky 1/6, jen víc počítání."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Dělení krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zadání: 2/3 : 4/5.",
+            "Druhý zlomek převrať: 4/5 → 5/4.",
+            "Dělení změň na násobení: 2/3 · 5/4.",
+            "Vynásob: 10/12.",
+            "Zkrať dvěma: 5/6."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "1/2 : 1/4 = ?",
+          "answer": "1/2 · 4/1 = 4/2 = **2**. Kontrola: do půlky se vejdou dvě čtvrtiny ✓."
+        },
+        {
+          "type": "example",
+          "question": "2/3 · 3/5 = ?",
+          "answer": "Trojky se zkrátí: 2/1 · 1/5 = **2/5**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "2/3 : 4/5 = 4/5 · 3/2 (převrátím první zlomek)",
+          "right": "2/3 : 4/5 = 2/3 · 5/4",
+          "why": "Převrací se vždy jen **dělitel** – zlomek, kterým dělíš (za dvojtečkou)."
+        },
+        {
+          "type": "text",
+          "text": "Procvič: otoč kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "převrácený k 3/7",
+                "back": "7/3"
+              },
+              {
+                "front": "1/2 · 1/3",
+                "back": "1/6"
+              },
+              {
+                "front": "3/4 z 20",
+                "back": "15"
+              },
+              {
+                "front": "1/2 : 1/4",
+                "back": "2"
+              }
+            ]
+          }
+        },
+        {
+          "type": "summary",
+          "text": "Násobení: nahoře krát nahoře, dole krát dole (a krať předem). Dělení: násob převráceným zlomkem."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "2/3 · 3/5 = (v základním tvaru)",
+      "answers": [
+        "2/5"
+      ],
+      "explanation": "6/15 = 2/5"
+    },
+    {
+      "type": "input",
+      "question": "3/4 z 20 =",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "1/2 : 1/4 =",
+      "answers": [
+        "2"
+      ],
+      "explanation": "1/2 · 4/1 = 2. Do půlky se vejdou 2 čtvrtiny."
+    },
+    {
+      "type": "choice",
+      "question": "Převrácené číslo k 3/7 je…",
+      "options": [
+        "7/3",
+        "−3/7",
+        "3/7",
+        "1/7"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "5/6 : 5 = ",
+      "answers": [
+        "1/6"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Dělením číslem 1/2 se výsledek zdvojnásobí.",
+      "answer": true,
+      "explanation": "x : 1/2 = x · 2"
+    },
+    {
+      "type": "choice",
+      "question": "4/9 · 3/8 =",
+      "options": [
+        "1/6",
+        "7/17",
+        "12/17",
+        "1/3"
+      ],
+      "answer": 0,
+      "explanation": "12/72 = 1/6"
+    },
+    {
+      "type": "input",
+      "question": "Třída má 28 žáků, 2/7 jsou kluci. Kolik je kluků?",
+      "answers": [
+        "8"
+      ],
+      "explanation": "28 : 7 · 2 = 8"
+    },
+    {
+      "type": "input",
+      "question": "2/3 : 4/5 = (v základním tvaru)",
+      "answers": [
+        "5/6"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "1/2 · 1/2 = 1",
+      "answer": false,
+      "explanation": "Polovina z poloviny = 1/4."
+    },
+    {
+      "type": "open",
+      "question": "Jak vydělíš dva zlomky?",
+      "answer": "První zlomek vynásobím převráceným druhým zlomkem: čitatel a jmenovatel druhého prohodím. Výsledek zkrátím."
+    },
+    {
+      "type": "open",
+      "question": "Proč je 1/2 · 1/3 menší než 1/3?",
+      "answer": "Násobit 1/2 znamená vzít polovinu. Polovina z třetiny je šestina, a ta je menší než třetina."
+    }
+  ]
+}

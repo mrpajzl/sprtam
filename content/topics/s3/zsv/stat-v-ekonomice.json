@@ -1,0 +1,398 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stat-v-ekonomice",
+  "title": "Stát v ekonomice a daně",
+  "emoji": "🏛️",
+  "explanations": [
+    {
+      "title": "Dobré a zlé časy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Někdy se dá práce najít snadno, firmy přijímají a lidé hodně nakupují. Jindy firmy propouštějí, lidé šetří a v obchodech je prázdno. Ekonomika neroste rovnoměrně – dobré a horší časy se střídají."
+        },
+        {
+          "type": "text",
+          "text": "Když tomu rozumíš, chápeš zprávy typu „ekonomika je v recesi“ a víš, proč stát v těžkých časech zasahuje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ekonomika (hospodářství)",
+          "definition": "Všechno, co se v zemi vyrábí, prodává a kupuje, a lidé a firmy, kteří to dělají.",
+          "example": "Česká ekonomika: továrny, obchody, banky, zemědělci…"
+        },
+        {
+          "type": "term",
+          "term": "HDP (hrubý domácí produkt)",
+          "definition": "Hodnota všech **finálních** statků a služeb vyrobených **na území státu za rok**. Ukazuje, jak velká je ekonomika. „Finální“ znamená určené konečnému uživateli – mouka pro pekárnu se nepočítá zvlášť, započte se až v ceně chleba.",
+          "example": "Když HDP roste, země celkově vyrábí víc."
+        },
+        {
+          "type": "term",
+          "term": "Nezaměstnanost",
+          "definition": "Stav, kdy lidé chtějí a mohou pracovat, ale práci nemají.",
+          "example": "Propuštěný dělník hledá nové místo."
+        },
+        {
+          "type": "heading",
+          "text": "Hospodářský cyklus"
+        },
+        {
+          "type": "text",
+          "text": "Střídání dobrých a horších období se nazývá **hospodářský cyklus**. Klikni si postupně na fáze a ke každé si řekni, jak se asi daří firmám a lidem:"
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "Expanze – HDP roste, nezaměstnanost klesá",
+              "Vrchol – ekonomika je na maximu",
+              "Recese – HDP klesá, roste nezaměstnanost",
+              "Dno – nejnižší bod",
+              "Oživení – ekonomika se zase rozjíždí"
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Recese",
+          "definition": "Fáze, kdy HDP **klesá**. Obvykle se o ní mluví, když HDP klesá **dvě čtvrtletí po sobě**.",
+          "example": "Firmy propouštějí, lidé méně utrácejí."
+        },
+        {
+          "type": "example",
+          "question": "Firmy propouštějí, lidé méně nakupují, HDP dvě čtvrtletí po sobě klesá. Která fáze?",
+          "answer": "**Recese.**"
+        },
+        {
+          "type": "example",
+          "question": "Firmy shánějí zaměstnance, mzdy rostou, HDP roste. Která fáze?",
+          "answer": "**Expanze.**"
+        },
+        {
+          "type": "heading",
+          "text": "Tři druhy nezaměstnanosti"
+        },
+        {
+          "type": "table",
+          "head": [
+            "druh",
+            "proč vzniká",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "frikční",
+              "člověk mění práci a chvíli hledá novou",
+              "absolvent hledá první místo"
+            ],
+            [
+              "strukturální",
+              "jeho obor už není potřeba nebo chybí v kraji",
+              "horník po zavření dolu"
+            ],
+            [
+              "cyklická",
+              "ekonomika je v recesi",
+              "propouštění v krizi"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Co s tím může stát"
+        },
+        {
+          "type": "term",
+          "term": "Fiskální politika",
+          "definition": "Jak **vláda** hospodaří s penězi státu: **daně** a **výdaje** státního rozpočtu.",
+          "example": "V recesi vláda staví silnice, aby firmy měly zakázky."
+        },
+        {
+          "type": "term",
+          "term": "Měnová politika",
+          "definition": "Jak **centrální banka** (u nás **ČNB**) ovlivňuje peníze v ekonomice – hlavně **úrokovými sazbami** (cenou půjček).",
+          "example": "Při vysoké inflaci ČNB zvýší úroky."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Měnovou politiku dělá vláda a ministr financí.",
+          "right": "Měnovou politiku dělá nezávislá **ČNB**. Vláda dělá **fiskální** politiku (rozpočet, daně).",
+          "why": "Rozdělení brání tomu, aby politici kvůli volbám „tiskli peníze“. ČNB je na vládě nezávislá."
+        },
+        {
+          "type": "summary",
+          "text": "HDP = hodnota finálních statků a služeb vyrobených na území státu za rok. Cyklus: expanze → vrchol → recese → dno → oživení. Fiskální politika = vláda (rozpočet, daně), měnová = ČNB (úrokové sazby)."
+        }
+      ]
+    },
+    {
+      "title": "Rozpočet a daně",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rodina má příjmy (výplaty) a výdaje (nájem, jídlo, dovolená). Když utratí víc, než vydělá, musí si půjčit. Stát funguje podobně – jen v miliardách."
+        },
+        {
+          "type": "text",
+          "text": "Z peněz státu se platí školy, nemocnice, silnice i důchody. Ty peníze ale pocházejí hlavně z **daní**, které platí každý – i ty, když si koupíš svačinu. Proto se vyplatí rozumět, odkud stát peníze bere a na co je dává."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Státní rozpočet",
+          "definition": "Plán **příjmů a výdajů státu** na jeden rok. Schvaluje ho **Poslanecká sněmovna** jako zákon.",
+          "example": "Rozpočet určí, kolik peněz půjde na školství."
+        },
+        {
+          "type": "term",
+          "term": "Daň",
+          "definition": "Povinná platba státu (nebo obci), za kterou nedostaneš přímo nic konkrétního zpět.",
+          "example": "Daň z příjmů ze mzdy."
+        },
+        {
+          "type": "term",
+          "term": "Deficit (schodek)",
+          "definition": "Výdaje rozpočtu jsou **vyšší** než příjmy. Opak je **přebytek**.",
+          "example": "Stát vybere 2 000 miliard a utratí 2 250 miliard → deficit 250 miliard."
+        },
+        {
+          "type": "term",
+          "term": "Státní dluh",
+          "definition": "Všechny dosud nesplacené půjčky státu – **součet dřívějších deficitů** (minus to, co se splatilo).",
+          "example": "Když má stát deficit každý rok, dluh roste."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď položky. Zeptej se: stát peníze dostává, nebo je platí?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Příjmy rozpočtu",
+              "Výdaje rozpočtu"
+            ],
+            "items": [
+              {
+                "text": "DPH",
+                "group": 0
+              },
+              {
+                "text": "Důchody",
+                "group": 1
+              },
+              {
+                "text": "Daň z příjmů",
+                "group": 0
+              },
+              {
+                "text": "Stavba dálnic",
+                "group": 1
+              },
+              {
+                "text": "Sociální pojistné",
+                "group": 0
+              },
+              {
+                "text": "Platy učitelů",
+                "group": 1
+              },
+              {
+                "text": "Spotřební daň",
+                "group": 0
+              },
+              {
+                "text": "Obrana",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Největší výdajovou položkou českého rozpočtu jsou **sociální dávky, hlavně důchody**."
+        },
+        {
+          "type": "heading",
+          "text": "Přímé a nepřímé daně"
+        },
+        {
+          "type": "term",
+          "term": "Přímá daň",
+          "definition": "Platí ji poplatník **přímo ze svého příjmu nebo majetku** a ví přesně, kolik platí.",
+          "example": "Daň z příjmů, daň z nemovitých věcí."
+        },
+        {
+          "type": "term",
+          "term": "Nepřímá daň",
+          "definition": "Je **schovaná v ceně** zboží. Státu ji odvede prodejce, ale zaplatí ji kupující při nákupu.",
+          "example": "**DPH** (daň z přidané hodnoty, základní sazba **21 %**), **spotřební daně** z benzínu, alkoholu, cigaret."
+        },
+        {
+          "type": "example",
+          "question": "Koupíš si svačinu za 112 Kč. Platíš nějakou daň?",
+          "answer": "**Ano** – nepřímou daň **DPH**, která je schovaná v ceně. Prodejce ji pak odvede státu. Platí ji i děti, které ještě nevydělávají."
+        },
+        {
+          "type": "example",
+          "question": "Stát má příjmy 2 000 miliard Kč a výdaje 2 200 miliard Kč. Co vznikne a co se stane s dluhem?",
+          "answer": "Výdaje převyšují příjmy o 200 miliard → **deficit** 200 miliard. Stát si musí půjčit, takže **státní dluh vzroste**."
+        },
+        {
+          "type": "heading",
+          "text": "Stát a hospodářský cyklus"
+        },
+        {
+          "type": "text",
+          "text": "Výkon ekonomiky měří **HDP** – hodnota finálních statků a služeb vyrobených na území státu za rok. HDP v **hospodářském cyklu** střídavě roste a klesá: **expanze → vrchol → recese → dno → oživení**. Vláda ho ovlivňuje **fiskální politikou** (rozpočet, daně), **ČNB** **měnovou politikou** (úrokové sazby). V recesi roste **nezaměstnanost** – nejen **cyklická** (kvůli krizi), ale existuje i **frikční** (hledání nové práce) a **strukturální** (obor už není potřeba)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "DPH platí jen firmy, obyčejných lidí se netýká.",
+          "right": "DPH platí kupující v ceně zboží. Firma ji jen vybere a odvede státu.",
+          "why": "Proto je to nepřímá daň: kdo ji platí (zákazník) a kdo ji odvádí (prodejce), jsou různí lidé."
+        },
+        {
+          "type": "summary",
+          "text": "Státní rozpočet schvaluje Poslanecká sněmovna. Výdaje > příjmy = deficit, součet deficitů = státní dluh. Přímé daně (z příjmů, z nemovitostí) × nepřímé daně v ceně (DPH 21 %, spotřební)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je HDP?",
+      "options": [
+        "Hodnota finálních statků a služeb vyrobených na území státu za rok",
+        "Součet všech mezd",
+        "Státní dluh",
+        "Peníze v oběhu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď fáze hospodářského cyklu od expanze.",
+      "items": [
+        "expanze",
+        "vrchol",
+        "recese",
+        "dno"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo schvaluje státní rozpočet ČR?",
+      "options": [
+        "Poslanecká sněmovna",
+        "Senát",
+        "Prezident",
+        "ČNB"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik procent je základní sazba DPH v ČR?",
+      "answers": [
+        "21"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která daň je nepřímá?",
+      "options": [
+        "Spotřební daň z benzínu",
+        "Daň z příjmů",
+        "Daň z nemovitostí",
+        "Daň silniční"
+      ],
+      "answer": 0,
+      "explanation": "Nepřímá daň je zahrnuta v ceně, platí ji spotřebitel nepřímo."
+    },
+    {
+      "type": "truefalse",
+      "question": "Když jsou výdaje rozpočtu vyšší než příjmy, vzniká deficit.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj typ nezaměstnanosti s příčinou.",
+      "pairs": [
+        [
+          "frikční",
+          "člověk hledá novou práci"
+        ],
+        [
+          "strukturální",
+          "jeho obor už není potřeba"
+        ],
+        [
+          "cyklická",
+          "ekonomika je v recesi"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo dělá měnovou politiku?",
+      "options": [
+        "ČNB",
+        "Vláda",
+        "Ministerstvo práce",
+        "Parlament"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Státní dluh vzniká součtem dřívějších deficitů.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co je největší výdajovou položkou státního rozpočtu ČR?",
+      "options": [
+        "Sociální dávky, zejména důchody",
+        "Obrana",
+        "Kultura",
+        "Sport"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Popiš fáze hospodářského cyklu.",
+      "answer": "Expanze – výroba roste, nezaměstnanost klesá. Vrchol – ekonomika je na maximu. Recese – HDP klesá, roste nezaměstnanost. Dno – nejnižší bod, pak přichází oživení."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi přímými a nepřímými daněmi?",
+      "answer": "Přímé daně platí poplatník přímo ze svého příjmu nebo majetku (daň z příjmů, z nemovitostí). Nepřímé jsou zahrnuty v ceně zboží a platíme je při nákupu (DPH, spotřební daně)."
+    }
+  ]
+}

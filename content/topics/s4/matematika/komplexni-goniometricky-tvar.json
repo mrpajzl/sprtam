@@ -1,0 +1,350 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "komplexni-goniometricky-tvar",
+  "title": "Goniometrický tvar a Moivreova věta",
+  "emoji": "🧭",
+  "explanations": [
+    {
+      "title": "Otáčení a natahování",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Komplexní číslo je bod v rovině. Bod můžeš popsat dvěma způsoby: „3 doprava a 4 nahoru“ – nebo „5 kroků pod úhlem 53°“. Ten druhý popis je jako navigace kompasem: **vzdálenost a směr**."
+        },
+        {
+          "type": "text",
+          "text": "A má kouzelnou vlastnost: násobení komplexních čísel se v něm změní na **otáčení a natahování**. Proto ho používá elektrotechnika (fáze proudu) a počítačová grafika (rotace)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Komplexní číslo a Gaussova rovina",
+          "definition": "z = a + bi, kde i² = −1. Zobrazíme ho jako bod [a; b]: reálná část vodorovně, imaginární svisle."
+        },
+        {
+          "type": "term",
+          "term": "Absolutní hodnota |z|",
+          "definition": "Vzdálenost bodu od počátku: |z| = √(a² + b²).",
+          "example": "|1 + i| = √(1 + 1) = √2."
+        },
+        {
+          "type": "term",
+          "term": "Argument φ",
+          "definition": "Úhel, o který musíš otočit kladnou reálnou poloosu (směr „doprava“), abys mířil na bod z. Měří se proti směru hodinových ručiček.",
+          "example": "i leží nahoře → argument 90°. −1 leží vlevo → 180°."
+        },
+        {
+          "type": "text",
+          "text": "Zkus si úhly: nastav 45° (směr k číslu 1 + i), 90° (číslo i), 180° (číslo −1)."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 45
+          }
+        },
+        {
+          "type": "term",
+          "term": "Goniometrický tvar",
+          "definition": "z = |z| · (cos φ + i sin φ). Je to tentýž bod zapsaný vzdáleností a úhlem. (cos φ a sin φ jsou souřadnice bodu na kružnici s poloměrem 1.)",
+          "example": "1 + i = √2 · (cos 45° + i sin 45°) = √2(cos π/4 + i sin π/4)."
+        },
+        {
+          "type": "heading",
+          "text": "Násobení = natáhni a otoč"
+        },
+        {
+          "type": "text",
+          "text": "Při násobení dvou komplexních čísel se **absolutní hodnoty násobí** a **argumenty sčítají**. Násobení číslem i je tedy otočení o 90° (|i| = 1, argument 90°)."
+        },
+        {
+          "type": "example",
+          "question": "|z₁| = 2, |z₂| = 3. Kolik je |z₁ · z₂|?",
+          "answer": "Vzdálenosti se násobí: 2 · 3 = **6**."
+        },
+        {
+          "type": "heading",
+          "text": "Mocnina = opakované otáčení"
+        },
+        {
+          "type": "term",
+          "term": "Moivreova věta",
+          "definition": "(cos φ + i sin φ)ⁿ = cos nφ + i sin nφ. Umocnit na n znamená otočit n-krát o φ.",
+          "example": "(cos 30° + i sin 30°)³ = cos 90° + i sin 90° = i."
+        },
+        {
+          "type": "example",
+          "question": "Spočítej (1 + i)⁴.",
+          "answer": "1 + i má |z| = √2 a argument 45°. Na čtvrtou: |z|⁴ = (√2)⁴ = 4, argument 4 · 45° = 180°. Bod ve vzdálenosti 4 směrem doleva: **−4**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "(cos φ + i sin φ)ⁿ = cosⁿ φ + i sinⁿ φ",
+          "right": "(cos φ + i sin φ)ⁿ = cos nφ + i sin nφ",
+          "why": "Mocnina neumocňuje kosinus a sinus zvlášť – násobí **úhel**. Je to otočení n-krát o φ."
+        },
+        {
+          "type": "heading",
+          "text": "Odmocniny: pravidelný mnohoúhelník"
+        },
+        {
+          "type": "text",
+          "text": "Rovnice z³ = 1 má v ℂ **tři** kořeny: 1 a dvě další čísla s |z| = 1 a argumenty 120° a 240°. Třikrát otočeno o 120° dá 360° – zpátky na 1. Kořeny leží ve vrcholech rovnostranného trojúhelníku."
+        },
+        {
+          "type": "text",
+          "text": "Obecně zⁿ = a má n kořenů ve vrcholech pravidelného n-úhelníku se středem v počátku."
+        },
+        {
+          "type": "summary",
+          "text": "z = |z|(cos φ + i sin φ): |z| = vzdálenost, φ = úhel. Při násobení se |z| násobí a argumenty sčítají. Moivre: n-tá mocnina = n-násobný úhel. zⁿ = a má n kořenů v pravidelném n-úhelníku."
+        }
+      ]
+    },
+    {
+      "title": "Převod a výpočty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Spočítat (1 + i)²⁰ roznásobováním by trvalo věčnost. V goniometrickém tvaru je to na dva řádky. Proto se vyplatí umět mezi tvary přecházet."
+        },
+        {
+          "type": "text",
+          "text": "Algebraický tvar a + bi je dobrý na sčítání. Goniometrický na násobení, dělení, mocniny a odmocniny."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Algebraický tvar",
+          "definition": "z = a + bi, a je reálná část, b imaginární část, i² = −1."
+        },
+        {
+          "type": "term",
+          "term": "Absolutní hodnota a argument",
+          "definition": "|z| = √(a² + b²) je vzdálenost od počátku. Argument φ je úhel od kladné reálné poloosy, pro který cos φ = a/|z| a sin φ = b/|z|.",
+          "example": "z = 1 + i: |z| = √2, cos φ = sin φ = 1/√2 → φ = 45° = π/4."
+        },
+        {
+          "type": "term",
+          "term": "Goniometrický tvar",
+          "definition": "z = |z|(cos φ + i sin φ)."
+        },
+        {
+          "type": "heading",
+          "text": "Převod z a + bi"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej |z| = √(a² + b²).",
+            "Spočítej cos φ = a/|z|, sin φ = b/|z|.",
+            "Podle znamének a, b urči, ve kterém kvadrantu bod leží, a najdi φ.",
+            "Zapiš z = |z|(cos φ + i sin φ)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "První krok je Pythagorova věta: pro 1 + i nastav odvěsny 1 a 1, přepona je √2."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 1,
+            "b": 1
+          }
+        },
+        {
+          "type": "example",
+          "question": "Převeď 1 + i do goniometrického tvaru.",
+          "answer": "|z| = √2, cos φ = sin φ = √2/2, bod je v I. kvadrantu → φ = π/4. **z = √2(cos π/4 + i sin π/4)**."
+        },
+        {
+          "type": "example",
+          "question": "Argument čísel i a −1?",
+          "answer": "i = [0; 1] leží na kladné imaginární poloose → **90°**. −1 = [−1; 0] leží na záporné reálné poloose → **180°**."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Operace",
+            "Absolutní hodnota",
+            "Argument"
+          ],
+          "rows": [
+            [
+              "z₁ · z₂",
+              "|z₁| · |z₂|",
+              "φ₁ + φ₂"
+            ],
+            [
+              "z₁ / z₂",
+              "|z₁| / |z₂|",
+              "φ₁ − φ₂"
+            ],
+            [
+              "zⁿ (Moivreova věta)",
+              "|z|ⁿ",
+              "n · φ"
+            ],
+            [
+              "ⁿ√z (n kořenů)",
+              "ⁿ√|z|",
+              "(φ + 2kπ)/n, k = 0, …, n − 1"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Spočítej (1 + i)⁴.",
+          "answer": "(√2)⁴ = 4, argument 4 · π/4 = π. z⁴ = 4(cos π + i sin π) = 4 · (−1) = **−4**."
+        },
+        {
+          "type": "example",
+          "question": "Najdi všechny kořeny z³ = 1.",
+          "answer": "|z| = 1, argumenty (0 + 2kπ)/3: 0, 2π/3, 4π/3. Kořeny: 1, cos 120° + i sin 120° = −1/2 + i√3/2 a −1/2 − i√3/2. **Tři kořeny**."
+        },
+        {
+          "type": "text",
+          "text": "Kořeny kvadratické rovnice s reálnými koeficienty a D < 0 jsou vždy **komplexně sdružené** (a ± bi). Např. x² + 2x + 5 = 0: D = −16, x = −1 ± 2i."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Argument čísla −1 je −1 (nebo 0°).",
+          "right": "Argument −1 je 180° (π).",
+          "why": "Argument je úhel, ne číslo samotné. Bod −1 leží vlevo od počátku, do jeho směru se otočíš o půl otáčky."
+        },
+        {
+          "type": "summary",
+          "text": "|z| = √(a² + b²), φ z cos φ = a/|z|, sin φ = b/|z|. Násobení: |z| násob, φ sčítej. Mocnina: |z|ⁿ, nφ. n-tá odmocnina má n kořenů s argumenty (φ + 2kπ)/n."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Goniometrický tvar čísla 1 + i:",
+      "options": [
+        "√2(cos π/4 + i sin π/4)",
+        "2(cos π/4 + i sin π/4)",
+        "√2(cos π/2 + i sin π/2)",
+        "cos π/4 + i sin π/4"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "|1 + i| = √k, k =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Argument čísla i (°) =",
+      "answers": [
+        "90"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Argument čísla −1 (°) =",
+      "answers": [
+        "180"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Moivreova věta:",
+      "options": [
+        "(cos φ + i sin φ)ⁿ = cos nφ + i sin nφ",
+        "(cos φ + i sin φ)ⁿ = cosⁿ φ + i sinⁿ φ",
+        "(cos φ + i sin φ)ⁿ = n cos φ + i n sin φ"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "(1 + i)⁴ =",
+      "answers": [
+        "−4",
+        "-4"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Při násobení komplexních čísel se absolutní hodnoty násobí a argumenty sčítají.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Kolik kořenů má rovnice z³ = 1 v ℂ?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kořeny x² + 2x + 5 = 0:",
+      "options": [
+        "−1 ± 2i",
+        "1 ± 2i",
+        "−1 ± 4i",
+        "−2 ± i"
+      ],
+      "answer": 0,
+      "explanation": "D = 4 − 20 = −16, √D = 4i"
+    },
+    {
+      "type": "input",
+      "question": "|z₁| = 2, |z₂| = 3. |z₁ · z₂| =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Imaginární kořeny kvadratické rovnice s reálnými koeficienty jsou komplexně sdružené.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "(cos 30° + i sin 30°)³ má argument (°) =",
+      "answers": [
+        "90"
+      ],
+      "explanation": "Výsledek je i."
+    },
+    {
+      "type": "open",
+      "question": "Co je goniometrický tvar komplexního čísla a k čemu se hodí?",
+      "answer": "z = |z|(cos φ + i sin φ), kde |z| je absolutní hodnota a φ argument. Hodí se pro násobení, dělení, mocnění (Moivreova věta) a odmocňování."
+    },
+    {
+      "type": "open",
+      "question": "Jak geometricky vypadají kořeny rovnice zⁿ = a?",
+      "answer": "Je jich n, mají stejnou absolutní hodnotu a leží ve vrcholech pravidelného n-úhelníku se středem v počátku."
+    }
+  ]
+}

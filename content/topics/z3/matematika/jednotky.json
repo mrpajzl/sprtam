@@ -1,0 +1,424 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "jednotky",
+  "title": "Jednotky délky, hmotnosti, objemu a času",
+  "emoji": "⚖️",
+  "generator": "units",
+  "explanations": [
+    {
+      "title": "Tabulka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Do školy je to 2 km. Meloun váží 3 kg. V láhvi je 1 l vody. Přestávka trvá 10 min. Pořád něco měříme!"
+        },
+        {
+          "type": "text",
+          "text": "Každá věc se měří svou **jednotkou**. A často je potřeba jednotky **převádět** – třeba když recept chce gramy a ty máš kilo mouky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jednotka",
+          "definition": "Domluvená „míra“, kterou měříme.",
+          "example": "metr, kilogram, litr, minuta"
+        },
+        {
+          "type": "term",
+          "term": "Délka",
+          "definition": "Jak je něco dlouhé nebo daleko. Jednotky: mm, cm, m, km."
+        },
+        {
+          "type": "term",
+          "term": "Hmotnost",
+          "definition": "Kolik něco váží. Jednotky: g (gram), kg (kilogram)."
+        },
+        {
+          "type": "term",
+          "term": "Objem",
+          "definition": "Kolik se něčeho vejde do nádoby (třeba tekutiny). Jednotky: ml (mililitr), l (litr)."
+        },
+        {
+          "type": "term",
+          "term": "Čas",
+          "definition": "Jak dlouho něco trvá. Jednotky: s (sekunda), min (minuta), h (hodina)."
+        },
+        {
+          "type": "heading",
+          "text": "Převody"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Co měříme",
+            "Převody"
+          ],
+          "rows": [
+            [
+              "délka",
+              "1 cm = 10 mm, 1 m = 100 cm, 1 km = 1 000 m"
+            ],
+            [
+              "hmotnost",
+              "1 kg = 1 000 g"
+            ],
+            [
+              "objem",
+              "1 l = 1 000 ml"
+            ],
+            [
+              "čas",
+              "1 h = 60 min, 1 min = 60 s"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak převádět"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi v tabulce, kolik malých jednotek je v jedné velké. Třeba 1 m = 100 cm.",
+            "Z **velké** na **malou**: **násob**. 3 m = 3 · 100 = 300 cm.",
+            "Z **malé** na **velkou**: **děl**. 700 cm = 700 : 100 = 7 m."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Řekni převod nahlas. Pak kartičku otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "1 km",
+                "back": "1 000 m"
+              },
+              {
+                "front": "1 m",
+                "back": "100 cm"
+              },
+              {
+                "front": "1 kg",
+                "back": "1 000 g"
+              },
+              {
+                "front": "1 l",
+                "back": "1 000 ml"
+              },
+              {
+                "front": "1 h",
+                "back": "60 min"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "2 h = ? min",
+          "answer": "Z velké na malou → násobím. 1 h = 60 min. 2 · 60 = **120 min**."
+        },
+        {
+          "type": "example",
+          "question": "5 cm = ? mm",
+          "answer": "1 cm = 10 mm. 5 · 10 = **50 mm**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 minuta má 100 sekund.",
+          "right": "1 min = **60 s**",
+          "why": "Čas se nepočítá po stovkách ani tisících. Minuta má 60 sekund a hodina 60 minut."
+        },
+        {
+          "type": "summary",
+          "text": "Z větší jednotky na menší → násobím. Z menší na větší → dělím."
+        }
+      ]
+    },
+    {
+      "title": "Co k čemu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mléko se neváží na metry a cesta do školy se neměří v litrech. Každá věc má svou správnou jednotku."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se vybrat správnou jednotku a odhadnout, jestli je výsledek rozumný."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Délka",
+          "definition": "Jak je to dlouhé nebo daleko. Měříme pravítkem nebo metrem.",
+          "example": "tužka 15 cm, cesta 2 km"
+        },
+        {
+          "type": "term",
+          "term": "Hmotnost",
+          "definition": "Kolik to váží. Měříme váhou.",
+          "example": "jablko 200 g, pes 12 kg"
+        },
+        {
+          "type": "term",
+          "term": "Objem",
+          "definition": "Kolik se toho vejde do nádoby. Měříme odměrkou.",
+          "example": "hrnek 250 ml, kbelík 10 l"
+        },
+        {
+          "type": "term",
+          "term": "Kilo-",
+          "definition": "Začátek slova, který znamená **tisíc**.",
+          "example": "kilometr = 1 000 metrů, kilogram = 1 000 gramů"
+        },
+        {
+          "type": "term",
+          "term": "Mili-",
+          "definition": "Začátek slova, který znamená **tisícina**. 1 000 malých dílků dá jeden celý.",
+          "example": "1 l = 1 000 ml, 1 m = 1 000 mm"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Co z toho měříme délkou, co hmotností a co objemem?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "délka",
+              "hmotnost",
+              "objem"
+            ],
+            "items": [
+              {
+                "text": "cesta do školy",
+                "group": 0
+              },
+              {
+                "text": "meloun",
+                "group": 1
+              },
+              {
+                "text": "mléko",
+                "group": 2
+              },
+              {
+                "text": "tužka",
+                "group": 0
+              },
+              {
+                "text": "pytel mouky",
+                "group": 1
+              },
+              {
+                "text": "bazén s vodou",
+                "group": 2
+              },
+              {
+                "text": "jablko",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Malé a velké jednotky"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Malé věci",
+            "Velké věci"
+          ],
+          "rows": [
+            [
+              "mm, cm – mravenec, tužka",
+              "m, km – třída, cesta do města"
+            ],
+            [
+              "g – bonbon, jablko",
+              "kg – pes, pytel brambor"
+            ],
+            [
+              "ml – lžička sirupu, hrnek",
+              "l – kbelík, vana"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "3 m = ? cm",
+          "answer": "1 m = 100 cm. 3 · 100 = **300 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Co je víc: 500 g, nebo 1 kg?",
+          "answer": "1 kg = 1 000 g. 1 000 g > 500 g, takže **1 kg je víc**. 500 g je půl kila."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pes váží 12 l.",
+          "right": "Pes váží **12 kg**.",
+          "why": "Litry měří objem (kolik se vejde do nádoby). Kolik co váží, měříme v gramech a kilogramech."
+        },
+        {
+          "type": "summary",
+          "text": "Délka: mm, cm, m, km. Hmotnost: g, kg. Objem: ml, l. Kilo = tisíc: 1 km = 1 000 m, 1 kg = 1 000 g."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "1 km = ? m",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "4 m = ? cm",
+      "answers": [
+        "400"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "5 cm = ? mm",
+      "answers": [
+        "50"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "2 kg = ? g",
+      "answers": [
+        "2000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3 l = ? ml",
+      "answers": [
+        "3000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "2 h = ? min",
+      "answers": [
+        "120"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "700 cm = ? m",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "V čem měříš, kolik váží pes?",
+      "options": [
+        "kg",
+        "l",
+        "km"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "V čem měříš vzdálenost do jiného města?",
+      "options": [
+        "cm",
+        "km",
+        "kg"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Co je víc?",
+      "options": [
+        "500 g",
+        "1 kg",
+        "stejně"
+      ],
+      "answer": 1,
+      "explanation": "1 kg = 1 000 g."
+    },
+    {
+      "type": "truefalse",
+      "question": "Půl litru je 500 ml.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "1 minuta má 100 sekund.",
+      "answer": false,
+      "explanation": "1 min = 60 s."
+    },
+    {
+      "type": "match",
+      "question": "Spoj stejné.",
+      "pairs": [
+        [
+          "1 m",
+          "100 cm"
+        ],
+        [
+          "1 cm",
+          "10 mm"
+        ],
+        [
+          "1 km",
+          "1 000 m"
+        ],
+        [
+          "1 h",
+          "60 min"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak převedeš 6 m na centimetry?",
+      "answer": "1 m = 100 cm, takže 6 m = 6 · 100 = 600 cm."
+    },
+    {
+      "type": "open",
+      "question": "Co znamená předpona kilo-? Uveď příklady.",
+      "answer": "Kilo znamená tisíc. 1 kg = 1 000 g, 1 km = 1 000 m."
+    }
+  ]
+}

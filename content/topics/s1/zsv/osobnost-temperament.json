@@ -1,0 +1,471 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "osobnost-temperament",
+  "title": "Osobnost a temperament",
+  "emoji": "🎭",
+  "explanations": [
+    {
+      "title": "Ujel autobus",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Čtyřem lidem ujede před nosem autobus. První se rozčílí a kopne do koše. Druhý mávne rukou a jde si koupit kávu. Třetí je smutný a celý den má pokažený. Čtvrtý si v klidu sedne a počká na další."
+        },
+        {
+          "type": "text",
+          "text": "Stejná situace, čtyři různé reakce. Proč? Každý má jinou **osobnost** a jiný **temperament**. Když tomu rozumíš, lépe chápeš sebe i lidi kolem – a méně se s nimi hádáš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Osobnost",
+          "definition": "Jedinečný celek všech duševních vlastností člověka – jak cítí, myslí, jedná. Každý je jiný.",
+          "example": "Tvoje povaha, schopnosti, zájmy a hodnoty dohromady."
+        },
+        {
+          "type": "term",
+          "term": "Temperament",
+          "definition": "Vrozený „rychlostní a silový“ styl reagování: jak **rychle**, jak **silně** a jak **dlouho** reagujeme na to, co se děje.",
+          "example": "Někdo vybuchne hned, jiný se skoro nerozčílí."
+        },
+        {
+          "type": "term",
+          "term": "Vrozený",
+          "definition": "Máme to od narození, nevybrali jsme si to. Opak je **získaný** – vznikne výchovou a zkušeností.",
+          "example": "Barva očí je vrozená, znalost angličtiny získaná."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři typy temperamentu"
+        },
+        {
+          "type": "text",
+          "text": "Už ve starověku popsal řecký lékař **Hippokratés** čtyři typy. Myslel si, že záleží na převaze tělesných „šťáv“. Jejich jména ustálil římský lékař **Galénos**. Teorie o šťávách neplatí, ale typy se používají dodnes."
+        },
+        {
+          "type": "table",
+          "head": [
+            "typ",
+            "jaký je",
+            "u autobusu"
+          ],
+          "rows": [
+            [
+              "cholerik",
+              "prudký, výbušný, rychle se rozčílí",
+              "kopne do koše"
+            ],
+            [
+              "sangvinik",
+              "veselý, pohyblivý, rychle zapomene",
+              "dá si kávu"
+            ],
+            [
+              "melancholik",
+              "citlivý, smutnější, prožívá dlouho",
+              "má zkažený den"
+            ],
+            [
+              "flegmatik",
+              "klidný, pomalý, vyrovnaný",
+              "v klidu čeká"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Eysenckovy dvě osy"
+        },
+        {
+          "type": "text",
+          "text": "Psycholog **Hans J. Eysenck** typy seřadil podle dvou vlastností:"
+        },
+        {
+          "type": "term",
+          "term": "Extrovert × introvert",
+          "definition": "**Extrovert** je zaměřený ven – na lidi a dění, energii čerpá ve společnosti. **Introvert** je zaměřený dovnitř – do svých myšlenek, energii čerpá v klidu o samotě.",
+          "example": "Extrovert po náročném dni volá kamarádům, introvert si sedne s knížkou."
+        },
+        {
+          "type": "term",
+          "term": "Stabilní × labilní",
+          "definition": "**Stabilní** člověk je citově vyrovnaný. **Labilní** má silné a proměnlivé emoce. Labilitě Eysenck říkal **neuroticismus**.",
+          "example": "Labilní člověka drobnost rozhodí na celé odpoledne."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Extroverti",
+              "Introverti"
+            ],
+            "items": [
+              {
+                "text": "Cholerik (labilní)",
+                "group": 0
+              },
+              {
+                "text": "Sangvinik (stabilní)",
+                "group": 0
+              },
+              {
+                "text": "Melancholik (labilní)",
+                "group": 1
+              },
+              {
+                "text": "Flegmatik (stabilní)",
+                "group": 1
+              },
+              {
+                "text": "Rád je středem pozornosti",
+                "group": 0
+              },
+              {
+                "text": "Po večírku potřebuje klid o samotě",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď karty. U typů si všimni i závorky: dvě osy dávají čtyři kombinace."
+        },
+        {
+          "type": "example",
+          "question": "Kuba je klidný, ale rád je mezi lidmi a rychle navazuje přátelství. Který typ?",
+          "answer": "Rád mezi lidmi → **extrovert**. Klidný, vyrovnaný → **stabilní**. Stabilní extrovert = **sangvinik**."
+        },
+        {
+          "type": "example",
+          "question": "Ema je tichá, raději je sama a drobný neúspěch ji trápí několik dní. Který typ?",
+          "answer": "Zaměřená dovnitř → **introvert**. Silné a dlouhé emoce → **labilní**. Labilní introvert = **melancholik**."
+        },
+        {
+          "type": "heading",
+          "text": "Temperament není všechno"
+        },
+        {
+          "type": "text",
+          "text": "K osobnosti patří i **charakter** (morální vlastnosti, např. poctivost – vzniká výchovou), **schopnosti** (co zvládneme; rozvíjí se z vrozených **vloh**) a **motivace** (co chceme). Rozumové schopnosti měří **inteligenční kvocient (IQ)** – průměr lidí je **100**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Cholerik je zlý člověk.",
+          "right": "Cholerik je jen prudký – rychle a silně reaguje. Zda je hodný, nebo zlý, je otázka charakteru.",
+          "why": "Temperament říká, JAK reagujeme. Charakter říká, zda jednáme dobře. Cholerik může být velmi poctivý a laskavý."
+        },
+        {
+          "type": "summary",
+          "text": "Temperament je vrozený styl reagování: cholerik (labilní extrovert), sangvinik (stabilní extrovert), melancholik (labilní introvert), flegmatik (stabilní introvert). Charakter se získává výchovou."
+        }
+      ]
+    },
+    {
+      "title": "Stavba osobnosti",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když popisuješ kamaráda, řekneš třeba: „Je rychlý, poctivý, skvěle kreslí a chce být architektem.“ Tyhle čtyři věci jsou čtyři různé **složky osobnosti**. Některé dostal do vínku, jiné si vypěstoval."
+        },
+        {
+          "type": "text",
+          "text": "Pochopit, co je vrozené a co získané, pomáhá. Co je získané, můžeš změnit. Co je vrozené, se můžeš naučit dobře zvládat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Osobnost",
+          "definition": "Jedinečný celek duševních vlastností člověka. Skládá se z několika složek.",
+          "example": "Dva sourozenci ze stejné rodiny mají přesto každý jinou osobnost."
+        },
+        {
+          "type": "term",
+          "term": "Vrozené × získané",
+          "definition": "**Vrozené** máme od narození (z genů). **Získané** vzniká výchovou, prostředím a zkušeností.",
+          "example": "Hudební sluch je vrozený, hra na klavír získaná."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři složky osobnosti"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Temperament** – jak rychle a silně reagujeme. **Vrozený**, souvisí s typem nervové soustavy.",
+            "**Charakter** – morální vlastnosti: poctivost, ochota, spolehlivost. **Získaný** výchovou.",
+            "**Schopnosti** – předpoklady něco dělat. Rostou z vrozených **vloh**, ale bez tréninku se nerozvinou.",
+            "**Motivace** – potřeby, zájmy a cíle: co nás žene dopředu."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Vlohy",
+          "definition": "Vrozené předpoklady, ze kterých se tréninkem mohou rozvinout schopnosti.",
+          "example": "Dítě má vlohy k hudbě. Hrát na housle se ale musí naučit."
+        },
+        {
+          "type": "term",
+          "term": "Inteligence a IQ",
+          "definition": "**Inteligence** je schopnost řešit nové problémy a učit se. Měří se testem, výsledkem je **IQ** (inteligenční kvocient). Průměr populace je **100**.",
+          "example": "IQ 115 znamená výsledek mírně nad průměrem."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď vlastnosti. Ptej se: měl to člověk už jako miminko, nebo to musel nějak získat?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Spíše vrozené",
+              "Spíše získané"
+            ],
+            "items": [
+              {
+                "text": "Temperament",
+                "group": 0
+              },
+              {
+                "text": "Vlohy",
+                "group": 0
+              },
+              {
+                "text": "Typ nervové soustavy",
+                "group": 0
+              },
+              {
+                "text": "Charakter",
+                "group": 1
+              },
+              {
+                "text": "Vědomosti",
+                "group": 1
+              },
+              {
+                "text": "Dovednosti",
+                "group": 1
+              },
+              {
+                "text": "Postoje",
+                "group": 1
+              },
+              {
+                "text": "Návyky",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Typy temperamentu"
+        },
+        {
+          "type": "text",
+          "text": "Hippokratés popsal čtyři typy, Galénos je pojmenoval. **H. J. Eysenck** je umístil na dvě osy: **extroverze × introverze** (zaměření ven, nebo do sebe) a **stabilita × labilita** (vyrovnané, nebo rozkolísané emoce; labilitě říkal neuroticismus)."
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "labilní",
+            "stabilní"
+          ],
+          "rows": [
+            [
+              "extrovert",
+              "cholerik (prudký)",
+              "sangvinik (veselý)"
+            ],
+            [
+              "introvert",
+              "melancholik (citlivý)",
+              "flegmatik (klidný)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Freudův model: tři hlasy v hlavě"
+        },
+        {
+          "type": "text",
+          "text": "Sigmund Freud si osobnost představoval jako tři části, které spolu soupeří:"
+        },
+        {
+          "type": "term",
+          "term": "Id (ono)",
+          "definition": "Pudy a přání. Chce všechno hned. Řídí se **principem slasti**.",
+          "example": "„Sním celý dort!“"
+        },
+        {
+          "type": "term",
+          "term": "Superego (nadjá)",
+          "definition": "**Svědomí** a naučená pravidla od rodičů a společnosti.",
+          "example": "„To se nedělá, je to pro všechny.“"
+        },
+        {
+          "type": "term",
+          "term": "Ego (já)",
+          "definition": "Rozum, který **zprostředkovává** mezi id, superegem a realitou. Řídí se **principem reality**.",
+          "example": "„Vezmu si jeden kousek, zbytek nechám ostatním.“"
+        },
+        {
+          "type": "example",
+          "question": "Ondra chce opsat test (id), ví, že je to podvod (superego). Rozhodne se raději zeptat učitele na opravný termín. Která složka rozhodla?",
+          "answer": "**Ego** – našlo řešení, které je realistické a zároveň nepřekračuje pravidla."
+        },
+        {
+          "type": "example",
+          "question": "Je poctivost součástí temperamentu?",
+          "answer": "Ne. Poctivost je morální vlastnost, tedy **charakter**. Ten je získaný výchovou. Temperament říká jen, jak rychle a silně reagujeme."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Temperament i charakter jsou vrozené, s povahou nic neudělám.",
+          "right": "Temperament je vrozený, charakter se utváří výchovou a vlastní volbou.",
+          "why": "Proto se dá „pracovat na sobě“ – být poctivější a ohleduplnější, i když zůstaneš třeba výbušný cholerik."
+        },
+        {
+          "type": "summary",
+          "text": "Osobnost = temperament (vrozený) + charakter (získaný) + schopnosti (z vloh) + motivace. Freud: id (pudy), ego (rozum, realita), superego (svědomí)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "match",
+      "question": "Spoj typ s Eysenckovým zařazením.",
+      "pairs": [
+        [
+          "Cholerik",
+          "labilní extrovert"
+        ],
+        [
+          "Sangvinik",
+          "stabilní extrovert"
+        ],
+        [
+          "Melancholik",
+          "labilní introvert"
+        ],
+        [
+          "Flegmatik",
+          "stabilní introvert"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Charakter je vrozený.",
+      "answer": false,
+      "explanation": "Charakter se utváří výchovou a prostředím."
+    },
+    {
+      "type": "choice",
+      "question": "Která složka osobnosti podle Freuda představuje svědomí?",
+      "options": [
+        "Superego",
+        "Ego",
+        "Id",
+        "Libido"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo vytvořil dimenze extroverze a neuroticismu (lability)?",
+      "options": [
+        "H. J. Eysenck",
+        "C. G. Jung",
+        "I. P. Pavlov",
+        "A. Maslow"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jaká je průměrná hodnota IQ v populaci?",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo je klidný, pomalý a vyrovnaný?",
+      "options": [
+        "Flegmatik",
+        "Cholerik",
+        "Sangvinik",
+        "Melancholik"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vlohy jsou vrozené předpoklady, ze kterých se rozvíjejí schopnosti.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Ego podle Freuda…",
+      "options": [
+        "zprostředkovává mezi pudy, normami a realitou",
+        "je zdroj pudů",
+        "je svědomí",
+        "je nevědomá paměť"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Introvert je zaměřen spíše do svého nitra.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kdo poprvé popsal čtyři typy temperamentu?",
+      "options": [
+        "Hippokratés",
+        "Aristotelés",
+        "Freud",
+        "Wundt"
+      ],
+      "answer": 0,
+      "explanation": "Podle převahy tělesných šťáv; pojmenování ustálil Galénos."
+    },
+    {
+      "type": "open",
+      "question": "Čím se liší temperament a charakter?",
+      "answer": "Temperament je vrozený a určuje dynamiku reakcí – rychlost, sílu, citlivost. Charakter je získaný výchovou a týká se morálních vlastností, např. poctivosti."
+    },
+    {
+      "type": "open",
+      "question": "Popiš Freudův model osobnosti.",
+      "answer": "Id je zdroj pudů a řídí se principem slasti. Superego obsahuje normy a svědomí. Ego mezi nimi zprostředkovává a řídí se principem reality."
+    }
+  ]
+}

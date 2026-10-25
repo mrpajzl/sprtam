@@ -1,0 +1,460 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kyslik-sira",
+  "title": "Kyslík a síra",
+  "emoji": "🌋",
+  "explanations": [
+    {
+      "title": "Kolem nás",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Bez **kyslíku** nevydržíš ani pár minut. Vysoko v atmosféře nás jeho zvláštní podoba – **ozon** – chrání před spálením UV zářením. **Síra** zase páchne ze sopek a zkažených vajec, a přitom se z ní vyrábí nejdůležitější průmyslová chemikálie: kyselina sírová."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Chalkogeny",
+          "definition": "Prvky 16. skupiny: kyslík O, síra S, selen Se, tellur Te. Mají **6 valenčních elektronů** (ns² np⁴)."
+        },
+        {
+          "type": "term",
+          "term": "Alotropie",
+          "definition": "Jeden prvek ve více podobách s různým uspořádáním atomů.",
+          "example": "kyslík O₂ a ozon O₃"
+        },
+        {
+          "type": "term",
+          "term": "Oxid",
+          "definition": "Sloučenina prvku s kyslíkem (kyslík má −II).",
+          "example": "CO₂, CaO, SO₂"
+        },
+        {
+          "type": "term",
+          "term": "Katalyzátor",
+          "definition": "Látka, která urychlí reakci a sama se nespotřebuje."
+        },
+        {
+          "type": "heading",
+          "text": "Kyslík"
+        },
+        {
+          "type": "text",
+          "text": "Kyslík tvoří 21 % vzduchu a je to nejrozšířenější prvek zemské kůry. V laboratoři se snadno připraví z peroxidu vodíku, když se přidá **burel MnO₂** jako katalyzátor: `2 H₂O₂ → 2 H₂O + O₂`."
+        },
+        {
+          "type": "term",
+          "term": "Ozon O₃",
+          "definition": "Molekula ze tří atomů kyslíku. Má štiplavý zápach a je silně oxidující."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Ve stratosféře** (asi 15–35 km) tvoří **ozonovou vrstvu**, která pohlcuje škodlivé UV záření.",
+            "**U země** vzniká v létě ze zplodin aut a slunečního světla (smog). Dráždí plíce."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kyselé a zásadité oxidy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Oxidy **nekovů** jsou **kyselé** – s vodou dávají kyselinu: SO₂ + H₂O → H₂SO₃.",
+            "Oxidy **kovů** jsou **zásadité** – s vodou dávají hydroxid: CaO + H₂O → Ca(OH)₂."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď oxidy. Rozhoduje, jestli je druhý prvek kov, nebo nekov."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "kyselý oxid",
+              "zásaditý oxid"
+            ],
+            "items": [
+              {
+                "text": "SO₂",
+                "group": 0
+              },
+              {
+                "text": "SO₃",
+                "group": 0
+              },
+              {
+                "text": "CO₂",
+                "group": 0
+              },
+              {
+                "text": "NO₂",
+                "group": 0
+              },
+              {
+                "text": "CaO",
+                "group": 1
+              },
+              {
+                "text": "Na₂O",
+                "group": 1
+              },
+              {
+                "text": "MgO",
+                "group": 1
+              },
+              {
+                "text": "K₂O",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Síra"
+        },
+        {
+          "type": "text",
+          "text": "Síra je žlutá pevná látka. Běžná **kosočtverečná síra** má molekuly **S₈** – osm atomů v kroužku."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**H₂S sulfan** – jedovatý plyn, páchne po **zkažených vejcích**.",
+            "**SO₂ oxid siřičitý** – vzniká spalováním uhlí se sírou; způsobuje **kyselé deště**; v malém množství konzervuje víno (siření).",
+            "**H₂SO₄ kyselina sírová** – síra má oxidační číslo **VI**; v autobateriích, na výrobu hnojiv."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak se vyrábí kyselina sírová"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spálí se síra: S + O₂ → SO₂.",
+            "SO₂ se oxiduje na SO₃ na katalyzátoru **V₂O₅**: 2 SO₂ + O₂ → 2 SO₃.",
+            "SO₃ se pohltí v koncentrované H₂SO₄ – vznikne **oleum**.",
+            "Oleum se zředí vodou na kyselinu sírovou."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč koncentrovaná kyselina sírová zčerná cukr?",
+          "answer": "Je silně **dehydratační** – odebírá z látek vodu. Cukr C₁₂H₂₂O₁₁ obsahuje vodík a kyslík v poměru jako voda. Kyselina mu je „vytrhne“ a zbude černý **uhlík**."
+        },
+        {
+          "type": "example",
+          "question": "Jak správně ředit koncentrovanou kyselinu sírovou?",
+          "answer": "Vždy **lít kyselinu do vody**, pomalu a za míchání. Při ředění se uvolňuje velké teplo. Kdybys lil vodu do kyseliny, voda by se na povrchu prudce vařila a kyselina by vystříkla."
+        },
+        {
+          "type": "mistake",
+          "wrong": "CaO je kyselý oxid, protože obsahuje kyslík.",
+          "right": "CaO je **zásaditý** oxid – s vodou dává hydroxid Ca(OH)₂.",
+          "why": "Kyslík je ve všech oxidech. O kyselosti rozhoduje druhý prvek: kov → zásaditý, nekov → kyselý."
+        },
+        {
+          "type": "summary",
+          "text": "16. skupina, 6 valenčních elektronů. O₂ a O₃ (ozonová vrstva). Oxidy nekovů kyselé, kovů zásadité. Síra S₈, H₂S páchne, SO₂ kyselé deště, H₂SO₄ (S^VI) kontaktním způsobem s V₂O₅."
+        }
+      ]
+    },
+    {
+      "title": "Rovnicemi",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kyslík a síra mají stejnou stavbu valenční vrstvy, a proto podobné sloučeniny: H₂O a H₂S, oxidy a sulfidy. Tady je projdeme pomocí rovnic – co vzniká, jak a proč."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Valenční elektrony",
+          "definition": "Elektrony v nejvyšší vrstvě. O a S jich mají 6 (ns² np⁴); chybí jim 2 do zaplnění, proto často tvoří anionty O²⁻, S²⁻."
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo (OČ)",
+          "definition": "Formální náboj atomu. Kyslík má skoro vždy −II (v peroxidech −I). Síra od −II (H₂S) do VI (H₂SO₄)."
+        },
+        {
+          "type": "term",
+          "term": "Dehydratace",
+          "definition": "Odebrání vody z látky."
+        },
+        {
+          "type": "term",
+          "term": "Oleum",
+          "definition": "Roztok SO₃ v koncentrované kyselině sírové (obsahuje H₂S₂O₇)."
+        },
+        {
+          "type": "heading",
+          "text": "Kyslík – rovnice"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Laboratorní příprava: 2 H₂O₂ → 2 H₂O + O₂ (katalyzátor MnO₂)",
+            "Průmysl: frakční destilace zkapalněného vzduchu",
+            "Hoření: C + O₂ → CO₂; S + O₂ → SO₂",
+            "Ozon: 3 O₂ → 2 O₃ (UV záření nebo elektrický výboj)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Oxidy a voda"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Oxid",
+            "Typ",
+            "Reakce s vodou"
+          ],
+          "rows": [
+            [
+              "SO₂",
+              "kyselý",
+              "SO₂ + H₂O → H₂SO₃"
+            ],
+            [
+              "SO₃",
+              "kyselý",
+              "SO₃ + H₂O → H₂SO₄"
+            ],
+            [
+              "CO₂",
+              "kyselý",
+              "CO₂ + H₂O ⇌ H₂CO₃"
+            ],
+            [
+              "CaO",
+              "zásaditý",
+              "CaO + H₂O → Ca(OH)₂"
+            ],
+            [
+              "Na₂O",
+              "zásaditý",
+              "Na₂O + H₂O → 2 NaOH"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jak vznikají kyselé deště ze spalování uhlí?",
+          "answer": "Uhlí obsahuje síru: S + O₂ → SO₂. Ve vzduchu se SO₂ dál oxiduje a s vodou tvoří kyseliny: SO₂ + H₂O → H₂SO₃, SO₃ + H₂O → H₂SO₄. Kyseliny spadnou s deštěm."
+        },
+        {
+          "type": "heading",
+          "text": "Síra – oxidační čísla"
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty – zkus oxidační číslo síry spočítat nejdřív sám."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "H₂S sulfan",
+                "back": "S^−II, páchne po zkažených vejcích"
+              },
+              {
+                "front": "S₈ síra",
+                "back": "S⁰, kosočtverečná"
+              },
+              {
+                "front": "SO₂",
+                "back": "S^IV, siření vína, kyselé deště"
+              },
+              {
+                "front": "H₂SO₄",
+                "back": "S^VI, akumulátory, hnojiva"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kontaktní výroba H₂SO₄"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "S + O₂ → SO₂",
+            "2 SO₂ + O₂ → 2 SO₃ (katalyzátor **V₂O₅**, asi 450 °C)",
+            "SO₃ + H₂SO₄ → H₂S₂O₇ (oleum) – SO₃ se nepohlcuje přímo do vody, tvořila by se mlha kyseliny",
+            "H₂S₂O₇ + H₂O → 2 H₂SO₄"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči oxidační číslo síry v H₂SO₄.",
+          "answer": "H: 2 · (+1) = +2. O: 4 · (−2) = −8. 2 + S − 8 = 0 → **S = VI**."
+        },
+        {
+          "type": "heading",
+          "text": "Vlastnosti koncentrované H₂SO₄"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**dehydratační** – zuhelnatí cukr, papír, dřevo: C₁₂H₂₂O₁₁ → 12 C + 11 H₂O",
+            "**oxidační** (za horka) – rozpouští i měď",
+            "při ředění se uvolňuje mnoho tepla → **kyselinu lít do vody**"
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "SO₃ se při výrobě kyseliny sírové pohlcuje přímo ve vodě.",
+          "right": "SO₃ se pohlcuje v **koncentrované H₂SO₄** (vzniká oleum) a to se ředí vodou.",
+          "why": "S vodou reaguje SO₃ tak prudce, že vzniká mlha drobných kapiček kyseliny, která se špatně zachycuje."
+        },
+        {
+          "type": "summary",
+          "text": "O: −II, příprava z H₂O₂ (MnO₂), ozon O₃. Oxidy nekovů + voda → kyseliny, oxidy kovů + voda → hydroxidy. Síra −II až VI. H₂SO₄: S → SO₂ → SO₃ (V₂O₅) → oleum → H₂SO₄."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký katalyzátor se používá při oxidaci SO₂ na SO₃?",
+      "options": [
+        "V₂O₅",
+        "Fe",
+        "Pt",
+        "MnO₂"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký vzorec má ozon?",
+      "options": [
+        "O₃",
+        "O₂",
+        "O",
+        "H₂O₂"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Čím zapáchá sulfan H₂S?",
+      "options": [
+        "po zkažených vejcích",
+        "po čpavku",
+        "po octu",
+        "nezapáchá"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Koncentrovaná kyselina sírová zuhelnatí cukr.",
+      "answer": true,
+      "explanation": "Odebere z něj vodu – je dehydratační."
+    },
+    {
+      "type": "truefalse",
+      "question": "CaO je kyselý oxid.",
+      "answer": false,
+      "explanation": "Je to oxid kovu – zásaditý. S vodou dává Ca(OH)₂."
+    },
+    {
+      "type": "input",
+      "question": "Kolik atomů tvoří molekulu kosočtverečné síry (S…)?",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj látku s vlastností nebo užitím.",
+      "pairs": [
+        [
+          "SO₂",
+          "siření vína, kyselé deště"
+        ],
+        [
+          "O₃",
+          "pohlcuje UV záření"
+        ],
+        [
+          "H₂SO₄",
+          "akumulátory, hnojiva"
+        ],
+        [
+          "H₂S",
+          "jedovatý, páchne"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se v laboratoři připraví kyslík?",
+      "options": [
+        "katalytickým rozkladem H₂O₂ (MnO₂)",
+        "reakcí Zn s HCl",
+        "pálením vápence",
+        "hořením síry"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je vzorec kyseliny sírové a OČ síry?",
+      "options": [
+        "H₂SO₄, VI",
+        "H₂SO₃, IV",
+        "H₂SO₄, IV",
+        "H₂S, −II"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď kroky výroby kyseliny sírové.",
+      "items": [
+        "spálení síry na SO₂",
+        "oxidace SO₂ na SO₃ (V₂O₅)",
+        "pohlcení SO₃ v H₂SO₄ (oleum)",
+        "zředění olea vodou"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Popiš výrobu kyseliny sírové kontaktním způsobem.",
+      "answer": "Síra se spálí na SO₂, ten se na katalyzátoru V₂O₅ oxiduje na SO₃. SO₃ se pohlcuje v koncentrované H₂SO₄ za vzniku olea, které se ředí vodou."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi stratosférickým a přízemním ozonem?",
+      "answer": "Stratosférický ozon tvoří ozonovou vrstvu a pohlcuje škodlivé UV záření. Přízemní ozon vzniká ve smogu z výfukových plynů a slunečního záření a dráždí dýchací cesty."
+    }
+  ]
+}

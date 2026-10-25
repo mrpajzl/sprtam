@@ -1,0 +1,335 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hranoly",
+  "title": "Hranoly",
+  "emoji": "🏠",
+  "explanations": [
+    {
+      "title": "Komínky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi balíček stejných kartiček a polož je na sebe. Vznikne komínek – dole i nahoře stejný tvar, boky rovné. Tak vypadá **hranol**."
+        },
+        {
+          "type": "text",
+          "text": "Hranol je krabice od mléka, toblerone, tužka (šestiboká), bazén nebo stan. Zjistíš, kolik se do něj vejde a kolik materiálu je potřeba na jeho povrch."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hranol",
+          "definition": "Těleso se dvěma stejnými rovnoběžnými „patry“ (dole a nahoře), spojenými rovnými boky.",
+          "example": "Krabice od Toblerone je hranol s trojúhelníkem dole i nahoře."
+        },
+        {
+          "type": "term",
+          "term": "Podstava",
+          "definition": "Spodní (a stejná horní) stěna hranolu. Podle jejího tvaru se hranol jmenuje.",
+          "example": "Podstava trojúhelník → trojboký hranol. Obdélník → čtyřboký (kvádr)."
+        },
+        {
+          "type": "term",
+          "term": "Plášť",
+          "definition": "Všechny boční stěny dohromady – „obal“ kolem dokola. U kolmého hranolu jsou boční stěny obdélníky.",
+          "example": "Etiketa kolem krabice."
+        },
+        {
+          "type": "term",
+          "term": "Výška hranolu (v)",
+          "definition": "Vzdálenost mezi spodní a horní podstavou – jak vysoký je komínek.",
+          "example": "Výška krabice od mléka je asi 20 cm."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🔺",
+            "🔺",
+            "🔺",
+            "🔺"
+          ],
+          "caption": "Trojúhelníky naskládané na sebe = trojboký hranol"
+        },
+        {
+          "type": "heading",
+          "text": "Objem: kolik pater"
+        },
+        {
+          "type": "text",
+          "text": "Kvádr s dnem 5 × 4 cm: na dno se vejde 20 kostiček 1 cm³. Nastav mřížku 5 × 4 a spočítej je. Je-li hranol vysoký 3 cm, jsou to 3 patra: 20 · 3 = 60 cm³."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 5,
+            "columns": 4
+          }
+        },
+        {
+          "type": "text",
+          "text": "U každého hranolu je to stejné: **kolik se vejde do jednoho patra (obsah podstavy) × kolik je pater (výška)**."
+        },
+        {
+          "type": "example",
+          "question": "Bazén má dno 10 m × 4 m a hloubku 2 m. Kolik m³ vody se vejde?",
+          "answer": "Obsah dna 10 · 4 = 40 m². Krát výška: 40 · 2 = **80 m³**. Protože 1 m³ = 1 000 litrů, je to 80 000 litrů."
+        },
+        {
+          "type": "heading",
+          "text": "Povrch: rozbal krabici"
+        },
+        {
+          "type": "text",
+          "text": "Rozstřihni krabici a rozlož ji na stůl. Uvidíš 2 podstavy a plášť. Plášť po rozložení tvoří jeden dlouhý obdélník: jeho délka je **obvod podstavy** (dokola) a šířka je **výška** hranolu."
+        },
+        {
+          "type": "example",
+          "question": "Hranol má podstavu s obvodem 20 cm a výšku 6 cm. Jaký je obsah pláště?",
+          "answer": "Plášť = obdélník 20 × 6 cm. **120 cm²**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Trojboký hranol má 3 stěny, protože je „troj“.",
+          "right": "Má 5 stěn: 3 boční + 2 podstavy.",
+          "why": "„Trojboký“ říká, kolik má **boků**. K nim patří ještě dno a víko."
+        },
+        {
+          "type": "summary",
+          "text": "Hranol = dvě stejné podstavy a plášť. Objem = obsah podstavy · výška. Povrch = 2 podstavy + plášť."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Truhlář, který dělá krmítko, nebo inženýr, který plánuje betonový sloup, potřebují přesný výpočet. U hranolu se vše počítá třemi vzorci. Stačí pochopit, co v nich znamenají písmena."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hranol",
+          "definition": "Těleso se dvěma shodnými rovnoběžnými podstavami a bočními stěnami (u kolmého hranolu obdélníky).",
+          "example": "Kvádr je čtyřboký hranol."
+        },
+        {
+          "type": "term",
+          "term": "Sp – obsah podstavy",
+          "definition": "Plocha jedné podstavy. Počítá se podle jejího tvaru (trojúhelník, obdélník…).",
+          "example": "Podstava pravoúhlý trojúhelník s odvěsnami 3 a 4 cm: Sp = 3 · 4 : 2 = 6 cm²."
+        },
+        {
+          "type": "term",
+          "term": "Spl – obsah pláště",
+          "definition": "Součet obsahů všech bočních stěn.",
+          "example": "U kvádru jsou to 4 boky."
+        },
+        {
+          "type": "term",
+          "term": "Odvěsny a přepona",
+          "definition": "V pravoúhlém trojúhelníku jsou **odvěsny** dvě strany u pravého úhlu, **přepona** je nejdelší strana naproti němu.",
+          "example": "Trojúhelník 3, 4, 5 cm: odvěsny 3 a 4, přepona 5."
+        },
+        {
+          "type": "heading",
+          "text": "Tři vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "co",
+            "vzorec",
+            "jednotka"
+          ],
+          "rows": [
+            [
+              "objem",
+              "V = Sp · v",
+              "cm³"
+            ],
+            [
+              "plášť",
+              "Spl = obvod podstavy · v",
+              "cm²"
+            ],
+            [
+              "povrch",
+              "S = 2 · Sp + Spl",
+              "cm²"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti, jaký tvar má podstava.",
+            "Spočítej obsah podstavy Sp.",
+            "Spočítej obvod podstavy (součet jejích stran).",
+            "Objem: Sp · v.",
+            "Plášť: obvod · v.",
+            "Povrch: 2 · Sp + plášť."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Trojboký hranol: podstava je pravoúhlý trojúhelník s odvěsnami 3 cm a 4 cm (přepona 5 cm), výška hranolu 10 cm. Spočítej objem a povrch.",
+          "answer": "Sp = 3 · 4 : 2 = 6 cm². V = 6 · 10 = **60 cm³**. Obvod podstavy 3 + 4 + 5 = 12 cm. Spl = 12 · 10 = 120 cm². S = 2 · 6 + 120 = **132 cm²**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik hran a stěn má šestiboký hranol?",
+          "answer": "Hrany: 6 dole + 6 nahoře + 6 svislých = **18**. Stěny: 6 bočních + 2 podstavy = **8**."
+        },
+        {
+          "type": "text",
+          "text": "Obecně: n-boký hranol má n + 2 stěn, 3 · n hran a 2 · n vrcholů. Ověř si to na kartičkách."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "trojboký hranol",
+                "back": "5 stěn, 9 hran, 6 vrcholů"
+              },
+              {
+                "front": "čtyřboký (kvádr)",
+                "back": "6 stěn, 12 hran, 8 vrcholů"
+              },
+              {
+                "front": "šestiboký hranol",
+                "back": "8 stěn, 18 hran, 12 vrcholů"
+              },
+              {
+                "front": "1 m³",
+                "back": "1 000 litrů"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Povrch hranolu = Sp + Spl.",
+          "right": "S = **2** · Sp + Spl",
+          "why": "Hranol má podstavy dvě – dno i víko. Na jednu se často zapomíná."
+        },
+        {
+          "type": "summary",
+          "text": "V = Sp · v. Plášť = obvod podstavy · v. Povrch = 2 · Sp + plášť."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Hranol: obsah podstavy 12 cm², výška 5 cm. Objem v cm³?",
+      "answers": [
+        "60"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Trojboký hranol, podstava △ se stranou 4 cm a výškou k ní 3 cm, výška hranolu 10 cm. Objem v cm³?",
+      "answers": [
+        "60"
+      ],
+      "explanation": "Sp = 4 · 3 / 2 = 6, V = 60"
+    },
+    {
+      "type": "input",
+      "question": "Plášť hranolu: obvod podstavy 20 cm, výška 6 cm. Obsah pláště v cm²?",
+      "answers": [
+        "120"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Kvádr je také hranol.",
+      "answer": true,
+      "explanation": "Čtyřboký hranol s obdélníkovou podstavou."
+    },
+    {
+      "type": "input",
+      "question": "Kolik hran má trojboký hranol?",
+      "answers": [
+        "9"
+      ],
+      "explanation": "3 + 3 dole a nahoře + 3 boční"
+    },
+    {
+      "type": "input",
+      "question": "Kolik stěn má šestiboký hranol?",
+      "answers": [
+        "8"
+      ],
+      "explanation": "6 bočních + 2 podstavy"
+    },
+    {
+      "type": "choice",
+      "question": "Povrch hranolu je…",
+      "options": [
+        "2 · Sp + Spl",
+        "Sp · v",
+        "Sp + Spl",
+        "obvod · v"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Bazén má dno 10 m × 4 m a hloubku 2 m. Kolik m³ vody se vejde?",
+      "answers": [
+        "80"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kolik litrů je 1 m³?",
+      "options": [
+        "1 000",
+        "100",
+        "10 000",
+        "10"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Boční stěny kolmého hranolu jsou obdélníky.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš objem hranolu?",
+      "answer": "Spočítám obsah podstavy a vynásobím ho výškou hranolu: V = Sp · v."
+    },
+    {
+      "type": "open",
+      "question": "Z čeho se skládá povrch hranolu?",
+      "answer": "Ze dvou shodných podstav a pláště. Plášť jsou boční obdélníky, jeho obsah je obvod podstavy krát výška."
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zivocichove",
+  "title": "Živočichové a jejich třídění",
+  "emoji": "🐾",
+  "explanations": [
+    {
+      "title": "Podle těla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V knihovně jsou knížky srovnané podle druhů: pohádky, encyklopedie, komiksy. Tak se v nich vyznáš."
+        },
+        {
+          "type": "text",
+          "text": "Zvířat je na světě obrovské množství. Vědci je proto třídí do skupin podle toho, jak vypadá jejich tělo. Podívej se na zvíře a hned víš o něm hodně."
+        },
+        {
+          "type": "term",
+          "term": "Živočich",
+          "definition": "Jiné slovo pro zvíře. Patří sem i ryby, hmyz nebo ptáci.",
+          "example": "kapr, včela, sýkora, pes"
+        },
+        {
+          "type": "term",
+          "term": "Obratlovec",
+          "definition": "Živočich, který má uvnitř těla **páteř** – řadu malých kostí (obratlů) podél zad.",
+          "example": "pes, kapr, žába"
+        },
+        {
+          "type": "heading",
+          "text": "Pět skupin obratlovců"
+        },
+        {
+          "type": "text",
+          "text": "Nejlépe je poznáš podle toho, co jim kryje tělo."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Tělo kryje",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "savci",
+              "srst",
+              "pes, netopýr"
+            ],
+            [
+              "ptáci",
+              "peří",
+              "sýkora, tučňák"
+            ],
+            [
+              "ryby",
+              "šupiny",
+              "kapr"
+            ],
+            [
+              "plazi",
+              "šupiny (suchá kůže)",
+              "ještěrka, zmije"
+            ],
+            [
+              "obojživelníci",
+              "holá vlhká kůže",
+              "žába, čolek"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Savec",
+          "definition": "Živočich, jehož mláďata sají **mléko** od matky. Většinou má srst a dýchá plícemi.",
+          "example": "pes, kráva, netopýr, velryba, člověk"
+        },
+        {
+          "type": "term",
+          "term": "Žábry",
+          "definition": "Orgán, kterým ryby dýchají ve vodě.",
+          "example": "Kapr má žábry po stranách hlavy."
+        },
+        {
+          "type": "example",
+          "question": "Netopýr létá. Je to pták?",
+          "answer": "Netopýr nemá peří, ale **srst**, a mláďata **kojí** mlékem. Je to **savec**."
+        },
+        {
+          "type": "example",
+          "question": "Velryba žije v moři. Je to ryba?",
+          "answer": "Velryba dýchá **plícemi** (vyplouvá pro vzduch) a **kojí** mláďata. Je to **savec**, ne ryba."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Co žije ve vodě, je ryba.",
+          "right": "Ve vodě žijí i savci (velryba) a obojživelníci (žába).",
+          "why": "Skupinu neurčuje, kde zvíře žije, ale jak má stavěné tělo a jak se rozmnožuje."
+        },
+        {
+          "type": "text",
+          "text": "U nás žije jediný jedovatý had – **zmije obecná**. Je to plaz."
+        },
+        {
+          "type": "summary",
+          "text": "Savci mají srst a kojí, ptáci mají peří, ryby šupiny a žábry, plazi suché šupiny, obojživelníci holou vlhkou kůži."
+        }
+      ]
+    },
+    {
+      "title": "Počítej nohy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na louce potkáš mravence, berušku i pavouka. Všichni jsou malí. Jsou to všechno hmyz? Ne!"
+        },
+        {
+          "type": "text",
+          "text": "Jednoduchý trik: spočítej nohy. A u větších zvířat se zeptej, jak krmí mláďata. Hned je zařadíš."
+        },
+        {
+          "type": "term",
+          "term": "Hmyz",
+          "definition": "Drobní živočichové se **6 nohama**. Tělo mají ze tří částí, často mají křídla a tykadla.",
+          "example": "včela, mravenec, beruška, moucha"
+        },
+        {
+          "type": "term",
+          "term": "Pavoukovci",
+          "definition": "Živočichové s **8 nohama**. Nemají křídla ani tykadla.",
+          "example": "pavouk křižák, klíště"
+        },
+        {
+          "type": "term",
+          "term": "Savec",
+          "definition": "Zvíře, které kojí mláďata **mlékem**.",
+          "example": "medvěd, netopýr, velryba"
+        },
+        {
+          "type": "term",
+          "term": "Pták",
+          "definition": "Zvíře s **peřím** a zobákem. Snáší vejce.",
+          "example": "čáp, sova, tučňák"
+        },
+        {
+          "type": "heading",
+          "text": "Jak zařadím zvíře"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je malé a má 6 nohou? → **hmyz**.",
+            "Má 8 nohou? → **pavoukovec**.",
+            "Má peří? → **pták** (i když nelétá, jako tučňák).",
+            "Kojí mláďata mlékem? → **savec** (i když létá nebo plave)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď zvířata. Pozor na netopýra, velrybu a tučňáka!"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Savci 🐻",
+              "Ptáci 🐦",
+              "Hmyz 🐞"
+            ],
+            "items": [
+              {
+                "text": "medvěd",
+                "group": 0
+              },
+              {
+                "text": "netopýr",
+                "group": 0
+              },
+              {
+                "text": "velryba",
+                "group": 0
+              },
+              {
+                "text": "čáp",
+                "group": 1
+              },
+              {
+                "text": "tučňák",
+                "group": 1
+              },
+              {
+                "text": "sova",
+                "group": 1
+              },
+              {
+                "text": "včela",
+                "group": 2
+              },
+              {
+                "text": "mravenec",
+                "group": 2
+              },
+              {
+                "text": "beruška",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Tučňák nelétá. Je to pták?",
+          "answer": "Tučňák má **peří**, zobák a snáší vejce. Je to **pták**, jen místo létání plave."
+        },
+        {
+          "type": "example",
+          "question": "Klíště má 8 nohou. Je to hmyz?",
+          "answer": "Hmyz má 6 nohou. 8 nohou mají **pavoukovci** – klíště mezi ně patří."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pavouk patří mezi hmyz.",
+          "right": "Pavouk není hmyz, je to pavoukovec.",
+          "why": "Pavouk má 8 nohou, hmyz má 6."
+        },
+        {
+          "type": "summary",
+          "text": "Hmyz má 6 nohou, pavouk 8. Netopýr i velryba jsou savci, tučňák je pták."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který živočich je savec?",
+      "options": [
+        "netopýr",
+        "čáp",
+        "kapr"
+      ],
+      "answer": 0,
+      "explanation": "Netopýr kojí mláďata – je to savec."
+    },
+    {
+      "type": "choice",
+      "question": "Který živočich je pták?",
+      "options": [
+        "tučňák",
+        "velryba",
+        "čolek"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik nohou má hmyz?",
+      "answers": [
+        "6",
+        "šest"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik nohou má pavouk?",
+      "answers": [
+        "8",
+        "osm"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Velryba je ryba.",
+      "answer": false,
+      "explanation": "Velryba je savec – dýchá plícemi a kojí mláďata."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ptáci mají peří a snášejí vejce.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Čím dýchají ryby?",
+      "options": [
+        "žábrami",
+        "plícemi",
+        "kůží"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj živočicha a skupinu.",
+      "pairs": [
+        [
+          "žába",
+          "obojživelník"
+        ],
+        [
+          "ještěrka",
+          "plaz"
+        ],
+        [
+          "kapr",
+          "ryba"
+        ],
+        [
+          "liška",
+          "savec"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje jediný jedovatý had v ČR?",
+      "options": [
+        "zmije obecná",
+        "užovka",
+        "slepýš"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Pavouk patří mezi hmyz.",
+      "answer": false,
+      "explanation": "Pavouk má 8 nohou, hmyz 6."
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš savce?",
+      "answer": "Savci kojí mláďata mlékem, mají většinou srst a dýchají plícemi."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi hmyzem a pavoukem?",
+      "answer": "Hmyz má 6 nohou a často křídla. Pavouk má 8 nohou a nemá křídla."
+    }
+  ]
+}

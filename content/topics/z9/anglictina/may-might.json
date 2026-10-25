@@ -1,0 +1,380 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "may-might",
+  "title": "May, might – možnost",
+  "emoji": "🤔",
+  "explanations": [
+    {
+      "title": "Na teploměru jistoty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kamarád se ptá: „Přijdeš v sobotu na párty?“ Můžeš říct „Určitě přijdu“, „**Možná** přijdu“ nebo „Určitě nepřijdu“. Pokaždé dáváš najevo, **jak moc si jsi jistý**."
+        },
+        {
+          "type": "text",
+          "text": "Pro „možná“ má angličtina slovesa **may** a **might**. Hodí se na předpověď počasí, plány, které nejsou jisté, i když nechceš nic slíbit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jistota",
+          "definition": "Jak moc věříš, že se něco stane.",
+          "example": "určitě – možná – určitě ne"
+        },
+        {
+          "type": "term",
+          "term": "Modální sloveso",
+          "definition": "Zvláštní sloveso, které mění význam jiného slovesa (musím, smím, můžu, možná). Za ním je základní tvar slovesa bez *to*, samo nedostává *-s*.",
+          "example": "can, must, should, may, might"
+        },
+        {
+          "type": "term",
+          "term": "may / might",
+          "definition": "„možná“ – něco se může stát, ale není to jisté. *Might* zní o kousek méně jistě, v běžné řeči se ale obě používají skoro stejně.",
+          "example": "It might rain. = Možná bude pršet."
+        },
+        {
+          "type": "heading",
+          "text": "Teploměr jistoty"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jistota",
+            "Anglicky",
+            "Česky"
+          ],
+          "rows": [
+            [
+              "100 % ano",
+              "It will rain.",
+              "Určitě bude pršet."
+            ],
+            [
+              "asi tak napůl",
+              "It may rain.",
+              "Možná bude pršet."
+            ],
+            [
+              "o něco méně",
+              "It might rain.",
+              "Možná (ale spíš ne) bude pršet."
+            ],
+            [
+              "100 % ne",
+              "It won't rain.",
+              "Nebude pršet."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věty: jsou jisté, nebo jen možné?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "jisté",
+              "možná"
+            ],
+            "items": [
+              {
+                "text": "I will help you.",
+                "group": 0
+              },
+              {
+                "text": "It won't snow.",
+                "group": 0
+              },
+              {
+                "text": "School starts at 8.",
+                "group": 0
+              },
+              {
+                "text": "I might go to the party.",
+                "group": 1
+              },
+              {
+                "text": "She may be at home.",
+                "group": 1
+              },
+              {
+                "text": "We might go to the cinema.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Vezmi si deštník. Možná bude pršet.",
+          "answer": "Není to jisté → *might*: *Take an umbrella. It might rain.*"
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky tři věci, které možná uděláš o prázdninách.",
+          "answer": "*I might go to the sea. I may visit my grandma. I might learn to surf.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "I might go. = Určitě půjdu.",
+          "right": "I might go. = Možná půjdu.",
+          "why": "*Might* znamená nejistotu. „Určitě půjdu“ je *I will go*."
+        },
+        {
+          "type": "summary",
+          "text": "**may / might + základní tvar** = možná. Jistě ano = *will*, jistě ne = *won't*."
+        }
+      ]
+    },
+    {
+      "title": "Pravidly",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky „možná“ přidáš do věty jako samostatné slovo: „Možná přijde.“ Anglicky se „možná“ schová přímo do slovesa: *He might come.* Aby věta byla správně, musíš znát tři jednoduchá pravidla."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Modální sloveso",
+          "definition": "Pomocné sloveso jako *can, must, should, may, might*. Vyjadřuje schopnost, povinnost, radu nebo možnost.",
+          "example": "He can swim. He might come."
+        },
+        {
+          "type": "term",
+          "term": "Základní tvar slovesa",
+          "definition": "Sloveso jako ve slovníku – bez *to*, bez *-s*, bez *-ing*.",
+          "example": "be, come, go"
+        },
+        {
+          "type": "term",
+          "term": "Zápor",
+          "definition": "Věta s „ne“. U *may / might* stačí přidat *not*.",
+          "example": "might not = možná ne"
+        },
+        {
+          "type": "heading",
+          "text": "Tři pravidla"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Za *may / might* je základní tvar **bez to**: *She may be at home.* (ne *may to be*)",
+            "*May / might* nedostanou *-s* ani u *he, she, it*: *He may come.* (ne *mays*)",
+            "Ani sloveso za nimi nedostane *-s*: *He might come.* (ne *might comes*)",
+            "Zápor: *may not / might not* (= možná ne): *He might not come – he's ill.*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber správný tvar. Hlídej všechna tři pravidla."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "She may",
+                "after": "at home.",
+                "options": [
+                  "be",
+                  "to be",
+                  "is"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Take an umbrella. It",
+                "after": "rain.",
+                "options": [
+                  "might",
+                  "must",
+                  "mights"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "He",
+                "after": "come – he's ill.",
+                "options": [
+                  "might not",
+                  "might no",
+                  "not might"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "We might",
+                "after": "to the cinema.",
+                "options": [
+                  "go",
+                  "goes",
+                  "going"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Oprav: He may comes.",
+          "answer": "Za *may* je základní tvar: *He may come.*"
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Nevím jistě. Možná na tu párty nepůjdu.",
+          "answer": "Zápor = *might not*: *I'm not sure. I might not go to the party.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "She may to be at home.",
+          "right": "She may be at home.",
+          "why": "Za modálním slovesem nikdy nestojí *to*."
+        },
+        {
+          "type": "summary",
+          "text": "**may / might + základní tvar** (bez *to*, bez *-s*). Zápor **might not / may not**."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Take an umbrella. It ___ rain.",
+      "options": [
+        "might",
+        "must",
+        "mights"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "She may ___ at home.",
+      "options": [
+        "be",
+        "to be",
+        "is"
+      ],
+      "answer": 0,
+      "explanation": "may + holé sloveso."
+    },
+    {
+      "type": "truefalse",
+      "question": "„I might go“ znamená, že určitě půjdu.",
+      "answer": false,
+      "explanation": "might = možná."
+    },
+    {
+      "type": "truefalse",
+      "question": "Zápor od „might“ je „might not“.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Doplň: I’m not sure. I ___ go to the party. (možná)",
+      "answers": [
+        "might",
+        "may"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň zápor: He ___ come – he’s ill. (možná nepřijde, 2 slova)",
+      "answers": [
+        "might not",
+        "may not",
+        "mightn't"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od „určitě ano“ po „určitě ne“.",
+      "items": [
+        "will",
+        "may",
+        "won’t"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj s významem.",
+      "pairs": [
+        [
+          "It will rain.",
+          "Určitě bude pršet."
+        ],
+        [
+          "It might rain.",
+          "Možná bude pršet."
+        ],
+        [
+          "It won’t rain.",
+          "Nebude pršet."
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Vyber správně.",
+      "options": [
+        "He mays come.",
+        "He may comes.",
+        "He may come."
+      ],
+      "answer": 2
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "We",
+        "might",
+        "go",
+        "to",
+        "the",
+        "cinema."
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co vyjadřují slovesa may a might?",
+      "answer": "Možnost, nejistotu – že se něco možná stane. Např. It might snow tomorrow."
+    },
+    {
+      "type": "open",
+      "question": "Řekni anglicky tři věci, které možná uděláš o prázdninách.",
+      "answer": "Např. I might go to the sea. I may visit my grandma. I might learn to surf."
+    }
+  ]
+}

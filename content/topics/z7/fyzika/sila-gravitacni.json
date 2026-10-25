@@ -1,0 +1,327 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "sila-gravitacni",
+  "title": "Síla a gravitační síla",
+  "emoji": "🍎",
+  "explanations": [
+    {
+      "title": "Jablko padá",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kopneš do míče a ten letí. Zmáčkneš plastelínu a změní tvar. Pustíš jablko a spadne na zem. Ve všech případech něco působí na něco jiného – působí **síla**."
+        },
+        {
+          "type": "text",
+          "text": "Síly jsou všude kolem nás. Kdo jim rozumí, umí postavit most, který nespadne, nebo spočítat, kolik unese polička."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla",
+          "definition": "Působení jednoho tělesa na druhé. Síla nikdy nepůsobí „sama“ – vždy ji vyvolává nějaké těleso. Značka `F`.",
+          "example": "Noha působí na míč, magnet na sponku, Země na jablko."
+        },
+        {
+          "type": "term",
+          "term": "Účinky síly",
+          "definition": "Síla může těleso **rozpohybovat**, **zastavit**, **změnit směr** jeho pohybu nebo ho **zdeformovat** (změnit tvar).",
+          "example": "Brankář míč zastaví, hráč ho hlavou odrazí jinam, pružina se natáhne."
+        },
+        {
+          "type": "text",
+          "text": "Sílu samu nevidíš. Poznáš ji jen podle účinku. Barvu ani teplotu tělesa síla nezmění."
+        },
+        {
+          "type": "heading",
+          "text": "Proč jablko padá"
+        },
+        {
+          "type": "term",
+          "term": "Gravitační síla",
+          "definition": "Síla, kterou Země přitahuje všechna tělesa k sobě. Míří **svisle dolů**, ke středu Země. Značka `Fg`.",
+          "example": "Proto padá jablko, proto se ti nevznáší hrnek ze stolu."
+        },
+        {
+          "type": "text",
+          "text": "Všechna tělesa se přitahují navzájem, ale znát je to jen u obrovských těles jako Země nebo Měsíc. Dvě jablka na stole se přitahují tak slabě, že si toho nevšimneš."
+        },
+        {
+          "type": "heading",
+          "text": "Jak sílu změřit"
+        },
+        {
+          "type": "term",
+          "term": "Newton (N)",
+          "definition": "Jednotka síly. Pojmenovaná po Isaacu Newtonovi. **1 N** je zhruba síla, kterou na tvou ruku tlačí čokoláda 100 g.",
+          "example": "Školní batoh tlačí na rameno asi 60 N."
+        },
+        {
+          "type": "term",
+          "term": "Siloměr",
+          "definition": "Přístroj na měření síly. Uvnitř je pružina – čím větší síla, tím víc se natáhne. Na stupnici čteš newtony.",
+          "example": "Pověsíš na háček těleso a siloměr ukáže, jakou silou ho Země táhne dolů."
+        },
+        {
+          "type": "example",
+          "question": "Pověsíš na siloměr čokoládu 100 g a pak dvě takové čokolády. Co uvidíš?",
+          "answer": "Jedna čokoláda: asi **1 N**. Dvě čokolády: asi **2 N**. Dvojnásobná hmotnost → dvojnásobná gravitační síla."
+        },
+        {
+          "type": "example",
+          "question": "Brankář chytí míč. Jaký účinek měla síla jeho rukou?",
+          "answer": "Míč se pohyboval a síla ho **zastavila** – změnila jeho pohyb."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Siloměr a váhy měří totéž.",
+          "right": "Siloměr měří sílu v newtonech, váhy hmotnost v kilogramech.",
+          "why": "Hmotnost říká, kolik látky těleso má. Síla říká, jak silně ho něco táhne nebo tlačí. Na Měsíci by siloměr ukázal méně, hmotnost by zůstala stejná."
+        },
+        {
+          "type": "summary",
+          "text": "Síla je působení jednoho tělesa na druhé; poznáme ji podle účinků. Jednotka newton, měříme siloměrem. Země přitahuje tělesa gravitační silou svisle dolů."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč astronauti na Měsíci poskakují jako klokani? Proč je těžší zvednout plnou tašku než prázdnou? Odpověď dává jednoduchý vzorec pro gravitační sílu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla `F`",
+          "definition": "Působení jednoho tělesa na druhé. Jednotka **newton (N)**, měří se **siloměrem** (přístroj s pružinou).",
+          "example": "Kopnutí do míče, tah magnetu."
+        },
+        {
+          "type": "term",
+          "term": "Hmotnost `m`",
+          "definition": "Kolik látky těleso obsahuje, v kilogramech. Měří se vahami.",
+          "example": "Batoh má 6 kg."
+        },
+        {
+          "type": "term",
+          "term": "Gravitační síla `Fg`",
+          "definition": "Síla, kterou planeta přitahuje těleso. Na Zemi míří svisle dolů.",
+          "example": "Proto batoh tlačí na ramena."
+        },
+        {
+          "type": "term",
+          "term": "Tíhové zrychlení `g`",
+          "definition": "Číslo, které říká, jakou silou planeta přitahuje **každý 1 kg**. Na Zemi je to asi **9,8 N/kg**, při počítání zaokrouhlujeme na **10 N/kg**.",
+          "example": "Na Zemi táhne každý kilogram silou asi 10 N."
+        },
+        {
+          "type": "heading",
+          "text": "Odvození vzorce"
+        },
+        {
+          "type": "text",
+          "text": "Pověs na siloměr 1 kg – ukáže asi 10 N. Pověs 2 kg – ukáže 20 N. Pověs 5 kg – 50 N. Každý kilogram přidá 10 N."
+        },
+        {
+          "type": "text",
+          "text": "Takže stačí vynásobit hmotnost číslem 10: `Fg = m · g`."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Hmotnost převeď na **kilogramy** (100 g = 0,1 kg).",
+            "Vynásob g: `Fg = m · g`.",
+            "Výsledek je v newtonech.",
+            "Opačně: hmotnost zjistíš `m = Fg : g`."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jakou gravitační silou působí Země na batoh 6 kg?",
+          "answer": "Fg = m · g = 6 · 10 = **60 N**."
+        },
+        {
+          "type": "example",
+          "question": "Jakou silou přitahuje Země čokoládu 100 g?",
+          "answer": "Nejdřív převod: 100 g = 0,1 kg. Fg = 0,1 · 10 = **1 N**."
+        },
+        {
+          "type": "example",
+          "question": "Na těleso působí gravitační síla 250 N. Jakou má hmotnost?",
+          "answer": "m = Fg : g = 250 : 10 = **25 kg**."
+        },
+        {
+          "type": "heading",
+          "text": "Na jiných tělesech"
+        },
+        {
+          "type": "text",
+          "text": "Každá planeta má jiné g. Podívej se, kolikrát slabší je přitažlivost Měsíce než Země a kolikrát silnější je Jupiterova."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "N/kg",
+            "items": [
+              {
+                "label": "Měsíc",
+                "value": 1.6
+              },
+              {
+                "label": "Mars",
+                "value": 3.7
+              },
+              {
+                "label": "Země",
+                "value": 9.8
+              },
+              {
+                "label": "Jupiter",
+                "value": 24.8
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Astronaut má 80 kg. Jakou silou ho přitahuje Měsíc (g = 1,6 N/kg)?",
+          "answer": "Fg = 80 · 1,6 = **128 N**. Na Zemi by to bylo 80 · 10 = 800 N – asi šestkrát víc. Proto na Měsíci tak snadno skáče."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Fg = 100 · 10 = 1 000 N pro čokoládu 100 g",
+          "right": "Fg = 0,1 · 10 = 1 N",
+          "why": "Do vzorce patří hmotnost v **kilogramech**. 100 g je jen 0,1 kg."
+        },
+        {
+          "type": "summary",
+          "text": "`Fg = m · g`, na Zemi g ≈ 10 N/kg: každý kilogram je přitahován silou asi 10 N. Hmotnost dosazuj v kg."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka síly?",
+      "options": [
+        "newton",
+        "kilogram",
+        "pascal",
+        "joule"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Čím měříme sílu?",
+      "options": [
+        "siloměrem",
+        "váhami",
+        "teploměrem",
+        "barometrem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jakou gravitační silou v N působí Země na těleso 8 kg? (g = 10 N/kg)",
+      "answers": [
+        "80"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jakou gravitační silou v N působí Země na čokoládu 100 g? (g = 10 N/kg)",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Na těleso působí gravitační síla 250 N. Hmotnost v kg? (g = 10 N/kg)",
+      "answers": [
+        "25"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Na Měsíci je gravitační síla na astronauta menší než na Zemi.",
+      "answer": true,
+      "explanation": "Měsíc má g asi 1,6 N/kg."
+    },
+    {
+      "type": "choice",
+      "question": "Kam míří gravitační síla Země?",
+      "options": [
+        "svisle dolů, ke středu Země",
+        "vodorovně",
+        "nahoru",
+        "ve směru pohybu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Síla může těleso zdeformovat.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu se značkou.",
+      "pairs": [
+        [
+          "síla",
+          "F"
+        ],
+        [
+          "hmotnost",
+          "m"
+        ],
+        [
+          "tíhové zrychlení",
+          "g"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co není účinek síly?",
+      "options": [
+        "změna barvy tělesa",
+        "rozjetí tělesa",
+        "zastavení tělesa",
+        "ohnutí tělesa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Podle čeho poznáš, že na těleso působí síla?",
+      "answer": "Podle účinku: těleso se rozpohybuje, zastaví, změní směr pohybu nebo se zdeformuje."
+    },
+    {
+      "type": "open",
+      "question": "Jak vypočítáš gravitační sílu? Uveď příklad.",
+      "answer": "Fg = m · g, kde g je asi 10 N/kg. Těleso 5 kg je přitahováno silou 50 N."
+    }
+  ]
+}

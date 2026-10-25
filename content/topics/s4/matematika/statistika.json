@@ -1,0 +1,383 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "statistika",
+  "title": "Statistika",
+  "emoji": "📊",
+  "explanations": [
+    {
+      "title": "Platy ve firmě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve firmě pracuje 5 lidí. Čtyři berou 20, 22, 24 a 26 tisíc, šéf 108 tisíc. Inzerát hlásá: „Průměrný plat u nás je 40 000 Kč!“ Je to pravda – a přesto to zavádí."
+        },
+        {
+          "type": "text",
+          "text": "Statistika popisuje velké množství čísel několika málo údaji. Musíš ale vědět, co který údaj říká, abys nenaletěl novinám, reklamě ani politikům."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Statistický soubor",
+          "definition": "Skupina hodnot, které zkoumáme.",
+          "example": "Platy pěti zaměstnanců: 20, 22, 24, 26, 108."
+        },
+        {
+          "type": "term",
+          "term": "Aritmetický průměr",
+          "definition": "Součet všech hodnot dělený jejich počtem. „Kdyby se všechno rozdělilo rovným dílem.“",
+          "example": "(20 + 22 + 24 + 26 + 108) / 5 = 200 / 5 = 40."
+        },
+        {
+          "type": "term",
+          "term": "Medián",
+          "definition": "Prostřední hodnota, když čísla seřadíš podle velikosti. Při sudém počtu je to průměr dvou prostředních.",
+          "example": "Platy 20, 22, **24**, 26, 108 → medián 24."
+        },
+        {
+          "type": "term",
+          "term": "Modus",
+          "definition": "Hodnota, která se v souboru vyskytuje nejčastěji.",
+          "example": "Známky 1, 2, 2, 2, 3 → modus 2."
+        },
+        {
+          "type": "heading",
+          "text": "Podívej se na data"
+        },
+        {
+          "type": "text",
+          "text": "Šéfův sloupec je pětkrát delší než ostatní. Tahle jediná hodnota vytáhne průměr na 40, i když čtyři lidé z pěti berou méně než 27."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "tis. Kč",
+            "items": [
+              {
+                "label": "Anna",
+                "value": 20
+              },
+              {
+                "label": "Bohouš",
+                "value": 22
+              },
+              {
+                "label": "Cyril",
+                "value": 24
+              },
+              {
+                "label": "Dana",
+                "value": 26
+              },
+              {
+                "label": "šéf",
+                "value": 108
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Medián (24) popisuje „typického zaměstnance“ mnohem lépe. Je **odolný vůči extrémním hodnotám** – šéf by mohl brát i milion a medián se nezmění."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Průměrný plat je 40 000 Kč, takže většina lidí bere kolem 40 000.",
+          "right": "Většina bere 20–26 tisíc, typickou hodnotu ukáže medián 24 000.",
+          "why": "Průměr je citlivý na extrémně velké nebo malé hodnoty. U platů, cen bytů apod. se proto uvádí medián."
+        },
+        {
+          "type": "heading",
+          "text": "Jak moc se data rozcházejí"
+        },
+        {
+          "type": "text",
+          "text": "Dvě třídy mají průměr známek 3. V jedné mají všichni trojku, ve druhé půlka jedničky a půlka pětky. Průměr je stejný, ale třídy jsou úplně jiné. To měří **rozptyl**."
+        },
+        {
+          "type": "term",
+          "term": "Rozptyl a směrodatná odchylka",
+          "definition": "Rozptyl: u každé hodnoty spočítej, jak daleko je od průměru, umocni na druhou a z toho udělej průměr. Směrodatná odchylka je odmocnina z rozptylu – „typická vzdálenost od průměru“.",
+          "example": "Malá odchylka = data blízko u sebe, velká = rozházená."
+        },
+        {
+          "type": "example",
+          "question": "Soubor 2, 4, 4, 4, 5, 5, 7, 9. Urči průměr, medián a modus.",
+          "answer": "Průměr: 40 / 8 = **5**. Medián: prostřední jsou 4 a 5 → **4,5**. Modus: nejčastěji 4 (třikrát) → **4**."
+        },
+        {
+          "type": "example",
+          "question": "Urči rozptyl a směrodatnou odchylku téhož souboru.",
+          "answer": "Odchylky od 5: −3, −1, −1, −1, 0, 0, 2, 4. Druhé mocniny: 9, 1, 1, 1, 0, 0, 4, 16 → součet 32. Rozptyl 32 / 8 = **4**, směrodatná odchylka √4 = **2**."
+        },
+        {
+          "type": "text",
+          "text": "**Relativní četnost** říká, jaká část souboru má danou hodnotu: 6 jedniček z 24 žáků = 6/24 = 25 %."
+        },
+        {
+          "type": "summary",
+          "text": "Průměr = součet / počet, medián = prostřední hodnota, modus = nejčastější. Medián je odolný vůči extrémům. Rozptyl a směrodatná odchylka měří, jak jsou data rozházená."
+        }
+      ]
+    },
+    {
+      "title": "Postupy výpočtu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Výsledky přijímaček, měření teploty, ankety – všude dostaneš hromadu čísel. Abys je mohl porovnat, shrneš je do několika charakteristik: **kde je střed** a **jak jsou data rozházená**."
+        },
+        {
+          "type": "text",
+          "text": "Tady jsou přesné postupy výpočtu krok za krokem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hodnoty a rozsah souboru",
+          "definition": "Hodnoty x₁, x₂, …, xₙ jsou zjištěná čísla, n (rozsah) je jejich počet.",
+          "example": "Známky 1, 1, 2, 3, 3: n = 5."
+        },
+        {
+          "type": "term",
+          "term": "Četnost",
+          "definition": "Absolutní četnost = kolikrát se hodnota vyskytne. Relativní četnost = absolutní četnost / n (často v %).",
+          "example": "6 jedniček z 24 žáků: relativní četnost 6/24 = 0,25 = 25 %."
+        },
+        {
+          "type": "term",
+          "term": "Míry polohy",
+          "definition": "Čísla, která říkají, kde je „střed“ dat: průměr, medián, modus."
+        },
+        {
+          "type": "term",
+          "term": "Míry variability",
+          "definition": "Čísla, která říkají, jak moc jsou data rozptýlená: rozptyl, směrodatná odchylka."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Charakteristika",
+            "Jak spočítat"
+          ],
+          "rows": [
+            [
+              "aritmetický průměr x̄",
+              "(x₁ + x₂ + … + xₙ) / n"
+            ],
+            [
+              "medián",
+              "seřaď; lichý počet → prostřední hodnota, sudý → průměr dvou prostředních"
+            ],
+            [
+              "modus",
+              "nejčastější hodnota"
+            ],
+            [
+              "rozptyl s²",
+              "průměr druhých mocnin odchylek: ((x₁ − x̄)² + … + (xₙ − x̄)²) / n"
+            ],
+            [
+              "směrodatná odchylka s",
+              "√(rozptyl)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup pro rozptyl"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej průměr x̄.",
+            "U každé hodnoty spočítej odchylku xᵢ − x̄.",
+            "Každou odchylku umocni na druhou (aby se kladné a záporné nevyrušily).",
+            "Sečti a vyděl n – to je rozptyl.",
+            "Odmocni – to je směrodatná odchylka."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Soubor 2, 4, 4, 4, 5, 5, 7, 9: rozptyl a směrodatná odchylka.",
+          "answer": "x̄ = 40/8 = 5. Odchylky na druhou: 9, 1, 1, 1, 0, 0, 4, 16, součet 32. s² = 32/8 = **4**, s = **2**."
+        },
+        {
+          "type": "example",
+          "question": "Známky 1, 1, 2, 3, 3. Průměr a medián?",
+          "answer": "Průměr 10/5 = **2**. Seřazeno 1, 1, **2**, 3, 3 → medián **2**."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na četnosti známek ve třídě 24 žáků. Modus je hodnota s nejdelším sloupcem."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "žáků",
+            "items": [
+              {
+                "label": "1",
+                "value": 6
+              },
+              {
+                "label": "2",
+                "value": 9
+              },
+              {
+                "label": "3",
+                "value": 5
+              },
+              {
+                "label": "4",
+                "value": 3
+              },
+              {
+                "label": "5",
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Platy (tis. Kč) 20, 22, 24, 26, 108. Průměr a medián?",
+          "answer": "Průměr 200/5 = **40**. Medián **24**. Velký rozdíl ukazuje, že soubor obsahuje extrémní hodnotu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Medián souboru 2, 4, 4, 4, 5, 5, 7, 9 je 4 (čtvrté číslo).",
+          "right": "Medián je (4 + 5)/2 = 4,5",
+          "why": "Při sudém počtu hodnot (8) nejsou jedna, ale dvě prostřední (4. a 5.). Medián je jejich průměr."
+        },
+        {
+          "type": "summary",
+          "text": "Střed dat: průměr (citlivý na extrémy), medián (prostřední, odolný), modus (nejčastější). Rozptyl = průměr druhých mocnin odchylek od průměru, směrodatná odchylka = jeho odmocnina."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Průměr souboru 2, 4, 4, 4, 5, 5, 7, 9 =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Medián souboru 2, 4, 4, 4, 5, 5, 7, 9 =",
+      "answers": [
+        "4,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Modus souboru 2, 4, 4, 4, 5, 5, 7, 9 =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Rozptyl souboru 2, 4, 4, 4, 5, 5, 7, 9 =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Směrodatná odchylka souboru 2, 4, 4, 4, 5, 5, 7, 9 =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Medián je méně citlivý na extrémní hodnoty než průměr.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Modus je:",
+      "options": [
+        "nejčastější hodnota",
+        "prostřední hodnota",
+        "průměr",
+        "rozdíl největší a nejmenší"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Známky 1, 1, 2, 3, 3. Průměr =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Platy (tis. Kč) 20, 22, 24, 26, 108. Medián =",
+      "answers": [
+        "24"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Platy (tis. Kč) 20, 22, 24, 26, 108. Průměr =",
+      "answers": [
+        "40"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Rozptyl a směrodatná odchylka měří:",
+      "options": [
+        "variabilitu (rozptýlenost) dat",
+        "nejčastější hodnotu",
+        "počet hodnot",
+        "střed dat"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "6 z 24 žáků má jedničku. Relativní četnost v % =",
+      "answers": [
+        "25"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi průměrem a mediánem? Kdy je lepší medián?",
+      "answer": "Průměr je součet hodnot dělený jejich počtem, medián prostřední hodnota seřazeného souboru. Medián je lepší, když soubor obsahuje extrémní hodnoty (např. platy)."
+    },
+    {
+      "type": "open",
+      "question": "Co vyjadřuje směrodatná odchylka?",
+      "answer": "Jak moc se hodnoty v průměru odchylují od aritmetického průměru. Malá odchylka = data blízko u sebe, velká = rozptýlená."
+    }
+  ]
+}

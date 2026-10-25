@@ -1,0 +1,377 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pravdepodobnost",
+  "title": "Pravděpodobnost",
+  "emoji": "🎲",
+  "explanations": [
+    {
+      "title": "Kostky a mince",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zítra prší s pravděpodobností 70 %. Lék pomůže 9 lidem z 10. Šance na výhru ve Sportce je mizivá. Pravděpodobnost je číslo, které říká, **jak moc můžeme čekat**, že se něco stane."
+        },
+        {
+          "type": "text",
+          "text": "Používají ji meteorologové, pojišťovny, lékaři i hráči. A pomáhá nenechat se napálit – třeba u loterií."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pokus a výsledek",
+          "definition": "Pokus je děj s nejistým výsledkem (hod kostkou). Výsledek je to, co může padnout (1, 2, …, 6)."
+        },
+        {
+          "type": "term",
+          "term": "Jev",
+          "definition": "Skupina výsledků, která nás zajímá.",
+          "example": "Jev „padne sudé číslo“ = výsledky 2, 4, 6."
+        },
+        {
+          "type": "term",
+          "term": "Pravděpodobnost P(A)",
+          "definition": "Číslo od 0 do 1. 0 = jev nemožný, 1 = jev jistý. Když jsou všechny výsledky stejně možné: P(A) = počet příznivých výsledků / počet všech výsledků.",
+          "example": "P(šestka) = 1/6, P(sudé) = 3/6 = 1/2."
+        },
+        {
+          "type": "text",
+          "text": "Pravděpodobnost nemůže být 1,2 ani −0,3 – příznivých výsledků nemůže být víc než všech ani méně než nula."
+        },
+        {
+          "type": "heading",
+          "text": "Dvě kostky: tabulka 6 × 6"
+        },
+        {
+          "type": "text",
+          "text": "Hodíš dvěma kostkami. Každý řádek je výsledek první kostky, sloupec druhé – celkem 6 · 6 = 36 stejně možných dvojic. Spočítej tečky."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 6,
+            "columns": 6,
+            "max": 6
+          }
+        },
+        {
+          "type": "example",
+          "question": "Dvě kostky. Jaká je pravděpodobnost, že součet je 7?",
+          "answer": "Příznivé dvojice: 1+6, 2+5, 3+4, 4+3, 5+2, 6+1 – to je 6. P = 6/36 = **1/6**."
+        },
+        {
+          "type": "example",
+          "question": "Dvě mince. P(dvakrát líc)?",
+          "answer": "Výsledky: LL, LR, RL, RR – 4 stejně možné. Příznivý jen LL. P = **1/4**."
+        },
+        {
+          "type": "heading",
+          "text": "Opačný jev"
+        },
+        {
+          "type": "term",
+          "term": "Opačný jev A′",
+          "definition": "Nastane přesně tehdy, když A nenastane. Platí P(A) + P(A′) = 1.",
+          "example": "A = padne šestka (1/6), A′ = nepadne šestka (5/6)."
+        },
+        {
+          "type": "example",
+          "question": "Dva hody kostkou. P(aspoň jedna šestka)?",
+          "answer": "Snazší je opak „žádná šestka“: 5 · 5 = 25 dvojic z 36. P(aspoň jedna) = 1 − 25/36 = **11/36**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "P(aspoň jedna šestka ve dvou hodech) = 1/6 + 1/6 = 2/6",
+          "right": "11/36",
+          "why": "Dvojici 6–6 bys započítal dvakrát. Cesta přes opačný jev je bezpečnější."
+        },
+        {
+          "type": "heading",
+          "text": "Nezávislé pokusy a tahání z osudí"
+        },
+        {
+          "type": "term",
+          "term": "Nezávislé jevy",
+          "definition": "Výsledek jednoho neovlivní druhý. Pravděpodobnost, že nastanou oba, je součin: P(A ∩ B) = P(A) · P(B).",
+          "example": "10 % výrobků je vadných, beru 2 nezávisle: P(oba dobré) = 0,9 · 0,9 = 0,81."
+        },
+        {
+          "type": "example",
+          "question": "V osudí 3 bílé a 2 černé koule. Táhneme 2 bez vracení. P(obě bílé)?",
+          "answer": "První bílá: 3/5. Pak zbývají 2 bílé ze 4: 2/4. P = 3/5 · 2/4 = 6/20 = **3/10**."
+        },
+        {
+          "type": "summary",
+          "text": "P(A) = příznivé / všechny (výsledky stejně možné), vždy mezi 0 a 1. „Aspoň jeden“ počítej přes opačný jev: 1 − P(ani jeden). Nezávislé jevy: pravděpodobnosti se násobí."
+        }
+      ]
+    },
+    {
+      "title": "Pravidla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kontrola kvality: kolik výrobků z tisíce bude vadných? Lékařský test: jak spolehlivý je? Pro takové úlohy nestačí počítat na prstech, potřebuješ **pravidla**, jak pravděpodobnosti skládat."
+        },
+        {
+          "type": "text",
+          "text": "Tady jsou čtyři pravidla, která pokryjí většinu úloh na střední škole."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Náhodný pokus a jev",
+          "definition": "Pokus má víc možných výsledků a nevíme předem, který nastane. Jev je skupina výsledků.",
+          "example": "Pokus: tah koule. Jev: „vytáhnu bílou“."
+        },
+        {
+          "type": "term",
+          "term": "Klasická pravděpodobnost",
+          "definition": "Když je výsledků konečně mnoho a jsou stejně pravděpodobné: P(A) = |A| / |Ω|, kde |A| je počet příznivých a |Ω| počet všech výsledků.",
+          "example": "Osudí 3 bílé + 2 černé: P(bílá) = 3/5."
+        },
+        {
+          "type": "term",
+          "term": "Jev jistý a nemožný",
+          "definition": "Jistý nastane vždy (P = 1), nemožný nikdy (P = 0).",
+          "example": "Na kostce padne číslo menší než 7: jistý jev."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Situace",
+            "Pravidlo"
+          ],
+          "rows": [
+            [
+              "opačný jev",
+              "P(A′) = 1 − P(A)"
+            ],
+            [
+              "A nebo B, nemohou nastat zároveň",
+              "P(A ∪ B) = P(A) + P(B)"
+            ],
+            [
+              "A nebo B obecně",
+              "P(A ∪ B) = P(A) + P(B) − P(A ∩ B)"
+            ],
+            [
+              "A i B, nezávislé",
+              "P(A ∩ B) = P(A) · P(B)"
+            ],
+            [
+              "postupné tahy bez vracení",
+              "násob pravděpodobnosti, ale po každém tahu uprav počty"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup řešení"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Popiš, co je jeden výsledek a kolik je všech (případně kombinatorikou).",
+            "Obsahuje zadání „aspoň jeden“? Počítej opačný jev.",
+            "Je to „a zároveň“ u nezávislých pokusů? Násob.",
+            "Je to „nebo“ u neslučitelných jevů? Sčítej.",
+            "Zkontroluj, že výsledek leží mezi 0 a 1."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "P(na kostce padne sudé číslo)? A číslo větší než 4?",
+          "answer": "Sudá: 2, 4, 6 → 3/6 = **1/2**. Větší než 4: 5, 6 → 2/6 = **1/3**."
+        },
+        {
+          "type": "example",
+          "question": "Dva hody kostkou. P(aspoň jedna šestka)?",
+          "answer": "Opačný jev: v žádném hodu šestka nepadne. Hody jsou nezávislé: 5/6 · 5/6 = 25/36. P = 1 − 25/36 = **11/36**."
+        },
+        {
+          "type": "example",
+          "question": "3 bílé a 2 černé koule, tahám 2 bez vracení. P(obě bílé)?",
+          "answer": "Kombinatoricky: dvojic bílých C(3, 2) = 3, všech dvojic C(5, 2) = 10. P = **3/10**. (Stejně vyjde 3/5 · 2/4.)"
+        },
+        {
+          "type": "heading",
+          "text": "Pravděpodobnost a četnost"
+        },
+        {
+          "type": "text",
+          "text": "Pravděpodobnost 1/6 neznamená, že v šesti hodech padne šestka přesně jednou. Znamená, že při **mnoha** hodech padá zhruba v 1/6 případů. Takto by mohl vypadat výsledek 600 hodů:"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "1",
+                "value": 97
+              },
+              {
+                "label": "2",
+                "value": 104
+              },
+              {
+                "label": "3",
+                "value": 99
+              },
+              {
+                "label": "4",
+                "value": 95
+              },
+              {
+                "label": "5",
+                "value": 106
+              },
+              {
+                "label": "6",
+                "value": 99
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pětkrát po sobě padl rub, takže teď spíš padne líc.",
+          "right": "P(líc) je pořád 1/2.",
+          "why": "Mince nemá paměť – hody jsou nezávislé. Tato chyba se jmenuje „hráčský omyl“."
+        },
+        {
+          "type": "summary",
+          "text": "P(A) = |A|/|Ω|, 0 ≤ P ≤ 1. Opačný jev: 1 − P(A). Neslučitelné „nebo“ → sčítej, nezávislé „a zároveň“ → násob. „Aspoň jeden“ = 1 − P(ani jeden)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "P(na kostce padne šestka) =",
+      "answers": [
+        "1/6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "P(na kostce padne sudé číslo) =",
+      "answers": [
+        "1/2",
+        "0,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Hodíme dvěma mincemi. P(dvakrát líc) =",
+      "answers": [
+        "1/4",
+        "0,25"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Hodíme dvěma kostkami. P(součet 7) =",
+      "answers": [
+        "1/6",
+        "6/36"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "P(A) + P(A′) = 1",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Pro nezávislé jevy A, B platí:",
+      "options": [
+        "P(A ∩ B) = P(A) · P(B)",
+        "P(A ∩ B) = P(A) + P(B)",
+        "P(A ∩ B) = 0",
+        "P(A ∪ B) = P(A) · P(B)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Dva hody kostkou. P(aspoň jedna šestka) =",
+      "answers": [
+        "11/36"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "V osudí 3 bílé a 2 černé koule. P(bílá) =",
+      "answers": [
+        "3/5",
+        "0,6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "V osudí 3 bílé a 2 černé. Táhneme 2 bez vracení. P(obě bílé) =",
+      "answers": [
+        "3/10",
+        "0,3"
+      ],
+      "explanation": "3/5 · 2/4"
+    },
+    {
+      "type": "truefalse",
+      "question": "Pravděpodobnost může být 1,2.",
+      "answer": false,
+      "explanation": "0 ≤ P ≤ 1"
+    },
+    {
+      "type": "choice",
+      "question": "Jev jistý má pravděpodobnost:",
+      "options": [
+        "1",
+        "0",
+        "0,5",
+        "100"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "10 % výrobků je vadných. Bereme nezávisle 2. P(oba dobré) =",
+      "answers": [
+        "0,81"
+      ],
+      "explanation": "0,9 · 0,9"
+    },
+    {
+      "type": "open",
+      "question": "Jak je definována klasická pravděpodobnost a kdy ji lze použít?",
+      "answer": "P(A) = počet příznivých výsledků / počet všech možných výsledků. Lze ji použít, když je výsledků konečně mnoho a jsou stejně pravděpodobné."
+    },
+    {
+      "type": "open",
+      "question": "Proč se u „aspoň jeden“ vyplatí počítat přes opačný jev?",
+      "answer": "Opačný jev „ani jednou“ má jen jednu možnost a snadno se spočítá. Pak P(aspoň jeden) = 1 − P(ani jeden)."
+    }
+  ]
+}

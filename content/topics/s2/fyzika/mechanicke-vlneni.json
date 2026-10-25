@@ -1,0 +1,383 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mechanicke-vlneni",
+  "title": "Mechanické vlnění a zvuk",
+  "emoji": "🌊",
+  "explanations": [
+    {
+      "title": "Lano a pružina",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hodíš kámen do rybníka a po hladině se rozběhnou kruhy. Lístek na vodě se ale jen pohupuje nahoru a dolů – neodplave s vlnou. Na stadionu dělají diváci „mexickou vlnu“: vlna oběhne stadion, ale každý divák zůstane na svém místě."
+        },
+        {
+          "type": "text",
+          "text": "Vlnění přenáší energii a informaci, aniž by se přesouvala látka. Tak k tobě dorazí zvuk, tak fungují ultrazvuk v nemocnici i seismografy, které zaznamenávají zemětřesení."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mechanické vlnění",
+          "definition": "Kmitání, které se předává z jedné částice prostředí na sousední. Každá částice jen kmitá na místě, ale rozruch putuje dál.",
+          "example": "Vlna na laně, vlny na vodě, zvuk ve vzduchu."
+        },
+        {
+          "type": "term",
+          "term": "Prostředí",
+          "definition": "Látka, kterou vlnění prochází (vzduch, voda, ocel). Bez prostředí se mechanické vlnění nešíří.",
+          "example": "Ve vesmírném vakuu neuslyšíš výbuch."
+        },
+        {
+          "type": "term",
+          "term": "Příčné vlnění",
+          "definition": "Částice kmitají **kolmo** ke směru, kterým vlna běží.",
+          "example": "Zakmitáš koncem lana nahoru a dolů – vlna běží podél lana."
+        },
+        {
+          "type": "term",
+          "term": "Podélné vlnění",
+          "definition": "Částice kmitají **ve směru**, kterým vlna běží. Vznikají zhuštění a zředění.",
+          "example": "Šťouchneš do konce pružiny „slinky“ – zhuštění běží podél ní. Tak se šíří zvuk."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď příklady. U každého si představ, kam se hýbou částice a kam běží vlna."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "příčné",
+              "podélné"
+            ],
+            "items": [
+              {
+                "text": "vlna na laně",
+                "group": 0
+              },
+              {
+                "text": "kmitající struna",
+                "group": 0
+              },
+              {
+                "text": "zvuk ve vzduchu",
+                "group": 1
+              },
+              {
+                "text": "zhuštění na pružině",
+                "group": 1
+              },
+              {
+                "text": "částice kmitají kolmo ke směru šíření",
+                "group": 0
+              },
+              {
+                "text": "částice kmitají ve směru šíření",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak vlnu popsat"
+        },
+        {
+          "type": "term",
+          "term": "Vlnová délka λ (lambda)",
+          "definition": "Vzdálenost mezi dvěma sousedními hřebeny vlny (nebo dvěma zhuštěními). Jednotka metr.",
+          "example": "Vlny na moři mají λ několik metrů."
+        },
+        {
+          "type": "term",
+          "term": "Frekvence f a rychlost v",
+          "definition": "Frekvence = kolikrát za sekundu částice kmitne (Hz). Rychlost = jak rychle vlna postupuje (m/s)."
+        },
+        {
+          "type": "text",
+          "text": "Za jednu periodu vlna postoupí právě o jednu vlnovou délku. Proto `v = λ · f`."
+        },
+        {
+          "type": "example",
+          "question": "Zvuk o frekvenci 680 Hz se ve vzduchu šíří rychlostí 340 m/s. Jaká je vlnová délka?",
+          "answer": "λ = v / f = 340 / 680 = **0,5 m**."
+        },
+        {
+          "type": "heading",
+          "text": "Zvuk"
+        },
+        {
+          "type": "text",
+          "text": "Zvuk je podélné vlnění. Výška tónu odpovídá frekvenci. Člověk slyší asi od **16 Hz do 20 kHz**. Nižší frekvence je **infrazvuk** (sloni, zemětřesení), vyšší **ultrazvuk** (netopýři, lékařská vyšetření)."
+        },
+        {
+          "type": "text",
+          "text": "Když kolem projede sanitka, zní při přijíždění výš a při odjíždění níž. To je **Dopplerův jev** – pohyb zdroje mění frekvenci, kterou slyšíš."
+        },
+        {
+          "type": "heading",
+          "text": "Když se vlny potkají"
+        },
+        {
+          "type": "text",
+          "text": "**Interference** = skládání vln. Hřeben + hřeben = větší hřeben (zesílení). Hřeben + důl = vyrušení (zeslabení). Když se vlna odráží na konci struny a potká se sama se sebou, vzniká **stojaté vlnění**: některá místa stále stojí (**uzly**), jiná kmitají nejvíc (**kmitny**)."
+        },
+        {
+          "type": "example",
+          "question": "Na struně jsou sousední uzly 0,3 m od sebe. Jaká je vlnová délka?",
+          "answer": "Sousední uzly jsou od sebe půl vlnové délky. λ = 2 · 0,3 = **0,6 m**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vlna na vodě odnáší vodu s sebou.",
+          "right": "Vlnění přenáší energii, ne látku. Částice vody jen kmitají na místě.",
+          "why": "Proto lístek na hladině jen pohupuje a neodplave – postupuje jen rozruch."
+        },
+        {
+          "type": "summary",
+          "text": "Vlnění = šíření kmitání prostředím; přenáší energii, ne látku. Příčné: kmitání kolmo, podélné: ve směru šíření (zvuk). v = λ · f."
+        }
+      ]
+    },
+    {
+      "title": "Vztahy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč má kytara krátké i dlouhé struny? Proč netopýr pozná, kde je stěna? Jak ultrazvuk „vidí“ miminko v bříšku? Všechno popisuje několik vztahů pro vlnění."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mechanické vlnění",
+          "definition": "Děj, při kterém se kmitání šíří od částice k částici pružného prostředí. Přenáší se energie, látka zůstává na místě. Ve vakuu se nešíří."
+        },
+        {
+          "type": "term",
+          "term": "Příčné a podélné vlnění",
+          "definition": "Příčné: částice kmitají kolmo ke směru šíření (vlna na laně, struna). Podélné: ve směru šíření, vznikají zhuštění a zředění (zvuk ve vzduchu)."
+        },
+        {
+          "type": "term",
+          "term": "Perioda T, frekvence f",
+          "definition": "T = doba jednoho kmitu (s), f = 1/T (Hz)."
+        },
+        {
+          "type": "term",
+          "term": "Vlnová délka λ",
+          "definition": "Vzdálenost, do které se vlnění rozšíří za jednu periodu – vzdálenost dvou nejbližších bodů, které kmitají stejně."
+        },
+        {
+          "type": "heading",
+          "text": "Základní vztah"
+        },
+        {
+          "type": "text",
+          "text": "`λ = v · T = v / f`, neboli `v = λ · f`."
+        },
+        {
+          "type": "text",
+          "text": "Rovnici v = λ · f si vyzkoušej na vahách: vlna s f = 5 Hz má rychlost 10 m/s. Vlevo 5 · λ (λ je tu x), vpravo 10. Kolik je λ?"
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 5,
+            "b": 0,
+            "c": 10
+          }
+        },
+        {
+          "type": "example",
+          "question": "Vlna má λ = 2 m a f = 5 Hz. Jakou rychlostí se šíří?",
+          "answer": "v = λ · f = 2 · 5 = **10 m/s**."
+        },
+        {
+          "type": "heading",
+          "text": "Interference a stojaté vlnění"
+        },
+        {
+          "type": "term",
+          "term": "Interference",
+          "definition": "Skládání dvou vlnění, která se potkají. Výsledná výchylka je součet výchylek."
+        },
+        {
+          "type": "term",
+          "term": "Dráhový rozdíl",
+          "definition": "O kolik delší cestu urazila jedna vlna než druhá.",
+          "example": "Zesílení (maximum): dráhový rozdíl = celý násobek λ (0, λ, 2λ…). Zeslabení (minimum): lichý násobek λ/2."
+        },
+        {
+          "type": "term",
+          "term": "Stojaté vlnění",
+          "definition": "Vzniká interferencí dvou stejných vlnění, která běží proti sobě (přímá a odražená vlna). Má **uzly** (stálý klid) a **kmitny** (největší výchylka). Sousední uzly jsou od sebe **λ/2**."
+        },
+        {
+          "type": "example",
+          "question": "Struna délky 0,5 m je upevněná na obou koncích. Jaká je nejdelší vlnová délka stojatého vlnění?",
+          "answer": "Na obou koncích musí být uzel. Nejméně uzlů = jen ty dva, mezi nimi λ/2. Tedy L = λ/2 → λ = 2 · 0,5 = **1 m**."
+        },
+        {
+          "type": "heading",
+          "text": "Zvuk"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Pásmo",
+            "Frekvence",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "infrazvuk",
+              "pod 16 Hz",
+              "zemětřesení, sloni"
+            ],
+            [
+              "slyšitelný zvuk",
+              "16 Hz – 20 kHz",
+              "řeč, hudba"
+            ],
+            [
+              "ultrazvuk",
+              "nad 20 kHz",
+              "netopýři, sonografie"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**Dopplerův jev**: když se zdroj a pozorovatel přibližují, slyšíme vyšší frekvenci; když se vzdalují, nižší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Sousední uzly stojatého vlnění jsou od sebe λ.",
+          "right": "Sousední uzly jsou od sebe λ/2.",
+          "why": "Na jedné vlnové délce jsou dva „pupínky“ stojaté vlny – každý mezi dvěma uzly. Proto je mezi sousedními uzly jen polovina λ."
+        },
+        {
+          "type": "summary",
+          "text": "`v = λ·f`. Maximum interference: dráhový rozdíl kλ. Stojaté vlnění: uzly po λ/2. Slyšitelný zvuk 16 Hz – 20 kHz. Mechanické vlnění potřebuje prostředí."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Zvuk 680 Hz se šíří rychlostí 340 m/s. Vlnová délka v m =",
+      "answers": [
+        "0,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Vlna má λ = 2 m a f = 5 Hz. Rychlost šíření v m/s =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Ve stojatém vlnění jsou sousední uzly vzdáleny 0,3 m. Vlnová délka v m =",
+      "answers": [
+        "0,6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Struna délky 0,5 m je upevněna na obou koncích. Nejdelší vlnová délka stojatého vlnění v m =",
+      "answers": [
+        "1"
+      ],
+      "explanation": "L = λ/2"
+    },
+    {
+      "type": "choice",
+      "question": "Jakým vlněním je zvuk ve vzduchu?",
+      "options": [
+        "podélným",
+        "příčným",
+        "elektromagnetickým"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Mechanické vlnění se šíří i ve vakuu.",
+      "answer": false
+    },
+    {
+      "type": "truefalse",
+      "question": "Vlnění přenáší energii, ale ne látku.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co je Dopplerův jev?",
+      "options": [
+        "změna frekvence při pohybu zdroje nebo pozorovatele",
+        "ohyb vlnění za překážkou",
+        "odraz zvuku"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdy dojde při interferenci dvou stejných vln k maximálnímu zesílení?",
+      "options": [
+        "dráhový rozdíl je celý násobek λ",
+        "dráhový rozdíl je λ/2",
+        "nikdy"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj zvuk s frekvenčním pásmem.",
+      "pairs": [
+        [
+          "infrazvuk",
+          "pod 16 Hz"
+        ],
+        [
+          "slyšitelný zvuk",
+          "16 Hz – 20 kHz"
+        ],
+        [
+          "ultrazvuk",
+          "nad 20 kHz"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi příčným a podélným vlněním?",
+      "answer": "U příčného kmitají částice kolmo ke směru šíření (vlna na laně). U podélného ve směru šíření, vznikají zhuštění a zředění (zvuk ve vzduchu)."
+    },
+    {
+      "type": "open",
+      "question": "Jak vzniká stojaté vlnění?",
+      "answer": "Interferencí dvou stejných vlnění postupujících proti sobě, např. přímé a odražené vlny na struně. Vznikají uzly (nulová výchylka) a kmitny (největší výchylka)."
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kvadraticka-funkce",
+  "title": "Kvadratická funkce",
+  "emoji": "🌈",
+  "generator": "quadratic",
+  "explanations": [
+    {
+      "title": "Posouváním",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proud vody z fontány, dráha hozeného míče, oblouk mostu – to všechno má tvar **paraboly**. A kde je nejvyšší bod? Kde dopadne? To jsou otázky na kvadratickou funkci."
+        },
+        {
+          "type": "text",
+          "text": "V praxi se s ní hledá i nejlepší možnost: jaká cena přinese největší zisk, jaký tvar ohrady má největší plochu. To je vždy vrchol paraboly."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kvadratická funkce",
+          "definition": "Funkce y = ax² + bx + c, kde a ≠ 0. Nejvyšší mocnina x je druhá.",
+          "example": "y = x² − 4x + 3"
+        },
+        {
+          "type": "term",
+          "term": "Parabola",
+          "definition": "Graf kvadratické funkce – souměrný oblouk tvaru U (nebo převráceného U)."
+        },
+        {
+          "type": "term",
+          "term": "Vrchol V",
+          "definition": "Bod, kde se parabola otáčí – nejnižší (minimum) nebo nejvyšší (maximum) bod grafu.",
+          "example": "y = x² má vrchol V[0; 0]."
+        },
+        {
+          "type": "term",
+          "term": "Osa paraboly",
+          "definition": "Svislá přímka vrcholem. Parabola je podle ní zrcadlově souměrná."
+        },
+        {
+          "type": "heading",
+          "text": "Základ: y = x²"
+        },
+        {
+          "type": "text",
+          "text": "Spočítej pár bodů: x = 0 → 0, x = ±1 → 1, x = ±2 → 4, x = ±3 → 9. Vyjde U s vrcholem v počátku. Z této základní paraboly vznikne každá jiná **posunutím a roztažením**."
+        },
+        {
+          "type": "heading",
+          "text": "Co dělají jednotlivá čísla"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**a > 0**: otevřená nahoru, vrchol je minimum. **a < 0**: otevřená dolů, vrchol je maximum.",
+            "**|a| > 1**: užší (rychleji stoupá), |a| < 1: širší. Svislé čáry |a| znamenají „a bez znaménka“.",
+            "**y = (x − m)²**: posun o m **doprava** (pro m záporné doleva).",
+            "**y = x² + n**: posun o n nahoru (pro n záporné dolů)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej: změň a na 2 – parabola se zúží. Pak na −1 – obrátí se dolů. Hýbej c – celá parabola jezdí nahoru a dolů."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": 0,
+            "c": 0
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "y = (x − 3)² je posunutá o 3 doleva (kvůli minusu).",
+          "right": "Je posunutá o 3 doprava.",
+          "why": "Vrchol je tam, kde je závorka nula: x − 3 = 0 → x = 3. To je vpravo od nuly."
+        },
+        {
+          "type": "heading",
+          "text": "Vrcholový tvar"
+        },
+        {
+          "type": "term",
+          "term": "Vrcholový tvar",
+          "definition": "y = a(x − m)² + n. Vrchol přečteš hned: V[m; n].",
+          "example": "y = (x − 2)² + 3 má vrchol V[2; 3]."
+        },
+        {
+          "type": "example",
+          "question": "Urči vrchol a obor hodnot y = (x + 1)² − 4.",
+          "answer": "x + 1 = x − (−1), takže m = −1, n = −4. V[−1; −4]. Parabola je otevřená nahoru, nejníž je −4: H(f) = **⟨−4; ∞)**."
+        },
+        {
+          "type": "example",
+          "question": "Má y = −x² + 2 maximum, nebo minimum? Jaké?",
+          "answer": "a = −1 < 0 → otevřená dolů, vrchol je **maximum**. Vrchol [0; 2], maximum je **2**."
+        },
+        {
+          "type": "summary",
+          "text": "Parabola y = a(x − m)² + n vznikne z y = x²: a určuje směr (znaménko) a šířku, m posun doprava, n posun nahoru. Vrchol je V[m; n]."
+        }
+      ]
+    },
+    {
+      "title": "Výpočtem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zahradník má 20 m pletiva a chce ohradit obdélník s co největší plochou. Plocha je x · (10 − x) = −x² + 10x – kvadratická funkce. Největší plocha je ve vrcholu."
+        },
+        {
+          "type": "text",
+          "text": "Funkce ale většinou nedostaneš v hezkém tvaru. Naučíš se z obecného předpisu y = ax² + bx + c spočítat všechno důležité: vrchol, průsečíky s osami a obor hodnot."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kvadratická funkce",
+          "definition": "y = ax² + bx + c (a ≠ 0). Grafem je parabola – souměrný oblouk."
+        },
+        {
+          "type": "term",
+          "term": "Vrchol",
+          "definition": "Nejnižší nebo nejvyšší bod paraboly. Jeho x-ová souřadnice je **x₀ = −b/(2a)**."
+        },
+        {
+          "type": "term",
+          "term": "Průsečíky s osami",
+          "definition": "S osou y: dosadíš x = 0, vyjde c. S osou x: řešíš ax² + bx + c = 0."
+        },
+        {
+          "type": "term",
+          "term": "Doplnění na čtverec",
+          "definition": "Úprava na tvar (x − m)² + n pomocí vzorce (x − m)² = x² − 2mx + m².",
+          "example": "x² + 6x + 10 = (x² + 6x + 9) + 1 = (x + 3)² + 1."
+        },
+        {
+          "type": "heading",
+          "text": "Postup – vyšetření paraboly"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podle znaménka a urči směr: a > 0 nahoru, a < 0 dolů.",
+            "Vrchol: x₀ = −b/(2a), y₀ dosazením x₀ do předpisu.",
+            "Osa souměrnosti je přímka x = x₀.",
+            "Průsečík s osou y je [0; c].",
+            "Průsečíky s osou x: vyřeš ax² + bx + c = 0.",
+            "Obor hodnot: od y₀ nahoru (a > 0), nebo od y₀ dolů (a < 0)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Vyšetři y = x² − 4x + 3.",
+          "answer": "a = 1 > 0 → nahoru. x₀ = 4/2 = 2, y₀ = 4 − 8 + 3 = −1 → **V[2; −1]**. Osa y: **[0; 3]**. Osa x: x² − 4x + 3 = (x − 1)(x − 3) = 0 → **x = 1 a x = 3**. H(f) = ⟨−1; ∞)."
+        },
+        {
+          "type": "text",
+          "text": "Zkontroluj v grafu: vidíš vrchol [2; −1] a průsečíky 1 a 3? Změň c na 4 – vrchol se zvedne na osu x (jediný kořen 2)."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": -4,
+            "c": 3
+          }
+        },
+        {
+          "type": "example",
+          "question": "Najdi minimum y = x² + 6x + 10.",
+          "answer": "Doplním na čtverec: (x + 3)² + 1. Závorka na druhou je nejméně 0 (pro x = −3), proto minimum je **1**."
+        },
+        {
+          "type": "example",
+          "question": "Jaká je osa souměrnosti y = x² − 6x + 1?",
+          "answer": "x₀ = −b/(2a) = 6/2 = 3. Osa je přímka **x = 3**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "x₀ = b/(2a) = −6/2 = −3 pro y = x² − 6x + 1",
+          "right": "x₀ = −b/(2a) = −(−6)/2 = 3",
+          "why": "Ve vzorci je minus před b. Když je b záporné, vyjde x₀ kladné."
+        },
+        {
+          "type": "text",
+          "text": "Zahradník: y = −x² + 10x, x₀ = −10/(−2) = 5. Obdélník 5 × 5 m, plocha 25 m² – největší možná."
+        },
+        {
+          "type": "summary",
+          "text": "Vrchol: x₀ = −b/(2a), y₀ dosazením (nebo doplň na čtverec). Osa y v [0; c], osa x z kvadratické rovnice. a > 0: minimum, H = ⟨y₀; ∞); a < 0: maximum, H = (−∞; y₀⟩."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "y = (x − 2)² + 3. x-ová souřadnice vrcholu =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "y = x² − 4x + 3. y-ová souřadnice vrcholu =",
+      "answers": [
+        "−1",
+        "-1"
+      ],
+      "explanation": "x₀ = 2, y = 4 − 8 + 3"
+    },
+    {
+      "type": "choice",
+      "question": "Pro a < 0 je parabola:",
+      "options": [
+        "otevřená dolů",
+        "otevřená nahoru",
+        "přímka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "y = x² − 4x + 3. Průsečík s osou y: y =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Průsečíky y = x² − 4x + 3 s osou x:",
+      "options": [
+        "x = 1 a x = 3",
+        "x = −1 a x = −3",
+        "x = 2",
+        "nejsou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "y = −x² + 2 má maximum 2.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "H(f) pro y = (x + 1)² − 4:",
+      "options": [
+        "⟨−4; ∞)",
+        "⟨−1; ∞)",
+        "ℝ",
+        "(−∞; −4⟩"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Graf y = (x − 3)² vznikne z y = x² posunem o 3:",
+      "options": [
+        "doprava",
+        "doleva",
+        "nahoru",
+        "dolů"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Minimum funkce y = x² + 6x + 10 =",
+      "answers": [
+        "1"
+      ],
+      "explanation": "(x + 3)² + 1"
+    },
+    {
+      "type": "truefalse",
+      "question": "Parabola y = 2x² je užší než y = x².",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Osa souměrnosti paraboly y = x² − 6x + 1:",
+      "options": [
+        "x = 3",
+        "x = −3",
+        "x = 6",
+        "y = 1"
+      ],
+      "answer": 0,
+      "explanation": "x₀ = −b/2a = 6/2"
+    },
+    {
+      "type": "open",
+      "question": "Jak najdeš vrchol paraboly y = ax² + bx + c?",
+      "answer": "Doplním na čtverec do tvaru a(x − m)² + n, vrchol je V[m; n]. Nebo spočítám x₀ = −b/2a a dosadím do předpisu."
+    },
+    {
+      "type": "open",
+      "question": "Jak ovlivňuje koeficient a tvar paraboly?",
+      "answer": "Znaménko a určuje směr: a > 0 otevřená nahoru, a < 0 dolů. Velikost |a| určuje šířku: čím větší, tím užší."
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "financni-matematika",
+  "title": "Finanční matematika",
+  "emoji": "🏦",
+  "generator": "percent",
+  "explanations": [
+    {
+      "title": "Spoření",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když dáš peníze do banky, banka je půjčuje dalším lidem – a tobě za to platí. Když si naopak půjčíš ty, platíš bance. Ta platba za půjčení peněz se jmenuje **úrok**."
+        },
+        {
+          "type": "text",
+          "text": "Kdo rozumí úrokům, ví, jak spořit výhodně a kterou půjčku si raději nebrat. To se hodí celý život."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jistina",
+          "definition": "Částka, kterou jsi uložil nebo si půjčil.",
+          "example": "Uložíš 10 000 Kč – jistina je 10 000 Kč."
+        },
+        {
+          "type": "term",
+          "term": "Úrok",
+          "definition": "Peníze navíc za půjčení peněz. Při spoření je dostáváš, při půjčce platíš.",
+          "example": "Po roce dostaneš 1 000 Kč úroku."
+        },
+        {
+          "type": "term",
+          "term": "Úroková míra",
+          "definition": "Kolik procent z jistiny činí úrok za rok. Zkratka **p. a.** (latinsky per annum) znamená „ročně“.",
+          "example": "10 % p. a. z 10 000 Kč = 1 000 Kč za rok."
+        },
+        {
+          "type": "heading",
+          "text": "Peníze, které rostou"
+        },
+        {
+          "type": "text",
+          "text": "Uložíš 10 000 Kč s úrokem 10 % ročně. Po roce dostaneš 10 % z 10 000 = 1 000 Kč. Máš 11 000 Kč."
+        },
+        {
+          "type": "text",
+          "text": "Peníze necháš v bance. Druhý rok se počítá 10 % už z 11 000 – to je 1 100 Kč. Máš **12 100 Kč**. Úrok vynáší další úrok. Tomu se říká **složené úročení**."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se, jak sloupce rostou rok od roku čím dál víc."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Kč",
+            "items": [
+              {
+                "label": "start",
+                "value": 10000
+              },
+              {
+                "label": "1. rok",
+                "value": 11000
+              },
+              {
+                "label": "2. rok",
+                "value": 12100
+              },
+              {
+                "label": "3. rok",
+                "value": 13310
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik je úrok z 10 000 Kč při 2 % ročně za 1 rok?",
+          "answer": "1 % z 10 000 je 100 Kč, 2 % je **200 Kč**."
+        },
+        {
+          "type": "heading",
+          "text": "Daň z úroku"
+        },
+        {
+          "type": "text",
+          "text": "Z úroku na spořicím účtu si v Česku stát bere daň **15 %**. Banka ji strhne sama. Z úroku 200 Kč zaplatíš 30 Kč daně a dostaneš **170 Kč**."
+        },
+        {
+          "type": "heading",
+          "text": "Když si půjčuješ"
+        },
+        {
+          "type": "text",
+          "text": "Při půjčce platíš úrok a často i poplatky. Aby šly půjčky porovnat, banky musí uvádět **RPSN** (roční procentní sazba nákladů) – kolik procent ročně tě půjčka stojí **se vším**. Čím nižší RPSN, tím levnější půjčka."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Půjčka s nižším úrokem je vždy levnější.",
+          "right": "Porovnávej RPSN.",
+          "why": "Půjčka s nízkým úrokem může mít vysoké poplatky. RPSN zahrnuje úrok i poplatky."
+        },
+        {
+          "type": "summary",
+          "text": "Úrok = cena za půjčení peněz, v % z jistiny ročně. Při složeném úročení se úrok přičte a dál se úročí. U půjček porovnávej RPSN."
+        }
+      ]
+    },
+    {
+      "title": "Pojmy a výpočty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Finanční matematika jsou procenta v praxi: úroky, daně, DPH, inflace. Tady je přehled pojmů a postupy výpočtů, které se ti budou hodit u prvního účtu i první výplaty."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Procento",
+          "definition": "Setina celku. 1 % z 20 000 = 200.",
+          "example": "3 % = 0,03"
+        },
+        {
+          "type": "term",
+          "term": "Jistina",
+          "definition": "Uložená nebo půjčená částka.",
+          "example": "20 000 Kč na účtu"
+        },
+        {
+          "type": "term",
+          "term": "Jednoduché úročení",
+          "definition": "Úrok se každý rok počítá jen z původní jistiny.",
+          "example": "50 000 Kč, 6 % ročně: každý rok 3 000 Kč."
+        },
+        {
+          "type": "term",
+          "term": "Složené úročení",
+          "definition": "Úrok se přičte k jistině a příští rok se úročí i on.",
+          "example": "10 000 → 11 000 → 12 100 Kč při 10 %."
+        },
+        {
+          "type": "term",
+          "term": "DPH",
+          "definition": "Daň z přidané hodnoty – daň připočtená k ceně zboží. Základní sazba v Česku je 21 %.",
+          "example": "1 000 Kč + 21 % = 1 210 Kč"
+        },
+        {
+          "type": "term",
+          "term": "Inflace",
+          "definition": "Průměrný růst cen. Za stejné peníze si pak koupíš méně.",
+          "example": "Inflace 5 %: co stálo 100 Kč, stojí v průměru 105 Kč."
+        },
+        {
+          "type": "heading",
+          "text": "Přehled"
+        },
+        {
+          "type": "table",
+          "head": [
+            "pojem",
+            "význam"
+          ],
+          "rows": [
+            [
+              "úroková míra",
+              "kolik % z jistiny za rok (p. a.)"
+            ],
+            [
+              "daň z úroku",
+              "15 % z úroku"
+            ],
+            [
+              "RPSN",
+              "celková roční cena úvěru v % (úrok i poplatky)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jednoduchý úrok krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Jistina 20 000 Kč, 3 % ročně, 1 rok.",
+            "Úrok = jistina · p/100 · počet let = 20 000 · 0,03 · 1 = 600 Kč.",
+            "Daň 15 % z úroku: 600 · 0,15 = 90 Kč.",
+            "Čistý úrok: 600 − 90 = 510 Kč."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Půjčka 50 000 Kč, jednoduchý úrok 6 % ročně. Úrok za 2 roky?",
+          "answer": "50 000 · 0,06 · 2 = **6 000 Kč**."
+        },
+        {
+          "type": "example",
+          "question": "10 000 Kč, složené úročení 10 %, 2 roky (bez daně)?",
+          "answer": "Každý rok · 1,1: 10 000 · 1,1 = 11 000, · 1,1 = **12 100 Kč**."
+        },
+        {
+          "type": "example",
+          "question": "Cena bez DPH 1 000 Kč, DPH 21 %. Cena s DPH?",
+          "answer": "1 000 · 1,21 = **1 210 Kč**."
+        },
+        {
+          "type": "text",
+          "text": "Porovnej v grafu jednoduché a složené úročení 10 000 Kč při 10 % po 3 letech."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Kč",
+            "items": [
+              {
+                "label": "jednoduché",
+                "value": 13000
+              },
+              {
+                "label": "složené",
+                "value": 13310
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Úrok 200 Kč, daň 15 % → dostanu 200 − 15 = 185 Kč.",
+          "right": "15 % z 200 = 30 Kč, dostanu 170 Kč.",
+          "why": "15 % není 15 Kč. Je to 15 setin z úroku: 200 · 0,15 = 30."
+        },
+        {
+          "type": "summary",
+          "text": "Úrok = jistina · p/100 · roky (jednoduchý). Složený: každý rok násob (1 + p/100). Daň z úroku 15 %. Půjčky porovnávej podle RPSN."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Úrok z 10 000 Kč při 2 % ročně za 1 rok (v Kč):",
+      "answers": [
+        "200"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Úrok 200 Kč, daň 15 %. Kolik Kč dostaneš čistého?",
+      "answers": [
+        "170"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "10 000 Kč, 10 % ročně, složené úročení, 2 roky (bez daně). Kolik Kč?",
+      "answers": [
+        "12100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Cena bez DPH 1 000 Kč, DPH 21 %. Cena s DPH v Kč?",
+      "answers": [
+        "1210"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je jistina?",
+      "options": [
+        "půjčená nebo uložená částka",
+        "úrok za rok",
+        "poplatek bance",
+        "daň"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která půjčka je výhodnější?",
+      "options": [
+        "RPSN 8 %",
+        "RPSN 15 %",
+        "RPSN 25 %",
+        "nelze poznat"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Při složeném úročení roste úrok každý rok.",
+      "answer": true,
+      "explanation": "Úročí se i předchozí úroky."
+    },
+    {
+      "type": "input",
+      "question": "Půjčka 50 000 Kč, úrok 6 % ročně (jednoduchý). Úrok za 2 roky v Kč?",
+      "answers": [
+        "6000"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "p. a. znamená „za rok“.",
+      "answer": true,
+      "explanation": "per annum"
+    },
+    {
+      "type": "choice",
+      "question": "Inflace 5 % znamená, že…",
+      "options": [
+        "ceny v průměru vzrostly o 5 %",
+        "mzdy vzrostly o 5 %",
+        "banka dává úrok 5 %",
+        "ceny klesly o 5 %"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi jednoduchým a složeným úročením?",
+      "answer": "U jednoduchého se úrok počítá stále jen z jistiny. U složeného se úrok přičte k jistině a příští rok se úročí i on."
+    },
+    {
+      "type": "open",
+      "question": "Na co si dát pozor při braní půjčky?",
+      "answer": "Porovnat RPSN, protože zahrnuje úrok i poplatky. Zjistit celkovou částku, kterou vrátím, a zda splátky zvládnu."
+    }
+  ]
+}

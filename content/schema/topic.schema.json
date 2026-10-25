@@ -1,0 +1,3751 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sprtam.cz/schema/topic.schema.json",
+  "title": "Šprtám – téma",
+  "$comment": "Generováno z src/content/format.ts a src/widgets/ (npm run content:generate). Needitovat ručně.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "format": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1,
+      "description": "Verze formátu, teď 1."
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Stejné jako název souboru. Kebab-case ASCII. NIKDY SE NEMĚNÍ – je na něm uložený pokrok."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Název tématu."
+    },
+    "emoji": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Jedno výstižné emoji."
+    },
+    "generator": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Generátor dalších příkladů z src/quiz/generators.ts (jen matematika a fyzika)."
+    },
+    "explanations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "$schema": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Krátký název přístupu, 1–3 slova: \"Na pizze\", \"Krok za krokem\"."
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "heading",
+                    "text",
+                    "term",
+                    "mistake",
+                    "summary",
+                    "list",
+                    "steps",
+                    "example",
+                    "table",
+                    "picture",
+                    "widget"
+                  ]
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "heading"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "$schema": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "const": "heading"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Krátký nadpis části výkladu, např. \"O čem to je\"."
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "text"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Nadpis uvnitř vysvětlení."
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "text"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "$schema": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "const": "text"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Odstavec."
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "text"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Odstavec textu."
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "term"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "$schema": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "const": "term"
+                      },
+                      "term": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Pojem, např. \"Jmenovatel\"."
+                      },
+                      "definition": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Co pojem znamená, obyčejnými slovy."
+                      },
+                      "example": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Konkrétní příklad."
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "term",
+                      "definition"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Nový pojem – vysvětlený dřív, než se poprvé použije."
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "mistake"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "$schema": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "const": "mistake"
+                      },
+                      "wrong": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Chybné řešení nebo tvrzení."
+                      },
+                      "right": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Správné řešení."
+                      },
+                      "why": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Proč je to tak – krátce."
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "wrong",
+                      "right",
+                      "why"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Častá chyba: špatně, správně a proč."
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "summary"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "$schema": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "const": "summary"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Pravidlo nebo shrnutí v 1–3 větách."
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "text"
+                    ],
+                    "additionalProperties": false,
+                    "description": "To hlavní k zapamatování, zvýrazněné."
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "list"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "$schema": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "const": "list"
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "Položka."
+                        },
+                        "minItems": 1
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "items"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Odrážkový seznam."
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "steps"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "$schema": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "const": "steps"
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "Krok."
+                        },
+                        "minItems": 1
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "items"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Postup krok za krokem; kroky se odkrývají postupně."
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "example"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "$schema": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "const": "example"
+                      },
+                      "question": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Zadání řešeného příkladu."
+                      },
+                      "answer": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Řešení i s postupem."
+                      },
+                      "widget": {
+                        "type": "object",
+                        "required": [
+                          "widget"
+                        ],
+                        "properties": {
+                          "widget": {
+                            "enum": [
+                              "counter",
+                              "number-line",
+                              "place-value",
+                              "column",
+                              "multiply",
+                              "fraction",
+                              "percent",
+                              "clock",
+                              "angle",
+                              "shape",
+                              "pythagoras",
+                              "balance",
+                              "linear",
+                              "quadratic",
+                              "flip",
+                              "sort",
+                              "gap",
+                              "parts",
+                              "cycle",
+                              "timeline",
+                              "bars"
+                            ]
+                          }
+                        },
+                        "allOf": [
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "counter"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "counter"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "emoji": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "description": "Co se počítá – jedno emoji, např. \"🍎\"."
+                                    },
+                                    "start": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 50,
+                                      "description": "Kolik věcí je vidět na začátku. Výchozí 3."
+                                    },
+                                    "max": {
+                                      "type": "integer",
+                                      "minimum": 1,
+                                      "maximum": 50,
+                                      "description": "Nejvíc věcí, kolik jde přidat. Výchozí 20."
+                                    }
+                                  },
+                                  "required": [
+                                    "emoji"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Počítadlo: Řada obrázků (emoji); tlačítky + a − dítě přidává a ubírá a vidí, kolik jich je."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "number-line"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "number-line"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "min": {
+                                      "type": "number",
+                                      "description": "Číslo na levém konci osy."
+                                    },
+                                    "max": {
+                                      "type": "number",
+                                      "description": "Číslo na pravém konci osy."
+                                    },
+                                    "step": {
+                                      "type": "number",
+                                      "minimum": 0.001,
+                                      "description": "Vzdálenost mezi dílky. Výchozí 1. Nejvýš 40 dílků: (max − min) / step ≤ 40."
+                                    },
+                                    "start": {
+                                      "type": "number",
+                                      "description": "Kde stojí tečka na začátku. Výchozí min."
+                                    },
+                                    "hop": {
+                                      "type": "number",
+                                      "description": "Délka skoku. Když je zadaný spolu se start, dítě tečku neposouvá, ale tlačítkem skáče od start o hop (záporný = doleva) – sčítání a odčítání na ose."
+                                    }
+                                  },
+                                  "required": [
+                                    "min",
+                                    "max"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Číselná osa: Osa s dílky a tečkou. Dítě tečku táhne (a vidí číslo), nebo s ní tlačítkem skáče o zadaný krok."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "place-value"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "place-value"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 999,
+                                      "description": "Počáteční číslo (0–999)."
+                                    }
+                                  },
+                                  "required": [
+                                    "value"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Stovky, desítky, jednotky: Číslo rozložené na čtverce (stovky), tyčky (desítky) a kostičky (jednotky). Tlačítky + a − u každého řádu se číslo mění."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "column"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "column"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "a": {
+                                      "anyOf": [
+                                        {
+                                          "type": "number",
+                                          "minimum": 0
+                                        },
+                                        {
+                                          "type": "string",
+                                          "minLength": 1,
+                                          "pattern": "^[0-9 ]+(,[0-9]+)?$"
+                                        }
+                                      ],
+                                      "description": "Číslo; jako text i s mezerami mezi řády nebo s desetinnou čárkou: 12500, \"12 500\", \"3,75\"."
+                                    },
+                                    "b": {
+                                      "anyOf": [
+                                        {
+                                          "type": "number",
+                                          "minimum": 0
+                                        },
+                                        {
+                                          "type": "string",
+                                          "minLength": 1,
+                                          "pattern": "^[0-9 ]+(,[0-9]+)?$"
+                                        }
+                                      ],
+                                      "description": "Číslo; jako text i s mezerami mezi řády nebo s desetinnou čárkou: 12500, \"12 500\", \"3,75\"."
+                                    },
+                                    "op": {
+                                      "enum": [
+                                        "+",
+                                        "-",
+                                        "·",
+                                        ":"
+                                      ],
+                                      "description": "Početní operace: \"+\" sčítání, \"-\" odčítání (doplňováním), \"·\" násobení (i víceciferným číslem), \":\" dělení (jednociferným i víceciferným dělitelem). · a : jen s celými čísly."
+                                    }
+                                  },
+                                  "required": [
+                                    "a",
+                                    "b",
+                                    "op"
+                                  ],
+                                  "additionalProperties": false,
+                                  "description": "Příklad a op b."
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Písemné počítání pod sebou: Příklad zapsaný pod sebou jako v sešitě. Dítě jde tlačítkem krok za krokem, každý krok je okomentovaný („7 a kolik je 12? 5, 1 si pamatuji“)."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "multiply"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "multiply"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "rows": {
+                                      "type": "integer",
+                                      "minimum": 1,
+                                      "maximum": 12,
+                                      "description": "Počet řádků teček na začátku (první činitel)."
+                                    },
+                                    "columns": {
+                                      "type": "integer",
+                                      "minimum": 1,
+                                      "maximum": 12,
+                                      "description": "Počet sloupců teček na začátku (druhý činitel)."
+                                    },
+                                    "max": {
+                                      "type": "integer",
+                                      "minimum": 2,
+                                      "maximum": 12,
+                                      "description": "Velikost mřížky – nejvíc řádků i sloupců. Výchozí 10."
+                                    }
+                                  },
+                                  "required": [
+                                    "rows",
+                                    "columns"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Násobení v mřížce: Mřížka teček: obarvené tečky tvoří obdélník řádky × sloupce. Posuvníky mění oba činitele a výsledek se hned přepočítá."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "fraction"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "fraction"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "numerator": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 36,
+                                      "description": "Čitatel – kolik dílků je obarvených. Smí být víc než jmenovatel (pak se ukáže víc celků), nejvýš 3× jmenovatel."
+                                    },
+                                    "denominator": {
+                                      "type": "integer",
+                                      "minimum": 1,
+                                      "maximum": 12,
+                                      "description": "Jmenovatel – na kolik stejných dílů je celek rozdělený."
+                                    }
+                                  },
+                                  "required": [
+                                    "numerator",
+                                    "denominator"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Zlomek: Koláč rozdělený na dílky s obarvenou částí a zlomkem pod ním. Dítě mění čitatel i jmenovatel a vidí krácení a desetinné číslo."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "percent"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "percent"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "percent": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 100,
+                                      "description": "Kolik procent je obarvených na začátku."
+                                    },
+                                    "of": {
+                                      "type": "number",
+                                      "minimum": 0,
+                                      "description": "Celek (základ). Když je zadaný, ukáže se i výsledek, např. 20 % z 300 = 60."
+                                    }
+                                  },
+                                  "required": [
+                                    "percent"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Procenta: Čtverec ze 100 políček; obarvená políčka jsou procenta. Posuvník mění počet procent a ukazuje desetinné číslo nebo část z celku."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "clock"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "clock"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "hours": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 23,
+                                      "description": "Hodiny na začátku (ciferník ukazuje 12 hodin, 15 = 3)."
+                                    },
+                                    "minutes": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 59,
+                                      "description": "Minuty na začátku. Ručičkou jde nastavit po 5 minutách."
+                                    }
+                                  },
+                                  "required": [
+                                    "hours",
+                                    "minutes"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Hodiny: Ručičkové hodiny. Dítě táhne velkou ručičku, malá jde s ní; pod ciferníkem je čas číslem i slovy (čtvrt, půl, tři čtvrtě)."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "angle"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "angle"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "degrees": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "maximum": 360,
+                                      "description": "Velikost úhlu na začátku ve stupních."
+                                    }
+                                  },
+                                  "required": [
+                                    "degrees"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Úhel: Úhel se dvěma rameny; posuvníkem se otevírá po 5° a pod ním je velikost a druh úhlu (ostrý, pravý, tupý, přímý…)."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "shape"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "shape"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "shape": {
+                                      "enum": [
+                                        "square",
+                                        "rect",
+                                        "triangle",
+                                        "circle"
+                                      ],
+                                      "description": "Útvar: \"square\" čtverec, \"rect\" obdélník, \"triangle\" trojúhelník, \"circle\" kruh."
+                                    },
+                                    "a": {
+                                      "type": "integer",
+                                      "minimum": 1,
+                                      "maximum": 12,
+                                      "description": "Strana a (u trojúhelníku základna, u kruhu poloměr r, nejvýš 6). Výchozí 4."
+                                    },
+                                    "b": {
+                                      "type": "integer",
+                                      "minimum": 1,
+                                      "maximum": 10,
+                                      "description": "Strana b obdélníku nebo výška v trojúhelníku. Výchozí 3."
+                                    }
+                                  },
+                                  "required": [
+                                    "shape"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Obvod a obsah útvaru: Čtverec, obdélník, trojúhelník nebo kruh se čtverečkovou sítí. Posuvníky mění rozměry; pod útvarem je výpočet obsahu S a obvodu o."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "pythagoras"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "pythagoras"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "a": {
+                                      "type": "integer",
+                                      "minimum": 1,
+                                      "maximum": 12,
+                                      "description": "Délka první odvěsny na začátku."
+                                    },
+                                    "b": {
+                                      "type": "integer",
+                                      "minimum": 1,
+                                      "maximum": 12,
+                                      "description": "Délka druhé odvěsny na začátku."
+                                    }
+                                  },
+                                  "required": [
+                                    "a",
+                                    "b"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Pythagorova věta: Pravoúhlý trojúhelník se čtverci nad všemi stranami a jejich obsahy. Posuvníky mění odvěsny a ukazuje se c = √(a² + b²)."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "balance"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "balance"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "a": {
+                                      "type": "number",
+                                      "description": "Kolikrát x je vlevo (a v rovnici a · x + b = c). Nesmí být 0."
+                                    },
+                                    "b": {
+                                      "type": "number",
+                                      "description": "Číslo přičtené k x vlevo (b; záporné = odečtené)."
+                                    },
+                                    "c": {
+                                      "type": "number",
+                                      "description": "Číslo vpravo (c)."
+                                    }
+                                  },
+                                  "required": [
+                                    "a",
+                                    "b",
+                                    "c"
+                                  ],
+                                  "additionalProperties": false,
+                                  "description": "Rovnice a · x + b = c."
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Rovnice jako váhy: Rovnice a · x + b = c na rovnoramenných vahách. Dítě tlačítky dělá stejnou úpravu na obou stranách, dokud nezůstane x = …"
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "linear"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "linear"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "k": {
+                                      "type": "number",
+                                      "minimum": -5,
+                                      "maximum": 5,
+                                      "description": "Směrnice k v y = k · x + q (po 0,5)."
+                                    },
+                                    "q": {
+                                      "type": "number",
+                                      "minimum": -6,
+                                      "maximum": 6,
+                                      "description": "Posun q – kde přímka protne osu y."
+                                    }
+                                  },
+                                  "required": [
+                                    "k",
+                                    "q"
+                                  ],
+                                  "additionalProperties": false,
+                                  "description": "Funkce y = k · x + q."
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Lineární funkce: Graf přímky y = k · x + q v mřížce. Posuvníky k a q přímku naklánějí a posouvají; pod grafem je předpis a jestli roste, nebo klesá."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "quadratic"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "quadratic"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "a": {
+                                      "type": "number",
+                                      "minimum": -3,
+                                      "maximum": 3,
+                                      "description": "Koeficient a u x² (po 0,5, nesmí být 0): kladné = parabola otevřená nahoru."
+                                    },
+                                    "b": {
+                                      "type": "number",
+                                      "minimum": -6,
+                                      "maximum": 6,
+                                      "description": "Koeficient b u x."
+                                    },
+                                    "c": {
+                                      "type": "number",
+                                      "minimum": -6,
+                                      "maximum": 6,
+                                      "description": "Absolutní člen c – kde parabola protne osu y."
+                                    }
+                                  },
+                                  "required": [
+                                    "a",
+                                    "b",
+                                    "c"
+                                  ],
+                                  "additionalProperties": false,
+                                  "description": "Funkce y = a · x² + b · x + c."
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Kvadratická funkce: Graf paraboly y = a · x² + b · x + c. Posuvníky mění koeficienty; pod grafem je diskriminant a kořeny."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "flip"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "flip"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "cards": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "$schema": {
+                                            "type": "string"
+                                          },
+                                          "front": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "description": "Líc – otázka, pojem nebo slovo."
+                                          },
+                                          "back": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "description": "Rub – odpověď, která se ukáže po otočení."
+                                          }
+                                        },
+                                        "required": [
+                                          "front",
+                                          "back"
+                                        ],
+                                        "additionalProperties": false
+                                      },
+                                      "minItems": 1,
+                                      "maxItems": 12,
+                                      "description": "Karty. Ideálně 3–8."
+                                    }
+                                  },
+                                  "required": [
+                                    "cards"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Otáčecí kartičky: Kartičky s otázkou na líci; klepnutím se otočí a ukážou odpověď. Dítě si samo ověří, co ví."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "sort"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "sort"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "groups": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string",
+                                        "minLength": 1
+                                      },
+                                      "minItems": 2,
+                                      "maxItems": 4,
+                                      "description": "Názvy skupin (krabiček), do kterých se třídí."
+                                    },
+                                    "items": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "$schema": {
+                                            "type": "string"
+                                          },
+                                          "text": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "description": "Co se třídí."
+                                          },
+                                          "group": {
+                                            "type": "integer",
+                                            "minimum": 0,
+                                            "description": "Pořadí správné skupiny v groups, od 0."
+                                          }
+                                        },
+                                        "required": [
+                                          "text",
+                                          "group"
+                                        ],
+                                        "additionalProperties": false
+                                      },
+                                      "minItems": 2,
+                                      "maxItems": 14,
+                                      "description": "Položky; zobrazí se zamíchané. Ideálně 6–10."
+                                    }
+                                  },
+                                  "required": [
+                                    "groups",
+                                    "items"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Třídění do skupin: Zamíchané kartičky a 2–4 krabičky. Dítě vybere kartičku a pak krabičku; špatná volba zatřese, správná kartičku uloží."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "gap"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "gap"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "items": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "$schema": {
+                                            "type": "string"
+                                          },
+                                          "before": {
+                                            "type": "string",
+                                            "minLength": 0,
+                                            "description": "Text před mezerou (smí být prázdný)."
+                                          },
+                                          "after": {
+                                            "type": "string",
+                                            "minLength": 0,
+                                            "description": "Text za mezerou (smí být prázdný)."
+                                          },
+                                          "options": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "string",
+                                              "minLength": 1
+                                            },
+                                            "minItems": 2,
+                                            "maxItems": 4,
+                                            "description": "Možnosti k doplnění, např. [\"i\", \"y\"]."
+                                          },
+                                          "answer": {
+                                            "type": "integer",
+                                            "minimum": 0,
+                                            "description": "Pořadí správné možnosti v options, od 0."
+                                          }
+                                        },
+                                        "required": [
+                                          "before",
+                                          "after",
+                                          "options",
+                                          "answer"
+                                        ],
+                                        "additionalProperties": false
+                                      },
+                                      "minItems": 1,
+                                      "maxItems": 8,
+                                      "description": "Řádky k doplnění. Ideálně 3–6."
+                                    }
+                                  },
+                                  "required": [
+                                    "items"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Doplňovačka: Věty nebo slova s mezerou; dítě klepne na správnou možnost a mezera se doplní. Špatná možnost zatřese."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "parts"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "parts"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "words": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "$schema": {
+                                            "type": "string"
+                                          },
+                                          "parts": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "$schema": {
+                                                  "type": "string"
+                                                },
+                                                "text": {
+                                                  "type": "string",
+                                                  "minLength": 1,
+                                                  "description": "Část slova, např. \"pod\"."
+                                                },
+                                                "label": {
+                                                  "type": "string",
+                                                  "minLength": 1,
+                                                  "description": "Název části, např. \"předpona\". Stejné názvy mají stejnou barvu."
+                                                }
+                                              },
+                                              "required": [
+                                                "text",
+                                                "label"
+                                              ],
+                                              "additionalProperties": false
+                                            },
+                                            "minItems": 1,
+                                            "maxItems": 8,
+                                            "description": "Části slova zleva doprava; dohromady dají celé slovo."
+                                          }
+                                        },
+                                        "required": [
+                                          "parts"
+                                        ],
+                                        "additionalProperties": false
+                                      },
+                                      "minItems": 1,
+                                      "maxItems": 5,
+                                      "description": "Slova. Ideálně 1–3."
+                                    }
+                                  },
+                                  "required": [
+                                    "words"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Stavba slova: Slova rozdělená na barevné části; klepnutím se ukážou jejich názvy (předpona, kořen, přípona, koncovka…)."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "cycle"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "cycle"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "steps": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string",
+                                        "minLength": 1
+                                      },
+                                      "minItems": 2,
+                                      "maxItems": 8,
+                                      "description": "Kroky koloběhu v pořadí; po posledním následuje zase první. Ideálně 3–6, krátce."
+                                    }
+                                  },
+                                  "required": [
+                                    "steps"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Koloběh: Kroky v kruhu, které se samy postupně zvýrazňují; šipkami nebo klepnutím jde dítě krok po kroku."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "timeline"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "timeline"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "events": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "$schema": {
+                                            "type": "string"
+                                          },
+                                          "year": {
+                                            "type": "integer",
+                                            "description": "Rok; záporný = před naším letopočtem (−753 = 753 př. n. l.)."
+                                          },
+                                          "label": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "description": "Co se stalo (krátce, smí obsahovat **tučné**)."
+                                          }
+                                        },
+                                        "required": [
+                                          "year",
+                                          "label"
+                                        ],
+                                        "additionalProperties": false
+                                      },
+                                      "minItems": 2,
+                                      "maxItems": 12,
+                                      "description": "Události; seřadí se samy podle roku. Ideálně 3–8."
+                                    }
+                                  },
+                                  "required": [
+                                    "events"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Časová osa: Vodorovná osa s událostmi seřazenými podle roku; klepnutím se událost zvýrazní."
+                            }
+                          },
+                          {
+                            "if": {
+                              "properties": {
+                                "widget": {
+                                  "const": "bars"
+                                }
+                              },
+                              "required": [
+                                "widget"
+                              ]
+                            },
+                            "then": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "const": "bars"
+                                },
+                                "props": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$schema": {
+                                      "type": "string"
+                                    },
+                                    "unit": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "description": "Jednotka za hodnotou, např. \"mil. obyvatel\" nebo \"°C\"."
+                                    },
+                                    "items": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "$schema": {
+                                            "type": "string"
+                                          },
+                                          "label": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "description": "Popisek sloupce."
+                                          },
+                                          "value": {
+                                            "type": "number",
+                                            "description": "Hodnota; délka pruhu je poměrná k největší hodnotě."
+                                          }
+                                        },
+                                        "required": [
+                                          "label",
+                                          "value"
+                                        ],
+                                        "additionalProperties": false
+                                      },
+                                      "minItems": 2,
+                                      "maxItems": 12,
+                                      "description": "Porovnávané hodnoty. Ideálně 3–8."
+                                    }
+                                  },
+                                  "required": [
+                                    "items"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "required": [
+                                "widget",
+                                "props"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Sloupcový graf: Vodorovné pruhy, jejichž délka odpovídá hodnotě; pruhy při zobrazení vyrostou."
+                            }
+                          }
+                        ],
+                        "description": "Interaktivní widget: název (viz galerie /widgety) a jeho vlastnosti."
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "question",
+                      "answer"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Řešený příklad; řešení se ukáže po klepnutí. Volitelný widget se ukáže spolu s řešením (např. column)."
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "table"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "$schema": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "const": "table"
+                      },
+                      "head": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 0,
+                          "description": "Záhlaví sloupce (smí být prázdné, např. roh tabulky)."
+                        },
+                        "minItems": 1
+                      },
+                      "rows": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "minLength": 0,
+                            "description": "Buňka (smí být prázdná)."
+                          }
+                        },
+                        "minItems": 1,
+                        "description": "Řádky; každý má stejně buněk jako head."
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "head",
+                      "rows"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Tabulka."
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "picture"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "$schema": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "const": "picture"
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "minItems": 1,
+                        "description": "Emoji v řadě, např. [\"🍎\", \"🍎\", \"➕\", \"🍐\"]."
+                      },
+                      "caption": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Popisek pod obrázkem (čte ho i čtečka obrazovky)."
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "items"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Obrázek složený z emoji."
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "widget"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  },
+                  "then": {
+                    "type": "object",
+                    "required": [
+                      "widget"
+                    ],
+                    "properties": {
+                      "widget": {
+                        "enum": [
+                          "counter",
+                          "number-line",
+                          "place-value",
+                          "column",
+                          "multiply",
+                          "fraction",
+                          "percent",
+                          "clock",
+                          "angle",
+                          "shape",
+                          "pythagoras",
+                          "balance",
+                          "linear",
+                          "quadratic",
+                          "flip",
+                          "sort",
+                          "gap",
+                          "parts",
+                          "cycle",
+                          "timeline",
+                          "bars"
+                        ]
+                      }
+                    },
+                    "allOf": [
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "counter"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "counter"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "emoji": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "description": "Co se počítá – jedno emoji, např. \"🍎\"."
+                                },
+                                "start": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 50,
+                                  "description": "Kolik věcí je vidět na začátku. Výchozí 3."
+                                },
+                                "max": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 50,
+                                  "description": "Nejvíc věcí, kolik jde přidat. Výchozí 20."
+                                }
+                              },
+                              "required": [
+                                "emoji"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Počítadlo: Řada obrázků (emoji); tlačítky + a − dítě přidává a ubírá a vidí, kolik jich je."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "number-line"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "number-line"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "min": {
+                                  "type": "number",
+                                  "description": "Číslo na levém konci osy."
+                                },
+                                "max": {
+                                  "type": "number",
+                                  "description": "Číslo na pravém konci osy."
+                                },
+                                "step": {
+                                  "type": "number",
+                                  "minimum": 0.001,
+                                  "description": "Vzdálenost mezi dílky. Výchozí 1. Nejvýš 40 dílků: (max − min) / step ≤ 40."
+                                },
+                                "start": {
+                                  "type": "number",
+                                  "description": "Kde stojí tečka na začátku. Výchozí min."
+                                },
+                                "hop": {
+                                  "type": "number",
+                                  "description": "Délka skoku. Když je zadaný spolu se start, dítě tečku neposouvá, ale tlačítkem skáče od start o hop (záporný = doleva) – sčítání a odčítání na ose."
+                                }
+                              },
+                              "required": [
+                                "min",
+                                "max"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Číselná osa: Osa s dílky a tečkou. Dítě tečku táhne (a vidí číslo), nebo s ní tlačítkem skáče o zadaný krok."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "place-value"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "place-value"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 999,
+                                  "description": "Počáteční číslo (0–999)."
+                                }
+                              },
+                              "required": [
+                                "value"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Stovky, desítky, jednotky: Číslo rozložené na čtverce (stovky), tyčky (desítky) a kostičky (jednotky). Tlačítky + a − u každého řádu se číslo mění."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "column"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "column"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "a": {
+                                  "anyOf": [
+                                    {
+                                      "type": "number",
+                                      "minimum": 0
+                                    },
+                                    {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "pattern": "^[0-9 ]+(,[0-9]+)?$"
+                                    }
+                                  ],
+                                  "description": "Číslo; jako text i s mezerami mezi řády nebo s desetinnou čárkou: 12500, \"12 500\", \"3,75\"."
+                                },
+                                "b": {
+                                  "anyOf": [
+                                    {
+                                      "type": "number",
+                                      "minimum": 0
+                                    },
+                                    {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "pattern": "^[0-9 ]+(,[0-9]+)?$"
+                                    }
+                                  ],
+                                  "description": "Číslo; jako text i s mezerami mezi řády nebo s desetinnou čárkou: 12500, \"12 500\", \"3,75\"."
+                                },
+                                "op": {
+                                  "enum": [
+                                    "+",
+                                    "-",
+                                    "·",
+                                    ":"
+                                  ],
+                                  "description": "Početní operace: \"+\" sčítání, \"-\" odčítání (doplňováním), \"·\" násobení (i víceciferným číslem), \":\" dělení (jednociferným i víceciferným dělitelem). · a : jen s celými čísly."
+                                }
+                              },
+                              "required": [
+                                "a",
+                                "b",
+                                "op"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Příklad a op b."
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Písemné počítání pod sebou: Příklad zapsaný pod sebou jako v sešitě. Dítě jde tlačítkem krok za krokem, každý krok je okomentovaný („7 a kolik je 12? 5, 1 si pamatuji“)."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "multiply"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "multiply"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "rows": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 12,
+                                  "description": "Počet řádků teček na začátku (první činitel)."
+                                },
+                                "columns": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 12,
+                                  "description": "Počet sloupců teček na začátku (druhý činitel)."
+                                },
+                                "max": {
+                                  "type": "integer",
+                                  "minimum": 2,
+                                  "maximum": 12,
+                                  "description": "Velikost mřížky – nejvíc řádků i sloupců. Výchozí 10."
+                                }
+                              },
+                              "required": [
+                                "rows",
+                                "columns"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Násobení v mřížce: Mřížka teček: obarvené tečky tvoří obdélník řádky × sloupce. Posuvníky mění oba činitele a výsledek se hned přepočítá."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "fraction"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "fraction"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "numerator": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 36,
+                                  "description": "Čitatel – kolik dílků je obarvených. Smí být víc než jmenovatel (pak se ukáže víc celků), nejvýš 3× jmenovatel."
+                                },
+                                "denominator": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 12,
+                                  "description": "Jmenovatel – na kolik stejných dílů je celek rozdělený."
+                                }
+                              },
+                              "required": [
+                                "numerator",
+                                "denominator"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Zlomek: Koláč rozdělený na dílky s obarvenou částí a zlomkem pod ním. Dítě mění čitatel i jmenovatel a vidí krácení a desetinné číslo."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "percent"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "percent"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "percent": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 100,
+                                  "description": "Kolik procent je obarvených na začátku."
+                                },
+                                "of": {
+                                  "type": "number",
+                                  "minimum": 0,
+                                  "description": "Celek (základ). Když je zadaný, ukáže se i výsledek, např. 20 % z 300 = 60."
+                                }
+                              },
+                              "required": [
+                                "percent"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Procenta: Čtverec ze 100 políček; obarvená políčka jsou procenta. Posuvník mění počet procent a ukazuje desetinné číslo nebo část z celku."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "clock"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "clock"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "hours": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 23,
+                                  "description": "Hodiny na začátku (ciferník ukazuje 12 hodin, 15 = 3)."
+                                },
+                                "minutes": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 59,
+                                  "description": "Minuty na začátku. Ručičkou jde nastavit po 5 minutách."
+                                }
+                              },
+                              "required": [
+                                "hours",
+                                "minutes"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Hodiny: Ručičkové hodiny. Dítě táhne velkou ručičku, malá jde s ní; pod ciferníkem je čas číslem i slovy (čtvrt, půl, tři čtvrtě)."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "angle"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "angle"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "degrees": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 360,
+                                  "description": "Velikost úhlu na začátku ve stupních."
+                                }
+                              },
+                              "required": [
+                                "degrees"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Úhel: Úhel se dvěma rameny; posuvníkem se otevírá po 5° a pod ním je velikost a druh úhlu (ostrý, pravý, tupý, přímý…)."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "shape"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "shape"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "shape": {
+                                  "enum": [
+                                    "square",
+                                    "rect",
+                                    "triangle",
+                                    "circle"
+                                  ],
+                                  "description": "Útvar: \"square\" čtverec, \"rect\" obdélník, \"triangle\" trojúhelník, \"circle\" kruh."
+                                },
+                                "a": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 12,
+                                  "description": "Strana a (u trojúhelníku základna, u kruhu poloměr r, nejvýš 6). Výchozí 4."
+                                },
+                                "b": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 10,
+                                  "description": "Strana b obdélníku nebo výška v trojúhelníku. Výchozí 3."
+                                }
+                              },
+                              "required": [
+                                "shape"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Obvod a obsah útvaru: Čtverec, obdélník, trojúhelník nebo kruh se čtverečkovou sítí. Posuvníky mění rozměry; pod útvarem je výpočet obsahu S a obvodu o."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "pythagoras"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "pythagoras"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "a": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 12,
+                                  "description": "Délka první odvěsny na začátku."
+                                },
+                                "b": {
+                                  "type": "integer",
+                                  "minimum": 1,
+                                  "maximum": 12,
+                                  "description": "Délka druhé odvěsny na začátku."
+                                }
+                              },
+                              "required": [
+                                "a",
+                                "b"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Pythagorova věta: Pravoúhlý trojúhelník se čtverci nad všemi stranami a jejich obsahy. Posuvníky mění odvěsny a ukazuje se c = √(a² + b²)."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "balance"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "balance"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "a": {
+                                  "type": "number",
+                                  "description": "Kolikrát x je vlevo (a v rovnici a · x + b = c). Nesmí být 0."
+                                },
+                                "b": {
+                                  "type": "number",
+                                  "description": "Číslo přičtené k x vlevo (b; záporné = odečtené)."
+                                },
+                                "c": {
+                                  "type": "number",
+                                  "description": "Číslo vpravo (c)."
+                                }
+                              },
+                              "required": [
+                                "a",
+                                "b",
+                                "c"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Rovnice a · x + b = c."
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Rovnice jako váhy: Rovnice a · x + b = c na rovnoramenných vahách. Dítě tlačítky dělá stejnou úpravu na obou stranách, dokud nezůstane x = …"
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "linear"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "linear"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "k": {
+                                  "type": "number",
+                                  "minimum": -5,
+                                  "maximum": 5,
+                                  "description": "Směrnice k v y = k · x + q (po 0,5)."
+                                },
+                                "q": {
+                                  "type": "number",
+                                  "minimum": -6,
+                                  "maximum": 6,
+                                  "description": "Posun q – kde přímka protne osu y."
+                                }
+                              },
+                              "required": [
+                                "k",
+                                "q"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Funkce y = k · x + q."
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Lineární funkce: Graf přímky y = k · x + q v mřížce. Posuvníky k a q přímku naklánějí a posouvají; pod grafem je předpis a jestli roste, nebo klesá."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "quadratic"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "quadratic"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "a": {
+                                  "type": "number",
+                                  "minimum": -3,
+                                  "maximum": 3,
+                                  "description": "Koeficient a u x² (po 0,5, nesmí být 0): kladné = parabola otevřená nahoru."
+                                },
+                                "b": {
+                                  "type": "number",
+                                  "minimum": -6,
+                                  "maximum": 6,
+                                  "description": "Koeficient b u x."
+                                },
+                                "c": {
+                                  "type": "number",
+                                  "minimum": -6,
+                                  "maximum": 6,
+                                  "description": "Absolutní člen c – kde parabola protne osu y."
+                                }
+                              },
+                              "required": [
+                                "a",
+                                "b",
+                                "c"
+                              ],
+                              "additionalProperties": false,
+                              "description": "Funkce y = a · x² + b · x + c."
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Kvadratická funkce: Graf paraboly y = a · x² + b · x + c. Posuvníky mění koeficienty; pod grafem je diskriminant a kořeny."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "flip"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "flip"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "cards": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$schema": {
+                                        "type": "string"
+                                      },
+                                      "front": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "description": "Líc – otázka, pojem nebo slovo."
+                                      },
+                                      "back": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "description": "Rub – odpověď, která se ukáže po otočení."
+                                      }
+                                    },
+                                    "required": [
+                                      "front",
+                                      "back"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 1,
+                                  "maxItems": 12,
+                                  "description": "Karty. Ideálně 3–8."
+                                }
+                              },
+                              "required": [
+                                "cards"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Otáčecí kartičky: Kartičky s otázkou na líci; klepnutím se otočí a ukážou odpověď. Dítě si samo ověří, co ví."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "sort"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "sort"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "groups": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  },
+                                  "minItems": 2,
+                                  "maxItems": 4,
+                                  "description": "Názvy skupin (krabiček), do kterých se třídí."
+                                },
+                                "items": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$schema": {
+                                        "type": "string"
+                                      },
+                                      "text": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "description": "Co se třídí."
+                                      },
+                                      "group": {
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "description": "Pořadí správné skupiny v groups, od 0."
+                                      }
+                                    },
+                                    "required": [
+                                      "text",
+                                      "group"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 2,
+                                  "maxItems": 14,
+                                  "description": "Položky; zobrazí se zamíchané. Ideálně 6–10."
+                                }
+                              },
+                              "required": [
+                                "groups",
+                                "items"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Třídění do skupin: Zamíchané kartičky a 2–4 krabičky. Dítě vybere kartičku a pak krabičku; špatná volba zatřese, správná kartičku uloží."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "gap"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "gap"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "items": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$schema": {
+                                        "type": "string"
+                                      },
+                                      "before": {
+                                        "type": "string",
+                                        "minLength": 0,
+                                        "description": "Text před mezerou (smí být prázdný)."
+                                      },
+                                      "after": {
+                                        "type": "string",
+                                        "minLength": 0,
+                                        "description": "Text za mezerou (smí být prázdný)."
+                                      },
+                                      "options": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string",
+                                          "minLength": 1
+                                        },
+                                        "minItems": 2,
+                                        "maxItems": 4,
+                                        "description": "Možnosti k doplnění, např. [\"i\", \"y\"]."
+                                      },
+                                      "answer": {
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "description": "Pořadí správné možnosti v options, od 0."
+                                      }
+                                    },
+                                    "required": [
+                                      "before",
+                                      "after",
+                                      "options",
+                                      "answer"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 1,
+                                  "maxItems": 8,
+                                  "description": "Řádky k doplnění. Ideálně 3–6."
+                                }
+                              },
+                              "required": [
+                                "items"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Doplňovačka: Věty nebo slova s mezerou; dítě klepne na správnou možnost a mezera se doplní. Špatná možnost zatřese."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "parts"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "parts"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "words": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$schema": {
+                                        "type": "string"
+                                      },
+                                      "parts": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "$schema": {
+                                              "type": "string"
+                                            },
+                                            "text": {
+                                              "type": "string",
+                                              "minLength": 1,
+                                              "description": "Část slova, např. \"pod\"."
+                                            },
+                                            "label": {
+                                              "type": "string",
+                                              "minLength": 1,
+                                              "description": "Název části, např. \"předpona\". Stejné názvy mají stejnou barvu."
+                                            }
+                                          },
+                                          "required": [
+                                            "text",
+                                            "label"
+                                          ],
+                                          "additionalProperties": false
+                                        },
+                                        "minItems": 1,
+                                        "maxItems": 8,
+                                        "description": "Části slova zleva doprava; dohromady dají celé slovo."
+                                      }
+                                    },
+                                    "required": [
+                                      "parts"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 1,
+                                  "maxItems": 5,
+                                  "description": "Slova. Ideálně 1–3."
+                                }
+                              },
+                              "required": [
+                                "words"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Stavba slova: Slova rozdělená na barevné části; klepnutím se ukážou jejich názvy (předpona, kořen, přípona, koncovka…)."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "cycle"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "cycle"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "steps": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  },
+                                  "minItems": 2,
+                                  "maxItems": 8,
+                                  "description": "Kroky koloběhu v pořadí; po posledním následuje zase první. Ideálně 3–6, krátce."
+                                }
+                              },
+                              "required": [
+                                "steps"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Koloběh: Kroky v kruhu, které se samy postupně zvýrazňují; šipkami nebo klepnutím jde dítě krok po kroku."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "timeline"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "timeline"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "events": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$schema": {
+                                        "type": "string"
+                                      },
+                                      "year": {
+                                        "type": "integer",
+                                        "description": "Rok; záporný = před naším letopočtem (−753 = 753 př. n. l.)."
+                                      },
+                                      "label": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "description": "Co se stalo (krátce, smí obsahovat **tučné**)."
+                                      }
+                                    },
+                                    "required": [
+                                      "year",
+                                      "label"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 2,
+                                  "maxItems": 12,
+                                  "description": "Události; seřadí se samy podle roku. Ideálně 3–8."
+                                }
+                              },
+                              "required": [
+                                "events"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Časová osa: Vodorovná osa s událostmi seřazenými podle roku; klepnutím se událost zvýrazní."
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "widget": {
+                              "const": "bars"
+                            }
+                          },
+                          "required": [
+                            "widget"
+                          ]
+                        },
+                        "then": {
+                          "type": "object",
+                          "properties": {
+                            "$schema": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "const": "widget"
+                            },
+                            "widget": {
+                              "const": "bars"
+                            },
+                            "props": {
+                              "type": "object",
+                              "properties": {
+                                "$schema": {
+                                  "type": "string"
+                                },
+                                "unit": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "description": "Jednotka za hodnotou, např. \"mil. obyvatel\" nebo \"°C\"."
+                                },
+                                "items": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$schema": {
+                                        "type": "string"
+                                      },
+                                      "label": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "description": "Popisek sloupce."
+                                      },
+                                      "value": {
+                                        "type": "number",
+                                        "description": "Hodnota; délka pruhu je poměrná k největší hodnotě."
+                                      }
+                                    },
+                                    "required": [
+                                      "label",
+                                      "value"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 2,
+                                  "maxItems": 12,
+                                  "description": "Porovnávané hodnoty. Ideálně 3–8."
+                                }
+                              },
+                              "required": [
+                                "items"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "widget",
+                            "props"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Sloupcový graf: Vodorovné pruhy, jejichž délka odpovídá hodnotě; pruhy při zobrazení vyrostou."
+                        }
+                      }
+                    ],
+                    "description": "Interaktivní widget: název (viz galerie /widgety) a jeho vlastnosti."
+                  }
+                }
+              ],
+              "description": "Blok vysvětlení."
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "title",
+          "blocks"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "Přesně dvě vysvětlení, každé jinou cestou."
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "choice",
+              "truefalse",
+              "input",
+              "order",
+              "match",
+              "open"
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "choice"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "$schema": {
+                  "type": "string"
+                },
+                "type": {
+                  "const": "choice"
+                },
+                "question": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Otázka."
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Možnost."
+                  },
+                  "minItems": 2,
+                  "maxItems": 4,
+                  "description": "2–4 možnosti; aplikace je zamíchá."
+                },
+                "answer": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "Pořadí správné možnosti v options, od 0."
+                },
+                "explanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Krátké vysvětlení správné odpovědi (ukáže se po odpovědi)."
+                }
+              },
+              "required": [
+                "type",
+                "question",
+                "options",
+                "answer"
+              ],
+              "additionalProperties": false,
+              "description": "Výběr jedné ze 2–4 možností."
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "truefalse"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "$schema": {
+                  "type": "string"
+                },
+                "type": {
+                  "const": "truefalse"
+                },
+                "question": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Tvrzení."
+                },
+                "answer": {
+                  "type": "boolean",
+                  "description": "true = pravda, false = nepravda."
+                },
+                "explanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Krátké vysvětlení správné odpovědi (ukáže se po odpovědi)."
+                }
+              },
+              "required": [
+                "type",
+                "question",
+                "answer"
+              ],
+              "additionalProperties": false,
+              "description": "Pravda, nebo nepravda."
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "input"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "$schema": {
+                  "type": "string"
+                },
+                "type": {
+                  "const": "input"
+                },
+                "question": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Otázka s krátkou odpovědí (číslo nebo slovo)."
+                },
+                "answers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1,
+                  "description": "Všechny přijatelné odpovědi. Velikost písmen a mezery se ignorují, čísla se porovnávají jako čísla (0,5 = 0.5), diakritika se ignoruje mimo češtinu a literaturu."
+                },
+                "explanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Krátké vysvětlení správné odpovědi (ukáže se po odpovědi)."
+                },
+                "widget": {
+                  "type": "object",
+                  "required": [
+                    "widget"
+                  ],
+                  "properties": {
+                    "widget": {
+                      "enum": [
+                        "column"
+                      ]
+                    }
+                  },
+                  "allOf": [
+                    {
+                      "if": {
+                        "properties": {
+                          "widget": {
+                            "const": "column"
+                          }
+                        },
+                        "required": [
+                          "widget"
+                        ]
+                      },
+                      "then": {
+                        "type": "object",
+                        "properties": {
+                          "$schema": {
+                            "type": "string"
+                          },
+                          "widget": {
+                            "const": "column"
+                          },
+                          "props": {
+                            "type": "object",
+                            "properties": {
+                              "$schema": {
+                                "type": "string"
+                              },
+                              "a": {
+                                "anyOf": [
+                                  {
+                                    "type": "number",
+                                    "minimum": 0
+                                  },
+                                  {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "pattern": "^[0-9 ]+(,[0-9]+)?$"
+                                  }
+                                ],
+                                "description": "Číslo; jako text i s mezerami mezi řády nebo s desetinnou čárkou: 12500, \"12 500\", \"3,75\"."
+                              },
+                              "b": {
+                                "anyOf": [
+                                  {
+                                    "type": "number",
+                                    "minimum": 0
+                                  },
+                                  {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "pattern": "^[0-9 ]+(,[0-9]+)?$"
+                                  }
+                                ],
+                                "description": "Číslo; jako text i s mezerami mezi řády nebo s desetinnou čárkou: 12500, \"12 500\", \"3,75\"."
+                              },
+                              "op": {
+                                "enum": [
+                                  "+",
+                                  "-",
+                                  "·",
+                                  ":"
+                                ],
+                                "description": "Početní operace: \"+\" sčítání, \"-\" odčítání (doplňováním), \"·\" násobení (i víceciferným číslem), \":\" dělení (jednociferným i víceciferným dělitelem). · a : jen s celými čísly."
+                              }
+                            },
+                            "required": [
+                              "a",
+                              "b",
+                              "op"
+                            ],
+                            "additionalProperties": false,
+                            "description": "Příklad a op b."
+                          }
+                        },
+                        "required": [
+                          "widget",
+                          "props"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Písemné počítání pod sebou: Příklad zapsaný pod sebou jako v sešitě. Dítě jde tlačítkem krok za krokem, každý krok je okomentovaný („7 a kolik je 12? 5, 1 si pamatuji“)."
+                      }
+                    }
+                  ],
+                  "description": "Widget nad otázkou – ukáže jen zadání, ne výsledek. Smí jen widgety s režimem pro otázky (column)."
+                }
+              },
+              "required": [
+                "type",
+                "question",
+                "answers"
+              ],
+              "additionalProperties": false,
+              "description": "Napsaná krátká odpověď."
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "order"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "$schema": {
+                  "type": "string"
+                },
+                "type": {
+                  "const": "order"
+                },
+                "question": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Zadání."
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Položka."
+                  },
+                  "minItems": 3,
+                  "maxItems": 8,
+                  "description": "Položky ve SPRÁVNÉM pořadí; aplikace je zamíchá."
+                },
+                "explanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Krátké vysvětlení správné odpovědi (ukáže se po odpovědi)."
+                }
+              },
+              "required": [
+                "type",
+                "question",
+                "items"
+              ],
+              "additionalProperties": false,
+              "description": "Seřazení položek."
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "match"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "$schema": {
+                  "type": "string"
+                },
+                "type": {
+                  "const": "match"
+                },
+                "question": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Zadání."
+                },
+                "pairs": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Levá strana."
+                      },
+                      {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Pravá strana."
+                      }
+                    ],
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "minItems": 3,
+                  "maxItems": 6,
+                  "description": "Správně spárované dvojice; aplikace zamíchá pravou stranu."
+                },
+                "explanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Krátké vysvětlení správné odpovědi (ukáže se po odpovědi)."
+                }
+              },
+              "required": [
+                "type",
+                "question",
+                "pairs"
+              ],
+              "additionalProperties": false,
+              "description": "Spojování dvojic."
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "open"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "$schema": {
+                  "type": "string"
+                },
+                "type": {
+                  "const": "open"
+                },
+                "question": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Ústní otázka."
+                },
+                "answer": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Vzorová odpověď v 1–3 větách."
+                }
+              },
+              "required": [
+                "type",
+                "question",
+                "answer"
+              ],
+              "additionalProperties": false,
+              "description": "Otázka pro ústní zkoušení; dítě odpoví nahlas a samo se ohodnotí."
+            }
+          }
+        ],
+        "description": "Otázka."
+      },
+      "minItems": 8
+    }
+  },
+  "required": [
+    "format",
+    "id",
+    "title",
+    "emoji",
+    "explanations",
+    "questions"
+  ],
+  "additionalProperties": false,
+  "description": "Jedno téma: dvě vysvětlení a otázky."
+}

@@ -1,0 +1,332 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "polovodice",
+  "title": "Polovodiče",
+  "emoji": "💡",
+  "explanations": [
+    {
+      "title": "Mezi kovem a izolantem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V mobilu, počítači, LED žárovce i v solárním panelu jsou součástky z **polovodičů**. Bez nich by nebyla žádná moderní elektronika."
+        },
+        {
+          "type": "text",
+          "text": "Polovodiče jsou zvláštní: vedou proud jen trochu, ale jejich vodivost jde snadno měnit – teplem, světlem nebo příměsí jiné látky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vodič a izolant",
+          "definition": "**Vodič** vede proud dobře (kovy). **Izolant** téměř vůbec (plast, sklo).",
+          "example": "Měděný drát v plastovém obalu."
+        },
+        {
+          "type": "term",
+          "term": "Polovodič",
+          "definition": "Látka, která vede proud jen trochu – je někde **mezi vodičem a izolantem**. Nejpoužívanější je **křemík**.",
+          "example": "Křemík se vyrábí z křemenného písku."
+        },
+        {
+          "type": "term",
+          "term": "Vodivost",
+          "definition": "Jak dobře látka vede proud. Opak odporu: velká vodivost = malý odpor."
+        },
+        {
+          "type": "heading",
+          "text": "Teplo dělá rozdíl"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Látka",
+            "Vodivost",
+            "Když se zahřeje"
+          ],
+          "rows": [
+            [
+              "kov",
+              "dobrá",
+              "vede hůř (odpor roste)"
+            ],
+            [
+              "polovodič",
+              "malá",
+              "vede lépe (odpor klesá)"
+            ],
+            [
+              "izolant",
+              "téměř žádná",
+              "pořád téměř nevede"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "V kovu je volných elektronů pořád dost a teplem jen víc kmitají atomy, které jim překážejí. V polovodiči teplo (nebo světlo) **uvolní další elektrony**, takže vede lépe."
+        },
+        {
+          "type": "heading",
+          "text": "Součástky"
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a ke každé součástce si zkus vymyslet, kde by se hodila."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "dioda",
+                "back": "propouští proud jen jedním směrem"
+              },
+              {
+                "front": "LED",
+                "back": "dioda, která svítí"
+              },
+              {
+                "front": "termistor",
+                "back": "odpor klesá s teplotou"
+              },
+              {
+                "front": "fotorezistor",
+                "back": "odpor klesá s osvětlením"
+              },
+              {
+                "front": "fotovoltaický článek",
+                "back": "mění světlo na elektřinu"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Pouliční lampa se večer sama rozsvítí. Která součástka to pozná?",
+          "answer": "**Fotorezistor.** Ve tmě má velký odpor, na světle malý. Podle toho obvod pozná, jestli je tma."
+        },
+        {
+          "type": "example",
+          "question": "Která součástka je v elektronickém teploměru?",
+          "answer": "**Termistor** – jeho odpor se mění s teplotou. Přístroj změří odpor a převede ho na stupně."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Odpor kovu s rostoucí teplotou klesá.",
+          "right": "Odpor kovu s teplotou roste, odpor polovodiče klesá.",
+          "why": "U kovu teplo jen zvětší kmitání atomů, které elektronům překážejí. U polovodiče teplo uvolní nové volné elektrony."
+        },
+        {
+          "type": "summary",
+          "text": "Polovodič (hlavně křemík) vede málo, ale s teplotou a světlem lépe. Z polovodičů jsou diody, LED, termistory, fotorezistory a solární články."
+        }
+      ]
+    },
+    {
+      "title": "Přechod PN",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jak může součástka pustit proud jen jedním směrem, jako jednosměrná ulice? A jak vznikne světlo v LED? Odpověď je v tom, že se k sobě přiloží dva různé druhy polovodiče."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Polovodič",
+          "definition": "Látka, která vede proud méně než kov a více než izolant (např. křemík).",
+          "example": "Čipy v počítači jsou z křemíku."
+        },
+        {
+          "type": "term",
+          "term": "Příměs",
+          "definition": "Nepatrné množství jiného prvku přidané do čistého polovodiče. Změní, jak polovodič vede.",
+          "example": "Na milion atomů křemíku stačí pár atomů příměsi."
+        },
+        {
+          "type": "term",
+          "term": "Typ N a typ P",
+          "definition": "Polovodič **typu N** má díky příměsi **přebytek volných elektronů** (N = negativní, záporné). **Typ P** má **nedostatek elektronů** – prázdná místa zvaná **díry**, která se chovají jako kladný náboj (P = pozitivní).",
+          "example": "N: elektrony navíc. P: díry."
+        },
+        {
+          "type": "term",
+          "term": "Přechod PN a dioda",
+          "definition": "Místo, kde se stýká typ P s typem N. Součástka s jedním přechodem PN je **dioda** – propouští proud jen jedním směrem.",
+          "example": "Dioda v nabíječce."
+        },
+        {
+          "type": "heading",
+          "text": "Dva směry zapojení"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Propustný směr**: P na **+** pól zdroje, N na **−**. Elektrony a díry jsou tlačeny k přechodu, potkají se – proud **teče**.",
+            "**Závěrný směr**: P na −, N na +. Elektrony i díry jsou odtaženy od přechodu, vznikne prázdná vrstva – proud **neteče**.",
+            "U **LED** se při setkání elektronu s dírou uvolní energie jako **světlo**. Proto LED svítí jen v propustném směru."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kde se to využívá"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Usměrňovač** – z diod; mění střídavý proud na stejnosměrný (nabíječky).",
+            "**LED** – úsporné osvětlení, displeje.",
+            "**Fotovoltaický článek** – světlo dopadající na přechod PN vytvoří napětí (solární elektrárny).",
+            "**Termistor** – elektronický teploměr."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "LED nesvítí. Zkusíš ji otočit a svítí. Proč?",
+          "answer": "Byla zapojená v **závěrném směru**. Po otočení je P na + a N na − – **propustný směr**."
+        },
+        {
+          "type": "example",
+          "question": "Jedním písmenem: polovodič s převahou volných elektronů je typu…",
+          "answer": "**N** – od „negativní“, elektrony mají záporný náboj."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dioda propouští proud oběma směry, jen jedním hůř.",
+          "right": "Dioda propouští proud jen jedním směrem.",
+          "why": "V závěrném směru se u přechodu vytvoří vrstva bez volných nábojů, která proud zastaví."
+        },
+        {
+          "type": "summary",
+          "text": "Typ N má volné elektrony, typ P díry. Přechod PN = dioda: proud teče jen při P na +, N na −. Využití: usměrňovač, LED, solární článek."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který prvek je nejpoužívanější polovodič?",
+      "options": [
+        "křemík",
+        "měď",
+        "železo",
+        "kyslík"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co dělá dioda?",
+      "options": [
+        "propouští proud jen jedním směrem",
+        "zvyšuje napětí",
+        "měří proud",
+        "ukládá náboj"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vodivost polovodiče s rostoucí teplotou roste.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Odpor kovu s rostoucí teplotou klesá.",
+      "answer": false,
+      "explanation": "U kovů odpor s teplotou roste."
+    },
+    {
+      "type": "choice",
+      "question": "Která součástka reaguje na světlo?",
+      "options": [
+        "fotorezistor",
+        "termistor",
+        "transformátor",
+        "pojistka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak je dioda zapojena v propustném směru?",
+      "options": [
+        "P na +, N na −",
+        "P na −, N na +",
+        "na tom nezáleží"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj součástku s využitím.",
+      "pairs": [
+        [
+          "LED",
+          "osvětlení"
+        ],
+        [
+          "termistor",
+          "elektronický teploměr"
+        ],
+        [
+          "fotovoltaický článek",
+          "solární elektrárna"
+        ],
+        [
+          "dioda",
+          "usměrňovač"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jedním písmenem: polovodič s převahou volných elektronů je typu…",
+      "answers": [
+        "N"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "LED svítí, i když ji zapojíme v závěrném směru.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Co je usměrňovač?",
+      "options": [
+        "mění střídavý proud na stejnosměrný",
+        "mění napětí",
+        "mění světlo na zvuk"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak se liší polovodič od kovu a od izolantu?",
+      "answer": "Kov vede dobře a jeho odpor s teplotou roste. Izolant téměř nevede. Polovodič vede jen trochu, ale s teplotou a světlem vede lépe."
+    },
+    {
+      "type": "open",
+      "question": "Co je dioda a k čemu se používá?",
+      "answer": "Polovodičová součástka s přechodem PN, propouští proud jen jedním směrem. Používá se v usměrňovačích, LED svítí."
+    }
+  ]
+}

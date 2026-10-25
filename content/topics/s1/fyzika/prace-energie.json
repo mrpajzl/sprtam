@@ -1,0 +1,389 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "prace-energie",
+  "title": "Práce, energie a výkon",
+  "emoji": "⚡",
+  "explanations": [
+    {
+      "title": "Skok do vody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vylezeš po žebříku na desetimetrovou věž. Unaví tě to – vynaložil jsi energii. Pak skočíš a nabíráš rychlost. Kam se ta energie z lezení poděla? Neztratila se. Přeměnila se na rychlost."
+        },
+        {
+          "type": "text",
+          "text": "Energie se nikdy neztrácí, jen mění podobu. Díky tomu spočítáš, jak rychle dopadneš, kolik elektřiny vyrobí přehrada nebo jak silný motor auto potřebuje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Energie E",
+          "definition": "Schopnost tělesa něco vykonat – rozpohybovat, zvednout, zahřát. Jednotka **joule (J)**.",
+          "example": "Zvednout 100g čokoládu o 1 m vyžaduje asi 1 J."
+        },
+        {
+          "type": "term",
+          "term": "Polohová (potenciální) energie E_p",
+          "definition": "Energie, kterou má těleso díky tomu, že je vysoko. `E_p = m · g · h` (h = výška).",
+          "example": "Skokan 50 kg na věži 10 m: E_p = 50 · 10 · 10 = 5 000 J."
+        },
+        {
+          "type": "term",
+          "term": "Pohybová (kinetická) energie E_k",
+          "definition": "Energie, kterou má těleso, protože se pohybuje. `E_k = ½ · m · v²`.",
+          "example": "Míč 0,4 kg letí 10 m/s: E_k = ½ · 0,4 · 100 = 20 J."
+        },
+        {
+          "type": "term",
+          "term": "Práce W",
+          "definition": "Když síla posune těleso, předá mu energii. Této předané energii říkáme práce. Jednotka také joule.",
+          "example": "Táhneš sáňky silou 50 N po dráze 10 m → práce 500 J."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta energie při skoku"
+        },
+        {
+          "type": "text",
+          "text": "Sleduj cyklus krok po kroku. U každého kroku si řekni, která energie roste a která klesá."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "na věži: E_p největší, E_k = 0",
+              "pád: E_p klesá, E_k roste",
+              "u hladiny: E_p = 0, E_k největší",
+              "ve vodě: energie přejde na pohyb vody, teplo a zvuk"
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Zákon zachování mechanické energie",
+          "definition": "Když nepůsobí tření ani odpor vzduchu, součet `E_p + E_k` se nemění.",
+          "example": "Nahoře 5 000 J polohové, dole 5 000 J pohybové."
+        },
+        {
+          "type": "example",
+          "question": "Těleso padá z výšky 20 m (g = 10 m/s², bez odporu). Jakou rychlostí dopadne?",
+          "answer": "Polohová se celá změní na pohybovou: m·g·h = ½·m·v². Hmotnost se zkrátí: v² = 2·g·h = 2 · 10 · 20 = 400, v = **20 m/s**."
+        },
+        {
+          "type": "heading",
+          "text": "Práce pod úhlem"
+        },
+        {
+          "type": "text",
+          "text": "Když táhneš kufr za šikmé madlo, jen část tvé síly táhne dopředu – zbytek ho zvedá. Práci koná jen ta část síly, která míří **ve směru pohybu**."
+        },
+        {
+          "type": "term",
+          "term": "cos α (kosinus)",
+          "definition": "Číslo z matematiky, které říká, jaká část síly míří ve směru pohybu, když svírá úhel α. cos 0° = 1 (celá síla), cos 60° = 0,5 (polovina), cos 90° = 0 (nic).",
+          "example": "Práce: `W = F · s · cos α`."
+        },
+        {
+          "type": "text",
+          "text": "Pohni úhlem: při 0° táhneš přesně dopředu, při 90° táhneš kolmo nahoru a kufr dopředu vůbec netlačíš."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 60
+          }
+        },
+        {
+          "type": "example",
+          "question": "Síla 100 N táhne těleso 10 m pod úhlem 60° ke směru pohybu. Jaká je práce?",
+          "answer": "W = F · s · cos α = 100 · 10 · 0,5 = **500 J**."
+        },
+        {
+          "type": "heading",
+          "text": "Výkon a účinnost"
+        },
+        {
+          "type": "term",
+          "term": "Výkon P a účinnost η",
+          "definition": "**Výkon** = práce za sekundu, `P = W / t`, jednotka watt (W). Kdo vyběhne schody rychleji, má větší výkon. **Účinnost** = jaká část dodané energie je užitečná, `η = P / P₀`. Zbytek se mění v teplo, proto je vždy pod 100 %.",
+          "example": "Motor dostává 2 kW a užitečně dává 1,5 kW: η = 75 %."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nosím těžkou tašku po rovné chodbě, takže na ní konám velkou práci.",
+          "right": "Fyzikálně je práce síly, kterou tašku držíš, nulová.",
+          "why": "Držíš tašku silou nahoru, ale pohybuje se vodorovně – úhel 90°, cos 90° = 0. Unavíš se kvůli svalům, ne kvůli práci na tašce."
+        },
+        {
+          "type": "summary",
+          "text": "Energie se neztrácí, jen přeměňuje. Bez tření je E_p + E_k stálé. Práce W = F·s·cos α je energie předaná silou."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce a výkon",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dva lidé vynesou stejnou bednu do 3. patra. Oba vykonají stejnou práci, ale jeden za minutu a druhý za deset. Ten rychlejší má větší **výkon**. A žádný stroj nepřemění všechnu energii na užitečnou práci – část se vždy ztratí jako teplo."
+        },
+        {
+          "type": "text",
+          "text": "Tady si poskládáš přehled vzorců pro práci, energii, výkon a účinnost a naučíš se je používat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Práce W",
+          "definition": "Energie předaná silou, když posune těleso po dráze s. `W = F · s · cos α`, α je úhel mezi silou a směrem pohybu. Jednotka joule (J) = N·m.",
+          "example": "Síla 20 N ve směru pohybu po 3 m: W = 60 J."
+        },
+        {
+          "type": "term",
+          "term": "cos α",
+          "definition": "Část síly ve směru pohybu: cos 0° = 1, cos 60° = 0,5, cos 90° = 0, cos 180° = −1.",
+          "example": "Síla kolmá k pohybu (90°) práci nekoná."
+        },
+        {
+          "type": "term",
+          "term": "Kinetická a potenciální energie",
+          "definition": "Kinetická = energie pohybu `E_k = ½mv²`. Potenciální tíhová = energie výšky `E_p = mgh`."
+        },
+        {
+          "type": "term",
+          "term": "Výkon P",
+          "definition": "Jak rychle se koná práce: `P = W / t`. Jednotka **watt (W)** = J/s. Při stálé rychlosti také `P = F · v`.",
+          "example": "Práce 600 J za 2 s → P = 300 W."
+        },
+        {
+          "type": "term",
+          "term": "Příkon a účinnost η",
+          "definition": "Příkon P₀ = kolik energie za sekundu stroj dostává. Účinnost `η = P / P₀` = jaká část se přemění na užitečnou práci. Vždy menší než 1 (100 %).",
+          "example": "Příkon 2 kW, výkon 1,5 kW → η = 0,75 = 75 %."
+        },
+        {
+          "type": "heading",
+          "text": "Přehled"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Veličina",
+            "Vztah",
+            "Jednotka"
+          ],
+          "rows": [
+            [
+              "práce",
+              "W = F · s · cos α",
+              "J"
+            ],
+            [
+              "kinetická energie",
+              "E_k = ½ m v²",
+              "J"
+            ],
+            [
+              "potenciální tíhová",
+              "E_p = m g h",
+              "J"
+            ],
+            [
+              "výkon",
+              "P = W / t = F · v",
+              "W"
+            ],
+            [
+              "účinnost",
+              "η = P / P₀",
+              "— (nebo %)"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Klíčová myšlenka: **práce = změna energie**. Práce výsledné síly se rovná změně kinetické energie. Tření koná práci zápornou (síla proti pohybu, cos 180° = −1) a mechanická energie ubývá – mění se v teplo."
+        },
+        {
+          "type": "heading",
+          "text": "Proč je v E_k rychlost na druhou"
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje E_k auta 1 000 kg. Při dvojnásobné rychlosti je energie 4×, při trojnásobné 9×. Porovnej sloupce 10 m/s a 30 m/s."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "kJ",
+            "items": [
+              {
+                "label": "10 m/s",
+                "value": 50
+              },
+              {
+                "label": "20 m/s",
+                "value": 200
+              },
+              {
+                "label": "30 m/s",
+                "value": 450
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jaká je kinetická energie tělesa 4 kg o rychlosti 5 m/s?",
+          "answer": "E_k = ½ · 4 · 5² = ½ · 4 · 25 = **50 J**."
+        },
+        {
+          "type": "example",
+          "question": "Motor táhne silou 2 000 N stálou rychlostí 15 m/s. Jaký je výkon?",
+          "answer": "P = F · v = 2 000 · 15 = 30 000 W = **30 kW**."
+        },
+        {
+          "type": "example",
+          "question": "Příkon motoru je 2 kW, užitečný výkon 1,5 kW. Účinnost?",
+          "answer": "η = 1,5 / 2 = 0,75 = **75 %**. Zbylých 0,5 kW se mění na teplo."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Při dvojnásobné rychlosti má auto dvojnásobnou kinetickou energii.",
+          "right": "Při dvojnásobné rychlosti má čtyřnásobnou kinetickou energii.",
+          "why": "V E_k = ½mv² je rychlost na druhou. Proto náraz v 100 km/h je mnohem ničivější než v 50 km/h."
+        },
+        {
+          "type": "text",
+          "text": "Pozor: síla kolmá k pohybu práci nekoná. Proto dostředivá síla při pohybu po kružnici (míří do středu, kolmo k pohybu) koná práci nulovou a rychlost se nemění."
+        },
+        {
+          "type": "summary",
+          "text": "`W = F·s·cos α`, `E_k = ½mv²`, `E_p = mgh`, `P = W/t`, `η = P/P₀`. Práce = změna energie. Bez tření se mechanická energie zachovává."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Síla 100 N táhne těleso 10 m pod úhlem 60° ke směru pohybu. Práce v J =",
+      "answers": [
+        "500"
+      ],
+      "explanation": "cos 60° = 0,5"
+    },
+    {
+      "type": "input",
+      "question": "Kinetická energie tělesa 4 kg o rychlosti 5 m/s v J =",
+      "answers": [
+        "50"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Těleso padá z výšky 20 m (g = 10 m/s², bez odporu). Rychlost dopadu v m/s =",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Motor táhne silou 2 000 N stálou rychlostí 15 m/s. Výkon v kW =",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Příkon 2 kW, užitečný výkon 1,5 kW. Účinnost v % =",
+      "answers": [
+        "75"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Síla kolmá ke směru pohybu nekoná práci.",
+      "answer": true,
+      "explanation": "cos 90° = 0"
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní kinetická energie při trojnásobné rychlosti?",
+      "options": [
+        "9×",
+        "3×",
+        "6×",
+        "√3×"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Dostředivá síla při rovnoměrném pohybu po kružnici koná práci…",
+      "options": [
+        "nulovou",
+        "kladnou",
+        "zápornou",
+        "nekonečnou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Třecí síla koná zápornou práci a mechanická energie klesá.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu se vztahem.",
+      "pairs": [
+        [
+          "Ek",
+          "½mv²"
+        ],
+        [
+          "Ep",
+          "mgh"
+        ],
+        [
+          "P",
+          "W/t"
+        ],
+        [
+          "W",
+          "Fs cos α"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj zákon zachování mechanické energie a uveď podmínku platnosti.",
+      "answer": "V izolované soustavě, kde působí jen konzervativní síly (tíha, pružnost), je součet kinetické a potenciální energie stálý. Neplatí při tření."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je vztah mezi prací a energií?",
+      "answer": "Vykonaná práce se rovná změně energie tělesa. Například práce výsledné síly = změna kinetické energie."
+    }
+  ]
+}

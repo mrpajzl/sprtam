@@ -1,0 +1,410 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "how-much-many",
+  "title": "How much / how many",
+  "emoji": "🔢",
+  "explanations": [
+    {
+      "title": "Otázkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky se zeptáš „**Kolik** jablek?“ i „**Kolik** vody?“ – pořád stejným slovem. Angličtina má dvě: jedno pro věci, které spočítáš, druhé pro ty, které jen měříš."
+        },
+        {
+          "type": "text",
+          "text": "Budeš to potřebovat v obchodě („Kolik to stojí?“), při vaření i když se ptáš, kolik má kdo sourozenců."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Počitatelné",
+          "definition": "Věci, které spočítáš po kusech. Mají množné číslo s -s.",
+          "example": "apples, friends, days"
+        },
+        {
+          "type": "term",
+          "term": "Nepočitatelné",
+          "definition": "Látky a věci, které nespočítáš po kusech, jen měříš.",
+          "example": "water, sugar, money, time"
+        },
+        {
+          "type": "term",
+          "term": "How many?",
+          "definition": "„Kolik?“ u **počitatelných** věcí (za ním je slovo v množném čísle).",
+          "example": "How many apples? = Kolik jablek?"
+        },
+        {
+          "type": "term",
+          "term": "How much?",
+          "definition": "„Kolik?“ u **nepočitatelných** věcí. A taky „Kolik to stojí?“",
+          "example": "How much water? = Kolik vody?"
+        },
+        {
+          "type": "heading",
+          "text": "Kusy, nebo množství?"
+        },
+        {
+          "type": "text",
+          "text": "*How **many** apples?* – počítám kusy: jedno, dvě, tři."
+        },
+        {
+          "type": "text",
+          "text": "*How **much** water?* – měřím množství: trochu, hodně, litr."
+        },
+        {
+          "type": "heading",
+          "text": "Cena"
+        },
+        {
+          "type": "text",
+          "text": "**How much is it?** = Kolik to stojí? **How much are these shoes?** = Kolik stojí tyhle boty? Ptáš se na peníze, a ty jsou nepočitatelné – proto *much*."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každého slova si řekni: počítám kusy, nebo měřím? Pak ho roztřiď."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "How much…?",
+              "How many…?"
+            ],
+            "items": [
+              {
+                "text": "sugar",
+                "group": 0
+              },
+              {
+                "text": "time",
+                "group": 0
+              },
+              {
+                "text": "money",
+                "group": 0
+              },
+              {
+                "text": "milk",
+                "group": 0
+              },
+              {
+                "text": "friends",
+                "group": 1
+              },
+              {
+                "text": "pencils",
+                "group": 1
+              },
+              {
+                "text": "days",
+                "group": 1
+              },
+              {
+                "text": "people",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Pozor: **people** (lidé) je množné číslo, i když nemá -s. Lidi spočítáš → *How many people?*"
+        },
+        {
+          "type": "example",
+          "question": "Zeptej se: Kolik máš sourozenců? (brothers and sisters)",
+          "answer": "Sourozence spočítám → **How many**. Otázka: **How many brothers and sisters have you got?**"
+        },
+        {
+          "type": "example",
+          "question": "Zeptej se: Kolik stojí ten lístek? (lístek = ticket)",
+          "answer": "Ptám se na cenu → **How much**. Otázka: **How much is the ticket?**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "How many money have you got?",
+          "right": "How much money have you got?",
+          "why": "**money** je v angličtině nepočitatelné, i když česky „peníze“ zní jako množné číslo."
+        },
+        {
+          "type": "summary",
+          "text": "**How many** + počitatelné v množném čísle. **How much** + nepočitatelné a cena."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Nejen v otázce, ale i ve větě říkáš „moc / hodně / málo“: „Nemám moc času.“ „Mám hodně kamarádů.“ Angličtina tu zase rozlišuje počitatelné a nepočitatelné."
+        },
+        {
+          "type": "text",
+          "text": "Celé to shrneš do jedné tabulky: **many**, **much** a **a lot of**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Počitatelné / nepočitatelné",
+          "definition": "Počitatelné spočítáš po kusech (cats, eggs). Nepočitatelné jen měříš (juice, cheese, time).",
+          "example": "three cats × some juice"
+        },
+        {
+          "type": "term",
+          "term": "many / much",
+          "definition": "Obě znamenají „mnoho, moc“. **many** u počitatelných, **much** u nepočitatelných. Používají se hlavně v **otázce** a v **záporu**.",
+          "example": "not many cats, not much juice"
+        },
+        {
+          "type": "term",
+          "term": "a lot of",
+          "definition": "„Hodně“. Hodí se ke **všemu** – počitatelnému i nepočitatelnému. Používá se hlavně v **kladných** větách.",
+          "example": "a lot of cats, a lot of juice"
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Počitatelné",
+            "Nepočitatelné"
+          ],
+          "rows": [
+            [
+              "otázka",
+              "How many cats?",
+              "How much juice?"
+            ],
+            [
+              "zápor",
+              "not many cats",
+              "not much juice"
+            ],
+            [
+              "kladně",
+              "a lot of cats",
+              "a lot of juice"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je věc **počitatelná**? (dá se říct jedna, dvě, tři?)",
+            "Ano → **many**. Ne → **much**.",
+            "Je věta **kladná**? Pak raději **a lot of** – sedí ke všemu."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň many, nebo much."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "How ",
+                "after": " brothers have you got?",
+                "options": [
+                  "many",
+                  "much"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "How ",
+                "after": " homework do you have?",
+                "options": [
+                  "much",
+                  "many"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "There isn’t ",
+                "after": " cheese.",
+                "options": [
+                  "much",
+                  "many"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "I haven’t got ",
+                "after": " friends here.",
+                "options": [
+                  "many",
+                  "much"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Nemám moc času. (čas = time)",
+          "answer": "*time* (čas) je nepočitatelné → **much**. Zápor → **I haven’t got much time.**"
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Mám hodně kamarádů.",
+          "answer": "Kladná věta → **a lot of**. Kamarádi → **friends**. Věta: **I have got a lot of friends.**"
+        },
+        {
+          "type": "text",
+          "text": "Pozor: **homework** (úkoly) je v angličtině nepočitatelné – proto *How much homework?*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "I haven’t got many time.",
+          "right": "I haven’t got much time.",
+          "why": "**time** ve smyslu „čas“ je nepočitatelné → **much**."
+        },
+        {
+          "type": "summary",
+          "text": "Otázka a zápor: **many** (počitatelné) / **much** (nepočitatelné). Kladná věta: **a lot of**."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "How ___ students are in your class?",
+      "options": [
+        "many",
+        "much"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "How ___ water do you drink?",
+      "options": [
+        "much",
+        "many"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "How ___ is this T-shirt? – £10.",
+      "options": [
+        "much",
+        "many"
+      ],
+      "answer": 0,
+      "explanation": "Cena → How much."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: How ___ money have you got?",
+      "answers": [
+        "much"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: How ___ eggs do we need?",
+      "answers": [
+        "many"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„How many people“ je správně.",
+      "answer": true,
+      "explanation": "People je množné číslo (osoby)."
+    },
+    {
+      "type": "truefalse",
+      "question": "„I haven't got many time.“ je správně.",
+      "answer": false,
+      "explanation": "Time (čas) je nepočitatelné → much time."
+    },
+    {
+      "type": "choice",
+      "question": "Které spojení je správně?",
+      "options": [
+        "a lot of friends",
+        "much friends",
+        "a lot friends"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "How many cars?",
+          "Kolik aut?"
+        ],
+        [
+          "How much bread?",
+          "Kolik chleba?"
+        ],
+        [
+          "How much is it?",
+          "Kolik to stojí?"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď otázku.",
+      "items": [
+        "How",
+        "many",
+        "pets",
+        "have you got?"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Kdy se ptáš how much a kdy how many?",
+      "answer": "How many u počitatelných v množném čísle (How many books?). How much u nepočitatelných (How much milk?) a na cenu (How much is it?)."
+    },
+    {
+      "type": "open",
+      "question": "Zeptej se anglicky, kolik stojí lístek, a kolik lidí přijde.",
+      "answer": "How much is the ticket? How many people are coming?"
+    }
+  ]
+}

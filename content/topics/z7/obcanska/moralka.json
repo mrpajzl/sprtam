@@ -1,0 +1,398 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "moralka",
+  "title": "Morálka a svědomí",
+  "emoji": "⚖️",
+  "explanations": [
+    {
+      "title": "Nalezená peněženka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Cestou ze školy najdeš na chodníku peněženku. Je v ní 2 000 Kč. Nikdo se nedívá. Co uděláš? A proč ti v hlavě něco říká „to není tvoje“?"
+        },
+        {
+          "type": "text",
+          "text": "Ten hlas je **svědomí**. Naučíš se, co je morálka, jak se liší od zákonů a proč ji potřebujeme."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Morálka",
+          "definition": "Nepsaná pravidla, co je **dobré** a co **špatné**. Nikdo je nesepsal do zákona, ale většina lidí je uznává.",
+          "example": "Nelhat, pomáhat slabším, dodržet slib."
+        },
+        {
+          "type": "term",
+          "term": "Svědomí",
+          "definition": "Vnitřní hlas, který nám říká, co je dobré a co špatné. Když uděláme něco špatně, cítíme se provinile."
+        },
+        {
+          "type": "term",
+          "term": "Právo (zákon)",
+          "definition": "Psaná pravidla státu. Za jejich porušení může stát potrestat – pokutou nebo i vězením.",
+          "example": "Krádež je zakázaná zákonem."
+        },
+        {
+          "type": "heading",
+          "text": "Co s peněženkou"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Matěj peněženku zvedne. Svědomí mu říká: „Někdo ji ztratil a teď ji hledá.“",
+            "Uvažuje: „Jak by mi bylo, kdybych ji ztratil já?“",
+            "Vezme peněženku na **policii nebo obecní úřad**. Tam ji majitel může vyzvednout.",
+            "Majitel je šťastný. Matěj má dobrý pocit – jednal **morálně**.",
+            "Kdyby si peníze nechal, porušil by morálku i **zákon**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Zlaté pravidlo"
+        },
+        {
+          "type": "text",
+          "text": "Matějova otázka „Jak by mi bylo, kdyby…“ je základ **zlatého pravidla**: *Nedělej druhým, co nechceš, aby dělali tobě.* Najdeš ho v mnoha náboženstvích i filozofiích."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď jednání: je jen nemorální, nebo i protiprávní (zakázané zákonem)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "jen nemorální",
+              "i protiprávní"
+            ],
+            "items": [
+              {
+                "text": "lhát kamarádovi",
+                "group": 0
+              },
+              {
+                "text": "pomlouvat spolužáka",
+                "group": 0
+              },
+              {
+                "text": "nedodržet slib",
+                "group": 0
+              },
+              {
+                "text": "posmívat se slabšímu",
+                "group": 0
+              },
+              {
+                "text": "ukrást mobil",
+                "group": 1
+              },
+              {
+                "text": "rozbít cizí auto",
+                "group": 1
+              },
+              {
+                "text": "řídit opilý",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kristýna slíbila kamarádce, že přijde na její oslavu, a pak nepřišla bez omluvy. Potrestá ji stát?",
+          "answer": "Nedodržet slib není zakázané zákonem → stát ji nepotrestá. Je to ale **nemorální** – ublížila kamarádce. Trestem je výčitka svědomí a zklamaná kamarádka."
+        },
+        {
+          "type": "example",
+          "question": "Je ukrást kolo jen nemorální?",
+          "answer": "Ne. Krádež je špatná (**nemorální**) a zároveň zakázaná zákonem (**protiprávní**)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Co není zakázané zákonem, je v pořádku.",
+          "right": "Mnoho věcí není trestných, a přesto jsou špatné – třeba lež nebo pomluva.",
+          "why": "Zákon nepostihuje všechno. Morálka řeší i to, co zákon nechává být."
+        },
+        {
+          "type": "summary",
+          "text": "Morálka = nepsaná pravidla dobra a zla, hlídá je svědomí a okolí. Právo = psaná pravidla, vymáhá je stát. Zlaté pravidlo: nedělej druhým, co nechceš, aby dělali tobě."
+        }
+      ]
+    },
+    {
+      "title": "Morálka a právo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Lidé žijí spolu, a proto potřebují pravidla. Některá jsou sepsaná v zákonech, jiná nosíme v hlavě. Oba druhy pravidel mají stejný cíl: abychom si navzájem neubližovali."
+        },
+        {
+          "type": "text",
+          "text": "Porovnáme je bod po bodu a ukážeme si vlastnosti, které dělají člověka dobrým."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Norma",
+          "definition": "Pravidlo chování – říká, co se má nebo nemá dělat."
+        },
+        {
+          "type": "term",
+          "term": "Morálka",
+          "definition": "Nepsané normy o dobru a zlu."
+        },
+        {
+          "type": "term",
+          "term": "Právo",
+          "definition": "Psané normy, které vydává stát (zákony)."
+        },
+        {
+          "type": "term",
+          "term": "Svědomí",
+          "definition": "Vnitřní hlas, který hodnotí naše jednání jako dobré nebo špatné."
+        },
+        {
+          "type": "term",
+          "term": "Ctnost",
+          "definition": "Dobrá vlastnost člověka, která se projevuje v jednání.",
+          "example": "Poctivost, odvaha, skromnost."
+        },
+        {
+          "type": "heading",
+          "text": "Porovnání"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "morálka",
+            "právo"
+          ],
+          "rows": [
+            [
+              "zapsané?",
+              "ne, nepsané",
+              "ano, v zákonech"
+            ],
+            [
+              "kdo hlídá",
+              "svědomí a okolí",
+              "stát – policie, soudy"
+            ],
+            [
+              "trest",
+              "výčitky, odsouzení okolím",
+              "pokuta, vězení"
+            ],
+            [
+              "příklad",
+              "nelhat",
+              "nekrást"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Mnoho pravidel platí v obou: krást je nemorální i protiprávní. Některá jen v morálce: lhát kamarádovi je špatně, ale stát tě nepotrestá."
+        },
+        {
+          "type": "heading",
+          "text": "Ctnosti"
+        },
+        {
+          "type": "text",
+          "text": "Zkus ke každé ctnosti vymyslet situaci. Pak otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "poctivost",
+                "back": "nelže a nekrade"
+              },
+              {
+                "front": "odvaha",
+                "back": "zastane se slabšího"
+              },
+              {
+                "front": "skromnost",
+                "back": "nechlubí se"
+              },
+              {
+                "front": "tolerance",
+                "back": "snáší jiné názory"
+              },
+              {
+                "front": "spolehlivost",
+                "back": "dodrží, co slíbí"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Zlaté pravidlo"
+        },
+        {
+          "type": "text",
+          "text": "**Nedělej druhým, co nechceš, aby dělali tobě.** Než něco uděláš, představ si, že by to někdo udělal tobě."
+        },
+        {
+          "type": "example",
+          "question": "Najdeš peněženku. Co je správné a proč?",
+          "answer": "Odnést ji na **policii nebo obecní úřad**. Nechat si ji by bylo nemorální (není moje) i protiprávní."
+        },
+        {
+          "type": "example",
+          "question": "Kdo vymáhá dodržování zákonů a kdo morálky?",
+          "answer": "Zákony vymáhá **stát** (policie, soudy). Morálku hlídá **svědomí** a okolí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Za porušení morálky vždy hrozí pokuta od státu.",
+          "right": "Za porušení morálky stát netrestá – „trestá“ svědomí a okolí. Pokuta hrozí jen za porušení zákona.",
+          "why": "Morálka není zapsaná v zákonech, a stát tedy nemá podle čeho trestat."
+        },
+        {
+          "type": "summary",
+          "text": "Morálka je nepsaná, hlídá ji svědomí. Právo je psané, vymáhá ho stát. Ctnosti (poctivost, odvaha…) dělají člověka dobrým."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je svědomí?",
+      "options": [
+        "vnitřní hlas, co je dobré a špatné",
+        "zákon",
+        "trest od soudu",
+        "školní řád"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Za porušení morálky vždy hrozí pokuta od státu.",
+      "answer": false,
+      "explanation": "Morálku nevymáhá stát, ale svědomí a okolí."
+    },
+    {
+      "type": "choice",
+      "question": "Co je jen nemorální, ale ne protiprávní?",
+      "options": [
+        "lhát kamarádovi",
+        "ukrást mobil",
+        "rozbít cizí auto",
+        "řídit opilý"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak zní zlaté pravidlo?",
+      "options": [
+        "Nedělej druhým, co nechceš, aby dělali tobě.",
+        "Kdo dřív přijde, ten dřív mele.",
+        "Oko za oko, zub za zub.",
+        "Silnější vyhrává."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Právo je zapsané v zákonech.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj ctnost s popisem.",
+      "pairs": [
+        [
+          "poctivost",
+          "nelže a nekrade"
+        ],
+        [
+          "odvaha",
+          "zastane se slabšího"
+        ],
+        [
+          "skromnost",
+          "nechlubí se"
+        ],
+        [
+          "tolerance",
+          "snáší jiné názory"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo vymáhá dodržování práva?",
+      "options": [
+        "stát (policie, soudy)",
+        "jen rodiče",
+        "kamarádi",
+        "nikdo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ukrást kolo je nemorální i protiprávní.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje vnitřní hlas, který nás hodnotí? (jedno slovo)",
+      "answers": [
+        "svědomí"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kam správně odnést nalezenou peněženku?",
+      "options": [
+        "na policii nebo obecní úřad",
+        "nechat si ji",
+        "vyhodit ji",
+        "dát ji kamarádovi"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi morálkou a právem?",
+      "answer": "Morálka jsou nepsaná pravidla dobra a zla, hlídá je svědomí a okolí. Právo jsou psaná pravidla státu, za jejich porušení hrozí trest."
+    },
+    {
+      "type": "open",
+      "question": "Popiš situaci, kdy jednání není protiprávní, ale je nemorální.",
+      "answer": "Například když slíbím kamarádovi pomoc a pak nepřijdu, nebo když pomlouvám spolužáka. Nikdo mě nepotrestá, ale ubližuji mu."
+    }
+  ]
+}

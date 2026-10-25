@@ -1,0 +1,471 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "chemicka-vazba",
+  "title": "Chemická vazba",
+  "emoji": "🤝",
+  "explanations": [
+    {
+      "title": "Přetahovaná",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Voda se skládá z vodíku a kyslíku. Proč se ty atomy nerozpadnou? Něco je drží pohromadě – jako lepidlo. Tomu „lepidlu“ chemici říkají **chemická vazba**."
+        },
+        {
+          "type": "text",
+          "text": "Podle toho, jak vazba vypadá, se látka chová: jestli se rozpustí ve vodě, jestli vede proud, jestli taje snadno nebo těžko. Proto je vazba jeden ze základů chemie."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atom",
+          "definition": "Nejmenší částice prvku. Uprostřed má kladné **jádro**, kolem něj krouží záporné **elektrony** v **elektronovém obalu**."
+        },
+        {
+          "type": "term",
+          "term": "Valenční elektrony",
+          "definition": "Elektrony v **poslední, vnější** vrstvě obalu. Jen ty se účastní vazeb – jsou to „ruce“ atomu.",
+          "example": "Vodík má 1 valenční elektron, kyslík 6, chlor 7."
+        },
+        {
+          "type": "term",
+          "term": "Chemická vazba",
+          "definition": "Síla, která drží atomy v molekule pohromadě. Vzniká z valenčních elektronů."
+        },
+        {
+          "type": "term",
+          "term": "Elektronový pár",
+          "definition": "Dva elektrony, které atomy **sdílejí** – patří oběma najednou. Jeden takový pár = jedna vazba.",
+          "example": "V H₂ dá každý vodík 1 elektron. Vznikne pár, který drží oba atomy: H–H."
+        },
+        {
+          "type": "heading",
+          "text": "Proč se atomy vůbec spojují"
+        },
+        {
+          "type": "text",
+          "text": "Atomy jsou nejspokojenější, když mají vnější vrstvu plnou – většinou **8 elektronů** (vodík jen 2). Samotné ji plnou nemají, a tak si elektrony **půjčují a sdílejí** se sousedy."
+        },
+        {
+          "type": "heading",
+          "text": "Přetahovaná o lano"
+        },
+        {
+          "type": "text",
+          "text": "Představ si sdílený elektronový pár jako **lano**, za které tahají dvě děti – dva atomy."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Stejně silné děti** (dva stejné atomy, H–H, Cl–Cl): lano zůstane uprostřed. Vazba je **nepolární**.",
+            "**Jedno dítě silnější** (H–Cl): lano je posunuté k chloru. Vazba je **polární** – jeden konec molekuly je trochu záporný, druhý trochu kladný.",
+            "**Jedno dítě obrovsky silnější** (Na a Cl): lano úplně vytrhne. Chlor si elektron vezme celý → vzniknou **ionty** Na⁺ a Cl⁻, které se přitahují. Vazba je **iontová**."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Ion",
+          "definition": "Atom s nábojem. Když elektron ztratí, je kladný (**kation**, Na⁺). Když ho získá, je záporný (**anion**, Cl⁻)."
+        },
+        {
+          "type": "text",
+          "text": "Sílu „tahání“ chemici nazývají **elektronegativita**. Nejsilněji ze všech prvků tahá **fluor**, hodně i kyslík a chlor. Kovy jako sodík tahají slabě."
+        },
+        {
+          "type": "heading",
+          "text": "Jedno, dvě, nebo tři lana"
+        },
+        {
+          "type": "text",
+          "text": "Dva atomy mohou sdílet i víc párů. **Jednoduchá** vazba = 1 pár (H–H), **dvojná** = 2 páry (O=O), **trojná** = 3 páry (N≡N)."
+        },
+        {
+          "type": "example",
+          "question": "Proč je v molekule kyslíku O₂ dvojná vazba?",
+          "answer": "Kyslík má 6 valenčních elektronů, do osmi mu chybějí 2. Každý kyslík proto dá do společného 2 elektrony → vzniknou **2 páry** = dvojná vazba O=O."
+        },
+        {
+          "type": "example",
+          "question": "Jakou vazbu má HCl a jakou Cl₂?",
+          "answer": "Cl₂: dva stejné atomy tahají stejně → **nepolární**. HCl: chlor tahá silněji než vodík, lano se posune, ale nevytrhne → **polární**."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď látky podle vazby. Ptej se: Jsou atomy stejné? Je tam kov a nekov (lano se vytrhne)?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "nepolární",
+              "polární",
+              "iontová"
+            ],
+            "items": [
+              {
+                "text": "H₂",
+                "group": 0
+              },
+              {
+                "text": "Cl₂",
+                "group": 0
+              },
+              {
+                "text": "N₂",
+                "group": 0
+              },
+              {
+                "text": "HCl",
+                "group": 1
+              },
+              {
+                "text": "H₂O",
+                "group": 1
+              },
+              {
+                "text": "NH₃",
+                "group": 1
+              },
+              {
+                "text": "NaCl",
+                "group": 2
+              },
+              {
+                "text": "KBr",
+                "group": 2
+              },
+              {
+                "text": "KCl",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "V molekule N₂ je dvojná vazba.",
+          "right": "N₂ má **trojnou** vazbu N≡N. Dvojnou má O₂.",
+          "why": "Dusík má 5 valenčních elektronů, do osmi mu chybějí 3 – sdílí tedy 3 páry."
+        },
+        {
+          "type": "summary",
+          "text": "Vazba = sdílený elektronový pár. Stejné atomy → nepolární, různé → polární, kov s nekovem → iontová. Jednoduchá, dvojná a trojná vazba = 1, 2 a 3 páry."
+        }
+      ]
+    },
+    {
+      "title": "Elektronegativitou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sůl se ve vodě rozpustí a roztok vede proud. Olej se ve vodě nerozpustí. Proč se látky chovají tak různě? Velkou část odpovědi dává typ vazby mezi atomy – a ten se dá **spočítat**."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se ze dvou čísel z tabulky určit, jakou vazbu dva atomy vytvoří."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Valenční elektrony",
+          "definition": "Elektrony ve vnější vrstvě atomu. Z nich se tvoří vazby."
+        },
+        {
+          "type": "term",
+          "term": "Kovalentní vazba",
+          "definition": "Vazba, ve které dva atomy **sdílejí elektronový pár** – dva elektrony, které patří oběma.",
+          "example": "H–H, O=O, H–Cl"
+        },
+        {
+          "type": "term",
+          "term": "Elektronegativita X",
+          "definition": "Číslo, které říká, **jak silně atom přitahuje** sdílené elektrony k sobě. Čím větší číslo, tím silněji.",
+          "example": "Fluor má nejvyšší elektronegativitu ze všech prvků (asi 4,0)."
+        },
+        {
+          "type": "term",
+          "term": "ΔX (delta X)",
+          "definition": "Rozdíl elektronegativit dvou atomů: **větší číslo minus menší**. Výsledek není nikdy záporný."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka elektronegativit"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Prvek",
+            "X",
+            "Prvek",
+            "X"
+          ],
+          "rows": [
+            [
+              "K",
+              "0,82",
+              "N",
+              "3,04"
+            ],
+            [
+              "Na",
+              "0,93",
+              "Cl",
+              "3,16"
+            ],
+            [
+              "H",
+              "2,20",
+              "O",
+              "3,44"
+            ],
+            [
+              "C",
+              "2,55",
+              "F",
+              "3,98"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Rozhodovací pravidlo"
+        },
+        {
+          "type": "table",
+          "head": [
+            "ΔX",
+            "Vazba",
+            "Co se děje s párem",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "menší než 0,4",
+              "nepolární kovalentní",
+              "je uprostřed",
+              "H₂, Cl₂, CH₄"
+            ],
+            [
+              "0,4 až 1,7",
+              "polární kovalentní",
+              "je posunutý k jednomu atomu",
+              "H₂O, HCl"
+            ],
+            [
+              "větší než 1,7",
+              "iontová",
+              "jeden atom si ho vezme celý → ionty",
+              "NaCl, KBr"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Ionty",
+          "definition": "Atomy s nábojem. Kladný = **kation** (Na⁺), záporný = **anion** (Cl⁻). V iontové vazbě drží pohromadě, protože se opačné náboje přitahují."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi v tabulce X obou atomů.",
+            "Odečti menší od většího → ΔX.",
+            "Porovnej s hranicemi 0,4 a 1,7.",
+            "Pojmenuj vazbu."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jakou vazbu má HCl?",
+          "answer": "X(Cl) = 3,16, X(H) = 2,20. ΔX = 3,16 − 2,20 = **0,96**. To je mezi 0,4 a 1,7 → **polární kovalentní**."
+        },
+        {
+          "type": "example",
+          "question": "Jakou vazbu má NaCl?",
+          "answer": "ΔX = 3,16 − 0,93 = **2,23**. Víc než 1,7 → **iontová**. Chlor si elektron sodíku vezme celý: Na⁺ a Cl⁻."
+        },
+        {
+          "type": "example",
+          "question": "Jakou vazbu má C–H v metanu CH₄?",
+          "answer": "ΔX = 2,55 − 2,20 = **0,35**. Méně než 0,4 → **nepolární**."
+        },
+        {
+          "type": "heading",
+          "text": "Násobné vazby"
+        },
+        {
+          "type": "text",
+          "text": "Počet sdílených párů mezi dvěma atomy: jednoduchá **H–H** (1 pár = 2 elektrony), dvojná **O=O** (2 páry), trojná **N≡N** (3 páry). Otoč karty a ověř se."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "H–H",
+                "back": "jednoduchá vazba, 1 pár"
+              },
+              {
+                "front": "O=O",
+                "back": "dvojná vazba, 2 páry"
+              },
+              {
+                "front": "N≡N",
+                "back": "trojná vazba, 3 páry"
+              },
+              {
+                "front": "ΔX < 0,4",
+                "back": "nepolární"
+              },
+              {
+                "front": "ΔX 0,4–1,7",
+                "back": "polární"
+              },
+              {
+                "front": "ΔX > 1,7",
+                "back": "iontová"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "ΔX pro HCl = 2,20 − 3,16 = −0,96.",
+          "right": "ΔX = 3,16 − 2,20 = 0,96.",
+          "why": "Rozdíl elektronegativit se bere vždy jako větší minus menší. Záporné ΔX nedává smysl."
+        },
+        {
+          "type": "summary",
+          "text": "Spočítej ΔX = větší X − menší X. Pod 0,4 nepolární, 0,4–1,7 polární, nad 1,7 iontová. Čím větší rozdíl, tím polárnější vazba."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co tvoří kovalentní vazbu?",
+      "options": [
+        "společný elektronový pár",
+        "dva protony",
+        "neutrony"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jakou vazbu má molekula H₂?",
+      "options": [
+        "nepolární",
+        "polární",
+        "iontovou"
+      ],
+      "answer": 0,
+      "explanation": "Oba atomy jsou stejné, ΔX = 0."
+    },
+    {
+      "type": "choice",
+      "question": "Jaká vazba je v chloridu sodném NaCl?",
+      "options": [
+        "iontová",
+        "nepolární",
+        "kovová"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaká vazba je v molekule vody?",
+      "options": [
+        "polární kovalentní",
+        "nepolární",
+        "iontová"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Elektronegativita vyjadřuje, jak silně atom přitahuje vazebné elektrony.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "V molekule dusíku N₂ je dvojná vazba.",
+      "answer": false,
+      "explanation": "N₂ má trojnou vazbu N≡N."
+    },
+    {
+      "type": "input",
+      "question": "Kolik elektronů tvoří jednu vazebnou dvojici?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik elektronových párů sdílí atomy v trojné vazbě?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj molekulu s typem vazby.",
+      "pairs": [
+        [
+          "Cl₂",
+          "nepolární"
+        ],
+        [
+          "HCl",
+          "polární"
+        ],
+        [
+          "KBr",
+          "iontová"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který prvek má nejvyšší elektronegativitu?",
+      "options": [
+        "fluor",
+        "sodík",
+        "vodík",
+        "uhlík"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je chemická vazba a jak vzniká?",
+      "answer": "Je to soudržnost atomů v molekule. Vzniká sdílením elektronového páru valenčních elektronů mezi dvěma atomy."
+    },
+    {
+      "type": "open",
+      "question": "Jak podle elektronegativity určíš druh vazby?",
+      "answer": "Spočítám rozdíl elektronegativit. Pod 0,4 je vazba nepolární, mezi 0,4 a 1,7 polární, nad 1,7 iontová."
+    }
+  ]
+}

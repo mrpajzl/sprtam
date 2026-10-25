@@ -1,0 +1,428 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "interpunkce-souhrn",
+  "title": "Interpunkce ve větě a souvětí",
+  "emoji": "❗",
+  "explanations": [
+    {
+      "title": "Pět situací",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Pojď jíst, dědo.“ × „Pojď jíst dědo.“ Jedna čárka a z pozvání k obědu je kanibalismus. Čárka mění smysl věty."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Interpunkce je v maturitním testu skoro vždy a v písemné práci se chyby v čárkách počítají. Naštěstí ji drží jen pár pravidel."
+        },
+        {
+          "type": "term",
+          "term": "Interpunkce",
+          "definition": "Znaménka v textu: čárka, tečka, otazník, vykřičník, pomlčka, dvojtečka…",
+          "example": "*Petře, pojď sem!*"
+        },
+        {
+          "type": "term",
+          "term": "Vedlejší věta",
+          "definition": "Věta, která závisí na jiné větě. Začíná často *že, který, když, protože, aby*.",
+          "example": "*Vím, že přijde.*"
+        },
+        {
+          "type": "term",
+          "term": "Oslovení",
+          "definition": "Jméno nebo označení toho, na koho mluvíme.",
+          "example": "*Petře, …*; *Dobrý den, pane Nováku.*"
+        },
+        {
+          "type": "term",
+          "term": "Vsuvka",
+          "definition": "Vložená poznámka mluvčího, která se do věty gramaticky nehodí.",
+          "example": "*Byl to, myslím, omyl.*"
+        },
+        {
+          "type": "term",
+          "term": "Přístavek",
+          "definition": "Druhé pojmenování téže věci, rozvíjí podstatné jméno.",
+          "example": "*Karel IV., český král, …*"
+        },
+        {
+          "type": "heading",
+          "text": "Pět situací, kdy čárka je"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Vedlejší věta** – vždy: *Vím, že přijde.* Vložená vedlejší věta z obou stran: *Kluk, který přišel pozdě, dostal poznámku.*",
+            "**„a“ v jiném než slučovacím poměru**: *Pršelo, a proto zůstal doma.* (také *a tak, a tedy, a přece*)",
+            "**Oslovení**: *Petře, pojď sem.*",
+            "**Vsuvka** z obou stran: *Byl to, myslím, omyl.*",
+            "**Přístavek** z obou stran: *Karel IV., český král, založil univerzitu.*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber správně napsanou variantu."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "",
+                "after": " máš pravdu.",
+                "options": [
+                  "Myslím, že",
+                  "Myslím že"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Dobrý den",
+                "after": " Nováku.",
+                "options": [
+                  ", pane",
+                  " pane"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "To je",
+                "after": " chyba.",
+                "options": [
+                  ", myslím,",
+                  " myslím"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Koupil chleba",
+                "after": " mléko.",
+                "options": [
+                  " a",
+                  ", a"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Oprav: *Kluk, který přišel pozdě dostal poznámku.*",
+          "answer": "Vedlejší věta *který přišel pozdě* je **vložená** – musí mít čárku z obou stran: *Kluk, který přišel pozdě, dostal poznámku.*"
+        },
+        {
+          "type": "example",
+          "question": "Kolik čárek chybí: *Když přišel domů zjistil že klíče nechal v práci.*",
+          "answer": "Slovesa: *přišel, zjistil, nechal* → 3 věty. Hranice: za *domů* a před *že*. Chybí **2 čárky**: *Když přišel domů, zjistil, že…*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Koupil chleba, a mléko.",
+          "right": "Koupil chleba a mléko.",
+          "why": "Slučovací *a* spojuje dva rovnocenné členy – čárka se nepíše."
+        },
+        {
+          "type": "summary",
+          "text": "Čárka: vedlejší věta, „a“ v neslučovacím poměru (a proto, a tak), oslovení, vsuvka, přístavek. Vložené části z obou stran."
+        }
+      ]
+    },
+    {
+      "title": "Rozebrat větu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Některé čárky se píšou „proti uchu“: před *ani* v *ani – ani* čárka je, před *než já* ne. Tady se podíváme na hraniční případy, které test zkouší nejraději."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když větu rozložíš na části, poznáš, kde jsou hranice – a tam patří čárka."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Určité sloveso",
+          "definition": "Sloveso, ze kterého poznáš osobu: *přišel, je, budou*. Kolik určitých sloves, tolik vět.",
+          "example": "*Je vyšší než já.* – jedno sloveso, jedna věta"
+        },
+        {
+          "type": "term",
+          "term": "Opakovaná (dvojitá) spojka",
+          "definition": "Spojka, která se opakuje nebo má dvě části.",
+          "example": "*ani – ani*, *i – i*, *buď – nebo*"
+        },
+        {
+          "type": "term",
+          "term": "Srovnání",
+          "definition": "Spojení s *než* nebo *jako*, které porovnává.",
+          "example": "*vyšší než já*, *bílý jako sníh*"
+        },
+        {
+          "type": "heading",
+          "text": "Rozložená věta"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se, jak se věta dělí na části. Každá barevná část je oddělená čárkou."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "Pane řediteli, ",
+                    "label": "oslovení"
+                  },
+                  {
+                    "text": "tento projekt, ",
+                    "label": "věta"
+                  },
+                  {
+                    "text": "jak víte, ",
+                    "label": "vsuvka"
+                  },
+                  {
+                    "text": "skončil.",
+                    "label": "věta"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "Praha, ",
+                    "label": "věta"
+                  },
+                  {
+                    "text": "hlavní město, ",
+                    "label": "přístavek"
+                  },
+                  {
+                    "text": "je krásná.",
+                    "label": "věta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla pro hraniční případy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Opakovaná spojka** (*ani – ani, i – i, buď – nebo*): čárka před druhou částí. *Nejel ani vlakem, ani autobusem.*",
+            "**Srovnání bez slovesa**: čárka ne. *Je vyšší než já.* *Bílý jako sníh.*",
+            "**Srovnání se slovesem** je vedlejší věta: čárka ano. *Je vyšší, než jsem čekal.*",
+            "**a + důsledek/odpor**: *, a proto*, *, a tak*, *, a přece*."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozhodni, zda na místě v závorce patří čárka."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "čárka ano",
+              "čárka ne"
+            ],
+            "items": [
+              {
+                "text": "Neměl ani čas(,) ani peníze.",
+                "group": 0
+              },
+              {
+                "text": "Je vyšší(,) než já.",
+                "group": 1
+              },
+              {
+                "text": "Buď přijdeš(,) nebo zavoláš.",
+                "group": 0
+              },
+              {
+                "text": "Koupil jablka(,) a hrušky.",
+                "group": 1
+              },
+              {
+                "text": "Byl unavený(,) a proto spal.",
+                "group": 0
+              },
+              {
+                "text": "Řekl(,) že přijde.",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "*Je starší než já.* – čárka před *než*?",
+          "answer": "Za *než* není určité sloveso, jde o srovnání, ne o větu → čárka **není**."
+        },
+        {
+          "type": "example",
+          "question": "*Je starší než jsem si myslel.* – čárka?",
+          "answer": "Za *než* je sloveso *myslel* → je to vedlejší věta → čárka **ano**: *Je starší, než jsem si myslel.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejel ani vlakem ani autobusem.",
+          "right": "Nejel ani vlakem, ani autobusem.",
+          "why": "U opakované spojky *ani – ani* se před druhou částí čárka píše – vyjadřuje důraz na obě možnosti."
+        },
+        {
+          "type": "summary",
+          "text": "Opakované spojky (ani – ani, i – i, buď – nebo) čárku mají. Srovnání bez slovesa (než já) ne, se slovesem ano. Přístavek a vsuvka z obou stran."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která věta je správně?",
+      "options": [
+        "Myslím že máš pravdu.",
+        "Myslím, že máš pravdu.",
+        "Myslím, že, máš pravdu."
+      ],
+      "answer": 1,
+      "explanation": "Vedlejší věta se odděluje čárkou."
+    },
+    {
+      "type": "truefalse",
+      "question": "Před „a proto“ se píše čárka.",
+      "answer": true,
+      "explanation": "Poměr důsledkový."
+    },
+    {
+      "type": "choice",
+      "question": "Kde je správně oslovení?",
+      "options": [
+        "Dobrý den pane Nováku.",
+        "Dobrý den, pane Nováku.",
+        "Dobrý den pane, Nováku."
+      ],
+      "answer": 1,
+      "explanation": "Oslovení se odděluje čárkou."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Koupil chleba a mléko.“ – před „a“ patří čárka.",
+      "answer": false,
+      "explanation": "Několikanásobný člen v poměru slučovacím."
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá vložené „myslím“ ve větě „To je, myslím, chyba.“?",
+      "options": [
+        "přístavek",
+        "vsuvka",
+        "oslovení",
+        "citoslovce"
+      ],
+      "answer": 1,
+      "explanation": "Vsuvka je vložená poznámka mluvčího."
+    },
+    {
+      "type": "choice",
+      "question": "Kde chybí čárka?",
+      "options": [
+        "Petr, můj bratr, studuje.",
+        "Dům který stojí na rohu je starý.",
+        "Přišel a sedl si."
+      ],
+      "answer": 1,
+      "explanation": "Vedlejší věta vložená: Dům, který stojí na rohu, je starý."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Je starší než já.“ se píše bez čárky.",
+      "answer": true,
+      "explanation": "Srovnání bez slovesa není věta."
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je správně?",
+      "options": [
+        "Nejel ani vlakem ani autobusem.",
+        "Nejel ani vlakem, ani autobusem.",
+        "Nejel, ani vlakem, ani autobusem."
+      ],
+      "answer": 1,
+      "explanation": "Opakovaná spojka ani – ani → čárka před druhou."
+    },
+    {
+      "type": "input",
+      "question": "Kolik čárek chybí? „Když přišel domů zjistil že klíče nechal v práci.“",
+      "answers": [
+        "2",
+        "dvě"
+      ],
+      "explanation": "…domů, zjistil, že…"
+    },
+    {
+      "type": "match",
+      "question": "Spoj jev s příkladem.",
+      "pairs": [
+        [
+          "přístavek",
+          "Brno, moravská metropole,"
+        ],
+        [
+          "oslovení",
+          "Jano,"
+        ],
+        [
+          "vsuvka",
+          "tuším,"
+        ],
+        [
+          "vedlejší věta",
+          "že přijde"
+        ]
+      ],
+      "explanation": "Všechny se oddělují čárkou."
+    },
+    {
+      "type": "open",
+      "question": "Kdy se píše čárka před spojkou „a“?",
+      "answer": "Když spojuje věty v jiném než slučovacím poměru (a proto, a tak, a tedy, a přece – důsledkový, odporovací), když končí vložená vedlejší věta nebo vsuvka těsně před „a“, nebo u opakovaného „a – a“."
+    },
+    {
+      "type": "open",
+      "question": "Co je přístavek a jak se píše?",
+      "answer": "Přístavek je druhé pojmenování téže věci, které rozvíjí podstatné jméno (Karel IV., český král, …). Odděluje se z obou stran čárkami, případně pomlčkami."
+    }
+  ]
+}

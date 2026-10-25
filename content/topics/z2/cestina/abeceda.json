@@ -1,0 +1,277 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "abeceda",
+  "title": "Abeceda",
+  "emoji": "🔡",
+  "explanations": [
+    {
+      "title": "Řada písmen",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když stojíte ve třídě v řadě, každý má své místo. Kdo je první, kdo druhý…"
+        },
+        {
+          "type": "text",
+          "text": "Písmena taky stojí v řadě. Ta řada je pořád stejná. Podle ní se řadí jména v seznamu i slova ve slovníku."
+        },
+        {
+          "type": "term",
+          "term": "Abeceda",
+          "definition": "Všechna písmena seřazená v pevném pořadí.",
+          "example": "a, b, c, č, d …"
+        },
+        {
+          "type": "term",
+          "term": "Pořadí",
+          "definition": "Kdo je první, kdo druhý, kdo za kým stojí.",
+          "example": "V abecedě je a první, b druhé."
+        },
+        {
+          "type": "heading",
+          "text": "Celá česká abeceda"
+        },
+        {
+          "type": "text",
+          "text": "a, b, c, č, d, ď, e, f, g, h, **ch**, i, j, k, l, m, n, ň, o, p, q, r, ř, s, š, t, ť, u, v, w, x, y, z, ž"
+        },
+        {
+          "type": "heading",
+          "text": "Na co si dát pozor"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Písmeno s háčkem stojí **hned za** svým kamarádem bez háčku: c, **č** – r, **ř** – s, **š** – z, **ž**.",
+            "**Ch** je jedno písmeno a stojí **za h**.",
+            "Abeceda začíná **a** a končí **ž**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartu: které písmeno stojí hned za ním?"
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "c",
+                "back": "č"
+              },
+              {
+                "front": "h",
+                "back": "ch"
+              },
+              {
+                "front": "ch",
+                "back": "i"
+              },
+              {
+                "front": "r",
+                "back": "ř"
+              },
+              {
+                "front": "s",
+                "back": "š"
+              },
+              {
+                "front": "z",
+                "back": "ž"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Které písmeno je hned za písmenem c?",
+          "answer": "Písmeno s háčkem jde hned za svým kamarádem. Za c je **č**."
+        },
+        {
+          "type": "example",
+          "question": "Je ch blíž k c, nebo k h?",
+          "answer": "Ch stojí **hned za h**: …g, h, **ch**, i… Ne u c!"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ch je v abecedě za c, protože začíná písmenem c.",
+          "right": "Ch je v abecedě za h.",
+          "why": "Ch je samostatné písmeno a jeho místo je mezi h a i."
+        },
+        {
+          "type": "summary",
+          "text": "Abeceda je pevné pořadí písmen od a do ž. Písmeno s háčkem jde hned za tím bez háčku. Ch je za h."
+        }
+      ]
+    },
+    {
+      "title": "Řazení slov",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Paní učitelka má v třídnici jména dětí. Nejsou tam jen tak. Jsou **podle abecedy**, aby každé jméno rychle našla."
+        },
+        {
+          "type": "text",
+          "text": "Stejně to funguje ve slovníku nebo v telefonu. Naučíš se slova řadit sám/sama."
+        },
+        {
+          "type": "term",
+          "term": "Abeceda",
+          "definition": "Pevné pořadí písmen: a, b, c, č, d, ď, e, f, g, h, ch, i, j … ž.",
+          "example": "Ch je za h."
+        },
+        {
+          "type": "term",
+          "term": "Řadit podle abecedy",
+          "definition": "Dát slova za sebou tak, jak jdou jejich písmena v abecedě.",
+          "example": "auto, kolo, myš"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podívej se na **první písmeno** každého slova.",
+            "Které písmeno je v abecedě dřív, to slovo jde dřív.",
+            "Mají slova stejné první písmeno? Rozhodne **druhé** písmeno."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Seřaď: myš, auto, kolo.",
+          "answer": "První písmena: m, a, k. V abecedě: a, k, m. Pořadí: **auto, kolo, myš**."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď: hrad, chata, cesta.",
+          "answer": "První písmena: h, ch, c. V abecedě: c, h, ch. Pořadí: **cesta, hrad, chata**."
+        },
+        {
+          "type": "example",
+          "question": "Co bude ve slovníku dřív: strom, nebo sova?",
+          "answer": "Obě začínají s. Druhé písmeno: t a o. O je dřív než t. Dřív bude **sova**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "čaj, cibule",
+          "right": "cibule, čaj",
+          "why": "C je v abecedě před č. Písmeno s háčkem jde až za tím bez háčku."
+        },
+        {
+          "type": "summary",
+          "text": "Řadíš podle prvního písmene. Když je stejné, rozhodne druhé."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které písmeno je hned za písmenem c?",
+      "options": [
+        "d",
+        "č",
+        "ch"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Kde je v abecedě ch?",
+      "options": [
+        "za c",
+        "za h",
+        "na konci"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Které písmeno je v abecedě první?",
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Které písmeno je v abecedě poslední?",
+      "answers": [
+        "ž"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď podle abecedy.",
+      "items": [
+        "auto",
+        "balón",
+        "dům",
+        "kolo"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď podle abecedy.",
+      "items": [
+        "hrad",
+        "chata",
+        "indián",
+        "jahoda"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď podle abecedy.",
+      "items": [
+        "cibule",
+        "čaj",
+        "datel",
+        "řeka"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Písmeno ř je v abecedě před r.",
+      "answer": false,
+      "explanation": "Nejdřív r, potom ř."
+    },
+    {
+      "type": "truefalse",
+      "question": "Písmeno š je v abecedě za s.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo bude ve slovníku dřív?",
+      "options": [
+        "strom",
+        "sova"
+      ],
+      "answer": 1,
+      "explanation": "Obě začínají s. Druhé písmeno: o je dřív než t."
+    },
+    {
+      "type": "open",
+      "question": "Proč je dobré znát abecedu?",
+      "answer": "Aby se dalo rychle najít slovo ve slovníku nebo jméno v seznamu."
+    },
+    {
+      "type": "open",
+      "question": "Řekni abecedu od a do h.",
+      "answer": "a, b, c, č, d, ď, e, f, g, h."
+    }
+  ]
+}

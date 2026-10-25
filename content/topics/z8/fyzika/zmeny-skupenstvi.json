@@ -1,0 +1,375 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zmeny-skupenstvi",
+  "title": "Změny skupenství",
+  "emoji": "💧",
+  "explanations": [
+    {
+      "title": "Koloběhem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sníh na jaře roztaje. Louže v létě zmizí. Brýle se ti orosí, když přijdeš ze zimy dovnitř. Voda pořád mění svou podobu – a s ní i mnoho dalších látek."
+        },
+        {
+          "type": "text",
+          "text": "Těmto dějům rozumí meteorologové (počasí), kuchaři i výrobci ledniček. Lednička totiž chladí právě díky změnám skupenství."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Skupenství",
+          "definition": "Podoba látky: **pevné** (led), **kapalné** (voda), **plynné** (pára).",
+          "example": "Voda může být ve všech třech."
+        },
+        {
+          "type": "term",
+          "term": "Tání a tuhnutí",
+          "definition": "**Tání**: pevná → kapalná (led → voda). **Tuhnutí**: kapalná → pevná (voda → led).",
+          "example": "Sníh na jaře taje, rybník v zimě zamrzá (tuhne)."
+        },
+        {
+          "type": "term",
+          "term": "Vypařování a kapalnění",
+          "definition": "**Vypařování**: kapalina → plyn. **Kapalnění**: plyn → kapalina.",
+          "example": "Prádlo uschne vypařováním. Orosené brýle = kapalnění páry."
+        },
+        {
+          "type": "term",
+          "term": "Var",
+          "definition": "Zvláštní, prudké vypařování: probíhá v **celé kapalině** najednou, tvoří se bubliny. Jen při **teplotě varu** (voda asi 100 °C).",
+          "example": "Bublající voda v hrnci."
+        },
+        {
+          "type": "term",
+          "term": "Sublimace a desublimace",
+          "definition": "**Sublimace**: pevná → rovnou plyn, bez kapaliny. **Desublimace**: plyn → rovnou pevná látka.",
+          "example": "Suchý led mizí v páře (sublimace). Jinovatka na stromech (desublimace)."
+        },
+        {
+          "type": "heading",
+          "text": "Voda dokola"
+        },
+        {
+          "type": "text",
+          "text": "Klikej na kroky a ke každému si řekni, jak se ten děj jmenuje."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "led taje → voda",
+              "voda se vypařuje → pára",
+              "pára kapalní → kapky",
+              "voda tuhne → led"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vypařování v přírodě"
+        },
+        {
+          "type": "text",
+          "text": "Voda se **vypařuje při každé teplotě**, jen z povrchu. Rychleji, když je **teplo**, **fouká vítr** a má velkou plochu. Proto prádlo uschne nejrychleji rozvěšené za větrného slunečného dne."
+        },
+        {
+          "type": "example",
+          "question": "Proč tě po koupání studí mokrá kůže, i když je teplo?",
+          "answer": "Voda na kůži se **vypařuje**. Na vypařování potřebuje teplo a bere ho z tvého těla. Kůže se ochladí."
+        },
+        {
+          "type": "example",
+          "question": "Popiš, jak se voda z moře dostane zpátky do moře.",
+          "answer": "Voda se z moře **vypaří** → pára v oblacích **zkapalní** na kapky → spadne jako **déšť** → řeky ji odnesou zpět **do moře**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Voda se vypařuje jen při 100 °C.",
+          "right": "Vypařuje se při každé teplotě. Při 100 °C vře.",
+          "why": "Louže uschne i v 15 °C. Teplota varu je jen hranice, kdy se tvoří bubliny v celé kapalině."
+        },
+        {
+          "type": "summary",
+          "text": "Šest změn: tání ↔ tuhnutí, vypařování (var) ↔ kapalnění, sublimace ↔ desublimace. Vypařování probíhá stále z povrchu, var jen při teplotě varu."
+        }
+      ]
+    },
+    {
+      "title": "Teplota a teplo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dej kostky ledu do vody a měř teplotu. Dokud v ní plave led, teploměr ukazuje **0 °C** – i když hrnec ohříváš. Kam se ztrácí teplo? Tohle téma to vysvětlí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Teplo",
+          "definition": "Energie, která přechází z teplejšího tělesa na chladnější. V joulech (J), větší množství v kJ.",
+          "example": "Plotna předává teplo hrnci."
+        },
+        {
+          "type": "term",
+          "term": "Teplota tání",
+          "definition": "Teplota, při které pevná látka taje. Při stejné teplotě taky tuhne.",
+          "example": "Led taje při 0 °C, olovo asi při 327 °C."
+        },
+        {
+          "type": "term",
+          "term": "Teplota varu",
+          "definition": "Teplota, při které kapalina vře. Záleží na tlaku vzduchu.",
+          "example": "Voda za normálního tlaku 100 °C, na vysokých horách méně."
+        },
+        {
+          "type": "term",
+          "term": "Skupenské teplo tání",
+          "definition": "Teplo, které potřebuje **1 kg** látky, aby při teplotě tání **celý roztál**. Teplota se přitom nemění.",
+          "example": "Led potřebuje **334 kJ** na každý kilogram."
+        },
+        {
+          "type": "heading",
+          "text": "Proč teplota stojí"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zahříváš led o teplotě −10 °C. Teplota roste.",
+            "Při **0 °C** led začne tát. Teplota se **zastaví**.",
+            "Dodávané teplo teď neohřívá, ale **rozbíjí vazby** mezi částicemi ledu.",
+            "Až všechen led roztaje, teplota vody zase začne růst.",
+            "Při 100 °C se to opakuje – voda vře a teplota stojí, dokud se nevypaří."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Obráceně: když voda tuhne nebo pára kapalní, látka teplo **odevzdává**. Například pára, která kapalní na tvé ruce, ji spálí víc než stejně horká voda."
+        },
+        {
+          "type": "heading",
+          "text": "Všech šest změn"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Změna",
+            "Z čeho → na co",
+            "Teplo"
+          ],
+          "rows": [
+            [
+              "tání",
+              "pevné → kapalné",
+              "přijímá"
+            ],
+            [
+              "tuhnutí",
+              "kapalné → pevné",
+              "odevzdává"
+            ],
+            [
+              "vypařování, var",
+              "kapalné → plynné",
+              "přijímá"
+            ],
+            [
+              "kapalnění",
+              "plynné → kapalné",
+              "odevzdává"
+            ],
+            [
+              "sublimace",
+              "pevné → plynné",
+              "přijímá"
+            ],
+            [
+              "desublimace",
+              "plynné → pevné",
+              "odevzdává"
+            ]
+          ]
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "tání",
+                "back": "pevné → kapalné"
+              },
+              {
+                "front": "var",
+                "back": "vypařování v celém objemu při teplotě varu"
+              },
+              {
+                "front": "sublimace",
+                "back": "pevné → plynné (suchý led, naftalen)"
+              },
+              {
+                "front": "desublimace",
+                "back": "plynné → pevné (jinovatka)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Zkus každou změnu popsat dřív, než kartu otočíš."
+        },
+        {
+          "type": "example",
+          "question": "Kolik tepla potřebují 2 kg ledu o teplotě 0 °C, aby roztály?",
+          "answer": "Každý kilogram 334 kJ. Dva kilogramy: 2 · 334 = **668 kJ**."
+        },
+        {
+          "type": "example",
+          "question": "Proč se po vystoupení z vany cítíš chladněji než ve vodě?",
+          "answer": "Voda na kůži se vypařuje a vypařování **přijímá teplo** – bere ho z tvé kůže."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Při tání ledu stoupá teplota směsi vody a ledu.",
+          "right": "Dokud led netaje celý, teplota zůstává 0 °C.",
+          "why": "Všechno dodané teplo se spotřebuje na tání, na ohřívání nezbude."
+        },
+        {
+          "type": "summary",
+          "text": "Při tání a varu teplota stojí – teplo se spotřebuje na změnu skupenství. Tání, vypařování a sublimace teplo přijímají, opačné děje ho odevzdávají."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se nazývá změna kapaliny na pevnou látku?",
+      "options": [
+        "tuhnutí",
+        "tání",
+        "kapalnění",
+        "sublimace"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá přímá změna pevné látky na plyn?",
+      "options": [
+        "sublimace",
+        "desublimace",
+        "var",
+        "tání"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vypařování probíhá jen při teplotě varu.",
+      "answer": false,
+      "explanation": "Vypařuje se při každé teplotě, jen z povrchu."
+    },
+    {
+      "type": "truefalse",
+      "question": "Během tání ledu se teplota směsi vody a ledu nemění.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak vzniká jinovatka?",
+      "options": [
+        "desublimací vodní páry",
+        "tuhnutím vody",
+        "sublimací ledu",
+        "varem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co urychlí vypařování prádla?",
+      "options": [
+        "vítr a vyšší teplota",
+        "nižší teplota",
+        "složení prádla",
+        "bezvětří"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj děj s příkladem.",
+      "pairs": [
+        [
+          "tání",
+          "sníh na jaře"
+        ],
+        [
+          "kapalnění",
+          "orosené brýle"
+        ],
+        [
+          "tuhnutí",
+          "zamrzlý rybník"
+        ],
+        [
+          "sublimace",
+          "mizící suchý led"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik kJ tepla potřebuje 2 kg ledu o teplotě 0 °C, aby roztál? (skupenské teplo tání 334 kJ/kg)",
+      "answers": [
+        "668"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč nás po koupání studí mokrá kůže?",
+      "options": [
+        "vypařování odebírá teplo",
+        "voda je studená vždy",
+        "kapalnění"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď děje v koloběhu: voda z moře se dostane zpět do moře.",
+      "items": [
+        "vypařování z moře",
+        "kapalnění v oblacích",
+        "déšť",
+        "řeka teče do moře"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi vypařováním a varem?",
+      "answer": "Vypařování probíhá jen z povrchu kapaliny a při každé teplotě. Var probíhá v celém objemu jen při teplotě varu (voda 100 °C)."
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj všech šest změn skupenství.",
+      "answer": "Tání, tuhnutí, vypařování (var), kapalnění, sublimace a desublimace."
+    }
+  ]
+}

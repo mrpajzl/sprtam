@@ -1,0 +1,460 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vers-a-rym",
+  "title": "Verš, rým, rytmus",
+  "emoji": "🎼",
+  "explanations": [
+    {
+      "title": "Ťukání do stolu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč se básničky z dětství pamatují tak snadno? Protože „znějí“: mají pravidelný **tep** jako písnička a konce řádků k sobě ladí. Říkadlo „Paní Mášo, máte kašel“ si zapamatuješ po prvním přečtení."
+        },
+        {
+          "type": "text",
+          "text": "Tenhle výklad ti ukáže, z čeho se ten tep skládá. Pomůže ti to číst básně nahlas tak, aby zněly, a u rozboru básně říct, jak je postavená."
+        },
+        {
+          "type": "heading",
+          "text": "Stavební kameny"
+        },
+        {
+          "type": "term",
+          "term": "Slabika",
+          "definition": "Kousek slova, který vyslovíš jedním „ťuknutím“. Obvykle má jednu samohlásku.",
+          "example": "ma-lí-na = 3 slabiky, máj = 1 slabika"
+        },
+        {
+          "type": "term",
+          "term": "Přízvuk",
+          "definition": "Slabika, kterou ve slově řekneš o trochu silněji. V češtině je přízvuk **vždy na první slabice** slova.",
+          "example": "**MA**-lí-na, **VE**-čer, **ŠKO**-la"
+        },
+        {
+          "type": "term",
+          "term": "Verš",
+          "definition": "Jeden řádek básně.",
+          "example": "„Byl pozdní večer – první máj –“"
+        },
+        {
+          "type": "term",
+          "term": "Rytmus",
+          "definition": "Pravidelné střídání silných (přízvučných) a slabých (nepřízvučných) slabik. Je to „tep“ básně.",
+          "example": "**TA**-ta **TA**-ta **TA**-ta"
+        },
+        {
+          "type": "term",
+          "term": "Stopa",
+          "definition": "Nejmenší kousek rytmu, který se pořád opakuje – třeba „silná + slabá“. Verš se skládá z několika stop.",
+          "example": "Ve verši **MÁ**-ma **MÁ**-ma **MÁ**-ma se stopa **MÁ**-ma opakuje třikrát."
+        },
+        {
+          "type": "heading",
+          "text": "Jak vyťukat rytmus"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti verš nahlas a pomalu.",
+            "Rozděl ho na slabiky.",
+            "Na každou silnou (přízvučnou) slabiku ťukni do stolu silně, na slabou jemně.",
+            "Najdi, která dvojice nebo trojice se opakuje – to je stopa."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Tři stopy, které musíš znát"
+        },
+        {
+          "type": "text",
+          "text": "Značení: **–** je silná (přízvučná) slabika, **ᴗ** je slabá."
+        },
+        {
+          "type": "term",
+          "term": "Trochej (– ᴗ)",
+          "definition": "Silná, slabá: **DÁ**-ta. Češtině je nejpřirozenější, protože naše slova začínají přízvukem.",
+          "example": "**MÁ**-ma **ME**-le **MA**-so"
+        },
+        {
+          "type": "term",
+          "term": "Jamb (ᴗ –)",
+          "definition": "Slabá, silná: ta-**DÁ**. V češtině ho básník udělá tak, že verš začne krátkým slovem bez důrazu.",
+          "example": "Máchův Máj: byl **POZD**-ní **VE**-čer **PRV**-ní **MÁJ**"
+        },
+        {
+          "type": "term",
+          "term": "Daktyl (– ᴗ ᴗ)",
+          "definition": "Silná, slabá, slabá: **DÁ**-ta-ta.",
+          "example": "**MA**-li-na, **JA**-ho-da"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Nejdřív si každou stopu vyťukej, pak otoč kartu a zkontroluj se."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "trochej",
+                "back": "– ᴗ  (DÁ-ta)"
+              },
+              {
+                "front": "jamb",
+                "back": "ᴗ –  (ta-DÁ), Máchův Máj"
+              },
+              {
+                "front": "daktyl",
+                "back": "– ᴗ ᴗ  (DÁ-ta-ta)"
+              },
+              {
+                "front": "volný verš",
+                "back": "bez pravidelného rytmu a často bez rýmu"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Vyťukej verš „Byl pozdní večer – první máj“. Jaká je stopa?",
+          "answer": "Slabiky: byl-pozd-ní-ve-čer-prv-ní-máj. Silné jsou první slabiky víceslabičných slov: POZD, VE, PRV, a důraz padá i na MÁJ. Krátké „byl“ je slabé. Vychází: ta-DÁ ta-DÁ ta-DÁ ta-DÁ → **jamb**."
+        },
+        {
+          "type": "example",
+          "question": "Vyťukej větu „Máma mele maso“. Jaká je stopa?",
+          "answer": "Slabiky: má-ma-me-le-ma-so. Přízvuk je na první slabice každého slova: MÁ, ME, MA. Vychází DÁ-ta DÁ-ta DÁ-ta → silná + slabá → **trochej**."
+        },
+        {
+          "type": "heading",
+          "text": "Když pravidla nejsou"
+        },
+        {
+          "type": "term",
+          "term": "Volný verš",
+          "definition": "Verš bez pravidelného rytmu a často i bez rýmu. Básník láme řádky podle smyslu a dechu.",
+          "example": "Typický pro poezii 20. století (třeba Apollinaire, Seifert)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rytmus básně = rým.",
+          "right": "Rytmus je střídání silných a slabých slabik uvnitř verše. Rým je shoda zvuku na konci veršů.",
+          "why": "Báseň může mít rytmus bez rýmu i rým bez pravidelného rytmu. Jsou to dvě různé věci."
+        },
+        {
+          "type": "summary",
+          "text": "Rytmus = pravidelné střídání přízvučných a nepřízvučných slabik. Trochej – ᴗ, jamb ᴗ – (Máj), daktyl – ᴗ ᴗ. Volný verš nemá pravidla."
+        }
+      ]
+    },
+    {
+      "title": "Schéma rýmů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rapper, který skládá text, hledá slova, která „sedí“: *noc – moc – pomoc*. Básníci to dělají stovky let. Shodě konců říkáme rým a každá báseň ho skládá podle nějakého plánu."
+        },
+        {
+          "type": "text",
+          "text": "Ten plán se dá zapsat písmeny – jako kód. U rozboru básně stačí napsat „ABBA“ a každý ví, jak je sloka postavená."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Verš",
+          "definition": "Jeden řádek básně.",
+          "example": "„Hrdliččin zval ku lásce hlas,“"
+        },
+        {
+          "type": "term",
+          "term": "Sloka (strofa)",
+          "definition": "Skupina veršů, která patří k sobě – jako odstavec v básni. Mezi slokami bývá prázdný řádek.",
+          "example": "Čtyřverší = sloka ze 4 veršů."
+        },
+        {
+          "type": "term",
+          "term": "Rým",
+          "definition": "Shoda zvuku na **konci** dvou nebo více veršů.",
+          "example": "máj – háj, čas – hlas"
+        },
+        {
+          "type": "heading",
+          "text": "Jak zapsat schéma rýmu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti konec prvního verše. Dej mu písmeno **A**.",
+            "Konec dalšího verše: rýmuje se s A? Pak je to také A. Ne? Dostane nové písmeno **B**.",
+            "Takhle pokračuj až do konce sloky. Každý nový zvuk = nové písmeno (C, D…).",
+            "Přečti písmena za sebou – to je schéma."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři základní typy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rým",
+            "Schéma",
+            "Jak si to představit"
+          ],
+          "rows": [
+            [
+              "sdružený",
+              "AABB",
+              "rýmují se vždy dva verše za sebou"
+            ],
+            [
+              "střídavý",
+              "ABAB",
+              "rýmy se střídají ob jeden verš"
+            ],
+            [
+              "obkročný",
+              "ABBA",
+              "vnější verše „obkročí“ vnitřní dvojici"
+            ],
+            [
+              "přerývaný",
+              "ABCB",
+              "rýmuje se jen 2. a 4. verš"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči schéma: „Byl pozdní večer – první **máj** – / večerní máj – byl lásky **čas**. / Hrdliččin zval ku lásce **hlas**, / kde borový zaváněl **háj**.“ (K. H. Mácha, Máj)",
+          "answer": "máj = A. čas – nerýmuje se s máj → B. hlas – rýmuje se s čas → B. háj – rýmuje se s máj → A. Schéma **ABBA** = rým obkročný."
+        },
+        {
+          "type": "example",
+          "question": "Urči schéma: „Slunce svítí, je tu **den**, / kočka spí a sní svůj **sen**. / Na zahradě kvete **mák**, / nad ním krouží malý **pták**.“",
+          "answer": "den = A, sen = A, mák = B, pták = B → **AABB** = rým sdružený."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň, jaký rým patří ke schématu."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "ABAB je rým ",
+                "after": "",
+                "options": [
+                  "střídavý",
+                  "sdružený",
+                  "obkročný"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "AABB je rým ",
+                "after": "",
+                "options": [
+                  "přerývaný",
+                  "sdružený",
+                  "střídavý"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "ABBA je rým ",
+                "after": "",
+                "options": [
+                  "obkročný",
+                  "střídavý",
+                  "přerývaný"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "ABCB je rým ",
+                "after": "",
+                "options": [
+                  "sdružený",
+                  "obkročný",
+                  "přerývaný"
+                ],
+                "answer": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Veršové systémy: podle čeho se verš „měří“"
+        },
+        {
+          "type": "term",
+          "term": "Veršový systém",
+          "definition": "Pravidlo, podle kterého se ve verši dodržuje pravidelnost.",
+          "example": "Počítá se počet slabik? Délka slabik? Přízvuky?"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Časomíra** – střídají se dlouhé a krátké slabiky. Používala ji antická (starořecká a římská) poezie.",
+            "**Sylabický verš** – každý verš má stejný počet slabik.",
+            "**Tonický verš** – každý verš má stejný počet přízvuků.",
+            "**Sylabotónický verš** – stejný počet slabik i pravidelné střídání přízvuků. Česká poezie ho používá od doby národního obrození (konec 18. a 19. století).",
+            "**Volný verš** – bez pravidel, rozšířil se ve 20. století."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Schéma rýmu určuju podle prvních slov veršů.",
+          "right": "Rým je vždy na **konci** verše. Dívej se na poslední slovo (přesněji poslední slabiky).",
+          "why": "Opakování slov na začátku veršů je jiný jev (anafora), s rýmem nesouvisí."
+        },
+        {
+          "type": "summary",
+          "text": "Verš = řádek, sloka (strofa) = skupina veršů. Rým zapisuj písmeny: AABB sdružený, ABAB střídavý, ABBA obkročný, ABCB přerývaný."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaké schéma má rým střídavý?",
+      "options": [
+        "ABAB",
+        "AABB",
+        "ABBA",
+        "ABCB"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaké schéma má rým obkročný?",
+      "options": [
+        "ABBA",
+        "ABAB",
+        "AABB",
+        "ABCB"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která stopa je „přízvučná + nepřízvučná“?",
+      "options": [
+        "trochej",
+        "jamb",
+        "daktyl"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kterou stopou je psán Máchův Máj?",
+      "options": [
+        "jamb",
+        "trochej",
+        "daktyl",
+        "volný verš"
+      ],
+      "answer": 0,
+      "explanation": "„Byl pozdní večer – první máj“: ta-DÁ ta-DÁ…"
+    },
+    {
+      "type": "truefalse",
+      "question": "Antická poezie byla založena na časomíře (délce slabik).",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Volný verš má pravidelný rým i rytmus.",
+      "answer": false
+    },
+    {
+      "type": "match",
+      "question": "Spoj rým se schématem.",
+      "pairs": [
+        [
+          "sdružený",
+          "AABB"
+        ],
+        [
+          "střídavý",
+          "ABAB"
+        ],
+        [
+          "obkročný",
+          "ABBA"
+        ],
+        [
+          "přerývaný",
+          "ABCB"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jak se jinak nazývá sloka?",
+      "answers": [
+        "strofa"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký veršový systém užívá moderní česká poezie s pravidelným rytmem?",
+      "options": [
+        "sylabotónický",
+        "časomíra",
+        "tonický",
+        "sylabický"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Daktyl má schéma:",
+      "options": [
+        "– ᴗ ᴗ",
+        "ᴗ –",
+        "– ᴗ",
+        "ᴗ ᴗ –"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli pojmy verš, sloka, rým a rytmus.",
+      "answer": "Verš je řádek básně, sloka (strofa) skupina veršů. Rým je zvuková shoda konců veršů. Rytmus vzniká pravidelným střídáním přízvučných a nepřízvučných slabik."
+    },
+    {
+      "type": "open",
+      "question": "Jaké znáš veršové systémy?",
+      "answer": "Časomíra (délka slabik, antika), sylabický (stejný počet slabik), tonický (stejný počet přízvuků), sylabotónický (počet slabik i pravidelný přízvuk) a volný verš bez pravidel."
+    }
+  ]
+}

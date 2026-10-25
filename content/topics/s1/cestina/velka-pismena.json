@@ -1,0 +1,435 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "velka-pismena",
+  "title": "Velká písmena",
+  "emoji": "🔠",
+  "explanations": [
+    {
+      "title": "Procházka Prahou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Velké písmeno je jako cedulka „tohle je jméno“. Říká čtenáři: nejde o jakýkoli most, ale o jeden konkrétní – **Karlův most**."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Velká písmena jsou v testech častý chyták. A v žádosti nebo e-mailu působí chyba typu *pražský Hrad* hned neprofesionálně."
+        },
+        {
+          "type": "term",
+          "term": "Obecné jméno",
+          "definition": "Slovo pro celou skupinu věcí nebo bytostí. Píše se malým písmenem.",
+          "example": "most, řeka, město, kluk"
+        },
+        {
+          "type": "term",
+          "term": "Vlastní jméno",
+          "definition": "Jméno jedné konkrétní osoby, místa, instituce nebo díla. Začíná velkým písmenem.",
+          "example": "Karel, Vltava, Praha, Národní divadlo"
+        },
+        {
+          "type": "term",
+          "term": "Obyvatelské jméno",
+          "definition": "Jméno pro obyvatele místa nebo příslušníka národa. Píše se velkým písmenem.",
+          "example": "Pražan, Brňan, Čech, Evropan"
+        },
+        {
+          "type": "heading",
+          "text": "Vyrážíme"
+        },
+        {
+          "type": "text",
+          "text": "**Pražan** Tomáš vyšel z **Národního divadla**, přešel **Karlův most** a dal si **pražskou** šunku."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Pražan** – obyvatel Prahy. Obyvatelské jméno → **velké**.",
+            "**Národní divadlo** – jedno konkrétní divadlo (instituce). Velké je **první slovo** názvu.",
+            "**Karlův most** – *Karlův* je odvozené od jména Karel → velké. *most* je obecné slovo → malé.",
+            "**pražská** šunka – přídavné jméno od města, ale není to název → **malé**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Přídavné jméno od místa je velké, jen když **začíná název**: *Pražský hrad*, *Brněnská přehrada*."
+        },
+        {
+          "type": "heading",
+          "text": "Kalendář"
+        },
+        {
+          "type": "text",
+          "text": "Svátky jsou vlastní jména: **Vánoce, Velikonoce, Štědrý den**. Dny a měsíce ale ne: *pondělí, středa, leden, únor*."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každého slova se zeptej: je to jedno konkrétní jméno, nebo obecné slovo?"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "",
+                "after": "ánoce",
+                "options": [
+                  "V",
+                  "v"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Jsem ",
+                "after": "ražák.",
+                "options": [
+                  "P",
+                  "p"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "",
+                "after": "ražský hrad",
+                "options": [
+                  "P",
+                  "p"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "v ",
+                "after": "ondělí",
+                "options": [
+                  "p",
+                  "P"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Česká ",
+                "after": "epublika",
+                "options": [
+                  "r",
+                  "R"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Napiš správně: *(t)ichý (o)ceán*.",
+          "answer": "Je to název jednoho oceánu → první slovo velké: *Tichý*. *Oceán* je obecné slovo → malé. **Tichý oceán**."
+        },
+        {
+          "type": "example",
+          "question": "Napiš správně: *jsem (č)ech, mluvím (č)esky, bydlím v (č)eské republice*.",
+          "answer": "**Čech** – obyvatelské jméno, velké. **česky** – příslovce, malé. **České republice** – název státu, první slovo velké, *republika* je malé."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ten Brněnský fotbalista je Brňan.",
+          "right": "Ten brněnský fotbalista je Brňan.",
+          "why": "Přídavné jméno od města píšeme malým, pokud nezačíná oficiální název. Velké je obyvatelské jméno *Brňan*."
+        },
+        {
+          "type": "summary",
+          "text": "Velké písmeno = vlastní jméno (osoba, obyvatel, místo, instituce, dílo, svátek). V názvu je velké první slovo a slova, která jsou sama jménem. Přídavná jména od míst, dny a měsíce píšeme malým."
+        }
+      ]
+    },
+    {
+      "title": "Rozhodovací postup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "U jednoslovných jmen (Eva, Brno) je to snadné. Potíž nastane u **víceslovných názvů**: *Spojené státy americké*, *Univerzita Karlova*, *Válka s mloky*. Kde je velké a kde malé?"
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Naučíš se jeden postup, kterým rozlouskneš i složitý název. Bez hádání."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vlastní jméno",
+          "definition": "Jméno jedné konkrétní věci, osoby nebo místa. Píše se velkým písmenem.",
+          "example": "Vltava, Jan Neruda"
+        },
+        {
+          "type": "term",
+          "term": "Obecné jméno",
+          "definition": "Slovo pro celou skupinu podobných věcí. Malým písmenem.",
+          "example": "řeka, básník"
+        },
+        {
+          "type": "term",
+          "term": "Víceslovný název",
+          "definition": "Vlastní jméno složené z více slov. Velké bývá jen první slovo a slova, která jsou sama jménem.",
+          "example": "Národní divadlo, Univerzita Karlova"
+        },
+        {
+          "type": "term",
+          "term": "Přídavné jméno",
+          "definition": "Slovo, které říká, jaký kdo nebo co je.",
+          "example": "*pražský*, *český*, *Karlův*"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je to jméno jedné konkrétní věci, osoby, místa, díla? Ne → **malé** (*most*, *pondělí*). Ano → pokračuj.",
+            "**První slovo** názvu napiš **velké**.",
+            "Projdi další slova. Je některé samo vlastním jménem nebo je odvozené od jména osoby (Karel → *Karlova*)? → **velké**.",
+            "Ostatní slova v názvu jsou obecná → **malé**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Přehled"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kategorie",
+            "Pravidlo",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "osoby, obyvatelé",
+              "velké",
+              "Pražan, Evropan"
+            ],
+            [
+              "přídavná jména od míst",
+              "malé (pokud nezačínají název)",
+              "pražský, evropský"
+            ],
+            [
+              "státy",
+              "první slovo + vlastní jména",
+              "Spojené státy americké, Česká republika"
+            ],
+            [
+              "zeměpisné názvy",
+              "první slovo, obecná slova malá",
+              "Tichý oceán, Karlův most"
+            ],
+            [
+              "instituce",
+              "první slovo + vlastní jména",
+              "Národní divadlo, Univerzita Karlova"
+            ],
+            [
+              "díla",
+              "první slovo",
+              "Válka s mloky"
+            ],
+            [
+              "svátky",
+              "velké",
+              "Vánoce, Štědrý den"
+            ],
+            [
+              "dny, měsíce",
+              "malé",
+              "pondělí, leden"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozřaď: má slovo začínat velkým, nebo malým písmenem?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "velké",
+              "malé"
+            ],
+            "items": [
+              {
+                "text": "(V)elikonoce",
+                "group": 0
+              },
+              {
+                "text": "(Č)ech (obyvatel)",
+                "group": 0
+              },
+              {
+                "text": "(č)eský (přídavné jméno)",
+                "group": 1
+              },
+              {
+                "text": "(ú)nor",
+                "group": 1
+              },
+              {
+                "text": "(T)ichý oceán",
+                "group": 0
+              },
+              {
+                "text": "(s)tředa",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Napiš správně: *(u)niverzita (k)arlova*.",
+          "answer": "Jde o jednu konkrétní instituci → první slovo velké: *Univerzita*. *Karlova* je odvozeno od jména Karel → velké. **Univerzita Karlova**."
+        },
+        {
+          "type": "example",
+          "question": "Napiš správně název knihy: *(v)álka (s) (m)loky*.",
+          "answer": "U díla je velké jen první slovo: **Válka s mloky**. *Mloky* je obecné slovo."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Spojené Státy Americké",
+          "right": "Spojené státy americké",
+          "why": "Velké je první slovo názvu. *státy* je obecné slovo a *americké* je přídavné jméno, ne samostatné jméno."
+        },
+        {
+          "type": "summary",
+          "text": "Postup: Je to vlastní jméno? → první slovo velké → další slova velká jen tehdy, když jsou sama jménem. Dny, měsíce a přídavná jména od míst píšeme malým."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který zápis je správný?",
+      "options": [
+        "Spojené státy americké",
+        "Spojené Státy Americké",
+        "spojené státy americké"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který zápis je správný?",
+      "options": [
+        "Karlův most",
+        "Karlův Most",
+        "karlův most"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který zápis je správný?",
+      "options": [
+        "Válka s mloky",
+        "Válka s Mloky",
+        "Válka S Mloky"
+      ],
+      "answer": 0,
+      "explanation": "U názvů děl je velké jen první slovo (a vlastní jména)."
+    },
+    {
+      "type": "truefalse",
+      "question": "Názvy měsíců píšeme malým písmenem.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Přídavné jméno „brněnský“ píšeme s velkým B.",
+      "answer": false,
+      "explanation": "Přídavná jména od místních jmen píšeme malým (brněnský), obyvatel je Brňan."
+    },
+    {
+      "type": "choice",
+      "question": "Kde je chyba?",
+      "options": [
+        "Tichý Oceán",
+        "Národní divadlo",
+        "Štědrý den",
+        "Česká republika"
+      ],
+      "answer": 0,
+      "explanation": "Správně Tichý oceán."
+    },
+    {
+      "type": "input",
+      "question": "Napiš správně: (č)ech – obyvatel Čech",
+      "answers": [
+        "Čech"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj s pravidlem.",
+      "pairs": [
+        [
+          "Vánoce",
+          "svátek – velké"
+        ],
+        [
+          "úterý",
+          "den – malé"
+        ],
+        [
+          "Evropan",
+          "obyvatel – velké"
+        ],
+        [
+          "evropský",
+          "přídavné jméno – malé"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který zápis je správný?",
+      "options": [
+        "Univerzita Karlova",
+        "univerzita Karlova",
+        "Univerzita karlova"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Shrň hlavní zásady psaní velkých písmen v názvech.",
+      "answer": "Velkým píšeme vlastní jména osob, obyvatel, zeměpisných útvarů, institucí a děl. U víceslovných názvů je velké první slovo a slova, která jsou sama vlastním jménem; obecná slova (most, oceán) jsou malá."
+    },
+    {
+      "type": "open",
+      "question": "Proč píšeme „Pražan“ velkým a „pražský“ malým písmenem?",
+      "answer": "Pražan je jméno obyvatele, tedy vlastní jméno. Pražský je přídavné jméno odvozené od místního jména a ta píšeme malým písmenem, pokud nejsou součástí názvu (Pražský hrad)."
+    }
+  ]
+}

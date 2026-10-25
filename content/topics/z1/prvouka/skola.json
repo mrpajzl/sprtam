@@ -1,0 +1,400 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "skola",
+  "title": "Škola a třída",
+  "emoji": "🏫",
+  "explanations": [
+    {
+      "title": "Moje aktovka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když jdeš na výlet, bereš si batoh. Dáš do něj, co budeš potřebovat. Pití, svačinu, bundu."
+        },
+        {
+          "type": "text",
+          "text": "Do školy je to stejné. Potřebuješ věci na psaní a kreslení. Nosíš je v tašce. Když máš všechno, můžeš se učit a nic ti nechybí."
+        },
+        {
+          "type": "heading",
+          "text": "Nová slova"
+        },
+        {
+          "type": "term",
+          "term": "Aktovka",
+          "definition": "Školní taška. Nosíš ji na zádech jako batoh.",
+          "example": "V aktovce mám sešity, knížky a penál."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🎒",
+            "📕",
+            "📒",
+            "✏️",
+            "🖍️",
+            "📏"
+          ],
+          "caption": "Co mám v aktovce"
+        },
+        {
+          "type": "term",
+          "term": "Penál",
+          "definition": "Malé pouzdro na tužky. Aby se nerozsypaly po tašce.",
+          "example": "V penálu mám tužku, gumu, ořezávátko a pastelky."
+        },
+        {
+          "type": "term",
+          "term": "Sešit",
+          "definition": "Tenká knížka s prázdnými stránkami. Píšeš a kreslíš do ní.",
+          "example": "Do sešitu píšu písmenka a čísla."
+        },
+        {
+          "type": "term",
+          "term": "Učebnice",
+          "definition": "Knížka, ze které se ve škole učíme. Je v ní vytištěné, co se máme naučit.",
+          "example": "Slabikář nebo čítanka je učebnice."
+        },
+        {
+          "type": "term",
+          "term": "Svačina",
+          "definition": "Malé jídlo mezi snídaní a obědem.",
+          "example": "Rohlík, jablko a láhev s vodou."
+        },
+        {
+          "type": "heading",
+          "text": "Jak si chystám aktovku"
+        },
+        {
+          "type": "text",
+          "text": "Aktovku si chystám **večer**. Ráno bývá spěch a na něco bych zapomněl."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podívám se do rozvrhu, co budu zítra mít.",
+            "Dám do aktovky správné sešity a učebnice.",
+            "Zkontroluji penál: tužka, guma, pastelky.",
+            "Ráno přidám svačinu a pití."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Rozvrh",
+          "definition": "Tabulka, kde je napsané, co se ve škole bude který den učit.",
+          "example": "V pondělí: čtení, počty, psaní."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na věc a dej ji do správné skupiny: patří do aktovky, nebo zůstane doma?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Do školy 🎒",
+              "Nechám doma 🏠"
+            ],
+            "items": [
+              {
+                "text": "penál ✏️",
+                "group": 0
+              },
+              {
+                "text": "sešit 📒",
+                "group": 0
+              },
+              {
+                "text": "pastelky 🖍️",
+                "group": 0
+              },
+              {
+                "text": "svačina 🍎",
+                "group": 0
+              },
+              {
+                "text": "peřina 🛏️",
+                "group": 1
+              },
+              {
+                "text": "hrnec 🍲",
+                "group": 1
+              },
+              {
+                "text": "kolo 🚲",
+                "group": 1
+              },
+              {
+                "text": "čítanka 📕",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Zítra máme kreslení. Co si přibalím navíc?",
+          "answer": "Myslím na to, co se bude dělat: **kreslit**. K tomu potřebuji pastelky nebo barvy. Dám je do aktovky už večer."
+        },
+        {
+          "type": "example",
+          "question": "Tom má v aktovce sešit, penál a míč. Co mu chybí a co tam nepatří?",
+          "answer": "Do školy potřebuje i **svačinu** a **učebnici**. **Míč** do aktovky nepatří, ve třídě by překážel."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Aktovku si nachystám až ráno.",
+          "right": "Aktovku si nachystám večer.",
+          "why": "Ráno je málo času a spěcháš. Snadno zapomeneš sešit nebo úkol."
+        },
+        {
+          "type": "summary",
+          "text": "Do školy nosím aktovku: sešity, učebnice, penál a svačinu. Chystám si ji večer podle rozvrhu."
+        }
+      ]
+    },
+    {
+      "title": "Den ve škole",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Doma znáš všechny lidi i všechny místnosti. Ve škole je to zatím nové. Je tam hodně dětí a dospělých."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, kdo je kdo a co se kdy dělá, ve škole se nebojíš. Víš, koho poprosit o pomoc."
+        },
+        {
+          "type": "heading",
+          "text": "Kde se učíme"
+        },
+        {
+          "type": "term",
+          "term": "Třída",
+          "definition": "Místnost ve škole, kde se učíme. Také tak říkáme dětem, které spolu sedí v jedné místnosti.",
+          "example": "Moje třída je 1. A."
+        },
+        {
+          "type": "term",
+          "term": "Lavice",
+          "definition": "Školní stůl. Sedíš v ní a píšeš.",
+          "example": "Sedím v lavici u okna."
+        },
+        {
+          "type": "term",
+          "term": "Spolužák",
+          "definition": "Dítě, které chodí se mnou do stejné třídy.",
+          "example": "Můj spolužák Petr sedí vedle mě."
+        },
+        {
+          "type": "heading",
+          "text": "Kdo je ve škole"
+        },
+        {
+          "type": "text",
+          "text": "Ve škole pracuje hodně lidí. Každý má svou práci. Otoč kartičku a podívej se, co kdo dělá."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "👩‍🏫 Paní učitelka",
+                "back": "Učí nás."
+              },
+              {
+                "front": "👨‍💼 Pan ředitel",
+                "back": "Vede celou školu."
+              },
+              {
+                "front": "🔧 Pan školník",
+                "back": "Opravuje, co se rozbije, a stará se o budovu."
+              },
+              {
+                "front": "🧹 Paní uklízečka",
+                "back": "Uklízí školu."
+              },
+              {
+                "front": "🍽️ Paní kuchařka",
+                "back": "Vaří obědy."
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Hodina a přestávka"
+        },
+        {
+          "type": "term",
+          "term": "Vyučovací hodina",
+          "definition": "Čas, kdy se učíme. Trvá 45 minut. Sedíme v lavici a posloucháme.",
+          "example": "První hodinu máme čtení."
+        },
+        {
+          "type": "term",
+          "term": "Přestávka",
+          "definition": "Krátký odpočinek mezi hodinami.",
+          "example": "O přestávce se nasvačím a dojdu si na záchod."
+        },
+        {
+          "type": "text",
+          "text": "Začátek i konec hodiny ohlásí **zvonění**. Když zazvoní na hodinu, sednu si do lavice a připravím si věci."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se ve třídě chovám"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Když přijdu, pozdravím: „Dobrý den.“",
+            "Když chci mluvit, **přihlásím se** – zvednu ruku.",
+            "Počkám, až mě paní učitelka vyvolá.",
+            "Neruším ostatní.",
+            "Říkám „prosím“ a „děkuji“."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Chceš paní učitelce něco říct. Co uděláš?",
+          "answer": "Nekřičím. **Zvednu ruku**, počkám, až mě vyvolá, a pak mluvím."
+        },
+        {
+          "type": "example",
+          "question": "V kuchyňce se rozbil kohoutek. Kdo ho spraví?",
+          "answer": "Opravy dělá **pan školník**. Kuchařka vaří a učitelka učí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "O přestávce i v hodině si můžu dělat, co chci.",
+          "right": "V hodině sedím a pracuji. O přestávce si odpočinu, nasvačím se a dojdu si na záchod.",
+          "why": "Hodina je čas na učení. Přestávka je na odpočinek a na to, co potřebuješ."
+        },
+        {
+          "type": "summary",
+          "text": "Ve škole nás učí paní učitelka, školu vede ředitel. V hodině sedím v lavici a hlásím se. O přestávce svačím a odpočívám."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo nás ve škole učí?",
+      "options": [
+        "učitelka",
+        "kuchařka",
+        "uklízečka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo vede celou školu?",
+      "options": [
+        "ředitel",
+        "spolužák",
+        "školník"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Když chci mluvit, přihlásím se.",
+      "answer": true,
+      "explanation": "Přihlásím se a čekám, až mě vyvolají."
+    },
+    {
+      "type": "truefalse",
+      "question": "Peřinu nosím do školy.",
+      "answer": false,
+      "explanation": "Peřina patří do postele doma."
+    },
+    {
+      "type": "choice",
+      "question": "Kam píšu?",
+      "options": [
+        "do sešitu",
+        "do svačiny",
+        "do penálu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co uděláš, když zazvoní na hodinu?",
+      "options": [
+        "sednu si do lavice",
+        "běžím ven",
+        "jím svačinu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj, kdo co dělá.",
+      "pairs": [
+        [
+          "učitelka",
+          "učí"
+        ],
+        [
+          "kuchařka",
+          "vaří"
+        ],
+        [
+          "uklízečka",
+          "uklízí"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: Ve škole sedím v ……… (lavici / posteli)",
+      "answers": [
+        "lavici",
+        "lavice"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "O přestávce se mohu najíst.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď ráno.",
+      "items": [
+        "vstanu",
+        "obléknu se",
+        "jdu do školy"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co máš v aktovce?",
+      "answer": "Penál, sešity, učebnice, pastelky a svačinu."
+    },
+    {
+      "type": "open",
+      "question": "Jak se chováš ve třídě?",
+      "answer": "Zdravím, přihlásím se, když chci mluvit, a neruším ostatní."
+    }
+  ]
+}

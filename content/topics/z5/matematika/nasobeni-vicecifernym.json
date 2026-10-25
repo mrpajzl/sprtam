@@ -1,0 +1,437 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nasobeni-vicecifernym",
+  "title": "Písemné násobení víceciferným číslem",
+  "emoji": "🧱",
+  "generator": "written-mul",
+  "explanations": [
+    {
+      "title": "Pod sebou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Autobus má 52 míst. Kolik lidí odveze 18 autobusů? Tady nestačí násobit jednou číslicí – obě čísla jsou dvojciferná."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se **písemné násobení víceciferným číslem**. Je to několik malých násobení, která pak sečteš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Víceciferné číslo",
+          "definition": "Číslo s více číslicemi (dvě, tři i víc).",
+          "example": "32 je dvojciferné, 243 trojciferné."
+        },
+        {
+          "type": "term",
+          "term": "Činitelé a součin",
+          "definition": "Činitelé jsou čísla, která násobíš. Součin je výsledek.",
+          "example": "243 · 32 = 7 776"
+        },
+        {
+          "type": "term",
+          "term": "Dílčí součin",
+          "definition": "Mezivýsledek – jeden řádek pod čarou. Vznikne násobením jednou číslicí druhého činitele.",
+          "example": "243 · 2 = 486"
+        },
+        {
+          "type": "term",
+          "term": "Psát pod sebe a „pamatuji si“",
+          "definition": "Připomenutí: čísla píšeš pod sebe, jednotky pod jednotky (zarovnáno **vpravo**). Když ve sloupci vyjde 10 a víc, píšeš jen jednotky a desítky si pamatuješ do dalšího sloupce vlevo.",
+          "example": "3 · 4 = 12 → píšu 2, 1 si pamatuji."
+        },
+        {
+          "type": "heading",
+          "text": "Postup: 243 · 32"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš 243, pod něj 32 (zarovnáno vpravo).",
+            "Násob **jednotkami** (2): 243 · 2 = **486**. Piš pod čáru.",
+            "Násob **desítkami** (3): 243 · 3 = **729**. Piš o **jedno místo doleva** – ve skutečnosti je to 7 290.",
+            "Sečti řádky pod sebou: 486 + 7 290 = **7 776**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Teď to samé na papíře. Klepej na **Další krok** a sleduj, kam se píše druhý řádek – jeho poslední číslice stojí pod desítkami."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 243,
+            "b": 32,
+            "op": "·"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Mřížka ukazuje jeden malý krok: 3 · 4 (z 243 · 3). Vyjde 12 – píšeš 2 a 1 si pamatuješ."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4
+          }
+        },
+        {
+          "type": "example",
+          "question": "Autobus má 52 míst. Kolik lidí odveze 18 autobusů?",
+          "answer": "18 autobusů po 52 místech → **52 · 18**. Vyjde **936 lidí**. Spočítej to pod sebou se mnou: první řádek je 52 · 8, druhý 52 · 1 desítka.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 52,
+              "b": 18,
+              "op": "·"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "text": "Těžší: trojciferné číslo s nulou uprostřed. Klepej: 307 · 41."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 307,
+            "b": 41,
+            "op": "·"
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "243 · 32: 486 + 729 = 1 215",
+          "right": "486 + 7 290 = **7 776**",
+          "why": "Druhý řádek je násobení **desítkami** – je 10× větší. Proto se píše o místo doleva. Odhad 240 · 30 = 7 200 chybu hned odhalí."
+        },
+        {
+          "type": "summary",
+          "text": "Každou číslicí druhého činitele násob zvlášť. Každý další řádek posuň o místo doleva. Nakonec řádky sečti."
+        }
+      ]
+    },
+    {
+      "title": "Plocha",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč se při písemném násobení řádky posouvají? Nejlépe to uvidíš na **obdélníku**. Násobení je totiž obsah obdélníku: délka · šířka."
+        },
+        {
+          "type": "text",
+          "text": "Rozřízneš obdélník na kousky, které umíš spočítat zpaměti, a pak je sečteš. Tak spočítáš i příklady jako 24 · 13 bez papíru."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rozložit číslo",
+          "definition": "Rozepsat ho na desítky a jednotky (případně stovky).",
+          "example": "24 = 20 + 4, 13 = 10 + 3"
+        },
+        {
+          "type": "term",
+          "term": "Obsah obdélníku",
+          "definition": "Délka · šířka. Kolik čtverečků se vejde dovnitř.",
+          "example": "20 · 10 = 200"
+        },
+        {
+          "type": "term",
+          "term": "Odhad",
+          "definition": "Přibližný výsledek se zaokrouhlenými čísly.",
+          "example": "24 · 13 ≈ 25 · 13 ≈ 325"
+        },
+        {
+          "type": "heading",
+          "text": "24 · 13 jako obdélník"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozlož: 24 = 20 + 4 a 13 = 10 + 3.",
+            "Obdélník rozřízni na 4 kousky.",
+            "Spočítej každý kousek – každý s každým.",
+            "Sečti kousky."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "·",
+            "20",
+            "4"
+          ],
+          "rows": [
+            [
+              "10",
+              "200",
+              "40"
+            ],
+            [
+              "3",
+              "60",
+              "12"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "200 + 40 + 60 + 12 = **312**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Mřížka ukazuje nejmenší kousek: 3 · 4 = 12. Představ si, že vedle leží kousky 3 · 20, 10 · 4 a 10 · 20."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Obdélník na papíře pod sebou"
+        },
+        {
+          "type": "term",
+          "term": "Psát pod sebe",
+          "definition": "Čísla napíšeš pod sebe tak, aby jednotky byly pod jednotkami. Při sčítání řádků platí: když ve sloupci vyjde 10 a víc, píšeš jednotky a 1 si **pamatuješ** do dalšího sloupce.",
+          "example": "24 nahoře, 13 pod ním: 3 pod 4, 1 pod 2."
+        },
+        {
+          "type": "text",
+          "text": "Kousky obdélníku najdeš i v písemném násobení. První řádek 24 · 3 = 72 jsou spodní dva kousky (60 + 12). Druhý řádek 24 · 1 desítka = 240 jsou horní dva kousky (200 + 40) – proto je posunutý o místo doleva. Klepej na **Další krok** a počítej se mnou: 24 · 13."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 24,
+            "b": 13,
+            "op": "·"
+          }
+        },
+        {
+          "type": "example",
+          "question": "35 · 22 =",
+          "answer": "30 · 20 = 600, 30 · 2 = 60, 5 · 20 = 100, 5 · 2 = 10. 600 + 60 + 100 + 10 = **770**. Ověř si to pod sebou: první řádek 35 · 2 = 70 (kousky 60 + 10), druhý 35 · 2 desítky = 700 (kousky 600 + 100).",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 35,
+              "b": 22,
+              "op": "·"
+            }
+          }
+        },
+        {
+          "type": "example",
+          "question": "Odhadni 412 · 29.",
+          "answer": "412 ≈ 400, 29 ≈ 30. 400 · 30 = **asi 12 000**. Přesně pod sebou vyjde 11 948 – odhad sedí.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 412,
+              "b": 29,
+              "op": "·"
+            }
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "15 · 15 = 10 · 10 + 5 · 5 = 125",
+          "right": "15 · 15 = 100 + 50 + 50 + 25 = **225**",
+          "why": "Musíš násobit **každý s každým** – jsou 4 kousky obdélníku, ne 2. Zapomněl jsi 10 · 5 a 5 · 10."
+        },
+        {
+          "type": "summary",
+          "text": "Rozlož obě čísla a vynásob každý s každým. Pak sečti. Odhadem zkontroluj, že výsledek dává smysl."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 24 · 13 =",
+      "answers": [
+        "312"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 24,
+          "b": 13,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 35 · 22 =",
+      "answers": [
+        "770"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 35,
+          "b": 22,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 48 · 25 =",
+      "answers": [
+        "1200",
+        "1 200"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 48,
+          "b": 25,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 125 · 16 =",
+      "answers": [
+        "2000",
+        "2 000"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 125,
+          "b": 16,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 243 · 32 =",
+      "answers": [
+        "7776",
+        "7 776"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 243,
+          "b": 32,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 307 · 41 =",
+      "answers": [
+        "12587",
+        "12 587"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 307,
+          "b": 41,
+          "op": "·"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "60 · 500 =",
+      "answers": [
+        "30000",
+        "30 000"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "19 · 21 =",
+      "options": [
+        "399",
+        "389",
+        "409"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Odhadni 412 · 29.",
+      "options": [
+        "asi 1 200",
+        "asi 12 000",
+        "asi 120 000"
+      ],
+      "answer": 1,
+      "explanation": "400 · 30 = 12 000."
+    },
+    {
+      "type": "truefalse",
+      "question": "25 · 40 = 1 000",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "15 · 15 = 215",
+      "answer": false,
+      "explanation": "15 · 15 = 225."
+    },
+    {
+      "type": "input",
+      "question": "Autobus má 52 míst. Kolik lidí odveze 18 autobusů?",
+      "answers": [
+        "936"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Proč při písemném násobení dvojciferným číslem posouváš druhý řádek doleva?",
+      "answer": "Druhý řádek je násobení desítkami, takže výsledek je desetkrát větší. Posun doleva znamená desítky."
+    },
+    {
+      "type": "open",
+      "question": "Jak si ověříš výsledek 24 · 13 = 312?",
+      "answer": "Například odhadem 25 · 13 ≈ 325, nebo jinak: 24 · 10 + 24 · 3 = 240 + 72 = 312."
+    }
+  ]
+}

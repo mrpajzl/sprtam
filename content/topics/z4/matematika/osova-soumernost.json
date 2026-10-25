@@ -1,0 +1,349 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "osova-soumernost",
+  "title": "Osová souměrnost",
+  "emoji": "🦋",
+  "explanations": [
+    {
+      "title": "Zrcadlo",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na motýla. Levé křídlo vypadá úplně stejně jako pravé, jen obráceně – jako v zrcadle. Kdybys ho přeložil napůl, křídla by se přesně překryla."
+        },
+        {
+          "type": "text",
+          "text": "Takovým tvarům říkáme **osově souměrné**. Najdeš je v přírodě, v písmenech, v budovách i ve znacích aut."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Osově souměrný útvar",
+          "definition": "Tvar, který můžeš přeložit podél rovné čáry tak, že se obě poloviny **přesně kryjí**.",
+          "example": "motýl, srdíčko, písmeno A"
+        },
+        {
+          "type": "term",
+          "term": "Osa souměrnosti",
+          "definition": "Ta rovná čára, podél které tvar přeložíš.",
+          "example": "U motýla vede osa jeho tělem."
+        },
+        {
+          "type": "term",
+          "term": "Obraz bodu",
+          "definition": "Bod na druhé straně osy, na který se bod po přeložení přesně položí.",
+          "example": "Tečka na levém křídle má svůj obraz na pravém."
+        },
+        {
+          "type": "heading",
+          "text": "Test přeložením"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Představ si, že tvar vystřihneš z papíru.",
+            "Zkus ho přeložit napůl podél rovné čáry.",
+            "Kryjí se obě poloviny úplně přesně? → tvar je souměrný a čára je osa.",
+            "Nekryjí se pro žádnou čáru? → tvar souměrný není."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Představ si každé písmeno na papíře a zkus ho v duchu přeložit. Je souměrné?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "souměrné",
+              "nesouměrné"
+            ],
+            "items": [
+              {
+                "text": "A",
+                "group": 0
+              },
+              {
+                "text": "F",
+                "group": 1
+              },
+              {
+                "text": "H",
+                "group": 0
+              },
+              {
+                "text": "G",
+                "group": 1
+              },
+              {
+                "text": "M",
+                "group": 0
+              },
+              {
+                "text": "R",
+                "group": 1
+              },
+              {
+                "text": "T",
+                "group": 0
+              },
+              {
+                "text": "J",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je písmeno A osově souměrné?",
+          "answer": "Svislou čarou uprostřed ho přeložíš a obě nožky se překryjí. **Ano**, osa je svislá."
+        },
+        {
+          "type": "example",
+          "question": "Je písmeno S osově souměrné?",
+          "answer": "Svisle přeložené: horní oblouk míří na druhou stranu. Vodorovně: taky ne. **Ne.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Písmeno S je souměrné, protože vypadá „vyváženě“.",
+          "right": "S **není** osově souměrné.",
+          "why": "Rozhoduje jen test přeložením. Ať S přeložíš podél jakékoli čáry, poloviny se nekryjí."
+        },
+        {
+          "type": "summary",
+          "text": "Souměrný útvar jde přeložit podél osy na dvě stejné poloviny, které se přesně kryjí."
+        }
+      ]
+    },
+    {
+      "title": "Počítej osy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Některé tvary jde přeložit jen jedním způsobem, jiné hned několika. Čtvercový ubrousek můžeš složit napůl čtyřmi různými způsoby!"
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se osy najít, spočítat a víš, jak souměrný obraz nakreslit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Osa souměrnosti",
+          "definition": "Rovná čára, podél které se tvar přeloží na dvě stejné, přesně se kryjící poloviny."
+        },
+        {
+          "type": "term",
+          "term": "Úhlopříčka",
+          "definition": "Úsečka, která spojuje dva protější rohy čtyřúhelníku.",
+          "example": "Ve čtverci vedou dvě úhlopříčky – do tvaru X."
+        },
+        {
+          "type": "term",
+          "term": "Rovnostranný trojúhelník",
+          "definition": "Trojúhelník se třemi stejně dlouhými stranami."
+        },
+        {
+          "type": "heading",
+          "text": "Kolik os mají tvary"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Útvar",
+            "Počet os",
+            "Kudy vedou"
+          ],
+          "rows": [
+            [
+              "čtverec",
+              "4",
+              "2 středem stran (svisle a vodorovně) + 2 úhlopříčky"
+            ],
+            [
+              "obdélník (ne čtverec)",
+              "2",
+              "svisle a vodorovně středem stran"
+            ],
+            [
+              "rovnostranný trojúhelník",
+              "3",
+              "z každého rohu do středu protější strany"
+            ],
+            [
+              "kruh",
+              "nekonečně mnoho",
+              "každá přímka přes střed"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je čtverec. V duchu ho přelož svisle, vodorovně a podél obou úhlopříček. Kryje se pokaždé? Pak změň tvar na obdélník."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "square",
+            "a": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak najít obraz bodu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Z bodu A veď kolmici k ose (čára v pravém úhlu).",
+            "Změř vzdálenost A od osy, třeba 3 cm.",
+            "Stejnou vzdálenost odměř **na druhou stranu** osy.",
+            "Tam je obraz A′. Bod i obraz jsou od osy **stejně daleko**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik os má písmeno H?",
+          "answer": "Svislá osa uprostřed – ano. Vodorovná osa přes příčku – také ano. **2 osy**."
+        },
+        {
+          "type": "example",
+          "question": "Je úhlopříčka obdélníku jeho osou?",
+          "answer": "Přelož obdélník podél úhlopříčky – rohy přečnívají a poloviny se nekryjí. **Ne** (u čtverce ano)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obdélník má 4 osy, stejně jako čtverec.",
+          "right": "Obdélník (ne čtverec) má **2** osy.",
+          "why": "Úhlopříčky jsou osami jen u čtverce. U obdélníku se po přeložení podél úhlopříčky poloviny nekryjí."
+        },
+        {
+          "type": "summary",
+          "text": "Čtverec 4 osy, obdélník 2, rovnostranný trojúhelník 3, kruh nekonečně mnoho. Bod a jeho obraz jsou od osy stejně daleko."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik os souměrnosti má čtverec?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik os souměrnosti má obdélník (ne čtverec)?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik os souměrnosti má rovnostranný trojúhelník?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kolik os souměrnosti má kruh?",
+      "options": [
+        "1",
+        "4",
+        "nekonečně mnoho"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "choice",
+      "question": "Které písmeno je osově souměrné?",
+      "options": [
+        "A",
+        "F",
+        "L"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které písmeno NENÍ osově souměrné?",
+      "options": [
+        "O",
+        "X",
+        "S"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "truefalse",
+      "question": "Úhlopříčka obdélníku (ne čtverce) je jeho osou souměrnosti.",
+      "answer": false,
+      "explanation": "Po přeložení podle úhlopříčky se půlky obdélníku nekryjí."
+    },
+    {
+      "type": "truefalse",
+      "question": "Bod A je 3 cm od osy. Jeho obraz je také 3 cm od osy.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Lidský obličej je přibližně osově souměrný.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co osa souměrnosti dělá s útvarem?",
+      "options": [
+        "rozdělí ho na dvě stejné půlky",
+        "zvětší ho",
+        "otočí ho o 90°"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik os souměrnosti má písmeno H?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš, že je útvar osově souměrný?",
+      "answer": "Když ho můžu přeložit podél přímky tak, že se obě poloviny přesně kryjí."
+    },
+    {
+      "type": "open",
+      "question": "Uveď tři věci z přírody nebo okolí, které jsou souměrné.",
+      "answer": "Například motýl, list stromu, lidský obličej, okno, dveře."
+    }
+  ]
+}

@@ -1,0 +1,429 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "prumysl-energetika",
+  "title": "Průmysl a energetika",
+  "emoji": "⚡",
+  "explanations": [
+    {
+      "title": "Proč tady",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč vznikly obří hutě zrovna v Ostravě? A proč dnes Hyundai postavil továrnu v Nošovicích u dálnice, a ne u dolu? Každá továrna stojí tam, kde se jí to v dané době vyplatí."
+        },
+        {
+          "type": "text",
+          "text": "Důvody se během 200 let úplně změnily. Když je pochopíš, vysvětlíš proměnu celých regionů – od Porúří po Ostravsko."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Průmysl",
+          "definition": "Výroba zboží ve velkém – v továrnách, hutích, elektrárnách.",
+          "example": "Automobilový, chemický, hutní průmysl."
+        },
+        {
+          "type": "term",
+          "term": "Lokalizační faktory",
+          "definition": "Důvody, které rozhodují, **kde** firma postaví továrnu.",
+          "example": "Blízkost surovin, dálnice, pracovníci, daňové úlevy."
+        },
+        {
+          "type": "term",
+          "term": "Hutnictví",
+          "definition": "Výroba železa a oceli z rudy. Potřebuje obrovské množství uhlí (koksu).",
+          "example": "Třinecké železárny."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Jak se měnily důvody"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď faktory: rozhodovaly hlavně v 19. století, nebo dnes?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Dříve rozhodující",
+              "Dnes rozhodující"
+            ],
+            "items": [
+              {
+                "text": "blízkost uhlí a rudy",
+                "group": 0
+              },
+              {
+                "text": "řeka pro vodu a dopravu",
+                "group": 0
+              },
+              {
+                "text": "levná a kvalifikovaná pracovní síla",
+                "group": 1
+              },
+              {
+                "text": "dálnice a letiště",
+                "group": 1
+              },
+              {
+                "text": "daňové pobídky",
+                "group": 1
+              },
+              {
+                "text": "blízkost univerzit",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "V 19. století se uhlí těžko převáželo, proto se huť stavěla přímo u dolu. Dnes je doprava levná, takže rozhoduje hlavně, jestli jsou k dispozici lidé, dálnice a zákazníci."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Vývoj průmyslu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Manufaktury** – ruční výroba v dílnách s dělbou práce.",
+            "**Průmyslová revoluce** (od konce 18. stol.) – parní stroj, uhlí, železo.",
+            "**Elektřina a pásová výroba** (přelom 19. a 20. stol.) – Ford a jeho montážní linka.",
+            "**Automatizace a digitalizace** – roboti, počítače, high-tech."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krok 3: Úpadek starých regionů"
+        },
+        {
+          "type": "term",
+          "term": "Deindustrializace",
+          "definition": "Pokles významu průmyslu v ekonomice – továrny se zavírají nebo přesouvají, roste podíl služeb.",
+          "example": "Útlum dolů a hutí na Ostravsku."
+        },
+        {
+          "type": "term",
+          "term": "Restrukturalizace",
+          "definition": "Přestavba hospodářství regionu – místo dolů a hutí přichází nová odvětví.",
+          "example": "V Porúří dnes univerzity, technologie a kultura."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 4: Energie pro průmysl"
+        },
+        {
+          "type": "term",
+          "term": "Fosilní a obnovitelné zdroje",
+          "definition": "**Fosilní** (uhlí, ropa, zemní plyn) vznikly za miliony let a dojdou. **Obnovitelné** (slunce, vítr, voda, geotermální teplo ze zemského nitra) se samy obnovují. **Jaderná** energie z uranu stojí zvlášť.",
+          "example": "Svět stále bere asi 80 % energie z fosilních paliv."
+        },
+        {
+          "type": "text",
+          "text": "Francie vyrábí většinu elektřiny v jaderných elektrárnách, Norsko ve vodních, Čína nejvíc spaluje uhlí. Vývozci ropy se sdružují v **OPEC** (založen 1960)."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Proč vznikly hutě na Ostravsku?",
+          "answer": "Bylo tam **černé uhlí** (palivo pro hutě) a v okolí železná ruda. V 19. století rozhodovala blízkost surovin."
+        },
+        {
+          "type": "example",
+          "question": "Proč firma postaví továrnu na elektroniku u Brna?",
+          "answer": "Je tam univerzita (vzdělaní pracovníci, výzkum), dálnice D1 a D2, letiště a velký trh. To jsou **dnešní** lokalizační faktory."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Továrny se i dnes stavějí hlavně u ložisek surovin.",
+          "right": "Dnes rozhoduje hlavně pracovní síla, doprava, trh a pobídky. Suroviny se dají levně dovézt.",
+          "why": "Námořní a železniční doprava zlevnila. Surovina putuje přes půl světa za zlomek ceny výrobku."
+        },
+        {
+          "type": "summary",
+          "text": "Dříve rozhodovaly suroviny (uhlí, ruda, voda), dnes lidé, doprava a trh. Staré průmyslové oblasti (Porúří, Ostravsko) prošly restrukturalizací."
+        }
+      ]
+    },
+    {
+      "title": "Energetický mix",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozsvítíš, nabiješ mobil, jedeš autobusem. Všechno potřebuje energii. Odkud se bere? Většinou stále z uhlí, ropy a plynu, které vznikaly miliony let a jednou dojdou."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, z čeho svět energii získává, jak se to liší mezi státy a proč přechod na obnovitelné zdroje není jednoduchý."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Primární energie",
+          "definition": "Energie v podobě, jak ji najdeme v přírodě – uhlí, ropa, plyn, uran, vítr, slunce – ještě před přeměnou na elektřinu nebo benzín.",
+          "example": "Uhlí v dole je primární energie, elektřina z něj už ne."
+        },
+        {
+          "type": "term",
+          "term": "Fosilní paliva",
+          "definition": "Uhlí, ropa a zemní plyn – vznikla ze zbytků pravěkých organismů. Jsou **neobnovitelná** a při spalování uvolňují CO₂.",
+          "example": "Benzín se vyrábí z ropy."
+        },
+        {
+          "type": "term",
+          "term": "Obnovitelné zdroje",
+          "definition": "Zdroje, které se samy obnovují: slunce, vítr, voda, biomasa, **geotermální** energie (teplo ze zemského nitra).",
+          "example": "Island topí geotermální energií."
+        },
+        {
+          "type": "term",
+          "term": "Energetický mix",
+          "definition": "Podíl jednotlivých zdrojů na celkové energii státu nebo světa.",
+          "example": "Česko: hodně jádra a uhlí, roste slunce."
+        },
+        {
+          "type": "heading",
+          "text": "Kolik z fosilních paliv"
+        },
+        {
+          "type": "text",
+          "text": "Svět stále získává asi **80 %** primární energie z fosilních paliv. Každý obarvený čtvereček je jedno procento."
+        },
+        {
+          "type": "widget",
+          "widget": "percent",
+          "props": {
+            "percent": 80
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Státy a jejich energie"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky a zkus nejdřív odpovědět sám."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Největší producent ropy (posl. léta)",
+                "back": "USA"
+              },
+              {
+                "front": "Největší spotřebitel uhlí",
+                "back": "Čína"
+              },
+              {
+                "front": "Země s největším podílem jádra na elektřině",
+                "back": "Francie"
+              },
+              {
+                "front": "Organizace vývozců ropy",
+                "back": "OPEC (1960)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "**Norsko** vyrábí většinu elektřiny ve vodních elektrárnách – má hory a hodně srážek. **OPEC** sdružuje státy vyvážející ropu (Saúdská Arábie, Irák, Írán…) a vznikl v roce 1960."
+        },
+        {
+          "type": "heading",
+          "text": "Výhody a nevýhody obnovitelných zdrojů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Výhody",
+            "Nevýhody"
+          ],
+          "rows": [
+            [
+              "nevyčerpatelné",
+              "kolísavá výroba (noc, bezvětří)"
+            ],
+            [
+              "nízké emise CO₂",
+              "potřeba baterií a silných sítí"
+            ],
+            [
+              "domácí zdroj, nezávislost na dovozu",
+              "zábor území, závislost na přírodních podmínkách"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "A odkud se bere průmysl? Továrny dříve stály u surovin (uhlí, ruda), dnes u lidí, dálnic a trhů. Ve vyspělých zemích průmysl ustupuje službám – **deindustrializace**."
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Proč Norsko vyrábí elektřinu hlavně z vody, a Česko ne?",
+          "answer": "Norsko má vysoké hory, hodně srážek a strmé spády řek. Česko má řeky s malým spádem a méně vody – vodní elektrárny u nás pokryjí jen malou část."
+        },
+        {
+          "type": "example",
+          "question": "Proč solární elektrárny samy nestačí?",
+          "answer": "V noci a v zimě vyrábějí málo. Energii je třeba uložit (baterie, přečerpávací elektrárny) nebo mít záložní zdroj."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Jaderná energie je fosilní palivo, protože uran se těží ze země.",
+          "right": "Jaderná energie je samostatná skupina – není fosilní ani obnovitelná.",
+          "why": "Fosilní paliva vznikla z organismů a energii dávají hořením. Uran je kov a energii uvolňuje štěpením jader, bez spalování a CO₂."
+        },
+        {
+          "type": "summary",
+          "text": "Fosilní paliva stále dávají asi 80 % světové energie. Obnovitelné zdroje rychle rostou, ale kolísají. Francie spoléhá na jádro, Norsko na vodu, Čína na uhlí."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který lokalizační faktor byl rozhodující pro vznik hutí v 19. století?",
+      "options": [
+        "blízkost uhlí",
+        "blízkost letiště",
+        "internet",
+        "univerzita"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Fosilní paliva stále tvoří většinu světové spotřeby primární energie.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co je deindustrializace?",
+      "options": [
+        "pokles významu průmyslu v ekonomice",
+        "stavba továren",
+        "těžba ropy",
+        "zakládání měst"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj zdroj a typ.",
+      "pairs": [
+        [
+          "uhlí",
+          "fosilní"
+        ],
+        [
+          "uran",
+          "jaderný"
+        ],
+        [
+          "vítr",
+          "obnovitelný"
+        ],
+        [
+          "zemní plyn",
+          "fosilní"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdy vznikl OPEC?",
+      "options": [
+        "1960",
+        "1945",
+        "1973",
+        "1993"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která země má nejvyšší podíl jaderné energie na výrobě elektřiny?",
+      "options": [
+        "Francie",
+        "Německo",
+        "Polsko",
+        "Norsko"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Norsko vyrábí většinu elektřiny ve vodních elektrárnách.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co je high-tech průmysl?",
+      "options": [
+        "výroba náročná na vědu a výzkum",
+        "těžba uhlí",
+        "textilní výroba",
+        "hutnictví"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď fáze vývoje průmyslu.",
+      "items": [
+        "manufaktury",
+        "průmyslová revoluce (pára)",
+        "elektřina a pásová výroba",
+        "automatizace a digitalizace"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá energie ze zemského nitra?",
+      "answers": [
+        "geotermální",
+        "geotermalni"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak se změnily lokalizační faktory průmyslu od 19. století po dnešek?",
+      "answer": "Dříve rozhodovala blízkost surovin, vody a energie. Dnes rozhoduje kvalifikovaná a cenově dostupná pracovní síla, dopravní dostupnost, blízkost trhu, pobídky a výzkum."
+    },
+    {
+      "type": "open",
+      "question": "Zhodnoť výhody a nevýhody obnovitelných zdrojů.",
+      "answer": "Výhody: nevyčerpatelné, nízké emise. Nevýhody: kolísavá výroba (slunce, vítr), potřeba akumulace a sítí, zábor území, závislost na přírodních podmínkách."
+    }
+  ]
+}

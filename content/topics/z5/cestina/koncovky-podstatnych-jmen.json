@@ -1,0 +1,355 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "koncovky-podstatnych-jmen",
+  "title": "Koncovky podstatných jmen",
+  "emoji": "🎯",
+  "explanations": [
+    {
+      "title": "Tvrdý a měkký vzor",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Píše se *s kamarády*, nebo *s kamarádi*? *Se stroji*, nebo *se strojy*? Na konci slov i a y zní stejně."
+        },
+        {
+          "type": "text",
+          "text": "Rozhodne **vzor**. Každé podstatné jméno se skloňuje podle nějakého vzoru a vzory jsou **tvrdé** nebo **měkké**. Tvrdé mají v koncovkách y, měkké i."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Koncovka",
+          "definition": "Připomenutí: konec slova, který se mění při skloňování.",
+          "example": "hrad**y**, muž**i**"
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Připomenutí: slovo, podle kterého se skloňují jiná slova. Rod mužský: pán, hrad, muž, stroj, předseda, soudce. Ženský: žena, růže, píseň, kost. Střední: město, moře, kuře, stavení.",
+          "example": "kluk → pán"
+        },
+        {
+          "type": "term",
+          "term": "Tvrdý vzor",
+          "definition": "Vzor, který má v koncovkách **y**: pán, hrad, žena, město.",
+          "example": "s hrady, ženy, s městy"
+        },
+        {
+          "type": "term",
+          "term": "Měkký vzor",
+          "definition": "Vzor, který má v koncovkách **i**: muž, stroj, růže, píseň, kost, moře…",
+          "example": "s muži, se stroji, s růžemi"
+        },
+        {
+          "type": "table",
+          "head": [
+            "vzory",
+            "koncovka",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "tvrdé: hrad, žena, město",
+              "y",
+              "s hrady, ženy, s městy"
+            ],
+            [
+              "pán",
+              "y, ale 1. pád mn. č. **i**",
+              "s pány – **páni**"
+            ],
+            [
+              "měkké: muž, stroj, růže…",
+              "i",
+              "s muži, se stroji, s růžemi"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Výjimka u vzoru pán"
+        },
+        {
+          "type": "text",
+          "text": "Vzor **pán** je tvrdý, ale v **1. pádě množného čísla** (kdo? – ti…) má **i**: *páni, kluci, psi, ptáci*. V ostatních pádech má y: *s pány, vidím kluky*."
+        },
+        {
+          "type": "example",
+          "question": "Šel jsem s kamarád_.",
+          "answer": "Kamarád → vzor **pán** (tvrdý). Je to 7. pád (s kým?), ne 1. pád → **y**: s kamarády."
+        },
+        {
+          "type": "example",
+          "question": "Hrajeme si s míč_.",
+          "answer": "Míč → vzor **stroj** (měkký) → **i**: s míči."
+        },
+        {
+          "type": "mistake",
+          "wrong": "s noži × s nožy – oboje jde",
+          "right": "s noži",
+          "why": "Nůž je podle vzoru **stroj** (bez nože). Měkký vzor má i."
+        },
+        {
+          "type": "summary",
+          "text": "Tvrdý vzor → y, měkký vzor → i. Vzor pán má v 1. pádě množného čísla i: páni, kluci, psi."
+        }
+      ]
+    },
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Doplňovat i/y na konci podstatných jmen je jako jít podle mapy. Tři zastávky – a jsi v cíli."
+        },
+        {
+          "type": "text",
+          "text": "Nemusíš nic hádat. Stačí znát vzory, které už umíš ze 4. třídy."
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Slovo, podle kterého se skloňují jiná. Najdeš ho podle rodu a konce slova.",
+          "example": "strom → hrad, nůž → stroj"
+        },
+        {
+          "type": "term",
+          "term": "Tvrdé a měkké vzory",
+          "definition": "Tvrdé: pán, hrad, žena, město → y. Měkké: muž, stroj, soudce, růže, píseň, kost, moře, kuře, stavení → i.",
+          "example": "stromy (hrad) × stroje (stroj)"
+        },
+        {
+          "type": "term",
+          "term": "1. pád množného čísla",
+          "definition": "Tvar na otázku *kdo? co?*, když je jich víc.",
+          "example": "ti kluci, ty stromy"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Urči **rod** (ten, ta, to) a **vzor**.",
+            "Je vzor **tvrdý**, nebo **měkký**?",
+            "Měkký → **i**. Tvrdý → **y**.",
+            "Je to vzor **pán** v 1. pádě množného čísla (ti …)? → výjimka **i**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Doplň"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Na drátě sedí kos",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Šel jsem s kamarád",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Mezi strom",
+                "after": " teče potok.",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Hrajeme si s míč",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Kluc",
+                "after": " běží domů.",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "V rybníce plavou ryb",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Na drátě sedí kos_.",
+          "answer": "Kos → vzor **pán**. Kdo sedí? *ti kosi* → 1. pád množného čísla → výjimka **i**: kosi."
+        },
+        {
+          "type": "example",
+          "question": "Mezi strom_ teče potok.",
+          "answer": "Strom → vzor **hrad** (tvrdý) → **y**: mezi stromy."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vidím kluki.",
+          "right": "Vidím kluky.",
+          "why": "Kluk je vzor pán, ale výjimka i platí jen v 1. pádě (*ti kluci*). *Vidím koho?* je 4. pád → y."
+        },
+        {
+          "type": "summary",
+          "text": "Rod → vzor → tvrdý (y) nebo měkký (i). Pán v 1. pádě množného čísla má i."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Doplň i/y: Na zahradě běhají ps_. (1. pád mn. č.)",
+      "answers": [
+        "i"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň i/y: s holub_ (7. pád mn. č., vzor pán)",
+      "answers": [
+        "y"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň i/y: pod strom_ (7. pád mn. č.)",
+      "answers": [
+        "y"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň i/y: s učitel_ (7. pád mn. č.)",
+      "answers": [
+        "i"
+      ],
+      "explanation": "Učitel → vzor muž (měkký) → s učiteli."
+    },
+    {
+      "type": "choice",
+      "question": "Které je správně?",
+      "options": [
+        "Páni odešli.",
+        "Pány odešli."
+      ],
+      "answer": 0,
+      "explanation": "1. pád mn. č. vzoru pán → i."
+    },
+    {
+      "type": "choice",
+      "question": "Které je správně?",
+      "options": [
+        "Vidím kluky.",
+        "Vidím kluki."
+      ],
+      "answer": 0,
+      "explanation": "4. pád mn. č. vzoru pán → y."
+    },
+    {
+      "type": "choice",
+      "question": "Které je správně?",
+      "options": [
+        "se stroji",
+        "se strojy"
+      ],
+      "answer": 0,
+      "explanation": "Stroj je měkký vzor → i."
+    },
+    {
+      "type": "choice",
+      "question": "Které je správně?",
+      "options": [
+        "bez ženi",
+        "bez ženy"
+      ],
+      "answer": 1,
+      "explanation": "Žena je tvrdý vzor → y."
+    },
+    {
+      "type": "truefalse",
+      "question": "Po tvrdých vzorech píšeme v koncovkách y.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„S nožy“ je správně.",
+      "answer": false,
+      "explanation": "Nůž → vzor stroj (měkký) → s noži."
+    },
+    {
+      "type": "match",
+      "question": "Spoj tvar se vzorem.",
+      "pairs": [
+        [
+          "kluci",
+          "pán"
+        ],
+        [
+          "s lesy",
+          "hrad"
+        ],
+        [
+          "s koláči",
+          "stroj"
+        ],
+        [
+          "s lékaři",
+          "muž"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Kdy píšeme v koncovce podstatného jména y a kdy i?",
+      "answer": "Po tvrdých vzorech (pán, hrad, žena, město) píšeme y, po měkkých (muž, stroj, růže, moře…) i. Výjimka: vzor pán má v 1. pádě množného čísla i (páni, kluci)."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, proč píšeme „Kluci si hrají s kluky.“",
+      "answer": "Kluk je vzor pán. V 1. pádě mn. č. má i (kluci), v 7. pádě mn. č. y (s kluky)."
+    }
+  ]
+}

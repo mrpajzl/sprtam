@@ -1,0 +1,401 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "future-forms",
+  "title": "Vyjádření budoucnosti",
+  "emoji": "🔮",
+  "explanations": [
+    {
+      "title": "Diářem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Otevři si diář. Některé věci máš **domluvené** (v pátek zubař), některé jsou **tvůj plán** (chci se naučit na kytaru), některé tě **napadnou teď** (vezmu ten telefon) a některé jsou dané **rozvrhem** (vlak jede v 7:15)."
+        },
+        {
+          "type": "text",
+          "text": "Čeština všechno řekne budoucím nebo přítomným časem. Angličtina má pro každý typ budoucnosti jiný tvar. Rodilý mluvčí podle tvaru hned pozná, jak pevná ta budoucnost je."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "will",
+          "definition": "*will + základní tvar*. Rozhodnutí v okamžiku mluvení, nabídka, slib, odhad či názor.",
+          "example": "I'll help you. I think she'll win."
+        },
+        {
+          "type": "term",
+          "term": "be going to",
+          "definition": "*am/is/are going to + sloveso*. Záměr, o kterém jsi rozhodl **předem**, nebo předpověď z toho, co **vidíš**.",
+          "example": "I'm going to study medicine. Look! He's going to fall."
+        },
+        {
+          "type": "term",
+          "term": "Present continuous pro budoucnost",
+          "definition": "*am/is/are + -ing*. **Pevná domluva** s jinými lidmi, s časem a místem (jako zápis v diáři).",
+          "example": "I'm meeting Tom at 6."
+        },
+        {
+          "type": "term",
+          "term": "Present simple pro budoucnost",
+          "definition": "Základní tvar (*he/she/it* + *-s*). **Rozvrh, jízdní řád, program** – dáno zvenku.",
+          "example": "The train leaves at 7.15."
+        },
+        {
+          "type": "heading",
+          "text": "Stránka z diáře"
+        },
+        {
+          "type": "list",
+          "items": [
+            "*I'm meeting Tom at 6.* – domluveno, v diáři",
+            "*I'm going to study medicine.* – můj plán, záměr",
+            "*I'll help you!* – rozhodnutí teď, slib",
+            "*The train leaves at 7.15.* – jízdní řád"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň. U každé věty urči, o jaký typ budoucnosti jde."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "The phone is ringing. I",
+                "after": "get it.",
+                "options": [
+                  "'ll",
+                  "'m going to"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Look at those clouds! It",
+                "after": "rain.",
+                "options": [
+                  "will",
+                  "is going to"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "The concert",
+                "after": "at 8 p.m.",
+                "options": [
+                  "starts",
+                  "will be starting"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "We",
+                "after": "to Italy next week – flights are booked.",
+                "options": [
+                  "are flying",
+                  "fly"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "„She's bought paint.“ Doplň: She ___ her room.",
+          "answer": "Koupila barvu = připravený záměr → *She's going to paint her room.*"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: Our flight ___ (leave) at 6.30 tomorrow morning.",
+          "answer": "Odlet je daný letovým řádem → present simple: *leaves*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "I'm cold. – I'm going to close the window.",
+          "right": "I'm cold. – I'll close the window.",
+          "why": "Rozhodnutí, které vzniklo právě teď jako reakce, se vyjadřuje *will*."
+        },
+        {
+          "type": "summary",
+          "text": "Teď rozhodnuto → **will**. Plán / důkaz → **going to**. Domluva → **present continuous**. Rozvrh → **present simple**."
+        }
+      ]
+    },
+    {
+      "title": "Podle jistoty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Budoucnost nikdo nezná jistě. Ale něco víme skoro určitě (vlak podle jízdního řádu), něco si jen myslíme (Sparta vyhraje). Angličtina volí tvar podle toho, **odkud** naše jistota pochází. Navíc má jedno pravidlo pro vedlejší věty, které Čechům dělá potíže."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Odhad (názor)",
+          "definition": "Co si myslíš, že se stane, bez konkrétního důkazu. Často s *I think, probably, maybe*.",
+          "example": "I think people will live on Mars one day."
+        },
+        {
+          "type": "term",
+          "term": "Předpověď z důkazu",
+          "definition": "Vidíš něco teď, co ukazuje, co se hned stane.",
+          "example": "Watch out! You're going to drop it!"
+        },
+        {
+          "type": "term",
+          "term": "Vedlejší věta časová a podmínková",
+          "definition": "Část souvětí začínající *when, if, as soon as, before, after, until*. Říká, kdy nebo za jaké podmínky se stane hlavní děj.",
+          "example": "…as soon as I get home."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři tvary podle zdroje jistoty"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tvar",
+            "Zdroj jistoty",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "will",
+              "můj názor, odhad (*I think…*); slib, nabídka",
+              "I think she'll win."
+            ],
+            [
+              "going to",
+              "důkaz, který vidím; můj připravený záměr",
+              "He's going to fall!"
+            ],
+            [
+              "present continuous",
+              "pevná domluva s lidmi",
+              "I'm seeing the dentist on Friday."
+            ],
+            [
+              "present simple",
+              "rozvrh, jízdní řád",
+              "School starts on 1 September."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo pro vedlejší věty"
+        },
+        {
+          "type": "text",
+          "text": "Po *when, if, as soon as, before, after, until* se o budoucnosti mluví v **present simple**, ne s *will*. *Will* zůstává jen v hlavní větě: *I'll call you when I arrive.*"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď funkce: patří k *will*, nebo ke *going to*?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "will",
+              "going to"
+            ],
+            "items": [
+              {
+                "text": "slib",
+                "group": 0
+              },
+              {
+                "text": "okamžité rozhodnutí",
+                "group": 0
+              },
+              {
+                "text": "nabídka pomoci",
+                "group": 0
+              },
+              {
+                "text": "odhad s I think",
+                "group": 0
+              },
+              {
+                "text": "dřívější záměr",
+                "group": 1
+              },
+              {
+                "text": "předpověď z toho, co vidím",
+                "group": 1
+              },
+              {
+                "text": "plán na léto",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: I'll text you as soon as I ___ (get) home.",
+          "answer": "Po *as soon as* present simple: *as soon as I get home*."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: I promise I ___ tell anyone. (záporný slib)",
+          "answer": "Slib → *will*, zápor *won't*: *I promise I won't tell anyone.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "If it will rain, we'll stay at home.",
+          "right": "If it rains, we'll stay at home.",
+          "why": "Po *if* (i *when, as soon as…*) je present simple. *Will* jen v hlavní větě."
+        },
+        {
+          "type": "summary",
+          "text": "Názor → **will**, důkaz → **going to**, domluva → **-ing**, rozvrh → **simple**. Po *if/when* present simple."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "„I'm cold.“ – „___ close the window.“",
+      "options": [
+        "I'll",
+        "I'm going to",
+        "I close"
+      ],
+      "answer": 0,
+      "explanation": "Okamžité rozhodnutí → *will*."
+    },
+    {
+      "type": "choice",
+      "question": "Our flight ___ at 6.30 tomorrow morning.",
+      "options": [
+        "leaves",
+        "will leave",
+        "is going to leave"
+      ],
+      "answer": 0,
+      "explanation": "Jízdní řád → present simple."
+    },
+    {
+      "type": "choice",
+      "question": "She's bought paint. She ___ her room.",
+      "options": [
+        "is going to paint",
+        "will paint",
+        "paints"
+      ],
+      "answer": 0,
+      "explanation": "Záměr připravený předem → *going to*."
+    },
+    {
+      "type": "choice",
+      "question": "I'll text you as soon as I ___ home.",
+      "options": [
+        "get",
+        "will get",
+        "am going to get"
+      ],
+      "answer": 0,
+      "explanation": "Po *as soon as* present simple."
+    },
+    {
+      "type": "truefalse",
+      "question": "„What are you doing on Saturday?“ se ptá na plány.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„If it will rain, we'll stay at home.“ je správně.",
+      "answer": false,
+      "explanation": "Po *if* present simple: *If it rains…*"
+    },
+    {
+      "type": "input",
+      "question": "Doplň: Watch out! You ___ going to drop it!",
+      "answers": [
+        "are",
+        "'re"
+      ],
+      "explanation": "Předpověď z toho, co vidím → *be going to*."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: I promise I ___ tell anyone. (záporný slib)",
+      "answers": [
+        "won't",
+        "will not"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj větu s funkcí.",
+      "pairs": [
+        [
+          "I'll carry it for you.",
+          "nabídka"
+        ],
+        [
+          "I'm meeting Jo at 5.",
+          "domluva"
+        ],
+        [
+          "The bus leaves at 9.",
+          "jízdní řád"
+        ],
+        [
+          "It's going to crash!",
+          "předpověď z důkazu"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "I think people ___ on Mars one day.",
+      "options": [
+        "will live",
+        "are living",
+        "live"
+      ],
+      "answer": 0,
+      "explanation": "Názor, odhad → *will*."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi will a going to?",
+      "answer": "*Will* vyjadřuje okamžité rozhodnutí, slib, nabídku nebo odhad. *Going to* vyjadřuje předem promyšlený záměr nebo předpověď podloženou tím, co vidíme."
+    },
+    {
+      "type": "open",
+      "question": "Jak vyjádříš budoucnost, když je něco pevně domluveno nebo dané rozvrhem?",
+      "answer": "Domluvu vyjádříme present continuous (*I'm meeting her tonight*), rozvrh a jízdní řád present simple (*The film starts at 8*)."
+    }
+  ]
+}

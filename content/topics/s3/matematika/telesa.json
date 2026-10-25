@@ -1,0 +1,389 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "telesa",
+  "title": "Tělesa – objem a povrch",
+  "emoji": "🏺",
+  "explanations": [
+    {
+      "title": "Kostky a vrstvy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolik vody se vejde do bazénu? Kolik barvy potřebuješ na natření sudu? Kolik kartonu spotřebuje krabice? První otázka se ptá na **objem**, další dvě na **povrch**."
+        },
+        {
+          "type": "text",
+          "text": "Vzorce pro tělesa nemusíš drtit nazpaměť – většinu odvodíš z jednoduché myšlenky: objem = plocha dna krát výška."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Objem V",
+          "definition": "Kolik místa těleso zabírá – kolik kostiček 1 × 1 × 1 cm se do něj vejde. Jednotky cm³, m³, litry (1 l = 1 dm³).",
+          "example": "Krychle s hranou 3 cm: 3 · 3 · 3 = 27 cm³."
+        },
+        {
+          "type": "term",
+          "term": "Povrch S",
+          "definition": "Součet obsahů všech stěn – kolik papíru bys potřeboval na obalení. Jednotky cm², m²."
+        },
+        {
+          "type": "term",
+          "term": "Podstava a výška",
+          "definition": "Podstava je „dno“ tělesa, výška kolmá vzdálenost dna od vršku (nebo špičky)."
+        },
+        {
+          "type": "heading",
+          "text": "Objem = dno × výška"
+        },
+        {
+          "type": "text",
+          "text": "Nastav dno kvádru: 3 řádky × 4 sloupce = 12 kostek. Když na sebe dáš 2 takové vrstvy, máš 24 kostek. Objem kvádru = a · b · c."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4,
+            "max": 10
+          }
+        },
+        {
+          "type": "text",
+          "text": "Stejně funguje každý **hranol** (těleso se stejným dnem a vrškem) a **válec** (dno je kruh, obsah πr²): V = obsah podstavy · výška."
+        },
+        {
+          "type": "example",
+          "question": "Válec r = 2, v = 5. Objem?",
+          "answer": "Dno: π · 2² = 4π. Krát výška: 4π · 5 = **20π**."
+        },
+        {
+          "type": "heading",
+          "text": "Špičatá tělesa = třetina"
+        },
+        {
+          "type": "term",
+          "term": "Jehlan a kužel",
+          "definition": "Jehlan má dno mnohoúhelník a stěny se sbíhají do špičky. Kužel má dno kruh a špičku nahoře (jako kornout). Do hranolu se stejným dnem a výškou se vejdou přesně **tři** takové jehlany.",
+          "example": "Proto V = ⅓ · podstava · výška."
+        },
+        {
+          "type": "example",
+          "question": "Kužel r = 3, v = 4. Objem a délka strany s?",
+          "answer": "V = ⅓ · π · 9 · 4 = **12π**. Strana s (od špičky k okraji dna) je přepona trojúhelníku s odvěsnami r a v: s = √(9 + 16) = **5**."
+        },
+        {
+          "type": "text",
+          "text": "Plášť kužele (boční „kornout“) má obsah πrs. Pro r = 3, s = 5 je to 15π."
+        },
+        {
+          "type": "heading",
+          "text": "Koule"
+        },
+        {
+          "type": "term",
+          "term": "Koule",
+          "definition": "Všechny body nejvýš r od středu. V = 4/3 · πr³, S = 4πr².",
+          "example": "r = 3: V = 4/3 · 27π = 36π."
+        },
+        {
+          "type": "heading",
+          "text": "Zvětšování"
+        },
+        {
+          "type": "text",
+          "text": "Zdvojnásobíš hranu krychle. Do každého směru se vejdou dvakrát víc kostek: 2 · 2 · 2 = **8× větší objem**. Povrch (plocha) roste jen 2 · 2 = **4×**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hranu krychle zdvojnásobím → objem vzroste 2×.",
+          "right": "Objem vzroste 2³ = 8×.",
+          "why": "Objem roste ve třech směrech zároveň (délka, šířka, výška). Zvětšení k-krát → objem k³-krát, povrch k²-krát."
+        },
+        {
+          "type": "summary",
+          "text": "Hranol a válec: V = podstava · výška. Jehlan a kužel: třetina. Koule: V = 4/3 πr³, S = 4πr². Při zvětšení k-krát roste povrch k²-krát, objem k³-krát."
+        }
+      ]
+    },
+    {
+      "title": "Přehled vzorců",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Výrobce plechovek chce co nejméně plechu na daný objem, stavbyvedoucí objednává beton, zahradník počítá vodu do sudu. Všichni potřebují vzorce pro objem a povrch – a hlavně vědět, který použít."
+        },
+        {
+          "type": "text",
+          "text": "Tady je přehled všech základních těles a postup, jak úlohu vyřešit bez chyby."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Objem a povrch",
+          "definition": "Objem V = kolik prostoru těleso zabírá (cm³). Povrch S = součet obsahů všech ploch na povrchu (cm²)."
+        },
+        {
+          "type": "term",
+          "term": "Plášť",
+          "definition": "Boční plocha tělesa bez podstav (dna a víka).",
+          "example": "Plášť válce rozvineš do obdélníku 2πr × v."
+        },
+        {
+          "type": "term",
+          "term": "Strana kužele s",
+          "definition": "Vzdálenost od špičky k okraji podstavy. Platí s² = r² + v² (Pythagorova věta)."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Těleso",
+            "Objem V",
+            "Povrch S"
+          ],
+          "rows": [
+            [
+              "krychle (hrana a)",
+              "a³",
+              "6a²"
+            ],
+            [
+              "kvádr a × b × c",
+              "abc",
+              "2(ab + bc + ac)"
+            ],
+            [
+              "válec",
+              "πr²v",
+              "2πr² + 2πrv"
+            ],
+            [
+              "kužel",
+              "⅓πr²v",
+              "πr² + πrs"
+            ],
+            [
+              "jehlan",
+              "⅓ · S_podstavy · v",
+              "podstava + boční trojúhelníky"
+            ],
+            [
+              "koule",
+              "4/3 πr³",
+              "4πr²"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Načrtni těleso a vyznač, co znáš.",
+            "Chybí-li rozměr (s, výška, úhlopříčka), najdi pravoúhlý trojúhelník a použij Pythagorovu větu.",
+            "Dosaď do vzorce, hlídej jednotky.",
+            "U π nech výsledek jako „k · π“, pokud se to tak chce."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kvádr 2 × 3 × 4 cm. Povrch?",
+          "answer": "Tři dvojice stěn: 2 · 3 = 6, 3 · 4 = 12, 2 · 4 = 8. S = 2 · (6 + 12 + 8) = **52 cm²**."
+        },
+        {
+          "type": "example",
+          "question": "Pravidelný čtyřboký jehlan: hrana podstavy 6, výška 4. Objem?",
+          "answer": "Podstava čtverec 6 · 6 = 36. V = ⅓ · 36 · 4 = **48**."
+        },
+        {
+          "type": "example",
+          "question": "Koule r = 2. Povrch? Kužel r = 3, s = 5. Plášť?",
+          "answer": "Koule: 4π · 4 = **16π**. Plášť kužele: π · 3 · 5 = **15π**."
+        },
+        {
+          "type": "heading",
+          "text": "Archimédův objev"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi válec, kouli a kužel se stejným poloměrem r = 3 a výškou 2r = 6. Jejich objemy jsou v poměru **3 : 2 : 1**. Vztah koule a válce objevil Archimédés a byl na něj tak hrdý, že si prý přál mít kouli ve válci na svém hrobě."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "· π",
+            "items": [
+              {
+                "label": "válec πr²v",
+                "value": 54
+              },
+              {
+                "label": "koule 4/3 πr³",
+                "value": 36
+              },
+              {
+                "label": "kužel ⅓πr²v",
+                "value": 18
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Objem kužele = πr²v",
+          "right": "Objem kužele = ⅓πr²v",
+          "why": "Kužel se zužuje do špičky, takže zabírá jen třetinu válce se stejnou podstavou a výškou. Totéž platí pro jehlan a hranol."
+        },
+        {
+          "type": "text",
+          "text": "Zvětšíš-li všechny rozměry k-krát, povrch vzroste k²-krát a objem k³-krát. Dvojnásobná hrana krychle → 8× větší objem."
+        },
+        {
+          "type": "summary",
+          "text": "V = podstava · výška (hranol, válec), třetina u špičatých těles (jehlan, kužel), koule 4/3 πr³. Chybějící rozměr dopočítej Pythagorovou větou."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Krychle s hranou 3 cm. Objem (cm³) =",
+      "answers": [
+        "27"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kvádr 2 × 3 × 4 cm. Povrch (cm²) =",
+      "answers": [
+        "52"
+      ],
+      "explanation": "2 · (6 + 8 + 12)"
+    },
+    {
+      "type": "input",
+      "question": "Válec r = 2, v = 5. Objem = k·π, k =",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kužel r = 3, v = 4. Objem = k·π, k =",
+      "answers": [
+        "12"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kužel r = 3, v = 4. Délka strany s =",
+      "answers": [
+        "5"
+      ],
+      "explanation": "s² = 9 + 16"
+    },
+    {
+      "type": "input",
+      "question": "Kužel r = 3, s = 5. Obsah pláště = k·π, k =",
+      "answers": [
+        "15"
+      ],
+      "explanation": "πrs"
+    },
+    {
+      "type": "input",
+      "question": "Koule r = 3. Objem = k·π, k =",
+      "answers": [
+        "36"
+      ],
+      "explanation": "4/3 · 27"
+    },
+    {
+      "type": "input",
+      "question": "Koule r = 2. Povrch = k·π, k =",
+      "answers": [
+        "16"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Pravidelný čtyřboký jehlan: hrana podstavy 6, výška 4. Objem =",
+      "answers": [
+        "48"
+      ],
+      "explanation": "⅓ · 36 · 4"
+    },
+    {
+      "type": "truefalse",
+      "question": "Objem jehlanu je třetina objemu hranolu se stejnou podstavou a výškou.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Hranu krychle zdvojnásobíme. Objem vzroste:",
+      "options": [
+        "8×",
+        "2×",
+        "4×",
+        "6×"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj těleso se vzorcem objemu.",
+      "pairs": [
+        [
+          "válec",
+          "πr²v"
+        ],
+        [
+          "kužel",
+          "⅓πr²v"
+        ],
+        [
+          "koule",
+          "4/3 πr³"
+        ],
+        [
+          "krychle",
+          "a³"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak souvisí objem kužele s objemem válce?",
+      "answer": "Kužel se stejnou podstavou a výškou má třetinový objem válce: V = ⅓ πr²v. Stejně jehlan a hranol."
+    },
+    {
+      "type": "open",
+      "question": "Jak se změní povrch a objem, když všechny rozměry tělesa zvětšíš dvakrát?",
+      "answer": "Povrch vzroste 2² = 4krát, objem 2³ = 8krát."
+    }
+  ]
+}

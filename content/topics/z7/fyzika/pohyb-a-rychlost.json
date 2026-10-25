@@ -1,0 +1,325 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pohyb-a-rychlost",
+  "title": "Pohyb a rychlost",
+  "emoji": "🚲",
+  "explanations": [
+    {
+      "title": "Z vlaku",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sedíš ve vlaku a čteš si. Hýbeš se, nebo ne? Vůči sedadlu ne – pořád jsi na stejném místě. Vůči stromům za oknem ano – ujíždějí dozadu."
+        },
+        {
+          "type": "text",
+          "text": "Fyzika umí pohyb přesně popsat: kudy těleso jede, kolik ujede a jak rychle. Hodí se to při plánování cesty, v dopravě i ve sportu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vztažné těleso",
+          "definition": "Věc, vůči které posuzuješ, jestli se něco hýbe. Bez ní nejde říct „hýbe se“ ani „stojí“.",
+          "example": "Vůči vlaku sedíš v klidu, vůči nádraží se pohybuješ."
+        },
+        {
+          "type": "term",
+          "term": "Klid a pohyb",
+          "definition": "Těleso je **v klidu**, když nemění polohu vůči vztažnému tělesu. Když ji mění, je **v pohybu**. Klid i pohyb jsou proto **relativní** – záleží na tom, k čemu je měříme.",
+          "example": "Spolujezdec v autě je v klidu vůči řidiči, ale v pohybu vůči silnici."
+        },
+        {
+          "type": "term",
+          "term": "Trajektorie",
+          "definition": "Čára, po které se těleso pohybuje – jako stopa, kterou by za sebou nechalo.",
+          "example": "Stopa lyžaře ve sněhu, kondenzační čára za letadlem."
+        },
+        {
+          "type": "term",
+          "term": "Dráha",
+          "definition": "Délka trajektorie – kolik metrů nebo kilometrů těleso ujelo. Značka `s`.",
+          "example": "Cesta do školy dlouhá 1,2 km."
+        },
+        {
+          "type": "heading",
+          "text": "Druhy pohybu"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Podle trajektorie: **přímočarý** (po přímce – výtah) a **křivočarý** (po křivce – kolotoč, hozený míč).",
+            "Podle rychlosti: **rovnoměrný** (rychlost se nemění – eskalátor) a **nerovnoměrný** (zrychluje nebo zpomaluje – auto u semaforu)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kdo je rychlejší?"
+        },
+        {
+          "type": "text",
+          "text": "Petr ujede na kole 30 km za 2 hodiny. Za každou hodinu tedy ujede 30 : 2 = 15 km. To je jeho **rychlost**: 15 kilometrů za hodinu, krátce **15 km/h**."
+        },
+        {
+          "type": "term",
+          "term": "Rychlost",
+          "definition": "Jakou dráhu těleso urazí za jednotku času (za 1 hodinu nebo za 1 sekundu). Značka `v`.",
+          "example": "Chodec jde asi 5 km/h, auto ve městě 50 km/h."
+        },
+        {
+          "type": "term",
+          "term": "Průměrná rychlost",
+          "definition": "Celá dráha vydělená celým časem. Říká, jak rychle bys jel, kdybys jel pořád stejně.",
+          "example": "Auto někde stálo, jinde jelo rychle – průměrná rychlost to všechno shrne do jednoho čísla."
+        },
+        {
+          "type": "example",
+          "question": "Auto ujelo 180 km za 2 h. Jaká byla průměrná rychlost?",
+          "answer": "Za 1 hodinu ujelo 180 : 2 = **90 km/h**."
+        },
+        {
+          "type": "example",
+          "question": "Chodec jde rychlostí 5 km/h. Kolik ujde za 3 h?",
+          "answer": "Každou hodinu 5 km, za 3 hodiny 3 · 5 = **15 km**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Strom u trati se nehýbe, to platí vždycky.",
+          "right": "Strom je v klidu vůči Zemi, ale vůči cestujícímu ve vlaku se pohybuje.",
+          "why": "Klid i pohyb jsou relativní. Vždy musíš říct, vůči čemu je posuzuješ."
+        },
+        {
+          "type": "summary",
+          "text": "Pohyb posuzujeme vůči vztažnému tělesu. Rychlost = kolik ujedu za jednotku času; průměrná rychlost = celá dráha : celý čas."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem a grafem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Navigace v mobilu ti řekne: „Do cíle 120 km, příjezd za 1 h 30 min.“ Počítá přitom s rychlostí, dráhou a časem. Ukážeme si, jak to umí ona – a jak to budeš umět ty."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dráha `s`",
+          "definition": "Kolik těleso ujelo. Jednotky metr (m) nebo kilometr (km).",
+          "example": "s = 100 m na běžecké dráze."
+        },
+        {
+          "type": "term",
+          "term": "Čas `t`",
+          "definition": "Jak dlouho pohyb trval. Jednotky sekunda (s) nebo hodina (h).",
+          "example": "t = 12 s na stovku."
+        },
+        {
+          "type": "term",
+          "term": "Rychlost `v`",
+          "definition": "Dráha, kterou těleso ujede za jednu jednotku času. Jednotky **m/s** (metrů za sekundu) nebo **km/h** (kilometrů za hodinu).",
+          "example": "10 m/s = každou sekundu ujedu 10 metrů."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoměrný pohyb",
+          "definition": "Pohyb, při kterém se rychlost nemění – každou sekundu těleso ujede stejný kus.",
+          "example": "Vlak jedoucí po rovině stálou rychlostí."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorec ze zkušenosti"
+        },
+        {
+          "type": "text",
+          "text": "Když ujedeš 300 m za 10 s, za každou sekundu ujedeš 300 : 10 = 30 m. Dělíš dráhu časem. Proto: `v = s : t`."
+        },
+        {
+          "type": "text",
+          "text": "Z toho dostaneš i ostatní: dráha `s = v · t` (rychlost krát čas) a čas `t = s : v`."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vypiš, co znáš (s, t nebo v) i s jednotkami.",
+            "Vyber vzorec pro to, co hledáš.",
+            "Zkontroluj, že jednotky k sobě sedí (km a h → km/h; m a s → m/s).",
+            "Dosaď a vypočítej.",
+            "Napiš odpověď s jednotkou."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Vlak jede 120 km/h. Za jak dlouho ujede 300 km?",
+          "answer": "t = s : v = 300 : 120 = **2,5 h** (2 h 30 min)."
+        },
+        {
+          "type": "heading",
+          "text": "Převod m/s a km/h"
+        },
+        {
+          "type": "text",
+          "text": "Rychlost 1 m/s znamená 1 metr každou sekundu. Hodina má 3 600 sekund, takže za hodinu ujedeš 3 600 m = 3,6 km. Proto **1 m/s = 3,6 km/h**."
+        },
+        {
+          "type": "list",
+          "items": [
+            "z m/s na km/h: **krát 3,6** (10 m/s = 36 km/h)",
+            "z km/h na m/s: **děleno 3,6** (72 km/h = 20 m/s)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Graf dráhy"
+        },
+        {
+          "type": "text",
+          "text": "Při rovnoměrném pohybu přibývá každou sekundu stejný kus dráhy. Graf dráhy (vodorovně čas, svisle dráha) je proto **přímka vycházející z počátku**. Na grafu je `k` rychlost. Zvětši ji a sleduj: čím rychlejší pohyb, tím strmější přímka."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 2,
+            "q": 0
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "72 km/h = 72 · 3,6 = 259,2 m/s",
+          "right": "72 km/h = 72 : 3,6 = 20 m/s",
+          "why": "Metr za sekundu je „větší“ jednotka rychlosti než kilometr za hodinu, takže číslo v m/s musí vyjít menší. Z km/h na m/s se dělí."
+        },
+        {
+          "type": "summary",
+          "text": "`v = s : t`, `s = v · t`, `t = s : v`. 1 m/s = 3,6 km/h. Graf dráhy rovnoměrného pohybu je přímka z počátku – strmější = rychlejší."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Cestující sedící ve vlaku je vůči vlaku v klidu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá čára, po které se těleso pohybuje?",
+      "options": [
+        "trajektorie",
+        "dráha",
+        "rychlost",
+        "osa"
+      ],
+      "answer": 0,
+      "explanation": "Dráha je délka trajektorie."
+    },
+    {
+      "type": "input",
+      "question": "Auto ujelo 180 km za 2 h. Průměrná rychlost v km/h =",
+      "answers": [
+        "90"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik km/h je 10 m/s?",
+      "answers": [
+        "36"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik m/s je 72 km/h?",
+      "answers": [
+        "20"
+      ],
+      "explanation": "72 : 3,6 = 20"
+    },
+    {
+      "type": "input",
+      "question": "Chodec jde 5 km/h. Kolik km ujde za 3 h?",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Vlak jede 120 km/h. Za kolik hodin ujede 300 km?",
+      "answers": [
+        "2,5"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co platí pro graf dráhy rovnoměrného pohybu?",
+      "options": [
+        "je to přímka z počátku",
+        "je to vodorovná přímka",
+        "je to křivka",
+        "je to kružnice"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejpomalejšího.",
+      "items": [
+        "šnek",
+        "chodec",
+        "cyklista",
+        "auto na dálnici",
+        "letadlo"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu s jednotkou.",
+      "pairs": [
+        [
+          "dráha",
+          "m"
+        ],
+        [
+          "čas",
+          "s"
+        ],
+        [
+          "rychlost",
+          "m/s"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Auto, které se rozjíždí od semaforu, se pohybuje rovnoměrně.",
+      "answer": false,
+      "explanation": "Zrychluje, jde o nerovnoměrný pohyb."
+    },
+    {
+      "type": "open",
+      "question": "Proč říkáme, že klid a pohyb jsou relativní?",
+      "answer": "Záleží na vztažném tělese. Cestující je v klidu vůči vlaku, ale v pohybu vůči nádraží."
+    },
+    {
+      "type": "open",
+      "question": "Jak vypočítáš průměrnou rychlost? Uveď příklad.",
+      "answer": "Celou dráhu vydělím celkovým časem: v = s / t. Např. 60 km za 2 h je 30 km/h."
+    }
+  ]
+}

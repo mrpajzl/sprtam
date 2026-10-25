@@ -1,0 +1,419 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "globus-a-mapa",
+  "title": "Glóbus a mapa",
+  "emoji": "🗺️",
+  "explanations": [
+    {
+      "title": "Pomeranč",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chceš někomu ukázat, kde bydlíš, nebo naplánovat výlet. Potřebuješ obrázek krajiny shora – zmenšený tak, aby se vešel do ruky. To je glóbus nebo mapa."
+        },
+        {
+          "type": "text",
+          "text": "Každý z nich má výhody i nevýhody. A obojí se musíš naučit číst – jinak ti mapa nepomůže."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Glóbus",
+          "definition": "Zmenšený model Země ve tvaru koule. Většinou se dá otáčet na stojánku.",
+          "example": "Školní glóbus má průměr asi 30 cm – skutečná Země asi 12 700 km."
+        },
+        {
+          "type": "term",
+          "term": "Mapa",
+          "definition": "Zmenšený obrázek zemského povrchu (nebo jeho části) nakreslený **na rovném papíře**, jako bychom se dívali shora.",
+          "example": "Turistická mapa, plán města, mapa světa ve škole."
+        },
+        {
+          "type": "term",
+          "term": "Zkreslení",
+          "definition": "Když mapa ukazuje něco jinak, než to ve skutečnosti je: jiný tvar, jinou velikost plochy nebo jinou vzdálenost.",
+          "example": "Na mnoha mapách světa vypadá Grónsko velké skoro jako Afrika. Ve skutečnosti je Afrika asi 14× větší."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s pomerančem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Oloupej pomeranč tak, aby slupka zůstala co nejvíc v celku.",
+            "Zkus slupku rozložit naplocho na stůl.",
+            "Nejde to! Slupka popraská nebo se musí natáhnout.",
+            "Přesně tohle se děje, když povrch kulaté Země „rozložíme“ na rovnou mapu."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Glóbus je koule jako Země, proto **nezkresluje**. Mapa je rovná, proto **vždy něco zkresluje**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Glóbus",
+            "Mapa"
+          ],
+          "rows": [
+            [
+              "Zkreslení",
+              "žádné",
+              "vždy nějaké"
+            ],
+            [
+              "Do kapsy",
+              "ne",
+              "ano"
+            ],
+            [
+              "Celá Země najednou",
+              "ne, vidíš jen polovinu",
+              "ano"
+            ],
+            [
+              "Podrobnost",
+              "malá",
+              "může být velká (i jednotlivé domy)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak mapu číst"
+        },
+        {
+          "type": "term",
+          "term": "Legenda",
+          "definition": "Rámeček na okraji mapy, který vysvětluje, co znamenají značky a barvy.",
+          "example": "Křížek = kostel, modrá čára = řeka, černá tečka = obec."
+        },
+        {
+          "type": "term",
+          "term": "Světové strany",
+          "definition": "Čtyři hlavní směry: **sever, jih, východ, západ**. Na mapě bývá **sever nahoře**, jih dole, východ vpravo, západ vlevo."
+        },
+        {
+          "type": "term",
+          "term": "Nadmořská výška",
+          "definition": "Jak vysoko je místo nad hladinou moře, v metrech.",
+          "example": "Sněžka má 1 603 m n. m."
+        },
+        {
+          "type": "text",
+          "text": "Na zeměpisných mapách barvy ukazují nadmořskou výšku:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Barva",
+            "Význam"
+          ],
+          "rows": [
+            [
+              "modrá",
+              "voda – moře, řeky, jezera"
+            ],
+            [
+              "zelená",
+              "nížina – nízko položená rovina"
+            ],
+            [
+              "žlutá",
+              "vrchovina – kopce středně vysoko"
+            ],
+            [
+              "hnědá",
+              "hory – čím tmavší, tím výš"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Měřítko – kolikrát je to zmenšené"
+        },
+        {
+          "type": "term",
+          "term": "Měřítko",
+          "definition": "Údaj na mapě, který říká, **kolikrát je skutečnost zmenšená**. Píše se jako 1 : 50 000.",
+          "example": "1 : 50 000 znamená: 1 cm na mapě = 50 000 cm ve skutečnosti = 500 m."
+        },
+        {
+          "type": "example",
+          "question": "Na mapě 1 : 100 000 jsou dvě vesnice 3 cm od sebe. Jak daleko jsou doopravdy?",
+          "answer": "1 cm = 100 000 cm = 1 000 m = 1 km. Takže 3 cm = 3 km."
+        },
+        {
+          "type": "example",
+          "question": "Proč si do lesa nevezmeš mapu světa?",
+          "answer": "Mapa světa je moc zmenšená. Les by na ní byl menší než tečka. Na výlet potřebuješ podrobnou mapu, kde 1 cm je třeba jen 500 m."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Grónsko je skoro stejně velké jako Afrika – vidím to na mapě.",
+          "right": "Afrika je asi 14× větší než Grónsko.",
+          "why": "Mapa zkresluje. Velikosti ploch ověříš nejlépe na glóbu."
+        },
+        {
+          "type": "summary",
+          "text": "Glóbus nezkresluje, ale je nepraktický. Mapa je praktická, ale vždy něco zkresluje. Mapu čteš pomocí legendy, světových stran a měřítka."
+        }
+      ]
+    },
+    {
+      "title": "Měřítko",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na mapě vidíš, že chata je 4 cm od nádraží. Ale kolik je to pěšky? Na to potřebuješ **měřítko** – a umět s ním počítat."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, co je mapa a glóbus, jak měřítko funguje a jak podle něj vybrat správnou mapu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Glóbus",
+          "definition": "Zmenšený kulatý model Země. Má stejný tvar jako Země, proto nic nezkresluje."
+        },
+        {
+          "type": "term",
+          "term": "Mapa",
+          "definition": "Zmenšený obraz zemského povrchu na rovině (papír, displej). Kouli nejde rozložit do roviny beze změn, proto mapa vždy něco **zkresluje** – tvary, plochy nebo vzdálenosti."
+        },
+        {
+          "type": "term",
+          "term": "Měřítko",
+          "definition": "Poměr zmenšení. **1 : 50 000** čti „jedna ku padesáti tisícům“: 1 cm na mapě je 50 000 cm ve skutečnosti."
+        },
+        {
+          "type": "term",
+          "term": "Legenda",
+          "definition": "Vysvětlivky mapových značek a barev na okraji mapy.",
+          "example": "Modrá = voda, zelená = nížina, žlutá = vrchovina, hnědá = hory."
+        },
+        {
+          "type": "heading",
+          "text": "Převody, které budeš potřebovat"
+        },
+        {
+          "type": "list",
+          "items": [
+            "100 cm = 1 m",
+            "100 000 cm = 1 000 m = 1 km",
+            "Trik: z čísla v měřítku škrtni **dvě nuly** → máš metry. Škrtni **pět nul** → máš kilometry."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup výpočtu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Pravítkem změř vzdálenost na mapě, např. **4 cm**.",
+            "Přečti měřítko, např. **1 : 50 000**.",
+            "Zjisti, kolik je 1 cm: 50 000 cm → škrtni dvě nuly → **500 m**.",
+            "Vynásob: 4 · 500 m = **2 000 m**.",
+            "Převeď: 2 000 m = **2 km**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Měřítko 1 : 25 000. Na mapě je 6 cm. Kolik je to ve skutečnosti?",
+          "answer": "1 cm = 25 000 cm = 250 m. 6 · 250 m = 1 500 m = 1,5 km."
+        },
+        {
+          "type": "example",
+          "question": "Měřítko 1 : 1 000 000. Města jsou na mapě 7 cm od sebe. Kolik km?",
+          "answer": "1 cm = 1 000 000 cm → škrtnu pět nul → 10 km. 7 · 10 km = 70 km."
+        },
+        {
+          "type": "heading",
+          "text": "Velké a malé měřítko"
+        },
+        {
+          "type": "text",
+          "text": "Čím **menší číslo** za dvojtečkou, tím méně je skutečnost zmenšená – mapa je **podrobnější**. Takové měřítko se nazývá **velké**. Čím větší číslo, tím je mapa **přehlednější**, ale méně podrobná – **malé** měřítko."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď mapy do dvou kbelíků:"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Velké měřítko (podrobná)",
+              "Malé měřítko (přehledná)"
+            ],
+            "items": [
+              {
+                "text": "plán města 1 : 10 000",
+                "group": 0
+              },
+              {
+                "text": "turistická mapa 1 : 50 000",
+                "group": 0
+              },
+              {
+                "text": "mapa světa 1 : 100 000 000",
+                "group": 1
+              },
+              {
+                "text": "mapa Evropy 1 : 20 000 000",
+                "group": 1
+              },
+              {
+                "text": "plán zahrady 1 : 500",
+                "group": 0
+              },
+              {
+                "text": "mapa Afriky 1 : 30 000 000",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Mapa 1 : 1 000 000 je podrobnější než 1 : 10 000, protože má větší číslo.",
+          "right": "Podrobnější je 1 : 10 000.",
+          "why": "Větší číslo = skutečnost je víc zmenšená = méně podrobností. Na 1 : 10 000 je 1 cm jen 100 m, na 1 : 1 000 000 celých 10 km."
+        },
+        {
+          "type": "text",
+          "text": "Nezapomeň: sever bývá na mapě **nahoře**, a co znamenají značky, ti řekne **legenda**."
+        },
+        {
+          "type": "summary",
+          "text": "Měřítko 1 : X znamená, že 1 cm na mapě je X cm ve skutečnosti. Čím menší X, tím podrobnější mapa."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Glóbus zkresluje tvary pevnin.",
+      "answer": false,
+      "explanation": "Glóbus je zmenšená koule, proto nezkresluje."
+    },
+    {
+      "type": "choice",
+      "question": "Co vysvětluje mapové značky?",
+      "options": [
+        "měřítko",
+        "legenda",
+        "kompas",
+        "souřadnice"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Měřítko 1 : 100 000. Kolik km je 1 cm na mapě?",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Měřítko 1 : 50 000. Na mapě je 6 cm. Kolik je to km?",
+      "answers": [
+        "3"
+      ],
+      "explanation": "1 cm = 500 m, 6 · 500 m = 3 000 m = 3 km."
+    },
+    {
+      "type": "choice",
+      "question": "Která mapa je nejpodrobnější?",
+      "options": [
+        "1 : 10 000",
+        "1 : 200 000",
+        "1 : 1 000 000",
+        "1 : 50 000 000"
+      ],
+      "answer": 0,
+      "explanation": "Nejmenší číslo za dvojtečkou = největší měřítko."
+    },
+    {
+      "type": "truefalse",
+      "question": "Každá mapa něco zkresluje (plochy, úhly nebo vzdálenosti).",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj barvu na mapě a význam.",
+      "pairs": [
+        [
+          "modrá",
+          "voda"
+        ],
+        [
+          "zelená",
+          "nížina"
+        ],
+        [
+          "hnědá",
+          "hory"
+        ],
+        [
+          "žlutá",
+          "vrchovina"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejpodrobnější mapy.",
+      "items": [
+        "1 : 5 000",
+        "1 : 25 000",
+        "1 : 500 000",
+        "1 : 10 000 000"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která světová strana bývá na mapě nahoře?",
+      "options": [
+        "jih",
+        "východ",
+        "sever",
+        "západ"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "open",
+      "question": "Jaké jsou výhody a nevýhody glóbu a mapy?",
+      "answer": "Glóbus nezkresluje, ale je velký a nevidíme celou Zemi najednou. Mapa je skladná a podrobná, ale vždy něco zkresluje."
+    },
+    {
+      "type": "open",
+      "question": "Co znamená měřítko 1 : 25 000?",
+      "answer": "Skutečnost je zmenšená 25 000krát. 1 cm na mapě odpovídá 25 000 cm, tedy 250 m ve skutečnosti."
+    }
+  ]
+}

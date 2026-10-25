@@ -1,0 +1,440 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "atmosfera",
+  "title": "Atmosféra, počasí a podnebí",
+  "emoji": "🌦️",
+  "explanations": [
+    {
+      "title": "Dnes vs. dlouho",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ráno se díváš z okna: prší, nebo svítí sluníčko? Vezmeš si bundu? To řešíš **počasí**. Ale když plánuješ, kam pojedete k moři v létě, zajímá tě, jak tam *bývá* – a to je **podnebí**."
+        },
+        {
+          "type": "text",
+          "text": "Obojí se odehrává ve vzduchu kolem Země. Proto začneme u něj."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atmosféra",
+          "definition": "Vrstva vzduchu, která obaluje celou Zemi. Drží ji u Země zemská přitažlivost.",
+          "example": "Je jako slupka cibule: má několik vrstev nad sebou."
+        },
+        {
+          "type": "term",
+          "term": "Plyn",
+          "definition": "Látka, která nemá vlastní tvar a rozptýlí se do celého prostoru – třeba vzduch nebo pára."
+        },
+        {
+          "type": "text",
+          "text": "Vzduch je směs plynů: asi **78 % dusíku**, **21 % kyslíku** a zbytek tvoří hlavně argon, oxid uhličitý a vodní pára."
+        },
+        {
+          "type": "heading",
+          "text": "Vrstvy atmosféry"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vrstva (zdola)",
+            "Co v ní je"
+          ],
+          "rows": [
+            [
+              "troposféra (asi do 10–12 km)",
+              "skoro všechna vodní pára a mraky – tady vzniká počasí"
+            ],
+            [
+              "stratosféra",
+              "**ozonová vrstva** – chrání nás před UV zářením"
+            ],
+            [
+              "mezosféra",
+              "shoří v ní většina „padajících hvězd“"
+            ],
+            [
+              "termosféra",
+              "polární záře, létají tu některé družice"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "UV záření",
+          "definition": "Neviditelné sluneční záření, které pálí kůži (spálení od sluníčka) a ve velkém množství škodí živým tvorům."
+        },
+        {
+          "type": "term",
+          "term": "Ozonová vrstva",
+          "definition": "Vrstva plynu ozonu ve stratosféře. Pohlcuje velkou část UV záření, takže k nám dopadne jen menší část."
+        },
+        {
+          "type": "heading",
+          "text": "Počasí a podnebí"
+        },
+        {
+          "type": "term",
+          "term": "Počasí",
+          "definition": "Jaký je vzduch **teď nebo v nejbližších dnech**: teplota, déšť, vítr, oblačnost.",
+          "example": "„Dnes ráno mrzlo.“ „Zítra bude pršet.“"
+        },
+        {
+          "type": "term",
+          "term": "Podnebí (klima)",
+          "definition": "Jaké počasí na místě **obvykle bývá** – průměr za mnoho let (aspoň 30).",
+          "example": "„Na Sahaře je trvale sucho.“ „V Česku jsou 4 roční období.“"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věty: mluví o počasí, nebo o podnebí? Ptej se: jde o jeden den, nebo o to, jak to tam bývá?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Počasí",
+              "Podnebí"
+            ],
+            "items": [
+              {
+                "text": "Dnes ráno mrzlo.",
+                "group": 0
+              },
+              {
+                "text": "Zítra bude pršet.",
+                "group": 0
+              },
+              {
+                "text": "Na Sahaře je trvale sucho.",
+                "group": 1
+              },
+              {
+                "text": "V Česku bývají 4 roční období.",
+                "group": 1
+              },
+              {
+                "text": "Odpoledne přijde bouřka.",
+                "group": 0
+              },
+              {
+                "text": "V tropech je celý rok teplo.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Čím se počasí měří"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Přístroj",
+            "Co měří"
+          ],
+          "rows": [
+            [
+              "teploměr",
+              "teplotu vzduchu"
+            ],
+            [
+              "srážkoměr",
+              "srážky – kolik napršelo nebo nasněžilo"
+            ],
+            [
+              "barometr",
+              "tlak vzduchu – jak silně vzduch tlačí"
+            ],
+            [
+              "větrná korouhev",
+              "směr větru"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "„V Londýně v lednu průměrně spadne 55 mm srážek.“ Je to počasí, nebo podnebí?",
+          "answer": "Je to průměr za mnoho let, ne jeden konkrétní den. Je to **podnebí**."
+        },
+        {
+          "type": "example",
+          "question": "Proč se na horách dá lyžovat, i když je dole v údolí jaro?",
+          "answer": "S výškou teplota klesá, asi o 0,6 °C na každých 100 m. Na hoře o 1 500 m výš je tak asi o 9 °C chladněji – sníh tam taje později."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Letos bylo chladné léto, takže se podnebí ochladilo.",
+          "right": "Chladné léto je počasí. O podnebí rozhoduje průměr za desítky let.",
+          "why": "Jeden rok je jen výkyv. Podnebí se pozná až z dlouhé řady let."
+        },
+        {
+          "type": "summary",
+          "text": "Atmosféra je vzdušný obal Země (78 % dusík, 21 % kyslík). Počasí je stav vzduchu teď, podnebí dlouhodobý průměr. Počasí vzniká v troposféře."
+        }
+      ]
+    },
+    {
+      "title": "Podnebné pásy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč v Egyptě jezdíme k moři i v listopadu a v Norsku je v zimě skoro pořád tma a mráz? Protože každé místo má jiné **podnebí**."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, proč je u rovníku horko a u pólů zima, a naučíš se, jak se Země dělí na **podnebné pásy**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atmosféra",
+          "definition": "Vzdušný obal Země. Nejnižší vrstva, **troposféra**, je ta, ve které žijeme a kde vzniká počasí."
+        },
+        {
+          "type": "term",
+          "term": "Podnebí (klima)",
+          "definition": "Průměrné počasí na místě za mnoho let. Na rozdíl od **počasí**, které je jen „teď“."
+        },
+        {
+          "type": "term",
+          "term": "Rovník a póly",
+          "definition": "**Rovník** je myšlená kružnice kolem středu Země. **Póly** jsou nejsevernější a nejjižnější bod Země."
+        },
+        {
+          "type": "term",
+          "term": "Podnebný pás",
+          "definition": "Široký pruh Země kolem dokola, kde je podobné podnebí. Pásy se řadí od rovníku k pólům."
+        },
+        {
+          "type": "heading",
+          "text": "Proč je u rovníku tepleji"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Posviť baterkou kolmo na stůl. Vznikne malý jasný kruh.",
+            "Teď baterku nakloň. Světlo se rozleze do velkého bledého oválu.",
+            "Stejné množství světla dopadá na větší plochu → každé místo dostane méně tepla.",
+            "U rovníku dopadají paprsky skoro **kolmo** – hřejí nejvíc.",
+            "Směrem k pólům dopadají čím dál **šikměji** – hřejí méně."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pásy od rovníku k pólu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Pás",
+            "Jaké tam je podnebí",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "tropický",
+              "kolem rovníku, celý rok horko",
+              "Brazílie, Kongo"
+            ],
+            [
+              "subtropický",
+              "horké suché léto, mírná zima",
+              "Řecko, Egypt"
+            ],
+            [
+              "mírný",
+              "4 roční období",
+              "Česko"
+            ],
+            [
+              "subpolární",
+              "krátké chladné léto, dlouhá zima",
+              "sever Kanady"
+            ],
+            [
+              "polární",
+              "skoro stále mráz",
+              "Antarktida"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pásy jsou na severní i jižní polokouli stejně – zrcadlově od rovníku."
+        },
+        {
+          "type": "heading",
+          "text": "Výška nad mořem"
+        },
+        {
+          "type": "text",
+          "text": "Nejen vzdálenost od rovníku: chladněji je i **výš nad mořem**. Teplota klesá asi **o 0,6 °C na každých 100 m**. Podívej se na sloupce:"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "°C",
+            "items": [
+              {
+                "label": "0 m",
+                "value": 15
+              },
+              {
+                "label": "1 000 m",
+                "value": 9
+              },
+              {
+                "label": "2 000 m",
+                "value": 3
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Dole u moře je 20 °C. Kolik bude na hoře vysoké 2 000 m?",
+          "answer": "2 000 m = 20 × 100 m. 20 × 0,6 °C = 12 °C. 20 − 12 = **8 °C**."
+        },
+        {
+          "type": "example",
+          "question": "Proč na vrcholu Kilimandžára v Africe leží sníh, i když je skoro na rovníku?",
+          "answer": "Hora je vysoká skoro 5 900 m. Teplota tam klesne asi o 59 × 0,6 ≈ 35 °C oproti pobřeží. I v tropech je tam proto mráz."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na hoře je tepleji, protože je blíž ke Slunci.",
+          "right": "Na hoře je chladněji – asi o 0,6 °C na každých 100 m výšky.",
+          "why": "Pár kilometrů je proti 150 milionům km ke Slunci nic. Vzduch se ohřívá hlavně od zemského povrchu, a nahoře je řidší a hůř drží teplo."
+        },
+        {
+          "type": "summary",
+          "text": "Čím dál od rovníku a čím výš, tím chladněji. Pásy od rovníku: tropický, subtropický, mírný (Česko), subpolární, polární."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kterého plynu je v atmosféře nejvíc?",
+      "options": [
+        "kyslík",
+        "dusík",
+        "oxid uhličitý",
+        "vodík"
+      ],
+      "answer": 1,
+      "explanation": "Dusík asi 78 %, kyslík asi 21 %."
+    },
+    {
+      "type": "truefalse",
+      "question": "Podnebí je dlouhodobý průměrný stav počasí.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "V jakém podnebném pásu leží Česko?",
+      "options": [
+        "tropickém",
+        "subtropickém",
+        "mírném",
+        "polárním"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "input",
+      "question": "O kolik °C přibližně klesne teplota, když vystoupáme o 1 000 m?",
+      "answers": [
+        "6"
+      ],
+      "explanation": "0,6 °C na 100 m → 6 °C na 1 000 m."
+    },
+    {
+      "type": "choice",
+      "question": "Ve které vrstvě atmosféry vzniká počasí?",
+      "options": [
+        "troposféra",
+        "stratosféra",
+        "mezosféra",
+        "termosféra"
+      ],
+      "answer": 0,
+      "explanation": "Nejnižší vrstva, obsahuje skoro všechnu vodní páru."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ozonová vrstva chrání Zemi před UV zářením.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj přístroj a co měří.",
+      "pairs": [
+        [
+          "teploměr",
+          "teplotu"
+        ],
+        [
+          "srážkoměr",
+          "srážky"
+        ],
+        [
+          "barometr",
+          "tlak vzduchu"
+        ],
+        [
+          "větrná korouhev",
+          "směr větru"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď podnebné pásy od rovníku k pólu.",
+      "items": [
+        "tropický",
+        "subtropický",
+        "mírný",
+        "subpolární",
+        "polární"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Na vrcholu hory je obvykle tepleji než v údolí.",
+      "answer": false,
+      "explanation": "S výškou teplota klesá."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi počasím a podnebím? Uveď příklad.",
+      "answer": "Počasí je okamžitý stav ovzduší, např. dnes prší. Podnebí je dlouhodobý průměr, např. na Sahaře je trvale horko a sucho."
+    },
+    {
+      "type": "open",
+      "question": "Proč je u rovníku tepleji než u pólů?",
+      "answer": "U rovníku dopadají sluneční paprsky téměř kolmo a ohřívají menší plochu. U pólů dopadají šikmo a energie se rozloží na větší plochu."
+    }
+  ]
+}

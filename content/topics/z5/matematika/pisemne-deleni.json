@@ -1,0 +1,405 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pisemne-deleni",
+  "title": "Písemné dělení",
+  "emoji": "➗",
+  "generator": "written-div",
+  "explanations": [
+    {
+      "title": "Postup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "8 lidí zaplatí za výlet dohromady 1 840 Kč. Kolik platí jeden? Takové dělení v násobilce nenajdeš."
+        },
+        {
+          "type": "text",
+          "text": "**Písemné dělení** rozloží velký příklad na malé kroky z násobilky. Postup se pořád opakuje, dokud nedojdou číslice."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dělenec, dělitel, podíl",
+          "definition": "Dělenec = co dělíš. Dělitel = čím dělíš. Podíl = výsledek.",
+          "example": "852 : 4 = 213 – dělenec 852, dělitel 4, podíl 213."
+        },
+        {
+          "type": "term",
+          "term": "Zbytek",
+          "definition": "Co zbude, když se dělitel už nevejde. Je vždy menší než dělitel."
+        },
+        {
+          "type": "term",
+          "term": "Připsat (sepsat) číslici",
+          "definition": "Ke zbytku připíšeš zprava další číslici dělence. Vznikne nové číslo k dělení.",
+          "example": "Zbytek 1 a další číslice 2 → 12."
+        },
+        {
+          "type": "heading",
+          "text": "Postup: 852 : 4"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vezmi první číslici: 8 : 4 = **2**, zbytek 0.",
+            "Připiš další číslici 5. 5 : 4 = **1**, zbytek 1.",
+            "Ke zbytku 1 připiš 2 → 12. 12 : 4 = **3**, zbytek 0.",
+            "Číslice došly. Podíl je **213**.",
+            "Zkouška: 213 · 4 = 852 ✔"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pořád opakuješ: **děl – násob – odečti – připiš další číslici**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se to píše"
+        },
+        {
+          "type": "text",
+          "text": "Píše se to na jeden řádek: dělenec : dělitel = podíl. Každý zbytek napíšeš **pod** číslici dělence, u které skončil, a hned vedle něj připíšeš další číslici. Klepej na **Další krok** a počítej se mnou: 852 : 4."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 852,
+            "b": 4,
+            "op": ":"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Když se dělitel nevejde"
+        },
+        {
+          "type": "text",
+          "text": "Když je část menší než dělitel, napiš do podílu **0** a připiš další číslici. Klepej: 918 : 9. Ve druhém kroku je 1 : 9 – dělitel se nevejde ani jednou."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 918,
+            "b": 9,
+            "op": ":"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Těžší: 1 456 : 7. Jednička je menší než 7, proto začneš dvěma číslicemi: 14 : 7."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 1456,
+            "b": 7,
+            "op": ":"
+          }
+        },
+        {
+          "type": "example",
+          "question": "8 lidí zaplatí za výlet 1 840 Kč. Kolik platí jeden?",
+          "answer": "Rozdělit na 8 stejných dílů → **1 840 : 8**. Vyjde **230 Kč** na osobu. Zkouška: 230 · 8 = 1 840 ✔ Spočítej to pod sebou se mnou. Pozor na konec – 0 : 8 = 0, i tahle nula patří do podílu.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 1840,
+              "b": 8,
+              "op": ":"
+            }
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "515 : 5 = 13",
+          "right": "515 : 5 = **103**",
+          "why": "Po 5 : 5 = 1 přijde 1 : 5 – to nejde, do podílu patří **0**. Pak 15 : 5 = 3. Zkouška: 13 · 5 = 65, ne 515."
+        },
+        {
+          "type": "summary",
+          "text": "Děl – násob – odečti – připiš další číslici. Když se dělitel nevejde, napiš 0. Zkouška: podíl · dělitel + zbytek = dělenec."
+        }
+      ]
+    },
+    {
+      "title": "Rozdělování peněz",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Tři kamarádi vyhráli 735 Kč a chtějí je spravedlivě rozdělit. Mají 7 stokorun, 3 desetikoruny a 5 korun. Jak to udělat?"
+        },
+        {
+          "type": "text",
+          "text": "Když se něco nedá rozdělit, **rozměníš to** na menší peníze. Přesně tohle se děje při písemném dělení – a proto to funguje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rozměnit",
+          "definition": "Vyměnit jednu větší jednotku za deset menších.",
+          "example": "1 stokoruna = 10 desetikorun. 1 desetikoruna = 10 korun."
+        },
+        {
+          "type": "term",
+          "term": "Dělení ( : )",
+          "definition": "Rozdělení na stejné části.",
+          "example": "735 : 3 – na tři stejné hromádky."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Takhle vypadá 735: 7 desek (stovky), 3 tyčky (desítky), 5 kostiček (jednotky). Jak bys desky rozdělil třem lidem?"
+        },
+        {
+          "type": "widget",
+          "widget": "place-value",
+          "props": {
+            "value": 735
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dělíme krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "7 stokorun : 3 = každý **2 stokoruny**, 1 stokoruna zbude.",
+            "Zbylou stokorunu rozměň: 10 desetikorun + 3 = **13 desetikorun**.",
+            "13 : 3 = každý **4 desetikoruny**, 1 zbude.",
+            "Zbylou desetikorunu rozměň: 10 Kč + 5 = **15 Kč**. 15 : 3 = **5 Kč**.",
+            "Každý má **245 Kč**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Dělení dvojciferným číslem"
+        },
+        {
+          "type": "text",
+          "text": "**480 : 20** – 48 desetikorun rozděl 2 lidem po 10: zkrať obě čísla o nulu → 48 : 2 = **24**. **625 : 25** – kolik pětadvacetikorun je 625 Kč? 4 · 25 = 100, takže v 600 je jich 24, a ještě 1 v posledních 25 → **25**."
+        },
+        {
+          "type": "heading",
+          "text": "Na papíře: písemné dělení"
+        },
+        {
+          "type": "term",
+          "term": "Připsat číslici",
+          "definition": "Zbytek, který jsi rozměnil, napíšeš pod dělenec a vedle něj napíšeš další číslici. To je totéž jako „rozměnit a přidat k dalšímu řádu“.",
+          "example": "Zbyla 1 stokoruna a máš 3 desetikoruny → napíšeš 13."
+        },
+        {
+          "type": "text",
+          "text": "Rozměňování se na papíře zapisuje krátce. Zbytek napíšeš pod dělenec a připíšeš k němu další číslici. Klepej na **Další krok** a porovnej s penězi výše: 735 : 3."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 735,
+            "b": 3,
+            "op": ":"
+          }
+        },
+        {
+          "type": "example",
+          "question": "936 : 6 =",
+          "answer": "9 stovek : 6 = 1 stovka, zbudou 3 → 30 desítek + 3 = 33. 33 : 6 = 5, zbudou 3 → 30 + 6 = 36. 36 : 6 = 6. **156**. Pod sebou: každý zbytek pod dělencem jsou rozměněné peníze.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 936,
+              "b": 6,
+              "op": ":"
+            }
+          }
+        },
+        {
+          "type": "example",
+          "question": "1 000 : 8 =",
+          "answer": "10 stovek : 8 = 1, zbudou 2 stovky = 20 desítek. 20 : 8 = 2, zbudou 4 desítky = 40. 40 : 8 = 5. **125**. Pod sebou: zbytky 2 a 4 jsou rozměněné stovky a desítky.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 1000,
+              "b": 8,
+              "op": ":"
+            }
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "2 025 : 5 = 45",
+          "right": "2 025 : 5 = **405**",
+          "why": "20 : 5 = 4, pak 2 : 5 nejde → **0**, pak 25 : 5 = 5. Nulu nesmíš vynechat. Odhad: 2 000 : 5 = 400."
+        },
+        {
+          "type": "summary",
+          "text": "Co nejde rozdělit, rozměň na menší jednotky a přidej k dalšímu řádu. Tak funguje písemné dělení."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 852 : 4 =",
+      "answers": [
+        "213"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 852,
+          "b": 4,
+          "op": ":"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 735 : 3 =",
+      "answers": [
+        "245"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 735,
+          "b": 3,
+          "op": ":"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 936 : 6 =",
+      "answers": [
+        "156"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 936,
+          "b": 6,
+          "op": ":"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 1 456 : 7 =",
+      "answers": [
+        "208"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 1456,
+          "b": 7,
+          "op": ":"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 2 025 : 5 =",
+      "answers": [
+        "405"
+      ],
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 2025,
+          "b": 5,
+          "op": ":"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "480 : 20 =",
+      "answers": [
+        "24"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "625 : 25 =",
+      "answers": [
+        "25"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "918 : 9 =",
+      "options": [
+        "12",
+        "102",
+        "120"
+      ],
+      "answer": 1,
+      "explanation": "9 : 9 = 1, 1 : 9 = 0 (zb. 1), 18 : 9 = 2 → 102."
+    },
+    {
+      "type": "choice",
+      "question": "1 000 : 8 =",
+      "options": [
+        "125",
+        "120",
+        "150"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "744 : 6 = 124",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "515 : 5 = 13",
+      "answer": false,
+      "explanation": "515 : 5 = 103. Nezapomeň na nulu."
+    },
+    {
+      "type": "input",
+      "question": "8 lidí zaplatí za výlet dohromady 1 840 Kč. Kolik platí jeden?",
+      "answers": [
+        "230"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli postup dělení 852 : 4.",
+      "answer": "8 : 4 = 2. Pak 5 : 4 = 1, zbytek 1. Připíšu 2, je to 12, 12 : 4 = 3. Výsledek 213."
+    },
+    {
+      "type": "open",
+      "question": "Jak uděláš zkoušku dělení?",
+      "answer": "Vynásobím podíl dělitelem a přičtu zbytek. Musí vyjít dělenec, třeba 213 · 4 = 852."
+    }
+  ]
+}

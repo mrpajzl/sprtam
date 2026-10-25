@@ -1,0 +1,366 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "energie-a-zivotni-prostredi",
+  "title": "Energie a životní prostředí",
+  "emoji": "⚡",
+  "explanations": [
+    {
+      "title": "Odkud je proud",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozsvítíš, nabiješ mobil, pustíš pračku. Všechno to potřebuje elektřinu. Ale ta se v zásuvce neobjeví sama – musí se vyrobit."
+        },
+        {
+          "type": "text",
+          "text": "Elektřina se vyrábí v elektrárnách z různých zdrojů. Některé zdroje jednou dojdou, jiné ne. To je pro budoucnost Země velmi důležité."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Energie",
+          "definition": "Schopnost něco pohnout, ohřát nebo rozsvítit.",
+          "example": "Elektřina, teplo, světlo jsou druhy energie."
+        },
+        {
+          "type": "term",
+          "term": "Elektrárna",
+          "definition": "Továrna, která vyrábí elektřinu.",
+          "example": "větrná, vodní, uhelná, jaderná elektrárna"
+        },
+        {
+          "type": "term",
+          "term": "Obnovitelný zdroj",
+          "definition": "Zdroj, který se **stále obnovuje** a nedojde.",
+          "example": "slunce, vítr, tekoucí voda, dřevo"
+        },
+        {
+          "type": "term",
+          "term": "Neobnovitelný zdroj",
+          "definition": "Zdroj, který vznikal **miliony let** a **jednou dojde**.",
+          "example": "uhlí, ropa, zemní plyn, uran"
+        },
+        {
+          "type": "heading",
+          "text": "Elektrárny a jejich zdroje"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Elektrárna",
+            "Zdroj",
+            "Obnovitelný?"
+          ],
+          "rows": [
+            [
+              "větrná",
+              "vítr",
+              "ano"
+            ],
+            [
+              "vodní",
+              "tekoucí voda",
+              "ano"
+            ],
+            [
+              "sluneční",
+              "světlo Slunce",
+              "ano"
+            ],
+            [
+              "uhelná",
+              "uhlí",
+              "ne"
+            ],
+            [
+              "jaderná",
+              "uran",
+              "ne"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "U nás máme dvě jaderné elektrárny: **Temelín** v jižních Čechách a **Dukovany** na Vysočině."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "obnovitelný",
+              "neobnovitelný"
+            ],
+            "items": [
+              {
+                "text": "vítr",
+                "group": 0
+              },
+              {
+                "text": "slunce",
+                "group": 0
+              },
+              {
+                "text": "tekoucí voda",
+                "group": 0
+              },
+              {
+                "text": "uhlí",
+                "group": 1
+              },
+              {
+                "text": "ropa",
+                "group": 1
+              },
+              {
+                "text": "zemní plyn",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč uhlí jednou dojde?",
+          "answer": "Uhlí vznikalo **miliony let** z dávných rostlin. Spotřebujeme ho mnohem rychleji, než by vzniklo nové."
+        },
+        {
+          "type": "example",
+          "question": "Je zemní plyn obnovitelný zdroj?",
+          "answer": "**Ne.** Vznikal miliony let pod zemí a jeho zásoby jednou dojdou."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Elektřina ze zásuvky přírodě neškodí – nic z ní nekouří.",
+          "right": "Záleží, jak byla vyrobena.",
+          "why": "Kouří komín elektrárny, ne zásuvka. Spalování uhlí znečišťuje vzduch, i když to doma nevidíme."
+        },
+        {
+          "type": "summary",
+          "text": "Obnovitelné zdroje (slunce, vítr, voda, dřevo) nedojdou. Neobnovitelné (uhlí, ropa, zemní plyn) jednou dojdou a jejich spalování znečišťuje vzduch."
+        }
+      ]
+    },
+    {
+      "title": "Co můžu udělat",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každá rozsvícená žárovka a každý litr teplé vody stojí energii. Když jí spotřebujeme méně, elektrárny spálí méně uhlí a vzduch je čistší."
+        },
+        {
+          "type": "text",
+          "text": "Nemusíš stavět větrnou elektrárnu. Stačí drobné návyky – a když je dělá každý, je to obrovský rozdíl."
+        },
+        {
+          "type": "term",
+          "term": "Životní prostředí",
+          "definition": "Všechno, co nás obklopuje: vzduch, voda, půda, rostliny, zvířata, ale i města.",
+          "example": "Smog znečišťuje životní prostředí."
+        },
+        {
+          "type": "term",
+          "term": "Znečištění",
+          "definition": "Když se do vzduchu, vody nebo půdy dostanou škodlivé látky.",
+          "example": "kouř z komínů, výfukové plyny"
+        },
+        {
+          "type": "term",
+          "term": "Šetřit energií",
+          "definition": "Používat jí jen tolik, kolik opravdu potřebuju.",
+          "example": "zhasnout za sebou"
+        },
+        {
+          "type": "heading",
+          "text": "Návyky, které pomáhají"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zhasnu, když odcházím z místnosti.",
+            "Vypnu televizi a počítač, když je nepoužívám.",
+            "Při topení větrám krátce a pořádně, ne s pootevřeným oknem celý den.",
+            "Sprchuji se místo vany – spotřebuji méně vody.",
+            "Při čištění zubů zavřu kohoutek.",
+            "Do školy chodím pěšky, jezdím na kole nebo hromadnou dopravou."
+          ]
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Šetří ✅",
+              "Plýtvá ❌"
+            ],
+            "items": [
+              {
+                "text": "zhasnout za sebou",
+                "group": 0
+              },
+              {
+                "text": "jít pěšky",
+                "group": 0
+              },
+              {
+                "text": "sprcha místo vany",
+                "group": 0
+              },
+              {
+                "text": "nechat běžet televizi",
+                "group": 1
+              },
+              {
+                "text": "otevřít okno při topení",
+                "group": 1
+              },
+              {
+                "text": "nechat téct vodu",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Která cesta do školy nejvíc šetří přírodu: pěšky, autem, nebo taxíkem?",
+          "answer": "**Pěšky nebo na kole** – nespotřebuje se palivo a nevznikají výfukové plyny."
+        },
+        {
+          "type": "example",
+          "question": "Proč je sprcha šetrnější než vana?",
+          "answer": "Do vany se napustí mnohem víc vody. Ohřát ji stojí **víc energie** a spotřebuje se **víc vody**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když jeden člověk šetří, nic to nezmění.",
+          "right": "Malé úspory se sčítají.",
+          "why": "Když zhasne jedna domácnost, je to málo. Když zhasnou miliony domácností, elektrárna vyrobí výrazně méně."
+        },
+        {
+          "type": "summary",
+          "text": "Energii šetřím zhasínáním, vypínáním přístrojů, krátkým větráním, sprchou místo vany a chůzí místo auta."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který zdroj energie je obnovitelný?",
+      "options": [
+        "vítr",
+        "uhlí",
+        "ropa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Uhlí jednou dojde.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj elektrárnu se zdrojem.",
+      "pairs": [
+        [
+          "větrná",
+          "vítr"
+        ],
+        [
+          "vodní",
+          "tekoucí voda"
+        ],
+        [
+          "sluneční",
+          "světlo Slunce"
+        ],
+        [
+          "uhelná",
+          "uhlí"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje jaderná elektrárna v jižních Čechách?",
+      "options": [
+        "Temelín",
+        "Lipno",
+        "Orlík"
+      ],
+      "answer": 0,
+      "explanation": "Lipno a Orlík jsou vodní nádrže."
+    },
+    {
+      "type": "choice",
+      "question": "Co šetří energii?",
+      "options": [
+        "zhasnout za sebou",
+        "nechat běžet televizi",
+        "otevřít okno při topení"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Spalování uhlí znečišťuje vzduch.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který zdroj je neobnovitelný?",
+      "options": [
+        "zemní plyn",
+        "slunce",
+        "vítr"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Sprcha spotřebuje obvykle méně vody než vana.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje druhá česká jaderná elektrárna (vedle Temelína)?",
+      "answers": [
+        "Dukovany"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která cesta do školy nejvíc šetří přírodu?",
+      "options": [
+        "pěšky nebo na kole",
+        "autem",
+        "taxíkem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi obnovitelnými a neobnovitelnými zdroji? Uveď příklady.",
+      "answer": "Obnovitelné zdroje se stále obnovují a nedojdou – slunce, vítr, voda, dřevo. Neobnovitelné se tvořily miliony let a jednou dojdou – uhlí, ropa, zemní plyn."
+    },
+    {
+      "type": "open",
+      "question": "Jak můžeš doma šetřit energií a vodou?",
+      "answer": "Zhasínám světlo, vypínám přístroje, když je nepoužívám, a nevětrám při topení dlouho. Sprchuji se místo vany a zavírám kohoutek při čištění zubů."
+    }
+  ]
+}

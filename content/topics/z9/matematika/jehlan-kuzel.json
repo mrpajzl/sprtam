@@ -1,0 +1,316 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "jehlan-kuzel",
+  "title": "Jehlan a kužel",
+  "emoji": "🔺",
+  "explanations": [
+    {
+      "title": "Přesýpání",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Egyptské pyramidy, střecha věže, kornout zmrzliny, indiánský stan. Všechno jsou tělesa, která se zužují do jedné špičky. Jmenují se **jehlan** a **kužel**."
+        },
+        {
+          "type": "text",
+          "text": "Kolik zmrzliny se vejde do kornoutu? Kolik kamene je v pyramidě? Odpověď je překvapivě jednoduchá – třetina."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jehlan",
+          "definition": "Těleso s mnohoúhelníkovou podstavou (trojúhelník, čtverec…), jehož boční stěny jsou trojúhelníky sbíhající se do jednoho vrcholu.",
+          "example": "Pyramida – podstava čtverec, 4 trojúhelníkové stěny."
+        },
+        {
+          "type": "term",
+          "term": "Kužel",
+          "definition": "Těleso s kruhovou podstavou, které se plynule zužuje do jednoho vrcholu.",
+          "example": "Kornout, dopravní kužel."
+        },
+        {
+          "type": "term",
+          "term": "Podstava a výška",
+          "definition": "Podstava je spodní stěna. Výška v je kolmá vzdálenost vrcholu od podstavy – rovně dolů, ne po šikmé stěně.",
+          "example": "Výška pyramidy = od špičky kolmo k zemi."
+        },
+        {
+          "type": "term",
+          "term": "Hranol a válec – připomenutí",
+          "definition": "Hranol má dvě stejné podstavy a rovné boky, válec dvě kruhové podstavy. Objem obou = obsah podstavy · výška.",
+          "example": "Krabice, plechovka."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s pískem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vezmi dutý jehlan a hranol se stejnou podstavou a výškou.",
+            "Naplň jehlan pískem a přesyp ho do hranolu.",
+            "Opakuj, dokud není hranol plný.",
+            "Potřebuješ přesně **3 jehlany**."
+          ]
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🔺",
+            "🔺",
+            "🔺",
+            "➡️",
+            "🧊"
+          ],
+          "caption": "3 jehlany = 1 hranol"
+        },
+        {
+          "type": "text",
+          "text": "Stejně 3 kužely naplní válec se stejnou podstavou a výškou. Proto: **objem jehlanu (kuželu) = třetina objemu hranolu (válce)**."
+        },
+        {
+          "type": "example",
+          "question": "Jehlan má podstavu čtverec 6 × 6 cm a výšku 5 cm. Objem?",
+          "answer": "Hranol by měl 36 · 5 = 180 cm³. Jehlan třetinu: 180 : 3 = **60 cm³**."
+        },
+        {
+          "type": "example",
+          "question": "Válec má objem 300 cm³. Kolik má kužel se stejnou podstavou a výškou?",
+          "answer": "300 : 3 = **100 cm³**."
+        },
+        {
+          "type": "heading",
+          "text": "Povrch"
+        },
+        {
+          "type": "text",
+          "text": "Povrch = podstava + plášť. U jehlanu je plášť několik trojúhelníků (čtyřboký jehlan má 4 + podstavu = 5 stěn). Plášť kuželu po rozvinutí vypadá jako kus pizzy – **kruhová výseč**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Boční stěny jehlanu jsou obdélníky.",
+          "right": "Jsou to trojúhelníky.",
+          "why": "Všechny boční hrany se sbíhají do jednoho vrcholu, proto každá boční stěna končí špičkou."
+        },
+        {
+          "type": "summary",
+          "text": "Jehlan a kužel mají třetinový objem hranolu a válce se stejnou podstavou a výškou: V = ⅓ · Sp · v."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "K výpočtům jehlanu a kuželu potřebuješ vzorce a jeden starý známý – Pythagorovu větu. Ta spojuje výšku, poloměr a šikmou stranu kuželu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Sp a Spl",
+          "definition": "Sp = obsah podstavy, Spl = obsah pláště (všech bočních stěn).",
+          "example": "Podstava kuželu s r = 3: Sp = 3,14 · 9 = 28,26 cm²."
+        },
+        {
+          "type": "term",
+          "term": "Poloměr r a výška v",
+          "definition": "r = poloměr kruhové podstavy kuželu, v = kolmá vzdálenost vrcholu od podstavy.",
+          "example": "r = 3 cm, v = 4 cm"
+        },
+        {
+          "type": "term",
+          "term": "Strana kuželu s",
+          "definition": "Úsečka z vrcholu na okraj podstavy – po šikmém plášti.",
+          "example": "r = 3, v = 4 → s = 5"
+        },
+        {
+          "type": "term",
+          "term": "Pythagorova věta",
+          "definition": "V pravoúhlém trojúhelníku: přepona² = odvěsna² + odvěsna².",
+          "example": "5² = 3² + 4²"
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "těleso",
+            "objem",
+            "povrch"
+          ],
+          "rows": [
+            [
+              "jehlan",
+              "V = ⅓ · Sp · v",
+              "S = Sp + Spl"
+            ],
+            [
+              "kužel",
+              "V = ⅓ · πr² · v",
+              "S = πr² + πrs"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pythagoras v kuželu"
+        },
+        {
+          "type": "text",
+          "text": "Rozřízni kužel svisle vrcholem. Výška v, poloměr r a strana s tvoří pravoúhlý trojúhelník; s je přepona. Proto **s² = r² + v²**. Vyzkoušej: odvěsny 3 a 4."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 3,
+            "b": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Postup pro kužel"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zapiš r a v (nebo s).",
+            "Chybí-li s nebo v, dopočítej je Pythagorovou větou.",
+            "Objem: 3,14 · r² · v : 3.",
+            "Plášť: 3,14 · r · s.",
+            "Povrch: podstava 3,14 · r² + plášť."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kužel r = 3 cm, v = 4 cm. Strana, objem a plášť?",
+          "answer": "s = √(9 + 16) = **5 cm**. V = 3,14 · 9 · 4 : 3 = **37,68 cm³**. Spl = 3,14 · 3 · 5 = **47,1 cm²**."
+        },
+        {
+          "type": "example",
+          "question": "Jehlan: Sp = 24 cm², v = 10 cm. Objem?",
+          "answer": "V = 24 · 10 : 3 = **80 cm³**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V kuželu = πr² · v (zapomenutá třetina).",
+          "right": "V = ⅓ · πr² · v",
+          "why": "To bez třetiny je objem válce. Kužel se vejde do válce třikrát."
+        },
+        {
+          "type": "summary",
+          "text": "V = ⅓ · Sp · v. Kužel: S = πr² + πrs. Výšku, stranu a poloměr kuželu spojuje s² = r² + v²."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jehlan: podstava čtverec 6 cm × 6 cm, výška 5 cm. Objem v cm³?",
+      "answers": [
+        "60"
+      ],
+      "explanation": "36 · 5 / 3"
+    },
+    {
+      "type": "input",
+      "question": "Kužel r = 3 cm, v = 4 cm. Strana s v cm?",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kužel r = 3 cm, v = 4 cm, π ≈ 3,14. Objem v cm³?",
+      "answers": [
+        "37,68"
+      ],
+      "explanation": "3,14 · 9 · 4 / 3"
+    },
+    {
+      "type": "input",
+      "question": "Kužel r = 3 cm, s = 5 cm, π ≈ 3,14. Obsah pláště v cm²?",
+      "answers": [
+        "47,1"
+      ],
+      "explanation": "π · r · s"
+    },
+    {
+      "type": "choice",
+      "question": "Kolik jehlanů naplní hranol se stejnou podstavou a výškou?",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "6"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik stěn má čtyřboký jehlan?",
+      "answers": [
+        "5"
+      ],
+      "explanation": "4 trojúhelníky + podstava"
+    },
+    {
+      "type": "truefalse",
+      "question": "Plášť kužele rozvinutý do roviny je kruhová výseč.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Boční stěny jehlanu jsou obdélníky.",
+      "answer": false,
+      "explanation": "Jsou to trojúhelníky."
+    },
+    {
+      "type": "input",
+      "question": "Jehlan: Sp = 24 cm², v = 10 cm. Objem v cm³?",
+      "answers": [
+        "80"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Válec má objem 300 cm³. Kužel se stejnou podstavou a výškou má…",
+      "options": [
+        "100 cm³",
+        "150 cm³",
+        "300 cm³",
+        "900 cm³"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš objem jehlanu?",
+      "answer": "Obsah podstavy vynásobím výškou a vydělím třemi: V = ⅓ · Sp · v."
+    },
+    {
+      "type": "open",
+      "question": "Z čeho se skládá povrch kužele?",
+      "answer": "Z podstavy – kruhu πr² – a pláště, což je kruhová výseč s obsahem πrs, kde s je strana kužele."
+    }
+  ]
+}

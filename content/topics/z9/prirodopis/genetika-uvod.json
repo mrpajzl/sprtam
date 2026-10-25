@@ -1,0 +1,400 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "genetika-uvod",
+  "title": "Základy genetiky",
+  "emoji": "🧬",
+  "explanations": [
+    {
+      "title": "Kuchařka v jádře",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš oči po mámě a nos po tátovi? Lidé si toho všímají odjakživa. Proč se děti podobají rodičům, ale nejsou s nimi úplně stejné?"
+        },
+        {
+          "type": "text",
+          "text": "Odpověď je ukrytá v každé tvé buňce. Je tam zapsaný návod na celé tvoje tělo. Věda, která zkoumá, jak se tento návod předává z rodičů na děti, se jmenuje **genetika**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Buňka a jádro",
+          "definition": "Připomenutí: buňka je nejmenší živá část těla. Uprostřed má **jádro** – „řídicí centrum“."
+        },
+        {
+          "type": "term",
+          "term": "DNA",
+          "definition": "Velmi dlouhá molekula (částice látky) v jádře. Je v ní zapsaná **dědičná informace** – návod, jak má tělo vypadat a fungovat.",
+          "example": "Jako kuchařka se všemi recepty."
+        },
+        {
+          "type": "term",
+          "term": "Gen",
+          "definition": "Úsek DNA, který nese informaci o jednom znaku (vlastnosti).",
+          "example": "Jeden recept v kuchařce – třeba „krevní skupina“."
+        },
+        {
+          "type": "term",
+          "term": "Chromozom",
+          "definition": "Útvar z pevně stočené DNA. Vypadá jako tyčinka.",
+          "example": "Jeden svazek kuchařky."
+        },
+        {
+          "type": "term",
+          "term": "Znak",
+          "definition": "Vlastnost, kterou lze pozorovat nebo změřit.",
+          "example": "Krevní skupina, barva květu u hrachu."
+        },
+        {
+          "type": "heading",
+          "text": "Od největšího k nejmenšímu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Buňka** – v ní je jádro.",
+            "**Jádro** – v něm jsou chromozomy. Člověk má v běžné buňce **46** chromozomů (23 párů).",
+            "**Chromozom** – stočená dlouhá DNA.",
+            "**DNA** – na ní leží za sebou geny.",
+            "**Gen** – informace o jednom znaku."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Proč se podobáš oběma rodičům"
+        },
+        {
+          "type": "text",
+          "text": "**Pohlavní buňky** (vajíčko a spermie) mají jen **polovinu** chromozomů – **23**. Když se spojí, vznikne zase buňka se 46 chromozomy. Polovina je od matky, polovina od otce. Proto máš geny obou."
+        },
+        {
+          "type": "text",
+          "text": "Jeden pár chromozomů určuje pohlaví: žena má **XX**, muž **XY**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a před otočením zkus odpovědět."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Kolik chromozomů má běžná buňka člověka?",
+                "back": "46 (23 párů)"
+              },
+              {
+                "front": "Kolik chromozomů má vajíčko nebo spermie?",
+                "back": "23"
+              },
+              {
+                "front": "Pohlavní chromozomy muže",
+                "back": "XY"
+              },
+              {
+                "front": "Pohlavní chromozomy ženy",
+                "back": "XX"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč mají sourozenci stejné rodiče, a přece nevypadají stejně?",
+          "answer": "Každé vajíčko a každá spermie nese **jinou náhodnou polovinu** chromozomů rodiče. Každé dítě tak dostane jinou kombinaci genů. (Výjimkou jsou jednovaječná dvojčata.)"
+        },
+        {
+          "type": "example",
+          "question": "Kdo určí pohlaví dítěte – matka, nebo otec?",
+          "answer": "Vajíčko nese vždy X. Spermie nese buď X, nebo Y. Spojí-li se X + X → **dívka**, X + Y → **chlapec**. Rozhoduje tedy spermie, tedy otec."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Všechny vlastnosti člověka určují jen geny.",
+          "right": "Mnoho znaků ovlivňují geny i prostředí.",
+          "why": "Výška závisí na genech, ale i na výživě. Svaly na genech i na tréninku."
+        },
+        {
+          "type": "summary",
+          "text": "DNA v jádře nese dědičnou informaci, gen je její úsek pro jeden znak, chromozom je stočená DNA. Člověk má 46 chromozomů, pohlavní buňky 23 – polovinu od každého rodiče."
+        }
+      ]
+    },
+    {
+      "title": "Mendelův hrách",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V 19. století pěstoval v klášterní zahradě v **Brně** mnich **Gregor Johann Mendel** hrách. Tisíce rostlin pečlivě křížil a počítal. Objevil pravidla, podle kterých se vlastnosti dědí. Proto je považován za **zakladatele genetiky**."
+        },
+        {
+          "type": "text",
+          "text": "Zopakujeme jeho pokus a naučíš se spočítat, jakou vlastnost budou mít potomci."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Gen",
+          "definition": "Úsek **DNA** (molekuly s dědičnou informací v jádře buňky), který určuje jednu vlastnost – **znak**."
+        },
+        {
+          "type": "term",
+          "term": "Alela",
+          "definition": "Varianta jednoho genu. Každý jedinec má od každého genu **dvě** alely – jednu od matky, druhou od otce.",
+          "example": "Gen pro barvu semen hrachu má alelu „žlutá“ a alelu „zelená“."
+        },
+        {
+          "type": "term",
+          "term": "Dominantní alela",
+          "definition": "Silnější alela. Projeví se, i když je jen jedna. Píše se **velkým** písmenem (A)."
+        },
+        {
+          "type": "term",
+          "term": "Recesivní alela",
+          "definition": "Slabší alela. Projeví se jen tehdy, když jsou obě alely recesivní (aa). Píše se **malým** písmenem."
+        },
+        {
+          "type": "term",
+          "term": "Křížení",
+          "definition": "Spojení dvou jedinců (rodičů), abychom zjistili, jací budou potomci."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s barvou semen"
+        },
+        {
+          "type": "text",
+          "text": "U hrachu je **žlutá** barva semen dominantní (A), **zelená** recesivní (a)."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**AA** – semena žlutá,",
+            "**Aa** – semena žlutá (A přebije a),",
+            "**aa** – semena zelená."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak spočítat potomky"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš alely prvního rodiče nahoru a druhého rodiče do strany.",
+            "Do každého políčka zkombinuj jednu alelu shora a jednu ze strany.",
+            "Vzniknou 4 kombinace. Každá má stejnou šanci (25 %).",
+            "Spočítej, kolik kombinací dá který znak."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "A",
+            "a"
+          ],
+          "rows": [
+            [
+              "A",
+              "AA (žlutá)",
+              "Aa (žlutá)"
+            ],
+            [
+              "a",
+              "Aa (žlutá)",
+              "aa (zelená)"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Křížení **Aa × Aa**: 3 políčka ze 4 jsou žlutá (75 %), 1 ze 4 zelené (**25 % aa**)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď kombinace alel podle barvy semen."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Žlutá semena",
+              "Zelená semena"
+            ],
+            "items": [
+              {
+                "text": "AA",
+                "group": 0
+              },
+              {
+                "text": "Aa",
+                "group": 0
+              },
+              {
+                "text": "aa",
+                "group": 1
+              },
+              {
+                "text": "aA",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Křížíme AA × aa. Jaká budou semena potomků?",
+          "answer": "První rodič dá vždy A, druhý vždy a. Všichni potomci jsou **Aa** → 100 % **žlutá** semena."
+        },
+        {
+          "type": "example",
+          "question": "Dva rodiče se žlutými semeny (Aa × Aa) mají potomka se zelenými semeny. Jak je to možné?",
+          "answer": "Oba nesou skrytou recesivní alelu a. S pravděpodobností 25 % dostane potomek od obou právě a → **aa** = zelená semena."
+        },
+        {
+          "type": "text",
+          "text": "Někdy se v DNA objeví náhodná změna – **mutace**. Může být škodlivá, neutrální i výhodná."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Aa × Aa: přesně 1 ze 4 potomků bude určitě aa.",
+          "right": "Každý potomek má **pravděpodobnost** 25 %, že bude aa.",
+          "why": "Je to jako hod mincí. Ze 4 potomků mohou být aa třeba dva, nebo žádný. Poměr 3 : 1 platí až u velkého počtu."
+        },
+        {
+          "type": "summary",
+          "text": "Mendel (Brno, hrách) objevil pravidla dědičnosti. Dominantní alela (A) se projeví vždy, recesivní (a) jen jako aa. Aa × Aa → 75 % dominantní znak, 25 % aa."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik chromozomů má běžná buňka člověka?",
+      "answers": [
+        "46"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Zakladatel genetiky je…",
+      "options": [
+        "Gregor Johann Mendel",
+        "Charles Darwin",
+        "Louis Pasteur"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Úsek DNA nesoucí informaci o jednom znaku je…",
+      "options": [
+        "gen",
+        "chromozom",
+        "buňka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Muž má pohlavní chromozomy XY.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Rodiče Aa × Aa. Kolik procent potomků bude aa?",
+      "options": [
+        "25 %",
+        "50 %",
+        "75 %"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem s významem.",
+      "pairs": [
+        [
+          "dominantní",
+          "projeví se vždy"
+        ],
+        [
+          "recesivní",
+          "projeví se jen ve dvojici"
+        ],
+        [
+          "mutace",
+          "změna DNA"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Pohlavní buňky (vajíčko, spermie) mají 23 chromozomů.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kde v buňce je hlavně uložena DNA?",
+      "options": [
+        "v jádře",
+        "v membráně",
+        "ve vakuole"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Všechny vlastnosti člověka určují jen geny, prostředí nemá vliv.",
+      "answer": false,
+      "explanation": "Mnoho znaků ovlivňuje i prostředí (výživa, pohyb)."
+    },
+    {
+      "type": "choice",
+      "question": "S jakou rostlinou dělal Mendel pokusy?",
+      "options": [
+        "s hrachem",
+        "s pšenicí",
+        "s růží"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli pojmy DNA, gen a chromozom.",
+      "answer": "DNA je molekula s dědičnou informací. Gen je její úsek pro jeden znak. Chromozom je útvar ze stočené DNA v jádře."
+    },
+    {
+      "type": "open",
+      "question": "Proč se dítě podobá oběma rodičům?",
+      "answer": "Polovinu chromozomů dostane od matky (vajíčko) a polovinu od otce (spermie), takže má geny obou."
+    }
+  ]
+}

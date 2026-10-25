@@ -1,0 +1,386 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hospodarstvi-cr",
+  "title": "Hospodářství a suroviny",
+  "emoji": "🏭",
+  "explanations": [
+    {
+      "title": "Tři skupiny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ráno sníš rohlík. Někdo musel vypěstovat obilí, někdo upéct rohlík v pekárně a někdo ho prodat v obchodě. Na jednom rohlíku pracovali tři úplně různí lidé."
+        },
+        {
+          "type": "text",
+          "text": "Všechna práce v zemi dohromady se jmenuje **hospodářství**. Dělí se na tři velké skupiny. Když je znáš, pochopíš, z čeho země žije."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hospodářství",
+          "definition": "Všechno, co lidé v zemi vyrábějí, pěstují a dělají pro ostatní."
+        },
+        {
+          "type": "term",
+          "term": "Zemědělství",
+          "definition": "Práce s půdou a zvířaty. **Rostlinná výroba** = pěstování plodin. **Živočišná výroba** = chov zvířat.",
+          "example": "Pěstování pšenice, chov krav a prasat."
+        },
+        {
+          "type": "term",
+          "term": "Průmysl",
+          "definition": "Výroba věcí a energie v továrnách a dolech.",
+          "example": "Výroba aut, skla, elektřiny."
+        },
+        {
+          "type": "term",
+          "term": "Služby",
+          "definition": "Práce, při které se nic nevyrábí, ale **pomáhá se lidem**.",
+          "example": "Prodavačka, lékař, učitelka, kadeřnice, řidič autobusu."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta rohlíku"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zemědělec vypěstuje **pšenici** → zemědělství.",
+            "Mlýn umele mouku a pekárna upeče rohlíky → průmysl.",
+            "Řidič je odveze do obchodu a prodavač ti je prodá → služby."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Ptej se: pěstuje se nebo chová? Vyrábí se? Nebo se pomáhá lidem?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "zemědělství",
+              "průmysl",
+              "služby"
+            ],
+            "items": [
+              {
+                "text": "pěstování pšenice",
+                "group": 0
+              },
+              {
+                "text": "chov krav",
+                "group": 0
+              },
+              {
+                "text": "sad s jablky",
+                "group": 0
+              },
+              {
+                "text": "výroba aut",
+                "group": 1
+              },
+              {
+                "text": "sklárna",
+                "group": 1
+              },
+              {
+                "text": "elektrárna",
+                "group": 1
+              },
+              {
+                "text": "obchod",
+                "group": 2
+              },
+              {
+                "text": "škola",
+                "group": 2
+              },
+              {
+                "text": "nemocnice",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kam patří kadeřnice?",
+          "answer": "Nic nepěstuje ani nevyrábí, ale **pomáhá lidem** → **služby**."
+        },
+        {
+          "type": "example",
+          "question": "Kam patří farma, kde chovají prasata?",
+          "answer": "Chov zvířat → **zemědělství**, přesněji **živočišná výroba**."
+        },
+        {
+          "type": "heading",
+          "text": "A odkud se bere materiál?"
+        },
+        {
+          "type": "term",
+          "term": "Nerostné suroviny",
+          "definition": "Látky, které se **těží ze země** a průmysl z nich vyrábí.",
+          "example": "Uhlí, kaolin (na porcelán), vápenec (na cement), sklářský písek (na sklo)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Elektrárna patří do služeb, protože nám dává elektřinu.",
+          "right": "Elektrárna patří do **průmyslu**.",
+          "why": "Elektrárna elektřinu **vyrábí**. Výroba = průmysl."
+        },
+        {
+          "type": "summary",
+          "text": "Zemědělství pěstuje a chová, průmysl vyrábí z nerostných surovin, služby pomáhají lidem."
+        }
+      ]
+    },
+    {
+      "title": "Co kde je",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč se auta Škoda vyrábějí v Mladé Boleslavi a víno na jižní Moravě? Protože každý kraj má něco jiného: jinou půdu, jiné počasí a jiné poklady pod zemí."
+        },
+        {
+          "type": "text",
+          "text": "Podíváme se, co se kde u nás těží, pěstuje a vyrábí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hospodářství",
+          "definition": "Všechna práce v zemi. Má tři části: **zemědělství** (pěstuje a chová), **průmysl** (vyrábí) a **služby** (pomáhají lidem)."
+        },
+        {
+          "type": "term",
+          "term": "Nerostné suroviny",
+          "definition": "Užitečné látky, které se **těží ze země**."
+        },
+        {
+          "type": "term",
+          "term": "Těžba",
+          "definition": "Dobývání surovin ze země – v dolech pod zemí nebo ve velkých jámách (lomech)."
+        },
+        {
+          "type": "term",
+          "term": "Úrodná půda",
+          "definition": "Půda, na které dobře roste. Bývá v teplých **nížinách** u velkých řek.",
+          "example": "Polabí (u Labe) a Haná (u Moravy)."
+        },
+        {
+          "type": "heading",
+          "text": "Suroviny pod zemí"
+        },
+        {
+          "type": "text",
+          "text": "Než kartičku otočíš, zkus odhadnout, kde se surovina těží nebo k čemu je."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "hnědé uhlí",
+                "back": "severní Čechy (Mostecko), Sokolovsko"
+              },
+              {
+                "front": "černé uhlí",
+                "back": "Ostravsko a Karvinsko (těžilo se do roku 2026)"
+              },
+              {
+                "front": "kaolin",
+                "back": "Karlovarsko – vyrábí se z něj porcelán"
+              },
+              {
+                "front": "vápenec",
+                "back": "krasy – na cement a vápno"
+              },
+              {
+                "front": "sklářský písek",
+                "back": "na výrobu skla"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Čím jsou místa známá"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🚗",
+            "🍺",
+            "🌾",
+            "🍷"
+          ],
+          "caption": "Auta z Mladé Boleslavi, pivo z Plzně, obilí z nížin, víno z jižní Moravy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Mladá Boleslav** – auta Škoda (průmysl)",
+            "**Plzeň** – pivo (průmysl)",
+            "**Žatec** – chmel, ze kterého se vaří pivo (zemědělství)",
+            "**jižní Morava** – vinná réva a víno",
+            "**Polabí, Haná** – obilí, cukrová řepa"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč roste víno hlavně na jižní Moravě, a ne v Krkonoších?",
+          "answer": "Réva potřebuje **teplo a slunce**. Jižní Morava je nízko a teplá. V horách je chladno."
+        },
+        {
+          "type": "example",
+          "question": "Proč těžba uhlí škodí přírodě?",
+          "answer": "Hnědé uhlí se těží ve **velkých jámách** – mizí krajina, lesy i celé vesnice. Když se uhlí pálí, **znečišťuje vzduch**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejúrodnější půda je vysoko v horách, kde je čistý vzduch.",
+          "right": "Nejúrodnější jsou **teplé nížiny u řek** – Polabí, Haná.",
+          "why": "V horách je chladno a půda je tenká a kamenitá. V nížinách řeky naplavily úrodnou zeminu."
+        },
+        {
+          "type": "summary",
+          "text": "Hnědé uhlí – severní Čechy, černé uhlí – Ostravsko (těžilo se do roku 2026), kaolin – porcelán. Nejúrodnější jsou nížiny u řek (Polabí, Haná)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kam patří výroba aut?",
+      "options": [
+        "průmysl",
+        "zemědělství",
+        "služby"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kam patří práce kadeřnice?",
+      "options": [
+        "služby",
+        "průmysl",
+        "zemědělství"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde se v Česku těžilo černé uhlí?",
+      "options": [
+        "na Ostravsku",
+        "na Šumavě",
+        "v Polabí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Z čeho se vyrábí porcelán?",
+      "options": [
+        "z kaolinu",
+        "z vápence",
+        "z uhlí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Hnědé uhlí se těží hlavně v severních Čechách.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj místo s tím, čím je známé.",
+      "pairs": [
+        [
+          "Mladá Boleslav",
+          "auta Škoda"
+        ],
+        [
+          "Plzeň",
+          "pivo"
+        ],
+        [
+          "jižní Morava",
+          "víno"
+        ],
+        [
+          "Žatec",
+          "chmel"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Nejúrodnější půda je vysoko v horách.",
+      "answer": false,
+      "explanation": "Nejúrodnější jsou teplé nížiny u řek, např. Polabí a Haná."
+    },
+    {
+      "type": "choice",
+      "question": "Co patří do živočišné výroby?",
+      "options": [
+        "chov prasat",
+        "pěstování brambor",
+        "těžba uhlí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje surovina, ze které se vyrábí sklo? (sklářský …)",
+      "answers": [
+        "písek"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která nížina je známá úrodnou půdou?",
+      "options": [
+        "Haná",
+        "Krkonoše",
+        "Šumava"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi zemědělstvím, průmyslem a službami?",
+      "answer": "Zemědělství pěstuje plodiny a chová zvířata. Průmysl vyrábí věci a energii. Služby pomáhají lidem – obchod, doprava, školy, lékaři."
+    },
+    {
+      "type": "open",
+      "question": "Proč těžba uhlí škodí přírodě?",
+      "answer": "Vznikají velké jámy a mizí krajina i vesnice. Spalování uhlí znečišťuje vzduch."
+    }
+  ]
+}

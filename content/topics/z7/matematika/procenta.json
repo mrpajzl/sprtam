@@ -1,0 +1,368 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "procenta",
+  "title": "Procenta",
+  "emoji": "💯",
+  "generator": "percent",
+  "explanations": [
+    {
+      "title": "Čtverečky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na bundě visí cedulka „Sleva 20 %“. Mobil má baterku na 35 %. V testu jsi měl 80 % správně. Procenta jsou všude."
+        },
+        {
+          "type": "text",
+          "text": "Procento je jen šikovný způsob, jak říct „kolik ze sta“. Díky tomu se dají porovnávat i úplně různé věci – třeba slevy na boty a na auto."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Procento (%)",
+          "definition": "Jedna setina celku. Slovo pochází z latiny a znamená „ze sta“.",
+          "example": "1 % ze 100 Kč je 1 Kč. 1 % z 500 Kč je 5 Kč."
+        },
+        {
+          "type": "term",
+          "term": "Základ",
+          "definition": "Celek, ze kterého procenta počítáš. Celek je vždy **100 %**.",
+          "example": "Bunda za 2 000 Kč – základ je 2 000 Kč."
+        },
+        {
+          "type": "term",
+          "term": "Procentová část",
+          "definition": "Kus základu, který odpovídá danému počtu procent.",
+          "example": "Sleva 20 % z 2 000 Kč je 400 Kč."
+        },
+        {
+          "type": "heading",
+          "text": "Celek jako 100 čtverečků"
+        },
+        {
+          "type": "text",
+          "text": "Představ si celek rozdělený na 100 čtverečků. Jedno procento = jeden čtvereček. 25 % = 25 čtverečků = čtvrtina."
+        },
+        {
+          "type": "text",
+          "text": "Posouvej počet procent. Sleduj, kolik čtverečků se vybarví a kolik je to z čísla 80."
+        },
+        {
+          "type": "widget",
+          "widget": "percent",
+          "props": {
+            "percent": 25,
+            "of": 80
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Známá procenta"
+        },
+        {
+          "type": "table",
+          "head": [
+            "procenta",
+            "zlomek",
+            "jak spočítat"
+          ],
+          "rows": [
+            [
+              "100 %",
+              "celek",
+              "nic neměň"
+            ],
+            [
+              "50 %",
+              "1/2",
+              "vyděl 2"
+            ],
+            [
+              "25 %",
+              "1/4",
+              "vyděl 4"
+            ],
+            [
+              "20 %",
+              "1/5",
+              "vyděl 5"
+            ],
+            [
+              "10 %",
+              "1/10",
+              "vyděl 10"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "25 % z 120 = ?",
+          "answer": "25 % je čtvrtina. 120 : 4 = **30**."
+        },
+        {
+          "type": "example",
+          "question": "Kolo stálo 8 000 Kč a zlevnilo o 20 %. Kolik stojí teď?",
+          "answer": "20 % = pětina: 8 000 : 5 = 1 600 Kč sleva. Nová cena 8 000 − 1 600 = **6 400 Kč**."
+        },
+        {
+          "type": "text",
+          "text": "Procento může být i víc než 100 – pak je to víc než celek. 150 % z 40 = celé 40 a ještě polovina (20) = 60."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zdražím o 10 % a pak zlevním o 10 % → cena je zase stejná.",
+          "right": "100 Kč → 110 Kč → 99 Kč",
+          "why": "Druhých 10 % se počítá z jiného základu (ze 110, ne ze 100). 10 % ze 110 je 11 Kč."
+        },
+        {
+          "type": "summary",
+          "text": "1 % = setina celku. Celek je vždy 100 %. 50 % = polovina, 25 % = čtvrtina, 10 % = desetina."
+        }
+      ]
+    },
+    {
+      "title": "Přes 1 %",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ne vždy jsou procenta tak hezká jako 50 % nebo 25 %. Kolik je 15 % z 2 000? Kolik procent je 12 z 48? Na všechno funguje jeden trik: **spočítej si 1 %**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Procento",
+          "definition": "Setina celku: 1 % = 1/100 = 0,01.",
+          "example": "7 % = 0,07"
+        },
+        {
+          "type": "term",
+          "term": "Základ",
+          "definition": "Celek, ze kterého se počítá. Odpovídá 100 %.",
+          "example": "Ve třídě je 48 žáků → základ 48."
+        },
+        {
+          "type": "term",
+          "term": "Procentová část",
+          "definition": "Část základu.",
+          "example": "12 jedničkářů z 48 žáků → procentová část 12."
+        },
+        {
+          "type": "term",
+          "term": "Počet procent",
+          "definition": "Kolik setin základu tvoří procentová část.",
+          "example": "12 ze 48 je 25 %."
+        },
+        {
+          "type": "heading",
+          "text": "Tři typy úloh"
+        },
+        {
+          "type": "table",
+          "head": [
+            "co hledám",
+            "jak"
+          ],
+          "rows": [
+            [
+              "procentovou část",
+              "1 % = základ : 100, pak · počet %"
+            ],
+            [
+              "počet procent",
+              "část : základ · 100"
+            ],
+            [
+              "základ",
+              "1 % = část : počet %, pak · 100"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Hledám část"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Bunda stojí 2 000 Kč, sleva 15 %. Kolik je sleva?",
+            "1 % = 2 000 : 100 = 20 Kč.",
+            "15 % = 15 · 20 = 300 Kč.",
+            "Nová cena: 2 000 − 300 = **1 700 Kč**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Hledám počet procent"
+        },
+        {
+          "type": "example",
+          "question": "12 z 48 žáků jsou jedničkáři. Kolik je to procent?",
+          "answer": "12 : 48 = 0,25. To je 25 setin → **25 %**."
+        },
+        {
+          "type": "example",
+          "question": "Cena 500 Kč se zvýšila na 600 Kč. O kolik procent?",
+          "answer": "Zvýšení je 100 Kč. Základ je **původní** cena 500. 100 : 500 = 0,2 → **20 %**."
+        },
+        {
+          "type": "heading",
+          "text": "Hledám základ"
+        },
+        {
+          "type": "example",
+          "question": "20 % čísla je 14. Jaké je to číslo?",
+          "answer": "1 % = 14 : 20 = 0,7. 100 % = 0,7 · 100 = **70**."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si výsledek na čtverečcích: nastav 20 % ze 70."
+        },
+        {
+          "type": "widget",
+          "widget": "percent",
+          "props": {
+            "percent": 20,
+            "of": 70
+          }
+        },
+        {
+          "type": "text",
+          "text": "Desetinné číslo → procenta: vynásob 100. 0,07 = 7 %, 0,3 = 30 %."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Cena stoupla z 500 na 600 Kč, to je o 100 : 600 ≈ 17 %.",
+          "right": "O 100 : 500 = 20 %.",
+          "why": "Základ je vždy hodnota, se kterou srovnáváš – tady původní cena 500 Kč."
+        },
+        {
+          "type": "summary",
+          "text": "Vždy si nejdřív spočítej 1 %. Základ = celek = 100 %. Počet procent = část : základ · 100."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "10 % z 350 =",
+      "answers": [
+        "35"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "25 % z 120 =",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik % je 18 z 60?",
+      "answers": [
+        "30"
+      ],
+      "explanation": "18 : 60 = 0,3"
+    },
+    {
+      "type": "input",
+      "question": "20 % čísla je 14. Jaké je to číslo?",
+      "answers": [
+        "70"
+      ],
+      "explanation": "1 % = 0,7, 100 % = 70"
+    },
+    {
+      "type": "choice",
+      "question": "Kolo stálo 8 000 Kč, zlevnilo o 20 %. Nová cena?",
+      "options": [
+        "6 400 Kč",
+        "7 980 Kč",
+        "1 600 Kč",
+        "6 000 Kč"
+      ],
+      "answer": 0,
+      "explanation": "20 % = 1 600 Kč, 8 000 − 1 600 = 6 400"
+    },
+    {
+      "type": "match",
+      "question": "Spoj procenta se zlomkem.",
+      "pairs": [
+        [
+          "50 %",
+          "1/2"
+        ],
+        [
+          "25 %",
+          "1/4"
+        ],
+        [
+          "20 %",
+          "1/5"
+        ],
+        [
+          "10 %",
+          "1/10"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Zdražení o 10 % a pak zlevnění o 10 % vrátí původní cenu.",
+      "answer": false,
+      "explanation": "100 → 110 → 99"
+    },
+    {
+      "type": "input",
+      "question": "Kolik je 150 % z 40?",
+      "answers": [
+        "60"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Cena 500 Kč se zvýšila na 600 Kč. O kolik %?",
+      "answers": [
+        "20"
+      ],
+      "explanation": "100 : 500 · 100 = 20 %"
+    },
+    {
+      "type": "choice",
+      "question": "0,07 je kolik procent?",
+      "options": [
+        "7 %",
+        "0,07 %",
+        "70 %",
+        "0,7 %"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš, kolik procent je 15 z 60?",
+      "answer": "Část vydělím základem a vynásobím 100: 15 : 60 = 0,25, tedy 25 %."
+    },
+    {
+      "type": "open",
+      "question": "Co je základ, procentová část a počet procent?",
+      "answer": "Základ je celek (100 %). Procentová část je kus základu. Počet procent říká, kolik setin základu ta část tvoří."
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "transformator",
+  "title": "Transformátor",
+  "emoji": "🔄",
+  "explanations": [
+    {
+      "title": "Jak funguje",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mobil potřebuje kolem 5 V, zásuvka dává 230 V a dálkové vedení stovky tisíc voltů. Napětí se po cestě mnohokrát mění. Dělá to **transformátor** – bez něj by moderní elektřina nefungovala."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Napětí",
+          "definition": "„Tlak“, kterým zdroj žene proud obvodem. Ve voltech (V).",
+          "example": "Zásuvka 230 V, baterie 4,5 V."
+        },
+        {
+          "type": "term",
+          "term": "Cívka a závit",
+          "definition": "**Cívka** je drát navinutý do smyček. Jedna smyčka je **závit**.",
+          "example": "Cívka s 200 závity."
+        },
+        {
+          "type": "term",
+          "term": "Elektromagnetická indukce",
+          "definition": "Když se v cívce **mění** magnetické pole, vznikne v ní napětí.",
+          "example": "Pohybuješ magnetem v cívce a měřidlo ukáže proud."
+        },
+        {
+          "type": "term",
+          "term": "Střídavý proud",
+          "definition": "Proud, který pravidelně mění směr (v zásuvce 50× za sekundu).",
+          "example": "Proud ze sítě."
+        },
+        {
+          "type": "heading",
+          "text": "Stavba transformátoru"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Primární cívka** – připojená ke zdroji (vstup).",
+            "**Sekundární cívka** – připojená ke spotřebiči (výstup).",
+            "**Jádro** z tenkých železných plechů – spojuje obě cívky a vede magnetické pole."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Co se děje uvnitř"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Primární cívkou teče **střídavý** proud.",
+            "Vytvoří v jádře magnetické pole, které se pořád **mění** (střídá směr).",
+            "Jádro to pole přivede do sekundární cívky.",
+            "Měnící se pole v sekundární cívce **indukuje napětí**.",
+            "Čím víc závitů má sekundární cívka, tím větší napětí v ní vznikne."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď: kde transformátor napětí zvyšuje a kde snižuje? (N₁ je počet závitů primární cívky, N₂ sekundární.)"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "zvyšuje napětí",
+              "snižuje napětí"
+            ],
+            "items": [
+              {
+                "text": "u elektrárny do vedení",
+                "group": 0
+              },
+              {
+                "text": "N₂ > N₁",
+                "group": 0
+              },
+              {
+                "text": "pro svařování (velký proud)",
+                "group": 1
+              },
+              {
+                "text": "trafostanice u vesnice",
+                "group": 1
+              },
+              {
+                "text": "N₂ < N₁",
+                "group": 1
+              },
+              {
+                "text": "rentgen (vysoké napětí)",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč transformátor nefunguje s baterií?",
+          "answer": "Baterie dává **stejnosměrný** proud. Ten vytvoří stálé magnetické pole, které se nemění. Bez změny pole nevznikne indukované napětí."
+        },
+        {
+          "type": "example",
+          "question": "Proč je jádro z tenkých izolovaných plechů, a ne z jednoho kusu železa?",
+          "answer": "V plném kusu železa by měnící se pole vyvolalo **vířivé proudy**, které jádro zahřívají a plýtvají energií. Plechy oddělené izolací je omezí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Transformátor zvýší napětí i proud, takže „vyrobí“ energii navíc.",
+          "right": "Když zvýší napětí, proud se úměrně zmenší.",
+          "why": "Energie nemůže vzniknout z ničeho. Kolik transformátor odebere, víc dát nemůže (část se navíc ztratí teplem)."
+        },
+        {
+          "type": "summary",
+          "text": "Transformátor mění střídavé napětí díky elektromagnetické indukci. Víc závitů na sekundární cívce = vyšší napětí (a menší proud)."
+        }
+      ]
+    },
+    {
+      "title": "Výpočty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Konstruktér nabíječky musí přesně vědět, kolik závitů navinout, aby z 230 V dostal potřebné napětí. Stačí na to jednoduchý poměr."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Primární a sekundární cívka",
+          "definition": "**Primární** (index 1) je připojená ke zdroji, **sekundární** (index 2) ke spotřebiči. Obě jsou na společném železném jádře.",
+          "example": "U₁ = 230 V na primární cívce."
+        },
+        {
+          "type": "term",
+          "term": "Počet závitů `N`",
+          "definition": "Kolikrát je drát cívky omotán kolem jádra. N₁ primární, N₂ sekundární.",
+          "example": "N₁ = 1 000, N₂ = 100."
+        },
+        {
+          "type": "term",
+          "term": "Transformační poměr `k`",
+          "definition": "Kolikrát má sekundární cívka víc závitů než primární: `k = N₂ : N₁`.",
+          "example": "N₁ = 500, N₂ = 2 000 → k = 4."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo"
+        },
+        {
+          "type": "text",
+          "text": "Každý závit „dostane“ stejný kousek napětí. Proto napětí roste stejně jako počet závitů: `U₂ : U₁ = N₂ : N₁`."
+        },
+        {
+          "type": "list",
+          "items": [
+            "k > 1 → transformátor napětí **zvyšuje**.",
+            "k < 1 → napětí **snižuje**.",
+            "Proud se mění **opačně**: napětí 10× víc → proud 10× méně (u ideálního transformátoru)."
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej poměr závitů N₂ : N₁.",
+            "Vynásob jím vstupní napětí: U₂ = U₁ · N₂ : N₁.",
+            "Zkontroluj: má-li sekundár víc závitů, musí vyjít víc voltů."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "N₁ = 200, N₂ = 1 000, U₁ = 12 V. Jaké je U₂?",
+          "answer": "Poměr 1 000 : 200 = 5. U₂ = 12 · 5 = **60 V**."
+        },
+        {
+          "type": "example",
+          "question": "N₁ = 1 000, N₂ = 100, U₁ = 230 V. Jaké je U₂?",
+          "answer": "Poměr 100 : 1 000 = 0,1. U₂ = 230 · 0,1 = **23 V**."
+        },
+        {
+          "type": "example",
+          "question": "Transformátor mění 230 V na 11,5 V. Primární cívka má 2 000 závitů. Kolik má sekundární?",
+          "answer": "Napětí klesne 230 : 11,5 = 20krát. Závitů musí být 20krát méně: 2 000 : 20 = **100**."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "N₂ > N₁",
+                "back": "zvyšuje napětí, proud zmenší"
+              },
+              {
+                "front": "N₂ < N₁",
+                "back": "snižuje napětí, proud zvětší"
+              },
+              {
+                "front": "k = 4",
+                "back": "napětí 4× větší"
+              },
+              {
+                "front": "stejnosměrný proud",
+                "back": "transformátor nefunguje"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Než kartu otočíš, řekni si odpověď sám."
+        },
+        {
+          "type": "mistake",
+          "wrong": "N₁ = 200, N₂ = 1 000, U₁ = 12 V → U₂ = 12 : 5 = 2,4 V",
+          "right": "U₂ = 12 · 5 = 60 V",
+          "why": "Sekundární cívka má víc závitů, takže napětí musí **vzrůst**, ne klesnout."
+        },
+        {
+          "type": "summary",
+          "text": "`U₂ : U₁ = N₂ : N₁`, `k = N₂ : N₁`. Víc závitů na výstupu = vyšší napětí a menší proud."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "N₁ = 200, N₂ = 1 000, U₁ = 12 V. U₂ ve V =",
+      "answers": [
+        "60"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "N₁ = 1 000, N₂ = 100, U₁ = 230 V. U₂ ve V =",
+      "answers": [
+        "23"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Transformátor mění 230 V na 11,5 V. Primární cívka má 2 000 závitů. Kolik závitů má sekundární?",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Transformátor funguje se stejnosměrným proudem z baterie.",
+      "answer": false,
+      "explanation": "Potřebuje měnící se magnetické pole – střídavý proud."
+    },
+    {
+      "type": "choice",
+      "question": "Má-li sekundární cívka víc závitů než primární, transformátor napětí…",
+      "options": [
+        "zvyšuje",
+        "snižuje",
+        "nemění"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Na jakém jevu transformátor pracuje?",
+      "options": [
+        "elektromagnetická indukce",
+        "tepelná roztažnost",
+        "lom",
+        "tření"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Ideální transformátor zvýší napětí 10×. Co se stane s proudem?",
+      "options": [
+        "zmenší se 10×",
+        "zvětší se 10×",
+        "nezmění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj část s popisem.",
+      "pairs": [
+        [
+          "primární cívka",
+          "připojena ke zdroji"
+        ],
+        [
+          "sekundární cívka",
+          "připojena ke spotřebiči"
+        ],
+        [
+          "jádro",
+          "z železných plechů"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Transformační poměr k = N₂ / N₁ pro N₁ = 500 a N₂ = 2 000 =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Jádro transformátoru je z izolovaných železných plechů.",
+      "answer": true,
+      "explanation": "Plechy omezují ztráty vířivými proudy."
+    },
+    {
+      "type": "open",
+      "question": "Jak funguje transformátor?",
+      "answer": "Střídavý proud v primární cívce vytváří proměnné magnetické pole v jádře. To indukuje napětí v sekundární cívce. Poměr napětí odpovídá poměru závitů."
+    },
+    {
+      "type": "open",
+      "question": "Proč se u elektráren napětí zvyšuje a u spotřebitelů snižuje?",
+      "answer": "Vysoké napětí znamená malý proud, a tedy menší ztráty ve vedení. Pro bezpečné použití doma se napětí sníží na 230 V."
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zaokrouhlovani-velkych-cisel",
+  "title": "Zaokrouhlování na tisíce",
+  "emoji": "🎯",
+  "generator": "round",
+  "explanations": [
+    {
+      "title": "Bližší soused",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V novinách píšou: „Na zápase bylo asi 12 000 diváků.“ Přesně jich bylo 12 349, ale to si nikdo nepamatuje. Stačí přibližné číslo."
+        },
+        {
+          "type": "text",
+          "text": "Najít přibližné „kulaté“ číslo je **zaokrouhlování**. Hodí se k odhadům cen, vzdáleností i počtu lidí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zaokrouhlit",
+          "definition": "Nahradit číslo nejbližším číslem s nulami na konci.",
+          "example": "3 700 zaokrouhleno na tisíce je 4 000."
+        },
+        {
+          "type": "term",
+          "term": "Sousedé",
+          "definition": "Dvě nejbližší „kulatá“ čísla – jedno menší a jedno větší.",
+          "example": "Sousedé 3 700 na tisíce jsou 3 000 a 4 000."
+        },
+        {
+          "type": "term",
+          "term": "Přibližně ( ≈ )",
+          "definition": "Znak, který říká „skoro rovná se“.",
+          "example": "3 700 ≈ 4 000"
+        },
+        {
+          "type": "heading",
+          "text": "Ke kterému sousedovi?"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi oba sousedy: 3 700 leží mezi **3 000** a **4 000**.",
+            "Najdi střed mezi nimi: **3 500**.",
+            "3 700 je za středem → blíž je **4 000**.",
+            "Napiš: **3 700 ≈ 4 000**."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Když je číslo **přesně ve středu** (3 500), dohoda říká: zaokrouhli **nahoru** (4 000)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Najdi na ose 3 700. Spočítej dílky k 3 000 a k 4 000. Kde je střed?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 3000,
+            "max": 4000,
+            "step": 100,
+            "start": 3700
+          }
+        },
+        {
+          "type": "example",
+          "question": "Zaokrouhli 5 449 na tisíce.",
+          "answer": "Sousedé 5 000 a 6 000, střed 5 500. 5 449 je před středem → **5 000**."
+        },
+        {
+          "type": "example",
+          "question": "Zaokrouhli 7 500 na tisíce.",
+          "answer": "Sousedé 7 000 a 8 000. 7 500 je přesně ve středu → nahoru, **8 000**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "5 449 ≈ 6 000, protože 49 se zaokrouhlí na 50 a pak 450 na 500…",
+          "right": "5 449 ≈ **5 000**",
+          "why": "Nezaokrouhluj postupně po kouscích! Zaokrouhluj jednou, podle toho, který soused je skutečně blíž."
+        },
+        {
+          "type": "summary",
+          "text": "Číslo jde k bližšímu sousedovi. Přesně uprostřed jde nahoru."
+        }
+      ]
+    },
+    {
+      "title": "Hlídač",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Auto stojí 287 400 Kč. Kolik je to zhruba v tisících? Kreslit osu pro každé číslo je pomalé."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se rychlé pravidlo s **hlídačem**. Funguje na desítky, stovky i tisíce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Řád",
+          "definition": "Místo číslice v čísle: jednotky, desítky, stovky, tisíce…"
+        },
+        {
+          "type": "term",
+          "term": "Hlídač",
+          "definition": "Číslice **hned vpravo** od řádu, na který zaokrouhluješ. Jen ona rozhoduje.",
+          "example": "Zaokrouhluji 4 637 na stovky → hlídač je 3 (desítky)."
+        },
+        {
+          "type": "term",
+          "term": "Přibližně ( ≈ )",
+          "definition": "Znak pro zaokrouhlené číslo."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podtrhni řád, na který zaokrouhluješ.",
+            "Číslice vpravo od něj je **hlídač**.",
+            "Hlídač 0–4 → podtrženou číslici nech.",
+            "Hlídač 5–9 → k podtržené číslici přidej 1.",
+            "Všechno vpravo od podtržené nahraď nulami."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Číslo",
+            "Na desítky",
+            "Na stovky",
+            "Na tisíce"
+          ],
+          "rows": [
+            [
+              "4 637",
+              "4 640",
+              "4 600",
+              "5 000"
+            ],
+            [
+              "12 349",
+              "12 350",
+              "12 300",
+              "12 000"
+            ],
+            [
+              "8 952",
+              "8 950",
+              "9 000",
+              "9 000"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Najdi na ose 3 050 a zaokrouhli ho na stovky. Hlídač (desítky) je 5. Kam to číslo půjde?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 3000,
+            "max": 3100,
+            "step": 10,
+            "start": 3050
+          }
+        },
+        {
+          "type": "example",
+          "question": "Auto stojí 287 400 Kč. Zaokrouhli na tisíce.",
+          "answer": "Řád tisíců: 28**7** 400. Hlídač = stovky = 4 → nechám. **287 000 Kč**."
+        },
+        {
+          "type": "example",
+          "question": "Zaokrouhli 9 960 na stovky.",
+          "answer": "Stovky: 9. Hlídač 6 → přidám 1: 9 stovek + 1 = 10 stovek = 1 tisíc navíc. **10 000**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "2 650 na stovky ≈ 2 600 (protože na konci je 0).",
+          "right": "2 650 ≈ **2 700**",
+          "why": "Hlídač je číslice hned vpravo od stovek – tedy 5, ne poslední nula. 5 → nahoru."
+        },
+        {
+          "type": "summary",
+          "text": "Rozhoduje jen hlídač – číslice hned vpravo. 0–4 nech, 5–9 přidej 1. Vpravo samé nuly."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Zaokrouhli 2 381 na stovky.",
+      "answers": [
+        "2400",
+        "2 400"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Zaokrouhli 5 449 na tisíce.",
+      "answers": [
+        "5000",
+        "5 000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Zaokrouhli 7 500 na tisíce.",
+      "answers": [
+        "8000",
+        "8 000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Zaokrouhli 1 234 na desítky.",
+      "answers": [
+        "1230",
+        "1 230"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Zaokrouhli 9 960 na stovky.",
+      "answers": [
+        "10000",
+        "10 000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Zaokrouhli 46 812 na tisíce.",
+      "answers": [
+        "47000",
+        "47 000"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Zaokrouhli 3 050 na stovky.",
+      "options": [
+        "3 000",
+        "3 100",
+        "3 050"
+      ],
+      "answer": 1,
+      "explanation": "Hlídač (desítky) je 5 → nahoru."
+    },
+    {
+      "type": "choice",
+      "question": "Které číslo dá po zaokrouhlení na tisíce 6 000?",
+      "options": [
+        "5 499",
+        "6 501",
+        "5 820"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "truefalse",
+      "question": "8 499 ≈ 8 000 (na tisíce)",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "2 650 ≈ 2 600 (na stovky)",
+      "answer": false,
+      "explanation": "Hlídač 5 → nahoru → 2 700."
+    },
+    {
+      "type": "input",
+      "question": "Auto stojí 287 400 Kč. Zaokrouhli na tisíce (bez mezer).",
+      "answers": [
+        "287000",
+        "287 000"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, jak zaokrouhlíš 4 637 na stovky.",
+      "answer": "Řád stovek je 6, vpravo je hlídač 3. To je méně než 5, takže nechám 6 a zbytek nuly: 4 600."
+    },
+    {
+      "type": "open",
+      "question": "Kdy je dobré zaokrouhlovat? Uveď příklad.",
+      "answer": "Když stačí přibližná hodnota. Třeba v novinách: na zápase bylo asi 12 000 diváků."
+    }
+  ]
+}

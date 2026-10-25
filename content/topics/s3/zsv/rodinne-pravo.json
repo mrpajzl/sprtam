@@ -1,0 +1,385 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rodinne-pravo",
+  "title": "Rodinné právo",
+  "emoji": "👨‍👩‍👧",
+  "explanations": [
+    {
+      "title": "Příběh rodiny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jana a Petr se vezmou. Koupí byt, narodí se jim dcera Klárka. Po deseti letech se rozvedou. Komu patří byt? Kdo se bude o Klárku starat? Kdo na ni bude platit?"
+        },
+        {
+          "type": "text",
+          "text": "Odpovědi dává **rodinné právo**. Chrání hlavně děti a slabší členy rodiny. Týká se skoro každého – jednou jako dítěte, jindy jako partnera nebo rodiče."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rodinné právo",
+          "definition": "Část občanského práva o manželství, vztazích rodičů a dětí a o péči o děti bez rodičů. Upravuje ho **občanský zákoník** (jeho druhá část).",
+          "example": "Pravidla pro sňatek, rozvod, výživné."
+        },
+        {
+          "type": "term",
+          "term": "Sňatek",
+          "definition": "Uzavření manželství **souhlasným prohlášením** snoubenců před oddávajícím a **dvěma svědky**. Může být **občanský** (na úřadě) nebo **církevní** – i ten má účinky pro stát.",
+          "example": "Jana a Petr řeknou „ano“ na radnici před starostou a dvěma svědky."
+        },
+        {
+          "type": "term",
+          "term": "Společné jmění manželů (SJM)",
+          "definition": "Majetek a dluhy, které manželé získají **během manželství** – patří **oběma**.",
+          "example": "Byt koupený za společné výplaty patří Janě i Petrovi."
+        },
+        {
+          "type": "heading",
+          "text": "Rodiče a dítě"
+        },
+        {
+          "type": "term",
+          "term": "Rodičovská odpovědnost",
+          "definition": "Souhrn práv a povinností rodičů k dítěti. Mají ji **oba rodiče rovnocenně**, dokud dítě není zletilé.",
+          "example": "Jana i Petr rozhodují o Klárčině škole."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**péče** o dítě a jeho zdraví,",
+            "**výchova** a vzdělání,",
+            "**osobní styk** s dítětem,",
+            "určení **bydliště**,",
+            "**zastupování** dítěte (např. při smlouvách),",
+            "**správa jmění** dítěte (třeba zděděných peněz)."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Vyživovací povinnost",
+          "definition": "Povinnost rodičů **platit na živobytí** dítěte. Trvá, **dokud se dítě nedokáže samo živit** – ne automaticky do 18 let.",
+          "example": "Studentovi vysoké školy ve 22 letech rodiče stále přispívají."
+        },
+        {
+          "type": "heading",
+          "text": "Když se rodina rozpadne"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "O rozvodu rozhoduje **soud** – ne úřad ani notář.",
+            "Mají-li manželé nezletilé dítě, soud **nejdřív upraví péči o dítě a výživné**. Až pak manželství rozvede.",
+            "Společné jmění manželů se rozdělí – dohodou, jinak rozhodne soud.",
+            "**Rodičovská odpovědnost trvá** oběma rodičům i po rozvodu."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Po rozvodu žije Klárka s mámou. Přestává být Petr jejím rodičem s právy a povinnostmi?",
+          "answer": "**Ne.** Rozvodem končí **manželství**, ne rodičovství. Petr má dál rodičovskou odpovědnost, právo se s Klárkou stýkat a povinnost platit **výživné**."
+        },
+        {
+          "type": "example",
+          "question": "Klárce je 19 a studuje vysokou školu. Musí jí rodiče stále přispívat?",
+          "answer": "**Ano**, pokud se ještě nedokáže sama živit. Vyživovací povinnost nekončí 18. narozeninami, ale až samostatností dítěte."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď pojmy. Zeptej se: jde o péči o dítě, které nemůže žít s vlastními rodiči?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Náhradní rodinná péče",
+              "Není náhradní péče"
+            ],
+            "items": [
+              {
+                "text": "Osvojení (adopce)",
+                "group": 0
+              },
+              {
+                "text": "Pěstounská péče",
+                "group": 0
+              },
+              {
+                "text": "Poručenství",
+                "group": 0
+              },
+              {
+                "text": "Svěření do péče jiné osoby",
+                "group": 0
+              },
+              {
+                "text": "Společné jmění manželů",
+                "group": 1
+              },
+              {
+                "text": "Výživné po rozvodu",
+                "group": 1
+              },
+              {
+                "text": "Rodičovská odpovědnost",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vyživovací povinnost rodičů končí v 18 letech dítěte.",
+          "right": "Trvá, dokud se dítě nedokáže samo živit – třeba i během studia.",
+          "why": "Zákon se dívá na skutečnou situaci dítěte, ne na jeho věk."
+        },
+        {
+          "type": "summary",
+          "text": "Sňatek = souhlasné prohlášení před oddávajícím a 2 svědky. Majetek z manželství patří oběma (SJM). Rozvádí soud, nejdřív upraví péči o děti a výživné. Rozvodem končí manželství, ne rodičovství."
+        }
+      ]
+    },
+    {
+      "title": "Náhradní péče",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ne každé dítě může vyrůstat s vlastními rodiči. Rodiče mohou zemřít, nemohou se o dítě starat nebo mu dokonce ubližují. Co pak?"
+        },
+        {
+          "type": "text",
+          "text": "Rodinné právo má pro takové děti několik řešení. Všechna mají jediný cíl: aby dítě vyrůstalo v **rodině**, ne v ústavu. Poznáš, čím se řešení liší a kdo dohlíží na ochranu dětí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rodičovská odpovědnost",
+          "definition": "Práva a povinnosti rodičů k dítěti: péče, výchova, zastupování, správa jmění. Mají ji oba rodiče rovnocenně.",
+          "example": "Rodič podepisuje za dítě přihlášku na školu."
+        },
+        {
+          "type": "term",
+          "term": "Náhradní rodinná péče",
+          "definition": "Péče o dítě, které nemůže vyrůstat u vlastních rodičů, **v jiné rodině**.",
+          "example": "Dítě vychovávají babička a děda nebo pěstouni."
+        },
+        {
+          "type": "term",
+          "term": "OSPOD",
+          "definition": "Orgán **sociálně-právní ochrany dětí** – oddělení na obecních úřadech, které chrání děti v ohrožení a hledá jim náhradní rodinu.",
+          "example": "Sociální pracovnice OSPOD navštíví rodinu, kde je podezření na zanedbávání dítěte."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři formy náhradní péče"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Osvojení (adopce)** – osvojitelé se stávají **právně rodiči**. Vzniká vztah jako mezi rodičem a vlastním dítětem, **trvale**. Dítě dostane jejich příjmení.",
+            "**Pěstounská péče** – pěstoun dítě vychovává ve své rodině, často **dočasně**, a stát mu přispívá. **Rodičem se nestává** – rodičovskou odpovědnost nemá.",
+            "**Poručenství** – soud jmenuje **poručníka**, když dítě nemá nikoho s rodičovskou odpovědností (rodiče zemřeli). Poručník má práva a povinnosti podobné rodiči.",
+            "**Svěření do péče jiné osoby** – soud svěří dítě třeba babičce, která se o něj stará."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Manželé si vezmou dvouleté dítě a soud rozhodne, že jsou jeho rodiči, se vším všudy a natrvalo. Jaká forma?",
+          "answer": "Vzniká stejný vztah jako s vlastním dítětem, trvale → **osvojení (adopce)**."
+        },
+        {
+          "type": "example",
+          "question": "Rodina se po dobu, než se biologická matka vyléčí ze závislosti, stará o její syna a dostává na něj příspěvky od státu. Jaká forma?",
+          "answer": "Péče je často dočasná, pěstoun není rodičem a stát přispívá → **pěstounská péče**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a nejdřív zkus vysvětlit, čím se pojem liší od ostatních."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Osvojení",
+                "back": "Adopce: osvojitel se stává právně rodičem, trvale."
+              },
+              {
+                "front": "Pěstounská péče",
+                "back": "Výchova cizího dítěte, často dočasně, s příspěvky státu. Pěstoun není rodič."
+              },
+              {
+                "front": "Poručenství",
+                "back": "Soudem jmenovaný poručník nahrazuje rodiče, kteří nemají rodičovskou odpovědnost."
+              },
+              {
+                "front": "Výživné",
+                "back": "Peníze na živobytí, které platí ten, kdo má vyživovací povinnost."
+              },
+              {
+                "front": "OSPOD",
+                "back": "Sociálně-právní ochrana dětí na úřadech."
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Rodina v kostce"
+        },
+        {
+          "type": "text",
+          "text": "Manželství vzniká **sňatkem** – souhlasným prohlášením před oddávajícím a **dvěma svědky**, **občanským** nebo **církevním** obřadem. Majetek získaný během manželství tvoří **společné jmění manželů (SJM)**. O **rozvodu** rozhoduje **soud**; u nezletilých dětí nejdřív upraví péči a výživné. **Vyživovací povinnost** rodičů trvá, dokud se dítě nedokáže samo živit."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pěstoun je to samé co adoptivní rodič.",
+          "right": "Osvojitel se stává právně rodičem natrvalo. Pěstoun dítě vychovává, ale rodičem se nestává.",
+          "why": "Při pěstounské péči trvá právní vztah k biologickým rodičům a dítě se k nim může vrátit."
+        },
+        {
+          "type": "summary",
+          "text": "Náhradní rodinná péče: osvojení (stává se rodičem, trvale), pěstounská péče (výchova bez rodičovské odpovědnosti), poručenství, svěření do péče jiné osoby. Na ochranu dětí dohlíží OSPOD."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kolik svědků je potřeba při sňatku?",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "žádný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vyživovací povinnost rodičů automaticky končí v 18 letech dítěte.",
+      "answer": false,
+      "explanation": "Trvá, dokud se dítě nedokáže samo živit (např. při studiu)."
+    },
+    {
+      "type": "choice",
+      "question": "Který vztah vzniká osvojením?",
+      "options": [
+        "Stejný jako mezi rodičem a vlastním dítětem",
+        "Dočasná péče za odměnu",
+        "Jen poručnictví",
+        "Žádný právní vztah"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Rozvodem rodičů zaniká jejich rodičovská odpovědnost.",
+      "answer": false
+    },
+    {
+      "type": "input",
+      "question": "Jak se zkráceně nazývá majetek, který manželé nabudou za trvání manželství? (3 písmena)",
+      "answers": [
+        "SJM"
+      ],
+      "explanation": "Společné jmění manželů."
+    },
+    {
+      "type": "choice",
+      "question": "Kdo rozhoduje o rozvodu manželství?",
+      "options": [
+        "Soud",
+        "Matriční úřad",
+        "Notář",
+        "Starosta"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem s významem.",
+      "pairs": [
+        [
+          "osvojení",
+          "adopce"
+        ],
+        [
+          "pěstoun",
+          "dočasná péče o cizí dítě"
+        ],
+        [
+          "výživné",
+          "peníze na živobytí"
+        ],
+        [
+          "OSPOD",
+          "sociálně-právní ochrana dětí"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co NEpatří do rodičovské odpovědnosti?",
+      "options": [
+        "Povinnost platit za dítě daně",
+        "Péče o dítě",
+        "Zastupování dítěte",
+        "Správa jmění dítěte"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Sňatek lze v ČR uzavřít i církevní formou s účinky pro stát.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co soud řeší před rozvodem manželů s nezletilými dětmi?",
+      "options": [
+        "Péči o děti a výživné",
+        "Rozdělení jejich dluhů bankám",
+        "Změnu příjmení dětí",
+        "Nic dalšího"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co zahrnuje rodičovská odpovědnost?",
+      "answer": "Péči o dítě a jeho zdraví, výchovu a vzdělání, osobní styk, určení bydliště, zastupování dítěte a správu jeho jmění. Mají ji oba rodiče rovnocenně."
+    },
+    {
+      "type": "open",
+      "question": "Porovnej osvojení a pěstounskou péči.",
+      "answer": "Osvojením se z osvojitele stává právně rodič a vztah je trvalý. Pěstoun o dítě pečuje, často dočasně a s příspěvky státu, ale rodičovská odpovědnost mu nevzniká."
+    }
+  ]
+}

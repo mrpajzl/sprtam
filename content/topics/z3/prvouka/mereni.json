@@ -1,0 +1,331 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mereni",
+  "title": "Měření a jednotky",
+  "emoji": "📏",
+  "explanations": [
+    {
+      "title": "Čím měříme",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jak dlouhá je lavice? Kolik vážíš? Je venku zima? Odhadnout to umíš, ale přesně to zjistíš jen měřením."
+        },
+        {
+          "type": "text",
+          "text": "Měříme při vaření, v obchodě, u lékaře i při stavění. Pro každou věc máme jiný přístroj."
+        },
+        {
+          "type": "term",
+          "term": "Veličina",
+          "definition": "To, co měříme: délka, hmotnost, teplota, čas, objem.",
+          "example": "Délka lavice je veličina."
+        },
+        {
+          "type": "term",
+          "term": "Jednotka",
+          "definition": "Dohodnutá „míra“, ve které výsledek říkáme.",
+          "example": "metr, kilogram, stupeň Celsia, hodina, litr"
+        },
+        {
+          "type": "term",
+          "term": "Měřidlo",
+          "definition": "Přístroj, kterým měříme.",
+          "example": "pravítko, váha, teploměr"
+        },
+        {
+          "type": "heading",
+          "text": "Pět veličin"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**délka** – jak je něco dlouhé",
+            "**hmotnost** – jak je něco těžké",
+            "**teplota** – jak je něco teplé",
+            "**čas** – jak dlouho něco trvá",
+            "**objem** – kolik se toho někam vejde"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky: přístroj → co měří a v jakých jednotkách."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "📏 metr, pravítko",
+                "back": "délka (m, cm)"
+              },
+              {
+                "front": "⚖️ váha",
+                "back": "hmotnost (kg, g)"
+              },
+              {
+                "front": "🌡️ teploměr",
+                "back": "teplota (°C)"
+              },
+              {
+                "front": "⏱️ hodiny, stopky",
+                "back": "čas (h, min, s)"
+              },
+              {
+                "front": "🫙 odměrka",
+                "back": "objem (l)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Máma chce vědět, jestli máš horečku. Čím to změří?",
+          "answer": "Horečka = vysoká **teplota**. Měří se **teploměrem** ve °C."
+        },
+        {
+          "type": "example",
+          "question": "Kupuješ mléko. V jaké jednotce je na krabici?",
+          "answer": "Mléko je tekutina, měříme jeho objem. Je v **litrech** (1 l)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Délku silnice měříme v gramech.",
+          "right": "Délku měříme v metrech nebo kilometrech.",
+          "why": "Gram je jednotka hmotnosti – říká, jak je věc těžká, ne jak je dlouhá."
+        },
+        {
+          "type": "summary",
+          "text": "Délku měříme metrem (m), hmotnost váhou (kg), teplotu teploměrem (°C), čas hodinami (h) a objem odměrkou (l)."
+        }
+      ]
+    },
+    {
+      "title": "Převody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč nepoužíváme jako míru třeba dlaň? Protože každý má jinak velkou dlaň. Tvoje „pět dlaní“ a tátových „pět dlaní“ není stejně."
+        },
+        {
+          "type": "text",
+          "text": "Proto se lidé dohodli na jednotkách, které jsou všude stejné. A protože něco je malé a něco obrovské, máme jednotky malé a velké."
+        },
+        {
+          "type": "term",
+          "term": "Jednotka",
+          "definition": "Dohodnutá míra, stejná pro všechny.",
+          "example": "1 metr je všude na světě stejně dlouhý."
+        },
+        {
+          "type": "term",
+          "term": "Převod",
+          "definition": "Když stejnou věc vyjádříš v jiné jednotce.",
+          "example": "1 m je totéž co 100 cm."
+        },
+        {
+          "type": "heading",
+          "text": "Malé a velké jednotky"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Veličina",
+            "Převod"
+          ],
+          "rows": [
+            [
+              "délka",
+              "1 m = 100 cm"
+            ],
+            [
+              "délka",
+              "1 km = 1000 m"
+            ],
+            [
+              "hmotnost",
+              "1 kg = 1000 g"
+            ],
+            [
+              "čas",
+              "1 h = 60 min"
+            ],
+            [
+              "čas",
+              "1 min = 60 s"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Malé věci měříme malou jednotkou (cm, g), velké velkou (km, kg)."
+        },
+        {
+          "type": "heading",
+          "text": "Porovnej délky"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na sloupce. Kolikrát se pravítko vejde do výšky dveří?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "cm",
+            "items": [
+              {
+                "label": "pravítko",
+                "value": 30
+              },
+              {
+                "label": "žák 3. třídy",
+                "value": 130
+              },
+              {
+                "label": "dveře",
+                "value": 200
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Dveře jsou vysoké 200 cm. Kolik je to metrů?",
+          "answer": "100 cm = 1 m. 200 cm je dvakrát 100 cm → **2 m**."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejkratšího: 1 km, 1 cm, 1 m.",
+          "answer": "1 cm je malý kousek, 1 m = 100 cm, 1 km = 1000 m. Pořadí: **1 cm → 1 m → 1 km**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 kg železa je těžší než 1 kg peří.",
+          "right": "Obojí váží stejně – 1 kg.",
+          "why": "Kilogram je vždycky kilogram. Peří jen zabere mnohem víc místa."
+        },
+        {
+          "type": "summary",
+          "text": "1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g, 1 h = 60 min."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Čím měříme teplotu?",
+      "options": [
+        "teploměrem",
+        "váhou",
+        "pravítkem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Čím měříme hmotnost?",
+      "options": [
+        "váhou",
+        "teploměrem",
+        "hodinami"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik centimetrů má 1 metr?",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik gramů má 1 kilogram?",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik metrů má 1 kilometr?",
+      "answers": [
+        "1000"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu a jednotku.",
+      "pairs": [
+        [
+          "délka",
+          "metr"
+        ],
+        [
+          "hmotnost",
+          "kilogram"
+        ],
+        [
+          "teplota",
+          "stupeň Celsia"
+        ],
+        [
+          "čas",
+          "hodina"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Mléko kupujeme v litrech.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Délku silnice měříme v gramech.",
+      "answer": false,
+      "explanation": "Délku měříme v metrech a kilometrech. Gram je hmotnost."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejkratšího.",
+      "items": [
+        "1 cm",
+        "1 m",
+        "1 km"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je těžší?",
+      "options": [
+        "1 kg peří",
+        "oboje stejně",
+        "1 kg železa"
+      ],
+      "answer": 1,
+      "explanation": "Kilogram je vždycky kilogram."
+    },
+    {
+      "type": "open",
+      "question": "Jaké přístroje na měření znáš a co měří?",
+      "answer": "Pravítko a metr měří délku, váha hmotnost, teploměr teplotu, hodiny čas a odměrka objem."
+    },
+    {
+      "type": "open",
+      "question": "Proč potřebujeme jednotky?",
+      "answer": "Aby všichni měřili stejně a rozuměli si, například 2 m nebo 3 kg."
+    }
+  ]
+}

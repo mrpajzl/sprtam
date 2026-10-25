@@ -1,0 +1,344 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "linearni-funkce",
+  "title": "Lineární funkce",
+  "emoji": "📏",
+  "generator": "linear-eq",
+  "explanations": [
+    {
+      "title": "Taxíkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Taxi účtuje 40 Kč za nástup a 25 Kč za každý kilometr. Za 0 km zaplatíš 40 Kč, za 1 km 65 Kč, za 2 km 90 Kč… Každý kilometr přidá **stejnou částku**."
+        },
+        {
+          "type": "text",
+          "text": "Takové závislosti jsou všude: tarif za vodu, plnění bazénu, vzdálenost při stálé rychlosti. Popisuje je **lineární funkce** – a její graf je obyčejná přímka."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Lineární funkce",
+          "definition": "Funkce s předpisem y = kx + q, kde k a q jsou pevná čísla. Grafem je přímka.",
+          "example": "Taxi: y = 25x + 40 (x = km, y = cena v Kč)."
+        },
+        {
+          "type": "term",
+          "term": "Směrnice k",
+          "definition": "O kolik se změní y, když x vzroste o 1. U taxíku je to cena za 1 km. k > 0 → přímka stoupá (funkce rostoucí), k < 0 → klesá, k = 0 → vodorovná (konstantní).",
+          "example": "y = −2x + 3: každý krok doprava jde o 2 dolů → klesající."
+        },
+        {
+          "type": "term",
+          "term": "Úsek q",
+          "definition": "Hodnota y pro x = 0 – místo, kde přímka protne svislou osu y. U taxíku cena za nástup.",
+          "example": "y = 3x + 4 protíná osu y v bodě [0; 4]."
+        },
+        {
+          "type": "example",
+          "question": "Kolik stojí taxi na 8 km?",
+          "answer": "y = 25 · 8 + 40 = 200 + 40 = **240 Kč**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej k a q"
+        },
+        {
+          "type": "text",
+          "text": "Nejdřív hýbej jen posuvníkem q – přímka se posouvá nahoru a dolů, ale sklon zůstává. Pak hýbej k – přímka se otáčí kolem bodu [0; q]."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 2,
+            "q": -6
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kde přímka protne osy"
+        },
+        {
+          "type": "text",
+          "text": "**Osu y** protne v q (dosadíš x = 0). **Osu x** protne tam, kde y = 0 – vyřešíš rovnici kx + q = 0."
+        },
+        {
+          "type": "example",
+          "question": "Kde protne y = 2x − 6 osu x?",
+          "answer": "2x − 6 = 0 → 2x = 6 → **x = 3**. Bod [3; 0]."
+        },
+        {
+          "type": "heading",
+          "text": "Zvláštní případy"
+        },
+        {
+          "type": "term",
+          "term": "Konstantní funkce",
+          "definition": "k = 0, tedy y = q. Hodnota se nemění, graf je vodorovná přímka.",
+          "example": "y = 5 – paušál 5 Kč, ať jedeš kolik chceš."
+        },
+        {
+          "type": "term",
+          "term": "Přímá úměrnost",
+          "definition": "q = 0, tedy y = kx (k ≠ 0). Kolikrát zvětšíš x, tolikrát se zvětší y. Graf prochází počátkem [0; 0].",
+          "example": "Cena rohlíků: y = 3x. Dvakrát víc rohlíků = dvakrát vyšší cena."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Taxi y = 25x + 40 je přímá úměrnost – víc km, víc peněz.",
+          "right": "Není: za 2 km zaplatíš 90 Kč, ne dvojnásobek 65 Kč.",
+          "why": "Přímá úměrnost musí mít q = 0. Nástupné 40 Kč tu „dvojnásobnost“ kazí."
+        },
+        {
+          "type": "text",
+          "text": "**Rovnoběžné přímky** mají stejné k (stejný sklon), liší se jen q. Například y = 3x − 1 a y = 3x + 7."
+        },
+        {
+          "type": "summary",
+          "text": "y = kx + q: k = o kolik vzroste y při kroku x o 1 (sklon), q = průsečík s osou y. k > 0 roste, k < 0 klesá, k = 0 konstantní. q = 0 → přímá úměrnost."
+        }
+      ]
+    },
+    {
+      "title": "Ze dvou bodů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve fyzice naměříš: v čase 1 s je vozík na 5 m, v čase 3 s na 11 m. Jede rovnoměrně. Kde byl na začátku a jak rychle jede? Z **dvou naměřených bodů** jde celá přímka dopočítat."
+        },
+        {
+          "type": "text",
+          "text": "Tohle je nejčastější úloha s lineární funkcí: z údajů najít předpis a pak s ním předpovídat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Lineární funkce",
+          "definition": "f(x) = kx + q. Pro každé x vypočítáš y: vynásobíš k a přičteš q. Graf je přímka."
+        },
+        {
+          "type": "term",
+          "term": "Bod grafu [x; y]",
+          "definition": "Dvojice čísel: první je vstup x, druhé výstup y. Bod leží na grafu, když po dosazení x vyjde právě y.",
+          "example": "[2; 5] leží na y = 2x + 1, protože 2 · 2 + 1 = 5."
+        },
+        {
+          "type": "term",
+          "term": "Směrnice k",
+          "definition": "Sklon přímky: k = (změna y) / (změna x) = (y₂ − y₁)/(x₂ − x₁).",
+          "example": "Z [0; 1] do [2; 5]: y vzroste o 4, x o 2 → k = 4/2 = 2."
+        },
+        {
+          "type": "term",
+          "term": "Úsek q",
+          "definition": "Hodnota funkce v nule, f(0). Průsečík s osou y."
+        },
+        {
+          "type": "heading",
+          "text": "Postup: předpis ze dvou bodů"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej k = (y₂ − y₁)/(x₂ − x₁).",
+            "Dosaď jeden bod a k do y = kx + q.",
+            "Dopočítej q.",
+            "Ověř druhým bodem."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "f(1) = 5, f(3) = 11. Najdi k a q.",
+          "answer": "k = (11 − 5)/(3 − 1) = 6/2 = **3**. Dosadím [1; 5]: 5 = 3 · 1 + q → **q = 2**. Ověření: 3 · 3 + 2 = 11 ✓. Předpis f(x) = 3x + 2."
+        },
+        {
+          "type": "example",
+          "question": "Přímka prochází body [0; 1] a [2; 5]. Jaká je směrnice?",
+          "answer": "k = (5 − 1)/(2 − 0) = **2**. Protože první bod je [0; 1], hned vidíš i q = 1."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si to: nastav k = 3 a q = 2. Najdi na přímce bod [0; 2] (úsek q) a bod [1; 5] (o krok doprava, o 3 nahoru)."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 1,
+            "q": 0
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Co z k a q vyčteš"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Případ",
+            "Funkce je",
+            "Graf"
+          ],
+          "rows": [
+            [
+              "k > 0",
+              "rostoucí",
+              "stoupá"
+            ],
+            [
+              "k < 0",
+              "klesající",
+              "klesá"
+            ],
+            [
+              "k = 0",
+              "konstantní (y = q)",
+              "vodorovná přímka"
+            ],
+            [
+              "q = 0, k ≠ 0",
+              "přímá úměrnost y = kx",
+              "prochází počátkem"
+            ],
+            [
+              "stejné k",
+              "rovnoběžné přímky",
+              "stejný sklon"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kde protíná y = 3x + 4 osu y a kde osu x?",
+          "answer": "Osa y: x = 0 → y = **4**. Osa x: 3x + 4 = 0 → x = −4/3."
+        },
+        {
+          "type": "mistake",
+          "wrong": "k = (x₂ − x₁)/(y₂ − y₁)",
+          "right": "k = (y₂ − y₁)/(x₂ − x₁)",
+          "why": "Směrnice říká, o kolik se změní **y** na jeden krok v **x**. Změna y patří nahoru."
+        },
+        {
+          "type": "summary",
+          "text": "Ze dvou bodů: k = (y₂ − y₁)/(x₂ − x₁), q dopočítáš dosazením. Graf y = kx + q je přímka; stejné k = rovnoběžky, q = 0 = přímá úměrnost."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Funkce y = −2x + 3 je:",
+      "options": [
+        "klesající",
+        "rostoucí",
+        "konstantní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Průsečík y = 2x − 6 s osou x: x =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Průsečík y = 3x + 4 s osou y: y =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Přímka prochází body [0; 1] a [2; 5]. k =",
+      "answers": [
+        "2"
+      ],
+      "explanation": "(5 − 1)/(2 − 0)"
+    },
+    {
+      "type": "truefalse",
+      "question": "y = 5 je konstantní funkce.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Která přímka je rovnoběžná s y = 3x − 1?",
+      "options": [
+        "y = 3x + 7",
+        "y = −3x − 1",
+        "y = x/3",
+        "y = −x/3 + 1"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "f(x) = kx + q, f(1) = 5, f(3) = 11. k =",
+      "answers": [
+        "3"
+      ],
+      "explanation": "(11 − 5)/(3 − 1)"
+    },
+    {
+      "type": "input",
+      "question": "f(x) = kx + q, f(1) = 5, f(3) = 11. q =",
+      "answers": [
+        "2"
+      ],
+      "explanation": "5 = 3 · 1 + q"
+    },
+    {
+      "type": "choice",
+      "question": "Přímá úměrnost má předpis:",
+      "options": [
+        "y = kx",
+        "y = k/x",
+        "y = kx + q, q ≠ 0",
+        "y = x²"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Taxi: 40 Kč nástup + 25 Kč/km. Cena za 8 km (Kč) =",
+      "answers": [
+        "240"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Grafem funkce y = kx + q je přímka.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Co znamenají koeficienty k a q v y = kx + q?",
+      "answer": "k je směrnice: udává sklon, o kolik se změní y, když x vzroste o 1. q je úsek na ose y, tedy průsečík grafu s osou y."
+    },
+    {
+      "type": "open",
+      "question": "Co je přímá úměrnost? Uveď příklad.",
+      "answer": "Funkce y = kx (k ≠ 0): kolikrát se zvětší x, tolikrát y. Příklad: cena = cena za kus · počet kusů."
+    }
+  ]
+}

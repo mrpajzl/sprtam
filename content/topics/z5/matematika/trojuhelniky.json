@@ -1,0 +1,337 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "trojuhelniky",
+  "title": "Trojúhelníky",
+  "emoji": "🔺",
+  "explanations": [
+    {
+      "title": "Druhy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Střecha, kus pizzy, dopravní značka, ramínko na šaty. Trojúhelníky jsou všude – a nejsou všechny stejné."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se je **třídit** podle stran a podle úhlů. Stavitelé trojúhelníky milují, protože jsou pevné – proto je najdeš v mostech a jeřábech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Trojúhelník",
+          "definition": "Tvar se 3 stranami, 3 vrcholy (rohy) a 3 úhly.",
+          "example": "trojúhelník ABC"
+        },
+        {
+          "type": "term",
+          "term": "Úhel",
+          "definition": "Jak moc jsou dvě strany v rohu „rozevřené“. Měří se ve stupních (°)."
+        },
+        {
+          "type": "term",
+          "term": "Pravý úhel",
+          "definition": "Úhel 90° – jako roh sešitu."
+        },
+        {
+          "type": "term",
+          "term": "Ramena a základna",
+          "definition": "U trojúhelníku se dvěma stejnými stranami jsou ty stejné strany **ramena**, třetí strana je **základna**."
+        },
+        {
+          "type": "heading",
+          "text": "Podle stran"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Co platí"
+          ],
+          "rows": [
+            [
+              "rovnostranný",
+              "všechny 3 strany stejné"
+            ],
+            [
+              "rovnoramenný",
+              "2 strany (ramena) stejné"
+            ],
+            [
+              "různostranný",
+              "každá strana jiná"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Podle úhlů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Co platí"
+          ],
+          "rows": [
+            [
+              "ostroúhlý",
+              "všechny úhly menší než 90°"
+            ],
+            [
+              "pravoúhlý",
+              "jeden úhel přesně 90°"
+            ],
+            [
+              "tupoúhlý",
+              "jeden úhel větší než 90°"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je pravý úhel – 90°. Pohni posuvníkem na 120°. Takový úhel by měl tupoúhlý trojúhelník."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 90
+          }
+        },
+        {
+          "type": "example",
+          "question": "Trojúhelník má strany 4, 4, 6 cm. Jaký je?",
+          "answer": "Dvě strany stejné → **rovnoramenný**. Ramena 4 cm, základna 6 cm."
+        },
+        {
+          "type": "example",
+          "question": "Rovnoramenný trojúhelník: ramena 7 cm, základna 4 cm. Obvod?",
+          "answer": "7 + 7 + 4 = **18 cm**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Trojúhelník může mít dva pravé úhly.",
+          "right": "Trojúhelník má **nejvýš jeden** pravý úhel.",
+          "why": "Dvě strany kolmé na stejnou základnu by byly rovnoběžné a nikdy by se nepotkaly – třetí vrchol by nevznikl."
+        },
+        {
+          "type": "summary",
+          "text": "Podle stran: rovnostranný, rovnoramenný, různostranný. Podle úhlů: ostroúhlý, pravoúhlý (90°), tupoúhlý."
+        }
+      ]
+    },
+    {
+      "title": "Z brček",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi tři brčka: 2 cm, 3 cm a 7 cm. Zkus z nich složit trojúhelník. Nejde to! Dvě krátká brčka na sebe nedosáhnou."
+        },
+        {
+          "type": "text",
+          "text": "Ne ze všech tří délek jde trojúhelník postavit. Naučíš se to poznat předem a trojúhelník přesně narýsovat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Strany trojúhelníku",
+          "definition": "Tři úsečky, které ho tvoří. Značí se a, b, c."
+        },
+        {
+          "type": "term",
+          "term": "Trojúhelníková nerovnost",
+          "definition": "Součet **dvou kratších** stran musí být **větší** než nejdelší strana. Jinak trojúhelník nevznikne.",
+          "example": "3 + 4 = 7 > 5 → trojúhelník 3, 4, 5 jde."
+        },
+        {
+          "type": "term",
+          "term": "Kružnice",
+          "definition": "Všechny body stejně daleko od středu. Rýsuje se kružítkem."
+        },
+        {
+          "type": "term",
+          "term": "Průsečík",
+          "definition": "Bod, kde se dvě čáry protnou."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Měň velikost trojúhelníku a sleduj jeho obvod."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "triangle",
+            "a": 5
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Rýsování ze tří stran"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Nejdřív zkontroluj nerovnost.",
+            "Narýsuj nejdelší stranu **AB**.",
+            "Z bodu A narýsuj kružnici s poloměrem **b** (délka strany AC).",
+            "Z bodu B narýsuj kružnici s poloměrem **a** (délka strany BC).",
+            "Průsečík kružnic je bod **C**. Spoj ho s A a B."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jde sestrojit trojúhelník 4 cm, 5 cm, 8 cm?",
+          "answer": "Dvě kratší: 4 + 5 = 9. 9 > 8 → **ano**."
+        },
+        {
+          "type": "example",
+          "question": "Jde sestrojit trojúhelník 2 cm, 3 cm, 6 cm?",
+          "answer": "2 + 3 = 5. 5 není větší než 6 → **ne**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Strany 3, 4, 7 cm: 3 + 4 = 7, to stačí.",
+          "right": "Trojúhelník 3, 4, 7 **nejde** sestrojit.",
+          "why": "Součet musí být **větší**, ne stejný. Při 3 + 4 = 7 by se kratší strany položily naplocho na tu dlouhou."
+        },
+        {
+          "type": "summary",
+          "text": "Trojúhelník jde sestrojit, jen když součet dvou kratších stran je větší než nejdelší. Rýsuje se kružítkem z obou konců."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Trojúhelník má strany 5, 5, 5 cm. Je…",
+      "options": [
+        "rovnostranný",
+        "rovnoramenný",
+        "různostranný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Trojúhelník má strany 4, 4, 6 cm. Je…",
+      "options": [
+        "rovnostranný",
+        "rovnoramenný",
+        "různostranný"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Trojúhelník má úhel 120°. Je…",
+      "options": [
+        "ostroúhlý",
+        "pravoúhlý",
+        "tupoúhlý"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "truefalse",
+      "question": "Ze stran 3 cm, 4 cm a 5 cm lze sestrojit trojúhelník.",
+      "answer": true,
+      "explanation": "3 + 4 = 7 > 5."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ze stran 2 cm, 3 cm a 6 cm lze sestrojit trojúhelník.",
+      "answer": false,
+      "explanation": "2 + 3 = 5 není větší než 6."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ze stran 3 cm, 4 cm a 7 cm lze sestrojit trojúhelník.",
+      "answer": false,
+      "explanation": "3 + 4 = 7 – není větší, strany by ležely na přímce."
+    },
+    {
+      "type": "input",
+      "question": "Rovnostranný trojúhelník má obvod 18 cm. Strana v cm =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Rovnoramenný trojúhelník: ramena 7 cm, základna 4 cm. Obvod v cm =",
+      "answers": [
+        "18"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik pravých úhlů může mít trojúhelník nejvýš?",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Čím sestrojíš trojúhelník ze tří stran?",
+      "options": [
+        "pravítkem a kružítkem",
+        "jen úhloměrem",
+        "od ruky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "všechny strany stejné",
+          "rovnostranný"
+        ],
+        [
+          "jeden úhel 90°",
+          "pravoúhlý"
+        ],
+        [
+          "dvě strany stejné",
+          "rovnoramenný"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co říká trojúhelníková nerovnost? Uveď příklad.",
+      "answer": "Součet dvou stran musí být větší než třetí strana. Např. 3, 4, 5: 3 + 4 > 5, trojúhelník jde sestrojit."
+    },
+    {
+      "type": "open",
+      "question": "Popiš, jak sestrojíš trojúhelník se stranami 6 cm, 5 cm a 4 cm.",
+      "answer": "Narýsuji AB = 6 cm. Z A kružnici s poloměrem 4 cm, z B s poloměrem 5 cm. Průsečík je C, spojím body."
+    }
+  ]
+}

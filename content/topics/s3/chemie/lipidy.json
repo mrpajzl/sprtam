@@ -1,0 +1,450 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "lipidy",
+  "title": "Lipidy",
+  "emoji": "🧈",
+  "explanations": [
+    {
+      "title": "Tuky, oleje a membrány",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máslo je pevné, olivový olej tekutý. Z tuku se dá uvařit mýdlo, margarín vzniká „ztužením“ oleje. Každá buňka tvého těla je obalená blankou z tukových molekul a hormony jako testosteron jsou také lipidy."
+        },
+        {
+          "type": "text",
+          "text": "Lipidy jsou pestrá skupina, kterou spojuje jedno: nerozpouštějí se ve vodě, ale v nepolárních rozpouštědlech (benzín, éter)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Lipidy",
+          "definition": "Přírodní látky nerozpustné ve vodě, většinou **estery vyšších mastných kyselin** s alkoholy.",
+          "example": "tuky, oleje, vosky, fosfolipidy; příbuzné jsou steroidy"
+        },
+        {
+          "type": "term",
+          "term": "Mastná kyselina",
+          "definition": "Karboxylová kyselina (–COOH) s dlouhým nevětveným řetězcem, obvykle se sudým počtem uhlíků.",
+          "example": "palmitová (16 C), stearová (18 C), olejová (18 C, 1 dvojná vazba)"
+        },
+        {
+          "type": "term",
+          "term": "Nasycená a nenasycená",
+          "definition": "**Nasycená** mastná kyselina má jen jednoduché vazby C–C. **Nenasycená** má aspoň jednu dvojnou vazbu.",
+          "example": "stearová nasycená; olejová (1 C=C), linolová (2 C=C) nenasycené"
+        },
+        {
+          "type": "term",
+          "term": "Triacylglycerol (tuk)",
+          "definition": "Ester **glycerolu** (alkoholu se 3 skupinami –OH) a **tří** mastných kyselin."
+        },
+        {
+          "type": "heading",
+          "text": "Proč je máslo pevné a olej tekutý"
+        },
+        {
+          "type": "text",
+          "text": "Nasycené řetězce jsou rovné jako tužky – dají se těsně naskládat, drží u sebe → **pevný** tuk (živočišné tuky). Dvojná vazba v **cis** uspořádání řetězec **zalomí**. Zalomené řetězce se nenaskládají → **kapalný** olej (rostlinné oleje)."
+        },
+        {
+          "type": "example",
+          "question": "Jak se z oleje vyrobí pevný margarín?",
+          "answer": "**Ztužováním** = hydrogenací: na dvojné vazby se aduje vodík (katalyzátor nikl). Řetězce se narovnají a tuk ztuhne. Není to oxidace, ale **adice vodíku**."
+        },
+        {
+          "type": "heading",
+          "text": "Mýdlo"
+        },
+        {
+          "type": "term",
+          "term": "Zmýdelnění",
+          "definition": "Rozklad tuku hydroxidem (např. NaOH). Vznikne **glycerol** a **sodné soli mastných kyselin** = mýdlo."
+        },
+        {
+          "type": "text",
+          "text": "Molekula mýdla má „hlavu“, která má ráda vodu (–COO⁻Na⁺), a dlouhý „ocas“, který má rád tuk. Ocasy obalí mastnotu a hlavy ji odnesou do vody."
+        },
+        {
+          "type": "heading",
+          "text": "Membrány a steroidy"
+        },
+        {
+          "type": "term",
+          "term": "Fosfolipid",
+          "definition": "Jako tuk, ale místo třetí mastné kyseliny má fosfátovou skupinu. **Hydrofilní** (vodu milující) **hlava** a dva **hydrofobní** (vodu odpuzující) **ocasy**."
+        },
+        {
+          "type": "text",
+          "text": "Ve vodě se fosfolipidy srovnají do **dvojvrstvy**: hlavy ven k vodě, ocasy dovnitř k sobě. Tak vzniká **buněčná membrána**."
+        },
+        {
+          "type": "term",
+          "term": "Steroidy",
+          "definition": "Lipidy se základem ze čtyř spojených kruhů.",
+          "example": "cholesterol (membrány, výchozí látka hormonů), testosteron, estrogeny, vitamin D"
+        },
+        {
+          "type": "text",
+          "text": "Spoj lipid s jeho funkcí – otoč kartu."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "triacylglycerol",
+                "back": "zásoba energie, tepelná izolace"
+              },
+              {
+                "front": "fosfolipid",
+                "back": "buněčná membrána"
+              },
+              {
+                "front": "cholesterol",
+                "back": "membrány, výchozí látka hormonů"
+              },
+              {
+                "front": "vosk",
+                "back": "ochranný povlak listů a peří"
+              },
+              {
+                "front": "testosteron",
+                "back": "steroidní hormon"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "V těle"
+        },
+        {
+          "type": "text",
+          "text": "Tuky jsou nejvydatnější zásoba energie (asi 38 kJ/g). Mastné kyseliny se rozkládají **β-oxidací v mitochondriích**. Kyselinu **linolovou** si tělo neumí vyrobit – je **esenciální**, musí být v potravě."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ztužování tuků je oxidace dvojných vazeb.",
+          "right": "Ztužování je **hydrogenace** – adice vodíku na dvojné vazby.",
+          "why": "Oxidace dvojných vazeb vzdušným kyslíkem je naopak **žluknutí** – tuk se kazí a páchne."
+        },
+        {
+          "type": "summary",
+          "text": "Tuk = ester glycerolu a 3 mastných kyselin. Nenasycené (cis) → kapalné oleje. Ztužování = hydrogenace, zmýdelnění → glycerol + mýdlo. Fosfolipidy tvoří membránu, steroidy jsou hormony."
+        }
+      ]
+    },
+    {
+      "title": "Chemicky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Lipidy se nedefinují jednou funkční skupinou, ale vlastností – nerozpustností ve vodě. Uvnitř skupiny je ale jasný řád: podle toho, z čeho se molekula skládá, ji zařadíš a předpovíš její chování."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ester",
+          "definition": "Produkt reakce kyseliny s alkoholem za odštěpení vody: R–COO–R′."
+        },
+        {
+          "type": "term",
+          "term": "Vyšší mastné kyseliny",
+          "definition": "Karboxylové kyseliny s 12 a více uhlíky v nevětveném řetězci."
+        },
+        {
+          "type": "term",
+          "term": "Hydrofilní a hydrofobní",
+          "definition": "**Hydrofilní** část je polární a „má ráda“ vodu. **Hydrofobní** je nepolární a vodu odpuzuje."
+        },
+        {
+          "type": "term",
+          "term": "Hydrogenace",
+          "definition": "Adice vodíku na násobnou vazbu (katalyzátor Ni, Pt)."
+        },
+        {
+          "type": "heading",
+          "text": "Mastné kyseliny"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kyselina",
+            "Počet C",
+            "Dvojné vazby",
+            "Poznámka"
+          ],
+          "rows": [
+            [
+              "palmitová",
+              "16",
+              "0",
+              "nasycená"
+            ],
+            [
+              "stearová",
+              "18",
+              "0",
+              "nasycená"
+            ],
+            [
+              "olejová",
+              "18",
+              "1",
+              "olivový olej"
+            ],
+            [
+              "linolová",
+              "18",
+              "2",
+              "esenciální"
+            ],
+            [
+              "linolenová",
+              "18",
+              "3",
+              "omega-3, esenciální"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Dělení lipidů"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Jednoduché**: tuky a oleje (triacylglyceroly = glycerol + 3 mastné kyseliny), vosky (vyšší mastná kyselina + vyšší jednosytný alkohol).",
+            "**Složené**: fosfolipidy (glycerol + 2 mastné kyseliny + fosfát + další skupina, např. cholin v lecithinu).",
+            "**Izoprenoidy a steroidy** (lipidům příbuzné): cholesterol, steroidní hormony, vitamin D, žlučové kyseliny."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik molekul mastných kyselin je v jedné molekule triacylglycerolu?",
+          "answer": "Glycerol má **3** skupiny –OH, na každou se esterovou vazbou naváže jedna mastná kyselina → **3** (proto „tri-acyl“)."
+        },
+        {
+          "type": "heading",
+          "text": "Reakce tuků"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Hydrolýza** (enzymy lipázy v trávení): tuk + 3 H₂O → glycerol + 3 mastné kyseliny.",
+            "**Zmýdelnění**: tuk + 3 NaOH → glycerol + 3 sodné soli mastných kyselin (mýdlo).",
+            "**Hydrogenace (ztužování)**: adice H₂ na C=C → pevný tuk.",
+            "**Žluknutí**: oxidace a hydrolýza vzduchem, světlem, mikroorganismy → nepříjemný pach."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď děje podle toho, co se s tukem děje."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "adice vodíku",
+              "štěpení esterové vazby",
+              "oxidace"
+            ],
+            "items": [
+              {
+                "text": "výroba margarínu",
+                "group": 0
+              },
+              {
+                "text": "ztužování oleje",
+                "group": 0
+              },
+              {
+                "text": "výroba mýdla",
+                "group": 1
+              },
+              {
+                "text": "trávení lipázou",
+                "group": 1
+              },
+              {
+                "text": "zmýdelnění",
+                "group": 1
+              },
+              {
+                "text": "žluknutí másla",
+                "group": 2
+              },
+              {
+                "text": "β-oxidace v mitochondrii",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Fosfolipidová dvojvrstva"
+        },
+        {
+          "type": "example",
+          "question": "Proč fosfolipidy ve vodě samy vytvoří dvojvrstvu?",
+          "answer": "Mají **hydrofilní hlavu** (fosfát) a **hydrofobní ocasy** (mastné kyseliny). Hlavy se natočí k vodě, ocasy se před vodou „schovají“ k sobě dovnitř. Výsledkem je dvojvrstva – základ biologických membrán."
+        },
+        {
+          "type": "heading",
+          "text": "Metabolismus"
+        },
+        {
+          "type": "text",
+          "text": "Mastné kyseliny se v **mitochondriích** odbourávají **β-oxidací** – řetězec se zkracuje vždy o 2 uhlíky (acetyl-CoA), ten jde do Krebsova cyklu. Tuky dávají asi 38 kJ/g, dvakrát víc než sacharidy."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rostlinné oleje jsou kapalné, protože mají kratší mastné kyseliny.",
+          "right": "Jsou kapalné, protože obsahují více **nenasycených** mastných kyselin s dvojnými vazbami v **cis** poloze.",
+          "why": "Stearová i olejová kyselina mají 18 uhlíků. Rozdíl je v dvojné vazbě, která řetězec zalomí a brání těsnému uspořádání."
+        },
+        {
+          "type": "summary",
+          "text": "Lipidy: jednoduché (tuky, vosky), složené (fosfolipidy), steroidy. Tuk = glycerol + 3 mastné kyseliny. Hydrolýza, zmýdelnění, hydrogenace, žluknutí. β-oxidace v mitochondriích."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co jsou tuky chemicky?",
+      "options": [
+        "estery glycerolu a vyšších mastných kyselin",
+        "polymery glukózy",
+        "polypeptidy",
+        "soli mastných kyselin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co vzniká zmýdelněním tuku hydroxidem sodným?",
+      "options": [
+        "glycerol a sodné soli mastných kyselin (mýdlo)",
+        "glukóza",
+        "aminokyseliny",
+        "cholesterol"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kolik dvojných vazeb má kyselina olejová?",
+      "options": [
+        "1",
+        "0",
+        "2",
+        "3"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Kyselina linolová je esenciální – tělo si ji neumí vyrobit.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Ztužování tuků je oxidace dvojných vazeb.",
+      "answer": false,
+      "explanation": "Je to hydrogenace – adice vodíku."
+    },
+    {
+      "type": "choice",
+      "question": "Kde probíhá β-oxidace mastných kyselin?",
+      "options": [
+        "v mitochondriích",
+        "v jádře",
+        "na ribozomech",
+        "v Golgiho aparátu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj lipid s funkcí.",
+      "pairs": [
+        [
+          "triacylglycerol",
+          "zásoba energie"
+        ],
+        [
+          "fosfolipid",
+          "buněčná membrána"
+        ],
+        [
+          "cholesterol",
+          "membrány, výchozí látka hormonů"
+        ],
+        [
+          "vosk",
+          "ochranný povlak listů a peří"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která látka patří mezi steroidy?",
+      "options": [
+        "testosteron",
+        "glycerol",
+        "kyselina olejová",
+        "lecithin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Proč fosfolipidy tvoří ve vodě dvojvrstvu?",
+      "options": [
+        "mají hydrofilní hlavu a hydrofobní ocasy",
+        "jsou iontové",
+        "jsou nerozpustné celé",
+        "jsou to bílkoviny"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik molekul mastných kyselin je v jedné molekule triacylglycerolu?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Proč jsou rostlinné oleje kapalné a živočišné tuky pevné?",
+      "answer": "Oleje obsahují více nenasycených mastných kyselin s dvojnými vazbami v cis uspořádání. Řetězce jsou zalomené, nemohou se těsně uspořádat, a proto mají nižší teplotu tání."
+    },
+    {
+      "type": "open",
+      "question": "Jaké biologické funkce mají lipidy?",
+      "answer": "Jsou zásobou energie, tepelně izolují a chrání orgány. Fosfolipidy a cholesterol tvoří membrány. Steroidy jsou hormony a vitamin D, tuky rozpouštějí vitaminy A, D, E, K."
+    }
+  ]
+}

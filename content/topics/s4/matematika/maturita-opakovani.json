@@ -1,0 +1,416 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "maturita-opakovani",
+  "title": "Opakování k maturitě",
+  "emoji": "🎓",
+  "generator": "percent",
+  "explanations": [
+    {
+      "title": "Kartičky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Maturitní test míchá všechno, co ses za čtyři roky naučil. Většina úloh ale stojí na pár desítkách vzorců. Když je umíš **vybavit a použít**, máš polovinu vyhráno."
+        },
+        {
+          "type": "text",
+          "text": "Tady je projdeš po tématech – u každého připomenutí, co znamená, a řešený příklad."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Aktivní opakování",
+          "definition": "Nejdřív si vzorec zkusíš vybavit sám, teprve potom zkontroluješ. Paměť si ho tak upevní mnohem lépe než opakované čtení."
+        },
+        {
+          "type": "term",
+          "term": "Procento",
+          "definition": "Setina celku. p % z čísla = číslo · p/100.",
+          "example": "15 % z 240 = 240 · 0,15 = 36."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "text",
+          "text": "Ke každé kartičce si nejdřív řekni odpověď nahlas, pak ji otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Kořeny ax² + bx + c = 0",
+                "back": "x = (−b ± √D)/(2a), D = b² − 4ac"
+              },
+              {
+                "front": "logₐ x = y znamená",
+                "back": "aʸ = x (a > 0, a ≠ 1, x > 0)"
+              },
+              {
+                "front": "Aritmetická posloupnost aₙ",
+                "back": "a₁ + (n − 1)d"
+              },
+              {
+                "front": "Geometrická posloupnost aₙ",
+                "back": "a₁ · qⁿ⁻¹"
+              },
+              {
+                "front": "Kombinační číslo C(n, k)",
+                "back": "n! / (k!(n − k)!)"
+              },
+              {
+                "front": "Vzdálenost bodů",
+                "back": "√((x₂ − x₁)² + (y₂ − y₁)²)"
+              },
+              {
+                "front": "Objem válce",
+                "back": "V = πr²v"
+              },
+              {
+                "front": "(xⁿ)′",
+                "back": "n · xⁿ⁻¹"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Rychlé příklady napříč tématy"
+        },
+        {
+          "type": "example",
+          "question": "log₂ 64 = ? a x² − 9 = 0 (kladný kořen)?",
+          "answer": "2 na kolikátou je 64? 2⁶ = 64 → **6**. x² = 9 → x = ±3, kladný **3**."
+        },
+        {
+          "type": "example",
+          "question": "Aritmetická posloupnost a₁ = 5, d = 2. a₂₀ = ?",
+          "answer": "a₂₀ = 5 + 19 · 2 = **43** (z 1. na 20. člen je 19 kroků)."
+        },
+        {
+          "type": "example",
+          "question": "C(7, 2) = ? Vzdálenost bodů [1; 2] a [4; 6]?",
+          "answer": "C(7, 2) = 7 · 6 / 2 = **21**. Vzdálenost √(3² + 4²) = **5**."
+        },
+        {
+          "type": "text",
+          "text": "Vzdálenost bodů je Pythagorova věta: rozdíly souřadnic 3 a 4 jsou odvěsny. Ověř na obrázku."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 3,
+            "b": 4
+          }
+        },
+        {
+          "type": "example",
+          "question": "f(x) = x⁴, f′(1) = ? Válec r = 3, v = 2: objem?",
+          "answer": "f′(x) = 4x³, f′(1) = **4**. V = π · 9 · 2 = **18π**."
+        },
+        {
+          "type": "example",
+          "question": "P(na kostce padne víc než 4) = ? sin 90° = ?",
+          "answer": "Příznivé 5 a 6: 2/6 = **1/3**. sin 90° = **1** (bod na jednotkové kružnici úplně nahoře)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "a₂₀ = a₁ + 20d",
+          "right": "a₂₀ = a₁ + 19d",
+          "why": "Mezi prvním a dvacátým členem je jen 19 kroků. Stejná past je u geometrické posloupnosti: qⁿ⁻¹, ne qⁿ."
+        },
+        {
+          "type": "summary",
+          "text": "Vzorce opakuj aktivně: nejdřív zkus, pak otoč. U posloupností pozor na n − 1, u vzdálenosti si vybav Pythagorovu větu."
+        }
+      ]
+    },
+    {
+      "title": "Strategie a pasti",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Spousta bodů se u maturity neztratí kvůli neznalosti, ale kvůli **pastem**: zapomenuté podmínce, špatně pochopeným procentům, chybějící zkoušce. Tady je přehled nejčastějších a postup, jak se jim vyhnout."
+        },
+        {
+          "type": "text",
+          "text": "Dobrá strategie ti ušetří čas i nervy – a hodí se u každé písemky, nejen u maturity."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Definiční obor a podmínky",
+          "definition": "Čísla, která smíš do výrazu dosadit. Hlídej tři věci: jmenovatel ≠ 0, výraz pod sudou odmocninou ≥ 0, výraz v logaritmu > 0.",
+          "example": "ln(x + 1): x + 1 > 0 → x > −1, D(f) = (−1; ∞)."
+        },
+        {
+          "type": "term",
+          "term": "Zkouška",
+          "definition": "Dosazení výsledku do původního zadání. Nutná po úpravách, které mohou přidat falešné řešení (např. umocnění obou stran)."
+        },
+        {
+          "type": "term",
+          "term": "Procentní změna",
+          "definition": "Zvýšení o p % = násobení (1 + p/100), snížení o p % = násobení (1 − p/100).",
+          "example": "−20 % → · 0,8; +20 % → · 1,2."
+        },
+        {
+          "type": "heading",
+          "text": "Postup u každé úlohy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti zadání dvakrát a podtrhni, co se hledá.",
+            "Napiš podmínky (jmenovatel, odmocnina, logaritmus).",
+            "Načrtni obrázek nebo graf.",
+            "Vyřeš a udělej zkoušku nebo aspoň odhad.",
+            "Zkontroluj jednotky, zaokrouhlení a jestli odpovídáš na otázku."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Past s procenty"
+        },
+        {
+          "type": "example",
+          "question": "Cena klesne o 20 %, pak vzroste o 20 %. Kolik % původní ceny je výsledek?",
+          "answer": "100 Kč · 0,8 = 80 Kč. 80 · 1,2 = 96 Kč. Výsledek **96 %**. Zdražení se počítá z menší, už zlevněné částky."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na tři ceny: původní, po slevě a po zdražení. Poslední sloupec nedosáhne prvního."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Kč",
+            "items": [
+              {
+                "label": "původně",
+                "value": 100
+              },
+              {
+                "label": "po −20 %",
+                "value": 80
+              },
+              {
+                "label": "pak +20 %",
+                "value": 96
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "−20 % a pak +20 % = zpátky na 100 %.",
+          "right": "0,8 · 1,2 = 0,96 → 96 %",
+          "why": "Procenta se pokaždé počítají z jiného základu. Změny se proto násobí, nesčítají."
+        },
+        {
+          "type": "heading",
+          "text": "Past s podmínkami"
+        },
+        {
+          "type": "example",
+          "question": "Urči D(f) pro f(x) = ln(x + 1).",
+          "answer": "Logaritmus jen z kladného čísla: x + 1 > 0 → x > −1. **D(f) = (−1; ∞)** – kulatá závorka, −1 tam nepatří."
+        },
+        {
+          "type": "heading",
+          "text": "Rozpoznej typ úlohy"
+        },
+        {
+          "type": "text",
+          "text": "Než začneš počítat, zařaď úlohu – hned víš, které vzorce vytáhnout. Roztřiď témata:"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "algebra",
+              "geometrie",
+              "analýza"
+            ],
+            "items": [
+              {
+                "text": "kvadratická rovnice",
+                "group": 0
+              },
+              {
+                "text": "logaritmus",
+                "group": 0
+              },
+              {
+                "text": "posloupnost",
+                "group": 0
+              },
+              {
+                "text": "objem kužele",
+                "group": 1
+              },
+              {
+                "text": "rovnice přímky",
+                "group": 1
+              },
+              {
+                "text": "kosinová věta",
+                "group": 1
+              },
+              {
+                "text": "derivace",
+                "group": 2
+              },
+              {
+                "text": "limita",
+                "group": 2
+              },
+              {
+                "text": "integrál",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Drobnost, která se ráda objevuje: geometrická posloupnost s q = 1 (např. 5, 5, 5, …) je zároveň aritmetická s d = 0."
+        },
+        {
+          "type": "summary",
+          "text": "Vždy: podmínky → náčrt → výpočet → zkouška. Procentní změny násob (0,8 · 1,2 = 0,96). Jmenovatel ≠ 0, pod odmocninou ≥ 0, v logaritmu > 0."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik je 15 % z 240?",
+      "answers": [
+        "36"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "log₂ 64 =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "x² − 9 = 0. Kladný kořen x =",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "sin 90° =",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Aritmetická posloupnost a₁ = 5, d = 2. a₂₀ =",
+      "answers": [
+        "43"
+      ],
+      "explanation": "5 + 19 · 2"
+    },
+    {
+      "type": "input",
+      "question": "C(7, 2) =",
+      "answers": [
+        "21"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Vzdálenost bodů [1; 2] a [4; 6] =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Cena klesne o 20 %, pak vzroste o 20 %. Kolik % původní ceny je výsledek?",
+      "answers": [
+        "96"
+      ],
+      "explanation": "0,8 · 1,2 = 0,96"
+    },
+    {
+      "type": "choice",
+      "question": "D(f) pro f(x) = ln(x + 1):",
+      "options": [
+        "(−1; ∞)",
+        "⟨−1; ∞)",
+        "(0; ∞)",
+        "ℝ"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "f(x) = x⁴. f′(1) =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Geometrická posloupnost s q = 1 je zároveň aritmetická.",
+      "answer": true,
+      "explanation": "Konstantní posloupnost, d = 0."
+    },
+    {
+      "type": "input",
+      "question": "Válec r = 3, v = 2. Objem = k·π, k =",
+      "answers": [
+        "18"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "P(na kostce padne číslo větší než 4) =",
+      "answers": [
+        "1/3",
+        "2/6"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Na co si dát pozor při řešení rovnic s neznámou ve jmenovateli, pod odmocninou nebo v logaritmu?",
+      "answer": "Stanovit podmínky: jmenovatel ≠ 0, výraz pod sudou odmocninou ≥ 0, argument logaritmu > 0. U neekvivalentních úprav (umocnění) udělat zkoušku."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, proč zlevnění o 20 % a následné zdražení o 20 % nevrátí původní cenu.",
+      "answer": "Zdražení se počítá z nižší, už zlevněné ceny. Výsledek je 0,8 · 1,2 = 0,96, tedy 96 % původní ceny."
+    }
+  ]
+}

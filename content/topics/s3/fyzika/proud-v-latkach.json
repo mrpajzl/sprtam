@@ -1,0 +1,423 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "proud-v-latkach",
+  "title": "Proud v kapalinách, plynech a polovodičích",
+  "emoji": "🧪",
+  "explanations": [
+    {
+      "title": "Kde teče proud",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proud neteče jen v drátech. Teče roztokem v autobaterii, vzduchem při blesku i malinkým čipem v mobilu. Pokaždé ho ale nese něco jiného a pokaždé se chová trochu jinak."
+        },
+        {
+          "type": "text",
+          "text": "Díky tomu umíme pozlacovat šperky, vyrábět hliník, svítit zářivkami a stavět počítače z křemíku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Nosič náboje",
+          "definition": "Částice s nábojem, která se může pohybovat a tím vytvářet proud.",
+          "example": "V kovech elektrony, v roztocích ionty."
+        },
+        {
+          "type": "term",
+          "term": "Ion (kationt, aniont)",
+          "definition": "Atom nebo molekula, která má elektronů navíc nebo méně, a je tedy nabitá. **Kationt** je kladný, **aniont** záporný.",
+          "example": "Kuchyňská sůl ve vodě se rozpadne na kationty Na⁺ a anionty Cl⁻."
+        },
+        {
+          "type": "term",
+          "term": "Elektrolyt",
+          "definition": "Kapalina, která vede proud, protože obsahuje ionty.",
+          "example": "Slaná voda, kyselina v autobaterii."
+        },
+        {
+          "type": "term",
+          "term": "Elektrody: katoda a anoda",
+          "definition": "Vodiče ponořené do elektrolytu. **Katoda** je připojená k zápornému pólu, **anoda** ke kladnému. Kationty putují ke katodě, anionty k anodě."
+        },
+        {
+          "type": "heading",
+          "text": "Kapaliny: elektrolýza"
+        },
+        {
+          "type": "text",
+          "text": "Když proud prochází elektrolytem, na elektrodách se vylučují látky. Kationty mědi Cu²⁺ přijdou ke katodě, převezmou elektrony a usadí se jako vrstvička kovové mědi. To je **elektrolýza**."
+        },
+        {
+          "type": "text",
+          "text": "Čím větší proud a čím déle teče, tím víc látky se vyloučí. Toho se využívá při **galvanickém pokovování** (pozlacení, pochromování), čištění mědi i výrobě hliníku."
+        },
+        {
+          "type": "heading",
+          "text": "Plyny: výboje"
+        },
+        {
+          "type": "text",
+          "text": "Vzduch je normálně izolant. Při velkém napětí se ale molekuly rozbijí na ionty a elektrony, které se srážkami lavinovitě množí – plynem projde proud. To je **výboj**. Když se udržuje sám i bez vnějšího ionizátoru, je **samostatný**."
+        },
+        {
+          "type": "text",
+          "text": "Druhy: **jiskrový** (blesk, jiskra), **obloukový** (svařování – oslnivé světlo a velké teplo), **doutnavý** (neonová trubice, zářivka – za nízkého tlaku), **koróna** (slabé světélkování na hrotech vedení vysokého napětí)."
+        },
+        {
+          "type": "heading",
+          "text": "Polovodiče"
+        },
+        {
+          "type": "term",
+          "term": "Polovodič",
+          "definition": "Látka, která za nízké teploty skoro nevede, ale při zahřátí nebo osvětlení vede čím dál lépe.",
+          "example": "Křemík (Si) – základ všech čipů."
+        },
+        {
+          "type": "term",
+          "term": "Díra",
+          "definition": "Prázdné místo po elektronu, který z vazby utekl. Sousední elektron do něj „skočí“ a díra se posune. Chová se jako kladný nosič náboje."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď zařízení podle toho, v jakém prostředí v nich teče proud."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "kapaliny (elektrolyty)",
+              "plyny",
+              "polovodiče"
+            ],
+            "items": [
+              {
+                "text": "galvanické pokovování",
+                "group": 0
+              },
+              {
+                "text": "akumulátor",
+                "group": 0
+              },
+              {
+                "text": "blesk",
+                "group": 1
+              },
+              {
+                "text": "zářivka",
+                "group": 1
+              },
+              {
+                "text": "svařování obloukem",
+                "group": 1
+              },
+              {
+                "text": "dioda",
+                "group": 2
+              },
+              {
+                "text": "tranzistor",
+                "group": 2
+              },
+              {
+                "text": "solární článek",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Přidáním nepatrného množství jiné látky (**příměsi**) vznikne polovodič **typu N** (víc volných elektronů, např. fosfor v křemíku) nebo **typu P** (víc děr, např. bor v křemíku). Kde se P a N stýkají, vznikne **přechod PN** – propustí proud jen jedním směrem. To je **dioda**. Tranzistor má dva přechody PN a umí proud zesilovat a spínat."
+        },
+        {
+          "type": "example",
+          "question": "Kolik náboje projde elektrolytem, teče-li proud 5 A po dobu 10 minut?",
+          "answer": "Q = I · t = 5 A · 600 s = **3 000 C**."
+        },
+        {
+          "type": "example",
+          "question": "Proč fosfor v křemíku vytvoří polovodič typu N?",
+          "answer": "Křemík má 4 valenční (vnější) elektrony, fosfor 5. Čtyři se zapojí do vazeb, pátý je volný. Přibudou tak volné **elektrony** = záporné nosiče = typ **N**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V elektrolytu nesou proud elektrony jako v drátu.",
+          "right": "V elektrolytu nesou proud ionty – kationty i anionty.",
+          "why": "Proto se při elektrolýze přenáší látka a na elektrodách se něco vylučuje. V kovovém drátu se látka nepřenáší."
+        },
+        {
+          "type": "summary",
+          "text": "Elektrolyt: ionty, elektrolýza. Plyn: ionty a elektrony, výboje. Polovodič: elektrony a díry; příměsi dávají typ N a P, přechod PN vede jedním směrem."
+        }
+      ]
+    },
+    {
+      "title": "Vztahy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Firma pozlacuje hodinky. Kolik zlata se usadí za hodinu při daném proudu? Inženýr navrhuje solární článek – jaký polovodič použít? Tady jsou pravidla, podle kterých se to počítá a vysvětluje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektrický proud a náboj",
+          "definition": "Proud I (A) je náboj za sekundu, proto náboj `Q = I · t` (C)."
+        },
+        {
+          "type": "term",
+          "term": "Ionty a elektrolyt",
+          "definition": "Ionty jsou nabité atomy či molekuly (kationty +, anionty −). Elektrolyt je kapalina s ionty – vede proud. Kationty jdou ke **katodě** (−), anionty k **anodě** (+)."
+        },
+        {
+          "type": "term",
+          "term": "Elektrolýza",
+          "definition": "Chemické změny na elektrodách při průchodu proudu elektrolytem – vylučuje se látka."
+        },
+        {
+          "type": "term",
+          "term": "Elektrochemický ekvivalent A",
+          "definition": "Kolik kg látky se vyloučí, když projde 1 C náboje. Jednotka kg/C. Pro měď 3,3 · 10⁻⁷ kg/C."
+        },
+        {
+          "type": "term",
+          "term": "Faradayova konstanta F",
+          "definition": "Náboj jednoho molu elementárních nábojů: `F ≈ 96 500 C/mol` (přesněji 96 485)."
+        },
+        {
+          "type": "heading",
+          "text": "Faradayovy zákony elektrolýzy"
+        },
+        {
+          "type": "text",
+          "text": "1. zákon: `m = A · I · t = A · Q`. Hmotnost vyloučené látky je úměrná prošlému náboji."
+        },
+        {
+          "type": "text",
+          "text": "2. zákon: `A = M_m / (F · z)`, kde M_m je molární hmotnost a z počet elementárních nábojů iontu (u Cu²⁺ je z = 2)."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej náboj Q = I · t (čas v sekundách).",
+            "Vynásob elektrochemickým ekvivalentem: m = A · Q.",
+            "Výsledek je v kg – převeď na g (× 1 000)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Měď (A = 3,3 · 10⁻⁷ kg/C), proud 2 A po dobu 1 000 s. Kolik mědi se vyloučí?",
+          "answer": "Q = 2 · 1 000 = 2 000 C. m = 3,3 · 10⁻⁷ · 2 000 = 6,6 · 10⁻⁴ kg = **0,66 g**."
+        },
+        {
+          "type": "heading",
+          "text": "Proud v plynech"
+        },
+        {
+          "type": "text",
+          "text": "Plyn vede, jen když v něm jsou ionty a elektrony. **Nesamostatný výboj** potřebuje vnější ionizátor (plamen, záření). **Samostatný výboj** si nosiče vyrábí sám nárazy urychlených částic."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Výboj",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "jiskrový",
+              "blesk"
+            ],
+            [
+              "obloukový",
+              "svařování"
+            ],
+            [
+              "doutnavý",
+              "neonová trubice"
+            ],
+            [
+              "koróna",
+              "výboj na hrotech vedení"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Polovodiče"
+        },
+        {
+          "type": "term",
+          "term": "Vlastní a příměsová vodivost",
+          "definition": "**Vlastní**: v čistém polovodiči teplo uvolní elektrony a vzniknou stejně početné díry; vodivost s teplotou **roste**. **Příměsová**: příměs dodá elektrony (donor → typ N) nebo vytvoří díry (akceptor → typ P)."
+        },
+        {
+          "type": "text",
+          "text": "Spáruj si v hlavě a pak otoč karty."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "P (fosfor) v Si",
+                "back": "donor → typ N, nosiče elektrony"
+              },
+              {
+                "front": "B (bor) v Si",
+                "back": "akceptor → typ P, nosiče díry"
+              },
+              {
+                "front": "přechod PN",
+                "back": "propouští proud jen v propustném směru (dioda)"
+              },
+              {
+                "front": "tranzistor",
+                "back": "dva přechody PN, zesiluje a spíná"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik coulombů projde při proudu 5 A za 10 minut?",
+          "answer": "10 min = 600 s. Q = 5 · 600 = **3 000 C**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Polovodič vede stejně jako kov a jeho odpor s teplotou roste.",
+          "right": "Vodivost polovodiče s teplotou roste (odpor klesá).",
+          "why": "V polovodiči teplo uvolňuje další nosiče náboje. V kovu jsou nosiče stále stejné a teplo jim jen víc překáží."
+        },
+        {
+          "type": "summary",
+          "text": "`m = A·I·t`, `A = M_m/(F·z)`, F ≈ 96 500 C/mol. Výboje v plynech. Polovodič: N = elektrony, P = díry, přechod PN vede jedním směrem."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Elektrolýza mědi: A = 3,3 · 10⁻⁷ kg/C, I = 2 A, t = 1 000 s. Hmotnost mědi v g =",
+      "answers": [
+        "0,66"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik coulombů projde elektrolytem při proudu 5 A za 10 minut?",
+      "answers": [
+        "3000"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co jsou nosiče proudu v elektrolytu?",
+      "options": [
+        "kationty a anionty",
+        "jen elektrony",
+        "díry",
+        "neutrony"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "K jaké elektrodě putují kationty?",
+      "options": [
+        "ke katodě",
+        "k anodě"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký typ polovodiče vznikne přidáním fosforu do křemíku?",
+      "options": [
+        "typ N",
+        "typ P",
+        "izolant"
+      ],
+      "answer": 0,
+      "explanation": "Fosfor má 5 valenčních elektronů, jeden je volný."
+    },
+    {
+      "type": "truefalse",
+      "question": "Vodivost vlastního polovodiče s teplotou roste.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Blesk je samostatný výboj v plynu.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj výboj s příkladem.",
+      "pairs": [
+        [
+          "jiskrový",
+          "blesk"
+        ],
+        [
+          "obloukový",
+          "svařování"
+        ],
+        [
+          "doutnavý",
+          "neonová trubice"
+        ],
+        [
+          "koróna",
+          "výboj na hrotech vedení"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je tranzistor?",
+      "options": [
+        "polovodičová součástka se dvěma přechody PN, zesiluje a spíná",
+        "cívka s jádrem",
+        "kondenzátor"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Faradayova konstanta v C/mol (zaokrouhleně na stovky) =",
+      "answers": [
+        "96500"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co je elektrolýza a kde se využívá?",
+      "answer": "Chemické změny na elektrodách při průchodu proudu elektrolytem. Využití: galvanické pokovování, rafinace mědi, výroba hliníku, akumulátory."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli vlastní a příměsovou vodivost polovodičů.",
+      "answer": "Vlastní: tepelně se uvolňují elektrony a vznikají díry ve stejném počtu. Příměsová: donory (typ N) dodávají elektrony, akceptory (typ P) vytvářejí díry."
+    }
+  ]
+}

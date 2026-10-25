@@ -1,0 +1,441 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "desetinna-cisla-pocitani",
+  "title": "Počítání s desetinnými čísly",
+  "emoji": "🧮",
+  "generator": "decimal",
+  "explanations": [
+    {
+      "title": "V obchodě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V obchodě kupuješ rohlík za 2,50 Kč a sešit za 12,50 Kč. Kolik zaplatíš? Kolik ti vrátí z 20 Kč? Kolik stojí 4 sešity?"
+        },
+        {
+          "type": "text",
+          "text": "Na to potřebuješ umět s desetinnými čísly sčítat, odčítat, násobit a dělit. Pravidla jsou skoro stejná jako u celých čísel. Jen musíš hlídat, kde je čárka."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desetinné místo",
+          "definition": "Jedna číslice za desetinnou čárkou. Kolik číslic je za čárkou, tolik má číslo desetinných míst.",
+          "example": "2,5 má 1 desetinné místo, 1,25 má 2 desetinná místa."
+        },
+        {
+          "type": "term",
+          "term": "Činitel",
+          "definition": "Číslo, které násobíš. Výsledek násobení je **součin**.",
+          "example": "V 3 · 2,5 = 7,5 jsou 3 a 2,5 činitelé, 7,5 je součin."
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání a odčítání: koruny pod koruny"
+        },
+        {
+          "type": "text",
+          "text": "Koruny sčítáš s korunami a haléře s haléři. Proto čísla pod sebe píšeš tak, aby **čárka byla pod čárkou**."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🥖",
+            "🥖",
+            "🥖"
+          ],
+          "caption": "2,50 + 2,50 + 2,50 = 7,50 Kč"
+        },
+        {
+          "type": "text",
+          "text": "Připomenutí: pod sebou počítáš zprava, sloupec po sloupci. Když ve sloupci vyjde 10 a víc, napíšeš jednotky a **1 si pamatuješ** do dalšího sloupce vlevo. Odčítáš **doplňováním**: „dolní číslice a kolik je horní?“"
+        },
+        {
+          "type": "text",
+          "text": "Rohlík za 2,50 Kč a sešit za 12,50 Kč. Klepej na **Další krok** a počítej se mnou. Čárka ve výsledku stojí pod čárkami."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": "12,50",
+            "b": "2,50",
+            "op": "+"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Těžší: 4,5 − 1,25. Číslo 4,5 má jen desetiny, tak si doplníš nulu: 4,50 (ve výpočtu je světlejší). Pak doplňuješ: „5 a kolik je 10?“"
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": "4,5",
+            "b": "1,25",
+            "op": "-"
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "3,7 + 2,45 = 5,52 (3 + 2 = 5 a 7 + 45 = 52)",
+          "right": "3,70 + 2,45 = 6,15",
+          "why": "7 v čísle 3,7 jsou desetiny (70 setin), ne setiny. Doplň nulu a zarovnej čárku pod čárku: 70 + 45 setin = 115 setin = 1,15."
+        },
+        {
+          "type": "heading",
+          "text": "Násobení: kolikrát víc"
+        },
+        {
+          "type": "text",
+          "text": "Sešit stojí 12,50 Kč a kupuješ 4. To je 12,5 · 4. Počítej, jako by čárka nebyla: 125 · 4. Klepej a spočítej to se mnou pod sebou."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 125,
+            "b": 4,
+            "op": "·"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Vyšlo 500. V zadání (12,5) je jedno desetinné místo, takže ho má i výsledek: oddělíš zprava jednu číslici → 50,0 = **50 Kč**."
+        },
+        {
+          "type": "text",
+          "text": "Zkus si na mřížce, že 3 · 4 = 12. Pak si představ, že každá tečka je 0,1. Tečky jsou pořád stejné, jen každá má menší hodnotu: 12 desetin = 1,2. Proto 0,3 · 4 = 1,2."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Dělení: na kolik dílů"
+        },
+        {
+          "type": "text",
+          "text": "Máš 7,50 Kč a dělíš je mezi 3 kamarády. 7,5 : 3 = 2,5. Každý dostane 2,50 Kč."
+        },
+        {
+          "type": "text",
+          "text": "Písemně dělíš úplně stejně jako 75 : 3 – jen v podílu napíšeš čárku ve chvíli, kdy ji v dělenci „přejdeš“: 7 : 3 = 2, zbytek 1. Teď sahám pro číslici za čárkou, takže do podílu píšu čárku: 2, … Připíšu 5 → 15, 15 : 3 = 5. Podíl je **2,5**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik zaplatíš za 4 sešity po 12,50 Kč a kolik ti vrátí z 100 Kč?",
+          "answer": "Cena: 12,5 · 4 = 50 Kč. Vrátí: 100 − 50 = **50 Kč**."
+        },
+        {
+          "type": "heading",
+          "text": "Dvě zkratky"
+        },
+        {
+          "type": "text",
+          "text": "**Krát 10, 100:** 1 Kč je 100 haléřů, takže 2,35 Kč · 100 = 235 haléřů. Čárka se posune o tolik míst doprava, kolik má číslo nul. Při dělení 10, 100 se posune doleva: 7,2 : 10 = 0,72."
+        },
+        {
+          "type": "text",
+          "text": "**Dělení desetinným číslem:** Kolik lahví po 0,9 l naplníš z 6,3 l? Počítej v decilitrech: 63 dl : 9 dl = 7. Posunul jsi čárku u obou čísel o jedno místo – a výsledek se nezměnil."
+        },
+        {
+          "type": "summary",
+          "text": "Při sčítání a odčítání piš čárku pod čárku. Při násobení počítej bez čárek a pak odpočítej desetinná místa. Dělíš desetinným číslem? Posuň čárku u obou čísel stejně."
+        }
+      ]
+    },
+    {
+      "title": "Pravidla s čárkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "S celými čísly už počítat umíš. Desetinná čísla se dají spočítat úplně stejně – stačí vědět, **kam pak dát čárku**. Tady jsou na to čtyři jasná pravidla."
+        },
+        {
+          "type": "text",
+          "text": "Hodí se v obchodě, při vaření podle receptu i při převádění jednotek (metry na centimetry)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desetinné místo",
+          "definition": "Každá číslice za čárkou je jedno desetinné místo.",
+          "example": "0,36 má 2 desetinná místa (3 a 6)."
+        },
+        {
+          "type": "term",
+          "term": "Činitel a součin",
+          "definition": "Čísla, která násobíš, jsou **činitelé**. Výsledek je **součin**.",
+          "example": "1,2 · 0,3 = 0,36 → činitelé 1,2 a 0,3, součin 0,36."
+        },
+        {
+          "type": "term",
+          "term": "Dělenec a dělitel",
+          "definition": "V příkladu a : b je a **dělenec** (co dělíš) a b **dělitel** (čím dělíš).",
+          "example": "V 4,8 : 0,6 je 4,8 dělenec a 0,6 dělitel."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo 1: sčítání a odčítání – čárka pod čárku"
+        },
+        {
+          "type": "term",
+          "term": "Čárka pod čárku",
+          "definition": "Čísla píšeš pod sebe tak, aby **desetinné čárky byly přesně pod sebou**. Pak jsou desetiny pod desetinami a setiny pod setinami. Chybějící místa za čárkou doplníš nulami.",
+          "example": "3,7 pod něj 2,45 → 3,70 a 2,45."
+        },
+        {
+          "type": "text",
+          "text": "Pak počítáš jako s celými čísly: zprava, a když ve sloupci vyjde 10 a víc, napíšeš jednotky a **1 si pamatuješ** do dalšího sloupce. Klepej na **Další krok** a počítej se mnou: 3,7 + 2,45."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": "3,7",
+            "b": "2,45",
+            "op": "+"
+          }
+        },
+        {
+          "type": "text",
+          "text": "Odčítáš **doplňováním**: „dolní číslice a kolik je horní?“ Když to nejde, doplníš do čísla o 10 většího a 1 si pamatuješ k dolní číslici v dalším sloupci. Klepej: 5 − 1,8 (z pětky je 5,0)."
+        },
+        {
+          "type": "widget",
+          "widget": "column",
+          "props": {
+            "a": 5,
+            "b": "1,8",
+            "op": "-"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo 2: násobení"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vynásob čísla, jako by čárky nebyly: 1,2 · 0,3 → 12 · 3 = 36.",
+            "Spočítej desetinná místa obou činitelů: 1 + 1 = 2.",
+            "Ve výsledku oddělíš zprava 2 místa: 0,36.",
+            "Chybí číslice? Doplň zleva nuly: 0,4 · 0,2 → 8 → 0,08."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo 3: krát a děleno 10, 100, 1 000"
+        },
+        {
+          "type": "text",
+          "text": "Násobení a dělení 10, 100, 1 000 je nejjednodušší: jen posuneš čárku. Kolik nul, o tolik míst."
+        },
+        {
+          "type": "table",
+          "head": [
+            "× 10",
+            "× 100",
+            ": 10",
+            ": 100"
+          ],
+          "rows": [
+            [
+              "čárka o 1 doprava",
+              "o 2 doprava",
+              "o 1 doleva",
+              "o 2 doleva"
+            ],
+            [
+              "2,35 → 23,5",
+              "2,35 → 235",
+              "7,2 → 0,72",
+              "7,2 → 0,072"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo 4: dělení desetinným číslem"
+        },
+        {
+          "type": "text",
+          "text": "Dělit 0,6 je nepohodlné. Proto posuneš čárku **u obou čísel o stejný počet míst**, dokud dělitel není celé číslo. Výsledek se tím nezmění."
+        },
+        {
+          "type": "example",
+          "question": "4,8 : 0,6 = ?",
+          "answer": "Dělitel 0,6 má 1 desetinné místo. Posuň čárku o 1 doprava u obou: 48 : 6 = **8**.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 48,
+              "b": 6,
+              "op": ":"
+            }
+          }
+        },
+        {
+          "type": "example",
+          "question": "1,2 · 1,5 = ?",
+          "answer": "Bez čárek: 12 · 15 = 180 (pod sebou to spočítáš jako 15 · 12 – vyjde totéž). Desetinná místa: 1 + 1 = 2. Oddělím 2 místa: 1,80 = **1,8**.",
+          "widget": {
+            "widget": "column",
+            "props": {
+              "a": 15,
+              "b": 12,
+              "op": "·"
+            }
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "0,5 · 0,5 = 2,5",
+          "right": "0,5 · 0,5 = 0,25",
+          "why": "5 · 5 = 25 a obě čísla mají dohromady 2 desetinná místa. Navíc: polovina z poloviny je čtvrtina, ne víc než 2."
+        },
+        {
+          "type": "text",
+          "text": "Pozor na kontrolu odhadem: když násobíš číslem menším než 1, výsledek je **menší** než původní číslo. 8 · 0,5 = 4 (polovina z 8)."
+        },
+        {
+          "type": "summary",
+          "text": "Násobení: bez čárek, pak sečti desetinná místa. × 10 a : 10 posouvá čárku. Při dělení udělej z dělitele celé číslo – čárku posuň u obou čísel stejně."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 3,7 + 2,45 =",
+      "answers": [
+        "6,15"
+      ],
+      "explanation": "3,70 + 2,45 = 6,15",
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": "3,7",
+          "b": "2,45",
+          "op": "+"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "Vypočítej písemně: 5 − 1,8 =",
+      "answers": [
+        "3,2"
+      ],
+      "explanation": "5,0 − 1,8: 8 a kolik je 10? 2, 1 si pamatuji. 1 + 1 = 2, 2 a kolik je 5? 3. Výsledek 3,2.",
+      "widget": {
+        "widget": "column",
+        "props": {
+          "a": 5,
+          "b": "1,8",
+          "op": "-"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "question": "0,4 · 0,2 =",
+      "answers": [
+        "0,08"
+      ],
+      "explanation": "4 · 2 = 8, dvě desetinná místa → 0,08."
+    },
+    {
+      "type": "choice",
+      "question": "2,35 · 100 =",
+      "options": [
+        "235",
+        "23,5",
+        "0,0235",
+        "2350"
+      ],
+      "answer": 0,
+      "explanation": "Násobení 100 posune čárku o 2 místa doprava."
+    },
+    {
+      "type": "input",
+      "question": "7,2 : 10 =",
+      "answers": [
+        "0,72"
+      ],
+      "explanation": "Dělení 10 posune čárku o 1 doleva."
+    },
+    {
+      "type": "input",
+      "question": "6,3 : 0,9 =",
+      "answers": [
+        "7"
+      ],
+      "explanation": "63 : 9 = 7"
+    },
+    {
+      "type": "truefalse",
+      "question": "0,5 · 0,5 = 2,5",
+      "answer": false,
+      "explanation": "5 · 5 = 25, dvě desetinná místa → 0,25."
+    },
+    {
+      "type": "choice",
+      "question": "1,2 · 1,5 =",
+      "options": [
+        "1,8",
+        "18",
+        "0,18",
+        "2,7"
+      ],
+      "answer": 0,
+      "explanation": "12 · 15 = 180, dvě desetinná místa → 1,80."
+    },
+    {
+      "type": "input",
+      "question": "Sešit stojí 12,50 Kč. Kolik Kč zaplatíš za 4 sešity?",
+      "answers": [
+        "50"
+      ],
+      "explanation": "4 · 12,5 = 50"
+    },
+    {
+      "type": "truefalse",
+      "question": "Když násobím číslem menším než 1 (např. 0,5), výsledek je menší.",
+      "answer": true,
+      "explanation": "Násobit 0,5 znamená vzít polovinu."
+    },
+    {
+      "type": "open",
+      "question": "Jak vynásobíš dvě desetinná čísla?",
+      "answer": "Vynásobím je jako celá čísla bez čárek. Pak sečtu desetinná místa obou činitelů a tolik míst oddělím čárkou ve výsledku."
+    },
+    {
+      "type": "open",
+      "question": "Jak vydělíš 2,4 : 0,3?",
+      "answer": "Posunu čárku u obou čísel o jedno místo doprava, aby dělitel byl celé číslo: 24 : 3 = 8."
+    }
+  ]
+}

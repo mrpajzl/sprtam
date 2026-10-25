@@ -1,0 +1,335 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vzory-stredni-rod",
+  "title": "Vzory rodu středního",
+  "emoji": "🐣",
+  "explanations": [
+    {
+      "title": "Tabulka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Říkáš *bez kuřete*, ale *bez moře*. Obě slova končí na -e, a přesto se mění jinak. Proč?"
+        },
+        {
+          "type": "text",
+          "text": "Každé patří k jinému **vzoru**. Střední rod má čtyři vzory. Když je znáš, víš, jak se slovo mění a jak napsat jeho konce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rod střední",
+          "definition": "Připomenutí: podstatná jména, před která řekneš **to**.",
+          "example": "to auto, to kotě"
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Známé slovo, podle kterého se mění jiná slova se stejnými konci.",
+          "example": "*auto* jako *město*: bez města – bez auta"
+        },
+        {
+          "type": "term",
+          "term": "2. pád",
+          "definition": "Připomenutí: *bez koho? bez čeho?*",
+          "example": "bez moře, bez kuřete"
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři vzory rodu středního"
+        },
+        {
+          "type": "table",
+          "head": [
+            "vzor",
+            "konec v 1. pádě",
+            "2. pád",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "město",
+              "-o",
+              "bez města",
+              "auto, okno"
+            ],
+            [
+              "moře",
+              "-e",
+              "bez moře",
+              "pole, srdce"
+            ],
+            [
+              "kuře",
+              "-e/-ě",
+              "bez kuřete",
+              "kotě, štěně"
+            ],
+            [
+              "stavení",
+              "-í",
+              "bez stavení",
+              "náměstí, nádraží"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "*Moře* a *kuře* končí stejně. Rozdíl je ve 2. pádě: u kuřete **přibude -et-** (kuř**ete**), u moře ne."
+        },
+        {
+          "type": "example",
+          "question": "Podle jakého vzoru je „hříbě“?",
+          "answer": "Končí na -ě. Bez **hříběte** – přibylo -et-. Vzor **kuře**."
+        },
+        {
+          "type": "example",
+          "question": "Podle jakého vzoru je „vejce“?",
+          "answer": "Končí na -e. Bez **vejce** – nic nepřibylo. Vzor **moře**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Pole“ je podle vzoru kuře.",
+          "right": "„Pole“ je podle vzoru moře.",
+          "why": "Řekni 2. pád: bez pole (ne „bez polete“). Nic nepřibylo – vzor moře."
+        },
+        {
+          "type": "summary",
+          "text": "Střední rod: město (-o), moře (-e), kuře (-e, ve 2. pádě -ete), stavení (-í)."
+        }
+      ]
+    },
+    {
+      "title": "Mláďata a ostatní",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kuře, kotě, štěně, hříbě, tele – to jsou **mláďata**. A skoro všechna se mění stejně: podle vzoru **kuře**."
+        },
+        {
+          "type": "text",
+          "text": "Tahle nápověda ti ušetří spoustu práce. Pro ostatní slova stačí podívat se na konec."
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Slovo, podle kterého se mění ostatní slova se stejnými konci.",
+          "example": "město, moře, kuře, stavení"
+        },
+        {
+          "type": "term",
+          "term": "Mládě",
+          "definition": "Mladé zvíře. Jeho jméno bývá podle vzoru kuře.",
+          "example": "kotě, štěně, kůzle"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Řekni *to …* – je to střední rod?",
+            "Končí na **-o**? → **město**.",
+            "Končí na **-í**? → **stavení**.",
+            "Končí na **-e/-ě**? Řekni *bez …*: přibude -et- → **kuře**, nepřibude → **moře**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Roztřiď"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "město",
+              "moře",
+              "kuře"
+            ],
+            "items": [
+              {
+                "text": "kolo",
+                "group": 0
+              },
+              {
+                "text": "pole",
+                "group": 1
+              },
+              {
+                "text": "kotě",
+                "group": 2
+              },
+              {
+                "text": "jablko",
+                "group": 0
+              },
+              {
+                "text": "slunce",
+                "group": 1
+              },
+              {
+                "text": "štěně",
+                "group": 2
+              },
+              {
+                "text": "okno",
+                "group": 0
+              },
+              {
+                "text": "srdce",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Podle jakého vzoru je „náměstí“?",
+          "answer": "Končí na **-í** → **stavení**."
+        },
+        {
+          "type": "example",
+          "question": "Podle jakého vzoru je „slunce“?",
+          "answer": "Končí na -e. Bez **slunce** – nic nepřibylo. Vzor **moře**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Letiště“ je podle vzoru kuře, protože končí na -ě.",
+          "right": "„Letiště“ je podle vzoru moře.",
+          "why": "Bez letiště – nic nepřibylo. Nerozhoduje e/ě, ale jestli ve 2. pádě přibude -et-."
+        },
+        {
+          "type": "summary",
+          "text": "-o → město, -í → stavení, -e: přibude -et- (bez kuřete) → kuře, jinak → moře. Mláďata bývají podle vzoru kuře."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru skloňujeme „auto“?",
+      "options": [
+        "město",
+        "moře",
+        "kuře"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru skloňujeme „hříbě“?",
+      "options": [
+        "moře",
+        "kuře",
+        "stavení"
+      ],
+      "answer": 1,
+      "explanation": "Bez hříběte → kuře."
+    },
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru skloňujeme „náměstí“?",
+      "options": [
+        "stavení",
+        "moře",
+        "město"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru skloňujeme „vejce“?",
+      "options": [
+        "kuře",
+        "moře",
+        "město"
+      ],
+      "answer": 1,
+      "explanation": "Bez vejce → moře."
+    },
+    {
+      "type": "input",
+      "question": "Napiš vzor pro slovo „kotě“.",
+      "answers": [
+        "kuře",
+        "kure"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš vzor pro slovo „kolo“.",
+      "answers": [
+        "město",
+        "mesto"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Střední rod má 4 vzory.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„Pole“ se skloňuje podle vzoru kuře.",
+      "answer": false,
+      "explanation": "Bez pole (ne „bez polete“) → moře."
+    },
+    {
+      "type": "match",
+      "question": "Spoj slovo se vzorem.",
+      "pairs": [
+        [
+          "víno",
+          "město"
+        ],
+        [
+          "letiště",
+          "moře"
+        ],
+        [
+          "tele",
+          "kuře"
+        ],
+        [
+          "nádraží",
+          "stavení"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď vzory středního rodu, jak se učí.",
+      "items": [
+        "město",
+        "moře",
+        "kuře",
+        "stavení"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj vzory rodu středního.",
+      "answer": "Město, moře, kuře, stavení."
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš, jestli je slovo podle vzoru moře, nebo kuře?",
+      "answer": "Řeknu 2. pád. Bez moře – zůstane -e. Bez kuřete – přibude -ete. Slova jako kotě, štěně jsou podle kuře."
+    }
+  ]
+}

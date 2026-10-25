@@ -1,0 +1,458 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "souveti-souradne-a-carka",
+  "title": "Souřadné souvětí a čárka",
+  "emoji": "🔗",
+  "explanations": [
+    {
+      "title": "Vztahy mezi větami",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Pršelo a zůstali jsme doma.“ „Pršelo, ale šli jsme ven.“ „Pršelo, a proto jsme zůstali doma.“ Dvě věty, ale pokaždé mezi nimi jiný vztah – a jiná čárka."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Čárka v souvětí je nejčastější interpunkční chyba v maturitních pracích. Když poznáš vztah mezi větami, víš, jestli čárka patří, nebo ne."
+        },
+        {
+          "type": "term",
+          "term": "Určité sloveso",
+          "definition": "Sloveso, ze kterého poznáš osobu (kdo to dělá). Nepatří sem infinitiv (*psát*).",
+          "example": "*píšu, šel, budeme, přišli by*"
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Celek, který má obvykle jedno určité sloveso.",
+          "example": "*Petr čte.*"
+        },
+        {
+          "type": "term",
+          "term": "Souvětí",
+          "definition": "Spojení dvou nebo více vět. Počet vět = počet určitých sloves.",
+          "example": "*Petr čte a Jana píše.* (2 věty)"
+        },
+        {
+          "type": "term",
+          "term": "Souřadné souvětí",
+          "definition": "Souvětí z vět, které jsou si **rovnocenné** – žádná nezávisí na druhé, každá by mohla stát sama.",
+          "example": "*Pršelo, ale šli jsme ven.*"
+        },
+        {
+          "type": "term",
+          "term": "Poměr",
+          "definition": "Významový vztah mezi rovnocennými větami (přidání, protiklad, důvod…).",
+          "example": "*ale* → protiklad (odporovací poměr)"
+        },
+        {
+          "type": "heading",
+          "text": "Šest poměrů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Poměr",
+            "Význam",
+            "Spojky"
+          ],
+          "rows": [
+            [
+              "slučovací",
+              "prosté přidání",
+              "a, i, ani, nebo (= a)"
+            ],
+            [
+              "stupňovací",
+              "druhá věta je silnější",
+              "ba, ba i, nejen – ale i, dokonce"
+            ],
+            [
+              "odporovací",
+              "protiklad",
+              "ale, avšak, však, nýbrž, jenže"
+            ],
+            [
+              "vylučovací",
+              "platí jen jedna možnost",
+              "nebo, anebo, buď – nebo"
+            ],
+            [
+              "příčinný (důvodový)",
+              "druhá věta = důvod",
+              "neboť, vždyť, totiž"
+            ],
+            [
+              "důsledkový",
+              "druhá věta = důsledek",
+              "proto, a proto, tedy, tudíž, a tak"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo pro čárku"
+        },
+        {
+          "type": "text",
+          "text": "Mezi větami souřadného souvětí **čárku píšeme**. Výjimka: **slučovací a vylučovací** poměr se spojkami **a, i, ani, nebo** – tam čárka **není**."
+        },
+        {
+          "type": "text",
+          "text": "Pozor na dvojité spojky: *buď…, nebo…*, *nejen…, ale i…* – před druhou částí čárka **je**: *Buď přijdeš, nebo zavoláš.*"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zeptej se: druhá věta jen přidává? je protikladem? nebo je důsledkem první?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "slučovací",
+              "odporovací",
+              "důsledkový"
+            ],
+            "items": [
+              {
+                "text": "Petr čte a Jana píše.",
+                "group": 0
+              },
+              {
+                "text": "Chtěl jsem jít, ale pršelo.",
+                "group": 1
+              },
+              {
+                "text": "Pršelo, a proto jsme zůstali doma.",
+                "group": 2
+              },
+              {
+                "text": "Slunce svítí a ptáci zpívají.",
+                "group": 0
+              },
+              {
+                "text": "Byl unavený, avšak pokračoval.",
+                "group": 1
+              },
+              {
+                "text": "Zaspal, tudíž přišel pozdě.",
+                "group": 2
+              },
+              {
+                "text": "Bylo pozdě, a tak jsme šli spát.",
+                "group": 2
+              },
+              {
+                "text": "Učil se, jenže neuspěl.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč je čárka v *Byl nemocný, a proto nepřišel.*?",
+          "answer": "Druhá věta říká, co z první **vyplynulo** → důsledkový poměr. Spojka *a* je tu jen součástí výrazu *a proto*. Výjimka platí jen pro slučovací *a*, takže čárka **je**."
+        },
+        {
+          "type": "example",
+          "question": "Urči poměr: *Přijdu pozdě, neboť mi ujel autobus.*",
+          "answer": "Druhá věta vysvětluje **důvod** první → **příčinný (důvodový)** poměr. Čárka je."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Bylo zima a proto jsme topili.",
+          "right": "Bylo zima, a proto jsme topili.",
+          "why": "Poměr je důsledkový (topili jsme kvůli zimě). Čárka se vynechává jen ve slučovacím poměru, tady ne."
+        },
+        {
+          "type": "summary",
+          "text": "V souřadném souvětí jsou věty rovnocenné. Čárku píšeme mezi nimi vždy, kromě slučovacího a vylučovacího poměru se spojkami a, i, ani, nebo."
+        }
+      ]
+    },
+    {
+      "title": "Čárka v praxi",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Čárka je jako krátké nadechnutí v textu. Odděluje to, co k sobě nepatří úplně těsně. Kde má být, se ale nehádá podle ucha – existují jasná pravidla."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? V maturitní písemné práci se chyby v interpunkci počítají. Tady je postup a nejčastější situace pohromadě."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Určité sloveso",
+          "definition": "Tvar slovesa, ze kterého poznáš osobu: *píšu, šel, budou, přišel by*. Infinitiv (*psát*) to není.",
+          "example": "*Řekl, že přijde.* – dvě určitá slovesa"
+        },
+        {
+          "type": "term",
+          "term": "Souvětí",
+          "definition": "Spojení více vět. Kolik určitých sloves, tolik vět.",
+          "example": "*Řekl, že přijde, a opravdu přišel.* – 3 věty"
+        },
+        {
+          "type": "term",
+          "term": "Vedlejší věta",
+          "definition": "Věta, která závisí na jiné větě a nemůže stát sama. Začíná často slovy *že, který, protože, když, aby*.",
+          "example": "*…, že přijde.*"
+        },
+        {
+          "type": "term",
+          "term": "Vložená věta",
+          "definition": "Vedlejší věta „vsunutá“ doprostřed jiné věty.",
+          "example": "*Kluk, který přišel včera, je můj bratr.*"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podtrhni všechna určitá slovesa. Kolik jich je, tolik vět.",
+            "Najdi hranice mezi větami – obvykle u spojek a vztažných slov (*a, ale, že, který…*).",
+            "Na každou hranici dej čárku.",
+            "Čárku odeber jen tam, kde jsou dvě rovnocenné věty spojené slučovacím nebo vylučovacím *a, i, ani, nebo*.",
+            "Vložená věta má čárku **z obou stran**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Čárka uvnitř věty jednoduché"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Výčet bez spojky**: *jablka, hrušky, švestky*.",
+            "**Před odporovací spojkou**: *malý, ale silný*.",
+            "**Oslovení**: *Petře, pojď sem.*",
+            "**Přístavek** (jiné pojmenování téhož) z obou stran: *Praha, hlavní město Česka, leží na Vltavě.*",
+            "**Bez čárky** je přirovnání se *jako*: *bílý jako sníh*."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber správnou variantu. Nejdřív spočítej určitá slovesa."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "",
+                "after": " máš pravdu.",
+                "options": [
+                  "Myslím, že",
+                  "Myslím že"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Koupil jsem ",
+                "after": ".",
+                "options": [
+                  "chleba a rohlíky",
+                  "chleba, a rohlíky"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Kluk",
+                "after": " je můj bratr.",
+                "options": [
+                  ", který přišel včera,",
+                  " který přišel včera,"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Byl unavený",
+                "after": " šel spát.",
+                "options": [
+                  ", a proto",
+                  " a proto"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "",
+                "after": " pojď sem!",
+                "options": [
+                  "Petře,",
+                  "Petře"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň čárky: *Řekl že přijde a opravdu přišel.*",
+          "answer": "Slovesa: *řekl, přijde, přišel* → 3 věty. *že přijde* je vedlejší věta – oddělíme ji. Před *a* vedlejší věta končí, proto čárka i tam: **Řekl, že přijde, a opravdu přišel.**"
+        },
+        {
+          "type": "example",
+          "question": "Doplň čárky: *Půjdeme do kina nebo zůstaneme doma.*",
+          "answer": "Dvě rovnocenné věty, *nebo* vylučovací (jen jedna možnost). V tomto poměru se před *nebo* čárka **nepíše**: *Půjdeme do kina nebo zůstaneme doma.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Praha, hlavní město Česka leží na Vltavě.",
+          "right": "Praha, hlavní město Česka, leží na Vltavě.",
+          "why": "Přístavek je vsunutý do věty, proto se odděluje čárkami **z obou stran** – stejně jako vložená věta."
+        },
+        {
+          "type": "summary",
+          "text": "Spočítej určitá slovesa → najdi hranice vět → čárka všude, kde to nezakazuje slučovací či vylučovací a, i, ani, nebo. Vložené části (věty, přístavky) oddělíme z obou stran."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký poměr je v souvětí *Nejen že zpívá, ale i tančí.*?",
+      "options": [
+        "slučovací",
+        "stupňovací",
+        "odporovací"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "*Neměl peníze, proto nic nekoupil.* – poměr:",
+      "options": [
+        "příčinný",
+        "důsledkový",
+        "odporovací"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "*Přijdu pozdě, neboť mi ujel autobus.* – poměr:",
+      "options": [
+        "příčinný (důvodový)",
+        "důsledkový",
+        "slučovací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "*Půjdeme do kina, nebo zůstaneme doma.* – čárka před *nebo* je správně.",
+      "answer": false,
+      "explanation": "Vylučovací *nebo* se čárkou neodděluje."
+    },
+    {
+      "type": "choice",
+      "question": "Která spojka je odporovací?",
+      "options": [
+        "nýbrž",
+        "neboť",
+        "tudíž",
+        "ba"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj spojku s poměrem.",
+      "pairs": [
+        [
+          "ba",
+          "stupňovací"
+        ],
+        [
+          "avšak",
+          "odporovací"
+        ],
+        [
+          "tudíž",
+          "důsledkový"
+        ],
+        [
+          "vždyť",
+          "příčinný"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Za kterým slovem chybí čárka? *Bylo zima a proto jsme topili.*",
+      "answers": [
+        "zima"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je napsaná správně?",
+      "options": [
+        "Řekl, že přijde, a opravdu přišel.",
+        "Řekl, že přijde a opravdu přišel."
+      ],
+      "answer": 0,
+      "explanation": "Vedlejší věta *že přijde* končí před *a*, které spojuje věty hlavní – čárka ji uzavírá."
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je napsaná správně?",
+      "options": [
+        "Praha, hlavní město Česka, leží na Vltavě.",
+        "Praha, hlavní město Česka leží na Vltavě.",
+        "Praha hlavní město Česka, leží na Vltavě."
+      ],
+      "answer": 0,
+      "explanation": "Přístavek se odděluje čárkami z obou stran."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve srovnání *bílý jako sníh* se před *jako* čárka nepíše.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Souřadné souvětí tvoří věty, které jsou si gramaticky rovnocenné.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj poměry mezi větami hlavními a ke každému uveď spojku.",
+      "answer": "Slučovací (*a, i*), stupňovací (*ba, nejen – ale i*), odporovací (*ale, avšak*), vylučovací (*nebo, buď – nebo*), příčinný (*neboť, vždyť*), důsledkový (*proto, tudíž*)."
+    },
+    {
+      "type": "open",
+      "question": "Kdy se píše čárka před spojkou *a*?",
+      "answer": "V poměru slučovacím ne. Čárku píšeme, když je *a* součástí jiného poměru (*, a proto*, *, a tak*, *, a přece*) nebo když před *a* končí vložená vedlejší věta."
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "elektromagnetismus",
+  "title": "Elektromagnetismus",
+  "emoji": "🧲",
+  "explanations": [
+    {
+      "title": "Pokusy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dlouho si lidé mysleli, že elektřina a magnetismus nemají nic společného. Pak se ukázalo, že jsou to dvě stránky jedné věci. Elektřina umí vyrobit magnet a magnet umí vyrobit elektřinu."
+        },
+        {
+          "type": "text",
+          "text": "Na tom stojí elektromotory (pračka, vrtačka, elektromobil), elektrárny, zvonky i jeřáby na šrot."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Magnetické pole",
+          "definition": "Prostor kolem magnetu, ve kterém magnet působí na železo nebo na jiné magnety. Ukáže ho střelka kompasu, která se v něm natočí.",
+          "example": "Kolem magnetky na lednici je magnetické pole."
+        },
+        {
+          "type": "term",
+          "term": "Elektrický proud",
+          "definition": "Pohyb nabitých částic (v drátu elektronů) vodičem.",
+          "example": "Proud teče drátem od baterie k žárovce."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 1: drát a kompas (Ørsted, 1820)"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Polož kompas na stůl a nad něj natáhni drát.",
+            "Připoj drát krátce k baterii.",
+            "Střelka se **vychýlí**.",
+            "Odpoj baterii – střelka se vrátí.",
+            "Závěr: **kolem vodiče s proudem vzniká magnetické pole.**"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Tohle si všiml dánský fyzik Hans Christian **Ørsted** v roce 1820."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 2: elektromagnet"
+        },
+        {
+          "type": "term",
+          "term": "Cívka",
+          "definition": "Drát navinutý do mnoha smyček (**závitů**) jako nit na cívce.",
+          "example": "Navineš 50 závitů drátu na tužku."
+        },
+        {
+          "type": "term",
+          "term": "Elektromagnet",
+          "definition": "Cívka, kterou prochází proud, obvykle se **železným jádrem** uvnitř. Chová se jako magnet, ale jen dokud teče proud.",
+          "example": "Hřebík omotaný drátem připojeným k baterii přitáhne sponky."
+        },
+        {
+          "type": "text",
+          "text": "Elektromagnet zesílíš: **větším proudem**, **více závity** a **železným jádrem**. A hlavně – můžeš ho **vypnout**. Proto jeřáb na šrot auto zvedne a nad hromadou ho pustí."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 3: magnet vyrobí proud"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Připoj cívku k citlivému měřidlu proudu.",
+            "Zasuň do cívky magnet – ručička se vychýlí.",
+            "Nech magnet v klidu – ručička je na nule.",
+            "Vytáhni magnet – ručička se vychýlí na druhou stranu.",
+            "Proud vzniká, jen když se magnetické pole v cívce **mění**."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Elektromagnetická indukce",
+          "definition": "Vznik napětí (a proudu) v cívce, když se v ní mění magnetické pole.",
+          "example": "Dynamo na kole: točící se magnet vyrábí proud pro světlo."
+        },
+        {
+          "type": "example",
+          "question": "Proč jeřáb na šrot používá elektromagnet a ne obyčejný magnet?",
+          "answer": "Elektromagnet jde **vypnout** přerušením proudu. Jeřáb šrot zvedne, přenese a vypnutím pustí. Obyčejný magnet by šrot nepustil."
+        },
+        {
+          "type": "example",
+          "question": "V cívce leží magnet a nehýbe se. Teče proud?",
+          "answer": "**Ne.** Proud se indukuje jen při **změně** magnetického pole – když magnetem pohybuješ."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Elektromagnet zesílím měděným jádrem.",
+          "right": "Zesílím ho železným jádrem.",
+          "why": "Měď magnetická není. Železo se v poli cívky samo zmagnetuje a pole mnohonásobně zesílí."
+        },
+        {
+          "type": "summary",
+          "text": "Proud vytváří magnetické pole (elektromagnet). Měnící se magnetické pole vytváří proud (elektromagnetická indukce)."
+        }
+      ]
+    },
+    {
+      "title": "Stroje",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V jedné domácnosti je klidně dvacet elektromotorů: v pračce, ledničce, fénu, ventilátoru počítače. A elektřinu do nich vyrábějí obří generátory v elektrárnách. Oboje funguje díky spojení elektřiny a magnetismu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Magnetické pole",
+          "definition": "Prostor, kde působí magnetické síly – kolem magnetu, Země nebo vodiče s proudem.",
+          "example": "Kompas ukazuje k severu díky magnetickému poli Země."
+        },
+        {
+          "type": "term",
+          "term": "Cívka a elektromagnet",
+          "definition": "**Cívka** = drát navinutý do závitů. Když jí teče proud, je z ní **elektromagnet**. Železné jádro ho zesílí.",
+          "example": "Elektrický zvonek: elektromagnet přitahuje kladívko, které bije do zvonku."
+        },
+        {
+          "type": "heading",
+          "text": "Tři jevy a jejich využití"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jev",
+            "Využití"
+          ],
+          "rows": [
+            [
+              "magnetické pole cívky",
+              "elektromagnet, zvonek, jeřáb na šrot, relé"
+            ],
+            [
+              "síla na vodič v poli",
+              "elektromotor"
+            ],
+            [
+              "elektromagnetická indukce",
+              "alternátor, dynamo, transformátor"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Síla na vodič v magnetickém poli",
+          "definition": "Když vodič s proudem leží mezi póly magnetu, magnet ho **odstrčí** stranou.",
+          "example": "Drátek mezi póly podkovy poskočí, když jím pustíš proud."
+        },
+        {
+          "type": "term",
+          "term": "Elektromotor",
+          "definition": "Stroj, kde se cívka s proudem otáčí mezi magnety, protože na ni působí síla. Mění **elektrickou energii na pohybovou**.",
+          "example": "Motor vysavače, elektrokola, vrtačky."
+        },
+        {
+          "type": "term",
+          "term": "Generátor (alternátor, dynamo)",
+          "definition": "Stroj, kde se otáčí magnet a cívka a díky **indukci** vzniká proud. Mění **pohybovou energii na elektrickou**.",
+          "example": "Alternátor v elektrárně roztáčí turbína."
+        },
+        {
+          "type": "text",
+          "text": "Motor a generátor jsou si stavbou podobné – jen dělají **opačnou přeměnu** energie."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "elektrická → pohybová",
+              "pohybová → elektrická"
+            ],
+            "items": [
+              {
+                "text": "elektromotor",
+                "group": 0
+              },
+              {
+                "text": "ventilátor",
+                "group": 0
+              },
+              {
+                "text": "pračka",
+                "group": 0
+              },
+              {
+                "text": "dynamo na kole",
+                "group": 1
+              },
+              {
+                "text": "alternátor v elektrárně",
+                "group": 1
+              },
+              {
+                "text": "větrná elektrárna",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď zařízení podle toho, jakou přeměnu energie dělají."
+        },
+        {
+          "type": "example",
+          "question": "Jak funguje elektrický zvonek?",
+          "answer": "Proud projde **elektromagnetem**, ten přitáhne kladívko a to udeří do zvonku. Pohybem kladívka se obvod přeruší, elektromagnet „vypne“, kladívko odskočí a obvod se zase spojí. Opakuje se to rychle dokola."
+        },
+        {
+          "type": "example",
+          "question": "Kde se elektromagnet nevyužívá: zvonek, jeřáb na šrot, relé, LED svítilna?",
+          "answer": "V **LED svítilně**. Je tam jen baterie, spínač a LED – žádná cívka."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dynamo na kole vyrábí proud, i když kolo stojí.",
+          "right": "Proud vzniká jen při otáčení.",
+          "why": "Indukce potřebuje **změnu** magnetického pole. Když se magnet netočí, pole se nemění."
+        },
+        {
+          "type": "summary",
+          "text": "Elektromotor: elektrická → pohybová energie (síla na vodič v poli). Generátor: pohybová → elektrická (indukce). Elektromagnet jde vypnout."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Kolem vodiče, kterým prochází proud, vzniká magnetické pole.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co zesílí elektromagnet?",
+      "options": [
+        "železné jádro a více závitů",
+        "měděné jádro",
+        "méně závitů",
+        "menší proud"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jakou přeměnu energie dělá elektromotor?",
+      "options": [
+        "elektrická → pohybová",
+        "pohybová → elektrická",
+        "tepelná → elektrická",
+        "chemická → světelná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Na jakém jevu je založen alternátor v elektrárně?",
+      "options": [
+        "elektromagnetická indukce",
+        "tření",
+        "difuze",
+        "lom světla"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Elektromagnet lze vypnout přerušením proudu.",
+      "answer": true,
+      "explanation": "Na rozdíl od trvalého magnetu."
+    },
+    {
+      "type": "choice",
+      "question": "Kdy vzniká v cívce indukovaný proud?",
+      "options": [
+        "když se mění magnetické pole v cívce",
+        "když v ní magnet leží v klidu",
+        "vždy, když je poblíž železo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj zařízení s jevem.",
+      "pairs": [
+        [
+          "elektromotor",
+          "síla na vodič v magnetickém poli"
+        ],
+        [
+          "dynamo na kole",
+          "elektromagnetická indukce"
+        ],
+        [
+          "elektrický zvonek",
+          "elektromagnet"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Příjmení: který dánský fyzik objevil magnetické účinky proudu (1820)?",
+      "answers": [
+        "Ørsted",
+        "Oersted",
+        "Orsted"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Elektromotor a generátor mají podobnou stavbu, ale opačnou přeměnu energie.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kde se nevyužívá elektromagnet?",
+      "options": [
+        "v kapesní svítilně s LED",
+        "v elektrickém zvonku",
+        "v jeřábu na šrot",
+        "v relé"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je elektromagnet a jak ho zesílíš?",
+      "answer": "Cívka s železným jádrem, kterou prochází proud. Zesílím ho větším proudem, více závity a železným jádrem."
+    },
+    {
+      "type": "open",
+      "question": "Co je elektromagnetická indukce? Kde se využívá?",
+      "answer": "Vznik napětí v cívce, když se v ní mění magnetické pole. Využívá se v alternátorech elektráren, dynamech a transformátorech."
+    }
+  ]
+}

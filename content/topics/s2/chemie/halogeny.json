@@ -1,0 +1,446 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "halogeny",
+  "title": "Halogeny",
+  "emoji": "🧴",
+  "explanations": [
+    {
+      "title": "Rodina",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chlor cítíš v bazénu, fluorid je v zubní pastě, jodem se potírá odřené koleno a v kuchyňské soli je chlorid. To vše jsou **halogeny** – název znamená „tvořící soli“."
+        },
+        {
+          "type": "text",
+          "text": "Je to rodina velmi podobných sourozenců: od žlutozeleného plynu po fialově černé krystalky. Když pochopíš jednoho, rozumíš všem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Halogeny",
+          "definition": "Prvky 17. skupiny: **fluor F, chlor Cl, brom Br, jod I** (a vzácný astat At). Tvoří dvouatomové molekuly F₂, Cl₂, Br₂, I₂."
+        },
+        {
+          "type": "term",
+          "term": "Valenční elektrony",
+          "definition": "Elektrony ve vnější vrstvě atomu. Halogeny jich mají **7** – do plné osmičky jim chybí jediný."
+        },
+        {
+          "type": "term",
+          "term": "Oxidační činidlo",
+          "definition": "Látka, která jiné látce **bere elektrony**. Halogeny jsou silná oxidační činidla."
+        },
+        {
+          "type": "term",
+          "term": "Elektronegativita",
+          "definition": "Jak silně atom přitahuje elektrony. Fluor má nejvyšší ze všech prvků."
+        },
+        {
+          "type": "heading",
+          "text": "Sourozenci od nejmladšího"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Halogen",
+            "Za běžných podmínek",
+            "Barva"
+          ],
+          "rows": [
+            [
+              "F₂",
+              "plyn",
+              "světle žlutý"
+            ],
+            [
+              "Cl₂",
+              "plyn",
+              "žlutozelený"
+            ],
+            [
+              "Br₂",
+              "**kapalina**",
+              "červenohnědá"
+            ],
+            [
+              "I₂",
+              "pevná látka",
+              "fialově černá (páry fialové)"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Shora dolů jsou atomy větší, rostou teploty tání a varu a barva tmavne. **Reaktivita klesá** – nejreaktivnější je **fluor**."
+        },
+        {
+          "type": "heading",
+          "text": "Kdo silnější, ten vytlačí slabšího"
+        },
+        {
+          "type": "text",
+          "text": "Halogen chce přijmout elektron. Silnější halogen ho „ukradne“ aniontu slabšího halogenu a vytlačí ho ze soli."
+        },
+        {
+          "type": "example",
+          "question": "Co se stane, když přidáš chlor do roztoku jodidu sodného?",
+          "answer": "Chlor je výš ve skupině → silnější. Vytlačí jod: **Cl₂ + 2 NaI → 2 NaCl + I₂**. Roztok zhnědne vyloučeným jodem."
+        },
+        {
+          "type": "example",
+          "question": "Vytlačí jod brom z bromidu draselného?",
+          "answer": "Jod je **níž** než brom → slabší. Elektron bromidu nevezme. **Reakce neproběhne.**"
+        },
+        {
+          "type": "text",
+          "text": "Doplň, jestli reakce proběhne. Pravidlo: halogen výš ve skupině vytlačí ten pod sebou."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Cl₂ + 2 KBr → ",
+                "after": "",
+                "options": [
+                  "2 KCl + Br₂",
+                  "neproběhne"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Br₂ + 2 KI → ",
+                "after": "",
+                "options": [
+                  "2 KBr + I₂",
+                  "neproběhne"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "I₂ + 2 KCl → ",
+                "after": "",
+                "options": [
+                  "neproběhne",
+                  "2 KI + Cl₂"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Br₂ + 2 NaCl → ",
+                "after": "",
+                "options": [
+                  "neproběhne",
+                  "2 NaBr + Cl₂"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Halogeny v životě"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Chlor** – vyrábí se **elektrolýzou roztoku NaCl**; dezinfekce vody, PVC. **NaClO** (chlornan sodný) bělí a dezinfikuje.",
+            "**Fluor** – fluoridy v zubní pastě chrání sklovinu. **HF** leptá sklo.",
+            "**Jod** – nezbytný pro **štítnou žlázu** (proto se jodidy přidávají do soli); jodová tinktura dezinfikuje rány.",
+            "**Brom** – AgBr v klasické fotografii."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejreaktivnější halogen je jod, protože je největší.",
+          "right": "Nejreaktivnější je **fluor**.",
+          "why": "Halogeny elektron **přijímají**. Malý fluor má elektron blízko jádra a přitahuje ho nejsilněji. U alkalických kovů (které elektron dávají) je to naopak."
+        },
+        {
+          "type": "summary",
+          "text": "Halogeny F, Cl, Br, I: 7 valenčních elektronů, molekuly X₂, silná oxidační činidla. Reaktivita klesá dolů – vyšší halogen vytlačí nižší z jeho soli."
+        }
+      ]
+    },
+    {
+      "title": "Přehledem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Halogeny jsou učebnicový příklad, jak se vlastnosti ve skupině mění pravidelně. Projdeme stavbu atomu, trendy, typické sloučeniny, výrobu a použití."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "17. skupina",
+          "definition": "F, Cl, Br, I, At. Konfigurace valenční vrstvy **ns² np⁵**."
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo (OČ)",
+          "definition": "Formální náboj atomu ve sloučenině. Halogeny mají nejčastěji −I (chloridy). Cl, Br, I mohou mít i kladná OČ (I, III, V, VII) – s kyslíkem. **Fluor má vždy jen −I**, protože je nejelektronegativnější."
+        },
+        {
+          "type": "term",
+          "term": "Halogenid",
+          "definition": "Sloučenina halogenu s OČ −I.",
+          "example": "NaCl chlorid sodný, KBr bromid draselný, AgI jodid stříbrný"
+        },
+        {
+          "type": "term",
+          "term": "Halogenovodík",
+          "definition": "Sloučenina HX; ve vodě tvoří kyselinu (fluorovodíková, chlorovodíková, bromovodíková, jodovodíková)."
+        },
+        {
+          "type": "heading",
+          "text": "Trendy shora dolů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vlastnost",
+            "F → I"
+          ],
+          "rows": [
+            [
+              "atomový poloměr",
+              "roste"
+            ],
+            [
+              "teplota tání a varu",
+              "roste (F₂, Cl₂ plyn → Br₂ kapalina → I₂ pevný)"
+            ],
+            [
+              "barva",
+              "tmavne"
+            ],
+            [
+              "elektronegativita",
+              "klesá"
+            ],
+            [
+              "reaktivita, oxidační schopnost",
+              "klesá"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Proč fluor nemá kladná oxidační čísla?",
+          "answer": "Oxidační číslo je kladné u atomu, který elektrony „ztrácí“ ve prospěch elektronegativnějšího partnera. Fluor je **nejelektronegativnější** prvek – žádný partner mu elektrony nevezme. Proto je vždy **−I**."
+        },
+        {
+          "type": "heading",
+          "text": "Vytěsňování"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi oba halogeny ve skupině.",
+            "Je volný halogen (X₂) výš než halogen v soli? → reakce proběhne.",
+            "Napiš produkty: nový halogenid + vytlačený halogen.",
+            "Je níž? → reakce neproběhne."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Napiš reakci chloru s bromidem draselným a vysvětli ji.",
+          "answer": "Chlor je výš → silnější oxidační činidlo. Oxiduje bromidové anionty na brom: **Cl₂ + 2 KBr → 2 KCl + Br₂**. Cl⁰ → Cl^−I (redukce), Br^−I → Br⁰ (oxidace)."
+        },
+        {
+          "type": "heading",
+          "text": "Výroba a použití"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Chlor**: elektrolýza roztoku NaCl → Cl₂, H₂ a NaOH. Úprava vody, výroba PVC a HCl.",
+            "**NaClO** chlornan sodný: bělení, dezinfekce (Savo).",
+            "**HF**: leptá sklo (SiO₂ + 4 HF → SiF₄ + 2 H₂O); **fluoridy** v zubních pastách.",
+            "**Jod**: štítná žláza (hormony), jodová tinktura.",
+            "**AgBr**: světlocitlivá látka v klasické fotografii.",
+            "**HCl**: v žaludeční šťávě."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Spoj si látky s použitím – otoč karty."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "NaClO",
+                "back": "bělení, dezinfekce"
+              },
+              {
+                "front": "fluoridy",
+                "back": "zubní pasty"
+              },
+              {
+                "front": "jodová tinktura",
+                "back": "dezinfekce ran"
+              },
+              {
+                "front": "AgBr",
+                "back": "klasická fotografie"
+              },
+              {
+                "front": "HF",
+                "back": "leptání skla"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "I₂ + 2 KBr → 2 KI + Br₂",
+          "right": "Reakce **neproběhne**.",
+          "why": "Jod je v 17. skupině pod bromem, je slabší oxidační činidlo. Bromidu elektron nevezme."
+        },
+        {
+          "type": "summary",
+          "text": "Halogeny ns² np⁵, molekuly X₂. Shora dolů roste velikost a teplota varu, klesá elektronegativita a reaktivita. F jen −I. Vyšší halogen vytěsní nižší z halogenidu. Cl₂ elektrolýzou roztoku NaCl."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který halogen je za běžných podmínek kapalný?",
+      "options": [
+        "brom",
+        "chlor",
+        "jod",
+        "fluor"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který halogen je nejreaktivnější?",
+      "options": [
+        "fluor",
+        "chlor",
+        "brom",
+        "jod"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co vznikne reakcí Cl₂ + 2 NaI?",
+      "options": [
+        "2 NaCl + I₂",
+        "žádná reakce",
+        "2 NaClI",
+        "NaCl₂ + NaI"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Jod + bromid draselný: jod vytěsní brom.",
+      "answer": false,
+      "explanation": "Jod je méně reaktivní než brom, reakce neproběhne."
+    },
+    {
+      "type": "truefalse",
+      "question": "Fluor má ve sloučeninách jen oxidační číslo −I.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Kolik valenčních elektronů mají halogeny?",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se průmyslově vyrábí chlor?",
+      "options": [
+        "elektrolýzou roztoku NaCl",
+        "destilací vzduchu",
+        "rozkladem HCl teplem",
+        "z mořských řas"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj látku s použitím.",
+      "pairs": [
+        [
+          "NaClO",
+          "bělení, dezinfekce (Savo)"
+        ],
+        [
+          "fluoridy",
+          "zubní pasty"
+        ],
+        [
+          "jodová tinktura",
+          "dezinfekce ran"
+        ],
+        [
+          "AgBr",
+          "klasická fotografie"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který halogen je nezbytný pro funkci štítné žlázy?",
+      "options": [
+        "jod",
+        "fluor",
+        "brom",
+        "chlor"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která halogenovodíková kyselina leptá sklo?",
+      "options": [
+        "HF",
+        "HCl",
+        "HBr",
+        "HI"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak se mění vlastnosti halogenů ve skupině shora dolů?",
+      "answer": "Roste atomový poloměr, teplota tání a varu, barva tmavne (F₂ a Cl₂ plyny, Br₂ kapalina, I₂ pevný). Klesá elektronegativita a reaktivita – oxidační schopnost."
+    },
+    {
+      "type": "open",
+      "question": "Proč chlor vytěsní brom z bromidu draselného? Napiš rovnici.",
+      "answer": "Chlor je reaktivnější, silnější oxidační činidlo – oxiduje bromidové anionty na brom. Cl₂ + 2 KBr → 2 KCl + Br₂."
+    }
+  ]
+}

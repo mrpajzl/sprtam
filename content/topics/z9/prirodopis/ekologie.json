@@ -1,0 +1,402 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ekologie",
+  "title": "Ekologie",
+  "emoji": "🔄",
+  "explanations": [
+    {
+      "title": "Kdo s kým a kde",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Liška v lese potřebuje myši k jídlu, nory na úkryt, vodu na pití a nesmí být moc zima. Žádný organismus nežije sám. Ovlivňuje ho prostředí i ostatní organismy kolem."
+        },
+        {
+          "type": "text",
+          "text": "Těmito vztahy se zabývá **ekologie**. Pozor – ekologie není totéž co „ochrana přírody“. Je to věda, která zkoumá, jak organismy žijí se svým prostředím."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ekologie",
+          "definition": "Věda o vztazích organismů mezi sebou a s jejich prostředím."
+        },
+        {
+          "type": "term",
+          "term": "Druh",
+          "definition": "Skupina organismů, které jsou si podobné a mohou spolu mít plodné potomky.",
+          "example": "Liška obecná, smrk ztepilý."
+        },
+        {
+          "type": "term",
+          "term": "Abiotické faktory",
+          "definition": "Neživé vlivy prostředí: teplota, světlo, voda, půda, vzduch."
+        },
+        {
+          "type": "term",
+          "term": "Biotické faktory",
+          "definition": "Vlivy živých organismů: kořist, predátor, parazit, konkurent."
+        },
+        {
+          "type": "heading",
+          "text": "Od jedince po celou Zemi"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Úroveň",
+            "Co to je",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "jedinec",
+              "jeden organismus",
+              "jedna liška"
+            ],
+            [
+              "populace",
+              "všichni jedinci **jednoho druhu** na jednom místě",
+              "všechny lišky v lese"
+            ],
+            [
+              "společenstvo",
+              "populace **všech druhů** na jednom místě",
+              "lišky, myši, buky, houby… v lese"
+            ],
+            [
+              "ekosystém",
+              "společenstvo + neživé prostředí",
+              "les i s půdou, vodou a světlem"
+            ],
+            [
+              "biosféra",
+              "všechen život na Zemi",
+              "celá Země"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď faktory na živé a neživé."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Abiotické (neživé)",
+              "Biotické (živé)"
+            ],
+            "items": [
+              {
+                "text": "teplota",
+                "group": 0
+              },
+              {
+                "text": "predátor",
+                "group": 1
+              },
+              {
+                "text": "světlo",
+                "group": 0
+              },
+              {
+                "text": "parazit",
+                "group": 1
+              },
+              {
+                "text": "množství srážek",
+                "group": 0
+              },
+              {
+                "text": "konkurent o potravu",
+                "group": 1
+              },
+              {
+                "text": "kyselost půdy",
+                "group": 0
+              },
+              {
+                "text": "opylující hmyz",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vztahy mezi organismy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vztah",
+            "Co znamená",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "predace",
+              "jeden loví a žere druhého",
+              "sova loví myš"
+            ],
+            [
+              "parazitismus",
+              "jeden žije na úkor druhého a škodí mu",
+              "klíště a pes"
+            ],
+            [
+              "symbióza (mutualismus)",
+              "soužití výhodné pro oba",
+              "houba a řasa v lišejníku"
+            ],
+            [
+              "konkurence",
+              "soupeření o stejný zdroj",
+              "dva stromy o světlo"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "V rybníce žijí kapři, štiky a rákos. Co je populace a co společenstvo?",
+          "answer": "Všichni kapři v rybníce = **populace** kaprů. Kapři, štiky, rákos a všechny ostatní organismy dohromady = **společenstvo**."
+        },
+        {
+          "type": "example",
+          "question": "Klíště saje krev psa. O jaký vztah jde a proč?",
+          "answer": "Klíště má užitek (potravu), pes je poškozen. Jde o **parazitismus**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Populace jsou všechna zvířata v lese.",
+          "right": "Populace jsou jedinci jednoho druhu. Všechny druhy dohromady tvoří společenstvo.",
+          "why": "Rozhoduje, jestli jde o jeden druh, nebo o všechny."
+        },
+        {
+          "type": "summary",
+          "text": "Jedinec → populace (jeden druh) → společenstvo (všechny druhy) → ekosystém (+ prostředí) → biosféra. Vztahy: predace, parazitismus, symbióza, konkurence."
+        }
+      ]
+    },
+    {
+      "title": "Energie a látky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Uhlík v tvém svalu mohl být před rokem ve vzduchu, pak v listu pšenice, pak v rohlíku. Látky v přírodě kolují dokola. S energií je to jinak – ta jen proteče a odejde jako teplo."
+        },
+        {
+          "type": "text",
+          "text": "Pochopíš, jak v ekosystému proudí energie a jak kolují látky. A jak poznat zdravé prostředí podle organismů, které v něm žijí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Ekosystém",
+          "definition": "Všechny organismy na jednom místě spolu s neživým prostředím (vodou, půdou, vzduchem, světlem)."
+        },
+        {
+          "type": "term",
+          "term": "Producenti, konzumenti, rozkladači",
+          "definition": "**Producenti** (zelené rostliny) vyrábějí potravu fotosyntézou. **Konzumenti** (živočichové) jedí jiné organismy. **Rozkladači** (bakterie, houby) rozkládají mrtvé zbytky."
+        },
+        {
+          "type": "term",
+          "term": "Fotosyntéza a dýchání",
+          "definition": "**Fotosyntéza**: rostlina z oxidu uhličitého (CO₂) a vody vyrobí pomocí světla cukr a kyslík. **Dýchání**: organismus z cukru a kyslíku získá energii a uvolní CO₂."
+        },
+        {
+          "type": "term",
+          "term": "Bioindikátor",
+          "definition": "Organismus, který snese jen úzké rozmezí podmínek. Podle toho, jestli na místě žije, poznáme stav prostředí.",
+          "example": "Lišejníky ukazují čistý vzduch, pstruh čistou vodu."
+        },
+        {
+          "type": "heading",
+          "text": "Energie proudí jedním směrem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Energie přichází ze **Slunce**.",
+            "Producenti ji zachytí fotosyntézou a uloží do cukrů.",
+            "Konzumenti ji získají potravou. Na každém stupni většina energie odejde jako **teplo**.",
+            "Proto je masožravců méně než býložravců a energie se nevrací zpět."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Koloběh uhlíku"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na kroky a sleduj, jak uhlík koluje dokola."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "CO₂ ve vzduchu",
+              "rostliny ho fotosyntézou mění na cukry",
+              "živočichové jedí rostliny",
+              "dýcháním všech organismů se CO₂ vrací do vzduchu",
+              "rozkladači rozloží mrtvé zbytky a také uvolní CO₂"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kdo vrací CO₂ do ovzduší – jen zvířata?",
+          "answer": "Ne. Dýchají **všechny** organismy – rostliny, živočichové, houby i bakterie. Všichni při dýchání uvolňují CO₂."
+        },
+        {
+          "type": "example",
+          "question": "Na stromech v okolí žádné lišejníky nerostou. Co to může znamenat?",
+          "answer": "Lišejníky jsou **bioindikátory** čistoty ovzduší. Když chybí, vzduch je nejspíš znečištěný."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Energie v ekosystému koluje dokola stejně jako látky.",
+          "right": "Látky kolují, energie proudí jedním směrem – od Slunce a odchází jako teplo.",
+          "why": "Teplo už organismy znovu využít neumějí. Proto potřebuje každý ekosystém stálý přísun sluneční energie."
+        },
+        {
+          "type": "summary",
+          "text": "Energie proudí od Slunce přes producenty ke konzumentům a odchází jako teplo. Látky (např. uhlík) kolují dokola. Bioindikátory ukazují stav prostředí."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenší úrovně.",
+      "items": [
+        "jedinec",
+        "populace",
+        "společenstvo",
+        "ekosystém",
+        "biosféra"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Všichni jedinci jednoho druhu na jednom místě tvoří…",
+      "options": [
+        "populaci",
+        "společenstvo",
+        "biosféru"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který faktor je abiotický?",
+      "options": [
+        "teplota",
+        "predátor",
+        "parazit"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Parazitismus je vztah, kde jeden organismus škodí druhému.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Soužití výhodné pro oba organismy je…",
+      "answers": [
+        "symbióza",
+        "symbioza",
+        "mutualismus"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj vztah s příkladem.",
+      "pairs": [
+        [
+          "predace",
+          "sova loví myš"
+        ],
+        [
+          "parazitismus",
+          "klíště a pes"
+        ],
+        [
+          "symbióza",
+          "houba a řasa v lišejníku"
+        ],
+        [
+          "konkurence",
+          "dva stromy o světlo"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Energie v ekosystému koluje dokola stejně jako látky.",
+      "answer": false,
+      "explanation": "Energie proudí od Slunce a odchází jako teplo. Kolují jen látky."
+    },
+    {
+      "type": "choice",
+      "question": "Které organismy vracejí CO₂ do ovzduší?",
+      "options": [
+        "všechny při dýchání",
+        "jen rostliny při fotosyntéze",
+        "žádné"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Organismus, který snáší jen úzké rozmezí podmínek a ukazuje stav prostředí, je…",
+      "options": [
+        "bioindikátor",
+        "producent",
+        "parazit"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Lišejníky jsou bioindikátory čistoty ovzduší.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Popiš koloběh uhlíku v přírodě.",
+      "answer": "Rostliny berou CO₂ ze vzduchu při fotosyntéze a mění ho na cukry. Ty jedí živočichové. Dýcháním a rozkladem se CO₂ vrací do vzduchu."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi populací a společenstvem?",
+      "answer": "Populace jsou jedinci jednoho druhu na jednom místě. Společenstvo tvoří populace všech druhů na daném místě."
+    }
+  ]
+}

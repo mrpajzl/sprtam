@@ -1,0 +1,548 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mnoziny",
+  "title": "Množiny a intervaly",
+  "emoji": "🧺",
+  "explanations": [
+    {
+      "title": "Kruhy a osa",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když uklízíš skříň, třídíš věci do skupin: trička, ponožky, mikiny. Některá věc může patřit do dvou skupin najednou – třeba sportovní tričko je „tričko“ i „věc na trénink“."
+        },
+        {
+          "type": "text",
+          "text": "Matematika takové skupiny potřebuje pořád: všechna řešení rovnice, všechna čísla větší než 2, žáci, kteří hrají fotbal. Naučíš se je přesně zapsat a počítat s nimi."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Množina",
+          "definition": "Skupina věcí (nejčastěji čísel), u které jde o každé věci jasně říct, jestli do skupiny patří, nebo ne. Prvky píšeme do složených závorek.",
+          "example": "A = {2, 4, 6} je množina sudých čísel od 1 do 6."
+        },
+        {
+          "type": "term",
+          "term": "Prvek (∈)",
+          "definition": "Jedna věc, která v množině je. Zápis 4 ∈ A čteme „4 je prvkem A“. Opak je 5 ∉ A – „5 není prvkem A“.",
+          "example": "Pro A = {2, 4, 6} platí 4 ∈ A, ale 5 ∉ A."
+        },
+        {
+          "type": "term",
+          "term": "Vennův diagram",
+          "definition": "Obrázek, ve kterém je každá množina nakreslená jako kruh a prvky píšeme dovnitř kruhu.",
+          "example": "Dva kruhy, které se částečně překrývají – v překryvu jsou prvky, které patří do obou."
+        },
+        {
+          "type": "heading",
+          "text": "Dva kruhy, které se překrývají"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi čísla od 1 do 12. Množina **A** = násobky 2 = {2, 4, 6, 8, 10, 12}. Množina **B** = násobky 3 = {3, 6, 9, 12}. Čísla 6 a 12 jsou v obou – patří do překryvu kruhů."
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej: roztřiď čísla do tří částí obrázku – jen v kruhu A, v překryvu, jen v kruhu B."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "jen A",
+              "A i B",
+              "jen B"
+            ],
+            "items": [
+              {
+                "text": "2",
+                "group": 0
+              },
+              {
+                "text": "4",
+                "group": 0
+              },
+              {
+                "text": "8",
+                "group": 0
+              },
+              {
+                "text": "10",
+                "group": 0
+              },
+              {
+                "text": "6",
+                "group": 1
+              },
+              {
+                "text": "12",
+                "group": 1
+              },
+              {
+                "text": "3",
+                "group": 2
+              },
+              {
+                "text": "9",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Průnik (A ∩ B)",
+          "definition": "Jen překryv kruhů: prvky, které jsou v A **a zároveň** v B.",
+          "example": "A ∩ B = {6, 12}."
+        },
+        {
+          "type": "term",
+          "term": "Sjednocení (A ∪ B)",
+          "definition": "Oba kruhy celé: prvky, které jsou aspoň v jedné z množin. Každý prvek píšeme jen jednou. Pomůcka: ∪ vypadá jako hrnek, do kterého nasypeš všechno.",
+          "example": "A ∪ B = {2, 3, 4, 6, 8, 9, 10, 12}."
+        },
+        {
+          "type": "term",
+          "term": "Rozdíl (A ∖ B)",
+          "definition": "Kruh A, ze kterého vykousneš překryv: prvky A, které nejsou v B.",
+          "example": "A ∖ B = {2, 4, 8, 10}."
+        },
+        {
+          "type": "term",
+          "term": "Základní množina a doplněk (A′)",
+          "definition": "Základní množina U je všechno, o čem zrovna mluvíme – na obrázku obdélník kolem kruhů. Doplněk A′ je to, co je v obdélníku, ale mimo kruh A.",
+          "example": "U = {1, 2, …, 6}, A = {2, 4, 6} → A′ = {1, 3, 5}."
+        },
+        {
+          "type": "term",
+          "term": "Podmnožina (⊂) a prázdná množina (∅)",
+          "definition": "A ⊂ B znamená, že celý kruh A leží uvnitř kruhu B – každý prvek A je i v B. Prázdná množina ∅ nemá žádný prvek a je podmnožinou každé množiny (nemá prvek, který by jinde chyběl).",
+          "example": "{1, 2} ⊂ {1, 2, 3}."
+        },
+        {
+          "type": "example",
+          "question": "Třída má 30 žáků. 18 hraje fotbal, 15 volejbal a 7 obojí. Kolik žáků nehraje nic?",
+          "answer": "Nakresli dva kruhy. Do překryvu napiš 7. Jen fotbal: 18 − 7 = 11. Jen volejbal: 15 − 7 = 8. Aspoň jedno hraje 11 + 7 + 8 = 26 žáků. Nic nehraje 30 − 26 = **4**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hraje aspoň jedno: 18 + 15 = 33 žáků.",
+          "right": "18 + 15 − 7 = 26 žáků.",
+          "why": "Těch 7, kteří hrají obojí, je v čísle 18 i v čísle 15. Sečtením bys je počítal dvakrát. Obecně |A ∪ B| = |A| + |B| − |A ∩ B|, kde |A| je počet prvků A."
+        },
+        {
+          "type": "heading",
+          "text": "Intervaly: množiny na číselné ose"
+        },
+        {
+          "type": "term",
+          "term": "Číselná osa",
+          "definition": "Přímka, na které má každé číslo své místo. Nula je uprostřed, doprava čísla rostou, doleva klesají."
+        },
+        {
+          "type": "term",
+          "term": "Interval",
+          "definition": "Všechna čísla mezi dvěma hranicemi – nejen celá, ale i 2,5 nebo 2,51. Lomená závorka ⟨ ⟩ = krajní číslo **patří** dovnitř (na obrázku plné kolečko). Kulatá závorka ( ) = krajní číslo **nepatří** (prázdné kolečko).",
+          "example": "⟨−2; 3) jsou čísla od −2 včetně do 3, ale trojka už ne."
+        },
+        {
+          "type": "text",
+          "text": "Najdi na ose −2 a 3. Interval ⟨−2; 3) je celý úsek mezi nimi. Zkus ťuknout na čísla a rozhodni, jestli do něj patří."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": -5,
+            "max": 5,
+            "step": 1
+          }
+        },
+        {
+          "type": "example",
+          "question": "Urči ⟨1; 5⟩ ∩ (3; 7).",
+          "answer": "Nakresli oba intervaly nad jednu osu. Překrývají se od 3 do 5. Trojka do (3; 7) nepatří → kulatá závorka. Pětka patří do obou → lomená. Výsledek **(3; 5⟩**."
+        },
+        {
+          "type": "summary",
+          "text": "Průnik ∩ = co je v obou, sjednocení ∪ = co je aspoň v jedné, rozdíl A ∖ B = z A vyhodím B. U intervalu lomená závorka = kraj patří, kulatá = nepatří."
+        }
+      ]
+    },
+    {
+      "title": "Slovník symbolů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Věta „čísla větší než 2, ale nejvýš 5“ je dlouhá. Matematik napíše (2; 5⟩ a každý ví přesně, co myslí. Množiny a intervaly jsou **zkratky**, které se v dalších letech objeví u každé rovnice: výsledek budeš zapisovat právě takto."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme si slovník znaků a ke každému postup, jak s ním počítat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Množina",
+          "definition": "Soubor objektů, u kterých je jasné, zda do něj patří. Zapisuje se výčtem ve složených závorkách nebo popisem vlastnosti.",
+          "example": "{1, 2, 3} nebo „přirozená čísla menší než 4“ – je to totéž."
+        },
+        {
+          "type": "term",
+          "term": "Prvek",
+          "definition": "Objekt, který do množiny patří. Značka ∈ = „je prvkem“, ∉ = „není prvkem“.",
+          "example": "3 ∈ {1, 2, 3}, 7 ∉ {1, 2, 3}."
+        },
+        {
+          "type": "term",
+          "term": "Počet prvků |A|",
+          "definition": "Kolik prvků množina má. Svislé čáry tady znamenají „počet“.",
+          "example": "|{a, b, c}| = 3."
+        },
+        {
+          "type": "heading",
+          "text": "Slovník operací"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zápis",
+            "Čti",
+            "Význam"
+          ],
+          "rows": [
+            [
+              "A ⊂ B",
+              "A je podmnožinou B",
+              "každý prvek A je i v B"
+            ],
+            [
+              "A ∩ B",
+              "průnik",
+              "prvky v A **a zároveň** v B"
+            ],
+            [
+              "A ∪ B",
+              "sjednocení",
+              "prvky v A **nebo** v B (stačí v jedné)"
+            ],
+            [
+              "A ∖ B",
+              "rozdíl",
+              "prvky A, které nejsou v B"
+            ],
+            [
+              "A′",
+              "doplněk",
+              "prvky základní množiny U, které nejsou v A"
+            ],
+            [
+              "∅",
+              "prázdná množina",
+              "množina bez prvků"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš si prvky obou množin pod sebe.",
+            "Průnik: projdi prvky A a nech jen ty, které najdeš i v B.",
+            "Sjednocení: opiš všechny prvky A a dopiš ty z B, které tam ještě nejsou.",
+            "Rozdíl A ∖ B: z prvků A škrtni ty, které jsou v B."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "A = {1, 2, 3, 4}, B = {3, 4, 5}. Urči A ∩ B, A ∪ B a A ∖ B.",
+          "answer": "V obou jsou 3 a 4 → A ∩ B = {3, 4}. Všechno dohromady → A ∪ B = {1, 2, 3, 4, 5}. Z A škrtnu 3 a 4 → A ∖ B = {1, 2}."
+        },
+        {
+          "type": "heading",
+          "text": "Kolik má množina podmnožin"
+        },
+        {
+          "type": "text",
+          "text": "Podmnožinu vyrobíš tak, že u každého prvku rozhodneš: vezmu, nebo nevezmu. U jednoho prvku máš 2 možnosti, u dvou 2 · 2 = 4, u tří 2 · 2 · 2 = 8. Množina s n prvky má **2ⁿ podmnožin** (počítá se i ∅ a celá množina)."
+        },
+        {
+          "type": "example",
+          "question": "Vypiš všechny podmnožiny {a, b, c}.",
+          "answer": "∅, {a}, {b}, {c}, {a, b}, {a, c}, {b, c}, {a, b, c} – celkem 8 = 2³."
+        },
+        {
+          "type": "heading",
+          "text": "Intervaly = nerovnosti zapsané zkratkou"
+        },
+        {
+          "type": "term",
+          "term": "Nerovnost",
+          "definition": "Porovnání čísel: < menší, ≤ menší nebo rovno, > větší, ≥ větší nebo rovno.",
+          "example": "x ≤ 5 znamená: x je 5 nebo méně."
+        },
+        {
+          "type": "term",
+          "term": "Nekonečno (∞)",
+          "definition": "Není to číslo, jen značka „pokračuje to bez konce“. Proto u ∞ je vždy kulatá závorka.",
+          "example": "x ≥ 2 zapíšeme ⟨2; ∞)."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Nerovnost",
+            "Interval",
+            "Krajní body"
+          ],
+          "rows": [
+            [
+              "a ≤ x ≤ b",
+              "⟨a; b⟩",
+              "oba patří"
+            ],
+            [
+              "a < x < b",
+              "(a; b)",
+              "nepatří ani jeden"
+            ],
+            [
+              "a ≤ x < b",
+              "⟨a; b)",
+              "a patří, b ne"
+            ],
+            [
+              "x ≥ a",
+              "⟨a; ∞)",
+              "a patří"
+            ],
+            [
+              "x < b",
+              "(−∞; b)",
+              "b nepatří"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zkus si na ose najít interval (−∞; 2) a interval ⟨2; 5⟩. Mají společný nějaký bod?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": -2,
+            "max": 8,
+            "step": 1
+          }
+        },
+        {
+          "type": "example",
+          "question": "(−∞; 2) ∩ ⟨2; 5⟩ = ?",
+          "answer": "První interval končí těsně před 2 (dvojka nepatří). Druhý začíná dvojkou. Žádné číslo není v obou → **∅**."
+        },
+        {
+          "type": "example",
+          "question": "⟨1; 3) ∪ ⟨2; 6⟩ = ?",
+          "answer": "Intervaly se překrývají (od 2 do 3), takže dohromady tvoří jeden úsek od 1 do 6. Jednička patří, šestka patří → **⟨1; 6⟩**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "x ≥ 2 → ⟨2; ∞⟩",
+          "right": "x ≥ 2 → ⟨2; ∞)",
+          "why": "∞ není číslo, nemůže do intervalu „patřit“. U nekonečna je vždy kulatá závorka."
+        },
+        {
+          "type": "summary",
+          "text": "∈ prvek, ⊂ podmnožina, ∩ obojí zároveň, ∪ aspoň jedno, ∖ bez. Množina s n prvky má 2ⁿ podmnožin. Interval = nerovnost: ≤ dává ⟨ ⟩, < dává ( ), u ∞ vždy ( )."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "A = {1, 2, 3, 4}, B = {3, 4, 5}. A ∩ B =",
+      "options": [
+        "{3, 4}",
+        "{1, 2, 3, 4, 5}",
+        "{1, 2}",
+        "{5}"
+      ],
+      "answer": 0,
+      "explanation": "Průnik = prvky v obou množinách."
+    },
+    {
+      "type": "choice",
+      "question": "A = {1, 2, 3, 4}, B = {3, 4, 5}. A ∖ B =",
+      "options": [
+        "{1, 2}",
+        "{5}",
+        "{3, 4}",
+        "{1, 2, 5}"
+      ],
+      "answer": 0,
+      "explanation": "Z A vyhodíme prvky, které jsou v B."
+    },
+    {
+      "type": "truefalse",
+      "question": "Prázdná množina je podmnožinou každé množiny.",
+      "answer": true,
+      "explanation": "Nemá žádný prvek, který by v jiné množině chyběl."
+    },
+    {
+      "type": "input",
+      "question": "Kolik podmnožin má množina {a, b, c}?",
+      "answers": [
+        "8"
+      ],
+      "explanation": "2³ = 8"
+    },
+    {
+      "type": "choice",
+      "question": "Základní množina U = {1, 2, 3, 4, 5, 6}, A = {2, 4, 6}. Doplněk A′ =",
+      "options": [
+        "{1, 3, 5}",
+        "{2, 4, 6}",
+        "∅",
+        "{1, 2, 3}"
+      ],
+      "answer": 0,
+      "explanation": "Prvky U, které nejsou v A."
+    },
+    {
+      "type": "input",
+      "question": "Třída má 30 žáků. 18 hraje fotbal, 15 volejbal, 7 obojí. Kolik nehraje nic?",
+      "answers": [
+        "4"
+      ],
+      "explanation": "Hraje aspoň jedno: 18 + 15 − 7 = 26. Nic: 30 − 26 = 4."
+    },
+    {
+      "type": "match",
+      "question": "Spoj symbol s významem.",
+      "pairs": [
+        [
+          "∩",
+          "průnik"
+        ],
+        [
+          "∪",
+          "sjednocení"
+        ],
+        [
+          "∖",
+          "rozdíl"
+        ],
+        [
+          "∈",
+          "je prvkem"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "{1, 2} ⊂ {1, 2, 3}",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi průnikem a sjednocením množin.",
+      "answer": "Průnik A ∩ B obsahuje prvky, které jsou v obou množinách zároveň. Sjednocení A ∪ B obsahuje prvky, které jsou aspoň v jedné z nich."
+    },
+    {
+      "type": "choice",
+      "question": "Které číslo patří do ⟨−2; 3)?",
+      "options": [
+        "−2",
+        "3",
+        "−3",
+        "4"
+      ],
+      "answer": 0,
+      "explanation": "Lomená závorka u −2 = patří, kulatá u 3 = nepatří."
+    },
+    {
+      "type": "choice",
+      "question": "⟨1; 5⟩ ∩ (3; 7) =",
+      "options": [
+        "(3; 5⟩",
+        "⟨1; 7)",
+        "⟨3; 5⟩",
+        "(3; 5)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "⟨1; 3) ∪ ⟨2; 6⟩ =",
+      "options": [
+        "⟨1; 6⟩",
+        "⟨2; 3)",
+        "⟨1; 6)",
+        "(1; 6⟩"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "U symbolu ∞ může být lomená závorka.",
+      "answer": false,
+      "explanation": "∞ není číslo, nemůže do intervalu patřit."
+    },
+    {
+      "type": "match",
+      "question": "Spoj nerovnost s intervalem.",
+      "pairs": [
+        [
+          "x > 2",
+          "(2; ∞)"
+        ],
+        [
+          "x ≤ 2",
+          "(−∞; 2⟩"
+        ],
+        [
+          "−1 < x ≤ 2",
+          "(−1; 2⟩"
+        ],
+        [
+          "−1 ≤ x < 2",
+          "⟨−1; 2)"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "(−∞; 2) ∩ ⟨2; 5⟩ =",
+      "options": [
+        "∅",
+        "{2}",
+        "⟨2; 2⟩",
+        "(−∞; 5⟩"
+      ],
+      "answer": 0,
+      "explanation": "2 patří jen do druhého intervalu."
+    },
+    {
+      "type": "open",
+      "question": "Jak určíš průnik a sjednocení dvou intervalů?",
+      "answer": "Zakreslím oba intervaly nad jednu číselnou osu. Průnik je část, kde se překrývají, sjednocení je vše, co patří aspoň do jednoho. Pak hlídám krajní body."
+    }
+  ]
+}

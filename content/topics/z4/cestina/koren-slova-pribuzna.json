@@ -1,0 +1,310 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "koren-slova-pribuzna",
+  "title": "Kořen a slova příbuzná",
+  "emoji": "🌱",
+  "explanations": [
+    {
+      "title": "Rodina slov",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V rodině má každý své jméno, ale všichni mají stejné příjmení. Podle něj poznáš, kdo k sobě patří."
+        },
+        {
+          "type": "text",
+          "text": "Slova mají taky rodiny. Společná část slov z jedné rodiny se jmenuje **kořen**. Když ho najdeš, poradíš si s pravopisem: *bydliště* má y, protože patří k *bydlit*."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kořen slova",
+          "definition": "Část, kterou mají všechna slova z jedné rodiny společnou. Nese hlavní význam.",
+          "example": "**les** – **les**ník – **les**ní – za**les**nit"
+        },
+        {
+          "type": "term",
+          "term": "Slova příbuzná",
+          "definition": "Slova se **stejným kořenem** a **souvisejícím významem**.",
+          "example": "voda, vodník, vodní"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🌲 les",
+            "🧑‍🌾 lesník",
+            "🍄 lesní",
+            "🌳 zalesnit"
+          ],
+          "caption": "kořen les"
+        },
+        {
+          "type": "heading",
+          "text": "Jak najít kořen"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi aspoň tři slova z rodiny: *ryba, rybník, rybář*.",
+            "Napiš je pod sebe.",
+            "Hledej, co mají všechna stejné: **ryb**.",
+            "To je kořen."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Najdi kořen: sníh, sněhový, sněhulák.",
+          "answer": "Pozor, kořen se může trochu měnit: **sníh** – **sněh**ový – **sněh**ulák. Je to pořád stejná část, jen se v ní mění samohláska (í – ě). Slova jsou příbuzná."
+        },
+        {
+          "type": "example",
+          "question": "Najdi kořen: pekař, pekárna, upéct.",
+          "answer": "Společné je **pek** (v *upéct* se mění na *péc*). Všechna slova souvisí s pečením."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Podvodník“ je příbuzné se slovem „voda“, protože má „vod“.",
+          "right": "„Podvodník“ souvisí s „podvodem“, ne s vodou.",
+          "why": "Příbuzná slova musí mít stejný kořen **a zároveň** související význam. Podvodník nemá s vodou nic společného."
+        },
+        {
+          "type": "summary",
+          "text": "Kořen je společná část slov jedné rodiny. Příbuzná slova mají stejný kořen a související význam."
+        }
+      ]
+    },
+    {
+      "title": "Dvě zkoušky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Některá slova vypadají jako příbuzná, ale nejsou. *Kos* a *kost* se liší jen jedním písmenem – a přitom spolu nemají nic společného."
+        },
+        {
+          "type": "text",
+          "text": "Proto každé slovo prověříme **dvěma zkouškami**. Teprve když projde oběma, je příbuzné."
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Společná část slov z jedné rodiny.",
+          "example": "škol: škola, školák, školní"
+        },
+        {
+          "type": "term",
+          "term": "Slova příbuzná",
+          "definition": "Mají stejný kořen a jejich významy spolu souvisí.",
+          "example": "škola – školák"
+        },
+        {
+          "type": "term",
+          "term": "Slova jen podobná",
+          "definition": "Vypadají nebo znějí podobně, ale význam nesouvisí. Nejsou příbuzná.",
+          "example": "škola – skála; hrad – hrách"
+        },
+        {
+          "type": "heading",
+          "text": "Dvě zkoušky"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Zkouška 1 – stejná část:** Mají slova stejný kořen? (*vod*-ník, *vod*-ní)",
+            "**Zkouška 2 – význam:** Souvisí slova významem? (vodník žije ve vodě – ano)",
+            "Prošlo obě? → **příbuzná**.",
+            "Prošlo jen první? → **jen podobná**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Roztřiď"
+        },
+        {
+          "type": "text",
+          "text": "Které slovo opravdu patří do rodiny *voda*? Dej ho do správného kbelíku."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "příbuzné k „voda“",
+              "jen podobné"
+            ],
+            "items": [
+              {
+                "text": "vodník",
+                "group": 0
+              },
+              {
+                "text": "vodní",
+                "group": 0
+              },
+              {
+                "text": "zavodnit",
+                "group": 0
+              },
+              {
+                "text": "vodovod",
+                "group": 0
+              },
+              {
+                "text": "vodit",
+                "group": 1
+              },
+              {
+                "text": "podvod",
+                "group": 1
+              },
+              {
+                "text": "vodítko",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je „vodítko“ příbuzné k „voda“?",
+          "answer": "Zkouška 1: má *vod* – ano. Zkouška 2: vodítko je na **vodění** psa, s vodou nesouvisí – ne. Je **jen podobné**."
+        },
+        {
+          "type": "example",
+          "question": "Která slova jsou příbuzná: domov, domácí, dým?",
+          "answer": "*Domov* a *domácí* mají kořen *dom* a souvisí s domem – **příbuzná**. *Dým* je kouř – nepatří sem."
+        },
+        {
+          "type": "mistake",
+          "wrong": "kos, kost, kostel jsou příbuzná slova.",
+          "right": "Nejsou příbuzná – jen se podobají.",
+          "why": "Kos je pták, kost je v těle, kostel je budova. Významy spolu nesouvisí, takže neprojdou druhou zkouškou."
+        },
+        {
+          "type": "summary",
+          "text": "Příbuzné slovo projde dvěma zkouškami: stejný kořen a související význam."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký je kořen slov: rybník, rybář, rybička?",
+      "options": [
+        "ryb",
+        "rybn",
+        "ník"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo NENÍ příbuzné ke slovu „hrad“?",
+      "options": [
+        "hradní",
+        "hradby",
+        "hrách"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je příbuzné ke slovu „škola“?",
+      "options": [
+        "školák",
+        "skála",
+        "kolo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Napiš kořen slova „lesník“.",
+      "answers": [
+        "les"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš kořen slova „vodník“.",
+      "answers": [
+        "vod"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„Podvodník“ je příbuzné se slovem „voda“.",
+      "answer": false,
+      "explanation": "Podvodník souvisí s podvodem, ne s vodou."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Domov“ a „domácí“ jsou slova příbuzná.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj slovo s jeho kořenem.",
+      "pairs": [
+        [
+          "sněhulák",
+          "sněh"
+        ],
+        [
+          "zimní",
+          "zim"
+        ],
+        [
+          "kamarádka",
+          "kamarád"
+        ],
+        [
+          "pekař",
+          "pek"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která skupina obsahuje jen příbuzná slova?",
+      "options": [
+        "zima, zimní, zimovat",
+        "zima, zítra, zisk",
+        "kos, kost, kostel"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejkratšího slova.",
+      "items": [
+        "les",
+        "lesy",
+        "lesník",
+        "zalesnit"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co jsou slova příbuzná? Řekni příklad.",
+      "answer": "Slova se stejným kořenem a souvisejícím významem, například voda, vodní, vodník."
+    },
+    {
+      "type": "open",
+      "question": "Proč nám slova příbuzná pomáhají při psaní?",
+      "answer": "Když nevím, jak se slovo píše, najdu příbuzné slovo. Třeba bydliště – bydlit, tak píšu y."
+    }
+  ]
+}

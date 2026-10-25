@@ -1,0 +1,348 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obsah-a-jednotky",
+  "title": "Obsah a jednotky obsahu",
+  "emoji": "🏡",
+  "generator": "perimeter-area",
+  "explanations": [
+    {
+      "title": "Dlaždice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Koupelna je 4 m dlouhá a 3 m široká. Kolik čtvercových dlaždic 1 m × 1 m potřebuješ na podlahu? To je otázka na **obsah**."
+        },
+        {
+          "type": "text",
+          "text": "Obsah potřebuješ při nákupu dlaždic, koberce, barvy nebo při výpočtu, jak velká je zahrada či pole."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obsah (S)",
+          "definition": "Velikost plochy uvnitř tvaru. Kolik čtverečků se vejde dovnitř. Značíme ho písmenem S."
+        },
+        {
+          "type": "term",
+          "term": "Čtvereční metr (m²)",
+          "definition": "Čtverec se stranou 1 m. Jednotka obsahu.",
+          "example": "Velká dlaždice 1 m × 1 m má 1 m²."
+        },
+        {
+          "type": "heading",
+          "text": "Pokládáme dlaždice"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Do jedné řady se vejdou **4** dlaždice (délka 4 m).",
+            "Řad je **3** (šířka 3 m).",
+            "3 · 4 = **12** dlaždic.",
+            "Obsah podlahy je **12 m²**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Každý puntík je jedna dlaždice. Změň počet řad a dlaždic v řadě. Jak se mění obsah?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 4
+          }
+        },
+        {
+          "type": "text",
+          "text": "Proto: **obdélník S = a · b**, **čtverec S = a · a**."
+        },
+        {
+          "type": "heading",
+          "text": "Složitější tvary"
+        },
+        {
+          "type": "text",
+          "text": "Tvar L rozřízni na obdélníky nebo spočítej velký obdélník a odečti, co chybí. Obdélník 6 × 4 cm bez rohu 2 × 2 cm: 24 − 4 = **20 cm²**."
+        },
+        {
+          "type": "example",
+          "question": "Pokoj 5 m × 4 m. Kolik m² podlahy?",
+          "answer": "S = 5 · 4 = **20 m²**."
+        },
+        {
+          "type": "example",
+          "question": "Obsah čtverce je 64 cm². Jak dlouhá je strana?",
+          "answer": "Hledám číslo, které krát samo sebe dá 64: 8 · 8 = 64. **8 cm**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obdélník 6 m × 4 m a čtverec 5 m × 5 m mají stejný obsah, protože mají stejný obvod.",
+          "right": "6 · 4 = **24 m²**, 5 · 5 = **25 m²**",
+          "why": "Stejný obvod (20 m) neznamená stejný obsah. Obsah se vždy počítá násobením."
+        },
+        {
+          "type": "summary",
+          "text": "Obsah = kolik čtverečků se vejde dovnitř. Obdélník S = a · b, čtverec S = a · a."
+        }
+      ]
+    },
+    {
+      "title": "Převody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Známka má pár cm², pokoj desítky m², pole hektary a celý stát tisíce km². Každá plocha má svou vhodnou jednotku."
+        },
+        {
+          "type": "text",
+          "text": "A pozor – jednotky obsahu se převádějí **jinak** než jednotky délky. Tady se dělá nejvíc chyb."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "mm², cm², dm², m², km²",
+          "definition": "Čtverec se stranou 1 mm, 1 cm, 1 dm, 1 m, 1 km.",
+          "example": "1 cm² je čtvereček o straně 1 cm."
+        },
+        {
+          "type": "term",
+          "term": "Ar (a)",
+          "definition": "Čtverec 10 m × 10 m = **100 m²**. Měří se v něm zahrady."
+        },
+        {
+          "type": "term",
+          "term": "Hektar (ha)",
+          "definition": "Čtverec 100 m × 100 m = **10 000 m²**. Měří se v něm pole a lesy."
+        },
+        {
+          "type": "heading",
+          "text": "Proč po stovkách"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "1 cm = 10 mm.",
+            "Čtvereček 1 cm × 1 cm je tedy 10 mm × 10 mm.",
+            "Vejde se do něj 10 řad po 10 milimetrových čtverečcích.",
+            "10 · 10 = **100**. Proto **1 cm² = 100 mm²**."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jednotka",
+            "Převod"
+          ],
+          "rows": [
+            [
+              "1 cm²",
+              "100 mm²"
+            ],
+            [
+              "1 dm²",
+              "100 cm²"
+            ],
+            [
+              "1 m²",
+              "100 dm² = 10 000 cm²"
+            ],
+            [
+              "1 a",
+              "100 m²"
+            ],
+            [
+              "1 ha",
+              "10 000 m²"
+            ],
+            [
+              "1 km²",
+              "100 ha"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Řekni převod nahlas, pak kartičku otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "1 m²",
+                "back": "100 dm²"
+              },
+              {
+                "front": "1 dm²",
+                "back": "100 cm²"
+              },
+              {
+                "front": "1 ha",
+                "back": "10 000 m²"
+              },
+              {
+                "front": "1 a (ar)",
+                "back": "100 m²"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "3 dm² = ? cm²",
+          "answer": "Z větší na menší → násobím. 1 dm² = 100 cm². 3 · 100 = **300 cm²**."
+        },
+        {
+          "type": "example",
+          "question": "500 mm² = ? cm²",
+          "answer": "Z menší na větší → dělím. 500 : 100 = **5 cm²**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 cm² = 10 mm²",
+          "right": "1 cm² = **100 mm²**",
+          "why": "10 platí pro délku (1 cm = 10 mm). Obsah je čtverec – 10 · 10 = 100."
+        },
+        {
+          "type": "summary",
+          "text": "U obsahu převádíš po stovkách: 1 m² = 100 dm² = 10 000 cm². 1 ha = 10 000 m²."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Obdélník 12 cm × 5 cm. Obsah v cm² =",
+      "answers": [
+        "60"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Čtverec se stranou 9 m. Obsah v m² =",
+      "answers": [
+        "81"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "1 m² = ? dm²",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3 dm² = ? cm²",
+      "answers": [
+        "300"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "1 m² = ? cm²",
+      "answers": [
+        "10000",
+        "10 000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "2 ha = ? m²",
+      "answers": [
+        "20000",
+        "20 000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "500 mm² = ? cm²",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "V čem měříš rozlohu pole?",
+      "options": [
+        "cm²",
+        "ha",
+        "km"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Obsah čtverce je 64 cm². Strana je…",
+      "options": [
+        "8 cm",
+        "16 cm",
+        "32 cm"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "1 cm² = 10 mm²",
+      "answer": false,
+      "explanation": "1 cm² = 10 mm · 10 mm = 100 mm²."
+    },
+    {
+      "type": "truefalse",
+      "question": "Obdélník 6 m × 4 m má stejný obsah jako čtverec se stranou 5 m.",
+      "answer": false,
+      "explanation": "6 · 4 = 24 m², 5 · 5 = 25 m²."
+    },
+    {
+      "type": "input",
+      "question": "Pokoj 5 m × 4 m. Kolik m² podlahy?",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Útvar ve tvaru L: obdélník 6 cm × 4 cm, z rohu vyříznut čtverec 2 cm × 2 cm. Obsah v cm² =",
+      "answers": [
+        "20"
+      ],
+      "explanation": "24 − 4 = 20."
+    },
+    {
+      "type": "open",
+      "question": "Proč je 1 m² = 100 dm², a ne 10 dm²?",
+      "answer": "Čtverec 1 m × 1 m je 10 dm × 10 dm. Vejde se do něj 10 řad po 10 čtverečcích, tedy 100 dm²."
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš obsah útvaru, který není obdélník, ale dá se rozdělit?",
+      "answer": "Rozdělím ho na obdélníky a čtverce, spočítám jejich obsahy a sečtu je (nebo odečtu vyříznutou část)."
+    }
+  ]
+}

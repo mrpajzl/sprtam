@@ -1,0 +1,382 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "modals-deduction-present",
+  "title": "Dedukce v přítomnosti",
+  "emoji": "🕵️",
+  "explanations": [
+    {
+      "title": "Jako detektiv",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jdeš kolem domu kamarádů. Svítí se a auto stojí před domem. Řekneš: „**Určitě** jsou doma.“ Nikdo ti to neřekl – **usoudil** sis to z toho, co vidíš. Jako detektiv."
+        },
+        {
+          "type": "text",
+          "text": "Angličtina na takové úsudky používá malá slovesa *must, might, can't*. Podle toho, které vybereš, posluchač pozná, **jak moc si jsi jistý**. Je to běžné v řeči i v testech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dedukce",
+          "definition": "Logický úsudek: z důkazů odhaduješ, co je pravda.",
+          "example": "Má mokrý deštník → venku asi prší."
+        },
+        {
+          "type": "term",
+          "term": "Modální sloveso",
+          "definition": "Malé sloveso, které mění „náladu“ věty: povinnost, možnost, jistota. Za ním je infinitiv **bez *to***.",
+          "example": "*must, can, may, might, could, should*"
+        },
+        {
+          "type": "term",
+          "term": "must (be)",
+          "definition": "V dedukci: „**určitě** je“. Jsem si skoro jistý, že ano.",
+          "example": "*They **must be** at home.* = Určitě jsou doma."
+        },
+        {
+          "type": "term",
+          "term": "can't (be)",
+          "definition": "V dedukci: „**určitě není**, to není možné“.",
+          "example": "*He **can't be** in London.* = Nemůže být v Londýně."
+        },
+        {
+          "type": "term",
+          "term": "might / may / could (be)",
+          "definition": "„**Možná** je“. Nevím jistě.",
+          "example": "*She **might be** asleep.* = Možná spí."
+        },
+        {
+          "type": "heading",
+          "text": "Tři případy detektiva"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Světlo svítí, auto je před domem: *They **must be** at home.* (určitě)",
+            "Nikdo nebere telefon: *She **might be** asleep.* (možná)",
+            "Viděl jsem ho před minutou v Praze: *He **can't be** in London.* (určitě ne)"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Když chceš říct, že něco **právě teď probíhá**, použij *must / might / can't* + ***be* + -ing**: *She **must be working** now.* = Určitě teď pracuje."
+        },
+        {
+          "type": "example",
+          "question": "*He's got a Ferrari.* Co usoudíš o jeho penězích?",
+          "answer": "Ferrari je drahé → jsem si skoro jistý → *must*. ***He must be rich.***"
+        },
+        {
+          "type": "example",
+          "question": "*That's Jane!* – Ale Jane je tento týden ve Španělsku. Jak odpovíš?",
+          "answer": "Jsem si jistý, že to Jane být nemůže → *can't*. ***That can't be Jane.***"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň. Ptej se: jsem si jistý, že ano (*must*), že ne (*can't*), nebo nevím (*might*)?"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "She's been working all day. She",
+                "after": "be tired.",
+                "options": [
+                  "must",
+                  "can't",
+                  "mustn't"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "He's only 12. He",
+                "after": "be a university student.",
+                "options": [
+                  "can't",
+                  "must",
+                  "might"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Take an umbrella. It",
+                "after": "rain later.",
+                "options": [
+                  "might",
+                  "must",
+                  "can't"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "He mustn't be at home. (myšleno: určitě není doma)",
+          "right": "He can't be at home.",
+          "why": "*mustn't* znamená **zákaz** („nesmí“). Opakem *must* v dedukci je *can't*."
+        },
+        {
+          "type": "summary",
+          "text": "*must* = určitě ano, *might / may / could* = možná, *can't* = určitě ne. Probíhá to teď? Přidej *be* + *-ing*."
+        }
+      ]
+    },
+    {
+      "title": "Stupnice jistoty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si teploměr, jen místo stupňů ukazuje **jistotu**. Nahoře „určitě ano“, uprostřed „možná“, dole „určitě ne“. Každé modální sloveso má na teploměru své místo."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, kde které sloveso leží, vybereš ho v testu bez váhání a v řeči přesně řekneš, jak si jsi jistý."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Modální sloveso",
+          "definition": "Sloveso jako *must, may, might, could, can't*. Vyjadřuje jistotu, možnost nebo povinnost. Za ním je infinitiv bez *to*.",
+          "example": "*must be*, *might know*"
+        },
+        {
+          "type": "term",
+          "term": "Dedukce",
+          "definition": "Úsudek z toho, co víme nebo vidíme.",
+          "example": "Je mu 12 → nemůže být na univerzitě."
+        },
+        {
+          "type": "term",
+          "term": "Infinitiv bez to",
+          "definition": "Základní tvar slovesa bez *to*.",
+          "example": "*be, know, live*"
+        },
+        {
+          "type": "heading",
+          "text": "Teploměr jistoty"
+        },
+        {
+          "type": "text",
+          "text": "Sloupce ukazují **přibližnou** jistotu – čísla nejsou přesná, jde o pořadí. Porovnej, jak vysoko je *must* a jak nízko *can't*."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "% jistoty (přibližně)",
+            "items": [
+              {
+                "label": "must",
+                "value": 95
+              },
+              {
+                "label": "may",
+                "value": 50
+              },
+              {
+                "label": "might / could",
+                "value": 40
+              },
+              {
+                "label": "can't",
+                "value": 5
+              }
+            ]
+          }
+        },
+        {
+          "type": "table",
+          "head": [
+            "Sloveso",
+            "Význam",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "must be",
+              "určitě je",
+              "You must be exhausted. = Musíš být vyčerpaný."
+            ],
+            [
+              "may / might / could be",
+              "možná je",
+              "He might be in the library. = Možná je v knihovně."
+            ],
+            [
+              "can't / couldn't be",
+              "určitě není",
+              "It can't be true. = To nemůže být pravda."
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi důkaz ve větě (*20 hours of travelling, he's only 12…*).",
+            "Rozhodni, jak silný je: skoro jistota ano / nevím / skoro jistota ne.",
+            "Vyber sloveso z teploměru: *must* / *may, might, could* / *can't*.",
+            "Za něj dej infinitiv bez *to* (*be, know*), nebo *be* + *-ing*, když děj právě probíhá."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "*You've been travelling for 20 hours. You ___ be exhausted.*",
+          "answer": "Důkaz je silný → skoro jistota ano → ***must***."
+        },
+        {
+          "type": "example",
+          "question": "*I'm not sure where Tom is. He ___ be in the library.*",
+          "answer": "„Nejsem si jistý“ → uprostřed teploměru → ***might*** (nebo *may, could*)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "She must work now. (myšleno: určitě teď pracuje)",
+          "right": "She must be working now.",
+          "why": "*must work* zní jako povinnost („musí pracovat“). Úsudek o ději, který právě probíhá, = *must be* + *-ing*."
+        },
+        {
+          "type": "summary",
+          "text": "Teploměr: *must* (určitě ano) → *may / might / could* (možná) → *can't* (určitě ne). Opakem *must* je *can't*, ne *mustn't*."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "He's got a Ferrari. He ___ be rich.",
+      "options": [
+        "must",
+        "can't",
+        "mustn't",
+        "needn't"
+      ],
+      "answer": 0,
+      "explanation": "Logický závěr: určitě."
+    },
+    {
+      "type": "choice",
+      "question": "That ___ be Jane – she's in Spain this week.",
+      "options": [
+        "can't",
+        "mustn't",
+        "must",
+        "should"
+      ],
+      "answer": 0,
+      "explanation": "Jistota, že ne → can't."
+    },
+    {
+      "type": "truefalse",
+      "question": "*mustn't* vyjadřuje, že něco určitě není pravda.",
+      "answer": false,
+      "explanation": "mustn't = zákaz. Pro dedukci „určitě ne“ je can't."
+    },
+    {
+      "type": "truefalse",
+      "question": "*might*, *may* a *could* vyjadřují možnost.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "I'm not sure where Tom is. He ___ be in the library. (možná)",
+      "answers": [
+        "might",
+        "may",
+        "could"
+      ],
+      "explanation": "Nejistota → might/may/could."
+    },
+    {
+      "type": "input",
+      "question": "You've been travelling for 20 hours. You ___ be exhausted. (určitě)",
+      "answers": [
+        "must"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Look at the clouds. It ___ rain soon.",
+      "options": [
+        "could",
+        "can't",
+        "mustn't"
+      ],
+      "answer": 0,
+      "explanation": "Možnost do budoucna."
+    },
+    {
+      "type": "choice",
+      "question": "Which sentence means \"Určitě teď pracuje\"?",
+      "options": [
+        "She must be working now.",
+        "She must work now.",
+        "She can't be working now."
+      ],
+      "answer": 0,
+      "explanation": "Probíhající děj: must be + -ing."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od největší jistoty k nejmenší.",
+      "items": [
+        "must be",
+        "may be",
+        "might be",
+        "can't be"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj situaci se závěrem.",
+      "pairs": [
+        [
+          "The phone is ringing.",
+          "It might be Dad."
+        ],
+        [
+          "She hasn't eaten all day.",
+          "She must be hungry."
+        ],
+        [
+          "He failed every test.",
+          "He can't be a genius."
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak vyjádříš anglicky jistotu a nejistotu v přítomnosti?",
+      "answer": "Jistotu, že ano, vyjádříme must be, jistotu, že ne, can't be. Možnost vyjadřují may, might nebo could be."
+    },
+    {
+      "type": "open",
+      "question": "Proč nelze říct „He mustn't be at home“ ve smyslu „určitě není doma“?",
+      "answer": "Mustn't znamená zákaz. Pro logický závěr, že něco není pravda, se používá can't: He can't be at home."
+    }
+  ]
+}

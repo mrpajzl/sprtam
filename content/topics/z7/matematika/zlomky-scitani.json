@@ -1,0 +1,302 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zlomky-scitani",
+  "title": "Sčítání a odčítání zlomků",
+  "emoji": "➕",
+  "generator": "frac-add",
+  "explanations": [
+    {
+      "title": "Dílky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Snědl jsi čtvrtku dortu a sestra dvě čtvrtky. Kolik jste snědli dohromady? Tři čtvrtky. To je sčítání zlomků – a je to snadné, dokud jsou dílky stejně velké."
+        },
+        {
+          "type": "text",
+          "text": "Těžší je to, když jeden má půlku a druhý třetinu. Tady se naučíš, jak na to. Hodí se v kuchyni, u receptů i v dílně."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čitatel a jmenovatel",
+          "definition": "Ve zlomku 3/4 říká **jmenovatel** 4 (dole), na kolik dílů je celek rozdělen. **Čitatel** 3 (nahoře) říká, kolik dílů máš.",
+          "example": "3/4 = 3 čtvrtiny"
+        },
+        {
+          "type": "term",
+          "term": "Stejnojmenné zlomky",
+          "definition": "Zlomky se **stejným jmenovatelem** – mají stejně velké dílky.",
+          "example": "1/4 a 2/4 jsou stejnojmenné (čtvrtiny)."
+        },
+        {
+          "type": "term",
+          "term": "Rozšířit zlomek",
+          "definition": "Vynásobit čitatele i jmenovatele stejným číslem. Dílky se rozkrájí na menší, množství se nezmění.",
+          "example": "1/2 = 3/6 (rozšířeno třemi)"
+        },
+        {
+          "type": "heading",
+          "text": "Stejné dílky: sčítáš jako jablka"
+        },
+        {
+          "type": "text",
+          "text": "1 jablko + 2 jablka = 3 jablka. Stejně: 1 čtvrtka + 2 čtvrtky = **3 čtvrtky**. Sčítáš jen čitatele, jmenovatel (druh dílků) zůstává."
+        },
+        {
+          "type": "text",
+          "text": "Nastav na koláči 1/4 a pak přidej 2 čtvrtiny. Kolik dílků je vybarveno?"
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 1,
+            "denominator": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Různé dílky: nejdřív je překrájej"
+        },
+        {
+          "type": "text",
+          "text": "Půlka pizzy + třetina pizzy. Půlky a třetiny jsou různě velké, nejde je jen tak spočítat. Trik: obě pizzy překrájej na **šestiny**."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Půlka = 3 šestiny (1/2 = 3/6).",
+            "Třetina = 2 šestiny (1/3 = 2/6).",
+            "Dohromady 3/6 + 2/6 = **5/6**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Snědl jsem 1/3 dortu, sestra 1/4. Kolik dortu zbylo?",
+          "answer": "Překrájím na dvanáctiny: 1/3 = 4/12, 1/4 = 3/12. Snědli jsme 7/12. Celý dort je 12/12. Zbylo 12/12 − 7/12 = **5/12**."
+        },
+        {
+          "type": "example",
+          "question": "1 − 3/8 = ?",
+          "answer": "Celek jsou 8 osmin: 8/8 − 3/8 = **5/8**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1/2 + 1/2 = 2/4",
+          "right": "1/2 + 1/2 = 2/2 = 1",
+          "why": "Dvě půlky dají celou pizzu. 2/4 je zase jen půlka! Jmenovatel říká druh dílků – ten se nesčítá."
+        },
+        {
+          "type": "summary",
+          "text": "Sčítat a odčítat jde jen stejné dílky. Různé dílky nejdřív překrájej na stejné (společný jmenovatel), pak sečti čitatele."
+        }
+      ]
+    },
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sčítání zlomků má přesný postup ve čtyřech krocích. Funguje vždycky – i pro zlomky jako 4/9 + 1/6, které si těžko představíš."
+        },
+        {
+          "type": "text",
+          "text": "Stejný postup použiješ v 9. třídě u lomených výrazů, tak se ho vyplatí umět."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čitatel / jmenovatel",
+          "definition": "Horní / dolní číslo zlomku.",
+          "example": "V 5/6 je čitatel 5, jmenovatel 6."
+        },
+        {
+          "type": "term",
+          "term": "Nejmenší společný násobek (nsn)",
+          "definition": "Nejmenší číslo, které jde vydělit oběma čísly. Píše se n(a, b).",
+          "example": "n(3, 4) = 12, n(9, 6) = 18"
+        },
+        {
+          "type": "term",
+          "term": "Společný jmenovatel",
+          "definition": "Číslo, na které jde rozšířit oba zlomky. Nejvýhodnější je nsn jmenovatelů.",
+          "example": "Pro 2/3 a 1/4 je to 12."
+        },
+        {
+          "type": "term",
+          "term": "Krácení",
+          "definition": "Vydělení čitatele i jmenovatele stejným číslem. Hodnota se nezmění.",
+          "example": "2/6 = 1/3"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zadání: 2/3 + 1/4.",
+            "Najdi společný jmenovatel: n(3, 4) = 12.",
+            "Rozšiř oba zlomky: 2/3 = 8/12 (· 4), 1/4 = 3/12 (· 3).",
+            "Sečti čitatele, jmenovatel opiš: 8/12 + 3/12 = 11/12.",
+            "Zkontroluj, jestli jde výsledek krátit. 11/12 nejde."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "5/6 − 1/2 = ?",
+          "answer": "Společný jmenovatel 6. 1/2 = 3/6. 5/6 − 3/6 = 2/6. Zkrátím dvěma: **1/3**."
+        },
+        {
+          "type": "example",
+          "question": "3/4 − 1/3 = ?",
+          "answer": "n(4, 3) = 12. 3/4 = 9/12, 1/3 = 4/12. 9/12 − 4/12 = **5/12**."
+        },
+        {
+          "type": "heading",
+          "text": "Smíšená čísla"
+        },
+        {
+          "type": "text",
+          "text": "**Smíšené číslo** je třeba 2 1/2 = dvě celé a jedna polovina. Sečti zvlášť celé a zvlášť zlomky."
+        },
+        {
+          "type": "example",
+          "question": "2 1/2 + 1 1/4 = ?",
+          "answer": "Celé: 2 + 1 = 3. Zlomky: 1/2 + 1/4 = 2/4 + 1/4 = 3/4. Výsledek **3 3/4**."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si výsledek na obrázku: nastav 11/12 a podívej se, kolik chybí do celku."
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 11,
+            "denominator": 12
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "1/2 + 1/3 = 2/5 (sečtu nahoře i dole)",
+          "right": "1/2 + 1/3 = 3/6 + 2/6 = 5/6",
+          "why": "Jmenovatele se nikdy nesčítají. 2/5 je dokonce méně než 1/2, ze které jsi začal – to nedává smysl."
+        },
+        {
+          "type": "summary",
+          "text": "Společný jmenovatel → rozšířit → sečíst čitatele → zkrátit. Jmenovatele nikdy nesčítej."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "2/7 + 3/7 =",
+      "answers": [
+        "5/7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "1/2 + 1/3 =",
+      "answers": [
+        "5/6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3/4 − 1/3 =",
+      "answers": [
+        "5/12"
+      ],
+      "explanation": "9/12 − 4/12 = 5/12"
+    },
+    {
+      "type": "choice",
+      "question": "1/2 + 1/4 =",
+      "options": [
+        "3/4",
+        "2/6",
+        "1/3",
+        "2/4"
+      ],
+      "answer": 0,
+      "explanation": "2/4 + 1/4 = 3/4"
+    },
+    {
+      "type": "truefalse",
+      "question": "1/3 + 1/3 = 2/6",
+      "answer": false,
+      "explanation": "Jmenovatele se nesčítají: 2/3."
+    },
+    {
+      "type": "input",
+      "question": "5/6 − 1/2 = (v základním tvaru)",
+      "answers": [
+        "1/3"
+      ],
+      "explanation": "5/6 − 3/6 = 2/6 = 1/3"
+    },
+    {
+      "type": "input",
+      "question": "1 − 3/8 =",
+      "answers": [
+        "5/8"
+      ],
+      "explanation": "8/8 − 3/8"
+    },
+    {
+      "type": "choice",
+      "question": "2 1/2 + 1 1/4 =",
+      "options": [
+        "3 3/4",
+        "3 2/6",
+        "3 1/4",
+        "4 3/4"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Snědl jsem 1/3 dortu, sestra 1/4. Jaká část dortu zbyla?",
+      "answers": [
+        "5/12"
+      ],
+      "explanation": "1 − 4/12 − 3/12 = 5/12"
+    },
+    {
+      "type": "truefalse",
+      "question": "Společný jmenovatel 4/9 a 1/6 je 18.",
+      "answer": true,
+      "explanation": "n(9, 6) = 18"
+    },
+    {
+      "type": "open",
+      "question": "Jak sečteš zlomky s různými jmenovateli?",
+      "answer": "Najdu společného jmenovatele (nejlépe nsn jmenovatelů), oba zlomky na něj rozšířím, sečtu čitatele a jmenovatele opíšu. Nakonec zkrátím."
+    },
+    {
+      "type": "open",
+      "question": "Proč neplatí 1/2 + 1/2 = 2/4?",
+      "answer": "Dvě poloviny dají celek, tedy 1. Kdybych sčítal i jmenovatele, vyšla by zase jen polovina, což je nesmysl."
+    }
+  ]
+}

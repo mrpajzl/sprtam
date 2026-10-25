@@ -1,0 +1,356 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "odpor-vodice",
+  "title": "Odpor vodiče",
+  "emoji": "🧵",
+  "explanations": [
+    {
+      "title": "Jako chodba",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč má kabel k varné konvici tlustší dráty než kabel k nabíječce? Proč je drát v topné spirále železný a ne měděný? Záleží na **odporu** vodiče – a ten se dá ovlivnit."
+        },
+        {
+          "type": "text",
+          "text": "Představ si proud jako dav dětí, které o přestávce běží chodbou do jídelny. Odpor je všechno, co jim překáží."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektrický proud",
+          "definition": "Pohyb volných elektronů (drobných záporně nabitých částic) vodičem.",
+          "example": "Proud v drátu = elektrony, které se posouvají jedním směrem."
+        },
+        {
+          "type": "term",
+          "term": "Odpor `R`",
+          "definition": "Jak moc vodič proudu **brání**. Elektrony do atomů vodiče narážejí. Jednotka **ohm (Ω)**.",
+          "example": "Tenký dlouhý drát brání víc než krátký tlustý."
+        },
+        {
+          "type": "term",
+          "term": "Průřez",
+          "definition": "Plocha, kterou bys viděl, kdybys drát přestřihl. Tlustý drát má velký průřez.",
+          "example": "Drát o průměru 2 mm má větší průřez než 1 mm."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři věci, na kterých odpor závisí"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Délka**: dvakrát delší chodba → dvakrát víc strkání → **dvojnásobný** odpor.",
+            "**Průřez**: dvakrát širší chodba → projde dvakrát víc dětí → **poloviční** odpor.",
+            "**Materiál**: v některé chodbě stojí méně lavic. Stříbro a měď mají malý odpor, železo větší.",
+            "**Teplota**: v teplém kovu atomy víc kmitají a víc překáží → odpor kovu s teplotou **roste**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Porovnej kovy"
+        },
+        {
+          "type": "text",
+          "text": "Graf ukazuje, kolikrát má drát z daného kovu větší odpor než stejný drát z mědi."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "× odpor mědi",
+            "items": [
+              {
+                "label": "stříbro",
+                "value": 0.94
+              },
+              {
+                "label": "měď",
+                "value": 1
+              },
+              {
+                "label": "hliník",
+                "value": 1.6
+              },
+              {
+                "label": "železo",
+                "value": 5.8
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Stříbro vede nejlépe, ale je drahé. Proto se vedení dělá z **mědi** a **hliníku** – mají malý odpor a nejsou tak drahé."
+        },
+        {
+          "type": "example",
+          "question": "Drát má odpor 6 Ω. Jaký odpor má stejný drát dvakrát delší?",
+          "answer": "Dvojnásobná délka → dvojnásobný odpor: 6 · 2 = **12 Ω**."
+        },
+        {
+          "type": "example",
+          "question": "Proč mají prodlužovačky pro výkonné spotřebiče tlustší dráty?",
+          "answer": "Tlustší drát má **menší odpor**. Méně se zahřívá a ztrácí se v něm méně energie."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Tlustší drát má větší odpor, protože je v něm víc kovu.",
+          "right": "Tlustší drát má menší odpor.",
+          "why": "Víc kovu znamená víc cest pro elektrony – jako širší chodba. Proud projde snáz."
+        },
+        {
+          "type": "summary",
+          "text": "Odpor roste s délkou a s teplotou, klesá s průřezem a závisí na materiálu. Měď a hliník mají malý odpor."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Výrobce kabelů musí přesně vědět, jaký odpor bude mít drát dané délky a tloušťky. Na to má vzorec. Ukážeme si také **reostat** – součástku, kterou odpor měníš otočením nebo posunutím."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Odpor `R`",
+          "definition": "Jak moc vodič brání proudu, v ohmech (Ω). Platí Ohmův zákon `I = U : R` – větší odpor, menší proud.",
+          "example": "Spirála v konvici má asi 25 Ω."
+        },
+        {
+          "type": "term",
+          "term": "Délka `l` a průřez `S`",
+          "definition": "`l` je délka drátu v metrech. `S` je plocha řezu drátu, třeba v mm².",
+          "example": "Kabel do zásuvky mívá průřez 1,5 mm²."
+        },
+        {
+          "type": "term",
+          "term": "Měrný odpor `ρ`",
+          "definition": "Číslo typické pro materiál. Říká, jak dobře látka vede proud. Malé = dobrý vodič.",
+          "example": "Stříbro má nejmenší měrný odpor ze všech kovů, pak měď."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorec"
+        },
+        {
+          "type": "text",
+          "text": "`R = ρ · l : S`. Délka je nahoře (delší → větší odpor), průřez dole (tlustší → menší odpor)."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Délka 2× větší → odpor 2× větší.",
+            "Průřez 3× větší → odpor 3× menší.",
+            "Jiný kov → jiné ρ: železo má asi 6× větší než měď.",
+            "Teplota: kovy s rostoucí teplotou odpor zvětšují."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Drát má odpor 6 Ω. Jaký odpor má drát stejné délky z téhož kovu s trojnásobným průřezem?",
+          "answer": "Průřez je dole ve zlomku → 3× větší průřez = 3× menší odpor: 6 : 3 = **2 Ω**."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď kovy od nejmenšího měrného odporu: železo, měď, stříbro, hliník.",
+          "answer": "**stříbro, měď, hliník, železo.**"
+        },
+        {
+          "type": "heading",
+          "text": "Rezistor a reostat"
+        },
+        {
+          "type": "term",
+          "term": "Rezistor",
+          "definition": "Součástka s **pevně daným** odporem.",
+          "example": "Rezistor 100 Ω v elektronice."
+        },
+        {
+          "type": "term",
+          "term": "Reostat",
+          "definition": "Rezistor s **proměnným** odporem. Posuvným jezdcem měníš, jak dlouhým kusem drátu proud prochází.",
+          "example": "Starší stmívač světla nebo regulace hlasitosti."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "odpor se zvětší",
+              "odpor se zmenší"
+            ],
+            "items": [
+              {
+                "text": "delší drát",
+                "group": 0
+              },
+              {
+                "text": "drát se zahřeje",
+                "group": 0
+              },
+              {
+                "text": "měď nahradíme železem",
+                "group": 0
+              },
+              {
+                "text": "tlustší drát",
+                "group": 1
+              },
+              {
+                "text": "kratší drát",
+                "group": 1
+              },
+              {
+                "text": "železo nahradíme mědí",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď změny. U každé si vzpomeň, kde ve vzorci veličina je."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Odpor drátu nezávisí na materiálu, jen na rozměrech.",
+          "right": "Závisí i na materiálu (měrný odpor ρ).",
+          "why": "Stejně dlouhý a tlustý drát ze železa má asi šestkrát větší odpor než měděný."
+        },
+        {
+          "type": "summary",
+          "text": "`R = ρ · l : S`: odpor roste s délkou, klesá s průřezem, závisí na materiálu a u kovů roste s teplotou. Reostat má měnitelný odpor."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se změní odpor drátu, když ho prodloužíme na dvojnásobek?",
+      "options": [
+        "zdvojnásobí se",
+        "zmenší se na polovinu",
+        "nezmění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní odpor drátu, když má dvojnásobný průřez?",
+      "options": [
+        "zmenší se na polovinu",
+        "zdvojnásobí se",
+        "nezmění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Odpor kovového vodiče s rostoucí teplotou roste.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Proč se na vedení používá měď nebo hliník?",
+      "options": [
+        "mají malý měrný odpor",
+        "jsou magnetické",
+        "jsou izolanty",
+        "jsou nejlevnější kovy vůbec"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Drát má odpor 6 Ω. Jaký odpor v Ω má stejný drát dvakrát delší?",
+      "answers": [
+        "12"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Drát má odpor 6 Ω. Jaký odpor v Ω má drát stejné délky z téhož kovu s trojnásobným průřezem?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je reostat?",
+      "options": [
+        "rezistor s proměnným odporem",
+        "měřidlo napětí",
+        "zdroj proudu",
+        "pojistka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Odpor drátu nezávisí na materiálu.",
+      "answer": false
+    },
+    {
+      "type": "match",
+      "question": "Spoj součástku s úlohou.",
+      "pairs": [
+        [
+          "rezistor",
+          "daný odpor"
+        ],
+        [
+          "reostat",
+          "měnitelný odpor"
+        ],
+        [
+          "ampérmetr",
+          "měří proud"
+        ],
+        [
+          "voltmetr",
+          "měří napětí"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď kovy od nejmenšího měrného odporu.",
+      "items": [
+        "stříbro",
+        "měď",
+        "hliník",
+        "železo"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Na čem závisí odpor kovového vodiče?",
+      "answer": "Na délce (delší = větší), průřezu (tlustší = menší), materiálu a teplotě (teplejší = větší)."
+    },
+    {
+      "type": "open",
+      "question": "Proč mají prodlužovací kabely pro výkonné spotřebiče tlustší vodiče?",
+      "answer": "Tlustší vodič má menší odpor, tolik se nezahřívá a ztrácí se méně energie."
+    }
+  ]
+}

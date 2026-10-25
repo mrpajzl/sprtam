@@ -1,0 +1,312 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "prechod-desitky-do-100",
+  "title": "Přes desítku do 100",
+  "emoji": "🪜",
+  "generator": "sub100",
+  "explanations": [
+    {
+      "title": "Na desítku",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Lístek do kina stojí 35 Kč a platíš 50 Kč. Kolik dostaneš zpátky? Nebo: máš 38 nálepek a dostaneš 5. Výsledek přeskočí na další desítku."
+        },
+        {
+          "type": "text",
+          "text": "Použiješ stejný trik jako do 20: **nejdřív dojdi na celou desítku**, pak pokračuj."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Celá desítka",
+          "definition": "Číslo, které končí nulou: 10, 20, 30 … 90.",
+          "example": "Nejbližší celá desítka nad 38 je 40."
+        },
+        {
+          "type": "term",
+          "term": "Přechod přes desítku",
+          "definition": "Výsledek se dostane do další (nebo předchozí) desítky.",
+          "example": "38 + 5 = 43: z třicítek jsme se dostali do čtyřicítek."
+        },
+        {
+          "type": "term",
+          "term": "Rozložit číslo",
+          "definition": "Rozdělit ho na dvě menší čísla.",
+          "example": "5 = 2 + 3"
+        },
+        {
+          "type": "heading",
+          "text": "Plus: 38 + 5"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kolik chybí 38 do 40? **2**.",
+            "Pětku rozlož: 5 = **2** + **3**.",
+            "38 + 2 = **40**.",
+            "40 + 3 = **43**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Žabka stojí na 38 a skočí o 5. Kolik skoků potřebuje na 40? Kolik jí zbude?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 30,
+            "max": 50,
+            "step": 1,
+            "start": 38,
+            "hop": 5
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Mínus: 43 − 6"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kolik uberu, abych byl na 40? **3**.",
+            "Šestku rozlož: 6 = **3** + **3**.",
+            "43 − 3 = **40**.",
+            "40 − 3 = **37**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "S dvojcifernými čísly"
+        },
+        {
+          "type": "example",
+          "question": "38 + 25 =",
+          "answer": "Nejdřív desítky: 38 + 20 = 58. Pak 5 jednotek přes desítku: 58 + 2 = 60, 60 + 3 = **63**."
+        },
+        {
+          "type": "example",
+          "question": "Lístek stojí 35 Kč. Platíš 50 Kč. Kolik dostaneš zpátky?",
+          "answer": "50 − 35. Desítky: 50 − 30 = 20. Jednotky: 20 − 5 = **15 Kč**. Kontrola: 35 + 15 = 50."
+        },
+        {
+          "type": "mistake",
+          "wrong": "92 − 5 = 88",
+          "right": "92 − 5 = **87**",
+          "why": "Na 90 uberu 2. Z pětky zbydou 3: 90 − 3 = 87. Kontrola: 87 + 5 = 92."
+        },
+        {
+          "type": "summary",
+          "text": "Jako do 20: nejdřív na celou desítku, pak zbytek. U dvojciferných čísel nejdřív desítky, pak jednotky."
+        }
+      ]
+    },
+    {
+      "title": "Rozměň desítku",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš 5 desetikorun a 2 korunky – to je 52 Kč. Máš zaplatit 7 Kč. Korunky nestačí! Co uděláš? **Rozměníš** desetikorunu."
+        },
+        {
+          "type": "text",
+          "text": "Přesně to děláme při odčítání, když je jednotek málo. A při sčítání naopak 10 korunek **vyměníme** za desetikorunu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desítky a jednotky",
+          "definition": "Desítka = balíček 10 kusů (desetikoruna). Jednotka = jeden kus (korunka).",
+          "example": "52 = 5 desítek a 2 jednotky."
+        },
+        {
+          "type": "term",
+          "term": "Rozměnit desítku",
+          "definition": "Vyměnit 1 desítku za 10 jednotek. Hodnota se nezmění.",
+          "example": "52 = 4 desítky a 12 jednotek."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je 52: 5 tyček a 2 kostičky. Představ si, že jednu tyčku rozbiješ na 10 kostiček. Kolik je teď kostiček?"
+        },
+        {
+          "type": "widget",
+          "widget": "place-value",
+          "props": {
+            "value": 52
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Mínus: 52 − 7"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Jednotek je 2, potřebuju ubrat 7. Nestačí.",
+            "Rozměním 1 desítku: 52 = 4 desítky a **12** jednotek.",
+            "Uberu: 12 − 7 = **5**.",
+            "Zbyly 4 desítky a 5 jednotek = **45**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Plus: 46 + 27"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Desítky: 4 + 2 = **6** desítek.",
+            "Jednotky: 6 + 7 = **13**. To je víc než 9!",
+            "10 jednotek vyměním za 1 desítku: 13 = 1 desítka a 3 jednotky.",
+            "Desítek je 6 + 1 = 7, jednotek 3 → **73**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "64 − 28 =",
+          "answer": "4 jednotky nestačí na 8. Rozměním: 5 desítek a 14 jednotek. 14 − 8 = 6. Desítky: 5 − 2 = 3. **36**."
+        },
+        {
+          "type": "example",
+          "question": "57 + 16 =",
+          "answer": "Jednotky: 7 + 6 = 13 = 1 desítka a 3. Desítky: 5 + 1 + 1 = 7. **73**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "52 − 7: 7 − 2 = 5, takže 55.",
+          "right": "52 − 7 = **45**",
+          "why": "Nesmíš prohodit čísla v jednotkách. Ubíráme 7 z 2 – to nejde, proto rozměníme desítku. Výsledek musí být menší než 52!"
+        },
+        {
+          "type": "summary",
+          "text": "Desítka = 10 jednotek. Když jednotky nestačí, rozměň desítku. Když jich je 10 a víc, vyměň je za desítku."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "27 + 5 =",
+      "answers": [
+        "32"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "49 + 8 =",
+      "answers": [
+        "57"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "36 + 7 =",
+      "answers": [
+        "43"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "43 − 6 =",
+      "answers": [
+        "37"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "71 − 9 =",
+      "answers": [
+        "62"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "38 + 25 =",
+      "answers": [
+        "63"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "64 − 28 =",
+      "answers": [
+        "36"
+      ],
+      "explanation": "64 − 20 = 44, 44 − 4 = 40, 40 − 4 = 36."
+    },
+    {
+      "type": "choice",
+      "question": "57 + 16 =",
+      "options": [
+        "63",
+        "73",
+        "71"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "80 − 13 =",
+      "options": [
+        "67",
+        "77",
+        "73"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "29 + 29 = 58",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "92 − 5 = 88",
+      "answer": false,
+      "explanation": "92 − 2 = 90, 90 − 3 = 87."
+    },
+    {
+      "type": "input",
+      "question": "Lístek stojí 35 Kč. Platíš 50 Kč. Kolik dostaneš zpátky?",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, jak spočítáš 38 + 5.",
+      "answer": "38 doplním dvojkou na 40. Z pětky zbydou 3, takže 40 + 3 = 43."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, jak spočítáš 52 − 7.",
+      "answer": "Nejdřív uberu 2 a jsem na 50. Pak uberu zbylých 5 a vyjde 45."
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "shoda-prisudku-s-podmetem",
+  "title": "Shoda přísudku s podmětem",
+  "emoji": "🤝",
+  "explanations": [
+    {
+      "title": "Tabulka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "*Psi štěkali. Kočky mňoukaly. Kuřata pípala.* Na konci sloves je pokaždé jiné písmeno: i, y, a. Proč?"
+        },
+        {
+          "type": "text",
+          "text": "Sloveso se v minulém čase „přizpůsobí“ tomu, kdo děj dělá. Tomu říkáme **shoda**. Je to jedno z nejdůležitějších pravidel v diktátech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podmět a přísudek",
+          "definition": "Připomenutí: podmět = kdo/co něco dělá. Přísudek = co dělá.",
+          "example": "**Psi** (podmět) **štěkali** (přísudek)."
+        },
+        {
+          "type": "term",
+          "term": "Shoda přísudku s podmětem",
+          "definition": "Konec přísudku v minulém čase se řídí **rodem a číslem podmětu**.",
+          "example": "ti psi štěkal**i**, ty kočky mňoukal**y**"
+        },
+        {
+          "type": "term",
+          "term": "Mužský životný × neživotný",
+          "definition": "Připomenutí: životný = lidé a zvířata (psi), neživotný = věci (stromy).",
+          "example": "kluci (životné), vlaky (neživotné)"
+        },
+        {
+          "type": "table",
+          "head": [
+            "rod podmětu (mn. č.)",
+            "koncovka",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "mužský životný (ti)",
+              "-i",
+              "Psi štěkali."
+            ],
+            [
+              "mužský neživotný (ty)",
+              "-y",
+              "Stromy rostly."
+            ],
+            [
+              "ženský (ty)",
+              "-y",
+              "Kočky mňoukaly."
+            ],
+            [
+              "střední (ta)",
+              "-a",
+              "Kuřata pípala."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Víc podmětů najednou"
+        },
+        {
+          "type": "text",
+          "text": "Když je v podmětu aspoň jeden **mužský životný**, vyhrává **i**: *Chlapci a dívky zpívali.* Mužský neživotný + ženský → **y**: *Stoly a židle stály.*"
+        },
+        {
+          "type": "example",
+          "question": "Mraky plul_ po obloze.",
+          "answer": "Mraky – *ty mraky*, věc → mužský neživotný → **y**: pluly."
+        },
+        {
+          "type": "example",
+          "question": "Lidé čekal_ na autobus.",
+          "answer": "Lidé – *ti lidé* → mužský životný → **i**: čekali."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Děti si hráli.",
+          "right": "Děti si hrály.",
+          "why": "Děti se v množném čísle chovají jako ženský rod: *ty děti* → y."
+        },
+        {
+          "type": "summary",
+          "text": "Ti psi štěkali (i), ty stromy rostly (y), ty kočky mňoukaly (y), ta kuřata pípala (a)."
+        }
+      ]
+    },
+    {
+      "title": "Ti, ty, ta",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Místo učení tabulky můžeš použít malý trik se slovíčky **ti, ty, ta**. Řekneš je před podmět – a hned víš, jaké písmeno napsat na konec slovesa."
+        },
+        {
+          "type": "text",
+          "text": "Funguje to v minulém čase, když dělá děj víc lidí, zvířat nebo věcí."
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo nebo co děj dělá. Ptáš se kdo? co?",
+          "example": "**Holky** zpívaly."
+        },
+        {
+          "type": "term",
+          "term": "Přísudek v minulém čase",
+          "definition": "Sloveso, které říká, co podmět dělal. Končí na -li, -ly nebo -la.",
+          "example": "zpívali, zpívaly, zpívala"
+        },
+        {
+          "type": "term",
+          "term": "Trik ti / ty / ta",
+          "definition": "Řekni před podmět *ti, ty* nebo *ta*. Samohláska ve slovíčku = samohláska na konci přísudku.",
+          "example": "ti kluci → hráli; ty holky → hrály; ta auta → stála"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi podmět (kdo? co?).",
+            "Řekni před něj **ti / ty / ta**.",
+            "Ti → **i**. Ty → **y**. Ta → **a**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Doplň"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Kluci hrál",
+                "after": " fotbal.",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Vlaky jezdil",
+                "after": " včas.",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Holky zpíval",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Auta stál",
+                "after": " u cesty.",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 2
+              },
+              {
+                "before": "Děti si hrál",
+                "after": ".",
+                "options": [
+                  "i",
+                  "y",
+                  "a"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Koťata spal_.",
+          "answer": "*Ta koťata* → **a**: spala."
+        },
+        {
+          "type": "example",
+          "question": "My holky jsme šl_ ven.",
+          "answer": "Podmět *my* = holky → *ty holky* → **y**: šly."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Psi štěkaly.",
+          "right": "Psi štěkali.",
+          "why": "Řekni *ti psi* (ne „ty psi“) – psi jsou živí, mužský rod → i."
+        },
+        {
+          "type": "summary",
+          "text": "Řekni ti / ty / ta před podmět: ti → i, ty → y, ta → a. Pozor: ty děti → y."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Doplň i/y/a: Ptáci zpíval_.",
+      "answers": [
+        "i"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň i/y/a: Lavice stál_ ve třídě.",
+      "answers": [
+        "y"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň i/y/a: Koťata spal_.",
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň i/y/a: Mraky plul_ po obloze.",
+      "answers": [
+        "y"
+      ],
+      "explanation": "Mraky – mužský neživotný → y."
+    },
+    {
+      "type": "choice",
+      "question": "Co je správně?",
+      "options": [
+        "Děti si hráli.",
+        "Děti si hrály."
+      ],
+      "answer": 1,
+      "explanation": "Děti se chovají jako ženský rod: ty děti → y."
+    },
+    {
+      "type": "choice",
+      "question": "Co je správně?",
+      "options": [
+        "Chlapci a dívky zpívali.",
+        "Chlapci a dívky zpívaly."
+      ],
+      "answer": 0,
+      "explanation": "Je tam i mužský životný (chlapci) → i."
+    },
+    {
+      "type": "choice",
+      "question": "Co je správně?",
+      "options": [
+        "Stoly a židle stály.",
+        "Stoly a židle stáli."
+      ],
+      "answer": 0,
+      "explanation": "Mužský neživotný + ženský → y."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Lidé čekali na autobus.“ je správně.",
+      "answer": true,
+      "explanation": "Lidé – mužský životný → i."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Psi štěkaly.“ je správně.",
+      "answer": false,
+      "explanation": "Psi – mužský životný → štěkali."
+    },
+    {
+      "type": "match",
+      "question": "Spoj podmět s přísudkem.",
+      "pairs": [
+        [
+          "Kluci",
+          "běželi."
+        ],
+        [
+          "Hrady",
+          "stály."
+        ],
+        [
+          "Ovce",
+          "se pásly."
+        ],
+        [
+          "Jablka",
+          "padala."
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je správně? (podmět my = dívky)",
+      "options": [
+        "My holky jsme šly ven.",
+        "My holky jsme šli ven."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli pravidlo shody přísudku s podmětem.",
+      "answer": "Podle rodu podmětu: mužský životný → i, mužský neživotný a ženský → y, střední → a. Ti psi štěkali, ty stromy rostly, ty kočky mňoukaly, ta kuřata pípala."
+    },
+    {
+      "type": "open",
+      "question": "Proč píšeme „Chlapci a dívky tančili“ s i?",
+      "answer": "Podmět je několikanásobný a jedna jeho část je rodu mužského životného (chlapci). Ten má přednost, proto -i."
+    }
+  ]
+}

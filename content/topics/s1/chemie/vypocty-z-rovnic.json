@@ -1,0 +1,369 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vypocty-z-rovnic",
+  "title": "Výpočty z chemických rovnic",
+  "emoji": "🧮",
+  "explanations": [
+    {
+      "title": "Jako recept",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Recept na bábovku: 2 vejce + 1 hrnek mouky = 1 bábovka. Kolik vajec potřebuješ na 3 bábovky? Šest. Tohle počítání umíš odmalička."
+        },
+        {
+          "type": "text",
+          "text": "Chemická rovnice je přesně takový recept. Továrna podle ní spočítá, kolik suroviny koupit, a lékárník, kolik látky odvážit. Naučíš se to stejně jako s bábovkou."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Chemická rovnice",
+          "definition": "Zápis reakce. Vlevo od šipky výchozí látky, vpravo vzniklé.",
+          "example": "2 H₂ + O₂ → 2 H₂O"
+        },
+        {
+          "type": "term",
+          "term": "Reaktanty a produkty",
+          "definition": "**Reaktanty** = látky, které do reakce vstupují (vlevo). **Produkty** = látky, které vznikají (vpravo)."
+        },
+        {
+          "type": "term",
+          "term": "Stechiometrický koeficient",
+          "definition": "Číslo **před** vzorcem. Říká, v jakém poměru látky reagují. Jednička se nepíše.",
+          "example": "V 2 H₂ + O₂ jsou koeficienty 2 a 1."
+        },
+        {
+          "type": "term",
+          "term": "Mol",
+          "definition": "Chemické „balení“ částic: 1 mol = 6,022 · 10²³ částic. Hmotnost 1 molu je **molární hmotnost M** (g/mol), sečteš ji z tabulky.",
+          "example": "M(H₂O) = 18 g/mol"
+        },
+        {
+          "type": "heading",
+          "text": "Rovnice jako recept"
+        },
+        {
+          "type": "text",
+          "text": "`2 H₂ + O₂ → 2 H₂O` čti: **2 moly vodíku + 1 mol kyslíku dají 2 moly vody**. Koeficienty jsou poměr molů, stejně jako v receptu poměr vajec a mouky."
+        },
+        {
+          "type": "example",
+          "question": "Kolik molů vody vznikne ze 3 molů H₂?",
+          "answer": "Recept: 2 mol H₂ → 2 mol H₂O, tedy poměr 1 : 1. Ze 3 mol H₂ vzniknou **3 mol H₂O**."
+        },
+        {
+          "type": "example",
+          "question": "N₂ + 3 H₂ → 2 NH₃. Kolik molů NH₃ vznikne z 6 mol H₂?",
+          "answer": "Poměr H₂ : NH₃ = 3 : 2. 6 mol H₂ je dvakrát „recept“ → 2 · 2 = **4 mol NH₃**."
+        },
+        {
+          "type": "text",
+          "text": "Doplň podle rovnice N₂ + 3 H₂ → 2 NH₃. Hledej poměr koeficientů."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Z 1 mol N₂ vznikne ",
+                "after": " mol NH₃",
+                "options": [
+                  "2",
+                  "1",
+                  "3"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Na 2 mol N₂ je třeba ",
+                "after": " mol H₂",
+                "options": [
+                  "6",
+                  "3",
+                  "2"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Ze 3 mol H₂ vznikne ",
+                "after": " mol NH₃",
+                "options": [
+                  "2",
+                  "3",
+                  "6"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Ale na váze máme gramy"
+        },
+        {
+          "type": "text",
+          "text": "Recept je v molech, váha ukazuje gramy. Potřebujeme převod: `n = m / M` (moly = gramy děleno molární hmotností)."
+        },
+        {
+          "type": "example",
+          "question": "Kolik gramů vody vznikne spálením 4 g vodíku?",
+          "answer": "n(H₂) = 4 / 2 = 2 mol. Poměr H₂ : H₂O = 1 : 1 → 2 mol vody. m = 2 · 18 = **36 g**."
+        },
+        {
+          "type": "term",
+          "term": "Limitující reaktant",
+          "definition": "Surovina, která **dojde první** a tím reakci ukončí. Ostatní zůstanou v přebytku.",
+          "example": "Máš 10 vajec a 1 hrnek mouky → upečeš jen 1 bábovku. Mouka je „limitující“."
+        },
+        {
+          "type": "mistake",
+          "wrong": "2 H₂ + O₂ → 2 H₂O, takže 2 g vodíku + 1 g kyslíku dají 2 g vody.",
+          "right": "Koeficienty jsou poměr **molů**, ne gramů: 4 g H₂ + 32 g O₂ → 36 g H₂O.",
+          "why": "Molekuly mají různou hmotnost (H₂ 2 g/mol, O₂ 32 g/mol). Gramy musíš nejdřív převést na moly."
+        },
+        {
+          "type": "summary",
+          "text": "Koeficienty v rovnici = poměr molů. Gramy převeď na moly (n = m / M), použij poměr a převeď zpět."
+        }
+      ]
+    },
+    {
+      "title": "Postup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vápenka pálí vápenec na pálené vápno. Kolik vápna dostane z tuny kamene? Chemik to spočítá dřív, než zapálí pec – stačí rovnice a čtyři kroky."
+        },
+        {
+          "type": "text",
+          "text": "Tenhle postup funguje u všech úloh „kolik vznikne“ nebo „kolik je potřeba“."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vyčíslení rovnice",
+          "definition": "Doplnění koeficientů tak, aby bylo **vlevo i vpravo stejně atomů** každého prvku. Atomy se při reakci nevytvářejí ani neztrácejí.",
+          "example": "H₂ + O₂ → H₂O nesedí (2 O vlevo, 1 vpravo). Vyčísleno: 2 H₂ + O₂ → 2 H₂O."
+        },
+        {
+          "type": "term",
+          "term": "Stechiometrický koeficient",
+          "definition": "Číslo před vzorcem v rovnici. Udává **poměr látkových množství** (molů) reagujících látek."
+        },
+        {
+          "type": "term",
+          "term": "Látkové množství n",
+          "definition": "Množství látky v molech. n = m / M, kde M je molární hmotnost (g/mol) z periodické tabulky."
+        },
+        {
+          "type": "term",
+          "term": "Molární objem Vₘ",
+          "definition": "Objem 1 molu plynu; za normálních podmínek asi 22,4 dm³/mol. n = V / Vₘ."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři kroky"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Vyčísli** rovnici.",
+            "Zadanou látku **převeď na moly**: n = m / M (nebo n = V / Vₘ).",
+            "Podle **poměru koeficientů** spočítej moly hledané látky.",
+            "Moly **převeď** na hledanou veličinu: m = n · M (nebo V = n · Vₘ)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik gramů CaO vznikne z 50 g CaCO₃? (M(CaCO₃) = 100, M(CaO) = 56 g/mol)",
+          "answer": "1) CaCO₃ → CaO + CO₂ (je vyčísleno). 2) n(CaCO₃) = 50 / 100 = 0,5 mol. 3) Poměr 1 : 1 → n(CaO) = 0,5 mol. 4) m(CaO) = 0,5 · 56 = **28 g**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik dm³ H₂ (norm. podm.) vznikne z 6,5 g zinku? Zn + 2 HCl → ZnCl₂ + H₂, M(Zn) = 65 g/mol",
+          "answer": "1) Vyčísleno. 2) n(Zn) = 6,5 / 65 = 0,1 mol. 3) Poměr Zn : H₂ = 1 : 1 → n(H₂) = 0,1 mol. 4) V = 0,1 · 22,4 = **2,24 dm³**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik gramů Mg je třeba na 20 g MgO? 2 Mg + O₂ → 2 MgO, M(Mg) = 24, M(MgO) = 40",
+          "answer": "2) n(MgO) = 20 / 40 = 0,5 mol. 3) Poměr Mg : MgO = 2 : 2 = 1 : 1 → n(Mg) = 0,5 mol. 4) m = 0,5 · 24 = **12 g**."
+        },
+        {
+          "type": "heading",
+          "text": "Když suroviny nejsou v poměru"
+        },
+        {
+          "type": "term",
+          "term": "Limitující reaktant",
+          "definition": "Reaktant, který se spotřebuje **jako první**. Určuje, kolik produktu vznikne. Ostatní jsou v **přebytku**."
+        },
+        {
+          "type": "example",
+          "question": "2 H₂ + O₂ → 2 H₂O. Máš 3 mol H₂ a 3 mol O₂. Co je limitující?",
+          "answer": "Na 3 mol H₂ stačí 1,5 mol O₂. Kyslíku je 3 mol – víc než dost. Dřív dojde **vodík** → limitující. Vznikne 3 mol H₂O, 1,5 mol O₂ zbude."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si kroky: doplň chybějící čísla v úloze C + O₂ → CO₂ s 24 g uhlíku (M(C) = 12)."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "n(C) = 24 / 12 = ",
+                "after": " mol",
+                "options": [
+                  "2",
+                  "0,5",
+                  "12"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "poměr C : CO₂ = 1 : 1 → n(CO₂) = ",
+                "after": " mol",
+                "options": [
+                  "2",
+                  "1",
+                  "4"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "V(CO₂) = 2 · 22,4 = ",
+                "after": " dm³",
+                "options": [
+                  "44,8",
+                  "22,4",
+                  "11,2"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hmotnost produktu spočítám přímo z poměru koeficientů: z 50 g CaCO₃ vznikne 50 g CaO.",
+          "right": "Přes moly: 50 g CaCO₃ = 0,5 mol → 0,5 mol CaO = **28 g**.",
+          "why": "Koeficienty říkají poměr **molů**. Hmotnosti se liší, protože každá látka má jinou molární hmotnost."
+        },
+        {
+          "type": "summary",
+          "text": "Vyčísli → převeď na moly → poměr koeficientů → převeď zpět. Gramy se nikdy neporovnávají přímo, jen moly."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "2 H₂ + O₂ → 2 H₂O. Kolik molů vody vznikne ze 3 mol H₂?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "2 H₂ + O₂ → 2 H₂O. Kolik molů O₂ je potřeba na 4 mol H₂?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik gramů vody vznikne spálením 4 g vodíku? (M(H₂) = 2, M(H₂O) = 18)",
+      "answers": [
+        "36"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "CaCO₃ → CaO + CO₂. Kolik g CaO vznikne ze 100 g CaCO₃? (M = 100 a 56 g/mol)",
+      "answers": [
+        "56"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "N₂ + 3 H₂ → 2 NH₃. Kolik molů NH₃ vznikne z 6 mol H₂?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "C + O₂ → CO₂. Kolik dm³ CO₂ (norm. podm., 22,4 dm³/mol) vznikne z 24 g uhlíku?",
+      "answers": [
+        "44,8",
+        "44.8"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co vyjadřují stechiometrické koeficienty?",
+      "options": [
+        "poměr látkových množství",
+        "poměr hmotností",
+        "počet atomů v molekule"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Poměr hmotností reaktantů je stejný jako poměr koeficientů.",
+      "answer": false,
+      "explanation": "Koeficienty dávají poměr molů; hmotnosti se liší podle molárních hmotností."
+    },
+    {
+      "type": "choice",
+      "question": "Co je limitující reaktant?",
+      "options": [
+        "látka, která se spotřebuje první",
+        "látka v přebytku",
+        "katalyzátor"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď kroky výpočtu.",
+      "items": [
+        "vyčíslit rovnici",
+        "převést zadanou hmotnost na moly",
+        "použít poměr koeficientů",
+        "převést moly na hledanou veličinu"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Popiš obecný postup výpočtu hmotnosti produktu z hmotnosti reaktantu.",
+      "answer": "Vyčíslím rovnici. Hmotnost reaktantu převedu na látkové množství n = m / M. Podle poměru koeficientů určím n produktu a vynásobím jeho molární hmotností."
+    },
+    {
+      "type": "open",
+      "question": "Kolik gramů Mg je třeba na vznik 20 g MgO? (2 Mg + O₂ → 2 MgO, M(Mg) = 24, M(MgO) = 40)",
+      "answer": "n(MgO) = 20 / 40 = 0,5 mol = n(Mg). m(Mg) = 0,5 · 24 = 12 g."
+    }
+  ]
+}

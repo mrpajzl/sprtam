@@ -1,0 +1,458 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pravopis-hlaskoslovny",
+  "title": "Pravopis: i/y, mě/mně, s/z",
+  "emoji": "✍️",
+  "explanations": [
+    {
+      "title": "Detektivní otázky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Slova *mě* a *mně* zní úplně stejně. Stejně tak *oběd* a *objet* znějí podobně. Ucho ti neporadí – musíš to „vyšetřit“."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Právě tyhle jevy jsou nejčastější chyby v písemkách, v e-mailech i v maturitním testu. Stačí pár detektivních otázek a chybu neuděláš."
+        },
+        {
+          "type": "term",
+          "term": "Pravopis",
+          "definition": "Pravidla, jak slova správně zapsat písmeny. Neřídí se výslovností, ale tvarem a stavbou slova.",
+          "example": "říkáme [mňe], ale píšeme jednou *mě*, jindy *mně*"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar slova podle otázky, na kterou odpovídá. Čeština má 7 pádů.",
+          "example": "3. pád: komu? čemu? – *mně*; 4. pád: koho? co? – *mě*"
+        },
+        {
+          "type": "term",
+          "term": "Příbuzné slovo",
+          "definition": "Slovo se stejným základem (kořenem), které má podobný význam.",
+          "example": "*zapomenout* – *zapomněl*; *jet* – *objet*"
+        },
+        {
+          "type": "heading",
+          "text": "Otázka 1: mě, nebo mně?"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je to zájmeno *já*? Zeptej se otázkou pádu.",
+            "**Komu?** (3. pád) nebo **o kom?** (6. pád) → **mně**. *Dej to mně. Mluví o mně.*",
+            "**Koho?** (2. a 4. pád) → **mě** (nebo *mne*). *Vidíš mě? Bez mě nejdi.*",
+            "Není to zájmeno? Hledej příbuzné slovo s **n**. Je tam? → **mně** (*zapomenout* → *zapomněl*). Není? → **mě** (*město*, *měsíc*)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor na 7. pád: *s kým?* → **mnou**. *Pojď se mnou.*"
+        },
+        {
+          "type": "heading",
+          "text": "Otázka 2: bě, nebo bje? vě, nebo vje?"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Část slova před kořenem, která mění význam.",
+          "example": "*ob-* v *objet*, *v-* ve *vjezd*"
+        },
+        {
+          "type": "text",
+          "text": "Zeptej se: **je tu předpona *ob-* nebo *v-* a za ní slovo začínající na *j*?** Pokud ano, píšeš **je**: *ob + jet = objet*, *v + jezd = vjezd*, *ob + jednat = objednat*. Jinak píšeš **ě**: *oběd*, *věda*, *běžet*."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každé mezery si polož detektivní otázku a teprve pak klepni."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Dej to ",
+                "after": ".",
+                "options": [
+                  "mně",
+                  "mě"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Vzpo",
+                "after": "l si.",
+                "options": [
+                  "mněl",
+                  "měl"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Pozval ",
+                "after": " na oslavu.",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "ob",
+                "after": "dnat si oběd",
+                "options": [
+                  "je",
+                  "ě"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "V ",
+                "after": "stě je hluk.",
+                "options": [
+                  "mě",
+                  "mně"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Zapom_l jsem klíče.*",
+          "answer": "Nejde o zájmeno já. Hledám příbuzné slovo: *zapomenout* – je tam **n**. Píšu **zapomněl**."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Půjč _ to.* a *Bez _ to nezvládneš.*",
+          "answer": "První: půjč **komu?** → 3. pád → **mně**. Druhá: bez **koho?** → 2. pád → **mě**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Řekl to o mě.",
+          "right": "Řekl to o mně.",
+          "why": "Zeptej se: o kom? To je 6. pád a v něm je vždy **mně**."
+        },
+        {
+          "type": "summary",
+          "text": "mně = komu? / o kom? nebo n v příbuzném slově. mě = koho? a ostatní slova (město). bje/vje jen po předponě ob-/v- před j."
+        }
+      ]
+    },
+    {
+      "title": "Tabulka pravidel",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Český pravopis není náhodný. Stojí na pár jasných pravidlech, která vycházejí z **významu** a **stavby slova**. Když je znáš, nemusíš nic tipovat."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Tady máš přehled jevů, na které se v testech ptají nejčastěji: mě/mně, bě/bje, ú/ů, s/z/vz a i/y."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Hlavní část slova, kterou mají všechna příbuzná slova společnou.",
+          "example": "*jed* v *jet, objet, vjezd*"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Část před kořenem, mění význam slova.",
+          "example": "*s-* v *sjet*, *ne-* v *neúspěch*"
+        },
+        {
+          "type": "term",
+          "term": "Koncovka",
+          "definition": "Konec slova, který se mění při skloňování.",
+          "example": "*hrad-y*, *hrad-ů*"
+        },
+        {
+          "type": "term",
+          "term": "Obojetné souhlásky",
+          "definition": "Souhlásky, po kterých se může psát i i y: b, f, l, m, p, s, v, z.",
+          "example": "*bil* (tloukl) × *byl* (existoval)"
+        },
+        {
+          "type": "heading",
+          "text": "Přehled"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jev",
+            "Pravidlo",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "mě × mně",
+              "mně: 3. a 6. pád zájmena já; n v příbuzném slově",
+              "o mně, zapomněl × město"
+            ],
+            [
+              "bě × bje",
+              "bje/vje: předpona ob-/v- + kořen s j",
+              "objem, vjezd × oběd, věda"
+            ],
+            [
+              "ú × ů",
+              "ú na začátku slova a po předponě, ů uvnitř a na konci",
+              "úkol, neúspěch, dům, domů"
+            ],
+            [
+              "předpona s-",
+              "směr dolů, z povrchu, dohromady",
+              "sjet, seškrábat, sešít"
+            ],
+            [
+              "předpona z-",
+              "změna stavu, dokončení děje",
+              "zčervenat, zmrazit"
+            ],
+            [
+              "předpona vz-",
+              "směr vzhůru, někdy vzdání se",
+              "vzlétnout, vzdát se"
+            ],
+            [
+              "i/y po obojetných",
+              "v kořeni vyjmenovaná slova, v koncovce vzor",
+              "bystrý (vyjm.), hrady (vzor hrad)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak postupovat u předpon s/z"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Odděl předponu od zbytku slova: *s|jet*, *z|červenat*.",
+            "Zeptej se, co předpona dělá s významem.",
+            "Pohyb dolů, pryč z povrchu nebo dohromady → **s-** (*sjet z kopce*, *sešít látky*).",
+            "Něco se změní nebo dokončí → **z-** (*zčervenat* = stát se červeným).",
+            "Pohyb nahoru → **vz-** (*vzlétnout*)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Použij tabulku a doplň správně."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "",
+                "after": "lézt ze stromu dolů",
+                "options": [
+                  "s",
+                  "z"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "",
+                "after": "červenat studem",
+                "options": [
+                  "z",
+                  "s"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "ne",
+                "after": "spěch",
+                "options": [
+                  "ú",
+                  "ů"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "d",
+                "after": "m",
+                "options": [
+                  "ů",
+                  "ú"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "v",
+                "after": "zd do garáže",
+                "options": [
+                  "je",
+                  "ě"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč píšeme *neúspěch* s ú, i když je ú uprostřed slova?",
+          "answer": "Rozdělím slovo: *ne|úspěch*. Je tu předpona *ne-*, za ní začíná základ *úspěch*. Po předponě píšeme **ú**."
+        },
+        {
+          "type": "example",
+          "question": "*Zhlédnout film*, nebo *shlédnout film*?",
+          "answer": "Při sledování filmu se nedíváme shora dolů. *S-* by znamenalo „dolů“ (shlédnout z rozhledny). Film **zhlédneme** – předpona *z-* tu znamená dokončení děje."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Musím si obědnat oběd.",
+          "right": "Musím si objednat oběd.",
+          "why": "Odděl předponu: *ob + jednat*. Kořen začíná na *j*, proto *je*. U slova *oběd* žádná předpona *ob-* + *j* není, proto *ě*."
+        },
+        {
+          "type": "summary",
+          "text": "Pravopis se řídí stavbou a významem slova, ne výslovností. Odděl předponu, najdi kořen, zeptej se na pád – a pravidlo z tabulky rozhodne."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Vyber správný tvar: „Přijď za ___ zítra.“",
+      "options": [
+        "mnou",
+        "mou",
+        "mnou i mou"
+      ],
+      "answer": 0,
+      "explanation": "7. pád zájmena já je „mnou“."
+    },
+    {
+      "type": "choice",
+      "question": "Vyber správně: „Řekl to o ___.“",
+      "options": [
+        "mně",
+        "mě"
+      ],
+      "answer": 0,
+      "explanation": "6. pád: o kom? o mně."
+    },
+    {
+      "type": "choice",
+      "question": "Vyber správně: „Vidíš ___?“",
+      "options": [
+        "mě",
+        "mně"
+      ],
+      "answer": 0,
+      "explanation": "4. pád: koho? mě (též mne)."
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsáno správně?",
+      "options": [
+        "objednat",
+        "obědnat",
+        "obědnát"
+      ],
+      "answer": 0,
+      "explanation": "Předpona ob- + kořen jedn-."
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsáno správně?",
+      "options": [
+        "neúspěch",
+        "neůspěch"
+      ],
+      "answer": 0,
+      "explanation": "Po předponě píšeme ú."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve slově „zapomněl“ píšeme mn, protože v „zapomenout“ je n.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve slově „vzlétnout“ je předpona vz- ve významu vzhůru.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Doplň předponu s/z a napiš celé slovo: „__jet“ z kopce dolů.",
+      "answers": [
+        "sjet"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj slovo s pravidlem.",
+      "pairs": [
+        [
+          "úkol",
+          "ú na začátku slova"
+        ],
+        [
+          "dům",
+          "ů uvnitř slova"
+        ],
+        [
+          "vjezd",
+          "předpona v- + j"
+        ],
+        [
+          "město",
+          "mě – bez n v kořeni"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je napsáno správně?",
+      "options": [
+        "bystrý",
+        "bistrý"
+      ],
+      "answer": 0,
+      "explanation": "bystrý patří mezi vyjmenovaná slova po b."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, kdy píšeme mě a kdy mně.",
+      "answer": "Mně píšeme ve 3. a 6. pádě zájmena já (komu? o kom?) a ve slovech, kde je v příbuzném slově n (zapomenout → zapomněl). Jinak píšeme mě (město, mě ve 2. a 4. pádě)."
+    },
+    {
+      "type": "open",
+      "question": "Jak se liší předpony s-, z- a vz-?",
+      "answer": "s- znamená směr dolů, z povrchu nebo dohromady (sjet, sešít). z- vyjadřuje změnu stavu nebo dokonavost (zčervenat). vz- znamená vzhůru nebo vzdání se (vzlétnout, vzdát)."
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kalendar",
+  "title": "Kalendář a měsíce",
+  "emoji": "🗓️",
+  "explanations": [
+    {
+      "title": "Kolo roku",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kdy máš narozeniny? Kdy začínají prázdniny? Kdy budou Vánoce? Abychom to věděli, rozdělili lidé rok na menší kusy."
+        },
+        {
+          "type": "text",
+          "text": "Tyto kusy jsou měsíce. Každý má jméno. Najdeš je v kalendáři."
+        },
+        {
+          "type": "term",
+          "term": "Rok",
+          "definition": "Čas, za který se vystřídají všechna čtyři roční období.",
+          "example": "Za rok budu o rok starší."
+        },
+        {
+          "type": "term",
+          "term": "Měsíc",
+          "definition": "Část roku. Má asi čtyři týdny, tedy 28 až 31 dní.",
+          "example": "leden, únor, březen…"
+        },
+        {
+          "type": "term",
+          "term": "Kalendář",
+          "definition": "Přehled všech dní v roce, rozdělený podle měsíců.",
+          "example": "Na kalendáři si mamka zapíše moje narozeniny."
+        },
+        {
+          "type": "heading",
+          "text": "Měsíce a roční období"
+        },
+        {
+          "type": "text",
+          "text": "Rok má **12 měsíců** a **4 roční období**. Na každé období připadají zhruba tři měsíce. Klepni a sleduj kolo roku."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "zima: prosinec, leden, únor ❄️",
+              "jaro: březen, duben, květen 🌷",
+              "léto: červen, červenec, srpen ☀️",
+              "podzim: září, říjen, listopad 🍂"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Do kterého ročního období patří duben?",
+          "answer": "Jaro má březen, duben, květen. Duben je **jaro**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik měsíců má jedno roční období?",
+          "answer": "12 měsíců rozdělím na 4 období: každé má **3 měsíce**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Únor je letní měsíc.",
+          "right": "Únor je zimní měsíc.",
+          "why": "Zima má prosinec, leden a únor. V únoru bývá mráz a sníh."
+        },
+        {
+          "type": "text",
+          "text": "Pozor: období se nemění přesně 1. den měsíce. Jaro začíná až kolem 21. března. Pro zapamatování ale stačí trojice měsíců."
+        },
+        {
+          "type": "summary",
+          "text": "Rok = 12 měsíců = 4 roční období. Každé období má zhruba 3 měsíce."
+        }
+      ]
+    },
+    {
+      "title": "Měsíce popořadě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Měsíce jdou pořád ve stejném pořadí. Jako dny v týdnu. Když pořadí znáš, víš, co bude po čem."
+        },
+        {
+          "type": "text",
+          "text": "Třeba: „Za dva měsíce mám narozeniny.“ Musíš vědět, který měsíc přijde."
+        },
+        {
+          "type": "term",
+          "term": "Měsíc",
+          "definition": "Jedna z dvanácti částí roku. Má 28 až 31 dní.",
+          "example": "Září má 30 dní."
+        },
+        {
+          "type": "term",
+          "term": "Nový rok",
+          "definition": "První den roku, 1. ledna. Začíná nový kalendář.",
+          "example": "Na Silvestra v noci slavíme příchod Nového roku."
+        },
+        {
+          "type": "heading",
+          "text": "Pořadí měsíců"
+        },
+        {
+          "type": "text",
+          "text": "Klepej a čti si měsíce nahlas. Rok začíná lednem a končí prosincem."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "leden",
+            "únor",
+            "březen",
+            "duben",
+            "květen",
+            "červen",
+            "červenec",
+            "srpen",
+            "září",
+            "říjen",
+            "listopad",
+            "prosinec"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor na dvojici **červen** (6.) a **červenec** (7.). Červenec je delší slovo a přijde až po červnu."
+        },
+        {
+          "type": "term",
+          "term": "Únor",
+          "definition": "Nejkratší měsíc. Má 28 dní, jednou za čtyři roky 29 dní.",
+          "example": "Rok, kdy má únor 29 dní, je **přestupný rok**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň správný měsíc."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Škola začíná v ",
+                "after": ".",
+                "options": [
+                  "září",
+                  "květnu"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Vánoce jsou v ",
+                "after": ".",
+                "options": [
+                  "prosinci",
+                  "srpnu"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Nový rok začíná 1. ",
+                "after": ".",
+                "options": [
+                  "ledna",
+                  "března"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Prázdniny jsou v červenci a v ",
+                "after": ".",
+                "options": [
+                  "srpnu",
+                  "říjnu"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Který měsíc je po červnu?",
+          "answer": "Popořadě: …květen, červen, **červenec**."
+        },
+        {
+          "type": "example",
+          "question": "Teď je listopad. Který měsíc bude za dva měsíce?",
+          "answer": "Po listopadu je prosinec (1), po prosinci začne nový rok – **leden** (2)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Po prosinci přijde třináctý měsíc.",
+          "right": "Po prosinci začne nový rok lednem.",
+          "why": "Měsíců je jen 12. Pak se kolo roku točí znovu."
+        },
+        {
+          "type": "summary",
+          "text": "Leden, únor, březen, duben, květen, červen, červenec, srpen, září, říjen, listopad, prosinec. Rok začíná lednem a končí prosincem."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik měsíců má rok?",
+      "answers": [
+        "12",
+        "dvanáct"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který měsíc je první?",
+      "options": [
+        "leden",
+        "září",
+        "březen"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který měsíc je poslední?",
+      "options": [
+        "prosinec",
+        "listopad",
+        "leden"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který měsíc je po červnu?",
+      "options": [
+        "červenec",
+        "květen",
+        "srpen"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď měsíce.",
+      "items": [
+        "březen",
+        "duben",
+        "květen",
+        "červen"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Škola začíná v září.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Únor je letní měsíc.",
+      "answer": false,
+      "explanation": "Únor je zimní měsíc."
+    },
+    {
+      "type": "match",
+      "question": "Spoj měsíc a roční období.",
+      "pairs": [
+        [
+          "leden",
+          "zima"
+        ],
+        [
+          "duben",
+          "jaro"
+        ],
+        [
+          "červenec",
+          "léto"
+        ],
+        [
+          "říjen",
+          "podzim"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik dní má týden?",
+      "answers": [
+        "7",
+        "sedm"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který měsíc bývá nejkratší?",
+      "options": [
+        "únor",
+        "srpen",
+        "leden"
+      ],
+      "answer": 0,
+      "explanation": "Únor má 28 dní, v přestupném roce 29."
+    },
+    {
+      "type": "open",
+      "question": "Ve kterém měsíci máš narozeniny a které je to roční období?",
+      "answer": "Například v dubnu, to je jaro."
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj měsíce od ledna.",
+      "answer": "Leden, únor, březen, duben, květen, červen, červenec, srpen, září, říjen, listopad, prosinec."
+    }
+  ]
+}

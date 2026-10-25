@@ -1,0 +1,434 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "redoxni-reakce",
+  "title": "Redoxní reakce",
+  "emoji": "🔄",
+  "explanations": [
+    {
+      "title": "Výměna elektronů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hoří svíčka. Rezaví kolo. Nabíjí se mobil. Ty dýcháš. Vypadá to jako čtyři úplně různé věci – ale chemicky jde pořád o totéž: atomy si **předávají elektrony**."
+        },
+        {
+          "type": "text",
+          "text": "Takovým reakcím se říká **redoxní**. Díky nim máme energii z jídla, z baterie i z ohně a díky nim se vyrábí železo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektron",
+          "definition": "Drobounká částice se záporným nábojem. Elektrony obíhají v obalu atomu a atomy si je mohou předávat.",
+          "example": "Atom sodíku má 11 elektronů. Jeden z nich odevzdá velmi snadno."
+        },
+        {
+          "type": "term",
+          "term": "Oxidace",
+          "definition": "Děj, při kterém atom elektrony **odevzdává**.",
+          "example": "Na → Na⁺ + e⁻ (sodík odevzdal jeden elektron, e⁻ je značka elektronu)"
+        },
+        {
+          "type": "term",
+          "term": "Redukce",
+          "definition": "Děj, při kterém atom elektrony **přijímá**.",
+          "example": "Cl + e⁻ → Cl⁻ (chlor přijal jeden elektron)"
+        },
+        {
+          "type": "term",
+          "term": "Redoxní reakce",
+          "definition": "Reakce, ve které probíhá oxidace a redukce **zároveň**. Název je složený z **red**ukce a **ox**idace.",
+          "example": "Hoření, rezavění, dýchání."
+        },
+        {
+          "type": "heading",
+          "text": "Jako přihrávka"
+        },
+        {
+          "type": "text",
+          "text": "Představ si fotbal. Jeden hráč přihrává míč, druhý ho chytá. Bez toho, kdo přihrává, nemá nikdo co chytit. U atomů je míčem elektron."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "⚽",
+            "🧍",
+            "➡️",
+            "e⁻",
+            "➡️",
+            "🧍"
+          ],
+          "caption": "sodík odevzdá elektron (oxidace) – chlor ho chytí (redukce)"
+        },
+        {
+          "type": "text",
+          "text": "Proto oxidace nikdy neprobíhá sama. Kolik elektronů jeden atom odevzdá, přesně tolik jich jiný atom přijme."
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo",
+          "definition": "Číslo, které ukazuje, kolik elektronů atom „odevzdal“ (kladné číslo) nebo „přijal“ (záporné). Volný prvek, který s ničím nereagoval, má 0. Píše se nahoru římskou číslicí.",
+          "example": "Na⁰ → Na^I (odevzdal 1 elektron), Cl⁰ → Cl^−I (přijal 1 elektron)."
+        },
+        {
+          "type": "text",
+          "text": "Elektron je záporný. Když ho atom odevzdá, stane se „kladnějším“ – oxidační číslo **roste**. Když ho přijme, oxidační číslo **klesá**."
+        },
+        {
+          "type": "term",
+          "term": "Redukční a oxidační činidlo",
+          "definition": "**Redukční činidlo** je ten, kdo elektrony dává – sám se přitom oxiduje. **Oxidační činidlo** je ten, kdo elektrony bere – sám se redukuje.",
+          "example": "Při vzniku NaCl je sodík redukční činidlo a chlor oxidační činidlo."
+        },
+        {
+          "type": "example",
+          "question": "2 Na + Cl₂ → 2 NaCl. Co se oxiduje a co redukuje?",
+          "answer": "Sodík: Na⁰ → Na^I. Odevzdal elektron, číslo vzrostlo → **oxidace**. Chlor: Cl⁰ → Cl^−I. Přijal elektron, číslo kleslo → **redukce**. Sodík je redukční činidlo, chlor oxidační."
+        },
+        {
+          "type": "example",
+          "question": "Je neutralizace NaOH + HCl → NaCl + H₂O redoxní reakce?",
+          "answer": "Porovnej oxidační čísla vlevo a vpravo: Na je I a zůstane I, Cl je −I a zůstane −I, H je I a zůstane I, O je −II a zůstane −II. Nikomu se číslo nezměnilo → **není** to redoxní reakce."
+        },
+        {
+          "type": "heading",
+          "text": "Redoxní děje kolem nás"
+        },
+        {
+          "type": "term",
+          "term": "Koroze",
+          "definition": "Pomalé „rozežírání“ kovu vzduchem a vodou. Kov se při ní oxiduje.",
+          "example": "Rezavění železa – železo se oxiduje kyslíkem za přítomnosti vody."
+        },
+        {
+          "type": "term",
+          "term": "Elektrolýza",
+          "definition": "Rozklad látky elektrickým proudem. Proud dodává a odebírá elektrony, takže jde o redoxní děj.",
+          "example": "Elektrolýzou vody vznikne vodík a kyslík."
+        },
+        {
+          "type": "list",
+          "items": [
+            "hoření dřeva, plynu, benzínu",
+            "koroze – rezavění železa",
+            "dýchání a fotosyntéza",
+            "elektrolýza",
+            "nabíjení a vybíjení baterie",
+            "výroba železa z rudy"
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Redukce“ znamená, že něčeho ubude – tak atom asi elektrony ztrácí.",
+          "right": "Při redukci atom elektrony **přijímá**. Zmenšuje (redukuje) se jeho oxidační číslo, ne počet elektronů.",
+          "why": "Pomůcka: **O**xidace = **o**devzdání. Redukce je opak – přijetí."
+        },
+        {
+          "type": "summary",
+          "text": "Oxidace = odevzdání elektronů, oxidační číslo roste. Redukce = přijetí elektronů, oxidační číslo klesá. Vždy probíhají spolu."
+        }
+      ]
+    },
+    {
+      "title": "Schématem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ponoř železný hřebík do modrého roztoku síranu měďnatého. Za pár minut se hřebík pokryje červenohnědou vrstvičkou **mědi**. Železo a měď si vyměnily elektrony."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se takovou reakci zapsat tak, aby bylo vidět, kdo elektrony dal a kdo je vzal. Stejným postupem pak rozebereš hoření, rezavění i baterii."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektron (e⁻)",
+          "definition": "Malinká záporně nabitá částice v obalu atomu. Při reakcích může přecházet z atomu na atom."
+        },
+        {
+          "type": "term",
+          "term": "Oxidační číslo",
+          "definition": "Číslo, které říká, kolik elektronů atom ve sloučenině „dal“ (+) nebo „vzal“ (−). Píše se římskou číslicí nahoru.",
+          "example": "Fe^II znamená železo, které „dalo“ dva elektrony."
+        },
+        {
+          "type": "text",
+          "text": "Pravidla pro určení oxidačního čísla:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Volný prvek (Fe, Cu, O₂, Cl₂) má vždy **0**.",
+            "Kyslík ve sloučeninách má skoro vždy **−II**, vodík **I**.",
+            "Součet oxidačních čísel v neutrální molekule je **0**.",
+            "Skupina SO₄ (síranový anion) má dohromady náboj 2−."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Oxidace",
+          "definition": "Atom elektrony **odevzdá** → jeho oxidační číslo **roste**."
+        },
+        {
+          "type": "term",
+          "term": "Redukce",
+          "definition": "Atom elektrony **přijme** → jeho oxidační číslo **klesá**."
+        },
+        {
+          "type": "term",
+          "term": "Činidla",
+          "definition": "**Redukční činidlo** elektrony dává (samo se oxiduje). **Oxidační činidlo** elektrony bere (samo se redukuje)."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš oxidační číslo nad každý atom vlevo i vpravo od šipky.",
+            "Najdi atomy, kterým se číslo změnilo.",
+            "Kde číslo roste, je oxidace. O kolik vzrostlo, tolik elektronů atom odevzdal.",
+            "Kde číslo klesá, je redukce.",
+            "Zkontroluj: odevzdaných elektronů musí být stejně jako přijatých."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Fe + CuSO₄ → FeSO₄ + Cu. Rozeber reakci.",
+          "answer": "Vlevo: Fe⁰ (volný prvek), Cu^II (SO₄ má 2−, takže měď +II). Vpravo: Fe^II, Cu⁰. Fe⁰ → Fe^II: číslo roste o 2 → **oxidace**, odevzdá 2 e⁻. Cu^II → Cu⁰: klesá o 2 → **redukce**, přijme 2 e⁻. 2 = 2, sedí. Železo je redukční činidlo, Cu^II oxidační."
+        },
+        {
+          "type": "example",
+          "question": "2 Mg + O₂ → 2 MgO. Rozeber reakci.",
+          "answer": "Mg⁰ → Mg^II: oxidace, každý hořčík odevzdá 2 e⁻, dva hořčíky tedy 4 e⁻. O⁰ → O^−II: redukce, každý kyslík přijme 2 e⁻, dva kyslíky 4 e⁻. 4 = 4, sedí."
+        },
+        {
+          "type": "term",
+          "term": "Ušlechtilý kov",
+          "definition": "Kov, který elektrony odevzdává nerad, a proto málo reaguje. Neušlechtilý kov je odevzdává ochotně.",
+          "example": "Měď a zlato jsou ušlechtilé, železo a zinek neušlechtilé. Proto železo „vnutí“ své elektrony mědi, a ne naopak."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď změny. Když oxidační číslo roste, je to oxidace. Když klesá, redukce. Pozor na záporná čísla: z −I na 0 je to nahoru."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "oxidace",
+              "redukce"
+            ],
+            "items": [
+              {
+                "text": "Zn⁰ → Zn^II",
+                "group": 0
+              },
+              {
+                "text": "Fe^II → Fe^III",
+                "group": 0
+              },
+              {
+                "text": "Cl^−I → Cl⁰",
+                "group": 0
+              },
+              {
+                "text": "Cu^II → Cu⁰",
+                "group": 1
+              },
+              {
+                "text": "O⁰ → O^−II",
+                "group": 1
+              },
+              {
+                "text": "Fe^III → Fe⁰",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kde se to děje"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Děj",
+            "Co se oxiduje",
+            "Poznámka"
+          ],
+          "rows": [
+            [
+              "hoření",
+              "palivo",
+              "kyslík je oxidační činidlo"
+            ],
+            [
+              "koroze (rezavění)",
+              "železo",
+              "pomalé narušování kovu vzduchem a vodou"
+            ],
+            [
+              "elektrolýza",
+              "záleží na látce",
+              "rozklad látky elektrickým proudem"
+            ],
+            [
+              "vysoká pec",
+              "uhlík (CO)",
+              "železo z rudy se redukuje"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "V molekule O₂ má kyslík oxidační číslo −II.",
+          "right": "V O₂ je kyslík volný prvek, má **0**. Číslo −II má až ve sloučenině, např. v H₂O nebo MgO.",
+          "why": "Dva stejné atomy si elektrony nepřetahují – žádný z nich nic nedal ani nevzal."
+        },
+        {
+          "type": "summary",
+          "text": "Kdo se oxiduje (OČ roste), ten redukuje druhého. Počet odevzdaných elektronů = počet přijatých."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je oxidace?",
+      "options": [
+        "odevzdání elektronů",
+        "přijetí elektronů",
+        "přijetí protonů"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se při redukci mění oxidační číslo?",
+      "options": [
+        "snižuje se",
+        "zvyšuje se",
+        "nemění se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Oxidace a redukce probíhají vždy současně.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Neutralizace HCl + NaOH je redoxní reakce.",
+      "answer": false,
+      "explanation": "Žádnému prvku se nemění oxidační číslo."
+    },
+    {
+      "type": "input",
+      "question": "Kolik elektronů odevzdá atom Zn⁰, když vznikne Zn^II?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ponoříš železný hřebík do roztoku CuSO₄. Co se vyloučí na hřebíku?",
+      "options": [
+        "měď",
+        "síra",
+        "vodík",
+        "nic"
+      ],
+      "answer": 0,
+      "explanation": "Železo je méně ušlechtilé, vytěsní měď z roztoku."
+    },
+    {
+      "type": "choice",
+      "question": "Která reakce je redoxní?",
+      "options": [
+        "2 Mg + O₂ → 2 MgO",
+        "NaOH + HCl → NaCl + H₂O",
+        "CaO + H₂O → Ca(OH)₂"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem s významem.",
+      "pairs": [
+        [
+          "oxidace",
+          "OČ roste"
+        ],
+        [
+          "redukce",
+          "OČ klesá"
+        ],
+        [
+          "oxidační činidlo",
+          "samo se redukuje"
+        ],
+        [
+          "redukční činidlo",
+          "samo se oxiduje"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je koroze železa?",
+      "options": [
+        "oxidace železa vzdušným kyslíkem a vodou",
+        "redukce železa",
+        "tání železa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá redoxní děj, kdy elektrický proud rozkládá látku?",
+      "options": [
+        "elektrolýza",
+        "neutralizace",
+        "destilace",
+        "fotosyntéza"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli oxidaci a redukci pomocí elektronů a oxidačních čísel.",
+      "answer": "Při oxidaci atom odevzdává elektrony a jeho oxidační číslo roste. Při redukci elektrony přijímá a oxidační číslo klesá. Oba děje probíhají současně."
+    },
+    {
+      "type": "open",
+      "question": "Uveď příklady redoxních dějů v praxi.",
+      "answer": "Hoření, koroze železa, výroba železa ve vysoké peci, dýchání, fotosyntéza, elektrolýza, nabíjení a vybíjení baterie."
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "reported-speech-statements",
+  "title": "Nepřímá řeč",
+  "emoji": "🗣️",
+  "explanations": [
+    {
+      "title": "Posun časů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kamarád Tom ti včera řekl: „Jsem unavený.“ Dnes to vyprávíš mámě: „Tom říkal, že **je** unavený.“ Česky čas skoro neměníš. Angličtina ale ano: *Tom said he **was** tired.*"
+        },
+        {
+          "type": "text",
+          "text": "Převyprávění cizích slov potřebuješ pořád – v rozhovoru, ve zprávách, ve vyprávění příběhů. Klíčem je jedno pravidlo: **posun času o krok do minulosti**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přímá řeč",
+          "definition": "Přesná slova někoho jiného, v uvozovkách.",
+          "example": "*Tom said: „I am tired.“*"
+        },
+        {
+          "type": "term",
+          "term": "Nepřímá řeč (reported speech)",
+          "definition": "Převyprávění toho, co někdo řekl, vlastními slovy, bez uvozovek.",
+          "example": "*Tom said (that) he was tired.*"
+        },
+        {
+          "type": "term",
+          "term": "Uvozovací sloveso",
+          "definition": "Sloveso, kterým uvedeš, že někdo něco řekl. Nejčastěji *said* (řekl) a *told* (řekl někomu).",
+          "example": "*She **said**… / She **told me**…*"
+        },
+        {
+          "type": "term",
+          "term": "Čas slovesa",
+          "definition": "Tvar slovesa, který ukazuje, kdy se děj odehrává.",
+          "example": "*I am* (teď) → *I was* (dřív)"
+        },
+        {
+          "type": "term",
+          "term": "Posun časů (backshift)",
+          "definition": "Když je uvozovací sloveso v minulosti (*said*), posuneš čas převyprávěné věty **o krok dozadu**.",
+          "example": "*am* → *was*, *will* → *would*, *can* → *could*"
+        },
+        {
+          "type": "heading",
+          "text": "Jak posunout"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Řekl přesně",
+            "Převyprávím",
+            "Česky"
+          ],
+          "rows": [
+            [
+              "„I live in Prague.“",
+              "She said she lived in Prague.",
+              "Řekla, že bydlí v Praze."
+            ],
+            [
+              "„I'm working.“",
+              "He said he was working.",
+              "Řekl, že pracuje."
+            ],
+            [
+              "„I have finished.“",
+              "She said she had finished.",
+              "Řekla, že dokončila."
+            ],
+            [
+              "„I saw it.“",
+              "He said he had seen it.",
+              "Řekl, že to viděl."
+            ],
+            [
+              "„I will help.“",
+              "She said she would help.",
+              "Řekla, že pomůže."
+            ],
+            [
+              "„I can swim.“",
+              "He said he could swim.",
+              "Řekl, že umí plavat."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Všimni si: mění se i zájmena. Tom řekl *„I“*, ale ty o něm mluvíš jako o *he*."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti přímou řeč na kartě a zkus ji sám převést. Pak kartu otoč a porovnej."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "„I live in Prague.“",
+                "back": "She said she lived in Prague."
+              },
+              {
+                "front": "„I'm working.“",
+                "back": "He said he was working."
+              },
+              {
+                "front": "„I have finished.“",
+                "back": "She said she had finished."
+              },
+              {
+                "front": "„I saw it.“",
+                "back": "He said he had seen it."
+              },
+              {
+                "front": "„I will help.“",
+                "back": "She said she would help."
+              },
+              {
+                "front": "„I can swim.“",
+                "back": "He said he could swim."
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "„I like pizza,“ she said. Převeď.",
+          "answer": "*like* (přítomnost) → *liked*. *I* → *she*. ***She said she liked pizza.***"
+        },
+        {
+          "type": "example",
+          "question": "„I lost my keys,“ he said. Převeď.",
+          "answer": "*lost* (minulost) → o krok dál: *had lost*. ***He said he had lost his keys.***"
+        },
+        {
+          "type": "text",
+          "text": "Výjimka: když tvrzení **pořád platí**, posun není povinný: *She said she lives in Brno.* (Bydlí tam pořád.)"
+        },
+        {
+          "type": "mistake",
+          "wrong": "He said me that he was ill.",
+          "right": "He told me that he was ill. / He said (to me) that he was ill.",
+          "why": "Za *say* nemůže stát přímo osoba. Když chceš říct komu, použij *tell* + osoba, nebo *say to* + osoba."
+        },
+        {
+          "type": "summary",
+          "text": "Po *said / told* posuň čas o krok zpět (*am → was, will → would, can → could, saw → had seen*) a změň zájmena."
+        }
+      ]
+    },
+    {
+      "title": "Pravidla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Převést přímou řeč do nepřímé je jako přeložit větu z jednoho „úhlu pohledu“ do druhého. Mluvčí byl jinde, jindy a byl to někdo jiný. Proto se mění **čas, zájmena i slova jako dnes, tady, zítra**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přímá a nepřímá řeč",
+          "definition": "**Přímá**: přesná slova v uvozovkách. **Nepřímá**: převyprávění bez uvozovek.",
+          "example": "„I'm hungry.“ → *He said he was hungry.*"
+        },
+        {
+          "type": "term",
+          "term": "Zájmeno",
+          "definition": "Slovo místo jména: *I, you, he, she, we, they, my, your*…",
+          "example": "Petr řekl *„my bike“* → *his bike*"
+        },
+        {
+          "type": "term",
+          "term": "say × tell",
+          "definition": "Obě znamenají „říct“. *tell* chce **vždy osobu** (komu): *told me*. *say* osobu nepotřebuje: *said that…*, případně *said to me*.",
+          "example": "*She told **me** she was busy.* / *She said she was busy.*"
+        },
+        {
+          "type": "heading",
+          "text": "Postup krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vyber uvozovací sloveso: *said* (bez osoby), nebo *told* + osoba.",
+            "Můžeš přidat *that* (že) – není povinné.",
+            "Změň zájmena podle toho, kdo mluví: *I → he/she*, *my → his/her*.",
+            "Posuň čas o krok zpět: *am/is → was*, *are → were*, *do → did*, *did/have done → had done*, *will → would*, *can → could*.",
+            "Změň výrazy času a místa podle tabulky."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Přímá řeč",
+            "Nepřímá řeč"
+          ],
+          "rows": [
+            [
+              "now, today",
+              "then, that day"
+            ],
+            [
+              "yesterday",
+              "the day before"
+            ],
+            [
+              "tomorrow",
+              "the next day / the following day"
+            ],
+            [
+              "here, this",
+              "there, that"
+            ],
+            [
+              "ago",
+              "before"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "„I'll do it tomorrow,“ Petr said.",
+          "answer": "*said* zůstane. *I → he*. *will → would*. *tomorrow → the next day*. ***Petr said he would do it the next day.***"
+        },
+        {
+          "type": "example",
+          "question": "„We are leaving now,“ they told us.",
+          "answer": "*told us* zůstane. *we → they*. *are leaving → were leaving*. *now → then*. ***They told us they were leaving then.***"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber *said*, nebo *told*. Hledej, jestli hned za mezerou stojí osoba."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "She",
+                "after": "me she was busy.",
+                "options": [
+                  "told",
+                  "said"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "He",
+                "after": "that he was hungry.",
+                "options": [
+                  "said",
+                  "told"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "They told",
+                "after": "they would come.",
+                "options": [
+                  "us",
+                  "to us"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "„I can't come.“ → She said she can't come.",
+          "right": "She said she couldn't come.",
+          "why": "Po *said* se čas posouvá: *can → could*. Bez posunu to zní, jako by to říkala právě teď."
+        },
+        {
+          "type": "summary",
+          "text": "Nepřímá řeč: *said* / *told* + osoba, změna zájmen, posun času o krok zpět a změna slov *today, tomorrow, here*."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "„I like pizza,“ she said. → She said she ___ pizza.",
+      "options": [
+        "liked",
+        "likes",
+        "had liked"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "„We are leaving,“ they said. → They said they ___.",
+      "options": [
+        "were leaving",
+        "are leaving",
+        "had left"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "„I lost my keys,“ he said. → He said he ___ his keys.",
+      "options": [
+        "had lost",
+        "has lost",
+        "lose"
+      ],
+      "answer": 0,
+      "explanation": "Past simple → past perfect."
+    },
+    {
+      "type": "choice",
+      "question": "She ___ me that she was sorry.",
+      "options": [
+        "told",
+        "said",
+        "spoke"
+      ],
+      "answer": 0,
+      "explanation": "*tell* + osoba."
+    },
+    {
+      "type": "input",
+      "question": "„I will call you.“ → He said he ___ call me.",
+      "answers": [
+        "would"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "„I can't come.“ → She said she ___ come.",
+      "answers": [
+        "couldn't",
+        "could not"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "„I'll do it tomorrow.“ → He said he would do it the ___ day.",
+      "answers": [
+        "next",
+        "following"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„He said me that he was ill.“ je správně.",
+      "answer": false,
+      "explanation": "Správně *He told me* nebo *He said (to me)*."
+    },
+    {
+      "type": "truefalse",
+      "question": "Pokud tvrzení stále platí, posun času není povinný: *She said she lives in Brno.*",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj přímou a nepřímou řeč.",
+      "pairs": [
+        [
+          "am",
+          "was"
+        ],
+        [
+          "have done",
+          "had done"
+        ],
+        [
+          "will",
+          "would"
+        ],
+        [
+          "can",
+          "could"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co se děje s časy při převodu do nepřímé řeči po „said“?",
+      "answer": "Časy se posouvají o krok do minulosti: present → past, past simple a present perfect → past perfect, *will* → *would*, *can* → *could*."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi say a tell?",
+      "answer": "Po *tell* musí následovat osoba, které něco říkáme (*She told me…*). *Say* se používá bez osoby, nebo s *to* (*She said (to me) that…*)."
+    }
+  ]
+}

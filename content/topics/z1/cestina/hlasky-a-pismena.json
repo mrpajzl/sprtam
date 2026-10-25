@@ -1,0 +1,316 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hlasky-a-pismena",
+  "title": "Hlásky a písmena",
+  "emoji": "🔤",
+  "explanations": [
+    {
+      "title": "Ucho a oko",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když mluvíš, z pusy jdou **zvuky**. Uši je slyší."
+        },
+        {
+          "type": "text",
+          "text": "Když čteš knížku, díváš se na **značky** na papíře. Oči je vidí."
+        },
+        {
+          "type": "text",
+          "text": "Zvuky a značky k sobě patří. Když víš, jak, umíš číst a psát."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hláska",
+          "definition": "Jeden malý zvuk, který řekneš pusou. Slyšíš ho ušima.",
+          "example": "Zabzuč jako včela: „zzz“. To je hláska Z."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "👄",
+            "➡️",
+            "🔊",
+            "➡️",
+            "👂"
+          ],
+          "caption": "Hlásku řekneme a slyšíme."
+        },
+        {
+          "type": "term",
+          "term": "Písmeno",
+          "definition": "Značka pro hlásku. Napíšeš ji tužkou. Vidíš ji očima.",
+          "example": "Z na papíře je písmeno."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "✏️",
+            "➡️",
+            "Z",
+            "➡️",
+            "👀"
+          ],
+          "caption": "Písmeno napíšeme a vidíme."
+        },
+        {
+          "type": "heading",
+          "text": "Jak to patří k sobě"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zasyč jako had: „sss“. To je **hláska** S. Slyšíš ji.",
+            "Napiš na papír S. To je **písmeno** S. Vidíš ho.",
+            "Ukaž prstem na S a řekni „sss“. Právě jsi přečetl/a písmeno!"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Řekni pomalu slovo PES. Jaké hlásky slyšíš?",
+          "answer": "Ppp – eee – sss. Slyšíš **3 hlásky**: P, E, S. Napíšeš je **3 písmeny**: PES."
+        },
+        {
+          "type": "example",
+          "question": "Máma volá „Emo!“. Je to hláska, nebo písmeno?",
+          "answer": "Máma to **říká** a ty to **slyšíš** ušima. Jsou to **hlásky**. Kdyby to napsala na papír, byla by to písmena."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Písmeno slyšíme ušima.",
+          "right": "Hlásku slyšíme. Písmeno vidíme.",
+          "why": "Ucho slyší zvuk – to je hláska. Oko vidí značku na papíře – to je písmeno."
+        },
+        {
+          "type": "summary",
+          "text": "Hlásku slyšíme, když mluvíme. Písmeno vidíme, když čteme a píšeme. Každá hláska má své písmeno."
+        }
+      ]
+    },
+    {
+      "title": "Kartičky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zahrajeme si hru s kartičkami. Na kartičce je písmeno. Pod ním se schovává zvířátko."
+        },
+        {
+          "type": "text",
+          "text": "Každé písmeno má svůj zvuk. Když znáš zvuky písmen, přečteš jakékoli slovo."
+        },
+        {
+          "type": "term",
+          "term": "Hláska",
+          "definition": "Zvuk, který řekneš a uslyšíš.",
+          "example": "Lev začíná zvukem „lll“."
+        },
+        {
+          "type": "term",
+          "term": "Písmeno",
+          "definition": "Značka, kterou hlásku napíšeš.",
+          "example": "Zvuk „lll“ napíšeš jako L."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🦁",
+            "🔊 lll",
+            "✏️ L"
+          ],
+          "caption": "zvíře – zvuk – písmeno"
+        },
+        {
+          "type": "heading",
+          "text": "Jak se hraje"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podívej se na písmeno na kartě.",
+            "Řekni nahlas jeho zvuk – hlásku.",
+            "Hádej zvíře, které tímhle zvukem začíná.",
+            "Otoč kartu. Uhodl/a jsi?"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Teď ty. Klepni na kartu a otoč ji."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "M",
+                "back": "🐭 myš"
+              },
+              {
+                "front": "L",
+                "back": "🦁 lev"
+              },
+              {
+                "front": "S",
+                "back": "🐘 slon"
+              },
+              {
+                "front": "P",
+                "back": "🐶 pes"
+              },
+              {
+                "front": "R",
+                "back": "🐟 ryba"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Na kartě je R. Schová se pod ní 🐟 ryba, nebo 🐶 pes?",
+          "answer": "Řekni „rrr“. **Rrr**-yba. Ryba začíná R. Pes začíná „ppp“. Pod kartou je **ryba**."
+        },
+        {
+          "type": "example",
+          "question": "Na kartě je M. Schová se pod ní 🐭 myš, nebo 🐘 slon?",
+          "answer": "„Mmm“ – **mmm**-yš. Myš začíná M. Slon začíná „sss“. Pod kartou je **myš**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Písmena M-Á-M-A čtu jako „em-á-em-á“.",
+          "right": "Čtu jejich zvuky: „mmm-á-mmm-a“ → máma.",
+          "why": "Písmeno má jméno („em“), ale ve slově zní jen jeho zvuk – hláska. Když čteš, říkej zvuky."
+        },
+        {
+          "type": "summary",
+          "text": "Každá hláska má své písmeno. Hlásku slyšíš, písmeno vidíš."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Hlásku slyšíme.",
+      "answer": true,
+      "explanation": "Hlásku říkáme a slyšíme ušima."
+    },
+    {
+      "type": "truefalse",
+      "question": "Písmeno slyšíme ušima.",
+      "answer": false,
+      "explanation": "Písmeno vidíme očima. Slyšíme hlásku."
+    },
+    {
+      "type": "choice",
+      "question": "Čím vidíme písmena?",
+      "options": [
+        "👀 očima",
+        "👂 ušima",
+        "👃 nosem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jakou hláskou začíná 🐭 myš?",
+      "options": [
+        "M",
+        "N",
+        "Š"
+      ],
+      "answer": 0,
+      "explanation": "Mmm-yš. První je M."
+    },
+    {
+      "type": "choice",
+      "question": "Jakou hláskou začíná 🐶 pes?",
+      "options": [
+        "B",
+        "P",
+        "S"
+      ],
+      "answer": 1,
+      "explanation": "Ppp-es. První je P."
+    },
+    {
+      "type": "input",
+      "question": "Jakým písmenem začíná slovo LES?",
+      "answers": [
+        "L"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jakým písmenem začíná slovo OSA?",
+      "answers": [
+        "O"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj obrázek s první hláskou.",
+      "pairs": [
+        [
+          "🐘 slon",
+          "S"
+        ],
+        [
+          "🦁 lev",
+          "L"
+        ],
+        [
+          "🐟 ryba",
+          "R"
+        ],
+        [
+          "🦆 kachna",
+          "K"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kolik písmen má slovo PES?",
+      "options": [
+        "2",
+        "3",
+        "4"
+      ],
+      "answer": 1,
+      "explanation": "P – E – S. Tři písmena."
+    },
+    {
+      "type": "order",
+      "question": "Slož slovo MÁMA.",
+      "items": [
+        "M",
+        "Á",
+        "M",
+        "A"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi hláskou a písmenem?",
+      "answer": "Hlásku slyšíme, když mluvíme. Písmeno vidíme, když čteme a píšeme."
+    },
+    {
+      "type": "open",
+      "question": "Řekni tři slova, která začínají hláskou M.",
+      "answer": "Například máma, myš, med, míč, mrak."
+    }
+  ]
+}

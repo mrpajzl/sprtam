@@ -20,7 +20,8 @@ const MODES = ['kviz', 'opakovani', 'pisemka', 'zkouseni']
 /** Routes the app renders that have no prerendered page of their own. */
 async function isAppRoute(path) {
   const p = path.split('/').filter(Boolean)
-  if (p.length === 1) return ['hledat', 'mix', 'sdilet'].includes(p[0])
+  if (p.length === 1) return ['hledat', 'mix', 'sdilet', 'widgety'].includes(p[0])
+  if (p[0] === 'widgety' && p.length === 2) return /^[a-z]+(-[a-z]+)*$/.test(p[1])
   if (p[0] === 'g' && p.length === 4 && p[3] === '~test') return page(...p.slice(0, 3))
   if (p[0] === 'g' && p.length === 5 && MODES.includes(p[4])) return page(...p.slice(0, 4))
   if (p[0] === 'slovicka' && p.length === 3) return page(...p.slice(0, 2))

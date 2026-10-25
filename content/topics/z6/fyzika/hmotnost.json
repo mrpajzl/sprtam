@@ -1,0 +1,352 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hmotnost",
+  "title": "Hmotnost",
+  "emoji": "⚖️",
+  "generator": "units",
+  "explanations": [
+    {
+      "title": "Na vahách",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V obchodě si kupuješ 1 kg mouky nebo 200 g sýra. U lékaře tě zváží. Na balíčku je napsáno, kolik váží. Všude jde o **hmotnost**."
+        },
+        {
+          "type": "text",
+          "text": "Hmotnost říká, **kolik látky** v tělese je. Čím víc látky, tím těžší je těleso zvednout i rozpohybovat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hmotnost",
+          "definition": "Kolik látky těleso obsahuje. Značka `m`. Hlavní jednotka je **kilogram** (kg).",
+          "example": "Litr vody má hmotnost asi 1 kg."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoramenné váhy",
+          "definition": "Váhy se dvěma miskami na stejně dlouhých ramenech. Když jsou na obou miskách stejné hmotnosti, váhy stojí rovně.",
+          "example": "Takové váhy drží v ruce socha Spravedlnosti."
+        },
+        {
+          "type": "term",
+          "term": "Závaží",
+          "definition": "Kovové kousky se známou hmotností (např. 100 g, 20 g, 5 g). Pokládáme je na druhou misku.",
+          "example": "Sada závaží bývá v dřevěné krabičce."
+        },
+        {
+          "type": "term",
+          "term": "Rovnováha",
+          "definition": "Stav, kdy se váhy nenaklání ani na jednu stranu – ručička ukazuje doprostřed."
+        },
+        {
+          "type": "heading",
+          "text": "Jak vážit"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Těleso polož na levou misku.",
+            "Na pravou misku přidávej závaží – nejdřív velká, pak menší.",
+            "Když se miska se závažím převáží, poslední závaží vrať a zkus menší.",
+            "Až jsou váhy v **rovnováze**, sečti všechna závaží."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jablko vyvážila závaží 100 g, 20 g a 5 g. Jakou má jablko hmotnost?",
+          "answer": "Sečtu závaží: 100 + 20 + 5 = **125 g**."
+        },
+        {
+          "type": "example",
+          "question": "Hrušku vyvážila závaží 200 g, 50 g a 10 g. Kolik je to v kilogramech?",
+          "answer": "200 + 50 + 10 = 260 g. 1 kg = 1 000 g, takže 260 : 1 000 = **0,26 kg**."
+        },
+        {
+          "type": "heading",
+          "text": "Hmotnost na Měsíci"
+        },
+        {
+          "type": "term",
+          "term": "Tíha",
+          "definition": "Síla, kterou planeta těleso táhne dolů. Tíha závisí na tom, kde jsi. Hmotnost ne.",
+          "example": "Na Měsíci tě táhne dolů asi šestkrát slaběji než na Zemi."
+        },
+        {
+          "type": "text",
+          "text": "Astronaut na Měsíci vyskočí výš, protože má menší **tíhu**. Ale látky v něm je pořád stejně, takže jeho **hmotnost** se nezměnila."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na Měsíci má astronaut menší hmotnost.",
+          "right": "Na Měsíci má astronaut menší tíhu, hmotnost má stejnou.",
+          "why": "Hmotnost = kolik látky v těle je. Cestou na Měsíc žádná látka nezmizí."
+        },
+        {
+          "type": "summary",
+          "text": "Hmotnost (m) říká, kolik látky těleso obsahuje; jednotka kg. Měříme ji vahami. Na Měsíci i na Zemi je stejná."
+        }
+      ]
+    },
+    {
+      "title": "Jednotky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kotě má asi 1 kg, slon několik tun, lék v tabletě jen pár miligramů. Na tak různé věci potřebujeme různě velké jednotky hmotnosti."
+        },
+        {
+          "type": "text",
+          "text": "Když umíš jednotky převádět, porovnáš třeba cenu za 500 g a za 1 kg nebo spočítáš, kolik unese auto."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hmotnost",
+          "definition": "Množství látky v tělese. Značka `m`. Měříme ji vahami.",
+          "example": "Tvoje hmotnost je třeba 40 kg."
+        },
+        {
+          "type": "term",
+          "term": "Kilogram (kg)",
+          "definition": "Hlavní jednotka hmotnosti. Zhruba tolik má litr vody.",
+          "example": "Balík mouky, krabice mléka."
+        },
+        {
+          "type": "term",
+          "term": "Gram, miligram, tuna, metrický cent",
+          "definition": "**gram** (g) je tisícina kilogramu, **miligram** (mg) tisícina gramu, **tuna** (t) je 1 000 kg, **metrický cent** (q) je 100 kg.",
+          "example": "Mince má pár gramů, auto asi 1 tunu, pytel brambor u sedláka se dřív počítal v centech."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jednotka",
+            "Kolik",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "1 t",
+              "1 000 kg",
+              "malé auto"
+            ],
+            [
+              "1 q",
+              "100 kg",
+              "těžký pytel obilí"
+            ],
+            [
+              "1 kg",
+              "1 000 g",
+              "litr vody"
+            ],
+            [
+              "1 g",
+              "1 000 mg",
+              "kancelářská sponka"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Porovnej hmotnosti"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf. Kolikrát je kůň těžší než člověk? Kolik psů by vyvážilo jednoho koně?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "kg",
+            "items": [
+              {
+                "label": "kotě",
+                "value": 1
+              },
+              {
+                "label": "pes",
+                "value": 20
+              },
+              {
+                "label": "člověk",
+                "value": 70
+              },
+              {
+                "label": "kůň",
+                "value": 500
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak převádět"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi v tabulce, kolik menších jednotek je v jedné větší (třeba 1 kg = 1 000 g).",
+            "Na **menší** jednotku → **násob** (kg → g: · 1 000).",
+            "Na **větší** jednotku → **děl** (g → kg: : 1 000)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik gramů je 2,5 kg?",
+          "answer": "Na menší jednotku → násobím: 2,5 · 1 000 = **2 500 g**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik kilogramů je 750 g?",
+          "answer": "Na větší jednotku → dělím: 750 : 1 000 = **0,75 kg**."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď: 1 kg, 500 mg, 1 t, 2 g, 1 q.",
+          "answer": "Převedu si v duchu na gramy: 500 mg = 0,5 g; 2 g; 1 kg = 1 000 g; 1 q = 100 000 g; 1 t = 1 000 000 g. Pořadí: **500 mg, 2 g, 1 kg, 1 q, 1 t**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hmotnost se měří v newtonech.",
+          "right": "Hmotnost se měří v kilogramech, newton je jednotka síly.",
+          "why": "Siloměr ukazuje sílu (tíhu) v newtonech. Hmotnost v kg ukazují váhy."
+        },
+        {
+          "type": "summary",
+          "text": "1 t = 1 000 kg, 1 q = 100 kg, 1 kg = 1 000 g, 1 g = 1 000 mg. Na menší jednotku násob, na větší děl."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je hlavní jednotka hmotnosti?",
+      "options": [
+        "kilogram",
+        "gram",
+        "tuna",
+        "newton"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik g je 2,5 kg?",
+      "answers": [
+        "2500"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik kg je 3 t?",
+      "answers": [
+        "3000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik kg je 750 g?",
+      "answers": [
+        "0,75"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Na Měsíci má astronaut menší hmotnost než na Zemi.",
+      "answer": false,
+      "explanation": "Hmotnost se nemění. Menší je jen tíha (gravitační síla)."
+    },
+    {
+      "type": "input",
+      "question": "Váhy vyrovnala závaží 200 g, 50 g a 10 g. Hmotnost tělesa v g =",
+      "answers": [
+        "260"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenší hmotnosti.",
+      "items": [
+        "500 mg",
+        "2 g",
+        "1 kg",
+        "1 q",
+        "1 t"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj stejné hmotnosti.",
+      "pairs": [
+        [
+          "1 t",
+          "1 000 kg"
+        ],
+        [
+          "1 kg",
+          "1 000 g"
+        ],
+        [
+          "1 g",
+          "1 000 mg"
+        ],
+        [
+          "1 q",
+          "100 kg"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jakou hmotnost má zhruba 1 litr vody?",
+      "options": [
+        "1 kg",
+        "1 g",
+        "10 kg",
+        "100 g"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Čím měříme hmotnost?",
+      "options": [
+        "váhami",
+        "siloměrem",
+        "odměrným válcem",
+        "teploměrem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak zvážíš těleso na rovnoramenných vahách?",
+      "answer": "Těleso položím na jednu misku a na druhou přidávám závaží, dokud nejsou váhy v rovnováze. Hmotnost tělesa je součet závaží."
+    },
+    {
+      "type": "open",
+      "question": "Mění se hmotnost tělesa, když ho přeneseme na Měsíc? Proč?",
+      "answer": "Nemění. Hmotnost říká, kolik látky těleso obsahuje, a to zůstává stejné. Na Měsíci je menší jen tíha."
+    }
+  ]
+}

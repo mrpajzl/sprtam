@@ -1,0 +1,349 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "druha-mocnina-odmocnina",
+  "title": "Druhá mocnina a odmocnina",
+  "emoji": "🟩",
+  "generator": "sqrt",
+  "explanations": [
+    {
+      "title": "Čtverečky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chceš vydláždit čtvercovou terasu 4 × 4 metry. Kolik dlaždic 1 × 1 m potřebuješ? 4 · 4 = 16. A obráceně: máš 16 dlaždic a chceš z nich čtverec – jak dlouhá bude strana?"
+        },
+        {
+          "type": "text",
+          "text": "Na první otázku odpovídá **druhá mocnina**, na druhou **odmocnina**. Budeš je potřebovat u obsahů, v Pythagorově větě i ve fyzice."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Druhá mocnina",
+          "definition": "Číslo vynásobené samo sebou. Píše se s malou dvojkou nahoře: 4² („čtyři na druhou“).",
+          "example": "4² = 4 · 4 = 16"
+        },
+        {
+          "type": "term",
+          "term": "Druhá odmocnina",
+          "definition": "Opak druhé mocniny. Hledá **nezáporné** číslo, které když vynásobíš samo sebou, dostaneš dané číslo. Znak √.",
+          "example": "√16 = 4, protože 4 · 4 = 16."
+        },
+        {
+          "type": "heading",
+          "text": "Mocnina = obsah čtverce"
+        },
+        {
+          "type": "text",
+          "text": "Čtverec se stranou 4 má 4 řady po 4 políčkách. Nastav obě strany stejně: 3 × 3, 5 × 5, 7 × 7. Kolik políček vidíš?"
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 4,
+            "columns": 4
+          }
+        },
+        {
+          "type": "text",
+          "text": "3 × 3 = 9, 5 × 5 = 25, 7 × 7 = 49. To jsou druhé mocniny 3, 5 a 7. Proto se jim anglicky říká „square“ – čtverec."
+        },
+        {
+          "type": "heading",
+          "text": "Odmocnina = strana čtverce"
+        },
+        {
+          "type": "text",
+          "text": "Čtverec má obsah 64 cm². Hledám stranu: které číslo krát samo sebe dá 64? 8 · 8 = 64. Strana je **√64 = 8 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Mezi kterými celými čísly leží √50?",
+          "answer": "7² = 49 a 8² = 64. 50 leží mezi 49 a 64, takže √50 leží mezi **7 a 8** (velmi blízko 7)."
+        },
+        {
+          "type": "example",
+          "question": "(−3)² = ?",
+          "answer": "(−3) · (−3). Mínus krát mínus je plus: **9**. Druhá mocnina nikdy není záporná."
+        },
+        {
+          "type": "mistake",
+          "wrong": "√(9 + 16) = √9 + √16 = 3 + 4 = 7",
+          "right": "√(9 + 16) = √25 = 5",
+          "why": "Odmocnina se z **součtu** po kouscích brát nesmí. Nejdřív sečti, pak odmocni. (U součinu to jde: √(4 · 9) = √4 · √9 = 6.)"
+        },
+        {
+          "type": "text",
+          "text": "Proč nejde odmocnit záporné číslo? Žádné číslo krát samo sebe nedá zápornou hodnotu: kladné · kladné je kladné a záporné · záporné taky. Proto √(−4) mezi běžnými čísly neexistuje."
+        },
+        {
+          "type": "summary",
+          "text": "a² = a · a = obsah čtverce se stranou a. √b = strana čtverce s obsahem b. Odmocnina ze záporného čísla neexistuje."
+        }
+      ]
+    },
+    {
+      "title": "Tabulka a pravidla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Druhé mocniny malých čísel se vyplatí znát nazpaměť – jako malou násobilku. Pak spočítáš odmocninu za vteřinu a odhadneš i tu, která nevyjde přesně."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Druhá mocnina a²",
+          "definition": "a · a. Malé číslo 2 nahoře se jmenuje **exponent**.",
+          "example": "12² = 12 · 12 = 144"
+        },
+        {
+          "type": "term",
+          "term": "Druhá odmocnina √b",
+          "definition": "Nezáporné číslo, jehož druhá mocnina je b.",
+          "example": "√144 = 12"
+        },
+        {
+          "type": "term",
+          "term": "Nezáporné číslo",
+          "definition": "Kladné číslo nebo nula (tedy ne záporné).",
+          "example": "0, 3, 7,5 jsou nezáporná, −2 není."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka mocnin"
+        },
+        {
+          "type": "table",
+          "head": [
+            "a",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
+          ],
+          "rows": [
+            [
+              "a²",
+              "1",
+              "4",
+              "9",
+              "16",
+              "25",
+              "36",
+              "49",
+              "64",
+              "81",
+              "100",
+              "121",
+              "144"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Čti tabulku oběma směry: zdola nahoru je odmocnina. √81 = 9, √121 = 11."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Záporné číslo na druhou je kladné:** (−5)² = (−5) · (−5) = 25.",
+            "**Pozor na závorku:** −4² = −(4 · 4) = −16. Umocňuje se jen 4, mínus zůstane.",
+            "**Desetinná čísla:** počet desetinných míst se zdvojí. 0,3² = 0,09, 0,2² = 0,04.",
+            "**Desítky:** nuly se zdvojí. 30² = 900, 20² = 400.",
+            "**Odmocnina desetinného čísla:** √0,49 = 0,7, protože 0,7 · 0,7 = 0,49."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup odmocnění"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi v tabulce číslo pod odmocninou: √1,44 → „144“.",
+            "Odmocni bez čárky: √144 = 12.",
+            "Číslo 1,44 má 2 desetinná místa, výsledek bude mít polovinu – 1 místo.",
+            "Výsledek: √1,44 = 1,2. Kontrola: 1,2 · 1,2 = 1,44 ✓"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "13² = ?",
+          "answer": "13 · 13 = 130 + 39 = **169**."
+        },
+        {
+          "type": "example",
+          "question": "Čtverec má obsah 64 cm². Jak dlouhá je strana?",
+          "answer": "Strana a splňuje a² = 64. a = √64 = **8 cm**."
+        },
+        {
+          "type": "text",
+          "text": "Procvič si tabulku: otoč kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "7²",
+                "back": "49"
+              },
+              {
+                "front": "√81",
+                "back": "9"
+              },
+              {
+                "front": "0,2²",
+                "back": "0,04"
+              },
+              {
+                "front": "√1,44",
+                "back": "1,2"
+              },
+              {
+                "front": "(−5)²",
+                "back": "25"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "0,3² = 0,9",
+          "right": "0,3² = 0,09",
+          "why": "0,3 · 0,3: 3 · 3 = 9 a desetinná místa se sečtou 1 + 1 = 2. Proto 0,09."
+        },
+        {
+          "type": "summary",
+          "text": "a² = a · a, vždy nezáporné. √b je nezáporné číslo, které na druhou dá b. √(a²) = a pro a ≥ 0. Odmocnina ze záporného čísla neexistuje."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "13² =",
+      "answers": [
+        "169"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "√81 =",
+      "answers": [
+        "9"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "(−5)² =",
+      "answers": [
+        "25"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "0,2² =",
+      "answers": [
+        "0,04"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "√1,44 =",
+      "answers": [
+        "1,2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "−4² =",
+      "options": [
+        "−16",
+        "16",
+        "−8",
+        "8"
+      ],
+      "answer": 0,
+      "explanation": "Umocňuje se jen 4, mínus zůstane: −(4²) = −16."
+    },
+    {
+      "type": "truefalse",
+      "question": "√(9 + 16) = 3 + 4",
+      "answer": false,
+      "explanation": "√25 = 5, ne 7."
+    },
+    {
+      "type": "choice",
+      "question": "Mezi kterými celými čísly leží √50?",
+      "options": [
+        "7 a 8",
+        "6 a 7",
+        "5 a 6",
+        "24 a 26"
+      ],
+      "answer": 0,
+      "explanation": "49 < 50 < 64"
+    },
+    {
+      "type": "input",
+      "question": "Čtverec má obsah 64 cm². Délka strany v cm?",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "30² =",
+      "answers": [
+        "900"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "√(4 · 9) = √4 · √9",
+      "answer": true,
+      "explanation": "√36 = 6 = 2 · 3"
+    },
+    {
+      "type": "open",
+      "question": "Co je druhá odmocnina čísla?",
+      "answer": "Nezáporné číslo, které po umocnění na druhou dá původní číslo. √25 = 5, protože 5² = 25."
+    },
+    {
+      "type": "open",
+      "question": "Proč je (−6)² kladné?",
+      "answer": "(−6)² = (−6) · (−6) a součin dvou záporných čísel je kladný, tedy 36."
+    }
+  ]
+}

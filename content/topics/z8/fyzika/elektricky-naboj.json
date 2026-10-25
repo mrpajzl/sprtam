@@ -1,0 +1,335 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "elektricky-naboj",
+  "title": "Elektrický náboj",
+  "emoji": "🎈",
+  "explanations": [
+    {
+      "title": "Balonkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Otři nafouknutý balonek o vlasy. Vlasy se zvednou za balonkem a balonek pak drží na zdi. Když si v zimě sundáš svetr, zapraská to a ve tmě uvidíš jiskřičky."
+        },
+        {
+          "type": "text",
+          "text": "Za vším je **elektrický náboj**. Stejná věc způsobuje blesky a je základem veškeré elektřiny – od baterky po počítač."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atom",
+          "definition": "Nepatrná částice, ze které je složená každá látka. Uprostřed má **jádro**, kolem něj krouží ještě menší částice.",
+          "example": "Ve špendlíkové hlavičce jsou miliardy miliard atomů."
+        },
+        {
+          "type": "term",
+          "term": "Proton, neutron, elektron",
+          "definition": "V jádře jsou **protony** (náboj **kladný +**) a **neutrony** (bez náboje). Kolem jádra jsou **elektrony** (náboj **záporný −**).",
+          "example": "Atom vodíku má 1 proton a 1 elektron."
+        },
+        {
+          "type": "term",
+          "term": "Elektrický náboj",
+          "definition": "Vlastnost částic, díky které se přitahují nebo odpuzují. Je kladný (+) nebo záporný (−). Značka `Q`, jednotka **coulomb (C)**.",
+          "example": "Elektron má záporný náboj, proton kladný."
+        },
+        {
+          "type": "term",
+          "term": "Neutrální těleso",
+          "definition": "Těleso, které má stejně kladného jako záporného náboje – navenek se jeví jako nenabité.",
+          "example": "Neutrální atom má stejně protonů jako elektronů."
+        },
+        {
+          "type": "heading",
+          "text": "Co se stane při tření"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Balonek i vlasy jsou zpočátku neutrální.",
+            "Při tření přeskočí část **elektronů** z vlasů na balonek.",
+            "Balonek má teď elektronů navíc → je nabitý **záporně**.",
+            "Vlasům elektrony chybí → jsou nabité **kladně**.",
+            "Protony se nepřesouvají – jsou pevně v jádrech."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Tomu se říká **elektrování třením**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se nabitá tělesa chovají"
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a nejdřív hádej sám."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "+ a +",
+                "back": "odpuzují se"
+              },
+              {
+                "front": "− a −",
+                "back": "odpuzují se"
+              },
+              {
+                "front": "+ a −",
+                "back": "přitahují se"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč se balonek po tření o vlasy přilepí ke zdi?",
+          "answer": "Balonek je nabitý záporně. Ve zdi odpudí elektrony kousek dál, takže povrch zdi u balonku je trochu kladný. Kladné a záporné se **přitahují**."
+        },
+        {
+          "type": "example",
+          "question": "Proč ti po učesání vlasy „stávají“ do všech stran?",
+          "answer": "Všechny vlasy se nabily **stejným** nábojem. Stejné náboje se **odpuzují** – vlasy od sebe odstávají."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Při tření se přesouvají protony.",
+          "right": "Přesouvají se elektrony.",
+          "why": "Protony jsou pevně v jádru atomu. Elektrony jsou na okraji a dají se „ukrást“."
+        },
+        {
+          "type": "summary",
+          "text": "Náboj je kladný (protony) nebo záporný (elektrony). Stejné náboje se odpuzují, různé přitahují. Třením se přesouvají elektrony."
+        }
+      ]
+    },
+    {
+      "title": "Stavbou atomu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Blesk je obří jiskra dlouhá i několik kilometrů. Vzniká ze stejné příčiny jako drobná jiskra, když sáhneš na kliku po chůzi po koberci. Pochopíš ji, když nahlédneš dovnitř atomu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atom",
+          "definition": "Nejmenší částice prvku. Skládá se z **jádra** uprostřed a **obalu** z elektronů kolem.",
+          "example": "Kdyby byl atom velký jako fotbalový stadion, jádro by bylo jako hrášek uprostřed."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Částice",
+            "Kde je",
+            "Náboj"
+          ],
+          "rows": [
+            [
+              "proton",
+              "v jádře",
+              "kladný (+)"
+            ],
+            [
+              "neutron",
+              "v jádře",
+              "žádný"
+            ],
+            [
+              "elektron",
+              "v obalu",
+              "záporný (−)"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Elektrický náboj `Q`",
+          "definition": "Vlastnost částic, díky které na sebe elektricky působí. Jednotka **coulomb (C)**, podle francouzského fyzika Coulomba.",
+          "example": "Při úderu blesku se přenese náboj řádově desítek coulombů."
+        },
+        {
+          "type": "term",
+          "term": "Iont",
+          "definition": "Atom, který získal nebo ztratil elektrony, a proto je nabitý.",
+          "example": "Atom, kterému elektron chybí, je kladný iont."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se těleso nabije"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Neutrální těleso: protonů = elektronů.",
+            "Těleso **získá** elektrony → je nabité **záporně**.",
+            "Těleso **ztratí** elektrony → je nabité **kladně**.",
+            "Souhlasné náboje (+ +, − −) se **odpuzují**, nesouhlasné (+ −) se **přitahují**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak náboj poznat"
+        },
+        {
+          "type": "term",
+          "term": "Elektroskop",
+          "definition": "Přístroj, který ukáže, jestli je těleso nabité. Má kovovou tyčku a na ní lehkou ručičku (nebo dva lístky).",
+          "example": "Dotkneš se ho nabitou tyčí: náboj se rozteče po tyčce i ručičce, oba mají stejný náboj, odpuzují se – ručička se vychýlí."
+        },
+        {
+          "type": "heading",
+          "text": "Blesk"
+        },
+        {
+          "type": "text",
+          "text": "V bouřkovém mraku se kroupy a kapky o sebe třou a mrak se silně nabije. Když je náboje moc, přeskočí obří jiskra – **výboj** – mezi mrakem a zemí nebo mezi mraky. To je blesk. Hrom je zvuk prudce rozpínaného rozžhaveného vzduchu."
+        },
+        {
+          "type": "example",
+          "question": "Těleso získalo elektrony. Jak je nabité?",
+          "answer": "Elektrony jsou záporné. Má jich teď víc než protonů → je nabité **záporně**."
+        },
+        {
+          "type": "example",
+          "question": "Která částice nemá náboj?",
+          "answer": "**Neutron** – už jméno napovídá: neutrální."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kladně nabité těleso získalo protony.",
+          "right": "Kladně nabité těleso ztratilo elektrony.",
+          "why": "Při běžném nabíjení se přesouvají jen elektrony. Kladný náboj znamená, že elektrony chybí."
+        },
+        {
+          "type": "summary",
+          "text": "Atom = jádro (protony +, neutrony) a obal (elektrony −). Získané elektrony = záporný náboj, ztracené = kladný. Jednotka náboje coulomb, náboj ukáže elektroskop."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký náboj má elektron?",
+      "options": [
+        "záporný",
+        "kladný",
+        "žádný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která částice nemá náboj?",
+      "options": [
+        "neutron",
+        "proton",
+        "elektron"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Dvě záporně nabitá tělesa se přitahují.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka elektrického náboje?",
+      "options": [
+        "coulomb",
+        "volt",
+        "ampér",
+        "ohm"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Těleso získalo elektrony. Jak je nabité?",
+      "options": [
+        "záporně",
+        "kladně",
+        "nenabité"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jedním slovem: jak se jmenuje přístroj, kterým zjistíme, zda je těleso nabité?",
+      "answers": [
+        "elektroskop"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Při elektrování třením se přesouvají elektrony.",
+      "answer": true,
+      "explanation": "Protony jsou pevně v jádře."
+    },
+    {
+      "type": "choice",
+      "question": "Co je blesk?",
+      "options": [
+        "výboj mezi nabitým mrakem a zemí",
+        "hořící plyn",
+        "odraz světla"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj částici s nábojem.",
+      "pairs": [
+        [
+          "proton",
+          "kladný"
+        ],
+        [
+          "elektron",
+          "záporný"
+        ],
+        [
+          "neutron",
+          "bez náboje"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Neutrální atom má stejně protonů jako elektronů.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Proč se balonek po tření o vlasy přilepí ke zdi?",
+      "answer": "Třením získá elektrony a nabije se záporně. Nabité těleso přitahuje i nenabité předměty, protože v nich přeskupí náboje."
+    },
+    {
+      "type": "open",
+      "question": "Jak se chovají elektricky nabitá tělesa?",
+      "answer": "Tělesa se souhlasným nábojem se odpuzují, s nesouhlasným nábojem se přitahují."
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "modals-obligation-permission",
+  "title": "Povinnost a svolení",
+  "emoji": "🚦",
+  "explanations": [
+    {
+      "title": "Ve škole",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Školní řád je plný povinností, zákazů a dovolení: „Žáci **musí** přezouvat.“ „Při testu se **nesmí** používat mobil.“ „Uniformu **nemusíte** nosit.“ „Po obědě **smíte** odejít.“"
+        },
+        {
+          "type": "text",
+          "text": "Anglicky na to máš sadu sloves: **must, have to, mustn't, don't have to, needn't, can, be allowed to, may**. Dvě z nich vypadají podobně, ale znamenají opak – a právě to se zkouší nejčastěji."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Modální sloveso",
+          "definition": "Pomocné sloveso, které vyjadřuje povinnost, zákaz, svolení, schopnost nebo možnost (*must, can, may, should, needn't*). Za ním je základní tvar bez *to*, nemá *-s* a nemá všechny časy.",
+          "example": "You must go. She can stay."
+        },
+        {
+          "type": "term",
+          "term": "Povinnost",
+          "definition": "Něco je nutné.",
+          "example": "must, have to"
+        },
+        {
+          "type": "term",
+          "term": "Zákaz",
+          "definition": "Něco se nesmí.",
+          "example": "mustn't, can't, not be allowed to"
+        },
+        {
+          "type": "term",
+          "term": "Svolení",
+          "definition": "Něco se smí, je to dovoleno.",
+          "example": "can, may, be allowed to"
+        },
+        {
+          "type": "term",
+          "term": "Absence povinnosti",
+          "definition": "Není to nutné – ale ani zakázané.",
+          "example": "don't have to, needn't, don't need to"
+        },
+        {
+          "type": "heading",
+          "text": "Školní řád anglicky"
+        },
+        {
+          "type": "list",
+          "items": [
+            "*You **must** be quiet in the library.* – pravidlo / mluvčí to vyžaduje",
+            "*I **have to** wear a uniform.* – vnější povinnost",
+            "*You **mustn't** use phones in exams.* – zákaz",
+            "*You **don't have to / needn't** come.* – není nutné",
+            "*Students **are allowed to / can** leave early.* – smí",
+            "***May** I open the window?* – zdvořilá žádost o svolení"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věty: je to zákaz, nebo jen „není nutné“?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "zakázáno",
+              "není nutné"
+            ],
+            "items": [
+              {
+                "text": "You mustn't smoke here.",
+                "group": 0
+              },
+              {
+                "text": "You can't park here.",
+                "group": 0
+              },
+              {
+                "text": "You aren't allowed to swim.",
+                "group": 0
+              },
+              {
+                "text": "You don't have to pay.",
+                "group": 1
+              },
+              {
+                "text": "You needn't hurry.",
+                "group": 1
+              },
+              {
+                "text": "You don't need to bring food.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Zítra je svátek. Doplň: We ___ get up early.",
+          "answer": "Není to nutné, ale není to zakázané → *don't have to*: *We don't have to get up early.*"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: You ___ touch that wire – it's dangerous!",
+          "answer": "Zákaz → *mustn't*: *You mustn't touch that wire.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "You mustn't come. = Nemusíš přijít.",
+          "right": "You don't have to come. = Nemusíš přijít.",
+          "why": "*Mustn't* = nesmíš (zákaz). *Don't have to / needn't* = nemusíš (není nutné)."
+        },
+        {
+          "type": "summary",
+          "text": "**must / have to** = musíš. **mustn't** = nesmíš. **don't have to / needn't** = nemusíš. **can / may / be allowed to** = smíš."
+        }
+      ]
+    },
+    {
+      "title": "V časech",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Loni jsem **musel** chodit pěšky.“ „Příští rok **budeme muset** nosit uniformy.“ „Když mi bylo patnáct, **nesměl** jsem chodit pozdě domů.“ Jenže *must* a *can* nemají minulý ani budoucí tvar. Angličtina si proto půjčuje náhradníky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Modální sloveso",
+          "definition": "*must, can, may, needn't…* – mají jen jeden či dva tvary, nemají *-ing* ani budoucí tvar s *will*. Dvě modální slovesa za sebou být nemohou.",
+          "example": "✗ will must"
+        },
+        {
+          "type": "term",
+          "term": "have to",
+          "definition": "Náhradník za *must*. Chová se jako běžné sloveso, takže má všechny časy: *had to, will have to*. Otázka a zápor s *do/does/did*.",
+          "example": "Do you have to wear a tie?"
+        },
+        {
+          "type": "term",
+          "term": "be allowed to",
+          "definition": "„smět, mít dovoleno“. Náhradník za *can* ve významu svolení. Mění se sloveso *be*: *am/is/are, was/were, will be*.",
+          "example": "We weren't allowed to use calculators."
+        },
+        {
+          "type": "term",
+          "term": "needn't",
+          "definition": "„nemusíš“ – modální sloveso (zápor od *need*). Za ním základní tvar bez *to*.",
+          "example": "She needn't worry. = Nemusí se bát."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka časů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Teď",
+            "Minulost",
+            "Budoucnost"
+          ],
+          "rows": [
+            [
+              "must / have to",
+              "had to",
+              "will have to"
+            ],
+            [
+              "can / am allowed to",
+              "could / was allowed to",
+              "will be allowed to"
+            ],
+            [
+              "don't have to",
+              "didn't have to",
+              "won't have to"
+            ],
+            [
+              "mustn't / am not allowed to",
+              "wasn't allowed to",
+              "won't be allowed to"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Urči význam: povinnost, zákaz, svolení, nebo „není nutné“.",
+            "Urči čas: teď, minulost, budoucnost.",
+            "Mimo přítomnost použij náhradníka: *have to* nebo *be allowed to*.",
+            "Otázka a zápor u *have to* se dělají s *do/does/did*: *Do you have to…? I didn't have to…*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň tvar podle času."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Yesterday I",
+                "after": "work late.",
+                "options": [
+                  "had to",
+                  "must"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Next year we",
+                "after": "wear uniforms.",
+                "options": [
+                  "will have to",
+                  "will must"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "When I was 15, I",
+                "after": "stay out late.",
+                "options": [
+                  "wasn't allowed to",
+                  "mustn't"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: We ___ allowed to use calculators in yesterday's test. (zápor)",
+          "answer": "Minulost, množné číslo → *were*, zápor: *We weren't allowed to use calculators.*"
+        },
+        {
+          "type": "example",
+          "question": "Která otázka je správně? Do you have to wear a tie? / Do you must wear a tie? / Have you to wear a tie?",
+          "answer": "První. *Have to* se chová jako běžné sloveso, otázka se tvoří s *do*. *Must* s *do* nejde."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Next year we will must wear uniforms.",
+          "right": "Next year we will have to wear uniforms.",
+          "why": "Dvě modální slovesa (*will* + *must*) nemohou stát za sebou. Budoucnost od *must* je *will have to*."
+        },
+        {
+          "type": "summary",
+          "text": "Minulost od *must* = **had to**, budoucnost **will have to**. Svolení v minulosti: **could / was allowed to**."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Tomorrow is a holiday, so we ___ get up early.",
+      "options": [
+        "don't have to",
+        "mustn't",
+        "can't"
+      ],
+      "answer": 0,
+      "explanation": "Není nutné → *don't have to*."
+    },
+    {
+      "type": "choice",
+      "question": "You ___ touch that wire – it's dangerous!",
+      "options": [
+        "mustn't",
+        "don't have to",
+        "needn't"
+      ],
+      "answer": 0,
+      "explanation": "Zákaz → *mustn't*."
+    },
+    {
+      "type": "choice",
+      "question": "Last year I ___ walk to school every day.",
+      "options": [
+        "had to",
+        "must",
+        "have to"
+      ],
+      "answer": 0,
+      "explanation": "Minulost od *must* je *had to*."
+    },
+    {
+      "type": "choice",
+      "question": "___ I open the window? (zdvořile žádám o svolení)",
+      "options": [
+        "May",
+        "Must",
+        "Have"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "„You mustn't come“ a „You don't have to come“ znamenají totéž.",
+      "answer": false,
+      "explanation": "První = nesmíš přijít, druhé = nemusíš přijít."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Will must“ je gramaticky správný tvar.",
+      "answer": false,
+      "explanation": "Dvě modální slovesa za sebou nejdou → *will have to*."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: She ___ (not need) to worry. – jedno modální sloveso, zápor",
+      "answers": [
+        "needn't",
+        "need not"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: We ___ allowed to use calculators in yesterday's test. (zápor)",
+      "answers": [
+        "weren't",
+        "were not"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj s významem.",
+      "pairs": [
+        [
+          "must",
+          "musíš (pravidlo)"
+        ],
+        [
+          "mustn't",
+          "nesmíš"
+        ],
+        [
+          "don't have to",
+          "nemusíš"
+        ],
+        [
+          "can",
+          "smíš"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je správně?",
+      "options": [
+        "Do you have to wear a tie at work?",
+        "Do you must wear a tie at work?",
+        "Have you to wear a tie at work?"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi mustn't a don't have to.",
+      "answer": "*Mustn't* vyjadřuje zákaz – nesmíš to udělat. *Don't have to* znamená, že to není nutné, ale můžeš."
+    },
+    {
+      "type": "open",
+      "question": "Popiš anglicky tři pravidla své školy.",
+      "answer": "Např.: *We have to be at school at 8. We mustn't use phones in lessons. We don't have to wear a uniform.*"
+    }
+  ]
+}

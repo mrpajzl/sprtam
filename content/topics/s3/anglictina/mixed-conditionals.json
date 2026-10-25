@@ -1,0 +1,384 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "mixed-conditionals",
+  "title": "Mixed conditionals",
+  "emoji": "🔀",
+  "explanations": [
+    {
+      "title": "Na situaci",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Včera jsi šel spát ve dvě ráno. **Dnes** jsi strašně unavený. Řekneš si: „Kdybych byl **včera** šel spát dřív, **teď** bych nebyl unavený.“"
+        },
+        {
+          "type": "text",
+          "text": "Podmínka je v minulosti, ale následek je teď. Takové věty v životě říkáš často – o rozhodnutích, která tě ovlivňují dodnes. Angličtina na ně má **smíšený kondicionál** (*mixed conditional*): každá část věty dostane tvar podle toho, **kdy** se děje."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "If-část a hlavní věta",
+          "definition": "If-část je podmínka (*if* = kdyby). Hlavní věta je následek – co by bylo.",
+          "example": "[*If I had gone to bed earlier*] [*I wouldn't be tired now*]."
+        },
+        {
+          "type": "term",
+          "term": "Druhý kondicionál (připomenutí)",
+          "definition": "Nereálná **přítomnost**: *if* + past simple, hlavní věta *would* + infinitiv.",
+          "example": "*If I were rich, I would travel.* = Kdybych byl bohatý, cestoval bych."
+        },
+        {
+          "type": "term",
+          "term": "Třetí kondicionál (připomenutí)",
+          "definition": "Nereálná **minulost**: *if* + *had* + 3. tvar, hlavní věta *would have* + 3. tvar.",
+          "example": "*If I had known, I would have helped.* = Kdybych to byl věděl, byl bych pomohl."
+        },
+        {
+          "type": "term",
+          "term": "Smíšený kondicionál",
+          "definition": "Věta, kde se **míchá** druhý a třetí kondicionál, protože podmínka a následek jsou v jiném čase.",
+          "example": "*If I had taken the job, I would be rich now.*"
+        },
+        {
+          "type": "heading",
+          "text": "Dva směry"
+        },
+        {
+          "type": "text",
+          "text": "**1. Minulost → teď.** Něco se (ne)stalo dřív a projevuje se to dnes. *If I **had eaten** breakfast, I **wouldn't be** hungry now.* = Kdybych byl snídal, teď bych neměl hlad."
+        },
+        {
+          "type": "text",
+          "text": "**2. Pořád (vlastnost) → minulost.** Něco platí trvale a kvůli tomu se něco (ne)stalo. *If I **spoke** French, I **would have understood** him yesterday.* = Kdybych uměl francouzsky (a to neumím pořád), byl bych mu včera rozuměl."
+        },
+        {
+          "type": "example",
+          "question": "Kdybych se byl tehdy nepřestěhoval, bydlel bych teď v Brně. Anglicky?",
+          "answer": "Podmínka = tehdy (minulost) → *had* + 3. tvar: *If I hadn't moved*. Následek = teď → *would* + infinitiv: *I would live in Brno now.*"
+        },
+        {
+          "type": "example",
+          "question": "Kdyby nebyl tak líný (je líný pořád), byl by projekt minulý týden dokončil. Anglicky?",
+          "answer": "Podmínka = trvalá vlastnost → past simple: *If he weren't so lazy*. Následek = minulý týden → *would have* + 3. tvar: *he would have finished the project last week.*"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věty podle směru. U každé najdi, která část je v minulosti a která teď nebo pořád."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "minulost → teď",
+              "teď/vždy → minulost"
+            ],
+            "items": [
+              {
+                "text": "If I had taken the job, I would be rich now.",
+                "group": 0
+              },
+              {
+                "text": "If she hadn't moved, she would live here.",
+                "group": 0
+              },
+              {
+                "text": "If we had booked, we would have a table now.",
+                "group": 0
+              },
+              {
+                "text": "If I weren't so shy, I would have asked her.",
+                "group": 1
+              },
+              {
+                "text": "If he were taller, he would have got into the team.",
+                "group": 1
+              },
+              {
+                "text": "If you were careful, you wouldn't have broken it.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "If I had eaten breakfast, I wouldn't have been hungry now.",
+          "right": "If I had eaten breakfast, I wouldn't be hungry now.",
+          "why": "Hlad je **teď** (*now*), tak následek patří do přítomného tvaru *would* + infinitiv. *would have been* by mluvilo o minulosti."
+        },
+        {
+          "type": "summary",
+          "text": "Každá část věty má tvar podle toho, **kdy** se děje: minulost → *had* + 3. tvar / *would have* + 3. tvar, teď → past simple / *would* + infinitiv."
+        }
+      ]
+    },
+    {
+      "title": "Tabulkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Smíšený kondicionál je jako stavebnice z dílů, které už znáš z druhého a třetího kondicionálu. Stačí každou polovinu věty postavit zvlášť – podle toho, jestli mluví o minulosti, nebo o přítomnosti."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Časová rovina",
+          "definition": "**Kdy** se ta část věty odehrává: v minulosti, nebo teď (případně pořád).",
+          "example": "*yesterday, last year* = minulost; *now, today, always* = teď / pořád"
+        },
+        {
+          "type": "term",
+          "term": "Díly pro přítomnost",
+          "definition": "Z druhého kondicionálu: if-část **past simple** (*were, knew, had*), hlavní věta ***would* + infinitiv** (*would be, would live*).",
+          "example": "*If I knew… / …I would be…*"
+        },
+        {
+          "type": "term",
+          "term": "Díly pro minulost",
+          "definition": "Ze třetího kondicionálu: if-část ***had* + 3. tvar** (*had studied*), hlavní věta ***would have* + 3. tvar** (*would have passed*).",
+          "example": "*If I had known… / …I would have helped.*"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zeptej se: **kdy** je podmínka? Minulost, nebo teď / pořád?",
+            "Vyber díl pro if-část: minulost → *had* + 3. tvar; teď → past simple.",
+            "Zeptej se: **kdy** je následek? Teď, nebo v minulosti?",
+            "Vyber díl pro hlavní větu: teď → *would* + infinitiv; minulost → *would have* + 3. tvar.",
+            "Slož a zkontroluj, že v if-části není *would*."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Typ",
+            "If-část",
+            "Hlavní věta",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "minulost → přítomnost",
+              "had + 3. tvar",
+              "would + infinitiv",
+              "If I had studied medicine, I would be a doctor now."
+            ],
+            [
+              "přítomnost → minulost",
+              "past simple",
+              "would have + 3. tvar",
+              "If I spoke French, I would have understood him."
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *If we had bought the tickets, we ___ (be) at the concert now.*",
+          "answer": "Podmínka minulá (*had bought*), následek teď (*now*) → *would* + infinitiv: ***would be***."
+        },
+        {
+          "type": "example",
+          "question": "Doplň (trvale ho neznám): *If I ___ (know) him well, I would have invited him.*",
+          "answer": "Podmínka platí pořád → past simple: ***knew***. Následek je minulý (*would have invited*)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň. Hledej v každé větě slova jako *now* nebo *yesterday* – prozradí ti časovou rovinu."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "If I had won the lottery, I",
+                "after": "in a villa now.",
+                "options": [
+                  "would live",
+                  "would have lived",
+                  "will live"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "If she",
+                "after": "afraid of flying, she would have come with us.",
+                "options": [
+                  "weren't",
+                  "hadn't been",
+                  "isn't"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "If they had trained more, they",
+                "after": "in the final today.",
+                "options": [
+                  "would be",
+                  "would have been",
+                  "are"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "If I would have taken the job, I would be rich now.",
+          "right": "If I had taken the job, I would be rich now.",
+          "why": "V if-části nikdy není *would*. Minulá podmínka = *had* + 3. tvar."
+        },
+        {
+          "type": "summary",
+          "text": "Smíšený kondicionál = díl z 2. a díl z 3. kondicionálu. Každou část postav podle toho, kdy se děje."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "If I had eaten breakfast, I ___ hungry now.",
+      "options": [
+        "wouldn't be",
+        "wouldn't have been",
+        "won't be",
+        "hadn't been"
+      ],
+      "answer": 0,
+      "explanation": "Následek je teď → would + infinitiv."
+    },
+    {
+      "type": "choice",
+      "question": "If he ___ so lazy, he would have finished the project last week.",
+      "options": [
+        "weren't",
+        "wouldn't be",
+        "isn't",
+        "won't be"
+      ],
+      "answer": 0,
+      "explanation": "Trvalá vlastnost → past simple (were)."
+    },
+    {
+      "type": "truefalse",
+      "question": "Mixed conditional spojuje dvě různé časové roviny.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„If I had studied medicine, I would be a doctor now.“ je správně.",
+      "answer": true,
+      "explanation": "Minulá podmínka, přítomný následek."
+    },
+    {
+      "type": "input",
+      "question": "If we had bought the tickets, we ___ (be) at the concert now.",
+      "answers": [
+        "would be",
+        "'d be"
+      ],
+      "explanation": "Teď → would + be."
+    },
+    {
+      "type": "input",
+      "question": "If I ___ (know) him well, I would have invited him. (trvale ho neznám)",
+      "answers": [
+        "knew"
+      ],
+      "explanation": "Přítomná neskutečnost → past simple."
+    },
+    {
+      "type": "choice",
+      "question": "Kdybych se tehdy nepřestěhoval, bydlel bych teď v Brně.",
+      "options": [
+        "If I hadn't moved, I would live in Brno now.",
+        "If I didn't move, I would have lived in Brno now.",
+        "If I hadn't moved, I would have lived in Brno now."
+      ],
+      "answer": 0,
+      "explanation": "Minulá příčina (hadn't moved), dnešní stav (would live)."
+    },
+    {
+      "type": "match",
+      "question": "Spoj části.",
+      "pairs": [
+        [
+          "If I had saved money,",
+          "I would have a car now."
+        ],
+        [
+          "If she spoke English,",
+          "she would have got the job."
+        ],
+        [
+          "If you had listened,",
+          "you would know the answer now."
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "If I",
+        "had slept",
+        "more,",
+        "I wouldn’t",
+        "be tired",
+        "now."
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve které větě je chyba?",
+      "options": [
+        "If I had left on time, I would be there now.",
+        "If I had known, I would have helped.",
+        "If I would have known, I would help."
+      ],
+      "answer": 2,
+      "explanation": "V podmínce s if není would: If I had known, …"
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi third a mixed conditional.",
+      "answer": "Third conditional má podmínku i následek v minulosti. Mixed conditional míchá roviny: minulá podmínka s přítomným následkem, nebo přítomná podmínka s minulým následkem."
+    },
+    {
+      "type": "open",
+      "question": "Utvoř větu: minulé rozhodnutí, které ovlivňuje tvůj dnešek.",
+      "answer": "Např.: If I hadn't started learning English, I wouldn't understand this film now. If-část past perfect, hlavní věta would + infinitiv."
+    }
+  ]
+}

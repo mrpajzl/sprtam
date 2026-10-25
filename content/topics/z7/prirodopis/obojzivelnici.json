@@ -1,0 +1,351 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obojzivelnici",
+  "title": "Obojživelníci",
+  "emoji": "🐸",
+  "explanations": [
+    {
+      "title": "Dva životy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na jaře najdeš v tůni rosolovité hrudky s černými tečkami. Za pár týdnů v ní plavou pulci. A v létě po břehu skáčou malé žabky. Je to pořád stejný živočich!"
+        },
+        {
+          "type": "text",
+          "text": "Žáby a mloci žijí „dva životy“: jako mláďata ve vodě, jako dospělci často na souši. Proto se jim říká **obojživelníci**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obojživelníci",
+          "definition": "Obratlovci (živočichové s páteří), kteří žijí ve vodě i na souši. Mají holou vlhkou kůži.",
+          "example": "Skokan, ropucha, rosnička, mlok, čolek."
+        },
+        {
+          "type": "term",
+          "term": "Pulec",
+          "definition": "Mládě (larva) žáby. Žije ve vodě, má ocas a dýchá **žábrami** – orgány, které berou kyslík z vody."
+        },
+        {
+          "type": "term",
+          "term": "Plíce",
+          "definition": "Orgán, který bere kyslík ze vzduchu. Dospělé žáby dýchají plícemi a navíc i kůží."
+        },
+        {
+          "type": "term",
+          "term": "Proměna",
+          "definition": "Velká změna tvaru těla během vývoje – z pulce se stane žába."
+        },
+        {
+          "type": "heading",
+          "text": "Od vajíčka k žábě"
+        },
+        {
+          "type": "text",
+          "text": "Klepej postupně na jednotlivé kroky vývoje."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "vajíčka ve vodě (snůška)",
+              "pulec se žábrami a ocasem",
+              "pulci rostou nohy, mizí žábry",
+              "žabka bez ocasu dýchá plícemi",
+              "dospělá žába klade vajíčka"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Proč musí být kůže vlhká"
+        },
+        {
+          "type": "text",
+          "text": "Dospělá žába dýchá částečně **kůží**. Kyslík prochází kůží jen tehdy, když je vlhká. V kůži jsou proto **žlázy**, které vytvářejí sliz. Na suchém místě by žába brzy uhynula."
+        },
+        {
+          "type": "example",
+          "question": "Čím dýchá pulec a čím dospělá žába?",
+          "answer": "Pulec žije jen ve vodě → dýchá **žábrami**. Dospělá žába žije i na souši → dýchá **plícemi a kůží**."
+        },
+        {
+          "type": "example",
+          "question": "Proč obojživelníci ubývají, když se vysuší tůně a mokřady?",
+          "answer": "Vajíčka a pulci se mohou vyvíjet **jen ve vodě**. Bez tůní se žáby nemají kde rozmnožit."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obojživelníci mají suchou šupinatou kůži jako ještěrky.",
+          "right": "Obojživelníci mají holou, vlhkou kůži se žlázami.",
+          "why": "Šupinatou kůži mají plazi. Obojživelníci dýchají i kůží, a proto ji musí mít vlhkou."
+        },
+        {
+          "type": "summary",
+          "text": "Obojživelník: larva (pulec) ve vodě dýchá žábrami, dospělec dýchá plícemi a vlhkou kůží. Vajíčka klade do vody."
+        }
+      ]
+    },
+    {
+      "title": "Poznáváme druhy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na jaře řidiči občas zpomalí kvůli cedulce „pozor, žáby“. Žáby tou dobou putují k rybníkům, kde se rozmnožují. Mnoho z nich je chráněných."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se rozdělit obojživelníky na dvě skupiny, poznat naše nejznámější druhy a zjistíš, jak přežívají zimu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obojživelníci",
+          "definition": "Obratlovci s holou vlhkou kůží. Mláďata žijí ve vodě, dospělci ve vodě i na souši."
+        },
+        {
+          "type": "term",
+          "term": "Proměnlivá teplota těla",
+          "definition": "Tělo si samo neudrží teplo. Je teplé, když je teplo kolem, a studené, když je zima."
+        },
+        {
+          "type": "term",
+          "term": "Zimní strnulost",
+          "definition": "V zimě tělo vychladne a živočich „ztuhne“ – nehýbe se a nežere. Přečká tak zimu v úkrytu.",
+          "example": "Skokan přečká zimu zahrabaný v bahně."
+        },
+        {
+          "type": "term",
+          "term": "Ocasatí a žáby",
+          "definition": "**Ocasatí** obojživelníci mají ocas celý život (mlok, čolek). **Žáby** mají ocas jen jako pulci."
+        },
+        {
+          "type": "heading",
+          "text": "Naše druhy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Skupina",
+            "Jak ho poznáš"
+          ],
+          "rows": [
+            [
+              "skokan hnědý",
+              "žáby",
+              "hnědý, dlouhé nohy, skáče daleko"
+            ],
+            [
+              "ropucha obecná",
+              "žáby",
+              "bradavičnatá kůže, spíš leze"
+            ],
+            [
+              "rosnička zelená",
+              "žáby",
+              "malá, zelená, přísavky na prstech, leze po stromech"
+            ],
+            [
+              "mlok skvrnitý",
+              "ocasatí",
+              "černý se žlutými skvrnami"
+            ],
+            [
+              "čolek",
+              "ocasatí",
+              "menší, na jaře ve vodě, samci mají hřeben"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď obojživelníky na ocasaté a žáby."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Ocasatí",
+              "Žáby"
+            ],
+            "items": [
+              {
+                "text": "mlok skvrnitý",
+                "group": 0
+              },
+              {
+                "text": "skokan hnědý",
+                "group": 1
+              },
+              {
+                "text": "čolek obecný",
+                "group": 0
+              },
+              {
+                "text": "ropucha obecná",
+                "group": 1
+              },
+              {
+                "text": "rosnička zelená",
+                "group": 1
+              },
+              {
+                "text": "čolek horský",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Na stromě u rybníka sedí malá zelená žabka a drží se kmene. Kdo to je?",
+          "answer": "Malá, zelená a leze po stromě díky přísavkám na prstech → **rosnička zelená**."
+        },
+        {
+          "type": "example",
+          "question": "Proč žáby v zimě nevidíme?",
+          "answer": "Mají **proměnlivou teplotu těla**. V zimě by ztuhly. Proto se schovají do bahna, pod kořeny nebo do nory a přečkají zimu v **zimní strnulosti**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Mlok je ještěrka.",
+          "right": "Mlok je ocasatý obojživelník.",
+          "why": "Mlok má holou vlhkou kůži bez šupin a jeho larvy žijí ve vodě. Ještěrka je plaz se šupinami."
+        },
+        {
+          "type": "summary",
+          "text": "Obojživelníci se dělí na žáby (skokan, ropucha, rosnička) a ocasaté (mlok, čolek). Zimu přečkávají ve strnulosti. Ohrožuje je mizení mokřadů."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "order",
+      "question": "Seřaď vývoj žáby.",
+      "items": [
+        "vajíčko",
+        "pulec",
+        "pulec s nohama",
+        "dospělá žába"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Čím dýchá pulec?",
+      "options": [
+        "žábrami",
+        "plícemi",
+        "vzdušnicemi"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Dospělé žáby dýchají i kůží.",
+      "answer": true,
+      "explanation": "Proto musí mít kůži stále vlhkou."
+    },
+    {
+      "type": "choice",
+      "question": "Mlok skvrnitý patří mezi…",
+      "options": [
+        "ocasaté obojživelníky",
+        "plazy",
+        "žáby"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Obojživelníci mají suchou kůži se šupinami.",
+      "answer": false,
+      "explanation": "Mají holou, vlhkou kůži se žlázami."
+    },
+    {
+      "type": "input",
+      "question": "Malá zelená žába s přísavkami na prstech, která leze po stromech, je…",
+      "answers": [
+        "rosnička",
+        "rosnicka",
+        "rosnička zelená"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj obojživelníka se znakem.",
+      "pairs": [
+        [
+          "ropucha",
+          "bradavičnatá kůže"
+        ],
+        [
+          "rosnička",
+          "přísavky na prstech"
+        ],
+        [
+          "mlok",
+          "žlutočerné skvrny"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak přezimují naši obojživelníci?",
+      "options": [
+        "strnulí v úkrytu",
+        "odlétají na jih",
+        "jsou celou zimu aktivní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Obojživelníci mají proměnlivou teplotu těla.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Proč obojživelníci ubývají?",
+      "options": [
+        "mizí mokřady a tůně",
+        "mají moc potravy",
+        "je jim zima"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Proč se obojživelníci jmenují právě takto?",
+      "answer": "Žijí ve vodě i na souši – larvy ve vodě se žábrami, dospělci často na souši s plícemi."
+    },
+    {
+      "type": "open",
+      "question": "Popiš vývoj žáby od vajíčka.",
+      "answer": "Z vajíček ve vodě se líhnou pulci se žábrami. Postupně jim narostou nohy, zmizí ocas a žábry, vyvinou se plíce a vzniká žabka."
+    }
+  ]
+}

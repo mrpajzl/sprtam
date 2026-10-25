@@ -1,0 +1,351 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "neprima-umernost-funkce",
+  "title": "Nepřímá úměrnost jako funkce",
+  "emoji": "📉",
+  "explanations": [
+    {
+      "title": "Příběhem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš 12 bonbonů a dělíš je mezi děti. Jedno dítě dostane všech 12. Dvě děti po 6, tři po 4, čtyři po 3. Čím víc dětí, tím méně bonbonů pro každé."
+        },
+        {
+          "type": "text",
+          "text": "Tohle je **nepřímá úměrnost**. Potkáš ji u rychlosti a času cesty, u počtu dělníků a délky práce, u ceny a počtu lidí, kteří se o ni dělí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Nepřímá úměrnost",
+          "definition": "Vztah dvou veličin: kolikrát zvětšíš jednu, tolikrát se zmenší druhá.",
+          "example": "2krát víc dětí → každé dostane 2krát méně."
+        },
+        {
+          "type": "term",
+          "term": "Funkce",
+          "definition": "Pravidlo, které každému číslu x přiřadí právě jedno číslo y.",
+          "example": "x = počet dětí, y = bonbony pro každé."
+        },
+        {
+          "type": "term",
+          "term": "Předpis y = k/x",
+          "definition": "Zápis nepřímé úměrnosti. k je pevné číslo (tady počet všech bonbonů), x nesmí být 0.",
+          "example": "y = 12/x"
+        },
+        {
+          "type": "heading",
+          "text": "Podívej se na sloupce"
+        },
+        {
+          "type": "text",
+          "text": "Každý sloupec ukazuje, kolik bonbonů dostane jedno dítě. Všimni si, jak rychle zpočátku klesají a pak už pomalu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "bonbonů",
+            "items": [
+              {
+                "label": "1 dítě",
+                "value": 12
+              },
+              {
+                "label": "2 děti",
+                "value": 6
+              },
+              {
+                "label": "3 děti",
+                "value": 4
+              },
+              {
+                "label": "4 děti",
+                "value": 3
+              },
+              {
+                "label": "6 dětí",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Ať je dětí kolik chce, platí: **počet dětí · bonbony pro každé = 12**. Součin x · y je pořád stejný. Podle toho nepřímou úměrnost poznáš."
+        },
+        {
+          "type": "example",
+          "question": "y = 12/x. Kolik je y pro x = 4?",
+          "answer": "12 : 4 = **3**. Čtyři děti, každé 3 bonbony."
+        },
+        {
+          "type": "example",
+          "question": "Auto ujede 120 km za 2 h. Za jak dlouho ujede trasu poloviční rychlostí?",
+          "answer": "Poloviční rychlost → dvojnásobný čas. 2 · 2 = **4 h**. (Rychlost · čas = 120 pořád.)"
+        },
+        {
+          "type": "heading",
+          "text": "Jak vypadá graf"
+        },
+        {
+          "type": "text",
+          "text": "Když body [1; 12], [2; 6], [3; 4], [4; 3], [6; 2] zakreslíš do grafu, nevznikne přímka, ale zahnutá křivka – **hyperbola**. Blíží se k osám, ale nikdy se jich nedotkne: nula dětí ani nula bonbonů nedává smysl."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Graf y = 12/x prochází bodem [0; 0].",
+          "right": "Pro x = 0 funkce není definovaná, graf osy neprotne.",
+          "why": "Dělit nulou nejde. A y nikdy nemůže být 0, protože 12/x není nikdy nula."
+        },
+        {
+          "type": "summary",
+          "text": "Nepřímá úměrnost: y = k/x, součin x · y = k je stálý. Graf je hyperbola, která neprotne osy."
+        }
+      ]
+    },
+    {
+      "title": "Hyperbola",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Nepřímou úměrnost už znáš ze 7. třídy jako „kolikrát víc, tolikrát méně“. Teď se na ni podíváš jako na funkci: předpis, tabulka, graf a jeho vlastnosti."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Funkce y = k/x",
+          "definition": "Nepřímá úměrnost. k je číslo různé od nuly, x ≠ 0.",
+          "example": "y = 6/x, y = −4/x"
+        },
+        {
+          "type": "term",
+          "term": "Definiční obor",
+          "definition": "Všechna x, která smíš do funkce dosadit. Tady všechna kromě 0.",
+          "example": "Do y = 6/x nelze dosadit x = 0."
+        },
+        {
+          "type": "term",
+          "term": "Kvadranty",
+          "definition": "Čtyři čtvrtiny roviny, na které ji rozdělí osy x a y. I. vpravo nahoře, II. vlevo nahoře, III. vlevo dole, IV. vpravo dole (proti směru hodinových ručiček).",
+          "example": "Bod [2; 3] je v I. kvadrantu, [−2; −3] ve III."
+        },
+        {
+          "type": "term",
+          "term": "Hyperbola",
+          "definition": "Graf nepřímé úměrnosti: dvě oddělené zahnuté větve.",
+          "example": "Graf y = 1/x."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "x",
+            "−3",
+            "−2",
+            "−1",
+            "1",
+            "2",
+            "3"
+          ],
+          "rows": [
+            [
+              "y = 6/x",
+              "−2",
+              "−3",
+              "−6",
+              "6",
+              "3",
+              "2"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Kontrola: x · y = 6 v každém sloupci. Pro kladná x jsou y kladná (I. kvadrant), pro záporná x záporná (III. kvadrant)."
+        },
+        {
+          "type": "heading",
+          "text": "Vlastnosti"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Graf je **hyperbola** – dvě větve.",
+            "k > 0: větve v I. a III. kvadrantu; pro x > 0 funkce klesá.",
+            "k < 0: větve ve II. a IV. kvadrantu.",
+            "Graf nikdy neprotne osy x ani y."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup úloh"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Hledáš y? Dosaď x a vyděl: y = k : x.",
+            "Hledáš x? Platí x = k : y.",
+            "Hledáš k? Vynásob souřadnice libovolného bodu: k = x · y."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Bod [2; 9] leží na grafu y = k/x. Kolik je k?",
+          "answer": "k = x · y = 2 · 9 = **18**."
+        },
+        {
+          "type": "example",
+          "question": "y = −4/x. Kolik je y pro x = −2?",
+          "answer": "−4 : (−2) = **2** (mínus děleno mínus je plus)."
+        },
+        {
+          "type": "text",
+          "text": "Zkontroluj si tabulku pro y = 6/x na sloupcích (kladná x): s rostoucím x klesá y."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "x = 1",
+                "value": 6
+              },
+              {
+                "label": "x = 2",
+                "value": 3
+              },
+              {
+                "label": "x = 3",
+                "value": 2
+              },
+              {
+                "label": "x = 6",
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Tabulka x: 1, 2, 3 a y: 6, 4, 2 je nepřímá úměrnost, protože y klesá.",
+          "right": "Není: 1 · 6 = 6, 2 · 4 = 8, 3 · 2 = 6 – součin není stálý.",
+          "why": "Nestačí, že y klesá. U nepřímé úměrnosti musí být součin x · y pro všechny dvojice stejný."
+        },
+        {
+          "type": "summary",
+          "text": "y = k/x, x ≠ 0, x · y = k. Graf hyperbola: k > 0 v I. a III. kvadrantu, k < 0 ve II. a IV. Osy neprotne."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "y = 12/x. Kolik je y pro x = 4?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "y = 20/x. Kolik je x, když y = 5?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Grafem nepřímé úměrnosti je…",
+      "options": [
+        "hyperbola",
+        "přímka",
+        "parabola",
+        "kružnice"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Graf y = 6/x prochází počátkem.",
+      "answer": false,
+      "explanation": "x = 0 není v definičním oboru."
+    },
+    {
+      "type": "choice",
+      "question": "Která tabulka je nepřímá úměrnost? (x: 1, 2, 3)",
+      "options": [
+        "y: 6, 3, 2",
+        "y: 2, 4, 6",
+        "y: 1, 4, 9",
+        "y: 6, 4, 2"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Bod [2; 9] leží na grafu y = k/x. k =",
+      "answers": [
+        "18"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Pro k > 0 leží větve v I. a III. kvadrantu.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Trasu 120 km ujede auto za 2 h. Za kolik hodin ji ujede při poloviční rychlosti?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "y = −4/x. Kolik je y pro x = −2?",
+      "options": [
+        "2",
+        "−2",
+        "8",
+        "−8"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Funkce y = 3/x je pro x > 0 klesající.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš nepřímou úměrnost z tabulky?",
+      "answer": "Součin x · y je u všech dvojic stejný. Kolikrát se x zvětší, tolikrát se y zmenší."
+    },
+    {
+      "type": "open",
+      "question": "Popiš graf funkce y = 1/x.",
+      "answer": "Hyperbola se dvěma větvemi v I. a III. kvadrantu. Přibližuje se k osám, ale nikdy je neprotne."
+    }
+  ]
+}

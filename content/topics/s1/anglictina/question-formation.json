@@ -1,0 +1,429 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "question-formation",
+  "title": "Tvoření otázek",
+  "emoji": "❓",
+  "explanations": [
+    {
+      "title": "Kdo co komu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky se ptáš „Kdo tě viděl?“ i „Koho jsi viděl?“ a rozdíl je jen v koncovce slova *kdo/koho*. Anglicky je to obojí *who* – a rozdíl se pozná podle toho, jestli v otázce je, nebo není pomocné sloveso *did*."
+        },
+        {
+          "type": "text",
+          "text": "Umět se správně ptát je v cizím jazyce to nejdůležitější: bez otázek se nedomluvíš na nádraží, u lékaře ani u zkoušky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo nebo co děj **dělá**. V oznamovací větě stojí před slovesem. Česky odpovídá na „kdo? co?“.",
+          "example": "*My teacher* saw me. – podmět je *my teacher*."
+        },
+        {
+          "type": "term",
+          "term": "Předmět",
+          "definition": "Koho nebo co se děj **týká**. Stojí za slovesem. Česky „koho? co?“.",
+          "example": "I saw *my teacher*. – předmět je *my teacher*."
+        },
+        {
+          "type": "term",
+          "term": "Pomocné sloveso",
+          "definition": "Sloveso, které staví otázku a zápor: *do / does / did*, *am / is / are*, *have / has*, *will*, *can*…",
+          "example": "*Did* you see him? *Have* you finished?"
+        },
+        {
+          "type": "term",
+          "term": "Tázací slovo",
+          "definition": "Slovo na začátku otázky.",
+          "example": "who (kdo), what (co), where (kde), when (kdy), how long (jak dlouho), how often (jak často)"
+        },
+        {
+          "type": "heading",
+          "text": "Běžná otázka"
+        },
+        {
+          "type": "text",
+          "text": "Většina otázek má pořadí **tázací slovo + pomocné sloveso + podmět + sloveso**. *Where **did** you **go** last summer?* *How often **do** you **go** swimming?* *How long **have** you **lived** here?*"
+        },
+        {
+          "type": "heading",
+          "text": "Otázka na podmět"
+        },
+        {
+          "type": "text",
+          "text": "Když se ptáš **na podmět** (kdo to udělal?), tázací slovo zaujme jeho místo a pomocné *do/does/did* se nepřidává. Sloveso je v normálním tvaru."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Ptám se na",
+            "Otázka",
+            "Odpověď"
+          ],
+          "rows": [
+            [
+              "podmět (kdo viděl?)",
+              "Who **saw** you?",
+              "My teacher saw me."
+            ],
+            [
+              "předmět (koho jsi viděl?)",
+              "Who **did** you **see**?",
+              "I saw my teacher."
+            ],
+            [
+              "podmět (co spadlo?)",
+              "What **fell**?",
+              "A vase fell."
+            ],
+            [
+              "předmět (co jsi rozbil?)",
+              "What **did** you **break**?",
+              "I broke a vase."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň. Ptej se: je *who/what* ten, kdo děj dělá (podmět), nebo ten, koho se týká (předmět)?"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Who",
+                "after": "the Mona Lisa?",
+                "options": [
+                  "painted",
+                  "did paint",
+                  "did painted"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Who",
+                "after": "you meet at the party?",
+                "options": [
+                  "did",
+                  "have",
+                  "was"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "What",
+                "after": "at school yesterday?",
+                "options": [
+                  "happened",
+                  "did happen"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Where",
+                "after": "you go last summer?",
+                "options": [
+                  "did",
+                  "were"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jaký je rozdíl: „Who loves Jack?“ × „Who does Jack love?“",
+          "answer": "První se ptá na podmět: **kdo** miluje Jacka (bez *does*). Druhá na předmět: **koho** miluje Jack – podmět je *Jack*, proto je tam *does*."
+        },
+        {
+          "type": "example",
+          "question": "Zeptej se: Kdo namaloval Monu Lisu?",
+          "answer": "Ptám se na podmět (kdo maloval) → bez *did*: *Who painted the Mona Lisa?*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Who did paint the Mona Lisa?",
+          "right": "Who painted the Mona Lisa?",
+          "why": "Ptáš se na podmět, takže pomocné *did* nepatří do otázky (v běžné neutrální otázce)."
+        },
+        {
+          "type": "summary",
+          "text": "Běžně: **tázací slovo + pomocné sloveso + podmět + sloveso**. Na podmět: **Who / What + sloveso** bez *did*."
+        }
+      ]
+    },
+    {
+      "title": "Nepřímé otázky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na ulici v Londýně se nezeptáš přímo „Kde jsou záchody?“. Zdvořile řekneš: „**Mohl byste mi říct**, kde jsou záchody?“ Takové otázce se říká **nepřímá** a v angličtině má jednu zvláštnost: uvnitř se mění pořadí slov."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přímá otázka",
+          "definition": "Obyčejná otázka. Pomocné sloveso stojí před podmětem.",
+          "example": "Where are the toilets? What time is it?"
+        },
+        {
+          "type": "term",
+          "term": "Nepřímá otázka",
+          "definition": "Otázka „zabalená“ do zdvořilého úvodu. Za úvodem následuje pořadí jako v **oznamovací větě**.",
+          "example": "Could you tell me where the toilets are?"
+        },
+        {
+          "type": "term",
+          "term": "Oznamovací pořadí",
+          "definition": "Pořadí slov jako v obyčejné větě: **podmět + sloveso**.",
+          "example": "the toilets are, she lives, it is"
+        },
+        {
+          "type": "term",
+          "term": "Zjišťovací otázka",
+          "definition": "Otázka bez tázacího slova, na kterou se odpovídá ano/ne.",
+          "example": "Has the bus left? – Yes / No."
+        },
+        {
+          "type": "term",
+          "term": "if / whether",
+          "definition": "„jestli“. Použiješ je v nepřímé otázce místo tázacího slova, když je původní otázka zjišťovací.",
+          "example": "Do you know if the bus has left?"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přímá otázka: *Where does she live?*",
+            "Přidej zdvořilý úvod: *Do you know… / Could you tell me… / I wonder…*",
+            "Ponech tázací slovo: *where*.",
+            "Dej podmět před sloveso a vyhoď *do/does/did*: *she lives*.",
+            "Výsledek: *Do you know where she lives?*",
+            "U zjišťovací otázky místo tázacího slova *if/whether*: *Has the bus left?* → *Do you know if the bus has left?*"
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Přímá",
+            "Nepřímá"
+          ],
+          "rows": [
+            [
+              "Where are the toilets?",
+              "Can you tell me where the toilets are?"
+            ],
+            [
+              "What time is it?",
+              "Could you tell me what time it is?"
+            ],
+            [
+              "Where does she live?",
+              "Do you know where she lives?"
+            ],
+            [
+              "Has the bus left?",
+              "Do you know if the bus has left?"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti přímou otázku, převeď ji v duchu na nepřímou a otoč kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Where is the station?",
+                "back": "Could you tell me where the station is?"
+              },
+              {
+                "front": "When does the shop open?",
+                "back": "Do you know when the shop opens?"
+              },
+              {
+                "front": "Is he at home?",
+                "back": "Do you know if he is at home?"
+              },
+              {
+                "front": "What did she say?",
+                "back": "Can you tell me what she said?"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Převeď: When does the film start?",
+          "answer": "Úvod + *when* + podmět + sloveso, bez *does* (a *start* dostane *-s*): *Do you know when the film starts?*"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: Do you know ___ the bus has left? (if / that / what)",
+          "answer": "Původní otázka je zjišťovací (ano/ne) → *if*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Could you tell me what time is it?",
+          "right": "Could you tell me what time it is?",
+          "why": "V nepřímé otázce je oznamovací pořadí: podmět (*it*) před slovesem (*is*)."
+        },
+        {
+          "type": "summary",
+          "text": "Nepřímá otázka: **úvod + tázací slovo / if + podmět + sloveso** – bez *do/does/did* a bez přehození."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Who ___ the Mona Lisa?",
+      "options": [
+        "painted",
+        "did paint",
+        "did painted"
+      ],
+      "answer": 0,
+      "explanation": "Ptáme se na podmět → bez *did*."
+    },
+    {
+      "type": "choice",
+      "question": "Who ___ you meet at the party?",
+      "options": [
+        "did",
+        "have",
+        "was"
+      ],
+      "answer": 0,
+      "explanation": "Ptáme se na předmět → *did*."
+    },
+    {
+      "type": "choice",
+      "question": "Can you tell me where ___?",
+      "options": [
+        "the toilets are",
+        "are the toilets",
+        "do the toilets are"
+      ],
+      "answer": 0,
+      "explanation": "Nepřímá otázka → oznamovací pořadí."
+    },
+    {
+      "type": "choice",
+      "question": "Do you know ___ the bus has left?",
+      "options": [
+        "if",
+        "that",
+        "what"
+      ],
+      "answer": 0,
+      "explanation": "Zjišťovací otázka → *if/whether*."
+    },
+    {
+      "type": "input",
+      "question": "Doplň pomocné sloveso: Where ___ you go last summer?",
+      "answers": [
+        "did"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: What ___ (happen) at school yesterday? – jedno slovo",
+      "answers": [
+        "happened"
+      ],
+      "explanation": "*What* je podmět → bez *did*."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Could you tell me what time is it?“ je správně.",
+      "answer": false,
+      "explanation": "Správně: *what time it is*."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď slova do otázky.",
+      "items": [
+        "How long",
+        "have",
+        "you",
+        "lived",
+        "here?"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj otázku s odpovědí.",
+      "pairs": [
+        [
+          "Who saw you?",
+          "My teacher saw me."
+        ],
+        [
+          "Who did you see?",
+          "I saw my teacher."
+        ],
+        [
+          "What fell?",
+          "A vase fell."
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která otázka je správně?",
+      "options": [
+        "How often do you go swimming?",
+        "How often you go swimming?",
+        "How often are you go swimming?"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi „Who loves Jack?“ a „Who does Jack love?“?",
+      "answer": "V první se ptáme na podmět – kdo miluje Jacka. Ve druhé na předmět – koho miluje Jack; proto je tam pomocné sloveso *does*."
+    },
+    {
+      "type": "open",
+      "question": "Jak se tvoří nepřímé otázky?",
+      "answer": "Po zdvořilém úvodu (*Could you tell me, Do you know*) následuje tázací slovo nebo *if/whether* a slovosled oznamovací věty bez *do/does/did*: *Do you know where she lives?*"
+    }
+  ]
+}

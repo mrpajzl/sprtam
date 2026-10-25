@@ -1,0 +1,414 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "slohove-postupy",
+  "title": "Slohové postupy a útvary",
+  "emoji": "🗂️",
+  "explanations": [
+    {
+      "title": "Podle otázky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že máš psát o svém psovi. Můžeš napsat inzerát, že se ztratil. Můžeš vyprávět, jak jste spolu zažili dobrodružství. Můžeš ho popsat. Nebo se zamyslet, proč lidé psy potřebují. Pořád je to pes – ale čtyři úplně jiné texty."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Ve slohové práci musíš zvolit správný postup podle zadání. A v testu poznat, jakým postupem je text napsaný."
+        },
+        {
+          "type": "term",
+          "term": "Slohový postup",
+          "definition": "Základní způsob, jak autor zpracuje obsah: informuje, vypráví, popisuje, nebo vykládá a uvažuje.",
+          "example": "vyprávěcí postup v příběhu"
+        },
+        {
+          "type": "term",
+          "term": "Slohový útvar",
+          "definition": "Konkrétní druh textu.",
+          "example": "zpráva, vypravování, popis, úvaha"
+        },
+        {
+          "type": "heading",
+          "text": "Každý postup odpovídá na jinou otázku"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Informační**: *Co, kdy, kde?* Krátce a věcně. → *Ztratil se pes, hnědý jezevčík, 3. 5. v parku Lužánky.* (inzerát)",
+            "**Vyprávěcí**: *Co se stalo potom?* Děj v čase. → *Ráno Rek utekl za kočkou. Hledali jsme ho celý den…* (vypravování)",
+            "**Popisný**: *Jaké to je?* Vlastnosti, vzhled. → *Rek je malý jezevčík s dlouhýma ušima…* (popis, charakteristika)",
+            "**Výkladový / úvahový**: *Proč? Jak to souvisí?* → *Proč lidé potřebují psy? Možná proto, že…* (výklad, úvaha, esej)"
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Postup",
+            "Otázka",
+            "Útvary"
+          ],
+          "rows": [
+            [
+              "informační",
+              "Co, kdy, kde?",
+              "zpráva, oznámení, inzerát, pozvánka"
+            ],
+            [
+              "vyprávěcí",
+              "Co se stalo dál?",
+              "vypravování, povídka"
+            ],
+            [
+              "popisný",
+              "Jaké to je?",
+              "popis, charakteristika, líčení"
+            ],
+            [
+              "výkladový (úvahový)",
+              "Proč? Jak to souvisí?",
+              "výklad, úvaha, esej"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Ke každému útvaru vyber postup. Pomůže otázka, na kterou text odpovídá."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "pozvánka na ples → ",
+                "after": "",
+                "options": [
+                  "informační",
+                  "vyprávěcí"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "povídka → ",
+                "after": "",
+                "options": [
+                  "vyprávěcí",
+                  "popisný"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "charakteristika babičky → ",
+                "after": "",
+                "options": [
+                  "popisný",
+                  "výkladový"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "esej o svobodě → ",
+                "after": "",
+                "options": [
+                  "úvahový",
+                  "informační"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kterým postupem je psaná zpráva *Ve středu otevřeli v Brně nový most.*?",
+          "answer": "Odpovídá na *co, kdy, kde* a nic nehodnotí ani nevypráví → **informační** postup."
+        },
+        {
+          "type": "example",
+          "question": "Ve kterém útvaru převládají slovesa a dějová posloupnost?",
+          "answer": "Kde jde děj po sobě (*utekl, hledali, našli*), je to **vypravování** – vyprávěcí postup."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Postup a útvar je totéž.",
+          "right": "Postup je způsob zpracování, útvar je konkrétní druh textu.",
+          "why": "Popisný **postup** se objeví v útvarech popis, charakteristika i líčení. Jeden útvar navíc může kombinovat víc postupů."
+        },
+        {
+          "type": "summary",
+          "text": "Postupy: informační (co, kdy, kde), vyprávěcí (co dál), popisný (jaké to je), výkladový/úvahový (proč). Postup = způsob zpracování, útvar = konkrétní typ textu."
+        }
+      ]
+    },
+    {
+      "title": "Popis a jeho druhy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Popsat se dá kolo, babička, západ slunce i to, jak upéct bábovku. Každý z těch popisů ale vypadá jinak. Popisný postup má totiž několik podob a v testech se na ně často ptají spolu s ostatními postupy."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Naučíš se rozlišit charakteristiku, líčení a pracovní postup – a zařadit každý útvar ke správnému slohovému postupu."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Slohový postup",
+          "definition": "Způsob zpracování textu: informační, vyprávěcí, popisný, výkladový (úvahový).",
+          "example": "popisný postup odpovídá na otázku *jaké to je?*"
+        },
+        {
+          "type": "term",
+          "term": "Popis",
+          "definition": "Útvar, který věcně zachycuje vlastnosti předmětu, místa nebo osoby.",
+          "example": "popis jízdního kola"
+        },
+        {
+          "type": "term",
+          "term": "Charakteristika",
+          "definition": "Popis osoby: vnější vzhled i vnitřní vlastnosti (povaha).",
+          "example": "*Děda je vysoký, ale hlavně trpělivý.*"
+        },
+        {
+          "type": "term",
+          "term": "Přímá charakteristika",
+          "definition": "Autor vlastnosti přímo vyjmenuje.",
+          "example": "*Petr byl lakomý.*"
+        },
+        {
+          "type": "term",
+          "term": "Nepřímá charakteristika",
+          "definition": "Vlastnosti vyplývají z toho, co postava dělá a říká.",
+          "example": "*Petr spočítal drobné třikrát a pak řekl: „Spropitné nedám.“*"
+        },
+        {
+          "type": "term",
+          "term": "Líčení",
+          "definition": "Subjektivní, citově zabarvený popis. Autor předává dojem a náladu.",
+          "example": "*Nebe hořelo rudě a zlatě, jako by se loučilo.*"
+        },
+        {
+          "type": "term",
+          "term": "Popis pracovního postupu",
+          "definition": "Popis děje: kroky, které jdou za sebou.",
+          "example": "recept, návod"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozřaď útvary podle postupu."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "informační",
+              "popisný",
+              "výkladový/úvahový"
+            ],
+            "items": [
+              {
+                "text": "pozvánka",
+                "group": 0
+              },
+              {
+                "text": "zpráva",
+                "group": 0
+              },
+              {
+                "text": "inzerát",
+                "group": 0
+              },
+              {
+                "text": "charakteristika",
+                "group": 1
+              },
+              {
+                "text": "líčení",
+                "group": 1
+              },
+              {
+                "text": "pracovní postup",
+                "group": 1
+              },
+              {
+                "text": "esej",
+                "group": 2
+              },
+              {
+                "text": "odborný výklad",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Výklad × úvaha"
+        },
+        {
+          "type": "text",
+          "text": "Oba patří k výkladovému (úvahovému) postupu a ptají se *proč*. **Výklad** je objektivní a odborný – vysvětluje jev. **Úvaha** je subjektivní – autor zvažuje problém a vyjadřuje svůj názor."
+        },
+        {
+          "type": "example",
+          "question": "Je to přímá, nebo nepřímá charakteristika? *Babička nikdy neodešla od stolu, dokud všem nepřidala.*",
+          "answer": "Autor neřekl „babička byla pohostinná“. Vlastnost **vyplývá z jednání** → **nepřímá** charakteristika."
+        },
+        {
+          "type": "example",
+          "question": "Popis, nebo líčení? *Rybník je 200 metrů dlouhý, na břehu rostou vrby.* × *Rybník tiše dřímal pod mlhou a vrby se k němu skláněly.*",
+          "answer": "První je **věcný popis** (fakta, čísla). Druhý předává náladu a dojem, je obrazný → **líčení**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Esej je popisný útvar.",
+          "right": "Esej patří k úvahovému postupu.",
+          "why": "Esej nepopisuje, jak něco vypadá. Autor v něm volně a osobitě přemýšlí o problému – úvahový postup."
+        },
+        {
+          "type": "summary",
+          "text": "Popisný postup: popis (věcný), charakteristika (osoba; přímá a nepřímá), líčení (subjektivní, citové), popis pracovního postupu. Výklad je objektivní, úvaha a esej subjektivní."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kterým postupem je psaná zpráva?",
+      "options": [
+        "informačním",
+        "vyprávěcím",
+        "popisným",
+        "úvahovým"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Charakteristika patří k postupu:",
+      "options": [
+        "popisnému",
+        "informačnímu",
+        "vyprávěcímu",
+        "výkladovému"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Subjektivní, citově zabarvený popis se nazývá:",
+      "options": [
+        "líčení",
+        "statický popis",
+        "pracovní postup",
+        "zpráva"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Esej je útvar s úvahovým postupem.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj útvar s postupem.",
+      "pairs": [
+        [
+          "vypravování",
+          "vyprávěcí"
+        ],
+        [
+          "oznámení",
+          "informační"
+        ],
+        [
+          "popis pracovního postupu",
+          "popisný"
+        ],
+        [
+          "výklad",
+          "výkladový"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je přímá charakteristika?",
+      "options": [
+        "autor vlastnosti přímo vyjmenuje",
+        "vlastnosti vyplývají z jednání",
+        "popis krajiny",
+        "popis předmětu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Nepřímá charakteristika ukazuje vlastnosti postavy skrze její jednání a řeč.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kterou otázku si klade výkladový postup?",
+      "options": [
+        "Proč a jak to souvisí?",
+        "Co se stalo potom?",
+        "Kdy a kde?",
+        "Jak to vypadá?"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá popis osoby (vzhled i povaha)?",
+      "answers": [
+        "charakteristika"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém útvaru převládají slovesa a dějová posloupnost?",
+      "options": [
+        "vypravování",
+        "statický popis",
+        "zpráva o počasí v tabulce",
+        "definice"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj slohové postupy a ke každému dva útvary.",
+      "answer": "Informační: zpráva, oznámení. Vyprávěcí: vypravování, povídka. Popisný: popis, charakteristika (líčení). Výkladový/úvahový: výklad, úvaha (esej)."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi výkladem a úvahou?",
+      "answer": "Výklad objektivně a odborně vysvětluje jev, jeho příčiny a souvislosti. Úvaha je subjektivní – autor zvažuje problém a vyjadřuje vlastní názor, užívá řečnické otázky a osobní zkušenost."
+    }
+  ]
+}

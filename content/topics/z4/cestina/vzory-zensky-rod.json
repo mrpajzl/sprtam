@@ -1,0 +1,367 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vzory-zensky-rod",
+  "title": "Vzory rodu ženského",
+  "emoji": "👸",
+  "explanations": [
+    {
+      "title": "Tabulka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Píše se *bez kosti*, nebo *bez kosty*? *Ty ženy*, nebo *ty ženi*? Konce slov se mění a i/y tam zní stejně."
+        },
+        {
+          "type": "text",
+          "text": "Ženský rod má **čtyři vzory**. Když víš, podle kterého vzoru se slovo mění, víš, jak napsat jeho konec."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rod ženský",
+          "definition": "Připomenutí: podstatná jména, před která řekneš **ta**.",
+          "example": "ta škola, ta noc"
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Známé slovo, podle kterého se mění (skloňují) jiná slova se stejnými konci.",
+          "example": "*škola* jako *žena*: ženy – školy"
+        },
+        {
+          "type": "term",
+          "term": "2. pád",
+          "definition": "Připomenutí: tvar na otázku *bez koho? bez čeho?*",
+          "example": "bez ženy, bez kosti"
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři vzory rodu ženského"
+        },
+        {
+          "type": "table",
+          "head": [
+            "vzor",
+            "konec v 1. pádě",
+            "2. pád",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "žena",
+              "-a",
+              "bez ženy",
+              "škola, kniha"
+            ],
+            [
+              "růže",
+              "-e/-ě",
+              "bez růže",
+              "židle, ulice"
+            ],
+            [
+              "píseň",
+              "souhláska",
+              "bez písně (-e/-ě)",
+              "dlaň, postel"
+            ],
+            [
+              "kost",
+              "souhláska",
+              "bez kosti (-i)",
+              "noc, myš"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "*Píseň* a *kost* končí obě souhláskou. Rozliší je až **2. pád**: -e/-ě → píseň, -i → kost."
+        },
+        {
+          "type": "example",
+          "question": "Podle jakého vzoru je „postel“?",
+          "answer": "Končí souhláskou → píseň, nebo kost. Bez **postele** → -e → vzor **píseň**."
+        },
+        {
+          "type": "example",
+          "question": "Podle jakého vzoru je „myš“?",
+          "answer": "Končí souhláskou. Bez **myši** → -i → vzor **kost**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Noc“ je podle vzoru píseň, protože končí souhláskou.",
+          "right": "„Noc“ je podle vzoru kost.",
+          "why": "Souhláska na konci nestačí. Rozhodne 2. pád: bez noci (-i) → kost."
+        },
+        {
+          "type": "summary",
+          "text": "Ženský rod: žena (-a), růže (-e), píseň a kost (souhláska). Píseň × kost rozliší 2. pád: -e, nebo -i."
+        }
+      ]
+    },
+    {
+      "title": "Roztřiď",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Máš čtyři šuplíky se jmény **žena, růže, píseň, kost**. Každé slovo rodu ženského patří do jednoho z nich."
+        },
+        {
+          "type": "text",
+          "text": "Kdo ví, do kterého šuplíku slovo patří, ví, jak se mění – a správně napíše konec."
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Šuplík se jménem. Slova v jednom šuplíku se mění stejně.",
+          "example": "žena, kniha, ryba – stejné konce"
+        },
+        {
+          "type": "term",
+          "term": "Rod ženský",
+          "definition": "Slova, před která řekneš *ta*.",
+          "example": "ta ulice, ta báseň"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Řekni *ta …* – je to ženský rod?",
+            "Končí na **-a**? → **žena**.",
+            "Končí na **-e/-ě**? → **růže**.",
+            "Končí **souhláskou**? Řekni *bez …*: -e/-ě → **píseň**, -i → **kost**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Do šuplíků"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "žena",
+              "růže",
+              "píseň / kost"
+            ],
+            "items": [
+              {
+                "text": "kočka",
+                "group": 0
+              },
+              {
+                "text": "ulice",
+                "group": 1
+              },
+              {
+                "text": "báseň",
+                "group": 2
+              },
+              {
+                "text": "lavice",
+                "group": 1
+              },
+              {
+                "text": "kniha",
+                "group": 0
+              },
+              {
+                "text": "noc",
+                "group": 2
+              },
+              {
+                "text": "košile",
+                "group": 1
+              },
+              {
+                "text": "voda",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Píseň, nebo kost?"
+        },
+        {
+          "type": "text",
+          "text": "Řekni *bez …* a poslouchej konec. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "dlaň",
+                "back": "bez dlaně → píseň"
+              },
+              {
+                "front": "věc",
+                "back": "bez věci → kost"
+              },
+              {
+                "front": "tvář",
+                "back": "bez tváře → píseň"
+              },
+              {
+                "front": "sůl",
+                "back": "bez soli → kost"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Do kterého šuplíku patří „práce“?",
+          "answer": "Ta práce – ženský rod. Končí na **-e** → **růže**."
+        },
+        {
+          "type": "example",
+          "question": "Do kterého šuplíku patří „řeč“?",
+          "answer": "Končí souhláskou. Bez **řeči** → -i → **kost**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "„Židle“ je podle vzoru žena.",
+          "right": "„Židle“ je podle vzoru růže.",
+          "why": "Žena končí na -a. Židle končí na -e – stejně jako růže."
+        },
+        {
+          "type": "summary",
+          "text": "-a → žena, -e → růže, souhláska → řekni „bez …“: -e → píseň, -i → kost."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru skloňujeme „škola“?",
+      "options": [
+        "žena",
+        "růže",
+        "kost"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru skloňujeme „židle“?",
+      "options": [
+        "žena",
+        "růže",
+        "píseň"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru skloňujeme „myš“?",
+      "options": [
+        "píseň",
+        "kost",
+        "růže"
+      ],
+      "answer": 1,
+      "explanation": "Bez myši – 2. pád na -i → kost."
+    },
+    {
+      "type": "choice",
+      "question": "Podle jakého vzoru skloňujeme „postel“?",
+      "options": [
+        "píseň",
+        "kost",
+        "žena"
+      ],
+      "answer": 0,
+      "explanation": "Bez postele – 2. pád na -e → píseň."
+    },
+    {
+      "type": "input",
+      "question": "Napiš vzor pro slovo „kniha“.",
+      "answers": [
+        "žena",
+        "zena"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš vzor pro slovo „ulice“.",
+      "answers": [
+        "růže",
+        "ruze"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ženský rod má 4 vzory.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„Noc“ se skloňuje podle vzoru píseň.",
+      "answer": false,
+      "explanation": "Bez noci – 2. pád na -i → kost."
+    },
+    {
+      "type": "match",
+      "question": "Spoj slovo se vzorem.",
+      "pairs": [
+        [
+          "ryba",
+          "žena"
+        ],
+        [
+          "práce",
+          "růže"
+        ],
+        [
+          "báseň",
+          "píseň"
+        ],
+        [
+          "řeč",
+          "kost"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď vzory ženského rodu, jak se učí.",
+      "items": [
+        "žena",
+        "růže",
+        "píseň",
+        "kost"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj vzory rodu ženského.",
+      "answer": "Žena, růže, píseň, kost."
+    },
+    {
+      "type": "open",
+      "question": "Jak rozlišíš vzor píseň a kost?",
+      "answer": "Obě končí v 1. pádě souhláskou. Ve 2. pádě má píseň koncovku -e/-ě (bez písně), kost koncovku -i (bez kosti)."
+    }
+  ]
+}

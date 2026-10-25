@@ -1,0 +1,427 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "question-tags",
+  "title": "Tázací dovětky",
+  "emoji": "🏷️",
+  "explanations": [
+    {
+      "title": "Zrcadlem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky často řekneš: „Je zima, **že?**“ nebo „Ty jsi nový, **viď?**“ Nechceš se doopravdy ptát – chceš, aby ti druhý přikývl, nebo si ověřuješ, co si myslíš."
+        },
+        {
+          "type": "text",
+          "text": "Angličtina má místo jednoho „že?“ celou sadu krátkých otázek na konci věty. Rodilí mluvčí je používají pořád. Kdo je umí, zní přirozeně a přátelsky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tázací dovětek (question tag)",
+          "definition": "Krátká otázka připojená na konec oznamovací věty. Česky „že?, viď?, ne?“.",
+          "example": "*It's cold, **isn't it?*** = Je zima, že?"
+        },
+        {
+          "type": "term",
+          "term": "Pomocné sloveso",
+          "definition": "Malé sloveso, které pomáhá tvořit časy, otázky a zápory: *am/is/are, was/were, have/has, do/does/did, will, can, should*…",
+          "example": "*She **is** working. He **has** gone. They **can** swim.*"
+        },
+        {
+          "type": "term",
+          "term": "Osobní zájmeno",
+          "definition": "Slovo místo jména: *I, you, he, she, it, we, they*.",
+          "example": "*Tom → he*, *Anna → she*, *the kids → they*"
+        },
+        {
+          "type": "term",
+          "term": "Kladná a záporná věta",
+          "definition": "**Kladná** říká, že něco je. **Záporná** obsahuje *not* (*n't*) nebo slovo jako *never, nobody*.",
+          "example": "*You are tired.* × *You aren't tired.*"
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo zrcadla"
+        },
+        {
+          "type": "text",
+          "text": "Dovětek je jako zrcadlo věty: **kladná věta → záporný dovětek**, **záporná věta → kladný dovětek**."
+        },
+        {
+          "type": "text",
+          "text": "Do dovětku dáš **pomocné sloveso z věty** a **zájmeno** místo toho, o kom věta mluví (*Tom → he*). Když věta žádné pomocné sloveso nemá (*You like coffee*), vypůjčíš si *do / does / did*."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si barevné části. Najdi v každé větě pomocné sloveso a podívej se, jak se zrcadlí v dovětku."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "You are tired,",
+                    "label": "kladná věta"
+                  },
+                  {
+                    "text": "aren't you?",
+                    "label": "záporný dovětek"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "She doesn't smoke,",
+                    "label": "záporná věta"
+                  },
+                  {
+                    "text": "does she?",
+                    "label": "kladný dovětek"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "They went home,",
+                    "label": "kladná věta"
+                  },
+                  {
+                    "text": "didn't they?",
+                    "label": "záporný dovětek"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *They've finished, ___?*",
+          "answer": "*'ve* = *have* (pomocné sloveso). Věta je kladná → dovětek záporný: *They've finished, **haven't they?***"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Tom broke it, ___?*",
+          "answer": "*broke* je minulý čas bez pomocného slovesa → půjčím si *did*. Kladná věta → *didn't*. *Tom* → *he*: *Tom broke it, **didn't he?***"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *She isn't coming, ___?*",
+          "answer": "Pomocné sloveso *is*, věta je záporná → dovětek kladný: *She isn't coming, **is she?***"
+        },
+        {
+          "type": "mistake",
+          "wrong": "He never helps, doesn't he?",
+          "right": "He never helps, does he?",
+          "why": "*never* (nikdy) dělá větu zápornou, i když v ní není *not*. Po záporné větě je dovětek kladný."
+        },
+        {
+          "type": "summary",
+          "text": "Dovětek = pomocné sloveso z věty (nebo *do/does/did*) + zájmeno. Kladná věta → záporný dovětek, záporná věta → kladný."
+        }
+      ]
+    },
+    {
+      "title": "Výjimky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Tázací dovětky mají jednoduché základní pravidlo. Pak ale existuje pár vět, kde by pravidlo dalo nesmysl – a právě ty se objevují v testech. Tady je máš krok za krokem i s výjimkami."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tázací dovětek",
+          "definition": "Krátká otázka na konci věty, česky „že?, viď?“.",
+          "example": "*You can drive, **can't you?***"
+        },
+        {
+          "type": "term",
+          "term": "Pomocné sloveso",
+          "definition": "Sloveso, které pomáhá tvořit otázky a zápory: *be, have, do, will, can, should, must*…",
+          "example": "*Can you…? I don't…*"
+        },
+        {
+          "type": "term",
+          "term": "Osobní zájmeno",
+          "definition": "Slovo místo jména: *I, you, he, she, it, we, they*.",
+          "example": "*Anna → she*, *the boys → they*"
+        },
+        {
+          "type": "term",
+          "term": "Rozkaz",
+          "definition": "Věta, kterou někomu říkáš, co má udělat. Nemá podmět.",
+          "example": "*Open the door.* = Otevři dveře."
+        },
+        {
+          "type": "term",
+          "term": "Intonace",
+          "definition": "Melodie hlasu – jestli na konci jde nahoru, nebo dolů.",
+          "example": "Nahoru = opravdu se ptám. Dolů = jsem si jistý, chci jen souhlas."
+        },
+        {
+          "type": "heading",
+          "text": "Základní postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi pomocné sloveso: *She **will** help.*",
+            "Když tam žádné není, použij *do / does / did* podle času: *You like… → don't you?*",
+            "Zjisti, jestli je věta kladná, nebo záporná. Pozor na *never, nobody, nothing* – dělají větu zápornou.",
+            "Otoč to: kladná → *n't*, záporná → bez *n't*.",
+            "Toho, o kom věta mluví, nahraď zájmenem: *Anna → she*, *nobody → they*."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Výjimky"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Věta",
+            "Dovětek",
+            "Proč"
+          ],
+          "rows": [
+            [
+              "I'm right,",
+              "aren't I?",
+              "*amn't I* neexistuje"
+            ],
+            [
+              "Let's go,",
+              "shall we?",
+              "návrh pro nás oba"
+            ],
+            [
+              "Open the door,",
+              "will you?",
+              "rozkaz / prosba"
+            ],
+            [
+              "Nobody called,",
+              "did they?",
+              "*nobody* = zápor, zájmeno *they*"
+            ],
+            [
+              "She never lies,",
+              "does she?",
+              "*never* = zápor"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Let's dance, ___?*",
+          "answer": "Věta začíná *Let's* (pojďme) → výjimka: *Let's dance, **shall we?***"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Nobody saw us, ___?*",
+          "answer": "*Nobody* dělá větu zápornou → dovětek kladný. *saw* = minulost bez pomocného slovesa → *did*. Místo *nobody* zájmeno *they*: ***did they?***"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber správný dovětek. Nejdřív najdi pomocné sloveso, pak rozhodni kladný/záporný."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "He can swim,",
+                "after": "?",
+                "options": [
+                  "can't he",
+                  "doesn't he"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "You've met Jo,",
+                "after": "?",
+                "options": [
+                  "haven't you",
+                  "didn't you"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "It won't rain,",
+                "after": "?",
+                "options": [
+                  "will it",
+                  "won't it"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Let's have a break,",
+                "after": "?",
+                "options": [
+                  "shall we",
+                  "don't we"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "A ještě intonace: *It's cold, isn't it?* ↘ (dolů) = jsem si jistý, chci souhlas. *You're coming, aren't you?* ↗ (nahoru) = opravdu nevím a ptám se."
+        },
+        {
+          "type": "mistake",
+          "wrong": "I'm late, am not I?",
+          "right": "I'm late, aren't I?",
+          "why": "U *I am* je v dovětku výjimka *aren't I*. Tvar *am not I* se v dovětku nepoužívá."
+        },
+        {
+          "type": "summary",
+          "text": "Pomocné sloveso + zájmeno, polarita opačná. Výjimky: *I'm → aren't I*, *Let's → shall we*, rozkaz → *will you*, *never/nobody* → kladný dovětek."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "You like coffee, ___?",
+      "options": [
+        "don't you",
+        "aren't you",
+        "do you"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "She isn't coming, ___?",
+      "options": [
+        "is she",
+        "isn't she",
+        "does she"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "I'm late, ___?",
+      "options": [
+        "aren't I",
+        "am not I",
+        "isn't I"
+      ],
+      "answer": 0,
+      "explanation": "Výjimka: *I am → aren't I*."
+    },
+    {
+      "type": "choice",
+      "question": "Nobody saw us, ___?",
+      "options": [
+        "did they",
+        "didn't they",
+        "did nobody"
+      ],
+      "answer": 0,
+      "explanation": "*Nobody* = záporná věta, zájmeno *they*."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: They've finished, ___ they?",
+      "answers": [
+        "haven't"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: Tom broke it, ___ he?",
+      "answers": [
+        "didn't"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: Let's dance, ___ we?",
+      "answers": [
+        "shall"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„He never helps, doesn't he?“ je správně.",
+      "answer": false,
+      "explanation": "*never* → kladný dovětek: *does he?*"
+    },
+    {
+      "type": "truefalse",
+      "question": "„You can drive, can't you?“ je správně.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj větu s dovětkem.",
+      "pairs": [
+        [
+          "It's cold,",
+          "isn't it?"
+        ],
+        [
+          "You weren't there,",
+          "were you?"
+        ],
+        [
+          "She will help,",
+          "won't she?"
+        ],
+        [
+          "We should go,",
+          "shouldn't we?"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak se tvoří tázací dovětky?",
+      "answer": "Vezmeme pomocné nebo modální sloveso z věty (případně *do/does/did*) a osobní zájmeno. Po kladné větě je dovětek záporný, po záporné kladný: *You are new, aren't you?*"
+    },
+    {
+      "type": "open",
+      "question": "K čemu se dovětky v angličtině používají?",
+      "answer": "K ověření informace nebo k získání souhlasu, podobně jako česky „že?“. Klesající intonace znamená, že jsme si jistí, stoupající, že se skutečně ptáme."
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "lomene-vyrazy",
+  "title": "Lomené výrazy",
+  "emoji": "➗",
+  "explanations": [
+    {
+      "title": "Jako zlomky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pizzu za 300 Kč si dělí x kamarádů. Každý zaplatí 300/x korun. Kolik to je, nevíš, dokud nevíš, kolik vás je. Zlomek s písmenem uvnitř se jmenuje **lomený výraz**."
+        },
+        {
+          "type": "text",
+          "text": "Dobrá zpráva: počítá se s ním úplně stejně jako s obyčejnými zlomky. Kdo umí zlomky, umí i lomené výrazy – jen musí hlídat jednu věc navíc."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čitatel a jmenovatel",
+          "definition": "Ve zlomku a/b je a **čitatel** (nahoře) a b **jmenovatel** (dole).",
+          "example": "V 300/x je čitatel 300, jmenovatel x."
+        },
+        {
+          "type": "term",
+          "term": "Proměnná",
+          "definition": "Písmeno, které zastupuje číslo.",
+          "example": "x = počet kamarádů"
+        },
+        {
+          "type": "term",
+          "term": "Lomený výraz",
+          "definition": "Zlomek, který má proměnnou ve jmenovateli.",
+          "example": "3/x, (x + 1)/(x − 2)"
+        },
+        {
+          "type": "term",
+          "term": "Podmínka",
+          "definition": "Hodnoty proměnné, které jsou **zakázané**, protože by jmenovatel vyšel nula. Nulou dělit nejde.",
+          "example": "U 5/(x − 3) je podmínka x ≠ 3 (čti „x se nerovná 3“)."
+        },
+        {
+          "type": "heading",
+          "text": "Proč nulou dělit nejde"
+        },
+        {
+          "type": "text",
+          "text": "6 : 2 = 3, protože 2 · 3 = 6. Kolik je 6 : 0? Hledáš číslo, které krát 0 dá 6. Takové není – cokoli krát 0 je 0. Proto dělení nulou nemá smysl a jmenovatel nesmí být 0."
+        },
+        {
+          "type": "heading",
+          "text": "Krácení jako u zlomků"
+        },
+        {
+          "type": "text",
+          "text": "Zlomek 2/6 zkrátíš na 1/3 – nahoře i dole vydělíš 2. Nastav 2/6 a pak 1/3: vybarvená část je stejná."
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 2,
+            "denominator": 6
+          }
+        },
+        {
+          "type": "text",
+          "text": "U výrazů je to stejné: 6x/(3x) – nahoře i dole vydělíš 3x a zbude **2** (pro x ≠ 0)."
+        },
+        {
+          "type": "example",
+          "question": "Kolik je 2/x + 3/x?",
+          "answer": "Stejný jmenovatel – jako 2 pětiny + 3 pětiny. Sečti čitatele: **5/x**. Podmínka x ≠ 0."
+        },
+        {
+          "type": "example",
+          "question": "Hodnota (x + 2)/(x − 1) pro x = 4?",
+          "answer": "Dosaď: (4 + 2)/(4 − 1) = 6/3 = **2**."
+        },
+        {
+          "type": "heading",
+          "text": "Násobení a dělení"
+        },
+        {
+          "type": "text",
+          "text": "I tady platí pravidla zlomků: **násobíš** čitatel s čitatelem a jmenovatel se jmenovatelem. **Dělíš** tak, že druhý výraz převrátíš a vynásobíš: (x/3) : (x/6) = x/3 · 6/x = 6/3 = 2."
+        },
+        {
+          "type": "text",
+          "text": "Někdy se dá krátit až po rozložení: x² − 9 = (x − 3)(x + 3) (vzorec a² − b²). Proto (x² − 9)/(x + 3) = x − 3, pro x ≠ −3."
+        },
+        {
+          "type": "mistake",
+          "wrong": "(x + 4)/4 = x + 1 (čtyřky se zkrátí)",
+          "right": "(x + 4)/4 se zkrátit nedá.",
+          "why": "Krátit smíš jen to, čím se **násobí** celý čitatel i jmenovatel. Tady je 4 jen sčítanec. Zkus x = 4: (4 + 4)/4 = 2, ale x + 1 = 5."
+        },
+        {
+          "type": "summary",
+          "text": "Lomený výraz = zlomek s proměnnou. Počítáš jako se zlomky. Jmenovatel nesmí být nula – vždy napiš podmínku."
+        }
+      ]
+    },
+    {
+      "title": "Postup",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Lomené výrazy se objevují ve fyzice (rychlost = dráha / čas) i v ekonomii. Tady je přesný postup pro všechny čtyři operace a pro krácení."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Lomený výraz",
+          "definition": "Podíl dvou výrazů, kde je proměnná ve jmenovateli.",
+          "example": "(x² − 4)/(x − 2)"
+        },
+        {
+          "type": "term",
+          "term": "Podmínka (definiční obor)",
+          "definition": "Výčet hodnot, které proměnná nesmí mít, aby jmenovatel nebyl 0.",
+          "example": "U 1/(x + 3) platí x ≠ −3."
+        },
+        {
+          "type": "term",
+          "term": "Rozklad na součin",
+          "definition": "Přepsání výrazu jako součinu závorek, třeba podle vzorce a² − b² = (a − b)(a + b).",
+          "example": "x² − 9 = (x − 3)(x + 3)"
+        },
+        {
+          "type": "term",
+          "term": "Společný jmenovatel",
+          "definition": "Výraz, na který lze rozšířit oba lomené výrazy, aby měly stejný jmenovatel.",
+          "example": "Pro 1/x a 1/(2x) je to 2x."
+        },
+        {
+          "type": "heading",
+          "text": "Krácení krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zadání: (x² − 4)/(x − 2).",
+            "Podmínka: x − 2 ≠ 0 → x ≠ 2.",
+            "Rozlož čitatele: x² − 4 = (x − 2)(x + 2).",
+            "Zkrať společnou závorku (x − 2).",
+            "Výsledek: x + 2, pro x ≠ 2."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Operace"
+        },
+        {
+          "type": "table",
+          "head": [
+            "operace",
+            "jak",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "+ −",
+              "společný jmenovatel, pak sečti čitatele",
+              "1/x + 1/(2x) = 2/(2x) + 1/(2x) = 3/(2x)"
+            ],
+            [
+              "·",
+              "čitatel · čitatel, jmenovatel · jmenovatel",
+              "(a/b) · (b/c) = ab/(bc) = a/c"
+            ],
+            [
+              ":",
+              "násob převráceným výrazem",
+              "(x/3) : (x/6) = x/3 · 6/x = 2"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "1/x + 1/y = ?",
+          "answer": "Společný jmenovatel xy. 1/x = y/(xy), 1/y = x/(xy). Součet **(x + y)/(xy)**, podmínky x ≠ 0, y ≠ 0."
+        },
+        {
+          "type": "example",
+          "question": "(x² − 9)/(x + 3) = ?",
+          "answer": "Podmínka x ≠ −3. x² − 9 = (x − 3)(x + 3). Zkrátím (x + 3): **x − 3**."
+        },
+        {
+          "type": "text",
+          "text": "Procvič si pravidla – otoč kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "podmínka u 5/(x − 3)",
+                "back": "x ≠ 3"
+              },
+              {
+                "front": "2/x + 3/x",
+                "back": "5/x"
+              },
+              {
+                "front": "6x/(3x)",
+                "back": "2 (x ≠ 0)"
+              },
+              {
+                "front": "(x/3) : (x/6)",
+                "back": "2 (x ≠ 0)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "(x + 2)/2 = x + 1",
+          "right": "Nejde zkrátit.",
+          "why": "Krátí se jen součin. Čitatel x + 2 je součet; dvojkou bys musel dělit **oba** sčítance: x/2 + 1."
+        },
+        {
+          "type": "summary",
+          "text": "Nejdřív podmínky. Krátit smíš jen součin – proto čitatele i jmenovatele nejdřív rozlož. Sčítání přes společný jmenovatel, dělení = násobení převráceným výrazem."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Podmínka pro výraz 5/(x − 3):",
+      "options": [
+        "x ≠ 3",
+        "x ≠ −3",
+        "x ≠ 0",
+        "x ≠ 5"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "(x² − 9)/(x + 3) = (pro x ≠ −3)",
+      "options": [
+        "x − 3",
+        "x + 3",
+        "x − 9",
+        "x² − 3"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "2/x + 3/x =",
+      "options": [
+        "5/x",
+        "5/(2x)",
+        "6/x",
+        "5/x²"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "1/x + 1/(2x) =",
+      "options": [
+        "3/(2x)",
+        "2/(3x)",
+        "2/(2x)",
+        "1/(3x)"
+      ],
+      "answer": 0,
+      "explanation": "2/(2x) + 1/(2x) = 3/(2x)"
+    },
+    {
+      "type": "choice",
+      "question": "(a/b) · (b/c) = (b, c ≠ 0)",
+      "options": [
+        "a/c",
+        "ab/c",
+        "a/b²c",
+        "b/c"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "(x/3) : (x/6) = (x ≠ 0)",
+      "options": [
+        "2",
+        "1/2",
+        "x/2",
+        "x²/18"
+      ],
+      "answer": 0,
+      "explanation": "x/3 · 6/x = 6/3 = 2"
+    },
+    {
+      "type": "truefalse",
+      "question": "(x + 4)/4 = x + 1",
+      "answer": false,
+      "explanation": "Krátit nejde – x + 4 není součin."
+    },
+    {
+      "type": "truefalse",
+      "question": "6x/(3x) = 2 pro x ≠ 0",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Podmínky pro (x + 1)/(x² − 1):",
+      "options": [
+        "x ≠ 1 a x ≠ −1",
+        "jen x ≠ 1",
+        "x ≠ 0",
+        "x ≠ −1 a x ≠ 0"
+      ],
+      "answer": 0,
+      "explanation": "x² − 1 = (x − 1)(x + 1)"
+    },
+    {
+      "type": "input",
+      "question": "Hodnota výrazu (x + 2)/(x − 1) pro x = 4:",
+      "answers": [
+        "2"
+      ],
+      "explanation": "6 : 3 = 2"
+    },
+    {
+      "type": "open",
+      "question": "Proč u lomeného výrazu píšeme podmínky?",
+      "answer": "Protože nulou dělit nelze. Podmínky vylučují hodnoty proměnné, pro které by jmenovatel byl roven nule."
+    },
+    {
+      "type": "open",
+      "question": "Jak sečteš 1/x + 1/y?",
+      "answer": "Převedu na společného jmenovatele xy: y/(xy) + x/(xy) = (x + y)/(xy), pro x, y ≠ 0."
+    }
+  ]
+}

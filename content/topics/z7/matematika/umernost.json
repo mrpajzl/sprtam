@@ -1,0 +1,326 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "umernost",
+  "title": "Přímá a nepřímá úměrnost",
+  "emoji": "🔁",
+  "explanations": [
+    {
+      "title": "Ze života",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Koupíš dvakrát víc rohlíků – zaplatíš dvakrát víc. Pozveš na úklid dvakrát víc kamarádů – budete hotoví za poloviční čas. V obou případech spolu dvě věci souvisí, ale jinak."
+        },
+        {
+          "type": "text",
+          "text": "Těmto vztahům se říká **přímá** a **nepřímá úměrnost**. Když je poznáš, spočítáš cenu nákupu, dobu cesty nebo spotřebu benzínu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Veličina",
+          "definition": "Něco, co se dá změřit nebo spočítat a může se měnit.",
+          "example": "Počet rohlíků, cena, čas, rychlost."
+        },
+        {
+          "type": "term",
+          "term": "Přímá úměrnost",
+          "definition": "Když jednu veličinu zvětšíš 2krát (3krát…), **druhá se zvětší taky 2krát** (3krát…).",
+          "example": "2 rohlíky 6 Kč, 4 rohlíky 12 Kč."
+        },
+        {
+          "type": "term",
+          "term": "Nepřímá úměrnost",
+          "definition": "Když jednu veličinu zvětšíš 2krát (3krát…), **druhá se 2krát (3krát…) zmenší**.",
+          "example": "2 malíři za 6 dní, 4 malíři za 3 dny."
+        },
+        {
+          "type": "heading",
+          "text": "Jak je poznat"
+        },
+        {
+          "type": "text",
+          "text": "Polož si otázku: „Když bude jednoho **dvakrát víc**, co se stane s druhým?“"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Dvakrát víc lístků → dvakrát vyšší cena. **Přímá.**",
+            "Dvakrát rychlejší auto → poloviční doba cesty. **Nepřímá.**",
+            "Dvakrát starší člověk → není dvakrát vyšší. **Ani jedna!**"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď dvojice do kbelíků. U každé si polož tu otázku."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "přímá",
+              "nepřímá"
+            ],
+            "items": [
+              {
+                "text": "počet lístků a cena",
+                "group": 0
+              },
+              {
+                "text": "rychlost a doba cesty",
+                "group": 1
+              },
+              {
+                "text": "počet dělníků a doba práce",
+                "group": 1
+              },
+              {
+                "text": "litry benzínu a ujeté km",
+                "group": 0
+              },
+              {
+                "text": "čas a ujetá dráha (stálá rychlost)",
+                "group": 0
+              },
+              {
+                "text": "počet dětí a díl dortu pro každé",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Počítáme přes jedničku"
+        },
+        {
+          "type": "example",
+          "question": "4 sešity stojí 60 Kč. Kolik stojí 6 sešitů?",
+          "answer": "Přímá úměrnost. 1 sešit: 60 : 4 = 15 Kč. 6 sešitů: 6 · 15 = **90 Kč**."
+        },
+        {
+          "type": "example",
+          "question": "3 bagry vykopou jámu za 8 hodin. Za jak dlouho 4 bagry?",
+          "answer": "Nepřímá úměrnost – víc bagrů, méně času. 1 bagr by kopal 3 · 8 = 24 hodin. 4 bagry: 24 : 4 = **6 hodin**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "3 bagry 8 hodin, tak 4 bagry 8 · 4/3 ≈ 10,7 hodiny.",
+          "right": "4 bagry = 6 hodin.",
+          "why": "Víc bagrů nemůže kopat déle! To je nepřímá úměrnost – musíš čas dělit, ne násobit. Vždy si ověř, jestli výsledek dává smysl."
+        },
+        {
+          "type": "summary",
+          "text": "Přímá: kolikrát víc, tolikrát víc. Nepřímá: kolikrát víc, tolikrát méně. Počítej přes „jeden kus“."
+        }
+      ]
+    },
+    {
+      "title": "Trojčlenka a graf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Úlohy s úměrností mají vždy stejný tvar: známe jednu dvojici čísel a hledáme chybějící číslo v druhé dvojici. Na to existuje spolehlivý zápis – **trojčlenka**."
+        },
+        {
+          "type": "text",
+          "text": "A přímou úměrnost si můžeš i nakreslit – vyjde z ní krásná rovná čára."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přímá úměrnost",
+          "definition": "Obě veličiny rostou stejně: kolikrát víc jedné, tolikrát víc druhé. Jejich **podíl** y : x je pořád stejný.",
+          "example": "1 kg 30 Kč, 3 kg 90 Kč → 90 : 3 = 30"
+        },
+        {
+          "type": "term",
+          "term": "Nepřímá úměrnost",
+          "definition": "Kolikrát víc jedné, tolikrát méně druhé. Jejich **součin** x · y je pořád stejný.",
+          "example": "2 malíři · 6 dní = 12, 4 malíři · 3 dny = 12"
+        },
+        {
+          "type": "term",
+          "term": "Trojčlenka",
+          "definition": "Zápis úlohy do dvou řádků se šipkami. Ze tří známých čísel spočítáš čtvrté.",
+          "example": "3 kg … 90 Kč, 5 kg … x Kč"
+        },
+        {
+          "type": "heading",
+          "text": "Trojčlenka u přímé úměrnosti"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "3 kg jablek stojí 90 Kč. Kolik stojí 5 kg?",
+            "Zapiš: 3 kg … 90 Kč, 5 kg … x Kč.",
+            "Šipky: kg rostou (↑), cena taky roste (↑). Stejný směr → **přímá**.",
+            "U přímé násob „podle šipek“: x = 90 · 5/3.",
+            "x = 150 Kč."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Trojčlenka u nepřímé úměrnosti"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "6 dělníků postaví zeď za 4 dny. Za kolik dní 8 dělníků?",
+            "Zapiš: 6 dělníků … 4 dny, 8 dělníků … x dní.",
+            "Dělníků víc (↑), dní méně (↓). Opačný směr → **nepřímá**.",
+            "U nepřímé zlomek otoč: x = 4 · 6/8.",
+            "x = 3 dny."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Auto jede 60 km/h a cesta trvá 2 h. Jak dlouho pojede rychlostí 40 km/h?",
+          "answer": "Pomaleji → déle, nepřímá. Součin je stálý: 60 · 2 = 120 (to je délka cesty v km). 120 : 40 = **3 h**."
+        },
+        {
+          "type": "heading",
+          "text": "Graf přímé úměrnosti"
+        },
+        {
+          "type": "term",
+          "term": "Graf",
+          "definition": "Obrázek, kde každé dvojici čísel (x, y) odpovídá jeden bod. Vodorovná osa je x, svislá y. **Počátek** je bod, kde se osy kříží (x = 0, y = 0).",
+          "example": "Bod [2; 4] je 2 dílky doprava a 4 nahoru."
+        },
+        {
+          "type": "text",
+          "text": "Přímá úměrnost se zapisuje **y = k · x**. Číslo k je cena za 1 kus. Graf je vždy přímka, která prochází počátkem – za 0 kusů zaplatíš 0 Kč. Měň k a sleduj, jak se přímka naklání."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 2,
+            "q": 0
+          }
+        },
+        {
+          "type": "text",
+          "text": "Nepřímá úměrnost se zapisuje y = k / x. Její graf není přímka, ale křivka – tu poznáš v 9. třídě."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Tabulka x = 1, 2, 4 a y = 12, 6, 3 je přímá úměrnost, protože se čísla mění pravidelně.",
+          "right": "Je to nepřímá úměrnost: x · y = 12 pořád.",
+          "why": "Rozhoduje směr: x roste, y klesá. Ověř si to součinem (nepřímá) nebo podílem (přímá)."
+        },
+        {
+          "type": "summary",
+          "text": "Přímá: y = k · x, podíl stálý, graf přímka z počátku. Nepřímá: y = k / x, součin stálý. V trojčlence urči směr šipek."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "4 sešity stojí 60 Kč. Kolik Kč stojí 6 sešitů?",
+      "answers": [
+        "90"
+      ],
+      "explanation": "1 sešit 15 Kč."
+    },
+    {
+      "type": "input",
+      "question": "3 bagry vykopou jámu za 8 hodin. Za kolik hodin ji vykopou 4 bagry?",
+      "answers": [
+        "6"
+      ],
+      "explanation": "3 · 8 = 24, 24 : 4 = 6"
+    },
+    {
+      "type": "choice",
+      "question": "Která závislost je nepřímá úměrnost?",
+      "options": [
+        "rychlost a čas na stejné trase",
+        "počet kg a cena",
+        "čas a vytištěné strany",
+        "strana čtverce a jeho obvod"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Grafem přímé úměrnosti je přímka procházející počátkem.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Věk a výška člověka jsou přímo úměrné.",
+      "answer": false,
+      "explanation": "Dvakrát starší člověk není dvakrát vyšší."
+    },
+    {
+      "type": "input",
+      "question": "Auto jede 60 km/h a cesta trvá 2 h. Kolik hodin bude trvat jízda rychlostí 40 km/h?",
+      "answers": [
+        "3"
+      ],
+      "explanation": "60 · 2 = 120 km, 120 : 40 = 3"
+    },
+    {
+      "type": "input",
+      "question": "y = 3x. Kolik je y pro x = 7?",
+      "answers": [
+        "21"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Tabulka: x = 1, 2, 4; y = 12, 6, 3. Jde o…",
+      "options": [
+        "nepřímou úměrnost",
+        "přímou úměrnost",
+        "ani jedno",
+        "obě zároveň"
+      ],
+      "answer": 0,
+      "explanation": "x · y = 12 pořád."
+    },
+    {
+      "type": "input",
+      "question": "5 kg brambor stojí 75 Kč. Kolik kg koupíš za 45 Kč?",
+      "answers": [
+        "3"
+      ],
+      "explanation": "1 kg = 15 Kč."
+    },
+    {
+      "type": "truefalse",
+      "question": "U nepřímé úměrnosti je součin x · y stálý.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš přímou a nepřímou úměrnost?",
+      "answer": "Přímá: když jedna veličina vzroste dvakrát, druhá také dvakrát (podíl je stálý). Nepřímá: když jedna vzroste dvakrát, druhá dvakrát klesne (součin je stálý)."
+    },
+    {
+      "type": "open",
+      "question": "Vyřeš trojčlenkou: 6 dělníků postaví zeď za 4 dny. Za kolik dní 8 dělníků?",
+      "answer": "Víc dělníků → méně dní, nepřímá úměrnost. x = 4 · 6/8 = 3 dny."
+    }
+  ]
+}

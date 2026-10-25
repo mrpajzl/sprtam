@@ -1,0 +1,439 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "slovotvorba",
+  "title": "Stavba a tvoření slov",
+  "emoji": "🧱",
+  "explanations": [
+    {
+      "title": "Lego",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Z několika kostek Lega postavíš auto, dům i loď. Slova fungují podobně: skládají se z menších dílků a z jednoho základu postavíš celou rodinu slov. *Škola – školní – předškolák – školka.*"
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když vidíš, z jakých dílků je slovo, pochopíš jeho význam i pravopis (*ob-jet* s *je*, *roz-zlobit* se dvěma z)."
+        },
+        {
+          "type": "term",
+          "term": "Příbuzná slova",
+          "definition": "Slova se stejným základem a podobným významem. Tvoří „rodinu“.",
+          "example": "*škola, školní, školka, předškolák*"
+        },
+        {
+          "type": "heading",
+          "text": "Dílky slova"
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Hlavní kostka. Nese základní význam a je společná všem příbuzným slovům.",
+          "example": "*škol* ve *škola, školní, školka*"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Kostka **před** kořenem. Mění význam slova.",
+          "example": "*před-* v *předškolní*, *pod-* v *podzemní*"
+        },
+        {
+          "type": "term",
+          "term": "Přípona",
+          "definition": "Kostka **za** kořenem. Tvoří nové slovo, často jiného druhu.",
+          "example": "*-n-* v *školní*, *-itel* v *učitel*"
+        },
+        {
+          "type": "term",
+          "term": "Koncovka",
+          "definition": "Poslední kostka. Mění se, když slovo skloňuješ nebo časuješ. Nové slovo netvoří.",
+          "example": "*škol-a*, *škol-y*, *škol-e*"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si, jak jsou slova rozložená na dílky. Zkus pak sám rozložit *nadzemní*."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "pod",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "zem",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "n",
+                    "label": "přípona"
+                  },
+                  {
+                    "text": "í",
+                    "label": "koncovka"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "uč",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "itel",
+                    "label": "přípona"
+                  },
+                  {
+                    "text": "k",
+                    "label": "přípona"
+                  },
+                  {
+                    "text": "a",
+                    "label": "koncovka"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "před",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "škol",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "n",
+                    "label": "přípona"
+                  },
+                  {
+                    "text": "í",
+                    "label": "koncovka"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak najít kořen"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš si k slovu 2–3 příbuzná slova: *podzemní – zem – zemina*.",
+            "Najdi část, která se opakuje ve všech: **zem**. To je kořen.",
+            "Co je před ním, je předpona (*pod-*). Co je za ním, jsou přípony a koncovka.",
+            "Koncovku poznáš tak, že slovo vyskloňuješ: *podzemní, podzemního* – mění se jen konec."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rozlož slovo *učitelka*.",
+          "answer": "Příbuzná slova: *učit, učitel, učebnice* → kořen **uč**. Přípona **-itel** udělala z děje osobu (učitel), přípona **-k-** ženu (učitelka). Koncovka **-a** se mění: *učitelky, učitelce*."
+        },
+        {
+          "type": "example",
+          "question": "Rozlož slovo *předškolní*.",
+          "answer": "**před-** (předpona, „před školou“) + **škol** (kořen) + **-n-** (přípona, dělá přídavné jméno) + **-í** (koncovka)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Koncovkou tvoříme nová slova (škola → školy je nové slovo).",
+          "right": "*Školy* je jen jiný tvar téhož slova. Nová slova tvoří předpony a přípony.",
+          "why": "Koncovka vyjadřuje pád, číslo, osobu. Slovo zůstává stejné, jen se „přizpůsobí větě“."
+        },
+        {
+          "type": "summary",
+          "text": "Slovo = předpona + kořen + přípona + koncovka. Kořen je společný příbuzným slovům. Předpony a přípony tvoří nová slova, koncovka jen mění tvar."
+        }
+      ]
+    },
+    {
+      "title": "Pět dílen",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každý den vznikají nová slova. Někdo vymyslí výrobek, nový sport, novou aplikaci – a potřebuje pro ni jméno. Čeština má na výrobu slov několik „dílen“."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když poznáš, ve které dílně slovo vzniklo, umíš ho rozebrat, správně napsat a odpovědět na typickou testovou otázku „Jak vzniklo slovo…?“"
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Základové slovo",
+          "definition": "Slovo, ze kterého nové slovo vzniklo.",
+          "example": "*zahrada* je základové pro *zahradník*"
+        },
+        {
+          "type": "term",
+          "term": "Předpona a přípona",
+          "definition": "Části, které přidáme před kořen (předpona) nebo za něj (přípona), a vznikne nové slovo.",
+          "example": "*u-* + *dělat* → *udělat*; *zahrad* + *-ník* → *zahradník*"
+        },
+        {
+          "type": "term",
+          "term": "Sousloví",
+          "definition": "Pojmenování z více slov, které dohromady znamená jednu věc.",
+          "example": "*minerální voda*, *zubní pasta*"
+        },
+        {
+          "type": "heading",
+          "text": "Dílny"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Způsob",
+            "Co se děje",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "odvozování",
+              "přidáme předponu nebo příponu",
+              "zahrada → zahradník, dům → domeček"
+            ],
+            [
+              "skládání",
+              "spojíme dva základy v jedno slovo",
+              "voda + padat → vodopád"
+            ],
+            [
+              "zkracování",
+              "ze slov vezmeme začátky nebo písmena",
+              "ČR, atd., NATO"
+            ],
+            [
+              "spřahování",
+              "slovní spojení sroste v jedno slovo",
+              "z paměti → zpaměti, na neštěstí → naneštěstí"
+            ],
+            [
+              "univerbizace",
+              "víceslovné pojmenování → jedno slovo",
+              "minerální voda → minerálka"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Nejčastější dílna v češtině je **odvozování**."
+        },
+        {
+          "type": "term",
+          "term": "Zkratka × zkratkové slovo",
+          "definition": "Zkratka se čte po písmenech nebo celými slovy (ČR [čé er], atd. [a tak dále]). Zkratkové slovo se čte jako normální slovo a dá se často i skloňovat.",
+          "example": "NATO [nato], Čedok"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Ke každému slovu najdi dílnu. Ptej se: přidalo se něco? spojila se dvě slova? zkrátilo se?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "odvozování",
+              "skládání",
+              "zkracování"
+            ],
+            "items": [
+              {
+                "text": "učitel",
+                "group": 0
+              },
+              {
+                "text": "velkoměsto",
+                "group": 1
+              },
+              {
+                "text": "OSN",
+                "group": 2
+              },
+              {
+                "text": "domeček",
+                "group": 0
+              },
+              {
+                "text": "zeměkoule",
+                "group": 1
+              },
+              {
+                "text": "atd.",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jak vzniklo slovo *velkoměsto*?",
+          "answer": "Jsou v něm dva základy: *velk(ý)* a *město*, spojené samohláskou *-o-*. Dva základy v jednom slově → **skládání**."
+        },
+        {
+          "type": "example",
+          "question": "Jak se liší vznik slov *zpaměti* a *minerálka*?",
+          "answer": "*Zpaměti*: spojení *z paměti* prostě srostlo, nic se neubralo → **spřahování**. *Minerálka*: z dvou slov *minerální voda* vzniklo jedno slovo s příponou *-ka* → **univerbizace**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Vodopád* vznikl odvozováním.",
+          "right": "*Vodopád* vznikl skládáním.",
+          "why": "Odvozování přidává jen předponu nebo příponu. Ve *vodopád* jsou dva plnovýznamové základy: *voda* a *pad(at)*."
+        },
+        {
+          "type": "summary",
+          "text": "Slova tvoříme odvozováním (nejčastěji), skládáním, zkracováním, spřahováním a univerbizací. Rozhoduje, co se se základem stalo: přidání, spojení dvou základů, zkrácení, srůst, nebo zjednoslovnění."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje část slova společná příbuzným slovům?",
+      "options": [
+        "kořen",
+        "koncovka",
+        "předpona",
+        "přípona"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak vzniklo slovo „vodopád“?",
+      "options": [
+        "skládáním",
+        "odvozováním",
+        "zkracováním",
+        "přejetím"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak vzniklo slovo „zahradník“?",
+      "options": [
+        "odvozováním příponou",
+        "skládáním",
+        "spřahováním",
+        "zkracováním"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo vzniklo spřahováním?",
+      "options": [
+        "zpaměti",
+        "vodopád",
+        "minerálka",
+        "učitel"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Koncovka slouží ke tvoření nových slov.",
+      "answer": false,
+      "explanation": "Koncovka vyjadřuje mluvnické kategorie (pád, číslo); nová slova tvoří předpony a přípony."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Minerálka“ vznikla univerbizací ze sousloví „minerální voda“.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jaký je kořen slova „podzemní“?",
+      "answers": [
+        "zem"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď části slova „předškolní“ zleva doprava.",
+      "items": [
+        "předpona před-",
+        "kořen škol",
+        "přípona -n-",
+        "koncovka -í"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj slovo se způsobem tvoření.",
+      "pairs": [
+        [
+          "domeček",
+          "odvozování"
+        ],
+        [
+          "velkoměsto",
+          "skládání"
+        ],
+        [
+          "ČR",
+          "zkracování"
+        ],
+        [
+          "naneštěstí",
+          "spřahování"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je zkratkové slovo?",
+      "options": [
+        "zkratka, která se čte jako slovo (NATO)",
+        "slovo s předponou",
+        "zkratka s tečkou (atd.)",
+        "cizí slovo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli stavbu slova na příkladu „učitelka“.",
+      "answer": "Kořen uč nese základní význam, přípony -itel a -k tvoří nová slova (učitel, učitelka), koncovka -a vyjadřuje pád a číslo a mění se při skloňování."
+    },
+    {
+      "type": "open",
+      "question": "Jmenuj způsoby tvoření slov a ke každému uveď příklad.",
+      "answer": "Odvozování (zahrada → zahradník), skládání (vodopád), zkracování (ČR, NATO), spřahování (zpaměti) a univerbizace (minerálka). Nejčastější je odvozování."
+    }
+  ]
+}

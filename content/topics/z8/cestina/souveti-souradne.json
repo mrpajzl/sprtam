@@ -1,0 +1,405 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "souveti-souradne",
+  "title": "Souvětí souřadné a poměry",
+  "emoji": "⚖️",
+  "explanations": [
+    {
+      "title": "Šest poměrů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dvě věty: *Pršelo.* *Zůstali jsme doma.* Můžeš je spojit různě: *Pršelo, a proto jsme zůstali doma.* Nebo: *Pršelo, ale šli jsme ven.* Pokaždé říkáš něco jiného – podle toho, **jak** věty spojíš."
+        },
+        {
+          "type": "text",
+          "text": "Vztahu mezi dvěma rovnocennými větami se říká **poměr**. Když poměry znáš, víš, kdy psát čárku před *a* a kdy ne – a to je častá past v testech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Souvětí",
+          "definition": "Spojení víc vět. Počet vět = počet sloves v určitém tvaru.",
+          "example": "*Prší a fouká vítr.* – prší, fouká → 2 věty"
+        },
+        {
+          "type": "term",
+          "term": "Souvětí souřadné",
+          "definition": "Souvětí, kde jsou věty **rovnocenné** – žádná nezávisí na druhé. Každá by mohla stát samostatně.",
+          "example": "*Prší. Fouká vítr.* → *Prší a fouká vítr.*"
+        },
+        {
+          "type": "term",
+          "term": "Poměr",
+          "definition": "Vztah mezi rovnocennými větami. Poznáš ho podle smyslu a podle spojky.",
+          "example": "*ale* → odporovací poměr"
+        },
+        {
+          "type": "heading",
+          "text": "Šest poměrů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Poměr",
+            "Co vyjadřuje",
+            "Spojky",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "slučovací",
+              "děje se obojí",
+              "a, i, ani, pak",
+              "Prší a fouká vítr."
+            ],
+            [
+              "odporovací",
+              "druhá věta odporuje první",
+              "ale, avšak, však, jenže",
+              "Chtěl jít, ale pršelo."
+            ],
+            [
+              "stupňovací",
+              "druhá věta je „víc“",
+              "ba, ba i, dokonce",
+              "Neuklidil, ba ještě nadělal nepořádek."
+            ],
+            [
+              "vylučovací",
+              "platí jen jedno",
+              "nebo, anebo, buď – nebo",
+              "Budu si číst nebo půjdu ven."
+            ],
+            [
+              "příčinný",
+              "ve 2. větě je příčina",
+              "neboť, vždyť, totiž",
+              "Zůstal doma, neboť byl nemocný."
+            ],
+            [
+              "důsledkový",
+              "ve 2. větě je důsledek",
+              "proto, a proto, tak, tedy",
+              "Byl nemocný, a proto zůstal doma."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Příčinný, nebo důsledkový?"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi, co je **příčina** (proč se to stalo) a co **důsledek** (co z toho vyplynulo).",
+            "Je příčina ve **druhé** větě? → **příčinný** poměr: *Zůstal doma, neboť byl nemocný.*",
+            "Je důsledek ve **druhé** větě? → **důsledkový** poměr: *Byl nemocný, a proto zůstal doma.*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Čárka"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Čárku **nepíšeš** před slučovacím *a, i, ani* a obvykle ani před vylučovacím *nebo*.",
+            "Výjimka: když se možnosti **přísně vylučují** – hlavně v otázce – čárku před *nebo* **píšeš**: *Půjdeme do kina, nebo zůstaneme doma?*",
+            "Čárku **píšeš** u ostatních poměrů – i když spojka obsahuje *a*: **, a proto**, **, a přece**, **, a dokonce**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči poměr a doplň čárku: *Byl unavený a proto šel spát.*",
+          "answer": "Ve druhé větě je důsledek únavy → **důsledkový** poměr. Čárka před *a proto*: *Byl unavený, a proto šel spát.*"
+        },
+        {
+          "type": "example",
+          "question": "Urči poměr a rozhodni o čárce: *Odpoledne budu číst nebo půjdu ven.*",
+          "answer": "Udělám jen jedno z toho → **vylučovací** poměr. Před vylučovacím *nebo* se čárka nepíše."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Máma vaří, a táta uklízí.",
+          "right": "Máma vaří a táta uklízí.",
+          "why": "Děje se obojí → slučovací poměr. Před slučovacím *a* čárka není."
+        },
+        {
+          "type": "summary",
+          "text": "Souvětí souřadné = rovnocenné věty. Poměry: slučovací, odporovací, stupňovací, vylučovací, příčinný (neboť), důsledkový (proto). Bez čárky jen slučovací a, i, ani a obvykle vylučovací nebo – v otázce typu *Půjdeš, nebo zůstaneš?* se čárka píše."
+        }
+      ]
+    },
+    {
+      "title": "Tříděním",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si dva kamarády, kteří jdou vedle sebe. Ani jeden nevede druhého – jsou si **rovni**. Takové jsou věty v **souřadném souvětí**."
+        },
+        {
+          "type": "text",
+          "text": "I rovnocenní kamarádi ale mohou mít různý vztah: jdou spolu, hádají se, jeden předhání druhého… U vět tomu vztahu říkáme **poměr**. Naučíš se šest poměrů poznat podle smyslu."
+        },
+        {
+          "type": "term",
+          "term": "Souřadné souvětí",
+          "definition": "Víc vět, které jsou na sobě **nezávislé**. Žádná neodpovídá na otázku z druhé. (Opak je souvětí **podřadné**, kde jedna věta závisí na druhé.)",
+          "example": "*Svítí slunce a ptáci zpívají.*"
+        },
+        {
+          "type": "term",
+          "term": "Poměr",
+          "definition": "Významový vztah mezi rovnocennými větami.",
+          "example": "slučovací, odporovací…"
+        },
+        {
+          "type": "heading",
+          "text": "Šest vztahů jako mezi kamarády"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**slučovací** – jdou spolu, platí obojí: *Svítí slunce **a** ptáci zpívají.*",
+            "**odporovací** – druhý odporuje prvnímu: *Učil se, **ale** test nenapsal.*",
+            "**stupňovací** – druhý přidává víc: *Neuklidil, **ba** ještě nadělal nepořádek.*",
+            "**vylučovací** – platí jen jeden: *Večer budu číst **nebo** se podívám na film.*",
+            "**příčinný** – druhý vysvětluje proč: *Zůstal doma, **neboť** byl nemocný.*",
+            "**důsledkový** – druhý říká, co z toho plyne: *Zaspal, **a proto** přišel pozdě.*"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zařaď souvětí. Přečti si je a zeptej se: platí obojí? odporují si? vyplývá druhé z prvního?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "slučovací",
+              "odporovací",
+              "důsledkový"
+            ],
+            "items": [
+              {
+                "text": "Svítí slunce a ptáci zpívají.",
+                "group": 0
+              },
+              {
+                "text": "Máma vaří a táta peče.",
+                "group": 0
+              },
+              {
+                "text": "Uklidil si pokoj i umyl nádobí.",
+                "group": 0
+              },
+              {
+                "text": "Učil se, ale test nenapsal.",
+                "group": 1
+              },
+              {
+                "text": "Chtěla přijít, jenže onemocněla.",
+                "group": 1
+              },
+              {
+                "text": "Byl pozván, ale nepřišel.",
+                "group": 1
+              },
+              {
+                "text": "Pršelo, a proto jsme zůstali doma.",
+                "group": 2
+              },
+              {
+                "text": "Zaspal, tak přišel pozdě.",
+                "group": 2
+              },
+              {
+                "text": "Učil se, proto uspěl.",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Čárka podle poměru"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Čárka NE",
+            "Čárka ANO"
+          ],
+          "rows": [
+            [
+              "slučovací: a, i, ani",
+              "odporovací: , ale; , avšak; , jenže"
+            ],
+            [
+              "vylučovací: nebo, anebo",
+              "příčinný: , neboť; , vždyť"
+            ],
+            [
+              "",
+              "důsledkový: , proto; , a proto"
+            ],
+            [
+              "",
+              "stupňovací: , ba; , a dokonce"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči poměr: *Zůstal doma, neboť byl nemocný.*",
+          "answer": "Druhá věta vysvětluje, **proč** zůstal doma → **příčinný** poměr."
+        },
+        {
+          "type": "example",
+          "question": "Která věta je správně? a) *Učil se ale nepochopil to.* b) *Učil se, ale nepochopil to.*",
+          "answer": "**b)** – *ale* je odporovací spojka, před ní se píše čárka."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Zůstal doma, neboť byl nemocný.* je důsledkový poměr.",
+          "right": "Je to příčinný poměr.",
+          "why": "Ve druhé větě je **příčina** (nemoc). Důsledkový by byl obráceně: *Byl nemocný, a proto zůstal doma.*"
+        },
+        {
+          "type": "summary",
+          "text": "V souřadném souvětí jsou věty rovnocenné. Poměr poznáš podle smyslu: platí obojí (slučovací), odporují si (odporovací), přidává (stupňovací), jen jedno (vylučovací), proč (příčinný), co z toho plyne (důsledkový)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Urči poměr: *Chtěl jsem jít ven, ale pršelo.*",
+      "options": [
+        "odporovací",
+        "slučovací",
+        "důsledkový"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Urči poměr: *Byl unavený, a proto šel spát.*",
+      "options": [
+        "důsledkový",
+        "příčinný",
+        "odporovací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Urči poměr: *Zůstal doma, neboť byl nemocný.*",
+      "options": [
+        "příčinný",
+        "důsledkový",
+        "slučovací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Urči poměr: *Půjdeme do kina, nebo zůstaneme doma?*",
+      "options": [
+        "vylučovací",
+        "odporovací",
+        "stupňovací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Urči poměr: *Slunce svítilo a ptáci zpívali.*",
+      "options": [
+        "slučovací",
+        "vylučovací",
+        "příčinný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V souřadném souvětí jsou věty rovnocenné, žádná nezávisí na druhé.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je napsaná správně?",
+      "options": [
+        "Učil se, ale nepochopil to.",
+        "Učil se ale nepochopil to."
+      ],
+      "answer": 0,
+      "explanation": "Před odporovacím *ale* píšeme čárku."
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je napsaná správně?",
+      "options": [
+        "Máma vaří a táta uklízí.",
+        "Máma vaří, a táta uklízí."
+      ],
+      "answer": 0,
+      "explanation": "Slučovací *a* – bez čárky."
+    },
+    {
+      "type": "match",
+      "question": "Spoj spojku s poměrem.",
+      "pairs": [
+        [
+          "neboť",
+          "příčinný"
+        ],
+        [
+          "proto",
+          "důsledkový"
+        ],
+        [
+          "ale",
+          "odporovací"
+        ],
+        [
+          "nebo",
+          "vylučovací"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš spojku příčinného poměru, která začíná na *n*.",
+      "answers": [
+        "neboť"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi poměrem příčinným a důsledkovým?",
+      "answer": "V příčinném je ve druhé větě příčina (*Zůstal doma, neboť byl nemocný.*). V důsledkovém je ve druhé větě důsledek (*Byl nemocný, a proto zůstal doma.*)."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi souvětím souřadným a podřadným?",
+      "answer": "V souřadném jsou věty rovnocenné. V podřadném vedlejší věta závisí na řídící větě a ptáme se na ni otázkou."
+    }
+  ]
+}

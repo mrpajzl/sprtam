@@ -1,0 +1,149 @@
+import { s, type Infer, type ObjectS } from './schema'
+import { WIDGETS } from '../widgets'
+
+// The content format (version FORMAT). The only definition of what a content file may contain:
+// TypeScript types, the validator (scripts/check-content.ts) and the JSON Schemas in content/schema/
+// (npm run content:generate) all come from here. Rules for authors: docs/CONTENT.md.
+//
+//   content/topics/<grade>/<subject>/_subject.json   order of the topics   → SubjectFile
+//   content/topics/<grade>/<subject>/<topic-id>.json  one topic             → TopicFile
+//   content/vocab/<level>.json                        English vocabulary    → VocabFile
+//
+// Compatibility: an app build only reads the format it was built with. Adding an optional field or a new
+// block/widget/question type keeps FORMAT. Anything that changes the meaning of existing files (a renamed
+// or removed field) bumps FORMAT and comes with a script that migrates every file at once (docs/CONTENT.md).
+
+export const FORMAT = 1
+
+/** Text with inline markup: **tučně**, *kurzíva*, `vzorec`, horní index ^2. */
+const text = (description = 'Text; smí obsahovat **tučné**, *kurzívu*, `vzorec` a horní index ^2.') => s.string({ description })
+
+// ——— Widgets: one case per widget in src/widgets ———
+
+const widgetCases = Object.fromEntries(Object.values(WIDGETS).map((w) => [w.name, s.object({ props: w.props }, { description: `${w.title}: ${w.summary}` })])) as Record<string, ObjectS<{ props: Record<string, unknown> }>>
+
+/** `{ "widget": "fraction", "props": {…} }` – any widget. */
+export const widgetRef = s.variants('widget', widgetCases, { description: 'Interaktivní widget: název (viz galerie /widgety) a jeho vlastnosti.' })
+/** Only widgets that can show a task without its answer (WidgetDef.Question). */
+export const questionWidgetRef = s.variants('widget', Object.fromEntries(Object.entries(widgetCases).filter(([n]) => WIDGETS[n].Question)), {
+  description: 'Widget nad otázkou – ukáže jen zadání, ne výsledek. Smí jen widgety s režimem pro otázky (column).',
+})
+
+// ——— Blocks of an explanation ———
+
+export const block = s.variants('type', {
+  heading: s.object({ text: text('Krátký nadpis části výkladu, např. "O čem to je".') }, { description: 'Nadpis uvnitř vysvětlení.' }),
+  text: s.object({ text: text('Odstavec.') }, { description: 'Odstavec textu.' }),
+  term: s.object({
+    term: text('Pojem, např. "Jmenovatel".'),
+    definition: text('Co pojem znamená, obyčejnými slovy.'),
+    example: s.optional(text('Konkrétní příklad.')),
+  }, { description: 'Nový pojem – vysvětlený dřív, než se poprvé použije.' }),
+  mistake: s.object({
+    wrong: text('Chybné řešení nebo tvrzení.'),
+    right: text('Správné řešení.'),
+    why: text('Proč je to tak – krátce.'),
+  }, { description: 'Častá chyba: špatně, správně a proč.' }),
+  summary: s.object({ text: text('Pravidlo nebo shrnutí v 1–3 větách.') }, { description: 'To hlavní k zapamatování, zvýrazněné.' }),
+  list: s.object({ items: s.array(text('Položka.'), { min: 1 }) }, { description: 'Odrážkový seznam.' }),
+  steps: s.object({ items: s.array(text('Krok.'), { min: 1 }) }, { description: 'Postup krok za krokem; kroky se odkrývají postupně.' }),
+  example: s.object({
+    question: text('Zadání řešeného příkladu.'),
+    answer: text('Řešení i s postupem.'),
+    widget: s.optional(widgetRef),
+  }, { description: 'Řešený příklad; řešení se ukáže po klepnutí. Volitelný widget se ukáže spolu s řešením (např. column).' }),
+  table: s.object({
+    head: s.array(s.string({ min: 0, description: 'Záhlaví sloupce (smí být prázdné, např. roh tabulky).' }), { min: 1 }),
+    rows: s.array(s.array(s.string({ min: 0, description: 'Buňka (smí být prázdná).' })), { min: 1, description: 'Řádky; každý má stejně buněk jako head.' }),
+  }, { description: 'Tabulka.' }),
+  picture: s.object({
+    items: s.array(s.string(), { min: 1, description: 'Emoji v řadě, např. ["🍎", "🍎", "➕", "🍐"].' }),
+    caption: s.optional(s.string({ description: 'Popisek pod obrázkem (čte ho i čtečka obrazovky).' })),
+  }, { description: 'Obrázek složený z emoji.' }),
+  widget: widgetRef,
+}, { description: 'Blok vysvětlení.' })
+
+export const explanation = s.object({
+  title: s.string({ description: 'Krátký název přístupu, 1–3 slova: "Na pizze", "Krok za krokem".' }),
+  blocks: s.array(block, { min: 1 }),
+})
+
+// ——— Questions ———
+
+const why = s.optional(text('Krátké vysvětlení správné odpovědi (ukáže se po odpovědi).'))
+
+export const question = s.variants('type', {
+  choice: s.object({
+    question: text('Otázka.'),
+    options: s.array(text('Možnost.'), { min: 2, max: 4, description: '2–4 možnosti; aplikace je zamíchá.' }),
+    answer: s.int({ min: 0, description: 'Pořadí správné možnosti v options, od 0.' }),
+    explanation: why,
+  }, { description: 'Výběr jedné ze 2–4 možností.' }),
+  truefalse: s.object({
+    question: text('Tvrzení.'),
+    answer: s.boolean({ description: 'true = pravda, false = nepravda.' }),
+    explanation: why,
+  }, { description: 'Pravda, nebo nepravda.' }),
+  input: s.object({
+    question: text('Otázka s krátkou odpovědí (číslo nebo slovo).'),
+    answers: s.array(s.string(), { min: 1, description: 'Všechny přijatelné odpovědi. Velikost písmen a mezery se ignorují, čísla se porovnávají jako čísla (0,5 = 0.5), diakritika se ignoruje mimo češtinu a literaturu.' }),
+    explanation: why,
+    widget: s.optional(questionWidgetRef),
+  }, { description: 'Napsaná krátká odpověď.' }),
+  order: s.object({
+    question: text('Zadání.'),
+    items: s.array(text('Položka.'), { min: 3, max: 8, description: 'Položky ve SPRÁVNÉM pořadí; aplikace je zamíchá.' }),
+    explanation: why,
+  }, { description: 'Seřazení položek.' }),
+  match: s.object({
+    question: text('Zadání.'),
+    pairs: s.array(s.tuple([text('Levá strana.'), text('Pravá strana.')]), { min: 3, max: 6, description: 'Správně spárované dvojice; aplikace zamíchá pravou stranu.' }),
+    explanation: why,
+  }, { description: 'Spojování dvojic.' }),
+  open: s.object({
+    question: text('Ústní otázka.'),
+    answer: text('Vzorová odpověď v 1–3 větách.'),
+  }, { description: 'Otázka pro ústní zkoušení; dítě odpoví nahlas a samo se ohodnotí.' }),
+}, { description: 'Otázka.' })
+
+// ——— Files ———
+
+export const topicFile = s.object({
+  format: s.int({ min: FORMAT, max: FORMAT, description: `Verze formátu, teď ${FORMAT}.` }),
+  id: s.string({ pattern: '^[a-z0-9]+(-[a-z0-9]+)*$', description: 'Stejné jako název souboru. Kebab-case ASCII. NIKDY SE NEMĚNÍ – je na něm uložený pokrok.' }),
+  title: s.string({ description: 'Název tématu.' }),
+  emoji: s.string({ description: 'Jedno výstižné emoji.' }),
+  generator: s.optional(s.string({ description: 'Generátor dalších příkladů z src/quiz/generators.ts (jen matematika a fyzika).' })),
+  explanations: s.array(explanation, { min: 2, max: 2, description: 'Přesně dvě vysvětlení, každé jinou cestou.' }),
+  questions: s.array(question, { min: 8 }),
+}, { description: 'Jedno téma: dvě vysvětlení a otázky.' })
+
+export const subjectFile = s.object({
+  format: s.int({ min: FORMAT, max: FORMAT, description: `Verze formátu, teď ${FORMAT}.` }),
+  topics: s.array(s.string({ pattern: '^[a-z0-9]+(-[a-z0-9]+)*$' }), { min: 1, description: 'Id témat v pořadí, v jakém se během roku učí. Každé má soubor <id>.json vedle.' }),
+}, { description: 'Pořadí témat jednoho předmětu v jednom ročníku.' })
+
+export const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'] as const
+
+export const vocabFile = s.object({
+  format: s.int({ min: FORMAT, max: FORMAT, description: `Verze formátu, teď ${FORMAT}.` }),
+  level: s.enum(LEVELS, { description: 'Úroveň podle SERR, stejná jako název souboru.' }),
+  groups: s.array(s.object({
+    name: s.string({ description: 'Název okruhu, např. "Zvířata".' }),
+    emoji: s.string({ description: 'Jedno emoji okruhu.' }),
+    lang: s.optional(s.enum(['en-GB', 'en-US', 'en-AU'], { description: 'Přízvuk výslovnosti; výchozí en-GB.' })),
+    words: s.array(s.object({
+      cz: s.string({ description: 'Česky – na tohle se aplikace ptá.' }),
+      en: s.string({ description: 'Správně anglicky. Musí být jedinečné napříč všemi úrovněmi (je na něm uložený pokrok).' }),
+      similar: s.string({ description: 'Špatná možnost, která podobně vypadá nebo zní (bird → bard).' }),
+      related: s.string({ description: 'Špatná možnost, která souvisí významem (bird → parrot).' }),
+    }), { min: 1 }),
+  }), { min: 1, description: 'Okruhy. Odkazují se pořadím (/slovicka/A1/0) – nové přidávej na konec.' }),
+}, { description: 'Anglická slovíčka jedné úrovně.' })
+
+export type Block = Infer<typeof block>
+export type Explanation = Infer<typeof explanation>
+export type Question = Infer<typeof question>
+export type TopicFile = Infer<typeof topicFile>
+export type SubjectFile = Infer<typeof subjectFile>
+export type VocabFile = Infer<typeof vocabFile>

@@ -1,0 +1,385 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "geometricka-optika",
+  "title": "Geometrická optika",
+  "emoji": "🔍",
+  "explanations": [
+    {
+      "title": "Paprsky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Lžička ve sklenici vody vypadá zlomená. Bazén se zdá mělčí, než je. Lupa zvětší písmenka, brýle zaostří svět. Optickým vláknem běží internet kolem rohu. Všechno to je hra světla s rozhraním dvou látek."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Paprsek",
+          "definition": "Čára, která ukazuje, kudy se světlo šíří. V jedné látce je to přímka."
+        },
+        {
+          "type": "term",
+          "term": "Rozhraní a kolmice dopadu",
+          "definition": "Rozhraní je hranice dvou látek (vzduch–voda). **Kolmice dopadu** je pomocná čára kolmá k rozhraní v místě, kam paprsek dopadne. Úhly měříme od ní."
+        },
+        {
+          "type": "term",
+          "term": "Lom světla",
+          "definition": "Na rozhraní dvou látek paprsek změní směr, protože se změní rychlost světla.",
+          "example": "Lžička ve vodě vypadá zlomená."
+        },
+        {
+          "type": "term",
+          "term": "Opticky hustší a řidší prostředí",
+          "definition": "V **hustším** se světlo šíří pomaleji (má větší index lomu n). Sklo (n ≈ 1,5) je hustší než voda (1,33) a voda hustší než vzduch (1)."
+        },
+        {
+          "type": "heading",
+          "text": "Kam se paprsek lomí"
+        },
+        {
+          "type": "text",
+          "text": "Do hustšího prostředí se paprsek lomí **ke kolmici**, do řidšího **od kolmice**. Představ si auto, které najede jedním kolem šikmo z asfaltu na písek: to kolo se zpomalí dřív a auto se stočí."
+        },
+        {
+          "type": "text",
+          "text": "Proto bazén vypadá mělčí: paprsky ze dna se na hladině lámou od kolmice a oko je „prodlouží“ zpět do menší hloubky."
+        },
+        {
+          "type": "heading",
+          "text": "Úplný odraz"
+        },
+        {
+          "type": "text",
+          "text": "Při přechodu ze skla do vzduchu se paprsek lomí od kolmice. Když zvětšuješ úhel dopadu, lomený paprsek se blíží k rozhraní. Při **mezním úhlu** (sklo–vzduch asi 42°) už jde po rozhraní. Nad ním se světlo **celé odrazí zpět**."
+        },
+        {
+          "type": "text",
+          "text": "Widget ukazuje 42°. Posuň úhel nad 42° – v tu chvíli by světlo ze skla do vzduchu už nevyšlo a celé by se odrazilo."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 42
+          }
+        },
+        {
+          "type": "text",
+          "text": "Optické vlákno je tenké skleněné vlákno. Světlo v něm dopadá na stěny pod velkým úhlem, pořád se úplně odráží a vede tak i kolem zatáček."
+        },
+        {
+          "type": "heading",
+          "text": "Čočky"
+        },
+        {
+          "type": "term",
+          "term": "Spojka a rozptylka",
+          "definition": "**Spojka** (uprostřed tlustší) soustředí rovnoběžné paprsky do bodu – **ohniska**. **Rozptylka** (uprostřed tenčí) je rozbíhá.",
+          "example": "Lupa je spojka. Brýle pro krátkozraké jsou rozptylky."
+        },
+        {
+          "type": "term",
+          "term": "Ohnisková vzdálenost f",
+          "definition": "Vzdálenost ohniska od čočky."
+        },
+        {
+          "type": "term",
+          "term": "Skutečný a zdánlivý obraz",
+          "definition": "**Skutečný** obraz vznikne, kde se paprsky opravdu protnou – dá se zachytit na stínítko. **Zdánlivý** jen vidíme okem při pohledu do čočky."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Přístroj",
+            "Kde je předmět",
+            "Obraz"
+          ],
+          "rows": [
+            [
+              "lupa",
+              "mezi ohniskem a čočkou",
+              "zdánlivý, vzpřímený, zvětšený"
+            ],
+            [
+              "fotoaparát, oko",
+              "daleko (za dvojnásobkem f)",
+              "skutečný, převrácený, zmenšený"
+            ],
+            [
+              "projektor",
+              "mezi f a 2f",
+              "skutečný, převrácený, zvětšený"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ve vzorcích: lom `n₁ · sin α = n₂ · sin β` (úhly od kolmice), mezní úhel `sin α_m = n₂ / n₁`. Pro čočku `1/a + 1/a′ = 1/f` (a = vzdálenost předmětu, a′ = obrazu), zvětšení `Z = −a′/a` a mohutnost `φ = 1/f` v dioptriích (f v metrech). Např. f = 10 cm, a = 30 cm → a′ = 15 cm."
+        },
+        {
+          "type": "example",
+          "question": "Paprsek jde ze skla do vzduchu. Lomí se ke kolmici, nebo od ní?",
+          "answer": "Ze skla do vzduchu = z hustšího do řidšího → **od kolmice**."
+        },
+        {
+          "type": "example",
+          "question": "Proč vidí krátkozraký člověk ostře s rozptylkou?",
+          "answer": "Jeho oko láme světlo moc silně a obraz vzniká před sítnicí. Rozptylka paprsky trochu rozbíhá a obraz se posune **na sítnici**. Dalekozrakému naopak pomůže spojka."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Úplný odraz může nastat i při přechodu ze vzduchu do vody.",
+          "right": "Úplný odraz nastane jen při přechodu do opticky řidšího prostředí (např. z vody do vzduchu).",
+          "why": "Do hustšího prostředí se paprsek lomí ke kolmici a vždy projde. Jen do řidšího se lomí od kolmice a může „narazit“ na mezní úhel."
+        },
+        {
+          "type": "summary",
+          "text": "Do hustšího prostředí lom ke kolmici, do řidšího od kolmice. Nad mezním úhlem při přechodu do řidšího nastává úplný odraz. Spojka soustředí, rozptylka rozbíhá."
+        }
+      ]
+    },
+    {
+      "title": "Rovnice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Optik musí spočítat, jakou mohutnost mají mít brýle. Fotograf chce vědět, kam se zobrazí předmět. Konstruktér vlákna potřebuje mezní úhel. Na to stačí čtyři rovnice."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Index lomu n",
+          "definition": "n = c / v – kolikrát je světlo v látce pomalejší než ve vakuu. Vzduch 1, voda 1,33, sklo ≈ 1,5."
+        },
+        {
+          "type": "term",
+          "term": "Úhel dopadu α a úhel lomu β",
+          "definition": "Měří se od **kolmice dopadu** (kolmice k rozhraní), ne od rozhraní."
+        },
+        {
+          "type": "term",
+          "term": "Předmětová a obrazová vzdálenost a, a′",
+          "definition": "a = vzdálenost předmětu od čočky, a′ = vzdálenost obrazu od čočky. Skutečný obraz za spojkou má a′ kladné."
+        },
+        {
+          "type": "term",
+          "term": "Ohnisková vzdálenost f",
+          "definition": "Vzdálenost ohniska od čočky. Spojka f > 0, rozptylka f < 0."
+        },
+        {
+          "type": "term",
+          "term": "Optická mohutnost φ",
+          "definition": "`φ = 1 / f` (f v metrech), jednotka **dioptrie (D)**. Brýle „+2“ = spojka s f = 0,5 m."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Co",
+            "Vztah"
+          ],
+          "rows": [
+            [
+              "Snellův zákon lomu",
+              "n₁ · sin α = n₂ · sin β"
+            ],
+            [
+              "mezní úhel (n₁ > n₂)",
+              "sin α_m = n₂ / n₁"
+            ],
+            [
+              "zobrazovací rovnice čočky",
+              "1/a + 1/a′ = 1/f"
+            ],
+            [
+              "příčné zvětšení",
+              "Z = −a′ / a"
+            ],
+            [
+              "optická mohutnost",
+              "φ = 1/f"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Znaménko Z: záporné = obraz převrácený, kladné = vzpřímený. |Z| < 1 zmenšený, |Z| > 1 zvětšený."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zapiš a a f (ve stejných jednotkách).",
+            "Spočítej 1/a′ = 1/f − 1/a.",
+            "Převrať – dostaneš a′.",
+            "Zvětšení Z = −a′ / a a popiš obraz."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Spojka f = 10 cm, předmět 30 cm před ní. Kde je obraz a jaký je?",
+          "answer": "1/a′ = 1/10 − 1/30 = 3/30 − 1/30 = 2/30 → a′ = **15 cm**. Z = −15/30 = −0,5: skutečný, převrácený, zmenšený."
+        },
+        {
+          "type": "example",
+          "question": "Paprsek jde ze vzduchu (n = 1) do skla (n = 1,5) pod úhlem 30°. Jaký je sin β?",
+          "answer": "1 · sin 30° = 1,5 · sin β → 0,5 = 1,5 sin β → sin β ≈ **0,33** (β ≈ 19,5°, lom ke kolmici)."
+        },
+        {
+          "type": "example",
+          "question": "Jaký je mezní úhel pro sklo (1,5) a vzduch (1)?",
+          "answer": "sin α_m = 1 / 1,5 ≈ 0,667 → α_m ≈ **42°**."
+        },
+        {
+          "type": "text",
+          "text": "Zkontroluj úhel lomu z druhého příkladu: nastav 30° (dopad) a pak asi 19,5° (lom). Lomený paprsek je blíž kolmici."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 30
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Úhel dopadu měřím od rozhraní (od hladiny).",
+          "right": "Úhel dopadu i lomu se měří od kolmice dopadu.",
+          "why": "Snellův zákon platí pro úhly od kolmice. Úhel od hladiny je doplněk do 90° a dá úplně jiný sinus."
+        },
+        {
+          "type": "text",
+          "text": "Oko: rohovka a čočka vytvoří na sítnici skutečný převrácený obraz; mohutnost čočky se mění (akomodace). Krátkozrakost opravuje rozptylka, dalekozrakost spojka."
+        },
+        {
+          "type": "summary",
+          "text": "`n₁ sin α = n₂ sin β`, `sin α_m = n₂/n₁`, `1/a + 1/a′ = 1/f`, `Z = −a′/a`, `φ = 1/f` v dioptriích."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Spojka f = 10 cm, předmět 30 cm před ní. Obrazová vzdálenost v cm =",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Spojka f = 20 cm, předmět 60 cm před ní. Obrazová vzdálenost v cm =",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Předmět 30 cm, obraz 15 cm za spojkou. Příčné zvětšení Z =",
+      "answers": [
+        "-0,5",
+        "−0,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Paprsek jde ze vzduchu (n = 1) do skla (n = 1,5) pod úhlem 30°. sin β (na setiny) =",
+      "answers": [
+        "0,33"
+      ],
+      "explanation": "sin β = sin 30° / 1,5 = 0,5 / 1,5 ≈ 0,33"
+    },
+    {
+      "type": "input",
+      "question": "Optická mohutnost čočky s f = −0,5 m v D =",
+      "answers": [
+        "-2",
+        "−2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Úplný odraz může nastat při přechodu světla ze vzduchu do vody.",
+      "answer": false,
+      "explanation": "Jen při přechodu do opticky řidšího prostředí."
+    },
+    {
+      "type": "choice",
+      "question": "Jaký obraz vytvoří spojka, je-li předmět mezi ohniskem a čočkou?",
+      "options": [
+        "zdánlivý, vzpřímený, zvětšený",
+        "skutečný, převrácený, zmenšený",
+        "žádný"
+      ],
+      "answer": 0,
+      "explanation": "Tak funguje lupa."
+    },
+    {
+      "type": "choice",
+      "question": "Kde se využívá úplný odraz?",
+      "options": [
+        "optická vlákna",
+        "brýle pro krátkozraké",
+        "rovinné zrcadlo",
+        "lupa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj přístroj s typem obrazu.",
+      "pairs": [
+        [
+          "lupa",
+          "zdánlivý, zvětšený"
+        ],
+        [
+          "fotoaparát",
+          "skutečný, zmenšený"
+        ],
+        [
+          "projektor",
+          "skutečný, zvětšený"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se lomí paprsek při přechodu ze skla do vzduchu?",
+      "options": [
+        "od kolmice",
+        "ke kolmici",
+        "nelomí se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Zformuluj Snellův zákon lomu a popiš úplný odraz.",
+      "answer": "n₁ sin α = n₂ sin β. Při přechodu do opticky řidšího prostředí existuje mezní úhel sin α_m = n₂/n₁; při větším úhlu dopadu se světlo zcela odrazí."
+    },
+    {
+      "type": "open",
+      "question": "Jak funguje oko a jak se korigují jeho vady?",
+      "answer": "Rohovka a čočka vytvářejí skutečný převrácený obraz na sítnici, akomodací se mění mohutnost čočky. Krátkozrakost se koriguje rozptylkou, dalekozrakost spojkou."
+    }
+  ]
+}

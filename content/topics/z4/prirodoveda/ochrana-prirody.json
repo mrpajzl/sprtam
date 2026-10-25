@@ -1,0 +1,359 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "ochrana-prirody",
+  "title": "Ochrana přírody",
+  "emoji": "♻️",
+  "explanations": [
+    {
+      "title": "Co můžu já",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každý den vyhodíme obal od jogurtu, papír, láhev. Kdyby to všechno skončilo na jedné hromadě, rostly by obrovské skládky."
+        },
+        {
+          "type": "text",
+          "text": "Přírodu nemusí chránit jen vědci. Spoustu můžeš udělat ty – doma, ve škole i na výletě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Odpad",
+          "definition": "Věci, které už nepotřebujeme a vyhazujeme je.",
+          "example": "obaly, papíry, zbytky jídla"
+        },
+        {
+          "type": "term",
+          "term": "Třídění odpadu",
+          "definition": "Dávání odpadu do různých nádob podle materiálu.",
+          "example": "Plast do žlutého, papír do modrého."
+        },
+        {
+          "type": "term",
+          "term": "Recyklace",
+          "definition": "Výroba nových věcí z vytříděného odpadu.",
+          "example": "Ze starých novin se vyrobí nový papír."
+        },
+        {
+          "type": "heading",
+          "text": "Barvy kontejnerů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Barva",
+            "Co tam patří"
+          ],
+          "rows": [
+            [
+              "žlutá",
+              "plasty – PET láhve, kelímky, fólie"
+            ],
+            [
+              "modrá",
+              "papír – noviny, krabice, sešity"
+            ],
+            [
+              "zelená",
+              "sklo – láhve, sklenice"
+            ],
+            [
+              "hnědá",
+              "bioodpad – slupky, tráva, listí"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď odpad do kontejnerů."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Žlutý – plast",
+              "Modrý – papír",
+              "Zelený – sklo"
+            ],
+            "items": [
+              {
+                "text": "PET láhev",
+                "group": 0
+              },
+              {
+                "text": "noviny",
+                "group": 1
+              },
+              {
+                "text": "sklenice od okurek",
+                "group": 2
+              },
+              {
+                "text": "kelímek od jogurtu",
+                "group": 0
+              },
+              {
+                "text": "krabice z kartonu",
+                "group": 1
+              },
+              {
+                "text": "láhev od sirupu (sklo)",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Co ještě můžu dělat"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Zhasnu, když odcházím z místnosti.",
+            "Zavřu kohoutek, když si čistím zuby.",
+            "V přírodě neodhazuji odpadky.",
+            "Netrhám chráněné rostliny a neruším zvířata."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kam vyhodíš krabici od bot?",
+          "answer": "Krabice je z kartonu, tedy papíru. Patří do **modrého** kontejneru. Nejdřív ji sešlápnu."
+        },
+        {
+          "type": "example",
+          "question": "Proč se vyplatí třídit?",
+          "answer": "Z vytříděného papíru, plastu a skla se **vyrobí nové věci**. Ušetří se suroviny a na skládkách je méně odpadu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Láhev od sirupu je láhev, tak patří do žlutého.",
+          "right": "Skleněná láhev patří do zeleného kontejneru (sklo).",
+          "why": "Rozhoduje materiál, ne tvar. Do žlutého patří jen plastové láhve."
+        },
+        {
+          "type": "summary",
+          "text": "Žlutá = plast, modrá = papír, zelená = sklo. Šetřím vodou a elektřinou a v přírodě po sobě uklidím."
+        }
+      ]
+    },
+    {
+      "title": "Chráněná území",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Některá místa jsou tak vzácná, že je stát chrání zákonem. Žijí tam rostliny a zvířata, která jinde skoro nenajdeš."
+        },
+        {
+          "type": "text",
+          "text": "Když jedeš na výlet do Krkonoš nebo na Šumavu, jsi v takovém území. Je dobré vědět, jak se tam chovat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Národní park",
+          "definition": "Velké území s nejcennější přírodou. Chrání se nejpřísněji.",
+          "example": "Krkonošský národní park"
+        },
+        {
+          "type": "term",
+          "term": "CHKO",
+          "definition": "Chráněná krajinná oblast. Chrání krásnou krajinu, kde ale lidé normálně žijí a hospodaří.",
+          "example": "Český ráj, Beskydy"
+        },
+        {
+          "type": "term",
+          "term": "Chráněný druh",
+          "definition": "Rostlina nebo živočich, kterého zákon chrání. Nesmí se trhat, chytat ani rušit.",
+          "example": "rys ostrovid, vydra říční, čáp černý"
+        },
+        {
+          "type": "heading",
+          "text": "Národní parky v Česku"
+        },
+        {
+          "type": "text",
+          "text": "Česko má **4 národní parky**. Podívej se na časovou osu, kdy vznikly."
+        },
+        {
+          "type": "widget",
+          "widget": "timeline",
+          "props": {
+            "events": [
+              {
+                "year": 1963,
+                "label": "Krkonošský národní park"
+              },
+              {
+                "year": 1991,
+                "label": "Šumava a Podyjí"
+              },
+              {
+                "year": 2000,
+                "label": "České Švýcarsko"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak se chovat v chráněném území"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Chodím jen po značených cestách.",
+            "Netrhám rostliny a nesbírám nerosty.",
+            "Neruším zvířata – nekřičím, nekrmím je.",
+            "Odpadky si odnesu domů.",
+            "Nerozdělávám oheň mimo vyhrazená místa."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Který národní park je u nás nejstarší?",
+          "answer": "Podle časové osy vznikl první **Krkonošský národní park** – roku 1963."
+        },
+        {
+          "type": "example",
+          "question": "V národním parku vidíš krásnou kytku. Můžeš ji utrhnout?",
+          "answer": "**Ne.** V národním parku se rostliny netrhají – mohla by to být chráněná rostlina."
+        },
+        {
+          "type": "mistake",
+          "wrong": "CHKO je zkratka národního parku.",
+          "right": "CHKO je chráněná krajinná oblast.",
+          "why": "Národní park chrání přírodu přísněji. V CHKO lidé běžně bydlí a hospodaří."
+        },
+        {
+          "type": "summary",
+          "text": "Česko má 4 národní parky: Krkonoše, Šumava, Podyjí, České Švýcarsko. Další chráněná území jsou CHKO."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Do jaké barvy kontejneru patří plast?",
+      "options": [
+        "žluté",
+        "modré",
+        "zelené"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Do jaké barvy kontejneru patří papír?",
+      "options": [
+        "modré",
+        "žluté",
+        "hnědé"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik národních parků má Česko? Napiš číslo.",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který národní park je u nás nejstarší?",
+      "options": [
+        "Krkonošský",
+        "Šumava",
+        "České Švýcarsko"
+      ],
+      "answer": 0,
+      "explanation": "Krkonošský národní park vznikl roku 1963."
+    },
+    {
+      "type": "truefalse",
+      "question": "V národním parku se smí trhat všechny rostliny.",
+      "answer": false
+    },
+    {
+      "type": "match",
+      "question": "Spoj odpad s kontejnerem.",
+      "pairs": [
+        [
+          "noviny",
+          "modrý"
+        ],
+        [
+          "PET láhev",
+          "žlutý"
+        ],
+        [
+          "sklenice",
+          "zelený"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená zkratka CHKO?",
+      "options": [
+        "chráněná krajinná oblast",
+        "chráněná krásná obec",
+        "chovná krajina oblasti"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Rys ostrovid je u nás chráněný.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď národní parky podle vzniku.",
+      "items": [
+        "Krkonošský",
+        "Šumava",
+        "České Švýcarsko"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co pomáhá přírodě?",
+      "options": [
+        "zhasnout, když odcházím",
+        "nechat téct vodu",
+        "vyhodit láhev do lesa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak můžeš ty sám chránit přírodu?",
+      "answer": "Třídím odpad a neodhazuji ho v přírodě. Šetřím vodou a elektřinou. Netrhám chráněné rostliny a neruším zvířata."
+    },
+    {
+      "type": "open",
+      "question": "Proč se odpad třídí?",
+      "answer": "Z vytříděného papíru, plastu a skla se vyrobí nové věci. Ušetří se suroviny a na skládkách je méně odpadu."
+    }
+  ]
+}

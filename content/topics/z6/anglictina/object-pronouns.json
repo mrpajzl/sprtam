@@ -1,0 +1,418 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "object-pronouns",
+  "title": "Zájmena v předmětu",
+  "emoji": "👉",
+  "explanations": [
+    {
+      "title": "Situací",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky říkáš „**On** mě má rád“, ale „Já mám rád **jeho**“. Stejný kluk – a jednou *on*, jindy *jeho*. Záleží na tom, jestli něco **dělá**, nebo se něco **děje jemu**."
+        },
+        {
+          "type": "text",
+          "text": "Angličtina to má stejně: *he* × *him*, *she* × *her*. Bez toho bys neřekl ani „Zavolej **mi**“ nebo „Pojď s **námi**“."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zájmeno",
+          "definition": "Krátké slovo místo jména, abychom ho pořád neopakovali.",
+          "example": "Tom → he, Anna → she"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Ten, kdo ve větě **něco dělá**. Stojí **před** slovesem. Ptáš se **kdo?**",
+          "example": "**He** loves Anna. (Kdo miluje? He.)"
+        },
+        {
+          "type": "term",
+          "term": "Předmět",
+          "definition": "Ten, **komu** se něco děje. Stojí **za** slovesem nebo za předložkou (for, with, to…). Ptáš se **koho? komu?**",
+          "example": "Anna loves **him**. (Koho miluje? Him.)"
+        },
+        {
+          "type": "term",
+          "term": "Předložka",
+          "definition": "Malé slovo před jménem: for (pro), with (s), to (k), at (na).",
+          "example": "for me = pro mě"
+        },
+        {
+          "type": "heading",
+          "text": "Situace: Tom a Anna"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "👦",
+            "➡️",
+            "👧"
+          ],
+          "caption": "He loves her."
+        },
+        {
+          "type": "text",
+          "text": "**He** loves **her**. = On ji miluje. Tom něco dělá → *he* (podmět). Anně se něco děje → *her* (předmět)."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "👧",
+            "➡️",
+            "👦"
+          ],
+          "caption": "She loves him."
+        },
+        {
+          "type": "text",
+          "text": "**She** loves **him**. = Ona miluje jeho. Teď je Anna podmět (*she*) a Tom předmět (*him*)."
+        },
+        {
+          "type": "heading",
+          "text": "Všechny tvary"
+        },
+        {
+          "type": "text",
+          "text": "Za slovesem a za předložkou používáš: **me** (mě, mi), **you** (tě, ti), **him** (ho, mu), **her** (ji, jí), **it** (to, ho), **us** (nás, nám), **them** (je, jim)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Mezera je za slovesem nebo předložkou – vyber tvar předmětu."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "This is Anna. I know ",
+                "after": ".",
+                "options": [
+                  "her",
+                  "she"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Call ",
+                "after": " tomorrow, please.",
+                "options": [
+                  "me",
+                  "I"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Where are my shoes? I can’t find ",
+                "after": ".",
+                "options": [
+                  "them",
+                  "they"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Come with ",
+                "after": "!",
+                "options": [
+                  "us",
+                  "we"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Nahraď jméno zájmenem: I like Tom.",
+          "answer": "Tom stojí **za** slovesem *like* → je to předmět → **him**. Věta: **I like him.**"
+        },
+        {
+          "type": "example",
+          "question": "Řekni anglicky: Ten dárek je pro ni. (dárek = present)",
+          "answer": "Za předložkou **for** → předmět → **her**. Věta: **This present is for her.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "This present is for she.",
+          "right": "This present is for her.",
+          "why": "Za předložkou (for, with, to…) je vždy tvar předmětu: **me, him, her, us, them**."
+        },
+        {
+          "type": "summary",
+          "text": "Za slovesem a předložkou: **me, you, him, her, it, us, them**."
+        }
+      ]
+    },
+    {
+      "title": "Dvojicemi",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každé anglické osobní zájmeno má **dvojče**: jedno stojí před slovesem, druhé za ním. *I* a *me*, *we* a *us*… Když dvojčata znáš, nespleteš se."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se dvojice a jednoduché pravidlo podle místa ve větě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Osobní zájmeno",
+          "definition": "Slovo místo jména osoby nebo věci: já, ty, on, ona, ono, my, oni.",
+          "example": "I, you, he, she, it, we, they"
+        },
+        {
+          "type": "term",
+          "term": "Sloveso",
+          "definition": "Slovo, které říká, co kdo dělá.",
+          "example": "help, see, call"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo děj **dělá**. Stojí **před** slovesem.",
+          "example": "**She** helps me."
+        },
+        {
+          "type": "term",
+          "term": "Předmět",
+          "definition": "Na koho děj **míří**. Stojí **za** slovesem nebo za předložkou (for, with, to…).",
+          "example": "I help **her**."
+        },
+        {
+          "type": "heading",
+          "text": "Dvojice"
+        },
+        {
+          "type": "text",
+          "text": "Vlevo je tvar podmětu, vpravo předmětu. Řekni si dvojici nahlas a klepni na kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "I",
+                "back": "me"
+              },
+              {
+                "front": "you",
+                "back": "you"
+              },
+              {
+                "front": "he",
+                "back": "him"
+              },
+              {
+                "front": "she",
+                "back": "her"
+              },
+              {
+                "front": "it",
+                "back": "it"
+              },
+              {
+                "front": "we",
+                "back": "us"
+              },
+              {
+                "front": "they",
+                "back": "them"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Všimni si: **you** a **it** se nemění."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo podle místa"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Podmět (kdo?) – před slovesem",
+            "Předmět (koho?) – za slovesem"
+          ],
+          "rows": [
+            [
+              "**She** helps me.",
+              "I help **her**."
+            ],
+            [
+              "**They** see us.",
+              "We see **them**."
+            ],
+            [
+              "**He** calls me.",
+              "I call **him**."
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi sloveso.",
+            "Zájmeno **před** ním → tvar podmětu (I, he, she, we, they).",
+            "Zájmeno **za** ním nebo za předložkou → tvar předmětu (me, him, her, us, them)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Nahraď podstatná jména zájmeny: Peter gives the books to Jane and Mark.",
+          "answer": "*Peter* je před slovesem → **he**. *the books* za slovesem → **them**. *Jane and Mark* za předložkou to → **them**. Věta: **He gives them to them.**"
+        },
+        {
+          "type": "example",
+          "question": "Look at the dog! Look at ___!",
+          "answer": "Pes je zvíře → **it**. Za předložkou *at* se *it* nemění. → **Look at it!**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Can you help I?",
+          "right": "Can you help me?",
+          "why": "*I* stojí jen před slovesem. Za slovesem *help* je předmět → **me**."
+        },
+        {
+          "type": "summary",
+          "text": "Před slovesem podmět (**I, he, she, we, they**), za ním předmět (**me, him, her, us, them**)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Předmětový tvar od „he“:",
+      "answers": [
+        "him"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Předmětový tvar od „we“:",
+      "answers": [
+        "us"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Předmětový tvar od „they“:",
+      "answers": [
+        "them"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Can you help ___?",
+      "options": [
+        "me",
+        "I",
+        "my"
+      ],
+      "answer": 0,
+      "explanation": "Za slovesem je předmět → me."
+    },
+    {
+      "type": "choice",
+      "question": "I like my teacher. I like ___.",
+      "options": [
+        "her",
+        "she",
+        "hers"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Look at the dog! Look at ___!",
+      "options": [
+        "it",
+        "him",
+        "its"
+      ],
+      "answer": 0,
+      "explanation": "Zvíře (obecně) = it."
+    },
+    {
+      "type": "truefalse",
+      "question": "„This present is for she.“ je správně.",
+      "answer": false,
+      "explanation": "Po předložce předmětový tvar: for her."
+    },
+    {
+      "type": "match",
+      "question": "Spoj podmět a předmět.",
+      "pairs": [
+        [
+          "I",
+          "me"
+        ],
+        [
+          "she",
+          "her"
+        ],
+        [
+          "we",
+          "us"
+        ],
+        [
+          "they",
+          "them"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Tvar „you“ je stejný v podmětu i předmětu.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "My mum",
+        "calls",
+        "me",
+        "every day."
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Kdy použiješ „he“ a kdy „him“? Uveď příklad.",
+      "answer": "He je podmět (kdo dělá): He plays. Him je předmět, po slovese nebo předložce: I see him. It is for him."
+    },
+    {
+      "type": "open",
+      "question": "Nahraď podstatná jména zájmeny: „Peter gives the books to Jane and Mark.“",
+      "answer": "He gives them to them."
+    }
+  ]
+}

@@ -1,0 +1,455 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kraje-cr",
+  "title": "Kraje ČR",
+  "emoji": "🗺️",
+  "explanations": [
+    {
+      "title": "Proč kraje",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve velké škole nemůže ředitel sám hlídat každou třídu. Proto má každá třída svou třídní učitelku. Se státem je to podobné."
+        },
+        {
+          "type": "text",
+          "text": "Česká republika je rozdělená na menší části – **kraje**. Každý se stará o své okolí. Když víš, ve kterém kraji bydlíš, víš, kdo se stará o tvé silnice, nemocnice nebo střední školy."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kraj",
+          "definition": "Velká část republiky, která si o některých věcech rozhoduje sama.",
+          "example": "Brno a Znojmo leží ve stejném kraji – Jihomoravském."
+        },
+        {
+          "type": "term",
+          "term": "Krajské město",
+          "definition": "Město, kde sídlí vedení kraje. Bývá to největší město kraje.",
+          "example": "Krajským městem Jihomoravského kraje je Brno."
+        },
+        {
+          "type": "term",
+          "term": "Krajský úřad",
+          "definition": "Budova a lidé, kteří kraj spravují. V čele kraje stojí **hejtman**."
+        },
+        {
+          "type": "heading",
+          "text": "O co se kraj stará"
+        },
+        {
+          "type": "list",
+          "items": [
+            "o **silnice** mezi městy a vesnicemi",
+            "o **střední školy**",
+            "o mnohé **nemocnice**",
+            "o **autobusy a vlaky** v kraji"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kolik jich je"
+        },
+        {
+          "type": "text",
+          "text": "ČR má **14 krajů**. Zvláštní je **Praha**: je hlavní město i samostatný kraj zároveň."
+        },
+        {
+          "type": "text",
+          "text": "Další zvláštnost: **Středočeský kraj** leží kolem Prahy jako prstýnek. Jeho krajský úřad je **v Praze**, i když Praha do kraje nepatří."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti kraj a zkus říct jeho krajské město. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Jihočeský kraj",
+                "back": "České Budějovice"
+              },
+              {
+                "front": "Jihomoravský kraj",
+                "back": "Brno"
+              },
+              {
+                "front": "Moravskoslezský kraj",
+                "back": "Ostrava"
+              },
+              {
+                "front": "Kraj Vysočina",
+                "back": "Jihlava"
+              },
+              {
+                "front": "Královéhradecký kraj",
+                "back": "Hradec Králové"
+              },
+              {
+                "front": "Ústecký kraj",
+                "back": "Ústí nad Labem"
+              },
+              {
+                "front": "Karlovarský kraj",
+                "back": "Karlovy Vary"
+              },
+              {
+                "front": "Středočeský kraj",
+                "back": "úřad sídlí v Praze"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Do které střední školy se přihlásí Jana z Třebíče? O její školu se stará kraj. Který?",
+          "answer": "Třebíč leží v **Kraji Vysočina**. Krajským městem je **Jihlava**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik krajů má ČR, když nepočítáme Prahu?",
+          "answer": "14 − 1 = **13** krajů. Praha je čtrnáctý."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Krajské město Středočeského kraje je Kladno.",
+          "right": "Krajský úřad Středočeského kraje sídlí **v Praze**.",
+          "why": "Kladno je největší město Středočeského kraje, ale úřad je v Praze, uprostřed kraje."
+        },
+        {
+          "type": "summary",
+          "text": "ČR má 14 krajů. Každý má krajské město s úřadem. Praha je hlavní město i samostatný kraj."
+        }
+      ]
+    },
+    {
+      "title": "Podle jména",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že máš zapamatovat 14 dvojic. Zní to těžce. Ale je tu trik: většina krajů se jmenuje **podle svého města**. Stačí si zapamatovat pár výjimek."
+        },
+        {
+          "type": "text",
+          "text": "Hodí se to na výletě, ve zprávách o počasí i v zeměpise."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kraj",
+          "definition": "Jedna ze 14 částí, na které je rozdělená Česká republika. Stará se o silnice, střední školy, nemocnice a dopravu."
+        },
+        {
+          "type": "term",
+          "term": "Krajské město",
+          "definition": "Město, kde sídlí krajský úřad – vedení kraje."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo: jméno kraje = jméno města"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kraj",
+            "Krajské město"
+          ],
+          "rows": [
+            [
+              "Plzeňský",
+              "Plzeň"
+            ],
+            [
+              "Liberecký",
+              "Liberec"
+            ],
+            [
+              "Pardubický",
+              "Pardubice"
+            ],
+            [
+              "Olomoucký",
+              "Olomouc"
+            ],
+            [
+              "Zlínský",
+              "Zlín"
+            ],
+            [
+              "Karlovarský",
+              "Karlovy Vary"
+            ],
+            [
+              "Ústecký",
+              "Ústí nad Labem"
+            ],
+            [
+              "Královéhradecký",
+              "Hradec Králové"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Výjimky – ty si zapamatuj"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kraj",
+            "Krajské město",
+            "Proč"
+          ],
+          "rows": [
+            [
+              "Hlavní město Praha",
+              "Praha",
+              "město je samo krajem"
+            ],
+            [
+              "Středočeský",
+              "úřad v Praze",
+              "leží kolem Prahy"
+            ],
+            [
+              "Jihočeský",
+              "České Budějovice",
+              "jméno podle polohy (jih Čech)"
+            ],
+            [
+              "Jihomoravský",
+              "Brno",
+              "jih Moravy"
+            ],
+            [
+              "Moravskoslezský",
+              "Ostrava",
+              "leží na Moravě i ve Slezsku"
+            ],
+            [
+              "Vysočina",
+              "Jihlava",
+              "podle kopcovité krajiny"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň správné město."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Krajské město Vysočiny je",
+                "after": ".",
+                "options": [
+                  "Jihlava",
+                  "Třebíč"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Krajské město Moravskoslezského kraje je",
+                "after": ".",
+                "options": [
+                  "Opava",
+                  "Ostrava"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Krajské město Jihočeského kraje je",
+                "after": ".",
+                "options": [
+                  "České Budějovice",
+                  "Tábor"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Krajské město Jihomoravského kraje je",
+                "after": ".",
+                "options": [
+                  "Brno",
+                  "Znojmo"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jak se jmenuje krajské město Pardubického kraje?",
+          "answer": "Kraj se jmenuje podle města → **Pardubice**."
+        },
+        {
+          "type": "example",
+          "question": "Jak se jmenuje krajské město Jihočeského kraje?",
+          "answer": "Tady pravidlo neplatí – jméno je podle polohy. Musíš si to pamatovat: **České Budějovice**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Krajské město Karlovarského kraje je Cheb.",
+          "right": "Je to **Karlovy Vary**.",
+          "why": "Jméno kraje napoví: Karlovarský → Karlovy Vary. Cheb je jen další velké město v kraji."
+        },
+        {
+          "type": "summary",
+          "text": "Většina krajů nese jméno svého města. Výjimky: Jihočeský → České Budějovice, Jihomoravský → Brno, Moravskoslezský → Ostrava, Vysočina → Jihlava, Středočeský → úřad v Praze."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik krajů má Česká republika?",
+      "answers": [
+        "14",
+        "čtrnáct"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které je krajské město Kraje Vysočina?",
+      "options": [
+        "Jihlava",
+        "Třebíč",
+        "Žďár nad Sázavou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které je krajské město Moravskoslezského kraje?",
+      "options": [
+        "Ostrava",
+        "Opava",
+        "Olomouc"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj kraj s krajským městem.",
+      "pairs": [
+        [
+          "Jihočeský",
+          "České Budějovice"
+        ],
+        [
+          "Jihomoravský",
+          "Brno"
+        ],
+        [
+          "Ústecký",
+          "Ústí nad Labem"
+        ],
+        [
+          "Zlínský",
+          "Zlín"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Praha je hlavní město a zároveň samostatný kraj.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kde sídlí úřad Středočeského kraje?",
+      "options": [
+        "v Praze",
+        "v Kladně",
+        "v Kolíně"
+      ],
+      "answer": 0,
+      "explanation": "Středočeský kraj nemá krajský úřad ve svém území, sídlí v Praze."
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje krajské město Královéhradeckého kraje?",
+      "answers": [
+        "Hradec Králové"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Krajské město Karlovarského kraje je Cheb.",
+      "answer": false,
+      "explanation": "Je to Karlovy Vary."
+    },
+    {
+      "type": "match",
+      "question": "Spoj kraj s krajským městem.",
+      "pairs": [
+        [
+          "Plzeňský",
+          "Plzeň"
+        ],
+        [
+          "Liberecký",
+          "Liberec"
+        ],
+        [
+          "Pardubický",
+          "Pardubice"
+        ],
+        [
+          "Olomoucký",
+          "Olomouc"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém kraji leží Brno?",
+      "options": [
+        "Jihomoravský",
+        "Zlínský",
+        "Olomoucký"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Ve kterém kraji bydlíš a jaké je jeho krajské město?",
+      "answer": "Např.: Bydlím v Jihomoravském kraji, krajské město je Brno. (Odpověď podle místa bydliště.)"
+    },
+    {
+      "type": "open",
+      "question": "K čemu slouží kraje?",
+      "answer": "Stát je rozdělen na menší části, aby se lépe spravoval. Kraj se stará třeba o silnice, střední školy a nemocnice."
+    }
+  ]
+}

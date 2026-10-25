@@ -1,0 +1,335 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zvirata",
+  "title": "Zvířata a mláďata",
+  "emoji": "🐄",
+  "explanations": [
+    {
+      "title": "Domácí a divoká",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Doma možná máš psa nebo kočku. Dáváš jim jídlo a hladíš je. V lese ale žije liška. Tu nikdo nekrmí."
+        },
+        {
+          "type": "text",
+          "text": "Zvířata dělíme podle toho, jestli se o ně stará člověk. Je dobré to vědět: o domácí zvíře se musíš starat, divoké necháváme v klidu."
+        },
+        {
+          "type": "term",
+          "term": "Domácí zvíře",
+          "definition": "Zvíře, které chová člověk. Dává mu jíst a stará se o něj.",
+          "example": "pes, kočka, kráva, slepice"
+        },
+        {
+          "type": "term",
+          "term": "Volně žijící zvíře",
+          "definition": "Zvíře, které žije samo v přírodě. Potravu si najde samo.",
+          "example": "liška, jelen, veverka, ježek"
+        },
+        {
+          "type": "heading",
+          "text": "Co nám domácí zvířata dávají"
+        },
+        {
+          "type": "list",
+          "items": [
+            "kráva 🐄 dává **mléko**",
+            "slepice 🐔 snáší **vejce**",
+            "ovce 🐑 dává **vlnu** na svetry",
+            "pes 🐕 hlídá a je kamarád"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď zvířata: kdo bydlí u lidí a kdo v přírodě?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Domácí 🏡",
+              "Volně žijící 🌲"
+            ],
+            "items": [
+              {
+                "text": "kráva 🐄",
+                "group": 0
+              },
+              {
+                "text": "pes 🐕",
+                "group": 0
+              },
+              {
+                "text": "slepice 🐔",
+                "group": 0
+              },
+              {
+                "text": "kočka 🐈",
+                "group": 0
+              },
+              {
+                "text": "liška 🦊",
+                "group": 1
+              },
+              {
+                "text": "jelen 🦌",
+                "group": 1
+              },
+              {
+                "text": "veverka 🐿️",
+                "group": 1
+              },
+              {
+                "text": "ježek 🦔",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je koza domácí, nebo volně žijící zvíře?",
+          "answer": "Kozu chová člověk na statku a dojí ji. Je to **domácí** zvíře."
+        },
+        {
+          "type": "example",
+          "question": "Na zahradě jsi potkal ježka. Je domácí?",
+          "answer": "Ježka nikdo nechová, sám si hledá potravu. Je **volně žijící**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ježek přišel na zahradu, takže je domácí.",
+          "right": "Ježek je volně žijící zvíře, i když přijde k domu.",
+          "why": "Domácí je zvíře, o které se člověk stará. Ježek se stará sám o sebe."
+        },
+        {
+          "type": "text",
+          "text": "O domácí zvíře se staráš **každý den**: jídlo, voda, úklid, procházka."
+        },
+        {
+          "type": "summary",
+          "text": "Domácí zvířata chová člověk a stará se o ně. Volně žijící žijí v přírodě sama."
+        }
+      ]
+    },
+    {
+      "title": "Máma a mládě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "I ty jsi byl malé miminko. Maminka tě krmila a hlídala. Zvířata mají taky svá miminka."
+        },
+        {
+          "type": "text",
+          "text": "Malé zvířátko se často jmenuje úplně jinak než jeho máma. Když ta jména znáš, rozumíš pohádkám i lidem na statku."
+        },
+        {
+          "type": "term",
+          "term": "Mládě",
+          "definition": "Malé zvíře, zvířecí miminko. Rodiče se o něj starají, než vyroste.",
+          "example": "Kotě je mládě kočky."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🐄",
+            "➡️",
+            "🐮"
+          ],
+          "caption": "Kráva a její mládě – tele"
+        },
+        {
+          "type": "heading",
+          "text": "Kdo je čí mládě"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičku. Vepředu je máma, vzadu její mládě."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "🐄 kráva",
+                "back": "tele"
+              },
+              {
+                "front": "🐖 prase",
+                "back": "sele"
+              },
+              {
+                "front": "🐔 slepice",
+                "back": "kuře"
+              },
+              {
+                "front": "🐕 pes",
+                "back": "štěně"
+              },
+              {
+                "front": "🐈 kočka",
+                "back": "kotě"
+              },
+              {
+                "front": "🐎 kůň",
+                "back": "hříbě"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Všimni si: jména mláďat končí často na **-e** nebo **-ě**: tele, sele, kuře, štěně, kotě, hříbě."
+        },
+        {
+          "type": "example",
+          "question": "Jak se jmenuje mládě psa?",
+          "answer": "Pes má malé pejsky. Mládě psa je **štěně**."
+        },
+        {
+          "type": "example",
+          "question": "Čí mládě je hříbě?",
+          "answer": "Hříbě je malý koníček. Je to mládě **koně**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Mládě krávy je kuře.",
+          "right": "Mládě krávy je tele. Kuře je mládě slepice.",
+          "why": "Kuře se vylíhne z vajíčka. Tele se narodí krávě a pije její mléko."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se o mláďata starají"
+        },
+        {
+          "type": "text",
+          "text": "Kráva tele kojí mlékem. Slepice sedí na vejcích, aby byla v teple. Pak kuřata vodí a hlídá."
+        },
+        {
+          "type": "summary",
+          "text": "Mládě = malé zvíře. Kráva – tele, prase – sele, slepice – kuře, pes – štěně, kočka – kotě, kůň – hříbě."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje mládě krávy?",
+      "options": [
+        "tele",
+        "sele",
+        "kotě"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje mládě psa?",
+      "options": [
+        "štěně",
+        "kuře",
+        "hříbě"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Mládě kočky je ………",
+      "answers": [
+        "kotě"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj mámu a mládě.",
+      "pairs": [
+        [
+          "slepice",
+          "kuře"
+        ],
+        [
+          "prase",
+          "sele"
+        ],
+        [
+          "kůň",
+          "hříbě"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Liška je domácí zvíře.",
+      "answer": false,
+      "explanation": "Liška žije volně v lese."
+    },
+    {
+      "type": "truefalse",
+      "question": "Kráva nám dává mléko.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Které zvíře snáší vejce?",
+      "options": [
+        "slepice",
+        "kráva",
+        "pes"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které zvíře žije v lese?",
+      "options": [
+        "jelen",
+        "slepice",
+        "koza"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo dává vlnu?",
+      "options": [
+        "ovce",
+        "kočka",
+        "kůň"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "O domácí zvíře se musím starat každý den.",
+      "answer": true,
+      "explanation": "Potřebuje jídlo, vodu a péči."
+    },
+    {
+      "type": "open",
+      "question": "Jak se staráš o domácí zvíře?",
+      "answer": "Dám mu jíst a pít, uklidím mu, venčím ho a hraju si s ním."
+    },
+    {
+      "type": "open",
+      "question": "Jmenuj tři domácí zvířata a jejich mláďata.",
+      "answer": "Například kráva – tele, slepice – kuře, pes – štěně."
+    }
+  ]
+}

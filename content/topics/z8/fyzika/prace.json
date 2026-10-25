@@ -1,0 +1,313 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "prace",
+  "title": "Mechanická práce",
+  "emoji": "🏋️",
+  "explanations": [
+    {
+      "title": "Ve fyzice a v životě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Učíš se na test a řekneš: „To je ale práce!“ Fyzik by se zasmál – podle něj teď žádnou práci nekonáš. Ve fyzice znamená slovo práce něco přesnějšího."
+        },
+        {
+          "type": "text",
+          "text": "Fyzikální práce říká, kolik námahy stroj nebo člověk opravdu „předal“ tím, že něčím pohnul. Podle ní se navrhují jeřáby, motory i výtahy."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla",
+          "definition": "Tlačení nebo tahání jednoho tělesa druhým. Měří se v newtonech (N). Těleso 1 kg táhne Země dolů silou asi 10 N.",
+          "example": "Když tlačíš nákupní vozík, působíš na něj silou."
+        },
+        {
+          "type": "term",
+          "term": "Dráha",
+          "definition": "Vzdálenost, o kterou se těleso posunulo. V metrech (m).",
+          "example": "Vozík jsi posunul o 5 m."
+        },
+        {
+          "type": "term",
+          "term": "Mechanická práce",
+          "definition": "Práci konáš, když **silou posuneš těleso** po nějaké dráze ve směru síly. Značka `W`.",
+          "example": "Zvedáš tašku, táhneš sáňky, tlačíš skříň."
+        },
+        {
+          "type": "heading",
+          "text": "Kdy se práce koná a kdy ne"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Jeřáb zvedá panel → **koná** práci (síla nahoru, panel jede nahoru).",
+            "Táhneš sáňky do kopce → **koná** se práce.",
+            "Držíš činku nad hlavou a nehýbeš s ní → **nekonáš** práci. Svaly se unaví, ale činka se neposunula.",
+            "Sloup drží střechu → **nekoná** práci, nic se nehýbe."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Na čem práce záleží"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že neseš do schodů tašky. Dvě tašky místo jedné = **dvakrát větší síla** = dvakrát víc práce. Do 2. patra místo do 1. = **dvakrát delší dráha** = taky dvakrát víc práce."
+        },
+        {
+          "type": "text",
+          "text": "Práce tedy roste se silou i s dráhou. Měří se v **joulech (J)**. **1 J** je práce, kterou vykonáš, když silou 1 N posuneš těleso o 1 m – třeba když zvedneš čokoládu 100 g o 1 metr."
+        },
+        {
+          "type": "example",
+          "question": "Kamarád tlačí bednu silou 50 N a posune ji o 4 m. Jakou práci vykonal?",
+          "answer": "Síla 50 N na každém z 4 metrů: 50 · 4 = **200 J**."
+        },
+        {
+          "type": "example",
+          "question": "Petr zvedl batoh o 1 m, Jana stejný batoh o 2 m. Kdo vykonal víc práce?",
+          "answer": "**Jana** – stejná síla, ale dvakrát delší dráha. Vykonala dvakrát víc práce."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když dlouho držím těžkou věc, konám velkou práci.",
+          "right": "Když se věc nepohybuje, fyzikální práce je nulová.",
+          "why": "Ve fyzice je práce síla krát dráha. Dráha je 0, takže i práce je 0 – i když se unavíš."
+        },
+        {
+          "type": "summary",
+          "text": "Práci konáme, když silou posuneme těleso po dráze ve směru síly. Víc síly nebo delší dráha = víc práce. Jednotka joule (J)."
+        }
+      ]
+    },
+    {
+      "title": "Vzorcem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolik práce udělá jeřáb, který zvedne panel na střechu? Kolik ty, když vyneseš nákup do 4. patra? Práce se dá spočítat jednoduchým vzorcem."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla `F`",
+          "definition": "Tlačení nebo tahání, v newtonech (N).",
+          "example": "Tah lana 300 N."
+        },
+        {
+          "type": "term",
+          "term": "Dráha `s`",
+          "definition": "O kolik metrů se těleso posunulo ve směru síly.",
+          "example": "s = 4 m."
+        },
+        {
+          "type": "term",
+          "term": "Práce `W`",
+          "definition": "Síla krát dráha: `W = F · s`. Jednotka **joule (J)**: 1 J = 1 N · 1 m.",
+          "example": "Síla 10 N po dráze 3 m vykoná 30 J."
+        },
+        {
+          "type": "term",
+          "term": "Tíhové zrychlení `g`",
+          "definition": "Kolik newtonů táhne Země každý kilogram: asi **10 N/kg**.",
+          "example": "Taška 5 kg je přitahována silou 5 · 10 = 50 N."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorec pro zvedání"
+        },
+        {
+          "type": "text",
+          "text": "Když těleso zvedáš, musíš přemáhat sílu, kterou ho Země táhne dolů: `F = m · g`. Dráha je výška `h`. Dosadíš do W = F · s a máš:"
+        },
+        {
+          "type": "text",
+          "text": "`W = m · g · h`"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti sílu (při zvedání F = m · g).",
+            "Zjisti dráhu ve směru síly (při zvedání výška h).",
+            "Vynásob: W = F · s.",
+            "Výsledek v joulech; velká čísla převeď: **1 kJ = 1 000 J**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jakou práci vykonáš zvednutím 20 kg do výšky 3 m?",
+          "answer": "F = 20 · 10 = 200 N. W = 200 · 3 = **600 J**."
+        },
+        {
+          "type": "example",
+          "question": "Vykonaná práce je 1 200 J, síla 300 N. Po jaké dráze?",
+          "answer": "Ze vzorce W = F · s: s = W : F = 1 200 : 300 = **4 m**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik joulů je 2,5 kJ?",
+          "answer": "1 kJ = 1 000 J → 2,5 · 1 000 = **2 500 J**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zkus si na kartách říct výsledek dřív, než je otočíš."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "10 N po dráze 2 m",
+                "back": "20 J"
+              },
+              {
+                "front": "1 kg zvednout o 1 m",
+                "back": "10 J"
+              },
+              {
+                "front": "držet 50 N bez pohybu",
+                "back": "0 J"
+              },
+              {
+                "front": "5 kg zvednout o 2 m",
+                "back": "100 J"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zvednu 20 kg do 3 m: W = 20 · 3 = 60 J",
+          "right": "W = 20 · 10 · 3 = 600 J",
+          "why": "Do vzorce W = F · s patří **síla v newtonech**, ne hmotnost v kilogramech. Hmotnost musíš vynásobit g."
+        },
+        {
+          "type": "summary",
+          "text": "`W = F · s`, při zvedání `W = m · g · h`. Jednotka joule, 1 kJ = 1 000 J. Bez pohybu není práce."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je jednotka práce?",
+      "options": [
+        "joule",
+        "watt",
+        "newton",
+        "pascal"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Síla 50 N posune bednu o 4 m. Práce v J =",
+      "answers": [
+        "200"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Jakou práci v J vykonáš zvednutím 20 kg do výšky 3 m? (g = 10 N/kg)",
+      "answers": [
+        "600"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Když držíš činku nehybně nad hlavou, konáš mechanickou práci.",
+      "answer": false,
+      "explanation": "Činka se neposouvá, s = 0, W = 0."
+    },
+    {
+      "type": "input",
+      "question": "Kolik J je 2,5 kJ?",
+      "answers": [
+        "2500"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Vykonaná práce je 1 200 J, síla 300 N. Dráha v m =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdy se koná práce?",
+      "options": [
+        "jeřáb zvedá panel",
+        "sloup drží střechu",
+        "kniha leží na stole",
+        "auto stojí na parkovišti"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj veličinu s jednotkou.",
+      "pairs": [
+        [
+          "práce",
+          "J"
+        ],
+        [
+          "síla",
+          "N"
+        ],
+        [
+          "dráha",
+          "m"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní práce, když zvedneš stejné těleso do dvojnásobné výšky?",
+      "options": [
+        "zdvojnásobí se",
+        "nezmění se",
+        "zmenší se na polovinu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "1 J je práce, kterou vykoná síla 1 N po dráze 1 m.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Kdy fyzikálně konáme práci a kdy ne?",
+      "answer": "Práci konáme, když síla posune těleso po nějaké dráze ve svém směru. Když těleso jen držíme a nehýbe se, práci nekonáme."
+    },
+    {
+      "type": "open",
+      "question": "Jak vypočítáš práci při zvedání tělesa?",
+      "answer": "W = m · g · h. Hmotnost krát tíhové zrychlení (asi 10 N/kg) krát výška. Výsledek je v joulech."
+    }
+  ]
+}

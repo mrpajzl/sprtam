@@ -1,0 +1,474 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "formy-statu",
+  "title": "Formy státu",
+  "emoji": "👑",
+  "explanations": [
+    {
+      "title": "Srovnání států",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve Spojeném království je hlavou státu král. V Česku prezident. V USA je prezident zároveň šéfem vlády, v Česku vládu vede premiér. Německo se skládá ze spolkových zemí s vlastními parlamenty, Česko ne."
+        },
+        {
+          "type": "text",
+          "text": "Státy jsou zkrátka **uspořádané různě**. Když se v tom vyznáš, rozumíš zprávám ze zahraničí a víš, proč má třeba americký prezident mnohem víc moci než český."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hlava státu",
+          "definition": "Nejvyšší představitel státu, který ho zastupuje navenek.",
+          "example": "Prezident v Česku, král ve Švédsku."
+        },
+        {
+          "type": "term",
+          "term": "Monarchie",
+          "definition": "Stát, v jehož čele stojí **panovník** (král, kníže, císař). Funkci obvykle **zdědí** a vykonává ji doživotně.",
+          "example": "Spojené království, Švédsko, Španělsko, Nizozemsko."
+        },
+        {
+          "type": "term",
+          "term": "Republika",
+          "definition": "Stát, jehož hlava je **volená** na určitou dobu.",
+          "example": "Česko, Polsko, Francie, USA."
+        },
+        {
+          "type": "term",
+          "term": "Parlament",
+          "definition": "Shromáždění volených zástupců lidu, které schvaluje zákony.",
+          "example": "V Česku Poslanecká sněmovna a Senát."
+        },
+        {
+          "type": "term",
+          "term": "Vláda",
+          "definition": "Skupina ministrů v čele s předsedou vlády (premiérem), která řídí stát každý den.",
+          "example": "Ministr školství, ministr financí…"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď státy. Ptej se: má v čele krále či královnu, nebo voleného prezidenta?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Monarchie",
+              "Republika"
+            ],
+            "items": [
+              {
+                "text": "Spojené království",
+                "group": 0
+              },
+              {
+                "text": "Švédsko",
+                "group": 0
+              },
+              {
+                "text": "Španělsko",
+                "group": 0
+              },
+              {
+                "text": "Nizozemsko",
+                "group": 0
+              },
+              {
+                "text": "Česko",
+                "group": 1
+              },
+              {
+                "text": "Francie",
+                "group": 1
+              },
+              {
+                "text": "USA",
+                "group": 1
+              },
+              {
+                "text": "Polsko",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Tři druhy republik"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Parlamentní republika**: zemi řídí vláda, která je **odpovědná parlamentu** – parlament ji může odvolat. Prezident má spíš reprezentativní roli. *Česko, Německo, Itálie.*",
+            "**Prezidentská republika**: prezident je **hlavou státu i šéfem vlády**. Parlament ho za politiku odvolat nemůže. *USA.*",
+            "**Poloprezidentská republika**: silný, přímo volený prezident **a zároveň** vláda odpovědná parlamentu. *Francie.*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Tři druhy uspořádání"
+        },
+        {
+          "type": "term",
+          "term": "Unitární stát",
+          "definition": "Jednotný stát: **jedna ústava, jeden parlament** pro celé území. Kraje mají jen samosprávu, vlastní zákony nevydávají.",
+          "example": "Česko, Francie, Polsko."
+        },
+        {
+          "type": "term",
+          "term": "Federace",
+          "definition": "**Svazový stát** z členských států (spolkových zemí). Každý má vlastní ústavu a parlament, ale společně tvoří jeden stát.",
+          "example": "Německo (16 spolkových zemí), USA (50 států)."
+        },
+        {
+          "type": "term",
+          "term": "Konfederace",
+          "definition": "**Volný svazek** samostatných (suverénních) států, které spolupracují jen v některých věcech.",
+          "example": "Historicky třeba USA v letech 1781–1789, než přijaly ústavu."
+        },
+        {
+          "type": "table",
+          "head": [
+            "stát",
+            "hlava státu",
+            "uspořádání",
+            "forma"
+          ],
+          "rows": [
+            [
+              "Česko",
+              "prezident",
+              "unitární",
+              "parlamentní republika"
+            ],
+            [
+              "Německo",
+              "prezident",
+              "federace",
+              "parlamentní republika"
+            ],
+            [
+              "USA",
+              "prezident",
+              "federace",
+              "prezidentská republika"
+            ],
+            [
+              "Francie",
+              "prezident",
+              "unitární",
+              "poloprezidentská republika"
+            ],
+            [
+              "Spojené království",
+              "panovník",
+              "unitární",
+              "konstituční monarchie"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jaká je Česká republika?",
+          "answer": "Hlavou je volený prezident → **republika**. Vláda odpovídá Poslanecké sněmovně → **parlamentní**. Jedna ústava a jeden parlament → **unitární**. Celkem: **unitární parlamentní republika**."
+        },
+        {
+          "type": "example",
+          "question": "Proč je Německo federace, i když má jednoho prezidenta?",
+          "answer": "Skládá se z 16 spolkových zemí, které mají **vlastní ústavy a parlamenty** (např. Bavorsko). Federace je stále jeden stát s jedním prezidentem."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Spojené království má krále, tak tam král vládne.",
+          "right": "Je to **konstituční monarchie**: moc krále omezuje ústava, skutečně vládne parlament a vláda.",
+          "why": "Král plní hlavně reprezentativní úlohu. Vládu tvoří strana, která vyhraje volby."
+        },
+        {
+          "type": "summary",
+          "text": "Monarchie = panovník dědí trůn, republika = hlava státu je volená. Republiky: parlamentní (ČR), prezidentská (USA), poloprezidentská (Francie). Uspořádání: unitární (ČR), federace (Německo), konfederace."
+        }
+      ]
+    },
+    {
+      "title": "Tři otázky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když chceš popsat auto, řekneš značku, typ karoserie a pohon. Když chceš popsat stát, také použiješ tři „otázky“. Odpovědi dohromady dají **formu státu**."
+        },
+        {
+          "type": "text",
+          "text": "Ta ti řekne, kdo ve státě rozhoduje, jak je stát poskládaný a jak moc jsou lidé svobodní."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Forma státu",
+          "definition": "Souhrnný popis, jak je stát organizovaný. Skládá se ze tří hledisek: **forma vlády**, **státní uspořádání** a **politický režim**.",
+          "example": "ČR: parlamentní republika + unitární stát + demokratický režim."
+        },
+        {
+          "type": "heading",
+          "text": "Otázka 1: Kdo stojí v čele? (forma vlády)"
+        },
+        {
+          "type": "term",
+          "term": "Monarchie",
+          "definition": "V čele je **panovník**, který funkci obvykle **zdědí** a drží doživotně.",
+          "example": "Švédsko, Spojené království."
+        },
+        {
+          "type": "term",
+          "term": "Absolutní monarchie",
+          "definition": "Panovník má **neomezenou** moc.",
+          "example": "Francie za Ludvíka XIV."
+        },
+        {
+          "type": "term",
+          "term": "Konstituční monarchie",
+          "definition": "Moc panovníka **omezuje ústava** (konstituce). Vládne parlament a vláda, panovník hlavně reprezentuje.",
+          "example": "Spojené království, Nizozemsko."
+        },
+        {
+          "type": "term",
+          "term": "Republika",
+          "definition": "Hlava státu je **volená** na omezenou dobu.",
+          "example": "Česko – prezident na 5 let."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Konstituční monarchie",
+                "back": "Moc panovníka omezuje ústava, vládne parlament a vláda."
+              },
+              {
+                "front": "Parlamentní republika",
+                "back": "Vláda odpovídá parlamentu, prezident má omezené pravomoci."
+              },
+              {
+                "front": "Prezidentská republika",
+                "back": "Prezident je hlavou státu i vlády, parlament ho neodvolá vyslovením nedůvěry."
+              },
+              {
+                "front": "Poloprezidentská republika",
+                "back": "Silný přímo volený prezident i vláda odpovědná parlamentu (Francie)."
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a ke každé formě zkus přiřadit jeden stát."
+        },
+        {
+          "type": "heading",
+          "text": "Otázka 2: Jak je stát poskládaný? (státní uspořádání)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Unitární stát** – jeden celek, jedna ústava, jeden zákonodárný sbor (parlament). *Česko.*",
+            "**Federace** – svazový stát z členských států s vlastními ústavami a parlamenty. *Německo, USA.*",
+            "**Konfederace** – volný svazek suverénních (samostatných) států."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Otázka 3: Jak se vládne? (politický režim)"
+        },
+        {
+          "type": "term",
+          "term": "Politický režim",
+          "definition": "Způsob, jak se moc ve státě vykonává: **demokraticky** (svobodné volby, práva lidí) nebo **nedemokraticky** (moc jednoho či skupiny, potlačení svobod).",
+          "example": "Česko je demokracie. Severní Korea je totalitní diktatura."
+        },
+        {
+          "type": "example",
+          "question": "Popiš Spojené království podle tří otázek.",
+          "answer": "1) V čele panovník, jeho moc omezuje ústava → **konstituční monarchie**. 2) Jeden stát s jedním parlamentem → **unitární** (i když Skotsko a Wales mají vlastní samosprávu). 3) Svobodné volby → **demokracie**."
+        },
+        {
+          "type": "example",
+          "question": "Patří „počet obyvatel“ mezi hlediska formy státu?",
+          "answer": "Ne. Hlediska jsou jen tři: **forma vlády**, **státní uspořádání** a **politický režim**. Malé i velké státy mohou mít stejnou formu."
+        },
+        {
+          "type": "heading",
+          "text": "Pohled ze starověku: Aristotelés"
+        },
+        {
+          "type": "text",
+          "text": "Řecký filozof **Aristotelés** dělil formy podle toho, **kolik lidí vládne** a **v čím zájmu**. Správná forma slouží všem, zvrhlá jen vládnoucím:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "kdo vládne",
+            "správná forma",
+            "zvrhlá forma"
+          ],
+          "rows": [
+            [
+              "jeden",
+              "monarchie",
+              "tyranie"
+            ],
+            [
+              "několik nejlepších",
+              "aristokracie",
+              "oligarchie (vláda bohatých)"
+            ],
+            [
+              "mnoho",
+              "politeia",
+              "demokracie (vláda chudých v jejich zájmu)"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Republika je vždy demokratická a monarchie vždy nedemokratická.",
+          "right": "Forma vlády a režim jsou různé otázky.",
+          "why": "Švédsko je monarchie a přitom demokracie. Severní Korea se nazývá republika, ale je to diktatura."
+        },
+        {
+          "type": "summary",
+          "text": "Forma státu = forma vlády (monarchie/republika) + uspořádání (unitární/federace/konfederace) + režim (demokracie/nedemokracie). ČR je unitární parlamentní republika s demokratickým režimem."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je ČR z hlediska formy vlády?",
+      "options": [
+        "Parlamentní republika",
+        "Prezidentská republika",
+        "Poloprezidentská republika",
+        "Konstituční monarchie"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Česká republika je federace.",
+      "answer": false,
+      "explanation": "Je unitárním státem; kraje nemají vlastní ústavy ani zákonodárství."
+    },
+    {
+      "type": "choice",
+      "question": "Který stát je federací?",
+      "options": [
+        "Německo",
+        "Francie",
+        "Polsko",
+        "Česko"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Typickou prezidentskou republikou jsou…",
+      "options": [
+        "USA",
+        "Německo",
+        "Itálie",
+        "Česko"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj Aristotelovu správnou formu se zvrhlou.",
+      "pairs": [
+        [
+          "Monarchie",
+          "tyranie"
+        ],
+        [
+          "Aristokracie",
+          "oligarchie"
+        ],
+        [
+          "Politeia",
+          "demokracie"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "V konstituční monarchii moc panovníka omezuje ústava.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá volný svazek suverénních států?",
+      "answers": [
+        "konfederace"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve Francii má silné postavení přímo volený prezident i vláda odpovědná parlamentu. Jde o…",
+      "options": [
+        "poloprezidentskou republiku",
+        "prezidentskou republiku",
+        "absolutní monarchii",
+        "konfederaci"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Spojené království je republika.",
+      "answer": false,
+      "explanation": "Je to konstituční monarchie."
+    },
+    {
+      "type": "choice",
+      "question": "Co NEPATŘÍ mezi hlediska formy státu?",
+      "options": [
+        "Počet obyvatel",
+        "Forma vlády",
+        "Státní uspořádání",
+        "Politický režim"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi parlamentní a prezidentskou republikou?",
+      "answer": "V parlamentní republice vláda odpovídá parlamentu a ten ji může odvolat; prezident má spíše reprezentativní roli. V prezidentské republice stojí v čele výkonné moci prezident a parlament ho běžně odvolat nemůže."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi unitárním státem a federací.",
+      "answer": "Unitární stát má jednu ústavu, jeden parlament a jednotnou soustavu orgánů (ČR). Federace se skládá z členských států s vlastními ústavami a parlamenty a část pravomocí mají spolkové orgány (Německo, USA)."
+    }
+  ]
+}

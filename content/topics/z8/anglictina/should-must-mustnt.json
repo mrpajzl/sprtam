@@ -1,0 +1,418 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "should-must-mustnt",
+  "title": "Should, must, mustn’t",
+  "emoji": "⚠️",
+  "explanations": [
+    {
+      "title": "Na stupnici",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Doktor ti řekne: „**Měl bys** víc spát.“ To je rada – můžeš ji poslechnout, nebo ne. Učitel řekne: „Na testu **musíš** mít pero.“ To je povinnost. A ve vlaku je cedule: „Kouření **zakázáno**.“ – to se nesmí."
+        },
+        {
+          "type": "text",
+          "text": "Anglicky na to použiješ **should**, **must**, **mustn't** a **don't have to**. Seřadíme je na stupnici podle toho, jak „silně“ něco nařizují."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Modální sloveso",
+          "definition": "Zvláštní pomocné sloveso, které říká, jestli něco **musíš, nesmíš, můžeš** nebo **bys měl**. Za ním je obyčejné sloveso v základním tvaru (bez *to*). Samo nikdy nedostane *-s*.",
+          "example": "You should go. She must go."
+        },
+        {
+          "type": "term",
+          "term": "Rada",
+          "definition": "Doporučení – je dobré to udělat, ale není to povinné.",
+          "example": "Měl bys jíst ovoce."
+        },
+        {
+          "type": "term",
+          "term": "should / shouldn't",
+          "definition": "„měl bys / neměl bys“ – rada.",
+          "example": "You should see a doctor. = Měl bys jít k doktorovi."
+        },
+        {
+          "type": "term",
+          "term": "must / mustn't",
+          "definition": "*must* = musíš (povinnost), *mustn't* = **nesmíš** (zákaz).",
+          "example": "You mustn't smoke here. = Tady nesmíš kouřit."
+        },
+        {
+          "type": "term",
+          "term": "don't have to",
+          "definition": "„nemusíš“ – není to nutné, ale není to ani zakázané.",
+          "example": "We don't have to go to school today."
+        },
+        {
+          "type": "heading",
+          "text": "Stupnice"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Síla",
+            "Anglicky",
+            "Česky",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "povinnost",
+              "must",
+              "musíš",
+              "You must stop at a red light."
+            ],
+            [
+              "rada",
+              "should",
+              "měl bys",
+              "You should sleep more."
+            ],
+            [
+              "volba",
+              "don't have to",
+              "nemusíš",
+              "You don't have to come."
+            ],
+            [
+              "rada nedělat",
+              "shouldn't",
+              "neměl bys",
+              "You shouldn't eat so much chocolate."
+            ],
+            [
+              "zákaz",
+              "mustn't",
+              "nesmíš",
+              "You mustn't touch it."
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď věty: je to rada, nebo zákaz?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "rada",
+              "zákaz"
+            ],
+            "items": [
+              {
+                "text": "You should drink more water.",
+                "group": 0
+              },
+              {
+                "text": "You shouldn't stay up late.",
+                "group": 0
+              },
+              {
+                "text": "You should read this book.",
+                "group": 0
+              },
+              {
+                "text": "You mustn't smoke here.",
+                "group": 1
+              },
+              {
+                "text": "You mustn't cross on red.",
+                "group": 1
+              },
+              {
+                "text": "Students mustn't use phones in tests.",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kamarád je nachlazený. Poraď mu anglicky, ať zůstane doma.",
+          "answer": "Rada → *should*: *You should stay at home.*"
+        },
+        {
+          "type": "example",
+          "question": "Jsou prázdniny. Řekni anglicky, že nemusíme do školy.",
+          "answer": "Není to nutné, ale ani zakázané → *don't have to*: *We don't have to go to school.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "You mustn't come. = Nemusíš přijít.",
+          "right": "You don't have to come. = Nemusíš přijít.",
+          "why": "*Mustn't* je zákaz (nesmíš). „Nemusíš“ je *don't have to*."
+        },
+        {
+          "type": "summary",
+          "text": "**should** = rada, **must** = povinnost, **mustn't** = zákaz, **don't have to** = není nutné."
+        }
+      ]
+    },
+    {
+      "title": "Pravidly",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve škole, doma i v knihách potkáš věty o pravidlech a radách. Abys je uměl sám správně vytvořit, potřebuješ znát nejen význam, ale i to, jak se s těmito slovesy staví věta."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Modální sloveso",
+          "definition": "Sloveso, které mění význam jiného slovesa na „musím, smím, můžu, měl bych“. Patří sem *must, should, can*.",
+          "example": "I go. → I must go. (Jdu. → Musím jít.)"
+        },
+        {
+          "type": "term",
+          "term": "Základní tvar slovesa",
+          "definition": "Sloveso jako ve slovníku – bez *to*, bez *-s*, bez *-ing*.",
+          "example": "go, eat, see"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo činnost dělá – stojí na začátku věty.",
+          "example": "*He* must go. – podmět je *he*."
+        },
+        {
+          "type": "term",
+          "term": "Zápor",
+          "definition": "Věta s „ne“. U modálních sloves stačí přidat *not*.",
+          "example": "should not = shouldn't, must not = mustn't"
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla stavby"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Za modálním slovesem je základní tvar **bez to**: *You should go.* (ne *should to go*)",
+            "Modální sloveso nemá *-s*: *She must go.* (ne *musts*)",
+            "Zápor: přidej *not* → *shouldn't, mustn't*.",
+            "Otázka: modální sloveso skočí před podmět → *Should I call him?*",
+            "Výjimka: *have to* se chová jako běžné sloveso → *He has to…, Do you have to…?, I don't have to…*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň správný tvar. Hlídej význam i stavbu."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "You have a cold. You",
+                "after": "stay at home.",
+                "options": [
+                  "should",
+                  "mustn't",
+                  "should to"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "He must",
+                "after": ".",
+                "options": [
+                  "go",
+                  "to go",
+                  "goes"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "It's a holiday. We",
+                "after": "go to school.",
+                "options": [
+                  "don't have to",
+                  "mustn't"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "You",
+                "after": "eat so much chocolate. It's bad for you.",
+                "options": [
+                  "shouldn't",
+                  "don't have to"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Udělej otázku: I should call him.",
+          "answer": "*Should* skočí před podmět: *Should I call him?* (Měl bych mu zavolat?)"
+        },
+        {
+          "type": "example",
+          "question": "Dej kamarádovi dvě rady, jak se lépe učit.",
+          "answer": "*You should sleep more. You shouldn't play games late at night.* – kladná rada *should*, záporná *shouldn't*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "He must to go.",
+          "right": "He must go.",
+          "why": "Za modálním slovesem nikdy není *to*. (Jen *have to* má *to* v sobě.)"
+        },
+        {
+          "type": "summary",
+          "text": "Modální sloveso + **základní tvar bez to**, bez -s. Zápor *shouldn't, mustn't*, otázka *Should I…?*"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Ve vlaku je zákaz kouření: You ___ smoke here.",
+      "options": [
+        "mustn’t",
+        "don’t have to",
+        "should"
+      ],
+      "answer": 0,
+      "explanation": "Zákaz → mustn’t."
+    },
+    {
+      "type": "choice",
+      "question": "You have a cold. You ___ stay at home.",
+      "options": [
+        "should",
+        "mustn’t",
+        "shouldn’t"
+      ],
+      "answer": 0,
+      "explanation": "Rada → should."
+    },
+    {
+      "type": "truefalse",
+      "question": "„You mustn’t come“ znamená „Nemusíš přijít.“",
+      "answer": false,
+      "explanation": "mustn’t = nesmíš. Nemusíš = don’t have to."
+    },
+    {
+      "type": "choice",
+      "question": "Vyber správně.",
+      "options": [
+        "He must to go.",
+        "He musts go.",
+        "He must go."
+      ],
+      "answer": 2,
+      "explanation": "must + holé sloveso, bez -s."
+    },
+    {
+      "type": "input",
+      "question": "Přelož „nemusíš“ (2–3 slova).",
+      "answers": [
+        "don't have to",
+        "do not have to",
+        "you don't have to",
+        "you do not have to",
+        "needn't",
+        "need not"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: You ___ eat so much chocolate. It’s bad for you. (neměl bys)",
+      "answers": [
+        "shouldn't",
+        "should not"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj s významem.",
+      "pairs": [
+        [
+          "must",
+          "musím"
+        ],
+        [
+          "mustn’t",
+          "nesmím"
+        ],
+        [
+          "should",
+          "měl bych"
+        ],
+        [
+          "don’t have to",
+          "nemusím"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Should používáme pro radu.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "You",
+        "should",
+        "see",
+        "a",
+        "doctor."
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "It’s a holiday. We ___ go to school.",
+      "options": [
+        "don’t have to",
+        "mustn’t",
+        "must"
+      ],
+      "answer": 0,
+      "explanation": "Není to zakázané, jen to není nutné."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi „mustn’t“ a „don’t have to“?",
+      "answer": "Mustn’t je zákaz (nesmíš). Don’t have to znamená, že to není nutné (nemusíš)."
+    },
+    {
+      "type": "open",
+      "question": "Dej kamarádovi anglicky dvě rady, jak se lépe učit.",
+      "answer": "Např. You should sleep more. You shouldn’t play games late at night."
+    }
+  ]
+}

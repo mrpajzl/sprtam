@@ -1,0 +1,386 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "traveni",
+  "title": "Trávicí soustava a výživa",
+  "emoji": "🍎",
+  "explanations": [
+    {
+      "title": "Cesta rohlíku",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sníš rohlík se sýrem. Za pár hodin je z něj energie pro tvoje svaly a stavební materiál pro tělo. Jak se z kousku jídla stane část tebe?"
+        },
+        {
+          "type": "text",
+          "text": "Jídlo musí tělo nejdřív rozložit na drobné částice. Tomu se říká **trávení**. Sledujme rohlík trávicí soustavou od úst až ven."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Trávení",
+          "definition": "Rozkládání potravy na tak malé částice, že projdou stěnou střeva do krve."
+        },
+        {
+          "type": "term",
+          "term": "Trávicí šťávy",
+          "definition": "Tekutiny, které rozkládají potravu – jako „chemické nůžky“. Sliny, žaludeční šťáva, žluč a šťáva slinivky."
+        },
+        {
+          "type": "term",
+          "term": "Vstřebávání",
+          "definition": "Přechod rozložených živin ze střeva do krve."
+        },
+        {
+          "type": "term",
+          "term": "Živiny",
+          "definition": "Látky v potravě, které tělo potřebuje: cukry, tuky, bílkoviny, vitaminy, minerální látky a voda."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Ústa** – zuby jídlo rozkousají. **Sliny** ho zvlhčí a začnou rozkládat škrob z rohlíku.",
+            "**Hltan a jícen** – sousto se spolkne a jícen ho stahy posune do žaludku.",
+            "**Žaludek** – kyselá **žaludeční šťáva** (s kyselinou chlorovodíkovou) zabíjí bakterie a začne trávit bílkoviny ze sýra.",
+            "**Tenké střevo** – přidá se **žluč** z jater (pomáhá trávit tuky) a šťáva ze **slinivky břišní**. Tady se dotráví všechno a živiny se vstřebají do krve.",
+            "**Tlusté střevo** – vstřebá se hlavně **voda**. Zbytky zhoustnou.",
+            "**Konečník** – nestrávené zbytky odcházejí ven jako stolice."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na zastávky a zkus u každé říct, co se tam s jídlem děje."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "ústa",
+              "jícen",
+              "žaludek",
+              "tenké střevo",
+              "tlusté střevo",
+              "konečník"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Žvýkej kousek chleba minutu a nepolykej. Proč začne být sladký?",
+          "answer": "**Sliny** obsahují látku, která rozkládá škrob na cukr. Škrob není sladký, cukr ano. Trávení tedy začíná už v ústech."
+        },
+        {
+          "type": "example",
+          "question": "Proč je tenké střevo tak dlouhé (několik metrů)?",
+          "answer": "V tenkém střevě se vstřebává **většina živin**. Čím delší střevo a čím víc má výběžků (klků), tím větší plochu má na vstřebávání."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nejvíc živin se vstřebá v žaludku.",
+          "right": "Většina živin se vstřebává v tenkém střevě.",
+          "why": "Žaludek potravu hlavně skladuje, promíchává a začne trávit bílkoviny. Dotrávení a vstřebání probíhá až ve střevě."
+        },
+        {
+          "type": "summary",
+          "text": "Cesta potravy: ústa → hltan → jícen → žaludek → tenké střevo (vstřebání živin) → tlusté střevo (voda) → konečník. Játra tvoří žluč."
+        }
+      ]
+    },
+    {
+      "title": "Talíř a živiny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Auto potřebuje benzín, olej i vodu do chladiče. Tělo také potřebuje různé „náplně“. Když jedna chybí, něco nefunguje – i kdyby ostatních bylo dost."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se, jaké živiny tělo potřebuje, kde je najdeš a jak se trávicí soustava stará o jejich zpracování."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Živiny",
+          "definition": "Látky z potravy, ze kterých tělo získává energii a stavební materiál."
+        },
+        {
+          "type": "term",
+          "term": "Bílkoviny",
+          "definition": "Stavební materiál těla – svaly, kůže, vlasy. Najdeš je v mase, vejcích, tvarohu, luštěninách."
+        },
+        {
+          "type": "term",
+          "term": "Cukry (sacharidy)",
+          "definition": "Hlavní a rychlý zdroj energie. Chléb, rýže, brambory, ovoce."
+        },
+        {
+          "type": "term",
+          "term": "Tuky",
+          "definition": "Zásoba energie a ochrana orgánů. Máslo, olej, ořechy."
+        },
+        {
+          "type": "term",
+          "term": "Vitaminy a minerální látky",
+          "definition": "Látky potřebné v malém množství, bez nich tělo onemocní.",
+          "example": "Vitamin C (ovoce, zelenina) posiluje obranyschopnost, vápník (mléko) pevné kosti."
+        },
+        {
+          "type": "term",
+          "term": "Vláknina",
+          "definition": "Nestravitelná část rostlin. Pomáhá střevům posouvat potravu.",
+          "example": "Celozrnné pečivo, zelenina."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď potraviny podle toho, které živiny v nich je nejvíc."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Bílkoviny",
+              "Cukry",
+              "Tuky"
+            ],
+            "items": [
+              {
+                "text": "tvaroh",
+                "group": 0
+              },
+              {
+                "text": "rýže",
+                "group": 1
+              },
+              {
+                "text": "máslo",
+                "group": 2
+              },
+              {
+                "text": "vejce",
+                "group": 0
+              },
+              {
+                "text": "chléb",
+                "group": 1
+              },
+              {
+                "text": "olej",
+                "group": 2
+              },
+              {
+                "text": "čočka",
+                "group": 0
+              },
+              {
+                "text": "med",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pomocníci trávení"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Orgán",
+            "Co dělá"
+          ],
+          "rows": [
+            [
+              "zuby",
+              "dospělý má 32 zubů, dítě 20 mléčných; rozmělňují potravu"
+            ],
+            [
+              "slinné žlázy",
+              "tvoří sliny – začínají trávit škrob"
+            ],
+            [
+              "žaludek",
+              "kyselá šťáva tráví bílkoviny a ničí bakterie"
+            ],
+            [
+              "játra",
+              "tvoří žluč, která pomáhá trávit tuky"
+            ],
+            [
+              "slinivka břišní",
+              "tvoří trávicí šťávu do střeva"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Zdravý talíř"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Jez pestře a pravidelně, několikrát denně.",
+            "Polovina talíře ať je zelenina a ovoce.",
+            "Méně cukru, soli a smažených jídel.",
+            "Pij hlavně vodu."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Před závodem sníš těstoviny. Proč zrovna ty?",
+          "answer": "Těstoviny jsou plné **cukrů (škrobu)**. Ty jsou rychlým zdrojem energie pro svaly."
+        },
+        {
+          "type": "example",
+          "question": "Proč potřebují dospívající hodně bílkovin?",
+          "answer": "Bílkoviny jsou **stavební materiál**. Dospívající rychle rostou – staví se svaly, kosti a orgány."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Tuky jsou škodlivé, je lepší je vůbec nejíst.",
+          "right": "Tuky tělo potřebuje, jen v přiměřeném množství.",
+          "why": "Jsou zásobou energie, chrání orgány a bez nich tělo nevstřebá některé vitaminy (A, D, E, K)."
+        },
+        {
+          "type": "summary",
+          "text": "Bílkoviny stavějí, cukry dávají rychlou energii, tuky zásobu. Vitaminy a minerální látky chrání zdraví. Jez pestře, hodně zeleniny, pij vodu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "order",
+      "question": "Seřaď cestu potravy.",
+      "items": [
+        "ústa",
+        "jícen",
+        "žaludek",
+        "tenké střevo",
+        "tlusté střevo"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kde se vstřebává většina živin?",
+      "options": [
+        "v tenkém střevě",
+        "v žaludku",
+        "v jícnu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Který orgán tvoří žluč?",
+      "options": [
+        "játra",
+        "slinivka",
+        "žaludek"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V tlustém střevě se vstřebává hlavně voda.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Kolik zubů má dospělý člověk (se zuby moudrosti)?",
+      "answers": [
+        "32"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj živinu s úkolem.",
+      "pairs": [
+        [
+          "bílkoviny",
+          "stavba těla"
+        ],
+        [
+          "cukry",
+          "rychlá energie"
+        ],
+        [
+          "tuky",
+          "zásoba energie"
+        ],
+        [
+          "vitamin C",
+          "obranyschopnost"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kterou potravinu řadíme hlavně mezi zdroje bílkovin?",
+      "options": [
+        "tvaroh",
+        "cukr",
+        "olej"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Sliny začínají trávit škrob už v ústech.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Žaludeční šťáva obsahuje…",
+      "options": [
+        "kyselinu chlorovodíkovou",
+        "žluč",
+        "inzulin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Mléčných zubů má dítě 20.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Popiš cestu potravy trávicí soustavou.",
+      "answer": "Ústa (rozmělnění, sliny), hltan, jícen, žaludek (kyselina, bílkoviny), tenké střevo (trávení a vstřebání živin), tlusté střevo (voda), konečník."
+    },
+    {
+      "type": "open",
+      "question": "Co znamená zdravě se stravovat?",
+      "answer": "Jíst pestře a pravidelně, hodně ovoce a zeleniny, méně cukru, soli a tuku, dost pít vody."
+    }
+  ]
+}

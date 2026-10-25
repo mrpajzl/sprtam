@@ -1,0 +1,446 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "styly-a-utvary-souhrn",
+  "title": "Funkční styly a útvary – souhrn",
+  "emoji": "🗂️",
+  "explanations": [
+    {
+      "title": "Podle účelu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "SMS mámě, učebnice dějepisu, článek v novinách, žádost o stipendium, proslov na plese, román. Šest textů – šest různých účelů. Podle účelu se text píše jinak."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? V testu musíš u výchozího textu určit styl a útvar. Ve slohové práci zase psát ve správném stylu. Tohle je celkový přehled."
+        },
+        {
+          "type": "term",
+          "term": "Funkční styl",
+          "definition": "Typ stylu podle toho, **k čemu text slouží**. V češtině rozlišujeme šest.",
+          "example": "odborný styl – poučit"
+        },
+        {
+          "type": "term",
+          "term": "Útvar",
+          "definition": "Konkrétní druh textu v rámci stylu.",
+          "example": "výklad, zpráva, žádost, fejeton"
+        },
+        {
+          "type": "term",
+          "term": "Funkce textu",
+          "definition": "Co má text udělat se čtenářem: informovat, poučit, přesvědčit, pobavit, úředně sdělit.",
+          "example": "reklama → přesvědčit"
+        },
+        {
+          "type": "heading",
+          "text": "Postup: jak styl určit"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zeptej se: **k čemu text je?** (sdělit, poučit, informovat, úředně vyřídit, oslovit posluchače, zaujmout krásou)",
+            "Zeptej se: **pro koho?** (kamarád, odborník, veřejnost, úřad, posluchači, čtenář knihy)",
+            "Podívej se na **jazyk**: hovorový? termíny? titulky? formule? obraznost?",
+            "Urči styl podle tabulky a pak útvar."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Styl",
+            "Funkce",
+            "Útvary"
+          ],
+          "rows": [
+            [
+              "prostě sdělovací",
+              "běžná komunikace",
+              "rozhovor, SMS, osobní dopis"
+            ],
+            [
+              "odborný",
+              "přesně poučit",
+              "výklad, referát, odborný popis"
+            ],
+            [
+              "publicistický",
+              "informovat a ovlivňovat",
+              "zpráva, úvodník, fejeton, reportáž"
+            ],
+            [
+              "administrativní",
+              "úředně sdělit",
+              "žádost, životopis, protokol"
+            ],
+            [
+              "řečnický",
+              "působit na posluchače",
+              "projev, proslov, přednáška"
+            ],
+            [
+              "umělecký",
+              "estetický zážitek",
+              "román, povídka, báseň"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zkus k útvaru určit styl. Ptej se, kde bys text našel."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "osobní dopis kamarádovi → ",
+                "after": "",
+                "options": [
+                  "prostě sdělovací",
+                  "administrativní"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "protokol o nehodě → ",
+                "after": "",
+                "options": [
+                  "administrativní",
+                  "publicistický"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "přípitek na svatbě → ",
+                "after": "",
+                "options": [
+                  "řečnický",
+                  "umělecký"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "povídka → ",
+                "after": "",
+                "options": [
+                  "umělecký",
+                  "odborný"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Text obsahuje odborné termíny, definice a odkazy na literaturu. Jaký je to styl?",
+          "answer": "Termíny a odkazy = přesné poučení → **odborný** styl (útvar třeba výklad nebo referát)."
+        },
+        {
+          "type": "example",
+          "question": "Text má výrazný titulek, mluví o včerejší události a hodnotí politiky. Jaký styl a útvar?",
+          "answer": "Aktualita a titulek → **publicistický** styl. Hodnocení → útvar **komentář** (ne zpráva, ta nehodnotí)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Osobní dopis kamarádovi je administrativní styl, protože je to dopis.",
+          "right": "Osobní dopis je prostě sdělovací styl.",
+          "why": "Rozhoduje funkce a adresát, ne forma „dopisu“. Administrativní je dopis úřadu (žádost), ne kamarádovi."
+        },
+        {
+          "type": "summary",
+          "text": "Nejdřív urči funkci textu a adresáta – styl z nich plyne. Šest stylů: prostě sdělovací, odborný, publicistický, administrativní, řečnický, umělecký."
+        }
+      ]
+    },
+    {
+      "title": "Podle znaků",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Někdy účel textu nepoznáš hned. Pak pomůže jazyk: každý styl má typické „otisky prstů“ – slova, formule, stavbu."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? V testu dostaneš často jen úryvek. Podle znaků v něm styl určíš rychle a jistě."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Funkční styl",
+          "definition": "Skupina textů se stejným účelem a podobnými jazykovými prostředky.",
+          "example": "administrativní styl"
+        },
+        {
+          "type": "term",
+          "term": "Termín",
+          "definition": "Odborné slovo s přesným významem.",
+          "example": "*fotosyntéza, přísudek*"
+        },
+        {
+          "type": "term",
+          "term": "Ustálená formule",
+          "definition": "Hotové spojení, které se v určitém typu textu opakuje.",
+          "example": "*Věc:*, *S pozdravem*, *V příloze zasílám*"
+        },
+        {
+          "type": "term",
+          "term": "Publicismus",
+          "definition": "Výraz typický pro novinový jazyk.",
+          "example": "*horká novinka*, *zelená pro reformu*"
+        },
+        {
+          "type": "term",
+          "term": "Obraznost",
+          "definition": "Užívání přenesených pojmenování (metafor, personifikací).",
+          "example": "*Noc má černé dlaně.*"
+        },
+        {
+          "type": "heading",
+          "text": "Otisky prstů"
+        },
+        {
+          "type": "text",
+          "text": "Přečti znak a odhadni styl. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "odborné termíny, přesnost",
+                "back": "odborný styl"
+              },
+              {
+                "front": "ustálené formule, schéma",
+                "back": "administrativní styl"
+              },
+              {
+                "front": "titulek, aktuálnost",
+                "back": "publicistický styl"
+              },
+              {
+                "front": "obraznost, básnické prostředky",
+                "back": "umělecký styl"
+              },
+              {
+                "front": "oslovení posluchačů, řečnické otázky",
+                "back": "řečnický styl"
+              },
+              {
+                "front": "hovorová slova, spontánnost",
+                "back": "prostě sdělovací styl"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozřaď útvary do stylů."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "publicistický",
+              "administrativní",
+              "odborný"
+            ],
+            "items": [
+              {
+                "text": "fejeton",
+                "group": 0
+              },
+              {
+                "text": "žádost",
+                "group": 1
+              },
+              {
+                "text": "výklad",
+                "group": 2
+              },
+              {
+                "text": "reportáž",
+                "group": 0
+              },
+              {
+                "text": "strukturovaný životopis",
+                "group": 1
+              },
+              {
+                "text": "referát",
+                "group": 2
+              },
+              {
+                "text": "úvodník",
+                "group": 0
+              },
+              {
+                "text": "plná moc",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Do jakého stylu patří fejeton? Je to umělecký text?",
+          "answer": "Fejeton je vtipný a obrazný, ale vychází v **novinách** a reaguje na aktuální dění → **publicistický** styl (beletristický žánr publicistiky)."
+        },
+        {
+          "type": "example",
+          "question": "Kterým slohovým postupem je psán výklad?",
+          "answer": "Výklad vysvětluje příčiny a souvislosti (proč? jak?) → **výkladový (úvahový)** postup."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Fejeton patří do uměleckého stylu, protože je vtipný.",
+          "right": "Fejeton patří do publicistického stylu.",
+          "why": "Rozhoduje, kde a proč text vychází: v novinách, k aktuálnímu tématu. Vtip a obraznost má i publicistika."
+        },
+        {
+          "type": "summary",
+          "text": "Znaky stylů: termíny → odborný; formule → administrativní; titulek a aktuálnost → publicistický; obraznost → umělecký; oslovení posluchačů → řečnický; hovorovost → prostě sdělovací."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Do kterého stylu patří fejeton?",
+      "options": [
+        "umělecký",
+        "publicistický",
+        "odborný"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Který útvar je administrativní?",
+      "options": [
+        "výklad",
+        "reportáž",
+        "žádost",
+        "povídka"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "truefalse",
+      "question": "Výklad patří do odborného stylu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který styl má hlavní funkci estetickou?",
+      "options": [
+        "řečnický",
+        "umělecký",
+        "publicistický"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "match",
+      "question": "Spoj útvar se stylem.",
+      "pairs": [
+        [
+          "zpráva",
+          "publicistický"
+        ],
+        [
+          "protokol",
+          "administrativní"
+        ],
+        [
+          "proslov",
+          "řečnický"
+        ],
+        [
+          "referát",
+          "odborný"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Osobní dopis kamarádovi je administrativní styl.",
+      "answer": false,
+      "explanation": "Je to prostě sdělovací styl."
+    },
+    {
+      "type": "choice",
+      "question": "Text obsahuje odborné termíny, definice a odkazy na literaturu. Jde o styl…",
+      "options": [
+        "publicistický",
+        "odborný",
+        "umělecký"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Který útvar je nejvíce zpravodajský (bez názoru autora)?",
+      "options": [
+        "komentář",
+        "zpráva",
+        "fejeton"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje krátký vtipný publicistický útvar o všedním tématu s pointou?",
+      "answers": [
+        "fejeton"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kterým slohovým postupem je typicky psán výklad?",
+      "options": [
+        "vyprávěcím",
+        "výkladovým (úvahovým)",
+        "popisným statickým"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj funkční styly a ke každému uveď jeden útvar.",
+      "answer": "Prostě sdělovací (osobní dopis), odborný (výklad), publicistický (zpráva), administrativní (žádost), řečnický (projev), umělecký (román)."
+    },
+    {
+      "type": "open",
+      "question": "Podle čeho poznáš publicistický text?",
+      "answer": "Je aktuální, má titulek, informuje širokou veřejnost a často ji i ovlivňuje. Používá publicismy, ustálená spojení a výrazné nadpisy; útvary jsou zpráva, komentář, fejeton, reportáž."
+    }
+  ]
+}

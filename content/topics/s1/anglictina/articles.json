@@ -1,0 +1,458 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "articles",
+  "title": "Členy a, an, the",
+  "emoji": "🅰️",
+  "explanations": [
+    {
+      "title": "Příběhem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Viděl jsem psa. Ten pes měl tři nohy.“ Česky slovem „ten“ dáváš najevo, že jde o psa, o kterém už byla řeč. Angličtina tohle dělá **pořád** – před skoro každým podstatným jménem malým slovíčkem **a / an** nebo **the**."
+        },
+        {
+          "type": "text",
+          "text": "Čeština nic takového nemá, proto jsou členy pro Čechy jedna z nejtěžších věcí. Když je vynecháš, zníš „cize“. Základní logika je ale jednoduchá: **nový × známý**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Slovo pro osobu, věc, zvíře, místo nebo pojem.",
+          "example": "dog, house, idea, water"
+        },
+        {
+          "type": "term",
+          "term": "Člen",
+          "definition": "Malé slovo před podstatným jménem, které říká, jestli posluchač ví, o kterou věc jde.",
+          "example": "a dog, the dog"
+        },
+        {
+          "type": "term",
+          "term": "Neurčitý člen a / an",
+          "definition": "„nějaký, jeden (z mnoha)“. Jen před **počitatelným** podstatným jménem v **jednotném čísle**. Posluchač tu věc ještě nezná.",
+          "example": "I saw a dog. = Viděl jsem (nějakého) psa."
+        },
+        {
+          "type": "term",
+          "term": "Určitý člen the",
+          "definition": "„ten (známý, jasný)“. Posluchač ví, o kterou věc jde – už o ní byla řeč, je jediná, nebo je to jasné ze situace.",
+          "example": "The dog had three legs. = Ten pes měl tři nohy."
+        },
+        {
+          "type": "term",
+          "term": "Počitatelné × nepočitatelné",
+          "definition": "Počitatelné věci spočítáš po kusech (*a book, two books*). Nepočitatelné ne (*water, music, information*) – před ně *a/an* nedáš.",
+          "example": "a chair × water"
+        },
+        {
+          "type": "heading",
+          "text": "Příběh"
+        },
+        {
+          "type": "text",
+          "text": "*Yesterday I saw **a** dog and **a** cat. **The** dog was chasing **the** cat. Then **the** cat climbed **a** tree.*"
+        },
+        {
+          "type": "list",
+          "items": [
+            "*a dog, a cat* – objevují se poprvé → *a*",
+            "*the dog, the cat* – už o nich víme → *the*",
+            "*a tree* – nový strom → *a*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "a, nebo an?"
+        },
+        {
+          "type": "text",
+          "text": "Rozhoduje **výslovnost**, ne písmeno. Před samohláskovou hláskou *an*, před souhláskovou *a*: *an apple, an hour* (h se nevyslovuje), ale *a university, a useful tip* (vyslovuje se „ju-“), *a one-way ticket* (vyslovuje se „wan“)."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň člen. Ptej se: je to poprvé, nebo už známé? A jak slovo zní?"
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "It took",
+                "after": "hour.",
+                "options": [
+                  "an",
+                  "a"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "I bought a book.",
+                "after": "book is about Rome.",
+                "options": [
+                  "The",
+                  "A"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "He wants to be",
+                "after": "doctor.",
+                "options": [
+                  "a",
+                  "the"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "She gave me",
+                "after": "useful tip.",
+                "options": [
+                  "a",
+                  "an"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: I have ___ brother and ___ sister. ___ sister is a nurse.",
+          "answer": "Poprvé → *a brother, a sister*. Pak už víme, o kterou jde → *The sister*… Povolání → *a nurse*."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: Everest is ___ highest mountain in the world.",
+          "answer": "Nejvyšší hora je jen jedna → *the*. 3. stupeň má vždy *the*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "He wants to be doctor.",
+          "right": "He wants to be a doctor.",
+          "why": "U povolání (v jednotném čísle) angličtina vždy dává *a/an*, i když česky nic neříkáme."
+        },
+        {
+          "type": "summary",
+          "text": "Nové, jedno z mnoha → **a/an** (podle výslovnosti). Známé, jasné, jediné → **the**."
+        }
+      ]
+    },
+    {
+      "title": "Pravidla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kromě logiky „nové × známé“ má angličtina řadu ustálených pravidel, kdy se člen dává a kdy **vůbec ne**. Hodí se je znát jako seznam – hlavně u zeměpisných názvů, jídel a obecných tvrzení."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Člen",
+          "definition": "*a/an* (neurčitý – nějaký) nebo *the* (určitý – ten známý). Někdy se nedává žádný – tzv. **nulový člen** (značíme –).",
+          "example": "a cat, the cat, – cats"
+        },
+        {
+          "type": "term",
+          "term": "Obecné tvrzení",
+          "definition": "Věta o celé skupině nebo o věci obecně, ne o konkrétním kusu.",
+          "example": "Cats like milk. Life is beautiful."
+        },
+        {
+          "type": "term",
+          "term": "Vlastní jméno",
+          "definition": "Jméno konkrétní osoby, místa nebo věci; píše se velkým písmenem.",
+          "example": "Petr, Germany, the Danube"
+        },
+        {
+          "type": "term",
+          "term": "Množné číslo",
+          "definition": "Tvar pro víc kusů.",
+          "example": "cats, books, children"
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka pravidel"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Situace",
+            "Člen",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "obecně, množné číslo / nepočitatelné",
+              "–",
+              "Cats like milk. Life is beautiful."
+            ],
+            [
+              "povolání",
+              "a/an",
+              "She's an engineer."
+            ],
+            [
+              "jedinečné věci, 3. stupeň",
+              "the",
+              "the sun, the best film"
+            ],
+            [
+              "řeky, moře, oceány, pohoří",
+              "the",
+              "the Danube, the Alps"
+            ],
+            [
+              "státy s Republic, Kingdom, States",
+              "the",
+              "the Czech Republic, the USA"
+            ],
+            [
+              "většina států, měst, jazyků",
+              "–",
+              "Germany, Prague, English"
+            ],
+            [
+              "hudební nástroje (hrát na)",
+              "the",
+              "She plays the piano."
+            ],
+            [
+              "jídla dne",
+              "–",
+              "I have breakfast at 7."
+            ],
+            [
+              "instituce v hlavní funkci, dopravní prostředky s by",
+              "–",
+              "go to school, by bus"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Je to obecné tvrzení s množným číslem nebo nepočitatelným slovem? → bez členu.",
+            "Spadá to pod pravidlo z tabulky (řeka, jídlo, nástroj…)? → použij ho.",
+            "Je věc jediná nebo už známá? → *the*.",
+            "Je to jeden kus z mnoha, poprvé zmíněný? → *a/an* (podle výslovnosti)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď výrazy podle toho, jaký člen před nimi bude."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "the",
+              "bez členu (–)"
+            ],
+            "items": [
+              {
+                "text": "___ Danube",
+                "group": 0
+              },
+              {
+                "text": "___ Czech Republic",
+                "group": 0
+              },
+              {
+                "text": "play ___ guitar",
+                "group": 0
+              },
+              {
+                "text": "___ sun",
+                "group": 0
+              },
+              {
+                "text": "___ Germany",
+                "group": 1
+              },
+              {
+                "text": "have ___ lunch",
+                "group": 1
+              },
+              {
+                "text": "go to ___ school",
+                "group": 1
+              },
+              {
+                "text": "travel by ___ train",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Která věta je správně? I go to school by bus. / I go to the school by the bus.",
+          "answer": "První. *Go to school* (škola jako instituce, chodím se učit) a *by bus* (dopravní prostředek) jsou bez členu."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: ___ Danube flows through Vienna.",
+          "answer": "Řeky mají *the*: *The Danube flows through Vienna.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "The life is beautiful.",
+          "right": "Life is beautiful.",
+          "why": "Když mluvíš obecně o pojmu (život, láska, hudba), člen se nedává."
+        },
+        {
+          "type": "summary",
+          "text": "Obecně → bez členu. Řeky, pohoří, nástroje, jedinečné věci → **the**. Státy, města, jídla, *by bus*, *go to school* → bez členu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "It took ___ hour.",
+      "options": [
+        "an",
+        "a",
+        "the"
+      ],
+      "answer": 0,
+      "explanation": "*h* se nevyslovuje → samohláska → *an*."
+    },
+    {
+      "type": "choice",
+      "question": "He wants to be ___ doctor.",
+      "options": [
+        "a",
+        "the",
+        "–"
+      ],
+      "answer": 0,
+      "explanation": "Povolání → *a/an*."
+    },
+    {
+      "type": "choice",
+      "question": "___ Danube flows through Vienna.",
+      "options": [
+        "The",
+        "A",
+        "–"
+      ],
+      "answer": 0,
+      "explanation": "Řeky mají *the*."
+    },
+    {
+      "type": "choice",
+      "question": "I usually have ___ breakfast at 7.",
+      "options": [
+        "–",
+        "a",
+        "the"
+      ],
+      "answer": 0,
+      "explanation": "Jídla dne bez členu."
+    },
+    {
+      "type": "input",
+      "question": "Doplň člen: Everest is ___ highest mountain in the world.",
+      "answers": [
+        "the"
+      ],
+      "explanation": "3. stupeň → *the*."
+    },
+    {
+      "type": "input",
+      "question": "Doplň a/an: ___ useful tip",
+      "answers": [
+        "a"
+      ],
+      "explanation": "*useful* začíná hláskou /j/ → *a*."
+    },
+    {
+      "type": "truefalse",
+      "question": "„The life is beautiful.“ je správně (obecně).",
+      "answer": false,
+      "explanation": "Obecné pojmy bez členu: *Life is beautiful.*"
+    },
+    {
+      "type": "truefalse",
+      "question": "„She plays the piano.“ je správně.",
+      "answer": true,
+      "explanation": "Hudební nástroje mají *the*."
+    },
+    {
+      "type": "match",
+      "question": "Spoj se správným členem.",
+      "pairs": [
+        [
+          "___ honest man",
+          "an"
+        ],
+        [
+          "___ one-way ticket",
+          "a"
+        ],
+        [
+          "___ Czech Republic",
+          "the"
+        ],
+        [
+          "___ Germany",
+          "–"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je správně?",
+      "options": [
+        "I go to school by bus.",
+        "I go to the school by the bus.",
+        "I go to a school by a bus."
+      ],
+      "answer": 0,
+      "explanation": "*go to school* (instituce) a *by bus* bez členu."
+    },
+    {
+      "type": "open",
+      "question": "Kdy použiješ neurčitý a kdy určitý člen?",
+      "answer": "Neurčitý *a/an* u počitatelného podstatného jména v jednotném čísle, když ho zmiňujeme poprvé nebo jde o kterékoli. Určitý *the*, když je jasné, o kterou věc jde, nebo je jedinečná."
+    },
+    {
+      "type": "open",
+      "question": "Kdy se člen nepoužívá vůbec?",
+      "answer": "Při obecných tvrzeních s množným číslem a nepočitatelnými slovy (*Cats like milk*), u většiny jmen osob, zemí, měst, jazyků a u jídel dne."
+    }
+  ]
+}

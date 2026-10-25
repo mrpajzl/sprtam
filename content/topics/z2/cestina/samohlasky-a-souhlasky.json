@@ -1,0 +1,335 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "samohlasky-a-souhlasky",
+  "title": "Samohlásky a souhlásky",
+  "emoji": "🎵",
+  "explanations": [
+    {
+      "title": "Zpívání",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zazpívej „aaa“, jako když jsi u doktora. Jde to dlouho. Teď zkus zazpívat „ttt“. Nejde to."
+        },
+        {
+          "type": "text",
+          "text": "Hlásky jsou tedy dvojí. Když je rozlišíš, snadno dělíš slova na slabiky a víš, kam psát čárky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Samohláska",
+          "definition": "Hláska, kterou umíš zpívat s otevřenou pusou.",
+          "example": "a, e, i, o, u, y"
+        },
+        {
+          "type": "term",
+          "term": "Krátká a dlouhá samohláska",
+          "definition": "Každá samohláska má krátkou a dlouhou podobu. Dlouhá má čárku nebo kroužek.",
+          "example": "a – á, e – é, i – í, o – ó, u – ú, ů, y – ý"
+        },
+        {
+          "type": "term",
+          "term": "Souhláska",
+          "definition": "Všechny ostatní hlásky. Při nich rty, zuby nebo jazyk zvuku překáží.",
+          "example": "b, k, m, s, ch, ř"
+        },
+        {
+          "type": "term",
+          "term": "Dvojhláska",
+          "definition": "Dvě samohlásky, které zní dohromady v jedné slabice.",
+          "example": "ou, au, eu: m**ou**cha, **au**to, **eu**ro"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🎤 a e i o u y",
+            "🔇 b k m s"
+          ],
+          "caption": "samohlásky – souhlásky"
+        },
+        {
+          "type": "heading",
+          "text": "Jak poznat samohlásku"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Řekni hlásku nahlas.",
+            "Zkus ji zazpívat s otevřenou pusou.",
+            "Jde to? Je to **samohláska**. Nejde? Je to **souhláska**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik samohlásek je ve slově KOLO?",
+          "answer": "K-**o**-l-**o**. Samohlásky jsou o, o → **2**. K a l jsou souhlásky."
+        },
+        {
+          "type": "example",
+          "question": "Kolik souhlásek je ve slově STROM?",
+          "answer": "s, t, r, m jsou souhlásky, o je samohláska. Souhlásek je **4**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ů není samohláska, protože má kroužek.",
+          "right": "Ů je samohláska – dlouhé u.",
+          "why": "Kroužek ani čárka nemění druh hlásky. Ukazují jen, že je dlouhá."
+        },
+        {
+          "type": "summary",
+          "text": "Samohlásky: a, e, i, o, u, y (a jejich dlouhé podoby). Ostatní hlásky jsou souhlásky. Ou, au, eu jsou dvojhlásky."
+        }
+      ]
+    },
+    {
+      "title": "Roztřiď",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si dva košíky. Do jednoho dáš hlásky, které zpívají. Do druhého ty, které nezpívají."
+        },
+        {
+          "type": "text",
+          "text": "Tohle rozdělení budeš potřebovat celý rok: u tvrdých a měkkých souhlásek i u psaní i/y."
+        },
+        {
+          "type": "term",
+          "term": "Samohláska",
+          "definition": "Zpívá. Pusa je otevřená.",
+          "example": "a, é, ů, y"
+        },
+        {
+          "type": "term",
+          "term": "Souhláska",
+          "definition": "Nezpívá. Něco v puse zvuk zastaví nebo zúží.",
+          "example": "k, r, š, ch"
+        },
+        {
+          "type": "term",
+          "term": "Dvojhláska",
+          "definition": "Dvě samohlásky vyslovené dohromady.",
+          "example": "ou, au, eu"
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "skupina",
+            "které to jsou"
+          ],
+          "rows": [
+            [
+              "krátké samohlásky",
+              "a, e, i, o, u, y"
+            ],
+            [
+              "dlouhé samohlásky",
+              "á, é, í, ó, ú, ů, ý"
+            ],
+            [
+              "dvojhlásky",
+              "ou, au, eu"
+            ],
+            [
+              "souhlásky",
+              "všechny ostatní: b, c, č, d, … ch …"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Teď ty"
+        },
+        {
+          "type": "text",
+          "text": "Dej každé písmeno do správného košíku."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "samohláska",
+              "souhláska"
+            ],
+            "items": [
+              {
+                "text": "a",
+                "group": 0
+              },
+              {
+                "text": "k",
+                "group": 1
+              },
+              {
+                "text": "é",
+                "group": 0
+              },
+              {
+                "text": "r",
+                "group": 1
+              },
+              {
+                "text": "ů",
+                "group": 0
+              },
+              {
+                "text": "š",
+                "group": 1
+              },
+              {
+                "text": "y",
+                "group": 0
+              },
+              {
+                "text": "ch",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je ve slově AUTO dvojhláska?",
+          "answer": "Ano. **au** zní dohromady v jedné slabice: au-to."
+        },
+        {
+          "type": "example",
+          "question": "Která skupina má jen souhlásky: p, o, l / k, r, s / i, t, u?",
+          "answer": "V první je o, ve třetí i a u – to jsou samohlásky. Jen souhlásky jsou **k, r, s**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ch je samohláska.",
+          "right": "Ch je souhláska.",
+          "why": "Ch nezazpíváš – vzadu v krku zvuk šustí. Je to souhláska, i když má dvě písmena."
+        },
+        {
+          "type": "summary",
+          "text": "Zpívá = samohláska. Nezpívá = souhláska. Ou, au, eu jsou dvojhlásky."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "O je samohláska.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Ch je samohláska.",
+      "answer": false,
+      "explanation": "Ch je souhláska."
+    },
+    {
+      "type": "choice",
+      "question": "Která skupina obsahuje jen samohlásky?",
+      "options": [
+        "a, e, u",
+        "a, b, e",
+        "m, n, o"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která skupina obsahuje jen souhlásky?",
+      "options": [
+        "p, o, l",
+        "k, r, s",
+        "i, t, u"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Co je dvojhláska?",
+      "options": [
+        "ou",
+        "aa",
+        "ch"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik samohlásek je ve slově „kolo“?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik souhlásek je ve slově „strom“?",
+      "answers": [
+        "4"
+      ],
+      "explanation": "s, t, r, m – 4 souhlásky, o je samohláska."
+    },
+    {
+      "type": "match",
+      "question": "Spoj krátkou a dlouhou samohlásku.",
+      "pairs": [
+        [
+          "a",
+          "á"
+        ],
+        [
+          "i",
+          "í"
+        ],
+        [
+          "y",
+          "ý"
+        ],
+        [
+          "o",
+          "ó"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém slově je dvojhláska?",
+      "options": [
+        "auto",
+        "okno",
+        "ruka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ů je dlouhá samohláska.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj krátké samohlásky.",
+      "answer": "a, e, i, o, u, y."
+    },
+    {
+      "type": "open",
+      "question": "Co jsou dvojhlásky? Řekni příklad.",
+      "answer": "Dvě samohlásky v jedné slabice: ou, au, eu. Například moucha, auto, euro."
+    }
+  ]
+}

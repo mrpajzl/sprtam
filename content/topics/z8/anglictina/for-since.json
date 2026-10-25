@@ -1,0 +1,389 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "for-since",
+  "title": "For a since",
+  "emoji": "⏳",
+  "explanations": [
+    {
+      "title": "Na ose",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Babička se ptá: „Jak dlouho už chodíš na fotbal?“ Můžeš odpovědět dvěma způsoby: „**Tři roky**“ nebo „**Od roku 2023**“. Obojí je pravda – jednou říkáš délku, podruhé začátek."
+        },
+        {
+          "type": "text",
+          "text": "Angličtina na to má dvě slova: **for** (délka) a **since** (začátek). Používají se s časem **present perfect**, když něco začalo v minulosti a **trvá až do teď**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Present perfect",
+          "definition": "Čas **have/has + 3. tvar slovesa**. Tady říká, že děj začal dřív a pořád trvá.",
+          "example": "I have lived here for 5 years. = Bydlím tu 5 let (a pořád)."
+        },
+        {
+          "type": "term",
+          "term": "Délka (úsek času)",
+          "definition": "Jak dlouho to trvá – kolik času uběhlo.",
+          "example": "dvě hodiny, týden, tři roky"
+        },
+        {
+          "type": "term",
+          "term": "Začátek (bod v čase)",
+          "definition": "Okamžik, kdy to začalo.",
+          "example": "pondělí, Vánoce, rok 2020, 9 hodin"
+        },
+        {
+          "type": "term",
+          "term": "for",
+          "definition": "„po dobu“ – použij s **délkou**.",
+          "example": "for two hours, for a week"
+        },
+        {
+          "type": "term",
+          "term": "since",
+          "definition": "„od“ – použij se **začátkem**.",
+          "example": "since Monday, since 2020"
+        },
+        {
+          "type": "heading",
+          "text": "Na časové ose"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na body. Tom začal hrát fotbal v roce 2023. Teď je rok 2026."
+        },
+        {
+          "type": "widget",
+          "widget": "timeline",
+          "props": {
+            "events": [
+              {
+                "year": 2023,
+                "label": "začal hrát → since 2023"
+              },
+              {
+                "year": 2024,
+                "label": "pořád hraje"
+              },
+              {
+                "year": 2026,
+                "label": "teď: for 3 years"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "*Tom has played football **since** 2023.* = Tom hraje fotbal od roku 2023. *Tom has played football **for** three years.* = Tom hraje fotbal tři roky."
+        },
+        {
+          "type": "text",
+          "text": "Pozor: česky řekneš „hraje“ (přítomný čas), ale anglicky musí být present perfect *has played*, protože to začalo v minulosti."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: She has been ill ___ Monday.",
+          "answer": "Pondělí je začátek (bod v čase) → *since*. *She has been ill since Monday.* (Je nemocná od pondělí.)"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: They have had the dog ___ five years.",
+          "answer": "Pět let je délka → *for*. *They have had the dog for five years.* (Mají psa pět let.)"
+        },
+        {
+          "type": "mistake",
+          "wrong": "I have lived here since ten years.",
+          "right": "I have lived here for ten years.",
+          "why": "Deset let je délka, ne začátek. Délka = *for*."
+        },
+        {
+          "type": "summary",
+          "text": "**for** + délka (for 3 years). **since** + začátek (since 2023). Obojí s **have/has + 3. tvar**."
+        }
+      ]
+    },
+    {
+      "title": "Otázkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozhodnout mezi *for* a *since* je jednoduché, když si položíš správnou otázku. A naučíš se i, jak se anglicky zeptat „Jak dlouho…?“ – což Češi skoro vždycky řeknou špatně."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Gramatický čas",
+          "definition": "Tvar slovesa, který říká, kdy se děj odehrává.",
+          "example": "bydlím (teď), bydlel jsem (dřív)"
+        },
+        {
+          "type": "term",
+          "term": "Present perfect",
+          "definition": "Anglický čas: **have/has + 3. tvar slovesa** (pravidelná slovesa *-ed*, nepravidelná vlastní tvar). S *for/since* říká: začalo to v minulosti a trvá to dodnes.",
+          "example": "know → known: I have known him… = Znám ho…"
+        },
+        {
+          "type": "term",
+          "term": "for",
+          "definition": "Použiješ s **délkou** času.",
+          "example": "for six months = šest měsíců"
+        },
+        {
+          "type": "term",
+          "term": "since",
+          "definition": "Použiješ se **začátkem**, s okamžikem.",
+          "example": "since Christmas = od Vánoc"
+        },
+        {
+          "type": "heading",
+          "text": "Test jednou otázkou"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podívej se na časový údaj za mezerou.",
+            "Dá se před něj říct „**od**“ (od pondělí, od roku 2018, od devíti)? → *since*.",
+            "Dá se říct „**po dobu**“ (po dobu týdne, po dobu dvou hodin)? → *for*."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "for (délka)",
+            "since (začátek)"
+          ],
+          "rows": [
+            [
+              "for two hours",
+              "since 9 o'clock"
+            ],
+            [
+              "for a week",
+              "since Monday"
+            ],
+            [
+              "for ten years",
+              "since 2016"
+            ],
+            [
+              "for a long time",
+              "since I was six"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď časové údaje: patří k nim *for*, nebo *since*?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "for",
+              "since"
+            ],
+            "items": [
+              {
+                "text": "two hours",
+                "group": 0
+              },
+              {
+                "text": "a month",
+                "group": 0
+              },
+              {
+                "text": "ages",
+                "group": 0
+              },
+              {
+                "text": "three days",
+                "group": 0
+              },
+              {
+                "text": "2018",
+                "group": 1
+              },
+              {
+                "text": "Christmas",
+                "group": 1
+              },
+              {
+                "text": "last week",
+                "group": 1
+              },
+              {
+                "text": "9 o'clock",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Otázka „Jak dlouho?“"
+        },
+        {
+          "type": "text",
+          "text": "Česky: „Jak dlouho tu bydlíš?“ (přítomný čas). Anglicky: ***How long have you lived here?*** – present perfect, protože to začalo v minulosti."
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Znám ho od roku 2018.",
+          "answer": "2018 je začátek → *since*. Znát = *know* → *known*. *I have known him since 2018.*"
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Čekáme dvě hodiny.",
+          "answer": "Dvě hodiny = délka → *for*. Čekat = *wait* → *waited*. *We have waited for two hours.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "How long do you live here?",
+          "right": "How long have you lived here?",
+          "why": "Bydlení začalo v minulosti a trvá do teď → present perfect, i když česky říkáme přítomný čas."
+        },
+        {
+          "type": "summary",
+          "text": "„Od …“ → **since**, „po dobu …“ → **for**. Ptáš se **How long have you…?**"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "I have known him ___ 2018.",
+      "options": [
+        "since",
+        "for",
+        "from"
+      ],
+      "answer": 0,
+      "explanation": "2018 je bod v čase → since."
+    },
+    {
+      "type": "choice",
+      "question": "We have waited ___ two hours.",
+      "options": [
+        "for",
+        "since",
+        "ago"
+      ],
+      "answer": 0,
+      "explanation": "Délka → for."
+    },
+    {
+      "type": "input",
+      "question": "Doplň: She has been ill ___ Monday.",
+      "answers": [
+        "since"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: They have had the dog ___ five years.",
+      "answers": [
+        "for"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„I have lived here since ten years.“ je správně.",
+      "answer": false,
+      "explanation": "Deset let je délka → for ten years."
+    },
+    {
+      "type": "match",
+      "question": "Spoj s for/since.",
+      "pairs": [
+        [
+          "for a week",
+          "týden"
+        ],
+        [
+          "since Christmas",
+          "od Vánoc"
+        ],
+        [
+          "for a month",
+          "měsíc"
+        ],
+        [
+          "since 9 o’clock",
+          "od devíti"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se zeptáš „Jak dlouho tu bydlíš?“",
+      "options": [
+        "How long have you lived here?",
+        "How long do you live here?",
+        "How long are you living here?"
+      ],
+      "answer": 0,
+      "explanation": "Děj trvající do teď → present perfect."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "I",
+        "have",
+        "played",
+        "tennis",
+        "since",
+        "2021."
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„She has worked here for six months.“ znamená, že tam pořád pracuje.",
+      "answer": true,
+      "explanation": "Present perfect + for = trvá to do teď."
+    },
+    {
+      "type": "input",
+      "question": "Doplň sloveso: I ___ known her for years. (zkrácený tvar nebo celý)",
+      "answers": [
+        "have",
+        "'ve",
+        "ve"
+      ],
+      "explanation": "I have known."
+    },
+    {
+      "type": "open",
+      "question": "Kdy použiješ for a kdy since?",
+      "answer": "For použiji s délkou času (for two years), since se začátkem, bodem v čase (since 2020, since Monday)."
+    },
+    {
+      "type": "open",
+      "question": "Řekni anglicky, jak dlouho se učíš angličtinu, dvěma způsoby.",
+      "answer": "Např. I have learnt English for five years. / I have learnt English since I was nine."
+    }
+  ]
+}

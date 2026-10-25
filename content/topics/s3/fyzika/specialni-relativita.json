@@ -1,0 +1,365 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "specialni-relativita",
+  "title": "Speciální teorie relativity",
+  "emoji": "🚀",
+  "explanations": [
+    {
+      "title": "Myšlenkový pokus",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jedeš ve vlaku 100 km/h a hodíš míček dopředu rychlostí 20 km/h. Pro člověka na nástupišti letí míček 120 km/h. Rychlosti se sčítají – tak to známe. Jenže se světlem to nefunguje. Ať se pohybuješ jakkoli, světlo ti vždy letí stejnou rychlostí."
+        },
+        {
+          "type": "text",
+          "text": "Albert Einstein v roce 1905 domyslel, co z toho plyne: čas a délky nejsou pro všechny stejné. Bez této opravy by GPS v mobilu ukazovala polohu o kilometry vedle."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rychlost světla c",
+          "definition": "Rychlost světla ve vakuu: `c ≈ 3 · 10⁸ m/s` (300 000 km/s). Žádné těleso s hmotností ji nemůže dosáhnout."
+        },
+        {
+          "type": "term",
+          "term": "Inerciální soustava",
+          "definition": "Místo pozorování, které se pohybuje rovnoměrně přímočaře (nebo stojí) – nezrychluje a netočí se.",
+          "example": "Vlak jedoucí rovně stálou rychlostí, nástupiště."
+        },
+        {
+          "type": "term",
+          "term": "Postuláty speciální teorie relativity",
+          "definition": "1. **Princip relativity**: fyzikální zákony jsou stejné ve všech inerciálních soustavách. 2. **Stálá rychlost světla**: rychlost světla ve vakuu je ve všech inerciálních soustavách stejná."
+        },
+        {
+          "type": "heading",
+          "text": "Raketa a záblesk"
+        },
+        {
+          "type": "text",
+          "text": "Raketa letí rychlostí 0,6c a vyšle světlo dopředu. Podle „selského rozumu“ by ho pozorovatel na Zemi naměřil 1,6c. Naměří ale přesně **c**. Aby to platilo pro oba, musí se pro ně lišit plynutí času a délky."
+        },
+        {
+          "type": "term",
+          "term": "Dilatace času",
+          "definition": "Hodiny, které se vůči tobě pohybují, jdou pomaleji než tvoje.",
+          "example": "Na raketě letící 0,6c uplyne 8 s, na Zemi 10 s."
+        },
+        {
+          "type": "term",
+          "term": "Kontrakce délky",
+          "definition": "Těleso, které se vůči tobě pohybuje, naměříš ve směru pohybu kratší.",
+          "example": "Tyč 10 m letící 0,6c naměříš 8 m."
+        },
+        {
+          "type": "term",
+          "term": "Relativnost současnosti",
+          "definition": "Dvě události, které jsou pro jednoho pozorovatele současné, nemusí být současné pro jiného, který se vůči němu pohybuje."
+        },
+        {
+          "type": "heading",
+          "text": "Jak silný je efekt"
+        },
+        {
+          "type": "term",
+          "term": "Lorentzův faktor γ (gama)",
+          "definition": "Číslo, které říká, kolikrát pomaleji jdou pohybující se hodiny. Při běžných rychlostech je prakticky 1, blízko c roste nade všechny meze."
+        },
+        {
+          "type": "text",
+          "text": "Vzorec: `γ = 1 / √(1 − v²/c²)`. Pro v = 0,6c: √(1 − 0,36) = √0,64 = 0,8, takže γ = 1/0,8 = 1,25. Dilatace času `Δt = γ · Δt₀`, kontrakce délky `l = l₀ / γ` (Δt₀, l₀ = hodnoty naměřené na palubě)."
+        },
+        {
+          "type": "text",
+          "text": "Sleduj, jak γ roste s rychlostí. Při 0,6c je to jen 1,25, ale při 0,99c už přes 7."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "γ",
+            "items": [
+              {
+                "label": "0,6c",
+                "value": 1.25
+              },
+              {
+                "label": "0,8c",
+                "value": 1.67
+              },
+              {
+                "label": "0,9c",
+                "value": 2.29
+              },
+              {
+                "label": "0,99c",
+                "value": 7.09
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Důkaz: miony"
+        },
+        {
+          "type": "text",
+          "text": "**Miony** jsou částice, které vznikají vysoko v atmosféře (asi 10–15 km) a rozpadají se za pár mikrosekund. Ani rychlostí skoro c by bez dilatace stihly uletět jen několik set metrů. Přesto je na zemi měříme. Jejich „hodiny“ totiž jdou z našeho pohledu mnohokrát pomaleji."
+        },
+        {
+          "type": "example",
+          "question": "Raketa letí 0,6c (γ = 1,25). Na palubě uplyne 8 s. Kolik uplyne na Zemi?",
+          "answer": "Δt = γ · Δt₀ = 1,25 · 8 = **10 s**."
+        },
+        {
+          "type": "example",
+          "question": "Tyč o vlastní délce 10 m letí podél své délky 0,6c. Jakou délku naměříme?",
+          "answer": "l = l₀ / γ = 10 / 1,25 = **8 m**."
+        },
+        {
+          "type": "text",
+          "text": "A ještě jeden důsledek: hmotnost je forma energie, `E = m · c²`. I malá hmotnost odpovídá obrovské energii – to se uvolňuje v jaderných reakcích."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hodiny v raketě jdou pomaleji, protože se porouchají otřesy a rychlostí.",
+          "right": "Zpomaluje se samotný čas – všechny děje na raketě, včetně stárnutí posádky.",
+          "why": "Dilatace není vada hodin. Platí pro atomové hodiny, rozpad částic i srdeční tep. Posádka v raketě nic zvláštního nepozoruje – pomalost vidí jen pozorovatel, vůči kterému se pohybuje."
+        },
+        {
+          "type": "summary",
+          "text": "Rychlost světla je pro všechny inerciální pozorovatele stejná. Proto pohybující se hodiny jdou pomaleji (Δt = γΔt₀) a délky se zkracují (l = l₀/γ). E = mc²."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Družice GPS letí asi 14 000 km/h. Jejich hodiny se kvůli pohybu i slabší gravitaci rozcházejí s pozemskými o desítky mikrosekund za den. Bez výpočtu by navigace chybovala o kilometry. Tady se naučíš, jak relativistické efekty spočítat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Inerciální vztažná soustava",
+          "definition": "Soustava, která nezrychluje ani nerotuje. Speciální teorie relativity platí pro ně."
+        },
+        {
+          "type": "term",
+          "term": "Postuláty",
+          "definition": "1. Fyzikální zákony mají stejný tvar ve všech inerciálních soustavách. 2. Rychlost světla ve vakuu c je ve všech inerciálních soustavách stejná."
+        },
+        {
+          "type": "term",
+          "term": "Vlastní čas Δt₀ a vlastní délka l₀",
+          "definition": "**Vlastní čas** naměří hodiny, které jsou s dějem v klidu (na palubě rakety). **Vlastní délku** naměří pozorovatel, vůči kterému těleso stojí."
+        },
+        {
+          "type": "term",
+          "term": "Lorentzův faktor γ",
+          "definition": "`γ = 1 / √(1 − v²/c²)`. Vždy γ ≥ 1."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jev",
+            "Vztah",
+            "Co znamená"
+          ],
+          "rows": [
+            [
+              "dilatace času",
+              "Δt = γ · Δt₀",
+              "pozorovatel naměří delší čas"
+            ],
+            [
+              "kontrakce délky",
+              "l = l₀ / γ",
+              "pohybující se těleso je kratší"
+            ],
+            [
+              "ekvivalence hmotnosti a energie",
+              "E = m · c²",
+              "hmotnost je forma energie"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vyjádři rychlost jako zlomek c (např. v = 0,6c → v/c = 0,6).",
+            "Spočítej v²/c² (0,6² = 0,36).",
+            "Odečti od 1 a odmocni: √(1 − 0,36) = √0,64 = 0,8.",
+            "γ = 1 / 0,8 = 1,25.",
+            "Dosaď do vzorce pro čas nebo délku."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jaký je Lorentzův faktor pro v = 0,8c?",
+          "answer": "v²/c² = 0,64. √(1 − 0,64) = √0,36 = 0,6. γ = 1 / 0,6 ≈ **1,67**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik energie odpovídá hmotnosti 1 g?",
+          "answer": "E = m · c² = 10⁻³ · (3 · 10⁸)² = 10⁻³ · 9 · 10¹⁶ = **9 · 10¹³ J** – zhruba energie velké elektrárny za den."
+        },
+        {
+          "type": "text",
+          "text": "Výpočet γ pro 0,6c si prohlédni na pravoúhlém trojúhelníku s přeponou 10: odvěsna 6 odpovídá v/c = 0,6, druhá odvěsna 8 je √(1 − 0,6²) · 10. Proto γ = 10/8 = 1,25."
+        },
+        {
+          "type": "widget",
+          "widget": "pythagoras",
+          "props": {
+            "a": 6,
+            "b": 8
+          }
+        },
+        {
+          "type": "text",
+          "text": "Z γ je vidět, proč nic hmotného nedosáhne c: pro v → c jde γ do nekonečna a k dalšímu zrychlení by byla potřeba nekonečná energie."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Δt = Δt₀ / γ – na Zemi uplyne méně času.",
+          "right": "Δt = γ · Δt₀ – na Zemi uplyne víc času než na raketě.",
+          "why": "γ ≥ 1, a pohybující se hodiny jdou pomaleji. Proto na nich uplyne méně (vlastní čas Δt₀) a pozorovatel naměří víc."
+        },
+        {
+          "type": "text",
+          "text": "Důkazy: miony z kosmického záření doletí k povrchu jen díky dilataci času; atomové hodiny v letadlech a na družicích (GPS) potvrzují předpovědi."
+        },
+        {
+          "type": "summary",
+          "text": "`γ = 1/√(1 − v²/c²)`, `Δt = γΔt₀`, `l = l₀/γ`, `E = mc²`. Současnost je relativní, c nelze dosáhnout."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Lorentzův faktor γ pro v = 0,6c =",
+      "answers": [
+        "1,25"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Raketa letí 0,6c. Na palubě uplyne 8 s. Kolik sekund uplyne pro pozorovatele na Zemi?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Tyč má vlastní délku 10 m a letí podél své délky rychlostí 0,6c. Naměřená délka v m =",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Raketa letí 0,8c. Lorentzův faktor γ (na setiny) =",
+      "answers": [
+        "1,67"
+      ],
+      "explanation": "1 / √(1 − 0,64) = 1 / 0,6 ≈ 1,67"
+    },
+    {
+      "type": "choice",
+      "question": "Kolik energie odpovídá hmotnosti 1 g (c = 3 · 10⁸ m/s)?",
+      "options": [
+        "9 · 10¹³ J",
+        "9 · 10¹⁶ J",
+        "3 · 10⁵ J",
+        "9 · 10¹⁰ J"
+      ],
+      "answer": 0,
+      "explanation": "10⁻³ · 9 · 10¹⁶ = 9 · 10¹³ J"
+    },
+    {
+      "type": "truefalse",
+      "question": "Žádné hmotné těleso nemůže dosáhnout rychlosti světla ve vakuu.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Dvě události současné v jedné inerciální soustavě jsou současné ve všech soustavách.",
+      "answer": false,
+      "explanation": "Současnost je relativní."
+    },
+    {
+      "type": "choice",
+      "question": "Kdo formuloval speciální teorii relativity (1905)?",
+      "options": [
+        "Albert Einstein",
+        "Isaac Newton",
+        "Max Planck",
+        "Niels Bohr"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj jev s popisem.",
+      "pairs": [
+        [
+          "dilatace času",
+          "pohybující se hodiny jdou pomaleji"
+        ],
+        [
+          "kontrakce délky",
+          "zkrácení ve směru pohybu"
+        ],
+        [
+          "relativnost současnosti",
+          "současnost závisí na soustavě"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kde se v praxi musí počítat s relativistickými korekcemi?",
+      "options": [
+        "GPS družice",
+        "jízdní kolo",
+        "hydraulický lis",
+        "páka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Uveď dva postuláty speciální teorie relativity.",
+      "answer": "1. Princip relativity: fyzikální zákony mají stejný tvar ve všech inerciálních soustavách. 2. Princip stálé rychlosti světla: rychlost světla ve vakuu je ve všech inerciálních soustavách stejná."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli dilataci času a uveď experimentální důkaz.",
+      "answer": "Čas plyne v soustavě pohybující se vůči pozorovateli pomaleji: Δt = γΔt₀. Důkaz: miony z kosmického záření doletí k povrchu Země, ačkoli by se bez dilatace rozpadly dřív."
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cisla-do-1000",
+  "title": "Čísla do 1 000",
+  "emoji": "🔢",
+  "generator": "compare",
+  "explanations": [
+    {
+      "title": "Kostky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ve škole je 352 žáků. Kniha má 407 stran. Taková čísla jsou velká – jak si je představit?"
+        },
+        {
+          "type": "text",
+          "text": "Pomůžou ti **kostky**: kostičky, tyčky a desky. Uvidíš, že každé číslo do 1 000 se skládá jen ze tří druhů dílků."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jednotka (J)",
+          "definition": "Jedna kostička. Jeden kus."
+        },
+        {
+          "type": "term",
+          "term": "Desítka (D)",
+          "definition": "Tyčka z 10 kostiček.",
+          "example": "10 jednotek = 1 desítka."
+        },
+        {
+          "type": "term",
+          "term": "Stovka (S)",
+          "definition": "Deska z 10 tyček, tedy ze 100 kostiček.",
+          "example": "10 desítek = 1 stovka."
+        },
+        {
+          "type": "term",
+          "term": "Tisíc",
+          "definition": "10 stovek. Číslo 1 000."
+        },
+        {
+          "type": "heading",
+          "text": "Co znamenají číslice"
+        },
+        {
+          "type": "text",
+          "text": "V trojciferném čísle je **první číslice stovky**, **druhá desítky**, **třetí jednotky**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "S",
+            "D",
+            "J",
+            "Číslo"
+          ],
+          "rows": [
+            [
+              "3",
+              "5",
+              "2",
+              "352"
+            ],
+            [
+              "4",
+              "0",
+              "7",
+              "407"
+            ],
+            [
+              "6",
+              "3",
+              "0",
+              "630"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady je 352: 3 desky, 5 tyček, 2 kostičky. Změň číslo na 407. Kolik je teď tyček?"
+        },
+        {
+          "type": "widget",
+          "widget": "place-value",
+          "props": {
+            "value": 352
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Nula drží místo"
+        },
+        {
+          "type": "text",
+          "text": "V čísle 407 nejsou žádné desítky. Místo nich píšeme **0**. Bez nuly by vyšlo 47 – úplně jiné číslo."
+        },
+        {
+          "type": "example",
+          "question": "5 stovek, 2 desítky a 9 jednotek je číslo…",
+          "answer": "S = 5, D = 2, J = 9 → **529**."
+        },
+        {
+          "type": "example",
+          "question": "7 stovek a 4 jednotky je číslo…",
+          "answer": "Desítky chybí → na jejich místo 0. **704**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V čísle 208 jsou 2 desítky.",
+          "right": "208 = 2 stovky, 0 desítek, 8 jednotek.",
+          "why": "Dvojka stojí na prvním místě – na místě stovek. Desítky ukazuje prostřední číslice, a ta je 0."
+        },
+        {
+          "type": "summary",
+          "text": "10 jednotek = desítka, 10 desítek = stovka, 10 stovek = tisíc. Číslice zleva: stovky, desítky, jednotky."
+        }
+      ]
+    },
+    {
+      "title": "Na ose",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Který dům je dál – číslo 628, nebo 682? Které auto stojí víc? Velká čísla musíme umět **porovnat** a **seřadit**."
+        },
+        {
+          "type": "text",
+          "text": "Pomůže ti dlouhá čára s čísly a jedno jednoduché pravidlo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Číselná osa",
+          "definition": "Čára s čísly. Vlevo 0, doprava čísla rostou."
+        },
+        {
+          "type": "term",
+          "term": "Stovky, desítky, jednotky",
+          "definition": "Tři části trojciferného čísla. První číslice = stovky, druhá = desítky, třetí = jednotky.",
+          "example": "483 = 4 stovky, 8 desítek, 3 jednotky."
+        },
+        {
+          "type": "term",
+          "term": "Znaky > < =",
+          "definition": "> je větší než, < je menší než, = rovná se. Otevřená strana je u většího čísla.",
+          "example": "483 > 479"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Osa jde po stovkách. Najdi, kde by ležela čísla 250, 599 a 905."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 1000,
+            "step": 100
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak porovnat"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Porovnej **stovky**. Kde jich je víc, číslo je větší.",
+            "Stovky stejné? Porovnej **desítky**.",
+            "Desítky taky stejné? Porovnej **jednotky**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "483 ? 479",
+          "answer": "Stovky stejné (4). Desítky: 8 > 7. **483 > 479.** Jednotky už nerozhodují."
+        },
+        {
+          "type": "example",
+          "question": "905 ? 950",
+          "answer": "Stovky stejné (9). Desítky: 0 < 5. **905 < 950.**"
+        },
+        {
+          "type": "example",
+          "question": "Které číslo je hned po 599?",
+          "answer": "599 + 1: jednotek by bylo 10 – to je nová desítka. Desítek by bylo 10 – to je nová stovka. Vyjde **600**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "99 > 190, protože 9 je víc než 1.",
+          "right": "99 < 190",
+          "why": "99 je dvojciferné, nemá žádnou stovku. 190 má 1 stovku. Číslo s více číslicemi je větší."
+        },
+        {
+          "type": "summary",
+          "text": "Porovnávej zleva: stovky, pak desítky, pak jednotky. Rozhoduje první číslice, která se liší."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "5 stovek, 2 desítky a 9 jednotek je číslo …",
+      "answers": [
+        "529"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "7 stovek a 4 jednotky je číslo …",
+      "answers": [
+        "704"
+      ],
+      "explanation": "Desítky chybí → na jejich místo 0."
+    },
+    {
+      "type": "input",
+      "question": "Kolik stovek má číslo 860?",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik desítek je 1 stovka?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Které číslo je hned po 599?",
+      "answers": [
+        "600"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "300 + 40 + 6 =",
+      "answers": [
+        "346"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "628 ? 682",
+      "options": [
+        "<",
+        ">",
+        "="
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "905 ? 950",
+      "options": [
+        "<",
+        ">",
+        "="
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která číslice v 473 znamená desítky?",
+      "options": [
+        "4",
+        "7",
+        "3"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "1 000 = 10 stovek",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "V čísle 208 jsou 2 desítky.",
+      "answer": false,
+      "explanation": "208 = 2 stovky, 0 desítek, 8 jednotek."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "99",
+        "190",
+        "409",
+        "490",
+        "904"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Z čeho se skládá číslo 506? Proč je tam nula?",
+      "answer": "5 stovek, 0 desítek a 6 jednotek. Nula drží místo desítek, které chybí."
+    },
+    {
+      "type": "open",
+      "question": "Jak porovnáš čísla 742 a 724?",
+      "answer": "Stovky jsou stejné (7). Porovnám desítky: 4 > 2, takže 742 > 724."
+    }
+  ]
+}

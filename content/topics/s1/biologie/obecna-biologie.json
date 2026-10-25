@@ -1,0 +1,390 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obecna-biologie",
+  "title": "Obecná biologie a třídění organismů",
+  "emoji": "🌐",
+  "explanations": [
+    {
+      "title": "Adresa organismu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na Zemi žije několik milionů popsaných druhů a každý rok přibývají další. Kdyby měl každý jen místní jméno, nikdo by se nedomluvil: anglické *robin* je v Británii červenka, ale v Americe úplně jiný pták – drozd. Biologové proto mají jednotný systém – každý druh má **přesnou adresu** a **mezinárodní jméno**."
+        },
+        {
+          "type": "text",
+          "text": "Funguje to jako poštovní adresa: stát → město → ulice → číslo domu → byt. Čím níž jdeš, tím přesněji víš, o koho jde. A díky tomu poznáš i příbuzenství: kdo bydlí ve stejné „ulici“, je si blízký."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Biologie",
+          "definition": "Věda o živých organismech – o všem, co žije.",
+          "example": "Má mnoho oborů: **botanika** (rostliny), **zoologie** (živočichové), **mykologie** (houby), **cytologie** (buňka), **etologie** (chování), **genetika** (dědičnost), **ekologie** (vztahy s prostředím)."
+        },
+        {
+          "type": "term",
+          "term": "Organismus",
+          "definition": "Jakýkoli živý jedinec – bakterie, houba, rostlina, zvíře, člověk."
+        },
+        {
+          "type": "term",
+          "term": "Druh",
+          "definition": "Skupina jedinců, kteří jsou si podobní a mohou se spolu přirozeně křížit a mít **plodné** potomstvo. Druh je **základní jednotka** třídění.",
+          "example": "Kůň a osel spolu zplodí mulu, ale mula je neplodná – kůň a osel jsou dva různé druhy."
+        },
+        {
+          "type": "term",
+          "term": "Taxonomie a taxon",
+          "definition": "**Taxonomie** je obor, který organismy třídí. **Taxon** je jakákoli skupina v tomto třídění (druh, rod, čeleď…)."
+        },
+        {
+          "type": "heading",
+          "text": "Patra adresy – od největšího"
+        },
+        {
+          "type": "text",
+          "text": "Taxony jsou poskládané jako krabice v krabicích. Pořadí od nejširšího: **doména → říše → kmen → třída → řád → čeleď → rod → druh**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kategorie",
+            "Člověk",
+            "Vlk"
+          ],
+          "rows": [
+            [
+              "doména",
+              "eukaryota",
+              "eukaryota"
+            ],
+            [
+              "říše",
+              "živočichové",
+              "živočichové"
+            ],
+            [
+              "kmen",
+              "strunatci",
+              "strunatci"
+            ],
+            [
+              "třída",
+              "savci",
+              "savci"
+            ],
+            [
+              "řád",
+              "primáti",
+              "šelmy"
+            ],
+            [
+              "čeleď",
+              "hominidé",
+              "psovití"
+            ],
+            [
+              "rod a druh",
+              "*Homo sapiens*",
+              "*Canis lupus*"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Všimni si: člověk a vlk mají stejnou adresu až po třídu savců. Liší se až od řádu. Jsou tedy příbuzní, ale ne blízce."
+        },
+        {
+          "type": "term",
+          "term": "Doména",
+          "definition": "Nejvyšší kategorie. Existují jen tři: **Bacteria** (bakterie), **Archaea** (archea – podobné bakteriím, ale odlišné chemií buňky) a **Eukarya** (eukaryota – organismy, jejichž buňky mají jádro: rostliny, živočichové, houby a další)."
+        },
+        {
+          "type": "heading",
+          "text": "Vědecké jméno"
+        },
+        {
+          "type": "term",
+          "term": "Binomická nomenklatura",
+          "definition": "Dvouslovné latinské jméno druhu: **rodové jméno** (velkým písmenem) + **druhový přívlastek** (malým). Zavedl ji švédský přírodovědec **Carl Linné** v 18. století. Píše se kurzívou.",
+          "example": "*Homo sapiens* – člověk moudrý, *Canis lupus* – vlk obecný."
+        },
+        {
+          "type": "example",
+          "question": "Pes domácí i vlk patří do rodu *Canis*, liška obecná je *Vulpes vulpes*. Kdo je vlkovi příbuznější?",
+          "answer": "Pes – sdílí s vlkem i **rod** (první slovo jména). Liška je s vlkem ve stejné **čeledi** psovitých, ale v jiném rodu, takže je vzdálenější."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď: čeleď, říše, rod, třída.",
+          "answer": "Od největší: **říše → třída → čeleď → rod**. Pomůcka: celá řada je doména, říše, kmen, třída, řád, čeleď, rod, druh."
+        },
+        {
+          "type": "heading",
+          "text": "Co vůbec patří do systému"
+        },
+        {
+          "type": "text",
+          "text": "Třídíme jen **živé** organismy. Za živé považujeme to, co má **buněčnou stavbu**, **metabolismus** (přijímá a přeměňuje látky a energii), udržuje stálé vnitřní prostředí (**homeostáze**), reaguje na podněty (**dráždivost**), **roste a vyvíjí se**, **rozmnožuje se** a předává vlastnosti potomkům (**dědičnost**). Viry tyto znaky nesplňují všechny."
+        },
+        {
+          "type": "mistake",
+          "wrong": "homo Sapiens, Canis Lupus",
+          "right": "*Homo sapiens*, *Canis lupus*",
+          "why": "Rodové jméno vždy velkým písmenem, druhový přívlastek vždy malým – i když je odvozený od jména osoby nebo místa."
+        },
+        {
+          "type": "summary",
+          "text": "Doména → říše → kmen → třída → řád → čeleď → rod → druh. Druh je základní jednotka. Jméno druhu je dvouslovné (Linné): *Rod druh*."
+        }
+      ]
+    },
+    {
+      "title": "Znaky života",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kočka je živá, kámen ne. To pozná každý. Ale co semínko v šuplíku, kvasnice v lednici nebo virus chřipky? Abychom mohli říct, co je živé, potřebujeme **seznam znaků života**."
+        },
+        {
+          "type": "text",
+          "text": "Ten seznam je zároveň osnova celé biologie: každý znak má svůj obor a svoje kapitoly. A podle podobnosti živých organismů je pak třídíme do systému."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Živá soustava (organismus)",
+          "definition": "Cokoli živého – od jedné bakterie po člověka."
+        },
+        {
+          "type": "term",
+          "term": "Buňka",
+          "definition": "Nejmenší živá jednotka. Každý organismus je z jedné nebo mnoha buněk.",
+          "example": "Bakterie = 1 buňka. Člověk = desítky bilionů buněk."
+        },
+        {
+          "type": "term",
+          "term": "Otevřená soustava",
+          "definition": "Soustava, která s okolím **vyměňuje látky, energii i informace**. Živé soustavy jsou otevřené – kdyby výměna ustala, zemřou.",
+          "example": "Jíš (látky), dýcháš, vydáváš teplo (energie), vnímáš okolí (informace)."
+        },
+        {
+          "type": "heading",
+          "text": "Znaky života"
+        },
+        {
+          "type": "text",
+          "text": "Ke každému znaku si nejdřív zkus vymyslet příklad ze svého těla, pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "buněčná stavba",
+                "back": "tělo je z buněk"
+              },
+              {
+                "front": "metabolismus",
+                "back": "látková a energetická přeměna – příjem, přeměna a výdej látek"
+              },
+              {
+                "front": "homeostáze",
+                "back": "udržování stálého vnitřního prostředí (teplota, voda, cukr v krvi)"
+              },
+              {
+                "front": "dráždivost",
+                "back": "reakce na podněty z okolí"
+              },
+              {
+                "front": "reprodukce",
+                "back": "vznik nových jedinců"
+              },
+              {
+                "front": "dědičnost a proměnlivost",
+                "back": "předávání a změna genetické informace"
+              },
+              {
+                "front": "růst a vývoj",
+                "back": "ontogeneze (jedinec) a fylogeneze (druh)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Ontogeneze a fylogeneze",
+          "definition": "**Ontogeneze** je vývoj jednoho jedince od oplození do smrti. **Fylogeneze** je vývoj celého druhu nebo skupiny během milionů let.",
+          "example": "Žabka z vajíčka přes pulce = ontogeneze. Vznik obojživelníků z ryb = fylogeneze."
+        },
+        {
+          "type": "example",
+          "question": "Je semínko fazole v šuplíku živé?",
+          "answer": "Ano. Je z buněk a metabolismus má jen velmi zpomalený. Po zasazení vyroste a rozmnoží se – splňuje znaky života."
+        },
+        {
+          "type": "example",
+          "question": "Je virus živý?",
+          "answer": "Ne v plném smyslu. Nemá buňky ani vlastní metabolismus a **rozmnožuje se jen uvnitř cizí buňky**. Má ale dědičnou informaci a mění se. Proto stojí na hranici živého."
+        },
+        {
+          "type": "heading",
+          "text": "Od znaků k třídění"
+        },
+        {
+          "type": "text",
+          "text": "Organismy podobné stavbou a příbuzné původem řadíme do skupin – **taxonů**. Pořadí od největšího: **doména, říše, kmen, třída, řád, čeleď, rod, druh**. Základní jednotka je **druh** – jedinci, kteří spolu mají plodné potomstvo."
+        },
+        {
+          "type": "term",
+          "term": "Tři domény",
+          "definition": "Všechny organismy se dělí na **Bacteria**, **Archaea** a **Eukarya**. Bakterie a archea nemají v buňce jádro, eukaryota ano."
+        },
+        {
+          "type": "term",
+          "term": "Binomické jméno",
+          "definition": "Vědecké jméno druhu ze dvou slov: rod + druhový přívlastek. Zavedl ho **Carl Linné**.",
+          "example": "*Homo sapiens*, *Quercus robur* (dub letní)"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Protista je čtvrtá doména života.",
+          "right": "Domény jsou jen tři: Bacteria, Archaea, Eukarya. Protista patří mezi eukaryota.",
+          "why": "Protista (prvoci a řasy) mají buňky s jádrem, takže jsou eukaryota. Protista ani netvoří jednu příbuzenskou skupinu."
+        },
+        {
+          "type": "summary",
+          "text": "Živé = buňky, metabolismus, homeostáze, dráždivost, reprodukce, dědičnost, růst a vývoj. Živé soustavy jsou otevřené. Tři domény: Bacteria, Archaea, Eukarya."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "order",
+      "question": "Seřaď taxonomické kategorie od nejvyšší.",
+      "items": [
+        "říše",
+        "kmen",
+        "třída",
+        "řád",
+        "čeleď",
+        "rod"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Autor binomické nomenklatury je…",
+      "options": [
+        "Carl Linné",
+        "Charles Darwin",
+        "Robert Hooke"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Která doména NEexistuje?",
+      "options": [
+        "Protista",
+        "Archaea",
+        "Bacteria"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Udržování stálého vnitřního prostředí organismu se nazývá…",
+      "answers": [
+        "homeostáze",
+        "homeostaze",
+        "homeostáza"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve vědeckém jménu se rodové jméno píše s velkým a druhové s malým písmenem.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj obor s předmětem zkoumání.",
+      "pairs": [
+        [
+          "cytologie",
+          "buňka"
+        ],
+        [
+          "mykologie",
+          "houby"
+        ],
+        [
+          "botanika",
+          "rostliny"
+        ],
+        [
+          "etologie",
+          "chování"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ontogeneze je…",
+      "options": [
+        "vývoj jedince",
+        "vývoj druhu",
+        "vznik života"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Viry splňují všechny znaky živých soustav.",
+      "answer": false,
+      "explanation": "Nemají vlastní metabolismus a nemnoží se mimo hostitelskou buňku."
+    },
+    {
+      "type": "choice",
+      "question": "Základní taxonomická jednotka je…",
+      "options": [
+        "druh",
+        "rod",
+        "říše"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Živé soustavy jsou z termodynamického hlediska otevřené.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj a vysvětli aspoň čtyři vlastnosti živých soustav.",
+      "answer": "Metabolismus (přeměna látek a energie), homeostáze (stálé vnitřní prostředí), dráždivost, reprodukce, dědičnost a proměnlivost, růst a vývoj, buněčná stavba."
+    },
+    {
+      "type": "open",
+      "question": "Co je binomická nomenklatura? Uveď příklad.",
+      "answer": "Dvouslovné vědecké pojmenování druhu – rodové jméno a druhový přívlastek, latinsky. Např. Homo sapiens, Canis lupus."
+    }
+  ]
+}

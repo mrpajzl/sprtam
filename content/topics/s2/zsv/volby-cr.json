@@ -1,0 +1,467 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "volby-cr",
+  "title": "Volby v ČR",
+  "emoji": "📮",
+  "explanations": [
+    {
+      "title": "Volební roky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jakub slaví 18. narozeniny. Na podzim poprvé volí do Poslanecké sněmovny, za dva roky senátora, pak prezidenta, zastupitele svého města i europoslance. Každé volby fungují trochu jinak."
+        },
+        {
+          "type": "text",
+          "text": "Volby jsou hlavní způsob, jak v demokracii ovlivníš, kdo bude rozhodovat o školách, daních nebo silnicích. Když víš, jak fungují, tvůj hlas má větší váhu – víš, co volíš a co se s ním stane."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Aktivní volební právo",
+          "definition": "Právo **volit**. V ČR ho má každý občan od **18 let**.",
+          "example": "Jakub v 18 letech jde k urně."
+        },
+        {
+          "type": "term",
+          "term": "Pasivní volební právo",
+          "definition": "Právo **být zvolen** (kandidovat). Věková hranice se liší podle voleb.",
+          "example": "Senátorem se můžeš stát až od 40 let."
+        },
+        {
+          "type": "term",
+          "term": "Mandát",
+          "definition": "Místo v zastupitelském sboru, které kandidát získá ve volbách.",
+          "example": "Strana získala 30 mandátů = 30 poslanců."
+        },
+        {
+          "type": "term",
+          "term": "Funkční (volební) období",
+          "definition": "Doba, na kterou je někdo zvolen. Pak se volí znovu.",
+          "example": "Poslanci jsou zvoleni na 4 roky."
+        },
+        {
+          "type": "heading",
+          "text": "Volby do Poslanecké sněmovny: volím stranu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Jakub dostane hlasovací lístky všech stran ve svém **kraji** (volebních krajů je **14**).",
+            "Vybere **jeden lístek strany** a vloží ho do obálky.",
+            "Na lístku může zakroužkovat až **4 kandidáty** – dává jim **preferenční hlasy**, aby se posunuli dopředu.",
+            "Do Sněmovny se dostanou jen strany, které celkem získají aspoň **5 %** hlasů.",
+            "**200 mandátů** se rozdělí mezi strany **podle podílu hlasů**."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Poměrný volební systém",
+          "definition": "Mandáty se rozdělí stranám **v poměru** k počtu jejich hlasů.",
+          "example": "Strana s 20 % hlasů dostane zhruba pětinu křesel."
+        },
+        {
+          "type": "heading",
+          "text": "Volby do Senátu: volím člověka"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Republika je rozdělená na **81 volebních obvodů**, v každém se volí **jeden senátor**.",
+            "Jakub volí konkrétního **kandidáta**.",
+            "Kdo získá **nadpoloviční většinu** (víc než 50 %), vyhrál hned.",
+            "Když ji nemá nikdo, koná se asi za týden **2. kolo** mezi **dvěma nejúspěšnějšími**."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Většinový volební systém",
+          "definition": "V obvodu **vyhrává jeden kandidát** s největším (u nás nadpolovičním) počtem hlasů. Ostatní hlasy propadnou.",
+          "example": "Senát, prezident."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Porovnej, kolik členů mají jednotlivé orgány. Pak zkus počty zakrýt a zopakovat zpaměti."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "členů",
+            "items": [
+              {
+                "label": "Poslanecká sněmovna",
+                "value": 200
+              },
+              {
+                "label": "Senát",
+                "value": 81
+              },
+              {
+                "label": "Europoslanci za ČR",
+                "value": 21
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Strana A získá 4,8 % hlasů. Kolik poslanců bude mít?",
+          "answer": "**Žádného.** Do Sněmovny se dostane jen samostatná strana s aspoň **5 %**. Hlasy pro ni se při rozdělování mandátů nepočítají."
+        },
+        {
+          "type": "example",
+          "question": "V senátním obvodu získají kandidáti 38 %, 31 %, 20 % a 11 %. Kdo je senátor?",
+          "answer": "Nikdo nemá víc než 50 %. Koná se **2. kolo** mezi prvními dvěma (38 % a 31 %). Kdo v něm získá víc hlasů, stane se senátorem."
+        },
+        {
+          "type": "text",
+          "text": "Volby jsou vždy **všeobecné** (volí všichni dospělí občané), **rovné** (každý hlas má stejnou váhu), **přímé** (volíme zástupce sami, ne přes prostředníky) a **tajné** (nikdo nesmí zjistit, jak jsem volil)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ve volbách do Sněmovny volím konkrétního poslance, jako u Senátu.",
+          "right": "Do Sněmovny volím **stranu** (lístek strany). Pořadí kandidátů můžu ovlivnit jen preferenčními hlasy.",
+          "why": "Sněmovna se volí poměrným systémem, kde se mandáty dělí mezi strany. Senát se volí většinovým systémem po osobách."
+        },
+        {
+          "type": "summary",
+          "text": "Volit lze od 18 let. Sněmovna = 200 poslanců, poměrný systém, volím stranu, hranice 5 %. Senát = 81 senátorů, většinový systém, volím člověka, případně 2. kolo."
+        }
+      ]
+    },
+    {
+      "title": "Přehled v tabulce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V Česku se volí do pěti různých orgánů. Každé volby mají vlastní pravidla: kolik lidí se volí, na jak dlouho, od kolika let lze kandidovat a jakým systémem se počítají hlasy."
+        },
+        {
+          "type": "text",
+          "text": "Tahle čísla se často objevují v testech i u maturity. Hlavně ale vysvětlují, proč třeba Senát nikdy nemění všechny senátory najednou."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Volební systém",
+          "definition": "Pravidla, jak se z hlasů voličů určí, kdo získá místa (mandáty).",
+          "example": "Poměrný, nebo většinový."
+        },
+        {
+          "type": "term",
+          "term": "Poměrný systém",
+          "definition": "Strany dostanou místa **podle podílu hlasů**. Volí se kandidátní listiny stran.",
+          "example": "Strana s 30 % hlasů získá asi 30 % křesel."
+        },
+        {
+          "type": "term",
+          "term": "Většinový systém",
+          "definition": "V obvodu vyhraje **jeden kandidát**. U nás potřebuje nadpoloviční většinu, jinak rozhodne **2. kolo** dvou nejlepších.",
+          "example": "Volba senátora nebo prezidenta."
+        },
+        {
+          "type": "term",
+          "term": "Uzavírací klauzule",
+          "definition": "Minimální podíl hlasů, který strana potřebuje, aby vůbec získala mandát.",
+          "example": "Do Sněmovny 5 % pro jednu stranu."
+        },
+        {
+          "type": "heading",
+          "text": "Všechny volby v ČR"
+        },
+        {
+          "type": "table",
+          "head": [
+            "volby",
+            "kolik členů",
+            "na jak dlouho",
+            "kandidovat od",
+            "systém"
+          ],
+          "rows": [
+            [
+              "Poslanecká sněmovna",
+              "200",
+              "4 roky",
+              "21 let",
+              "poměrný, 14 krajů"
+            ],
+            [
+              "Senát",
+              "81",
+              "6 let, třetina se volí každé 2 roky",
+              "40 let",
+              "většinový, 2 kola"
+            ],
+            [
+              "Prezident",
+              "1",
+              "5 let, nejvýš 2× po sobě",
+              "40 let",
+              "přímá volba, většinový, 2 kola"
+            ],
+            [
+              "Zastupitelstvo obce a kraje",
+              "podle velikosti",
+              "4 roky",
+              "18 let",
+              "poměrný"
+            ],
+            [
+              "Evropský parlament",
+              "21 za ČR",
+              "5 let",
+              "21 let",
+              "poměrný"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Hranice pro vstup do Sněmovny"
+        },
+        {
+          "type": "list",
+          "items": [
+            "samostatná strana: **5 %**,",
+            "koalice 2 stran: **8 %**,",
+            "koalice 3 a více stran: **11 %**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď volby podle systému. Ptej se: volím stranu (kandidátku), nebo jednoho konkrétního člověka?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Poměrný systém",
+              "Většinový systém"
+            ],
+            "items": [
+              {
+                "text": "Poslanecká sněmovna",
+                "group": 0
+              },
+              {
+                "text": "Evropský parlament",
+                "group": 0
+              },
+              {
+                "text": "Zastupitelstvo obce",
+                "group": 0
+              },
+              {
+                "text": "Zastupitelstvo kraje",
+                "group": 0
+              },
+              {
+                "text": "Senát",
+                "group": 1
+              },
+              {
+                "text": "Prezident",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč se Senát „obměňuje po třetinách“?",
+          "answer": "Senátoři jsou voleni na **6 let**, ale volby jsou **každé 2 roky** a pokaždé se volí jen **třetina** (27 obvodů). Senát tak nikdy nemá samé nové členy. Navíc ho **nelze rozpustit** – proto je pojistkou stability."
+        },
+        {
+          "type": "example",
+          "question": "Koalice tří stran získá 9 % hlasů. Dostane se do Sněmovny?",
+          "answer": "**Ne.** Koalice tří a více stran potřebuje aspoň **11 %**. Kdyby šlo o koalici dvou stran, stačilo by 8 %."
+        },
+        {
+          "type": "heading",
+          "text": "Principy volebního práva"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Všeobecné** – volit může každý občan od **18 let**.",
+            "**Rovné** – každý hlas váží stejně.",
+            "**Přímé** – volíme zástupce sami.",
+            "**Tajné** – za plentou, nikdo nesmí vidět, jak volím."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Prezidenta dříve volil Parlament. **Od roku 2013** ho volí **přímo občané**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kandidovat do Sněmovny můžu od 18 let, stejně jako volit.",
+          "right": "Volit můžu od 18, ale do Sněmovny kandidovat až od **21 let** (do Senátu a na prezidenta od 40).",
+          "why": "Aktivní (volit) a pasivní (být zvolen) volební právo mají jiné věkové hranice. Od 18 lze kandidovat jen do zastupitelstev obcí a krajů."
+        },
+        {
+          "type": "summary",
+          "text": "Sněmovna: 200, 4 roky, od 21 let, poměrný systém, 5/8/11 %. Senát: 81, 6 let, třetina po 2 letech, od 40 let, většinový. Prezident: 5 let, max. 2× po sobě, od 40 let, přímo od 2013. Volby jsou všeobecné, rovné, přímé a tajné."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik poslanců má Poslanecká sněmovna?",
+      "answers": [
+        "200"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik senátorů má Senát?",
+      "answers": [
+        "81"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Na jak dlouho je volen senátor?",
+      "options": [
+        "6 let",
+        "4 roky",
+        "5 let",
+        "8 let"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Od kolika let lze kandidovat do Poslanecké sněmovny?",
+      "options": [
+        "21",
+        "18",
+        "35",
+        "40"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Od kolika let lze kandidovat na prezidenta a do Senátu?",
+      "options": [
+        "40",
+        "35",
+        "21",
+        "45"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Prezident ČR je od roku 2013 volen přímo občany.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak často se volí třetina Senátu?",
+      "options": [
+        "Každé 2 roky",
+        "Každé 3 roky",
+        "Každé 4 roky",
+        "Každý rok"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jakou hranici hlasů musí překročit samostatná strana, aby se dostala do Sněmovny?",
+      "options": [
+        "5 %",
+        "3 %",
+        "8 %",
+        "10 %"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik procent hlasů potřebuje do Sněmovny koalice 3 a více stran?",
+      "answers": [
+        "11"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Volby do Poslanecké sněmovny probíhají většinovým systémem.",
+      "answer": false,
+      "explanation": "Poměrným systémem ve 14 volebních krajích."
+    },
+    {
+      "type": "choice",
+      "question": "Jak dlouhé je funkční období prezidenta ČR?",
+      "options": [
+        "5 let",
+        "4 roky",
+        "6 let",
+        "7 let"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj orgán s funkčním obdobím.",
+      "pairs": [
+        [
+          "Poslanecká sněmovna",
+          "4 roky"
+        ],
+        [
+          "Senát",
+          "6 let"
+        ],
+        [
+          "Prezident",
+          "5 let"
+        ],
+        [
+          "Evropský parlament",
+          "5 let"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi poměrným a většinovým volebním systémem na příkladu ČR.",
+      "answer": "Poměrný systém (Sněmovna) rozděluje mandáty stranám podle podílu hlasů. Většinový (Senát) – v každém z 81 obvodů vyhrává jeden kandidát; když nikdo nemá nadpoloviční většinu, koná se 2. kolo dvou nejúspěšnějších."
+    },
+    {
+      "type": "open",
+      "question": "Jaké jsou principy volebního práva v ČR?",
+      "answer": "Volby jsou všeobecné (volí všichni občané od 18 let), rovné (každý hlas má stejnou váhu), přímé (volíme přímo zástupce) a tajné (nikdo nezjistí, jak jsem volil)."
+    }
+  ]
+}

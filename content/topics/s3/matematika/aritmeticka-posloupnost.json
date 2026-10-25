@@ -1,0 +1,362 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "aritmeticka-posloupnost",
+  "title": "Posloupnosti a aritmetická posloupnost",
+  "emoji": "🪜",
+  "explanations": [
+    {
+      "title": "Schody",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Šetříš: první týden dáš do pokladničky 20 Kč, každý další týden o 5 Kč víc. Kolik dáš v desátém týdnu? Kolik budeš mít celkem? Takové pravidelné řady čísel jsou **posloupnosti**."
+        },
+        {
+          "type": "text",
+          "text": "Posloupnosti popisují řady sedadel v divadle, splátky, tabulky jízdních řádů. A hlavně je potřeba umět sečíst hodně čísel rychle – i 100 čísel za pár vteřin."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Posloupnost",
+          "definition": "Čísla seřazená za sebou, každé má své pořadí: první člen a₁, druhý a₂, … n-tý aₙ. Malé číslo dole říká pořadí.",
+          "example": "5, 9, 13, …: a₁ = 5, a₂ = 9, a₃ = 13."
+        },
+        {
+          "type": "term",
+          "term": "Aritmetická posloupnost",
+          "definition": "Každý další člen dostaneš **přičtením stejného čísla** d. Jako schody stejné výšky.",
+          "example": "5, 9, 13, 17 – pokaždé +4."
+        },
+        {
+          "type": "term",
+          "term": "Diference d",
+          "definition": "To stálé číslo, které se přičítá. d = a₂ − a₁ (rozdíl sousedů).",
+          "example": "U 5, 9, 13 je d = 9 − 5 = 4."
+        },
+        {
+          "type": "heading",
+          "text": "Skákání po ose"
+        },
+        {
+          "type": "text",
+          "text": "Začni na 2 a skákej po 3. Ťukni několikrát a sleduj: 2, 5, 8, 11, … Na desátý člen bys potřeboval 9 skoků."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "start": 2,
+            "hop": 3
+          }
+        },
+        {
+          "type": "text",
+          "text": "Z toho plyne vzorec. Na prvním členu stojíš bez skoku, ke druhému se dostaneš jedním skokem, k n-tému **n − 1 skoky**: aₙ = a₁ + (n − 1) · d."
+        },
+        {
+          "type": "example",
+          "question": "a₁ = 2, d = 3. Kolik je a₁₀?",
+          "answer": "Devět skoků po 3: a₁₀ = 2 + 9 · 3 = **29**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "a₁₀ = a₁ + 10 · d = 32",
+          "right": "a₁₀ = a₁ + 9 · d = 29",
+          "why": "Z prvního na desátý člen vede jen 9 skoků. První člen už „stojí“ na místě."
+        },
+        {
+          "type": "heading",
+          "text": "Gaussův trik na součet"
+        },
+        {
+          "type": "text",
+          "text": "Malý Gauss měl prý ve škole sečíst 1 + 2 + … + 100. Všiml si, že 1 + 100 = 101, 2 + 99 = 101, 3 + 98 = 101… Dvojic je 50, každá dá 101. Součet je 50 · 101 = **5050**."
+        },
+        {
+          "type": "text",
+          "text": "Obecně: součet prvních n členů je počet dvojic krát součet krajních: sₙ = n/2 · (a₁ + aₙ)."
+        },
+        {
+          "type": "example",
+          "question": "Hlediště: 1. řada má 20 míst, každá další o 2 víc. Kolik míst je v 10 řadách?",
+          "answer": "a₁₀ = 20 + 9 · 2 = 38. Součet s₁₀ = 10/2 · (20 + 38) = 5 · 58 = **290 míst**."
+        },
+        {
+          "type": "text",
+          "text": "Ne každá posloupnost je aritmetická. 2, 4, 8, 16 roste násobením, 1, 4, 9, 16 jsou druhé mocniny. Posloupnost 1, 1/2, 1/3, … není rostoucí – každý člen je menší."
+        },
+        {
+          "type": "summary",
+          "text": "Aritmetická posloupnost: pořád přičítám d. aₙ = a₁ + (n − 1)d. Součet n členů sₙ = n/2 · (a₁ + aₙ)."
+        }
+      ]
+    },
+    {
+      "title": "Vzorci a předpisy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Posloupnost jde zadat různě: výčtem prvních členů, vzorcem pro n-tý člen nebo pravidlem „jak z předchozího udělat další“. Programátor pozná ten poslední způsob jako cyklus."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se s každým zadáním pracovat, poznat aritmetickou posloupnost a spočítat cokoli: člen, diferenci, pořadí i součet."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Posloupnost",
+          "definition": "Funkce, která každému přirozenému číslu n (pořadí) přiřadí číslo aₙ (člen).",
+          "example": "aₙ = 2n + 1: a₁ = 3, a₂ = 5, a₃ = 7."
+        },
+        {
+          "type": "term",
+          "term": "Vzorec pro n-tý člen",
+          "definition": "Předpis, do kterého dosadíš pořadí n a hned máš člen.",
+          "example": "aₙ = 2n + 1 → a₁₀ = 21."
+        },
+        {
+          "type": "term",
+          "term": "Rekurentní zadání",
+          "definition": "Znáš první člen a pravidlo, jak z člena aₙ spočítat další aₙ₊₁.",
+          "example": "a₁ = 1, aₙ₊₁ = aₙ + 2n."
+        },
+        {
+          "type": "term",
+          "term": "Rostoucí / klesající",
+          "definition": "Rostoucí: každý další člen je větší (aₙ₊₁ > aₙ). Klesající: menší.",
+          "example": "aₙ = 1/n: 1, 1/2, 1/3… je klesající."
+        },
+        {
+          "type": "heading",
+          "text": "Aritmetická posloupnost"
+        },
+        {
+          "type": "term",
+          "term": "Aritmetická posloupnost a diference",
+          "definition": "Rozdíl dvou sousedních členů je stále stejné číslo d: aₙ₊₁ − aₙ = d.",
+          "example": "aₙ = 2n + 1: aₙ₊₁ − aₙ = (2n + 3) − (2n + 1) = 2 → aritmetická, d = 2."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vzorec",
+            "K čemu"
+          ],
+          "rows": [
+            [
+              "aₙ = a₁ + (n − 1)d",
+              "n-tý člen"
+            ],
+            [
+              "aᵣ − aₛ = (r − s)d",
+              "diference ze dvou členů"
+            ],
+            [
+              "sₙ = n/2 · (a₁ + aₙ)",
+              "součet prvních n členů"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na sloupce posloupnosti 4, 7, 10, … Každý je o stejný kus delší – proto graf aritmetické posloupnosti leží na přímce."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "a₁",
+                "value": 4
+              },
+              {
+                "label": "a₂",
+                "value": 7
+              },
+              {
+                "label": "a₃",
+                "value": 10
+              },
+              {
+                "label": "a₄",
+                "value": 13
+              },
+              {
+                "label": "a₅",
+                "value": 16
+              },
+              {
+                "label": "a₆",
+                "value": 19
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Řešené úlohy"
+        },
+        {
+          "type": "example",
+          "question": "a₁ = 3, a₅ = 19. Urči d.",
+          "answer": "Mezi a₁ a a₅ jsou 4 kroky: 19 − 3 = 4d → **d = 4**."
+        },
+        {
+          "type": "example",
+          "question": "Posloupnost 4, 7, 10, … Kolikátý člen je 31?",
+          "answer": "a₁ = 4, d = 3. 4 + 3(n − 1) = 31 → 3(n − 1) = 27 → n − 1 = 9 → **n = 10**."
+        },
+        {
+          "type": "example",
+          "question": "a₁ = 2, d = 3. Součet prvních 10 členů?",
+          "answer": "a₁₀ = 2 + 27 = 29. s₁₀ = 10/2 · (2 + 29) = 5 · 31 = **155**."
+        },
+        {
+          "type": "example",
+          "question": "a₁ = 1, aₙ₊₁ = aₙ + 2n. Urči a₄.",
+          "answer": "a₂ = a₁ + 2 · 1 = 3, a₃ = a₂ + 2 · 2 = 7, a₄ = a₃ + 2 · 3 = **13**. (Přičítá se pokaždé jiné číslo, takže není aritmetická.)"
+        },
+        {
+          "type": "heading",
+          "text": "Odkud je vzorec pro součet"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš sₙ = a₁ + a₂ + … + aₙ.",
+            "Pod to napiš totéž pozpátku: sₙ = aₙ + … + a₂ + a₁.",
+            "Sečti sloupce: každý dá a₁ + aₙ, sloupců je n.",
+            "Tedy 2sₙ = n(a₁ + aₙ), sₙ = n/2 · (a₁ + aₙ)."
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "sₙ = n · (a₁ + aₙ)",
+          "right": "sₙ = n/2 · (a₁ + aₙ)",
+          "why": "Sečtením posloupnosti s ní samou pozpátku dostaneš dvojnásobek součtu. Proto se dělí 2. Kontrola: 1 + 2 + 3 = 6 = 3/2 · 4."
+        },
+        {
+          "type": "summary",
+          "text": "Aritmetická: aₙ₊₁ − aₙ = d. aₙ = a₁ + (n − 1)d, sₙ = n/2 · (a₁ + aₙ). Rekurentní zadání počítej krok po kroku."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "a₁ = 2, d = 3. a₁₀ =",
+      "answers": [
+        "29"
+      ],
+      "explanation": "2 + 9 · 3"
+    },
+    {
+      "type": "input",
+      "question": "5, 9, 13, … Diference d =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "1 + 2 + 3 + … + 100 =",
+      "answers": [
+        "5050"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "a₁ = 3, a₅ = 19. d =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "a₁ = 2, d = 3. Součet prvních 10 členů =",
+      "answers": [
+        "155"
+      ],
+      "explanation": "10/2 · (2 + 29)"
+    },
+    {
+      "type": "truefalse",
+      "question": "Posloupnost aₙ = 2n + 1 je aritmetická.",
+      "answer": true,
+      "explanation": "aₙ₊₁ − aₙ = 2"
+    },
+    {
+      "type": "choice",
+      "question": "Která posloupnost je aritmetická?",
+      "options": [
+        "3, 7, 11, 15",
+        "2, 4, 8, 16",
+        "1, 4, 9, 16",
+        "1, 1, 2, 3"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "a₁ = 1, aₙ₊₁ = aₙ + 2n. a₄ =",
+      "answers": [
+        "13"
+      ],
+      "explanation": "a₂ = 3, a₃ = 7, a₄ = 13"
+    },
+    {
+      "type": "truefalse",
+      "question": "Posloupnost aₙ = 1/n je rostoucí.",
+      "answer": false,
+      "explanation": "1, 1/2, 1/3 … klesá."
+    },
+    {
+      "type": "input",
+      "question": "Posloupnost 4, 7, 10, … Kolikátý člen je roven 31?",
+      "answers": [
+        "10"
+      ],
+      "explanation": "4 + 3(n − 1) = 31"
+    },
+    {
+      "type": "input",
+      "question": "Hlediště: 1. řada má 20 míst, každá další o 2 víc. Kolik míst je v 10 řadách?",
+      "answers": [
+        "290"
+      ],
+      "explanation": "a₁₀ = 38, s₁₀ = 5 · 58"
+    },
+    {
+      "type": "open",
+      "question": "Co je aritmetická posloupnost? Uveď vzorec pro n-tý člen.",
+      "answer": "Posloupnost, v níž je rozdíl dvou po sobě jdoucích členů stálý (diference d). aₙ = a₁ + (n − 1)d."
+    },
+    {
+      "type": "open",
+      "question": "Odvoď součet prvních n členů aritmetické posloupnosti.",
+      "answer": "Sečtu posloupnost s ní samou v obráceném pořadí. Každá dvojice dává a₁ + aₙ, dvojic je n, tedy 2sₙ = n(a₁ + aₙ)."
+    }
+  ]
+}

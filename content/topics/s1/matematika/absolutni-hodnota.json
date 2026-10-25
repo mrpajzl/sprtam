@@ -1,0 +1,314 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "absolutni-hodnota",
+  "title": "Absolutní hodnota",
+  "emoji": "↔️",
+  "explanations": [
+    {
+      "title": "Vzdálenost",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ujdeš 3 km na sever, nebo 3 km na jih. Směr je jiný, ale nohy tě bolí stejně – ušel jsi 3 km. Někdy nás zajímá jen **jak daleko**, ne kterým směrem."
+        },
+        {
+          "type": "text",
+          "text": "Přesně to měří absolutní hodnota. Hodí se u odchylek (o kolik se měření liší od správné hodnoty), u tolerancí ve výrobě nebo u rozdílu teplot."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Číselná osa",
+          "definition": "Přímka s čísly: nula uprostřed, kladná čísla vpravo, záporná vlevo. Mezi sousedními celými čísly je vždy stejný kousek."
+        },
+        {
+          "type": "term",
+          "term": "Opačné číslo",
+          "definition": "Číslo na druhé straně od nuly, stejně daleko. Liší se jen znaménkem.",
+          "example": "Opačné k 4 je −4, opačné k −7 je 7."
+        },
+        {
+          "type": "term",
+          "term": "Absolutní hodnota |a|",
+          "definition": "Vzdálenost čísla a od nuly na číselné ose. Píše se mezi dvě svislé čárky. Vzdálenost nemůže být záporná, proto |a| ≥ 0.",
+          "example": "|4| = 4, |−4| = 4, |0| = 0."
+        },
+        {
+          "type": "text",
+          "text": "Zkus to: začni na −4 a skákej k nule. Kolik dílků musíš urazit? Přesně tolik je |−4|."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": -6,
+            "max": 6,
+            "step": 1,
+            "start": -4,
+            "hop": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Vzdálenost dvou čísel"
+        },
+        {
+          "type": "term",
+          "term": "Vzdálenost čísel a, b",
+          "definition": "Je to |a − b|. Nezáleží na pořadí: |a − b| = |b − a|.",
+          "example": "Vzdálenost 3 a 8 je |3 − 8| = |−5| = 5."
+        },
+        {
+          "type": "example",
+          "question": "Jak daleko je od sebe −3 a 5?",
+          "answer": "|5 − (−3)| = |5 + 3| = **8**. Na ose: z −3 do 0 jsou 3 dílky, z 0 do 5 dalších 5, celkem 8."
+        },
+        {
+          "type": "heading",
+          "text": "Rovnice: hledám body v dané vzdálenosti"
+        },
+        {
+          "type": "term",
+          "term": "Řešení rovnice",
+          "definition": "Číslo, které po dosazení za x udělá z rovnice pravdivý výrok.",
+          "example": "x = 4 je řešením |x| = 4, protože |4| = 4."
+        },
+        {
+          "type": "text",
+          "text": "|x| = 4 čti: „x je od nuly vzdálené 4“. Takové body jsou dva: **4 a −4**. |x − 3| = 5 čti: „x je od trojky vzdálené 5“ → 3 + 5 = **8** a 3 − 5 = **−2**."
+        },
+        {
+          "type": "text",
+          "text": "|x| = −2 nemá řešení – žádná vzdálenost není záporná. |x + 1| = 0 má jediné řešení x = −1 (od −1 jsi vzdálený 0 jen v samotném bodě −1)."
+        },
+        {
+          "type": "heading",
+          "text": "Nerovnice: blíž, nebo dál"
+        },
+        {
+          "type": "example",
+          "question": "Řeš |x − 2| < 3.",
+          "answer": "Hledám čísla, která jsou od 2 **blíž** než 3. Od 2 jdu o 3 doleva na −1 a o 3 doprava na 5. Krajní body nepatří (vzdálenost by byla přesně 3). Řešení x ∈ **(−1; 5)**."
+        },
+        {
+          "type": "example",
+          "question": "Řeš |x| ≥ 2.",
+          "answer": "Čísla, která jsou od nuly **aspoň** 2 daleko: vlevo od −2 a vpravo od 2, krajní body patří. x ∈ **(−∞; −2⟩ ∪ ⟨2; ∞)**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "|a + b| = |a| + |b| vždy",
+          "right": "|a + b| ≤ |a| + |b|",
+          "why": "Když mají a a b různá znaménka, část se „vyruší“: |1 + (−1)| = 0, ale |1| + |−1| = 2."
+        },
+        {
+          "type": "summary",
+          "text": "|a| = vzdálenost a od nuly, |a − b| = vzdálenost a od b. |x − c| = r má řešení c ± r; „< r“ = blíž než r (jeden úsek), „> r“ = dál než r (dva kusy osy)."
+        }
+      ]
+    },
+    {
+      "title": "Odstraň čárky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představa vzdálenosti je skvělá u jednoduchých rovnic. U rovnice |x − 1| + |x + 2| = 5 už ale „neuvidíš“ výsledek. Potřebuješ spolehlivý **postup**, jak se svislých čar zbavit."
+        },
+        {
+          "type": "text",
+          "text": "Ten postup se jmenuje metoda nulových bodů a funguje vždy."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Absolutní hodnota – přesně",
+          "definition": "Je-li číslo nezáporné, nechá ho beze změny. Je-li záporné, změní mu znaménko: |x| = x pro x ≥ 0 a |x| = −x pro x < 0.",
+          "example": "|5| = 5. |−7| = −(−7) = 7. Zápis −x u záporného x tedy dává kladné číslo."
+        },
+        {
+          "type": "term",
+          "term": "Nulový bod",
+          "definition": "Hodnota x, pro kterou je výraz uvnitř absolutní hodnoty roven nule. Na jedné straně od něj je výraz kladný, na druhé záporný.",
+          "example": "Pro |x − 1| je nulový bod 1, pro |x + 2| je to −2."
+        },
+        {
+          "type": "term",
+          "term": "Interval",
+          "definition": "Úsek číselné osy. ⟨ ⟩ = krajní bod patří, ( ) = nepatří.",
+          "example": "(−∞; −2) jsou všechna čísla menší než −2."
+        },
+        {
+          "type": "heading",
+          "text": "Jednoduchý případ: dvě větve"
+        },
+        {
+          "type": "example",
+          "question": "Řeš |x − 3| = 5.",
+          "answer": "Uvnitř je buď 5, nebo −5. x − 3 = 5 → x = 8. x − 3 = −5 → x = −2. Zkouška: |8 − 3| = 5 ✓, |−2 − 3| = 5 ✓."
+        },
+        {
+          "type": "heading",
+          "text": "Metoda nulových bodů"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi nulové body všech výrazů v | |.",
+            "Vyznač je na ose – rozdělí ji na intervaly.",
+            "V každém intervalu zjisti znaménko výrazu (dosaď libovolné číslo z intervalu) a odstraň | |: kladný výraz opiš, zápornému dej před závorku minus.",
+            "Vyřeš obyčejnou rovnici.",
+            "Zkontroluj, že výsledek leží v intervalu, ve kterém jsi počítal. Jinak ho zahoď."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Najdi na ose nulové body −2 a 1. Kolik intervalů vznikne? (Tři: vlevo od −2, mezi −2 a 1, vpravo od 1.)"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": -5,
+            "max": 5,
+            "step": 1
+          }
+        },
+        {
+          "type": "example",
+          "question": "Řeš |x − 1| + |x + 2| = 5.",
+          "answer": "Nulové body: 1 a −2. • x < −2: oba výrazy záporné → −(x − 1) − (x + 2) = 5 → −2x − 1 = 5 → x = −3. Leží v intervalu ✓. • −2 ≤ x < 1: první záporný, druhý nezáporný → −(x − 1) + (x + 2) = 5 → 3 = 5, nemá řešení. • x ≥ 1: oba nezáporné → (x − 1) + (x + 2) = 5 → 2x + 1 = 5 → x = 2 ✓. Řešení: **x = −3 nebo x = 2**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V intervalu x ≥ 1 mi vyšlo x = −5, tak ho přidám k řešení.",
+          "right": "Výsledek, který neleží ve svém intervalu, zahodím.",
+          "why": "Tvar bez | | jsem odvodil jen pro čísla z daného intervalu. Pro jiná čísla ta rovnice vůbec neplatí."
+        },
+        {
+          "type": "text",
+          "text": "Ještě dva rychlé případy: |x| = −2 nemá řešení (absolutní hodnota není záporná). |x + 1| = 0 platí jen pro x + 1 = 0, tedy x = −1."
+        },
+        {
+          "type": "summary",
+          "text": "|x| = x pro x ≥ 0, |x| = −x pro x < 0. Metoda nulových bodů: najdi nuly výrazů, rozděl osu, v každém intervalu odstraň | | podle znaménka, vyřeš a ověř, že kořen leží v intervalu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "|−7| =",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "|3 − 8| =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Řešení rovnice |x| = 4:",
+      "options": [
+        "x = 4 nebo x = −4",
+        "jen x = 4",
+        "jen x = −4",
+        "nemá řešení"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "|a| ≥ 0 pro každé reálné a.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Vzdálenost čísel −3 a 5 na číselné ose =",
+      "answers": [
+        "8"
+      ],
+      "explanation": "|5 − (−3)| = 8"
+    },
+    {
+      "type": "choice",
+      "question": "|x − 2| < 3 ⇔ x ∈",
+      "options": [
+        "(−1; 5)",
+        "(−5; 1)",
+        "(−∞; −1) ∪ (5; ∞)",
+        "⟨−1; 5⟩"
+      ],
+      "answer": 0,
+      "explanation": "−3 < x − 2 < 3"
+    },
+    {
+      "type": "choice",
+      "question": "|x| ≥ 2 ⇔ x ∈",
+      "options": [
+        "(−∞; −2⟩ ∪ ⟨2; ∞)",
+        "⟨−2; 2⟩",
+        "⟨2; ∞)",
+        "(−2; 2)"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "|a + b| = |a| + |b| platí pro všechna a, b.",
+      "answer": false,
+      "explanation": "|1 + (−1)| = 0, ale |1| + |−1| = 2."
+    },
+    {
+      "type": "truefalse",
+      "question": "Rovnice |x| = −2 nemá řešení.",
+      "answer": true,
+      "explanation": "Absolutní hodnota není záporná."
+    },
+    {
+      "type": "input",
+      "question": "|x − 3| = 5. Součet všech řešení =",
+      "answers": [
+        "6"
+      ],
+      "explanation": "x = 8 a x = −2."
+    },
+    {
+      "type": "input",
+      "question": "Kolik řešení má rovnice |x + 1| = 0?",
+      "answers": [
+        "1"
+      ],
+      "explanation": "Jen x = −1."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je geometrický význam |a − b|?",
+      "answer": "Je to vzdálenost obrazů čísel a a b na číselné ose."
+    },
+    {
+      "type": "open",
+      "question": "Popiš metodu nulových bodů.",
+      "answer": "Najdu body, kde výrazy v absolutních hodnotách mění znaménko, rozdělím osu na intervaly. V každém odstraním absolutní hodnoty podle znaménka, vyřeším a ověřím, zda řešení leží v intervalu."
+    }
+  ]
+}

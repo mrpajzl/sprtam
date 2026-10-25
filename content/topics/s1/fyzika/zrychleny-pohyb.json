@@ -1,0 +1,349 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zrychleny-pohyb",
+  "title": "Zrychlený pohyb a volný pád",
+  "emoji": "🪂",
+  "explanations": [
+    {
+      "title": "Rozjezd a pád",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na semaforu naskočí zelená. Auto se rozjíždí: po 1 s jede 2 m/s, po 2 s 4 m/s, po 3 s 6 m/s. Každou sekundu přidá stejně. Opačně to funguje při brzdění – každou sekundu ubere stejně."
+        },
+        {
+          "type": "text",
+          "text": "Takhle se chová i kámen, který pustíš z ruky. Pochopíš, proč je brzdná dráha při dvojnásobné rychlosti čtyřikrát delší a jak dlouho padá věc z věže."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zrychlení a",
+          "definition": "Říká, o kolik se změní rychlost za 1 sekundu. Jednotka m/s² („metr za sekundu za sekundu“).",
+          "example": "a = 2 m/s²: každou sekundu přibudou 2 m/s."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoměrně zrychlený pohyb",
+          "definition": "Pohyb po přímce, kdy zrychlení je stálé – rychlost roste každou sekundu o stejný kus.",
+          "example": "Auto se rozjíždí se stálým zrychlením 2 m/s²."
+        },
+        {
+          "type": "term",
+          "term": "Zpomalený pohyb (brzdění)",
+          "definition": "Rychlost každou sekundu stejně ubývá. Zrychlení míří proti pohybu, proto ho píšeme se znaménkem minus.",
+          "example": "Brzdění se zrychlením −5 m/s² (zpomalení 5 m/s²)."
+        },
+        {
+          "type": "term",
+          "term": "Volný pád",
+          "definition": "Pád tělesa z klidu, kdy na něj působí jen přitažlivost Země (odpor vzduchu zanedbáme). Zrychlení je **tíhové zrychlení g ≈ 9,81 m/s²**, pro počítání často 10 m/s².",
+          "example": "Kámen puštěný z mostu."
+        },
+        {
+          "type": "heading",
+          "text": "Jak roste rychlost"
+        },
+        {
+          "type": "text",
+          "text": "Z klidu: po 1 s je rychlost `a · 1`, po 2 s `a · 2`, po t sekundách `v = a · t`. Pro kámen: po 1 s 10 m/s, po 2 s 20 m/s, po 3 s 30 m/s. Graf v(t) je **rostoucí přímka z počátku**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak roste dráha"
+        },
+        {
+          "type": "text",
+          "text": "Těleso jede pořád rychleji, takže za každou další sekundu urazí víc než za předchozí. Průměrná rychlost za dobu t je polovina konečné: `(0 + a·t) / 2`. Dráha = průměrná rychlost × čas = `½ · a · t²`."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se, kolik metrů urazí padající kámen (g = 10 m/s²). Všimni si: za 2 s ne dvakrát, ale **čtyřikrát** víc než za 1 s."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "m",
+            "items": [
+              {
+                "label": "po 1 s",
+                "value": 5
+              },
+              {
+                "label": "po 2 s",
+                "value": 20
+              },
+              {
+                "label": "po 3 s",
+                "value": 45
+              },
+              {
+                "label": "po 4 s",
+                "value": 80
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kámen padá volným pádem 3 s (g = 10 m/s²). Jakou má rychlost a jakou výšku urazil?",
+          "answer": "Rychlost v = g · t = 10 · 3 = **30 m/s**. Výška h = ½ · g · t² = ½ · 10 · 9 = **45 m**."
+        },
+        {
+          "type": "example",
+          "question": "Auto jede 20 m/s a brzdí se zpomalením 5 m/s². Za jak dlouho zastaví a jak dlouhá je brzdná dráha?",
+          "answer": "Každou sekundu ubude 5 m/s: 20 : 5 = **4 s**. Průměrná rychlost při brzdění je (20 + 0) : 2 = 10 m/s. Dráha = 10 · 4 = **40 m**."
+        },
+        {
+          "type": "text",
+          "text": "Při dvojnásobné rychlosti (40 m/s) brzdíš dvakrát déle (8 s) a průměrnou rychlostí dvakrát větší (20 m/s). Dráha = 20 · 8 = 160 m – tedy **4× delší**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Těžší kámen padá rychleji než lehký.",
+          "right": "Bez odporu vzduchu padají všechna tělesa se stejným zrychlením g.",
+          "why": "Pírko padá pomaleji jen kvůli vzduchu. Ve vakuu dopadne pírko i kladivo současně – astronauti to předvedli na Měsíci."
+        },
+        {
+          "type": "summary",
+          "text": "Zrychlení = změna rychlosti za sekundu. Z klidu: v = a·t, s = ½·a·t². Volný pád má zrychlení g ≈ 9,81 m/s² pro všechna tělesa."
+        }
+      ]
+    },
+    {
+      "title": "Rovnice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Většina pohybů kolem nás není rovnoměrná: auta se rozjíždějí a brzdí, výtah zrychluje, věci padají. Fyzika na to má čtyři vzorce. S nimi spočítáš rychlost, dráhu i čas u každého pohybu se stálým zrychlením."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Změna Δ (delta)",
+          "definition": "Řecké písmeno Δ znamená „o kolik se změnilo“: konečná hodnota minus počáteční.",
+          "example": "Rychlost vzrostla z 5 na 15 m/s → Δv = 15 − 5 = 10 m/s."
+        },
+        {
+          "type": "term",
+          "term": "Zrychlení a",
+          "definition": "Změna rychlosti za jednotku času: `a = Δv / Δt`. Jednotka m/s². Kladné = zrychluje, záporné = brzdí.",
+          "example": "Z 0 na 20 m/s za 10 s: a = 20 / 10 = 2 m/s²."
+        },
+        {
+          "type": "term",
+          "term": "Počáteční rychlost v₀",
+          "definition": "Rychlost v okamžiku, kdy začneme měřit čas (t = 0).",
+          "example": "Auto už jede 10 m/s a pak začne zrychlovat → v₀ = 10 m/s."
+        },
+        {
+          "type": "term",
+          "term": "Tíhové zrychlení g",
+          "definition": "Zrychlení volného pádu u povrchu Země, g ≈ 9,81 m/s² (ve výpočtech často 10 m/s²). Je stejné pro lehká i těžká tělesa."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Co počítám",
+            "Vzorec",
+            "Z klidu (v₀ = 0)"
+          ],
+          "rows": [
+            [
+              "zrychlení",
+              "a = Δv / Δt",
+              "a = v / t"
+            ],
+            [
+              "rychlost",
+              "v = v₀ + a·t",
+              "v = a·t"
+            ],
+            [
+              "dráha",
+              "s = v₀·t + ½·a·t²",
+              "s = ½·a·t²"
+            ],
+            [
+              "bez času",
+              "v² = v₀² + 2·a·s",
+              "v² = 2·a·s"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Volný pád je pohyb z klidu se zrychlením g: `v = g·t`, `h = ½·g·t²`."
+        },
+        {
+          "type": "heading",
+          "text": "Grafy"
+        },
+        {
+          "type": "text",
+          "text": "Graf v(t) je přímka (rychlost roste rovnoměrně). Graf s(t) je **část paraboly**, protože dráha závisí na t². Widget ukazuje `s = t²`, tedy rozjezd se zrychlením 2 m/s². Sleduj, jak graf stoupá čím dál strměji. Zkus zvětšit a – to je jako silnější zrychlení."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": 0,
+            "c": 0
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zapiš známé veličiny: v₀, v, a, t, s.",
+            "Při brzdění dej zrychlení znaménko minus.",
+            "Vyber vzorec, kde chybí jen hledaná veličina.",
+            "Dosaď v jednotkách m, s, m/s, m/s²."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Těleso se rozjíždí z klidu se zrychlením 2 m/s². Jakou dráhu urazí za 10 s?",
+          "answer": "v₀ = 0, takže s = ½ · a · t² = ½ · 2 · 10² = ½ · 2 · 100 = **100 m**."
+        },
+        {
+          "type": "example",
+          "question": "Těleso padá z výšky 20 m (g = 10 m/s²). Jak dlouho padá?",
+          "answer": "h = ½ · g · t² → 20 = 5 · t² → t² = 4 → t = **2 s**."
+        },
+        {
+          "type": "example",
+          "question": "Auto brzdí z 20 m/s se zrychlením −5 m/s². Brzdná dráha?",
+          "answer": "Na konci v = 0. Z v² = v₀² + 2·a·s: 0 = 400 + 2 · (−5) · s → 10 s = 400 → s = **40 m**. Obecně `s = v₀² / (2a)`."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dvojnásobná rychlost = dvojnásobná brzdná dráha.",
+          "right": "Dvojnásobná rychlost = čtyřnásobná brzdná dráha.",
+          "why": "Ve vzorci s = v₀² / (2a) je rychlost na druhou: 2² = 4. Proto je rychlá jízda tak nebezpečná."
+        },
+        {
+          "type": "summary",
+          "text": "`a = Δv/Δt`, `v = v₀ + a·t`, `s = v₀·t + ½·a·t²`. Volný pád: a = g ≈ 9,81 m/s². Graf v(t) je přímka, s(t) parabola."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Auto zrychlí z 0 na 20 m/s za 10 s. Zrychlení v m/s² =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Těleso se rozjíždí z klidu se zrychlením 2 m/s². Dráha v m za 10 s =",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kámen padá volným pádem 3 s (g = 10 m/s²). Rychlost v m/s =",
+      "answers": [
+        "30"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kámen padá volným pádem 3 s (g = 10 m/s²). Uražená výška v m =",
+      "answers": [
+        "45"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Auto brzdí z 20 m/s se zpomalením 5 m/s². Za kolik sekund zastaví?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Těleso padá z výšky 20 m (g = 10 m/s²). Doba pádu v s =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve vakuu padá pírko i kladivo se stejným zrychlením.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak vypadá graf v(t) rovnoměrně zrychleného pohybu z klidu?",
+      "options": [
+        "rostoucí přímka z počátku",
+        "vodorovná přímka",
+        "parabola",
+        "klesající přímka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní brzdná dráha při dvojnásobné počáteční rychlosti (stejné zpomalení)?",
+      "options": [
+        "4×",
+        "2×",
+        "nezmění se",
+        "√2×"
+      ],
+      "answer": 0,
+      "explanation": "s = v₀² / (2a)"
+    },
+    {
+      "type": "choice",
+      "question": "Jak vypadá graf s(t) rovnoměrně zrychleného pohybu z klidu?",
+      "options": [
+        "část paraboly",
+        "přímka",
+        "vodorovná přímka",
+        "hyperbola"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Napiš vztahy pro rychlost a dráhu rovnoměrně zrychleného pohybu.",
+      "answer": "v = v₀ + a·t a s = v₀·t + ½·a·t². Pro pohyb z klidu v = a·t a s = ½·a·t²."
+    },
+    {
+      "type": "open",
+      "question": "Co je volný pád a jaké má vlastnosti?",
+      "answer": "Rovnoměrně zrychlený pohyb z klidu působením tíhy bez odporu vzduchu. Zrychlení je g ≈ 9,81 m/s², nezávisí na hmotnosti tělesa."
+    }
+  ]
+}

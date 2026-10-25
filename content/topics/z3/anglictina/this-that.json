@@ -1,0 +1,398 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "this-that",
+  "title": "This / that",
+  "emoji": "👉",
+  "explanations": [
+    {
+      "title": "Blízko a daleko",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Držíš v ruce jablko a řekneš: „**Tohle** je moje jablko.“ Pak ukážeš z okna na strom: „**Tamto** je dub.“ Česky rozlišuješ, co je u tebe a co je daleko."
+        },
+        {
+          "type": "text",
+          "text": "Angličtina na to má dvě slova: **this** a **that**. S nimi můžeš na cokoli ukázat a zeptat se, co to je."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "this",
+          "definition": "Anglicky „tohle, tento“. Pro věc, která je **blízko u tebe** – v ruce, na lavici, vedle tebe.",
+          "example": "this apple = tohle jablko (v ruce)"
+        },
+        {
+          "type": "term",
+          "term": "that",
+          "definition": "Anglicky „tamto, tamten“. Pro věc, která je **daleko** – na druhé straně třídy, na nebi, za oknem.",
+          "example": "that tree = tamten strom (za oknem)"
+        },
+        {
+          "type": "heading",
+          "text": "Podívej se na obrázek"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🧒",
+            "✋",
+            "🍎",
+            "➡️",
+            "➡️",
+            "🌳"
+          ],
+          "caption": "this apple … that tree"
+        },
+        {
+          "type": "text",
+          "text": "Jablko má kluk v ruce → **this** apple. Strom je daleko → **that** tree."
+        },
+        {
+          "type": "heading",
+          "text": "Ptáme se: Co je to?"
+        },
+        {
+          "type": "text",
+          "text": "**What is this?** = Co je tohle? **What is that?** = Co je tamto?"
+        },
+        {
+          "type": "text",
+          "text": "Odpovíš: **It’s a …** = Je to … *It’s* je zkrácené *it is*."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Představ si, že stojíš ve třídě. Je ta věc blízko (this), nebo daleko (that)? Roztřiď je."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "this (blízko)",
+              "that (daleko)"
+            ],
+            "items": [
+              {
+                "text": "pero v ruce",
+                "group": 0
+              },
+              {
+                "text": "letadlo na nebi",
+                "group": 1
+              },
+              {
+                "text": "tvoje taška",
+                "group": 0
+              },
+              {
+                "text": "dům za řekou",
+                "group": 1
+              },
+              {
+                "text": "kniha na klíně",
+                "group": 0
+              },
+              {
+                "text": "pták na stromě",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Držíš míč. Řekni anglicky: Tohle je můj míč.",
+          "answer": "Míč je v ruce = blízko → **this**. Můj = **my**, míč = **ball**. Věta: **This is my ball.**"
+        },
+        {
+          "type": "example",
+          "question": "Na nebi letí pták. Zeptej se, co to je, a odpověz.",
+          "answer": "Pták je daleko → **that**. Otázka: **What is that?** Odpověď: **It’s a bird.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Držím tužku a řeknu: „That is my pencil.“",
+          "right": "„This is my pencil.“",
+          "why": "Tužka je v ruce, tedy blízko → **this**. **that** je jen pro věci daleko."
+        },
+        {
+          "type": "summary",
+          "text": "**this** = tohle (blízko), **that** = tamto (daleko). Otázka: **What is this / that?** Odpověď: **It’s a …**"
+        }
+      ]
+    },
+    {
+      "title": "Otázka a odpověď",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jsi v Anglii a nevíš, jak se něco jmenuje. Ukážeš na to a zeptáš se. Tahle otázka je jedna z nejužitečnějších – naučíš se díky ní spoustu nových slov."
+        },
+        {
+          "type": "text",
+          "text": "Potřebuješ jen pár slov: otázku **What is…?** a ukazovací slova **this** a **that**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "What",
+          "definition": "Anglicky „co“. Stojí na začátku otázky.",
+          "example": "What is it? = Co je to?"
+        },
+        {
+          "type": "term",
+          "term": "this / that",
+          "definition": "**this** = tohle (blízko u tebe). **that** = tamto (daleko od tebe).",
+          "example": "this pen (v ruce), that car (na ulici)"
+        },
+        {
+          "type": "term",
+          "term": "It’s",
+          "definition": "Zkrácené **it is** = je to. Používáš ho v odpovědi.",
+          "example": "It’s a pencil. = Je to tužka."
+        },
+        {
+          "type": "heading",
+          "text": "Rozhovor krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ukážeš na věc v ruce: **What is this?** = Co je tohle?",
+            "Kamarád odpoví: **It’s a pencil.** = Je to tužka.",
+            "Ukážeš na věc daleko: **What is that?** = Co je tamto?",
+            "Kamarád odpoví: **It’s a bird.** = Je to pták."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak postavit odpověď"
+        },
+        {
+          "type": "table",
+          "head": [
+            "It’s",
+            "a / an",
+            "věc"
+          ],
+          "rows": [
+            [
+              "It’s",
+              "a",
+              "pencil."
+            ],
+            [
+              "It’s",
+              "a",
+              "bird."
+            ],
+            [
+              "It’s",
+              "an",
+              "apple."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Připomenutí: před jednou věcí stojí **a**. Když věc začíná na a, e, i, o, u, stojí **an**."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň chybějící slovo. V závorce je nápověda, kde ta věc je."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "What is ",
+                "after": "? (v ruce)",
+                "options": [
+                  "this",
+                  "that"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "What is ",
+                "after": "? (na nebi)",
+                "options": [
+                  "this",
+                  "that"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "",
+                "after": " a bird.",
+                "options": [
+                  "It’s",
+                  "Is"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "It’s ",
+                "after": " apple.",
+                "options": [
+                  "a",
+                  "an"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Ukazuješ na banán na své lavici. Polož otázku i odpověď.",
+          "answer": "Banán je blízko → **this**. Otázka: **What is this?** Odpověď: **It’s a banana.**"
+        },
+        {
+          "type": "example",
+          "question": "Ukazuješ na hvězdu na nebi. Polož otázku i odpověď. (hvězda = star)",
+          "answer": "Hvězda je daleko → **that**. Otázka: **What is that?** Odpověď: **It’s a star.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Is a bird.",
+          "right": "It’s a bird.",
+          "why": "V odpovědi nesmí chybět **it** (to). Česky řekneš jen „Je pták“, anglicky musíš říct „**It is** a bird“ = „To je pták“."
+        },
+        {
+          "type": "summary",
+          "text": "Otázka: **What is this?** (blízko) / **What is that?** (daleko). Odpověď: **It’s a …**"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Ukazuješ na hvězdu na nebi. What is ___?",
+      "options": [
+        "this",
+        "that"
+      ],
+      "answer": 1,
+      "explanation": "Hvězda je daleko."
+    },
+    {
+      "type": "choice",
+      "question": "Držíš míč. ___ is my ball.",
+      "options": [
+        "This",
+        "That"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "„this“ znamená tohle (blízko).",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„that“ používáme pro věc v ruce.",
+      "answer": false,
+      "explanation": "Věc v ruce je blízko → this."
+    },
+    {
+      "type": "input",
+      "question": "Odpověz: What is this? 🍌 – It’s a ___.",
+      "answers": [
+        "banana"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: What ___ that?",
+      "answers": [
+        "is"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Slož otázku.",
+      "items": [
+        "What",
+        "is",
+        "this?"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "What is that? 🐦",
+      "options": [
+        "It’s a bird.",
+        "It a bird.",
+        "Is a bird."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "this",
+          "tohle"
+        ],
+        [
+          "that",
+          "tamto"
+        ],
+        [
+          "What is it?",
+          "Co je to?"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se řekne „Tohle je moje taška“?",
+      "options": [
+        "This is my bag.",
+        "That is my bag.",
+        "It my bag."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Kdy řekneš „this“ a kdy „that“?",
+      "answer": "This řeknu u věci blízko u mě, that u věci daleko."
+    },
+    {
+      "type": "open",
+      "question": "Ukaž na věc ve třídě a zeptej se a odpověz anglicky.",
+      "answer": "What is this? It’s a chair."
+    }
+  ]
+}

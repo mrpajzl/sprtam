@@ -1,0 +1,314 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "skladani-sil",
+  "title": "Skládání sil",
+  "emoji": "🪢",
+  "explanations": [
+    {
+      "title": "Přetahovaná",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Při přetahování lanem táhne každé družstvo na svou stranu. Kdo vyhraje? A co když tlačíte auto ve třech? Na těleso často působí víc sil najednou a my chceme vědět, co se nakonec stane."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla",
+          "definition": "Působení jednoho tělesa na druhé – tlačení nebo tahání. Měří se v **newtonech (N)**.",
+          "example": "Když táhneš lano, působíš na něj silou."
+        },
+        {
+          "type": "term",
+          "term": "Směr síly",
+          "definition": "Kam síla táhne nebo tlačí. Kreslíme ji jako **šipku**: kam míří šipka, tam míří síla; čím delší šipka, tím větší síla.",
+          "example": "Šipka doprava = táhnu doprava."
+        },
+        {
+          "type": "term",
+          "term": "Výslednice",
+          "definition": "Jedna jediná síla, která má **stejný účinek** jako všechny síly dohromady.",
+          "example": "Tři kamarádi tlačí auto. Výslednice je síla, jakou by musel tlačit jeden obr, aby se auto pohnulo stejně."
+        },
+        {
+          "type": "heading",
+          "text": "Situace 1: všichni stejným směrem"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🧍",
+            "🧍",
+            "➡️",
+            "🚗"
+          ],
+          "caption": "Dva tlačí stejným směrem – síly se sčítají."
+        },
+        {
+          "type": "text",
+          "text": "Když dvě děti tlačí auto stejným směrem silami 30 N a 20 N, auto „cítí“ dohromady 30 + 20 = **50 N**."
+        },
+        {
+          "type": "heading",
+          "text": "Situace 2: proti sobě"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🧍",
+            "⬅️",
+            "🪢",
+            "➡️",
+            "🧍"
+          ],
+          "caption": "Přetahovaná: síly opačného směru."
+        },
+        {
+          "type": "text",
+          "text": "Levé družstvo táhne silou 40 N, pravé 25 N. Pravé část síly levého „vyruší“. Zbude 40 − 25 = **15 N** doleva. Lano se pohne na stranu silnějšího."
+        },
+        {
+          "type": "term",
+          "term": "Rovnováha sil",
+          "definition": "Stav, kdy se síly navzájem úplně vyruší – výslednice je **0 N**. Těleso se chová, jako by na něj nic nepůsobilo.",
+          "example": "Obě družstva táhnou stejně silně a lano stojí."
+        },
+        {
+          "type": "example",
+          "question": "Tři děti táhnou vozík stejným směrem silami 50 N, 70 N a 80 N. Výslednice?",
+          "answer": "Stejný směr → sčítám: 50 + 70 + 80 = **200 N** ve směru tahu."
+        },
+        {
+          "type": "example",
+          "question": "Kniha leží na stole, Země ji táhne dolů silou 12 N. Proč nepropadne stolem?",
+          "answer": "Kniha se nehýbe, takže síly jsou **v rovnováze**. Stůl ji tlačí nahoru stejnou silou **12 N**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Při přetahované, kde se lano nehýbe, nikdo netáhne.",
+          "right": "Obě družstva táhnou, ale stejně velkými silami opačného směru.",
+          "why": "Nulová výslednice neznamená žádné síly. Znamená, že se síly vyrušily."
+        },
+        {
+          "type": "summary",
+          "text": "Výslednice nahradí všechny síly jednou. Stejný směr → sčítáme, opačný → odečítáme a výslednice míří ve směru větší síly. Nulová výslednice = rovnováha."
+        }
+      ]
+    },
+    {
+      "title": "Na ose",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Lampa visí ze stropu a nepadá. Loď pluje proti větru. Inženýři u každé stavby počítají, jak se síly sčítají a ruší. Naučíš se to na číselné ose – stejně jako sčítáš a odčítáš čísla."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Síla a její šipka",
+          "definition": "Síla je působení jednoho tělesa na druhé (tlak, tah). Má **velikost** (kolik newtonů, N) a **směr**. Kreslíme ji šipkou.",
+          "example": "30 N doprava = šipka doprava dlouhá 3 dílky (1 dílek = 10 N)."
+        },
+        {
+          "type": "term",
+          "term": "Výslednice",
+          "definition": "Jedna síla, která nahradí všechny působící síly se stejným účinkem.",
+          "example": "Dvě síly 20 N stejným směrem nahradí jedna síla 40 N."
+        },
+        {
+          "type": "term",
+          "term": "Rovnováha",
+          "definition": "Výslednice je nulová. Těleso v klidu zůstane v klidu.",
+          "example": "Lampa na lanku: Země ji táhne dolů, lanko nahoru stejně silně."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla v tabulce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Situace",
+            "Výslednice",
+            "Směr"
+          ],
+          "rows": [
+            [
+              "stejný směr",
+              "F = F₁ + F₂",
+              "společný směr"
+            ],
+            [
+              "opačný směr",
+              "F = F₁ − F₂ (větší minus menší)",
+              "směr větší síly"
+            ],
+            [
+              "opačné a stejně velké",
+              "F = 0",
+              "žádný – rovnováha"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to na ose"
+        },
+        {
+          "type": "text",
+          "text": "Doprava je kladný směr, doleva záporný. Začni na +40 (síla 40 N doprava). Druhá síla 25 N táhne doleva – skok o −25. Kde skončíš? To je výslednice."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": -20,
+            "max": 50,
+            "step": 5,
+            "start": 40,
+            "hop": -25
+          }
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zvol si, který směr je „plus“ (třeba doprava).",
+            "Síly tím směrem piš kladně, opačné záporně.",
+            "Všechno sečti.",
+            "Kladný výsledek = výslednice míří doprava, záporný = doleva, nula = rovnováha."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Síly 40 N doprava a 25 N doleva. Výslednice?",
+          "answer": "+40 + (−25) = +15. Výslednice je **15 N doprava** – ve směru větší síly."
+        },
+        {
+          "type": "example",
+          "question": "Síly 60 N doprava a 80 N doleva. Výslednice?",
+          "answer": "+60 + (−80) = −20. Výslednice je **20 N doleva** – ve směru síly 80 N."
+        },
+        {
+          "type": "example",
+          "question": "Jaká je největší a nejmenší možná výslednice sil 10 N a 4 N?",
+          "answer": "Největší při stejném směru: 10 + 4 = **14 N**. Nejmenší při opačném: 10 − 4 = **6 N**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Výslednice dvou sil je vždycky jejich součet.",
+          "right": "Sčítá se jen při stejném směru. Při opačném se odečítá.",
+          "why": "Síla proti směru část druhé síly vyruší. Proto u přetahované nevyhraje součet, ale rozdíl."
+        },
+        {
+          "type": "summary",
+          "text": "Na jedné přímce: stejný směr sčítej, opačný odečti a výslednice má směr větší síly. Výslednice 0 = rovnováha."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Síly 30 N a 20 N působí stejným směrem. Výslednice v N =",
+      "answers": [
+        "50"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Síly 30 N a 20 N působí opačným směrem. Výslednice v N =",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Síly 45 N a 45 N působí opačným směrem. Výslednice v N =",
+      "answers": [
+        "0"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kterým směrem míří výslednice dvou opačných sil 60 N a 80 N?",
+      "options": [
+        "ve směru síly 80 N",
+        "ve směru síly 60 N",
+        "kolmo",
+        "nemá směr"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Jsou-li síly v rovnováze, výslednice je nulová.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co je výslednice sil?",
+      "options": [
+        "síla, která nahradí všechny síly se stejným účinkem",
+        "největší z působících sil",
+        "průměr všech sil"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Tři děti táhnou vozík stejným směrem silami 50 N, 70 N a 80 N. Výslednice v N =",
+      "answers": [
+        "200"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kniha leží na stole. Gravitační síla je 12 N. Jak velkou silou v N tlačí stůl knihu vzhůru?",
+      "answers": [
+        "12"
+      ],
+      "explanation": "Kniha je v klidu, síly jsou v rovnováze."
+    },
+    {
+      "type": "truefalse",
+      "question": "Výslednice dvou sil 10 N a 4 N může být nejvýše 14 N.",
+      "answer": true,
+      "explanation": "Nejvíc při stejném směru: 10 + 4."
+    },
+    {
+      "type": "choice",
+      "question": "Lano při přetahované se nehýbe. Co platí?",
+      "options": [
+        "obě družstva táhnou stejně velkou silou",
+        "nikdo netáhne",
+        "silnější je to vlevo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak určíš výslednici dvou sil na jedné přímce?",
+      "answer": "Při stejném směru síly sečtu. Při opačném směru odečtu menší od větší a výslednice má směr větší síly."
+    },
+    {
+      "type": "open",
+      "question": "Kdy je těleso v rovnováze sil? Uveď příklad.",
+      "answer": "Když je výslednice všech sil nulová. Například lampa visící na lanku: gravitační síla a síla lanka jsou stejně velké a opačné."
+    }
+  ]
+}

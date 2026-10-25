@@ -1,0 +1,454 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "klimaticke-pasy",
+  "title": "Klimatické pásy a klimadiagramy",
+  "emoji": "🌡️",
+  "explanations": [
+    {
+      "title": "Šuplíky podnebí",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když plánuješ cestu do Thajska, Norska nebo Egypta, zajímá tě, jaké tam bývá počasí. Klimatologové proto rozdělili celý svět do „šuplíků“ podle podnebí. Stačí znát šuplík a víš, co čekat."
+        },
+        {
+          "type": "text",
+          "text": "Podnebí určuje, co roste, co se pěstuje a jak lidé žijí. Proto je základem skoro celého zeměpisu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podnebí (klima)",
+          "definition": "Dlouhodobý průměrný stav počasí na místě (obvykle za 30 let).",
+          "example": "V Praze bývá v lednu kolem 0 °C, v červenci kolem 19 °C."
+        },
+        {
+          "type": "term",
+          "term": "Klimatický pás",
+          "definition": "Široký pruh kolem Země s podobným podnebím. Od rovníku: tropický, subtropický, mírný, subpolární, polární.",
+          "example": "Česko leží v mírném pásu."
+        },
+        {
+          "type": "term",
+          "term": "Roční amplituda teploty",
+          "definition": "Rozdíl mezi průměrnou teplotou nejteplejšího a nejchladnějšího měsíce.",
+          "example": "Červenec 19 °C, leden −1 °C → amplituda 20 °C."
+        },
+        {
+          "type": "term",
+          "term": "Köppenova klasifikace",
+          "definition": "Nejznámější dělení podnebí světa. Vymyslel ho klimatolog Wladimir Köppen. Typy označuje velkými písmeny A–E podle teploty a srážek.",
+          "example": "Česko patří do skupiny C/D (na rozhraní)."
+        },
+        {
+          "type": "heading",
+          "text": "Krok 1: Pět písmen"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Písmeno",
+            "Typ",
+            "Poznávací znak",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "A",
+              "tropické vlhké",
+              "všechny měsíce nad 18 °C",
+              "Amazonie"
+            ],
+            [
+              "B",
+              "suché",
+              "víc vody se vypaří, než naprší",
+              "Sahara"
+            ],
+            [
+              "C",
+              "mírně teplé",
+              "zima mírná, bez dlouhých mrazů",
+              "Středomoří, západní Evropa"
+            ],
+            [
+              "D",
+              "boreální (mírně studené)",
+              "mrazivá zima, teplé léto",
+              "Sibiř, Kanada"
+            ],
+            [
+              "E",
+              "polární",
+              "nejteplejší měsíc pod 10 °C",
+              "Antarktida"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Krok 2: Co podnebí ovlivňuje"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**zeměpisná šířka** – čím dál od rovníku, tím chladněji",
+            "**vzdálenost od oceánu** – oceán vyrovnává teploty (malá amplituda), vnitrozemí má velkou amplitudu",
+            "**nadmořská výška** – čím výš, tím chladněji",
+            "**mořské proudy** – teplé oteplují a zvlhčují, studené ochlazují a vysušují",
+            "**převládající větry a reliéf** – hory zachytí déšť, za nimi je srážkový stín"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Proč má Irsko mírnou zimu a střední Rusko mrazivou, i když leží na podobné šířce?",
+          "answer": "Rozhoduje **vzdálenost od oceánu**. Irsko je u Atlantiku, oceán a Golfský proud ho v zimě hřejí. Rusko je hluboko ve vnitrozemí – má pevninské podnebí s velkou amplitudou."
+        },
+        {
+          "type": "example",
+          "question": "Proč jsou na pobřeží Chile (Atacama) a Namibie (Namib) pouště, když jsou u moře?",
+          "answer": "Podél pobřeží tečou **studené mořské proudy**. Ochlazují vzduch zespodu, ten nemůže stoupat a tvořit mraky. Neprší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Pobřeží je vždycky vlhké, pouště jsou jen ve vnitrozemí.",
+          "right": "U studených mořských proudů vznikají i pobřežní pouště (Atacama, Namib).",
+          "why": "Studený vzduch u hladiny je stabilní – nestoupá, nechladne dál a nevznikají srážky."
+        },
+        {
+          "type": "summary",
+          "text": "Köppen: A tropy, B sucho, C mírně teplé, D boreální, E polární. Podnebí ovlivňuje šířka, vzdálenost od oceánu, výška, mořské proudy a větry."
+        }
+      ]
+    },
+    {
+      "title": "Čtení klimadiagramu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Klimadiagram je jeden obrázek, ze kterého vyčteš, jak je na místě teplo a kolik prší během celého roku. Je to jako „občanka“ podnebí. Naučíš se ho přečíst a určit z něj, o jaké podnebí jde."
+        },
+        {
+          "type": "text",
+          "text": "U maturity i v testech je to častý úkol: dostaneš graf a máš říct, odkud je."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podnebí",
+          "definition": "Průměrné počasí na místě za mnoho let.",
+          "example": "Středomořské podnebí: horké suché léto, mírná deštivá zima."
+        },
+        {
+          "type": "term",
+          "term": "Klimadiagram",
+          "definition": "Graf podnebí místa. **Sloupce** = srážky v každém měsíci (mm). **Čára** = průměrná teplota v každém měsíci (°C).",
+          "example": "Klimadiagram Prahy má nejvyšší sloupce v létě."
+        },
+        {
+          "type": "term",
+          "term": "Roční amplituda",
+          "definition": "Rozdíl teploty nejteplejšího a nejchladnějšího měsíce.",
+          "example": "Velká amplituda = pevninské podnebí, malá = oceánské."
+        },
+        {
+          "type": "heading",
+          "text": "Jak číst klimadiagram"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podívej se na **čáru teploty**: jsou všechny měsíce nad 18 °C? Je nějaký pod nulou? Kdy je léto?",
+            "Spočítej **amplitudu**: nejvyšší − nejnižší měsíc.",
+            "Podívej se na **sloupce srážek**: kolik celkem? Kdy je maximum – v létě, nebo v zimě?",
+            "Ze všeho urči typ podnebí."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady jsou srážky v Praze ve čtyřech měsících. Kdy prší nejvíc?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "mm (Praha, asi)",
+            "items": [
+              {
+                "label": "leden",
+                "value": 25
+              },
+              {
+                "label": "duben",
+                "value": 35
+              },
+              {
+                "label": "červenec",
+                "value": 75
+              },
+              {
+                "label": "říjen",
+                "value": 30
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Maximum srážek v létě a velké rozdíly teplot (zima kolem 0 °C, léto kolem 19 °C) = **mírný pás, přechodné podnebí**."
+        },
+        {
+          "type": "text",
+          "text": "Teď roztřiď znaky podle pásu, do kterého patří."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Tropické",
+              "Mírné",
+              "Polární"
+            ],
+            "items": [
+              {
+                "text": "teplota celý rok přes 18 °C",
+                "group": 0
+              },
+              {
+                "text": "deštný les",
+                "group": 0
+              },
+              {
+                "text": "čtyři roční období",
+                "group": 1
+              },
+              {
+                "text": "listnaté lesy",
+                "group": 1
+              },
+              {
+                "text": "nejteplejší měsíc pod 10 °C",
+                "group": 2
+              },
+              {
+                "text": "tundra a ledovce",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Typické tvary"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Podnebí",
+            "Teplota (čára)",
+            "Srážky (sloupce)"
+          ],
+          "rows": [
+            [
+              "tropické vlhké (A)",
+              "rovná, celý rok kolem 27 °C",
+              "vysoké po celý rok"
+            ],
+            [
+              "pouštní (B)",
+              "vysoko, léto velmi horké",
+              "skoro žádné"
+            ],
+            [
+              "středomořské (C)",
+              "celý rok nad nulou, léto horké",
+              "maximum v zimě, v létě skoro nic"
+            ],
+            [
+              "oceánské (C)",
+              "malá amplituda",
+              "hodně po celý rok"
+            ],
+            [
+              "pevninské (D)",
+              "velká amplituda, zima hluboko pod nulou",
+              "maximum v létě"
+            ],
+            [
+              "polární (E)",
+              "všechny měsíce pod 10 °C",
+              "málo"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené příklady"
+        },
+        {
+          "type": "example",
+          "question": "Graf: všechny měsíce 26–28 °C, každý měsíc přes 150 mm srážek. Kde to je?",
+          "answer": "Teplo celý rok, téměř žádná amplituda, hodně srážek → **tropické vlhké podnebí (A)**, např. Amazonie."
+        },
+        {
+          "type": "example",
+          "question": "Graf: leden 10 °C, srpen 26 °C. Srážky v zimě 80 mm, v červenci 5 mm. Kde to je?",
+          "answer": "Teploty celý rok nad nulou, horké léto, maximum srážek v zimě a suché léto → **středomořské podnebí**, např. Řím nebo Atény."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Sloupce v klimadiagramu ukazují teplotu.",
+          "right": "Sloupce jsou srážky (mm), čára je teplota (°C).",
+          "why": "Srážky se v měsíci sčítají – hodí se na ně sloupec. Teplota je průměr, který se plynule mění – hodí se na ni čára."
+        },
+        {
+          "type": "summary",
+          "text": "Klimadiagram: sloupce = srážky, čára = teplota. Z amplitudy a rozložení srážek poznáš typ podnebí (např. středomořské = maximum srážek v zimě, suché léto)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "match",
+      "question": "Spoj Köppenovo písmeno a typ podnebí.",
+      "pairs": [
+        [
+          "A",
+          "tropické vlhké"
+        ],
+        [
+          "B",
+          "suché"
+        ],
+        [
+          "C",
+          "mírně teplé"
+        ],
+        [
+          "E",
+          "polární"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které podnebí má suché horké léto a vlhkou mírnou zimu?",
+      "options": [
+        "středomořské",
+        "monzunové",
+        "oceánské",
+        "kontinentální"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V tropickém deštném klimatu je teplota všech měsíců nad 18 °C.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co na klimadiagramu znázorňují sloupce?",
+      "options": [
+        "srážky",
+        "teplotu",
+        "tlak",
+        "vítr"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Do které skupiny Köppenovy klasifikace patří Sibiř?",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "E"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "truefalse",
+      "question": "Pevninské podnebí má větší roční amplitudu teplot než oceánské.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je hlavní příčina vzniku pouští v Atacamě a Namibu?",
+      "options": [
+        "studené mořské proudy u pobřeží",
+        "velká nadmořská výška",
+        "monzun",
+        "polární noc"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá rozdíl mezi teplotou nejteplejšího a nejchladnějšího měsíce?",
+      "answers": [
+        "amplituda",
+        "roční amplituda",
+        "teplotní amplituda"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď klimatické pásy od rovníku.",
+      "items": [
+        "tropický",
+        "subtropický",
+        "mírný",
+        "subpolární",
+        "polární"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký je hlavní faktor rozdílu klimatu mezi Irskem a středním Ruskem?",
+      "options": [
+        "vzdálenost od oceánu",
+        "zeměpisná délka",
+        "počet obyvatel",
+        "tvar pobřeží"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Které faktory ovlivňují podnebí místa?",
+      "answer": "Zeměpisná šířka, vzdálenost od oceánu, nadmořská výška, mořské proudy, převládající větry, reliéf (srážkový stín) a činnost člověka."
+    },
+    {
+      "type": "open",
+      "question": "Jak z klimadiagramu poznáš středomořské podnebí?",
+      "answer": "Teploty jsou celý rok nad nulou, léto je horké. Srážky mají maximum v zimě a v létě skoro neprší."
+    }
+  ]
+}

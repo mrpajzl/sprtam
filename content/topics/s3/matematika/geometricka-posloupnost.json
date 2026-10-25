@@ -1,0 +1,383 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "geometricka-posloupnost",
+  "title": "Geometrická posloupnost a řady",
+  "emoji": "🌀",
+  "explanations": [
+    {
+      "title": "Násobení a půlení",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pošleš řetězovou zprávu 3 kamarádům, každý ji pošle dalším 3. V prvním kole 3 lidi, ve druhém 9, ve třetím 27… Čísla se pokaždé **násobí** stejným číslem. Rostou mnohem rychleji než u přičítání."
+        },
+        {
+          "type": "text",
+          "text": "Takhle se chovají úroky v bance, množení bakterií, rozpad radioaktivních látek nebo odrážející se míček, který vyskočí pokaždé do poloviční výšky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Posloupnost",
+          "definition": "Čísla seřazená za sebou: první člen a₁, druhý a₂, … n-tý aₙ."
+        },
+        {
+          "type": "term",
+          "term": "Geometrická posloupnost",
+          "definition": "Každý další člen dostaneš **vynásobením stejným číslem** q.",
+          "example": "3, 6, 12, 24 – pokaždé ·2."
+        },
+        {
+          "type": "term",
+          "term": "Kvocient q",
+          "definition": "To stálé číslo, kterým se násobí. q = a₂ : a₁ (podíl sousedů).",
+          "example": "3, 6, 12 → q = 6 : 3 = 2. U 2, −4, 8, −16 je q = −2 (znaménko se střídá)."
+        },
+        {
+          "type": "heading",
+          "text": "n-tý člen"
+        },
+        {
+          "type": "text",
+          "text": "Z prvního členu na n-tý vede n − 1 násobení: **aₙ = a₁ · qⁿ⁻¹**."
+        },
+        {
+          "type": "example",
+          "question": "a₁ = 2, q = 3. Kolik je a₅?",
+          "answer": "Čtyři násobení trojkou: a₅ = 2 · 3⁴ = 2 · 81 = **162**."
+        },
+        {
+          "type": "example",
+          "question": "Vklad 20 000 Kč, úrok 5 % ročně, úroky se připisují. Kolik je po 2 letech?",
+          "answer": "Každý rok · 1,05. 20 000 · 1,05² = 20 000 · 1,1025 = **22 050 Kč**."
+        },
+        {
+          "type": "heading",
+          "text": "Nekonečný součet, který je konečný"
+        },
+        {
+          "type": "text",
+          "text": "Sníš půlku čokolády, pak půlku zbytku, pak půlku zbytku… 1/2 + 1/4 + 1/8 + … Členů je nekonečně mnoho, ale nikdy nesníš víc než **celou** čokoládu."
+        },
+        {
+          "type": "text",
+          "text": "Podívej se, jak rostou průběžné součty 1 + 1/2 + 1/4 + … Přibližují se ke 2, ale nikdy ji nepřekročí."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "1",
+                "value": 1
+              },
+              {
+                "label": "+ 1/2",
+                "value": 1.5
+              },
+              {
+                "label": "+ 1/4",
+                "value": 1.75
+              },
+              {
+                "label": "+ 1/8",
+                "value": 1.875
+              },
+              {
+                "label": "+ 1/16",
+                "value": 1.9375
+              },
+              {
+                "label": "+ 1/32",
+                "value": 1.96875
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Nekonečná geometrická řada",
+          "definition": "Součet všech členů geometrické posloupnosti. Má konečný součet (konverguje), jen když se členy zmenšují k nule, tedy když |q| < 1 (q je mezi −1 a 1). Pak s = a₁ / (1 − q).",
+          "example": "1 + 1/2 + 1/4 + … = 1 / (1 − 1/2) = 2."
+        },
+        {
+          "type": "example",
+          "question": "Kolik je 0,(9) = 0,999…?",
+          "answer": "0,9 + 0,09 + 0,009 + … je řada s a₁ = 0,9 a q = 0,1. s = 0,9 / (1 − 0,1) = 0,9 / 0,9 = **1**. Ano, 0,999… = 1."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1 + 2 + 4 + 8 + … má součet, protože každá řada se jednou „ustálí“.",
+          "right": "Tato řada nemá konečný součet (diverguje).",
+          "why": "q = 2, členy rostou. Konečný součet existuje jen pro |q| < 1."
+        },
+        {
+          "type": "summary",
+          "text": "Geometrická posloupnost: pořád násobím q. aₙ = a₁ · qⁿ⁻¹. Nekonečná řada má součet a₁/(1 − q), jen když |q| < 1."
+        }
+      ]
+    },
+    {
+      "title": "Vzorci",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Banka, pojišťovna i lékař (dávkování léku, který se z těla odbourává) počítají s geometrickými posloupnostmi. Potřebují rychle znát člen, součet a dlouhodobé chování."
+        },
+        {
+          "type": "text",
+          "text": "Tady jsou tři vzorce a postup, jak z libovolných dvou údajů dopočítat zbytek."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Geometrická posloupnost",
+          "definition": "Posloupnost, kde je podíl dvou sousedních členů stálý: aₙ₊₁ / aₙ = q (kvocient).",
+          "example": "6, 2, 2/3, … má q = 1/3."
+        },
+        {
+          "type": "term",
+          "term": "Částečný součet sₙ",
+          "definition": "Součet prvních n členů.",
+          "example": "Pro 1, 2, 4, 8, 16: s₅ = 31."
+        },
+        {
+          "type": "term",
+          "term": "Konvergence",
+          "definition": "Nekonečná řada konverguje, když se její částečné součty blíží k jednomu číslu – to je její součet. Jinak diverguje."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Co",
+            "Vzorec",
+            "Podmínka"
+          ],
+          "rows": [
+            [
+              "n-tý člen",
+              "aₙ = a₁ · qⁿ⁻¹",
+              "—"
+            ],
+            [
+              "vztah dvou členů",
+              "aᵣ = aₛ · qʳ⁻ˢ",
+              "—"
+            ],
+            [
+              "součet n členů",
+              "sₙ = a₁ · (qⁿ − 1)/(q − 1)",
+              "q ≠ 1"
+            ],
+            [
+              "součet nekonečné řady",
+              "s = a₁ / (1 − q)",
+              "|q| < 1"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Řešené úlohy"
+        },
+        {
+          "type": "example",
+          "question": "a₁ = 1, q = 2. Součet prvních 5 členů?",
+          "answer": "s₅ = 1 · (2⁵ − 1)/(2 − 1) = **31**. Kontrola: 1 + 2 + 4 + 8 + 16 = 31 ✓."
+        },
+        {
+          "type": "example",
+          "question": "a₂ = 6, a₄ = 54, q > 0. Urči q.",
+          "answer": "Z a₂ do a₄ jsou dvě násobení: 54 = 6 · q² → q² = 9 → **q = 3** (kladné)."
+        },
+        {
+          "type": "example",
+          "question": "Sečti 6 + 2 + 2/3 + …",
+          "answer": "a₁ = 6, q = 2/6 = 1/3, |q| < 1 → řada konverguje. s = 6 / (1 − 1/3) = 6 / (2/3) = **9**."
+        },
+        {
+          "type": "text",
+          "text": "Vidíš, jak se 20 000 Kč při úroku 5 % zvětšuje? Každý rok přibude o něco víc než minule – úrok se počítá i z úroků."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "Kč",
+            "items": [
+              {
+                "label": "start",
+                "value": 20000
+              },
+              {
+                "label": "1. rok",
+                "value": 21000
+              },
+              {
+                "label": "2. rok",
+                "value": 22050
+              },
+              {
+                "label": "3. rok",
+                "value": 23152.5
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Kdy řada konverguje"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Urči q.",
+            "Je |q| < 1 (a a₁ ≠ 0)? Řada konverguje, součet a₁/(1 − q).",
+            "Je |q| ≥ 1? Členy se nezmenšují k nule – řada nemá konečný součet."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Převeď 0,(9) na zlomek pomocí řady.",
+          "answer": "0,9 + 0,09 + … : a₁ = 0,9, q = 0,1. s = 0,9/0,9 = **1**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "aₙ = a₁ + (n − 1) · q",
+          "right": "aₙ = a₁ · qⁿ⁻¹",
+          "why": "To první je vzorec aritmetické posloupnosti (přičítání). U geometrické se násobí, takže q je v exponentu."
+        },
+        {
+          "type": "summary",
+          "text": "aₙ = a₁ · qⁿ⁻¹, sₙ = a₁(qⁿ − 1)/(q − 1). Nekonečná řada konverguje právě pro |q| < 1 a má součet a₁/(1 − q)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "3, 6, 12, … Kvocient q =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "a₁ = 2, q = 3. a₅ =",
+      "answers": [
+        "162"
+      ],
+      "explanation": "2 · 3⁴"
+    },
+    {
+      "type": "input",
+      "question": "a₁ = 1, q = 2. Součet prvních 5 členů =",
+      "answers": [
+        "31"
+      ],
+      "explanation": "1 + 2 + 4 + 8 + 16"
+    },
+    {
+      "type": "input",
+      "question": "1 + 1/2 + 1/4 + 1/8 + … =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "6 + 2 + 2/3 + … =",
+      "answers": [
+        "9"
+      ],
+      "explanation": "6 / (1 − 1/3)"
+    },
+    {
+      "type": "truefalse",
+      "question": "Nekonečná geometrická řada konverguje, právě když |q| < 1 (pro a₁ ≠ 0).",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "2, −4, 8, −16, … q =",
+      "options": [
+        "−2",
+        "2",
+        "−4",
+        "1/2"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "0,(9) =",
+      "answers": [
+        "1"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Vklad 20 000 Kč, úrok 5 % ročně (složené úročení). Částka po 2 letech (Kč) =",
+      "answers": [
+        "22050"
+      ],
+      "explanation": "20 000 · 1,05²"
+    },
+    {
+      "type": "truefalse",
+      "question": "Řada 1 + 2 + 4 + 8 + … má konečný součet.",
+      "answer": false,
+      "explanation": "q = 2, řada diverguje."
+    },
+    {
+      "type": "input",
+      "question": "Geometrická posloupnost: a₂ = 6, a₄ = 54, q > 0. q =",
+      "answers": [
+        "3"
+      ],
+      "explanation": "q² = 54/6 = 9"
+    },
+    {
+      "type": "choice",
+      "question": "n-tý člen geometrické posloupnosti:",
+      "options": [
+        "a₁ · qⁿ⁻¹",
+        "a₁ + (n − 1)q",
+        "a₁ · qⁿ",
+        "n · a₁ · q"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je geometrická posloupnost? Uveď příklad z praxe.",
+      "answer": "Posloupnost, v níž je podíl dvou po sobě jdoucích členů stálý (kvocient q). Příklad: složené úročení, množení bakterií, rozpad látky."
+    },
+    {
+      "type": "open",
+      "question": "Kdy má nekonečná geometrická řada součet a jak ho spočítáš?",
+      "answer": "Když |q| < 1 – členy se zmenšují k nule. Součet je s = a₁ / (1 − q)."
+    }
+  ]
+}

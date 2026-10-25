@@ -1,0 +1,359 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kruh-kruznice",
+  "title": "Kruh a kružnice",
+  "emoji": "⭕",
+  "generator": "circle",
+  "explanations": [
+    {
+      "title": "Provázkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolo, talíř, mince, pizza, ciferník. Kulaté věci jsou všude. Kolik metrů ujede kolo za jednu otáčku? Kolik těsta je potřeba na pizzu? Na to potřebuješ znát vzorce pro kruh."
+        },
+        {
+          "type": "text",
+          "text": "A objevíš při tom jedno z nejslavnějších čísel světa – **π** (pí)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Střed",
+          "definition": "Bod přesně uprostřed kruhu. Všechny body na okraji jsou od něj stejně daleko.",
+          "example": "U kružítka je to místo, kam zapíchneš hrot."
+        },
+        {
+          "type": "term",
+          "term": "Poloměr (r)",
+          "definition": "Vzdálenost ze středu na okraj.",
+          "example": "Jak moc roztáhneš kružítko."
+        },
+        {
+          "type": "term",
+          "term": "Průměr (d)",
+          "definition": "Úsečka přes celý kruh skrz střed. Je dvakrát delší než poloměr: d = 2r.",
+          "example": "Pizza s průměrem 30 cm má poloměr 15 cm."
+        },
+        {
+          "type": "term",
+          "term": "Kružnice × kruh",
+          "definition": "**Kružnice** je jen ta čára po okraji. **Kruh** je čára i celá plocha uvnitř.",
+          "example": "Obruč je kružnice, placka je kruh."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s provázkem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vezmi hrnek a obtoč ho provázkem dokola.",
+            "Provázek natáhni a změř – to je obvod (délka kružnice).",
+            "Změř průměr hrnku napříč.",
+            "Vyděl obvod průměrem. Vždy vyjde něco přes 3 – asi 3,14."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ať změříš hrnek, talíř nebo kolo, vyjde pokaždé stejné číslo. Jmenuje se **π (pí)** a je přibližně **3,14**. Přesně ho napsat nejde – má nekonečně mnoho číslic za čárkou: 3,14159…"
+        },
+        {
+          "type": "text",
+          "text": "Měň poloměr a sleduj, jak roste obvod a obsah. Obvod roste stejně rychle jako poloměr, obsah mnohem rychleji."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "circle",
+            "a": 3
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Délka kružnice a obsah kruhu"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Délka kružnice (obvod): **o = π · d = 2 · π · r**",
+            "Obsah kruhu: **S = π · r · r = π · r²**"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolo má poloměr 5 cm. Jakou vzdálenost ujede za jednu otáčku?",
+          "answer": "o = 2 · 3,14 · 5 = **31,4 cm**."
+        },
+        {
+          "type": "example",
+          "question": "Jaký obsah má kruh s poloměrem 5 cm?",
+          "answer": "S = 3,14 · 5 · 5 = 3,14 · 25 = **78,5 cm²**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když zdvojnásobím poloměr, obsah se zdvojnásobí.",
+          "right": "Obsah se zvětší **4krát**.",
+          "why": "V obsahu je r dvakrát (r · r). Dvojnásobný poloměr: 2r · 2r = 4 · r²."
+        },
+        {
+          "type": "summary",
+          "text": "π ≈ 3,14 = obvod : průměr. Délka kružnice o = 2πr, obsah kruhu S = πr²."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce a pojmy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kolem kruhu a kružnice je spousta pojmů – tětiva, tečna, výseč. Tady je máš přehledně, spolu se vzorci a postupem výpočtu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kružnice k(S; r)",
+          "definition": "Všechny body, které mají od středu S vzdálenost přesně r.",
+          "example": "k(S; 3 cm) – kružnice se středem S a poloměrem 3 cm."
+        },
+        {
+          "type": "term",
+          "term": "Kruh",
+          "definition": "Kružnice spolu s celou plochou uvnitř.",
+          "example": "Body ve vzdálenosti nejvýš r od středu."
+        },
+        {
+          "type": "term",
+          "term": "Poloměr r a průměr d",
+          "definition": "r = vzdálenost středu od kružnice. d = 2r = nejdelší úsečka přes kruh.",
+          "example": "d = 8 cm → r = 4 cm"
+        },
+        {
+          "type": "term",
+          "term": "π (pí)",
+          "definition": "Číslo, kolikrát je obvod delší než průměr. π = 3,14159…, počítáme s 3,14.",
+          "example": "Platí pro každou kružnici."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "co",
+            "vzorec",
+            "jednotka"
+          ],
+          "rows": [
+            [
+              "průměr",
+              "d = 2r",
+              "cm"
+            ],
+            [
+              "délka kružnice",
+              "o = 2πr = πd",
+              "cm"
+            ],
+            [
+              "obsah kruhu",
+              "S = πr²",
+              "cm²"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti poloměr. Máš průměr? Vyděl ho 2.",
+            "Obvod: 2 · 3,14 · r.",
+            "Obsah: 3,14 · r · r.",
+            "Zkontroluj jednotky: obvod v cm, obsah v cm²."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Poloměr 10 cm. Obvod a obsah?",
+          "answer": "o = 2 · 3,14 · 10 = **62,8 cm**. S = 3,14 · 100 = **314 cm²**."
+        },
+        {
+          "type": "example",
+          "question": "Obsah půlkruhu s poloměrem 10 cm?",
+          "answer": "Celý kruh 314 cm², polovina **157 cm²**."
+        },
+        {
+          "type": "heading",
+          "text": "Přímky a kružnice"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Sečna** – přímka, která kružnici protne ve **2 bodech**.",
+            "**Tečna** – dotýká se kružnice v **1 bodě**. V tom bodě je kolmá k poloměru.",
+            "**Vnější přímka** – nemá s kružnicí žádný společný bod.",
+            "**Tětiva** – úsečka spojující dva body kružnice. Nejdelší tětiva je průměr.",
+            "**Kruhová výseč** – část kruhu mezi dvěma poloměry (jako dílek pizzy)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Procvič si pojmy – otoč kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "tětiva",
+                "back": "spojuje dva body kružnice"
+              },
+              {
+                "front": "tečna",
+                "back": "dotýká se v 1 bodě, kolmá k poloměru"
+              },
+              {
+                "front": "sečna",
+                "back": "protíná kružnici ve 2 bodech"
+              },
+              {
+                "front": "výseč",
+                "back": "část kruhu mezi 2 poloměry"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Průměr 8 cm → S = 3,14 · 8² = 200,96 cm²",
+          "right": "r = 4 cm → S = 3,14 · 16 = 50,24 cm²",
+          "why": "Ve vzorci je **poloměr**, ne průměr. Vždy nejdřív zjisti r."
+        },
+        {
+          "type": "summary",
+          "text": "d = 2r, o = 2πr, S = πr². Obvod se počítá s r, obsah s r². Tečna je kolmá k poloměru."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "r = 5 cm, π ≈ 3,14. Délka kružnice v cm?",
+      "answers": [
+        "31,4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "r = 5 cm, π ≈ 3,14. Obsah kruhu v cm²?",
+      "answers": [
+        "78,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "d = 8 cm. Poloměr v cm?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "d = 10 cm, π ≈ 3,14. Délka kružnice v cm?",
+      "answers": [
+        "31,4"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Tečna je kolmá k poloměru v bodě dotyku.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Když poloměr zdvojnásobím, obsah kruhu se…",
+      "options": [
+        "zečtyřnásobí",
+        "zdvojnásobí",
+        "nezmění",
+        "ztrojnásobí"
+      ],
+      "answer": 0,
+      "explanation": "r² → (2r)² = 4r²"
+    },
+    {
+      "type": "choice",
+      "question": "Kolik společných bodů má přímka (sečna) s kružnicí?",
+      "options": [
+        "2",
+        "1",
+        "0",
+        "nekonečně"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Obsah půlkruhu s r = 10 cm (π ≈ 3,14), v cm²:",
+      "answers": [
+        "157"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "π je přesně 3,14.",
+      "answer": false,
+      "explanation": "π = 3,14159…, má nekonečný neperiodický rozvoj."
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem s popisem.",
+      "pairs": [
+        [
+          "tětiva",
+          "spojuje dva body kružnice"
+        ],
+        [
+          "průměr",
+          "nejdelší tětiva"
+        ],
+        [
+          "tečna",
+          "dotýká se v 1 bodě"
+        ],
+        [
+          "výseč",
+          "část kruhu mezi 2 poloměry"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi kruhem a kružnicí?",
+      "answer": "Kružnice je čára – body se stejnou vzdáleností r od středu. Kruh je kružnice i celá plocha uvnitř."
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš obsah kruhu, když znáš průměr?",
+      "answer": "Průměr vydělím dvěma, dostanu poloměr. Ten umocním na druhou a vynásobím π: S = πr²."
+    }
+  ]
+}

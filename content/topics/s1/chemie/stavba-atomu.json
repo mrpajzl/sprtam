@@ -1,0 +1,461 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "stavba-atomu",
+  "title": "Stavba atomu a izotopy",
+  "emoji": "⚛️",
+  "explanations": [
+    {
+      "title": "Měřítkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Všechno kolem tebe – vzduch, voda, tvoje ruka – je složené z **atomů**. Jsou tak malé, že přes šířku tečky za větou by se jich vedle sebe vešlo několik milionů."
+        },
+        {
+          "type": "text",
+          "text": "Když pochopíš, z čeho se atom skládá, pochopíš, proč je zlato zlatem a kyslík kyslíkem, jak funguje jaderná elektrárna a jak archeologové určí stáří kostí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atom",
+          "definition": "Nejmenší částice prvku, která má ještě jeho vlastnosti. Skládá se z **jádra** uprostřed a **elektronového obalu** kolem."
+        },
+        {
+          "type": "term",
+          "term": "Proton (p⁺)",
+          "definition": "Částice v jádře s kladným nábojem +1. Hmotnost asi 1 u.",
+          "example": "u = atomová hmotnostní jednotka, asi 1,66 · 10⁻²⁷ kg – zhruba hmotnost jednoho protonu."
+        },
+        {
+          "type": "term",
+          "term": "Neutron (n⁰)",
+          "definition": "Částice v jádře **bez náboje**. Hmotnost také asi 1 u."
+        },
+        {
+          "type": "term",
+          "term": "Elektron (e⁻)",
+          "definition": "Částice v obalu se záporným nábojem −1. Je asi **1836× lehčí** než proton."
+        },
+        {
+          "type": "term",
+          "term": "Nukleon",
+          "definition": "Společný název pro částice v jádře – protony a neutrony."
+        },
+        {
+          "type": "heading",
+          "text": "Zvětšíme atom"
+        },
+        {
+          "type": "text",
+          "text": "Kdyby bylo jádro velké jako zrnko máku, celý atom by byl velký jako fotbalový stadion. Mezi jádrem a elektrony je skoro prázdný prostor."
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🔴",
+            "⚪",
+            "·",
+            "·",
+            "·",
+            "·",
+            "🔵"
+          ],
+          "caption": "protony a neutrony v malinkém jádře, elektrony daleko v obalu"
+        },
+        {
+          "type": "text",
+          "text": "Přitom jádro nese přes **99,9 % hmotnosti** atomu. Elektrony jsou tak lehké, že jejich hmotnost skoro nehraje roli."
+        },
+        {
+          "type": "example",
+          "question": "Jaký náboj má atom, který má 11 protonů a 11 elektronů?",
+          "answer": "Každý proton +1, každý elektron −1. 11 · (+1) + 11 · (−1) = 0. Atom je **elektricky neutrální**. Tak je to u každého atomu: protonů je stejně jako elektronů."
+        },
+        {
+          "type": "heading",
+          "text": "Co určuje prvek"
+        },
+        {
+          "type": "term",
+          "term": "Protonové číslo Z",
+          "definition": "Počet protonů v jádře. **Určuje, o jaký prvek jde.** Prvek je látka z atomů se stejným Z.",
+          "example": "Z = 6 je vždy uhlík, Z = 8 vždy kyslík."
+        },
+        {
+          "type": "term",
+          "term": "Nukleonové číslo A",
+          "definition": "Počet všech nukleonů – protonů a neutronů dohromady.",
+          "example": "Uhlík ¹²C má A = 12: 6 protonů + 6 neutronů."
+        },
+        {
+          "type": "term",
+          "term": "Izotopy",
+          "definition": "Atomy **téhož prvku** (stejné Z), které mají **různý počet neutronů** (a tedy různé A). Chemicky se chovají skoro stejně.",
+          "example": "Vodík: ¹H protium (0 neutronů), ²H deuterium (1), ³H tritium (2)."
+        },
+        {
+          "type": "term",
+          "term": "Ion",
+          "definition": "Atom, který ztratil nebo získal elektrony, a má tedy náboj. Kladný = **kation**, záporný = **anion**.",
+          "example": "Mg²⁺ ztratil 2 elektrony, S²⁻ získal 2."
+        },
+        {
+          "type": "example",
+          "question": "Kolik elektronů má ion Mg²⁺ (Z = 12)?",
+          "answer": "Neutrální hořčík má 12 elektronů. Náboj 2+ znamená, že **2 elektrony ztratil**. 12 − 2 = **10 elektronů**."
+        },
+        {
+          "type": "heading",
+          "text": "Nestabilní jádra"
+        },
+        {
+          "type": "term",
+          "term": "Radioaktivita",
+          "definition": "Některá jádra jsou nestálá a sama se rozpadají. Vyzařují přitom záření: **α** (jádra helia ⁴He), **β⁻** (elektrony), **γ** (elektromagnetické záření s velkou energií).",
+          "example": "Izotop uhlíku ¹⁴C se rozpadá pomalu a známým tempem (polovina za asi 5 730 let) – proto se jím určuje stáří kostí a dřeva."
+        },
+        {
+          "type": "text",
+          "text": "Klepni na karty a zopakuj si částice."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "proton",
+                "back": "v jádře, náboj +1, asi 1 u"
+              },
+              {
+                "front": "neutron",
+                "back": "v jádře, bez náboje, asi 1 u"
+              },
+              {
+                "front": "elektron",
+                "back": "v obalu, náboj −1, 1836× lehčí než proton"
+              },
+              {
+                "front": "izotopy",
+                "back": "stejné Z, různý počet neutronů"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Izotopy se liší počtem protonů.",
+          "right": "Izotopy mají **stejný** počet protonů, liší se počtem **neutronů**.",
+          "why": "Kdyby se změnil počet protonů, změnilo by se Z – a byl by to jiný prvek."
+        },
+        {
+          "type": "summary",
+          "text": "Atom = malé těžké jádro (protony + neutrony) a lehký obal z elektronů. Prvek určuje protonové číslo Z. Izotopy se liší počtem neutronů."
+        }
+      ]
+    },
+    {
+      "title": "Zápis nuklidu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chemici potřebují o každém druhu atomu říct dvě věci: **který je to prvek** a **jak je těžký**. Vymysleli na to krátký zápis s dvěma čísly u značky prvku."
+        },
+        {
+          "type": "text",
+          "text": "Když ho umíš číst, spočítáš z něj protony, neutrony i elektrony – a to se hodí v chemii, fyzice i medicíně (radioaktivní izotopy)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Částice atomu",
+          "definition": "Jádro tvoří **protony** (náboj +1, hmotnost ≈ 1 u) a **neutrony** (bez náboje, ≈ 1 u). Obal tvoří **elektrony** (náboj −1, asi 1836× lehčí než proton).",
+          "example": "u = atomová hmotnostní jednotka ≈ 1,66 · 10⁻²⁷ kg."
+        },
+        {
+          "type": "term",
+          "term": "Protonové číslo Z",
+          "definition": "Počet protonů. Píše se vlevo dole u značky. Určuje prvek a jeho místo v periodické tabulce."
+        },
+        {
+          "type": "term",
+          "term": "Nukleonové číslo A",
+          "definition": "Počet protonů + neutronů (nukleonů). Píše se vlevo nahoře."
+        },
+        {
+          "type": "term",
+          "term": "Nuklid",
+          "definition": "Druh atomů s určitým Z **i** A.",
+          "example": "²³Na (Z = 11) je nuklid sodíku s 23 nukleony."
+        },
+        {
+          "type": "term",
+          "term": "Izotopy",
+          "definition": "Nuklidy téhož prvku – stejné Z, různé A (jiný počet neutronů)."
+        },
+        {
+          "type": "heading",
+          "text": "Jak zápis číst"
+        },
+        {
+          "type": "text",
+          "text": "Zápis vypadá jako ᴬ_Z X: nahoře A, dole Z, vpravo značka prvku. Z se často vynechává, protože ho určuje už značka."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Protony** = Z (najdeš i v periodické tabulce).",
+            "**Neutrony** N = A − Z.",
+            "**Elektrony** v neutrálním atomu = Z.",
+            "U iontu: kladný náboj → elektrony ubyly; záporný náboj → přibyly."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Veličina",
+            "Význam",
+            "Pro ²³Na (Z = 11)"
+          ],
+          "rows": [
+            [
+              "Z",
+              "počet protonů",
+              "11"
+            ],
+            [
+              "A",
+              "protony + neutrony",
+              "23"
+            ],
+            [
+              "N = A − Z",
+              "počet neutronů",
+              "12"
+            ],
+            [
+              "elektrony",
+              "v neutrálním atomu = Z",
+              "11"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik neutronů má ³⁵Cl (Z = 17)?",
+          "answer": "N = A − Z = 35 − 17 = **18 neutronů**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik elektronů má ion S²⁻ (Z = 16)?",
+          "answer": "Neutrální síra má 16 elektronů. Náboj 2− znamená, že **2 elektrony přibyly**: 16 + 2 = **18**."
+        },
+        {
+          "type": "heading",
+          "text": "Izotopy v praxi"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Nuklid",
+            "Název / užití"
+          ],
+          "rows": [
+            [
+              "¹H",
+              "protium – běžný vodík"
+            ],
+            [
+              "²H",
+              "deuterium – těžká voda"
+            ],
+            [
+              "³H",
+              "tritium – radioaktivní"
+            ],
+            [
+              "¹²C",
+              "nejběžnější uhlík"
+            ],
+            [
+              "¹⁴C",
+              "radioaktivní, datování nálezů"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Radioaktivní rozpad",
+          "definition": "Samovolná přeměna nestálého jádra za vzniku záření. **α** = jádra helia ⁴He (2 p + 2 n), **β⁻** = elektrony, **γ** = elektromagnetické vlnění.",
+          "example": "¹⁴C se rozpadá s poločasem asi 5 730 let – podle toho, kolik ho v kosti zbylo, se určí její stáří."
+        },
+        {
+          "type": "text",
+          "text": "Procvič si to: roztřiď údaje podle toho, k čemu patří."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "určuje prvek",
+              "liší se u izotopů"
+            ],
+            "items": [
+              {
+                "text": "protonové číslo Z",
+                "group": 0
+              },
+              {
+                "text": "počet protonů",
+                "group": 0
+              },
+              {
+                "text": "značka prvku",
+                "group": 0
+              },
+              {
+                "text": "nukleonové číslo A",
+                "group": 1
+              },
+              {
+                "text": "počet neutronů",
+                "group": 1
+              },
+              {
+                "text": "hmotnost atomu",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Prvek se pozná podle nukleonového čísla A.",
+          "right": "Prvek určuje **protonové číslo Z**.",
+          "why": "Například ¹⁴C a ¹⁴N mají stejné A = 14, ale jsou to různé prvky (Z = 6 a Z = 7)."
+        },
+        {
+          "type": "summary",
+          "text": "Z = protony = prvek. A = protony + neutrony. Neutrony N = A − Z. Elektrony = Z minus náboj iontu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik neutronů má nuklid ³⁵Cl (Z = 17)?",
+      "answers": [
+        "18"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik protonů má nuklid ⁵⁶Fe (Z = 26)?",
+      "answers": [
+        "26"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik elektronů má ion Mg²⁺ (Z = 12)?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik elektronů má ion S²⁻ (Z = 16)?",
+      "answers": [
+        "18"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Čím se liší izotopy téhož prvku?",
+      "options": [
+        "počtem neutronů",
+        "počtem protonů",
+        "počtem elektronů v neutrálním atomu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj izotop vodíku s názvem.",
+      "pairs": [
+        [
+          "¹H",
+          "protium"
+        ],
+        [
+          "²H",
+          "deuterium"
+        ],
+        [
+          "³H",
+          "tritium"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Nukleonové číslo udává součet protonů a neutronů.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Prvek je určen nukleonovým číslem.",
+      "answer": false,
+      "explanation": "Prvek určuje protonové číslo Z."
+    },
+    {
+      "type": "choice",
+      "question": "Který izotop uhlíku se používá k datování organických nálezů?",
+      "options": [
+        "¹⁴C",
+        "¹²C",
+        "¹³C"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je záření α?",
+      "options": [
+        "proud jader helia ⁴He",
+        "proud elektronů",
+        "elektromagnetické vlnění",
+        "proud neutronů"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli pojmy nuklid, izotop a prvek.",
+      "answer": "Nuklid je soubor atomů se stejným Z i A. Izotopy jsou nuklidy téhož prvku – stejné Z, různé A. Prvek je látka z atomů se stejným protonovým číslem."
+    },
+    {
+      "type": "open",
+      "question": "Popiš složení atomu a vlastnosti elementárních částic.",
+      "answer": "Jádro tvoří protony (náboj +1, hmotnost ≈ 1 u) a neutrony (bez náboje, ≈ 1 u). Obal tvoří elektrony s nábojem −1 a asi 1836× menší hmotností než proton."
+    }
+  ]
+}

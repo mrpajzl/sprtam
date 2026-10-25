@@ -1,0 +1,330 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "velke-pismeno-a-tecka",
+  "title": "Velké písmeno a tečka",
+  "emoji": "🔴",
+  "explanations": [
+    {
+      "title": "Semafor",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na semaforu zelená říká „jeď“ a červená „stůj“."
+        },
+        {
+          "type": "text",
+          "text": "Věta má taky svůj start a stop. Díky nim čtenář pozná, kde věta začíná a kde končí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Připomenutí: slova za sebou, která společně něco řeknou.",
+          "example": "Pes štěká."
+        },
+        {
+          "type": "term",
+          "term": "Velké písmeno",
+          "definition": "Větší podoba písmene. Na začátku věty je jako zelená – start.",
+          "example": "**P**es štěká."
+        },
+        {
+          "type": "term",
+          "term": "Tečka",
+          "definition": "Malý puntík na konci věty. Je jako červená – stop.",
+          "example": "Pes štěká**.**"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🟢",
+            "Pes štěká",
+            "🔴"
+          ],
+          "caption": "velké písmeno = start, tečka = stop"
+        },
+        {
+          "type": "text",
+          "text": "Když se ptáš, místo tečky dáš na konec **otazník**: Kde je pes?"
+        },
+        {
+          "type": "heading",
+          "text": "Jak napsat větu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "První slovo začni **velkým písmenem**.",
+            "Ostatní slova piš malými písmeny (když to nejsou jména).",
+            "Mezi slovy dělej mezery.",
+            "Na konec dej **tečku**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Oprav větu: „máma vaří“",
+          "answer": "Začátek: velké **M**. Konec: **tečka**. Správně: **Máma vaří.**"
+        },
+        {
+          "type": "example",
+          "question": "Oprav větu: „Ema má míč“",
+          "answer": "Velké písmeno na začátku je. Chybí tečka. Správně: **Ema má míč.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "pes štěká.",
+          "right": "Pes štěká.",
+          "why": "Věta musí začít velkým písmenem – jako zelená na semaforu."
+        },
+        {
+          "type": "summary",
+          "text": "Věta začíná velkým písmenem a končí tečkou. Velké písmeno = start, tečka = stop."
+        }
+      ]
+    },
+    {
+      "title": "Jména",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ty máš své jméno. Tvůj pes nebo kočka mají taky své jméno. Je jen jejich."
+        },
+        {
+          "type": "text",
+          "text": "Jména jsou důležitá, a tak je píšeme **velkým písmenem**. I když jsou uprostřed věty."
+        },
+        {
+          "type": "term",
+          "term": "Velké písmeno",
+          "definition": "Větší podoba písmene. Píšeme ho na začátek věty a na začátek jména.",
+          "example": "E – **E**ma"
+        },
+        {
+          "type": "term",
+          "term": "Jméno",
+          "definition": "Slovo, kterým voláme jednoho určitého člověka nebo zvíře.",
+          "example": "Ema, Petr, Alík, Micka"
+        },
+        {
+          "type": "term",
+          "term": "Obyčejné slovo",
+          "definition": "Slovo pro každou věc nebo zvíře toho druhu. Píšeme ho malým písmenem.",
+          "example": "pes, kočka, stůl, máma"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "🐶",
+            "pes",
+            "➡️",
+            "Alík"
+          ],
+          "caption": "pes – každý pes; Alík – jen tenhle pes"
+        },
+        {
+          "type": "heading",
+          "text": "Jak to poznat"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zeptej se: Je to jméno jednoho určitého člověka nebo zvířete?",
+            "Ano (Ema, Alík) → **velké** písmeno.",
+            "Ne (pes, kočka) → **malé** písmeno.",
+            "Na začátku věty je velké písmeno vždycky."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď slova: velké, nebo malé písmeno?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "velké písmeno",
+              "malé písmeno"
+            ],
+            "items": [
+              {
+                "text": "Ema",
+                "group": 0
+              },
+              {
+                "text": "pes",
+                "group": 1
+              },
+              {
+                "text": "Alík",
+                "group": 0
+              },
+              {
+                "text": "kočka",
+                "group": 1
+              },
+              {
+                "text": "Petr",
+                "group": 0
+              },
+              {
+                "text": "stůl",
+                "group": 1
+              },
+              {
+                "text": "Micka",
+                "group": 0
+              },
+              {
+                "text": "máma",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Napiš správně: „ema má psa alíka.“",
+          "answer": "Začátek věty a jméno Ema: **E**. Jméno psa: **A**líka. Správně: **Ema má psa Alíka.**"
+        },
+        {
+          "type": "example",
+          "question": "Napiš správně: „Táta hladí kočku micku.“",
+          "answer": "Kočka není jméno – malé k. Micka je jméno – velké M. Správně: **Táta hladí kočku Micku.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Máme doma Psa.",
+          "right": "Máme doma psa.",
+          "why": "Pes není jméno, je to obyčejné slovo. Velké písmeno by mělo jen jméno: psa **Alíka**."
+        },
+        {
+          "type": "summary",
+          "text": "Jména lidí a zvířat píšeme velkým písmenem. Obyčejná slova uprostřed věty malým."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která věta je napsaná správně?",
+      "options": [
+        "pes štěká.",
+        "Pes štěká.",
+        "Pes štěká"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Která věta je napsaná správně?",
+      "options": [
+        "Ema má míč.",
+        "ema má míč.",
+        "Ema má míč"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Na začátku věty píšeme velké písmeno.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Na konci věty píšeme čárku.",
+      "answer": false,
+      "explanation": "Na konci věty píšeme tečku. Čárka na konec věty nepatří."
+    },
+    {
+      "type": "truefalse",
+      "question": "Jméno *Petr* píšeme velkým P.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co je napsané správně?",
+      "options": [
+        "alík",
+        "Alík"
+      ],
+      "answer": 1,
+      "explanation": "Alík je jméno psa – velké písmeno."
+    },
+    {
+      "type": "choice",
+      "question": "Co je napsané správně?",
+      "options": [
+        "Kočka",
+        "kočka"
+      ],
+      "answer": 1,
+      "explanation": "Kočka uprostřed věty není jméno – malé písmeno."
+    },
+    {
+      "type": "input",
+      "question": "Jaké znaménko patří na konec věty *Máma vaří*?",
+      "answers": [
+        ".",
+        "tečka",
+        "tecku",
+        "tečku"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "začátek věty",
+          "velké písmeno"
+        ],
+        [
+          "konec věty",
+          "tečka"
+        ],
+        [
+          "jméno",
+          "velké písmeno"
+        ],
+        [
+          "mezi slovy",
+          "mezera"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Slož větu.",
+      "items": [
+        "Ema",
+        "má",
+        "psa",
+        "Alíka."
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Co píšeme na začátek a co na konec věty?",
+      "answer": "Na začátek věty velké písmeno, na konec tečku."
+    },
+    {
+      "type": "open",
+      "question": "Napiš (řekni) své jméno. Jakým písmenem začíná?",
+      "answer": "Moje jméno začíná velkým písmenem, třeba Ema – velké E."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { GRADE_NAME, SUBJECTS, type KeyColor } from '../content/curriculum'
-import { loadSubject, topicKey } from '../content'
+import { loadSubject, loadTopic, topicKey } from '../content'
 import { loadIndex, refFor } from '../content/library'
 import type { GradeId, SubjectId, Topic } from '../content/types'
 import { MODES, type ModeId } from '../quiz/engine'
@@ -38,10 +38,10 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
     <div class="page" style={subjectStyle(s)}>
       <Bar title={`${topic.emoji} ${topic.title}`} crumbs={[{ href: `/g/${g}`, label: GRADE_NAME[g] }, { href: `/g/${g}/${s}`, label: SUBJECTS[s].name }]} right={<PinButton k={key} />} />
       <div class="seg" role="tablist">
-        {topic.ex.map((x, i) => <button key={i} role="tab" aria-selected={ex === i} class={ex === i ? 'on' : ''} onClick={() => switchTo(i as 0 | 1)}>{x.title}</button>)}
+        {topic.explanations.map((x, i) => <button key={i} role="tab" aria-selected={ex === i} class={ex === i ? 'on' : ''} onClick={() => switchTo(i as 0 | 1)}>{x.title}</button>)}
       </div>
-      <Blocks key={ex} blocks={topic.ex[ex].blocks} />
-      <button class="other" onClick={() => switchTo(other)}><IBulb />Nerozumím – vysvětli to jinak: {topic.ex[other].title}</button>
+      <Blocks key={ex} blocks={topic.explanations[ex].blocks} />
+      <button class="other" onClick={() => switchTo(other)}><IBulb />Nerozumím – vysvětli to jinak: {topic.explanations[other].title}</button>
       <div class="modes">
         {(['kviz', 'opakovani', 'pisemka', 'zkouseni'] as ModeId[]).map((m) => {
           const [I, c] = MODE_KEY[m]!
@@ -83,8 +83,8 @@ export function MixScreen() {
   const topics = useAsync(async () => {
     await loadIndex()
     const refs = pinnedKeys(getProgress()).flatMap((k) => refFor(k) ?? [])
-    const subjects = await Promise.all(refs.map((r) => loadSubject(r.g, r.s)))
-    return refs.flatMap((r, i) => { const t = subjects[i].topics.find((x) => x.id === r.id); return t ? [{ key: r.key, t }] : [] as { key: string; t: Topic }[] })
+    const topics = await Promise.all(refs.map((r) => loadTopic(r.g, r.s, r.id).catch(() => null)))
+    return refs.flatMap((r, i) => { const t = topics[i]; return t ? [{ key: r.key, t }] : [] as { key: string; t: Topic }[] })
   }, [])
   if (topics === undefined) return <div class="page" />
   if (!topics?.length) return <div class="page"><Bar title="Mix" /><div class="empty">Nejdřív si připni nějaké téma.<button class="btn" onClick={back}>Zpět</button></div></div>

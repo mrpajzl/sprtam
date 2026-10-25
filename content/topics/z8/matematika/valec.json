@@ -1,0 +1,347 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "valec",
+  "title": "Válec",
+  "emoji": "🥫",
+  "generator": "circle",
+  "explanations": [
+    {
+      "title": "Plechovka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Plechovka limonády, hrnek, sud, komín, roličky toaletního papíru. Všechno jsou to **válce**. Kolik se do plechovky vejde? Kolik plechu je potřeba na její výrobu?"
+        },
+        {
+          "type": "text",
+          "text": "Výrobce to musí vědět přesně. A ty to zvládneš taky – válec je vlastně jen „kulatý hranol“."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Válec",
+          "definition": "Těleso se dvěma stejnými kruhy (dole a nahoře), které spojuje zakřivená stěna.",
+          "example": "Plechovka."
+        },
+        {
+          "type": "term",
+          "term": "Podstava",
+          "definition": "Každý z těch dvou kruhů – dno a víko.",
+          "example": "Víčko plechovky."
+        },
+        {
+          "type": "term",
+          "term": "Plášť",
+          "definition": "Zakřivená boční stěna – „etiketa“ plechovky.",
+          "example": "Papírová nálepka kolem plechovky."
+        },
+        {
+          "type": "term",
+          "term": "Poloměr r a výška v",
+          "definition": "**r** je vzdálenost středu podstavy od jejího okraje. **v** je výška válce – vzdálenost dna a víka.",
+          "example": "Plechovka: r ≈ 3 cm, v ≈ 12 cm."
+        },
+        {
+          "type": "term",
+          "term": "π (pí)",
+          "definition": "Číslo asi 3,14. Obvod kruhu je 2 · π · r, obsah kruhu π · r².",
+          "example": "Kruh s r = 2 cm má obsah 3,14 · 4 = 12,56 cm²."
+        },
+        {
+          "type": "heading",
+          "text": "Rozbal plechovku"
+        },
+        {
+          "type": "text",
+          "text": "Odstřihni dno a víko a etiketu rozstřihni nahoru podél. Rozlož vše na stůl:"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "⚪",
+            "🟦",
+            "⚪"
+          ],
+          "caption": "síť válce: 2 kruhy + obdélník"
+        },
+        {
+          "type": "text",
+          "text": "Etiketa je **obdélník**! Jedna jeho strana je výška plechovky. Druhá strana obtáčela plechovku dokola – je tedy dlouhá jako obvod kruhu: **2πr**."
+        },
+        {
+          "type": "heading",
+          "text": "Objem: kolik pater"
+        },
+        {
+          "type": "text",
+          "text": "Stejně jako u hranolu: kolik se vejde do jednoho „patra“ (obsah podstavy πr²) krát kolik je pater (výška v). **V = πr² · v**."
+        },
+        {
+          "type": "text",
+          "text": "Měň poloměr podstavy a sleduj její obsah. To je jedno „patro“ válce."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "circle",
+            "a": 2
+          }
+        },
+        {
+          "type": "example",
+          "question": "Plechovka má r = 2 cm a v = 5 cm. Kolik se do ní vejde?",
+          "answer": "Podstava: 3,14 · 2 · 2 = 12,56 cm². Objem: 12,56 · 5 = **62,8 cm³**."
+        },
+        {
+          "type": "example",
+          "question": "Válec r = 1 cm, v = 10 cm. Kolik cm² má plášť?",
+          "answer": "Plášť je obdélník: obvod 2 · 3,14 · 1 = 6,28 cm, výška 10 cm. 6,28 · 10 = **62,8 cm²**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Šířka rozvinutého pláště = průměr podstavy.",
+          "right": "Šířka pláště = **obvod** podstavy 2πr.",
+          "why": "Plášť se kolem podstavy obtáčí celý dokola. Průměr je jen čára napříč."
+        },
+        {
+          "type": "summary",
+          "text": "Válec = 2 kruhové podstavy + plášť (obdélník 2πr × v). V = πr² · v. Povrch = 2 podstavy + plášť."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pro válec jsou tři vzorce: objem, plášť a povrch. Vychází z toho, co už znáš o kruhu. Naučíš se je používat krok za krokem a převádět výsledek na litry."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Válec",
+          "definition": "Těleso se dvěma shodnými kruhovými podstavami a pláštěm.",
+          "example": "Sud, hrnek, plechovka."
+        },
+        {
+          "type": "term",
+          "term": "r, v",
+          "definition": "r = poloměr podstavy, v = výška válce.",
+          "example": "Je-li průměr 20 cm, je r = 10 cm."
+        },
+        {
+          "type": "term",
+          "term": "Obsah podstavy Sp",
+          "definition": "Obsah kruhu: Sp = π · r².",
+          "example": "r = 10 cm: Sp = 3,14 · 100 = 314 cm²"
+        },
+        {
+          "type": "term",
+          "term": "Litr",
+          "definition": "1 litr = 1 dm³ = 1 000 cm³.",
+          "example": "3 140 cm³ = 3,14 l"
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "co",
+            "vzorec",
+            "proč"
+          ],
+          "rows": [
+            [
+              "objem",
+              "V = πr² · v",
+              "podstava · výška"
+            ],
+            [
+              "plášť",
+              "Spl = 2πr · v",
+              "obdélník: obvod · výška"
+            ],
+            [
+              "povrch",
+              "S = 2πr² + 2πrv",
+              "2 podstavy + plášť"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti r (z průměru: r = d : 2) a v ve stejných jednotkách.",
+            "Spočítej obsah podstavy πr².",
+            "Objem = obsah podstavy · v.",
+            "Plášť = 2 · π · r · v.",
+            "Povrch = 2 · obsah podstavy + plášť."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Válec r = 10 cm, v = 10 cm. Objem v litrech?",
+          "answer": "V = 3,14 · 100 · 10 = 3 140 cm³. 1 000 cm³ = 1 l, takže **3,14 l**."
+        },
+        {
+          "type": "example",
+          "question": "Válec r = 2 cm, v = 5 cm. Povrch?",
+          "answer": "Podstavy: 2 · 3,14 · 4 = 25,12 cm². Plášť: 2 · 3,14 · 2 · 5 = 62,8 cm². Povrch **87,92 cm²**."
+        },
+        {
+          "type": "heading",
+          "text": "Co se stane, když…"
+        },
+        {
+          "type": "list",
+          "items": [
+            "…zdvojnásobím **výšku**? Objem se zdvojnásobí (dvakrát víc pater).",
+            "…zdvojnásobím **poloměr**? Objem se zečtyřnásobí, protože r je ve vzorci dvakrát (r²)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ověř si: nastav kruh s poloměrem 2 a pak 4. Kolikrát vzrostl obsah?"
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "circle",
+            "a": 4
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "V = 2πr · v (objem válce)",
+          "right": "V = πr² · v",
+          "why": "2πr je obvod – čára, ne plocha. Objem = **plocha** podstavy krát výška, a plocha kruhu je πr²."
+        },
+        {
+          "type": "summary",
+          "text": "V = πr² · v. Spl = 2πr · v. S = 2πr² + 2πrv. 1 l = 1 000 cm³."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Válec r = 2 cm, v = 5 cm, π ≈ 3,14. Objem v cm³?",
+      "answers": [
+        "62,8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Válec r = 1 cm, v = 10 cm, π ≈ 3,14. Obsah pláště v cm²?",
+      "answers": [
+        "62,8"
+      ],
+      "explanation": "2 · 3,14 · 1 · 10"
+    },
+    {
+      "type": "input",
+      "question": "Válec r = 10 cm, v = 10 cm, π ≈ 3,14. Objem v cm³?",
+      "answers": [
+        "3140"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Síť válce tvoří…",
+      "options": [
+        "2 kruhy a obdélník",
+        "1 kruh a trojúhelník",
+        "2 kruhy a kruhová výseč",
+        "6 obdélníků"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Objem válce = obsah podstavy · výška.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Válec r = 10 cm, v = 10 cm má objem asi…",
+      "options": [
+        "3,14 l",
+        "31,4 l",
+        "0,314 l",
+        "314 l"
+      ],
+      "answer": 0,
+      "explanation": "3 140 cm³ = 3,14 dm³ = 3,14 l"
+    },
+    {
+      "type": "choice",
+      "question": "Když zdvojnásobím výšku válce, objem se…",
+      "options": [
+        "zdvojnásobí",
+        "zečtyřnásobí",
+        "nezmění",
+        "zmenší"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Když zdvojnásobím poloměr válce, objem se…",
+      "options": [
+        "zečtyřnásobí",
+        "zdvojnásobí",
+        "zosminásobí",
+        "nezmění"
+      ],
+      "answer": 0,
+      "explanation": "r² → 4r²"
+    },
+    {
+      "type": "input",
+      "question": "Obsah podstavy válce je 20 cm², výška 7 cm. Objem v cm³?",
+      "answers": [
+        "140"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Šířka rozvinutého pláště válce se rovná průměru podstavy.",
+      "answer": false,
+      "explanation": "Rovná se obvodu podstavy 2πr."
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš povrch válce?",
+      "answer": "Sečtu obsahy dvou podstav (2 · πr²) a obsah pláště (2πr · v)."
+    },
+    {
+      "type": "open",
+      "question": "Proč je plášť válce obdélník?",
+      "answer": "Když plášť rozříznu podél výšky a rozvinu, vznikne obdélník. Jedna strana je výška válce, druhá obvod podstavy."
+    }
+  ]
+}

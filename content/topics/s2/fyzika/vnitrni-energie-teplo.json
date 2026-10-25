@@ -1,0 +1,376 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vnitrni-energie-teplo",
+  "title": "Vnitřní energie a teplo",
+  "emoji": "🔥",
+  "explanations": [
+    {
+      "title": "Dlaně a pumpička",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V zimě si třeš dlaně a zahřejí se. Nebo je obejmeš kolem hrnku čaje a zahřejí se taky. Dva úplně různé způsoby – a stejný výsledek. Co se vlastně v dlaních změnilo?"
+        },
+        {
+          "type": "text",
+          "text": "Odpověď vysvětluje, jak funguje topení, lednička, motor auta i proč moře v létě zůstává chladné, i když je venku horko."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Vnitřní energie U",
+          "definition": "Celková energie všech částic tělesa – jejich pohybu i vzájemného působení. Teplejší těleso má (při stejném množství látky) větší vnitřní energii.",
+          "example": "Horký čaj má víc vnitřní energie než studený."
+        },
+        {
+          "type": "term",
+          "term": "Práce W",
+          "definition": "Energie předaná silou při pohybu – třením, stlačením, úderem.",
+          "example": "Tření dlaní, stlačení vzduchu v pumpičce."
+        },
+        {
+          "type": "term",
+          "term": "Tepelná výměna",
+          "definition": "Předávání energie z teplejšího tělesa na chladnější bez konání práce – rychlejší částice „postrkují“ pomalejší.",
+          "example": "Teplý hrnek ohřeje studené dlaně."
+        },
+        {
+          "type": "term",
+          "term": "Teplo Q",
+          "definition": "Energie, která se předala tepelnou výměnou. Jednotka joule (J).",
+          "example": "Čaj předal dlaním teplo 500 J."
+        },
+        {
+          "type": "heading",
+          "text": "Dva způsoby, jak změnit vnitřní energii"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Prací**: třeš dlaně, kladivem tlučeš do drátu, stlačuješ plyn v pumpičce – vnitřní energie roste a těleso se ohřívá.",
+            "**Tepelnou výměnou**: dotkneš se teplejší věci a energie přejde do tebe – bez jakéhokoli pohybu.",
+            "Obojí lze spojit: **změna vnitřní energie = práce + teplo**. To je 1. termodynamický zákon."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pumpička se při huštění zahřívá, protože konáš práci na vzduchu uvnitř. Když plyn stlačíš tak rychle, že teplo nestihne uniknout (**adiabatický děj**), roste jeho teplota hodně."
+        },
+        {
+          "type": "heading",
+          "text": "Proč se voda ohřívá pomalu"
+        },
+        {
+          "type": "term",
+          "term": "Měrná tepelná kapacita c",
+          "definition": "Kolik joulů tepla je potřeba, aby se 1 kg látky ohřál o 1 K (= 1 °C). Jednotka J/(kg·K).",
+          "example": "Voda 4 180 J/(kg·K) – ohřát litr vody o 1 °C stojí přes 4 kJ."
+        },
+        {
+          "type": "text",
+          "text": "Porovnej látky v grafu. Voda má mimořádně velkou hodnotu – ohřívá se pomalu a pomalu chladne. Proto moře v létě zůstává chladné a v září je ještě teplé."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "J/(kg·K)",
+            "items": [
+              {
+                "label": "voda",
+                "value": 4180
+              },
+              {
+                "label": "led",
+                "value": 2100
+              },
+              {
+                "label": "hliník",
+                "value": 900
+              },
+              {
+                "label": "železo",
+                "value": 450
+              },
+              {
+                "label": "olovo",
+                "value": 130
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Teplo potřebné na ohřátí: `Q = m · c · Δt` (hmotnost × měrná tepelná kapacita × o kolik se ohřeje)."
+        },
+        {
+          "type": "example",
+          "question": "Kolik tepla ohřeje 2 kg vody o 50 °C (c = 4 200 J/(kg·K))?",
+          "answer": "Q = m · c · Δt = 2 · 4 200 · 50 = 420 000 J = **420 kJ**."
+        },
+        {
+          "type": "example",
+          "question": "Smícháš 1 kg vody 80 °C a 1 kg vody 20 °C. Jaká bude výsledná teplota?",
+          "answer": "Stejné množství stejné látky: teplá odevzdá tolik tepla, kolik studená přijme. Teplota se ustálí přesně uprostřed: (80 + 20) : 2 = **50 °C**."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se teplo šíří"
+        },
+        {
+          "type": "text",
+          "text": "**Vedením** – částice předávají pohyb sousedům (lžička v horkém čaji). **Prouděním** – teplá kapalina nebo plyn se přesouvá (ústřední topení, teplý vzduch stoupá). **Zářením** – i přes vakuum (teplo ze Slunce)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Horký čaj obsahuje hodně tepla.",
+          "right": "Horký čaj má velkou vnitřní energii. Teplo je jen ta energie, která přechází z jednoho tělesa na druhé.",
+          "why": "Teplo je jako „převod peněz“, vnitřní energie jako „stav účtu“. Těleso teplo nemá – teplo jen přijímá nebo odevzdává."
+        },
+        {
+          "type": "summary",
+          "text": "Vnitřní energii měníme prací nebo tepelnou výměnou: ΔU = W + Q. Teplo na ohřátí Q = m·c·Δt. Voda má velkou měrnou tepelnou kapacitu."
+        }
+      ]
+    },
+    {
+      "title": "Rovnice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když do vany napustíš horkou a studenou vodu, jaká bude výsledná teplota? Kolik plynu spotřebuje bojler? Kolik energie spolkne plyn v motoru? Na to stačí dvě rovnice: zákon zachování energie pro teplo a kalorimetrická rovnice."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Soustava",
+          "definition": "Těleso nebo skupina těles, kterou zkoumáme (plyn ve válci, voda v hrnci). Všechno ostatní je **okolí**."
+        },
+        {
+          "type": "term",
+          "term": "Vnitřní energie U",
+          "definition": "Součet energií všech částic soustavy (pohybové i polohové). Při stálém skupenství roste s teplotou."
+        },
+        {
+          "type": "term",
+          "term": "Teplo Q a práce W",
+          "definition": "**Teplo** je energie předaná tepelnou výměnou (bez pohybu sil). **Práce** je energie předaná silou při pohybu. Obě v joulech. Těleso teplo „neobsahuje“, jen ho přijímá nebo odevzdává."
+        },
+        {
+          "type": "term",
+          "term": "Měrná tepelná kapacita c",
+          "definition": "Teplo potřebné k ohřátí 1 kg látky o 1 K, jednotka J/(kg·K). Voda ≈ 4 200 J/(kg·K)."
+        },
+        {
+          "type": "term",
+          "term": "Izolovaná soustava",
+          "definition": "Soustava, která s okolím nevyměňuje energii. V praxi ji napodobí **kalorimetr** – tepelně izolovaná nádoba (jako termoska)."
+        },
+        {
+          "type": "heading",
+          "text": "1. termodynamický zákon"
+        },
+        {
+          "type": "text",
+          "text": "`ΔU = W + Q`. Změna vnitřní energie = práce, kterou na soustavě vykonalo okolí, + teplo, které soustava přijala. Je to zákon zachování energie."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Situace",
+            "Znaménko"
+          ],
+          "rows": [
+            [
+              "soustava teplo přijme",
+              "Q > 0"
+            ],
+            [
+              "soustava teplo odevzdá",
+              "Q < 0"
+            ],
+            [
+              "okolí plyn stlačí (koná práci na plynu)",
+              "W > 0"
+            ],
+            [
+              "plyn se rozepne a sám koná práci",
+              "W < 0"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Plyn přijal teplo 500 J a sám vykonal práci 200 J. Jak se změnila jeho vnitřní energie?",
+          "answer": "Q = +500 J. Plyn práci vykonal, takže okolí na něm konalo W = −200 J. ΔU = −200 + 500 = **300 J**. (Jinak: 500 J přišlo, 200 J odešlo jako práce, zůstalo 300 J.)"
+        },
+        {
+          "type": "heading",
+          "text": "Teplo na ohřátí a kalorimetrická rovnice"
+        },
+        {
+          "type": "text",
+          "text": "Teplo potřebné k ohřátí tělesa: `Q = m · c · Δt`. Když smícháš teplou a studenou vodu v izolované nádobě, teplá odevzdá přesně tolik, kolik studená přijme: `Q_odevzdané = Q_přijaté`. To je **kalorimetrická rovnice**."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Označ výslednou teplotu t.",
+            "Teplé těleso odevzdá: m₁ · c · (t₁ − t).",
+            "Studené přijme: m₂ · c · (t − t₂).",
+            "Dej obě strany do rovnosti a vyřeš t."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Smícháme 2 kg vody 20 °C a 1 kg vody 80 °C. Výsledná teplota?",
+          "answer": "c se zkrátí. 1 · (80 − t) = 2 · (t − 20) → 80 − t = 2t − 40 → 120 = 3t → t = **40 °C**. Výsledek je blíž studené vody, protože jí je víc."
+        },
+        {
+          "type": "text",
+          "text": "Zkontroluj rovnici z příkladu na vahách: po úpravě dostaneš 3t = 120. Udělej s oběma stranami stejnou operaci (widget značí t jako x)."
+        },
+        {
+          "type": "widget",
+          "widget": "balance",
+          "props": {
+            "a": 3,
+            "b": 0,
+            "c": 120
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Smícháš 3 kg vody 10 °C a 1 kg vody 90 °C → výsledek (10 + 90) : 2 = 50 °C.",
+          "right": "3 · (t − 10) = 1 · (90 − t) → 4t = 120 → t = 30 °C.",
+          "why": "Prostý průměr platí jen pro stejné hmotnosti. Studené vody je 3× víc, proto výsledek leží blíž k 10 °C."
+        },
+        {
+          "type": "text",
+          "text": "Šíření tepla: vedení (lžička v čaji), proudění (ústřední topení), záření (Slunce)."
+        },
+        {
+          "type": "summary",
+          "text": "`ΔU = W + Q`. `Q = m·c·Δt`. V izolované soustavě: teplo odevzdané = teplo přijaté."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Plyn přijal teplo 500 J a sám vykonal práci 200 J. Změna vnitřní energie v J =",
+      "answers": [
+        "300"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik kJ tepla ohřeje 2 kg vody o 50 K? (c = 4 200 J/(kg·K))",
+      "answers": [
+        "420"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Smícháme 1 kg vody 80 °C a 1 kg vody 20 °C. Výsledná teplota ve °C =",
+      "answers": [
+        "50"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Smícháme 3 kg vody 10 °C a 1 kg vody 90 °C. Výsledná teplota ve °C =",
+      "answers": [
+        "30"
+      ],
+      "explanation": "3(t − 10) = 90 − t → 4t = 120"
+    },
+    {
+      "type": "truefalse",
+      "question": "Teplo je energie, kterou těleso obsahuje.",
+      "answer": false,
+      "explanation": "Teplo je energie předaná při tepelné výměně. Těleso obsahuje vnitřní energii."
+    },
+    {
+      "type": "choice",
+      "question": "Při adiabatickém stlačení plynu jeho teplota…",
+      "options": [
+        "roste",
+        "klesá",
+        "se nemění"
+      ],
+      "answer": 0,
+      "explanation": "Q = 0, práce okolí zvyšuje vnitřní energii."
+    },
+    {
+      "type": "choice",
+      "question": "Která látka má největší měrnou tepelnou kapacitu?",
+      "options": [
+        "voda",
+        "železo",
+        "olovo",
+        "hliník"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj způsob šíření tepla s příkladem.",
+      "pairs": [
+        [
+          "vedení",
+          "ohřívání lžičky v čaji"
+        ],
+        [
+          "proudění",
+          "ústřední topení"
+        ],
+        [
+          "záření",
+          "teplo ze Slunce"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co vyjadřuje 1. termodynamický zákon?",
+      "options": [
+        "zákon zachování energie pro tepelné děje",
+        "nemožnost perpetua mobile 2. druhu",
+        "nedosažitelnost 0 K"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Vnitřní energii lze zvýšit i bez dodání tepla, konáním práce.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jakými způsoby lze změnit vnitřní energii tělesa? Uveď příklady.",
+      "answer": "Konáním práce (tření, stlačení plynu) a tepelnou výměnou (ohřev na plotně). Popisuje to 1. TD zákon ΔU = W + Q."
+    },
+    {
+      "type": "open",
+      "question": "Co je kalorimetrická rovnice a k čemu slouží?",
+      "answer": "Vyjadřuje, že v izolované soustavě teplo odevzdané teplejším tělesem se rovná teplu přijatému chladnějším. Slouží k výpočtu výsledné teploty nebo měrné tepelné kapacity."
+    }
+  ]
+}

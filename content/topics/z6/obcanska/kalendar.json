@@ -1,0 +1,375 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "kalendar",
+  "title": "Čas a kalendář",
+  "emoji": "📅",
+  "explanations": [
+    {
+      "title": "Proč přestupný rok",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Některé děti mají narozeniny 29. února – a slaví je „doopravdy“ jen jednou za čtyři roky. Proč ten den v kalendáři někdy je a někdy není?"
+        },
+        {
+          "type": "text",
+          "text": "Odpověď je ve vesmíru. Pochopíš, jak vznikl náš kalendář a proč je takový, jaký je."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Oběh Země",
+          "definition": "Země krouží kolem Slunce. Jedno celé kolečko trvá zhruba rok."
+        },
+        {
+          "type": "term",
+          "term": "Kalendář",
+          "definition": "Způsob, jak rozdělit čas na dny, měsíce a roky, aby se všichni domluvili na datu."
+        },
+        {
+          "type": "term",
+          "term": "Přestupný rok",
+          "definition": "Rok, který má o jeden den víc – **366** dní. Navíc je v něm **29. února**."
+        },
+        {
+          "type": "heading",
+          "text": "Problém se 6 hodinami"
+        },
+        {
+          "type": "text",
+          "text": "Země oběhne Slunce za **365 dní a skoro 6 hodin**. Kalendářní rok ale musí mít celé dny. Co s těmi 6 hodinami?"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rok 1: zbude skoro 6 hodin navíc.",
+            "Rok 2: zbývá už skoro 12 hodin.",
+            "Rok 3: skoro 18 hodin.",
+            "Rok 4: skoro 24 hodin = **celý den**. Ten přidáme jako 29. února."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Klikej na kroky a sleduj, jak se po čtyřech letech kolečko opakuje."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "rok 1: 365 dní",
+              "rok 2: 365 dní",
+              "rok 3: 365 dní",
+              "rok 4: 366 dní (přestupný)"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jemné doladění"
+        },
+        {
+          "type": "text",
+          "text": "Těch „skoro 6 hodin“ je ve skutečnosti asi 5 hodin 49 minut. Přidávat každý 4. rok celý den je tedy **trochu moc**. Za 400 let by se nasbírali asi 3 dny navíc."
+        },
+        {
+          "type": "text",
+          "text": "Proto platí výjimka: roky dělitelné 100 přestupné **nejsou** – kromě těch, které jsou dělitelné 400. Rok 1900 nebyl přestupný, rok 2000 byl."
+        },
+        {
+          "type": "heading",
+          "text": "Kdo kalendář vymyslel"
+        },
+        {
+          "type": "term",
+          "term": "Juliánský kalendář",
+          "definition": "Kalendář s přestupným rokem každé 4 roky. Zavedl ho římský vládce **Julius Caesar** před více než 2 000 lety."
+        },
+        {
+          "type": "term",
+          "term": "Gregoriánský kalendář",
+          "definition": "Opravený kalendář s výjimkou pro roky dělitelné 100. Zavedl ho **papež Řehoř XIII.** v roce **1582**. Používáme ho dodnes."
+        },
+        {
+          "type": "example",
+          "question": "Je rok 2028 přestupný?",
+          "answer": "2028 : 4 = 507, dělí se beze zbytku. Není dělitelný 100, takže výjimka neplatí. **Ano, je přestupný.**"
+        },
+        {
+          "type": "example",
+          "question": "Byl rok 1900 přestupný?",
+          "answer": "1900 se dělí 4, ale také 100. Dělitelný 400 není (1900 : 400 = 4,75). Proto **přestupný nebyl**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Přestupný rok je kvůli tomu, aby byl únor delší.",
+          "right": "Přestupný rok dorovnává čas, o který je oběh Země delší než 365 dní.",
+          "why": "Bez přestupných let by se kalendář posouval proti ročním obdobím – za 100 let skoro o měsíc."
+        },
+        {
+          "type": "summary",
+          "text": "Země oběhne Slunce za 365 dní a skoro 6 hodin. Proto má každý 4. rok 366 dní (29. února). Používáme gregoriánský kalendář z roku 1582."
+        }
+      ]
+    },
+    {
+      "title": "Počítání let",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V dějepise uslyšíš „19. století“ nebo „roku 46 př. n. l.“. Abys v tom měl jasno, musíš vědět, jak se roky počítají a jak se z roku pozná století."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se to krok za krokem a vyzkoušíš si to na příkladech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Letopočet",
+          "definition": "Způsob číslování let od nějaké důležité události. My počítáme roky od narození Ježíše Krista."
+        },
+        {
+          "type": "term",
+          "term": "n. l.",
+          "definition": "Zkratka „našeho letopočtu“ – roky **po** narození Krista. Obvykle se nepíše.",
+          "example": "Rok 2025 = 2025 n. l."
+        },
+        {
+          "type": "term",
+          "term": "př. n. l.",
+          "definition": "Zkratka „před naším letopočtem“ – roky **před** narozením Krista. Počítají se pozpátku.",
+          "example": "Rok 100 př. n. l. byl dřív než rok 50 př. n. l."
+        },
+        {
+          "type": "term",
+          "term": "Století a tisíciletí",
+          "definition": "Století = 100 let. Tisíciletí = 1 000 let."
+        },
+        {
+          "type": "term",
+          "term": "Přestupný rok",
+          "definition": "Rok s 366 dny – navíc má 29. února. Bývá každé 4 roky, protože Země oběhne Slunce za 365 dní a skoro 6 hodin."
+        },
+        {
+          "type": "heading",
+          "text": "Žádný rok 0"
+        },
+        {
+          "type": "text",
+          "text": "Po roce 1 př. n. l. následuje rovnou rok 1 n. l. Rok 0 **neexistuje**. Proto začíná každé století rokem s jedničkou na konci."
+        },
+        {
+          "type": "heading",
+          "text": "Jak určit století"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vezmi rok, třeba 1848.",
+            "Uber 1 → 1847.",
+            "Odeber poslední dvě číslice → 18.",
+            "Přidej 1 → **19. století**."
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "století",
+            "roky"
+          ],
+          "rows": [
+            [
+              "1. století",
+              "1–100"
+            ],
+            [
+              "19. století",
+              "1801–1900"
+            ],
+            [
+              "20. století",
+              "1901–2000"
+            ],
+            [
+              "21. století",
+              "2001–2100"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kalendáře v dějinách"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si osu. Všimni si, že první událost je ještě před naším letopočtem."
+        },
+        {
+          "type": "widget",
+          "widget": "timeline",
+          "props": {
+            "events": [
+              {
+                "year": -46,
+                "label": "Julius Caesar zavádí juliánský kalendář"
+              },
+              {
+                "year": 525,
+                "label": "Návrh počítat roky od narození Krista"
+              },
+              {
+                "year": 1582,
+                "label": "Papež Řehoř XIII. zavádí gregoriánský kalendář"
+              },
+              {
+                "year": 1584,
+                "label": "Gregoriánský kalendář v Čechách"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Juliánský kalendář přidával přestupný den moc často, a tak se do roku 1582 opozdil o 10 dní. Řehoř XIII. těch 10 dní vynechal: po 4. říjnu 1582 hned následoval 15. říjen."
+        },
+        {
+          "type": "example",
+          "question": "Ve kterém století je rok 1348?",
+          "answer": "1348 − 1 = 1347 → bez posledních dvou číslic 13 → +1 = **14. století**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik let uplynulo od roku 50 př. n. l. do roku 50 n. l.?",
+          "answer": "Do roku 1 př. n. l. je to 49 let, pak 50 let do roku 50 n. l. Rok 0 nebyl, takže **99 let** (ne 100)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "21. století začalo 1. 1. 2000.",
+          "right": "21. století začalo 1. 1. 2001.",
+          "why": "Rok 0 neexistuje, proto 1. století skončilo rokem 100 a 20. století rokem 2000."
+        },
+        {
+          "type": "summary",
+          "text": "Roky počítáme od narození Krista; rok 0 neexistuje. Století = 100 let, 19. století = 1801–1900. Dnes platí gregoriánský kalendář."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik dní má přestupný rok?",
+      "answers": [
+        "366"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který den přibude v přestupném roce?",
+      "options": [
+        "29. února",
+        "31. dubna",
+        "30. února",
+        "32. prosince"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo zavedl juliánský kalendář?",
+      "options": [
+        "Julius Caesar",
+        "papež Řehoř XIII.",
+        "Karel IV.",
+        "Napoleon"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Dnes v Česku používáme gregoriánský kalendář.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Kolik let má jedno století?",
+      "answers": [
+        "100",
+        "sto"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém století je rok 1848?",
+      "options": [
+        "v 19. století",
+        "v 18. století",
+        "v 20. století",
+        "v 17. století"
+      ],
+      "answer": 0,
+      "explanation": "19. století = roky 1801–1900."
+    },
+    {
+      "type": "truefalse",
+      "question": "Existoval rok 0.",
+      "answer": false,
+      "explanation": "Po roce 1 př. n. l. následuje rok 1 n. l."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejkratšího.",
+      "items": [
+        "týden",
+        "měsíc",
+        "rok",
+        "století",
+        "tisíciletí"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč máme přestupné roky?",
+      "options": [
+        "Země oběhne Slunce za víc než 365 dní",
+        "kvůli Velikonocům",
+        "aby byl delší únor pro zábavu",
+        "Měsíc obíhá rychleji"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik dní má běžný rok?",
+      "answers": [
+        "365"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli, proč máme každý 4. rok přestupný.",
+      "answer": "Země oběhne Slunce za 365 dní a asi 6 hodin. Za 4 roky se z těch hodin nasčítá jeden den, a ten přidáme jako 29. února."
+    },
+    {
+      "type": "open",
+      "question": "Co znamenají zkratky n. l. a př. n. l.?",
+      "answer": "N. l. = našeho letopočtu, roky po narození Krista. Př. n. l. = před naším letopočtem, roky před ním se počítají pozpátku."
+    }
+  ]
+}

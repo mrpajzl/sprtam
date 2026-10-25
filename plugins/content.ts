@@ -1,0 +1,32 @@
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
+import { join } from 'node:path'
+import type { GradeId, Subject, SubjectFile, SubjectId, Topic, VocabFile } from '../src/content/types'
+
+// Reads content/ from disk for build plugins and scripts (the app itself loads it with import.meta.glob,
+// see src/content/index.ts). No validation here – that is scripts/check-content.ts.
+
+export const ROOT = join(import.meta.dirname, '..')
+export const CONTENT = join(ROOT, 'content')
+export const TOPICS = join(CONTENT, 'topics')
+export const VOCAB = join(CONTENT, 'vocab')
+
+export const readJson = <T,>(file: string): T => JSON.parse(readFileSync(file, 'utf8'))
+const dirs = (d: string) => (existsSync(d) ? readdirSync(d).filter((f) => statSync(join(d, f)).isDirectory()).sort() : [])
+
+/** Every [grade, subject] that has a content folder, sorted. */
+export const subjectDirs = (): [GradeId, SubjectId][] => dirs(TOPICS).flatMap((g) => dirs(join(TOPICS, g)).map((s) => [g as GradeId, s as SubjectId] as [GradeId, SubjectId]))
+
+/** A subject with its topics in the order of _subject.json. */
+export function readSubject(g: GradeId, s: SubjectId): Subject {
+  const dir = join(TOPICS, g, s)
+  const list = readJson<SubjectFile>(join(dir, '_subject.json'))
+  return { grade: g, subject: s, topics: list.topics.map((id) => readJson<Topic>(join(dir, `${id}.json`))) }
+}
+
+/** Every JSON file under content/topics (for watching in dev). */
+export const topicFiles = () => subjectDirs().flatMap(([g, s]) => readdirSync(join(TOPICS, g, s)).filter((f) => f.endsWith('.json')).map((f) => join(TOPICS, g, s, f)))
+
+export const readSubjects = (): Subject[] => subjectDirs().map(([g, s]) => readSubject(g, s))
+
+/** Vocabulary levels, A1 first. */
+export const readVocab = (): VocabFile[] => readdirSync(VOCAB).filter((f) => f.endsWith('.json')).sort().map((f) => readJson<VocabFile>(join(VOCAB, f)))

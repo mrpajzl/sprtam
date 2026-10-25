@@ -1,0 +1,316 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "tlak-v-kapalinach",
+  "title": "Tlak v kapalinách",
+  "emoji": "🌊",
+  "explanations": [
+    {
+      "title": "Potápěním",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když se v bazénu potopíš na dno, zalehnou ti uši. Čím hlouběji, tím víc. Voda nad tebou na tebe tlačí."
+        },
+        {
+          "type": "text",
+          "text": "S tímto tlakem počítají stavitelé přehrad, ponorek i hasiči. A díky tlaku v kapalinách fungují brzdy auta."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tlak",
+          "definition": "Jak velká síla připadá na každý kousek plochy. Jednotka **pascal (Pa)**; 1 kPa = 1 000 Pa.",
+          "example": "Ostrá jehla dělá velký tlak, lyže malý."
+        },
+        {
+          "type": "term",
+          "term": "Hydrostatický tlak",
+          "definition": "Tlak, který vyvolává kapalina svou vlastní tíhou. „Hydro“ = voda, „statický“ = v klidu.",
+          "example": "Voda nad potápěčem ho tlačí ze všech stran."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s PET lahví"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Do PET lahve propíchni tři dírky nad sebou.",
+            "Lahev naplň vodou.",
+            "Z nejnižší dírky stříká voda **nejdál**, z nejvyšší nejblíž.",
+            "Dole je nad dírkou nejvíc vody, proto je tam největší tlak."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Tlak v kapalině **roste s hloubkou**. A působí do všech stran – i do boků, i zespodu."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "kPa",
+            "items": [
+              {
+                "label": "hloubka 1 m",
+                "value": 10
+              },
+              {
+                "label": "5 m",
+                "value": 50
+              },
+              {
+                "label": "10 m",
+                "value": 100
+              },
+              {
+                "label": "20 m",
+                "value": 200
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf. Co se stane s tlakem, když hloubku zdvojnásobíš?"
+        },
+        {
+          "type": "example",
+          "question": "Proč je hráz přehrady dole mnohem širší než nahoře?",
+          "answer": "Dole je voda nejhlubší, tlak je tam **největší**. Hráz musí být nejpevnější právě u dna."
+        },
+        {
+          "type": "heading",
+          "text": "Spojené nádoby"
+        },
+        {
+          "type": "term",
+          "term": "Spojené nádoby",
+          "definition": "Nádoby, které jsou dole propojené. Když je v nich stejná kapalina, hladiny se ustálí **ve stejné výšce**.",
+          "example": "Konvice a její hubička: voda v hubičce sahá stejně vysoko jako v konvici."
+        },
+        {
+          "type": "example",
+          "question": "Proč nejde konvici naplnit výš, než sahá hubička?",
+          "answer": "Konvice a hubička jsou spojené nádoby. Hladina je v obou stejně vysoko – když voda dosáhne okraje hubičky, začne vytékat."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V širokém sudu je u dna větší tlak než v úzké trubce stejně vysoké.",
+          "right": "Tlak u dna je stejný, rozhoduje jen hloubka.",
+          "why": "Tlak je síla na kousek plochy. Nad každým kouskem dna je v obou nádobách stejně vysoký sloupec vody."
+        },
+        {
+          "type": "summary",
+          "text": "Tlak v kapalině roste s hloubkou a působí do všech stran. Nezáleží na tvaru nádoby. Ve spojených nádobách jsou hladiny stejně vysoko."
+        }
+      ]
+    },
+    {
+      "title": "Vzorce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jak pevná musí být stěna akvária? Jak hluboko se smí potopit ponorka? A jak to, že automechanik zvedne auto jednou rukou? Na všechno jsou dva jednoduché vzorce."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Tlak `p`",
+          "definition": "Síla připadající na 1 m² plochy: `p = F : S`. Jednotka pascal (Pa).",
+          "example": "100 N na ploše 1 m² = 100 Pa."
+        },
+        {
+          "type": "term",
+          "term": "Hustota `ρ`",
+          "definition": "Kolik kilogramů má 1 m³ látky. Voda má 1 000 kg/m³.",
+          "example": "Rtuť má asi 13 500 kg/m³ – je to velmi „hutná“ kapalina."
+        },
+        {
+          "type": "term",
+          "term": "Tíhové zrychlení `g`",
+          "definition": "Kolik newtonů táhne Země každý kilogram: asi **10 N/kg**.",
+          "example": "5 kg táhne Země silou 50 N."
+        },
+        {
+          "type": "term",
+          "term": "Hydrostatický tlak",
+          "definition": "Tlak, kterým kapalina tlačí svou tíhou v hloubce `h`.",
+          "example": "Tlak na dně bazénu."
+        },
+        {
+          "type": "heading",
+          "text": "Odvození p = h · ρ · g"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Představ si sloupec vody nad plochou 1 m², vysoký h metrů.",
+            "Jeho objem je h m³ (třeba 3 m vysoký = 3 m³).",
+            "Hmotnost = objem · hustota = h · ρ (3 m³ vody = 3 000 kg).",
+            "Tíha = hmotnost · g = h · ρ · g (3 000 · 10 = 30 000 N).",
+            "Ta tíha tlačí na 1 m², takže tlak p = h · ρ · g (30 000 Pa)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jaký je tlak vody v hloubce 3 m?",
+          "answer": "p = h · ρ · g = 3 · 1 000 · 10 = **30 000 Pa = 30 kPa**."
+        },
+        {
+          "type": "example",
+          "question": "V jaké hloubce je tlak vody 50 kPa?",
+          "answer": "Každý metr přidá 1 · 1 000 · 10 = 10 000 Pa = 10 kPa. 50 kPa : 10 kPa = **5 m**."
+        },
+        {
+          "type": "text",
+          "text": "Ve vzorci není tvar nádoby ani množství vody – jen hloubka, hustota a g. Ve **rtuti** je ve stejné hloubce tlak víc než 13krát větší než ve vodě, protože má větší hustotu."
+        },
+        {
+          "type": "heading",
+          "text": "Pascalův zákon a hydraulika"
+        },
+        {
+          "type": "term",
+          "term": "Pascalův zákon",
+          "definition": "Když na kapalinu v uzavřené nádobě zatlačíš (třeba pístem), tlak se rozšíří **všude stejně**.",
+          "example": "Zmáčkneš uzavřenou lahev a voda vystříkne ze všech dírek."
+        },
+        {
+          "type": "term",
+          "term": "Píst",
+          "definition": "Pohyblivé víčko, které těsně zapadá do válce s kapalinou.",
+          "example": "Jako píst stříkačky."
+        },
+        {
+          "type": "text",
+          "text": "Hydraulický lis má malý a velký píst spojené kapalinou. Tlak je u obou stejný, takže `F₁ : S₁ = F₂ : S₂`. Kolikrát je velký píst větší, tolikrát větší síla na něm vznikne."
+        },
+        {
+          "type": "example",
+          "question": "Malý píst má 10 cm², velký 500 cm². Na malý tlačíš silou 100 N. Jaká síla vznikne na velkém?",
+          "answer": "Velký píst je 500 : 10 = **50krát** větší. Síla bude 50 · 100 = **5 000 N**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "p = 3 · 1 000 · 10 = 30 000 kPa",
+          "right": "p = 30 000 Pa = 30 kPa",
+          "why": "Když dosadíš v metrech, kg/m³ a N/kg, vyjde tlak v **pascalech**. Na kPa ho převedeš dělením 1 000."
+        },
+        {
+          "type": "summary",
+          "text": "Hydrostatický tlak `p = h · ρ · g` (nezávisí na tvaru nádoby). Pascalův zákon: tlak se v kapalině šíří všude stejně – hydraulika: `F₁ : S₁ = F₂ : S₂`."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Hydrostatický tlak vody v hloubce 2 m v Pa? (ρ = 1 000 kg/m³, g = 10 N/kg)",
+      "answers": [
+        "20000"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Hydrostatický tlak vody v hloubce 10 m v kPa? (g = 10 N/kg)",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Hydrostatický tlak závisí na tvaru nádoby.",
+      "answer": false,
+      "explanation": "Závisí jen na hloubce, hustotě kapaliny a g."
+    },
+    {
+      "type": "choice",
+      "question": "Proč je hráz přehrady dole širší?",
+      "options": [
+        "tlak vody roste s hloubkou",
+        "kvůli rybám",
+        "aby šetřila beton",
+        "kvůli vlnám"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co říká Pascalův zákon?",
+      "options": [
+        "tlak vyvolaný vnější silou je v kapalině všude stejný",
+        "těleso je nadlehčováno",
+        "tlak klesá s hloubkou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Hydraulický lis: malý píst 10 cm², velký 500 cm². Na malý působí 100 N. Síla na velký v N =",
+      "answers": [
+        "5000"
+      ],
+      "explanation": "Plocha je 50× větší, síla také."
+    },
+    {
+      "type": "choice",
+      "question": "Kde se využívá Pascalův zákon?",
+      "options": [
+        "hydraulické brzdy auta",
+        "teploměr",
+        "kompas",
+        "žárovka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve stejné hloubce je tlak v rtuti větší než ve vodě.",
+      "answer": true,
+      "explanation": "Rtuť má větší hustotu."
+    },
+    {
+      "type": "choice",
+      "question": "V jaké hloubce je hydrostatický tlak vody 50 kPa? (g = 10 N/kg)",
+      "options": [
+        "5 m",
+        "50 m",
+        "0,5 m",
+        "500 m"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Spojené nádoby se stejnou kapalinou mají hladiny ve stejné výšce.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Na čem závisí hydrostatický tlak?",
+      "answer": "Na hloubce, hustotě kapaliny a tíhovém zrychlení: p = h · ρ · g. Nezávisí na tvaru nádoby."
+    },
+    {
+      "type": "open",
+      "question": "Jak funguje hydraulický lis?",
+      "answer": "Malou silou působíme na malý píst. Tlak se podle Pascalova zákona přenese na velký píst, kde díky větší ploše vznikne větší síla."
+    }
+  ]
+}

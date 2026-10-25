@@ -1,18 +1,21 @@
 import type { Question } from '../content/types'
 
 // Procedural maths questions so practice never runs out.
-// A topic opts in with `gen: '<name>'`.
+// A topic opts in with `"generator": "<name>"` (content/topics/…/<topic>.json).
 
 const r = (min: number, max: number) => min + Math.floor(Math.random() * (max - min + 1))
 const pick = <T,>(xs: T[]) => xs[Math.floor(Math.random() * xs.length)]
 const gcd = (a: number, b: number): number => (b ? gcd(b, a % b) : Math.abs(a))
 const fmt = (n: number) => String(Math.round(n * 1000) / 1000).replace('.', ',')
-const num = (q: string, a: number, why?: string): Question => ({ t: 'input', q, a: [fmt(a)], why })
+type Input = Extract<Question, { type: 'input' }>
+const num = (question: string, a: number, explanation?: string): Input => ({ type: 'input', question, answers: [fmt(a)], explanation })
+/** A written-arithmetic question: the problem is shown „pod sebou“ above the answer field (widget column). */
+const written = (q: Input, a: number, b: number, op: '+' | '-' | '·' | ':'): Input => ({ ...q, widget: { widget: 'column', props: { a, b, op } } })
 
 function choiceOf(q: string, correct: string, wrong: string[], why?: string): Question {
   const o = [correct, ...Array.from(new Set(wrong.filter((w) => w !== correct))).slice(0, 3)]
   const shuffled = [...o].sort(() => Math.random() - 0.5)
-  return { t: 'choice', q, o: shuffled, a: shuffled.indexOf(correct), why }
+  return { type: 'choice', question: q, options: shuffled, answer: shuffled.indexOf(correct), explanation: why }
 }
 
 const sp = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
@@ -35,11 +38,11 @@ export const GENERATORS: Record<string, () => Question> = {
   sub20: () => { const a = r(5, 20); const b = r(1, a); return num(`${a} − ${b} =`, a - b) },
   add100: () => { const a = r(10, 90); const b = r(1, 100 - a); return num(`${a} + ${b} =`, a + b) },
   sub100: () => { const a = r(20, 100); const b = r(1, a); return num(`${a} − ${b} =`, a - b) },
-  add1000: () => { const a = r(100, 800); const b = r(10, 1000 - a); return pick([{ ...num(`Vypočítej písemně: ${a} + ${b} =`, a + b), col: { a, b, op: '+' } }, { ...num(`Vypočítej písemně: ${a + b} − ${b} =`, a), col: { a: a + b, b, op: '-' } }]) as Question },
+  add1000: () => { const a = r(100, 800); const b = r(10, 1000 - a); return pick([written(num(`Vypočítej písemně: ${a} + ${b} =`, a + b), a, b, '+'), written(num(`Vypočítej písemně: ${a + b} − ${b} =`, a), a + b, b, '-')]) },
   'mul-table': () => { const a = r(1, 10); const b = r(1, 10); return num(`${a} · ${b} =`, a * b) },
   'div-table': () => { const a = r(1, 10); const b = r(1, 10); return num(`${a * b} : ${b} =`, a) },
-  'written-mul': () => { const a = r(12, 999); const b = r(2, 9); return { ...num(`Vypočítej písemně: ${a} · ${b} =`, a * b, 'Násob od jednotek, co přeteče, si pamatuj.'), col: { a, b, op: '·' } } as Question },
-  'written-div': () => { const b = r(2, 9); const a = r(11, 120); return { ...num(`Vypočítej písemně: ${a * b} : ${b} =`, a), col: { a: a * b, b, op: ':' } } as Question },
+  'written-mul': () => { const a = r(12, 999); const b = r(2, 9); return written(num(`Vypočítej písemně: ${a} · ${b} =`, a * b, 'Násob od jednotek, co přeteče, si pamatuj.'), a, b, '·') },
+  'written-div': () => { const b = r(2, 9); const a = r(11, 120); return written(num(`Vypočítej písemně: ${a * b} : ${b} =`, a), a * b, b, ':') },
   round: () => {
     const n = r(101, 9999); const to = pick([10, 100])
     return num(`Zaokrouhli ${n} na ${to === 10 ? 'desítky' : 'stovky'}.`, Math.round(n / to) * to, '0–4 dolů, 5–9 nahoru.')
@@ -51,12 +54,12 @@ export const GENERATORS: Record<string, () => Question> = {
   'frac-of': () => { const d = pick([2, 3, 4, 5, 10]); const n = r(1, d - 1); const k = r(2, 10) * d; return num(`Kolik je ${n}/${d} z ${k}?`, (k / d) * n, `Vyděl jmenovatelem (${k} : ${d}) a vynásob čitatelem.`) },
   'frac-add': () => {
     const d = pick([3, 4, 5, 6, 8, 10]); const a = r(1, d - 1); const b = r(1, d - a)
-    return { t: 'input', q: `${a}/${d} + ${b}/${d} =`, a: [`${a + b}/${d}`, ...(gcd(a + b, d) > 1 ? [`${(a + b) / gcd(a + b, d)}/${d / gcd(a + b, d)}`] : []), ...((a + b) === d ? ['1'] : [])], why: 'Stejný jmenovatel: sečti jen čitatele.' }
+    return { type: 'input', question: `${a}/${d} + ${b}/${d} =`, answers: [`${a + b}/${d}`, ...(gcd(a + b, d) > 1 ? [`${(a + b) / gcd(a + b, d)}/${d / gcd(a + b, d)}`] : []), ...((a + b) === d ? ['1'] : [])], explanation: 'Stejný jmenovatel: sečti jen čitatele.' }
   },
   'frac-simplify': () => {
     const d0 = pick([2, 3, 4, 5, 7]); const n0 = r(1, d0 - 1); const k = r(2, 6)
     if (gcd(n0, d0) !== 1) return GENERATORS['frac-simplify']()
-    return { t: 'input', q: `Zkrať na základní tvar: ${n0 * k}/${d0 * k}`, a: [`${n0}/${d0}`], why: `Vyděl čitatele i jmenovatele číslem ${k}.` }
+    return { type: 'input', question: `Zkrať na základní tvar: ${n0 * k}/${d0 * k}`, answers: [`${n0}/${d0}`], explanation: `Vyděl čitatele i jmenovatele číslem ${k}.` }
   },
   decimal: () => { const a = r(1, 999) / 10; const b = r(1, 999) / 100; return pick([num(`${fmt(a)} + ${fmt(b)} =`, a + b), num(`${fmt(a + b)} − ${fmt(b)} =`, a)]) },
   percent: () => { const p = pick([5, 10, 20, 25, 30, 40, 50, 75]); const z = pick([40, 80, 120, 200, 360, 500, 800]); return num(`Kolik je ${p} % z ${z}?`, (z * p) / 100, `1 % = ${fmt(z / 100)}, pak · ${p}.`) },

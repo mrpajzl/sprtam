@@ -1,0 +1,399 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zemepisne-souradnice",
+  "title": "Zeměpisné souřadnice",
+  "emoji": "🧭",
+  "explanations": [
+    {
+      "title": "Síť na míči",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ztroskotal jsi na ostrově a voláš o pomoc vysílačkou. Říct „jsem na ostrově s palmou“ nestačí. Záchranáři potřebují **přesnou adresu** – dvě čísla, podle kterých tě najdou kdekoli na Zemi."
+        },
+        {
+          "type": "text",
+          "text": "Ta dvě čísla jsou **zeměpisné souřadnice**. Používá je GPS v mobilu, piloti i kapitáni lodí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Póly",
+          "definition": "Dva body, kterými prochází zemská osa (myšlená tyč, kolem které se Země točí): **severní pól** nahoře a **jižní pól** dole."
+        },
+        {
+          "type": "term",
+          "term": "Rovník",
+          "definition": "Myšlená kružnice kolem Země přesně uprostřed mezi póly. Je to nejdelší kružnice tohoto směru.",
+          "example": "Rovník vede třeba přes Keňu, Ekvádor nebo Indonésii."
+        },
+        {
+          "type": "term",
+          "term": "Polokoule",
+          "definition": "Polovina Země. Rovník ji dělí na **severní** a **jižní** polokouli.",
+          "example": "Česko leží na severní polokouli, Austrálie na jižní."
+        },
+        {
+          "type": "heading",
+          "text": "Čáry ve směru rovníku"
+        },
+        {
+          "type": "term",
+          "term": "Rovnoběžky",
+          "definition": "Myšlené kružnice, které vedou kolem Země **rovnoběžně s rovníkem** (nikde se ho nedotknou). Čím blíž k pólu, tím jsou kratší.",
+          "example": "Představ si míč a na něm vodorovné obruče různé velikosti."
+        },
+        {
+          "type": "term",
+          "term": "Zeměpisná šířka",
+          "definition": "Říká, **jak daleko na sever nebo na jih od rovníku** místo leží. Měří se ve stupních: rovník má 0°, póly 90°. Píše se **s. š.** (severní šířka) nebo **j. š.** (jižní šířka)."
+        },
+        {
+          "type": "text",
+          "text": "Šířka je vlastně úhel. Představ si čáru ze středu Země k rovníku a druhou k tvému místu. Posuvníkem nastav 50° – zhruba tak daleko od rovníku leží Česko."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 50
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Čáry od pólu k pólu"
+        },
+        {
+          "type": "term",
+          "term": "Poledníky",
+          "definition": "Myšlené půlkružnice, které vedou **od severního pólu k jižnímu** – jako dílky na pomeranči. Všechny jsou stejně dlouhé."
+        },
+        {
+          "type": "term",
+          "term": "Nultý poledník",
+          "definition": "Poledník, od kterého se počítá. Lidé se dohodli, že povede přes hvězdárnu v **Greenwichi** u Londýna."
+        },
+        {
+          "type": "term",
+          "term": "Zeměpisná délka",
+          "definition": "Říká, **jak daleko na východ nebo na západ od nultého poledníku** místo leží. Od 0° do 180°. Píše se **v. d.** (východní délka) nebo **z. d.** (západní délka)."
+        },
+        {
+          "type": "text",
+          "text": "Nultý poledník a poledník 180° dělí Zemi na **východní** a **západní** polokouli."
+        },
+        {
+          "type": "heading",
+          "text": "Jak najít místo"
+        },
+        {
+          "type": "example",
+          "question": "Kde leží místo 50° s. š., 14° v. d.?",
+          "answer": "s. š. → je na severní polokouli, 50° od rovníku. v. d. → je 14° na východ od Greenwiche. Je to u Prahy."
+        },
+        {
+          "type": "example",
+          "question": "Kde leží místo 0°, 0°?",
+          "answer": "Šířka 0° = na rovníku. Délka 0° = na nultém poledníku. Křižují se v Atlantském oceánu u západní Afriky – je tam jen voda."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Praha leží na 50° v. d.",
+          "right": "Praha leží na 50° s. š. a 14° v. d.",
+          "why": "Šířka (sever–jih) je kolem 50°, délka (východ–západ) kolem 14°. Pořadí je: nejdřív šířka, pak délka."
+        },
+        {
+          "type": "summary",
+          "text": "Rovnoběžky určují zeměpisnou šířku (0°–90° s. š. nebo j. š.), poledníky zeměpisnou délku (0°–180° v. d. nebo z. d.). Dohromady jsou to souřadnice místa."
+        }
+      ]
+    },
+    {
+      "title": "Jako v lodích",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Hraješ lodě? Řekneš „B5“ a soupeř přesně ví, které políčko myslíš. Písmeno říká sloupec, číslo řádek."
+        },
+        {
+          "type": "text",
+          "text": "Zeměpisci dali na Zemi stejnou mřížku. Jen místo „B5“ říkají dvě čísla ve stupních. Díky nim najdeš kterékoli místo na světě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Stupeň (°)",
+          "definition": "Jednotka úhlu. Celá otočka dokola má 360°, čtvrt otočky 90°."
+        },
+        {
+          "type": "term",
+          "term": "Rovník",
+          "definition": "Myšlená kružnice kolem středu Země, stejně daleko od obou pólů (nejsevernějšího a nejjižnějšího bodu Země). Dělí Zemi na **severní** a **jižní polokouli**."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoběžka",
+          "definition": "„Řádek“ mřížky: kružnice rovnoběžná s rovníkem."
+        },
+        {
+          "type": "term",
+          "term": "Poledník",
+          "definition": "„Sloupec“ mřížky: půlkružnice od pólu k pólu. **Nultý poledník** vede přes Greenwich u Londýna."
+        },
+        {
+          "type": "heading",
+          "text": "Mřížka krok za krokem"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Zeměpisná šířka",
+            "Zeměpisná délka"
+          ],
+          "rows": [
+            [
+              "Jako v lodích",
+              "řádek",
+              "sloupec"
+            ],
+            [
+              "Určují ji",
+              "rovnoběžky",
+              "poledníky"
+            ],
+            [
+              "Počítá se od",
+              "rovníku (0°)",
+              "nultého poledníku (0°)"
+            ],
+            [
+              "Rozsah",
+              "0° až 90°",
+              "0° až 180°"
+            ],
+            [
+              "Směry",
+              "s. š. / j. š.",
+              "v. d. / z. d."
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti, jestli je místo nad rovníkem (**s. š.**), nebo pod ním (**j. š.**).",
+            "Urči, kolik stupňů je od rovníku – to je šířka.",
+            "Zjisti, jestli je vpravo od Greenwiche (**v. d.**), nebo vlevo (**z. d.**).",
+            "Urči, kolik stupňů je od nultého poledníku – to je délka.",
+            "Zapiš nejdřív šířku, pak délku: 50° s. š., 14° v. d."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Důležité rovnoběžky"
+        },
+        {
+          "type": "term",
+          "term": "Obratníky",
+          "definition": "Rovnoběžky asi 23,5° od rovníku. Dál od rovníku už Slunce nikdy nestojí v poledne přímo nad hlavou. Severní je **obratník Raka**, jižní **obratník Kozoroha**."
+        },
+        {
+          "type": "term",
+          "term": "Polární kruhy",
+          "definition": "Rovnoběžky asi 66,5° od rovníku. Za nimi bývá v zimě aspoň jeden den, kdy Slunce vůbec nevyjde (**polární noc**), a v létě den, kdy nezapadne (**polární den**)."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rovnoběžka",
+            "Šířka"
+          ],
+          "rows": [
+            [
+              "rovník",
+              "0°"
+            ],
+            [
+              "obratník Raka / Kozoroha",
+              "asi 23,5° s. š. / j. š."
+            ],
+            [
+              "severní / jižní polární kruh",
+              "asi 66,5° s. š. / j. š."
+            ],
+            [
+              "severní / jižní pól",
+              "90° s. š. / j. š."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušej si: otoč kartičky a odpověz dřív, než se podíváš."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Šířka rovníku",
+                "back": "0°"
+              },
+              {
+                "front": "Šířka severního pólu",
+                "back": "90° s. š."
+              },
+              {
+                "front": "Největší možná zeměpisná délka",
+                "back": "180°"
+              },
+              {
+                "front": "Česko přibližně",
+                "back": "50° s. š., 15° v. d."
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Místo má 34° j. š., 151° v. d. Kde je?",
+          "answer": "j. š. → jižní polokoule. v. d. → daleko na východ od Greenwiche. Je to Sydney v Austrálii."
+        },
+        {
+          "type": "example",
+          "question": "New York má asi 41° s. š., 74° z. d. Leží na východní, nebo západní polokouli?",
+          "answer": "z. d. = západní délka, takže na západní polokouli. s. š. = severní šířka, takže zároveň na severní polokouli."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rovník dělí Zemi na východní a západní polokouli.",
+          "right": "Rovník ji dělí na severní a jižní polokouli.",
+          "why": "Rovník vede vodorovně kolem Země. Na východní a západní ji dělí poledníky 0° a 180°."
+        },
+        {
+          "type": "summary",
+          "text": "Souřadnice = šířka (od rovníku, 0°–90°) + délka (od Greenwiche, 0°–180°). Rovník dělí Zemi na severní a jižní polokouli, nultý poledník na východní a západní."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se jmenuje nejdelší rovnoběžka?",
+      "options": [
+        "obratník Raka",
+        "rovník",
+        "nultý poledník",
+        "polární kruh"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Jakou zeměpisnou šířku má severní pól (ve stupních)?",
+      "answers": [
+        "90"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kudy vede nultý poledník?",
+      "options": [
+        "Paříží",
+        "Greenwichem u Londýna",
+        "Prahou",
+        "Římem"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Všechny poledníky jsou stejně dlouhé.",
+      "answer": true,
+      "explanation": "Každý vede od pólu k pólu."
+    },
+    {
+      "type": "truefalse",
+      "question": "Zeměpisná délka může být až 90°.",
+      "answer": false,
+      "explanation": "Délka jde do 180° v. d. nebo z. d."
+    },
+    {
+      "type": "match",
+      "question": "Spoj rovnoběžku s přibližnou šířkou.",
+      "pairs": [
+        [
+          "rovník",
+          "0°"
+        ],
+        [
+          "obratník Raka",
+          "23,5° s. š."
+        ],
+        [
+          "severní polární kruh",
+          "66,5° s. š."
+        ],
+        [
+          "jižní pól",
+          "90° j. š."
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Česko leží asi na…",
+      "options": [
+        "50° s. š., 15° v. d.",
+        "50° j. š., 15° z. d.",
+        "15° s. š., 50° v. d.",
+        "0°, 0°"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od rovníku k severnímu pólu.",
+      "items": [
+        "rovník",
+        "obratník Raka",
+        "severní polární kruh",
+        "severní pól"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Rovník rozděluje Zemi na východní a západní polokouli.",
+      "answer": false,
+      "explanation": "Rovník ji dělí na severní a jižní."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi rovnoběžkou a poledníkem?",
+      "answer": "Rovnoběžky jsou kružnice rovnoběžné s rovníkem a určují zeměpisnou šířku. Poledníky jsou půlkružnice od pólu k pólu a určují zeměpisnou délku."
+    },
+    {
+      "type": "open",
+      "question": "Proč potřebujeme zeměpisné souřadnice?",
+      "answer": "Umožňují přesně určit polohu kteréhokoli místa na Zemi, např. pro navigaci lodí, letadel nebo GPS."
+    }
+  ]
+}

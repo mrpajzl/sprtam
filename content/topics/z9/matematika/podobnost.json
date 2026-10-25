@@ -1,0 +1,336 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "podobnost",
+  "title": "Podobnost",
+  "emoji": "🔎",
+  "generator": "ratio",
+  "explanations": [
+    {
+      "title": "Zvětšenina",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Fotku v mobilu roztáhneš prsty. Obrázek je větší, ale nic se nezkřivilo – obličej je pořád stejný, jen větší. Model auta vypadá jako skutečné auto, jen je menší."
+        },
+        {
+          "type": "text",
+          "text": "Takové útvary jsou **podobné**. Podobnost používají architekti u modelů, kartografové u map a dokonce se díky ní dá změřit výška stromu bez lezení."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podobné útvary",
+          "definition": "Útvary stejného tvaru, různě velké. Všechny délky se zvětšily (zmenšily) **stejněkrát** a úhly zůstaly stejné.",
+          "example": "Fotka a její zvětšenina."
+        },
+        {
+          "type": "term",
+          "term": "Koeficient podobnosti (k)",
+          "definition": "Kolikrát se délky zvětšily. k > 1 zvětšení, k < 1 zmenšení.",
+          "example": "Strana 4 cm → 8 cm: k = 2."
+        },
+        {
+          "type": "term",
+          "term": "Odpovídající strany",
+          "definition": "Strany, které si v obou útvarech „odpovídají“ – leží na stejném místě.",
+          "example": "Spodní strana fotky a spodní strana zvětšeniny."
+        },
+        {
+          "type": "heading",
+          "text": "Zvětši obdélník"
+        },
+        {
+          "type": "text",
+          "text": "Obdélník 4 × 2 zvětši 2krát: bude 8 × 4. Nastav obě strany a porovnej obsah. Obsah 8 nebyl 2krát, ale 4krát větší: 32."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "rect",
+            "a": 4,
+            "b": 2
+          }
+        },
+        {
+          "type": "text",
+          "text": "Proč 4krát? Obsah je délka krát šířka a **obě** se zdvojnásobily: 2 · 2 = 4. U tělesa se zvětší tři rozměry, objem tedy 2 · 2 · 2 = 8krát."
+        },
+        {
+          "type": "heading",
+          "text": "Měření stromu stínem"
+        },
+        {
+          "type": "text",
+          "text": "Sluneční paprsky dopadají na tyč i na strom pod stejným úhlem. Tyč se stínem a strom se stínem tvoří podobné trojúhelníky."
+        },
+        {
+          "type": "example",
+          "question": "Tyč 1 m vrhá stín 2 m. Strom vrhá stín 12 m. Jak je vysoký?",
+          "answer": "Stín je vždy 2krát delší než předmět. Strom: 12 : 2 = **6 m**."
+        },
+        {
+          "type": "example",
+          "question": "Trojúhelník 3, 4, 5 cm zvětšíme s k = 2. Jak dlouhá bude nejdelší strana?",
+          "answer": "5 · 2 = **10 cm**. (Ostatní 6 a 8 cm.)"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zvětším s k = 3, obsah je 3krát větší.",
+          "right": "Obsah je 3² = 9krát větší.",
+          "why": "Obsah má dva rozměry, každý se zvětší 3krát: 3 · 3 = 9."
+        },
+        {
+          "type": "text",
+          "text": "Všechny čtverce jsou si podobné (mají stejný tvar). Obdélníky ne – úzký a široký obdélník mají jiný poměr stran."
+        },
+        {
+          "type": "summary",
+          "text": "Podobné útvary: stejné úhly, délky · k. Obsahy se zvětší k²-krát, objemy k³-krát."
+        }
+      ]
+    },
+    {
+      "title": "Věty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jak poznat, že jsou dva trojúhelníky podobné, aniž je měříš celé? Stačí ověřit jen pár údajů – podle tří vět. Pak můžeš dopočítat chybějící strany."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podobnost (∼)",
+          "definition": "Dva útvary jsou podobné, když mají stejné odpovídající úhly a všechny odpovídající strany ve stejném poměru. Píše se △ABC ∼ △KLM.",
+          "example": "Strany 3, 4, 5 a 6, 8, 10."
+        },
+        {
+          "type": "term",
+          "term": "Koeficient k",
+          "definition": "Poměr odpovídajících stran: délka v novém útvaru : délka v původním.",
+          "example": "|KL| : |AB| = 6 : 4 = 1,5"
+        },
+        {
+          "type": "term",
+          "term": "Poměr",
+          "definition": "Porovnání dvou čísel dělením, zápis a : b.",
+          "example": "6 : 8 = 3 : 4"
+        },
+        {
+          "type": "heading",
+          "text": "Věty o podobnosti trojúhelníků"
+        },
+        {
+          "type": "table",
+          "head": [
+            "věta",
+            "trojúhelníky jsou podobné, když…"
+          ],
+          "rows": [
+            [
+              "sss",
+              "všechny tři dvojice stran jsou ve stejném poměru"
+            ],
+            [
+              "uu",
+              "shodují se ve dvou úhlech"
+            ],
+            [
+              "sus",
+              "dvě dvojice stran jsou ve stejném poměru a úhel mezi nimi je shodný"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Proč u uu stačí dva úhly? Třetí se dopočítá – součet je vždy 180°."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi odpovídající si vrcholy (stejné úhly).",
+            "Ověř podmínky jedné z vět.",
+            "Spočítej k z jedné dvojice známých stran.",
+            "Chybějící stranu získej vynásobením k."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jsou podobné trojúhelníky s úhly 50°, 60° a 50°, 70°?",
+          "answer": "Třetí úhly: 180 − 110 = 70° a 180 − 120 = 60°. Oba mají 50°, 60°, 70° → podle uu **ano**."
+        },
+        {
+          "type": "example",
+          "question": "△ABC ∼ △KLM, |AB| = 4, |KL| = 6, |BC| = 5. Kolik je |LM|?",
+          "answer": "k = 6 : 4 = 1,5. |LM| = 5 · 1,5 = **7,5**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "co",
+            "zvětší se"
+          ],
+          "rows": [
+            [
+              "délky",
+              "k-krát"
+            ],
+            [
+              "obsahy",
+              "k²-krát"
+            ],
+            [
+              "objemy",
+              "k³-krát"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Mapa 1 : 10 000 je zmenšenina s k = 1/10 000. Procvič si: otoč kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "k = 2, obsah",
+                "back": "4krát větší"
+              },
+              {
+                "front": "k = 2, objem",
+                "back": "8krát větší"
+              },
+              {
+                "front": "k = 3, obsah 6 cm²",
+                "back": "54 cm²"
+              },
+              {
+                "front": "věta uu",
+                "back": "shoda ve dvou úhlech"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Všechny obdélníky jsou podobné, protože mají pravé úhly.",
+          "right": "Nejsou – musí mít i stejný poměr stran.",
+          "why": "U trojúhelníků stačí úhly (věta uu), u čtyřúhelníků ne. Obdélník 1 × 2 a 1 × 5 podobné nejsou."
+        },
+        {
+          "type": "summary",
+          "text": "Trojúhelníky jsou podobné podle sss, uu nebo sus. k = poměr odpovídajících stran. Délky · k, obsahy · k², objemy · k³."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Trojúhelník se stranami 3, 4, 5 zvětšíme s k = 2. Nejdelší strana?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Obsah trojúhelníku je 6 cm². Podobný s k = 3 má obsah (cm²):",
+      "answers": [
+        "54"
+      ],
+      "explanation": "6 · 3² = 54"
+    },
+    {
+      "type": "input",
+      "question": "Tyč 1 m má stín 2 m. Strom má stín 12 m. Výška stromu v m?",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jsou podobné trojúhelníky s úhly 50°, 60° a 50°, 70°?",
+      "options": [
+        "ano",
+        "ne",
+        "nelze určit",
+        "jen když mají stejné strany"
+      ],
+      "answer": 0,
+      "explanation": "Třetí úhly: 70° a 60°, oba mají 50°, 60°, 70°."
+    },
+    {
+      "type": "truefalse",
+      "question": "Všechny čtverce jsou si podobné.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Všechny obdélníky jsou si podobné.",
+      "answer": false,
+      "explanation": "Mohou mít různý poměr stran."
+    },
+    {
+      "type": "input",
+      "question": "Krychle zvětšená s k = 2. Kolikrát vzroste objem?",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Mapa 1 : 10 000 je zmenšenina s koeficientem…",
+      "options": [
+        "1/10 000",
+        "10 000",
+        "1/100",
+        "100"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Trojúhelníky ABC ~ KLM, |AB| = 4, |KL| = 6. Koeficient k =",
+      "answers": [
+        "1,5",
+        "3/2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Podobné útvary mají shodné odpovídající úhly.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Kdy jsou dva trojúhelníky podobné?",
+      "answer": "Když se shodují ve dvou úhlech (uu), nebo mají všechny strany ve stejném poměru (sss), nebo dvě strany ve stejném poměru a shodný úhel mezi nimi (sus)."
+    },
+    {
+      "type": "open",
+      "question": "Proč se obsah zvětší k²-krát?",
+      "answer": "Obsah je součin dvou délek. Každá z nich se zvětší k-krát, takže obsah k · k = k²-krát."
+    }
+  ]
+}

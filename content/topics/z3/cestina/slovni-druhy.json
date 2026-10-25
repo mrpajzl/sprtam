@@ -1,0 +1,432 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "slovni-druhy",
+  "title": "Slovní druhy",
+  "emoji": "🗂️",
+  "explanations": [
+    {
+      "title": "Šuplíky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Doma máš věci uklizené v šuplících: v jednom ponožky, v druhém tričko, v dalším hračky. Když víš, co kam patří, hned to najdeš."
+        },
+        {
+          "type": "text",
+          "text": "Se **slovy** je to stejné. Čeština je dává do **10 šuplíků**. Každý šuplík má jméno. Těm šuplíkům říkáme **slovní druhy**."
+        },
+        {
+          "type": "term",
+          "term": "Slovní druh",
+          "definition": "Skupina slov, která dělají ve větě stejnou práci.",
+          "example": "Pes, máma, stůl – všechno to jsou jména věcí a bytostí. Patří do stejného šuplíku."
+        },
+        {
+          "type": "text",
+          "text": "Proč to potřebuješ? Podle šuplíku poznáš, jak slovo psát. Třeba i/y na konci slova se řídí právě tím, do jakého šuplíku slovo patří."
+        },
+        {
+          "type": "heading",
+          "text": "Prvních pět šuplíků"
+        },
+        {
+          "type": "text",
+          "text": "Tahle slova se dají **ohýbat** – mění konec: *pes, psa, psovi*. Proto jim říkáme **ohebná**."
+        },
+        {
+          "type": "term",
+          "term": "1. Podstatná jména",
+          "definition": "Jména lidí, zvířat, věcí, míst a vlastností. Zeptáš se **kdo? co?**",
+          "example": "máma, pes, stůl, Praha, radost"
+        },
+        {
+          "type": "term",
+          "term": "2. Přídavná jména",
+          "definition": "Říkají, **jaké** něco je. Zeptáš se **jaký? jaká? jaké? čí?**",
+          "example": "velký pes, červené jablko, mámin šátek"
+        },
+        {
+          "type": "term",
+          "term": "3. Zájmena",
+          "definition": "Slova, která **nahradí jméno**, abychom ho pořád neopakovali.",
+          "example": "Petr přišel. **On** přišel. – já, ty, on, my, můj, ten"
+        },
+        {
+          "type": "term",
+          "term": "4. Číslovky",
+          "definition": "Říkají, **kolik** něčeho je, nebo **kolikátý**.",
+          "example": "dva psi, první místo, třikrát"
+        },
+        {
+          "type": "term",
+          "term": "5. Slovesa",
+          "definition": "Říkají, **co kdo dělá** nebo co se děje.",
+          "example": "běží, spí, prší, učím se"
+        },
+        {
+          "type": "heading",
+          "text": "Dalších pět šuplíků"
+        },
+        {
+          "type": "text",
+          "text": "Tahle slova se **neohýbají** – zůstávají pořád stejná. Říkáme jim **neohebná**."
+        },
+        {
+          "type": "term",
+          "term": "6. Příslovce",
+          "definition": "Říkají, **jak, kde, kdy** se něco děje.",
+          "example": "běží **rychle**, bydlí **tady**, přijde **zítra**"
+        },
+        {
+          "type": "term",
+          "term": "7. Předložky",
+          "definition": "Malá slova **před jménem**, která říkají, kde co je.",
+          "example": "**na** stole, **pod** postelí, **do** školy"
+        },
+        {
+          "type": "term",
+          "term": "8. Spojky",
+          "definition": "Slova, která **spojují** slova nebo věty.",
+          "example": "pes **a** kočka, chci, **ale** nemůžu"
+        },
+        {
+          "type": "term",
+          "term": "9. Částice",
+          "definition": "Slova, která vyjadřují přání nebo pochybnost, často na začátku věty.",
+          "example": "**Ať** přijde. **Kéž** by pršelo. **Asi** ano."
+        },
+        {
+          "type": "term",
+          "term": "10. Citoslovce",
+          "definition": "Zvuky a výkřiky.",
+          "example": "**haf**, **au**, **bác**, **hurá**"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na slovo a pak na šuplík, kam patří."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "podstatné jméno",
+              "přídavné jméno",
+              "sloveso"
+            ],
+            "items": [
+              {
+                "text": "kočka",
+                "group": 0
+              },
+              {
+                "text": "skáče",
+                "group": 2
+              },
+              {
+                "text": "malá",
+                "group": 1
+              },
+              {
+                "text": "strom",
+                "group": 0
+              },
+              {
+                "text": "zelený",
+                "group": 1
+              },
+              {
+                "text": "píše",
+                "group": 2
+              },
+              {
+                "text": "škola",
+                "group": 0
+              },
+              {
+                "text": "veselý",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "„radost“ není podstatné jméno, protože se nedá vzít do ruky.",
+          "right": "„radost“ je podstatné jméno.",
+          "why": "Podstatná jména jsou i věci, na které nesáhneš: radost, strach, nápad. Zeptáš se „co?“ – co cítím? radost."
+        },
+        {
+          "type": "summary",
+          "text": "Slov je 10 druhů. Ohebná (mění konec): podstatná jména, přídavná jména, zájmena, číslovky, slovesa. Neohebná: příslovce, předložky, spojky, částice, citoslovce."
+        }
+      ]
+    },
+    {
+      "title": "Otázkou",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každá věta se skládá ze **slov**. Slova ve větě mají různé „práce“: jedno říká, **kdo** něco dělá, další **co dělá**, další **jaký** je."
+        },
+        {
+          "type": "text",
+          "text": "Podle té práce dělíme slova do skupin. Skupině říkáme **slovní druh**. Jaký druh slovo má, zjistíš snadno: **zeptáš se na něj otázkou**."
+        },
+        {
+          "type": "term",
+          "term": "Slovní druh",
+          "definition": "Skupina slov se stejnou prací ve větě. Poznáš ji podle otázky, na kterou slovo odpovídá."
+        },
+        {
+          "type": "heading",
+          "text": "Otázky, které musíš znát"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zeptám se",
+            "Slovní druh",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "kdo? co?",
+              "podstatné jméno",
+              "pes, škola"
+            ],
+            [
+              "jaký? jaká? čí?",
+              "přídavné jméno",
+              "velký, tátův"
+            ],
+            [
+              "co dělá? co se děje?",
+              "sloveso",
+              "běží, prší"
+            ],
+            [
+              "kolik? kolikátý?",
+              "číslovka",
+              "tři, první"
+            ],
+            [
+              "jak? kde? kdy?",
+              "příslovce",
+              "rychle, venku, včera"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Ukážeme si to na větě"
+        },
+        {
+          "type": "text",
+          "text": "Věta: **Malý pes rychle běží na zahradu.**"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Kdo** běží? *pes* → podstatné jméno.",
+            "**Jaký** pes? *malý* → přídavné jméno.",
+            "**Co dělá** pes? *běží* → sloveso.",
+            "**Jak** běží? *rychle* → příslovce.",
+            "*na* stojí před jménem *zahradu* → předložka.",
+            "**Kam** běží? Na *zahradu* – a zeptáš se **co?** → *zahrada* je podstatné jméno."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči druh slov: Dvě veselé děti zpívají.",
+          "answer": "**Dvě** – kolik? číslovka. **veselé** – jaké? přídavné jméno. **děti** – kdo? podstatné jméno. **zpívají** – co dělají? sloveso."
+        },
+        {
+          "type": "example",
+          "question": "Urči druh slov: Kočka spí pod stolem.",
+          "answer": "**Kočka** – kdo? podstatné jméno. **spí** – co dělá? sloveso. **pod** – před jménem, předložka. **stolem** – co? podstatné jméno."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "„běhá“ je ",
+                "after": "",
+                "options": [
+                  "sloveso",
+                  "podstatné jméno"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "„modrý“ je ",
+                "after": "",
+                "options": [
+                  "přídavné jméno",
+                  "sloveso"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "„strom“ je ",
+                "after": "",
+                "options": [
+                  "přídavné jméno",
+                  "podstatné jméno"
+                ],
+                "answer": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "„běh“ je sloveso, protože je to něco, co se dělá.",
+          "right": "„běh“ je podstatné jméno, „běží“ je sloveso.",
+          "why": "Zeptej se: *co?* – běh. Na „co?“ odpovídá podstatné jméno. Sloveso odpovídá na „co dělá?“ – běží."
+        },
+        {
+          "type": "summary",
+          "text": "Na slovo se zeptej: kdo/co? → podstatné jméno. Jaký? → přídavné jméno. Co dělá? → sloveso. Kolik? → číslovka. Jak/kde/kdy? → příslovce."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký slovní druh je „pes“?",
+      "options": [
+        "podstatné jméno",
+        "přídavné jméno",
+        "sloveso"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký slovní druh je „rychlý“?",
+      "options": [
+        "sloveso",
+        "přídavné jméno",
+        "příslovce"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaký slovní druh je „píše“?",
+      "options": [
+        "sloveso",
+        "podstatné jméno",
+        "spojka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký slovní druh je „na“ (na stole)?",
+      "options": [
+        "předložka",
+        "spojka",
+        "citoslovce"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký slovní druh je „bum“?",
+      "options": [
+        "citoslovce",
+        "částice",
+        "zájmeno"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik je slovních druhů?",
+      "answers": [
+        "10",
+        "deset"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolikátý slovní druh je sloveso?",
+      "answers": [
+        "5",
+        "pátý"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„Tři“ je číslovka.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„A“ (pes a kočka) je předložka.",
+      "answer": false,
+      "explanation": "A spojuje slova – je to spojka."
+    },
+    {
+      "type": "match",
+      "question": "Spoj slovo se slovním druhem.",
+      "pairs": [
+        [
+          "on",
+          "zájmeno"
+        ],
+        [
+          "venku",
+          "příslovce"
+        ],
+        [
+          "ale",
+          "spojka"
+        ],
+        [
+          "první",
+          "číslovka"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď první slovní druhy podle čísel.",
+      "items": [
+        "podstatná jména",
+        "přídavná jména",
+        "zájmena",
+        "číslovky",
+        "slovesa"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj všech 10 slovních druhů.",
+      "answer": "Podstatná jména, přídavná jména, zájmena, číslovky, slovesa, příslovce, předložky, spojky, částice, citoslovce."
+    },
+    {
+      "type": "open",
+      "question": "Urči slovní druhy ve větě „Malý pes běží.“",
+      "answer": "Malý – přídavné jméno, pes – podstatné jméno, běží – sloveso."
+    }
+  ]
+}

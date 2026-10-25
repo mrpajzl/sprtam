@@ -1,0 +1,416 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "slovni-druhy",
+  "title": "Slovní druhy",
+  "emoji": "🧩",
+  "explanations": [
+    {
+      "title": "Deset šuplíků",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V knihovně jsou knihy rozdělené do oddělení: romány, encyklopedie, kuchařky. Slova v češtině jsou rozdělená podobně – do **deseti skupin** podle toho, co znamenají a jak se chovají."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Slovní druh rozhoduje o pravopisu (shoda, i/y v koncovkách), o čárkách (spojky) i o rozboru věty. Bez něj nejde dál žádná gramatika."
+        },
+        {
+          "type": "term",
+          "term": "Slovní druh",
+          "definition": "Skupina slov se stejným typem významu a stejným chováním ve větě.",
+          "example": "*pes, škola, radost* jsou všechno podstatná jména"
+        },
+        {
+          "type": "term",
+          "term": "Ohebné slovo",
+          "definition": "Slovo, které mění tvar: **skloňuje** se (mění se podle pádů) nebo **časuje** (mění se podle osob a časů).",
+          "example": "*pes – psa – psovi*; *píšu – píšeš – psal*"
+        },
+        {
+          "type": "term",
+          "term": "Neohebné slovo",
+          "definition": "Slovo, které má pořád stejný tvar.",
+          "example": "*rychle, do, a, kéž, haf*"
+        },
+        {
+          "type": "heading",
+          "text": "Pět ohebných"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1. **podstatná jména** – názvy osob, věcí, vlastností, dějů: *pes, stůl, radost, běh*",
+            "2. **přídavná jména** – vlastnosti: *velký, jarní, otcův*",
+            "3. **zájmena** – zastupují nebo ukazují: *já, ten, svůj, kdo, který*",
+            "4. **číslovky** – počet a pořadí: *pět, pátý, pětkrát*",
+            "5. **slovesa** – děj nebo stav: *běžet, spát, být*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pět neohebných"
+        },
+        {
+          "type": "list",
+          "items": [
+            "6. **příslovce** – okolnosti děje (kde, kdy, jak): *rychle, venku, včera*",
+            "7. **předložky** – stojí před jménem a určují jeho pád: *do, na, přes, kvůli*",
+            "8. **spojky** – spojují slova nebo věty: *a, ale, protože, že*",
+            "9. **částice** – vyjadřují postoj mluvčího (přání, pochybnost): *kéž, ať, prý, asi*",
+            "10. **citoslovce** – citové výkřiky a napodobení zvuků: *au, haf, bum*"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zkus každé slovo „ohnout“ – dá se dát do jiného tvaru? Pokud ano, je ohebné."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "ohebné",
+              "neohebné"
+            ],
+            "items": [
+              {
+                "text": "stůl",
+                "group": 0
+              },
+              {
+                "text": "rychle",
+                "group": 1
+              },
+              {
+                "text": "my",
+                "group": 0
+              },
+              {
+                "text": "pět",
+                "group": 0
+              },
+              {
+                "text": "přes",
+                "group": 1
+              },
+              {
+                "text": "protože",
+                "group": 1
+              },
+              {
+                "text": "kéž",
+                "group": 1
+              },
+              {
+                "text": "haf",
+                "group": 1
+              },
+              {
+                "text": "zelený",
+                "group": 0
+              },
+              {
+                "text": "běžet",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jaký slovní druh je *pátý* a jaký *pátek*?",
+          "answer": "*Pátý* říká pořadí (kolikátý?) → **číslovka** (řadová). *Pátek* je název dne (co?) → **podstatné jméno**."
+        },
+        {
+          "type": "example",
+          "question": "Je *rychleji* ohebné slovo?",
+          "answer": "Příslovce *rychle* se dá **stupňovat** (rychleji, nejrychleji), ale **neskloňuje se ani nečasuje**. Stupňování se za ohýbání nepovažuje → **neohebné**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Běh* je sloveso, protože znamená děj.",
+          "right": "*Běh* je podstatné jméno; sloveso je *běžet*.",
+          "why": "Podstatná jména mohou pojmenovat i děj. Rozhoduje chování: *běh* se skloňuje (běhu, během), nečasuje se."
+        },
+        {
+          "type": "summary",
+          "text": "Ohebné (1–5): podstatná jména, přídavná jména, zájmena, číslovky, slovesa. Neohebné (6–10): příslovce, předložky, spojky, částice, citoslovce."
+        }
+      ]
+    },
+    {
+      "title": "Podle role ve větě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Herec může hrát v jednom filmu doktora a v druhém zloděje. Některá slova také „hrají různé role“ – ve větě *Šel kolem domu* je *kolem* něco jiného než ve větě *Šel kolem*."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Naučíš se určovat slovní druh spolehlivě, i u slov, která lákají k chybě. Hodí se to v testu i při psaní čárek."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Slovní druh",
+          "definition": "Skupina slov se stejným typem významu a chováním. V češtině jich je 10.",
+          "example": "podstatné jméno, sloveso, předložka…"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar jména podle otázky (kdo? koho? komu?…). Čeština jich má 7.",
+          "example": "*do* domu (2. pád), *k* domu (3. pád)"
+        },
+        {
+          "type": "term",
+          "term": "Kontext",
+          "definition": "Okolí slova – věta, ve které stojí. Podle něj poznáme jeho roli.",
+          "example": "*vedle* domu × stál *vedle*"
+        },
+        {
+          "type": "heading",
+          "text": "Rozbor jedné věty krok za krokem"
+        },
+        {
+          "type": "text",
+          "text": "*Ach, ten náš starý pes dnes nechtěl jít ven, protože pršelo.*"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "*Ach* – výkřik citu → **citoslovce**.",
+            "*ten, náš* – ukazují na psa a říkají, čí je → **zájmena**.",
+            "*starý* – jaký pes? → **přídavné jméno**.",
+            "*pes* – kdo? → **podstatné jméno**.",
+            "*dnes, ven* – kdy? kam? Okolnosti děje → **příslovce**.",
+            "*nechtěl, jít, pršelo* – děj → **slovesa**.",
+            "*protože* – spojuje dvě věty → **spojka** (podřadicí: připojuje větu, která vysvětluje důvod)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Druhy zájmen"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Příklady"
+          ],
+          "rows": [
+            [
+              "osobní (i zvratné *se, sebe*)",
+              "já, ty, on, my, sebe"
+            ],
+            [
+              "přivlastňovací",
+              "můj, tvůj, náš, svůj"
+            ],
+            [
+              "ukazovací",
+              "ten, tento, tentýž, onen"
+            ],
+            [
+              "tázací",
+              "kdo, co, jaký, čí"
+            ],
+            [
+              "vztažná",
+              "který, jenž, co (ve vedlejší větě)"
+            ],
+            [
+              "neurčitá a záporná",
+              "někdo, něco; nikdo, nic"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti název druhu, vybav si definici a příklad, pak otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Předložka",
+                "back": "pojí se s pádem jména: *do, na, přes, kvůli*"
+              },
+              {
+                "front": "Spojka",
+                "back": "spojuje větné členy nebo věty: *a, ale, protože, že*"
+              },
+              {
+                "front": "Částice",
+                "back": "uvozuje větu, vyjadřuje postoj mluvčího: *kéž, ať, prý, asi*"
+              },
+              {
+                "front": "Citoslovce",
+                "back": "citové a zvukové projevy: *au, haf, bum*"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "*Šel kolem domu.* × *Šel kolem.* Jaký druh je *kolem*?",
+          "answer": "V první větě stojí před jménem a určuje jeho pád (kolem *domu* – 2. pád) → **předložka**. Ve druhé za ním žádné jméno není, slovo říká kudy šel → **příslovce**."
+        },
+        {
+          "type": "example",
+          "question": "Urči druh zájmen *svůj*, *sebe*, *kdo*.",
+          "answer": "*svůj* – říká, čí něco je → **přivlastňovací**. *sebe* – **osobní zvratné**. *kdo* – ptáme se jím → **tázací**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Stál vedle.* – *vedle* je předložka.",
+          "right": "*vedle* je tu příslovce.",
+          "why": "Předložka musí stát před jménem a určovat jeho pád. Tady žádné jméno není; slovo určuje místo (kde stál?) → příslovce."
+        },
+        {
+          "type": "summary",
+          "text": "Slovní druh určuj podle role slova v konkrétní větě. Předložka se pojí s pádem jména, příslovce samo určuje okolnost (kde, kdy, jak)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kolik slovních druhů rozlišuje čeština?",
+      "options": [
+        "8",
+        "10",
+        "12"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je číslovka?",
+      "options": [
+        "pátý",
+        "pátek",
+        "pátrat"
+      ],
+      "answer": 0,
+      "explanation": "*Pátý* je řadová číslovka; *pátek* je podstatné jméno."
+    },
+    {
+      "type": "truefalse",
+      "question": "Příslovce patří mezi ohebné slovní druhy, protože se dají stupňovat.",
+      "answer": false,
+      "explanation": "Stupňování není skloňování ani časování. Příslovce jsou neohebná."
+    },
+    {
+      "type": "input",
+      "question": "Jaký slovní druh je slovo *kéž*?",
+      "answers": [
+        "částice"
+      ],
+      "explanation": "Uvozuje přací větu."
+    },
+    {
+      "type": "input",
+      "question": "Jaký slovní druh je slovo *bum*?",
+      "answers": [
+        "citoslovce"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve větě *Stál vedle.* je slovo *vedle*:",
+      "options": [
+        "předložka",
+        "příslovce",
+        "spojka"
+      ],
+      "answer": 1,
+      "explanation": "Nepojí se s pádem jména, určuje místo."
+    },
+    {
+      "type": "match",
+      "question": "Spoj slovo se slovním druhem.",
+      "pairs": [
+        [
+          "přes",
+          "předložka"
+        ],
+        [
+          "ale",
+          "spojka"
+        ],
+        [
+          "prý",
+          "částice"
+        ],
+        [
+          "jejich",
+          "zájmeno"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které zájmeno je přivlastňovací?",
+      "options": [
+        "svůj",
+        "sebe",
+        "kdo",
+        "tentýž"
+      ],
+      "answer": 0,
+      "explanation": "*Sebe* je osobní zvratné, *kdo* tázací, *tentýž* ukazovací."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď ohebné slovní druhy podle tradičního číslování.",
+      "items": [
+        "podstatná jména",
+        "přídavná jména",
+        "zájmena",
+        "číslovky",
+        "slovesa"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Slovo *protože* je podřadicí spojka.",
+      "answer": true,
+      "explanation": "Uvozuje vedlejší větu příčinnou."
+    },
+    {
+      "type": "open",
+      "question": "Jak dělíme slovní druhy? Uveď ke každé skupině příklady.",
+      "answer": "Ohebné (skloňují se nebo časují): podstatná jména, přídavná jména, zájmena, číslovky, slovesa. Neohebné: příslovce, předložky, spojky, částice, citoslovce – např. *rychle, do, a, kéž, au*."
+    },
+    {
+      "type": "open",
+      "question": "Proč nelze slovní druh vždy určit bez kontextu? Uveď příklad.",
+      "answer": "Stejné slovo může mít ve větě různou funkci. *Vedle domu* – předložka (pojí se s 2. pádem), *stál vedle* – příslovce (určuje místo)."
+    }
+  ]
+}

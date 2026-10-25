@@ -1,0 +1,526 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "podstatna-jmena",
+  "title": "Podstatná jména",
+  "emoji": "📦",
+  "explanations": [
+    {
+      "title": "Krok za krokem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Všechno kolem sebe nějak pojmenováváš: *máma, pes, mobil, Brno, radost*. Slova, která jsou **názvy** lidí, zvířat, věcí, míst i pocitů, se jmenují **podstatná jména**."
+        },
+        {
+          "type": "text",
+          "text": "Ve větě se tato slova mění: *pes – bez psa – se psem*. Když víš, jak se mění, píšeš správně koncovky (*s kamarády*, ne *s kamarádi*). K tomu potřebuješ znát čtyři údaje: **rod, číslo, pád a vzor**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Slovo, které je názvem osoby, zvířete, věci, místa, vlastnosti nebo děje. Ptáš se na něj **kdo? co?**",
+          "example": "učitel, kočka, stůl, Praha, odvaha, běh"
+        },
+        {
+          "type": "term",
+          "term": "Konkrétní a abstraktní",
+          "definition": "**Konkrétní** podstatné jméno označuje něco, co můžeš vidět nebo se toho dotknout. **Abstraktní** označuje něco, na co nesáhneš – pocit, vlastnost, děj.",
+          "example": "konkrétní: stůl, pes; abstraktní: radost, strach, běh"
+        },
+        {
+          "type": "term",
+          "term": "Rod",
+          "definition": "Skupina, do které podstatné jméno patří. Poznáš ji tak, že před slovo dáš **ten, ta, nebo to**.",
+          "example": "**ten** stůl – mužský, **ta** lampa – ženský, **to** okno – střední"
+        },
+        {
+          "type": "term",
+          "term": "Životnost",
+          "definition": "Mužský rod se dělí ještě na **životný** (živé bytosti: lidé, zvířata) a **neživotný** (věci).",
+          "example": "ten pes – mužský životný; ten strom – mužský neživotný"
+        },
+        {
+          "type": "term",
+          "term": "Číslo",
+          "definition": "**Jednotné** = jeden kus. **Množné** = víc kusů.",
+          "example": "kniha – knihy"
+        },
+        {
+          "type": "term",
+          "term": "Pomnožné podstatné jméno",
+          "definition": "Slovo, které má jen tvar množného čísla, i když mluvíš o jedné věci.",
+          "example": "nůžky, kalhoty, dveře, housle"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar slova podle toho, jakou má ve větě roli. Pádů je **sedm** a každý poznáš podle otázky.",
+          "example": "*Vidím psa* – koho? co? → 4. pád"
+        },
+        {
+          "type": "term",
+          "term": "Skloňování",
+          "definition": "Měnění podstatného jména podle pádů a čísel.",
+          "example": "žena, bez ženy, k ženě, vidím ženu…"
+        },
+        {
+          "type": "heading",
+          "text": "Sedm pádů"
+        },
+        {
+          "type": "text",
+          "text": "Pád zjistíš otázkou. Pomocné slovo v závorce ti pomůže otázku správně položit."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Pád",
+            "Otázka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "1.",
+              "kdo? co?",
+              "kamarád"
+            ],
+            [
+              "2.",
+              "(bez) koho? čeho?",
+              "bez kamaráda"
+            ],
+            [
+              "3.",
+              "(ke) komu? čemu?",
+              "ke kamarádovi"
+            ],
+            [
+              "4.",
+              "(vidím) koho? co?",
+              "vidím kamaráda"
+            ],
+            [
+              "5.",
+              "oslovujeme, voláme",
+              "kamaráde!"
+            ],
+            [
+              "6.",
+              "(o) kom? o čem?",
+              "o kamarádovi"
+            ],
+            [
+              "7.",
+              "(s) kým? čím?",
+              "s kamarádem"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vzory"
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Známé slovo, podle kterého skloňuješ jiná slova se stejnými koncovkami. Když nevíš koncovku, dosadíš vzor.",
+          "example": "*hrad – s hrady*, proto i *strom – se stromy*."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rod",
+            "Vzory"
+          ],
+          "rows": [
+            [
+              "mužský životný",
+              "pán, muž, předseda, soudce"
+            ],
+            [
+              "mužský neživotný",
+              "hrad, stroj"
+            ],
+            [
+              "ženský",
+              "žena, růže, píseň, kost"
+            ],
+            [
+              "střední",
+              "město, moře, kuře, stavení"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Urči **rod**: ten/ta/to.",
+            "U mužského rodu urči, jestli je **životný**.",
+            "Podívej se, jak slovo **končí v 1. pádě** (tvrdá souhláska, měkká souhláska, -a, -e…).",
+            "Když si nejsi jistý, porovnej i **2. pád**: *kuře – bez kuřete*, *moře – bez moře*."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Urči rod, číslo, pád a vzor: *s kamarádem*",
+          "answer": "Ten kamarád → mužský. Je to člověk → životný. Jeden → jednotné číslo. S kým? → 7. pád. Končí tvrdou souhláskou d jako *pán* → vzor **pán**."
+        },
+        {
+          "type": "example",
+          "question": "Urči rod, číslo, pád a vzor: *ženám*",
+          "answer": "Ta žena → ženský rod. Víc žen → množné číslo. Komu? → 3. pád. Končí na -a jako *žena* → vzor **žena**."
+        },
+        {
+          "type": "example",
+          "question": "Podle kterého vzoru je *kotě*?",
+          "answer": "To kotě → střední. 2. pád: bez *kotěte* – stejně jako *kuře – bez kuřete*. Vzor **kuře**."
+        },
+        {
+          "type": "text",
+          "text": "Zkus roztřídit slova podle rodu. Dosaď si ten, ta, to."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "mužský",
+              "ženský",
+              "střední"
+            ],
+            "items": [
+              {
+                "text": "strom",
+                "group": 0
+              },
+              {
+                "text": "učitel",
+                "group": 0
+              },
+              {
+                "text": "soudce",
+                "group": 0
+              },
+              {
+                "text": "kost",
+                "group": 1
+              },
+              {
+                "text": "píseň",
+                "group": 1
+              },
+              {
+                "text": "růže",
+                "group": 1
+              },
+              {
+                "text": "moře",
+                "group": 2
+              },
+              {
+                "text": "kuře",
+                "group": 2
+              },
+              {
+                "text": "stavení",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Předseda* je ženského rodu, protože končí na -a jako žena.",
+          "right": "*Předseda* je mužský životný, vzor předseda.",
+          "why": "Rod neurčuješ podle koncovky, ale podle ten/ta/to: **ten** předseda."
+        },
+        {
+          "type": "summary",
+          "text": "U podstatného jména určuješ rod (ten/ta/to), číslo (jeden/víc), pád (otázkou 1.–7.) a vzor (slovo se stejnými koncovkami)."
+        }
+      ]
+    },
+    {
+      "title": "Občanka slova",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Každý člověk má občanský průkaz. Je v něm jméno, datum narození a další údaje. Podle nich ho úředník pozná."
+        },
+        {
+          "type": "text",
+          "text": "I **podstatná jména** mají takovou „občanku“. Podstatné jméno je slovo, které **něco pojmenovává** – člověka, zvíře, věc, místo nebo i pocit (*radost*). Zeptáš se na něj **kdo? co?**"
+        },
+        {
+          "type": "text",
+          "text": "Do občanky slova se zapisují čtyři údaje: **rod, číslo, pád, vzor**. Když je umíš, víš, jakou koncovku napsat. Vyplníme je jeden po druhém na psovi Alíkovi."
+        },
+        {
+          "type": "term",
+          "term": "Podstatné jméno",
+          "definition": "Název osoby, zvířete, věci, místa, vlastnosti nebo děje.",
+          "example": "Alík, holka, lavice, Ostrava, smutek"
+        },
+        {
+          "type": "heading",
+          "text": "Údaj 1: Rod"
+        },
+        {
+          "type": "term",
+          "term": "Rod",
+          "definition": "Před slovo řekni **ten / ta / to**. Ten = mužský, ta = ženský, to = střední.",
+          "example": "ten Alík, ta bouda, to štěně"
+        },
+        {
+          "type": "term",
+          "term": "Životný a neživotný",
+          "definition": "U mužského rodu ještě rozlišíš: **životný** = živá bytost, **neživotný** = věc.",
+          "example": "ten Alík – životný; ten míč – neživotný"
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Radost* není podstatné jméno, protože se jí nedá dotknout.",
+          "right": "*Radost* je podstatné jméno – **abstraktní**.",
+          "why": "Podstatná jména jsou i věci, na které nesáhneš (pocity, vlastnosti). Říkáme jim abstraktní. Ty, na které sáhneš, jsou konkrétní."
+        },
+        {
+          "type": "heading",
+          "text": "Údaj 2: Číslo"
+        },
+        {
+          "type": "term",
+          "term": "Číslo",
+          "definition": "Jednotné (jeden) nebo množné (víc).",
+          "example": "pes – psi"
+        },
+        {
+          "type": "text",
+          "text": "Pozor na slova, která mají **jen množné číslo**, i když je věc jedna: *nůžky, kalhoty, dveře*. Říkáme jim **pomnožná**."
+        },
+        {
+          "type": "heading",
+          "text": "Údaj 3: Pád"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar, který slovo dostane podle toho, co ve větě dělá. Pádů je sedm. Ptáš se na ně otázkami.",
+          "example": "Alík – bez Alíka – k Alíkovi"
+        },
+        {
+          "type": "text",
+          "text": "Projdi si Alíkův den. Každá věta ukazuje jeden pád."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "1. pád (kdo? co?): **Alík** se ráno probudil.",
+            "2. pád (bez koho? čeho?): Bez **Alíka** je doma smutno.",
+            "3. pád (ke komu? čemu?): Běžím k **Alíkovi**.",
+            "4. pád (vidím koho? co?): Vidím **Alíka** na zahradě.",
+            "5. pád (oslovujeme, voláme): **Alíku**, pojď sem!",
+            "6. pád (o kom? o čem?): Vyprávím o **Alíkovi**.",
+            "7. pád (s kým? čím?): Jdu ven s **Alíkem**."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Skloňování",
+          "definition": "Když slovo projdeš všemi pády jako Alíka nahoře, **skloňuješ** ho."
+        },
+        {
+          "type": "heading",
+          "text": "Údaj 4: Vzor"
+        },
+        {
+          "type": "term",
+          "term": "Vzor",
+          "definition": "Slovo, které se skloňuje stejně jako to tvoje. Je to „starší sourozenec“, od kterého slovo okoukává koncovky.",
+          "example": "Alík se skloňuje jako *pán*: pán – bez pána, Alík – bez Alíka."
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu a podívej se, jaké vzory má který rod."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "mužský životný",
+                "back": "pán, muž, předseda, soudce"
+              },
+              {
+                "front": "mužský neživotný",
+                "back": "hrad, stroj"
+              },
+              {
+                "front": "ženský",
+                "back": "žena, růže, píseň, kost"
+              },
+              {
+                "front": "střední",
+                "back": "město, moře, kuře, stavení"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Vyplň občanku slova *nůžkami*.",
+          "answer": "Rod: ty nůžky – patří k ženskému rodu. Číslo: množné, je to pomnožné jméno. Pád: s čím? → 7. pád. Vzor: **žena** (ženy – nůžky, ženami – nůžkami)."
+        },
+        {
+          "type": "example",
+          "question": "Vyplň občanku slova *koně* ve větě *Hladím koně.*",
+          "answer": "Rod: ten kůň – mužský životný. Číslo: jednotné (jeden kůň). Pád: hladím koho? → 4. pád. Vzor: **muž** (muž – muže, kůň – koně)."
+        },
+        {
+          "type": "summary",
+          "text": "Občanka podstatného jména = rod (ten/ta/to), číslo (jedno/víc), pád (otázka) a vzor (slovo se stejnými koncovkami)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Ve kterém pádě je *bez cukru*?",
+      "options": [
+        "1.",
+        "2.",
+        "4."
+      ],
+      "answer": 1,
+      "explanation": "Bez koho? čeho? → 2. pád."
+    },
+    {
+      "type": "choice",
+      "question": "Podle kterého vzoru skloňujeme *učitel*?",
+      "options": [
+        "pán",
+        "muž",
+        "stroj"
+      ],
+      "answer": 1,
+      "explanation": "Mužský životný, končí měkkou souhláskou → muž."
+    },
+    {
+      "type": "choice",
+      "question": "Podle kterého vzoru skloňujeme *kotě*?",
+      "options": [
+        "město",
+        "moře",
+        "kuře"
+      ],
+      "answer": 2,
+      "explanation": "kotě – kotěte, kuře – kuřete."
+    },
+    {
+      "type": "truefalse",
+      "question": "*Nůžky* jsou podstatné jméno pomnožné.",
+      "answer": true,
+      "explanation": "Mají jen tvar množného čísla, i když jde o jednu věc."
+    },
+    {
+      "type": "choice",
+      "question": "Které podstatné jméno je abstraktní (nedá se ho dotknout)?",
+      "options": [
+        "radost",
+        "stůl",
+        "pes"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Ve kterém pádě je *o kamarádovi*? Napiš číslo.",
+      "answers": [
+        "6"
+      ],
+      "explanation": "O kom? o čem? → 6. pád."
+    },
+    {
+      "type": "match",
+      "question": "Spoj podstatné jméno se vzorem.",
+      "pairs": [
+        [
+          "dům",
+          "hrad"
+        ],
+        [
+          "kůň",
+          "muž"
+        ],
+        [
+          "ulice",
+          "růže"
+        ],
+        [
+          "radost",
+          "kost"
+        ],
+        [
+          "nádraží",
+          "stavení"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaký rod má *předseda*?",
+      "options": [
+        "mužský",
+        "ženský",
+        "střední"
+      ],
+      "answer": 0,
+      "explanation": "ten předseda – mužský životný, i když končí na -a."
+    },
+    {
+      "type": "choice",
+      "question": "Který pád používáme při oslovení?",
+      "options": [
+        "1.",
+        "5.",
+        "7."
+      ],
+      "answer": 1,
+      "explanation": "Pane učiteli! – 5. pád."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď pádové otázky od 1. do 4. pádu.",
+      "items": [
+        "kdo? co?",
+        "koho? čeho?",
+        "komu? čemu?",
+        "koho? co?"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš rod podstatného jména?",
+      "answer": "Dosadím slovo ten, ta, nebo to: ten – mužský, ta – ženský, to – střední. U mužského rodu ještě zjistím, jestli jde o živou bytost (životný)."
+    },
+    {
+      "type": "open",
+      "question": "Urči rod, číslo, pád a vzor slova *ženám*.",
+      "answer": "Rod ženský, číslo množné, 3. pád (komu? čemu?), vzor žena."
+    }
+  ]
+}

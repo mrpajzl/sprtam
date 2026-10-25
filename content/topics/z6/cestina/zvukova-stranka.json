@@ -1,0 +1,536 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zvukova-stranka",
+  "title": "Hlásky a spisovná výslovnost",
+  "emoji": "🗣️",
+  "explanations": [
+    {
+      "title": "Šuplíky hlásek",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když mluvíš, z pusy ti vychází **zvuky**. Když píšeš, kreslíš **písmena**. Většinou si odpovídají. Ale ne vždycky: píšeš *dub*, a přitom říkáš něco jako „dup“."
+        },
+        {
+          "type": "text",
+          "text": "Tohle téma ti vysvětlí, z jakých zvuků se čeština skládá a jak je správně vyslovovat. Hodí se to pro pravopis (proč *dub*, a ne *dup*), pro čtení nahlas i pro mluvení před třídou."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hláska",
+          "definition": "Nejmenší zvuk řeči, který slyšíš. Hlásky **slyšíme**, písmena **vidíme**.",
+          "example": "Slovo *pes* má tři hlásky: p – e – s."
+        },
+        {
+          "type": "term",
+          "term": "Písmeno",
+          "definition": "Značka, kterou hlásku zapisujeme. Někdy je jedna hláska zapsaná dvěma písmeny.",
+          "example": "*ch* jsou dvě písmena, ale jen jedna hláska."
+        },
+        {
+          "type": "term",
+          "term": "Samohláska",
+          "definition": "Hláska, při které vzduch volně proudí z pusy a nic mu nepřekáží. Dá se dlouze zpívat.",
+          "example": "a, e, i/y, o, u – krátké; á, é, í/ý, ó, ú/ů – dlouhé"
+        },
+        {
+          "type": "term",
+          "term": "Dvojhláska",
+          "definition": "Dvě samohlásky vyslovené dohromady jako jeden celek, v jedné slabice.",
+          "example": "**ou** (louka), **au** (auto), **eu** (euro)"
+        },
+        {
+          "type": "term",
+          "term": "Souhláska",
+          "definition": "Hláska, při které vzduchu něco překáží – zuby, jazyk nebo rty.",
+          "example": "p, t, k, s, m, r, ž…"
+        },
+        {
+          "type": "heading",
+          "text": "Souhlásky podle pravopisu"
+        },
+        {
+          "type": "text",
+          "text": "Souhlásky rozdělujeme do tří skupin. Podle skupiny víš, jestli po nich psát **i**, nebo **y**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Souhlásky",
+            "Co po nich píšeš"
+          ],
+          "rows": [
+            [
+              "tvrdé",
+              "h, ch, k, r, d, t, n",
+              "y (hýbat, kyselý)"
+            ],
+            [
+              "měkké",
+              "ž, š, č, ř, c, j, ď, ť, ň",
+              "i (žito, čistý)"
+            ],
+            [
+              "obojetné",
+              "b, f, l, m, p, s, v, z",
+              "i, nebo y – podle vyjmenovaných slov"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Znělé a neznělé souhlásky"
+        },
+        {
+          "type": "term",
+          "term": "Znělá souhláska",
+          "definition": "Při jejím vyslovení **vibrují hlasivky** v krku. Když si dáš ruku na krk, cítíš bzučení.",
+          "example": "b, d, ď, g, v, z, ž, h"
+        },
+        {
+          "type": "term",
+          "term": "Neznělá souhláska",
+          "definition": "Hlasivky při ní nevibrují, je to jen šum nebo ťuknutí.",
+          "example": "p, t, ť, k, f, s, š, ch"
+        },
+        {
+          "type": "text",
+          "text": "Tyto souhlásky tvoří **páry**: vyslovují se stejně, jen jedna zní a druhá ne. Třeba **b – p**, **d – t**, **z – s**, **h – ch**."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď souhlásky. Když si nejsi jistý, dej si ruku na krk a řekni je nahlas."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "znělá",
+              "neznělá"
+            ],
+            "items": [
+              {
+                "text": "b",
+                "group": 0
+              },
+              {
+                "text": "d",
+                "group": 0
+              },
+              {
+                "text": "z",
+                "group": 0
+              },
+              {
+                "text": "v",
+                "group": 0
+              },
+              {
+                "text": "h",
+                "group": 0
+              },
+              {
+                "text": "p",
+                "group": 1
+              },
+              {
+                "text": "t",
+                "group": 1
+              },
+              {
+                "text": "s",
+                "group": 1
+              },
+              {
+                "text": "f",
+                "group": 1
+              },
+              {
+                "text": "ch",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Spodoba znělosti"
+        },
+        {
+          "type": "term",
+          "term": "Spodoba znělosti",
+          "definition": "Párová souhláska se při mluvení **přizpůsobí** sousední hlásce nebo konci slova. Píšeme ji ale pořád stejně.",
+          "example": "*dub* vyslovíme [dup], *kde* vyslovíme [gde]."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Na **konci slova** zní znělá souhláska jako neznělá: *hrad* → [hrat], *zub* → [zup].",
+            "Před **neznělou** souhláskou zní znělá jako neznělá: *tužka* → [tuška], *zpráva* → [správa].",
+            "Před **znělou** souhláskou zní neznělá jako znělá: *kde* → [gde], *svatba* → [svadba]."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jak vyslovíš slovo *led* a jak *let*?",
+          "answer": "Obě stejně: [let]. U *led* je na konci znělé d, které na konci slova zní jako neznělé t. Jak se slovo píše, zjistíš z jiného tvaru: *ledu* (d), *letu* (t)."
+        },
+        {
+          "type": "example",
+          "question": "Proč píšeme *tužka*, když slyšíme [tuška]?",
+          "answer": "Ž stojí před neznělým k, proto zní jako š. Slovo ale pochází od slova *tuha* (h se mění na ž, jako *noha – nožka*). Proto píšeme ž."
+        },
+        {
+          "type": "heading",
+          "text": "Přízvuk a melodie"
+        },
+        {
+          "type": "term",
+          "term": "Slabika",
+          "definition": "Kousek slova, který vyslovíš jedním „ťuknutím“. Skoro vždy obsahuje samohlásku.",
+          "example": "*ško-la* má dvě slabiky."
+        },
+        {
+          "type": "term",
+          "term": "Přízvuk",
+          "definition": "Slabika, kterou ve slově řekneš o trochu silněji. V češtině je to vždy **první slabika**.",
+          "example": "**ško**-la, **ma**-minka"
+        },
+        {
+          "type": "text",
+          "text": "Když před slovem stojí krátká předložka, splyne se slovem a přízvuk přejde na ni: **na** stole, **do** školy."
+        },
+        {
+          "type": "term",
+          "term": "Větná melodie",
+          "definition": "Jak hlas na konci věty stoupá nebo klesá.",
+          "example": "Oznamovací věta *Přijdu.* klesá. Otázka *Přijdeš?* stoupá."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Píšu „dup“, protože to tak slyším.",
+          "right": "Píšu *dub*.",
+          "why": "Na konci slova se znělá souhláska mění na neznělou jen ve výslovnosti. Ověříš to jiným tvarem: *duby*, *dubu* – tam slyšíš b."
+        },
+        {
+          "type": "summary",
+          "text": "Hlásky dělíme na samohlásky a souhlásky. Párové souhlásky se ve výslovnosti přizpůsobí (spodoba znělosti), ale píšeme je stejně. Přízvuk je na první slabice."
+        }
+      ]
+    },
+    {
+      "title": "Pokusem s krkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zkus to hned teď. Řekni nahlas **led** a pak **let**. Zní úplně stejně! A přesto je píšeme jinak. Jak to?"
+        },
+        {
+          "type": "text",
+          "text": "Řeč se skládá ze zvuků. Těm zvukům říkáme **hlásky**. V tomhle výkladu je prozkoumáš vlastní pusou a krkem. Pak pochopíš, proč někdy píšeš jinak, než slyšíš, a jak mluvit spisovně."
+        },
+        {
+          "type": "term",
+          "term": "Hláska",
+          "definition": "Jeden zvuk řeči. Písmeno je jen jeho obrázek na papíře.",
+          "example": "Slovo *chata* má čtyři hlásky: ch – a – t – a (pět písmen)."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 1: Zazpívej to"
+        },
+        {
+          "type": "text",
+          "text": "Zkus dlouze zpívat „aaaa“. Jde to. Teď zkus zpívat „pppp“. Nejde to. Proto hlásky dělíme na dvě velké skupiny."
+        },
+        {
+          "type": "term",
+          "term": "Samohláska",
+          "definition": "Hláska, kterou můžeš zpívat, vzduch jde volně. Může být krátká nebo dlouhá.",
+          "example": "a – á, e – é, i/y – í/ý, o – ó, u – ú/ů"
+        },
+        {
+          "type": "term",
+          "term": "Souhláska",
+          "definition": "Hláska, při které vzduchu překáží rty, zuby nebo jazyk.",
+          "example": "m, k, s, ř"
+        },
+        {
+          "type": "term",
+          "term": "Dvojhláska",
+          "definition": "Dvě samohlásky spojené do jednoho zvuku.",
+          "example": "ou (moucha), au (auto), eu (neutrální)"
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 2: Ruka na krku"
+        },
+        {
+          "type": "text",
+          "text": "Polož si prsty na krk. Řekni dlouze „zzzz“. Cítíš bzučení? To vibrují **hlasivky**. Teď řekni „ssss“. Bzučení zmizí."
+        },
+        {
+          "type": "term",
+          "term": "Znělá souhláska",
+          "definition": "Souhláska, při které hlasivky bzučí.",
+          "example": "b, d, ď, g, v, z, ž, h"
+        },
+        {
+          "type": "term",
+          "term": "Neznělá souhláska",
+          "definition": "Souhláska, při které hlasivky nebzučí.",
+          "example": "p, t, ť, k, f, s, š, ch"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Znělá",
+            "b",
+            "d",
+            "ď",
+            "g",
+            "v",
+            "z",
+            "ž",
+            "h"
+          ],
+          "rows": [
+            [
+              "Neznělá",
+              "p",
+              "t",
+              "ť",
+              "k",
+              "f",
+              "s",
+              "š",
+              "ch"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Každá dvojice pod sebou se vyslovuje stejně, jen jednou s bzučením, jednou bez. Proto jim říkáme **párové**."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 3: Proč led zní jako let"
+        },
+        {
+          "type": "term",
+          "term": "Spodoba znělosti",
+          "definition": "Když se párová souhláska ocitne na konci slova nebo vedle jiné párové souhlásky, změní se ve výslovnosti na svou dvojici. Psaní se nemění.",
+          "example": "*hrad* [hrat], *kde* [gde]"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu a podívej se, jak slovo spisovně vyslovíme. Nejdřív to zkus říct nahlas sám."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "hrad",
+                "back": "[hrat] – d na konci slova zní jako t"
+              },
+              {
+                "front": "kde",
+                "back": "[gde] – k před znělým d zní jako g"
+              },
+              {
+                "front": "tužka",
+                "back": "[tuška] – ž před neznělým k zní jako š"
+              },
+              {
+                "front": "svatba",
+                "back": "[svadba] – t před znělým b zní jako d"
+              },
+              {
+                "front": "vstát",
+                "back": "[fstát] – v před neznělým s zní jako f"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jak spisovně vyslovíš slovo *zpráva*?",
+          "answer": "Z stojí před neznělým p. Přizpůsobí se mu a zazní jako s: [správa]. Píšeme ale pořád *zpráva*."
+        },
+        {
+          "type": "example",
+          "question": "Píše se *plo_* (plod), nebo *plot*? Jak to poznáš?",
+          "answer": "Řekni jiný tvar: *plody* – slyšíš d, je to ovoce. *Ploty* – slyšíš t, je to oplocení. Obě slova existují, záleží na významu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když slyším [gde], napíšu „gde“.",
+          "right": "Píšu *kde*.",
+          "why": "Výslovnost se přizpůsobuje, ale pravopis ne. Neznělé k jen zní jako g, protože po něm jde znělé d."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 4: Kde je síla"
+        },
+        {
+          "type": "term",
+          "term": "Přízvuk",
+          "definition": "Místo ve slově, které řekneš důrazněji. V češtině je na **první slabice** (slabika = kousek slova, který řekneš najednou).",
+          "example": "**ka**-ma-rád, **zmrz**-li-na"
+        },
+        {
+          "type": "text",
+          "text": "Řekni *na stole*. Slyšíš, že silně zní **na**? Krátká předložka se se slovem spojí a přízvuk si vezme ona."
+        },
+        {
+          "type": "text",
+          "text": "A ještě melodie. Řekni *Přijdeš?* – hlas na konci jde **nahoru**. Takové otázce, na kterou se odpovídá ano/ne, říkáme **zjišťovací**. Řekni *Přijdu.* – hlas jde **dolů**."
+        },
+        {
+          "type": "summary",
+          "text": "Znělé souhlásky bzučí, neznělé ne. Na konci slova a vedle jiné párové souhlásky se ve výslovnosti mění (spodoba znělosti), píšeme je stejně. Přízvuk je na první slabice, zjišťovací otázka stoupá."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která skupina je dvojhláska?",
+      "options": [
+        "ou",
+        "ů",
+        "é"
+      ],
+      "answer": 0,
+      "explanation": "Dvojhlásky jsou ou, au, eu."
+    },
+    {
+      "type": "choice",
+      "question": "Jak spisovně vyslovíme slovo *dub*?",
+      "options": [
+        "[dub]",
+        "[dup]",
+        "[tup]"
+      ],
+      "answer": 1,
+      "explanation": "Na konci slova zní b jako p."
+    },
+    {
+      "type": "truefalse",
+      "question": "Přízvuk je v češtině na poslední slabice.",
+      "answer": false,
+      "explanation": "Je na první slabice slova."
+    },
+    {
+      "type": "input",
+      "question": "Napiš neznělý pár k souhlásce *z*.",
+      "answers": [
+        "s"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj znělou souhlásku s neznělou.",
+      "pairs": [
+        [
+          "b",
+          "p"
+        ],
+        [
+          "d",
+          "t"
+        ],
+        [
+          "v",
+          "f"
+        ],
+        [
+          "ž",
+          "š"
+        ],
+        [
+          "h",
+          "ch"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém slově vyslovíme znělou souhlásku jako neznělou?",
+      "options": [
+        "máma",
+        "zub",
+        "lano"
+      ],
+      "answer": 1,
+      "explanation": "zub → [zup]."
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém slově vyslovíme neznělou souhlásku jako znělou?",
+      "options": [
+        "kde",
+        "kost",
+        "pes"
+      ],
+      "answer": 0,
+      "explanation": "k před znělým d zní jako g: [gde]."
+    },
+    {
+      "type": "truefalse",
+      "question": "Souhláska *j* je měkká.",
+      "answer": true,
+      "explanation": "Měkké: ž, š, č, ř, c, j, ď, ť, ň."
+    },
+    {
+      "type": "choice",
+      "question": "Která souhláska je obojetná?",
+      "options": [
+        "l",
+        "k",
+        "č"
+      ],
+      "answer": 0,
+      "explanation": "Obojetné: b, f, l, m, p, s, v, z."
+    },
+    {
+      "type": "choice",
+      "question": "Jakou melodii má zjišťovací otázka *Přijdeš?*",
+      "options": [
+        "stoupavou",
+        "klesavou",
+        "žádnou"
+      ],
+      "answer": 0,
+      "explanation": "Hlas na konci otázky stoupá."
+    },
+    {
+      "type": "open",
+      "question": "Co je spodoba znělosti? Uveď příklad.",
+      "answer": "Párová souhláska se ve výslovnosti přizpůsobí sousední. Na konci slova zní znělá jako neznělá: *dub* [dup], před znělou zní neznělá jako znělá: *kde* [gde]."
+    },
+    {
+      "type": "open",
+      "question": "Kde je v češtině přízvuk?",
+      "answer": "Na první slabice slova. Když před slovem stojí krátká předložka, přízvuk přejde na ni: *na stole*."
+    }
+  ]
+}

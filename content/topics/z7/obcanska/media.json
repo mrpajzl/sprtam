@@ -1,0 +1,427 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "media",
+  "title": "Masová média",
+  "emoji": "📺",
+  "explanations": [
+    {
+      "title": "Jedna zpráva",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ráno máma pustí rádio, táta čte zprávy v mobilu a ty se díváš na video na internetu. Každý den na tebe útočí stovky zpráv. Jen některé jsou pravdivé."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se, odkud zprávy přicházejí, k čemu slouží a jak poznat, že tě někdo chce oklamat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Médium (množné číslo média)",
+          "definition": "Prostředek, kterým se zpráva dostane k lidem.",
+          "example": "Noviny, rádio, televize, internet."
+        },
+        {
+          "type": "term",
+          "term": "Masová média",
+          "definition": "Média, která najednou osloví obrovské množství lidí.",
+          "example": "Hlavní zprávy v televizi sledují statisíce lidí."
+        },
+        {
+          "type": "term",
+          "term": "Zdroj",
+          "definition": "Odkud informace pochází – kdo ji zjistil nebo řekl.",
+          "example": "„Podle Českého hydrometeorologického ústavu bude pršet.“"
+        },
+        {
+          "type": "term",
+          "term": "Hoax",
+          "definition": "Lživá zpráva, která se šíří, jako by byla pravdivá. Často přes řetězové zprávy a sociální sítě."
+        },
+        {
+          "type": "heading",
+          "text": "Příběh jedné zprávy"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Do třídního chatu přijde: „POZOR!!! Od zítřka se ruší prázdniny! Pošli dál!“",
+            "Zpráva hraje na **silné emoce** – vykřičníky, strach, spěch.",
+            "Není uvedený **zdroj** ani autor. Kdo to rozhodl? Kde to stojí?",
+            "Kuba to zkusí ověřit na webu ministerstva školství a v seriózních zpravodajských médiích. Nikde nic.",
+            "Je to **hoax**. Kuba ho neposílá dál a napíše do chatu, že to není pravda."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď znaky zpráv: spíš důvěryhodná, nebo podezřelá?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "spíš důvěryhodná",
+              "podezřelá"
+            ],
+            "items": [
+              {
+                "text": "je uvedený autor a datum",
+                "group": 0
+              },
+              {
+                "text": "odkazuje na oficiální úřad",
+                "group": 0
+              },
+              {
+                "text": "píšou o tom i další seriózní média",
+                "group": 0
+              },
+              {
+                "text": "má uvedené zdroje",
+                "group": 0
+              },
+              {
+                "text": "samé vykřičníky a velká písmena",
+                "group": 1
+              },
+              {
+                "text": "„Pošli dál, než to smažou!“",
+                "group": 1
+              },
+              {
+                "text": "chybí jakýkoli zdroj",
+                "group": 1
+              },
+              {
+                "text": "„Tohle vám v televizi neřeknou!“",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "K čemu média slouží"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**informují** – zprávy, počasí",
+            "**vzdělávají** – dokumenty, naučné pořady",
+            "**baví** – filmy, soutěže, seriály",
+            "**kontrolují mocné** – novináři upozorňují na chyby a nepoctivost politiků a úřadů",
+            "přinášejí **reklamu** – ta chce, abychom něco koupili"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Video tvrdí: „Vědci tají, že čokoláda léčí chřipku!“ Autor ani studie nejsou uvedeny. Věříš?",
+          "answer": "Silné tvrzení, žádný zdroj, „tají“ hraje na emoce. Ověřím u seriózních zdrojů. Dokud to nikdo nepotvrdí, považuji to za **pravděpodobný hoax**."
+        },
+        {
+          "type": "example",
+          "question": "Novinář zjistí, že starosta dal zakázku firmě své manželky. Kterou funkci médií plní?",
+          "answer": "Upozorňuje na možné zneužití moci → **kontrolní** funkce."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když je to na internetu a sdílí to hodně lidí, je to pravda.",
+          "right": "Počet sdílení nic nedokazuje. Rozhoduje, jestli zprávu potvrzují důvěryhodné zdroje.",
+          "why": "Hoaxy se šíří právě proto, že je lidé sdílejí bez ověření."
+        },
+        {
+          "type": "summary",
+          "text": "Média informují, vzdělávají, baví a kontrolují mocné. Zprávu ověř: kdo ji napsal, kdy, z jakého zdroje a jestli ji potvrzují i jiná seriózní média."
+        }
+      ]
+    },
+    {
+      "title": "Přehled médií",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Před 200 lety se zprávy šířily jen v novinách a vyprávěním. Dnes máš v kapse mobil s celým světem. Média se postupně měnila – a každé má své výhody i rizika."
+        },
+        {
+          "type": "text",
+          "text": "Projdeme druhy médií, kdo je vlastní a podle jakých pravidel poznáš kvalitní zprávu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Masová média",
+          "definition": "Prostředky, které dopraví zprávu k velkému množství lidí najednou: tisk, rozhlas, televize, internet."
+        },
+        {
+          "type": "term",
+          "term": "Tištěné médium (tisk)",
+          "definition": "Médium na papíře.",
+          "example": "Noviny, časopisy."
+        },
+        {
+          "type": "term",
+          "term": "Veřejnoprávní médium",
+          "definition": "Médium, které neslouží k zisku, ale veřejnosti. Platíme ho všichni poplatkem a ze zákona má informovat vyváženě.",
+          "example": "Česká televize, Český rozhlas."
+        },
+        {
+          "type": "term",
+          "term": "Soukromé médium",
+          "definition": "Médium, které patří soukromé firmě nebo člověku. Vydělává hlavně reklamou."
+        },
+        {
+          "type": "term",
+          "term": "Hoax",
+          "definition": "Falešná zpráva šířená jako pravdivá."
+        },
+        {
+          "type": "heading",
+          "text": "Jak média vznikala"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si pořadí: každé nové médium bylo rychlejší než to předchozí."
+        },
+        {
+          "type": "table",
+          "head": [
+            "pořadí",
+            "médium",
+            "jak zprávu předává"
+          ],
+          "rows": [
+            [
+              "1.",
+              "noviny",
+              "psaný text na papíře"
+            ],
+            [
+              "2.",
+              "rozhlas (rádio)",
+              "zvuk"
+            ],
+            [
+              "3.",
+              "televize",
+              "obraz a zvuk"
+            ],
+            [
+              "4.",
+              "internet",
+              "text, obraz, zvuk – kdokoli může i sám publikovat"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Funkce médií"
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Informační funkce",
+                "back": "Zpravodajství: co se stalo doma a ve světě."
+              },
+              {
+                "front": "Vzdělávací funkce",
+                "back": "Dokumenty a naučné pořady."
+              },
+              {
+                "front": "Zábavní funkce",
+                "back": "Filmy, seriály, soutěže."
+              },
+              {
+                "front": "Kontrolní funkce",
+                "back": "Novináři odhalují chyby a nepoctivost mocných."
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Než kartu otočíš, zkus k funkci vymyslet vlastní příklad pořadu."
+        },
+        {
+          "type": "heading",
+          "text": "Jak ověřit zprávu – postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Kdo to napsal? Je uvedený autor nebo redakce?",
+            "Kdy to vyšlo? Není to stará zpráva?",
+            "Odkud to autor ví? Je uvedený zdroj?",
+            "Píšou o tom i další seriózní média?",
+            "Nehraje to jen na emoce (strach, vztek)?"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Proč je důležitá svoboda médií"
+        },
+        {
+          "type": "text",
+          "text": "Když média smějí psát pravdu i o mocných, lidé se dozvědí o chybách a mohou se podle toho rozhodnout ve volbách. Kde média kontroluje vláda (**cenzura**), lidé se pravdu nedozvědí."
+        },
+        {
+          "type": "example",
+          "question": "Které médium je tištěné: rozhlas, noviny, podcast?",
+          "answer": "Tištěné = na papíře → **noviny**. Rozhlas a podcast jsou zvuk."
+        },
+        {
+          "type": "example",
+          "question": "Proč Česká televize vysílá i pořady, které moc lidí nesleduje (třeba pro neslyšící)?",
+          "answer": "Je **veřejnoprávní** – neslouží zisku, ale všem lidem, i menším skupinám."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Reklama nás jen informuje o výrobcích.",
+          "right": "Reklama nás hlavně přesvědčuje, abychom něco koupili.",
+          "why": "Reklamu platí ten, kdo chce prodat. Ukazuje proto hlavně výhody, ne nevýhody."
+        },
+        {
+          "type": "summary",
+          "text": "Média: noviny → rozhlas → televize → internet. Veřejnoprávní (ČT, ČRo) slouží všem, soukromá vydělávají reklamou. Zprávu vždy ověř."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je hoax?",
+      "options": [
+        "lživá zpráva šířená jako pravdivá",
+        "druh reklamy",
+        "televizní pořad",
+        "novinový článek"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Zprávu je dobré ověřit u více zdrojů.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Které médium je tištěné?",
+      "options": [
+        "noviny",
+        "rozhlas",
+        "televize",
+        "podcast"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které médium je veřejnoprávní?",
+      "options": [
+        "Česká televize",
+        "každá soukromá televize",
+        "sociální síť",
+        "reklamní leták"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj funkci médií s příkladem.",
+      "pairs": [
+        [
+          "informační",
+          "zpravodajství"
+        ],
+        [
+          "zábavní",
+          "soutěž v TV"
+        ],
+        [
+          "vzdělávací",
+          "přírodopisný dokument"
+        ],
+        [
+          "kontrolní",
+          "odhalení korupce"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Všechno, co je na internetu, je pravda.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Co je typický znak falešné zprávy?",
+      "options": [
+        "velké emoce a chybí zdroj",
+        "uvedený autor a datum",
+        "odkaz na oficiální úřad",
+        "stejná zpráva v mnoha seriózních médiích"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Reklama má hlavně přesvědčit, abychom něco koupili.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď média podle toho, kdy vznikla.",
+      "items": [
+        "noviny",
+        "rozhlas",
+        "televize",
+        "internet"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč je důležité, aby média byla svobodná?",
+      "options": [
+        "mohou kontrolovat moc a informovat",
+        "aby byla zábavnější",
+        "aby nebyla reklama",
+        "aby byla levnější"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak poznáš, že je zpráva důvěryhodná?",
+      "answer": "Zjistím, kdo ji napsal a kdy, jestli ji uvádějí i jiná seriózní média a jestli má uvedené zdroje. Pozor na zprávy, které hrají jen na emoce."
+    },
+    {
+      "type": "open",
+      "question": "Jaké funkce mají média?",
+      "answer": "Informují, vzdělávají, baví a kontrolují mocné – upozorňují na chyby politiků a úřadů. Často také přinášejí reklamu."
+    }
+  ]
+}

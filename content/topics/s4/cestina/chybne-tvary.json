@@ -1,0 +1,393 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "chybne-tvary",
+  "title": "Tvarosloví – chybné tvary",
+  "emoji": "🧩",
+  "explanations": [
+    {
+      "title": "Hovorové vs. spisovné",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Kdybysme to věděli, šli bysme s dětma.“ Takhle mluví spousta lidí. Ve spisovném textu je tu ale hned několik chyb. Test i písemná práce je hledají."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Naučíš se rozpoznat tvary, které jsou běžné v mluvě, ale do spisovného textu nepatří – a opravit je."
+        },
+        {
+          "type": "term",
+          "term": "Spisovný tvar",
+          "definition": "Tvar uznaný v pravidlech a slovnících; patří do písemných a oficiálních textů.",
+          "example": "*bychom, s dětmi*"
+        },
+        {
+          "type": "term",
+          "term": "Nespisovný tvar",
+          "definition": "Tvar z běžné mluvy, který v pravidlech spisovné češtiny není.",
+          "example": "*bysme, s dětma*"
+        },
+        {
+          "type": "term",
+          "term": "Podmiňovací způsob (kondicionál)",
+          "definition": "Tvar slovesa pro podmínku nebo přání. Tvoří se se slovy *bych, bys, by, bychom, byste, by*.",
+          "example": "*Šel bych. Kdybychom věděli…*"
+        },
+        {
+          "type": "heading",
+          "text": "Kondicionál krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "já → **bych** (ne *by jsem*)",
+            "ty → **bys** (ne *by jsi*)",
+            "on, ona, ono → **by**",
+            "my → **bychom** (ne *bysme*)",
+            "vy → **byste** (ne *by jste*)",
+            "oni → **by**",
+            "Totéž s *aby-* a *kdyby-*: *abychom, kdybyste* – píše se dohromady."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti nespisovný tvar, řekni spisovný a pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "abysme",
+                "back": "abychom"
+              },
+              {
+                "front": "by jste",
+                "back": "byste"
+              },
+              {
+                "front": "se dvěmi",
+                "back": "se dvěma"
+              },
+              {
+                "front": "oběmi rukami",
+                "back": "oběma rukama"
+              },
+              {
+                "front": "by jsem",
+                "back": "bych"
+              },
+              {
+                "front": "s dětma",
+                "back": "s dětmi"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Oprav: *Mohli by jste mi pomoct?*",
+          "answer": "2. osoba množného čísla (vy) → **byste**: *Mohli byste mi pomoct?*"
+        },
+        {
+          "type": "example",
+          "question": "Oprav: *Lidi přišli pozdě.*",
+          "answer": "*Lidi* je spisovně jen 4. pád (*vidím lidi*). V 1. pádě (kdo přišel?) je spisovně **lidé**: *Lidé přišli pozdě.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kdyby jsme to věděli, přišli by jsme.",
+          "right": "Kdybychom to věděli, přišli bychom.",
+          "why": "Tvary *by jsme, by jste* jsou nespisovné. Spisovně *bychom, byste* (a *kdybychom* dohromady)."
+        },
+        {
+          "type": "summary",
+          "text": "Kondicionál: bych, bys, by, bychom, byste, by – nikdy *bysme* ani *by jste*. Spisovně: s dětmi, lidé (1. pád), se dvěma."
+        }
+      ]
+    },
+    {
+      "title": "Podle pádů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Číslovky *dva, tři, čtyři* a slova *oči, uši, ruce, nohy* mají zvláštní tvary. Lidé v nich často chybují – *se dvěmi*, *oběmi rukami*. Má to ale svou logiku."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Tyto tvary jsou v testu skoro pokaždé. Stačí si zapamatovat malou tabulku."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pád",
+          "definition": "Tvar podle otázky. 3. pád = komu? čemu? 7. pád = s kým? čím?",
+          "example": "*se dvěma* (s kým?)"
+        },
+        {
+          "type": "term",
+          "term": "Číslovka",
+          "definition": "Slovo, které vyjadřuje počet nebo pořadí.",
+          "example": "*dva, tři, oba*"
+        },
+        {
+          "type": "term",
+          "term": "Dvojné číslo (duál)",
+          "definition": "Starý tvar pro **dvojice**. Dnes zbyl jen u párových částí těla a číslovek *dva, oba*.",
+          "example": "*očima, ušima, rukama, nohama*; *dvěma, oběma*"
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka číslovek"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Číslovka",
+            "3. pád",
+            "7. pád"
+          ],
+          "rows": [
+            [
+              "dva / dvě",
+              "dvěma",
+              "dvěma"
+            ],
+            [
+              "oba / obě",
+              "oběma",
+              "oběma"
+            ],
+            [
+              "tři",
+              "třem",
+              "třemi"
+            ],
+            [
+              "čtyři",
+              "čtyřem",
+              "čtyřmi"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "*Dvěma* a *oběma* platí pro 3. i 7. pád (zbytek duálu). Tvar *dvěmi* neexistuje."
+        },
+        {
+          "type": "heading",
+          "text": "Párové části těla"
+        },
+        {
+          "type": "text",
+          "text": "V 7. pádě mají *oči, uši, ruce, nohy* duálovou koncovku **-ma**: *očima, ušima, rukama, nohama*. Pozor: *na vlastní oči* je 4. pád (na co?), proto *oči*."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zeptej se pádovou otázkou a podívej se do tabulky."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Kdy",
+                "after": " přišli dřív…",
+                "options": [
+                  "bysme",
+                  "bychom"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "Mezi ",
+                "after": " domy je park.",
+                "options": [
+                  "dvěma",
+                  "dvěmi"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Viděl to na vlastní ",
+                "after": ".",
+                "options": [
+                  "oči",
+                  "očima"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Přišli všichni ",
+                "after": ".",
+                "options": [
+                  "lidé",
+                  "lidi"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Mluvil se ___ žáky.* (čtyři)",
+          "answer": "S kým? → 7. pád. Z tabulky: **čtyřmi**. (*čtyřma* je nespisovné.)"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Držel to ___ rukama.* (oba)",
+          "answer": "Čím? → 7. pád. *Oba* má duálový tvar **oběma**: *oběma rukama*."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Šel tam se dvěmi kamarády.",
+          "right": "Šel tam se dvěma kamarády.",
+          "why": "*Dva* má v 7. pádě tvar *dvěma* (zbytek dvojného čísla). Tvar *dvěmi* je chybný, vznikl podle *třemi*."
+        },
+        {
+          "type": "summary",
+          "text": "dvěma, oběma = 3. i 7. pád; třemi, čtyřmi = 7. pád. Párové části těla v 7. pádě: očima, ušima, rukama, nohama."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Vyber spisovný tvar.",
+      "options": [
+        "Kdybysme věděli…",
+        "Kdybychom věděli…",
+        "Kdyby jsme věděli…"
+      ],
+      "answer": 1,
+      "explanation": "1. os. pl. kondicionálu = bychom."
+    },
+    {
+      "type": "choice",
+      "question": "Vyber spisovný tvar.",
+      "options": [
+        "Mohli by jste mi pomoct?",
+        "Mohli byste mi pomoct?",
+        "Mohli bysme mi pomoct?"
+      ],
+      "answer": 1,
+      "explanation": "2. os. pl. = byste."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Se dvěmi kamarády“ je spisovně.",
+      "answer": false,
+      "explanation": "Správně: se dvěma kamarády."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: „Držel to ___ rukama.“",
+      "options": [
+        "oběmi",
+        "oběma",
+        "obouma"
+      ],
+      "answer": 1,
+      "explanation": "7. pád = oběma."
+    },
+    {
+      "type": "choice",
+      "question": "Doplň: „Mluvil se ___ žáky.“",
+      "options": [
+        "čtyřmi",
+        "čtyřma",
+        "čtyřem"
+      ],
+      "answer": 0,
+      "explanation": "7. pád číslovky čtyři = čtyřmi."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Viděl jsem to na vlastní oči.“ je spisovně.",
+      "answer": true,
+      "explanation": "Po předložce „na“ jde o 4. pád (na co?) – oči. „Očima“ je 7. pád (čím?)."
+    },
+    {
+      "type": "input",
+      "question": "Oprav hovorový tvar: „s dětma“ → s …",
+      "answers": [
+        "dětmi"
+      ],
+      "explanation": "Dítě má v 7. pl. tvar dětmi."
+    },
+    {
+      "type": "choice",
+      "question": "Ve které větě je chyba?",
+      "options": [
+        "Lidé se smáli.",
+        "Pozval jsem všechny lidi.",
+        "Lidi přišli pozdě.",
+        "Mluvil s lidmi."
+      ],
+      "answer": 2,
+      "explanation": "Spisovný 1. pád: lidé."
+    },
+    {
+      "type": "match",
+      "question": "Spoj hovorový tvar se spisovným.",
+      "pairs": [
+        [
+          "bysme",
+          "bychom"
+        ],
+        [
+          "dvěmi",
+          "dvěma"
+        ],
+        [
+          "s nohami (pár)",
+          "s nohama"
+        ],
+        [
+          "by jsem",
+          "bych"
+        ]
+      ],
+      "explanation": "Typické chyby z DT."
+    },
+    {
+      "type": "truefalse",
+      "question": "„Kdybych to věděl, přišel bych.“ je spisovně.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Uveď tři tvary, ve kterých se hovorová čeština liší od spisovné, a oprav je.",
+      "answer": "Např. „abysme“ → abychom, „by jste“ → byste, „se dvěmi“ → se dvěma, „s dětma“ → s dětmi, „lidi přišli“ → lidé přišli."
+    },
+    {
+      "type": "open",
+      "question": "Proč říkáme „očima“, ale „očí“ ve 2. pádě?",
+      "answer": "Oči, uši, ruce a nohy mají zbytky dvojného čísla (duálu). Ve 3. a 7. pádě mají koncovku -ma (očima, rukama), v ostatních pádech tvary množného čísla."
+    }
+  ]
+}

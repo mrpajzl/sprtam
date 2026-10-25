@@ -1,0 +1,410 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nerosty",
+  "title": "Nerosty",
+  "emoji": "💎",
+  "explanations": [
+    {
+      "title": "Detektiv nerostů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Najdeš lesklý žlutý kámen. Je to zlato? Nebo jen „kočičí zlato“? Geolog to pozná během minuty pomocí několika jednoduchých zkoušek – jako detektiv podle stop."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se, co je nerost, a jakými zkouškami se nerosty určují."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Nerost (minerál)",
+          "definition": "Přírodní látka, která má všude **stejné chemické složení**. Většinou tvoří krystaly.",
+          "example": "Kuchyňská sůl (halit), křemen, diamant."
+        },
+        {
+          "type": "term",
+          "term": "Krystal",
+          "definition": "Těleso s rovnými plochami a ostrými hranami. Vzniká, když se drobné částice látky skládají pravidelně jako kostky lega."
+        },
+        {
+          "type": "term",
+          "term": "Hornina",
+          "definition": "Směs jednoho nebo více nerostů. Nerosty jsou „ingredience“, hornina je „těsto“.",
+          "example": "Žula je hornina ze tří nerostů."
+        },
+        {
+          "type": "heading",
+          "text": "Zkoušky krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Barva** – první dojem, ale klame: jeden nerost může mít více barev.",
+            "**Vryp** – přejeď nerostem po neglazované porcelánové destičce. Barva prášku je spolehlivější než barva kusu.",
+            "**Lesk** – kovový, skelný, matný, perleťový…",
+            "**Tvrdost** – co do nerostu rýpne a do čeho rýpne on.",
+            "**Štěpnost** – jestli se láme podle rovných ploch.",
+            "Zvláštní zkoušky: přitahuje magnet? Šumí po kápnutí kyseliny?"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty. Ke každému nerostu si zkus nejdřív vybavit poznávací znak."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "pyrit",
+                "back": "zlatožlutý, kovový lesk, černý vryp – „kočičí zlato“"
+              },
+              {
+                "front": "kalcit",
+                "back": "šumí po kápnutí kyseliny"
+              },
+              {
+                "front": "magnetit",
+                "back": "přitahuje magnet, ruda železa"
+              },
+              {
+                "front": "grafit",
+                "back": "měkký, černý, píše – tužky"
+              },
+              {
+                "front": "halit",
+                "back": "slaná chuť – kuchyňská sůl"
+              },
+              {
+                "front": "ametyst",
+                "back": "fialová odrůda křemene"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Žlutý lesklý kámen dělá na porcelánu černou čáru. Je to zlato?",
+          "answer": "Zlato má **zlatožlutý** vryp. Černý vryp a zlatá barva prozrazují **pyrit** – „kočičí zlato“."
+        },
+        {
+          "type": "example",
+          "question": "Na bílý kámen kápneš zředěnou kyselinu a začne šumět. Co to je?",
+          "answer": "Šumění (uvolňuje se oxid uhličitý) je typické pro **kalcit**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nerost a hornina je totéž.",
+          "right": "Hornina je směs jednoho nebo více nerostů.",
+          "why": "Žula je hornina z křemene, živce a slídy. Křemen sám je nerost."
+        },
+        {
+          "type": "summary",
+          "text": "Nerost je přírodní látka stálého složení, často krystal. Určujeme ho podle barvy, vrypu, lesku, tvrdosti, štěpnosti a zvláštních zkoušek."
+        }
+      ]
+    },
+    {
+      "title": "Mohsova stupnice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč se diamantem řeže sklo, ale tuhou z tužky jen píše? Obojí je přitom ze stejné látky – z uhlíku. Liší se **tvrdostí**."
+        },
+        {
+          "type": "text",
+          "text": "Tvrdost je jedna z nejužitečnějších vlastností nerostů. Naučíš se ji určit pomocí stupnice deseti nerostů a pochopíš, k čemu člověk různé nerosty využívá."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Nerost",
+          "definition": "Přírodní látka se stálým chemickým složením, obvykle v podobě krystalů."
+        },
+        {
+          "type": "term",
+          "term": "Tvrdost",
+          "definition": "Jak těžko se do nerostu dá udělat rýha. Tvrdší nerost rýpne do měkčího, ne naopak."
+        },
+        {
+          "type": "term",
+          "term": "Mohsova stupnice",
+          "definition": "Řada 10 nerostů seřazených od nejměkčího (1) po nejtvrdší (10). Každý rýpne do všech před ním."
+        },
+        {
+          "type": "heading",
+          "text": "Stupnice"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tvrdost",
+            "Nerost",
+            "Pro srovnání"
+          ],
+          "rows": [
+            [
+              "1",
+              "mastek",
+              "rýpneš nehtem snadno"
+            ],
+            [
+              "2",
+              "sádrovec",
+              "rýpneš nehtem"
+            ],
+            [
+              "3",
+              "kalcit",
+              "rýpne měděná mince"
+            ],
+            [
+              "4",
+              "fluorit",
+              ""
+            ],
+            [
+              "5",
+              "apatit",
+              "rýpne nůž"
+            ],
+            [
+              "6",
+              "živec",
+              "rýpne do skla"
+            ],
+            [
+              "7",
+              "křemen",
+              "rýpne do skla snadno"
+            ],
+            [
+              "8",
+              "topaz",
+              ""
+            ],
+            [
+              "9",
+              "korund",
+              ""
+            ],
+            [
+              "10",
+              "diamant",
+              "nejtvrdší přírodní nerost"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak určit tvrdost"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vezmi neznámý nerost a zkus do něj rýpnout nerosty ze stupnice.",
+            "Najdi nejměkčí nerost, který do něj **rýpne**.",
+            "Najdi nejtvrdší nerost, do kterého **rýpne on**.",
+            "Tvrdost leží mezi nimi."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď nerosty: rýpneš do nich nehtem (tvrdost do 2), nebo ne?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Nehet rýpne",
+              "Nehet nerýpne"
+            ],
+            "items": [
+              {
+                "text": "mastek",
+                "group": 0
+              },
+              {
+                "text": "křemen",
+                "group": 1
+              },
+              {
+                "text": "sádrovec",
+                "group": 0
+              },
+              {
+                "text": "diamant",
+                "group": 1
+              },
+              {
+                "text": "grafit",
+                "group": 0
+              },
+              {
+                "text": "živec",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Do neznámého nerostu rýpne křemen, ale on rýpne do živce. Jaká je jeho tvrdost?",
+          "answer": "Rýpne do živce (6) → je tvrdší než 6. Křemen (7) do něj rýpne → je měkčí než 7. Tvrdost je **mezi 6 a 7**."
+        },
+        {
+          "type": "example",
+          "question": "Diamant i grafit jsou z uhlíku. Proč je jeden nejtvrdší a druhý měkký?",
+          "answer": "Rozhoduje, jak jsou atomy uhlíku uspořádané. V diamantu jsou pevně propojené na všechny strany. V grafitu tvoří vrstvy, které po sobě kloužou – proto grafit píše."
+        },
+        {
+          "type": "text",
+          "text": "Využití: **grafit** – tuhy, **halit** – kuchyňská sůl, **sádrovec** – sádra, **magnetit** – výroba železa, **křemen** – sklo, **diamant** – šperky a řezné nástroje."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Tvrdost 10 je dvakrát víc než tvrdost 5.",
+          "right": "Stupnice jen řadí nerosty podle toho, kdo do koho rýpne.",
+          "why": "Čísla jsou pořadí, ne násobky. Diamant je ve skutečnosti mnohonásobně tvrdší než korund (9)."
+        },
+        {
+          "type": "summary",
+          "text": "Mohsova stupnice: 1 mastek … 3 kalcit … 7 křemen … 10 diamant. Tvrdší rýpne do měkčího. Diamant a grafit jsou oba z uhlíku."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jakou tvrdost má diamant na Mohsově stupnici?",
+      "answers": [
+        "10"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Nejměkčí nerost Mohsovy stupnice je…",
+      "options": [
+        "mastek",
+        "sádrovec",
+        "kalcit"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejměkčího.",
+      "items": [
+        "mastek",
+        "kalcit",
+        "křemen",
+        "diamant"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který nerost šumí po kápnutí kyseliny?",
+      "options": [
+        "kalcit",
+        "křemen",
+        "grafit"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj nerost s využitím.",
+      "pairs": [
+        [
+          "grafit",
+          "tužky"
+        ],
+        [
+          "halit",
+          "kuchyňská sůl"
+        ],
+        [
+          "sádrovec",
+          "sádra"
+        ],
+        [
+          "magnetit",
+          "železo"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Diamant a grafit jsou tvořeny uhlíkem.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Barva prášku nerostu (otěr na porcelánu) se nazývá…",
+      "options": [
+        "vryp",
+        "lesk",
+        "štěpnost"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ametyst je fialová odrůda křemene.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Pyrit se kvůli barvě přezdívá…",
+      "options": [
+        "kočičí zlato",
+        "bílé zlato",
+        "černé zlato"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Nerost a hornina jsou totéž.",
+      "answer": false,
+      "explanation": "Hornina je směs jednoho či více nerostů."
+    },
+    {
+      "type": "open",
+      "question": "Jak zjistíš tvrdost neznámého nerostu?",
+      "answer": "Zkusím, který nerost Mohsovy stupnice do něj rýpne a do kterého rýpne on. Tvrdost leží mezi nimi."
+    },
+    {
+      "type": "open",
+      "question": "Jaké vlastnosti pomáhají nerosty určit?",
+      "answer": "Barva, vryp, lesk, tvrdost, štěpnost, hustota, tvar krystalů, případně magnetismus nebo reakce s kyselinou."
+    }
+  ]
+}

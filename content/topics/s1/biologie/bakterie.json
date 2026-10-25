@@ -1,0 +1,434 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "bakterie",
+  "title": "Bakterie a sinice",
+  "emoji": "🦠",
+  "explanations": [
+    {
+      "title": "Stavba",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Bakterie jsou všude: v půdě, ve vodě, na tvé kůži a hlavně ve střevech – je jich tam podobně mnoho jako buněk celého tvého těla. Většina je neškodná nebo dokonce užitečná, některé ale způsobují nemoci."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, jak je bakterie postavená, pochopíš, jak působí antibiotika, proč vzniká rezistence a jak bakterie přežijí i vaření."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Prokaryota",
+          "definition": "Organismy z jedné jednoduché buňky **bez jádra**. Patří sem bakterie (včetně sinic) a archea."
+        },
+        {
+          "type": "term",
+          "term": "DNA",
+          "definition": "Molekula s dědičnou informací – návod na stavbu a chod buňky."
+        },
+        {
+          "type": "term",
+          "term": "Nukleoid",
+          "definition": "Místo v buňce bakterie, kde leží její **kruhová DNA** – volně, bez jaderného obalu."
+        },
+        {
+          "type": "term",
+          "term": "Plazmid",
+          "definition": "Malá kruhová DNA navíc, mimo nukleoid. Často nese užitečné geny, např. **odolnost (rezistenci) vůči antibiotikům**."
+        },
+        {
+          "type": "term",
+          "term": "Peptidoglykan (murein)",
+          "definition": "Látka, ze které je **buněčná stěna** bakterií. Rostliny mají stěnu z celulózy, houby z chitinu."
+        },
+        {
+          "type": "heading",
+          "text": "Části bakterie"
+        },
+        {
+          "type": "text",
+          "text": "U každé karty si nejdřív zkus říct funkci, pak otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "buněčná stěna",
+                "back": "peptidoglykan (murein) – pevnost a tvar"
+              },
+              {
+                "front": "nukleoid",
+                "back": "kruhová DNA bez jaderného obalu"
+              },
+              {
+                "front": "plazmid",
+                "back": "malá kruhová DNA, např. geny rezistence"
+              },
+              {
+                "front": "ribozomy 70S",
+                "back": "výroba bílkovin"
+              },
+              {
+                "front": "bičík",
+                "back": "pohyb"
+              },
+              {
+                "front": "pouzdro",
+                "back": "ochrana, slizový obal"
+              },
+              {
+                "front": "pilus",
+                "back": "vlákno pro přenos DNA do jiné bakterie"
+              },
+              {
+                "front": "endospora",
+                "back": "odolné klidové stadium"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Rozmnožování a výměna genů"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Příčné dělení** – buňka zkopíruje DNA a rozdělí se na dvě. Za dobrých podmínek i každých 20 minut.",
+            "**Konjugace** – bakterie přes **pilus** předá jiné bakterii kus DNA (často plazmid). Není to rozmnožování, ale výměna genů.",
+            "**Endospora** – v nepříznivých podmínkách se bakterie stáhne do odolného obalu a přežije vysokou teplotu i sucho."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Rezistence",
+          "definition": "Odolnost bakterie vůči antibiotiku – antibiotikum ji přestane zabíjet."
+        },
+        {
+          "type": "example",
+          "question": "Proč je nebezpečné brát antibiotika „pro jistotu“ nebo léčbu nedobrat?",
+          "answer": "Antibiotikum zabije citlivé bakterie, ale **přežijí odolné**. Ty se pomnoží a geny rezistence si navíc předávají konjugací v plazmidech. Antibiotika pak přestanou účinkovat."
+        },
+        {
+          "type": "example",
+          "question": "Proč se konzervy v továrnách sterilizují pod tlakem při teplotě kolem 121 °C, a ne jen varem?",
+          "answer": "Některé bakterie (např. *Clostridium*) tvoří **endospory**, které přežijí i var. Zničí je až vyšší teplota pod tlakem."
+        },
+        {
+          "type": "heading",
+          "text": "Sinice"
+        },
+        {
+          "type": "term",
+          "term": "Sinice (cyanobakterie)",
+          "definition": "Bakterie, které provádějí **fotosyntézu a uvolňují kyslík** jako rostliny. Některé umějí vázat dusík ze vzduchu ve speciálních buňkách – **heterocytech**.",
+          "example": "Při přemnožení v teplé vodě tvoří zelený **vodní květ**, který může být jedovatý."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Endospora je způsob, jak se bakterie rozmnožuje.",
+          "right": "Endospora je **odolné klidové stadium**. Bakterie se rozmnožuje příčným dělením.",
+          "why": "Z jedné bakterie vznikne jedna endospora a z ní zase jedna bakterie – počet se nezvýší."
+        },
+        {
+          "type": "summary",
+          "text": "Bakterie: prokaryota bez jádra, kruhová DNA v nukleoidu, plazmidy, stěna z peptidoglykanu. Množí se příčným dělením, geny si předávají konjugací. Sinice fotosyntetizují a uvolňují kyslík."
+        }
+      ]
+    },
+    {
+      "title": "Tvary a nemoci",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když lékař posílá vzorek do laboratoře, první otázky zní: Jaký tvar má bakterie? Jak se obarví? Podle toho se určí, o kterou jde a jaké antibiotikum zabere. A biolog se ptá i na užitek: kdo rozkládá listí, kdo vyrábí jogurt, kdo hnojí půdu."
+        },
+        {
+          "type": "text",
+          "text": "Tady se naučíš bakterie rozpoznávat, poznáš hlavní původce nemocí i užitečné bakterie."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Bakterie",
+          "definition": "Jednobuněčné **prokaryotní** organismy – jejich buňka nemá jádro. Mají buněčnou stěnu z **peptidoglykanu**."
+        },
+        {
+          "type": "term",
+          "term": "Patogen",
+          "definition": "Organismus, který způsobuje nemoc. Patogenní bakterie jsou jen malá část všech bakterií."
+        },
+        {
+          "type": "term",
+          "term": "Antibiotikum",
+          "definition": "Látka, která zabíjí bakterie nebo zastaví jejich množení. První, **penicilin**, objevil **Alexander Fleming** (1928) – v plísni štětičkovci."
+        },
+        {
+          "type": "heading",
+          "text": "Tvary"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**koky** – kulovité (streptokoky v řetízcích, stafylokoky ve shlucích)",
+            "**tyčinky (bacily)** – protáhlé (*Escherichia coli*, *Mycobacterium tuberculosis*)",
+            "**spirálovité** – zahnuté do spirály (borelie, treponema)",
+            "**vibria** – zahnutá jako čárka (*Vibrio cholerae*)"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď bakterie podle tvaru."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Koky (kulovité)",
+              "Tyčinky",
+              "Spirálovité"
+            ],
+            "items": [
+              {
+                "text": "streptokok",
+                "group": 0
+              },
+              {
+                "text": "Escherichia coli",
+                "group": 1
+              },
+              {
+                "text": "borelie",
+                "group": 2
+              },
+              {
+                "text": "stafylokok",
+                "group": 0
+              },
+              {
+                "text": "Bacillus anthracis",
+                "group": 1
+              },
+              {
+                "text": "treponema (syfilis)",
+                "group": 2
+              },
+              {
+                "text": "Mycobacterium tuberculosis",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Gramovo barvení"
+        },
+        {
+          "type": "term",
+          "term": "Gramovo barvení",
+          "definition": "Laboratorní barvení, které rozdělí bakterie podle stavby stěny. **Grampozitivní (G+)** mají silnou vrstvu peptidoglykanu a zbarví se **fialově**. **Gramnegativní (G−)** mají tenkou vrstvu a navíc **vnější membránu** – zbarví se **růžově**."
+        },
+        {
+          "type": "heading",
+          "text": "Bakterie a nemoci"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Nemoc",
+            "Původce",
+            "Přenos"
+          ],
+          "rows": [
+            [
+              "tuberkulóza",
+              "*Mycobacterium tuberculosis*",
+              "kapénky"
+            ],
+            [
+              "tetanus",
+              "*Clostridium tetani*",
+              "znečištěná rána"
+            ],
+            [
+              "borelióza",
+              "*Borrelia*",
+              "klíště"
+            ],
+            [
+              "cholera",
+              "*Vibrio cholerae*",
+              "znečištěná voda"
+            ],
+            [
+              "angína, spála",
+              "streptokoky",
+              "kapénky"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Užitečné bakterie"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**rozkladači** – rozkládají mrtvá těla a listí na živiny",
+            "**hlízkové bakterie** na kořenech bobovitých (hrách, jetel) **vážou vzdušný dusík** a hnojí půdu",
+            "**střevní mikroflóra** – pomáhá trávit a tvoří vitamin K",
+            "**mléčné bakterie** – jogurty, kysané zelí, sýry",
+            "**sinice** – fotosyntéza, uvolňují kyslík"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Bakterie se po Gramově barvení zbarví růžově. Co víš o její stěně?",
+          "answer": "Je **gramnegativní**: má tenkou vrstvu peptidoglykanu a **vnější membránu**. Ta jí často pomáhá odolávat některým antibiotikům."
+        },
+        {
+          "type": "example",
+          "question": "Proč zemědělci střídají obilí s hrachem nebo jetelem?",
+          "answer": "Na kořenech bobovitých žijí **hlízkové bakterie**, které vážou dusík ze vzduchu. Půda se tak přirozeně pohnojí dusíkem pro další plodinu."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Všechny bakterie jsou škodlivé.",
+          "right": "Většina bakterií je neškodná nebo užitečná. Nemoci působí jen malá část.",
+          "why": "Bez bakterií by se nerozkládala mrtvá hmota, chyběl by dusík v půdě a nefungovalo by naše trávení."
+        },
+        {
+          "type": "summary",
+          "text": "Tvary: koky, tyčinky, spirály, vibria. Gram: G+ fialové (silný peptidoglykan), G− růžové (vnější membrána). Bakterie působí nemoci, ale hlavně rozkládají, vážou dusík a pomáhají trávit."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Buněčná stěna bakterií je z…",
+      "options": [
+        "peptidoglykanu",
+        "celulózy",
+        "chitinu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kulovité bakterie jsou…",
+      "options": [
+        "koky",
+        "bacily",
+        "spirily"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Malá kruhová molekula DNA mimo nukleoid je…",
+      "answers": [
+        "plazmid",
+        "plasmid"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Sinice uvolňují při fotosyntéze kyslík.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj nemoc s původcem.",
+      "pairs": [
+        [
+          "tuberkulóza",
+          "Mycobacterium"
+        ],
+        [
+          "tetanus",
+          "Clostridium"
+        ],
+        [
+          "borelióza",
+          "Borrelia"
+        ],
+        [
+          "cholera",
+          "Vibrio"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo objevil penicilin?",
+      "options": [
+        "Alexander Fleming",
+        "Robert Koch",
+        "Louis Pasteur"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Gramnegativní bakterie mají vnější membránu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Přenos genetické informace mezi bakteriemi pomocí pilusu je…",
+      "options": [
+        "konjugace",
+        "mitóza",
+        "meióza"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Endospora je způsob rozmnožování bakterií.",
+      "answer": false,
+      "explanation": "Je to odolné klidové stadium, ne rozmnožování."
+    },
+    {
+      "type": "choice",
+      "question": "Hlízkové bakterie na kořenech bobovitých…",
+      "options": [
+        "váží vzdušný dusík",
+        "způsobují hnilobu",
+        "tvoří škrob"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Uveď význam bakterií pro přírodu a člověka.",
+      "answer": "Rozkládají organickou hmotu, váží dusík, tvoří střevní mikroflóru, využívají se v potravinářství (jogurty) a biotechnologiích. Některé jsou patogenní."
+    },
+    {
+      "type": "open",
+      "question": "Proč je nadužívání antibiotik nebezpečné?",
+      "answer": "Přežívají odolné bakterie a šíří geny rezistence (i plazmidy), takže antibiotika přestávají účinkovat."
+    }
+  ]
+}

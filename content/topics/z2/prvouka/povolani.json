@@ -1,0 +1,358 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "povolani",
+  "title": "Lidé a povolání",
+  "emoji": "👩‍🚒",
+  "explanations": [
+    {
+      "title": "Kdo to je",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ráno si koupíš rohlík. Kdo ho upekl? Jedeš autobusem. Kdo ho řídí? Za každou věcí je práce nějakého člověka."
+        },
+        {
+          "type": "text",
+          "text": "Dospělí chodí do práce. Každý dělá něco jiného. Díky tomu máme jídlo, domy, lékaře i školu."
+        },
+        {
+          "type": "term",
+          "term": "Povolání",
+          "definition": "Práce, kterou člověk dělá a za kterou dostává peníze.",
+          "example": "Pekař peče chleba. To je jeho povolání."
+        },
+        {
+          "type": "term",
+          "term": "Výplata",
+          "definition": "Peníze, které člověk dostane za svou práci. Kupuje za ně jídlo a platí bydlení.",
+          "example": "Máma dostala výplatu."
+        },
+        {
+          "type": "heading",
+          "text": "Kdo co dělá"
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. Nejdřív zkus říct sám, co ten člověk dělá."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "👩‍⚕️ lékařka",
+                "back": "léčí nemocné"
+              },
+              {
+                "front": "👨‍🚒 hasič",
+                "back": "hasí požáry a zachraňuje"
+              },
+              {
+                "front": "👮 policista",
+                "back": "chrání pořádek"
+              },
+              {
+                "front": "👨‍🍳 kuchař",
+                "back": "vaří jídlo"
+              },
+              {
+                "front": "👩‍🌾 zemědělka",
+                "back": "pěstuje plodiny a chová zvířata"
+              },
+              {
+                "front": "👷 zedník",
+                "back": "staví domy"
+              },
+              {
+                "front": "🧑‍✈️ pilot",
+                "back": "řídí letadlo"
+              },
+              {
+                "front": "🐶 veterinář",
+                "back": "léčí zvířata"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Pejsek je nemocný. Ke komu s ním půjdeme?",
+          "answer": "Lidi léčí lékař, ale zvířata léčí **veterinář**."
+        },
+        {
+          "type": "example",
+          "question": "Kdo pracuje na poli?",
+          "answer": "Pole obdělává a sklízí **zemědělec**. Knihovník pracuje v knihovně, prodavač v obchodě."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Zubař opravuje auta.",
+          "right": "Zubař ošetřuje zuby. Auta opravuje automechanik.",
+          "why": "Každé povolání má svou práci. Jméno často napoví: zub-ař → zuby."
+        },
+        {
+          "type": "text",
+          "text": "Všechna povolání jsou důležitá. Bez uklízečky by byl nepořádek, bez řidiče bychom nedojeli do práce."
+        },
+        {
+          "type": "summary",
+          "text": "Povolání = práce, kterou člověk dělá. Každá práce je důležitá."
+        }
+      ]
+    },
+    {
+      "title": "Čím pracuje",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když vidíš člověka s hadicí a v helmě, hned víš: je to hasič. Povolání často poznáš podle věcí, se kterými člověk pracuje."
+        },
+        {
+          "type": "text",
+          "text": "Těmto věcem říkáme nástroje. Hrát si na povolání je zábava – a když víš, čím kdo pracuje, poznáš ho i na obrázku."
+        },
+        {
+          "type": "term",
+          "term": "Nástroj",
+          "definition": "Věc, kterou si člověk pomáhá při práci.",
+          "example": "Kladivo, nůžky, štětec."
+        },
+        {
+          "type": "term",
+          "term": "Povolání",
+          "definition": "Práce, kterou člověk dělá, aby si vydělal peníze a pomohl ostatním.",
+          "example": "kadeřnice, malíř, řidič"
+        },
+        {
+          "type": "heading",
+          "text": "Povolání a nástroje"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Povolání",
+            "Nástroj"
+          ],
+          "rows": [
+            [
+              "kadeřnice",
+              "nůžky, hřeben"
+            ],
+            [
+              "malíř",
+              "štětec, barvy"
+            ],
+            [
+              "kuchař",
+              "vařečka, hrnec"
+            ],
+            [
+              "řidič",
+              "auto, autobus"
+            ],
+            [
+              "prodavač",
+              "pokladna"
+            ],
+            [
+              "lékař",
+              "stetoskop"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Stetoskop",
+          "definition": "Hadičky do uší s kulatým koncem. Lékař jím poslouchá srdce a dech.",
+          "example": "Doktorka mi stetoskopem poslouchala plíce."
+        },
+        {
+          "type": "heading",
+          "text": "Jak na to"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Podívám se, co člověk drží nebo má na sobě.",
+            "Zeptám se: k čemu ta věc slouží?",
+            "Kdo takovou práci dělá? → to je povolání."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď nástroje k povolání."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "kuchař 👨‍🍳",
+              "kadeřnice 💇",
+              "malíř 🎨"
+            ],
+            "items": [
+              {
+                "text": "vařečka",
+                "group": 0
+              },
+              {
+                "text": "hrnec",
+                "group": 0
+              },
+              {
+                "text": "nůžky",
+                "group": 1
+              },
+              {
+                "text": "hřeben",
+                "group": 1
+              },
+              {
+                "text": "štětec",
+                "group": 2
+              },
+              {
+                "text": "barvy",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kdo používá štětec a barvy?",
+          "answer": "Štětcem se natírá a maluje. Pracuje s ním **malíř**."
+        },
+        {
+          "type": "example",
+          "question": "Kdo staví domy – zedník, nebo pilot?",
+          "answer": "Dům se staví z cihel a malty. To dělá **zedník**. Pilot řídí letadlo."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Nůžky používá jen kadeřnice.",
+          "right": "Nůžky používá kadeřnice, krejčí i zahradník.",
+          "why": "Jeden nástroj může mít víc povolání. Proto se díváš i na další věci a na to, co člověk dělá."
+        },
+        {
+          "type": "summary",
+          "text": "Každé povolání má svoje nástroje: kadeřnice nůžky, malíř štětec, kuchař vařečku, lékař stetoskop."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo hasí požár?",
+      "options": [
+        "hasič",
+        "pekař",
+        "malíř"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo peče chleba?",
+      "options": [
+        "pekař",
+        "zedník",
+        "policista"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo léčí zvířata?",
+      "options": [
+        "veterinář",
+        "zubař",
+        "kuchař"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj povolání a nástroj.",
+      "pairs": [
+        [
+          "kadeřnice",
+          "nůžky"
+        ],
+        [
+          "malíř",
+          "štětec"
+        ],
+        [
+          "kuchař",
+          "vařečka"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Policista chrání pořádek a pomáhá lidem.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Zubař opravuje auta.",
+      "answer": false,
+      "explanation": "Zubař ošetřuje zuby. Auta opravuje automechanik."
+    },
+    {
+      "type": "input",
+      "question": "Kdo staví domy? (zedník / pilot)",
+      "answers": [
+        "zedník"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo řídí letadlo?",
+      "options": [
+        "pilot",
+        "řidič tramvaje",
+        "kominík"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo pracuje na poli?",
+      "options": [
+        "zemědělec",
+        "knihovník",
+        "prodavač"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Lidé pracují mimo jiné proto, aby vydělali peníze.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Čím bys chtěl být a proč?",
+      "answer": "Například hasičem, protože chci pomáhat lidem."
+    },
+    {
+      "type": "open",
+      "question": "Jakou práci dělají tvoji rodiče?",
+      "answer": "Řeknu, jak se jmenuje jejich povolání a co při něm dělají."
+    }
+  ]
+}

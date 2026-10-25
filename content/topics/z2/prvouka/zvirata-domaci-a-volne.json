@@ -1,0 +1,358 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zvirata-domaci-a-volne",
+  "title": "Zvířata kolem nás",
+  "emoji": "🦔",
+  "explanations": [
+    {
+      "title": "Kdo kde žije",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ty bydlíš v domě nebo v bytě. Zvířata mají taky svůj domov. Kapr by v lese nepřežil a jelen nežije v rybníce."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, kde které zvíře žije, víš, kde ho hledat. A víš, proč musíme jeho domov chránit."
+        },
+        {
+          "type": "term",
+          "term": "Volně žijící zvíře",
+          "definition": "Zvíře, které žije samo v přírodě a potravu si najde samo.",
+          "example": "jelen, liška, veverka"
+        },
+        {
+          "type": "term",
+          "term": "Hospodářské zvíře",
+          "definition": "Zvíře, které chová člověk kvůli užitku: mléko, vejce, maso, vlna.",
+          "example": "kráva, koza, slepice, husa"
+        },
+        {
+          "type": "term",
+          "term": "Statek",
+          "definition": "Hospodářství na vesnici, kde lidé chovají zvířata a mají pole.",
+          "example": "Na statku je kravín a kurník."
+        },
+        {
+          "type": "heading",
+          "text": "Domovy zvířat"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Zvíře",
+            "Jeho domov"
+          ],
+          "rows": [
+            [
+              "liška",
+              "nora pod zemí"
+            ],
+            [
+              "pták",
+              "hnízdo"
+            ],
+            [
+              "včela",
+              "úl"
+            ],
+            [
+              "kapr",
+              "rybník"
+            ],
+            [
+              "kráva",
+              "kravín na statku"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď zvířata podle toho, kde žijí."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Les 🌲",
+              "Voda 💧",
+              "Statek 🏡"
+            ],
+            "items": [
+              {
+                "text": "jelen",
+                "group": 0
+              },
+              {
+                "text": "divočák",
+                "group": 0
+              },
+              {
+                "text": "veverka",
+                "group": 0
+              },
+              {
+                "text": "kapr",
+                "group": 1
+              },
+              {
+                "text": "kachna divoká",
+                "group": 1
+              },
+              {
+                "text": "žába",
+                "group": 1
+              },
+              {
+                "text": "kráva",
+                "group": 2
+              },
+              {
+                "text": "koza",
+                "group": 2
+              },
+              {
+                "text": "husa domácí",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kde žije kapr?",
+          "answer": "Kapr je ryba. Dýchá ve vodě žábrami. Žije **ve vodě** – v rybníce."
+        },
+        {
+          "type": "example",
+          "question": "Je kráva volně žijící zvíře?",
+          "answer": "Krávu chová člověk na statku kvůli mléku. Je to **hospodářské** zvíře, ne volně žijící."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Malé srnče v trávě je opuštěné, vezmu ho domů.",
+          "right": "Mláďata v přírodě nechám být.",
+          "why": "Máma je obvykle blízko a vrátí se. Když na mládě sáhneš, může ho kvůli pachu opustit."
+        },
+        {
+          "type": "summary",
+          "text": "Každé zvíře má svůj domov: les, voda, nebo statek u lidí. V přírodě se chováme tiše a zvířata neplašíme."
+        }
+      ]
+    },
+    {
+      "title": "Jak přečkají zimu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ty si v zimě vezmeš bundu a doma je teplo. Ale co zvířata venku? Je zima a málo jídla. Hmyz se schová, tráva je pod sněhem."
+        },
+        {
+          "type": "text",
+          "text": "Zvířata mají různé triky, jak zimu přežít. Některá spí, jiná odletí, další si dělají zásoby."
+        },
+        {
+          "type": "heading",
+          "text": "Tři triky"
+        },
+        {
+          "type": "term",
+          "term": "Zimní spánek",
+          "definition": "Zvíře celou zimu spí v úkrytu. Skoro se nehýbe a nejí. Žije z tuku, který si na podzim najedlo.",
+          "example": "ježek, netopýr, plch"
+        },
+        {
+          "type": "term",
+          "term": "Teplé krajiny",
+          "definition": "Země daleko na jihu, kde je v zimě teplo. Tam odlétají někteří ptáci.",
+          "example": "Vlaštovky letí do Afriky."
+        },
+        {
+          "type": "term",
+          "term": "Tažný pták",
+          "definition": "Pták, který na zimu odlétá do teplých krajin a na jaře se vrací.",
+          "example": "vlaštovka, čáp"
+        },
+        {
+          "type": "term",
+          "term": "Zásoby",
+          "definition": "Jídlo, které si zvíře schová na podzim, aby mělo co jíst v zimě.",
+          "example": "Veverka schovává oříšky."
+        },
+        {
+          "type": "term",
+          "term": "Krmelec",
+          "definition": "Dřevěná stříška v lese, kam myslivci dávají v zimě seno pro srnky a jeleny.",
+          "example": "V krmelci je seno a kaštany."
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky. Jak přečká zimu které zvíře?"
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "🦔 ježek",
+                "back": "spí zimním spánkem"
+              },
+              {
+                "front": "🐿️ veverka",
+                "back": "má zásoby oříšků"
+              },
+              {
+                "front": "🐦 vlaštovka",
+                "back": "odletí do teplých krajin"
+              },
+              {
+                "front": "🦌 srnec",
+                "back": "hledá potravu, lidé mu dají seno do krmelce"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč vlaštovka v zimě odlétá?",
+          "answer": "Vlaštovka loví hmyz ve vzduchu. V zimě tu žádný hmyz nelétá. Proto **odletí do teplých krajin**, kde potravu najde."
+        },
+        {
+          "type": "example",
+          "question": "Vrabec u nás zůstává i v zimě. Jak mu můžeš pomoct?",
+          "answer": "Vrabec není tažný pták. V zimě mu můžu dát do **krmítka** semínka."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V zimě odlétají všichni ptáci.",
+          "right": "Někteří ptáci odlétají, jiní u nás zůstávají.",
+          "why": "Vrabec, sýkora nebo kos u nás přezimují. Odlétají hlavně ti, kdo v zimě nenajdou potravu, třeba vlaštovka."
+        },
+        {
+          "type": "summary",
+          "text": "Na zimu: ježek spí zimním spánkem, vlaštovka odletí do teplých krajin, veverka má zásoby, srnkám pomáhá krmelec."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kdo spí v zimě zimním spánkem?",
+      "options": [
+        "ježek",
+        "zajíc",
+        "srna"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kdo na zimu odlétá do teplých krajin?",
+      "options": [
+        "vlaštovka",
+        "vrabec",
+        "sýkora"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde žije kapr?",
+      "options": [
+        "ve vodě",
+        "v lese",
+        "na stromě"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Veverka si dělá zásoby na zimu.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Kráva je volně žijící zvíře.",
+      "answer": false,
+      "explanation": "Krávu chová člověk – je to hospodářské zvíře."
+    },
+    {
+      "type": "input",
+      "question": "Kam dáváme v zimě seno pro srnky? Do ………",
+      "answers": [
+        "krmelce",
+        "krmelec"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj zvíře a domov.",
+      "pairs": [
+        [
+          "liška",
+          "nora"
+        ],
+        [
+          "pták",
+          "hnízdo"
+        ],
+        [
+          "včela",
+          "úl"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co nám dává slepice?",
+      "options": [
+        "vejce",
+        "vlnu",
+        "mléko"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Mláďata v lese nebereme domů.",
+      "answer": true,
+      "explanation": "Matka je obvykle nablízku a o mládě se stará."
+    },
+    {
+      "type": "choice",
+      "question": "Mládě koně je…",
+      "options": [
+        "hříbě",
+        "tele",
+        "jehně"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak zvířata přečkávají zimu?",
+      "answer": "Někdo spí zimním spánkem (ježek), někdo odletí do teplých krajin (vlaštovka) a někdo si dělá zásoby (veverka)."
+    },
+    {
+      "type": "open",
+      "question": "Jak se chováme v lese?",
+      "answer": "Nekřičíme, neodhazujeme odpadky, nelámeme stromy a neplašíme ani nebereme zvířata."
+    }
+  ]
+}

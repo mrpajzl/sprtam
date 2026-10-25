@@ -1,0 +1,466 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "elektronovy-obal",
+  "title": "Elektronový obal a konfigurace",
+  "emoji": "🌀",
+  "explanations": [
+    {
+      "title": "Hotel elektronů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč sodík bouřlivě reaguje s vodou a neon s ničím? Proč měď vede proud? Odpověď je vždy stejná: záleží na tom, **jak jsou v atomu rozmístěné elektrony**."
+        },
+        {
+          "type": "text",
+          "text": "Elektrony neobíhají jádro jen tak nahodile. Obsazují místa podle přesných pravidel – podobně jako hosté v hotelu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektronový obal",
+          "definition": "Prostor kolem jádra, ve kterém se pohybují elektrony (záporně nabité částice)."
+        },
+        {
+          "type": "term",
+          "term": "Orbital",
+          "definition": "Prostor, kde se elektron s velkou pravděpodobností vyskytuje. V hotelu je to **pokoj**. Do jednoho pokoje se vejdou **nejvýš 2 elektrony**."
+        },
+        {
+          "type": "term",
+          "term": "Vrstva (slupka)",
+          "definition": "Skupina orbitalů s podobnou energií. V hotelu je to **patro**. Číslují se n = 1, 2, 3… Čím vyšší n, tím dál od jádra a tím vyšší energie."
+        },
+        {
+          "type": "term",
+          "term": "Typy orbitalů s, p, d, f",
+          "definition": "Pokoje mají různé tvary. Typ **s** je jeden kulatý pokoj, **p** jsou 3 pokoje, **d** 5 pokojů, **f** 7 pokojů.",
+          "example": "Na 2. patře je jeden pokoj 2s a tři pokoje 2p."
+        },
+        {
+          "type": "term",
+          "term": "Spin",
+          "definition": "Vlastnost elektronu, kterou si můžeš představit jako „otáčení“ na jednu, nebo druhou stranu. Kreslí se šipkou ⬆️ nebo ⬇️."
+        },
+        {
+          "type": "heading",
+          "text": "Tři pravidla hotelu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Výstavbový princip:** hosté se ubytují nejdřív v nejlevnějších pokojích – elektrony obsazují orbitaly od **nejnižší energie**.",
+            "**Pauliho princip:** v jednom pokoji jsou nejvýš **dva** hosté, a to s **opačným spinem** ⬆️⬇️.",
+            "**Hundovo pravidlo:** když je na patře víc stejných pokojů (třeba tři p), hosté se nejdřív rozmístí **po jednom** se stejným spinem, teprve pak se k nim přidávají druzí."
+          ]
+        },
+        {
+          "type": "picture",
+          "items": [
+            "2s",
+            "⬆️⬇️",
+            "2p",
+            "⬆️⬇️",
+            "⬆️",
+            "⬆️"
+          ],
+          "caption": "kyslík: 2s² 2p⁴ – v p-pokojích jsou dva elektrony sami"
+        },
+        {
+          "type": "term",
+          "term": "Elektronová konfigurace",
+          "definition": "Zápis, kde jsou elektrony ubytované. Číslo = vrstva, písmeno = typ orbitalu, horní index = počet elektronů.",
+          "example": "1s² 2s² 2p⁴ – kyslík (celkem 2 + 2 + 4 = 8 elektronů)."
+        },
+        {
+          "type": "heading",
+          "text": "Pozor na 4. patro"
+        },
+        {
+          "type": "text",
+          "text": "Pokoj 4s je **levnější** než pokoje 3d. Proto se zaplní dřív. Pořadí: 1s 2s 2p 3s 3p **4s 3d** 4p…"
+        },
+        {
+          "type": "example",
+          "question": "Rozmísti 7 elektronů dusíku.",
+          "answer": "1s: 2 elektrony. 2s: 2 elektrony. Zbývají 3 do tří pokojů 2p – podle Hunda **každý do jiného**. Zápis 1s² 2s² 2p³. Dusík má **3 nepárové** elektrony."
+        },
+        {
+          "type": "example",
+          "question": "Rozmísti 20 elektronů vápníku.",
+          "answer": "1s² (2) 2s² (4) 2p⁶ (10) 3s² (12) 3p⁶ (18) – zbývají 2. Jdou do levnějšího **4s**, ne do 3d: 1s² 2s² 2p⁶ 3s² 3p⁶ **4s²**."
+        },
+        {
+          "type": "term",
+          "term": "Valenční elektrony",
+          "definition": "Elektrony v nejvyšší (poslední) vrstvě. Ty se účastní reakcí – jsou to „hosté u okna“.",
+          "example": "Kyslík 2s² 2p⁴ má 6 valenčních elektronů."
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu: nejdřív si zkus konfiguraci napsat sám."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "H (Z = 1)",
+                "back": "1s¹"
+              },
+              {
+                "front": "C (Z = 6)",
+                "back": "1s² 2s² 2p²"
+              },
+              {
+                "front": "O (Z = 8)",
+                "back": "1s² 2s² 2p⁴"
+              },
+              {
+                "front": "Na (Z = 11)",
+                "back": "1s² 2s² 2p⁶ 3s¹"
+              },
+              {
+                "front": "Cl (Z = 17)",
+                "back": "1s² 2s² 2p⁶ 3s² 3p⁵"
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kyslík 2p⁴ = ⬆️⬇️ ⬆️⬇️ a třetí p-pokoj prázdný.",
+          "right": "⬆️⬇️ ⬆️ ⬆️ – nejdřív po jednom do každého pokoje, pak teprve párovat.",
+          "why": "Hundovo pravidlo: elektrony se navzájem odpuzují, takže si nejdřív každý vezme vlastní pokoj."
+        },
+        {
+          "type": "summary",
+          "text": "Elektrony obsazují orbitaly od nejnižší energie (4s před 3d), v orbitalu jsou nejvýš dva s opačným spinem a stejné orbitaly se plní nejdřív po jednom."
+        }
+      ]
+    },
+    {
+      "title": "Pořadí",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Elektronová konfigurace je „adresa“ všech elektronů v atomu. Z ní se dá předpovědět, kolik vazeb atom vytvoří, jaký ion tvoří a kde leží v periodické tabulce."
+        },
+        {
+          "type": "text",
+          "text": "Tady se naučíš přesná pravidla a postup, jak konfiguraci napsat pro libovolný prvek."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Orbital",
+          "definition": "Oblast kolem jádra, kde se elektron s vysokou pravděpodobností (asi 95 %) vyskytuje. Pojme nejvýš 2 elektrony."
+        },
+        {
+          "type": "term",
+          "term": "Kvantová čísla",
+          "definition": "Čtyři čísla, která přesně popisují stav elektronu – jako adresa: město, ulice, dům, byt."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Kvantové číslo",
+            "Hodnoty",
+            "Co určuje"
+          ],
+          "rows": [
+            [
+              "hlavní n",
+              "1, 2, 3, …",
+              "energii a velikost orbitalu (vrstvu)"
+            ],
+            [
+              "vedlejší l",
+              "0 až n − 1 (s = 0, p = 1, d = 2, f = 3)",
+              "tvar orbitalu"
+            ],
+            [
+              "magnetické m",
+              "−l až +l",
+              "orientaci orbitalu v prostoru"
+            ],
+            [
+              "spinové s",
+              "+½ nebo −½",
+              "spin elektronu"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Z tabulky plyne počet orbitalů: pro p je l = 1, m může být −1, 0, +1 → **3 orbitaly**. Pro d je l = 2 → 5 orbitalů."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Typ",
+            "s",
+            "p",
+            "d",
+            "f"
+          ],
+          "rows": [
+            [
+              "počet orbitalů",
+              "1",
+              "3",
+              "5",
+              "7"
+            ],
+            [
+              "max. elektronů",
+              "2",
+              "6",
+              "10",
+              "14"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Pravidla zaplňování",
+          "definition": "**Výstavbový princip** – od nejnižší energie. **Pauliho princip** – v atomu nemohou být dva elektrony se všemi čtyřmi kvantovými čísly stejnými (proto v orbitalu max. 2 s opačným spinem). **Hundovo pravidlo** – orbitaly se stejnou energií se nejdřív obsadí po jednom elektronu se stejným spinem."
+        },
+        {
+          "type": "term",
+          "term": "Kapacita vrstvy",
+          "definition": "Vrstva n pojme nejvýš **2n²** elektronů.",
+          "example": "n = 3: 2 · 9 = 18 (3s: 2 + 3p: 6 + 3d: 10)."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti počet elektronů (= Z u neutrálního atomu).",
+            "Plň orbitaly v pořadí: 1s 2s 2p 3s 3p **4s 3d** 4p 5s 4d 5p 6s 4f 5d 6p…",
+            "Do s dej max. 2, do p max. 6, do d max. 10, do f max. 14.",
+            "Zkontroluj, že součet horních indexů = počet elektronů.",
+            "Zkrácený zápis: vnitřní část nahraď značkou předchozího vzácného plynu v hranaté závorce."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Konfigurace sodíku (Z = 11)?",
+          "answer": "1s² 2s² 2p⁶ je 10 elektronů – to je konfigurace neonu. Zbývá 1 → 3s¹. Zápis 1s² 2s² 2p⁶ 3s¹ = **[Ne] 3s¹**."
+        },
+        {
+          "type": "example",
+          "question": "Konfigurace železa (Z = 26)?",
+          "answer": "Do argonu (Z = 18): [Ar]. Zbývá 8. Nejdřív 4s² (2), pak 3d⁶ (6). Výsledek **[Ar] 3d⁶ 4s²** (d se píše před s, protože patří do nižší vrstvy)."
+        },
+        {
+          "type": "example",
+          "question": "Konfigurace chloru (Z = 17) a jeho valenční elektrony?",
+          "answer": "[Ne] = 10, zbývá 7: 3s² 3p⁵. Zápis **[Ne] 3s² 3p⁵**. Valenční vrstva je 3. → 2 + 5 = **7 valenčních elektronů**."
+        },
+        {
+          "type": "term",
+          "term": "Výjimky",
+          "definition": "Napůl nebo úplně zaplněné d-orbitaly jsou zvlášť stabilní. Proto chrom a měď „přetáhnou“ jeden elektron ze 4s do 3d.",
+          "example": "Cr: [Ar] 3d⁵ 4s¹ (ne 3d⁴ 4s²). Cu: [Ar] 3d¹⁰ 4s¹."
+        },
+        {
+          "type": "text",
+          "text": "Doplň, který orbital přijde na řadu. Pomůže ti pořadí ze kroků výše."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "1s 2s 2p 3s 3p ",
+                "after": " (další v pořadí)",
+                "options": [
+                  "4s",
+                  "3d",
+                  "4p"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "… 3p 4s ",
+                "after": "",
+                "options": [
+                  "3d",
+                  "4p",
+                  "5s"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Orbitaly p pojmou max. ",
+                "after": " elektronů",
+                "options": [
+                  "6",
+                  "2",
+                  "10"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Vrstva n = 2 pojme max. ",
+                "after": " elektronů",
+                "options": [
+                  "8",
+                  "4",
+                  "18"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Draslík (Z = 19): [Ar] 3d¹",
+          "right": "Draslík: **[Ar] 4s¹**",
+          "why": "Orbital 4s má nižší energii než 3d, proto se zaplňuje dřív."
+        },
+        {
+          "type": "summary",
+          "text": "Pořadí 1s 2s 2p 3s 3p 4s 3d 4p…; s ≤ 2, p ≤ 6, d ≤ 10, f ≤ 14 elektronů; vrstva n pojme max. 2n². Valenční elektrony jsou v nejvyšší vrstvě."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Kolik elektronů pojme orbital typu p celkem (všechny tři)?",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik elektronů nejvýše pojme vrstva n = 3?",
+      "answers": [
+        "18"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik nepárových elektronů má atom dusíku v základním stavu (1s² 2s² 2p³)?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který orbital se zaplňuje dříve?",
+      "options": [
+        "4s",
+        "3d",
+        "oba současně"
+      ],
+      "answer": 0,
+      "explanation": "4s má nižší energii než 3d."
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je konfigurace chloru (Z = 17)?",
+      "options": [
+        "[Ne] 3s² 3p⁵",
+        "[Ne] 3s² 3p⁶",
+        "[Ne] 3s¹ 3p⁶",
+        "[Ar] 4s¹"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co říká Pauliho princip?",
+      "options": [
+        "v atomu nejsou dva elektrony se všemi 4 stejnými kvantovými čísly",
+        "elektrony obsazují nejdřív nejnižší energii",
+        "degenerované orbitaly se obsadí nejdřív po jednom"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj kvantové číslo s významem.",
+      "pairs": [
+        [
+          "hlavní n",
+          "energie a velikost orbitalu"
+        ],
+        [
+          "vedlejší l",
+          "tvar orbitalu"
+        ],
+        [
+          "magnetické m",
+          "orientace v prostoru"
+        ],
+        [
+          "spinové s",
+          "spin elektronu"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Chrom má konfiguraci [Ar] 3d⁵ 4s¹.",
+      "answer": true,
+      "explanation": "Výjimka – napůl zaplněný d-orbital je stabilnější."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď orbitaly podle pořadí zaplňování.",
+      "items": [
+        "3s",
+        "3p",
+        "4s",
+        "3d",
+        "4p"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kolik valenčních elektronů má atom kyslíku?",
+      "options": [
+        "6",
+        "2",
+        "4",
+        "8"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli výstavbový princip, Pauliho princip a Hundovo pravidlo.",
+      "answer": "Elektrony obsazují orbitaly od nejnižší energie. V orbitalu jsou nejvýše dva elektrony s opačným spinem. Orbitaly se stejnou energií se nejdřív obsadí po jednom elektronu se stejným spinem."
+    },
+    {
+      "type": "open",
+      "question": "Napiš elektronovou konfiguraci vápníku (Z = 20) a urči valenční elektrony.",
+      "answer": "1s² 2s² 2p⁶ 3s² 3p⁶ 4s² = [Ar] 4s². Valenční jsou dva elektrony 4s²."
+    }
+  ]
+}

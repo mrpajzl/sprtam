@@ -1,0 +1,348 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "energie",
+  "title": "Polohová a pohybová energie",
+  "emoji": "🎢",
+  "explanations": [
+    {
+      "title": "Na houpačce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Natažený luk vystřelí šíp. Voda z přehrady roztočí turbínu. Benzín pohání auto. Všechny tyto věci mají v sobě něco, co jim umožní konat práci. Tomu říkáme **energie**."
+        },
+        {
+          "type": "text",
+          "text": "Energie se nedá vyrobit z ničeho ani zničit. Jen se mění z jedné podoby na druhou. Když tomu rozumíš, chápeš elektrárny, horské dráhy i to, proč musíš jíst."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Práce",
+          "definition": "Když silou posuneš těleso po nějaké dráze. Měří se v joulech (J).",
+          "example": "Zvedneš tašku na stůl."
+        },
+        {
+          "type": "term",
+          "term": "Energie",
+          "definition": "Schopnost tělesa **konat práci**. Měří se také v joulech (J).",
+          "example": "Jedoucí auto může při nárazu zdeformovat plot – má energii."
+        },
+        {
+          "type": "term",
+          "term": "Polohová energie",
+          "definition": "Energie, kterou má těleso proto, že je **vysoko**. Když spadne, může něco vykonat.",
+          "example": "Kámen na útesu, voda v přehradě, zvednuté kladivo."
+        },
+        {
+          "type": "term",
+          "term": "Pohybová energie",
+          "definition": "Energie, kterou má těleso proto, že se **pohybuje**. Těleso v klidu ji nemá.",
+          "example": "Letící míč, jedoucí vlak, tekoucí řeka."
+        },
+        {
+          "type": "term",
+          "term": "Další podoby energie",
+          "definition": "**Pružnosti** (natažená guma, luk), **chemická** (benzín, jídlo, baterie), **tepelná**, **elektrická**, **jaderná**…",
+          "example": "V rohlíku je chemická energie, kterou tvé tělo promění na pohyb a teplo."
+        },
+        {
+          "type": "heading",
+          "text": "Houpačka krok za krokem"
+        },
+        {
+          "type": "text",
+          "text": "Sleduj, jak se na houpačce mění jedna energie na druhou. Klikej na jednotlivé kroky."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "nahoře: hodně polohové",
+              "sjíždí: polohová → pohybová",
+              "dole: hodně pohybové",
+              "stoupá: pohybová → polohová"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "V nejvyšším bodě se houpačka na okamžik zastaví – pohybová energie je nulová, polohová největší. V nejnižším bodě letí nejrychleji – pohybová je největší."
+        },
+        {
+          "type": "term",
+          "term": "Zákon zachování energie",
+          "definition": "Energie nevzniká ani nezaniká. Jen se **přeměňuje** z jedné podoby na jinou. Celkové množství zůstává stejné.",
+          "example": "Houpačka se postupně zastaví, protože část energie se třením a odporem vzduchu přemění na teplo – neztratí se."
+        },
+        {
+          "type": "example",
+          "question": "Jaké přeměny energie probíhají, když jablko padá ze stromu?",
+          "answer": "Nahoře má jablko **polohovou** energii. Při pádu se mění na **pohybovou**. Při dopadu se pohybová změní na deformaci jablka, zvuk a teplo."
+        },
+        {
+          "type": "example",
+          "question": "Která energie se využívá ve vodní elektrárně na přehradě?",
+          "answer": "Voda vysoko v přehradě má **polohovou** energii. Padá dolů → pohybová → roztočí turbínu → generátor ji změní na **elektrickou**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když se houpačka zastaví, energie zmizela.",
+          "right": "Energie se přeměnila na teplo (tření, odpor vzduchu).",
+          "why": "Podle zákona zachování energie nemůže energie zmizet. Jen se změní na podobu, kterou už houpačka nevyužije."
+        },
+        {
+          "type": "summary",
+          "text": "Energie je schopnost konat práci (v joulech). Polohová – těleso je vysoko, pohybová – těleso se hýbe. Energie nevzniká ani nezaniká, jen se přeměňuje."
+        }
+      ]
+    },
+    {
+      "title": "Vzorci",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč je náraz auta v rychlosti 100 km/h tolik nebezpečnější než ve 50 km/h? Kolik energie má voda v přehradě? Energii umíme spočítat a výsledky někdy překvapí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Energie `E`",
+          "definition": "Schopnost konat práci. Jednotka joule (J). Kolik práce těleso může vykonat, tolik má energie.",
+          "example": "1 kJ = 1 000 J."
+        },
+        {
+          "type": "term",
+          "term": "Polohová energie `Ep`",
+          "definition": "Energie tělesa ve výšce `h` nad zemí: `Ep = m · g · h`.",
+          "example": "Kámen 2 kg ve výšce 5 m."
+        },
+        {
+          "type": "term",
+          "term": "Pohybová energie `Ek`",
+          "definition": "Energie tělesa o hmotnosti `m`, které se pohybuje rychlostí `v` (v m/s): `Ek = ½ · m · v²`.",
+          "example": "Míč 2 kg letící 3 m/s."
+        },
+        {
+          "type": "term",
+          "term": "Tíhové zrychlení `g`",
+          "definition": "Asi 10 N/kg – tolik newtonů táhne Země každý kilogram."
+        },
+        {
+          "type": "heading",
+          "text": "Polohová energie: odkud vzorec"
+        },
+        {
+          "type": "text",
+          "text": "Abys těleso zvedl do výšky h, musíš vykonat práci `m · g · h`. Ta práce se v tělese „uloží“ jako polohová energie. Když spadne, umí ji zase vykonat."
+        },
+        {
+          "type": "example",
+          "question": "Jakou polohovou energii má kámen 2 kg ve výšce 5 m?",
+          "answer": "Ep = m · g · h = 2 · 10 · 5 = **100 J**."
+        },
+        {
+          "type": "example",
+          "question": "Těleso 4 kg má polohovou energii 200 J. Jak vysoko je?",
+          "answer": "h = Ep : (m · g) = 200 : (4 · 10) = 200 : 40 = **5 m**."
+        },
+        {
+          "type": "heading",
+          "text": "Pohybová energie a druhá mocnina"
+        },
+        {
+          "type": "text",
+          "text": "Ve vzorci je rychlost **na druhou** (`v² = v · v`). Proto dvojnásobná rychlost znamená **čtyřnásobnou** energii (2 · 2 = 4). Trojnásobná rychlost – devítinásobnou. Proto je rychlá jízda tak nebezpečná."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rychlost převeď na m/s.",
+            "Umocni ji: v · v.",
+            "Vynásob hmotností.",
+            "Vyděl dvěma.",
+            "Výsledek v joulech."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jakou pohybovou energii má míč 2 kg letící rychlostí 3 m/s?",
+          "answer": "v² = 3 · 3 = 9. Ek = ½ · 2 · 9 = **9 J**."
+        },
+        {
+          "type": "example",
+          "question": "Auto 1 000 kg jede 20 m/s (72 km/h). Jaká je jeho pohybová energie?",
+          "answer": "v² = 400. Ek = ½ · 1 000 · 400 = 200 000 J = **200 kJ**."
+        },
+        {
+          "type": "heading",
+          "text": "Zákon zachování energie"
+        },
+        {
+          "type": "text",
+          "text": "Energie nevzniká ani nezaniká, jen se přeměňuje. Padající těleso polohovou energii ztrácí a pohybovou získává – součet zůstává (bez odporu vzduchu) stejný."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "natažený luk",
+                "back": "energie pružnosti"
+              },
+              {
+                "front": "jedoucí vlak",
+                "back": "pohybová energie"
+              },
+              {
+                "front": "voda v přehradě",
+                "back": "polohová energie"
+              },
+              {
+                "front": "benzín",
+                "back": "chemická energie"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "U každé karty si nejdřív sám řekni, o jakou energii jde."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dvojnásobná rychlost = dvojnásobná pohybová energie.",
+          "right": "Dvojnásobná rychlost = čtyřnásobná pohybová energie.",
+          "why": "Rychlost je ve vzorci na druhou: (2v)² = 4v²."
+        },
+        {
+          "type": "summary",
+          "text": "`Ep = m · g · h`, `Ek = ½ · m · v²`. Dvojnásobná rychlost → 4× víc pohybové energie. Celková energie se zachovává, jen mění podobu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Polohová energie kamene 2 kg ve výšce 5 m v J? (g = 10 N/kg)",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Pohybová energie míče 2 kg letícího rychlostí 3 m/s v J =",
+      "answers": [
+        "9"
+      ],
+      "explanation": "½ · 2 · 3² = 9"
+    },
+    {
+      "type": "input",
+      "question": "Pohybová energie auta 1 000 kg jedoucího 20 m/s v kJ =",
+      "answers": [
+        "200"
+      ],
+      "explanation": "½ · 1 000 · 400 = 200 000 J"
+    },
+    {
+      "type": "choice",
+      "question": "Jak se změní pohybová energie, když se rychlost zdvojnásobí?",
+      "options": [
+        "zvětší se 4×",
+        "zvětší se 2×",
+        "nezmění se",
+        "zmenší se"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Padající jablko ztrácí polohovou a získává pohybovou energii.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém bodě má kyvadlo největší pohybovou energii?",
+      "options": [
+        "v nejnižším bodě",
+        "v krajní poloze",
+        "všude stejnou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Těleso v klidu má nulovou pohybovou energii.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Která energie se využívá ve vodní elektrárně na přehradě?",
+      "options": [
+        "polohová energie vody",
+        "jaderná",
+        "chemická",
+        "tepelná energie Slunce v panelech"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Těleso 4 kg má polohovou energii 200 J. V jaké výšce v m je? (g = 10 N/kg)",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj příklad s druhem energie.",
+      "pairs": [
+        [
+          "natažený luk",
+          "energie pružnosti"
+        ],
+        [
+          "jedoucí vlak",
+          "pohybová"
+        ],
+        [
+          "voda v přehradě",
+          "polohová"
+        ],
+        [
+          "benzin",
+          "chemická"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Popiš přeměny energie u houpačky.",
+      "answer": "Nahoře má houpačka největší polohovou energii. Při pohybu dolů se mění na pohybovou, ta je největší dole. Při stoupání se mění zpět na polohovou."
+    },
+    {
+      "type": "open",
+      "question": "Co říká zákon zachování energie?",
+      "answer": "Energie nevzniká ani nezaniká, jen se přeměňuje z jedné formy na jinou. Celková energie izolované soustavy je stálá."
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obohacovani-slovni-zasoby",
+  "title": "Obohacování slovní zásoby",
+  "emoji": "🌱",
+  "explanations": [
+    {
+      "title": "Šest způsobů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Před sto lety nikdo neznal slova *mobil*, *esemeska* ani *vysavač*. Pak přišly nové věci a s nimi musela přijít i nová slova. Odkud se vzala?"
+        },
+        {
+          "type": "text",
+          "text": "Čeština má šest hlavních způsobů, jak nová slova vytvořit. Když je znáš, rozumíš i slovům, která jsi nikdy neslyšel – stačí je rozložit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Slovní zásoba",
+          "definition": "Všechna slova, která jazyk má (nebo která člověk zná).",
+          "example": "Malé dítě zná pár stovek slov, dospělý desítky tisíc."
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Hlavní část slova, která nese jeho základní význam.",
+          "example": "**les**, **les**ník, za**les**nit"
+        },
+        {
+          "type": "term",
+          "term": "Předpona",
+          "definition": "Část slova **před** kořenem.",
+          "example": "**pod**zemní, **za**lesnit, **ne**pěkný"
+        },
+        {
+          "type": "term",
+          "term": "Přípona",
+          "definition": "Část slova **za** kořenem (před koncovkou).",
+          "example": "les**ník**, učitel**k**a"
+        },
+        {
+          "type": "term",
+          "term": "Koncovka",
+          "definition": "Poslední část slova, která se mění při skloňování nebo časování.",
+          "example": "žen**a**, žen**y**, žen**ě**"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se, jak se slova skládají z částí:"
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "les",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "ník",
+                    "label": "přípona"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "pod",
+                    "label": "předpona"
+                  },
+                  {
+                    "text": "zem",
+                    "label": "kořen"
+                  },
+                  {
+                    "text": "n",
+                    "label": "přípona"
+                  },
+                  {
+                    "text": "í",
+                    "label": "koncovka"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Šest způsobů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Způsob",
+            "Co se děje",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "odvozování",
+              "ke kořeni přidáme předponu nebo příponu",
+              "les → lesník, pěkný → nepěkný"
+            ],
+            [
+              "skládání",
+              "spojíme dva kořeny v jedno slovo",
+              "voda + pád → vodopád"
+            ],
+            [
+              "zkracování",
+              "z víceslovného názvu uděláme zkratku",
+              "Česká republika → ČR"
+            ],
+            [
+              "přejímání",
+              "vezmeme slovo z cizího jazyka",
+              "víkend, fotbal, džíny"
+            ],
+            [
+              "víceslovné pojmenování",
+              "pojmenujeme věc několika slovy (sousloví)",
+              "železná dráha, hlavní město"
+            ],
+            [
+              "přenášení významu",
+              "staré slovo dostane nový význam",
+              "noha stolu, myš (u počítače)"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Jak vzniklo slovo *učitelka*?",
+          "answer": "Od slova *učitel* přidáním přípony *-ka* → **odvozování**."
+        },
+        {
+          "type": "example",
+          "question": "Jak vzniklo slovo *velkoměsto*?",
+          "answer": "Má dva kořeny: *velk-* a *měst-* → **skládání**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Odvozování = spojení dvou slov v jedno.",
+          "right": "To je skládání. Odvozování = přidání předpony nebo přípony.",
+          "why": "Odvozené slovo má **jeden** kořen (les-ník), složené **dva** (vodo-pád)."
+        },
+        {
+          "type": "summary",
+          "text": "Slova vznikají odvozováním (lesník), skládáním (vodopád), zkracováním (ČR), přejímáním (víkend), víceslovným pojmenováním (železná dráha) a přenášením významu (noha stolu)."
+        }
+      ]
+    },
+    {
+      "title": "Rodinou slov",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V rodině mají lidé často stejné příjmení. Podle něj poznáš, že k sobě patří. Slova mají také „rodiny“ – a jejich společným příjmením je **kořen**."
+        },
+        {
+          "type": "text",
+          "text": "Když umíš najít kořen, poznáš, jak slovo vzniklo a co asi znamená. A navíc víš, jak se jazyk rozrůstá o nová slova – tomu se říká **obohacování slovní zásoby**."
+        },
+        {
+          "type": "term",
+          "term": "Slovní zásoba",
+          "definition": "Soubor všech slov jazyka.",
+          "example": "Každý rok do ní přibývají nová slova, třeba *selfie*."
+        },
+        {
+          "type": "term",
+          "term": "Kořen",
+          "definition": "Společné jádro příbuzných slov. Nese hlavní význam.",
+          "example": "les – lesník – lesní – zalesnit – prales"
+        },
+        {
+          "type": "term",
+          "term": "Slovní rodina",
+          "definition": "Slova se stejným kořenem.",
+          "example": "voda, vodní, vodník, zavodnit"
+        },
+        {
+          "type": "heading",
+          "text": "Jak rodina roste"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Začni u kořene: **les**.",
+            "Přidej něco **za** kořen (příponu): les**ník**, les**ní**.",
+            "Přidej něco **před** kořen (předponu): **pra**les, **za**lesnit.",
+            "Tomuhle přidávání se říká **odvozování**. Slovo má pořád jen jeden kořen.",
+            "Spoj dva kořeny dohromady: **les**o**park**. To je **skládání** – slovo má dva kořeny."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Další cesty k novým slovům"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Zkracování** – dlouhý název zkrátíme: *městská hromadná doprava → MHD*, *základní škola → ZŠ*.",
+            "**Přejímání** – slovo si půjčíme z cizího jazyka: *víkend*, *džíny* (z angličtiny).",
+            "**Víceslovné pojmenování** (sousloví) – věc pojmenujeme několika slovy: *železná dráha*, *mateřská škola*.",
+            "**Přenášení významu** – staré slovo dostane nový význam podle podobnosti: *hlava rodiny*, *myš* u počítače."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď slova podle toho, jak vznikla. Hledej, kolik mají kořenů."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "odvozená",
+              "složená",
+              "zkratky"
+            ],
+            "items": [
+              {
+                "text": "lesník",
+                "group": 0
+              },
+              {
+                "text": "učitelka",
+                "group": 0
+              },
+              {
+                "text": "nepěkný",
+                "group": 0
+              },
+              {
+                "text": "vodopád",
+                "group": 1
+              },
+              {
+                "text": "rychlovlak",
+                "group": 1
+              },
+              {
+                "text": "velkoměsto",
+                "group": 1
+              },
+              {
+                "text": "ČR",
+                "group": 2
+              },
+              {
+                "text": "MHD",
+                "group": 2
+              },
+              {
+                "text": "ZŠ",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Najdi společný kořen a urči, jak slova vznikla: *vodník, vodní, vodopád*.",
+          "answer": "Ve všech je kořen **vod** → slovní rodina slova *voda*. *Vodník* a *vodní* mají jeden kořen + příponu → odvozování. *Vodopád* má dva kořeny (vod + pád) → skládání."
+        },
+        {
+          "type": "example",
+          "question": "Ve kterém spojení má *hlava* přenesený význam: *hlava rodiny*, *bolí mě hlava*?",
+          "answer": "*hlava rodiny* – člověk, který rodinu vede, jako hlava řídí tělo → **přenesený význam**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Džíny* jsou české slovo odvozené od *džin*.",
+          "right": "*Džíny* jsou slovo přejaté z angličtiny (jeans).",
+          "why": "Česky neexistuje kořen, ze kterého by vzniklo. Slovo přišlo i s věcí z ciziny."
+        },
+        {
+          "type": "summary",
+          "text": "Slovní rodina = slova se stejným kořenem. Nová slova vznikají odvozováním (1 kořen + předpona/přípona), skládáním (2 kořeny), zkracováním, přejímáním, souslovím a přenášením významu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak vzniklo slovo *vodopád*?",
+      "options": [
+        "skládáním",
+        "odvozováním",
+        "zkracováním"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak vzniklo slovo *lesník*?",
+      "options": [
+        "odvozováním",
+        "skládáním",
+        "přejetím"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jak vzniklo *ČR*?",
+      "options": [
+        "zkracováním",
+        "skládáním",
+        "odvozováním"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je přejaté z angličtiny?",
+      "options": [
+        "víkend",
+        "okno",
+        "chléb"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Napiš společný kořen slov *lesník, lesní, zalesnit*.",
+      "answers": [
+        "les"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "*Železná dráha* je víceslovné pojmenování (sousloví).",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém spojení má slovo přenesený význam?",
+      "options": [
+        "hlava rodiny",
+        "bolí mě hlava",
+        "myju si hlavu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj slovo se způsobem vzniku.",
+      "pairs": [
+        [
+          "velkoměsto",
+          "skládání"
+        ],
+        [
+          "učitelka",
+          "odvozování"
+        ],
+        [
+          "MHD",
+          "zkracování"
+        ],
+        [
+          "džíny",
+          "přejímání"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je předpona ve slově *podzemní*?",
+      "options": [
+        "pod",
+        "zem",
+        "ní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Odvozování znamená spojit dvě slova v jedno.",
+      "answer": false,
+      "explanation": "To je skládání. Odvozování = přidání předpony nebo přípony."
+    },
+    {
+      "type": "open",
+      "question": "Jakými způsoby se obohacuje slovní zásoba? Uveď aspoň tři s příklady.",
+      "answer": "Odvozováním (les → lesník), skládáním (vodopád), zkracováním (ČR), přejímáním z cizích jazyků (víkend), víceslovným pojmenováním (železná dráha) a přenášením významu (noha stolu)."
+    },
+    {
+      "type": "open",
+      "question": "Co je slovní rodina? Uveď příklad.",
+      "answer": "Slova se stejným kořenem, např. les, lesník, lesní, zalesnit, prales."
+    }
+  ]
+}

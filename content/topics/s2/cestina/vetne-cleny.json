@@ -1,0 +1,477 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vetne-cleny",
+  "title": "Větné členy",
+  "emoji": "🏗️",
+  "explanations": [
+    {
+      "title": "Stavba domu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dům má základy, nosné zdi a pak všechno ostatní: okna, balkon, střechu. Věta je postavená podobně. Má základ, bez kterého nestojí, a části, které ji rozšiřují a zpřesňují."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když víš, jakou roli má které slovo ve větě, správně napíšeš shodu (*psi štěkali*), čárky i koncovky. A rozbor věty je stálice testů."
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Celek slov, který obvykle obsahuje sloveso v určitém tvaru a něco sděluje.",
+          "example": "*Pes štěká.*"
+        },
+        {
+          "type": "term",
+          "term": "Větný člen",
+          "definition": "Role, kterou slovo (nebo skupina slov) ve větě hraje.",
+          "example": "Ve větě *Pes štěká* je *pes* ten, kdo něco dělá – podmět."
+        },
+        {
+          "type": "heading",
+          "text": "Základy: podmět a přísudek"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Kdo nebo co něco dělá (nebo o kom se mluví). Ptáme se **kdo? co?**",
+          "example": "*Pes* štěká. *Dům* stojí."
+        },
+        {
+          "type": "term",
+          "term": "Přísudek",
+          "definition": "Co podmět dělá nebo jaký je. Ptáme se **co dělá? co se s ním děje? jaký je?**",
+          "example": "Pes *štěká*. Den *byl krásný*."
+        },
+        {
+          "type": "term",
+          "term": "Základní skladební dvojice",
+          "definition": "Podmět a přísudek dohromady. Je to základ věty.",
+          "example": "*Pes štěká.*"
+        },
+        {
+          "type": "text",
+          "text": "Přísudek je **slovesný** (jen sloveso: *Petr píše.*), nebo **jmenný se sponou**: sponové sloveso *být* + jméno (*Petr je učitelem. Den byl krásný.*)."
+        },
+        {
+          "type": "heading",
+          "text": "Zdi a okna: rozvíjející členy"
+        },
+        {
+          "type": "term",
+          "term": "Předmět",
+          "definition": "Rozvíjí sloveso. Ptáme se **pádovou otázkou** kromě 1. a 5. pádu (koho? co? komu? čím? o čem?).",
+          "example": "Čtu *knihu*. Pomáhám *bratrovi*."
+        },
+        {
+          "type": "term",
+          "term": "Příslovečné určení",
+          "definition": "Rozvíjí sloveso a říká **okolnosti**: kde, kdy, jak, proč, za jakým účelem.",
+          "example": "Přijdu *zítra*. Bydlím *v Brně*."
+        },
+        {
+          "type": "term",
+          "term": "Přívlastek",
+          "definition": "Rozvíjí podstatné jméno. Ptáme se **jaký? který? čí?**",
+          "example": "*starý* pes, dům *s věží*"
+        },
+        {
+          "type": "term",
+          "term": "Doplněk",
+          "definition": "Vztahuje se zároveň ke jménu i ke slovesu. Říká, jaký byl podmět (nebo předmět) při ději.",
+          "example": "Vrátil se *unavený*. (vrátil se – a byl unavený)"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každého spojení se zeptej od slova, ke kterému zvýrazněné slovo patří."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "předmět",
+              "příslovečné určení",
+              "přívlastek"
+            ],
+            "items": [
+              {
+                "text": "čtu *knihu*",
+                "group": 0
+              },
+              {
+                "text": "bydlím *v Brně*",
+                "group": 1
+              },
+              {
+                "text": "dům *s věží*",
+                "group": 2
+              },
+              {
+                "text": "pomáhám *bratrovi*",
+                "group": 0
+              },
+              {
+                "text": "nepřišel *kvůli dešti*",
+                "group": 1
+              },
+              {
+                "text": "*modré* auto",
+                "group": 2
+              },
+              {
+                "text": "mluvím *o filmu*",
+                "group": 0
+              },
+              {
+                "text": "běžel *rychle*",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Rozeber: *Šli jsme do kina.*",
+          "answer": "Přísudek: *šli jsme* (co jsme dělali?). Podmět: v textu chybí, ale poznáme ho z tvaru slovesa – **my** (podmět **nevyjádřený**). *do kina* – kam? → příslovečné určení místa."
+        },
+        {
+          "type": "example",
+          "question": "Je *lékařem* ve větě *Otec je lékařem.* předmět?",
+          "answer": "Ne. *Je lékařem* říká, čím otec je – tvoří přísudek spolu se slovesem *je*. Je to **přísudek jmenný se sponou**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ve větě *Vrátil se unavený.* je *unavený* přívlastek.",
+          "right": "*unavený* je doplněk.",
+          "why": "Přívlastek rozvíjí jen jméno a stojí u něj. Doplněk se váže ke jménu (on byl unavený) i ke slovesu (vrátil se). Pozná se tak, že větu rozložíš na dvě: *Vrátil se. Byl unavený.*"
+        },
+        {
+          "type": "summary",
+          "text": "Základ věty = podmět + přísudek. Rozvíjející členy: předmět (pádová otázka), příslovečné určení (okolnosti), přívlastek (jaký, čí), doplněk (ke jménu i slovesu)."
+        }
+      ]
+    },
+    {
+      "title": "Otázkou od slova",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozbor věty je jako hledání rodokmenu. Nejdřív najdeš hlavu rodiny (přísudek), pak toho, kdo s ním tvoří pár (podmět), a pak se ptáš, kdo patří ke komu."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Jeden spolehlivý postup ti stačí na jakoukoli větu – i na tu nejdelší v testu."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Větný člen",
+          "definition": "Role slova ve větě: podmět, přísudek, předmět, příslovečné určení, přívlastek, doplněk, přístavek.",
+          "example": "*knihu* ve větě *Čtu knihu* je předmět"
+        },
+        {
+          "type": "term",
+          "term": "Řídící slovo",
+          "definition": "Slovo, od kterého se ptáme. Rozvíjející člen „visí“ na něm.",
+          "example": "*starý pes*: řídící je *pes*, ptáme se *jaký pes?*"
+        },
+        {
+          "type": "term",
+          "term": "Přívlastek shodný",
+          "definition": "Stojí obvykle **před** jménem a shoduje se s ním v rodě, čísle a pádě.",
+          "example": "*modré* auto, *modrého* auta"
+        },
+        {
+          "type": "term",
+          "term": "Přívlastek neshodný",
+          "definition": "Stojí obvykle **za** jménem a nemění se spolu s ním.",
+          "example": "dům *s věží*, domu *s věží*"
+        },
+        {
+          "type": "term",
+          "term": "Přístavek",
+          "definition": "Jiné pojmenování téhož, odděluje se čárkami.",
+          "example": "*Karel IV., český král, založil univerzitu.*"
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Věta: *Náš starý soused včera pečlivě opravil rozbitý plot.*",
+            "Najdi sloveso v určitém tvaru → **přísudek**: *opravil*.",
+            "Kdo opravil? → **podmět**: *soused*.",
+            "Ptej se od přísudku: opravil **co?** → *plot* (předmět). **Kdy?** → *včera* (PU času). **Jak?** → *pečlivě* (PU způsobu).",
+            "Ptej se od jmen: **jaký** soused? → *náš, starý*. **Jaký** plot? → *rozbitý* (přívlastky shodné)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Druhy příslovečného určení"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Druh",
+            "Otázka",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "místa",
+              "kde? kam? odkud?",
+              "v Brně, domů"
+            ],
+            [
+              "času",
+              "kdy? jak dlouho?",
+              "v létě, včera"
+            ],
+            [
+              "způsobu",
+              "jak?",
+              "rychle, pečlivě"
+            ],
+            [
+              "příčiny",
+              "proč? z jaké příčiny?",
+              "kvůli nemoci"
+            ],
+            [
+              "účelu",
+              "za jakým účelem?",
+              "pro mléko"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Věty bez podmětu"
+        },
+        {
+          "type": "term",
+          "term": "Věta jednočlenná",
+          "definition": "Věta, ve které podmět nejde ani doplnit. Nemá smysl ptát se „kdo?“.",
+          "example": "*Prší. Stmívá se.*"
+        },
+        {
+          "type": "text",
+          "text": "Pozor: *Šli jsme ven.* není jednočlenná. Podmět *my* jen chybí v textu (je **nevyjádřený**), ale doplnit ho jde."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber správný větný člen. Ptej se vždy od slova, ke kterému patří."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "*V létě* pojedeme k moři. → ",
+                "after": "",
+                "options": [
+                  "PU času",
+                  "PU místa"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Kniha *bratra* leží na stole. → ",
+                "after": "",
+                "options": [
+                  "přívlastek neshodný",
+                  "předmět"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Petr je *učitelem*. → ",
+                "after": "",
+                "options": [
+                  "část přísudku",
+                  "předmět"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Nepřišel *kvůli nemoci*. → ",
+                "after": "",
+                "options": [
+                  "PU příčiny",
+                  "PU účelu"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Urči člen *s věží* ve spojení *dům s věží*.",
+          "answer": "Ptám se od *dům*: jaký dům? → **přívlastek**. Stojí za jménem a při skloňování se nemění (*domu s věží*) → **neshodný**."
+        },
+        {
+          "type": "example",
+          "question": "Jaký člen je *český král* ve větě *Karel IV., český král, založil univerzitu.*?",
+          "answer": "Pojmenovává jinými slovy tutéž osobu (Karel IV. = český král) → **přístavek**. Odděluje se čárkami z obou stran."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Prší.* – podmět je nevyjádřený.",
+          "right": "*Prší.* je věta jednočlenná, podmět v ní není.",
+          "why": "Nevyjádřený podmět jde doplnit (*šli jsme* → my). U *prší* nikoho doplnit nejde (*ono prší* není spisovně). Proto je věta jednočlenná."
+        },
+        {
+          "type": "summary",
+          "text": "Najdi přísudek, k němu podmět, pak se ptej od každého slova. Od slovesa → předmět a příslovečné určení. Od jména → přívlastek. Přístavek pojmenuje totéž jinak."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co tvoří základní skladební dvojici?",
+      "options": [
+        "podmět a přísudek",
+        "podmět a předmět",
+        "přísudek a předmět"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký větný člen je *knihu* ve větě *Petr čte knihu.*?",
+      "options": [
+        "podmět",
+        "předmět",
+        "přívlastek"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Ve větě *Otec je lékařem.* je přísudek:",
+      "options": [
+        "slovesný",
+        "jmenný se sponou"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Jaký větný člen je *v létě* ve větě *V létě pojedeme k moři.*?",
+      "options": [
+        "příslovečné určení času",
+        "příslovečné určení místa",
+        "předmět"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve spojení *dům s věží* je *s věží* přívlastek neshodný.",
+      "answer": true,
+      "explanation": "Stojí za jménem a neshoduje se s ním v pádě."
+    },
+    {
+      "type": "choice",
+      "question": "Který člen se vztahuje zároveň k podstatnému jménu a ke slovesu?",
+      "options": [
+        "přívlastek",
+        "doplněk",
+        "předmět"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "match",
+      "question": "Spoj větný člen s otázkou.",
+      "pairs": [
+        [
+          "podmět",
+          "kdo, co?"
+        ],
+        [
+          "přívlastek",
+          "jaký, který, čí?"
+        ],
+        [
+          "příslovečné určení",
+          "kde, kdy, jak, proč?"
+        ],
+        [
+          "předmět",
+          "koho, co, komu, čím…?"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Věta *Prší.* je:",
+      "options": [
+        "věta jednočlenná",
+        "věta s nevyjádřeným podmětem",
+        "věta s podmětem *to*"
+      ],
+      "answer": 0,
+      "explanation": "Podmět nelze doplnit – jde o slovesnou větu jednočlennou."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve větě *Šli jsme do kina.* je podmět nevyjádřený (*my*).",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá člen, který jinými slovy pojmenovává totéž, např. *Karel IV., český král*?",
+      "answers": [
+        "přístavek"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaké příslovečné určení je *kvůli nemoci*?",
+      "options": [
+        "času",
+        "příčiny",
+        "účelu"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj rozvíjející větné členy a ke každému uveď příklad.",
+      "answer": "Předmět (*čtu knihu*), příslovečné určení (*přijdu zítra*), přívlastek (*starý pes*), doplněk (*vrátil se unavený*); případně přístavek (*Praha, hlavní město*)."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi přívlastkem shodným a neshodným?",
+      "answer": "Shodný stojí obvykle před jménem a shoduje se s ním v rodě, čísle a pádě (*modré auto*). Neshodný stojí za jménem a neshoduje se (*dům s věží, kniha bratra*)."
+    }
+  ]
+}

@@ -1,0 +1,434 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "some-any-no-every",
+  "title": "Somebody, anything, nowhere…",
+  "emoji": "🔍",
+  "explanations": [
+    {
+      "title": "Stavebnicí",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky máš slova *někdo, něco, někde, nikdo, nic, nikde, všichni, všechno, všude*. Je jich hodně a každé se učí zvlášť."
+        },
+        {
+          "type": "text",
+          "text": "Angličtina to má jako stavebnici: vezmeš **začátek** (*some, any, no, every*) a přidáš **konec** (*-body, -thing, -where*). Ze dvanácti kostiček tak poskládáš všechna tahle slova."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zájmeno",
+          "definition": "Slovo, které zastupuje osobu nebo věc, aniž by ji přesně jmenovalo.",
+          "example": "někdo, nic, všechno"
+        },
+        {
+          "type": "term",
+          "term": "-body / -one",
+          "definition": "Konec pro **osoby** (kdo). *-body* a *-one* znamenají totéž.",
+          "example": "somebody = someone = někdo"
+        },
+        {
+          "type": "term",
+          "term": "-thing",
+          "definition": "Konec pro **věci** (co).",
+          "example": "something = něco"
+        },
+        {
+          "type": "term",
+          "term": "-where",
+          "definition": "Konec pro **místa** (kde, kam).",
+          "example": "somewhere = někde, někam"
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka stavebnice"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "-body (kdo)",
+            "-thing (co)",
+            "-where (kde)"
+          ],
+          "rows": [
+            [
+              "some-",
+              "somebody (někdo)",
+              "something (něco)",
+              "somewhere (někde)"
+            ],
+            [
+              "any-",
+              "anybody (někdo? / nikdo)",
+              "anything (něco? / nic)",
+              "anywhere (někde? / nikde)"
+            ],
+            [
+              "no-",
+              "nobody (nikdo)",
+              "nothing (nic)",
+              "nowhere (nikde)"
+            ],
+            [
+              "every-",
+              "everybody (všichni)",
+              "everything (všechno)",
+              "everywhere (všude)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na české slovo, poskládej anglické a otoč kartičku."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "někde",
+                "back": "somewhere"
+              },
+              {
+                "front": "nic",
+                "back": "nothing"
+              },
+              {
+                "front": "všichni",
+                "back": "everybody / everyone"
+              },
+              {
+                "front": "všude",
+                "back": "everywhere"
+              },
+              {
+                "front": "nikdo",
+                "back": "nobody / no one"
+              },
+              {
+                "front": "něco",
+                "back": "something"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Some, nebo any?"
+        },
+        {
+          "type": "text",
+          "text": "*Some-* patří do **kladných** vět: *I saw somebody.* *Any-* patří do **otázek** a do vět se záporem *not*: *Did you see anybody? I didn't see anybody.*"
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Je něco v ledničce?",
+          "answer": "Je to otázka → *any-*. Věc → *-thing*. *Is there anything in the fridge?*"
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Pojďme o víkendu někam, kde je hezky.",
+          "answer": "Kladná věta → *some-*, místo → *-where*: *Let's go somewhere nice for the weekend.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Everybody are here.",
+          "right": "Everybody is here.",
+          "why": "*Everybody* (i když znamená „všichni“) se v angličtině chová jako jednotné číslo: *is, has, likes*."
+        },
+        {
+          "type": "summary",
+          "text": "Začátek **some / any / no / every** + konec **-body / -thing / -where**. Some- v kladné větě, any- v otázce a záporu."
+        }
+      ]
+    },
+    {
+      "title": "Jen jeden zápor",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Česky říkáme „**Nikdo nic ne**viděl“ – tři zápory v jedné větě a nikomu to nevadí. V angličtině smí být ve větě **jen jeden zápor**. Kdo to neví, dělá jednu z nejčastějších chyb."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se, jak „nic, nikdo, nikde“ říct anglicky dvěma správnými způsoby."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zápor",
+          "definition": "Slovo, které větu „otočí“ na ne. V angličtině je to *not* (*don't, didn't, isn't…*) nebo slova začínající *no-* (*nobody, nothing, nowhere*) a *never*.",
+          "example": "I didn't… / Nobody… / Nothing…"
+        },
+        {
+          "type": "term",
+          "term": "Dvojitý zápor",
+          "definition": "Dva zápory v jedné větě. Česky normální, v angličtině chyba.",
+          "example": "✗ I don't know nothing."
+        },
+        {
+          "type": "term",
+          "term": "any- slova",
+          "definition": "*anybody, anything, anywhere*. Ve větě s *not* znamenají „nikdo, nic, nikde“. V otázce „někdo? něco? někde?“.",
+          "example": "I didn't see anything. = Nic jsem neviděl."
+        },
+        {
+          "type": "term",
+          "term": "no- slova",
+          "definition": "*nobody, nothing, nowhere*. Už samy jsou zápor, takže sloveso zůstane kladné.",
+          "example": "I saw nothing. = Nic jsem neviděl."
+        },
+        {
+          "type": "heading",
+          "text": "Dva správné způsoby"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Česky",
+            "Způsob 1: not + any-",
+            "Způsob 2: no- (sloveso kladné)"
+          ],
+          "rows": [
+            [
+              "Nic jsem neviděl.",
+              "I didn't see anything.",
+              "I saw nothing."
+            ],
+            [
+              "Nikoho neznám.",
+              "I don't know anybody.",
+              "I know nobody."
+            ],
+            [
+              "Nic nemám.",
+              "I don't have anything.",
+              "I have nothing."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Když je „nikdo“ na začátku věty (podmět – ten, kdo něco dělá), jde jen způsob 2: *Nobody came.* = Nikdo nepřišel."
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Spočítej zápory v anglické větě. Smí být jen jeden.",
+            "Máš ve větě *not* (*don't, didn't…*)? → použij *any-*.",
+            "Nemáš *not*? → použij *no-* a sloveso nech kladné."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber slovo tak, aby ve větě byl jen jeden zápor."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "I didn't see",
+                "after": ".",
+                "options": [
+                  "anybody",
+                  "nobody"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "",
+                "after": "came to the party.",
+                "options": [
+                  "Nobody",
+                  "Anybody"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "There is",
+                "after": "in the box.",
+                "options": [
+                  "nothing",
+                  "anything"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Is there",
+                "after": "in the fridge?",
+                "options": [
+                  "anything",
+                  "nothing"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Přelož dvěma způsoby: Nic nevím.",
+          "answer": "1) S *not*: *I don't know anything.* 2) S *no-*: *I know nothing.*"
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Nikdo nepřišel.",
+          "answer": "„Nikdo“ je podmět na začátku → *Nobody* a sloveso kladné: *Nobody came.* (Ne *Nobody didn't come*.)"
+        },
+        {
+          "type": "mistake",
+          "wrong": "I don't know nothing.",
+          "right": "I don't know anything. / I know nothing.",
+          "why": "*Don't* a *nothing* jsou dva zápory. Angličtina smí mít jen jeden."
+        },
+        {
+          "type": "summary",
+          "text": "V angličtině **jen jeden zápor**: *not + any-* nebo *no-* s kladným slovesem."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Is there ___ in the fridge?",
+      "options": [
+        "anything",
+        "something",
+        "nothing"
+      ],
+      "answer": 0,
+      "explanation": "Otázka → any-."
+    },
+    {
+      "type": "choice",
+      "question": "I didn’t see ___.",
+      "options": [
+        "anybody",
+        "nobody",
+        "somebody"
+      ],
+      "answer": 0,
+      "explanation": "V záporu s not → any-."
+    },
+    {
+      "type": "choice",
+      "question": "Přelož: „Nikdo nepřišel.“",
+      "options": [
+        "Nobody came.",
+        "Nobody didn’t come.",
+        "Anybody came."
+      ],
+      "answer": 0,
+      "explanation": "Jen jeden zápor."
+    },
+    {
+      "type": "input",
+      "question": "Přelož „všude“.",
+      "answers": [
+        "everywhere"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Přelož „něco“.",
+      "answers": [
+        "something"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„I don’t know nothing.“ je správná angličtina.",
+      "answer": false,
+      "explanation": "Dvojitý zápor. Správně: I don’t know anything. / I know nothing."
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "nobody",
+          "nikdo"
+        ],
+        [
+          "everything",
+          "všechno"
+        ],
+        [
+          "somewhere",
+          "někde"
+        ],
+        [
+          "nothing",
+          "nic"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Everybody se pojí se slovesem v jednotném čísle: Everybody is here.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Doplň: Let’s go ___ nice for the weekend. (někam)",
+      "answers": [
+        "somewhere"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď větu.",
+      "items": [
+        "There",
+        "is",
+        "nothing",
+        "in",
+        "the",
+        "box."
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Kdy použiješ something a kdy anything?",
+      "answer": "Something v kladné větě, anything v otázce a v záporu s not."
+    },
+    {
+      "type": "open",
+      "question": "Přelož dvěma způsoby: „Nic jsem neviděl.“",
+      "answer": "I didn’t see anything. / I saw nothing."
+    }
+  ]
+}

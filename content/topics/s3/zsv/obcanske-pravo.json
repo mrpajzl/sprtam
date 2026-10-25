@@ -1,0 +1,456 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obcanske-pravo",
+  "title": "Občanské právo",
+  "emoji": "🤝",
+  "explanations": [
+    {
+      "title": "Ze života",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Tereze je 17. Koupí si svačinu, lístek do kina, nová sluchátka – v pořádku. Kdyby si ale chtěla sama koupit byt nebo auto na úvěr, prodávající s ní smlouvu podepsat nesmí. Proč?"
+        },
+        {
+          "type": "text",
+          "text": "Odpověď dává **občanské právo**. Upravuje běžné věci každého dne: nákupy, půjčky, nájmy, dědictví. Kdo mu rozumí, nenechá se ošidit a ví, co smí sám podepsat."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Občanské právo",
+          "definition": "Část práva, která upravuje vztahy mezi **rovnými** lidmi a firmami: majetek, smlouvy, dědění, náhradu škody. Základem je **občanský zákoník** (č. 89/2012 Sb.), účinný od **1. 1. 2014**.",
+          "example": "Koupě kola od souseda."
+        },
+        {
+          "type": "term",
+          "term": "Právní jednání",
+          "definition": "Projev vůle, kterým vznikají, mění se nebo zanikají práva a povinnosti.",
+          "example": "Podepsat smlouvu, koupit rohlík, napsat závěť."
+        },
+        {
+          "type": "term",
+          "term": "Právní osobnost",
+          "definition": "Způsobilost **mít** práva a povinnosti. Má ji každý člověk **od narození do smrti**.",
+          "example": "I miminko může něco zdědit – je vlastníkem."
+        },
+        {
+          "type": "term",
+          "term": "Svéprávnost",
+          "definition": "Způsobilost **sám jednat** – vlastním jednáním nabývat práva a brát na sebe povinnosti. V plném rozsahu ji člověk získá **zletilostí**.",
+          "example": "Plně svéprávný může sám podepsat nájemní smlouvu."
+        },
+        {
+          "type": "term",
+          "term": "Zletilost",
+          "definition": "Dospělost v právním smyslu – v ČR v **18 letech**.",
+          "example": "Tereza bude zletilá v den 18. narozenin."
+        },
+        {
+          "type": "heading",
+          "text": "Co smí nezletilý"
+        },
+        {
+          "type": "text",
+          "text": "Nezletilý smí sám jen taková právní jednání, která jsou **přiměřená jeho věku a rozumové vyspělosti**. Čím je starší, tím víc. Za ostatní jedná **zákonný zástupce** – obvykle rodič."
+        },
+        {
+          "type": "example",
+          "question": "Patnáctiletý Ondra si sám koupí auto za 200 000 Kč. Je smlouva v pořádku?",
+          "answer": "**Není.** Koupě auta není jednání přiměřené věku patnáctiletého. Za něj by musel jednat rodič (a u takto velkých věcí často i soud)."
+        },
+        {
+          "type": "text",
+          "text": "Plnou svéprávnost lze získat i **před 18. rokem**: soud ji může na návrh **přiznat** nezletilému od **16 let**, který se umí sám živit a své záležitosti zvládne."
+        },
+        {
+          "type": "heading",
+          "text": "Půjčit si – ale jak?"
+        },
+        {
+          "type": "term",
+          "term": "Zápůjčka",
+          "definition": "Půjčíš věc určenou jen **druhem** (peníze, mouku) a dostaneš zpět **stejný druh a množství**, ne tutéž věc.",
+          "example": "Půjčíš kamarádovi 500 Kč, vrátí ti jiné bankovky."
+        },
+        {
+          "type": "term",
+          "term": "Výpůjčka",
+          "definition": "Půjčíš **konkrétní věc zdarma** a vrátí se **tatáž věc**.",
+          "example": "Půjčíš si od souseda vrtačku a vrátíš mu tutéž."
+        },
+        {
+          "type": "term",
+          "term": "Nájem",
+          "definition": "Užívání cizí věci **za úplatu**. Vrací se tatáž věc.",
+          "example": "Pronájem bytu za 15 000 Kč měsíčně."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď situace. Zeptej se: vrací se tatáž věc, nebo jen stejný druh? A platí se za to?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Zápůjčka",
+              "Výpůjčka",
+              "Nájem"
+            ],
+            "items": [
+              {
+                "text": "Půjčím 1 000 Kč, vrátíš jiné bankovky",
+                "group": 0
+              },
+              {
+                "text": "Sousedka si půjčí 2 vejce na bábovku",
+                "group": 0
+              },
+              {
+                "text": "Kamarád mi zdarma půjčí kolo na víkend",
+                "group": 1
+              },
+              {
+                "text": "Vezmu si zdarma knihu z knihovny",
+                "group": 1
+              },
+              {
+                "text": "Půjčovna mi za 300 Kč na den půjčí lyže",
+                "group": 2
+              },
+              {
+                "text": "Bydlím v bytě a platím majiteli",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Půjčíš kamarádovi 500 Kč a on ti vrátí jinou pětistovku. Jaká smlouva?",
+          "answer": "**Zápůjčka** – peníze jsou určené jen druhem a vrací se stejná částka, ne tatáž bankovka."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Právní osobnost a svéprávnost jsou totéž.",
+          "right": "Právní osobnost = umět práva a povinnosti **mít** (od narození). Svéprávnost = umět **sám jednat** (plně od 18).",
+          "why": "Novorozenec může vlastnit zděděný dům (má právní osobnost), ale sám ho prodat nemůže (není svéprávný)."
+        },
+        {
+          "type": "summary",
+          "text": "Právní osobnost má každý od narození, plnou svéprávnost člověk získá zletilostí v 18 letech. Nezletilý smí jen jednání přiměřená věku. Zápůjčka = vrací se stejný druh, výpůjčka = tatáž věc zdarma, nájem = za úplatu."
+        }
+      ]
+    },
+    {
+      "title": "Smlouvy a dědictví",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Za život uzavřeš stovky smluv – často aniž bys to věděl. Koupě jízdenky je smlouva, pronájem bytu taky. A jednou také budeš dědit nebo psát, kdo má dostat tvůj majetek."
+        },
+        {
+          "type": "text",
+          "text": "Občanské právo určuje pravidla pro všechno tohle. Když je znáš, víš, na co máš nárok a dokdy ho musíš uplatnit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Občanský zákoník",
+          "definition": "Hlavní zákon občanského práva – č. **89/2012 Sb.**, účinný od **1. 1. 2014**.",
+          "example": "Upravuje smlouvy, vlastnictví, rodinu i dědění."
+        },
+        {
+          "type": "term",
+          "term": "Fyzická osoba",
+          "definition": "Člověk.",
+          "example": "Ty, tvoje babička, advokát, soudce."
+        },
+        {
+          "type": "term",
+          "term": "Právnická osoba",
+          "definition": "Organizace, kterou právo bere jako „osobu“: může vlastnit majetek, uzavírat smlouvy, být žalována.",
+          "example": "Obchodní společnost (s. r. o.), spolek, obec."
+        },
+        {
+          "type": "term",
+          "term": "Smlouva",
+          "definition": "Dohoda dvou nebo více stran, ze které vznikají práva a povinnosti.",
+          "example": "Prodávající dá kolo, kupující zaplatí."
+        },
+        {
+          "type": "heading",
+          "text": "Nejčastější smlouvy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "smlouva",
+            "co se děje",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "kupní",
+              "věc za peníze",
+              "koupě mobilu"
+            ],
+            [
+              "darovací",
+              "věc zdarma natrvalo",
+              "babička daruje vnukovi hodinky"
+            ],
+            [
+              "nájemní",
+              "užívání cizí věci za úplatu",
+              "pronájem bytu"
+            ],
+            [
+              "o dílo",
+              "někdo něco vytvoří za úplatu",
+              "truhlář vyrobí skříň"
+            ],
+            [
+              "zápůjčka",
+              "půjčím věc určenou druhem, vrátí se stejný druh",
+              "půjčka 1 000 Kč"
+            ],
+            [
+              "výpůjčka",
+              "užívání konkrétní věci zdarma, vrátí se tatáž",
+              "půjčená vrtačka"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Kdo smí smlouvy uzavírat"
+        },
+        {
+          "type": "text",
+          "text": "Práva a povinnosti **mít** může každý od narození – to je **právní osobnost**. Sám **jednat** může člověk v plném rozsahu až se **svéprávností**, kterou získá **zletilostí v 18 letech** (nebo dřív, pokud mu ji od 16 let přizná soud). Nezletilý smí sám jen jednání **přiměřená svému věku**."
+        },
+        {
+          "type": "heading",
+          "text": "Nárok nevydrží věčně: promlčení"
+        },
+        {
+          "type": "term",
+          "term": "Promlčení",
+          "definition": "Když své právo neuplatníš u soudu včas, **promlčí se**: dlužník pak může odmítnout plnit a soud ti nepomůže. Obecná (subjektivní) lhůta je **3 roky** od chvíle, kdy ses o nároku mohl dozvědět.",
+          "example": "Kamarád ti dluží peníze a ty 4 roky nic neděláš – soudem je už nejspíš nevymůžeš."
+        },
+        {
+          "type": "heading",
+          "text": "Dědění"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Když člověk zemře, jeho majetek přechází na **dědice**.",
+            "Pokud napsal **závěť** (projev vůle, kdo má co dostat), dědí se **ze závěti**.",
+            "Pokud závěť není, dědí se **ze zákona** podle **dědických tříd**.",
+            "V **1. dědické třídě** jsou **děti a manžel (manželka)** – dědí **stejným dílem**.",
+            "Řízení o dědictví vede **notář** jako soudní komisař."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Nepominutelný dědic",
+          "definition": "Potomek (dítě), kterého nelze bez zákonného důvodu zcela vynechat. Má nárok aspoň na určitý podíl (povinný díl).",
+          "example": "Otec napíše, že syn nedostane nic. Bez zákonného důvodu k vydědění syn přesto dostane povinný díl."
+        },
+        {
+          "type": "text",
+          "text": "Otestuj se: otoč karty a vysvětli pojem dřív, než ho uvidíš."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Právní osobnost",
+                "back": "Způsobilost mít práva a povinnosti. Od narození do smrti."
+              },
+              {
+                "front": "Svéprávnost",
+                "back": "Způsobilost sám jednat. Plná zletilostí (18 let)."
+              },
+              {
+                "front": "Právnická osoba",
+                "back": "Organizace, např. obchodní společnost, spolek, obec."
+              },
+              {
+                "front": "Promlčení",
+                "back": "Po uplynutí lhůty (obecně 3 roky) nelze právo vymoci u soudu."
+              },
+              {
+                "front": "Závěť",
+                "back": "Projev vůle, komu připadne majetek po smrti."
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Pan Dvořák zemřel bez závěti. Zanechal manželku a dvě děti a majetek za 900 000 Kč. Kdo kolik dostane?",
+          "answer": "Dědí se **ze zákona**, 1. dědická třída: manželka a 2 děti **stejným dílem**. 900 000 : 3 = **300 000 Kč** každý."
+        },
+        {
+          "type": "example",
+          "question": "Je advokát právnická osoba?",
+          "answer": "**Ne.** Advokát je člověk, tedy **fyzická osoba**. Právnickou osobou je třeba advokátní kancelář založená jako společnost, spolek nebo obec."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Když nenapíšu závěť, celý majetek připadne státu.",
+          "right": "Bez závěti se dědí ze zákona – nejdřív děti a manžel, pak další příbuzní. Stát dědí, jen když žádný dědic není.",
+          "why": "Zákon určuje dědické třídy právě pro případ, že člověk závěť nesepsal."
+        },
+        {
+          "type": "summary",
+          "text": "Občanský zákoník 89/2012 Sb. (od 1. 1. 2014). Smlouvy: kupní, darovací, nájemní, o dílo, zápůjčka, výpůjčka. Promlčecí lhůta obecně 3 roky. Dědí se ze závěti nebo ze zákona; 1. třída = děti a manžel stejným dílem."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "V kolika letech se člověk v ČR stává zletilým?",
+      "answers": [
+        "18"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdy vzniká právní osobnost člověka?",
+      "options": [
+        "Narozením",
+        "V 15 letech",
+        "V 18 letech",
+        "Vydáním občanského průkazu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kterým číslem je občanský zákoník?",
+      "options": [
+        "89/2012 Sb.",
+        "40/2009 Sb.",
+        "262/2006 Sb.",
+        "1/1993 Sb."
+      ],
+      "answer": 0,
+      "explanation": "40/2009 je trestní zákoník, 262/2006 zákoník práce, 1/1993 Ústava."
+    },
+    {
+      "type": "truefalse",
+      "question": "Svéprávnost lze nabýt i před 18. rokem, pokud ji nezletilému přizná soud.",
+      "answer": true,
+      "explanation": "Soud ji může přiznat od 16 let, pokud se nezletilý sám živí a své záležitosti zvládne."
+    },
+    {
+      "type": "match",
+      "question": "Spoj smlouvu s popisem.",
+      "pairs": [
+        [
+          "kupní",
+          "věc za peníze"
+        ],
+        [
+          "darovací",
+          "věc zdarma natrvalo"
+        ],
+        [
+          "nájemní",
+          "užívání za úplatu"
+        ],
+        [
+          "výpůjčka",
+          "užívání zdarma, vrátí se tatáž věc"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo dědí v 1. dědické třídě?",
+      "options": [
+        "Děti a manžel",
+        "Rodiče a sourozenci",
+        "Jen manžel",
+        "Prarodiče"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik let je obecná (subjektivní) promlčecí lhůta?",
+      "answers": [
+        "3",
+        "tri"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je právnická osoba?",
+      "options": [
+        "Spolek",
+        "Advokát",
+        "Soudce",
+        "Nezletilé dítě"
+      ],
+      "answer": 0,
+      "explanation": "Advokát i soudce jsou fyzické osoby."
+    },
+    {
+      "type": "truefalse",
+      "question": "15letý může sám platně koupit auto.",
+      "answer": false,
+      "explanation": "Není to jednání přiměřené jeho věku."
+    },
+    {
+      "type": "choice",
+      "question": "Půjčíš si od souseda vrtačku zadarmo. Jde o:",
+      "options": [
+        "Výpůjčku",
+        "Zápůjčku",
+        "Nájem",
+        "Dar"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi právní osobností a svéprávností.",
+      "answer": "Právní osobnost je způsobilost mít práva a povinnosti – má ji každý člověk od narození. Svéprávnost je způsobilost vlastním jednáním práva nabývat a povinnosti přebírat – v plném rozsahu ji získá zletilostí."
+    },
+    {
+      "type": "open",
+      "question": "Jakými způsoby lze dědit?",
+      "answer": "Ze zákona (podle dědických tříd, např. děti a manžel) nebo ze závěti. Dědit lze i z dědické smlouvy. Potomci jsou nepominutelní dědici – nelze je bezdůvodně vydědit."
+    }
+  ]
+}

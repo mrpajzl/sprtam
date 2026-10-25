@@ -1,0 +1,376 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cas",
+  "title": "Měření času",
+  "emoji": "⏱️",
+  "generator": "units",
+  "explanations": [
+    {
+      "title": "Hodinami",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kdy začíná vyučování? Jak dlouho se peče koláč? Kdo byl ve sprintu rychlejší? Bez měření času by se nedalo domluvit ani vyhodnotit závod."
+        },
+        {
+          "type": "text",
+          "text": "Lidé měří čas tisíce let. Vždy k tomu použili něco, co se **pravidelně opakuje**."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čas",
+          "definition": "Veličina, která říká, jak dlouho něco trvá. Značka `t`. Hlavní jednotka je **sekunda** (s).",
+          "example": "Jeden nádech a výdech trvá asi 3–4 sekundy."
+        },
+        {
+          "type": "term",
+          "term": "Pravidelný děj",
+          "definition": "Něco, co se opakuje pořád stejně dlouho. Spočítáním opakování změříme čas.",
+          "example": "Východ slunce každý den, tikání hodin, tlukot srdce."
+        },
+        {
+          "type": "term",
+          "term": "Kyvadlo",
+          "definition": "Závaží zavěšené na provázku nebo tyči, které se houpe sem a tam. Každé kývnutí trvá stejně dlouho.",
+          "example": "Houpačka na zahradě je velké kyvadlo."
+        },
+        {
+          "type": "term",
+          "term": "Stopky",
+          "definition": "Hodinky, které spustíš na začátku děje a zastavíš na konci. Ukážou, jak dlouho děj trval.",
+          "example": "Běh na 60 m změří trenér stopkami."
+        },
+        {
+          "type": "heading",
+          "text": "Jak se měřil čas kdysi a dnes"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Hodiny",
+            "Co se pravidelně opakuje"
+          ],
+          "rows": [
+            [
+              "sluneční",
+              "Slunce se pohybuje po obloze, stín se posouvá"
+            ],
+            [
+              "přesýpací",
+              "písek se přesype za stejnou dobu"
+            ],
+            [
+              "kyvadlové",
+              "kyvadlo kývá stejně dlouho"
+            ],
+            [
+              "digitální, quartzové",
+              "malý krystal uvnitř velmi rychle a pravidelně kmitá"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Ručičky ukazují 7:45. Nastav, kolik bude za 30 minut. A kolik bylo před hodinou a čtvrt?"
+        },
+        {
+          "type": "widget",
+          "widget": "clock",
+          "props": {
+            "hours": 7,
+            "minutes": 45
+          }
+        },
+        {
+          "type": "example",
+          "question": "Film začal v 17:40 a skončil v 19:15. Jak dlouho trval?",
+          "answer": "Od 17:40 do 18:00 je 20 min. Od 18:00 do 19:00 je 60 min. Od 19:00 do 19:15 je 15 min. Celkem 20 + 60 + 15 = **95 min** = 1 h 35 min."
+        },
+        {
+          "type": "example",
+          "question": "Proč neměří čas běhu sluneční hodiny?",
+          "answer": "Stín se posouvá pomalu, na sekundy z něj nic nepřečteš. A v noci ani v zatažený den nefungují. Na běh potřebuješ **stopky**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1,5 hodiny = 1 hodina 50 minut",
+          "right": "1,5 hodiny = 1 hodina 30 minut",
+          "why": "Hodina má 60 minut, ne 100. Půl hodiny (0,5 h) je 30 minut."
+        },
+        {
+          "type": "summary",
+          "text": "Čas (t) se měří v sekundách. Každé hodiny využívají děj, který se pravidelně opakuje."
+        }
+      ]
+    },
+    {
+      "title": "Jednotky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Přestávka trvá 10 minut, rozhlasová reklama 30 sekund, prázdniny dva měsíce. Pro krátké a dlouhé doby máme různé jednotky."
+        },
+        {
+          "type": "text",
+          "text": "Jednotky času jsou zvláštní: nepočítají po desítkách jako metry, ale po **šedesáti**. Proto se v nich lidé často pletou."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čas",
+          "definition": "Jak dlouho něco trvá. Ve fyzice značka `t`.",
+          "example": "t = 15 s znamená „trvalo to 15 sekund“."
+        },
+        {
+          "type": "term",
+          "term": "Sekunda (s)",
+          "definition": "Hlavní jednotka času. Zhruba tak dlouho trvá říct „dvacet jedna“.",
+          "example": "Srdce udeří asi jednou za sekundu."
+        },
+        {
+          "type": "term",
+          "term": "Minuta, hodina, den",
+          "definition": "**1 min** = 60 s, **1 h** (hodina) = 60 min, **1 den** = 24 h.",
+          "example": "Vyučovací hodina má 45 min, je tedy kratší než hodina na hodinkách."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Jednotka",
+            "Kolik",
+            "V sekundách"
+          ],
+          "rows": [
+            [
+              "1 min",
+              "60 s",
+              "60 s"
+            ],
+            [
+              "1 h",
+              "60 min",
+              "3 600 s"
+            ],
+            [
+              "1 den",
+              "24 h",
+              "86 400 s"
+            ],
+            [
+              "1 týden",
+              "7 dní",
+              "604 800 s"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Jak převádět"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Na **menší** jednotku (h → min) **násob** – číslo vyjde větší.",
+            "Na **větší** jednotku (s → min) **děl**.",
+            "Mezi s, min a h je vždy krok **60**.",
+            "Z hodin na sekundy jsou dva kroky: · 60 · 60 = · 3 600."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik sekund má 2,5 minuty?",
+          "answer": "Na menší jednotku → násobím 60: 2,5 · 60 = **150 s**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik minut je 90 s?",
+          "answer": "Na větší jednotku → dělím 60: 90 : 60 = **1,5 min** (tj. 1 min 30 s)."
+        },
+        {
+          "type": "example",
+          "question": "Převeď 2 h 15 min na minuty a pak na sekundy.",
+          "answer": "2 h = 2 · 60 = 120 min. 120 + 15 = **135 min**. 135 · 60 = **8 100 s**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik minut má den?",
+          "answer": "24 h · 60 = **1 440 min**."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "1 min",
+                "back": "60 s"
+              },
+              {
+                "front": "1 h",
+                "back": "60 min = 3 600 s"
+              },
+              {
+                "front": "1 den",
+                "back": "24 h = 1 440 min"
+              },
+              {
+                "front": "0,5 h",
+                "back": "30 min"
+              },
+              {
+                "front": "0,25 h",
+                "back": "15 min"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Než kartu otočíš, zkus odpověď říct nahlas."
+        },
+        {
+          "type": "mistake",
+          "wrong": "2,5 h = 250 min",
+          "right": "2,5 h = 150 min",
+          "why": "U času se nenásobí 100, ale 60. 2,5 · 60 = 150."
+        },
+        {
+          "type": "summary",
+          "text": "1 min = 60 s, 1 h = 60 min = 3 600 s, 1 den = 24 h. Mezi s, min a h je krok 60, ne 100."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaká je hlavní jednotka času?",
+      "options": [
+        "sekunda",
+        "minuta",
+        "hodina",
+        "den"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik sekund je 1 hodina?",
+      "answers": [
+        "3600"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik minut je 2,5 h?",
+      "answers": [
+        "150"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik sekund je 4 min?",
+      "answers": [
+        "240"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik minut je 90 s?",
+      "answers": [
+        "1,5"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Den má 1 440 minut.",
+      "answer": true,
+      "explanation": "24 · 60 = 1 440"
+    },
+    {
+      "type": "choice",
+      "question": "Čím změříš čas běhu na 60 m?",
+      "options": [
+        "stopkami",
+        "slunečními hodinami",
+        "kalendářem",
+        "metrem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj stejné doby.",
+      "pairs": [
+        [
+          "1 min",
+          "60 s"
+        ],
+        [
+          "1 h",
+          "60 min"
+        ],
+        [
+          "1 den",
+          "24 h"
+        ],
+        [
+          "1 týden",
+          "7 dní"
+        ]
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejkratší doby.",
+      "items": [
+        "50 s",
+        "2 min",
+        "1 h",
+        "100 min",
+        "1 den"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co využívají kyvadlové hodiny?",
+      "options": [
+        "pravidelné kývání kyvadla",
+        "stín slunce",
+        "tekoucí písek",
+        "hoření svíčky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jaké druhy hodin znáš a na čem jsou založené?",
+      "answer": "Sluneční (stín), přesýpací (písek), kyvadlové (kyvadlo), digitální (kmitání krystalu). Všechny využívají pravidelně se opakující děj."
+    },
+    {
+      "type": "open",
+      "question": "Jak převedeš 2 h 15 min na minuty a na sekundy?",
+      "answer": "2 h = 120 min, plus 15 min je 135 min. 135 · 60 = 8 100 s."
+    }
+  ]
+}

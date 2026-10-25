@@ -1,0 +1,340 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zdravi-a-prvni-pomoc",
+  "title": "Zdraví a první pomoc",
+  "emoji": "🚑",
+  "explanations": [
+    {
+      "title": "Když se něco stane",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kamarád spadne z kola, babičce se udělá zle, v kuchyni se někdo spálí. V takové chvíli rozhoduje, jestli víš, co dělat."
+        },
+        {
+          "type": "text",
+          "text": "Nemusíš být lékař. Stačí zachovat klid, zavolat pomoc a zvládnout pár jednoduchých úkonů. To je první pomoc."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "První pomoc",
+          "definition": "Pomoc zraněnému nebo nemocnému, než přijede lékař.",
+          "example": "Chlazení popáleniny, přivolání záchranky."
+        },
+        {
+          "type": "term",
+          "term": "Tísňová linka",
+          "definition": "Telefonní číslo pro nouzové situace. Volání je zdarma.",
+          "example": "155 záchranka"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Číslo",
+            "Kdo pomůže"
+          ],
+          "rows": [
+            [
+              "155",
+              "zdravotnická záchranná služba"
+            ],
+            [
+              "150",
+              "hasiči"
+            ],
+            [
+              "158",
+              "policie"
+            ],
+            [
+              "112",
+              "jednotné evropské tísňové číslo (platí v celé EU)"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup při nehodě"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Zachovám klid.**",
+            "**Dbám na svou bezpečnost** – nevběhnu do silnice ani do ohně.",
+            "**Zavolám pomoc**: řeknu, kdo jsem, kde jsem a co se stalo. Nezavěsím, dokud to operátor nedovolí.",
+            "**Zůstanu u zraněného** a mluvím na něj."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Drobná zranění"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Krvácení z nosu**: hlavu **předkloním**, stisknu nosní křídla, na zátylek studený obklad.",
+            "**Popálenina**: chladím **studenou vodou** aspoň 10 minut. Nic na ni nemažu.",
+            "**Klíště**: vytáhnu ho **celé** (pinzetou), ranku vydezinfikuji a sleduji, jestli nezčervená.",
+            "**Odřenina**: opláchnu čistou vodou, vydezinfikuji, přelepím."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Spolužákovi teče krev z nosu. Má hlavu zaklonit?",
+          "answer": "**Ne – předklonit.** Při záklonu krev teče do krku a do žaludku a může se mu udělat špatně."
+        },
+        {
+          "type": "example",
+          "question": "Sestra se opařila horkým čajem. Co uděláš?",
+          "answer": "Hned dám místo pod **studenou vodu** a chladím aspoň 10 minut. Řeknu to dospělému."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Popáleninu namažu máslem.",
+          "right": "Popáleninu chladím studenou vodou.",
+          "why": "Máslo teplo v kůži zadrží a ránu znečistí. Voda teplo odvede."
+        },
+        {
+          "type": "summary",
+          "text": "Při nehodě: klid, vlastní bezpečí, zavolat pomoc (155, 150, 158, 112), zůstat u zraněného. Krvácení z nosu – předklonit, popálenina – chladit."
+        }
+      ]
+    },
+    {
+      "title": "Zdravý den",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Nejlepší první pomoc je ta, kterou nepotřebuješ. Spoustě nemocí a úrazů se dá předejít tím, jak žiješ každý den."
+        },
+        {
+          "type": "text",
+          "text": "Zdravý životní styl nejsou zákazy. Jsou to návyky, díky kterým máš sílu, dobře se učíš a cítíš se dobře."
+        },
+        {
+          "type": "term",
+          "term": "Zdravý životní styl",
+          "definition": "Způsob života, který tělu prospívá: jídlo, pohyb, spánek, hygiena a pohoda.",
+          "example": "Každý den jdu ven a jím zeleninu."
+        },
+        {
+          "type": "term",
+          "term": "Návykové látky",
+          "definition": "Látky, na kterých může člověk vzniknout závislost a které tělu škodí.",
+          "example": "cigarety, alkohol, drogy"
+        },
+        {
+          "type": "heading",
+          "text": "Pilíře zdraví"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Pestré jídlo** – ovoce, zelenina, celozrnné pečivo, mléčné výrobky. Sladkosti jen občas.",
+            "**Pitný režim** – hlavně voda.",
+            "**Pohyb** – každý den, nejlépe venku.",
+            "**Spánek** – školák asi 9–11 hodin.",
+            "**Hygiena** – mytí rukou, čištění zubů.",
+            "**Žádné návykové látky** – kouření a alkohol tělu škodí."
+          ]
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Prospívá ✅",
+              "Škodí ❌"
+            ],
+            "items": [
+              {
+                "text": "pohyb a dost spánku",
+                "group": 0
+              },
+              {
+                "text": "voda místo limonády",
+                "group": 0
+              },
+              {
+                "text": "ovoce ke svačině",
+                "group": 0
+              },
+              {
+                "text": "sladkosti každý den",
+                "group": 1
+              },
+              {
+                "text": "kouření",
+                "group": 1
+              },
+              {
+                "text": "ponocování u mobilu",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Prevence úrazů"
+        },
+        {
+          "type": "term",
+          "term": "Prevence",
+          "definition": "Předcházení nemocem a úrazům dřív, než se stanou.",
+          "example": "Přilba na kole je prevence úrazu hlavy."
+        },
+        {
+          "type": "list",
+          "items": [
+            "přilba na kole, koloběžce a lyžích",
+            "reflexní prvky ve tmě",
+            "po výletu do přírody prohlédnout tělo kvůli klíšťatům"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Po výletu najdeš na noze klíště. Co uděláš?",
+          "answer": "Klíště **celé vytáhnu**, ranku **vydezinfikuji** a pár týdnů sleduji. Když místo zčervená, jdu k lékaři."
+        },
+        {
+          "type": "example",
+          "question": "Proč nestačí sportovat jen o víkendu?",
+          "answer": "Tělo potřebuje pohyb **pravidelně**. Každodenní pohyb posiluje srdce, svaly i kosti."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Klíště zamažu máslem nebo olejem, aby samo vylezlo.",
+          "right": "Klíště co nejdřív celé vytáhnu a ranku vydezinfikuji.",
+          "why": "Zamazané klíště se dusí a může do rány vypustit víc nákazy. Rychlé vytažení je bezpečnější."
+        },
+        {
+          "type": "summary",
+          "text": "Zdravě žiju, když jím pestře, piju vodu, hýbu se, dost spím, dbám na hygienu a vyhýbám se kouření a alkoholu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Jaké číslo má záchranná služba?",
+      "answers": [
+        "155"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj číslo se službou.",
+      "pairs": [
+        [
+          "150",
+          "hasiči"
+        ],
+        [
+          "155",
+          "záchranka"
+        ],
+        [
+          "158",
+          "policie"
+        ],
+        [
+          "112",
+          "evropské tísňové číslo"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co uděláš při krvácení z nosu?",
+      "options": [
+        "předkloním hlavu",
+        "zakloním hlavu",
+        "lehnu si na záda"
+      ],
+      "answer": 0,
+      "explanation": "Při záklonu by krev tekla do krku."
+    },
+    {
+      "type": "choice",
+      "question": "Jak ošetříš popáleninu?",
+      "options": [
+        "chladím studenou vodou",
+        "namažu máslem",
+        "přelepím ji izolepou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Když volám pomoc, řeknu, kdo jsem, kde jsem a co se stalo.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Číslo 112 funguje v celé Evropské unii.",
+      "answer": true
+    },
+    {
+      "type": "order",
+      "question": "Seřaď postup při nehodě.",
+      "items": [
+        "zachovám klid",
+        "dbám na svou bezpečnost",
+        "zavolám pomoc",
+        "zůstanu u zraněného"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co patří ke zdravému životu?",
+      "options": [
+        "pohyb a dost spánku",
+        "sladkosti každý den",
+        "kouření"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co uděláš s klíštětem?",
+      "options": [
+        "celé ho vytáhnu a ranku vydezinfikuji",
+        "nechám ho tam",
+        "zamáznu ho máslem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jaké číslo mají hasiči?",
+      "answers": [
+        "150"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jak zavoláš záchrannou službu a co řekneš?",
+      "answer": "Vytočím 155. Řeknu své jméno, kde přesně jsem a co se stalo. Odpovídám na otázky a nezavěsím, dokud mi to operátor neřekne."
+    },
+    {
+      "type": "open",
+      "question": "Co pro své zdraví děláš každý den?",
+      "answer": "Jím ovoce a zeleninu, piju vodu, hýbu se venku, dost spím a myji si ruce. Vyhýbám se kouření a alkoholu."
+    }
+  ]
+}

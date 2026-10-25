@@ -1,0 +1,420 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "elektricky-obvod",
+  "title": "Elektrický obvod",
+  "emoji": "💡",
+  "explanations": [
+    {
+      "title": "Baterka",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rozsvítíš baterku, zapneš lampičku, nabiješ mobil. Všude teče **elektrický proud**. Aby tekl, musí mít cestu – a té cestě říkáme obvod."
+        },
+        {
+          "type": "text",
+          "text": "Když pochopíš obvod, opravíš si baterku, postavíš vlastní stavebnici a víš, proč se nesahá na zásuvku."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektrický proud",
+          "definition": "Pohyb nepatrných nabitých částic po určité cestě. Sám ho nevidíš, ale vidíš, co dělá: svítí, hřeje, točí motorkem.",
+          "example": "Proud v drátu je trochu jako voda v hadici."
+        },
+        {
+          "type": "term",
+          "term": "Zdroj",
+          "definition": "Část, která proud „pohání“ – dodává energii.",
+          "example": "Baterie, akumulátor v mobilu, zásuvka."
+        },
+        {
+          "type": "term",
+          "term": "Spotřebič",
+          "definition": "Věc, která energii z proudu využije k práci.",
+          "example": "Žárovka (svítí), fén (hřeje a fouká), motorek (točí se)."
+        },
+        {
+          "type": "term",
+          "term": "Elektrický obvod",
+          "definition": "Uzavřená cesta: od zdroje přes vodiče a spotřebič zpátky ke zdroji.",
+          "example": "Baterie → drát → žárovka → drát → zpět do baterie."
+        },
+        {
+          "type": "heading",
+          "text": "Postav si obvod"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Vezmi plochou baterii, žárovičku a dva dráty.",
+            "Jedním drátem spoj jeden konec baterie se žárovkou.",
+            "Druhým drátem spoj žárovku s druhým koncem baterie.",
+            "Žárovka svítí – obvod je **uzavřený**.",
+            "Odpoj jeden drát – žárovka zhasne. Obvod je **přerušený**, proud neteče."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Spínač",
+          "definition": "Součástka, kterou obvod rychle přerušíš nebo spojíš. Zapíná a vypíná.",
+          "example": "Vypínač na zdi, tlačítko na baterce."
+        },
+        {
+          "type": "heading",
+          "text": "Čím proud projde"
+        },
+        {
+          "type": "term",
+          "term": "Vodič a izolant",
+          "definition": "**Vodič** je látka, kterou proud prochází (kovy, grafit, slaná voda). **Izolant** proud nepropustí (plast, guma, sklo, suché dřevo, porcelán).",
+          "example": "Drát uvnitř kabelu je z mědi (vodič), obal z plastu (izolant)."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď látky. Kdybys je zapojil místo drátu, rozsvítila by se žárovka?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "vodič",
+              "izolant"
+            ],
+            "items": [
+              {
+                "text": "měď",
+                "group": 0
+              },
+              {
+                "text": "hliník",
+                "group": 0
+              },
+              {
+                "text": "grafit",
+                "group": 0
+              },
+              {
+                "text": "slaná voda",
+                "group": 0
+              },
+              {
+                "text": "plast",
+                "group": 1
+              },
+              {
+                "text": "sklo",
+                "group": 1
+              },
+              {
+                "text": "guma",
+                "group": 1
+              },
+              {
+                "text": "suché dřevo",
+                "group": 1
+              },
+              {
+                "text": "porcelán",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Baterka nesvítí, i když baterie je nová. Co zkontroluješ?",
+          "answer": "Jestli je obvod **uzavřený**: jestli je zapnutý spínač, jestli kontakty dosedají a jestli žárovka není přerušená (prasklá)."
+        },
+        {
+          "type": "example",
+          "question": "Proč nesmíš sahat na vypínač mokrou rukou?",
+          "answer": "Voda z kohoutku obsahuje rozpuštěné látky a **vede proud**. Mokrá kůže může proudu otevřít cestu do těla."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Stačí jeden drát od baterie k žárovce.",
+          "right": "Potřebuješ uzavřený okruh: tam i zpátky.",
+          "why": "Proud musí z baterie vyjít, projít žárovkou a vrátit se do baterie. Jedním drátem okruh neuzavřeš."
+        },
+        {
+          "type": "summary",
+          "text": "Proud teče jen **uzavřeným** obvodem: zdroj → vodiče → spotřebič → zpět. Vodiče proud vedou, izolanty ne."
+        }
+      ]
+    },
+    {
+      "title": "Schéma a zapojení",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Elektrikář nekreslí obvod jako obrázek s žárovkou a dráty. Kreslí **schéma** – jednoduché značky, kterým rozumí každý elektrikář na světě."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si, z čeho se obvod skládá a jak můžeš zapojit dvě žárovky. Pak pochopíš, proč u vánočních světýlek jedna vadná žárovka zhasne celý řetěz."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektrický obvod",
+          "definition": "Uzavřená cesta, po které teče elektrický proud (pohyb drobných nabitých částic).",
+          "example": "Obvod v baterce: baterie, spínač, žárovka a kovové pásky mezi nimi."
+        },
+        {
+          "type": "term",
+          "term": "Schéma",
+          "definition": "Nákres obvodu z dohodnutých značek a rovných čar. Čára = vodič.",
+          "example": "Žárovka se kreslí jako kroužek s křížkem, baterie jako dvě čárky – dlouhá a krátká."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Součástka",
+            "Úloha",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "zdroj",
+              "dodává energii",
+              "baterie"
+            ],
+            [
+              "spotřebič",
+              "energii využívá",
+              "žárovka, motorek"
+            ],
+            [
+              "vodiče",
+              "spojují součástky",
+              "měděné dráty"
+            ],
+            [
+              "spínač",
+              "zapíná a vypíná",
+              "vypínač"
+            ]
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Vodič a izolant",
+          "definition": "**Vodič** proud propouští (kovy, grafit). **Izolant** proud nepropustí (plast, guma, sklo).",
+          "example": "Měděný drát je vodič, jeho plastový obal izolant."
+        },
+        {
+          "type": "heading",
+          "text": "Dvě žárovky – dvě možnosti"
+        },
+        {
+          "type": "term",
+          "term": "Sériové zapojení",
+          "definition": "Spotřebiče jsou **za sebou** v jedné řadě. Proud prochází jedním po druhém.",
+          "example": "Jako korálky na jedné šňůrce."
+        },
+        {
+          "type": "term",
+          "term": "Paralelní zapojení",
+          "definition": "Spotřebiče jsou **vedle sebe**, každý má svou vlastní cestu ke zdroji.",
+          "example": "Jako žebřík: každá příčka je samostatná cesta."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Sériově: jedna žárovka praskne → cesta je přerušená → **zhasnou všechny**.",
+            "Paralelně: jedna žárovka praskne → ostatní mají vlastní cestu → **svítí dál**.",
+            "Proto jsou spotřebiče v bytě zapojené **paralelně**: lednička jede, i když vypneš lampu."
+          ]
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "sériově",
+              "paralelně"
+            ],
+            "items": [
+              {
+                "text": "starší vánoční řetěz: jedna zhasne, zhasnou všechny",
+                "group": 0
+              },
+              {
+                "text": "zásuvky v bytě",
+                "group": 1
+              },
+              {
+                "text": "lampa a lednička v kuchyni",
+                "group": 1
+              },
+              {
+                "text": "spínač a žárovka, kterou ovládá",
+                "group": 0
+              },
+              {
+                "text": "světla v různých pokojích",
+                "group": 1
+              },
+              {
+                "text": "dvě baterie za sebou v baterce",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď situace. Ptej se: když jedna věc vypadne, fungují ostatní dál?"
+        },
+        {
+          "type": "example",
+          "question": "Jedna žárovka v řetězu praskla a zhasl celý řetěz. Jak jsou zapojené?",
+          "answer": "Proud musel procházet všemi za sebou a prasklá žárovka cestu přerušila. Jsou zapojené **sériově**."
+        },
+        {
+          "type": "example",
+          "question": "Proč jsou kabely obalené plastem?",
+          "answer": "Plast je **izolant** – proud jím neprojde. Chrání nás, abychom se nedotkli vodiče (mědi), kterým proud teče."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Spotřebiče v bytě jsou zapojené za sebou.",
+          "right": "Jsou zapojené paralelně (vedle sebe).",
+          "why": "Kdyby byly za sebou, vypnutím jedné lampy by zhasl celý byt a lednička by přestala chladit."
+        },
+        {
+          "type": "summary",
+          "text": "Obvod = zdroj, spotřebič, vodiče, spínač. Sériově: jedna vypadne, nejdou všechny. Paralelně: ostatní fungují dál – tak je to doma."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co obvod nepotřebuje, aby žárovka svítila?",
+      "options": [
+        "magnet",
+        "zdroj",
+        "vodiče",
+        "spotřebič"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Proud prochází jen uzavřeným obvodem.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co je izolant?",
+      "options": [
+        "guma",
+        "měď",
+        "hliník",
+        "železo"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je dobrý vodič?",
+      "options": [
+        "měď",
+        "sklo",
+        "plast",
+        "porcelán"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Při sériovém zapojení zhasnou všechny žárovky, když jedna praskne.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak jsou zapojeny spotřebiče v bytě?",
+      "options": [
+        "paralelně",
+        "sériově",
+        "vůbec nejsou spojené"
+      ],
+      "answer": 0,
+      "explanation": "Každý spotřebič můžeš zapnout a vypnout zvlášť."
+    },
+    {
+      "type": "match",
+      "question": "Spoj součástku s úlohou.",
+      "pairs": [
+        [
+          "baterie",
+          "zdroj energie"
+        ],
+        [
+          "žárovka",
+          "spotřebič"
+        ],
+        [
+          "spínač",
+          "zapíná a vypíná"
+        ],
+        [
+          "drát",
+          "vodič"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Kabely mají obal z plastu, protože plast je izolant.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Proč nesmíme sahat na zásuvku mokrou rukou?",
+      "options": [
+        "Voda s nečistotami vede proud.",
+        "Zásuvka zrezaví.",
+        "Zhasne světlo."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jedním slovem: jak se jmenuje součástka, kterou obvod zapínáme a vypínáme?",
+      "answers": [
+        "spínač",
+        "vypínač"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Z čeho se skládá jednoduchý elektrický obvod?",
+      "answer": "Ze zdroje (baterie), spotřebiče (žárovka), vodičů a obvykle spínače. Proud teče, jen když je obvod uzavřený."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi sériovým a paralelním zapojením žárovek?",
+      "answer": "V sérii jsou za sebou – když jedna zhasne, zhasnou všechny. Paralelně jsou vedle sebe – ostatní svítí dál."
+    }
+  ]
+}

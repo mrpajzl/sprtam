@@ -33,7 +33,7 @@ export const plain = (text: string) => text.replace(/\*\*(.+?)\*\*|`(.+?)`|\*(.+
 
 /** First ~155 characters of an explanation's prose, cut at a word boundary. */
 export function summary(blocks: Block[], max = 155): string {
-  const text = blocks.flatMap((b) => (b.t === 'p' || b.t === 'key' ? [plain(b.text)] : b.t === 'term' ? [`${plain(b.term)}: ${plain(b.def)}`] : [])).join(' ').replace(/\s+/g, ' ').trim()
+  const text = blocks.flatMap((b) => (b.type === 'text' || b.type === 'summary' ? [plain(b.text)] : b.type === 'term' ? [`${plain(b.term)}: ${plain(b.definition)}`] : [])).join(' ').replace(/\s+/g, ' ').trim()
   if (text.length <= max) return text
   const cut = text.slice(0, max - 1)
   return `${cut.slice(0, cut.lastIndexOf(' ') > 80 ? cut.lastIndexOf(' ') : cut.length).replace(/[\s,;:.!?–-]+$/, '')}…`

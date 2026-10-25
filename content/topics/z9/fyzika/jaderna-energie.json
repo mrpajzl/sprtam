@@ -1,0 +1,408 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "jaderna-energie",
+  "title": "Jaderná energie",
+  "emoji": "☢️",
+  "explanations": [
+    {
+      "title": "Příběh objevů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Více než třetinu elektřiny v Česku vyrábějí dvě jaderné elektrárny: **Dukovany** a **Temelín**. Energie pochází z nepatrných jader atomů. Jak na to lidé přišli a jak se s tím pracuje bezpečně?"
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atom a jádro",
+          "definition": "Atom je nepatrná částice látky. Uprostřed má malé **jádro** z **protonů** (kladný náboj) a **neutronů** (bez náboje). Kolem jsou elektrony.",
+          "example": "Jádro je asi 100 000krát menší než celý atom."
+        },
+        {
+          "type": "term",
+          "term": "Radioaktivita",
+          "definition": "Některá jádra jsou nestabilní a samovolně se **rozpadají**. Přitom vysílají neviditelné **záření**.",
+          "example": "Uran, radium, polonium jsou radioaktivní."
+        },
+        {
+          "type": "heading",
+          "text": "Časová osa objevů"
+        },
+        {
+          "type": "text",
+          "text": "Projdi osu. U každého roku si řekni, co se objevilo a proč to bylo důležité."
+        },
+        {
+          "type": "widget",
+          "widget": "timeline",
+          "props": {
+            "events": [
+              {
+                "year": 1896,
+                "label": "Becquerel: radioaktivita"
+              },
+              {
+                "year": 1898,
+                "label": "Curieovi: polonium, radium"
+              },
+              {
+                "year": 1911,
+                "label": "Rutherford: atomové jádro"
+              },
+              {
+                "year": 1938,
+                "label": "štěpení uranu"
+              },
+              {
+                "year": 1954,
+                "label": "první jaderná elektrárna"
+              },
+              {
+                "year": 1985,
+                "label": "Dukovany v provozu"
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "**Marie Curie-Skłodowská** objevila spolu s manželem Pierrem prvky polonium a radium. Jako první člověk dostala dvě Nobelovy ceny."
+        },
+        {
+          "type": "heading",
+          "text": "Tři druhy záření"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Záření",
+            "Co to je",
+            "Zastaví ho"
+          ],
+          "rows": [
+            [
+              "α (alfa)",
+              "jádra helia",
+              "list papíru"
+            ],
+            [
+              "β (beta)",
+              "elektrony",
+              "hliníkový plech"
+            ],
+            [
+              "γ (gama)",
+              "elektromagnetické vlnění",
+              "silná vrstva olova nebo betonu"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Záření γ je **nejpronikavější**, α nejméně. Záření poškozuje živé buňky, proto se s radioaktivními látkami pracuje za stíněním."
+        },
+        {
+          "type": "heading",
+          "text": "Jak funguje elektrárna"
+        },
+        {
+          "type": "term",
+          "term": "Štěpení jádra",
+          "definition": "Do těžkého jádra uranu narazí **neutron** a jádro se **rozpadne na dvě menší**. Uvolní se obrovská energie a 2–3 nové neutrony.",
+          "example": "Rozštěpením 1 g uranu 235 se uvolní asi tolik energie jako spálením 2–3 tun uhlí."
+        },
+        {
+          "type": "term",
+          "term": "Řetězová reakce",
+          "definition": "Nové neutrony štěpí další jádra, ta uvolní další neutrony… V reaktoru se reakce **řídí**, aby neběžela příliš rychle.",
+          "example": "Jako dominové kostky, kde každá shodí dvě další."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "V **reaktoru** se štěpí uran a uvolňuje teplo.",
+            "Teplo ohřeje vodu na **páru**.",
+            "Pára roztáčí **turbínu**.",
+            "Turbína točí **alternátor**, který vyrábí elektřinu."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Z chladicích věží Temelína stoupají bílé mraky. Je to kouř?",
+          "answer": "**Ne**, je to **vodní pára**. Jaderná elektrárna při provozu nespaluje nic, takže nevypouští kouř ani skoro žádné CO₂."
+        },
+        {
+          "type": "example",
+          "question": "Které záření zastaví list papíru?",
+          "answer": "Záření **α** – je nejméně pronikavé."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Jaderná elektrárna vyrábí elektřinu přímo z uranu bez páry.",
+          "right": "Uran jen ohřívá vodu; elektřinu vyrábí turbína a alternátor jako v tepelné elektrárně.",
+          "why": "Reaktor je vlastně „kotel“ – místo uhlí je v něm štěpný uran."
+        },
+        {
+          "type": "summary",
+          "text": "Nestabilní jádra se rozpadají a vysílají záření α, β, γ. V elektrárně se štěpí uran řízenou řetězovou reakcí; teplo → pára → turbína → elektřina."
+        }
+      ]
+    },
+    {
+      "title": "Poločas a reakce",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Lékaři používají radioaktivní látky k vyšetření, archeologové jimi určují stáří nálezů a energetici vyrábějí elektřinu. Všichni potřebují vědět, **jak rychle** se radioaktivní látka rozpadá. K tomu slouží poločas rozpadu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Jádro atomu",
+          "definition": "Střed atomu složený z protonů a neutronů. Nese skoro celou hmotnost atomu.",
+          "example": "Jádro uranu má 92 protonů."
+        },
+        {
+          "type": "term",
+          "term": "Radioaktivní rozpad",
+          "definition": "Samovolná přeměna nestabilního jádra, při které vzniká záření.",
+          "example": "Rozpad radia."
+        },
+        {
+          "type": "term",
+          "term": "Poločas rozpadu",
+          "definition": "Doba, za kterou se rozpadne **polovina** jader dané látky. Pro každou látku je jiný – od zlomků sekundy po miliardy let.",
+          "example": "Jód používaný v medicíně má poločas asi 8 dní."
+        },
+        {
+          "type": "heading",
+          "text": "Jak počítat s poločasem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Zjisti, kolik poločasů uplynulo: čas : poločas.",
+            "Po každém poločasu vyděl množství dvěma.",
+            "Zbylé množství = počáteční : 2 : 2 : … (tolikrát, kolik poločasů)."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Máme 100 g látky s poločasem 8 dní. Kolik zbude za 16 dní?",
+          "answer": "16 : 8 = 2 poločasy. 100 → 50 → **25 g**."
+        },
+        {
+          "type": "example",
+          "question": "Z 64 mg zbylo 8 mg. Kolik poločasů uplynulo?",
+          "answer": "64 → 32 → 16 → 8: dělil jsem třikrát dvěma → **3 poločasy**."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "g",
+            "items": [
+              {
+                "label": "start",
+                "value": 100
+              },
+              {
+                "label": "1 poločas",
+                "value": 50
+              },
+              {
+                "label": "2 poločasy",
+                "value": 25
+              },
+              {
+                "label": "3 poločasy",
+                "value": 12.5
+              },
+              {
+                "label": "4 poločasy",
+                "value": 6.25
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Sleduj sloupce: každý je polovina předchozího. Látka nikdy „nezmizí najednou“."
+        },
+        {
+          "type": "heading",
+          "text": "Štěpení a syntéza"
+        },
+        {
+          "type": "term",
+          "term": "Štěpení",
+          "definition": "Těžké jádro (uran) se po zásahu neutronem **rozdělí** na dvě lehčí. Uvolní se energie a nové neutrony, které mohou štěpit další jádra – **řetězová reakce**.",
+          "example": "Reaktory v Dukovanech a Temelíně."
+        },
+        {
+          "type": "term",
+          "term": "Jaderná syntéza",
+          "definition": "Lehká jádra (vodíku) se **spojí** do těžšího (helia). Uvolní se ještě víc energie.",
+          "example": "Takhle svítí Slunce a všechny hvězdy."
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Výhody",
+            "Nevýhody"
+          ],
+          "rows": [
+            [
+              "jaderná elektrárna",
+              "velký stálý výkon, téměř žádné CO₂",
+              "radioaktivní odpad, riziko havárie, drahá výstavba"
+            ]
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Po dvou poločasech se rozpadne všechno (2 · ½ = 1).",
+          "right": "Po dvou poločasech zbude čtvrtina.",
+          "why": "Druhý poločas půlí jen to, co zbylo po prvním: ½ z ½ = ¼."
+        },
+        {
+          "type": "summary",
+          "text": "Poločas = doba, za kterou se rozpadne polovina jader; po každém poločasu děl dvěma. Štěpení dělí těžká jádra (elektrárny), syntéza spojuje lehká (Slunce)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které záření zastaví list papíru?",
+      "options": [
+        "α",
+        "β",
+        "γ"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které záření je nejpronikavější?",
+      "options": [
+        "γ",
+        "α",
+        "β"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Máme 100 g radioaktivní látky s poločasem 8 dní. Kolik gramů zbude za 16 dní?",
+      "answers": [
+        "25"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Z 64 mg zbylo 8 mg. Kolik poločasů uplynulo?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaké palivo se používá v jaderných elektrárnách v ČR?",
+      "options": [
+        "uran",
+        "uhlí",
+        "plutonium z přírody",
+        "vodík"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj objevitele s objevem.",
+      "pairs": [
+        [
+          "Becquerel",
+          "radioaktivita"
+        ],
+        [
+          "Marie Curie-Skłodowská",
+          "polonium a radium"
+        ],
+        [
+          "Rutherford",
+          "atomové jádro"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Jaderná elektrárna při provozu vypouští do ovzduší hodně CO₂.",
+      "answer": false,
+      "explanation": "Z chladicích věží uniká vodní pára, ne kouř."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď přeměny v jaderné elektrárně.",
+      "items": [
+        "štěpení uranu v reaktoru",
+        "ohřev vody na páru",
+        "pára roztáčí turbínu",
+        "alternátor vyrábí elektřinu"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá reakce, kdy neutrony ze štěpení štěpí další jádra?",
+      "options": [
+        "řetězová reakce",
+        "syntéza",
+        "sublimace",
+        "indukce"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve Slunci vzniká energie slučováním (syntézou) lehkých jader.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jaké jsou jaderné elektrárny v ČR?",
+      "options": [
+        "Dukovany a Temelín",
+        "Mělník a Prunéřov",
+        "Dlouhé Stráně a Orlík"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je poločas rozpadu? Uveď příklad výpočtu.",
+      "answer": "Doba, za kterou se rozpadne polovina jader. Při poločasu 5 let ze 40 g zbude za 10 let 10 g."
+    },
+    {
+      "type": "open",
+      "question": "Jaké jsou výhody a nevýhody jaderných elektráren?",
+      "answer": "Výhody: velký stálý výkon, téměř žádné CO₂. Nevýhody: radioaktivní odpad, riziko havárie, drahá výstavba."
+    }
+  ]
+}

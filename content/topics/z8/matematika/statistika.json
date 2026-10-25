@@ -1,0 +1,369 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "statistika",
+  "title": "Statistika",
+  "emoji": "📊",
+  "explanations": [
+    {
+      "title": "Graf",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Učitelka opravila test a chce vědět, jak to třídě šlo. Dvacet známek vedle sebe je nepřehledných. Potřebuje je shrnout – obrázkem nebo jedním číslem."
+        },
+        {
+          "type": "text",
+          "text": "Tím se zabývá **statistika**: sbírá údaje a shrnuje je. Používá se v předpovědi počasí, ve sportu, ve volbách i ve zprávách."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Data (soubor)",
+          "definition": "Všechny zjištěné údaje dohromady.",
+          "example": "Známky všech 20 žáků z testu."
+        },
+        {
+          "type": "term",
+          "term": "Četnost",
+          "definition": "Kolikrát se nějaká hodnota v datech objeví.",
+          "example": "Jedničku dostalo 5 žáků → četnost jedničky je 5."
+        },
+        {
+          "type": "term",
+          "term": "Sloupcový graf",
+          "definition": "Obrázek, kde každá hodnota má svůj sloupec. Čím vyšší sloupec, tím větší četnost.",
+          "example": "Viz graf níže."
+        },
+        {
+          "type": "heading",
+          "text": "Známky z testu"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na graf. Který sloupec je nejvyšší? Kolik žáků psalo test celkem?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "žáků",
+            "items": [
+              {
+                "label": "1",
+                "value": 5
+              },
+              {
+                "label": "2",
+                "value": 8
+              },
+              {
+                "label": "3",
+                "value": 4
+              },
+              {
+                "label": "4",
+                "value": 2
+              },
+              {
+                "label": "5",
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Celkem 5 + 8 + 4 + 2 + 1 = 20 žáků. Nejvyšší sloupec má dvojka – je **nejčastější**."
+        },
+        {
+          "type": "heading",
+          "text": "Tři čísla, která shrnou data"
+        },
+        {
+          "type": "term",
+          "term": "Modus",
+          "definition": "Nejčastější hodnota – ta s nejvyšším sloupcem.",
+          "example": "V grafu je modus 2."
+        },
+        {
+          "type": "term",
+          "term": "Průměr",
+          "definition": "Všechny hodnoty sečti a vyděl jejich počtem. Jako bys všechno spravedlivě rozdělil.",
+          "example": "Známky 1, 2, 3: (1 + 2 + 3) : 3 = 2."
+        },
+        {
+          "type": "term",
+          "term": "Medián",
+          "definition": "Prostřední hodnota, když data seřadíš podle velikosti.",
+          "example": "1, 3, 5, 7, 9 → medián 5."
+        },
+        {
+          "type": "example",
+          "question": "Data 2, 3, 3, 5, 7. Najdi průměr, medián a modus.",
+          "answer": "Průměr: (2 + 3 + 3 + 5 + 7) : 5 = 20 : 5 = **4**. Medián: prostřední z 5 čísel je třetí → **3**. Modus: nejčastěji je tam **3**."
+        },
+        {
+          "type": "example",
+          "question": "Ve firmě vydělávají 20, 22, 24, 25 tisíc a šéf 200 tisíc. Co lépe popíše běžný plat?",
+          "answer": "Průměr: 291 : 5 = 58,2 tisíc – tolik ale nemá skoro nikdo. Medián: **24 tisíc**. Medián je lepší, protože ho jeden velký plat nezkreslí."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Průměr musí být jedna z hodnot v datech.",
+          "right": "Průměr může vyjít i jinak: průměr 1 a 2 je 1,5.",
+          "why": "Průměr je výsledek výpočtu. Medián a modus jsou obvykle hodnoty z dat."
+        },
+        {
+          "type": "summary",
+          "text": "Modus = nejčastější. Medián = prostřední po seřazení. Průměr = součet : počet. Graf ukáže na první pohled, čeho je nejvíc."
+        }
+      ]
+    },
+    {
+      "title": "Výpočty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jak shrnout spoustu čísel do jednoho? Statistika k tomu má tři nástroje. Každý je dobrý na něco jiného. Naučíš se je spočítat a vybrat ten správný."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Statistický soubor",
+          "definition": "Všechna zjištěná data, např. výšky žáků ve třídě.",
+          "example": "4, 6, 8, 10"
+        },
+        {
+          "type": "term",
+          "term": "Četnost",
+          "definition": "Kolikrát se hodnota v souboru vyskytuje.",
+          "example": "V souboru 2, 4, 4, 5 má hodnota 4 četnost 2."
+        },
+        {
+          "type": "term",
+          "term": "Relativní četnost",
+          "definition": "Četnost vydělená počtem všech hodnot, často v procentech.",
+          "example": "5 jedniček z 25 žáků = 5 : 25 = 0,2 = 20 %."
+        },
+        {
+          "type": "term",
+          "term": "Průměr, medián, modus",
+          "definition": "**Průměr** = součet : počet. **Medián** = prostřední hodnota po seřazení. **Modus** = nejčastější hodnota.",
+          "example": "1, 2, 2, 3, 7: průměr 3, medián 2, modus 2."
+        },
+        {
+          "type": "heading",
+          "text": "Jak na to"
+        },
+        {
+          "type": "table",
+          "head": [
+            "pojem",
+            "jak zjistím"
+          ],
+          "rows": [
+            [
+              "průměr",
+              "sečti všechny hodnoty a vyděl jejich počtem"
+            ],
+            [
+              "medián",
+              "seřaď podle velikosti a vezmi prostřední"
+            ],
+            [
+              "modus",
+              "najdi hodnotu s největší četností"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Medián krok za krokem: data 3, 9, 1, 7, 5.",
+            "Seřaď: 1, 3, 5, 7, 9.",
+            "Hodnot je 5 (liché číslo), prostřední je třetí.",
+            "Medián = 5."
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Medián při sudém počtu: 1, 2, 6, 8.",
+            "Dvě prostřední hodnoty jsou 2 a 6.",
+            "Medián je jejich průměr: (2 + 6) : 2 = 4."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Průměr čísel 4, 6, 8, 10?",
+          "answer": "Součet 28, počet 4. 28 : 4 = **7**."
+        },
+        {
+          "type": "example",
+          "question": "Modus čísel 2, 4, 4, 5, 4, 2?",
+          "answer": "Četnosti: 2 → 2krát, 4 → 3krát, 5 → 1krát. Nejčastější je **4**."
+        },
+        {
+          "type": "heading",
+          "text": "Který graf použít"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Sloupcový** – porovnání hodnot (známky, počty).",
+            "**Spojnicový** – vývoj v čase (teplota během týdne).",
+            "**Kruhový** – podíly z celku (jak je rozdělený rozpočet)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ukázka sloupcového grafu: průměrná teplota v jednotlivých dnech. Který den byl nejteplejší?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "°C",
+            "items": [
+              {
+                "label": "Po",
+                "value": 12
+              },
+              {
+                "label": "Út",
+                "value": 15
+              },
+              {
+                "label": "St",
+                "value": 9
+              },
+              {
+                "label": "Čt",
+                "value": 14
+              },
+              {
+                "label": "Pá",
+                "value": 18
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Medián čísel 3, 9, 1, 7, 5 je 1, protože je uprostřed zápisu.",
+          "right": "Nejdřív seřadit: 1, 3, 5, 7, 9 → medián 5.",
+          "why": "Medián je prostřední hodnota **podle velikosti**, ne podle pořadí, v jakém data přišla."
+        },
+        {
+          "type": "summary",
+          "text": "Průměr = součet : počet. Medián = prostřední po seřazení (u sudého počtu průměr dvou prostředních). Modus = nejčastější. Medián se nenechá zmást jednou extrémní hodnotou."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Průměr čísel 4, 6, 8, 10:",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Medián čísel 3, 9, 1, 7, 5:",
+      "answers": [
+        "5"
+      ],
+      "explanation": "Seřazeno: 1, 3, 5, 7, 9."
+    },
+    {
+      "type": "input",
+      "question": "Modus čísel 2, 4, 4, 5, 4, 2:",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Medián čísel 1, 2, 6, 8:",
+      "answers": [
+        "4"
+      ],
+      "explanation": "(2 + 6) : 2 = 4"
+    },
+    {
+      "type": "choice",
+      "question": "Platy 20, 22, 24, 25 a 200 tisíc. Co lépe vystihne běžný plat?",
+      "options": [
+        "medián",
+        "průměr",
+        "maximum",
+        "součet"
+      ],
+      "answer": 0,
+      "explanation": "Medián 24 tisíc; průměr 58,2 tisíc zkreslí jeden vysoký plat."
+    },
+    {
+      "type": "truefalse",
+      "question": "Průměr musí být jedna z hodnot souboru.",
+      "answer": false,
+      "explanation": "Např. průměr 1 a 2 je 1,5."
+    },
+    {
+      "type": "input",
+      "question": "Známky 1, 2, 2, 3, 1, 3. Průměr?",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Který graf je nejvhodnější pro podíly z celku (např. rozpočet)?",
+      "options": [
+        "kruhový",
+        "spojnicový",
+        "sloupcový",
+        "žádný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Ze 25 žáků má 5 jedničku. Kolik % to je?",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Četnost udává, kolikrát se hodnota v souboru vyskytuje.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi průměrem a mediánem?",
+      "answer": "Průměr je součet hodnot dělený jejich počtem. Medián je prostřední hodnota po seřazení. Medián méně ovlivní extrémní hodnoty."
+    },
+    {
+      "type": "open",
+      "question": "Jak zjistíš modus?",
+      "answer": "Najdu hodnotu, která se v souboru vyskytuje nejčastěji – má největší četnost."
+    }
+  ]
+}

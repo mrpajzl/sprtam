@@ -1,0 +1,376 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "text-koheze",
+  "title": "Aktuální členění a stavba textu",
+  "emoji": "🧩",
+  "explanations": [
+    {
+      "title": "Známé → nové",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kamarád se zeptá: „Kdo přišel?“ Odpovíš: „Přišel **Petr**.“ Neřekneš „Petr přišel“ s důrazem na *přišel* – to by znělo divně. Instinktivně dáváš novou informaci na konec."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když víš, jak se v české větě řadí známé a nové, píšeš texty, které se dobře čtou. A pojmy *východisko* a *jádro* jsou v maturitním testu."
+        },
+        {
+          "type": "term",
+          "term": "Výpověď",
+          "definition": "Věta v konkrétní situaci – tak, jak ji někdo skutečně řekne nebo napíše.",
+          "example": "„Přišel Petr.“ jako odpověď na otázku"
+        },
+        {
+          "type": "term",
+          "term": "Aktuální členění výpovědi",
+          "definition": "Rozdělení výpovědi na to, co už je známé, a na to, co je nové.",
+          "example": "Petr (známý) / šel do kina (nové)"
+        },
+        {
+          "type": "term",
+          "term": "Východisko (téma)",
+          "definition": "Známá informace, o které mluvíme. Obvykle stojí na začátku.",
+          "example": "*Strom* byl starý."
+        },
+        {
+          "type": "term",
+          "term": "Jádro (réma)",
+          "definition": "Nová informace, kvůli které větu říkáme. V neutrálním slovosledu stojí na konci.",
+          "example": "Strom *byl starý*."
+        },
+        {
+          "type": "term",
+          "term": "Slovosled",
+          "definition": "Pořadí slov ve větě. V češtině je poměrně volný – slouží k tomu, aby nové bylo na konci.",
+          "example": "*Petr přišel.* × *Přišel Petr.*"
+        },
+        {
+          "type": "heading",
+          "text": "Krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti předchozí větu nebo otázku: *Na zahradě stál strom.*",
+            "Najdi, co už čtenář zná: *strom* → **východisko**.",
+            "Najdi, co se dozvídá nově: *byl starý* → **jádro**.",
+            "Zkontroluj pořadí: známé na začátek, nové na konec → *Strom byl starý.*"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "V mluvené řeči může jádro stát i jinde, pokud ho zdůrazníme hlasem: *Psa jsme koupili VČERA.*"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každé výpovědi si představ, na jakou otázku odpovídá. Odpověď na otázku je jádro."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "východisko",
+              "jádro"
+            ],
+            "items": [
+              {
+                "text": "Petr (← Kdo přišel? Přišel Petr.)",
+                "group": 1
+              },
+              {
+                "text": "Ten pes (← Ten pes štěká.)",
+                "group": 0
+              },
+              {
+                "text": "štěká (← Ten pes štěká.)",
+                "group": 1
+              },
+              {
+                "text": "Včera (← Včera jsme byli v kině.)",
+                "group": 0
+              },
+              {
+                "text": "v kině (← Včera jsme byli v kině.)",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "„Kdo rozbil okno?“ – „Okno rozbil Tomáš.“ Co je jádro?",
+          "answer": "Otázka ptá **kdo**. Odpověď, kterou nikdo neznal, je *Tomáš* → **jádro**. *Okno rozbil* už známe z otázky → východisko. Tomáš správně stojí na konci."
+        },
+        {
+          "type": "example",
+          "question": "Uprav pořadí: *Byl jednou jeden král. Velký hrad král měl.*",
+          "answer": "Ve 2. větě je *král* známý (východisko), *velký hrad* je nové (jádro). Nové patří na konec: **Král měl velký hrad.**"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na zahradě stál strom. Byl starý strom.",
+          "right": "Na zahradě stál strom. Strom byl starý.",
+          "why": "Ve druhé větě je strom už známý (východisko), nové je, že byl starý. Proto *strom* dáme na začátek a *byl starý* na konec."
+        },
+        {
+          "type": "summary",
+          "text": "Výpověď se člení na východisko (známé, téma) a jádro (nové, réma). V neutrálním českém slovosledu stojí jádro na konci."
+        }
+      ]
+    },
+    {
+      "title": "Lepidlo textu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zkus si přečíst: *Koupil jsem psa. Praha je hlavní město. Mám rád zmrzlinu.* Každá věta je správně, ale dohromady to není text – nedrží to pohromadě."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Při psaní maturitní práce se hodnotí i to, jestli text drží pohromadě. Tady se naučíš, čím věty „slepit“."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Text",
+          "definition": "Souvislý celek vět, které spolu souvisejí obsahem i jazykem.",
+          "example": "článek, dopis, úvaha"
+        },
+        {
+          "type": "term",
+          "term": "Koheze",
+          "definition": "**Jazykové** (formální) propojení vět: zájmena, spojky, opakování slov, synonyma.",
+          "example": "*Koupil jsem psa. **Ten** se jmenuje Max.*"
+        },
+        {
+          "type": "term",
+          "term": "Koherence",
+          "definition": "**Smyslová** (obsahová) souvislost celého textu. Věty na sebe logicky navazují.",
+          "example": "Text o psovi mluví o psovi, ne náhle o Praze."
+        },
+        {
+          "type": "term",
+          "term": "Odstavec",
+          "definition": "Část textu s jednou dílčí myšlenkou. Nový odstavec = posun k jiné myšlence.",
+          "example": "1. odstavec: proč pes; 2. odstavec: péče o psa"
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři druhy lepidla (kohezní prostředky)"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Zájmena** odkazují na to, co už bylo řečeno: *Koupil psa. **Ten** je hnědý.*",
+            "**Spojky a příslovce** vyjadřují vztah: *Byl unavený. **Proto** šel spát.*",
+            "**Opakování** slova: *Na zahradě stál strom. **Strom** byl starý.*",
+            "**Synonyma** – jiné slovo pro totéž, aby se text neopakoval: *auto – vůz*, *pes – čtyřnohý kamarád*."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber slovo, které věty nejlépe spojí. Ptej se, jaký je mezi nimi vztah (důsledek, důvod, odkaz)."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Byl unavený. ",
+                "after": " šel brzy spát.",
+                "options": [
+                  "Proto",
+                  "Avšak",
+                  "Ačkoli"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Chtěla jet. ",
+                "after": " pršelo, zůstala doma.",
+                "options": [
+                  "Protože",
+                  "Proto",
+                  "A tak"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Koupil psa. ",
+                "after": " pes se jmenuje Max.",
+                "options": [
+                  "Ten",
+                  "Který",
+                  "Jenž"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Najdi kohezní prostředky: *Eva si koupila kolo. To jí ale brzy ukradli. Proto teď jezdí autobusem.*",
+          "answer": "*To* – zájmeno odkazující na kolo. *jí* – zájmeno odkazující na Evu. *ale* – spojka (protiklad). *Proto* – spojka (důsledek)."
+        },
+        {
+          "type": "example",
+          "question": "Je tento text koherentní? *Petr miluje fotbal. Proto ho fotbal velmi baví. Fotbal je sport.*",
+          "answer": "Věty jsou spojené (koheze je – *proto*, opakování *fotbal*), ale smysl je prázdný a kruhový. Text **není dobře koherentní** – neříká nic nového a logika nefunguje."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Text je v pořádku, když každá věta začíná spojkou nebo zájmenem.",
+          "right": "Text potřebuje kohezi i koherenci – jazykové spojení i smysl.",
+          "why": "Věty mohou být gramaticky „slepené“ a přesto nedávat smysl. Lepidlo nestačí, když díly k sobě nepatří."
+        },
+        {
+          "type": "summary",
+          "text": "Koheze = jazykové propojení vět (zájmena, spojky, opakování, synonyma). Koherence = smysl a logika celku. Odstavec = jedna myšlenka."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jak se nazývá nová informace ve výpovědi?",
+      "options": [
+        "jádro (réma)",
+        "východisko (téma)",
+        "přísudek",
+        "predikace"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V neutrálním českém slovosledu stojí jádro na konci věty.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "„Kdo rozbil okno?“ – „Okno rozbil Tomáš.“ Co je jádro?",
+      "options": [
+        "Tomáš",
+        "okno",
+        "rozbil",
+        "okno rozbil"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je koheze textu?",
+      "options": [
+        "formální jazyková navázanost vět",
+        "počet odstavců",
+        "obsahová správnost faktů",
+        "grafická úprava"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je koherence textu?",
+      "options": [
+        "smysluplnost a logická souvislost",
+        "použití zájmen",
+        "délka vět",
+        "rým"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj kohezní prostředek s příkladem.",
+      "pairs": [
+        [
+          "zájmeno",
+          "Koupil psa. Ten…"
+        ],
+        [
+          "spojka",
+          "Proto…"
+        ],
+        [
+          "synonymum",
+          "auto – vůz"
+        ],
+        [
+          "opakování",
+          "Strom… Strom…"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Text může být gramaticky navázaný, a přesto nesouvislý (nekoherentní).",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kdy začneš nový odstavec?",
+      "options": [
+        "při posunu k jiné dílčí myšlence",
+        "po každé větě",
+        "po pěti řádcích",
+        "nikdy v úvaze"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Doplň: Výpověď se člení na východisko a ______.",
+      "answers": [
+        "jádro",
+        "réma"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve větě „Psa jsme koupili VČERA.“ (s důrazem) je jádro:",
+      "options": [
+        "včera",
+        "psa",
+        "jsme koupili",
+        "nelze určit"
+      ],
+      "answer": 0,
+      "explanation": "Důraz označuje novou informaci."
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli aktuální členění výpovědi na příkladu.",
+      "answer": "Výpověď má východisko (známou informaci) a jádro (novou). „Na stole ležela kniha. Kniha byla nová.“ Ve 2. větě je východisko „kniha“, jádro „byla nová“. V češtině jádro obvykle stojí na konci."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi kohezí a koherencí?",
+      "answer": "Koheze je formální propojení vět pomocí zájmen, spojek, opakování nebo synonym. Koherence je obsahová, logická souvislost celého textu. Dobrý text potřebuje obojí."
+    }
+  ]
+}

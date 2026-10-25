@@ -1,0 +1,446 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "molekularni-genetika",
+  "title": "Molekulární genetika",
+  "emoji": "🧬",
+  "explanations": [
+    {
+      "title": "Od genu k bílkovině",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Barva očí, krevní skupina, sklon k nemoci – všechno je zapsané v **DNA**. Ale jak se z „textu“ v jádře stane barva oka? DNA je kuchařka a buňka podle ní vaří **bílkoviny**. Ty pak tvoří barviva, enzymy, svaly."
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme celou cestu: od zkopírování DNA přes přepis do RNA až po složení bílkoviny. A co se stane, když je v kuchařce překlep – mutace."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "DNA",
+          "definition": "Molekula dědičnosti. Dva řetězce stočené do **dvoušroubovice**. Každý řetězec je řada **nukleotidů** s bázemi **A, T, G, C**. Strukturu popsali v roce **1953 Watson a Crick**."
+        },
+        {
+          "type": "term",
+          "term": "Komplementarita",
+          "definition": "Báze proti sobě tvoří vždy stejné páry: **A–T** a **G–C**. Podle jednoho řetězce lze druhý přesně doplnit."
+        },
+        {
+          "type": "term",
+          "term": "Gen",
+          "definition": "Úsek DNA s návodem na jednu bílkovinu (nebo RNA)."
+        },
+        {
+          "type": "term",
+          "term": "RNA",
+          "definition": "Jednovláknová „pracovní kopie“ úseku DNA. Místo T má bázi **U (uracil)**. **mRNA** nese návod, **tRNA** přináší aminokyseliny, **rRNA** tvoří ribozomy."
+        },
+        {
+          "type": "term",
+          "term": "Aminokyselina a bílkovina",
+          "definition": "Bílkovina je řetěz **aminokyselin**. Těch je **20** druhů – pořadí určuje, jaká bílkovina vznikne."
+        },
+        {
+          "type": "term",
+          "term": "Kodon",
+          "definition": "Trojice nukleotidů na mRNA, která určí jednu aminokyselinu. **AUG** je **start kodon**."
+        },
+        {
+          "type": "heading",
+          "text": "Cesta informace"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Replikace** – před dělením buňky se DNA zkopíruje. Každá nová molekula má jeden starý a jeden nový řetězec (**semikonzervativně**).",
+            "**Transkripce** – v jádře se podle genu vytvoří **mRNA**.",
+            "**Úprava mRNA** – vystřihnou se nekódující úseky (**introny**), kódující (**exony**) se spojí.",
+            "**Translace** – na **ribozomu** v cytoplazmě tRNA přinášejí aminokyseliny podle kodonů; vzniká bílkovina."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Shrnutí: **DNA → mRNA → bílkovina**. Tomu se říká centrální dogma molekulární biologie."
+        },
+        {
+          "type": "example",
+          "question": "Templátové vlákno DNA má úsek TAC. Jaký kodon bude na mRNA?",
+          "answer": "Párujeme: T → **A**, A → **U** (v RNA není T), C → **G**. Kodon je **AUG** – start kodon pro methionin."
+        },
+        {
+          "type": "example",
+          "question": "Jeden řetězec DNA je ATGC. Jak vypadá druhý?",
+          "answer": "A–T, T–A, G–C, C–G → **TACG**."
+        },
+        {
+          "type": "text",
+          "text": "Doplň páry bází."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "DNA: A – ",
+                "after": "",
+                "options": [
+                  "T",
+                  "U",
+                  "G"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "RNA: A – ",
+                "after": "",
+                "options": [
+                  "T",
+                  "U",
+                  "C"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "G – ",
+                "after": "",
+                "options": [
+                  "A",
+                  "C",
+                  "T"
+                ],
+                "answer": 1
+              },
+              {
+                "before": "DNA: T – ",
+                "after": "",
+                "options": [
+                  "A",
+                  "U",
+                  "C"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Překlepy – mutace"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**genové (bodové)** – změna jednoho či více nukleotidů v genu",
+            "**chromozomové** – změna stavby chromozomu: delece (ztráta), duplikace, translokace (přesun)",
+            "**genomové** – změna počtu chromozomů, např. **trizomie 21** = Downův syndrom"
+          ]
+        },
+        {
+          "type": "mistake",
+          "wrong": "Translace probíhá v jádře.",
+          "right": "V jádře probíhá **transkripce**. **Translace** probíhá na **ribozomech** v cytoplazmě.",
+          "why": "Pomůcka: trans**krip**ce = přepis (opis textu), trans**lace** = překlad do jazyka aminokyselin – a ten „překladatel“ je ribozom."
+        },
+        {
+          "type": "summary",
+          "text": "DNA → (transkripce v jádře) → mRNA → (translace na ribozomu) → bílkovina. Kodon = 3 nukleotidy, AUG start. Replikace je semikonzervativní. Mutace genové, chromozomové, genomové."
+        }
+      ]
+    },
+    {
+      "title": "DNA vs. RNA",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Celý tvůj genom by vytištěný zaplnil stovky tlustých knih. Přesto ho zapisuje jen **čtyřpísmenná abeceda**. Jak se ze čtyř písmen dají napsat tisíce různých bílkovin?"
+        },
+        {
+          "type": "text",
+          "text": "Odpovědí je **genetický kód**. Porovnáme DNA a RNA, vysvětlíme, jak kód funguje, a ukážeme, co se stane při chybě."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Nukleotid",
+          "definition": "Stavební kámen nukleových kyselin: **cukr** + **fosfát** + **dusíkatá báze**. Řada nukleotidů tvoří řetězec."
+        },
+        {
+          "type": "term",
+          "term": "Báze",
+          "definition": "Část nukleotidu, která nese „písmeno“: **A** adenin, **T** thymin, **G** guanin, **C** cytosin, v RNA místo T **U** uracil."
+        },
+        {
+          "type": "term",
+          "term": "Bílkovina",
+          "definition": "Řetěz složený z **aminokyselin** (20 druhů). Bílkoviny dělají v buňce téměř všechnu práci."
+        },
+        {
+          "type": "term",
+          "term": "Ribozom",
+          "definition": "Částice v cytoplazmě, která podle mRNA skládá bílkovinu – „překladatel“."
+        },
+        {
+          "type": "heading",
+          "text": "DNA a RNA vedle sebe"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "DNA",
+            "RNA"
+          ],
+          "rows": [
+            [
+              "cukr",
+              "deoxyribóza",
+              "ribóza"
+            ],
+            [
+              "báze",
+              "A, T, G, C",
+              "A, U, G, C"
+            ],
+            [
+              "řetězce",
+              "dvoušroubovice",
+              "obvykle jeden"
+            ],
+            [
+              "párování",
+              "A–T, G–C",
+              "A–U, G–C"
+            ],
+            [
+              "kde",
+              "hlavně v jádře",
+              "jádro i cytoplazma"
+            ],
+            [
+              "úloha",
+              "trvalé uložení informace",
+              "přenos a překlad informace"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Genetický kód"
+        },
+        {
+          "type": "term",
+          "term": "Kodon",
+          "definition": "Tři báze mRNA za sebou. Každý kodon znamená jednu aminokyselinu nebo „stop“."
+        },
+        {
+          "type": "text",
+          "text": "Proč trojice? Ze 4 písmen je 4 · 4 · 4 = **64** různých trojic. To stačí na **20 aminokyselin** a signály start a stop. Dvojic by bylo jen 16 – málo."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**degenerovaný** – jednu aminokyselinu může určovat víc kodonů",
+            "**univerzální** – téměř všechny organismy čtou kód stejně",
+            "**AUG** = start (methionin), tři kodony jsou **stop**"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Spoj pojmy – nejdřív odpověz, pak otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "intron",
+                "back": "nekódující úsek, vystřihne se"
+              },
+              {
+                "front": "exon",
+                "back": "kódující úsek"
+              },
+              {
+                "front": "tRNA",
+                "back": "přináší aminokyseliny"
+              },
+              {
+                "front": "AUG",
+                "back": "start kodon"
+              },
+              {
+                "front": "transkripce",
+                "back": "DNA → mRNA, v jádře"
+              },
+              {
+                "front": "translace",
+                "back": "mRNA → bílkovina, na ribozomu"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "mRNA obsahuje 300 nukleotidů kódující části (bez stop kodonu). Kolik aminokyselin bude mít bílkovina?",
+          "answer": "Každá aminokyselina = 1 kodon = 3 nukleotidy. 300 : 3 = **100 aminokyselin**."
+        },
+        {
+          "type": "example",
+          "question": "Proč replikaci DNA říkáme semikonzervativní?",
+          "answer": "Dvoušroubovice se rozplete a ke každému starému řetězci se podle párování A–T a G–C doplní nový. Každá nová DNA má **jeden starý a jeden nový** řetězec – polovina se „zakonzervuje“."
+        },
+        {
+          "type": "heading",
+          "text": "Mutace"
+        },
+        {
+          "type": "text",
+          "text": "**Genová** mutace změní písmena v genu (může změnit aminokyselinu). **Chromozomová** změní stavbu chromozomu. **Genomová** změní počet chromozomů – např. tři chromozomy 21 = **Downův syndrom**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "V RNA se A páruje s T.",
+          "right": "V RNA se A páruje s **U** (uracilem).",
+          "why": "RNA thymin nemá. Při transkripci se proti A v DNA vkládá U."
+        },
+        {
+          "type": "summary",
+          "text": "DNA: deoxyribóza, A T G C, dvoušroubovice. RNA: ribóza, A U G C, jeden řetězec. Kód: kodon = 3 báze, 64 kodonů pro 20 aminokyselin + stop; degenerovaný a univerzální."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která báze je jen v RNA?",
+      "options": [
+        "uracil",
+        "thymin",
+        "adenin"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kde probíhá translace?",
+      "options": [
+        "na ribozomech",
+        "v jádře",
+        "v lyzozomu"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik nukleotidů tvoří jeden kodon?",
+      "answers": [
+        "3",
+        "tři",
+        "tri"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Replikace DNA je semikonzervativní.",
+      "answer": true,
+      "explanation": "Každá nová molekula má jedno původní a jedno nové vlákno."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď tok genetické informace.",
+      "items": [
+        "DNA",
+        "transkripce",
+        "mRNA",
+        "translace",
+        "bílkovina"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem s významem.",
+      "pairs": [
+        [
+          "intron",
+          "nekódující úsek"
+        ],
+        [
+          "exon",
+          "kódující úsek"
+        ],
+        [
+          "tRNA",
+          "přináší aminokyseliny"
+        ],
+        [
+          "AUG",
+          "start kodon"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Model dvoušroubovice DNA popsali v roce 1953…",
+      "options": [
+        "Watson a Crick",
+        "Mendel a Darwin",
+        "Pasteur a Koch"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Genetický kód je degenerovaný – jednu aminokyselinu může kódovat více kodonů.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Downův syndrom je…",
+      "options": [
+        "trizomie 21. chromozomu",
+        "bodová mutace",
+        "chybění chromozomu X"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kolik aminokyselin standardně kóduje genetický kód?",
+      "options": [
+        "20",
+        "64",
+        "4"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Popiš proteosyntézu.",
+      "answer": "Při transkripci se v jádře podle DNA vytvoří mRNA, která se upraví a přejde do cytoplazmy. Při translaci na ribozomu tRNA přinášejí aminokyseliny podle kodonů mRNA a vzniká polypeptid."
+    },
+    {
+      "type": "open",
+      "question": "Jaké druhy mutací rozlišujeme?",
+      "answer": "Genové (bodové – změna nukleotidů), chromozomové (změna stavby chromozomu – delece, duplikace, translokace) a genomové (změna počtu chromozomů – např. trizomie)."
+    }
+  ]
+}

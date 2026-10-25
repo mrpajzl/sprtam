@@ -1,0 +1,408 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "binomicka-veta",
+  "title": "Binomická věta",
+  "emoji": "🔺",
+  "explanations": [
+    {
+      "title": "Pascalův trojúhelník",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Umíš (a + b)² = a² + 2ab + b². Ale co (a + b)⁵? Roznásobovat pětkrát závorku je zdlouhavé a snadno se splete. Existuje zkratka: čísla, která v rozvoji vyjdou, tvoří krásný trojúhelník."
+        },
+        {
+          "type": "text",
+          "text": "Binomická věta se používá v pravděpodobnosti (kolik je možností při hodu mincí), ve statistice a umožní třeba spočítat 11⁴ zpaměti."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Dvojčlen (binom)",
+          "definition": "Součet dvou členů v závorce.",
+          "example": "a + b, x + 1, 2x − 3."
+        },
+        {
+          "type": "term",
+          "term": "Rozvoj",
+          "definition": "Výsledek po roznásobení mocniny dvojčlenu – součet členů.",
+          "example": "(a + b)² = a² + 2ab + b² má tři členy."
+        },
+        {
+          "type": "term",
+          "term": "Koeficient",
+          "definition": "Číslo před písmeny v členu.",
+          "example": "V 2ab je koeficient 2."
+        },
+        {
+          "type": "heading",
+          "text": "Stavba trojúhelníku"
+        },
+        {
+          "type": "text",
+          "text": "Na kraje každého řádku napiš 1. Každé vnitřní číslo je **součet dvou čísel nad ním**."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Mocnina",
+            "Koeficienty"
+          ],
+          "rows": [
+            [
+              "(a + b)⁰",
+              "1"
+            ],
+            [
+              "(a + b)¹",
+              "1 1"
+            ],
+            [
+              "(a + b)²",
+              "1 2 1"
+            ],
+            [
+              "(a + b)³",
+              "1 3 3 1"
+            ],
+            [
+              "(a + b)⁴",
+              "1 4 6 4 1"
+            ],
+            [
+              "(a + b)⁵",
+              "1 5 10 10 5 1"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Proč to funguje? (a + b)⁴ = (a + b)³ · (a + b). Každý člen vznikne ze dvou členů předchozího řádku – jednou násobením a, jednou b. Proto se sousedé sčítají."
+        },
+        {
+          "type": "heading",
+          "text": "Jak napsat rozvoj"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Koeficienty vezmi z řádku n.",
+            "Mocniny a klesají od n do 0.",
+            "Mocniny b rostou od 0 do n.",
+            "V každém členu je součet exponentů n."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rozviň (a + b)³.",
+          "answer": "Řádek 1 3 3 1: **a³ + 3a²b + 3ab² + b³**."
+        },
+        {
+          "type": "example",
+          "question": "Spočítej 11⁴ bez kalkulačky.",
+          "answer": "11 = 10 + 1. Řádek 1 4 6 4 1: 10 000 + 4 000 + 600 + 40 + 1 = **14 641**."
+        },
+        {
+          "type": "heading",
+          "text": "Co ještě z trojúhelníku vyčteš"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Rozvoj (a + b)ⁿ má **n + 1 členů** – (a + b)⁷ jich má 8.",
+            "Každý řádek je souměrný (zleva i zprava stejný).",
+            "Součet řádku n je **2ⁿ**: 1 + 5 + 10 + 10 + 5 + 1 = 32 = 2⁵."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Sloupce ukazují 5. řádek. Všimni si souměrnosti a toho, že dohromady dají 32."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "a⁵",
+                "value": 1
+              },
+              {
+                "label": "a⁴b",
+                "value": 5
+              },
+              {
+                "label": "a³b²",
+                "value": 10
+              },
+              {
+                "label": "a²b³",
+                "value": 10
+              },
+              {
+                "label": "ab⁴",
+                "value": 5
+              },
+              {
+                "label": "b⁵",
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "(a + b)³ = a³ + b³",
+          "right": "(a + b)³ = a³ + 3a²b + 3ab² + b³",
+          "why": "Mocnina součtu není součet mocnin. Zkouška: (1 + 1)³ = 8, ale 1³ + 1³ = 2."
+        },
+        {
+          "type": "summary",
+          "text": "Pascalův trojúhelník: kraje 1, uvnitř součet dvou čísel nad ním. Řádek n dává koeficienty (a + b)ⁿ; mocniny a klesají, b rostou. Členů je n + 1, součet koeficientů 2ⁿ."
+        }
+      ]
+    },
+    {
+      "title": "Kombinačními čísly",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pro velkou mocninu – třeba (x + 2)²⁰ – nechceš kreslit 21 řádků trojúhelníku. Potřebuješ vzorec, který dá **libovolný** člen rozvoje přímo. To je binomická věta."
+        },
+        {
+          "type": "text",
+          "text": "Spojuje algebru s kombinatorikou: koeficienty jsou počty výběrů."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kombinační číslo C(n, k)",
+          "definition": "Počet způsobů, jak vybrat k věcí z n bez ohledu na pořadí. C(n, k) = n! / (k! · (n − k)!), kde n! = n · (n − 1) · … · 1 a 0! = 1.",
+          "example": "C(4, 2) = 24 / (2 · 2) = 6; C(6, 3) = 720 / (6 · 6) = 20."
+        },
+        {
+          "type": "term",
+          "term": "Binomická věta",
+          "definition": "(a + b)ⁿ = C(n, 0)aⁿ + C(n, 1)aⁿ⁻¹b + C(n, 2)aⁿ⁻²b² + … + C(n, n)bⁿ.",
+          "example": "(a + b)² = 1·a² + 2·ab + 1·b²."
+        },
+        {
+          "type": "heading",
+          "text": "Proč tam jsou kombinační čísla"
+        },
+        {
+          "type": "text",
+          "text": "(a + b)⁴ = (a + b)(a + b)(a + b)(a + b). Z každé ze čtyř závorek vybereš buď a, nebo b. Člen a²b² vznikne, když b vybereš ze **2 závorek ze 4**. To jde C(4, 2) = 6 způsoby. Proto je koeficient u a²b² roven 6."
+        },
+        {
+          "type": "heading",
+          "text": "Postup: konkrétní člen"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Napiš obecný člen: C(n, k) · aⁿ⁻ᵏ · bᵏ.",
+            "Dosaď za a a b celé výrazy i se znaménkem a číslem (např. b = −1 nebo b = 2/x).",
+            "Urči k z požadované mocniny x.",
+            "Spočítej koeficient."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Koeficient u x² v rozvoji (x + 1)⁴?",
+          "answer": "Člen C(4, k) · x⁴⁻ᵏ · 1ᵏ. x² potřebuje 4 − k = 2 → k = 2. C(4, 2) = **6**."
+        },
+        {
+          "type": "example",
+          "question": "Koeficient u x v rozvoji (2x + 1)³?",
+          "answer": "Člen C(3, k) · (2x)³⁻ᵏ · 1ᵏ. Pro x¹: 3 − k = 1 → k = 2. C(3, 2) · 2¹ = 3 · 2 = **6**."
+        },
+        {
+          "type": "example",
+          "question": "Koeficient u x⁴ v rozvoji (x − 1)⁵?",
+          "answer": "b = −1. Člen C(5, k) · x⁵⁻ᵏ · (−1)ᵏ. x⁴ → k = 1. C(5, 1) · (−1) = **−5**."
+        },
+        {
+          "type": "example",
+          "question": "Člen bez x v rozvoji (x + 2/x)⁴?",
+          "answer": "C(4, k) · x⁴⁻ᵏ · (2/x)ᵏ = C(4, k) · 2ᵏ · x⁴⁻²ᵏ. Bez x: 4 − 2k = 0 → k = 2. C(4, 2) · 2² = 6 · 4 = **24**."
+        },
+        {
+          "type": "heading",
+          "text": "Vlastnosti"
+        },
+        {
+          "type": "list",
+          "items": [
+            "C(n, k) = C(n, n − k) – proto jsou řádky Pascalova trojúhelníku souměrné.",
+            "Dosaď a = b = 1: (1 + 1)ⁿ = 2ⁿ = součet všech koeficientů.",
+            "Rozvoj má n + 1 členů (k jde od 0 do n)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Porovnej: řádek pro n = 6 (C(6, 0) až C(6, 6)) má součet 2⁶ = 64. Prostřední C(6, 3) = 20 je největší."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "items": [
+              {
+                "label": "C(6,0)",
+                "value": 1
+              },
+              {
+                "label": "C(6,1)",
+                "value": 6
+              },
+              {
+                "label": "C(6,2)",
+                "value": 15
+              },
+              {
+                "label": "C(6,3)",
+                "value": 20
+              },
+              {
+                "label": "C(6,4)",
+                "value": 15
+              },
+              {
+                "label": "C(6,5)",
+                "value": 6
+              },
+              {
+                "label": "C(6,6)",
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Koeficient u x⁴ v (x − 1)⁵ je 5.",
+          "right": "Je −5.",
+          "why": "Druhý člen dvojčlenu je −1, ne 1. Jeho mocnina (−1)ᵏ dává pro liché k znaménko minus."
+        },
+        {
+          "type": "summary",
+          "text": "(a + b)ⁿ je součet členů C(n, k) · aⁿ⁻ᵏ · bᵏ pro k = 0 … n. Hledaný člen najdeš z mocniny x; za b dosazuj i se znaménkem. Součet koeficientů je 2ⁿ."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Koeficient u x² v rozvoji (x + 1)⁴ =",
+      "answers": [
+        "6"
+      ],
+      "explanation": "C(4, 2)"
+    },
+    {
+      "type": "input",
+      "question": "Součet čísel v řádku 1, 5, 10, 10, 5, 1 =",
+      "answers": [
+        "32"
+      ],
+      "explanation": "2⁵"
+    },
+    {
+      "type": "input",
+      "question": "Kolik členů má rozvoj (a + b)⁷?",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "(a + b)³ =",
+      "options": [
+        "a³ + 3a²b + 3ab² + b³",
+        "a³ + b³",
+        "a³ + 3ab + b³",
+        "a³ + 2a²b + 2ab² + b³"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Koeficient u x v rozvoji (2x + 1)³ =",
+      "answers": [
+        "6"
+      ],
+      "explanation": "C(3, 1) · 2 = 6"
+    },
+    {
+      "type": "truefalse",
+      "question": "Součet koeficientů rozvoje (a + b)ⁿ je 2ⁿ.",
+      "answer": true,
+      "explanation": "Dosaď a = b = 1."
+    },
+    {
+      "type": "input",
+      "question": "Koeficient u x⁴ v rozvoji (x − 1)⁵ =",
+      "answers": [
+        "−5",
+        "-5"
+      ],
+      "explanation": "C(5, 1) · (−1)¹"
+    },
+    {
+      "type": "input",
+      "question": "C(6, 3) =",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Každý řádek Pascalova trojúhelníku je souměrný.",
+      "answer": true,
+      "explanation": "C(n, k) = C(n, n − k)"
+    },
+    {
+      "type": "input",
+      "question": "11⁴ = (pomůže Pascalův trojúhelník)",
+      "answers": [
+        "14641"
+      ],
+      "explanation": "(10 + 1)⁴ → 1, 4, 6, 4, 1"
+    },
+    {
+      "type": "input",
+      "question": "Člen bez x v rozvoji (x + 2/x)⁴ =",
+      "answers": [
+        "24"
+      ],
+      "explanation": "k = 2: C(4, 2) · 2² = 24"
+    },
+    {
+      "type": "open",
+      "question": "Jak se sestavuje Pascalův trojúhelník a co vyjadřuje?",
+      "answer": "Na krajích jsou jedničky, každé další číslo je součtem dvou čísel nad ním. n-tý řádek obsahuje kombinační čísla C(n, k) – koeficienty rozvoje (a + b)ⁿ."
+    },
+    {
+      "type": "open",
+      "question": "Vyslov binomickou větu.",
+      "answer": "(a + b)ⁿ = C(n, 0)aⁿ + C(n, 1)aⁿ⁻¹b + … + C(n, n)bⁿ, tedy součet C(n, k)·aⁿ⁻ᵏ·bᵏ pro k od 0 do n."
+    }
+  ]
+}

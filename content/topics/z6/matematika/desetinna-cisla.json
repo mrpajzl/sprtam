@@ -1,0 +1,354 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "desetinna-cisla",
+  "title": "Desetinná čísla",
+  "emoji": "🔢",
+  "generator": "decimal",
+  "explanations": [
+    {
+      "title": "Penězi a na ose",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Jogurt stojí 12,90 Kč. Skočil jsi do dálky 3,45 m. Teploměr ukazuje 36,6 °C. Všude je **čárka** a za ní další číslice."
+        },
+        {
+          "type": "text",
+          "text": "Celá čísla (1, 2, 3…) nestačí, když něco není „celé“. Kus mezi dvěma celými čísly zapíšeme právě číslem s čárkou. Potřebuješ to v obchodě, při měření i ve sportu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Desetinné číslo",
+          "definition": "Číslo, které má **desetinnou čárku**. Vlevo od čárky jsou celé kusy, vpravo kousky menší než jeden celek.",
+          "example": "2,5 kg = 2 celá kila a ještě půl kila."
+        },
+        {
+          "type": "term",
+          "term": "Desetinná čárka",
+          "definition": "Čárka, která odděluje celou část od kousků. V češtině píšeme čárku, v angličtině se píše tečka.",
+          "example": "12,90 Kč: 12 celých korun, za čárkou 90 haléřů."
+        },
+        {
+          "type": "term",
+          "term": "Desetina",
+          "definition": "Jeden z **deseti** stejných dílků, na které rozdělíš jeden celek. Píše se 0,1.",
+          "example": "Čokoládu s 10 kostičkami rozlámeš. Jedna kostička je desetina čokolády."
+        },
+        {
+          "type": "term",
+          "term": "Setina",
+          "definition": "Jeden ze **sta** stejných dílků celku. Píše se 0,01.",
+          "example": "1 haléř je setina koruny: 0,01 Kč."
+        },
+        {
+          "type": "heading",
+          "text": "Desetiny na číselné ose"
+        },
+        {
+          "type": "text",
+          "text": "**Číselná osa** je čára, na které čísla leží v řadě – vlevo menší, vpravo větší. Mezi 0 a 1 je tady deset stejných dílků. Každý dílek je jedna desetina."
+        },
+        {
+          "type": "text",
+          "text": "Zkus to: začni na 0,3 a skoč o 0,4. Kde přistaneš? Posouvej body a sleduj, která čísla jsou víc vpravo."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "start": 0.3,
+            "hop": 0.4
+          }
+        },
+        {
+          "type": "text",
+          "text": "Přistaneš na 0,7. Čím víc vpravo číslo leží, tím je větší."
+        },
+        {
+          "type": "heading",
+          "text": "Jak porovnat dvě čísla"
+        },
+        {
+          "type": "text",
+          "text": "Představ si peníze. Co je víc: 0,7 Kč nebo 0,65 Kč? 0,7 Kč je 70 haléřů. 0,65 Kč je 65 haléřů. Víc je tedy 0,7."
+        },
+        {
+          "type": "text",
+          "text": "Nulu na konci můžeš klidně připsat nebo smazat. 0,7 = 0,70. Je to pořád 70 haléřů."
+        },
+        {
+          "type": "example",
+          "question": "Co je větší: 2,3 nebo 2,29?",
+          "answer": "Celé části jsou stejné (2). Doplň nulu: 2,30 a 2,29. 30 setin je víc než 29 setin, takže **2,3 je větší**."
+        },
+        {
+          "type": "example",
+          "question": "Zaokrouhli 3,46 na desetiny.",
+          "answer": "Hledáš nejbližší číslo s jedním místem za čárkou: 3,4 nebo 3,5. Na ose leží 3,46 blíž k 3,5 (chybí jen 4 setiny). Výsledek: **3,46 ≐ 3,5**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "0,65 > 0,7, protože 65 je víc než 7.",
+          "right": "0,7 > 0,65, protože 0,7 = 0,70 a 70 setin je víc než 65 setin.",
+          "why": "Nesmíš porovnávat čísla za čárkou jako celá čísla. Nejdřív doplň nuly, aby měla obě čísla stejně míst."
+        },
+        {
+          "type": "summary",
+          "text": "Desetinné číslo = celé kusy, čárka, pak kousky. Na ose je větší to, co leží víc vpravo. Při porovnávání si doplň nuly na konec."
+        }
+      ]
+    },
+    {
+      "title": "Tabulka řádů",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Číslo 345 čteš jako 3 stovky, 4 desítky a 5 jednotek. Každá číslice má svou „poličku“. Desetinná čísla fungují úplně stejně – jen poličky pokračují i za čárkou."
+        },
+        {
+          "type": "text",
+          "text": "Když víš, na které poličce číslice stojí, umíš číslo přečíst, porovnat i zaokrouhlit."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Řád",
+          "definition": "Polička, na které číslice stojí. Říká, kolik číslice „váží“: jednotky, desítky, stovky… a za čárkou desetiny, setiny, tisíciny.",
+          "example": "V čísle 3,407 stojí 4 v řádu desetin."
+        },
+        {
+          "type": "term",
+          "term": "Tisícina",
+          "definition": "Jeden z **tisíce** stejných dílků celku. Píše se 0,001. Třetí místo za čárkou.",
+          "example": "1 mm je tisícina metru: 0,001 m."
+        },
+        {
+          "type": "term",
+          "term": "Zaokrouhlit",
+          "definition": "Nahradit číslo jednodušším číslem, které je mu nejblíž. Znak ≐ čteme „je přibližně rovno“.",
+          "example": "12,349 ≐ 12,35 (zaokrouhleno na setiny)."
+        },
+        {
+          "type": "heading",
+          "text": "Řády v tabulce"
+        },
+        {
+          "type": "text",
+          "text": "Každá polička vpravo je **desetkrát menší** než ta před ní. Desetina je desetkrát menší než jednotka, setina desetkrát menší než desetina."
+        },
+        {
+          "type": "table",
+          "head": [
+            "jednotky",
+            ",",
+            "desetiny",
+            "setiny",
+            "tisíciny"
+          ],
+          "rows": [
+            [
+              "3",
+              ",",
+              "4",
+              "0",
+              "7"
+            ],
+            [
+              "0",
+              ",",
+              "0",
+              "7",
+              ""
+            ],
+            [
+              "1",
+              ",",
+              "6",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "3,407 = 3 celé, 4 desetiny, 0 setin, 7 tisícin.",
+            "0,07 = 7 setin („sedm setin“).",
+            "1,6 = 1 celý a 6 desetin. Protože 1 celý = 10 desetin, je to dohromady 16 desetin."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Porovnání krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Porovnej celé části (před čárkou). Které je větší, to vyhrává.",
+            "Jsou stejné? Doplň nuly za čárkou, aby obě čísla měla stejně míst.",
+            "Porovnávej řád po řádu zleva: desetiny, pak setiny, pak tisíciny.",
+            "První řád, kde se čísla liší, rozhodne."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejmenšího: 0,5; 0,09; 0,15; 0,1",
+          "answer": "Doplň na setiny: 0,50; 0,09; 0,15; 0,10. Porovnej setiny: 9 < 10 < 15 < 50. Pořadí: **0,09; 0,1; 0,15; 0,5**."
+        },
+        {
+          "type": "heading",
+          "text": "Zaokrouhlování krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi řád, na který zaokrouhluješ (např. setiny).",
+            "Podívej se na **první číslici vpravo** od něj.",
+            "Je to 0, 1, 2, 3 nebo 4? Řád nech, jak je.",
+            "Je to 5, 6, 7, 8 nebo 9? Řád zvětši o 1.",
+            "Všechno vpravo od řádu škrtni."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Zaokrouhli 12,349 na setiny.",
+          "answer": "Setiny: 4. Vpravo od nich je 9, to je 5 nebo víc → setiny zvětšíme o 1. **12,349 ≐ 12,35**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "2,46 zaokrouhleno na desetiny = 2,4, protože se jen škrtne konec.",
+          "right": "2,46 ≐ 2,5",
+          "why": "Vpravo od desetin je 6, a to je 5 nebo víc. Proto se desetiny zvětší o 1."
+        },
+        {
+          "type": "summary",
+          "text": "Za čárkou jdou řády desetiny, setiny, tisíciny. Porovnávej řád po řádu zleva. Zaokrouhluješ podle první číslice vpravo: 0–4 nech, 5–9 přidej 1."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Které číslo je největší?",
+      "options": [
+        "0,8",
+        "0,75",
+        "0,089",
+        "0,708"
+      ],
+      "answer": 0,
+      "explanation": "0,8 = 0,800, to je víc než 0,750 i 0,708."
+    },
+    {
+      "type": "truefalse",
+      "question": "0,5 = 0,50",
+      "answer": true,
+      "explanation": "Nula na konci desetinné části hodnotu nemění."
+    },
+    {
+      "type": "input",
+      "question": "Zaokrouhli 3,46 na desetiny.",
+      "answers": [
+        "3,5"
+      ],
+      "explanation": "Za desetinami je 6 ≥ 5, proto nahoru."
+    },
+    {
+      "type": "input",
+      "question": "Zaokrouhli 12,349 na setiny.",
+      "answers": [
+        "12,35"
+      ],
+      "explanation": "Za setinami je 9 → nahoru: 12,35."
+    },
+    {
+      "type": "choice",
+      "question": "Jak se zapíše „sedm setin“?",
+      "options": [
+        "0,07",
+        "0,7",
+        "0,007",
+        "7,100"
+      ],
+      "answer": 0,
+      "explanation": "Setiny jsou druhé místo za čárkou."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "0,09",
+        "0,1",
+        "0,15",
+        "0,5"
+      ],
+      "explanation": "Převeď na setiny: 9, 10, 15, 50."
+    },
+    {
+      "type": "match",
+      "question": "Spoj zlomek s desetinným číslem.",
+      "pairs": [
+        [
+          "1/2",
+          "0,5"
+        ],
+        [
+          "1/4",
+          "0,25"
+        ],
+        [
+          "3/10",
+          "0,3"
+        ],
+        [
+          "1/100",
+          "0,01"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "2,3 < 2,29",
+      "answer": false,
+      "explanation": "2,30 > 2,29 – porovnávej setiny."
+    },
+    {
+      "type": "input",
+      "question": "Kolik desetin je v čísle 1,6?",
+      "answers": [
+        "16"
+      ],
+      "explanation": "1 celek = 10 desetin, plus 6 → 16."
+    },
+    {
+      "type": "open",
+      "question": "Jak porovnáš dvě desetinná čísla?",
+      "answer": "Nejdřív porovnám celé části. Když jsou stejné, porovnávám desetiny, pak setiny… Chybějící místa doplním nulami."
+    },
+    {
+      "type": "open",
+      "question": "Jak zaokrouhlíš desetinné číslo na desetiny?",
+      "answer": "Podívám se na číslici v řádu setin. Je-li 5 až 9, zvětším desetiny o 1; je-li 0 až 4, desetiny nechám. Ostatní místa škrtnu."
+    }
+  ]
+}

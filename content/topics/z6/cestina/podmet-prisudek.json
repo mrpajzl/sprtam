@@ -1,0 +1,372 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "podmet-prisudek",
+  "title": "Podmět a přísudek",
+  "emoji": "🧩",
+  "explanations": [
+    {
+      "title": "Kostra věty",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dům stojí na kostře z trámů. Člověk má kostru z kostí. I **věta** má kostru. Bez ní se rozpadne."
+        },
+        {
+          "type": "text",
+          "text": "Kostru věty tvoří dvě slova: **kdo** něco dělá a **co dělá**. Když kostru najdeš, rozumíš větě a víš, jak psát koncovky (*psi štěkali*, ne *psi štěkaly*)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Skupina slov, která dává smysl a obvykle má sloveso. Na konci má tečku, otazník nebo vykřičník.",
+          "example": "Pes štěká."
+        },
+        {
+          "type": "term",
+          "term": "Větný člen",
+          "definition": "Slovo (nebo skupina slov), které má ve větě určitou úlohu.",
+          "example": "Ve větě *Pes štěká* má každé slovo svou úlohu."
+        },
+        {
+          "type": "term",
+          "term": "Přísudek",
+          "definition": "Větný člen, který říká, **co** podmět **dělá**, nebo co se s ním **děje**. Bývá to sloveso.",
+          "example": "Pes **štěká**."
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Větný člen, který říká, **kdo** nebo **co** něco dělá. Je vždy v **1. pádě** (kdo? co?).",
+          "example": "**Pes** štěká."
+        },
+        {
+          "type": "term",
+          "term": "Základní skladební dvojice",
+          "definition": "Podmět a přísudek dohromady. Je to kostra věty.",
+          "example": "Pes štěká."
+        },
+        {
+          "type": "heading",
+          "text": "Jak najít kostru"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi **sloveso**, které říká, co se děje. To je přísudek.",
+            "Zeptej se: **kdo** nebo **co** to dělá? Odpověď je podmět.",
+            "Zkontroluj, že podmět je v 1. pádě (kdo? co?)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Podívej se, jak jsou ve větách obarvené podmět a přísudek."
+        },
+        {
+          "type": "widget",
+          "widget": "parts",
+          "props": {
+            "words": [
+              {
+                "parts": [
+                  {
+                    "text": "Pes",
+                    "label": "podmět"
+                  },
+                  {
+                    "text": " štěká",
+                    "label": "přísudek"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "Děti",
+                    "label": "podmět"
+                  },
+                  {
+                    "text": " zpívají",
+                    "label": "přísudek"
+                  }
+                ]
+              },
+              {
+                "parts": [
+                  {
+                    "text": "Slunce",
+                    "label": "podmět"
+                  },
+                  {
+                    "text": " svítilo",
+                    "label": "přísudek"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Najdi podmět a přísudek: *Ráno svítilo slunce.*",
+          "answer": "Co se dělo? **svítilo** → přísudek. Co svítilo? **slunce** → podmět. Na pořadí slov nezáleží – podmět může být i na konci."
+        },
+        {
+          "type": "example",
+          "question": "Najdi podmět a přísudek: *Na stromě sedí vrabec.*",
+          "answer": "Co se děje? **sedí** → přísudek. Kdo sedí? **vrabec** → podmět. *Na stromě* jen říká kde."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ve větě *Na stromě sedí vrabec* je podmět *stromě*, protože je první.",
+          "right": "Podmět je *vrabec*.",
+          "why": "Podmět nepoznáš podle místa ve větě, ale otázkou kdo? co? dělá. *Stromě* navíc není 1. pád."
+        },
+        {
+          "type": "heading",
+          "text": "Zvláštní případy"
+        },
+        {
+          "type": "term",
+          "term": "Podmět nevyjádřený",
+          "definition": "Podmět ve větě není napsaný, ale poznáš ho z tvaru slovesa.",
+          "example": "*Půjdeme domů.* – kdo? **my** (není napsané)"
+        },
+        {
+          "type": "term",
+          "term": "Podmět několikanásobný",
+          "definition": "Víc podmětů, které dělají totéž.",
+          "example": "**Jana a Petr** zpívají."
+        },
+        {
+          "type": "term",
+          "term": "Přísudek jmenný se sponou",
+          "definition": "Přísudek ze dvou částí: tvar slovesa **být** (tomu se říká **spona**) + jméno. Druhý typ, **slovesný**, je jen sloveso.",
+          "example": "Petr **je učitel**. Nebe **bylo modré**. (Slovesný: Pes **štěká**.)"
+        },
+        {
+          "type": "summary",
+          "text": "Kostra věty = podmět (kdo? co?) + přísudek (co dělá?). Hledej nejdřív sloveso, pak se zeptej, kdo to dělá."
+        }
+      ]
+    },
+    {
+      "title": "Hra na detektiva",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Detektiv vždycky hledá dvě věci: **co se stalo** a **kdo to udělal**. Ve větě hledáš úplně totéž."
+        },
+        {
+          "type": "text",
+          "text": "„Co se stalo“ je **přísudek**. „Kdo to udělal“ je **podmět**. Těmto dvěma částem věty říkáme **základní skladební dvojice**. Ostatní slova jsou jen „okolnosti případu“."
+        },
+        {
+          "type": "term",
+          "term": "Přísudek",
+          "definition": "Část věty, která říká, co se děje. Obvykle je to sloveso.",
+          "example": "Babička **peče** buchty."
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Část věty, která říká, kdo nebo co děj dělá. Je v 1. pádě a ptáš se **kdo? co?**",
+          "example": "**Babička** peče buchty."
+        },
+        {
+          "type": "term",
+          "term": "Základní skladební dvojice",
+          "definition": "Podmět + přísudek, „pachatel a čin“.",
+          "example": "babička – peče"
+        },
+        {
+          "type": "heading",
+          "text": "Vyšetřování krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Co se stalo?** Najdi sloveso. Případ: *V noci zahoukala sova.* → *zahoukala*.",
+            "**Kdo to udělal?** Zeptej se: kdo zahoukal? → *sova*.",
+            "**Ověř alibi**: podmět musí být v 1. pádě. *Sova* – kdo? co? Ano.",
+            "**Zbytek** (*v noci*) jsou jen okolnosti, ne kostra."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu, ale nejdřív si sám řekni, kdo je pachatel a co udělal."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Vlak přijel.",
+                "back": "podmět: vlak, přísudek: přijel"
+              },
+              {
+                "front": "Bratr je lékař.",
+                "back": "podmět: bratr, přísudek: je lékař"
+              },
+              {
+                "front": "Šli jsme do kina.",
+                "back": "podmět nevyjádřený (my), přísudek: šli jsme"
+              },
+              {
+                "front": "Pes a kočka spí.",
+                "back": "podmět několikanásobný: pes a kočka, přísudek: spí"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Těžké případy"
+        },
+        {
+          "type": "text",
+          "text": "**Neviditelný pachatel.** *Půjdeme domů.* Nikde není napsáno kdo. Ale sloveso *půjdeme* prozradí: **my**. Takový podmět je **nevyjádřený**."
+        },
+        {
+          "type": "text",
+          "text": "**Víc pachatelů.** *Pes a kočka spí.* Spí dva. Podmět je **několikanásobný**: *pes a kočka*."
+        },
+        {
+          "type": "text",
+          "text": "**Čin ze dvou kusů.** *Sestra je zdravotnice.* Co se děje? Samotné *je* nestačí. Přísudek je *je zdravotnice*. Sloveso *být* tu jen spojuje – říká se mu **spona**. Takový přísudek je **jmenný se sponou**. Když stačí samotné sloveso (*běží*), je přísudek **slovesný**."
+        },
+        {
+          "type": "example",
+          "question": "Vyšetři větu: *Chlapec byl smutný.*",
+          "answer": "Co se dělo? *byl smutný* – spona *byl* + jméno *smutný* → přísudek jmenný se sponou. Kdo byl smutný? **chlapec** → podmět."
+        },
+        {
+          "type": "example",
+          "question": "Vyšetři větu: *Ve škole zvonil zvonek.*",
+          "answer": "Co se stalo? **zvonil** → přísudek slovesný. Co zvonilo? **zvonek** → podmět. *Ve škole* je okolnost (kde)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ve větě *Babička peče buchty* je podmět *buchty* – vždyť jsou v té větě nejdůležitější.",
+          "right": "Podmět je *babička*.",
+          "why": "Buchty nic nedělají, peče je babička. Podmět je ten, kdo děj dělá."
+        },
+        {
+          "type": "summary",
+          "text": "Přísudek = co se děje (sloveso, nebo být + jméno). Podmět = kdo to dělá (1. pád). Podmět může být nevyjádřený nebo několikanásobný."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co je podmět ve větě *Na stromě sedí vrabec.*?",
+      "options": [
+        "vrabec",
+        "stromě",
+        "sedí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je přísudek ve větě *Babička peče buchty.*?",
+      "options": [
+        "peče",
+        "babička",
+        "buchty"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký přísudek je ve větě *Sestra je zdravotnice.*?",
+      "options": [
+        "jmenný se sponou",
+        "slovesný"
+      ],
+      "answer": 0,
+      "explanation": "je (být) + jméno zdravotnice."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve větě *Půjdeme domů.* je podmět nevyjádřený.",
+      "answer": true,
+      "explanation": "Podmět *my* ve větě není, poznáme ho z tvaru slovesa."
+    },
+    {
+      "type": "choice",
+      "question": "Na co se ptáme na podmět?",
+      "options": [
+        "kdo? co?",
+        "koho? čeho?",
+        "kde? kdy?"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Napiš podmět věty: *Ve škole zvonil zvonek.*",
+      "answers": [
+        "zvonek"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Napiš přísudek věty: *Děti běhaly po louce.*",
+      "answers": [
+        "běhaly"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve které větě je podmět několikanásobný?",
+      "options": [
+        "Pes a kočka spí.",
+        "Pes spí na dece.",
+        "Velký pes spí."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve větě *Chlapec byl smutný.* je přísudek *byl smutný*.",
+      "answer": true,
+      "explanation": "Přísudek jmenný se sponou."
+    },
+    {
+      "type": "choice",
+      "question": "Co tvoří základní skladební dvojici?",
+      "options": [
+        "podmět a přísudek",
+        "podmět a předmět",
+        "přísudek a příslovečné určení"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Co je základní skladební dvojice? Ukaž ji na větě.",
+      "answer": "Podmět a přísudek. Ve větě *Pes štěká* je podmět *pes* a přísudek *štěká*."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi přísudkem slovesným a jmenným se sponou?",
+      "answer": "Slovesný tvoří samo sloveso (*běží*). Jmenný se sponou tvoří tvar slovesa *být* a jméno (*je učitel*, *byla veselá*)."
+    }
+  ]
+}

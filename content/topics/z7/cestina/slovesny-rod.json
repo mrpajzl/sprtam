@@ -1,0 +1,343 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "slovesny-rod",
+  "title": "Rod činný a trpný",
+  "emoji": "🔁",
+  "explanations": [
+    {
+      "title": "Kdo to dělá?",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V novinách čteš: *Most byl postaven v roce 1990.* Kdo ho postavil? Nevíme. A vlastně nás to nezajímá – důležitý je most."
+        },
+        {
+          "type": "text",
+          "text": "Čeština umí stejnou událost říct dvěma způsoby: buď je v popředí ten, **kdo děj dělá**, nebo to, **s čím se něco děje**. Tomu se říká **slovesný rod**. Hodí se to hlavně ve zprávách, návodech a odborných textech."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Podmět",
+          "definition": "Připomenutí: větný člen, který odpovídá na otázku **kdo? co?** (1. pád) a o kterém věta mluví.",
+          "example": "**Petr** napsal dopis."
+        },
+        {
+          "type": "term",
+          "term": "Rod činný",
+          "definition": "Podmět děj **sám dělá**. Je „činný“, aktivní.",
+          "example": "**Petr** napsal dopis."
+        },
+        {
+          "type": "term",
+          "term": "Rod trpný",
+          "definition": "S podmětem **se něco děje**, podmět děj „trpí“, sám nic nedělá.",
+          "example": "**Dopis** byl napsán."
+        },
+        {
+          "type": "term",
+          "term": "Příčestí trpné",
+          "definition": "Tvar slovesa, který končí obvykle na **-n** nebo **-t** (+ koncovka podle rodu).",
+          "example": "napsán, napsána, napsáno; umyt, umyta"
+        },
+        {
+          "type": "heading",
+          "text": "Dvě podoby trpného rodu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rod",
+            "Jak se tvoří",
+            "Věta"
+          ],
+          "rows": [
+            [
+              "činný",
+              "obyčejný tvar slovesa",
+              "Petr **napsal** dopis."
+            ],
+            [
+              "trpný opisný",
+              "být + příčestí trpné",
+              "Dopis **byl napsán**."
+            ],
+            [
+              "trpný zvratný",
+              "sloveso + se",
+              "Dopisy **se píšou** perem."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor: ne každé *se* znamená trpný rod. *Petr se myje* – Petr sám něco dělá (myje sebe). To je **činný** rod. Trpný zvratný je jen tehdy, když podmět děj nedělá: *Tráva se seká* (tráva sama nic neseká)."
+        },
+        {
+          "type": "heading",
+          "text": "Jak převést činný rod na trpný"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Činný: *Kuchař uvařil polévku.*",
+            "Najdi, **co** kuchař uvařil (uvařil co? *polévku*). Tohle slovo se stane podmětem: **polévka**.",
+            "Sloveso převeď na **být + příčestí trpné**: *byla uvařena*.",
+            "Kdo to udělal, dej do 7. pádu (kým?): *kuchařem*. Můžeš ho i vynechat.",
+            "Trpný: *Polévka byla uvařena kuchařem.*"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Převeď do trpného rodu: *Kočka chytila myš.*",
+          "answer": "Nový podmět: *myš*. Sloveso: *byla chycena*. Kým? *kočkou*. → **Myš byla chycena kočkou.**"
+        },
+        {
+          "type": "example",
+          "question": "Urči rod: *Tady se prodávají lístky.*",
+          "answer": "Lístky samy nic neprodávají, prodává je někdo jiný → **trpný zvratný** rod."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ve větě *Petr se myje* je trpný rod, protože tam je *se*.",
+          "right": "Je to rod činný.",
+          "why": "Petr děj dělá sám. Trpný rod je jen tehdy, když podmět děj nedělá."
+        },
+        {
+          "type": "summary",
+          "text": "Činný rod: podmět děj dělá (Petr napsal dopis). Trpný rod: s podmětem se něco děje – být + příčestí trpné (dopis byl napsán) nebo se (dopisy se píšou)."
+        }
+      ]
+    },
+    {
+      "title": "Převodem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Představ si fotku z fotbalu. Můžeš ji popsat dvakrát: *Brankář chytil míč.* nebo *Míč byl chycen brankářem.* Situace je stejná, jen se díváš z jiné strany – jednou od brankáře, jednou od míče."
+        },
+        {
+          "type": "text",
+          "text": "Těm dvěma pohledům se říká **rod činný** a **rod trpný**. Patří mezi vlastnosti slovesa, stejně jako čas nebo osoba. Naučíš se je poznat a převádět jeden na druhý."
+        },
+        {
+          "type": "term",
+          "term": "Slovesný rod",
+          "definition": "Vlastnost slovesa, která říká, jestli podmět děj dělá, nebo jestli se s ním děj děje. (Nesplést s rodem podstatných jmen – ten/ta/to!)",
+          "example": "činný: brankář chytil; trpný: míč byl chycen"
+        },
+        {
+          "type": "term",
+          "term": "Činný rod",
+          "definition": "Pohled od toho, **kdo jedná**. Podmět je aktivní.",
+          "example": "*Hasiči uhasili požár.*"
+        },
+        {
+          "type": "term",
+          "term": "Trpný rod",
+          "definition": "Pohled od toho, **s čím se něco děje**. Podmět je pasivní.",
+          "example": "*Požár byl uhašen.*"
+        },
+        {
+          "type": "term",
+          "term": "Příčestí trpné",
+          "definition": "Tvar slovesa pro trpný rod: *uhašen, napsán, umyt*. Mění koncovku podle rodu podmětu.",
+          "example": "dům byl postaven, škola byla postavena, kino bylo postaveno"
+        },
+        {
+          "type": "heading",
+          "text": "Otočení pohledu"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu. Nejdřív zkus větu převést sám, pak se podívej."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Hasiči uhasili požár.",
+                "back": "Požár byl uhašen hasiči."
+              },
+              {
+                "front": "Žáci napsali test.",
+                "back": "Test byl napsán žáky."
+              },
+              {
+                "front": "Učitel opravil písemky.",
+                "back": "Písemky byly opraveny učitelem."
+              },
+              {
+                "front": "Na zahradě se seká tráva.",
+                "back": "trpný rod (zvratný) – tráva nic nedělá"
+              },
+              {
+                "front": "Pes hlídá dům.",
+                "back": "činný rod – pes sám hlídá"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Druhý způsob: se"
+        },
+        {
+          "type": "text",
+          "text": "Trpný rod jde udělat i kratší cestou: místo *být + příčestí* použiješ **se**. *Píseň je zpívána* = *Píseň se zpívá*. Prvnímu říkáme **opisný**, druhému **zvratný** trpný rod."
+        },
+        {
+          "type": "heading",
+          "text": "K čemu je trpný rod"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Když **nevíme**, kdo děj udělal: *Kolo bylo ukradeno.*",
+            "Když to **není důležité**: *Hrad byl postaven ve 13. století.*",
+            "V návodech a vyhláškách: *Vstup se zakazuje.*"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Převeď do činného rodu: *Auto bylo opraveno mechanikem.*",
+          "answer": "Kdo to udělal? *mechanik* – stane se podmětem. Sloveso v činném rodě: *opravil*. → **Mechanik opravil auto.**"
+        },
+        {
+          "type": "example",
+          "question": "Doplň příčestí trpné od *napsat*: *Zpráva byla ___.*",
+          "answer": "*Zpráva* je ženského rodu (ta zpráva) → **napsána**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Okno bylo rozbito Petrovi.",
+          "right": "Okno bylo rozbito Petrem.",
+          "why": "Ten, kdo děj udělal, je v trpném rodě v 7. pádě (kým?). *Petrovi* je 3. pád."
+        },
+        {
+          "type": "summary",
+          "text": "Činný rod: kdo jedná (Žáci napsali test). Trpný rod: s čím se jedná – opisný (Test byl napsán) nebo zvratný (Testy se píšou). Původce děje je v 7. pádě."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký rod je ve větě *Babička upekla koláč.*?",
+      "options": [
+        "činný",
+        "trpný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký rod je ve větě *Most byl postaven v roce 1990.*?",
+      "options": [
+        "činný",
+        "trpný"
+      ],
+      "answer": 1,
+      "explanation": "byl postaven = být + příčestí trpné."
+    },
+    {
+      "type": "choice",
+      "question": "Jaký rod je ve větě *Tady se prodávají lístky.*?",
+      "options": [
+        "trpný",
+        "činný"
+      ],
+      "answer": 0,
+      "explanation": "Trpný zvratný – lístky samy nic nedělají."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve větě *Okno bylo rozbito.* je trpný rod.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Převeď do trpného rodu: *Kočka chytila myš.*",
+      "options": [
+        "Myš byla chycena kočkou.",
+        "Myš chytila kočku.",
+        "Kočka byla chycena myší."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Doplň příčestí trpné od *napsat*: *Zpráva byla ___.*",
+      "answers": [
+        "napsána"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Z čeho se skládá opisný trpný rod?",
+      "options": [
+        "být + příčestí trpné",
+        "mít + infinitiv",
+        "sloveso + předložka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Ve větě *Petr se myje.* je trpný rod.",
+      "answer": false,
+      "explanation": "Petr děj dělá sám (myje sebe) → činný rod se zvratným zájmenem."
+    },
+    {
+      "type": "match",
+      "question": "Spoj větu s rodem.",
+      "pairs": [
+        [
+          "Děti zpívají.",
+          "činný"
+        ],
+        [
+          "Píseň je zpívána.",
+          "trpný opisný"
+        ],
+        [
+          "Píseň se zpívá.",
+          "trpný zvratný"
+        ]
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Převeď do činného rodu: *Auto bylo opraveno mechanikem.* Napiš podmět nové věty.",
+      "answers": [
+        "mechanik"
+      ],
+      "explanation": "Mechanik opravil auto."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi rodem činným a trpným?",
+      "answer": "V činném rodě podmět děj sám dělá (Petr napsal dopis). V trpném se s podmětem něco děje (Dopis byl napsán) – tvoří se pomocí být + příčestí trpné nebo zvratným *se*."
+    },
+    {
+      "type": "open",
+      "question": "Převeď větu *Učitel opravil písemky.* do trpného rodu.",
+      "answer": "Písemky byly opraveny učitelem."
+    }
+  ]
+}

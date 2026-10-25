@@ -1,0 +1,326 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "obsah-ctverce-obdelniku",
+  "title": "Obsah čtverce a obdélníku",
+  "emoji": "🟦",
+  "generator": "perimeter-area",
+  "explanations": [
+    {
+      "title": "Čtverečky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chceš do pokoje koupit koberec. Nezajímá tě, jak dlouhý je kraj, ale **kolik místa** na podlaze zabere. To je **obsah**."
+        },
+        {
+          "type": "text",
+          "text": "Obsah potřebuješ, když kupuješ koberec, dlaždičky, barvu na zeď nebo trávník na zahradu."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obsah",
+          "definition": "Velikost plochy uvnitř tvaru. Říká, kolik čtverečků se dovnitř vejde."
+        },
+        {
+          "type": "term",
+          "term": "Čtvereční centimetr (cm²)",
+          "definition": "Čtvereček se stranou 1 cm. Je to jednotka obsahu.",
+          "example": "Známka na dopis má asi 6 cm²."
+        },
+        {
+          "type": "term",
+          "term": "Čtvereční metr (m²)",
+          "definition": "Čtverec se stranou 1 m. Na velké plochy.",
+          "example": "Pokoj má asi 15 m²."
+        },
+        {
+          "type": "heading",
+          "text": "Spočítej čtverečky"
+        },
+        {
+          "type": "text",
+          "text": "Obdélník je 5 cm dlouhý a 3 cm široký. Rozdělíme ho na čtverečky 1 cm × 1 cm."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "V jedné řadě je **5** čtverečků (délka 5 cm).",
+            "Řad je **3** (šířka 3 cm).",
+            "3 řady po 5 = 3 · 5 = **15** čtverečků.",
+            "Obsah je **15 cm²**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Každý puntík je jeden čtvereček 1 cm². Hýbej posuvníky a sleduj, kolik čtverečků se vejde."
+        },
+        {
+          "type": "widget",
+          "widget": "multiply",
+          "props": {
+            "rows": 3,
+            "columns": 5
+          }
+        },
+        {
+          "type": "text",
+          "text": "Proto platí: **obsah obdélníku = a · b** (délka krát šířka). Čtverec má strany stejné: **obsah = a · a**."
+        },
+        {
+          "type": "example",
+          "question": "Čtverec se stranou 6 cm. Obsah?",
+          "answer": "6 řad po 6 čtverečcích: 6 · 6 = **36 cm²**."
+        },
+        {
+          "type": "example",
+          "question": "Zahrada 12 m × 10 m. Kolik m² trávníku má?",
+          "answer": "12 · 10 = **120 m²**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obsah obdélníku 5 cm × 3 cm = 15 cm",
+          "right": "15 **cm²**",
+          "why": "Obsah počítá čtverečky, ne délku čáry. Jednotka musí mít dvojku: cm², m²."
+        },
+        {
+          "type": "summary",
+          "text": "Obsah = kolik čtverečků se vejde dovnitř. Obdélník: a · b, čtverec: a · a. Jednotka cm² nebo m²."
+        }
+      ]
+    },
+    {
+      "title": "Obvod vs. obsah",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zahrádku chceš oplotit a osít trávou. Na plot potřebuješ **obvod**, na trávu **obsah**. Plést si je je nejčastější chyba."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se oba výpočty rozlišit a spočítat i obrácenou úlohu – zjistit stranu, když znáš obsah."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Obvod",
+          "definition": "Délka čáry **kolem** tvaru – jako plot. Jednotky cm, m.",
+          "example": "Obdélník 6 × 4: 6 + 4 + 6 + 4 = 20 cm."
+        },
+        {
+          "type": "term",
+          "term": "Obsah",
+          "definition": "Velikost plochy **uvnitř** – jako koberec. Jednotky cm², m².",
+          "example": "Obdélník 6 × 4: 6 · 4 = 24 cm²."
+        },
+        {
+          "type": "term",
+          "term": "Závorka ( )",
+          "definition": "Co je v závorce, počítáš jako první.",
+          "example": "2 · (6 + 4) = 2 · 10 = 20"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Měň strany obdélníku a sleduj obvod i obsah. Najdeš obdélník s obvodem 20 cm, ale jiným obsahem než 24 cm²?"
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "rect",
+            "a": 6,
+            "b": 4
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Přehled"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Obvod",
+            "Obsah"
+          ],
+          "rows": [
+            [
+              "co to je",
+              "plot kolem",
+              "koberec uvnitř"
+            ],
+            [
+              "obdélník",
+              "2 · (a + b)",
+              "a · b"
+            ],
+            [
+              "čtverec",
+              "4 · a",
+              "a · a"
+            ],
+            [
+              "jednotka",
+              "cm, m",
+              "cm², m²"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Obrácená úloha"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Obsah obdélníku je 24 cm², jedna strana 6 cm. Druhá?",
+            "Víme: 6 · ? = 24.",
+            "24 : 6 = **4 cm**."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Obdélník 9 cm × 4 cm. Obvod i obsah.",
+          "answer": "Obvod: 2 · (9 + 4) = 2 · 13 = **26 cm**. Obsah: 9 · 4 = **36 cm²**."
+        },
+        {
+          "type": "example",
+          "question": "Obsah čtverce je 49 cm². Jak dlouhá je strana?",
+          "answer": "Hledám číslo, které krát samo sebe dá 49: 7 · 7 = 49. **7 cm**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obdélník 2 cm × 8 cm má obsah 20 cm².",
+          "right": "Obsah = 2 · 8 = **16 cm²**.",
+          "why": "20 cm je obvod (2 + 8 + 2 + 8). Obsah se násobí, obvod se sčítá kolem dokola."
+        },
+        {
+          "type": "summary",
+          "text": "Obvod = plot kolem (cm), obsah = koberec uvnitř (cm²). Obdélník: obvod 2 · (a + b), obsah a · b."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Obdélník 5 cm × 3 cm. Obsah v cm² =",
+      "answers": [
+        "15"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Čtverec se stranou 6 cm. Obsah v cm² =",
+      "answers": [
+        "36"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Obdélník 8 m × 7 m. Obsah v m² =",
+      "answers": [
+        "56"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Čtverec se stranou 10 cm. Obsah v cm² =",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Obdélník 9 cm × 4 cm. Obvod v cm =",
+      "answers": [
+        "26"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Obsah obdélníku je 24 cm², jedna strana 6 cm. Druhá strana v cm =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Obsah čtverce je 49 cm². Strana v cm =",
+      "answers": [
+        "7"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "V jakých jednotkách je obsah?",
+      "options": [
+        "cm",
+        "cm²",
+        "kg"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Chceš vědět, kolik koberce potřebuješ do pokoje. Počítáš…",
+      "options": [
+        "obvod",
+        "obsah"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Čtverec 4 cm × 4 cm má obvod i obsah vyjádřený číslem 16.",
+      "answer": true,
+      "explanation": "Obvod 16 cm, obsah 16 cm² – jiné jednotky!"
+    },
+    {
+      "type": "truefalse",
+      "question": "Obdélník 2 cm × 8 cm má obsah 20 cm².",
+      "answer": false,
+      "explanation": "2 · 8 = 16 cm². 20 cm je obvod."
+    },
+    {
+      "type": "input",
+      "question": "Zahrada 12 m × 10 m. Kolik m² trávníku má?",
+      "answers": [
+        "120"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi obvodem a obsahem?",
+      "answer": "Obvod je délka čáry kolem útvaru (v cm). Obsah je velikost plochy uvnitř (v cm²)."
+    },
+    {
+      "type": "open",
+      "question": "Proč se obsah obdélníku počítá jako a · b?",
+      "answer": "Do obdélníku se vejde a čtverečků v řadě a takových řad je b. Řady × čtverečky = a · b."
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "veta-slovo-slabika-hlaska",
+  "title": "Věta, slovo, slabika, hláska",
+  "emoji": "🧱",
+  "explanations": [
+    {
+      "title": "Stavebnice",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Z Lega postavíš hrad. Hrad je z dílů, díly jsou z kostiček."
+        },
+        {
+          "type": "text",
+          "text": "Řeč je taky stavebnice. Velké kusy se skládají z menších. Když víš, z čeho je co složené, líp čteš i píšeš."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři kousky řeči"
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Největší kousek. Slova za sebou, která společně něco řeknou.",
+          "example": "Pes spí."
+        },
+        {
+          "type": "term",
+          "term": "Slovo",
+          "definition": "Kousek věty, který něco znamená. Při psaní ho oddělíš mezerou.",
+          "example": "pes, spí"
+        },
+        {
+          "type": "term",
+          "term": "Slabika",
+          "definition": "Kousek slova, který řekneš najednou – na jedno tlesknutí.",
+          "example": "ko-láč, ma-min-ka"
+        },
+        {
+          "type": "term",
+          "term": "Hláska",
+          "definition": "Nejmenší kousek. Jeden zvuk.",
+          "example": "p, e, s"
+        },
+        {
+          "type": "picture",
+          "items": [
+            "📜 Pes spí.",
+            "➡️",
+            "pes",
+            "➡️",
+            "p · e · s"
+          ],
+          "caption": "věta → slovo → hlásky"
+        },
+        {
+          "type": "heading",
+          "text": "Rozložíme větu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Věta: **Máma peče koláč.**",
+            "Slova: Máma / peče / koláč → 3 slova.",
+            "Slabiky slova *koláč*: ko-láč → 2 slabiky.",
+            "Hlásky slabiky *ko*: k-o → 2 hlásky."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik slov má věta „Na stromě sedí pták.“?",
+          "answer": "Na / stromě / sedí / pták. **4 slova**. I malé „na“ je slovo."
+        },
+        {
+          "type": "example",
+          "question": "Kolik hlásek má slovo „pes“?",
+          "answer": "Řekni zvuk po zvuku: p – e – s. **3 hlásky**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Slabika se skládá ze slov.",
+          "right": "Slovo se skládá ze slabik.",
+          "why": "Slovo je větší než slabika. Velké se skládá z malých: věta → slova → slabiky → hlásky."
+        },
+        {
+          "type": "summary",
+          "text": "Věta se skládá ze slov, slovo ze slabik, slabika z hlásek."
+        }
+      ]
+    },
+    {
+      "title": "Rozlož to",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Budeme rozkládat jako hodinář, který rozebírá hodinky. Kousek po kousku, až do nejmenšího šroubku."
+        },
+        {
+          "type": "text",
+          "text": "Pomůže ti to při psaní: když víš, z jakých hlásek je slovo, napíšeš ho správně."
+        },
+        {
+          "type": "term",
+          "term": "Věta",
+          "definition": "Celé sdělení. Začíná velkým písmenem, končí tečkou.",
+          "example": "Kolo jede."
+        },
+        {
+          "type": "term",
+          "term": "Slovo",
+          "definition": "Část věty mezi dvěma mezerami.",
+          "example": "kolo"
+        },
+        {
+          "type": "term",
+          "term": "Slabika",
+          "definition": "Část slova na jedno tlesknutí.",
+          "example": "ko"
+        },
+        {
+          "type": "term",
+          "term": "Hláska",
+          "definition": "Jeden zvuk. Pozor: **ch** píšeme dvěma písmeny, ale je to jedna hláska.",
+          "example": "k"
+        },
+        {
+          "type": "heading",
+          "text": "Jak na to"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Slova** spočítáš podle mezer.",
+            "**Slabiky** vytleskáš.",
+            "**Hlásky** vyslovíš pomalu jednu po druhé."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Vytleskej slovo *sluníčko* a za každé tlesknutí přidej ručičku."
+        },
+        {
+          "type": "widget",
+          "widget": "counter",
+          "props": {
+            "emoji": "👏",
+            "start": 0,
+            "max": 6
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik slabik má „sluníčko“?",
+          "answer": "slu 👏 – níč 👏 – ko 👏. **3 slabiky**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik hlásek má slovo „chata“?",
+          "answer": "ch – a – t – a. **4 hlásky**. Ch je jeden zvuk, i když má dvě písmena."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Slovo „chata“ má 5 hlásek.",
+          "right": "Má 4 hlásky: ch-a-t-a.",
+          "why": "Ch se píše dvěma písmeny (c a h), ale zní jako jeden zvuk. Je to jedna hláska."
+        },
+        {
+          "type": "summary",
+          "text": "Slova poznáš podle mezer, slabiky vytleskáš, hlásky vyslovíš jednu po druhé."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "order",
+      "question": "Seřaď od největšího po nejmenší.",
+      "items": [
+        "věta",
+        "slovo",
+        "slabika",
+        "hláska"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik slov má věta „Na stromě sedí pták.“?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kolik slabik má slovo „sluníčko“?",
+      "answers": [
+        "3"
+      ],
+      "explanation": "slu-níč-ko"
+    },
+    {
+      "type": "input",
+      "question": "Kolik hlásek má slovo „les“?",
+      "answers": [
+        "3"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kolik hlásek má slovo „chata“?",
+      "options": [
+        "4",
+        "5",
+        "3"
+      ],
+      "answer": 0,
+      "explanation": "ch-a-t-a. Ch je jedna hláska."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ch je jedna hláska.",
+      "answer": true,
+      "explanation": "Ch píšeme dvěma znaky, ale je to jedna hláska."
+    },
+    {
+      "type": "truefalse",
+      "question": "Slabika se skládá ze slov.",
+      "answer": false,
+      "explanation": "Je to naopak: slovo se skládá ze slabik."
+    },
+    {
+      "type": "choice",
+      "question": "Jak rozdělíš na slabiky slovo „maminka“?",
+      "options": [
+        "ma-min-ka",
+        "mam-in-ka",
+        "ma-mi-nka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj s názvem.",
+      "pairs": [
+        [
+          "k",
+          "hláska"
+        ],
+        [
+          "ko",
+          "slabika"
+        ],
+        [
+          "kolo",
+          "slovo"
+        ],
+        [
+          "Kolo jede.",
+          "věta"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo má nejvíc slabik?",
+      "options": [
+        "dům",
+        "kočka",
+        "pastelka"
+      ],
+      "answer": 2,
+      "explanation": "pa-stel-ka = 3"
+    },
+    {
+      "type": "open",
+      "question": "Z čeho se skládá věta a z čeho slovo?",
+      "answer": "Věta se skládá ze slov. Slovo se skládá ze slabik a slabiky z hlásek."
+    },
+    {
+      "type": "open",
+      "question": "Řekni větu o třech slovech.",
+      "answer": "Například: Kočka pije mléko."
+    }
+  ]
+}

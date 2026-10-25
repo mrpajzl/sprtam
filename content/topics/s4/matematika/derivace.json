@@ -1,0 +1,432 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "derivace",
+  "title": "Derivace",
+  "emoji": "🏎️",
+  "explanations": [
+    {
+      "title": "Tachometr",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ujedeš 120 km za 2 hodiny – průměrná rychlost 60 km/h. Ale tachometr ukazuje rychlost **v tomto okamžiku**: teď 50, teď 90. Jak spočítat rychlost v jediném okamžiku, když za nulový čas neujedeš nic?"
+        },
+        {
+          "type": "text",
+          "text": "Odpověď je derivace. Říká, **jak rychle se něco mění** právě teď: rychlost auta, růst populace, změna ceny. Je to nejpoužívanější nástroj vyšší matematiky."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Průměrná rychlost změny",
+          "definition": "O kolik se změnila hodnota, děleno tím, za jak dlouho: (f(b) − f(a)) / (b − a).",
+          "example": "Dráha s(t) = t²: mezi 4 a 5 s je to (25 − 16)/1 = 9 m/s."
+        },
+        {
+          "type": "term",
+          "term": "Derivace f′(a)",
+          "definition": "Okamžitá rychlost změny: zmenšuješ časový úsek pořád víc a díváš se, k čemu se průměrná rychlost blíží (limita).",
+          "example": "s(t) = t²: v čase 4 s je okamžitá rychlost 8 m/s."
+        },
+        {
+          "type": "heading",
+          "text": "Zmenšuj úsek"
+        },
+        {
+          "type": "text",
+          "text": "s(t) = t². Průměrná rychlost od 4 s do: 5 s → 9; 4,1 s → 8,1; 4,01 s → 8,01; 4,001 s → 8,001. Blíží se k **8**. To je okamžitá rychlost v čase 4 s: s′(4) = 8."
+        },
+        {
+          "type": "text",
+          "text": "Obecně pro x²: ((x + h)² − x²)/h = (2xh + h²)/h = 2x + h. Pro h → 0 zbyde **2x**. Proto (x²)′ = 2x."
+        },
+        {
+          "type": "heading",
+          "text": "Obrázek: sklon tečny"
+        },
+        {
+          "type": "term",
+          "term": "Tečna",
+          "definition": "Přímka, která se grafu v daném bodě jen „dotkne“ a má stejný směr jako graf.",
+          "example": "Tečna k y = x² v bodě [1; 1] je y = 2x − 1."
+        },
+        {
+          "type": "text",
+          "text": "Derivace v bodě je **směrnice tečny** – jak strmě graf v tom místě stoupá. Pro y = x² v bodě x = 1: f′(1) = 2. Nastav přímku y = 2x − 1 (k = 2, q = −1) – dotýká se paraboly v bodě [1; 1]. Zkus změnit k – přímka parabolu buď protne, nebo mine."
+        },
+        {
+          "type": "widget",
+          "widget": "linear",
+          "props": {
+            "k": 2,
+            "q": -1
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla, která z toho vyjdou"
+        },
+        {
+          "type": "list",
+          "items": [
+            "(xⁿ)′ = n · xⁿ⁻¹ – exponent dolů a o jedna menší: (x³)′ = 3x².",
+            "Konstanta se nemění → její derivace je 0.",
+            "(5x − 2)′ = 5 – přímka má všude stejný sklon.",
+            "(sin x)′ = cos x, (eˣ)′ = eˣ, (ln x)′ = 1/x. (e ≈ 2,718 je Eulerovo číslo, ln je logaritmus se základem e.)",
+            "Součin: (f · g)′ = f′g + fg′, např. (x · eˣ)′ = eˣ + x eˣ.",
+            "Funkce „ve funkci“: zderivuj vnější a vynásob derivací vnitřku – (sin 2x)′ = cos 2x · 2."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "f(x) = x³ − 3x. Kolik je f′(2)?",
+          "answer": "f′(x) = 3x² − 3. f′(2) = 3 · 4 − 3 = **9**."
+        },
+        {
+          "type": "example",
+          "question": "Dráha s(t) = t² (m). Okamžitá rychlost v čase 4 s?",
+          "answer": "s′(t) = 2t, s′(4) = **8 m/s**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "(x³)′ = 3x³",
+          "right": "(x³)′ = 3x²",
+          "why": "Exponent jde dolů jako činitel **a zároveň** se o jedničku zmenší."
+        },
+        {
+          "type": "summary",
+          "text": "Derivace = okamžitá rychlost změny = směrnice tečny ke grafu. (xⁿ)′ = nxⁿ⁻¹, derivace konstanty je 0."
+        }
+      ]
+    },
+    {
+      "title": "Pravidla derivování",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Počítat derivaci pokaždé přes limitu je zdlouhavé. Stačí znát derivace pár základních funkcí a **tři pravidla**, jak je kombinovat. Pak zderivuješ prakticky cokoli."
+        },
+        {
+          "type": "text",
+          "text": "Derivaci potřebuješ k hledání maxim a minim, k fyzice (rychlost, zrychlení) i ekonomii (mezní náklady)."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Derivace",
+          "definition": "f′(x) = lim (h→0) (f(x + h) − f(x))/h. Udává okamžitou rychlost změny f a směrnici tečny ke grafu."
+        },
+        {
+          "type": "term",
+          "term": "Složená funkce",
+          "definition": "Funkce „ve funkci“: nejdřív spočítáš vnitřek, pak na něj použiješ vnější funkci.",
+          "example": "sin 2x: vnitřní 2x, vnější sin."
+        },
+        {
+          "type": "term",
+          "term": "Eulerovo číslo e a ln",
+          "definition": "e ≈ 2,718 je konstanta, pro kterou má eˣ sama sebe jako derivaci. ln je logaritmus se základem e."
+        },
+        {
+          "type": "heading",
+          "text": "Tabulka základních derivací"
+        },
+        {
+          "type": "table",
+          "head": [
+            "f(x)",
+            "f′(x)"
+          ],
+          "rows": [
+            [
+              "c (konstanta)",
+              "0"
+            ],
+            [
+              "xⁿ",
+              "n · xⁿ⁻¹"
+            ],
+            [
+              "√x = x^(1/2)",
+              "1/(2√x)"
+            ],
+            [
+              "sin x",
+              "cos x"
+            ],
+            [
+              "cos x",
+              "−sin x"
+            ],
+            [
+              "eˣ",
+              "eˣ"
+            ],
+            [
+              "ln x",
+              "1/x"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Procvič si tabulku. Nejdřív odpověz, pak kartičku otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "(x³)′",
+                "back": "3x²"
+              },
+              {
+                "front": "(5x − 2)′",
+                "back": "5"
+              },
+              {
+                "front": "(sin x)′",
+                "back": "cos x"
+              },
+              {
+                "front": "(eˣ)′",
+                "back": "eˣ"
+              },
+              {
+                "front": "(ln x)′",
+                "back": "1/x"
+              },
+              {
+                "front": "(√x)′",
+                "back": "1/(2√x)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Tři pravidla"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Pravidlo",
+            "Vzorec",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "součet a násobek",
+              "(c·f + g)′ = c·f′ + g′",
+              "(x³ − 3x)′ = 3x² − 3"
+            ],
+            [
+              "součin",
+              "(f · g)′ = f′g + fg′",
+              "(x · eˣ)′ = eˣ + x eˣ"
+            ],
+            [
+              "složená funkce",
+              "(f(g(x)))′ = f′(g(x)) · g′(x)",
+              "(sin 2x)′ = cos 2x · 2"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Rozlož funkci na součet, součin nebo složení.",
+            "Každou část zderivuj podle tabulky.",
+            "Spoj výsledky podle pravidla.",
+            "Chceš-li hodnotu v bodě, dosaď až nakonec."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Zderivuj x · eˣ.",
+          "answer": "Součin: f = x, g = eˣ. f′ = 1, g′ = eˣ. (x eˣ)′ = 1 · eˣ + x · eˣ = **eˣ + x eˣ**."
+        },
+        {
+          "type": "example",
+          "question": "Zderivuj sin 2x.",
+          "answer": "Vnější sin → cos (vnitřek nech), krát derivace vnitřku (2x)′ = 2: **2 cos 2x**."
+        },
+        {
+          "type": "example",
+          "question": "Směrnice tečny ke grafu y = x² v bodě [1; 1]?",
+          "answer": "y′ = 2x, v bodě 1: **2**. Tečna je y = 2x − 1."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si sklon na grafu: parabola y = x² v bodě [1; 1] stoupá stejně strmě jako přímka s k = 2. Posuň b a c a sleduj, jak se mění strmost v různých místech."
+        },
+        {
+          "type": "widget",
+          "widget": "quadratic",
+          "props": {
+            "a": 1,
+            "b": 0,
+            "c": 0
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "(sin 2x)′ = cos 2x",
+          "right": "(sin 2x)′ = 2 cos 2x",
+          "why": "U složené funkce musíš násobit derivací vnitřku. Zapomenutá vnitřní derivace je nejčastější chyba."
+        },
+        {
+          "type": "summary",
+          "text": "Tabulka: (xⁿ)′ = nxⁿ⁻¹, (sin x)′ = cos x, (eˣ)′ = eˣ, (ln x)′ = 1/x. Součin: f′g + fg′. Složená: vnější derivace · vnitřní derivace."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "(x³)′ =",
+      "options": [
+        "3x²",
+        "x²",
+        "3x³",
+        "x⁴/4"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "f(x) = x². f′(3) =",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "(sin x)′ =",
+      "options": [
+        "cos x",
+        "−cos x",
+        "−sin x",
+        "sin x"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "(eˣ)′ =",
+      "options": [
+        "eˣ",
+        "x · eˣ⁻¹",
+        "eˣ⁻¹",
+        "ln x"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "(ln x)′ =",
+      "options": [
+        "1/x",
+        "ln x",
+        "x",
+        "eˣ"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "f(x) = 5x − 2. f′(x) =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "(x · eˣ)′ =",
+      "options": [
+        "eˣ + x eˣ",
+        "eˣ",
+        "x eˣ",
+        "1 · eˣ · x"
+      ],
+      "answer": 0,
+      "explanation": "Derivace součinu."
+    },
+    {
+      "type": "choice",
+      "question": "(sin 2x)′ =",
+      "options": [
+        "2 cos 2x",
+        "cos 2x",
+        "−2 cos 2x",
+        "2 sin x"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Směrnice tečny ke grafu y = x² v bodě [1; 1] =",
+      "answers": [
+        "2"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Derivace konstanty je 0.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "f(x) = x³ − 3x. f′(2) =",
+      "answers": [
+        "9"
+      ],
+      "explanation": "3 · 4 − 3"
+    },
+    {
+      "type": "choice",
+      "question": "(√x)′ =",
+      "options": [
+        "1/(2√x)",
+        "2√x",
+        "√x/2",
+        "1/√x"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Dráha s(t) = t² (m). Okamžitá rychlost v čase 4 s (m/s) =",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Jaký je geometrický a fyzikální význam derivace?",
+      "answer": "Geometricky je f′(a) směrnice tečny ke grafu v bodě a. Fyzikálně okamžitá rychlost změny, např. derivace dráhy podle času je rychlost."
+    },
+    {
+      "type": "open",
+      "question": "Jak derivuješ složenou funkci? Uveď příklad.",
+      "answer": "Derivuji vnější funkci (vnitřek nechám) a násobím derivací vnitřní: (f(g(x)))′ = f′(g(x)) · g′(x). Např. (sin 2x)′ = 2 cos 2x."
+    }
+  ]
+}

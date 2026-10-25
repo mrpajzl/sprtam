@@ -1,0 +1,451 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "nervy-hormony",
+  "title": "Nervová a hormonální soustava, smysly",
+  "emoji": "🧠",
+  "explanations": [
+    {
+      "title": "Vzruch jako dominové kostky",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Sáhneš na horký hrnek a ruku ucukneš dřív, než si uvědomíš bolest. Informace proběhla od prstu do míchy a zpět do svalu za zlomek sekundy. Jak je možné, že buňky vedou „elektřinu“?"
+        },
+        {
+          "type": "text",
+          "text": "Ukážeme si nervovou buňku, jak vzniká a běží vzruch a jak se předá další buňce. Na konci krátce, jak tělo řídí i pomaleji – hormony."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Neuron",
+          "definition": "Nervová buňka. Má **tělo**, krátké výběžky **dendrity** (přijímají signál) a jeden dlouhý **axon** (signál odvádí)."
+        },
+        {
+          "type": "term",
+          "term": "Ion",
+          "definition": "Částice s elektrickým nábojem. Pro nervy jsou důležité sodné **Na⁺** a draselné **K⁺** ionty."
+        },
+        {
+          "type": "term",
+          "term": "Membránový potenciál",
+          "definition": "Elektrické napětí mezi vnitřkem a vnějškem buňky. V klidu je vnitřek neuronu záporný – asi **−70 mV** (klidový potenciál)."
+        },
+        {
+          "type": "term",
+          "term": "Akční potenciál (vzruch)",
+          "definition": "Krátká změna napětí, která běží po axonu – nervový signál."
+        },
+        {
+          "type": "term",
+          "term": "Synapse",
+          "definition": "Spojení dvou neuronů (nebo neuronu a svalu). Signál přes ni přenese chemická látka – **neurotransmiter** (např. acetylcholin)."
+        },
+        {
+          "type": "heading",
+          "text": "Vzruch krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Klid: uvnitř je asi **−70 mV**.",
+            "Podnět otevře sodíkové kanály – **Na⁺** vtéká dovnitř a vnitřek se na okamžik stane kladným (**depolarizace**).",
+            "Pak se otevřou draslíkové kanály – **K⁺** vytéká ven, napětí se vrátí (**repolarizace**).",
+            "Změna na jednom místě „převrhne“ sousední místo – vzruch běží po axonu jako **padající domino**.",
+            "Na konci axonu se na **synapsi** uvolní neurotransmiter a vyvolá vzruch v další buňce."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Myelinová pochva",
+          "definition": "Tuková izolace kolem axonu, přerušovaná **Ranvierovými zářezy**. Vzruch pak „skáče“ od zářezu k zářezu – vedení je mnohonásobně rychlejší."
+        },
+        {
+          "type": "heading",
+          "text": "Kde se informace zpracuje"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Část",
+            "Úloha"
+          ],
+          "rows": [
+            [
+              "mozková kůra",
+              "vědomí, myšlení, řeč, vůle"
+            ],
+            [
+              "mozeček",
+              "koordinace pohybu, rovnováha"
+            ],
+            [
+              "hypotalamus",
+              "termoregulace, hlad, žízeň, řízení hormonů"
+            ],
+            [
+              "prodloužená mícha",
+              "dýchání a činnost srdce"
+            ],
+            [
+              "mícha",
+              "vedení signálů, jednoduché reflexy"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**Vegetativní** nervy řídí orgány bez naší vůle: **sympatikus** připravuje tělo na zátěž (zrychlí srdce, roztáhne zornice), **parasympatikus** na odpočinek a trávení."
+        },
+        {
+          "type": "text",
+          "text": "Ověř se na kartách – nejdřív odpověz, pak otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "depolarizace",
+                "back": "Na⁺ vtéká do buňky"
+              },
+              {
+                "front": "repolarizace",
+                "back": "K⁺ vytéká z buňky"
+              },
+              {
+                "front": "synapse",
+                "back": "spojení neuronů, neurotransmiter"
+              },
+              {
+                "front": "mozeček",
+                "back": "koordinace pohybu"
+              },
+              {
+                "front": "sympatikus",
+                "back": "zátěž – zrychlí srdce"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Proč ucukneš rukou dřív, než ucítíš bolest?",
+          "answer": "Je to **reflex**: signál jde z receptoru do **míchy** a odtud rovnou do svalu. Do mozkové kůry, kde vzniká vědomý pocit bolesti, dorazí až potom."
+        },
+        {
+          "type": "example",
+          "question": "Proč je roztroušená skleróza (poškození myelinu) tak vážná?",
+          "answer": "Bez myelinu se vzruch vede **pomalu nebo vůbec**. Signály do svalů a ze smyslů se zpožďují či ztrácejí."
+        },
+        {
+          "type": "heading",
+          "text": "Pomalejší řízení – hormony"
+        },
+        {
+          "type": "text",
+          "text": "**Hormony** jsou látky, které žlázy vylijí do krve a ta je roznese po těle. Příklad: **inzulin** ze slinivky **snižuje** hladinu glukózy v krvi, **glukagon** ji **zvyšuje**. Vše propojuje **hypotalamus** s podvěskem mozkovým – **hypofýzou**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Depolarizaci způsobuje vytékání K⁺ z buňky.",
+          "right": "Depolarizace = **vtok Na⁺** dovnitř. Výtok K⁺ způsobí **repolarizaci**.",
+          "why": "Kladné Na⁺ vnikne dovnitř a vnitřek přestane být záporný. K⁺ odcházející ven pak záporné napětí obnoví."
+        },
+        {
+          "type": "summary",
+          "text": "Klidový potenciál asi −70 mV. Na⁺ dovnitř = depolarizace, K⁺ ven = repolarizace. Na synapsi přenáší signál neurotransmiter. Myelin vedení zrychluje (skokové vedení)."
+        }
+      ]
+    },
+    {
+      "title": "Žlázy a smysly",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když se lekneš, srdce se rozbuší a dlaně zpotí ještě několik minut. To už nejsou nervy, ale **hormon adrenalin**, který koluje v krvi. Tělo má dva řídicí systémy: rychlé nervy a pomalejší, ale dlouhodobé hormony."
+        },
+        {
+          "type": "text",
+          "text": "Tohle vysvětlení se soustředí na hormony a na smysly – oko a ucho –, kterými tělo získává informace. Základ nervového vedení si připomeneme stručně."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hormon",
+          "definition": "Látka, kterou vyrábí **žláza s vnitřní sekrecí** a vylije ji do **krve**. Krev ji roznese a hormon působí na jiném místě těla."
+        },
+        {
+          "type": "term",
+          "term": "Glykémie",
+          "definition": "Hladina **glukózy** (krevního cukru) v krvi."
+        },
+        {
+          "type": "term",
+          "term": "Hypotalamus a hypofýza",
+          "definition": "**Hypotalamus** je část mozku, která řídí teplotu, hlad a žízeň. Je spojený s **hypofýzou** (podvěskem mozkovým) – hlavní žlázou, která řídí ostatní žlázy. Tady se propojuje nervové a hormonální řízení."
+        },
+        {
+          "type": "term",
+          "term": "Receptor",
+          "definition": "Buňka nebo orgán, který zachytí podnět (světlo, zvuk, tlak) a změní ho na nervový signál."
+        },
+        {
+          "type": "heading",
+          "text": "Hlavní žlázy"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Žláza",
+            "Hormon",
+            "Účinek"
+          ],
+          "rows": [
+            [
+              "hypofýza",
+              "růstový hormon, TSH, FSH, LH, ADH",
+              "řídí jiné žlázy, růst, vodu v těle"
+            ],
+            [
+              "štítná žláza",
+              "tyroxin (obsahuje jód)",
+              "rychlost metabolismu"
+            ],
+            [
+              "slinivka",
+              "inzulin / glukagon",
+              "snižuje / zvyšuje glykémii"
+            ],
+            [
+              "nadledviny",
+              "adrenalin, kortizol",
+              "reakce na stres"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Regulace cukru v krvi"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Po jídle glykémie **stoupne**.",
+            "Slinivka uvolní **inzulin** – buňky glukózu přijmou a játra ji uloží jako **glykogen**. Glykémie klesne.",
+            "Mezi jídly glykémie **klesá**.",
+            "Slinivka uvolní **glukagon** – játra glykogen rozloží na glukózu. Glykémie stoupne."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Při **cukrovce 1. typu** slinivka inzulin nevyrábí – nemocný si ho musí dodávat injekcemi nebo pumpou."
+        },
+        {
+          "type": "heading",
+          "text": "Oko"
+        },
+        {
+          "type": "text",
+          "text": "Světlo projde rohovkou a **čočkou**, které ho zaostří na **sítnici** vzadu v oku. V sítnici jsou dva druhy receptorů."
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a zkus nejdřív odpovědět."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "tyčinky",
+                "back": "vidění za šera, černobíle"
+              },
+              {
+                "front": "čípky",
+                "back": "barevné vidění, hlavně ve žluté skvrně"
+              },
+              {
+                "front": "slepá skvrna",
+                "back": "výstup zrakového nervu, bez receptorů"
+              },
+              {
+                "front": "krátkozrakost",
+                "back": "obraz před sítnicí – rozptylky"
+              },
+              {
+                "front": "Cortiho orgán",
+                "back": "sluchové receptory v hlemýždi"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Ucho"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**vnější ucho** – boltec a zvukovod, na konci bubínek",
+            "**střední ucho** – tři kůstky (kladívko, kovadlinka, třmínek) zesílí chvění",
+            "**vnitřní ucho** – **hlemýžď** s Cortiho orgánem (sluch) a **rovnovážné ústrojí** (polokruhovité kanálky a váčky)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Připomenutí nervů"
+        },
+        {
+          "type": "text",
+          "text": "Nervový signál (vzruch) vzniká, když do neuronu vtečou ionty **Na⁺** (depolarizace z klidových asi −70 mV), a končí výtokem **K⁺**. Mezi neurony ho přes **synapsi** předá neurotransmiter. **Sympatikus** připraví tělo na zátěž, spolu s adrenalinem."
+        },
+        {
+          "type": "example",
+          "question": "Proč se do kuchyňské soli přidává jód?",
+          "answer": "Štítná žláza z něj vyrábí **tyroxin**. Při nedostatku jódu žláza zvětšuje svůj objem (struma) a zpomalí se metabolismus."
+        },
+        {
+          "type": "example",
+          "question": "Krátkozraký vidí dobře na blízko, ale tabule je rozmazaná. Jaké brýle potřebuje?",
+          "answer": "Obraz vzdálených věcí vzniká **před sítnicí**. **Rozptylka** paprsky trochu rozptýlí, aby se zaostřily až na sítnici."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Inzulin zvyšuje hladinu cukru v krvi.",
+          "right": "Inzulin glykémii **snižuje**, glukagon ji **zvyšuje**.",
+          "why": "Inzulin pomáhá buňkám glukózu z krve odebrat a játrům ji uložit. Proto ho diabetik potřebuje, když má cukru v krvi moc."
+        },
+        {
+          "type": "summary",
+          "text": "Hypotalamus + hypofýza propojují nervy a hormony. Inzulin snižuje, glukagon zvyšuje glykémii; tyroxin potřebuje jód. Čípky – barvy, tyčinky – šero. Rovnovážné ústrojí je ve vnitřním uchu."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Jaký je přibližně klidový membránový potenciál neuronu?",
+      "options": [
+        "−70 mV",
+        "+70 mV",
+        "0 mV"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Depolarizaci způsobuje vstup iontů…",
+      "options": [
+        "Na⁺",
+        "K⁺",
+        "Cl⁻"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Inzulin zvyšuje hladinu glukózy v krvi.",
+      "answer": false,
+      "explanation": "Inzulin ji snižuje, glukagon zvyšuje."
+    },
+    {
+      "type": "input",
+      "question": "Prvek nezbytný pro tvorbu tyroxinu je…",
+      "answers": [
+        "jód",
+        "jod"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj část mozku s funkcí.",
+      "pairs": [
+        [
+          "mozeček",
+          "koordinace pohybu"
+        ],
+        [
+          "prodloužená mícha",
+          "dýchání a srdce"
+        ],
+        [
+          "hypotalamus",
+          "termoregulace, hlad"
+        ],
+        [
+          "mozková kůra",
+          "vědomí, myšlení"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Barevné vidění zajišťují…",
+      "options": [
+        "čípky",
+        "tyčinky",
+        "gangliové buňky"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Krátkozrakost se koriguje rozptylkami.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Spojení dvou neuronů se nazývá…",
+      "options": [
+        "synapse",
+        "axon",
+        "dendrit"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Rovnovážné ústrojí je uloženo…",
+      "options": [
+        "ve vnitřním uchu",
+        "ve středním uchu",
+        "v mozečku"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Sympatikus připravuje tělo na zátěž (zrychlí srdce).",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak vzniká a šíří se akční potenciál?",
+      "answer": "Podnět otevře sodíkové kanály, Na⁺ vtéká do buňky a membrána se depolarizuje. Pak K⁺ vytéká a membrána se repolarizuje. Změna se šíří po axonu, u myelinizovaných skokově mezi Ranvierovými zářezy."
+    },
+    {
+      "type": "open",
+      "question": "Jak se udržuje stálá hladina glukózy v krvi?",
+      "answer": "Po jídle slinivka uvolní inzulin, který snižuje glykémii (ukládání do glykogenu). Při poklesu uvolní glukagon, který glykogen štěpí a glykémii zvyšuje."
+    }
+  ]
+}

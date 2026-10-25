@@ -1,0 +1,430 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "hmyz",
+  "title": "Hmyz",
+  "emoji": "🦋",
+  "explanations": [
+    {
+      "title": "Dvě proměny",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Z housenky se stane motýl, z ponravy chroust, z larvy ve vodě vážka. Hmyz během života často úplně změní podobu – jako by se z jednoho zvířete stalo jiné. Tomu se říká **proměna**."
+        },
+        {
+          "type": "text",
+          "text": "Hmyz je nejpočetnější skupina živočichů na Zemi a proměna je jedním z důvodů jeho úspěchu. Ukážeme, jak je hmyz postavený, jaké jsou dva typy proměny a které řády k nim patří."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hmyz",
+          "definition": "Členovci (živočichové s vnější kostrou z **chitinu** a článkovanými nohama), jejichž tělo má **hlavu, hruď a zadeček**, na hrudi **3 páry nohou** a většinou **2 páry křídel**. Na hlavě **1 pár tykadel** a **složené oči**."
+        },
+        {
+          "type": "term",
+          "term": "Larva",
+          "definition": "Mládě hmyzu po vylíhnutí z vajíčka. Roste a několikrát se svléká.",
+          "example": "housenka (motýli), ponrava (chroust), larva vážky ve vodě"
+        },
+        {
+          "type": "term",
+          "term": "Kukla",
+          "definition": "Klidové stadium, ve kterém se tělo larvy přestaví na dospělce. Nejí a skoro se nehýbe."
+        },
+        {
+          "type": "term",
+          "term": "Imago",
+          "definition": "Odborný název pro **dospělého** jedince hmyzu."
+        },
+        {
+          "type": "heading",
+          "text": "Proměna dokonalá"
+        },
+        {
+          "type": "text",
+          "text": "Klepej na stadia a sleduj, kde je kukla."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "vajíčko",
+              "larva (roste, svléká se)",
+              "kukla (přestavba těla)",
+              "dospělec (imago)"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "**Dokonalá proměna** má **kuklu**. Larva vůbec nevypadá jako dospělec. Má ji: **brouci, motýli, blanokřídlí** (včely, mravenci) a **dvoukřídlí** (mouchy, komáři)."
+        },
+        {
+          "type": "heading",
+          "text": "Proměna nedokonalá"
+        },
+        {
+          "type": "text",
+          "text": "**Nedokonalá proměna** je **bez kukly**: vajíčko → larva → imago. Larva se dospělci podobá, jen nemá vyvinutá křídla a pohlavní orgány. Má ji: **vážky, rovnokřídlí** (kobylky, saranče), **ploštice, švábi**."
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď řády podle typu proměny."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Proměna dokonalá",
+              "Proměna nedokonalá"
+            ],
+            "items": [
+              {
+                "text": "brouci",
+                "group": 0
+              },
+              {
+                "text": "vážky",
+                "group": 1
+              },
+              {
+                "text": "motýli",
+                "group": 0
+              },
+              {
+                "text": "rovnokřídlí",
+                "group": 1
+              },
+              {
+                "text": "blanokřídlí",
+                "group": 0
+              },
+              {
+                "text": "ploštice",
+                "group": 1
+              },
+              {
+                "text": "dvoukřídlí",
+                "group": 0
+              },
+              {
+                "text": "švábi",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Proč je hmyzu tolik"
+        },
+        {
+          "type": "list",
+          "items": [
+            "malé tělo – vejde se všude",
+            "schopnost **letu**",
+            "odolná vnější kostra",
+            "různé ústní ústrojí pro různou potravu",
+            "při dokonalé proměně larva a dospělec **nekonkurují** (housenka žere listy, motýl saje nektar)",
+            "rychlé rozmnožování"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kobylka se vylíhne jako malá kobylka bez křídel. Jakou má proměnu?",
+          "answer": "Larva se podobá dospělci a kukla chybí → **nedokonalá** proměna. Kobylka patří mezi rovnokřídlé."
+        },
+        {
+          "type": "example",
+          "question": "Proč je výhodné, že housenka a motýl jedí něco jiného?",
+          "answer": "Mláďata a dospělci si **nekonkurují** o potravu. Housenka žere listy, motýl saje nektar – druh tak využije víc zdrojů."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Vážka má proměnu dokonalou, protože její larva žije ve vodě a vypadá jinak.",
+          "right": "Vážka má proměnu **nedokonalou** – nemá kuklu.",
+          "why": "O typu proměny rozhoduje jen **kukla**. Larva vážky se přímo svlékne v dospělce."
+        },
+        {
+          "type": "summary",
+          "text": "Dokonalá proměna: vajíčko → larva → kukla → imago (brouci, motýli, blanokřídlí, dvoukřídlí). Nedokonalá: bez kukly (vážky, rovnokřídlí, ploštice, švábi)."
+        }
+      ]
+    },
+    {
+      "title": "Ústa podle jídla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Komár saje krev, včela nektar, chroust okusuje listy a moucha líže sladkou kapku. Každý hmyz má „příbor“ přesně podle toho, co jí. Podle ústního ústrojí a křídel se hmyz třídí do **řádů**."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se popsat tělo hmyzu, poznat typ ústního ústrojí a zařadit hmyz do řádu. Nakonec i to, jak hmyz dýchá a jak se mění."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Hmyz",
+          "definition": "Členovci s tělem ze tří částí: **hlava** (1 pár tykadel, složené oči, ústní ústrojí), **hruď** (3 páry nohou, většinou 2 páry křídel), **zadeček**."
+        },
+        {
+          "type": "term",
+          "term": "Ústní ústrojí",
+          "definition": "Soubor přívěsků kolem úst, kterými hmyz přijímá potravu."
+        },
+        {
+          "type": "term",
+          "term": "Řád",
+          "definition": "Skupina příbuzného hmyzu se společnými znaky (křídla, ústa, proměna).",
+          "example": "brouci, motýli, blanokřídlí, dvoukřídlí"
+        },
+        {
+          "type": "term",
+          "term": "Vzdušnice",
+          "definition": "Síť trubiček, které vedou vzduch z otvorů na těle **přímo k tkáním**. Hmyz proto nepotřebuje krev k rozvodu kyslíku."
+        },
+        {
+          "type": "heading",
+          "text": "Typy ústního ústrojí"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Ústní ústrojí",
+            "Řád",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "kousací",
+              "brouci, rovnokřídlí",
+              "chroust, kobylka"
+            ],
+            [
+              "lízací",
+              "blanokřídlí (část)",
+              "včela"
+            ],
+            [
+              "sací",
+              "motýli",
+              "babočka"
+            ],
+            [
+              "bodavě sací",
+              "ploštice, dvoukřídlí (část)",
+              "kněžice, komár"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pozor: housenky motýlů mají ústní ústrojí **kousací** – okusují listy. Sací sosák má až dospělý motýl."
+        },
+        {
+          "type": "heading",
+          "text": "Křídla jako poznávací znak"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**brouci** – první pár křídel přeměněný v tvrdé **krovky**, létají druhým párem",
+            "**dvoukřídlí** (mouchy, komáři) – druhý pár přeměněný v **kyvadélka** (haltery), která pomáhají udržet rovnováhu",
+            "**blanokřídlí** (včely, čmeláci, vosy, mravenci) – dva páry blanitých křídel",
+            "**motýli** – křídla pokrytá šupinkami"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty: nejdřív urči řád, pak ověř."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "chroust",
+                "back": "brouci – krovky, kousací ústa, larva ponrava"
+              },
+              {
+                "front": "čmelák",
+                "back": "blanokřídlí"
+              },
+              {
+                "front": "moucha",
+                "back": "dvoukřídlí – kyvadélka"
+              },
+              {
+                "front": "saranče",
+                "back": "rovnokřídlí – nedokonalá proměna"
+              },
+              {
+                "front": "babočka",
+                "back": "motýli – sací sosák, larva housenka"
+              },
+              {
+                "front": "komár",
+                "back": "dvoukřídlí – bodavě sací ústa"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Proměna v kostce"
+        },
+        {
+          "type": "text",
+          "text": "**Dokonalá** proměna má stadium **kukly** (vajíčko → larva → kukla → **imago**, tedy dospělec): brouci, motýli, blanokřídlí, dvoukřídlí. **Nedokonalá** je bez kukly: vážky, rovnokřídlí, ploštice, švábi."
+        },
+        {
+          "type": "example",
+          "question": "Hmyz má tvrdé krovky a kousací ústa. Kam patří?",
+          "answer": "Krovky = přeměněný první pár křídel → **brouci**. Brouci mají kousací ústní ústrojí."
+        },
+        {
+          "type": "example",
+          "question": "Proč komár dokáže propíchnout kůži, ale moucha domácí ne?",
+          "answer": "Komár má ústní ústrojí **bodavě sací** – stilety, které propíchnou kůži. Moucha domácí má **lízací** ústrojí a potravu jen olizuje."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Motýli mají kousací ústní ústrojí.",
+          "right": "Dospělí motýli mají **sací sosák**. Kousací ústa mají jejich larvy – housenky.",
+          "why": "Larva a dospělec se u motýlů živí úplně jinak – proto mají i jiná ústa."
+        },
+        {
+          "type": "summary",
+          "text": "Hmyz: hlava (1 pár tykadel), hruď (3 páry nohou, 2 páry křídel), zadeček; dýchá vzdušnicemi. Ústa: kousací, lízací, sací, bodavě sací. Brouci mají krovky, dvoukřídlí kyvadélka."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Který řád má proměnu nedokonalou?",
+      "options": [
+        "vážky",
+        "brouci",
+        "motýli"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Kyvadélka (haltery) mají…",
+      "options": [
+        "dvoukřídlí",
+        "blanokřídlí",
+        "brouci"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Krovky brouků jsou přeměněný první pár křídel.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Dospělý jedinec hmyzu se odborně nazývá…",
+      "answers": [
+        "imago"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj hmyz s řádem.",
+      "pairs": [
+        [
+          "chroust",
+          "brouci"
+        ],
+        [
+          "čmelák",
+          "blanokřídlí"
+        ],
+        [
+          "moucha",
+          "dvoukřídlí"
+        ],
+        [
+          "saranče",
+          "rovnokřídlí"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Komár má ústní ústrojí…",
+      "options": [
+        "bodavě sací",
+        "kousací",
+        "lízací"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Hmyz dýchá vzdušnicemi, které rozvádějí vzduch přímo k tkáním.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak se nazývá larva brouka chrousta?",
+      "options": [
+        "ponrava",
+        "housenka",
+        "nymfa"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Motýli mají ústní ústrojí kousací.",
+      "answer": false,
+      "explanation": "Dospělí motýli mají sací sosák. Kousací mají housenky."
+    },
+    {
+      "type": "choice",
+      "question": "Kolik párů křídel má typický hmyz?",
+      "options": [
+        "2",
+        "1",
+        "3"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Porovnej dokonalou a nedokonalou proměnu a uveď příklady.",
+      "answer": "Dokonalá: vajíčko, larva, kukla, imago – brouci, motýli, blanokřídlí, dvoukřídlí. Nedokonalá: bez kukly, larva podobná dospělci – vážky, rovnokřídlí, ploštice, švábi."
+    },
+    {
+      "type": "open",
+      "question": "Proč je hmyz nejpočetnější skupinou živočichů?",
+      "answer": "Malé tělo, schopnost letu, odolný exoskelet, různé typy ústního ústrojí, proměna (larva a dospělec nekonkurují), rychlé rozmnožování."
+    }
+  ]
+}

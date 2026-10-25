@@ -1,0 +1,394 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "funkcni-styly",
+  "title": "Funkční styly a slohové útvary",
+  "emoji": "📰",
+  "explanations": [
+    {
+      "title": "Komu a proč",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Kamarádovi napíšeš: *Čau, dneska nemůžu, sorry.* Paní ředitelce ale nenapíšeš „čau“. Napíšeš: *Vážená paní ředitelko, žádám Vás o uvolnění z vyučování.* Obsah je podobný, ale **styl** úplně jiný."
+        },
+        {
+          "type": "text",
+          "text": "Podle toho, **komu** a **proč** píšeš nebo mluvíš, volíš jiný jazyk. Čeština rozlišuje šest takových stylů. Když je znáš, umíš napsat žádost, referát i zprávu tak, aby to sedělo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Funkční styl",
+          "definition": "Způsob vyjadřování, který zvolíme podle **účelu** textu (funkce = k čemu text slouží).",
+          "example": "odborný styl pro učebnici, prostěsdělovací pro SMS"
+        },
+        {
+          "type": "term",
+          "term": "Slohový útvar",
+          "definition": "Konkrétní druh textu s typickou stavbou. Každý patří do některého stylu.",
+          "example": "žádost, životopis, reportáž, povídka"
+        },
+        {
+          "type": "term",
+          "term": "Spisovný a hovorový jazyk",
+          "definition": "**Spisovný** = správná, „úřední“ čeština (ve škole, na úřadě). **Hovorový** = běžná řeč mezi přáteli.",
+          "example": "spisovně *dobrý den, mohu*; hovorově *čau, můžu*"
+        },
+        {
+          "type": "term",
+          "term": "Odborný termín",
+          "definition": "Přesné slovo z nějakého oboru, které má jen jeden význam.",
+          "example": "fotosyntéza, přísudek, kilogram"
+        },
+        {
+          "type": "heading",
+          "text": "Šest funkčních stylů"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Styl",
+            "K čemu",
+            "Jazyk",
+            "Útvary"
+          ],
+          "rows": [
+            [
+              "prostěsdělovací",
+              "běžná komunikace",
+              "hovorový, citový",
+              "rozhovor, SMS, osobní dopis"
+            ],
+            [
+              "odborný",
+              "přesně předat znalosti",
+              "spisovný, termíny",
+              "výklad, referát, odborný popis"
+            ],
+            [
+              "publicistický",
+              "informovat a ovlivňovat veřejnost",
+              "spisovný, poutavý",
+              "zpráva, reportáž, fejeton"
+            ],
+            [
+              "umělecký",
+              "vyvolat zážitek",
+              "obrazný, různorodý",
+              "báseň, povídka, román"
+            ],
+            [
+              "administrativní",
+              "úřední jednání",
+              "spisovný, věcný, ustálené fráze",
+              "žádost, životopis, plná moc"
+            ],
+            [
+              "řečnický",
+              "projev k posluchačům",
+              "spisovný, působivý",
+              "proslov, přednáška"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Zařaď útvary ke stylu."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "odborný",
+              "publicistický",
+              "administrativní"
+            ],
+            "items": [
+              {
+                "text": "výklad",
+                "group": 0
+              },
+              {
+                "text": "referát",
+                "group": 0
+              },
+              {
+                "text": "odborný popis",
+                "group": 0
+              },
+              {
+                "text": "zpráva",
+                "group": 1
+              },
+              {
+                "text": "reportáž",
+                "group": 1
+              },
+              {
+                "text": "fejeton",
+                "group": 1
+              },
+              {
+                "text": "žádost",
+                "group": 2
+              },
+              {
+                "text": "životopis",
+                "group": 2
+              },
+              {
+                "text": "plná moc",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Do kterého stylu patří životopis, který posíláš na brigádu?",
+          "answer": "Je to úřední písemnost pro zaměstnavatele → **administrativní** styl. Píšeš spisovně a věcně."
+        },
+        {
+          "type": "example",
+          "question": "Novinář píše článek o tom, jak to vypadalo na fotbalovém zápase, a vypráví, co tam viděl a slyšel. Jaký styl a útvar?",
+          "answer": "Noviny, informuje veřejnost → **publicistický** styl. Živé líčení z místa události → **reportáž**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Čau, chtěl bych na ten výlet, jo? (žádost řediteli)",
+          "right": "Vážený pane řediteli, žádám Vás o povolení…",
+          "why": "Žádost patří do administrativního stylu: spisovně, zdvořile, věcně, bez hovorových slov."
+        },
+        {
+          "type": "summary",
+          "text": "Styl volíš podle toho, komu a proč píšeš: prostěsdělovací, odborný, publicistický, umělecký, administrativní, řečnický."
+        }
+      ]
+    },
+    {
+      "title": "Jeden déšť",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Venku prší. O tom stejném dešti můžou napsat kamarád, meteorolog, novinář i básník. Každý ale napíše úplně jiný text – protože každý chce něco jiného."
+        },
+        {
+          "type": "text",
+          "text": "Tomu „jak kdo píše podle toho, co chce“ se říká **funkční styl**. Podíváme se, jak jeden déšť vypadá v různých stylech."
+        },
+        {
+          "type": "term",
+          "term": "Funkční styl",
+          "definition": "Typ jazyka podle účelu textu: chci pobavit, informovat, poučit, vyřídit úřední věc…",
+          "example": "SMS = prostěsdělovací styl"
+        },
+        {
+          "type": "term",
+          "term": "Slohový útvar",
+          "definition": "Konkrétní druh textu (žádost, zpráva, báseň…).",
+          "example": "zpráva patří do publicistického stylu"
+        },
+        {
+          "type": "heading",
+          "text": "Jak kdo napíše o dešti"
+        },
+        {
+          "type": "text",
+          "text": "Klepni na kartu. Nejdřív si zkus představit, jak by to ten člověk napsal."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "kamarád v SMS",
+                "back": "Leje jak z konve, nejdu ven. (prostěsdělovací)"
+              },
+              {
+                "front": "meteorolog",
+                "back": "Úhrn srážek dosáhne až 20 mm. (odborný)"
+              },
+              {
+                "front": "novinář",
+                "back": "Silný déšť v noci zaplavil centrum města. (publicistický)"
+              },
+              {
+                "front": "básník",
+                "back": "Déšť bubnuje prsty na okno. (umělecký)"
+              },
+              {
+                "front": "úřad",
+                "back": "Z důvodu nepříznivého počasí se akce ruší. (administrativní)"
+              },
+              {
+                "front": "starosta na shromáždění",
+                "back": "Vážení občané, déšť nás nezastaví! (řečnický)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Čím se styly liší"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Prostěsdělovací** – mluvíme s blízkými. Hovorová slova, citová slova, zkratky. (rozhovor, SMS, osobní dopis)",
+            "**Odborný** – chceme přesně poučit. Odborné termíny, čísla, žádné emoce. (výklad, referát)",
+            "**Publicistický** – chceme informovat a ovlivnit veřejnost. Poutavé titulky. (zpráva, reportáž, fejeton)",
+            "**Umělecký** – chceme vyvolat zážitek. Obrazná pojmenování, fantazie. (báseň, povídka, román)",
+            "**Administrativní** – vyřizujeme úřední věc. Spisovně, stručně, ustálené fráze. (žádost, životopis, plná moc)",
+            "**Řečnický** – mluvíme k posluchačům. Oslovení, působivost. (proslov, přednáška)"
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Ve kterém stylu najdeš nejvíc hovorových a citově zabarvených slov?",
+          "answer": "Tam, kde mluvíme s blízkými lidmi a nehlídáme se → **prostěsdělovací**."
+        },
+        {
+          "type": "example",
+          "question": "Do kterého stylu patří fejeton?",
+          "answer": "Fejeton je krátký vtipný článek v novinách o běžném jevu → **publicistický** styl."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Výklad o sopkách napíšu jako básník: „Sopka zuří jako rozzlobený drak.“",
+          "right": "Sopka je místo, kde z nitra Země vystupuje roztavená hornina – magma.",
+          "why": "Výklad patří do odborného stylu: má přesně poučit, ne vyvolat zážitek."
+        },
+        {
+          "type": "summary",
+          "text": "Jeden obsah, šest stylů: prostěsdělovací (SMS), odborný (výklad), publicistický (zpráva), umělecký (báseň), administrativní (žádost), řečnický (proslov)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Do kterého stylu patří životopis?",
+      "options": [
+        "administrativní",
+        "umělecký",
+        "publicistický"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Do kterého stylu patří reportáž?",
+      "options": [
+        "publicistický",
+        "odborný",
+        "administrativní"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Do kterého stylu patří výklad?",
+      "options": [
+        "odborný",
+        "prostěsdělovací",
+        "umělecký"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V odborném stylu se používají odborné termíny.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Který útvar patří do uměleckého stylu?",
+      "options": [
+        "povídka",
+        "žádost",
+        "zpráva"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj útvar se stylem.",
+      "pairs": [
+        [
+          "SMS kamarádovi",
+          "prostěsdělovací"
+        ],
+        [
+          "referát",
+          "odborný"
+        ],
+        [
+          "fejeton",
+          "publicistický"
+        ],
+        [
+          "žádost",
+          "administrativní"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve kterém stylu najdeš nejvíc hovorových a citově zabarvených slov?",
+      "options": [
+        "prostěsdělovací",
+        "administrativní",
+        "odborný"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak se jmenuje styl projevů a proslovů?",
+      "answers": [
+        "řečnický"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je hlavní úkol publicistického stylu?",
+      "options": [
+        "informovat a ovlivňovat veřejnost",
+        "vytvořit umělecký zážitek",
+        "vyřídit úřední věc"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Žádost se píše hovorově a s citoslovci.",
+      "answer": false,
+      "explanation": "Je to administrativní styl – spisovně a věcně."
+    },
+    {
+      "type": "open",
+      "question": "Vyjmenuj funkční styly a ke každému uveď jeden útvar.",
+      "answer": "Prostěsdělovací (osobní dopis), odborný (výklad), publicistický (zpráva), umělecký (povídka), administrativní (žádost), řečnický (proslov)."
+    },
+    {
+      "type": "open",
+      "question": "Čím se liší odborný a umělecký styl?",
+      "answer": "Odborný předává přesné informace, používá termíny a je věcný. Umělecký chce vyvolat zážitek, používá obrazná pojmenování a fantazii."
+    }
+  ]
+}

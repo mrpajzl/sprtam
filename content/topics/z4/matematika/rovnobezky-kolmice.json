@@ -1,0 +1,363 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rovnobezky-kolmice",
+  "title": "Rovnoběžky a kolmice",
+  "emoji": "🛤️",
+  "explanations": [
+    {
+      "title": "Koleje a kříž",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Podívej se na železniční koleje. Běží vedle sebe a nikdy se nepotkají. A teď na roh sešitu – dvě hrany se potkají a tvoří úplně „rovný“ roh."
+        },
+        {
+          "type": "text",
+          "text": "Tyhle dvě dvojice čar mají v geometrii jména: **rovnoběžky** a **kolmice**. Bez nich by stavitelé nepostavili rovnou zeď ani okno."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přímka",
+          "definition": "Rovná čára bez začátku a konce. Značíme ji malým písmenem.",
+          "example": "přímka p"
+        },
+        {
+          "type": "term",
+          "term": "Rovnoběžky",
+          "definition": "Dvě přímky, které jdou stále **stejně daleko od sebe** a **nikdy se neprotnou**.",
+          "example": "koleje, struny kytary. Zápis: p ∥ q"
+        },
+        {
+          "type": "term",
+          "term": "Pravý úhel",
+          "definition": "Roh, jaký má sešit nebo dveře. Má **90°** (stupňů). Značí se obloučkem s tečkou."
+        },
+        {
+          "type": "term",
+          "term": "Kolmice",
+          "definition": "Dvě přímky, které se protnou a svírají **pravý úhel**.",
+          "example": "roh okna, kříž na lékárně. Zápis: p ⊥ q"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Tady jsou dvě čáry, které svírají 90°. To je pravý úhel – takhle vypadají kolmice. Pohni posuvníkem: jakmile úhel není 90°, čáry už nejsou kolmé."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 90
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Srovnání"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Rovnoběžky",
+            "Kolmice"
+          ],
+          "rows": [
+            [
+              "protnou se?",
+              "nikdy",
+              "ano, v 1 bodě"
+            ],
+            [
+              "úhel",
+              "–",
+              "90°"
+            ],
+            [
+              "zápis",
+              "p ∥ q",
+              "p ⊥ q"
+            ],
+            [
+              "příklad",
+              "koleje",
+              "roh sešitu"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kolik pravých úhlů má obdélník?",
+          "answer": "Každý ze 4 rohů je pravý. **4**. Sousední strany jsou proto na sebe kolmé."
+        },
+        {
+          "type": "example",
+          "question": "Jsou protější strany obdélníku rovnoběžné?",
+          "answer": "**Ano.** Horní a dolní strana jsou pořád stejně daleko od sebe a nepotkají se."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dvě kolmice se nikdy neprotnou.",
+          "right": "Kolmice se **protínají** v pravém úhlu.",
+          "why": "Neprotínají se **rovnoběžky**. Kolmice se kříží jako písmeno L nebo +."
+        },
+        {
+          "type": "summary",
+          "text": "Rovnoběžky (∥) se nikdy neprotnou. Kolmice (⊥) se protnou v pravém úhlu 90°."
+        }
+      ]
+    },
+    {
+      "title": "S trojúhelníkem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Od ruky rovnoběžky ani kolmice přesně nenakreslíš. Proto máme **pravítko** a **trojúhelník s ryskou**."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se postup, jak obojí narýsovat přesně. Stejně to dělají architekti při kreslení plánů domů."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Trojúhelník s ryskou",
+          "definition": "Průhledné pravítko ve tvaru trojúhelníku. Uprostřed nejdelší strany má čárku kolmou k té straně – **rysku**.",
+          "example": "Ryskou přiloženou na přímku dostaneš kolmý směr."
+        },
+        {
+          "type": "term",
+          "term": "Kolmice",
+          "definition": "Přímka, která protne jinou přímku v pravém úhlu (90°). Zápis ⊥."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoběžka",
+          "definition": "Přímka, která jde vedle jiné přímky stále stejně daleko a nikdy ji neprotne. Zápis ∥."
+        },
+        {
+          "type": "heading",
+          "text": "Kolmice k přímce p bodem A"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přilož trojúhelník nejdelší stranou na přímku p.",
+            "Rysku nech ležet přesně na přímce p.",
+            "Posuň trojúhelník po přímce, až ryska míří do bodu A.",
+            "Narýsuj čáru podél rysky přes bod A.",
+            "Označ pravý úhel obloučkem s tečkou."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Rovnoběžka s přímkou p bodem A"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přilož trojúhelník jednou stranou přesně na přímku p.",
+            "K jiné straně trojúhelníku přilož pravítko a drž ho pevně.",
+            "Posouvej trojúhelník po pravítku, až se dotkne bodu A.",
+            "Narýsuj čáru podél té strany, která ležela na p."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď dvojice čar z okolí: jsou to rovnoběžky, nebo kolmice?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "rovnoběžky",
+              "kolmice"
+            ],
+            "items": [
+              {
+                "text": "koleje",
+                "group": 0
+              },
+              {
+                "text": "roh okna",
+                "group": 1
+              },
+              {
+                "text": "příčky žebříku",
+                "group": 0
+              },
+              {
+                "text": "kříž na lékárně",
+                "group": 1
+              },
+              {
+                "text": "struny kytary",
+                "group": 0
+              },
+              {
+                "text": "hrana stolu a noha stolu",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Které písmeno má kolmé čáry: L, O, nebo V?",
+          "answer": "L – svislá a vodorovná čára svírají pravý úhel. O je kulaté, V má ostrý úhel. **L**."
+        },
+        {
+          "type": "example",
+          "question": "Najdi ve třídě rovnoběžky a kolmice.",
+          "answer": "Rovnoběžky: horní a dolní hrana tabule. Kolmice: roh tabule, hrana stěny a podlahy."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Rovnoběžku narýsuju tak, že trojúhelník posunu jen tak po papíře.",
+          "right": "Trojúhelník posouvej **po přiloženém pravítku**.",
+          "why": "Bez pravítka se trojúhelník nepatrně pootočí a čáry by se daleko od sebe protnuly – nebyly by rovnoběžné."
+        },
+        {
+          "type": "summary",
+          "text": "Kolmice = trojúhelník ryskou na přímku. Rovnoběžka = trojúhelník posouvaný po pravítku. Pravý úhel = 90°."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Kolik společných bodů mají dvě rovnoběžky?",
+      "options": [
+        "0",
+        "1",
+        "nekonečně"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Jaký úhel svírají kolmice?",
+      "options": [
+        "45°",
+        "90°",
+        "180°"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená zápis p ⊥ q?",
+      "options": [
+        "p je kolmá na q",
+        "p je rovnoběžná s q",
+        "p je delší než q"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená zápis a ∥ b?",
+      "options": [
+        "a je kolmá na b",
+        "a je rovnoběžná s b",
+        "a = b"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Sousední strany čtverce jsou na sebe kolmé.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Protější strany obdélníku jsou rovnoběžné.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "Dvě kolmice se nikdy neprotnou.",
+      "answer": false,
+      "explanation": "Kolmice se protínají v pravém úhlu."
+    },
+    {
+      "type": "choice",
+      "question": "Čím nejlépe narýsuješ kolmici?",
+      "options": [
+        "kružítkem",
+        "trojúhelníkem s ryskou",
+        "od ruky"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Kolik pravých úhlů má obdélník?",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které písmeno má kolmé čáry?",
+      "options": [
+        "L",
+        "O",
+        "V"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj.",
+      "pairs": [
+        [
+          "∥",
+          "rovnoběžné"
+        ],
+        [
+          "⊥",
+          "kolmé"
+        ],
+        [
+          "90°",
+          "pravý úhel"
+        ]
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Popiš, jak narýsuješ kolmici k přímce p bodem A.",
+      "answer": "Přiložím trojúhelník ryskou na přímku p, posunu ho k bodu A a podél kolmé strany narýsuji přímku."
+    },
+    {
+      "type": "open",
+      "question": "Najdi ve třídě rovnoběžky a kolmice.",
+      "answer": "Rovnoběžky: protější hrany tabule, okraje lavice. Kolmice: roh tabule, hrana stěny a podlahy."
+    }
+  ]
+}

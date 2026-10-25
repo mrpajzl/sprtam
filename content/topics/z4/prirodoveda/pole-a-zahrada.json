@@ -1,0 +1,376 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "pole-a-zahrada",
+  "title": "Pole a zahrada",
+  "emoji": "🌾",
+  "explanations": [
+    {
+      "title": "Co se pěstuje",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chléb, cukr, olej, hranolky. Všechno to začíná na poli. Zemědělci tam pěstují rostliny, které nás živí."
+        },
+        {
+          "type": "text",
+          "text": "Když jedeš autem a vidíš žluté nebo zlaté pole, budeš vědět, co tam roste a k čemu to je."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Pole",
+          "definition": "Velká plocha, kde člověk pěstuje jednu plodinu.",
+          "example": "pole pšenice"
+        },
+        {
+          "type": "term",
+          "term": "Plodina",
+          "definition": "Rostlina, kterou člověk pěstuje pro jídlo nebo pro krmení zvířat.",
+          "example": "pšenice, brambory, řepka"
+        },
+        {
+          "type": "term",
+          "term": "Obilniny",
+          "definition": "Trávy pěstované pro **zrno**. Z něj se mele mouka.",
+          "example": "pšenice, žito, ječmen, oves, kukuřice"
+        },
+        {
+          "type": "term",
+          "term": "Okopaniny",
+          "definition": "Plodiny, které se v létě okopávají (kypří se kolem nich zem). Jíme jejich podzemní část.",
+          "example": "brambory, cukrová řepa"
+        },
+        {
+          "type": "term",
+          "term": "Olejniny",
+          "definition": "Plodiny, z jejichž semen se lisuje **olej**.",
+          "example": "řepka olejka, slunečnice"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Skupina",
+            "Příklady",
+            "Co z nich je"
+          ],
+          "rows": [
+            [
+              "obilniny",
+              "pšenice, žito, ječmen, oves, kukuřice",
+              "mouka, chléb, krmivo"
+            ],
+            [
+              "okopaniny",
+              "brambory, cukrová řepa",
+              "jídlo, cukr"
+            ],
+            [
+              "olejniny",
+              "řepka olejka, slunečnice",
+              "olej"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Otoč kartičky."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "pšenice",
+                "back": "mouka na chléb a pečivo"
+              },
+              {
+                "front": "ječmen",
+                "back": "kroupy, slad, krmivo"
+              },
+              {
+                "front": "cukrová řepa",
+                "back": "cukr"
+              },
+              {
+                "front": "řepka olejka",
+                "back": "žlutě kvete, olej"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Od zrna k chlebu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Pšenice roste na poli.",
+            "V létě ji sklidí **kombajn** – stroj, který obilí poseče a oddělí zrno.",
+            "Ve mlýně se zrno umele na **mouku**.",
+            "Pekař z mouky upeče chléb."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "V květnu vidíš svítivě žlutá pole. Co na nich roste?",
+          "answer": "Žlutě kvete **řepka olejka**. Lisuje se z ní olej."
+        },
+        {
+          "type": "example",
+          "question": "Z čeho se vyrábí cukr?",
+          "answer": "U nás z **cukrové řepy**. Je to okopanina."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Kukuřice není obilnina, je to zelenina.",
+          "right": "Kukuřice patří mezi obilniny.",
+          "why": "Je to tráva pěstovaná pro zrno, stejně jako pšenice. Sladkou kukuřici sice jíme jako zeleninu, ale rostlina je obilnina."
+        },
+        {
+          "type": "summary",
+          "text": "Hlavní plodiny polí: obilniny (mouka), okopaniny (brambory, cukr), olejniny (olej)."
+        }
+      ]
+    },
+    {
+      "title": "Na zahradě",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mnoho rodin má zahradu. Pěstují tam jahody, rajčata, jablka – nebo jen květiny pro radost."
+        },
+        {
+          "type": "text",
+          "text": "Na zahradě i na poli žijí také zvířata. Některá škodí, jiná pomáhají. Kdo je kdo?"
+        },
+        {
+          "type": "term",
+          "term": "Užitková zahrada",
+          "definition": "Zahrada, kde pěstujeme **ovoce a zeleninu** k jídlu.",
+          "example": "záhony s mrkví, jabloně"
+        },
+        {
+          "type": "term",
+          "term": "Okrasná zahrada",
+          "definition": "Zahrada s **květinami a keři pro krásu**.",
+          "example": "růže, tulipány, trávník"
+        },
+        {
+          "type": "term",
+          "term": "Ovoce a zelenina",
+          "definition": "**Ovoce** jsou šťavnaté plody, většinou sladké. **Zelenina** jsou jiné jedlé části rostlin – kořeny, listy, ale i některé plody (okurka, rajče) – které jíme slané.",
+          "example": "jablko – ovoce, mrkev – zelenina"
+        },
+        {
+          "type": "text",
+          "text": "Roztřiď."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Ovoce",
+              "Zelenina"
+            ],
+            "items": [
+              {
+                "text": "jablko",
+                "group": 0
+              },
+              {
+                "text": "mrkev",
+                "group": 1
+              },
+              {
+                "text": "hruška",
+                "group": 0
+              },
+              {
+                "text": "okurka",
+                "group": 1
+              },
+              {
+                "text": "třešně",
+                "group": 0
+              },
+              {
+                "text": "cibule",
+                "group": 1
+              },
+              {
+                "text": "švestky",
+                "group": 0
+              },
+              {
+                "text": "salát",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Škůdci a pomocníci"
+        },
+        {
+          "type": "term",
+          "term": "Škůdce",
+          "definition": "Živočich, který poškozuje pěstované rostliny.",
+          "example": "mšice, slimák"
+        },
+        {
+          "type": "term",
+          "term": "Mšice",
+          "definition": "Drobný hmyz, který saje šťávy rostlin.",
+          "example": "zelené mšice na růži"
+        },
+        {
+          "type": "text",
+          "text": "**Slunéčko sedmitečné** (beruška) mšice žere – je to užitečný pomocník."
+        },
+        {
+          "type": "text",
+          "text": "Na poli žije **zajíc polní**, **koroptev**, **bažant**, **skřivan** a **hraboš**."
+        },
+        {
+          "type": "example",
+          "question": "Na růži jsou mšice. Kdo ti pomůže bez chemie?",
+          "answer": "**Slunéčko sedmitečné** – mšice žere. Proto ho na zahradě neničíme."
+        },
+        {
+          "type": "example",
+          "question": "Které zvíře žije na poli: zajíc polní, pstruh, nebo veverka?",
+          "answer": "Pstruh žije v potoce, veverka v lese. Na poli žije **zajíc polní**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Okurka je ovoce, protože roste jako plod.",
+          "right": "Okurku pěstujeme a jíme jako zeleninu.",
+          "why": "V kuchyni a na zahradě se okurka řadí k zelenině – jí se slaná, ne jako sladké ovoce."
+        },
+        {
+          "type": "summary",
+          "text": "Užitková zahrada = ovoce a zelenina, okrasná = květiny. Slunéčko je pomocník, protože žere mšice."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která rostlina je obilnina?",
+      "options": [
+        "pšenice",
+        "brambora",
+        "řepka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Z čeho se vyrábí cukr?",
+      "options": [
+        "z cukrové řepy",
+        "z ovsa",
+        "z mrkve"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Řepka olejka kvete žlutě a vyrábí se z ní olej.",
+      "answer": true
+    },
+    {
+      "type": "match",
+      "question": "Spoj plodinu se skupinou.",
+      "pairs": [
+        [
+          "žito",
+          "obilnina"
+        ],
+        [
+          "brambory",
+          "okopanina"
+        ],
+        [
+          "slunečnice",
+          "olejnina"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kdo je na zahradě pomocník, protože žere mšice?",
+      "options": [
+        "slunéčko sedmitečné",
+        "slimák",
+        "hraboš"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Okurka je ovoce.",
+      "answer": false,
+      "explanation": "Okurku pěstujeme a jíme jako zeleninu."
+    },
+    {
+      "type": "choice",
+      "question": "Které zvíře žije na poli?",
+      "options": [
+        "zajíc polní",
+        "pstruh",
+        "veverka"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď cestu od zrna k chlebu.",
+      "items": [
+        "pšenice roste",
+        "sklizeň kombajnem",
+        "mletí na mouku",
+        "pečení chleba"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Z obilí se ve mlýně mele…",
+      "answers": [
+        "mouka"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Kukuřice patří mezi obilniny.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jmenuj tři obilniny a co z nich člověk má.",
+      "answer": "Pšenice – mouka na chléb. Žito – žitná mouka. Ječmen – krmivo a slad. Oves – ovesné vločky. Kukuřice – krmivo a jídlo."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi užitkovou a okrasnou zahradou?",
+      "answer": "Na užitkové zahradě pěstujeme ovoce a zeleninu k jídlu. Okrasná zahrada má květiny a keře pro krásu."
+    }
+  ]
+}

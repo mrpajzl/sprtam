@@ -1,0 +1,363 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "administrativni-styl",
+  "title": "Administrativní styl",
+  "emoji": "🗂️",
+  "explanations": [
+    {
+      "title": "Šablona žádosti",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chceš se uvolnit z výuky kvůli závodům, hlásíš se na brigádu nebo reklamuješ rozbitá sluchátka. Ve všech případech píšeš úřední text. Kamarádovi napíšeš „pls“, úřadu ne."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Úřední dopisy budeš psát celý život. A u písemné maturity je žádost či motivační dopis častým zadáním."
+        },
+        {
+          "type": "term",
+          "term": "Administrativní styl",
+          "definition": "Styl úředních textů. Má **informovat a řídit** – jasně sdělit, co kdo chce nebo musí udělat.",
+          "example": "žádost, životopis, smlouva, potvrzení"
+        },
+        {
+          "type": "term",
+          "term": "Žádost",
+          "definition": "Úřední dopis, ve kterém někoho (školu, úřad, firmu) prosíš o něco.",
+          "example": "*Žádost o uvolnění z výuky*"
+        },
+        {
+          "type": "term",
+          "term": "Odesílatel a adresát",
+          "definition": "Odesílatel = ten, kdo dopis píše. Adresát = ten, komu je dopis určen.",
+          "example": "odesílatel: Jan Novák; adresát: Gymnázium Brno"
+        },
+        {
+          "type": "heading",
+          "text": "Šablona krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Odesílatel**: jméno, adresa, kontakt (telefon, e-mail).",
+            "**Adresát**: instituce, osoba, adresa.",
+            "**Místo a datum**: *V Brně 23. 10. 2026* (za tečkou mezera).",
+            "**Věc**: krátké označení obsahu – *Žádost o uvolnění z výuky*.",
+            "**Oslovení**: *Vážená paní ředitelko,*",
+            "**Text**: co žádám, proč, od kdy do kdy. Stručně a věcně.",
+            "**Pozdrav, podpis**, případně **přílohy** (např. potvrzení od trenéra)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vyber formulaci, která patří do úřední žádosti."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "Datum: ",
+                "after": "",
+                "options": [
+                  "23. 10. 2026",
+                  "23.10.2026"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "",
+                "after": " Vás o uvolnění z výuky.",
+                "options": [
+                  "Žádám",
+                  "Chtěl bych tak nějak poprosit"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "Věc: ",
+                "after": "",
+                "options": [
+                  "Žádost o uvolnění z výuky",
+                  "Potřebuju volno"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Napiš text žádosti o uvolnění z výuky (2–3 věty).",
+          "answer": "*Žádám Vás o uvolnění z výuky ve dnech 5. až 7. 11. 2026. V těchto dnech se účastním mistrovství republiky v plavání. Potvrzení od trenéra přikládám v příloze.* – Co, kdy, proč, doklad."
+        },
+        {
+          "type": "example",
+          "question": "Proč píšeme v žádosti *Vás* s velkým V?",
+          "answer": "V dopise **jedné konkrétní osobě** můžeme z úcty psát *Vy, Vás, Váš* s velkým písmenem. Je to zdvořilostní velké písmeno."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Dobrý den, potřeboval bych tak nějak volno, protože jedu na závody, snad to nevadí :)",
+          "right": "Žádám Vás o uvolnění z výuky dne 5. 11. 2026 z důvodu účasti na závodech.",
+          "why": "Administrativní text je stručný, přesný a neosobní. Chybí v něm datum, nejistota („tak nějak“) i smajlíky."
+        },
+        {
+          "type": "summary",
+          "text": "Úřední žádost má pevnou šablonu: odesílatel, adresát, místo a datum, věc, oslovení, text, podpis, přílohy. Stručně, přesně, věcně."
+        }
+      ]
+    },
+    {
+      "title": "Druhy písemností",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Úřady, školy a firmy pracují s papíry, které mají jasná pravidla. Životopis, plná moc, reklamace – každý má svůj účel a svou podobu."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Až se budeš hlásit na vysokou školu, do práce nebo reklamovat boty, budeš přesně vědět, co napsat."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Administrativní styl",
+          "definition": "Styl úředních písemností. Funkce: informovat a řídit (věcně sdělná).",
+          "example": "žádost, potvrzení, smlouva"
+        },
+        {
+          "type": "term",
+          "term": "Ustálená formule",
+          "definition": "Hotové spojení, které se v úředních textech opakuje.",
+          "example": "*Věc:*, *V příloze zasílám…*, *S pozdravem*"
+        },
+        {
+          "type": "term",
+          "term": "Zkratka",
+          "definition": "Zkrácená podoba slova nebo spojení. V úředních textech je častá.",
+          "example": "*č. j.* (číslo jednací), *tzv.* (takzvaný), *tj.* (to jest)"
+        },
+        {
+          "type": "heading",
+          "text": "Znaky stylu"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Stručnost a přesnost** – žádná zbytečná slova.",
+            "**Úplnost údajů** – jména, data, čísla, adresy.",
+            "**Neosobní tón** – bez citového zabarvení.",
+            "**Šablony a formuláře** – pevné pořadí částí."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti název písemnosti a zkus říct, k čemu slouží. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Žádost",
+                "back": "prosím instituci o něco (přijetí, uvolnění)"
+              },
+              {
+                "front": "Strukturovaný životopis",
+                "back": "vzdělání, praxe, dovednosti v bodech – od nejnovějšího"
+              },
+              {
+                "front": "Motivační dopis",
+                "back": "proč chci právě toto místo a co nabízím"
+              },
+              {
+                "front": "Plná moc",
+                "back": "zmocňuji jinou osobu, aby jednala za mě"
+              },
+              {
+                "front": "Reklamace",
+                "back": "uplatnění vady zboží či služby"
+              },
+              {
+                "front": "Objednávka",
+                "back": "závazná žádost o dodání zboží či služby"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Strukturovaný životopis"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Osobní a **kontaktní údaje**: jméno, telefon, e-mail.",
+            "**Vzdělání** – od nejnovějšího ke staršímu.",
+            "**Pracovní zkušenosti** (brigády, praxe) – také od nejnovějšího.",
+            "**Dovednosti**: jazyky, práce s počítačem, řidičský průkaz.",
+            "Zájmy, případně datum."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Co napíšeš do reklamace sluchátek?",
+          "answer": "Kdo reklamuje (jméno, kontakt), **co** (výrobek, datum nákupu, doklad), **jaká je vada** (*levé sluchátko nehraje*) a **co požaduješ** (opravu, výměnu). Přiložíš kopii účtenky."
+        },
+        {
+          "type": "example",
+          "question": "Čím se liší životopis a motivační dopis?",
+          "answer": "**Životopis** jsou fakta v bodech (vzdělání, praxe). **Motivační dopis** je souvislý text: proč chci právě toto místo, co umím a čím přispěji."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Životopis napsaný jako vyprávění: *Narodil jsem se v Brně, pak jsem chodil do školky…*",
+          "right": "Strukturovaný životopis v bodech, od nejnovějšího: *2022–dosud: Gymnázium Brno…*",
+          "why": "Zaměstnavatel chce rychle najít podstatné. Body a obrácené časové pořadí mu to umožní."
+        },
+        {
+          "type": "summary",
+          "text": "Administrativní styl je věcný, stručný, přesný a neosobní, se šablonami a formulemi. Písemnosti: žádost, životopis, motivační dopis, plná moc, reklamace, objednávka."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co do žádosti nepatří?",
+      "options": [
+        "věc",
+        "datum",
+        "vtipné úvodní vyprávění",
+        "podpis"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "choice",
+      "question": "Strukturovaný životopis uvádí vzdělání a praxi:",
+      "options": [
+        "od nejnovějšího",
+        "v souvislém vyprávění od narození",
+        "abecedně"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Motivační dopis vysvětluje, proč se o místo ucházím a co mohu nabídnout.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "V administrativním stylu jsou vhodné citově zabarvené výrazy.",
+      "answer": false
+    },
+    {
+      "type": "choice",
+      "question": "Jak správně zapsat datum v dopise?",
+      "options": [
+        "23. 10. 2026",
+        "23.10.2026",
+        "23 .10 .2026"
+      ],
+      "answer": 0,
+      "explanation": "Za tečkou se píše mezera."
+    },
+    {
+      "type": "input",
+      "question": "Jak se nazývá listina, kterou zmocňuji jinou osobu, aby za mě jednala?",
+      "answers": [
+        "plná moc",
+        "plnou moc"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj písemnost s účelem.",
+      "pairs": [
+        [
+          "žádost",
+          "prosba instituci"
+        ],
+        [
+          "reklamace",
+          "vadné zboží"
+        ],
+        [
+          "objednávka",
+          "dodání zboží"
+        ],
+        [
+          "plná moc",
+          "zmocnění jiné osoby"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Kterou formulaci použiješ v žádosti?",
+      "options": [
+        "Žádám Vás o uvolnění z výuky dne 5. 11. 2026.",
+        "Potřeboval bych tak nějak volno.",
+        "Dejte mi volno."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V dopise jedné osobě lze z úcty psát *Vás, Váš* s velkým písmenem.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Co obsahuje řádek *Věc:*?",
+      "options": [
+        "stručné označení obsahu dopisu",
+        "jméno odesílatele",
+        "seznam příloh"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Životopis má obsahovat kontaktní údaje.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jaké jsou znaky administrativního stylu?",
+      "answer": "Věcnost, stručnost, přesnost a úplnost údajů, neosobní tón bez citového zabarvení, ustálené formule a šablony, zkratky. Útvary: žádost, životopis, plná moc, objednávka, reklamace."
+    },
+    {
+      "type": "open",
+      "question": "Co by měl obsahovat motivační dopis?",
+      "answer": "Na jakou pozici či školu se hlásím, proč právě tam, jaké mám zkušenosti a dovednosti a čím mohu přispět. Má být stručný, konkrétní, zdvořilý a s kontaktními údaji."
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "atmosfericky-tlak",
+  "title": "Atmosférický tlak",
+  "emoji": "🎈",
+  "explanations": [
+    {
+      "title": "Pokusem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Vzduch nevidíš a skoro necítíš. Přesto na tebe pořád tlačí – ze všech stran. Jen jsi na to zvyklý od narození."
+        },
+        {
+          "type": "text",
+          "text": "Díky tomuto tlaku piješ brčkem, drží přísavka na kachličkách a podle něj meteorologové předpovídají počasí."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atmosféra",
+          "definition": "Vrstva vzduchu, která obaluje Zemi. Je vysoká stovky kilometrů a směrem nahoru řídne.",
+          "example": "Letadla létají asi 10 km vysoko – vzduch je tam už řídký."
+        },
+        {
+          "type": "term",
+          "term": "Tlak",
+          "definition": "Jak velká síla tlačí na každý kousek plochy. Jednotka pascal (Pa).",
+          "example": "Ostrý nůž má malou plochu, a proto velký tlak."
+        },
+        {
+          "type": "term",
+          "term": "Atmosférický tlak",
+          "definition": "Tlak, kterým na nás a na všechno kolem tlačí vzduch. Způsobuje ho **tíha vzduchu** nad námi.",
+          "example": "Na každý čtvereční centimetr tvé ruky tlačí vzduch zhruba jako závaží 1 kg."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 1: sklenice s papírem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Naplň sklenici až po okraj vodou.",
+            "Přikryj ji kouskem tvrdého papíru.",
+            "Přidrž papír a sklenici obrať dnem vzhůru (nad umyvadlem!).",
+            "Pusť papír. Voda nevyteče – zespodu papír drží **atmosférický tlak**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 2: brčko"
+        },
+        {
+          "type": "text",
+          "text": "Když sáš brčkem, odsaješ z něj vzduch a tlak v brčku klesne. Atmosférický tlak tlačí na hladinu ve sklenici a **vytlačí** nápoj nahoru. Pusa tedy nápoj „netáhne“ – tlačí ho tam vzduch."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 3: Magdeburské polokoule"
+        },
+        {
+          "type": "text",
+          "text": "Roku 1654 starosta Magdeburku Otto von Guericke přiložil k sobě dvě kovové polokoule a vyčerpal z nich vzduch. Zvenku je tlačil k sobě atmosférický tlak tak silně, že je od sebe neodtrhla ani spřežení koní."
+        },
+        {
+          "type": "example",
+          "question": "Proč ti při jízdě lanovkou nahoru zalehnou uši?",
+          "answer": "Nahoře je **menší** atmosférický tlak. Vzduch v uchu má pořád tlak z údolí a tlačí na bubínek zevnitř. Když polkneš, tlaky se vyrovnají."
+        },
+        {
+          "type": "example",
+          "question": "Proč drží přísavka na kachličkách?",
+          "answer": "Při přitlačení se zpod přísavky vytlačí vzduch. Zvenku ji tlačí atmosférický tlak, zevnitř skoro nic – přísavka drží."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Brčkem nápoj nasáváme pusou nahoru.",
+          "right": "Nápoj vytlačí nahoru atmosférický tlak.",
+          "why": "Pusa jen sníží tlak v brčku. Na Měsíci, kde vzduch není, by brčko nefungovalo."
+        },
+        {
+          "type": "summary",
+          "text": "Vzduch na nás tlačí ze všech stran – atmosférický tlak. Způsobuje ho tíha vzduchu nad námi; ukazují ho pokusy se sklenicí, brčkem a polokoulemi."
+        }
+      ]
+    },
+    {
+      "title": "Čísla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V předpovědi počasí slyšíš: „Tlaková výše, 1 025 hektopascalů.“ Co to znamená a jak se to měří? A proč je na horách tlak menší?"
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Atmosférický tlak",
+          "definition": "Tlak vzduchu kolem nás, způsobený tíhou vzduchu nad námi.",
+          "example": "U moře je asi 101 300 Pa."
+        },
+        {
+          "type": "term",
+          "term": "Hektopascal (hPa)",
+          "definition": "Jednotka tlaku používaná v meteorologii. **1 hPa = 100 Pa**.",
+          "example": "1 013 hPa = 101 300 Pa."
+        },
+        {
+          "type": "term",
+          "term": "Barometr",
+          "definition": "Přístroj na měření atmosférického tlaku.",
+          "example": "Doma bývá kovový barometr s ručičkou; dříve se používal rtuťový."
+        },
+        {
+          "type": "term",
+          "term": "Normální atmosférický tlak",
+          "definition": "Domluvená průměrná hodnota tlaku u hladiny moře: **1 013 hPa** (přesně 101 325 Pa).",
+          "example": "Při něm vře voda při 100 °C."
+        },
+        {
+          "type": "heading",
+          "text": "Torricelliho pokus"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Roku 1643 naplnil Ital Evangelista Torricelli skleněnou trubici rtutí.",
+            "Otvor zacpal a trubici obrátil do misky se rtutí.",
+            "Rtuť v trubici klesla, ale zastavila se ve výšce asi **760 mm**.",
+            "Sloupec rtuti drží atmosférický tlak, který tlačí na rtuť v misce.",
+            "Když se tlak změní, změní se i výška sloupce – tak vznikl první barometr."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Tlak a nadmořská výška"
+        },
+        {
+          "type": "text",
+          "text": "Čím výš vystoupáš, tím méně vzduchu je nad tebou a tím je řidší. Proto atmosférický tlak **s výškou klesá**. Porovnej sloupce:"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "hPa",
+            "items": [
+              {
+                "label": "moře 0 m",
+                "value": 1013
+              },
+              {
+                "label": "Sněžka 1 603 m",
+                "value": 840
+              },
+              {
+                "label": "Mont Blanc 4 806 m",
+                "value": 560
+              },
+              {
+                "label": "Everest 8 849 m",
+                "value": 315
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Převeď 1 000 hPa na pascaly.",
+          "answer": "1 hPa = 100 Pa → 1 000 · 100 = **100 000 Pa**."
+        },
+        {
+          "type": "example",
+          "question": "Seřaď od nejvyššího tlaku: Sněžka, pláž u moře, vrchol Everestu, Praha.",
+          "answer": "Tlak klesá s výškou. Pláž (0 m) → Praha (asi 200–400 m) → Sněžka (1 603 m) → Everest (8 849 m)."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na horách je tlak větší, protože jsme blíž obloze.",
+          "right": "Na horách je tlak menší.",
+          "why": "Tlak způsobuje tíha vzduchu **nad** námi. Na hoře je nad námi méně vzduchu, takže tlačí méně."
+        },
+        {
+          "type": "summary",
+          "text": "Normální atmosférický tlak je asi 1 013 hPa (udrží 760 mm rtuti). Měříme ho barometrem. S výškou klesá."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Čím měříme atmosférický tlak?",
+      "options": [
+        "barometrem",
+        "teploměrem",
+        "siloměrem",
+        "vlhkoměrem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Normální atmosférický tlak v hPa (zaokrouhleně na celé) =",
+      "answers": [
+        "1013"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "S rostoucí nadmořskou výškou atmosférický tlak klesá.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kdo poprvé změřil atmosférický tlak sloupcem rtuti?",
+      "options": [
+        "Evangelista Torricelli",
+        "Isaac Newton",
+        "Archimédés",
+        "Blaise Pascal"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jak vysoký sloupec rtuti v mm udrží normální atmosférický tlak?",
+      "answers": [
+        "760"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč funguje pití brčkem?",
+      "options": [
+        "atmosférický tlak vytlačí nápoj do míst s nižším tlakem",
+        "nápoj se vypaří",
+        "brčko nápoj přitahuje"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Magdeburské polokoule nešlo kvůli atmosférickému tlaku odtrhnout ani koňmi.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Kolik Pa je 1 000 hPa?",
+      "answers": [
+        "100000"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč zalehnou uši při jízdě lanovkou nahoru?",
+      "options": [
+        "venku klesne tlak, v uchu zůstane vyšší",
+        "je tam zima",
+        "je tam hluk"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď místa od nejvyššího atmosférického tlaku.",
+      "items": [
+        "pláž u moře",
+        "Praha",
+        "Sněžka",
+        "vrchol Everestu"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Uveď pokus, který dokazuje atmosférický tlak.",
+      "answer": "Sklenici plnou vody přikryji papírem a obrátím. Voda nevyteče, protože papír zespodu tlačí atmosférický tlak."
+    },
+    {
+      "type": "open",
+      "question": "Proč se atmosférický tlak s výškou zmenšuje?",
+      "answer": "Atmosférický tlak způsobuje tíha vzduchu nad námi. Výš je nad námi méně vzduchu a vzduch je řidší, proto je tlak menší."
+    }
+  ]
+}

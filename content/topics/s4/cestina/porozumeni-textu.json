@@ -1,0 +1,344 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "porozumeni-textu",
+  "title": "Porozumění textu a typy úloh",
+  "emoji": "🔍",
+  "explanations": [
+    {
+      "title": "Strategie",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Velká část maturitního testu z češtiny není o pravopisu, ale o **čtení**. Dostaneš text a otázky k němu. Chyby přitom nevznikají z neznalosti – ale z toho, že člověk odpovídá podle sebe, ne podle textu."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? S jasnou strategií získáš body, které by ti jinak utekly. A naučíš se číst pozorně i mimo školu – smlouvy, návody, zprávy."
+        },
+        {
+          "type": "term",
+          "term": "Výchozí text",
+          "definition": "Text, ke kterému se vztahují úlohy v testu.",
+          "example": "úryvek z novin, z románu, z odborné knihy"
+        },
+        {
+          "type": "term",
+          "term": "Explicitní informace",
+          "definition": "Informace, která je v textu **řečena přímo**.",
+          "example": "Text: *Je mu osmnáct.* → Je mu osmnáct."
+        },
+        {
+          "type": "term",
+          "term": "Implicitní informace",
+          "definition": "Informace, která z textu **nutně vyplývá**, i když není řečena přímo.",
+          "example": "Text: *Je mu osmnáct.* → Je plnoletý."
+        },
+        {
+          "type": "heading",
+          "text": "Postup krok za krokem"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Přečti nejdřív **otázky**, pak text – víš, co hledat.",
+            "U každého tvrzení najdi **místo v textu**, kde se o tom píše.",
+            "Odliš, co text **říká**, od toho, co si jen myslíš ty.",
+            "Pozor na slova *vždy, nikdy, všichni, pouze* – často dělají tvrzení nepravdivým (stačí jedna výjimka).",
+            "Pozor na *prý, údajně, zřejmě* – nejde o fakt, ale o tvrzení nebo domněnku.",
+            "Odpověď ověř a teprve pak ji zaznač."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Rozhodni, jestli je závěr v textu řečen přímo, nebo z něj jen vyplývá."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "explicitní (řečeno přímo)",
+              "implicitní (vyplývá)"
+            ],
+            "items": [
+              {
+                "text": "Text: „Vlak měl hodinu zpoždění.“ → Vlak přijel pozdě.",
+                "group": 0
+              },
+              {
+                "text": "Text: „Vzal si deštník.“ → Čekal déšť.",
+                "group": 1
+              },
+              {
+                "text": "Text: „Je jí osmnáct.“ → Je plnoletá.",
+                "group": 1
+              },
+              {
+                "text": "Text: „Bydlí v Brně.“ → Bydlí v Brně.",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Text: „Petr už třetí den nevyšel z pokoje.“ Vyplývá z toho, že Petr je nemocný?",
+          "answer": "Ne. Může se učit, hrát hry, být smutný. Nemoc z textu **nutně nevyplývá** – je to jen domněnka."
+        },
+        {
+          "type": "example",
+          "question": "Text: „Jana dostala jedničku, ačkoli se prý vůbec neučila.“ Platí: *Jana se neučila*?",
+          "answer": "Ne nutně. Slovo **prý** ukazuje, že je to jen tvrzení (její nebo cizí), ne fakt. Platí: *Říká se / Jana tvrdí, že se neučila.*"
+        },
+        {
+          "type": "mistake",
+          "wrong": "Odpověď podle vlastní zkušenosti: „Koncerty bývají drahé, takže vstupenky byly drahé.“",
+          "right": "Odpověď jen podle textu: „Vstupenky byly vyprodány do hodiny“ → byl o akci velký zájem.",
+          "why": "V testu rozhoduje jen to, co text říká nebo z něj nutně vyplývá. Vlastní zkušenost sem nepatří."
+        },
+        {
+          "type": "summary",
+          "text": "Odpověď musí jít doložit textem. Explicitní = řečeno přímo, implicitní = nutně vyplývá. Pozor na vždy/nikdy/pouze a prý/údajně."
+        }
+      ]
+    },
+    {
+      "title": "Typy úloh",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Maturitní test má několik typů úloh. Každý typ potřebuje trochu jiný přístup – u jednoho vybíráš, u jiného řadíš, u dalšího píšeš sám."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když typ úlohy poznáš na první pohled, víš hned, jak na ni. Ušetříš čas i nervy."
+        },
+        {
+          "type": "heading",
+          "text": "Pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Uzavřená úloha",
+          "definition": "Úloha s nabídkou odpovědí, ze kterých vybíráš.",
+          "example": "vyber A–D"
+        },
+        {
+          "type": "term",
+          "term": "Otevřená úloha",
+          "definition": "Úloha, kde odpověď napíšeš sám.",
+          "example": "Napište, jakým slovním druhem je…"
+        },
+        {
+          "type": "term",
+          "term": "Hlavní myšlenka",
+          "definition": "To, co chce autor celým textem sdělit. Nemusí být v první větě.",
+          "example": "Text o recyklaci → *Třídění odpadu má smysl.*"
+        },
+        {
+          "type": "term",
+          "term": "Koheze",
+          "definition": "Jazykové propojení vět: zájmena (*ten, on*), spojky (*proto*), opakovaná slova.",
+          "example": "*Koupil psa. Ten…*"
+        },
+        {
+          "type": "heading",
+          "text": "Typy úloh"
+        },
+        {
+          "type": "text",
+          "text": "Přečti typ úlohy a řekni si, co v ní děláš. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "Úloha s výběrem odpovědi",
+                "back": "vyber jednu ze 4 možností A–D"
+              },
+              {
+                "front": "Svazek ANO/NE",
+                "back": "u každého tvrzení rozhodni, zda platí"
+              },
+              {
+                "front": "Přiřazovací úloha",
+                "back": "přiřaď k položkám správné možnosti"
+              },
+              {
+                "front": "Uspořádací úloha",
+                "back": "seřaď části textu do správného pořadí"
+              },
+              {
+                "front": "Otevřená úloha",
+                "back": "napiš krátkou odpověď sám"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak na uspořádací úlohu"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Najdi úsek, který může být jen na začátku (uvádí téma, nemá zájmeno odkazující dozadu).",
+            "Hledej **kohezní stopy**: zájmeno *ten, on* odkazuje na něco předtím; spojka *proto* navazuje na důvod.",
+            "Řaď úseky tak, aby každé zájmeno mělo předtím své jméno.",
+            "Přečti celý text v novém pořadí – musí dávat smysl."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Seřaď: (A) Ten se jmenuje Max. (B) Loni jsme si koupili psa. (C) Max je proto náš nejlepší kamarád. (D) Každé ráno s námi běhá.",
+          "answer": "**B** – uvádí psa. **A** – *ten* odkazuje na psa. **D** – co Max dělá. **C** – *proto* je důsledek. Pořadí: **B, A, D, C**."
+        },
+        {
+          "type": "example",
+          "question": "Text: „Všechny vstupenky byly do hodiny vyprodány.“ Co z něj vyplývá?",
+          "answer": "Rychlé vyprodání znamená **velký zájem**. Že byl koncert nudný nebo vstupenky levné, z textu nevyplývá."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Hlavní myšlenka = první věta textu.",
+          "right": "Hlavní myšlenka = to, co chce autor sdělit celým textem.",
+          "why": "První věta často jen uvádí téma nebo zaujme. Hlavní myšlenka může být až v závěru – nebo nikde doslova."
+        },
+        {
+          "type": "summary",
+          "text": "Typy úloh: výběr A–D, svazek ANO/NE, přiřazovací, uspořádací, otevřená. U uspořádací úlohy pomáhá koheze – zájmena, spojky, opakovaná slova."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Před čtením výchozího textu se vyplatí projít otázky.",
+      "answer": true,
+      "explanation": "Víš, na co se při čtení soustředit."
+    },
+    {
+      "type": "choice",
+      "question": "Co je implicitní informace?",
+      "options": [
+        "informace řečená doslova",
+        "informace, která z textu vyplývá, ale není řečena přímo",
+        "názor čtenáře"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Text: „Všechny vstupenky byly do hodiny vyprodány.“ Co z něj vyplývá?",
+      "options": [
+        "Koncert byl nudný.",
+        "O akci byl velký zájem.",
+        "Vstupenky byly levné."
+      ],
+      "answer": 1
+    },
+    {
+      "type": "truefalse",
+      "question": "Tvrzení se slovem „vždy“ bývá v testu častěji nepravdivé.",
+      "answer": true,
+      "explanation": "Absolutní tvrzení snadno vyvrátí jediná výjimka."
+    },
+    {
+      "type": "choice",
+      "question": "Hlavní myšlenka textu je…",
+      "options": [
+        "první věta textu",
+        "to, co chce autor celým textem sdělit",
+        "nejdelší odstavec"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "match",
+      "question": "Spoj typ úlohy s činností.",
+      "pairs": [
+        [
+          "ANO/NE",
+          "posoudit tvrzení"
+        ],
+        [
+          "přiřazovací",
+          "spojit položky"
+        ],
+        [
+          "uspořádací",
+          "seřadit části"
+        ],
+        [
+          "otevřená",
+          "napsat odpověď"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Odpověď v testu se může opírat o vlastní zkušenost, i když to text neříká.",
+      "answer": false,
+      "explanation": "Rozhoduje jen to, co text říká nebo z něj vyplývá."
+    },
+    {
+      "type": "choice",
+      "question": "Text: „Jana dostala z testu jedničku, ačkoli se prý vůbec neučila.“ Co platí podle textu?",
+      "options": [
+        "Jana se neučila.",
+        "Jana tvrdí (nebo se říká), že se neučila.",
+        "Test byl lehký."
+      ],
+      "answer": 1,
+      "explanation": "Slovo „prý“ – je to jen tvrzení, ne fakt."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď kroky práce s výchozím textem.",
+      "items": [
+        "přečíst otázky",
+        "přečíst text",
+        "vyhledat místo v textu",
+        "ověřit odpověď",
+        "zaznačit odpověď"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co pomáhá při uspořádací úloze nejvíc?",
+      "options": [
+        "délka úseků",
+        "návaznost – zájmena, spojky, opakovaná slova",
+        "abecední pořadí"
+      ],
+      "answer": 1,
+      "explanation": "Textová návaznost (koheze) ukazuje pořadí."
+    },
+    {
+      "type": "open",
+      "question": "Jaký je rozdíl mezi explicitní a implicitní informací? Uveď příklad.",
+      "answer": "Explicitní informace je v textu řečena přímo („Je mu osmnáct“). Implicitní z textu nutně vyplývá, i když řečena není („Je mu osmnáct“ → je plnoletý)."
+    },
+    {
+      "type": "open",
+      "question": "Popiš, jak postupuješ při řešení úloh k výchozímu textu.",
+      "answer": "Nejdřív přečtu otázky, pak text. Ke každé otázce vyhledám v textu konkrétní místo, odliším fakta od domněnek a dám pozor na slova jako „vždy, pouze, prý“. Odpověď ověřím a teprve pak zaznačím."
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "vlnova-optika",
+  "title": "Světlo jako vlnění",
+  "emoji": "🌈",
+  "explanations": [
+    {
+      "title": "Mýdlová bublina",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mýdlová bublina i olejová skvrna na mokré silnici hrají duhovými barvami, přestože mýdlo i olej jsou bezbarvé. CD se třpytí jako duha. Rybářské polarizační brýle „vypnou“ odlesky na vodě. To všechno se dá vysvětlit jen tak, že světlo je **vlnění**."
+        },
+        {
+          "type": "text",
+          "text": "Na vlnové povaze světla stojí antireflexní vrstvy na brýlích, spektrometry, které zjistí složení hvězd, i displeje s polarizačními filtry."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektromagnetické vlnění",
+          "definition": "Vlnění elektrického a magnetického pole. Nepotřebuje žádné prostředí, šíří se i vakuem rychlostí `c = 3 · 10⁸ m/s`. Světlo je jeho malá část.",
+          "example": "Rádiové vlny, mikrovlny, světlo, rentgen."
+        },
+        {
+          "type": "term",
+          "term": "Vlnová délka λ",
+          "definition": "Vzdálenost dvou sousedních hřebenů vlny. U světla se měří v nanometrech: 1 nm = 10⁻⁹ m.",
+          "example": "Zelené světlo má asi 530 nm."
+        },
+        {
+          "type": "term",
+          "term": "Barva",
+          "definition": "Oko vnímá různé vlnové délky jako různé barvy. Bílé světlo je směs všech."
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf. Která barva má nejkratší a která nejdelší vlnovou délku?"
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "nm",
+            "items": [
+              {
+                "label": "fialová",
+                "value": 400
+              },
+              {
+                "label": "modrá",
+                "value": 470
+              },
+              {
+                "label": "zelená",
+                "value": 530
+              },
+              {
+                "label": "žlutá",
+                "value": 580
+              },
+              {
+                "label": "oranžová",
+                "value": 610
+              },
+              {
+                "label": "červená",
+                "value": 700
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Interference: barvy bubliny"
+        },
+        {
+          "type": "term",
+          "term": "Interference",
+          "definition": "Skládání dvou vln. Hřeben s hřebenem se zesílí, hřeben s dolem se vyruší."
+        },
+        {
+          "type": "term",
+          "term": "Koherentní světlo",
+          "definition": "Dvě vlny, které mají stálý fázový rozdíl – „kmitají ve stálém rytmu vůči sobě“. Jen takové světlo vytvoří stálý interferenční obrazec.",
+          "example": "Dva odrazy téhož světla od dvou stěn blány."
+        },
+        {
+          "type": "text",
+          "text": "Světlo se odrazí od přední i zadní stěny tenké blány bubliny. Jedna vlna urazí o kousek delší cestu. Pro některou barvu se vlny zesílí, pro jinou vyruší – a my vidíme barvu, která „vyhrála“. Kde je blána jinak tlustá, vyhraje jiná barva."
+        },
+        {
+          "type": "heading",
+          "text": "Ohyb: CD jako mřížka"
+        },
+        {
+          "type": "term",
+          "term": "Ohyb (difrakce)",
+          "definition": "Vlnění se za překážkou nebo štěrbinou „ohýbá“ i do stínu."
+        },
+        {
+          "type": "term",
+          "term": "Optická mřížka",
+          "definition": "Velmi mnoho rovnoběžných štěrbin (nebo rýh) těsně vedle sebe. Rozloží bílé světlo na barevné spektrum.",
+          "example": "Drážky CD působí jako mřížka."
+        },
+        {
+          "type": "heading",
+          "text": "Polarizace"
+        },
+        {
+          "type": "term",
+          "term": "Polarizace",
+          "definition": "Světlo je příčné vlnění – kmitá kolmo ke směru šíření, ale v různých rovinách. Polarizační filtr propustí jen kmity v jedné rovině. Odražené světlo od vody je částečně polarizované, proto ho brýle odfiltrují."
+        },
+        {
+          "type": "text",
+          "text": "Polarizace funguje jen u **příčného** vlnění. Tím dokazuje, že světlo je vlnění příčné."
+        },
+        {
+          "type": "term",
+          "term": "Disperze",
+          "definition": "Různé barvy se v látce šíří různě rychle, proto se různě lámou. Hranol nebo kapky deště tak rozloží bílé světlo na spektrum – duha."
+        },
+        {
+          "type": "text",
+          "text": "Ve vzorcích: `c = λ · f` (rychlost = vlnová délka × frekvence). **Index lomu** `n = c / v` říká, kolikrát je světlo v látce pomalejší (sklo n ≈ 1,5). Mřížka s roztečí štěrbin b posílá světlo do směrů, kde `b · sin α = k · λ` (k = 1, 2, …)."
+        },
+        {
+          "type": "example",
+          "question": "Která barva má nejkratší vlnovou délku?",
+          "answer": "**Fialová** (asi 400 nm). Nejdelší má červená (asi 700 nm). Viditelné světlo je zhruba 400–750 nm."
+        },
+        {
+          "type": "example",
+          "question": "Světlo přejde ze vzduchu do vody. Co se změní a co ne?",
+          "answer": "Zmenší se rychlost a vlnová délka. **Frekvence se nemění** – kolik vln přijde ke hranici za sekundu, tolik jich musí i odejít."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Bublina je barevná, protože mýdlo je barevné.",
+          "right": "Barvy vznikají interferencí světla odraženého od obou stěn tenké blány.",
+          "why": "Mýdlový roztok je bezbarvý. Barva závisí na tloušťce blány – proto se barvy na bublině přelévají, jak blána stéká a tenčí se."
+        },
+        {
+          "type": "summary",
+          "text": "Světlo je příčné elektromagnetické vlnění (asi 400–750 nm). Dokazují to interference, ohyb a polarizace. Disperze rozkládá bílé světlo na barvy."
+        }
+      ]
+    },
+    {
+      "title": "Spektrum",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Rádio, mikrovlnka, ovladač televize, světlo, opalovací krém proti UV, rentgen u zubaře – to všechno je stejný druh vlnění, jen s jinou vlnovou délkou. Tady se naučíš vlnové délky počítat a pochopíš, jak mřížka rozkládá světlo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Elektromagnetické spektrum",
+          "definition": "Všechna elektromagnetická záření seřazená podle vlnové délky. Viditelné světlo je jen úzký pruh asi 400–750 nm."
+        },
+        {
+          "type": "term",
+          "term": "Frekvence f a vlnová délka λ",
+          "definition": "Spojuje je rychlost světla: `c = λ · f`, c = 3 · 10⁸ m/s ve vakuu."
+        },
+        {
+          "type": "term",
+          "term": "Index lomu n",
+          "definition": "Kolikrát je světlo v látce pomalejší než ve vakuu: `n = c / v`. Vakuum n = 1, voda 1,33, sklo asi 1,5."
+        },
+        {
+          "type": "term",
+          "term": "Perioda mřížky b",
+          "definition": "Vzdálenost sousedních štěrbin mřížky."
+        },
+        {
+          "type": "heading",
+          "text": "Spektrum od nejdelších vln"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "rádiové vlny (metry až kilometry)",
+            "mikrovlny (cm)",
+            "infračervené záření (teplo)",
+            "viditelné světlo: červená → fialová",
+            "ultrafialové (UV)",
+            "rentgenové",
+            "gama"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Výpočty"
+        },
+        {
+          "type": "example",
+          "question": "Světlo má vlnovou délku 600 nm. Jaká je jeho frekvence?",
+          "answer": "600 nm = 6 · 10⁻⁷ m. f = c / λ = 3 · 10⁸ / 6 · 10⁻⁷ = **5 · 10¹⁴ Hz**."
+        },
+        {
+          "type": "example",
+          "question": "Ve skle se světlo šíří rychlostí 2 · 10⁸ m/s. Jaký je index lomu?",
+          "answer": "n = c / v = 3 · 10⁸ / 2 · 10⁸ = **1,5**."
+        },
+        {
+          "type": "heading",
+          "text": "Optická mřížka"
+        },
+        {
+          "type": "text",
+          "text": "Za mřížkou vzniknou jasná místa (maxima) ve směrech, kde se vlny ze sousedních štěrbin liší dráhou o celý počet vlnových délek: `b · sin α = k · λ`, k = 0, 1, 2… je řád maxima."
+        },
+        {
+          "type": "example",
+          "question": "Mřížka má periodu 2 μm, světlo 500 nm. Pod jakým úhlem je maximum 1. řádu?",
+          "answer": "sin α = k · λ / b = 1 · 500 · 10⁻⁹ / 2 · 10⁻⁶ = **0,25** → α ≈ 14,5°."
+        },
+        {
+          "type": "text",
+          "text": "Delší vlnová délka = větší úhel. Proto mřížka odkloní červenou víc než fialovou a rozloží bílé světlo na spektrum. Na widgetu nastav 14,5° (fialová by šla pod menším úhlem, červená pod větším)."
+        },
+        {
+          "type": "widget",
+          "widget": "angle",
+          "props": {
+            "degrees": 15
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Další vlnové jevy"
+        },
+        {
+          "type": "text",
+          "text": "**Interference** (barvy tenkých vrstev) vyžaduje **koherentní** světlo se stálým fázovým rozdílem. **Polarizace** dokazuje, že světlo je příčné vlnění. **Disperze** je závislost indexu lomu na vlnové délce (duha, hranol). Při přechodu do jiného prostředí se mění rychlost a vlnová délka, **frekvence zůstává**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "λ = 600 nm dosadím jako 600 nebo 600 · 10⁻⁶.",
+          "right": "600 nm = 600 · 10⁻⁹ m = 6 · 10⁻⁷ m.",
+          "why": "Nano = 10⁻⁹. S chybnou předponou vyjde frekvence o mnoho řádů špatně."
+        },
+        {
+          "type": "summary",
+          "text": "`c = λ·f`, `n = c/v`, mřížka `b sin α = kλ`. Viditelné světlo asi 400 (fialová) – 750 nm (červená)."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Ve skle se světlo šíří rychlostí 2 · 10⁸ m/s. Index lomu skla =",
+      "answers": [
+        "1,5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Frekvence světla je 5 · 10¹⁴ Hz. Vlnová délka v nm =",
+      "answers": [
+        "600"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Mřížka s periodou 2 μm, světlo 500 nm. sin α pro maximum 1. řádu =",
+      "answers": [
+        "0,25"
+      ]
+    },
+    {
+      "type": "order",
+      "question": "Seřaď elektromagnetické záření od nejdelší vlnové délky.",
+      "items": [
+        "rádiové vlny",
+        "mikrovlny",
+        "infračervené",
+        "viditelné světlo",
+        "ultrafialové",
+        "rentgenové"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která barva viditelného světla má nejkratší vlnovou délku?",
+      "options": [
+        "fialová",
+        "červená",
+        "zelená",
+        "žlutá"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Při přechodu do jiného prostředí se frekvence světla nemění.",
+      "answer": true,
+      "explanation": "Mění se rychlost a vlnová délka."
+    },
+    {
+      "type": "choice",
+      "question": "Který jev dokazuje, že světlo je příčné vlnění?",
+      "options": [
+        "polarizace",
+        "odraz",
+        "lom",
+        "disperze"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Co je disperze světla?",
+      "options": [
+        "závislost indexu lomu na vlnové délce",
+        "ohyb na překážce",
+        "odraz od zrcadla"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj jev s příkladem.",
+      "pairs": [
+        [
+          "interference",
+          "barvy mýdlové bubliny"
+        ],
+        [
+          "ohyb",
+          "spektrum za mřížkou"
+        ],
+        [
+          "polarizace",
+          "polarizační brýle"
+        ],
+        [
+          "disperze",
+          "duha"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Koherentní vlnění má stálý fázový rozdíl.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Uveď jevy, které dokazují vlnovou povahu světla.",
+      "answer": "Interference (barvy tenkých vrstev, Youngův pokus), ohyb (mřížka, štěrbina) a polarizace, která ukazuje, že jde o vlnění příčné."
+    },
+    {
+      "type": "open",
+      "question": "Co je elektromagnetické spektrum a kde v něm leží viditelné světlo?",
+      "answer": "Souhrn elektromagnetického záření podle vlnové délky: rádiové vlny, mikrovlny, IR, viditelné světlo (asi 400–750 nm), UV, rentgenové a gama záření."
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "cela-cisla",
+  "title": "Celá a racionální čísla",
+  "emoji": "🌡️",
+  "generator": "integers",
+  "explanations": [
+    {
+      "title": "Teploměr",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "V zimě ukazuje teploměr −3 °C – tři stupně **pod nulou**. Výtah jede do −1. patra, do sklepa. V bance můžeš mít na účtu −200 Kč, když dlužíš."
+        },
+        {
+          "type": "text",
+          "text": "Čísla s minusem popisují všechno, co je „pod nulou“, „pod zemí“ nebo „v mínusu“. Naučíš se s nimi počítat stejně jako s běžnými čísly."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Záporné číslo",
+          "definition": "Číslo menší než nula. Píše se se znaménkem minus: −3.",
+          "example": "−3 °C je o 3 stupně méně než 0 °C."
+        },
+        {
+          "type": "term",
+          "term": "Kladné číslo",
+          "definition": "Číslo větší než nula. Znaménko + se většinou nepíše.",
+          "example": "5 °C = +5 °C"
+        },
+        {
+          "type": "term",
+          "term": "Celá čísla",
+          "definition": "Všechna čísla …, −3, −2, −1, 0, 1, 2, 3, … – kladná, záporná a nula, bez desetinných míst.",
+          "example": "−7, 0, 12 jsou celá čísla. 2,5 není."
+        },
+        {
+          "type": "term",
+          "term": "Číselná osa",
+          "definition": "Čára jako ležatý teploměr. Uprostřed nula, vpravo kladná čísla, vlevo záporná.",
+          "example": "−2 leží 2 dílky vlevo od nuly."
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání a odčítání = chůze po ose"
+        },
+        {
+          "type": "text",
+          "text": "Ráno bylo −3 °C a přes den se oteplilo o 5 °C. Začni na −3 a udělej 5 kroků doprava. Kde skončíš? Na **2 °C**."
+        },
+        {
+          "type": "text",
+          "text": "Posouvej začátek a délku skoku. Plus = kroky doprava (tepleji), minus = kroky doleva (chladněji)."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "start": -3,
+            "hop": 5
+          }
+        },
+        {
+          "type": "example",
+          "question": "3 − 8 = ?",
+          "answer": "Začni na 3 a jdi 8 kroků doleva: 3 kroky tě dovedou na nulu, zbývá 5 dalších → **−5**."
+        },
+        {
+          "type": "example",
+          "question": "Ráno bylo −6 °C, v poledne 4 °C. O kolik se oteplilo?",
+          "answer": "Z −6 na 0 je to 6 stupňů, z 0 na 4 další 4. Celkem **10 °C**. Zapsáno: 4 − (−6) = 10."
+        },
+        {
+          "type": "heading",
+          "text": "Co je víc?"
+        },
+        {
+          "type": "text",
+          "text": "Které je chladnější: −5 °C nebo −2 °C? −5 °C! Na ose leží víc vlevo, a co je víc vlevo, je **menší**. Proto −5 < −2."
+        },
+        {
+          "type": "term",
+          "term": "Absolutní hodnota",
+          "definition": "Jak daleko je číslo od nuly – bez ohledu na směr. Píše se mezi svislé čárky.",
+          "example": "|−7| = 7, |7| = 7. Obě jsou od nuly 7 kroků."
+        },
+        {
+          "type": "mistake",
+          "wrong": "−5 > −2, protože 5 je víc než 2.",
+          "right": "−5 < −2",
+          "why": "U záporných čísel je to obráceně: −5 °C je větší mráz, tedy nižší teplota. Na ose leží víc vlevo."
+        },
+        {
+          "type": "heading",
+          "text": "A násobení?"
+        },
+        {
+          "type": "text",
+          "text": "Představ si dluh 6 Kč, který vznikne 4krát: 4 · (−6) = −24 Kč. Když dluh **odebereš** (mínus krát mínus), je to jako bys dostal peníze: (−6) · (−4) = +24. Pravidlo: **stejná znaménka dají plus, různá mínus.**"
+        },
+        {
+          "type": "summary",
+          "text": "Záporná čísla leží vlevo od nuly; čím víc vlevo, tím menší. Plus = krok doprava, mínus = krok doleva."
+        }
+      ]
+    },
+    {
+      "title": "Pravidla",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Chůze po ose je fajn pro malá čísla. Pro rychlé počítání se hodí pár pravidel o znaménkách. Platí pro celá čísla, ale i pro záporné zlomky a desetinná čísla."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Kladná a záporná čísla",
+          "definition": "Kladná jsou větší než 0 (5, 2,3). Záporná jsou menší než 0 a mají minus (−5, −2,3). Nula není ani kladná, ani záporná.",
+          "example": "−4 °C je 4 stupně pod nulou."
+        },
+        {
+          "type": "term",
+          "term": "Racionální čísla",
+          "definition": "Všechna čísla, která jdou zapsat zlomkem – celá čísla, zlomky i desetinná čísla, kladná i záporná.",
+          "example": "−1/2, 0,75, −3, 7 jsou racionální."
+        },
+        {
+          "type": "term",
+          "term": "Opačné číslo",
+          "definition": "Číslo se stejnou vzdáleností od nuly, ale na druhé straně. Liší se jen znaménkem.",
+          "example": "Opačné k 4 je −4, opačné k −7 je 7."
+        },
+        {
+          "type": "term",
+          "term": "Absolutní hodnota |a|",
+          "definition": "Vzdálenost čísla od nuly. Je vždy kladná nebo nula.",
+          "example": "|−9| = 9, |3| = 3, |0| = 0"
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Stejná znaménka:** sečti vzdálenosti a ponech znaménko. −3 + (−4) = −7.",
+            "**Různá znaménka:** od větší vzdálenosti odečti menší, znaménko vezmi od čísla, které je od nuly dál. −7 + 3 = −4 (7 je dál než 3, tak výsledek je záporný)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Odčítání"
+        },
+        {
+          "type": "text",
+          "text": "**Odečíst číslo = přičíst číslo opačné.** Odečíst záporné tedy znamená přičíst: 5 − (−3) = 5 + 3 = 8. Dvě mínus vedle sebe se změní na plus."
+        },
+        {
+          "type": "heading",
+          "text": "Násobení a dělení"
+        },
+        {
+          "type": "table",
+          "head": [
+            "znaménka",
+            "výsledek",
+            "příklad"
+          ],
+          "rows": [
+            [
+              "+ a +",
+              "+",
+              "6 · 4 = 24"
+            ],
+            [
+              "− a −",
+              "+",
+              "(−6) · (−4) = 24"
+            ],
+            [
+              "+ a −",
+              "−",
+              "6 · (−4) = −24"
+            ],
+            [
+              "− a +",
+              "−",
+              "(−20) : 5 = −4"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Víc činitelů? Spočítej mínusy. Sudý počet → plus, lichý počet → mínus."
+        },
+        {
+          "type": "example",
+          "question": "(−2) · (−3) · (−1) = ?",
+          "answer": "Tři mínusy – lichý počet → výsledek záporný. 2 · 3 · 1 = 6. Výsledek **−6**."
+        },
+        {
+          "type": "example",
+          "question": "(−1/2) · (−4/5) = ?",
+          "answer": "Dvě mínus → plus. 1/2 · 4/5 = 4/10 = **2/5**."
+        },
+        {
+          "type": "example",
+          "question": "Platí −3/4 < −2/3?",
+          "answer": "Převeď na desetinná čísla: −0,75 a asi −0,67. −0,75 je od nuly dál, leží víc vlevo, je tedy menší → **platí**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "5 − (−3) = 2",
+          "right": "5 − (−3) = 8",
+          "why": "Odečíst záporné číslo je jako přičíst kladné. Když ti někdo odebere dluh 3 Kč, máš o 3 Kč víc."
+        },
+        {
+          "type": "text",
+          "text": "Ověř si na ose: začni na 5, odečíst −3 znamená jít 3 kroky **doprava**."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": -10,
+            "max": 10,
+            "step": 1,
+            "start": 5,
+            "hop": 3
+          }
+        },
+        {
+          "type": "summary",
+          "text": "Násobení a dělení: stejná znaménka → plus, různá → mínus. Odečíst záporné = přičíst. Absolutní hodnota = vzdálenost od nuly."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "−4 + 9 =",
+      "answers": [
+        "5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3 − 8 =",
+      "answers": [
+        "-5",
+        "−5"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "5 − (−3) =",
+      "answers": [
+        "8"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "(−6) · 4 =",
+      "answers": [
+        "-24",
+        "−24"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "(−20) : (−5) =",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Které číslo je nejmenší?",
+      "options": [
+        "−8",
+        "−3",
+        "0",
+        "2"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "|−9| = 9",
+      "answer": true,
+      "explanation": "Absolutní hodnota je vzdálenost od nuly."
+    },
+    {
+      "type": "truefalse",
+      "question": "−5 > −2",
+      "answer": false,
+      "explanation": "−5 leží na ose víc vlevo."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "−7",
+        "−2",
+        "0",
+        "3",
+        "6"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Ráno bylo −6 °C, v poledne 4 °C. O kolik stupňů se oteplilo?",
+      "answers": [
+        "10"
+      ],
+      "explanation": "4 − (−6) = 10"
+    },
+    {
+      "type": "choice",
+      "question": "(−2) · (−3) · (−1) =",
+      "options": [
+        "−6",
+        "6",
+        "−5",
+        "5"
+      ],
+      "answer": 0,
+      "explanation": "Tři záporná znaménka → výsledek záporný."
+    },
+    {
+      "type": "truefalse",
+      "question": "−3/4 < −2/3",
+      "answer": true,
+      "explanation": "−0,75 je víc vlevo než −0,666…"
+    },
+    {
+      "type": "input",
+      "question": "−0,5 + 1,25 =",
+      "answers": [
+        "0,75"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "(−1/2) · (−4/5) = (v základním tvaru)",
+      "answers": [
+        "2/5"
+      ],
+      "explanation": "4/10 = 2/5, znaménka stejná → plus."
+    },
+    {
+      "type": "open",
+      "question": "Jak sčítáš kladné a záporné číslo?",
+      "answer": "Odečtu menší absolutní hodnotu od větší a výsledku dám znaménko čísla s větší absolutní hodnotou. Např. −7 + 3 = −4."
+    },
+    {
+      "type": "open",
+      "question": "Co je absolutní hodnota čísla?",
+      "answer": "Je to vzdálenost čísla od nuly na číselné ose. Je vždy nezáporná: |−5| = 5, |5| = 5."
+    }
+  ]
+}

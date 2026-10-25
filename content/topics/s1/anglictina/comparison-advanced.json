@@ -1,0 +1,401 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "comparison-advanced",
+  "title": "Stupňování pokročile",
+  "emoji": "📊",
+  "explanations": [
+    {
+      "title": "Grafem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "„Praha je větší než Brno“ je jednoduché srovnání. Ale co „Praha je **mnohem** větší“, „Tenhle mobil je jen **o trochu** dražší“, „Ceny jsou **čím dál vyšší**“ nebo „**Čím víc** čteš, **tím víc** víš“? To jsou jemnější odstíny, bez kterých se v diskusi, v eseji ani u maturity neobejdeš."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "2. stupeň (komparativ)",
+          "definition": "Tvar přídavného jména pro srovnání dvou věcí: krátká slova *-er*, delší *more*. Za ním *than*.",
+          "example": "bigger than, more expensive than"
+        },
+        {
+          "type": "term",
+          "term": "3. stupeň (superlativ)",
+          "definition": "„nej-“: *the -est* nebo *the most*.",
+          "example": "the biggest, the most expensive"
+        },
+        {
+          "type": "term",
+          "term": "Zesílení / zmírnění",
+          "definition": "Slovo před 2. stupněm, které říká, **jak velký** je rozdíl.",
+          "example": "much bigger (mnohem větší), slightly bigger (o něco větší)"
+        },
+        {
+          "type": "heading",
+          "text": "Graf"
+        },
+        {
+          "type": "text",
+          "text": "Prohlédni si graf výšky čtyř kamarádů. Pak čti věty pod ním a na grafu si ověř, jestli sedí."
+        },
+        {
+          "type": "widget",
+          "widget": "bars",
+          "props": {
+            "unit": "cm",
+            "items": [
+              {
+                "label": "Tom",
+                "value": 182
+              },
+              {
+                "label": "Ben",
+                "value": 180
+              },
+              {
+                "label": "Eva",
+                "value": 165
+              },
+              {
+                "label": "Ann",
+                "value": 150
+              }
+            ]
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "*Tom is **much / far / a lot** taller than Ann.* – velký rozdíl (32 cm)",
+            "*Tom is **slightly / a bit / a little** taller than Ben.* – malý rozdíl (2 cm)",
+            "*Ann is **by far** the shortest.* – zesílení 3. stupně",
+            "*Eva is**n't as** tall **as** Ben.* – ne tak … jako"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Čím dál, čím…, tím…"
+        },
+        {
+          "type": "text",
+          "text": "Opakovaný 2. stupeň = „čím dál“: *bigger and bigger, worse and worse, more and more expensive*. A **the + 2. stupeň, the + 2. stupeň** = „čím…, tím…“: *The more you read, the more you know.*"
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Doprava je čím dál horší.",
+          "answer": "*Bad – worse*, „čím dál“ = opakování: *The traffic is getting worse and worse.*"
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Čím víc trénuješ, tím jsi lepší.",
+          "answer": "*The more you practise, the better you get.* – obě části začínají *the* + 2. stupeň."
+        },
+        {
+          "type": "mistake",
+          "wrong": "This test was very easier than the last one.",
+          "right": "This test was much easier than the last one.",
+          "why": "*Very* se s 2. stupněm nepoužívá. Zesiluje se *much, far, a lot*."
+        },
+        {
+          "type": "summary",
+          "text": "Velký rozdíl: **much / far / a lot** + 2. st. Malý: **slightly / a bit**. Čím dál: **worse and worse**. Čím…, tím: **the …er, the …er**."
+        }
+      ]
+    },
+    {
+      "title": "Vzorci",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Pokročilé srovnávání se dá shrnout do několika vzorců. Když je znáš, umíš přesně vyjádřit velikost rozdílu i vývoj. Tady jsou pohromadě, s pravidly tvoření a nepravidelnými tvary."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Přídavné jméno",
+          "definition": "Slovo, které popisuje vlastnost (jaký?).",
+          "example": "clever, patient, far"
+        },
+        {
+          "type": "term",
+          "term": "Stupňování",
+          "definition": "Tvoření 2. a 3. stupně: *-er / -est* u krátkých slov, *more / most* u dlouhých. Nikdy obojí najednou.",
+          "example": "cleverer nebo more clever, ne *more cleverer*"
+        },
+        {
+          "type": "term",
+          "term": "Nepravidelné stupňování",
+          "definition": "Tvary, které se musí naučit zpaměti.",
+          "example": "good – better – best, bad – worse – worst, little – less – least, many/much – more – most, far – farther/further – farthest/furthest"
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vzorec",
+            "Význam",
+            "Příklad"
+          ],
+          "rows": [
+            [
+              "much / far / a lot + 2. st.",
+              "mnohem",
+              "far more patient"
+            ],
+            [
+              "slightly / a bit / a little + 2. st.",
+              "o trochu",
+              "slightly cheaper"
+            ],
+            [
+              "less + přídavné jméno",
+              "méně",
+              "less patient (méně trpělivý)"
+            ],
+            [
+              "by far + 3. st.",
+              "zdaleka nej-",
+              "by far the best"
+            ],
+            [
+              "2. st. + and + 2. st.",
+              "čím dál",
+              "more and more popular"
+            ],
+            [
+              "the + 2. st. …, the + 2. st. …",
+              "čím …, tím …",
+              "The older he gets, the wiser he becomes."
+            ],
+            [
+              "(not) as … as",
+              "(ne) tak … jako",
+              "not as expensive as"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Postup"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Urči 2. stupeň správně: krátké *-er*, dlouhé *more*, nepravidelné zpaměti.",
+            "Chceš říct velikost rozdílu? Před 2. stupeň dej *much / far* nebo *slightly / a bit*.",
+            "Chceš vývoj? Zopakuj 2. stupeň s *and*.",
+            "Chceš „čím…, tím…“? Obě části začni *the* + 2. stupeň."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Doplň správný tvar."
+        },
+        {
+          "type": "widget",
+          "widget": "gap",
+          "props": {
+            "items": [
+              {
+                "before": "This test was",
+                "after": "easier than the last one.",
+                "options": [
+                  "much",
+                  "very",
+                  "more"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "The more you practise,",
+                "after": "you get.",
+                "options": [
+                  "the better",
+                  "better",
+                  "the best"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "The traffic is getting",
+                "after": ".",
+                "options": [
+                  "worse and worse",
+                  "more and more bad",
+                  "worst and worst"
+                ],
+                "answer": 0
+              },
+              {
+                "before": "My phone isn't",
+                "after": "expensive as yours.",
+                "options": [
+                  "as",
+                  "than"
+                ],
+                "answer": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Přelož: Jan je mnohem méně trpělivý než Eva.",
+          "answer": "Mnohem = *far*, méně trpělivý = *less patient*: *Jan is far less patient than Eva.*"
+        },
+        {
+          "type": "example",
+          "question": "Doplň: Prague is ___ (far) from Ostrava than Brno is.",
+          "answer": "Nepravidelné: *far – farther / further*. Oba tvary jsou u vzdálenosti správně."
+        },
+        {
+          "type": "mistake",
+          "wrong": "She is more cleverer than me.",
+          "right": "She is cleverer than me. / She is more clever than me.",
+          "why": "Buď koncovka *-er*, nebo *more* – nikdy obojí najednou."
+        },
+        {
+          "type": "summary",
+          "text": "Rozdíl: **much/far** × **slightly**. Vývoj: **X-er and X-er**. Čím…, tím: **the X-er, the Y-er**. Nikdy *more* + *-er*."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "This test was ___ easier than the last one.",
+      "options": [
+        "much",
+        "very",
+        "more"
+      ],
+      "answer": 0,
+      "explanation": "2. stupeň zesiluje *much*, ne *very*."
+    },
+    {
+      "type": "choice",
+      "question": "The more you practise, ___ you get.",
+      "options": [
+        "the better",
+        "better",
+        "the best"
+      ],
+      "answer": 0,
+      "explanation": "Čím…, tím… = *the + 2. st., the + 2. st.*"
+    },
+    {
+      "type": "choice",
+      "question": "The traffic is getting ___.",
+      "options": [
+        "worse and worse",
+        "more and more bad",
+        "worst and worst"
+      ],
+      "answer": 0,
+      "explanation": "*bad – worse*, čím dál = opakování 2. stupně."
+    },
+    {
+      "type": "input",
+      "question": "Doplň 2. stupeň: Prague is ___ (far) from Ostrava than Brno is.",
+      "answers": [
+        "farther",
+        "further"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Doplň: My phone isn't ___ expensive as yours.",
+      "answers": [
+        "as",
+        "so"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "„She is more cleverer than me.“ je správně.",
+      "answer": false,
+      "explanation": "Buď *cleverer*, nebo *more clever*, nikdy obojí."
+    },
+    {
+      "type": "truefalse",
+      "question": "„It was by far the best film of the year.“ je správně.",
+      "answer": true,
+      "explanation": "*by far* zesiluje 3. stupeň."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď slova do věty.",
+      "items": [
+        "The more",
+        "you read,",
+        "the more",
+        "you know."
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj 1. a 2. stupeň.",
+      "pairs": [
+        [
+          "good",
+          "better"
+        ],
+        [
+          "bad",
+          "worse"
+        ],
+        [
+          "little",
+          "less"
+        ],
+        [
+          "many",
+          "more"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Která věta znamená „Jan je mnohem méně trpělivý než Eva“?",
+      "options": [
+        "Jan is far less patient than Eva.",
+        "Jan is far more patient than Eva.",
+        "Jan is as patient as Eva."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak v angličtině řekneš „čím víc, tím líp“ a jak se tvoří tato konstrukce?",
+      "answer": "*The more, the better.* Tvoří se *the + 2. stupeň…, the + 2. stupeň…*, např. *The older he gets, the wiser he becomes.*"
+    },
+    {
+      "type": "open",
+      "question": "Jak zesílit nebo zmírnit rozdíl při srovnání?",
+      "answer": "Před 2. stupeň dáme *much, far, a lot* (velký rozdíl) nebo *slightly, a bit, a little* (malý rozdíl). *Very* se s 2. stupněm nepoužívá."
+    }
+  ]
+}

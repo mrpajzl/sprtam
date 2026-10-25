@@ -1,0 +1,414 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "rovnobezniky-lichobeznik",
+  "title": "Rovnoběžníky a lichoběžník",
+  "emoji": "🔷",
+  "generator": "perimeter-area",
+  "explanations": [
+    {
+      "title": "Přestřihni",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Čtverec a obdélník už znáš. Teď si představ obdélník z brček, který trochu „zmáčkneš“ do boku – rohy už nejsou pravé, ale protější strany zůstanou rovnoběžné. Vznikl **rovnoběžník**."
+        },
+        {
+          "type": "text",
+          "text": "Takové tvary mají dlaždice, střechy, schody nebo dopravní značky. Naučíš se je poznat a spočítat jejich obsah – kolik plochy zabírají."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Rovnoběžky",
+          "definition": "Dvě přímky, které jdou stejným směrem a nikdy se neprotnou, ani když je prodloužíš.",
+          "example": "Koleje vlaku nebo linky v sešitě."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoběžník",
+          "definition": "Čtyřúhelník, který má **dvě dvojice** rovnoběžných stran. Protější strany jsou stejně dlouhé.",
+          "example": "Čtverec, obdélník, „zmáčknutý“ obdélník."
+        },
+        {
+          "type": "term",
+          "term": "Lichoběžník",
+          "definition": "Čtyřúhelník, který má **jen jednu** dvojici rovnoběžných stran. Těm se říká **základny**, zbylým dvěma ramena.",
+          "example": "Tvar kbelíku z boku nebo střechy domu."
+        },
+        {
+          "type": "term",
+          "term": "Výška",
+          "definition": "Kolmá vzdálenost mezi dvěma rovnoběžnými stranami – jak „vysoký“ útvar je, měřeno svisle, ne po šikmé straně.",
+          "example": "Jako když měříš výšku dítěte: rovně od země nahoru, ne podél nakloněných zad."
+        },
+        {
+          "type": "term",
+          "term": "Obsah (S)",
+          "definition": "Kolik plochy útvar zabírá. Měří se ve čtverečcích cm².",
+          "example": "Obdélník 6 × 3 cm má obsah 18 cm²."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus s nůžkami"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Nakresli na papír šikmý rovnoběžník a vystřihni ho.",
+            "Z jednoho kraje odstřihni trojúhelník – řez veď kolmo dolů (to je výška).",
+            "Trojúhelník přilož na druhý kraj.",
+            "Vznikl obdélník! Má stejnou spodní stranu a stejnou výšku."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Obsah obdélníku je strana krát výška. Měň strany a sleduj obsah – rovnoběžník se stejnou stranou a výškou má obsah úplně stejný."
+        },
+        {
+          "type": "widget",
+          "widget": "shape",
+          "props": {
+            "shape": "rect",
+            "a": 6,
+            "b": 3
+          }
+        },
+        {
+          "type": "text",
+          "text": "Proto: **obsah rovnoběžníku = strana · výška k ní** (S = a · v)."
+        },
+        {
+          "type": "heading",
+          "text": "A lichoběžník?"
+        },
+        {
+          "type": "text",
+          "text": "Vezmi dva stejné lichoběžníky a jeden otoč vzhůru nohama. Přiložené k sobě tvoří rovnoběžník. Jeho strana je a + c (obě základny) a výška v. Jeden lichoběžník je polovina: **S = (a + c) · v : 2**."
+        },
+        {
+          "type": "example",
+          "question": "Rovnoběžník má stranu 7 cm a výšku k ní 4 cm. Obsah?",
+          "answer": "S = a · v = 7 · 4 = **28 cm²**."
+        },
+        {
+          "type": "example",
+          "question": "Lichoběžník: základny 10 cm a 6 cm, výška 3 cm. Obsah?",
+          "answer": "S = (10 + 6) · 3 : 2 = 16 · 3 : 2 = **24 cm²**."
+        },
+        {
+          "type": "heading",
+          "text": "Čtyři druhy rovnoběžníků"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Čtverec**: všechny strany stejné, pravé úhly.",
+            "**Obdélník**: protější strany stejné, pravé úhly.",
+            "**Kosočtverec**: všechny strany stejné, úhly nejsou pravé (zmáčknutý čtverec).",
+            "**Kosodélník**: protější strany stejné, úhly nejsou pravé (zmáčknutý obdélník)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "U všech platí: protější úhly jsou stejné a dva sousední úhly dají dohromady 180°."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Obsah šikmého rovnoběžníku = strana · šikmá strana.",
+          "right": "S = strana · **výška** (kolmá vzdálenost).",
+          "why": "Když rovnoběžník víc zmáčkneš, šikmá strana zůstane stejná, ale útvar je nižší a má menší plochu. Rozhoduje výška."
+        },
+        {
+          "type": "summary",
+          "text": "Rovnoběžník: S = a · v. Lichoběžník: S = (a + c) · v : 2. Výška je vždy kolmá vzdálenost."
+        }
+      ]
+    },
+    {
+      "title": "Přehled",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Čtyřúhelníků je hodně druhů a mají podobná jména. Tady si je seřadíš jako rodinu – podle stran, úhlů a úhlopříček – a k tomu se naučíš vzorce pro obvod a obsah."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Čtyřúhelník",
+          "definition": "Obrazec se čtyřmi stranami a čtyřmi rohy (vrcholy).",
+          "example": "Čtverec, obdélník, drak."
+        },
+        {
+          "type": "term",
+          "term": "Rovnoběžné strany",
+          "definition": "Strany, které jdou stejným směrem a nikdy se neprotnou.",
+          "example": "Horní a dolní strana obdélníku."
+        },
+        {
+          "type": "term",
+          "term": "Úhlopříčka",
+          "definition": "Úsečka, která spojuje dva protější rohy.",
+          "example": "Čtyřúhelník má 2 úhlopříčky."
+        },
+        {
+          "type": "term",
+          "term": "Výška v",
+          "definition": "Kolmá vzdálenost dvou rovnoběžných stran.",
+          "example": "Měří se pravítkem s ryskou, pod pravým úhlem."
+        },
+        {
+          "type": "heading",
+          "text": "Rodina rovnoběžníků"
+        },
+        {
+          "type": "text",
+          "text": "**Rovnoběžník** má dvě dvojice rovnoběžných stran. Jsou čtyři druhy:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "útvar",
+            "strany",
+            "úhly"
+          ],
+          "rows": [
+            [
+              "čtverec",
+              "všechny shodné",
+              "pravé"
+            ],
+            [
+              "obdélník",
+              "protější shodné",
+              "pravé"
+            ],
+            [
+              "kosočtverec",
+              "všechny shodné",
+              "ne pravé"
+            ],
+            [
+              "kosodélník",
+              "protější shodné",
+              "ne pravé"
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Protější úhly jsou stejné, sousední dají dohromady 180°.",
+            "Úhlopříčky se navzájem půlí.",
+            "U kosočtverce (a čtverce) jsou úhlopříčky na sebe kolmé.",
+            "Čtverec je zvláštní kosočtverec (všechny strany shodné) i zvláštní obdélník (pravé úhly)."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "**Lichoběžník** má jen jednu dvojici rovnoběžných stran – **základny** a a c. Proto rovnoběžník není."
+        },
+        {
+          "type": "heading",
+          "text": "Vzorce"
+        },
+        {
+          "type": "table",
+          "head": [
+            "útvar",
+            "obvod",
+            "obsah"
+          ],
+          "rows": [
+            [
+              "rovnoběžník",
+              "2 · (a + b)",
+              "a · v"
+            ],
+            [
+              "kosočtverec",
+              "4 · a",
+              "a · v"
+            ],
+            [
+              "lichoběžník",
+              "a + b + c + d",
+              "(a + c) · v : 2"
+            ]
+          ]
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Urči, o jaký útvar jde.",
+            "Najdi v zadání stranu a výšku **k ní** (u lichoběžníku obě základny).",
+            "Dosaď do vzorce.",
+            "Připiš jednotku: obvod v cm, obsah v cm²."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Rovnoběžník má obsah 36 cm² a stranu 9 cm. Jaká je výška k této straně?",
+          "answer": "S = a · v, tedy 36 = 9 · v. v = 36 : 9 = **4 cm**."
+        },
+        {
+          "type": "example",
+          "question": "V rovnoběžníku má jeden úhel 70°. Kolik má úhel vedle něj?",
+          "answer": "Sousední úhly dají 180°. 180 − 70 = **110°**."
+        },
+        {
+          "type": "text",
+          "text": "Procvič rozhodování: rovnoběžník, nebo ne?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "rovnoběžník",
+              "není rovnoběžník"
+            ],
+            "items": [
+              {
+                "text": "čtverec",
+                "group": 0
+              },
+              {
+                "text": "obdélník",
+                "group": 0
+              },
+              {
+                "text": "kosočtverec",
+                "group": 0
+              },
+              {
+                "text": "kosodélník",
+                "group": 0
+              },
+              {
+                "text": "lichoběžník",
+                "group": 1
+              },
+              {
+                "text": "trojúhelník",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "mistake",
+          "wrong": "Lichoběžník je rovnoběžník, protože má rovnoběžné strany.",
+          "right": "Lichoběžník má rovnoběžnou jen **jednu** dvojici stran.",
+          "why": "Rovnoběžník musí mít rovnoběžné **obě** dvojice protějších stran."
+        },
+        {
+          "type": "summary",
+          "text": "Rovnoběžník má dvě dvojice rovnoběžných stran (čtverec, obdélník, kosočtverec, kosodélník), lichoběžník jen jednu. S = a · v, u lichoběžníku S = (a + c) · v : 2."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "Rovnoběžník: a = 7 cm, v = 4 cm. Obsah v cm²?",
+      "answers": [
+        "28"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Lichoběžník: a = 10 cm, c = 6 cm, v = 3 cm. Obsah v cm²?",
+      "answers": [
+        "24"
+      ],
+      "explanation": "(10 + 6) · 3 / 2 = 24"
+    },
+    {
+      "type": "input",
+      "question": "Obvod kosočtverce se stranou 5 cm (v cm)?",
+      "answers": [
+        "20"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Čtverec je zvláštní případ kosočtverce.",
+      "answer": true,
+      "explanation": "Má všechny strany shodné."
+    },
+    {
+      "type": "truefalse",
+      "question": "Lichoběžník je rovnoběžník.",
+      "answer": false,
+      "explanation": "Má jen jednu dvojici rovnoběžných stran."
+    },
+    {
+      "type": "choice",
+      "question": "Úhlopříčky kosočtverce jsou…",
+      "options": [
+        "na sebe kolmé",
+        "vždy shodné",
+        "rovnoběžné",
+        "nikdy se neprotnou"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "V rovnoběžníku je jeden úhel 70°. Kolik stupňů má úhel sousední?",
+      "answers": [
+        "110"
+      ],
+      "explanation": "Sousední úhly dají 180°."
+    },
+    {
+      "type": "input",
+      "question": "Obvod obdélníku 8 cm × 5 cm (v cm)?",
+      "answers": [
+        "26"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Rovnoběžník s obsahem 36 cm² a stranou 9 cm má výšku k ní…",
+      "options": [
+        "4 cm",
+        "27 cm",
+        "18 cm",
+        "3 cm"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "V každém rovnoběžníku jsou protější úhly shodné.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jak spočítáš obsah lichoběžníku a proč?",
+      "answer": "S = (a + c) · v / 2. Dva shodné lichoběžníky složené k sobě tvoří rovnoběžník se stranou a + c a výškou v; jeden lichoběžník je polovina."
+    },
+    {
+      "type": "open",
+      "question": "Jaké druhy rovnoběžníků znáš?",
+      "answer": "Čtverec, obdélník, kosočtverec a kosodélník. Liší se tím, zda mají pravé úhly a zda jsou všechny strany shodné."
+    }
+  ]
+}

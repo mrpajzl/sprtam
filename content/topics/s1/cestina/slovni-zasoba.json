@@ -1,0 +1,393 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "slovni-zasoba",
+  "title": "Slovní zásoba a význam slov",
+  "emoji": "📖",
+  "explanations": [
+    {
+      "title": "Vztahy mezi slovy",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Slova nežijí každé zvlášť. Mají „příbuzné“, „sourozence“ i „protivníky“. *Velký* a *obrovský* si jsou blízko, *velký* a *malý* stojí proti sobě."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Když znáš vztahy mezi slovy, píšeš pestřeji (neopakuješ pořád stejné slovo) a nespleteš si slova, která jen podobně znějí – třeba *efektní* a *efektivní*."
+        },
+        {
+          "type": "term",
+          "term": "Slovní zásoba",
+          "definition": "Všechna slova, která jazyk má (nebo která zná jeden člověk).",
+          "example": "Čeština má statisíce slov, běžný člověk aktivně používá desítky tisíc."
+        },
+        {
+          "type": "term",
+          "term": "Význam slova",
+          "definition": "To, co si pod slovem představíme – věc, děj nebo vlastnost, kterou pojmenovává.",
+          "example": "*stůl* = kus nábytku s deskou a nohama"
+        },
+        {
+          "type": "heading",
+          "text": "Sourozenci a protivníci"
+        },
+        {
+          "type": "term",
+          "term": "Synonyma",
+          "definition": "Slova se stejným nebo podobným významem.",
+          "example": "*dívka – děvče*, *hezký – pěkný*"
+        },
+        {
+          "type": "term",
+          "term": "Antonyma",
+          "definition": "Slova s opačným významem.",
+          "example": "*velký – malý*, *den – noc*, *začátek – konec*"
+        },
+        {
+          "type": "heading",
+          "text": "Stejný tvar, různý význam"
+        },
+        {
+          "type": "term",
+          "term": "Homonyma",
+          "definition": "Slova, která vypadají stejně, ale jejich významy spolu **nesouvisejí**. Shoda je náhodná.",
+          "example": "*kolej* (u vlaku × na univerzitě), *los* (zvíře × lístek do loterie)"
+        },
+        {
+          "type": "term",
+          "term": "Mnohoznačné slovo",
+          "definition": "Jedno slovo s více významy, které spolu **souvisejí** – jeden vznikl z druhého.",
+          "example": "*koruna* královská → koruna stromu (nahoře) → koruna (peníze)"
+        },
+        {
+          "type": "term",
+          "term": "Paronyma",
+          "definition": "Slova, která **znějí podobně**, ale mají jiný význam. Snadno se spletou.",
+          "example": "*efektní* (působivý) × *efektivní* (účinný); *adaptovat* × *adoptovat*"
+        },
+        {
+          "type": "heading",
+          "text": "Nadřazené a podřazené"
+        },
+        {
+          "type": "term",
+          "term": "Hyperonymum (nadřazené slovo)",
+          "definition": "Slovo s obecnějším významem, které zahrnuje jiná slova.",
+          "example": "*strom*"
+        },
+        {
+          "type": "term",
+          "term": "Hyponymum (podřazené slovo)",
+          "definition": "Slovo s užším významem, které patří pod obecnější slovo.",
+          "example": "*dub, lípa, bříza* (to vše jsou stromy)"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Zařaď dvojice. U homonym se zeptej: souvisí ty dva významy, nebo je to náhoda?"
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "synonyma",
+              "antonyma",
+              "homonyma"
+            ],
+            "items": [
+              {
+                "text": "smutný – veselý",
+                "group": 1
+              },
+              {
+                "text": "pes – čokl",
+                "group": 0
+              },
+              {
+                "text": "jeřáb (pták / strom)",
+                "group": 2
+              },
+              {
+                "text": "začátek – konec",
+                "group": 1
+              },
+              {
+                "text": "oči – zraky",
+                "group": 0
+              },
+              {
+                "text": "los (zvíře / lístek)",
+                "group": 2
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Je *koruna* homonymum, nebo mnohoznačné slovo?",
+          "answer": "Ptám se: souvisejí významy? Královská koruna je nahoře na hlavě, koruna stromu nahoře na kmeni – podobnost. Významy souvisejí → **mnohoznačné slovo**."
+        },
+        {
+          "type": "example",
+          "question": "Doplň: *Nová metoda je velmi ___ – ušetří polovinu času.* (efektní / efektivní)",
+          "answer": "Metoda šetří čas = je **účinná**. Účinný = **efektivní**. *Efektní* by znamenalo „působivá, nápadná“."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Ten ohňostroj byl moc efektivní.",
+          "right": "Ten ohňostroj byl moc efektní.",
+          "why": "Ohňostroj je působivý (efektní). *Efektivní* znamená účinný – hodí se k metodě, léku, práci."
+        },
+        {
+          "type": "summary",
+          "text": "Synonyma = podobný význam, antonyma = opačný. Homonyma = stejný tvar, nesouvisející významy; mnohoznačné slovo = příbuzné významy. Paronyma = podobný zvuk, jiný význam."
+        }
+      ]
+    },
+    {
+      "title": "Jak vznikají slova",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Před třiceti lety nikdo neříkal *esemeska* ani *selfie*. Slovní zásoba se pořád mění: slova přibývají a jiná mizí."
+        },
+        {
+          "type": "text",
+          "text": "K čemu to je? Pochopíš, odkud se nová slova berou, a budeš umět pojmenovat, jak slovo vzniklo. Na to se ptají testy i maturita."
+        },
+        {
+          "type": "term",
+          "term": "Slovní zásoba",
+          "definition": "Soubor všech slov jazyka.",
+          "example": "od *a* po *žvýkačka*"
+        },
+        {
+          "type": "term",
+          "term": "Neologismus",
+          "definition": "Nové slovo, které jazyk teprve nedávno přijal.",
+          "example": "*selfie*, *covid*, *influencer*"
+        },
+        {
+          "type": "term",
+          "term": "Archaismus",
+          "definition": "Zastaralé slovo. Věc existuje, ale říká se jí dnes jinak.",
+          "example": "*lučba* (= chemie), *kterak* (= jak)"
+        },
+        {
+          "type": "heading",
+          "text": "Pět cest k novému pojmenování"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "**Tvoření slov** – ze starého slova uděláme nové: *zahrada → zahradník*, *voda + padat → vodopád*.",
+            "**Přejímání** – slovo si vypůjčíme z cizího jazyka: *víkend*, *e-mail*, *fotbal*.",
+            "**Víceslovné pojmenování (sousloví)** – věc pojmenujeme více slovy: *zubní pasta*, *železná opona*.",
+            "**Metafora** – staré slovo použijeme pro novou věc, protože se **podobá**: *noha stolu* (vypadá jako noha), *myš* u počítače.",
+            "**Metonymie** – slovo přeneseme, protože věci spolu **souvisejí** (ne že by se podobaly): *čtu Čapka* (autor místo jeho knihy), *celá škola tleskala* (budova místo lidí)."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Metafora",
+          "definition": "Přenesení pojmenování na základě **podobnosti**.",
+          "example": "*hlava* rodiny, *zub* pily"
+        },
+        {
+          "type": "term",
+          "term": "Metonymie",
+          "definition": "Přenesení pojmenování na základě **souvislosti** (autor–dílo, místo–lidé, obal–obsah).",
+          "example": "*vypil dvě sklenice* (obsah, ne sklo)"
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Přečti pojem, řekni si vlastní příklad a pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "zubní pasta",
+                "back": "víceslovné pojmenování"
+              },
+              {
+                "front": "víkend",
+                "back": "přejaté slovo (z angličtiny)"
+              },
+              {
+                "front": "noha stolu",
+                "back": "metafora – podobnost"
+              },
+              {
+                "front": "čtu Čapka",
+                "back": "metonymie – autor místo díla"
+              },
+              {
+                "front": "zahradník",
+                "back": "tvoření slov (odvozování)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Jak vzniklo pojmenování *myš* (u počítače)?",
+          "answer": "Starší slovo dostalo nový význam. Ovladač je malý, šedý a má „ocásek“ – kabel. Je to přenesení na základě **podobnosti** → **metafora**."
+        },
+        {
+          "type": "example",
+          "question": "Jak vzniklo pojmenování ve větě *Praha dnes rozhodla o novém zákonu.*?",
+          "answer": "O zákonu nerozhodlo město, ale vláda, která v něm sídlí. Místo a lidé spolu **souvisejí** → **metonymie**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "*Noha stolu* je metonymie.",
+          "right": "*Noha stolu* je metafora.",
+          "why": "Stolní noha se lidské noze **podobá** (tvarem i funkcí – nese). Podobnost = metafora. Souvislost = metonymie."
+        },
+        {
+          "type": "summary",
+          "text": "Slovní zásoba roste tvořením slov, přejímáním, víceslovnými pojmenováními a přenášením významu (metafora = podobnost, metonymie = souvislost). Nová slova jsou neologismy, zastaralá archaismy."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Která dvojice jsou synonyma?",
+      "options": [
+        "hezký – pěkný",
+        "hezký – ošklivý",
+        "hezký – hezčí"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Které slovo je homonymum?",
+      "options": [
+        "kolej",
+        "stůl",
+        "kamarád",
+        "běžet"
+      ],
+      "answer": 0,
+      "explanation": "Kolej (železniční / vysokoškolská) – nesouvisející významy."
+    },
+    {
+      "type": "choice",
+      "question": "Co znamená „efektivní“?",
+      "options": [
+        "účinný",
+        "působivý, nápadný",
+        "drahý",
+        "rychlý"
+      ],
+      "answer": 0,
+      "explanation": "Efektní = působivý; efektivní = účinný. Jde o paronyma."
+    },
+    {
+      "type": "truefalse",
+      "question": "Slovo „strom“ je nadřazené (hyperonymum) slovu „lípa“.",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "„Noha stolu“ je přenesení významu na základě vnější podobnosti (metafora).",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Jak vzniklo pojmenování „zubní pasta“?",
+      "options": [
+        "víceslovné pojmenování (sousloví)",
+        "přejetí",
+        "skládání",
+        "zkracování"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Napiš antonymum ke slovu „začátek“.",
+      "answers": [
+        "konec"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj pojem s příkladem.",
+      "pairs": [
+        [
+          "synonyma",
+          "dívka – děvče"
+        ],
+        [
+          "antonyma",
+          "den – noc"
+        ],
+        [
+          "paronyma",
+          "adaptovat – adoptovat"
+        ],
+        [
+          "mnohoznačné slovo",
+          "koruna"
+        ]
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Ve větě „Čtu Čapka“ jde o:",
+      "options": [
+        "metonymii",
+        "metaforu",
+        "homonymii",
+        "synonymii"
+      ],
+      "answer": 0,
+      "explanation": "Autor místo díla – přenesení na základě věcné souvislosti."
+    },
+    {
+      "type": "choice",
+      "question": "Co je neologismus?",
+      "options": [
+        "nové slovo",
+        "zastaralé slovo",
+        "nářeční slovo",
+        "slovo s opačným významem"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Vysvětli rozdíl mezi homonymem a mnohoznačným slovem.",
+      "answer": "Homonyma mají stejnou podobu, ale jejich významy spolu nesouvisejí (kolej, los). Mnohoznačné slovo má více významů, které jsou příbuzné, odvozené jeden od druhého (koruna stromu, královská koruna)."
+    },
+    {
+      "type": "open",
+      "question": "Jakými způsoby se obohacuje slovní zásoba?",
+      "answer": "Tvořením nových slov (odvozování, skládání, zkracování), přejímáním z cizích jazyků, tvořením víceslovných pojmenování a přenášením významu (metafora, metonymie)."
+    }
+  ]
+}

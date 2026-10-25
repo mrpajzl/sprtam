@@ -1,0 +1,362 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "magnety",
+  "title": "Magnety",
+  "emoji": "🧲",
+  "explanations": [
+    {
+      "title": "Pokusem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Na lednici drží obrázek magnetka. Dvířka skříňky drží zavřená magnet. Kompas ukazuje turistům cestu. Všude pracuje **magnetismus**."
+        },
+        {
+          "type": "text",
+          "text": "Vyzkoušíme, co magnet umí a co ne."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Magnet",
+          "definition": "Těleso, které samo přitahuje některé kovy, hlavně železo.",
+          "example": "Magnetka na lednici, magnetická hračka, uzávěr na pouzdře."
+        },
+        {
+          "type": "term",
+          "term": "Pól magnetu",
+          "definition": "Místo na magnetu, kde přitahuje **nejsilněji**. Každý magnet má dva póly: **severní (N)** a **jižní (S)**.",
+          "example": "U tyčového magnetu jsou póly na koncích. Bývají obarvené červeně a zeleně nebo modře."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 1: co magnet přitáhne"
+        },
+        {
+          "type": "text",
+          "text": "Přibliž magnet k různým věcem. Roztřiď je podle toho, jestli je magnet přitáhne."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "magnet přitáhne",
+              "nepřitáhne"
+            ],
+            "items": [
+              {
+                "text": "železný hřebík",
+                "group": 0
+              },
+              {
+                "text": "ocelová sponka",
+                "group": 0
+              },
+              {
+                "text": "nikl",
+                "group": 0
+              },
+              {
+                "text": "kobalt",
+                "group": 0
+              },
+              {
+                "text": "hliníková fólie",
+                "group": 1
+              },
+              {
+                "text": "měděný drát",
+                "group": 1
+              },
+              {
+                "text": "dřevo",
+                "group": 1
+              },
+              {
+                "text": "sklo",
+                "group": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "term",
+          "term": "Feromagnetické látky",
+          "definition": "Látky, které magnet přitahuje: **železo, nikl, kobalt** a slitiny z nich (třeba ocel).",
+          "example": "Ocelový hřebík ano, hliníková plechovka ne."
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 2: dva magnety"
+        },
+        {
+          "type": "text",
+          "text": "Přibliž k sobě dva magnety. Jednou se k sobě přicvaknou, jindy se odstrkují. Záleží na tom, které póly k sobě dáš."
+        },
+        {
+          "type": "list",
+          "items": [
+            "N k S → **přitahují** se.",
+            "N k N → **odpuzují** se.",
+            "S k S → **odpuzují** se."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pokus 3: rozlomený magnet"
+        },
+        {
+          "type": "text",
+          "text": "Když tyčový magnet rozlomíš, nevznikne „jen severní“ a „jen jižní“ kus. Vzniknou **dva menší magnety** a každý má zase oba póly N i S."
+        },
+        {
+          "type": "example",
+          "question": "Na stole leží hliníková lžička a ocelový šroubek. Co magnet zvedne?",
+          "answer": "Ocelový šroubek. Ocel obsahuje **železo**. Hliník mezi feromagnetické látky nepatří."
+        },
+        {
+          "type": "example",
+          "question": "Dva magnety se odpuzují. Jeden má k druhému otočený pól N. Jaký pól má druhý?",
+          "answer": "Odpuzují se **stejné** póly. Druhý magnet tedy má otočený také pól **N**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Magnet přitahuje všechny kovy.",
+          "right": "Magnet přitahuje jen železo, nikl, kobalt a jejich slitiny.",
+          "why": "Hliník, měď, zlato ani stříbro magnet nepřitáhne, i když jsou to kovy."
+        },
+        {
+          "type": "summary",
+          "text": "Magnet přitahuje železo, nikl a kobalt. Má póly N a S: stejné se odpuzují, různé přitahují."
+        }
+      ]
+    },
+    {
+      "title": "Póly a pole",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Magnet působí na sponku, i když se jí nedotkne. Jako by kolem sebe měl neviditelnou „bublinu“ síly."
+        },
+        {
+          "type": "text",
+          "text": "Tahle bublina má i naše Země. Díky ní funguje kompas a lidé se odedávna mohli orientovat na moři i v lese."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Magnet",
+          "definition": "Těleso, které přitahuje železo, nikl a kobalt.",
+          "example": "Magnetka na ledničce."
+        },
+        {
+          "type": "term",
+          "term": "Severní a jižní pól",
+          "definition": "Dvě místa, kde magnet působí nejsilněji. Značí se **N** (z anglického north = sever) a **S** (south = jih).",
+          "example": "Tyčový magnet má jeden pól na každém konci."
+        },
+        {
+          "type": "term",
+          "term": "Magnetické pole",
+          "definition": "Prostor kolem magnetu, ve kterém magnet působí na jiné magnety a na železo.",
+          "example": "Sponka 2 cm od magnetu je ještě v jeho poli – magnet ji přitáhne."
+        },
+        {
+          "type": "heading",
+          "text": "Jak pole zviditelnit"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Na magnet polož papír.",
+            "Na papír nasyp **železné piliny** (drobounké kousíčky železa).",
+            "Lehce poklepej na papír.",
+            "Piliny se seřadí do čar od jednoho pólu k druhému. Ukazují tvar magnetického pole.",
+            "U pólů je pilin nejvíc – tam je pole nejsilnější."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pravidlo pólů"
+        },
+        {
+          "type": "text",
+          "text": "Otoč karty a zkus nejdřív odpovědět sám."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "N a N",
+                "back": "odpuzují se"
+              },
+              {
+                "front": "N a S",
+                "back": "přitahují se"
+              },
+              {
+                "front": "S a S",
+                "back": "odpuzují se"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Země jako magnet"
+        },
+        {
+          "type": "term",
+          "term": "Kompas",
+          "definition": "Přístroj s lehkou magnetickou **střelkou** (malým magnetem ve tvaru ručičky), která se může volně otáčet.",
+          "example": "Turista podle kompasu najde sever."
+        },
+        {
+          "type": "text",
+          "text": "Země má kolem sebe magnetické pole, jako by v ní byl obří magnet. Střelka kompasu se v tomto poli natočí tak, že její severní konec ukazuje **k severu**."
+        },
+        {
+          "type": "example",
+          "question": "Proč kompas nefunguje správně vedle velkého magnetu?",
+          "answer": "Střelka je malý magnet. Velký magnet ji přitáhne nebo odpudí silněji než pole Země, takže střelka ukáže k magnetu, ne k severu."
+        },
+        {
+          "type": "example",
+          "question": "Kde tyčový magnet udrží nejvíc sponek?",
+          "answer": "Na **pólech**, tedy na koncích. Uprostřed magnetu je přitahování nejslabší."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Uprostřed tyčového magnetu je přitažlivost nejsilnější.",
+          "right": "Nejsilnější je u pólů, na koncích magnetu.",
+          "why": "Ukážou to piliny: na koncích se jich nahromadí nejvíc, uprostřed skoro žádné."
+        },
+        {
+          "type": "summary",
+          "text": "Kolem magnetu je magnetické pole, nejsilnější u pólů. Stejné póly se odpuzují, různé přitahují. Země má magnetické pole, proto funguje kompas."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Co magnet přitáhne?",
+      "options": [
+        "železný hřebík",
+        "hliníkovou lžičku",
+        "měděnou minci",
+        "plastové víčko"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Dva severní póly se přitahují.",
+      "answer": false,
+      "explanation": "Souhlasné póly se odpuzují."
+    },
+    {
+      "type": "truefalse",
+      "question": "Severní a jižní pól se přitahují.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kde je u tyčového magnetu přitažlivost nejsilnější?",
+      "options": [
+        "u pólů",
+        "uprostřed",
+        "všude stejná"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Jedním slovem: čím zviditelníme magnetické pole na papíře?",
+      "answers": [
+        "piliny",
+        "pilinami",
+        "železné piliny"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co se stane, když magnet rozlomíš napůl?",
+      "options": [
+        "vzniknou dva magnety, každý s N i S",
+        "jeden kus bude jen N, druhý jen S",
+        "magnet přestane fungovat"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "truefalse",
+      "question": "Země má magnetické pole.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Kam ukazuje severní konec střelky kompasu?",
+      "options": [
+        "k severu",
+        "k jihu",
+        "k východu",
+        "kam chce"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "match",
+      "question": "Spoj dvojici pólů s tím, co se stane.",
+      "pairs": [
+        [
+          "N a N",
+          "odpuzují se"
+        ],
+        [
+          "N a S",
+          "přitahují se"
+        ],
+        [
+          "S a S",
+          "odpuzují se"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Magnet přitahuje všechny kovy.",
+      "answer": false,
+      "explanation": "Jen feromagnetické: železo, nikl, kobalt (a jejich slitiny)."
+    },
+    {
+      "type": "open",
+      "question": "Jak se navzájem chovají póly dvou magnetů?",
+      "answer": "Každý magnet má severní a jižní pól. Souhlasné póly se odpuzují, nesouhlasné se přitahují."
+    },
+    {
+      "type": "open",
+      "question": "Jak funguje kompas?",
+      "answer": "Střelka kompasu je malý magnet. Natočí se v magnetickém poli Země, severní konec ukazuje k severu."
+    }
+  ]
+}

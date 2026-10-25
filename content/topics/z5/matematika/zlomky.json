@@ -1,0 +1,303 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "zlomky",
+  "title": "Zlomky",
+  "emoji": "🍰",
+  "generator": "frac-add",
+  "explanations": [
+    {
+      "title": "Na dortu",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Dort je nakrájený na 8 dílků. Ty sníš 3, sestra 2. Kolik dortu zmizelo? A kolik ho zbylo?"
+        },
+        {
+          "type": "text",
+          "text": "Se zlomky se dá počítat jako s čísly – sčítat, odčítat, porovnávat. Potřebuješ to v kuchyni, u času, u peněz i u slev."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Zlomek",
+          "definition": "Zápis části celku: čitatel / jmenovatel.",
+          "example": "3/8 – tři osminy"
+        },
+        {
+          "type": "term",
+          "term": "Jmenovatel",
+          "definition": "Spodní číslo. Na kolik **stejných dílů** je celek rozdělený – určuje velikost dílku.",
+          "example": "V 3/8 je to 8 – osminy."
+        },
+        {
+          "type": "term",
+          "term": "Čitatel",
+          "definition": "Horní číslo. **Kolik dílků** máme.",
+          "example": "V 3/8 je to 3."
+        },
+        {
+          "type": "term",
+          "term": "Celek",
+          "definition": "Všechny dílky dohromady. Když čitatel = jmenovatel, je to 1 celek.",
+          "example": "8/8 = 1"
+        },
+        {
+          "type": "heading",
+          "text": "Sčítání dílků"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ty: **3/8**. Sestra: **2/8**.",
+            "Dílky jsou stejně velké (osminy).",
+            "Sečti jen počty dílků: 3 + 2 = 5.",
+            "Snědli jste **5/8**."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Vybarveno je 5/8 – to jste snědli. Kolik dílků zbylo? Uber čitatel na 3 a pak přidej až na 8."
+        },
+        {
+          "type": "widget",
+          "widget": "fraction",
+          "props": {
+            "numerator": 5,
+            "denominator": 8
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik dortu zbylo?",
+          "answer": "Celý dort = 8/8. 8/8 − 5/8 = **3/8**."
+        },
+        {
+          "type": "example",
+          "question": "Kolik je 3/5 z 40?",
+          "answer": "Jedna pětina: 40 : 5 = 8. Tři pětiny: 8 · 3 = **24**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1/2 + 1/2 = 2/4",
+          "right": "1/2 + 1/2 = 2/2 = **1**",
+          "why": "Jmenovatel říká velikost dílku a ta se nemění. Dvě poloviny dortu jsou celý dort, ne dvě čtvrtiny."
+        },
+        {
+          "type": "summary",
+          "text": "Stejný jmenovatel: sčítej a odčítej jen čitatele, jmenovatel opiš."
+        }
+      ]
+    },
+    {
+      "title": "Na ose",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Zlomky jsou **čísla** jako každá jiná. Mají své místo na číselné ose – mezi 0 a 1 a dál."
+        },
+        {
+          "type": "text",
+          "text": "Na ose hned vidíš, který zlomek je větší, a jak se zlomky sčítají – skoky jako u celých čísel."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Číselná osa",
+          "definition": "Čára s čísly. Doprava rostou."
+        },
+        {
+          "type": "term",
+          "term": "Zlomek na ose",
+          "definition": "Úsek od 0 do 1 rozdělíš na tolik dílků, kolik je jmenovatel. Čitatel řekne, kolik dílků odpočítat od nuly.",
+          "example": "3/5: úsek na 5 dílků, odpočítej 3."
+        },
+        {
+          "type": "term",
+          "term": "Čitatel a jmenovatel",
+          "definition": "Čitatel (nahoře) = kolik dílků. Jmenovatel (dole) = na kolik dílů je celek."
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Úsek 0–1 je rozdělený na pětiny (0,2 = 1/5). Žabka začne na 1/5 a skočí o 2/5. Kde přistane?"
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": 0,
+            "max": 1,
+            "step": 0.2,
+            "start": 0.2,
+            "hop": 0.4
+          }
+        },
+        {
+          "type": "text",
+          "text": "1/5 + 2/5 = **3/5**. Čím víc vpravo, tím větší zlomek."
+        },
+        {
+          "type": "heading",
+          "text": "Pravidla porovnávání"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Stejný jmenovatel** → větší je ten s větším čitatelem: 3/5 > 2/5.",
+            "**Stejný čitatel** → větší je ten s menším jmenovatelem: 1/3 > 1/4 (celek je na méně dílů, dílky jsou větší).",
+            "**Čitatel = jmenovatel** → 1 celek: 4/4 = 1."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "1 − 2/5 =",
+          "answer": "1 celek = 5/5. 5/5 − 2/5 = **3/5**."
+        },
+        {
+          "type": "example",
+          "question": "Kniha má 120 stran. Přečetl jsi 3/4. Kolik stran?",
+          "answer": "120 : 4 = 30 (jedna čtvrtina). 30 · 3 = **90 stran**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "1/6 > 1/3, protože 6 > 3.",
+          "right": "1/6 < 1/3",
+          "why": "Na ose: úsek na 6 dílků má menší dílky než úsek na 3 dílky. Větší jmenovatel = menší dílek."
+        },
+        {
+          "type": "summary",
+          "text": "Na ose je větší zlomek víc vpravo. Stejný jmenovatel → rozhoduje čitatel. Čitatel = jmenovatel → 1 celek."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "input",
+      "question": "2/7 + 3/7 =",
+      "answers": [
+        "5/7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "5/9 − 2/9 =",
+      "answers": [
+        "3/9",
+        "1/3"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "3/10 + 4/10 =",
+      "answers": [
+        "7/10",
+        "0,7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "1/4 + 3/4 =",
+      "answers": [
+        "1",
+        "4/4"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "1 − 2/5 =",
+      "answers": [
+        "3/5"
+      ],
+      "explanation": "1 = 5/5, 5/5 − 2/5 = 3/5."
+    },
+    {
+      "type": "input",
+      "question": "Kolik je 3/5 z 40?",
+      "answers": [
+        "24"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Co je větší?",
+      "options": [
+        "3/8",
+        "5/8",
+        "jsou stejné"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Co je větší?",
+      "options": [
+        "1/6",
+        "1/3",
+        "jsou stejné"
+      ],
+      "answer": 1,
+      "explanation": "Celek na méně dílů → větší dílky."
+    },
+    {
+      "type": "truefalse",
+      "question": "6/6 = 1",
+      "answer": true
+    },
+    {
+      "type": "truefalse",
+      "question": "1/2 + 1/2 = 2/4",
+      "answer": false,
+      "explanation": "Jmenovatele se nesčítají: 1/2 + 1/2 = 2/2 = 1."
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejmenšího.",
+      "items": [
+        "1/7",
+        "3/7",
+        "5/7",
+        "7/7"
+      ]
+    },
+    {
+      "type": "input",
+      "question": "Kniha má 120 stran. Přečetl jsi 3/4. Kolik stran jsi přečetl?",
+      "answers": [
+        "90"
+      ]
+    },
+    {
+      "type": "open",
+      "question": "Proč se při sčítání 2/7 + 3/7 nesčítají jmenovatele?",
+      "answer": "Jmenovatel říká velikost dílků. Ta se nemění – jen přidávám další sedminy. 2 sedminy + 3 sedminy = 5 sedmin."
+    },
+    {
+      "type": "open",
+      "question": "Jak porovnáš 1/3 a 1/5?",
+      "answer": "Oba mají čitatele 1. Třetina je větší dílek než pětina, protože je celek rozdělen na méně dílů. 1/3 > 1/5."
+    }
+  ]
+}

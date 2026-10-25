@@ -1,0 +1,352 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "teplota",
+  "title": "Teplota a teploměr",
+  "emoji": "🌡️",
+  "explanations": [
+    {
+      "title": "Teploměrem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Ráno se díváš z okna na teploměr, abys věděl, co si obléct. Když jsi nemocný, měříš si horečku. Kuchař hlídá teplotu trouby."
+        },
+        {
+          "type": "text",
+          "text": "Rukou poznáš jen „teplé“ a „studené“, a to ještě nepřesně. Teploměr ti dá přesné číslo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Teplota",
+          "definition": "Veličina, která říká, jak je něco teplé nebo studené. Značka `t`.",
+          "example": "Teplota v pokoji je asi 21 °C."
+        },
+        {
+          "type": "term",
+          "term": "Stupeň Celsia (°C)",
+          "definition": "Jednotka teploty, kterou používáme každý den. **0 °C** je teplota, kdy taje led, **100 °C** teplota, kdy vře voda.",
+          "example": "Zdravý člověk má asi 36,5 °C."
+        },
+        {
+          "type": "term",
+          "term": "Teplotní roztažnost",
+          "definition": "Když látku zahřeješ, trochu se **zvětší** (roztáhne). Když ji ochladíš, **zmenší se** (smrští).",
+          "example": "Zavařovací sklenici s víčkem, které nejde otevřít, ponoříš do teplé vody – kovové víčko se roztáhne a povolí."
+        },
+        {
+          "type": "heading",
+          "text": "Jak funguje teploměr"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Dole v teploměru je baňka s kapalinou (obarvený líh, dříve rtuť).",
+            "Z baňky vede nahoru velmi tenká trubička.",
+            "Když se teploměr ohřeje, kapalina se **roztáhne** a vystoupá trubičkou výš.",
+            "Když se ochladí, kapalina se **smrští** a klesne.",
+            "Vedle trubičky je stupnice, na které přečteš teplotu."
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Digitální teploměr",
+          "definition": "Nemá kapalinu. Uvnitř je malé elektronické **čidlo**, které teplotu změří a ukáže číslo na displeji.",
+          "example": "Lékařský teploměr, který po změření pípne."
+        },
+        {
+          "type": "heading",
+          "text": "Teploty pod nulou"
+        },
+        {
+          "type": "text",
+          "text": "Když mrzne, teplota klesne pod 0 °C. Píšeme ji se znaménkem minus: −5 °C. Představ si teploměr jako číselnou osu: dole je zima, nahoře teplo. Na ose níž = chladněji."
+        },
+        {
+          "type": "widget",
+          "widget": "number-line",
+          "props": {
+            "min": -10,
+            "max": 40,
+            "step": 5,
+            "start": -5,
+            "hop": 25
+          }
+        },
+        {
+          "type": "text",
+          "text": "Skok začíná na −5 °C a oteplí se o 25 °C. Kde skončí?"
+        },
+        {
+          "type": "example",
+          "question": "Ráno bylo −5 °C, odpoledne o 25 °C víc. Kolik bylo odpoledne?",
+          "answer": "Od −5 do 0 je 5 stupňů, zbývá 20. Výsledek **20 °C** (−5 + 25 = 20)."
+        },
+        {
+          "type": "example",
+          "question": "Ráno −3 °C, v poledne 8 °C. O kolik se oteplilo?",
+          "answer": "Z −3 na 0 jsou 3 °C, z 0 na 8 je 8 °C. Celkem 3 + 8 = **11 °C**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "−10 °C je víc než −2 °C, protože 10 je víc než 2.",
+          "right": "−10 °C je méně (chladněji) než −2 °C.",
+          "why": "Pod nulou platí: čím větší číslo za mínusem, tím je zima větší. Na ose leží −10 níž než −2."
+        },
+        {
+          "type": "summary",
+          "text": "Teplotu měříme teploměrem ve °C. Kapalina v teploměru se teplem roztahuje a stoupá. Led taje při 0 °C, voda vře při 100 °C."
+        }
+      ]
+    },
+    {
+      "title": "Stupnice a roztažnost",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Proč mají koleje mezi kusy mezery? Proč se dráty mezi sloupy v létě víc prověšují? Obojí má na svědomí **teplo**."
+        },
+        {
+          "type": "text",
+          "text": "Poznáš, jak vznikla stupnice teploměru, jak se teplota zapisuje a proč s ní musí počítat stavitelé."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Teplota",
+          "definition": "Číslo, které říká, jak je něco teplé. Značka `t`, jednotka **stupeň Celsia** (°C).",
+          "example": "Voda z kohoutku má asi 10 °C, čaj asi 70 °C."
+        },
+        {
+          "type": "term",
+          "term": "Teplotní roztažnost",
+          "definition": "Látky se při zahřátí **roztahují** (zvětšují) a při ochlazení **smršťují** (zmenšují). Je to jen nepatrně, ale u dlouhých věcí je to znát.",
+          "example": "Ocelový most dlouhý stovky metrů je v létě o několik centimetrů delší než v zimě."
+        },
+        {
+          "type": "term",
+          "term": "Dilatační spára",
+          "definition": "Úmyslně nechaná mezera, do které se může materiál roztáhnout, aby nepopraskal.",
+          "example": "Mezery na mostech, mezi panely betonu, mezi kolejnicemi."
+        },
+        {
+          "type": "heading",
+          "text": "Jak vznikla Celsiova stupnice"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Teploměr se ponoří do tajícího ledu. Kde je hladina kapaliny, napíše se **0**.",
+            "Teploměr se dá do vroucí vody. Kde je hladina, napíše se **100**.",
+            "Vzdálenost mezi značkami se rozdělí na 100 stejných dílků. Každý dílek je **1 °C**.",
+            "Stejné dílky se nakreslí i pod nulu (−1, −2…) a nad 100."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "0 °C – tání ledu",
+            "100 °C – var vody (za normálního tlaku vzduchu)",
+            "asi 36,5 °C – zdravé lidské tělo"
+          ]
+        },
+        {
+          "type": "term",
+          "term": "Kelvin (K)",
+          "definition": "Jednotka teploty, kterou používají vědci. Začíná na **nejnižší možné teplotě**, kterou nic nemůže mít: 0 K = −273,15 °C.",
+          "example": "Platí `T = t + 273,15`, kde T je teplota v kelvinech a t ve °C."
+        },
+        {
+          "type": "table",
+          "head": [
+            "°C",
+            "K"
+          ],
+          "rows": [
+            [
+              "−273,15",
+              "0"
+            ],
+            [
+              "0",
+              "273,15"
+            ],
+            [
+              "20",
+              "293,15"
+            ],
+            [
+              "100",
+              "373,15"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "U každé věci si nejdřív sám řekni, jak s ní souvisí teplotní roztažnost. Pak kartu otoč."
+        },
+        {
+          "type": "widget",
+          "widget": "flip",
+          "props": {
+            "cards": [
+              {
+                "front": "most",
+                "back": "má dilatační spáry, jinak by se v horku zkroutil"
+              },
+              {
+                "front": "koleje",
+                "back": "mezi kolejnicemi bývají mezery"
+              },
+              {
+                "front": "elektrické dráty",
+                "back": "v létě se prověšují víc, v zimě se napnou"
+              },
+              {
+                "front": "teploměr",
+                "back": "roztažnost kapaliny využívá k měření"
+              }
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "question": "Kolik kelvinů je 0 °C a kolik 100 °C?",
+          "answer": "T = t + 273,15. Pro 0 °C: **273,15 K**. Pro 100 °C: 100 + 273,15 = **373,15 K**."
+        },
+        {
+          "type": "example",
+          "question": "Proč se dráty elektrického vedení natahují s průvěsem a ne napnuté?",
+          "answer": "V zimě se dráty **smrští**. Kdyby byly napnuté už v létě, v mrazu by se zkrátily a mohly by prasknout."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Voda vře vždycky přesně při 100 °C.",
+          "right": "Při 100 °C vře voda za normálního tlaku vzduchu.",
+          "why": "Vysoko v horách je tlak vzduchu menší a voda tam vře při nižší teplotě, například kolem 90 °C."
+        },
+        {
+          "type": "summary",
+          "text": "Celsiova stupnice: 0 °C tání ledu, 100 °C var vody. Látky se teplem roztahují, proto mosty a koleje mají spáry. T (K) = t (°C) + 273,15."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "question": "Při jaké teplotě taje led?",
+      "options": [
+        "0 °C",
+        "100 °C",
+        "−10 °C",
+        "4 °C"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Při jaké teplotě ve °C vře voda za normálního tlaku?",
+      "answers": [
+        "100"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Při zahřátí se většina látek roztahuje.",
+      "answer": true
+    },
+    {
+      "type": "input",
+      "question": "Ráno bylo −3 °C, v poledne 8 °C. O kolik °C se oteplilo?",
+      "answers": [
+        "11"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Proč mají mosty dilatační spáry?",
+      "options": [
+        "Most se v létě roztáhne a v zimě smrští.",
+        "Kvůli odtoku vody.",
+        "Aby byl most lehčí."
+      ],
+      "answer": 0
+    },
+    {
+      "type": "input",
+      "question": "Kolik kelvinů je 0 °C? (na setiny)",
+      "answers": [
+        "273,15"
+      ]
+    },
+    {
+      "type": "choice",
+      "question": "Jaká je běžná teplota zdravého člověka?",
+      "options": [
+        "asi 36,5 °C",
+        "asi 30 °C",
+        "asi 40 °C",
+        "asi 20 °C"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "order",
+      "question": "Seřaď od nejnižší teploty.",
+      "items": [
+        "−20 °C",
+        "0 °C",
+        "20 °C",
+        "37 °C",
+        "100 °C"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Teplota −10 °C je vyšší než −2 °C.",
+      "answer": false,
+      "explanation": "Na ose je −10 vlevo od −2, je tedy nižší."
+    },
+    {
+      "type": "choice",
+      "question": "Co je v lékařském digitálním teploměru místo kapaliny?",
+      "options": [
+        "elektronické čidlo",
+        "rtuť",
+        "voda",
+        "vzduch"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "open",
+      "question": "Jak funguje kapalinový teploměr?",
+      "answer": "Kapalina (líh) se při zahřátí roztahuje a stoupá v tenké trubičce. Při ochlazení se smršťuje a klesá. Výšku čteme na stupnici."
+    },
+    {
+      "type": "open",
+      "question": "Uveď příklad, kde musí technici počítat s teplotní roztažností.",
+      "answer": "Mosty mají dilatační spáry, koleje mezery, dráty elektrického vedení se v létě prověšují víc. Látky se teplem roztahují."
+    }
+  ]
+}

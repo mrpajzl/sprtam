@@ -1,0 +1,384 @@
+{
+  "$schema": "../../../schema/topic.schema.json",
+  "format": 1,
+  "id": "viry-bakterie",
+  "title": "Viry a bakterie",
+  "emoji": "🦠",
+  "explanations": [
+    {
+      "title": "Přirovnáním",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Když máš rýmu, angínu nebo chřipku, často za to můžou neviditelní „vetřelci“ – **viry** nebo **bakterie**. Jsou tak malé, že je pouhým okem neuvidíš."
+        },
+        {
+          "type": "text",
+          "text": "Je důležité je rozlišit. Na každého totiž platí jiný lék. A bakterie nejsou jen zlé – bez nich bys neměl jogurt ani zdravé střevo."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Buňka",
+          "definition": "Připomenutí: nejmenší živá část organismu. Má obal (membránu) a uvnitř všechno potřebné k životu."
+        },
+        {
+          "type": "term",
+          "term": "Bakterie",
+          "definition": "Organismus z **jediné** maličké buňky. Žije sama a sama se množí. Nemá ale **jádro** – dědičnou informaci má volně uvnitř buňky.",
+          "example": "Bakterie v jogurtu nebo bakterie, která způsobuje angínu."
+        },
+        {
+          "type": "term",
+          "term": "Virus",
+          "definition": "Ještě menší částice než bakterie. **Není to buňka** – je to jen návod (dědičná informace) zabalený v obalu. Sám nežije ani se nemnoží.",
+          "example": "Virus chřipky nebo planých neštovic."
+        },
+        {
+          "type": "heading",
+          "text": "Bakterie jako samostatný obyvatel"
+        },
+        {
+          "type": "text",
+          "text": "Bakterie je jako malý samostatný človíček. Má svůj „domeček“ (buňku), sama jí a sama se množí. Množí se **dělením**: jedna buňka se rozdělí na dvě, z dvou jsou čtyři a tak dál."
+        },
+        {
+          "type": "heading",
+          "text": "Virus jako zloděj s plánkem"
+        },
+        {
+          "type": "text",
+          "text": "Virus je jako zloděj, který nemá dílnu, jen plánek. Vnikne do cizí buňky a donutí ji, aby podle jeho plánku vyráběla nové viry. Buňka se tím poškodí a my onemocníme."
+        },
+        {
+          "type": "text",
+          "text": "Sleduj, jak virus „řádí“ v buňce. Klepej na jednotlivé kroky."
+        },
+        {
+          "type": "widget",
+          "widget": "cycle",
+          "props": {
+            "steps": [
+              "virus se přichytí na buňku",
+              "vnikne dovnitř se svým plánkem",
+              "buňka podle plánku vyrábí nové viry",
+              "nové viry buňku opustí a napadají další"
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Jak se bráníme"
+        },
+        {
+          "type": "term",
+          "term": "Antibiotikum",
+          "definition": "Lék, který zabíjí **bakterie**, nebo je zastaví v množení. Na viry nepůsobí."
+        },
+        {
+          "type": "term",
+          "term": "Očkování",
+          "definition": "Do těla se vpraví **vakcína** – neškodná „ukázka“ vetřelce. Tělo se naučí bránit, a když přijde skutečný vir, rychle ho porazí.",
+          "example": "Očkování proti spalničkám nebo klíšťové encefalitidě."
+        },
+        {
+          "type": "example",
+          "question": "Pomůže antibiotikum na chřipku?",
+          "answer": "Chřipku způsobuje **virus**. Antibiotika ničí jen bakterie. Proto na chřipku **nepomůžou**."
+        },
+        {
+          "type": "example",
+          "question": "Do mléka přidáme pár bakterií a necháme ho v teple. Co se stane?",
+          "answer": "Bakterie se množí dělením a mění mléčný cukr na kyselinu. Mléko zhoustne a zkysne – vznikne **jogurt**."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Na každou nemoc pomůže antibiotikum.",
+          "right": "Antibiotika pomáhají jen proti bakteriím. Na viry nepůsobí.",
+          "why": "Antibiotikum útočí na části bakteriální buňky. Virus buňka není, takže nemá na co zaútočit."
+        },
+        {
+          "type": "summary",
+          "text": "Bakterie je samostatná buňka bez jádra a množí se dělením. Virus není buňka a množí se jen uvnitř cizí buňky. Antibiotika ničí bakterie, proti virům chrání očkování."
+        }
+      ]
+    },
+    {
+      "title": "Roztřiď",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "O čem to je"
+        },
+        {
+          "type": "text",
+          "text": "Mikroby jsou kolem nás i v nás – na rukou, v půdě, ve vzduchu, ve střevě. Většina z nich je neškodná nebo dokonce užitečná. Jen některé způsobují nemoci."
+        },
+        {
+          "type": "text",
+          "text": "Naučíš se roztřídit dvě nejznámější skupiny: bakterie a viry. Uvidíš, čím se liší, kde nám pomáhají a jak se chránit před těmi škodlivými."
+        },
+        {
+          "type": "heading",
+          "text": "Nové pojmy"
+        },
+        {
+          "type": "term",
+          "term": "Mikroorganismus (mikrob)",
+          "definition": "Organismus tak malý, že ho uvidíš jen mikroskopem."
+        },
+        {
+          "type": "term",
+          "term": "Jádro",
+          "definition": "Část buňky, ve které je u rostlin a živočichů uložená dědičná informace (DNA) – návod na stavbu těla."
+        },
+        {
+          "type": "term",
+          "term": "Prokaryota",
+          "definition": "Organismy, jejichž buňka **nemá pravé jádro**. DNA leží volně v buňce. Patří sem bakterie.",
+          "example": "Tvoje buňky jádro mají, buňka bakterie ne."
+        },
+        {
+          "type": "term",
+          "term": "Rozkladač",
+          "definition": "Organismus, který rozkládá mrtvá těla a zbytky (listí, trus) na jednoduché látky. Ty se vracejí do půdy jako živiny."
+        },
+        {
+          "type": "term",
+          "term": "Sinice",
+          "definition": "Bakterie, které mají zelené barvivo **chlorofyl** a umějí jako rostliny vyrábět cukr a kyslík (fotosyntéza).",
+          "example": "V létě způsobují „zelenou vodu“ v rybnících."
+        },
+        {
+          "type": "heading",
+          "text": "Porovnání"
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Bakterie",
+            "Virus"
+          ],
+          "rows": [
+            [
+              "je to buňka?",
+              "ano, jedna buňka",
+              "ne"
+            ],
+            [
+              "jádro",
+              "nemá pravé jádro",
+              "nemá buňku vůbec"
+            ],
+            [
+              "jak se množí",
+              "dělením, sama",
+              "jen uvnitř cizí buňky"
+            ],
+            [
+              "co proti němu",
+              "antibiotika",
+              "očkování, odpočinek"
+            ],
+            [
+              "užitek",
+              "jogurt, zelí, trávení, rozklad",
+              "pro nás skoro žádný"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Vyzkoušej si to"
+        },
+        {
+          "type": "text",
+          "text": "Kterou nemoc způsobuje virus a kterou bakterie? Roztřiď."
+        },
+        {
+          "type": "widget",
+          "widget": "sort",
+          "props": {
+            "groups": [
+              "Virus",
+              "Bakterie"
+            ],
+            "items": [
+              {
+                "text": "chřipka",
+                "group": 0
+              },
+              {
+                "text": "angína (streptokok)",
+                "group": 1
+              },
+              {
+                "text": "neštovice",
+                "group": 0
+              },
+              {
+                "text": "tetanus",
+                "group": 1
+              },
+              {
+                "text": "covid-19",
+                "group": 0
+              },
+              {
+                "text": "borelióza",
+                "group": 1
+              },
+              {
+                "text": "vzteklina",
+                "group": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Užitečné bakterie"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kysané mléko, jogurt, sýry a kysané zelí vznikají díky bakteriím.",
+            "Bakterie ve střevech pomáhají trávit potravu.",
+            "Půdní bakterie jsou rozkladači – vracejí živiny do půdy.",
+            "Sinice vyrábějí kyslík."
+          ]
+        },
+        {
+          "type": "example",
+          "question": "Kamarád se zranil o rezavý hřebík v hlíně. Proč mu lékař kontroluje očkování proti tetanu?",
+          "answer": "Tetanus způsobuje **bakterie**, která žije v půdě. Do těla se dostane ranou. Očkování naučí tělo bránit se dřív, než bakterie uškodí."
+        },
+        {
+          "type": "example",
+          "question": "Proč na podzim nehnije listí donekonečna na hromadě?",
+          "answer": "Bakterie a houby (rozkladači) listí postupně rozloží. Vznikne kvalitní půda a živiny poslouží novým rostlinám."
+        },
+        {
+          "type": "mistake",
+          "wrong": "Všechny bakterie jsou škodlivé.",
+          "right": "Většina bakterií je neškodná nebo užitečná. Nemoci způsobují jen některé.",
+          "why": "Bez bakterií bychom netrávili potravu a v přírodě by se nerozkládaly zbytky."
+        },
+        {
+          "type": "summary",
+          "text": "Bakterie = jedna buňka bez jádra, množí se dělením, často je užitečná. Virus = není buňka, množí se jen v cizí buňce. Proti virům chrání očkování."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Virus je buňka.",
+      "answer": false,
+      "explanation": "Virus nemá buněčnou stavbu, je to jen dědičná informace (návod) v bílkovinném obalu."
+    },
+    {
+      "type": "truefalse",
+      "question": "Bakterie nemá pravé jádro.",
+      "answer": true,
+      "explanation": "Bakterie jsou prokaryota – jejich DNA leží volně v buňce, nemá kolem sebe jádro."
+    },
+    {
+      "type": "choice",
+      "question": "Čím se bakterie rozmnožují?",
+      "options": [
+        "dělením",
+        "výtrusy",
+        "semeny"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "choice",
+      "question": "Chřipku způsobuje…",
+      "options": [
+        "bakterie",
+        "virus",
+        "houba"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "choice",
+      "question": "Antibiotika účinkují na…",
+      "options": [
+        "viry",
+        "bakterie",
+        "obojí"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "input",
+      "question": "Ochrana proti virovým nemocem, při které dostaneme vakcínu, se jmenuje…",
+      "answers": [
+        "očkování",
+        "ockovani",
+        "vakcinace"
+      ]
+    },
+    {
+      "type": "match",
+      "question": "Spoj nemoc s původcem.",
+      "pairs": [
+        [
+          "tetanus",
+          "bakterie"
+        ],
+        [
+          "chřipka",
+          "virus"
+        ],
+        [
+          "plíseň nohou",
+          "houba"
+        ]
+      ]
+    },
+    {
+      "type": "truefalse",
+      "question": "Bakterie se využívají při výrobě jogurtu.",
+      "answer": true
+    },
+    {
+      "type": "choice",
+      "question": "Které bakterie fotosyntetizují?",
+      "options": [
+        "sinice",
+        "streptokoky",
+        "salmonely"
+      ],
+      "answer": 0,
+      "explanation": "Sinice mají chlorofyl a tvoří kyslík."
+    },
+    {
+      "type": "truefalse",
+      "question": "Viry se mohou množit jen uvnitř živé buňky.",
+      "answer": true
+    },
+    {
+      "type": "open",
+      "question": "Jaký je hlavní rozdíl mezi virem a bakterií?",
+      "answer": "Bakterie je samostatná buňka bez jádra, množí se dělením. Virus není buňka a množí se jen uvnitř cizí buňky."
+    },
+    {
+      "type": "open",
+      "question": "Uveď dva příklady, k čemu jsou bakterie užitečné.",
+      "answer": "Výroba jogurtu a kysaného zelí, trávení ve střevech, rozklad odumřelých těl na živiny."
+    }
+  ]
+}

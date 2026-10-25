@@ -25,7 +25,7 @@ const MASTERED = 3
 /** Practised words (right at least once) and progress towards learning them all, 0–100. Every right answer moves the meter. */
 function vocabProgress(ws: Word[], box: Record<string, number>) {
   let seen = 0, sum = 0
-  for (const w of ws) { const b = box[w[1]] ?? 0; if (b > 0) seen++; sum += Math.min(b, MASTERED) }
+  for (const w of ws) { const b = box[w.en] ?? 0; if (b > 0) seen++; sum += Math.min(b, MASTERED) }
   return { seen, pct: ws.length ? (sum / (ws.length * MASTERED)) * 100 : 0 }
 }
 const SESSION = 15
@@ -99,10 +99,10 @@ export function VocabDrill({ level, group }: { level: Level; group: string }) {
     const pool = groups.flatMap((g) => g.words.map((w) => [w, g.lang] as const))
     // Weakest words first (Leitner box), random among equals.
     const box = getProgress().w
-    return shuffle(pool).sort((a, b) => (box[a[0][1]] ?? 0) - (box[b[0][1]] ?? 0)).slice(0, SESSION)
-      .map(([w, lang]): Card => ({ w, lang, type: (box[w[1]] ?? 0) >= TYPE_FROM, again: false }))
+    return shuffle(pool).sort((a, b) => (box[a[0].en] ?? 0) - (box[b[0].en] ?? 0)).slice(0, SESSION)
+      .map(([w, lang]): Card => ({ w, lang, type: (box[w.en] ?? 0) >= TYPE_FROM, again: false }))
   }, [set, group, round])
-  useEffect(() => preload(first.map((c) => c.w[1])), [first])
+  useEffect(() => preload(first.map((c) => c.w.en)), [first])
   const [src, setSrc] = useState(first)
   const [queue, setQueue] = useState(first)
   const [i, setI] = useState(0)
@@ -122,7 +122,7 @@ export function VocabDrill({ level, group }: { level: Level; group: string }) {
           <h2>{score === total ? 'Perfektní!' : score / total >= 0.7 ? 'Dobře!' : 'Ještě jednou?'}</h2>
           <div class="pct">{score} / {total}</div>
           {missed.length > 0 && (
-            <div class="mistakes">{missed.map((w) => <div key={w[1]} class="card"><b>{w[0]}</b><span>{w[1]}</span></div>)}</div>
+            <div class="mistakes">{missed.map((w) => <div key={w.en} class="card"><b>{w.cz}</b><span>{w.en}</span></div>)}</div>
           )}
           <div class="actions">
             <button class="btn block" onClick={() => setRound(round + 1)}>Další kolo</button>
@@ -143,8 +143,8 @@ export function VocabDrill({ level, group }: { level: Level; group: string }) {
       </div>
       {c && <WordCard key={`${round}-${i}`} c={c} onDone={(ok) => {
         if (!c.again) {
-          const box = getProgress().w[c.w[1]] ?? 0
-          setWordBox(c.w[1], ok ? box + 1 : 0)
+          const box = getProgress().w[c.w.en] ?? 0
+          setWordBox(c.w.en, ok ? box + 1 : 0)
           if (!ok) setMissed([...missed, c.w])
         }
         // Missed words come back a few cards later, typed, until they are right.
@@ -181,8 +181,8 @@ const mask = (en: string) => en.split(' ').map((p) => [...p].map((ch, k) => (k =
 
 /** One word: pick it from three (new words) or type it (known words). */
 function WordCard({ c, onDone }: { c: Card; onDone: (ok: boolean) => void }) {
-  const [cz, en, near, rel] = c.w
-  const opts = useMemo(() => shuffle([en, near, rel]), [c])
+  const { cz, en, similar, related } = c.w
+  const opts = useMemo(() => shuffle([en, similar, related]), [c])
   const [res, setRes] = useState<'ok' | 'typo' | 'bad' | null>(null)
   const [pick, setPick] = useState<string | null>(null)
   const [v, setV] = useState('')
