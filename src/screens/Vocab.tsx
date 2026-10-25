@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 import type { Level, Word } from '../vocab/types'
 import { loadLevel } from '../vocab'
+import { preload, speak } from '../vocab/speak'
 import { setWordBox, useProgress, getProgress } from '../progress/store'
 import { back, go, Link } from '../router'
 import { Bar, BigStars, Meter } from '../ui/Bar'
@@ -76,10 +77,6 @@ export function VocabLevel({ level }: { level: Level }) {
   )
 }
 
-function speak(text: string, lang = 'en-GB') {
-  try { const u = new SpeechSynthesisUtterance(text); u.lang = lang; u.rate = 0.9; speechSynthesis.cancel(); speechSynthesis.speak(u) } catch { /* no TTS */ }
-}
-
 /** Words known well enough (Leitner box) are typed instead of picked. */
 const TYPE_FROM = 2
 /** A missed word comes back this many cards later. */
@@ -99,6 +96,7 @@ export function VocabDrill({ level, group }: { level: Level; group: string }) {
     return shuffle(pool).sort((a, b) => (box[a[0][1]] ?? 0) - (box[b[0][1]] ?? 0)).slice(0, SESSION)
       .map(([w, lang]): Card => ({ w, lang, type: (box[w[1]] ?? 0) >= TYPE_FROM, again: false }))
   }, [set, group, round])
+  useEffect(() => preload(first.map((c) => c.w[1])), [first])
   const [src, setSrc] = useState(first)
   const [queue, setQueue] = useState(first)
   const [i, setI] = useState(0)

@@ -81,7 +81,7 @@ Přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního
 - **Nové slovo** vybíráš ze tří podobných možností (*bird / bard / parrot*): správné, podobně vypadající a příbuzné.
 - **Slovo, které už umíš**, píšeš sám s nápovědou prvního písmene. U slov od 5 písmen projde jeden překlep, od 12 písmen dva. Kratší slova musí být přesně.
 - Když se spleteš, slovo se **ve stejném kole vrátí o 3 karty později** k napsání.
-- Po odpovědi se přehraje **výslovnost** hlasem prohlížeče (podrobnosti v [Soukromí](SOUKROMI.md#co-se-posílá-ven)).
+- Po odpovědi se přehraje **výslovnost**: nahrávka rodilého hlasu (britský, u amerických a australských idiomů americký a australský). Slovíčka z rozehraného kola se uloží, takže hrají i offline. Bez nahrávky mluví hlas prohlížeče (podrobnosti v [Soukromí](SOUKROMI.md#co-se-posílá-ven)).
 - Slova se opakují podle **Leitnerova systému**: každé slovo má přihrádku 0–5. Správná odpověď ho posune o přihrádku výš, chyba vrátí na 0. V kole přijdou na řadu nejdřív slova z nejnižších přihrádek. Od přihrádky 2 se slovo píše.
 
 ## Další funkce

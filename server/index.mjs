@@ -36,7 +36,7 @@ const STALE = `${await readFile(join(DIST, 'boot-check.js'), 'utf8').catch(() =>
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
 const movePage = (to) => `<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Šprtám se přestěhoval</title><link rel="canonical" href="${esc(to)}"><script src="/move.js"></script></head><body style="font-family:system-ui,sans-serif;padding:2rem"><p>Šprtám se přestěhoval na <a href="${esc(to)}">sprtam.cz</a>…</p></body></html>`
 
-const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.json': 'application/json', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' }
+const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.json': 'application/json', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8', '.mp3': 'audio/mpeg' }
 const SECURITY = {
   'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; media-src 'self' blob:; worker-src 'self' blob:",
   'Referrer-Policy': 'no-referrer',
@@ -105,14 +105,31 @@ createServer(async (req, res) => {
     }
   }
   try {
-    const data = await readFile(file)
-    const immutable = file.includes(`${join(DIST, 'assets')}`)
-    res.writeHead(status, {
+    let data = await readFile(file)
+    // Hashed assets, and word recordings asked for by version (/audio/en/dog.mp3?v=…), never change.
+    const immutable = file.includes(`${join(DIST, 'assets')}`) || (file.startsWith(join(DIST, 'audio')) && url.searchParams.has('v'))
+    const headers = {
       ...SECURITY,
       'Content-Type': TYPES[extname(file)] ?? 'application/octet-stream',
       // Cloudflare overrides no-cache on .js (4 h browser TTL) but keeps no-store: sw.js must never be stale.
       'Cache-Control': immutable ? 'public, max-age=31536000, immutable' : /\.(js|webmanifest)$/.test(file) ? 'no-store' : 'no-cache',
-    })
+    }
+    // Safari plays audio only from servers that answer byte ranges.
+    if (extname(file) === '.mp3') {
+      headers['Accept-Ranges'] = 'bytes'
+      const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range ?? '')
+      if (m && (m[1] || m[2])) {
+        const size = data.length
+        const start = m[1] ? Number(m[1]) : Math.max(0, size - Number(m[2]))
+        const end = m[1] && m[2] ? Math.min(Number(m[2]), size - 1) : size - 1
+        if (start > end || start >= size) return res.writeHead(416, { ...headers, 'Content-Range': `bytes */${size}` }).end()
+        status = 206
+        headers['Content-Range'] = `bytes ${start}-${end}/${size}`
+        data = data.subarray(start, end + 1)
+      }
+      headers['Content-Length'] = data.length
+    }
+    res.writeHead(status, headers)
     res.end(data)
   } catch { res.writeHead(404).end() }
 }).listen(PORT, () => console.log(`Šprtám on :${PORT}`))
