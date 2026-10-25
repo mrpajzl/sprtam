@@ -3,10 +3,10 @@ import { GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } from '../content/curriculum'
 import { hasSubject, loadSubject, topicKey } from '../content'
 import type { GradeId, SubjectId, Subject } from '../content/types'
 import { isPinned, setGrade, stars, useProgress } from '../progress/store'
-import { go, Link } from '../router'
+import { Link } from '../router'
 import { Bar, Meter, Stars } from '../ui/Bar'
 import { GLYPHS, keyStyle, subjectStyle } from '../ui/glyphs'
-import { IPin, ISearch, ITest } from '../ui/icons'
+import { IPin, ITest } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
 
 /** Average stars → 0–100 for a subject's meter. */
@@ -35,7 +35,7 @@ export function GradeScreen({ g }: { g: GradeId }) {
   const subjects = GRADE_SUBJECTS[g].filter((s) => hasSubject(g, s))
   return (
     <div class="page">
-      <Bar title={GRADE_NAME[g]} onBack={() => go('/')} right={<button class="icon-btn" onClick={() => go('/hledat')} aria-label="Hledat"><ISearch /></button>} />
+      <Bar title={GRADE_NAME[g]} />
       {subjects.length ? (
         <div class="tiles">
           {subjects.map((s) => <SubjectTile key={s} g={g} s={s} />)}
@@ -53,7 +53,7 @@ export function SubjectScreen({ g, s }: { g: GradeId; s: SubjectId }) {
   const p = useProgress()
   return (
     <div class="page" style={subjectStyle(s)}>
-      <Bar title={SUBJECTS[s].name} onBack={() => go(`/g/${g}`)} />
+      <Bar title={SUBJECTS[s].name} crumbs={[{ href: `/g/${g}`, label: GRADE_NAME[g] }]} />
       {subj === null && <div class="empty">Připravujeme.</div>}
       {subj && (
         <>

@@ -56,7 +56,7 @@ export function VocabLevel({ level }: { level: Level }) {
   const total = set.groups.reduce((n, g) => n + g.words.length, 0)
   return (
     <div class="page" style={keyStyle('purple')}>
-      <Bar title={level} onBack={() => go('/slovicka')} />
+      <Bar title={level} crumbs={[{ href: '/slovicka', label: 'Slovíčka' }]} />
       <button class="btn block mix" onClick={() => go(`/slovicka/${level}/vse`)}>
         <IShuffle />Míchat vše<small class="btn-count">{total}</small>
       </button>

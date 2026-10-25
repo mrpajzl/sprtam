@@ -1,12 +1,18 @@
 import type { ComponentChildren } from 'preact'
-import { back } from '../router'
+import { back, Link } from '../router'
 import { IBack, IStar } from './icons'
 
-export function Bar({ title, onBack = back, right }: { title?: string; onBack?: () => void; right?: ComponentChildren }) {
+/** A step up the path to the current screen. */
+export interface Crumb { href: string; label: string }
+
+export function Bar({ title, crumbs, onBack = back, right }: { title?: string; crumbs?: Crumb[]; onBack?: () => void; right?: ComponentChildren }) {
   return (
     <header class="bar">
       <button class="icon-btn" onClick={onBack} aria-label="Zpět"><IBack /></button>
-      <h1>{title}</h1>
+      <div class="bar-title">
+        {crumbs?.length ? <nav class="crumbs" aria-label="Kde jsem">{crumbs.map((c) => <Link key={c.href} href={c.href} jump>{c.label}</Link>)}</nav> : null}
+        <h1>{title}</h1>
+      </div>
       {right ?? <span class="spacer" />}
     </header>
   )

@@ -24,7 +24,12 @@ const inline = (s: string) => esc(s).replace(/\*\*(.+?)\*\*|`(.+?)`|\*(.+?)\*|\^
   b ? `<strong>${b}</strong>` : c ? `<code>${c}</code>` : i ? `<em>${i}</em>` : `<sup>${sup}</sup>`)
 const style = (c: string) => `--c:var(--k-${c});--on-c:var(--k-${c}-on)`
 const STAGE_LABEL = { zs1: 'ZŠ · 1. stupeň', zs2: 'ZŠ · 2. stupeň', ss: 'SŠ · ročník' } // as on the Home screen
-const BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>'
+const icon = (d: string) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`
+// Same paths as src/ui/icons.tsx.
+const BACK = icon('M15 5l-7 7 7 7')
+const HOME = icon('M4 11l8-7 8 7M6.5 9v11h11V9M10 20v-5h4v5')
+const GRID = icon('M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z')
+const SEARCH = icon('M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.5 15.5L20 20')
 
 function block(b: Block): string {
   switch (b.t) {
@@ -57,8 +62,15 @@ interface Page {
   ld?: object
 }
 
-const bar = (title: string, up?: string) =>
-  `<header class="bar">${up ? `<a class="icon-btn" href="${up}" aria-label="Zpět">${BACK}</a>` : '<span class="spacer"></span>'}<h1>${esc(title)}</h1><span class="spacer"></span></header>`
+/** The app's Bar: back (up), the path to this screen as links, the title. */
+const bar = (title: string, up?: string, crumbs: [string, string][] = []) =>
+  `<header class="bar">${up ? `<a class="icon-btn" href="${up}" aria-label="Zpět">${BACK}</a>` : '<span class="spacer"></span>'}<div class="bar-title">${crumbs.length ? `<nav class="crumbs" aria-label="Kde jsem">${crumbs.map(([name, path]) => `<a href="${path}">${esc(name)}</a>`).join('')}</nav>` : ''}<h1>${esc(title)}</h1></div><span class="spacer"></span></header>`
+
+/** The app's TabBar (src/ui/TabBar.tsx); the class tab only where the grade is known. */
+const tabbar = (active: 'home' | 'grade' | 'vocab', grade?: [string, string]) => {
+  const tab = (t: string, href: string, glyph: string, label: string) => `<a href="${href}"${t === active ? ' aria-current="page"' : ''}>${glyph}<span>${esc(label)}</span></a>`
+  return `<nav class="tabbar" aria-label="Hlavní nabídka">${tab('home', '/', HOME, 'Domů')}${grade ? tab('grade', grade[1], GRID, grade[0]) : ''}${tab('search', '/hledat', SEARCH, 'Hledat')}${tab('vocab', '/slovicka', '<b class="aa" aria-hidden="true">Aa</b>', 'Slovíčka')}</nav>`
+}
 
 async function pages(): Promise<Page[]> {
   const { STAGES, GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } = await tsImport(src('content/curriculum.ts'), import.meta.url) as typeof Curriculum
@@ -83,19 +95,20 @@ async function pages(): Promise<Page[]> {
     crumbs: [home],
     body: `<div class="page home"><header class="bar"><h1 class="brand">šprtám</h1></header>
 <section class="sec"><h2 class="label">Třída</h2><div class="pad">${STAGES.map((st) => `<div class="pad-group"><small>${STAGE_LABEL[st.id]}</small><div class="pad-keys">${st.grades.map((g) => `<a class="num-key" href="/g/${g}" aria-label="${esc(gradeLabel(g))}">${GRADE_NAME[g].split('.')[0]}</a>`).join('')}</div></div>`).join('')}</div></section>
-<a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span></a></div>`,
+<a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span></a></div>${tabbar('home')}`,
   })
 
   for (const g of STAGES.flatMap((st) => st.grades)) {
     const gPath = `/g/${g}`
     const gCrumbs: [string, string][] = [home, [gradeLabel(g), gPath]]
     const present = GRADE_SUBJECTS[g].filter((s) => subjects.has(`${g}/${s}`))
+    const gTab = tabbar('grade', [GRADE_NAME[g], gPath])
     out.push({
       path: gPath,
       title: titles.grade(g),
       description: `Učivo pro ${gradeFor(g)}: ${present.map((s) => SUBJECTS[s].name).join(', ')}. Vysvětlení, kvízy a písemky na procvičení.`,
       crumbs: gCrumbs,
-      body: `<div class="page">${bar(GRADE_NAME[g], '/')}<div class="tiles">${present.map((s) => `<a class="tile" style="${style(SUBJECTS[s].c)}" href="${gPath}/${s}"><span class="tile-face"></span><b>${esc(SUBJECTS[s].name)}</b></a>`).join('')}${GRADE_SUBJECTS[g].includes('anglictina') ? `<a class="tile" style="${style('purple')}" href="/slovicka"><span class="tile-face"><b class="aa">Aa</b></span><b>Slovíčka</b></a>` : ''}</div></div>`,
+      body: `<div class="page">${bar(GRADE_NAME[g], '/')}<div class="tiles">${present.map((s) => `<a class="tile" style="${style(SUBJECTS[s].c)}" href="${gPath}/${s}"><span class="tile-face"></span><b>${esc(SUBJECTS[s].name)}</b></a>`).join('')}${GRADE_SUBJECTS[g].includes('anglictina') ? `<a class="tile" style="${style('purple')}" href="/slovicka"><span class="tile-face"><b class="aa">Aa</b></span><b>Slovíčka</b></a>` : ''}</div></div>${gTab}`,
     })
 
     for (const s of present as SubjectId[]) {
@@ -108,7 +121,7 @@ async function pages(): Promise<Page[]> {
         title: titles.subject(g, s),
         description: `${SUBJECTS[s].name} pro ${gradeFor(g)}: ${names.slice(0, 6).join(', ')}${names.length > 6 ? ' a další' : ''}. ${subj.topics.length} ${subj.topics.length <= 4 ? 'témata' : 'témat'} s vysvětlením a kvízy.`,
         crumbs: sCrumbs,
-        body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(SUBJECTS[s].name, gPath)}<div class="list">${subj.topics.map((t, i) => `<a class="row" href="${sPath}/${t.id}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="em">${t.emoji}</span><b>${esc(t.title)}</b></a>`).join('')}</div></div>`,
+        body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(SUBJECTS[s].name, gPath, [[GRADE_NAME[g], gPath]])}<div class="list">${subj.topics.map((t, i) => `<a class="row" href="${sPath}/${t.id}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="em">${t.emoji}</span><b>${esc(t.title)}</b></a>`).join('')}</div></div>${gTab}`,
         ld: { '@type': 'ItemList', itemListElement: subj.topics.map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${sPath}/${t.id}`, name: t.title })) },
       })
 
@@ -123,7 +136,7 @@ async function pages(): Promise<Page[]> {
           description: summary(t.ex[0].blocks) || `${t.title} – ${SUBJECTS[s].name}, ${gradeLabel(g)}.`,
           crumbs: [...sCrumbs, [t.title, tPath]],
           type: 'article',
-          body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(`${t.emoji} ${t.title}`, sPath)}${t.ex.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map(block).join('')}</div></section>`).join('')}${nav ? `<div class="list">${nav}</div>` : ''}</div>`,
+          body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [SUBJECTS[s].name, sPath]])}${t.ex.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map(block).join('')}</div></section>`).join('')}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
           ld: {
             '@type': 'LearningResource', name: t.title, inLanguage: 'cs', learningResourceType: 'Explanation', isAccessibleForFree: true,
             educationalLevel: GRADE_NAME[g], about: SUBJECTS[s].name, url: `${SITE}${tPath}`,
@@ -140,7 +153,7 @@ async function pages(): Promise<Page[]> {
     title: titles.vocab(),
     description: `Anglická slovíčka podle úrovně A1–C1 (${vocab.reduce((n, v) => n + v.groups.reduce((m, gr) => m + gr.words.length, 0), 0)} slov). Nová slova vybíráš ze tří, známá píšeš; slova se vracejí, dokud je neumíš.`,
     crumbs: vCrumbs,
-    body: `<div class="page" style="${style('purple')}">${bar('Slovíčka', '/')}<div class="levels">${vocab.map((v) => `<a class="row" href="/slovicka/${v.level}"><span class="skey m"><b>${v.level}</b></span><b>${v.groups.length} okruhů</b></a>`).join('')}</div></div>`,
+    body: `<div class="page" style="${style('purple')}">${bar('Slovíčka', '/')}<div class="levels">${vocab.map((v) => `<a class="row" href="/slovicka/${v.level}"><span class="skey m"><b>${v.level}</b></span><b>${v.groups.length} okruhů</b></a>`).join('')}</div></div>${tabbar('vocab')}`,
   })
   for (const v of vocab) {
     const path = `/slovicka/${v.level}`
@@ -149,7 +162,7 @@ async function pages(): Promise<Page[]> {
       title: titles.vocabLevel(v.level),
       description: `Anglická slovíčka ${v.level}: ${v.groups.map((gr) => gr.name.toLowerCase()).slice(0, 8).join(', ')}${v.groups.length > 8 ? ' a další' : ''}. Například ${v.groups[0].words.slice(0, 4).map((w) => `${w[0]} – ${w[1]}`).join(', ')}.`,
       crumbs: [...vCrumbs, [v.level, path]],
-      body: `<div class="page" style="${style('purple')}">${bar(v.level, '/slovicka')}<a class="btn block mix" href="${path}/vse">Míchat vše<small class="btn-count">${v.groups.reduce((n, gr) => n + gr.words.length, 0)}</small></a><div class="tiles">${v.groups.map((gr, i) => `<a class="tile vocab-tile" href="${path}/${i}"><span class="tile-face em">${gr.emoji}</span><b>${esc(gr.name)}</b><small class="sample">${esc(gr.words.slice(0, 6).map((w) => `${w[0]} – ${w[1]}`).join(', '))}…</small></a>`).join('')}</div></div>`,
+      body: `<div class="page" style="${style('purple')}">${bar(v.level, '/slovicka', [['Slovíčka', '/slovicka']])}<a class="btn block mix" href="${path}/vse">Míchat vše<small class="btn-count">${v.groups.reduce((n, gr) => n + gr.words.length, 0)}</small></a><div class="tiles">${v.groups.map((gr, i) => `<a class="tile vocab-tile" href="${path}/${i}"><span class="tile-face em">${gr.emoji}</span><b>${esc(gr.name)}</b><small class="sample">${esc(gr.words.slice(0, 6).map((w) => `${w[0]} – ${w[1]}`).join(', '))}…</small></a>`).join('')}</div></div>${tabbar('vocab')}`,
     })
   }
   return out

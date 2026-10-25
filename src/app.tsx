@@ -14,6 +14,7 @@ import { SyncScreen } from './screens/Sync'
 import { MixScreen, QuizScreen, TopicScreen } from './screens/TopicScreen'
 import { LEVELS, VocabHome, VocabLevel, VocabDrill } from './screens/Vocab'
 import type { Level } from './vocab/types'
+import { TabBar } from './ui/TabBar'
 
 export function App() {
   const r = useRoute()
@@ -31,30 +32,27 @@ export function App() {
     return () => removeEventListener('keydown', on)
   }, [])
 
-  if (a === 'hledat') return <Search />
+  // Practice (quiz, drill) and one-off flows get the whole screen; everything else has the tab bar.
   if (a === 'mix') return <MixScreen />
   if (a === 'p' && b) return <ImportLink code={b} />
   if (a === 'presun' && b) return <MoveIn code={b} />
   if (a === 'spojit' && b) return <SyncScreen offer={b} />
-  if (a === 'sdilet') return <SyncScreen />
+  if (a === 'hledat') return <><Search /><TabBar active="search" /></>
+  if (a === 'sdilet') return <><SyncScreen /><TabBar /></>
   if (a === 'slovicka') {
     const lvl = LEVELS.find((l) => l.id === b)?.id as Level | undefined
     if (lvl && c) return <VocabDrill level={lvl} group={c} />
-    if (lvl) return <VocabLevel level={lvl} />
-    return <VocabHome />
+    return <>{lvl ? <VocabLevel level={lvl} /> : <VocabHome />}<TabBar active="vocab" /></>
   }
   if (a === 'g' && ALL_GRADES.includes(b as GradeId)) {
     const g = b as GradeId
-    if (c && GRADE_SUBJECTS[g].includes(c as SubjectId)) {
-      const s = c as SubjectId
-      if (d === '~test') return <QuizScreen g={g} s={s} id="~test" mode="test" />
-      if (d && e && e in MODES) return <QuizScreen g={g} s={s} id={d} mode={e as ModeId} />
-      if (d) return <TopicScreen g={g} s={s} id={d} />
-      return <SubjectScreen g={g} s={s} />
-    }
-    return <GradeScreen g={g} />
+    const s = GRADE_SUBJECTS[g].includes(c as SubjectId) ? (c as SubjectId) : undefined
+    if (s && d === '~test') return <QuizScreen g={g} s={s} id="~test" mode="test" />
+    if (s && d && e && e in MODES) return <QuizScreen g={g} s={s} id={d} mode={e as ModeId} />
+    const screen = !s ? <GradeScreen g={g} /> : d ? <TopicScreen g={g} s={s} id={d} /> : <SubjectScreen g={g} s={s} />
+    return <>{screen}<TabBar active="grade" grade={g} /></>
   }
-  return <Home />
+  return <><Home /><TabBar active="home" /></>
 }
 
 /** Title of screens that know it without loading content; `null` = the screen sets it (topics). */

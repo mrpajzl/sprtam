@@ -26,6 +26,8 @@ export const ISun = P('M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 2v2M12 20v2M4.9 4.
 export const IMoon = P('M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z')
 export const ISearch = P('M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.5 15.5L20 20')
 export const IShuffle = P('M3 7h3.5c4 0 6.5 10 11 10H21M3 17h3.5c1.6 0 2.9-1.6 4-3.6M13.5 9.6c1.1-1.5 2.4-2.6 4-2.6H21M18.5 4.5L21 7l-2.5 2.5M18.5 14.5L21 17l-2.5 2.5')
+export const IHome = P('M4 11l8-7 8 7M6.5 9v11h11V9M10 20v-5h4v5')
+export const IGrid = P('M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z')
 export const IArrow = P('M5 12h14M13 6l6 6-6 6')
 
 /** Push pin; filled when the topic is pinned. */
