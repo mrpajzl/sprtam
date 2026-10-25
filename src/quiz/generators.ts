@@ -15,6 +15,19 @@ function choiceOf(q: string, correct: string, wrong: string[], why?: string): Qu
   return { t: 'choice', q, o: shuffled, a: shuffled.indexOf(correct), why }
 }
 
+const sp = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+
+// Convert between two units in either direction, with decimals.
+function convert(units: [string, string, number][]): Question {
+  const [big, small, f] = pick(units)
+  if (Math.random() < 0.5) {
+    const n = r(1, 99) / 10
+    return num(`${fmt(n)} ${big} = ? ${small}`, n * f, `1 ${big} = ${sp(f)} ${small}, na menší jednotku násobím: ${fmt(n)} · ${sp(f)}`)
+  }
+  const n = r(1, f >= 1000 ? 9999 : 999)
+  return num(`${sp(n)} ${small} = ? ${big}`, n / f, `1 ${big} = ${sp(f)} ${small}, na větší jednotku dělím: ${sp(n)} : ${sp(f)}`)
+}
+
 export const GENERATORS: Record<string, () => Question> = {
   add10: () => { const a = r(0, 10); const b = r(0, 10 - a); return num(`${a} + ${b} =`, a + b) },
   sub10: () => { const a = r(0, 10); const b = r(0, a); return num(`${a} − ${b} =`, a - b) },
@@ -75,6 +88,17 @@ export const GENERATORS: Record<string, () => Question> = {
     ])
     const n = r(2, 15)
     return num(`Převeď ${n} ${q.split(' na ')[0]} na ${q.split(' na ')[1]}.`, n * f, why)
+  },
+  'units-dec': () => {
+    if (Math.random() < 0.2) {
+      const [h, why] = pick<[number, string]>([[0.25, 'čtvrt hodiny'], [0.5, 'půl hodiny'], [0.75, 'tři čtvrtě hodiny'], [1.5, 'hodina a půl'], [2.5, 'dvě a půl hodiny']])
+      return num(`${fmt(h)} h = ? min`, h * 60, `${why}: ${fmt(h)} · 60`)
+    }
+    return convert([['km', 'm', 1000], ['m', 'cm', 100], ['m', 'dm', 10], ['cm', 'mm', 10], ['m', 'mm', 1000], ['t', 'kg', 1000], ['kg', 'g', 1000], ['g', 'mg', 1000], ['hl', 'l', 100], ['l', 'dl', 10], ['l', 'ml', 1000]])
+  },
+  volume: () => {
+    if (Math.random() < 0.3) { const a = r(2, 10); const b = r(2, 10); const c = r(2, 10); return num(`Kvádr ${a} cm × ${b} cm × ${c} cm. Objem (cm³) =`, a * b * c, 'V = a · b · c') }
+    return convert([['m³', 'dm³', 1000], ['dm³', 'cm³', 1000], ['cm³', 'mm³', 1000], ['l', 'ml', 1000], ['hl', 'l', 100], ['m³', 'l', 1000], ['l', 'cm³', 1000]])
   },
   ratio: () => { const a = r(1, 5); const b = r(1, 5); const k = r(2, 8); return num(`Rozděl ${(a + b) * k} v poměru ${a} : ${b}. Větší díl =`, Math.max(a, b) * k, `Jeden díl = ${(a + b) * k} : ${a + b} = ${k}`) },
   expressions: () => { const a = r(2, 9); const b = r(1, 9); const x = r(-5, 5); return num(`Dosaď x = ${x} do ${a}x + ${b}`, a * x + b) },
