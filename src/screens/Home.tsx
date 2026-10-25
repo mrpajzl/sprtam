@@ -1,13 +1,11 @@
-import { APPROACHES, useApproach } from '../approach'
 import { GRADE_NAME, STAGES, SUBJECTS } from '../content/curriculum'
 import { useIndex, refFor, type TopicRef } from '../content/library'
 import { recommend, streak, type Why } from '../progress/recommend'
 import { pinnedKeys, stars, today, useProgress, type Progress } from '../progress/store'
 import { go, Link } from '../router'
-import { useTheme } from '../theme'
 import { Stars } from '../ui/Bar'
 import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
-import { IArrow, IMoon, IPin, ISearch, IShuffle, ISun, ISync } from '../ui/icons'
+import { IArrow, IGear, IPin, ISearch, IShuffle, ISync } from '../ui/icons'
 import { Mascot } from '../ui/Mascot'
 import { QrButton } from '../ui/QrShare'
 
@@ -18,18 +16,15 @@ export const topicPath = (r: TopicRef) => `/g/${r.g}/${r.s}/${r.id}`
 export function Home() {
   const p = useProgress()
   const all = useIndex()
-  const [theme, toggleTheme] = useTheme()
-  const dark = theme === 'dark'
   const pins = all ? pinnedKeys(p).flatMap((k) => refFor(k) ?? []) : []
   const recs = all ? recommend(p, all.filter((r) => !r.approach)) : []
-  const approach = useApproach()
 
   return (
     <div class="page home">
       <header class="bar">
         <h1 class="brand"><Mascot size={38} /><span>šprtám</span></h1>
         <span class="grow" />
-        <button class="icon-btn" onClick={toggleTheme} aria-label={dark ? 'Světlý režim' : 'Tmavý režim'} aria-pressed={dark}>{dark ? <ISun /> : <IMoon />}</button>
+        <Link class="icon-btn" href="/nastaveni" aria-label="Nastavení"><IGear /></Link>
         <button class="icon-btn" onClick={() => go('/sdilet')} aria-label="Přenést pokrok"><ISync /></button>
         <QrButton />
       </header>
@@ -87,13 +82,6 @@ export function Home() {
         <IArrow />
       </Link>
 
-      {APPROACHES.map((a) => (
-        <Link key={a.id} class="row approach-key" style={keyStyle('green')} href={`/${a.id}`}>
-          <span class="skey m" style={keyStyle('green')}><b class="em">{a.emoji}</b></span>
-          <span class="txt"><b>{a.name}</b><small>{approach === a.id ? 'zapnuto · epochy a výklad' : 'epochy a výklad'}</small></span>
-          <IArrow />
-        </Link>
-      ))}
     </div>
   )
 }

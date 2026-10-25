@@ -100,6 +100,7 @@ Obrazovky bez vlastní stránky (kvíz, hledání, přenos pokroku) dostanou pr�
 | `/hledat?q=…` | Hledání |
 | `/mix` | Mix připnutých témat |
 | `/sdilet` | Přenos pokroku |
+| `/nastaveni` | Nastavení: vzhled a škola (běžná, waldorfská) |
 | `/widgety`, `/widgety/<název>` | Galerie widgetů, bloků a otázek pro autory obsahu |
 | `/waldorf`, `/waldorf/z1`, `/waldorf/z1/<epocha>` | Přístup k výuce: popis a volba, plán ročníku, epocha s tématy |
 | `/waldorf/z1/<epocha>/test` | Procvičení všech témat epochy |

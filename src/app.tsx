@@ -12,6 +12,7 @@ import { ApproachScreen } from './screens/Approach'
 import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
 import { Search } from './screens/Search'
+import { Settings } from './screens/Settings'
 import { SyncScreen } from './screens/Sync'
 import { MixScreen, QuizScreen, TopicScreen } from './screens/TopicScreen'
 import { LEVELS, VocabHome, VocabLevel, VocabDrill } from './screens/Vocab'
@@ -42,6 +43,7 @@ export function App() {
   if (a === 'spojit' && b) return <SyncScreen offer={b} />
   if (a === 'hledat') return <><Search /><TabBar active="search" /></>
   if (a === 'sdilet') return <><SyncScreen /><TabBar /></>
+  if (a === 'nastaveni') return <><Settings /><TabBar /></>
   if (a === 'widgety') return <><GalleryScreen key={b} name={b} /><TabBar /></>
   if (approachById(a)) {
     if (c && d === 'test') return <ApproachScreen id={a} g={b} block={c} test />
@@ -67,6 +69,7 @@ export function App() {
 /** Title of screens that know it without loading content; `null` = the screen sets it (topics). */
 function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'hledat') return 'Hledat'
+  if (a === 'nastaveni') return 'Nastavení'
   if (a === 'widgety') return 'Galerie widgetů'
   if (approachById(a)) return null
   if (a === 'slovicka') return b ? titles.vocabLevel(b) : titles.vocab()

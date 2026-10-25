@@ -623,3 +623,10 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .row.epoch .seg-meter { width: 64px; flex: none; }
 .approach-year { margin-bottom: 4px; }
 .epoch-empty { margin: 8px 2px; }
+
+/* Settings (/nastaveni) */
+.choice { min-height: 58px; }
+.choice.on { box-shadow: inset 0 0 0 2px var(--accent); }
+.choice .tick { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; box-shadow: inset 0 0 0 2px var(--line); color: var(--on-accent); }
+.choice.on .tick { background: var(--accent); box-shadow: none; }
+.choice .tick svg { width: 18px; height: 18px; }
