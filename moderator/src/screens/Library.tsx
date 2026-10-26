@@ -113,7 +113,7 @@ function Intro({ index, me }: { index?: Index; me: Me | null }) {
         <li><b>Oprav</b>, na co tě editor upozorní (červeně). Ukládá se samo.</li>
         <li><b>Odešli ke kontrole.</b> Až změnu schválí jiný moderátor, sama se zveřejní na sprtam.cz.</li>
       </ol>
-      {index && <p class="muted">V učivu je {total} témat.{mine ? <> Máš rozpracováno {mine} – najdeš je v <a href="/navrhy" onClick={nav('/navrhy')}>Návrzích</a>.</> : null}</p>}
+      {index && <p class="muted">V učivu je {total} témat.{mine ? <> Máš rozpracováno {mine} – najdeš je v <a href="/kontrola?moje=1" onClick={nav('/kontrola?moje=1')}>Kontrole</a> pod Pouze moje.</> : null}</p>}
     </div>
   )
 }

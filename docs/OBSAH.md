@@ -33,7 +33,7 @@ Formát dokumentů se nezměnil ([FORMAT.md](FORMAT.md)).
 ## Zveřejnění: kontrola jiným moderátorem
 
 1. Moderátor upraví téma v editoru (návrh, `drafts`) a pošle ho **ke kontrole**.
-2. Ostatní moderátoři ho uvidí v **Ke kontrole**: změny proti verzi, ze které autor vycházel, po slovech, a návrh v telefonu. Můžou **komentovat** konkrétní blok nebo otázku, **požádat o úpravy**, nebo **schválit**.
+2. Ostatní moderátoři ho uvidí v **Kontrole** (karta Otevřeno): změny proti verzi, ze které autor vycházel, po slovech, a návrh v telefonu. Můžou **komentovat** konkrétní blok nebo otázku, **požádat o úpravy**, nebo **schválit**.
 3. Když schválí dost lidí (`REQUIRED_APPROVALS`, výchozí 1, autor se nepočítá) a nikdo nežádá úpravy, změna se **hned zveřejní** jako nové vydání.
 4. Schvaluje se konkrétní **revize**. Každá úprava návrhu je nová revize a dřívější schválení i požadavky na úpravy pro ni neplatí.
 5. **Konflikt:** když mezitím někdo zveřejnil jinou změnu téhož tématu, návrh nejde schválit. Autor uvidí, co se zveřejnilo, přenese to do svého návrhu a převede ho na novou verzi.
