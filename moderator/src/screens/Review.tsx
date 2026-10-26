@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'preact/hooks'
-import { GRADE_NAME, SUBJECTS } from '../../../src/content/curriculum'
+import { GRADE_NAME, GRADE_SUBJECTS, STAGES, SUBJECTS } from '../../../src/content/curriculum'
 import type { GradeId, SubjectId } from '../../../src/content/types'
 import { api, ApiError, get } from '../api'
 import { DiffStats, TopicDiff } from '../diff/Diff'
@@ -20,23 +20,34 @@ import { editTopic } from './Library'
 type QueueItem = DraftView & { mine: boolean; myVerdict: 'approve' | 'changes' | null }
 type Tab = 'open' | 'published' | 'rejected'
 
-/** The tab and the "only mine" filter live in the address (?stav=…&moje=1), so Back and links return to them. */
+/** The tab and the filters live in the address (?stav=…&moje=1&rocnik=z6&predmet=matematika), so Back and links keep them. */
 const TABS: { id: Tab; slug: string; name: string }[] = [
   { id: 'open', slug: '', name: 'Otevřeno' },
   { id: 'published', slug: 'schvaleno', name: 'Schváleno' },
   { id: 'rejected', slug: 'zamitnuto', name: 'Zamítnuto' },
 ]
-export function queueHref(tab: Tab, mine: boolean) {
+interface Filter { mine: boolean; grade: GradeId | null; subject: SubjectId | null }
+export function queueHref(tab: Tab, f: Partial<Filter> = {}) {
   const q = new URLSearchParams()
   const slug = TABS.find((x) => x.id === tab)!.slug
   if (slug) q.set('stav', slug)
-  if (mine) q.set('moje', '1')
+  if (f.mine) q.set('moje', '1')
+  if (f.grade) q.set('rocnik', f.grade)
+  if (f.subject) q.set('predmet', f.subject)
   return `/kontrola${q.size ? `?${q}` : ''}`
 }
-const queueNow = () => {
+function queueNow(): { tab: Tab } & Filter {
   const q = new URLSearchParams(location.search)
-  return { tab: TABS.find((x) => x.slug && x.slug === q.get('stav'))?.id ?? 'open', mine: q.get('moje') === '1' }
+  const grade = q.get('rocnik'), subject = q.get('predmet')
+  return {
+    tab: TABS.find((x) => x.slug && x.slug === q.get('stav'))?.id ?? 'open',
+    mine: q.get('moje') === '1',
+    grade: grade && grade in GRADE_NAME ? grade as GradeId : null,
+    subject: subject && subject in SUBJECTS ? subject as SubjectId : null,
+  }
 }
+/** The API query of a filter. */
+const filterQuery = (f: Filter) => `${f.mine ? '&mine=1' : ''}${f.grade ? `&grade=${f.grade}` : ''}${f.subject ? `&subject=${f.subject}` : ''}`
 /** The tab a change is listed in. */
 const tabOf = (d: DraftView): Tab => d.status === 'published' ? 'published' : d.status === 'rejected' || d.status === 'withdrawn' ? 'rejected' : 'open'
 
@@ -51,16 +62,21 @@ function modeOf(anchor: string): PreviewMode {
 const where = (d: DraftView) => `${GRADE_NAME[d.grade as GradeId]} · ${SUBJECTS[d.subject as SubjectId]?.name}`
 
 export function ReviewQueue({ me }: { me: Me }) {
-  const { tab, mine } = queueNow()
-  const key = `${tab}/${mine}`
+  const { tab, ...f } = queueNow()
+  const { mine } = f
+  const fq = filterQuery(f)
+  const key = `${tab}${fq}`
   const [lists, setLists] = useState<Record<string, QueueItem[]>>({})
   const [counts, setCounts] = useState<Record<string, Record<Tab, number>>>({})
   useEffect(() => {
-    get<Record<Tab, number>>(`/api/reviews/counts${mine ? '?mine=1' : ''}`).then((c) => setCounts((x) => ({ ...x, [String(mine)]: c })), () => {})
-    get<QueueItem[]>(`/api/reviews?tab=${tab}${mine ? '&mine=1' : ''}`).then((l) => setLists((x) => ({ ...x, [key]: l })), (e) => toast(e.message, 'bad'))
+    get<Record<Tab, number>>(`/api/reviews/counts?${fq.slice(1)}`).then((c) => setCounts((x) => ({ ...x, [fq]: c })), () => {})
+    get<QueueItem[]>(`/api/reviews?tab=${tab}${fq}`).then((l) => setLists((x) => ({ ...x, [key]: l })), (e) => toast(e.message, 'bad'))
   }, [key])
   const list = lists[key]
-  const count = counts[String(mine)]
+  const count = counts[fq]
+  const filtered = !!(f.grade || f.subject)
+  const refilter = (change: Partial<Filter>) => go(queueHref(tab, { ...f, ...change }), true)
+  const subjects = f.grade ? GRADE_SUBJECTS[f.grade] : (Object.keys(SUBJECTS) as SubjectId[])
 
   const Row = ({ d, act }: { d: QueueItem; act?: boolean }) => (
     <a class="draft" href={`/kontrola/${d.id}`} onClick={nav(`/kontrola/${d.id}`)}>
@@ -86,7 +102,7 @@ export function ReviewQueue({ me }: { me: Me }) {
   if (!list) body = <p class="muted">Načítám…</p>
   else if (tab !== 'open') {
     const total = count?.[tab]
-    body = !list.length ? <Empty>{tab === 'published' ? 'Zatím nebyla schválena žádná změna.' : 'Zatím nebyla zamítnuta žádná změna.'}</Empty> : (
+    body = !list.length ? <Empty>{tab === 'published' ? 'Žádná schválená změna.' : 'Žádná zamítnutá změna.'}</Empty> : (
       <section class="draft-group">
         <h2 class="label">{tab === 'published' ? 'Naposledy schválené a zveřejněné' : 'Naposledy zamítnuté'} · {list.length}{total && total > list.length ? ` z ${total}` : ''}</h2>
         <div class="drafts">{list.map((d) => <Row key={d.id} d={d} />)}</div>
@@ -98,18 +114,19 @@ export function ReviewQueue({ me }: { me: Me }) {
       ['Čeká na tebe', waiting],
       ['Už jsi to viděl/a', list.filter((d) => !d.mine && d.myVerdict)],
       [mine ? 'V kontrole' : 'Tvoje změny v kontrole', list.filter((d) => d.mine && d.status === 'review')],
-      ['Rozpracované', list.filter((d) => d.status === 'draft')],
+      [mine ? 'Rozpracované' : 'Tvoje rozpracované', list.filter((d) => d.mine && d.status === 'draft')],
+      ['Rozpracované ostatními', list.filter((d) => !d.mine && d.status === 'draft')],
     ]
     body = <>
-      {!mine && <>
-        <p class="muted">Změny učiva od ostatních moderátorů. Každá se zveřejní, až ji schválí {list[0]?.needed === 1 || !list.length ? 'někdo další' : `${list[0].needed} další`} – {me.role === 'admin' ? 'svou změnu můžeš jako správce schválit i sám/sama (potvrdíš to klíčem)' : 'vlastní změnu schválit nejde'}.</p>
+      {!mine && !filtered && <>
+        <p class="muted">Všechny změny učiva – rozpracované i odeslané ke kontrole. Každá odeslaná se zveřejní, až ji schválí {list[0]?.needed === 1 || !list.length ? 'někdo další' : `${list[0].needed} další`} – {me.role === 'admin' ? 'svou změnu můžeš jako správce schválit i sám/sama (potvrdíš to klíčem)' : 'vlastní změnu schválit nejde'}.</p>
         <ol class="steps-how">
           <li><b>Otevři</b> změnu ze seznamu.</li>
           <li><b>Projdi</b>, co se změnilo (zeleně přidané, přeškrtnuté odebrané), a vyzkoušej to v telefonu.</li>
           <li><b>Klikni</b> na <b>Schválit</b> – změna se hned zveřejní. Nebo na <b>Požádat o úpravy</b> a napiš autorovi, co opravit.</li>
         </ol>
       </>}
-      {!list.length && <Empty>{mine ? <>Nemáš žádné otevřené změny. <a href="/" onClick={nav('/')}>Vyber téma v učivu</a> a začni upravovat.</> : 'Teď nic nečeká na kontrolu. 🎉'}</Empty>}
+      {!list.length && <Empty>{filtered ? 'V tomhle ročníku a předmětu teď nic otevřeného není.' : mine ? <>Nemáš žádné otevřené změny. <a href="/" onClick={nav('/')}>Vyber téma v učivu</a> a začni upravovat.</> : 'Teď nic nečeká na kontrolu. 🎉'}</Empty>}
       {groups.map(([name, ds]) => ds.length > 0 && (
         <section key={name} class="draft-group">
           <h2 class="label">{name} · {ds.length}</h2>
@@ -126,10 +143,21 @@ export function ReviewQueue({ me }: { me: Me }) {
         <nav class="seg-tabs" aria-label="Změny podle stavu">
           {TABS.map((t) => {
             const n = t.id === tab && list ? list.length : count?.[t.id]
-            return <a key={t.id} href={queueHref(t.id, mine)} onClick={nav(queueHref(t.id, mine))} class={tab === t.id ? 'on' : ''} aria-current={tab === t.id ? 'page' : undefined}>{t.name}{n !== undefined && ` · ${n}`}</a>
+            return <a key={t.id} href={queueHref(t.id, f)} onClick={nav(queueHref(t.id, f))} class={tab === t.id ? 'on' : ''} aria-current={tab === t.id ? 'page' : undefined}>{t.name}{n !== undefined && ` · ${n}`}</a>
           })}
         </nav>
-        <label class="toggle"><input type="checkbox" checked={mine} onChange={(e) => go(queueHref(tab, e.currentTarget.checked), true)} />Pouze moje</label>
+        <select class="q-select" value={f.grade ?? ''} aria-label="Ročník" onChange={(e) => {
+          const grade = (e.currentTarget.value || null) as GradeId | null
+          refilter({ grade, subject: grade && f.subject && !GRADE_SUBJECTS[grade].includes(f.subject) ? null : f.subject })
+        }}>
+          <option value="">Všechny ročníky</option>
+          {STAGES.map((st) => <optgroup key={st.id} label={st.name}>{st.grades.map((g) => <option key={g} value={g}>{GRADE_NAME[g]}</option>)}</optgroup>)}
+        </select>
+        <select class="q-select" value={f.subject ?? ''} aria-label="Předmět" onChange={(e) => refilter({ subject: (e.currentTarget.value || null) as SubjectId | null })}>
+          <option value="">Všechny předměty</option>
+          {subjects.map((x) => <option key={x} value={x}>{SUBJECTS[x].name}</option>)}
+        </select>
+        <label class="toggle"><input type="checkbox" checked={mine} onChange={(e) => refilter({ mine: e.currentTarget.checked })} />Pouze moje</label>
       </div>
       {body}
     </div>
@@ -169,7 +197,7 @@ export function Review({ id, me }: { id: string; me: Me }) {
   const own = d.author.id === me.id
   const inReview = d.status === 'review'
   const g = d.grade as GradeId, s = d.subject as SubjectId
-  const up = queueHref(tabOf(d), own)
+  const up = queueHref(tabOf(d), { mine: own })
   const myDecision = data.reviews.filter((r) => !r.stale && r.user.id === me.id && r.verdict !== 'comment').pop()?.verdict
   const willPublish = d.approvals.filter((a) => a.id !== me.id).length + 1 >= d.needed && !d.changes.some((c) => c.id !== me.id)
 
@@ -198,7 +226,7 @@ export function Review({ id, me }: { id: string; me: Me }) {
   const remove = async () => {
     if (!confirm(`Smazat rozpracovaný návrh „${d.title}“? Tohle nejde vrátit.`)) return
     setBusy(true)
-    try { await api('DELETE', `/api/drafts/${d.id}`); refreshIndex(); toast('Návrh smazán'); go(queueHref('open', true), true) }
+    try { await api('DELETE', `/api/drafts/${d.id}`); refreshIndex(); toast('Návrh smazán'); go(queueHref('open', { mine: true }), true) }
     catch (e) { toast(e instanceof ApiError ? e.message : 'Smazání se nepovedlo.', 'bad') }
     finally { setBusy(false) }
   }
@@ -307,7 +335,7 @@ function Decision({ data, me, busy, willPublish, myDecision, approve, ask, withd
   let tone = 'info', head: string, text: string, actions: preact.ComponentChildren = null, sticky = false
   if (d.status === 'draft') {
     head = 'Rozpracováno – zatím není co schvalovat'
-    text = own ? 'Ostatní moderátoři to uvidí, až to v editoru odešleš ke kontrole (tlačítko Odeslat).' : `${d.author.name} to ještě neposlal/a ke kontrole. Až to pošle, objeví se to v Ke kontrole.`
+    text = own ? 'Ostatní moderátoři to vidí, ale schvalovat to můžou, až to v editoru odešleš ke kontrole (tlačítko Odeslat).' : `${d.author.name} na tom ještě pracuje. Můžeš se podívat a napsat k tomu zprávu; schválit to půjde, až to pošle ke kontrole.`
     actions = own ? <>{edit}<Busy class="btn" on={busy} onClick={remove}><I.trash />Smazat návrh</Busy></> : rejectBtn
   } else if (own && me.role === 'admin') {
     const rest = <>{edit}<Busy class="btn" on={busy} onClick={withdraw}>Vrátit do rozpracovaných</Busy></>

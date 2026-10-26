@@ -7,6 +7,7 @@ import { CONFIG, LIMITS, MINUTE } from './config'
 import { all, audit, one, run, tx, type DraftRow, type ReviewRow } from './db'
 import { isSubject, readTopic, topicExists, topicProblems, type Problem } from './content'
 import { HttpError, limit } from './http'
+import { GRADE_NAME, SUBJECTS } from '../../src/content/curriculum'
 import { changesTo, contentAt, getDoc, problemsAfter, publish, version, versionId, type DocChange } from './store'
 
 // A draft is one moderator's change of one topic (an edit, or a new topic with its place in the subject).
@@ -107,10 +108,13 @@ const SELECT = 'SELECT d.*, u.name AS author_name FROM drafts d JOIN users u ON 
 /** Decided changes are open to every moderator: what was approved or rejected, by whom and why. */
 const decided = (d: DraftRow) => d.status === 'published' || d.status === 'rejected' || d.status === 'withdrawn'
 
-/** A draft the session may see: its own, any for admins, other moderators' once they were sent for review, and every decided one. */
+/**
+ * A draft the session may see. In the signed-in app every moderator sees every change, work in progress included.
+ * An API token sees its owner's drafts and others' once they were sent for review or decided.
+ */
 function load(s: Session, id: unknown): Row {
   const d = typeof id === 'string' ? one<Row>(`${SELECT} WHERE d.id = ?`, id) : undefined
-  const visible = d && (d.user_id === s.user.id || isAdmin(s) || decided(d) || (d.status !== 'draft' && d.submitted_at !== null))
+  const visible = d && (d.user_id === s.user.id || s.via === 'cookie' || decided(d) || (d.status !== 'draft' && d.submitted_at !== null))
   // Somebody else's work in progress looks exactly like a missing draft.
   if (!d || !visible) throw new HttpError(404, 'Návrh nenalezen.')
   return d
@@ -129,25 +133,31 @@ export function listDrafts(s: Session, everyone: boolean) {
 }
 
 export type ReviewTab = 'open' | 'published' | 'rejected'
+export interface ReviewFilter { mine: boolean; grade: string | null; subject: string | null }
 const DECIDED_LIMIT = 200
 
-/** Which drafts each tab of the review screen holds; `mine` keeps only the session's own. */
-function tabWhere(s: Session, tab: unknown, mine: boolean): [string, string[]] {
-  const own: [string, string[]] = mine ? [' AND d.user_id = ?', [s.user.id]] : ['', []]
-  // Open: everyone's changes in review and my own work in progress (others' unsent drafts are nobody's business).
-  if (tab === 'open') return [`(d.status = 'review' OR (d.status = 'draft' AND d.user_id = ?))${own[0]}`, [s.user.id, ...own[1]]]
-  if (tab === 'published') return [`d.status = 'published'${own[0]}`, own[1]]
+/** Which drafts each tab of the review screen holds, narrowed to my own and to a grade and subject. */
+function tabWhere(s: Session, tab: unknown, f: ReviewFilter): [string, string[]] {
+  if (f.grade !== null && !(f.grade in GRADE_NAME)) throw new HttpError(400, 'Neznámý ročník.')
+  if (f.subject !== null && !(f.subject in SUBJECTS)) throw new HttpError(400, 'Neznámý předmět.')
+  let more = '', args: string[] = []
+  if (f.mine) { more += ' AND d.user_id = ?'; args.push(s.user.id) }
+  if (f.grade) { more += ' AND d.grade = ?'; args.push(f.grade) }
+  if (f.subject) { more += ' AND d.subject = ?'; args.push(f.subject) }
+  // Open: everyone's work in progress and changes in review.
+  if (tab === 'open') return [`d.status IN ('draft', 'review')${more}`, args]
+  if (tab === 'published') return [`d.status = 'published'${more}`, args]
   // Old pull requests closed without merging (status withdrawn) were turned down too.
-  if (tab === 'rejected') return [`d.status IN ('rejected', 'withdrawn')${own[0]}`, own[1]]
+  if (tab === 'rejected') return [`d.status IN ('rejected', 'withdrawn')${more}`, args]
   throw new HttpError(400, 'Neznámý seznam.')
 }
 
 /**
- * The review screen, open to every moderator: changes in review (oldest first, with what this moderator already
- * said about the current revision) and my drafts, then the latest approved (published) and rejected changes.
+ * The review screen, open to every moderator: everyone's changes in review (oldest first, with what this moderator
+ * already said about the current revision) and drafts in progress, then the latest approved and rejected changes.
  */
-export function reviewQueue(s: Session, tab: unknown, mine: boolean) {
-  const [where, args] = tabWhere(s, tab, mine)
+export function reviewQueue(s: Session, tab: unknown, f: ReviewFilter) {
+  const [where, args] = tabWhere(s, tab, f)
   const who = names()
   const rows = tab === 'open'
     ? all<Row>(`${SELECT} WHERE ${where} ORDER BY d.status = 'draft', COALESCE(d.submitted_at, d.updated_at)`, ...args).filter((d) => !empty(d))
@@ -159,10 +169,10 @@ export function reviewQueue(s: Session, tab: unknown, mine: boolean) {
   }))
 }
 
-/** How many changes each tab holds (open without my untouched drafts, which are not listed). */
-export function reviewCounts(s: Session, mine: boolean) {
+/** How many changes each tab holds (open without untouched drafts, which are not listed). */
+export function reviewCounts(s: Session, f: ReviewFilter) {
   const n = (tab: ReviewTab) => {
-    const [where, args] = tabWhere(s, tab, mine)
+    const [where, args] = tabWhere(s, tab, f)
     if (tab === 'open') return all<Row>(`${SELECT} WHERE ${where}`, ...args).filter((d) => !empty(d)).length
     return one<{ n: number }>(`SELECT COUNT(*) AS n FROM drafts d WHERE ${where}`, ...args)!.n
   }
