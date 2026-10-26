@@ -43,6 +43,12 @@ export function Settings() {
           <span class="txt"><b>Přenést pokrok</b><small>na jiné zařízení</small></span><IArrow />
         </Link>
       </div>
+      <h2 class="label next-label">Šprtám</h2>
+      <div class="list">
+        <Link class="row" href="/o-aplikaci">
+          <span class="txt"><b>O aplikaci</b><small>jak funguje a co o tobě (ne)ví</small></span><IArrow />
+        </Link>
+      </div>
     </div>
   )
 }

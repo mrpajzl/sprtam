@@ -1,12 +1,13 @@
 import { GRADE_NAME, GRADE_SUBJECTS, STAGES, SUBJECTS } from '../src/content/curriculum'
 import type { ApproachMeta } from '../src/content/manifest'
 import type { ApproachYearFile, Block, GradeId, Subject, SubjectId, VocabFile, YearBlock } from '../src/content/types'
+import { ABOUT } from '../src/about'
 import { fullTitle, gradeFor, gradeLabel, plain, SITE_NAME, summary, titles } from '../src/seo'
 import { WIDGETS } from '../src/widgets'
 
 // A real HTML page for every public route, so links are shareable with proper previews and search
 // engines get content, titles and descriptions without running JS:
-//   /  /g/<grade>  /g/<grade>/<subject>  /g/<grade>/<subject>/<topic>  /slovicka  /slovicka/<level>
+//   /  /o-aplikaci  /g/<grade>  /g/<grade>/<subject>  /g/<grade>/<subject>/<topic>  /slovicka  /slovicka/<level>
 //   /<approach>  /<approach>/<grade>  /<approach>/<grade>/<epoch>
 // plus the app.html shell for the remaining in-app routes, sitemap.xml and robots.txt. Rendered by the
 // server from the current content release (server/content.ts). The markup uses the app's own classes,
@@ -86,7 +87,16 @@ export function pages(site: SiteContent): Page[] {
     crumbs: [home],
     body: `<div class="page home"><header class="bar"><h1 class="brand">šprtám</h1></header>
 <section class="sec"><h2 class="label">Třída</h2><div class="pad">${STAGES.map((st) => `<div class="pad-group"><small>${STAGE_LABEL[st.id]}</small><div class="pad-keys">${st.grades.map((g) => `<a class="num-key" href="${esc(`/g/${g}`)}" aria-label="${esc(gradeLabel(g))}">${GRADE_NAME[g].split('.')[0]}</a>`).join('')}</div></div>`).join('')}</div></section>
-<a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span></a></div>${tabbar('home')}`,
+<a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span></a>
+<a class="row about-key" style="${style('ink')}" href="/o-aplikaci"><span class="skey m"><b>?</b></span><span class="txt"><b>Co je Šprtám?</b><small>jak funguje a co o tobě (ne)ví</small></span></a></div>${tabbar('home')}`,
+  })
+
+  out.push({
+    path: '/o-aplikaci',
+    title: ABOUT.title,
+    description: ABOUT.description,
+    crumbs: [home, [ABOUT.title, '/o-aplikaci']],
+    body: `<div class="page about">${bar(ABOUT.title, '/')}<div class="about-lead"><p>${inline(ABOUT.lead)}</p></div>${ABOUT.sections.map((x) => `<section><h2 class="label next-label">${esc(x.title)}</h2><ul class="about-list">${x.items.map((i) => `<li>${inline(i)}</li>`).join('')}</ul></section>`).join('')}</div>${tabbar(undefined)}`,
   })
 
   for (const g of STAGES.flatMap((st) => st.grades)) {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
+import { ABOUT } from './about'
 import { approachById } from './approach'
 import { ALL_GRADES, GRADE_SUBJECTS } from './content/curriculum'
 import type { GradeId, SubjectId } from './content/types'
@@ -8,6 +9,7 @@ import { MODES, type ModeId } from './quiz/engine'
 import { go, useRoute } from './router'
 import { fullTitle, titles } from './seo'
 import { setTheme } from './theme'
+import { About } from './screens/About'
 import { ApproachScreen } from './screens/Approach'
 import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
@@ -44,6 +46,7 @@ export function App() {
   if (a === 'hledat') return <><Search /><TabBar active="search" /></>
   if (a === 'sdilet') return <><SyncScreen /><TabBar /></>
   if (a === 'nastaveni') return <><Settings /><TabBar /></>
+  if (a === 'o-aplikaci') return <><About /><TabBar /></>
   if (a === 'widgety') return <><GalleryScreen key={b} name={b} /><TabBar /></>
   if (approachById(a)) {
     if (c && d === 'test') return <ApproachScreen id={a} g={b} block={c} test />
@@ -70,6 +73,7 @@ export function App() {
 function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'hledat') return 'Hledat'
   if (a === 'nastaveni') return 'Nastavení'
+  if (a === 'o-aplikaci') return ABOUT.title
   if (a === 'widgety') return 'Galerie widgetů'
   if (approachById(a)) return null
   if (a === 'slovicka') return b ? titles.vocabLevel(b) : titles.vocab()
