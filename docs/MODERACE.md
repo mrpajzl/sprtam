@@ -1,13 +1,19 @@
 # Moderace
 
-Samostatná aplikace pro úpravy a tvorbu učiva: **[moderace.sprtam.cz](https://moderace.sprtam.cz)**. Pozvaní moderátoři v ní upravují témata v editoru s živým náhledem. Hotovou změnu pošlou ke schválení a aplikace z ní otevře pull request na GitHubu. Po sloučení se změna sama nasadí na sprtam.cz.
+Samostatná aplikace pro úpravy a tvorbu učiva: **[moderace.sprtam.cz](https://moderace.sprtam.cz)**. Učivo si v ní kdokoli prohlédne bez přihlášení. Pozvaní moderátoři v ní upravují témata v editoru s živým náhledem. Hotovou změnu pošlou ke schválení a aplikace z ní otevře pull request na GitHubu. Po sloučení se změna sama nasadí na sprtam.cz.
 
 Kód je ve složce [`moderator/`](../moderator). Pro žáky se nic nemění: Šprtám dál nemá účty a o dětech nic neukládá. Účty mají jen moderátoři a jen v moderaci.
+
+## Prohlížení (bez přihlášení)
+
+Pro učitele a kohokoli, kdo chce učivo zkontrolovat. **Učivo** → ročník → předmět → téma (adresa `/ucivo/<ročník>/<předmět>/<téma>`, dá se poslat dál). Vlevo je téma v telefonu, vykreslené stejně jako v aplikaci, včetně pomůcek a zkoušení otázek. Vpravo jsou všechna vysvětlení a **všechny otázky se správnými odpověďmi** a vysvětlením. Kliknutím se otázka otevře v telefonu. Šipky nahoře přepínají na sousední téma.
+
+Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Návrhy ani to, kdo co upravuje, nepřihlášený nevidí.
 
 ## Pro moderátory
 
 1. **Přihlášení** je jen přístupovým klíčem (passkey), tedy otiskem prstu, obličejem nebo PINem zařízení. Žádné heslo neexistuje. Účet vznikne z pozvánky od správce. Odkaz platí 72 hodin a jde použít jen jednou.
-2. **Učivo**: vlevo vyber ročník, pak předmět a téma. Tlačítko **Nové téma** založí kostru se dvěma vysvětleními a pár otázkami.
+2. **Učivo**: vlevo vyber ročník, pak předmět a téma. Téma se nejdřív otevře jen k prohlížení (jako výše). Editor zapne tlačítko **Upravit**, případně **Pokračovat v úpravách**, když už máš rozpracováno. Tlačítko **Nové téma** založí kostru se dvěma vysvětleními a pár otázkami.
 3. **Editor** má tři sloupce:
    - **Vlevo** jsou části tématu (název, vysvětlení, otázky) a seznam toho, co ještě chybí. Kliknutím na položku skočíš na místo, kde se to opravuje.
    - **Uprostřed** jsou bloky jako karty. Přidáš je tlačítkem **+** mezi kartami, přesuneš je tažením nebo šipkami a smazané vrátíš přes Ctrl+Z. Lišta nahoře vkládá **tučné**, *kurzívu*, `vzorec`, horní index a matematické znaky.
@@ -43,6 +49,7 @@ Příkaz vypíše jednorázový odkaz. Další příkazy jsou `users` (seznam ú
 | Účty | Jen přes jednorázovou pozvánku (72 h). Token je v `#` části odkazu, takže ho prohlížeč nikam neposílá, a aplikace ho po načtení smaže z adresního řádku. V databázi je jen jeho SHA-256. |
 | Session | Náhodný 256bitový token v cookie `__Host-moderace` (`HttpOnly`, `Secure`, `SameSite=Strict`). V databázi je jen SHA-256. Vyprší po 12 h nečinnosti, nejpozději po 7 dnech. Přihlášení vždy vytvoří novou session. Odebrání klíče ukončí session, které z něj vznikly. |
 | Výzvy | Přihlašovací výzvy si server neukládá: podepisuje je klíčem, který existuje jen v běžícím procesu, a pamatuje si jen ty už použité. Kdokoli z internetu tak nemůže zahltit paměť a přihlašování zablokovat. Výzvy k registraci vyžadují platnou pozvánku nebo přihlášení. |
+| Veřejná část | Bez přihlášení jde jen číst zveřejněné učivo (`GET /api/content/index` a `/api/content/topic/…`). Jsou to tytéž soubory, které stejně posílá sprtam.cz. Seznam rozpracovaných návrhů a jejich autorů dostane jen přihlášený moderátor. Všechno ostatní chce session. |
 | Cizí stránky | Každý požadavek, který něco mění, musí mít přesně náš `Origin` a `Sec-Fetch-Site: same-origin` a tělo jen jako JSON. CORS není povolené. |
 | Hlavičky | Přísná CSP (jen `'self'`, žádné cizí skripty), HSTS, `frame-ancestors 'self'`, COOP/CORP, `no-referrer`, `noindex`. |
 | Omezení | Rate limit přihlašování, pozvánek, zakládání, ukládání a odesílání návrhů (IPv6 po celých /64). Požadavky bez přihlášení mají nejvýš 16 kB, ostatní 512 kB. Jeden moderátor má nejvýš 50 otevřených návrhů. Adresu klienta z `CF-Connecting-IP` server bere jen od adres Cloudflare. |

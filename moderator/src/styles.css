@@ -147,6 +147,56 @@ svg { width: 18px; height: 18px; flex: none; }
 .intro { background: var(--card); border-radius: 20px; padding: 32px; box-shadow: inset 0 0 0 1px var(--line); display: grid; gap: 16px; max-width: 760px; }
 .how { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; line-height: 1.5; color: var(--ink-2); }
 
+/* ── Topic, read only (open to everyone) ── */
+.viewer { max-width: 1180px; margin: 0 auto; display: grid; gap: 16px; }
+.v-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'up up' 'title actions'; gap: 6px 16px; align-items: center; }
+.v-up { grid-area: up; justify-self: start; display: inline-flex; align-items: center; gap: 4px; margin-left: -6px; padding: 4px 8px 4px 2px; border-radius: 8px; color: var(--ink-2); font-weight: 750; text-decoration: none; }
+.v-up:hover { background: var(--line-2); color: var(--ink); }
+.v-up svg { width: 18px; height: 18px; }
+.v-title { grid-area: title; display: flex; align-items: center; gap: 14px; min-width: 0; }
+.v-title h1 { margin: 0; overflow-wrap: anywhere; }
+.v-title small { color: var(--ink-3); font-family: var(--mono); font-size: 0.75rem; }
+.v-em { font-size: 2.2rem; line-height: 1; }
+.v-actions { grid-area: actions; display: flex; align-items: center; gap: 10px; }
+.v-step { display: flex; gap: 2px; }
+.v-body { display: grid; grid-template-columns: 410px minmax(0, 1fr); gap: 28px; align-items: start; }
+.v-phone { position: sticky; top: 74px; height: calc(100dvh - 92px); min-height: 520px; max-height: 900px; }
+.v-sheet { display: grid; gap: 26px; align-content: start; min-width: 0; }
+.v-sec { display: grid; gap: 10px; }
+.v-exs { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.v-ex { display: flex; align-items: center; gap: 10px; padding: 10px 12px; text-align: left; border-radius: var(--r-s); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
+.v-ex > span:last-child { display: grid; min-width: 0; }
+.v-ex small { color: var(--ink-3); font-size: 0.8rem; }
+.v-ex:hover, .v-q:hover { box-shadow: inset 0 0 0 1px var(--ink-3); }
+.v-ex.on, .v-qs li.on .v-q { box-shadow: inset 0 0 0 2px var(--accent); }
+.v-qs { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.v-q { display: flex; gap: 12px; width: 100%; text-align: left; padding: 12px 14px; border-radius: var(--r-s); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); align-items: start; }
+.v-n { font-family: var(--mono); font-size: 0.75rem; font-weight: 800; color: var(--ink-3); min-width: 20px; text-align: right; padding-top: 3px; }
+.v-qb { display: grid; gap: 6px; min-width: 0; line-height: 1.45; }
+.v-qb > small { font-family: var(--mono); font-size: 0.68rem; font-weight: 750; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-3); }
+.v-qb b { font-weight: 750; }
+.v-ans { justify-self: start; display: inline-flex; padding: 3px 10px; border-radius: 8px; background: var(--ok-bg); color: var(--ok); font-weight: 750; }
+.v-opts, .v-pairs, .v-order { margin: 0; padding: 0; display: grid; gap: 3px; color: var(--ink-2); }
+.v-opts, .v-pairs { list-style: none; }
+.v-order { padding-left: 1.4em; }
+.v-opts li { display: flex; align-items: center; gap: 8px; }
+.v-opts li.ok { color: var(--ok); font-weight: 750; }
+.v-opts svg { width: 16px; height: 16px; flex: none; }
+.v-opts .dot { width: 16px; display: grid; place-items: center; flex: none; }
+.v-opts .dot::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--line); }
+.v-pairs li { display: flex; gap: 8px; flex-wrap: wrap; }
+.v-pairs span { color: var(--ink-3); }
+.v-why { color: var(--ink-3); font-size: 0.9rem; }
+.v-sheet code, .v-qb code { font-family: var(--mono); font-size: 0.88em; }
+a.topic { color: var(--ink); text-decoration: none; }
+.gate-alt { text-align: center; }
+@media (max-width: 900px) {
+  .v-body { grid-template-columns: minmax(0, 1fr); }
+  .v-phone { position: static; height: 640px; min-height: 0; }
+  .v-head { grid-template-areas: 'up up' 'title title' 'actions actions'; }
+  .v-actions { justify-content: space-between; }
+}
+
 /* ── Drafts, users, account ── */
 .draft-group { display: grid; gap: 8px; margin-top: 8px; }
 .drafts, .users { display: grid; gap: 6px; }

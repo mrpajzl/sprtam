@@ -56,8 +56,13 @@ try {
 
   // ——— Login with the passkey; challenges ———
   await admin.page.getByRole('button', { name: 'Odhlásit se' }).click()
+  check(await admin.page.getByRole('heading', { name: 'Učivo Šprtámu' }).waitFor({ timeout: 5000 }).then(() => true, () => false), 'signing out leaves the public library')
+  await admin.page.getByRole('link', { name: 'Přihlásit se' }).click()
   await admin.page.getByRole('button', { name: 'Přihlásit se klíčem' }).click()
   check(await signedInAs(admin.page, 'Ada'), 'passkey sign-in works')
+  await admin.page.goto(`${BASE}/prihlaseni?dalsi=//evil.example`)
+  await admin.page.waitForURL(`${BASE}/`).catch(() => {})
+  check(admin.page.url() === `${BASE}/`, 'after sign-in it only returns to this site')
   const opts = await admin.api('POST', '/api/auth/login/options', {})
   const forged = opts.body.challengeId.replace(/\.[^.]+$/, '.AAAA')
   check((await admin.api('POST', '/api/auth/login/verify', { challengeId: forged, response: { id: 'x' } })).status === 400, 'a forged login challenge is refused')
@@ -67,13 +72,30 @@ try {
   const evil = await fetch(`${BASE}/api/drafts`, { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'https://evil.example', Cookie: `moderace=${cookie.value}` }, body: '{}' })
   check(evil.status === 403, 'a request from a foreign origin is refused even with the cookie')
   const anon = await fetch(`${BASE}/api/content/index`)
-  check(anon.status === 401, 'content needs a session')
+  check(anon.status === 200 && (await anon.json()).active.length === 0, 'the catalogue is public, without who edits what')
+  check((await fetch(`${BASE}/api/content/topic/z6/matematika/prvocisla`)).status === 200, 'a published topic is public')
+  check((await fetch(`${BASE}/api/drafts`)).status === 401, 'drafts need a session')
+  check((await fetch(`${BASE}/api/content/topic/z6/matematika/..%2Fx`)).status === 404, 'a path in a public topic id is refused')
   check((await fetch(`${BASE}/%E0`)).status === 400, 'a malformed URL gives 400')
   check((await fetch(`${BASE}/`)).headers.get('content-security-policy')?.includes("script-src 'self'"), 'strict CSP header')
 
-  // ——— Editor: open a topic, edit, autosave, preview ———
+  // ——— Browsing without an account (teachers) ———
+  const teacher = await device()
+  await teacher.page.goto(`${BASE}/ucivo/z6/matematika`)
+  await teacher.page.getByRole('link', { name: /Prvočísla/ }).click()
+  await teacher.page.waitForURL(/\/ucivo\/z6\/matematika\/prvocisla$/)
+  check(await teacher.page.frameLocator('iframe').locator('.blocks').waitFor({ timeout: 5000 }).then(() => true, () => false), 'a visitor sees the topic in the phone')
+  check(await teacher.page.locator('.v-qs li').count() >= 8, 'a visitor sees the questions with answers')
+  check(await teacher.page.getByRole('button', { name: 'Upravit' }).count() === 0, 'a visitor has no edit button')
+  await teacher.page.goto(`${BASE}/navrhy`)
+  check(await teacher.page.getByRole('button', { name: 'Přihlásit se klíčem' }).isVisible(), 'drafts ask a visitor to sign in')
+
+  // ——— Editor: browse a topic, switch to editing, autosave, preview ———
   await admin.page.goto(`${BASE}/ucivo/z6/matematika`)
-  await admin.page.getByRole('button', { name: /Prvočísla/ }).click()
+  await admin.page.getByRole('link', { name: /Prvočísla/ }).click()
+  await admin.page.waitForURL(/\/prvocisla$/)
+  check(await admin.page.locator('.card.t-text').count() === 0, 'a topic opens read only')
+  await admin.page.getByRole('button', { name: 'Upravit' }).click()
   await admin.page.waitForURL(/\/navrh\//)
   const frame = admin.page.frameLocator('iframe')
   await frame.locator('.blocks').waitFor()
@@ -99,7 +121,7 @@ try {
   const keyLink = (await admin.api('POST', `/api/admin/users/${petr.id}/key-link`, {})).body.url
   check(typeof keyLink === 'string', 'admin creates a key link (fresh sign-in)')
   check((await admin.api('POST', `/api/admin/users/${petr.id}/key-link`, { reset: true })).status === 200, 'admin resets the keys')
-  check((await mod.api('GET', '/api/content/index')).status === 401, 'reset signs the user out')
+  check((await mod.api('GET', '/api/drafts')).status === 401, 'reset signs the user out')
   const old = await device()
   await old.page.goto(keyLink)
   check(await old.page.getByText('Pozvánka neplatí').waitFor({ timeout: 5000 }).then(() => true, () => false), 'a key link from before the reset no longer works')
@@ -116,7 +138,7 @@ try {
   const sub = await admin.api('POST', `/api/drafts/${draftId}/submit`, {})
   check(sub.status === 503 && sub.body.code === 'github', 'submitting without a GitHub token says so')
 
-  check([admin, mod].every((d) => !d.errors.length), 'no errors in the pages')
+  check([admin, mod, teacher].every((d) => !d.errors.length), 'no errors in the pages')
 } finally {
   await browser.close()
   server.kill()

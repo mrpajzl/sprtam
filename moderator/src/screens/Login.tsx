@@ -1,6 +1,7 @@
 import { useState } from 'preact/hooks'
 import { signIn, supported, type Me } from '../passkey'
 import { ApiError } from '../api'
+import { nav } from '../router'
 import { Busy, I } from '../ui/kit'
 
 export function Login({ onDone }: { onDone: (u: Me) => void }) {
@@ -23,6 +24,7 @@ export function Login({ onDone }: { onDone: (u: Me) => void }) {
         )}
         {error && <div class="banner bad" role="alert">{error}</div>}
         <p class="fine">Nemáš klíč nebo jsi přišel/přišla o zařízení? Napiš správci, pošle ti nový odkaz.</p>
+        <p class="fine gate-alt">Chceš se jen podívat na učivo? <a href="/" onClick={nav('/')}>Prohlížet bez přihlášení</a></p>
       </div>
     </div>
   )

@@ -19,7 +19,7 @@ export async function editTopic(g: string, s: string, id: string) {
   } catch (e) { toast(e instanceof ApiError ? e.message : 'Téma se nepodařilo otevřít.', 'bad') }
 }
 
-export function Library({ g, s, me }: { g?: string; s?: string; me: Me }) {
+export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null }) {
   const index = useIndex()
   const [q, setQ] = useState('')
   const [adding, setAdding] = useState(false)
@@ -70,9 +70,9 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me }) {
               <>
                 <div class="row-head">
                   <h2>{SUBJECTS[subject].name} · {GRADE_NAME[grade]}</h2>
-                  <button class="btn primary" onClick={() => setAdding(true)}><I.plus />Nové téma</button>
+                  {me && <button class="btn primary" onClick={() => setAdding(true)}><I.plus />Nové téma</button>}
                 </div>
-                <p class="muted">Témata jsou v pořadí, v jakém se během roku učí. Klikni na téma a uprav ho.</p>
+                <p class="muted">Témata jsou v pořadí, v jakém se během roku učí. Klikni na téma: uvidíš ho jako děti, se všemi otázkami a správnými odpověďmi.</p>
                 <TopicRows index={index} rows={index.subjects[`${grade}/${subject}`].map((t) => ({ key: `${grade}/${subject}`, ...t }))} me={me} />
                 {adding && <NewTopic g={grade} s={subject} index={index} onClose={() => setAdding(false)} />}
               </>
@@ -85,8 +85,19 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me }) {
   )
 }
 
-function Intro({ index, me }: { index?: Index; me: Me }) {
+function Intro({ index, me }: { index?: Index; me: Me | null }) {
   const total = index ? Object.values(index.subjects).reduce((n, l) => n + l.length, 0) : 0
+  if (!me) return (
+    <div class="intro">
+      <h1>Učivo Šprtámu</h1>
+      <p class="lead">Projdi si všechno učivo aplikace <a href="https://sprtam.cz" target="_blank" rel="noopener">sprtam.cz</a> přesně tak, jak ho vidí děti: výklad, pomůcky i otázky se správnými odpověďmi.</p>
+      <ol class="how">
+        <li><b>Vyber</b> vlevo ročník a předmět, nebo téma vyhledej.</li>
+        <li><b>Otevři téma.</b> V telefonu si přečteš výklad a vyzkoušíš otázky. Vedle je přehled všech otázek se správnými odpověďmi.</li>
+      </ol>
+      <p class="muted">Učivo upravují pozvaní moderátoři a každou změnu před zveřejněním někdo schvaluje.{index ? ` V učivu je ${total} témat.` : ''}</p>
+    </div>
+  )
   const mine = index?.active.filter((a) => a.userId === me.id).length ?? 0
   return (
     <div class="intro">
@@ -104,18 +115,18 @@ function Intro({ index, me }: { index?: Index; me: Me }) {
 
 interface Row { key: string; id: string; title: string; emoji: string; approach?: string }
 
-function TopicRows({ index, rows, me, showWhere }: { index: Index; rows: Row[]; me: Me; showWhere?: boolean }) {
-  const [opening, setOpening] = useState<string | null>(null)
+function TopicRows({ index, rows, me, showWhere }: { index: Index; rows: Row[]; me: Me | null; showWhere?: boolean }) {
   return (
     <div class="topics">
       {rows.map((t, i) => {
         const [g, s] = t.key.split('/') as [GradeId, SubjectId]
         const k = `${t.key}/${t.id}`
         const others = index.active.filter((a) => a.key === k)
-        const mine = others.find((a) => a.userId === me.id)
-        const rest = others.filter((a) => a.userId !== me.id)
+        const mine = me && others.find((a) => a.userId === me.id)
+        const rest = others.filter((a) => a.userId !== me?.id)
+        const href = `/ucivo/${k}`
         return (
-          <button key={k} class="topic" disabled={opening !== null} onClick={async () => { setOpening(k); await editTopic(g, s, t.id); setOpening(null) }}>
+          <a key={k} class="topic" href={href} onClick={nav(href)}>
             <span class="n">{showWhere ? '' : i + 1}</span>
             <span class="em">{t.emoji}</span>
             <span class="t">
@@ -125,8 +136,8 @@ function TopicRows({ index, rows, me, showWhere }: { index: Index; rows: Row[]; 
             </span>
             {mine && <span class="pill mine">{mine.status === 'submitted' ? 'tvůj návrh čeká' : 'rozpracováno'}</span>}
             {rest.length > 0 && <span class="pill warn" title={rest.map((r) => r.name).join(', ')}>upravuje {rest[0].name}{rest.length > 1 ? ` +${rest.length - 1}` : ''}</span>}
-            {opening === k ? <span class="spin" /> : <I.right />}
-          </button>
+            <I.right />
+          </a>
         )
       })}
     </div>

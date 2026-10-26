@@ -52,8 +52,10 @@ on('POST', '/api/me/sessions/end-others', (req, _res, _p, ip) => {
 
 // ——— Content and drafts ———
 
-on('GET', '/api/content/index', (req) => { requireSession(req); return { ...contentIndex(), active: activeDrafts() } })
-on('GET', '/api/content/topic/:g/:s/:id', (req, _res, p) => { requireSession(req); return readTopic(p[0], p[1], p[2]) })
+// Published content is public (read only, the same files sprtam.cz serves): teachers can browse it without an
+// account. Who is working on what is only for moderators.
+on('GET', '/api/content/index', (req) => ({ ...contentIndex(), active: getSession(req) ? activeDrafts() : [] }), true)
+on('GET', '/api/content/topic/:g/:s/:id', (_req, _res, p) => readTopic(p[0], p[1], p[2]), true)
 on('GET', '/api/drafts', async (req) => {
   const s = requireSession(req)
   const everyone = new URL(req.url!, 'http://x').searchParams.get('all') === '1'
