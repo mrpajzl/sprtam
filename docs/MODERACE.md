@@ -8,6 +8,8 @@ Samostatná aplikace pro úpravy a tvorbu učiva: **[moderace.sprtam.cz](https:/
 
 Moderace je zároveň obsahová služba: učivo i s celou historií je v její databázi ([OBSAH.md](OBSAH.md)).
 
+Funguje i na mobilu: obrazovky jsou ve spodní liště, správcovské (Vydání, Moderátoři) a vlastní účet pod **Více**.
+
 Kód je ve složce [`moderator/`](../moderator). Pro žáky se nic nemění: Šprtám dál nemá účty a o dětech nic neukládá. Účty mají jen moderátoři a jen v moderaci.
 
 ## Prohlížení (bez přihlášení)
@@ -24,6 +26,7 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
    - **Vlevo** jsou části tématu (název, vysvětlení, otázky) a seznam toho, co ještě chybí. Kliknutím na položku skočíš na místo, kde se to opravuje.
    - **Uprostřed** jsou bloky jako karty. Přidáš je tlačítkem **+** mezi kartami, přesuneš je tažením nebo šipkami a smazané vrátíš přes Ctrl+Z. Lišta nahoře vkládá **tučné**, *kurzívu*, `vzorec`, horní index a matematické znaky.
    - **Vpravo** je náhled v telefonu. Kreslí ho přímo komponenty a styly Šprtámu, takže vypadá a funguje přesně jako v aplikaci, i ve tmavém vzhledu. Pomůcky jdou zkoušet a otázky odpovídat.
+   - **Na mobilu a menším tabletu** je místo sloupců dole lišta. **Části** otevře osnovu se seznamem toho, co chybí, **Náhled** ukáže téma přes celou obrazovku a **Odeslat** pošle změnu ke kontrole.
 4. **Ukládá se samo.** Neuložené změny se při pádu prohlížeče nabídnou k obnovení.
 5. **Odeslat ke kontrole** jde, až editor nehlásí žádnou chybu. Server pak zkontroluje celé učivo i s touto změnou stejnými pravidly jako `npm run check:content`.
 6. Stav návrhů je v **Mých návrzích**: *Rozpracováno*, *Ke kontrole* (kolik schválení už má), *Zveřejněno*, *Staženo*, *Zamítnuto*.

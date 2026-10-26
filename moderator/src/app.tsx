@@ -48,6 +48,10 @@ export function App() {
     get<{ mine: boolean; myVerdict: string | null }[]>('/api/reviews').then((l) => setWaiting(l.filter((d) => !d.mine && !d.myVerdict).length), () => {})
   }, [session?.user?.id, route.join('/')])
 
+  // Phones: the "Více" sheet of the bottom bar closes on every navigation.
+  const [more, setMore] = useState(false)
+  useEffect(() => setMore(false), [route.join('/')])
+
   if (!session) return <div class="boot" />
   const screen = route[0] ?? 'ucivo'
   const signedIn = (user: Me) => { setSession({ ...session, user }); if (screen === 'pozvanka') go('/', true) }
@@ -59,11 +63,12 @@ export function App() {
   if (user && screen === 'navrh' && route[1]) return <><Editor id={route[1]} me={user} /><Toasts /></>
 
   const logout = async () => { await post('/api/auth/logout').catch(() => {}); setSession({ ...session, user: null }); go('/', true) }
-  const link = (href: string, label: string, icon: preact.JSX.Element, on: boolean) => (
-    <a href={href} onClick={nav(href)} class={on ? 'on' : ''} aria-current={on ? 'page' : undefined}>{icon}<span>{label}</span></a>
+  const link = (href: string, label: string, icon: preact.JSX.Element, on: boolean, badge = 0) => (
+    <a href={href} onClick={nav(href)} class={on ? 'on' : ''} aria-current={on ? 'page' : undefined} title={label}>{icon}<span>{label}</span>{badge > 0 && <i class="dot-n">{badge}</i>}</a>
   )
+  const admin = user?.role === 'admin'
   return (
-    <div class="shell">
+    <div class={`shell ${user ? 'has-bnav' : ''}`}>
       <header class="top">
         <a class="brand" href="/" onClick={nav('/')}><b>šprtám</b><span>moderace</span></a>
         <nav class="tabs">
@@ -96,6 +101,29 @@ export function App() {
         {user && screen === 'ucet' && <Account me={user} onLogout={logout} />}
         {!SCREENS.includes(screen) && <div class="empty-state">Tahle stránka neexistuje. <a href="/" onClick={nav('/')}>Zpět na učivo</a></div>}
       </main>
+      {user && (
+        // Phones: the main screens in a bottom bar within thumb reach; admin screens and the account under "Více".
+        <nav class="bnav" aria-label="Hlavní navigace">
+          {link('/', 'Učivo', <I.book />, screen === 'ucivo')}
+          {link('/kontrola', 'Kontrola', <I.check />, screen === 'kontrola', waiting)}
+          {link('/navrhy', 'Návrhy', <I.inbox />, screen === 'navrhy')}
+          {link('/pomucky', 'Pomůcky', <I.bulb />, screen === 'pomucky')}
+          {admin
+            ? <button class={['vydani', 'uzivatele', 'ucet'].includes(screen) || more ? 'on' : ''} onClick={() => setMore(!more)} aria-expanded={more}><I.more /><span>Více</span></button>
+            : link('/ucet', 'Účet', <I.user />, screen === 'ucet')}
+        </nav>
+      )}
+      {more && admin && (
+        <>
+          <div class="sheet-backdrop" onClick={() => setMore(false)} />
+          <div class="more-sheet" role="dialog" aria-label="Více">
+            {link('/vydani', 'Vydání', <I.layers />, screen === 'vydani')}
+            {link('/uzivatele', 'Moderátoři', <I.users />, screen === 'uzivatele')}
+            {link('/ucet', `Můj účet · ${user!.name}`, <I.user />, screen === 'ucet')}
+            <button onClick={logout}><I.logout /><span>Odhlásit se</span></button>
+          </div>
+        </>
+      )}
       <Toasts />
     </div>
   )

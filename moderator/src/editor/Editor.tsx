@@ -53,6 +53,8 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
   const [pvMode, setPvMode] = useState<PreviewMode>({ kind: 'topic', ex: 0 })
   const [submitting, setSubmitting] = useState(false)
   const [showPreview, setShowPreview] = useState(() => matchMedia('(min-width: 1081px)').matches)
+  // Narrow screens: the outline is a sheet over the editor, opened from the bottom dock.
+  const [parts, setParts] = useState(false)
 
   // ——— Checks ———
   const cleaned = useMemo(() => clean(topic), [topic])
@@ -166,24 +168,24 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
 
   return (
     <Ctx.Provider value={ctx}>
-      <div class={`editor ${showPreview ? 'pv-open' : 'no-preview'}`}>
+      <div class={`editor ${showPreview ? 'pv-open' : 'no-preview'} ${parts ? 'parts-open' : ''}`}>
         <header class="ed-top">
           <a class="icon" href={back} onClick={nav(back)} aria-label="Zpět na prohlížení" title="Zpět na prohlížení"><I.back /></a>
           <div class="ed-title">
             <small>{GRADE_NAME[g]} · {SUBJECTS[s].name}{draft.kind === 'new' ? ' · nové téma' : ''}{!own ? ` · návrh: ${draft.author.name}` : ''}</small>
             <b>{topic.emoji} {topic.title || 'Bez názvu'}</b>
           </div>
-          <span class={`pill st-${draft.status}`}>{status}</span>
+          <span class={`pill st-${draft.status} wide-only`}>{status}</span>
           {!readOnly && <SaveState save={save} at={draft.updatedAt} retry={flush} />}
           <div class="ed-actions">
             {!readOnly && <>
               <button class="icon" onClick={hist.undo} disabled={!hist.canUndo} title="Zpět (Ctrl+Z)" aria-label="Zpět"><I.undo /></button>
               <button class="icon" onClick={hist.redo} disabled={!hist.canRedo} title="Znovu (Ctrl+Shift+Z)" aria-label="Znovu"><I.redo /></button>
             </>}
-            <button class={`icon pv-toggle ${showPreview ? 'on' : ''}`} onClick={() => setShowPreview(!showPreview)} title="Náhled" aria-label="Zobrazit nebo skrýt náhled" aria-pressed={showPreview}><I.phone /></button>
-            {draft.status !== 'draft' && <a class="btn" href={`/kontrola/${draft.id}`} onClick={nav(`/kontrola/${draft.id}`)}><I.check />Kontrola</a>}
+            <button class={`icon pv-toggle wide-only ${showPreview ? 'on' : ''}`} onClick={() => setShowPreview(!showPreview)} title="Náhled" aria-label="Zobrazit nebo skrýt náhled" aria-pressed={showPreview}><I.phone /></button>
+            {draft.status !== 'draft' && <a class="btn wide-only" href={`/kontrola/${draft.id}`} onClick={nav(`/kontrola/${draft.id}`)}><I.check />Kontrola</a>}
             {!readOnly && draft.status === 'draft' && (
-              <button class="btn primary" onClick={() => setSubmitting(true)}><I.send />Odeslat ke kontrole</button>
+              <button class="btn primary wide-only" onClick={() => setSubmitting(true)}><I.send />Odeslat ke kontrole</button>
             )}
           </div>
         </header>
@@ -191,8 +193,10 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
         {!readOnly && draft.conflict && <div class="banner warn ed-banner"><I.warn />Téma mezitím někdo jiný změnil a zveřejnil. Na <a href={`/kontrola/${draft.id}`} onClick={nav(`/kontrola/${draft.id}`)}>stránce kontroly</a> uvidíš, co se změnilo – přenes to sem a návrh převeď na novou verzi.</div>}
         {!readOnly && !draft.conflict && draft.status === 'review' && <div class="banner info ed-banner"><I.eye />Návrh je v kontrole. Každá úprava je nová verze – kdo už ho schválil, musí ho schválit znovu.</div>}
 
+        {parts && <div class="sheet-backdrop narrow-only" onClick={() => setParts(false)} />}
         <nav class="outline" aria-label="Části tématu">
-          <Outline section={section} issues={issues} jump={jump} />
+          <div class="sheet-head narrow-only"><b>Části tématu</b><button class="icon" onClick={() => setParts(false)} aria-label="Zavřít"><I.close /></button></div>
+          <Outline section={section} issues={issues} jump={(f) => { setParts(false); jump(f) }} />
         </nav>
 
         <main class="ed-main">
@@ -209,9 +213,22 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
 
         {showPreview && (
           <aside class="ed-preview">
-            <Preview topic={cleaned} grade={g} subject={s} approaches={index?.approaches ?? []} mode={pvMode} onMode={fromPreview} />
+            <Preview topic={cleaned} grade={g} subject={s} approaches={index?.approaches ?? []} mode={pvMode} onMode={fromPreview} onClose={() => setShowPreview(false)} />
           </aside>
         )}
+
+        {/* Narrow screens: parts, preview and the main action within thumb reach. */}
+        <div class="ed-dock narrow-only">
+          <button class="dock-btn" onClick={() => setParts(true)} aria-haspopup="dialog">
+            <I.list /><span>Části</span>{issues.length > 0 && <i class="badge bad">{issues.length}</i>}
+          </button>
+          <button class="dock-btn" onClick={() => setShowPreview(true)}><I.phone /><span>Náhled</span></button>
+          {!readOnly && draft.status === 'draft'
+            ? <button class="btn primary" onClick={() => setSubmitting(true)}><I.send />Odeslat</button>
+            : draft.status !== 'draft'
+              ? <a class="btn" href={`/kontrola/${draft.id}`} onClick={nav(`/kontrola/${draft.id}`)}><I.check />Kontrola</a>
+              : <span />}
+        </div>
       </div>
       {submitting && <Submit draft={draft} issues={issues} flush={flush} goIssue={(i) => { setSubmitting(false); goIssue(i) }} onClose={() => setSubmitting(false)} onDone={onSubmitted} />}
     </Ctx.Provider>
