@@ -1,8 +1,10 @@
 import { useAsync } from '../ui/useAsync'
 import { topicKey } from '.'
+import type { TopicRow } from './manifest'
+import { loadFile, onManifest } from './remote'
 import type { GradeId, SubjectId } from './types'
 
-// The whole topic catalogue as a light index (built by plugins/topic-index.ts),
+// The whole topic catalogue as a light index (file `index` of the content release, src/content/release.ts),
 // for search and recommendations without loading every subject chunk.
 
 export interface TopicRef {
@@ -20,18 +22,21 @@ export interface TopicRef {
 
 let refs: Promise<TopicRef[]> | undefined
 let byKey: Map<string, TopicRef> | undefined
+let texts: Promise<string[]> | undefined
+// A new release of the content: load the index again when it is next needed.
+onManifest(() => { refs = texts = undefined })
 
 export function loadIndex(): Promise<TopicRef[]> {
-  return (refs ??= import('virtual:topic-index').then((m) => {
+  return (refs ??= loadFile<TopicRow[]>('index').then((rows) => {
     const n = new Map<string, number>()
-    const out = m.default.map(([g, s, id, title, emoji, approach]) => {
+    const out = rows.map(([g, s, id, title, emoji, approach]) => {
       const i = n.get(g + s) ?? 0
       n.set(g + s, i + 1)
-      return { g, s, id, title, emoji, key: topicKey(g, s, id), i, ...(approach ? { approach } : {}) }
+      return { g, s: s as SubjectId, id, title, emoji, key: topicKey(g, s as SubjectId, id), i, ...(approach ? { approach } : {}) }
     })
     byKey = new Map(out.map((r) => [r.key, r]))
     return out
-  }))
+  }, (e) => { refs = undefined; throw e }))
 }
 
 export const useIndex = () => useAsync(loadIndex, [])
@@ -40,8 +45,7 @@ export const refFor = (key: string) => byKey?.get(key)
 /** Lowercase without diacritics: „Přemyslovci“ → „premyslovci“. */
 export const fold = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '')
 
-let texts: Promise<string[]> | undefined
-export const loadTexts = () => (texts ??= import('virtual:topic-text').then((m) => m.default))
+export const loadTexts = () => (texts ??= loadFile<string[]>('text').catch((e) => { texts = undefined; throw e }))
 
 export interface Hit {
   ref: TopicRef

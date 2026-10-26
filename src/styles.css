@@ -274,6 +274,8 @@ mark { background: color-mix(in oklab, var(--k-yellow) 55%, transparent); color:
 
 .empty { text-align: center; color: var(--ink-2); padding: 48px 20px; display: grid; gap: 14px; justify-items: center; font-weight: 700; }
 .empty .mascot { margin-bottom: 4px; }
+/* The content could not be loaded at all (src/main.tsx). */
+.boot-error { margin: 16px; padding: 14px 16px; border-radius: 14px; background: var(--card); color: var(--ink); font-weight: 700; text-align: center; }
 
 /* Buttons */
 .btn {

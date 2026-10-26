@@ -3,7 +3,7 @@ import { GRADE_NAME, SUBJECTS } from './content/curriculum'
 import type { Block, GradeId, SubjectId } from './content/types'
 
 // Page titles and descriptions, shared by the app (document.title) and the
-// build-time prerender (plugins/prerender.ts), so both always say the same.
+// pages the server renders (server/pages.ts), so both always say the same.
 
 export const SITE_NAME = 'Šprtám'
 

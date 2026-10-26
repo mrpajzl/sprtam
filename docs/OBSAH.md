@@ -52,13 +52,82 @@ Správce může návrh zamítnout s důvodem.
 
 ## Veřejné API obsahové služby
 
-Bez přihlášení, jen pro čtení. Z něj si kopii drží server sprtam.cz (viz API pro aplikaci).
+Bez přihlášení, jen pro čtení. Z něj si kopii drží server sprtam.cz ([API pro aplikaci](#api-pro-aplikaci)).
 
 | Požadavek | Odpověď |
 |---|---|
 | `GET /api/public/v1/manifest` | manifest aktuálního vydání ([`src/content/manifest.ts`](../src/content/manifest.ts)), `ETag` a `304` |
 | `GET /api/public/v1/files/<hash>` | soubor vydání podle hashe, `immutable`, gzip |
 | `GET /api/public/v1/export` | všechny dokumenty aktuálního vydání `{ release, publishedAt, docs: { klíč: dokument } }` (`npm run content:pull`), nejvýš 30× za hodinu z jedné adresy |
+
+## API pro aplikaci
+
+Aplikace na sprtam.cz nemá učivo zabudované v sobě. Bere ho za běhu od serveru sprtam.cz, který si drží ověřenou kopii aktuálního **vydání** učiva z obsahové služby ([`server/content.ts`](../server/content.ts)). Vydání je neměnná sada souborů. Každý soubor se jmenuje podle hashe svého obsahu, takže se může cachovat navždy a nové vydání znamená jen nové názvy.
+
+### Manifest
+
+`GET /api/content/manifest` vrátí manifest aktuálního vydání ([`src/content/manifest.ts`](../src/content/manifest.ts)):
+
+```json
+{
+  "format": 1,
+  "release": 42,
+  "hash": "f55f0e8e91a9ccf87c6c",
+  "publishedAt": 1793001234567,
+  "files": { "subject/z5/matematika": "1c9b…", "index": "8f20…", "vocab/A1": "…", "approach/waldorf/z1": "…" },
+  "approaches": [{ "id": "waldorf", "name": "Waldorfská škola", "short": "Waldorf", "emoji": "🌳", "grades": ["z1", "…"], "…": "…" }]
+}
+```
+
+- `Cache-Control: no-cache` a `ETag: "<hash>"`, takže opakovaný dotaz s `If-None-Match` dostane `304`.
+- Server manifest vkládá i do každé stránky jako datový blok `<script type="application/json" id="sprtam-manifest">`. Aplikace tak nemusí čekat na další dotaz. Blok se nespouští, takže CSP `script-src 'self'` zůstává.
+- Dokud server nemá žádné vydání (první start a nedostupná obsahová služba), vrací `503` s `Retry-After`. Stejně odpovídá i na stránky.
+
+### Soubory vydání
+
+`GET /api/content/f/<hash>.json` vrátí jeden soubor: kompaktní JSON s `Cache-Control: public, max-age=31536000, immutable`, podle `Accept-Encoding` komprimovaný brotli nebo gzip. Neznámý hash vrátí `404`.
+
+| Název v `files` | Obsah |
+|---|---|
+| `subject/<ročník>/<předmět>` | témata předmětu v pořadí, v jakém se učí (`Topic[]`) |
+| `index` | řádek za každé téma: `[ročník, předmět, id, název, emoji, přístup?]` (hledání, doporučení) |
+| `text` | ve stejném pořadí jako `index`: názvy vysvětlení, pojmy a shrnutí (hledání) |
+| `vocab/<úroveň>` | slovíčka jedné úrovně A1–C1 |
+| `approach/<přístup>/<ročník>` | plán ročníku přístupu k výuce (epochy a jejich témata) |
+
+Popisy přístupů k výuce jsou malé a aplikace je potřebuje hned při startu, proto jsou přímo v manifestu (`approaches`).
+
+Ze stejných dokumentů vznikají vždy stejné soubory i hashe ([`src/content/release.ts`](../src/content/release.ts)). Server zná soubory posledních deseti vydání, takže je dostane i stránka otevřená před vydáním nového.
+
+### Jak aplikace učivo načítá
+
+[`src/content/remote.ts`](../src/content/remote.ts):
+
+1. **Manifest** bere z bloku ve stránce. Offline se otevře kostra `app.html` z cache, která blok nemá. Pak aplikace použije novější z manifestu, který si naposledy uložila do `localStorage`, a toho, kterým odpoví service worker (`NetworkFirst`, 3 s).
+2. **Soubory** stahuje podle hashe, až jsou potřeba, a v rámci návštěvy je drží v paměti.
+3. **Offline:** jakmile má prohlížeč volnou chvíli, uloží všechny soubory aktuálního vydání do cache `content` a soubory starších vydání smaže. Service worker je pak obsluhuje z cache (`CacheFirst`). Po jedné návštěvě je offline k dispozici celé učivo ([`scripts/offline-test.mjs`](../scripts/offline-test.mjs)).
+4. **Nové vydání:** když se aplikace vrátí na obrazovku nebo každých 10 minut, zeptá se na manifest přímo sítě (`/api/content/manifest?fresh`, mimo cache service workeru). Jiné vydání použije pro všechno, co se načte potom.
+
+### Jak server drží kopii
+
+Server se každých 15 s zeptá obsahové služby (`CONTENT_API`, výchozí `https://moderace.sprtam.cz`) na její manifest s `If-None-Match`. Když přijde nové vydání:
+
+1. Stáhne soubory, které ještě nemá (`/api/public/v1/files/<hash>`, nejvýš 32 MB na soubor, timeout 20 s).
+2. Ověří, že SHA-256 obsahu odpovídá hashi v názvu a že jde o platný JSON.
+3. Zapíše je do `DATA_DIR/content/files/` (vždy přes dočasný soubor a přejmenování).
+4. Z celého vydání vykreslí stránky.
+
+Teprve pak na nové vydání přepne. Když cokoli selže, zůstane u předchozího vydání a zkusí to znovu při dalším dotazu. Rozbité nebo podvržené soubory se tak na web nikdy nedostanou.
+
+Po restartu server okamžitě naběhne z uložené kopie (`DATA_DIR/content/releases.json`), takže web funguje, i když obsahová služba zrovna neběží.
+
+Obsahová služba je pro server autorita. Převezme od ní jakékoli jiné vydání, i s nižším číslem (např. po obnově její databáze ze zálohy). Stejně tak aplikace v prohlížeči: za běhu se ptá jen sítě, nikdy cache. Server odmítne a nepoužije vydání, které má neplatný manifest nebo nesmyslné číslo, přesahuje limity (2000 souborů, 32 MB na soubor, 100 MB celkem) nebo ve kterém cokoli, co se dostane do adres (ročníky, předměty, úrovně, id témat, epoch a přístupů), neodpovídá tomu, co aplikace zná. Veškerý text učiva ve stránkách je escapovaný.
+
+### Vývoj
+
+- `npm run content:pull` stáhne aktuální vydání (`/api/public/v1/export`) do `content/` jako soubory ve stejném formátu jako dřív v gitu (s `$schema`). Kopie není v gitu a další `content:pull` ji přepíše. Změny učiva jdou přes moderaci.
+- `npm run dev` obsluhuje `/api/content/*` ze složky `content/` a po každé změně souboru stránku obnoví ([`plugins/content-dev.ts`](../plugins/content-dev.ts)). Když místní kopie chybí, přeposílá dotazy na `CONTENT_API`.
+- `npx tsx scripts/content-stub.ts` nahrazuje veřejné API obsahové služby nad `content/` (manifest, soubory, export) pro testy produkčního serveru: `CONTENT_API=http://localhost:8097 npm start`.
 
 ## API pro moderování
 

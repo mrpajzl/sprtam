@@ -1,19 +1,19 @@
-import subjects from 'virtual:content'
+import { loadHash, manifest } from './remote'
 import type { GradeId, Subject, SubjectId, Topic } from './types'
 
-// Content lives in content/topics/<grade>/<subject>/ (format: src/content/format.ts). Each subject is
-// one chunk with its topics in the order of _subject.json (plugins/content-modules.ts); the service
-// worker precaches all of them.
+// Each subject is one file of the content release (subject/<grade>/<subject>, src/content/manifest.ts)
+// with its topics in school-year order; the service worker keeps all of them for offline use.
+
 const cache = new Map<string, Promise<Subject>>()
 
-export const hasSubject = (g: GradeId, s: SubjectId) => `${g}/${s}` in subjects
+export const hasSubject = (g: GradeId, s: SubjectId) => `subject/${g}/${s}` in manifest().files
 
 /** A subject with all its topics in school-year order. */
 export function loadSubject(g: GradeId, s: SubjectId): Promise<Subject> {
-  const key = `${g}/${s}`
-  if (!subjects[key]) return Promise.reject(new Error('missing'))
-  if (!cache.has(key)) cache.set(key, subjects[key]().then((m) => ({ grade: g, subject: s, topics: m.default })))
-  return cache.get(key)!
+  const h = manifest().files[`subject/${g}/${s}`]
+  if (!h) return Promise.reject(new Error('missing'))
+  if (!cache.has(h)) cache.set(h, loadHash<Topic[]>(h).then((topics) => ({ grade: g, subject: s, topics }), (e) => { cache.delete(h); throw e }))
+  return cache.get(h)!
 }
 
 /** One topic (loads its subject). */
@@ -22,8 +22,8 @@ export const loadTopic = (g: GradeId, s: SubjectId, id: string): Promise<Topic> 
 
 export const topicKey = (g: GradeId, s: SubjectId, t: Topic | string) => `${g}/${s}/${typeof t === 'string' ? t : t.id}`
 
-/** Every topic key in the app (loads all subjects – used only when importing a progress code). */
+/** Every topic key in the app (from the topic index – used only when importing a progress code). */
 export async function allTopicKeys(): Promise<string[]> {
-  const all = await Promise.all(Object.keys(subjects).map((k) => subjects[k]().then((m) => m.default.map((t) => `${k}/${t.id}`))))
-  return all.flat()
+  const rows = await loadHash<[GradeId, SubjectId, string][]>(manifest().files.index)
+  return rows.map(([g, s, id]) => `${g}/${s}/${id}`)
 }

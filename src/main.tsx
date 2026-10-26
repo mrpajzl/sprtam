@@ -1,5 +1,6 @@
 import { render } from 'preact'
 import { App } from './app'
+import { initContent, keepOffline } from './content/remote'
 import { ping } from './stats'
 import './styles.css'
 
@@ -7,7 +8,18 @@ import './styles.css'
 addEventListener('vite:preloadError', () => (window as { sprtamHeal?: () => void }).sprtamHeal?.())
 
 const root = document.getElementById('app')!
-root.textContent = '' // drop the prerendered page (plugins/prerender.ts); the app renders the same screen
-render(<App />, root)
-document.documentElement.setAttribute('data-app', '')
-ping()
+
+initContent().then((ok) => {
+  if (!ok) {
+    // No manifest at all: first visit while offline, or the server has no content yet. Keep the page the
+    // server sent (if any) and say what happened.
+    root.insertAdjacentHTML('afterbegin', '<p class="boot-error" role="alert">Učivo se nepodařilo načíst. Zkontroluj připojení k internetu a zkus to znovu.</p>')
+    document.documentElement.setAttribute('data-app', '')
+    return
+  }
+  root.textContent = '' // drop the page rendered by the server (server/pages.ts); the app renders the same screen
+  render(<App />, root)
+  document.documentElement.setAttribute('data-app', '')
+  keepOffline()
+  ping()
+})
