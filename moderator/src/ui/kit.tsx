@@ -56,7 +56,7 @@ export function Modal({ title, onClose, children, wide, actions }: { title: stri
     return () => d.close()
   }, [])
   return (
-    <dialog ref={ref} class={`modal ${wide ? 'wide' : ''}`} onCancel={(e) => { e.preventDefault(); onClose() }} onClick={(e) => { if (e.target === ref.current) onClose() }}>
+    <dialog ref={ref} class={`modal ${wide ? 'wide' : ''}`} aria-label={title} onCancel={(e) => { e.preventDefault(); onClose() }} onClick={(e) => { if (e.target === ref.current) onClose() }}>
       <div class="modal-in">
         <header><h2>{title}</h2><button class="icon" onClick={onClose} aria-label="Zavřít"><I.close /></button></header>
         <div class="modal-body">{children}</div>

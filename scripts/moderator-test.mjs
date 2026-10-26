@@ -106,6 +106,22 @@ try {
   check(await admin.page.locator('.save.saved').waitFor({ timeout: 5000 }).then(() => true, () => false), 'draft is saved')
   const draftId = admin.page.url().split('/').pop()
 
+  // ——— Widget gallery: a widget block starts in the gallery with live demos ———
+  const blocksBefore = await admin.page.locator('.card.t-widget').count()
+  await admin.page.locator('.add-card', { hasText: 'Přidat blok' }).first().click()
+  await admin.page.locator('.menu-pop').getByRole('button', { name: /Interaktivní pomůcka/ }).click()
+  const picker = admin.page.getByRole('dialog', { name: 'Vyber interaktivní pomůcku' })
+  const demo = admin.page.frameLocator('.sc-frame iframe')
+  check(await demo.locator('.blocks > *').first().waitFor({ timeout: 5000 }).then(() => true, () => false), 'the widget gallery shows the widget working')
+  await picker.locator('.sc-item', { hasText: 'Číselná osa' }).click()
+  const examples = picker.locator('.sc-tools .chip')
+  await examples.nth(1).click()
+  check(await examples.nth(1).getAttribute('aria-pressed') === 'true' && await picker.locator('.sc-frame iframe').evaluate((f) => f.offsetHeight > 120), 'a picked example is shown in a frame as tall as the widget')
+  await picker.getByRole('button', { name: 'Použít „Číselná osa“' }).click()
+  check(await admin.page.locator('.card.t-widget').count() === blocksBefore + 1 && await admin.page.locator('.card.t-widget.focused .we-head b', { hasText: 'Číselná osa' }).isVisible(), 'using it adds a widget block with that widget')
+  await admin.page.getByRole('button', { name: 'Zpět', exact: true }).click()
+  check(await admin.page.locator('.card.t-widget').count() === blocksBefore, 'undo takes the widget block back out')
+
   // ——— Phone: bottom bar, editor dock, parts sheet and full-screen preview, nothing wider than the screen ———
   const phone = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, storageState: await admin.ctx.storageState() })
   const ph = await phone.newPage()
@@ -288,6 +304,12 @@ try {
   check((await admin.api('PATCH', `/api/widget-requests/${wr.body.id}`, { status: 'planned', widget: 'balance' })).status === 200, 'an admin plans it and links a widget')
   const reqs = (await admin.api('GET', '/api/widget-requests')).body
   check(reqs[0].votes === 2 && reqs[0].status === 'planned', 'votes and state are kept')
+  await eva.page.goto(`${BASE}/pomucky`)
+  const have = eva.page.locator('.have')
+  await have.locator('.sc-item').first().waitFor()
+  await have.locator('.sc-item', { hasText: 'Hodiny' }).click()
+  check(await have.locator('.sc-item').count() >= 20 && await eva.page.frameLocator('.have iframe').locator('.blocks > *').first().waitFor({ timeout: 5000 }).then(() => true, () => false)
+    && await have.locator('.sc-head h3').textContent() === 'Hodiny', 'the requests page shows every existing widget working')
 
   // ——— Backups ———
   const bk = await fetch(`${BASE}/api/internal/backup`, { headers: { Authorization: `Bearer ${BACKUP}` } })

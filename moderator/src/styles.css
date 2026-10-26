@@ -291,12 +291,36 @@ a.topic { color: var(--ink); text-decoration: none; }
 .modal footer { display: flex; justify-content: flex-end; gap: 8px; padding: 14px 20px; border-top: 1px solid var(--line-2); }
 .issue-list { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; }
 .issue-list button { text-align: left; color: var(--bad); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-.widget-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 8px; margin: 8px 0 16px; }
-.widget-card { text-align: left; display: grid; gap: 4px; padding: 12px 14px; border-radius: var(--r-s); background: var(--field); box-shadow: inset 0 0 0 1px var(--line); align-content: start; }
-.widget-card:hover { box-shadow: inset 0 0 0 1px var(--ink-3), var(--shadow); }
-.widget-card.on { box-shadow: inset 0 0 0 2px var(--accent); }
-.widget-card span { font-size: 0.88rem; color: var(--ink-2); line-height: 1.4; }
-.widget-card small { font-size: 0.78rem; color: var(--ink-3); line-height: 1.35; }
+.showcase { display: grid; grid-template-columns: minmax(220px, 300px) 1fr; gap: 16px; height: min(640px, calc(100dvh - 240px)); min-height: 360px; }
+.sc-side { display: grid; grid-template-rows: auto 1fr; gap: 6px; min-height: 0; }
+.sc-list { overflow: auto; display: grid; gap: 4px; align-content: start; padding: 2px 6px 2px 2px; min-height: 0; }
+.sc-list .label { margin: 10px 0 4px; }
+.sc-item { width: 100%; text-align: left; display: grid; gap: 2px; padding: 9px 12px; border-radius: var(--r-s); line-height: 1.35; }
+.sc-item:hover { background: var(--panel); }
+.sc-item.on { background: var(--field); box-shadow: inset 0 0 0 2px var(--accent); }
+.sc-item b { font-size: 0.94rem; }
+.sc-item em { font-style: normal; font-weight: 650; color: var(--ink-3); font-size: 0.8rem; }
+.sc-item span { font-size: 0.82rem; color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.sc-demo { overflow: auto; display: grid; gap: 10px; align-content: start; padding: 2px; line-height: 1.5; }
+.sc-demo p { margin: 0; }
+.sc-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.sc-head h3 { font-size: 1.15rem; margin: 0; }
+.sc-head a { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; }
+.sc-head a svg { width: 14px; height: 14px; }
+.sc-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.sc-frame { position: relative; border-radius: var(--r); background: var(--panel); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.sc-frame iframe { display: block; width: 100%; border: 0; transition: height 0.15s var(--ease); }
+.sc-theme { position: absolute; top: 6px; right: 6px; z-index: 1; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
+.sc-back { display: none; justify-self: start; }
+@media (max-width: 760px) {
+  .showcase { grid-template-columns: 1fr; height: auto; min-height: 0; }
+  .showcase .sc-list { overflow: visible; }
+  .showcase .sc-demo { display: none; overflow: visible; }
+  .showcase.detail .sc-side { display: none; }
+  .showcase.detail .sc-demo { display: grid; }
+  .sc-back { display: inline-flex; }
+}
+.have { display: grid; gap: 10px; margin-top: 18px; }
 .toasts { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 100; display: grid; gap: 8px; justify-items: center; pointer-events: none; }
 .toast { pointer-events: auto; display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-radius: 12px; background: var(--lcd); color: #f4f4f1; font-weight: 700; box-shadow: 0 12px 30px -10px rgb(0 0 0 / 0.5); animation: toast 0.25s var(--ease); max-width: min(560px, calc(100vw - 32px)); }
 .toast.bad { background: var(--bad); color: #fff; }
@@ -519,7 +543,6 @@ a.draft:hover { box-shadow: inset 0 0 0 1px var(--ink-3); }
 .rq-body, .rq-more { margin: 0; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
 .rq-more { color: var(--ink-2); font-size: 0.92rem; }
 .rq-vote .btn { flex-direction: column; gap: 0; min-height: 52px; min-width: 48px; padding: 4px 8px; font-family: var(--mono); }
-.w-have { margin: 8px 0 0; padding-left: 1.2em; display: grid; gap: 4px; line-height: 1.45; color: var(--ink-2); font-size: 0.9rem; }
 
 /* ── Releases ── */
 .sys { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }

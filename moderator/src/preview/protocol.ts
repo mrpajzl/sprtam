@@ -13,5 +13,14 @@ export interface PreviewState {
   theme: 'light' | 'dark'
 }
 
-export type ToEditor = { type: 'ready' } | { type: 'mode'; mode: PreviewMode }
-export type ToPreview = { type: 'state'; state: PreviewState }
+/** One widget alone, for the widget gallery (moderator/src/ui/Showcase.tsx). */
+export interface WidgetDemo {
+  widget: string
+  props: Record<string, unknown>
+  /** Only the task, as above a quiz question. */
+  question: boolean
+  theme: 'light' | 'dark'
+}
+
+export type ToEditor = { type: 'ready' } | { type: 'mode'; mode: PreviewMode } | { type: 'height'; height: number }
+export type ToPreview = { type: 'state'; state: PreviewState } | { type: 'widget'; demo: WidgetDemo }

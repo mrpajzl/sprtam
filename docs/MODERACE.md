@@ -26,6 +26,7 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
    - **Vlevo** jsou části tématu (název, vysvětlení, otázky) a seznam toho, co ještě chybí. Kliknutím na položku skočíš na místo, kde se to opravuje.
    - **Uprostřed** jsou bloky jako karty. Přidáš je tlačítkem **+** mezi kartami, přesuneš je tažením nebo šipkami a smazané vrátíš přes Ctrl+Z. Lišta nahoře vkládá **tučné**, *kurzívu*, `vzorec`, horní index a matematické znaky.
    - **Vpravo** je náhled v telefonu. Kreslí ho přímo komponenty a styly Šprtámu, takže vypadá a funguje přesně jako v aplikaci, i ve tmavém vzhledu. Pomůcky jdou zkoušet a otázky odpovídat.
+   - **Interaktivní pomůcka** se vybírá z galerie: vlevo seznam, vpravo vybraná pomůcka naživo (i se všemi připravenými příklady a tím, jak vypadá nad otázkou). „Použít“ ji vloží s příkladem, který je právě vidět.
    - **Na mobilu a menším tabletu** je místo sloupců dole lišta. **Části** otevře osnovu se seznamem toho, co chybí, **Náhled** ukáže téma přes celou obrazovku a **Odeslat** pošle změnu ke kontrole.
 4. **Ukládá se samo.** Neuložené změny se při pádu prohlížeče nabídnou k obnovení.
 5. **Odeslat ke kontrole** jde, až editor nehlásí žádnou chybu. Server pak zkontroluje celé učivo i s touto změnou stejnými pravidly jako `npm run check:content`.
@@ -51,7 +52,7 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
 - **Historie** tématu (tlačítko u tématu):
   - každá zveřejněná verze, kdo ji změnil a kdo schválil, a co změnila;
   - **Navrhnout návrat k této verzi** založí návrh se starým obsahem, který jde normálně ke kontrole.
-- **Pomůcky:** chybí ti při vysvětlování interaktivní pomůcka (váhy, mapa, osa…)? Navrhni ji: co si s ní mají děti vyzkoušet a ke kterým tématům patří. Ostatní ji můžou podpořit, správce ji naplánuje a po dokončení ji najdeš v editoru.
+- **Pomůcky:** chybí ti při vysvětlování interaktivní pomůcka (váhy, mapa, osa…)? Navrhni ji: co si s ní mají děti vyzkoušet a ke kterým tématům patří. Ostatní ji můžou podpořit, správce ji naplánuje a po dokončení ji najdeš v editoru. Pod žádostmi je galerie všech pomůcek, které už jsou, naživo – často jde potřebná pomůcka nastavit z existující.
 - **API tokeny** (Účet) jsou pro skripty a AI agenty, kteří připravují učivo jako tvoje návrhy. Schválit je musí někdo jiný ([OBSAH.md](OBSAH.md#api-pro-moderování)).
 
 Pravidla pro obsah: [CONTENT.md](CONTENT.md). Editor je hlídá za tebe a ukazuje je u každého vysvětlení.
@@ -144,7 +145,7 @@ Test celého toku a bezpečnostních pravidel: `npm run moderator:build && node 
 | `moderator/server/` | HTTP server bez frameworku: `auth.ts` (passkeys, session, pozvánky, API tokeny), `admin.ts`, `store.ts` (učivo, verze, vydání, hash řetěz), `drafts.ts` (návrhy, kontrola, návraty), `requests.ts` (žádosti o pomůcky), `backup.ts`, `content.ts`, `db.ts` (SQLite a migrace), `cli.ts` |
 | `src/content/check.ts`, `diff.ts`, `release.ts` | Kontrola celého učiva (sdílená s `check:content`), rozdíly verzí, soubory vydání pro aplikaci |
 | `ops/backup/` | Zálohy na druhém serveru ([OBSAH.md](OBSAH.md#zálohy)) |
-| `moderator/src/` | Editor (Preact): `editor/` (karty bloků a otázek, formulář pomůcky generovaný z jejího schématu, kontrola, historie změn, náhled), `screens/`, `passkey.ts` |
+| `moderator/src/` | Editor (Preact): `editor/` (karty bloků a otázek, formulář pomůcky generovaný z jejího schématu, kontrola, historie změn, náhled), `ui/Showcase.tsx` (galerie pomůcek naživo v rámečku náhledu), `screens/`, `passkey.ts` |
 | `moderator/src/preview/` | Náhled v iframe nad komponentami aplikace (`src/screens/Blocks.tsx`, `src/quiz/QuestionView.tsx`, `src/styles.css`) |
 | `src/content/rules.ts` | Pravidla tématu, sdílená s `scripts/check-content.ts` (anglicky pro skript, česky pro editor) |
 | `src/content/canonical.ts` | Zápis souboru ve stejném pořadí klíčů jako v repozitáři, aby diff v PR obsahoval jen skutečné změny |

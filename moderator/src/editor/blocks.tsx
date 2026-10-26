@@ -5,7 +5,7 @@ import { Errors, Text, TextList, useEd, type EditorCtx } from './fields'
 import type { Issue } from './issues'
 import { arrayInsert, arrayMove, arrayRemove, BLOCK_TYPES, blockLabel, getIn, newBlock, newWidget, type Path } from './model'
 import { Insert, Menu, useSortable } from './sortable'
-import { WidgetEditor } from './widgets'
+import { WidgetEditor, WidgetPicker } from './widgets'
 
 // The blocks of one explanation as a column of cards: add between any two, drag or arrow to reorder,
 // duplicate, delete (undo brings it back). Each card is a small form for its block type.
@@ -17,9 +17,12 @@ export function BlockList({ ex, issues }: { ex: number; issues: Issue[] }) {
   const path: Path = ['explanations', ex, 'blocks']
   const blocks = (getIn(ed.topic, path) as Block[]) ?? []
   const [menuAt, setMenuAt] = useState<number | null>(null)
+  // A widget block starts in the gallery, so the author sees the widgets working before choosing one.
+  const [widgetAt, setWidgetAt] = useState<number | null>(null)
   const set = (xs: Block[]) => ed.update(path, xs)
   const sort = useSortable((from, to) => { set(arrayMove(blocks, from, to)); ed.setFocus({ ex, block: to }) })
-  const add = (at: number, type: Block['type']) => { set(arrayInsert(blocks, at, newBlock(type))); setMenuAt(null); ed.setFocus({ ex, block: at }) }
+  const insert = (at: number, b: Block) => { set(arrayInsert(blocks, at, b)); ed.setFocus({ ex, block: at }) }
+  const add = (at: number, type: Block['type']) => { setMenuAt(null); if (type === 'widget') setWidgetAt(at); else insert(at, newBlock(type)) }
 
   return (
     <div class="cards">
@@ -35,6 +38,7 @@ export function BlockList({ ex, issues }: { ex: number; issues: Issue[] }) {
       {!ed.readOnly && (menuAt === blocks.length
         ? <Menu title="Přidat blok" items={BLOCK_TYPES} onPick={(t) => add(blocks.length, t)} onClose={() => setMenuAt(null)} />
         : <button type="button" class="add-card" onClick={() => setMenuAt(blocks.length)}><I.plus />Přidat blok</button>)}
+      {widgetAt !== null && <WidgetPicker onClose={() => setWidgetAt(null)} onPick={(w) => { insert(widgetAt, { type: 'widget', ...w } as Block); setWidgetAt(null) }} />}
     </div>
   )
 }

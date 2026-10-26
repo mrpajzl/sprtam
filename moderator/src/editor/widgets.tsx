@@ -1,41 +1,23 @@
 import { useEffect, useState } from 'preact/hooks'
 import type { ObjectS, S } from '../../../src/content/schema'
-import { WIDGET_GROUPS, WIDGETS } from '../../../src/widgets'
+import { WIDGETS } from '../../../src/widgets'
 import { I, Modal } from '../ui/kit'
+import { Showcase, type Choice } from '../ui/Showcase'
 import { errorsAt, Errors, useEd } from './fields'
-import { arrayMove, defaultOf, getIn, newWidget, pathKey, type Path } from './model'
+import { arrayMove, defaultOf, getIn, pathKey, type Path } from './model'
 
-// Interactive widgets: a gallery to pick one, and a form for its props generated from the widget's own
+// Interactive widgets: a gallery with live demos to pick one (ui/Showcase.tsx), and a form for its props generated from the widget's own
 // schema (src/widgets/<name>.tsx) – every new widget gets an editor without changes here.
 
-export function WidgetPicker({ onPick, onClose, questionOnly, current }: { onPick: (name: string) => void; onClose: () => void; questionOnly?: boolean; current?: string }) {
-  const [q, setQ] = useState('')
-  const fold = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '')
-  const match = (w: (typeof WIDGET_GROUPS)[number]['widgets'][number]) => (!questionOnly || !!w.Question) && (!q || fold(`${w.title} ${w.summary} ${w.use}`).includes(fold(q)))
+/** Pick a widget from the gallery; `onPick` gets it with the props of the example shown. */
+export function WidgetPicker({ onPick, onClose, questionOnly, current }: { onPick: (w: { widget: string; props: Record<string, unknown> }) => void; onClose: () => void; questionOnly?: boolean; current?: string }) {
+  const [choice, setChoice] = useState<Choice | null>(null)
+  const pick = (c: Choice) => onPick({ widget: c.name, props: structuredClone(WIDGETS[c.name].examples[c.example].props) as Record<string, unknown> })
   return (
-    <Modal title={questionOnly ? 'Pomůcka nad otázkou' : 'Vyber interaktivní pomůcku'} onClose={onClose} wide>
-      {!questionOnly && (
-        <label class="search wide"><I.search /><input type="search" value={q} onInput={(e) => setQ(e.currentTarget.value)} placeholder="Hledat – třeba zlomek, osa, čas, třídění…" autoFocus /></label>
-      )}
+    <Modal title={questionOnly ? 'Pomůcka nad otázkou' : 'Vyber interaktivní pomůcku'} onClose={onClose} wide
+      actions={<><button class="btn" onClick={onClose}>Zrušit</button><button class="btn primary" disabled={!choice} onClick={() => choice && pick(choice)}>{choice ? `Použít „${WIDGETS[choice.name].title}“` : 'Použít'}</button></>}>
       {questionOnly && <p class="muted">Nad otázkou smí být jen pomůcka, která ukáže zadání a neprozradí výsledek.</p>}
-      {WIDGET_GROUPS.map((g) => {
-        const list = g.widgets.filter(match)
-        return list.length > 0 && (
-          <section key={g.name}>
-            <h3 class="label">{g.name}</h3>
-            <div class="widget-grid">
-              {list.map((w) => (
-                <button key={w.name} class={`widget-card ${w.name === current ? 'on' : ''}`} onClick={() => onPick(w.name)}>
-                  <b>{w.title}</b>
-                  <span>{w.summary}</span>
-                  <small>Hodí se: {w.use}</small>
-                </button>
-              ))}
-            </div>
-          </section>
-        )
-      })}
-      <p class="fine">Všechny pomůcky si můžeš vyzkoušet v galerii na <a href="https://sprtam.cz/widgety" target="_blank" rel="noopener noreferrer">sprtam.cz/widgety</a>.</p>
+      <Showcase questionOnly={questionOnly} current={current} onChoose={setChoice} onPick={pick} />
     </Modal>
   )
 }
@@ -46,10 +28,10 @@ export function WidgetEditor({ path, questionOnly, removable, onRemove }: { path
   const w = getIn(ed.topic, path) as { widget: string; props: Record<string, unknown> } | undefined
   const [picking, setPicking] = useState(false)
   const def = w && WIDGETS[w.widget]
-  const choose = (name: string) => {
+  const choose = (picked: { widget: string; props: Record<string, unknown> }) => {
     setPicking(false)
     const base = path.length ? (getIn(ed.topic, path) as object) : {}
-    ed.update(path, { ...base, ...newWidget(name) })
+    ed.update(path, { ...base, ...picked })
   }
   return (
     <div class="widget-editor">
