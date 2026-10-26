@@ -3,7 +3,7 @@ import { ApiError, api, get, post } from '../api'
 import { withConfirm, type Me } from '../passkey'
 import { ago, Busy, copy, dateTime, I, Modal, toast } from '../ui/kit'
 
-interface U { id: string; name: string; role: 'admin' | 'moderator'; active: boolean; createdAt: number; lastLoginAt: number | null; keys: number; sessions: number }
+interface U { id: string; name: string; role: 'admin' | 'moderator'; active: boolean; createdAt: number; lastLoginAt: number | null; keys: number; sessions: number; tokens: number }
 interface Inv { id: string; kind: 'user' | 'key'; name: string; role: string; by: string | null; createdAt: number; expiresAt: number }
 interface Entry { id: number; at: number; user: string | null; action: string; detail: Record<string, unknown> | null; ip: string | null }
 
@@ -11,7 +11,11 @@ const ROLE = { admin: 'Správce', moderator: 'Moderátor' }
 const ACTION: Record<string, string> = {
   login: 'přihlášení', 'login.fail': 'neúspěšné přihlášení', 'user.created': 'nový účet', 'key.added': 'nový klíč', 'key.removed': 'odebraný klíč', 'key.link': 'odkaz na nový klíč',
   'user.keys-reset': 'zrušené klíče + nový odkaz', 'invite.created': 'pozvánka', 'invite.revoked': 'zrušená pozvánka', 'user.disabled': 'vypnutý účet', 'user.enabled': 'zapnutý účet',
-  'user.role': 'změna role', 'user.renamed': 'přejmenování', 'sessions.ended': 'odhlášení ze zařízení', 'draft.submitted': 'odeslaný návrh', 'draft.updated': 'aktualizovaný návrh', 'draft.deleted': 'smazaný návrh',
+  'user.role': 'změna role', 'user.renamed': 'přejmenování', 'sessions.ended': 'odhlášení ze zařízení', 'draft.submitted': 'návrh ke kontrole', 'draft.updated': 'aktualizovaný návrh', 'draft.deleted': 'smazaný návrh',
+  'draft.withdrawn': 'návrh vrácen do rozpracovaných', 'draft.rebased': 'návrh převeden na novou verzi', 'draft.published': 'zveřejněno', 'draft.rejected': 'zamítnutý návrh', 'draft.rollback': 'návrh návratu ke starší verzi',
+  'review.approve': 'schválení', 'review.changes': 'požadavek na úpravy', 'review.comment': 'komentář', 'review.resolved': 'vyřešený komentář',
+  'content.imported': 'import učiva', 'content.restored-version': 'vrácená verze bez kontroly', 'content.restored-release': 'obnova vydání',
+  'token.created': 'nový API token', 'token.removed': 'zrušený API token', 'widget-request.created': 'žádost o pomůcku', 'widget-request.updated': 'úprava žádosti o pomůcku', 'widget-request.deleted': 'smazaná žádost o pomůcku',
 }
 
 const run = async (f: () => Promise<unknown>, ok?: string) => {
@@ -51,7 +55,7 @@ export function Users({ me }: { me: Me }) {
               <div key={u.id} class={`user ${u.active ? '' : 'off'}`}>
                 <div class="u-main">
                   <b>{u.name}{u.id === me.id && <span class="pill">ty</span>}{!u.active && <span class="pill st-closed">vypnutý</span>}</b>
-                  <small>{ROLE[u.role]} · {u.keys} {u.keys === 1 ? 'klíč' : u.keys < 5 && u.keys ? 'klíče' : 'klíčů'} · naposledy {ago(u.lastLoginAt)}</small>
+                  <small>{ROLE[u.role]} · {u.keys} {u.keys === 1 ? 'klíč' : u.keys < 5 && u.keys ? 'klíče' : 'klíčů'}{u.tokens ? ` · ${u.tokens} API ${u.tokens === 1 ? 'token' : 'tokeny'}` : ''} · naposledy {ago(u.lastLoginAt)}</small>
                 </div>
                 <div class="u-actions">
                   <select value={u.role} disabled={u.id === me.id} onChange={(e) => patch(u, { role: e.currentTarget.value }, 'Role změněna')} aria-label="Role">
@@ -59,7 +63,7 @@ export function Users({ me }: { me: Me }) {
                   </select>
                   <button class="btn small" onClick={() => keyLink(u, false)} disabled={!u.active} title="Jednorázový odkaz, kterým si přidá nový klíč (např. nový telefon)"><I.key />Nový klíč</button>
                   {u.id !== me.id && <button class="btn small" onClick={() => keyLink(u, true)} disabled={!u.active} title="Při ztrátě nebo krádeži zařízení">Zrušit klíče</button>}
-                  {u.id !== me.id && u.sessions > 0 && <button class="btn small" onClick={() => run(() => post(`/api/admin/users/${u.id}/end-sessions`), 'Odhlášeno ze všech zařízení').then(load)}>Odhlásit</button>}
+                  {u.id !== me.id && (u.sessions > 0 || u.tokens > 0) && <button class="btn small" onClick={() => run(() => post(`/api/admin/users/${u.id}/end-sessions`), 'Odhlášeno ze všech zařízení').then(load)}>Odhlásit</button>}
                   {u.id !== me.id && <button class={`btn small ${u.active ? 'danger' : ''}`} onClick={() => (!u.active || confirm(`Vypnout účet ${u.name}? Okamžitě se odhlásí a nepřihlásí se, dokud ho nezapneš.`)) && patch(u, { active: !u.active }, u.active ? 'Účet vypnut' : 'Účet zapnut')}>{u.active ? 'Vypnout' : 'Zapnout'}</button>}
                 </div>
               </div>
@@ -106,7 +110,7 @@ function InviteForm({ onClose, onLink }: { onClose: () => void; onLink: (l: { ur
   return (
     <Modal title="Pozvat moderátora" onClose={onClose} actions={<><button class="btn" onClick={onClose}>Zrušit</button><Busy class="btn primary" on={busy} disabled={name.trim().length < 2} onClick={create}>Vytvořit odkaz</Busy></>}>
       <form class="form" onSubmit={(e) => { e.preventDefault(); if (name.trim().length >= 2) create() }}>
-        <label class="field"><span>Jméno</span><input value={name} onInput={(e) => setName(e.currentTarget.value)} placeholder="Jana Nováková" maxLength={80} autoFocus /><small>Uvidí ho ostatní moderátoři a objeví se u jeho návrhů na GitHubu.</small></label>
+        <label class="field"><span>Jméno</span><input value={name} onInput={(e) => setName(e.currentTarget.value)} placeholder="Jana Nováková" maxLength={80} autoFocus /><small>Uvidí ho ostatní moderátoři; objeví se u jeho návrhů a v historii učiva.</small></label>
         <fieldset class="field">
           <span>Role</span>
           <label class="radio"><input type="radio" checked={role === 'moderator'} onChange={() => setRole('moderator')} /><span><b>Moderátor</b> – upravuje a navrhuje učivo</span></label>

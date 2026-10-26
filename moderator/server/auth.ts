@@ -3,7 +3,7 @@ import {
   generateAuthenticationOptions, generateRegistrationOptions, verifyAuthenticationResponse, verifyRegistrationResponse,
   type AuthenticationResponseJSON, type RegistrationResponseJSON,
 } from '@simplewebauthn/server'
-import { CONFIG, LIMITS, MINUTE } from './config'
+import { CONFIG, DAY, LIMITS, MINUTE } from './config'
 import { all, audit, one, run, tx, type CredentialRow, type InviteRow, type SessionRow, type UserRow } from './db'
 import { clearSessionCookie, cookies, HttpError, SESSION_COOKIE, sessionCookie, type Req, type Res } from './http'
 
@@ -15,7 +15,8 @@ export const sha256 = (s: string) => createHash('sha256').update(s).digest('hex'
 const token = () => randomBytes(32).toString('base64url')
 
 export interface User { id: string; name: string; role: 'admin' | 'moderator' }
-export interface Session { user: User; hash: string; authAt: number }
+/** A signed-in browser (cookie), or a script with an API token (only where a route allows tokens). */
+export interface Session { user: User; hash: string; authAt: number; via: 'cookie' | 'token' }
 
 // ——— Challenges ———
 // Registration challenges (an invite or a signed-in user is needed to get one) are kept in memory, single use.
@@ -64,7 +65,15 @@ function openLogin(id: unknown): { challenge: string; until: number } {
 
 // ——— Sessions ———
 
+/** `Authorization: Bearer spt_…` – an API token instead of the session cookie. */
+export const bearer = (req: Req) => {
+  const h = req.headers.authorization
+  return typeof h === 'string' && h.startsWith('Bearer ') ? h.slice(7).trim() : null
+}
+
 export function getSession(req: Req): Session | null {
+  const b = bearer(req)
+  if (b !== null) return tokenSession(b)
   const t = cookies(req)[SESSION_COOKIE]
   if (!t || t.length > 100) return null
   const hash = sha256(t)
@@ -77,7 +86,7 @@ export function getSession(req: Req): Session | null {
     return null
   }
   if (now - row.seen_at > MINUTE) run('UPDATE sessions SET seen_at = ? WHERE hash = ?', now, hash)
-  return { user: { id: row.user_id, name: row.name, role: row.role }, hash, authAt: row.auth_at }
+  return { user: { id: row.user_id, name: row.name, role: row.role }, hash, authAt: row.auth_at, via: 'cookie' }
 }
 
 function startSession(req: Req, res: Res, userId: string, credentialId: string) {
@@ -97,15 +106,20 @@ export function logout(req: Req, res: Res) {
   res.setHeader('Set-Cookie', clearSessionCookie())
 }
 
-export function requireSession(req: Req): Session {
+/**
+ * The signed-in moderator. API tokens are accepted only where `tokens` is set: they can read content and work
+ * on their own drafts, never review, publish or manage anything.
+ */
+export function requireSession(req: Req, tokens = false): Session {
   const s = getSession(req)
-  if (!s) throw new HttpError(401, 'Přihlas se prosím.', 'login')
+  if (!s) throw new HttpError(401, bearer(req) !== null ? 'Neplatný nebo prošlý API token.' : 'Přihlas se prosím.', 'login')
+  if (s.via === 'token' && !tokens) throw new HttpError(403, 'Tohle s API tokenem nejde – jen v moderaci po přihlášení.', 'token')
   return s
 }
 
 /** Admin actions and passkey changes need a passkey confirmation from the last few minutes. */
 export function requireRecent(s: Session) {
-  if (Date.now() - s.authAt > LIMITS.recentAuth) throw new HttpError(403, 'Potvrď to prosím svým klíčem.', 'reauth')
+  if (s.via !== 'cookie' || Date.now() - s.authAt > LIMITS.recentAuth) throw new HttpError(403, 'Potvrď to prosím svým klíčem.', 'reauth')
 }
 
 export function requireAdmin(req: Req, recent = false): Session {
@@ -265,4 +279,43 @@ export function removeKey(s: Session, id: string, ip: string) {
   // Whoever signed in with that key is out too.
   run('DELETE FROM sessions WHERE user_id = ? AND cred_id = ?', s.user.id, id)
   audit('key.removed', s.user.id, null, ip)
+}
+
+// ——— API tokens (scripts and agents proposing content) ———
+
+const TOKEN = /^spt_[A-Za-z0-9_-]{43}$/
+
+function tokenSession(t: string): Session | null {
+  if (!TOKEN.test(t)) return null
+  const hash = sha256(t)
+  const row = one<{ id: string; user_id: string; expires_at: number; last_used_at: number | null } & Pick<UserRow, 'name' | 'role' | 'active'>>(
+    'SELECT t.id, t.user_id, t.expires_at, t.last_used_at, u.name, u.role, u.active FROM api_tokens t JOIN users u ON u.id = t.user_id WHERE t.hash = ?', hash)
+  const now = Date.now()
+  if (!row || !row.active || row.expires_at < now) return null
+  if (!row.last_used_at || now - row.last_used_at > MINUTE) run('UPDATE api_tokens SET last_used_at = ? WHERE hash = ?', now, hash)
+  return { user: { id: row.user_id, name: row.name, role: row.role }, hash: `token:${row.id}`, authAt: 0, via: 'token' }
+}
+
+export function listTokens(userId: string) {
+  return all<{ id: string; label: string; created_at: number; expires_at: number; last_used_at: number | null }>(
+    'SELECT id, label, created_at, expires_at, last_used_at FROM api_tokens WHERE user_id = ? ORDER BY created_at DESC', userId,
+  ).map((t) => ({ id: t.id, label: t.label, createdAt: t.created_at, expiresAt: t.expires_at, lastUsedAt: t.last_used_at, expired: t.expires_at < Date.now() }))
+}
+
+/** A new token, shown once. Needs a fresh passkey confirmation. */
+export function createToken(s: Session, body: Record<string, unknown>, ip: string) {
+  requireRecent(s)
+  const label = typeof body.label === 'string' ? body.label.replace(/\s+/g, ' ').trim().slice(0, 60) : ''
+  if (label.length < 2) throw new HttpError(400, 'Pojmenuj token (k čemu ho použiješ).')
+  const days = Math.min(Math.max(Math.round(Number(body.days) || 30), 1), LIMITS.apiToken / DAY)
+  if (one<{ n: number }>('SELECT COUNT(*) AS n FROM api_tokens WHERE user_id = ?', s.user.id)!.n >= 10) throw new HttpError(429, 'Máš už 10 tokenů. Nějaký nejdřív zruš.')
+  const t = `spt_${token()}`, id = randomBytes(6).toString('hex'), now = Date.now()
+  run('INSERT INTO api_tokens (hash, id, user_id, label, created_at, expires_at) VALUES (?, ?, ?, ?, ?, ?)', sha256(t), id, s.user.id, label, now, now + days * DAY)
+  audit('token.created', s.user.id, { id, label, days }, ip)
+  return { id, token: t, expiresAt: now + days * DAY }
+}
+
+export function removeToken(s: Session, id: unknown, ip: string) {
+  if (typeof id !== 'string' || run('DELETE FROM api_tokens WHERE id = ? AND user_id = ?', id, s.user.id).changes !== 1) throw new HttpError(404, 'Token nenalezen.')
+  audit('token.removed', s.user.id, { id }, ip)
 }

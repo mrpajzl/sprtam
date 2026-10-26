@@ -65,11 +65,12 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
             {prev ? <a class="icon" href={`${here}/${prev.id}`} onClick={nav(`${here}/${prev.id}`)} title={`Předchozí: ${prev.title}`} aria-label={`Předchozí téma: ${prev.title}`}><I.left /></a> : <span class="icon" aria-hidden="true" />}
             {next ? <a class="icon" href={`${here}/${next.id}`} onClick={nav(`${here}/${next.id}`)} title={`Další: ${next.title}`} aria-label={`Další téma: ${next.title}`}><I.right /></a> : <span class="icon" aria-hidden="true" />}
           </nav>
+          {me && <a class="btn" href={`/historie/${g}/${s}/${id}`} onClick={nav(`/historie/${g}/${s}/${id}`)}><I.undo />Historie</a>}
           {me && <Busy class="btn primary" on={opening} onClick={edit}><I.pencil />{mine ? 'Pokračovat v úpravách' : 'Upravit'}</Busy>}
         </div>
       </header>
-      {me && others.length > 0 && <div class="banner info"><I.eye />Téma právě upravuje {others.map((o) => o.name).join(', ')}. Změny se ukážou tady, až je správce schválí.</div>}
-      {mine && <div class="banner info"><I.pencil />Máš tu rozpracované úpravy{mine.status === 'submitted' ? ', které čekají na schválení' : ''}. Tady vidíš zveřejněnou verzi.</div>}
+      {me && others.length > 0 && <div class="banner info"><I.eye />Téma právě upravuje {others.map((o) => o.name).join(', ')}. Změny se ukážou tady, až je někdo schválí.{others.filter((o) => o.id).map((o) => <a key={o.id} class="btn small" href={`/kontrola/${o.id}`} onClick={nav(`/kontrola/${o.id}`)}>Zkontrolovat</a>)}</div>}
+      {mine && <div class="banner info"><I.pencil />Máš tu rozpracované úpravy{mine.status === 'review' ? ', které čekají na kontrolu' : ''}. Tady vidíš zveřejněnou verzi.</div>}
 
       <div class="v-body">
         <aside class="v-phone">

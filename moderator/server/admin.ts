@@ -19,9 +19,11 @@ const role = (v: unknown) => {
 export function listUsers() {
   const keys = all<{ user_id: string; n: number; last: number | null }>('SELECT user_id, COUNT(*) AS n, MAX(last_used_at) AS last FROM credentials GROUP BY user_id')
   const sessions = all<{ user_id: string; n: number }>('SELECT user_id, COUNT(*) AS n FROM sessions GROUP BY user_id')
+  const tokens = all<{ user_id: string; n: number }>('SELECT user_id, COUNT(*) AS n FROM api_tokens WHERE expires_at > ? GROUP BY user_id', Date.now())
   return all<UserRow>('SELECT * FROM users ORDER BY active DESC, name').map((u) => ({
     id: u.id, name: u.name, role: u.role, active: !!u.active, createdAt: u.created_at, lastLoginAt: u.last_login_at,
     keys: keys.find((k) => k.user_id === u.id)?.n ?? 0, sessions: sessions.find((k) => k.user_id === u.id)?.n ?? 0,
+    tokens: tokens.find((k) => k.user_id === u.id)?.n ?? 0,
   }))
 }
 
@@ -67,7 +69,7 @@ export function updateUser(s: Session, id: unknown, body: Record<string, unknown
     if (!active && u.role === 'admin' && !otherActiveAdmins(u.id)) throw new HttpError(400, 'Musí zůstat aspoň jeden aktivní správce.')
     run('UPDATE users SET active = ? WHERE id = ?', active ? 1 : 0, u.id)
     // A switched-off account is out immediately, everywhere.
-    if (!active) { run('DELETE FROM sessions WHERE user_id = ?', u.id); dropKeyLinks(u.id) }
+    if (!active) { run('DELETE FROM sessions WHERE user_id = ?', u.id); run('DELETE FROM api_tokens WHERE user_id = ?', u.id); dropKeyLinks(u.id) }
     audit(active ? 'user.enabled' : 'user.disabled', s.user.id, { user: u.id, name: u.name }, ip)
   }
   if ('role' in body) {
@@ -92,6 +94,7 @@ export function keyLink(s: Session, id: unknown, body: Record<string, unknown>, 
     if (u.role === 'admin' && !otherActiveAdmins(u.id)) throw new HttpError(400, 'Musí zůstat aspoň jeden správce, který se může přihlásit.')
     run('DELETE FROM credentials WHERE user_id = ?', u.id)
     run('DELETE FROM sessions WHERE user_id = ?', u.id)
+    run('DELETE FROM api_tokens WHERE user_id = ?', u.id)
     dropKeyLinks(u.id)
   }
   const out = createInvite(s.user, 'key', u.name, u.role, u.id)
@@ -99,9 +102,11 @@ export function keyLink(s: Session, id: unknown, body: Record<string, unknown>, 
   return out
 }
 
+/** Signs a user out everywhere: every session (except the admin's own current one) and every API token. */
 export function endSessions(s: Session, id: unknown, ip: string) {
   const u = target(id)
   run('DELETE FROM sessions WHERE user_id = ?' + (u.id === s.user.id ? ' AND hash != ?' : ''), ...(u.id === s.user.id ? [u.id, s.hash] : [u.id]))
+  run('DELETE FROM api_tokens WHERE user_id = ?', u.id)
   audit('sessions.ended', s.user.id, { user: u.id, name: u.name }, ip)
 }
 

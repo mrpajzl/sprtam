@@ -23,10 +23,10 @@ export const CONFIG = {
   dataDir: env.DATA_DIR ?? join(ROOT, 'moderator', 'data'),
   contentDir: env.CONTENT_DIR ?? join(ROOT, 'content'),
   staticDir: env.STATIC_DIR ?? join(ROOT, 'moderator', 'dist'),
-  /** Fine-grained token for one repository: Contents and Pull requests read & write. */
-  githubToken: env.GITHUB_TOKEN ?? '',
-  githubRepo: env.GITHUB_REPO ?? 'mrpajzl/sprtam',
-  githubBase: env.GITHUB_BASE ?? 'main',
+  /** How many other moderators must approve a change before it is published. */
+  approvals: Math.max(1, Number(env.REQUIRED_APPROVALS ?? 1) || 1),
+  /** Bearer token of the backup puller (docs/OBSAH.md, Zálohy); empty = backups off. */
+  backupToken: env.BACKUP_TOKEN ?? '',
   /** Commit the image was built from (Coolify sets SOURCE_COMMIT). */
   commit: env.SOURCE_COMMIT ?? '',
   /** Behind Cloudflare: the client address is in CF-Connecting-IP. */
@@ -52,4 +52,8 @@ export const LIMITS = {
   openBody: 16 * 1024,
   /** Open drafts one moderator may have. */
   drafts: 50,
+  /** API tokens (for scripts and agents proposing content) live at most this long. */
+  apiToken: 180 * DAY,
+  /** Open widget requests one moderator may have. */
+  widgetRequests: 20,
 }
