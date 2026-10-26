@@ -210,7 +210,8 @@ try {
   await admin.page.getByRole('button', { name: 'Odeslat ke kontrole' }).click()
   await admin.page.getByRole('dialog').getByRole('button', { name: 'Odeslat' }).click()
   check(await admin.page.getByText('Odesláno ke kontrole').waitFor({ timeout: 5000 }).then(() => true, () => false), 'a draft is sent for review')
-  check((await admin.api('POST', `/api/drafts/${draftId}/review`, { verdict: 'approve', rev: 99 })).status === 403, 'nobody approves their own change')
+  check((await admin.api('POST', `/api/drafts/${draftId}/review`, { verdict: 'changes', body: 'x' })).status === 403, 'nobody asks for changes of their own change')
+  check((await admin.api('POST', `/api/drafts/${draftId}/review`, { verdict: 'approve', rev: 99 })).body.code === 'stale', 'an admin may approve her own change, but only the revision she saw')
 
   const queue = (await eva.api('GET', '/api/reviews')).body
   check(queue.some((d) => d.id === draftId && !d.mine), 'the change is in the review queue of others')
@@ -223,14 +224,42 @@ try {
   // A comment on one block, then a request for changes.
   await eva.page.locator('.d-item.d-mod').first().getByRole('button', { name: 'Komentovat' }).click()
   await eva.page.locator('.c-write textarea').fill('Tady bych dala příklad.')
-  await eva.page.getByRole('button', { name: 'Přidat komentář' }).click()
+  await eva.page.getByRole('button', { name: 'Odeslat', exact: true }).click()
   check(await eva.page.locator('.d-item .comment', { hasText: 'Tady bych dala příklad.' }).waitFor({ timeout: 5000 }).then(() => true, () => false), 'a comment sits at its block')
+
+  // Talking about it: replies in the thread, formatting, edits, a suggested wording the author takes over.
+  const first = (await admin.api('GET', `/api/drafts/${draftId}/thread`)).body.reviews.find((r) => r.body === 'Tady bych dala příklad.')
+  const reply = await admin.api('POST', `/api/drafts/${draftId}/review`, { verdict: 'comment', parent: first.id, body: 'Dobře, **doplním** ho:\n- třeba sedmičku' })
+  const myReply = reply.body.reviews?.find((r) => r.parent === first.id)
+  check(reply.status === 200 && myReply?.anchor === first.anchor, 'the author replies in the thread, at the same place')
+  check(await eva.page.locator('.c-replies .rich strong', { hasText: 'doplním' }).waitFor({ timeout: 15000 }).then(() => true, () => false)
+    && await eva.page.locator('.c-replies .rich li', { hasText: 'třeba sedmičku' }).count() === 1, 'a reply shows up on its own, formatted')
+  check((await eva.api('DELETE', `/api/drafts/${draftId}/reviews/${first.id}`)).status === 409, 'a message with replies stays')
+  check((await eva.api('PATCH', `/api/drafts/${draftId}/reviews/${myReply.id}`, { body: 'hack' })).status === 403, "nobody edits someone else's message")
+  const edit = await admin.api('PATCH', `/api/drafts/${draftId}/reviews/${myReply.id}`, { body: 'Dobře, doplním ho.' })
+  check(edit.status === 200 && edit.body.reviews.find((r) => r.id === myReply.id).editedAt > 0, 'one edits their own message')
+  await eva.page.locator('.d-item.d-mod').first().getByRole('button', { name: 'Komentovat' }).click()
+  await eva.page.getByRole('button', { name: 'Navrhnout text' }).click()
+  await eva.page.getByLabel('Navržený text').fill('Test **náhledu**. Třeba 7 je prvočíslo.')
+  await eva.page.getByRole('button', { name: 'Odeslat', exact: true }).click()
+  check(await eva.page.locator('.c-suggest.view ins', { hasText: 'Třeba' }).first().waitFor({ timeout: 5000 }).then(() => true, () => false), 'a suggested wording shows what it changes')
+  let d = (await admin.api('GET', `/api/drafts/${draftId}`)).body
+  const sug = d.reviews.find((r) => r.suggestion)
+  check((await eva.api('POST', `/api/drafts/${draftId}/reviews/${sug.id}/apply`, { rev: d.draft.rev })).status === 403, 'only the author takes over a suggestion')
+  check((await eva.api('POST', `/api/drafts/${draftId}/review`, { verdict: 'comment', anchor: first.anchor, suggestion: { path: 'title', text: 'x' } })).status === 400, 'a suggestion changes only the item it is about')
+  const applied = await admin.api('POST', `/api/drafts/${draftId}/reviews/${sug.id}/apply`, { rev: d.draft.rev })
+  check(applied.status === 200 && applied.body.draft.rev === d.draft.rev + 1 && JSON.stringify(applied.body.topic).includes('Třeba 7 je prvočíslo')
+    && applied.body.reviews.find((r) => r.id === sug.id).appliedAt > 0, 'the author takes over a suggestion as a new revision')
+  check((await admin.api('POST', `/api/drafts/${draftId}/reviews/${sug.id}/apply`, { rev: applied.body.draft.rev })).status === 409, 'a suggestion is taken over once')
+  const extra = await eva.api('POST', `/api/drafts/${draftId}/review`, { verdict: 'comment', body: 'Smažu' })
+  check((await eva.api('DELETE', `/api/drafts/${draftId}/reviews/${extra.body.reviews.at(-1).id}`)).status === 200, 'one deletes their own message')
+  await eva.page.reload()
   await eva.page.getByRole('button', { name: 'Požádat o úpravy' }).click()
   await eva.page.getByRole('dialog').locator('textarea').fill('Doplň prosím příklad.')
   await eva.page.getByRole('dialog').getByRole('button', { name: 'Odeslat autorovi' }).click()
   await eva.page.locator('.banner', { hasText: 'O úpravy žádá' }).waitFor({ timeout: 5000 })
-  let d = (await admin.api('GET', `/api/drafts/${draftId}`)).body
-  check(d.draft.changes.length === 1 && d.reviews.length === 2, 'the author sees the request for changes')
+  d = (await admin.api('GET', `/api/drafts/${draftId}`)).body
+  check(d.draft.changes.length === 1 && d.reviews.filter((r) => r.verdict === 'changes').length === 1, 'the author sees the request for changes')
 
   // The author edits (a new revision): the request no longer blocks, an approval of the old revision would not count.
   const edited = { ...d.topic, explanations: d.topic.explanations.map((x, i) => (i ? x : { ...x, blocks: x.blocks.map((b, j) => (j === 1 ? { ...b, text: 'Test **náhledu**. Příklad: 7 je prvočíslo.' } : b)) })) }
@@ -260,6 +289,7 @@ try {
   const back = await eva.api('POST', `/api/versions/${hist[1].id}/rollback`, {})
   check(back.status === 200 && back.body.draft.rollbackOf === hist[1].id, 'going back to a version is a draft')
   await eva.api('POST', `/api/drafts/${back.body.draft.id}/submit`, { note: 'Vracím' })
+  check((await eva.api('POST', `/api/drafts/${back.body.draft.id}/review`, { verdict: 'approve', rev: back.body.draft.rev })).status === 403, 'a moderator never approves their own change')
   const appr = await admin.api('POST', `/api/drafts/${back.body.draft.id}/review`, { verdict: 'approve', rev: back.body.draft.rev })
   check(appr.status === 200 && appr.body.released === 3, 'the rollback is published after approval')
   check(!(await topicText()).includes('7 je prvočíslo'), 'the topic is back as it was')
@@ -320,6 +350,16 @@ try {
   const rels = await (await fetch(`${BASE}/api/internal/releases?after=1`, { headers: { Authorization: `Bearer ${BACKUP}` } })).json()
   check(rels.releases.length === 4, 'the mirror gets the releases after one')
   check((await admin.api('GET', '/api/admin/system')).body.backup.lastAt > 0, 'admins see when the last backup ran')
+
+  // ——— An admin approves her own change (with a fresh passkey confirmation) ———
+  const own = (await admin.api('POST', '/api/drafts', { kind: 'edit', grade: 'z6', subject: 'matematika', topicId: 'prvocisla' })).body
+  const ownTopic = { ...own.topic, explanations: own.topic.explanations.map((x, i) => (i ? x : { ...x, blocks: x.blocks.map((b, j) => (j === 1 ? { ...b, text: `${b.text} Doplněno.` } : b)) })) }
+  const ownRev = (await admin.api('PUT', `/api/drafts/${own.draft.id}`, { topic: ownTopic, rev: own.draft.rev })).body.rev
+  await admin.api('POST', `/api/drafts/${own.draft.id}/submit`, {})
+  await admin.page.goto(`${BASE}/kontrola/${own.draft.id}`)
+  check(await admin.page.locator('.decide.t-act').getByRole('button', { name: 'Schválit a zveřejnit' }).waitFor({ timeout: 5000 }).then(() => true, () => false), 'an admin sees she can approve her own change')
+  const self = await admin.api('POST', `/api/drafts/${own.draft.id}/review`, { verdict: 'approve', rev: ownRev })
+  check(self.status === 200 && self.body.released === 6 && (await topicText()).includes('Doplněno.'), "an admin's own approval publishes her change")
 
   check([admin, mod, teacher, eva].every((d) => !d.errors.length), 'no errors in the pages')
 } finally {

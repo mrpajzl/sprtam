@@ -141,7 +141,7 @@ Všechno, co umí moderace, jde přes JSON API na `https://moderace.sprtam.cz/ap
 | zakládat a upravovat **vlastní** návrhy (`POST /api/drafts`, `PUT /api/drafts/:id`) | zveřejňovat, vracet verze, obnovovat vydání |
 | posílat je ke kontrole a zpět (`POST /api/drafts/:id/submit`, `/withdraw`, `/rebase`), mazat rozpracované | spravovat moderátory, tokeny a klíče |
 
-Návrh od agenta pak musí schválit **někdo jiný než vlastník tokenu**. Agent tedy nikdy nezveřejní nic, co neviděl člověk.
+Návrh od agenta pak musí schválit člověk v moderaci: **jiný moderátor**, nebo – je-li vlastník tokenu správce – správce sám v prohlížeči s potvrzením klíčem. Agent tedy nikdy nezveřejní nic, co neviděl člověk.
 
 Příklad: úprava tématu agentem.
 

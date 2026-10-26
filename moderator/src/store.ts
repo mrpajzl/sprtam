@@ -42,6 +42,7 @@ export interface DraftView {
 export interface ReviewView {
   id: number; rev: number; stale: boolean; user: Person; verdict: 'approve' | 'changes' | 'comment'; body: string; anchor: string | null
   createdAt: number; resolvedAt: number | null
+  parent: number | null; suggestion: { path: string; from: string; to: string } | null; appliedAt: number | null; editedAt: number | null
 }
 
 export interface Problem { path: string; message: string }

@@ -12,7 +12,7 @@ import { CONFIG, LIMITS, MINUTE } from './config'
 import { contentIndex, readTopic } from './content'
 import { audit, one, run } from './db'
 import {
-  activeDrafts, createDraft, deleteDraft, getDraft, listDrafts, rebaseDraft, rejectDraft, resolveReview, restoreRelease, restoreVersionNow, reviewDraft, reviewQueue,
+  activeDrafts, applySuggestion, createDraft, deleteDraft, deleteReview, editReview, getDraft, getThread, listDrafts, rebaseDraft, rejectDraft, resolveReview, restoreRelease, restoreVersionNow, reviewDraft, reviewQueue,
   rollbackDraft, saveDraft, submitDraft, withdrawDraft,
 } from './drafts'
 import { assertSameOrigin, clientIp, cookies, HttpError, ipKey, json, limit, readJson, SECURITY_HEADERS, SESSION_COOKIE, type Req, type Res } from './http'
@@ -141,6 +141,10 @@ on('POST', '/api/drafts/:id/withdraw', (req, _res, p, ip) => withdrawDraft(requi
 on('POST', '/api/drafts/:id/rebase', (req, _res, p, ip) => rebaseDraft(requireSession(req, tokens), p[0], ip))
 on('POST', '/api/drafts/:id/review', async (req, _res, p, ip) => reviewDraft(requireSession(req), p[0], await readJson(req), ip))
 on('POST', '/api/drafts/:id/reviews/:rid/resolve', (req, _res, p, ip) => resolveReview(requireSession(req), p[0], p[1], ip))
+on('PATCH', '/api/drafts/:id/reviews/:rid', async (req, _res, p, ip) => editReview(requireSession(req), p[0], p[1], await readJson(req), ip))
+on('DELETE', '/api/drafts/:id/reviews/:rid', (req, _res, p, ip) => deleteReview(requireSession(req), p[0], p[1], ip))
+on('POST', '/api/drafts/:id/reviews/:rid/apply', async (req, _res, p, ip) => applySuggestion(requireSession(req), p[0], p[1], await readJson(req), ip))
+on('GET', '/api/drafts/:id/thread', (req, _res, p) => getThread(requireSession(req), p[0]))
 on('POST', '/api/drafts/:id/reject', async (req, _res, p, ip) => rejectDraft(requireSession(req), p[0], await readJson(req), ip))
 on('GET', '/api/reviews', (req) => reviewQueue(requireSession(req)))
 

@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from 'preact/hooks'
 import { GRADE_NAME, SUBJECTS } from '../../../src/content/curriculum'
 import type { GradeId, SubjectId } from '../../../src/content/types'
-import { ApiError, get, post } from '../api'
+import { api, ApiError, get } from '../api'
 import { DiffStats, TopicDiff } from '../diff/Diff'
 import { Preview } from '../editor/Preview'
-import type { Me } from '../passkey'
+import { withConfirm, type Me } from '../passkey'
 import type { PreviewMode } from '../preview/protocol'
 import { go, nav } from '../router'
 import { approvalText, refreshIndex, STATUS, useIndex, type DraftFull, type DraftView, type ReviewView } from '../store'
+import { Threads, type ThreadActions } from '../review/Chat'
 import { ago, Busy, dateTime, Empty, I, Modal, toast } from '../ui/kit'
 
 // Review of other moderators' changes (docs/MODERACE.md): /kontrola is the queue, /kontrola/<id> one change –
-// what changed against the published version, the draft in the phone, comments on single blocks and questions,
-// and the decision. Enough approvals of the current revision publish the change at once.
+// what changed against the published version, the draft in the phone, conversations at single blocks and questions
+// (review/Chat.tsx), and the decision. Enough approvals of the current revision publish the change at once.
 
 type QueueItem = DraftView & { mine: boolean; myVerdict: 'approve' | 'changes' | null }
 
@@ -26,7 +27,7 @@ function modeOf(anchor: string): PreviewMode {
 
 const where = (d: DraftView) => `${GRADE_NAME[d.grade as GradeId]} · ${SUBJECTS[d.subject as SubjectId]?.name}`
 
-export function ReviewQueue() {
+export function ReviewQueue({ me }: { me: Me }) {
   const [list, setList] = useState<QueueItem[] | null>(null)
   useEffect(() => { get<QueueItem[]>('/api/reviews').then(setList, (e) => toast(e.message, 'bad')) }, [])
   if (!list) return <div class="page-narrow"><h1>Ke kontrole</h1><p class="muted">Načítám…</p></div>
@@ -49,7 +50,7 @@ export function ReviewQueue() {
   return (
     <div class="page-narrow">
       <h1>Ke kontrole</h1>
-      <p class="muted">Změny učiva od ostatních moderátorů. Každá se zveřejní, až ji schválí {list[0]?.needed === 1 || !list.length ? 'někdo další' : `${list[0].needed} další`} – vlastní změnu schválit nejde.</p>
+      <p class="muted">Změny učiva od ostatních moderátorů. Každá se zveřejní, až ji schválí {list[0]?.needed === 1 || !list.length ? 'někdo další' : `${list[0].needed} další`} – {me.role === 'admin' ? 'svou změnu můžeš jako správce schválit i sám/sama (potvrdíš to klíčem)' : 'vlastní změnu schválit nejde'}.</p>
       <ol class="steps-how">
         <li><b>Otevři</b> změnu ze seznamu.</li>
         <li><b>Projdi</b>, co se změnilo (zeleně přidané, přeškrtnuté odebrané), a vyzkoušej to v telefonu.</li>
@@ -75,6 +76,23 @@ export function Review({ id, me }: { id: string; me: Me }) {
   const [busy, setBusy] = useState(false)
   const load = () => get<DraftFull>(`/api/drafts/${id}`).then(setData, (e) => setError(e instanceof ApiError ? e.message : 'Návrh se nepodařilo načíst.'))
   useEffect(() => { setData(null); load() }, [id])
+  // New messages (and a new revision or decision) show up on their own while the change is open.
+  const live = useRef({ data, busy })
+  live.current = { data, busy }
+  useEffect(() => {
+    const t = setInterval(async () => {
+      const cur = live.current.data
+      if (!cur || live.current.busy || document.hidden || (cur.draft.status !== 'draft' && cur.draft.status !== 'review')) return
+      try {
+        const th = await get<{ rev: number; status: string; reviews: ReviewView[] }>(`/api/drafts/${id}/thread`)
+        const now = live.current.data
+        if (!now || now !== cur) return
+        if (th.rev !== now.draft.rev || th.status !== now.draft.status || th.reviews.some((r) => r.verdict !== 'comment' && !now.reviews.some((x) => x.id === r.id))) load()
+        else if (JSON.stringify(th.reviews) !== JSON.stringify(now.reviews)) setData({ ...now, reviews: th.reviews })
+      } catch { /* offline for a moment: next time */ }
+    }, 8000)
+    return () => clearInterval(t)
+  }, [id])
 
   if (error) return <div class="empty-state">{error} <a href="/kontrola" onClick={nav('/kontrola')}>Zpět ke kontrole</a></div>
   if (!data) return <div class="boot" />
@@ -85,10 +103,11 @@ export function Review({ id, me }: { id: string; me: Me }) {
   const myDecision = data.reviews.filter((r) => !r.stale && r.user.id === me.id && r.verdict !== 'comment').pop()?.verdict
   const willPublish = d.approvals.filter((a) => a.id !== me.id).length + 1 >= d.needed && !d.changes.some((c) => c.id !== me.id)
 
-  const act = async (path: string, body: object, ok: string) => {
+  const act = async (path: string, body: object, ok: string, method = 'POST', reauth = false) => {
     setBusy(true)
     try {
-      const r = await post<DraftFull & { released?: number | null }>(`/api/drafts/${d.id}/${path}`, body)
+      const call = () => api<DraftFull & { released?: number | null }>(method, `/api/drafts/${d.id}/${path}`, body)
+      const r = await (reauth ? withConfirm(call) : call())
       setData(r); refreshIndex()
       toast(r.released ? `Zveřejněno! Na sprtam.cz je to jako vydání ${r.released}.` : ok)
       return true
@@ -99,9 +118,14 @@ export function Review({ id, me }: { id: string; me: Me }) {
       return false
     } finally { setBusy(false) }
   }
-  const comment = (body: string, anchor: string | null) => act('review', { verdict: 'comment', body, anchor }, 'Komentář přidán')
-
-  const anchored = (anchor: string) => <Thread reviews={data.reviews.filter((r) => r.anchor === anchor)} anchor={anchor} me={me} draft={d} onComment={comment} onResolve={(r) => act(`reviews/${r.id}/resolve`, {}, r.resolvedAt ? 'Znovu otevřeno' : 'Vyřešeno')} />
+  const chat: ThreadActions = {
+    send: (m, anchor) => act('review', { verdict: 'comment', anchor, ...m }, m.parent ? 'Odpověď odeslána' : 'Zpráva odeslána'),
+    edit: (r, body, suggestion) => act(`reviews/${r.id}`, { body, ...(suggestion !== undefined ? { suggestion } : {}) }, 'Zpráva upravena', 'PATCH'),
+    remove: (r) => { if (confirm('Smazat zprávu?')) act(`reviews/${r.id}`, {}, 'Zpráva smazána', 'DELETE') },
+    resolve: (r) => act(`reviews/${r.id}/resolve`, {}, r.resolvedAt ? 'Znovu otevřeno' : 'Vyřešeno'),
+    apply: (r) => act(`reviews/${r.id}/apply`, { rev: d.rev }, 'Návrh převzat – je v návrhu jako nová verze'),
+  }
+  const anchored = (anchor: string) => <Threads reviews={data.reviews.filter((r) => r.anchor === anchor)} anchor={anchor} me={me} draft={d} topic={data.topic} busy={busy} act={chat} />
 
   return (
     <div class="review">
@@ -129,15 +153,15 @@ export function Review({ id, me }: { id: string; me: Me }) {
       )}
 
       <Decision data={data} me={me} busy={busy} willPublish={willPublish} myDecision={myDecision}
-        approve={() => act('review', { verdict: 'approve', rev: d.rev }, 'Schváleno')} ask={setAsk}
+        approve={() => act('review', { verdict: 'approve', rev: d.rev }, 'Schváleno', 'POST', own)} ask={setAsk}
         withdraw={() => act('withdraw', {}, 'Návrh je zpátky v rozpracovaných')} />
 
       <div class="r-body">
         <div class="r-main">
           <h2 class="label">{data.base ? 'Změny proti verzi, ze které autor vycházel' : 'Celé nové téma'}</h2>
           <TopicDiff a={data.base} b={data.topic} ctx={{ render: anchored, pick: (a) => setMode(modeOf(a)) }} />
-          <h2 class="label">Komentáře k celé změně</h2>
-          <Thread reviews={data.reviews.filter((r) => !r.anchor)} anchor={null} me={me} draft={d} onComment={comment} onResolve={(r) => act(`reviews/${r.id}/resolve`, {}, r.resolvedAt ? 'Znovu otevřeno' : 'Vyřešeno')} decisions />
+          <h2 class="label">Konverzace k celé změně</h2>
+          <Threads reviews={data.reviews.filter((r) => !r.anchor)} anchor={null} me={me} draft={d} topic={data.topic} busy={busy} act={chat} decisions />
         </div>
         <aside class="v-phone">
           <Preview topic={data.topic} grade={g} subject={s} approaches={index?.approaches ?? []} mode={mode} onMode={setMode} />
@@ -207,6 +231,19 @@ function Decision({ data, me, busy, willPublish, myDecision, approve, ask, withd
     head = 'Rozpracováno – zatím není co schvalovat'
     text = own ? 'Ostatní moderátoři to uvidí, až to v editoru odešleš ke kontrole (tlačítko Odeslat).' : `${d.author.name} to ještě neposlal/a ke kontrole. Až to pošle, objeví se to v Ke kontrole.`
     actions = own ? edit : rejectBtn
+  } else if (own && me.role === 'admin') {
+    const rest = <>{edit}<Busy class="btn" on={busy} onClick={withdraw}>Vrátit do rozpracovaných</Busy></>
+    if (myDecision === 'approve') {
+      tone = 'ok'; head = 'Schválil/a jsi svou změnu'
+      text = `Čeká se na další schválení (${approvalText(d)}). Když změnu upravíš, je potřeba ji schválit znovu.`
+      actions = rest
+    } else if (blocked) {
+      tone = 'warn'; head = 'Zatím nejde schválit'; text = blocked; actions = rest
+    } else {
+      tone = 'act'; head = 'Čeká na kontrolu – jako správce ji můžeš schválit sám/sama'
+      text = `Nejlepší je, když se na změnu podívá ještě někdo. Když to spěchá, klikni na ${willPublish ? 'Schválit a zveřejnit' : 'Schválit'} – aplikace si řekne o potvrzení klíčem${willPublish ? ' a změna se hned objeví na sprtam.cz' : ''}.`
+      actions = <>{approveBtn}{rest}</>
+    }
   } else if (own) {
     head = 'Čeká na kontrolu jiného moderátora'
     text = `Svou vlastní změnu schválit nejde. Jakmile ji schválí ${d.needed === 1 ? 'někdo další' : `${d.needed} další`}, sama se zveřejní na sprtam.cz. Do té doby ji můžeš ještě upravit.`
@@ -236,43 +273,6 @@ function Decision({ data, me, busy, willPublish, myDecision, approve, ask, withd
         </div>
       )}
     </>
-  )
-}
-
-const VERDICT = { approve: 'schválil/a', changes: 'žádá úpravy', comment: '' }
-
-function Thread({ reviews, anchor, me, draft, onComment, onResolve, decisions }: {
-  reviews: ReviewView[]; anchor: string | null; me: Me; draft: DraftView; onComment: (body: string, anchor: string | null) => Promise<boolean>; onResolve: (r: ReviewView) => void; decisions?: boolean
-}) {
-  const [writing, setWriting] = useState(false)
-  const [text, setText] = useState('')
-  const [busy, setBusy] = useState(false)
-  const shown = decisions ? reviews : reviews.filter((r) => r.verdict === 'comment' || r.body)
-  const canWrite = draft.status === 'review'
-  const send = async () => { setBusy(true); if (await onComment(text.trim(), anchor)) { setText(''); setWriting(false) } setBusy(false) }
-  if (!shown.length && !canWrite) return decisions ? <p class="fine">Žádné komentáře.</p> : null
-  return (
-    <div class={`thread ${anchor ? 'anchored' : ''}`}>
-      {shown.map((r) => (
-        <div key={r.id} class={`comment ${r.resolvedAt ? 'resolved' : ''} v-${r.verdict}`}>
-          <div class="c-head">
-            <b>{r.user.name}</b>
-            {VERDICT[r.verdict] && <span class={`pill ${r.verdict === 'approve' ? 'st-published' : 'warn'}`}>{VERDICT[r.verdict]}</span>}
-            <small>{ago(r.createdAt)}{r.stale ? ' · k dřívější verzi' : ''}{r.resolvedAt ? ' · vyřešeno' : ''}</small>
-            {r.verdict === 'comment' && (draft.author.id === me.id || r.user.id === me.id) && (
-              <button class="btn small" onClick={() => onResolve(r)}>{r.resolvedAt ? 'Otevřít' : <><I.check />Vyřešeno</>}</button>
-            )}
-          </div>
-          {r.body && <p>{r.body}</p>}
-        </div>
-      ))}
-      {canWrite && (writing ? (
-        <div class="c-write">
-          <textarea rows={3} value={text} onInput={(e) => setText(e.currentTarget.value)} placeholder={anchor ? 'Komentář k tomuhle místu…' : 'Komentář k celé změně…'} maxLength={4000} autoFocus />
-          <div class="actions-row"><Busy class="btn small primary" on={busy} disabled={!text.trim()} onClick={send}>Přidat komentář</Busy><button class="btn small" onClick={() => setWriting(false)}>Zrušit</button></div>
-        </div>
-      ) : <button class="add-line" onClick={() => setWriting(true)}><I.plus />{anchor ? 'Komentovat' : 'Napsat komentář'}</button>)}
-    </div>
   )
 }
 

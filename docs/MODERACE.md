@@ -4,7 +4,7 @@ Samostatná aplikace pro úpravy a tvorbu učiva: **[moderace.sprtam.cz](https:/
 
 - Učivo si v ní kdokoli prohlédne bez přihlášení.
 - Pozvaní moderátoři v ní upravují témata v editoru s živým náhledem. Hotovou změnu pošlou **ke kontrole**.
-- Jakmile ji schválí jiný moderátor, je hned na sprtam.cz.
+- Jakmile ji schválí jiný moderátor, je hned na sprtam.cz. Správce může svou změnu schválit i sám.
 
 Moderace je zároveň obsahová služba: učivo i s celou historií je v její databázi ([OBSAH.md](OBSAH.md)).
 
@@ -41,10 +41,14 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
   - přidané, odebrané a změněné bloky a otázky;
   - uvnitř změněných textů jednotlivá slova (zeleně přidaná, červeně odebraná);
   - vedle návrh v telefonu, tlačítkem 📱 u změny skočíš přímo na ni.
-- **Komentovat** jde každý změněný blok i otázku, nebo celou změnu. Autor a pisatel komentář označí jako vyřešený.
+- **Konverzace:** ke každému změněnému bloku a otázce i k celé změně jde psát zprávy a odpovídat na ně ve vláknu (**Odpovědět**). Nové zprávy se objeví samy během pár vteřin.
+  - Formátování: tlačítka nad polem nebo přímo `**tučně**`, `*kurzíva*`, `~~škrtnuté~~`, `` `vzorec` ``, odrážky `- `, číslovaný seznam `1. `, citace `> `, odkazy (`[text](https://…)` nebo jen adresa). **Náhled** ukáže, jak zpráva bude vypadat. Ctrl+Enter odešle.
+  - **Navrhnout text:** u bloku nebo otázky vybereš, který text měníš (např. *Možnost 2* nebo *Vysvětlení*), a napíšeš, jak má znít. Zpráva ukáže změnu po slovech a autor ji tlačítkem **Převzít návrh** vloží do návrhu jako novou verzi. Když autor text mezitím změnil, převezme ho ručně v editoru.
+  - Vlastní zprávu jde upravit, a dokud na ni nikdo neodpověděl, i smazat. Autor změny a zakladatel vlákna ho označí jako vyřešené (sbalí se); nová odpověď ho zase otevře.
+  - Psát jde, dokud je návrh otevřený (i když ho autor vrátil do rozpracovaných).
 - **Požádat o úpravy** blokuje zveřejnění, dokud autor návrh neupraví.
 - **Schválit** (u posledního potřebného schválení **Schválit a zveřejnit**) změnu hned zveřejní jako nové vydání.
-- Vlastní změnu schválit nejde. Schvaluje se přesně ta verze, kterou vidíš: když ji autor mezitím upraví, je potřeba podívat se znovu.
+- Moderátor vlastní změnu schválit nemůže. **Správce** může: rámeček mu ukáže *Jako správce ji můžeš schválit sám/sama*, a protože tím změnu zveřejní bez druhého páru očí, aplikace si řekne o potvrzení klíčem (přihlášení v posledních 15 minutách). API tokenem to nejde. Schvaluje se přesně ta verze, kterou vidíš: když ji autor mezitím upraví, je potřeba podívat se znovu.
 - **Konflikt:** téma mezitím změnil a zveřejnil někdo jiný. Autor uvidí, co se zveřejnilo, přenese to do svého návrhu a převede ho na novou verzi.
 
 ## Historie a pomůcky
@@ -69,7 +73,7 @@ Pravidla pro obsah: [CONTENT.md](CONTENT.md). Editor je hlídá za tebe a ukazuj
 
   Totéž umí Historie tématu pro jedno téma (**Vrátit hned bez kontroly**).
 - **Zamítnout** jde návrh, který se nezveřejní. Autor uvidí důvod.
-- Kolik schválení je potřeba, určuje `REQUIRED_APPROVALS`.
+- Kolik schválení je potřeba, určuje `REQUIRED_APPROVALS`. Vlastní schválení správce se počítá jako jedno z nich.
 
 ### První správce
 
@@ -98,7 +102,7 @@ Všechno ostatní se dělá v aplikaci.
 | Výzvy | Přihlašovací výzvy si server neukládá: podepisuje je klíčem, který existuje jen v běžícím procesu, a pamatuje si jen ty už použité. Kdokoli z internetu tak nemůže zahltit paměť a přihlašování zablokovat. Výzvy k registraci vyžadují platnou pozvánku nebo přihlášení. |
 | Veřejná část | Bez přihlášení jde jen číst zveřejněné učivo (`GET /api/content/index`, `/api/content/topic/…` a veřejné API `/api/public/v1/…`). Je to totéž, co ukazuje sprtam.cz. Návrhy, historii a jejich autory dostane jen přihlášený moderátor. Rozpracované návrhy vidí jen autor (a správce), ostatní je uvidí až po odeslání ke kontrole. Všechno ostatní chce session. |
 | Cizí stránky | Každý požadavek, který něco mění, musí mít přesně náš `Origin` a `Sec-Fetch-Site: same-origin` a tělo jen jako JSON. CORS není povolené. Výjimkou jsou požadavky s API tokenem v hlavičce `Authorization`: nenesou cookies a prohlížeč je za cizí stránku bez CORS neodešle. |
-| Zveřejnění | Jen schválením jiného moderátora (aktuální revize, bez konfliktu, celé učivo projde kontrolou), nebo nouzovou obnovou správcem s čerstvým potvrzením klíčem. Historie jde jen doplňovat a je chráněná hash řetězem ([OBSAH.md](OBSAH.md#bezpečnost)). |
+| Zveřejnění | Jen schválením jiného moderátora (aktuální revize, bez konfliktu, celé učivo projde kontrolou), schválením vlastní změny správcem v prohlížeči s čerstvým potvrzením klíčem (v historii je vidět, kdo schválil), nebo nouzovou obnovou správcem s čerstvým potvrzením klíčem. Historie jde jen doplňovat a je chráněná hash řetězem ([OBSAH.md](OBSAH.md#bezpečnost)). |
 | Hlavičky | Přísná CSP (jen `'self'`, žádné cizí skripty), HSTS, `frame-ancestors 'self'`, COOP/CORP, `no-referrer`, `noindex`. |
 | Omezení | Rate limit přihlašování, pozvánek, zakládání, ukládání a odesílání návrhů (IPv6 po celých /64). Požadavky bez přihlášení mají nejvýš 16 kB, ostatní 512 kB. Jeden moderátor má nejvýš 50 otevřených návrhů. Adresu klienta z `CF-Connecting-IP` server bere jen od adres Cloudflare. |
 | Vypnutý účet, zrušené klíče | Session se mažou okamžitě, klíč dál nefunguje a nepoužité odkazy na nový klíč propadnou. Vždy musí zůstat aspoň jeden správce, který se může přihlásit. |
@@ -135,7 +139,7 @@ Test celého toku a bezpečnostních pravidel: `npm run moderator:build && node 
 - pozvánku, přihlášení a podvržené výzvy;
 - požadavky z cizích stránek;
 - editor s náhledem a oddělení návrhů mezi moderátory;
-- kontrolu, schválení a zveřejnění, konflikty;
+- kontrolu, konverzaci (vlákna, úpravy zpráv, návrhy textu), schválení a zveřejnění včetně vlastního schválení správcem, konflikty;
 - historii, návraty a obnovu vydání;
 - API tokeny, žádosti o pomůcky a zálohy;
 - správu účtů.

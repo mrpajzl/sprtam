@@ -235,6 +235,15 @@ const MIGRATIONS: string[] = [
     mirrored INTEGER
   );
   `,
+  // 2: review conversations – replies in a thread (one level, under the first message), suggested wording of one
+  // text field that the author takes over with a click, and edited messages.
+  `
+  ALTER TABLE reviews ADD COLUMN parent_id INTEGER REFERENCES reviews(id) ON DELETE CASCADE;
+  ALTER TABLE reviews ADD COLUMN suggestion TEXT;
+  ALTER TABLE reviews ADD COLUMN applied_at INTEGER;
+  ALTER TABLE reviews ADD COLUMN edited_at INTEGER;
+  CREATE INDEX reviews_parent ON reviews(parent_id);
+  `,
 ]
 
 const before = Number((db.prepare('PRAGMA user_version').get() as { user_version: number }).user_version)
@@ -284,6 +293,8 @@ export interface DraftRow {
   release_id: number | null; created_at: number; updated_at: number; legacy_pr_url: string | null
 }
 export type DraftStatus = 'draft' | 'review' | 'published' | 'withdrawn' | 'rejected'
-export interface ReviewRow { id: number; draft_id: string; rev: number; user_id: string; verdict: 'approve' | 'changes' | 'comment'; body: string; anchor: string | null; created_at: number; resolved_at: number | null; resolved_by: string | null }
+export interface ReviewRow { id: number; draft_id: string; rev: number; user_id: string; verdict: 'approve' | 'changes' | 'comment'; body: string; anchor: string | null; created_at: number; resolved_at: number | null; resolved_by: string | null
+  parent_id: number | null; suggestion: string | null; applied_at: number | null; edited_at: number | null
+}
 export interface VersionRow { id: number; key: string; n: number; data: string | null; hash: string; user_id: string | null; approved_by: string | null; draft_id: string | null; release_id: number; reason: 'import' | 'change' | 'rollback' | 'restore'; created_at: number; chain: string }
 export interface ReleaseRow { id: number; created_at: number; user_id: string | null; draft_id: string | null; reason: VersionRow['reason']; note: string | null; hash: string; docs: number }
