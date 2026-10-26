@@ -2,26 +2,34 @@ import { randomUUID } from 'node:crypto'
 import { topicChanged } from '../../src/content/diff'
 import { subjectKey, topicKey } from '../../src/content/docs'
 import type { GradeId, SubjectFile, SubjectId, TopicFile } from '../../src/content/types'
-import type { Session } from './auth'
+import { requireRecent, type Session } from './auth'
 import { CONFIG, LIMITS, MINUTE } from './config'
-import { all, audit, one, run, type DraftRow, type ReviewRow } from './db'
+import { all, audit, one, run, tx, type DraftRow, type ReviewRow } from './db'
 import { isSubject, readTopic, topicExists, topicProblems, type Problem } from './content'
 import { HttpError, limit } from './http'
 import { changesTo, contentAt, getDoc, problemsAfter, publish, version, versionId, type DocChange } from './store'
 
 // A draft is one moderator's change of one topic (an edit, or a new topic with its place in the subject).
 // It is saved as the moderator types. "Odeslat ke kontrole" puts it in front of the other moderators: each
-// can approve it, ask for changes or comment. Once enough of them (CONFIG.approvals, never the author)
-// approve the current revision, it is published at once – a new release of the content (store.ts).
-// Any later edit is a new revision: approvals of an older one no longer count.
+// can approve it, ask for changes or talk about it (threads of replies, suggested wording the author takes over).
+// Once enough of them (CONFIG.approvals) approve the current revision, it is published at once – a new release of
+// the content (store.ts). A moderator never approves their own change; an admin may, in a signed-in browser with a
+// fresh passkey confirmation (a stolen session alone does not publish anything). Any later edit is a new revision:
+// approvals of an older one no longer count.
 
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
 interface DraftData { topic: TopicFile; after?: string | null }
 
+/** Suggested wording of one text field of the topic (`path` inside the commented item): `from` what it said then. */
+export interface Suggestion { path: string; from: string; to: string }
+
 export interface ReviewView {
   id: number; rev: number; stale: boolean; user: { id: string; name: string }; verdict: ReviewRow['verdict']; body: string; anchor: string | null
   createdAt: number; resolvedAt: number | null
+  /** The first message of the thread this one replies to. */
+  parent: number | null
+  suggestion: Suggestion | null; appliedAt: number | null; editedAt: number | null
 }
 
 export interface DraftView {
@@ -54,6 +62,12 @@ function decisions(id: string, rev: number) {
 /** Admin rights count only in a signed-in browser: an API token of an admin acts like a moderator's. */
 const isAdmin = (s: Session) => s.user.role === 'admin' && s.via === 'cookie'
 
+/** Who approved revision `rev`: other moderators, and the author only while they are an admin. */
+function approversOf(d: DraftRow, dec: Map<string, ReviewRow['verdict']>) {
+  const authorAdmin = one<{ role: string }>('SELECT role FROM users WHERE id = ?', d.user_id)?.role === 'admin'
+  return [...dec].filter(([u, v]) => v === 'approve' && (u !== d.user_id || authorAdmin)).map(([u]) => u)
+}
+
 function conflictOf(d: DraftRow): boolean {
   if (d.status !== 'draft' && d.status !== 'review') return false
   return d.kind === 'edit' ? versionId(topicKey(d.grade, d.subject, d.topic_id)) !== d.base_version : topicExists(d.grade, d.subject, d.topic_id)
@@ -78,13 +92,13 @@ function pruneEmpty(userId: string, keepMs: number) {
 
 function view(d: Row, who = names()): DraftView {
   const dec = d.status === 'review' ? decisions(d.id, d.rev) : new Map()
-  const people = (v: string) => [...dec].filter(([, x]) => x === v).map(([id]) => ({ id, name: who.get(id) ?? '?' }))
+  const people = (ids: string[]) => ids.map((id) => ({ id, name: who.get(id) ?? '?' }))
   return {
     id: d.id, kind: d.kind, grade: d.grade as GradeId, subject: d.subject as SubjectId, topicId: d.topic_id, title: d.title, rev: d.rev,
     status: d.status, note: d.note, author: { id: d.user_id, name: d.author_name }, createdAt: d.created_at, updatedAt: d.updated_at,
     submittedAt: d.submitted_at, decidedAt: d.decided_at, decidedBy: d.decided_by ? who.get(d.decided_by) ?? '?' : null, decisionNote: d.decision_note,
     release: d.release_id, baseVersion: d.base_version, rollbackOf: d.rollback_of, conflict: conflictOf(d), changed: changedOf(d),
-    approvals: people('approve'), changes: people('changes'), needed: CONFIG.approvals, legacyPrUrl: d.legacy_pr_url,
+    approvals: people(dec.size ? approversOf(d, dec) : []), changes: people([...dec].filter(([, x]) => x === 'changes').map(([id]) => id)), needed: CONFIG.approvals, legacyPrUrl: d.legacy_pr_url,
   }
 }
 
@@ -132,8 +146,15 @@ export function activeDrafts() {
 function reviewsOf(d: Row, who = names()): ReviewView[] {
   return all<ReviewRow>('SELECT * FROM reviews WHERE draft_id = ? ORDER BY id', d.id).map((r) => ({
     id: r.id, rev: r.rev, stale: r.rev !== d.rev, user: { id: r.user_id, name: who.get(r.user_id) ?? '?' }, verdict: r.verdict, body: r.body, anchor: r.anchor,
-    createdAt: r.created_at, resolvedAt: r.resolved_at,
+    createdAt: r.created_at, resolvedAt: r.resolved_at, parent: r.parent_id,
+    suggestion: r.suggestion ? JSON.parse(r.suggestion) as Suggestion : null, appliedAt: r.applied_at, editedAt: r.edited_at,
   }))
+}
+
+/** Just the conversation, cheap enough to ask for every few seconds while a review is open. */
+export function getThread(s: Session, id: unknown) {
+  const d = load(s, id)
+  return { rev: d.rev, status: d.status, reviews: reviewsOf(d) }
 }
 
 /** A draft with its topic, the version it started from, what is published now, and the review so far. */
@@ -301,31 +322,150 @@ export function rebaseDraft(s: Session, id: unknown, ip: string) {
 }
 
 const VERDICTS = ['approve', 'changes', 'comment'] as const
+const ANCHOR = /^[a-z0-9[\].]{1,80}$/i
+
+/** "questions[2].options[1]" → ['questions', 2, 'options', 1] (null for anything else). */
+function parsePath(path: string): (string | number)[] | null {
+  if (!/^[a-z]+(\.[a-z]+|\[\d{1,4}\])*$/i.test(path) || path.length > 120) return null
+  return [...path.matchAll(/([a-z]+)|\[(\d+)\]/gi)].map((m) => (m[1] ? m[1] : Number(m[2])))
+}
+
+function textAt(topic: TopicFile, path: string): string | undefined {
+  const p = parsePath(path)
+  const v = p?.reduce<unknown>((o, k) => (o && typeof o === 'object' ? (o as Record<string | number, unknown>)[k] : undefined), topic)
+  return typeof v === 'string' ? v : undefined
+}
+
+function setText(topic: TopicFile, path: string, value: string): TopicFile {
+  const p = parsePath(path)!
+  const copy = structuredClone(topic) as unknown as Record<string | number, unknown>
+  const parent = p.slice(0, -1).reduce<Record<string | number, unknown>>((o, k) => o[k] as Record<string | number, unknown>, copy)
+  parent[p[p.length - 1]] = value
+  return copy as unknown as TopicFile
+}
+
+const message = (x: unknown, max: number) => (typeof x === 'string' ? x.replace(/\r\n?/g, '\n').trim().slice(0, max) : '')
 
 export function reviewDraft(s: Session, id: unknown, body: Record<string, unknown>, ip: string) {
   const d = load(s, id)
-  if (d.status !== 'review') throw new HttpError(409, 'Návrh teď není v kontrole.')
   const verdict = body.verdict as (typeof VERDICTS)[number]
   if (!VERDICTS.includes(verdict)) throw new HttpError(400, 'Neznámé rozhodnutí.')
-  const text = typeof body.body === 'string' ? body.body.trim().slice(0, 4000) : ''
-  const anchor = typeof body.anchor === 'string' && /^[a-z0-9[\].]{1,80}$/i.test(body.anchor) ? body.anchor : null
-  if (verdict !== 'comment' && d.user_id === s.user.id) throw new HttpError(403, 'Vlastní návrh schvalovat nemůžeš – to udělá někdo jiný.')
-  if (verdict !== 'approve' && !text) throw new HttpError(400, verdict === 'changes' ? 'Napiš, co je potřeba změnit.' : 'Napiš komentář.')
+  // Talking goes on while the draft is open (also when the author took it back to work on it); deciding only in review.
+  if (verdict === 'comment') open(d)
+  else if (d.status !== 'review') throw new HttpError(409, 'Návrh teď není v kontrole.')
+  const text = message(body.body, 4000)
+  const data = JSON.parse(d.data) as DraftData
+
+  // A reply belongs to the thread of its first message, at the same place.
+  let parent: ReviewRow | undefined
+  if (body.parent !== undefined && body.parent !== null) {
+    parent = one<ReviewRow>('SELECT * FROM reviews WHERE id = ? AND draft_id = ?', Number(body.parent), d.id)
+    if (!parent) throw new HttpError(404, 'Zpráva, na kterou odpovídáš, už není.')
+    if (parent.parent_id !== null) parent = one<ReviewRow>('SELECT * FROM reviews WHERE id = ?', parent.parent_id)!
+    if (verdict !== 'comment') throw new HttpError(400, 'Odpovědět jde jen zprávou.')
+  }
+  const anchor = parent ? parent.anchor : typeof body.anchor === 'string' && ANCHOR.test(body.anchor) ? body.anchor : null
+
+  let suggestion: Suggestion | null = null
+  const sg = body.suggestion as { path?: unknown; text?: unknown } | undefined
+  if (sg && typeof sg === 'object') {
+    if (verdict !== 'comment') throw new HttpError(400, 'Návrh textu jde poslat jen jako zprávu.')
+    const path = typeof sg.path === 'string' ? sg.path : ''
+    const from = anchor && (path.startsWith(`${anchor}.`) || path.startsWith(`${anchor}[`)) ? textAt(data.topic, path) : undefined
+    if (from === undefined) throw new HttpError(400, 'Navrhnout jde jen text u bloku nebo otázky, ke které píšeš.')
+    const to = typeof sg.text === 'string' ? sg.text.replace(/\r\n?/g, '\n').slice(0, 4000) : ''
+    if (to === from) throw new HttpError(400, 'Navržený text je stejný jako současný.')
+    suggestion = { path, from, to }
+  }
+
+  if (d.user_id === s.user.id && verdict !== 'comment') {
+    if (verdict === 'changes') throw new HttpError(403, 'O úpravy vlastního návrhu žádat nejde – uprav ho rovnou.')
+    if (!isAdmin(s)) throw new HttpError(403, 'Vlastní návrh schvalovat nemůžeš – to udělá někdo jiný.')
+    // An admin publishing their own change: confirmed with the passkey, not just an open session.
+    requireRecent(s)
+  }
+  if (verdict !== 'approve' && !text && !suggestion) throw new HttpError(400, verdict === 'changes' ? 'Napiš, co je potřeba změnit.' : 'Napiš zprávu.')
   // The reviewer approves exactly what they saw.
   if (verdict === 'approve' && body.rev !== d.rev) throw new HttpError(409, 'Návrh se mezitím změnil. Podívej se na novou verzi.', 'stale')
   limit(`review:${s.user.id}`, 120, 10 * MINUTE)
-  const data = JSON.parse(d.data) as DraftData
   if (verdict === 'approve') assertReady(d, data)
-  run('INSERT INTO reviews (draft_id, rev, user_id, verdict, body, anchor, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)', d.id, d.rev, s.user.id, verdict, text, anchor, Date.now())
-  audit(`review.${verdict}`, s.user.id, { draft: d.id, rev: d.rev }, ip)
+  run('INSERT INTO reviews (draft_id, rev, user_id, verdict, body, anchor, parent_id, suggestion, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    d.id, d.rev, s.user.id, verdict, text, anchor, parent?.id ?? null, suggestion ? JSON.stringify(suggestion) : null, Date.now())
+  // A reply opens a resolved thread again.
+  if (parent?.resolved_at) run('UPDATE reviews SET resolved_at = NULL, resolved_by = NULL WHERE id = ?', parent.id)
+  audit(`review.${verdict}`, s.user.id, { draft: d.id, rev: d.rev, ...(d.user_id === s.user.id && verdict === 'approve' ? { own: true } : {}) }, ip)
 
   let release: number | null = null
   if (verdict === 'approve') {
     const dec = decisions(d.id, d.rev)
-    const approvers = [...dec].filter(([u, v]) => v === 'approve' && u !== d.user_id).map(([u]) => u)
+    const approvers = approversOf(d, dec)
     if (approvers.length >= CONFIG.approvals && ![...dec.values()].includes('changes')) release = publishDraft(d, data, approvers, s.user.id, ip)
   }
   return { ...getDraft(s, d.id), released: release }
+}
+
+function ownMessage(s: Session, d: Row, reviewId: unknown) {
+  const r = one<ReviewRow>('SELECT * FROM reviews WHERE id = ? AND draft_id = ?', Number(reviewId), d.id)
+  if (!r) throw new HttpError(404, 'Zpráva nenalezena.')
+  if (r.user_id !== s.user.id) throw new HttpError(403, 'Upravit nebo smazat smíš jen svou zprávu.')
+  return r
+}
+
+/** Corrects the text of one's own message (and of a suggestion not taken over yet). */
+export function editReview(s: Session, id: unknown, reviewId: unknown, body: Record<string, unknown>, ip: string) {
+  const d = load(s, id)
+  open(d)
+  const r = ownMessage(s, d, reviewId)
+  const text = message(body.body, 4000)
+  let suggestion = r.suggestion
+  if (r.suggestion && typeof body.suggestion === 'string') {
+    if (r.applied_at) throw new HttpError(409, 'Návrh textu už autor převzal.')
+    const sg = JSON.parse(r.suggestion) as Suggestion
+    suggestion = JSON.stringify({ ...sg, to: body.suggestion.replace(/\r\n?/g, '\n').slice(0, 4000) })
+  }
+  if (!text && !suggestion && r.verdict !== 'approve') throw new HttpError(400, 'Zpráva nemůže být prázdná.')
+  run('UPDATE reviews SET body = ?, suggestion = ?, edited_at = ? WHERE id = ?', text, suggestion, Date.now(), r.id)
+  audit('review.edited', s.user.id, { draft: d.id, review: r.id }, ip)
+  return getDraft(s, d.id)
+}
+
+/** Deletes one's own message, unless somebody already replied or it was a decision. */
+export function deleteReview(s: Session, id: unknown, reviewId: unknown, ip: string) {
+  const d = load(s, id)
+  open(d)
+  const r = ownMessage(s, d, reviewId)
+  if (r.verdict !== 'comment') throw new HttpError(409, 'Rozhodnutí zůstává v historii kontroly.')
+  if (one('SELECT 1 FROM reviews WHERE parent_id = ?', r.id)) throw new HttpError(409, 'Na zprávu už někdo odpověděl, smazat ji nejde. Můžeš ji upravit.')
+  if (r.applied_at) throw new HttpError(409, 'Převzatý návrh textu zůstává v historii.')
+  run('DELETE FROM reviews WHERE id = ?', r.id)
+  audit('review.deleted', s.user.id, { draft: d.id, review: r.id }, ip)
+  return getDraft(s, d.id)
+}
+
+/** The author takes over a suggested wording: a new revision of the draft, as if typed in the editor. */
+export function applySuggestion(s: Session, id: unknown, reviewId: unknown, body: Record<string, unknown>, ip: string) {
+  const d = load(s, id)
+  own(s, d, 'Převzít návrh textu')
+  open(d)
+  if (body.rev !== d.rev) throw new HttpError(409, 'Návrh se mezitím změnil v jiném okně. Načti ho znovu.', 'stale')
+  const r = one<ReviewRow>('SELECT * FROM reviews WHERE id = ? AND draft_id = ?', Number(reviewId), d.id)
+  if (!r?.suggestion) throw new HttpError(404, 'Návrh textu nenalezen.')
+  if (r.applied_at) throw new HttpError(409, 'Návrh textu už je převzatý.')
+  const sg = JSON.parse(r.suggestion) as Suggestion
+  const data = JSON.parse(d.data) as DraftData
+  const now = textAt(data.topic, sg.path)
+  if (now === undefined) throw new HttpError(409, 'Tohle místo v tématu už není (blok nebo otázka se mezitím přesunuly).', 'moved')
+  if (now !== sg.from) throw new HttpError(409, 'Text se od návrhu změnil. Převezmi ho ručně v editoru.', 'moved')
+  const topic = setText(data.topic, sg.path, sg.to)
+  const rev = d.rev + 1, at = Date.now()
+  tx(() => {
+    run('UPDATE drafts SET data = ?, title = ?, rev = ?, updated_at = ? WHERE id = ? AND rev = ?', JSON.stringify({ ...data, topic }), String(topic.title || d.title).slice(0, 200), rev, at, d.id, d.rev)
+    run('UPDATE reviews SET applied_at = ? WHERE id = ?', at, r.id)
+    // Taken over = the thread is done.
+    run('UPDATE reviews SET resolved_at = ?, resolved_by = ? WHERE id = ?', at, s.user.id, r.parent_id ?? r.id)
+  })
+  audit('review.applied', s.user.id, { draft: d.id, review: r.id, rev }, ip)
+  return getDraft(s, d.id)
 }
 
 function publishDraft(d: DraftRow, data: DraftData, approvers: string[], by: string, ip: string): number {
@@ -345,7 +485,7 @@ function publishDraft(d: DraftRow, data: DraftData, approvers: string[], by: str
 
 export function resolveReview(s: Session, id: unknown, reviewId: unknown, ip: string) {
   const d = load(s, id)
-  const r = one<ReviewRow>('SELECT * FROM reviews WHERE id = ? AND draft_id = ?', Number(reviewId), d.id)
+  const r = one<ReviewRow>('SELECT * FROM reviews WHERE id = ? AND draft_id = ? AND parent_id IS NULL', Number(reviewId), d.id)
   if (!r) throw new HttpError(404, 'Komentář nenalezen.')
   if (d.user_id !== s.user.id && r.user_id !== s.user.id) throw new HttpError(403, 'Vyřešit komentář smí autor návrhu nebo autor komentáře.')
   run('UPDATE reviews SET resolved_at = ?, resolved_by = ? WHERE id = ?', r.resolved_at ? null : Date.now(), r.resolved_at ? null : s.user.id, r.id)

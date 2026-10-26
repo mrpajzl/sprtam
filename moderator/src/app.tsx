@@ -93,7 +93,7 @@ export function App() {
           ? <TopicView key={route.slice(1, 4).join('/')} g={route[1]} s={route[2]} id={route[3]} me={user} />
           : <Library g={route[1]} s={route[2]} me={user} />)}
         {user && screen === 'navrhy' && <Drafts me={user} />}
-        {user && screen === 'kontrola' && (route[1] ? <Review key={route[1]} id={route[1]} me={user} /> : <ReviewQueue />)}
+        {user && screen === 'kontrola' && (route[1] ? <Review key={route[1]} id={route[1]} me={user} /> : <ReviewQueue me={user} />)}
         {user && screen === 'historie' && route[3] && <History key={route.slice(1, 4).join('/')} g={route[1]} s={route[2]} id={route[3]} me={user} />}
         {user && screen === 'pomucky' && <Requests me={user} />}
         {user?.role === 'admin' && screen === 'vydani' && <Releases />}
