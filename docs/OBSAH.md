@@ -106,7 +106,7 @@ Ze stejných dokumentů vznikají vždy stejné soubory i hashe ([`src/content/r
 1. **Manifest** bere z bloku ve stránce. Offline se otevře kostra `app.html` z cache, která blok nemá. Pak aplikace použije novější z manifestu, který si naposledy uložila do `localStorage`, a toho, kterým odpoví service worker (`NetworkFirst`, 3 s).
 2. **Soubory** stahuje podle hashe, až jsou potřeba, a v rámci návštěvy je drží v paměti.
 3. **Offline:** jakmile má prohlížeč volnou chvíli, uloží všechny soubory aktuálního vydání do cache `content` a soubory starších vydání smaže. Service worker je pak obsluhuje z cache (`CacheFirst`). Po jedné návštěvě je offline k dispozici celé učivo ([`scripts/offline-test.mjs`](../scripts/offline-test.mjs)).
-4. **Nové vydání:** když se aplikace vrátí na obrazovku nebo každých 10 minut, zeptá se na manifest. Novější vydání použije pro všechno, co se načte potom.
+4. **Nové vydání:** když se aplikace vrátí na obrazovku nebo každých 10 minut, zeptá se na manifest přímo sítě (`/api/content/manifest?fresh`, mimo cache service workeru). Jiné vydání použije pro všechno, co se načte potom.
 
 ### Jak server drží kopii
 
@@ -121,7 +121,7 @@ Teprve pak na nové vydání přepne. Když cokoli selže, zůstane u předchoz�
 
 Po restartu server okamžitě naběhne z uložené kopie (`DATA_DIR/content/releases.json`), takže web funguje, i když obsahová služba zrovna neběží.
 
-Obsahová služba je pro server autorita. Převezme od ní jakékoli jiné vydání, i s nižším číslem (např. po obnově její databáze ze zálohy). Aplikace v prohlížeči za běhu přechází jen na vydání s vyšším číslem. Starší odpověď by totiž byla cache service workeru na pomalém spojení. Při příští návštěvě dostane ve stránce zase to, co má server.
+Obsahová služba je pro server autorita. Převezme od ní jakékoli jiné vydání, i s nižším číslem (např. po obnově její databáze ze zálohy). Stejně tak aplikace v prohlížeči: za běhu se ptá jen sítě, nikdy cache. Server odmítne a nepoužije vydání, které má neplatný manifest nebo nesmyslné číslo, přesahuje limity (2000 souborů, 32 MB na soubor, 100 MB celkem) nebo ve kterém cokoli, co se dostane do adres (ročníky, předměty, úrovně, id témat, epoch a přístupů), neodpovídá tomu, co aplikace zná. Veškerý text učiva ve stránkách je escapovaný.
 
 ### Vývoj
 

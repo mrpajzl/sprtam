@@ -42,5 +42,5 @@ export default defineWidget({
     props: { events: [{ year: 935, label: 'Zavraždění **sv. Václava**' }, { year: 1212, label: 'Zlatá bula sicilská' }, { year: 1306, label: 'Vymření Přemyslovců po meči' }] },
   }],
   Component: Timeline,
-  html: (p, inline) => `<ul>${p.events.map((e) => `<li><b>${e.year}</b> ${inline(e.label)}</li>`).join('')}</ul>`,
+  html: (p, inline) => `<ul>${p.events.map((e) => `<li><b>${inline(String(e.year))}</b> ${inline(e.label)}</li>`).join('')}</ul>`,
 })

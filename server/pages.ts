@@ -63,11 +63,11 @@ export interface Page {
 
 /** The app's Bar: back (up), the path to this screen as links, the title. */
 const bar = (title: string, up?: string, crumbs: [string, string][] = []) =>
-  `<header class="bar">${up ? `<a class="icon-btn" href="${up}" aria-label="Zpět">${BACK}</a>` : '<span class="spacer"></span>'}<div class="bar-title">${crumbs.length ? `<nav class="crumbs" aria-label="Kde jsem">${crumbs.map(([name, path]) => `<a href="${path}">${esc(name)}</a>`).join('')}</nav>` : ''}<h1>${esc(title)}</h1></div><span class="spacer"></span></header>`
+  `<header class="bar">${up ? `<a class="icon-btn" href="${esc(up)}" aria-label="Zpět">${BACK}</a>` : '<span class="spacer"></span>'}<div class="bar-title">${crumbs.length ? `<nav class="crumbs" aria-label="Kde jsem">${crumbs.map(([name, path]) => `<a href="${esc(path)}">${esc(name)}</a>`).join('')}</nav>` : ''}<h1>${esc(title)}</h1></div><span class="spacer"></span></header>`
 
 /** The app's TabBar (src/ui/TabBar.tsx); the class tab only where the grade is known. */
 const tabbar = (active: 'home' | 'grade' | 'vocab' | undefined, grade?: [string, string]) => {
-  const tab = (t: string, href: string, glyph: string, label: string) => `<a href="${href}"${t === active ? ' aria-current="page"' : ''}>${glyph}<span>${esc(label)}</span></a>`
+  const tab = (t: string, href: string, glyph: string, label: string) => `<a href="${esc(href)}"${t === active ? ' aria-current="page"' : ''}>${glyph}<span>${esc(label)}</span></a>`
   return `<nav class="tabbar" aria-label="Hlavní nabídka">${tab('home', '/', HOME, 'Domů')}${grade ? tab('grade', grade[1], GRID, grade[0]) : ''}${tab('search', '/hledat', SEARCH, 'Hledat')}${tab('vocab', '/slovicka', '<b class="aa" aria-hidden="true">Aa</b>', 'Slovíčka')}</nav>`
 }
 
@@ -85,7 +85,7 @@ export function pages(site: SiteContent): Page[] {
     description: 'Opakování učiva základní a střední školy: vysvětlení od úplných základů, kvízy, písemky a anglická slovíčka. Zdarma, bez účtů a bez reklam.',
     crumbs: [home],
     body: `<div class="page home"><header class="bar"><h1 class="brand">šprtám</h1></header>
-<section class="sec"><h2 class="label">Třída</h2><div class="pad">${STAGES.map((st) => `<div class="pad-group"><small>${STAGE_LABEL[st.id]}</small><div class="pad-keys">${st.grades.map((g) => `<a class="num-key" href="/g/${g}" aria-label="${esc(gradeLabel(g))}">${GRADE_NAME[g].split('.')[0]}</a>`).join('')}</div></div>`).join('')}</div></section>
+<section class="sec"><h2 class="label">Třída</h2><div class="pad">${STAGES.map((st) => `<div class="pad-group"><small>${STAGE_LABEL[st.id]}</small><div class="pad-keys">${st.grades.map((g) => `<a class="num-key" href="${esc(`/g/${g}`)}" aria-label="${esc(gradeLabel(g))}">${GRADE_NAME[g].split('.')[0]}</a>`).join('')}</div></div>`).join('')}</div></section>
 <a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span></a></div>${tabbar('home')}`,
   })
 
@@ -99,7 +99,7 @@ export function pages(site: SiteContent): Page[] {
       title: titles.grade(g),
       description: `Učivo pro ${gradeFor(g)}: ${present.map((s) => SUBJECTS[s].name).join(', ')}. Vysvětlení, kvízy a písemky na procvičení.`,
       crumbs: gCrumbs,
-      body: `<div class="page">${bar(GRADE_NAME[g], '/')}<div class="tiles">${present.map((s) => `<a class="tile" style="${style(SUBJECTS[s].c)}" href="${gPath}/${s}"><span class="tile-face"></span><b>${esc(SUBJECTS[s].name)}</b></a>`).join('')}${GRADE_SUBJECTS[g].includes('anglictina') ? `<a class="tile" style="${style('purple')}" href="/slovicka"><span class="tile-face"><b class="aa">Aa</b></span><b>Slovíčka</b></a>` : ''}</div></div>${gTab}`,
+      body: `<div class="page">${bar(GRADE_NAME[g], '/')}<div class="tiles">${present.map((s) => `<a class="tile" style="${style(SUBJECTS[s].c)}" href="${esc(`${gPath}/${s}`)}"><span class="tile-face"></span><b>${esc(SUBJECTS[s].name)}</b></a>`).join('')}${GRADE_SUBJECTS[g].includes('anglictina') ? `<a class="tile" style="${style('purple')}" href="/slovicka"><span class="tile-face"><b class="aa">Aa</b></span><b>Slovíčka</b></a>` : ''}</div></div>${gTab}`,
     })
 
     for (const s of present as SubjectId[]) {
@@ -114,7 +114,7 @@ export function pages(site: SiteContent): Page[] {
         title: titles.subject(g, s),
         description: `${SUBJECTS[s].name} pro ${gradeFor(g)}: ${names.slice(0, 6).join(', ')}${names.length > 6 ? ' a další' : ''}. ${listedTopics.length} ${listedTopics.length <= 4 ? 'témata' : 'témat'} s vysvětlením a kvízy.`,
         crumbs: sCrumbs,
-        body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(SUBJECTS[s].name, gPath, [[GRADE_NAME[g], gPath]])}<div class="list">${listedTopics.map((t, i) => `<a class="row" href="${sPath}/${t.id}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="em">${t.emoji}</span><b>${esc(t.title)}</b></a>`).join('')}</div></div>${gTab}`,
+        body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(SUBJECTS[s].name, gPath, [[GRADE_NAME[g], gPath]])}<div class="list">${listedTopics.map((t, i) => `<a class="row" href="${esc(`${sPath}/${t.id}`)}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="em">${esc(t.emoji)}</span><b>${esc(t.title)}</b></a>`).join('')}</div></div>${gTab}`,
         ld: { '@type': 'ItemList', itemListElement: listedTopics.map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${sPath}/${t.id}`, name: t.title })) },
       })
 
@@ -125,7 +125,7 @@ export function pages(site: SiteContent): Page[] {
         const tPath = `${sPath}/${t.id}`
         const i = listedTopics.indexOf(t)
         const prev = i > 0 ? listedTopics[i - 1] : undefined, next = i >= 0 ? listedTopics[i + 1] : undefined
-        const nav = [prev && `<a class="row" href="${sPath}/${prev.id}"><span class="em">${prev.emoji}</span><b>${esc(prev.title)}</b></a>`, next && `<a class="row" href="${sPath}/${next.id}"><span class="em">${next.emoji}</span><b>${esc(next.title)}</b></a>`].filter(Boolean).join('')
+        const nav = [prev && `<a class="row" href="${esc(`${sPath}/${prev.id}`)}"><span class="em">${esc(prev.emoji)}</span><b>${esc(prev.title)}</b></a>`, next && `<a class="row" href="${esc(`${sPath}/${next.id}`)}"><span class="em">${esc(next.emoji)}</span><b>${esc(next.title)}</b></a>`].filter(Boolean).join('')
         out.push({
           path: tPath,
           title: titles.topic(g, s, t.title),
@@ -149,7 +149,7 @@ export function pages(site: SiteContent): Page[] {
     title: titles.vocab(),
     description: `Anglická slovíčka podle úrovně A1–C1 (${vocab.reduce((n, v) => n + v.groups.reduce((m, gr) => m + gr.words.length, 0), 0)} slov). Nová slova vybíráš ze tří, známá píšeš; slova se vracejí, dokud je neumíš.`,
     crumbs: vCrumbs,
-    body: `<div class="page" style="${style('purple')}">${bar('Slovíčka', '/')}<div class="levels">${vocab.map((v) => `<a class="row" href="/slovicka/${v.level}"><span class="skey m"><b>${v.level}</b></span><b>${v.groups.length} okruhů</b></a>`).join('')}</div></div>${tabbar('vocab')}`,
+    body: `<div class="page" style="${style('purple')}">${bar('Slovíčka', '/')}<div class="levels">${vocab.map((v) => `<a class="row" href="${esc(`/slovicka/${v.level}`)}"><span class="skey m"><b>${esc(v.level)}</b></span><b>${v.groups.length} okruhů</b></a>`).join('')}</div></div>${tabbar('vocab')}`,
   })
   for (const v of vocab) {
     const path = `/slovicka/${v.level}`
@@ -158,7 +158,7 @@ export function pages(site: SiteContent): Page[] {
       title: titles.vocabLevel(v.level),
       description: `Anglická slovíčka ${v.level}: ${v.groups.map((gr) => gr.name.toLowerCase()).slice(0, 8).join(', ')}${v.groups.length > 8 ? ' a další' : ''}. Například ${v.groups[0].words.slice(0, 4).map((w) => `${w.cz} – ${w.en}`).join(', ')}.`,
       crumbs: [...vCrumbs, [v.level, path]],
-      body: `<div class="page" style="${style('purple')}">${bar(v.level, '/slovicka', [['Slovíčka', '/slovicka']])}<a class="btn block mix" href="${path}/vse">Míchat vše<small class="btn-count">${v.groups.reduce((n, gr) => n + gr.words.length, 0)}</small></a><div class="tiles">${v.groups.map((gr, i) => `<a class="tile vocab-tile" href="${path}/${i}"><span class="tile-face em">${gr.emoji}</span><b>${esc(gr.name)}</b><small class="sample">${esc(gr.words.slice(0, 6).map((w) => `${w.cz} – ${w.en}`).join(', '))}…</small></a>`).join('')}</div></div>${tabbar('vocab')}`,
+      body: `<div class="page" style="${style('purple')}">${bar(v.level, '/slovicka', [['Slovíčka', '/slovicka']])}<a class="btn block mix" href="${esc(`${path}/vse`)}">Míchat vše<small class="btn-count">${v.groups.reduce((n, gr) => n + gr.words.length, 0)}</small></a><div class="tiles">${v.groups.map((gr, i) => `<a class="tile vocab-tile" href="${esc(`${path}/${i}`)}"><span class="tile-face em">${esc(gr.emoji)}</span><b>${esc(gr.name)}</b><small class="sample">${esc(gr.words.slice(0, 6).map((w) => `${w.cz} – ${w.en}`).join(', '))}…</small></a>`).join('')}</div></div>${tabbar('vocab')}`,
     })
   }
   // Teaching approaches: /waldorf, /waldorf/<grade>, /waldorf/<grade>/<epoch> (markup as src/screens/Approach.tsx).
@@ -174,19 +174,19 @@ export function pages(site: SiteContent): Page[] {
       title: titles.approach(a.name),
       description: plain(a.about[0]).slice(0, 155),
       crumbs: aCrumbs,
-      body: `<div class="page" style="${green}">${bar(`${a.emoji} ${a.name}`, '/')}<div class="blocks approach-about">${a.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div><h2 class="label">Ročníky</h2><div class="list">${a.years.map(([g, y]) => `<a class="row" href="${aPath}/${g}"><span class="num">${esc(y.title.split('.')[0])}</span><span class="txt"><b>${esc(y.title)}</b><small>${esc(y.epochs.map((e) => e.title).slice(0, 3).join(' · '))}…</small></span>${ARROW}</a>`).join('')}</div></div>${tabbar(undefined)}`,
+      body: `<div class="page" style="${green}">${bar(`${a.emoji} ${a.name}`, '/')}<div class="blocks approach-about">${a.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div><h2 class="label">Ročníky</h2><div class="list">${a.years.map(([g, y]) => `<a class="row" href="${esc(`${aPath}/${g}`)}"><span class="num">${esc(y.title.split('.')[0])}</span><span class="txt"><b>${esc(y.title)}</b><small>${esc(y.epochs.map((e) => e.title).slice(0, 3).join(' · '))}…</small></span>${ARROW}</a>`).join('')}</div></div>${tabbar(undefined)}`,
     })
     for (const [g, y] of a.years) {
       const yPath = `${aPath}/${g}`
       const yCrumbs: [string, string][] = [...aCrumbs, [y.title, yPath]]
       const gTab = tabbar('grade', [GRADE_NAME[g], `/g/${g}`])
-      const row = (b: YearBlock) => `<a class="row epoch" href="${yPath}/${b.id}"><span class="em">${b.emoji}</span><b>${esc(b.title)}</b></a>`
+      const row = (b: YearBlock) => `<a class="row epoch" href="${esc(`${yPath}/${b.id}`)}"><span class="em">${esc(b.emoji)}</span><b>${esc(b.title)}</b></a>`
       out.push({
         path: yPath,
         title: titles.approachYear(a.name, y.title),
         description: `${a.name}, ${y.title}: ${y.epochs.map((e) => e.title).slice(0, 6).join(', ')}. Témata k procvičení ke každé epoše.`,
         crumbs: yCrumbs,
-        body: `<div class="page" style="${green}">${bar(y.title, aPath, [[a.short, aPath]])}${y.about ? `<div class="blocks approach-about">${y.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>` : ''}<h2 class="label">${a.emoji} Epochy</h2><div class="list">${y.epochs.map(row).join('')}</div>${y.ongoing?.length ? `<h2 class="label next-label">Celý rok</h2><div class="list">${y.ongoing.map(row).join('')}</div>` : ''}</div>${gTab}`,
+        body: `<div class="page" style="${green}">${bar(y.title, aPath, [[a.short, aPath]])}${y.about ? `<div class="blocks approach-about">${y.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>` : ''}<h2 class="label">${esc(a.emoji)} Epochy</h2><div class="list">${y.epochs.map(row).join('')}</div>${y.ongoing?.length ? `<h2 class="label next-label">Celý rok</h2><div class="list">${y.ongoing.map(row).join('')}</div>` : ''}</div>${gTab}`,
         ld: { '@type': 'ItemList', itemListElement: y.epochs.map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${yPath}/${e.id}`, name: e.title })) },
       })
       for (const b of [...y.epochs, ...(y.ongoing ?? [])]) {
@@ -198,7 +198,7 @@ export function pages(site: SiteContent): Page[] {
           description: plain(b.about.join(' ')).slice(0, 155),
           crumbs: [...yCrumbs, [b.title, bPath]],
           type: 'article',
-          body: `<div class="page" style="${green}">${bar(`${b.emoji} ${b.title}`, yPath, [[a.short, aPath], [y.title, yPath]])}<div class="blocks approach-about">${b.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>${refs.length ? `<h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(SUBJECTS[r.s].c)}" href="/g/${r.k}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(SUBJECTS[r.s].name)}</small></span></a>`).join('')}</div>` : '<p class="muted epoch-empty">K téhle epoše zatím v aplikaci nejsou témata k procvičení.</p>'}</div>${gTab}`,
+          body: `<div class="page" style="${green}">${bar(`${b.emoji} ${b.title}`, yPath, [[a.short, aPath], [y.title, yPath]])}<div class="blocks approach-about">${b.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>${refs.length ? `<h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(SUBJECTS[r.s].c)}" href="${esc(`/g/${r.k}`)}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(SUBJECTS[r.s].name)}</small></span></a>`).join('')}</div>` : '<p class="muted epoch-empty">K téhle epoše zatím v aplikaci nejsou témata k procvičení.</p>'}</div>${gTab}`,
         })
       }
     }
@@ -214,11 +214,11 @@ function head(p: Page): string {
     p.ld,
   ].filter(Boolean)
   return [
-    `<link rel="canonical" href="${url}" />`,
+    `<link rel="canonical" href="${esc(url)}" />`,
     `<meta property="og:type" content="${p.type ?? 'website'}" />`,
     `<meta property="og:site_name" content="Šprtám" />`,
     `<meta property="og:locale" content="cs_CZ" />`,
-    `<meta property="og:url" content="${url}" />`,
+    `<meta property="og:url" content="${esc(url)}" />`,
     `<meta property="og:title" content="${esc(p.title)}" />`,
     `<meta property="og:description" content="${esc(p.description)}" />`,
     `<meta property="og:image" content="${SITE}/pwa-512x512.png" />`,
@@ -238,6 +238,6 @@ export function render(template: string, p: Page): string {
     .replace('<div id="app"></div>', () => `<div id="app">${p.body}</div>`)
 }
 
-export const sitemap = (all: Page[]) => `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.map((p) => `  <url><loc>${SITE}${p.path}</loc></url>`).join('\n')}\n</urlset>\n`
+export const sitemap = (all: Page[]) => `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.map((p) => `  <url><loc>${esc(SITE + p.path)}</loc></url>`).join('\n')}\n</urlset>\n`
 
 export const robots = () => `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`

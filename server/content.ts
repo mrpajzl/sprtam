@@ -2,6 +2,9 @@ import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promise
 import { join } from 'node:path'
 import { promisify } from 'node:util'
 import { brotliCompress, constants, gzip } from 'node:zlib'
+import { ALL_GRADES, GRADE_SUBJECTS } from '../src/content/curriculum'
+import { ID, RESERVED } from '../src/content/docs'
+import { LEVELS } from '../src/content/format'
 import { HASH, type Manifest } from '../src/content/manifest'
 import { hashOf } from '../src/content/release'
 import type { ApproachYearFile, GradeId, Subject, SubjectId, Topic, VocabFile } from '../src/content/types'
@@ -18,6 +21,11 @@ const POLL = 15_000
 const TIMEOUT = 20_000
 const MAX_MANIFEST = 1 << 20
 const MAX_FILE = 32 << 20
+/** Limits of one release: a manifest outside them is refused before anything is downloaded or while it is. */
+const MAX_FILES = 2000
+const MAX_RELEASE = 100 << 20
+/** Release numbers only grow; anything near the float limit is not a real release. */
+const MAX_RELEASE_NUMBER = 1e12
 /** Releases whose files are kept in memory (current first) and on disk. */
 const KEEP_MEMORY = 5
 const KEEP_DISK = 10
@@ -60,21 +68,57 @@ export async function encoded(e: Entry, accept: string): Promise<[Buffer, string
 
 const isManifest = (m: unknown): m is Manifest => {
   const x = m as Manifest
-  return !!x && x.format === 1 && Number.isInteger(x.release) && typeof x.hash === 'string' && !!x.files && typeof x.files === 'object'
+  return !!x && typeof x === 'object' && x.format === 1 && Number.isSafeInteger(x.release) && x.release >= 0 && x.release < MAX_RELEASE_NUMBER
+    && typeof x.hash === 'string' && HASH.test(x.hash) && typeof x.publishedAt === 'number' && Number.isFinite(x.publishedAt)
+    && !!x.files && typeof x.files === 'object' && !Array.isArray(x.files) && Object.keys(x.files).length <= MAX_FILES
     && Object.values(x.files).every((h) => typeof h === 'string' && HASH.test(h)) && Array.isArray(x.approaches)
 }
 
-/** The pages' view of a release (throws when a file does not have the expected shape). */
+const isGrade = (g: unknown): g is GradeId => (ALL_GRADES as unknown[]).includes(g)
+const isSubjectOf = (g: GradeId, s: unknown): s is SubjectId => (GRADE_SUBJECTS[g] as unknown[]).includes(s)
+const isId = (v: unknown): v is string => typeof v === 'string' && ID.test(v)
+const isApproachId = (v: unknown): v is string => isId(v) && !RESERVED.includes(v)
+/** grade/subject/id of a topic, as plans of approaches refer to topics. */
+const isTopicRef = (k: unknown) => { const [g, s, id, ...rest] = typeof k === 'string' ? k.split('/') : []; return !rest.length && isGrade(g) && isSubjectOf(g, s) && isId(id) }
+
+/**
+ * The pages' view of a release. Throws – and the release is not used – when a file does not have the expected
+ * shape or anything that ends up in URLs (grades, subjects, levels, ids) is not what the app can have: content
+ * text is escaped in the pages, but these are also checked so a broken or compromised content service cannot
+ * smuggle anything in through them.
+ */
 function siteOf(m: Manifest, read: (hash: string) => unknown): SiteContent {
-  const names = Object.keys(m.files).sort()
-  const subjects: Subject[] = names.filter((n) => n.startsWith('subject/')).map((n) => {
-    const [, grade, subject] = n.split('/')
-    const topics = read(m.files[n]) as Topic[]
-    if (!Array.isArray(topics)) throw new Error(`${n}: not a list of topics`)
-    return { grade: grade as GradeId, subject: subject as SubjectId, topics }
-  })
-  const vocab = names.filter((n) => n.startsWith('vocab/')).map((n) => read(m.files[n]) as VocabFile)
-  const approaches = m.approaches.map((a) => ({ ...a, years: a.grades.map((g) => [g, read(m.files[`approach/${a.id}/${g}`]) as ApproachYearFile] as [GradeId, ApproachYearFile]) }))
+  const bad = (what: string): never => { throw new Error(`release ${m.release}: ${what}`) }
+  const approachIds = new Set<string>()
+  for (const a of m.approaches) {
+    if (!a || !isApproachId(a.id) || !Array.isArray(a.grades) || !a.grades.every(isGrade)) bad(`approach ${JSON.stringify(a?.id)}`)
+    approachIds.add(a.id)
+  }
+  const subjects: Subject[] = []
+  const vocab: VocabFile[] = []
+  for (const n of Object.keys(m.files).sort()) {
+    const p = n.split('/')
+    if (n === 'index' || n === 'text') continue
+    if (p[0] === 'subject' && p.length === 3 && isGrade(p[1]) && isSubjectOf(p[1], p[2])) {
+      const topics = read(m.files[n]) as Topic[]
+      if (!Array.isArray(topics)) bad(`${n}: not a list of topics`)
+      for (const t of topics) if (!t || !isId(t.id) || (t.approach !== undefined && !approachIds.has(t.approach))) bad(`${n}: topic ${JSON.stringify(t?.id)}`)
+      subjects.push({ grade: p[1], subject: p[2], topics })
+    } else if (p[0] === 'vocab' && p.length === 2 && (LEVELS as readonly string[]).includes(p[1])) {
+      const v = read(m.files[n]) as VocabFile
+      if (!v || v.level !== p[1] || !Array.isArray(v.groups)) bad(`${n}: not vocabulary of level ${p[1]}`)
+      vocab.push(v)
+    } else if (!(p[0] === 'approach' && p.length === 3 && approachIds.has(p[1]) && isGrade(p[2]))) bad(`unknown file ${JSON.stringify(n)}`)
+  }
+  const approaches = m.approaches.map((a) => ({
+    ...a,
+    years: a.grades.map((g) => {
+      const y = read(m.files[`approach/${a.id}/${g}`] ?? bad(`approach/${a.id}/${g} missing`)) as ApproachYearFile
+      if (!y || !Array.isArray(y.epochs)) bad(`approach/${a.id}/${g}: not a plan`)
+      for (const b of [...y.epochs, ...(y.ongoing ?? [])]) if (!b || !isId(b.id) || !Array.isArray(b.topics) || !b.topics.every(isTopicRef)) bad(`approach/${a.id}/${g}: ${JSON.stringify(b?.id)}`)
+      return [g, y] as [GradeId, ApproachYearFile]
+    }),
+  }))
   return { subjects, vocab, approaches }
 }
 
@@ -109,10 +153,12 @@ export async function startContent({ api, dataDir, log = console.log }: ContentO
     return true
   }
 
+  /** The release being downloaded: its files stay while it is retried. */
+  let pending: Manifest | undefined
   const keep = async () => {
-    const memory = new Set(recent.slice(0, KEEP_MEMORY).flatMap((m) => Object.values(m.files)))
+    const memory = new Set([...recent.slice(0, KEEP_MEMORY), ...(pending ? [pending] : [])].flatMap((m) => Object.values(m.files)))
     for (const h of files.keys()) if (!memory.has(h)) files.delete(h)
-    const disk = new Set(recent.slice(0, KEEP_DISK).flatMap((m) => Object.values(m.files)))
+    const disk = new Set([...recent.slice(0, KEEP_DISK), ...(pending ? [pending] : [])].flatMap((m) => Object.values(m.files)))
     for (const f of await readdir(fileDir).catch(() => [])) if (!disk.has(f.replace(/\.json$/, ''))) await rm(join(fileDir, f), { force: true })
   }
 
@@ -131,22 +177,32 @@ export async function startContent({ api, dataDir, log = console.log }: ContentO
   try {
     const stored = JSON.parse(await readFile(join(dir, 'releases.json'), 'utf8')) as unknown[]
     recent = stored.filter(isManifest)
+    // The newest stored release that is complete and builds; older ones when it does not.
     for (const m of recent) {
       const ok = (await Promise.all(Object.values(m.files).map(fromDisk))).every(Boolean)
-      if (ok) { await swap(m, false); break }
-      log(`content: stored release ${m.release} is incomplete, skipping it`)
+      if (!ok) { log(`content: stored release ${m.release} is incomplete, skipping it`); continue }
+      try { await swap(m, false); break } catch (e) { log(`content: stored release ${m.release} is unusable (${(e as Error).message}), skipping it`) }
     }
   } catch { log('content: no stored release yet') }
 
   // ——— Follow the content service ———
+  /** A response body of at most `max` bytes – counted while it streams in, whatever the headers say. */
   const get = async (url: string, max: number, headers: Record<string, string> = {}) => {
-    const res = await fetch(url, { headers: { 'User-Agent': 'sprtam-web', ...headers }, signal: AbortSignal.timeout(TIMEOUT) })
-    if (res.status === 304) return { status: 304, text: '' }
-    if (!res.ok) throw new Error(`${url} → ${res.status}`)
-    if (Number(res.headers.get('content-length') ?? 0) > max) throw new Error(`${url}: too large`)
-    const text = await res.text()
-    if (text.length > max) throw new Error(`${url}: too large`)
-    return { status: res.status, text }
+    const abort = new AbortController()
+    const timer = setTimeout(() => abort.abort(), TIMEOUT)
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': 'sprtam-web', ...headers }, signal: abort.signal, redirect: 'error' })
+      if (res.status === 304) return { status: 304, body: Buffer.alloc(0) }
+      if (!res.ok || !res.body) throw new Error(`${url} → ${res.status}`)
+      const chunks: Uint8Array[] = []
+      let size = 0
+      for await (const c of res.body as AsyncIterable<Uint8Array>) {
+        size += c.byteLength
+        if (size > max) { abort.abort(); throw new Error(`${url}: larger than ${max} bytes`) }
+        chunks.push(c)
+      }
+      return { status: res.status, body: Buffer.concat(chunks) }
+    } finally { clearTimeout(timer) }
   }
 
   let lastError = ''
@@ -154,25 +210,31 @@ export async function startContent({ api, dataDir, log = console.log }: ContentO
     const etag = current ? `"${current.manifest.hash}"` : undefined
     const r = await get(`${api}/api/public/v1/manifest`, MAX_MANIFEST, etag ? { 'If-None-Match': etag } : {})
     if (r.status === 304) return
-    const m = JSON.parse(r.text) as unknown
+    const m = JSON.parse(r.body.toString('utf8')) as unknown
     if (!isManifest(m)) throw new Error('manifest has an unexpected shape')
     // The content service is the authority: any other release (even a lower number after a restore) is taken.
     if (current && m.hash === current.manifest.hash) return
+    pending = m
     const missing = [...new Set(Object.values(m.files))]
     for (const h of missing) await fromDisk(h)
     const todo = missing.filter((h) => !files.has(h))
-    // A few at a time; one failure aborts the whole update (tried again on the next poll).
-    const fetched = new Map<string, Buffer>()
+    // A few at a time, each stored as soon as it is verified; one failure aborts the whole update (tried
+    // again on the next poll, already stored files are not fetched again).
+    let total = 0
     for (let i = 0; i < todo.length; i += 6) {
       await Promise.all(todo.slice(i, i + 6).map(async (h) => {
-        const { text } = await get(`${api}/api/public/v1/files/${h}`, MAX_FILE)
+        const { body } = await get(`${api}/api/public/v1/files/${h}`, MAX_FILE)
+        total += body.length
+        if (total > MAX_RELEASE) throw new Error(`release ${m.release}: larger than ${MAX_RELEASE} bytes`)
+        const text = body.toString('utf8')
         if (hashOf(text) !== h) throw new Error(`file ${h}: contents do not match the hash`)
         JSON.parse(text)
-        fetched.set(h, Buffer.from(text, 'utf8'))
+        await atomic(path(h), body)
+        files.set(h, { body })
       }))
     }
-    for (const [h, body] of fetched) { await atomic(path(h), body); files.set(h, { body }) }
     await swap(m, true)
+    pending = undefined
   }
 
   fromStore = fromDisk
@@ -182,6 +244,8 @@ export async function startContent({ api, dataDir, log = console.log }: ContentO
       // Say it once, not every 15 seconds.
       if (msg !== lastError) log(`content: sync failed: ${msg}`)
       lastError = msg
+      // Only files of recent releases and of the one being retried stay (a newer manifest replaces it).
+      await keep().catch(() => {})
     }
     setTimeout(loop, POLL).unref()
   }

@@ -2,6 +2,7 @@
 // (server/content.ts, docs/OBSAH.md), and an anonymous usage counter.
 // The counter stores only per-day totals ({ users, new }). No IPs, no IDs, no cookies, no logs of requests.
 // Built into one file without dependencies: vite build --ssr (package.json).
+import { createHash, timingSafeEqual } from 'node:crypto'
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
 import { readFile, writeFile, mkdir, stat } from 'node:fs/promises'
 import { extname, join, normalize } from 'node:path'
@@ -49,7 +50,7 @@ const movePage = (to: string) => `<!doctype html><html lang="cs"><head><meta cha
 
 const TYPES: Record<string, string> = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.json': 'application/json', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8', '.mp3': 'audio/mpeg' }
 const SECURITY = {
-  'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; media-src 'self' blob:; worker-src 'self' blob:",
+  'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'",
   'Referrer-Policy': 'no-referrer',
   'X-Content-Type-Options': 'nosniff',
   'Permissions-Policy': 'camera=(self), microphone=(), geolocation=()',
@@ -62,7 +63,15 @@ const SHELL = shell(TEMPLATE)
 let stats: Record<string, { users: number; new: number }> = {}
 try { stats = JSON.parse(await readFile(FILE, 'utf8')) } catch { /* first run */ }
 let dirty = false
-setInterval(async () => { if (!dirty) return; dirty = false; await mkdir(DATA, { recursive: true }); await writeFile(FILE, JSON.stringify(stats)) }, 10_000).unref()
+setInterval(async () => {
+  if (!dirty) return
+  dirty = false
+  // A full or read-only disk must not take the site down: keep counting and try again later.
+  try { await mkdir(DATA, { recursive: true }); await writeFile(FILE, JSON.stringify(stats)) } catch (e) { dirty = true; console.error('stats: cannot write', (e as Error).message) }
+}, 10_000).unref()
+
+/** Constant-time comparison of the stats token (hashes of equal length). */
+const sameToken = (given: string) => timingSafeEqual(createHash('sha256').update(given).digest(), createHash('sha256').update(STATS_TOKEN).digest())
 
 function ping(body: string) {
   const day = new Date().toISOString().slice(0, 10)
@@ -79,25 +88,26 @@ const html = (res: ServerResponse, status: number, body: string, extra: Record<s
 async function contentApi(req: IncomingMessage, res: ServerResponse, path: string) {
   const r = release()
   if (path === '/api/content/manifest') {
-    if (!r) return res.writeHead(503, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store', 'Retry-After': '30' }).end('{"error":"content not loaded yet"}')
+    if (!r) return res.writeHead(503, { ...SECURITY, 'Content-Type': 'application/json', 'Cache-Control': 'no-store', 'Retry-After': '30' }).end('{"error":"content not loaded yet"}')
     const etag = `"${r.manifest.hash}"`
-    const headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache', ETag: etag }
+    const headers = { ...SECURITY, 'Content-Type': 'application/json', 'Cache-Control': 'no-cache', ETag: etag }
     if (req.headers['if-none-match'] === etag) return res.writeHead(304, headers).end()
     return res.writeHead(200, headers).end(r.json)
   }
   const m = /^\/api\/content\/f\/([0-9a-f]+)\.json$/.exec(path)
   const e = m && HASH.test(m[1]) ? await contentFile(m[1]) : undefined
-  if (!e) return res.writeHead(404, { 'Cache-Control': 'no-store' }).end()
+  if (!e) return res.writeHead(404, { ...SECURITY, 'Cache-Control': 'no-store' }).end()
   const [body, encoding] = await encoded(e, String(req.headers['accept-encoding'] ?? ''))
   res.writeHead(200, {
-    'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=31536000, immutable', Vary: 'Accept-Encoding', 'Content-Length': String(body.length),
+    ...SECURITY, 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=31536000, immutable', Vary: 'Accept-Encoding', 'Content-Length': String(body.length),
     ...(encoding ? { 'Content-Encoding': encoding } : {}),
   })
   res.end(req.method === 'HEAD' ? undefined : body)
 }
 
-createServer(async (req, res) => {
-  const url = new URL(req.url ?? '/', 'http://x')
+async function handle(req: IncomingMessage, res: ServerResponse) {
+  let url: URL
+  try { url = new URL(req.url ?? '/', 'http://x') } catch { return res.writeHead(400).end() }
   if (url.pathname === '/api/ping' && req.method === 'POST') {
     let body = ''
     req.on('data', (c) => { if (body.length < 100) body += c })
@@ -105,13 +115,13 @@ createServer(async (req, res) => {
     return
   }
   if (url.pathname === '/api/stats') {
-    if (STATS_TOKEN && url.searchParams.get('token') !== STATS_TOKEN) return res.writeHead(403).end()
+    if (STATS_TOKEN && !sameToken(url.searchParams.get('token') ?? '')) return res.writeHead(403).end()
     return res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify(stats))
   }
   if (url.pathname === '/healthz') return res.writeHead(200).end('ok')
   if (url.pathname.startsWith('/api/content/')) {
     if (req.method !== 'GET' && req.method !== 'HEAD') return res.writeHead(405).end()
-    return contentApi(req, res, url.pathname).catch(() => { if (!res.headersSent) res.writeHead(500).end() })
+    return contentApi(req, res, url.pathname)
   }
 
   const host = (req.headers.host ?? '').replace(/:\d+$/, '').toLowerCase()
@@ -131,7 +141,8 @@ createServer(async (req, res) => {
   }
 
   // Pages: /g/z5/matematika → rendered from the current content release (server/pages.ts).
-  if (url.pathname.length > 1 && url.pathname.endsWith('/')) return res.writeHead(301, { Location: url.pathname.replace(/\/+$/, '') + url.search }).end()
+  // Always a path of this site: `//evil.example` would be another host.
+  if (url.pathname.length > 1 && url.pathname.endsWith('/')) return res.writeHead(301, { Location: '/' + url.pathname.replace(/^\/+/, '').replace(/\/+$/, '') + url.search }).end()
   let path: string
   try { path = normalize(decodeURIComponent(url.pathname)) } catch { return res.writeHead(400).end() }
   const r = release()
@@ -183,6 +194,15 @@ createServer(async (req, res) => {
     res.writeHead(status, headers)
     res.end(data)
   } catch { res.writeHead(404).end() }
+}
+
+createServer((req, res) => {
+  handle(req, res).catch((e) => {
+    console.error(req.method, e)
+    if (!res.headersSent) res.writeHead(500).end()
+    else res.end()
+  })
 }).listen(PORT, () => console.log(`Šprtám on :${PORT}, content from ${CONTENT_API}`))
+process.on('unhandledRejection', (e) => console.error('unhandled rejection', e))
 
 await startContent({ api: CONTENT_API, dataDir: DATA })

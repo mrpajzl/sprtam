@@ -60,7 +60,8 @@ const app: UserConfig = {
           handler: 'CacheFirst',
           options: { cacheName: 'content', cacheableResponse: { statuses: [200] } },
         }, {
-          urlPattern: ({ url }) => url.pathname === '/api/content/manifest',
+          // Not `?fresh` (src/content/remote.ts): those must come from the network or fail.
+          urlPattern: ({ url }) => url.pathname === '/api/content/manifest' && !url.search,
           handler: 'NetworkFirst',
           options: { cacheName: 'content-manifest', networkTimeoutSeconds: 3, cacheableResponse: { statuses: [200] } },
         }, {

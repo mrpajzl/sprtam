@@ -1,4 +1,4 @@
-import type { Manifest } from './manifest'
+import { HASH, type Manifest } from './manifest'
 
 // The content of the app comes from the content API (docs/OBSAH.md): a small manifest of the current release
 // and files named by the hash of their contents. The manifest is embedded in every page the server sends;
@@ -12,7 +12,12 @@ const REFRESH = 10 * 60_000
 let current: Manifest | undefined
 const listeners = new Set<(m: Manifest) => void>()
 
-const valid = (m: unknown): m is Manifest => !!m && typeof m === 'object' && (m as Manifest).format === 1 && typeof (m as Manifest).files === 'object' && Array.isArray((m as Manifest).approaches)
+const valid = (m: unknown): m is Manifest => {
+  const x = m as Manifest
+  return !!x && typeof x === 'object' && x.format === 1 && Number.isSafeInteger(x.release) && x.release >= 0 && x.release < 1e12
+    && typeof x.hash === 'string' && HASH.test(x.hash) && typeof x.publishedAt === 'number' && Number.isFinite(x.publishedAt)
+    && !!x.files && typeof x.files === 'object' && Object.values(x.files).every((h) => typeof h === 'string' && HASH.test(h)) && Array.isArray(x.approaches)
+}
 
 /** The manifest in use (set by initContent before the first render). */
 export function manifest(): Manifest {
@@ -34,9 +39,13 @@ function use(m: Manifest) {
   listeners.forEach((f) => f(m))
 }
 
-async function fetchManifest(): Promise<Manifest | undefined> {
+/**
+ * The manifest from the server. `fresh`: straight from the network – `?fresh` is a URL the service worker
+ * has no route for and the browser cache is skipped – so an answer is what the server has now.
+ */
+async function fetchManifest(fresh = false): Promise<Manifest | undefined> {
   try {
-    const res = await fetch('/api/content/manifest', { cache: 'no-cache' })
+    const res = await fetch(fresh ? '/api/content/manifest?fresh' : '/api/content/manifest', { cache: fresh ? 'no-store' : 'no-cache' })
     const m = res.ok ? await res.json() : undefined
     return valid(m) ? m : undefined
   } catch { return undefined }
@@ -60,8 +69,8 @@ export async function initContent(): Promise<boolean> {
   }
   if (!current) return false
   // Pick up new releases: when the app comes back to the screen, and every few minutes while it is open.
-  // Only newer ones – an older answer would be the service worker's cache on a bad connection.
-  const refresh = () => { if (document.visibilityState === 'visible' && navigator.onLine) fetchManifest().then((m) => m && m.release > current!.release && use(m)) }
+  // Straight from the network, so whatever the server has now is right (also a restore to an older release).
+  const refresh = () => { if (document.visibilityState === 'visible' && navigator.onLine) fetchManifest(true).then((m) => m && use(m)) }
   document.addEventListener('visibilitychange', refresh)
   setInterval(refresh, REFRESH)
   return true
@@ -93,7 +102,11 @@ export function loadFile<T>(name: string): Promise<T> {
  */
 export function keepOffline() {
   if (!('caches' in window) || !current) return
+  // One run at a time (a run deletes what is not in its release); a new release while running runs again after.
+  let running = false, again = false
   const run = async () => {
+    if (running) { again = true; return }
+    running = true
     const m = current!
     const urls = new Set(Object.values(m.files).map((h) => new URL(`/api/content/f/${h}.json`, location.origin).href))
     try {
@@ -103,6 +116,8 @@ export function keepOffline() {
       // Only after everything of this release is in: older files may still serve a page opened earlier.
       for (const url of have) if (!urls.has(url)) await cache.delete(url)
     } catch { /* offline or storage full: next time */ }
+    running = false
+    if (again) { again = false; void run() }
   }
   const idle = (window as { requestIdleCallback?: (f: () => void, o?: { timeout: number }) => void }).requestIdleCallback
   const start = () => (idle ? idle(() => void run(), { timeout: 10_000 }) : setTimeout(run, 3000))
