@@ -141,7 +141,7 @@ Stará adresa `sprtam.ondrejzraly.cz` vede na stejný server. Prohlížeči poš
 
 ## Moderace
 
-Učivo upravují pozvaní moderátoři v samostatné aplikaci [moderace.sprtam.cz](https://moderace.sprtam.cz) ([`moderator/`](../moderator), vlastní Dockerfile a kontejner). Přihlašuje se jen klíčem (passkey) a změny posílá jako pull requesty. Hlavní aplikace ani její server o moderaci nic neví. Podrobně: [Moderace](MODERACE.md).
+Učivo upravují pozvaní moderátoři v samostatné aplikaci [moderace.sprtam.cz](https://moderace.sprtam.cz) ([`moderator/`](../moderator), vlastní Dockerfile a kontejner). Přihlašuje se jen klíčem (passkey). Každou změnu schvaluje jiný moderátor a pak se hned zveřejní. Moderace je zároveň obsahová služba: učivo se všemi verzemi je v její databázi ([Obsah a jeho API](OBSAH.md)). Podrobně: [Moderace](MODERACE.md).
 
 ## Nasazení
 
@@ -198,7 +198,7 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/routing-test.mjs` | adresy a navigace nad produkčním buildem |
 | `scripts/verify-prod.mjs` | že produkce ukazuje všechna témata |
 | `scripts/crawl.mjs` | otevře každé téma a hlásí chyby za běhu |
-| `scripts/moderator-test.mjs` | moderace: přihlášení klíčem, bezpečnostní pravidla, editor a náhled (spouští vlastní server, napřed `npm run moderator:build`) |
+| `scripts/moderator-test.mjs` | moderace a obsahová služba: přihlášení klíčem, bezpečnostní pravidla, editor a náhled, kontrola a zveřejnění, historie a návraty, API tokeny, zálohy (spouští vlastní server, napřed `npm run moderator:build`) |
 | `scripts/shots.mjs` | snímky obrazovek (přehled widgetů je v aplikaci na `/widgety`) |
 
 Jak psát učivo: [CONTENT.md](CONTENT.md).
