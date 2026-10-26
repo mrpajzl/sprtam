@@ -158,7 +158,7 @@ export function Review({ id, me }: { id: string; me: Me }) {
 
 function Banners({ data, own, busy, onRebase }: { data: DraftFull; own: boolean; busy: boolean; onRebase: () => void }) {
   const d = data.draft
-  if (d.status === 'published') return <div class="banner ok"><I.check />Zveřejněno {d.decidedAt ? dateTime(d.decidedAt) : ''}{d.release ? ` jako vydání ${d.release}` : ''}{d.decidedBy ? ` – rozhodl/a ${d.decidedBy}` : ''}. {d.legacyPrUrl && <a href={d.legacyPrUrl} target="_blank" rel="noopener noreferrer">pull request</a>}</div>
+  if (d.status === 'published') return <div class="banner ok"><I.check />Zveřejněno {d.decidedAt ? dateTime(d.decidedAt) : ''}{d.release ? ` jako vydání ${d.release}` : ''}{d.decidedBy ? ` – rozhodl/a ${d.decidedBy}` : ''}. {d.legacyPrUrl?.startsWith('https://github.com/') && <a href={d.legacyPrUrl} target="_blank" rel="noopener noreferrer">pull request</a>}</div>
   if (d.status === 'rejected') return <div class="banner bad"><I.warn />Zamítnuto ({d.decidedBy}): {d.decisionNote}</div>
   if (d.status === 'withdrawn') return <div class="banner warn"><I.warn />Návrh byl stažen.</div>
   if (d.conflict) {
@@ -186,7 +186,7 @@ function Thread({ reviews, anchor, me, draft, onComment, onResolve, decisions }:
   const [text, setText] = useState('')
   const [busy, setBusy] = useState(false)
   const shown = decisions ? reviews : reviews.filter((r) => r.verdict === 'comment' || r.body)
-  const canWrite = draft.status === 'review' || draft.status === 'draft'
+  const canWrite = draft.status === 'review'
   const send = async () => { setBusy(true); if (await onComment(text.trim(), anchor)) { setText(''); setWriting(false) } setBusy(false) }
   if (!shown.length && !canWrite) return decisions ? <p class="fine">Žádné komentáře.</p> : null
   return (

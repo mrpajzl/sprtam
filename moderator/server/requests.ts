@@ -79,7 +79,7 @@ export function updateRequest(s: Session, id: unknown, body: Record<string, unkn
   if (admin && 'adminNote' in body) set.admin_note = text(body.adminNote, 2000, '')
   if (admin && 'widget' in body) {
     const w = body.widget === null || body.widget === '' ? null : String(body.widget)
-    if (w !== null && !WIDGETS[w]) throw new HttpError(400, 'Taková pomůcka neexistuje.')
+    if (w !== null && !Object.hasOwn(WIDGETS, w)) throw new HttpError(400, 'Taková pomůcka neexistuje.')
     set.widget = w
   }
   const keys = Object.keys(set)

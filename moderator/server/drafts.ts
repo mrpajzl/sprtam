@@ -40,12 +40,15 @@ type Row = DraftRow & { author_name: string }
 
 const names = () => new Map(all<{ id: string; name: string }>('SELECT id, name FROM users').map((u) => [u.id, u.name]))
 
-/** The latest decision (approve / changes) of every reviewer on revision `rev`. */
+/** The latest decision (approve / changes) of every active reviewer on revision `rev` (a switched-off account no longer counts). */
 function decisions(id: string, rev: number) {
   const last = new Map<string, ReviewRow['verdict']>()
-  for (const r of all<ReviewRow>("SELECT * FROM reviews WHERE draft_id = ? AND rev = ? AND verdict != 'comment' ORDER BY id", id, rev)) last.set(r.user_id, r.verdict)
+  for (const r of all<ReviewRow>("SELECT r.* FROM reviews r JOIN users u ON u.id = r.user_id WHERE r.draft_id = ? AND r.rev = ? AND r.verdict != 'comment' AND u.active = 1 ORDER BY r.id", id, rev)) last.set(r.user_id, r.verdict)
   return last
 }
+
+/** Admin rights count only in a signed-in browser: an API token of an admin acts like a moderator's. */
+const isAdmin = (s: Session) => s.user.role === 'admin' && s.via === 'cookie'
 
 function conflictOf(d: DraftRow): boolean {
   if (d.status !== 'draft' && d.status !== 'review') return false
@@ -69,7 +72,7 @@ const SELECT = 'SELECT d.*, u.name AS author_name FROM drafts d JOIN users u ON 
 /** A draft the session may see: its own, any for admins, and other moderators' once they were sent for review. */
 function load(s: Session, id: unknown): Row {
   const d = typeof id === 'string' ? one<Row>(`${SELECT} WHERE d.id = ?`, id) : undefined
-  const visible = d && (d.user_id === s.user.id || s.user.role === 'admin' || (d.status !== 'draft' && d.submitted_at !== null))
+  const visible = d && (d.user_id === s.user.id || isAdmin(s) || (d.status !== 'draft' && d.submitted_at !== null))
   // Somebody else's work in progress looks exactly like a missing draft.
   if (!d || !visible) throw new HttpError(404, 'Návrh nenalezen.')
   return d
@@ -80,7 +83,7 @@ const open = (d: Row) => { if (d.status !== 'draft' && d.status !== 'review') th
 
 export function listDrafts(s: Session, everyone: boolean) {
   const who = names()
-  const rows = everyone && s.user.role === 'admin'
+  const rows = everyone && isAdmin(s)
     ? all<Row>(`${SELECT} ORDER BY d.updated_at DESC LIMIT 500`)
     : all<Row>(`${SELECT} WHERE d.user_id = ? ORDER BY d.updated_at DESC`, s.user.id)
   return rows.map((d) => view(d, who))
@@ -167,6 +170,9 @@ export function saveDraft(s: Session, id: unknown, body: Record<string, unknown>
   if (body.rev !== d.rev) throw new HttpError(409, 'Návrh se mezitím změnil v jiném okně. Načti ho znovu.', 'stale')
   const topic = body.topic as TopicFile
   if (!topic || typeof topic !== 'object' || Array.isArray(topic)) throw new HttpError(400, 'Chybí téma.')
+  // The editor saves unfinished topics (empty texts), but never a different shape: reviewers' screens rely on it.
+  const list = (x: unknown) => Array.isArray(x) && x.every((y) => y && typeof y === 'object' && !Array.isArray(y))
+  if (!list(topic.explanations) || !topic.explanations.every((x) => list(x.blocks)) || !list(topic.questions)) throw new HttpError(400, 'Téma nemá správnou stavbu (vysvětlení s bloky a otázky).')
   // The id of an existing topic never changes (progress is stored by it); a new topic keeps its id once created.
   if (topic.id !== d.topic_id) throw new HttpError(400, 'Id tématu se nedá změnit.')
   const old = JSON.parse(d.data) as DraftData
@@ -180,8 +186,9 @@ export function saveDraft(s: Session, id: unknown, body: Record<string, unknown>
 
 export function deleteDraft(s: Session, id: unknown, ip: string) {
   const d = load(s, id)
-  if (d.user_id !== s.user.id && s.user.role !== 'admin') throw new HttpError(403, 'Smazat smí jen autor.')
-  if (d.status === 'review' || d.status === 'published') throw new HttpError(409, d.status === 'review' ? 'Návrh je v kontrole. Nejdřív ho vrať do rozpracovaných.' : 'Zveřejněný návrh je součástí historie.')
+  if (d.user_id !== s.user.id && !isAdmin(s)) throw new HttpError(403, 'Smazat smí jen autor.')
+  // Only work in progress: anything that went through review keeps its record (reviews, decisions).
+  if (d.status !== 'draft') throw new HttpError(409, d.status === 'review' ? 'Návrh je v kontrole. Nejdřív ho vrať do rozpracovaných.' : 'Vyřízený návrh zůstává v historii.')
   run('DELETE FROM drafts WHERE id = ?', d.id)
   audit('draft.deleted', s.user.id, { draft: d.id, topic: `${d.grade}/${d.subject}/${d.topic_id}` }, ip)
 }
@@ -296,8 +303,15 @@ export function reviewDraft(s: Session, id: unknown, body: Record<string, unknow
 }
 
 function publishDraft(d: DraftRow, data: DraftData, approvers: string[], by: string, ip: string): number {
+  const key = topicKey(d.grade, d.subject, d.topic_id)
   const r = publish(changesOf(d, data), { userId: d.user_id, reason: d.rollback_of ? 'rollback' : 'change', draftId: d.id, approvedBy: approvers, note: d.note ?? undefined }, (r) => {
-    run("UPDATE drafts SET status = 'published', decided_at = ?, decided_by = ?, release_id = ? WHERE id = ?", Date.now(), by, r.release, d.id)
+    // Checked again against the database itself, in the same transaction as the write.
+    const prev = one<{ id: number; data: string | null }>('SELECT id, data FROM versions WHERE key = ? AND release_id < ? ORDER BY n DESC LIMIT 1', key, r.release)
+    const live = prev && prev.data !== null ? prev.id : null
+    if (d.kind === 'edit' ? live !== d.base_version : live !== null) throw new HttpError(409, 'Téma mezitím změnil někdo jiný. Autor musí návrh převést na novou verzi.', 'conflict')
+    if (run("UPDATE drafts SET status = 'published', decided_at = ?, decided_by = ?, release_id = ? WHERE id = ? AND status = 'review' AND rev = ?", Date.now(), by, r.release, d.id, d.rev).changes !== 1) {
+      throw new HttpError(409, 'Návrh se mezitím změnil.', 'stale')
+    }
   })
   audit('draft.published', by, { draft: d.id, release: r.release, topic: `${d.grade}/${d.subject}/${d.topic_id}`, approvedBy: approvers }, ip)
   return r.release
@@ -316,7 +330,7 @@ export function resolveReview(s: Session, id: unknown, reviewId: unknown, ip: st
 /** An admin closes a draft that will not be published (with a reason the author sees). */
 export function rejectDraft(s: Session, id: unknown, body: Record<string, unknown>, ip: string) {
   const d = load(s, id)
-  if (s.user.role !== 'admin') throw new HttpError(403, 'Zamítnout návrh smí jen správce.')
+  if (!isAdmin(s)) throw new HttpError(403, 'Zamítnout návrh smí jen správce.')
   open(d)
   const note = typeof body.note === 'string' ? body.note.trim().slice(0, 2000) : ''
   if (!note) throw new HttpError(400, 'Napiš autorovi, proč návrh zamítáš.')

@@ -1,5 +1,5 @@
 import { createHash, randomBytes, timingSafeEqual } from 'node:crypto'
-import { readFileSync, rmSync } from 'node:fs'
+import { chmodSync, readFileSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { gzipSync } from 'node:zlib'
 import { bearer } from './auth'
@@ -16,21 +16,26 @@ import { verifyChain } from './store'
 const sha = (s: string | Buffer) => createHash('sha256').update(s).digest()
 
 /** Only the backup puller: `Authorization: Bearer <BACKUP_TOKEN>`. */
+const enabled = CONFIG.backupToken.length >= 32
+if (CONFIG.backupToken && !enabled) console.error('BACKUP_TOKEN is shorter than 32 characters: backups are off')
+
 export function requireBackup(req: Req) {
   const t = bearer(req)
-  if (!CONFIG.backupToken || !t || !timingSafeEqual(sha(t), sha(CONFIG.backupToken))) throw new HttpError(401, 'Neplatný token zálohy.', 'backup')
+  if (!enabled || !t || !timingSafeEqual(sha(t), sha(CONFIG.backupToken))) throw new HttpError(401, 'Neplatný token zálohy.', 'backup')
 }
 
 /** A consistent copy of the database (VACUUM INTO), gzipped. */
-export function snapshot(res: Res, ip: string) {
+export function snapshot(req: Req, res: Res, ip: string) {
   const file = join(CONFIG.dataDir, `snapshot-${randomBytes(8).toString('hex')}.sqlite`)
   try {
     db.prepare('VACUUM INTO ?').run(file)
+    chmodSync(file, 0o600)
     const raw = readFileSync(file)
     const body = gzipSync(raw)
     const digest = createHash('sha256').update(raw).digest('hex')
     const chain = verifyChain()
-    run('INSERT INTO backups (at, bytes, sha256, ip) VALUES (?, ?, ?, ?)', Date.now(), raw.length, digest, ip)
+    const source = String(req.headers['x-backup-source'] ?? '').replace(/[^a-z0-9-]/g, '').slice(0, 30) || null
+    run('INSERT INTO backups (at, bytes, sha256, ip, source) VALUES (?, ?, ?, ?, ?)', Date.now(), raw.length, digest, ip, source)
     run('DELETE FROM backups WHERE at < ?', Date.now() - 90 * 86_400_000)
     res.writeHead(200, {
       'Content-Type': 'application/gzip', 'Content-Length': body.length, 'Cache-Control': 'no-store',
@@ -56,8 +61,11 @@ export function backupStatus() {
   const good = one<{ at: number }>('SELECT at FROM backups WHERE verified = 1 ORDER BY id DESC LIMIT 1')
   const mirror = one<{ mirrored: number }>('SELECT mirrored FROM backups WHERE mirrored IS NOT NULL ORDER BY id DESC LIMIT 1')
   const day = one<{ n: number }>('SELECT COUNT(*) AS n FROM backups WHERE at > ?', Date.now() - 86_400_000)!.n
+  // Every place that keeps copies (hetzner-1, the admin's Mac…): when it last stored a verified one.
+  const sources = all<{ source: string; at: number }>("SELECT source, MAX(at) AS at FROM backups WHERE verified = 1 AND source IS NOT NULL GROUP BY source ORDER BY source")
   return {
-    configured: !!CONFIG.backupToken, lastAt: last?.at ?? null, lastBytes: last?.bytes ?? null, last24h: day,
+    sources,
+    configured: enabled, lastAt: last?.at ?? null, lastBytes: last?.bytes ?? null, last24h: day,
     lastVerified: last ? last.verified : null, lastNote: last?.note ?? null, lastGoodAt: good?.at ?? null, mirrored: mirror?.mirrored ?? null,
   }
 }

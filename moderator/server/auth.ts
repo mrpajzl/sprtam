@@ -5,7 +5,7 @@ import {
 } from '@simplewebauthn/server'
 import { CONFIG, DAY, LIMITS, MINUTE } from './config'
 import { all, audit, one, run, tx, type CredentialRow, type InviteRow, type SessionRow, type UserRow } from './db'
-import { clearSessionCookie, cookies, HttpError, SESSION_COOKIE, sessionCookie, type Req, type Res } from './http'
+import { clearSessionCookie, cookies, HttpError, limit, SESSION_COOKIE, sessionCookie, type Req, type Res } from './http'
 
 // Sign-in with passkeys only (WebAuthn, user verification required): nothing to guess, phish or reuse.
 // Accounts exist only through a single-use invite link from an admin. Sessions are random 256-bit tokens
@@ -114,6 +114,7 @@ export function requireSession(req: Req, tokens = false): Session {
   const s = getSession(req)
   if (!s) throw new HttpError(401, bearer(req) !== null ? 'Neplatný nebo prošlý API token.' : 'Přihlas se prosím.', 'login')
   if (s.via === 'token' && !tokens) throw new HttpError(403, 'Tohle s API tokenem nejde – jen v moderaci po přihlášení.', 'token')
+  if (s.via === 'token') limit(`token:${s.hash}`, 600, 10 * MINUTE)
   return s
 }
 

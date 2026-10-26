@@ -15,7 +15,7 @@ const ROOT = join(import.meta.dirname, '..')
 const port = await new Promise((r) => { const s = createServer().listen(0, () => { const p = s.address().port; s.close(() => r(p)) }) })
 const BASE = `http://localhost:${port}`
 const data = mkdtempSync(join(tmpdir(), 'moderace-test-'))
-const BACKUP = 'test-backup-token-0123456789'
+const BACKUP = 'test-backup-token-0123456789-abcdefghij'
 const env = { ...process.env, PORT: String(port), ORIGIN: BASE, DATA_DIR: data, BACKUP_TOKEN: BACKUP, REQUIRED_APPROVALS: '1' }
 const server = spawn('node', ['--no-warnings', 'moderator/dist-server/index.mjs'], { cwd: ROOT, env, stdio: ['ignore', 'pipe', 'inherit'] })
 await new Promise((r) => server.stdout.on('data', (d) => { if (String(d).includes('moderace on')) r() }))
@@ -232,6 +232,14 @@ try {
   check((await bearer('GET', '/api/drafts', null, BACKUP)).status === 401, 'the backup token is not a moderator token')
   await eva.api('DELETE', `/api/me/tokens/${tok.body.id}`)
   check((await bearer('GET', '/api/drafts')).status === 401, 'a removed token stops working')
+  const adminTok = (await admin.api('POST', '/api/me/tokens', { label: 'Admin agent', days: 7 })).body.token
+  check((await (await bearer('GET', '/api/drafts?all=1', null, adminTok)).json()).every((x) => x.author.name === 'Ada Správcová'), "an admin's token sees only her own drafts")
+  check((await bearer('GET', `/api/drafts/${tokDraft.id}`, null, adminTok)).status === 404, "an admin's token cannot read others' unsent drafts")
+  check((await bearer('DELETE', `/api/drafts/${tokDraft.id}`, null, adminTok)).status === 404, "an admin's token cannot delete others' drafts")
+  const sneaky = await fetch(`${BASE}/api/me/sessions/end-others`, { method: 'POST', headers: { Authorization: 'Bearer x', Cookie: `moderace=${cookie.value}`, Origin: 'https://evil.example', 'Content-Type': 'application/json' }, body: '{}' })
+  check(sneaky.status === 403, 'a bearer header does not skip the origin check of a cookie request')
+  await admin.api('POST', '/api/me/sessions/end-others', {})
+  check((await bearer('GET', '/api/drafts', null, adminTok)).status === 401, 'signing out other devices also ends API tokens')
 
   // ——— Widget requests ———
   const wr = await eva.api('POST', '/api/widget-requests', { title: 'Váhy na rovnice', body: 'Děti přidávají a odebírají závaží na obou miskách a vidí, že rovnováha zůstane.' })
@@ -249,7 +257,7 @@ try {
   check((await fetch(`${BASE}/api/internal/backup`, { headers: { Authorization: 'Bearer nope' } })).status === 401, 'a wrong backup token is refused')
   check((await fetch(`${BASE}/api/internal/backup`, { headers: { Cookie: `moderace=${cookie.value}` } })).status === 401, 'a session is not enough for a backup')
   const rels = await (await fetch(`${BASE}/api/internal/releases?after=1`, { headers: { Authorization: `Bearer ${BACKUP}` } })).json()
-  check(rels.releases.length === 4 && rels.chain.ok, 'the mirror gets the releases after one')
+  check(rels.releases.length === 4, 'the mirror gets the releases after one')
   check((await admin.api('GET', '/api/admin/system')).body.backup.lastAt > 0, 'admins see when the last backup ran')
 
   check([admin, mod, teacher, eva].every((d) => !d.errors.length), 'no errors in the pages')

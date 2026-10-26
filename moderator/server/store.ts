@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto'
-import { existsSync } from 'node:fs'
+import { existsSync, readdirSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { gzipSync } from 'node:zlib'
 import { canonical } from '../../src/content/canonical'
@@ -9,7 +9,7 @@ import type { Manifest } from '../../src/content/manifest'
 import { buildRelease } from '../../src/content/release'
 import { readSnapshot } from '../../plugins/content'
 import { CONFIG } from './config'
-import { all, audit, db, one, run, tx, type ReleaseRow, type VersionRow } from './db'
+import { all, audit, db, migratedNow, one, run, tx, type ReleaseRow, type VersionRow } from './db'
 import { HttpError } from './http'
 
 // The content: documents (src/content/docs.ts) with every version ever published. Publishing writes new
@@ -46,8 +46,9 @@ function serialize(key: string, value: unknown): string {
   return JSON.stringify(ref ? canonical(SCHEMAS[ref.kind], value) : value)
 }
 
-const chainOf = (prev: string, v: Pick<VersionRow, 'key' | 'n' | 'hash' | 'user_id' | 'release_id' | 'reason' | 'created_at'>) =>
-  sha256([prev, v.key, v.n, v.hash, v.user_id ?? '', v.release_id, v.reason, v.created_at].join('\n'))
+/** The chain over a version: the previous chain and everything that says what was published, when, by whom and approved by whom. */
+const chainOf = (prev: string, v: Pick<VersionRow, 'key' | 'n' | 'hash' | 'user_id' | 'approved_by' | 'draft_id' | 'release_id' | 'reason' | 'created_at'>) =>
+  sha256([prev, v.key, v.n, v.hash, v.user_id ?? '', v.approved_by ?? '', v.draft_id ?? '', v.release_id, v.reason, v.created_at].join('\n'))
 
 // ——— Reading ———
 
@@ -81,16 +82,24 @@ function rebuild(release: ReleaseRow | undefined) {
   live = { release: release.id, publishedAt: release.created_at, manifest: { ...r.manifest, release: release.id, publishedAt: release.created_at }, files: r.files }
 }
 
-/** Loads the published content into memory; on an empty database imports content/ (the files this image was built with). */
+/**
+ * Loads the published content into memory. A database without content imports content/ (the files this image
+ * was built with) – but only right after the migration that created the content tables, or in a brand new
+ * database: a wrongly mounted or reset volume of a running installation never silently publishes old files.
+ */
 export function load() {
-  if (!one('SELECT 1 FROM releases LIMIT 1')) importDir(CONFIG.contentDir)
+  for (const f of readdirSync(CONFIG.dataDir)) if (/^snapshot-[0-9a-f]+\.sqlite$/.test(f)) rmSync(join(CONFIG.dataDir, f), { force: true })
+  if (!one('SELECT 1 FROM releases LIMIT 1')) {
+    if (migratedNow || !one('SELECT 1 FROM users LIMIT 1')) importDir(CONFIG.contentDir)
+    else console.error('content: the database has no content but has accounts – not importing; restore a backup (docs/OBSAH.md)')
+  }
   const rows = all<{ key: string; version: number; data: string | null }>('SELECT d.key, d.version, v.data FROM docs d JOIN versions v ON v.id = d.version')
   docs = new Map()
   versionOf.clear()
   for (const r of rows) if (r.data !== null) { docs.set(r.key, JSON.parse(r.data)); versionOf.set(r.key, r.version) }
   rebuild(one<ReleaseRow>('SELECT * FROM releases ORDER BY id DESC LIMIT 1'))
-  const chain = verifyChain()
-  if (!chain.ok) console.error(`content history: hash chain broken at version ${chain.brokenAt}`)
+  const chain = verifyChain(true)
+  if (!chain.ok) console.error(`content history: ${chain.problem === 'chain' ? `hash chain broken at version ${chain.brokenAt}` : chain.problem}`)
   console.log(`content: release ${live?.release ?? '–'}, ${docs.size} documents, ${chain.count} versions`)
 }
 
@@ -102,13 +111,9 @@ function importDir(dir: string) {
     console.error(`content: not importing ${dir}, ${issues.length} problems, e.g. ${issues.slice(0, 3).map((i) => `${i.key} ${i.path}: ${i.message}`).join('; ')}`)
     return
   }
-  const r = tx(() => {
-    const out = writeRelease([...snap].map(([key, data]) => ({ key, data })), { userId: null, reason: 'import', note: 'Import učiva z repozitáře' }, false)
-    // Drafts started before the content moved here are based on what was imported.
-    run(`UPDATE drafts SET base_version = (SELECT version FROM docs WHERE key = 'topics/' || drafts.grade || '/' || drafts.subject || '/' || drafts.topic_id)
-         WHERE kind = 'edit' AND base_version IS NULL`)
-    return out
-  })
+  // Drafts started before the content moved here keep no base version: what they were based on is unknown,
+  // so they count as in conflict and their authors bring them up to date (rebase) before review.
+  const r = tx(() => writeRelease([...snap].map(([key, data]) => ({ key, data })), { userId: null, reason: 'import', note: 'Import učiva z repozitáře' }, false))
   audit('content.imported', null, { release: r.release, docs: snap.size, dir })
   console.log(`content: imported ${snap.size} documents from ${dir} as release ${r.release}`)
 }
@@ -149,9 +154,12 @@ function writeRelease(changes: DocChange[], meta: PublishMeta, check = true) {
   for (const c of real) {
     const data = c.data === null ? null : serialize(c.key, c.data)
     const n = (one<{ n: number }>('SELECT MAX(n) AS n FROM versions WHERE key = ?', c.key)?.n ?? 0) + 1
-    const v = { key: c.key, n, hash: data === null ? '' : sha256(data), user_id: meta.userId, release_id: release, reason: meta.reason, created_at: now }
+    const v = {
+      key: c.key, n, hash: data === null ? '' : sha256(data), user_id: meta.userId, approved_by: meta.approvedBy?.length ? JSON.stringify(meta.approvedBy) : null,
+      draft_id: meta.draftId ?? null, release_id: release, reason: meta.reason, created_at: now,
+    }
     chain = chainOf(chain, v)
-    const id = Number(insert.run(v.key, v.n, data, v.hash, v.user_id, meta.approvedBy?.length ? JSON.stringify(meta.approvedBy) : null, meta.draftId ?? null, release, v.reason, now, chain).lastInsertRowid)
+    const id = Number(insert.run(v.key, v.n, data, v.hash, v.user_id, v.approved_by, v.draft_id, release, v.reason, now, chain).lastInsertRowid)
     ids[c.key] = id
     if (data === null) run('DELETE FROM docs WHERE key = ?', c.key)
     else run('INSERT INTO docs (key, version) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET version = excluded.version', c.key, id)
@@ -240,14 +248,26 @@ export function changesTo(target: ReadonlyMap<string, unknown>): DocChange[] {
   return out
 }
 
-/** Recomputes the hash chain of all versions. */
-export function verifyChain(): { ok: boolean; count: number; last: string; brokenAt?: number } {
-  let chain = ''
-  let count = 0
-  for (const v of db.prepare('SELECT * FROM versions ORDER BY id').iterate() as Iterable<VersionRow>) {
+/** Versions up to here were checked (verifyChain checks only newer ones; a full check runs at start). */
+let checked = { id: 0, count: 0, chain: '' }
+
+/**
+ * Recomputes the hash chain (all versions with `full`, otherwise those added since the last check) and checks
+ * that what is published (`docs`) is the newest version of every document.
+ */
+export function verifyChain(full = false): { ok: boolean; count: number; last: string; brokenAt?: number; problem?: string } {
+  let { id: after, count, chain } = full ? { id: 0, count: 0, chain: '' } : checked
+  for (const v of db.prepare('SELECT * FROM versions WHERE id > ? ORDER BY id').iterate(after) as Iterable<VersionRow>) {
     count++
-    if ((v.data === null ? '' : sha256(v.data)) !== v.hash || chainOf(chain, v) !== v.chain) return { ok: false, count, last: chain, brokenAt: v.id }
+    if ((v.data === null ? '' : sha256(v.data)) !== v.hash || chainOf(chain, v) !== v.chain) return { ok: false, count, last: chain, brokenAt: v.id, problem: 'chain' }
     chain = v.chain
+    after = v.id
   }
+  checked = { id: after, count, chain }
+  const stray = one<{ key: string }>(`
+    SELECT key FROM (SELECT key, id, data FROM versions v WHERE n = (SELECT MAX(n) FROM versions w WHERE w.key = v.key)) latest
+    WHERE (data IS NULL AND key IN (SELECT key FROM docs)) OR (data IS NOT NULL AND id IS NOT (SELECT version FROM docs d WHERE d.key = latest.key))
+    LIMIT 1`)
+  if (stray) return { ok: false, count, last: chain, problem: `published ${stray.key} is not its newest version` }
   return { ok: true, count, last: chain }
 }

@@ -93,32 +93,85 @@ Ostatní endpointy jsou v [`moderator/server/index.ts`](../moderator/server/inde
 
 ## Zálohy
 
-Zálohy si **stahuje druhý server** (`hetzner-1`, kontejner `sprtam-backup` v Coolify, kód v [`ops/backup/`](../ops/backup)). Obsahová služba nemá k zálohám ani k zrcadlu žádný přístup, takže je nemůže smazat ani přepsat.
+Zálohy si **stahují jiné stroje**, obsahová služba je jen vydá a k žádné kopii nemá přístup. Kód je v [`ops/backup/`](../ops/backup):
 
-Každou hodinu:
+- **`hetzner-1`:** kontejner „Šprtám zálohy“ v Coolify (projekt Šprtám), volume `/data`. Kromě záloh plní i git zrcadlo.
+- **Mac správce:** LaunchAgent `cz.sprtam.backup` (`sh ops/backup/mac/install.sh`), kopie v `~/.local/state/sprtam-backup`. Běží, jen když je Mac zapnutý a přihlášený. Na Mac nedosáhne Coolify ani žádný ze serverů.
 
-1. **Stažení.** Stáhne snapshot celé databáze (`GET /api/internal/backup`, `VACUUM INTO`, gzip) s vlastním tokenem `BACKUP_TOKEN`.
+Každou hodinu ([`backup.py`](../ops/backup/backup.py)):
+
+1. **Stažení.** Stáhne snapshot celé databáze (`GET /api/internal/backup`, `VACUUM INTO`, gzip) s tokenem `BACKUP_TOKEN`.
+   - Přesměrování nenásleduje, takže token nikam jinam neodejde.
+   - Velikost hlídá už během stahování, i po rozbalení. Zip bomba neprojde a v paměti je vždy jen kousek.
+   - S `ORIGIN_IP` se spojí rovnou s původním serverem, takže snapshot nejde přes CDN. TLS se i tak ověřuje pro `moderace.sprtam.cz`.
 2. **Ověření:**
    - SHA-256 sedí s ohlášeným;
-   - SQLite `integrity_check` je v pořádku;
-   - přepočítaný hash řetěz sedí u všech verzí;
-   - historie jen přibyla: verze, kterou viděl naposledy, má pořád stejný řetěz.
-3. **Uložení.** Uloží snapshot zašifrovaný nástrojem [age](https://age-encryption.org). Na serveru je jen veřejný klíč, privátní je v Keychainu správce (`sprtam-backup-age`) a v `~/.config/sprtam/backup-age-identity.txt` na jeho Macu. Ponechá posledních 48 hodinových, 35 denních a 24 měsíčních záloh. Když kontrola selže, nic starého nemaže.
-4. **Zrcadlo.** Každé nové vydání zapíše jako commit do soukromého repozitáře **`mrpajzl/sprtam-content`**: soubory jako dřív v `content/`, autor, kdo schválil, a řetěz. Pushuje deploy klíčem, který je jen na `hetzner-1`.
-5. **Hlášení.** Výsledek nahlásí zpět: Moderace → Vydání ukazuje poslední ověřenou zálohu, nebo **CHYBA**.
+   - SQLite `integrity_check` je v pořádku (soubor se otevírá jen pro čtení, s `trusted_schema=OFF` a časovým limitem);
+   - každá verze má správný hash obsahu a správný klíč dokumentu;
+   - přepočítaný hash řetěz sedí;
+   - zveřejněné je opravdu nejnovější verze;
+   - historie jen přibyla: verze z minulého běhu má pořád stejný řetěz. Když stav chybí, vezme se poslední commit zrcadla.
+3. **Uložení.** Uloží snapshot zašifrovaný nástrojem [age](https://age-encryption.org) pro příjemce v `AGE_RECIPIENTS`. Privátní klíč není na žádném serveru: je v Keychainu správce (`sprtam-backup-age`) a v `~/.config/sprtam/backup-age-identity.txt`. Ponechá 48 hodinových, 35 denních a 24 měsíčních záloh. Když kontrola selže, nic starého nemaže.
+4. **Zrcadlo (jen `hetzner-1`).** Každé nové vydání zapíše přímo z ověřeného snapshotu jako commit do soukromého repozitáře **`mrpajzl/sprtam-content`**:
+   - soubory jako dřív v `content/`;
+   - autor, kdo schválil, a trailery `Release:` a `Content-Chain:`.
+
+   Pushuje deploy klíčem. Nikdy nepushuje force a nikdy nezačne novou historii, když repozitář nejde přečíst.
+5. **Hlášení.** Výsledek nahlásí zpět (`/api/internal/backup/report`):
+   - Moderace → Vydání ukazuje poslední ověřenou zálohu každé kopie, nebo **CHYBA** s důvodem;
+   - když kontrola selže, kontejner na `hetzner-1` je po 2,5 hodinách „unhealthy“.
+
+Dva běhy najednou zabrání zámek, stav se zapisuje přes `fsync` a přejmenování.
+
+| Kde | Co |
+|---|---|
+| Coolify, moderace | `BACKUP_TOKEN` (aspoň 32 znaků) |
+| Coolify, „Šprtám zálohy“ na `hetzner-1` | `BACKUP_TOKEN`, `AGE_RECIPIENTS`, `MIRROR_REMOTE`, `MIRROR_KEY` (soukromý deploy klíč, base64), `BACKUP_SOURCE=hetzner-1` |
+| Mac správce | `~/.config/sprtam/backup-token`, `~/.config/sprtam/backup-age-identity.txt` (0600) |
 
 Velikost: celé učivo je 11,7 MB JSON, snapshot databáze zhruba 2,5 MB gzip. Každá změna tématu přidá desítky kB.
 
 ### Obnova
 
+1. **Výběr kopie:** nejnovější z `~/.local/state/sprtam-backup/snapshots/` na Macu, nebo z volume kontejneru na `hetzner-1` (Coolify → Šprtám zálohy → Terminal, `/data/snapshots`).
+2. **Rozšifrování a kontrola** (jen čtení, nic nezmění):
+   ```sh
+   age -d -i ~/.config/sprtam/backup-age-identity.txt moderace-<čas>.sqlite.gz.age | gunzip > moderace.sqlite
+   python3 ops/backup/backup.py verify moderace.sqlite
+   ```
+3. **Výměna databáze:**
+   - V Coolify zastav moderaci.
+   - Ve volume moderace (`/data`) přejmenuj současné `moderace.sqlite*` na `*.broken-<datum>`. Nic nemaž, je to stopa pro vyšetřování.
+   - Vlož obnovený soubor jako `moderace.sqlite`, vlastník uid 1000 (`node`), práva 0600.
+   - Spusť moderaci. Případné migrace proběhnou samy a předtím se uloží kopie `before-migration-*`.
+4. **Zrušení přístupů:** obnovená databáze vrátí i session, API tokeny a pozvánky ze dne zálohy.
+   - V Moderátorech odhlas všechny uživatele.
+   - Zkontroluj účty vypnuté po datu zálohy (záznam událostí v záloze je starší, aktuální je v rozbité databázi).
+5. **Zálohy po obnově starší databáze:** obě zálohy teď správně hlásí přepsanou historii. Na každém stroji to potvrď:
+   ```sh
+   python3 backup.py accept-reset "Obnova ze zálohy <čas>, důvod…"
+   ```
+   - na `hetzner-1` v terminálu kontejneru;
+   - na Macu s `DATA_DIR=~/.local/state/sprtam-backup`.
+
+   Zrcadlo má historii až do původního vydání. Nová vydání se stejnými čísly do něj nejdou. Před dalším zveřejněním proto obnov učivo ještě jednou jako nové vydání (Vydání → Obnovit poslední, nebo `cli.mjs import`), aby čísla vydání převýšila zrcadlo.
+6. **Kontrola webu:** sprtam.cz převezme vydání do 15 s (`/api/content/manifest`).
+
+**Jen učivo ze zrcadla** (účty a návrhy tam nejsou):
+
 ```sh
-# 1. zálohu stáhnout z volume kontejneru sprtam-backup na hetzner-1 (snapshots/hourly|daily|monthly)
-age -d -i ~/.config/sprtam/backup-age-identity.txt moderace-<čas>.sqlite.gz.age | gunzip > moderace.sqlite
-DATA_DIR=. node moderator/dist-server/cli.mjs verify     # řetěz musí být OK
-# 2. v Coolify zastavit moderaci, nahradit /data/moderace.sqlite (a smazat -wal, -shm), spustit
+git clone git@github.com:mrpajzl/sprtam-content.git
 ```
 
-**Ze zrcadla:** naklonovat `mrpajzl/sprtam-content` a v kontejneru moderace spustit `node moderator/dist-server/cli.mjs import <složka content> "<důvod>"`. Vznikne nové vydání a pak se server restartuje. Účty a návrhy jsou jen ve snapshotech DB, ve zrcadle ne.
+Složku `content/` dostaň do volume moderace a v terminálu kontejneru spusť:
+
+```sh
+node moderator/dist-server/cli.mjs import /data/<složka> "<důvod>"
+```
+
+Vznikne nové vydání, pak moderaci restartuj.
+
+Zkoušku obnovy dělej aspoň jednou za čtvrt roku: kroky 1–2 a porovnání počtu verzí s Moderace → Vydání.
 
 ## Bezpečnost
 
@@ -128,6 +181,6 @@ DATA_DIR=. node moderator/dist-server/cli.mjs verify     # řetěz musí být OK
 | Historie | Verze a vydání se jen přidávají (triggery). Hash řetěz ověřuje služba při startu, správce v moderaci a nezávisle záloha na jiném serveru. |
 | Veřejné API | Jen čtení zveřejněného obsahu. Soubory se hledají jen podle hashe (20 hex znaků), takže žádná cesta. Platí limity na adresu. |
 | API tokeny | Náhodných 256 bitů, v databázi jen SHA-256, s platností. Jen vybrané akce nad vlastními návrhy. Vypnutí účtu, zrušení klíčů a „Odhlásit“ ruší i tokeny. Požadavky s tokenem nenesou cookies, takže je cizí stránka nemůže poslat za někoho (bez CORS). |
-| Zálohy | Stahuje je jiný server s vlastním tokenem (porovnání v konstantním čase). Jsou šifrované klíčem, který na serverech není. Moderátorská session k záloze nestačí. |
-| GitHub | Moderace už do GitHubu nepíše a token nemá. Do zrcadla píše jen deploy klíč na `hetzner-1`. |
-| Zbytkové riziko | Coolify na hlavním serveru spravuje i `hetzner-1` (root SSH). Kdo by ovládl hlavní server celý, dostane se i k zálohám. Šifrované kopie ale nepřečte bez privátního klíče správce. Proti tomu by pomohla další kopie mimo tyto dva servery, např. na Macu. |
+| Zálohy | Stahují je jiné stroje s vlastním tokenem (aspoň 32 znaků, porovnání v konstantním čase). Jsou šifrované klíčem, který na žádném serveru není. Moderátorská session ani API token k záloze nestačí. |
+| GitHub | Moderace do GitHubu nepíše a token nemá. Do zrcadla píše jen zálohovací kontejner deploy klíčem. |
+| Zbytkové riziko | Coolify na hlavním serveru spravuje i `hetzner-1` (root SSH) a má v sobě `BACKUP_TOKEN` i deploy klíč zrcadla. Kdo by ovládl hlavní server nebo účet v Coolify, může smazat zálohy na `hetzner-1` i přepsat zrcadlo (soukromý repozitář na bezplatném GitHubu nejde chránit pravidly větví). Šifrované kopie ale nepřečte. Kopie na Macu správce je mimo jeho dosah. Upozornění mimo moderaci (výpadek záloh) zatím neposílá nic, stav je vidět v Moderace → Vydání a v Coolify. |

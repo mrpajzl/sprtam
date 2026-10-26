@@ -11,7 +11,7 @@ import { REASON } from './History'
 
 interface System {
   release: number | null; publishedAt: number | null; docs: number; versions: number; chainOk: boolean; approvals: number; reviews: number; commit: string
-  backup: { configured: boolean; lastAt: number | null; lastBytes: number | null; last24h: number; lastVerified: number | null; lastNote: string | null; lastGoodAt: number | null; mirrored: number | null }
+  backup: { configured: boolean; lastAt: number | null; lastBytes: number | null; last24h: number; lastVerified: number | null; lastNote: string | null; lastGoodAt: number | null; mirrored: number | null; sources: { source: string; at: number }[] }
 }
 interface Release { id: number; createdAt: number; reason: keyof typeof REASON; note: string | null; author: string | null; draftId: string | null; docs: number; keys: string[] }
 
@@ -47,6 +47,7 @@ export function Releases() {
           <div><small class="label">Schvalování</small><b>{sys.approvals}× schválení</b><small>{sys.reviews} ke kontrole</small></div>
         </div>
       )}
+      {sys && sys.backup.sources.length > 0 && <p class="fine">Ověřené kopie: {sys.backup.sources.map((x) => `${x.source} ${ago(x.at)}`).join(' · ')}</p>}
       <p class="muted">Každé zveřejnění je nové vydání. Nic se nepřepisuje: návrat zpátky je zase nové vydání, takže jde vrátit i ten.</p>
       {!list ? <p class="muted">Načítám…</p> : (
         <div class="drafts">

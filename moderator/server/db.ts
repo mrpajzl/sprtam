@@ -170,7 +170,7 @@ const MIGRATIONS: string[] = [
   );
   INSERT INTO drafts_new (id, user_id, kind, grade, subject, topic_id, title, data, rev, status, submitted_rev, submitted_at, created_at, updated_at, legacy_pr_url)
     SELECT id, user_id, kind, grade, subject, topic_id, title, data, rev,
-      CASE status WHEN 'submitted' THEN 'review' WHEN 'merged' THEN 'published' WHEN 'closed' THEN 'withdrawn' ELSE 'draft' END,
+      CASE status WHEN 'merged' THEN 'published' WHEN 'closed' THEN 'withdrawn' ELSE 'draft' END,
       submitted_rev, submitted_at, created_at, updated_at, pr_url
     FROM drafts;
   DROP TABLE drafts;
@@ -229,6 +229,7 @@ const MIGRATIONS: string[] = [
     bytes INTEGER NOT NULL,
     sha256 TEXT NOT NULL,
     ip TEXT,
+    source TEXT,
     verified INTEGER,
     note TEXT,
     mirrored INTEGER
@@ -236,7 +237,17 @@ const MIGRATIONS: string[] = [
   `,
 ]
 
-for (let v = Number((db.prepare('PRAGMA user_version').get() as { user_version: number }).user_version); v < MIGRATIONS.length; v++) {
+const before = Number((db.prepare('PRAGMA user_version').get() as { user_version: number }).user_version)
+/** The content tables were created in this start (store.ts imports the content only then, or into a brand new database). */
+export const migratedNow = before < 1 && MIGRATIONS.length >= 1
+// A copy of the database as it was before migrating, in case a migration goes wrong (kept in the data volume).
+if (before < MIGRATIONS.length && db.prepare('SELECT 1 FROM users LIMIT 1').get()) {
+  const copy = join(CONFIG.dataDir, `before-migration-${before + 1}-${Date.now()}.sqlite`)
+  db.prepare('VACUUM INTO ?').run(copy)
+  try { chmodSync(copy, 0o600) } catch { /* not the owner */ }
+  console.log(`database: copy before migrating to ${MIGRATIONS.length} in ${copy}`)
+}
+for (let v = before; v < MIGRATIONS.length; v++) {
   // Rebuilding a table (drafts) needs foreign keys off for the moment of the swap.
   db.exec('PRAGMA foreign_keys = OFF')
   db.exec('BEGIN IMMEDIATE')

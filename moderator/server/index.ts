@@ -15,7 +15,7 @@ import {
   activeDrafts, createDraft, deleteDraft, getDraft, listDrafts, rebaseDraft, rejectDraft, resolveReview, restoreRelease, restoreVersionNow, reviewDraft, reviewQueue,
   rollbackDraft, saveDraft, submitDraft, withdrawDraft,
 } from './drafts'
-import { assertSameOrigin, clientIp, HttpError, ipKey, json, limit, readJson, SECURITY_HEADERS, type Req, type Res } from './http'
+import { assertSameOrigin, clientIp, cookies, HttpError, ipKey, json, limit, readJson, SECURITY_HEADERS, SESSION_COOKIE, type Req, type Res } from './http'
 import { createRequest, deleteRequest, listRequests, updateRequest, voteRequest } from './requests'
 import { current, file, gzipped, history, load, previousVersion, published, releases, verifyChain, version } from './store'
 
@@ -73,10 +73,10 @@ on('GET', '/api/public/v1/export', (req, res, _p, ip) => {
 
 // ——— Backups and the git mirror (the backup puller's token only) ———
 
-on('GET', '/api/internal/backup', (req, res, _p, ip) => { requireBackup(req); limit(`backup:${ipKey(ip)}`, 12, 60 * MINUTE); snapshot(res, ip); return SENT }, true)
-on('GET', '/api/internal/backup/status', (req) => { requireBackup(req); return { ...backupStatus(), release: current()?.release ?? null, chain: verifyChain() } }, true)
+on('GET', '/api/internal/backup', (req, res, _p, ip) => { requireBackup(req); limit(`backup:${ipKey(ip)}`, 12, 60 * MINUTE); snapshot(req, res, ip); return SENT }, true)
+on('GET', '/api/internal/backup/status', (req) => { requireBackup(req); return { ...backupStatus(), release: current()?.release ?? null } }, true)
 on('POST', '/api/internal/backup/report', async (req) => { requireBackup(req); return backupReport(await readJson(req, LIMITS.openBody)) }, true)
-on('GET', '/api/internal/releases', (req) => { requireBackup(req); return { releases: releasesAfter(query(req, 'after')), chain: verifyChain() } }, true)
+on('GET', '/api/internal/releases', (req) => { requireBackup(req); return { releases: releasesAfter(query(req, 'after')) } }, true)
 on('GET', '/api/internal/releases/:id', (req, _res, p) => { requireBackup(req); return releaseChanges(p[0]) }, true)
 
 // ——— Sign-in ———
@@ -101,8 +101,10 @@ on('POST', '/api/me/keys/verify', async (req, _res, _p, ip) => addKeyVerify(req,
 on('DELETE', '/api/me/keys/:id', (req, _res, p, ip) => { removeKey(requireSession(req), p[0], ip); return { ok: true } })
 on('POST', '/api/me/sessions/end-others', (req, _res, _p, ip) => {
   const s = requireSession(req)
+  // Everywhere else means API tokens too: a token made from a stolen session must not outlive it.
   run('DELETE FROM sessions WHERE user_id = ? AND hash != ?', s.user.id, s.hash)
-  audit('sessions.ended', s.user.id, { own: true }, ip)
+  run('DELETE FROM api_tokens WHERE user_id = ?', s.user.id)
+  audit('sessions.ended', s.user.id, { own: true, tokens: true }, ip)
   return { ok: true }
 })
 on('GET', '/api/me/tokens', (req) => listTokens(requireSession(req).user.id))
@@ -214,7 +216,8 @@ createServer(async (req, res) => {
     }
     // Requests with a bearer token (scripts, the backup puller) carry no cookies, so no page can send them for
     // somebody else: browsers send an Authorization header cross-site only after a CORS preflight we never allow.
-    if (req.method !== 'GET' && req.method !== 'HEAD' && bearer(req) === null) assertSameOrigin(req)
+    // A request that carries a session cookie is always checked, bearer header or not.
+    if (req.method !== 'GET' && req.method !== 'HEAD' && (bearer(req) === null || cookies(req)[SESSION_COOKIE])) assertSameOrigin(req)
     limit(`api:${ipKey(ip)}`, 1200, 5 * MINUTE)
     const matching = routes.filter((r) => r.path.test(url.pathname))
     if (!matching.length) throw new HttpError(404, 'Nenalezeno.')
