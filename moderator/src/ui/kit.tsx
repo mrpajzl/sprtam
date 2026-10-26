@@ -38,6 +38,7 @@ export const I = {
   refresh: P('M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4'),
   bold: P('M7 5h6a3.5 3.5 0 0 1 0 7H7zM7 12h7a3.5 3.5 0 0 1 0 7H7z'),
   italic: P('M10 5h8M6 19h8M14 5l-4 14'),
+  pencil: P('M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4'),
   phone: P('M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM11 18h2'),
 }
 

@@ -160,12 +160,14 @@ function Workspace({ initial, me, github }: { initial: Loaded; me: Me; github: b
   // ——— Submit ———
   const onSubmitted = (d: DraftView) => { setDraft(d); rev.current = d.rev; refreshIndex() }
   const status = draft.status === 'submitted' && draft.unsent ? 'neodeslané úpravy' : STATUS[draft.status]
+  // Back to the published topic (a new one is not published yet: its subject).
+  const back = draft.kind === 'edit' ? `/ucivo/${g}/${s}/${draft.topicId}` : `/ucivo/${g}/${s}`
 
   return (
     <Ctx.Provider value={ctx}>
       <div class={`editor ${showPreview ? 'pv-open' : 'no-preview'}`}>
         <header class="ed-top">
-          <a class="icon" href={`/ucivo/${g}/${s}`} onClick={nav(`/ucivo/${g}/${s}`)} aria-label="Zpět na učivo" title="Zpět na učivo"><I.back /></a>
+          <a class="icon" href={back} onClick={nav(back)} aria-label="Zpět na prohlížení" title="Zpět na prohlížení"><I.back /></a>
           <div class="ed-title">
             <small>{GRADE_NAME[g]} · {SUBJECTS[s].name}{draft.kind === 'new' ? ' · nové téma' : ''}{!own ? ` · návrh: ${draft.author.name}` : ''}</small>
             <b>{topic.emoji} {topic.title || 'Bez názvu'}</b>
