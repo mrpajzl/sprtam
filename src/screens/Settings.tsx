@@ -4,7 +4,8 @@ import { useTheme, type Theme } from '../theme'
 import { Bar } from '../ui/Bar'
 import { IArrow, ICheck } from '../ui/icons'
 
-// /nastaveni – device settings (localStorage only, never sent anywhere): appearance and school.
+// /nastaveni – device settings (localStorage only, never sent anywhere): appearance, school and
+// the way to move progress to another device.
 
 function Choice({ on, label, hint, onPick }: { on: boolean; label: string; hint?: string; onPick: () => void }) {
   return (
@@ -36,6 +37,12 @@ export function Settings() {
           <span class="txt"><b>{a.short}: plán ročníků</b><small>co {a.name.toLowerCase()} mění</small></span><IArrow />
         </Link>
       ))}
+      <h2 class="label next-label">Pokrok</h2>
+      <div class="list">
+        <Link class="row" href="/sdilet">
+          <span class="txt"><b>Přenést pokrok</b><small>na jiné zařízení</small></span><IArrow />
+        </Link>
+      </div>
     </div>
   )
 }

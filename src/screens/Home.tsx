@@ -5,7 +5,7 @@ import { pinnedKeys, stars, today, useProgress, type Progress } from '../progres
 import { go, Link } from '../router'
 import { Stars } from '../ui/Bar'
 import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
-import { IArrow, IGear, IPin, ISearch, IShuffle, ISync } from '../ui/icons'
+import { IArrow, IGear, IPin, ISearch, IShuffle } from '../ui/icons'
 import { Mascot } from '../ui/Mascot'
 import { QrButton } from '../ui/QrShare'
 
@@ -25,7 +25,6 @@ export function Home() {
         <h1 class="brand"><Mascot size={38} /><span>šprtám</span></h1>
         <span class="grow" />
         <Link class="icon-btn" href="/nastaveni" aria-label="Nastavení"><IGear /></Link>
-        <button class="icon-btn" onClick={() => go('/sdilet')} aria-label="Přenést pokrok"><ISync /></button>
         <QrButton />
       </header>
 
