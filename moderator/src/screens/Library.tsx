@@ -140,7 +140,8 @@ function TopicRows({ index, rows, me, showWhere }: { index: Index; rows: Row[]; 
               {t.approach && <small>jen pro přístup {index.approaches.find((a) => a.id === t.approach)?.short ?? t.approach}</small>}
             </span>
             {mine && <span class="pill mine">{mine.status === 'review' ? 'tvůj návrh v kontrole' : 'rozpracováno'}</span>}
-            {rest.length > 0 && <span class="pill warn" title={rest.map((r) => r.name).join(', ')}>upravuje {rest[0].name}{rest.length > 1 ? ` +${rest.length - 1}` : ''}</span>}
+            {rest.some((r) => r.status === 'review') && <span class="pill st-review">ke kontrole</span>}
+            {rest.some((r) => r.status !== 'review') && <span class="pill" title={rest.map((r) => r.name).join(', ')}>upravuje {rest.find((r) => r.status !== 'review')!.name}</span>}
             <I.right />
           </a>
         )

@@ -149,6 +149,13 @@ export function diffTopic(a: TopicFile | null, b: TopicFile): TopicDiff {
 
 export const sameDoc = (a: unknown, b: unknown) => json(a) === json(b)
 
+/** Whether a draft changes anything a reviewer would see (a new topic always does). */
+export function topicChanged(a: TopicFile | null, b: TopicFile): boolean {
+  if (!a) return true
+  const { stats } = diffTopic(a, b)
+  return stats.added + stats.removed + stats.changed > 0
+}
+
 // ——— Any document (vocabulary, plans of approaches, topic lists) ———
 
 export interface JsonChange { path: string; op: 'add' | 'del' | 'mod'; a?: unknown; b?: unknown }

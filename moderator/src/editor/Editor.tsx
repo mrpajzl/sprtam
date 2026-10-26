@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'preact/hooks'
 import { GRADE_NAME, SUBJECTS } from '../../../src/content/curriculum'
+import { topicChanged } from '../../../src/content/diff'
 import type { GradeId, SubjectId, TopicFile } from '../../../src/content/types'
 import { ApiError, api, get, post } from '../api'
 import type { Me } from '../passkey'
@@ -60,6 +61,15 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
   const cleaned = useMemo(() => clean(topic), [topic])
   const approachIds = useMemo(() => index?.approaches.map((a) => a.id) ?? [], [index])
   const issues = useMemo(() => checkTopic(cleaned, approachIds), [cleaned, approachIds])
+  // Opening a topic creates a draft; until something changes there is nothing to send (server: drafts.ts changedOf).
+  const base = useMemo(() => (initial.base ? clean(initial.base) : null), [])
+  const changed = useMemo(() => draft.kind === 'new' || topicChanged(base, cleaned), [cleaned])
+  const untouched = useRef(false)
+  untouched.current = own && !changed && draft.status === 'draft' && draft.submittedAt === null
+  // Leaving an untouched draft drops it, so it does not show up as work in progress anywhere.
+  useEffect(() => () => {
+    if (untouched.current && !saving.current) fetch(`/api/drafts/${draft.id}`, { method: 'DELETE', credentials: 'same-origin', keepalive: true }).then(() => refreshIndex(), () => {})
+  }, [])
   const errors = useMemo(() => {
     const m = new Map<string, string[]>()
     for (const i of issues) m.set(i.path, [...(m.get(i.path) ?? []), i.cs])
@@ -162,7 +172,7 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
 
   // ——— Submit ———
   const onSubmitted = (d: DraftView) => { setDraft(d); rev.current = d.rev; refreshIndex() }
-  const status = draft.status === 'review' ? `${STATUS.review} · ${approvalText(draft)}` : STATUS[draft.status]
+  const status = draft.status === 'review' ? `${STATUS.review} · ${approvalText(draft)}` : draft.status === 'draft' && !changed ? 'zatím beze změny' : STATUS[draft.status]
   // Back to the published topic (a new one is not published yet: its subject).
   const back = draft.kind === 'edit' ? `/ucivo/${g}/${s}/${draft.topicId}` : `/ucivo/${g}/${s}`
 
@@ -230,7 +240,7 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
               : <span />}
         </div>
       </div>
-      {submitting && <Submit draft={draft} issues={issues} flush={flush} goIssue={(i) => { setSubmitting(false); goIssue(i) }} onClose={() => setSubmitting(false)} onDone={onSubmitted} />}
+      {submitting && <Submit draft={draft} changed={changed} issues={issues} flush={flush} goIssue={(i) => { setSubmitting(false); goIssue(i) }} onClose={() => setSubmitting(false)} onDone={onSubmitted} />}
     </Ctx.Provider>
   )
 }
@@ -394,8 +404,8 @@ function ExplanationSection({ i, issues, jump }: { i: number; issues: Issue[]; j
 
 // ——— Submit ———
 
-function Submit({ draft, issues, flush, goIssue, onClose, onDone }: {
-  draft: DraftView; issues: Issue[]; flush: () => Promise<void>; goIssue: (i: Issue) => void; onClose: () => void; onDone: (d: DraftView) => void
+function Submit({ draft, changed, issues, flush, goIssue, onClose, onDone }: {
+  draft: DraftView; changed: boolean; issues: Issue[]; flush: () => Promise<void>; goIssue: (i: Issue) => void; onClose: () => void; onDone: (d: DraftView) => void
 }) {
   const [note, setNote] = useState('')
   const [busy, setBusy] = useState(false)
@@ -424,8 +434,10 @@ function Submit({ draft, issues, flush, goIssue, onClose, onDone }: {
   }
   return (
     <Modal title="Odeslat ke kontrole" onClose={onClose}
-      actions={<><button class="btn" onClick={onClose}>Zpět k úpravám</button><Busy class="btn primary" on={busy} disabled={issues.length > 0} onClick={send}><I.send />Odeslat</Busy></>}>
-      {issues.length > 0 ? (
+      actions={<><button class="btn" onClick={onClose}>Zpět k úpravám</button><Busy class="btn primary" on={busy} disabled={issues.length > 0 || !changed} onClick={send}><I.send />Odeslat</Busy></>}>
+      {!changed ? (
+        <p>V tématu zatím není žádná změna, takže není co kontrolovat. Uprav výklad nebo otázky a pak ho pošli.</p>
+      ) : issues.length > 0 ? (
         <>
           <p>Než téma odešleš, oprav ještě <b>{issues.length}</b> {issues.length === 1 ? 'věc' : issues.length < 5 ? 'věci' : 'věcí'}:</p>
           <ul class="issue-list">{issues.slice(0, 10).map((i, k) => <li key={k}><button onClick={() => goIssue(i)}>{i.cs}</button></li>)}</ul>
