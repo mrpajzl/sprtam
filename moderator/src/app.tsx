@@ -17,7 +17,7 @@ import { refreshIndex } from './store'
 import { I, Toasts } from './ui/kit'
 
 // Screens: /ucivo[/<grade>[/<subject>[/<topic>]]] library and a topic read only – open to everyone · /navrh/<id> editor ·
-// /kontrola every change by state (open / approved / rejected, ?moje=1 only mine) · /kontrola/<id> one change · /historie/<grade>/<subject>/<topic> versions ·
+// /kontrola every change by state (open / approved / rejected; ?moje=1 only mine, ?rocnik=&predmet= one grade and subject) · /kontrola/<id> one change · /historie/<grade>/<subject>/<topic> versions ·
 // /pomucky widget requests · /vydani releases (admin) · /uzivatele moderators (admin) · /ucet own account ·
 // /prihlaseni[?dalsi=<path>] sign-in · /pozvanka#<token> invite. Everything except the library needs a signed-in moderator.
 
@@ -44,7 +44,7 @@ export function App() {
   const [waiting, setWaiting] = useState(0)
   useEffect(() => {
     if (!session?.user) return
-    get<{ mine: boolean; myVerdict: string | null }[]>('/api/reviews').then((l) => setWaiting(l.filter((d) => !d.mine && !d.myVerdict).length), () => {})
+    get<{ mine: boolean; myVerdict: string | null; status: string }[]>('/api/reviews').then((l) => setWaiting(l.filter((d) => d.status === 'review' && !d.mine && !d.myVerdict).length), () => {})
   }, [session?.user?.id, route.join('/')])
 
   // Phones: the "Více" sheet of the bottom bar closes on every navigation.

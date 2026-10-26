@@ -146,8 +146,9 @@ on('DELETE', '/api/drafts/:id/reviews/:rid', (req, _res, p, ip) => deleteReview(
 on('POST', '/api/drafts/:id/reviews/:rid/apply', async (req, _res, p, ip) => applySuggestion(requireSession(req), p[0], p[1], await readJson(req), ip))
 on('GET', '/api/drafts/:id/thread', (req, _res, p) => getThread(requireSession(req), p[0]))
 on('POST', '/api/drafts/:id/reject', async (req, _res, p, ip) => rejectDraft(requireSession(req), p[0], await readJson(req), ip))
-on('GET', '/api/reviews', (req) => reviewQueue(requireSession(req), query(req, 'tab') ?? 'open', query(req, 'mine') === '1'))
-on('GET', '/api/reviews/counts', (req) => reviewCounts(requireSession(req), query(req, 'mine') === '1'))
+const reviewFilter = (req: Req) => ({ mine: query(req, 'mine') === '1', grade: query(req, 'grade') || null, subject: query(req, 'subject') || null })
+on('GET', '/api/reviews', (req) => reviewQueue(requireSession(req), query(req, 'tab') ?? 'open', reviewFilter(req)))
+on('GET', '/api/reviews/counts', (req) => reviewCounts(requireSession(req), reviewFilter(req)))
 
 // ——— Requests for new widgets ———
 
