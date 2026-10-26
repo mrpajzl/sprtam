@@ -2,7 +2,7 @@
 
 Šprtám je PWA pro opakování učiva ZŠ a SŠ. Obsah odpovídá **RVP ZV** (základní škola) a **RVP G** (gymnázium) a běžným ŠVP. Rozdělení: stupeň → třída → předmět → téma.
 
-Celé učivo jsou **JSON soubory ve složce [`content/`](../content)**. Nejsou v nich žádný kód ani žádné výpočty, jen data. Aplikace, kontrola obsahu i předrenderované stránky je čtou stejně.
+Celé učivo jsou **JSON dokumenty**. Nejsou v nich žádný kód ani žádné výpočty, jen data. Uložené jsou v obsahové službě (moderace, databáze s verzemi), odkud je za běhu čte aplikace i server sprtam.cz ([Obsah a jeho API](OBSAH.md)). Pro práci mimo moderaci je `npm run content:pull` stáhne jako soubory do složky `content/`. Je to jen místní kopie: není v gitu a další `content:pull` ji přepíše. Změny se do učiva dostanou přes moderaci.
 
 | Kde | Co |
 |---|---|
@@ -165,7 +165,7 @@ npm run check:content                  # všechno
 npm run check:content -- z6/matematika # jen část (filtr podle cesty)
 ```
 
-Kontroluje rozložení složek, každý soubor proti formátu (neznámé nebo chybějící pole, typy, rozsahy), pravidla widgetů a otázek, pravidla výkladu výše, jedinečnost slovíček, formátování a aktuálnost generovaných souborů. Spouští se při každém nasazení (`Dockerfile`); s chybou se nic nenasadí. Hlášky jsou anglicky a obsahují cestu, např. `content/topics/z6/matematika/uhel.json explanations[1].blocks[4]: widget gap: items[0]: answer out of range`.
+Kontroluje rozložení složek, každý soubor proti formátu (neznámé nebo chybějící pole, typy, rozsahy), pravidla widgetů a otázek, pravidla výkladu výše, jedinečnost slovíček, formátování a aktuálnost generovaných souborů. Kontrolu dokumentů ([`src/content/check.ts`](../src/content/check.ts)) spouští i obsahová služba před každým zveřejněním. S chybou se nic nezveřejní. Hlášky jsou anglicky a obsahují cestu, např. `content/topics/z6/matematika/uhel.json explanations[1].blocks[4]: widget gap: items[0]: answer out of range`.
 
 Dál se hodí `npx tsx scripts/check-quiz.ts` (každý režim kvízu jde sestavit a každá odpověď `input` projde vlastní kontrolou) a `node scripts/crawl.mjs` (otevře každé téma v prohlížeči a hlásí chyby).
 
@@ -193,7 +193,7 @@ Nejdřív projdi [galerii](https://sprtam.cz/widgety): většinou stačí existu
      examples: [{ title: 'Tři čtvrtiny', props: { numerator: 3, denominator: 4 } }],
      check: (p) => [],                   // pravidla, která schéma neumí (anglicky)
      Component: Fraction,
-     // volitelně: Question (jen zadání do otázky), checkQuestion, html (text pro předrenderovanou stránku)
+     // volitelně: Question (jen zadání do otázky), checkQuestion, html (text pro stránku od serveru, server/pages.ts)
    })
    ```
 
@@ -208,6 +208,6 @@ Kontrola selže, když soubor widgetu chybí v seznamu, název se liší od soub
 Formát (`src/content/format.ts`) i vlastnosti widgetů mění vždy celý obsah naráz, v jednom pull requestu:
 
 - **Zpětně kompatibilní změna** (nové nepovinné pole, nový typ bloku, otázky nebo nový widget): uprav `format.ts` nebo widget, doplň ukázku do [`src/content/examples.ts`](../src/content/examples.ts) (u bloků a otázek) a spusť `npm run content:generate`. `format` zůstává.
-- **Nekompatibilní změna** (přejmenované, odebrané nebo jinak míněné pole): zvyš `FORMAT` v `format.ts`, napiš jednorázový skript, který převede **všechny** soubory v `content/` (načíst JSON → upravit → `JSON.stringify(data, null, 2) + '\n'`), spusť ho a přilož ho k pull requestu (do repozitáře nepatří). Aplikace čte jen jednu verzi formátu, protože obsah se vždy nasazuje spolu s ní. Pozor na pole, na kterých je uložený pokrok (`id`, `en`): ta se nepřejmenovávají nikdy.
+- **Nekompatibilní změna** (přejmenované, odebrané nebo jinak míněné pole): zvyš `FORMAT` v `format.ts` a převeď **všechny** dokumenty v obsahové službě naráz ([Obsah a jeho API](OBSAH.md)). Aplikace čte jen jednu verzi formátu, ale učivo se teď nasazuje odděleně od ní: převod obsahu a nasazení aplikace se musí sejít, nebo musí aplikace po přechodnou dobu umět obě verze. Pozor na pole, na kterých je uložený pokrok (`id`, `en`): ta se nepřejmenovávají nikdy.
 
 Po každé změně formátu: `npm run content:generate`, `npm run check:content`, `npm run build`.

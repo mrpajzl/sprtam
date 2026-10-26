@@ -38,7 +38,7 @@ To je celá zpráva. `new` je `true`, pokud tohle zařízení posílá ping úpl
 
 ## Co server ukládá
 
-Kód serveru: funkce `ping` v [`server/index.mjs`](../server/index.mjs). Server z celého požadavku přečte jen tělo (nejvýš zhruba 100 znaků) a zvýší dvě počítadla pro dnešní den:
+Kód serveru: funkce `ping` v [`server/index.ts`](../server/index.ts). Server z celého požadavku přečte jen tělo (nejvýš zhruba 100 znaků) a zvýší dvě počítadla pro dnešní den:
 
 ```json
 {

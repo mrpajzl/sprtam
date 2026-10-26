@@ -12,7 +12,7 @@ let fails = 0
 const ok = (cond, msg) => { console.log(cond ? '✓' : '✗', msg); if (!cond) fails++ }
 const path = () => p.evaluate(() => location.pathname + location.search + location.hash)
 
-// Direct load of a deep link: prerendered page, then the app renders the same topic.
+// Direct load of a deep link: the page from the server, then the app renders the same topic.
 await p.goto(`${BASE}/g/z5/matematika/zlomky`)
 ok(await p.locator('.seg').count() > 0, 'topic opened directly renders the app screen')
 ok((await p.title()).startsWith('Zlomky – Matematika, 5. třída'), `topic title: ${await p.title()}`)

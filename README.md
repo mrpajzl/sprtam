@@ -43,7 +43,8 @@ Podrobně: **[Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md)**
 | [Statistiky](docs/STATISTIKY.md) | všichni | Jak přesně funguje počítání uživatelů |
 | [Architektura](docs/ARCHITEKTURA.md) | vývojáři | Technologie, struktura kódu, server, nasazení, testy |
 | [Jak psát učivo](docs/CONTENT.md) | autoři obsahu | Postup, pravidla výkladu, nový widget, změny formátu |
-| [Formát obsahu](docs/FORMAT.md) | autoři obsahu | Reference všech polí JSON souborů v `content/` (generovaná) |
+| [Formát obsahu](docs/FORMAT.md) | autoři obsahu | Reference všech polí JSON dokumentů učiva (generovaná) |
+| [Obsah a jeho API](docs/OBSAH.md) | vývojáři | Kde je učivo uložené, vydání, API pro aplikaci |
 | [Přístupy k výuce](docs/PRISTUPY.md) | autoři obsahu, rodiče | Waldorfská škola: epochy, vlastní výklad a témata |
 | [Widgety](docs/WIDGETY.md) | autoři obsahu | Reference interaktivních pomůcek (generovaná), živě v [galerii](https://sprtam.cz/widgety) |
 | [Moderace](docs/MODERACE.md) | moderátoři, správci | Editor učiva s živým náhledem, přihlášení klíčem, kontrola a schvalování jinými moderátory |
@@ -57,12 +58,13 @@ Ať už jde o chybu v učivu, nebo v aplikaci, založte prosím **[issue](https:
 
 ```sh
 npm install
+npm run content:pull     # místní kopie aktuálního učiva do content/
 npm run dev              # http://localhost:5173
 npm run check:content    # kontrola učiva (formát, widgety, odpovědi, pravidla výkladu)
 npm run content:generate # JSON Schema a reference (FORMAT.md, WIDGETY.md) po změně formátu nebo widgetu
 npm run content:format   # sjednotí formátování JSON v content/
-npm run build            # kontrola typů + produkční build do dist/
+npm run build            # kontrola typů + produkční build aplikace (dist/) a serveru (dist-server/)
 ```
 
-Učivo jsou JSON soubory v [`content/`](content) – jedno téma = jeden soubor. Widgety jsou v `src/widgets/`, každý ve vlastním souboru.
+Učivo jsou JSON dokumenty v obsahové službě (moderace) a aplikace je čte za běhu: [Obsah a jeho API](docs/OBSAH.md). Widgety jsou v `src/widgets/`, každý ve vlastním souboru.
 Struktura kódu, testy a nasazení: [Architektura](docs/ARCHITEKTURA.md). Jak přidat učivo nebo widget: [CONTENT.md](docs/CONTENT.md).

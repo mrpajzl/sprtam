@@ -4,10 +4,13 @@ Technický popis pro vývojáře a pro každého, kdo chce vědět, jak aplikace
 
 ## Přehled
 
-Šprtám je **PWA** (webová aplikace, která jde nainstalovat a funguje offline). Skládá se ze dvou částí:
+Šprtám je **PWA** (webová aplikace, která jde nainstalovat a funguje offline). Skládá se ze tří částí:
 
 1. **Aplikace v prohlížeči.** Dělá všechno: zobrazuje učivo, vyhodnocuje kvízy, ukládá pokrok, doporučuje témata, propojuje zařízení.
-2. **Malý server** ([`server/index.mjs`](../server/index.mjs), necelých 120 řádků bez závislostí). Jen posílá soubory aplikace a sčítá denní ping. Nemá databázi, účty ani logiku aplikace.
+2. **Server sprtam.cz** ([`server/`](../server), jeden soubor bez závislostí). Posílá soubory aplikace, stránky a učivo a sčítá denní ping. Nemá databázi uživatelů, účty ani logiku aplikace.
+3. **Obsahová služba** (moderace, [moderace.sprtam.cz](https://moderace.sprtam.cz), [`moderator/`](../moderator)). Tady je učivo uložené: databáze s verzemi, kontrola a schvalování změn. Server sprtam.cz si z ní drží kopii aktuálního vydání učiva ([Obsah a jeho API](OBSAH.md)).
+
+Žáci se obsahové služby nikdy nedotknou: všechno dostanou od serveru sprtam.cz.
 
 ```mermaid
 flowchart LR
@@ -15,9 +18,11 @@ flowchart LR
       UI[Aplikace<br/>Preact] --> LS[(localStorage<br/>pokrok)]
       SW[Service worker<br/>cache učiva] --> UI
     end
-    UI -- stránky a soubory --> CF[Cloudflare] --> P[Traefik<br/>Coolify] --> S[server/index.mjs]
+    UI -- stránky, soubory, učivo --> CF[Cloudflare] --> P[Traefik<br/>Coolify] --> S[server sprtam.cz]
     UI -- 1× denně ping --> CF
     S --> ST[(data/stats.json<br/>denní součty)]
+    S --> CC[(data/content<br/>kopie vydání učiva)]
+    S -- každých 15 s: nové vydání? --> M[obsahová služba<br/>moderace.sprtam.cz]
     UI <-. WebRTC, napřímo .-> UI2[Druhé zařízení]
 ```
 
@@ -30,7 +35,7 @@ flowchart LR
 | Offline | [vite-plugin-pwa](https://vite-pwa-org.netlify.app) (Workbox) |
 | QR kódy | [`uqr`](https://github.com/unjs/uqr) (generování), [`qr-scanner`](https://github.com/nimiq/qr-scanner) (čtení kamerou) |
 | Písma | Nunito, JetBrains Mono přes `@fontsource-variable` (součást buildu, nic se nestahuje z Google Fonts) |
-| Server | Node.js 24, jen vestavěné moduly (`node:http`, `node:fs`) |
+| Server | Node.js 24, jen vestavěné moduly (`node:http`, `node:fs`, `node:zlib`); sestavený Vite do jednoho souboru |
 | Testy | skripty v [`scripts/`](../scripts) s [`playwright-core`](https://playwright.dev) |
 
 Kompletní seznam závislostí: [`package.json`](../package.json).
@@ -60,17 +65,18 @@ src/
                         index.tsx = seznam
   ui/                   ikony, maskot, lišty
   stats.ts              denní anonymní ping
-content/                učivo jako JSON (viz CONTENT.md)
+content/                místní kopie učiva (npm run content:pull, není v gitu; viz OBSAH.md)
   topics/<ročník>/<předmět>/_subject.json, <téma>.json
   vocab/<úroveň>.json
   approaches/<přístup>/ approach.json, <ročník>.json (plán: epochy a témata)
-  schema/               JSON Schema pro editory (generované)
+  schema/               JSON Schema pro editory (generované, v gitu)
 plugins/
-  content.ts            čtení content/ v Node (pro build a skripty)
-  content-modules.ts    virtual:content – jeden chunk na předmět
-  prerender.ts          HTML stránka pro každé téma (sdílení, vyhledávače)
-  topic-index.ts        lehký index všech témat pro hledání
-server/index.mjs        produkční server
+  content.ts            čtení content/ v Node (pro skripty)
+  content-dev.ts        API učiva při vývoji (z content/, nebo z obsahové služby)
+server/
+  index.ts              produkční server
+  content.ts            kopie aktuálního vydání učiva z obsahové služby
+  pages.ts              HTML stránka pro každé téma (sdílení, vyhledávače)
 moderator/              moderace: editor učiva pro pozvané moderátory (docs/MODERACE.md)
 public/                 statické soubory, ikony, pomocné skripty
 scripts/                kontroly obsahu a testy v prohlížeči
@@ -79,12 +85,14 @@ docs/                   tato dokumentace
 
 ## Jak se aplikace načítá
 
-1. Prohlížeč otevře např. `/g/z5/matematika/zlomky`. Server vrátí **předrenderovanou stránku** s obsahem tématu ([`plugins/prerender.ts`](../plugins/prerender.ts)). Obsah je vidět hned, i bez JavaScriptu, a vyhledávače i náhledy odkazů dostanou titulek a popis.
-2. Načte se aplikace a vykreslí stejnou obrazovku interaktivně.
-3. Service worker na pozadí uloží celé učivo všech ročníků do cache. Každý předmět je při buildu spojený z JSON souborů svých témat do jednoho souboru ([`plugins/content-modules.ts`](../plugins/content-modules.ts)), takže se načítá jen to, co je potřeba, ale offline je k dispozici všechno.
+1. Prohlížeč otevře např. `/g/z5/matematika/zlomky`. Server vrátí **hotovou stránku** s obsahem tématu ([`server/pages.ts`](../server/pages.ts)), vykreslenou z aktuálního vydání učiva. Obsah je vidět hned, i bez JavaScriptu, a vyhledávače i náhledy odkazů dostanou titulek a popis. Ve stránce je i manifest vydání (seznam souborů učiva, [Obsah a jeho API](OBSAH.md#api-pro-aplikaci)).
+2. Načte se aplikace a vykreslí stejnou obrazovku interaktivně. Učivo si bere z API po souborech: jeden soubor na předmět, takže se načítá jen to, co je potřeba.
+3. Až má prohlížeč volnou chvíli, aplikace uloží do cache všechny soubory aktuálního vydání, takže offline je k dispozici celé učivo všech ročníků ([`src/content/remote.ts`](../src/content/remote.ts)).
 4. Zavolá se denní ping ([Statistiky](STATISTIKY.md)).
 
 Obrazovky bez vlastní stránky (kvíz, hledání, přenos pokroku) dostanou prázdnou kostru `app.html` s `noindex`. Neznámé adresy vrací 404.
+
+Nové vydání učiva (schválená změna v moderaci) je na sprtam.cz do 15 sekund. Otevřená aplikace si ho všimne, když se k ní vrátíš, nebo nejpozději za 10 minut; obrazovky, které už máš otevřené, se nemění pod rukama.
 
 ### Adresy
 
@@ -119,13 +127,15 @@ Po nasazení nové verze může mít telefon v cache starou stránku, která odk
 
 ## Server
 
-[`server/index.mjs`](../server/index.mjs) dělá jen tohle:
+[`server/index.ts`](../server/index.ts) dělá jen tohle:
 
 | Cesta | Co dělá |
 |---|---|
 | `POST /api/ping` | Zvýší denní počítadlo ([Statistiky](STATISTIKY.md)) |
 | `GET /api/stats` | Vrátí denní součty, chráněno tokenem `STATS_TOKEN` |
+| `GET /api/content/manifest`, `GET /api/content/f/<hash>.json` | Učivo pro aplikaci ([API pro aplikaci](OBSAH.md#api-pro-aplikaci)) |
 | `GET /healthz` | Kontrola, že server běží |
+| stránky, `sitemap.xml`, `robots.txt` | Vykreslené z aktuálního vydání učiva ([`server/pages.ts`](../server/pages.ts)) |
 | ostatní | Statické soubory z `dist/` |
 
 Bezpečnostní hlavičky u všech stránek a souborů aplikace:
@@ -135,13 +145,13 @@ Bezpečnostní hlavičky u všech stránek a souborů aplikace:
 - `Permissions-Policy: camera=(self), microphone=(), geolocation=()`: kameru smí použít jen aplikace sama (QR kódy), mikrofon a poloha jsou zakázané.
 - `X-Content-Type-Options: nosniff`.
 
-Server nevede log požadavků, nenastavuje cookies a jediné, co zapisuje na disk, je `stats.json` (v produkci ve volume `/data`).
+Server nevede log požadavků, nenastavuje cookies a na disk (v produkci volume `/data`) zapisuje jen `stats.json` a kopii vydání učiva (`content/`).
 
 Stará adresa `sprtam.ondrejzraly.cz` vede na stejný server. Prohlížeči pošle skript, který přenese pokrok na `sprtam.cz` ([Propojení zařízení](PROPOJENI-ZARIZENI.md#přechod-ze-staré-adresy)), a ostatním (vyhledávačům) trvalé přesměrování 301.
 
 ## Moderace
 
-Učivo upravují pozvaní moderátoři v samostatné aplikaci [moderace.sprtam.cz](https://moderace.sprtam.cz) ([`moderator/`](../moderator), vlastní Dockerfile a kontejner). Přihlašuje se jen klíčem (passkey). Každou změnu schvaluje jiný moderátor a pak se hned zveřejní. Moderace je zároveň obsahová služba: učivo se všemi verzemi je v její databázi ([Obsah a jeho API](OBSAH.md)). Podrobně: [Moderace](MODERACE.md).
+Učivo upravují pozvaní moderátoři v samostatné aplikaci [moderace.sprtam.cz](https://moderace.sprtam.cz) ([`moderator/`](../moderator), vlastní Dockerfile a kontejner), která je zároveň obsahovou službou: učivo se všemi verzemi je v její databázi a každou změnu schvaluje jiný moderátor. Server sprtam.cz z ní jen čte veřejné API vydání učiva; nic jiného o moderaci neví a nemá k ní žádný přístup. Podrobně: [Moderace](MODERACE.md), [Obsah a jeho API](OBSAH.md).
 
 ## Nasazení
 
@@ -150,21 +160,21 @@ Produkce běží v Dockeru na vlastním serveru spravovaném přes [Coolify](htt
 1. Změna se dostane do větve `main` přes pull request.
 2. Coolify automaticky sestaví [`Dockerfile`](../Dockerfile):
    - `npm ci`,
-   - `npm run check:content` (kontrola učiva a widgetů; když selže, nasazení se zastaví),
-   - `npm run build` (kontrola typů a produkční build),
-   - výsledný obraz obsahuje jen `dist/` a `server/`.
-3. Spustí kontejner s volume `/data` pro statistiky a ověří `/healthz`.
+   - `npm run build` (kontrola typů, build aplikace do `dist/` a serveru do `dist-server/`),
+   - výsledný obraz obsahuje jen `dist/` a `dist-server/`, žádné učivo.
+3. Spustí kontejner s volume `/data` (statistiky a kopie učiva) a ověří `/healthz`.
 
-Produkční verze se tedy vždy staví přímo z veřejného zdrojového kódu tohoto repozitáře.
+Produkční verze aplikace se tedy vždy staví přímo z veřejného zdrojového kódu tohoto repozitáře. Učivo se nasazuje zvlášť: schválením v moderaci (bez buildu, do 15 sekund).
 
 ### Proměnné prostředí
 
 | Proměnná | Kde | Význam |
 |---|---|---|
 | `VITE_STATS_URL` | build | Adresa pro denní ping. Bez ní se ping neposílá. V `Dockerfile` je `/api/ping`. |
-| `SITE_URL` | build | Veřejná adresa pro odkazy v předrenderovaných stránkách a `sitemap.xml`, výchozí `https://sprtam.cz`. |
+| `SITE_URL` | server | Veřejná adresa pro odkazy ve stránkách a `sitemap.xml`, výchozí `https://sprtam.cz`. |
+| `CONTENT_API` | server | Obsahová služba, ze které server bere učivo, výchozí `https://moderace.sprtam.cz`. Při vývoji i pro `npm run content:pull`. |
 | `PORT` | server | Port, výchozí `8080`. |
-| `DATA_DIR` | server | Složka pro `stats.json`, v Dockeru `/data`. |
+| `DATA_DIR` | server | Složka pro `stats.json` a kopii učiva (`content/`), v Dockeru `/data`. |
 | `STATS_TOKEN` | server | Token pro `/api/stats`. Bez něj je souhrn veřejný. |
 | `LEGACY_HOSTS` | server | Domény, ze kterých se přesměrovává na `sprtam.cz`, výchozí `sprtam.ondrejzraly.cz` (stará adresa) a `www.sprtam.cz`. |
 | `DIST` | server | Složka s buildem, výchozí `dist/`. |
@@ -173,13 +183,17 @@ Produkční verze se tedy vždy staví přímo z veřejného zdrojového kódu t
 
 ```sh
 npm install
-npm run dev              # http://localhost:5173
+npm run content:pull     # místní kopie aktuálního učiva do content/ (z CONTENT_API)
+npm run dev              # http://localhost:5173, učivo z content/ (bez něj z obsahové služby)
 npm run check:content    # kontrola učiva (formát, widgety, odpovědi, pravidla výkladu)
 npm run content:generate # content/schema/*.json, docs/FORMAT.md, docs/WIDGETY.md
 npm run content:format   # sjednotí formátování JSON v content/
-npm run build            # typy + produkční build do dist/
-node server/index.mjs    # produkční server nad dist/ na :8080
+npm run build            # typy + build aplikace do dist/ a serveru do dist-server/
+npm start                # produkční server na :8080 (učivo z CONTENT_API)
+npx tsx scripts/content-stub.ts  # náhrada obsahové služby nad content/ na :8097 (pro testy: CONTENT_API=http://localhost:8097)
 ```
+
+Vývojový server čte učivo z `content/` a po každé změně souboru stránku obnoví, takže se dá zkoušet i obsah, který ještě není v moderaci ([`plugins/content-dev.ts`](../plugins/content-dev.ts)).
 
 Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím není. `check-content.ts` a `check-quiz.ts` běží v Node, ostatní ovládají skutečný prohlížeč (Playwright Chromium; cesta k němu je nastavená pro macOS). Většina prohlížečových skriptů potřebuje běžící dev server na portu 5179 (`npx vite --port 5179`):
 
@@ -196,8 +210,11 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/code-test.mjs` | kód pokroku tam a zpět |
 | `scripts/import-test.mjs` | import pokroku odkazem (proti produkci) |
 | `scripts/routing-test.mjs` | adresy a navigace nad produkčním buildem |
-| `scripts/verify-prod.mjs` | že produkce ukazuje všechna témata |
+| `scripts/offline-test.mjs` | po jedné návštěvě funguje offline celé učivo (nad produkčním buildem) |
+| `scripts/verify-prod.mjs` | že produkce ukazuje všechna témata svého vydání |
 | `scripts/crawl.mjs` | otevře každé téma a hlásí chyby za běhu |
+| `scripts/content-pull.ts` | stáhne aktuální vydání učiva do `content/` (`npm run content:pull`) |
+| `scripts/content-stub.ts` | náhrada veřejného API obsahové služby nad `content/` (pro testy serveru) |
 | `scripts/moderator-test.mjs` | moderace a obsahová služba: přihlášení klíčem, bezpečnostní pravidla, editor a náhled, kontrola a zveřejnění, historie a návraty, API tokeny, zálohy (spouští vlastní server, napřed `npm run moderator:build`) |
 | `scripts/shots.mjs` | snímky obrazovek (přehled widgetů je v aplikaci na `/widgety`) |
 
