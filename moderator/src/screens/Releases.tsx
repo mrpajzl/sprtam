@@ -11,7 +11,7 @@ import { REASON } from './History'
 
 interface System {
   release: number | null; publishedAt: number | null; docs: number; versions: number; chainOk: boolean; approvals: number; reviews: number; commit: string
-  backup: { configured: boolean; lastAt: number | null; lastBytes: number | null; last24h: number }
+  backup: { configured: boolean; lastAt: number | null; lastBytes: number | null; last24h: number; lastVerified: number | null; lastNote: string | null; lastGoodAt: number | null; mirrored: number | null }
 }
 interface Release { id: number; createdAt: number; reason: keyof typeof REASON; note: string | null; author: string | null; draftId: string | null; docs: number; keys: string[] }
 
@@ -30,7 +30,7 @@ export function Releases() {
   const reload = () => { get<System>('/api/admin/system').then(setSys, (e) => toast(e.message, 'bad')); load() }
   useEffect(reload, [])
 
-  const backupAge = sys?.backup.lastAt ? Date.now() - sys.backup.lastAt : null
+  const goodAge = sys?.backup.lastGoodAt ? Date.now() - sys.backup.lastGoodAt : null
   return (
     <div class="page-narrow">
       <h1>Vydání učiva</h1>
@@ -39,10 +39,10 @@ export function Releases() {
           <div><small class="label">Zveřejněno</small><b>vydání {sys.release ?? '–'}</b><small>{sys.publishedAt ? ago(sys.publishedAt) : ''}</small></div>
           <div><small class="label">Obsah</small><b>{sys.docs} dokumentů</b><small>{sys.versions} verzí v historii</small></div>
           <div class={sys.chainOk ? '' : 'bad'}><small class="label">Historie</small><b>{sys.chainOk ? 'neporušená' : 'POŠKOZENÁ'}</b><small>kontrolní řetězec verzí</small></div>
-          <div class={!sys.backup.configured || backupAge === null || backupAge > 2 * HOUR ? 'bad' : ''}>
+          <div class={!sys.backup.configured || goodAge === null || goodAge > 2 * HOUR || sys.backup.lastVerified === 0 ? 'bad' : ''} title={sys.backup.lastNote ?? ''}>
             <small class="label">Záloha</small>
-            <b>{!sys.backup.configured ? 'vypnutá' : sys.backup.lastAt ? ago(sys.backup.lastAt) : 'zatím žádná'}</b>
-            <small>{sys.backup.lastBytes ? `${mb(sys.backup.lastBytes)} · ${sys.backup.last24h}× za 24 h` : 'stahuje si ji druhý server'}</small>
+            <b>{!sys.backup.configured ? 'vypnutá' : sys.backup.lastVerified === 0 ? 'CHYBA' : sys.backup.lastGoodAt ? `ověřená ${ago(sys.backup.lastGoodAt)}` : 'zatím žádná'}</b>
+            <small>{sys.backup.lastVerified === 0 && sys.backup.lastNote ? sys.backup.lastNote : sys.backup.lastBytes ? `${mb(sys.backup.lastBytes)} · ${sys.backup.last24h}× za 24 h${sys.backup.mirrored ? ` · zrcadlo do vydání ${sys.backup.mirrored}` : ''}` : 'stahuje si ji druhý server'}</small>
           </div>
           <div><small class="label">Schvalování</small><b>{sys.approvals}× schválení</b><small>{sys.reviews} ke kontrole</small></div>
         </div>

@@ -40,10 +40,26 @@ export function snapshot(res: Res, ip: string) {
   } finally { rmSync(file, { force: true }) }
 }
 
+/** The puller says how checking and storing the snapshot went (and up to which release the git mirror is). */
+export function backupReport(body: Record<string, unknown>) {
+  const sha = typeof body.sha256 === 'string' && /^[0-9a-f]{64}$/.test(body.sha256) ? body.sha256 : ''
+  const note = typeof body.message === 'string' ? body.message.slice(0, 500) : null
+  const mirrored = Number.isInteger(body.mirrored) ? Number(body.mirrored) : null
+  if (!sha || run('UPDATE backups SET verified = ?, note = ?, mirrored = ? WHERE sha256 = ? AND id = (SELECT MAX(id) FROM backups WHERE sha256 = ?)', body.ok === true ? 1 : 0, note, mirrored, sha, sha).changes !== 1) {
+    throw new HttpError(404, 'Taková záloha tu není.')
+  }
+  return { ok: true }
+}
+
 export function backupStatus() {
-  const last = one<{ at: number; bytes: number }>('SELECT at, bytes FROM backups ORDER BY id DESC LIMIT 1')
+  const last = one<{ at: number; bytes: number; verified: number | null; note: string | null }>('SELECT at, bytes, verified, note FROM backups ORDER BY id DESC LIMIT 1')
+  const good = one<{ at: number }>('SELECT at FROM backups WHERE verified = 1 ORDER BY id DESC LIMIT 1')
+  const mirror = one<{ mirrored: number }>('SELECT mirrored FROM backups WHERE mirrored IS NOT NULL ORDER BY id DESC LIMIT 1')
   const day = one<{ n: number }>('SELECT COUNT(*) AS n FROM backups WHERE at > ?', Date.now() - 86_400_000)!.n
-  return { configured: !!CONFIG.backupToken, lastAt: last?.at ?? null, lastBytes: last?.bytes ?? null, last24h: day }
+  return {
+    configured: !!CONFIG.backupToken, lastAt: last?.at ?? null, lastBytes: last?.bytes ?? null, last24h: day,
+    lastVerified: last ? last.verified : null, lastNote: last?.note ?? null, lastGoodAt: good?.at ?? null, mirrored: mirror?.mirrored ?? null,
+  }
 }
 
 // ——— Releases for the git mirror ———

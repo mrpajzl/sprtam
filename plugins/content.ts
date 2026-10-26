@@ -1,6 +1,5 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { stripSchema } from '../src/content/docs'
 import type { ApproachFile, ApproachYearFile, GradeId, Subject, SubjectFile, SubjectId, Topic, VocabFile } from '../src/content/types'
 
 // Reads content/ from disk for build plugins and scripts (the app itself loads it with import.meta.glob,
@@ -32,6 +31,13 @@ export const readSubjects = (): Subject[] => subjectDirs().map(([g, s]) => readS
 
 /** Vocabulary levels, A1 first. */
 export const readVocab = (): VocabFile[] => readdirSync(VOCAB).filter((f) => f.endsWith('.json')).sort().map((f) => readJson<VocabFile>(join(VOCAB, f)))
+
+/** A document without the editor-only `$schema` (as src/content/docs.ts stripSchema; not imported here, it would pull the widgets into the Vite config). */
+const stripSchema = (v: unknown) => {
+  if (!v || typeof v !== 'object' || Array.isArray(v) || !('$schema' in v)) return v
+  const { $schema: _, ...rest } = v as Record<string, unknown>
+  return rest
+}
 
 /** Every content file under `dir` as documents (src/content/docs.ts): key = path without .json, value without `$schema`. Throws on invalid JSON. */
 export function readSnapshot(dir = CONTENT): Map<string, unknown> {

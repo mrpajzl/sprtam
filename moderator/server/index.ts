@@ -7,7 +7,7 @@ import {
   addKeyOptions, addKeyVerify, bearer, createToken, getSession, inviteInfo, inviteOptions, inviteVerify, listKeys, listTokens, loginOptions, loginVerify, logout,
   removeKey, removeToken, requireAdmin, requireRecent, requireSession,
 } from './auth'
-import { backupStatus, releaseChanges, releasesAfter, requireBackup, snapshot } from './backup'
+import { backupReport, backupStatus, releaseChanges, releasesAfter, requireBackup, snapshot } from './backup'
 import { CONFIG, LIMITS, MINUTE } from './config'
 import { contentIndex, readTopic } from './content'
 import { audit, one, run } from './db'
@@ -74,6 +74,7 @@ on('GET', '/api/public/v1/export', (req, res, _p, ip) => {
 // ——— Backups and the git mirror (the backup puller's token only) ———
 
 on('GET', '/api/internal/backup', (req, res, _p, ip) => { requireBackup(req); limit(`backup:${ipKey(ip)}`, 12, 60 * MINUTE); snapshot(res, ip); return SENT }, true)
+on('POST', '/api/internal/backup/report', async (req) => { requireBackup(req); return backupReport(await readJson(req, LIMITS.openBody)) }, true)
 on('GET', '/api/internal/releases', (req) => { requireBackup(req); return { releases: releasesAfter(query(req, 'after')), chain: verifyChain() } }, true)
 on('GET', '/api/internal/releases/:id', (req, _res, p) => { requireBackup(req); return releaseChanges(p[0]) }, true)
 

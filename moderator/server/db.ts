@@ -228,7 +228,10 @@ const MIGRATIONS: string[] = [
     at INTEGER NOT NULL,
     bytes INTEGER NOT NULL,
     sha256 TEXT NOT NULL,
-    ip TEXT
+    ip TEXT,
+    verified INTEGER,
+    note TEXT,
+    mirrored INTEGER
   );
   `,
 ]
