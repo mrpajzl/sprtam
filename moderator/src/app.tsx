@@ -3,7 +3,6 @@ import { get, onSignedOut, post } from './api'
 import type { Me } from './passkey'
 import { go, nav, useRoute } from './router'
 import { Account } from './screens/Account'
-import { Drafts } from './screens/Drafts'
 import { History } from './screens/History'
 import { Invite } from './screens/Invite'
 import { Library } from './screens/Library'
@@ -18,12 +17,12 @@ import { refreshIndex } from './store'
 import { I, Toasts } from './ui/kit'
 
 // Screens: /ucivo[/<grade>[/<subject>[/<topic>]]] library and a topic read only – open to everyone · /navrh/<id> editor ·
-// /navrhy own drafts · /kontrola review queue · /kontrola/<id> review of one change · /historie/<grade>/<subject>/<topic> versions ·
+// /kontrola every change by state (open / approved / rejected, ?moje=1 only mine) · /kontrola/<id> one change · /historie/<grade>/<subject>/<topic> versions ·
 // /pomucky widget requests · /vydani releases (admin) · /uzivatele moderators (admin) · /ucet own account ·
 // /prihlaseni[?dalsi=<path>] sign-in · /pozvanka#<token> invite. Everything except the library needs a signed-in moderator.
 
 const PUBLIC = ['ucivo']
-const SCREENS = ['ucivo', 'navrhy', 'kontrola', 'historie', 'pomucky', 'vydani', 'uzivatele', 'ucet']
+const SCREENS = ['ucivo', 'kontrola', 'historie', 'pomucky', 'vydani', 'uzivatele', 'ucet']
 
 /** Where to go after signing in: only a path of this app, never another site. */
 const nextPath = () => { const p = new URLSearchParams(location.search).get('dalsi') ?? '/'; return /^\/(?![/\\])/.test(p) ? p : '/' }
@@ -61,6 +60,8 @@ export function App() {
   if (!user && (screen === 'prihlaseni' || !PUBLIC.includes(screen))) return <><Login onDone={signedIn} /><Toasts /></>
   if (user && screen === 'prihlaseni') return <div class="boot" />
   if (user && screen === 'navrh' && route[1]) return <><Editor id={route[1]} me={user} /><Toasts /></>
+  // My drafts moved into the review screen (old links and bookmarks).
+  if (screen === 'navrhy') { go('/kontrola?moje=1', true); return <div class="boot" /> }
 
   const logout = async () => { await post('/api/auth/logout').catch(() => {}); setSession({ ...session, user: null }); go('/', true) }
   const link = (href: string, label: string, icon: preact.JSX.Element, on: boolean, badge = 0) => (
@@ -73,8 +74,7 @@ export function App() {
         <a class="brand" href="/" onClick={nav('/')}><b>šprtám</b><span>moderace</span></a>
         <nav class="tabs">
           {link('/', 'Učivo', <I.book />, screen === 'ucivo')}
-          {user && link('/kontrola', waiting ? `Ke kontrole · ${waiting}` : 'Ke kontrole', <I.check />, screen === 'kontrola')}
-          {user && link('/navrhy', 'Moje návrhy', <I.inbox />, screen === 'navrhy')}
+          {user && link('/kontrola', waiting ? `Kontrola · ${waiting}` : 'Kontrola', <I.check />, screen === 'kontrola')}
           {user && link('/pomucky', 'Pomůcky', <I.bulb />, screen === 'pomucky')}
           {user?.role === 'admin' && link('/vydani', 'Vydání', <I.layers />, screen === 'vydani')}
           {user?.role === 'admin' && link('/uzivatele', 'Moderátoři', <I.users />, screen === 'uzivatele')}
@@ -92,7 +92,6 @@ export function App() {
         {screen === 'ucivo' && (route[3]
           ? <TopicView key={route.slice(1, 4).join('/')} g={route[1]} s={route[2]} id={route[3]} me={user} />
           : <Library g={route[1]} s={route[2]} me={user} />)}
-        {user && screen === 'navrhy' && <Drafts me={user} />}
         {user && screen === 'kontrola' && (route[1] ? <Review key={route[1]} id={route[1]} me={user} /> : <ReviewQueue me={user} />)}
         {user && screen === 'historie' && route[3] && <History key={route.slice(1, 4).join('/')} g={route[1]} s={route[2]} id={route[3]} me={user} />}
         {user && screen === 'pomucky' && <Requests me={user} />}
@@ -106,7 +105,6 @@ export function App() {
         <nav class="bnav" aria-label="Hlavní navigace">
           {link('/', 'Učivo', <I.book />, screen === 'ucivo')}
           {link('/kontrola', 'Kontrola', <I.check />, screen === 'kontrola', waiting)}
-          {link('/navrhy', 'Návrhy', <I.inbox />, screen === 'navrhy')}
           {link('/pomucky', 'Pomůcky', <I.bulb />, screen === 'pomucky')}
           {admin
             ? <button class={['vydani', 'uzivatele', 'ucet'].includes(screen) || more ? 'on' : ''} onClick={() => setMore(!more)} aria-expanded={more}><I.more /><span>Více</span></button>

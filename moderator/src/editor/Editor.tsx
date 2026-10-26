@@ -34,7 +34,7 @@ export function Editor({ id, me }: { id: string; me: Me }) {
     setLoaded(null)
     get<Loaded>(`/api/drafts/${id}`).then(setLoaded, (e) => setError(e instanceof ApiError ? e.message : 'Návrh se nepodařilo načíst.'))
   }, [id])
-  if (error) return <div class="gate"><div class="gate-card"><h1>Návrh nejde otevřít</h1><div class="banner bad">{error}</div><a class="btn" href="/navrhy" onClick={nav('/navrhy')}>Moje návrhy</a></div></div>
+  if (error) return <div class="gate"><div class="gate-card"><h1>Návrh nejde otevřít</h1><div class="banner bad">{error}</div><a class="btn" href="/kontrola?moje=1" onClick={nav('/kontrola?moje=1')}>Moje změny</a></div></div>
   if (!loaded) return <div class="boot" />
   return <Workspace key={id} initial={loaded} me={me} />
 }

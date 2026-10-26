@@ -276,12 +276,40 @@ try {
   check(m2.release === 2 && m2.hash !== m1.hash && m2.files['subject/z6/matematika'] !== m1.files['subject/z6/matematika'] && m2.files['subject/z5/matematika'] === m1.files['subject/z5/matematika'], 'a new release changes only the files of the changed subject')
   check((await topicText()).includes('7 je prvočíslo'), 'the published topic is public right away')
 
+  const approvedTab = (await eva.api('GET', '/api/reviews?tab=published')).body
+  check(approvedTab.some((x) => x.id === draftId && x.decidedBy === 'Eva Učitelka' && x.release === 2) && !(await eva.api('GET', '/api/reviews')).body.some((x) => x.id === draftId), 'an approved change moves from the open tab to the approved one')
+  check((await eva.api('GET', '/api/reviews?tab=nope')).status === 400, 'an unknown review tab is refused')
+  await eva.page.goto(`${BASE}/kontrola?stav=schvaleno`)
+  check(await eva.page.locator('a.draft', { hasText: 'schválil/a Eva Učitelka' }).first().waitFor({ timeout: 5000 }).then(() => true, () => false), 'the approved tab lists the change with who approved it')
+
   // Eva's own draft started from the old version: conflict, then rebase.
   d = (await eva.api('GET', `/api/drafts/${evaDraft.id}`)).body
   check(d.draft.conflict, "a draft based on an older version is in conflict")
   check((await eva.api('POST', `/api/drafts/${evaDraft.id}/submit`, {})).status === 409, 'a draft in conflict cannot be sent')
   check((await eva.api('POST', `/api/drafts/${evaDraft.id}/rebase`, {})).body.draft?.conflict === false, 'rebasing resolves the conflict')
   check((await eva.api('DELETE', `/api/drafts/${evaDraft.id}`)).status === 200, 'a draft is deleted')
+
+  // A rejected change stays visible to every moderator, with the reason.
+  const doomed = (await eva.api('POST', '/api/drafts', { kind: 'edit', grade: 'z6', subject: 'matematika', topicId: 'uhel' })).body.draft
+  const doomedTopic = (await eva.api('GET', `/api/drafts/${doomed.id}`)).body.topic
+  await eva.api('PUT', `/api/drafts/${doomed.id}`, { rev: doomed.rev, topic: { ...doomedTopic, title: `${doomedTopic.title} (zkouška)` } })
+  const mineOpen = (await eva.api('GET', '/api/reviews?tab=open&mine=1')).body
+  check(mineOpen.length === 1 && mineOpen[0].id === doomed.id && mineOpen[0].status === 'draft', 'only mine lists my draft in progress among open changes')
+  check(!(await admin.api('GET', '/api/reviews?tab=open')).body.some((x) => x.id === doomed.id), "others don't see a draft in progress")
+  await eva.page.goto(`${BASE}/navrhy`)
+  await eva.page.waitForURL(/\/kontrola\?moje=1$/)
+  await eva.page.locator('a.draft', { hasText: '(zkouška)' }).click()
+  await eva.page.waitForURL(new RegExp(`/kontrola/${doomed.id}$`))
+  await eva.page.getByRole('link', { name: 'Pokračovat v úpravách' }).click()
+  check(await eva.page.waitForURL(new RegExp(`/navrh/${doomed.id}$`), { timeout: 5000 }).then(() => true, () => false), 'the old drafts page leads to my changes, and I continue editing from the detail')
+  check((await eva.api('POST', `/api/drafts/${doomed.id}/submit`, {})).status === 200, 'a second change is sent for review')
+  check((await admin.api('POST', `/api/drafts/${doomed.id}/reject`, { note: 'Tohle nechceme.' })).body.draft?.status === 'rejected', 'an admin rejects a change')
+  const rejectedTab = (await eva.api('GET', '/api/reviews?tab=rejected')).body
+  check(rejectedTab.length === 1 && rejectedTab[0].id === doomed.id && rejectedTab[0].decisionNote === 'Tohle nechceme.' && rejectedTab[0].decidedBy === 'Ada Správcová', 'the rejected tab lists the change with who rejected it and why')
+  const counts = (await eva.api('GET', '/api/reviews/counts')).body
+  check(counts.open === 0 && counts.published === 1 && counts.rejected === 1, 'the review tabs are counted')
+  await eva.page.goto(`${BASE}/kontrola?stav=zamitnuto`)
+  check(await eva.page.locator('a.draft', { hasText: 'Tohle nechceme.' }).waitFor({ timeout: 5000 }).then(() => true, () => false), 'the rejected tab shows why')
 
   // ——— History and rollback ———
   const hist = (await eva.api('GET', '/api/history/z6/matematika/prvocisla')).body
