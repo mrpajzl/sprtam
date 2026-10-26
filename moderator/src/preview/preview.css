@@ -3,3 +3,5 @@ html { scroll-behavior: smooth; }
 .blocks > .mod-focus { outline: 2px dashed var(--k-orange); outline-offset: 6px; border-radius: 6px; animation: mod-flash 0.9s var(--ease); }
 @keyframes mod-flash { 0% { outline-color: transparent; } 30% { outline-color: var(--k-orange); } }
 .row { pointer-events: none; opacity: 0.5; }
+/* A single widget in the widget gallery: no page chrome, the frame grows to fit. */
+.page.demo { padding: 12px 14px 16px; animation: none; }

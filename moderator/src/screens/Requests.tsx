@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'preact/hooks'
-import { WIDGET_GROUPS, WIDGETS } from '../../../src/widgets'
+import { WIDGETS } from '../../../src/widgets'
 import { ApiError, api, get, post } from '../api'
 import type { Me } from '../passkey'
 import { ago, Busy, Empty, I, Modal, toast } from '../ui/kit'
+import { Showcase } from '../ui/Showcase'
 
 // Requests for new interactive widgets (pomůcky). A widget is a piece of the app's code, so a moderator
 // describes what pupils should try out and where it would help; others vote; admins plan and build it.
@@ -33,13 +34,9 @@ export function Requests({ me }: { me: Me }) {
       </div>
       <p class="muted">
         Interaktivní pomůcky (zlomek, číselná osa, hodiny…) jsou součástí aplikace, takže novou musí naprogramovat vývojář. Popiš, co by si s ní děti měly
-        vyzkoušet a ke kterým tématům se hodí – ostatní moderátoři ji můžou podpořit. Teď je v aplikaci {count} pomůcek:{' '}
-        <a href="https://sprtam.cz/widgety" target="_blank" rel="noopener noreferrer">galerie <I.external /></a>.
+        vyzkoušet a ke kterým tématům se hodí – ostatní moderátoři ji můžou podpořit. Než navrhneš novou, projdi si níž {count} pomůcek, které už v aplikaci jsou –
+        často jde ta, kterou potřebuješ, nastavit z některé existující.
       </p>
-      <details class="tips">
-        <summary>Pomůcky, které už jsou</summary>
-        <ul class="w-have">{WIDGET_GROUPS.flatMap((gr) => gr.widgets).map((w) => <li key={w.name}><b>{w.title}</b> – {w.summary}</li>)}</ul>
-      </details>
       {!list ? <p class="muted">Načítám…</p> : !list.length ? <Empty>Zatím žádné žádosti. Chybí ti při vysvětlování nějaká pomůcka? Navrhni ji.</Empty> : (
         <div class="requests">
           {list.map((r) => (
@@ -68,6 +65,10 @@ export function Requests({ me }: { me: Me }) {
           ))}
         </div>
       )}
+      <section class="have">
+        <h2>Pomůcky, které už jsou</h2>
+        <Showcase />
+      </section>
       {edit && <RequestForm me={me} req={edit === 'new' ? null : edit} onClose={() => setEdit(null)} onDone={() => { setEdit(null); load() }} />}
     </div>
   )

@@ -9,9 +9,10 @@ import { QuestionView } from '../../../src/quiz/QuestionView'
 import { BlockView } from '../../../src/screens/Blocks'
 import { Inline } from '../../../src/ui/Inline'
 import { keyStyle, subjectStyle } from '../../../src/ui/glyphs'
+import { WidgetQuestion } from '../../../src/widgets'
 import { IArrow, IBack, IBolt, IBulb, ICheck, IClose, IMic, IPencil, IPin, IQr, IRepeat, IX } from '../../../src/ui/icons'
 import type { KeyColor } from '../../../src/content/curriculum'
-import type { PreviewMode, PreviewState, ToEditor, ToPreview } from './protocol'
+import type { PreviewMode, PreviewState, ToEditor, ToPreview, WidgetDemo } from './protocol'
 
 // The preview frame: the topic drawn by the app's own components and stylesheet (src/screens/Blocks.tsx,
 // src/quiz/QuestionView.tsx, src/styles.css), in the same markup as the topic screen and the quiz –
@@ -21,22 +22,46 @@ const send = (m: ToEditor) => parent.postMessage(m, location.origin)
 
 function Preview() {
   const [st, setSt] = useState<PreviewState | null>(null)
+  const [demo, setDemo] = useState<WidgetDemo | null>(null)
   useEffect(() => {
     const on = (e: MessageEvent<ToPreview>) => {
-      if (e.origin !== location.origin || e.source !== parent || e.data?.type !== 'state') return
-      setSt(e.data.state)
-      document.documentElement.dataset.theme = e.data.state.theme
-      if (e.data.state.theme === 'light') delete document.documentElement.dataset.theme
+      if (e.origin !== location.origin || e.source !== parent) return
+      const theme = e.data?.type === 'state' ? e.data.state.theme : e.data?.type === 'widget' ? e.data.demo.theme : null
+      if (!theme) return
+      if (e.data.type === 'state') setSt(e.data.state)
+      if (e.data.type === 'widget') setDemo(e.data.demo)
+      document.documentElement.dataset.theme = theme
+      if (theme === 'light') delete document.documentElement.dataset.theme
     }
     addEventListener('message', on)
     send({ type: 'ready' })
     return () => removeEventListener('message', on)
   }, [])
+  if (demo) return <Demo d={demo} />
   if (!st) return <div class="page" />
   const setMode = (mode: PreviewMode) => send({ type: 'mode', mode })
   return st.mode.kind === 'quiz'
     ? <QuizPreview st={st} q={st.mode.q} setMode={setMode} />
     : <TopicPreview st={st} ex={st.mode.ex} block={st.mode.block} setMode={setMode} />
+}
+
+/** One widget as pupils see it – in the explanation, or only its task above a question. Reports its height so the gallery can fit the frame to it. */
+function Demo({ d }: { d: WidgetDemo }) {
+  const ref = useRef<HTMLDivElement>(null)
+  useLayoutEffect(() => {
+    const el = ref.current!
+    const ro = new ResizeObserver(() => send({ type: 'height', height: Math.ceil(el.getBoundingClientRect().height) }))
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+  const key = `${d.widget}:${d.question}:${JSON.stringify(d.props)}`
+  return (
+    <div class="page demo" ref={ref}>
+      {d.question
+        ? <div class="card" key={key}><WidgetQuestion w={d} /></div>
+        : <div class="blocks" key={key}><BlockView b={{ type: 'widget', widget: d.widget, props: d.props }} /></div>}
+    </div>
+  )
 }
 
 const MODE_KEY: [ModeId, () => preact.JSX.Element, KeyColor][] = [['kviz', IBolt, 'orange'], ['opakovani', IRepeat, 'blue'], ['pisemka', IPencil, 'yellow'], ['zkouseni', IMic, 'green']]
