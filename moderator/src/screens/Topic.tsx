@@ -69,8 +69,12 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
           {me && <Busy class="btn primary" on={opening} onClick={edit}><I.pencil />{mine ? 'Pokračovat v úpravách' : 'Upravit'}</Busy>}
         </div>
       </header>
-      {me && others.length > 0 && <div class="banner info"><I.eye />Téma právě upravuje {others.map((o) => o.name).join(', ')}. Změny se ukážou tady, až je někdo schválí.{others.filter((o) => o.id).map((o) => <a key={o.id} class="btn small" href={`/kontrola/${o.id}`} onClick={nav(`/kontrola/${o.id}`)}>Zkontrolovat</a>)}</div>}
-      {mine && <div class="banner info"><I.pencil />Máš tu rozpracované úpravy{mine.status === 'review' ? ', které čekají na kontrolu' : ''}. Tady vidíš zveřejněnou verzi.</div>}
+      {/* Others' changes: one sent for review is waiting for you (a clear way in), work in progress is just a heads-up. */}
+      {me && others.filter((o) => o.status === 'review').map((o) => (
+        <div key={o.id} class="banner warn"><I.check /><span><b>{o.name}</b> poslal/a úpravu tohoto tématu ke kontrole. Podívej se, co změnil/a, a schval ji – pak se zveřejní.</span><a class="btn small primary" href={`/kontrola/${o.id}`} onClick={nav(`/kontrola/${o.id}`)}>Zkontrolovat a schválit</a></div>
+      ))}
+      {me && others.some((o) => o.status !== 'review') && <div class="banner info"><I.pencil />Téma právě upravuje {others.filter((o) => o.status !== 'review').map((o) => o.name).join(', ')}. Úpravu zatím neposlal/a ke kontrole.</div>}
+      {mine && <div class="banner info"><I.pencil />{mine.status === 'review' ? 'Tvoje úprava čeká na kontrolu jiného moderátora.' : 'Máš tu rozpracované úpravy, ještě nejsou odeslané ke kontrole.'} Tady vidíš zveřejněnou verzi.</div>}
 
       <div class="v-body">
         <aside class="v-phone">

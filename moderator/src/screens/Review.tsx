@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 import { GRADE_NAME, SUBJECTS } from '../../../src/content/curriculum'
 import type { GradeId, SubjectId } from '../../../src/content/types'
 import { ApiError, get, post } from '../api'
@@ -33,7 +33,7 @@ export function ReviewQueue() {
   const waiting = list.filter((d) => !d.mine && !d.myVerdict)
   const done = list.filter((d) => !d.mine && d.myVerdict)
   const mine = list.filter((d) => d.mine)
-  const Row = ({ d }: { d: QueueItem }) => (
+  const Row = ({ d, act }: { d: QueueItem; act?: boolean }) => (
     <a class="draft" href={`/kontrola/${d.id}`} onClick={nav(`/kontrola/${d.id}`)}>
       <span class="d-main">
         <b>{d.kind === 'new' && <span class="pill">nové</span>} {d.rollbackOf && <span class="pill">návrat</span>} {d.title}</b>
@@ -43,18 +43,23 @@ export function ReviewQueue() {
       {d.changes.length > 0 && <span class="pill warn">požadavek na úpravy</span>}
       {d.myVerdict === 'approve' && <span class="pill st-published">schválil/a jsi</span>}
       <span class="pill st-review">{approvalText(d)}</span>
-      <I.right />
+      {act ? <span class="btn small primary">Zkontrolovat</span> : <I.right />}
     </a>
   )
   return (
     <div class="page-narrow">
       <h1>Ke kontrole</h1>
       <p class="muted">Změny učiva od ostatních moderátorů. Každá se zveřejní, až ji schválí {list[0]?.needed === 1 || !list.length ? 'někdo další' : `${list[0].needed} další`} – vlastní změnu schválit nejde.</p>
+      <ol class="steps-how">
+        <li><b>Otevři</b> změnu ze seznamu.</li>
+        <li><b>Projdi</b>, co se změnilo (zeleně přidané, přeškrtnuté odebrané), a vyzkoušej to v telefonu.</li>
+        <li><b>Klikni</b> na <b>Schválit</b> – změna se hned zveřejní. Nebo na <b>Požádat o úpravy</b> a napiš autorovi, co opravit.</li>
+      </ol>
       {!list.length && <Empty>Teď nic nečeká na kontrolu. 🎉</Empty>}
       {[['Čeká na tebe', waiting], ['Už jsi to viděl/a', done], ['Tvoje změny v kontrole', mine]].map(([name, ds]) => (ds as QueueItem[]).length > 0 && (
         <section key={name as string} class="draft-group">
           <h2 class="label">{name as string} · {(ds as QueueItem[]).length}</h2>
-          <div class="drafts">{(ds as QueueItem[]).map((d) => <Row key={d.id} d={d} />)}</div>
+          <div class="drafts">{(ds as QueueItem[]).map((d) => <Row key={d.id} d={d} act={ds === waiting} />)}</div>
         </section>
       ))}
     </div>
@@ -112,6 +117,7 @@ export function Review({ id, me }: { id: string; me: Me }) {
         <div class="v-actions">
           <span class={`pill st-${d.status}`}>{STATUS[d.status]}</span>
           {inReview && <span class="pill">{approvalText(d)}</span>}
+          {d.kind === 'edit' && <a class="btn small" href={`/historie/${g}/${s}/${d.topicId}`} onClick={nav(`/historie/${g}/${s}/${d.topicId}`)}><I.undo />Historie tématu</a>}
         </div>
       </header>
 
@@ -122,19 +128,9 @@ export function Review({ id, me }: { id: string; me: Me }) {
         <div class="banner bad"><I.warn />Téma ještě není v pořádku, schválit ho nejde: {data.problems.slice(0, 3).map((p) => p.message).join(' · ')}{data.problems.length > 3 ? ` (+${data.problems.length - 3})` : ''}</div>
       )}
 
-      <div class="r-actions">
-        {inReview && !own && <>
-          <Busy class="btn primary" on={busy} disabled={d.conflict || data.problems.length > 0 || myDecision === 'approve'} onClick={() => act('review', { verdict: 'approve', rev: d.rev }, 'Schváleno')}>
-            <I.check />{myDecision === 'approve' ? 'Schválil/a jsi' : willPublish ? 'Schválit a zveřejnit' : 'Schválit'}
-          </Busy>
-          <button class="btn" disabled={busy} onClick={() => setAsk('changes')}><I.pencil />Požádat o úpravy</button>
-        </>}
-        {own && (d.status === 'draft' || inReview) && <a class="btn" href={`/navrh/${d.id}`} onClick={nav(`/navrh/${d.id}`)}><I.pencil />Upravit</a>}
-        {own && inReview && <Busy class="btn" on={busy} onClick={() => act('withdraw', {}, 'Návrh je zpátky v rozpracovaných')}>Vrátit do rozpracovaných</Busy>}
-        {me.role === 'admin' && (d.status === 'draft' || inReview) && !own && <button class="btn danger" disabled={busy} onClick={() => setAsk('reject')}>Zamítnout</button>}
-        {d.kind === 'edit' && <a class="btn" href={`/historie/${g}/${s}/${d.topicId}`} onClick={nav(`/historie/${g}/${s}/${d.topicId}`)}><I.undo />Historie tématu</a>}
-      </div>
-      {inReview && !own && willPublish && !d.conflict && !data.problems.length && myDecision !== 'approve' && <p class="fine">Tvým schválením se změna hned zveřejní na sprtam.cz. Schvaluješ přesně verzi, kterou vidíš.</p>}
+      <Decision data={data} me={me} busy={busy} willPublish={willPublish} myDecision={myDecision}
+        approve={() => act('review', { verdict: 'approve', rev: d.rev }, 'Schváleno')} ask={setAsk}
+        withdraw={() => act('withdraw', {}, 'Návrh je zpátky v rozpracovaných')} />
 
       <div class="r-body">
         <div class="r-main">
@@ -172,9 +168,75 @@ function Banners({ data, own, busy, onRebase }: { data: DraftFull; own: boolean;
       </div>
     )
   }
-  if (d.status === 'draft') return <div class="banner info"><I.pencil />{own ? 'Rozpracováno – ostatní to uvidí, až to odešleš ke kontrole.' : 'Autor návrh vrátil do rozpracovaných.'}</div>
   if (d.changes.length) return <div class="banner warn"><I.warn />O úpravy žádá {d.changes.map((c) => c.name).join(', ')}. {own ? 'Po úpravě se kontrola počítá znovu.' : ''}</div>
   return null
+}
+
+/**
+ * What this moderator can do with the change, said in one place: a headline, why, and the buttons. While the
+ * box is scrolled away (reading a long diff), the same decision stays at the bottom of the screen.
+ */
+function Decision({ data, me, busy, willPublish, myDecision, approve, ask, withdraw }: {
+  data: DraftFull; me: Me; busy: boolean; willPublish: boolean; myDecision: string | undefined
+  approve: () => void; ask: (k: 'changes' | 'reject') => void; withdraw: () => void
+}) {
+  const d = data.draft
+  const own = d.author.id === me.id
+  const box = useRef<HTMLElement>(null)
+  const [away, setAway] = useState(false)
+  useEffect(() => {
+    if (!box.current) return
+    const io = new IntersectionObserver(([e]) => setAway(!e.isIntersecting && e.boundingClientRect.top < 0))
+    io.observe(box.current)
+    return () => io.disconnect()
+  }, [])
+  if (d.status !== 'draft' && d.status !== 'review') return null
+
+  const blocked = d.conflict ? 'Téma mezitím změnil někdo jiný. Autor musí návrh nejdřív převést na novou verzi.'
+    : data.problems.length ? 'Téma ještě není v pořádku (viz červené upozornění). Autor ho musí opravit.'
+    : !d.changed ? 'V návrhu není žádná změna.' : ''
+  const approveBtn = (
+    <Busy class="btn primary" on={busy} disabled={!!blocked} onClick={approve}><I.check />{willPublish ? 'Schválit a zveřejnit' : 'Schválit'}</Busy>
+  )
+  const changesBtn = <button class="btn" disabled={busy} onClick={() => ask('changes')}><I.pencil />Požádat o úpravy</button>
+  const rejectBtn = me.role === 'admin' && !own && <button class="btn danger" disabled={busy} onClick={() => ask('reject')}>Zamítnout</button>
+  const edit = <a class="btn" href={`/navrh/${d.id}`} onClick={nav(`/navrh/${d.id}`)}><I.pencil />{d.status === 'draft' ? 'Pokračovat v úpravách' : 'Upravit'}</a>
+
+  let tone = 'info', head: string, text: string, actions: preact.ComponentChildren = null, sticky = false
+  if (d.status === 'draft') {
+    head = 'Rozpracováno – zatím není co schvalovat'
+    text = own ? 'Ostatní moderátoři to uvidí, až to v editoru odešleš ke kontrole (tlačítko Odeslat).' : `${d.author.name} to ještě neposlal/a ke kontrole. Až to pošle, objeví se to v Ke kontrole.`
+    actions = own ? edit : rejectBtn
+  } else if (own) {
+    head = 'Čeká na kontrolu jiného moderátora'
+    text = `Svou vlastní změnu schválit nejde. Jakmile ji schválí ${d.needed === 1 ? 'někdo další' : `${d.needed} další`}, sama se zveřejní na sprtam.cz. Do té doby ji můžeš ještě upravit.`
+    actions = <>{edit}<Busy class="btn" on={busy} onClick={withdraw}>Vrátit do rozpracovaných</Busy></>
+  } else if (myDecision === 'approve') {
+    tone = 'ok'; head = 'Schválil/a jsi'
+    text = `Čeká se na další schválení (${approvalText(d)}). Když autor změnu upraví, je potřeba ji schválit znovu.`
+  } else if (blocked) {
+    tone = 'warn'; head = 'Zatím nejde schválit'; text = blocked
+    actions = <>{changesBtn}{rejectBtn}</>
+  } else {
+    tone = 'act'; head = myDecision === 'changes' ? 'Požádal/a jsi o úpravy – můžeš schválit, až budou hotové' : 'Čeká na tvoje rozhodnutí'
+    text = `Projdi změny níže (zeleně přidané, přeškrtnuté odebrané) a vyzkoušej je v telefonu. Pak klikni na ${willPublish ? 'Schválit a zveřejnit – změna se hned objeví na sprtam.cz' : 'Schválit'}, nebo na Požádat o úpravy a napiš autorovi, co opravit.`
+    actions = <>{approveBtn}{changesBtn}{rejectBtn}</>
+    sticky = true
+  }
+  return (
+    <>
+      <section ref={box} class={`decide t-${tone}`} aria-label="Rozhodnutí">
+        <div><b>{head}</b><p>{text}</p></div>
+        {actions && <div class="decide-actions">{actions}</div>}
+      </section>
+      {sticky && away && (
+        <div class="decide-bar" role="region" aria-label="Rozhodnutí">
+          <span class="pill st-review">{approvalText(d)}</span>
+          {approveBtn}{changesBtn}
+        </div>
+      )}
+    </>
+  )
 }
 
 const VERDICT = { approve: 'schválil/a', changes: 'žádá úpravy', comment: '' }

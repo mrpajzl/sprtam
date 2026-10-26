@@ -1,4 +1,5 @@
 import { randomUUID } from 'node:crypto'
+import { topicChanged } from '../../src/content/diff'
 import { subjectKey, topicKey } from '../../src/content/docs'
 import type { GradeId, SubjectFile, SubjectId, TopicFile } from '../../src/content/types'
 import type { Session } from './auth'
@@ -31,6 +32,9 @@ export interface DraftView {
   baseVersion: number | null; rollbackOf: number | null
   /** The topic changed (was published by someone else) since this draft started: it has to be brought up to date first. */
   conflict: boolean
+  /** Anything changed against the version it started from. Opening a topic in the editor creates a draft, and until
+   *  something changes it is nobody's business: it is not listed, not shown as "being edited", and cannot be sent. */
+  changed: boolean
   /** Approvals of the current revision, and who asks for changes in it. */
   approvals: { id: string; name: string }[]; changes: { id: string; name: string }[]; needed: number
   legacyPrUrl: string | null
@@ -55,6 +59,23 @@ function conflictOf(d: DraftRow): boolean {
   return d.kind === 'edit' ? versionId(topicKey(d.grade, d.subject, d.topic_id)) !== d.base_version : topicExists(d.grade, d.subject, d.topic_id)
 }
 
+function changedOf(d: DraftRow): boolean {
+  if (d.kind === 'new' || !d.base_version) return true
+  const base = version(d.base_version).data as TopicFile | null
+  return topicChanged(base, (JSON.parse(d.data) as DraftData).topic)
+}
+
+/** An edit nobody ever changed or sent: safe to drop. */
+const empty = (d: DraftRow) => d.status === 'draft' && d.submitted_at === null && !changedOf(d)
+
+/** Drops a moderator's untouched drafts (opened in the editor and left), except ones touched in the last `keepMs`. */
+function pruneEmpty(userId: string, keepMs: number) {
+  const cutoff = Date.now() - keepMs
+  for (const d of all<DraftRow>("SELECT * FROM drafts WHERE user_id = ? AND status = 'draft' AND submitted_at IS NULL AND kind = 'edit' AND updated_at < ?", userId, cutoff)) {
+    if (empty(d) && !one('SELECT 1 FROM reviews WHERE draft_id = ?', d.id)) run('DELETE FROM drafts WHERE id = ?', d.id)
+  }
+}
+
 function view(d: Row, who = names()): DraftView {
   const dec = d.status === 'review' ? decisions(d.id, d.rev) : new Map()
   const people = (v: string) => [...dec].filter(([, x]) => x === v).map(([id]) => ({ id, name: who.get(id) ?? '?' }))
@@ -62,7 +83,7 @@ function view(d: Row, who = names()): DraftView {
     id: d.id, kind: d.kind, grade: d.grade as GradeId, subject: d.subject as SubjectId, topicId: d.topic_id, title: d.title, rev: d.rev,
     status: d.status, note: d.note, author: { id: d.user_id, name: d.author_name }, createdAt: d.created_at, updatedAt: d.updated_at,
     submittedAt: d.submitted_at, decidedAt: d.decided_at, decidedBy: d.decided_by ? who.get(d.decided_by) ?? '?' : null, decisionNote: d.decision_note,
-    release: d.release_id, baseVersion: d.base_version, rollbackOf: d.rollback_of, conflict: conflictOf(d),
+    release: d.release_id, baseVersion: d.base_version, rollbackOf: d.rollback_of, conflict: conflictOf(d), changed: changedOf(d),
     approvals: people('approve'), changes: people('changes'), needed: CONFIG.approvals, legacyPrUrl: d.legacy_pr_url,
   }
 }
@@ -82,11 +103,12 @@ const own = (s: Session, d: Row, what: string) => { if (d.user_id !== s.user.id)
 const open = (d: Row) => { if (d.status !== 'draft' && d.status !== 'review') throw new HttpError(409, 'Návrh je uzavřený. Začni nový.', 'closed') }
 
 export function listDrafts(s: Session, everyone: boolean) {
+  pruneEmpty(s.user.id, 2 * 60 * MINUTE)
   const who = names()
   const rows = everyone && isAdmin(s)
     ? all<Row>(`${SELECT} ORDER BY d.updated_at DESC LIMIT 500`)
     : all<Row>(`${SELECT} WHERE d.user_id = ? ORDER BY d.updated_at DESC`, s.user.id)
-  return rows.map((d) => view(d, who))
+  return rows.filter((d) => !empty(d)).map((d) => view(d, who))
 }
 
 /** Drafts waiting for review, oldest first, with what this moderator already said about the current revision. */
@@ -99,10 +121,11 @@ export function reviewQueue(s: Session) {
   }))
 }
 
-/** Open drafts by topic key – the library shows who is working on what. */
+/** Open drafts that change something, by topic key – the library shows who is working on what. */
 export function activeDrafts() {
-  return all<{ grade: string; subject: string; topic_id: string; user_id: string; author_name: string; status: string; kind: string; id: string }>(
-    `SELECT d.id, d.grade, d.subject, d.topic_id, d.user_id, d.status, d.kind, u.name AS author_name FROM drafts d JOIN users u ON u.id = d.user_id WHERE d.status IN ('draft', 'review')`)
+  return all<Row>(`${SELECT} WHERE d.status IN ('draft', 'review')`)
+    .filter((d) => !empty(d))
+    .map((d) => ({ grade: d.grade, subject: d.subject, topic_id: d.topic_id, user_id: d.user_id, author_name: d.author_name, status: d.status, kind: d.kind, id: d.id }))
     .map((d) => ({ key: `${d.grade}/${d.subject}/${d.topic_id}`, userId: d.user_id, name: d.author_name, status: d.status, kind: d.kind, id: d.status === 'review' ? d.id : null }))
 }
 
@@ -130,6 +153,8 @@ export function getDraft(s: Session, id: unknown) {
 const openDrafts = (userId: string) => one<{ n: number }>("SELECT COUNT(*) AS n FROM drafts WHERE user_id = ? AND status IN ('draft', 'review')", userId)!.n
 
 function insertDraft(s: Session, kind: 'edit' | 'new', g: string, sub: string, topic: TopicFile, extra: { after?: string | null; base?: number | null; rollbackOf?: number | null; note?: string | null }) {
+  // Untouched drafts of other topics go; one opened in the last minutes may still be open in another tab.
+  pruneEmpty(s.user.id, 10 * MINUTE)
   if (openDrafts(s.user.id) >= LIMITS.drafts) throw new HttpError(429, `Máš rozpracováno ${LIMITS.drafts} návrhů. Nejdřív některé dokonči nebo smaž.`)
   const id = randomUUID(), now = Date.now()
   run('INSERT INTO drafts (id, user_id, kind, grade, subject, topic_id, title, data, base_version, rollback_of, note, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
@@ -233,6 +258,7 @@ function assertReady(d: DraftRow, data: DraftData) {
       ? 'Téma mezitím někdo jiný změnil a jeho změna je už zveřejněná. Autor musí návrh převést na novou verzi.'
       : 'Téma s tímto id už v učivu je.', 'conflict')
   }
+  if (!changedOf(d)) throw new HttpError(422, 'V návrhu zatím není žádná změna. Uprav téma, pak ho pošli ke kontrole.', 'empty')
   const problems = problemsOf(d, data)
   if (problems.length) throw new HttpError(422, 'Téma ještě není hotové – oprav zvýrazněné věci.', 'invalid', { problems })
 }
@@ -353,7 +379,9 @@ export function rollbackDraft(s: Session, versionIdValue: unknown, ip: string) {
   const { v, g, sub, id, topic } = topicVersion(versionIdValue)
   if (v.version.current) throw new HttpError(409, 'Tohle je zveřejněná verze.')
   if (!topicExists(g, sub, id)) throw new HttpError(409, 'Téma už v učivu není.')
-  if (mineFor(s, g, sub, id)) throw new HttpError(409, 'U tohoto tématu už máš rozpracovaný návrh. Dokonči ho nebo ho smaž.')
+  const mine = mineFor(s, g, sub, id)
+  if (mine && !empty(mine)) throw new HttpError(409, 'U tohoto tématu už máš rozpracovaný návrh. Dokonči ho nebo ho smaž.')
+  if (mine) run('DELETE FROM drafts WHERE id = ?', mine.id)
   const draft = insertDraft(s, 'edit', g, sub, topic, { base: versionId(topicKey(g, sub, id)), rollbackOf: v.version.id, note: `Návrat k verzi ${v.version.n}` })
   audit('draft.rollback', s.user.id, { draft, version: v.version.id }, ip)
   return getDraft(s, draft)

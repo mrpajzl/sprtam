@@ -35,7 +35,7 @@ export interface DraftView {
   author: Person; createdAt: number; updatedAt: number; submittedAt: number | null
   decidedAt: number | null; decidedBy: string | null; decisionNote: string | null; release: number | null
   baseVersion: number | null; rollbackOf: number | null
-  conflict: boolean; approvals: Person[]; changes: Person[]; needed: number
+  conflict: boolean; changed: boolean; approvals: Person[]; changes: Person[]; needed: number
   legacyPrUrl: string | null
 }
 

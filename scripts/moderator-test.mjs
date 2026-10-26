@@ -175,6 +175,19 @@ try {
   check(await signedInAs(eva.page, 'Eva'), 'a reviewer account is created')
   const evaDraft = (await eva.api('POST', '/api/drafts', { kind: 'edit', grade: 'z6', subject: 'matematika', topicId: 'prvocisla' })).body.draft
   check(!evaDraft.conflict, 'a fresh draft is not in conflict')
+  // Opening a topic in the editor makes a draft, but until something changes it is nobody's business.
+  check(!evaDraft.changed && !(await eva.api('GET', '/api/content/index')).body.active.some((a) => a.userId === evaDraft.author.id), 'an untouched draft is not shown as being edited')
+  check(!(await eva.api('GET', '/api/drafts')).body.some((x) => x.id === evaDraft.id), 'an untouched draft is not in my drafts')
+  const emptySubmit = await eva.api('POST', `/api/drafts/${evaDraft.id}/submit`, {})
+  check(emptySubmit.status === 422 && emptySubmit.body.code === 'empty', 'an untouched draft cannot be sent for review')
+  await eva.page.goto(`${BASE}/ucivo/z6/matematika/nasobek-delitel`)
+  await eva.page.getByRole('button', { name: 'Upravit' }).click()
+  await eva.page.waitForURL(/\/navrh\//)
+  const leftId = eva.page.url().split('/').pop()
+  await eva.page.locator('.ed-top a.icon').click()
+  await eva.page.waitForURL(/nasobek-delitel$/)
+  await eva.page.waitForTimeout(500)
+  check((await eva.api('GET', `/api/drafts/${leftId}`)).status === 404, 'leaving the editor without a change drops the draft')
 
   // The admin sends her draft for review in the editor.
   await admin.page.goto(`${BASE}/navrh/${draftId}`)
@@ -187,6 +200,10 @@ try {
   check(queue.some((d) => d.id === draftId && !d.mine), 'the change is in the review queue of others')
   await eva.page.goto(`${BASE}/kontrola/${draftId}`)
   check(await eva.page.locator('.diff ins', { hasText: 'náhledu' }).first().waitFor({ timeout: 5000 }).then(() => true, () => false), 'the review shows the changed words')
+  check(await eva.page.locator('.decide.t-act').getByRole('button', { name: 'Schválit a zveřejnit' }).isVisible(), 'the reviewer sees what to do and where to approve')
+  await eva.page.mouse.wheel(0, 3000)
+  check(await eva.page.locator('.decide-bar').getByRole('button', { name: 'Schválit a zveřejnit' }).waitFor({ timeout: 3000 }).then(() => true, () => false), 'the approve button stays at hand while reading the changes')
+  await eva.page.mouse.wheel(0, -6000)
   // A comment on one block, then a request for changes.
   await eva.page.locator('.d-item.d-mod').first().getByRole('button', { name: 'Komentovat' }).click()
   await eva.page.locator('.c-write textarea').fill('Tady bych dala příklad.')

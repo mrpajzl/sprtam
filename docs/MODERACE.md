@@ -29,11 +29,13 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
    - **Na mobilu a menším tabletu** je místo sloupců dole lišta. **Části** otevře osnovu se seznamem toho, co chybí, **Náhled** ukáže téma přes celou obrazovku a **Odeslat** pošle změnu ke kontrole.
 4. **Ukládá se samo.** Neuložené změny se při pádu prohlížeče nabídnou k obnovení.
 5. **Odeslat ke kontrole** jde, až editor nehlásí žádnou chybu. Server pak zkontroluje celé učivo i s touto změnou stejnými pravidly jako `npm run check:content`.
-6. Stav návrhů je v **Mých návrzích**: *Rozpracováno*, *Ke kontrole* (kolik schválení už má), *Zveřejněno*, *Staženo*, *Zamítnuto*.
+6. Otevřením tématu v editoru vznikne návrh. Dokud v něm nic nezměníš, nikde se neukazuje (ani jako „upravuje…“), nejde odeslat a při odchodu z editoru zmizí. Nedotčené návrhy server po čase maže sám.
+7. Stav návrhů je v **Mých návrzích**: *Rozpracováno*, *Ke kontrole* (kolik schválení už má), *Zveřejněno*, *Staženo*, *Zamítnuto*.
 
 ## Kontrola
 
-- **Ke kontrole** (číslo v liště říká, kolik změn čeká na tebe) jsou změny ostatních.
+- **Ke kontrole** (číslo v liště říká, kolik změn čeká na tebe) jsou změny ostatních. U každé, která čeká na tebe, je tlačítko **Zkontrolovat**. Na stránce tématu je změna poslaná ke kontrole vidět taky (**Zkontrolovat a schválit**).
+- Nahoře na stránce změny je rámeček, který vždy říká, co můžeš udělat: *Čeká na tvoje rozhodnutí* (Schválit / Požádat o úpravy), *Schválil/a jsi*, *Zatím nejde schválit* (a proč), *Čeká na kontrolu jiného moderátora* u vlastní změny, nebo *Rozpracováno – zatím není co schvalovat*. Když rámeček odjede při čtení změn, tlačítka zůstanou dole na obrazovce.
 - Každá změna ukazuje jen to, co se změnilo proti verzi, ze které autor vycházel:
   - přidané, odebrané a změněné bloky a otázky;
   - uvnitř změněných textů jednotlivá slova (zeleně přidaná, červeně odebraná);
