@@ -1,4 +1,5 @@
-// Routing check against a production build: `npm run build && PORT=8091 node server/index.mjs`, then
+// Routing check against a production build: `npm run build && PORT=8091 node dist-server/index.mjs` (with
+// CONTENT_API pointing at the content service or `npx tsx scripts/content-stub.ts`), then
 // `node scripts/routing-test.mjs [http://localhost:8091]`.
 import { chromium } from 'playwright-core'
 const BASE = process.argv[2] ?? 'http://localhost:8091'
@@ -82,7 +83,7 @@ await p.click('a.vocab-tile[href="/slovicka/A1/0"]'); await p.waitForSelector('.
 ok(await p.locator('.tabbar').count() === 0, 'no tab bar while drilling')
 // No-JS page carries the same navigation.
 const html = await (await fetch(`${BASE}/g/z5/matematika/zlomky`)).text()
-ok(html.includes('class="tabbar"') && html.includes('<nav class="crumbs" aria-label="Kde jsem"><a href="/g/z5">5. třída</a><a href="/g/z5/matematika">Matematika</a></nav>'), 'prerendered topic has crumbs and tab bar')
+ok(html.includes('class="tabbar"') && html.includes('<nav class="crumbs" aria-label="Kde jsem"><a href="/g/z5">5. třída</a><a href="/g/z5/matematika">Matematika</a></nav>'), 'server-rendered topic has crumbs and tab bar')
 
 // Unknown route → 404 status.
 const r = await p.goto(`${BASE}/g/z5/matematika/nic-takoveho`)

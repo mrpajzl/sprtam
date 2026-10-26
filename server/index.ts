@@ -1,24 +1,32 @@
-// Static file server for the built PWA + an anonymous usage counter.
+// The server of sprtam.cz: the built PWA, the pages and the content API of the current content release
+// (server/content.ts, docs/OBSAH.md), and an anonymous usage counter.
 // The counter stores only per-day totals ({ users, new }). No IPs, no IDs, no cookies, no logs of requests.
-import { createServer } from 'node:http'
+// Built into one file without dependencies: vite build --ssr (package.json).
+import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
 import { readFile, writeFile, mkdir, stat } from 'node:fs/promises'
 import { extname, join, normalize } from 'node:path'
+import { HASH } from '../src/content/manifest'
+import { embed, encoded, file as contentFile, pageHtml, release, startContent } from './content'
+import { render, robots, sitemap } from './pages'
+import { shell } from './shell'
 
 const PORT = Number(process.env.PORT ?? 8080)
 const DIST = process.env.DIST ?? join(import.meta.dirname, '..', 'dist')
 const DATA = process.env.DATA_DIR ?? join(import.meta.dirname, '..', 'data')
 const STATS_TOKEN = process.env.STATS_TOKEN ?? ''
 const FILE = join(DATA, 'stats.json')
+/** The content service (moderation) – its public read API is the source of all content. */
+const CONTENT_API = (process.env.CONTENT_API ?? 'https://moderace.sprtam.cz').replace(/\/$/, '')
 // The app moved to sprtam.cz. These hosts still reach this server and send everyone over (see below).
 const CANONICAL = 'https://sprtam.cz'
 const LEGACY = new Set((process.env.LEGACY_HOSTS ?? 'sprtam.ondrejzraly.cz,www.sprtam.cz').split(','))
 
-const isFile = (f) => stat(f).then((s) => s.isFile(), () => false)
-const page = (...parts) => isFile(join(DIST, ...parts, 'index.html'))
+const isFile = (f: string) => stat(f).then((s) => s.isFile(), () => false)
+const page = (...parts: string[]) => !!release()?.pages.has(`/${parts.join('/')}`)
 const MODES = ['kviz', 'opakovani', 'pisemka', 'zkouseni']
 
-/** Routes the app renders that have no prerendered page of their own. */
-async function isAppRoute(path) {
+/** Routes the app renders that have no page of their own (server/pages.ts). */
+function isAppRoute(path: string) {
   const p = path.split('/').filter(Boolean)
   if (p.length === 1) return ['hledat', 'mix', 'sdilet', 'widgety', 'nastaveni'].includes(p[0])
   if (p[0] === 'widgety' && p.length === 2) return /^[a-z]+(-[a-z]+)*$/.test(p[1])
@@ -36,10 +44,10 @@ async function isAppRoute(path) {
 // Only for the page's own script loads (Sec-Fetch-Dest: script), never for a service worker filling its cache.
 const STALE = `${await readFile(join(DIST, 'boot-check.js'), 'utf8').catch(() => '')}\n;window.sprtamHeal && sprtamHeal()`
 
-const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
-const movePage = (to) => `<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Šprtám se přestěhoval</title><link rel="canonical" href="${esc(to)}"><script src="/move.js"></script></head><body style="font-family:system-ui,sans-serif;padding:2rem"><p>Šprtám se přestěhoval na <a href="${esc(to)}">sprtam.cz</a>…</p></body></html>`
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
+const movePage = (to: string) => `<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Šprtám se přestěhoval</title><link rel="canonical" href="${esc(to)}"><script src="/move.js"></script></head><body style="font-family:system-ui,sans-serif;padding:2rem"><p>Šprtám se přestěhoval na <a href="${esc(to)}">sprtam.cz</a>…</p></body></html>`
 
-const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.json': 'application/json', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8', '.mp3': 'audio/mpeg' }
+const TYPES: Record<string, string> = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.json': 'application/json', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8', '.mp3': 'audio/mpeg' }
 const SECURITY = {
   'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; media-src 'self' blob:; worker-src 'self' blob:",
   'Referrer-Policy': 'no-referrer',
@@ -47,12 +55,16 @@ const SECURITY = {
   'Permissions-Policy': 'camera=(self), microphone=(), geolocation=()',
 }
 
-let stats = {}
+const TEMPLATE = await readFile(join(DIST, 'index.html'), 'utf8')
+if (!TEMPLATE.includes('<div id="app"></div>')) throw new Error('dist/index.html: #app placeholder not found')
+const SHELL = shell(TEMPLATE)
+
+let stats: Record<string, { users: number; new: number }> = {}
 try { stats = JSON.parse(await readFile(FILE, 'utf8')) } catch { /* first run */ }
 let dirty = false
 setInterval(async () => { if (!dirty) return; dirty = false; await mkdir(DATA, { recursive: true }); await writeFile(FILE, JSON.stringify(stats)) }, 10_000).unref()
 
-function ping(body) {
+function ping(body: string) {
   const day = new Date().toISOString().slice(0, 10)
   const d = (stats[day] ??= { users: 0, new: 0 })
   d.users++
@@ -60,13 +72,32 @@ function ping(body) {
   dirty = true
 }
 
-// A bug in one request must never take the whole site down.
-process.on('unhandledRejection', (e) => console.error('unhandled', e))
+const html = (res: ServerResponse, status: number, body: string, extra: Record<string, string> = {}) =>
+  res.writeHead(status, { ...SECURITY, 'Content-Type': TYPES['.html'], 'Cache-Control': 'no-cache', ...extra }).end(body)
+
+/** /api/content/*: the manifest of the current release and its files (docs/OBSAH.md). */
+async function contentApi(req: IncomingMessage, res: ServerResponse, path: string) {
+  const r = release()
+  if (path === '/api/content/manifest') {
+    if (!r) return res.writeHead(503, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store', 'Retry-After': '30' }).end('{"error":"content not loaded yet"}')
+    const etag = `"${r.manifest.hash}"`
+    const headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache', ETag: etag }
+    if (req.headers['if-none-match'] === etag) return res.writeHead(304, headers).end()
+    return res.writeHead(200, headers).end(r.json)
+  }
+  const m = /^\/api\/content\/f\/([0-9a-f]+)\.json$/.exec(path)
+  const e = m && HASH.test(m[1]) ? await contentFile(m[1]) : undefined
+  if (!e) return res.writeHead(404, { 'Cache-Control': 'no-store' }).end()
+  const [body, encoding] = await encoded(e, String(req.headers['accept-encoding'] ?? ''))
+  res.writeHead(200, {
+    'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=31536000, immutable', Vary: 'Accept-Encoding', 'Content-Length': String(body.length),
+    ...(encoding ? { 'Content-Encoding': encoding } : {}),
+  })
+  res.end(req.method === 'HEAD' ? undefined : body)
+}
 
 createServer(async (req, res) => {
-  let url
-  // `//a:b` and similar request targets are not valid relative URLs: answer 400 instead of throwing.
-  try { url = new URL(req.url, 'http://x') } catch { return res.writeHead(400).end() }
+  const url = new URL(req.url ?? '/', 'http://x')
   if (url.pathname === '/api/ping' && req.method === 'POST') {
     let body = ''
     req.on('data', (c) => { if (body.length < 100) body += c })
@@ -78,6 +109,10 @@ createServer(async (req, res) => {
     return res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify(stats))
   }
   if (url.pathname === '/healthz') return res.writeHead(200).end('ok')
+  if (url.pathname.startsWith('/api/content/')) {
+    if (req.method !== 'GET' && req.method !== 'HEAD') return res.writeHead(405).end()
+    return contentApi(req, res, url.pathname).catch(() => { if (!res.headersSent) res.writeHead(500).end() })
+  }
 
   const host = (req.headers.host ?? '').replace(/:\d+$/, '').toLowerCase()
   if (LEGACY.has(host)) {
@@ -95,28 +130,36 @@ createServer(async (req, res) => {
     if (page || /\.(xml|txt|webmanifest)$/.test(url.pathname)) return res.writeHead(301, { Location: to }).end()
   }
 
-  // Pages: /g/z5/matematika → dist/g/z5/matematika/index.html (prerendered, see plugins/prerender.ts).
+  // Pages: /g/z5/matematika → rendered from the current content release (server/pages.ts).
   if (url.pathname.length > 1 && url.pathname.endsWith('/')) return res.writeHead(301, { Location: url.pathname.replace(/\/+$/, '') + url.search }).end()
-  let path
+  let path: string
   try { path = normalize(decodeURIComponent(url.pathname)) } catch { return res.writeHead(400).end() }
+  const r = release()
+  if (!extname(path) || path === '/index.html') {
+    const pagePath = path === '/index.html' ? '/' : path
+    if (!r) {
+      // No content yet (first start while the content service is unreachable): the shell, which says so.
+      return html(res, 503, SHELL, { 'Retry-After': '30' })
+    }
+    const page = pageHtml(r, pagePath, (p) => render(TEMPLATE, p))
+    if (page) return html(res, 200, page)
+  }
+  if (r && path === '/sitemap.xml') return res.writeHead(200, { ...SECURITY, 'Content-Type': TYPES['.xml'], 'Cache-Control': 'no-cache' }).end(sitemap([...r.pages.values()]))
+  if (path === '/robots.txt') return res.writeHead(200, { ...SECURITY, 'Content-Type': TYPES['.txt'], 'Cache-Control': 'no-cache' }).end(robots())
   let file = join(DIST, path)
   let status = 200
   if (!file.startsWith(DIST)) return res.writeHead(404).end()
   if (!(await isFile(file))) {
-    if (await isFile(join(file, 'index.html'))) file = join(file, 'index.html')
-    else if (/\/assets\/[^/]+\.js$/.test(path) && (req.headers['sec-fetch-dest'] ?? 'script') === 'script') return res.writeHead(200, { ...SECURITY, 'Content-Type': 'text/javascript', 'Cache-Control': 'no-store' }).end(STALE)
-    else if (extname(path)) return res.writeHead(404, SECURITY).end()
-    else {
-      // In-app screens without their own page (quiz, search…) get the empty shell; anything else is a 404.
-      status = (await isAppRoute(path)) ? 200 : 404
-      file = join(DIST, 'app.html')
-    }
+    if (/\/assets\/[^/]+\.js$/.test(path) && (req.headers['sec-fetch-dest'] ?? 'script') === 'script') return res.writeHead(200, { ...SECURITY, 'Content-Type': 'text/javascript', 'Cache-Control': 'no-store' }).end(STALE)
+    if (extname(path)) return res.writeHead(404, SECURITY).end()
+    // In-app screens without their own page (quiz, search…) get the empty shell; anything else is a 404.
+    return html(res, isAppRoute(path) ? 200 : 404, embed(SHELL, r!))
   }
   try {
     let data = await readFile(file)
     // Hashed assets, and word recordings asked for by version (/audio/en/dog.mp3?v=…), never change.
     const immutable = file.includes(`${join(DIST, 'assets')}`) || (file.startsWith(join(DIST, 'audio')) && url.searchParams.has('v'))
-    const headers = {
+    const headers: Record<string, string | number> = {
       ...SECURITY,
       'Content-Type': TYPES[extname(file)] ?? 'application/octet-stream',
       // Cloudflare overrides no-cache on .js (4 h browser TTL) but keeps no-store: sw.js must never be stale.
@@ -140,4 +183,6 @@ createServer(async (req, res) => {
     res.writeHead(status, headers)
     res.end(data)
   } catch { res.writeHead(404).end() }
-}).listen(PORT, () => console.log(`Šprtám on :${PORT}`))
+}).listen(PORT, () => console.log(`Šprtám on :${PORT}, content from ${CONTENT_API}`))
+
+await startContent({ api: CONTENT_API, dataDir: DATA })

@@ -7,7 +7,11 @@ const p = await b.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFa
 const errs = []; p.on('pageerror', (e) => errs.push(String(e)))
 await p.goto(base + 'slovicka/A1/0'); await p.waitForTimeout(800)
 await p.screenshot({ path: '/tmp/sprtam-shots/v-pick.png' })
-const en = (cz) => p.evaluate(async (cz) => { const m = await import('/content/vocab/a1.json'); return m.default.groups.flatMap((g) => g.words).find((w) => w.cz === cz)?.en }, cz)
+const en = (cz) => p.evaluate(async (cz) => {
+  const m = await (await fetch('/api/content/manifest')).json()
+  const a1 = await (await fetch(`/api/content/f/${m.files['vocab/A1']}.json`)).json()
+  return a1.groups.flatMap((g) => g.words).find((w) => w.cz === cz)?.en
+}, cz)
 let n = 0, typed = 0, wrongDone = false, shot = false
 for (; n < 80 && !(await p.locator('.result').count()); n++) {
   const cz = await p.locator('.ask h2').textContent(), right = await en(cz)

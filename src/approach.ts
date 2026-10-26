@@ -1,26 +1,21 @@
 import { useEffect, useState } from 'preact/hooks'
-import type { ApproachFile, ApproachYearFile, GradeId, YearBlock } from './content/types'
+import type { ApproachMeta } from './content/manifest'
+import { loadFile, onManifest } from './content/remote'
+import type { ApproachYearFile, GradeId, YearBlock } from './content/types'
 
-// Teaching approaches (content/approaches/<id>/, docs/PRISTUPY.md). The child's choice is a device
+// Teaching approaches (docs/PRISTUPY.md): their descriptions come with the content manifest (needed before
+// the first render), the plans of single years are files of the release. The child's choice is a device
 // setting like the theme (localStorage, never sent anywhere); the plans themselves are public pages.
 
-export interface Approach extends ApproachFile { id: string; grades: GradeId[] }
+export type Approach = ApproachMeta
 
-const meta = import.meta.glob<ApproachFile>('/content/approaches/*/approach.json', { eager: true, import: 'default' })
-const years = import.meta.glob<{ default: ApproachYearFile }>(['/content/approaches/*/*.json', '!**/approach.json'])
-const ORDER: GradeId[] = ['z1', 'z2', 'z3', 'z4', 'z5', 'z6', 'z7', 'z8', 'z9', 's1', 's2', 's3', 's4']
+/** All teaching approaches of the current release (filled before the first render, src/main.tsx). */
+export let APPROACHES: Approach[] = []
+onManifest((m) => { APPROACHES = m.approaches })
 
-export const APPROACHES: Approach[] = Object.entries(meta).map(([path, a]) => {
-  const id = path.split('/')[3]
-  const grades = Object.keys(years).filter((y) => y.split('/')[3] === id).map((y) => y.split('/')[4].replace('.json', '') as GradeId)
-  return { ...a, id, grades: grades.sort((x, y) => ORDER.indexOf(x) - ORDER.indexOf(y)) }
-})
 export const approachById = (id: string | undefined) => APPROACHES.find((a) => a.id === id)
 
-export const loadYear = (id: string, g: GradeId): Promise<ApproachYearFile> => {
-  const f = years[`/content/approaches/${id}/${g}.json`]
-  return f ? f().then((m) => m.default) : Promise.reject(new Error('missing'))
-}
+export const loadYear = (id: string, g: GradeId): Promise<ApproachYearFile> => loadFile<ApproachYearFile>(`approach/${id}/${g}`)
 
 /** An epoch or an ongoing subject of the year, by id. */
 export const findBlock = (y: ApproachYearFile, id: string): YearBlock | undefined => [...y.epochs, ...(y.ongoing ?? [])].find((b) => b.id === id)

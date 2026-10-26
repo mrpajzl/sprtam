@@ -2,7 +2,7 @@ import type { AnchorHTMLAttributes } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 
 // Path routing (History API): every screen has a real, shareable URL that the server
-// answers with a prerendered page (see plugins/prerender.ts).
+// answers with a prerendered page (server/pages.ts).
 // Two routes stay in the #fragment on purpose, because the fragment is never sent to a server:
 // `#/p/<code>` (progress code), `#/spojit/<offer>` (device pairing) and `#/presun/<code>` (progress
 // carried over from the old domain, public/move.js).

@@ -1,23 +1,25 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
-import { pathToFileURL } from 'node:url'
-import { tsImport } from 'tsx/esm/api'
-import type { Plugin } from 'vite'
-import type * as Curriculum from '../src/content/curriculum'
-import type * as Seo from '../src/seo'
-import type * as Widgets from '../src/widgets'
-import type { Block, Subject, SubjectId, YearBlock } from '../src/content/types'
-import { readApproaches, readSubjects, readVocab } from './content'
+import { GRADE_NAME, GRADE_SUBJECTS, STAGES, SUBJECTS } from '../src/content/curriculum'
+import type { ApproachMeta } from '../src/content/manifest'
+import type { ApproachYearFile, Block, GradeId, Subject, SubjectId, VocabFile, YearBlock } from '../src/content/types'
+import { fullTitle, gradeFor, gradeLabel, plain, SITE_NAME, summary, titles } from '../src/seo'
+import { WIDGETS } from '../src/widgets'
 
-// Writes a real HTML page for every public route, so links are shareable with proper
-// previews and search engines get content, titles and descriptions without running JS:
+// A real HTML page for every public route, so links are shareable with proper previews and search
+// engines get content, titles and descriptions without running JS:
 //   /  /g/<grade>  /g/<grade>/<subject>  /g/<grade>/<subject>/<topic>  /slovicka  /slovicka/<level>
-// plus app.html (empty shell for the remaining in-app routes), sitemap.xml and robots.txt.
-// The markup uses the app's own classes, so it looks like the screen the app then renders over it.
+//   /<approach>  /<approach>/<grade>  /<approach>/<grade>/<epoch>
+// plus the app.html shell for the remaining in-app routes, sitemap.xml and robots.txt. Rendered by the
+// server from the current content release (server/content.ts). The markup uses the app's own classes,
+// so it looks like the screen the app then renders over it.
+
+/** The content of a release in the shape the pages need. */
+export interface SiteContent {
+  subjects: Subject[]
+  vocab: VocabFile[]
+  approaches: (ApproachMeta & { years: [GradeId, ApproachYearFile][] })[]
+}
 
 const SITE = (process.env.SITE_URL ?? 'https://sprtam.cz').replace(/\/$/, '')
-const root = join(import.meta.dirname, '..')
-const src = (f: string) => pathToFileURL(join(root, 'src', f)).href
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 /** Inline markup (**bold**, *italic*, `code`, ^sup) → HTML, as src/ui/Inline.tsx renders it. */
@@ -32,7 +34,7 @@ const HOME = icon('M4 11l8-7 8 7M6.5 9v11h11V9M10 20v-5h4v5')
 const GRID = icon('M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z')
 const SEARCH = icon('M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.5 15.5L20 20')
 
-function block(b: Block, widgets: typeof Widgets.WIDGETS): string {
+function block(b: Block, widgets: typeof WIDGETS): string {
   switch (b.type) {
     case 'heading': return `<h3 class="bh">${inline(b.text)}</h3>`
     case 'text': return `<p>${inline(b.text)}</p>`
@@ -49,7 +51,7 @@ function block(b: Block, widgets: typeof Widgets.WIDGETS): string {
   }
 }
 
-interface Page {
+export interface Page {
   path: string
   title: string
   description: string
@@ -69,13 +71,10 @@ const tabbar = (active: 'home' | 'grade' | 'vocab' | undefined, grade?: [string,
   return `<nav class="tabbar" aria-label="Hlavní nabídka">${tab('home', '/', HOME, 'Domů')}${grade ? tab('grade', grade[1], GRID, grade[0]) : ''}${tab('search', '/hledat', SEARCH, 'Hledat')}${tab('vocab', '/slovicka', '<b class="aa" aria-hidden="true">Aa</b>', 'Slovíčka')}</nav>`
 }
 
-async function pages(): Promise<Page[]> {
-  const { STAGES, GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } = await tsImport(src('content/curriculum.ts'), import.meta.url) as typeof Curriculum
-  const { titles, summary, plain, gradeLabel, gradeFor, SITE_NAME } = await tsImport(src('seo.ts'), import.meta.url) as typeof Seo
-
-  const { WIDGETS } = await tsImport(src('widgets/index.tsx'), import.meta.url) as typeof Widgets
-  const subjects = new Map<string, Subject>(readSubjects().map((s) => [`${s.grade}/${s.subject}`, s]))
-  const vocab = readVocab()
+/** Every public page of the content. */
+export function pages(site: SiteContent): Page[] {
+  const subjects = new Map<string, Subject>(site.subjects.map((s) => [`${s.grade}/${s.subject}`, s]))
+  const vocab = site.vocab
 
   const home: [string, string] = [SITE_NAME, '/']
   const out: Page[] = []
@@ -167,7 +166,7 @@ async function pages(): Promise<Page[]> {
   for (const subj of subjects.values()) for (const t of subj.topics) topicRef.set(`${subj.grade}/${subj.subject}/${t.id}`, { t, g: subj.grade, s: subj.subject })
   const green = style('green')
   const ARROW = icon('M9 5l7 7-7 7')
-  for (const a of readApproaches(STAGES.flatMap((st) => st.grades))) {
+  for (const a of site.approaches) {
     const aPath = `/${a.id}`
     const aCrumbs: [string, string][] = [home, [a.name, aPath]]
     out.push({
@@ -229,35 +228,16 @@ function head(p: Page): string {
   ].join('\n    ')
 }
 
-function render(template: string, p: Page, fullTitle: (t: string) => string): string {
+/** The page in the app's HTML (dist/index.html). */
+export function render(template: string, p: Page): string {
   return template
-    .replace(/<title>[^<]*<\/title>/, `<title>${esc(fullTitle(p.title))}</title>`)
-    .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${esc(p.description)}" />`)
-    .replace('</head>', `  ${head(p)}\n  </head>`)
-    .replace('<div id="app"></div>', `<div id="app">${p.body}</div>`)
+    // Replacer functions: content may contain `$&` and similar, which a replacement string would expand.
+    .replace(/<title>[^<]*<\/title>/, () => `<title>${esc(fullTitle(p.title))}</title>`)
+    .replace(/<meta name="description" content="[^"]*" \/>/, () => `<meta name="description" content="${esc(p.description)}" />`)
+    .replace('</head>', () => `  ${head(p)}\n  </head>`)
+    .replace('<div id="app"></div>', () => `<div id="app">${p.body}</div>`)
 }
 
-export function prerender(): Plugin {
-  let outDir = ''
-  return {
-    name: 'prerender',
-    apply: 'build',
-    configResolved: (c) => { outDir = join(c.root, c.build.outDir) },
-    async writeBundle() {
-      const template = readFileSync(join(outDir, 'index.html'), 'utf8')
-      if (!template.includes('<div id="app"></div>')) throw new Error('prerender: #app placeholder not found in index.html')
-      const { fullTitle } = await tsImport(src('seo.ts'), import.meta.url) as typeof Seo
-      // Shell for in-app routes (quiz, search, …): no canonical, kept out of search results.
-      writeFileSync(join(outDir, 'app.html'), template.replace('</head>', '  <meta name="robots" content="noindex" />\n  </head>'))
-      const all = await pages()
-      for (const p of all) {
-        const file = join(outDir, p.path, 'index.html')
-        mkdirSync(dirname(file), { recursive: true })
-        writeFileSync(file, render(template, p, fullTitle))
-      }
-      writeFileSync(join(outDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.map((p) => `  <url><loc>${SITE}${p.path}</loc></url>`).join('\n')}\n</urlset>\n`)
-      writeFileSync(join(outDir, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`)
-      this.info?.(`prerendered ${all.length} pages`)
-    },
-  }
-}
+export const sitemap = (all: Page[]) => `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.map((p) => `  <url><loc>${SITE}${p.path}</loc></url>`).join('\n')}\n</urlset>\n`
+
+export const robots = () => `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`
