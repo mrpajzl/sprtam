@@ -81,6 +81,12 @@ export function Home() {
         <IArrow />
       </Link>
 
+      <Link class="row about-key" style={keyStyle('ink')} href="/o-aplikaci">
+        <span class="skey m" style={keyStyle('ink')}><b>?</b></span>
+        <span class="txt"><b>Co je Šprtám?</b><small>jak funguje a co o tobě (ne)ví</small></span>
+        <IArrow />
+      </Link>
+
     </div>
   )
 }
