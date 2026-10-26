@@ -16,6 +16,12 @@ export function About() {
           <ul class="about-list">{s.items.map((x) => <li key={x}><Inline text={x} /></li>)}</ul>
         </section>
       ))}
+      <section class="about-join card">
+        <h2>{ABOUT.join.title}</h2>
+        <p>{ABOUT.join.lead}</p>
+        <ul>{ABOUT.join.items.map((x) => <li key={x}><Inline text={x} /></li>)}</ul>
+        <a class="btn block" href={`mailto:${ABOUT.join.email}`}>Napiš na {ABOUT.join.email}</a>
+      </section>
     </div>
   )
 }

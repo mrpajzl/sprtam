@@ -32,4 +32,14 @@ export const ABOUT = {
       ],
     },
   ],
+  join: {
+    title: 'Zapoj se',
+    lead: 'Pomoz nám, ať je učivo správně a srozumitelně.',
+    items: [
+      '**Pomoz s kvalitou obsahu.** Vidíš chybu, nebo víš, jak něco vysvětlit líp?',
+      '**Máš pro Šprtám využití**, ale potřebuješ, aby fungoval trochu jinak?',
+      '**Zajímá tě víc?** Chceš projekt podpořit?',
+    ],
+    email: 'info@sprtam.cz',
+  },
 }
