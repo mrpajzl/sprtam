@@ -44,7 +44,7 @@ Formátování je pevné: JSON odsazený dvěma mezerami, na konci nový řádek
 
 ## Postup
 
-Bez práce se soubory to jde v [moderaci](MODERACE.md): editor s živým náhledem hlídá tato pravidla a hotovou změnu pošle jako pull request. Ruční postup:
+Bez práce se soubory to jde v [moderaci](MODERACE.md): editor s živým náhledem hlídá tato pravidla a hotovou změnu pošle ke kontrole jiným moderátorem. Ruční postup:
 
 ### Nové téma
 

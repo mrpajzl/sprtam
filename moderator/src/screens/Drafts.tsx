@@ -4,7 +4,7 @@ import type { GradeId, SubjectId } from '../../../src/content/types'
 import { ApiError, api, get } from '../api'
 import type { Me } from '../passkey'
 import { go, nav } from '../router'
-import { refreshIndex, STATUS, type DraftView } from '../store'
+import { approvalText, refreshIndex, STATUS, type DraftView } from '../store'
 import { ago, Empty, I, toast } from '../ui/kit'
 import { editTopic } from './Library'
 
@@ -20,9 +20,9 @@ export function Drafts({ me }: { me: Me }) {
   }
 
   const groups: [string, DraftView[]][] = list ? [
-    ['Rozpracované', list.filter((d) => d.status === 'draft' || (d.status === 'submitted' && d.unsent))],
-    ['Čekají na schválení', list.filter((d) => d.status === 'submitted' && !d.unsent)],
-    ['Vyřízené', list.filter((d) => d.status === 'merged' || d.status === 'closed')],
+    ['Rozpracované', list.filter((d) => d.status === 'draft')],
+    ['V kontrole', list.filter((d) => d.status === 'review')],
+    ['Vyřízené', list.filter((d) => d.status !== 'draft' && d.status !== 'review')],
   ] : []
 
   return (
@@ -43,11 +43,13 @@ export function Drafts({ me }: { me: Me }) {
                   <b>{d.kind === 'new' && <span class="pill">nové</span>} {d.title}</b>
                   <small>{GRADE_NAME[d.grade as GradeId]} · {SUBJECTS[d.subject as SubjectId]?.name}{everyone ? ` · ${d.author.name}` : ''} · upraveno {ago(d.updatedAt)}</small>
                 </a>
-                <span class={`pill st-${d.status}`}>{d.status === 'submitted' && d.unsent ? 'neodeslané úpravy' : STATUS[d.status]}</span>
-                {d.prUrl && <a class="icon" href={d.prUrl} target="_blank" rel="noopener noreferrer" title={`Pull request #${d.prNumber} na GitHubu`}><I.external /></a>}
-                {(d.status === 'merged' || d.status === 'closed') && d.kind === 'edit' && <button class="btn small" onClick={() => editTopic(d.grade, d.subject, d.topicId)}>Upravit znovu</button>}
+                {d.conflict && <span class="pill warn">konflikt</span>}
+                {d.status === 'review' && d.changes.length > 0 && <span class="pill warn">požadavek na úpravy</span>}
+                <span class={`pill st-${d.status}`}>{d.status === 'review' ? approvalText(d) : STATUS[d.status]}</span>
+                {d.status !== 'draft' && <a class="btn small" href={`/kontrola/${d.id}`} onClick={nav(`/kontrola/${d.id}`)}>Kontrola</a>}
+                {(d.status === 'published' || d.status === 'withdrawn' || d.status === 'rejected') && d.kind === 'edit' && d.author.id === me.id && <button class="btn small" onClick={() => editTopic(d.grade, d.subject, d.topicId)}>Upravit znovu</button>}
                 {d.status === 'draft' && d.author.id === me.id && <button class="icon" onClick={() => remove(d)} title="Smazat návrh" aria-label="Smazat návrh"><I.trash /></button>}
-                {d.status !== 'merged' && d.status !== 'closed' && <button class="btn small" onClick={() => go(`/navrh/${d.id}`)}>{d.author.id === me.id ? 'Pokračovat' : 'Zobrazit'}</button>}
+                {(d.status === 'draft' || d.status === 'review') && <button class="btn small" onClick={() => go(`/navrh/${d.id}`)}>{d.author.id === me.id ? 'Pokračovat' : 'Zobrazit'}</button>}
               </div>
             ))}
           </div>

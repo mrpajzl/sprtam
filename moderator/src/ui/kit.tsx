@@ -40,6 +40,8 @@ export const I = {
   italic: P('M10 5h8M6 19h8M14 5l-4 14'),
   pencil: P('M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4'),
   phone: P('M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM11 18h2'),
+  bulb: P('M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1.1 2V16h5v-.2c.1-.8.5-1.5 1.1-2A6 6 0 0 0 12 3z'),
+  layers: P('M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5'),
 }
 
 export function Modal({ title, onClose, children, wide, actions }: { title: string; onClose: () => void; children: ComponentChildren; wide?: boolean; actions?: ComponentChildren }) {

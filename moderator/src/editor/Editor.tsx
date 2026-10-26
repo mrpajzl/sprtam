@@ -5,7 +5,7 @@ import { ApiError, api, get, post } from '../api'
 import type { Me } from '../passkey'
 import type { PreviewMode } from '../preview/protocol'
 import { nav } from '../router'
-import { refreshIndex, STATUS, useIndex, type DraftView } from '../store'
+import { approvalText, refreshIndex, STATUS, useIndex, type DraftFull, type DraftView } from '../store'
 import { ago, Busy, I, Modal, toast } from '../ui/kit'
 import { explanationTitle, BlockList } from './blocks'
 import { Ctx, EmojiField, FormatBar, Text, useEd, type EditorCtx, type Focus } from './fields'
@@ -17,15 +17,16 @@ import { QuestionList } from './questions'
 import { editTopic } from '../screens/Library'
 
 // The topic editor: outline on the left, the section being edited in the middle, the live preview on
-// the right. Changes are saved as you type; "Odeslat ke schválení" makes a pull request.
+// the right. Changes are saved as you type; "Odeslat ke kontrole" shows the change to the other moderators
+// (screens/Review.tsx), who approve it – then it is published.
 
-interface Loaded { draft: DraftView; topic: TopicFile; after: string | null }
+type Loaded = DraftFull
 type Save = 'saved' | 'dirty' | 'saving' | 'error'
 
 const EMOJIS = ['📘', '🔢', '➗', '📐', '📏', '🧮', '🔺', '⚖️', '🕐', '🧪', '⚗️', '🔬', '🧬', '🌱', '🌍', '🗺️', '🏰', '👑', '⚔️', '📜', '✍️', '📖', '🔤', '💬', '🎭', '⚡', '🧲', '💡', '🚀', '🧠']
 const backupKey = (id: string) => `moderace:draft:${id}`
 
-export function Editor({ id, me, github }: { id: string; me: Me; github: boolean }) {
+export function Editor({ id, me }: { id: string; me: Me }) {
   const [loaded, setLoaded] = useState<Loaded | null>(null)
   const [error, setError] = useState('')
   useEffect(() => {
@@ -34,10 +35,10 @@ export function Editor({ id, me, github }: { id: string; me: Me; github: boolean
   }, [id])
   if (error) return <div class="gate"><div class="gate-card"><h1>Návrh nejde otevřít</h1><div class="banner bad">{error}</div><a class="btn" href="/navrhy" onClick={nav('/navrhy')}>Moje návrhy</a></div></div>
   if (!loaded) return <div class="boot" />
-  return <Workspace key={id} initial={loaded} me={me} github={github} />
+  return <Workspace key={id} initial={loaded} me={me} />
 }
 
-function Workspace({ initial, me, github }: { initial: Loaded; me: Me; github: boolean }) {
+function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
   const index = useIndex()
   const [draft, setDraft] = useState(initial.draft)
   const hist = useHistory<TopicFile>(initial.topic)
@@ -45,7 +46,7 @@ function Workspace({ initial, me, github }: { initial: Loaded; me: Me; github: b
   const [after, setAfter] = useState<string | null>(initial.after)
   const g = draft.grade as GradeId, s = draft.subject as SubjectId
   const own = draft.author.id === me.id
-  const readOnly = !own || draft.status === 'merged' || draft.status === 'closed'
+  const readOnly = !own || (draft.status !== 'draft' && draft.status !== 'review')
 
   const [section, setSection] = useState<Section>({ kind: 'ex', i: 0 })
   const [focus, setFocusState] = useState<Focus>({ ex: 0 })
@@ -79,7 +80,7 @@ function Workspace({ initial, me, github }: { initial: Loaded; me: Me; github: b
       try {
         const r = await api<{ rev: number; updatedAt: number }>('PUT', `/api/drafts/${draft.id}`, { topic: body.topic, after: body.after, rev: rev.current })
         rev.current = r.rev
-        setDraft((d) => ({ ...d, rev: r.rev, updatedAt: r.updatedAt, unsent: true }))
+        setDraft((d) => ({ ...d, rev: r.rev, updatedAt: r.updatedAt, approvals: r.rev !== d.rev ? [] : d.approvals }))
         if (latest.current.topic === body.topic && latest.current.after === body.after) { setSave('saved'); localStorage.removeItem(backupKey(draft.id)) } else setSave('dirty')
       } catch (e) {
         setSave('error')
@@ -159,7 +160,7 @@ function Workspace({ initial, me, github }: { initial: Loaded; me: Me; github: b
 
   // ——— Submit ———
   const onSubmitted = (d: DraftView) => { setDraft(d); rev.current = d.rev; refreshIndex() }
-  const status = draft.status === 'submitted' && draft.unsent ? 'neodeslané úpravy' : STATUS[draft.status]
+  const status = draft.status === 'review' ? `${STATUS.review} · ${approvalText(draft)}` : STATUS[draft.status]
   // Back to the published topic (a new one is not published yet: its subject).
   const back = draft.kind === 'edit' ? `/ucivo/${g}/${s}/${draft.topicId}` : `/ucivo/${g}/${s}`
 
@@ -180,15 +181,15 @@ function Workspace({ initial, me, github }: { initial: Loaded; me: Me; github: b
               <button class="icon" onClick={hist.redo} disabled={!hist.canRedo} title="Znovu (Ctrl+Shift+Z)" aria-label="Znovu"><I.redo /></button>
             </>}
             <button class={`icon pv-toggle ${showPreview ? 'on' : ''}`} onClick={() => setShowPreview(!showPreview)} title="Náhled" aria-label="Zobrazit nebo skrýt náhled" aria-pressed={showPreview}><I.phone /></button>
-            {draft.prUrl && <a class="btn" href={draft.prUrl} target="_blank" rel="noopener noreferrer"><I.external />#{draft.prNumber}</a>}
-            {!readOnly && (
-              <button class="btn primary" onClick={() => setSubmitting(true)} disabled={draft.status === 'submitted' && !draft.unsent && save === 'saved'}>
-                <I.send />{draft.status === 'submitted' ? 'Odeslat úpravy' : 'Odeslat ke schválení'}
-              </button>
+            {draft.status !== 'draft' && <a class="btn" href={`/kontrola/${draft.id}`} onClick={nav(`/kontrola/${draft.id}`)}><I.check />Kontrola</a>}
+            {!readOnly && draft.status === 'draft' && (
+              <button class="btn primary" onClick={() => setSubmitting(true)}><I.send />Odeslat ke kontrole</button>
             )}
           </div>
         </header>
         {readOnly && <ReadOnlyBanner draft={draft} own={own} />}
+        {!readOnly && draft.conflict && <div class="banner warn ed-banner"><I.warn />Téma mezitím někdo jiný změnil a zveřejnil. Na <a href={`/kontrola/${draft.id}`} onClick={nav(`/kontrola/${draft.id}`)}>stránce kontroly</a> uvidíš, co se změnilo – přenes to sem a návrh převeď na novou verzi.</div>}
+        {!readOnly && !draft.conflict && draft.status === 'review' && <div class="banner info ed-banner"><I.eye />Návrh je v kontrole. Každá úprava je nová verze – kdo už ho schválil, musí ho schválit znovu.</div>}
 
         <nav class="outline" aria-label="Části tématu">
           <Outline section={section} issues={issues} jump={jump} />
@@ -212,7 +213,7 @@ function Workspace({ initial, me, github }: { initial: Loaded; me: Me; github: b
           </aside>
         )}
       </div>
-      {submitting && <Submit draft={draft} issues={issues} github={github} flush={flush} goIssue={(i) => { setSubmitting(false); goIssue(i) }} onClose={() => setSubmitting(false)} onDone={onSubmitted} />}
+      {submitting && <Submit draft={draft} issues={issues} flush={flush} goIssue={(i) => { setSubmitting(false); goIssue(i) }} onClose={() => setSubmitting(false)} onDone={onSubmitted} />}
     </Ctx.Provider>
   )
 }
@@ -223,9 +224,15 @@ function SaveState({ save, at, retry }: { save: Save; at: number; retry: () => v
 }
 
 function ReadOnlyBanner({ draft, own }: { draft: DraftView; own: boolean }) {
-  if (!own) return <div class="banner info ed-banner"><I.eye />Prohlížíš návrh, který rozpracoval/a {draft.author.name}. Upravovat ho může jen autor.</div>
-  if (draft.status === 'merged') return <div class="banner ok ed-banner"><I.check />Schváleno! Změna je sloučená a během pár minut bude na sprtam.cz. {draft.kind === 'edit' && <button class="btn small" onClick={() => editTopic(draft.grade, draft.subject, draft.topicId)}>Upravit znovu</button>}</div>
-  return <div class="banner warn ed-banner"><I.warn />Tenhle návrh byl zamítnut (pull request je zavřený). {draft.prUrl && <a href={draft.prUrl} target="_blank" rel="noopener noreferrer">Podívej se proč</a>} {draft.kind === 'edit' && <button class="btn small" onClick={() => editTopic(draft.grade, draft.subject, draft.topicId)}>Začít znovu</button>}</div>
+  const review = <a href={`/kontrola/${draft.id}`} onClick={nav(`/kontrola/${draft.id}`)}>kontrolu a komentáře</a>
+  if (!own) return <div class="banner info ed-banner"><I.eye />Prohlížíš návrh, který rozpracoval/a {draft.author.name}. Upravovat ho může jen autor – ty můžeš otevřít {review}.</div>
+  if (draft.status === 'published') return <div class="banner ok ed-banner"><I.check />Zveřejněno{draft.release ? ` (vydání ${draft.release})` : ''}. Změna je na sprtam.cz. {draft.kind === 'edit' && <button class="btn small" onClick={() => editTopic(draft.grade, draft.subject, draft.topicId)}>Upravit znovu</button>}</div>
+  return (
+    <div class="banner warn ed-banner">
+      <I.warn />{draft.status === 'rejected' ? `Návrh byl zamítnut${draft.decisionNote ? `: ${draft.decisionNote}` : '.'}` : 'Návrh byl stažen.'} Podívej se na {review}.
+      {draft.kind === 'edit' && <button class="btn small" onClick={() => editTopic(draft.grade, draft.subject, draft.topicId)}>Začít znovu</button>}
+    </div>
+  )
 }
 
 // ——— Outline ———
@@ -285,7 +292,7 @@ function Checklist({ issues, jump }: { issues: Issue[]; jump: (f: Focus | { meta
           </ul>
           {issues.length > 12 && <p class="fine">…a dalších {issues.length - 12}</p>}
         </>
-      ) : <p><I.check /> Všechno v pořádku – můžeš odeslat ke schválení.</p>}
+      ) : <p><I.check /> Všechno v pořádku – můžeš odeslat ke kontrole.</p>}
     </div>
   )
 }
@@ -370,14 +377,13 @@ function ExplanationSection({ i, issues, jump }: { i: number; issues: Issue[]; j
 
 // ——— Submit ———
 
-function Submit({ draft, issues, github, flush, goIssue, onClose, onDone }: {
-  draft: DraftView; issues: Issue[]; github: boolean; flush: () => Promise<void>; goIssue: (i: Issue) => void; onClose: () => void; onDone: (d: DraftView) => void
+function Submit({ draft, issues, flush, goIssue, onClose, onDone }: {
+  draft: DraftView; issues: Issue[]; flush: () => Promise<void>; goIssue: (i: Issue) => void; onClose: () => void; onDone: (d: DraftView) => void
 }) {
   const [note, setNote] = useState('')
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
   const [done, setDone] = useState<DraftView | null>(null)
-  const [update] = useState(draft.status === 'submitted')
   const send = async () => {
     setBusy(true); setError('')
     try {
@@ -387,21 +393,21 @@ function Submit({ draft, issues, github, flush, goIssue, onClose, onDone }: {
     } catch (e) {
       const ex = e as ApiError
       const problems = (ex.data?.problems as { path: string; message: string }[] | undefined) ?? []
-      setError(`${ex.message ?? 'Odeslání se nepovedlo.'}${problems.length ? ` (${problems.slice(0, 3).map((p) => `${p.path}: ${p.message}`).join('; ')})` : ''}`)
+      setError(`${ex.message ?? 'Odeslání se nepovedlo.'}${problems.length ? ` (${problems.slice(0, 3).map((p) => p.message).join('; ')})` : ''}`)
     } finally { setBusy(false) }
   }
+  const others = draft.needed === 1 ? 'jiný moderátor' : `${draft.needed} další moderátoři`
   if (done) {
     return (
-      <Modal title={update ? 'Úpravy odeslány' : 'Odesláno ke schválení'} onClose={onClose} actions={<><a class="btn" href="/navrhy" onClick={nav('/navrhy')}>Moje návrhy</a><button class="btn primary" onClick={onClose}>Hotovo</button></>}>
-        <p class="lead"><I.check /> Díky! {update ? 'Úpravy jsou v návrhu.' : 'Návrh čeká na schválení.'}</p>
-        <p>Správce ho zkontroluje. Po schválení se změna sama zveřejní na sprtam.cz. Stav uvidíš v <b>Návrzích</b>.</p>
-        {done.prUrl && <p><a href={done.prUrl} target="_blank" rel="noopener noreferrer"><I.external /> Pull request #{done.prNumber} na GitHubu</a></p>}
+      <Modal title="Odesláno ke kontrole" onClose={onClose} actions={<><a class="btn" href={`/kontrola/${done.id}`} onClick={nav(`/kontrola/${done.id}`)}>Otevřít kontrolu</a><button class="btn primary" onClick={onClose}>Hotovo</button></>}>
+        <p class="lead"><I.check /> Díky! Návrh teď vidí ostatní moderátoři.</p>
+        <p>Jakmile ho schválí {others}, sám se zveřejní na sprtam.cz. Když budou chtít něco upravit, uvidíš jejich komentáře v kontrole a v <b>Mých návrzích</b>.</p>
       </Modal>
     )
   }
   return (
-    <Modal title={update ? 'Odeslat úpravy návrhu' : 'Odeslat ke schválení'} onClose={onClose}
-      actions={<><button class="btn" onClick={onClose}>Zpět k úpravám</button><Busy class="btn primary" on={busy} disabled={issues.length > 0 || !github} onClick={send}><I.send />{update ? 'Odeslat úpravy' : 'Odeslat'}</Busy></>}>
+    <Modal title="Odeslat ke kontrole" onClose={onClose}
+      actions={<><button class="btn" onClick={onClose}>Zpět k úpravám</button><Busy class="btn primary" on={busy} disabled={issues.length > 0} onClick={send}><I.send />Odeslat</Busy></>}>
       {issues.length > 0 ? (
         <>
           <p>Než téma odešleš, oprav ještě <b>{issues.length}</b> {issues.length === 1 ? 'věc' : issues.length < 5 ? 'věci' : 'věcí'}:</p>
@@ -409,13 +415,11 @@ function Submit({ draft, issues, github, flush, goIssue, onClose, onDone }: {
         </>
       ) : (
         <>
-          <p>{update ? 'Úpravy se přidají do tvého čekajícího návrhu.' : 'Vytvoří se návrh změny (pull request). Správce ho zkontroluje a po schválení se sám zveřejní na sprtam.cz.'}</p>
-          <label class="field"><span>Vzkaz pro správce</span><textarea rows={3} value={note} onInput={(e) => setNote(e.currentTarget.value)} placeholder="Co a proč jsi změnil/a (nepovinné)" maxLength={2000} /></label>
-          {!github && <div class="banner warn">Moderace zatím není připojená ke GitHubu. Návrh je uložený, odeslat půjde, až to správce nastaví.</div>}
+          <p>Změnu uvidí ostatní moderátoři. Zveřejní se, až ji schválí {others}. Upravovat ji můžeš i potom – každá úprava je ale nová verze, kterou je potřeba schválit znovu.</p>
+          <label class="field"><span>Vzkaz pro kontrolu</span><textarea rows={3} value={note} onInput={(e) => setNote(e.currentTarget.value)} placeholder="Co a proč jsi změnil/a (nepovinné)" maxLength={2000} /></label>
         </>
       )}
       {error && <div class="banner bad" role="alert">{error}</div>}
     </Modal>
   )
 }
-

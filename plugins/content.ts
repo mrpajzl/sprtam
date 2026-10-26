@@ -32,6 +32,27 @@ export const readSubjects = (): Subject[] => subjectDirs().map(([g, s]) => readS
 /** Vocabulary levels, A1 first. */
 export const readVocab = (): VocabFile[] => readdirSync(VOCAB).filter((f) => f.endsWith('.json')).sort().map((f) => readJson<VocabFile>(join(VOCAB, f)))
 
+/** A document without the editor-only `$schema` (as src/content/docs.ts stripSchema; not imported here, it would pull the widgets into the Vite config). */
+const stripSchema = (v: unknown) => {
+  if (!v || typeof v !== 'object' || Array.isArray(v) || !('$schema' in v)) return v
+  const { $schema: _, ...rest } = v as Record<string, unknown>
+  return rest
+}
+
+/** Every content file under `dir` as documents (src/content/docs.ts): key = path without .json, value without `$schema`. Throws on invalid JSON. */
+export function readSnapshot(dir = CONTENT): Map<string, unknown> {
+  const out = new Map<string, unknown>()
+  const walk = (d: string, prefix: string) => {
+    for (const f of existsSync(d) ? readdirSync(d).sort() : []) {
+      const p = join(d, f)
+      if (statSync(p).isDirectory()) walk(p, `${prefix}${f}/`)
+      else if (f.endsWith('.json')) out.set(`${prefix}${f.slice(0, -5)}`, stripSchema(readJson(p)))
+    }
+  }
+  for (const top of ['topics', 'vocab', 'approaches']) walk(join(dir, top), `${top}/`)
+  return out
+}
+
 export interface Approach extends ApproachFile { id: string; years: [GradeId, ApproachYearFile][] }
 
 /** Teaching approaches (content/approaches/<id>/) with their years in school order. */

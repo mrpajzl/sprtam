@@ -1,6 +1,12 @@
 # Moderace
 
-Samostatná aplikace pro úpravy a tvorbu učiva: **[moderace.sprtam.cz](https://moderace.sprtam.cz)**. Učivo si v ní kdokoli prohlédne bez přihlášení. Pozvaní moderátoři v ní upravují témata v editoru s živým náhledem. Hotovou změnu pošlou ke schválení a aplikace z ní otevře pull request na GitHubu. Po sloučení se změna sama nasadí na sprtam.cz.
+Samostatná aplikace pro úpravy a tvorbu učiva: **[moderace.sprtam.cz](https://moderace.sprtam.cz)**.
+
+- Učivo si v ní kdokoli prohlédne bez přihlášení.
+- Pozvaní moderátoři v ní upravují témata v editoru s živým náhledem. Hotovou změnu pošlou **ke kontrole**.
+- Jakmile ji schválí jiný moderátor, je hned na sprtam.cz.
+
+Moderace je zároveň obsahová služba: učivo i s celou historií je v její databázi ([OBSAH.md](OBSAH.md)).
 
 Kód je ve složce [`moderator/`](../moderator). Pro žáky se nic nemění: Šprtám dál nemá účty a o dětech nic neukládá. Účty mají jen moderátoři a jen v moderaci.
 
@@ -19,8 +25,29 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
    - **Uprostřed** jsou bloky jako karty. Přidáš je tlačítkem **+** mezi kartami, přesuneš je tažením nebo šipkami a smazané vrátíš přes Ctrl+Z. Lišta nahoře vkládá **tučné**, *kurzívu*, `vzorec`, horní index a matematické znaky.
    - **Vpravo** je náhled v telefonu. Kreslí ho přímo komponenty a styly Šprtámu, takže vypadá a funguje přesně jako v aplikaci, i ve tmavém vzhledu. Pomůcky jdou zkoušet a otázky odpovídat.
 4. **Ukládá se samo.** Neuložené změny se při pádu prohlížeče nabídnou k obnovení.
-5. **Odeslat ke schválení** jde, až editor nehlásí žádnou chybu. Kontroluje to stejná pravidla jako `npm run check:content` při nasazení, takže návrh z moderace nikdy nerozbije build. Další odeslání stejného návrhu přidá úpravy do téhož pull requestu.
-6. Stav návrhů je v **Návrzích**: *Rozpracováno*, *Čeká na schválení*, *Schváleno*, *Zamítnuto*.
+5. **Odeslat ke kontrole** jde, až editor nehlásí žádnou chybu. Server pak zkontroluje celé učivo i s touto změnou stejnými pravidly jako `npm run check:content`.
+6. Stav návrhů je v **Mých návrzích**: *Rozpracováno*, *Ke kontrole* (kolik schválení už má), *Zveřejněno*, *Staženo*, *Zamítnuto*.
+
+## Kontrola
+
+- **Ke kontrole** (číslo v liště říká, kolik změn čeká na tebe) jsou změny ostatních.
+- Každá změna ukazuje jen to, co se změnilo proti verzi, ze které autor vycházel:
+  - přidané, odebrané a změněné bloky a otázky;
+  - uvnitř změněných textů jednotlivá slova (zeleně přidaná, červeně odebraná);
+  - vedle návrh v telefonu, tlačítkem 📱 u změny skočíš přímo na ni.
+- **Komentovat** jde každý změněný blok i otázku, nebo celou změnu. Autor a pisatel komentář označí jako vyřešený.
+- **Požádat o úpravy** blokuje zveřejnění, dokud autor návrh neupraví.
+- **Schválit** (u posledního potřebného schválení **Schválit a zveřejnit**) změnu hned zveřejní jako nové vydání.
+- Vlastní změnu schválit nejde. Schvaluje se přesně ta verze, kterou vidíš: když ji autor mezitím upraví, je potřeba podívat se znovu.
+- **Konflikt:** téma mezitím změnil a zveřejnil někdo jiný. Autor uvidí, co se zveřejnilo, přenese to do svého návrhu a převede ho na novou verzi.
+
+## Historie a pomůcky
+
+- **Historie** tématu (tlačítko u tématu):
+  - každá zveřejněná verze, kdo ji změnil a kdo schválil, a co změnila;
+  - **Navrhnout návrat k této verzi** založí návrh se starým obsahem, který jde normálně ke kontrole.
+- **Pomůcky:** chybí ti při vysvětlování interaktivní pomůcka (váhy, mapa, osa…)? Navrhni ji: co si s ní mají děti vyzkoušet a ke kterým tématům patří. Ostatní ji můžou podpořit, správce ji naplánuje a po dokončení ji najdeš v editoru.
+- **API tokeny** (Účet) jsou pro skripty a AI agenty, kteří připravují učivo jako tvoje návrhy. Schválit je musí někdo jiný ([OBSAH.md](OBSAH.md#api-pro-moderování)).
 
 Pravidla pro obsah: [CONTENT.md](CONTENT.md). Editor je hlídá za tebe a ukazuje je u každého vysvětlení.
 
@@ -29,7 +56,14 @@ Pravidla pro obsah: [CONTENT.md](CONTENT.md). Editor je hlídá za tebe a ukazuj
 - **Moderátoři** (jen pro roli *Správce*): pozvat moderátora, změnit roli, vypnout účet, poslat odkaz na nový klíč, zrušit všechny klíče (ztracené nebo ukradené zařízení), odhlásit ze všech zařízení. Je tam i záznam událostí: přihlášení včetně neúspěšných, pozvánky a odeslané návrhy.
 - Každá změna v této části chce **čerstvé potvrzení klíčem** (přihlášení v posledních 15 minutách). Aplikace si o něj sama řekne.
 - Aspoň jeden aktivní správce musí zůstat vždy. Sám sebe správce vypnout nemůže.
-- **Schvalování** probíhá na GitHubu. Pull requesty z moderace mají větev `moderace/<id-tématu>-…` a v popisu autora a souhrn změn. Sloučením se změna nasadí.
+- **Vydání:**
+  - stav učiva: aktuální vydání, neporušená historie, poslední ověřená záloha;
+  - každé vydání s tím, co změnilo;
+  - **Obnovit** vrátí celé učivo do stavu po zvoleném vydání, hned a bez kontroly (jen pro naléhavé případy, s důvodem).
+
+  Totéž umí Historie tématu pro jedno téma (**Vrátit hned bez kontroly**).
+- **Zamítnout** jde návrh, který se nezveřejní. Autor uvidí důvod.
+- Kolik schválení je potřeba, určuje `REQUIRED_APPROVALS`.
 
 ### První správce
 
@@ -39,7 +73,14 @@ První účet se zakládá v kontejneru (v Coolify: aplikace → Terminal):
 node moderator/dist-server/cli.mjs invite "Jméno Příjmení" admin
 ```
 
-Příkaz vypíše jednorázový odkaz. Další příkazy jsou `users` (seznam účtů) a `disable <id>` (vypne účet a hned ho odhlásí). Všechno ostatní se dělá v aplikaci.
+Příkaz vypíše jednorázový odkaz. Další příkazy:
+
+- `users`: seznam účtů;
+- `disable <id>`: vypne účet a hned ho odhlásí;
+- `verify`: kontrola hash řetězu historie;
+- `import <složka> "<důvod>"`: obnova učiva ze složky, např. ze zrcadla; potom restart.
+
+Všechno ostatní se dělá v aplikaci.
 
 ## Bezpečnost
 
@@ -49,13 +90,14 @@ Příkaz vypíše jednorázový odkaz. Další příkazy jsou `users` (seznam ú
 | Účty | Jen přes jednorázovou pozvánku (72 h). Token je v `#` části odkazu, takže ho prohlížeč nikam neposílá, a aplikace ho po načtení smaže z adresního řádku. V databázi je jen jeho SHA-256. |
 | Session | Náhodný 256bitový token v cookie `__Host-moderace` (`HttpOnly`, `Secure`, `SameSite=Strict`). V databázi je jen SHA-256. Vyprší po 12 h nečinnosti, nejpozději po 7 dnech. Přihlášení vždy vytvoří novou session. Odebrání klíče ukončí session, které z něj vznikly. |
 | Výzvy | Přihlašovací výzvy si server neukládá: podepisuje je klíčem, který existuje jen v běžícím procesu, a pamatuje si jen ty už použité. Kdokoli z internetu tak nemůže zahltit paměť a přihlašování zablokovat. Výzvy k registraci vyžadují platnou pozvánku nebo přihlášení. |
-| Veřejná část | Bez přihlášení jde jen číst zveřejněné učivo (`GET /api/content/index` a `/api/content/topic/…`). Jsou to tytéž soubory, které stejně posílá sprtam.cz. Seznam rozpracovaných návrhů a jejich autorů dostane jen přihlášený moderátor. Všechno ostatní chce session. |
-| Cizí stránky | Každý požadavek, který něco mění, musí mít přesně náš `Origin` a `Sec-Fetch-Site: same-origin` a tělo jen jako JSON. CORS není povolené. |
+| Veřejná část | Bez přihlášení jde jen číst zveřejněné učivo (`GET /api/content/index`, `/api/content/topic/…` a veřejné API `/api/public/v1/…`). Je to totéž, co ukazuje sprtam.cz. Návrhy, historii a jejich autory dostane jen přihlášený moderátor. Rozpracované návrhy vidí jen autor (a správce), ostatní je uvidí až po odeslání ke kontrole. Všechno ostatní chce session. |
+| Cizí stránky | Každý požadavek, který něco mění, musí mít přesně náš `Origin` a `Sec-Fetch-Site: same-origin` a tělo jen jako JSON. CORS není povolené. Výjimkou jsou požadavky s API tokenem v hlavičce `Authorization`: nenesou cookies a prohlížeč je za cizí stránku bez CORS neodešle. |
+| Zveřejnění | Jen schválením jiného moderátora (aktuální revize, bez konfliktu, celé učivo projde kontrolou), nebo nouzovou obnovou správcem s čerstvým potvrzením klíčem. Historie jde jen doplňovat a je chráněná hash řetězem ([OBSAH.md](OBSAH.md#bezpečnost)). |
 | Hlavičky | Přísná CSP (jen `'self'`, žádné cizí skripty), HSTS, `frame-ancestors 'self'`, COOP/CORP, `no-referrer`, `noindex`. |
 | Omezení | Rate limit přihlašování, pozvánek, zakládání, ukládání a odesílání návrhů (IPv6 po celých /64). Požadavky bez přihlášení mají nejvýš 16 kB, ostatní 512 kB. Jeden moderátor má nejvýš 50 otevřených návrhů. Adresu klienta z `CF-Connecting-IP` server bere jen od adres Cloudflare. |
 | Vypnutý účet, zrušené klíče | Session se mažou okamžitě, klíč dál nefunguje a nepoužité odkazy na nový klíč propadnou. Vždy musí zůstat aspoň jeden správce, který se může přihlásit. |
-| GitHub | Token má jen server, prohlížeč ho nikdy nevidí. Server zapisuje jen `content/topics/<ročník>/<předmět>/<id>.json` a `_subject.json` a jen do nových větví `moderace/*`. Do `main` nikdy nepíše, slučuje vždy člověk. |
-| Data | Jeden SQLite soubor ve volume `/data`. Obsahuje jména moderátorů, veřejné klíče, hashe session a pozvánek, návrhy a záznam událostí. |
+| API tokeny | V databázi jen SHA-256, s platností, jen vybrané akce nad vlastními návrhy. Vypnutí účtu, zrušení klíčů a odhlášení ruší i tokeny. |
+| Data | Jeden SQLite soubor ve volume `/data`. Obsahuje učivo se všemi verzemi, jména moderátorů, veřejné klíče, hashe session, tokenů a pozvánek, návrhy, kontroly a záznam událostí. Každou hodinu si ho zašifrovaně zálohuje druhý server ([OBSAH.md](OBSAH.md#zálohy)). |
 
 ## Nasazení
 
@@ -67,8 +109,8 @@ Samostatná aplikace v Coolify (projekt Šprtám) ze stejného repozitáře:
 | Proměnná | Význam |
 |---|---|
 | `ORIGIN` | Přesná veřejná adresa, `https://moderace.sprtam.cz`. Jsou na ni vázané passkeys, proto se nesmí měnit, jinak se nikdo nepřihlásí. |
-| `GITHUB_TOKEN` | Fine-grained token jen pro `mrpajzl/sprtam` s oprávněními *Contents: read and write*, *Pull requests: read and write* a *Metadata: read*. Bez něj se návrhy jen ukládají. |
-| `GITHUB_REPO`, `GITHUB_BASE` | Výchozí `mrpajzl/sprtam` a `main`. |
+| `REQUIRED_APPROVALS` | Kolik jiných moderátorů musí změnu schválit, výchozí 1. |
+| `BACKUP_TOKEN` | Token, kterým si zálohy stahuje `hetzner-1` ([OBSAH.md](OBSAH.md#zálohy)). Bez něj jsou zálohy vypnuté. |
 | `TRUST_PROXY` | `1` za Cloudflare: IP adresa klienta se bere z `CF-Connecting-IP` (pro limity a záznam událostí). V Dockerfile je zapnutá. |
 | `DATA_DIR`, `PORT` | `/data` a `8090`. |
 
@@ -80,13 +122,23 @@ npm run moderator:build   # typy + editor do moderator/dist + server do moderato
 node moderator/dist-server/cli.mjs invite "Já" admin   # první účet lokálně (odkaz na localhost:5180)
 ```
 
-Passkeys fungují i na `http://localhost`. Server bez `GITHUB_TOKEN` návrhy jen ukládá.
+Passkeys fungují i na `http://localhost`. Server při prvním spuštění s prázdnou databází naimportuje učivo z `content/` (`npm run content:pull`).
 
-Test celého toku a bezpečnostních pravidel: `npm run moderator:build && node scripts/moderator-test.mjs`. Test spustí vlastní server s prázdnou databází a v Chromiu s virtuálními klíči projde pozvánku, přihlášení, podvržené výzvy a požadavky z cizích stránek, editor s náhledem, oddělení návrhů mezi moderátory i správu účtů.
+Test celého toku a bezpečnostních pravidel: `npm run moderator:build && node scripts/moderator-test.mjs`. Test spustí vlastní server s prázdnou databází a v Chromiu s virtuálními klíči projde:
+
+- pozvánku, přihlášení a podvržené výzvy;
+- požadavky z cizích stránek;
+- editor s náhledem a oddělení návrhů mezi moderátory;
+- kontrolu, schválení a zveřejnění, konflikty;
+- historii, návraty a obnovu vydání;
+- API tokeny, žádosti o pomůcky a zálohy;
+- správu účtů.
 
 | Kde | Co |
 |---|---|
-| `moderator/server/` | HTTP server bez frameworku: `auth.ts` (passkeys, session, pozvánky), `admin.ts`, `drafts.ts` (návrhy a pull requesty), `github.ts`, `content.ts`, `db.ts` (SQLite), `cli.ts` |
+| `moderator/server/` | HTTP server bez frameworku: `auth.ts` (passkeys, session, pozvánky, API tokeny), `admin.ts`, `store.ts` (učivo, verze, vydání, hash řetěz), `drafts.ts` (návrhy, kontrola, návraty), `requests.ts` (žádosti o pomůcky), `backup.ts`, `content.ts`, `db.ts` (SQLite a migrace), `cli.ts` |
+| `src/content/check.ts`, `diff.ts`, `release.ts` | Kontrola celého učiva (sdílená s `check:content`), rozdíly verzí, soubory vydání pro aplikaci |
+| `ops/backup/` | Zálohy na druhém serveru ([OBSAH.md](OBSAH.md#zálohy)) |
 | `moderator/src/` | Editor (Preact): `editor/` (karty bloků a otázek, formulář pomůcky generovaný z jejího schématu, kontrola, historie změn, náhled), `screens/`, `passkey.ts` |
 | `moderator/src/preview/` | Náhled v iframe nad komponentami aplikace (`src/screens/Blocks.tsx`, `src/quiz/QuestionView.tsx`, `src/styles.css`) |
 | `src/content/rules.ts` | Pravidla tématu, sdílená s `scripts/check-content.ts` (anglicky pro skript, česky pro editor) |

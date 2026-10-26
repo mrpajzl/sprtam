@@ -102,11 +102,11 @@ function Intro({ index, me }: { index?: Index; me: Me | null }) {
   return (
     <div class="intro">
       <h1>Ahoj, {me.name.split(' ')[0]}!</h1>
-      <p class="lead">Vyber vlevo ročník a předmět, pak téma, které chceš upravit – nebo přidej nové. Každá změna se před zveřejněním schvaluje.</p>
+      <p class="lead">Vyber vlevo ročník a předmět, pak téma, které chceš upravit – nebo přidej nové. Každou změnu před zveřejněním schvaluje jiný moderátor.</p>
       <ol class="how">
         <li><b>Uprav</b> výklad a otázky v editoru. Vpravo hned vidíš, jak to bude vypadat v aplikaci.</li>
         <li><b>Oprav</b>, na co tě editor upozorní (červeně). Ukládá se samo.</li>
-        <li><b>Odešli ke schválení.</b> Po schválení se změna sama zveřejní na sprtam.cz.</li>
+        <li><b>Odešli ke kontrole.</b> Až změnu schválí jiný moderátor, sama se zveřejní na sprtam.cz.</li>
       </ol>
       {index && <p class="muted">V učivu je {total} témat.{mine ? <> Máš rozpracováno {mine} – najdeš je v <a href="/navrhy" onClick={nav('/navrhy')}>Návrzích</a>.</> : null}</p>}
     </div>
@@ -134,7 +134,7 @@ function TopicRows({ index, rows, me, showWhere }: { index: Index; rows: Row[]; 
               {showWhere && <small>{GRADE_NAME[g]} · {SUBJECTS[s].name}</small>}
               {t.approach && <small>jen pro přístup {index.approaches.find((a) => a.id === t.approach)?.short ?? t.approach}</small>}
             </span>
-            {mine && <span class="pill mine">{mine.status === 'submitted' ? 'tvůj návrh čeká' : 'rozpracováno'}</span>}
+            {mine && <span class="pill mine">{mine.status === 'review' ? 'tvůj návrh v kontrole' : 'rozpracováno'}</span>}
             {rest.length > 0 && <span class="pill warn" title={rest.map((r) => r.name).join(', ')}>upravuje {rest[0].name}{rest.length > 1 ? ` +${rest.length - 1}` : ''}</span>}
             <I.right />
           </a>
