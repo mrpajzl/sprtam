@@ -60,8 +60,13 @@ function ping(body) {
   dirty = true
 }
 
+// A bug in one request must never take the whole site down.
+process.on('unhandledRejection', (e) => console.error('unhandled', e))
+
 createServer(async (req, res) => {
-  const url = new URL(req.url, 'http://x')
+  let url
+  // `//a:b` and similar request targets are not valid relative URLs: answer 400 instead of throwing.
+  try { url = new URL(req.url, 'http://x') } catch { return res.writeHead(400).end() }
   if (url.pathname === '/api/ping' && req.method === 'POST') {
     let body = ''
     req.on('data', (c) => { if (body.length < 100) body += c })
