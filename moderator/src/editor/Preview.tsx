@@ -6,8 +6,10 @@ import { I } from '../ui/kit'
 // The phone on the right: an iframe with the app's own components (moderator/src/preview), fed the
 // current topic on every change.
 
-export function Preview({ topic, grade, subject, approaches, mode, onMode }: {
+export function Preview({ topic, grade, subject, approaches, mode, onMode, onClose }: {
   topic: TopicFile; grade: GradeId; subject: SubjectId; approaches: PreviewState['approaches']; mode: PreviewMode; onMode: (m: PreviewMode) => void
+  /** Shown where the preview covers the editor (narrow screens). */
+  onClose?: () => void
 }) {
   const frame = useRef<HTMLIFrameElement>(null)
   const [ready, setReady] = useState(false)
@@ -52,6 +54,7 @@ export function Preview({ topic, grade, subject, approaches, mode, onMode }: {
         )}
         <button class="icon s" onClick={() => { const t = theme === 'dark' ? 'light' : 'dark'; setTheme(t); localStorage.setItem('moderace-preview-theme', t) }}
           title={theme === 'dark' ? 'Světlý vzhled' : 'Tmavý vzhled'} aria-label="Přepnout světlý a tmavý vzhled">{theme === 'dark' ? <I.sun /> : <I.moon />}</button>
+        {onClose && <button class="icon s pv-close" onClick={onClose} title="Zavřít náhled" aria-label="Zavřít náhled"><I.close /></button>}
       </div>
       <div class="phone">
         <iframe ref={frame} src="/preview.html" title="Náhled v aplikaci" />

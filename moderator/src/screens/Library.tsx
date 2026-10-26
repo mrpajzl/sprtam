@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'preact/hooks'
+import { useEffect, useMemo, useState } from 'preact/hooks'
 import { GRADE_NAME, GRADE_SUBJECTS, STAGES, SUBJECTS } from '../../../src/content/curriculum'
 import type { GradeId, SubjectId } from '../../../src/content/types'
 import { ApiError, post } from '../api'
@@ -31,6 +31,11 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null })
     const words = fold(q).split(/\s+/).filter(Boolean)
     return Object.entries(index.subjects).flatMap(([key, list]) => list.filter((t) => words.every((w) => fold(t.title).includes(w) || t.id.includes(w))).map((t) => ({ key, t }))).slice(0, 80)
   }, [index, q])
+
+  // Phones show grades and subjects as scrolling strips once one is picked: keep the picked ones in view.
+  useEffect(() => {
+    for (const el of document.querySelectorAll('.grades .chip.on, .subjects .subject.on')) el.scrollIntoView({ inline: 'center', block: 'nearest' })
+  }, [grade, subject, !!index])
 
   return (
     <div class="library">
@@ -92,7 +97,7 @@ function Intro({ index, me }: { index?: Index; me: Me | null }) {
       <h1>Učivo Šprtámu</h1>
       <p class="lead">Projdi si všechno učivo aplikace <a href="https://sprtam.cz" target="_blank" rel="noopener">sprtam.cz</a> přesně tak, jak ho vidí děti: výklad, pomůcky i otázky se správnými odpověďmi.</p>
       <ol class="how">
-        <li><b>Vyber</b> vlevo ročník a předmět, nebo téma vyhledej.</li>
+        <li><b>Vyber</b> ročník a předmět, nebo téma vyhledej.</li>
         <li><b>Otevři téma.</b> V telefonu si přečteš výklad a vyzkoušíš otázky. Vedle je přehled všech otázek se správnými odpověďmi.</li>
       </ol>
       <p class="muted">Učivo upravují pozvaní moderátoři a každou změnu před zveřejněním někdo schvaluje.{index ? ` V učivu je ${total} témat.` : ''}</p>
@@ -102,7 +107,7 @@ function Intro({ index, me }: { index?: Index; me: Me | null }) {
   return (
     <div class="intro">
       <h1>Ahoj, {me.name.split(' ')[0]}!</h1>
-      <p class="lead">Vyber vlevo ročník a předmět, pak téma, které chceš upravit – nebo přidej nové. Každou změnu před zveřejněním schvaluje jiný moderátor.</p>
+      <p class="lead">Vyber ročník a předmět, pak téma, které chceš upravit – nebo přidej nové. Každou změnu před zveřejněním schvaluje jiný moderátor.</p>
       <ol class="how">
         <li><b>Uprav</b> výklad a otázky v editoru. Vpravo hned vidíš, jak to bude vypadat v aplikaci.</li>
         <li><b>Oprav</b>, na co tě editor upozorní (červeně). Ukládá se samo.</li>

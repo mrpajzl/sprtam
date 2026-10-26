@@ -106,6 +106,28 @@ try {
   check(await admin.page.locator('.save.saved').waitFor({ timeout: 5000 }).then(() => true, () => false), 'draft is saved')
   const draftId = admin.page.url().split('/').pop()
 
+  // ——— Phone: bottom bar, editor dock, parts sheet and full-screen preview, nothing wider than the screen ———
+  const phone = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, storageState: await admin.ctx.storageState() })
+  const ph = await phone.newPage()
+  const fits = () => ph.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)
+  await ph.goto(`${BASE}/ucivo/z6/matematika`)
+  await ph.locator('.topic').first().waitFor()
+  check(await ph.locator('.bnav').isVisible() && !(await ph.locator('.top .tabs').isVisible()) && await fits(), 'phone: screens in a bottom bar, the page fits the screen')
+  await ph.locator('.bnav').getByRole('button', { name: 'Více' }).click()
+  check(await ph.locator('.more-sheet').getByRole('link', { name: 'Moderátoři' }).isVisible(), 'phone: admin screens under "Více"')
+  await ph.goto(`${BASE}/navrh/${draftId}`)
+  await ph.locator('.ed-dock').waitFor()
+  check(await fits() && !(await ph.locator('.outline').isVisible()), 'phone: the editor fits, the outline is folded away')
+  await ph.locator('.ed-dock').getByRole('button', { name: /Části/ }).click()
+  await ph.locator('.outline .ol-item', { hasText: 'Otázky' }).click()
+  check(!(await ph.locator('.outline').isVisible()) && await ph.locator('#question-0').isVisible(), 'phone: picking a part in the sheet closes it and shows the part')
+  await ph.locator('.ed-dock').getByRole('button', { name: 'Náhled' }).click()
+  const pv = await ph.locator('.ed-preview').boundingBox()
+  check(pv && pv.width >= 389 && pv.height >= 843, 'phone: the preview covers the screen')
+  await ph.getByRole('button', { name: 'Zavřít náhled' }).click()
+  check(!(await ph.locator('.ed-preview').count()), 'phone: the preview closes')
+  await phone.close()
+
   // ——— Another moderator cannot touch it ———
   const mod = await device()
   await mod.page.goto(cli('invite', 'Petr Moderátor', 'moderator'))
