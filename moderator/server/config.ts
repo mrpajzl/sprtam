@@ -27,6 +27,8 @@ export const CONFIG = {
   approvals: Math.max(1, Number(env.REQUIRED_APPROVALS ?? 1) || 1),
   /** Bearer token of the backup puller (docs/OBSAH.md, Zálohy); empty = backups off. */
   backupToken: env.BACKUP_TOKEN ?? '',
+  /** Bearer token the server of sprtam.cz forwards pupils' error reports with (docs/OBSAH.md); empty = reports off. */
+  reportToken: env.REPORT_TOKEN ?? '',
   /** Commit the image was built from (Coolify sets SOURCE_COMMIT). */
   commit: env.SOURCE_COMMIT ?? '',
   /** Behind Cloudflare: the client address is in CF-Connecting-IP. */
@@ -56,4 +58,6 @@ export const LIMITS = {
   apiToken: 180 * DAY,
   /** Open widget requests one moderator may have. */
   widgetRequests: 20,
+  /** Open reports from pupils at most (more waits until moderators close some). */
+  openReports: 1000,
 }

@@ -1,23 +1,35 @@
 import { useMemo, useRef, useState, useEffect } from 'preact/hooks'
 import type { Question } from '../content/types'
 import { Inline } from '../ui/Inline'
-import { IDown, IUp } from '../ui/icons'
+import { IBulb, IDown, IUp } from '../ui/icons'
 import { checkInput } from './engine'
 import { WidgetQuestion } from '../widgets'
 
 const shuffle = <T,>(xs: T[]) => xs.map((x) => [Math.random(), x] as const).sort((a, b) => a[0] - b[0]).map((x) => x[1])
 
 /**
- * One question. Calls `onAnswer(correct)` exactly once.
- * `reveal` = colour the options right/wrong after answering.
+ * One question. Calls `onAnswer(correct, hinted)` exactly once.
+ * `reveal` = colour the options right/wrong after answering. `hints` = the question's hints may be opened (not in exams).
  */
-export function QuestionView({ q, reveal, strict = true, onAnswer }: { q: Question; reveal: boolean; strict?: boolean; onAnswer: (ok: boolean) => void }) {
+export function QuestionView({ q, reveal, strict = true, hints = false, onAnswer }: { q: Question; reveal: boolean; strict?: boolean; hints?: boolean; onAnswer: (ok: boolean, hinted: boolean) => void }) {
   const [done, setDone] = useState(false)
-  const answer = (ok: boolean) => { if (done) return; setDone(true); onAnswer(ok) }
+  const [shown, setShown] = useState(0)
+  const answer = (ok: boolean) => { if (done) return; setDone(true); onAnswer(ok, shown > 0) }
+  const list = hints && 'hints' in q ? q.hints ?? [] : []
   return (
     <div>
       <h2 class="question"><Inline text={q.question} /></h2>
       {q.type === 'input' && q.widget && <WidgetQuestion w={q.widget} />}
+      {list.length > 0 && (shown > 0 || !done) && (
+        <div class="hints" aria-live="polite">
+          {list.slice(0, shown).map((h, i) => <p key={i} class="hint"><IBulb /><span><Inline text={h} /></span></p>)}
+          {!done && shown < list.length && (
+            <button type="button" class="hint-key" onClick={() => setShown(shown + 1)}>
+              <IBulb />{shown === 0 ? 'Nápověda' : 'Další nápověda'}{list.length > 1 && <small>{shown + 1}/{list.length}</small>}
+            </button>
+          )}
+        </div>
+      )}
       {q.type === 'choice' && <Choice q={q} done={done} reveal={reveal} answer={answer} />}
       {q.type === 'truefalse' && <TrueFalse q={q} done={done} reveal={reveal} answer={answer} />}
       {q.type === 'input' && <Input q={q} done={done} reveal={reveal} answer={answer} strict={strict} />}

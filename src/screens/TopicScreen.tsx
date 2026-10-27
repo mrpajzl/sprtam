@@ -11,6 +11,7 @@ import { titles, useTitle } from '../seo'
 import { Bar } from '../ui/Bar'
 import { keyStyle, subjectStyle } from '../ui/glyphs'
 import { IArrow, IBolt, IBulb, IMic, IPencil, IPin, IRepeat } from '../ui/icons'
+import { ReportButton } from '../ui/Report'
 import { useAsync } from '../ui/useAsync'
 import { Blocks } from './Blocks'
 import { Quiz } from './Quiz'
@@ -59,6 +60,7 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
       </div>
       <Blocks key={current} blocks={topic.explanations[current].blocks} />
       <button class="other" onClick={() => switchTo(other)}><IBulb />Nerozumím – vysvětli to jinak: {topic.explanations[other].title}</button>
+      <div class="topic-report"><ReportButton topic={key} target={{ kind: 'explanation', index: current, text: topic.explanations[current].title }} label="Chyba ve vysvětlení? Nahlásit" /></div>
       <div class="modes">
         {(['kviz', 'opakovani', 'pisemka', 'zkouseni'] as ModeId[]).map((m) => {
           const [I, c] = MODE_KEY[m]!

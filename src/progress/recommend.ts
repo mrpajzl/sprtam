@@ -81,12 +81,33 @@ export function recommend(p: Progress, all: TopicRef[], max = 5): Rec[] {
   }).slice(0, max)
 }
 
-/** Consecutive days with practice, ending today or yesterday. */
-export function streak(p: Progress): number {
+/** Days between two forgiven gaps: one missed day a week does not break a streak. */
+export const FREEZE_EVERY = 7
+
+export interface Streak {
+  /** Days with practice in the streak. */
+  n: number
+  /** Missed days the streak survived (one a week at most), newest first. */
+  frozen: number[]
+}
+
+/**
+ * Days with practice in a row, ending today or yesterday (today is still open). A single missed day between
+ * two days with practice is forgiven once every FREEZE_EVERY days; two missed days in a row end the streak.
+ */
+export function streakOf(p: Progress): Streak {
   const days = new Set(p.a ?? [])
   let d = today()
   if (!days.has(d)) d--
   let n = 0
-  while (days.has(d)) { n++; d-- }
-  return n
+  const frozen: number[] = []
+  for (;;) {
+    if (days.has(d)) { n++; d--; continue }
+    const last = frozen.at(-1) ?? Infinity
+    if (days.has(d - 1) && last - d >= FREEZE_EVERY) { frozen.push(d); d--; continue }
+    break
+  }
+  return { n, frozen }
 }
+
+export const streak = (p: Progress) => streakOf(p).n

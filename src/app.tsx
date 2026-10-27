@@ -5,7 +5,7 @@ import { ALL_GRADES, GRADE_SUBJECTS } from './content/curriculum'
 import type { GradeId, SubjectId } from './content/types'
 import { decodeProgress, unpack } from './progress/code'
 import { importProgress, type Progress } from './progress/store'
-import { MODES, type ModeId } from './quiz/engine'
+import { TOPIC_MODES, type ModeId } from './quiz/engine'
 import { go, useRoute } from './router'
 import { fullTitle, titles } from './seo'
 import { setTheme } from './theme'
@@ -13,6 +13,8 @@ import { About } from './screens/About'
 import { ApproachScreen } from './screens/Approach'
 import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
+import { Overview } from './screens/Overview'
+import { MistakesScreen, ReviewQuiz } from './screens/Review'
 import { Search } from './screens/Search'
 import { Settings } from './screens/Settings'
 import { SyncScreen } from './screens/Sync'
@@ -40,6 +42,10 @@ export function App() {
 
   // Practice (quiz, drill) and one-off flows get the whole screen; everything else has the tab bar.
   if (a === 'mix') return <MixScreen />
+  if (a === 'dnes') return <ReviewQuiz mode="dnes" />
+  if (a === 'chyby' && b === 'procvicit') return <ReviewQuiz mode="chyby" />
+  if (a === 'chyby') return <><MistakesScreen /><TabBar /></>
+  if (a === 'prehled') return <><Overview /><TabBar /></>
   if (a === 'p' && b) return <ImportLink code={b} />
   if (a === 'presun' && b) return <MoveIn code={b} />
   if (a === 'spojit' && b) return <SyncScreen offer={b} />
@@ -62,7 +68,7 @@ export function App() {
     const g = b as GradeId
     const s = GRADE_SUBJECTS[g].includes(c as SubjectId) ? (c as SubjectId) : undefined
     if (s && d === '~test') return <QuizScreen g={g} s={s} id="~test" mode="test" />
-    if (s && d && e && e in MODES) return <QuizScreen g={g} s={s} id={d} mode={e as ModeId} />
+    if (s && d && e && TOPIC_MODES.includes(e as ModeId)) return <QuizScreen g={g} s={s} id={d} mode={e as ModeId} />
     const screen = !s ? <GradeScreen g={g} /> : d ? <TopicScreen g={g} s={s} id={d} /> : <SubjectScreen g={g} s={s} />
     return <>{screen}<TabBar active="grade" grade={g} /></>
   }
@@ -73,6 +79,9 @@ export function App() {
 function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'hledat') return 'Hledat'
   if (a === 'nastaveni') return 'Nastavení'
+  if (a === 'prehled') return 'Přehled'
+  if (a === 'chyby') return 'Sešit chyb'
+  if (a === 'dnes') return 'Dnešní opakování'
   if (a === 'o-aplikaci') return ABOUT.title
   if (a === 'widgety') return 'Galerie widgetů'
   if (approachById(a)) return null

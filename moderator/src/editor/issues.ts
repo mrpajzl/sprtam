@@ -20,7 +20,7 @@ export interface Issue {
 
 const FIELD: Record<string, string> = {
   text: 'text', term: 'pojem', definition: 'vysvětlení pojmu', example: 'příklad', wrong: 'co je špatně', right: 'co je správně', why: 'proč',
-  items: 'položky', question: 'zadání', answer: 'odpověď', options: 'možnosti', answers: 'správné odpovědi', pairs: 'dvojice', explanation: 'vysvětlení odpovědi',
+  items: 'položky', question: 'zadání', answer: 'odpověď', options: 'možnosti', answers: 'správné odpovědi', pairs: 'dvojice', explanation: 'vysvětlení odpovědi', hints: 'nápovědy',
   head: 'záhlaví', rows: 'řádky', caption: 'popisek', title: 'název', emoji: 'emoji', blocks: 'bloky', questions: 'otázky', props: 'nastavení pomůcky', id: 'id',
 }
 

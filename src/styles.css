@@ -644,3 +644,76 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .about-join h2 { margin: 0; font-size: 1.3rem; font-weight: 900; color: var(--accent-ink); }
 .about-join p { margin: 0; font-weight: 700; }
 .about-join ul { margin: 0 0 6px; padding-left: 1.2em; display: grid; gap: 6px; }
+
+/* ── Hints: one step at a time before answering (QuestionView) ── */
+.hints { display: grid; gap: 8px; margin: -4px 0 16px; }
+.hint { display: flex; gap: 10px; align-items: flex-start; padding: 10px 14px; border-radius: var(--r-s); background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; line-height: 1.4; animation: in 0.25s var(--ease); }
+.hint svg { width: 20px; height: 20px; flex: none; margin-top: 1px; }
+.hint-key { justify-self: start; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; font-family: var(--mono); font-weight: 750; font-size: 0.85rem; color: var(--ink-2); box-shadow: inset 0 0 0 1.5px var(--line); }
+.hint-key svg { width: 18px; height: 18px; color: var(--accent-ink); }
+.hint-key small { font-size: 0.75rem; color: var(--ink-3); }
+.hint-key:active { color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.sheet .verdict small { font-family: var(--mono); font-size: 0.78rem; font-weight: 700; color: var(--ink-3); margin-left: 4px; }
+
+/* ── Reporting a mistake in the content (ui/Report.tsx) ── */
+.report-key { justify-self: center; display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 10px; border-radius: 10px; font-family: var(--mono); font-size: 0.76rem; font-weight: 700; color: var(--ink-3); }
+.report-key svg { width: 15px; height: 15px; }
+.report-key:hover { color: var(--ink); }
+.topic-report { display: flex; justify-content: center; margin-top: 6px; }
+.mistakes .card .report-key { margin: 6px 0 -8px -10px; }
+.report-sheet { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; color: var(--ink); overflow: auto; overscroll-behavior: contain; }
+.report-sheet::backdrop { background: color-mix(in oklab, var(--bg) 70%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); animation: fade 0.2s ease; }
+.report-body { position: relative; max-width: 520px; margin: max(12px, calc(env(safe-area-inset-top) + 12px)) auto; padding: 22px 18px 20px; border-radius: 22px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line), 0 18px 40px rgb(0 0 0 / 0.18); animation: up 0.28s var(--ease); width: calc(100% - 24px); }
+@media (min-height: 640px) { .report-body { margin-top: max(48px, 12vh); } }
+.report-body form, .report-done { display: grid; gap: 14px; }
+.report-body h2 { font-size: 1.3rem; font-weight: 900; padding-right: 44px; }
+.report-x { position: absolute; top: 12px; right: 10px; }
+.report-what { padding: 10px 12px; border-radius: var(--r-s); background: var(--bg); font-weight: 700; line-height: 1.4; max-height: 7.5em; overflow: auto; }
+.report-what small { display: block; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--ink-3); margin-bottom: 2px; }
+.report-reasons { display: grid; gap: 8px; }
+.report-reason { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; border-radius: var(--r-s); background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge); font-weight: 750; cursor: pointer; }
+.report-reason.on { box-shadow: inset 0 0 0 2px var(--accent), 0 3px 0 var(--key-edge); }
+.report-reason input { accent-color: var(--accent); width: 18px; height: 18px; margin: 0; }
+.report-note { display: grid; gap: 6px; font-weight: 750; }
+.report-note small { font-weight: 600; }
+.report-note textarea { font: inherit; font-weight: 600; padding: 10px 12px; border-radius: var(--r-s); border: 2px solid var(--line); background: var(--key); color: var(--ink); resize: vertical; min-height: 84px; }
+.report-note textarea:focus { outline: none; border-color: var(--accent); }
+.report-err { color: var(--bad); font-weight: 750; }
+
+/* ── Daily goal and frozen streak days on the device screen (Home) ── */
+.display { text-align: left; }
+.disp-mid { display: grid; gap: 8px; align-self: center; min-width: 0; }
+.leds i.frz { background: color-mix(in oklab, var(--k-teal) 55%, var(--lcd-off)); }
+.goal { display: flex; align-items: center; gap: 8px; }
+.goal-bar { flex: 1; height: 6px; border-radius: 3px; background: var(--lcd-off); overflow: hidden; }
+.goal-bar i { display: block; height: 100%; border-radius: 3px; background: var(--k-yellow); transition: width 0.4s var(--ease); }
+.goal.done .goal-bar i { background: var(--k-green); box-shadow: 0 0 8px var(--k-green); }
+.goal small { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; color: rgb(244 244 241 / 0.7); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.goal-done { font-family: var(--mono); font-weight: 750; color: var(--ok); }
+.goal-left { font-family: var(--mono); font-size: 0.85rem; font-weight: 700; color: var(--ink-3); }
+
+/* ── Review across topics: Dnešní opakování, Sešit chyb ── */
+.review-keys { display: grid; gap: 10px; margin-top: 14px; }
+.review-key { min-height: 64px; }
+.mistakes-book .lead { margin: 0 2px 14px; line-height: 1.45; }
+.mistakes-book .btn { margin-bottom: 6px; }
+.mistakes-book .sec { margin-top: 22px; }
+.mistakes-book .sec .row { margin-bottom: 4px; }
+
+/* ── Přehled ── */
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 14px; }
+.stat { padding: 12px 14px; border-radius: var(--r); background: var(--lcd); color: var(--lcd-ink); display: grid; gap: 4px; }
+.stat b { font-family: var(--mono); font-size: 1.7rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat b small { font-size: 0.95rem; color: rgb(244 244 241 / 0.55); }
+.stat span { font-family: var(--mono); font-size: 0.72rem; font-weight: 600; color: rgb(244 244 241 / 0.65); }
+.stat.done b { color: var(--k-green); }
+.sub-row .txt { gap: 4px; }
+.star-bar { display: flex; gap: 2px; height: 10px; border-radius: 4px; overflow: hidden; margin-top: 4px; background: var(--bg); }
+.star-bar i, .legend i { display: block; min-width: 4px; background: var(--line); }
+.star-bar i.b3, .legend i.b3 { background: var(--accent); }
+.star-bar i.b2, .legend i.b2 { background: color-mix(in oklab, var(--accent) 62%, var(--card)); }
+.star-bar i.b1, .legend i.b1 { background: color-mix(in oklab, var(--accent) 32%, var(--card)); }
+.star-bar i.b0, .legend i.b0 { background: color-mix(in oklab, var(--ink-3) 55%, var(--card)); }
+.overview .legend { --c: var(--k-orange); display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-top: 22px; font-family: var(--mono); font-size: 0.72rem; font-weight: 600; }
+.legend i { width: 12px; height: 10px; border-radius: 2px; margin-left: 6px; }
+.settings .note { font-size: 0.85rem; margin: 10px 2px 0; line-height: 1.45; }

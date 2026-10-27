@@ -38,8 +38,17 @@ Plány vycházejí z tematických plánů waldorfské školy. Volba se pamatuje 
 | **Zkoušení** | 8 | Ústní otázky: odpovíš nahlas, pak uvidíš vzorovou odpověď a sám řekneš, jestli to bylo dobře. |
 | **Test** | 20 | Z celého předmětu ročníku, rovnoměrně ze všech témat. Výsledek na konci. |
 | **Mix** | 15 | Ze všech připnutých témat (špendlík u tématu). |
+| **Dnešní opakování** | 10 | Otázky ze všech témat, které ti podle opakování s rozestupy právě vypadávají z hlavy (viz níže). |
+| **Sešit chyb** | 15 | Otázky ze všech témat, které se ti spletly a ještě jsi je neopravil. |
 
 U některých témat z matematiky a fyziky se v Rychlém kvízu, Opakování a Písemce k ručně napsaným otázkám přidávají **automaticky generované příklady** (např. násobilka, zlomky, rovnice), takže se neopakují pořád stejná čísla. Kód: [`src/quiz/generators.ts`](../src/quiz/generators.ts).
+
+### Nápovědy
+
+Některé otázky mají **nápovědu**: před odpovědí si odkryješ jeden krok k řešení, třeba *„Oba zlomky mají stejný jmenovatel“* a pak *„Sečti jen čitatele, jmenovatel opiš“*. Odpověď nápověda nikdy neprozradí. Mají ji automaticky generované příklady z matematiky a otázky, ke kterým ji napíšou autoři.
+
+- Nápovědy jsou jen v režimech s okamžitou zpětnou vazbou (Rychlý kvíz, Opakování, Mix, Dnešní opakování, Sešit chyb). V **Písemce a Testu nejsou**, jako ve škole.
+- Správná odpověď s nápovědou se do výsledku počítá **za půl bodu** a otázka se kvůli ní neposune v opakování s rozestupy.
 
 ### Kontrola napsaných odpovědí
 
@@ -63,7 +72,7 @@ Do výsledku se počítá jen **první pokus** u každé otázky. Opravené odpo
 | 30–39 % | 4 – dostatečně | žádná |
 | pod 30 % | 5 – nedostatečně | žádná |
 
-U tématu se drží **nejlepší** dosažený výsledek ze všech režimů.
+U tématu se drží **nejlepší** dosažený výsledek ze všech režimů. Dnešní opakování a Sešit chyb hvězdičky témat nemění (jsou v nich otázky z mnoha témat najednou), posouvají jen jednotlivé otázky.
 
 ## „Na řadě“: co procvičit dál
 
@@ -84,6 +93,31 @@ Na úvodní obrazovce aplikace doporučí až 5 témat, nejvýš 2 z jednoho př
 4. **Další v pořadí**: další neprocvičené téma v předmětech, které zrovna probíráš.
 5. **Začátek**: dokud nic neprocvičíš, první témata zvoleného ročníku.
 
+## Opakování jednotlivých otázek
+
+Kromě celých témat si aplikace pamatuje i **každou otázku z učiva**, na kterou jsi odpověděl (jen v tvém zařízení). Počítá se první pokus v kole; automaticky generované příklady se nepamatují. Kód: [`src/progress/questions.ts`](../src/progress/questions.ts), [`src/quiz/engine.ts`](../src/quiz/engine.ts).
+
+Každá otázka má přihrádku 0–5, podobně jako slovíčka:
+
+| Odpověď | Přihrádka |
+|---|---|
+| poprvé správně | 2 (umíš ji už) |
+| správně | o jednu výš (nejvýš 5) |
+| správně s nápovědou | zůstává |
+| špatně | 0 |
+
+Podle přihrádky se otázka vrací: 0 hned, 1 po 1 dni, 2 po 3 dnech, 3 po 7 dnech, 4 po 14 dnech, 5 po 30 dnech.
+
+- **Dnešní opakování** (na úvodní obrazovce, když je co opakovat): 10 otázek, které jsou na řadě. Nejdřív chyby, pak nižší přihrádky a nejdéle odkládané.
+- **Sešit chyb**: otázky, které se ti spletly, se správnou odpovědí, po tématech. Otázka zmizí, až ji **dvakrát správně** zodpovíš (v jakémkoli režimu). Tlačítkem *Procvičit chyby* je projdeš najednou.
+- Když autoři otázku opraví, zůstane jí pokrok, pokud se nezměnilo zadání ani odpověď (oprava vysvětlení nebo nápovědy nevadí). Změněná otázka začíná znovu.
+
+## Přehled a denní cíl
+
+- **Přehled** (klepni na displej se sérií, nebo Nastavení → Přehled): série dní, kolik dní za posledních 30 jsi procvičoval, počet kol, dnešní odpovědi, Sešit chyb a u každého ročníku a předmětu, kolik témat máš na ★, ★★ a ★★★. U slovíček kolik jich máš naučených. Hodí se i rodičům: všechno je jen z tohoto zařízení.
+- **Denní cíl**: kolik odpovědí denně chceš dát, 10, 20 (výchozí) nebo 40, nebo bez cíle (Nastavení → Denní cíl). Počítá se každá odpověď v kvízu i u slovíček. Na displeji úvodní obrazovky je vidět, kolik už máš.
+- **Série dní** vydrží **jeden vynechaný den za týden**: když jeden den vynecháš a další den zase procvičuješ, série pokračuje (vynechaný den svítí na displeji modře). Dva vynechané dny po sobě sérii ukončí. Vynechané dny se do počtu dní nepočítají. Kód: `streakOf` v [`src/progress/recommend.ts`](../src/progress/recommend.ts).
+
 ## Anglická slovíčka
 
 Přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního rámce, rozdělených do tematických skupin. Kód: [`src/screens/Vocab.tsx`](../src/screens/Vocab.tsx), data v [`content/vocab`](../content/vocab).
@@ -100,7 +134,7 @@ Přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního
 
 - **Hledání** (lupa nebo klávesa `/`): ve všech tématech všech ročníků podle názvu, pojmů a pravidel a ve všech slovíčkách. Funguje i bez diakritiky a dá se filtrovat podle stupně.
 - **Připnutá témata**: špendlíkem si označíš, co se zrovna učíš. Připnutá témata se vracejí dřív a jdou procvičit najednou v Mixu.
-- **Série dní**: kolik dní po sobě jsi procvičoval (počítá se, pokud jsi procvičoval dnes nebo včera).
+- **Série dní**: kolik dní po sobě jsi procvičoval (počítá se, pokud jsi procvičoval dnes nebo včera; jeden vynechaný den za týden sérii nepřeruší, viz [Přehled a denní cíl](#přehled-a-denní-cíl)).
 - **Tmavý vzhled**: v nastavení (ozubené kolečko na úvodní obrazovce).
 - **Offline**: po první návštěvě má aplikace v zařízení celé učivo všech ročníků a funguje i bez internetu.
 - **Instalace**: v prohlížeči jde aplikace „přidat na plochu“ a pak se chová jako běžná aplikace.
@@ -110,7 +144,9 @@ Přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního
 
 ## Našli jste chybu v učivu?
 
-Budeme rádi za každé upozornění. Založte prosím [issue na GitHubu](https://github.com/mrpajzl/sprtam/issues/new) a uveďte:
+Budeme rádi za každé upozornění. Nejrychleji přímo v aplikaci: **Nahlásit chybu** je pod každou otázkou (po odpovědi) a pod vysvětlením tématu. Vybereš, co je špatně, a můžeš připsat poznámku. Hlášení je anonymní a dostanou ho moderátoři ([Moderace](MODERACE.md), co se posílá: [Soukromí](SOUKROMI.md#co-se-posílá-ven)).
+
+Nebo založte [issue na GitHubu](https://github.com/mrpajzl/sprtam/issues/new) a uveďte:
 
 - odkaz na téma (zkopírujte adresu ze stránky tématu),
 - co přesně je špatně (u otázky její znění),

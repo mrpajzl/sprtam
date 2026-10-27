@@ -147,7 +147,7 @@ function QuizPreview({ st, q, setMode }: { st: PreviewState; q: number; setMode:
       </div>
       {item.type === 'open'
         ? <Oral q={item} onAnswer={(ok) => { setResults((r) => ({ ...r, [i]: ok })); next() }} />
-        : <QuestionView q={item} reveal strict={strictFor(`${st.grade}/${st.subject}/x`)} onAnswer={answer} />}
+        : <QuestionView q={item} reveal hints strict={strictFor(`${st.grade}/${st.subject}/x`)} onAnswer={answer} />}
       <div class="pad-dock" />
       {last !== null && (
         <div class={`sheet ${last ? 'ok' : 'bad'}`}>

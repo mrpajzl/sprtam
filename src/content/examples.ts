@@ -27,6 +27,7 @@ export const QUESTION_EXAMPLES: { [T in Question['type']]: Extract<Question, { t
   input: {
     type: 'input', question: 'Vypočítej písemně: 345 + 278 =', answers: ['623'], explanation: 'Sčítej od jednotek, 1 si pamatuj.',
     widget: { widget: 'column', props: { a: 345, b: 278, op: '+' } },
+    hints: ['Začni vpravo: sečti jednotky 5 + 8.', 'Je to víc než 9? Napiš jednotky a 1 si pamatuj k desítkám.'],
   },
   order: { type: 'order', question: 'Seřaď od nejmenšího.', items: ['1/8', '1/4', '1/2', '1'] },
   match: { type: 'match', question: 'Spoj zlomek s desetinným číslem.', pairs: [['1/2', '0,5'], ['1/4', '0,25'], ['3/4', '0,75']] },

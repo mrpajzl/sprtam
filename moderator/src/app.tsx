@@ -8,6 +8,7 @@ import { Invite } from './screens/Invite'
 import { Library } from './screens/Library'
 import { Login } from './screens/Login'
 import { Releases } from './screens/Releases'
+import { Reports } from './screens/Reports'
 import { Requests } from './screens/Requests'
 import { Review, ReviewQueue } from './screens/Review'
 import { TopicView } from './screens/Topic'
@@ -18,11 +19,11 @@ import { I, Toasts } from './ui/kit'
 
 // Screens: /ucivo[/<grade>[/<subject>[/<topic>]]] library and a topic read only – open to everyone · /navrh/<id> editor ·
 // /kontrola every change by state (open / approved / rejected; ?moje=1 only mine, ?rocnik=&predmet= one grade and subject) · /kontrola/<id> one change · /historie/<grade>/<subject>/<topic> versions ·
-// /pomucky widget requests · /vydani releases (admin) · /uzivatele moderators (admin) · /ucet own account ·
+// /hlaseni error reports from pupils (?stav=vyrizena, ?rocnik=&predmet=, ?tema=<g>/<s>/<id>) · /pomucky widget requests · /vydani releases (admin) · /uzivatele moderators (admin) · /ucet own account ·
 // /prihlaseni[?dalsi=<path>] sign-in · /pozvanka#<token> invite. Everything except the library needs a signed-in moderator.
 
 const PUBLIC = ['ucivo']
-const SCREENS = ['ucivo', 'kontrola', 'historie', 'pomucky', 'vydani', 'uzivatele', 'ucet']
+const SCREENS = ['ucivo', 'kontrola', 'historie', 'hlaseni', 'pomucky', 'vydani', 'uzivatele', 'ucet']
 
 /** Where to go after signing in: only a path of this app, never another site. */
 const nextPath = () => { const p = new URLSearchParams(location.search).get('dalsi') ?? '/'; return /^\/(?![/\\])/.test(p) ? p : '/' }
@@ -42,9 +43,12 @@ export function App() {
   useEffect(() => onSignedOut(() => setSession((s) => ({ approvals: s?.approvals ?? 1, user: null }))), [])
   // How many changes of others wait for review: a number on the tab, refreshed whenever the screen changes.
   const [waiting, setWaiting] = useState(0)
+  // …and how many error reports from pupils are open.
+  const [reports, setReports] = useState(0)
   useEffect(() => {
     if (!session?.user) return
     get<{ mine: boolean; myVerdict: string | null; status: string }[]>('/api/reviews').then((l) => setWaiting(l.filter((d) => d.status === 'review' && !d.mine && !d.myVerdict).length), () => {})
+    get<{ open: number }>('/api/reports/counts').then((c) => setReports(c.open), () => {})
   }, [session?.user?.id, route.join('/')])
 
   // Phones: the "Více" sheet of the bottom bar closes on every navigation.
@@ -75,6 +79,7 @@ export function App() {
         <nav class="tabs">
           {link('/', 'Učivo', <I.book />, screen === 'ucivo')}
           {user && link('/kontrola', waiting ? `Kontrola · ${waiting}` : 'Kontrola', <I.check />, screen === 'kontrola')}
+          {user && link('/hlaseni', reports ? `Hlášení · ${reports}` : 'Hlášení', <I.warn />, screen === 'hlaseni')}
           {user && link('/pomucky', 'Pomůcky', <I.bulb />, screen === 'pomucky')}
           {user?.role === 'admin' && link('/vydani', 'Vydání', <I.layers />, screen === 'vydani')}
           {user?.role === 'admin' && link('/uzivatele', 'Moderátoři', <I.users />, screen === 'uzivatele')}
@@ -94,6 +99,7 @@ export function App() {
           : <Library g={route[1]} s={route[2]} me={user} />)}
         {user && screen === 'kontrola' && (route[1] ? <Review key={route[1]} id={route[1]} me={user} /> : <ReviewQueue me={user} />)}
         {user && screen === 'historie' && route[3] && <History key={route.slice(1, 4).join('/')} g={route[1]} s={route[2]} id={route[3]} me={user} />}
+        {user && screen === 'hlaseni' && <Reports />}
         {user && screen === 'pomucky' && <Requests me={user} />}
         {user?.role === 'admin' && screen === 'vydani' && <Releases />}
         {user?.role === 'admin' && screen === 'uzivatele' && <Users me={user} />}
@@ -101,22 +107,21 @@ export function App() {
         {!SCREENS.includes(screen) && <div class="empty-state">Tahle stránka neexistuje. <a href="/" onClick={nav('/')}>Zpět na učivo</a></div>}
       </main>
       {user && (
-        // Phones: the main screens in a bottom bar within thumb reach; admin screens and the account under "Více".
+        // Phones: the main screens in a bottom bar within thumb reach; widget requests, admin screens and the account under "Více".
         <nav class="bnav" aria-label="Hlavní navigace">
           {link('/', 'Učivo', <I.book />, screen === 'ucivo')}
           {link('/kontrola', 'Kontrola', <I.check />, screen === 'kontrola', waiting)}
-          {link('/pomucky', 'Pomůcky', <I.bulb />, screen === 'pomucky')}
-          {admin
-            ? <button class={['vydani', 'uzivatele', 'ucet'].includes(screen) || more ? 'on' : ''} onClick={() => setMore(!more)} aria-expanded={more}><I.more /><span>Více</span></button>
-            : link('/ucet', 'Účet', <I.user />, screen === 'ucet')}
+          {link('/hlaseni', 'Hlášení', <I.warn />, screen === 'hlaseni', reports)}
+          <button class={['pomucky', 'vydani', 'uzivatele', 'ucet'].includes(screen) || more ? 'on' : ''} onClick={() => setMore(!more)} aria-expanded={more}><I.more /><span>Více</span></button>
         </nav>
       )}
-      {more && admin && (
+      {more && user && (
         <>
           <div class="sheet-backdrop" onClick={() => setMore(false)} />
           <div class="more-sheet" role="dialog" aria-label="Více">
-            {link('/vydani', 'Vydání', <I.layers />, screen === 'vydani')}
-            {link('/uzivatele', 'Moderátoři', <I.users />, screen === 'uzivatele')}
+            {link('/pomucky', 'Pomůcky', <I.bulb />, screen === 'pomucky')}
+            {admin && link('/vydani', 'Vydání', <I.layers />, screen === 'vydani')}
+            {admin && link('/uzivatele', 'Moderátoři', <I.users />, screen === 'uzivatele')}
             {link('/ucet', `Můj účet · ${user!.name}`, <I.user />, screen === 'ucet')}
             <button onClick={logout}><I.logout /><span>Odhlásit se</span></button>
           </div>

@@ -70,7 +70,7 @@ export function Rich({ text }: { text: string }) {
 const FIELD: Record<string, string> = {
   text: 'Text', term: 'Pojem', definition: 'Význam', example: 'Příklad', wrong: 'Špatně', right: 'Správně', why: 'Proč',
   question: 'Zadání', answer: 'Odpověď', explanation: 'Vysvětlení', caption: 'Popisek', items: 'Položka', options: 'Možnost',
-  answers: 'Správná odpověď', head: 'Záhlaví', rows: 'Řádek', pairs: 'Dvojice',
+  answers: 'Správná odpověď', hints: 'Nápověda', head: 'Záhlaví', rows: 'Řádek', pairs: 'Dvojice',
 }
 const SKIP = new Set(['type', 'widget', 'props'])
 

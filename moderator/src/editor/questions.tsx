@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks'
+import { useEffect, useState } from 'preact/hooks'
 import type { Question } from '../../../src/content/types'
 import { I } from '../ui/kit'
 import { Errors, Text, TextList, useEd } from './fields'
@@ -67,6 +67,18 @@ export function QuestionList({ issues }: { issues: Issue[] }) {
 
 const Why = ({ p }: { p: Path }) => <Text path={[...p, 'explanation']} label="Proč je to tak" optional multiline placeholder="Ukáže se po odpovědi. Krátce vysvětli správnou odpověď." />
 
+/** Optional hints the child opens one by one before answering (not in Písemka and Test). */
+function Hints({ p }: { p: Path }) {
+  const ed = useEd()
+  const path = [...p, 'hints']
+  const hints = getIn(ed.topic, path) as string[] | undefined
+  // The format wants at least one hint or none at all: removing the last one removes the list.
+  useEffect(() => { if (hints && !hints.length) ed.update(path, undefined) }, [hints?.length])
+  if (!hints?.length) return ed.readOnly ? null : <button type="button" class="add-line" onClick={() => ed.update(path, [''])}><I.plus />Přidat nápovědu</button>
+  return <TextList path={path} label="Nápovědy – od obecné po konkrétní (nejvýš 3)" min={0} max={3} multiline addLabel="Přidat další nápovědu"
+    hint="Dítě si je odkrývá po jedné před odpovědí. Napiš krok, jak na to přijít, ne odpověď." placeholder={(i) => (i === 0 ? 'Čím začít? Např. „Mají zlomky stejný jmenovatel?“' : 'Další krok')} />
+}
+
 function QuestionForm({ q, p }: { q: Question; p: Path }) {
   const ed = useEd()
   switch (q.type) {
@@ -90,6 +102,7 @@ function QuestionForm({ q, p }: { q: Question; p: Path }) {
             {!ed.readOnly && q.options.length < 4 && <button type="button" class="add-line" onClick={() => set([...q.options, ''], q.answer)}><I.plus />Přidat možnost</button>}
             <Errors list={ed.errors.get(`questions[${p[1]}].options`) ?? []} />
           </div>
+          <Hints p={p} />
           <Why p={p} />
         </>
       )
@@ -116,6 +129,7 @@ function QuestionForm({ q, p }: { q: Question; p: Path }) {
           {q.widget
             ? <WidgetEditor path={[...p, 'widget']} questionOnly removable onRemove={() => ed.update([...p, 'widget'], undefined)} />
             : !ed.readOnly && <button type="button" class="add-line" onClick={() => ed.update([...p, 'widget'], newWidget('column'))}><I.plus />Ukázat nad otázkou příklad pod sebou</button>}
+          <Hints p={p} />
           <Why p={p} />
         </>
       )
@@ -124,6 +138,7 @@ function QuestionForm({ q, p }: { q: Question; p: Path }) {
         <>
           <Text path={[...p, 'question']} label="Zadání" multiline placeholder="Seřaď od nejmenšího." />
           <TextList path={[...p, 'items']} label="Položky ve SPRÁVNÉM pořadí (aplikace je zamíchá)" numbered min={3} max={8} addLabel="Přidat položku" />
+          <Hints p={p} />
           <Why p={p} />
         </>
       )
@@ -147,6 +162,7 @@ function QuestionForm({ q, p }: { q: Question; p: Path }) {
             {!ed.readOnly && pairs.length < 6 && <button type="button" class="add-line" onClick={() => ed.update([...p, 'pairs'], [...pairs, ['', '']])}><I.plus />Přidat dvojici</button>}
             <Errors list={ed.errors.get(`questions[${p[1]}].pairs`) ?? []} />
           </div>
+          <Hints p={p} />
           <Why p={p} />
         </>
       )

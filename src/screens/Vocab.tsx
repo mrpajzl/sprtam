@@ -21,7 +21,7 @@ export const LEVELS: { id: Level; hint: string }[] = [
 ]
 
 /** A word counts as learned from this Leitner box on. */
-const MASTERED = 3
+export const MASTERED = 3
 /** Practised words (right at least once) and progress towards learning them all, 0–100. Every right answer moves the meter. */
 function vocabProgress(ws: Word[], box: Record<string, number>) {
   let seen = 0, sum = 0
