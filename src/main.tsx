@@ -1,11 +1,13 @@
 import { render } from 'preact'
 import { App } from './app'
 import { initContent, keepOffline } from './content/remote'
-import { ping } from './stats'
 import './styles.css'
 
 // A chunk from a previous deploy failed to load: clear the stale caches and reload (public/boot-check.js).
 addEventListener('vite:preloadError', () => (window as { sprtamHeal?: () => void }).sprtamHeal?.())
+
+// Leftover of the removed daily usage ping (the date it last ran). The app no longer sends or keeps anything like it.
+localStorage.removeItem('sprtam:seen')
 
 const root = document.getElementById('app')!
 
@@ -21,5 +23,4 @@ initContent().then((ok) => {
   render(<App />, root)
   document.documentElement.setAttribute('data-app', '')
   keepOffline()
-  ping()
 })

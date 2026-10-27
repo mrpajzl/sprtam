@@ -20,7 +20,7 @@ export const ABOUT = {
       items: [
         'Nikde se nepřihlašuješ a nic o sobě nevyplňuješ.',
         'Pokrok je jen v tomhle zařízení. Na jiné ho přeneseš přes QR kód, napřímo a šifrovaně.',
-        'Žádné cookies, reklamy ani analytika. Server si za den pamatuje jen dvě čísla: kolik lidí appku otevřelo a kolik z nich poprvé.',
+        'Nesledujeme tě. Žádné cookies, reklamy, analytika ani anonymní statistiky. Aplikace o tobě nikam nic neposílá.',
       ],
     },
     {

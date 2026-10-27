@@ -1,10 +1,8 @@
 // The server of sprtam.cz: the built PWA, the pages and the content API of the current content release
-// (server/content.ts, docs/OBSAH.md), and an anonymous usage counter.
-// The counter stores only per-day totals ({ users, new }). No IPs, no IDs, no cookies, no logs of requests.
+// (server/content.ts, docs/OBSAH.md). It counts nothing and logs nothing: no IPs, no IDs, no cookies, no request logs.
 // Built into one file without dependencies: vite build --ssr (package.json).
-import { createHash, timingSafeEqual } from 'node:crypto'
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
-import { readFile, writeFile, mkdir, stat } from 'node:fs/promises'
+import { readFile, rm, stat } from 'node:fs/promises'
 import { extname, join, normalize } from 'node:path'
 import { HASH } from '../src/content/manifest'
 import { embed, encoded, file as contentFile, pageHtml, release, startContent } from './content'
@@ -14,8 +12,6 @@ import { shell } from './shell'
 const PORT = Number(process.env.PORT ?? 8080)
 const DIST = process.env.DIST ?? join(import.meta.dirname, '..', 'dist')
 const DATA = process.env.DATA_DIR ?? join(import.meta.dirname, '..', 'data')
-const STATS_TOKEN = process.env.STATS_TOKEN ?? ''
-const FILE = join(DATA, 'stats.json')
 /** The content service (moderation) – its public read API is the source of all content. */
 const CONTENT_API = (process.env.CONTENT_API ?? 'https://moderace.sprtam.cz').replace(/\/$/, '')
 // The app moved to sprtam.cz. These hosts still reach this server and send everyone over (see below).
@@ -60,26 +56,8 @@ const TEMPLATE = await readFile(join(DIST, 'index.html'), 'utf8')
 if (!TEMPLATE.includes('<div id="app"></div>')) throw new Error('dist/index.html: #app placeholder not found')
 const SHELL = shell(TEMPLATE)
 
-let stats: Record<string, { users: number; new: number }> = {}
-try { stats = JSON.parse(await readFile(FILE, 'utf8')) } catch { /* first run */ }
-let dirty = false
-setInterval(async () => {
-  if (!dirty) return
-  dirty = false
-  // A full or read-only disk must not take the site down: keep counting and try again later.
-  try { await mkdir(DATA, { recursive: true }); await writeFile(FILE, JSON.stringify(stats)) } catch (e) { dirty = true; console.error('stats: cannot write', (e as Error).message) }
-}, 10_000).unref()
-
-/** Constant-time comparison of the stats token (hashes of equal length). */
-const sameToken = (given: string) => timingSafeEqual(createHash('sha256').update(given).digest(), createHash('sha256').update(STATS_TOKEN).digest())
-
-function ping(body: string) {
-  const day = new Date().toISOString().slice(0, 10)
-  const d = (stats[day] ??= { users: 0, new: 0 })
-  d.users++
-  if (body.includes('"new":true')) d.new++
-  dirty = true
-}
+// Daily totals of the usage ping that used to live here. The ping is gone; so is what it collected.
+await rm(join(DATA, 'stats.json'), { force: true }).catch(() => {})
 
 const html = (res: ServerResponse, status: number, body: string, extra: Record<string, string> = {}) =>
   res.writeHead(status, { ...SECURITY, 'Content-Type': TYPES['.html'], 'Cache-Control': 'no-cache', ...extra }).end(body)
@@ -108,16 +86,6 @@ async function contentApi(req: IncomingMessage, res: ServerResponse, path: strin
 async function handle(req: IncomingMessage, res: ServerResponse) {
   let url: URL
   try { url = new URL(req.url ?? '/', 'http://x') } catch { return res.writeHead(400).end() }
-  if (url.pathname === '/api/ping' && req.method === 'POST') {
-    let body = ''
-    req.on('data', (c) => { if (body.length < 100) body += c })
-    req.on('end', () => { ping(body); res.writeHead(204).end() })
-    return
-  }
-  if (url.pathname === '/api/stats') {
-    if (STATS_TOKEN && !sameToken(url.searchParams.get('token') ?? '')) return res.writeHead(403).end()
-    return res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify(stats))
-  }
   if (url.pathname === '/healthz') return res.writeHead(200).end('ok')
   if (url.pathname.startsWith('/api/content/')) {
     if (req.method !== 'GET' && req.method !== 'HEAD') return res.writeHead(405).end()
