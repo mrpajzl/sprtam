@@ -1,11 +1,12 @@
 import { APPROACHES, setApproach, useApproach } from '../approach'
+import { DEFAULT_GOAL, GOALS, goalOf, setGoal, useProgress } from '../progress/store'
 import { Link } from '../router'
 import { useTheme, type Theme } from '../theme'
 import { Bar } from '../ui/Bar'
 import { IArrow, ICheck } from '../ui/icons'
 
-// /nastaveni – device settings (localStorage only, never sent anywhere): appearance, school and
-// the way to move progress to another device.
+// /nastaveni – device settings (localStorage only, never sent anywhere): appearance, school, the daily goal
+// and the way to move progress to another device.
 
 function Choice({ on, label, hint, onPick }: { on: boolean; label: string; hint?: string; onPick: () => void }) {
   return (
@@ -20,6 +21,7 @@ export function Settings() {
   const [theme, , choose] = useTheme()
   const approach = useApproach()
   const themes: [Theme, string][] = [['light', 'Světlý'], ['dark', 'Tmavý']]
+  const goal = goalOf(useProgress())
   return (
     <div class="page settings">
       <Bar title="Nastavení" />
@@ -37,8 +39,19 @@ export function Settings() {
           <span class="txt"><b>{a.short}: plán ročníků</b><small>co {a.name.toLowerCase()} mění</small></span><IArrow />
         </Link>
       ))}
+      <h2 class="label next-label">Denní cíl</h2>
+      <div class="list" role="radiogroup" aria-label="Denní cíl">
+        {GOALS.map((n) => <Choice key={n} on={goal === n} label={n ? `${n} odpovědí denně` : 'Bez cíle'} hint={n === DEFAULT_GOAL ? 'výchozí' : n === 10 ? 'na rozjezd' : n === 40 ? 'pro dříče' : n === 0 ? 'jen série dní' : undefined} onPick={() => setGoal(n)} />)}
+      </div>
+      <p class="muted note">Počítá se každá odpověď v kvízu i u slovíček. Série dní vydrží i jeden vynechaný den za týden.</p>
       <h2 class="label next-label">Pokrok</h2>
       <div class="list">
+        <Link class="row" href="/prehled">
+          <span class="txt"><b>Přehled</b><small>co máš procvičené, po předmětech</small></span><IArrow />
+        </Link>
+        <Link class="row" href="/chyby">
+          <span class="txt"><b>Sešit chyb</b><small>otázky, které se ti spletly</small></span><IArrow />
+        </Link>
         <Link class="row" href="/sdilet">
           <span class="txt"><b>Přenést pokrok</b><small>na jiné zařízení</small></span><IArrow />
         </Link>

@@ -146,6 +146,7 @@ Widget může být i součástí řešeného příkladu (ukáže se s řešením
 - Fakta musí být **správně** (data, vzorce, pravopis). Raději méně a přesně. Čeština bezchybně.
 - Inline v textu: `**tučně**` (nový pojem, důležité), `*kurzíva*`, `` `vzorec` ``, horní index `^2`, `^II`. Matematiku piš Unicode: `·`, `−`, `²`, `√`, `≤`, `π`. Desetinná čárka (`3,14`). V JSON se uvozovka uvnitř textu píše `\"` – raději používej české „uvozovky“.
 - `explanation` u otázek = krátké vysvětlení správné odpovědi (u většiny otázek).
+- `hints` u otázek (nepovinné, 1–3) = nápovědy, které si dítě odkryje po jedné před odpovědí. Od obecné po konkrétní, každá je **krok, jak na to přijít, ne odpověď** (kontrola odmítne nápovědu, ve které je správná odpověď). Hodí se hlavně k příkladům, kde se dá zaseknout: *„Najdi společný jmenovatel.“* → *„Společný jmenovatel 4 a 6 je 12.“* V Písemce a Testu se nezobrazují.
 
 ## Typy otázek
 

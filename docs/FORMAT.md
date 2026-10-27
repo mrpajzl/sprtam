@@ -323,6 +323,7 @@ Výběr jedné ze 2–4 možností.
 | `options` | seznam (text) 2–4 položek | ano | 2–4 možnosti; aplikace je zamíchá. |
 | `answer` | celé číslo ≥ 0 | ano | Pořadí správné možnosti v options, od 0. |
 | `explanation` | text | – | Krátké vysvětlení správné odpovědi (ukáže se po odpovědi). |
+| `hints` | seznam (text) 1–3 položek | – | Nápovědy od nejobecnější po nejkonkrétnější; dítě si je odkrývá po jedné před odpovědí (ne v písemce a testu). Nesmí prozradit odpověď. |
 
 ```json
 {
@@ -367,6 +368,7 @@ Napsaná krátká odpověď.
 | `answers` | seznam (text) ≥ 1 položek | ano | Všechny přijatelné odpovědi. Velikost písmen a mezery se ignorují, čísla se porovnávají jako čísla (0,5 = 0.5), diakritika se ignoruje mimo češtinu a literaturu. |
 | `explanation` | text | – | Krátké vysvětlení správné odpovědi (ukáže se po odpovědi). |
 | `widget` | objekt podle "widget" | – | Widget nad otázkou – ukáže jen zadání, ne výsledek. Smí jen widgety s režimem pro otázky (column). |
+| `hints` | seznam (text) 1–3 položek | – | Nápovědy od nejobecnější po nejkonkrétnější; dítě si je odkrývá po jedné před odpovědí (ne v písemce a testu). Nesmí prozradit odpověď. |
 
 ```json
 {
@@ -383,7 +385,11 @@ Napsaná krátká odpověď.
       "b": 278,
       "op": "+"
     }
-  }
+  },
+  "hints": [
+    "Začni vpravo: sečti jednotky 5 + 8.",
+    "Je to víc než 9? Napiš jednotky a 1 si pamatuj k desítkám."
+  ]
 }
 ```
 
@@ -396,6 +402,7 @@ Seřazení položek.
 | `question` | text | ano | Zadání. |
 | `items` | seznam (text) 3–8 položek | ano | Položky ve SPRÁVNÉM pořadí; aplikace je zamíchá. |
 | `explanation` | text | – | Krátké vysvětlení správné odpovědi (ukáže se po odpovědi). |
+| `hints` | seznam (text) 1–3 položek | – | Nápovědy od nejobecnější po nejkonkrétnější; dítě si je odkrývá po jedné před odpovědí (ne v písemce a testu). Nesmí prozradit odpověď. |
 
 ```json
 {
@@ -419,6 +426,7 @@ Spojování dvojic.
 | `question` | text | ano | Zadání. |
 | `pairs` | seznam ([text, text]) 3–6 položek | ano | Správně spárované dvojice; aplikace zamíchá pravou stranu. |
 | `explanation` | text | – | Krátké vysvětlení správné odpovědi (ukáže se po odpovědi). |
+| `hints` | seznam (text) 1–3 položek | – | Nápovědy od nejobecnější po nejkonkrétnější; dítě si je odkrývá po jedné před odpovědí (ne v písemce a testu). Nesmí prozradit odpověď. |
 
 ```json
 {

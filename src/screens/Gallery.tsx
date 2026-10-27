@@ -96,7 +96,7 @@ export function Gallery({ name }: { name?: string }) {
         {Object.entries(QUESTION_EXAMPLES).map(([type, q]) => (
           <section key={type} class="gal">
             <div class="gal-head"><h2>{type}</h2></div>
-            {q.type === 'open' ? <><h2 class="question">{q.question}</h2><p class="muted">{q.answer}</p></> : <QuestionView q={q} reveal onAnswer={() => {}} />}
+            {q.type === 'open' ? <><h2 class="question">{q.question}</h2><p class="muted">{q.answer}</p></> : <QuestionView q={q} reveal hints onAnswer={() => {}} />}
             <details><summary>JSON</summary><Json value={q} /></details>
           </section>
         ))}

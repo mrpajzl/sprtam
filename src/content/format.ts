@@ -77,6 +77,7 @@ export const explanation = s.object({
 // ——— Questions ———
 
 const why = s.optional(text('Krátké vysvětlení správné odpovědi (ukáže se po odpovědi).'))
+const hints = s.optional(s.array(text('Nápověda: jeden krok k řešení, ne odpověď.'), { min: 1, max: 3, description: 'Nápovědy od nejobecnější po nejkonkrétnější; dítě si je odkrývá po jedné před odpovědí (ne v písemce a testu). Nesmí prozradit odpověď.' }))
 
 export const question = s.variants('type', {
   choice: s.object({
@@ -84,6 +85,7 @@ export const question = s.variants('type', {
     options: s.array(text('Možnost.'), { min: 2, max: 4, description: '2–4 možnosti; aplikace je zamíchá.' }),
     answer: s.int({ min: 0, description: 'Pořadí správné možnosti v options, od 0.' }),
     explanation: why,
+    hints,
   }, { description: 'Výběr jedné ze 2–4 možností.' }),
   truefalse: s.object({
     question: text('Tvrzení.'),
@@ -95,16 +97,19 @@ export const question = s.variants('type', {
     answers: s.array(s.string(), { min: 1, description: 'Všechny přijatelné odpovědi. Velikost písmen a mezery se ignorují, čísla se porovnávají jako čísla (0,5 = 0.5), diakritika se ignoruje mimo češtinu a literaturu.' }),
     explanation: why,
     widget: s.optional(questionWidgetRef),
+    hints,
   }, { description: 'Napsaná krátká odpověď.' }),
   order: s.object({
     question: text('Zadání.'),
     items: s.array(text('Položka.'), { min: 3, max: 8, description: 'Položky ve SPRÁVNÉM pořadí; aplikace je zamíchá.' }),
     explanation: why,
+    hints,
   }, { description: 'Seřazení položek.' }),
   match: s.object({
     question: text('Zadání.'),
     pairs: s.array(s.tuple([text('Levá strana.'), text('Pravá strana.')]), { min: 3, max: 6, description: 'Správně spárované dvojice; aplikace zamíchá pravou stranu.' }),
     explanation: why,
+    hints,
   }, { description: 'Spojování dvojic.' }),
   open: s.object({
     question: text('Ústní otázka.'),

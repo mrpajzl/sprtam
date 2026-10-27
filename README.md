@@ -14,6 +14,8 @@
 - **Anglická slovíčka A1–C1** s výslovností a opakováním podle Leitnerova systému.
 - **Waldorfská škola:** učivo po epochách podle waldorfského plánu, vysvětlení v duchu waldorfské pedagogiky a slovní hodnocení – **[sprtam.cz/waldorf](https://sprtam.cz/waldorf)**.
 - **Doporučení „Na řadě“:** co zopakovat, co ti nejde a na jakém základu z nižšího ročníku to stojí.
+- **Sešit chyb a Dnešní opakování:** každá spletená otázka se vrací, dokud ji dvakrát neodpovíš správně, a co ti vypadává z hlavy, přijde na řadu podle opakování s rozestupy. K tomu **nápovědy** po krocích, **přehled** po předmětech a **denní cíl**.
+- **Nahlásit chybu** přímo u otázky nebo vysvětlení, anonymně, rovnou moderátorům.
 - **Hledání** ve všech ročnících a předmětech.
 
 Podrobně: **[Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md)**

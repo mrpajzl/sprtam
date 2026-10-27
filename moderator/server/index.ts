@@ -16,6 +16,7 @@ import {
   rollbackDraft, saveDraft, submitDraft, withdrawDraft,
 } from './drafts'
 import { assertSameOrigin, clientIp, cookies, HttpError, ipKey, json, limit, readJson, SECURITY_HEADERS, SESSION_COOKIE, type Req, type Res } from './http'
+import { createReport, listReports, reportCounts, updateReport } from './reports'
 import { createRequest, deleteRequest, listRequests, updateRequest, voteRequest } from './requests'
 import { current, file, gzipped, history, load, previousVersion, published, releases, verifyChain, version } from './store'
 
@@ -70,6 +71,9 @@ on('GET', '/api/public/v1/export', (req, res, _p, ip) => {
   res.end(exported.body)
   return SENT
 }, true)
+
+// Error reports from pupils, forwarded by the server of sprtam.cz with REPORT_TOKEN (never straight from the app).
+on('POST', '/api/public/v1/reports', async (req) => createReport(req, await readJson(req, LIMITS.openBody)), true)
 
 // ——— Backups and the git mirror (the backup puller's token only) ———
 
@@ -157,6 +161,13 @@ on('POST', '/api/widget-requests', async (req, _res, _p, ip) => createRequest(re
 on('POST', '/api/widget-requests/:id/vote', (req, _res, p) => voteRequest(requireSession(req), p[0]))
 on('PATCH', '/api/widget-requests/:id', async (req, _res, p, ip) => updateRequest(requireSession(req), p[0], await readJson(req), ip))
 on('DELETE', '/api/widget-requests/:id', (req, _res, p, ip) => { deleteRequest(requireSession(req), p[0], ip); return { ok: true } })
+
+// ——— Error reports from pupils ———
+
+const reportFilter = (req: Req) => ({ grade: query(req, 'grade') || null, subject: query(req, 'subject') || null, topic: query(req, 'topic') || null })
+on('GET', '/api/reports', (req) => listReports(requireSession(req), { status: query(req, 'status') ?? 'open', ...reportFilter(req) }))
+on('GET', '/api/reports/counts', (req) => reportCounts(requireSession(req), reportFilter(req)))
+on('PATCH', '/api/reports/:id', async (req, _res, p, ip) => updateReport(requireSession(req), p[0], await readJson(req), ip))
 
 // ——— Admin ———
 

@@ -90,6 +90,9 @@ Každé zařízení pošle celý svůj pokrok (obsah `sprtam:progress`, viz [Sou
 | Přihrádka slovíčka | vyšší z obou |
 | Připnutí a odepnutí tématu | platí novější akce (ukládá se s časem změny) |
 | Dny procvičování (série) | sjednocení obou, posledních 120 dní, kdy se procvičovalo |
+| Otázky (Sešit chyb, Dnešní opakování) | přihrádku a den určuje novější odpověď, počet chyb je vyšší z obou |
+| Dnešní počet odpovědí | novější den; ve stejný den vyšší z obou |
+| Denní cíl | každé zařízení si nechá svůj (zařízení bez nastaveného cíle převezme ten z druhého) |
 | Zvolený ročník | každé zařízení si nechá svůj (zařízení bez zvoleného ročníku převezme ten z druhého) |
 
 Nic se nesmaže. Sloučení jde bezpečně opakovat kolikrát chceš.
@@ -115,7 +118,7 @@ Aby byl kód co nejkratší, nese jen to nejdůležitější:
 
 Každá položka zabere jen 3 bajty: 21bitový otisk (hash) názvu tématu nebo slovíčka a 3 bity stavu. Přijímající aplikace otisky přeloží zpátky podle svého seznamu témat a slov. Na začátku kódu je kontrolní součet (zkrácený SHA-256), takže překlep nebo useknutý kód aplikace odmítne a nenačte nesmysl.
 
-**Co se nepřenese:** připnutá témata, série dní, přesné procentuální výsledky (z hvězdiček se dopočítá 40 / 70 / 90 %), počty kol a data procvičení (načtená témata se tváří jako procvičená v den načtení). Pro úplný přenos použij **Propojit dvě zařízení**.
+**Co se nepřenese:** připnutá témata, série dní, otázky v Sešitu chyb a v Dnešním opakování, denní cíl, přesné procentuální výsledky (z hvězdiček se dopočítá 40 / 70 / 90 %), počty kol a data procvičení (načtená témata se tváří jako procvičená v den načtení). Pro úplný přenos použij **Propojit dvě zařízení**.
 
 Když je pokroku moc a odkaz by byl delší než asi 2 800 znaků, QR kód se nezobrazí. Pak použij propojení zařízení nebo pošli odkaz.
 

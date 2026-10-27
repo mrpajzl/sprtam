@@ -3,19 +3,27 @@ import type { Question, Topic } from '../content/types'
 import { approachById, getApproach } from '../approach'
 import { build, strictFor, grade, GRADE_WORD, MODES, answerText, verbal, type Item, type ModeId } from '../quiz/engine'
 import { QuestionView } from '../quiz/QuestionView'
-import { recordTopic, stars } from '../progress/store'
+import { answered, answeredToday, getProgress, goalOf, isMistake, recordTopic, stars, useProgress } from '../progress/store'
 import { back } from '../router'
 import { BigStars } from '../ui/Bar'
 import { IClose, ICheck, IX } from '../ui/icons'
 import { QrButton } from '../ui/QrShare'
 import { Mascot } from '../ui/Mascot'
 import { Inline } from '../ui/Inline'
+import { ReportButton } from '../ui/Report'
 
-interface Answer { item: Item; ok: boolean }
+interface Answer { item: Item; ok: boolean; hint: boolean }
 
-export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t: Topic }[] }) {
+/** A right answer after a hint counts half. */
+const points = (a: Answer) => (a.ok ? (a.hint ? 0.5 : 1) : 0)
+
+/**
+ * One round of questions. `pick` chooses them instead of the mode's rules (review rounds: Sešit chyb, Dnešní opakování),
+ * and `record` = the round counts as practice of its topics (stars, recommendations).
+ */
+export function Quiz({ mode, topics, pick, record = true, empty }: { mode: ModeId; topics: { key: string; t: Topic }[]; pick?: () => Item[]; record?: boolean; empty?: string }) {
   const [round, setRound] = useState(0)
-  const items = useMemo(() => build(mode, topics), [mode, topics, round])
+  const items = useMemo(() => (pick ? pick() : build(mode, topics)), [mode, topics, round])
   const [queue, setQueue] = useState<Item[]>(items)
   const [i, setI] = useState(0)
   const [answers, setAnswers] = useState<Answer[]>([])
@@ -30,16 +38,17 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
   const finished = queue.length > 0 && i >= queue.length
 
   useEffect(() => {
-    if (!finished || !firstTry.length) return
+    if (!finished || !firstTry.length || !record) return
     const by = new Map<string, { ok: number; n: number }>()
-    for (const a of firstTry) { const s = by.get(a.item.topic) ?? { ok: 0, n: 0 }; s.n++; if (a.ok) s.ok++; by.set(a.item.topic, s) }
+    for (const a of firstTry) { const s = by.get(a.item.topic) ?? { ok: 0, n: 0 }; s.n++; s.ok += points(a); by.set(a.item.topic, s) }
     by.forEach((s, key) => recordTopic(key, (s.ok / s.n) * 100))
   }, [finished])
 
-  if (!queue.length) return <div class="page"><div class="empty"><Mascot mood="sad" size={96} />Tady zatím nejsou otázky.<button class="btn" onClick={back}>Zpět</button></div></div>
+  if (!queue.length) return <div class="page"><div class="empty"><Mascot mood={empty ? 'happy' : 'sad'} size={96} />{empty ?? 'Tady zatím nejsou otázky.'}<button class="btn" onClick={back}>Zpět</button></div></div>
 
   if (finished) {
-    const pct = Math.round((firstTry.filter((a) => a.ok).length / firstTry.length) * 100)
+    const pct = Math.round((firstTry.reduce((n, a) => n + points(a), 0) / firstTry.length) * 100)
+    const right = firstTry.filter((a) => a.ok).length, hinted = firstTry.filter((a) => a.ok && a.hint).length
     const g = grade(pct)
     const wrong = firstTry.filter((a) => !a.ok)
     // Approaches without marks (Waldorf) get a sentence instead of a grade.
@@ -50,7 +59,9 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
           <Mascot mood={pct >= 90 ? 'happy' : pct >= 60 ? 'wow' : 'sad'} size={96} />
           {m.instant || words ? <BigStars n={stars(pct)} /> : <div class={`mark m${g}`}>{g}</div>}
           <h2>{words ? verbal(pct) : m.instant ? (pct >= 90 ? 'Výborně!' : pct >= 60 ? 'Dobře!' : 'Ještě to procvič') : GRADE_WORD[g]}</h2>
-          <div class="pct">{firstTry.filter((a) => a.ok).length} / {firstTry.length} · {pct} %</div>
+          <div class="pct">{right} / {firstTry.length}{hinted > 0 && ` (${hinted} s nápovědou)`} · {pct} %</div>
+          <Goal />
+          {mode === 'chyby' && <MistakesLeft />}
           <div class="actions">
             <button class="btn block" onClick={() => setRound(round + 1)}>Znovu</button>
             <button class="btn ghost block" onClick={back}>Hotovo</button>
@@ -58,7 +69,10 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
           {!m.instant && wrong.length > 0 && (
             <div class="mistakes">
               {wrong.map((a, k) => (
-                <div key={k} class="card"><b><Inline text={a.item.q.question} /></b><span><Inline text={answerText(a.item.q)} /></span></div>
+                <div key={k} class="card">
+                  <b><Inline text={a.item.q.question} /></b><span><Inline text={answerText(a.item.q)} /></span>
+                  {a.item.index !== undefined && <ReportButton topic={a.item.topic} target={{ kind: 'question', index: a.item.index, text: a.item.q.question }} />}
+                </div>
               ))}
             </div>
           )}
@@ -69,12 +83,14 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
 
   const item = queue[i]
   const next = () => { setLast(null); setI(i + 1) }
-  const onAnswer = (ok: boolean) => {
-    setAnswers([...answers, { item, ok }])
+  const onAnswer = (ok: boolean, hint = false) => {
+    answered(item.id, ok, hint, !answers.some((a) => a.item === item))
+    setAnswers([...answers, { item, ok, hint }])
     if (mode === 'opakovani' && !ok) setQueue([...queue, item])
     if (m.instant) setLast(ok)
     else setTimeout(next, 350)
   }
+  const hint = answers.at(-1)?.hint ?? false
 
   return (
     <div class="page" key={i}>
@@ -84,21 +100,37 @@ export function Quiz({ mode, topics }: { mode: ModeId; topics: { key: string; t:
         {mode === 'test' ? <Timer since={start} /> : <span class="timer">{i + 1}/{queue.length}</span>}
         <QrButton />
       </div>
-      {mode === 'zkouseni' ? <Oral q={item.q} onAnswer={(ok) => { setAnswers([...answers, { item, ok }]); next() }} />
-        : <QuestionView q={item.q} reveal={m.instant} strict={strictFor(item.topic)} onAnswer={onAnswer} />}
+      {mode === 'zkouseni' ? <Oral q={item.q} onAnswer={(ok) => { answered(undefined, ok, false, true); setAnswers([...answers, { item, ok, hint: false }]); next() }} />
+        : <QuestionView q={item.q} reveal={m.instant} strict={strictFor(item.topic)} hints={m.instant} onAnswer={onAnswer} />}
       <div class="pad-dock" />
       {last !== null && (
         <div class={`sheet ${last ? 'ok' : 'bad'}`}>
           <div>
-            <div class="verdict">{last ? <ICheck /> : <IX />}{last ? 'Správně' : 'Špatně'}</div>
+            <div class="verdict">{last ? <ICheck /> : <IX />}{last ? 'Správně' : 'Špatně'}{last && hint && <small>s nápovědou</small>}</div>
             {!last && <div class="why"><b><Inline text={answerText(item.q)} /></b>{'explanation' in item.q && item.q.explanation ? <> — <Inline text={item.q.explanation} /></> : null}</div>}
             {last && 'explanation' in item.q && item.q.explanation && <div class="why"><Inline text={item.q.explanation} /></div>}
             <button class="btn block" onClick={next} autoFocus>Dál</button>
+            {item.index !== undefined && <ReportButton topic={item.topic} target={{ kind: 'question', index: item.index, text: item.q.question }} />}
           </div>
         </div>
       )}
     </div>
   )
+}
+
+/** Today's answers against the daily goal, once the round is over. */
+function Goal() {
+  const p = useProgress()
+  const goal = goalOf(p), n = answeredToday(p)
+  if (!goal) return null
+  return n >= goal
+    ? <div class="goal-done">🎯 Dnešní cíl splněn: {n} odpovědí</div>
+    : <div class="goal-left">Do dnešního cíle zbývá {goal - n} {goal - n === 1 ? 'odpověď' : goal - n <= 4 ? 'odpovědi' : 'odpovědí'}</div>
+}
+
+function MistakesLeft() {
+  const n = Object.values(getProgress().q ?? {}).filter(isMistake).length
+  return <div class="muted">{n ? `V sešitu chyb zbývá ${n} ${n === 1 ? 'otázka' : n <= 4 ? 'otázky' : 'otázek'}. Zmizí, až je dvakrát zodpovíš správně.` : 'Sešit chyb je prázdný. Paráda!'}</div>
 }
 
 /** One LED per question: green/red once answered (only where feedback is instant). */

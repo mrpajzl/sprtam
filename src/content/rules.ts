@@ -22,7 +22,23 @@ function blockIssues(b: Block, path: string, out: RuleIssue[]) {
   if (b.type === 'example' && b.widget) widgetIssues(b.widget, path, out)
 }
 
+/** Does a hint give the answer away? The answer as a whole word or number in it (short answers like „2“ appear in hints naturally). */
+const tells = (hint: string, answer: string) => {
+  const a = answer.trim().toLowerCase()
+  if (a.length < 3) return false
+  const at = hint.toLowerCase().indexOf(a)
+  const edge = (c: string | undefined) => !c || !/[\p{L}\p{N}]/u.test(c)
+  return at >= 0 && edge(hint.toLowerCase()[at - 1]) && edge(hint.toLowerCase()[at + a.length])
+}
+
 function questionIssues(q: Question, path: string, out: RuleIssue[]) {
+  if ('hints' in q && q.hints) {
+    const answers = q.type === 'input' ? q.answers : q.type === 'choice' ? [q.options[q.answer] ?? ''] : []
+    q.hints.forEach((h, i) => {
+      if (!h.trim()) out.push({ path: `${path}.hints[${i}]`, message: 'empty hint', cs: 'Nápověda je prázdná.' })
+      else if (answers.some((a) => tells(h, a))) out.push({ path: `${path}.hints[${i}]`, message: 'hint gives the answer away', cs: 'Nápověda prozrazuje odpověď. Napiš jen krok, jak na ni přijít.' })
+    })
+  }
   switch (q.type) {
     case 'choice':
       if (q.answer >= q.options.length) out.push({ path, message: 'choice answer out of range', cs: 'Označ, která možnost je správná.' })

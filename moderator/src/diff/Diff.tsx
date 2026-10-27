@@ -34,6 +34,7 @@ function widgetLines(w: { widget: string; props: Record<string, unknown> }): Lin
 
 function questionLines(q: Question): Line[] {
   const why: Line[] = 'explanation' in q && q.explanation ? [['Proč', q.explanation]] : []
+  if ('hints' in q && q.hints) why.unshift(...q.hints.map((h, i): Line => [`Nápověda ${i + 1}`, h]))
   switch (q.type) {
     case 'choice': return [['Otázka', q.question], ...q.options.map((o, i): Line => [`${LETTERS[i]}${i === q.answer ? ' ✓' : ''}`, o]), ...why]
     case 'truefalse': return [['Tvrzení', q.question], ['Odpověď', q.answer ? 'Pravda' : 'Nepravda'], ...why]

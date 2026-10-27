@@ -21,6 +21,7 @@ flowchart LR
     UI -- stránky, soubory, učivo --> CF[Cloudflare] --> P[Traefik<br/>Coolify] --> S[server sprtam.cz]
     S --> CC[(data/content<br/>kopie vydání učiva)]
     S -- každých 15 s: nové vydání? --> M[obsahová služba<br/>moderace.sprtam.cz]
+    S -- hlášení chyby, bez údajů o žákovi --> M
     UI <-. WebRTC, napřímo .-> UI2[Druhé zařízení]
 ```
 
@@ -57,7 +58,8 @@ src/
     store.ts            pokrok v localStorage, slučování
     code.ts             kód pokroku (QR / odkaz)
     p2p.ts              propojení zařízení přes WebRTC
-    recommend.ts        doporučení „Na řadě“
+    recommend.ts        doporučení „Na řadě“, série dní
+    questions.ts        opakování jednotlivých otázek (Sešit chyb, Dnešní opakování)
   screens/              obrazovky
   widgets/              interaktivní pomůcky: <název>.tsx = jeden widget, kit.tsx = standard a sdílené ovládání,
                         index.tsx = seznam
@@ -104,6 +106,9 @@ Nové vydání učiva (schválená změna v moderaci) je na sprtam.cz do 15 seku
 | `/slovicka/A1/0`, `/slovicka/A1/vse` | Procvičování jedné skupiny / všech skupin úrovně |
 | `/hledat?q=…` | Hledání |
 | `/mix` | Mix připnutých témat |
+| `/dnes` | Dnešní opakování: otázky na řadě ze všech témat |
+| `/chyby`, `/chyby/procvicit` | Sešit chyb a jeho procvičení |
+| `/prehled` | Přehled: série, dnešní cíl, hvězdičky po předmětech |
 | `/sdilet` | Přenos pokroku |
 | `/nastaveni` | Nastavení: vzhled a škola (běžná, waldorfská) |
 | `/widgety`, `/widgety/<název>` | Galerie widgetů, bloků a otázek pro autory obsahu |
@@ -127,6 +132,7 @@ Po nasazení nové verze může mít telefon v cache starou stránku, která odk
 
 | Cesta | Co dělá |
 |---|---|
+| `POST /api/report` | Hlášení chyby v učivu od žáka: zkontroluje ho, omezí počet z jednoho zařízení a pošle obsahové službě bez adresy a čehokoli o žákovi ([Hlášení chyb od žáků](OBSAH.md#hlášení-chyb-od-žáků)) |
 | `GET /api/content/manifest`, `GET /api/content/f/<hash>.json` | Učivo pro aplikaci ([API pro aplikaci](OBSAH.md#api-pro-aplikaci)) |
 | `GET /healthz` | Kontrola, že server běží |
 | stránky, `sitemap.xml`, `robots.txt` | Vykreslené z aktuálního vydání učiva ([`server/pages.ts`](../server/pages.ts)) |
@@ -168,6 +174,7 @@ Produkční verze aplikace se tedy vždy staví přímo z veřejného zdrojovéh
 | `CONTENT_API` | server | Obsahová služba, ze které server bere učivo, výchozí `https://moderace.sprtam.cz`. Při vývoji i pro `npm run content:pull`. |
 | `PORT` | server | Port, výchozí `8080`. |
 | `DATA_DIR` | server | Složka pro kopii učiva (`content/`), v Dockeru `/data`. |
+| `REPORT_TOKEN` | server | Token, se kterým server posílá hlášení chyb obsahové službě (stejný jako u moderace). Bez něj hlášení nejdou poslat. |
 | `LEGACY_HOSTS` | server | Domény, ze kterých se přesměrovává na `sprtam.cz`, výchozí `sprtam.ondrejzraly.cz` (stará adresa) a `www.sprtam.cz`. |
 | `DIST` | server | Složka s buildem, výchozí `dist/`. |
 
@@ -207,7 +214,10 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/crawl.mjs` | otevře každé téma a hlásí chyby za běhu |
 | `scripts/content-pull.ts` | stáhne aktuální vydání učiva do `content/` (`npm run content:pull`) |
 | `scripts/content-stub.ts` | náhrada veřejného API obsahové služby nad `content/` (pro testy serveru) |
-| `scripts/moderator-test.mjs` | moderace a obsahová služba: přihlášení klíčem, bezpečnostní pravidla, editor a náhled, kontrola a zveřejnění, historie a návraty, API tokeny, zálohy (spouští vlastní server, napřed `npm run moderator:build`) |
+| `scripts/learning-test.ts` | pravidla opakování otázek, Sešitu chyb, denního cíle, série se zmrazeným dnem a slučování (`npx tsx`) |
+| `scripts/learning-flow.mjs` | totéž v prohlížeči: kvíz s chybou a nápovědou, Sešit chyb, Přehled, denní cíl, hlášení chyby (proti běžícímu serveru, `SHOTS=1` uloží snímky) |
+| `scripts/report-test.mjs` | hlášení chyb přes server: kontrola, limity, přeposlání bez údajů o žákovi (spouští vlastní server a náhradu obsahové služby, napřed `npm run build`) |
+| `scripts/moderator-test.mjs` | moderace a obsahová služba: přihlášení klíčem, bezpečnostní pravidla, editor a náhled, kontrola a zveřejnění, historie a návraty, API tokeny, hlášení od žáků, zálohy (spouští vlastní server, napřed `npm run moderator:build`) |
 | `scripts/shots.mjs` | snímky obrazovek (přehled widgetů je v aplikaci na `/widgety`) |
 
 Jak psát učivo: [CONTENT.md](CONTENT.md).

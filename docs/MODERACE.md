@@ -51,6 +51,15 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
 - Moderátor vlastní změnu schválit nemůže. **Správce** může: rámeček mu ukáže *Jako správce ji můžeš schválit sám/sama*, a protože tím změnu zveřejní bez druhého páru očí, aplikace si řekne o potvrzení klíčem (přihlášení v posledních 15 minutách). API tokenem to nejde. Schvaluje se přesně ta verze, kterou vidíš: když ji autor mezitím upraví, je potřeba podívat se znovu.
 - **Konflikt:** téma mezitím změnil a zveřejnil někdo jiný. Autor uvidí, co se zveřejnilo, přenese to do svého návrhu a převede ho na novou verzi.
 
+## Hlášení od žáků
+
+Žáci v aplikaci u každé otázky (po odpovědi) a u každého vysvětlení klepnou na **Nahlásit chybu**, vyberou, co je špatně (*Špatná odpověď nebo chyba*, *Nejasné zadání*, *Překlep*, *Jiné*), a můžou připsat krátkou poznámku. Hlášení se objeví na záložce **Hlášení** (na telefonu ve spodní liště, s počtem otevřených).
+
+- Každé hlášení ukazuje téma, kterou otázku (číslo a znění, jak ho žák viděl) nebo které vysvětlení, důvod, poznámku a číslo vydání učiva, ve kterém to žák viděl. Když se téma mezitím změnilo, otázka může mít jiné číslo, proto je tam i znění.
+- O odesílateli tam nic není: žádná adresa, zařízení ani jméno. Server sprtam.cz hlášení zkontroluje a pošle dál jen jeho obsah ([OBSAH.md](OBSAH.md#hlášení-chyb-od-žáků)).
+- **Otevřít téma** → *Upravit* → oprava jde běžnou kontrolou. Pak hlášení označ **Opraveno**. Když je učivo v pořádku, **Zamítnout** (s nepovinnou poznámkou pro ostatní moderátory). Vyřízené hlášení jde **znovu otevřít**.
+- U tématu, ke kterému jsou otevřená hlášení, je nahoře upozornění s odkazem na ně. Filtrovat jde i podle ročníku a předmětu.
+
 ## Historie a pomůcky
 
 - **Historie** tématu (tlačítko u tématu):
@@ -121,6 +130,7 @@ Samostatná aplikace v Coolify (projekt Šprtám) ze stejného repozitáře:
 | `ORIGIN` | Přesná veřejná adresa, `https://moderace.sprtam.cz`. Jsou na ni vázané passkeys, proto se nesmí měnit, jinak se nikdo nepřihlásí. |
 | `REQUIRED_APPROVALS` | Kolik jiných moderátorů musí změnu schválit, výchozí 1. |
 | `BACKUP_TOKEN` | Token, kterým si zálohy stahuje `hetzner-1` ([OBSAH.md](OBSAH.md#zálohy)). Bez něj jsou zálohy vypnuté. |
+| `REPORT_TOKEN` | Token, se kterým server sprtam.cz posílá hlášení chyb od žáků ([OBSAH.md](OBSAH.md#hlášení-chyb-od-žáků)). Stejná hodnota musí být u aplikace sprtam.cz. Bez něj jsou hlášení vypnutá. |
 | `TRUST_PROXY` | `1` za Cloudflare: IP adresa klienta se bere z `CF-Connecting-IP` (pro limity a záznam událostí). V Dockerfile je zapnutá. |
 | `DATA_DIR`, `PORT` | `/data` a `8090`. |
 

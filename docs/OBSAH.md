@@ -59,6 +59,33 @@ Bez přihlášení, jen pro čtení. Z něj si kopii drží server sprtam.cz ([A
 | `GET /api/public/v1/manifest` | manifest aktuálního vydání ([`src/content/manifest.ts`](../src/content/manifest.ts)), `ETag` a `304` |
 | `GET /api/public/v1/files/<hash>` | soubor vydání podle hashe, `immutable`, gzip |
 | `GET /api/public/v1/export` | všechny dokumenty aktuálního vydání `{ release, publishedAt, docs: { klíč: dokument } }` (`npm run content:pull`), nejvýš 30× za hodinu z jedné adresy |
+| `POST /api/public/v1/reports` | hlášení chyby od žáka; jen se `REPORT_TOKEN`, posílá ho server sprtam.cz ([Hlášení chyb od žáků](#hlášení-chyb-od-žáků)) |
+
+## Hlášení chyb od žáků
+
+Tlačítko **Nahlásit chybu** v aplikaci (u otázky po odpovědi a u vysvětlení) posílá hlášení na server sprtam.cz, nikdy rovnou do obsahové služby:
+
+```
+POST /api/report
+{ "topic": "z5/matematika/zlomky",
+  "target": { "kind": "question", "index": 3, "text": "znění otázky" },   // nebo "explanation" a název vysvětlení
+  "reason": "wrong" | "unclear" | "typo" | "other",
+  "note": "nepovinná poznámka, nejvýš 500 znaků",
+  "release": 12 }                                                         // vydání, které žák viděl
+```
+
+1. Server sprtam.cz ([`server/index.ts`](../server/index.ts), kontrola v [`server/report.ts`](../server/report.ts)) ověří, že téma je v aktuálním vydání a pole dávají smysl (tělo nejvýš 4 kB). Odpoví `204`, při chybě JSON `{ error }` s českou zprávou.
+2. Omezí počet: z jednoho zařízení nejvýš 5 hlášení za 10 minut a 20 za den, ze všech dohromady 500 za den. Počítá v paměti podle otisku adresy (SHA-256), který nikam neukládá a do dne zapomene.
+3. Pošle dál **jen hlášení samotné** na `POST /api/public/v1/reports` s `Authorization: Bearer REPORT_TOKEN` (timeout 10 s). Adresu, prohlížeč ani nic jiného o žákovi neposílá.
+4. Obsahová služba ([`moderator/server/reports.ts`](../moderator/server/reports.ts)) hlášení znovu zkontroluje a uloží do tabulky `reports` (nejvýš 1000 otevřených). Moderátoři je vidí na záložce Hlášení ([MODERACE.md](MODERACE.md#hlášení-od-žáků)).
+
+Bez `REPORT_TOKEN` (na kterékoli straně) nebo když obsahová služba neodpoví, aplikace dostane `503` *Hlášení teď nejde poslat. Zkus to později.*
+
+| Kde | Co |
+|---|---|
+| Coolify, sprtam.cz i moderace | `REPORT_TOKEN`, na obou stejná hodnota (aspoň 32 znaků) |
+
+API pro moderátory (přihlášení v prohlížeči): `GET /api/reports?status=open|closed&grade=&subject=&topic=`, `GET /api/reports/counts`, `PATCH /api/reports/<id>` `{ status: "open" | "fixed" | "dismissed", note? }`.
 
 ## API pro aplikaci
 

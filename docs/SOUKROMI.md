@@ -10,7 +10,7 @@ Aplikace používá úložiště prohlížeče (`localStorage`). Data v něm vid
 
 | Klíč | Co obsahuje | Kód |
 |---|---|---|
-| `sprtam:progress` | Tvůj pokrok: u každého procvičeného tématu nejlepší výsledek, výsledek posledního kola, počet kol a den posledního procvičení, které z obou vysvětlení ti víc sedí; přihrádky slovíček (0–5); připnutá i odepnutá témata (s časem změny); posledních 120 dní, kdy jsi procvičoval (kvůli sérii dní); naposledy zvolený ročník. | [`src/progress/store.ts`](../src/progress/store.ts) |
+| `sprtam:progress` | Tvůj pokrok: u každého procvičeného tématu nejlepší výsledek, výsledek posledního kola, počet kol a den posledního procvičení, které z obou vysvětlení ti víc sedí; přihrádky slovíček (0–5); připnutá i odepnutá témata (s časem změny); posledních 120 dní, kdy jsi procvičoval (kvůli sérii dní); naposledy zvolený ročník; u každé zodpovězené otázky z učiva přihrádku (0–5), den poslední odpovědi a kolikrát se spletla (kvůli Sešitu chyb a Dnešnímu opakování, nejvýš 4 000 otázek); denní cíl a kolik odpovědí jsi dal dnes. | [`src/progress/store.ts`](../src/progress/store.ts) |
 | `sprtam-theme` | `dark` nebo `light`, pokud sis přepnul vzhled. | [`src/theme.ts`](../src/theme.ts) |
 | `sprtam-approach` | `waldorf`, pokud sis zapnul waldorfskou školu. | [`src/approach.ts`](../src/approach.ts) |
 | `sprtam-heal` | Čas posledního automatického „uzdravení“ po nasazení nové verze (aby se stránka nepřenačítala dokola). | [`public/boot-check.js`](../public/boot-check.js) |
@@ -36,6 +36,7 @@ Kromě toho:
 |---|---|---|---|
 | `sprtam.cz` (náš server) | Při otevření nebo přenačtení stránky | Běžné stažení aplikace a učiva (HTML, JS, CSS, obrázky). Server přitom vidí adresu stránky, viz [níže](#co-vidí-server-a-síť). | [Architektura](ARCHITEKTURA.md) |
 | Druhé zařízení (napřímo) | Jen když sám spustíš **Propojit dvě zařízení** | Tvůj pokrok, šifrovaně, přímo do druhého zařízení. To se přitom dozví tvou veřejnou IP adresu. | [Propojení zařízení](PROPOJENI-ZARIZENI.md) |
+| `sprtam.cz/api/report` → moderátoři | Jen když sám odešleš **Nahlásit chybu** | Které téma, která otázka nebo vysvětlení (číslo a text), důvod, tvoje poznámka a číslo vydání učiva. Žádný pokrok ani nic o zařízení. Server hlášení předá obsahové službě bez tvé IP adresy a prohlížeče; IP adresu drží jen chvíli v paměti kvůli limitu (nejvýš 5 hlášení za 10 minut, 20 za den) a neukládá ji. | [Obsah a jeho API](OBSAH.md#hlášení-chyb-od-žáků) |
 | STUN server Googlu a Cloudflaru | Jen při **Propojit dvě zařízení** | Dotaz „jakou mám veřejnou adresu?“ Žádná data o tobě ani o pokroku. | [Propojení zařízení](PROPOJENI-ZARIZENI.md#stun-server) |
 
 Co aplikace **nedělá**:
@@ -44,7 +45,7 @@ Co aplikace **nedělá**:
 - Nepoužívá cookies. Aplikace ani server žádné nenastavují, takže se žádné ani neposílají.
 - Nenačítá nic z cizích domén: písma, ikony i knihovny jsou součástí aplikace. Vynucuje to hlavička `Content-Security-Policy` (mimo jiné `default-src 'self'` a `connect-src 'self'`; kromě vlastní domény povoluje jen obsah vytvořený přímo v zařízení, `data:` a `blob:`), viz [`server/index.ts`](../server/index.ts). Prohlížeč by požadavek na cizí server zablokoval. Na dvě věci se tato hlavička nevztahuje: dotaz na STUN server při propojování zařízení (je v tabulce výše) a případné online hlasy prohlížeče, když nahrávka výslovnosti není k dispozici (viz níže).
 - Neobsahuje Google Analytics, Facebook Pixel, Sentry, reklamy ani nic podobného.
-- Neposílá, jak ti to jde, jak dlouho se učíš ani na jakém zařízení. Které stránky otevíráš, server vidí jen při jejich stažení (viz [níže](#co-vidí-server-a-síť)). Procvičování samo nic neposílá.
+- Neposílá, jak ti to jde, jak dlouho se učíš ani na jakém zařízení. Které stránky otevíráš, server vidí jen při jejich stažení (viz [níže](#co-vidí-server-a-síť)). Procvičování samo nic neposílá. Nápovědy, Sešit chyb, Dnešní opakování, Přehled i denní cíl se počítají jen v zařízení.
 - **Výslovnost slovíček** jsou nahrávky uložené přímo na našem serveru (`/audio/en/…mp3`), jedna pro každé slovíčko. Vytvořili jsme je předem jednou službou ElevenLabs; aplikace ji za běhu nevolá a nic jí neposílá. Stahují se jako ostatní soubory aplikace, server tedy vidí jen to, jaký soubor se stáhl (viz [níže](#co-vidí-server-a-síť)). Když nahrávku nejde přehrát (např. offline, než se kdy stáhla), použije se hlasová syntéza prohlížeče (`speechSynthesis`). Většinou je hlas přímo v zařízení, některé prohlížeče (např. Chrome nebo Edge s online hlasy Googlu či Microsoftu) ale mohou samotné anglické slovo poslat ke zpracování svému poskytovateli. Kód: [`src/vocab/speak.ts`](../src/vocab/speak.ts).
 - **Kamera** (skenování QR kódu) se zapne jen na obrazovce skenování. Obraz se zpracovává v zařízení a nikam se neposílá.
 

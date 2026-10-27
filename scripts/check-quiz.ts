@@ -1,14 +1,14 @@
 // Builds every quiz mode for every topic and checks that each typed answer accepts its own key.
 // npx tsx scripts/check-quiz.ts
 import { readSubjects } from '../plugins/content'
-import { build, checkInput, strictFor, MODES, type ModeId } from '../src/quiz/engine'
+import { build, checkInput, strictFor, TOPIC_MODES, type ModeId } from '../src/quiz/engine'
 import { GENERATORS } from '../src/quiz/generators'
 import { WIDGETS } from '../src/widgets'
 let n = 0; const errs: string[] = []
 for (const s of readSubjects()) {
   const topics = s.topics.map((t) => ({ key: `${s.grade}/${s.subject}/${t.id}`, t }))
   for (const tp of topics) {
-    for (const m of Object.keys(MODES) as ModeId[]) { const items = build(m, m === 'test' ? topics : [tp]); if (!items.length) errs.push(`${tp.key} ${m}: empty`); n++ }
+    for (const m of [...TOPIC_MODES, 'test', 'mix'] as ModeId[]) { const items = build(m, m === 'test' ? topics : [tp]); if (!items.length) errs.push(`${tp.key} ${m}: empty`); n++ }
     for (const q of tp.t.questions) if (q.type === 'input') for (const a of q.answers) if (!checkInput(a, q.answers, strictFor(tp.key))) errs.push(`${tp.key}: "${a}" rejected`)
   }
 }

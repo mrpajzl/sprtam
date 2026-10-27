@@ -244,6 +244,26 @@ const MIGRATIONS: string[] = [
   ALTER TABLE reviews ADD COLUMN edited_at INTEGER;
   CREATE INDEX reviews_parent ON reviews(parent_id);
   `,
+  // 3: error reports from pupils, forwarded by the server of sprtam.cz (no IP, no device, only what was reported).
+  `
+  CREATE TABLE reports (
+    id TEXT PRIMARY KEY,
+    topic TEXT NOT NULL,
+    target_kind TEXT NOT NULL,
+    target_index INTEGER NOT NULL,
+    target_text TEXT NOT NULL,
+    reason TEXT NOT NULL,
+    note TEXT NOT NULL DEFAULT '',
+    release INTEGER,
+    status TEXT NOT NULL DEFAULT 'open',
+    created_at INTEGER NOT NULL,
+    decided_at INTEGER,
+    decided_by TEXT REFERENCES users(id),
+    decision_note TEXT
+  );
+  CREATE INDEX reports_status ON reports(status, created_at);
+  CREATE INDEX reports_topic ON reports(topic);
+  `,
 ]
 
 const before = Number((db.prepare('PRAGMA user_version').get() as { user_version: number }).user_version)

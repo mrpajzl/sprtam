@@ -11,6 +11,7 @@ import { nav } from '../router'
 import { useIndex } from '../store'
 import { Busy, I } from '../ui/kit'
 import { editTopic } from './Library'
+import { reportsHref } from './Reports'
 
 // One published topic, read only: the phone shows it exactly as pupils get it, next to it the whole topic
 // at a glance – explanations and every question with its correct answer. Open to everyone (teachers check
@@ -22,11 +23,16 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
   const [error, setError] = useState('')
   const [mode, setMode] = useState<PreviewMode>({ kind: 'topic', ex: 0 })
   const [opening, setOpening] = useState(false)
+  const [reports, setReports] = useState(0)
 
   useEffect(() => {
     setTopic(null); setError(''); setMode({ kind: 'topic', ex: 0 })
     get<{ topic: TopicFile }>(`/api/content/topic/${g}/${s}/${id}`).then((r) => setTopic(r.topic), (e) => setError(e instanceof ApiError ? e.message : 'Téma se nepodařilo načíst.'))
   }, [g, s, id])
+  useEffect(() => {
+    setReports(0)
+    if (me) get<{ open: number }>(`/api/reports/counts?topic=${encodeURIComponent(`${g}/${s}/${id}`)}`).then((c) => setReports(c.open), () => {})
+  }, [g, s, id, me?.id])
 
   const known = Object.hasOwn(GRADE_SUBJECTS, g) && (GRADE_SUBJECTS[g as GradeId] as string[]).includes(s)
   if (error || !known) return <div class="empty-state">{error || 'Téma nenalezeno.'} <a href="/" onClick={nav('/')}>Zpět na učivo</a></div>
@@ -74,6 +80,10 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
         <div key={o.id} class="banner warn"><I.check /><span><b>{o.name}</b> poslal/a úpravu tohoto tématu ke kontrole. Podívej se, co změnil/a, a schval ji – pak se zveřejní.</span><a class="btn small primary" href={`/kontrola/${o.id}`} onClick={nav(`/kontrola/${o.id}`)}>Zkontrolovat a schválit</a></div>
       ))}
       {me && others.some((o) => o.status !== 'review') && <div class="banner info"><I.pencil />Téma právě upravuje {others.filter((o) => o.status !== 'review').map((o) => o.name).join(', ')}. Úpravu zatím neposlal/a ke kontrole.</div>}
+      {reports > 0 && (
+        <div class="banner warn"><I.warn /><span>{reports === 1 ? '1 otevřené hlášení' : `${reports} ${reports < 5 ? 'otevřená hlášení' : 'otevřených hlášení'}`} od žáků k tomuto tématu.</span>
+          <a class="btn small" href={reportsHref('open', { topic: `${g}/${s}/${id}` })} onClick={nav(reportsHref('open', { topic: `${g}/${s}/${id}` }))}>Zobrazit</a></div>
+      )}
       {mine && <div class="banner info"><I.pencil />{mine.status === 'review' ? 'Tvoje úprava čeká na kontrolu jiného moderátora.' : 'Máš tu rozpracované úpravy, ještě nejsou odeslané ke kontrole.'} Tady vidíš zveřejněnou verzi.</div>}
 
       <div class="v-body">

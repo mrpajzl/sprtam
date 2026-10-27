@@ -1,6 +1,6 @@
 // Moderation end to end (docs/MODERACE.md, docs/OBSAH.md): starts the built server (npm run moderator:build first)
 // on a free port with an empty database (it imports content/), and drives Chromium with virtual passkeys through
-// sign-in, the editor, review and publishing, history and rollback, API tokens, widget requests, backups and the
+// sign-in, the editor, review and publishing, history and rollback, API tokens, widget requests, pupils' error reports, backups and the
 // security rules.
 //   node scripts/moderator-test.mjs
 import { execFileSync, spawn } from 'node:child_process'
@@ -16,7 +16,8 @@ const port = await new Promise((r) => { const s = createServer().listen(0, () =>
 const BASE = `http://localhost:${port}`
 const data = mkdtempSync(join(tmpdir(), 'moderace-test-'))
 const BACKUP = 'test-backup-token-0123456789-abcdefghij'
-const env = { ...process.env, PORT: String(port), ORIGIN: BASE, DATA_DIR: data, BACKUP_TOKEN: BACKUP, REQUIRED_APPROVALS: '1' }
+const REPORT = 'test-report-token-0123456789-abcdefghij'
+const env = { ...process.env, PORT: String(port), ORIGIN: BASE, DATA_DIR: data, BACKUP_TOKEN: BACKUP, REPORT_TOKEN: REPORT, REQUIRED_APPROVALS: '1' }
 const server = spawn('node', ['--no-warnings', 'moderator/dist-server/index.mjs'], { cwd: ROOT, env, stdio: ['ignore', 'pipe', 'inherit'] })
 await new Promise((r) => server.stdout.on('data', (d) => { if (String(d).includes('moderace on')) r() }))
 const cli = (...args) => execFileSync('node', ['--no-warnings', 'moderator/dist-server/cli.mjs', ...args], { cwd: ROOT, env }).toString().trim().split('\n').pop()
@@ -130,7 +131,7 @@ try {
   await ph.locator('.topic').first().waitFor()
   check(await ph.locator('.bnav').isVisible() && !(await ph.locator('.top .tabs').isVisible()) && await fits(), 'phone: screens in a bottom bar, the page fits the screen')
   await ph.locator('.bnav').getByRole('button', { name: 'Více' }).click()
-  check(await ph.locator('.more-sheet').getByRole('link', { name: 'Moderátoři' }).isVisible(), 'phone: admin screens under "Více"')
+  check(await ph.locator('.more-sheet').getByRole('link', { name: 'Moderátoři' }).isVisible() && await ph.locator('.more-sheet').getByRole('link', { name: 'Pomůcky' }).isVisible(), 'phone: widget requests and admin screens under "Více"')
   await ph.goto(`${BASE}/navrh/${draftId}`)
   await ph.locator('.ed-dock').waitFor()
   check(await fits() && !(await ph.locator('.outline').isVisible()), 'phone: the editor fits, the outline is folded away')
@@ -377,6 +378,29 @@ try {
   await have.locator('.sc-item', { hasText: 'Hodiny' }).click()
   check(await have.locator('.sc-item').count() >= 20 && await eva.page.frameLocator('.have iframe').locator('.blocks > *').first().waitFor({ timeout: 5000 }).then(() => true, () => false)
     && await have.locator('.sc-head h3').textContent() === 'Hodiny', 'the requests page shows every existing widget working')
+
+  // ——— Error reports from pupils (forwarded by the server of sprtam.cz) ———
+  const report = (body, t = REPORT) => fetch(`${BASE}/api/public/v1/reports`, { method: 'POST', headers: { 'Content-Type': 'application/json', ...(t ? { Authorization: `Bearer ${t}` } : {}) }, body: JSON.stringify(body) })
+  const rp = { topic: 'z6/matematika/prvocisla', target: { kind: 'question', index: 2, text: 'Je 1 prvočíslo?' }, reason: 'wrong', note: 'Myslím, že odpověď je obráceně.', release: 6 }
+  check((await report(rp, 'nope')).status === 401 && [401, 403].includes((await report(rp, '')).status) && (await report(rp, BACKUP)).status === 401, 'a report needs the report token')
+  check((await report({ ...rp, reason: 'spam' })).status === 400 && (await report({ ...rp, target: { kind: 'x', index: 0, text: 'a' } })).status === 400, 'a malformed report is refused')
+  const sent = await report(rp)
+  check(sent.status === 200, 'the server of sprtam.cz forwards a report')
+  await report({ ...rp, topic: 'z5/matematika/velka-cisla', target: { kind: 'explanation', index: 0, text: 'Na číselné ose' }, reason: 'unclear', note: '' })
+  const open = (await eva.api('GET', '/api/reports')).body
+  check(open.length === 2 && open.some((r) => r.topic === rp.topic && r.title && r.note === rp.note && r.target.index === 2), 'moderators see open reports with the topic title')
+  check((await eva.api('GET', '/api/reports?grade=z6&subject=matematika')).body.length === 1 && (await eva.api('GET', `/api/reports/counts?topic=${rp.topic}`)).body.open === 1, 'reports filter by grade, subject and topic')
+  check((await fetch(`${BASE}/api/reports`)).status === 401, 'reports are only for moderators')
+  const fixedOne = open.find((r) => r.topic === rp.topic)
+  check((await eva.api('PATCH', `/api/reports/${fixedOne.id}`, { status: 'fixed' })).status === 200, 'a moderator closes a report as fixed')
+  const closed = (await eva.api('GET', '/api/reports?status=closed')).body
+  check(closed.length === 1 && closed[0].status === 'fixed' && closed[0].decidedBy === 'Eva Učitelka', 'a closed report remembers who closed it')
+  const c = (await eva.api('GET', '/api/reports/counts')).body
+  check(c.open === 1 && c.closed === 1, 'counts of open and closed reports')
+  await eva.page.goto(`${BASE}/hlaseni`)
+  check(await eva.page.locator('.report').first().waitFor({ timeout: 5000 }).then(() => true, () => false) && await eva.page.locator('.report').count() === 1 && (await eva.page.locator('.top .tabs').textContent()).includes('Hlášení · 1'), 'the reports screen lists the open ones, the tab counts them')
+  await eva.page.goto(`${BASE}/ucivo/z5/matematika/velka-cisla`)
+  check(await eva.page.getByText('1 otevřené hlášení').waitFor({ timeout: 5000 }).then(() => true, () => false), 'the topic shows its open reports')
 
   // ——— Backups ———
   const bk = await fetch(`${BASE}/api/internal/backup`, { headers: { Authorization: `Bearer ${BACKUP}` } })

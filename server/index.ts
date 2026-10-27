@@ -1,17 +1,22 @@
 // The server of sprtam.cz: the built PWA, the pages and the content API of the current content release
-// (server/content.ts, docs/OBSAH.md). It counts nothing and logs nothing: no IPs, no IDs, no cookies, no request logs.
+// (server/content.ts, docs/OBSAH.md), and pupils' error reports passed on to the moderators. It stores nothing about
+// visitors and logs no requests: no IPs, no IDs, no cookies (reports are counted per device only in memory, see below).
 // Built into one file without dependencies: vite build --ssr (package.json).
+import { createHash } from 'node:crypto'
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
 import { readFile, rm, stat } from 'node:fs/promises'
 import { extname, join, normalize } from 'node:path'
 import { HASH } from '../src/content/manifest'
 import { embed, encoded, file as contentFile, pageHtml, release, startContent } from './content'
 import { render, robots, sitemap } from './pages'
+import { parseReport } from './report'
 import { shell } from './shell'
 
 const PORT = Number(process.env.PORT ?? 8080)
 const DIST = process.env.DIST ?? join(import.meta.dirname, '..', 'dist')
 const DATA = process.env.DATA_DIR ?? join(import.meta.dirname, '..', 'data')
+/** Shared with the content service: pupils' error reports are forwarded with it (docs/OBSAH.md). Empty = reports off. */
+const REPORT_TOKEN = process.env.REPORT_TOKEN ?? ''
 /** The content service (moderation) – its public read API is the source of all content. */
 const CONTENT_API = (process.env.CONTENT_API ?? 'https://moderace.sprtam.cz').replace(/\/$/, '')
 // The app moved to sprtam.cz. These hosts still reach this server and send everyone over (see below).
@@ -25,7 +30,8 @@ const MODES = ['kviz', 'opakovani', 'pisemka', 'zkouseni']
 /** Routes the app renders that have no page of their own (server/pages.ts). */
 function isAppRoute(path: string) {
   const p = path.split('/').filter(Boolean)
-  if (p.length === 1) return ['hledat', 'mix', 'sdilet', 'widgety', 'nastaveni'].includes(p[0])
+  if (p.length === 1) return ['hledat', 'mix', 'sdilet', 'widgety', 'nastaveni', 'prehled', 'chyby', 'dnes'].includes(p[0])
+  if (p.join('/') === 'chyby/procvicit') return true
   if (p[0] === 'widgety' && p.length === 2) return /^[a-z]+(-[a-z]+)*$/.test(p[1])
   if (p[0] === 'g' && p.length === 4 && p[3] === '~test') return page(...p.slice(0, 3))
   if (p[0] === 'g' && p.length === 5 && MODES.includes(p[4])) return page(...p.slice(0, 4))
@@ -83,10 +89,66 @@ async function contentApi(req: IncomingMessage, res: ServerResponse, path: strin
   res.end(req.method === 'HEAD' ? undefined : body)
 }
 
+// ——— Error reports from pupils (button „Nahlásit chybu“) ———
+// Forwarded to the content service, where moderators see them. Only what was reported travels on: no address,
+// no browser, nothing about the device. The address is used here only to count reports in memory (as a hash,
+// forgotten after a day), so that one device cannot flood the moderators.
+
+const windows = new Map<string, { n: number; until: number }>()
+setInterval(() => { const now = Date.now(); for (const [k, w] of windows) if (w.until < now) windows.delete(k) }, 60_000).unref()
+const over = (key: string, max: number, ms: number) => {
+  const now = Date.now()
+  let w = windows.get(key)
+  if (!w || w.until < now) windows.set(key, (w = { n: 0, until: now + ms }))
+  return ++w.n > max
+}
+// Behind Cloudflare and Traefik. A forged CF-Connecting-IP (someone reaching the origin directly) only gets
+// its own counter; the daily cap over everyone still holds.
+const clientKey = (req: IncomingMessage) => {
+  const cf = req.headers['cf-connecting-ip']
+  const xff = String(req.headers['x-forwarded-for'] ?? '').split(',').map((x) => x.trim()).filter(Boolean)
+  const ip = (typeof cf === 'string' && cf) || xff.at(-1) || req.socket.remoteAddress || '?'
+  return createHash('sha256').update(ip).digest('base64url').slice(0, 16)
+}
+
+const jsonError = (res: ServerResponse, status: number, error: string) =>
+  res.writeHead(status, { ...SECURITY, 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }).end(JSON.stringify({ error }))
+const UNAVAILABLE = 'Hlášení teď nejde poslat. Zkus to později.'
+
+async function report(req: IncomingMessage, res: ServerResponse) {
+  if (!/^application\/json\b/.test(req.headers['content-type'] ?? '')) return jsonError(res, 415, 'Očekávám JSON.')
+  let body = ''
+  for await (const c of req) { body += c; if (body.length > 4096) return jsonError(res, 413, 'Hlášení je moc dlouhé.') }
+  let data: unknown
+  try { data = JSON.parse(body) } catch { return jsonError(res, 400, 'Neplatné hlášení.') }
+  const r = parseReport(data)
+  if (typeof r === 'string') return jsonError(res, 400, r)
+  if (!release()?.pages.has(`/g/${r.topic}`)) return jsonError(res, 400, 'Neznámé téma.')
+  if (!REPORT_TOKEN) return jsonError(res, 503, UNAVAILABLE)
+  const who = clientKey(req)
+  if (over(`m:${who}`, 5, 10 * 60_000) || over(`d:${who}`, 20, 86_400_000)) return jsonError(res, 429, 'Poslal jsi hodně hlášení za sebou. Zkus to později.')
+  if (over('all', 500, 86_400_000)) return jsonError(res, 503, UNAVAILABLE)
+  try {
+    const out = await fetch(`${CONTENT_API}/api/public/v1/reports`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${REPORT_TOKEN}` }, body: JSON.stringify(r), signal: AbortSignal.timeout(10_000),
+    })
+    if (out.ok) return res.writeHead(204, { ...SECURITY, 'Cache-Control': 'no-store' }).end()
+    console.error('report: content service answered', out.status)
+    return jsonError(res, out.status === 429 ? 429 : 503, out.status === 429 ? 'Hlášení je teď moc. Zkus to později.' : UNAVAILABLE)
+  } catch (e) {
+    console.error('report: content service unreachable', (e as Error).message)
+    return jsonError(res, 503, UNAVAILABLE)
+  }
+}
+
 async function handle(req: IncomingMessage, res: ServerResponse) {
   let url: URL
   try { url = new URL(req.url ?? '/', 'http://x') } catch { return res.writeHead(400).end() }
   if (url.pathname === '/healthz') return res.writeHead(200).end('ok')
+  if (url.pathname === '/api/report') {
+    if (req.method !== 'POST') return res.writeHead(405, SECURITY).end()
+    return report(req, res)
+  }
   if (url.pathname.startsWith('/api/content/')) {
     if (req.method !== 'GET' && req.method !== 'HEAD') return res.writeHead(405).end()
     return contentApi(req, res, url.pathname)

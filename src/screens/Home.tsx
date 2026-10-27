@@ -1,11 +1,11 @@
 import { GRADE_NAME, STAGES, SUBJECTS } from '../content/curriculum'
 import { useIndex, refFor, type TopicRef } from '../content/library'
-import { recommend, streak, type Why } from '../progress/recommend'
-import { pinnedKeys, stars, today, useProgress, type Progress } from '../progress/store'
+import { recommend, streakOf, type Why } from '../progress/recommend'
+import { answeredToday, goalOf, isDue, isMistake, pinnedKeys, stars, today, useProgress, type Progress } from '../progress/store'
 import { go, Link } from '../router'
 import { Stars } from '../ui/Bar'
 import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
-import { IArrow, IGear, IPin, ISearch, IShuffle } from '../ui/icons'
+import { IArrow, IBook, IGear, IPin, IRepeat, ISearch, IShuffle } from '../ui/icons'
 import { Mascot } from '../ui/Mascot'
 import { QrButton } from '../ui/QrShare'
 
@@ -33,6 +33,7 @@ export function Home() {
       </Link>
 
       <Display p={p} />
+      <ReviewKeys p={p} />
 
       <section class="sec">
         <div class="sec-head">
@@ -121,19 +122,56 @@ function Cart({ r, st }: { r: TopicRef; st: number }) {
 }
 
 const DAYS = 14
+const plural = (n: number, one: string, few: string, many: string) => (n === 1 ? one : n >= 2 && n <= 4 ? few : many)
 
-/** The device screen: Šprťa and the last two weeks as a row of LEDs. */
+/** The device screen: Šprťa, the last two weeks as a row of LEDs and today's answers against the daily goal. Opens the overview. */
 function Display({ p }: { p: Progress }) {
   const days = new Set(p.a ?? [])
   const now = today()
-  const n = streak(p)
+  const { n, frozen } = streakOf(p)
+  const goal = goalOf(p), done = answeredToday(p)
+  const frz = new Set(frozen)
+  const label = `${n} ${plural(n, 'den', 'dny', 'dní')} v řadě${goal ? `, dnes ${done} z ${goal} odpovědí` : ''}. Otevřít přehled.`
   return (
-    <div class="display" role="img" aria-label={`${n} dní v řadě`}>
-      <Mascot mood={days.has(now) ? 'happy' : 'idle'} size={68} />
-      <div class="leds" aria-hidden="true">
-        {Array.from({ length: DAYS }, (_, i) => now - DAYS + 1 + i).map((d) => <i key={d} class={`${days.has(d) ? 'on' : ''} ${d === now ? 'now' : ''}`} />)}
-      </div>
-      <div class="streak"><b>{n}</b><small>{n === 1 ? 'den' : n >= 2 && n <= 4 ? 'dny' : 'dní'} v řadě</small></div>
+    <Link class="display" href="/prehled" aria-label={label}>
+      <Mascot mood={goal && done >= goal ? 'wow' : days.has(now) ? 'happy' : 'idle'} size={68} />
+      <span class="disp-mid" aria-hidden="true">
+        <span class="leds">
+          {Array.from({ length: DAYS }, (_, i) => now - DAYS + 1 + i).map((d) => <i key={d} class={`${days.has(d) ? 'on' : frz.has(d) ? 'frz' : ''} ${d === now ? 'now' : ''}`} />)}
+        </span>
+        {goal > 0 && (
+          <span class={`goal ${done >= goal ? 'done' : ''}`}>
+            <span class="goal-bar"><i style={{ width: `${Math.min(100, (done / goal) * 100)}%` }} /></span>
+            <small>{done >= goal ? 'cíl splněn' : `dnes ${done}/${goal}`}</small>
+          </span>
+        )}
+      </span>
+      <span class="streak" aria-hidden="true"><b>{n}</b><small>{plural(n, 'den', 'dny', 'dní')} v řadě</small></span>
+    </Link>
+  )
+}
+
+/** Review across topics: questions due today and the open mistakes. Only once there is something to review. */
+function ReviewKeys({ p }: { p: Progress }) {
+  const qs = Object.values(p.q ?? {})
+  const now = today()
+  const due = qs.filter((v) => isDue(v, now)).length
+  const mistakes = qs.filter(isMistake).length
+  if (!due && !mistakes) return null
+  return (
+    <div class="review-keys">
+      {due > 0 && (
+        <Link class="row review-key" style={keyStyle('blue')} href="/dnes" rel="nofollow">
+          <span class="skey m"><IRepeat /></span>
+          <span class="txt"><b>Dnešní opakování</b><small>{Math.min(due, 10)} {plural(Math.min(due, 10), 'otázka', 'otázky', 'otázek')}, co ti vypadávají z hlavy</small></span>
+        </Link>
+      )}
+      {mistakes > 0 && (
+        <Link class="row review-key" style={keyStyle('red')} href="/chyby">
+          <span class="skey m"><IBook /></span>
+          <span class="txt"><b>Sešit chyb</b><small>{mistakes} {plural(mistakes, 'otázka', 'otázky', 'otázek')} k opravení</small></span>
+        </Link>
+      )}
     </div>
   )
 }
