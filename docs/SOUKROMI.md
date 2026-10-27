@@ -1,6 +1,6 @@
 # Soukromí: co Šprtám ví a co ne
 
-> **Ve zkratce:** Šprtám nemá účty, nepoužívá cookies, reklamy ani analytické služby třetích stran. Tvůj pokrok zůstává v tvém zařízení. Kromě běžného stažení stránek se na server jednou denně pošle jediná informace: „aplikaci dnes někdo otevřel, poprvé ano/ne“. Nic víc.
+> **Ve zkratce: nesledujeme tě.** Šprtám nemá účty, nepoužívá cookies, reklamy, analytiku ani anonymní statistiky. Tvůj pokrok zůstává v tvém zařízení. Aplikace o tobě nikam nic neposílá: ven jdou jen běžné požadavky na stránky a učivo.
 
 Tenhle dokument popisuje úplně všechno, co aplikace ukládá a posílá. Každé tvrzení odkazuje na kód, takže si ho může kdokoli ověřit.
 
@@ -11,7 +11,6 @@ Aplikace používá úložiště prohlížeče (`localStorage`). Data v něm vid
 | Klíč | Co obsahuje | Kód |
 |---|---|---|
 | `sprtam:progress` | Tvůj pokrok: u každého procvičeného tématu nejlepší výsledek, výsledek posledního kola, počet kol a den posledního procvičení, které z obou vysvětlení ti víc sedí; přihrádky slovíček (0–5); připnutá i odepnutá témata (s časem změny); posledních 120 dní, kdy jsi procvičoval (kvůli sérii dní); naposledy zvolený ročník. | [`src/progress/store.ts`](../src/progress/store.ts) |
-| `sprtam:seen` | Datum, kdy aplikace naposledy poslala denní anonymní ping (viz níže). | [`src/stats.ts`](../src/stats.ts) |
 | `sprtam-theme` | `dark` nebo `light`, pokud sis přepnul vzhled. | [`src/theme.ts`](../src/theme.ts) |
 | `sprtam-approach` | `waldorf`, pokud sis zapnul waldorfskou školu. | [`src/approach.ts`](../src/approach.ts) |
 | `sprtam-heal` | Čas posledního automatického „uzdravení“ po nasazení nové verze (aby se stránka nepřenačítala dokola). | [`public/boot-check.js`](../public/boot-check.js) |
@@ -36,12 +35,12 @@ Kromě toho:
 | Kam | Kdy | Co | Podrobně |
 |---|---|---|---|
 | `sprtam.cz` (náš server) | Při otevření nebo přenačtení stránky | Běžné stažení aplikace a učiva (HTML, JS, CSS, obrázky). Server přitom vidí adresu stránky, viz [níže](#co-vidí-server-a-síť). | [Architektura](ARCHITEKTURA.md) |
-| `sprtam.cz/api/ping` | Nejvýš jednou denně | `{"new":true}` nebo `{"new":false}`. Žádné ID, žádný pokrok. | [Statistiky](STATISTIKY.md) |
 | Druhé zařízení (napřímo) | Jen když sám spustíš **Propojit dvě zařízení** | Tvůj pokrok, šifrovaně, přímo do druhého zařízení. To se přitom dozví tvou veřejnou IP adresu. | [Propojení zařízení](PROPOJENI-ZARIZENI.md) |
 | STUN server Googlu a Cloudflaru | Jen při **Propojit dvě zařízení** | Dotaz „jakou mám veřejnou adresu?“ Žádná data o tobě ani o pokroku. | [Propojení zařízení](PROPOJENI-ZARIZENI.md#stun-server) |
 
 Co aplikace **nedělá**:
 
+- Nepočítá uživatele ani návštěvy, ani anonymně. Žádné statistiky nevedeme. (Cloudflare jako každá síť provoz vidí, viz [níže](#co-vidí-server-a-síť).)
 - Nepoužívá cookies. Aplikace ani server žádné nenastavují, takže se žádné ani neposílají.
 - Nenačítá nic z cizích domén: písma, ikony i knihovny jsou součástí aplikace. Vynucuje to hlavička `Content-Security-Policy` (mimo jiné `default-src 'self'` a `connect-src 'self'`; kromě vlastní domény povoluje jen obsah vytvořený přímo v zařízení, `data:` a `blob:`), viz [`server/index.ts`](../server/index.ts). Prohlížeč by požadavek na cizí server zablokoval. Na dvě věci se tato hlavička nevztahuje: dotaz na STUN server při propojování zařízení (je v tabulce výše) a případné online hlasy prohlížeče, když nahrávka výslovnosti není k dispozici (viz níže).
 - Neobsahuje Google Analytics, Facebook Pixel, Sentry, reklamy ani nic podobného.
@@ -55,7 +54,7 @@ Když otevřeš jakoukoli webovou stránku, server se nutně dozví tvou IP adre
 
 1. **Cloudflare.** Doména `sprtam.cz` jde přes síť Cloudflare (ochrana a zrychlení). Cloudflare vidí IP adresy návštěvníků a zpracovává je podle [svých zásad](https://www.cloudflare.com/privacypolicy/). Nevkládá do stránky žádné skripty ani cookies (ověřeno 25. 10. 2026).
 2. **Reverzní proxy** (Traefik v Coolify na našem serveru) předává požadavky aplikaci. Přístupové logy má vypnuté (ověřeno 25. 10. 2026).
-3. **Server aplikace** ([`server/index.ts`](../server/index.ts)) nevede žádný log požadavků, neukládá IP adresy a nemá žádnou databázi uživatelů. Na disk zapisuje jen denní součty z pingu (`stats.json`) a kopii učiva. Učivo si sám stahuje z naší obsahové služby (moderace). Ta se o návštěvnících nic nedozví, protože aplikace v prohlížeči se s ní nikdy nespojuje ([Obsah a jeho API](OBSAH.md)).
+3. **Server aplikace** ([`server/index.ts`](../server/index.ts)) nevede žádný log požadavků, neukládá IP adresy a nemá žádnou databázi uživatelů. Na disk zapisuje jen kopii učiva. Učivo si sám stahuje z naší obsahové služby (moderace). Ta se o návštěvnících nic nedozví, protože aplikace v prohlížeči se s ní nikdy nespojuje ([Obsah a jeho API](OBSAH.md)).
 
 Při stažení stránky se server a Cloudflare dozví i její adresu, například `/g/z5/matematika/zlomky` nebo `/hledat?q=zlomky`. To se stane, když stránku otevřeš z odkazu, přenačteš ji nebo když se poprvé stahuje učivo předmětu (soubor `/api/content/f/…` daného předmětu). Hned potom si aplikace stáhne učivo všech předmětů najednou. Při klikání uvnitř už spuštěné aplikace se nic neposílá a po uložení učiva do zařízení funguje i úplně offline. Tyto adresy nikde neukládáme.
 
@@ -68,12 +67,8 @@ Pozor ale na jednu věc: když odkaz zkopíruješ nebo pošleš tlačítkem Sdí
 ## Jak si to ověřit sám
 
 1. Otevři `sprtam.cz` na počítači a stiskni **F12** (vývojářské nástroje).
-2. Záložka **Network (Síť)**: uvidíš, že všechny požadavky jdou jen na `sprtam.cz`. Jednou denně uvidíš `ping` s obsahem `{"new":false}`.
+2. Záložka **Network (Síť)**: uvidíš, že všechny požadavky jdou jen na `sprtam.cz`.
 3. Záložka **Application → Local Storage**: uvidíš přesně klíče z tabulky výše.
 4. Záložka **Application → Cookies**: prázdno.
 
 Zdrojový kód je celý veřejný v tomto repozitáři. Produkční verze se staví přímo z něj ([`Dockerfile`](../Dockerfile)).
-
-## Nesledovat (Do Not Track, Global Privacy Control)
-
-Pokud prohlížeč žádá o nesledování, aplikace neposílá ani denní ping. Funguje to s nastavením **Do Not Track** (např. Chrome) i **Global Privacy Control** (např. Firefox, Brave). Safari ani jedno nepodporuje, tam ping vypneš jen blokátorem obsahu (viz [Statistiky](STATISTIKY.md#jak-ping-vypnout)). Kód: [`src/stats.ts`](../src/stats.ts).

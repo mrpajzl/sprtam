@@ -27,7 +27,7 @@ Podrobně: **[Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md)**
 | 👤 **Účty** | Žádné. Nikde se nepřihlašuješ a nic o sobě nevyplňuješ. |
 | 💾 **Tvůj pokrok** | Jen ve tvém zařízení (`localStorage`). Na serveru není žádná databáze uživatelů. |
 | 🍪 **Cookies, reklamy, analytika** | Žádné. Žádný Google Analytics, žádné skripty třetích stran. |
-| 📊 **Statistiky** | Jednou denně zpráva `{"new":true}` nebo `{"new":false}`, bez ID. Server si pamatuje jen dvě čísla za den. → [Statistiky](docs/STATISTIKY.md) |
+| 📊 **Statistiky** | Žádné, ani anonymní. Nepočítáme uživatele ani návštěvy. Aplikace o tobě nikam nic neposílá. |
 | 📱 **Přenos mezi zařízeními** | Napřímo ze zařízení do zařízení přes QR kódy, šifrovaně, bez našeho serveru. → [Propojení zařízení](docs/PROPOJENI-ZARIZENI.md) |
 | 🔍 **Ověřitelnost** | Produkční verze se staví přímo z tohoto repozitáře. → [Architektura](docs/ARCHITEKTURA.md) |
 
@@ -40,7 +40,6 @@ Podrobně: **[Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md)**
 | [Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md) | žáci, rodiče, učitelé | Učivo, režimy, známky, doporučení, slovíčka |
 | [Soukromí](docs/SOUKROMI.md) | všichni | Co aplikace ukládá, co posílá a komu, jak si to ověřit |
 | [Propojení zařízení](docs/PROPOJENI-ZARIZENI.md) | všichni | Přenos pokroku přes QR kódy a WebRTC, kód pokroku |
-| [Statistiky](docs/STATISTIKY.md) | všichni | Jak přesně funguje počítání uživatelů |
 | [Architektura](docs/ARCHITEKTURA.md) | vývojáři | Technologie, struktura kódu, server, nasazení, testy |
 | [Jak psát učivo](docs/CONTENT.md) | autoři obsahu | Postup, pravidla výkladu, nový widget, změny formátu |
 | [Formát obsahu](docs/FORMAT.md) | autoři obsahu | Reference všech polí JSON dokumentů učiva (generovaná) |

@@ -7,7 +7,7 @@ Technický popis pro vývojáře a pro každého, kdo chce vědět, jak aplikace
 Šprtám je **PWA** (webová aplikace, která jde nainstalovat a funguje offline). Skládá se ze tří částí:
 
 1. **Aplikace v prohlížeči.** Dělá všechno: zobrazuje učivo, vyhodnocuje kvízy, ukládá pokrok, doporučuje témata, propojuje zařízení.
-2. **Server sprtam.cz** ([`server/`](../server), jeden soubor bez závislostí). Posílá soubory aplikace, stránky a učivo a sčítá denní ping. Nemá databázi uživatelů, účty ani logiku aplikace.
+2. **Server sprtam.cz** ([`server/`](../server), jeden soubor bez závislostí). Posílá soubory aplikace, stránky a učivo. Nic nepočítá ani nezaznamenává. Nemá databázi uživatelů, účty ani logiku aplikace.
 3. **Obsahová služba** (moderace, [moderace.sprtam.cz](https://moderace.sprtam.cz), [`moderator/`](../moderator)). Tady je učivo uložené: databáze s verzemi, kontrola a schvalování změn. Server sprtam.cz si z ní drží kopii aktuálního vydání učiva ([Obsah a jeho API](OBSAH.md)).
 
 Žáci se obsahové služby nikdy nedotknou: všechno dostanou od serveru sprtam.cz.
@@ -19,8 +19,6 @@ flowchart LR
       SW[Service worker<br/>cache učiva] --> UI
     end
     UI -- stránky, soubory, učivo --> CF[Cloudflare] --> P[Traefik<br/>Coolify] --> S[server sprtam.cz]
-    UI -- 1× denně ping --> CF
-    S --> ST[(data/stats.json<br/>denní součty)]
     S --> CC[(data/content<br/>kopie vydání učiva)]
     S -- každých 15 s: nové vydání? --> M[obsahová služba<br/>moderace.sprtam.cz]
     UI <-. WebRTC, napřímo .-> UI2[Druhé zařízení]
@@ -64,7 +62,6 @@ src/
   widgets/              interaktivní pomůcky: <název>.tsx = jeden widget, kit.tsx = standard a sdílené ovládání,
                         index.tsx = seznam
   ui/                   ikony, maskot, lišty
-  stats.ts              denní anonymní ping
 content/                místní kopie učiva (npm run content:pull, není v gitu; viz OBSAH.md)
   topics/<ročník>/<předmět>/_subject.json, <téma>.json
   vocab/<úroveň>.json
@@ -88,7 +85,6 @@ docs/                   tato dokumentace
 1. Prohlížeč otevře např. `/g/z5/matematika/zlomky`. Server vrátí **hotovou stránku** s obsahem tématu ([`server/pages.ts`](../server/pages.ts)), vykreslenou z aktuálního vydání učiva. Obsah je vidět hned, i bez JavaScriptu, a vyhledávače i náhledy odkazů dostanou titulek a popis. Ve stránce je i manifest vydání (seznam souborů učiva, [Obsah a jeho API](OBSAH.md#api-pro-aplikaci)).
 2. Načte se aplikace a vykreslí stejnou obrazovku interaktivně. Učivo si bere z API po souborech: jeden soubor na předmět, takže se načítá jen to, co je potřeba.
 3. Až má prohlížeč volnou chvíli, aplikace uloží do cache všechny soubory aktuálního vydání, takže offline je k dispozici celé učivo všech ročníků ([`src/content/remote.ts`](../src/content/remote.ts)).
-4. Zavolá se denní ping ([Statistiky](STATISTIKY.md)).
 
 Obrazovky bez vlastní stránky (kvíz, hledání, přenos pokroku) dostanou prázdnou kostru `app.html` s `noindex`. Neznámé adresy vrací 404.
 
@@ -131,8 +127,6 @@ Po nasazení nové verze může mít telefon v cache starou stránku, která odk
 
 | Cesta | Co dělá |
 |---|---|
-| `POST /api/ping` | Zvýší denní počítadlo ([Statistiky](STATISTIKY.md)) |
-| `GET /api/stats` | Vrátí denní součty, chráněno tokenem `STATS_TOKEN` |
 | `GET /api/content/manifest`, `GET /api/content/f/<hash>.json` | Učivo pro aplikaci ([API pro aplikaci](OBSAH.md#api-pro-aplikaci)) |
 | `GET /healthz` | Kontrola, že server běží |
 | stránky, `sitemap.xml`, `robots.txt` | Vykreslené z aktuálního vydání učiva ([`server/pages.ts`](../server/pages.ts)) |
@@ -145,7 +139,7 @@ Bezpečnostní hlavičky u všech stránek a souborů aplikace:
 - `Permissions-Policy: camera=(self), microphone=(), geolocation=()`: kameru smí použít jen aplikace sama (QR kódy), mikrofon a poloha jsou zakázané.
 - `X-Content-Type-Options: nosniff`.
 
-Server nevede log požadavků, nenastavuje cookies a na disk (v produkci volume `/data`) zapisuje jen `stats.json` a kopii vydání učiva (`content/`).
+Server nevede log požadavků, nenastavuje cookies a na disk (v produkci volume `/data`) zapisuje jen kopii vydání učiva (`content/`).
 
 Stará adresa `sprtam.ondrejzraly.cz` vede na stejný server. Prohlížeči pošle skript, který přenese pokrok na `sprtam.cz` ([Propojení zařízení](PROPOJENI-ZARIZENI.md#přechod-ze-staré-adresy)), a ostatním (vyhledávačům) trvalé přesměrování 301.
 
@@ -162,7 +156,7 @@ Produkce běží v Dockeru na vlastním serveru spravovaném přes [Coolify](htt
    - `npm ci`,
    - `npm run build` (kontrola typů, build aplikace do `dist/` a serveru do `dist-server/`),
    - výsledný obraz obsahuje jen `dist/` a `dist-server/`, žádné učivo.
-3. Spustí kontejner s volume `/data` (statistiky a kopie učiva) a ověří `/healthz`.
+3. Spustí kontejner s volume `/data` (kopie učiva) a ověří `/healthz`.
 
 Produkční verze aplikace se tedy vždy staví přímo z veřejného zdrojového kódu tohoto repozitáře. Učivo se nasazuje zvlášť: schválením v moderaci (bez buildu, do 15 sekund).
 
@@ -170,12 +164,10 @@ Produkční verze aplikace se tedy vždy staví přímo z veřejného zdrojovéh
 
 | Proměnná | Kde | Význam |
 |---|---|---|
-| `VITE_STATS_URL` | build | Adresa pro denní ping. Bez ní se ping neposílá. V `Dockerfile` je `/api/ping`. |
 | `SITE_URL` | server | Veřejná adresa pro odkazy ve stránkách a `sitemap.xml`, výchozí `https://sprtam.cz`. |
 | `CONTENT_API` | server | Obsahová služba, ze které server bere učivo, výchozí `https://moderace.sprtam.cz`. Při vývoji i pro `npm run content:pull`. |
 | `PORT` | server | Port, výchozí `8080`. |
-| `DATA_DIR` | server | Složka pro `stats.json` a kopii učiva (`content/`), v Dockeru `/data`. |
-| `STATS_TOKEN` | server | Token pro `/api/stats`. Bez něj je souhrn veřejný. |
+| `DATA_DIR` | server | Složka pro kopii učiva (`content/`), v Dockeru `/data`. |
 | `LEGACY_HOSTS` | server | Domény, ze kterých se přesměrovává na `sprtam.cz`, výchozí `sprtam.ondrejzraly.cz` (stará adresa) a `www.sprtam.cz`. |
 | `DIST` | server | Složka s buildem, výchozí `dist/`. |
 
