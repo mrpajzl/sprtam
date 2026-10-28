@@ -29,6 +29,6 @@ Co do Šprtámu nepatří: účty, sledování, analytika, reklamy a skripty tř
 
 ## Licence
 
-Odesláním příspěvku souhlasíš, že bude šířen pod [licencí MIT](LICENSE) jako zbytek projektu.
+Odesláním příspěvku souhlasíš, že bude šířen pod licencí projektu: kód pod [MIT](LICENSE), učivo (i to, co napíšeš v moderaci) pod [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.cs).
 
 Pravidla chování: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).

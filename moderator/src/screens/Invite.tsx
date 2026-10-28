@@ -35,6 +35,7 @@ export function Invite({ onDone }: { onDone: (u: Me) => void }) {
             {supported()
               ? <Busy class="btn primary block" on={busy} onClick={create} autoFocus><I.key />Vytvořit přístupový klíč</Busy>
               : <div class="banner bad">Tento prohlížeč přístupové klíče neumí. Otevři odkaz v aktuálním Safari, Chrome, Edge nebo Firefoxu.</div>}
+            {info.kind === 'user' && <p class="fine">Učivo je otevřené pod licencí <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Co napíšeš, se tak zveřejní i s tvým jménem.</p>}
             <p class="fine">Odkaz platí do {new Date(info.expiresAt).toLocaleString('cs')} a jde použít jen jednou.</p>
           </>
         ) : !error && <p class="muted">Ověřuji pozvánku…</p>}

@@ -75,4 +75,7 @@ Struktura kódu, testy a nasazení: [Architektura](docs/ARCHITEKTURA.md). Jak p�
 
 ## Licence
 
-Kód je pod licencí **[MIT](LICENSE)**. Pravidla chování v projektu: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+- **Kód** je pod licencí **[MIT](LICENSE)**.
+- **Učivo** (výklady, otázky, slovíčka, plány přístupů) a výslovnost slovíček v `public/audio/` jsou pod licencí **[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.cs)**. Smíš je používat, upravovat a šířit, i komerčně, když uvedeš původ (*Učivo: [Šprtám](https://sprtam.cz), CC BY-SA 4.0*) a úpravy zveřejníš pod stejnou licencí. Celé učivo i s historií je v repozitáři **[mrpajzl/sprtam-content](https://github.com/mrpajzl/sprtam-content)**, aktuální vydání i v [API](docs/OBSAH.md#veřejné-api-obsahové-služby).
+
+Pravidla chování v projektu: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).

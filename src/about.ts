@@ -33,13 +33,14 @@ export const ABOUT = {
       ],
     },
   ],
-  // Open source: the repository and its issue tracker (README.md, CONTRIBUTING.md).
+  // Open source: the code, the content mirror and the issue tracker (README.md, CONTRIBUTING.md, docs/OBSAH.md).
   code: {
-    title: 'Otevřený kód',
+    title: 'Otevřený kód a učivo',
     repo: 'https://github.com/mrpajzl/sprtam',
     links: [
-      { label: 'Zdrojový kód', hint: 'GitHub · licence MIT', path: '' },
-      { label: 'Nahlásit chybu nebo nápad', hint: 'GitHub Issues', path: '/issues/new/choose' },
+      { label: 'Zdrojový kód', hint: 'GitHub · licence MIT', href: 'https://github.com/mrpajzl/sprtam' },
+      { label: 'Učivo ke stažení', hint: 'GitHub · licence CC BY-SA 4.0', href: 'https://github.com/mrpajzl/sprtam-content' },
+      { label: 'Nahlásit chybu nebo nápad', hint: 'GitHub Issues', href: 'https://github.com/mrpajzl/sprtam/issues/new/choose' },
     ],
   },
   join: {
