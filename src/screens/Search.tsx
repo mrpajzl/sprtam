@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
-import { GRADE_NAME, STAGES, SUBJECTS } from '../content/curriculum'
+import { GRADE_NAME, ODB, STAGES, subjectMeta } from '../content/curriculum'
+import type { GradeId } from '../content/types'
 import { fold, loadTexts, searchTopics, useIndex, type Hit } from '../content/library'
 import { stars, useProgress } from '../progress/store'
 import { back, go, Link, query, setQuery } from '../router'
@@ -37,7 +38,8 @@ export function Search() {
 
   const hits = useMemo(() => {
     if (!all) return []
-    const grades = scope === 'all' ? null : STAGES.find((s) => s.id === scope)!.grades
+    // SŠ includes the odborné předměty of vocational schools.
+    const grades: GradeId[] | null = scope === 'all' ? null : [...STAGES.find((s) => s.id === scope)!.grades, ...(scope === 'ss' ? [ODB] : [])]
     return searchTopics(q, all, text ?? undefined, p.g).filter((h) => !grades || grades.includes(h.ref.g))
   }, [q, all, text, scope])
   const vocab = useMemo(() => searchWords(q, words ?? []), [q, words])
@@ -100,7 +102,7 @@ function HitRow({ h, q, st }: { h: Hit; q: string; st: number }) {
         <SubjectKey s={r.s} />
         <span class="txt">
           <b><Mark text={r.title} q={q} /></b>
-          <small>{GRADE_NAME[r.g]} · {SUBJECTS[r.s].name}</small>
+          <small>{GRADE_NAME[r.g]} · {subjectMeta(r.s).name}</small>
           {h.via && <small class="via"><Mark text={excerpt(h.via, q)} q={q} /></small>}
         </span>
         {st > 0 && <Stars n={st} />}

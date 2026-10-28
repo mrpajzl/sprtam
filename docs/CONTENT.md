@@ -25,7 +25,7 @@ content/
   schema/*.schema.json       JSON Schema pro editory (generované)
 ```
 
-Ročníky: `z1`–`z9` (základní škola), `s1`–`s4` (gymnázium). Které předměty ročník má, určuje `GRADE_SUBJECTS` v [`src/content/curriculum.ts`](../src/content/curriculum.ts) (tam jsou i názvy a barvy předmětů).
+Ročníky: `z1`–`z9` (základní škola), `s1`–`s4` (gymnázium). Které předměty ročník má, určuje `GRADE_SUBJECTS` v [`src/content/curriculum.ts`](../src/content/curriculum.ts) (tam jsou i názvy a barvy předmětů). Odborné předměty středních odborných škol leží v `topics/odb/<předmět>/` a jejich `_subject.json` je pojmenuje sám (`name`, `emoji`, `color`). Které z nich má který obor v kterém ročníku, popisuje [OBORY.md](OBORY.md).
 
 Každý soubor začíná odkazem na své schéma:
 
@@ -58,6 +58,10 @@ Bez práce se soubory to jde v [moderaci](MODERACE.md): editor s živým náhled
 1. Doplň předmět do `GRADE_SUBJECTS` v `src/content/curriculum.ts`. Úplně nový předmět potřebuje i záznam v `SUBJECTS` (název, barva) a glyf v `src/ui/glyphs.tsx`.
 2. Vytvoř složku `content/topics/<ročník>/<předmět>/` s `_subject.json` a tématy.
 3. `npm run check:content`. Kontrola selže, když předmět z `GRADE_SUBJECTS` nemá obsah, nebo když složka nemá předmět v `GRADE_SUBJECTS`.
+
+### Nový odborný předmět
+
+Bez změny kódu: složka `content/topics/odb/<předmět>/` s `_subject.json` (pořadí témat, `name`, `emoji`, `color`) a tématy. V moderaci ho založí první schválené téma ([OBSAH.md](OBSAH.md)). Do oboru ho zařadí `src/obory.ts` ([OBORY.md](OBORY.md)).
 
 ### Slovíčka
 

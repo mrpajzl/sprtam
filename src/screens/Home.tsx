@@ -1,5 +1,7 @@
-import { GRADE_NAME, STAGES, SUBJECTS } from '../content/curriculum'
+import { GRADE_NAME, GRADE_SHORT, ODB, STAGES, subjectMeta } from '../content/curriculum'
 import { EXAM } from '../exam'
+import { OBOR_PATH, readyObory, useObor } from '../obory'
+import { hasSubject } from '../content'
 import { MAPS_PATH } from '../maps'
 import { useIndex, refFor, type TopicRef } from '../content/library'
 import { recommend, streakOf, type Why } from '../progress/recommend'
@@ -20,6 +22,7 @@ export function Home() {
   const all = useIndex()
   const pins = all ? pinnedKeys(p).flatMap((k) => refFor(k) ?? []) : []
   const recs = all ? recommend(p, all.filter((r) => !r.approach)) : []
+  const obor = useObor()
 
   return (
     <div class="page home">
@@ -54,7 +57,7 @@ export function Home() {
             {recs.map(({ ref, why }) => (
               <Link key={ref.key} class="row rec" style={subjectStyle(ref.s)} href={topicPath(ref)}>
                 <SubjectKey s={ref.s} />
-                <span class="txt"><b>{ref.title}</b><small>{GRADE_NAME[ref.g]} · {SUBJECTS[ref.s].name}</small></span>
+                <span class="txt"><b>{ref.title}</b><small>{GRADE_NAME[ref.g]} · {subjectMeta(ref.s).name}</small></span>
                 <WhyTag why={why} />
               </Link>
             ))}
@@ -76,6 +79,11 @@ export function Home() {
             </div>
           ))}
         </div>
+        {(obor || readyObory((s) => hasSubject(ODB, s)).length > 0) && <Link class="row obor-key" style={keyStyle('ink')} href={obor ? `${OBOR_PATH}/${obor.id}` : OBOR_PATH}>
+          <span class="skey m"><b class="em">{obor?.emoji ?? '🛠️'}</b></span>
+          <span class="txt"><b>{obor?.name ?? 'Odborná škola'}</b><small>{obor ? `můj obor · ${obor.code}` : 'IT, strojírenství, kosmetika a další obory'}</small></span>
+          <IArrow />
+        </Link>}
       </section>
 
       <Link class="row exam-key" style={keyStyle('orange')} href={`/${EXAM.id}`}>
@@ -128,7 +136,7 @@ function WhyTag({ why }: { why: Why }) {
 function Cart({ r, st }: { r: TopicRef; st: number }) {
   return (
     <Link class="cart" style={subjectStyle(r.s)} href={topicPath(r)}>
-      <span class="cart-top"><SubjectKey s={r.s} size="s" /><small>{GRADE_NAME[r.g].split('.')[0]}.</small></span>
+      <span class="cart-top"><SubjectKey s={r.s} size="s" /><small>{GRADE_SHORT[r.g]}</small></span>
       <b>{r.title}</b>
       <Stars n={st} />
     </Link>

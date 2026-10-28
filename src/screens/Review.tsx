@@ -1,5 +1,5 @@
 import { loadTopic } from '../content'
-import { GRADE_NAME, SUBJECTS } from '../content/curriculum'
+import { GRADE_NAME, subjectMeta } from '../content/curriculum'
 import type { GradeId, SubjectId, Topic } from '../content/types'
 import { answerText, MODES, reviewIds, reviewItems } from '../quiz/engine'
 import { getProgress, isMistake, questionId, topicOf, useProgress } from '../progress/store'
@@ -67,7 +67,7 @@ export function MistakesScreen() {
               <section key={key} class="sec" style={subjectStyle(s)}>
                 <Link class="row" href={`/g/${g}/${s}/${id}`}>
                   <span class="em">{t.emoji}</span>
-                  <span class="txt"><b>{t.title}</b><small>{GRADE_NAME[g]} · {SUBJECTS[s].name}</small></span>
+                  <span class="txt"><b>{t.title}</b><small>{GRADE_NAME[g]} · {subjectMeta(s).name}</small></span>
                   <IArrow />
                 </Link>
                 <div class="mistakes">

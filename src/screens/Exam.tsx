@@ -1,5 +1,5 @@
 import { loadTopic } from '../content'
-import { GRADE_NAME, SUBJECTS } from '../content/curriculum'
+import { GRADE_NAME, subjectMeta } from '../content/curriculum'
 import { loadIndex, refFor, useIndex, type TopicRef } from '../content/library'
 import { EXAM, examArea, examPart, partTopics, type ExamArea, type ExamPart } from '../exam'
 import { stars, useProgress, type Progress } from '../progress/store'
@@ -101,7 +101,7 @@ function AreaScreen({ pt, ar }: { pt: ExamPart; ar: ExamArea }) {
         {refs.map((r) => (
           <Link key={r.key} class="row rec" style={subjectStyle(r.s)} href={topicPath(r)}>
             <SubjectKey s={r.s} />
-            <span class="txt"><b>{r.title}</b><small>{GRADE_NAME[r.g]} · {SUBJECTS[r.s].name}</small></span>
+            <span class="txt"><b>{r.title}</b><small>{GRADE_NAME[r.g]} · {subjectMeta(r.s).name}</small></span>
             <Stars n={stars(p.t[r.key]?.s)} />
           </Link>
         ))}

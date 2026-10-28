@@ -13,7 +13,7 @@ export const STAGES: Stage[] = [
 ]
 
 /** Odborné předměty: topics of vocational schools that belong to no single grade (obory pick them per year, src/obory.ts). */
-export const ODB = 'odb' satisfies GradeId
+export const ODB: Extract<GradeId, 'odb'> = 'odb'
 
 export const GRADE_NAME: Record<GradeId, string> = {
   z1: '1. třída', z2: '2. třída', z3: '3. třída', z4: '4. třída', z5: '5. třída',
@@ -95,7 +95,20 @@ export function stageOf(g: YearId): Stage {
 export type VocationalMeta = Required<SubjectMeta>
 let vocational: Record<string, VocationalMeta> = {}
 
-export function setVocational(v: Record<string, VocationalMeta> | undefined) { vocational = v ?? {} }
+/** A valid entry of Manifest.vocational (it comes from the network: everything that ends up in pages and URLs is checked). */
+export const isVocationalEntry = (id: string, m: unknown): m is VocationalMeta => {
+  const x = m as VocationalMeta
+  return /^[a-z0-9]+(-[a-z0-9]+)*$/.test(id) && id.length <= 40 && !isCoreSubject(id) && !!x && typeof x === 'object'
+    && typeof x.name === 'string' && x.name.length > 0 && x.name.length <= 80 && typeof x.emoji === 'string' && x.emoji.length > 0 && x.emoji.length <= 16
+    && (KEY_COLORS as readonly unknown[]).includes(x.c)
+}
+
+/** Sets the odborné předměty of the current release; invalid entries are left out. */
+export function setVocational(v: unknown) {
+  const out: Record<string, VocationalMeta> = {}
+  if (v && typeof v === 'object' && !Array.isArray(v)) for (const [id, m] of Object.entries(v)) if (isVocationalEntry(id, m)) out[id] = { name: m.name, emoji: m.emoji, c: m.c }
+  vocational = out
+}
 
 /** Odborné předměty of the current release, by name. */
 export const vocationalSubjects = (): string[] => Object.keys(vocational).sort((a, b) => vocational[a].name.localeCompare(vocational[b].name, 'cs'))

@@ -422,6 +422,28 @@ try {
   const self = await admin.api('POST', `/api/drafts/${own.draft.id}/review`, { verdict: 'approve', rev: ownRev })
   check(self.status === 200 && self.body.released === 6 && (await topicText()).includes('Doplněno.'), "an admin's own approval publishes her change")
 
+  // ——— Odborné předměty: new topics found a předmět; published in any order, they keep the intended one ———
+  const base = (await (await fetch(`${BASE}/api/content/topic/z6/matematika/prvocisla`)).json()).topic
+  const order = ['odb-prvni', 'odb-druhe']
+  const meta = { name: 'Testovací předmět', emoji: '🧪', color: 'teal' }
+  check((await admin.api('POST', '/api/drafts', { kind: 'new', grade: 'odb', subject: 'testovaci', topic: { ...base, id: 'odb-prvni' } })).status === 400, 'a new odborný předmět needs its name, emoji and colour')
+  check((await admin.api('POST', '/api/drafts', { kind: 'new', grade: 'odb', subject: 'matematika', subjectMeta: meta, topic: { ...base, id: 'odb-prvni' } })).status === 400, 'an odborný předmět cannot take the id of a core subject')
+  const founded = []
+  for (const id of order) {
+    const r = await admin.api('POST', '/api/drafts', { kind: 'new', grade: 'odb', subject: 'testovaci', subjectMeta: meta, order, topic: { ...base, id, title: `Téma ${id}` } })
+    founded.push(r.body)
+    await admin.api('POST', `/api/drafts/${r.body.draft.id}/submit`, {})
+  }
+  check(founded.every((f) => f.subject?.name === meta.name && !f.problems.length), 'drafts of a new odborný předmět pass the checks and say what they found')
+  // The second topic is approved first: it founds the předmět; the first one then goes before it.
+  const pub = async (f) => (await eva.api('POST', `/api/drafts/${f.draft.id}/review`, { verdict: 'approve', rev: (await eva.api('GET', `/api/drafts/${f.draft.id}`)).body.draft.rev })).status
+  check(await pub(founded[1]) === 200 && await pub(founded[0]) === 200, 'a reviewer approves both topics')
+  const mOdb = await manifest()
+  const list = await (await fetch(`${BASE}/api/public/v1/files/${mOdb.files['subject/odb/testovaci']}`)).json()
+  check(mOdb.vocational?.testovaci?.name === meta.name && mOdb.vocational.testovaci.c === 'teal', 'the release names the new odborný předmět')
+  check(list.map((t) => t.id).join() === order.join(), 'topics approved out of order keep the intended order')
+  check((await admin.api('GET', '/api/content/index')).body.subjects['odb/testovaci']?.length === 2, 'the library lists the odborný předmět')
+
   check([admin, mod, teacher, eva].every((d) => !d.errors.length), 'no errors in the pages')
 } finally {
   await browser.close()

@@ -28,7 +28,7 @@ Ke stažení je dvakrát:
 | Klíč | Obsah |
 |---|---|
 | `topics/<ročník>/<předmět>/<id>` | jedno téma |
-| `topics/<ročník>/<předmět>/_subject` | pořadí témat předmětu |
+| `topics/<ročník>/<předmět>/_subject` | pořadí témat předmětu (u odborných předmětů, `topics/odb/…`, i jeho název, emoji a barva) |
 | `vocab/<a1…c1>` | slovíčka jedné úrovně |
 | `approaches/<id>/approach`, `approaches/<id>/<ročník>` | přístup k výuce a jeho plán ročníku |
 
@@ -111,7 +111,8 @@ Aplikace na sprtam.cz nemá učivo zabudované v sobě. Bere ho za běhu od serv
   "hash": "f55f0e8e91a9ccf87c6c",
   "publishedAt": 1793001234567,
   "files": { "subject/z5/matematika": "1c9b…", "index": "8f20…", "vocab/A1": "…", "approach/waldorf/z1": "…" },
-  "approaches": [{ "id": "waldorf", "name": "Waldorfská škola", "short": "Waldorf", "emoji": "🌳", "grades": ["z1", "…"], "…": "…" }]
+  "approaches": [{ "id": "waldorf", "name": "Waldorfská škola", "short": "Waldorf", "emoji": "🌳", "grades": ["z1", "…"], "…": "…" }],
+  "vocational": { "programovani": { "name": "Programování", "emoji": "🧑‍💻", "c": "green" } }
 }
 ```
 
@@ -125,13 +126,13 @@ Aplikace na sprtam.cz nemá učivo zabudované v sobě. Bere ho za běhu od serv
 
 | Název v `files` | Obsah |
 |---|---|
-| `subject/<ročník>/<předmět>` | témata předmětu v pořadí, v jakém se učí (`Topic[]`) |
+| `subject/<ročník>/<předmět>` | témata předmětu v pořadí, v jakém se učí (`Topic[]`); ročník `odb` = odborné předměty |
 | `index` | řádek za každé téma: `[ročník, předmět, id, název, emoji, přístup?]` (hledání, doporučení) |
 | `text` | ve stejném pořadí jako `index`: názvy vysvětlení, pojmy a shrnutí (hledání) |
 | `vocab/<úroveň>` | slovíčka jedné úrovně A1–C1 |
 | `approach/<přístup>/<ročník>` | plán ročníku přístupu k výuce (epochy a jejich témata) |
 
-Popisy přístupů k výuce jsou malé a aplikace je potřebuje hned při startu, proto jsou přímo v manifestu (`approaches`).
+Popisy přístupů k výuce a názvy odborných předmětů jsou malé a aplikace je potřebuje hned při startu, proto jsou přímo v manifestu (`approaches`, `vocational`; ten chybí ve vydáních bez odborných předmětů).
 
 Ze stejných dokumentů vznikají vždy stejné soubory i hashe ([`src/content/release.ts`](../src/content/release.ts)). Server zná soubory posledních deseti vydání, takže je dostane i stránka otevřená před vydáním nového.
 
@@ -193,6 +194,8 @@ curl -s -X POST "$API/api/drafts/$ID/submit" -H "$H" -H 'Content-Type: applicati
 ```
 
 Nové téma: `POST /api/drafts` s `{ "kind": "new", "grade", "subject", "topic": {…celé téma…}, "after": "<id tématu, za které patří>" }`. Kontrola tématu je stejná jako `npm run check:content -- topics/<ročník>/<předmět>` nad místní kopií (`npm run content:pull`).
+
+**Nový odborný předmět** ([OBORY.md](OBORY.md)): nová témata s `"grade": "odb"` a id předmětu, který ještě neexistuje, navíc pošlou `"subjectMeta": { "name", "emoji", "color" }`. Předmět založí to z nich, které se schválí první. Volitelné `"order": ["id1", "id2", …]` je zamýšlené pořadí témat předmětu: témata schválená v libovolném pořadí v něm skončí. Recenzent vidí v hlavičce návrhu „zakládá odborný předmět…“. Správce nemá omezený počet rozpracovaných návrhů (moderátor jich smí mít 50), takže může najednou nahrát celý předmět.
 
 Ostatní endpointy jsou v [`moderator/server/index.ts`](../moderator/server/index.ts): review, historie, vydání, žádosti o pomůcky, správa.
 

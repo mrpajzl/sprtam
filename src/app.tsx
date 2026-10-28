@@ -3,8 +3,9 @@ import { ABOUT } from './about'
 import { approachById } from './approach'
 import { EXAM } from './exam'
 import { isMode, MAPS_PATH } from './maps'
-import { ALL_GRADES, GRADE_SUBJECTS } from './content/curriculum'
-import type { GradeId, SubjectId } from './content/types'
+import { ALL_GRADES, hasSubjectIn, isGrade } from './content/curriculum'
+import type { YearId } from './content/types'
+import { OBOR_PATH } from './obory'
 import { decodeProgress, unpack } from './progress/code'
 import { importProgress, type Progress } from './progress/store'
 import { TOPIC_MODES, type ModeId } from './quiz/engine'
@@ -17,6 +18,7 @@ import { ExamScreen } from './screens/Exam'
 import { MapGame, MapsScreen } from './screens/Maps'
 import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
+import { OborScreen } from './screens/Obor'
 import { Overview } from './screens/Overview'
 import { MistakesScreen, ReviewQuiz } from './screens/Review'
 import { Search } from './screens/Search'
@@ -70,7 +72,7 @@ export function App() {
   }
   if (approachById(a)) {
     if (c && d === 'test') return <ApproachScreen id={a} g={b} block={c} test />
-    const g = ALL_GRADES.includes(b as GradeId) ? (b as GradeId) : undefined
+    const g = ALL_GRADES.includes(b as YearId) ? (b as YearId) : undefined
     return <><ApproachScreen key={`${b}/${c}`} id={a} g={b} block={c} />{g ? <TabBar active="grade" grade={g} /> : <TabBar />}</>
   }
   if (a === 'slovicka') {
@@ -78,13 +80,15 @@ export function App() {
     if (lvl && c) return <VocabDrill level={lvl} group={c} />
     return <>{lvl ? <VocabLevel level={lvl} /> : <VocabHome />}<TabBar active="vocab" /></>
   }
-  if (a === 'g' && ALL_GRADES.includes(b as GradeId)) {
-    const g = b as GradeId
-    const s = GRADE_SUBJECTS[g].includes(c as SubjectId) ? (c as SubjectId) : undefined
+  if (a === OBOR_PATH.slice(1)) return <><OborScreen key={b} id={b} /><TabBar /></>
+  if (a === 'g' && isGrade(b)) {
+    const g = b
+    const s = hasSubjectIn(g, c) ? c : undefined
     if (s && d === '~test') return <QuizScreen g={g} s={s} id="~test" mode="test" />
     if (s && d && e && TOPIC_MODES.includes(e as ModeId)) return <QuizScreen g={g} s={s} id={d} mode={e as ModeId} />
     const screen = !s ? <GradeScreen g={g} /> : d ? <TopicScreen g={g} s={s} id={d} /> : <SubjectScreen g={g} s={s} />
-    return <>{screen}<TabBar active="grade" grade={g} /></>
+    // Odborné předměty belong to no grade: the tab keeps the pupil's own year (their obor's year screen).
+    return <>{screen}<TabBar active="grade" grade={g === 'odb' ? undefined : g} /></>
   }
   return <><Home /><TabBar active="home" /></>
 }
@@ -100,9 +104,9 @@ function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'widgety') return 'Galerie widgetů'
   if (a === EXAM.id || `/${a}` === MAPS_PATH || approachById(a)) return null
   if (a === 'slovicka') return b ? titles.vocabLevel(b) : titles.vocab()
-  if (a === 'g' && ALL_GRADES.includes(b as GradeId)) {
-    const g = b as GradeId
-    if (c && GRADE_SUBJECTS[g].includes(c as SubjectId)) return d === '~test' || !d ? titles.subject(g, c as SubjectId) : null
+  if (a === 'g' && isGrade(b)) {
+    const g = b
+    if (hasSubjectIn(g, c)) return d === '~test' || !d ? titles.subject(g, c) : null
     return titles.grade(g)
   }
   return undefined

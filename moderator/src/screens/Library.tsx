@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'preact/hooks'
-import { GRADE_NAME, GRADE_SUBJECTS, STAGES, SUBJECTS } from '../../../src/content/curriculum'
+import { GRADE_NAME, gradeSubjects, isGrade, ODB, STAGES, subjectMeta } from '../../../src/content/curriculum'
+import { isSubjectOf } from '../../../src/content/docs'
 import type { GradeId, SubjectId } from '../../../src/content/types'
 import { ApiError, post } from '../api'
 import { newTopic, slugify } from '../editor/model'
@@ -23,8 +24,8 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null })
   const index = useIndex()
   const [q, setQ] = useState('')
   const [adding, setAdding] = useState(false)
-  const grade = (g && g in GRADE_SUBJECTS ? g : undefined) as GradeId | undefined
-  const subject = (grade && s && (GRADE_SUBJECTS[grade] as string[]).includes(s) ? s : undefined) as SubjectId | undefined
+  const grade = isGrade(g) ? g : undefined
+  const subject = (grade && s && isSubjectOf(grade, s) ? s : undefined) as SubjectId | undefined
 
   const hits = useMemo(() => {
     if (!index || q.trim().length < 2) return null
@@ -52,6 +53,10 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null })
             </div>
           </div>
         ))}
+        <div class="stage">
+          <h3 class="label">Odborné školy</h3>
+          <div class="chips"><a href={`/ucivo/${ODB}`} onClick={nav(`/ucivo/${ODB}`)} class={`chip ${grade === ODB ? 'on' : ''}`}>{GRADE_NAME[ODB]}</a></div>
+        </div>
       </aside>
       <section class="lib-main">
         {hits ? (
@@ -65,16 +70,16 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null })
           <>
             <h1>{GRADE_NAME[grade]}</h1>
             <div class="subjects">
-              {GRADE_SUBJECTS[grade].map((x) => (
-                <a key={x} href={`/ucivo/${grade}/${x}`} onClick={nav(`/ucivo/${grade}/${x}`)} class={`subject ${x === subject ? 'on' : ''}`} style={{ '--k': `var(--k-${SUBJECTS[x].c})` }}>
-                  <b>{SUBJECTS[x].name}</b><small>{index?.subjects[`${grade}/${x}`]?.length ?? '…'} témat</small>
+              {gradeSubjects(grade).map((x) => (
+                <a key={x} href={`/ucivo/${grade}/${x}`} onClick={nav(`/ucivo/${grade}/${x}`)} class={`subject ${x === subject ? 'on' : ''}`} style={{ '--k': `var(--k-${subjectMeta(x).c})` }}>
+                  <b>{subjectMeta(x).name}</b><small>{index?.subjects[`${grade}/${x}`]?.length ?? '…'} témat</small>
                 </a>
               ))}
             </div>
             {subject && index && (
               <>
                 <div class="row-head">
-                  <h2>{SUBJECTS[subject].name} · {GRADE_NAME[grade]}</h2>
+                  <h2>{subjectMeta(subject).name} · {GRADE_NAME[grade]}</h2>
                   {me && <button class="btn primary" onClick={() => setAdding(true)}><I.plus />Nové téma</button>}
                 </div>
                 <p class="muted">Témata jsou v pořadí, v jakém se během roku učí. Klikni na téma: uvidíš ho jako děti, se všemi otázkami a správnými odpověďmi.</p>
@@ -136,7 +141,7 @@ function TopicRows({ index, rows, me, showWhere }: { index: Index; rows: Row[]; 
             <span class="em">{t.emoji}</span>
             <span class="t">
               <b>{t.title}</b>
-              {showWhere && <small>{GRADE_NAME[g]} · {SUBJECTS[s].name}</small>}
+              {showWhere && <small>{GRADE_NAME[g]} · {subjectMeta(s).name}</small>}
               {t.approach && <small>jen pro přístup {index.approaches.find((a) => a.id === t.approach)?.short ?? t.approach}</small>}
             </span>
             {mine && <span class="pill mine">{mine.status === 'review' ? 'tvůj návrh v kontrole' : 'rozpracováno'}</span>}
@@ -174,7 +179,7 @@ function NewTopic({ g, s, index, onClose }: { g: GradeId; s: SubjectId; index: I
     } catch (e) { setError(e instanceof ApiError ? e.message : 'Téma se nepodařilo založit.'); setBusy(false) }
   }
   return (
-    <Modal title={`Nové téma – ${SUBJECTS[s].name}, ${GRADE_NAME[g]}`} onClose={onClose}
+    <Modal title={`Nové téma – ${subjectMeta(s).name}, ${GRADE_NAME[g]}`} onClose={onClose}
       actions={<><button class="btn" onClick={onClose}>Zrušit</button><Busy class="btn primary" on={busy} disabled={!valid} onClick={create}>Založit a upravit</Busy></>}>
       <form class="form" onSubmit={(e) => { e.preventDefault(); if (valid) create() }}>
         <label class="field"><span>Název tématu</span><input value={title} onInput={(e) => setTitle(e.currentTarget.value)} placeholder="např. Zlomky" maxLength={80} autoFocus /></label>

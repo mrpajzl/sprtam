@@ -1,3 +1,4 @@
+import { setVocational } from './curriculum'
 import { HASH, type Manifest } from './manifest'
 
 // The content of the app comes from the content API (docs/OBSAH.md): a small manifest of the current release
@@ -35,6 +36,7 @@ export function onManifest(f: (m: Manifest) => void) {
 function use(m: Manifest) {
   if (current && current.hash === m.hash) return
   current = m
+  setVocational(m.vocational)
   try { localStorage.setItem(STORE, JSON.stringify(m)) } catch { /* full or private mode */ }
   listeners.forEach((f) => f(m))
 }

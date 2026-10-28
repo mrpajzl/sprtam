@@ -9,6 +9,7 @@
 Šprtám vysvětlí každé téma dvěma různými způsoby, nechá tě ho procvičit v kvízu, písemce nebo ústním zkoušení a podle výsledků ti řekne, co zopakovat. Funguje v prohlížeči i jako aplikace na ploše, online i offline.
 
 - **13 ročníků:** 1.–9. třída ZŠ a 1.–4. ročník gymnázia, přes 800 témat a přes 10 000 otázek.
+- **Odborné školy:** obory (IT, strojírenství, mechatronik, kosmetické služby, starožitník) s odbornými předměty po ročnících – **[sprtam.cz/obor](https://sprtam.cz/obor)** ([jak to funguje](docs/OBORY.md)).
 - **Dvě vysvětlení ke každému tématu** a 21 interaktivních pomůcek (číselná osa, zlomky, rovnice na vahách, hodiny…) – všechny v **[galerii](https://sprtam.cz/widgety)**.
 - **Šest režimů:** Rychlý kvíz, Opakování, Písemka se známkou, Zkoušení nahlas, Test z předmětu a Mix.
 - **Přijímačky na SŠ:** příprava na jednotnou přijímací zkoušku z češtiny a matematiky po oblastech a cvičné testy – **[sprtam.cz/prijimacky](https://sprtam.cz/prijimacky)**.

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'preact/hooks'
 import { get } from './api'
 import type { TopicFile } from '../../src/content/types'
 import type { ContentIndex } from '../server/content'
+import { setVocational } from '../../src/content/curriculum'
 
 // The content catalogue (titles of every topic) and who is working on what – loaded once per visit
 // and refreshed after creating or sending a draft.
@@ -12,7 +13,8 @@ export type Index = ContentIndex & { active: Active[] }
 let cached: Promise<Index> | undefined
 const listeners = new Set<() => void>()
 
-export const loadIndex = () => (cached ??= get<Index>('/api/content/index').catch((e) => { cached = undefined; throw e }))
+// The odborné předměty come with the index: once it is here, their names and colours are known everywhere.
+export const loadIndex = () => (cached ??= get<Index>('/api/content/index').then((i) => { setVocational(i.vocational); return i }, (e) => { cached = undefined; throw e }))
 export function refreshIndex() { cached = undefined; listeners.forEach((f) => f()) }
 
 export function useIndex(): Index | undefined {
@@ -49,7 +51,10 @@ export interface Problem { path: string; message: string }
 
 /** GET /api/drafts/:id */
 export interface DraftFull {
-  draft: DraftView; topic: TopicFile; after: string | null; base: TopicFile | null; published: TopicFile | null; publishedVersion: number | null
+  draft: DraftView; topic: TopicFile; after: string | null
+  /** The odborný předmět this new topic founds (it is not published yet). */
+  subject: { name: string; emoji: string; color: string } | null
+  base: TopicFile | null; published: TopicFile | null; publishedVersion: number | null
   reviews: ReviewView[]; problems: Problem[]
 }
 

@@ -2,12 +2,12 @@ import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promise
 import { join } from 'node:path'
 import { promisify } from 'node:util'
 import { brotliCompress, constants, gzip } from 'node:zlib'
-import { ALL_GRADES, GRADE_SUBJECTS } from '../src/content/curriculum'
+import { ALL_GRADES, GRADE_SUBJECTS, isVocationalEntry, ODB, setVocational } from '../src/content/curriculum'
 import { ID, RESERVED } from '../src/content/docs'
 import { LEVELS } from '../src/content/format'
 import { HASH, type Manifest } from '../src/content/manifest'
 import { hashOf } from '../src/content/release'
-import type { ApproachYearFile, GradeId, Subject, SubjectId, Topic, VocabFile } from '../src/content/types'
+import type { ApproachYearFile, GradeId, Subject, SubjectId, Topic, VocabFile, YearId } from '../src/content/types'
 import { pages, type Page, type SiteContent } from './pages'
 
 // The content of sprtam.cz comes from the content service (CONTENT_API, docs/OBSAH.md). This keeps a
@@ -74,12 +74,9 @@ const isManifest = (m: unknown): m is Manifest => {
     && Object.values(x.files).every((h) => typeof h === 'string' && HASH.test(h)) && Array.isArray(x.approaches)
 }
 
-const isGrade = (g: unknown): g is GradeId => (ALL_GRADES as unknown[]).includes(g)
-const isSubjectOf = (g: GradeId, s: unknown): s is SubjectId => (GRADE_SUBJECTS[g] as unknown[]).includes(s)
+const isYear = (g: unknown): g is YearId => (ALL_GRADES as unknown[]).includes(g)
 const isId = (v: unknown): v is string => typeof v === 'string' && ID.test(v)
 const isApproachId = (v: unknown): v is string => isId(v) && !RESERVED.includes(v)
-/** grade/subject/id of a topic, as plans of approaches refer to topics. */
-const isTopicRef = (k: unknown) => { const [g, s, id, ...rest] = typeof k === 'string' ? k.split('/') : []; return !rest.length && isGrade(g) && isSubjectOf(g, s) && isId(id) }
 
 /**
  * The pages' view of a release. Throws – and the release is not used – when a file does not have the expected
@@ -89,9 +86,17 @@ const isTopicRef = (k: unknown) => { const [g, s, id, ...rest] = typeof k === 's
  */
 function siteOf(m: Manifest, read: (hash: string) => unknown): SiteContent {
   const bad = (what: string): never => { throw new Error(`release ${m.release}: ${what}`) }
+  // Odborné předměty name themselves in the manifest: their ids end up in URLs, their names in pages.
+  const voc = m.vocational ?? {}
+  if (typeof voc !== 'object' || Array.isArray(voc)) bad('vocational: not an object')
+  for (const [id, v] of Object.entries(voc)) if (!isVocationalEntry(id, v)) bad(`vocational ${JSON.stringify(id)}`)
+  const isGrade = (g: unknown): g is GradeId => isYear(g) || g === ODB
+  const isSubjectOf = (g: GradeId, s: unknown): s is SubjectId => (g === ODB ? typeof s === 'string' && Object.hasOwn(voc, s) : (GRADE_SUBJECTS[g] as unknown[]).includes(s))
+  /** grade/subject/id of a topic, as plans of approaches refer to topics. */
+  const isTopicRef = (k: unknown) => { const [g, s, id, ...rest] = typeof k === 'string' ? k.split('/') : []; return !rest.length && isGrade(g) && isSubjectOf(g, s) && isId(id) }
   const approachIds = new Set<string>()
   for (const a of m.approaches) {
-    if (!a || !isApproachId(a.id) || !Array.isArray(a.grades) || !a.grades.every(isGrade)) bad(`approach ${JSON.stringify(a?.id)}`)
+    if (!a || !isApproachId(a.id) || !Array.isArray(a.grades) || !a.grades.every(isYear)) bad(`approach ${JSON.stringify(a?.id)}`)
     approachIds.add(a.id)
   }
   const subjects: Subject[] = []
@@ -108,7 +113,7 @@ function siteOf(m: Manifest, read: (hash: string) => unknown): SiteContent {
       const v = read(m.files[n]) as VocabFile
       if (!v || v.level !== p[1] || !Array.isArray(v.groups)) bad(`${n}: not vocabulary of level ${p[1]}`)
       vocab.push(v)
-    } else if (!(p[0] === 'approach' && p.length === 3 && approachIds.has(p[1]) && isGrade(p[2]))) bad(`unknown file ${JSON.stringify(n)}`)
+    } else if (!(p[0] === 'approach' && p.length === 3 && approachIds.has(p[1]) && isYear(p[2]))) bad(`unknown file ${JSON.stringify(n)}`)
   }
   const approaches = m.approaches.map((a) => ({
     ...a,
@@ -116,9 +121,11 @@ function siteOf(m: Manifest, read: (hash: string) => unknown): SiteContent {
       const y = read(m.files[`approach/${a.id}/${g}`] ?? bad(`approach/${a.id}/${g} missing`)) as ApproachYearFile
       if (!y || !Array.isArray(y.epochs)) bad(`approach/${a.id}/${g}: not a plan`)
       for (const b of [...y.epochs, ...(y.ongoing ?? [])]) if (!b || !isId(b.id) || !Array.isArray(b.topics) || !b.topics.every(isTopicRef)) bad(`approach/${a.id}/${g}: ${JSON.stringify(b?.id)}`)
-      return [g, y] as [GradeId, ApproachYearFile]
+      return [g, y] as [YearId, ApproachYearFile]
     }),
   }))
+  // Pages name subjects through subjectMeta: the odborné předměty of this release.
+  setVocational(voc)
   return { subjects, vocab, approaches }
 }
 

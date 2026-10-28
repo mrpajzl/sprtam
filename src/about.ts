@@ -4,7 +4,7 @@
 export const ABOUT = {
   title: 'O aplikaci',
   description: 'Co je Šprtám a jak funguje: vysvětlení, procvičování a doporučení, co zopakovat. Zdarma, bez účtů, bez reklam a bez sledování.',
-  lead: '**Šprtám** je na opakování učiva od 1. třídy ZŠ po 4. ročník gymnázia. Je zdarma, nemá účty ani reklamy a nic o tobě nesbírá.',
+  lead: '**Šprtám** je na opakování učiva od 1. třídy ZŠ po 4. ročník gymnázia a odborných předmětů středních odborných škol. Je zdarma, nemá účty ani reklamy a nic o tobě nesbírá.',
   sections: [
     {
       title: 'Jak to funguje',

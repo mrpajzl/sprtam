@@ -1,13 +1,14 @@
 import { randomUUID } from 'node:crypto'
 import { topicChanged } from '../../src/content/diff'
-import { subjectKey, topicKey } from '../../src/content/docs'
+import { isSubjectOf, subjectKey, topicKey } from '../../src/content/docs'
+import { FORMAT } from '../../src/content/format'
 import type { GradeId, SubjectFile, SubjectId, TopicFile } from '../../src/content/types'
 import { requireRecent, type Session } from './auth'
 import { CONFIG, LIMITS, MINUTE } from './config'
 import { all, audit, one, run, tx, type DraftRow, type ReviewRow } from './db'
 import { isSubject, readTopic, topicExists, topicProblems, type Problem } from './content'
 import { HttpError, limit } from './http'
-import { GRADE_NAME, SUBJECTS } from '../../src/content/curriculum'
+import { GRADE_NAME, isCoreSubject, KEY_COLORS, ODB, type KeyColor } from '../../src/content/curriculum'
 import { changesTo, contentAt, getDoc, problemsAfter, publish, version, versionId, type DocChange } from './store'
 
 // A draft is one moderator's change of one topic (an edit, or a new topic with its place in the subject).
@@ -20,7 +21,30 @@ import { changesTo, contentAt, getDoc, problemsAfter, publish, version, versionI
 
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
-interface DraftData { topic: TopicFile; after?: string | null }
+/** A new odborný předmět the draft's topic founds (topics/odb/<subject>/_subject), when it is not published yet. */
+export interface NewSubject { name: string; emoji: string; color: KeyColor }
+
+interface DraftData {
+  topic: TopicFile
+  after?: string | null
+  /** New topics of an odborný předmět that does not exist yet: the předmět they found when the first one is published. */
+  subject?: NewSubject
+  /** The intended order of the subject's topics: drafts of one subject published in any order still end up in it. */
+  order?: string[]
+}
+
+function newSubjectOf(v: unknown): NewSubject | undefined {
+  const x = v as NewSubject
+  if (!x || typeof x !== 'object') return undefined
+  const name = typeof x.name === 'string' ? x.name.trim() : '', emoji = typeof x.emoji === 'string' ? x.emoji.trim() : ''
+  if (!name || name.length > 80 || !emoji || emoji.length > 16 || !(KEY_COLORS as readonly unknown[]).includes(x.color)) return undefined
+  return { name, emoji, color: x.color }
+}
+
+const orderOf = (v: unknown): string[] | undefined => (Array.isArray(v) && v.length <= 300 && v.every((x) => typeof x === 'string' && ID.test(x)) ? v : undefined)
+
+/** A new topic of an odborný předmět that is not published yet (the draft founds it). */
+const founds = (d: DraftRow, data: DraftData) => d.kind === 'new' && d.grade === ODB && !!data.subject && !isSubject(d.grade, d.subject)
 
 /** Suggested wording of one text field of the topic (`path` inside the commented item): `from` what it said then. */
 export interface Suggestion { path: string; from: string; to: string }
@@ -139,7 +163,9 @@ const DECIDED_LIMIT = 200
 /** Which drafts each tab of the review screen holds, narrowed to my own and to a grade and subject. */
 function tabWhere(s: Session, tab: unknown, f: ReviewFilter): [string, string[]] {
   if (f.grade !== null && !(f.grade in GRADE_NAME)) throw new HttpError(400, 'Neznámý ročník.')
-  if (f.subject !== null && !(f.subject in SUBJECTS)) throw new HttpError(400, 'Neznámý předmět.')
+  // Odborné předměty: published ones, and new ones some draft is founding.
+  const known = (x: string) => isCoreSubject(x) || isSubject(ODB, x) || (ID.test(x) && !!one('SELECT 1 FROM drafts WHERE grade = ? AND subject = ?', ODB, x))
+  if (f.subject !== null && !known(f.subject)) throw new HttpError(400, 'Neznámý předmět.')
   let more = '', args: string[] = []
   if (f.mine) { more += ' AND d.user_id = ?'; args.push(s.user.id) }
   if (f.grade) { more += ' AND d.grade = ?'; args.push(f.grade) }
@@ -210,20 +236,21 @@ export function getDraft(s: Session, id: unknown) {
   const key = topicKey(d.grade, d.subject, d.topic_id)
   const now = getDoc(key) as TopicFile | undefined
   return {
-    draft: view(d, who), topic: data.topic, after: data.after ?? null, base, published: now ?? null, publishedVersion: versionId(key) ?? null,
+    draft: view(d, who), topic: data.topic, after: data.after ?? null, subject: founds(d, data) ? data.subject! : null, base, published: now ?? null, publishedVersion: versionId(key) ?? null,
     reviews: reviewsOf(d, who), problems: d.status === 'draft' || d.status === 'review' ? problemsOf(d, data) : [],
   }
 }
 
 const openDrafts = (userId: string) => one<{ n: number }>("SELECT COUNT(*) AS n FROM drafts WHERE user_id = ? AND status IN ('draft', 'review')", userId)!.n
 
-function insertDraft(s: Session, kind: 'edit' | 'new', g: string, sub: string, topic: TopicFile, extra: { after?: string | null; base?: number | null; rollbackOf?: number | null; note?: string | null }) {
+function insertDraft(s: Session, kind: 'edit' | 'new', g: string, sub: string, topic: TopicFile, extra: { after?: string | null; base?: number | null; rollbackOf?: number | null; note?: string | null; subject?: NewSubject; order?: string[] }) {
   // Untouched drafts of other topics go; one opened in the last minutes may still be open in another tab.
   pruneEmpty(s.user.id, 10 * MINUTE)
-  if (openDrafts(s.user.id) >= LIMITS.drafts) throw new HttpError(429, `Máš rozpracováno ${LIMITS.drafts} návrhů. Nejdřív některé dokonči nebo smaž.`)
+  // Admins bring in whole new předměty at once (dozens of topics waiting for review): no limit for them.
+  if (s.user.role !== 'admin' && openDrafts(s.user.id) >= LIMITS.drafts) throw new HttpError(429, `Máš rozpracováno ${LIMITS.drafts} návrhů. Nejdřív některé dokonči nebo smaž.`)
   const id = randomUUID(), now = Date.now()
   run('INSERT INTO drafts (id, user_id, kind, grade, subject, topic_id, title, data, base_version, rollback_of, note, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-    id, s.user.id, kind, g, sub, topic.id, String(topic.title || topic.id).slice(0, 200), JSON.stringify(kind === 'new' ? { topic, after: extra.after ?? null } : { topic }),
+    id, s.user.id, kind, g, sub, topic.id, String(topic.title || topic.id).slice(0, 200), JSON.stringify(kind === 'new' ? { topic, after: extra.after ?? null, ...(extra.subject ? { subject: extra.subject } : {}), ...(extra.order ? { order: extra.order } : {}) } : { topic }),
     extra.base ?? null, extra.rollbackOf ?? null, extra.note ?? null, now, now)
   return id
 }
@@ -233,7 +260,11 @@ const mineFor = (s: Session, g: string, sub: string, id: string) =>
 
 export function createDraft(s: Session, body: Record<string, unknown>) {
   const { kind } = body
-  if (!isSubject(body.grade, body.subject)) throw new HttpError(400, 'Neznámý ročník nebo předmět.')
+  // A new topic may found a new odborný předmět: then it names it (name, emoji, color).
+  const subject = body.grade === ODB ? newSubjectOf(body.subjectMeta) : undefined
+  const founding = kind === 'new' && body.grade === ODB && typeof body.subject === 'string' && isSubjectOf(ODB, body.subject) && !isSubject(ODB, body.subject)
+  if (founding && !subject) throw new HttpError(400, 'Nový odborný předmět potřebuje název, emoji a barvu (subjectMeta: { name, emoji, color }).')
+  if (!isSubject(body.grade, body.subject) && !founding) throw new HttpError(400, 'Neznámý ročník nebo předmět.')
   const g = body.grade as string, sub = body.subject as string
   if (kind === 'edit') {
     const id = String(body.topicId ?? '')
@@ -248,7 +279,7 @@ export function createDraft(s: Session, body: Record<string, unknown>) {
     if (!topic || typeof topic !== 'object' || typeof topic.id !== 'string' || !ID.test(topic.id) || topic.id.length > 80) throw new HttpError(400, 'Id tématu smí mít jen malá písmena bez diakritiky, číslice a pomlčky.')
     if (topicExists(g, sub, topic.id)) throw new HttpError(409, 'Téma s tímto id v předmětu už je. Zvol jiný název nebo id.')
     if (one("SELECT 1 FROM drafts WHERE kind = 'new' AND grade = ? AND subject = ? AND topic_id = ? AND status IN ('draft', 'review')", g, sub, topic.id)) throw new HttpError(409, 'Nové téma s tímto id už někdo rozpracoval.')
-    return getDraft(s, insertDraft(s, 'new', g, sub, topic, { after: typeof body.after === 'string' ? body.after : null }))
+    return getDraft(s, insertDraft(s, 'new', g, sub, topic, { after: typeof body.after === 'string' ? body.after : null, subject, order: orderOf(body.order) }))
   }
   throw new HttpError(400, 'Neznámý druh návrhu.')
 }
@@ -267,7 +298,7 @@ export function saveDraft(s: Session, id: unknown, body: Record<string, unknown>
   if (topic.id !== d.topic_id) throw new HttpError(400, 'Id tématu se nedá změnit.')
   const old = JSON.parse(d.data) as DraftData
   const after = d.kind === 'new' ? (body.after === null || typeof body.after === 'string' ? body.after : old.after ?? null) : undefined
-  const data = JSON.stringify({ topic, ...(d.kind === 'new' ? { after } : {}) })
+  const data = JSON.stringify({ topic, ...(d.kind === 'new' ? { after, ...(old.subject ? { subject: old.subject } : {}), ...(old.order ? { order: old.order } : {}) } : {}) })
   if (data === d.data) return { rev: d.rev, updatedAt: d.updated_at }
   const rev = d.rev + 1, now = Date.now()
   run('UPDATE drafts SET data = ?, title = ?, rev = ?, updated_at = ? WHERE id = ? AND rev = ?', data, String(topic.title || d.title).slice(0, 200), rev, now, d.id, d.rev)
@@ -285,11 +316,17 @@ export function deleteDraft(s: Session, id: unknown, ip: string) {
 
 // ——— What publishing a draft changes ———
 
-/** The new list of topics: `id` inserted after `after` (at the start for null, at the end when `after` is gone). */
-function insertTopic(list: SubjectFile, id: string, after: string | null | undefined): SubjectFile {
+/**
+ * The new list of topics: `id` after the nearest topic before it in the intended `order` that is already there,
+ * or else after `after` (at the start for null, at the end when `after` is gone).
+ */
+function insertTopic(list: SubjectFile, id: string, after: string | null | undefined, order?: string[]): SubjectFile {
   if (list.topics.includes(id)) return list
   const topics = [...list.topics]
-  const at = after === null ? 0 : after !== undefined && topics.includes(after) ? topics.indexOf(after) + 1 : topics.length
+  const k = order?.indexOf(id) ?? -1
+  const before = k >= 0 ? order!.slice(0, k).reverse().find((x) => topics.includes(x)) : undefined
+  const at = k >= 0 ? (before ? topics.indexOf(before) + 1 : 0)
+    : after === null ? 0 : after !== undefined && topics.includes(after) ? topics.indexOf(after) + 1 : topics.length
   topics.splice(at, 0, id)
   return { ...list, topics }
 }
@@ -298,15 +335,16 @@ function changesOf(d: DraftRow, data: DraftData): DocChange[] {
   const out: DocChange[] = [{ key: topicKey(d.grade, d.subject, d.topic_id), data: data.topic }]
   if (d.kind === 'new') {
     const list = getDoc(subjectKey(d.grade, d.subject)) as SubjectFile | undefined
-    if (!list) throw new HttpError(409, 'Předmět nemá seznam témat. Dej vědět správci.')
-    out.push({ key: subjectKey(d.grade, d.subject), data: insertTopic(list, d.topic_id, data.after) })
+    if (list) out.push({ key: subjectKey(d.grade, d.subject), data: insertTopic(list, d.topic_id, data.after, data.order) })
+    else if (founds(d, data)) out.push({ key: subjectKey(d.grade, d.subject), data: { format: FORMAT, topics: [d.topic_id], ...data.subject! } satisfies SubjectFile })
+    else throw new HttpError(409, 'Předmět nemá seznam témat. Dej vědět správci.')
   }
   return out
 }
 
 /** Everything that keeps the draft from being published as it is (the editor's checks plus the content as a whole). */
 function problemsOf(d: DraftRow, data: DraftData): Problem[] {
-  const own = topicProblems(data.topic, d.grade as GradeId, d.subject as SubjectId, d.topic_id)
+  const own = topicProblems(data.topic, d.grade as GradeId, d.subject as SubjectId, d.topic_id, founds(d, data))
   if (own.length) return own
   const out: Problem[] = []
   const before = getDoc(topicKey(d.grade, d.subject, d.topic_id)) as TopicFile | undefined
