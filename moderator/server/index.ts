@@ -38,13 +38,16 @@ const query = (req: Req, k: string) => new URL(req.url!, 'http://x').searchParam
 // ——— Public content API (read only; the app at sprtam.cz syncs from it) ———
 
 const accepts = (req: Req, enc: string) => String(req.headers['accept-encoding'] ?? '').includes(enc)
+// The content is CC BY-SA 4.0 (docs/OBSAH.md, Licence); every public content response says so.
+const LICENSE = 'CC-BY-SA-4.0'
+const LICENSE_LINK = { Link: '<https://creativecommons.org/licenses/by-sa/4.0/>; rel="license"' }
 
 on('GET', '/api/public/v1/manifest', (req, res) => {
   const live = current()
   if (!live) throw new HttpError(503, 'Učivo zatím není zveřejněné.')
   const etag = `"${live.manifest.hash}"`
-  if (req.headers['if-none-match'] === etag) { res.writeHead(304, { ETag: etag, 'Cache-Control': 'no-cache' }).end(); return SENT }
-  res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', ETag: etag, 'Cache-Control': 'no-cache' })
+  if (req.headers['if-none-match'] === etag) { res.writeHead(304, { ETag: etag, 'Cache-Control': 'no-cache', ...LICENSE_LINK }).end(); return SENT }
+  res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', ETag: etag, 'Cache-Control': 'no-cache', ...LICENSE_LINK })
   res.end(req.method === 'HEAD' ? undefined : JSON.stringify(live.manifest))
   return SENT
 }, true)
@@ -52,7 +55,7 @@ on('GET', '/api/public/v1/manifest', (req, res) => {
 on('GET', '/api/public/v1/files/:hash', (req, res, p) => {
   const text = HASH.test(p[0]) ? file(p[0]) : undefined
   if (!text) throw new HttpError(404, 'Soubor nenalezen.')
-  const headers: Record<string, string | number> = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=31536000, immutable', ETag: `"${p[0]}"`, Vary: 'Accept-Encoding' }
+  const headers: Record<string, string | number> = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=31536000, immutable', ETag: `"${p[0]}"`, Vary: 'Accept-Encoding', ...LICENSE_LINK }
   if (accepts(req, 'gzip')) { const b = gzipped(p[0], text); res.writeHead(200, { ...headers, 'Content-Encoding': 'gzip', 'Content-Length': b.length }).end(b) }
   else res.writeHead(200, headers).end(text)
   return SENT
@@ -64,10 +67,10 @@ on('GET', '/api/public/v1/export', (req, res, _p, ip) => {
   const live = current()
   if (!live) throw new HttpError(503, 'Učivo zatím není zveřejněné.')
   if (exported?.release !== live.release) {
-    const text = JSON.stringify({ release: live.release, publishedAt: live.publishedAt, docs: Object.fromEntries(published()) })
+    const text = JSON.stringify({ release: live.release, publishedAt: live.publishedAt, license: LICENSE, docs: Object.fromEntries(published()) })
     exported = { release: live.release, body: gzipped(`export-${live.release}`, text) }
   }
-  res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Content-Length': exported.body.length, 'Cache-Control': 'no-cache', Vary: 'Accept-Encoding' })
+  res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Content-Length': exported.body.length, 'Cache-Control': 'no-cache', Vary: 'Accept-Encoding', ...LICENSE_LINK })
   res.end(exported.body)
   return SENT
 }, true)

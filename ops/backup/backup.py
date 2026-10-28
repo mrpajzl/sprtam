@@ -63,6 +63,7 @@ UA = 'sprtam-backup/2'
 STATE = DATA / 'state.json'
 SNAPSHOTS = DATA / 'snapshots'
 MIRROR = DATA / 'mirror'
+MIRROR_META = Path(__file__).resolve().with_name('mirror')  # README.md and LICENSE of the public mirror
 
 # Document keys (src/content/docs.ts) – also the paths of files in the mirror, so nothing else may pass.
 KEY = re.compile(r'^(topics/[a-z][0-9]/[a-z]+/(_subject|[a-z0-9]+(-[a-z0-9]+)*)|vocab/(a1|a2|b1|b2|c1)|approaches/[a-z0-9]+(-[a-z0-9]+)*/(approach|[a-z][0-9]))$')
@@ -332,6 +333,23 @@ def mirrored_release():
     return int(out) if out.isdigit() else 0
 
 
+def mirror_meta():
+    """README and licence of the public mirror. Committed with the trailers of the last release, so the mirror's
+    position (mirrored_release, checkpoint) stays where it was; before the first release they go in with it."""
+    changed = []
+    for src in sorted(MIRROR_META.iterdir()) if MIRROR_META.is_dir() else []:
+        dst = MIRROR / src.name
+        if not dst.exists() or dst.read_bytes() != src.read_bytes():
+            dst.write_bytes(src.read_bytes())
+            changed.append(src.name)
+    if not changed or not git('rev-parse', '--verify', '-q', 'HEAD', check=False).stdout.strip():
+        return
+    trailers = git('log', '-1', '--format=%(trailers:key=Release)%(trailers:key=Content-Chain)').stdout.strip()
+    git('add', '--', *changed)
+    subprocess.run(['git', '-C', str(MIRROR), '-c', 'user.name=Šprtám zálohy', 'commit', '-q', '-m', 'Popis a licence učiva', '-m', trailers],
+                   check=True, capture_output=True, env={**os.environ, 'GIT_COMMITTER_NAME': 'Šprtám zálohy', 'GIT_COMMITTER_EMAIL': 'zalohy@sprtam.cz'})
+
+
 def kind_of(key):
     p = key.split('/')
     if p[0] == 'topics':
@@ -356,6 +374,7 @@ def mirror(snap, state):
         if heads:
             git('fetch', '-q', 'origin', 'main')
             git('reset', '-q', '--hard', 'origin/main')
+    mirror_meta()
     root = (MIRROR / 'content').resolve()
     db = open_snapshot(snap['db'])
     try:

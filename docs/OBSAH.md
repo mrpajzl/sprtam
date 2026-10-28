@@ -12,6 +12,15 @@ flowchart LR
   B -- commit za každé vydání --> G[GitHub<br/>sprtam-content]
 ```
 
+## Licence
+
+Učivo je pod licencí **[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.cs)** (kód aplikace pod MIT). Kdo ho použije, uvede původ (*Učivo: [Šprtám](https://sprtam.cz), CC BY-SA 4.0*) a úpravy zveřejní pod stejnou licencí. Moderátoři to odsouhlasí při každém odeslání změny ke kontrole.
+
+Ke stažení je dvakrát:
+
+- **[mrpajzl/sprtam-content](https://github.com/mrpajzl/sprtam-content)**: veřejné git zrcadlo, každé vydání jako commit i s autorem a tím, kdo schválil ([Zálohy](#zálohy), bod 4). README a `LICENSE` zrcadla jsou v [`ops/backup/mirror/`](../ops/backup/mirror).
+- **API**: `GET https://moderace.sprtam.cz/api/public/v1/export` vrátí celé aktuální vydání ([Veřejné API](#veřejné-api-obsahové-služby)). Odpovědi veřejného API nesou hlavičku `Link: <…/by-sa/4.0/>; rel="license"`, export i pole `license`.
+
 ## Dokumenty, verze, vydání
 
 **Dokument** je jeden JSON s adresou podle dřívější cesty souboru ([`src/content/docs.ts`](../src/content/docs.ts)):
@@ -58,7 +67,7 @@ Bez přihlášení, jen pro čtení. Z něj si kopii drží server sprtam.cz ([A
 |---|---|
 | `GET /api/public/v1/manifest` | manifest aktuálního vydání ([`src/content/manifest.ts`](../src/content/manifest.ts)), `ETag` a `304` |
 | `GET /api/public/v1/files/<hash>` | soubor vydání podle hashe, `immutable`, gzip |
-| `GET /api/public/v1/export` | všechny dokumenty aktuálního vydání `{ release, publishedAt, docs: { klíč: dokument } }` (`npm run content:pull`), nejvýš 30× za hodinu z jedné adresy |
+| `GET /api/public/v1/export` | všechny dokumenty aktuálního vydání `{ release, publishedAt, license, docs: { klíč: dokument } }` (`npm run content:pull`), nejvýš 30× za hodinu z jedné adresy |
 | `POST /api/public/v1/reports` | hlášení chyby od žáka; jen se `REPORT_TOKEN`, posílá ho server sprtam.cz ([Hlášení chyb od žáků](#hlášení-chyb-od-žáků)) |
 
 ## Hlášení chyb od žáků
@@ -208,9 +217,10 @@ Každou hodinu ([`backup.py`](../ops/backup/backup.py)):
    - zveřejněné je opravdu nejnovější verze;
    - historie jen přibyla: verze z minulého běhu má pořád stejný řetěz. Když stav chybí, vezme se poslední commit zrcadla.
 3. **Uložení.** Uloží snapshot zašifrovaný nástrojem [age](https://age-encryption.org) pro příjemce v `AGE_RECIPIENTS`. Privátní klíč není na žádném serveru: je v Keychainu správce (`sprtam-backup-age`) a v `~/.config/sprtam/backup-age-identity.txt`. Ponechá 48 hodinových, 35 denních a 24 měsíčních záloh. Když kontrola selže, nic starého nemaže.
-4. **Zrcadlo (jen `hetzner-1`).** Každé nové vydání zapíše přímo z ověřeného snapshotu jako commit do soukromého repozitáře **`mrpajzl/sprtam-content`**:
+4. **Zrcadlo (jen `hetzner-1`).** Každé nové vydání zapíše přímo z ověřeného snapshotu jako commit do veřejného repozitáře **[`mrpajzl/sprtam-content`](https://github.com/mrpajzl/sprtam-content)**:
    - soubory jako dřív v `content/`;
-   - autor, kdo schválil, a trailery `Release:` a `Content-Chain:`.
+   - autor, kdo schválil, a trailery `Release:` a `Content-Chain:`;
+   - README a licence z [`ops/backup/mirror/`](../ops/backup/mirror). Jejich změnu zapíše samostatným commitem s trailery posledního vydání, takže pozice zrcadla zůstane.
 
    Pushuje deploy klíčem. Nikdy nepushuje force a nikdy nezačne novou historii, když repozitář nejde přečíst.
 5. **Hlášení.** Výsledek nahlásí zpět (`/api/internal/backup/report`):

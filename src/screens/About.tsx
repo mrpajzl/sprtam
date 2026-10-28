@@ -21,7 +21,7 @@ export function About() {
         <h2 class="label next-label">{ABOUT.code.title}</h2>
         <div class="list">
           {ABOUT.code.links.map((l) => (
-            <a key={l.path} class="row" href={ABOUT.code.repo + l.path} rel="noopener">
+            <a key={l.href} class="row" href={l.href} rel="noopener">
               <span class="txt"><b>{l.label}</b><small>{l.hint}</small></span><IArrow />
             </a>
           ))}

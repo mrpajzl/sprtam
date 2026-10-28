@@ -100,7 +100,7 @@ function Intro({ index, me }: { index?: Index; me: Me | null }) {
         <li><b>Vyber</b> ročník a předmět, nebo téma vyhledej.</li>
         <li><b>Otevři téma.</b> V telefonu si přečteš výklad a vyzkoušíš otázky. Vedle je přehled všech otázek se správnými odpověďmi.</li>
       </ol>
-      <p class="muted">Učivo upravují pozvaní moderátoři a každou změnu před zveřejněním někdo schvaluje.{index ? ` V učivu je ${total} témat.` : ''}</p>
+      <p class="muted">Učivo upravují pozvaní moderátoři a každou změnu před zveřejněním někdo schvaluje.{index ? ` V učivu je ${total} témat.` : ''} Je pod licencí <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">CC BY-SA 4.0</a>, celé ke stažení na <a href="https://github.com/mrpajzl/sprtam-content" target="_blank" rel="noopener">GitHubu</a>.</p>
     </div>
   )
   const mine = index?.active.filter((a) => a.userId === me.id).length ?? 0

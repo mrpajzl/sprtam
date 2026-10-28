@@ -6,6 +6,8 @@ RUN apk add --no-cache age git openssh-client
 WORKDIR /app
 # GitHub's SSH host keys (https://api.github.com/meta), so the mirror push trusts only GitHub.
 COPY known_hosts backup.py ./
+# README and licence the mirror carries (docs/OBSAH.md, Zálohy).
+COPY mirror ./mirror
 RUN adduser -D -u 10001 backup && mkdir -p /data && chown backup:backup /data
 USER backup
 VOLUME /data

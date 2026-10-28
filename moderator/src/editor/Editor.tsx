@@ -446,6 +446,7 @@ function Submit({ draft, changed, issues, flush, goIssue, onClose, onDone }: {
         <>
           <p>Změnu uvidí ostatní moderátoři. Zveřejní se, až ji schválí {others}. Upravovat ji můžeš i potom – každá úprava je ale nová verze, kterou je potřeba schválit znovu.</p>
           <label class="field"><span>Vzkaz pro kontrolu</span><textarea rows={3} value={note} onInput={(e) => setNote(e.currentTarget.value)} placeholder="Co a proč jsi změnil/a (nepovinné)" maxLength={2000} /></label>
+          <p class="fine">Odesláním souhlasíš, že změnu zveřejníme pod licencí <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">CC BY-SA 4.0</a>. V historii a ve veřejném <a href="https://github.com/mrpajzl/sprtam-content" target="_blank" rel="noopener">zrcadle učiva</a> u ní bude tvoje jméno.</p>
         </>
       )}
       {error && <div class="banner bad" role="alert">{error}</div>}

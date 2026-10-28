@@ -6,6 +6,8 @@ Samostatná aplikace pro úpravy a tvorbu učiva: **[moderace.sprtam.cz](https:/
 - Pozvaní moderátoři v ní upravují témata v editoru s živým náhledem. Hotovou změnu pošlou **ke kontrole**.
 - Jakmile ji schválí jiný moderátor, je hned na sprtam.cz. Správce může svou změnu schválit i sám.
 
+Učivo je pod licencí **[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.cs)** a je veřejně ke stažení i s historií ([OBSAH.md](OBSAH.md#licence)). Moderátor to odsouhlasí při každém odeslání změny ke kontrole. Jeho jméno je v historii tématu i ve veřejném zrcadle učiva jako jméno autora nebo schvalovatele.
+
 Moderace je zároveň obsahová služba: učivo i s celou historií je v její databázi ([OBSAH.md](OBSAH.md)).
 
 Funguje i na mobilu: obrazovky jsou ve spodní liště, správcovské (Vydání, Moderátoři) a vlastní účet pod **Více**.
