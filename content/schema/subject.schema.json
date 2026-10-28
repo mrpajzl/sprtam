@@ -23,6 +23,32 @@
       },
       "minItems": 1,
       "description": "Id témat v pořadí, v jakém se během roku učí. Každé má soubor <id>.json vedle."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Jen odborné předměty (topics/odb): název předmětu, např. \"Technické kreslení\"."
+    },
+    "emoji": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Jen odborné předměty: jedno emoji předmětu."
+    },
+    "color": {
+      "enum": [
+        "orange",
+        "blue",
+        "yellow",
+        "green",
+        "lime",
+        "teal",
+        "purple",
+        "pink",
+        "red",
+        "gray",
+        "ink"
+      ],
+      "description": "Jen odborné předměty: barva klávesy předmětu."
     }
   },
   "required": [
@@ -30,5 +56,5 @@
     "topics"
   ],
   "additionalProperties": false,
-  "description": "Pořadí témat jednoho předmětu v jednom ročníku."
+  "description": "Pořadí témat jednoho předmětu v jednom ročníku. Odborný předmět (topics/odb/<id>) tu má i svůj název, emoji a barvu."
 }

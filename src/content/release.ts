@@ -3,7 +3,8 @@ import { ALL_GRADES } from './curriculum'
 import { parseKey } from './docs'
 import { MANIFEST_FORMAT, type ApproachMeta, type Manifest, type TopicRow } from './manifest'
 import type { Snapshot } from './check'
-import type { ApproachFile, ApproachYearFile, GradeId, SubjectFile, TopicFile, VocabFile } from './types'
+import type { VocationalMeta } from './curriculum'
+import type { ApproachFile, ApproachYearFile, GradeId, SubjectFile, TopicFile, VocabFile, YearId } from './types'
 
 // Turns a set of content documents (docs.ts) into the files the app reads (manifest.ts). Runs on the
 // server: in the content service when something is published, and in development from content/.
@@ -23,7 +24,7 @@ export function buildRelease(snap: Snapshot): ReleaseFiles {
   const subjects: [string, string, SubjectFile][] = []
   const vocab: VocabFile[] = []
   const metas = new Map<string, ApproachFile>()
-  const years: [string, GradeId, ApproachYearFile][] = []
+  const years: [string, YearId, ApproachYearFile][] = []
   for (const [key, value] of snap) {
     const ref = parseKey(key)
     if (ref?.kind === 'subject') subjects.push([ref.grade, ref.subject, value as SubjectFile])
@@ -46,6 +47,8 @@ export function buildRelease(snap: Snapshot): ReleaseFiles {
     }
   }
   named.set('index', rows)
+  const vocational: Record<string, VocationalMeta> = {}
+  for (const [g, s, f] of subjects) if (g === 'odb' && f.name && f.emoji && f.color) vocational[s] = { name: f.name, emoji: f.emoji, c: f.color }
   named.set('text', text)
   for (const v of vocab.sort((a, b) => (a.level < b.level ? -1 : 1))) named.set(`vocab/${v.level}`, v)
   for (const [id, g, y] of years) named.set(`approach/${id}/${g}`, y)
@@ -62,6 +65,8 @@ export function buildRelease(snap: Snapshot): ReleaseFiles {
     files.set(h, body)
     index[name] = h
   }
-  const hash = hashOf(JSON.stringify({ index, approaches }))
-  return { manifest: { format: MANIFEST_FORMAT, hash, files: index, approaches }, files }
+  // Releases without odborné předměty keep the manifest (and hash) they always had.
+  const extra = Object.keys(vocational).length ? { vocational } : {}
+  const hash = hashOf(JSON.stringify({ index, approaches, ...extra }))
+  return { manifest: { format: MANIFEST_FORMAT, hash, files: index, approaches, ...extra }, files }
 }

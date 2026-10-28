@@ -1,4 +1,5 @@
-import type { ApproachFile, GradeId } from './types'
+import type { VocationalMeta } from './curriculum'
+import type { ApproachFile, GradeId, YearId } from './types'
 
 // What the app gets from the content API (docs/OBSAH.md): a small manifest of the current release
 // and files named by the hash of their contents, so every file can be cached forever.
@@ -7,19 +8,20 @@ import type { ApproachFile, GradeId } from './types'
 //   GET /api/content/f/<hash>.json   one file of a release
 //
 // Files of a release (Manifest.files: name → hash):
-//   subject/<grade>/<subject>         Topic[] in school-year order (the subject's _subject list)
+//   subject/<grade>/<subject>         Topic[] in school-year order (the subject's _subject list; grade odb = odborné předměty)
 //   index                             TopicRow[] of every topic (search, recommendations)
 //   text                              string[] in the order of `index`: explanation titles, terms, summaries
 //   vocab/<level>                     VocabFile (A1 … C1)
 //   approach/<id>/<grade>             ApproachYearFile
-// Teaching approaches themselves are small and needed before the first render: inline in `approaches`.
+// Teaching approaches and the names of odborné předměty are small and needed before the first render: inline in
+// `approaches` and `vocational`.
 
 export const MANIFEST_FORMAT = 1
 
 export interface ApproachMeta extends Omit<ApproachFile, 'format'> {
   id: string
   /** Grades that have a plan, in school order. */
-  grades: GradeId[]
+  grades: YearId[]
 }
 
 /** [grade, subject, id, title, emoji, approach?] – approach only for topics of one teaching approach. */
@@ -36,6 +38,8 @@ export interface Manifest {
   /** File name → hash of its contents. */
   files: Record<string, string>
   approaches: ApproachMeta[]
+  /** Odborné předměty (topics/odb/<id>): id → name, emoji and colour. Missing in releases from before they existed. */
+  vocational?: Record<string, VocationalMeta>
 }
 
 /** Hashes are lowercase hex; file URLs are /api/content/f/<hash>.json. */
