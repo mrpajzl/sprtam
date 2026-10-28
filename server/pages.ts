@@ -3,6 +3,7 @@ import type { ApproachMeta } from '../src/content/manifest'
 import type { ApproachYearFile, Block, GradeId, Subject, SubjectId, VocabFile, YearBlock } from '../src/content/types'
 import { ABOUT } from '../src/about'
 import { EXAM, partTopics } from '../src/exam'
+import { askable, MAPS, MAPS_INTRO, MAPS_PATH, modesOf, PARTS, place, ROUND } from '../src/maps'
 import { fullTitle, gradeFor, gradeLabel, plain, SITE_NAME, summary, titles } from '../src/seo'
 import { WIDGETS } from '../src/widgets'
 
@@ -10,6 +11,7 @@ import { WIDGETS } from '../src/widgets'
 // engines get content, titles and descriptions without running JS:
 //   /  /o-aplikaci  /g/<grade>  /g/<grade>/<subject>  /g/<grade>/<subject>/<topic>  /slovicka  /slovicka/<level>
 //   /<approach>  /<approach>/<grade>  /<approach>/<grade>/<epoch>  /prijimacky  /prijimacky/<subject>  /prijimacky/<subject>/<area>
+//   /slepa-mapa  /slepa-mapa/<map>
 // plus the app.html shell for the remaining in-app routes, sitemap.xml and robots.txt. Rendered by the
 // server from the current content release (server/content.ts). The markup uses the app's own classes,
 // so it looks like the screen the app then renders over it.
@@ -90,6 +92,7 @@ export function pages(site: SiteContent): Page[] {
     body: `<div class="page home"><header class="bar"><h1 class="brand">šprtám</h1></header>
 <section class="sec"><h2 class="label">Třída</h2><div class="pad">${STAGES.map((st) => `<div class="pad-group"><small>${STAGE_LABEL[st.id]}</small><div class="pad-keys">${st.grades.map((g) => `<a class="num-key" href="${esc(`/g/${g}`)}" aria-label="${esc(gradeLabel(g))}">${GRADE_NAME[g].split('.')[0]}</a>`).join('')}</div></div>`).join('')}</div></section>
 <a class="row exam-key" style="${style('orange')}" href="/${EXAM.id}"><span class="skey m"><b class="em">${EXAM.emoji}</b></span><span class="txt"><b>${esc(EXAM.name)}</b><small>${esc(EXAM.hint)}</small></span></a>
+<a class="row vocab-key map-key" style="${style('teal')}" href="${MAPS_PATH}"><span class="skey m"><b class="em">🗺️</b></span><span class="txt"><b>Slepá mapa</b><small>kraje, Evropa, svět</small></span></a>
 <a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span></a>
 <a class="row about-key" style="${style('ink')}" href="/o-aplikaci"><span class="skey m"><b>?</b></span><span class="txt"><b>Co je Šprtám?</b><small>jak funguje a co o tobě (ne)ví</small></span></a></div>${tabbar('home')}`,
   })
@@ -254,6 +257,33 @@ export function pages(site: SiteContent): Page[] {
         body: `<div class="page" style="${pStyle}">${bar(`${a.emoji} ${a.title}`, pPath, [[EXAM.name, ePath], [pt.title, pPath]])}<div class="blocks approach-about"><p>${inline(a.about)}</p></div><h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(SUBJECTS[r.s].c)}" href="${esc(`/g/${r.k}`)}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(SUBJECTS[r.s].name)}</small></span></a>`).join('')}</div></div>${tabbar(undefined)}`,
       })
     }
+  }
+  // Slepá mapa: /slepa-mapa, /slepa-mapa/<map> (markup as src/screens/Maps.tsx; the map itself needs the app,
+  // the page lists its places).
+  const teal = style('teal')
+  const mCrumbs: [string, string][] = [home, ['Slepá mapa', MAPS_PATH]]
+  const mapRow = (m: (typeof MAPS)[number]) => `<a class="row map-row" href="${esc(`${MAPS_PATH}/${m.id}`)}"><span class="em">${esc(m.emoji)}</span><span class="txt"><b>${esc(m.title)}</b><small>${esc(m.hint)}</small></span></a>`
+  out.push({
+    path: MAPS_PATH,
+    title: titles.maps(),
+    description: MAPS_INTRO,
+    crumbs: mCrumbs,
+    body: `<div class="page" style="${teal}">${bar('🗺️ Slepá mapa', '/')}<div class="blocks approach-about"><p>${esc(MAPS_INTRO)}</p></div><h2 class="label">Mapy</h2><div class="list">${MAPS.filter((m) => !PARTS.includes(m.id)).map(mapRow).join('')}</div><h2 class="label map-parts">Světadíly</h2><div class="list">${MAPS.filter((m) => PARTS.includes(m.id)).map(mapRow).join('')}</div></div>${tabbar(undefined)}`,
+    ld: { '@type': 'ItemList', itemListElement: MAPS.map((m, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${MAPS_PATH}/${m.id}`, name: m.title })) },
+  })
+  for (const m of MAPS) {
+    const path = `${MAPS_PATH}/${m.id}`
+    const state = m.kind === 'stat'
+    out.push({
+      path,
+      title: titles.map(m.title, m.kind),
+      description: m.about,
+      crumbs: [...mCrumbs, [m.title, path]],
+      type: 'article',
+      body: `<div class="page" style="${teal}">${bar(`${m.emoji} ${m.title}`, MAPS_PATH, [['Slepá mapa', MAPS_PATH]])}<div class="blocks approach-about"><p>${esc(m.about)}</p></div>`
+        + `<h2 class="label">Hrát</h2><div class="list">${modesOf(m).map((mode) => `<a class="row map-mode" href="${esc(`${path}/${mode.id}`)}" rel="nofollow"><span class="txt"><b>${esc(mode.title)}</b><small>${esc(mode.hint)} · ${Math.min(ROUND, askable(m, mode.id).length)} otázek</small></span></a>`).join('')}</div>`
+        + `<h2 class="label">${state ? 'Státy a hlavní města' : 'Kraje a krajská města'}</h2><div class="map-list">${m.ids.map((id) => { const pl = place(id)!; return `<div class="map-place"><b>${esc(pl.name)}</b><span>${esc(pl.capital ?? (id === 'CZ-ST' ? 'sídlo v Praze' : '–'))}</span></div>` }).join('')}</div></div>${tabbar(undefined)}`,
+    })
   }
   return out
 }

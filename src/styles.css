@@ -226,7 +226,7 @@ mark { background: color-mix(in oklab, var(--k-yellow) 55%, transparent); color:
 .num-key.on:active { box-shadow: 0 1px 0 color-mix(in oklab, var(--k-orange) 60%, #000); }
 .exam-key { margin-top: 24px; }
 .exam-key > svg { width: 22px; height: 22px; color: var(--ink-3); flex: none; }
-.exam-key .skey .em { font-size: 1.3rem; background: none; width: auto; height: auto; }
+.exam-key .skey .em, .map-key .skey .em { font-size: 1.3rem; background: none; width: auto; height: auto; }
 .vocab-key { margin-top: 12px; }
 .vocab-key > svg { width: 22px; height: 22px; color: var(--ink-3); flex: none; }
 
@@ -725,3 +725,67 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .overview .legend { --c: var(--k-orange); display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-top: 22px; font-family: var(--mono); font-size: 0.72rem; font-weight: 600; }
 .legend i { width: 12px; height: 10px; border-radius: 2px; margin-left: 6px; }
 .settings .note { font-size: 0.85rem; margin: 10px 2px 0; line-height: 1.45; }
+
+/* ── Slepá mapa (/slepa-mapa) ── */
+.map-row .seg-meter { width: 64px; flex: none; }
+.label.map-parts { margin-top: 24px; }
+.map-frame { margin-top: 18px; min-height: 300px; max-height: min(62vh, 520px); scroll-margin-top: 70px; }
+.map-frame .map { height: auto; aspect-ratio: var(--ar); min-height: 300px; max-height: min(62vh, 520px); }
+.map {
+  --sea: color-mix(in oklab, var(--k-blue) 13%, var(--card));
+  --land: var(--key);
+  --ctx: color-mix(in oklab, var(--line) 75%, var(--card));
+  --edge: color-mix(in oklab, var(--ink-3) 70%, var(--card));
+  position: relative; height: 100%; min-height: 220px; border-radius: var(--r); overflow: hidden;
+  background: var(--sea); box-shadow: inset 0 0 0 1px var(--line);
+  touch-action: none; user-select: none; -webkit-user-select: none;
+}
+:root[data-theme='dark'] .map { --sea: color-mix(in oklab, var(--k-blue) 16%, var(--bg)); --land: color-mix(in oklab, var(--key) 70%, var(--ink-3)); --ctx: color-mix(in oklab, var(--key) 60%, var(--bg)); --edge: color-mix(in oklab, var(--ink-3) 75%, var(--bg)); }
+.map svg { display: block; width: 100%; height: 100%; cursor: pointer; }
+.map path, .map circle { stroke: var(--edge); stroke-width: 0.7px; vector-effect: non-scaling-stroke; stroke-linejoin: round; transition: fill 0.2s; }
+.map path.p { fill: var(--land); }
+.map path.c { fill: var(--ctx); cursor: default; }
+@media (hover: hover) { .map path.p:hover, .map circle:hover { fill: color-mix(in oklab, var(--land) 82%, var(--ink)); } }
+.map circle.dot { fill: var(--land); stroke: var(--ink-2); stroke-width: 1.4px; }
+.map :is(path, circle).ok { fill: var(--k-green); }
+.map :is(path, circle).miss { fill: color-mix(in oklab, var(--k-red) 55%, var(--land)); }
+.map :is(path, circle).show { fill: var(--k-yellow); animation: blink 0.5s 3 alternate; }
+.map :is(path, circle).pick { fill: var(--accent); animation: blink 0.6s 2 alternate; }
+.map :is(path, circle).bad { fill: var(--bad); }
+.map circle.pick, .map circle.show { stroke: var(--ink); stroke-width: 2px; }
+@keyframes blink { to { fill-opacity: 0.45; } }
+.map-tag {
+  position: absolute; transform: translate(-50%, calc(-100% - 10px)); pointer-events: none; white-space: nowrap; max-width: calc(100% - 16px); overflow: hidden; text-overflow: ellipsis;
+  padding: 6px 11px; border-radius: 10px; background: var(--ink); color: var(--bg); font-weight: 800; font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.2); animation: in 0.18s var(--ease);
+}
+.map-tag.ok { background: var(--ok); color: #fff; }
+.map-tag.bad { background: var(--bad); color: #fff; }
+.map-zoom { position: absolute; right: 8px; top: 8px; display: grid; gap: 6px; }
+.map-zoom .icon-btn { width: 40px; height: 40px; background: var(--key); color: var(--ink); font: 800 1.3rem/1 var(--mono); box-shadow: inset 0 0 0 1px var(--line), 0 2px 0 var(--key-edge); }
+.map-zoom .icon-btn svg { width: 20px; height: 20px; }
+.map-tip { font-size: 0.88rem; margin: 10px 2px 22px; line-height: 1.45; }
+.map-len { margin-top: 0; }
+.map-mode .stars { margin-left: 6px; }
+.map-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+.map-place {
+  display: grid; gap: 1px; padding: 9px 12px; border-radius: var(--r-s); text-align: left;
+  background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge);
+}
+.map-place b { font-weight: 800; line-height: 1.25; }
+.map-place span { font-size: 0.86rem; font-weight: 650; color: var(--ink-2); }
+.map-place.on { box-shadow: inset 0 0 0 2px var(--accent), 0 3px 0 var(--key-edge); background: var(--accent-soft); }
+
+/* The game fills the screen: question on top, the map below. */
+.page.game { display: flex; flex-direction: column; height: 100dvh; max-width: 980px; padding-bottom: calc(env(safe-area-inset-bottom) + 12px); }
+.game .map { flex: 1; min-height: 0; }
+.steps-meter i.half { background: var(--k-yellow); }
+/* Room for a name on two lines, so the map does not jump between questions. */
+.map-ask { display: flex; flex-wrap: wrap; align-items: baseline; align-content: flex-end; gap: 4px 10px; margin: 6px 2px 12px; min-height: 4rem; }
+.map-ask small { font-family: var(--mono); font-size: 0.85rem; font-weight: 700; color: var(--ink-2); }
+.map-ask b { font-size: 1.6rem; font-weight: 900; line-height: 1.15; }
+.map-tries { font-family: var(--mono); font-size: 0.78rem; font-weight: 700; color: var(--bad); margin-left: auto; }
+.map-opts { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.map-opts .opt { min-height: 52px; padding: 8px 12px; font-size: 0.98rem; text-align: center; }
+.map-opts .opt[disabled] { opacity: 0.45; }
+.map-next { margin-top: 12px; }
