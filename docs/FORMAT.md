@@ -40,6 +40,9 @@ Každý soubor začíná polem `"$schema"` s relativní cestou ke schématu – 
 |---|---|---|---|
 | `format` | celé číslo 1 | ano | Verze formátu, teď 1. |
 | `topics` | seznam (text) ≥ 1 položek | ano | Id témat v pořadí, v jakém se během roku učí. Každé má soubor <id>.json vedle. |
+| `name` | text | – | Jen odborné předměty (topics/odb): název předmětu, např. "Technické kreslení". |
+| `emoji` | text | – | Jen odborné předměty: jedno emoji předmětu. |
+| `color` | "orange" \| "blue" \| "yellow" \| "green" \| "lime" \| "teal" \| "purple" \| "pink" \| "red" \| "gray" \| "ink" | – | Jen odborné předměty: barva klávesy předmětu. |
 
 ### Slovíčka (`content/vocab/<úroveň>.json`)
 

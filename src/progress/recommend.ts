@@ -1,4 +1,4 @@
-import { ALL_GRADES, GRADE_SUBJECTS } from '../content/curriculum'
+import { GRADES, GRADE_SUBJECTS } from '../content/curriculum'
 import { fold, type TopicRef } from '../content/library'
 import { isPinned, stars, today, type Progress } from './store'
 
@@ -46,7 +46,7 @@ export function recommend(p: Progress, all: TopicRef[], max = 5): Rec[] {
     // A weak topic often rests on something from an earlier grade.
     if (weak) {
       const mine = new Set(stems(ref.title))
-      const at = (r: TopicRef) => ALL_GRADES.indexOf(r.g)
+      const at = (r: TopicRef) => GRADES.indexOf(r.g)
       const base = all
         .filter((r) => r.s === ref.s && at(r) < at(ref) && stems(r.title).some((w) => mine.has(w)))
         .sort((a, b) => at(b) - at(a))[0]

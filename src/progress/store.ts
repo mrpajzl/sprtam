@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
-import type { GradeId } from '../content/types'
+import type { YearId } from '../content/types'
 import { nextBox, today, type QuestionProgress } from './questions'
 
 export { isDue, isMistake, questionId, QUESTION_GAP, today, topicOf, type QuestionProgress } from './questions'
@@ -22,7 +22,7 @@ export interface TopicProgress {
 export interface Progress {
   v: 1
   /** Last chosen grade. */
-  g?: GradeId
+  g?: YearId
   /** Topic progress by "grade/subject/topic". */
   t: Record<string, TopicProgress>
   /** Vocabulary Leitner box (0–5) by English word. */
@@ -67,7 +67,7 @@ export function useProgress(): Progress {
   return state
 }
 
-export function setGrade(g: GradeId) { if (state.g !== g) commit({ ...state, g }) }
+export function setGrade(g: YearId) { if (state.g !== g) commit({ ...state, g }) }
 
 const active = (a: number[] = []) => (a.at(-1) === today() ? a : [...a, today()].slice(-120))
 /** One more answer today (for the daily goal). */

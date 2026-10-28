@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
-import { GRADE_NAME, GRADE_SUBJECTS, STAGES, SUBJECTS } from '../../../src/content/curriculum'
+import { GRADE_NAME, gradeSubjects, ODB, STAGES, subjectMeta, SUBJECTS, vocationalSubjects } from '../../../src/content/curriculum'
 import type { GradeId, SubjectId } from '../../../src/content/types'
 import { Inline } from '../../../src/ui/Inline'
 import { ApiError, api, get } from '../api'
@@ -73,7 +73,7 @@ export function Reports() {
       load()
     } catch (e) { toast((e as ApiError).message, 'bad') }
   }
-  const subjects = f.grade ? GRADE_SUBJECTS[f.grade] : (Object.keys(SUBJECTS) as SubjectId[])
+  const subjects = f.grade ? gradeSubjects(f.grade) : [...Object.keys(SUBJECTS), ...vocationalSubjects()]
 
   return (
     <div class="page-narrow">
@@ -95,14 +95,15 @@ export function Reports() {
         ) : <>
           <select class="q-select" value={f.grade ?? ''} aria-label="Ročník" onChange={(e) => {
             const grade = (e.currentTarget.value || null) as GradeId | null
-            refilter({ grade, subject: grade && f.subject && !GRADE_SUBJECTS[grade].includes(f.subject) ? null : f.subject })
+            refilter({ grade, subject: grade && f.subject && !gradeSubjects(grade).includes(f.subject) ? null : f.subject })
           }}>
             <option value="">Všechny ročníky</option>
             {STAGES.map((st) => <optgroup key={st.id} label={st.name}>{st.grades.map((g) => <option key={g} value={g}>{GRADE_NAME[g]}</option>)}</optgroup>)}
+            <option value={ODB}>{GRADE_NAME[ODB]}</option>
           </select>
           <select class="q-select" value={f.subject ?? ''} aria-label="Předmět" disabled={!f.grade} onChange={(e) => refilter({ subject: (e.currentTarget.value || null) as SubjectId | null })}>
             <option value="">Všechny předměty</option>
-            {subjects.map((x) => <option key={x} value={x}>{SUBJECTS[x].name}</option>)}
+            {subjects.map((x) => <option key={x} value={x}>{subjectMeta(x).name}</option>)}
           </select>
         </>}
       </div>
@@ -118,7 +119,7 @@ export function Reports() {
                     <h2><a href={href} onClick={nav(href)}>{r.emoji} {r.title}</a></h2>
                     <span class={`pill ${r.status === 'open' ? 'st-review' : r.status === 'fixed' ? 'st-published' : 'st-withdrawn'}`}>{REASON[r.reason] ?? r.reason}</span>
                   </div>
-                  <small class="fine">{GRADE_NAME[g as GradeId] ?? g} · {SUBJECTS[s as SubjectId]?.name ?? s}</small>
+                  <small class="fine">{GRADE_NAME[g as GradeId] ?? g} · {subjectMeta(s as SubjectId)?.name ?? s}</small>
                   <p class="rq-body">
                     <b>{r.target.kind === 'question' ? `Otázka ${r.target.index + 1}: ` : 'Vysvětlení '}</b>
                     {r.target.kind === 'question' ? <Inline text={r.target.text} /> : `„${r.target.text}“`}

@@ -1,5 +1,5 @@
 import { useEffect } from 'preact/hooks'
-import { GRADE_NAME, SUBJECTS } from './content/curriculum'
+import { GRADE_NAME, subjectMeta } from './content/curriculum'
 import type { Block, GradeId, SubjectId } from './content/types'
 
 // Page titles and descriptions, shared by the app (document.title) and the
@@ -8,21 +8,23 @@ import type { Block, GradeId, SubjectId } from './content/types'
 export const SITE_NAME = 'Šprtám'
 
 /** „5. třída“, „1. ročník SŠ“ */
-export const gradeLabel = (g: GradeId) => (g[0] === 's' ? `${GRADE_NAME[g]} SŠ` : GRADE_NAME[g])
+export const gradeLabel = (g: GradeId) => (g === 'odb' ? 'odborná škola' : g[0] === 's' ? `${GRADE_NAME[g]} SŠ` : GRADE_NAME[g])
 
-/** Accusative, for „pro 5. třídu“, „pro 1. ročník SŠ“. */
-export const gradeFor = (g: GradeId) => gradeLabel(g).replace('třída', 'třídu')
+/** Accusative, for „pro 5. třídu“, „pro 1. ročník SŠ“, „pro odborné školy“. */
+export const gradeFor = (g: GradeId) => (g === 'odb' ? 'odborné školy' : gradeLabel(g).replace('třída', 'třídu'))
 
 export const titles = {
   home: () => `${SITE_NAME} – opakování učiva ZŠ a SŠ`,
-  grade: (g: GradeId) => `${gradeLabel(g)} – všechny předměty`,
-  subject: (g: GradeId, s: SubjectId) => `${SUBJECTS[s].name} – ${gradeLabel(g)}`,
-  topic: (g: GradeId, s: SubjectId, title: string) => `${title} – ${SUBJECTS[s].name}, ${gradeLabel(g)}`,
+  grade: (g: GradeId) => (g === 'odb' ? 'Odborné předměty – střední odborné školy' : `${gradeLabel(g)} – všechny předměty`),
+  subject: (g: GradeId, s: SubjectId) => `${subjectMeta(s).name} – ${gradeLabel(g)}`,
+  topic: (g: GradeId, s: SubjectId, title: string) => `${title} – ${subjectMeta(s).name}, ${gradeLabel(g)}`,
   vocab: () => 'Anglická slovíčka A1–C1',
   vocabLevel: (level: string) => `Anglická slovíčka ${level}`,
   approach: (name: string) => `${name} – epochy a učivo`,
   approachYear: (name: string, year: string) => `${name}: ${year} – epochy`,
   approachBlock: (name: string, year: string, block: string) => `${block} – ${name}, ${year}`,
+  obory: () => 'Odborné školy – obory a jejich odborné předměty',
+  obor: (name: string) => `${name} – odborné předměty po ročnících`,
   exam: () => 'Přijímačky na SŠ – příprava z češtiny a matematiky',
   examPart: (part: string) => `${part} – příprava na přijímačky`,
   examArea: (area: string, part: string) => `${area} – příprava na přijímačky (${part})`,

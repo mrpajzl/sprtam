@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'preact/hooks'
-import { GRADE_NAME, SUBJECTS, type KeyColor } from '../content/curriculum'
+import { GRADE_NAME, type KeyColor, subjectMeta } from '../content/curriculum'
 import { approachById, listed, useApproach } from '../approach'
 import { loadSubject, loadTopic, topicKey } from '../content'
 import { loadIndex, refFor } from '../content/library'
@@ -40,7 +40,7 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
   useEffect(() => setEx(initial()), [key, own, !!topic])
   useTitle(topic && titles.topic(g, s, topic.title))
   if (subj === undefined) return <div class="page" />
-  if (!topic) return <div class="page"><Bar title={SUBJECTS[s].name} /><div class="empty">Téma nenalezeno.</div></div>
+  if (!topic) return <div class="page"><Bar title={subjectMeta(s).name} /><div class="empty">Téma nenalezeno.</div></div>
 
   const switchTo = (i: number) => {
     setEx(i)
@@ -54,7 +54,7 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
 
   return (
     <div class="page" style={subjectStyle(s)}>
-      <Bar title={`${topic.emoji} ${topic.title}`} crumbs={[{ href: `/g/${g}`, label: GRADE_NAME[g] }, { href: `/g/${g}/${s}`, label: SUBJECTS[s].name }]} right={<PinButton k={key} />} />
+      <Bar title={`${topic.emoji} ${topic.title}`} crumbs={[{ href: `/g/${g}`, label: GRADE_NAME[g] }, { href: `/g/${g}/${s}`, label: subjectMeta(s).name }]} right={<PinButton k={key} />} />
       <div class="seg" role="tablist">
         {shown.map((i) => <button key={i} role="tab" aria-selected={current === i} class={current === i ? 'on' : ''} onClick={() => switchTo(i)}>{i === own ? `${approachById(approach)?.emoji} ` : ''}{topic.explanations[i].title}</button>)}
       </div>

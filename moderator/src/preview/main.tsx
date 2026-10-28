@@ -2,7 +2,7 @@ import { render } from 'preact'
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks'
 import '../../../src/styles.css'
 import './preview.css'
-import { GRADE_NAME, SUBJECTS } from '../../../src/content/curriculum'
+import { GRADE_NAME, subjectMeta } from '../../../src/content/curriculum'
 import type { Question } from '../../../src/content/types'
 import { answerText, MODES, strictFor, type ModeId } from '../../../src/quiz/engine'
 import { QuestionView } from '../../../src/quiz/QuestionView'
@@ -72,7 +72,7 @@ function Bar({ st, title }: { st: PreviewState; title: string }) {
       <span class="icon-btn"><IBack /></span>
       <span class="spacer balance" />
       <div class="bar-title">
-        <nav class="crumbs"><a>{GRADE_NAME[st.grade]}</a><a>{SUBJECTS[st.subject].name}</a></nav>
+        <nav class="crumbs"><a>{GRADE_NAME[st.grade]}</a><a>{subjectMeta(st.subject).name}</a></nav>
         <h1>{title}</h1>
       </div>
       <span class="icon-btn pin"><IPin /></span>

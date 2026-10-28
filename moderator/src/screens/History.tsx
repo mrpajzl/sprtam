@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'preact/hooks'
-import { GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } from '../../../src/content/curriculum'
+import { GRADE_NAME, isGrade, subjectMeta } from '../../../src/content/curriculum'
+import { isSubjectOf } from '../../../src/content/docs'
 import type { GradeId, SubjectId, TopicFile } from '../../../src/content/types'
 import { ApiError, get, post } from '../api'
 import { TopicDiff } from '../diff/Diff'
@@ -35,7 +36,7 @@ export function History({ g, s, id, me }: { g: string; s: string; id: string; me
   useEffect(() => { get<{ topic: TopicFile }>(`/api/content/topic/${g}/${s}/${id}`).then((r) => setCurrent(r.topic), () => setCurrent(null)) }, [g, s, id, list])
   useEffect(() => { if (sel !== null) { setShown(null); get<VersionData>(`/api/versions/${sel}`).then(setShown, (e) => toast(e.message, 'bad')) } }, [sel])
 
-  const known = Object.hasOwn(GRADE_SUBJECTS, g) && (GRADE_SUBJECTS[g as GradeId] as string[]).includes(s)
+  const known = isGrade(g) && isSubjectOf(g, s)
   if (error || !known) return <div class="empty-state">{error || 'Téma nenalezeno.'} <a href="/" onClick={nav('/')}>Zpět na učivo</a></div>
   const back = `/ucivo/${g}/${s}/${id}`
 
@@ -56,7 +57,7 @@ export function History({ g, s, id, me }: { g: string; s: string; id: string; me
         <a class="v-up" href={back} onClick={nav(back)}><I.back />Zpět na téma</a>
         <div class="v-title">
           <span class="v-em">{current?.emoji ?? '📜'}</span>
-          <div><h1>Historie: {current?.title ?? id}</h1><small>{GRADE_NAME[g as GradeId]} · {SUBJECTS[s as SubjectId].name} · {list?.length ?? '…'} verzí</small></div>
+          <div><h1>Historie: {current?.title ?? id}</h1><small>{GRADE_NAME[g as GradeId]} · {subjectMeta(s as SubjectId).name} · {list?.length ?? '…'} verzí</small></div>
         </div>
       </header>
       <div class="h-body">

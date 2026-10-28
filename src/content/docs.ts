@@ -1,7 +1,7 @@
-import { ALL_GRADES, GRADE_SUBJECTS } from './curriculum'
+import { GRADE_SUBJECTS, isCoreSubject, isGrade, ODB } from './curriculum'
 import { approachFile, approachYearFile, LEVELS, subjectFile, topicFile, vocabFile } from './format'
 import type { S } from './schema'
-import type { GradeId, SubjectId } from './types'
+import type { GradeId, SubjectId, YearId } from './types'
 
 // Content is a set of documents (JSON values) with path-like keys – the same paths the files had in
 // content/ (without .json). The content database stores versions of them, releases point at versions,
@@ -9,6 +9,7 @@ import type { GradeId, SubjectId } from './types'
 //
 //   topics/<grade>/<subject>/<topic-id>   one topic                       TopicFile
 //   topics/<grade>/<subject>/_subject     order of the subject's topics   SubjectFile
+//   topics/odb/<subject>/…                odborné předměty: any id that is not a core subject; their _subject names them
 //   vocab/<level>                         a1 … c1                         VocabFile
 //   approaches/<id>/approach              a teaching approach             ApproachFile
 //   approaches/<id>/<grade>               its plan of one year            ApproachYearFile
@@ -20,20 +21,20 @@ export type DocRef =
   | { kind: 'subject'; grade: GradeId; subject: SubjectId }
   | { kind: 'vocab'; level: (typeof LEVELS)[number] }
   | { kind: 'approach'; approach: string }
-  | { kind: 'approach-year'; approach: string; grade: GradeId }
+  | { kind: 'approach-year'; approach: string; grade: YearId }
 
 export const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
 /** Ids that are routes of the app and so cannot be ids of teaching approaches (/waldorf). */
-export const RESERVED = ['g', 'p', 'hledat', 'mix', 'sdilet', 'slovicka', 'spojit', 'presun', 'widgety', 'nastaveni', 'prijimacky', 'slepa-mapa', 'o-aplikaci', 'prehled', 'chyby', 'dnes', 'api', 'assets', 'audio', 'healthz']
+export const RESERVED = ['g', 'p', 'obor', 'hledat', 'mix', 'sdilet', 'slovicka', 'spojit', 'presun', 'widgety', 'nastaveni', 'prijimacky', 'slepa-mapa', 'o-aplikaci', 'prehled', 'chyby', 'dnes', 'api', 'assets', 'audio', 'healthz']
 
-const isGrade = (g: string): g is GradeId => (ALL_GRADES as string[]).includes(g)
-const isSubject = (g: GradeId, s: string): s is SubjectId => (GRADE_SUBJECTS[g] as string[]).includes(s)
+/** A subject that may hold topics of grade g: the curriculum's, or for odb any id that is not a core subject. */
+export const isSubjectOf = (g: GradeId, s: string): s is SubjectId => (g === ODB ? ID.test(s) && s.length <= 40 && !isCoreSubject(s) : (GRADE_SUBJECTS[g] as string[]).includes(s))
 
 /** What a key names, or null for anything that is not a content document. */
 export function parseKey(key: string): DocRef | null {
   const p = key.split('/')
-  if (p[0] === 'topics' && p.length === 4 && isGrade(p[1]) && isSubject(p[1], p[2])) {
+  if (p[0] === 'topics' && p.length === 4 && isGrade(p[1]) && isSubjectOf(p[1], p[2])) {
     if (p[3] === '_subject') return { kind: 'subject', grade: p[1], subject: p[2] }
     return ID.test(p[3]) ? { kind: 'topic', grade: p[1], subject: p[2], id: p[3] } : null
   }
@@ -43,7 +44,7 @@ export function parseKey(key: string): DocRef | null {
   }
   if (p[0] === 'approaches' && p.length === 3 && ID.test(p[1]) && !RESERVED.includes(p[1])) {
     if (p[2] === 'approach') return { kind: 'approach', approach: p[1] }
-    return isGrade(p[2]) ? { kind: 'approach-year', approach: p[1], grade: p[2] } : null
+    return isGrade(p[2]) && p[2] !== ODB ? { kind: 'approach-year', approach: p[1], grade: p[2] as YearId } : null
   }
   return null
 }

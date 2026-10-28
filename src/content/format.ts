@@ -1,11 +1,13 @@
 import { s, type Infer, type ObjectS } from './schema'
 import { WIDGETS } from '../widgets'
+import { KEY_COLORS } from './curriculum'
 
 // The content format (version FORMAT). The only definition of what a content file may contain:
 // TypeScript types, the validator (scripts/check-content.ts) and the JSON Schemas in content/schema/
 // (npm run content:generate) all come from here. Rules for authors: docs/CONTENT.md.
 //
 //   content/topics/<grade>/<subject>/_subject.json   order of the topics   → SubjectFile
+//                                                    (grade odb: odborné předměty, the file also names the subject)
 //   content/topics/<grade>/<subject>/<topic-id>.json  one topic             → TopicFile
 //   content/vocab/<level>.json                        English vocabulary    → VocabFile
 //   content/approaches/<id>/approach.json             a teaching approach   → ApproachFile
@@ -133,7 +135,10 @@ export const topicFile = s.object({
 export const subjectFile = s.object({
   format: s.int({ min: FORMAT, max: FORMAT, description: `Verze formátu, teď ${FORMAT}.` }),
   topics: s.array(s.string({ pattern: '^[a-z0-9]+(-[a-z0-9]+)*$' }), { min: 1, description: 'Id témat v pořadí, v jakém se během roku učí. Každé má soubor <id>.json vedle.' }),
-}, { description: 'Pořadí témat jednoho předmětu v jednom ročníku.' })
+  name: s.optional(s.string({ description: 'Jen odborné předměty (topics/odb): název předmětu, např. "Technické kreslení".' })),
+  emoji: s.optional(s.string({ description: 'Jen odborné předměty: jedno emoji předmětu.' })),
+  color: s.optional(s.enum(KEY_COLORS, { description: 'Jen odborné předměty: barva klávesy předmětu.' })),
+}, { description: 'Pořadí témat jednoho předmětu v jednom ročníku. Odborný předmět (topics/odb/<id>) tu má i svůj název, emoji a barvu.' })
 
 export const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'] as const
 

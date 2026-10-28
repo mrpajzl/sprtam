@@ -1,5 +1,5 @@
 import { EXAM } from '../exam'
-import { GRADE_SUBJECTS } from './curriculum'
+import { GRADE_SUBJECTS, isVocationalEntry, ODB } from './curriculum'
 import { parseKey, RESERVED, SCHEMAS, subjectKey, vocabKey, type DocRef } from './docs'
 import { LEVELS } from './format'
 import { topicIssues } from './rules'
@@ -78,6 +78,16 @@ export function checkSnapshot(snap: Snapshot, opts: CheckOptions = {}): CheckIss
     const ids = (snap.get(key) as SubjectFile).topics
     if (new Set(ids).size !== ids.length) add(key, 'topics', 'a topic is listed twice', 'Téma je v seznamu dvakrát.')
     for (const id of ids) if (!snap.has(`topics/${ref.grade}/${ref.subject}/${id}`)) add(key, 'topics', `lists "${id}" but that topic does not exist`, `Seznam obsahuje téma „${id}“, které neexistuje.`)
+  }
+  // Odborné předměty name themselves; the curriculum's subjects are named in code.
+  for (const [key, ref] of refs) {
+    if (ref.kind !== 'subject' || !valid.has(key) || !deep(key)) continue
+    const f = snap.get(key) as SubjectFile
+    if (ref.grade === ODB) {
+      for (const k of ['name', 'emoji', 'color'] as const) if (!f[k]) add(key, k, `an odborný předmět needs its ${k}`, `Odborný předmět potřebuje ${k === 'name' ? 'název' : k === 'emoji' ? 'emoji' : 'barvu'}.`)
+      // The same rule the web server applies to the release (server/content.ts): what passes here is never refused there.
+      if (f.name && f.emoji && f.color && !isVocationalEntry(ref.subject, { name: f.name, emoji: f.emoji, c: f.color })) add(key, '', 'odborný předmět: name ≤ 80 characters, emoji ≤ 16', 'Název odborného předmětu smí mít nejvýš 80 znaků a emoji nejvýš 16.')
+    } else if (f.name !== undefined || f.emoji !== undefined || f.color !== undefined) add(key, '', 'name, emoji and color are only for odborné předměty (topics/odb)', 'Název, emoji a barvu mají jen odborné předměty.')
   }
   const listed = new Set<string>()
   for (const [key, ref] of refs) if (ref.kind === 'subject' && valid.has(key)) for (const id of (snap.get(key) as SubjectFile).topics) listed.add(`topics/${ref.grade}/${ref.subject}/${id}`)

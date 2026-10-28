@@ -54,6 +54,7 @@ src/
   vocab/                slovíčka: načítání, přehrávání výslovnosti (speak.ts)
   approach.ts           přístupy k výuce (waldorf): data a volba dítěte (localStorage)
   exam.ts               příprava na přijímačky (/prijimacky): oblasti testů a jejich témata
+  obory.ts              obory odborných škol (/obor): odborné a všeobecné předměty po ročnících (docs/OBORY.md)
   maps/                 Slepá mapa (/slepa-mapa): mapy a české názvy (places.ts), mapa s posunem a zoomem (MapView.tsx),
                         obrysy z Natural Earth v data/*.json (npx tsx scripts/maps-generate.ts)
   quiz/                 režimy, vyhodnocení odpovědí, generátory příkladů

@@ -7,7 +7,9 @@ import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { join, relative } from 'node:path'
 import { CONTENT, ROOT } from '../plugins/content'
 import { checkSnapshot } from '../src/content/check'
-import { parseKey, SCHEMA_PATHS, stripSchema } from '../src/content/docs'
+import { GRADE_SUBJECTS, ODB } from '../src/content/curriculum'
+import { ID, isSubjectOf, parseKey, RESERVED, SCHEMA_PATHS, stripSchema, subjectKey } from '../src/content/docs'
+import { OBORY, oborSubjects, yearGrade } from '../src/obory'
 import { BLOCK_EXAMPLES, QUESTION_EXAMPLES } from '../src/content/examples'
 import { block, question } from '../src/content/format'
 import { validate } from '../src/content/schema'
@@ -77,6 +79,27 @@ for (const w of Object.values(WIDGETS)) {
 
 for (const [k, b] of Object.entries(BLOCK_EXAMPLES)) for (const i of validate(block, b)) err(`src/content/examples.ts block ${k}`, `${i.path}: ${i.message}`)
 for (const [k, q] of Object.entries(QUESTION_EXAMPLES)) for (const i of validate(question, q)) err(`src/content/examples.ts question ${k}`, `${i.path}: ${i.message}`)
+
+// ——— Obory (src/obory.ts, code): a valid plan; odborné předměty it names but the content lacks only show as "připravujeme" ———
+
+const oborIds = new Set<string>()
+for (const o of OBORY) {
+  const where = `src/obory.ts ${o.id}`
+  if (!ID.test(o.id) || RESERVED.includes(o.id) || oborIds.has(o.id)) err(where, 'id must be kebab-case, unique and not a reserved route')
+  oborIds.add(o.id)
+  if (!/^\d{2}-\d{2}-[A-Z]\/\d{2}$/.test(o.code)) err(where, `code ${o.code} is not a kód oboru like 18-20-M/01`)
+  if (o.years.length < 1 || o.years.length > 4) err(where, 'an obor has 1–4 years (the app shows them as 1.–4. ročník SŠ)')
+  o.years.forEach((y, i) => {
+    for (const s of y.general) if (!(GRADE_SUBJECTS[yearGrade(i)] as string[]).includes(s)) err(where, `year ${i + 1}: ${s} is not a subject of ${yearGrade(i)}`)
+    for (const s of y.odb) if (!isSubjectOf(ODB, s)) err(where, `year ${i + 1}: "${s}" cannot be an odborný předmět (kebab-case, not a core subject)`)
+    if (new Set(y.odb).size !== y.odb.length || new Set(y.general).size !== y.general.length) err(where, `year ${i + 1}: a subject is listed twice`)
+  })
+}
+// Without a filter the whole content is here: say which odborné předměty the obory are still waiting for.
+if (!filter) {
+  const missing = oborSubjects().filter((s) => !snap.has(subjectKey(ODB, s)))
+  if (missing.length) console.log(`obory: ${missing.length} odborných předmětů zatím chybí (připravujeme): ${missing.join(', ')}`)
+}
 
 // ——— Generated files ———
 

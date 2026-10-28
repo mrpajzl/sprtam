@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'preact/hooks'
-import { GRADE_NAME, SUBJECTS } from '../../../src/content/curriculum'
+import { GRADE_NAME, subjectMeta } from '../../../src/content/curriculum'
 import { topicChanged } from '../../../src/content/diff'
 import type { GradeId, SubjectId, TopicFile } from '../../../src/content/types'
 import { ApiError, api, get, post } from '../api'
@@ -182,7 +182,7 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
         <header class="ed-top">
           <a class="icon" href={back} onClick={nav(back)} aria-label="Zpět na prohlížení" title="Zpět na prohlížení"><I.back /></a>
           <div class="ed-title">
-            <small>{GRADE_NAME[g]} · {SUBJECTS[s].name}{draft.kind === 'new' ? ' · nové téma' : ''}{!own ? ` · návrh: ${draft.author.name}` : ''}</small>
+            <small>{GRADE_NAME[g]} · {subjectMeta(s).name}{draft.kind === 'new' ? ' · nové téma' : ''}{!own ? ` · návrh: ${draft.author.name}` : ''}</small>
             <b>{topic.emoji} {topic.title || 'Bez názvu'}</b>
           </div>
           <span class={`pill st-${draft.status} wide-only`}>{status}</span>

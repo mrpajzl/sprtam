@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'preact/hooks'
-import { GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } from '../../../src/content/curriculum'
+import { GRADE_NAME, isGrade, subjectMeta } from '../../../src/content/curriculum'
+import { isSubjectOf } from '../../../src/content/docs'
 import type { GradeId, Question, SubjectId, TopicFile } from '../../../src/content/types'
 import { Inline } from '../../../src/ui/Inline'
 import { ApiError, get } from '../api'
@@ -34,7 +35,7 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
     if (me) get<{ open: number }>(`/api/reports/counts?topic=${encodeURIComponent(`${g}/${s}/${id}`)}`).then((c) => setReports(c.open), () => {})
   }, [g, s, id, me?.id])
 
-  const known = Object.hasOwn(GRADE_SUBJECTS, g) && (GRADE_SUBJECTS[g as GradeId] as string[]).includes(s)
+  const known = isGrade(g) && isSubjectOf(g, s)
   if (error || !known) return <div class="empty-state">{error || 'Téma nenalezeno.'} <a href="/" onClick={nav('/')}>Zpět na učivo</a></div>
   if (!topic) return <div class="boot" />
 
@@ -55,7 +56,7 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
   return (
     <div class="viewer">
       <header class="v-head">
-        <a class="v-up" href={here} onClick={nav(here)}><I.back />{SUBJECTS[subject].name} · {GRADE_NAME[grade]}</a>
+        <a class="v-up" href={here} onClick={nav(here)}><I.back />{subjectMeta(subject).name} · {GRADE_NAME[grade]}</a>
         <div class="v-title">
           <span class="v-em">{topic.emoji}</span>
           <div>

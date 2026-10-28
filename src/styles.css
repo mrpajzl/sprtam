@@ -634,6 +634,25 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .exam-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 2px 12px; }
 .exam-facts span { padding: 5px 11px; border-radius: 999px; background: var(--c); color: var(--on-c); font: 700 0.8rem/1.2 var(--mono); }
 
+/* Odborné školy (/obor, odborné předměty on the SŠ grade screens) */
+.obor-key { margin-top: 12px; }
+.obor-key > svg, .obor-row > svg, .obor-all > svg { width: 22px; height: 22px; color: var(--ink-3); flex: none; }
+.obor-key .skey .em { font-size: 1.3rem; background: none; width: auto; height: auto; }
+.page > .obor-key:first-of-type { margin: 0 0 18px; }
+.tiles + .obor-key { margin-top: 18px; }
+.obor-row .em { font-size: 1.5rem; }
+.obor-row.on { box-shadow: inset 0 0 0 2px var(--accent); }
+.obor-all { margin-top: 12px; }
+.obor-more { margin: 18px 2px 0; }
+.obor-year { margin-bottom: 8px; }
+.obor-general { margin: 10px 2px 0; line-height: 1.5; }
+.obor-general a, .obor-of a { color: inherit; font-weight: 750; }
+.obor-of { margin: -4px 2px 14px; }
+.tile .glyph-em, .skey .glyph-em { font-size: 1.9rem; line-height: 1; font-weight: 400; }
+.skey.s .glyph-em { font-size: 1rem; }
+.skey.m .glyph-em { font-size: 1.25rem; }
+.obor-soon { margin: 10px 2px 0; }
+
 /* Settings (/nastaveni) */
 .choice { min-height: 58px; }
 .choice.on { box-shadow: inset 0 0 0 2px var(--accent); }

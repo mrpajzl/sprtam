@@ -1,6 +1,6 @@
 import type { JSX } from 'preact'
-import { SUBJECTS, type KeyColor } from '../content/curriculum'
-import type { SubjectId } from '../content/types'
+import { isCoreSubject, type KeyColor, subjectMeta } from '../content/curriculum'
+import type { CoreSubjectId, SubjectId } from '../content/types'
 
 // Subject glyphs: one geometric family on a 24 grid, 2px strokes plus a few solid
 // shapes, drawn to sit on a coloured key (see <SubjectKey>).
@@ -9,7 +9,7 @@ const S = (children: JSX.Element) => () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{children}</svg>
 )
 
-export const GLYPHS: Record<SubjectId, () => JSX.Element> = {
+export const GLYPHS: Record<CoreSubjectId, () => JSX.Element> = {
   cestina: S(<><path d="M4.5 19.5l1.2-4.6L15.6 5a2 2 0 0 1 2.9 0l.5.5a2 2 0 0 1 0 2.9l-9.9 9.9z" /><path d="M14 6.6l3.4 3.4" /><path d="M13 19.5h6.5" /></>),
   literatura: S(<><path d="M3 5.5c3.2-1.3 6.2-1 9 1v13c-2.8-2-5.8-2.3-9-1z" /><path d="M21 5.5c-3.2-1.3-6.2-1-9 1v13c2.8-2 5.8-2.3 9-1z" /><path d="M6 9.5c1.3-.3 2.6-.2 3.6.4M6 13c1.3-.3 2.6-.2 3.6.4" /></>),
   matematika: S(<><path d="M7 3.8v6.4M3.8 7h6.4" /><path d="M14.6 4.6l4.8 4.8M19.4 4.6l-4.8 4.8" /><path d="M4 15.5h6M4 19h6" /><path d="M14 17.2h6" /><circle cx="17" cy="14" r="1" fill="currentColor" stroke="none" /><circle cx="17" cy="20.4" r="1" fill="currentColor" stroke="none" /></>),
@@ -30,10 +30,15 @@ export const GLYPHS: Record<SubjectId, () => JSX.Element> = {
 
 /** Inline style that switches the accent (buttons, meters, soft backgrounds) to a key colour. */
 export const keyStyle = (c: KeyColor) => ({ '--c': `var(--k-${c})`, '--on-c': `var(--k-${c}-on)` }) as Record<string, string>
-export const subjectStyle = (s: SubjectId) => keyStyle(SUBJECTS[s].c)
+export const subjectStyle = (s: SubjectId) => keyStyle(subjectMeta(s).c)
+
+/** The subject's glyph; odborné předměty (content, not code) show their emoji instead. */
+export function SubjectGlyph({ s }: { s: SubjectId }) {
+  if (isCoreSubject(s)) { const G = GLYPHS[s]; return <G /> }
+  return <b class="em glyph-em" aria-hidden="true">{subjectMeta(s).emoji ?? '📘'}</b>
+}
 
 /** A small coloured key with the subject glyph. */
 export function SubjectKey({ s, size = 'm' }: { s: SubjectId; size?: 's' | 'm' | 'l' }) {
-  const G = GLYPHS[s]
-  return <span class={`skey ${size}`} style={subjectStyle(s)}><G /></span>
+  return <span class={`skey ${size}`} style={subjectStyle(s)}><SubjectGlyph s={s} /></span>
 }

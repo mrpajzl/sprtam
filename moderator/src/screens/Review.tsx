@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'preact/hooks'
-import { GRADE_NAME, GRADE_SUBJECTS, STAGES, SUBJECTS } from '../../../src/content/curriculum'
+import { GRADE_NAME, gradeSubjects, ODB, STAGES, subjectMeta, SUBJECTS, vocationalSubjects } from '../../../src/content/curriculum'
 import type { GradeId, SubjectId } from '../../../src/content/types'
 import { api, ApiError, get } from '../api'
 import { DiffStats, TopicDiff } from '../diff/Diff'
@@ -59,7 +59,7 @@ function modeOf(anchor: string): PreviewMode {
   return { kind: 'topic', ex: Number(b?.[1] ?? 0), ...(b?.[2] !== undefined ? { block: Number(b[2]) } : {}) }
 }
 
-const where = (d: DraftView) => `${GRADE_NAME[d.grade as GradeId]} · ${SUBJECTS[d.subject as SubjectId]?.name}`
+const where = (d: DraftView) => `${GRADE_NAME[d.grade as GradeId]} · ${subjectMeta(d.subject as SubjectId)?.name}`
 
 export function ReviewQueue({ me }: { me: Me }) {
   const { tab, ...f } = queueNow()
@@ -76,7 +76,7 @@ export function ReviewQueue({ me }: { me: Me }) {
   const count = counts[fq]
   const filtered = !!(f.grade || f.subject)
   const refilter = (change: Partial<Filter>) => go(queueHref(tab, { ...f, ...change }), true)
-  const subjects = f.grade ? GRADE_SUBJECTS[f.grade] : (Object.keys(SUBJECTS) as SubjectId[])
+  const subjects = f.grade ? gradeSubjects(f.grade) : [...Object.keys(SUBJECTS), ...vocationalSubjects()]
 
   const Row = ({ d, act }: { d: QueueItem; act?: boolean }) => (
     <a class="draft" href={`/kontrola/${d.id}`} onClick={nav(`/kontrola/${d.id}`)}>
@@ -148,14 +148,15 @@ export function ReviewQueue({ me }: { me: Me }) {
         </nav>
         <select class="q-select" value={f.grade ?? ''} aria-label="Ročník" onChange={(e) => {
           const grade = (e.currentTarget.value || null) as GradeId | null
-          refilter({ grade, subject: grade && f.subject && !GRADE_SUBJECTS[grade].includes(f.subject) ? null : f.subject })
+          refilter({ grade, subject: grade && f.subject && !gradeSubjects(grade).includes(f.subject) ? null : f.subject })
         }}>
           <option value="">Všechny ročníky</option>
           {STAGES.map((st) => <optgroup key={st.id} label={st.name}>{st.grades.map((g) => <option key={g} value={g}>{GRADE_NAME[g]}</option>)}</optgroup>)}
+            <option value={ODB}>{GRADE_NAME[ODB]}</option>
         </select>
         <select class="q-select" value={f.subject ?? ''} aria-label="Předmět" onChange={(e) => refilter({ subject: (e.currentTarget.value || null) as SubjectId | null })}>
           <option value="">Všechny předměty</option>
-          {subjects.map((x) => <option key={x} value={x}>{SUBJECTS[x].name}</option>)}
+          {subjects.map((x) => <option key={x} value={x}>{subjectMeta(x).name}</option>)}
         </select>
         <label class="toggle"><input type="checkbox" checked={mine} onChange={(e) => refilter({ mine: e.currentTarget.checked })} />Pouze moje</label>
       </div>
@@ -240,7 +241,7 @@ export function Review({ id, me }: { id: string; me: Me }) {
           <span class="v-em">{data.topic.emoji}</span>
           <div>
             <h1>{data.topic.title}</h1>
-            <small>{where(d)} · {d.kind === 'new' ? 'nové téma' : d.rollbackOf ? 'návrat ke starší verzi' : 'úprava'} · {d.author.name}{d.submittedAt ? ` · odesláno ${ago(d.submittedAt)}` : ''} · <DiffStats a={data.base} b={data.topic} /></small>
+            <small>{where(d)} · {d.kind === 'new' ? (data.subject ? `nové téma, zakládá odborný předmět ${data.subject.emoji} ${data.subject.name}` : 'nové téma') : d.rollbackOf ? 'návrat ke starší verzi' : 'úprava'} · {d.author.name}{d.submittedAt ? ` · odesláno ${ago(d.submittedAt)}` : ''} · <DiffStats a={data.base} b={data.topic} /></small>
           </div>
         </div>
         <div class="v-actions">

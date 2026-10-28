@@ -1,4 +1,4 @@
-import { ALL_GRADES, GRADE_NAME, GRADE_SUBJECTS, SUBJECTS } from '../content/curriculum'
+import { GRADE_NAME, GRADES, gradeSubjects, subjectMeta } from '../content/curriculum'
 import { useIndex, type TopicRef } from '../content/library'
 import type { GradeId, SubjectId } from '../content/types'
 import { streakOf } from '../progress/recommend'
@@ -38,7 +38,7 @@ export function Overview() {
   // The chosen grade first, then every other grade with some practice.
   const listed = (all ?? []).filter((r) => !r.approach)
   const practised = new Set(listed.filter((r) => p.t[r.key]?.n).map((r) => r.g))
-  const grades = ALL_GRADES.filter((g) => g === p.g || practised.has(g)).sort((a, b) => (a === p.g ? -1 : b === p.g ? 1 : 0))
+  const grades = GRADES.filter((g) => g === p.g || practised.has(g)).sort((a, b) => (a === p.g ? -1 : b === p.g ? 1 : 0))
 
   return (
     <div class="page overview">
@@ -67,7 +67,7 @@ function Stat({ n, of, label }: { n: number; of?: number; label: string }) {
 }
 
 function GradeOverview({ g, p, refs }: { g: GradeId; p: Progress; refs: TopicRef[] }) {
-  const subjects = GRADE_SUBJECTS[g].filter((s) => refs.some((r) => r.s === s))
+  const subjects = gradeSubjects(g).filter((s) => refs.some((r) => r.s === s))
   return (
     <section class="sec">
       <h2 class="label">{GRADE_NAME[g]}</h2>
@@ -84,7 +84,7 @@ function SubjectRow({ g, s, b }: { g: GradeId; s: SubjectId; b: number[] }) {
   return (
     <Link class="row sub-row" style={subjectStyle(s)} href={`/g/${g}/${s}`}>
       <span class="txt">
-        <b>{SUBJECTS[s].name}</b>
+        <b>{subjectMeta(s).name}</b>
         <small>{done} z {total} témat{b[4] ? ` · ${b[4]}× ★★★` : ''}</small>
         <span class="star-bar" role="img" aria-label={`Tři hvězdy ${b[4]}, dvě ${b[3]}, jedna ${b[2]}, pod 40 % ${b[1]}, zatím ne ${b[0]}`}>
           {[4, 3, 2, 1].map((k) => b[k] > 0 && <i key={k} class={`b${k - 1}`} style={{ flexGrow: b[k] }} />)}

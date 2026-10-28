@@ -1,6 +1,7 @@
-import { GRADE_NAME, GRADE_SUBJECTS, STAGES, SUBJECTS } from '../src/content/curriculum'
+import { GRADE_NAME, GRADE_SUBJECTS, gradeSubjects, ODB, STAGES, subjectMeta } from '../src/content/curriculum'
+import { kindName, OBOR_PATH, oboryOf, readyObory, yearGrade } from '../src/obory'
 import type { ApproachMeta } from '../src/content/manifest'
-import type { ApproachYearFile, Block, GradeId, Subject, SubjectId, VocabFile, YearBlock } from '../src/content/types'
+import type { ApproachYearFile, Block, Subject, SubjectId, VocabFile, YearBlock, YearId } from '../src/content/types'
 import { ABOUT } from '../src/about'
 import { EXAM, partTopics } from '../src/exam'
 import { askable, MAPS, MAPS_INTRO, MAPS_PATH, modesOf, PARTS, place, ROUND } from '../src/maps'
@@ -11,6 +12,7 @@ import { WIDGETS } from '../src/widgets'
 // engines get content, titles and descriptions without running JS:
 //   /  /o-aplikaci  /g/<grade>  /g/<grade>/<subject>  /g/<grade>/<subject>/<topic>  /slovicka  /slovicka/<level>
 //   /<approach>  /<approach>/<grade>  /<approach>/<grade>/<epoch>  /prijimacky  /prijimacky/<subject>  /prijimacky/<subject>/<area>
+//   /obor  /obor/<id>  (odborné předměty themselves are /g/odb/<subject>/<topic>)
 //   /slepa-mapa  /slepa-mapa/<map>
 // plus the app.html shell for the remaining in-app routes, sitemap.xml and robots.txt. Rendered by the
 // server from the current content release (server/content.ts). The markup uses the app's own classes,
@@ -20,7 +22,7 @@ import { WIDGETS } from '../src/widgets'
 export interface SiteContent {
   subjects: Subject[]
   vocab: VocabFile[]
-  approaches: (ApproachMeta & { years: [GradeId, ApproachYearFile][] })[]
+  approaches: (ApproachMeta & { years: [YearId, ApproachYearFile][] })[]
 }
 
 const SITE = (process.env.SITE_URL ?? 'https://sprtam.cz').replace(/\/$/, '')
@@ -82,6 +84,7 @@ export function pages(site: SiteContent): Page[] {
   const vocab = site.vocab
 
   const home: [string, string] = [SITE_NAME, '/']
+  const obory = readyObory((s) => subjects.has(`${ODB}/${s}`))
   const out: Page[] = []
 
   out.push({
@@ -91,6 +94,7 @@ export function pages(site: SiteContent): Page[] {
     crumbs: [home],
     body: `<div class="page home"><header class="bar"><h1 class="brand">šprtám</h1></header>
 <section class="sec"><h2 class="label">Třída</h2><div class="pad">${STAGES.map((st) => `<div class="pad-group"><small>${STAGE_LABEL[st.id]}</small><div class="pad-keys">${st.grades.map((g) => `<a class="num-key" href="${esc(`/g/${g}`)}" aria-label="${esc(gradeLabel(g))}">${GRADE_NAME[g].split('.')[0]}</a>`).join('')}</div></div>`).join('')}</div></section>
+${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_PATH}"><span class="skey m"><b class="em">🛠️</b></span><span class="txt"><b>Odborná škola</b><small>IT, strojírenství, kosmetika a další obory</small></span></a>` : ''}
 <a class="row exam-key" style="${style('orange')}" href="/${EXAM.id}"><span class="skey m"><b class="em">${EXAM.emoji}</b></span><span class="txt"><b>${esc(EXAM.name)}</b><small>${esc(EXAM.hint)}</small></span></a>
 <a class="row vocab-key map-key" style="${style('teal')}" href="${MAPS_PATH}"><span class="skey m"><b class="em">🗺️</b></span><span class="txt"><b>Slepá mapa</b><small>kraje, Evropa, svět</small></span></a>
 <a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span></a>
@@ -107,32 +111,39 @@ export function pages(site: SiteContent): Page[] {
 <section class="about-join card"><h2>${esc(ABOUT.join.title)}</h2><p>${esc(ABOUT.join.lead)}</p><ul>${ABOUT.join.items.map((i) => `<li>${inline(i)}</li>`).join('')}</ul><a class="btn block" href="mailto:${esc(ABOUT.join.email)}">Napiš na ${esc(ABOUT.join.email)}</a></section></div>${tabbar(undefined)}`,
   })
 
-  for (const g of STAGES.flatMap((st) => st.grades)) {
+  // Subject tiles: core subjects get their glyph from the app; odborné předměty show their emoji.
+  const face = (s: SubjectId) => `<span class="tile-face">${subjectMeta(s).emoji ? `<b class="em glyph-em">${esc(subjectMeta(s).emoji!)}</b>` : ''}</span>`
+  const tile = (g: string, s: SubjectId) => `<a class="tile" style="${style(subjectMeta(s).c)}" href="${esc(`/g/${g}/${s}`)}">${face(s)}<b>${esc(subjectMeta(s).name)}</b></a>`
+  for (const g of [...STAGES.flatMap((st) => st.grades), ODB]) {
     const gPath = `/g/${g}`
-    const gCrumbs: [string, string][] = [home, [gradeLabel(g), gPath]]
-    const present = GRADE_SUBJECTS[g].filter((s) => subjects.has(`${g}/${s}`))
-    const gTab = tabbar('grade', [GRADE_NAME[g], gPath])
+    const odb = g === ODB
+    const gCrumbs: [string, string][] = odb ? [home, ['Odborné školy', OBOR_PATH], [GRADE_NAME[g], gPath]] : [home, [gradeLabel(g), gPath]]
+    const present = gradeSubjects(g).filter((s) => subjects.has(`${g}/${s}`))
+    // No odborné předměty yet: no page for them (the app shows "Připravujeme" there).
+    if (odb && !present.length) continue
+    // Odborné předměty belong to no grade: the app keeps the pupil's own grade tab there.
+    const gTab = odb ? tabbar(undefined) : tabbar('grade', [GRADE_NAME[g], gPath])
     out.push({
       path: gPath,
       title: titles.grade(g),
-      description: `Učivo pro ${gradeFor(g)}: ${present.map((s) => SUBJECTS[s].name).join(', ')}. Vysvětlení, kvízy a písemky na procvičení.`,
+      description: `Učivo pro ${gradeFor(g)}: ${present.map((s) => subjectMeta(s).name).join(', ')}. Vysvětlení, kvízy a písemky na procvičení.`,
       crumbs: gCrumbs,
-      body: `<div class="page">${bar(GRADE_NAME[g], '/')}<div class="tiles">${present.map((s) => `<a class="tile" style="${style(SUBJECTS[s].c)}" href="${esc(`${gPath}/${s}`)}"><span class="tile-face"></span><b>${esc(SUBJECTS[s].name)}</b></a>`).join('')}${GRADE_SUBJECTS[g].includes('anglictina') ? `<a class="tile" style="${style('purple')}" href="/slovicka"><span class="tile-face"><b class="aa">Aa</b></span><b>Slovíčka</b></a>` : ''}</div></div>${gTab}`,
+      body: `<div class="page">${bar(GRADE_NAME[g], odb ? OBOR_PATH : '/', odb ? [['Odborné školy', OBOR_PATH]] : [])}<div class="tiles">${present.map((s) => tile(g, s)).join('')}${!odb && GRADE_SUBJECTS[g].includes('anglictina') ? `<a class="tile" style="${style('purple')}" href="/slovicka"><span class="tile-face"><b class="aa">Aa</b></span><b>Slovíčka</b></a>` : ''}</div></div>${gTab}`,
     })
 
     for (const s of present as SubjectId[]) {
       const subj = subjects.get(`${g}/${s}`)!
       const sPath = `${gPath}/${s}`
-      const sCrumbs: [string, string][] = [...gCrumbs, [SUBJECTS[s].name, sPath]]
+      const sCrumbs: [string, string][] = [...gCrumbs, [subjectMeta(s).name, sPath]]
       // Approach-only topics (docs/PRISTUPY.md) have pages, but are listed only in their approach's plan.
       const listedTopics = subj.topics.filter((t) => !t.approach)
       const names = listedTopics.map((t) => t.title)
       out.push({
         path: sPath,
         title: titles.subject(g, s),
-        description: `${SUBJECTS[s].name} pro ${gradeFor(g)}: ${names.slice(0, 6).join(', ')}${names.length > 6 ? ' a další' : ''}. ${listedTopics.length} ${listedTopics.length <= 4 ? 'témata' : 'témat'} s vysvětlením a kvízy.`,
+        description: `${subjectMeta(s).name} pro ${gradeFor(g)}: ${names.slice(0, 6).join(', ')}${names.length > 6 ? ' a další' : ''}. ${listedTopics.length} ${listedTopics.length <= 4 ? 'témata' : 'témat'} s vysvětlením a kvízy.`,
         crumbs: sCrumbs,
-        body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(SUBJECTS[s].name, gPath, [[GRADE_NAME[g], gPath]])}<div class="list">${listedTopics.map((t, i) => `<a class="row" href="${esc(`${sPath}/${t.id}`)}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="em">${esc(t.emoji)}</span><b>${esc(t.title)}</b></a>`).join('')}</div></div>${gTab}`,
+        body: `<div class="page" style="${style(subjectMeta(s).c)}">${bar(subjectMeta(s).name, gPath, [[GRADE_NAME[g], gPath]])}${odb && oboryOf(s).length ? `<p class="obor-of muted">Učí se v oborech: ${oboryOf(s).map((o) => `<a href="${esc(`${OBOR_PATH}/${o.id}`)}">${esc(o.name)}</a>`).join(', ')}</p>` : ''}<div class="list">${listedTopics.map((t, i) => `<a class="row" href="${esc(`${sPath}/${t.id}`)}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="em">${esc(t.emoji)}</span><b>${esc(t.title)}</b></a>`).join('')}</div></div>${gTab}`,
         ld: { '@type': 'ItemList', itemListElement: listedTopics.map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${sPath}/${t.id}`, name: t.title })) },
       })
 
@@ -147,13 +158,13 @@ export function pages(site: SiteContent): Page[] {
         out.push({
           path: tPath,
           title: titles.topic(g, s, t.title),
-          description: summary(explanations[0].blocks) || `${t.title} – ${SUBJECTS[s].name}, ${gradeLabel(g)}.`,
+          description: summary(explanations[0].blocks) || `${t.title} – ${subjectMeta(s).name}, ${gradeLabel(g)}.`,
           crumbs: [...sCrumbs, [t.title, tPath]],
           type: 'article',
-          body: `<div class="page" style="${style(SUBJECTS[s].c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [SUBJECTS[s].name, sPath]])}${explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
+          body: `<div class="page" style="${style(subjectMeta(s).c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [subjectMeta(s).name, sPath]])}${explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
           ld: {
             '@type': 'LearningResource', name: t.title, inLanguage: 'cs', learningResourceType: 'Explanation', isAccessibleForFree: true,
-            educationalLevel: GRADE_NAME[g], about: SUBJECTS[s].name, url: `${SITE}${tPath}`,
+            educationalLevel: GRADE_NAME[g], about: subjectMeta(s).name, url: `${SITE}${tPath}`,
             teaches: key ? plain(key.text) : t.title,
           },
         })
@@ -216,7 +227,7 @@ export function pages(site: SiteContent): Page[] {
           description: plain(b.about.join(' ')).slice(0, 155),
           crumbs: [...yCrumbs, [b.title, bPath]],
           type: 'article',
-          body: `<div class="page" style="${green}">${bar(`${b.emoji} ${b.title}`, yPath, [[a.short, aPath], [y.title, yPath]])}<div class="blocks approach-about">${b.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>${refs.length ? `<h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(SUBJECTS[r.s].c)}" href="${esc(`/g/${r.k}`)}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(SUBJECTS[r.s].name)}</small></span></a>`).join('')}</div>` : '<p class="muted epoch-empty">K téhle epoše zatím v aplikaci nejsou témata k procvičení.</p>'}</div>${gTab}`,
+          body: `<div class="page" style="${green}">${bar(`${b.emoji} ${b.title}`, yPath, [[a.short, aPath], [y.title, yPath]])}<div class="blocks approach-about">${b.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>${refs.length ? `<h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(subjectMeta(r.s).c)}" href="${esc(`/g/${r.k}`)}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(subjectMeta(r.s).name)}</small></span></a>`).join('')}</div>` : '<p class="muted epoch-empty">K téhle epoše zatím v aplikaci nejsou témata k procvičení.</p>'}</div>${gTab}`,
         })
       }
     }
@@ -231,12 +242,12 @@ export function pages(site: SiteContent): Page[] {
     title: titles.exam(),
     description: plain(`${EXAM.about[0]} ${EXAM.about[1]}`).slice(0, 155).replace(/\s+\S*$/, '') + '…',
     crumbs: eCrumbs,
-    body: `<div class="page" style="${orange}">${bar(`${EXAM.emoji} ${EXAM.name}`, '/')}<div class="blocks approach-about">${EXAM.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div><h2 class="label">Testy</h2><div class="list">${EXAM.parts.map((pt) => `<a class="row rec exam-part" style="${style(SUBJECTS[pt.s].c)}" href="${esc(`${ePath}/${pt.s}`)}"><span class="txt"><b>${esc(pt.title)}</b><small>${pt.minutes} minut · ${pt.points} bodů</small></span></a>`).join('')}</div></div>${tabbar(undefined)}`,
+    body: `<div class="page" style="${orange}">${bar(`${EXAM.emoji} ${EXAM.name}`, '/')}<div class="blocks approach-about">${EXAM.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div><h2 class="label">Testy</h2><div class="list">${EXAM.parts.map((pt) => `<a class="row rec exam-part" style="${style(subjectMeta(pt.s).c)}" href="${esc(`${ePath}/${pt.s}`)}"><span class="txt"><b>${esc(pt.title)}</b><small>${pt.minutes} minut · ${pt.points} bodů</small></span></a>`).join('')}</div></div>${tabbar(undefined)}`,
   })
   for (const pt of EXAM.parts) {
     const pPath = `${ePath}/${pt.s}`
     const pCrumbs: [string, string][] = [...eCrumbs, [pt.title, pPath]]
-    const pStyle = style(SUBJECTS[pt.s].c)
+    const pStyle = style(subjectMeta(pt.s).c)
     out.push({
       path: pPath,
       title: titles.examPart(pt.title),
@@ -254,10 +265,40 @@ export function pages(site: SiteContent): Page[] {
         description: plain(a.about).slice(0, 155),
         crumbs: [...pCrumbs, [a.title, aPath]],
         type: 'article',
-        body: `<div class="page" style="${pStyle}">${bar(`${a.emoji} ${a.title}`, pPath, [[EXAM.name, ePath], [pt.title, pPath]])}<div class="blocks approach-about"><p>${inline(a.about)}</p></div><h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(SUBJECTS[r.s].c)}" href="${esc(`/g/${r.k}`)}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(SUBJECTS[r.s].name)}</small></span></a>`).join('')}</div></div>${tabbar(undefined)}`,
+        body: `<div class="page" style="${pStyle}">${bar(`${a.emoji} ${a.title}`, pPath, [[EXAM.name, ePath], [pt.title, pPath]])}<div class="blocks approach-about"><p>${inline(a.about)}</p></div><h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(subjectMeta(r.s).c)}" href="${esc(`/g/${r.k}`)}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(subjectMeta(r.s).name)}</small></span></a>`).join('')}</div></div>${tabbar(undefined)}`,
       })
     }
   }
+  // Odborné školy: /obor, /obor/<id> (markup as src/screens/Obor.tsx).
+  const ink = style('ink')
+  const oCrumbs: [string, string][] = [home, ['Odborné školy', OBOR_PATH]]
+  out.push({
+    path: OBOR_PATH,
+    title: titles.obory(),
+    description: `Odborné předměty středních odborných škol po ročnících: ${obory.map((o) => o.name).join(', ')}. Vysvětlení od základů, kvízy a písemky.`,
+    crumbs: oCrumbs,
+    body: `<div class="page" style="${ink}">${bar('🛠️ Odborné školy', '/')}<div class="blocks approach-about"><p>Vyber si svůj obor a ukážeme ti jeho odborné předměty ročník po ročníku. Všeobecné předměty (čeština, matematika, angličtina…) procvičíš s učivem gymnázia stejného ročníku.</p></div><h2 class="label">Obory</h2>${obory.length ? '' : '<div class="empty">Připravujeme.</div>'}<div class="list">${obory.map((o) => `<a class="row obor-row" href="${esc(`${OBOR_PATH}/${o.id}`)}"><span class="em">${esc(o.emoji)}</span><span class="txt"><b>${esc(o.name)}</b><small>${esc(`${o.code} · ${kindName(o)}`)}</small></span></a>`).join('')}</div>${[...subjects.keys()].some((k) => k.startsWith(`${ODB}/`)) ? `<a class="row obor-all" href="/g/${ODB}"><span class="txt"><b>Všechny odborné předměty</b><small>bez ohledu na obor</small></span></a>` : ''}</div>${tabbar(undefined)}`,
+    ld: { '@type': 'ItemList', itemListElement: obory.map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${OBOR_PATH}/${o.id}`, name: o.name })) },
+  })
+  for (const o of obory) {
+    const path = `${OBOR_PATH}/${o.id}`
+    const odbTiles = (list: string[]) => {
+      const ready = list.filter((s) => subjects.has(`${ODB}/${s}`))
+      return `${ready.length ? `<div class="tiles">${ready.map((s) => tile(ODB, s)).join('')}</div>` : ''}${ready.length < list.length ? `<p class="muted obor-soon">${ready.length ? 'Další odborné předměty připravujeme.' : 'Odborné předměty tohoto ročníku připravujeme.'}</p>` : ''}`
+    }
+    out.push({
+      path,
+      title: titles.obor(o.name),
+      description: `${o.name} (${o.code}): ${plain(o.about)}`.slice(0, 155).replace(/\s+\S*$/, '') + '…',
+      crumbs: [...oCrumbs, [o.name, path]],
+      body: `<div class="page" style="${ink}">${bar(`${o.emoji} ${o.name}`, OBOR_PATH, [['Odborné školy', OBOR_PATH]])}<p class="exam-facts"><span>${esc(o.code)}</span><span>${esc(kindName(o))}</span><span>${o.years.length} ročníky</span></p><div class="blocks approach-about"><p>${inline(o.about)}</p></div>${o.years.map((y, i) => {
+        const g = yearGrade(i)
+        const general = y.general.filter((s) => subjects.has(`${g}/${s}`))
+        return `<section class="obor-year"><h2 class="label">${esc(GRADE_NAME[g])}</h2>${odbTiles(y.odb)}${general.length ? `<p class="obor-general muted">Všeobecné: ${general.map((s) => `<a href="${esc(`/g/${g}/${s}`)}">${esc(subjectMeta(s).name)}</a>`).join(', ')}</p>` : ''}</section>`
+      }).join('')}</div>${tabbar(undefined)}`,
+    })
+  }
+
   // Slepá mapa: /slepa-mapa, /slepa-mapa/<map> (markup as src/screens/Maps.tsx; the map itself needs the app,
   // the page lists its places).
   const teal = style('teal')
