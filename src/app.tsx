@@ -2,6 +2,7 @@ import { useEffect, useState } from 'preact/hooks'
 import { ABOUT } from './about'
 import { approachById } from './approach'
 import { EXAM } from './exam'
+import { isMode, MAPS_PATH } from './maps'
 import { ALL_GRADES, GRADE_SUBJECTS } from './content/curriculum'
 import type { GradeId, SubjectId } from './content/types'
 import { decodeProgress, unpack } from './progress/code'
@@ -13,6 +14,7 @@ import { setTheme } from './theme'
 import { About } from './screens/About'
 import { ApproachScreen } from './screens/Approach'
 import { ExamScreen } from './screens/Exam'
+import { MapGame, MapsScreen } from './screens/Maps'
 import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
 import { Overview } from './screens/Overview'
@@ -61,6 +63,11 @@ export function App() {
     if (c === 'test' || d === 'test') return <ExamScreen part={b} area={c} test={d === 'test'} />
     return <><ExamScreen key={`${b}/${c}`} part={b} area={c} /><TabBar /></>
   }
+  if (`/${a}` === MAPS_PATH) {
+    // The game gets the whole screen: /slepa-mapa/<map>/<mode>
+    if (b && isMode(c)) return <MapGame map={b} mode={c} />
+    return <><MapsScreen key={b} map={b} /><TabBar /></>
+  }
   if (approachById(a)) {
     if (c && d === 'test') return <ApproachScreen id={a} g={b} block={c} test />
     const g = ALL_GRADES.includes(b as GradeId) ? (b as GradeId) : undefined
@@ -91,7 +98,7 @@ function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'dnes') return 'Dnešní opakování'
   if (a === 'o-aplikaci') return ABOUT.title
   if (a === 'widgety') return 'Galerie widgetů'
-  if (a === EXAM.id || approachById(a)) return null
+  if (a === EXAM.id || `/${a}` === MAPS_PATH || approachById(a)) return null
   if (a === 'slovicka') return b ? titles.vocabLevel(b) : titles.vocab()
   if (a === 'g' && ALL_GRADES.includes(b as GradeId)) {
     const g = b as GradeId

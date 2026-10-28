@@ -1,5 +1,6 @@
 import { GRADE_NAME, STAGES, SUBJECTS } from '../content/curriculum'
 import { EXAM } from '../exam'
+import { MAPS_PATH } from '../maps'
 import { useIndex, refFor, type TopicRef } from '../content/library'
 import { recommend, streakOf, type Why } from '../progress/recommend'
 import { answeredToday, goalOf, isDue, isMistake, pinnedKeys, stars, today, useProgress, type Progress } from '../progress/store'
@@ -80,6 +81,12 @@ export function Home() {
       <Link class="row exam-key" style={keyStyle('orange')} href={`/${EXAM.id}`}>
         <span class="skey m" style={keyStyle('orange')}><b class="em">{EXAM.emoji}</b></span>
         <span class="txt"><b>{EXAM.name}</b><small>{EXAM.hint}</small></span>
+        <IArrow />
+      </Link>
+
+      <Link class="row vocab-key map-key" style={keyStyle('teal')} href={MAPS_PATH}>
+        <span class="skey m" style={keyStyle('teal')}><b class="em">🗺️</b></span>
+        <span class="txt"><b>Slepá mapa</b><small>kraje, Evropa, svět</small></span>
         <IArrow />
       </Link>
 

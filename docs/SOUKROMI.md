@@ -11,6 +11,7 @@ Aplikace používá úložiště prohlížeče (`localStorage`). Data v něm vid
 | Klíč | Co obsahuje | Kód |
 |---|---|---|
 | `sprtam:progress` | Tvůj pokrok: u každého procvičeného tématu nejlepší výsledek, výsledek posledního kola, počet kol a den posledního procvičení, které z obou vysvětlení ti víc sedí; přihrádky slovíček (0–5); připnutá i odepnutá témata (s časem změny); posledních 120 dní, kdy jsi procvičoval (kvůli sérii dní); naposledy zvolený ročník; u každé zodpovězené otázky z učiva přihrádku (0–5), den poslední odpovědi a kolikrát se spletla (kvůli Sešitu chyb a Dnešnímu opakování, nejvýš 4 000 otázek); denní cíl a kolik odpovědí jsi dal dnes. | [`src/progress/store.ts`](../src/progress/store.ts) |
+| `sprtam:mapy` | Nejlepší výsledek (0–100 %) každé hry Slepé mapy, např. `evropa/najdi`. | [`src/maps/index.ts`](../src/maps/index.ts) |
 | `sprtam-theme` | `dark` nebo `light`, pokud sis přepnul vzhled. | [`src/theme.ts`](../src/theme.ts) |
 | `sprtam-approach` | `waldorf`, pokud sis zapnul waldorfskou školu. | [`src/approach.ts`](../src/approach.ts) |
 | `sprtam-heal` | Čas posledního automatického „uzdravení“ po nasazení nové verze (aby se stránka nepřenačítala dokola). | [`public/boot-check.js`](../public/boot-check.js) |

@@ -8,6 +8,7 @@ import { readFile, rm, stat } from 'node:fs/promises'
 import { extname, join, normalize } from 'node:path'
 import { HASH } from '../src/content/manifest'
 import { EXAM } from '../src/exam'
+import { isMode, mapById, MAPS_PATH } from '../src/maps'
 import { embed, encoded, file as contentFile, pageHtml, release, startContent } from './content'
 import { render, robots, sitemap } from './pages'
 import { parseReport } from './report'
@@ -37,6 +38,8 @@ function isAppRoute(path: string) {
   if (p[0] === 'g' && p.length === 4 && p[3] === '~test') return page(...p.slice(0, 3))
   if (p[0] === 'g' && p.length === 5 && MODES.includes(p[4])) return page(...p.slice(0, 4))
   if (p[0] === 'slovicka' && p.length === 3) return page(...p.slice(0, 2))
+  // A game of Slepá mapa: /slepa-mapa/evropa/najdi
+  if (p.length === 3 && `/${p[0]}` === MAPS_PATH) return !!mapById(p[1]) && isMode(p[2])
   // Practice test of one part of the entrance exam: /prijimacky/matematika/test
   if (p.length === 3 && p[0] === EXAM.id && p[2] === 'test') return page(...p.slice(0, 2))
   // Practice of one epoch of a teaching approach (/waldorf/z1/<epoch>/test) or one area of the entrance exam (/prijimacky/matematika/zlomky/test)

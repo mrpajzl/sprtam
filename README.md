@@ -12,6 +12,7 @@
 - **Dvě vysvětlení ke každému tématu** a 21 interaktivních pomůcek (číselná osa, zlomky, rovnice na vahách, hodiny…) – všechny v **[galerii](https://sprtam.cz/widgety)**.
 - **Šest režimů:** Rychlý kvíz, Opakování, Písemka se známkou, Zkoušení nahlas, Test z předmětu a Mix.
 - **Přijímačky na SŠ:** příprava na jednotnou přijímací zkoušku z češtiny a matematiky po oblastech a cvičné testy – **[sprtam.cz/prijimacky](https://sprtam.cz/prijimacky)**.
+- **Slepá mapa:** hra na hledání krajů Česka, států Evropy a světa a jejich hlavních měst – **[sprtam.cz/slepa-mapa](https://sprtam.cz/slepa-mapa)**.
 - **Anglická slovíčka A1–C1** s výslovností a opakováním podle Leitnerova systému.
 - **Waldorfská škola:** učivo po epochách podle waldorfského plánu, vysvětlení v duchu waldorfské pedagogiky a slovní hodnocení – **[sprtam.cz/waldorf](https://sprtam.cz/waldorf)**.
 - **Doporučení „Na řadě“:** co zopakovat, co ti nejde a na jakém základu z nižšího ročníku to stojí.
@@ -77,5 +78,6 @@ Struktura kódu, testy a nasazení: [Architektura](docs/ARCHITEKTURA.md). Jak p�
 
 - **Kód** je pod licencí **[MIT](LICENSE)**.
 - **Učivo** (výklady, otázky, slovíčka, plány přístupů) a výslovnost slovíček v `public/audio/` jsou pod licencí **[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.cs)**. Smíš je používat, upravovat a šířit, i komerčně, když uvedeš původ (*Učivo: [Šprtám](https://sprtam.cz), CC BY-SA 4.0*) a úpravy zveřejníš pod stejnou licencí. Celé učivo i s historií je v repozitáři **[mrpajzl/sprtam-content](https://github.com/mrpajzl/sprtam-content)**, aktuální vydání i v [API](docs/OBSAH.md#veřejné-api-obsahové-služby).
+- **Mapy** ve Slepé mapě jsou z [Natural Earth](https://www.naturalearthdata.com) (volné dílo), zjednodušené skriptem [`scripts/maps-generate.ts`](scripts/maps-generate.ts).
 
 Pravidla chování v projektu: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).

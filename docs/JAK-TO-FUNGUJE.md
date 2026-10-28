@@ -38,6 +38,20 @@ Příprava na jednotnou přijímací zkoušku po 9. třídě je na [sprtam.cz/pr
 
 Výklad a otázky jsou ty z běžných témat, pokrok je pořád jeden. Rozdělení do oblastí je v kódu ([`src/exam.ts`](../src/exam.ts)) a `check:content` i moderace hlídají, že všechna odkazovaná témata existují. Opravdová zadání z minulých let jsou na prijimacky.cermat.cz.
 
+## Slepá mapa
+
+Hra na [sprtam.cz/slepa-mapa](https://sprtam.cz/slepa-mapa) (na úvodní obrazovce „Slepá mapa“). Mapy: **Kraje Česka** (14 krajů a krajská města), **Evropa** (47 států včetně Ruska a Turecka) a **Svět** (195 států: členové OSN, Vatikán a Kosovo), který jde hrát i po světadílech (Afrika, Asie, Amerika, Austrálie a Oceánie).
+
+Na stránce mapy si ji nejdřív prohlédneš: klepnutím na místo uvidíš jeho název a hlavní město. Pod mapou je seznam všech míst. Pak si vybereš hru, buď na 10 otázek, nebo na celou mapu:
+
+- **Najdi na mapě**: ukaž stát (kraj) podle názvu;
+- **Hlavní města / Krajská města**: ukaž stát (kraj) podle jeho hlavního (krajského) města;
+- **Poznáš stát / kraj?**: na mapě je jedno místo vyznačené, vyber jeho název ze čtyř sousedních.
+
+Když klepneš vedle, hra ti řekne, kam jsi klepl („To je Německo“). Na každé místo máš tři pokusy: napoprvé je za celý bod, napodruhé za půl. Po třetí chybě ti hra místo ukáže. Na konci uvidíš hvězdičky a místa, která ti nešla, a můžeš si procvičit jen je. Nejlepší výsledek každé hry zůstává jen v zařízení (`sprtam:mapy`, viz [Soukromí](SOUKROMI.md)).
+
+Mapu posuneš tažením a přiblížíš dvěma prsty, kolečkem myši nebo tlačítky. Státy příliš malé na klepnutí (Vatikán, ostrovní státy) mají tečku a vezme je i klepnutí na moře hned vedle. Mapy jsou z Natural Earth (volné dílo) a stahují se až při otevření hry; offline fungují taky. Hlavní město chybí u států, kde by odpověď nebyla jednoznačná (Bolívie, Srí Lanka, Izrael, Nauru), a u Středočeského kraje, který sídlí v Praze.
+
 ## Režimy procvičování
 
 | Režim | Otázek | Jak to probíhá |

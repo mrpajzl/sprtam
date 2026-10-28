@@ -54,6 +54,8 @@ src/
   vocab/                slovíčka: načítání, přehrávání výslovnosti (speak.ts)
   approach.ts           přístupy k výuce (waldorf): data a volba dítěte (localStorage)
   exam.ts               příprava na přijímačky (/prijimacky): oblasti testů a jejich témata
+  maps/                 Slepá mapa (/slepa-mapa): mapy a české názvy (places.ts), mapa s posunem a zoomem (MapView.tsx),
+                        obrysy z Natural Earth v data/*.json (npx tsx scripts/maps-generate.ts)
   quiz/                 režimy, vyhodnocení odpovědí, generátory příkladů
   progress/
     store.ts            pokrok v localStorage, slučování
@@ -113,6 +115,8 @@ Nové vydání učiva (schválená změna v moderaci) je na sprtam.cz do 15 seku
 | `/sdilet` | Přenos pokroku |
 | `/nastaveni` | Nastavení: vzhled a škola (běžná, waldorfská) |
 | `/widgety`, `/widgety/<název>` | Galerie widgetů, bloků a otázek pro autory obsahu |
+| `/slepa-mapa`, `/slepa-mapa/evropa` | Slepá mapa: mapy, jedna mapa (prohlížení, seznam míst) |
+| `/slepa-mapa/evropa/najdi` | Hra (`najdi`, `mesta`, `poznej`; `?vse` = celá mapa) |
 | `/waldorf`, `/waldorf/z1`, `/waldorf/z1/<epocha>` | Přístup k výuce: popis a volba, plán ročníku, epocha s tématy |
 | `/waldorf/z1/<epocha>/test` | Procvičení všech témat epochy |
 | `/#/p/<kód>`, `/#/spojit/<kód>`, `/#/presun/<kód>` | Import pokroku, párování, přechod ze staré domény (za `#`, server je nevidí) |
@@ -217,6 +221,7 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/content-stub.ts` | náhrada veřejného API obsahové služby nad `content/` (pro testy serveru) |
 | `scripts/learning-test.ts` | pravidla opakování otázek, Sešitu chyb, denního cíle, série se zmrazeným dnem a slučování (`npx tsx`) |
 | `scripts/learning-flow.mjs` | totéž v prohlížeči: kvíz s chybou a nápovědou, Sešit chyb, Přehled, denní cíl, hlášení chyby (proti běžícímu serveru, `SHOTS=1` uloží snímky) |
+| `scripts/maps-test.mjs` | Slepá mapa v prohlížeči: celá kola všech her dotykem, špatné klepnutí, výsledek a rekord, prohlížení mapy, posun a zoom myší (proti vývojovému serveru, `SHOTS=1` uloží snímky) |
 | `scripts/report-test.mjs` | hlášení chyb přes server: kontrola, limity, přeposlání bez údajů o žákovi (spouští vlastní server a náhradu obsahové služby, napřed `npm run build`) |
 | `scripts/moderator-test.mjs` | moderace a obsahová služba: přihlášení klíčem, bezpečnostní pravidla, editor a náhled, kontrola a zveřejnění, historie a návraty, API tokeny, hlášení od žáků, zálohy (spouští vlastní server, napřed `npm run moderator:build`) |
 | `scripts/shots.mjs` | snímky obrazovek (přehled widgetů je v aplikaci na `/widgety`) |
