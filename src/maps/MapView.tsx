@@ -10,8 +10,10 @@ interface View { cx: number; cy: number; w: number }
 interface Size { W: number; H: number }
 
 const DOT = 4.5 // px, radius of a tiny state's dot
-const TINY = 5 // px, a state smaller than this on screen gets a dot
-const REACH = 12 // px, a tap this close to a small state picks it
+const TINY = 8 // px, a state smaller than this on screen gets a dot
+const HIT = 18 // px, radius of the smallest tap area: a circle around a small state (Monaco next to France)
+const REACH = 12 // px, a tap on the sea this close to any state of the game picks it
+const MAX_ZOOM = 60 // the whole map ÷ this = the closest view (Monaco fills a finger)
 const TAP_SIZE = 24 // px, a typical place should be at least this big when the map opens…
 const START_ZOOM = 2.2 // …zooming in at most this much
 
@@ -61,7 +63,7 @@ export function MapView({ data, ids, fit, marks, tag, focus, onPick, label }: {
     return { ...all, w: all.w / k }
   }
 
-  const limits = (sz: Size) => { const h = whole(sz); return { min: h.w / 18, max: h.w } }
+  const limits = (sz: Size) => { const h = whole(sz); return { min: h.w / MAX_ZOOM, max: h.w } }
   const clamp = (v: View, sz: Size): View => {
     const { min, max } = limits(sz)
     const w = Math.min(max, Math.max(min, v.w))
@@ -156,21 +158,27 @@ export function MapView({ data, ids, fit, marks, tag, focus, onPick, label }: {
     else start.current = null
   }
 
-  // What a tap means: the place under the finger; a tap on the sea next to a small state picks it.
+  // What a tap means. Every state of the game can be tapped at least within a circle of HIT around its middle,
+  // above its big neighbours (the nearest middle wins); a tap right on a small state stays there. Otherwise the place under the finger, and a tap on the sea
+  // next to a state picks that state.
   const pickAt = (e: PointerEvent): string | null => {
     const hit = document.elementFromPoint(e.clientX, e.clientY)?.closest('[data-id]')?.getAttribute('data-id') ?? null
     const { view: v, size: sz } = live.current
-    if ((hit && play.has(hit)) || !v || !sz) return hit
+    if (!v || !sz) return hit
     const s = sz.W / v.w, p = local(e)
     const x = v.cx - v.w / 2 + p.x / s, y = v.cy - (v.w * sz.H) / sz.W / 2 + p.y / s
-    let best = hit, bestD = REACH
+    let small: string | null = null, smallD = HIT, near: string | null = null, nearD = REACH
     for (const id of ids) {
       const a = byId.get(id)
       if (!a) continue
       const d = Math.hypot(Math.max(a.b[0] - x, 0, x - a.b[2]), Math.max(a.b[1] - y, 0, y - a.b[3])) * s
-      if (d < bestD) { best = id; bestD = d }
+      const mid = Math.hypot((a.b[0] + a.b[2]) / 2 - x, (a.b[1] + a.b[3]) / 2 - y) * s
+      if (Math.max(a.b[2] - a.b[0], a.b[3] - a.b[1]) * s < HIT * 2 && mid < smallD) { small = id; smallD = mid }
+      if (d < nearD) { near = id; nearD = d }
     }
-    return best
+    const tiny = (id: string) => { const a = byId.get(id)!; return Math.max(a.b[2] - a.b[0], a.b[3] - a.b[1]) * s < HIT * 2 }
+    if (small && !(hit && play.has(hit) && tiny(hit))) return small
+    return hit && play.has(hit) ? hit : near ?? hit
   }
 
   const zoomAt = (k: number, at?: { x: number; y: number }) => {

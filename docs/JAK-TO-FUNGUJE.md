@@ -50,7 +50,7 @@ Na stránce mapy si ji nejdřív prohlédneš: klepnutím na místo uvidíš jeh
 
 Když klepneš vedle, hra ti řekne, kam jsi klepl („To je Německo“). Na každé místo máš tři pokusy: napoprvé je za celý bod, napodruhé za půl. Po třetí chybě ti hra místo ukáže. Na konci uvidíš hvězdičky a místa, která ti nešla, a můžeš si procvičit jen je. Nejlepší výsledek každé hry zůstává jen v zařízení (`sprtam:mapy`, viz [Soukromí](SOUKROMI.md)).
 
-Mapu posuneš tažením a přiblížíš dvěma prsty, kolečkem myši nebo tlačítky. Státy příliš malé na klepnutí (Vatikán, ostrovní státy) mají tečku a vezme je i klepnutí na moře hned vedle. Mapy jsou z Natural Earth (volné dílo) a stahují se až při otevření hry; offline fungují taky. Hlavní město chybí u států, kde by odpověď nebyla jednoznačná (Bolívie, Srí Lanka, Izrael, Nauru), a u Středočeského kraje, který sídlí v Praze.
+Mapu posuneš tažením a přiblížíš (až 60×) dvěma prsty, kolečkem myši nebo tlačítky. Nejmenší státy (Vatikán, ostrovní státy) mají tečku. Každý malý stát má klikací oblast nejméně 36 px, i když leží uvnitř většího souseda, takže Monako nebo San Marino trefíš prstem i bez přiblížení. Mapy jsou z Natural Earth (volné dílo) a stahují se až při otevření hry; offline fungují taky. Hlavní město chybí u států, kde by odpověď nebyla jednoznačná (Bolívie, Srí Lanka, Izrael, Nauru), a u Středočeského kraje, který sídlí v Praze.
 
 ## Režimy procvičování
 

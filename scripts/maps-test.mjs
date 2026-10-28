@@ -123,6 +123,24 @@ check((await p.locator('.map-tag').textContent()) === 'Kraj Vysočina · Jihlava
 check((await p.locator('.map-place').count()) === 14, 'all 14 regions are listed')
 if (shots) await p.screenshot({ path: '/tmp/sprtam-maps-explore.png', fullPage: true })
 
+// Microstates on a phone: a tap on the dot of Monaco or San Marino picks it, not France or Italy around it.
+await p.goto(`${base}/slepa-mapa/evropa`)
+await p.waitForSelector('.map svg path')
+await p.waitForTimeout(400)
+const middle = (id) => p.evaluate((id) => { const r = document.querySelector(`.map [data-id="${id}"]`).getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 } }, id)
+for (const [id, name] of [['MCO', 'Monako · Monako'], ['SMR', 'San Marino · San Marino'], ['VAT', 'Vatikán · Vatikán']]) {
+  const m = await middle(id)
+  await p.touchscreen.tap(m.x + 6, m.y + 5) // a finger is never exact
+  check((await p.locator('.map-tag').textContent()) === name, `a tap next to ${name.split(' ·')[0]} picks it`)
+}
+at = await pointIn(p, 'FRA')
+await p.touchscreen.tap(at.x, at.y)
+check((await p.locator('.map-tag').textContent()) === 'Francie · Paříž', 'France itself is still tappable')
+const vw = async () => Number((await p.locator('.map > svg').getAttribute('viewBox')).split(' ')[2])
+const w0 = await vw()
+for (let i = 0; i < 9; i++) { await p.locator('.map-zoom button[aria-label="Přiblížit"]').click(); await p.waitForTimeout(30) }
+check(w0 / (await vw()) > 40, `the map zooms in far enough for Monaco (${Math.round(w0 / (await vw()))}×)`)
+
 // Whole rounds by touch.
 check(await play(p, 'kraje', 'najdi', { wrongFirst: true }), 'kraje/najdi: a round to the end')
 const result = await p.locator('.result .pct').textContent()
