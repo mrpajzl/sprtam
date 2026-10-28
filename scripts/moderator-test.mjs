@@ -443,6 +443,12 @@ try {
   check(mOdb.vocational?.testovaci?.name === meta.name && mOdb.vocational.testovaci.c === 'teal', 'the release names the new odborný předmět')
   check(list.map((t) => t.id).join() === order.join(), 'topics approved out of order keep the intended order')
   check((await admin.api('GET', '/api/content/index')).body.subjects['odb/testovaci']?.length === 2, 'the library lists the odborný předmět')
+  // A new batch for the existing předmět: none of its intended order is published yet, so `after` decides.
+  const more = (await admin.api('POST', '/api/drafts', { kind: 'new', grade: 'odb', subject: 'testovaci', after: 'odb-druhe', order: ['odb-treti', 'odb-ctvrte'], topic: { ...base, id: 'odb-treti' } })).body
+  await admin.api('POST', `/api/drafts/${more.draft.id}/submit`, {})
+  check(await pub(more) === 200, 'a reviewer approves a topic added to the předmět')
+  const list2 = await (await fetch(`${BASE}/api/public/v1/files/${(await manifest()).files['subject/odb/testovaci']}`)).json()
+  check(list2.map((t) => t.id).join() === [...order, 'odb-treti'].join(), 'a topic added later goes after its `after`, not to the start')
 
   check([admin, mod, teacher, eva].every((d) => !d.errors.length), 'no errors in the pages')
 } finally {

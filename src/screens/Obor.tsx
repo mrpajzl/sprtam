@@ -1,4 +1,4 @@
-import { GRADE_NAME, ODB, subjectMeta } from '../content/curriculum'
+import { GRADE_NAME, gradeSubjects, ODB, subjectMeta } from '../content/curriculum'
 import { hasSubject } from '../content'
 import { kindName, OBOR_PATH, readyObory, setObor, useObor, yearGrade, type Obor } from '../obory'
 import { Link } from '../router'
@@ -43,10 +43,10 @@ function OborList() {
           </Link>
         ))}
       </div>
-      <Link class="row obor-all" href={`/g/${ODB}`}>
+      {gradeSubjects(ODB).length > 0 && <Link class="row obor-all" href={`/g/${ODB}`}>
         <span class="txt"><b>Všechny odborné předměty</b><small>bez ohledu na obor</small></span>
         <IArrow />
-      </Link>
+      </Link>}
       <p class="muted obor-more">Další obory přibývají. Chybí ti ten tvůj? Napiš nám na <a href="mailto:info@sprtam.cz">info@sprtam.cz</a>.</p>
     </div>
   )

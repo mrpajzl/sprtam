@@ -119,6 +119,8 @@ ${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_P
     const odb = g === ODB
     const gCrumbs: [string, string][] = odb ? [home, ['Odborné školy', OBOR_PATH], [GRADE_NAME[g], gPath]] : [home, [gradeLabel(g), gPath]]
     const present = gradeSubjects(g).filter((s) => subjects.has(`${g}/${s}`))
+    // No odborné předměty yet: no page for them (the app shows "Připravujeme" there).
+    if (odb && !present.length) continue
     // Odborné předměty belong to no grade: the app keeps the pupil's own grade tab there.
     const gTab = odb ? tabbar(undefined) : tabbar('grade', [GRADE_NAME[g], gPath])
     out.push({
@@ -270,12 +272,12 @@ ${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_P
   // Odborné školy: /obor, /obor/<id> (markup as src/screens/Obor.tsx).
   const ink = style('ink')
   const oCrumbs: [string, string][] = [home, ['Odborné školy', OBOR_PATH]]
-  if (obory.length) out.push({
+  out.push({
     path: OBOR_PATH,
     title: titles.obory(),
     description: `Odborné předměty středních odborných škol po ročnících: ${obory.map((o) => o.name).join(', ')}. Vysvětlení od základů, kvízy a písemky.`,
     crumbs: oCrumbs,
-    body: `<div class="page" style="${ink}">${bar('🛠️ Odborné školy', '/')}<div class="blocks approach-about"><p>Vyber si svůj obor a ukážeme ti jeho odborné předměty ročník po ročníku. Všeobecné předměty (čeština, matematika, angličtina…) procvičíš s učivem gymnázia stejného ročníku.</p></div><h2 class="label">Obory</h2><div class="list">${obory.map((o) => `<a class="row obor-row" href="${esc(`${OBOR_PATH}/${o.id}`)}"><span class="em">${esc(o.emoji)}</span><span class="txt"><b>${esc(o.name)}</b><small>${esc(`${o.code} · ${kindName(o)}`)}</small></span></a>`).join('')}</div><a class="row obor-all" href="/g/${ODB}"><span class="txt"><b>Všechny odborné předměty</b><small>bez ohledu na obor</small></span></a></div>${tabbar(undefined)}`,
+    body: `<div class="page" style="${ink}">${bar('🛠️ Odborné školy', '/')}<div class="blocks approach-about"><p>Vyber si svůj obor a ukážeme ti jeho odborné předměty ročník po ročníku. Všeobecné předměty (čeština, matematika, angličtina…) procvičíš s učivem gymnázia stejného ročníku.</p></div><h2 class="label">Obory</h2>${obory.length ? '' : '<div class="empty">Připravujeme.</div>'}<div class="list">${obory.map((o) => `<a class="row obor-row" href="${esc(`${OBOR_PATH}/${o.id}`)}"><span class="em">${esc(o.emoji)}</span><span class="txt"><b>${esc(o.name)}</b><small>${esc(`${o.code} · ${kindName(o)}`)}</small></span></a>`).join('')}</div>${[...subjects.keys()].some((k) => k.startsWith(`${ODB}/`)) ? `<a class="row obor-all" href="/g/${ODB}"><span class="txt"><b>Všechny odborné předměty</b><small>bez ohledu na obor</small></span></a>` : ''}</div>${tabbar(undefined)}`,
     ld: { '@type': 'ItemList', itemListElement: obory.map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${OBOR_PATH}/${o.id}`, name: o.name })) },
   })
   for (const o of obory) {

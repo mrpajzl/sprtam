@@ -132,7 +132,9 @@ function siteOf(m: Manifest, read: (hash: string) => unknown): SiteContent {
 /** Builds the in-memory release from files already in `files`. */
 function build(m: Manifest): Release {
   const read = (h: string) => { const e = files.get(h); if (!e) throw new Error(`file ${h} missing`); return JSON.parse(e.body.toString('utf8')) }
-  const all = pages(siteOf(m, read))
+  let all: Page[]
+  // siteOf names the release's odborné předměty for the pages; a release that fails leaves the live one's names.
+  try { all = pages(siteOf(m, read)) } catch (e) { setVocational(current?.manifest.vocational); throw e }
   return { manifest: m, json: JSON.stringify(m), pages: new Map(all.map((p) => [p.path, p])), html: new Map() }
 }
 

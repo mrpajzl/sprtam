@@ -1,5 +1,5 @@
 import { EXAM } from '../exam'
-import { GRADE_SUBJECTS, ODB } from './curriculum'
+import { GRADE_SUBJECTS, isVocationalEntry, ODB } from './curriculum'
 import { parseKey, RESERVED, SCHEMAS, subjectKey, vocabKey, type DocRef } from './docs'
 import { LEVELS } from './format'
 import { topicIssues } from './rules'
@@ -85,6 +85,8 @@ export function checkSnapshot(snap: Snapshot, opts: CheckOptions = {}): CheckIss
     const f = snap.get(key) as SubjectFile
     if (ref.grade === ODB) {
       for (const k of ['name', 'emoji', 'color'] as const) if (!f[k]) add(key, k, `an odborný předmět needs its ${k}`, `Odborný předmět potřebuje ${k === 'name' ? 'název' : k === 'emoji' ? 'emoji' : 'barvu'}.`)
+      // The same rule the web server applies to the release (server/content.ts): what passes here is never refused there.
+      if (f.name && f.emoji && f.color && !isVocationalEntry(ref.subject, { name: f.name, emoji: f.emoji, c: f.color })) add(key, '', 'odborný předmět: name ≤ 80 characters, emoji ≤ 16', 'Název odborného předmětu smí mít nejvýš 80 znaků a emoji nejvýš 16.')
     } else if (f.name !== undefined || f.emoji !== undefined || f.color !== undefined) add(key, '', 'name, emoji and color are only for odborné předměty (topics/odb)', 'Název, emoji a barvu mají jen odborné předměty.')
   }
   const listed = new Set<string>()

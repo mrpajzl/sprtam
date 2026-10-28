@@ -325,7 +325,7 @@ function insertTopic(list: SubjectFile, id: string, after: string | null | undef
   const topics = [...list.topics]
   const k = order?.indexOf(id) ?? -1
   const before = k >= 0 ? order!.slice(0, k).reverse().find((x) => topics.includes(x)) : undefined
-  const at = k >= 0 ? (before ? topics.indexOf(before) + 1 : 0)
+  const at = before ? topics.indexOf(before) + 1
     : after === null ? 0 : after !== undefined && topics.includes(after) ? topics.indexOf(after) + 1 : topics.length
   topics.splice(at, 0, id)
   return { ...list, topics }
