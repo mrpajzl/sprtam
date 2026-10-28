@@ -1,0 +1,25 @@
+name: Chyba v učivu
+description: Špatná odpověď, chyba ve výkladu, překlep nebo nesrozumitelné vysvětlení.
+labels: [učivo]
+body:
+  - type: input
+    id: odkaz
+    attributes:
+      label: Odkaz na téma
+      description: Zkopíruj adresu z prohlížeče, třeba https://sprtam.cz/g/z6/matematika/zlomky
+    validations:
+      required: true
+  - type: textarea
+    id: co
+    attributes:
+      label: Co je špatně
+      description: Znění otázky nebo část výkladu, které se to týká.
+    validations:
+      required: true
+  - type: textarea
+    id: spravne
+    attributes:
+      label: Jak by to mělo být správně
+      description: Případně odkud to víš (učebnice, RVP…).
+    validations:
+      required: true

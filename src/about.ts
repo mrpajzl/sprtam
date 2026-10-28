@@ -21,6 +21,7 @@ export const ABOUT = {
         'Nikde se nepřihlašuješ a nic o sobě nevyplňuješ.',
         'Pokrok je jen v tomhle zařízení. Na jiné ho přeneseš přes QR kód, napřímo a šifrovaně.',
         'Nesledujeme tě. Žádné cookies, reklamy, analytika ani anonymní statistiky. Aplikace o tobě nikam nic neposílá.',
+        'Zdrojový kód je veřejný, takže nám to nemusíš věřit. Můžeš si to ověřit.',
       ],
     },
     {
@@ -32,6 +33,15 @@ export const ABOUT = {
       ],
     },
   ],
+  // Open source: the repository and its issue tracker (README.md, CONTRIBUTING.md).
+  code: {
+    title: 'Otevřený kód',
+    repo: 'https://github.com/mrpajzl/sprtam',
+    links: [
+      { label: 'Zdrojový kód', hint: 'GitHub · licence MIT', path: '' },
+      { label: 'Nahlásit chybu nebo nápad', hint: 'GitHub Issues', path: '/issues/new/choose' },
+    ],
+  },
   join: {
     title: 'Zapoj se',
     lead: 'Pomoz nám, ať je učivo správně a srozumitelně.',

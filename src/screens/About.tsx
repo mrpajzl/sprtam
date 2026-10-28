@@ -1,5 +1,6 @@
 import { ABOUT } from '../about'
 import { Bar } from '../ui/Bar'
+import { IArrow } from '../ui/icons'
 import { Inline } from '../ui/Inline'
 import { Mascot } from '../ui/Mascot'
 
@@ -16,6 +17,16 @@ export function About() {
           <ul class="about-list">{s.items.map((x) => <li key={x}><Inline text={x} /></li>)}</ul>
         </section>
       ))}
+      <section>
+        <h2 class="label next-label">{ABOUT.code.title}</h2>
+        <div class="list">
+          {ABOUT.code.links.map((l) => (
+            <a key={l.path} class="row" href={ABOUT.code.repo + l.path} rel="noopener">
+              <span class="txt"><b>{l.label}</b><small>{l.hint}</small></span><IArrow />
+            </a>
+          ))}
+        </div>
+      </section>
       <section class="about-join card">
         <h2>{ABOUT.join.title}</h2>
         <p>{ABOUT.join.lead}</p>

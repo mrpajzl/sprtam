@@ -1,3 +1,4 @@
+import { ABOUT } from '../about'
 import { APPROACHES, setApproach, useApproach } from '../approach'
 import { DEFAULT_GOAL, GOALS, goalOf, setGoal, useProgress } from '../progress/store'
 import { Link } from '../router'
@@ -61,6 +62,9 @@ export function Settings() {
         <Link class="row" href="/o-aplikaci">
           <span class="txt"><b>O aplikaci</b><small>jak funguje a co o tobě (ne)ví</small></span><IArrow />
         </Link>
+        <a class="row" href={ABOUT.code.repo} rel="noopener">
+          <span class="txt"><b>Zdrojový kód</b><small>GitHub · licence MIT</small></span><IArrow />
+        </a>
       </div>
     </div>
   )
