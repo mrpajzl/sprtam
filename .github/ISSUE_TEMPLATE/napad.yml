@@ -1,0 +1,15 @@
+name: Nápad
+description: Co by Šprtámu chybělo, nebo co by šlo udělat líp.
+labels: [nápad]
+body:
+  - type: textarea
+    id: co
+    attributes:
+      label: Co by sis přál
+    validations:
+      required: true
+  - type: textarea
+    id: proc
+    attributes:
+      label: Proč a komu to pomůže
+      description: Žákům, rodičům, učitelům? V jaké situaci?

@@ -1,0 +1,30 @@
+name: Chyba v aplikaci
+description: Něco nefunguje, jak má.
+labels: [chyba]
+body:
+  - type: textarea
+    id: co
+    attributes:
+      label: Co se stalo
+      description: A co jsi čekal, že se stane.
+    validations:
+      required: true
+  - type: textarea
+    id: kroky
+    attributes:
+      label: Jak to zopakovat
+      placeholder: |
+        1. Otevři …
+        2. Klikni na …
+    validations:
+      required: true
+  - type: input
+    id: zarizeni
+    attributes:
+      label: Zařízení a prohlížeč
+      placeholder: iPhone 13, Safari / Windows, Chrome
+  - type: textarea
+    id: snimek
+    attributes:
+      label: Snímek obrazovky
+      description: Pokud pomůže. Nevkládej na něj osobní údaje.

@@ -54,7 +54,9 @@ Podrobně: **[Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md)**
 
 ## Našli jste chybu?
 
-Ať už jde o chybu v učivu, nebo v aplikaci, založte prosím **[issue](https://github.com/mrpajzl/sprtam/issues/new)**. U chyby v učivu pomůže odkaz na téma, znění otázky a jak by to mělo být správně.
+Ať už jde o chybu v učivu, nebo v aplikaci, založte prosím **[issue](https://github.com/mrpajzl/sprtam/issues/new/choose)**. U chyby v učivu pomůže odkaz na téma, znění otázky a jak by to mělo být správně. Chybu v otázce nahlásíte i přímo v aplikaci.
+
+Chcete pomoct s kódem nebo s učivem? Postup je v **[CONTRIBUTING.md](CONTRIBUTING.md)**. Bezpečnostní chyby hlaste soukromě podle **[SECURITY.md](SECURITY.md)**.
 
 ## Vývoj
 
@@ -70,3 +72,7 @@ npm run build            # kontrola typů + produkční build aplikace (dist/) a
 
 Učivo jsou JSON dokumenty v obsahové službě (moderace) a aplikace je čte za běhu: [Obsah a jeho API](docs/OBSAH.md). Widgety jsou v `src/widgets/`, každý ve vlastním souboru.
 Struktura kódu, testy a nasazení: [Architektura](docs/ARCHITEKTURA.md). Jak přidat učivo nebo widget: [CONTENT.md](docs/CONTENT.md).
+
+## Licence
+
+Kód je pod licencí **[MIT](LICENSE)**. Pravidla chování v projektu: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
