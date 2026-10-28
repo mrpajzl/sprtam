@@ -25,7 +25,7 @@ export type DocRef =
 export const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
 /** Ids that are routes of the app and so cannot be ids of teaching approaches (/waldorf). */
-export const RESERVED = ['g', 'p', 'hledat', 'mix', 'sdilet', 'slovicka', 'spojit', 'presun', 'widgety', 'nastaveni', 'api', 'assets', 'audio', 'healthz']
+export const RESERVED = ['g', 'p', 'hledat', 'mix', 'sdilet', 'slovicka', 'spojit', 'presun', 'widgety', 'nastaveni', 'prijimacky', 'o-aplikaci', 'prehled', 'chyby', 'dnes', 'api', 'assets', 'audio', 'healthz']
 
 const isGrade = (g: string): g is GradeId => (ALL_GRADES as string[]).includes(g)
 const isSubject = (g: GradeId, s: string): s is SubjectId => (GRADE_SUBJECTS[g] as string[]).includes(s)

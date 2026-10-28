@@ -2,13 +2,14 @@ import { GRADE_NAME, GRADE_SUBJECTS, STAGES, SUBJECTS } from '../src/content/cur
 import type { ApproachMeta } from '../src/content/manifest'
 import type { ApproachYearFile, Block, GradeId, Subject, SubjectId, VocabFile, YearBlock } from '../src/content/types'
 import { ABOUT } from '../src/about'
+import { EXAM, partTopics } from '../src/exam'
 import { fullTitle, gradeFor, gradeLabel, plain, SITE_NAME, summary, titles } from '../src/seo'
 import { WIDGETS } from '../src/widgets'
 
 // A real HTML page for every public route, so links are shareable with proper previews and search
 // engines get content, titles and descriptions without running JS:
 //   /  /o-aplikaci  /g/<grade>  /g/<grade>/<subject>  /g/<grade>/<subject>/<topic>  /slovicka  /slovicka/<level>
-//   /<approach>  /<approach>/<grade>  /<approach>/<grade>/<epoch>
+//   /<approach>  /<approach>/<grade>  /<approach>/<grade>/<epoch>  /prijimacky  /prijimacky/<subject>  /prijimacky/<subject>/<area>
 // plus the app.html shell for the remaining in-app routes, sitemap.xml and robots.txt. Rendered by the
 // server from the current content release (server/content.ts). The markup uses the app's own classes,
 // so it looks like the screen the app then renders over it.
@@ -87,6 +88,7 @@ export function pages(site: SiteContent): Page[] {
     crumbs: [home],
     body: `<div class="page home"><header class="bar"><h1 class="brand">šprtám</h1></header>
 <section class="sec"><h2 class="label">Třída</h2><div class="pad">${STAGES.map((st) => `<div class="pad-group"><small>${STAGE_LABEL[st.id]}</small><div class="pad-keys">${st.grades.map((g) => `<a class="num-key" href="${esc(`/g/${g}`)}" aria-label="${esc(gradeLabel(g))}">${GRADE_NAME[g].split('.')[0]}</a>`).join('')}</div></div>`).join('')}</div></section>
+<a class="row exam-key" style="${style('orange')}" href="/${EXAM.id}"><span class="skey m"><b class="em">${EXAM.emoji}</b></span><span class="txt"><b>${esc(EXAM.name)}</b><small>${esc(EXAM.hint)}</small></span></a>
 <a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span></a>
 <a class="row about-key" style="${style('ink')}" href="/o-aplikaci"><span class="skey m"><b>?</b></span><span class="txt"><b>Co je Šprtám?</b><small>jak funguje a co o tobě (ne)ví</small></span></a></div>${tabbar('home')}`,
   })
@@ -212,6 +214,43 @@ export function pages(site: SiteContent): Page[] {
           body: `<div class="page" style="${green}">${bar(`${b.emoji} ${b.title}`, yPath, [[a.short, aPath], [y.title, yPath]])}<div class="blocks approach-about">${b.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div>${refs.length ? `<h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(SUBJECTS[r.s].c)}" href="${esc(`/g/${r.k}`)}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(SUBJECTS[r.s].name)}</small></span></a>`).join('')}</div>` : '<p class="muted epoch-empty">K téhle epoše zatím v aplikaci nejsou témata k procvičení.</p>'}</div>${gTab}`,
         })
       }
+    }
+  }
+
+  // Příprava na přijímačky: /prijimacky, /prijimacky/<subject>, /prijimacky/<subject>/<area> (markup as src/screens/Exam.tsx).
+  const ePath = `/${EXAM.id}`
+  const eCrumbs: [string, string][] = [home, [EXAM.name, ePath]]
+  const orange = style('orange')
+  out.push({
+    path: ePath,
+    title: titles.exam(),
+    description: plain(`${EXAM.about[0]} ${EXAM.about[1]}`).slice(0, 155).replace(/\s+\S*$/, '') + '…',
+    crumbs: eCrumbs,
+    body: `<div class="page" style="${orange}">${bar(`${EXAM.emoji} ${EXAM.name}`, '/')}<div class="blocks approach-about">${EXAM.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div><h2 class="label">Testy</h2><div class="list">${EXAM.parts.map((pt) => `<a class="row rec exam-part" style="${style(SUBJECTS[pt.s].c)}" href="${esc(`${ePath}/${pt.s}`)}"><span class="txt"><b>${esc(pt.title)}</b><small>${pt.minutes} minut · ${pt.points} bodů</small></span></a>`).join('')}</div></div>${tabbar(undefined)}`,
+  })
+  for (const pt of EXAM.parts) {
+    const pPath = `${ePath}/${pt.s}`
+    const pCrumbs: [string, string][] = [...eCrumbs, [pt.title, pPath]]
+    const pStyle = style(SUBJECTS[pt.s].c)
+    out.push({
+      path: pPath,
+      title: titles.examPart(pt.title),
+      description: `${pt.title} u jednotné přijímací zkoušky (${pt.minutes} minut, ${pt.points} bodů): ${pt.areas.map((a) => a.title.toLowerCase()).join(', ')}. ${partTopics(pt).length} témat k procvičení a cvičný test.`,
+      crumbs: pCrumbs,
+      body: `<div class="page" style="${pStyle}">${bar(pt.title, ePath, [[EXAM.name, ePath]])}<p class="exam-facts"><span>${pt.minutes} minut</span><span>${pt.points} bodů</span></p><div class="blocks approach-about">${pt.about.map((x) => `<p>${inline(x)}</p>`).join('')}</div><h2 class="label">Oblasti</h2><div class="list">${pt.areas.map((a) => `<a class="row epoch" href="${esc(`${pPath}/${a.id}`)}"><span class="em">${esc(a.emoji)}</span><b>${esc(a.title)}</b></a>`).join('')}</div></div>${tabbar(undefined)}`,
+      ld: { '@type': 'ItemList', itemListElement: pt.areas.map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${pPath}/${a.id}`, name: a.title })) },
+    })
+    for (const a of pt.areas) {
+      const aPath = `${pPath}/${a.id}`
+      const refs = a.topics.flatMap((k) => (topicRef.has(k) ? [{ k, ...topicRef.get(k)! }] : []))
+      out.push({
+        path: aPath,
+        title: titles.examArea(a.title, pt.title),
+        description: plain(a.about).slice(0, 155),
+        crumbs: [...pCrumbs, [a.title, aPath]],
+        type: 'article',
+        body: `<div class="page" style="${pStyle}">${bar(`${a.emoji} ${a.title}`, pPath, [[EXAM.name, ePath], [pt.title, pPath]])}<div class="blocks approach-about"><p>${inline(a.about)}</p></div><h2 class="label">Témata</h2><div class="list">${refs.map((r) => `<a class="row rec" style="${style(SUBJECTS[r.s].c)}" href="${esc(`/g/${r.k}`)}"><span class="txt"><b>${esc(r.t.title)}</b><small>${esc(GRADE_NAME[r.g as keyof typeof GRADE_NAME])} · ${esc(SUBJECTS[r.s].name)}</small></span></a>`).join('')}</div></div>${tabbar(undefined)}`,
+      })
     }
   }
   return out

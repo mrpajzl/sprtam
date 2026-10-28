@@ -53,6 +53,7 @@ src/
     index.ts            načtení předmětu (jeden chunk na předmět)
   vocab/                slovíčka: načítání, přehrávání výslovnosti (speak.ts)
   approach.ts           přístupy k výuce (waldorf): data a volba dítěte (localStorage)
+  exam.ts               příprava na přijímačky (/prijimacky): oblasti testů a jejich témata
   quiz/                 režimy, vyhodnocení odpovědí, generátory příkladů
   progress/
     store.ts            pokrok v localStorage, slučování

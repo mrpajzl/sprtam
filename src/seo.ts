@@ -23,6 +23,9 @@ export const titles = {
   approach: (name: string) => `${name} – epochy a učivo`,
   approachYear: (name: string, year: string) => `${name}: ${year} – epochy`,
   approachBlock: (name: string, year: string, block: string) => `${block} – ${name}, ${year}`,
+  exam: () => 'Přijímačky na SŠ – příprava z češtiny a matematiky',
+  examPart: (part: string) => `${part} – příprava na přijímačky`,
+  examArea: (area: string, part: string) => `${area} – příprava na přijímačky (${part})`,
 }
 
 export const fullTitle = (t?: string) => (!t ? titles.home() : t.startsWith(SITE_NAME) ? t : `${t} | ${SITE_NAME}`)
