@@ -7,6 +7,7 @@ import { createServer, type IncomingMessage, type ServerResponse } from 'node:ht
 import { readFile, rm, stat } from 'node:fs/promises'
 import { extname, join, normalize } from 'node:path'
 import { HASH } from '../src/content/manifest'
+import { EXAM } from '../src/exam'
 import { embed, encoded, file as contentFile, pageHtml, release, startContent } from './content'
 import { render, robots, sitemap } from './pages'
 import { parseReport } from './report'
@@ -36,7 +37,9 @@ function isAppRoute(path: string) {
   if (p[0] === 'g' && p.length === 4 && p[3] === '~test') return page(...p.slice(0, 3))
   if (p[0] === 'g' && p.length === 5 && MODES.includes(p[4])) return page(...p.slice(0, 4))
   if (p[0] === 'slovicka' && p.length === 3) return page(...p.slice(0, 2))
-  // Practice of one epoch of a teaching approach: /waldorf/z1/<epoch>/test
+  // Practice test of one part of the entrance exam: /prijimacky/matematika/test
+  if (p.length === 3 && p[0] === EXAM.id && p[2] === 'test') return page(...p.slice(0, 2))
+  // Practice of one epoch of a teaching approach (/waldorf/z1/<epoch>/test) or one area of the entrance exam (/prijimacky/matematika/zlomky/test)
   if (p.length === 4 && p[0] !== 'g' && p[3] === 'test') return page(...p.slice(0, 3))
   return false
 }

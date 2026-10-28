@@ -224,7 +224,10 @@ mark { background: color-mix(in oklab, var(--k-yellow) 55%, transparent); color:
 .num-key { aspect-ratio: 1.15; display: grid; place-items: center; border-radius: 13px; font-family: var(--mono); font-size: 1.55rem; font-weight: 750; }
 .num-key.on { background: var(--k-orange); color: var(--k-orange-on); box-shadow: 0 3px 0 color-mix(in oklab, var(--k-orange) 60%, #000); }
 .num-key.on:active { box-shadow: 0 1px 0 color-mix(in oklab, var(--k-orange) 60%, #000); }
-.vocab-key { margin-top: 24px; }
+.exam-key { margin-top: 24px; }
+.exam-key > svg { width: 22px; height: 22px; color: var(--ink-3); flex: none; }
+.exam-key .skey .em { font-size: 1.3rem; background: none; width: auto; height: auto; }
+.vocab-key { margin-top: 12px; }
 .vocab-key > svg { width: 22px; height: 22px; color: var(--ink-3); flex: none; }
 
 /* Tiles & lists */
@@ -625,6 +628,11 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .row.epoch .seg-meter { width: 64px; flex: none; }
 .approach-year { margin-bottom: 4px; }
 .epoch-empty { margin: 8px 2px; }
+
+/* Příprava na přijímačky (/prijimacky) */
+.row.exam-part .seg-meter { width: 64px; flex: none; }
+.exam-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 2px 12px; }
+.exam-facts span { padding: 5px 11px; border-radius: 999px; background: var(--c); color: var(--on-c); font: 700 0.8rem/1.2 var(--mono); }
 
 /* Settings (/nastaveni) */
 .choice { min-height: 58px; }

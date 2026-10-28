@@ -28,6 +28,16 @@ Kdo chodí do waldorfské školy, zapne si to v nastavení (ozubené kolečko na
 
 Plány vycházejí z tematických plánů waldorfské školy. Volba se pamatuje jen v tvém zařízení. Podrobnosti: [Přístupy k výuce](PRISTUPY.md).
 
+## Přijímačky na SŠ
+
+Příprava na jednotnou přijímací zkoušku po 9. třídě je na [sprtam.cz/prijimacky](https://sprtam.cz/prijimacky) (na úvodní obrazovce „Přijímačky na SŠ“). Ke každému testu (matematika 70 minut, čeština a literatura 60 minut, oba za 50 bodů) ukáže:
+
+- **oblasti**, na které se test ptá (zlomky, rovnice, geometrie…, pravopis, skladba, literatura…), každou s tématy aplikace z 5.–9. třídy a ukazatelem, jak ti jdou;
+- **procvičení oblasti**: jeden test z otázek všech jejích témat;
+- **cvičný test** z celého předmětu: 20 otázek ze všech oblastí se známkou.
+
+Výklad a otázky jsou ty z běžných témat, pokrok je pořád jeden. Rozdělení do oblastí je v kódu ([`src/exam.ts`](../src/exam.ts)) a `check:content` i moderace hlídají, že všechna odkazovaná témata existují. Opravdová zadání z minulých let jsou na prijimacky.cermat.cz.
+
 ## Režimy procvičování
 
 | Režim | Otázek | Jak to probíhá |

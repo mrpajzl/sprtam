@@ -1,4 +1,5 @@
 import { GRADE_NAME, STAGES, SUBJECTS } from '../content/curriculum'
+import { EXAM } from '../exam'
 import { useIndex, refFor, type TopicRef } from '../content/library'
 import { recommend, streakOf, type Why } from '../progress/recommend'
 import { answeredToday, goalOf, isDue, isMistake, pinnedKeys, stars, today, useProgress, type Progress } from '../progress/store'
@@ -75,6 +76,12 @@ export function Home() {
           ))}
         </div>
       </section>
+
+      <Link class="row exam-key" style={keyStyle('orange')} href={`/${EXAM.id}`}>
+        <span class="skey m" style={keyStyle('orange')}><b class="em">{EXAM.emoji}</b></span>
+        <span class="txt"><b>{EXAM.name}</b><small>{EXAM.hint}</small></span>
+        <IArrow />
+      </Link>
 
       <Link class="row vocab-key" style={keyStyle('purple')} href="/slovicka">
         <span class="skey m" style={keyStyle('purple')}><b>Aa</b></span>

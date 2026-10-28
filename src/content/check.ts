@@ -1,3 +1,4 @@
+import { EXAM } from '../exam'
 import { GRADE_SUBJECTS } from './curriculum'
 import { parseKey, RESERVED, SCHEMAS, subjectKey, vocabKey, type DocRef } from './docs'
 import { LEVELS } from './format'
@@ -7,7 +8,8 @@ import type { ApproachYearFile, SubjectFile, TopicFile, VocabFile } from './type
 
 // Checks a whole set of content documents (docs.ts): the format of each, the authoring rules of topics
 // (rules.ts), and everything that ties documents together – every topic listed in its subject exactly
-// once, plans of teaching approaches pointing at existing topics, English words unique across levels.
+// once, plans of teaching approaches and the entrance exam preparation (src/exam.ts) pointing at existing topics,
+// English words unique across levels.
 // Used by scripts/check-content.ts (files in content/) and by the content service before anything is
 // published (the database with the change applied), so the two can never disagree.
 
@@ -106,6 +108,13 @@ export function checkSnapshot(snap: Snapshot, opts: CheckOptions = {}): CheckIss
   }
   // An approach-only topic is reachable only through its approach's plan.
   if (!opts.partial) for (const [k, a] of topics) if (a && !reached.has(k)) add(`topics/${k}`, '', `approach-only topic is not in any year of approaches/${a}`, 'Téma jen pro jeden přístup není v žádném ročníku jeho plánu.')
+
+  // ——— Příprava na přijímačky (src/exam.ts, in code): its topics must stay ———
+
+  if (!opts.partial) for (const pt of EXAM.parts) for (const a of pt.areas) for (const k of a.topics) {
+    if (!topics.has(k)) add(`topics/${k}`, '', `missing, but ${EXAM.id}/${pt.s}/${a.id} (src/exam.ts) points at it`, `Téma chybí, ale příprava na přijímačky (${pt.title}: ${a.title}) na něj odkazuje.`)
+    else if (topics.get(k)) add(`topics/${k}`, '', `approach-only, but ${EXAM.id}/${pt.s}/${a.id} (src/exam.ts) points at it`, `Téma je jen pro jeden přístup, ale příprava na přijímačky (${pt.title}: ${a.title}) na něj odkazuje.`)
+  }
 
   // ——— Vocabulary ———
 
