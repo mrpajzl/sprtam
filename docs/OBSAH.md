@@ -212,6 +212,8 @@ Nové téma: `POST /api/drafts` s `{ "kind": "new", "grade", "subject", "topic":
 
 **Nový odborný předmět** ([OBORY.md](OBORY.md)): nová témata s `"grade": "odb"` a id předmětu, který ještě neexistuje, navíc pošlou `"subjectMeta": { "name", "emoji", "color" }`. Předmět založí to z nich, které se schválí první. Volitelné `"order": ["id1", "id2", …]` je zamýšlené pořadí témat předmětu: témata schválená v libovolném pořadí v něm skončí. Recenzent vidí v hlavičce návrhu „zakládá odborný předmět…“. Správce nemá omezený počet rozpracovaných návrhů (moderátor jich smí mít 50) ani počet odeslání ke kontrole za hodinu (moderátor 30), takže může najednou nahrát celý předmět: `npx tsx scripts/content-propose.ts topics/odb/<předmět> …` ([OBORY.md](OBORY.md)).
 
+**Slovíčka dalších jazyků** (`vocab/<de|fr|es>/<úroveň>`) v moderaci editor ani kontrolu nemají. Správce je zveřejní rovnou, i tokenem: `POST /api/content/words` s `{ "files": [{ "lang": "de", "level": "A1", "data": {…} }], "note" }` (nejvýš 15 souborů, 4 MB). Před zveřejněním se zkontroluje celé učivo. Z místní kopie: `npx tsx scripts/content-words.ts de fr es` ([`moderator/server/words.ts`](../moderator/server/words.ts)).
+
 Ostatní endpointy jsou v [`moderator/server/index.ts`](../moderator/server/index.ts): review, historie, vydání, žádosti o pomůcky, správa.
 
 ## Zálohy
