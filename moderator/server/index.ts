@@ -13,8 +13,7 @@ import { contentIndex, readTopic } from './content'
 import { audit, one, run } from './db'
 import {
   activeDrafts, applySuggestion, createDraft, deleteDraft, deleteReview, editReview, getDraft, getThread, listDrafts, rebaseDraft, rejectDraft, resolveReview, restoreRelease, restoreVersionNow, reviewCounts, reviewDraft, reviewQueue,
-  rollbackDraft, saveDraft, submitDraft, withdrawDraft,
-} from './drafts'
+  rollbackDraft, saveDraft, submitDraft, withdrawDraft, publishUnverified, verifyTopic } from './drafts'
 import { assertSameOrigin, clientIp, cookies, HttpError, ipKey, json, limit, readJson, SECURITY_HEADERS, SESSION_COOKIE, type Req, type Res } from './http'
 import { createReport, listReports, reportCounts, updateReport } from './reports'
 import { createRequest, deleteRequest, listRequests, updateRequest, voteRequest } from './requests'
@@ -143,6 +142,9 @@ on('PUT', '/api/drafts/:id', async (req, _res, p) => {
   return saveDraft(s, p[0], await readJson(req))
 })
 on('DELETE', '/api/drafts/:id', (req, _res, p, ip) => { deleteDraft(requireSession(req, tokens), p[0], ip); return { ok: true } })
+// Content added by AI: published at once as unverified (admins only), checked later by a person ("Ověřit").
+on('POST', '/api/drafts/publish-unverified', async (req, _res, _p, ip) => publishUnverified(requireSession(req, tokens), await readJson(req), ip))
+on('POST', '/api/content/verify', async (req, _res, _p, ip) => verifyTopic(requireSession(req), await readJson(req), ip))
 on('POST', '/api/drafts/:id/submit', async (req, _res, p, ip) => submitDraft(requireSession(req, tokens), p[0], await readJson(req), ip))
 on('POST', '/api/drafts/:id/withdraw', (req, _res, p, ip) => withdrawDraft(requireSession(req, tokens), p[0], ip))
 on('POST', '/api/drafts/:id/rebase', (req, _res, p, ip) => rebaseDraft(requireSession(req, tokens), p[0], ip))

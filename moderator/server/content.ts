@@ -29,7 +29,8 @@ export function vocational(): Record<string, VocationalMeta> {
   return out
 }
 
-export interface TopicRef { id: string; title: string; emoji: string; approach?: string }
+/** `verified`: who checked the topic; missing = unverified (src/content/verified.ts). */
+export interface TopicRef { id: string; title: string; emoji: string; approach?: string; verified?: string }
 export interface ContentIndex {
   subjects: Record<string, TopicRef[]>
   /** Odborné předměty (grade odb): their names, emoji and colours. */
@@ -51,7 +52,7 @@ export function contentIndex(): ContentIndex {
     const ids = (getDoc(subjectKey(g, s)) as SubjectFile | undefined)?.topics ?? []
     subjects[`${g}/${s}`] = ids.flatMap((id) => {
       const t = getDoc(topicKey(g, s, id)) as TopicFile | undefined
-      return t ? [{ id, title: t.title, emoji: t.emoji, ...(t.approach ? { approach: t.approach } : {}) }] : []
+      return t ? [{ id, title: t.title, emoji: t.emoji, ...(t.approach ? { approach: t.approach } : {}), ...(t.verified ? { verified: t.verified.by } : {}) }] : []
     })
   }
   return (cached = { subjects, vocational: voc, approaches: approaches(), generators: GENERATOR_NAMES, commit: CONFIG.commit, release })

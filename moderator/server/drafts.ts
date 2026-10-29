@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto'
 import { topicChanged } from '../../src/content/diff'
 import { isSubjectOf, subjectKey, topicKey } from '../../src/content/docs'
 import { FORMAT } from '../../src/content/format'
+import { today, withoutVerified, type Verified } from '../../src/content/verified'
 import type { GradeId, SubjectFile, SubjectId, TopicFile } from '../../src/content/types'
 import { requireRecent, type Session } from './auth'
 import { CONFIG, LIMITS, MINUTE } from './config'
@@ -93,9 +94,20 @@ function approversOf(d: DraftRow, dec: Map<string, ReviewRow['verdict']>) {
   return [...dec].filter(([u, v]) => v === 'approve' && (u !== d.user_id || authorAdmin)).map(([u]) => u)
 }
 
+/** Same topic apart from its verification: a topic checked ("Ověřit") while someone edits it is no conflict. */
+const sameContent = (a: unknown, b: unknown) => JSON.stringify(withoutVerified(a)) === JSON.stringify(withoutVerified(b))
+
+/** Did the topic change (other than being verified) since the edit started from version `base`? */
+function changedSince(base: number | null, liveId: number | null | undefined, liveData: unknown): boolean {
+  if (liveId === base) return false
+  if (!base || !liveId) return true
+  return !sameContent(version(base).data, liveData)
+}
+
 function conflictOf(d: DraftRow): boolean {
   if (d.status !== 'draft' && d.status !== 'review') return false
-  return d.kind === 'edit' ? versionId(topicKey(d.grade, d.subject, d.topic_id)) !== d.base_version : topicExists(d.grade, d.subject, d.topic_id)
+  const key = topicKey(d.grade, d.subject, d.topic_id)
+  return d.kind === 'edit' ? changedSince(d.base_version, versionId(key), getDoc(key)) : topicExists(d.grade, d.subject, d.topic_id)
 }
 
 function changedOf(d: DraftRow): boolean {
@@ -248,6 +260,8 @@ function insertDraft(s: Session, kind: 'edit' | 'new', g: string, sub: string, t
   pruneEmpty(s.user.id, 10 * MINUTE)
   // Admins bring in whole new předměty at once (dozens of topics waiting for review): no limit for them.
   if (s.user.role !== 'admin' && openDrafts(s.user.id) >= LIMITS.drafts) throw new HttpError(429, `Máš rozpracováno ${LIMITS.drafts} návrhů. Nejdřív některé dokonči nebo smaž.`)
+  // Verification is not part of an edit: moderation sets it when the change is published (publishDraft).
+  topic = withoutVerified(topic)
   const id = randomUUID(), now = Date.now()
   run('INSERT INTO drafts (id, user_id, kind, grade, subject, topic_id, title, data, base_version, rollback_of, note, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
     id, s.user.id, kind, g, sub, topic.id, String(topic.title || topic.id).slice(0, 200), JSON.stringify(kind === 'new' ? { topic, after: extra.after ?? null, ...(extra.subject ? { subject: extra.subject } : {}), ...(extra.order ? { order: extra.order } : {}) } : { topic }),
@@ -289,7 +303,7 @@ export function saveDraft(s: Session, id: unknown, body: Record<string, unknown>
   own(s, d, 'Upravovat')
   open(d)
   if (body.rev !== d.rev) throw new HttpError(409, 'Návrh se mezitím změnil v jiném okně. Načti ho znovu.', 'stale')
-  const topic = body.topic as TopicFile
+  const topic = withoutVerified(body.topic as TopicFile)
   if (!topic || typeof topic !== 'object' || Array.isArray(topic)) throw new HttpError(400, 'Chybí téma.')
   // The editor saves unfinished topics (empty texts), but never a different shape: reviewers' screens rely on it.
   const list = (x: unknown) => Array.isArray(x) && x.every((y) => y && typeof y === 'object' && !Array.isArray(y))
@@ -331,10 +345,14 @@ function insertTopic(list: SubjectFile, id: string, after: string | null | undef
   return { ...list, topics }
 }
 
-function changesOf(d: DraftRow, data: DraftData): DocChange[] {
-  const out: DocChange[] = [{ key: topicKey(d.grade, d.subject, d.topic_id), data: data.topic }]
+/**
+ * The documents publishing the draft writes. `verified`: who checked it (approved in review); without it the topic
+ * goes out unverified. `get` reads the documents as they are before this draft (several drafts published at once).
+ */
+function changesOf(d: DraftRow, data: DraftData, verified?: Verified, get: (key: string) => unknown = getDoc): DocChange[] {
+  const out: DocChange[] = [{ key: topicKey(d.grade, d.subject, d.topic_id), data: { ...withoutVerified(data.topic), ...(verified ? { verified } : {}) } }]
   if (d.kind === 'new') {
-    const list = getDoc(subjectKey(d.grade, d.subject)) as SubjectFile | undefined
+    const list = get(subjectKey(d.grade, d.subject)) as SubjectFile | undefined
     if (list) out.push({ key: subjectKey(d.grade, d.subject), data: insertTopic(list, d.topic_id, data.after, data.order) })
     else if (founds(d, data)) out.push({ key: subjectKey(d.grade, d.subject), data: { format: FORMAT, topics: [d.topic_id], ...data.subject! } satisfies SubjectFile })
     else throw new HttpError(409, 'Předmět nemá seznam témat. Dej vědět správci.')
@@ -553,11 +571,14 @@ export function applySuggestion(s: Session, id: unknown, reviewId: unknown, body
 
 function publishDraft(d: DraftRow, data: DraftData, approvers: string[], by: string, ip: string): number {
   const key = topicKey(d.grade, d.subject, d.topic_id)
-  const r = publish(changesOf(d, data), { userId: d.user_id, reason: d.rollback_of ? 'rollback' : 'change', draftId: d.id, approvedBy: approvers, note: d.note ?? undefined }, (r) => {
+  // Approved by people in review = checked by them.
+  const who = names()
+  const verified: Verified = { by: approvers.map((id) => who.get(id) ?? '?').join(', '), at: today() }
+  const r = publish(changesOf(d, data, verified), { userId: d.user_id, reason: d.rollback_of ? 'rollback' : 'change', draftId: d.id, approvedBy: approvers, note: d.note ?? undefined }, (r) => {
     // Checked again against the database itself, in the same transaction as the write.
     const prev = one<{ id: number; data: string | null }>('SELECT id, data FROM versions WHERE key = ? AND release_id < ? ORDER BY n DESC LIMIT 1', key, r.release)
     const live = prev && prev.data !== null ? prev.id : null
-    if (d.kind === 'edit' ? live !== d.base_version : live !== null) throw new HttpError(409, 'Téma mezitím změnil někdo jiný. Autor musí návrh převést na novou verzi.', 'conflict')
+    if (d.kind === 'edit' ? changedSince(d.base_version, live, prev?.data ? JSON.parse(prev.data) : null) : live !== null) throw new HttpError(409, 'Téma mezitím změnil někdo jiný. Autor musí návrh převést na novou verzi.', 'conflict')
     if (run("UPDATE drafts SET status = 'published', decided_at = ?, decided_by = ?, release_id = ? WHERE id = ? AND status = 'review' AND rev = ?", Date.now(), by, r.release, d.id, d.rev).changes !== 1) {
       throw new HttpError(409, 'Návrh se mezitím změnil.', 'stale')
     }
@@ -629,4 +650,54 @@ export function restoreRelease(s: Session, releaseId: unknown, body: Record<stri
   const r = publish(changes, { userId: s.user.id, reason: 'restore', note: `${note} (obnova vydání ${id})` })
   audit('content.restored-release', s.user.id, { to: id, release: r.release, docs: changes.length, note }, ip)
   return { release: r.release, docs: changes.length }
+}
+
+// ——— Unverified content (docs/OBSAH.md, "Neověřené učivo") ———
+
+/**
+ * An admin publishes their own drafts at once, without review – content added by AI goes out to pupils right away,
+ * marked unverified. All of them in one release, checked as a whole like any publish.
+ */
+export function publishUnverified(s: Session, body: Record<string, unknown>, ip: string) {
+  if (s.user.role !== 'admin') throw new HttpError(403, 'Zveřejnit bez kontroly smí jen správce.')
+  const ids = body.ids
+  if (!Array.isArray(ids) || !ids.length || ids.length > 200 || !ids.every((x) => typeof x === 'string')) throw new HttpError(400, 'Pošli 1–200 id návrhů (ids).')
+  const drafts = [...new Set(ids as string[])].map((id) => load(s, id))
+  const overlay = new Map<string, unknown>()
+  const get = (k: string) => (overlay.has(k) ? overlay.get(k) : getDoc(k))
+  for (const d of drafts) {
+    own(s, d, 'Zveřejnit bez kontroly')
+    open(d)
+    const data = JSON.parse(d.data) as DraftData
+    assertReady(d, data)
+    for (const c of changesOf(d, data, undefined, get)) overlay.set(c.key, c.data)
+  }
+  const changes: DocChange[] = [...overlay].map(([key, data]) => ({ key, data }))
+  const r = publish(changes, { userId: s.user.id, reason: 'change', note: `Zveřejněno bez kontroly (neověřeno): ${drafts.length} ${drafts.length === 1 ? 'téma' : drafts.length < 5 ? 'témata' : 'témat'}` }, (r) => {
+    const now = Date.now()
+    for (const d of drafts) {
+      if (run("UPDATE drafts SET status = 'published', decided_at = ?, decided_by = ?, release_id = ?, decision_note = 'neověřeno' WHERE id = ? AND status IN ('draft', 'review') AND rev = ?", now, s.user.id, r.release, d.id, d.rev).changes !== 1) {
+        throw new HttpError(409, 'Některý návrh se mezitím změnil. Zkus to znovu.', 'stale')
+      }
+    }
+  })
+  audit('drafts.published-unverified', s.user.id, { release: r.release, drafts: drafts.map((d) => d.id), topics: drafts.map((d) => `${d.grade}/${d.subject}/${d.topic_id}`) }, ip)
+  return { release: r.release, published: drafts.length }
+}
+
+/**
+ * A moderator checked a published topic: it is marked verified, by them, today (a new version, so the history says
+ * who and when). Only a person in the browser – never an API token – and only the version they were shown.
+ */
+export function verifyTopic(s: Session, body: Record<string, unknown>, ip: string) {
+  if (s.via !== 'cookie') throw new HttpError(403, 'Ověřit smí jen člověk v moderaci, ne API token.')
+  const g = String(body.grade ?? ''), sub = String(body.subject ?? ''), id = String(body.topicId ?? '')
+  const { topic, version: v } = readTopic(g, sub, id)
+  if (body.version !== v) throw new HttpError(409, 'Téma se mezitím změnilo. Načti ho znovu a zkontroluj aktuální verzi.', 'stale')
+  if (topic.verified) throw new HttpError(409, `Téma už ověřil(a) ${topic.verified.by}.`)
+  limit(`verify:${s.user.id}`, 120, 10 * MINUTE)
+  const verified: Verified = { by: s.user.name, at: today() }
+  const r = publish([{ key: topicKey(g, sub, id), data: { ...topic, verified } }], { userId: s.user.id, reason: 'change', approvedBy: [s.user.id], note: 'Ověřeno' })
+  audit('topic.verified', s.user.id, { topic: `${g}/${sub}/${id}`, release: r.release }, ip)
+  return { verified, release: r.release, version: r.versions[topicKey(g, sub, id)] }
 }

@@ -130,6 +130,10 @@ export const topicFile = s.object({
   approach: s.optional(approachRef('Téma jen pro jeden přístup k výuce (např. "waldorf"): v běžném seznamu předmětu se neukáže, jen v plánu toho přístupu.')),
   explanations: s.array(explanation, { min: 2, max: 6, description: 'Přesně dvě obecná vysvětlení (bez "approach"), každé jinou cestou. Navíc nejvýš jedno pro každý přístup k výuce.' }),
   questions: s.array(question, { min: 8 }),
+  verified: s.optional(s.object({
+    by: s.string({ description: 'Kdo téma zkontroloval (jméno moderátora, případně víc jmen oddělených čárkou).' }),
+    at: s.string({ pattern: '^\\d{4}-\\d{2}-\\d{2}$', description: 'Kdy, RRRR-MM-DD.' }),
+  }, { description: 'Prošlo kontrolou člověkem. Nastavuje jen moderace (tlačítko „Ověřit“ nebo schválení změny); každá další změna bez kontroly ho smaže. Chybí = neověřeno.' })),
 }, { description: 'Jedno téma: dvě vysvětlení a otázky.' })
 
 export const subjectFile = s.object({

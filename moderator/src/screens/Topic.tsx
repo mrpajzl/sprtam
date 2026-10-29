@@ -3,14 +3,15 @@ import { GRADE_NAME, isGrade, subjectMeta } from '../../../src/content/curriculu
 import { isSubjectOf } from '../../../src/content/docs'
 import type { GradeId, Question, SubjectId, TopicFile } from '../../../src/content/types'
 import { Inline } from '../../../src/ui/Inline'
-import { ApiError, get } from '../api'
+import { ApiError, get, post } from '../api'
+import { dateCs } from '../../../src/content/verified'
 import { Preview } from '../editor/Preview'
 import { questionLabel } from '../editor/model'
 import type { Me } from '../passkey'
 import type { PreviewMode } from '../preview/protocol'
 import { nav } from '../router'
-import { useIndex } from '../store'
-import { Busy, I } from '../ui/kit'
+import { refreshIndex, useIndex } from '../store'
+import { Busy, I, Modal, toast } from '../ui/kit'
 import { editTopic } from './Library'
 import { reportsHref } from './Reports'
 
@@ -25,10 +26,12 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
   const [mode, setMode] = useState<PreviewMode>({ kind: 'topic', ex: 0 })
   const [opening, setOpening] = useState(false)
   const [reports, setReports] = useState(0)
+  const [version, setVersion] = useState(0)
+  const [verifying, setVerifying] = useState(false)
 
   useEffect(() => {
     setTopic(null); setError(''); setMode({ kind: 'topic', ex: 0 })
-    get<{ topic: TopicFile }>(`/api/content/topic/${g}/${s}/${id}`).then((r) => setTopic(r.topic), (e) => setError(e instanceof ApiError ? e.message : 'Téma se nepodařilo načíst.'))
+    get<{ topic: TopicFile; version: number }>(`/api/content/topic/${g}/${s}/${id}`).then((r) => { setTopic(r.topic); setVersion(r.version) }, (e) => setError(e instanceof ApiError ? e.message : 'Téma se nepodařilo načíst.'))
   }, [g, s, id])
   useEffect(() => {
     setReports(0)
@@ -62,6 +65,7 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
           <div>
             <h1>{topic.title}</h1>
             <small>
+              {topic.verified ? <span class="v-verified"><I.check />Prošlo kontrolou · {topic.verified.by} · {dateCs(topic.verified.at)} · </span> : <span class="pill unverified">neověřeno</span>}{' '}
               {at >= 0 ? `${at + 1}. téma z ${list.length}` : ''}
               {topic.approach ? ` · jen pro přístup ${approaches.find((a) => a.id === topic.approach)?.short ?? topic.approach}` : ''}
             </small>
@@ -85,6 +89,11 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
         <div class="banner warn"><I.warn /><span>{reports === 1 ? '1 otevřené hlášení' : `${reports} ${reports < 5 ? 'otevřená hlášení' : 'otevřených hlášení'}`} od žáků k tomuto tématu.</span>
           <a class="btn small" href={reportsHref('open', { topic: `${g}/${s}/${id}` })} onClick={nav(reportsHref('open', { topic: `${g}/${s}/${id}` }))}>Zobrazit</a></div>
       )}
+      {!topic.verified && (
+        <div class="banner warn"><I.warn /><span><b>Neověřeno.</b> Téma připravila AI nebo se změnilo bez kontroly. Děti ho už vidí, s poznámkou „neověřeno“. Přečti výklad v telefonu i všechny otázky s odpověďmi vedle.</span>
+          {me && <button class="btn small primary" onClick={() => setVerifying(true)}><I.check />Ověřit</button>}</div>
+      )}
+      {verifying && <VerifyDialog g={g} s={s} id={id} version={version} title={topic.title} onClose={() => setVerifying(false)} onDone={(t) => { setTopic(t.topic); setVersion(t.version); setVerifying(false); refreshIndex() }} />}
       {mine && <div class="banner info"><I.pencil />{mine.status === 'review' ? 'Tvoje úprava čeká na kontrolu jiného moderátora.' : 'Máš tu rozpracované úpravy, ještě nejsou odeslané ke kontrole.'} Tady vidíš zveřejněnou verzi.</div>}
 
       <div class="v-body">
@@ -146,4 +155,25 @@ function Answer({ q }: { q: Question }) {
     case 'match': return <ul class="v-pairs">{q.pairs.map(([a, b], i) => <li key={i}><Inline text={a} /><span>–</span><Inline text={b} /></li>)}</ul>
     case 'open': return <span class="v-ans"><Inline text={q.answer} /></span>
   }
+}
+
+/** Confirms that the moderator went through the whole topic; then it is marked as checked by them. */
+function VerifyDialog({ g, s, id, version, title, onClose, onDone }: { g: string; s: string; id: string; version: number; title: string; onClose: () => void; onDone: (r: { topic: TopicFile; version: number }) => void }) {
+  const [busy, setBusy] = useState(false)
+  const go = async () => {
+    setBusy(true)
+    try {
+      const r = await post<{ version: number }>('/api/content/verify', { grade: g, subject: s, topicId: id, version })
+      const fresh = await get<{ topic: TopicFile; version: number }>(`/api/content/topic/${g}/${s}/${id}`)
+      toast('Ověřeno. Děti uvidí, že téma prošlo kontrolou.')
+      onDone({ topic: fresh.topic, version: fresh.version ?? r.version })
+    } catch (e) { toast(e instanceof ApiError ? e.message : 'Ověření se nepovedlo.', 'bad'); setBusy(false) }
+  }
+  return (
+    <Modal title={`Ověřit téma „${title}“`} onClose={onClose}
+      actions={<><button class="btn" onClick={onClose}>Zpět</button><Busy class="btn primary" on={busy} onClick={go}><I.check />Ověřit</Busy></>}>
+      <p>Potvrzuješ, že jsi prošel/prošla <b>celý výklad i všechny otázky</b> se správnými odpověďmi a že jsou věcně správně a srozumitelné?</p>
+      <p class="muted">U tématu se pak ukáže tvoje jméno a dnešní datum (v moderaci, v aplikaci i ve veřejné historii učiva). Když něco nesedí, téma raději uprav – schválená úprava se počítá jako ověřená.</p>
+    </Modal>
+  )
 }

@@ -31,7 +31,7 @@ Obor se v aplikaci ukáže, až když obsah má aspoň jeden z jeho odborných p
 
 1. Projdi RVP oboru (edu.cz → RVP SOV) a běžné ŠVP. Rozhodni, které odborné předměty má po ročnících. Co už existuje, použij znovu (`/g/odb`). Nové předměty dělej tak, aby se daly sdílet s příbuznými obory.
 2. Přidej obor do `OBORY` v `src/obory.ts`, spusť `npm run check:content` a pošli pull request.
-3. Učivo nových předmětů napiš do `content/topics/odb/<předmět>/` (`npm run check:content -- topics/odb/<předmět>` musí skončit bez chyb). Pak ho pošli do moderace jako návrhy, které zakládají předmět: `npx tsx scripts/content-propose.ts topics/odb/<předmět> …` s API tokenem v `SPRTAM_TOKEN` nebo v `~/.config/sprtam/api-token` ([OBSAH.md](OBSAH.md)). Skript nic nezveřejní a opakované spuštění pošle jen to, co v moderaci ještě není. Recenzenti z praxe je zkontrolují. Jakmile schválí první téma, obor se objeví v aplikaci.
+3. Učivo nových předmětů napiš do `content/topics/odb/<předmět>/` (`npm run check:content -- topics/odb/<předmět>` musí skončit bez chyb). Pak ho pošli do moderace: `npx tsx scripts/content-propose.ts --unverified topics/odb/<předmět> …` ho rovnou zveřejní jako neověřené (moderátoři ho pak ověřují), bez `--unverified` půjde jako návrhy ke kontrole. Obojí zakládá předmět. Token je v `SPRTAM_TOKEN` nebo v `~/.config/sprtam/api-token` ([OBSAH.md](OBSAH.md)); opakované spuštění pošle jen to, co v moderaci ještě není. Jakmile je zveřejněné první téma, obor se objeví v aplikaci.
 
 ## Obory teď
 

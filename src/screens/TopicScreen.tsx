@@ -1,3 +1,4 @@
+import { dateCs, type Verified } from '../content/verified'
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { GRADE_NAME, type KeyColor, subjectMeta } from '../content/curriculum'
 import { approachById, listed, useApproach } from '../approach'
@@ -60,6 +61,7 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
       </div>
       <Blocks key={current} blocks={topic.explanations[current].blocks} />
       <button class="other" onClick={() => switchTo(other)}><IBulb />Nerozumím – vysvětli to jinak: {topic.explanations[other].title}</button>
+      <CheckNote verified={topic.verified} />
       <div class="topic-report"><ReportButton topic={key} target={{ kind: 'explanation', index: current, text: topic.explanations[current].title }} label="Chyba ve vysvětlení? Nahlásit" /></div>
       <div class="modes">
         {(['kviz', 'opakovani', 'pisemka', 'zkouseni'] as ModeId[]).map((m) => {
@@ -108,4 +110,11 @@ export function MixScreen() {
   if (topics === undefined) return <div class="page" />
   if (!topics?.length) return <div class="page"><Bar title="Mix" /><div class="empty">Nejdřív si připni nějaké téma.<button class="btn" onClick={back}>Zpět</button></div></div>
   return <Quiz mode="mix" topics={topics} />
+}
+
+/** Was the topic checked by a person (moderation, src/content/verified.ts)? Unverified = prepared by AI. */
+export function CheckNote({ verified }: { verified?: Verified }) {
+  return verified
+    ? <p class="check-note ok"><span aria-hidden="true">✓</span>Prošlo kontrolou: {verified.by}, {dateCs(verified.at)}</p>
+    : <p class="check-note"><span aria-hidden="true">!</span>Neověřeno – výklad připravila AI a učitel ho ještě nezkontroloval. Když najdeš chybu, nahlas ji.</p>
 }
