@@ -264,6 +264,26 @@ const MIGRATIONS: string[] = [
   CREATE INDEX reports_status ON reports(status, created_at);
   CREATE INDEX reports_topic ON reports(topic);
   `,
+  // 4: applications to become a moderator, sent from the public form /zapojit-se (docs/MODERACE.md, Žádosti).
+  // An admin approves one with an invite link for the applicant; decided ones are deleted after half a year.
+  `
+  CREATE TABLE applications (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    teacher INTEGER NOT NULL,
+    subjects TEXT NOT NULL DEFAULT '',
+    note TEXT NOT NULL DEFAULT '',
+    topic TEXT,
+    status TEXT NOT NULL DEFAULT 'open' CHECK (status IN ('open', 'approved', 'rejected')),
+    created_at INTEGER NOT NULL,
+    decided_at INTEGER,
+    decided_by TEXT REFERENCES users(id),
+    decision_note TEXT,
+    invite TEXT
+  );
+  CREATE INDEX applications_status ON applications(status, created_at);
+  `,
 ]
 
 const before = Number((db.prepare('PRAGMA user_version').get() as { user_version: number }).user_version)

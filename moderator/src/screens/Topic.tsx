@@ -4,7 +4,7 @@ import { isSubjectOf } from '../../../src/content/docs'
 import type { GradeId, Question, SubjectId, TopicFile } from '../../../src/content/types'
 import { Inline } from '../../../src/ui/Inline'
 import { ApiError, get, post } from '../api'
-import { dateCs } from '../../../src/content/verified'
+import { CONTENT_AUTHOR, dateCs } from '../../../src/content/verified'
 import { Preview } from '../editor/Preview'
 import { questionLabel } from '../editor/model'
 import type { Me } from '../passkey'
@@ -65,7 +65,7 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
           <div>
             <h1>{topic.title}</h1>
             <small>
-              {topic.verified ? <span class="v-verified"><I.check />Prošlo kontrolou · {topic.verified.by} · {dateCs(topic.verified.at)} · </span> : <span class="pill unverified">neověřeno</span>}{' '}
+              Autor: {CONTENT_AUTHOR} (AI) · {topic.verified ? <span class="v-verified"><I.check />Zkontroloval/a {topic.verified.by} · {dateCs(topic.verified.at)} · </span> : <span class="pill unverified">čeká na kontrolu</span>}{' '}
               {at >= 0 ? `${at + 1}. téma z ${list.length}` : ''}
               {topic.approach ? ` · jen pro přístup ${approaches.find((a) => a.id === topic.approach)?.short ?? topic.approach}` : ''}
             </small>
@@ -90,8 +90,13 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
           <a class="btn small" href={reportsHref('open', { topic: `${g}/${s}/${id}` })} onClick={nav(reportsHref('open', { topic: `${g}/${s}/${id}` }))}>Zobrazit</a></div>
       )}
       {!topic.verified && (
-        <div class="banner warn"><I.warn /><span><b>Neověřeno.</b> Téma připravila AI nebo se změnilo bez kontroly. Děti ho už vidí, s poznámkou „neověřeno“. Přečti výklad v telefonu i všechny otázky s odpověďmi vedle.</span>
-          {me && <button class="btn small primary" onClick={() => setVerifying(true)}><I.check />Ověřit</button>}</div>
+        me ? (
+          <div class="banner warn"><I.warn /><span><b>Neověřeno.</b> Téma napsala AI ({CONTENT_AUTHOR}) nebo se změnilo bez kontroly. Děti ho už vidí, s poznámkou „čeká na kontrolu člověkem“. Přečti výklad v telefonu i všechny otázky s odpověďmi vedle.</span>
+            <button class="btn small primary" onClick={() => setVerifying(true)}><I.check />Ověřit</button></div>
+        ) : (
+          <div class="banner warn"><I.warn /><span><b>Čeká na kontrolu člověkem.</b> Téma napsala AI ({CONTENT_AUTHOR}). Učíš, nebo se v tom vyznáš? Přidej se k moderátorům a pomoz ho zkontrolovat.</span>
+            <a class="btn small primary" href={`/zapojit-se?tema=${g}/${s}/${id}`} onClick={nav(`/zapojit-se?tema=${g}/${s}/${id}`)}>Chci to schválit</a></div>
+        )
       )}
       {verifying && <VerifyDialog g={g} s={s} id={id} version={version} title={topic.title} onClose={() => setVerifying(false)} onDone={(t) => { setTopic(t.topic); setVersion(t.version); setVerifying(false); refreshIndex() }} />}
       {mine && <div class="banner info"><I.pencil />{mine.status === 'review' ? 'Tvoje úprava čeká na kontrolu jiného moderátora.' : 'Máš tu rozpracované úpravy, ještě nejsou odeslané ke kontrole.'} Tady vidíš zveřejněnou verzi.</div>}

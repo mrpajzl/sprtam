@@ -339,7 +339,8 @@ try {
   const rel = await admin.api('POST', '/api/admin/releases/1/restore', { note: 'Zpět na import' })
   check(rel.status === 200 && rel.body.docs === 1 && !(await topicText()).includes('7 je prvočíslo'), 'an admin restores the whole content of a release')
   const sys = (await admin.api('GET', '/api/admin/system')).body
-  check(sys.chainOk && sys.release === 5 && sys.versions === 968, 'the hash chain of the history is intact')
+  // Every imported document has one version, plus the four changes above.
+  check(sys.chainOk && sys.release === 5 && sys.versions === sys.docs + 4, 'the hash chain of the history is intact')
 
   // ——— API tokens ———
   const tok = await eva.api('POST', '/api/me/tokens', { label: 'Agent', days: 7 })
@@ -476,7 +477,48 @@ try {
   check(!(await admin.api('GET', `/api/drafts/${editing.draft.id}`)).body.draft.conflict, 'verifying does not put open edits of the topic in conflict')
   check((await admin.api('GET', '/api/content/index')).body.subjects['odb/ai-predmet'].map((t) => !!t.verified).join() === 'true,false', 'the library knows which topics are verified')
 
-  check([admin, mod, teacher, eva].every((d) => !d.errors.length), 'no errors in the pages')
+  // ——— Applications to become a moderator (the app's "Chci to zkontrolovat a schválit" leads here) ———
+  await teacher.page.goto(`${BASE}/ucivo/odb/ai-predmet/ai-druhe`)
+  await teacher.page.getByRole('link', { name: 'Chci to schválit' }).click()
+  await teacher.page.waitForURL(/\/zapojit-se\?tema=odb\/ai-predmet\/ai-druhe$/)
+  check(await teacher.page.getByText('Přicházíš od tématu').waitFor({ timeout: 5000 }).then(() => true, () => false) && await teacher.page.getByText('AI ai-druhe').isVisible(), 'an unverified topic leads a visitor to the application form, which names the topic')
+  await teacher.page.getByLabel('Jméno a příjmení').fill('Jana Pedagožková')
+  await teacher.page.getByLabel('E-mail').fill('Jana@Skola.example')
+  await teacher.page.getByRole('radio', { name: 'Ano, učím' }).check()
+  await teacher.page.getByLabel('Jaké předměty učíš?').fill('matematika, fyzika')
+  await teacher.page.getByLabel(/Něco dalšího/).fill('Učím na gymnáziu.')
+  await teacher.page.getByRole('button', { name: 'Odeslat žádost' }).click()
+  check(await teacher.page.getByText('Díky, žádost máme').waitFor({ timeout: 5000 }).then(() => true, () => false), 'a visitor sends the application without an account')
+  const apply = (body) => teacher.api('POST', '/api/applications', { name: 'Karel Zvědavý', email: 'karel@example.cz', teacher: false, ...body })
+  check((await apply({ email: 'jana@skola.example', teacher: true, subjects: 'čeština' })).status === 409, 'a second open application with the same e-mail is refused')
+  check((await apply({ email: 'není e-mail' })).status === 400, 'an application needs a valid e-mail')
+  check((await apply({ website: 'https://spam.example' })).status === 200, 'a bot filling the hidden field is told it worked…')
+  check((await fetch(`${BASE}/api/applications`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: 'X Y', email: 'x@y.cz', teacher: false }) })).status === 403, 'an application from another site is refused')
+  check((await eva.api('GET', '/api/admin/applications')).status === 403, 'only admins read the applications')
+  const apps = (await admin.api('GET', '/api/admin/applications')).body
+  const jana = apps.applications[0]
+  check(apps.counts.open === 1 && apps.applications.length === 1 && jana.email === 'jana@skola.example' && jana.teacher && jana.subjects === 'matematika, fyzika' && jana.topic?.key === 'odb/ai-predmet/ai-druhe', '…but only real applications are stored, with the topic they came from')
+  await admin.page.goto(`${BASE}/zadosti`)
+  await admin.page.locator('.application').first().waitFor()
+  check((await admin.page.locator('.top .tabs').textContent()).includes('Žádosti · 1'), 'the admins\' tab counts open applications')
+  await admin.page.getByRole('button', { name: 'Schválit a vytvořit pozvánku' }).click()
+  const invite = await admin.page.locator('.linkbox code').textContent({ timeout: 5000 })
+  check(invite.startsWith(`${BASE}/pozvanka#`) && (await admin.page.getByRole('link', { name: 'Napsat e-mail s odkazem' }).getAttribute('href')).startsWith('mailto:jana%40skola.example'), 'approving gives an invite link to share, with a ready e-mail')
+  await admin.page.getByRole('button', { name: 'Hotovo' }).click()
+  const janaDev = await device()
+  await janaDev.page.goto(invite)
+  await janaDev.page.getByText('Vítej, Jana Pedagožková!').waitFor()
+  await janaDev.page.getByRole('button', { name: 'Vytvořit přístupový klíč' }).click()
+  check(await signedInAs(janaDev.page, 'Jana') && (await janaDev.api('GET', '/api/session')).body.user.role === 'moderator', 'the applicant creates a moderator account with the link')
+  const decided = (await admin.api('GET', '/api/admin/applications?status=decided')).body.applications
+  check(decided[0]?.status === 'approved' && decided[0].joined === true && decided[0].decidedBy === 'Ada Správcová', 'the approved application shows who approved it and that the account exists')
+  check((await admin.api('POST', `/api/admin/applications/${jana.id}/approve`)).status === 409, 'no second link once the account exists')
+  check((await apply({})).status === 200, 'another application arrives')
+  const karel = (await admin.api('GET', '/api/admin/applications')).body.applications[0]
+  check((await admin.api('POST', `/api/admin/applications/${karel.id}/reject`, { note: 'Neznáme.' })).status === 200 && (await admin.api('GET', '/api/admin/applications/counts')).body.open === 0, 'an admin rejects an application')
+  check((await admin.api('POST', `/api/admin/applications/${karel.id}/approve`)).status === 409, 'a rejected application cannot be approved')
+
+  check([admin, mod, teacher, eva, janaDev].every((d) => !d.errors.length), 'no errors in the pages')
 } finally {
   await browser.close()
   server.kill()

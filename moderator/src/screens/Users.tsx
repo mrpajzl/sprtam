@@ -16,6 +16,7 @@ const ACTION: Record<string, string> = {
   'review.approve': 'schválení', 'review.changes': 'požadavek na úpravy', 'review.comment': 'komentář', 'review.resolved': 'vyřešený komentář',
   'content.imported': 'import učiva', 'content.restored-version': 'vrácená verze bez kontroly', 'content.restored-release': 'obnova vydání',
   'token.created': 'nový API token', 'token.removed': 'zrušený API token', 'widget-request.created': 'žádost o pomůcku', 'widget-request.updated': 'úprava žádosti o pomůcku', 'widget-request.deleted': 'smazaná žádost o pomůcku',
+  'application.created': 'žádost o moderátorství', 'application.approved': 'schválená žádost o moderátorství', 'application.rejected': 'zamítnutá žádost o moderátorství',
 }
 
 const run = async (f: () => Promise<unknown>, ok?: string) => {

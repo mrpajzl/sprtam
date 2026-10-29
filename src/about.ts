@@ -1,6 +1,8 @@
 // What Šprtám is and how it works, in a few lines. One text for the app's /o-aplikaci screen
 // (src/screens/About.tsx) and the page the server renders (server/pages.ts). Inline markup as in content.
 
+import { CONTENT_AUTHOR, JOIN_URL } from './content/verified'
+
 export const ABOUT = {
   title: 'O aplikaci',
   description: 'Co je Šprtám a jak funguje: vysvětlení, procvičování a doporučení, co zopakovat. Zdarma, bez účtů, bez reklam a bez sledování.',
@@ -47,10 +49,12 @@ export const ABOUT = {
     title: 'Zapoj se',
     lead: 'Pomoz nám, ať je učivo správně a srozumitelně.',
     items: [
+      `**Zkontroluj učivo.** Celé ho zatím napsala AI (${CONTENT_AUTHOR}). U každého tématu je vidět, jestli ho už zkontroloval člověk. Učíš, nebo se v oboru vyznáš? Přihlas se jako moderátor/ka.`,
       '**Pomoz s kvalitou obsahu.** Vidíš chybu, nebo víš, jak něco vysvětlit líp?',
       '**Máš pro Šprtám využití**, ale potřebuješ, aby fungoval trochu jinak?',
       '**Zajímá tě víc?** Chceš projekt podpořit?',
     ],
     email: 'info@sprtam.cz',
+    form: { label: 'Chci kontrolovat učivo', href: JOIN_URL },
   },
 }
