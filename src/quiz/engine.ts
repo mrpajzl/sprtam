@@ -90,6 +90,54 @@ export function checkInput(given: string, accepted: string[], strict = true): bo
   })
 }
 
+/** The blank of a fill-in question: `t_gr`, `___`, `„__jet“`. Underscores only, so `c_a` in maths never comes up without options. */
+const GAP = /[\p{L}'’]*_+[\p{L}'’]*/u
+
+/** Alternatives the question spells out: „Doplň y/i:“, „i/y/a“, „a / an“, „(lavici / posteli)“, „doplň m, nebo mn“.
+ * Only right after a bracket, colon, quote or „doplň …“ and before punctuation or „ a “, so „Je to podstatné jméno, nebo sloveso?“ never offers „jméno“. */
+const OPENS = String.raw`(?<=(?:^|[(:„“"”)]\s?|(?:^|[\s(])(?:doplň|napiš|vyber|předponu|koncovku|písmeno|člen)\s))`
+const CLOSES = String.raw`(?=$|[?):,.]|\sa\s)`
+const W = String.raw`[\p{L}'’]+`
+const SLASH = new RegExp(`${OPENS}${W}(?:\\s?/\\s?${W})+${CLOSES}`, 'giu')
+const NEBO = new RegExp(`${OPENS}(${W}),? nebo (${W})${CLOSES}`, 'giu')
+function listed(question: string): string[][] {
+  return [
+    ...[...question.matchAll(SLASH)].map((m) => m[0].split('/').map((x) => x.trim())),
+    ...[...question.matchAll(NEBO)].map((m) => [m[1], m[2]]),
+  ]
+}
+
+/** Czech spelling blanks whose alternatives everybody knows, when the question does not list them. */
+function known(question: string, answer: string): string[] | null {
+  const gap = question.match(GAP)?.[0]
+  if (!gap) return null
+  const a = answer.toLowerCase()
+  if (/l_+$/u.test(gap) && ['i', 'y', 'a'].includes(a)) return ['i', 'y', 'a']
+  if (['i', 'y'].includes(a)) return ['i', 'y']
+  if (['í', 'ý'].includes(a)) return ['í', 'ý']
+  if (/^_/.test(gap) && ['s', 'z', 'vz'].includes(a)) return ['s', 'z', 'vz']
+  return null
+}
+
+/**
+ * A fill-in-the-blank `input` question answered by tapping instead of typing: „Doplň y/i: t_gr“ → [i] [y].
+ * The options come from the question (or the well-known Czech pairs for Czech topics); exactly one of them,
+ * on its own or written into the blank (`__jet` + s = sjet), has to be an accepted answer. Otherwise null and the question stays typed.
+ */
+export function gapChoice(q: Extract<Question, { type: 'input' }>, strict = true): { options: string[]; answer: number } | null {
+  if (q.widget) return null
+  const gap = q.question.match(GAP)?.[0] ?? null
+  const fits = (o: string) => checkInput(o, q.answers, strict) || (gap !== null && checkInput(gap.replace(/_+/u, o), q.answers, strict))
+  const sets = listed(q.question)
+  if (strict) { const k = known(q.question, q.answers[0]); if (k) sets.push(k) }
+  for (const options of sets) {
+    if (new Set(options.map((o) => o.toLowerCase())).size !== options.length || options.length > 4) continue
+    const ok = options.flatMap((o, i) => (fits(o) ? [i] : []))
+    if (ok.length === 1) return { options, answer: ok[0] }
+  }
+  return null
+}
+
 /** Spelling matters in Czech language and literature topics. */
 export const strictFor = (topicKey: string) => /\/(cestina|literatura)\//.test(topicKey)
 
