@@ -12,7 +12,7 @@ export const ABOUT = {
         '**Vyber si ročník a téma.** Každé téma je vysvětlené dvěma různými způsoby, od úplných základů.',
         '**Procvič si ho:** rychlý kvíz, opakování, písemka se známkou nebo zkoušení nahlas.',
         '**Podívej se do „Na řadě“.** Podle výsledků ti Šprtám řekne, co zopakovat, co ti nejde a na čem z nižšího ročníku to stojí.',
-        '**Anglická slovíčka** od A1 do C1, s výslovností.',
+        '**Slovíčka** s výslovností: angličtina od A1 do C1, němčina, francouzština a španělština od A1 do B1.',
       ],
     },
     {

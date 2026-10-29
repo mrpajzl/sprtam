@@ -12,6 +12,7 @@ import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
 import { IArrow, IBook, IGear, IPin, IRepeat, ISearch, IShuffle } from '../ui/icons'
 import { Mascot } from '../ui/Mascot'
 import { QrButton } from '../ui/QrShare'
+import { vocabLangs } from '../vocab'
 
 const STAGE_LABEL = { zs1: 'ZŠ · 1. stupeň', zs2: 'ZŠ · 2. stupeň', ss: 'SŠ · ročník' }
 
@@ -23,6 +24,7 @@ export function Home() {
   const pins = all ? pinnedKeys(p).flatMap((k) => refFor(k) ?? []) : []
   const recs = all ? recommend(p, all.filter((r) => !r.approach)) : []
   const obor = useObor()
+  const langs = vocabLangs()
 
   return (
     <div class="page home">
@@ -100,7 +102,7 @@ export function Home() {
 
       <Link class="row vocab-key" style={keyStyle('purple')} href="/slovicka">
         <span class="skey m" style={keyStyle('purple')}><b>Aa</b></span>
-        <span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span>
+        <span class="txt">{langs.length > 1 ? <><b>Slovíčka</b><small>{langs.map((m) => m.name.toLowerCase()).join(', ')}</small></> : <><b>Anglická slovíčka</b><small>A1–C1</small></>}</span>
         <IArrow />
       </Link>
 

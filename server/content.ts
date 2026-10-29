@@ -4,10 +4,10 @@ import { promisify } from 'node:util'
 import { brotliCompress, constants, gzip } from 'node:zlib'
 import { ALL_GRADES, GRADE_SUBJECTS, isVocationalEntry, ODB, setVocational } from '../src/content/curriculum'
 import { ID, RESERVED } from '../src/content/docs'
-import { LEVELS } from '../src/content/format'
+import { LEVELS, WORD_LANGS } from '../src/content/format'
 import { HASH, type Manifest } from '../src/content/manifest'
 import { hashOf } from '../src/content/release'
-import type { ApproachYearFile, GradeId, Subject, SubjectId, Topic, VocabFile, YearId } from '../src/content/types'
+import type { ApproachYearFile, GradeId, Subject, SubjectId, Topic, VocabFile, WordsFile, YearId } from '../src/content/types'
 import { pages, type Page, type SiteContent } from './pages'
 
 // The content of sprtam.cz comes from the content service (CONTENT_API, docs/OBSAH.md). This keeps a
@@ -101,6 +101,7 @@ function siteOf(m: Manifest, read: (hash: string) => unknown): SiteContent {
   }
   const subjects: Subject[] = []
   const vocab: VocabFile[] = []
+  const words: WordsFile[] = []
   for (const n of Object.keys(m.files).sort()) {
     const p = n.split('/')
     if (n === 'index' || n === 'text') continue
@@ -113,6 +114,10 @@ function siteOf(m: Manifest, read: (hash: string) => unknown): SiteContent {
       const v = read(m.files[n]) as VocabFile
       if (!v || v.level !== p[1] || !Array.isArray(v.groups)) bad(`${n}: not vocabulary of level ${p[1]}`)
       vocab.push(v)
+    } else if (p[0] === 'words' && p.length === 3 && (WORD_LANGS as readonly string[]).includes(p[1]) && (LEVELS as readonly string[]).includes(p[2])) {
+      const v = read(m.files[n]) as WordsFile
+      if (!v || v.lang !== p[1] || v.level !== p[2] || !Array.isArray(v.groups)) bad(`${n}: not ${p[1]} vocabulary of level ${p[2]}`)
+      words.push(v)
     } else if (!(p[0] === 'approach' && p.length === 3 && approachIds.has(p[1]) && isYear(p[2]))) bad(`unknown file ${JSON.stringify(n)}`)
   }
   const approaches = m.approaches.map((a) => ({
@@ -126,7 +131,7 @@ function siteOf(m: Manifest, read: (hash: string) => unknown): SiteContent {
   }))
   // Pages name subjects through subjectMeta: the odborné předměty of this release.
   setVocational(voc)
-  return { subjects, vocab, approaches }
+  return { subjects, vocab, words, approaches }
 }
 
 /** Builds the in-memory release from files already in `files`. */

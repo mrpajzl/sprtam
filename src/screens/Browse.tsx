@@ -10,6 +10,8 @@ import { Bar, Meter, Stars } from '../ui/Bar'
 import { keyStyle, SubjectGlyph, subjectStyle } from '../ui/glyphs'
 import { IArrow, IPin, ITest } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
+import { levelsOf } from '../vocab'
+import { langOfSubject, vocabPath } from '../vocab/langs'
 import { YearBlocks } from './Approach'
 
 /** Average stars → 0–100 for a subject's meter. */
@@ -146,9 +148,23 @@ export function SubjectScreen({ g, s }: { g: GradeId; s: SubjectId }) {
             <span class="skey m"><ITest /></span>
             <span class="txt"><b>Test</b><small>celý předmět · 20 otázek</small></span>
           </Link>
+          <LangWords s={s} />
         </>
       )}
     </div>
+  )
+}
+
+/** A second language links to its words (English has its tile in the grade). */
+function LangWords({ s }: { s: SubjectId }) {
+  const m = langOfSubject(s)
+  const levels = m && m.id !== 'en' ? levelsOf(m.id) : []
+  if (!m || !levels.length) return null
+  return (
+    <Link class="row test-key" href={vocabPath(m.id)}>
+      <span class="skey m"><b class="aa">Aa</b></span>
+      <span class="txt"><b>{m.title}</b><small>{levels.length > 1 ? `${levels[0]}–${levels[levels.length - 1]}` : levels[0]}</small></span>
+    </Link>
   )
 }
 

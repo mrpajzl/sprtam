@@ -44,6 +44,8 @@
   --k-pink: #ff8ab6; --k-pink-on: #141518;
   --k-red: #f2433c; --k-red-on: #141518;
   --k-gray: #a9adb4; --k-gray-on: #141518;
+  --k-magenta: #d65ad8; --k-magenta-on: #141518;
+  --k-brown: #c98b4e; --k-brown-on: #141518;
 
   --bg: #e6e7e9;
   --dot: rgb(20 21 24 / 0.07);
@@ -496,6 +498,8 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 
 /* Vocab drill */
 .levels { display: grid; gap: 10px; }
+/* Another language on /slovicka: its key in the language's colour, levels beside the name */
+.lang-levels { margin-left: 8px; font-family: var(--mono); font-size: .8rem; font-weight: 700; color: var(--ink-3); }
 .drill { display: grid; gap: 22px; padding-top: 10px; }
 .ask { text-align: center; }
 .ask small { font-family: var(--mono); color: var(--ink-3); font-weight: 700; font-size: 0.82rem; }

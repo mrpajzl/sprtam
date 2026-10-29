@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sprtam.cz/schema/words.schema.json",
+  "title": "Šprtám – slovíčka dalšího jazyka",
+  "$comment": "Generováno z src/content/format.ts a src/widgets/ (npm run content:generate). Needitovat ručně.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "format": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1,
+      "description": "Verze formátu, teď 1."
+    },
+    "lang": {
+      "enum": [
+        "de",
+        "fr",
+        "es"
+      ],
+      "description": "Jazyk, stejný jako složka: de němčina, fr francouzština, es španělština."
+    },
+    "level": {
+      "enum": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "description": "Úroveň podle SERR, stejná jako název souboru."
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "$schema": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Název okruhu, např. \"Zvířata\"."
+          },
+          "emoji": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Jedno emoji okruhu."
+          },
+          "words": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "$schema": {
+                  "type": "string"
+                },
+                "cz": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Česky – na tohle se aplikace ptá."
+                },
+                "word": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Správně v cizím jazyce, podstatná jména se členem (der Hund, le chien, el perro; před samohláskou l'arbre (m)). Část v závorce se při psaní nevyžaduje. Musí být jedinečné napříč úrovněmi jazyka (je na něm uložený pokrok)."
+                },
+                "similar": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Špatná možnost, která podobně vypadá nebo zní (der Hund → der Mund)."
+                },
+                "related": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Špatná možnost, která souvisí významem (der Hund → die Katze)."
+                }
+              },
+              "required": [
+                "cz",
+                "word",
+                "similar",
+                "related"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "name",
+          "emoji",
+          "words"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "description": "Okruhy. Odkazují se pořadím (/slovicka/nemcina/A1/0) – nové přidávej na konec."
+    }
+  },
+  "required": [
+    "format",
+    "lang",
+    "level",
+    "groups"
+  ],
+  "additionalProperties": false,
+  "description": "Slovíčka jednoho jazyka (kromě angličtiny) jedné úrovně."
+}

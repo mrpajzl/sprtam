@@ -11,7 +11,8 @@ import type { ApproachFile, GradeId, YearId } from './types'
 //   subject/<grade>/<subject>         Topic[] in school-year order (the subject's _subject list; grade odb = odborné předměty)
 //   index                             TopicRow[] of every topic (search, recommendations)
 //   text                              string[] in the order of `index`: explanation titles, terms, summaries
-//   vocab/<level>                     VocabFile (A1 … C1)
+//   vocab/<level>                     VocabFile (A1 … C1), English
+//   words/<lang>/<level>              WordsFile: de, fr, es (not under vocab/, which older apps read as English)
 //   approach/<id>/<grade>             ApproachYearFile
 // Teaching approaches and the names of odborné předměty are small and needed before the first render: inline in
 // `approaches` and `vocational`.

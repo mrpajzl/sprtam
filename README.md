@@ -14,7 +14,8 @@
 - **Šest režimů:** Rychlý kvíz, Opakování, Písemka se známkou, Zkoušení nahlas, Test z předmětu a Mix.
 - **Přijímačky na SŠ:** příprava na jednotnou přijímací zkoušku z češtiny a matematiky po oblastech a cvičné testy – **[sprtam.cz/prijimacky](https://sprtam.cz/prijimacky)**.
 - **Slepá mapa:** hra na hledání krajů Česka, států Evropy a světa a jejich hlavních měst – **[sprtam.cz/slepa-mapa](https://sprtam.cz/slepa-mapa)**.
-- **Anglická slovíčka A1–C1** s výslovností a opakováním podle Leitnerova systému.
+- **Slovíčka** s výslovností a opakováním podle Leitnerova systému: angličtina A1–C1, němčina, francouzština a španělština A1–B1.
+- **Druhý cizí jazyk** (němčina, francouzština, španělština) od 7. třídy po maturitu.
 - **Waldorfská škola:** učivo po epochách podle waldorfského plánu, vysvětlení v duchu waldorfské pedagogiky a slovní hodnocení – **[sprtam.cz/waldorf](https://sprtam.cz/waldorf)**.
 - **Doporučení „Na řadě“:** co zopakovat, co ti nejde a na jakém základu z nižšího ročníku to stojí.
 - **Sešit chyb a Dnešní opakování:** každá spletená otázka se vrací, dokud ji dvakrát neodpovíš správně, a co ti vypadává z hlavy, přijde na řadu podle opakování s rozestupy. K tomu **nápovědy** po krocích, **přehled** po předmětech a **denní cíl**.

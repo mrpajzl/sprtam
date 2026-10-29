@@ -355,6 +355,8 @@ function changesOf(d: DraftRow, data: DraftData, verified?: Verified, get: (key:
     const list = get(subjectKey(d.grade, d.subject)) as SubjectFile | undefined
     if (list) out.push({ key: subjectKey(d.grade, d.subject), data: insertTopic(list, d.topic_id, data.after, data.order) })
     else if (founds(d, data)) out.push({ key: subjectKey(d.grade, d.subject), data: { format: FORMAT, topics: [d.topic_id], ...data.subject! } satisfies SubjectFile })
+    // A subject of the curriculum without content yet (a second language): its first topic starts the list.
+    else if (d.grade !== ODB) out.push({ key: subjectKey(d.grade, d.subject), data: { format: FORMAT, topics: [d.topic_id] } satisfies SubjectFile })
     else throw new HttpError(409, 'Předmět nemá seznam témat. Dej vědět správci.')
   }
   return out
