@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'preact/hooks'
+import { records, type Best } from '../progress/records'
 import { OTHER, REGIONS, STATES, type Part, type Place } from './places'
 
 // Slepá mapa (/slepa-mapa): find states and regions on a blind map. The maps and their questions live in code
@@ -107,39 +107,13 @@ export const askable = (m: GameMap, mode: ModeId) => (mode === 'mesta' ? m.ids.f
 /** A quick round; „celá mapa“ asks about every place. */
 export const ROUND = 10
 
-// Best results stay in this device only, like the rest of the progress (docs/SOUKROMI.md).
-const KEY = 'sprtam:mapy'
-const EVENT = 'sprtam:mapy'
-
-/** Best result (0–100) per `<map>/<mode>` (a quick round) and `<map>/<mode>/vse` (the whole map). */
-export type Best = Record<string, number>
-
-export function getBest(): Best {
-  try { return JSON.parse(localStorage.getItem(KEY) ?? '{}') ?? {} } catch { return {} }
-}
+// Best results stay in this device only, like the rest of the progress (docs/SOUKROMI.md): the best result (0–100)
+// per `<map>/<mode>` (a quick round) and `<map>/<mode>/vse` (the whole map).
+const best = records('sprtam:mapy')
+export const saveBest = best.save
+export const useBest = best.use
 
 export const bestKey = (map: string, mode: ModeId, all: boolean) => `${map}/${mode}${all ? '/vse' : ''}`
-
-/** Saves a result; true = a new record. */
-export function saveBest(key: string, pct: number): boolean {
-  const b = getBest()
-  if ((b[key] ?? -1) >= pct) return false
-  b[key] = pct
-  try { localStorage.setItem(KEY, JSON.stringify(b)) } catch { /* private mode: no records */ }
-  dispatchEvent(new Event(EVENT))
-  return true
-}
-
-export function useBest(): Best {
-  const [b, set] = useState(getBest)
-  useEffect(() => {
-    const on = () => set(getBest())
-    addEventListener(EVENT, on)
-    addEventListener('storage', on)
-    return () => { removeEventListener(EVENT, on); removeEventListener('storage', on) }
-  }, [])
-  return b
-}
 
 /** The best quick round of any mode of a map, 0–100. */
 export const bestOf = (b: Best, map: string) => Math.max(0, ...(['najdi', 'mesta', 'poznej'] as const).map((m) => b[bestKey(map, m, false)] ?? 0))

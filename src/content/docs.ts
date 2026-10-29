@@ -28,7 +28,7 @@ export type DocRef =
 export const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
 /** Ids that are routes of the app and so cannot be ids of teaching approaches (/waldorf). */
-export const RESERVED = ['g', 'p', 'obor', 'hledat', 'mix', 'sdilet', 'slovicka', 'spojit', 'presun', 'widgety', 'nastaveni', 'prijimacky', 'slepa-mapa', 'o-aplikaci', 'prehled', 'chyby', 'dnes', 'api', 'assets', 'audio', 'healthz']
+export const RESERVED = ['g', 'p', 'obor', 'hledat', 'mix', 'sdilet', 'slovicka', 'spojit', 'presun', 'widgety', 'nastaveni', 'prijimacky', 'slepa-mapa', 'periodicka-tabulka', 'o-aplikaci', 'prehled', 'chyby', 'dnes', 'api', 'assets', 'audio', 'healthz']
 
 /** A subject that may hold topics of grade g: the curriculum's, or for odb any id that is not a core subject. */
 export const isSubjectOf = (g: GradeId, s: string): s is SubjectId => (g === ODB ? ID.test(s) && s.length <= 40 && !isCoreSubject(s) : (GRADE_SUBJECTS[g] as string[]).includes(s))

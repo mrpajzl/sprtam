@@ -21,16 +21,26 @@ const phone = await browser.newContext({ viewport: { width: 390, height: 844 }, 
 const p = await phone.newPage()
 watch(p)
 
-/** A screen point inside the place (its own path or dot, not a neighbour or an enclave). */
+/**
+ * A screen point inside the place (its own path or dot, not a neighbour or an enclave), as far as possible from the
+ * dots of other small states: a tap near one of them picks the small state (MapView's minimum tap area).
+ */
 async function pointIn(page, id) {
   return page.evaluate((id) => {
+    const dots = [...document.querySelectorAll('.map circle')].filter((c) => c.getAttribute('data-id') !== id).map((c) => { const r = c.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 } })
+    const room = (x, y) => Math.min(Infinity, ...dots.map((d) => Math.hypot(d.x - x, d.y - y)))
     const els = [...document.querySelectorAll(`.map [data-id="${id}"]`)]
     for (const el of els.reverse()) {
       const r = el.getBoundingClientRect()
+      let best = null
       for (let i = 1; i < 40; i++) for (let j = 1; j < 40; j++) {
         const x = r.left + (r.width * i) / 40, y = r.top + (r.height * j) / 40
-        if (document.elementFromPoint(x, y) === el) return { x, y }
+        if (document.elementFromPoint(x, y) !== el) continue
+        const d = room(x, y)
+        if (!best || d > best.d) best = { x, y, d }
+        if (d > 40) return { x, y }
       }
+      if (best) return { x: best.x, y: best.y }
     }
     return null
   }, id)

@@ -57,6 +57,8 @@ src/
   obory.ts              obory odborných škol (/obor): odborné a všeobecné předměty po ročnících (docs/OBORY.md)
   maps/                 Slepá mapa (/slepa-mapa): mapy a české názvy (places.ts), mapa s posunem a zoomem (MapView.tsx),
                         obrysy z Natural Earth v data/*.json (npx tsx scripts/maps-generate.ts)
+  chem/                 Periodická tabulka (/periodicka-tabulka): 118 prvků (elements.ts, sdílí je widgety periodic a chem-equation),
+                        sady a hry (index.ts), slepá tabulka (Table.tsx)
   quiz/                 režimy, vyhodnocení odpovědí, generátory příkladů
   progress/
     store.ts            pokrok v localStorage, slučování
@@ -119,6 +121,8 @@ Nové vydání učiva (schválená změna v moderaci) je na sprtam.cz do 15 seku
 | `/widgety`, `/widgety/<název>` | Galerie widgetů, bloků a otázek pro autory obsahu |
 | `/slepa-mapa`, `/slepa-mapa/evropa` | Slepá mapa: mapy, jedna mapa (prohlížení, seznam míst) |
 | `/slepa-mapa/evropa/najdi` | Hra (`najdi`, `mesta`, `poznej`; `?vse` = celá mapa) |
+| `/periodicka-tabulka` | Periodická tabulka: prohlížení, sady prvků (`?sada=zaklad`, `zs`, `vse`), hry a seznam prvků |
+| `/periodicka-tabulka/zs/znacky` | Hra (`znacky`, `nazvy`, `najdi`, `poznej`, `druh`; `?vse` = všechny prvky sady) |
 | `/waldorf`, `/waldorf/z1`, `/waldorf/z1/<epocha>` | Přístup k výuce: popis a volba, plán ročníku, epocha s tématy |
 | `/waldorf/z1/<epocha>/test` | Procvičení všech témat epochy |
 | `/#/p/<kód>`, `/#/spojit/<kód>`, `/#/presun/<kód>` | Import pokroku, párování, přechod ze staré domény (za `#`, server je nevidí) |
@@ -227,6 +231,7 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/usability-test.ts` | pravidla Plánu před písemkou, rozložení Ostré simulace do oblastí, rozdělané kolo, soubory `.ics` a přepínání profilů (`npx tsx`) |
 | `scripts/usability-flow.mjs` | totéž v prohlížeči: nastavení čtení, klávesy, rozdělané kolo, simulace, pracovní list a tisk, plán s kalendářem, připomínka, profily (proti běžícímu serveru, `SHOTS=1` uloží snímky) |
 | `scripts/maps-test.mjs` | Slepá mapa v prohlížeči: celá kola všech her dotykem, špatné klepnutí, výsledek a rekord, prohlížení mapy, posun a zoom myší (proti vývojovému serveru, `SHOTS=1` uloží snímky) |
+| `scripts/elements-test.mjs` | Periodická tabulka v prohlížeči: celá kola všech her dotykem s jednou chybou, výsledek, rekord a procvičení chyb, slepá tabulka na telefonu, prohlížení a sady, klávesnice a tmavý vzhled na počítači (proti vývojovému serveru, `SHOTS=1` uloží snímky) |
 | `scripts/report-test.mjs` | hlášení chyb přes server: kontrola, limity, přeposlání bez údajů o žákovi (spouští vlastní server a náhradu obsahové služby, napřed `npm run build`) |
 | `scripts/moderator-test.mjs` | moderace a obsahová služba: přihlášení klíčem, bezpečnostní pravidla, editor a náhled, kontrola a zveřejnění, historie a návraty, API tokeny, hlášení od žáků, zálohy (spouští vlastní server, napřed `npm run moderator:build`) |
 | `scripts/shots.mjs` | snímky obrazovek (přehled widgetů je v aplikaci na `/widgety`) |

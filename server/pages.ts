@@ -6,6 +6,7 @@ import { LANGS, langOfSubject, LEVEL_IDS, vocabPath, type LangMeta } from '../sr
 import { ABOUT } from '../src/about'
 import { EXAM, partTopics } from '../src/exam'
 import { askable, MAPS, MAPS_INTRO, MAPS_PATH, modesOf, PARTS, place, ROUND } from '../src/maps'
+import { askable as askableElements, ELEMENTS_INTRO, ELEMENTS_PATH, MODES as ELEMENT_MODES, ROUND as ELEMENT_ROUND, setById } from '../src/chem'
 import { fullTitle, gradeFor, gradeLabel, plain, SITE_NAME, summary, titles } from '../src/seo'
 import { WIDGETS } from '../src/widgets'
 import { CONTENT_AUTHOR, dateCs, joinHref, profileHref, verifierNames, type Verified } from '../src/content/verified'
@@ -16,7 +17,7 @@ import { CONTENT_AUTHOR, dateCs, joinHref, profileHref, verifierNames, type Veri
 //   /slovicka/<language>  /slovicka/<language>/<level>
 //   /<approach>  /<approach>/<grade>  /<approach>/<grade>/<epoch>  /prijimacky  /prijimacky/<subject>  /prijimacky/<subject>/<area>
 //   /obor  /obor/<id>  (odborné předměty themselves are /g/odb/<subject>/<topic>)
-//   /slepa-mapa  /slepa-mapa/<map>
+//   /slepa-mapa  /slepa-mapa/<map>  /periodicka-tabulka
 // plus the app.html shell for the remaining in-app routes, sitemap.xml and robots.txt. Rendered by the
 // server from the current content release (server/content.ts). The markup uses the app's own classes,
 // so it looks like the screen the app then renders over it.
@@ -110,6 +111,7 @@ export function pages(site: SiteContent): Page[] {
 ${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_PATH}"><span class="skey m"><b class="em">🛠️</b></span><span class="txt"><b>Odborná škola</b><small>IT, strojírenství, kosmetika a další obory</small></span></a>` : ''}
 <a class="row exam-key" style="${style('orange')}" href="/${EXAM.id}"><span class="skey m"><b class="em">${EXAM.emoji}</b></span><span class="txt"><b>${esc(EXAM.name)}</b><small>${esc(EXAM.hint)}</small></span></a>
 <a class="row vocab-key map-key" style="${style('teal')}" href="${MAPS_PATH}"><span class="skey m"><b class="em">🗺️</b></span><span class="txt"><b>Slepá mapa</b><small>kraje, Evropa, svět</small></span></a>
+<a class="row vocab-key map-key" style="${style('green')}" href="${ELEMENTS_PATH}"><span class="skey m"><b class="em">🧪</b></span><span class="txt"><b>Periodická tabulka</b><small>prvky, značky a hra na slepou tabulku</small></span></a>
 <a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt">${langs.length > 1 ? `<b>Slovíčka</b><small>${esc(langs.map((m) => m.name.toLowerCase()).join(', '))}</small>` : '<b>Anglická slovíčka</b><small>A1–C1</small>'}</span></a>
 <a class="row about-key" style="${style('ink')}" href="/o-aplikaci"><span class="skey m"><b>?</b></span><span class="txt"><b>Co je Šprtám?</b><small>jak funguje a co o tobě (ne)ví</small></span></a></div>${tabbar('home')}`,
   })
@@ -363,6 +365,18 @@ ${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_P
         + `<h2 class="label">${state ? 'Státy a hlavní města' : 'Kraje a krajská města'}</h2><div class="map-list">${m.ids.map((id) => { const pl = place(id)!; return `<div class="map-place"><b>${esc(pl.name)}</b><span>${esc(pl.capital ?? (id === 'CZ-ST' ? 'sídlo v Praze' : '–'))}</span></div>` }).join('')}</div></div>${tabbar(undefined)}`,
     })
   }
+  // Periodická tabulka: /periodicka-tabulka (markup as src/screens/Elements.tsx; the games need the app, the page
+  // lists every element as the widget periodic does without JS).
+  const zs = setById('zs')!
+  out.push({
+    path: ELEMENTS_PATH,
+    title: titles.elements(),
+    description: ELEMENTS_INTRO,
+    crumbs: [home, ['Periodická tabulka', ELEMENTS_PATH]],
+    body: `<div class="page" style="${style('green')}">${bar('🧪 Periodická tabulka', '/')}<div class="blocks approach-about"><p>${esc(ELEMENTS_INTRO)}</p></div>`
+      + `<h2 class="label">Hrát: ${esc(zs.title.toLowerCase())}</h2><div class="list">${ELEMENT_MODES.map((mode) => `<a class="row map-mode" href="${esc(`${ELEMENTS_PATH}/${zs.id}/${mode.id}`)}" rel="nofollow"><span class="txt"><b>${esc(mode.title)}</b><small>${esc(mode.hint)} · ${Math.min(ELEMENT_ROUND, askableElements(zs, mode.id).length)} otázek</small></span></a>`).join('')}</div>`
+      + `<h2 class="label">Všech 118 prvků</h2><div class="blocks">${WIDGETS.periodic.html?.({}, esc) ?? ''}</div></div>${tabbar(undefined)}`,
+  })
   return out
 }
 

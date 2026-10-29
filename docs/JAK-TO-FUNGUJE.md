@@ -53,6 +53,18 @@ Když klepneš vedle, hra ti řekne, kam jsi klepl („To je Německo“). Na ka
 
 Mapu posuneš tažením a přiblížíš (až 60×) dvěma prsty, kolečkem myši nebo tlačítky. Nejmenší státy (Vatikán, ostrovní státy) mají tečku. Každý malý stát má klikací oblast nejméně 36 px, i když leží uvnitř většího souseda, takže Monako nebo San Marino trefíš prstem i bez přiblížení. Mapy jsou z Natural Earth (volné dílo) a stahují se až při otevření hry; offline fungují taky. Hlavní město chybí u států, kde by odpověď nebyla jednoznačná (Bolívie, Srí Lanka, Izrael, Nauru), a u Středočeského kraje, který sídlí v Praze.
 
+## Periodická tabulka
+
+Hra na [sprtam.cz/periodicka-tabulka](https://sprtam.cz/periodicka-tabulka) (na úvodní obrazovce „Periodická tabulka“). Nahoře si vybereš sadu prvků: **20 prvků** (vodík až vápník, tabulka se vejde na telefon), **ze ZŠ** (41 prvků, které by měl znát každý: prvních 20 a třeba železo, měď, stříbro, zlato, rtuť, olovo, jod nebo uran) a **všech 118**. Tabulku si nejdřív prohlédneš: klepnutím na prvek uvidíš jeho název, protonové číslo, atomovou hmotnost, skupinu, periodu, skupenství a u lehkých prvků elektrony ve slupkách. Pod tabulkou je seznam prvků sady. Pak si vybereš hru, buď na 10 otázek, nebo na všechny prvky sady:
+
+- **Značky**: vyber značku prvku podle názvu (síra → S, Si, Sn, Na…);
+- **Názvy**: vyber název prvku podle značky;
+- **Najdi v tabulce**: ukaž prvek ve slepé tabulce (bez značek, jen s čísly skupin a period);
+- **Poznáš prvek?**: v tabulce je vyznačené jedno pole, vyber, který prvek tam patří (nabídka jsou jeho sousedé);
+- **Kov, nebo nekov?**: řekni, jestli je prvek kov, polokov, nebo nekov (bez polonia a astatu, které různé učebnice řadí různě, a bez supertěžkých prvků od rutherfordia, o kterých se to neví).
+
+Špatné odpovědi se nabízejí ty, které se snadno spletou: značky se stejným začátkem, podobné názvy, sousedé v tabulce. Po každé odpovědi hra ukáže, co si o prvku zapamatovat (značka, protonové číslo, kategorie, perioda a skupina). Ve slepé tabulce máš na každý prvek tři pokusy jako ve Slepé mapě: napoprvé je za celý bod, napodruhé za půl a po třetí chybě ti hra prvek ukáže; když klepneš vedle, řekne ti, co je na tom místě. Na konci uvidíš hvězdičky a prvky, které ti nešly, a můžeš si procvičit jen je. Nejlepší výsledek každé hry zůstává jen v zařízení (`sprtam:prvky`, viz [Soukromí](SOUKROMI.md)). Celá tabulka se na telefonu posouvá do strany, aby šla pole pohodlně trefit. Hra funguje i offline.
+
 ## Režimy procvičování
 
 | Režim | Otázek | Jak to probíhá |
