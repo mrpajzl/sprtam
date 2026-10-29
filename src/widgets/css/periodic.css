@@ -1,0 +1,51 @@
+/* Widget periodic (src/widgets/periodic.tsx) */
+.periodic-alkali { --pc: var(--k-red); }
+.periodic-earth { --pc: var(--k-orange); }
+.periodic-transition { --pc: var(--k-yellow); }
+.periodic-lanthanoid { --pc: var(--k-pink); }
+.periodic-actinoid { --pc: var(--k-purple); }
+.periodic-metal { --pc: var(--k-gray); }
+.periodic-metalloid { --pc: var(--k-lime); }
+.periodic-nonmetal { --pc: var(--k-green); }
+.periodic-halogen { --pc: var(--k-teal); }
+.periodic-noble { --pc: var(--k-blue); }
+
+.periodic-scroll { container-type: inline-size; overflow-x: auto; overscroll-behavior-x: contain; margin: 0 -6px; padding: 0 6px 4px; }
+.periodic-grid { display: grid; gap: 2px; font-size: clamp(7px, 2.5cqw, 15px); }
+.periodic-grid.compact { gap: 4px; font-size: clamp(11px, 4.4cqw, 18px); }
+.periodic-scroll.zoom .periodic-grid { width: 760px; font-size: 15px; gap: 3px; }
+.periodic-head { display: grid; place-items: center; font-family: var(--mono); font-size: 0.7em; font-weight: 700; color: var(--ink-3); min-height: 1.4em; }
+.periodic-gap { display: grid; place-items: center; font-family: var(--mono); font-size: 0.55em; font-weight: 700; color: var(--ink-3); border-radius: 4px; border: 1px dashed var(--line); text-align: center; }
+.periodic-el {
+  position: relative; display: grid; place-items: center; aspect-ratio: 1 / 1.12; min-width: 0;
+  border-radius: 4px; background: color-mix(in oklab, var(--pc) 42%, var(--card)); color: var(--ink);
+  transition: opacity 0.15s, transform 0.1s var(--ease), box-shadow 0.15s;
+}
+.periodic-el b { font-size: 1em; font-weight: 850; line-height: 1; }
+.periodic-z { position: absolute; top: 0.12em; left: 0.2em; font-family: var(--mono); font-size: 0.5em; font-weight: 600; color: var(--ink-2); line-height: 1; }
+.periodic-el.dim { opacity: 0.22; }
+.periodic-el.sel { box-shadow: 0 0 0 2px var(--ink); z-index: 1; transform: scale(1.12); }
+.periodic-el:active { transform: scale(0.94); }
+@container (max-width: 480px) { .periodic-grid:not(.compact) .periodic-z { display: none; } }
+.periodic-grid.compact .periodic-el { border-radius: 8px; }
+.periodic-grid.compact .periodic-el b { font-size: 1.15em; }
+/* The extra rows of lanthanoids and actinoids sit a bit apart. */
+.periodic-el.frow { margin-top: 0.5em; }
+
+.periodic-detail { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; align-items: center; min-height: 5.5em; }
+.periodic-detail > .sub { grid-column: 1 / -1; }
+.periodic-big { grid-row: span 2; width: 76px; height: 86px; border-radius: 12px; display: grid; grid-template-rows: auto 1fr auto; justify-items: center; align-items: center; padding: 6px 4px; background: color-mix(in oklab, var(--pc) 42%, var(--card)); color: var(--ink); }
+.periodic-big span { font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--ink-2); }
+.periodic-big b { font-size: 2rem; font-weight: 900; line-height: 1; }
+.periodic-facts { display: contents; }
+.periodic-name { align-self: end; font-size: 1.25rem; font-weight: 900; text-transform: capitalize; }
+.periodic-facts > span { align-self: start; color: var(--ink-2); font-weight: 700; font-size: 0.9rem; }
+.periodic-facts dl { grid-column: 1 / -1; display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin: 6px 0 0; font-size: 0.88rem; }
+.periodic-facts dt { color: var(--ink-2); font-weight: 600; }
+.periodic-facts dd { margin: 0; font-weight: 800; overflow-wrap: anywhere; }
+.periodic-facts small { grid-column: 1 / -1; color: var(--ink-3); font-size: 0.78rem; margin-top: 4px; }
+
+.periodic-legend { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.periodic-key { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line); transition: background 0.15s, color 0.15s; }
+.periodic-key i { width: 12px; height: 12px; border-radius: 3px; background: color-mix(in oklab, var(--pc) 70%, var(--card)); }
+.periodic-key.on { background: var(--ink); color: var(--bg); box-shadow: none; }

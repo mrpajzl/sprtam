@@ -60,9 +60,13 @@ for (const [k, v] of snap) {
 
 // ——— Widget registry ———
 
+const EVIL = '<img src=x onerror=alert(1)>'
+const escHtml = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+const poison = (v: unknown): unknown => (typeof v === 'string' ? v + EVIL : Array.isArray(v) ? v.map(poison) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, poison(x)])) : v)
+
 const widgetDir = join(ROOT, 'src', 'widgets')
 for (const f of ls(widgetDir)) {
-  if (!f.endsWith('.tsx') || f === 'kit.tsx' || f === 'index.tsx') continue
+  if (!f.endsWith('.tsx') || f === 'kit.tsx' || f === 'index.tsx' || f === 'view.tsx') continue
   const name = f.slice(0, -4)
   if (!WIDGETS[name]) err(`src/widgets/${f}`, 'widget not registered in src/widgets/index.tsx (or its name differs from the file name)')
 }
@@ -75,6 +79,13 @@ for (const w of Object.values(WIDGETS)) {
     for (const m of w.check?.(x.props) ?? []) err(`${where} examples[${i}]`, m)
   })
   for (const [k, f] of Object.entries(w.props.fields)) if (!f.description) err(where, `prop "${k}" has no description`)
+  // Pages from the server show html(): every text from content must go through `inline` (escaped). Fed with
+  // markup in every string prop, an example must not render it (props it cannot render at all may throw).
+  if (w.html) for (const x of w.examples) {
+    let out = ''
+    try { out = w.html(poison(x.props), escHtml) } catch { continue }
+    if (out.includes(EVIL)) err(where, `html() of example "${x.title}" puts text from content into the page unescaped – use inline()`)
+  }
 }
 
 for (const [k, b] of Object.entries(BLOCK_EXAMPLES)) for (const i of validate(block, b)) err(`src/content/examples.ts block ${k}`, `${i.path}: ${i.message}`)

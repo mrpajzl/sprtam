@@ -3,7 +3,7 @@ import type { Question } from '../content/types'
 import { Inline } from '../ui/Inline'
 import { IBulb, IDown, IUp } from '../ui/icons'
 import { checkInput } from './engine'
-import { WidgetQuestion } from '../widgets'
+import { WidgetQuestion } from '../widgets/view'
 
 const shuffle = <T,>(xs: T[]) => xs.map((x) => [Math.random(), x] as const).sort((a, b) => a[0] - b[0]).map((x) => x[1])
 

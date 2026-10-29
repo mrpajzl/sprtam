@@ -1,0 +1,42 @@
+/* Widget document (src/widgets/document.tsx) */
+.doc-title { text-align: center; font-weight: 900; font-size: 1.1rem; }
+.doc-author { text-align: center; color: var(--ink-3); font-weight: 700; font-style: italic; font-size: 0.9rem; margin-top: -4px; }
+.doc-paper { --dc: var(--accent); position: relative; padding: 18px 16px; border-radius: 6px; background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge); line-height: 1.45; font-size: 0.98rem; user-select: text; -webkit-user-select: text; }
+.doc-body { display: grid; gap: 12px; }
+.doc-show .doc-body { gap: 18px; }
+.doc-part-wrap { display: grid; gap: 6px; min-width: 0; }
+.doc-part { position: relative; display: block; text-align: left; padding: 6px 8px; margin: -6px -8px; width: calc(100% + 16px); border-radius: 8px; box-shadow: inset 0 0 0 2px transparent; transition: box-shadow 0.15s, background 0.15s; overflow-wrap: anywhere; }
+.doc-part.on { box-shadow: inset 0 0 0 2px var(--dc); background: color-mix(in oklab, var(--dc) 8%, transparent); }
+.doc-part.sel { background: color-mix(in oklab, var(--dc) 18%, transparent); }
+.doc-line { display: block; min-height: 1.45em; }
+.doc-gap { display: block; height: 0.8em; }
+.doc-tag { position: absolute; top: -10px; right: 8px; padding: 1px 7px; border-radius: 6px; background: color-mix(in oklab, var(--dc) 28%, var(--key)); color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--dc); font-family: var(--mono); font-size: 0.68rem; font-weight: 750; line-height: 1.5; text-align: left; opacity: 0; transform: translateY(3px); transition: opacity 0.15s, transform 0.15s; pointer-events: none; white-space: nowrap; max-width: 80%; overflow: hidden; text-overflow: ellipsis; }
+.doc-part.on .doc-tag { opacity: 1; transform: none; }
+.doc-note { padding: 8px 10px; border-left: 4px solid var(--dc); border-radius: 0 8px 8px 0; background: var(--bg); color: var(--ink-2); font-size: 0.9rem; font-weight: 650; line-height: 1.4; animation: in 0.2s var(--ease); user-select: text; -webkit-user-select: text; }
+.doc-note b { color: var(--ink); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.03em; margin-right: 4px; }
+
+/* letter: plain paper (default above) */
+.doc-letter { padding: 22px 18px; }
+
+/* email: header with mono labels */
+.doc-email { border-radius: 12px; padding: 0 14px 16px; }
+.doc-head { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; margin: 0 -14px 14px; padding: 12px 14px; border-bottom: 1px solid var(--line); background: var(--bg); border-radius: 12px 12px 0 0; font-size: 0.88rem; }
+.doc-head dt { font-family: var(--mono); font-weight: 700; color: var(--ink-3); font-size: 0.78rem; align-self: center; }
+.doc-head dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+/* sms: a received message bubble */
+.doc-sms { background: none; box-shadow: none; padding: 0; display: grid; gap: 6px; justify-items: start; }
+.doc-sms .doc-body { position: relative; max-width: 88%; padding: 12px 14px; border-radius: 20px 20px 20px 6px; background: color-mix(in oklab, var(--k-blue) 16%, var(--key)); box-shadow: inset 0 0 0 1px var(--line); }
+.doc-sms.doc-show .doc-body { gap: 16px; }
+.doc-contact { font-family: var(--mono); font-size: 0.75rem; font-weight: 700; color: var(--ink-3); margin-left: 8px; }
+
+/* poem: centred stanzas */
+.doc-poem { text-align: center; }
+.doc-poem .doc-part { text-align: center; }
+.doc-poem .doc-body { gap: 18px; }
+
+/* book: indented paragraphs */
+.doc-book { font-family: Georgia, 'Times New Roman', serif; font-size: 1.02rem; }
+.doc-book .doc-line { text-indent: 1.5em; }
+.doc-book .doc-tag { font-family: var(--mono); }
+.doc-note { text-align: left; }

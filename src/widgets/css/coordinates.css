@@ -1,0 +1,33 @@
+/* Widget coordinates (src/widgets/coordinates.tsx) */
+.coordinates-grid { touch-action: manipulation; border-radius: 10px; }
+.coordinates-grid.pick { cursor: crosshair; }
+.coordinates-grid:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.coordinates-quad { font-size: 22px; font-weight: 900; fill: var(--ink-3); opacity: 0.35; font-family: var(--mono); }
+.coordinates-axis { font-size: 14px; font-weight: 900; fill: var(--ink-2); font-style: italic; }
+.coordinates-tick { font-size: 10px; font-weight: 700; fill: var(--ink-3); font-variant-numeric: tabular-nums; }
+.coordinates-mirror { stroke: var(--k-purple); stroke-width: 3.5; stroke-dasharray: 7 5; stroke-linecap: round; }
+.coordinates-poly { fill: color-mix(in oklab, var(--accent) 18%, transparent); stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; }
+.coordinates-poly.image { fill: color-mix(in oklab, var(--k-blue) 18%, transparent); stroke: var(--k-blue); }
+.coordinates-dot .pt { fill: var(--accent); stroke: var(--card); stroke-width: 2; }
+.coordinates-dot text { font-size: 13px; font-weight: 900; fill: var(--ink); paint-order: stroke; stroke: var(--card); stroke-width: 4px; stroke-linejoin: round; font-variant-numeric: tabular-nums; }
+.coordinates-dot.image .pt { fill: var(--k-blue); }
+.coordinates-dot.found .pt { fill: var(--ok); }
+.coordinates-dot.target .pt { r: 7px; }
+.coordinates-dot.tap { cursor: pointer; }
+.coordinates-cursor { transition: transform 0.15s var(--ease); pointer-events: none; }
+.coordinates-cursor circle { fill: color-mix(in oklab, var(--accent) 25%, transparent); stroke: var(--accent); stroke-width: 2.5; }
+.coordinates-cursor .core { fill: var(--accent); stroke: none; }
+.coordinates-mono { font-family: var(--mono); color: var(--ink); }
+.coordinates-names { gap: 8px; }
+.coordinates-name { min-height: 40px; min-width: 44px; padding: 0 12px; border-radius: 10px; background: var(--bg); font-family: var(--mono); font-weight: 800; font-size: 0.9rem; }
+.coordinates-name.on { background: var(--accent-soft); color: var(--accent-ink); }
+.coordinates-pad { display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; }
+.coordinates-pad button:not(.reveal) { width: 44px; height: 44px; border-radius: 10px; background: var(--bg); font-weight: 900; font-size: 1.2rem; }
+.coordinates-pad .reveal { margin-left: 6px; min-height: 44px; }
+.coordinates-msg { min-height: 1.4em; text-align: center; font-weight: 800; font-size: 0.95rem; border-radius: 10px; padding: 0; }
+.coordinates-msg.ok, .coordinates-msg.bad { padding: 8px 12px; }
+.coordinates-msg.ok { background: var(--ok-bg); color: var(--ok); }
+.coordinates-msg.bad { background: var(--bad-bg); color: var(--bad); }
+@media (prefers-reduced-motion: reduce) { .coordinates-cursor { transition: none; } }
+.coordinates-dot .hit { fill: transparent; }
+.w .coordinates-task { font-size: 1.15rem; line-height: 1.3; }

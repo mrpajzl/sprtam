@@ -1,0 +1,29 @@
+/* Widget units (src/widgets/units.tsx) */
+.units-in { display: flex; gap: 8px; justify-content: center; align-items: center; }
+.units-in input, .units-in select {
+  height: 44px; border-radius: 10px; border: 2px solid var(--line); background: var(--key); color: var(--ink);
+  font: inherit; font-weight: 800; font-size: 1.1rem; padding: 0 10px;
+}
+.units-in input { width: 9em; min-width: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.units-in select { min-width: 4.5em; }
+.units-in input:focus-visible, .units-in select:focus-visible, .units-u:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+.units-in .reveal { min-width: 44px; height: 44px; padding: 0 10px; font-size: 1.1rem; }
+
+/* The ladder: two rails, a rung per unit (units of the same size share a rung: l = dm³). */
+.units-ladder { position: relative; padding: 2px 12px; border-left: 5px solid var(--line); border-right: 5px solid var(--line); border-radius: 4px; }
+.units-rung { display: flex; align-items: center; gap: 6px; min-height: 44px; }
+.units-u {
+  min-width: 52px; height: 38px; padding: 0 10px; border-radius: 10px; font-weight: 850; font-size: 1rem;
+  background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge);
+  transition: transform 0.09s var(--ease), box-shadow 0.09s var(--ease), background 0.15s;
+}
+.units-u:active { transform: translateY(2px); box-shadow: inset 0 0 0 1px var(--line), 0 1px 0 var(--key-edge); }
+.units-u.from { background: var(--accent-soft); box-shadow: inset 0 0 0 2px var(--accent), 0 3px 0 var(--key-edge); }
+.units-u.to { background: var(--accent); color: var(--on-accent); box-shadow: 0 3px 0 var(--accent-edge); }
+.units-eq { font-weight: 800; color: var(--ink-3); }
+.units-v { margin-left: auto; text-align: right; font-weight: 850; color: var(--accent-ink); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; min-width: 0; }
+.units-gap { padding-left: 14px; font-size: 0.8rem; font-weight: 800; color: var(--ink-3); line-height: 1.5; transition: color 0.2s; }
+.units-gap.path { color: var(--accent-ink); font-size: 0.9rem; }
+
+.units-q { text-align: center; font-size: 1.5rem; font-weight: 900; margin-bottom: 8px; }
+.units-blank { display: inline-block; min-width: 2.2em; padding: 0 6px; border-bottom: 3px solid var(--accent); color: var(--ink-3); }

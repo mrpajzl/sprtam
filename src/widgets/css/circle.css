@@ -1,0 +1,33 @@
+/* Widget circle (src/widgets/circle.tsx) */
+.circle-seg { display: flex; justify-self: center; gap: 4px; padding: 4px; border-radius: 12px; background: var(--bg); }
+.circle-seg button { min-height: 38px; padding: 0 12px; border-radius: 9px; font-family: var(--mono); font-weight: 700; font-size: 0.82rem; color: var(--ink-2); transition: background 0.2s, color 0.2s; }
+.circle-seg button.on { background: var(--accent); color: var(--on-accent); }
+.circle-opts { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.circle-disc { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 3; transition: r 0.15s var(--ease); }
+.circle-sector { fill: color-mix(in oklab, var(--k-green) 40%, var(--card)); stroke: var(--k-green); stroke-width: 1.5; stroke-linejoin: round; }
+.circle-arc { fill: none; stroke: var(--k-green); stroke-width: 5; stroke-linecap: round; }
+.circle-r { stroke: var(--accent-ink); stroke-width: 3; stroke-linecap: round; }
+.circle-d { stroke: var(--k-blue); stroke-width: 3; stroke-linecap: round; }
+.circle-d.thin { stroke-width: 2; stroke-dasharray: 4 4; }
+.circle-label { font-size: 16px; font-weight: 900; font-style: italic; paint-order: stroke; stroke: var(--card); stroke-width: 4px; stroke-linejoin: round; }
+.circle-label.r { fill: var(--accent-ink); }
+.circle-label.d { fill: var(--k-blue); }
+.circle-label.s { fill: var(--ink); font-style: normal; font-size: 13px; }
+.circle-label.alpha { fill: var(--ink); stroke: none; }
+.circle-lines { display: grid; gap: 6px; justify-items: center; text-align: center; font-weight: 700; font-size: 0.95rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.circle-lines b { color: var(--accent-ink); font-weight: 900; }
+.circle-frac { white-space: nowrap; }
+/* Rolling: the rim unwinds (dash), the wheel travels one circumference and turns once, the segment grows. */
+.circle-roll { overflow: visible; }
+.circle-ghost { fill: var(--accent-soft); stroke: none; }
+.circle-rim { fill: none; stroke: var(--accent); stroke-width: 4; stroke-dasharray: 100 100; stroke-dashoffset: 0; transition: stroke-dashoffset 1.8s linear; }
+.circle-unrolled { stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 100 100; stroke-dashoffset: 100; transition: stroke-dashoffset 1.8s linear; }
+.circle-wheel { transition: transform 1.8s linear; transform-box: view-box; }
+.circle-roll.rolled .circle-rim { stroke-dashoffset: -100; }
+.circle-roll.rolled .circle-unrolled { stroke-dashoffset: 0; }
+.circle-ticks { opacity: 0; transition: opacity 0.3s; }
+.circle-roll.rolled .circle-ticks { opacity: 1; transition-delay: 1.8s; }
+.circle-tick-rest { font-size: 11px; font-weight: 800; fill: var(--ink-2); }
+@media (prefers-reduced-motion: reduce) {
+  .circle-rim, .circle-unrolled, .circle-wheel, .circle-ticks, .circle-disc { transition: none !important; }
+}

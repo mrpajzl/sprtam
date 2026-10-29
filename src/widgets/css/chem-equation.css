@@ -1,0 +1,30 @@
+/* Widget chem-equation (src/widgets/chem-equation.tsx) */
+.chem-eq { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 10px 4px; }
+.chem-sp { display: grid; justify-items: center; gap: 6px; }
+.chem-top { display: inline-flex; align-items: baseline; gap: 4px; min-height: 2.2rem; }
+.chem-f { font-size: 1.35rem; font-weight: 850; white-space: nowrap; }
+.chem-f sub { font-size: 0.68em; font-weight: 800; }
+.chem-n { font-size: 1.35rem; font-weight: 900; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.chem-n.one { color: var(--ink-3); opacity: 0.6; }
+.chem-op { font-size: 1.3rem; font-weight: 800; color: var(--ink-2); padding: 0 2px; line-height: 2.2rem; }
+.chem-arrow { padding: 0 6px; }
+.chem-k { display: inline-flex; gap: 4px; padding: 3px 3px 5px; border-radius: 12px; background: var(--bg); }
+.chem-k button {
+  width: 36px; height: 34px; border-radius: 9px; font-family: var(--mono); font-weight: 800; font-size: 1.1rem;
+  background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 2px 0 var(--key-edge);
+  transition: transform 0.09s var(--ease), box-shadow 0.09s var(--ease);
+}
+.chem-k button:active { transform: translateY(2px); box-shadow: inset 0 0 0 1px var(--line); }
+.chem-k button:disabled { opacity: 0.35; cursor: default; }
+.chem-blank { align-self: center; display: inline-block; width: 24px; height: 30px; border-radius: 7px; border: 2px dashed var(--ink-3); }
+
+.chem-table { max-width: 340px; margin: 0 auto; font-size: 0.92rem; }
+.chem-table th, .chem-table td { padding: 5px 8px; text-align: center; }
+.chem-table td:first-child { font-weight: 850; }
+.chem-table td:nth-child(2), .chem-table td:nth-child(3) { font-family: var(--mono); font-weight: 700; font-variant-numeric: tabular-nums; }
+.chem-table td:last-child { font-size: 0.82rem; font-weight: 750; text-align: left; white-space: nowrap; }
+.chem-table tr.ok td:last-child { color: var(--ok); }
+.chem-table tr.bad td { background: var(--bad-bg); color: var(--bad); }
+.chem-table tr td { transition: background 0.2s, color 0.2s; }
+.w .val.chem-res { color: var(--ink-2); font-size: 1.15rem; }
+.w .val.chem-res.ok { color: var(--ok); font-size: 1.35rem; }

@@ -1,0 +1,18 @@
+/* Widget lever (src/widgets/lever.tsx) */
+.lever-move { transition: transform 0.4s var(--ease); }
+.lever .val.lever-ok { color: var(--ok); }
+.lever-calc { display: grid; gap: 2px; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+.lever-calc b { font-weight: 900; }
+.lever-l { color: color-mix(in oklab, var(--k-blue) 70%, var(--ink)); }
+.lever-r { color: color-mix(in oklab, var(--k-orange) 70%, var(--ink)); }
+.lever-goal { color: var(--accent-ink); }
+.lever-note { font-size: 0.8rem; color: var(--ink-3); font-weight: 650; }
+.lever-ctrls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 6px; }
+.lever-ctrls.only { grid-template-columns: 1fr; }
+.lever-side { display: grid; gap: 6px; justify-items: center; }
+.lever-head { font-weight: 850; font-size: 0.85rem; color: var(--ink-2); }
+.lever .lever-step { gap: 3px; padding: 3px 3px 5px; }
+.lever .lever-step button { width: 36px; height: 38px; }
+.lever .lever-step span { min-width: 54px; font-size: 0.82rem; }
+.lever .lever-step button:disabled { opacity: 0.4; }
+@media (prefers-reduced-motion: reduce) { .lever-move { transition: none; } }

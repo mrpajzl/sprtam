@@ -1,0 +1,24 @@
+/* Widget resistor (src/widgets/resistor.tsx) */
+.resistor-mode { display: flex; gap: 4px; padding: 4px; border-radius: 12px; background: var(--bg); }
+.resistor-mode button { flex: 1; min-height: 38px; border-radius: 9px; font-family: var(--mono); font-weight: 750; font-size: 0.82rem; color: var(--ink-2); }
+.resistor-mode button.on { background: var(--accent); color: var(--on-accent); }
+.resistor-goal { text-align: center; font-weight: 750; color: var(--ink-2); }
+.resistor-goal b { display: block; font-size: 1.35rem; font-weight: 900; color: var(--ink); }
+.resistor-band { cursor: pointer; outline: none; }
+.resistor-band:focus-visible rect:nth-child(2) { stroke: var(--accent); stroke-width: 3; stroke-opacity: 1; }
+.resistor-names { display: grid; gap: 4px; }
+.resistor-names > * { display: grid; gap: 2px; justify-items: center; padding: 6px 2px; border-radius: 10px; background: var(--bg); min-width: 0; text-align: center; }
+.resistor-names button.on { box-shadow: inset 0 0 0 2px var(--accent); background: var(--accent-soft); }
+.resistor-names small { font-size: 0.66rem; font-weight: 700; color: var(--ink-3); white-space: nowrap; }
+.resistor-names span { display: inline-flex; align-items: center; gap: 3px; font-size: 0.74rem; font-weight: 800; color: var(--ink); overflow-wrap: anywhere; }
+.resistor-names i, .resistor-pal i { flex: none; width: 10px; height: 10px; border-radius: 50%; box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--ink) 40%, transparent); }
+.resistor-pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 5px; }
+.resistor-pal button { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 6px; padding: 6px 8px; border-radius: 10px; background: var(--bg); text-align: left; box-shadow: inset 0 0 0 1px var(--line); }
+.resistor-pal button.on { box-shadow: inset 0 0 0 2px var(--accent); background: var(--accent-soft); }
+.resistor-pal button i { width: 16px; height: 16px; grid-row: span 2; }
+.resistor-pal span { font-size: 0.8rem; font-weight: 800; color: var(--ink); }
+.resistor-pal small { font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--ink-2); white-space: nowrap; }
+.resistor-out { display: grid; gap: 4px; }
+.resistor-check { justify-self: center; padding: 4px 12px; border-radius: 999px; background: var(--bg); color: var(--ink-2); font-weight: 800; font-size: 0.9rem; text-align: center; }
+.resistor-check.ok { background: var(--ok-bg); color: var(--ok); }
+.resistor-hint { font-size: 0.8rem; color: var(--ink-3); }
