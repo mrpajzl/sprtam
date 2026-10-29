@@ -1,7 +1,8 @@
 import { useState } from 'preact/hooks'
 import type { Block } from '../content/types'
 import { Inline } from '../ui/Inline'
-import { WidgetView, type WidgetRef } from '../widgets'
+import type { WidgetRef } from '../widgets'
+import { WidgetView } from '../widgets/view'
 
 export function Blocks({ blocks }: { blocks: Block[] }) {
   return <div class="blocks">{blocks.map((b, i) => <BlockView key={i} b={b} />)}</div>

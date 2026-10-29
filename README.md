@@ -10,7 +10,7 @@
 
 - **13 ročníků:** 1.–9. třída ZŠ a 1.–4. ročník gymnázia, přes 800 témat a přes 10 000 otázek.
 - **Odborné školy:** obory (IT, strojírenství, mechatronik, kosmetické služby, starožitník) s odbornými předměty po ročnících – **[sprtam.cz/obor](https://sprtam.cz/obor)** ([jak to funguje](docs/OBORY.md)).
-- **Dvě vysvětlení ke každému tématu** a 21 interaktivních pomůcek (číselná osa, zlomky, rovnice na vahách, hodiny…) – všechny v **[galerii](https://sprtam.cz/widgety)**.
+- **Dvě vysvětlení ke každému tématu** a 49 interaktivních pomůcek (číselná osa, zlomky, rovnice na vahách, periodická tabulka, elektrický obvod, krokování kódu, pexeso…) – všechny v **[galerii](https://sprtam.cz/widgety)**.
 - **Šest režimů:** Rychlý kvíz, Opakování, Písemka se známkou, Zkoušení nahlas, Test z předmětu a Mix.
 - **Přijímačky na SŠ:** příprava na jednotnou přijímací zkoušku z češtiny a matematiky po oblastech a cvičné testy – **[sprtam.cz/prijimacky](https://sprtam.cz/prijimacky)**.
 - **Slepá mapa:** hra na hledání krajů Česka, států Evropy a světa a jejich hlavních měst – **[sprtam.cz/slepa-mapa](https://sprtam.cz/slepa-mapa)**.

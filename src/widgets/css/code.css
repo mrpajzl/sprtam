@@ -1,0 +1,37 @@
+/* Widget code (src/widgets/code.tsx) */
+.code-w { gap: 10px; }
+.code-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; font-family: var(--mono); font-size: 0.78rem; font-weight: 700; color: var(--ink-2); }
+.code-lang { padding: 2px 8px; border-radius: 6px; background: var(--accent-soft); color: var(--accent-ink); }
+.code-title { color: var(--ink); }
+.code-scroll { overflow-x: auto; border-radius: var(--r-s); background: var(--bg); box-shadow: inset 0 0 0 1px var(--line); -webkit-overflow-scrolling: touch; user-select: text; -webkit-user-select: text; }
+.code-pre { margin: 0; padding: 8px 0; font-family: var(--mono); font-size: 0.84rem; line-height: 1.6; tab-size: 4; min-width: min-content; }
+.code-pre .code-code { display: block; background: none; color: var(--ink); padding: 0; border-radius: 0; font-size: inherit; font-weight: 500; }
+.code-line { display: flex; white-space: pre; padding-right: 14px; transition: background 0.15s; }
+.code-line.on { background: color-mix(in oklab, var(--k-yellow) 30%, transparent); }
+.code-line.noted { background: var(--accent-soft); }
+.code-no { position: sticky; left: 0; flex: none; width: 2.6em; margin-right: 10px; padding-right: 8px; text-align: right; color: var(--ink-3); background: var(--bg); box-shadow: inset -1px 0 0 var(--line); font-variant-numeric: tabular-nums; user-select: none; -webkit-user-select: none; }
+.code-line.on .code-no { color: var(--ink); font-weight: 800; background: color-mix(in oklab, var(--k-yellow) 30%, var(--bg)); }
+.code-line.noted .code-no { background: var(--accent-soft); }
+button.code-no { font-family: var(--mono); font-size: inherit; line-height: inherit; color: var(--accent-ink); font-weight: 800; border-radius: 0; min-height: 1.6em; }
+button.code-no::before { content: '•'; margin-right: 3px; color: var(--accent); }
+.code-txt { flex: none; }
+.code-k { color: color-mix(in oklab, var(--k-purple) 72%, var(--ink)); font-weight: 700; }
+.code-s { color: var(--ok); }
+.code-n { color: color-mix(in oklab, var(--k-orange) 78%, var(--ink)); }
+.code-c { color: var(--ink-3); font-style: italic; }
+.code-f { color: color-mix(in oklab, var(--k-blue) 72%, var(--ink)); }
+.code-a { color: color-mix(in oklab, var(--k-teal) 65%, var(--ink)); }
+.code-note { position: relative; display: grid; gap: 2px; padding: 10px 40px 10px 12px; border-radius: var(--r-s); background: var(--accent-soft); color: var(--ink); line-height: 1.4; }
+.code-note b { font-family: var(--mono); font-size: 0.78rem; color: var(--accent-ink); }
+.code-x { position: absolute; top: 4px; right: 4px; width: 36px; height: 36px; border-radius: 8px; font-size: 1.3rem; font-weight: 800; color: var(--ink-2); }
+.code-steps { display: grid; gap: 10px; }
+.code-now { min-height: 2.8em; text-align: center; font-weight: 700; color: var(--ink); line-height: 1.4; }
+.code-now b { font-family: var(--mono); font-size: 0.85rem; color: var(--accent-ink); }
+.code-vars { font-family: var(--mono); font-size: 0.85rem; max-width: 320px; margin: 0 auto; }
+.code-vars th, .code-vars td { padding: 4px 10px; }
+.code-vars tr.chg td { background: color-mix(in oklab, var(--k-yellow) 30%, transparent); font-weight: 800; }
+.code-console { display: grid; gap: 4px; padding: 8px 12px; border-radius: var(--r-s); background: var(--lcd); color: var(--lcd-ink); user-select: text; -webkit-user-select: text; }
+.code-console small { font-family: var(--mono); font-size: 0.7rem; font-weight: 700; opacity: 0.7; }
+.code-console pre { margin: 0; font-family: var(--mono); font-size: 0.84rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.code-steps .reveal:disabled { opacity: 0.35; cursor: default; }
+.code-why { display: block; font-weight: 600; color: var(--ink-2); }

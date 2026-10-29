@@ -203,8 +203,9 @@ Nejdřív projdi [galerii](https://sprtam.cz/widgety): většinou stačí existu
    ```
 
 2. Přidej ho do `WIDGET_GROUPS` v [`src/widgets/index.tsx`](../src/widgets/index.tsx).
-3. Použij sdílené ovládání z `kit.tsx` (`Step`, `Slider`, `Graph`, `fmt`, `shuffle`) a třídy `.w`, `.val`, `.sub`, `.ctrls` ze `src/styles.css`, ať widgety vypadají stejně. Barvy jen přes proměnné (`var(--accent)`, `var(--ink)`…), jinak nebude fungovat tmavý režim. Číselné CSS hodnoty piš s jednotkou (`'8px'`, Preact 11 `px` nedoplňuje).
-4. `npm run content:generate` (schéma a WIDGETY.md), `npm run check:content`, zkontroluj widget v galerii (`/widgety/<název>`) ve světlém i tmavém režimu a na šířce telefonu.
+3. Styly pomůcky patří do `src/widgets/css/<název>.css` (přidej `@import` na začátek `src/styles.css`), třídy s prefixem názvu pomůcky. Text z učiva vkládej v `html` vždy přes `inline` – `check:content` to zkouší. V aplikaci se každá pomůcka načítá zvlášť, až ji téma použije (`src/widgets/view.tsx`).
+4. Použij sdílené ovládání z `kit.tsx` (`Step`, `Slider`, `Graph`, `fmt`, `shuffle`) a třídy `.w`, `.val`, `.sub`, `.ctrls` ze `src/styles.css`, ať widgety vypadají stejně. Barvy jen přes proměnné (`var(--accent)`, `var(--ink)`…), jinak nebude fungovat tmavý režim. Číselné CSS hodnoty piš s jednotkou (`'8px'`, Preact 11 `px` nedoplňuje).
+5. `npm run content:generate` (schéma a WIDGETY.md), `npm run check:content`, zkontroluj widget v galerii (`/widgety/<název>`) ve světlém i tmavém režimu a na šířce telefonu.
 
 Kontrola selže, když soubor widgetu chybí v seznamu, název se liší od souboru, vlastnost nemá popis nebo ukázka neprojde vlastním schématem.
 

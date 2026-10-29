@@ -1,0 +1,31 @@
+/* Widget dice (src/widgets/dice.tsx) */
+.dice-last { display: flex; justify-content: center; gap: 10px; min-height: 48px; flex-wrap: wrap; }
+.w .dice-last svg { margin: 0; }
+.w.dice .ctrls .reveal { padding: 0 12px; }
+.dice-face { fill: var(--key); stroke: var(--ink-2); stroke-width: 2; }
+.dice-pip { fill: var(--ink); }
+.dice-coin { fill: color-mix(in oklab, var(--k-yellow) 55%, var(--card)); stroke: color-mix(in oklab, var(--k-yellow) 50%, var(--ink)); stroke-width: 2; }
+.dice-coin-rim { stroke: color-mix(in oklab, var(--k-yellow) 40%, var(--ink)); stroke-width: 1; stroke-dasharray: 2 2; }
+.dice-coin-t { fill: color-mix(in oklab, var(--k-yellow) 25%, var(--ink)); }
+.w.dice .reveal[disabled] { opacity: 0.45; pointer-events: none; }
+.dice-reset { background: var(--bg); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge); }
+.dice-grid { stroke: var(--line); stroke-width: 1; }
+.dice-axis { fill: var(--ink-3); font-variant-numeric: tabular-nums; }
+.dice-bar { fill: color-mix(in oklab, var(--ink-3) 40%, var(--card)); transform-box: fill-box; transform-origin: bottom; transition: transform 0.25s ease-out; }
+.dice-bar.on { fill: var(--accent); }
+.dice-th { stroke: var(--ink); stroke-width: 2.5; stroke-dasharray: 5 3; }
+.dice-cnt { fill: var(--ink-2); font-weight: 700; font-variant-numeric: tabular-nums; }
+.dice-out { fill: var(--ink-2); }
+.dice-out.on { fill: var(--accent-ink); }
+.dice-legend { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; font-size: 0.82rem; font-weight: 700; color: var(--ink-2); }
+.dice-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.dice-key-bar { width: 12px; height: 12px; border-radius: 3px; background: var(--accent); }
+.dice-key-th { width: 18px; border-top: 2.5px dashed var(--ink); }
+.dice-event { display: grid; gap: 4px; padding: 12px; border-radius: 12px; background: var(--accent-soft); color: var(--ink); font-size: 0.95rem; }
+.dice-ev-h { font-weight: 900; color: var(--accent-ink); }
+.dice-event svg { margin-top: 4px; }
+.dice-hist { fill: none; stroke: var(--accent-ink); stroke-width: 2; stroke-linejoin: round; }
+.dice-note { text-align: center; font-size: 0.85rem; font-weight: 650; color: var(--ink-2); }
+.dice-table { margin: 0 auto; border-collapse: collapse; font-variant-numeric: tabular-nums; font-weight: 700; }
+.dice-table th, .dice-table td { width: 34px; height: 30px; text-align: center; border: 1px solid var(--line); }
+.dice-table th { background: var(--bg); color: var(--ink-2); }

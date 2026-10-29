@@ -1,5 +1,33 @@
 @import '@fontsource-variable/nunito';
 @import '@fontsource-variable/jetbrains-mono';
+/* Each widget's own styles (src/widgets/css/<name>.css); shared widget styles are below (.w, .val, .sub, .ctrls). */
+@import './widgets/css/coins.css';
+@import './widgets/css/units.css';
+@import './widgets/css/prime-sieve.css';
+@import './widgets/css/dice.css';
+@import './widgets/css/stats.css';
+@import './widgets/css/coordinates.css';
+@import './widgets/css/circle.css';
+@import './widgets/css/cuboid.css';
+@import './widgets/css/functions.css';
+@import './widgets/css/unit-circle.css';
+@import './widgets/css/document.css';
+@import './widgets/css/memory.css';
+@import './widgets/css/sentence.css';
+@import './widgets/css/circuit.css';
+@import './widgets/css/lever.css';
+@import './widgets/css/periodic.css';
+@import './widgets/css/chem-equation.css';
+@import './widgets/css/ph.css';
+@import './widgets/css/code.css';
+@import './widgets/css/binary.css';
+@import './widgets/css/logic-gates.css';
+@import './widgets/css/subnet.css';
+@import './widgets/css/resistor.css';
+@import './widgets/css/gears.css';
+@import './widgets/css/interest.css';
+@import './widgets/css/supply-demand.css';
+@import './widgets/css/color.css';
 
 /* Šprtám: a pocket device. Aluminium panel, physical keys, an orange signal colour,
    mono labels. Subjects are colour-coded keys (--k-*); light by default, the dark
@@ -514,6 +542,7 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 
 /* Widgets */
 .w { padding: 16px; border-radius: var(--r); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); display: grid; gap: 12px; user-select: none; -webkit-user-select: none; }
+.w-loading { min-height: 160px; }
 .w svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
 .w .val { text-align: center; font-size: 1.4rem; font-weight: 900; color: var(--accent-ink); }
 .w .sub { text-align: center; color: var(--ink-2); font-weight: 700; font-size: 0.95rem; }

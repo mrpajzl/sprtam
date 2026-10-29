@@ -1,0 +1,25 @@
+/* Widget gears (src/widgets/gears.tsx) */
+.gears-spin { transform-box: fill-box; transform-origin: center; animation: gears-spin 6s linear infinite; animation-play-state: paused; }
+.gears-spin.ccw { animation-direction: reverse; }
+.gears-svg.run .gears-spin { animation-play-state: running; }
+@keyframes gears-spin { to { transform: rotate(360deg); } }
+.gears-table { display: grid; gap: 4px 8px; align-items: center; font-size: 0.82rem; font-weight: 700; color: var(--ink-2); }
+.gears-table b { display: block; padding: 2px 6px; border-radius: 999px; font-size: 0.78rem; color: var(--ink); }
+.gears-table b.drive { background: color-mix(in oklab, var(--accent) 35%, var(--card)); }
+.gears-table b.idler { background: color-mix(in oklab, var(--k-gray) 40%, var(--card)); }
+.gears-table b.driven { background: color-mix(in oklab, var(--k-blue) 30%, var(--card)); }
+.gears-table span { color: var(--ink); font-weight: 750; }
+.gears-dir { font-size: 0.74rem; line-height: 1.2; }
+.gears-out { display: grid; gap: 6px; }
+.gears .val { font-size: 1.25rem; }
+.gears-out .sub b { color: var(--ink); }
+.gears-kind { justify-self: center; text-align: center; padding: 6px 12px; border-radius: 12px; background: var(--bg); color: var(--ink); font-weight: 800; font-size: 0.9rem; }
+.gears-kind.slow { background: color-mix(in oklab, var(--k-blue) 16%, var(--card)); }
+.gears-kind.fast { background: color-mix(in oklab, var(--k-orange) 18%, var(--card)); }
+.gears-ctrls { display: grid; gap: 4px; }
+.gears-ctrls .slider span { min-width: 2.6em; }
+.gears-ctrls .slider output { min-width: 3.4em; }
+.gears-note { font-size: 0.78rem; color: var(--ink-3); }
+.gears-given { color: var(--ink); }
+.gears-table > * { text-align: center; font-variant-numeric: tabular-nums; }
+.gears-table .gears-rl { color: var(--ink-3); font-weight: 700; text-align: left; }

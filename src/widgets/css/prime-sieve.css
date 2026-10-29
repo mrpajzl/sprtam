@@ -1,0 +1,31 @@
+/* Widget prime-sieve (src/widgets/prime-sieve.tsx) */
+.sieve-grid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px; }
+.sieve-c {
+  --sc: var(--accent);
+  aspect-ratio: 1; min-height: 30px; border-radius: 7px; position: relative;
+  font-weight: 800; font-size: 0.85rem; font-variant-numeric: tabular-nums; color: var(--ink);
+  background: var(--key); box-shadow: inset 0 0 0 1px var(--line);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.sieve-c:focus-visible { outline: 3px solid var(--ink); outline-offset: 1px; z-index: 1; }
+.sieve-c:active { transform: translateY(1px); }
+/* Sieve: crossed out in the colour of the prime that crossed it, primes ringed. */
+.sieve-c.one, .sieve-c.out { color: var(--ink-3); text-decoration: line-through; text-decoration-thickness: 2px; }
+.sieve-c.one { background: var(--bg); box-shadow: none; }
+.sieve-c.out { background: color-mix(in oklab, var(--sc) 24%, var(--card)); box-shadow: none; text-decoration-color: var(--sc); }
+.sieve-c.prime { background: color-mix(in oklab, var(--sc) 55%, var(--card)); color: var(--ink); box-shadow: inset 0 0 0 3px var(--sc); font-weight: 900; }
+.sieve-c.rest { background: var(--ok-bg); color: var(--ok); box-shadow: inset 0 0 0 2px var(--ok); font-weight: 900; }
+/* Multiples: first number blue, second orange, both striped. */
+.sieve-c.ma { background: color-mix(in oklab, var(--k-blue) 35%, var(--card)); }
+.sieve-c.mb { background: color-mix(in oklab, var(--k-orange) 35%, var(--card)); }
+.sieve-c.both { background: linear-gradient(135deg, color-mix(in oklab, var(--k-blue) 45%, var(--card)) 50%, color-mix(in oklab, var(--k-orange) 45%, var(--card)) 50%); font-weight: 900; }
+.sieve-c.sel { box-shadow: inset 0 0 0 2px var(--ink); font-weight: 900; }
+.sieve-c.lcm { box-shadow: inset 0 0 0 3px var(--ok); color: var(--ok); }
+.sieve-info { display: grid; gap: 6px; }
+.sieve-line { display: flex; gap: 8px; align-items: flex-start; font-weight: 700; font-size: 0.9rem; color: var(--ink-2); }
+.sieve-line b { color: var(--ink); }
+.sieve-line i { flex: none; width: 16px; height: 16px; margin-top: 2px; border-radius: 4px; }
+.sieve-line i.ma { background: color-mix(in oklab, var(--k-blue) 45%, var(--card)); }
+.sieve-line i.mb { background: color-mix(in oklab, var(--k-orange) 45%, var(--card)); }
+.sieve-line i.both { background: linear-gradient(135deg, color-mix(in oklab, var(--k-blue) 45%, var(--card)) 50%, color-mix(in oklab, var(--k-orange) 45%, var(--card)) 50%); box-shadow: inset 0 0 0 2px var(--ok); }
+.sieve-line i.none { background: transparent; box-shadow: inset 0 0 0 2px var(--line); }

@@ -1,0 +1,25 @@
+/* Widget cuboid (src/widgets/cuboid.tsx) */
+.cuboid-seg { display: flex; justify-self: center; gap: 4px; padding: 4px; border-radius: 12px; background: var(--bg); }
+.cuboid-seg button { min-height: 38px; padding: 0 16px; border-radius: 9px; font-family: var(--mono); font-weight: 700; font-size: 0.85rem; color: var(--ink-2); transition: background 0.2s, color 0.2s; }
+.cuboid-seg button.on { background: var(--accent); color: var(--on-accent); }
+.cuboid-ab { fill: color-mix(in oklab, var(--k-blue) 38%, var(--card)); }
+.cuboid-ac { fill: color-mix(in oklab, var(--k-orange) 55%, var(--card)); }
+.cuboid-bc { fill: color-mix(in oklab, var(--k-green) 50%, var(--card)); }
+.cuboid-solid polygon { stroke: var(--ink); stroke-width: 1.2; stroke-linejoin: round; }
+.cuboid-grid { fill: none; stroke: color-mix(in oklab, var(--ink) 40%, transparent); stroke-width: 1; }
+.cuboid-ghost polygon { fill: none; stroke: var(--ink-3); stroke-width: 1.2; stroke-dasharray: 4 4; }
+.cuboid-layer { opacity: 0; transform: translateY(-14px); transition: opacity 0.22s var(--ease), transform 0.22s var(--ease); }
+.cuboid-solid.filled .cuboid-layer { opacity: 1; transform: none; }
+.cuboid-dim { font-size: 13px; font-weight: 900; fill: var(--ink); paint-order: stroke; stroke: var(--card); stroke-width: 4px; stroke-linejoin: round; }
+.cuboid-net { animation: in 0.25s var(--ease); }
+.cuboid-edge { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+.cuboid-area { font-size: 13px; font-weight: 900; fill: var(--ink); paint-order: stroke; stroke: color-mix(in oklab, var(--card) 70%, transparent); stroke-width: 3px; }
+.cuboid-out { display: grid; gap: 6px; }
+.cuboid-out .val { font-size: 1.15rem; line-height: 1.3; }
+.cuboid-s { text-align: center; font-weight: 800; font-size: 0.95rem; color: var(--ink-2); line-height: 1.6; }
+.cuboid-s b { color: var(--accent-ink); font-weight: 900; }
+.cuboid-t, .cuboid-key { padding: 1px 5px; border-radius: 6px; color: var(--ink); white-space: nowrap; }
+.cuboid-t.ab, .cuboid-key.ab { background: color-mix(in oklab, var(--k-blue) 38%, var(--card)); }
+.cuboid-t.ac, .cuboid-key.ac { background: color-mix(in oklab, var(--k-orange) 55%, var(--card)); }
+.cuboid-t.bc, .cuboid-key.bc { background: color-mix(in oklab, var(--k-green) 50%, var(--card)); }
+@media (prefers-reduced-motion: reduce) { .cuboid-layer { transition: none; } .cuboid-net { animation: none; } }

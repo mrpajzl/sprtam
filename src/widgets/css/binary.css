@@ -1,0 +1,27 @@
+/* Widget binary (src/widgets/binary.tsx) */
+.binary-bits { display: grid; gap: 14px; max-width: 400px; width: 100%; margin: 0 auto; }
+.binary-row { display: grid; gap: 4px 4px; }
+.binary-bit { display: grid; gap: 3px; justify-items: center; min-width: 0; }
+.binary-wt { font-family: var(--mono); font-size: 0.66rem; font-weight: 700; color: var(--ink-3); font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+.binary-sw { width: 100%; max-width: 44px; height: 48px; border-radius: 10px; font-family: var(--mono); font-size: 1.2rem; font-weight: 800; background: var(--bg); color: var(--ink-3); box-shadow: inset 0 0 0 2px var(--line), 0 3px 0 var(--line); transition: background 0.15s, color 0.15s, transform 0.09s; }
+.binary-sw.on { background: var(--accent); color: var(--on-accent); box-shadow: 0 3px 0 var(--accent-edge); }
+.binary-sw:active { transform: translateY(2px); }
+.binary-nib { text-align: center; font-family: var(--mono); font-weight: 800; font-size: 0.9rem; color: var(--accent-ink); border-top: 2px solid var(--line); margin: 2px 4px 0; padding-top: 2px; }
+.binary-w sub { font-size: 0.6em; font-weight: 700; color: var(--ink-3); margin-left: 1px; vertical-align: -0.25em; line-height: 0; }
+.binary-sum { text-align: center; font-family: var(--mono); font-weight: 700; font-size: 0.95rem; color: var(--ink); overflow-wrap: anywhere; min-height: 1.5em; }
+.binary-tab { width: auto; margin: 0 auto; font-family: var(--mono); }
+.binary-tab th { white-space: nowrap; font-family: inherit; text-align: right; padding: 5px 10px; font-size: 0.78rem; }
+.binary-tab td { white-space: nowrap; padding: 5px 10px; font-weight: 800; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.binary-tab tr.dec td { color: var(--accent-ink); font-size: 1.3rem; }
+.binary-in .step { gap: 6px; }
+.binary-field { width: 96px; height: 40px; border-radius: 10px; border: 2px solid var(--line); background: var(--card); text-align: center; font-family: var(--mono); font-weight: 800; font-size: 1.05rem; -moz-appearance: textfield; appearance: textfield; }
+.binary-field::-webkit-inner-spin-button, .binary-field::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.binary-field:focus { outline: none; border-color: var(--accent); }
+.binary-task { text-align: center; font-weight: 800; padding: 10px 12px; border-radius: var(--r-s); background: var(--accent-soft); color: var(--accent-ink); }
+.binary-task.ok { background: var(--ok-bg); color: var(--ok); }
+.binary-div { display: grid; gap: 8px; }
+.binary-dt { width: auto; margin: 0 auto; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.binary-dt th, .binary-dt td { padding: 3px 12px; text-align: right; }
+.binary-dt td.r { color: var(--accent-ink); font-weight: 800; text-align: center; }
+.binary-read { text-align: center; font-family: var(--mono); font-weight: 700; color: var(--ink); }
+.binary-q { font-family: var(--mono); letter-spacing: 0.02em; }

@@ -1,0 +1,29 @@
+/* Widget memory (src/widgets/memory.tsx) */
+.mem-grid { display: grid; gap: 8px; width: 100%; max-width: 520px; margin: 0 auto; }
+.mem-card { perspective: 700px; min-width: 0; min-height: 72px; aspect-ratio: 4 / 5; border-radius: var(--r-s); }
+.mem-in { position: relative; display: block; width: 100%; height: 100%; transition: transform 0.35s var(--ease); transform-style: preserve-3d; }
+.mem-card.up .mem-in { transform: rotateY(180deg); }
+.mem-back, .mem-face { position: absolute; inset: 0; display: grid; place-items: center; padding: 6px; border-radius: var(--r-s); backface-visibility: hidden; -webkit-backface-visibility: hidden; text-align: center; line-height: 1.2; }
+.mem-back {
+  background: var(--accent); color: var(--on-accent); font-family: var(--mono); font-weight: 800; font-size: 1.4rem;
+  background-image: repeating-linear-gradient(45deg, color-mix(in oklab, var(--on-accent) 12%, transparent) 0 6px, transparent 6px 12px);
+  box-shadow: 0 3px 0 var(--accent-edge);
+}
+.mem-face { transform: rotateY(180deg); background: var(--key); color: var(--ink); box-shadow: inset 0 0 0 2px var(--line); font-weight: 800; font-size: 1rem; overflow-wrap: anywhere; hyphens: auto; transition: background 0.2s, box-shadow 0.2s; }
+.mem-face.long { font-size: 0.8rem; font-weight: 750; }
+.mem-face.emoji { font-size: 2rem; }
+.mem-face code { font-size: 0.85em; }
+.mem-card.found .mem-face { background: var(--ok-bg); color: var(--ok); box-shadow: inset 0 0 0 2px var(--ok); }
+.mem-card.wrong .mem-face { background: var(--bad-bg); box-shadow: inset 0 0 0 2px var(--bad); }
+.mem-card.found { cursor: default; }
+.mem-card:active .mem-back { box-shadow: 0 1px 0 var(--accent-edge); }
+.mem-stat { display: flex; justify-content: center; gap: 18px; font-family: var(--mono); font-size: 0.85rem; font-weight: 700; color: var(--ink-2); }
+.mem-stat b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.mem-sr { text-align: center; min-height: 1.3em; color: var(--ink-3); font-size: 0.88rem; font-weight: 700; }
+@media (prefers-reduced-motion: reduce) {
+  /* No 3D turn: the face simply appears. */
+  .mem-in { transition: none; transform: none !important; }
+  .mem-face { transform: none; visibility: hidden; }
+  .mem-card.up .mem-face { visibility: visible; }
+  .mem-card.up .mem-back { visibility: hidden; }
+}

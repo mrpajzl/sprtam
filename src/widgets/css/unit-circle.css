@@ -1,0 +1,32 @@
+/* Widget unit-circle (src/widgets/unit-circle.tsx) */
+.uc { --uc-sin: var(--k-red); --uc-cos: var(--k-blue); --uc-sin-ink: color-mix(in oklab, var(--k-red) 72%, var(--ink)); --uc-cos-ink: color-mix(in oklab, var(--k-blue) 72%, var(--ink)); }
+.uc-sector { fill: var(--accent-soft); transition: d 0.2s; }
+.uc-q { fill: var(--ink-3); }
+.uc-q.on { fill: var(--accent-ink); }
+.uc-axis { stroke: var(--ink-3); stroke-width: 1.5; }
+.uc-gridl { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 3; }
+.uc-lbl { fill: var(--ink-2); font-weight: 700; }
+.uc-circle { fill: none; stroke: var(--ink-2); stroke-width: 2; }
+.uc-arc { fill: none; stroke: var(--accent); stroke-width: 2.5; }
+.uc-arc-t { fill: var(--accent-ink); }
+.uc-radius { stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; }
+.uc-cos { stroke: var(--uc-cos); stroke-width: 5; stroke-linecap: round; }
+.uc-sin { stroke: var(--uc-sin); stroke-width: 5; stroke-linecap: round; }
+.uc-sin.thin { stroke-width: 3; }
+.uc-link { stroke: var(--uc-sin); stroke-width: 1.5; stroke-dasharray: 4 3; opacity: 0.8; }
+.uc-pt { fill: var(--ink); stroke: var(--card); stroke-width: 2; }
+.uc-cos-t { fill: var(--uc-cos-ink); }
+.uc-sin-t { fill: var(--uc-sin-ink); }
+.uc-sine-all { fill: none; stroke: var(--ink-3); stroke-width: 1.5; stroke-dasharray: 3 4; }
+.uc-sine { fill: none; stroke: var(--uc-sin); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.uc .val small, .uc-approx { font-size: 0.75em; color: var(--ink-2); font-weight: 700; }
+.uc-vals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.uc-row { display: grid; gap: 2px; justify-items: center; padding: 8px 4px; border-radius: 12px; background: var(--bg); border-top: 4px solid var(--line); text-align: center; min-width: 0; }
+.uc-row.sin { border-top-color: var(--uc-sin); }
+.uc-row.cos { border-top-color: var(--uc-cos); }
+.uc-row.tg { border-top-color: var(--ink-3); }
+.uc-name { font-size: 0.8rem; font-weight: 800; color: var(--ink-2); }
+.uc-row.sin .uc-name { color: var(--uc-sin-ink); }
+.uc-row.cos .uc-name { color: var(--uc-cos-ink); }
+.uc-v { font-size: 1.1rem; font-weight: 900; color: var(--ink); font-variant-numeric: tabular-nums; }
+.uc-v small { display: block; font-size: 0.72rem; font-weight: 700; color: var(--ink-2); }

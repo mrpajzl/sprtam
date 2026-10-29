@@ -1,0 +1,49 @@
+/* Widget subnet (src/widgets/subnet.tsx) */
+.subnet > * { min-width: 0; }
+.subnet { --subnet-net: var(--accent); --subnet-host: var(--k-blue); }
+.subnet-ed { display: flex; align-items: center; justify-content: center; gap: 2px; font-family: var(--mono); }
+.subnet-oe { display: grid; gap: 4px; justify-items: center; }
+.subnet-oe button, .subnet-pm { width: 38px; height: 34px; border-radius: 10px; background: var(--bg); color: var(--ink); font-family: var(--mono); font-weight: 800; font-size: 1.1rem; box-shadow: inset 0 0 0 1px var(--line); }
+.subnet-oe button:active, .subnet-pm:active { transform: translateY(1px); background: var(--accent-soft); }
+.subnet-oe input { width: 50px; height: 40px; padding: 0; text-align: center; border-radius: 10px; border: 2px solid var(--line); background: var(--bg); color: var(--ink); font: 800 1rem var(--mono); -moz-appearance: textfield; appearance: textfield; }
+.subnet-oe input::-webkit-inner-spin-button, .subnet-oe input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.subnet-oe input:focus { border-color: var(--accent); outline: none; }
+.subnet-dot { font-weight: 900; font-size: 1.3rem; color: var(--ink-2); align-self: center; }
+.subnet-pre { font-weight: 900; font-size: 1.05rem; color: var(--accent-ink); margin-left: 4px; }
+.subnet-prefix { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 8px; }
+.subnet-prefix .slider { grid-template-columns: auto 1fr 2.2em; }
+.subnet-bin { display: grid; gap: 8px; padding: 10px; border-radius: 12px; background: var(--bg); }
+.subnet-row { display: grid; gap: 2px; }
+.subnet-head { display: flex; justify-content: space-between; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--ink-2); }
+.subnet-head b { font-family: var(--mono); color: var(--ink); }
+.subnet-bits { display: flex; justify-content: center; gap: 5px; font-family: var(--mono); font-size: 0.74rem; font-weight: 800; }
+.subnet-oct { display: flex; }
+.subnet-bits i { font-style: normal; width: 1.06ch; text-align: center; padding: 1px 0; }
+.subnet-bits i.net { background: color-mix(in oklab, var(--subnet-net) 26%, var(--card)); color: var(--ink); }
+.subnet-bits i.host { background: color-mix(in oklab, var(--subnet-host) 14%, var(--card)); color: var(--ink-2); }
+.subnet-oct i:first-child { border-radius: 4px 0 0 4px; }
+.subnet-oct i:last-child { border-radius: 0 4px 4px 0; }
+.subnet-legend { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; font-size: 0.78rem; font-weight: 700; color: var(--ink-2); }
+.subnet-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.subnet-legend i { width: 12px; height: 12px; border-radius: 3px; }
+.subnet-legend i.net { background: color-mix(in oklab, var(--subnet-net) 55%, var(--card)); }
+.subnet-legend i.host { background: color-mix(in oklab, var(--subnet-host) 35%, var(--card)); }
+.subnet .val { font-family: var(--mono); font-size: 1.05rem; overflow-wrap: anywhere; }
+.subnet-res { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; margin: 0; font-size: 0.92rem; }
+.subnet-res dt { color: var(--ink-2); font-weight: 700; }
+.subnet-res dd { margin: 0; font-family: var(--mono); font-weight: 750; text-align: right; overflow-wrap: anywhere; }
+.subnet-note { font-family: var(--sans, inherit); font-weight: 700; color: var(--ink-3); font-size: 0.85rem; }
+.subnet-tag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-family: inherit; font-size: 0.82rem; text-align: left; }
+.subnet-tag.priv { background: var(--ok-bg); color: var(--ok); }
+.subnet-tag.pub { background: var(--accent-soft); color: var(--accent-ink); }
+.subnet-tag.spec { background: color-mix(in oklab, var(--k-purple) 18%, var(--card)); color: var(--ink); }
+.subnet .reveal[disabled] { opacity: 0.4; }
+.subnet-split { display: grid; gap: 8px; }
+.subnet-cnt { text-align: center; font-weight: 800; font-size: 0.92rem; }
+.subnet-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.subnet-list li { display: grid; gap: 1px; padding: 6px 10px; border-radius: 10px; background: var(--bg); font-size: 0.82rem; }
+.subnet-list li b { font-family: var(--mono); }
+.subnet-list li span { color: var(--ink-2); font-family: var(--mono); font-size: 0.76rem; overflow-wrap: anywhere; }
+.subnet-list li.mine { box-shadow: inset 0 0 0 2px var(--accent); }
+.subnet-list li.gap { text-align: center; background: none; color: var(--ink-3); font-weight: 700; }
+.subnet-q { font-size: 1.6rem; }
