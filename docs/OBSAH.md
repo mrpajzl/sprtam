@@ -49,6 +49,19 @@ Formát dokumentů se nezměnil ([FORMAT.md](FORMAT.md)).
 
 Správce může návrh zamítnout s důvodem.
 
+## Neověřené učivo
+
+Učivo připravené AI nečeká na kontrolu: zveřejní se hned jako **neověřené** a člověk ho zkontroluje potom.
+
+- Stav je přímo v tématu: pole `verified` (`by` = kdo, `at` = kdy, RRRR-MM-DD, [`src/content/verified.ts`](../src/content/verified.ts)). Téma bez něj je neověřené.
+- **Zveřejnit bez kontroly** smí jen správce, a to jen svoje návrhy: `POST /api/drafts/publish-unverified` s `{ "ids": [...] }` (1–200 návrhů, jedno vydání, celé učivo projde kontrolou jako vždy). Jde to i API tokenem správce. Tudy chodí učivo od AI: `npx tsx scripts/content-propose.ts --unverified topics/odb/<předmět> …`.
+- **Ověřit:** moderátor otevře téma v moderaci, projde výklad i otázky a klepne na **Ověřit** (`POST /api/content/verify` s `{ grade, subject, topicId, version }`). Vznikne nová verze tématu se jménem a datem a historie ukáže, kdo ji udělal. Jde to jen v prohlížeči, ne API tokenem, a jen u verze, kterou moderátor viděl.
+- **Změna schválená v kontrole** se zveřejní jako ověřená: `by` jsou ti, kdo ji schválili. **Změna bez kontroly** stav smaže.
+- Ověření není změna obsahu: rozpracovaná úprava tématu kvůli němu nespadne do konfliktu.
+- **Kde je stav vidět:**
+  - Moderace: úvodní stránka ukáže, kolik témat čeká na ověření, a odkaz **Ověřovat** (`/ucivo?neovereno=1`). V seznamech mají neověřená témata žlutou tečku.
+  - Aplikace a stránky od serveru: pod výkladem stojí *Neověřeno – výklad připravila AI…*, nebo *Prošlo kontrolou: jméno, datum*.
+
 ## Historie a návraty
 
 - **Historie tématu** (Učivo → téma → Historie): všechny verze, kdo je změnil a kdo schválil, a co každá verze změnila (nebo rozdíl proti zveřejněné).
@@ -286,7 +299,7 @@ Zkoušku obnovy dělej aspoň jednou za čtvrt roku: kroky 1–2 a porovnání p
 
 | | |
 |---|---|
-| Zápis učiva | Jen přes zveřejnění schváleného návrhu (jiný moderátor, aktuální revize, bez konfliktu, celé učivo projde kontrolou), nebo nouzovou obnovu správcem s čerstvým potvrzením klíčem. Všechno je v historii a v záznamu událostí. |
+| Zápis učiva | Jen přes zveřejnění schváleného návrhu (jiný moderátor, aktuální revize, bez konfliktu, celé učivo projde kontrolou), přes zveřejnění vlastních návrhů správcem jako neověřené (i API tokenem správce – takový token je proto potřeba chránit jako heslo), přes ověření tématu v prohlížeči, nebo nouzovou obnovu správcem s čerstvým potvrzením klíčem. Všechno je v historii a v záznamu událostí. |
 | Historie | Verze a vydání se jen přidávají (triggery). Hash řetěz ověřuje služba při startu, správce v moderaci a nezávisle záloha na jiném serveru. |
 | Veřejné API | Jen čtení zveřejněného obsahu. Soubory se hledají jen podle hashe (20 hex znaků), takže žádná cesta. Platí limity na adresu. |
 | API tokeny | Náhodných 256 bitů, v databázi jen SHA-256, s platností. Jen vybrané akce nad vlastními návrhy. Vypnutí účtu, zrušení klíčů a „Odhlásit“ ruší i tokeny. Požadavky s tokenem nenesou cookies, takže je cizí stránka nemůže poslat za někoho (bez CORS). |

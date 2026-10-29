@@ -450,6 +450,32 @@ try {
   const list2 = await (await fetch(`${BASE}/api/public/v1/files/${(await manifest()).files['subject/odb/testovaci']}`)).json()
   check(list2.map((t) => t.id).join() === [...order, 'odb-treti'].join(), 'a topic added later goes after its `after`, not to the start')
 
+  // ——— Unverified content: AI content goes out at once, a person checks it later ———
+  const topicNow = async (g, sub, id) => (await (await fetch(`${BASE}/api/content/topic/${g}/${sub}/${id}`)).json())
+  check(!(await topicNow('odb', 'testovaci', 'odb-prvni')).topic.verified?.by.includes('?') && (await topicNow('odb', 'testovaci', 'odb-prvni')).topic.verified?.by === 'Eva Učitelka', 'a change approved in review is published as verified by its reviewer')
+  const ai = []
+  for (const id of ['ai-prvni', 'ai-druhe']) {
+    const r = await admin.api('POST', '/api/drafts', { kind: 'new', grade: 'odb', subject: 'ai-predmet', subjectMeta: { name: 'AI předmět', emoji: '🤖', color: 'red' }, order: ['ai-prvni', 'ai-druhe'], topic: { ...base, id, title: `AI ${id}` } })
+    ai.push(r.body.draft.id)
+  }
+  const evaDraftAi = (await eva.api('POST', '/api/drafts', { kind: 'new', grade: 'odb', subject: 'ai-predmet', subjectMeta: { name: 'AI předmět', emoji: '🤖', color: 'red' }, topic: { ...base, id: 'ai-evy' } })).body.draft.id
+  check((await eva.api('POST', '/api/drafts/publish-unverified', { ids: [evaDraftAi] })).status === 403, 'a moderator cannot publish without review')
+  check((await admin.api('POST', '/api/drafts/publish-unverified', { ids: [evaDraftAi] })).status === 403, "an admin cannot publish someone else's draft without review")
+  const pu = await admin.api('POST', '/api/drafts/publish-unverified', { ids: ai })
+  const aiList = await (await fetch(`${BASE}/api/public/v1/files/${(await manifest()).files['subject/odb/ai-predmet']}`)).json()
+  check(pu.status === 200 && pu.body.published === 2 && aiList.map((t) => t.id).join() === 'ai-prvni,ai-druhe' && aiList.every((t) => !t.verified), 'an admin publishes drafts at once, as unverified, in one release')
+  check((await admin.api('GET', `/api/drafts/${ai[0]}`)).body.draft.status === 'published', 'drafts published without review are closed')
+  // Someone starts editing, then another moderator verifies the topic: no conflict for the edit.
+  const editing = (await admin.api('POST', '/api/drafts', { kind: 'edit', grade: 'odb', subject: 'ai-predmet', topicId: 'ai-prvni' })).body
+  const t1 = await topicNow('odb', 'ai-predmet', 'ai-prvni')
+  check((await eva.api('POST', '/api/content/verify', { grade: 'odb', subject: 'ai-predmet', topicId: 'ai-prvni', version: t1.version - 1 })).status === 409, 'verifying an older version than the published one is refused')
+  const ver = await eva.api('POST', '/api/content/verify', { grade: 'odb', subject: 'ai-predmet', topicId: 'ai-prvni', version: t1.version })
+  const t2 = await topicNow('odb', 'ai-predmet', 'ai-prvni')
+  check(ver.status === 200 && t2.topic.verified?.by === 'Eva Učitelka' && /^\d{4}-\d{2}-\d{2}$/.test(t2.topic.verified.at), 'a moderator verifies a topic: who and when')
+  check((await eva.api('POST', '/api/content/verify', { grade: 'odb', subject: 'ai-predmet', topicId: 'ai-prvni', version: t2.version })).status === 409, 'a verified topic cannot be verified again')
+  check(!(await admin.api('GET', `/api/drafts/${editing.draft.id}`)).body.draft.conflict, 'verifying does not put open edits of the topic in conflict')
+  check((await admin.api('GET', '/api/content/index')).body.subjects['odb/ai-predmet'].map((t) => !!t.verified).join() === 'true,false', 'the library knows which topics are verified')
+
   check([admin, mod, teacher, eva].every((d) => !d.errors.length), 'no errors in the pages')
 } finally {
   await browser.close()

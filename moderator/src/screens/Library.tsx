@@ -27,11 +27,14 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null })
   const grade = isGrade(g) ? g : undefined
   const subject = (grade && s && isSubjectOf(grade, s) ? s : undefined) as SubjectId | undefined
 
+  // /ucivo?neovereno=1: every topic nobody has checked yet, to work through.
+  const unverified = !grade && new URLSearchParams(location.search).has('neovereno')
   const hits = useMemo(() => {
+    if (index && unverified) return Object.entries(index.subjects).flatMap(([key, list]) => list.filter((t) => !t.verified).map((t) => ({ key, t })))
     if (!index || q.trim().length < 2) return null
     const words = fold(q).split(/\s+/).filter(Boolean)
     return Object.entries(index.subjects).flatMap(([key, list]) => list.filter((t) => words.every((w) => fold(t.title).includes(w) || t.id.includes(w))).map((t) => ({ key, t }))).slice(0, 80)
-  }, [index, q])
+  }, [index, q, unverified])
 
   // Phones show grades and subjects as scrolling strips once one is picked: keep the picked ones in view.
   useEffect(() => {
@@ -61,7 +64,8 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null })
       <section class="lib-main">
         {hits ? (
           <>
-            <h1>Hledání: „{q.trim()}“</h1>
+            <h1>{unverified && q.trim().length < 2 ? `Neověřená témata · ${hits.length}` : `Hledání: „${q.trim()}“`}</h1>
+            {unverified && q.trim().length < 2 && <p class="muted">Témata, která připravila AI nebo se změnila bez kontroly. Děti je v aplikaci vidí s poznámkou „neověřeno“. Otevři téma, přečti výklad i otázky a klepni na <b>Ověřit</b>.</p>}
             {hits.length ? <TopicRows index={index!} rows={hits.map(({ key, t }) => ({ key, ...t }))} me={me} showWhere /> : <Empty>Nic nenalezeno.</Empty>}
           </>
         ) : !grade ? (
@@ -95,6 +99,12 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null })
   )
 }
 
+function UnverifiedNote({ index }: { index: Index }) {
+  const n = Object.values(index.subjects).reduce((sum, l) => sum + l.filter((t) => !t.verified).length, 0)
+  if (!n) return null
+  return <p class="banner warn"><I.warn /><span><b>{n} {n === 1 ? 'téma čeká' : n < 5 ? 'témata čekají' : 'témat čeká'} na ověření.</b> Připravila je AI nebo se změnila bez kontroly; děti je už vidí s poznámkou „neověřeno“.</span><a class="btn small primary" href="/ucivo?neovereno=1" onClick={nav('/ucivo?neovereno=1')}>Ověřovat</a></p>
+}
+
 function Intro({ index, me }: { index?: Index; me: Me | null }) {
   const total = index ? Object.values(index.subjects).reduce((n, l) => n + l.length, 0) : 0
   if (!me) return (
@@ -105,7 +115,7 @@ function Intro({ index, me }: { index?: Index; me: Me | null }) {
         <li><b>Vyber</b> ročník a předmět, nebo téma vyhledej.</li>
         <li><b>Otevři téma.</b> V telefonu si přečteš výklad a vyzkoušíš otázky. Vedle je přehled všech otázek se správnými odpověďmi.</li>
       </ol>
-      <p class="muted">Učivo upravují pozvaní moderátoři a každou změnu před zveřejněním někdo schvaluje.{index ? ` V učivu je ${total} témat.` : ''} Je pod licencí <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">CC BY-SA 4.0</a>, celé ke stažení na <a href="https://github.com/mrpajzl/sprtam-content" target="_blank" rel="noopener">GitHubu</a>.</p>
+      <p class="muted">Učivo upravují pozvaní moderátoři a jejich změny před zveřejněním schvaluje jiný moderátor. Učivo připravené AI se zveřejní hned s poznámkou „neověřeno“ a moderátoři ho pak ověřují.{index ? ` V učivu je ${total} témat.` : ''} Je pod licencí <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">CC BY-SA 4.0</a>, celé ke stažení na <a href="https://github.com/mrpajzl/sprtam-content" target="_blank" rel="noopener">GitHubu</a>.</p>
     </div>
   )
   const mine = index?.active.filter((a) => a.userId === me.id).length ?? 0
@@ -118,12 +128,13 @@ function Intro({ index, me }: { index?: Index; me: Me | null }) {
         <li><b>Oprav</b>, na co tě editor upozorní (červeně). Ukládá se samo.</li>
         <li><b>Odešli ke kontrole.</b> Až změnu schválí jiný moderátor, sama se zveřejní na sprtam.cz.</li>
       </ol>
+      {index && <UnverifiedNote index={index} />}
       {index && <p class="muted">V učivu je {total} témat.{mine ? <> Máš rozpracováno {mine} – najdeš je v <a href="/kontrola?moje=1" onClick={nav('/kontrola?moje=1')}>Kontrole</a> pod Pouze moje.</> : null}</p>}
     </div>
   )
 }
 
-interface Row { key: string; id: string; title: string; emoji: string; approach?: string }
+interface Row { key: string; id: string; title: string; emoji: string; approach?: string; verified?: string }
 
 function TopicRows({ index, rows, me, showWhere }: { index: Index; rows: Row[]; me: Me | null; showWhere?: boolean }) {
   return (
@@ -144,6 +155,7 @@ function TopicRows({ index, rows, me, showWhere }: { index: Index; rows: Row[]; 
               {showWhere && <small>{GRADE_NAME[g]} · {subjectMeta(s).name}</small>}
               {t.approach && <small>jen pro přístup {index.approaches.find((a) => a.id === t.approach)?.short ?? t.approach}</small>}
             </span>
+            {!t.verified && <span class="unv-dot" title="Neověřeno – téma zatím nikdo nezkontroloval" role="img" aria-label="neověřeno" />}
             {mine && <span class="pill mine">{mine.status === 'review' ? 'tvůj návrh v kontrole' : 'rozpracováno'}</span>}
             {rest.some((r) => r.status === 'review') && <span class="pill st-review">ke kontrole</span>}
             {rest.some((r) => r.status !== 'review') && <span class="pill" title={rest.map((r) => r.name).join(', ')}>upravuje {rest.find((r) => r.status !== 'review')!.name}</span>}

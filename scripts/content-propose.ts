@@ -6,6 +6,8 @@
 // already in review are skipped, my drafts of them not sent yet are sent: running it again only does what is
 // missing. When moderation says to slow down (429), it waits and goes on. Nothing is ever published by this
 // script – a person approves every draft in moderation.
+// With --unverified (admins only) the topics are not sent for review but published at once, marked unverified:
+// pupils see them with a note until a moderator checks them ("Ověřit" in moderation; docs/OBSAH.md).
 //   SPRTAM_TOKEN=spt_…  (or the file ~/.config/sprtam/api-token)   CONTENT_API=https://moderace.sprtam.cz (default)
 import { existsSync, readFileSync } from 'node:fs'
 import { homedir } from 'node:os'
@@ -18,7 +20,8 @@ const api = (process.env.CONTENT_API ?? 'https://moderace.sprtam.cz').replace(/\
 const tokenFile = join(homedir(), '.config/sprtam/api-token')
 const token = (process.env.SPRTAM_TOKEN ?? (existsSync(tokenFile) ? readFileSync(tokenFile, 'utf8') : '')).trim()
 if (!token.startsWith('spt_')) { console.error(`No API token: set SPRTAM_TOKEN or put it in ${tokenFile} (Moderace → Účet → API tokeny).`); process.exit(1) }
-const folders = process.argv.slice(2)
+const unverified = process.argv.includes('--unverified')
+const folders = process.argv.slice(2).filter((a) => a !== '--unverified')
 if (!folders.length) { console.error('Usage: npx tsx scripts/content-propose.ts topics/<grade>/<subject> …'); process.exit(1) }
 
 async function call(method: string, path: string, body?: unknown): Promise<{ status: number; body: Record<string, any> | null }> {
@@ -51,10 +54,13 @@ for (const folder of folders) {
   const subjectMeta = list.name && list.emoji && list.color ? { name: list.name, emoji: list.emoji, color: list.color } : undefined
   const index = (await call('GET', '/api/content/index')).body
   const published = new Set((index?.subjects?.[`${grade}/${subject}`] ?? []).map((t: { id: string }) => t.id))
+  /** Drafts of this folder to publish at once (--unverified). */
+  const batch: string[] = []
   for (const [i, id] of list.topics.entries()) {
     if (published.has(id)) { skipped++; continue }
     const open = mine.get(`${grade}/${subject}/${id}`)
-    if (open?.status === 'review') { skipped++; continue }
+    if (open?.status === 'review' && !unverified) { skipped++; continue }
+    if (open && unverified) { batch.push(open.id); continue }
     let draft = open
     if (!draft) {
       const topic = read<TopicFile>(join(dir, `${id}.json`))
@@ -63,11 +69,17 @@ for (const folder of folders) {
       if (r.status !== 200) { console.log(`✗ ${grade}/${subject}/${id}: ${r.status} ${r.body?.error ?? ''}`); failed++; continue }
       draft = r.body!.draft as { id: string; status: string }
     }
+    if (unverified) { batch.push(draft.id); continue }
     const sub = await call('POST', `/api/drafts/${draft.id}/submit`, { note: `Nové téma předmětu ${list.name ?? subject} (${i + 1}/${list.topics.length}).` })
     if (sub.status !== 200) { console.log(`✗ ${grade}/${subject}/${id}: draft ${draft.id} saved, but not sent: ${sub.status} ${JSON.stringify(sub.body?.problems ?? sub.body?.error ?? '')}`); failed++; continue }
     console.log(`✓ ${grade}/${subject}/${id} → ${api}/kontrola/${draft.id}`)
     sent++
   }
+  if (unverified && batch.length) {
+    const r = await call('POST', '/api/drafts/publish-unverified', { ids: batch })
+    if (r.status === 200) { console.log(`✓ ${grade}/${subject}: ${batch.length} published as unverified (release ${r.body?.release})`); sent += batch.length }
+    else { console.log(`✗ ${grade}/${subject}: not published: ${r.status} ${JSON.stringify(r.body?.problems ?? r.body?.error ?? '')}`); failed += batch.length }
+  }
 }
-console.log(`${sent} sent for review, ${skipped} skipped, ${failed} failed`)
+console.log(`${sent} ${unverified ? 'published as unverified' : 'sent for review'}, ${skipped} skipped, ${failed} failed`)
 process.exit(failed ? 1 : 0)

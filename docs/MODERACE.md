@@ -53,6 +53,10 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
 - Moderátor vlastní změnu schválit nemůže. **Správce** může: rámeček mu ukáže *Jako správce ji můžeš schválit sám/sama*, a protože tím změnu zveřejní bez druhého páru očí, aplikace si řekne o potvrzení klíčem (přihlášení v posledních 15 minutách). API tokenem to nejde. Schvaluje se přesně ta verze, kterou vidíš: když ji autor mezitím upraví, je potřeba podívat se znovu.
 - **Konflikt:** téma mezitím změnil a zveřejnil někdo jiný. Autor uvidí, co se zveřejnilo, přenese to do svého návrhu a převede ho na novou verzi.
 
+## Ověřování
+
+Učivo od AI se zveřejní hned jako **neověřené** ([OBSAH.md](OBSAH.md#neověřené-učivo)). Úvodní stránka ukáže, kolik témat čeká na ověření; **Ověřovat** je vypíše. U neověřeného tématu je žlutý rámeček s tlačítkem **Ověřit**: projdi výklad v telefonu i všechny otázky se správnými odpověďmi a potvrď. U tématu se pak ukáže *Prošlo kontrolou*, tvoje jméno a datum (v moderaci, v aplikaci i ve veřejné historii). Když něco nesedí, téma raději uprav a pošli ke kontrole – schválená úprava se počítá jako ověřená.
+
 ## Hlášení od žáků
 
 Žáci v aplikaci u každé otázky (po odpovědi) a u každého vysvětlení klepnou na **Nahlásit chybu**, vyberou, co je špatně (*Špatná odpověď nebo chyba*, *Nejasné zadání*, *Překlep*, *Jiné*), a můžou připsat krátkou poznámku. Hlášení se objeví na záložce **Hlášení** (na telefonu ve spodní liště, s počtem otevřených).

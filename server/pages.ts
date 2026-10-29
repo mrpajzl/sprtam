@@ -7,6 +7,7 @@ import { EXAM, partTopics } from '../src/exam'
 import { askable, MAPS, MAPS_INTRO, MAPS_PATH, modesOf, PARTS, place, ROUND } from '../src/maps'
 import { fullTitle, gradeFor, gradeLabel, plain, SITE_NAME, summary, titles } from '../src/seo'
 import { WIDGETS } from '../src/widgets'
+import { dateCs } from '../src/content/verified'
 
 // A real HTML page for every public route, so links are shareable with proper previews and search
 // engines get content, titles and descriptions without running JS:
@@ -161,7 +162,7 @@ ${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_P
           description: summary(explanations[0].blocks) || `${t.title} – ${subjectMeta(s).name}, ${gradeLabel(g)}.`,
           crumbs: [...sCrumbs, [t.title, tPath]],
           type: 'article',
-          body: `<div class="page" style="${style(subjectMeta(s).c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [subjectMeta(s).name, sPath]])}${explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
+          body: `<div class="page" style="${style(subjectMeta(s).c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [subjectMeta(s).name, sPath]])}${explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${t.verified ? `<p class="check-note ok"><span aria-hidden="true">✓</span>Prošlo kontrolou: ${esc(t.verified.by)}, ${esc(dateCs(t.verified.at))}</p>` : '<p class="check-note"><span aria-hidden="true">!</span>Neověřeno – výklad připravila AI a učitel ho ještě nezkontroloval. Když najdeš chybu, nahlas ji.</p>'}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
           ld: {
             '@type': 'LearningResource', name: t.title, inLanguage: 'cs', learningResourceType: 'Explanation', isAccessibleForFree: true,
             educationalLevel: GRADE_NAME[g], about: subjectMeta(s).name, url: `${SITE}${tPath}`,

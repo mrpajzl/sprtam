@@ -780,3 +780,9 @@ a.draft:hover { box-shadow: inset 0 0 0 1px var(--ink-3); }
   .decide-bar .pill { display: none; }
   .decide-bar > .btn { flex: 1; justify-content: center; }
 }
+
+/* Unverified content (published by AI, not yet checked by a person) */
+.pill.unverified { background: var(--warn-bg); color: var(--warn); }
+.v-verified { display: inline-flex; align-items: center; gap: 4px; color: var(--ok); font-weight: 700; }
+.v-verified svg { width: 14px; height: 14px; }
+.unv-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--warn); }

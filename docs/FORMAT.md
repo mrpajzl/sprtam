@@ -33,6 +33,9 @@ Každý soubor začíná polem `"$schema"` s relativní cestou ke schématu – 
 | `explanations[].approach` | text | – | Vysvětlení v duchu jednoho přístupu k výuce (složka v content/approaches), např. "waldorf". Dětem, které ten přístup zvolily, se ukáže jako první; ostatním se neukazuje. |
 | `explanations[].blocks` | seznam (objekt podle "type") ≥ 1 položek | ano |  |
 | `questions` | seznam (objekt podle "type") ≥ 8 položek | ano |  |
+| `verified` | objekt | – | Prošlo kontrolou člověkem. Nastavuje jen moderace (tlačítko „Ověřit“ nebo schválení změny); každá další změna bez kontroly ho smaže. Chybí = neověřeno. |
+| `verified.by` | text | ano | Kdo téma zkontroloval (jméno moderátora, případně víc jmen oddělených čárkou). |
+| `verified.at` | text | ano | Kdy, RRRR-MM-DD. |
 
 ### Seznam témat (`_subject.json`)
 
