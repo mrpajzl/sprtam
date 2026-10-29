@@ -160,6 +160,7 @@ Widget může být i součástí řešeného příkladu (ukáže se s řešením
 - `choice` – 2–4 možnosti `options`, `answer` = pořadí správné (od 0). Špatné možnosti věrohodné (typické chyby), ne hloupé.
 - `truefalse` – tvrzení, `answer` je `true` nebo `false`.
 - `input` – krátká odpověď (číslo, slovo). `answers` = všechny přijatelné varianty. Jednotky se neignorují – ptej se tak, aby odpověď byla jen číslo nebo jedno slovo („Obsah v cm² =“). Velikost písmen a mezery se při porovnání ignorují. Diakritika se ignoruje všude **kromě češtiny a literatury**, kde rozhoduje (pravopis); čísla se porovnávají numericky (`0,5` = `0.5`).
+  - **Doplňovačky se neklikají na klávesnici.** Když otázka vyjmenuje možnosti a jedna z nich je správná odpověď, žák jen klepne na tlačítko: `Doplň y/i: t_gr`, `Doplň i/y/a: Koťata spal_.`, `Doplň a/an: ___ dog`, `(lavici / posteli)`, `doplň ě, nebo je`. Možnost se počítá i dosazená do mezery (`„__jet“` + s = `sjet`). V češtině stačí mezera `_` a odpověď i/y, í/ý, i/y/a po `l_` nebo s/z/vz na začátku slova – tlačítka se doplní sama. Pokyny „Napiš jen písmeno“ a „a napiš celé slovo“ se u tlačítek skryjí.
 - `order` – `items` ve **správném** pořadí (aplikace je zamíchá). 3–6 položek.
 - `match` – `pairs` správně spárované (aplikace zamíchá pravou stranu). 3–5 párů, krátké texty.
 - `open` – ústní otázka, `answer` = vzorová odpověď.

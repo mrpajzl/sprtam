@@ -2,7 +2,7 @@ import { useMemo, useRef, useState, useEffect } from 'preact/hooks'
 import type { Question } from '../content/types'
 import { Inline } from '../ui/Inline'
 import { IBulb, IDown, IUp } from '../ui/icons'
-import { checkInput } from './engine'
+import { checkInput, gapChoice } from './engine'
 import { WidgetQuestion } from '../widgets/view'
 
 const shuffle = <T,>(xs: T[]) => xs.map((x) => [Math.random(), x] as const).sort((a, b) => a[0] - b[0]).map((x) => x[1])
@@ -16,9 +16,12 @@ export function QuestionView({ q, reveal, strict = true, hints = false, onAnswer
   const [shown, setShown] = useState(0)
   const answer = (ok: boolean) => { if (done) return; setDone(true); onAnswer(ok, shown > 0) }
   const list = hints && 'hints' in q ? q.hints ?? [] : []
+  const gap = useMemo(() => (q.type === 'input' ? gapChoice(q, strict) : null), [q, strict])
+  const [filled, setFilled] = useState<string | null>(null)
+  const text = gap ? fillGap(q.question, filled) : q.question
   return (
     <div>
-      <h2 class="question"><Inline text={q.question} /></h2>
+      <h2 class="question"><Inline text={text} /></h2>
       {q.type === 'input' && q.widget && <WidgetQuestion w={q.widget} />}
       {list.length > 0 && (shown > 0 || !done) && (
         <div class="hints" aria-live="polite">
@@ -32,7 +35,9 @@ export function QuestionView({ q, reveal, strict = true, hints = false, onAnswer
       )}
       {q.type === 'choice' && <Choice q={q} done={done} reveal={reveal} answer={answer} />}
       {q.type === 'truefalse' && <TrueFalse q={q} done={done} reveal={reveal} answer={answer} />}
-      {q.type === 'input' && <Input q={q} done={done} reveal={reveal} answer={answer} strict={strict} />}
+      {q.type === 'input' && (gap
+        ? <Pick options={gap.options} correct={gap.answer} done={done} reveal={reveal} answer={(i) => { setFilled(gap.options[reveal ? gap.answer : i]); answer(i === gap.answer) }} />
+        : <Input q={q} done={done} reveal={reveal} answer={answer} strict={strict} />)}
       {q.type === 'order' && <Order q={q} done={done} reveal={reveal} answer={answer} />}
       {q.type === 'match' && <Pair q={q} done={done} answer={answer} />}
     </div>
@@ -61,6 +66,26 @@ function TrueFalse({ q, done, reveal, answer }: P<Extract<Question, { type: 'tru
     <div class="tf">
       <button class={`opt ${cls(true)}`} onClick={() => { if (done) return; setPick(true); answer(q.answer) }}>Pravda</button>
       <button class={`opt ${cls(false)}`} onClick={() => { if (done) return; setPick(false); answer(!q.answer) }}>Nepravda</button>
+    </div>
+  )
+}
+
+/** The question of a tap-to-fill blank: typing instructions dropped, the blank filled once answered. */
+function fillGap(question: string, filled: string | null) {
+  const t = question.replace(/\s*Napiš jen písmeno\.?/iu, '').replace(/ a napiš celé slovo/iu, '').replace(/^Napiš správně celé slovo:/u, 'Doplň:')
+  return filled === null ? t : t.replace(/_+|…{2,}/u, `**${filled}**`)
+}
+
+/** Fill-in-the-blank answered by tapping: „Doplň y/i: t_gr“ → [y] [i], no keyboard. Options keep the question's order. */
+function Pick({ options, correct, done, reveal, answer }: { options: string[]; correct: number; done: boolean; reveal: boolean; answer: (i: number) => void }) {
+  const [pick, setPick] = useState<number | null>(null)
+  const long = options.some((o) => o.length > 3)
+  return (
+    <div class={`tf pick ${long ? 'long' : ''}`} style={{ gridTemplateColumns: `repeat(${options.length}, 1fr)` }}>
+      {options.map((o, i) => {
+        const cls = !done ? '' : reveal ? (i === correct ? 'ok' : i === pick ? 'bad' : '') : i === pick ? 'sel' : ''
+        return <button key={i} class={`opt ${cls}`} onClick={() => { if (done) return; setPick(i); answer(i) }}>{o}</button>
+      })}
     </div>
   )
 }
