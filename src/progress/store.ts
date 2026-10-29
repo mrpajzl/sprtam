@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'preact/hooks'
 import type { YearId } from '../content/types'
+import { frozen } from './freeze'
+import { mergePlans, type Plan } from './plan'
 import { nextBox, today, type QuestionProgress } from './questions'
 
 export { isDue, isMistake, questionId, QUESTION_GAP, today, topicOf, type QuestionProgress } from './questions'
@@ -37,6 +39,8 @@ export interface Progress {
   o?: number
   /** Answers given today: [day, count]. */
   x?: [number, number]
+  /** Plans before a test by id (plan.ts). */
+  k?: Record<string, Plan>
 }
 
 
@@ -52,6 +56,7 @@ let state = load()
 const subs = new Set<() => void>()
 
 function commit(next: Progress) {
+  if (frozen) return
   state = next
   localStorage.setItem(KEY, JSON.stringify(state))
   subs.forEach((f) => f())
@@ -133,6 +138,19 @@ export const goalOf = (p: Progress) => p.o ?? DEFAULT_GOAL
 export const answeredToday = (p: Progress) => (p.x?.[0] === today() ? p.x[1] : 0)
 export function setGoal(n: number) { if (goalOf(state) !== n) commit({ ...state, o: n }) }
 
+// ——— Plans before a test (rules in plan.ts) ———
+
+export const newPlanId = () => Math.random().toString(36).slice(2, 8)
+
+export function savePlan(id: string, plan: Omit<Plan, 'u'>) {
+  commit({ ...state, k: { ...state.k, [id]: { ...plan, u: Date.now() } } })
+}
+
+export function deletePlan(id: string) {
+  const p = state.k?.[id]
+  if (p) commit({ ...state, k: { ...state.k, [id]: { n: '', d: p.d, t: [], u: Date.now(), x: 1 } } })
+}
+
 /** Merge another device's progress: keep the better of both for every item. */
 export function merge(a: Progress, b: Progress): Progress {
   const t = { ...a.t }
@@ -157,7 +175,8 @@ export function merge(a: Progress, b: Progress): Progress {
   if (b.x && (!x || b.x[0] > x[0])) x = b.x
   else if (b.x && x && b.x[0] === x[0]) x = [x[0], Math.max(x[1], b.x[1])]
   const o = a.o ?? b.o
-  return { v: 1, g: a.g ?? b.g, t, w, f, a: days, q, ...(o !== undefined ? { o } : {}), ...(x ? { x } : {}) }
+  const k = mergePlans(a.k, b.k)
+  return { v: 1, g: a.g ?? b.g, t, w, f, a: days, q, ...(o !== undefined ? { o } : {}), ...(x ? { x } : {}), ...(k ? { k } : {}) }
 }
 
 export function importProgress(p: Progress) { commit(merge(state, p)) }

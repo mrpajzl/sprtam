@@ -5,11 +5,16 @@ import { hasSubject } from '../content'
 import { MAPS_PATH } from '../maps'
 import { useIndex, refFor, type TopicRef } from '../content/library'
 import { recommend, streakOf, type Why } from '../progress/recommend'
+import { activePlans, planDay } from '../progress/plan'
+import { dropRound, useSavedRound } from '../progress/resume'
+import { MODES } from '../quiz/engine'
 import { answeredToday, goalOf, isDue, isMistake, pinnedKeys, stars, today, useProgress, type Progress } from '../progress/store'
 import { go, Link } from '../router'
 import { Stars } from '../ui/Bar'
 import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
-import { IArrow, IBook, IGear, IPin, IRepeat, ISearch, IShuffle } from '../ui/icons'
+import { IArrow, IBook, ICalendar, IClose, IGear, IPin, IPlay, IRepeat, ISearch, IShuffle } from '../ui/icons'
+import { PLAN_PATH, PlanRow } from './Plan'
+import { WhoKey } from './Profiles'
 import { Mascot } from '../ui/Mascot'
 import { QrButton } from '../ui/QrShare'
 import { vocabLangs } from '../vocab'
@@ -25,12 +30,14 @@ export function Home() {
   const recs = all ? recommend(p, all.filter((r) => !r.approach)) : []
   const obor = useObor()
   const langs = vocabLangs()
+  const plans = activePlans(p.k, today())
 
   return (
     <div class="page home">
       <header class="bar">
         <h1 class="brand"><Mascot size={38} /><span>šprtám</span></h1>
         <span class="grow" />
+        <WhoKey />
         <Link class="icon-btn" href="/nastaveni" aria-label="Nastavení"><IGear /></Link>
         <QrButton />
       </header>
@@ -40,6 +47,8 @@ export function Home() {
       </Link>
 
       <Display p={p} />
+      <ResumeKey />
+      {plans.length > 0 && <div class="list home-plans">{plans.map(([id, plan]) => <PlanRow key={id} id={id} plan={plan} day={planDay(plan, p.t, today())} />)}</div>}
       <ReviewKeys p={p} />
 
       <section class="sec">
@@ -87,6 +96,14 @@ export function Home() {
           <IArrow />
         </Link>}
       </section>
+
+      {!plans.length && (
+        <Link class="row exam-key plan-entry" style={keyStyle('yellow')} href={PLAN_PATH}>
+          <span class="skey m" style={keyStyle('yellow')}><ICalendar /></span>
+          <span class="txt"><b>Plán před písemkou</b><small>opakování rozvržené do dne písemky</small></span>
+          <IArrow />
+        </Link>
+      )}
 
       <Link class="row exam-key" style={keyStyle('orange')} href={`/${EXAM.id}`}>
         <span class="skey m" style={keyStyle('orange')}><b class="em">{EXAM.emoji}</b></span>
@@ -172,6 +189,21 @@ function Display({ p }: { p: Progress }) {
       </span>
       <span class="streak" aria-hidden="true"><b>{n}</b><small>{plural(n, 'den', 'dny', 'dní')} v řadě</small></span>
     </Link>
+  )
+}
+
+/** The unfinished round (progress/resume.ts): carry on, or let it go. */
+function ResumeKey() {
+  const r = useSavedRound()
+  if (!r) return null
+  return (
+    <div class="resume-row">
+      <Link class="row review-key" style={keyStyle('green')} href={`${r.path}?pokracovat`} rel="nofollow">
+        <span class="skey m"><IPlay /></span>
+        <span class="txt"><b>Pokračovat: {r.label}</b><small>{MODES[r.mode]?.name ?? 'Kolo'} · hotovo {r.answers.length} z {r.queue.length}</small></span>
+      </Link>
+      <button class="icon-btn" onClick={() => dropRound()} aria-label="Zahodit rozdělané kolo"><IClose /></button>
+    </div>
   )
 }
 

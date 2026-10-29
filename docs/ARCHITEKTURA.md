@@ -224,6 +224,8 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/content-stub.ts` | náhrada veřejného API obsahové služby nad `content/` (pro testy serveru) |
 | `scripts/learning-test.ts` | pravidla opakování otázek, Sešitu chyb, denního cíle, série se zmrazeným dnem a slučování (`npx tsx`) |
 | `scripts/learning-flow.mjs` | totéž v prohlížeči: kvíz s chybou a nápovědou, Sešit chyb, Přehled, denní cíl, hlášení chyby (proti běžícímu serveru, `SHOTS=1` uloží snímky) |
+| `scripts/usability-test.ts` | pravidla Plánu před písemkou, rozložení Ostré simulace do oblastí, rozdělané kolo, soubory `.ics` a přepínání profilů (`npx tsx`) |
+| `scripts/usability-flow.mjs` | totéž v prohlížeči: nastavení čtení, klávesy, rozdělané kolo, simulace, pracovní list a tisk, plán s kalendářem, připomínka, profily (proti běžícímu serveru, `SHOTS=1` uloží snímky) |
 | `scripts/maps-test.mjs` | Slepá mapa v prohlížeči: celá kola všech her dotykem, špatné klepnutí, výsledek a rekord, prohlížení mapy, posun a zoom myší (proti vývojovému serveru, `SHOTS=1` uloží snímky) |
 | `scripts/report-test.mjs` | hlášení chyb přes server: kontrola, limity, přeposlání bez údajů o žákovi (spouští vlastní server a náhradu obsahové služby, napřed `npm run build`) |
 | `scripts/moderator-test.mjs` | moderace a obsahová služba: přihlášení klíčem, bezpečnostní pravidla, editor a náhled, kontrola a zveřejnění, historie a návraty, API tokeny, hlášení od žáků, zálohy (spouští vlastní server, napřed `npm run moderator:build`) |

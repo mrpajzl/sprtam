@@ -20,11 +20,14 @@ import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
 import { OborScreen } from './screens/Obor'
 import { Overview } from './screens/Overview'
+import { planFullScreen, PlanRoute } from './screens/Plan'
+import { ProfilesScreen } from './screens/Profiles'
 import { MistakesScreen, ReviewQuiz } from './screens/Review'
 import { Search } from './screens/Search'
 import { Settings } from './screens/Settings'
 import { SyncScreen } from './screens/Sync'
 import { MixScreen, QuizScreen, TopicScreen } from './screens/TopicScreen'
+import { TopicWorksheet } from './screens/Worksheet'
 import { LEVELS, VocabHome, VocabLangHome, VocabLevel, VocabDrill } from './screens/Vocab'
 import { langByPath } from './vocab/langs'
 import type { Level } from './vocab/types'
@@ -53,17 +56,19 @@ export function App() {
   if (a === 'chyby' && b === 'procvicit') return <ReviewQuiz mode="chyby" />
   if (a === 'chyby') return <><MistakesScreen /><TabBar /></>
   if (a === 'prehled') return <><Overview /><TabBar /></>
+  if (a === 'plan') return planFullScreen(c) ? <PlanRoute key={`${b}/${c}`} id={b} sub={c} /> : <><PlanRoute key={`${b}/${c}`} id={b} sub={c} /><TabBar /></>
   if (a === 'p' && b) return <ImportLink code={b} />
   if (a === 'presun' && b) return <MoveIn code={b} />
   if (a === 'spojit' && b) return <SyncScreen offer={b} />
   if (a === 'hledat') return <><Search /><TabBar active="search" /></>
   if (a === 'sdilet') return <><SyncScreen /><TabBar /></>
   if (a === 'nastaveni') return <><Settings /><TabBar /></>
+  if (a === 'profily') return <><ProfilesScreen /><TabBar /></>
   if (a === 'o-aplikaci') return <><About /><TabBar /></>
   if (a === 'widgety') return <><GalleryScreen key={b} name={b} /><TabBar /></>
   if (a === EXAM.id) {
-    // Practice gets the whole screen: /prijimacky/<subject>/test, /prijimacky/<subject>/<area>/test
-    if (c === 'test' || d === 'test') return <ExamScreen part={b} area={c} test={d === 'test'} />
+    // Practice gets the whole screen: /prijimacky/<subject>/test, /prijimacky/<subject>/simulace, /prijimacky/<subject>/<area>/test
+    if (c === 'test' || c === 'simulace' || d === 'test') return <ExamScreen part={b} area={c} test={d === 'test'} />
     return <><ExamScreen key={`${b}/${c}`} part={b} area={c} /><TabBar /></>
   }
   if (`/${a}` === MAPS_PATH) {
@@ -91,6 +96,7 @@ export function App() {
     const s = hasSubjectIn(g, c) ? c : undefined
     if (s && d === '~test') return <QuizScreen g={g} s={s} id="~test" mode="test" />
     if (s && d && e && TOPIC_MODES.includes(e as ModeId)) return <QuizScreen g={g} s={s} id={d} mode={e as ModeId} />
+    if (s && d && e === 'tisk') return <TopicWorksheet g={g} s={s} id={d} />
     const screen = !s ? <GradeScreen g={g} /> : d ? <TopicScreen g={g} s={s} id={d} /> : <SubjectScreen g={g} s={s} />
     // Odborné předměty belong to no grade: the tab keeps the pupil's own year (their obor's year screen).
     return <>{screen}<TabBar active="grade" grade={g === 'odb' ? undefined : g} /></>
@@ -102,9 +108,11 @@ export function App() {
 function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'hledat') return 'Hledat'
   if (a === 'nastaveni') return 'Nastavení'
+  if (a === 'profily') return 'Kdo se učí?'
   if (a === 'prehled') return 'Přehled'
   if (a === 'chyby') return 'Sešit chyb'
   if (a === 'dnes') return 'Dnešní opakování'
+  if (a === 'plan') return null
   if (a === 'o-aplikaci') return ABOUT.title
   if (a === 'widgety') return 'Galerie widgetů'
   if (a === EXAM.id || `/${a}` === MAPS_PATH || approachById(a)) return null

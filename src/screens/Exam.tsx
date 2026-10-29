@@ -7,15 +7,17 @@ import { Link } from '../router'
 import { titles, useTitle } from '../seo'
 import { Bar, Meter, Stars } from '../ui/Bar'
 import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
-import { IArrow, ITest } from '../ui/icons'
+import { IArrow, ITest, ITimer } from '../ui/icons'
 import { Inline } from '../ui/Inline'
 import { useAsync } from '../ui/useAsync'
 import { MODES } from '../quiz/engine'
+import { ExamSim } from './ExamSim'
 import { Quiz } from './Quiz'
 
 // Příprava na přijímačky (src/exam.ts): /prijimacky (about the exam, its two tests), /prijimacky/<subject>
 // (the areas of one test), /prijimacky/<subject>/<area> (its topics from any grade) and practice:
-// /prijimacky/<subject>/<area>/test (one area) and /prijimacky/<subject>/test (a practice test of the whole part).
+// /prijimacky/<subject>/<area>/test (one area), /prijimacky/<subject>/test (a practice test of the whole part) and
+// /prijimacky/<subject>/simulace (the whole part on the clock, ExamSim.tsx).
 
 const BASE = `/${EXAM.id}`
 const STYLE = keyStyle('orange')
@@ -29,10 +31,11 @@ export function ExamScreen({ part, area, test }: { part?: string; area?: string;
   const pt = examPart(part)
   if (!pt) return <Missing />
   if (!area) return <PartScreen pt={pt} />
-  if (area === 'test' && !test) return <ExamQuiz keys={partTopics(pt)} />
+  if (area === 'simulace') return <ExamSim pt={pt} />
+  if (area === 'test' && !test) return <ExamQuiz keys={partTopics(pt)} label={`${EXAM.name} · ${pt.title}`} />
   const ar = examArea(pt, area)
   if (!ar) return <Missing />
-  return test ? <ExamQuiz keys={ar.topics} /> : <AreaScreen pt={pt} ar={ar} />
+  return test ? <ExamQuiz keys={ar.topics} label={`${EXAM.name} · ${ar.title}`} /> : <AreaScreen pt={pt} ar={ar} />
 }
 
 function Missing() {
@@ -83,6 +86,11 @@ function PartScreen({ pt }: { pt: ExamPart }) {
         <span class="txt"><b>Cvičný test</b><small>{MODES.test.count} otázek ze všech oblastí</small></span>
         <IArrow />
       </Link>
+      <Link class="row test-key sim-key" href={`${BASE}/${pt.s}/simulace`} rel="nofollow">
+        <span class="skey m"><ITimer /></span>
+        <span class="txt"><b>Ostrá simulace</b><small>{pt.minutes} minut, {MODES.simulace.count} otázek, body z {pt.points}</small></span>
+        <IArrow />
+      </Link>
     </div>
   )
 }
@@ -115,7 +123,7 @@ function AreaScreen({ pt, ar }: { pt: ExamPart; ar: ExamArea }) {
 }
 
 /** One test across topics from different grades. */
-function ExamQuiz({ keys }: { keys: string[] }) {
+function ExamQuiz({ keys, label }: { keys: string[]; label: string }) {
   const topics = useAsync(async () => {
     await loadIndex()
     const refs = keys.flatMap((k) => refFor(k) ?? [])
@@ -123,5 +131,5 @@ function ExamQuiz({ keys }: { keys: string[] }) {
     return refs.flatMap((r, i) => (loaded[i] ? [{ key: r.key, t: loaded[i]! }] : []))
   }, [keys.join()]) // a part's topics are a new array on every render
   if (!topics) return <div class="page" />
-  return <div style={STYLE}><Quiz mode="test" topics={topics} /></div>
+  return <div style={STYLE}><Quiz mode="test" topics={topics} label={label} /></div>
 }

@@ -1,16 +1,18 @@
-import { useMemo, useState, useEffect } from 'preact/hooks'
+import { useMemo, useRef, useState, useEffect } from 'preact/hooks'
 import type { Question, Topic } from '../content/types'
 import { approachById, getApproach } from '../approach'
 import { build, strictFor, grade, GRADE_WORD, MODES, answerText, verbal, type Item, type ModeId } from '../quiz/engine'
 import { QuestionView } from '../quiz/QuestionView'
 import { answered, answeredToday, getProgress, goalOf, isMistake, recordTopic, stars, useProgress } from '../progress/store'
-import { back } from '../router'
+import { dropRound, packRound, savedRoundAt, saveRound, unpackRound } from '../progress/resume'
+import { back, query, setQuery } from '../router'
 import { BigStars } from '../ui/Bar'
 import { IClose, ICheck, IX } from '../ui/icons'
 import { QrButton } from '../ui/QrShare'
 import { Mascot } from '../ui/Mascot'
 import { Inline } from '../ui/Inline'
 import { ReportButton } from '../ui/Report'
+import { digit, onControl, useKeys } from '../ui/keys'
 
 interface Answer { item: Item; ok: boolean; hint: boolean }
 
@@ -19,23 +21,47 @@ const points = (a: Answer) => (a.ok ? (a.hint ? 0.5 : 1) : 0)
 
 /**
  * One round of questions. `pick` chooses them instead of the mode's rules (review rounds: Sešit chyb, Dnešní opakování),
- * and `record` = the round counts as practice of its topics (stars, recommendations).
+ * and `record` = the round counts as practice of its topics (stars, recommendations). An unfinished round is saved
+ * after every answer and offered again at the same address (progress/resume.ts); `label` names it on the home screen.
  */
-export function Quiz({ mode, topics, pick, record = true, empty }: { mode: ModeId; topics: { key: string; t: Topic }[]; pick?: () => Item[]; record?: boolean; empty?: string }) {
+export function Quiz({ mode, topics, pick, record = true, empty, label }: { mode: ModeId; topics: { key: string; t: Topic }[]; pick?: () => Item[]; record?: boolean; empty?: string; label?: string }) {
+  const [path] = useState(() => location.pathname)
+  // A round saved here before: arriving from „Pokračovat“ (?pokracovat) resumes it at once, otherwise ask.
+  const [saved] = useState(() => {
+    const r = savedRoundAt(path)
+    const u = r?.mode === mode ? unpackRound(r, topics) : undefined
+    if (r && !u) dropRound(path)
+    return u
+  })
+  const [asking, setAsking] = useState(() => !!saved && !query().has('pokracovat'))
+  useEffect(() => { if (query().has('pokracovat')) setQuery(new URLSearchParams()) }, [])
   const [round, setRound] = useState(0)
   const items = useMemo(() => (pick ? pick() : build(mode, topics)), [mode, topics, round])
-  const [queue, setQueue] = useState<Item[]>(items)
-  const [i, setI] = useState(0)
-  const [answers, setAnswers] = useState<Answer[]>([])
+  const [queue, setQueue] = useState<Item[]>(saved?.queue ?? items)
+  const [i, setI] = useState(saved?.answers.length ?? 0)
+  const [answers, setAnswers] = useState<Answer[]>(saved?.answers ?? [])
   const [last, setLast] = useState<boolean | null>(null)
-  const [start] = useState(Date.now())
+  const [start, setStart] = useState(() => Date.now() - (saved?.ms ?? 0))
   const m = MODES[mode]
+  const name = label ?? (topics.length === 1 ? topics[0].t.title : m.name)
 
-  useEffect(() => { setQueue(items); setI(0); setAnswers([]); setLast(null) }, [items])
+  // A new round (Znovu, Začít znovu); not on the first render, which may carry a resumed round.
+  const fresh = useRef(true)
+  useEffect(() => {
+    if (fresh.current) { fresh.current = false; return }
+    setQueue(items); setI(0); setAnswers([]); setLast(null); setStart(Date.now())
+  }, [items])
 
   // First attempt of each item counts for the score; in Opakování wrong items come back later.
   const firstTry = useMemo(() => { const seen = new Set<Item>(); return answers.filter((a) => (seen.has(a.item) ? false : (seen.add(a.item), true))) }, [answers])
   const finished = queue.length > 0 && i >= queue.length
+
+  // Save after every answer (the position is the number of answers: each place in the queue is answered once).
+  useEffect(() => {
+    if (asking) return
+    if (finished) dropRound(path)
+    else if (answers.length) saveRound(packRound({ path, mode, label: name, ...(mode === 'test' ? { ms: Date.now() - start } : {}) }, queue, answers.length, answers))
+  }, [answers, finished, asking])
 
   useEffect(() => {
     if (!finished || !firstTry.length || !record) return
@@ -43,6 +69,24 @@ export function Quiz({ mode, topics, pick, record = true, empty }: { mode: ModeI
     for (const a of firstTry) { const s = by.get(a.item.topic) ?? { ok: 0, n: 0 }; s.n++; s.ok += points(a); by.set(a.item.topic, s) }
     by.forEach((s, key) => recordTopic(key, (s.ok / s.n) * 100))
   }, [finished])
+
+  const next = () => { setLast(null); setI(i + 1) }
+  // Enter, Space or → on the feedback sheet goes on (a focused button handles Enter and Space itself).
+  useKeys((e) => { if (e.key !== 'ArrowRight' && (!['Enter', ' '].includes(e.key) || onControl(e.target))) return; next(); return true }, last !== null)
+
+  if (asking && saved) {
+    return (
+      <div class="page">
+        <div class="empty resume-ask">
+          <Mascot mood="wow" size={96} />
+          <b>Máš rozdělané kolo</b>
+          <span class="muted">{m.name} · odpovězeno {saved.answers.length} z {saved.queue.length}</span>
+          <button class="btn block" autoFocus onClick={() => { setStart(Date.now() - saved.ms); setAsking(false) }}>Pokračovat</button>
+          <button class="btn ghost block" onClick={() => { dropRound(path); setAsking(false); setRound(round + 1) }}>Začít znovu</button>
+        </div>
+      </div>
+    )
+  }
 
   if (!queue.length) return <div class="page"><div class="empty"><Mascot mood={empty ? 'happy' : 'sad'} size={96} />{empty ?? 'Tady zatím nejsou otázky.'}<button class="btn" onClick={back}>Zpět</button></div></div>
 
@@ -82,7 +126,6 @@ export function Quiz({ mode, topics, pick, record = true, empty }: { mode: ModeI
   }
 
   const item = queue[i]
-  const next = () => { setLast(null); setI(i + 1) }
   const onAnswer = (ok: boolean, hint = false) => {
     answered(item.id, ok, hint, !answers.some((a) => a.item === item))
     setAnswers([...answers, { item, ok, hint }])
@@ -152,6 +195,14 @@ function Timer({ since }: { since: number }) {
 /** Oral exam: think or say the answer aloud, reveal, then be honest. */
 function Oral({ q, onAnswer }: { q: Question; onAnswer: (ok: boolean) => void }) {
   const [shown, setShown] = useState(false)
+  useKeys((e) => {
+    const n = digit(e), k = e.key.toLowerCase()
+    if (!shown) { if ((e.key === 'Enter' || e.key === ' ') && !onControl(e.target)) { setShown(true); return true } return }
+    if (n === 1 || k === 'n') onAnswer(false)
+    else if (n === 2 || k === 'v') onAnswer(true)
+    else return
+    return true
+  })
   return (
     <div class="oral">
       <h2 class="question"><Inline text={q.question} /></h2>
@@ -160,8 +211,8 @@ function Oral({ q, onAnswer }: { q: Question; onAnswer: (ok: boolean) => void })
         <>
           <div class="card ans"><Inline text={answerText(q)} /></div>
           <div class="self">
-            <button class="btn" onClick={() => onAnswer(false)}><IX /> Nevěděl/a</button>
-            <button class="btn" onClick={() => onAnswer(true)}><ICheck /> Věděl/a</button>
+            <button class="btn" onClick={() => onAnswer(false)}><IX /> Nevěděl/a<kbd class="key-hint">1</kbd></button>
+            <button class="btn" onClick={() => onAnswer(true)}><ICheck /> Věděl/a<kbd class="key-hint">2</kbd></button>
           </div>
         </>
       )}

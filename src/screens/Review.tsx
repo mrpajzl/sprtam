@@ -2,6 +2,7 @@ import { loadTopic } from '../content'
 import { GRADE_NAME, subjectMeta } from '../content/curriculum'
 import type { GradeId, SubjectId, Topic } from '../content/types'
 import { answerText, MODES, reviewIds, reviewItems } from '../quiz/engine'
+import { savedRoundAt } from '../progress/resume'
 import { getProgress, isMistake, questionId, topicOf, useProgress } from '../progress/store'
 import { back, go, Link } from '../router'
 import { Bar } from '../ui/Bar'
@@ -30,8 +31,12 @@ async function topicsOf(ids: string[]): Promise<Loaded> {
 }
 
 export function ReviewQuiz({ mode }: { mode: 'chyby' | 'dnes' }) {
-  // Enough candidates to fill a round even if some of the questions have changed in the content since.
-  const topics = useAsync(() => topicsOf(reviewIds(getProgress().q, mode).slice(0, MODES[mode].count * 3)), [mode])
+  // Enough candidates to fill a round even if some of the questions have changed in the content since,
+  // and the topics of an unfinished round here (its questions may no longer be due).
+  const topics = useAsync(() => {
+    const saved = savedRoundAt(location.pathname)?.items.flatMap((x) => x.id ?? []) ?? []
+    return topicsOf([...reviewIds(getProgress().q, mode).slice(0, MODES[mode].count * 3), ...saved])
+  }, [mode])
   if (topics === undefined) return <div class="page" />
   return (
     <Quiz mode={mode} topics={topics ?? []} record={false}
