@@ -2,15 +2,11 @@ import type { Session } from './auth'
 import { createInvite } from './auth'
 import { all, audit, one, run, type InviteRow, type UserRow } from './db'
 import { HttpError } from './http'
+import { assertNameFree, cleanName } from './profiles'
 
 // Managing moderators (admins only, with a fresh passkey confirmation for every change).
 
 const ROLES = ['admin', 'moderator'] as const
-const cleanName = (v: unknown) => {
-  const name = typeof v === 'string' ? v.replace(/\s+/g, ' ').trim() : ''
-  if (name.length < 2 || name.length > 80) throw new HttpError(400, 'Napiš jméno (2–80 znaků).')
-  return name
-}
 const role = (v: unknown) => {
   if (!ROLES.includes(v as never)) throw new HttpError(400, 'Neznámá role.')
   return v as (typeof ROLES)[number]
@@ -36,6 +32,7 @@ export function listInvites() {
 
 export function invite(s: Session, body: Record<string, unknown>, ip: string) {
   const name = cleanName(body.name)
+  assertNameFree(name, null)
   const r = role(body.role)
   const out = createInvite(s.user, 'user', name, r)
   audit('invite.created', s.user.id, { name, role: r }, ip)
@@ -80,8 +77,10 @@ export function updateUser(s: Session, id: unknown, body: Record<string, unknown
   }
   if ('name' in body) {
     const name = cleanName(body.name)
+    assertNameFree(name, u.id)
     run('UPDATE users SET name = ? WHERE id = ?', name, u.id)
-    audit('user.renamed', s.user.id, { user: u.id, name }, ip)
+    // The former name too: topics checked under it keep leading to this account (profiles.ts).
+    audit('user.renamed', s.user.id, { user: u.id, from: u.name, name }, ip)
   }
 }
 

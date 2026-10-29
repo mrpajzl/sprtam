@@ -530,6 +530,43 @@ try {
   const wm = await (await fetch(`${BASE}/api/public/v1/manifest`)).json()
   check(!!wm.files['words/de/A1'] && !Object.keys(wm.files).some((n) => n.startsWith('vocab/de')), 'the release has it as words/de/A1')
 
+  // ——— Moderators' profiles: each presents themselves as they like; public only when they say so ———
+  const evaId = (await eva.api('GET', '/api/session')).body.user.id
+  const anonList = async () => (await (await fetch(`${BASE}/api/moderators`)).json())
+  check(Array.isArray(await anonList()) && (await anonList()).length === 0, 'nobody is listed publicly before making their profile public')
+  check((await fetch(`${BASE}/api/moderators/${evaId}`)).status === 404, 'a profile that is not public is not shown to visitors')
+  const evaProfile = (await eva.api('GET', '/api/me/profile')).body
+  check(evaProfile.public === false && evaProfile.topics.some((t) => t.key === 'odb/ai-predmet/ai-prvni') && evaProfile.topics.some((t) => t.key === 'odb/testovaci/odb-prvni') && evaProfile.verified === evaProfile.topics.length, 'the profile lists the topics its owner checked (by review and by "Ověřit")')
+  const profile = { name: 'Mgr. Eva Učitelka', headline: 'Učitelka matematiky', bio: 'Učím 15 let.\n\n\n\nRáda kontroluju.', subjects: ['matematika', 'neexistuje', 'testovaci'], web: 'skola.example/eva', avatar: '🦉', public: true }
+  check((await eva.api('PUT', '/api/me/profile', { ...profile, name: 'Eva, Učitelka' })).status === 400, 'a name with a comma is refused (checkers are joined by commas)')
+  check((await eva.api('PUT', '/api/me/profile', { ...profile, name: 'ada správcová' })).status === 409, "a moderator cannot take another moderator's name")
+  check((await eva.api('PUT', '/api/me/profile', { ...profile, web: 'javascript:alert(1)' })).status === 400 && (await eva.api('PUT', '/api/me/profile', { ...profile, web: 'http://skola.example' })).status === 400, 'only https web addresses')
+  check((await bearer('PUT', '/api/me/profile', profile, evaTok)).status === 403, 'an API token cannot change the profile')
+  const savedProfile = await eva.api('PUT', '/api/me/profile', profile)
+  check(savedProfile.status === 200 && savedProfile.body.name === 'Mgr. Eva Učitelka' && savedProfile.body.web === 'https://skola.example/eva' && savedProfile.body.bio === 'Učím 15 let.\n\nRáda kontroluju.' && savedProfile.body.subjects.join() === 'matematika,testovaci' && savedProfile.body.avatar === '🦉', 'a moderator saves the profile, cleaned up (subjects, web, paragraphs)')
+  check((await eva.api('PUT', '/api/me/profile', { ...profile, avatar: '<b>' })).body.avatar === '', 'only pictures from the offered set')
+  await eva.api('PUT', '/api/me/profile', profile)
+  check((await eva.api('GET', '/api/session')).body.user.name === 'Mgr. Eva Učitelka', 'the new name is the account name')
+  const publicList = await anonList()
+  check(publicList.length === 1 && publicList[0].id === evaId && publicList[0].verified === evaProfile.verified && publicList[0].public, 'the public profile is listed, its checked topics kept after the rename')
+  check(!JSON.stringify(publicList).includes('webauthn') && !('email' in publicList[0]) && !('lastLoginAt' in publicList[0]), 'the public list carries nothing private')
+  check((await admin.api('GET', '/api/moderators')).body.length >= 3, 'signed-in moderators see all their active colleagues')
+  check((await admin.api('PUT', '/api/me/profile', { ...profile, name: 'Ada Správcová', public: false })).status === 200 && (await anonList()).length === 1, 'a profile that is not public stays off the public list')
+  await teacher.page.goto(`${BASE}/moderatori?jmeno=${encodeURIComponent('Mgr. Eva Učitelka')}`)
+  check(await teacher.page.getByRole('heading', { name: 'Mgr. Eva Učitelka' }).waitFor({ timeout: 5000 }).then(() => true, () => false) && teacher.page.url() === `${BASE}/moderatori/${evaId}`, 'a name from a topic opens that profile')
+  check(await teacher.page.locator('.p-bio').textContent() === 'Učím 15 let.\n\nRáda kontroluju.' && await teacher.page.locator('.p-topics a').count() === evaProfile.topics.length && (await teacher.page.getByRole('link', { name: 'skola.example' }).getAttribute('rel')).includes('nofollow'), 'the profile shows the text, the checked topics and the web link')
+  const byName = async (n) => (await (await fetch(`${BASE}/api/moderators/by-name?name=${encodeURIComponent(n)}`)).json()).id
+  check(await byName('Eva Učitelka') === evaId && await byName('MGR. EVA UČITELKA') === evaId, 'a topic checked before a change of name still leads to the profile (any case, Czech letters too)')
+  check((await admin.api('PUT', '/api/me/profile', { ...profile, name: 'EVA UČITELKA', public: false })).status === 409 && (await admin.api('POST', '/api/admin/invites', { name: 'eva učitelka', role: 'moderator' })).status === 409, "nobody else may take a moderator's former name")
+  check((await fetch(`${BASE}/api/moderators/by-name?name=${encodeURIComponent('Ada Správcová')}`)).status === 404, 'a name without a public profile is not found')
+  await teacher.page.goto(`${BASE}/moderatori?jmeno=Ada%20Spr%C3%A1vcov%C3%A1`)
+  check(await teacher.page.getByText('nemá veřejný profil').waitFor({ timeout: 5000 }).then(() => true, () => false) && await teacher.page.locator('.p-card').count() === 1, 'a name without a public profile shows the list')
+  await eva.page.goto(`${BASE}/ucet`)
+  await eva.page.getByRole('heading', { name: 'Můj profil' }).waitFor()
+  await eva.page.getByLabel('Kdo jsem').fill('Učitelka matematiky a fyziky')
+  await eva.page.getByRole('button', { name: 'Uložit profil' }).click()
+  check(await eva.page.getByText('Profil uložen').waitFor({ timeout: 5000 }).then(() => true, () => false) && (await eva.api('GET', '/api/me/profile')).body.headline === 'Učitelka matematiky a fyziky', 'the profile is edited in Účet')
+
   check([admin, mod, teacher, eva, janaDev].every((d) => !d.errors.length), 'no errors in the pages')
 } finally {
   await browser.close()

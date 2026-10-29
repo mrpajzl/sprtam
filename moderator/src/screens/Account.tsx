@@ -2,10 +2,11 @@ import { useEffect, useState } from 'preact/hooks'
 import { ApiError, api, get, post } from '../api'
 import { addKey, withConfirm, type Me } from '../passkey'
 import { ago, Busy, copy, dateTime, I, Modal, toast } from '../ui/kit'
+import { ProfileForm } from './Profiles'
 
 interface Key { id: string; label: string; createdAt: number; lastUsedAt: number | null; synced: boolean }
 
-export function Account({ me, onLogout }: { me: Me; onLogout: () => void }) {
+export function Account({ me, onLogout, onRenamed }: { me: Me; onLogout: () => void; onRenamed: (name: string) => void }) {
   const [keys, setKeys] = useState<Key[] | null>(null)
   const [busy, setBusy] = useState(false)
   const load = () => get<Key[]>('/api/me/keys').then(setKeys, (e) => toast(e.message, 'bad'))
@@ -18,6 +19,8 @@ export function Account({ me, onLogout }: { me: Me; onLogout: () => void }) {
     <div class="page-narrow">
       <h1>{me.name}</h1>
       <p class="muted">{me.role === 'admin' ? 'Správce' : 'Moderátor'}</p>
+
+      <ProfileForm me={me} onSaved={onRenamed} />
 
       <h2 class="label">Přístupové klíče</h2>
       <p class="muted">Klíčem se přihlašuješ. Přidej si druhý (třeba v telefonu), ať se přihlásíš i při ztrátě jednoho zařízení.</p>

@@ -4,7 +4,8 @@ import { isSubjectOf } from '../../../src/content/docs'
 import type { GradeId, Question, SubjectId, TopicFile } from '../../../src/content/types'
 import { Inline } from '../../../src/ui/Inline'
 import { ApiError, get, post } from '../api'
-import { CONTENT_AUTHOR, dateCs } from '../../../src/content/verified'
+import { CONTENT_AUTHOR, dateCs, verifierNames } from '../../../src/content/verified'
+import { profileHref } from './Profiles'
 import { Preview } from '../editor/Preview'
 import { questionLabel } from '../editor/model'
 import type { Me } from '../passkey'
@@ -65,7 +66,7 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
           <div>
             <h1>{topic.title}</h1>
             <small>
-              Autor: {CONTENT_AUTHOR} (AI) · {topic.verified ? <span class="v-verified"><I.check />Zkontroloval/a {topic.verified.by} · {dateCs(topic.verified.at)} · </span> : <span class="pill unverified">čeká na kontrolu</span>}{' '}
+              Autor: {CONTENT_AUTHOR} (AI) · {topic.verified ? <span class="v-verified"><I.check />Zkontroloval/a {verifierNames(topic.verified.by).map((n, i) => <>{i ? ', ' : ''}<a class="p-name" href={profileHref(n)} onClick={nav(profileHref(n))}>{n}</a></>)} · {dateCs(topic.verified.at)} · </span> : <span class="pill unverified">čeká na kontrolu</span>}{' '}
               {at >= 0 ? `${at + 1}. téma z ${list.length}` : ''}
               {topic.approach ? ` · jen pro přístup ${approaches.find((a) => a.id === topic.approach)?.short ?? topic.approach}` : ''}
             </small>
