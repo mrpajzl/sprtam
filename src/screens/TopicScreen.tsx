@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'preact/hooks'
-import { CONTENT_AUTHOR, dateCs, joinHref, type Verified } from '../content/verified'
+import { CONTENT_AUTHOR, dateCs, joinHref, profileHref, verifierNames, type Verified } from '../content/verified'
 import { GRADE_NAME, type KeyColor, subjectMeta } from '../content/curriculum'
 import { approachById, listed, useApproach } from '../approach'
 import { loadSubject, loadTopic, topicKey } from '../content'
@@ -112,13 +112,14 @@ export function MixScreen() {
   return <Quiz mode="mix" topics={topics} />
 }
 
-/** Who wrote the topic and whether a person has checked it (src/content/verified.ts); unchecked ones ask for help. */
+/** Who wrote the topic and whether a person has checked it (src/content/verified.ts); a checker's name opens their
+ *  profile in moderation, unchecked topics ask for help. */
 export function CheckNote({ verified, topic }: { verified?: Verified; topic: string }) {
   return (
     <aside class={`check-note ${verified ? 'ok' : ''}`} aria-label="Kdo téma napsal a zkontroloval">
       <p><i aria-hidden="true">AI</i><span>Autor: <b>{CONTENT_AUTHOR}</b> (umělá inteligence)</span></p>
       {verified
-        ? <p><i aria-hidden="true">✓</i><span>Zkontrolováno člověkem: <b>{verified.by}</b>, {dateCs(verified.at)}</span></p>
+        ? <p><i aria-hidden="true">✓</i><span>Zkontrolováno člověkem: {verifierNames(verified.by).map((n, i) => <>{i ? ', ' : ''}<a href={profileHref(n)} target="_blank" rel="noopener"><b>{n}</b></a></>)}, {dateCs(verified.at)}</span></p>
         : <>
           <p><i aria-hidden="true">!</i><span>Čeká na kontrolu člověkem. Když najdeš chybu, nahlas ji.</span></p>
           <a class="btn ghost block" href={joinHref(topic)} target="_blank" rel="noopener">Chci to zkontrolovat a schválit</a>

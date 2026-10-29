@@ -17,6 +17,7 @@ import {
   rollbackDraft, saveDraft, submitDraft, withdrawDraft, publishUnverified, verifyTopic } from './drafts'
 import { publishWords } from './words'
 import { assertSameOrigin, clientIp, cookies, HttpError, ipKey, json, limit, readJson, SECURITY_HEADERS, SESSION_COOKIE, type Req, type Res } from './http'
+import { getProfile, listProfiles, ownProfile, profileByName, saveProfile } from './profiles'
 import { createReport, listReports, reportCounts, updateReport } from './reports'
 import { createRequest, deleteRequest, listRequests, updateRequest, voteRequest } from './requests'
 import { current, file, gzipped, history, load, previousVersion, published, releases, verifyChain, version } from './store'
@@ -119,9 +120,19 @@ on('POST', '/api/me/sessions/end-others', (req, _res, _p, ip) => {
   audit('sessions.ended', s.user.id, { own: true, tokens: true }, ip)
   return { ok: true }
 })
+// How the moderator presents themselves on /moderatori (moderator/server/profiles.ts). Browser only.
+on('GET', '/api/me/profile', (req) => ownProfile(requireSession(req)))
+on('PUT', '/api/me/profile', async (req, _res, _p, ip) => saveProfile(requireSession(req), await readJson(req), ip))
 on('GET', '/api/me/tokens', (req) => listTokens(requireSession(req).user.id))
 on('POST', '/api/me/tokens', async (req, _res, _p, ip) => createToken(requireSession(req), await readJson(req), ip))
 on('DELETE', '/api/me/tokens/:id', (req, _res, p, ip) => { removeToken(requireSession(req), p[0], ip); return { ok: true } })
+
+// ——— Moderators' profiles: public ones for everyone, all of them for signed-in moderators ———
+
+const viewer = (req: Req) => { const s = getSession(req); return s?.via === 'cookie' ? s : null }
+on('GET', '/api/moderators', (req) => listProfiles(viewer(req)), true)
+on('GET', '/api/moderators/by-name', (req, _res, _p, ip) => { limit(`by-name:${ipKey(ip)}`, 120, 10 * MINUTE); return profileByName(viewer(req), query(req, 'name')) }, true)
+on('GET', '/api/moderators/:id', (req, _res, p) => getProfile(viewer(req), p[0]), true)
 
 // ——— Content, drafts and review ———
 // Published content is public (the same the app shows): teachers browse it without an account. Who is working

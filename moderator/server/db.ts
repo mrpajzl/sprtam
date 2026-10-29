@@ -284,6 +284,18 @@ const MIGRATIONS: string[] = [
   );
   CREATE INDEX applications_status ON applications(status, created_at);
   `,
+  // 5: moderators' own profiles (moderator/server/profiles.ts): how they want to present themselves on the
+  // public page /moderatori. Shown to the public only when they say so (`public`); otherwise to moderators.
+  `
+  ALTER TABLE users ADD COLUMN headline TEXT NOT NULL DEFAULT '';
+  ALTER TABLE users ADD COLUMN bio TEXT NOT NULL DEFAULT '';
+  ALTER TABLE users ADD COLUMN subjects TEXT NOT NULL DEFAULT '[]';
+  ALTER TABLE users ADD COLUMN web TEXT NOT NULL DEFAULT '';
+  ALTER TABLE users ADD COLUMN avatar TEXT NOT NULL DEFAULT '';
+  ALTER TABLE users ADD COLUMN public INTEGER NOT NULL DEFAULT 0;
+  ALTER TABLE users ADD COLUMN profile_at INTEGER;
+  CREATE INDEX audit_action ON audit(action);
+  `,
 ]
 
 const before = Number((db.prepare('PRAGMA user_version').get() as { user_version: number }).user_version)
@@ -322,7 +334,9 @@ export function audit(action: string, user: string | null, detail: unknown = nul
   run('INSERT INTO audit (at, user_id, action, detail, ip) VALUES (?, ?, ?, ?, ?)', Date.now(), user, action, detail === null ? null : JSON.stringify(detail), ip)
 }
 
-export interface UserRow { id: string; name: string; role: 'admin' | 'moderator'; active: number; webauthn_id: string; created_at: number; created_by: string | null; last_login_at: number | null }
+export interface UserRow { id: string; name: string; role: 'admin' | 'moderator'; active: number; webauthn_id: string; created_at: number; created_by: string | null; last_login_at: number | null
+  headline: string; bio: string; subjects: string; web: string; avatar: string; public: number; profile_at: number | null
+}
 export interface CredentialRow { id: string; user_id: string; public_key: Uint8Array; counter: number; transports: string; device_type: string | null; backed_up: number | null; label: string; created_at: number; last_used_at: number | null }
 export interface InviteRow { hash: string; kind: 'user' | 'key'; user_id: string | null; name: string; role: 'admin' | 'moderator'; created_by: string | null; created_at: number; expires_at: number; used_at: number | null }
 export interface SessionRow { hash: string; user_id: string; cred_id: string | null; created_at: number; seen_at: number; auth_at: number; ua: string | null }

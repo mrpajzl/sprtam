@@ -110,7 +110,8 @@ export function approveApplication(s: Session, id: unknown, ip: string) {
       if (used?.used_at) throw new HttpError(409, 'Žadatel už si účet vytvořil.')
       if (a.invite) run('DELETE FROM invites WHERE substr(hash, 1, 16) = ? AND used_at IS NULL', a.invite)
     }
-    const out = createInvite(s.user, 'user', a.name, 'moderator')
+    // Names never contain a comma (several checkers of a topic are joined with one, profiles.ts).
+    const out = createInvite(s.user, 'user', a.name.replace(/[,<>]/g, ' ').replace(/\s+/g, ' ').trim(), 'moderator')
     run("UPDATE applications SET status = 'approved', decided_at = ?, decided_by = ?, invite = ? WHERE id = ?", Date.now(), s.user.id, out.id, a.id)
     audit('application.approved', s.user.id, { application: a.id, name: a.name, again: a.status === 'approved' }, ip)
     return { url: out.url, expiresAt: out.expiresAt, name: a.name, email: a.email }

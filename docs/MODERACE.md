@@ -69,6 +69,18 @@ Celé učivo zatím napsala AI (Claude Opus 5.5) a nechceme to skrývat: každé
   - **Zamítnout** (s nepovinnou poznámkou pro ostatní správce) žadateli nic nepošle.
 - Vyřízené žádosti se i s e-mailem po 180 dnech smažou. V záznamu událostí je jen to, že žádost přišla nebo byla vyřízena, bez osobních údajů.
 
+## Profil moderátora
+
+Každý moderátor se může představit tak, jak chce. V **Účtu** je **Můj profil**:
+
+- **Jméno**: ukazuje se u témat, která zkontroluješ, v historii a ve veřejném zrcadle učiva. Jde změnit (třeba přidat titul). Nesmí obsahovat čárku (víc kontrolorů jednoho tématu se odděluje čárkou) a nesmí být stejné jako současné ani dřívější jméno jiného moderátora (bez ohledu na velká a malá písmena). U témat zkontrolovaných dřív zůstane předchozí jméno, odkaz z nich ale vede na tvůj profil dál.
+- **Kdo jsem** (jedna věta), **O mně** (pár odstavců), **předměty**, kterým se věnuješ (nejvýš 8, i odborné), **web** (jen `https://`) a **obrázek**: jeden z nabídnutých obrázků, nebo iniciály. Fotky se nenahrávají a e-mail ani telefon tu nejsou.
+- **Zobrazit profil veřejně**: bez zaškrtnutí profil vidí jen přihlášení moderátoři.
+
+Veřejné profily jsou na **[moderace.sprtam.cz/moderatori](https://moderace.sprtam.cz/moderatori)** (*Kdo kontroluje učivo*; v hlavičce bez přihlášení, na telefonu pod **Více**, v aplikaci v *O aplikaci*). Profil ukazuje i počet a seznam témat, která moderátor zkontroloval (podle účtu: schválení změny nebo **Ověřit** u aktuální verze tématu), a od kdy moderuje. Jméno u *Zkontrolováno člověkem* v aplikaci i v moderaci vede na profil (`/moderatori?jmeno=<jméno>`). Bez veřejného profilu ukáže seznam.
+
+API tokenem profil změnit nejde. Záznam událostí si pamatuje změnu jména a zveřejnění profilu, ne texty.
+
 ## Hlášení od žáků
 
 Žáci v aplikaci u každé otázky (po odpovědi) a u každého vysvětlení klepnou na **Nahlásit chybu**, vyberou, co je špatně (*Špatná odpověď nebo chyba*, *Nejasné zadání*, *Překlep*, *Jiné*), a můžou připsat krátkou poznámku. Hlášení se objeví na záložce **Hlášení** (na telefonu ve spodní liště, s počtem otevřených).
@@ -128,14 +140,14 @@ Všechno ostatní se dělá v aplikaci.
 | Účty | Jen přes jednorázovou pozvánku (72 h). Token je v `#` části odkazu, takže ho prohlížeč nikam neposílá, a aplikace ho po načtení smaže z adresního řádku. V databázi je jen jeho SHA-256. |
 | Session | Náhodný 256bitový token v cookie `__Host-moderace` (`HttpOnly`, `Secure`, `SameSite=Strict`). V databázi je jen SHA-256. Vyprší po 12 h nečinnosti, nejpozději po 7 dnech. Přihlášení vždy vytvoří novou session. Odebrání klíče ukončí session, které z něj vznikly. |
 | Výzvy | Přihlašovací výzvy si server neukládá: podepisuje je klíčem, který existuje jen v běžícím procesu, a pamatuje si jen ty už použité. Kdokoli z internetu tak nemůže zahltit paměť a přihlašování zablokovat. Výzvy k registraci vyžadují platnou pozvánku nebo přihlášení. |
-| Veřejná část | Bez přihlášení jde jen číst zveřejněné učivo (`GET /api/content/index`, `/api/content/topic/…` a veřejné API `/api/public/v1/…`) a poslat žádost o moderátorství (`POST /api/applications`, s limity). Učivo je totéž, co ukazuje sprtam.cz. Návrhy, historii a jejich autory dostane jen přihlášený moderátor. Přihlášený moderátor vidí všechny návrhy včetně rozpracovaných (upravovat je smí jen autor, schvalovat až po odeslání ke kontrole). API token vidí svoje návrhy a cizí až po odeslání ke kontrole. Všechno ostatní chce session. |
+| Veřejná část | Bez přihlášení jde jen číst zveřejněné učivo (`GET /api/content/index`, `/api/content/topic/…` a veřejné API `/api/public/v1/…`) a poslat žádost o moderátorství (`POST /api/applications`, s limity). Veřejné profily moderátorů (`GET /api/moderators…`) jen těch, kdo je zveřejnili. Učivo je totéž, co ukazuje sprtam.cz. Návrhy, historii a jejich autory dostane jen přihlášený moderátor. Přihlášený moderátor vidí všechny návrhy včetně rozpracovaných (upravovat je smí jen autor, schvalovat až po odeslání ke kontrole). API token vidí svoje návrhy a cizí až po odeslání ke kontrole. Všechno ostatní chce session. |
 | Cizí stránky | Každý požadavek, který něco mění, musí mít přesně náš `Origin` a `Sec-Fetch-Site: same-origin` a tělo jen jako JSON. CORS není povolené. Výjimkou jsou požadavky s API tokenem v hlavičce `Authorization`: nenesou cookies a prohlížeč je za cizí stránku bez CORS neodešle. |
 | Zveřejnění | Jen schválením jiného moderátora (aktuální revize, bez konfliktu, celé učivo projde kontrolou), schválením vlastní změny správcem v prohlížeči s čerstvým potvrzením klíčem (v historii je vidět, kdo schválil), nebo nouzovou obnovou správcem s čerstvým potvrzením klíčem. Historie jde jen doplňovat a je chráněná hash řetězem ([OBSAH.md](OBSAH.md#bezpečnost)). |
 | Hlavičky | Přísná CSP (jen `'self'`, žádné cizí skripty), HSTS, `frame-ancestors 'self'`, COOP/CORP, `no-referrer`, `noindex`. |
 | Omezení | Rate limit přihlašování, pozvánek, zakládání, ukládání a odesílání návrhů (IPv6 po celých /64). Požadavky bez přihlášení mají nejvýš 16 kB, ostatní 512 kB. Jeden moderátor má nejvýš 50 otevřených návrhů. Adresu klienta z `CF-Connecting-IP` server bere jen od adres Cloudflare. |
 | Vypnutý účet, zrušené klíče | Session se mažou okamžitě, klíč dál nefunguje a nepoužité odkazy na nový klíč propadnou. Vždy musí zůstat aspoň jeden správce, který se může přihlásit. |
 | API tokeny | V databázi jen SHA-256, s platností, jen vybrané akce nad vlastními návrhy. Vypnutí účtu, zrušení klíčů a odhlášení ruší i tokeny. |
-| Data | Jeden SQLite soubor ve volume `/data`. Obsahuje učivo se všemi verzemi, jména moderátorů, žádosti o moderátorství (jméno, e-mail, vyřízené se po 180 dnech mažou), veřejné klíče, hashe session, tokenů a pozvánek, návrhy, kontroly a záznam událostí. Každou hodinu si ho zašifrovaně zálohuje druhý server ([OBSAH.md](OBSAH.md#zálohy)). |
+| Data | Jeden SQLite soubor ve volume `/data`. Obsahuje učivo se všemi verzemi, jména a profily moderátorů, žádosti o moderátorství (jméno, e-mail, vyřízené se po 180 dnech mažou), veřejné klíče, hashe session, tokenů a pozvánek, návrhy, kontroly a záznam událostí. Každou hodinu si ho zašifrovaně zálohuje druhý server ([OBSAH.md](OBSAH.md#zálohy)). |
 
 ## Nasazení
 

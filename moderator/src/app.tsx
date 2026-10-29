@@ -8,6 +8,7 @@ import { Apply } from './screens/Apply'
 import { History } from './screens/History'
 import { Invite } from './screens/Invite'
 import { Library } from './screens/Library'
+import { ProfileList, ProfilePage } from './screens/Profiles'
 import { Login } from './screens/Login'
 import { Releases } from './screens/Releases'
 import { Reports } from './screens/Reports'
@@ -23,10 +24,11 @@ import { I, Toasts } from './ui/kit'
 // /kontrola every change by state (open / approved / rejected; ?moje=1 only mine, ?rocnik=&predmet= one grade and subject) · /kontrola/<id> one change · /historie/<grade>/<subject>/<topic> versions ·
 // /hlaseni error reports from pupils (?stav=vyrizena, ?rocnik=&predmet=, ?tema=<g>/<s>/<id>) · /pomucky widget requests · /vydani releases (admin) · /uzivatele moderators (admin) ·
 // /zadosti applications to become a moderator (admin; ?stav=vyrizene) · /ucet own account · /prihlaseni[?dalsi=<path>] sign-in · /pozvanka#<token> invite ·
-// /zapojit-se[?tema=<g>/<s>/<id>] the public application form. Everything except the library and the form needs a signed-in moderator.
+// /zapojit-se[?tema=<g>/<s>/<id>] the public application form · /moderatori[/<id>] who checks the content, moderators' profiles (?jmeno=<name>
+// opens one by name). Everything except the library, the form and the profiles needs a signed-in moderator.
 
-const PUBLIC = ['ucivo', 'zapojit-se']
-const SCREENS = ['ucivo', 'kontrola', 'historie', 'hlaseni', 'pomucky', 'vydani', 'uzivatele', 'zadosti', 'ucet', 'zapojit-se']
+const PUBLIC = ['ucivo', 'zapojit-se', 'moderatori']
+const SCREENS = ['ucivo', 'kontrola', 'historie', 'hlaseni', 'pomucky', 'vydani', 'uzivatele', 'zadosti', 'ucet', 'zapojit-se', 'moderatori']
 
 /** Where to go after signing in: only a path of this app, never another site. */
 const nextPath = () => { const p = new URLSearchParams(location.search).get('dalsi') ?? '/'; return /^\/(?![/\\])/.test(p) ? p : '/' }
@@ -96,6 +98,7 @@ export function App() {
             {link('/ucet', user.name, <I.user />, screen === 'ucet')}
             <button class="icon" onClick={logout} title="Odhlásit se" aria-label="Odhlásit se"><I.logout /></button>
           </> : <>
+            <a class="join" href="/moderatori" onClick={nav('/moderatori')} title="Kdo kontroluje učivo"><I.check /><span>Kdo kontroluje</span></a>
             {screen !== 'zapojit-se' && <a class="join" href="/zapojit-se" onClick={nav('/zapojit-se')} title="Chci kontrolovat učivo"><I.users /><span>Zapojit se</span></a>}
             <a href={`/prihlaseni?dalsi=${encodeURIComponent(location.pathname)}`} onClick={nav(`/prihlaseni?dalsi=${encodeURIComponent(location.pathname)}`)} title="Přihlášení pro moderátory"><I.key /><span>Přihlásit se</span></a>
           </>}
@@ -113,7 +116,8 @@ export function App() {
         {user?.role === 'admin' && screen === 'uzivatele' && <Users me={user} />}
         {user?.role === 'admin' && screen === 'zadosti' && <Applications onCount={setApplications} />}
         {screen === 'zapojit-se' && <Apply me={user} />}
-        {user && screen === 'ucet' && <Account me={user} onLogout={logout} />}
+        {screen === 'moderatori' && (route[1] ? <ProfilePage key={route[1]} id={route[1]} me={user} /> : <ProfileList key={location.search} me={user} />)}
+        {user && screen === 'ucet' && <Account me={user} onLogout={logout} onRenamed={(name) => setSession({ ...session, user: { ...user, name } })} />}
         {!SCREENS.includes(screen) && <div class="empty-state">Tahle stránka neexistuje. <a href="/" onClick={nav('/')}>Zpět na učivo</a></div>}
       </main>
       {user && (
@@ -122,7 +126,7 @@ export function App() {
           {link('/', 'Učivo', <I.book />, screen === 'ucivo')}
           {link('/kontrola', 'Kontrola', <I.check />, screen === 'kontrola', waiting)}
           {link('/hlaseni', 'Hlášení', <I.warn />, screen === 'hlaseni', reports)}
-          <button class={['pomucky', 'vydani', 'uzivatele', 'zadosti', 'ucet'].includes(screen) || more ? 'on' : ''} onClick={() => setMore(!more)} aria-expanded={more}><I.more /><span>Více</span>{admin && applications > 0 && <i class="dot-n">{applications}</i>}</button>
+          <button class={['pomucky', 'moderatori', 'vydani', 'uzivatele', 'zadosti', 'ucet'].includes(screen) || more ? 'on' : ''} onClick={() => setMore(!more)} aria-expanded={more}><I.more /><span>Více</span>{admin && applications > 0 && <i class="dot-n">{applications}</i>}</button>
         </nav>
       )}
       {more && user && (
@@ -130,6 +134,7 @@ export function App() {
           <div class="sheet-backdrop" onClick={() => setMore(false)} />
           <div class="more-sheet" role="dialog" aria-label="Více">
             {link('/pomucky', 'Pomůcky', <I.bulb />, screen === 'pomucky')}
+            {link('/moderatori', 'Kdo kontroluje učivo', <I.users />, screen === 'moderatori')}
             {admin && link('/vydani', 'Vydání', <I.layers />, screen === 'vydani')}
             {admin && link('/uzivatele', 'Moderátoři', <I.users />, screen === 'uzivatele')}
             {admin && link('/zadosti', 'Žádosti o moderátorství', <I.inbox />, screen === 'zadosti', applications)}

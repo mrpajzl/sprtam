@@ -8,7 +8,7 @@ import { EXAM, partTopics } from '../src/exam'
 import { askable, MAPS, MAPS_INTRO, MAPS_PATH, modesOf, PARTS, place, ROUND } from '../src/maps'
 import { fullTitle, gradeFor, gradeLabel, plain, SITE_NAME, summary, titles } from '../src/seo'
 import { WIDGETS } from '../src/widgets'
-import { CONTENT_AUTHOR, dateCs, joinHref, type Verified } from '../src/content/verified'
+import { CONTENT_AUTHOR, dateCs, joinHref, profileHref, verifierNames, type Verified } from '../src/content/verified'
 
 // A real HTML page for every public route, so links are shareable with proper previews and search
 // engines get content, titles and descriptions without running JS:
@@ -38,7 +38,7 @@ const inline = (s: string) => esc(s).replace(/\*\*(.+?)\*\*|`(.+?)`|\*(.+?)\*|\^
   b ? `<strong>${b}</strong>` : c ? `<code>${c}</code>` : i ? `<em>${i}</em>` : `<sup>${sup}</sup>`)
 /** Who wrote the topic and whether a person has checked it, as in the app (src/screens/TopicScreen.tsx, CheckNote). */
 const checkNote = (v: Verified | undefined, topic: string) => `<aside class="check-note${v ? ' ok' : ''}" aria-label="Kdo téma napsal a zkontroloval"><p><i aria-hidden="true">AI</i><span>Autor: <b>${esc(CONTENT_AUTHOR)}</b> (umělá inteligence)</span></p>${v
-  ? `<p><i aria-hidden="true">✓</i><span>Zkontrolováno člověkem: <b>${esc(v.by)}</b>, ${esc(dateCs(v.at))}</span></p>`
+  ? `<p><i aria-hidden="true">✓</i><span>Zkontrolováno člověkem: ${verifierNames(v.by).map((n) => `<a href="${esc(profileHref(n))}" target="_blank" rel="noopener"><b>${esc(n)}</b></a>`).join(', ')}, ${esc(dateCs(v.at))}</span></p>`
   : `<p><i aria-hidden="true">!</i><span>Čeká na kontrolu člověkem. Když najdeš chybu, nahlas ji.</span></p><a class="btn ghost block" href="${esc(joinHref(topic))}" target="_blank" rel="noopener">Chci to zkontrolovat a schválit</a>`}</aside>`
 const style = (c: string) => `--c:var(--k-${c});--on-c:var(--k-${c}-on)`
 const STAGE_LABEL = { zs1: 'ZŠ · 1. stupeň', zs2: 'ZŠ · 2. stupeň', ss: 'SŠ · ročník' } // as on the Home screen

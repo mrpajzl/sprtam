@@ -1,7 +1,7 @@
 // What Šprtám is and how it works, in a few lines. One text for the app's /o-aplikaci screen
 // (src/screens/About.tsx) and the page the server renders (server/pages.ts). Inline markup as in content.
 
-import { CONTENT_AUTHOR, JOIN_URL } from './content/verified'
+import { CONTENT_AUTHOR, JOIN_URL, MODERATORS_URL } from './content/verified'
 
 export const ABOUT = {
   title: 'O aplikaci',
@@ -42,6 +42,7 @@ export const ABOUT = {
     links: [
       { label: 'Zdrojový kód', hint: 'GitHub · licence MIT', href: 'https://github.com/mrpajzl/sprtam' },
       { label: 'Učivo ke stažení', hint: 'GitHub · licence CC BY-SA 4.0', href: 'https://github.com/mrpajzl/sprtam-content' },
+      { label: 'Kdo učivo kontroluje', hint: 'Profily moderátorů', href: MODERATORS_URL },
       { label: 'Nahlásit chybu nebo nápad', hint: 'GitHub Issues', href: 'https://github.com/mrpajzl/sprtam/issues/new/choose' },
     ],
   },

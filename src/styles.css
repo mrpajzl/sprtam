@@ -690,6 +690,8 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .check-note { display: grid; gap: 8px; margin: 16px 0 14px; padding: 12px 14px; border-radius: 14px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); color: var(--ink-2); font-size: 0.85rem; font-weight: 650; line-height: 1.4; text-wrap: pretty; }
 .check-note p { display: flex; gap: 8px; align-items: flex-start; margin: 0; }
 .check-note b { color: var(--ink); font-weight: 800; }
+.check-note p a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 2px; }
+.check-note p a:hover { text-decoration-color: currentColor; }
 .check-note p > i { flex: none; font-style: normal; display: grid; place-items: center; min-width: 20px; height: 20px; padding: 0 3px; border-radius: 10px; background: var(--k-yellow); color: var(--k-yellow-on); font: 800 0.66rem/1 var(--mono); }
 .check-note p:first-child > i { background: var(--ink); color: var(--bg); }
 .check-note.ok p + p > i { background: var(--k-green); color: var(--k-green-on); }

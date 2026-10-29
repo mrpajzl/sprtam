@@ -29,3 +29,11 @@ export const CONTENT_AUTHOR = 'Claude Opus 5.5'
 export const JOIN_URL = 'https://moderace.sprtam.cz/zapojit-se'
 /** …coming from one topic ("<grade>/<subject>/<id>"), which the form then mentions. */
 export const joinHref = (topic?: string) => (topic ? `${JOIN_URL}?tema=${topic}` : JOIN_URL)
+
+/** Several checkers in one `verified.by` ("Jana Nováková, Petr Svoboda"); names never contain a comma. */
+export const verifierNames = (by: string) => by.split(', ').map((n) => n.trim()).filter(Boolean)
+
+/** Who checks the content: moderators' profiles in moderation (/moderatori, moderator/server/profiles.ts)… */
+export const MODERATORS_URL = 'https://moderace.sprtam.cz/moderatori'
+/** …and the profile of one checker by name (a name without a public profile shows the list). */
+export const profileHref = (name: string) => `${MODERATORS_URL}?jmeno=${encodeURIComponent(name)}`
