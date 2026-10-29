@@ -195,7 +195,7 @@ curl -s -X POST "$API/api/drafts/$ID/submit" -H "$H" -H 'Content-Type: applicati
 
 Nové téma: `POST /api/drafts` s `{ "kind": "new", "grade", "subject", "topic": {…celé téma…}, "after": "<id tématu, za které patří>" }`. Kontrola tématu je stejná jako `npm run check:content -- topics/<ročník>/<předmět>` nad místní kopií (`npm run content:pull`).
 
-**Nový odborný předmět** ([OBORY.md](OBORY.md)): nová témata s `"grade": "odb"` a id předmětu, který ještě neexistuje, navíc pošlou `"subjectMeta": { "name", "emoji", "color" }`. Předmět založí to z nich, které se schválí první. Volitelné `"order": ["id1", "id2", …]` je zamýšlené pořadí témat předmětu: témata schválená v libovolném pořadí v něm skončí. Recenzent vidí v hlavičce návrhu „zakládá odborný předmět…“. Správce nemá omezený počet rozpracovaných návrhů (moderátor jich smí mít 50), takže může najednou nahrát celý předmět.
+**Nový odborný předmět** ([OBORY.md](OBORY.md)): nová témata s `"grade": "odb"` a id předmětu, který ještě neexistuje, navíc pošlou `"subjectMeta": { "name", "emoji", "color" }`. Předmět založí to z nich, které se schválí první. Volitelné `"order": ["id1", "id2", …]` je zamýšlené pořadí témat předmětu: témata schválená v libovolném pořadí v něm skončí. Recenzent vidí v hlavičce návrhu „zakládá odborný předmět…“. Správce nemá omezený počet rozpracovaných návrhů (moderátor jich smí mít 50) ani počet odeslání ke kontrole za hodinu (moderátor 30), takže může najednou nahrát celý předmět: `npx tsx scripts/content-propose.ts topics/odb/<předmět> …` ([OBORY.md](OBORY.md)).
 
 Ostatní endpointy jsou v [`moderator/server/index.ts`](../moderator/server/index.ts): review, historie, vydání, žádosti o pomůcky, správa.
 
