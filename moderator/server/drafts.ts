@@ -372,7 +372,8 @@ export function submitDraft(s: Session, id: unknown, body: Record<string, unknow
   const d = load(s, id)
   own(s, d, 'Odeslat')
   if (d.status !== 'draft') throw new HttpError(409, d.status === 'review' ? 'Návrh už je v kontrole.' : 'Návrh je uzavřený.')
-  limit(`submit:${s.user.id}`, 30, 60 * MINUTE)
+  // Admins bring in whole předměty at once (docs/OBORY.md); the general request limit of a token still applies.
+  if (s.user.role !== 'admin') limit(`submit:${s.user.id}`, 30, 60 * MINUTE)
   assertReady(d, JSON.parse(d.data))
   const note = typeof body.note === 'string' ? body.note.trim().slice(0, 2000) : ''
   run("UPDATE drafts SET status = 'review', note = ?, submitted_rev = rev, submitted_at = ? WHERE id = ?", note || null, Date.now(), d.id)
