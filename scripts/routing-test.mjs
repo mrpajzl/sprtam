@@ -89,6 +89,12 @@ ok(html.includes('class="tabbar"') && html.includes('<nav class="crumbs" aria-la
 const r = await p.goto(`${BASE}/g/z5/matematika/nic-takoveho`)
 ok(r.status() === 404, 'unknown topic is 404')
 
+// App screens without a page of their own open directly (server/index.ts isAppRoute).
+for (const path of ['/nastaveni', '/profily', '/plan', '/plan/novy', '/plan/abc123', '/plan/abc123/pisemka', '/prijimacky/matematika/simulace', '/g/z5/matematika/zlomky/tisk']) {
+  ok((await fetch(`${BASE}${path}`)).status === 200, `${path} opens directly`)
+}
+ok((await fetch(`${BASE}/plan/abc123/nic`)).status === 404, 'unknown plan screen is 404')
+
 ok(!errs.length, `no page errors ${errs.join(' | ')}`)
 await b.close()
 process.exit(fails ? 1 : 0)
