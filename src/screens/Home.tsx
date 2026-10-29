@@ -3,6 +3,7 @@ import { EXAM } from '../exam'
 import { OBOR_PATH, readyObory, useObor } from '../obory'
 import { hasSubject } from '../content'
 import { MAPS_PATH } from '../maps'
+import { ELEMENTS_PATH } from '../chem'
 import { useIndex, refFor, type TopicRef } from '../content/library'
 import { recommend, streakOf, type Why } from '../progress/recommend'
 import { activePlans, planDay } from '../progress/plan'
@@ -114,6 +115,12 @@ export function Home() {
       <Link class="row vocab-key map-key" style={keyStyle('teal')} href={MAPS_PATH}>
         <span class="skey m" style={keyStyle('teal')}><b class="em">🗺️</b></span>
         <span class="txt"><b>Slepá mapa</b><small>kraje, Evropa, svět</small></span>
+        <IArrow />
+      </Link>
+
+      <Link class="row vocab-key map-key" style={keyStyle('green')} href={ELEMENTS_PATH}>
+        <span class="skey m" style={keyStyle('green')}><b class="em">🧪</b></span>
+        <span class="txt"><b>Periodická tabulka</b><small>prvky, značky a hra na slepou tabulku</small></span>
         <IArrow />
       </Link>
 

@@ -14,7 +14,7 @@ const REG = 'sprtam:profiles'
 const SWITCHING = 'sprtam:switching'
 const parked = (id: string) => `sprtam:profile:${id}`
 /** What belongs to a pupil: progress (with plans), the unfinished round, Slepá mapa records, obor and school. */
-export const PROFILE_KEYS = ['sprtam:progress', 'sprtam:resume', 'sprtam:mapy', 'sprtam-obor', 'sprtam-approach']
+export const PROFILE_KEYS = ['sprtam:progress', 'sprtam:resume', 'sprtam:mapy', 'sprtam:prvky', 'sprtam-obor', 'sprtam-approach']
 
 export const AVATARS = ['🦊', '🐻', '🐼', '🐸', '🦄', '🐙', '🐝', '🦉', '🐢', '🐬', '🦖', '🚀']
 export const MAX_PROFILES = 8

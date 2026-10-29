@@ -29,6 +29,7 @@ export const titles = {
   exam: () => 'Přijímačky na SŠ – příprava z češtiny a matematiky',
   examPart: (part: string) => `${part} – příprava na přijímačky`,
   examArea: (area: string, part: string) => `${area} – příprava na přijímačky (${part})`,
+  elements: () => 'Periodická tabulka prvků – hra na značky, názvy a místo v tabulce',
   maps: () => 'Slepá mapa – kraje Česka, Evropa a svět',
   map: (title: string, kind: 'stat' | 'kraj') => `Slepá mapa: ${title} – ${kind === 'kraj' ? 'kraje a krajská města' : 'státy a hlavní města'}`,
 }

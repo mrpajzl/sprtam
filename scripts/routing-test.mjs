@@ -94,6 +94,14 @@ for (const path of ['/nastaveni', '/profily', '/plan', '/plan/novy', '/plan/abc1
   ok((await fetch(`${BASE}${path}`)).status === 200, `${path} opens directly`)
 }
 ok((await fetch(`${BASE}/plan/abc123/nic`)).status === 404, 'unknown plan screen is 404')
+// Periodická tabulka: the page is server-rendered, a game opens directly, an unknown set is 404.
+for (const path of ['/periodicka-tabulka', '/periodicka-tabulka/zs/najdi', '/periodicka-tabulka/vse/druh']) {
+  ok((await fetch(`${BASE}${path}`)).status === 200, `${path} opens directly`)
+}
+ok((await fetch(`${BASE}/periodicka-tabulka/nic/najdi`)).status === 404 && (await fetch(`${BASE}/periodicka-tabulka/zs/nic`)).status === 404, 'unknown set or game of Periodická tabulka is 404')
+await p.goto(`${BASE}/periodicka-tabulka/zaklad/najdi`)
+await p.waitForSelector('.periodic-el')
+ok(await p.locator('.periodic-el').count() === 20, 'a game of Periodická tabulka opened directly renders the app screen')
 
 ok(!errs.length, `no page errors ${errs.join(' | ')}`)
 await b.close()

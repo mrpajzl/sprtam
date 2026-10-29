@@ -12,10 +12,11 @@ Aplikace používá úložiště prohlížeče (`localStorage`). Data v něm vid
 |---|---|---|
 | `sprtam:progress` | Tvůj pokrok: u každého procvičeného tématu nejlepší výsledek, výsledek posledního kola, počet kol a den posledního procvičení, které z obou vysvětlení ti víc sedí; přihrádky slovíček (0–5); připnutá i odepnutá témata (s časem změny); posledních 120 dní, kdy jsi procvičoval (kvůli sérii dní); naposledy zvolený ročník; u každé zodpovězené otázky z učiva přihrádku (0–5), den poslední odpovědi a kolikrát se spletla (kvůli Sešitu chyb a Dnešnímu opakování, nejvýš 4 000 otázek); denní cíl a kolik odpovědí jsi dal dnes; plány před písemkou (název, den písemky, témata, čas poslední změny). | [`src/progress/store.ts`](../src/progress/store.ts) |
 | `sprtam:mapy` | Nejlepší výsledek (0–100 %) každé hry Slepé mapy, např. `evropa/najdi`. | [`src/maps/index.ts`](../src/maps/index.ts) |
+| `sprtam:prvky` | Nejlepší výsledek (0–100 %) každé hry Periodické tabulky, např. `zs/znacky`. | [`src/chem/index.ts`](../src/chem/index.ts) |
 | `sprtam:resume` | Rozdělané kolo: adresa, režim, název, které otázky kolo mělo (téma a otázka, vygenerovaný příklad celý), jak dopadly odpovědi a u testů na čas uplynulý čas. Smaže se po dokončení kola nebo po týdnu. | [`src/progress/resume.ts`](../src/progress/resume.ts) |
 | `sprtam:profiles` | Jen když se na zařízení učí víc dětí: jména (přezdívky) a obrázky profilů a kdo se učí teď. | [`src/profiles.ts`](../src/profiles.ts) |
 | `sprtam:switching` | Jen na okamžik při přepínání profilu, aby ostatní otevřené záložky přestaly ukládat a načetly se znovu. | [`src/profiles.ts`](../src/profiles.ts) |
-| `sprtam:profile:<id>` | Odložená data ostatních profilů: jejich `sprtam:progress`, `sprtam:resume`, `sprtam:mapy`, `sprtam-obor` a `sprtam-approach`. Smazáním profilu zmizí. | [`src/profiles.ts`](../src/profiles.ts) |
+| `sprtam:profile:<id>` | Odložená data ostatních profilů: jejich `sprtam:progress`, `sprtam:resume`, `sprtam:mapy`, `sprtam:prvky`, `sprtam-obor` a `sprtam-approach`. Smazáním profilu zmizí. | [`src/profiles.ts`](../src/profiles.ts) |
 | `sprtam-reading` | Nastavení čtení a ovládání, pokud sis ho změnil: velikost písma, víc místa, písmo pro snadné čtení, vypnuté klávesové zkratky. | [`src/reading.ts`](../src/reading.ts) |
 | `sprtam-theme` | `dark` nebo `light`, pokud sis přepnul vzhled. | [`src/theme.ts`](../src/theme.ts) |
 | `sprtam-approach` | `waldorf`, pokud sis zapnul waldorfskou školu. | [`src/approach.ts`](../src/approach.ts) |

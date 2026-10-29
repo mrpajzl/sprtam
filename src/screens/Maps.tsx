@@ -5,10 +5,10 @@ import { MapView, type Tag } from '../maps/MapView'
 import { stars } from '../progress/store'
 import { back, Link, query } from '../router'
 import { titles, useTitle } from '../seo'
-import { Bar, BigStars, Meter, Stars } from '../ui/Bar'
+import { Bar, Meter, Stars } from '../ui/Bar'
 import { keyStyle } from '../ui/glyphs'
 import { IArrow, IClose } from '../ui/icons'
-import { Mascot } from '../ui/Mascot'
+import { RoundResult } from '../ui/RoundResult'
 import { useAsync } from '../ui/useAsync'
 
 // Slepá mapa (src/maps): /slepa-mapa (the maps), /slepa-mapa/<map> (explore the map, choose a game) and the game
@@ -170,7 +170,8 @@ function Game({ m, mode, data, all }: { m: GameMap; mode: ModeId; data: MapData;
   const onPick = (picked: string | null) => {
     if (done || shown || mode === 'poznej' || !picked) return
     if (answers.length > i) return // already right, moving on
-    if (picked === id) return right(tries === 0 ? 1 : tries === 1 ? 0.5 : 0)
+    // A pending „To je …“ of an earlier tap must not clear the next message.
+    if (picked === id) { clearTimeout(timer.current); return right(tries === 0 ? 1 : tries === 1 ? 0.5 : 0) }
     const name = nameOf(picked)
     if (!name) return // a tiny territory without a name: no answer
     clearTimeout(timer.current)
@@ -224,29 +225,14 @@ const fmt = (n: number) => String(n).replace('.', ',')
 function Result({ m, mode, all, answers, retry, secs, onAgain }: { m: GameMap; mode: ModeId; all: boolean; answers: Answer[]; retry: boolean; secs: number; onAgain: (only?: string[]) => void }) {
   const pts = answers.reduce((n, a) => n + a.pts, 0)
   const pct = Math.round((pts / answers.length) * 100)
-  const first = answers.filter((a) => a.pts === 1).length
   const missed = answers.filter((a) => a.pts < 1).map((a) => a.id)
   // Only a whole round counts as a record, not a replay of the mistakes.
   const [record] = useState(() => !retry && saveBest(bestKey(m.id, mode, all), pct))
   return (
     <div class="page" style={STYLE}>
-      <div class="result">
-        <Mascot mood={pct >= 90 ? 'happy' : pct >= 60 ? 'wow' : 'sad'} size={96} />
-        <BigStars n={stars(pct)} />
-        <h2>{pct >= 90 ? 'Výborně!' : pct >= 60 ? 'Dobře!' : 'Ještě to procvič'}</h2>
-        <div class="pct">{first} / {answers.length} napoprvé · {pct} % · {Math.floor(secs / 60)}:{String(secs % 60).padStart(2, '0')}</div>
-        {record && <div class="goal-done">🏆 Nový rekord!</div>}
-        <div class="actions">
-          {missed.length > 0 && <button class="btn block" onClick={() => onAgain(missed)}>Procvičit chyby ({missed.length})</button>}
-          <button class={`btn block ${missed.length ? 'ghost' : ''}`} onClick={() => onAgain()}>Hrát znovu</button>
-          <button class="btn ghost block" onClick={back}>Hotovo</button>
-        </div>
-        {missed.length > 0 && (
-          <div class="mistakes">
-            {missed.map((id) => { const pl = place(id)!; return <div key={id} class="card"><b>{pl.name}</b>{pl.capital && <span>{m.kind === 'stat' ? 'hlavní město' : 'krajské město'} {pl.capital}</span>}</div> })}
-          </div>
-        )}
-      </div>
+      <RoundResult pct={pct} first={answers.length - missed.length} total={answers.length} secs={secs} record={record} missed={missed.length} onRetry={() => onAgain(missed)} onAgain={() => onAgain()}>
+        {missed.map((id) => { const pl = place(id)!; return <div key={id} class="card"><b>{pl.name}</b>{pl.capital && <span>{m.kind === 'stat' ? 'hlavní město' : 'krajské město'} {pl.capital}</span>}</div> })}
+      </RoundResult>
     </div>
   )
 }

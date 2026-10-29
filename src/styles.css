@@ -856,6 +856,58 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .map-opts .opt[disabled] { opacity: 0.45; }
 .map-next { margin-top: 12px; }
 
+/* ── Periodická tabulka (/periodicka-tabulka, src/screens/Elements.tsx; the grid is the widget periodic's CSS) ── */
+.el-sets { margin-bottom: 4px; }
+.el-set-hint { font-size: 0.88rem; margin: 0 2px 12px; }
+.el-explore { scroll-margin-top: 70px; }
+.el-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.el-item {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; padding: 8px 10px; border-radius: var(--r-s); text-align: left;
+  background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge);
+}
+.el-item .el-sym { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 8px; font-weight: 900; background: color-mix(in oklab, var(--pc) 42%, var(--card)); }
+.el-item b { font-weight: 800; line-height: 1.2; overflow-wrap: anywhere; }
+.el-item small { font-family: var(--mono); font-size: 0.78rem; font-weight: 700; color: var(--ink-3); }
+.el-item.on { box-shadow: inset 0 0 0 2px var(--accent), 0 3px 0 var(--key-edge); background: var(--accent-soft); }
+
+/* The game: a question in the middle and options, or the blind table (scrolls sideways on a phone). */
+.page.game.el-game { height: auto; min-height: 100dvh; }
+.el-game:not(.with-table) .el-ask { flex: 1; flex-direction: column; flex-wrap: nowrap; align-items: center; justify-content: center; text-align: center; gap: 6px; }
+.el-game .el-ask b { overflow-wrap: anywhere; }
+.el-game:not(.with-table) .el-ask b { font-size: 2.2rem; }
+.el-game:not(.with-table) .el-ask .map-tries { margin: 0; }
+.el-game .el-ask b.el-q-sym { font-size: 4.2rem; line-height: 1; }
+.el-q-aside { font-family: var(--mono); font-size: 0.6em; font-weight: 700; color: var(--ink-2); }
+.el-opts.sym .opt { font-size: 1.7rem; font-weight: 900; min-height: 64px; }
+.el-opts.three { grid-template-columns: repeat(3, 1fr); }
+.el-opts .opt { display: flex; align-items: center; justify-content: center; }
+.el-table { margin: 0; padding-bottom: 8px; }
+.el-table .periodic-grid { max-width: 860px; margin: 0 auto; }
+.el-table .periodic-grid:not(.compact) { min-width: 600px; font-size: clamp(12px, 2.2cqw, 17px); }
+.el-table .periodic-grid.compact { max-width: 520px; }
+.el-scroll-hint { position: sticky; left: 0; font-size: 0.82rem; margin: 6px 2px 0; }
+@media (min-width: 640px) { .el-scroll-hint { display: none; } }
+.periodic-el.blind { background: var(--key); box-shadow: inset 0 0 0 1px var(--line); cursor: pointer; transition: background 0.2s, transform 0.1s var(--ease); }
+.periodic-el.blind.ctx { background: color-mix(in oklab, var(--key) 55%, transparent); box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--line) 60%, transparent); }
+@media (hover: hover) { .periodic-el.blind:hover { background: color-mix(in oklab, var(--key) 82%, var(--ink)); } }
+.periodic-el.blind.ok { background: color-mix(in oklab, var(--k-green) 55%, var(--card)); }
+.periodic-el.blind.miss { background: color-mix(in oklab, var(--k-red) 40%, var(--card)); }
+.periodic-el.blind.pick { background: var(--accent); box-shadow: 0 0 0 2px var(--ink); z-index: 1; animation: el-blink 0.6s 2 alternate; }
+.periodic-el.blind.show { background: var(--k-yellow); color: #141518; box-shadow: 0 0 0 2px var(--ink); z-index: 1; animation: el-blink 0.5s 3 alternate; }
+.periodic-el.blind.bad { background: var(--bad); color: #fff; animation: shake 0.3s; }
+@keyframes el-blink { to { opacity: 0.55; } }
+.el-say { min-height: 2.6rem; margin-top: 8px; padding: 8px 12px; border-radius: 10px; font-weight: 800; text-align: center; color: var(--ink-3); }
+.el-say.bad { background: var(--bad-bg); color: var(--bad); }
+.el-say.ok { background: var(--ok-bg); color: var(--ok); }
+.el-say.show { background: color-mix(in oklab, var(--k-yellow) 30%, var(--card)); color: var(--ink); }
+.el-fact { display: flex; align-items: center; gap: 12px; margin-top: 12px; padding: 10px 12px; border-radius: var(--r-s); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); animation: in 0.18s var(--ease); }
+.el-fact .txt { display: grid; gap: 2px; min-width: 0; }
+.el-fact .txt b { font-size: 1.1rem; font-weight: 900; }
+.el-fact .txt small { color: var(--ink-2); font-weight: 650; font-size: 0.86rem; }
+.el-cell { position: relative; display: grid; place-items: center; width: 52px; height: 58px; flex: none; border-radius: 10px; background: color-mix(in oklab, var(--pc) 42%, var(--card)); }
+.el-cell b { font-size: 1.5rem; font-weight: 900; line-height: 1; }
+.el-cell small { position: absolute; top: 4px; left: 6px; font-family: var(--mono); font-size: 0.66rem; font-weight: 700; color: var(--ink-2); }
+
 /* ——— Easier reading (src/reading.ts, Nastavení → Čtení). Every size is in rem, so the root size scales the app. ——— */
 :root[data-text='1'] { font-size: 112.5%; }
 :root[data-text='2'] { font-size: 125%; }

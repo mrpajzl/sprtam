@@ -1393,7 +1393,7 @@ Periodická tabulka 118 prvků barevně podle kategorií s legendou. Klepnutím 
 | Pole | Typ | Povinné | Popis |
 |---|---|---|---|
 | `count` | celé číslo 2–118 | – | Ukázat jen prvních N prvků (podle protonového čísla). Pro ZŠ třeba 20 (do vápníku), pak se tabulka vejde na telefon bez posouvání. Bez vyplnění celá tabulka. |
-| `highlight` | seznam (text) 1–30 položek | – | Zvýrazněné prvky podle značky, např. ["Na", "K"]. Ostatní se ztlumí. |
+| `highlight` | seznam (text) 1–60 položek | – | Zvýrazněné prvky podle značky, např. ["Na", "K"]. Ostatní se ztlumí. |
 | `group` | celé číslo 1–18 | – | Zvýrazněná skupina 1–18 (např. 17 = halogeny). Ostatní prvky se ztlumí. |
 | `open` | text | – | Značka prvku, jehož detail je otevřený hned na začátku, např. "O". |
 

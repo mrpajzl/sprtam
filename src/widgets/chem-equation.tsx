@@ -2,7 +2,7 @@ import { Fragment, type JSX } from 'preact'
 import { useState } from 'preact/hooks'
 import { s, type Infer } from '../content/schema'
 import { defineWidget, gcd } from './kit'
-import { BY_SYMBOL } from './periodic'
+import { BY_SYMBOL } from '../chem/elements'
 
 // Balancing a chemical equation: the pupil sets the stoichiometric coefficients with +/−
 // and a table counts the atoms of every element on both sides.

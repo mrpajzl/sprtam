@@ -15,6 +15,7 @@
 - **Přijímačky na SŠ:** příprava na jednotnou přijímací zkoušku z češtiny a matematiky po oblastech, cvičné testy a ostrá simulace na čas s body z 50 – **[sprtam.cz/prijimacky](https://sprtam.cz/prijimacky)**.
 - **Plán před písemkou:** vybereš témata a den písemky a aplikace ti opakování rozvrhne do zbývajících dní, s cvičnou písemkou den předem a připomínkou v kalendáři – **[sprtam.cz/plan](https://sprtam.cz/plan)**.
 - **Slepá mapa:** hra na hledání krajů Česka, států Evropy a světa a jejich hlavních měst – **[sprtam.cz/slepa-mapa](https://sprtam.cz/slepa-mapa)**.
+- **Periodická tabulka:** prohlížení všech 118 prvků a hra na značky, názvy, slepou tabulku a kovy a nekovy – **[sprtam.cz/periodicka-tabulka](https://sprtam.cz/periodicka-tabulka)**.
 - **Slovíčka** s výslovností a opakováním podle Leitnerova systému: angličtina A1–C1, němčina, francouzština a španělština A1–B1.
 - **Druhý cizí jazyk** (němčina, francouzština, španělština) od 7. třídy po maturitu.
 - **Waldorfská škola:** učivo po epochách podle waldorfského plánu, vysvětlení v duchu waldorfské pedagogiky a slovní hodnocení – **[sprtam.cz/waldorf](https://sprtam.cz/waldorf)**.
