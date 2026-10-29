@@ -57,6 +57,18 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
 
 Učivo od AI se zveřejní hned jako **neověřené** ([OBSAH.md](OBSAH.md#neověřené-učivo)). Úvodní stránka ukáže, kolik témat čeká na ověření; **Ověřovat** je vypíše. U neověřeného tématu je žlutý rámeček s tlačítkem **Ověřit**: projdi výklad v telefonu i všechny otázky se správnými odpověďmi a potvrď. U tématu se pak ukáže *Prošlo kontrolou*, tvoje jméno a datum (v moderaci, v aplikaci i ve veřejné historii). Když něco nesedí, téma raději uprav a pošli ke kontrole – schválená úprava se počítá jako ověřená.
 
+## Žádosti o moderátorství
+
+Celé učivo zatím napsala AI (Claude Opus 5.5) a nechceme to skrývat: každé téma v aplikaci ukazuje autora a jestli ho už zkontroloval člověk (a kdo). U nezkontrolovaného je tlačítko **Chci to zkontrolovat a schválit**, v moderaci u tématu **Chci to schválit** a v hlavičce **Zapojit se**.
+
+- Vedou na **[moderace.sprtam.cz/zapojit-se](https://moderace.sprtam.cz/zapojit-se)** (`?tema=<ročník>/<předmět>/<téma>`, když se přichází od tématu). Krátký formulář bez přihlášení: jméno, e-mail, jestli je pedagog, a když ano, jaké předměty učí, a volný text.
+- Formulář jde poslat jen z moderace samotné (stejná kontrola původu jako jinde), nejvýš 5× za hodinu z jedné adresy a 200× za den celkem. S jedním e-mailem čeká vždy nejvýš jedna žádost. Skryté pole chytá jednoduché roboty.
+- **Žádosti** (jen správce, s počtem čekajících; na telefonu pod **Více**): kdo, e-mail, jestli učí a co, poznámka a téma, od kterého přišel.
+  - **Schválit a vytvořit pozvánku** (s čerstvým potvrzením klíčem) vytvoří jednorázovou pozvánku na jméno žadatele s rolí Moderátor. Odkaz jde zkopírovat, nebo tlačítkem **Napsat e-mail s odkazem** otevřít připravený e-mail ve vlastní poště. Moderace sama nic neposílá.
+  - Ve **Vyřízených** je vidět, kdo žádost vyřídil a jestli si žadatel už účet vytvořil. Dokud ne, **Nový odkaz** vydá nový a starý přestane platit.
+  - **Zamítnout** (s nepovinnou poznámkou pro ostatní správce) žadateli nic nepošle.
+- Vyřízené žádosti se i s e-mailem po 180 dnech smažou. V záznamu událostí je jen to, že žádost přišla nebo byla vyřízena, bez osobních údajů.
+
 ## Hlášení od žáků
 
 Žáci v aplikaci u každé otázky (po odpovědi) a u každého vysvětlení klepnou na **Nahlásit chybu**, vyberou, co je špatně (*Špatná odpověď nebo chyba*, *Nejasné zadání*, *Překlep*, *Jiné*), a můžou připsat krátkou poznámku. Hlášení se objeví na záložce **Hlášení** (na telefonu ve spodní liště, s počtem otevřených).
@@ -78,6 +90,7 @@ Pravidla pro obsah: [CONTENT.md](CONTENT.md). Editor je hlídá za tebe a ukazuj
 
 ## Pro správce
 
+- **Žádosti** o moderátorství z formuláře `/zapojit-se` ([výše](#žádosti-o-moderátorství)).
 - **Moderátoři** (jen pro roli *Správce*): pozvat moderátora, změnit roli, vypnout účet, poslat odkaz na nový klíč, zrušit všechny klíče (ztracené nebo ukradené zařízení), odhlásit ze všech zařízení. Je tam i záznam událostí: přihlášení včetně neúspěšných, pozvánky a odeslané návrhy.
 - Každá změna v této části chce **čerstvé potvrzení klíčem** (přihlášení v posledních 15 minutách). Aplikace si o něj sama řekne.
 - Aspoň jeden aktivní správce musí zůstat vždy. Sám sebe správce vypnout nemůže.
@@ -115,14 +128,14 @@ Všechno ostatní se dělá v aplikaci.
 | Účty | Jen přes jednorázovou pozvánku (72 h). Token je v `#` části odkazu, takže ho prohlížeč nikam neposílá, a aplikace ho po načtení smaže z adresního řádku. V databázi je jen jeho SHA-256. |
 | Session | Náhodný 256bitový token v cookie `__Host-moderace` (`HttpOnly`, `Secure`, `SameSite=Strict`). V databázi je jen SHA-256. Vyprší po 12 h nečinnosti, nejpozději po 7 dnech. Přihlášení vždy vytvoří novou session. Odebrání klíče ukončí session, které z něj vznikly. |
 | Výzvy | Přihlašovací výzvy si server neukládá: podepisuje je klíčem, který existuje jen v běžícím procesu, a pamatuje si jen ty už použité. Kdokoli z internetu tak nemůže zahltit paměť a přihlašování zablokovat. Výzvy k registraci vyžadují platnou pozvánku nebo přihlášení. |
-| Veřejná část | Bez přihlášení jde jen číst zveřejněné učivo (`GET /api/content/index`, `/api/content/topic/…` a veřejné API `/api/public/v1/…`). Je to totéž, co ukazuje sprtam.cz. Návrhy, historii a jejich autory dostane jen přihlášený moderátor. Přihlášený moderátor vidí všechny návrhy včetně rozpracovaných (upravovat je smí jen autor, schvalovat až po odeslání ke kontrole). API token vidí svoje návrhy a cizí až po odeslání ke kontrole. Všechno ostatní chce session. |
+| Veřejná část | Bez přihlášení jde jen číst zveřejněné učivo (`GET /api/content/index`, `/api/content/topic/…` a veřejné API `/api/public/v1/…`) a poslat žádost o moderátorství (`POST /api/applications`, s limity). Učivo je totéž, co ukazuje sprtam.cz. Návrhy, historii a jejich autory dostane jen přihlášený moderátor. Přihlášený moderátor vidí všechny návrhy včetně rozpracovaných (upravovat je smí jen autor, schvalovat až po odeslání ke kontrole). API token vidí svoje návrhy a cizí až po odeslání ke kontrole. Všechno ostatní chce session. |
 | Cizí stránky | Každý požadavek, který něco mění, musí mít přesně náš `Origin` a `Sec-Fetch-Site: same-origin` a tělo jen jako JSON. CORS není povolené. Výjimkou jsou požadavky s API tokenem v hlavičce `Authorization`: nenesou cookies a prohlížeč je za cizí stránku bez CORS neodešle. |
 | Zveřejnění | Jen schválením jiného moderátora (aktuální revize, bez konfliktu, celé učivo projde kontrolou), schválením vlastní změny správcem v prohlížeči s čerstvým potvrzením klíčem (v historii je vidět, kdo schválil), nebo nouzovou obnovou správcem s čerstvým potvrzením klíčem. Historie jde jen doplňovat a je chráněná hash řetězem ([OBSAH.md](OBSAH.md#bezpečnost)). |
 | Hlavičky | Přísná CSP (jen `'self'`, žádné cizí skripty), HSTS, `frame-ancestors 'self'`, COOP/CORP, `no-referrer`, `noindex`. |
 | Omezení | Rate limit přihlašování, pozvánek, zakládání, ukládání a odesílání návrhů (IPv6 po celých /64). Požadavky bez přihlášení mají nejvýš 16 kB, ostatní 512 kB. Jeden moderátor má nejvýš 50 otevřených návrhů. Adresu klienta z `CF-Connecting-IP` server bere jen od adres Cloudflare. |
 | Vypnutý účet, zrušené klíče | Session se mažou okamžitě, klíč dál nefunguje a nepoužité odkazy na nový klíč propadnou. Vždy musí zůstat aspoň jeden správce, který se může přihlásit. |
 | API tokeny | V databázi jen SHA-256, s platností, jen vybrané akce nad vlastními návrhy. Vypnutí účtu, zrušení klíčů a odhlášení ruší i tokeny. |
-| Data | Jeden SQLite soubor ve volume `/data`. Obsahuje učivo se všemi verzemi, jména moderátorů, veřejné klíče, hashe session, tokenů a pozvánek, návrhy, kontroly a záznam událostí. Každou hodinu si ho zašifrovaně zálohuje druhý server ([OBSAH.md](OBSAH.md#zálohy)). |
+| Data | Jeden SQLite soubor ve volume `/data`. Obsahuje učivo se všemi verzemi, jména moderátorů, žádosti o moderátorství (jméno, e-mail, vyřízené se po 180 dnech mažou), veřejné klíče, hashe session, tokenů a pozvánek, návrhy, kontroly a záznam událostí. Každou hodinu si ho zašifrovaně zálohuje druhý server ([OBSAH.md](OBSAH.md#zálohy)). |
 
 ## Nasazení
 
@@ -157,12 +170,12 @@ Test celého toku a bezpečnostních pravidel: `npm run moderator:build && node 
 - editor s náhledem a oddělení návrhů mezi moderátory;
 - kontrolu, konverzaci (vlákna, úpravy zpráv, návrhy textu), schválení a zveřejnění včetně vlastního schválení správcem, konflikty;
 - historii, návraty a obnovu vydání;
-- API tokeny, žádosti o pomůcky a zálohy;
+- API tokeny, žádosti o pomůcky, žádosti o moderátorství a zálohy;
 - správu účtů.
 
 | Kde | Co |
 |---|---|
-| `moderator/server/` | HTTP server bez frameworku: `auth.ts` (passkeys, session, pozvánky, API tokeny), `admin.ts`, `store.ts` (učivo, verze, vydání, hash řetěz), `drafts.ts` (návrhy, kontrola, návraty), `requests.ts` (žádosti o pomůcky), `backup.ts`, `content.ts`, `db.ts` (SQLite a migrace), `cli.ts` |
+| `moderator/server/` | HTTP server bez frameworku: `auth.ts` (passkeys, session, pozvánky, API tokeny), `admin.ts`, `store.ts` (učivo, verze, vydání, hash řetěz), `drafts.ts` (návrhy, kontrola, návraty), `requests.ts` (žádosti o pomůcky), `applications.ts` (žádosti o moderátorství), `backup.ts`, `content.ts`, `db.ts` (SQLite a migrace), `cli.ts` |
 | `src/content/check.ts`, `diff.ts`, `release.ts` | Kontrola celého učiva (sdílená s `check:content`), rozdíly verzí, soubory vydání pro aplikaci |
 | `ops/backup/` | Zálohy na druhém serveru ([OBSAH.md](OBSAH.md#zálohy)) |
 | `moderator/src/` | Editor (Preact): `editor/` (karty bloků a otázek, formulář pomůcky generovaný z jejího schématu, kontrola, historie změn, náhled), `ui/Showcase.tsx` (galerie pomůcek naživo v rámečku náhledu), `screens/`, `passkey.ts` |

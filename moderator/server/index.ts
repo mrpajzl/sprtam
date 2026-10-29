@@ -2,6 +2,7 @@ import { createServer } from 'node:http'
 import { readFile, stat } from 'node:fs/promises'
 import { extname, join, normalize } from 'node:path'
 import { HASH } from '../../src/content/manifest'
+import { applicationCounts, approveApplication, createApplication, listApplications, rejectApplication } from './applications'
 import { auditLog, endSessions, invite, keyLink, listInvites, listUsers, revokeInvite, updateUser } from './admin'
 import {
   addKeyOptions, addKeyVerify, bearer, createToken, getSession, inviteInfo, inviteOptions, inviteVerify, listKeys, listTokens, loginOptions, loginVerify, logout,
@@ -99,6 +100,10 @@ on('POST', '/api/invite/info', async (req, _res, _p, ip) => { limit(`invite:${ip
 on('POST', '/api/invite/options', async (req, _res, _p, ip) => { limit(`invite:${ipKey(ip)}`, 30, 10 * MINUTE); return inviteOptions(await open(req)) }, true)
 on('POST', '/api/invite/verify', async (req, res, _p, ip) => { limit(`invite:${ipKey(ip)}`, 30, 10 * MINUTE); return inviteVerify(req, res, ip, await open(req)) }, true)
 
+// Applications to become a moderator, from the public form /zapojit-se (docs/MODERACE.md). The form is on this
+// origin, so the same-origin check applies like to any other change.
+on('POST', '/api/applications', async (req, _res, _p, ip) => createApplication(await open(req), ip), true)
+
 // ——— Own account ———
 
 on('GET', '/api/me/keys', (req) => listKeys(requireSession(req).user.id))
@@ -182,6 +187,10 @@ on('DELETE', '/api/admin/invites/:id', (req, _res, p, ip) => { revokeInvite(requ
 on('PATCH', '/api/admin/users/:id', async (req, _res, p, ip) => { updateUser(requireAdmin(req, true), p[0], await readJson(req), ip); return { ok: true } })
 on('POST', '/api/admin/users/:id/key-link', async (req, _res, p, ip) => keyLink(requireAdmin(req, true), p[0], await readJson(req), ip))
 on('POST', '/api/admin/users/:id/end-sessions', (req, _res, p, ip) => { endSessions(requireAdmin(req, true), p[0], ip); return { ok: true } })
+on('GET', '/api/admin/applications', (req) => { requireAdmin(req); return listApplications(query(req, 'status')) })
+on('GET', '/api/admin/applications/counts', (req) => { requireAdmin(req); return applicationCounts() })
+on('POST', '/api/admin/applications/:id/approve', (req, _res, p, ip) => approveApplication(requireAdmin(req, true), p[0], ip))
+on('POST', '/api/admin/applications/:id/reject', async (req, _res, p, ip) => rejectApplication(requireAdmin(req, true), p[0], await readJson(req), ip))
 on('GET', '/api/admin/audit', (req) => { requireAdmin(req); return auditLog(query(req, 'before')) })
 on('POST', '/api/admin/check', (req) => { requireRecent(requireAdmin(req)); return { ok: true } })
 on('GET', '/api/admin/releases', (req) => { requireAdmin(req); const b = query(req, 'before'); return releases(b ? Number(b) : undefined) })

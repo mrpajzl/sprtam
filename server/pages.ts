@@ -8,7 +8,7 @@ import { EXAM, partTopics } from '../src/exam'
 import { askable, MAPS, MAPS_INTRO, MAPS_PATH, modesOf, PARTS, place, ROUND } from '../src/maps'
 import { fullTitle, gradeFor, gradeLabel, plain, SITE_NAME, summary, titles } from '../src/seo'
 import { WIDGETS } from '../src/widgets'
-import { dateCs } from '../src/content/verified'
+import { CONTENT_AUTHOR, dateCs, joinHref, type Verified } from '../src/content/verified'
 
 // A real HTML page for every public route, so links are shareable with proper previews and search
 // engines get content, titles and descriptions without running JS:
@@ -36,6 +36,10 @@ const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 /** Inline markup (**bold**, *italic*, `code`, ^sup) → HTML, as src/ui/Inline.tsx renders it. */
 const inline = (s: string) => esc(s).replace(/\*\*(.+?)\*\*|`(.+?)`|\*(.+?)\*|\^([+−-]?(?:[IVX]+|[0-9]+)[+−-]?|[+−-])/g, (_, b, c, i, sup) =>
   b ? `<strong>${b}</strong>` : c ? `<code>${c}</code>` : i ? `<em>${i}</em>` : `<sup>${sup}</sup>`)
+/** Who wrote the topic and whether a person has checked it, as in the app (src/screens/TopicScreen.tsx, CheckNote). */
+const checkNote = (v: Verified | undefined, topic: string) => `<aside class="check-note${v ? ' ok' : ''}" aria-label="Kdo téma napsal a zkontroloval"><p><i aria-hidden="true">AI</i><span>Autor: <b>${esc(CONTENT_AUTHOR)}</b> (umělá inteligence)</span></p>${v
+  ? `<p><i aria-hidden="true">✓</i><span>Zkontrolováno člověkem: <b>${esc(v.by)}</b>, ${esc(dateCs(v.at))}</span></p>`
+  : `<p><i aria-hidden="true">!</i><span>Čeká na kontrolu člověkem. Když najdeš chybu, nahlas ji.</span></p><a class="btn ghost block" href="${esc(joinHref(topic))}" target="_blank" rel="noopener">Chci to zkontrolovat a schválit</a>`}</aside>`
 const style = (c: string) => `--c:var(--k-${c});--on-c:var(--k-${c}-on)`
 const STAGE_LABEL = { zs1: 'ZŠ · 1. stupeň', zs2: 'ZŠ · 2. stupeň', ss: 'SŠ · ročník' } // as on the Home screen
 const icon = (d: string) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`
@@ -117,7 +121,7 @@ ${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_P
     crumbs: [home, [ABOUT.title, '/o-aplikaci']],
     body: `<div class="page about">${bar(ABOUT.title, '/')}<div class="about-lead"><p>${inline(ABOUT.lead)}</p></div>${ABOUT.sections.map((x) => `<section><h2 class="label next-label">${esc(x.title)}</h2><ul class="about-list">${x.items.map((i) => `<li>${inline(i)}</li>`).join('')}</ul></section>`).join('')}
 <section><h2 class="label next-label">${esc(ABOUT.code.title)}</h2><div class="list">${ABOUT.code.links.map((l) => `<a class="row" href="${esc(l.href)}" rel="noopener"><span class="txt"><b>${esc(l.label)}</b><small>${esc(l.hint)}</small></span>${FORWARD}</a>`).join('')}</div></section>
-<section class="about-join card"><h2>${esc(ABOUT.join.title)}</h2><p>${esc(ABOUT.join.lead)}</p><ul>${ABOUT.join.items.map((i) => `<li>${inline(i)}</li>`).join('')}</ul><a class="btn block" href="mailto:${esc(ABOUT.join.email)}">Napiš na ${esc(ABOUT.join.email)}</a></section></div>${tabbar(undefined)}`,
+<section class="about-join card"><h2>${esc(ABOUT.join.title)}</h2><p>${esc(ABOUT.join.lead)}</p><ul>${ABOUT.join.items.map((i) => `<li>${inline(i)}</li>`).join('')}</ul><a class="btn block" href="${esc(ABOUT.join.form.href)}" target="_blank" rel="noopener">${esc(ABOUT.join.form.label)}</a><a class="btn ghost block" href="mailto:${esc(ABOUT.join.email)}">Napiš na ${esc(ABOUT.join.email)}</a></section></div>${tabbar(undefined)}`,
   })
 
   // Subject tiles: core subjects get their glyph from the app; odborné předměty show their emoji.
@@ -170,7 +174,7 @@ ${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_P
           description: summary(explanations[0].blocks) || `${t.title} – ${subjectMeta(s).name}, ${gradeLabel(g)}.`,
           crumbs: [...sCrumbs, [t.title, tPath]],
           type: 'article',
-          body: `<div class="page" style="${style(subjectMeta(s).c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [subjectMeta(s).name, sPath]])}${explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${t.verified ? `<p class="check-note ok"><span aria-hidden="true">✓</span>Prošlo kontrolou: ${esc(t.verified.by)}, ${esc(dateCs(t.verified.at))}</p>` : '<p class="check-note"><span aria-hidden="true">!</span>Neověřeno – výklad připravila AI a učitel ho ještě nezkontroloval. Když najdeš chybu, nahlas ji.</p>'}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
+          body: `<div class="page" style="${style(subjectMeta(s).c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [subjectMeta(s).name, sPath]])}${explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${checkNote(t.verified, `${g}/${s}/${t.id}`)}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
           ld: {
             '@type': 'LearningResource', name: t.title, inLanguage: 'cs', learningResourceType: 'Explanation', isAccessibleForFree: true,
             educationalLevel: GRADE_NAME[g], about: subjectMeta(s).name, url: `${SITE}${tPath}`,

@@ -169,7 +169,7 @@ export function createInvite(by: User | null, kind: 'user' | 'key', name: string
   const t = token(), now = Date.now()
   run('INSERT INTO invites (hash, kind, user_id, name, role, created_by, created_at, expires_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', sha256(t), kind, userId, name, role, by?.id ?? null, now, now + LIMITS.invite)
   // The token travels in the #fragment: browsers never send it to a server or in a Referer.
-  return { url: `${CONFIG.origin}/pozvanka#${t}`, expiresAt: now + LIMITS.invite }
+  return { url: `${CONFIG.origin}/pozvanka#${t}`, expiresAt: now + LIMITS.invite, id: sha256(t).slice(0, 16) }
 }
 
 function findInvite(t: unknown): InviteRow {

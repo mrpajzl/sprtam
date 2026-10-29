@@ -19,3 +19,13 @@ export const today = (now = new Date()) => new Intl.DateTimeFormat('sv-SE', { ti
 
 /** „12. 3. 2026“ */
 export const dateCs = (at: string) => { const [y, m, d] = at.split('-').map(Number); return `${d}. ${m}. ${y}` }
+
+// Every topic says openly who wrote it. So far all the content was written by AI; a person checks it afterwards.
+// Change this once people write topics themselves (then the author belongs into the topic).
+/** Who wrote the content. */
+export const CONTENT_AUTHOR = 'Claude Opus 5.5'
+
+/** The form for people who want to check the content as moderators (moderation, /zapojit-se, docs/MODERACE.md). */
+export const JOIN_URL = 'https://moderace.sprtam.cz/zapojit-se'
+/** …coming from one topic ("<grade>/<subject>/<id>"), which the form then mentions. */
+export const joinHref = (topic?: string) => (topic ? `${JOIN_URL}?tema=${topic}` : JOIN_URL)

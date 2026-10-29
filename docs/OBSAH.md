@@ -61,7 +61,7 @@ Učivo připravené AI nečeká na kontrolu: zveřejní se hned jako **neověře
 - Ověření není změna obsahu: rozpracovaná úprava tématu kvůli němu nespadne do konfliktu.
 - **Kde je stav vidět:**
   - Moderace: úvodní stránka ukáže, kolik témat čeká na ověření, a odkaz **Ověřovat** (`/ucivo?neovereno=1`). V seznamech mají neověřená témata žlutou tečku.
-  - Aplikace a stránky od serveru: pod výkladem stojí *Neověřeno – výklad připravila AI…*, nebo *Prošlo kontrolou: jméno, datum*.
+  - Aplikace a stránky od serveru: pod výkladem je rámeček *Autor: Claude Opus 5.5 (umělá inteligence)* (`CONTENT_AUTHOR` v [`src/content/verified.ts`](../src/content/verified.ts); celé učivo zatím napsala AI) a pod ním buď *Zkontrolováno člověkem: jméno, datum*, nebo *Čeká na kontrolu člověkem* s tlačítkem **Chci to zkontrolovat a schválit**. To vede na formulář žádosti o moderátorství ([MODERACE.md](MODERACE.md#žádosti-o-moderátorství)).
 
 ## Historie a návraty
 

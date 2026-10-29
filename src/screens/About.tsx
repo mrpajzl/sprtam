@@ -31,7 +31,8 @@ export function About() {
         <h2>{ABOUT.join.title}</h2>
         <p>{ABOUT.join.lead}</p>
         <ul>{ABOUT.join.items.map((x) => <li key={x}><Inline text={x} /></li>)}</ul>
-        <a class="btn block" href={`mailto:${ABOUT.join.email}`}>Napiš na {ABOUT.join.email}</a>
+        <a class="btn block" href={ABOUT.join.form.href} target="_blank" rel="noopener">{ABOUT.join.form.label}</a>
+        <a class="btn ghost block" href={`mailto:${ABOUT.join.email}`}>Napiš na {ABOUT.join.email}</a>
       </section>
     </div>
   )
