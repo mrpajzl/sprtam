@@ -11,7 +11,7 @@ import { back, Link, query } from '../router'
 import { titles, useTitle } from '../seo'
 import { Bar } from '../ui/Bar'
 import { keyStyle, subjectStyle } from '../ui/glyphs'
-import { IArrow, IBolt, IBulb, IMic, IPencil, IPin, IRepeat } from '../ui/icons'
+import { IArrow, IBolt, IBulb, ICalendar, IMic, IPencil, IPin, IPrint, IRepeat } from '../ui/icons'
 import { ReportButton } from '../ui/Report'
 import { useAsync } from '../ui/useAsync'
 import { Blocks } from './Blocks'
@@ -73,6 +73,10 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
           )
         })}
       </div>
+      <div class="list topic-extra">
+        <Link class="row print-key" href={`/plan/novy?tema=${encodeURIComponent(key)}`} rel="nofollow"><ICalendar /><span class="txt"><b>Píšu z toho písemku</b><small>naplánuj si opakování do dne písemky</small></span><IArrow /></Link>
+        <Link class="row print-key" href={`/g/${g}/${s}/${id}/tisk`} rel="nofollow"><IPrint /><span class="txt"><b>Pracovní list</b><small>k vytištění nebo do PDF, s řešením</small></span><IArrow /></Link>
+      </div>
       {next && (
         <>
           <h2 class="label next-label">Další téma</h2>
@@ -87,7 +91,8 @@ export function QuizScreen({ g, s, id, mode }: { g: GradeId; s: SubjectId; id: s
   const subj = useAsync(() => loadSubject(g, s), [g, s])
   const topics = useMemo(() => subj && (id === '~test' ? subj.topics.filter(listed) : subj.topics.filter((t) => t.id === id)).map((t) => ({ key: topicKey(g, s, t), t })), [subj, id])
   if (!topics) return <div class="page" />
-  return <div style={subjectStyle(s)}><Quiz key={`${id}/${mode}`} mode={mode} topics={topics} /></div>
+  const label = id === '~test' ? `${subjectMeta(s).name} · ${GRADE_NAME[g]}` : undefined
+  return <div style={subjectStyle(s)}><Quiz key={`${id}/${mode}`} mode={mode} topics={topics} label={label} /></div>
 }
 
 export function PinButton({ k }: { k: string }) {

@@ -2,7 +2,7 @@ import type { Question, Topic } from '../content/types'
 import { isDue, isMistake, questionId, today, type QuestionProgress } from '../progress/questions'
 import { GENERATORS } from './generators'
 
-export type ModeId = 'kviz' | 'opakovani' | 'pisemka' | 'zkouseni' | 'test' | 'mix' | 'chyby' | 'dnes'
+export type ModeId = 'kviz' | 'opakovani' | 'pisemka' | 'zkouseni' | 'test' | 'mix' | 'chyby' | 'dnes' | 'simulace'
 /** Modes of one topic (/g/z5/matematika/zlomky/<mode>). */
 export const TOPIC_MODES: ModeId[] = ['kviz', 'opakovani', 'pisemka', 'zkouseni']
 
@@ -24,6 +24,8 @@ export const MODES: Record<ModeId, Mode> = {
   mix: { id: 'mix', name: 'Mix', hint: 'připnutá témata', instant: true, count: 15 },
   chyby: { id: 'chyby', name: 'Sešit chyb', hint: 'co se ti spletlo', instant: true, count: 15 },
   dnes: { id: 'dnes', name: 'Dnešní opakování', hint: 'co ti vypadává z hlavy', instant: true, count: 10 },
+  /** Přijímačky on the clock (screens/ExamSim.tsx builds its own round). */
+  simulace: { id: 'simulace', name: 'Ostrá simulace', hint: 'na čas, body z 50', instant: false, count: 30 },
 }
 
 export interface Item {
@@ -50,7 +52,7 @@ export function build(mode: ModeId, topics: { key: string; t: Topic }[]): Item[]
   }
 
   const closed = all((q) => q.type !== 'open')
-  if (mode === 'test' || mode === 'mix') {
+  if (mode === 'test' || mode === 'mix' || (mode === 'pisemka' && topics.length > 1)) {
     // Spread evenly across topics.
     const per = Math.max(1, Math.ceil(m.count / topics.length))
     const picked = topics.flatMap(({ key }) => shuffle(closed.filter((i) => i.topic === key)).slice(0, per))
@@ -58,6 +60,31 @@ export function build(mode: ModeId, topics: { key: string; t: Topic }[]): Item[]
   }
   if (mode === 'opakovani') return shuffle([...closed, ...gen(3)]).slice(0, Math.max(m.count, closed.length))
   return shuffle([...shuffle(closed).slice(0, m.count), ...gen(Math.ceil(m.count / 3))]).slice(0, m.count)
+}
+
+/**
+ * A test of several areas (Ostrá simulace): `count` questions spread evenly over the areas and, inside an area, over
+ * its topics; an area short of questions leaves its share to the others. Asked area by area, in the given order.
+ */
+export function buildAreas(areas: string[][], topics: { key: string; t: Topic }[], count: number): Item[] {
+  const byKey = new Map(topics.map((x) => [x.key, x.t]))
+  // Per area: per topic a shuffled list of its closed questions.
+  const pools = areas.map((keys) => shuffle(keys.flatMap((key) => {
+    const t = byKey.get(key)
+    const qs = t ? shuffle(t.questions.flatMap((q, index) => (q.type === 'open' ? [] : [{ q, topic: key, index, id: questionId(key, q) }]))) : []
+    return qs.length ? [qs] : []
+  })))
+  const picked: Item[][] = areas.map(() => [])
+  const turn = areas.map(() => 0)
+  let n = 0
+  for (let a = Math.floor(Math.random() * areas.length), idle = 0; n < count && idle < areas.length; a = (a + 1) % areas.length) {
+    const pool = pools[a].filter((qs) => qs.length)
+    if (!pool.length) { idle++; continue }
+    idle = 0
+    picked[a].push(pool[turn[a]++ % pool.length].shift()!)
+    n++
+  }
+  return picked.flat()
 }
 
 /** The questions a student should see again, best first: for `chyby` the open mistakes, for `dnes` everything due. */

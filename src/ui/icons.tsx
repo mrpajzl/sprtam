@@ -34,6 +34,9 @@ export const IGear = P('M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.65 1.65 0 
 export const IFlag = P('M5 21V4M5 4h11l-2 4 2 4H5')
 export const IBook = P('M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3zM5 17a3 3 0 0 1 3-3h10')
 export const IChart = P('M4 20h16M7 16v-5M12 16V6M17 16v-8')
+export const ITimer = P('M10 2h4M12 14l3-3M12 22a8 8 0 1 0 0-16 8 8 0 0 0 0 16z')
+export const IPrint = P('M7 9V3h10v6M7 17H4v-7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v7h-3M7 14h10v7H7z')
+export const ICalendar = P('M4 6h16v14H4zM4 10h16M8 3v4M16 3v4')
 export const ISnow = P('M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5 12 7l2.5-2.5M9.5 19.5 12 17l2.5 2.5')
 
 /** Push pin; filled when the topic is pinned. */

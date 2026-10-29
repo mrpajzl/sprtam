@@ -2,6 +2,7 @@ import { useMemo, useRef, useState, useEffect } from 'preact/hooks'
 import type { Question } from '../content/types'
 import { Inline } from '../ui/Inline'
 import { IBulb, IDown, IUp } from '../ui/icons'
+import { digit, useKeys } from '../ui/keys'
 import { checkInput, gapChoice } from './engine'
 import { WidgetQuestion } from '../widgets/view'
 
@@ -19,6 +20,7 @@ export function QuestionView({ q, reveal, strict = true, hints = false, onAnswer
   const gap = useMemo(() => (q.type === 'input' ? gapChoice(q, strict) : null), [q, strict])
   const [filled, setFilled] = useState<string | null>(null)
   const text = gap ? fillGap(q.question, filled) : q.question
+  useKeys((e) => { if (e.key.toLowerCase() !== 'h' || shown >= list.length) return; setShown(shown + 1); return true }, !done && list.length > 0)
   return (
     <div>
       <h2 class="question"><Inline text={text} /></h2>
@@ -28,7 +30,7 @@ export function QuestionView({ q, reveal, strict = true, hints = false, onAnswer
           {list.slice(0, shown).map((h, i) => <p key={i} class="hint"><IBulb /><span><Inline text={h} /></span></p>)}
           {!done && shown < list.length && (
             <button type="button" class="hint-key" onClick={() => setShown(shown + 1)}>
-              <IBulb />{shown === 0 ? 'Nápověda' : 'Další nápověda'}{list.length > 1 && <small>{shown + 1}/{list.length}</small>}
+              <IBulb />{shown === 0 ? 'Nápověda' : 'Další nápověda'}{list.length > 1 && <small>{shown + 1}/{list.length}</small>}<kbd class="key-hint">H</kbd>
             </button>
           )}
         </div>
@@ -49,11 +51,13 @@ type P<T> = { q: T; done: boolean; reveal: boolean; answer: (ok: boolean) => voi
 function Choice({ q, done, reveal, answer }: P<Extract<Question, { type: 'choice' }>>) {
   const order = useMemo(() => shuffle(q.options.map((_, i) => i)), [q])
   const [pick, setPick] = useState<number | null>(null)
+  const choose = (i: number) => { if (done) return; setPick(i); answer(i === q.answer) }
+  useKeys((e) => { const n = digit(e); if (!n || n > order.length) return; choose(order[n - 1]); return true }, !done)
   return (
     <div class="opts">
-      {order.map((i) => {
+      {order.map((i, k) => {
         const cls = !done ? '' : reveal ? (i === q.answer ? 'ok' : i === pick ? 'bad' : '') : i === pick ? 'sel' : ''
-        return <button key={i} class={`opt ${cls}`} onClick={() => { if (done) return; setPick(i); answer(i === q.answer) }}><Inline text={q.options[i]} /></button>
+        return <button key={i} class={`opt ${cls}`} onClick={() => choose(i)}>{order.length <= 9 && <kbd class="key-hint">{k + 1}</kbd>}<Inline text={q.options[i]} /></button>
       })}
     </div>
   )
@@ -62,10 +66,18 @@ function Choice({ q, done, reveal, answer }: P<Extract<Question, { type: 'choice
 function TrueFalse({ q, done, reveal, answer }: P<Extract<Question, { type: 'truefalse' }>>) {
   const [pick, setPick] = useState<boolean | null>(null)
   const cls = (v: boolean) => (!done ? '' : reveal ? (v === q.answer ? 'ok' : v === pick ? 'bad' : '') : v === pick ? 'sel' : '')
+  const choose = (v: boolean) => { if (done) return; setPick(v); answer(v === q.answer) }
+  useKeys((e) => {
+    const n = digit(e), k = e.key.toLowerCase()
+    if (n === 1 || k === 'p') choose(true)
+    else if (n === 2 || k === 'n') choose(false)
+    else return
+    return true
+  }, !done)
   return (
     <div class="tf">
-      <button class={`opt ${cls(true)}`} onClick={() => { if (done) return; setPick(true); answer(q.answer) }}>Pravda</button>
-      <button class={`opt ${cls(false)}`} onClick={() => { if (done) return; setPick(false); answer(!q.answer) }}>Nepravda</button>
+      <button class={`opt ${cls(true)}`} onClick={() => choose(true)}><kbd class="key-hint">1</kbd>Pravda</button>
+      <button class={`opt ${cls(false)}`} onClick={() => choose(false)}><kbd class="key-hint">2</kbd>Nepravda</button>
     </div>
   )
 }
@@ -80,11 +92,13 @@ function fillGap(question: string, filled: string | null) {
 function Pick({ options, correct, done, reveal, answer }: { options: string[]; correct: number; done: boolean; reveal: boolean; answer: (i: number) => void }) {
   const [pick, setPick] = useState<number | null>(null)
   const long = options.some((o) => o.length > 3)
+  const choose = (i: number) => { if (done) return; setPick(i); answer(i) }
+  useKeys((e) => { const n = digit(e); if (!n || n > options.length) return; choose(n - 1); return true }, !done)
   return (
     <div class={`tf pick ${long ? 'long' : ''}`} style={{ gridTemplateColumns: `repeat(${options.length}, 1fr)` }}>
       {options.map((o, i) => {
         const cls = !done ? '' : reveal ? (i === correct ? 'ok' : i === pick ? 'bad' : '') : i === pick ? 'sel' : ''
-        return <button key={i} class={`opt ${cls}`} onClick={() => { if (done) return; setPick(i); answer(i) }}>{o}</button>
+        return <button key={i} class={`opt ${cls}`} onClick={() => choose(i)}>{options.length <= 9 && <kbd class="key-hint">{i + 1}</kbd>}{o}</button>
       })}
     </div>
   )

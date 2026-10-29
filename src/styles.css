@@ -1,5 +1,6 @@
 @import '@fontsource-variable/nunito';
 @import '@fontsource-variable/jetbrains-mono';
+@import '@fontsource-variable/atkinson-hyperlegible-next';
 /* Each widget's own styles (src/widgets/css/<name>.css); shared widget styles are below (.w, .val, .sub, .ctrls). */
 @import './widgets/css/coins.css';
 @import './widgets/css/units.css';
@@ -854,3 +855,164 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .map-opts .opt { min-height: 52px; padding: 8px 12px; font-size: 0.98rem; text-align: center; }
 .map-opts .opt[disabled] { opacity: 0.45; }
 .map-next { margin-top: 12px; }
+
+/* ——— Easier reading (src/reading.ts, Nastavení → Čtení). Every size is in rem, so the root size scales the app. ——— */
+:root[data-text='1'] { font-size: 112.5%; }
+:root[data-text='2'] { font-size: 125%; }
+:root[data-spacing='wide'] { letter-spacing: 0.035em; word-spacing: 0.12em; }
+:root[data-spacing='wide'] :is(.blocks, .question, .why, .opt, .hint, .row small, .card, p, li) { line-height: 1.8; }
+:root[data-font='legible'] { font-family: 'Atkinson Hyperlegible Next Variable', system-ui, sans-serif; }
+.reading-sample { margin: 0 2px 14px; padding: 14px 16px; border-radius: var(--r-s); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); font-size: 1.08rem; line-height: 1.55; }
+.next-list { margin-top: 10px; }
+
+/* ——— Keyboard hints (src/ui/keys.ts): only where there is a keyboard and a mouse ——— */
+.key-hint { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  :root:not([data-keys='off']) .key-hint {
+    display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 5px; margin-right: 10px; vertical-align: 0.1em;
+    border-radius: 6px; border: 1px solid var(--line); font: 700 0.75rem/1 var(--mono); color: var(--ink-3); flex: none;
+  }
+  .hint-key .key-hint, .self .key-hint { margin: 0 0 0 8px; }
+  .opt.ok .key-hint, .opt.bad .key-hint { border-color: currentColor; }
+}
+
+/* ——— Unfinished round (progress/resume.ts) ——— */
+.resume-ask b { font-size: 1.3rem; color: var(--ink); }
+.resume-ask .btn { max-width: 360px; }
+.resume-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; margin-top: 14px; }
+.resume-row .row { margin: 0; }
+
+/* ——— Ostrá simulace přijímaček (screens/ExamSim.tsx) ——— */
+.sim-count { flex: 1; font-family: var(--mono); font-weight: 700; color: var(--ink-2); font-size: 0.92rem; }
+.qtop .timer.low { color: var(--bad); }
+.sim-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(34px, 1fr)); gap: 6px; margin: 4px 0 6px; }
+.sim-grid button {
+  height: 34px; border-radius: 8px; font: 700 0.8rem/1 var(--mono); color: var(--ink-2);
+  background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 2px 0 var(--key-edge);
+}
+.sim-grid button.done { background: var(--accent-soft); color: var(--accent-ink); box-shadow: none; cursor: default; }
+.sim-grid button.now { box-shadow: inset 0 0 0 2px var(--accent), 0 2px 0 var(--key-edge); color: var(--ink); }
+.sim-area { margin: 16px 2px -8px; font-family: var(--mono); font-size: 0.8rem; font-weight: 700; color: var(--ink-2); }
+.sim-skip { margin-top: 14px; }
+.sim-hand { margin-top: 26px; }
+.sim-sure { margin-top: 26px; display: grid; gap: 12px; padding: 14px; border-radius: var(--r-s); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); font-weight: 700; }
+.sim-sure .self .btn:last-child { --c: var(--k-orange); --on-c: var(--k-orange-on); }
+.sim-points { display: grid; justify-items: center; line-height: 1; }
+.sim-points b { font: 800 4.2rem/1 var(--mono); color: var(--accent-ink); }
+.sim-points span { font-weight: 800; color: var(--ink-2); margin-top: 6px; }
+.sim-areas { width: 100%; text-align: left; }
+.sim-area-n { font: 700 0.85rem/1 var(--mono); color: var(--ink-2); }
+.sim-none { font-style: normal; color: var(--bad); font-weight: 800; }
+
+/* ——— Pracovní list (screens/Worksheet.tsx): a paper preview on screen, only the paper when printed ——— */
+.topic-extra { margin-top: 14px; }
+.print-key { background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge); }
+.print-key > svg:first-child { width: 26px; height: 26px; color: var(--accent-ink); flex: none; margin: 0 4px; }
+.ws-controls { display: grid; gap: 14px; margin-bottom: 22px; }
+.ws-controls .seg { margin: 0; }
+.ws-check { display: flex; align-items: center; gap: 10px; font-weight: 750; }
+.ws-check input { width: 22px; height: 22px; accent-color: var(--accent); }
+.ws-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ws-controls .note { margin: 0 2px; }
+.worksheet {
+  --ink: #141518; --ink-2: #4a4c52; --ink-3: #6b6e75; --line: #c9cbd0;
+  background: #fff; color: var(--ink); border-radius: 6px; padding: 28px 26px; box-shadow: 0 1px 0 var(--line), 0 6px 24px rgb(0 0 0 / 0.12);
+  font-size: 0.98rem; line-height: 1.45;
+}
+.ws-head { display: flex; justify-content: space-between; gap: 18px; border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+.ws-head h1 { font-size: 1.3rem; font-weight: 900; margin: 0 0 2px; }
+.ws-head small { color: var(--ink-2); font-weight: 700; }
+.ws-name { display: grid; gap: 10px; min-width: 210px; font-weight: 700; }
+.ws-name span { border-bottom: 1px solid var(--ink-3); padding-bottom: 2px; }
+.ws-qs { margin: 0; padding-left: 1.6em; display: grid; gap: 18px; }
+.ws-qs > li { break-inside: avoid; }
+.ws-qs > li::marker { font-weight: 900; }
+.ws-q { margin: 0 0 8px; font-weight: 750; }
+.ws-opts { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.ws-opts.ws-row { display: flex; gap: 28px; }
+.ws-box { display: inline-block; width: 0.95em; height: 0.95em; border: 1.5px solid var(--ink); border-radius: 3px; margin-right: 8px; vertical-align: -0.12em; }
+.ws-box.wide { width: 1.8em; }
+.ws-line { border-bottom: 1px solid var(--ink-3); min-height: 2em; color: var(--ink-3); font-weight: 700; font-size: 0.85rem; display: flex; align-items: flex-end; padding-bottom: 2px; }
+.ws-line + .ws-line { margin-top: 2px; }
+.ws-how { display: block; color: var(--ink-2); margin: -4px 0 6px; }
+.ws-match { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ws-match ol, .ws-match ul { margin: 0; padding-left: 1.4em; display: grid; gap: 6px; }
+.ws-match ul { list-style: none; padding: 0; }
+.ws-gap { display: inline-block; width: 2.2em; border-bottom: 1px solid var(--ink-3); margin-left: 6px; }
+.ws-solutions { margin-top: 34px; padding-top: 16px; border-top: 2px dashed var(--line); break-before: page; }
+.ws-solutions h2 { font-size: 1.05rem; font-weight: 900; margin: 0 0 10px; }
+.ws-solutions ol { margin: 0; padding-left: 1.6em; display: grid; gap: 4px; }
+.ws-foot { margin-top: 26px; color: var(--ink-3); font-size: 0.75rem; text-align: center; }
+@media (max-width: 480px) { .worksheet { padding: 20px 16px; } .ws-match { grid-template-columns: 1fr; } }
+@media print {
+  @page { margin: 14mm; }
+  html, body { background: #fff !important; }
+  body { background-image: none !important; }
+  #app > :not(:has(.worksheet)), .worksheet-page > :not(.worksheet), .tabbar, .toast { display: none !important; }
+  .worksheet-page { padding: 0 !important; margin: 0; max-width: none; }
+  .worksheet { box-shadow: none; border-radius: 0; padding: 0; font-size: 11pt; }
+  .ws-solutions { border-top: 0; margin-top: 0; }
+}
+
+/* ——— Plán před písemkou (screens/Plan.tsx) ——— */
+.field { display: grid; gap: 6px; margin-bottom: 14px; font-family: var(--mono); font-size: 0.8rem; font-weight: 650; color: var(--ink-2); }
+.field :is(input, select) {
+  font: 750 1.05rem/1.2 'Nunito Variable', ui-rounded, system-ui, sans-serif; color: var(--ink); min-height: 50px; padding: 0 14px; width: 100%; box-sizing: border-box;
+  border-radius: var(--r-s); border: 0; background: var(--card); box-shadow: inset 0 0 0 1.5px var(--line);
+}
+:root[data-font='legible'] .field :is(input, select) { font-family: inherit; }
+.field :is(input, select):focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--accent); }
+.plan-pick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.plan-topics .row .em { font-size: 1.4rem; }
+.plan-save { position: sticky; bottom: calc(env(safe-area-inset-bottom) + 96px); margin-top: 18px; display: grid; gap: 8px; }
+.plan-save .muted { margin: 0; text-align: center; background: var(--bg); border-radius: 8px; padding: 4px; }
+.plan-add { margin-top: 18px; }
+.plan-row .skey svg, .plan-cal svg { width: 22px; height: 22px; }
+.plan-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 18px; border-radius: var(--r); background: var(--lcd); color: var(--lcd-ink); margin-bottom: 22px; }
+.plan-head > div:first-child { display: grid; gap: 2px; }
+.plan-head b { font: 800 1.7rem/1.1 var(--mono); color: var(--accent); }
+.plan-head small { font-weight: 700; color: rgb(244 244 241 / 0.7); }
+.plan-ready { display: grid; gap: 6px; justify-items: end; min-width: 120px; }
+.plan-ready .seg-meter i:not(.on) { background: var(--lcd-off); }
+.plan-slot { margin-bottom: 4px; }
+.plan-slot .mascot { flex: none; }
+.plan-say { margin: 0 2px 12px; line-height: 1.5; }
+.tag.plan-new { background: var(--ink); color: var(--bg); }
+.tag.plan-weak { background: var(--bad-bg); color: var(--bad); }
+.tag.plan-stale { background: color-mix(in oklab, var(--k-orange) 18%, var(--card)); color: color-mix(in oklab, var(--k-orange) 45%, var(--ink)); }
+.tag.plan-ready, .tag.plan-done { background: var(--ok-bg); color: var(--ok); }
+.tag.plan-done svg { width: 14px; height: 14px; display: block; }
+.plan-cal { display: grid; gap: 12px; }
+.plan-cal label { display: flex; align-items: center; gap: 10px; font-weight: 750; }
+.plan-cal input { flex: 1; max-width: 160px; }
+.plan-cal input, .reminder input { font: 750 1rem/1 var(--mono); color: var(--ink); min-height: 46px; padding: 0 10px; border-radius: var(--r-s); border: 0; background: var(--card); box-shadow: inset 0 0 0 1.5px var(--line); }
+.plan-delete { margin-top: 26px; }
+.plan-entry .skey svg { width: 22px; height: 22px; }
+.home-plans { margin-top: 14px; }
+.plan-entry + .exam-key { margin-top: 12px; }
+
+/* ——— Kdo se učí (screens/Profiles.tsx) ——— */
+.who-chip {
+  display: inline-flex; align-items: center; gap: 6px; max-width: 40vw; height: 40px; padding: 0 12px 0 8px; border-radius: 999px;
+  background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 2px 0 var(--key-edge); color: var(--ink); text-decoration: none;
+}
+.who-chip span { font-size: 1.3rem; }
+.who-chip b { font-weight: 800; font-size: 0.92rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.who { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.who-key {
+  display: grid; justify-items: center; gap: 6px; padding: 20px 10px 16px; border-radius: var(--r);
+  background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 4px 0 var(--key-edge);
+}
+.who-key.on { box-shadow: inset 0 0 0 2.5px var(--accent), 0 4px 0 var(--key-edge); background: var(--accent-soft); }
+.who-key b { font-weight: 850; font-size: 1.05rem; overflow-wrap: anywhere; }
+.who-key small { font: 700 0.75rem/1 var(--mono); color: var(--ink-2); }
+.who-em { font-size: 2.6rem; line-height: 1; }
+.who-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
+.who-row .who-em { font-size: 1.7rem; width: 40px; text-align: center; }
+.who-form { display: grid; gap: 4px; padding: 16px; border-radius: var(--r); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); margin-top: 10px; }
+.avatars { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+.avatars button { width: 44px; height: 44px; border-radius: 12px; font-size: 1.5rem; background: var(--key); box-shadow: inset 0 0 0 1px var(--line); }
+.avatars button.on { box-shadow: inset 0 0 0 2.5px var(--accent); background: var(--accent-soft); }
+.who-actions .btn + .btn { --c: var(--k-orange); --on-c: var(--k-orange-on); }
+.who-delete { justify-self: center; margin-top: 10px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

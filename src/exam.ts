@@ -6,7 +6,7 @@ import type { SubjectId } from './content/types'
 // explanations and questions stay in the content service. check.ts makes sure every topic exists.
 
 export interface ExamArea {
-  /** In the address (/prijimacky/matematika/<id>); never "test". */
+  /** In the address (/prijimacky/matematika/<id>); never "test" or "simulace". */
   id: string
   title: string
   emoji: string

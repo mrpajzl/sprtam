@@ -12,13 +12,15 @@
 - **Odborné školy:** obory (IT, strojírenství, mechatronik, kosmetické služby, starožitník) s odbornými předměty po ročnících – **[sprtam.cz/obor](https://sprtam.cz/obor)** ([jak to funguje](docs/OBORY.md)).
 - **Dvě vysvětlení ke každému tématu** a 49 interaktivních pomůcek (číselná osa, zlomky, rovnice na vahách, periodická tabulka, elektrický obvod, krokování kódu, pexeso…) – všechny v **[galerii](https://sprtam.cz/widgety)**.
 - **Šest režimů:** Rychlý kvíz, Opakování, Písemka se známkou, Zkoušení nahlas, Test z předmětu a Mix.
-- **Přijímačky na SŠ:** příprava na jednotnou přijímací zkoušku z češtiny a matematiky po oblastech a cvičné testy – **[sprtam.cz/prijimacky](https://sprtam.cz/prijimacky)**.
+- **Přijímačky na SŠ:** příprava na jednotnou přijímací zkoušku z češtiny a matematiky po oblastech, cvičné testy a ostrá simulace na čas s body z 50 – **[sprtam.cz/prijimacky](https://sprtam.cz/prijimacky)**.
+- **Plán před písemkou:** vybereš témata a den písemky a aplikace ti opakování rozvrhne do zbývajících dní, s cvičnou písemkou den předem a připomínkou v kalendáři – **[sprtam.cz/plan](https://sprtam.cz/plan)**.
 - **Slepá mapa:** hra na hledání krajů Česka, států Evropy a světa a jejich hlavních měst – **[sprtam.cz/slepa-mapa](https://sprtam.cz/slepa-mapa)**.
 - **Slovíčka** s výslovností a opakováním podle Leitnerova systému: angličtina A1–C1, němčina, francouzština a španělština A1–B1.
 - **Druhý cizí jazyk** (němčina, francouzština, španělština) od 7. třídy po maturitu.
 - **Waldorfská škola:** učivo po epochách podle waldorfského plánu, vysvětlení v duchu waldorfské pedagogiky a slovní hodnocení – **[sprtam.cz/waldorf](https://sprtam.cz/waldorf)**.
 - **Doporučení „Na řadě“:** co zopakovat, co ti nejde a na jakém základu z nižšího ročníku to stojí.
 - **Sešit chyb a Dnešní opakování:** každá spletená otázka se vrací, dokud ji dvakrát neodpovíš správně, a co ti vypadává z hlavy, přijde na řadu podle opakování s rozestupy. K tomu **nápovědy** po krocích, **přehled** po předmětech a **denní cíl**.
+- **Pro celou rodinu:** víc dětí na jednom zařízení, každé se svým pokrokem (bez účtů), pracovní listy k vytištění, větší písmo a písmo pro snadné čtení, ovládání klávesnicí a rozdělané kolo, které počká.
 - **Nahlásit chybu** přímo u otázky nebo vysvětlení, anonymně, rovnou moderátorům.
 - **Hledání** ve všech ročnících a předmětech.
 

@@ -137,5 +137,5 @@ function BlockQuiz({ b }: { b: YearBlock }) {
     return refs.flatMap((r, i) => (loaded[i] ? [{ key: r.key, t: loaded[i]! }] : []))
   }, [b])
   if (!topics) return <div class="page" />
-  return <div style={STYLE}><Quiz mode="test" topics={topics} /></div>
+  return <div style={STYLE}><Quiz mode="test" topics={topics} label={`${b.emoji} ${b.title}`} /></div>
 }

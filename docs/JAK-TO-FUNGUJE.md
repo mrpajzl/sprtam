@@ -34,7 +34,8 @@ Příprava na jednotnou přijímací zkoušku po 9. třídě je na [sprtam.cz/pr
 
 - **oblasti**, na které se test ptá (zlomky, rovnice, geometrie…, pravopis, skladba, literatura…), každou s tématy aplikace z 5.–9. třídy a ukazatelem, jak ti jdou;
 - **procvičení oblasti**: jeden test z otázek všech jejích témat;
-- **cvičný test** z celého předmětu: 20 otázek ze všech oblastí se známkou.
+- **cvičný test** z celého předmětu: 20 otázek ze všech oblastí se známkou;
+- **ostrou simulaci**: celý test na čas jako na přijímačkách (matematika 70 minut, čeština 60 minut), 30 otázek rozložených rovnoměrně do oblastí v jejich pořadí, bez nápověd a bez průběžného vyhodnocení. Otázku můžeš přeskočit a vrátit se k ní (mřížka čísel nahoře ukazuje, co je hotové). Když čas vyprší, test se sám odevzdá; nezodpovězené otázky se počítají jako chyba. Výsledek je v **bodech z 50** a po oblastech. Body jsou odhad: každá otázka má stejnou váhu, ve skutečném testu se úlohy bodují různě. Když simulaci zavřeš, čas se zastaví a příště můžeš pokračovat. Hvězdičky témat se počítají jen ze zodpovězených otázek. Kód: [`src/screens/ExamSim.tsx`](../src/screens/ExamSim.tsx).
 
 Výklad a otázky jsou ty z běžných témat, pokrok je pořád jeden. Rozdělení do oblastí je v kódu ([`src/exam.ts`](../src/exam.ts)) a `check:content` i moderace hlídají, že všechna odkazovaná témata existují. Opravdová zadání z minulých let jsou na prijimacky.cermat.cz.
 
@@ -66,6 +67,24 @@ Mapu posuneš tažením a přiblížíš (až 60×) dvěma prsty, kolečkem myš
 | **Sešit chyb** | 15 | Otázky ze všech témat, které se ti spletly a ještě jsi je neopravil. |
 
 U některých témat z matematiky a fyziky se v Rychlém kvízu, Opakování a Písemce k ručně napsaným otázkám přidávají **automaticky generované příklady** (např. násobilka, zlomky, rovnice), takže se neopakují pořád stejná čísla. Kód: [`src/quiz/generators.ts`](../src/quiz/generators.ts).
+
+### Rozdělané kolo
+
+Kolo, které nedokončíš (zavřená záložka, telefonát, zamčený telefon), se po každé odpovědi uloží. Když se na stejné místo vrátíš, aplikace se zeptá, jestli chceš **pokračovat**, nebo začít znovu. Na úvodní obrazovce je karta *Pokračovat* (křížkem ji zahodíš). Pamatuje se jedno kolo, nejvýš týden. Když se mezitím otázky v učivu změní, kolo začne znovu. Odpovědi už dané jsou v pokroku tak jako tak, uložené kolo si pamatuje jen, které otázky mělo a jak dopadly. Kód: [`src/progress/resume.ts`](../src/progress/resume.ts).
+
+### Klávesnice
+
+Na počítači jde kvíz ovládat klávesami (u možností jsou vidět malé štítky s čísly, na dotykových zařízeních se neukazují):
+
+| Klávesa | Co udělá |
+|---|---|
+| `1`–`9` | vybere možnost, i v doplňovačkách (pravda/nepravda: `1`/`2`, nebo `P`/`N`) |
+| `H` | další nápověda |
+| `Enter`, mezerník nebo `→` | po vyhodnocení další otázka |
+| `Enter` nebo mezerník, pak `1`/`2` (`N`/`V`) | Zkoušení: ukázat odpověď, pak Nevěděl/a nebo Věděl/a |
+| `/` | hledání |
+
+Klávesy nereagují, když píšeš do políčka nebo je otevřený dialog. Kdo ovládá aplikaci hlasem, je vypne v Nastavení → Ovládání (diktované číslo by jinak mohlo vybrat odpověď). Kód: [`src/ui/keys.ts`](../src/ui/keys.ts).
 
 ### Nápovědy
 
@@ -142,6 +161,17 @@ Podle přihrádky se otázka vrací: 0 hned, 1 po 1 dni, 2 po 3 dnech, 3 po 7 dn
 - **Denní cíl**: kolik odpovědí denně chceš dát, 10, 20 (výchozí) nebo 40, nebo bez cíle (Nastavení → Denní cíl). Počítá se každá odpověď v kvízu i u slovíček. Na displeji úvodní obrazovky je vidět, kolik už máš.
 - **Série dní** vydrží **jeden vynechaný den za týden**: když jeden den vynecháš a další den zase procvičuješ, série pokračuje (vynechaný den svítí na displeji modře). Dva vynechané dny po sobě sérii ukončí. Vynechané dny se do počtu dní nepočítají. Kód: `streakOf` v [`src/progress/recommend.ts`](../src/progress/recommend.ts).
 
+## Plán před písemkou
+
+Na [sprtam.cz/plan](https://sprtam.cz/plan) (na úvodní obrazovce *Plán před písemkou*, nebo *Píšu z toho písemku* u tématu) si vybereš témata a den písemky. Aplikace opakování rozvrhne do zbývajících dní. Kód: [`src/progress/plan.ts`](../src/progress/plan.ts).
+
+- Téma **umíš**, když poslední kolo mělo aspoň 75 % a procvičoval jsi ho v posledních 7 dnech.
+- **Dnes procvič**: každý den do předposledního dne před písemkou nabídne témata, která ještě neumíš: nejdřív nová (v pořadí, jak jsi je vybral), pak ta, která ti nejdou nejvíc, pak ta, která jsi nejdéle neopakoval. Kolik jich je, se řídí tím, kolik zbývá: aby se všechna stihla do předposledního dne, aspoň jedno a nejvýš 4 denně. Co jsi dnes procvičil, se do dnešní dávky počítá a znovu se nenabízí.
+- **Den před písemkou**: cvičná písemka (10 otázek ze všech témat, známka) a co ještě nejde.
+- **V den písemky**: „Hodně štěstí!“ Po písemce plán za 2 dny sám zmizí z úvodní obrazovky.
+- Plán jde upravit, smazat, vytisknout jako **pracovní list** a přidat do **kalendáře** (připomínka každý den v čase, který si zvolíš, až do dne před písemkou, a písemka sama s upozorněním večer předem).
+- Plány jsou součástí pokroku: zůstávají jen v zařízení a přenesou se propojením zařízení (ne kódem pokroku).
+
 ## Slovíčka
 
 **Angličtina**: přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního rámce, rozdělených do tematických skupin. **Němčina, francouzština a španělština** (druhý cizí jazyk od 7. třídy): úrovně A1–B1, na stránce Slovíčka pod *Další jazyky* a v předmětu jazyka. Kód: [`src/screens/Vocab.tsx`](../src/screens/Vocab.tsx), jazyky v [`src/vocab/langs.ts`](../src/vocab/langs.ts).
@@ -160,6 +190,10 @@ Podle přihrádky se otázka vrací: 0 hned, 1 po 1 dni, 2 po 3 dnech, 3 po 7 dn
 - **Připnutá témata**: špendlíkem si označíš, co se zrovna učíš. Připnutá témata se vracejí dřív a jdou procvičit najednou v Mixu.
 - **Série dní**: kolik dní po sobě jsi procvičoval (počítá se, pokud jsi procvičoval dnes nebo včera; jeden vynechaný den za týden sérii nepřeruší, viz [Přehled a denní cíl](#přehled-a-denní-cíl)).
 - **Tmavý vzhled**: v nastavení (ozubené kolečko na úvodní obrazovce).
+- **Čtení** (Nastavení → Čtení): větší nebo největší písmo, víc místa mezi řádky, písmeny a slovy a **písmo pro snadné čtení** (Atkinson Hyperlegible Next: písmena jako b/d nebo I/l/1 se nepletou). Platí pro celé zařízení, uloží se v něm. Kód: [`src/reading.ts`](../src/reading.ts).
+- **Kdo se učí** (Nastavení → Kdo se učí): na jednom zařízení (rodinný tablet) se může učit víc dětí, každé má svůj pokrok, plány, sérii dní, rekordy Slepé mapy, obor a školu. Nejsou to účty: profil je jen jméno a obrázek v zařízení. Na úvodní obrazovce se nahoře ukáže, kdo se učí, a klepnutím se přepne. Vzhled a čtení jsou společné. Přenos pokroku na jiné zařízení posílá pokrok jen toho, kdo se právě učí. Kód: [`src/profiles.ts`](../src/profiles.ts).
+- **Pracovní list** (*Pracovní list* u tématu nebo plánu): otázky k vytištění nebo uložení do PDF, 10, 20 nebo všechny, s místem na odpověď a řešením na zvláštní stránce. Otázky s interaktivní pomůckou na papír nejdou, ty se vynechají. List vzniká v zařízení. Kód: [`src/screens/Worksheet.tsx`](../src/screens/Worksheet.tsx).
+- **Připomínka** (Nastavení → Připomínka): Šprtám nemá server, který by posílal upozornění. Připomínka proto přijde z tvého kalendáře: tlačítko stáhne soubor `.ics` s událostí každý den v čase, který si vybereš, a kalendář ji přidá. Na iPhonu soubor otevři ze *Stažených* (aplikace Soubory). Zrušíš ji v kalendáři. Kód: [`src/calendar.ts`](../src/calendar.ts).
 - **Offline**: po první návštěvě má aplikace v zařízení celé učivo všech ročníků a funguje i bez internetu.
 - **Instalace**: v prohlížeči jde aplikace „přidat na plochu“ a pak se chová jako běžná aplikace.
 - **Sdílitelné adresy**: každé téma má vlastní odkaz, např. [`sprtam.cz/g/z5/matematika/zlomky`](https://sprtam.cz/g/z5/matematika/zlomky). Učitel ho může poslat žákům.
