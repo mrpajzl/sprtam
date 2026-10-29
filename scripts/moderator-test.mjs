@@ -518,6 +518,18 @@ try {
   check((await admin.api('POST', `/api/admin/applications/${karel.id}/reject`, { note: 'Neznáme.' })).status === 200 && (await admin.api('GET', '/api/admin/applications/counts')).body.open === 0, 'an admin rejects an application')
   check((await admin.api('POST', `/api/admin/applications/${karel.id}/approve`)).status === 409, 'a rejected application cannot be approved')
 
+  // Vocabulary of other languages: only an admin publishes it, and only valid.
+  const de = { format: 1, lang: 'de', level: 'A1', groups: [{ name: 'Zvířata', emoji: '🐾', words: [{ cz: 'pes', word: 'der Hund', similar: 'der Mund', related: 'die Katze' }] }] }
+  const evaTok = (await eva.api('POST', '/api/me/tokens', { label: 'Slovíčka', days: 7 })).body.token
+  check((await bearer('POST', '/api/content/words', { files: [{ lang: 'de', level: 'A1', data: de }] }, evaTok)).status === 403, 'a moderator cannot publish vocabulary')
+  const dup = { ...de, groups: [{ ...de.groups[0], words: [de.groups[0].words[0], de.groups[0].words[0]] }] }
+  check((await admin.api('POST', '/api/content/words', { files: [{ lang: 'de', level: 'A1', data: dup }] })).status === 422, 'vocabulary with a word twice is refused')
+  check((await admin.api('POST', '/api/content/words', { files: [{ lang: 'xx', level: 'A1', data: de }] })).status === 400, 'an unknown language is refused')
+  const words = await admin.api('POST', '/api/content/words', { files: [{ lang: 'de', level: 'A1', data: de }] })
+  check(words.status === 200 && words.body.published === 1, 'an admin publishes German vocabulary')
+  const wm = await (await fetch(`${BASE}/api/public/v1/manifest`)).json()
+  check(!!wm.files['words/de/A1'] && !Object.keys(wm.files).some((n) => n.startsWith('vocab/de')), 'the release has it as words/de/A1')
+
   check([admin, mod, teacher, eva, janaDev].every((d) => !d.errors.length), 'no errors in the pages')
 } finally {
   await browser.close()
