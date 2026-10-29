@@ -32,10 +32,10 @@ const MODES = ['kviz', 'opakovani', 'pisemka', 'zkouseni']
 /** Routes the app renders that have no page of their own (server/pages.ts). */
 function isAppRoute(path: string) {
   const p = path.split('/').filter(Boolean)
-  if (p.length === 1) return ['hledat', 'mix', 'sdilet', 'widgety', 'nastaveni', 'prehled', 'chyby', 'dnes', 'profily'].includes(p[0])
+  if (p.length === 1) return ['hledat', 'mix', 'sdilet', 'widgety', 'nastaveni', 'prehled', 'chyby', 'dnes', 'profily', 'plan'].includes(p[0])
   if (p.join('/') === 'chyby/procvicit') return true
   // Plán před písemkou: /plan, /plan/novy, /plan/<id>, /plan/<id>/upravit|pisemka|tisk (plans live only in the device)
-  if (p[0] === 'plan') return p.length === 1 || (p.length <= 3 && /^[a-z0-9]{1,12}$/.test(p[1]) && (p.length === 2 || ['upravit', 'pisemka', 'tisk'].includes(p[2])))
+  if (p[0] === 'plan') return (p.length <= 3 && /^[a-z0-9]{1,12}$/.test(p[1]) && (p.length === 2 || ['upravit', 'pisemka', 'tisk'].includes(p[2])))
   if (p[0] === 'widgety' && p.length === 2) return /^[a-z]+(-[a-z]+)*$/.test(p[1])
   if (p[0] === 'g' && p.length === 4 && p[3] === '~test') return page(...p.slice(0, 3))
   if (p[0] === 'g' && p.length === 5 && (MODES.includes(p[4]) || p[4] === 'tisk')) return page(...p.slice(0, 4))
