@@ -66,11 +66,12 @@ MIRROR = DATA / 'mirror'
 MIRROR_META = Path(__file__).resolve().with_name('mirror')  # README.md and LICENSE of the public mirror
 
 # Document keys (src/content/docs.ts) – also the paths of files in the mirror, so nothing else may pass.
-KEY = re.compile(r'^(topics/[a-z][0-9]/[a-z]+/(_subject|[a-z0-9]+(-[a-z0-9]+)*)|vocab/(a1|a2|b1|b2|c1)|approaches/[a-z0-9]+(-[a-z0-9]+)*/(approach|[a-z][0-9]))$')
+KEY = re.compile(r'^(topics/([a-z][0-9]|odb)/[a-z0-9]+(-[a-z0-9]+)*/(_subject|[a-z0-9]+(-[a-z0-9]+)*)|vocab/((de|fr|es)/)?(a1|a2|b1|b2|c1)|approaches/[a-z0-9]+(-[a-z0-9]+)*/(approach|[a-z][0-9]))$')
 SCHEMA = {
     'topic': '../../../schema/topic.schema.json',
     'subject': '../../../schema/subject.schema.json',
     'vocab': '../schema/vocab.schema.json',
+    'words': '../../schema/words.schema.json',
     'approach': '../../schema/approach.schema.json',
     'approach-year': '../../schema/approach-year.schema.json',
 }
@@ -355,7 +356,7 @@ def kind_of(key):
     if p[0] == 'topics':
         return 'subject' if p[3] == '_subject' else 'topic'
     if p[0] == 'vocab':
-        return 'vocab'
+        return 'words' if len(p) == 3 else 'vocab'
     return 'approach' if p[2] == 'approach' else 'approach-year'
 
 

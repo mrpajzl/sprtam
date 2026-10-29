@@ -106,7 +106,8 @@ Nové vydání učiva (schválená změna v moderaci) je na sprtam.cz do 15 seku
 | `/g/z5/matematika/zlomky` | Téma |
 | `/g/z5/matematika/zlomky/kviz` | Režim (`kviz`, `opakovani`, `pisemka`, `zkouseni`) |
 | `/g/z5/matematika/~test` | Test z předmětu |
-| `/slovicka`, `/slovicka/A1` | Slovíčka, úroveň |
+| `/slovicka`, `/slovicka/A1` | Slovíčka, úroveň (angličtina) |
+| `/slovicka/nemcina`, `/slovicka/nemcina/A1` | slovíčka dalšího jazyka a jeho úroveň (`src/vocab/langs.ts`) |
 | `/slovicka/A1/0`, `/slovicka/A1/vse` | Procvičování jedné skupiny / všech skupin úrovně |
 | `/hledat?q=…` | Hledání |
 | `/mix` | Mix připnutých témat |
@@ -210,7 +211,8 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/check-quiz.ts` | že každá napsaná odpověď projde vlastní kontrolou |
 | `scripts/flow.mjs` | průchod kvízem |
 | `scripts/vocab-test.mjs` | slovíčka |
-| `scripts/vocab-audio.ts` | nahrávky výslovnosti: `gen` nahraje chybějící přes ElevenLabs (klíč v `ELEVENLABS_API_KEY`), `build` je ořízne, srovná hlasitost a zapíše do `public/audio/en` a verzi do `src/vocab/audio.ts`, `check` je nechá přepsat řečí na text a porovná se slovíčkem |
+| `scripts/vocab-check-test.ts` | psané odpovědi slovíček ve všech jazycích (diakritika, rod v závorce) a názvy nahrávek |
+| `scripts/vocab-audio.ts` | nahrávky výslovnosti: `gen` nahraje chybějící přes ElevenLabs (klíč v `ELEVENLABS_API_KEY`), `build` je ořízne, srovná hlasitost a zapíše do `public/audio/<jazyk>` a verzi do `src/vocab/audio.ts` (`--lang de,fr` jen některé jazyky), `check` je nechá přepsat řečí na text a porovná se slovíčkem |
 | `scripts/p2p-test.mjs` | spojení dvou oddělených prohlížečů přes WebRTC |
 | `scripts/code-test.mjs` | kód pokroku tam a zpět |
 | `scripts/import-test.mjs` | import pokroku odkazem (proti produkci) |

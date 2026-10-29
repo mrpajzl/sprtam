@@ -29,7 +29,8 @@ Ke stažení je dvakrát:
 |---|---|
 | `topics/<ročník>/<předmět>/<id>` | jedno téma |
 | `topics/<ročník>/<předmět>/_subject` | pořadí témat předmětu (u odborných předmětů, `topics/odb/…`, i jeho název, emoji a barva) |
-| `vocab/<a1…c1>` | slovíčka jedné úrovně |
+| `vocab/<a1…c1>` | anglická slovíčka jedné úrovně |
+| `vocab/<de\|fr\|es>/<a1…c1>` | slovíčka dalšího jazyka jedné úrovně |
 | `approaches/<id>/approach`, `approaches/<id>/<ročník>` | přístup k výuce a jeho plán ročníku |
 
 Formát dokumentů se nezměnil ([FORMAT.md](FORMAT.md)).
@@ -37,7 +38,7 @@ Formát dokumentů se nezměnil ([FORMAT.md](FORMAT.md)).
 - **Verze.** Každé zveřejnění dokumentu je nová verze (`versions`). Tabulka verzí jde jen doplňovat: SQLite triggery odmítnou každý `UPDATE` i `DELETE`.
 - **Hash řetěz.** Každá verze nese SHA-256 svého obsahu a **řetěz**, tedy hash předchozího řetězu a údajů verze (klíč, číslo, hash obsahu, autor, vydání, důvod, čas). Kdo by historii přepsal, musí přepočítat řetěz až do konce. Záloha si pamatuje řetěz poslední verze, kterou viděla, a přepsání odhalí (viz [Zálohy](#zálohy)). Kontrolu ukazuje i moderace (Vydání → Historie) a příkaz `cli.mjs verify`.
 - **Vydání** (`releases`) je jedno zveřejnění: jedna nebo víc nových verzí najednou, např. nové téma i s pořadím v předmětu. Vydání se číslují od 1. Vydání 1 je import učiva z repozitáře při prvním spuštění.
-- **Kontrola před zveřejněním.** Před každým vydáním se zkontroluje celé učivo i se změnou, a to stejnou kontrolou jako `npm run check:content` ([`src/content/check.ts`](../src/content/check.ts)). Formát a pravidla se kontrolují u změněných dokumentů, vazby mezi dokumenty u všech: každé téma je v seznamu předmětu právě jednou, plány přístupů ukazují na existující témata, anglická slovíčka jsou jedinečná. Co neprojde, nezveřejní se.
+- **Kontrola před zveřejněním.** Před každým vydáním se zkontroluje celé učivo i se změnou, a to stejnou kontrolou jako `npm run check:content` ([`src/content/check.ts`](../src/content/check.ts)). Formát a pravidla se kontrolují u změněných dokumentů, vazby mezi dokumenty u všech: každé téma je v seznamu předmětu právě jednou, plány přístupů ukazují na existující témata, slovíčka jsou jedinečná v rámci jazyka. Co neprojde, nezveřejní se.
 
 ## Zveřejnění: kontrola jiným moderátorem
 
@@ -142,7 +143,8 @@ Aplikace na sprtam.cz nemá učivo zabudované v sobě. Bere ho za běhu od serv
 | `subject/<ročník>/<předmět>` | témata předmětu v pořadí, v jakém se učí (`Topic[]`); ročník `odb` = odborné předměty |
 | `index` | řádek za každé téma: `[ročník, předmět, id, název, emoji, přístup?]` (hledání, doporučení) |
 | `text` | ve stejném pořadí jako `index`: názvy vysvětlení, pojmy a shrnutí (hledání) |
-| `vocab/<úroveň>` | slovíčka jedné úrovně A1–C1 |
+| `vocab/<úroveň>` | anglická slovíčka jedné úrovně A1–C1 |
+| `words/<jazyk>/<úroveň>` | slovíčka dalšího jazyka (de, fr, es). Ne pod `vocab/`: starší aplikace berou všechny soubory `vocab/` jako angličtinu |
 | `approach/<přístup>/<ročník>` | plán ročníku přístupu k výuce (epochy a jejich témata) |
 
 Popisy přístupů k výuce a názvy odborných předmětů jsou malé a aplikace je potřebuje hned při startu, proto jsou přímo v manifestu (`approaches`, `vocational`; ten chybí ve vydáních bez odborných předmětů).

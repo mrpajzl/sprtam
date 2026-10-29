@@ -25,7 +25,8 @@ import { Search } from './screens/Search'
 import { Settings } from './screens/Settings'
 import { SyncScreen } from './screens/Sync'
 import { MixScreen, QuizScreen, TopicScreen } from './screens/TopicScreen'
-import { LEVELS, VocabHome, VocabLevel, VocabDrill } from './screens/Vocab'
+import { LEVELS, VocabHome, VocabLangHome, VocabLevel, VocabDrill } from './screens/Vocab'
+import { langByPath } from './vocab/langs'
 import type { Level } from './vocab/types'
 import { TabBar } from './ui/TabBar'
 import { useAsync } from './ui/useAsync'
@@ -76,9 +77,13 @@ export function App() {
     return <><ApproachScreen key={`${b}/${c}`} id={a} g={b} block={c} />{g ? <TabBar active="grade" grade={g} /> : <TabBar />}</>
   }
   if (a === 'slovicka') {
-    const lvl = LEVELS.find((l) => l.id === b)?.id as Level | undefined
-    if (lvl && c) return <VocabDrill level={lvl} group={c} />
-    return <>{lvl ? <VocabLevel level={lvl} /> : <VocabHome />}<TabBar active="vocab" /></>
+    // English: /slovicka/<level>/<group>; other languages: /slovicka/<language>/<level>/<group>
+    const m = langByPath(b)
+    const [lang, lv, grp] = m ? [m.id, c, d] : ['en' as const, b, c]
+    const lvl = LEVELS.find((l) => l.id === lv)?.id as Level | undefined
+    if (lvl && grp) return <VocabDrill key={`${lang}/${lvl}`} lang={lang} level={lvl} group={grp} />
+    const screen = lvl ? <VocabLevel key={`${lang}/${lvl}`} lang={lang} level={lvl} /> : m ? <VocabLangHome lang={m.id} /> : <VocabHome />
+    return <>{screen}<TabBar active="vocab" /></>
   }
   if (a === OBOR_PATH.slice(1)) return <><OborScreen key={b} id={b} /><TabBar /></>
   if (a === 'g' && isGrade(b)) {
@@ -103,7 +108,11 @@ function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'o-aplikaci') return ABOUT.title
   if (a === 'widgety') return 'Galerie widgetů'
   if (a === EXAM.id || `/${a}` === MAPS_PATH || approachById(a)) return null
-  if (a === 'slovicka') return b ? titles.vocabLevel(b) : titles.vocab()
+  if (a === 'slovicka') {
+    const m = langByPath(b)
+    if (m) return c ? titles.vocabLevel(c, m.title) : titles.vocab(m.title)
+    return b ? titles.vocabLevel(b) : titles.vocab()
+  }
   if (a === 'g' && isGrade(b)) {
     const g = b
     if (hasSubjectIn(g, c)) return d === '~test' || !d ? titles.subject(g, c) : null

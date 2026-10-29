@@ -4,7 +4,7 @@ import { parseKey } from './docs'
 import { MANIFEST_FORMAT, type ApproachMeta, type Manifest, type TopicRow } from './manifest'
 import type { Snapshot } from './check'
 import type { VocationalMeta } from './curriculum'
-import type { ApproachFile, ApproachYearFile, GradeId, SubjectFile, TopicFile, VocabFile, YearId } from './types'
+import type { ApproachFile, ApproachYearFile, GradeId, SubjectFile, TopicFile, VocabFile, WordsFile, YearId } from './types'
 
 // Turns a set of content documents (docs.ts) into the files the app reads (manifest.ts). Runs on the
 // server: in the content service when something is published, and in development from content/.
@@ -23,12 +23,14 @@ export function buildRelease(snap: Snapshot): ReleaseFiles {
   const named = new Map<string, unknown>()
   const subjects: [string, string, SubjectFile][] = []
   const vocab: VocabFile[] = []
+  const words: WordsFile[] = []
   const metas = new Map<string, ApproachFile>()
   const years: [string, YearId, ApproachYearFile][] = []
   for (const [key, value] of snap) {
     const ref = parseKey(key)
     if (ref?.kind === 'subject') subjects.push([ref.grade, ref.subject, value as SubjectFile])
     else if (ref?.kind === 'vocab') vocab.push(value as VocabFile)
+    else if (ref?.kind === 'words') words.push(value as WordsFile)
     else if (ref?.kind === 'approach') metas.set(ref.approach, value as ApproachFile)
     else if (ref?.kind === 'approach-year') years.push([ref.approach, ref.grade, value as ApproachYearFile])
   }
@@ -51,6 +53,8 @@ export function buildRelease(snap: Snapshot): ReleaseFiles {
   for (const [g, s, f] of subjects) if (g === 'odb' && f.name && f.emoji && f.color) vocational[s] = { name: f.name, emoji: f.emoji, c: f.color }
   named.set('text', text)
   for (const v of vocab.sort((a, b) => (a.level < b.level ? -1 : 1))) named.set(`vocab/${v.level}`, v)
+  // Not under vocab/: older apps take every vocab/ file for English.
+  for (const v of words) named.set(`words/${v.lang}/${v.level}`, v)
   for (const [id, g, y] of years) named.set(`approach/${id}/${g}`, y)
 
   const approaches: ApproachMeta[] = [...metas.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1)).map(([id, { format: _, ...a }]) => ({

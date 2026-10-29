@@ -29,7 +29,7 @@ export const GRADE_SHORT: Record<GradeId, string> = {
 }
 
 /** Key colours (see --k-* in styles.css). */
-export const KEY_COLORS = ['orange', 'blue', 'yellow', 'green', 'lime', 'teal', 'purple', 'pink', 'red', 'gray', 'ink'] as const
+export const KEY_COLORS = ['orange', 'blue', 'yellow', 'green', 'lime', 'teal', 'purple', 'pink', 'red', 'gray', 'ink', 'magenta', 'brown'] as const
 export type KeyColor = (typeof KEY_COLORS)[number]
 
 export interface SubjectMeta {
@@ -45,6 +45,9 @@ export const SUBJECTS: Record<CoreSubjectId, SubjectMeta> = {
   literatura: { name: 'Literatura', c: 'ink' },
   matematika: { name: 'Matematika', c: 'blue' },
   anglictina: { name: 'Angličtina', c: 'purple' },
+  nemcina: { name: 'Němčina', c: 'green' },
+  francouzstina: { name: 'Francouzština', c: 'magenta' },
+  spanelstina: { name: 'Španělština', c: 'brown' },
   prvouka: { name: 'Prvouka', c: 'green' },
   prirodoveda: { name: 'Přírodověda', c: 'green' },
   vlastiveda: { name: 'Vlastivěda', c: 'yellow' },
@@ -59,6 +62,10 @@ export const SUBJECTS: Record<CoreSubjectId, SubjectMeta> = {
   informatika: { name: 'Informatika', c: 'teal' },
 }
 
+/** Second foreign languages (RVP ZV: další cizí jazyk from the 7th grade; RVP G: all four years). A pupil learns one
+ *  of them, so they are optional: a grade shows the ones that have topics, and the content may lack any of them. */
+export const SECOND_LANGUAGES: CoreSubjectId[] = ['nemcina', 'francouzstina', 'spanelstina']
+
 /** Which subjects each grade has (follows RVP ZV and RVP G). */
 export const GRADE_SUBJECTS: Record<YearId, CoreSubjectId[]> = {
   z1: ['cestina', 'matematika', 'prvouka'],
@@ -67,13 +74,13 @@ export const GRADE_SUBJECTS: Record<YearId, CoreSubjectId[]> = {
   z4: ['cestina', 'matematika', 'anglictina', 'prirodoveda', 'vlastiveda'],
   z5: ['cestina', 'matematika', 'anglictina', 'prirodoveda', 'vlastiveda'],
   z6: ['cestina', 'matematika', 'anglictina', 'dejepis', 'zemepis', 'prirodopis', 'fyzika', 'obcanska'],
-  z7: ['cestina', 'matematika', 'anglictina', 'dejepis', 'zemepis', 'prirodopis', 'fyzika', 'obcanska'],
-  z8: ['cestina', 'matematika', 'anglictina', 'dejepis', 'zemepis', 'prirodopis', 'fyzika', 'chemie', 'obcanska'],
-  z9: ['cestina', 'matematika', 'anglictina', 'dejepis', 'zemepis', 'prirodopis', 'fyzika', 'chemie', 'obcanska'],
-  s1: ['cestina', 'literatura', 'matematika', 'anglictina', 'dejepis', 'zemepis', 'biologie', 'fyzika', 'chemie', 'zsv'],
-  s2: ['cestina', 'literatura', 'matematika', 'anglictina', 'dejepis', 'zemepis', 'biologie', 'fyzika', 'chemie', 'zsv'],
-  s3: ['cestina', 'literatura', 'matematika', 'anglictina', 'dejepis', 'zemepis', 'biologie', 'fyzika', 'chemie', 'zsv'],
-  s4: ['cestina', 'literatura', 'matematika', 'anglictina', 'dejepis', 'zsv'],
+  z7: ['cestina', 'matematika', 'anglictina', 'nemcina', 'francouzstina', 'spanelstina', 'dejepis', 'zemepis', 'prirodopis', 'fyzika', 'obcanska'],
+  z8: ['cestina', 'matematika', 'anglictina', 'nemcina', 'francouzstina', 'spanelstina', 'dejepis', 'zemepis', 'prirodopis', 'fyzika', 'chemie', 'obcanska'],
+  z9: ['cestina', 'matematika', 'anglictina', 'nemcina', 'francouzstina', 'spanelstina', 'dejepis', 'zemepis', 'prirodopis', 'fyzika', 'chemie', 'obcanska'],
+  s1: ['cestina', 'literatura', 'matematika', 'anglictina', 'nemcina', 'francouzstina', 'spanelstina', 'dejepis', 'zemepis', 'biologie', 'fyzika', 'chemie', 'zsv'],
+  s2: ['cestina', 'literatura', 'matematika', 'anglictina', 'nemcina', 'francouzstina', 'spanelstina', 'dejepis', 'zemepis', 'biologie', 'fyzika', 'chemie', 'zsv'],
+  s3: ['cestina', 'literatura', 'matematika', 'anglictina', 'nemcina', 'francouzstina', 'spanelstina', 'dejepis', 'zemepis', 'biologie', 'fyzika', 'chemie', 'zsv'],
+  s4: ['cestina', 'literatura', 'matematika', 'anglictina', 'nemcina', 'francouzstina', 'spanelstina', 'dejepis', 'zsv'],
 }
 
 export const ALL_GRADES = STAGES.flatMap((s) => s.grades)

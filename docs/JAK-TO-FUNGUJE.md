@@ -142,15 +142,15 @@ Podle přihrádky se otázka vrací: 0 hned, 1 po 1 dni, 2 po 3 dnech, 3 po 7 dn
 - **Denní cíl**: kolik odpovědí denně chceš dát, 10, 20 (výchozí) nebo 40, nebo bez cíle (Nastavení → Denní cíl). Počítá se každá odpověď v kvízu i u slovíček. Na displeji úvodní obrazovky je vidět, kolik už máš.
 - **Série dní** vydrží **jeden vynechaný den za týden**: když jeden den vynecháš a další den zase procvičuješ, série pokračuje (vynechaný den svítí na displeji modře). Dva vynechané dny po sobě sérii ukončí. Vynechané dny se do počtu dní nepočítají. Kód: `streakOf` v [`src/progress/recommend.ts`](../src/progress/recommend.ts).
 
-## Anglická slovíčka
+## Slovíčka
 
-Přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního rámce, rozdělených do tematických skupin. Kód: [`src/screens/Vocab.tsx`](../src/screens/Vocab.tsx), data v [`content/vocab`](../content/vocab).
+**Angličtina**: přes 1 400 slovíček v úrovních **A1–C1** podle Evropského referenčního rámce, rozdělených do tematických skupin. **Němčina, francouzština a španělština** (druhý cizí jazyk od 7. třídy): úrovně A1–B1, na stránce Slovíčka pod *Další jazyky* a v předmětu jazyka. Kód: [`src/screens/Vocab.tsx`](../src/screens/Vocab.tsx), jazyky v [`src/vocab/langs.ts`](../src/vocab/langs.ts).
 
 - Otázka zní česky: *„Jak se řekne ‚pták‘?“*
 - **Nové slovo** vybíráš ze tří podobných možností (*bird / bard / parrot*): správné, podobně vypadající a příbuzné.
-- **Slovo, které už umíš**, píšeš sám s nápovědou prvního písmene. U slov od 5 písmen projde jeden překlep, od 12 písmen dva. Kratší slova musí být přesně.
+- **Slovo, které už umíš**, píšeš sám s nápovědou prvního písmene. U slov od 5 písmen projde jeden překlep, od 12 písmen dva. Kratší slova musí být přesně. Chybějící diakritika (*uber* místo *über*) projde jako překlep, správný tvar se ukáže. Podstatná jména se píšou se členem (*der Hund*).
 - Když se spleteš, slovo se **ve stejném kole vrátí o 3 karty později** k napsání.
-- Po odpovědi se přehraje **výslovnost**: nahrávka rodilého hlasu (britský, u amerických a australských idiomů americký a australský). Slovíčka z rozehraného kola se uloží, takže hrají i offline. Bez nahrávky mluví hlas prohlížeče (podrobnosti v [Soukromí](SOUKROMI.md#co-se-posílá-ven)).
+- Po odpovědi se přehraje **výslovnost**: nahrávka rodilého hlasu (v angličtině britský, u amerických a australských idiomů americký a australský). Slovíčka z rozehraného kola se uloží, takže hrají i offline. Bez nahrávky mluví hlas prohlížeče (podrobnosti v [Soukromí](SOUKROMI.md#co-se-posílá-ven)).
 - Slova se opakují podle **Leitnerova systému**: každé slovo má přihrádku 0–5. Správná odpověď ho posune o přihrádku výš, chyba vrátí na 0. V kole přijdou na řadu nejdřív slova z nejnižších přihrádek. Od přihrádky 2 se slovo píše.
 - **Postup** u každé skupiny a úrovně: číslo ukazuje, kolik slov jsi už aspoň jednou trefil, ukazatel se posune s každou správnou odpovědí a zaplní se, až jsou všechna slova aspoň v přihrádce 3 (naučená). Chyba slovo vrátí na začátek.
 

@@ -55,7 +55,7 @@ for (const [k, v] of snap) {
   if (only && !only.has(k)) continue
   const ref = parseKey(k)
   if (ref?.kind === 'topic') { topics++; questions += (v as TopicFile).questions?.length ?? 0 }
-  if (ref?.kind === 'vocab') words += (v as VocabFile).groups?.reduce((n, g) => n + (g.words?.length ?? 0), 0) ?? 0
+  if (ref?.kind === 'vocab' || ref?.kind === 'words') words += (v as VocabFile).groups?.reduce((n, g) => n + (g.words?.length ?? 0), 0) ?? 0
 }
 
 // ——— Widget registry ———

@@ -18,8 +18,9 @@ export const titles = {
   grade: (g: GradeId) => (g === 'odb' ? 'Odborné předměty – střední odborné školy' : `${gradeLabel(g)} – všechny předměty`),
   subject: (g: GradeId, s: SubjectId) => `${subjectMeta(s).name} – ${gradeLabel(g)}`,
   topic: (g: GradeId, s: SubjectId, title: string) => `${title} – ${subjectMeta(s).name}, ${gradeLabel(g)}`,
-  vocab: () => 'Anglická slovíčka A1–C1',
-  vocabLevel: (level: string) => `Anglická slovíčka ${level}`,
+  /** /slovicka, or one language's /slovicka/<language> ("Německá slovíčka"). */
+  vocab: (lang?: string) => lang ?? 'Slovíčka – angličtina A1–C1 a další jazyky',
+  vocabLevel: (level: string, lang = 'Anglická slovíčka') => `${lang} ${level}`,
   approach: (name: string) => `${name} – epochy a učivo`,
   approachYear: (name: string, year: string) => `${name}: ${year} – epochy`,
   approachBlock: (name: string, year: string, block: string) => `${block} – ${name}, ${year}`,

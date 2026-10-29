@@ -1,15 +1,15 @@
 import { EXAM } from '../exam'
-import { GRADE_SUBJECTS, isVocationalEntry, ODB } from './curriculum'
+import { GRADE_SUBJECTS, isVocationalEntry, ODB, SECOND_LANGUAGES } from './curriculum'
 import { parseKey, RESERVED, SCHEMAS, subjectKey, vocabKey, type DocRef } from './docs'
 import { LEVELS } from './format'
 import { topicIssues } from './rules'
 import { validate } from './schema'
-import type { ApproachYearFile, SubjectFile, TopicFile, VocabFile } from './types'
+import type { ApproachYearFile, SubjectFile, TopicFile, VocabFile, WordsFile } from './types'
 
 // Checks a whole set of content documents (docs.ts): the format of each, the authoring rules of topics
 // (rules.ts), and everything that ties documents together – every topic listed in its subject exactly
 // once, plans of teaching approaches and the entrance exam preparation (src/exam.ts) pointing at existing topics,
-// English words unique across levels.
+// words unique across the levels of each language.
 // Used by scripts/check-content.ts (files in content/) and by the content service before anything is
 // published (the database with the change applied), so the two can never disagree.
 
@@ -92,8 +92,9 @@ export function checkSnapshot(snap: Snapshot, opts: CheckOptions = {}): CheckIss
   const listed = new Set<string>()
   for (const [key, ref] of refs) if (ref.kind === 'subject' && valid.has(key)) for (const id of (snap.get(key) as SubjectFile).topics) listed.add(`topics/${ref.grade}/${ref.subject}/${id}`)
   for (const [key, ref] of refs) if (ref.kind === 'topic' && snap.has(subjectKey(ref.grade, ref.subject)) && !listed.has(key)) add(key, '', 'not listed in _subject', 'Téma chybí v seznamu témat předmětu.')
+  // Second languages are optional: a grade may have none of them yet.
   if (!opts.partial) for (const [g, subs] of Object.entries(GRADE_SUBJECTS)) for (const s of subs) {
-    if (!snap.has(subjectKey(g, s))) add(subjectKey(g, s), '', 'missing (every subject of the curriculum needs its content)', 'Chybí seznam témat předmětu.')
+    if (!SECOND_LANGUAGES.includes(s) && !snap.has(subjectKey(g, s))) add(subjectKey(g, s), '', 'missing (every subject of the curriculum needs its content)', 'Chybí seznam témat předmětu.')
   }
 
   // ——— Teaching approaches ———
@@ -142,6 +143,21 @@ export function checkSnapshot(snap: Snapshot, opts: CheckOptions = {}): CheckIss
       const k = w.en.toLowerCase()
       if (english.has(k)) add(key, where, `"${w.en}" is already in ${english.get(k)}`, `${where}: „${w.en}“ už je v ${english.get(k)}.`)
       english.set(k, `${l} ${g.name}`)
+    }
+  }
+  // Other languages: any levels; progress is stored by "<lang>:<word>", so a word is unique across the levels of its language.
+  const foreign = new Map<string, string>()
+  for (const [key, ref] of refs) {
+    if (ref.kind !== 'words' || !valid.has(key)) continue
+    const v = snap.get(key) as WordsFile
+    if (v.lang !== ref.lang) add(key, 'lang', `lang ${v.lang} differs from the key`, 'Jazyk nesedí s adresou.')
+    if (v.level !== ref.level) add(key, 'level', `level ${v.level} differs from the key`, 'Úroveň nesedí s adresou.')
+    for (const g of v.groups) for (const w of g.words) {
+      const where = `${g.name} "${w.cz}"`
+      if (new Set([w.word, w.similar, w.related].map((x) => x.toLowerCase())).size !== 3) add(key, where, 'similar/related must differ from each other and from word', `${where}: špatné možnosti se musí lišit od sebe i od správné.`)
+      const k = `${ref.lang}:${w.word.toLowerCase()}`
+      if (foreign.has(k)) add(key, where, `"${w.word}" is already in ${foreign.get(k)}`, `${where}: „${w.word}“ už je v ${foreign.get(k)}.`)
+      foreign.set(k, `${ref.level} ${g.name}`)
     }
   }
   return out

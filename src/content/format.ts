@@ -10,6 +10,7 @@ import { KEY_COLORS } from './curriculum'
 //                                                    (grade odb: odborné předměty, the file also names the subject)
 //   content/topics/<grade>/<subject>/<topic-id>.json  one topic             → TopicFile
 //   content/vocab/<level>.json                        English vocabulary    → VocabFile
+//   content/vocab/<lang>/<level>.json                 vocabulary of another language (de, fr, es) → WordsFile
 //   content/approaches/<id>/approach.json             a teaching approach   → ApproachFile
 //   content/approaches/<id>/<grade>.json              its plan of one year  → ApproachYearFile
 //
@@ -162,6 +163,25 @@ export const vocabFile = s.object({
   }), { min: 1, description: 'Okruhy. Odkazují se pořadím (/slovicka/A1/0) – nové přidávej na konec.' }),
 }, { description: 'Anglická slovíčka jedné úrovně.' })
 
+/** Languages with vocabulary besides English (content/vocab/<lang>/<level>.json). */
+export const WORD_LANGS = ['de', 'fr', 'es'] as const
+
+export const wordsFile = s.object({
+  format: s.int({ min: FORMAT, max: FORMAT, description: `Verze formátu, teď ${FORMAT}.` }),
+  lang: s.enum(WORD_LANGS, { description: 'Jazyk, stejný jako složka: de němčina, fr francouzština, es španělština.' }),
+  level: s.enum(LEVELS, { description: 'Úroveň podle SERR, stejná jako název souboru.' }),
+  groups: s.array(s.object({
+    name: s.string({ description: 'Název okruhu, např. "Zvířata".' }),
+    emoji: s.string({ description: 'Jedno emoji okruhu.' }),
+    words: s.array(s.object({
+      cz: s.string({ description: 'Česky – na tohle se aplikace ptá.' }),
+      word: s.string({ description: 'Správně v cizím jazyce, podstatná jména se členem (der Hund, le chien, el perro; před samohláskou l\'arbre (m)). Část v závorce se při psaní nevyžaduje. Musí být jedinečné napříč úrovněmi jazyka (je na něm uložený pokrok).' }),
+      similar: s.string({ description: 'Špatná možnost, která podobně vypadá nebo zní (der Hund → der Mund).' }),
+      related: s.string({ description: 'Špatná možnost, která souvisí významem (der Hund → die Katze).' }),
+    }), { min: 1 }),
+  }), { min: 1, description: 'Okruhy. Odkazují se pořadím (/slovicka/nemcina/A1/0) – nové přidávej na konec.' }),
+}, { description: 'Slovíčka jednoho jazyka (kromě angličtiny) jedné úrovně.' })
+
 const blockOfYear = s.object({
   id: s.string({ pattern: ID, description: 'Kebab-case ASCII, jedinečné v roce. Je v adrese (/waldorf/z1/<id>), nemění se.' }),
   title: s.string({ description: 'Název epochy, např. "Svět rovných a oblých čar".' }),
@@ -194,6 +214,7 @@ export type Question = Infer<typeof question>
 export type TopicFile = Infer<typeof topicFile>
 export type SubjectFile = Infer<typeof subjectFile>
 export type VocabFile = Infer<typeof vocabFile>
+export type WordsFile = Infer<typeof wordsFile>
 export type ApproachFile = Infer<typeof approachFile>
 export type ApproachYearFile = Infer<typeof approachYearFile>
 export type YearBlock = ApproachYearFile['epochs'][number]

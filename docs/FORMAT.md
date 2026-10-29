@@ -12,6 +12,7 @@ Verze formátu: **1** (pole `format` v každém souboru).
 | `content/topics/<ročník>/<předmět>/_subject.json` | pořadí témat předmětu v ročníku | `content/schema/subject.schema.json` |
 | `content/topics/<ročník>/<předmět>/<id-tématu>.json` | jedno téma | `content/schema/topic.schema.json` |
 | `content/vocab/<úroveň>.json` | anglická slovíčka jedné úrovně (a1–c1) | `content/schema/vocab.schema.json` |
+| `content/vocab/<jazyk>/<úroveň>.json` | slovíčka dalšího jazyka (de, fr, es) jedné úrovně | `content/schema/words.schema.json` |
 | `content/approaches/<přístup>/approach.json` | přístup k výuce (např. waldorf) | `content/schema/approach.schema.json` |
 | `content/approaches/<přístup>/<ročník>.json` | plán ročníku v tom přístupu: epochy a témata | `content/schema/approach-year.schema.json` |
 
@@ -45,7 +46,7 @@ Každý soubor začíná polem `"$schema"` s relativní cestou ke schématu – 
 | `topics` | seznam (text) ≥ 1 položek | ano | Id témat v pořadí, v jakém se během roku učí. Každé má soubor <id>.json vedle. |
 | `name` | text | – | Jen odborné předměty (topics/odb): název předmětu, např. "Technické kreslení". |
 | `emoji` | text | – | Jen odborné předměty: jedno emoji předmětu. |
-| `color` | "orange" \| "blue" \| "yellow" \| "green" \| "lime" \| "teal" \| "purple" \| "pink" \| "red" \| "gray" \| "ink" | – | Jen odborné předměty: barva klávesy předmětu. |
+| `color` | "orange" \| "blue" \| "yellow" \| "green" \| "lime" \| "teal" \| "purple" \| "pink" \| "red" \| "gray" \| "ink" \| "magenta" \| "brown" | – | Jen odborné předměty: barva klávesy předmětu. |
 
 ### Slovíčka (`content/vocab/<úroveň>.json`)
 
@@ -62,6 +63,22 @@ Každý soubor začíná polem `"$schema"` s relativní cestou ke schématu – 
 | `groups[].words[].en` | text | ano | Správně anglicky. Musí být jedinečné napříč všemi úrovněmi (je na něm uložený pokrok). |
 | `groups[].words[].similar` | text | ano | Špatná možnost, která podobně vypadá nebo zní (bird → bard). |
 | `groups[].words[].related` | text | ano | Špatná možnost, která souvisí významem (bird → parrot). |
+
+### Slovíčka dalších jazyků (`content/vocab/<jazyk>/<úroveň>.json`)
+
+| Pole | Typ | Povinné | Popis |
+|---|---|---|---|
+| `format` | celé číslo 1 | ano | Verze formátu, teď 1. |
+| `lang` | "de" \| "fr" \| "es" | ano | Jazyk, stejný jako složka: de němčina, fr francouzština, es španělština. |
+| `level` | "A1" \| "A2" \| "B1" \| "B2" \| "C1" | ano | Úroveň podle SERR, stejná jako název souboru. |
+| `groups` | seznam (objekt) ≥ 1 položek | ano | Okruhy. Odkazují se pořadím (/slovicka/nemcina/A1/0) – nové přidávej na konec. |
+| `groups[].name` | text | ano | Název okruhu, např. "Zvířata". |
+| `groups[].emoji` | text | ano | Jedno emoji okruhu. |
+| `groups[].words` | seznam (objekt) ≥ 1 položek | ano |  |
+| `groups[].words[].cz` | text | ano | Česky – na tohle se aplikace ptá. |
+| `groups[].words[].word` | text | ano | Správně v cizím jazyce, podstatná jména se členem (der Hund, le chien, el perro; před samohláskou l'arbre (m)). Část v závorce se při psaní nevyžaduje. Musí být jedinečné napříč úrovněmi jazyka (je na něm uložený pokrok). |
+| `groups[].words[].similar` | text | ano | Špatná možnost, která podobně vypadá nebo zní (der Hund → der Mund). |
+| `groups[].words[].related` | text | ano | Špatná možnost, která souvisí významem (der Hund → die Katze). |
 
 ### Přístup k výuce (`content/approaches/<přístup>/approach.json`)
 

@@ -10,6 +10,7 @@ import { IBack, IClose, ISearch } from '../ui/icons'
 import { QrButton } from '../ui/QrShare'
 import { useAsync } from '../ui/useAsync'
 import { loadWordRefs, type WordRef } from '../vocab'
+import { vocabPath } from '../vocab/langs'
 import { topicPath } from './Home'
 import { PinButton } from './TopicScreen'
 
@@ -17,7 +18,7 @@ type Scope = 'all' | 'zs1' | 'zs2' | 'ss'
 const SCOPES: [Scope, string][] = [['all', 'Vše'], ['zs1', '1.–5.'], ['zs2', '6.–9.'], ['ss', 'SŠ']]
 const IDEAS = ['zlomky', 'vyjmenovaná slova', 'fotosyntéza', 'present simple', 'Karel IV.', 'Pythagorova věta', 'slovní druhy', 'atom']
 
-/** Search across every grade, subject and topic, plus all English words. */
+/** Search across every grade, subject and topic, plus the words of every language. */
 export function Search() {
   const p = useProgress()
   const all = useIndex()
@@ -80,8 +81,8 @@ export function Search() {
               <h2 class="label">Slovíčka</h2>
               <div class="words">
                 {vocab.map((w) => (
-                  <Link key={w.level + w.en + w.cz} class="word" href={`/slovicka/${w.level}/${w.group}`}>
-                    <span><Mark text={w.cz} q={term} /></span><b><Mark text={w.en} q={term} /></b><small>{w.level}</small>
+                  <Link key={w.lang + w.level + w.word + w.cz} class="word" href={vocabPath(w.lang, w.level, w.group)}>
+                    <span><Mark text={w.cz} q={term} /></span><b lang={w.lang}><Mark text={w.word} q={term} /></b><small>{w.lang === 'en' ? w.level : `${w.lang.toUpperCase()} · ${w.level}`}</small>
                   </Link>
                 ))}
               </div>
@@ -144,8 +145,9 @@ function searchWords(q: string, words: WordRef[]): WordRef[] {
   const w = fold(q.trim())
   if (w.length < 2) return []
   const scored = words.flatMap((x) => {
-    const cz = fold(x.cz), en = x.en.toLowerCase()
-    const s = cz === w || en === w ? 3 : cz.startsWith(w) || en.startsWith(w) ? 2 : cz.includes(w) || en.includes(w) ? 1 : 0
+    // The foreign word also without its article: "hund" finds "der Hund" as well as "Hundert".
+    const cz = fold(x.cz), fw = fold(x.word), bare = fw.replace(/^(der|die|das|le|la|les|l'|el|los|las) /, '')
+    const s = cz === w || fw === w || bare === w ? 3 : cz.startsWith(w) || fw.startsWith(w) || bare.startsWith(w) ? 2 : cz.includes(w) || fw.includes(w) ? 1 : 0
     return s ? [{ x, s }] : []
   })
   return scored.sort((a, b) => b.s - a.s).slice(0, 8).map((s) => s.x)

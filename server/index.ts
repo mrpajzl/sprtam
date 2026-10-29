@@ -37,7 +37,8 @@ function isAppRoute(path: string) {
   if (p[0] === 'widgety' && p.length === 2) return /^[a-z]+(-[a-z]+)*$/.test(p[1])
   if (p[0] === 'g' && p.length === 4 && p[3] === '~test') return page(...p.slice(0, 3))
   if (p[0] === 'g' && p.length === 5 && MODES.includes(p[4])) return page(...p.slice(0, 4))
-  if (p[0] === 'slovicka' && p.length === 3) return page(...p.slice(0, 2))
+  // A drill: /slovicka/A1/3, /slovicka/nemcina/A1/vse
+  if (p[0] === 'slovicka' && (p.length === 3 || p.length === 4)) return page(...p.slice(0, -1))
   // A game of Slepá mapa: /slepa-mapa/evropa/najdi
   if (p.length === 3 && `/${p[0]}` === MAPS_PATH) return !!mapById(p[1]) && isMode(p[2])
   // Practice test of one part of the entrance exam: /prijimacky/matematika/test

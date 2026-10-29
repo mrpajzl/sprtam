@@ -21,6 +21,7 @@ content/
     _subject.json            pořadí témat
     <id-tématu>.json         jedno téma (vysvětlení + otázky)
   vocab/<úroveň>.json        anglická slovíčka a1, a2, b1, b2, c1
+  vocab/<jazyk>/<úroveň>.json  slovíčka dalších jazyků: de, fr, es
   approaches/<přístup>/      přístup k výuce: approach.json a plán každého ročníku (viz PRISTUPY.md)
   schema/*.schema.json       JSON Schema pro editory (generované)
 ```
@@ -57,7 +58,7 @@ Bez práce se soubory to jde v [moderaci](MODERACE.md): editor s živým náhled
 
 1. Doplň předmět do `GRADE_SUBJECTS` v `src/content/curriculum.ts`. Úplně nový předmět potřebuje i záznam v `SUBJECTS` (název, barva) a glyf v `src/ui/glyphs.tsx`.
 2. Vytvoř složku `content/topics/<ročník>/<předmět>/` s `_subject.json` a tématy.
-3. `npm run check:content`. Kontrola selže, když předmět z `GRADE_SUBJECTS` nemá obsah, nebo když složka nemá předmět v `GRADE_SUBJECTS`.
+3. `npm run check:content`. Kontrola selže, když předmět z `GRADE_SUBJECTS` nemá obsah (kromě druhých cizích jazyků v `SECOND_LANGUAGES`, ty jsou nepovinné), nebo když složka nemá předmět v `GRADE_SUBJECTS`.
 
 ### Nový odborný předmět
 
@@ -69,7 +70,9 @@ Bez změny kódu: složka `content/topics/odb/<předmět>/` s `_subject.json` (p
 
 - Anglické slovo musí být **jedinečné napříč všemi úrovněmi**: je na něm uložený pokrok. Kontrola to hlídá.
 - Skupiny se odkazují pořadím (`/slovicka/A1/0`). Nové přidávej **na konec**.
-- Nové nebo změněné slovo potřebuje nahrávku výslovnosti: `ELEVENLABS_API_KEY=… npx tsx scripts/vocab-audio.ts gen`, pak `build` a `check` (viz [ARCHITEKTURA.md](ARCHITEKTURA.md#vývoj)). Nahrávky a `src/vocab/audio.ts` patří do stejného commitu.
+- Nové nebo změněné slovo potřebuje nahrávku výslovnosti: `ELEVENLABS_API_KEY=… npx tsx scripts/vocab-audio.ts gen`, pak `build` a `check` (viz [ARCHITEKTURA.md](ARCHITEKTURA.md#vývoj)), s `--lang de` jen pro jeden jazyk. Nahrávky a `src/vocab/audio.ts` patří do stejného commitu. Než nahrávka je, mluví hlas prohlížeče.
+
+**Další jazyky** (němčina `de`, francouzština `fr`, španělština `es`): `content/vocab/<jazyk>/<úroveň>.json` s `lang`, `level` a skupinami. Slovo má `cz`, `word` (správně), `similar` a `related`. Podstatná jména vždy se členem (*der Hund*, *le chien*, *el perro*). Před samohláskou, kde člen rod neprozradí, patří rod do závorky na konec (*l'arbre (m)*): ukáže se, ale psát se nemusí. Při psaní projde chybějící diakritika jako překlep. `word` je jedinečné napříč úrovněmi jazyka, pokrok se ukládá jako `de:der Hund`. Úrovně jsou nepovinné, aplikace ukáže ty, které jsou. Jazyky a jejich adresy (`/slovicka/nemcina/A1`) jsou v [`src/vocab/langs.ts`](../src/vocab/langs.ts).
 
 ### Přístup k výuce (waldorfská škola)
 

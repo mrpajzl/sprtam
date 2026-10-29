@@ -8,8 +8,9 @@ import { Bar } from '../ui/Bar'
 import { subjectStyle } from '../ui/glyphs'
 import { IArrow } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
-import { LEVELS, MASTERED } from './Vocab'
-import { loadWordRefs } from '../vocab'
+import { MASTERED } from './Vocab'
+import { loadWordRefs, type WordRef } from '../vocab'
+import { LANGS, LEVEL_IDS, vocabPath, wordKey } from '../vocab/langs'
 
 // /prehled – everything practised so far at a glance, for the student and a parent looking over the shoulder:
 // the last weeks, and per grade and subject how many topics are on one, two or three stars. Only from the
@@ -100,17 +101,17 @@ function VocabOverview({ p }: { p: Progress }) {
   const words = useAsync(loadWordRefs, [])
   if (!words) return null
   return (
-    <section class="sec">
-      <h2 class="label">Anglická slovíčka</h2>
-      <div class="list">
-        {LEVELS.map((l) => {
-          const of = words.filter((w) => w.level === l.id)
-          const learned = of.filter((w) => (p.w[w.en] ?? 0) >= MASTERED).length, seen = of.filter((w) => (p.w[w.en] ?? 0) > 0).length
+    <>
+      {LANGS.map((m) => {
+        const rows = LEVEL_IDS.map((l) => {
+          const of = words.filter((w) => w.lang === m.id && w.level === l)
+          const box = (w: WordRef) => p.w[wordKey(m.id, w.word)] ?? 0
+          const learned = of.filter((w) => box(w) >= MASTERED).length, seen = of.filter((w) => box(w) > 0).length
           if (!seen) return null
           return (
-            <Link key={l.id} class="row sub-row" href={`/slovicka/${l.id}`}>
+            <Link key={l} class="row sub-row" href={vocabPath(m.id, l)}>
               <span class="txt">
-                <b>{l.id}</b><small>{learned} naučených · {seen} z {of.length} viděných</small>
+                <b>{l}</b><small>{learned} naučených · {seen} z {of.length} viděných</small>
                 <span class="star-bar" role="img" aria-label={`Naučených ${learned}, rozpracovaných ${seen - learned}, zbývá ${of.length - seen}`}>
                   {learned > 0 && <i class="b2" style={{ flexGrow: learned }} />}
                   {seen - learned > 0 && <i class="b0" style={{ flexGrow: seen - learned }} />}
@@ -120,8 +121,14 @@ function VocabOverview({ p }: { p: Progress }) {
               <IArrow />
             </Link>
           )
-        })}
-      </div>
-    </section>
+        }).filter(Boolean)
+        return rows.length > 0 && (
+          <section key={m.id} class="sec">
+            <h2 class="label">{m.title}</h2>
+            <div class="list">{rows}</div>
+          </section>
+        )
+      })}
+    </>
   )
 }

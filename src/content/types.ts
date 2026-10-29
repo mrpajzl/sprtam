@@ -1,7 +1,7 @@
 // Content types. The format of the files themselves is defined in ./format.ts (content/**/*.json);
 // how to write content: docs/CONTENT.md.
 
-export type { ApproachFile, ApproachYearFile, Block, Explanation, Question, SubjectFile, TopicFile, VocabFile, YearBlock } from './format'
+export type { ApproachFile, ApproachYearFile, Block, Explanation, Question, SubjectFile, TopicFile, VocabFile, WordsFile, YearBlock } from './format'
 import type { TopicFile } from './format'
 
 /** A grade of the curriculum: z1–z9 = základní škola, s1–s4 = střední škola (gymnázium). */
@@ -16,7 +16,7 @@ export type GradeId = YearId | 'odb'
 export type CoreSubjectId =
   | 'cestina' | 'matematika' | 'anglictina' | 'prvouka' | 'prirodoveda' | 'vlastiveda'
   | 'dejepis' | 'zemepis' | 'prirodopis' | 'fyzika' | 'chemie' | 'obcanska'
-  | 'literatura' | 'biologie' | 'zsv' | 'informatika'
+  | 'literatura' | 'biologie' | 'zsv' | 'informatika' | 'nemcina' | 'francouzstina' | 'spanelstina'
 
 /** A core subject, or an odborný předmět: those are content (topics/odb/<id>/_subject) and come with the release. */
 export type SubjectId = string

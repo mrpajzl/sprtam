@@ -14,6 +14,10 @@ export const GLYPHS: Record<CoreSubjectId, () => JSX.Element> = {
   literatura: S(<><path d="M3 5.5c3.2-1.3 6.2-1 9 1v13c-2.8-2-5.8-2.3-9-1z" /><path d="M21 5.5c-3.2-1.3-6.2-1-9 1v13c2.8-2 5.8-2.3 9-1z" /><path d="M6 9.5c1.3-.3 2.6-.2 3.6.4M6 13c1.3-.3 2.6-.2 3.6.4" /></>),
   matematika: S(<><path d="M7 3.8v6.4M3.8 7h6.4" /><path d="M14.6 4.6l4.8 4.8M19.4 4.6l-4.8 4.8" /><path d="M4 15.5h6M4 19h6" /><path d="M14 17.2h6" /><circle cx="17" cy="14" r="1" fill="currentColor" stroke="none" /><circle cx="17" cy="20.4" r="1" fill="currentColor" stroke="none" /></>),
   anglictina: S(<><path d="M4 4.5h16v11.5h-9l-5 4v-4H4z" /><path d="M8 8.5h8M8 12h5" /></>),
+  // The other languages: the same speech bubble with their typical mark (umlaut, accent, tilde).
+  nemcina: S(<><path d="M4 4.5h16v11.5h-9l-5 4v-4H4z" /><circle cx="10" cy="8.4" r="1.1" fill="currentColor" stroke="none" /><circle cx="14" cy="8.4" r="1.1" fill="currentColor" stroke="none" /><path d="M8 12.2h8" /></>),
+  francouzstina: S(<><path d="M4 4.5h16v11.5h-9l-5 4v-4H4z" /><path d="M11 10l2.6-2.8" /><path d="M8 12.6h8" /></>),
+  spanelstina: S(<><path d="M4 4.5h16v11.5h-9l-5 4v-4H4z" /><path d="M8.3 9.6c1.1-1.4 2.3-1.4 3.7 0s2.6 1.4 3.7 0" /><path d="M8 12.8h8" /></>),
   prvouka: S(<><path d="M12 20.5V11" /><path d="M12 11.5C12 7.4 9.3 5 5 5c0 4.1 2.7 6.5 7 6.5z" fill="currentColor" fill-opacity=".25" /><path d="M12 9.5c0-3 2-5 5.5-5 0 3-2 5-5.5 5z" /><path d="M6.5 20.5h11" /></>),
   prirodoveda: S(<><path d="M5 19C5 10.5 10.5 5 20 4c-.9 9.6-6.5 15-15 15z" fill="currentColor" fill-opacity=".25" /><path d="M5 19l8.5-8.5M10.5 13.5H15M13.5 10.5V7" /></>),
   vlastiveda: S(<><path d="M5 20.5V8h2.6v2.6H10V8h4v2.6h2.4V8H19v12.5z" /><path d="M10 20.5v-3.8a2 2 0 0 1 4 0v3.8" /><path d="M12 8V3.5l3 1.3-3 1.3" /></>),

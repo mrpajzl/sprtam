@@ -1,7 +1,8 @@
 import { GRADE_NAME, GRADE_SUBJECTS, gradeSubjects, ODB, STAGES, subjectMeta } from '../src/content/curriculum'
 import { kindName, OBOR_PATH, oboryOf, readyObory, yearGrade } from '../src/obory'
 import type { ApproachMeta } from '../src/content/manifest'
-import type { ApproachYearFile, Block, Subject, SubjectId, VocabFile, YearBlock, YearId } from '../src/content/types'
+import type { ApproachYearFile, Block, Subject, SubjectId, VocabFile, WordsFile, YearBlock, YearId } from '../src/content/types'
+import { LANGS, langOfSubject, LEVEL_IDS, vocabPath, type LangMeta } from '../src/vocab/langs'
 import { ABOUT } from '../src/about'
 import { EXAM, partTopics } from '../src/exam'
 import { askable, MAPS, MAPS_INTRO, MAPS_PATH, modesOf, PARTS, place, ROUND } from '../src/maps'
@@ -12,6 +13,7 @@ import { dateCs } from '../src/content/verified'
 // A real HTML page for every public route, so links are shareable with proper previews and search
 // engines get content, titles and descriptions without running JS:
 //   /  /o-aplikaci  /g/<grade>  /g/<grade>/<subject>  /g/<grade>/<subject>/<topic>  /slovicka  /slovicka/<level>
+//   /slovicka/<language>  /slovicka/<language>/<level>
 //   /<approach>  /<approach>/<grade>  /<approach>/<grade>/<epoch>  /prijimacky  /prijimacky/<subject>  /prijimacky/<subject>/<area>
 //   /obor  /obor/<id>  (odborné předměty themselves are /g/odb/<subject>/<topic>)
 //   /slepa-mapa  /slepa-mapa/<map>
@@ -23,6 +25,8 @@ import { dateCs } from '../src/content/verified'
 export interface SiteContent {
   subjects: Subject[]
   vocab: VocabFile[]
+  /** Vocabulary of the other languages. */
+  words: WordsFile[]
   approaches: (ApproachMeta & { years: [YearId, ApproachYearFile][] })[]
 }
 
@@ -83,6 +87,10 @@ const tabbar = (active: 'home' | 'grade' | 'vocab' | undefined, grade?: [string,
 export function pages(site: SiteContent): Page[] {
   const subjects = new Map<string, Subject>(site.subjects.map((s) => [`${s.grade}/${s.subject}`, s]))
   const vocab = site.vocab
+  /** Languages with words in this release, English first (as vocabLangs() in the app). */
+  const langs = LANGS.filter((m) => m.id === 'en' ? vocab.length > 0 : site.words.some((w) => w.lang === m.id))
+  const range = (ls: string[]) => (ls.length > 1 ? `${ls[0]}–${ls[ls.length - 1]}` : ls[0] ?? '')
+  const wordsOf = (m: LangMeta) => site.words.filter((w) => w.lang === m.id).sort((a, b) => LEVEL_IDS.indexOf(a.level) - LEVEL_IDS.indexOf(b.level))
 
   const home: [string, string] = [SITE_NAME, '/']
   const obory = readyObory((s) => subjects.has(`${ODB}/${s}`))
@@ -98,7 +106,7 @@ export function pages(site: SiteContent): Page[] {
 ${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_PATH}"><span class="skey m"><b class="em">🛠️</b></span><span class="txt"><b>Odborná škola</b><small>IT, strojírenství, kosmetika a další obory</small></span></a>` : ''}
 <a class="row exam-key" style="${style('orange')}" href="/${EXAM.id}"><span class="skey m"><b class="em">${EXAM.emoji}</b></span><span class="txt"><b>${esc(EXAM.name)}</b><small>${esc(EXAM.hint)}</small></span></a>
 <a class="row vocab-key map-key" style="${style('teal')}" href="${MAPS_PATH}"><span class="skey m"><b class="em">🗺️</b></span><span class="txt"><b>Slepá mapa</b><small>kraje, Evropa, svět</small></span></a>
-<a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt"><b>Anglická slovíčka</b><small>A1–C1</small></span></a>
+<a class="row vocab-key" style="${style('purple')}" href="/slovicka"><span class="skey m"><b>Aa</b></span><span class="txt">${langs.length > 1 ? `<b>Slovíčka</b><small>${esc(langs.map((m) => m.name.toLowerCase()).join(', '))}</small>` : '<b>Anglická slovíčka</b><small>A1–C1</small>'}</span></a>
 <a class="row about-key" style="${style('ink')}" href="/o-aplikaci"><span class="skey m"><b>?</b></span><span class="txt"><b>Co je Šprtám?</b><small>jak funguje a co o tobě (ne)ví</small></span></a></div>${tabbar('home')}`,
   })
 
@@ -144,7 +152,7 @@ ${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_P
         title: titles.subject(g, s),
         description: `${subjectMeta(s).name} pro ${gradeFor(g)}: ${names.slice(0, 6).join(', ')}${names.length > 6 ? ' a další' : ''}. ${listedTopics.length} ${listedTopics.length <= 4 ? 'témata' : 'témat'} s vysvětlením a kvízy.`,
         crumbs: sCrumbs,
-        body: `<div class="page" style="${style(subjectMeta(s).c)}">${bar(subjectMeta(s).name, gPath, [[GRADE_NAME[g], gPath]])}${odb && oboryOf(s).length ? `<p class="obor-of muted">Učí se v oborech: ${oboryOf(s).map((o) => `<a href="${esc(`${OBOR_PATH}/${o.id}`)}">${esc(o.name)}</a>`).join(', ')}</p>` : ''}<div class="list">${listedTopics.map((t, i) => `<a class="row" href="${esc(`${sPath}/${t.id}`)}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="em">${esc(t.emoji)}</span><b>${esc(t.title)}</b></a>`).join('')}</div></div>${gTab}`,
+        body: `<div class="page" style="${style(subjectMeta(s).c)}">${bar(subjectMeta(s).name, gPath, [[GRADE_NAME[g], gPath]])}${odb && oboryOf(s).length ? `<p class="obor-of muted">Učí se v oborech: ${oboryOf(s).map((o) => `<a href="${esc(`${OBOR_PATH}/${o.id}`)}">${esc(o.name)}</a>`).join(', ')}</p>` : ''}<div class="list">${listedTopics.map((t, i) => `<a class="row" href="${esc(`${sPath}/${t.id}`)}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="em">${esc(t.emoji)}</span><b>${esc(t.title)}</b></a>`).join('')}</div>${langWords(s)}</div>${gTab}`,
         ld: { '@type': 'ItemList', itemListElement: listedTopics.map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${sPath}/${t.id}`, name: t.title })) },
       })
 
@@ -173,23 +181,47 @@ ${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_P
     }
   }
 
-  const vCrumbs: [string, string][] = [home, ['Anglická slovíčka', '/slovicka']]
+  const vCrumbs: [string, string][] = [home, ['Slovíčka', '/slovicka']]
+  const count = (vs: { groups: { words: unknown[] }[] }[]) => vs.reduce((n, v) => n + v.groups.reduce((m, gr) => m + gr.words.length, 0), 0)
+  const others = langs.filter((m) => m.id !== 'en')
   out.push({
     path: '/slovicka',
     title: titles.vocab(),
-    description: `Anglická slovíčka podle úrovně A1–C1 (${vocab.reduce((n, v) => n + v.groups.reduce((m, gr) => m + gr.words.length, 0), 0)} slov). Nová slova vybíráš ze tří, známá píšeš; slova se vracejí, dokud je neumíš.`,
+    description: `Anglická slovíčka podle úrovně A1–C1 (${count(vocab)} slov)${others.length ? ` a ${others.map((m) => m.name.toLowerCase()).join(', ')}` : ''}. Nová slova vybíráš ze tří, známá píšeš; slova se vracejí, dokud je neumíš.`,
     crumbs: vCrumbs,
-    body: `<div class="page" style="${style('purple')}">${bar('Slovíčka', '/')}<div class="levels">${vocab.map((v) => `<a class="row" href="${esc(`/slovicka/${v.level}`)}"><span class="skey m"><b>${esc(v.level)}</b></span><b>${v.groups.length} okruhů</b></a>`).join('')}</div></div>${tabbar('vocab')}`,
+    body: `<div class="page" style="${style('purple')}">${bar('Slovíčka', '/')}${others.length ? '<h2 class="label">Angličtina</h2>' : ''}<div class="levels">${vocab.map((v) => `<a class="row" href="${esc(`/slovicka/${v.level}`)}"><span class="skey m"><b>${esc(v.level)}</b></span><b>${v.groups.length} okruhů</b></a>`).join('')}</div>${others.length ? `<h2 class="label next-label">Další jazyky</h2><div class="list">${others.map((m) => `<a class="row lang-row" style="${style(subjectMeta(m.subject).c)}" href="${esc(vocabPath(m.id))}"><span class="skey m"></span><b>${esc(m.name)}<small class="lang-levels">${esc(range(wordsOf(m).map((w) => w.level)))}</small></b>${FORWARD}</a>`).join('')}</div>` : ''}</div>${tabbar('vocab')}`,
   })
-  for (const v of vocab) {
-    const path = `/slovicka/${v.level}`
+  const levelPage = (m: LangMeta, v: { level: string; groups: { name: string; emoji: string; words: { cz: string; word: string }[] }[] }, crumbs: [string, string][]) => {
+    const path = vocabPath(m.id, v.level as never)
+    const name = m.id === 'en' ? v.level : `${m.name} ${v.level}`
     out.push({
       path,
-      title: titles.vocabLevel(v.level),
-      description: `Anglická slovíčka ${v.level}: ${v.groups.map((gr) => gr.name.toLowerCase()).slice(0, 8).join(', ')}${v.groups.length > 8 ? ' a další' : ''}. Například ${v.groups[0].words.slice(0, 4).map((w) => `${w.cz} – ${w.en}`).join(', ')}.`,
-      crumbs: [...vCrumbs, [v.level, path]],
-      body: `<div class="page" style="${style('purple')}">${bar(v.level, '/slovicka', [['Slovíčka', '/slovicka']])}<a class="btn block mix" href="${esc(`${path}/vse`)}">Míchat vše<small class="btn-count">${v.groups.reduce((n, gr) => n + gr.words.length, 0)}</small></a><div class="tiles">${v.groups.map((gr, i) => `<a class="tile vocab-tile" href="${esc(`${path}/${i}`)}"><span class="tile-face em">${esc(gr.emoji)}</span><b>${esc(gr.name)}</b><small class="sample">${esc(gr.words.slice(0, 6).map((w) => `${w.cz} – ${w.en}`).join(', '))}…</small></a>`).join('')}</div></div>${tabbar('vocab')}`,
+      title: titles.vocabLevel(v.level, m.title),
+      description: `${m.title} ${v.level}: ${v.groups.map((gr) => gr.name.toLowerCase()).slice(0, 8).join(', ')}${v.groups.length > 8 ? ' a další' : ''}. Například ${v.groups[0].words.slice(0, 4).map((w) => `${w.cz} – ${w.word}`).join(', ')}.`,
+      crumbs: [...crumbs, [name, path]],
+      body: `<div class="page" style="${style(m.id === 'en' ? 'purple' : subjectMeta(m.subject).c)}">${bar(name, crumbs[crumbs.length - 1][1], crumbs.slice(1))}<a class="btn block mix" href="${esc(`${path}/vse`)}">Míchat vše<small class="btn-count">${count([v])}</small></a><div class="tiles">${v.groups.map((gr, i) => `<a class="tile vocab-tile" href="${esc(`${path}/${i}`)}"><span class="tile-face em">${esc(gr.emoji)}</span><b>${esc(gr.name)}</b><small class="sample" lang="${m.id}">${esc(gr.words.slice(0, 6).map((w) => `${w.cz} – ${w.word}`).join(', '))}…</small></a>`).join('')}</div></div>${tabbar('vocab')}`,
     })
+  }
+  for (const v of vocab) levelPage(LANGS[0], { level: v.level, groups: v.groups.map((gr) => ({ ...gr, words: gr.words.map((w) => ({ cz: w.cz, word: w.en })) })) }, vCrumbs)
+  for (const m of others) {
+    const lPath = vocabPath(m.id)
+    const lCrumbs: [string, string][] = [...vCrumbs, [m.name, lPath]]
+    const ws = wordsOf(m)
+    out.push({
+      path: lPath,
+      title: titles.vocab(m.title),
+      description: `${m.title} podle úrovně ${range(ws.map((w) => w.level))} (${count(ws)} slov), od začátečníků v 7. třídě po střední školu. Nová slova vybíráš ze tří, známá píšeš.`,
+      crumbs: lCrumbs,
+      body: `<div class="page" style="${style(subjectMeta(m.subject).c)}">${bar(m.name, '/slovicka', [['Slovíčka', '/slovicka']])}<div class="levels">${ws.map((v) => `<a class="row" href="${esc(vocabPath(m.id, v.level))}"><span class="skey m"><b>${esc(v.level)}</b></span><b>${v.groups.length} okruhů</b></a>`).join('')}</div></div>${tabbar('vocab')}`,
+    })
+    for (const v of ws) levelPage(m, v, lCrumbs)
+  }
+  /** The link from a second language's subject page to its words (as LangWords in the app). */
+  function langWords(s: SubjectId) {
+    const m = langOfSubject(s)
+    const ws = m && m.id !== 'en' ? wordsOf(m) : []
+    if (!m || !ws.length) return ''
+    return `<a class="row test-key" href="${esc(vocabPath(m.id))}"><span class="skey m"><b class="aa">Aa</b></span><span class="txt"><b>${esc(m.title)}</b><small>${esc(range(ws.map((w) => w.level)))}</small></span></a>`
   }
   // Teaching approaches: /waldorf, /waldorf/<grade>, /waldorf/<grade>/<epoch> (markup as src/screens/Approach.tsx).
   const topicRef = new Map<string, { t: Subject['topics'][number]; g: string; s: SubjectId }>()
