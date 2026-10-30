@@ -214,7 +214,7 @@ Na [sprtam.cz/plan](https://sprtam.cz/plan) (na úvodní obrazovce *Plán před 
 
 ## Našli jste chybu v učivu?
 
-Budeme rádi za každé upozornění. Nejrychleji přímo v aplikaci: **Nahlásit chybu** je pod každou otázkou (po odpovědi) a pod vysvětlením tématu. Vybereš, co je špatně, a můžeš připsat poznámku. Hlášení je anonymní a dostanou ho moderátoři ([Moderace](MODERACE.md), co se posílá: [Soukromí](SOUKROMI.md#co-se-posílá-ven)).
+Budeme rádi za každé upozornění. Nejrychleji přímo v aplikaci: **Nahlásit chybu** je pod každou otázkou (po odpovědi) a pod vysvětlením tématu. Nebo v otázce či vysvětlení označ slovo, které nesedí: pod ním se objeví **Nahlásit chybu** (kopírování a sdílení fungují dál jako obvykle). Vybereš, co je špatně, a můžeš připsat poznámku. Hlášení je anonymní a dostanou ho moderátoři ([Moderace](MODERACE.md), co se posílá: [Soukromí](SOUKROMI.md#co-se-posílá-ven)).
 
 Nebo založte [issue na GitHubu](https://github.com/mrpajzl/sprtam/issues/new) a uveďte:
 

@@ -1,6 +1,7 @@
 import { render } from 'preact'
 import { App } from './app'
 import { initContent, keepOffline } from './content/remote'
+import { SelectionReport } from './ui/Report'
 import './styles.css'
 
 // A chunk from a previous deploy failed to load: clear the stale caches and reload (public/boot-check.js).
@@ -20,7 +21,7 @@ initContent().then((ok) => {
     return
   }
   root.textContent = '' // drop the page rendered by the server (server/pages.ts); the app renders the same screen
-  render(<App />, root)
+  render(<><App /><SelectionReport /></>, root)
   document.documentElement.setAttribute('data-app', '')
   keepOffline()
 })

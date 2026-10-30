@@ -296,6 +296,10 @@ const MIGRATIONS: string[] = [
   ALTER TABLE users ADD COLUMN profile_at INTEGER;
   CREATE INDEX audit_action ON audit(action);
   `,
+  // 6: the words a pupil marked in the text when reporting from a selection (empty for the button).
+  `
+  ALTER TABLE reports ADD COLUMN quote TEXT NOT NULL DEFAULT '';
+  `,
 ]
 
 const before = Number((db.prepare('PRAGMA user_version').get() as { user_version: number }).user_version)

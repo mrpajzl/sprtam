@@ -233,6 +233,7 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/usability-flow.mjs` | totéž v prohlížeči: nastavení čtení, klávesy, rozdělané kolo, simulace, pracovní list a tisk, plán s kalendářem, připomínka, profily (proti běžícímu serveru, `SHOTS=1` uloží snímky) |
 | `scripts/maps-test.mjs` | Slepá mapa v prohlížeči: celá kola všech her dotykem, špatné klepnutí, výsledek a rekord, prohlížení mapy, posun a zoom myší (proti vývojovému serveru, `SHOTS=1` uloží snímky) |
 | `scripts/elements-test.mjs` | Periodická tabulka v prohlížeči: celá kola všech her dotykem s jednou chybou, výsledek, rekord a procvičení chyb, slepá tabulka na telefonu, prohlížení a sady, klávesnice a tmavý vzhled na počítači (proti vývojovému serveru, `SHOTS=1` uloží snímky) |
+| `scripts/selection-report-flow.mjs` | hlášení z označeného textu v prohlížeči (myš i dotyk): tlačítko pod označením, výběr zůstává, označený text dojde moderaci (spouští vlastní server, napřed `npm run build`) |
 | `scripts/report-test.mjs` | hlášení chyb přes server: kontrola, limity, přeposlání bez údajů o žákovi (spouští vlastní server a náhradu obsahové služby, napřed `npm run build`) |
 | `scripts/moderator-test.mjs` | moderace a obsahová služba: přihlášení klíčem, bezpečnostní pravidla, editor a náhled, kontrola a zveřejnění, historie a návraty, API tokeny, hlášení od žáků, zálohy (spouští vlastní server, napřed `npm run moderator:build`) |
 | `scripts/shots.mjs` | snímky obrazovek (přehled widgetů je v aplikaci na `/widgety`) |

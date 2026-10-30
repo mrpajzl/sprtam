@@ -83,9 +83,9 @@ API tokenem profil změnit nejde. Záznam událostí si pamatuje změnu jména a
 
 ## Hlášení od žáků
 
-Žáci v aplikaci u každé otázky (po odpovědi) a u každého vysvětlení klepnou na **Nahlásit chybu**, vyberou, co je špatně (*Špatná odpověď nebo chyba*, *Nejasné zadání*, *Překlep*, *Jiné*), a můžou připsat krátkou poznámku. Hlášení se objeví na záložce **Hlášení** (na telefonu ve spodní liště, s počtem otevřených).
+Žáci v aplikaci u každé otázky (po odpovědi) a u každého vysvětlení klepnou na **Nahlásit chybu**, nebo v otázce či vysvětlení označí slova a klepnou na **Nahlásit chybu**, které se pod nimi objeví, vyberou, co je špatně (*Špatná odpověď nebo chyba*, *Nejasné zadání*, *Překlep*, *Jiné*), a můžou připsat krátkou poznámku. Hlášení se objeví na záložce **Hlášení** (na telefonu ve spodní liště, s počtem otevřených).
 
-- Každé hlášení ukazuje téma, kterou otázku (číslo a znění, jak ho žák viděl) nebo které vysvětlení, důvod, poznámku a číslo vydání učiva, ve kterém to žák viděl. Když se téma mezitím změnilo, otázka může mít jiné číslo, proto je tam i znění.
+- Každé hlášení ukazuje téma, kterou otázku (číslo a znění, jak ho žák viděl) nebo které vysvětlení, označený text (když žák hlásil z označení), důvod, poznámku a číslo vydání učiva, ve kterém to žák viděl. Když se téma mezitím změnilo, otázka může mít jiné číslo, proto je tam i znění.
 - O odesílateli tam nic není: žádná adresa, zařízení ani jméno. Server sprtam.cz hlášení zkontroluje a pošle dál jen jeho obsah ([OBSAH.md](OBSAH.md#hlášení-chyb-od-žáků)).
 - **Otevřít téma** → *Upravit* → oprava jde běžnou kontrolou. Pak hlášení označ **Opraveno**. Když je učivo v pořádku, **Zamítnout** (s nepovinnou poznámkou pro ostatní moderátory). Vyřízené hlášení jde **znovu otevřít**.
 - U tématu, ke kterému jsou otevřená hlášení, je nahoře upozornění s odkazem na ně. Filtrovat jde i podle ročníku a předmětu.

@@ -14,7 +14,7 @@ import { IClose } from '../ui/icons'
 import { Inline } from '../ui/Inline'
 import { Mascot } from '../ui/Mascot'
 import { QrButton } from '../ui/QrShare'
-import { ReportButton } from '../ui/Report'
+import { questionTarget, Reportable, ReportButton } from '../ui/Report'
 import { useAsync } from '../ui/useAsync'
 
 // Ostrá simulace přijímaček (/prijimacky/<subject>/simulace): one test of the whole part on the clock, like the real
@@ -205,8 +205,10 @@ function Result({ pt, queue, answers, areaOf, ms, again }: { pt: ExamPart; queue
           <div class="mistakes">
             {wrong.map((x, k) => (
               <div key={k} class="card">
-                <b><Inline text={x.q.question} /></b>
-                <span>{!given.has(x) && <em class="sim-none">bez odpovědi · </em>}<Inline text={answerText(x.q)} /></span>
+                <Reportable topic={x.topic} target={questionTarget(x)}>
+                  <b><Inline text={x.q.question} /></b>
+                  <span>{!given.has(x) && <em class="sim-none">bez odpovědi · </em>}<Inline text={answerText(x.q)} /></span>
+                </Reportable>
                 {x.index !== undefined && <ReportButton topic={x.topic} target={{ kind: 'question', index: x.index, text: x.q.question }} />}
               </div>
             ))}

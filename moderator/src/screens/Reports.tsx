@@ -13,7 +13,7 @@ import { ago, Busy, dateTime, Empty, I, Modal, toast } from '../ui/kit'
 type Status = 'open' | 'fixed' | 'dismissed'
 export interface ReportView {
   id: string; topic: string; title: string; emoji: string; target: { kind: 'question' | 'explanation'; index: number; text: string }
-  reason: string; note: string; release: number | null; status: Status; createdAt: number; decidedAt: number | null; decidedBy: string | null; decisionNote: string | null
+  reason: string; note: string; quote: string; release: number | null; status: Status; createdAt: number; decidedAt: number | null; decidedBy: string | null; decisionNote: string | null
 }
 
 const REASON: Record<string, string> = { wrong: 'Špatná odpověď nebo chyba', unclear: 'Nejasné zadání', typo: 'Překlep', other: 'Jiné' }
@@ -79,7 +79,7 @@ export function Reports() {
     <div class="page-narrow">
       <h1>Hlášení od žáků</h1>
       <p class="muted">
-        Žáci můžou u každé otázky a vysvětlení klepnout na „Nahlásit chybu“. O odesílateli tu nic není – jen co nahlásil a proč.
+        Žáci můžou u každé otázky a vysvětlení klepnout na „Nahlásit chybu“ nebo v textu označit, co je špatně. O odesílateli tu nic není – jen co nahlásil a proč.
         Otevři téma, oprav ho běžnou úpravou a hlášení pak označ jako opravené. Když je učivo v pořádku, hlášení zamítni.
       </p>
       <div class="q-filters">
@@ -124,6 +124,7 @@ export function Reports() {
                     <b>{r.target.kind === 'question' ? `Otázka ${r.target.index + 1}: ` : 'Vysvětlení '}</b>
                     {r.target.kind === 'question' ? <Inline text={r.target.text} /> : `„${r.target.text}“`}
                   </p>
+                  {r.quote && <p class="rq-more"><b>Označený text:</b> <mark class="rq-quote">„{r.quote}“</mark></p>}
                   {r.note && <p class="rq-more"><b>Poznámka žáka:</b> {r.note}</p>}
                   {r.status !== 'open' && (
                     <p class={`banner ${r.status === 'fixed' ? 'ok' : 'info'}`}>

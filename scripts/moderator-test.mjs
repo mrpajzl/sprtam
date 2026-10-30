@@ -387,9 +387,9 @@ try {
   check((await report({ ...rp, reason: 'spam' })).status === 400 && (await report({ ...rp, target: { kind: 'x', index: 0, text: 'a' } })).status === 400, 'a malformed report is refused')
   const sent = await report(rp)
   check(sent.status === 200, 'the server of sprtam.cz forwards a report')
-  await report({ ...rp, topic: 'z5/matematika/velka-cisla', target: { kind: 'explanation', index: 0, text: 'Na číselné ose' }, reason: 'unclear', note: '' })
+  await report({ ...rp, topic: 'z5/matematika/velka-cisla', target: { kind: 'explanation', index: 0, text: 'Na číselné ose' }, reason: 'unclear', note: '', quote: '  na   číselné\n ose ' })
   const open = (await eva.api('GET', '/api/reports')).body
-  check(open.length === 2 && open.some((r) => r.topic === rp.topic && r.title && r.note === rp.note && r.target.index === 2), 'moderators see open reports with the topic title')
+  check(open.length === 2 && open.some((r) => r.topic === rp.topic && r.title && r.note === rp.note && r.target.index === 2 && r.quote === '') && open.some((r) => r.quote === 'na číselné ose'), 'moderators see open reports with the topic title and the marked words')
   check((await eva.api('GET', '/api/reports?grade=z6&subject=matematika')).body.length === 1 && (await eva.api('GET', `/api/reports/counts?topic=${rp.topic}`)).body.open === 1, 'reports filter by grade, subject and topic')
   check((await fetch(`${BASE}/api/reports`)).status === 401, 'reports are only for moderators')
   const fixedOne = open.find((r) => r.topic === rp.topic)

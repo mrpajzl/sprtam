@@ -28,8 +28,8 @@ try {
   await start(['node', 'dist-server/index.mjs'], { PORT: String(port), DATA_DIR: data, CONTENT_API: `http://localhost:${stubPort}`, REPORT_TOKEN: TOKEN }, 'Šprtám on')
   await start(['node', 'dist-server/index.mjs'], { PORT: String(offPort), DATA_DIR: data, CONTENT_API: `http://localhost:${stubPort}`, REPORT_TOKEN: '' }, 'Šprtám on')
   const base = `http://localhost:${port}`
-  // Wait for the first content release (the server polls the service).
-  for (let i = 0; i < 100 && (await fetch(`${base}/api/content/manifest`)).status !== 200; i++) await new Promise((r) => setTimeout(r, 100))
+  // Wait for the first content release on both servers (they poll the service).
+  for (const b of [base, `http://localhost:${offPort}`]) for (let i = 0; i < 100 && (await fetch(`${b}/api/content/manifest`)).status !== 200; i++) await new Promise((r) => setTimeout(r, 100))
   const release = (await (await fetch(`${base}/api/content/manifest`)).json()).release
   const send = (body, b = base, headers = {}) => fetch(`${b}/api/report`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'User-Agent': 'pupil-browser', 'CF-Connecting-IP': '203.0.113.7', ...headers }, body: typeof body === 'string' ? body : JSON.stringify(body) })
   const ok = { topic: 'z5/matematika/zlomky', target: { kind: 'question', index: 3, text: '  Kolik je 1/2 + 1/4?  ' }, reason: 'wrong', note: 'Ve výsledku má být 3/4.', release }
@@ -42,6 +42,10 @@ try {
   check(h.authorization === `Bearer ${TOKEN}` && !JSON.stringify(h).includes('203.0.113.7') && h['user-agent'] !== 'pupil-browser' && !h['x-forwarded-for'], 'forwarded with the token, without the address or browser')
   check(Object.keys(got[0]?.body ?? {}).sort().join() === 'note,reason,release,target,topic', 'only the report itself is forwarded')
 
+  const q = await send({ ...ok, quote: ` 1/2 +\n  1/4 ${'x'.repeat(400)}` }, base, { 'CF-Connecting-IP': '203.0.113.6' })
+  const quoted = (await (await fetch(`http://localhost:${stubPort}/stub/reports`)).json()).at(-1)?.body
+  check(q.status === 204 && quoted?.quote?.startsWith('1/2 + 1/4 x') && quoted.quote.length === 300, 'the marked words travel along, tidied and capped at 300 characters')
+  check((await send({ ...ok, quote: 42 }, base, { 'CF-Connecting-IP': '203.0.113.8' })).status === 400, 'marked words must be text')
   check((await send({ ...ok, topic: 'z5/matematika/neexistuje' }, base, { 'CF-Connecting-IP': '203.0.113.8' })).status === 400, 'an unknown topic is refused')
   check((await send({ ...ok, reason: 'spam' }, base, { 'CF-Connecting-IP': '203.0.113.8' })).status === 400, 'an unknown reason is refused')
   check((await send({ ...ok, target: { kind: 'question', index: 999, text: 'x' } }, base, { 'CF-Connecting-IP': '203.0.113.8' })).status === 400, 'an index out of range is refused')
