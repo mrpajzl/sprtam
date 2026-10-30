@@ -16,6 +16,7 @@ import { useAsync } from '../ui/useAsync'
 // is sent anywhere. Questions with an interactive widget are left out: paper cannot show them.
 
 const COUNTS = [10, 20, 0] as const
+type Count = (typeof COUNTS)[number]
 const LETTERS = 'abcdefghij'
 
 const shuffle = <T,>(xs: T[]) => xs.map((x) => [Math.random(), x] as const).sort((a, b) => a[0] - b[0]).map((x) => x[1])
@@ -23,11 +24,13 @@ const shuffle = <T,>(xs: T[]) => xs.map((x) => [Math.random(), x] as const).sort
 interface Sheet { q: Question; order?: number[] }
 
 /** Questions for the sheet: as many as asked for (0 = all), spread over the topics, a third generated where a topic has a generator. */
+const paper = (q: Question) => !(q.type === 'input' && q.widget)
+const generates = (t: Topic) => !!(t.generator && GENERATORS[t.generator])
+
 function pick(topics: Topic[], count: number): Sheet[] {
-  const paper = (q: Question) => !(q.type === 'input' && q.widget)
   const pools = topics.map((t) => shuffle(t.questions.filter(paper)))
   const all = pools.flat()
-  const gen = topics.flatMap((t) => (t.generator && GENERATORS[t.generator] ? [GENERATORS[t.generator]] : []))
+  const gen = topics.flatMap((t) => (generates(t) ? [GENERATORS[t.generator!]] : []))
   let qs: Question[]
   if (!count) qs = all
   else {
@@ -56,17 +59,22 @@ export function TopicWorksheet({ g, s, id }: { g: GradeId; s: SubjectId; id: str
 
 /** A sheet of questions from the given topics. */
 export function Worksheet({ title, sub, topics }: { title: string; sub: string; topics: Topic[] }) {
-  const [count, setCount] = useState<(typeof COUNTS)[number]>(10)
+  const [chosen, setCount] = useState<Count>(10)
   const [solutions, setSolutions] = useState(true)
   const [seed, setSeed] = useState(0)
   const usable = topics.filter((t) => listed(t) || topics.length === 1)
+  // Only counts the topics can fill: a topic of 15 questions offers 10 and all 15, not 20 (generated examples have no end).
+  const onPaper = usable.reduce((n, t) => n + t.questions.filter(paper).length, 0)
+  const endless = usable.some(generates)
+  const counts = COUNTS.filter((n) => !n || endless || n < onPaper)
+  const count = counts.includes(chosen) ? chosen : counts[0]
   const sheet = useMemo(() => pick(usable, count), [count, seed, usable.map((t) => t.id).join()])
   return (
     <div class="page worksheet-page">
       <Bar title="Pracovní list" />
       <div class="ws-controls">
         <div class="seg" role="radiogroup" aria-label="Počet otázek">
-          {COUNTS.map((n) => <button key={n} role="radio" aria-checked={count === n} class={count === n ? 'on' : ''} onClick={() => setCount(n)}>{n ? `${n} otázek` : 'Všechny'}</button>)}
+          {counts.map((n) => <button key={n} role="radio" aria-checked={count === n} class={count === n ? 'on' : ''} onClick={() => setCount(n)}>{n ? `${n} otázek` : endless ? 'Všechny' : `Všech ${onPaper}`}</button>)}
         </div>
         <label class="ws-check"><input type="checkbox" checked={solutions} onChange={(e) => setSolutions(e.currentTarget.checked)} />Řešení na zvláštní stránce</label>
         <div class="ws-actions">

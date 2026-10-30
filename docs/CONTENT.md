@@ -91,7 +91,7 @@ Plán ročníku, vysvětlení v duchu přístupu i témata jen pro přístup: [P
 - `id` kebab-case ASCII (`vyjmenovana-slova-b`), stejné jako název souboru.
 - `emoji`: jedno výstižné emoji.
 - `explanations`: **přesně dvě obecná vysvětlení, každé jiným způsobem** (viz Výklad níže). Navíc smí být jedno pro každý přístup k výuce (`"approach"`).
-- `questions`: **alespoň 10 otázek** (8 je tvrdý limit kontroly), mix typů. **Alespoň 2 otázky `open`** (pro režim Zkoušení: ústní otázka a vzorová odpověď v 1–3 větách). Otázky od lehkých po těžší.
+- `questions`: **alespoň 20 otázek** (8 je tvrdý limit kontroly), mix typů. Dvacet naplní pracovní list a Test a otázky se při procvičování tolik neopakují. **Alespoň 2 otázky `open`** (pro režim Zkoušení: ústní otázka a vzorová odpověď v 1–3 větách). Otázky od lehkých po těžší.
 - `generator`: jen u matematiky a fyziky, pokud se hodí některý generátor z [`src/quiz/generators.ts`](../src/quiz/generators.ts): add10, sub10, add20, sub20, add100, sub100, add1000, mul-table, div-table, written-mul, written-div, round, compare, frac-of, frac-add, frac-simplify, decimal, percent, integers, power, sqrt, linear-eq, pythagoras, perimeter-area, circle, units, units-dec, volume, ratio, expressions, quadratic, log. Generátor přidává do procvičování nekonečno dalších příkladů.
 
 ## Výklad – nejdůležitější pravidlo: OD ÚPLNÉ NULY
