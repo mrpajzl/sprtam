@@ -5,7 +5,7 @@ import { HASH } from '../../src/content/manifest'
 import { applicationCounts, approveApplication, createApplication, listApplications, rejectApplication } from './applications'
 import { auditLog, endSessions, invite, keyLink, listInvites, listUsers, revokeInvite, updateUser } from './admin'
 import {
-  addKeyOptions, addKeyVerify, bearer, createToken, getSession, inviteInfo, inviteOptions, inviteVerify, listKeys, listTokens, loginOptions, loginVerify, logout,
+  actor, addKeyOptions, addKeyVerify, bearer, createToken, getSession, inviteInfo, inviteOptions, inviteVerify, listKeys, listTokens, loginOptions, loginVerify, logout,
   removeKey, removeToken, requireAdmin, requireRecent, requireSession,
 } from './auth'
 import { backupReport, backupStatus, releaseChanges, releasesAfter, requireBackup, snapshot } from './backup'
@@ -149,13 +149,13 @@ on('POST', '/api/versions/:id/rollback', (req, _res, p, ip) => rollbackDraft(req
 on('GET', '/api/drafts', (req) => listDrafts(requireSession(req, tokens), query(req, 'all') === '1'))
 on('POST', '/api/drafts', async (req) => {
   const s = requireSession(req, tokens)
-  limit(`create:${s.user.id}`, 60, 10 * MINUTE)
+  limit(`create:${actor(s)}`, 60, 10 * MINUTE)
   return createDraft(s, await readJson(req))
 })
 on('GET', '/api/drafts/:id', (req, _res, p) => getDraft(requireSession(req, tokens), p[0]))
 on('PUT', '/api/drafts/:id', async (req, _res, p) => {
   const s = requireSession(req, tokens)
-  limit(`save:${s.user.id}`, 600, 10 * MINUTE)
+  limit(`save:${actor(s)}`, 600, 10 * MINUTE)
   return saveDraft(s, p[0], await readJson(req))
 })
 on('DELETE', '/api/drafts/:id', (req, _res, p, ip) => { deleteDraft(requireSession(req, tokens), p[0], ip); return { ok: true } })

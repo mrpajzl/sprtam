@@ -4,7 +4,7 @@ import { isSubjectOf, subjectKey, topicKey } from '../../src/content/docs'
 import { FORMAT } from '../../src/content/format'
 import { today, withoutVerified, type Verified } from '../../src/content/verified'
 import type { GradeId, SubjectFile, SubjectId, TopicFile } from '../../src/content/types'
-import { requireRecent, type Session } from './auth'
+import { actor, requireRecent, type Session } from './auth'
 import { CONFIG, LIMITS, MINUTE } from './config'
 import { all, audit, one, run, tx, type DraftRow, type ReviewRow } from './db'
 import { isSubject, readTopic, topicExists, topicProblems, type Problem } from './content'
@@ -393,7 +393,7 @@ export function submitDraft(s: Session, id: unknown, body: Record<string, unknow
   own(s, d, 'Odeslat')
   if (d.status !== 'draft') throw new HttpError(409, d.status === 'review' ? 'Návrh už je v kontrole.' : 'Návrh je uzavřený.')
   // Admins bring in whole předměty at once (docs/OBORY.md); the general request limit of a token still applies.
-  if (s.user.role !== 'admin') limit(`submit:${s.user.id}`, 30, 60 * MINUTE)
+  if (s.user.role !== 'admin') limit(`submit:${actor(s)}`, 30, 60 * MINUTE)
   assertReady(d, JSON.parse(d.data))
   const note = typeof body.note === 'string' ? body.note.trim().slice(0, 2000) : ''
   run("UPDATE drafts SET status = 'review', note = ?, submitted_rev = rev, submitted_at = ? WHERE id = ?", note || null, Date.now(), d.id)
