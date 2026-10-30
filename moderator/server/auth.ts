@@ -118,6 +118,12 @@ export function requireSession(req: Req, tokens = false): Session {
   return s
 }
 
+/**
+ * Whose rate limits a request counts against. Each API token has its own, apart from the moderator in the
+ * browser: a script working through dozens of topics must not lock its owner out of opening a topic.
+ */
+export const actor = (s: Session) => (s.via === 'token' ? s.hash : `user:${s.user.id}`)
+
 /** Admin actions and passkey changes need a passkey confirmation from the last few minutes. */
 export function requireRecent(s: Session) {
   if (s.via !== 'cookie' || Date.now() - s.authAt > LIMITS.recentAuth) throw new HttpError(403, 'Potvrď to prosím svým klíčem.', 'reauth')

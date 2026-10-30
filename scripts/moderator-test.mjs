@@ -352,6 +352,11 @@ try {
   check(viaToken.status === 200 && tokDraft.author.name === 'Eva Učitelka', 'a token creates drafts in its owner’s name (no Origin needed)')
   check((await bearer('POST', `/api/drafts/${draftId}/review`, { verdict: 'comment', body: 'x' })).status === 403, 'a token cannot review')
   check((await bearer('GET', '/api/me/tokens')).status === 403, 'a token cannot manage tokens')
+  const opening = { kind: 'edit', grade: 'z5', subject: 'matematika', topicId: 'velka-cisla' }
+  let last = 0
+  for (let i = 0; i < 60; i++) last = (await bearer('POST', '/api/drafts', opening)).status
+  check(last === 429, 'a token is slowed down after 60 drafts opened in 10 minutes')
+  check((await eva.api('POST', '/api/drafts', opening)).status === 200, 'a busy script does not lock its owner out of opening topics in the browser')
   check((await bearer('GET', '/api/drafts', null, 'spt_' + 'x'.repeat(43))).status === 401, 'an unknown token is refused')
   check((await bearer('GET', '/api/drafts', null, BACKUP)).status === 401, 'the backup token is not a moderator token')
   await eva.api('DELETE', `/api/me/tokens/${tok.body.id}`)
