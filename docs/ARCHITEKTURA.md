@@ -225,6 +225,7 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/verify-prod.mjs` | že produkce ukazuje všechna témata svého vydání |
 | `scripts/crawl.mjs` | otevře každé téma a hlásí chyby za běhu |
 | `scripts/content-pull.ts` | stáhne aktuální vydání učiva do `content/` (`npm run content:pull`) |
+| `scripts/content-update.ts` | pošle změněná zveřejněná témata z `content/` do moderace jako úpravy, s `--unverified` je správce rovnou zveřejní jako neověřená ([OBSAH.md](OBSAH.md#neověřené-učivo)) |
 | `scripts/content-stub.ts` | náhrada veřejného API obsahové služby nad `content/` (pro testy serveru) |
 | `scripts/learning-test.ts` | pravidla opakování otázek, Sešitu chyb, denního cíle, série se zmrazeným dnem a slučování (`npx tsx`) |
 | `scripts/learning-flow.mjs` | totéž v prohlížeči: kvíz s chybou a nápovědou, Sešit chyb, Přehled, denní cíl, hlášení chyby (proti běžícímu serveru, `SHOTS=1` uloží snímky) |
