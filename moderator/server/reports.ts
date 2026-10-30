@@ -16,7 +16,7 @@ export const REPORT_STATUS = ['open', 'fixed', 'dismissed'] as const
 type Status = (typeof REPORT_STATUS)[number]
 
 interface ReportRow {
-  id: string; topic: string; target_kind: 'question' | 'explanation'; target_index: number; target_text: string; reason: string; note: string
+  id: string; topic: string; target_kind: 'question' | 'explanation'; target_index: number; target_text: string; reason: string; note: string; quote: string
   release: number | null; status: Status; created_at: number; decided_at: number | null; decided_by: string | null; decision_note: string | null
 }
 
@@ -36,8 +36,8 @@ export function createReport(req: Req, body: Record<string, unknown>) {
   const open = one<{ n: number }>("SELECT COUNT(*) AS n FROM reports WHERE status = 'open'")!.n
   if (open >= LIMITS.openReports) throw new HttpError(429, 'Otevřených hlášení je moc.', 'rate', { retryAfter: 3600 })
   const id = randomUUID()
-  run('INSERT INTO reports (id, topic, target_kind, target_index, target_text, reason, note, release, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-    id, r.topic, r.target.kind, r.target.index, r.target.text, r.reason, r.note, r.release, Date.now())
+  run('INSERT INTO reports (id, topic, target_kind, target_index, target_text, reason, note, quote, release, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    id, r.topic, r.target.kind, r.target.index, r.target.text, r.reason, r.note, r.quote ?? '', r.release, Date.now())
   audit('report.created', null, { report: id, topic: r.topic })
   return { id }
 }
@@ -66,7 +66,7 @@ export function listReports(_s: Session, f: ReportFilter) {
     WHERE ${f.status === 'closed' ? "r.status != 'open'" : "r.status = 'open'"}${w.sql}
     ORDER BY ${f.status === 'closed' ? 'r.decided_at' : 'r.created_at'} DESC LIMIT 300`, ...w.args)
   return rows.map((r) => ({
-    id: r.id, topic: r.topic, ...title(r.topic), target: { kind: r.target_kind, index: r.target_index, text: r.target_text }, reason: r.reason, note: r.note,
+    id: r.id, topic: r.topic, ...title(r.topic), target: { kind: r.target_kind, index: r.target_index, text: r.target_text }, reason: r.reason, note: r.note, quote: r.quote,
     release: r.release, status: r.status, createdAt: r.created_at, decidedAt: r.decided_at, decidedBy: r.decider, decisionNote: r.decision_note,
   }))
 }

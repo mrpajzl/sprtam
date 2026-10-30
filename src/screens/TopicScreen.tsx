@@ -12,7 +12,7 @@ import { titles, useTitle } from '../seo'
 import { Bar } from '../ui/Bar'
 import { keyStyle, subjectStyle } from '../ui/glyphs'
 import { IArrow, IBolt, IBulb, ICalendar, IMic, IPencil, IPin, IPrint, IRepeat } from '../ui/icons'
-import { ReportButton } from '../ui/Report'
+import { Reportable, ReportButton } from '../ui/Report'
 import { useAsync } from '../ui/useAsync'
 import { Blocks } from './Blocks'
 import { Quiz } from './Quiz'
@@ -59,7 +59,9 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
       <div class="seg" role="tablist">
         {shown.map((i) => <button key={i} role="tab" aria-selected={current === i} class={current === i ? 'on' : ''} onClick={() => switchTo(i)}>{i === own ? `${approachById(approach)?.emoji} ` : ''}{topic.explanations[i].title}</button>)}
       </div>
-      <Blocks key={current} blocks={topic.explanations[current].blocks} />
+      <Reportable topic={key} target={{ kind: 'explanation', index: current, text: topic.explanations[current].title }}>
+        <Blocks key={current} blocks={topic.explanations[current].blocks} />
+      </Reportable>
       <button class="other" onClick={() => switchTo(other)}><IBulb />Nerozumím – vysvětli to jinak: {topic.explanations[other].title}</button>
       <CheckNote verified={topic.verified} topic={key} />
       <div class="topic-report"><ReportButton topic={key} target={{ kind: 'explanation', index: current, text: topic.explanations[current].title }} label="Chyba ve vysvětlení? Nahlásit" /></div>

@@ -11,7 +11,7 @@ import { IClose, ICheck, IX } from '../ui/icons'
 import { QrButton } from '../ui/QrShare'
 import { Mascot } from '../ui/Mascot'
 import { Inline } from '../ui/Inline'
-import { ReportButton } from '../ui/Report'
+import { questionTarget, Reportable, ReportButton } from '../ui/Report'
 import { digit, onControl, useKeys } from '../ui/keys'
 
 interface Answer { item: Item; ok: boolean; hint: boolean }
@@ -114,7 +114,9 @@ export function Quiz({ mode, topics, pick, record = true, empty, label }: { mode
             <div class="mistakes">
               {wrong.map((a, k) => (
                 <div key={k} class="card">
-                  <b><Inline text={a.item.q.question} /></b><span><Inline text={answerText(a.item.q)} /></span>
+                  <Reportable topic={a.item.topic} target={questionTarget(a.item)}>
+                    <b><Inline text={a.item.q.question} /></b><span><Inline text={answerText(a.item.q)} /></span>
+                  </Reportable>
                   {a.item.index !== undefined && <ReportButton topic={a.item.topic} target={{ kind: 'question', index: a.item.index, text: a.item.q.question }} />}
                 </div>
               ))}
@@ -143,15 +145,19 @@ export function Quiz({ mode, topics, pick, record = true, empty, label }: { mode
         {mode === 'test' ? <Timer since={start} /> : <span class="timer">{i + 1}/{queue.length}</span>}
         <QrButton />
       </div>
-      {mode === 'zkouseni' ? <Oral q={item.q} onAnswer={(ok) => { answered(undefined, ok, false, true); setAnswers([...answers, { item, ok, hint: false }]); next() }} />
-        : <QuestionView q={item.q} reveal={m.instant} strict={strictFor(item.topic)} hints={m.instant} onAnswer={onAnswer} />}
+      <Reportable topic={item.topic} target={questionTarget(item)}>
+        {mode === 'zkouseni' ? <Oral q={item.q} onAnswer={(ok) => { answered(undefined, ok, false, true); setAnswers([...answers, { item, ok, hint: false }]); next() }} />
+          : <QuestionView q={item.q} reveal={m.instant} strict={strictFor(item.topic)} hints={m.instant} onAnswer={onAnswer} />}
+      </Reportable>
       <div class="pad-dock" />
       {last !== null && (
         <div class={`sheet ${last ? 'ok' : 'bad'}`}>
           <div>
             <div class="verdict">{last ? <ICheck /> : <IX />}{last ? 'Správně' : 'Špatně'}{last && hint && <small>s nápovědou</small>}</div>
+            <Reportable topic={item.topic} target={questionTarget(item)}>
             {!last && <div class="why"><b><Inline text={answerText(item.q)} /></b>{'explanation' in item.q && item.q.explanation ? <> — <Inline text={item.q.explanation} /></> : null}</div>}
             {last && 'explanation' in item.q && item.q.explanation && <div class="why"><Inline text={item.q.explanation} /></div>}
+            </Reportable>
             <button class="btn block" onClick={next} autoFocus>Dál</button>
             {item.index !== undefined && <ReportButton topic={item.topic} target={{ kind: 'question', index: item.index, text: item.q.question }} />}
           </div>

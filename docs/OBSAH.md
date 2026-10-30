@@ -86,7 +86,7 @@ Bez přihlášení, jen pro čtení. Z něj si kopii drží server sprtam.cz ([A
 
 ## Hlášení chyb od žáků
 
-Tlačítko **Nahlásit chybu** v aplikaci (u otázky po odpovědi a u vysvětlení) posílá hlášení na server sprtam.cz, nikdy rovnou do obsahové služby:
+Tlačítko **Nahlásit chybu** v aplikaci (u otázky po odpovědi a u vysvětlení, nebo pod slovy, která žák v otázce či vysvětlení označí) posílá hlášení na server sprtam.cz, nikdy rovnou do obsahové služby:
 
 ```
 POST /api/report
@@ -94,6 +94,7 @@ POST /api/report
   "target": { "kind": "question", "index": 3, "text": "znění otázky" },   // nebo "explanation" a název vysvětlení
   "reason": "wrong" | "unclear" | "typo" | "other",
   "note": "nepovinná poznámka, nejvýš 500 znaků",
+  "quote": "označený text",                                               // jen při hlášení z označení; nejvýš 300 znaků
   "release": 12 }                                                         // vydání, které žák viděl
 ```
 

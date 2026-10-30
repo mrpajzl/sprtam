@@ -22,7 +22,7 @@
 - **Doporučení „Na řadě“:** co zopakovat, co ti nejde a na jakém základu z nižšího ročníku to stojí.
 - **Sešit chyb a Dnešní opakování:** každá spletená otázka se vrací, dokud ji dvakrát neodpovíš správně, a co ti vypadává z hlavy, přijde na řadu podle opakování s rozestupy. K tomu **nápovědy** po krocích, **přehled** po předmětech a **denní cíl**.
 - **Pro celou rodinu:** víc dětí na jednom zařízení, každé se svým pokrokem (bez účtů), pracovní listy k vytištění, větší písmo a písmo pro snadné čtení, ovládání klávesnicí a rozdělané kolo, které počká.
-- **Nahlásit chybu** přímo u otázky nebo vysvětlení, anonymně, rovnou moderátorům.
+- **Nahlásit chybu** přímo u otázky nebo vysvětlení, nebo jen označením chybného slova, anonymně, rovnou moderátorům.
 - **Hledání** ve všech ročnících a předmětech.
 
 Podrobně: **[Jak Šprtám funguje](docs/JAK-TO-FUNGUJE.md)**
