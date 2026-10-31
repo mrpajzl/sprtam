@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState, useEffect } from 'preact/hooks'
 import type { Question, Topic } from '../content/types'
-import { approachById, getApproach } from '../approach'
+import { useGrading } from '../grading'
 import { build, strictFor, grade, GRADE_WORD, MODES, answerText, verbal, type Item, type ModeId } from '../quiz/engine'
 import { QuestionView } from '../quiz/QuestionView'
 import { answered, answeredToday, getProgress, goalOf, isMistake, recordTopic, stars, useProgress } from '../progress/store'
@@ -43,6 +43,7 @@ export function Quiz({ mode, topics, pick, record = true, empty, label }: { mode
   const [last, setLast] = useState<boolean | null>(null)
   const [start, setStart] = useState(() => Date.now() - (saved?.ms ?? 0))
   const m = MODES[mode]
+  const grading = useGrading()
   const name = label ?? (topics.length === 1 ? topics[0].t.title : m.name)
 
   // A new round (Znovu, Začít znovu); not on the first render, which may carry a resumed round.
@@ -95,8 +96,8 @@ export function Quiz({ mode, topics, pick, record = true, empty, label }: { mode
     const right = firstTry.filter((a) => a.ok).length, hinted = firstTry.filter((a) => a.ok && a.hint).length
     const g = grade(pct)
     const wrong = firstTry.filter((a) => !a.ok)
-    // Approaches without marks (Waldorf) get a sentence instead of a grade.
-    const words = !m.instant && approachById(getApproach())?.grading === 'verbal'
+    // Marks turned off (by default in Waldorf): a sentence instead of a grade.
+    const words = !m.instant && grading === 'verbal'
     return (
       <div class="page">
         <div class="result">

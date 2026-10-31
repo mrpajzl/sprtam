@@ -3,6 +3,7 @@ import { CONTENT_AUTHOR, dateCs, joinHref, profileHref, verifierNames, type Veri
 import { GRADE_NAME, type KeyColor, subjectMeta } from '../content/curriculum'
 import { approachById, listed, useApproach } from '../approach'
 import { loadSubject, loadTopic, topicKey } from '../content'
+import { gradedHint, useGrading } from '../grading'
 import { loadIndex, refFor } from '../content/library'
 import type { GradeId, SubjectId, Topic } from '../content/types'
 import { MODES, type ModeId } from '../quiz/engine'
@@ -26,6 +27,7 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
   const p = useProgress()
   const key = topicKey(g, s, id)
   const approach = useApproach()
+  const grading = useGrading()
   const topic = subj?.topics.find((t) => t.id === id)
   // The two general explanations, plus the one for the child's teaching approach – shown first.
   const general = topic ? topic.explanations.flatMap((x, i) => (x.approach ? [] : [i])) : []
@@ -70,7 +72,7 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
           const [I, c] = MODE_KEY[m]!
           return (
             <Link key={m} class="mode" href={`/g/${g}/${s}/${id}/${m}`} rel="nofollow">
-              <span class="skey m" style={keyStyle(c)}><I /></span><b>{MODES[m].name}</b><small>{MODES[m].hint}</small>
+              <span class="skey m" style={keyStyle(c)}><I /></span><b>{MODES[m].name}</b><small>{m === 'pisemka' ? `${MODES[m].count} otázek, ${gradedHint(grading)}` : MODES[m].hint}</small>
             </Link>
           )
         })}

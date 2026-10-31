@@ -23,7 +23,7 @@ export const findBlock = (y: ApproachYearFile, id: string): YearBlock | undefine
 // ——— The child's choice ———
 
 const KEY = 'sprtam-approach'
-const EVENT = 'sprtam:approach'
+export const APPROACH_EVENT = 'sprtam:approach'
 
 export function getApproach(): string | undefined {
   try { const v = localStorage.getItem(KEY) ?? undefined; return approachById(v) ? v : undefined } catch { return undefined }
@@ -31,16 +31,16 @@ export function getApproach(): string | undefined {
 
 export function setApproach(id: string | undefined) {
   try { id ? localStorage.setItem(KEY, id) : localStorage.removeItem(KEY) } catch { /* private mode */ }
-  dispatchEvent(new Event(EVENT))
+  dispatchEvent(new Event(APPROACH_EVENT))
 }
 
 export function useApproach(): string | undefined {
   const [v, setV] = useState(getApproach)
   useEffect(() => {
     const on = () => setV(getApproach())
-    addEventListener(EVENT, on)
+    addEventListener(APPROACH_EVENT, on)
     addEventListener('storage', on)
-    return () => { removeEventListener(EVENT, on); removeEventListener('storage', on) }
+    return () => { removeEventListener(APPROACH_EVENT, on); removeEventListener('storage', on) }
   }, [])
   return v
 }

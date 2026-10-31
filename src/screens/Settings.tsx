@@ -1,6 +1,8 @@
 import { useState } from 'preact/hooks'
 import { activeProfile } from '../profiles'
+import { approachById, useApproach } from '../approach'
 import { cleanTime, dailyReminder, saveCalendar } from '../calendar'
+import { defaultGrading, setGrading, useGrading } from '../grading'
 import { DEFAULT_GOAL, GOALS, goalOf, setGoal, today, useProgress } from '../progress/store'
 import { Link } from '../router'
 import { useReading } from '../reading'
@@ -10,7 +12,7 @@ import { IArrow, ICalendar, ICheck } from '../ui/icons'
 import { ProfilesSettings } from './Profiles'
 
 // /nastaveni – device settings (localStorage only, never sent anywhere): who is learning, appearance, reading, the
-// way to Moje škola (/skola) and the daily goal with a reminder in the calendar. Progress and the app are in Já (/ja).
+// way to Moje škola (/skola), marks or words at the end of a test, and the daily goal with a reminder in the calendar. Progress and the app are in Já (/ja).
 
 function Toggle({ on, label, hint, onFlip }: { on: boolean; label: string; hint?: string; onFlip: () => void }) {
   return (
@@ -47,6 +49,7 @@ export function Settings() {
       <Link class="row" href="/skola">
         <span class="txt"><b>Moje škola</b><small>ročník, obor a způsob výuky</small></span><IArrow />
       </Link>
+      <Grading />
       <h2 class="label next-label">Denní cíl</h2>
       <div class="list" role="radiogroup" aria-label="Denní cíl">
         {GOALS.map((n) => <Choice key={n} on={goal === n} label={n ? `${n} odpovědí denně` : 'Bez cíle'} hint={n === DEFAULT_GOAL ? 'výchozí' : n === 10 ? 'na rozjezd' : n === 40 ? 'pro dříče' : n === 0 ? 'jen série dní' : undefined} onPick={() => setGoal(n)} />)}
@@ -54,6 +57,22 @@ export function Settings() {
       <p class="muted note">Počítá se každá odpověď v kvízu i u slovíček. Série dní vydrží i jeden vynechaný den za týden.</p>
       <Reminder />
     </div>
+  )
+}
+
+/** Marks 1–5 or a sentence at the end of a Písemka and a Test (src/grading.ts); the default comes from the approach. */
+function Grading() {
+  const grading = useGrading()
+  const a = approachById(useApproach())
+  const verbal = defaultGrading(a?.id) === 'verbal'
+  return (
+    <>
+      <h2 class="label next-label">Hodnocení</h2>
+      <div class="list">
+        <Toggle on={grading === 'marks'} label="Známky v písemce" hint={grading === 'marks' ? 'písemka a test končí známkou 1–5' : 'místo známky pár slov, jak to šlo'} onFlip={() => setGrading(grading === 'marks' ? 'verbal' : 'marks')} />
+      </div>
+      <p class="muted note">{a && verbal ? `${a.name} známky nedává, proto jsou vypnuté, dokud je nezapneš. ` : ''}Bez známek ti písemka řekne slovy, jak to šlo, a ukáže hvězdičky.</p>
+    </>
   )
 }
 
