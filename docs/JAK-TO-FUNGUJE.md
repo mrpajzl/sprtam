@@ -21,12 +21,12 @@ Obsah je ve složce [`content/`](../content): každé téma je jeden soubor `con
 
 Dole je vždy po ruce lišta se čtyřmi tlačítky:
 
-- **Domů**: tvůj den a tvoje škola. Displej se sérií dní, karta **Teď na řadě** s jedinou věcí, kterou je teď nejlepší udělat (rozdělané kolo, Dnešní opakování, Sešit chyb, nebo doporučené téma; ostatní jsou pod ní jako malá tlačítka *Pak*), plány před písemkou, **předměty tvého ročníku**, hry k nim a připnutá témata. Napoprvé se zeptá *Kam chodíš do školy?* Stačí klepnout na třídu, nebo *Jen se rozhlížím*.
+- **Dnes**: tvůj den a tvoje škola. Displej se sérií dní, karta **Teď na řadě** s jedinou věcí, kterou je teď nejlepší udělat (rozdělané kolo, Dnešní opakování, Sešit chyb, nebo doporučené téma; ostatní jsou pod ní jako malá tlačítka *Pak*), plány před písemkou, **předměty tvého ročníku**, hry k nim a připnutá témata. Napoprvé se zeptá *Kam chodíš do školy?* Stačí klepnout na třídu, nebo *Jen se rozhlížím*. Nahoře je tlačítko se jménem a třídou: otevře panel, kde změníš třídu, obor, druhý jazyk a způsob výuky a přepneš, kdo se učí.
 - **Učivo**: všechny třídy ZŠ a ročníky SŠ, obory odborných škol, waldorfský plán a příprava na přijímačky. Nahoře je hledání (kdekoli ho otevře i klávesa `/`).
 - **Hry**: Slepá mapa, Periodická tabulka a slovíčka všech jazyků. Nahoře ty, které patří k tvým předmětům.
 - **Já**: Moje škola, Přehled, Sešit chyb, Plán před písemkou, kdo se učí, přenos pokroku, nastavení a o aplikaci.
 
-**Moje škola** (Já → Moje škola, nebo *Změnit* u předmětů na úvodní obrazovce) je třída nebo ročník, na SŠ i obor, u ročníků s druhým cizím jazykem jazyk, který se učíš (ostatní dva se pak na úvodní obrazovce neukazují), a způsob výuky (běžná nebo waldorfská škola). Pamatuje se jen v zařízení, každý profil má svou. Když si ji nevybereš, stane se tvou první třída, kterou otevřeš.
+**Moje škola** (tlačítko se třídou nahoře na úvodní obrazovce, nebo Já → Moje škola) je třída nebo ročník, na SŠ i obor, u ročníků s druhým cizím jazykem jazyk, který se učíš (ostatní dva se pak na úvodní obrazovce neukazují), a způsob výuky (běžná nebo waldorfská škola). Pamatuje se jen v zařízení, každý profil má svou. Když si ji nevybereš, stane se tvou první třída, kterou otevřeš.
 
 Hry a příprava (přijímačky) nejsou přilepené k jedné obrazovce. Každá v seznamu [`src/games.ts`](../src/games.ts) říká, ke kterým předmětům (případně jen ke kterým ročníkům) patří, a ukáže se všude, kde ty předměty jsou: u předmětu, u ročníku, na úvodní obrazovce a v Hrách. Slepá mapa patří k zeměpisu a vlastivědě, Periodická tabulka k chemii, slovíčka k jazyku a přijímačky k češtině a matematice v 9. třídě. U celého ročníku se slovíčka víc jazyků spojí do jednoho tlačítka *Slovíčka*.
 

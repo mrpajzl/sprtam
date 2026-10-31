@@ -1083,13 +1083,23 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 
 /* ——— Domů: Teď na řadě, the pupil's school and the extras (screens/Home.tsx, src/games.ts) ——— */
 .next { margin-top: 14px; }
-.next-top { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; }
-.next-top > :only-child { grid-column: 1 / -1; }
-.next-key { min-height: 78px; box-shadow: inset 0 0 0 2px var(--accent), 0 3px 0 var(--key-edge); }
-.next-key:active { box-shadow: inset 0 0 0 2px var(--accent), 0 1px 0 var(--key-edge); }
-.next-key .txt b { font-size: 1.05rem; }
-.row .txt small.kicker { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in oklab, var(--k-orange) 55%, var(--ink)); }
-.next-more { display: flex; align-items: center; gap: 8px; margin: 10px -18px 0; padding: 2px 18px 6px; overflow-x: auto; scrollbar-width: none; }
+/* Teď na řadě: the one lit key of the screen, in the signal colour */
+.hero {
+  position: relative; border-radius: var(--r); background: var(--k-orange); color: var(--k-orange-on);
+  box-shadow: 0 4px 0 color-mix(in oklab, var(--k-orange) 60%, #000);
+}
+.hero-main { display: grid; gap: 3px; padding: 14px 52px 14px 16px; border-radius: var(--r); color: inherit; transition: transform 0.09s var(--ease); }
+.hero-main:active { transform: translateY(2px); }
+.hero-main .kicker { font-family: var(--mono); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; opacity: 0.72; }
+.hero-main b { font-size: 1.15rem; font-weight: 850; line-height: 1.2; }
+.hero-hint { font-size: 0.86rem; font-weight: 650; opacity: 0.85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hero-main > svg { position: absolute; right: 16px; top: 50%; width: 24px; height: 24px; transform: translateY(-50%); }
+.hero:has(.next-more) .hero-main > svg { top: 38px; transform: none; }
+.hero-x { position: absolute; top: 4px; right: 4px; color: inherit; }
+.hero:has(.hero-x) .hero-main > svg { display: none; }
+.hero .next-more { margin: 0; padding: 2px 16px 14px; }
+.hero .next-more > small { color: inherit; opacity: 0.72; }
+.next-more { display: flex; align-items: center; gap: 8px; overflow-x: auto; scrollbar-width: none; }
 .next-more::-webkit-scrollbar { display: none; }
 .next-more > small { flex: none; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--ink-3); margin: 0 2px; }
 .next-chip {
@@ -1100,8 +1110,6 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 }
 .next-chip::before { content: ''; flex: none; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); }
 .next-chip:active { transform: translateY(1px); box-shadow: inset 0 0 0 1px var(--line), 0 1px 0 var(--key-edge); }
-.mini-key.quiet { background: var(--key); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge); }
-.mini-key.quiet:active { box-shadow: inset 0 0 0 1px var(--line), 0 1px 0 var(--key-edge); }
 .my-approach { margin-bottom: 12px; }
 .my-tiles { grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .my-tiles .tile { min-height: 0; padding: 10px; gap: 8px; }
@@ -1124,3 +1132,29 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .school .seg { margin-bottom: 22px; }
 .school-done { margin-top: 30px; }
 .obor-pick { margin: 14px 0 6px; }
+
+/* Moje škola: the chip in the home screen's header and its sheet (screens/School.tsx) */
+.school-chip {
+  display: inline-flex; align-items: center; gap: 5px; min-width: 0; flex: 0 1 auto; height: 40px; padding: 0 8px 0 11px; border-radius: 999px;
+  background: var(--key); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line), 0 2px 0 var(--key-edge);
+  font-family: var(--mono); font-size: 0.78rem; font-weight: 750; letter-spacing: -0.01em;
+}
+.home .bar .brand { flex: 0 1 auto; min-width: 0; }
+@media (max-width: 379px) { .home .bar .brand span { display: none; } }
+.school-chip:active { transform: translateY(1px); box-shadow: inset 0 0 0 1px var(--line), 0 1px 0 var(--key-edge); }
+.school-chip b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 750; }
+.school-chip .who-em { font-size: 1.1rem; }
+.school-chip svg { width: 16px; height: 16px; flex: none; color: var(--ink-3); }
+.school-sheet { position: fixed; inset: auto 0 0 0; width: 100%; max-width: 600px; max-height: 88dvh; margin: 0 auto; padding: 0; border: 0; border-radius: 24px 24px 0 0; background: var(--card); color: var(--ink); overflow: auto; overscroll-behavior: contain; box-shadow: 0 -10px 40px rgb(0 0 0 / 0.2); }
+.school-sheet::backdrop { background: rgb(20 21 24 / 0.4); animation: fade 0.2s ease; }
+.school-sheet[open] { animation: up 0.32s var(--ease); }
+.school-sheet-body { padding: 10px 18px calc(env(safe-area-inset-bottom) + 18px); }
+.school-sheet .grab { display: block; width: 40px; height: 5px; border-radius: 3px; background: var(--line); margin: 0 auto 14px; }
+.school-form .seg { margin-bottom: 16px; }
+.school-form .picks { margin-top: 16px; }
+.school-form .picks:empty { display: none; }
+.row.pick { position: relative; }
+.row.pick select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; font-size: 16px; cursor: pointer; }
+.row.pick:focus-within { outline: 2px solid var(--k-orange); outline-offset: 2px; }
+.sheet-more { margin-top: 14px; }
+.school-sheet .school-done { margin-top: 16px; }
