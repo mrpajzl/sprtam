@@ -22,12 +22,13 @@ export function Bar({ title, crumbs, onBack = back, right }: { title?: string; c
 }
 
 /** The top of a tab's own screen (Učivo, Hry, Já): its name, nothing to go back to. */
-export function TabHead({ title }: { title: string }) {
+export function TabHead({ title, right }: { title: string; right?: ComponentChildren }) {
   return (
     <header class="bar">
       <h1 class="brand">{title}</h1>
       <span class="grow" />
       <QrButton />
+      {right}
     </header>
   )
 }

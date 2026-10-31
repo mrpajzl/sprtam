@@ -14,16 +14,16 @@ import { go, Link } from '../router'
 import { Stars } from '../ui/Bar'
 import { appExtras, ExtraList } from '../ui/Extras'
 import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
-import { IArrow, IClose, ISearch, IShuffle } from '../ui/icons'
+import { IArrow, IClose, IShuffle } from '../ui/icons'
 import { PlanRow } from './Plan'
 import { SubjectTile } from './Browse'
-import { GradePad, SchoolChip } from './School'
+import { GradePad, MeChip } from './School'
 import { schoolName, schoolSubjects, useLanguage } from '../school'
 import { Mascot } from '../ui/Mascot'
 
 // Domů: the pupil's day and their school. The streak, the one thing to do now (Teď na řadě), plans before a test,
 // the subjects of their year with the games that belong to them (src/games.ts) and pinned topics. Everything else
-// is a tab away: Učivo (every grade), Hry, Já (progress, settings). Without a school yet it asks for the grade.
+// is a tab away (Učivo with every grade, Hry, Hledat) or behind the Já chip in the header (progress, settings). Without a school yet it asks for the grade.
 
 export const topicPath = (r: TopicRef) => `/g/${r.g}/${r.s}/${r.id}`
 
@@ -43,8 +43,7 @@ export function Home() {
       <header class="bar">
         <h1 class="brand"><Mascot size={38} /><span>šprtám</span></h1>
         <span class="grow" />
-        <SchoolChip />
-        <Link class="icon-btn" href="/hledat" aria-label="Hledat téma nebo slovíčko" title="Hledat (/)"><ISearch /></Link>
+        <MeChip />
       </header>
 
       <Display p={p} />

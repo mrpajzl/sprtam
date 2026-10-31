@@ -8,7 +8,7 @@ import { TabHead } from '../ui/Bar'
 import { appExtras, ExtraList } from '../ui/Extras'
 import { keyStyle } from '../ui/glyphs'
 import { IArrow, ISearch } from '../ui/icons'
-import { GradePad } from './School'
+import { GradePad, MeChip } from './School'
 
 // Učivo (/ucivo): everything there is to learn, whatever the pupil's school: every grade, the obory of odborné
 // školy, the teaching approaches and the preparation for exams (src/games.ts). The pupil's own year is on the home screen.
@@ -19,7 +19,7 @@ export function LearnScreen() {
   const obory = obor || readyObory((s) => hasSubject(ODB, s)).length > 0
   return (
     <div class="page learn">
-      <TabHead title="Učivo" />
+      <TabHead title="Učivo" right={<MeChip />} />
       <Link class="search-key" href="/hledat">
         <ISearch /><span>Hledat téma nebo slovíčko</span><kbd>/</kbd>
       </Link>
