@@ -90,7 +90,7 @@ Každý soubor začíná polem `"$schema"` s relativní cestou ke schématu – 
 | `emoji` | text | ano | Jedno emoji. |
 | `choose` | text | ano | Text přepínače, kterým si dítě přístup zvolí, např. "Chodím do waldorfské školy". |
 | `about` | seznam (text) ≥ 1 položek | ano | Co je pro přístup typické a jak s ním aplikace pracuje. |
-| `grading` | "marks" \| "verbal" | ano | Hodnocení písemky a testu: "marks" známka 1–5, "verbal" slovní hodnocení. |
+| `grading` | "marks" \| "verbal" | ano | Výchozí hodnocení písemky a testu: "marks" známka 1–5, "verbal" slovní hodnocení. Dítě si ho může změnit v Nastavení → Hodnocení. |
 
 ### Plán ročníku (`content/approaches/<přístup>/<ročník>.json`)
 

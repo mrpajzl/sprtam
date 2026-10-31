@@ -172,7 +172,7 @@ export const strictFor = (topicKey: string) => /\/(cestina|literatura)\//.test(t
 export const grade = (pct: number) => (pct >= 90 ? 1 : pct >= 75 ? 2 : pct >= 50 ? 3 : pct >= 30 ? 4 : 5)
 export const GRADE_WORD = ['', 'výborně', 'chvalitebně', 'dobře', 'dostatečně', 'nedostatečně']
 
-/** Verbal evaluation instead of a grade (approaches without marks, e.g. Waldorf). Same bands as `grade`. */
+/** Verbal evaluation instead of a grade (marks turned off, by default in approaches without them, e.g. Waldorf: src/grading.ts). Same bands as `grade`. */
 export const verbal = (pct: number) => (pct >= 90 ? 'Výborně! Látku máš pevně v rukou.' : pct >= 75 ? 'Moc dobře. Pár drobností si ještě projdi.'
   : pct >= 50 ? 'Dobrý základ. Co nešlo, si zopakuj.' : pct >= 30 ? 'Část už umíš. Zbytek si projdi znovu.' : 'Tohle si projdi ještě jednou od začátku. Zvládneš to.')
 

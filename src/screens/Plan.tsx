@@ -4,6 +4,7 @@ import { hasSubject, loadTopic } from '../content'
 import { GRADE_NAME, gradeSubjects, GRADES, subjectMeta } from '../content/curriculum'
 import { loadIndex, refFor, useIndex, type TopicRef } from '../content/library'
 import type { GradeId, Topic } from '../content/types'
+import { gradedHint, useGrading } from '../grading'
 import { activePlans, dayName, dayOf, isoOf, planDay, type Plan, type PlanDay, type TopicState } from '../progress/plan'
 import { deletePlan, newPlanId, savePlan, stars, today, useProgress, type Progress } from '../progress/store'
 import { MODES } from '../quiz/engine'
@@ -91,6 +92,7 @@ export function PlanRow({ id, plan, day }: { id: string; plan: Plan; day: PlanDa
 }
 
 function PlanDetail({ id, plan, p }: { id: string; plan: Plan; p: Progress }) {
+  const grading = useGrading()
   useTitle(plan.n)
   const all = useIndex()
   const now = today()
@@ -137,7 +139,7 @@ function PlanDetail({ id, plan, p }: { id: string; plan: Plan; p: Progress }) {
 
       <Link class="row test-key" href={`${PLAN_PATH}/${id}/pisemka`} rel="nofollow">
         <span class="skey m"><IPencil /></span>
-        <span class="txt"><b>Cvičná písemka</b><small>{MODES.pisemka.count} otázek ze všech témat, známka</small></span>
+        <span class="txt"><b>Cvičná písemka</b><small>{MODES.pisemka.count} otázek ze všech témat, {gradedHint(grading)}</small></span>
         <IArrow />
       </Link>
 

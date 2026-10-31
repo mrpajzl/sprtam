@@ -197,7 +197,7 @@ export const approachFile = s.object({
   emoji: s.string({ description: 'Jedno emoji.' }),
   choose: s.string({ description: 'Text přepínače, kterým si dítě přístup zvolí, např. "Chodím do waldorfské školy".' }),
   about: s.array(text('Odstavec.'), { min: 1, description: 'Co je pro přístup typické a jak s ním aplikace pracuje.' }),
-  grading: s.enum(['marks', 'verbal'], { description: 'Hodnocení písemky a testu: "marks" známka 1–5, "verbal" slovní hodnocení.' }),
+  grading: s.enum(['marks', 'verbal'], { description: 'Výchozí hodnocení písemky a testu: "marks" známka 1–5, "verbal" slovní hodnocení. Dítě si ho může změnit v Nastavení → Hodnocení.' }),
 }, { description: 'Přístup k výuce (např. waldorfská škola): jeho popis. Plány ročníků jsou v souborech <ročník>.json vedle.' })
 
 export const approachYearFile = s.object({
