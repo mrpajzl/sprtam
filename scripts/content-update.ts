@@ -41,7 +41,9 @@ async function call(method: string, path: string, body?: unknown): Promise<{ sta
 }
 
 const read = <T>(file: string) => stripSchema(JSON.parse(readFileSync(file, 'utf8'))) as T
-const same = (a: unknown, b: unknown) => JSON.stringify(withoutVerified(a)) === JSON.stringify(withoutVerified(b))
+/** JSON with the keys sorted: moderation may store a topic with its keys in another order than the local file. */
+const canon = (x: unknown): unknown => (Array.isArray(x) ? x.map(canon) : x && typeof x === 'object' ? Object.fromEntries(Object.keys(x).sort().map((k) => [k, canon((x as Record<string, unknown>)[k])])) : x)
+const same = (a: unknown, b: unknown) => JSON.stringify(canon(withoutVerified(a))) === JSON.stringify(canon(withoutVerified(b)))
 let sent = 0, published = 0, skipped = 0, failed = 0
 /** Drafts to publish at once (--unverified), at most 200 per request. */
 const batch: string[] = []
