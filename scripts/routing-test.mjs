@@ -77,7 +77,7 @@ await p.click('.tabbar a[href="/ja"]'); await p.waitForSelector('.me-key')
 ok(await p.locator('.tabbar a[aria-current="page"]').getAttribute('href') === '/ja', 'Já tab current')
 // The first class opened became the pupil's school: home shows its subjects and the games that belong to them.
 await p.click('.tabbar a[href="/"]'); await p.waitForSelector('.my-tiles .tile')
-ok((await p.locator('.home .sec-head .label').first().textContent()) === '7. třída', 'home shows the first class opened as my school')
+ok((await p.locator('.school-chip').textContent()).includes('7. tř.'), 'home shows the first class opened as my school')
 ok(await p.locator('.home .extra-key[href="/slovicka"]').count() === 1, 'home offers the words of the class')
 // Opened directly (nothing behind): the tab navigates forward.
 await p.goto(`${BASE}/g/z5/matematika/zlomky`); await p.waitForSelector('.seg')
@@ -119,15 +119,20 @@ ok(await fresh.locator('.home .extra-key[href="/prijimacky"]').count() === 1, 'a
 await fresh.goto(`${BASE}/g/z9/zemepis`); await fresh.waitForSelector('.extra-key')
 ok(await fresh.locator('.extra-key[href="/slepa-mapa"]').count() === 1, 'zeměpis offers Slepá mapa')
 // Only the pupil's second language: neither the subjects nor the first recommendations offer the others.
-await fresh.goto(`${BASE}/skola`); await fresh.click('button.num-key[aria-label="7. třída"]')
-await fresh.click('.list[aria-label="Druhý cizí jazyk"] .row:has-text("Francouzština")')
+// The school is chosen in the sheet of the header chip.
+await fresh.goto(`${BASE}/`); await fresh.waitForSelector('.my-tiles .tile')
+await fresh.click('.school-chip'); await fresh.waitForSelector('.school-sheet[open]')
+await fresh.click('.school-sheet button.num-key[aria-label="7. třída"]')
+await fresh.selectOption('.school-sheet select[aria-label="Druhý cizí jazyk"]', 'francouzstina')
+await fresh.click('.school-sheet .school-done'); await fresh.waitForSelector('.school-sheet', { state: 'detached' })
+ok((await fresh.locator('.school-chip').textContent()).includes('7. tř.'), 'the sheet changes the class on the spot')
 await fresh.goto(`${BASE}/`); await fresh.waitForSelector('.my-tiles .tile')
 ok(await fresh.locator('.home a[href*="/nemcina"], .home a[href*="/spanelstina"]').count() === 0, 'the chosen second language hides the others on the home screen')
 // Switching an obor on asks for the year, then home shows the obor's subjects.
 await fresh.goto(`${BASE}/obor/informacni-technologie`); await fresh.waitForSelector('.approach-switch')
 await fresh.click('.approach-switch'); await fresh.click('.obor-pick button.num-key[aria-label="2. ročník"]')
 await fresh.goto(`${BASE}/`); await fresh.waitForSelector('.my-tiles .tile')
-ok((await fresh.locator('.home .sec-head .label').first().textContent()) === '2. ročník · Informační technologie', 'an obor switched on reaches the home screen')
+ok((await fresh.locator('.school-chip').textContent()).includes('2. roč. · 💻') && await fresh.locator('.my-tiles .tile[href="/g/odb/programovani"]').count() === 1, 'an obor switched on reaches the home screen')
 const homeHtml = await (await fetch(`${BASE}/`)).text()
 ok(homeHtml.includes('href="/ucivo"') && homeHtml.includes('<a class="num-key" href="/g/z7"'), 'server-rendered home links Učivo and every class')
 

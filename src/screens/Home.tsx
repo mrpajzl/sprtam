@@ -1,4 +1,3 @@
-import type { JSX } from 'preact'
 import { approachById, useApproach } from '../approach'
 import { GRADE_NAME, GRADE_SHORT, ODB, subjectMeta } from '../content/curriculum'
 import type { GradeId, YearId } from '../content/types'
@@ -15,14 +14,12 @@ import { go, Link } from '../router'
 import { Stars } from '../ui/Bar'
 import { appExtras, ExtraList } from '../ui/Extras'
 import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
-import { IArrow, IBook, IClose, IPlay, IRepeat, ISearch, IShuffle } from '../ui/icons'
+import { IArrow, IClose, ISearch, IShuffle } from '../ui/icons'
 import { PlanRow } from './Plan'
-import { WhoKey } from './Profiles'
 import { SubjectTile } from './Browse'
-import { GradePad } from './School'
+import { GradePad, SchoolChip } from './School'
 import { schoolName, schoolSubjects, useLanguage } from '../school'
 import { Mascot } from '../ui/Mascot'
-import { QrButton } from '../ui/QrShare'
 
 // Domů: the pupil's day and their school. The streak, the one thing to do now (Teď na řadě), plans before a test,
 // the subjects of their year with the games that belong to them (src/games.ts) and pinned topics. Everything else
@@ -46,9 +43,8 @@ export function Home() {
       <header class="bar">
         <h1 class="brand"><Mascot size={38} /><span>šprtám</span></h1>
         <span class="grow" />
-        <WhoKey />
+        <SchoolChip />
         <Link class="icon-btn" href="/hledat" aria-label="Hledat téma nebo slovíčko" title="Hledat (/)"><ISearch /></Link>
-        <QrButton />
       </header>
 
       <Display p={p} />
@@ -91,10 +87,7 @@ function MySchool({ g, o, mine: { odb, general } }: { g: YearId; o: Obor | undef
   return (
     <>
       <section class="sec">
-        <div class="sec-head">
-          <h2 class="label">{schoolName(g, o)}</h2>
-          <Link class="mini-key quiet" href="/skola" aria-label={`Moje škola: ${schoolName(g, o)}. Změnit`}>Změnit</Link>
-        </div>
+        <h2 class="label" aria-label={`Moje předměty: ${schoolName(g, o)}`}>Moje předměty</h2>
         {a?.grades.includes(g) && (
           <Link class="row approach-key my-approach" style={keyStyle('green')} href={`/${a.id}/${g}`}>
             <span class="skey m"><b class="em">{a.emoji}</b></span>
@@ -169,7 +162,7 @@ function Display({ p }: { p: Progress }) {
   )
 }
 
-interface Step { href: string; title: string; hint: string; short: string; key: JSX.Element; style: Record<string, string>; nofollow?: boolean; resume?: boolean }
+interface Step { href: string; title: string; hint: string; short: string; style: Record<string, string>; nofollow?: boolean; resume?: boolean }
 
 /**
  * Teď na řadě: the one thing to do now, the others as small keys under it. In this order: the unfinished round
@@ -182,30 +175,31 @@ function NextUp({ p, recs }: { p: Progress; recs: Rec[] }) {
   const due = Math.min(10, qs.filter((v) => isDue(v, now)).length)
   const mistakes = qs.filter(isMistake).length
   const steps: Step[] = []
-  if (r) steps.push({ href: `${r.path}?pokracovat`, title: `Pokračovat: ${r.label}`, hint: `${MODES[r.mode]?.name ?? 'Kolo'} · hotovo ${r.answers.length} z ${r.queue.length}`, short: 'Rozdělané kolo', key: <span class="skey m"><IPlay /></span>, style: keyStyle('green'), nofollow: true, resume: true })
-  if (due) steps.push({ href: '/dnes', title: 'Dnešní opakování', hint: `${due} ${plural(due, 'otázka', 'otázky', 'otázek')}, co ti vypadávají z hlavy`, short: `Opakování · ${due}`, key: <span class="skey m"><IRepeat /></span>, style: keyStyle('blue'), nofollow: true })
-  if (mistakes) steps.push({ href: '/chyby', title: 'Sešit chyb', hint: `${mistakes} ${plural(mistakes, 'otázka', 'otázky', 'otázek')} k opravení`, short: `Chyby · ${mistakes}`, key: <span class="skey m"><IBook /></span>, style: keyStyle('red') })
+  if (r) steps.push({ href: `${r.path}?pokracovat`, title: `Pokračovat: ${r.label}`, hint: `${MODES[r.mode]?.name ?? 'Kolo'} · hotovo ${r.answers.length} z ${r.queue.length}`, short: 'Rozdělané kolo', style: keyStyle('green'), nofollow: true, resume: true })
+  if (due) steps.push({ href: '/dnes', title: 'Dnešní opakování', hint: `${due} ${plural(due, 'otázka', 'otázky', 'otázek')}, co ti vypadávají z hlavy`, short: `Opakování · ${due}`, style: keyStyle('blue'), nofollow: true })
+  if (mistakes) steps.push({ href: '/chyby', title: 'Sešit chyb', hint: `${mistakes} ${plural(mistakes, 'otázka', 'otázky', 'otázek')} k opravení`, short: `Chyby · ${mistakes}`, style: keyStyle('red') })
   for (const { ref, why } of recs) {
-    steps.push({ href: topicPath(ref), title: ref.title, hint: `${WHY_TITLE[why.k]} · ${GRADE_NAME[ref.g]}, ${subjectMeta(ref.s).name.toLowerCase()}`, short: ref.title, key: <SubjectKey s={ref.s} />, style: subjectStyle(ref.s) })
+    steps.push({ href: topicPath(ref), title: ref.title, hint: `${WHY_TITLE[why.k]} · ${GRADE_NAME[ref.g]}, ${subjectMeta(ref.s).name.toLowerCase()}`, short: ref.title, style: subjectStyle(ref.s) })
   }
   if (!steps.length) return null
   const [first, ...rest] = steps
   return (
     <section class="next" aria-label="Teď na řadě">
-      <div class="next-top">
-        <Link class="row next-key" style={first.style} href={first.href} rel={first.nofollow ? 'nofollow' : undefined}>
-          {first.key}
-          <span class="txt"><small class="kicker">Teď na řadě</small><b>{first.title}</b><small>{first.hint}</small></span>
+      <div class="hero">
+        <Link class="hero-main" href={first.href} rel={first.nofollow ? 'nofollow' : undefined}>
+          <small class="kicker">Teď na řadě</small>
+          <b>{first.title}</b>
+          <span class="hero-hint">{first.hint}</span>
           <IArrow />
         </Link>
-        {first.resume && <button class="icon-btn" onClick={() => dropRound()} aria-label="Zahodit rozdělané kolo"><IClose /></button>}
+        {first.resume && <button class="icon-btn hero-x" onClick={() => dropRound()} aria-label="Zahodit rozdělané kolo"><IClose /></button>}
+        {rest.length > 0 && (
+          <div class="next-more">
+            <small>Pak</small>
+            {rest.slice(0, 3).map((s) => <Link key={s.href} class="next-chip" style={s.style} href={s.href} rel={s.nofollow ? 'nofollow' : undefined}>{s.short}</Link>)}
+          </div>
+        )}
       </div>
-      {rest.length > 0 && (
-        <div class="next-more">
-          <small>Pak</small>
-          {rest.slice(0, 3).map((s) => <Link key={s.href} class="next-chip" style={s.style} href={s.href} rel={s.nofollow ? 'nofollow' : undefined}>{s.short}</Link>)}
-        </div>
-      )}
     </section>
   )
 }

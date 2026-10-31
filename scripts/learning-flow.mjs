@@ -91,7 +91,7 @@ for (const scheme of shots ? ['light', 'dark'] : ['light']) {
   }
   await page.goto(base + '/')
   await page.waitForSelector('.next a[href="/dnes"]')
-  check(await page.locator('.next-key[href="/dnes"]').count() === 1 && await page.locator('.next-chip[href="/chyby"]').count() === 1, `${scheme}: home offers Dnešní opakování first and Sešit chyb under it`)
+  check(await page.locator('.hero-main[href="/dnes"]').count() === 1 && await page.locator('.next-chip[href="/chyby"]').count() === 1, `${scheme}: home offers Dnešní opakování first and Sešit chyb under it`)
   await shot('home')
 
   await page.click('.next-chip[href="/chyby"]')

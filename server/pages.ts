@@ -89,7 +89,7 @@ const bar = (title: string, up?: string, crumbs: [string, string][] = []) =>
 /** The app's TabBar (src/ui/TabBar.tsx). */
 const tabbar = (active: 'home' | 'learn' | 'games' | 'me' | undefined) => {
   const tab = (t: string, href: string, glyph: string, label: string) => `<a href="${esc(href)}"${t === active ? ' aria-current="page"' : ''}>${glyph}<span>${esc(label)}</span></a>`
-  return `<nav class="tabbar" aria-label="Hlavní nabídka">${tab('home', '/', HOME, 'Domů')}${tab('learn', '/ucivo', BOOK, 'Učivo')}${tab('games', '/hry', DICE, 'Hry')}${tab('me', '/ja', USER, 'Já')}</nav>`
+  return `<nav class="tabbar" aria-label="Hlavní nabídka">${tab('home', '/', HOME, 'Dnes')}${tab('learn', '/ucivo', BOOK, 'Učivo')}${tab('games', '/hry', DICE, 'Hry')}${tab('me', '/ja', USER, 'Já')}</nav>`
 }
 /** The top of a tab's own screen (TabHead in src/ui/Bar.tsx). */
 const tabHead = (title: string) => `<header class="bar"><h1 class="brand">${esc(title)}</h1><span class="grow"></span></header>`

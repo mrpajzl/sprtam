@@ -21,7 +21,7 @@ function Toggle({ on, label, hint, onFlip }: { on: boolean; label: string; hint?
   )
 }
 
-export function Choice({ on, label, hint, onPick }: { on: boolean; label: string; hint?: string; onPick: () => void }) {
+function Choice({ on, label, hint, onPick }: { on: boolean; label: string; hint?: string; onPick: () => void }) {
   return (
     <button class={`row choice ${on ? 'on' : ''}`} role="radio" aria-checked={on} onClick={onPick}>
       <span class="txt"><b>{label}</b>{hint && <small>{hint}</small>}</span>
