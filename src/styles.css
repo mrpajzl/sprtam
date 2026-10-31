@@ -1149,7 +1149,31 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 @media (max-width: 379px) { .home .bar .brand span { display: none; } }
 .school-chip:active { transform: translateY(1px); box-shadow: inset 0 0 0 1px var(--line), 0 1px 0 var(--key-edge); }
 .school-chip b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: inherit; }
-.school-chip .who-em { font-size: 1.1rem; }
+/* Já: the pupil's avatar (profile emoji, or a person) in the chip and at the top of its sheet */
+.me-av {
+  flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+  background: color-mix(in oklab, var(--k-orange) 18%, var(--card)); color: color-mix(in oklab, var(--k-orange) 60%, var(--ink));
+  font-size: 1.05rem; line-height: 1;
+}
+.school-chip .me-av svg { width: 18px; height: 18px; color: inherit; }
+.school-chip:has(.me-av) { padding-left: 5px; gap: 7px; }
+.me-av.big { width: 52px; height: 52px; font-size: 1.8rem; }
+.me-av.big svg { width: 28px; height: 28px; }
+.me-head { display: flex; align-items: center; gap: 12px; }
+.me-head .txt { display: grid; gap: 2px; min-width: 0; }
+.me-head b { font-size: 1.25rem; font-weight: 850; }
+.me-head small { font-family: var(--mono); font-size: 0.76rem; font-weight: 600; color: var(--ink-3); }
+.me-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.me-tile {
+  display: flex; align-items: center; gap: 10px; min-width: 0; min-height: 60px; padding: 10px; border-radius: var(--r-s);
+  background: var(--key); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line), 0 2px 0 var(--key-edge);
+  transition: transform 0.09s var(--ease);
+}
+.me-tile:active { transform: translateY(1px); }
+.me-tile .txt { display: grid; gap: 1px; min-width: 0; }
+.me-tile b { font-weight: 750; font-size: 0.92rem; line-height: 1.2; }
+.me-tile small { font-family: var(--mono); font-size: 0.7rem; font-weight: 600; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.school-sheet .me-grid + .sheet-more { margin-top: 10px; }
 .school-chip svg { width: 18px; height: 18px; flex: none; color: var(--ink-2); }
 .school-sheet { position: fixed; inset: auto 0 0 0; width: 100%; max-width: 600px; max-height: 88dvh; margin: 0 auto; padding: 0; border: 0; border-radius: 24px 24px 0 0; background: var(--card); color: var(--ink); overflow: auto; overscroll-behavior: contain; box-shadow: 0 -10px 40px rgb(0 0 0 / 0.2); }
 .school-sheet::backdrop { background: rgb(20 21 24 / 0.4); animation: fade 0.2s ease; }

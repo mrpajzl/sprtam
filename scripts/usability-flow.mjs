@@ -190,7 +190,7 @@ for (const scheme of shots ? ['light', 'dark'] : ['light']) {
   await page.waitForURL(base + '/')
   await page.waitForSelector('.school-chip')
   await shot('home-profile')
-  check(/Ben/.test(await page.locator('.school-chip').textContent()) && !(await progress()).k && !(await page.locator('.home-plans').count()), 'Ben starts with his own empty progress')
+  check(/Ben/.test(await page.locator('.school-chip').getAttribute('aria-label')) && !(await progress()).k && !(await page.locator('.home-plans').count()), 'Ben starts with his own empty progress')
   await page.locator('.school-chip').click()
   await page.waitForSelector('.school-sheet[open]')
   await shot('profiles-switch')

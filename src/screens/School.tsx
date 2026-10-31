@@ -4,14 +4,15 @@ import { hasSubject } from '../content'
 import { GRADE_NAME, ODB, STAGES, subjectMeta } from '../content/curriculum'
 import type { YearId } from '../content/types'
 import { readyObory, setObor, useObor } from '../obory'
-import { languagesOf, setLanguage, useLanguage } from '../school'
+import { languagesOf, schoolName, setLanguage, useLanguage } from '../school'
 import { setGrade, useProgress } from '../progress/store'
 import { Link } from '../router'
 import { Bar } from '../ui/Bar'
-import { IArrow, ICheck, IChevron } from '../ui/icons'
+import { IArrow, ICheck, IChevron, IUser } from '../ui/icons'
+import { MeKeys } from './Me'
 import { switchProfile, useProfiles } from '../profiles'
 
-// Moje škola: where the pupil goes to school, in a sheet from the chip in the home screen's header (and at /skola). The home screen then shows the subjects of that year (and of
+// Moje škola: where the pupil goes to school, in the Já sheet from the chip in the header (and at /skola). The home screen then shows the subjects of that year (and of
 // the obor) and the extras that belong to them (src/games.ts). It is the pupil's own (Progress.g, the obor and the
 // teaching approach are kept per profile, src/profiles.ts) and never leaves the device. Other grades stay a tab
 // away in Učivo.
@@ -87,42 +88,53 @@ export function SchoolForm() {
   )
 }
 
-/** "8. tř." / "2. roč." – the pupil's year on the header chip. */
-/** The header chip of the home screen: who is learning and where; opens the sheet to change it. */
-export function SchoolChip() {
+/** Já in the header (home, Učivo, Hry): who is learning and the year. Opens the sheet with the school and the pupil's things. */
+export function MeChip() {
   const [open, setOpen] = useState(false)
   const g = useProgress().g
   const o = useObor()
   const r = useProfiles()
   const me = r?.l.find((x) => x.id === r.a)
-  const where = g ? `${GRADE_NAME[g]}${o && g[0] === 's' ? ` · ${o.emoji}` : ''}` : 'Kam chodíš?'
   return (
     <>
-      <button class="school-chip" aria-haspopup="dialog" aria-label={`${me ? `Učí se ${me.n}, ` : ''}${g ? GRADE_NAME[g] : 'škola nevybraná'}. Změnit`} onClick={() => setOpen(true)}>
-        {me && <span class="who-em" aria-hidden="true">{me.e}</span>}
-        <b>{me ? `${me.n} · ${where}` : where}</b>
+      <button class="school-chip" aria-haspopup="dialog" aria-label={`Já: ${me ? `${me.n}, ` : ''}${g ? GRADE_NAME[g] : 'škola nevybraná'}`} onClick={() => setOpen(true)}>
+        <Avatar e={me?.e} />
+        <b>{g ? `${GRADE_NAME[g]}${o && g[0] === 's' ? ` · ${o.emoji}` : ''}` : 'Kam chodíš?'}</b>
         <IChevron />
       </button>
-      {open && <SchoolSheet onClose={() => setOpen(false)} />}
+      {open && <MeSheet onClose={() => setOpen(false)} />}
     </>
   )
 }
 
-/** Kam chodíš? The school and, on a shared device, who is learning: a sheet over the home screen. */
-function SchoolSheet({ onClose }: { onClose: () => void }) {
+const Avatar = ({ e, big }: { e?: string; big?: boolean }) => <span class={`me-av ${big ? 'big' : ''}`} aria-hidden="true">{e ?? <IUser />}</span>
+
+/** Já as a sheet over the screen: who, where to school, the profiles on this device and the pupil's things. */
+function MeSheet({ onClose }: { onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null)
+  const p = useProgress()
+  const o = useObor()
   const r = useProfiles()
+  const me = r?.l.find((x) => x.id === r.a)
   useEffect(() => { ref.current?.showModal() }, [])
   useEffect(() => {
     addEventListener('popstate', onClose)
     return () => removeEventListener('popstate', onClose)
   }, [])
   const close = () => ref.current?.close()
+  // Any link in the sheet leaves the screen: close the sheet with it.
+  const onClick = (e: MouseEvent) => {
+    if (e.target === e.currentTarget || (e.target as Element).closest('a')) close()
+  }
   return (
-    <dialog ref={ref} class="school-sheet" aria-label="Kam chodíš do školy" onClose={onClose} onKeyDown={(e) => e.stopPropagation()} onClick={(e) => { if (e.target === e.currentTarget) close() }}>
+    <dialog ref={ref} class="school-sheet" aria-label="Já" onClose={onClose} onKeyDown={(e) => e.stopPropagation()} onClick={onClick}>
       <div class="school-sheet-body">
         <span class="grab" aria-hidden="true" />
-        <h2 class="label">Kam chodíš?</h2>
+        <div class="me-head">
+          <Avatar e={me?.e} big />
+          <span class="txt"><b>{me?.n ?? 'Já'}</b><small>{p.g ? schoolName(p.g, o) : 'vyber, kam chodíš do školy'}</small></span>
+        </div>
+        <h2 class="label next-label">Kam chodíš?</h2>
         <SchoolForm />
         {r && (
           <>
@@ -138,8 +150,10 @@ function SchoolSheet({ onClose }: { onClose: () => void }) {
             </div>
           </>
         )}
-        <Link class="row sheet-more" href="/nastaveni" onClick={close}>
-          <span class="txt"><b>{r ? 'Přidat nebo upravit profily' : 'Učí se tu víc dětí?'}</b><small>v nastavení</small></span><IArrow />
+        <h2 class="label next-label">Moje věci</h2>
+        <MeKeys />
+        <Link class="row sheet-more" href="/o-aplikaci">
+          <span class="txt"><b>Co je Šprtám?</b><small>jak funguje a co o tobě (ne)ví</small></span><IArrow />
         </Link>
         <button class="btn block school-done" onClick={close}>Hotovo</button>
       </div>

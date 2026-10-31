@@ -59,21 +59,21 @@ export function App() {
   if (a === 'mix') return <MixScreen />
   if (a === 'dnes') return <ReviewQuiz mode="dnes" />
   if (a === 'chyby' && b === 'procvicit') return <ReviewQuiz mode="chyby" />
-  if (a === 'chyby') return <><MistakesScreen /><TabBar active="me" /></>
-  if (a === 'prehled') return <><Overview /><TabBar active="me" /></>
-  if (a === 'plan') return planFullScreen(c) ? <PlanRoute key={`${b}/${c}`} id={b} sub={c} /> : <><PlanRoute key={`${b}/${c}`} id={b} sub={c} /><TabBar active="me" /></>
+  if (a === 'chyby') return <><MistakesScreen /><TabBar /></>
+  if (a === 'prehled') return <><Overview /><TabBar /></>
+  if (a === 'plan') return planFullScreen(c) ? <PlanRoute key={`${b}/${c}`} id={b} sub={c} /> : <><PlanRoute key={`${b}/${c}`} id={b} sub={c} /><TabBar /></>
   if (a === 'p' && b) return <ImportLink code={b} />
   if (a === 'presun' && b) return <MoveIn code={b} />
   if (a === 'spojit' && b) return <SyncScreen offer={b} />
-  if (a === 'hledat') return <><Search /><TabBar /></>
+  if (a === 'hledat') return <><Search /><TabBar active="search" /></>
   if (a === 'ucivo') return <><LearnScreen /><TabBar active="learn" /></>
   if (a === 'hry') return <><GamesScreen /><TabBar active="games" /></>
-  if (a === 'ja') return <><MeScreen /><TabBar active="me" /></>
-  if (a === 'skola') return <><SchoolScreen /><TabBar active="me" /></>
-  if (a === 'sdilet') return <><SyncScreen /><TabBar active="me" /></>
-  if (a === 'nastaveni') return <><Settings /><TabBar active="me" /></>
-  if (a === 'profily') return <><ProfilesScreen /><TabBar active="me" /></>
-  if (a === 'o-aplikaci') return <><About /><TabBar active="me" /></>
+  if (a === 'ja') return <><MeScreen /><TabBar /></>
+  if (a === 'skola') return <><SchoolScreen /><TabBar /></>
+  if (a === 'sdilet') return <><SyncScreen /><TabBar /></>
+  if (a === 'nastaveni') return <><Settings /><TabBar /></>
+  if (a === 'profily') return <><ProfilesScreen /><TabBar /></>
+  if (a === 'o-aplikaci') return <><About /><TabBar /></>
   if (a === 'widgety') return <><GalleryScreen key={b} name={b} /><TabBar /></>
   if (a === EXAM.id) {
     // Practice gets the whole screen: /prijimacky/<subject>/test, /prijimacky/<subject>/simulace, /prijimacky/<subject>/<area>/test

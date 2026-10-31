@@ -87,12 +87,14 @@ const bar = (title: string, up?: string, crumbs: [string, string][] = []) =>
   `<header class="bar">${up ? `<a class="icon-btn" href="${esc(up)}" aria-label="Zpět">${BACK}</a>` : '<span class="spacer"></span>'}<div class="bar-title">${crumbs.length ? `<nav class="crumbs" aria-label="Kde jsem">${crumbs.map(([name, path]) => `<a href="${esc(path)}">${esc(name)}</a>`).join('')}</nav>` : ''}<h1>${esc(title)}</h1></div><span class="spacer"></span></header>`
 
 /** The app's TabBar (src/ui/TabBar.tsx). */
-const tabbar = (active: 'home' | 'learn' | 'games' | 'me' | undefined) => {
+const tabbar = (active: 'home' | 'learn' | 'games' | 'search' | undefined) => {
   const tab = (t: string, href: string, glyph: string, label: string) => `<a href="${esc(href)}"${t === active ? ' aria-current="page"' : ''}>${glyph}<span>${esc(label)}</span></a>`
-  return `<nav class="tabbar" aria-label="Hlavní nabídka">${tab('home', '/', HOME, 'Dnes')}${tab('learn', '/ucivo', BOOK, 'Učivo')}${tab('games', '/hry', DICE, 'Hry')}${tab('me', '/ja', USER, 'Já')}</nav>`
+  return `<nav class="tabbar" aria-label="Hlavní nabídka">${tab('home', '/', HOME, 'Dnes')}${tab('learn', '/ucivo', BOOK, 'Učivo')}${tab('games', '/hry', DICE, 'Hry')}${tab('search', '/hledat', SEARCH, 'Hledat')}</nav>`
 }
+/** Já in the header (MeChip in src/screens/School.tsx); without the app it is the /ja page. */
+const meChip = `<a class="school-chip" href="/ja" aria-label="Já"><span class="me-av" aria-hidden="true">${USER}</span><b>Já</b></a>`
 /** The top of a tab's own screen (TabHead in src/ui/Bar.tsx). */
-const tabHead = (title: string) => `<header class="bar"><h1 class="brand">${esc(title)}</h1><span class="grow"></span></header>`
+const tabHead = (title: string) => `<header class="bar"><h1 class="brand">${esc(title)}</h1><span class="grow"></span>${meChip}</header>`
 
 /** An extra of src/games.ts as a key (ExtraRow in src/ui/Extras.tsx). */
 const extraRow = (x: Extra) => `<a class="row extra-key" style="${style(x.c)}" href="${esc(x.path)}"><span class="skey m">${x.emoji ? `<b class="em">${esc(x.emoji)}</b>` : `<b>${esc(x.glyph ?? '')}</b>`}</span><span class="txt"><b>${esc(x.name)}</b><small>${esc(x.hint)}</small></span>${FORWARD}</a>`
@@ -129,7 +131,7 @@ export function pages(site: SiteContent): Page[] {
     title: titles.home(),
     description: 'Opakování učiva základní a střední školy: vysvětlení od úplných základů, kvízy, písemky, slovíčka a hry. Zdarma, bez účtů a bez reklam.',
     crumbs: [home],
-    body: `<div class="page home"><header class="bar"><h1 class="brand">šprtám</h1><span class="grow"></span><a class="icon-btn" href="/hledat" aria-label="Hledat téma nebo slovíčko">${SEARCH}</a></header>
+    body: `<div class="page home"><header class="bar"><h1 class="brand">šprtám</h1><span class="grow"></span>${meChip}</header>
 <section class="sec welcome"><h2 class="label">Kam chodíš do školy?</h2>${gradePad()}<a class="row welcome-skip" href="/ucivo"><span class="txt"><b>Všechno učivo</b><small>třídy, obory a přijímačky</small></span>${FORWARD}</a></section>
 ${extraList(games)}
 <a class="row about-key" style="${style('ink')}" href="/o-aplikaci"><span class="skey m"><b>?</b></span><span class="txt"><b>Co je Šprtám?</b><small>jak funguje a co o tobě (ne)ví</small></span></a></div>${tabbar('home')}`,
@@ -158,7 +160,7 @@ ${extraList(games)}
     crumbs: [home, [ABOUT.title, '/o-aplikaci']],
     body: `<div class="page about">${bar(ABOUT.title, '/')}<div class="about-lead"><p>${inline(ABOUT.lead)}</p></div>${ABOUT.sections.map((x) => `<section><h2 class="label next-label">${esc(x.title)}</h2><ul class="about-list">${x.items.map((i) => `<li>${inline(i)}</li>`).join('')}</ul></section>`).join('')}
 <section><h2 class="label next-label">${esc(ABOUT.code.title)}</h2><div class="list">${ABOUT.code.links.map((l) => `<a class="row" href="${esc(l.href)}" rel="noopener"><span class="txt"><b>${esc(l.label)}</b><small>${esc(l.hint)}</small></span>${FORWARD}</a>`).join('')}</div></section>
-<section class="about-join card"><h2>${esc(ABOUT.join.title)}</h2><p>${esc(ABOUT.join.lead)}</p><ul>${ABOUT.join.items.map((i) => `<li>${inline(i)}</li>`).join('')}</ul><a class="btn block" href="${esc(ABOUT.join.form.href)}" target="_blank" rel="noopener">${esc(ABOUT.join.form.label)}</a><a class="btn ghost block" href="mailto:${esc(ABOUT.join.email)}">Napiš na ${esc(ABOUT.join.email)}</a></section></div>${tabbar('me')}`,
+<section class="about-join card"><h2>${esc(ABOUT.join.title)}</h2><p>${esc(ABOUT.join.lead)}</p><ul>${ABOUT.join.items.map((i) => `<li>${inline(i)}</li>`).join('')}</ul><a class="btn block" href="${esc(ABOUT.join.form.href)}" target="_blank" rel="noopener">${esc(ABOUT.join.form.label)}</a><a class="btn ghost block" href="mailto:${esc(ABOUT.join.email)}">Napiš na ${esc(ABOUT.join.email)}</a></section></div>${tabbar(undefined)}`,
   })
 
   // Subject tiles: core subjects get their glyph from the app; odborné předměty show their emoji.

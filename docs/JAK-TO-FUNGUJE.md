@@ -21,18 +21,20 @@ Obsah je ve složce [`content/`](../content): každé téma je jeden soubor `con
 
 Dole je vždy po ruce lišta se čtyřmi tlačítky:
 
-- **Dnes**: tvůj den a tvoje škola. Displej se sérií dní, karta **Teď na řadě** s jedinou věcí, kterou je teď nejlepší udělat (rozdělané kolo, Dnešní opakování, Sešit chyb, nebo doporučené téma; ostatní jsou pod ní jako malá tlačítka *Pak*), plány před písemkou, **předměty tvého ročníku**, hry k nim a připnutá témata. Napoprvé se zeptá *Kam chodíš do školy?* Stačí klepnout na třídu, nebo *Jen se rozhlížím*. Nahoře je tlačítko se jménem a třídou: otevře panel, kde změníš třídu, obor, druhý jazyk a způsob výuky a přepneš, kdo se učí.
+- **Dnes**: tvůj den a tvoje škola. Displej se sérií dní, karta **Teď na řadě** s jedinou věcí, kterou je teď nejlepší udělat (rozdělané kolo, Dnešní opakování, Sešit chyb, nebo doporučené téma; ostatní jsou pod ní jako malá tlačítka *Pak*), plány před písemkou, **předměty tvého ročníku**, hry k nim a připnutá témata. Napoprvé se zeptá *Kam chodíš do školy?* Stačí klepnout na třídu, nebo *Jen se rozhlížím*.
 - **Učivo**: všechny třídy ZŠ a ročníky SŠ, obory odborných škol, waldorfský plán a příprava na přijímačky. Nahoře je hledání (kdekoli ho otevře i klávesa `/`).
 - **Hry**: Slepá mapa, Periodická tabulka a slovíčka všech jazyků. Nahoře ty, které patří k tvým předmětům.
-- **Já**: Moje škola, Přehled, Sešit chyb, Plán před písemkou, kdo se učí, přenos pokroku, nastavení a o aplikaci.
+- **Hledat**: hledání ve všech tématech a slovíčkách (kdekoli ho otevře i klávesa `/`).
 
-**Moje škola** (tlačítko se třídou nahoře na úvodní obrazovce, nebo Já → Moje škola) je třída nebo ročník, na SŠ i obor, u ročníků s druhým cizím jazykem jazyk, který se učíš (ostatní dva se pak na úvodní obrazovce neukazují), a způsob výuky (běžná nebo waldorfská škola). Pamatuje se jen v zařízení, každý profil má svou. Když si ji nevybereš, stane se tvou první třída, kterou otevřeš.
+Vpravo nahoře na Dnes, Učivu a Hrách je tlačítko **Já** s tvým obrázkem a třídou. Otevře panel, kde změníš třídu, obor, druhý jazyk a způsob výuky, přepneš, kdo se učí, a najdeš Přehled, Sešit chyb, Plán před písemkou, přenos pokroku, nastavení a o aplikaci. Bez JavaScriptu je to stránka [sprtam.cz/ja](https://sprtam.cz/ja).
+
+**Moje škola** (tlačítko Já nahoře) je třída nebo ročník, na SŠ i obor, u ročníků s druhým cizím jazykem jazyk, který se učíš (ostatní dva se pak na úvodní obrazovce neukazují), a způsob výuky (běžná nebo waldorfská škola). Pamatuje se jen v zařízení, každý profil má svou. Když si ji nevybereš, stane se tvou první třída, kterou otevřeš.
 
 Hry a příprava (přijímačky) nejsou přilepené k jedné obrazovce. Každá v seznamu [`src/games.ts`](../src/games.ts) říká, ke kterým předmětům (případně jen ke kterým ročníkům) patří, a ukáže se všude, kde ty předměty jsou: u předmětu, u ročníku, na úvodní obrazovce a v Hrách. Slepá mapa patří k zeměpisu a vlastivědě, Periodická tabulka k chemii, slovíčka k jazyku a přijímačky k češtině a matematice v 9. třídě. U celého ročníku se slovíčka víc jazyků spojí do jednoho tlačítka *Slovíčka*.
 
 ## Waldorfská škola
 
-Kdo chodí do waldorfské školy, zapne si to v Moje škola (Já → Moje škola). Plán ročníků je na [sprtam.cz/waldorf](https://sprtam.cz/waldorf). Pak:
+Kdo chodí do waldorfské školy, zapne si to v Moje škola (tlačítko Já nahoře). Plán ročníků je na [sprtam.cz/waldorf](https://sprtam.cz/waldorf). Pak:
 
 - **Ročník ukazuje epochy** (v obvyklém pořadí – třídy si je každý rok skládají jinak) a ke každé témata k procvičení, i když jsou v aplikaci zařazená v jiném ročníku. Waldorfská 1. třída třeba probírá násobkové řady, které jsou v běžné škole ve 2. třídě.
 - **Vysvětlení v duchu waldorfské školy** (od celku k částem, rytmus, příběh, přírodniny) se ukáže jako první. Zatím je u matematiky 1.–3. třídy.
@@ -211,7 +213,7 @@ Na [sprtam.cz/plan](https://sprtam.cz/plan) (Já → *Plán před písemkou*, ne
 
 ## Další funkce
 
-- **Hledání** (lupa nebo klávesa `/`): ve všech tématech všech ročníků podle názvu, pojmů a pravidel a ve všech slovíčkách. Funguje i bez diakritiky a dá se filtrovat podle stupně.
+- **Hledání** (Hledat v dolní liště nebo klávesa `/`): ve všech tématech všech ročníků podle názvu, pojmů a pravidel a ve všech slovíčkách. Funguje i bez diakritiky a dá se filtrovat podle stupně.
 - **Připnutá témata**: špendlíkem si označíš, co se zrovna učíš. Připnutá témata se vracejí dřív a jdou procvičit najednou v Mixu.
 - **Série dní**: kolik dní po sobě jsi procvičoval (počítá se, pokud jsi procvičoval dnes nebo včera; jeden vynechaný den za týden sérii nepřeruší, viz [Přehled a denní cíl](#přehled-a-denní-cíl)).
 - **Tmavý vzhled**: Já → Nastavení.

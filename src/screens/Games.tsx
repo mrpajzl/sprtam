@@ -4,6 +4,7 @@ import { useProgress } from '../progress/store'
 import { TabHead } from '../ui/Bar'
 import { appExtras, ExtraRow } from '../ui/Extras'
 import { schoolSubjects, useLanguage } from '../school'
+import { MeChip } from './School'
 
 // Hry (/hry): every learning game of src/games.ts, those of the pupil's subjects first. Each game also shows up
 // by the subjects it belongs to (a grade, a subject, the home screen).
@@ -18,7 +19,7 @@ export function GamesScreen() {
   const rest = all.filter((x) => !mine.includes(x))
   return (
     <div class="page games">
-      <TabHead title="Hry" />
+      <TabHead title="Hry" right={<MeChip />} />
       <p class="muted lead">Procvičování hrou. Každou hru najdeš i u předmětu, ke kterému patří.</p>
       {mine.length > 0 && (
         <section class="sec">
