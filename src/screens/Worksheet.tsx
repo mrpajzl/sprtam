@@ -116,13 +116,16 @@ function PaperQuestion({ x }: { x: Sheet }) {
           <small class="ws-how">Ke každému číslu napiš písmeno, které k němu patří.</small>
           <div class="ws-match">
             <ol>{q.pairs.map(([a], k) => <li key={k}><Inline text={a} /> <span class="ws-gap" /></li>)}</ol>
-            <ul>{order.map((o, k) => <li key={o}>{LETTERS[k].toUpperCase()}) <Inline text={q.pairs[o][1]} /></li>)}</ul>
+            <ul>{rightSide(x).map((r, k) => <li key={r}>{LETTERS[k].toUpperCase()}) <Inline text={r} /></li>)}</ul>
           </div>
         </>
       )}
     </>
   )
 }
+
+/** The right side of a match question on paper, shuffled, each value once (two pairs may share it). */
+const rightSide = ({ q, order = [] }: Sheet) => (q.type === 'match' ? [...new Set(order.map((o) => q.pairs[o][1]))] : [])
 
 /** The answer key of one question, as inline markup. */
 function solution({ q, order = [] }: Sheet): string {
@@ -132,6 +135,6 @@ function solution({ q, order = [] }: Sheet): string {
     case 'input': return q.answers[0]
     case 'open': return q.answer
     case 'order': return order.map((o) => `${o + 1}`).join(', ') + ` (${q.items.join(' → ')})`
-    case 'match': return q.pairs.map((_, k) => `${k + 1} – ${LETTERS[order.indexOf(k)].toUpperCase()}`).join(', ')
+    case 'match': { const r = rightSide({ q, order }); return q.pairs.map(([, b], k) => `${k + 1} – ${LETTERS[r.indexOf(b)].toUpperCase()}`).join(', ') }
   }
 }

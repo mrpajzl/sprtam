@@ -127,7 +127,7 @@ function Order({ q, done, reveal, answer }: P<Extract<Question, { type: 'order' 
     <div class="stack">
       <div class="order">
         {list.map((it, i) => (
-          <div key={it} class={`opt ${done && reveal ? (it === q.items[i] ? 'ok' : 'bad') : ''}`}>
+          <div key={i} class={`opt ${done && reveal ? (it === q.items[i] ? 'ok' : 'bad') : ''}`}>
             <span><Inline text={it} /></span>
             {!done && <>
               <button class="mv" onClick={() => move(i, -1)} aria-label="Nahoru" disabled={i === 0}><IUp /></button>
@@ -144,20 +144,22 @@ function Order({ q, done, reveal, answer }: P<Extract<Question, { type: 'order' 
 function Pair({ q, done, answer }: Omit<P<Extract<Question, { type: 'match' }>>, 'reveal'>) {
   const right = useMemo(() => shuffle(q.pairs.map((_, i) => i)), [q])
   const [l, setL] = useState<number | null>(null)
+  // Left items matched, and the right ones used for them: two pairs may share the right side („regulace“ twice), then either fits.
   const [matched, setMatched] = useState<Set<number>>(new Set())
+  const [used, setUsed] = useState<Set<number>>(new Set())
   const [miss, setMiss] = useState(0)
   const [bad, setBad] = useState<number | null>(null)
   const tapRight = (i: number) => {
-    if (l === null || done) return
-    if (i === l) {
-      const m = new Set(matched).add(i); setMatched(m); setL(null)
+    if (l === null || done || used.has(i)) return
+    if (q.pairs[i][1] === q.pairs[l][1]) {
+      const m = new Set(matched).add(l); setMatched(m); setUsed(new Set(used).add(i)); setL(null)
       if (m.size === q.pairs.length) answer(miss === 0)
     } else { setMiss(miss + 1); setBad(i); setTimeout(() => setBad(null), 400) }
   }
   return (
     <div class="pairs">
-      <div class="col">{q.pairs.map(([a], i) => <button key={i} class={`opt ${matched.has(i) ? 'done' : ''} ${l === i ? 'sel' : ''}`} onClick={() => setL(i)}><Inline text={a} /></button>)}</div>
-      <div class="col">{right.map((i) => <button key={i} class={`opt ${matched.has(i) ? 'done' : ''} ${bad === i ? 'bad' : ''}`} onClick={() => tapRight(i)}><Inline text={q.pairs[i][1]} /></button>)}</div>
+      <div class="col">{q.pairs.map(([a], i) => <button key={i} class={`opt ${matched.has(i) ? 'done' : ''} ${l === i ? 'sel' : ''}`} onClick={() => !matched.has(i) && setL(i)}><Inline text={a} /></button>)}</div>
+      <div class="col">{right.map((i) => <button key={i} class={`opt ${used.has(i) ? 'done' : ''} ${bad === i ? 'bad' : ''}`} onClick={() => tapRight(i)}><Inline text={q.pairs[i][1]} /></button>)}</div>
     </div>
   )
 }
