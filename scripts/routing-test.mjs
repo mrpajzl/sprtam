@@ -48,8 +48,8 @@ await p.fill('input[type=search]', 'atom')
 await p.waitForTimeout(200)
 ok(await path() === '/hledat?q=atom', `search writes ?q=: ${await path()}`)
 
-// Home → grade → vocab via links.
-await p.goto(`${BASE}/`)
+// Učivo → grade → vocab via links.
+await p.goto(`${BASE}/ucivo`)
 await p.click('a.num-key[href="/g/z7"]')
 await p.waitForSelector('.tiles')
 ok(await path() === '/g/z7' && (await p.title()).startsWith('7. třída'), 'grade key link + title')
@@ -59,24 +59,31 @@ ok((await p.title()).includes('B1'), 'vocab level direct load')
 
 // Tab bar + breadcrumbs: back to a screen that is already behind us instead of stacking copies.
 const idx = () => p.evaluate(() => history.state?.i ?? 0)
-await p.goto(`${BASE}/`)
+await p.goto(`${BASE}/ucivo`)
 await p.click('a.num-key[href="/g/z5"]'); await p.waitForSelector('.tiles')
 await p.click('a.tile[href="/g/z5/matematika"]'); await p.waitForSelector('.list .row')
 await p.click('a.row[href="/g/z5/matematika/zlomky"]'); await p.waitForSelector('.seg')
 ok(await idx() === 3, `three steps deep: ${await idx()}`)
 ok(await p.locator('.bar .crumbs a').allTextContents().then((t) => t.join('|')) === '5. třída|Matematika', 'topic shows its path')
-ok(await p.locator('.tabbar a[aria-current="page"]').getAttribute('href') === '/g/z5', 'class tab is current inside the class')
+ok(await p.locator('.tabbar a[aria-current="page"]').getAttribute('href') === '/ucivo', 'Učivo tab is current inside a class')
 await p.click('.bar .crumbs a[href="/g/z5"]'); await p.waitForSelector('.tiles')
 ok(await path() === '/g/z5' && await idx() === 1, `crumb goes back to the class: ${await path()} #${await idx()}`)
 await p.goForward(); await p.goForward(); await p.waitForSelector('.seg')
-await p.click('.tabbar a[href="/"]'); await p.waitForSelector('.pad')
-ok(await path() === '/' && await idx() === 0, `home tab returns to the start of the trail: #${await idx()}`)
-await p.click('.tabbar a[href="/hledat"]'); await p.waitForSelector('input[type=search]')
-ok(await p.locator('.tabbar a[aria-current="page"]').getAttribute('href') === '/hledat', 'search tab current')
+await p.click('.tabbar a[href="/ucivo"]'); await p.waitForSelector('.pad')
+ok(await path() === '/ucivo' && await idx() === 0, `Učivo tab returns to the start of the trail: #${await idx()}`)
+await p.click('.tabbar a[href="/hry"]'); await p.waitForSelector('.extra-key')
+ok(await p.locator('.tabbar a[aria-current="page"]').getAttribute('href') === '/hry', 'Hry tab current')
+await p.click('.tabbar a[href="/ja"]'); await p.waitForSelector('.me-key')
+ok(await p.locator('.tabbar a[aria-current="page"]').getAttribute('href') === '/ja', 'Já tab current')
+// The first class opened became the pupil's school: home shows its subjects and the games that belong to them.
+await p.click('.tabbar a[href="/"]'); await p.waitForSelector('.my-tiles .tile')
+ok((await p.locator('.home .sec-head .label').first().textContent()) === '7. třída', 'home shows the first class opened as my school')
+ok(await p.locator('.home .extra-key[href="/slovicka"]').count() === 1, 'home offers the words of the class')
 // Opened directly (nothing behind): the tab navigates forward.
 await p.goto(`${BASE}/g/z5/matematika/zlomky`); await p.waitForSelector('.seg')
-await p.click('.tabbar a[href="/slovicka"]'); await p.waitForSelector('.levels')
-ok(await path() === '/slovicka' && await idx() === 1, 'vocab tab from a direct link')
+await p.click('.tabbar a[href="/hry"]'); await p.waitForSelector('.extra-key')
+ok(await path() === '/hry' && await idx() === 1, 'Hry tab from a direct link')
+await p.click('a.extra-key[href="/slovicka"]'); await p.waitForSelector('.levels')
 ok(await p.locator('.tabbar').count() === 1, 'tab bar on vocab')
 await p.click('a.row[href="/slovicka/A1"]'); await p.waitForSelector('.vocab-tile')
 await p.click('a.vocab-tile[href="/slovicka/A1/0"]'); await p.waitForSelector('.drill')
@@ -90,7 +97,7 @@ const r = await p.goto(`${BASE}/g/z5/matematika/nic-takoveho`)
 ok(r.status() === 404, 'unknown topic is 404')
 
 // App screens without a page of their own open directly (server/index.ts isAppRoute).
-for (const path of ['/nastaveni', '/profily', '/plan', '/plan/novy', '/plan/abc123', '/plan/abc123/pisemka', '/prijimacky/matematika/simulace', '/g/z5/matematika/zlomky/tisk']) {
+for (const path of ['/ja', '/skola', '/ucivo', '/hry', '/nastaveni', '/profily', '/plan', '/plan/novy', '/plan/abc123', '/plan/abc123/pisemka', '/prijimacky/matematika/simulace', '/g/z5/matematika/zlomky/tisk']) {
   ok((await fetch(`${BASE}${path}`)).status === 200, `${path} opens directly`)
 }
 ok((await fetch(`${BASE}/plan/abc123/nic`)).status === 404, 'unknown plan screen is 404')
@@ -102,6 +109,27 @@ ok((await fetch(`${BASE}/periodicka-tabulka/nic/najdi`)).status === 404 && (awai
 await p.goto(`${BASE}/periodicka-tabulka/zaklad/najdi`)
 await p.waitForSelector('.periodic-el')
 ok(await p.locator('.periodic-el').count() === 20, 'a game of Periodická tabulka opened directly renders the app screen')
+
+// A first visit asks for the school on the home screen; a class key makes it the pupil's.
+const fresh = await (await b.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: 'block' })).newPage()
+fresh.on('pageerror', (e) => errs.push(String(e)))
+await fresh.goto(`${BASE}/`); await fresh.waitForSelector('html[data-app] .welcome')
+await fresh.click('.welcome button.num-key[aria-label="9. třída"]'); await fresh.waitForSelector('.my-tiles .tile')
+ok(await fresh.locator('.home .extra-key[href="/prijimacky"]').count() === 1, 'a 9th grader gets Přijímačky on the home screen')
+await fresh.goto(`${BASE}/g/z9/zemepis`); await fresh.waitForSelector('.extra-key')
+ok(await fresh.locator('.extra-key[href="/slepa-mapa"]').count() === 1, 'zeměpis offers Slepá mapa')
+// Only the pupil's second language: neither the subjects nor the first recommendations offer the others.
+await fresh.goto(`${BASE}/skola`); await fresh.click('button.num-key[aria-label="7. třída"]')
+await fresh.click('.list[aria-label="Druhý cizí jazyk"] .row:has-text("Francouzština")')
+await fresh.goto(`${BASE}/`); await fresh.waitForSelector('.my-tiles .tile')
+ok(await fresh.locator('.home a[href*="/nemcina"], .home a[href*="/spanelstina"]').count() === 0, 'the chosen second language hides the others on the home screen')
+// Switching an obor on asks for the year, then home shows the obor's subjects.
+await fresh.goto(`${BASE}/obor/informacni-technologie`); await fresh.waitForSelector('.approach-switch')
+await fresh.click('.approach-switch'); await fresh.click('.obor-pick button.num-key[aria-label="2. ročník"]')
+await fresh.goto(`${BASE}/`); await fresh.waitForSelector('.my-tiles .tile')
+ok((await fresh.locator('.home .sec-head .label').first().textContent()) === '2. ročník · Informační technologie', 'an obor switched on reaches the home screen')
+const homeHtml = await (await fetch(`${BASE}/`)).text()
+ok(homeHtml.includes('href="/ucivo"') && homeHtml.includes('<a class="num-key" href="/g/z7"'), 'server-rendered home links Učivo and every class')
 
 ok(!errs.length, `no page errors ${errs.join(' | ')}`)
 await b.close()

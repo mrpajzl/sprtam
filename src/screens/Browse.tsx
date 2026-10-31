@@ -4,14 +4,14 @@ import { approachById, listed, useApproach } from '../approach'
 import { hasSubject, loadSubject, topicKey } from '../content'
 import type { GradeId, SubjectId, YearId } from '../content/types'
 import { kindName, OBOR_PATH, oboryOf, useObor, yearOf, type Obor } from '../obory'
-import { isPinned, setGrade, stars, useProgress } from '../progress/store'
+import { getProgress, isPinned, setGrade, stars, useProgress } from '../progress/store'
 import { Link } from '../router'
 import { Bar, Meter, Stars } from '../ui/Bar'
 import { keyStyle, SubjectGlyph, subjectStyle } from '../ui/glyphs'
 import { IArrow, IPin, ITest } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
-import { levelsOf } from '../vocab'
-import { langOfSubject, vocabPath } from '../vocab/langs'
+import { extrasFor, extrasOf, merged } from '../games'
+import { appExtras, ExtraList } from '../ui/Extras'
 import { YearBlocks } from './Approach'
 
 /** Average stars → 0–100 for a subject's meter. */
@@ -45,8 +45,6 @@ export function OdbTiles({ subjects }: { subjects: string[] }) {
   )
 }
 
-const VocabTile = () => <Link class="tile" style={keyStyle('purple')} href="/slovicka"><span class="tile-face"><b class="aa">Aa</b></span><b>Slovíčka</b></Link>
-
 export function GradeScreen({ g }: { g: GradeId }) {
   if (g === ODB) return <OdbScreen />
   return <YearScreen g={g} />
@@ -64,7 +62,8 @@ function OdbScreen() {
 }
 
 function YearScreen({ g }: { g: YearId }) {
-  useEffect(() => setGrade(g), [g])
+  // The first grade opened becomes the pupil's own until they choose one (Moje škola, /skola).
+  useEffect(() => { if (!getProgress().g) setGrade(g) }, [g])
   const p = useProgress()
   const a = approachById(useApproach())
   const plan = a?.grades.includes(g) ? a : undefined
@@ -79,9 +78,9 @@ function YearScreen({ g }: { g: YearId }) {
       {subjects.length ? (
         <div class="tiles">
           {subjects.map((s) => <SubjectTile key={s} g={g} s={s} />)}
-          {GRADE_SUBJECTS[g].includes('anglictina') && <VocabTile />}
         </div>
       ) : <div class="empty">Připravujeme.</div>}
+      <ExtraList list={merged(extrasFor(appExtras(), g, subjects))} />
       {g[0] === 's' && (
         <Link class="row obor-key" style={keyStyle('ink')} href={OBOR_PATH}>
           <span class="skey m"><b class="em">🛠️</b></span>
@@ -112,10 +111,10 @@ function OborYearScreen({ o, g, i }: { o: Obor; g: YearId; i: number }) {
           <h2 class="label next-label">Všeobecné předměty</h2>
           <div class="tiles">
             {general.map((s) => <SubjectTile key={s} g={g} s={s} />)}
-            {y.general.includes('anglictina') && <VocabTile />}
           </div>
         </>
       )}
+      <ExtraList list={merged(extrasFor(appExtras(), g, [...y.odb, ...general]))} />
     </div>
   )
 }
@@ -148,23 +147,10 @@ export function SubjectScreen({ g, s }: { g: GradeId; s: SubjectId }) {
             <span class="skey m"><ITest /></span>
             <span class="txt"><b>Test</b><small>celý předmět · 20 otázek</small></span>
           </Link>
-          <LangWords s={s} />
+          <ExtraList list={extrasOf(appExtras(), g, s)} />
         </>
       )}
     </div>
-  )
-}
-
-/** A second language links to its words (English has its tile in the grade). */
-function LangWords({ s }: { s: SubjectId }) {
-  const m = langOfSubject(s)
-  const levels = m && m.id !== 'en' ? levelsOf(m.id) : []
-  if (!m || !levels.length) return null
-  return (
-    <Link class="row test-key" href={vocabPath(m.id)}>
-      <span class="skey m"><b class="aa">Aa</b></span>
-      <span class="txt"><b>{m.title}</b><small>{levels.length > 1 ? `${levels[0]}–${levels[levels.length - 1]}` : levels[0]}</small></span>
-    </Link>
   )
 }
 

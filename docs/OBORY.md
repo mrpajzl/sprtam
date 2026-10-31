@@ -1,6 +1,6 @@
 # Odborné školy: obory a odborné předměty
 
-Šprtám pokrývá kromě ZŠ a gymnázia i **střední odborné školy**. Žák si na [sprtam.cz/obor](https://sprtam.cz/obor) vybere svůj obor. Ročníky SŠ (`/g/s1` až `/g/s4`) mu pak ukážou předměty tohoto oboru: nahoře odborné, pod nimi všeobecné. Volba oboru je nastavení zařízení jako motiv (`localStorage`, klíč `sprtam-obor`) a nikam se neposílá.
+Šprtám pokrývá kromě ZŠ a gymnázia i **střední odborné školy**. Žák si na [sprtam.cz/obor](https://sprtam.cz/obor) nebo v Moje škola (Já → Moje škola) vybere svůj obor. Úvodní obrazovka a ročníky SŠ (`/g/s1` až `/g/s4`) mu pak ukážou předměty tohoto oboru: nahoře odborné, pod nimi všeobecné. Volba oboru je nastavení zařízení jako motiv (`localStorage`, klíč `sprtam-obor`) a nikam se neposílá.
 
 ## Dvě vrstvy
 

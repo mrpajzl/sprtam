@@ -13,8 +13,8 @@ const REG = 'sprtam:profiles'
 /** Set while switching: other tabs stop saving at once and reload when it is gone. */
 const SWITCHING = 'sprtam:switching'
 const parked = (id: string) => `sprtam:profile:${id}`
-/** What belongs to a pupil: progress (with plans), the unfinished round, Slepá mapa records, obor and school. */
-export const PROFILE_KEYS = ['sprtam:progress', 'sprtam:resume', 'sprtam:mapy', 'sprtam:prvky', 'sprtam-obor', 'sprtam-approach']
+/** What belongs to a pupil: progress (with plans), the unfinished round, game records and their school (obor, approach, language). */
+export const PROFILE_KEYS = ['sprtam:progress', 'sprtam:resume', 'sprtam:mapy', 'sprtam:prvky', 'sprtam-obor', 'sprtam-approach', 'sprtam-jazyk']
 
 export const AVATARS = ['🦊', '🐻', '🐼', '🐸', '🦄', '🐙', '🐝', '🦉', '🐢', '🐬', '🦖', '🚀']
 export const MAX_PROFILES = 8

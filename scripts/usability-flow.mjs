@@ -85,17 +85,17 @@ for (const scheme of shots ? ['light', 'dark'] : ['light']) {
   const after = await page.locator('.qtop .timer').textContent()
   check(before === after, `a reload offers the round again and goes on at the same question (${before} → ${after})`)
   await page.goto(base + '/')
-  await page.waitForSelector('.resume-row')
+  await page.waitForSelector('.next-key[href*="pokracovat"]')
   await shot('home-resume')
-  check(/Pokračovat: /.test(await page.locator('.resume-row').textContent()), 'the home screen offers to carry on')
-  await page.locator('.resume-row a').click()
+  check(/Pokračovat: /.test(await page.locator('.next-key').textContent()), 'the home screen offers to carry on')
+  await page.locator('.next-key').click()
   await page.waitForSelector('.question')
   await page.waitForTimeout(150)
   const direct = [await page.locator('.resume-ask').count(), page.url(), await page.locator('.qtop .timer').textContent()]
   check(!direct[0] && !direct[1].includes('pokracovat') && direct[2] === after, `Pokračovat on the home screen resumes at once (${direct})`)
   await page.goto(base + '/')
   await page.getByRole('button', { name: 'Zahodit rozdělané kolo' }).click()
-  check(!(await page.locator('.resume-row').count()) && await page.evaluate(() => localStorage.getItem('sprtam:resume') === null), 'the round can be dropped')
+  check(!(await page.locator('.next-key[href*="pokracovat"]').count()) && await page.evaluate(() => localStorage.getItem('sprtam:resume') === null), 'the round can be dropped')
 
   // ——— Ostrá simulace ———
   await page.goto(base + '/prijimacky/matematika')

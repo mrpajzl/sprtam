@@ -8,6 +8,8 @@ import { keyStyle } from '../ui/glyphs'
 import { IArrow } from '../ui/icons'
 import { Inline } from '../ui/Inline'
 import { OdbTiles } from './Browse'
+import { GradePad } from './School'
+import { setGrade, useProgress } from '../progress/store'
 
 // Obory odborných škol (src/obory.ts): /obor lists them, /obor/<id> shows one obor year by year. Choosing an obor
 // (a device setting, never sent anywhere) turns the SŠ grade screens into that obor's years.
@@ -52,6 +54,17 @@ function OborList() {
   )
 }
 
+/** With the obor switched on: the pupil's year at the school, so the home screen shows the obor's subjects (Moje škola). */
+function OborYear() {
+  const g = useProgress().g
+  return (
+    <section class="obor-pick">
+      <h2 class="label">Do kterého ročníku chodíš?</h2>
+      <GradePad level="ss" on={g?.[0] === 's' ? g : undefined} onPick={setGrade} />
+    </section>
+  )
+}
+
 function OborHome({ o }: { o: Obor }) {
   const on = useObor()?.id === o.id
   useTitle(titles.obor(o.name))
@@ -64,6 +77,7 @@ function OborHome({ o }: { o: Obor }) {
         <span class="txt"><b>Studuju tenhle obor</b><small>{on ? 'Ročníky SŠ ti ukážou předměty tohohle oboru' : 'Zapni a ročníky SŠ se přizpůsobí oboru'}</small></span>
         <span class={`switch ${on ? 'on' : ''}`} aria-hidden="true"><i /></span>
       </button>
+      {on && <OborYear />}
       {o.years.map((y, i) => {
         const g = yearGrade(i)
         const general = y.general.filter((s) => hasSubject(g, s))

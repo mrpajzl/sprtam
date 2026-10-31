@@ -1,5 +1,6 @@
 import { GRADES, GRADE_SUBJECTS } from '../content/curriculum'
 import { fold, type TopicRef } from '../content/library'
+import type { GradeId } from '../content/types'
 import { isPinned, stars, today, type Progress } from './store'
 
 // What to practise next, from what the student has already practised:
@@ -25,7 +26,8 @@ const GAP = [1, 1, 3, 7]
 // Significant title words, cut to a stem so „zlomky“ meets „zlomků“.
 const stems = (title: string) => fold(title).split(/[^a-z0-9]+/).filter((w) => w.length >= 5).map((w) => w.slice(0, 5))
 
-export function recommend(p: Progress, all: TopicRef[], max = 5): Rec[] {
+/** `start` = where a pupil without any practice starts: [grade, subject] of their school, by default the subjects of Progress.g. */
+export function recommend(p: Progress, all: TopicRef[], max = 5, start?: [GradeId, string][]): Rec[] {
   const now = today()
   const byKey = new Map(all.map((r) => [r.key, r]))
   const recs = new Map<string, Rec>()
@@ -69,7 +71,8 @@ export function recommend(p: Progress, all: TopicRef[], max = 5): Rec[] {
   })
 
   if (!practised.length && p.g) {
-    GRADE_SUBJECTS[p.g].forEach((s, n) => { const first = all.find((r) => r.g === p.g && r.s === s); if (first) add(first, { k: 'start' }, 0.5 - n * 0.01) })
+    const g = p.g
+    ;(start ?? GRADE_SUBJECTS[g].map((s): [GradeId, string] => [g, s])).forEach(([gr, s], n) => { const first = all.find((r) => r.g === gr && r.s === s); if (first) add(first, { k: 'start' }, 0.5 - n * 0.01) })
   }
 
   // Best first, at most two per subject so the list stays varied.

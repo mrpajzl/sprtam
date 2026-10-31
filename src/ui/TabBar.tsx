@@ -1,22 +1,17 @@
-import { GRADE_NAME } from '../content/curriculum'
-import type { GradeId } from '../content/types'
-import { useProgress } from '../progress/store'
 import { Link } from '../router'
-import { IGrid, IHome, ISearch } from './icons'
+import { IBook, IDice, IHome, IUser } from './icons'
 
-export type Tab = 'home' | 'grade' | 'search' | 'vocab'
+export type Tab = 'home' | 'learn' | 'games' | 'me'
 
-/** Always at hand: one tap to home, the class, search or vocabulary from any screen. */
-export function TabBar({ active, grade }: { active?: Tab; grade?: GradeId }) {
-  const p = useProgress()
-  const g = grade ?? p.g
+/** Always at hand: one tap to home (the pupil's school), all the učivo, the games or the pupil's own things. */
+export function TabBar({ active }: { active?: Tab }) {
   const cur = (t: Tab) => (active === t ? 'page' : undefined)
   return (
     <nav class="tabbar" aria-label="Hlavní nabídka">
       <Link href="/" jump aria-current={cur('home')}><IHome /><span>Domů</span></Link>
-      {g && <Link href={`/g/${g}`} jump aria-current={cur('grade')}><IGrid /><span>{GRADE_NAME[g]}</span></Link>}
-      <Link href="/hledat" jump aria-current={cur('search')}><ISearch /><span>Hledat</span></Link>
-      <Link href="/slovicka" jump aria-current={cur('vocab')}><b class="aa" aria-hidden="true">Aa</b><span>Slovíčka</span></Link>
+      <Link href="/ucivo" jump aria-current={cur('learn')}><IBook /><span>Učivo</span></Link>
+      <Link href="/hry" jump aria-current={cur('games')}><IDice /><span>Hry</span></Link>
+      <Link href="/ja" jump aria-current={cur('me')}><IUser /><span>Já</span></Link>
     </nav>
   )
 }

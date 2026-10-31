@@ -37,7 +37,7 @@ for (const scheme of shots ? ['light', 'dark'] : ['light']) {
   check((await page.locator('.streak b').textContent()) === '4', `${scheme}: a missed day is forgiven in the streak`)
   check(await page.locator('.leds i.frz').count() === 1, `${scheme}: the forgiven day shows as a frozen LED`)
   check((await page.locator('.goal small').textContent()) === 'dnes 0/20', `${scheme}: the daily goal on the display`)
-  check(await page.locator('.review-keys').count() === 0, `${scheme}: no review keys before any mistake`)
+  check(await page.locator('.next a[href="/dnes"], .next a[href="/chyby"]').count() === 0, `${scheme}: nothing to review before any mistake`)
 
   // Quick quiz of a topic: the first question wrong on purpose, the rest answered somehow.
   await page.goto(base + '/g/z5/matematika/zlomky/kviz')
@@ -90,11 +90,11 @@ for (const scheme of shots ? ['light', 'dark'] : ['light']) {
     await page.evaluate((id) => { const p = JSON.parse(localStorage.getItem('sprtam:progress')); p.q[id] = { b: 0, d: Math.floor(Date.now() / 86_400_000), w: 1 }; localStorage.setItem('sprtam:progress', JSON.stringify(p)) }, ids[0])
   }
   await page.goto(base + '/')
-  await page.waitForSelector('.review-keys')
-  check(await page.locator('.review-key[href="/chyby"]').count() === 1 && await page.locator('.review-key[href="/dnes"]').count() === 1, `${scheme}: home offers Dnešní opakování and Sešit chyb`)
+  await page.waitForSelector('.next a[href="/dnes"]')
+  check(await page.locator('.next-key[href="/dnes"]').count() === 1 && await page.locator('.next-chip[href="/chyby"]').count() === 1, `${scheme}: home offers Dnešní opakování first and Sešit chyb under it`)
   await shot('home')
 
-  await page.click('.review-key[href="/chyby"]')
+  await page.click('.next-chip[href="/chyby"]')
   await page.waitForSelector('.mistakes-book .mistakes .card')
   check(await page.locator('.mistakes-book .mistakes .card').count() >= 1, `${scheme}: Sešit chyb lists the mistake with its answer`)
   await shot('chyby')
