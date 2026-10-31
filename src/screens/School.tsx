@@ -88,8 +88,6 @@ export function SchoolForm() {
 }
 
 /** "8. tř." / "2. roč." – the pupil's year on the header chip. */
-export const shortYear = (g: YearId) => `${GRADE_NAME[g].split('.')[0]}. ${g[0] === 'z' ? 'tř.' : 'roč.'}`
-
 /** The header chip of the home screen: who is learning and where; opens the sheet to change it. */
 export function SchoolChip() {
   const [open, setOpen] = useState(false)
@@ -97,7 +95,7 @@ export function SchoolChip() {
   const o = useObor()
   const r = useProfiles()
   const me = r?.l.find((x) => x.id === r.a)
-  const where = g ? `${shortYear(g)}${o && g[0] === 's' ? ` · ${o.emoji}` : ''}` : 'Kam chodíš?'
+  const where = g ? `${GRADE_NAME[g]}${o && g[0] === 's' ? ` · ${o.emoji}` : ''}` : 'Kam chodíš?'
   return (
     <>
       <button class="school-chip" aria-haspopup="dialog" aria-label={`${me ? `Učí se ${me.n}, ` : ''}${g ? GRADE_NAME[g] : 'škola nevybraná'}. Změnit`} onClick={() => setOpen(true)}>

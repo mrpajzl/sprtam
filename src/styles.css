@@ -1083,22 +1083,28 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 
 /* ——— Domů: Teď na řadě, the pupil's school and the extras (screens/Home.tsx, src/games.ts) ——— */
 .next { margin-top: 14px; }
-/* Teď na řadě: the one lit key of the screen, in the signal colour */
+/* Teď na řadě: a plain key like the rest of the screen; the signal colour only marks it (kicker, arrow) */
 .hero {
-  position: relative; border-radius: var(--r); background: var(--k-orange); color: var(--k-orange-on);
-  box-shadow: 0 4px 0 color-mix(in oklab, var(--k-orange) 60%, #000);
+  position: relative; border-radius: var(--r); background: var(--key); color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge);
 }
 .hero-main { display: grid; gap: 3px; padding: 14px 52px 14px 16px; border-radius: var(--r); color: inherit; transition: transform 0.09s var(--ease); }
 .hero-main:active { transform: translateY(2px); }
-.hero-main .kicker { font-family: var(--mono); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; opacity: 0.72; }
+.hero-main .kicker { display: flex; align-items: center; gap: 7px; font-family: var(--mono); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: color-mix(in oklab, var(--k-orange) 64%, var(--ink)); }
+.hero-main .kicker::before { content: ''; width: 8px; height: 8px; border-radius: 2px; background: var(--k-orange); box-shadow: 0 0 6px color-mix(in oklab, var(--k-orange) 60%, transparent); }
 .hero-main b { font-size: 1.15rem; font-weight: 850; line-height: 1.2; }
-.hero-hint { font-size: 0.86rem; font-weight: 650; opacity: 0.85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.hero-main > svg { position: absolute; right: 16px; top: 50%; width: 24px; height: 24px; transform: translateY(-50%); }
-.hero:has(.next-more) .hero-main > svg { top: 38px; transform: none; }
+.hero-hint { font-size: 0.86rem; font-weight: 650; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hero-main > svg {
+  position: absolute; right: 14px; top: 50%; width: 36px; height: 36px; padding: 8px; border-radius: 50%; transform: translateY(-50%);
+  background: var(--k-orange); color: var(--k-orange-on); box-shadow: 0 2px 0 color-mix(in oklab, var(--k-orange) 60%, #000);
+}
+.hero:has(.next-more) .hero-main > svg { top: 30px; transform: none; }
 .hero-x { position: absolute; top: 4px; right: 4px; color: inherit; }
 .hero:has(.hero-x) .hero-main > svg { display: none; }
 .hero .next-more { margin: 0; padding: 2px 16px 14px; }
-.hero .next-more > small { color: inherit; opacity: 0.72; }
+.hero .next-chip { background: var(--card); }
+/* the chips run under the card's right edge: fade them out there rather than cut them */
+.hero .next-more { mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); }
 .next-more { display: flex; align-items: center; gap: 8px; overflow-x: auto; scrollbar-width: none; }
 .next-more::-webkit-scrollbar { display: none; }
 .next-more > small { flex: none; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--ink-3); margin: 0 2px; }
@@ -1137,14 +1143,14 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .school-chip {
   display: inline-flex; align-items: center; gap: 5px; min-width: 0; flex: 0 1 auto; height: 40px; padding: 0 8px 0 11px; border-radius: 999px;
   background: var(--key); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line), 0 2px 0 var(--key-edge);
-  font-family: var(--mono); font-size: 0.78rem; font-weight: 750; letter-spacing: -0.01em;
+  font-size: 0.92rem; font-weight: 800;
 }
 .home .bar .brand { flex: 0 1 auto; min-width: 0; }
 @media (max-width: 379px) { .home .bar .brand span { display: none; } }
 .school-chip:active { transform: translateY(1px); box-shadow: inset 0 0 0 1px var(--line), 0 1px 0 var(--key-edge); }
-.school-chip b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 750; }
+.school-chip b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: inherit; }
 .school-chip .who-em { font-size: 1.1rem; }
-.school-chip svg { width: 16px; height: 16px; flex: none; color: var(--ink-3); }
+.school-chip svg { width: 18px; height: 18px; flex: none; color: var(--ink-2); }
 .school-sheet { position: fixed; inset: auto 0 0 0; width: 100%; max-width: 600px; max-height: 88dvh; margin: 0 auto; padding: 0; border: 0; border-radius: 24px 24px 0 0; background: var(--card); color: var(--ink); overflow: auto; overscroll-behavior: contain; box-shadow: 0 -10px 40px rgb(0 0 0 / 0.2); }
 .school-sheet::backdrop { background: rgb(20 21 24 / 0.4); animation: fade 0.2s ease; }
 .school-sheet[open] { animation: up 0.32s var(--ease); }
