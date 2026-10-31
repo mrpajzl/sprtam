@@ -4,7 +4,7 @@ import { kindName, OBOR_PATH, readyObory, setObor, useObor, yearGrade, type Obor
 import { Link } from '../router'
 import { titles, useTitle } from '../seo'
 import { Bar } from '../ui/Bar'
-import { keyStyle } from '../ui/glyphs'
+import { keyStyle, OborGlyph } from '../ui/glyphs'
 import { IArrow } from '../ui/icons'
 import { Inline } from '../ui/Inline'
 import { OdbTiles } from './Browse'
@@ -30,7 +30,7 @@ function OborList() {
   const obory = readyObory((s) => hasSubject(ODB, s))
   return (
     <div class="page" style={STYLE}>
-      <Bar title="🛠️ Odborné školy" />
+      <Bar title="Odborné školy" />
       <div class="blocks approach-about">
         <p>Vyber si svůj obor a ukážeme ti jeho odborné předměty ročník po ročníku. Všeobecné předměty (čeština, matematika, angličtina…) procvičíš s učivem gymnázia stejného ročníku.</p>
       </div>
@@ -39,7 +39,7 @@ function OborList() {
       <div class="list">
         {obory.map((o) => (
           <Link key={o.id} class={`row obor-row ${mine?.id === o.id ? 'on' : ''}`} href={`${OBOR_PATH}/${o.id}`}>
-            <span class="em">{o.emoji}</span>
+            <span class="skey m"><OborGlyph id={o.id} /></span>
             <span class="txt"><b>{o.name}</b><small>{o.code} · {kindName(o)}{mine?.id === o.id ? ' · můj obor' : ''}</small></span>
             <IArrow />
           </Link>
@@ -70,7 +70,7 @@ function OborHome({ o }: { o: Obor }) {
   useTitle(titles.obor(o.name))
   return (
     <div class="page" style={STYLE}>
-      <Bar title={`${o.emoji} ${o.name}`} crumbs={[{ href: OBOR_PATH, label: 'Odborné školy' }]} />
+      <Bar title={o.name} crumbs={[{ href: OBOR_PATH, label: 'Odborné školy' }]} />
       <p class="exam-facts"><span>{o.code}</span><span>{kindName(o)}</span><span>{o.years.length} ročníky</span></p>
       <div class="blocks approach-about"><p><Inline text={o.about} /></p></div>
       <button class="row approach-switch" role="switch" aria-checked={on} onClick={() => setObor(on ? undefined : o.id)}>

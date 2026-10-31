@@ -14,13 +14,13 @@
 Leží v „ročníku“ `odb`, protože nepatří jednomu ročníku ani jednomu oboru. Technické kreslení se učí na strojírenství i mechatronice, ekonomika skoro všude. Téma se tak píše a kontroluje jednou a pokrok žáka v něm platí ve všech oborech (`odb/<předmět>/<téma>`).
 
 - Adresy: `/g/odb` (všechny odborné předměty), `/g/odb/<předmět>`, `/g/odb/<předmět>/<téma>`.
-- `_subject.json` odborného předmětu kromě pořadí témat obsahuje i `name`, `emoji` a `color`. U předmětů ZŠ a gymnázia tato pole být nesmí. Id předmětu je kebab-case a nesmí se shodovat s předmětem osnov (`matematika`, `cestina`…).
+- `_subject.json` odborného předmětu kromě pořadí témat obsahuje i `name`, `emoji` a `color`. Emoji je jen záloha: aplikace kreslí odborné předměty i obory vlastními SVG glyfy z [`src/ui/glyph-svg.ts`](../src/ui/glyph-svg.ts) a emoji ukáže jen u předmětu, který glyf ještě nemá (nový předmět → doplň glyf). U předmětů ZŠ a gymnázia tato pole být nesmí. Id předmětu je kebab-case a nesmí se shodovat s předmětem osnov (`matematika`, `cestina`…).
 - Vydání nese seznam odborných předmětů v manifestu (`vocational`: id → název, emoji, barva), protože aplikace je potřebuje hned při startu.
 - Nový odborný předmět nevyžaduje žádnou změnu kódu. Založí ho první schválené téma (viz [OBSAH.md](OBSAH.md), „Nový odborný předmět“).
 
 ### Obory (kód)
 
-Každý obor v `OBORY` má id (adresa `/obor/<id>`, nemění se), kód oboru vzdělání podle RVP SOV (např. `18-20-M/01`), název, emoji, druh (`M` maturitní, `L` maturitní s odborným výcvikem, `H` s výučním listem), krátký popis a ročníky. Každý ročník uvádí:
+Každý obor v `OBORY` má id (adresa `/obor/<id>`, nemění se), kód oboru vzdělání podle RVP SOV (např. `18-20-M/01`), název, druh (`M` maturitní, `L` maturitní s odborným výcvikem, `H` s výučním listem), krátký popis a ročníky. Jeho glyf (ikona) je v `OBORY` v [`src/ui/glyph-svg.ts`](../src/ui/glyph-svg.ts) pod stejným id. Každý ročník uvádí:
 
 - `odb`: odborné předměty (id z `topics/odb`) v pořadí, v jakém se ukazují;
 - `general`: všeobecné předměty. Bere se učivo gymnázia stejného ročníku (1. ročník oboru = `s1`).

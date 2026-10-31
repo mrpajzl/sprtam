@@ -56,13 +56,13 @@ Bez práce se soubory to jde v [moderaci](MODERACE.md): editor s živým náhled
 
 ### Nový předmět nebo ročník
 
-1. Doplň předmět do `GRADE_SUBJECTS` v `src/content/curriculum.ts`. Úplně nový předmět potřebuje i záznam v `SUBJECTS` (název, barva) a glyf v `src/ui/glyphs.tsx`.
+1. Doplň předmět do `GRADE_SUBJECTS` v `src/content/curriculum.ts`. Úplně nový předmět potřebuje i záznam v `SUBJECTS` (název, barva) a glyf v `src/ui/glyph-svg.ts`.
 2. Vytvoř složku `content/topics/<ročník>/<předmět>/` s `_subject.json` a tématy.
 3. `npm run check:content`. Kontrola selže, když předmět z `GRADE_SUBJECTS` nemá obsah (kromě druhých cizích jazyků v `SECOND_LANGUAGES`, ty jsou nepovinné), nebo když složka nemá předmět v `GRADE_SUBJECTS`.
 
 ### Nový odborný předmět
 
-Bez změny kódu: složka `content/topics/odb/<předmět>/` s `_subject.json` (pořadí témat, `name`, `emoji`, `color`) a tématy. V moderaci ho založí první schválené téma ([OBSAH.md](OBSAH.md)). Do oboru ho zařadí `src/obory.ts` ([OBORY.md](OBORY.md)).
+Bez změny kódu: složka `content/topics/odb/<předmět>/` s `_subject.json` (pořadí témat, `name`, `emoji`, `color`) a tématy. Vlastní glyf (jinak se ukáže emoji) se přidává do `src/ui/glyph-svg.ts`. V moderaci ho založí první schválené téma ([OBSAH.md](OBSAH.md)). Do oboru ho zařadí `src/obory.ts` ([OBORY.md](OBORY.md)).
 
 ### Slovíčka
 

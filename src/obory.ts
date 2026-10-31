@@ -20,7 +20,6 @@ export interface Obor {
   /** Kód oboru vzdělání (RVP SOV), e.g. 18-20-M/01. */
   code: string
   name: string
-  emoji: string
   /** M = maturitní obor, L = maturitní obor s odborným výcvikem, H = s výučním listem. */
   kind: 'M' | 'L' | 'H'
   /** What the obor is about (one or two sentences, inline markup). */
@@ -39,7 +38,6 @@ export const OBORY: Obor[] = [
     id: 'informacni-technologie',
     code: '18-20-M/01',
     name: 'Informační technologie',
-    emoji: '💻',
     kind: 'M',
     about: 'Programování, počítačové sítě, hardware, operační systémy, databáze a bezpečnost. Absolventi pracují jako programátoři, správci sítí a systémů nebo technici podpory.',
     years: [
@@ -53,7 +51,6 @@ export const OBORY: Obor[] = [
     id: 'strojirenstvi',
     code: '23-41-M/01',
     name: 'Strojírenství',
-    emoji: '⚙️',
     kind: 'M',
     about: 'Technické kreslení, materiály, mechanika, části strojů, výrobní technologie a CNC. Absolventi pracují jako konstruktéři, technologové, programátoři CNC nebo mistři ve výrobě.',
     years: [
@@ -67,7 +64,6 @@ export const OBORY: Obor[] = [
     id: 'mechatronik',
     code: '23-45-L/01',
     name: 'Mechatronik',
-    emoji: '🦾',
     kind: 'L',
     about: 'Mechanik seřizovač se zaměřením na mechatroniku: spojuje strojírenství, elektrotechniku, elektroniku a automatizaci. Absolventi seřizují a programují stroje, linky a roboty.',
     years: [
@@ -81,7 +77,6 @@ export const OBORY: Obor[] = [
     id: 'kosmeticke-sluzby',
     code: '69-41-L/01',
     name: 'Kosmetické služby',
-    emoji: '💆',
     kind: 'L',
     about: 'Kosmetička: péče o pleť, zdravověda a dermatologie, kosmetické přípravky, líčení, manikúra a pedikúra i práce s klientem. Absolventi pracují v salonech nebo si otevřou vlastní.',
     years: [
@@ -95,7 +90,6 @@ export const OBORY: Obor[] = [
     id: 'starozitnik',
     code: '82-48-L/01',
     name: 'Starožitník',
-    emoji: '🏺',
     kind: 'L',
     about: 'Dějiny umění a slohů, nábytek, sklo, porcelán, kovy, šperky, obrazy a obchod se starožitnostmi: jak předmět poznat, zařadit, ocenit a jak o něj pečovat.',
     years: [
