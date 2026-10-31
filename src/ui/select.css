@@ -19,7 +19,7 @@
 
 .sel-panel {
   position: fixed; inset: auto; margin: 0; padding: 0; border: 0; z-index: 1000; box-sizing: border-box;
-  display: flex; flex-direction: column; overflow: hidden;
+  display: flex; flex-direction: column; overflow: hidden; overscroll-behavior: contain;
   background: var(--card); color: var(--ink); border-radius: var(--r-s);
   box-shadow: inset 0 0 0 1px var(--line), 0 14px 36px -10px rgb(0 0 0 / 0.35);
   font-family: inherit; font-size: 1rem; text-align: left;
@@ -38,7 +38,7 @@
 .sel-search input::-webkit-search-cancel-button { display: none; }
 .sel-search:focus-within { box-shadow: inset 0 0 0 2px var(--accent); }
 
-.sel-list { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; list-style: none; margin: 0; padding: 4px; outline: none; }
+.sel-list { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y; list-style: none; margin: 0; padding: 4px; outline: none; }
 .sel-opt {
   display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 10px; box-sizing: border-box;
   border-radius: calc(var(--r-s) - 3px); cursor: pointer; font-weight: 700; -webkit-user-select: none; user-select: none;
