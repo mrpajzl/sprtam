@@ -1,0 +1,58 @@
+/* Our dropdown (src/ui/Select.tsx), shared by the app and the moderation: only variables both define
+   (--card, --ink*, --line, --accent*, --r-s, --ease); the trigger takes the look of the control it replaces
+   (.field, .q-select, .row.pick …), these are the defaults and the list. */
+.sel {
+  display: inline-flex; align-items: center; gap: 8px; min-width: 0; max-width: 100%; text-align: left; cursor: pointer;
+  font: inherit; font-weight: 750; color: var(--ink);
+}
+.sel:disabled { cursor: default; opacity: 0.55; }
+.sel-val { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sel-val.none { color: var(--ink-3); }
+.sel-chev { display: flex; flex: none; margin-left: auto; color: var(--ink-3); transition: transform 0.18s var(--ease); }
+.sel-chev svg { width: 16px; height: 16px; }
+.sel.open .sel-chev { transform: rotate(180deg); }
+
+.sel-ic { display: inline-flex; flex: none; align-items: center; justify-content: center; width: 1.45em; height: 1.45em; line-height: 1; }
+.sel-ic.is-em { font-size: 1.1em; }
+.sel-ic.svg { color: var(--accent-ink); }
+.sel-ic svg { width: 100%; height: 100%; }
+
+.sel-panel {
+  position: fixed; inset: auto; margin: 0; padding: 0; border: 0; z-index: 1000; box-sizing: border-box;
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--card); color: var(--ink); border-radius: var(--r-s);
+  box-shadow: inset 0 0 0 1px var(--line), 0 14px 36px -10px rgb(0 0 0 / 0.35);
+  font-family: inherit; font-size: 1rem; text-align: left;
+  animation: sel-pop 0.16s var(--ease);
+}
+.sel-panel::backdrop { display: none; }
+@keyframes sel-pop { from { opacity: 0; transform: translateY(-4px) scale(0.98); } }
+@media (prefers-reduced-motion: reduce) { .sel-panel { animation: none; } .sel-chev { transition: none; } }
+
+.sel-search { display: flex; flex: none; align-items: center; gap: 8px; margin: 6px 6px 2px; padding: 0 10px; border-radius: calc(var(--r-s) - 3px); background: color-mix(in oklab, var(--ink) 6%, var(--card)); color: var(--ink-3); }
+.sel-search svg { flex: none; width: 17px; height: 17px; }
+.sel-search input {
+  flex: 1; min-width: 0; height: 40px; padding: 0; border: 0; background: none; outline: none; box-shadow: none;
+  font: inherit; font-size: 16px; font-weight: 700; color: var(--ink);
+}
+.sel-search input::-webkit-search-cancel-button { display: none; }
+.sel-search:focus-within { box-shadow: inset 0 0 0 2px var(--accent); }
+
+.sel-list { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; list-style: none; margin: 0; padding: 4px; outline: none; }
+.sel-opt {
+  display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 10px; box-sizing: border-box;
+  border-radius: calc(var(--r-s) - 3px); cursor: pointer; font-weight: 700; -webkit-user-select: none; user-select: none;
+}
+.sel-opt .sel-ic { font-size: 1.15rem; }
+.sel-opt.act { background: color-mix(in oklab, var(--ink) 7%, var(--card)); }
+.sel-opt.on { color: var(--accent-ink); }
+.sel-opt.on.act, .sel-opt.on { background: var(--accent-soft); }
+.sel-opt.on.act { box-shadow: inset 0 0 0 1.5px color-mix(in oklab, var(--accent) 55%, transparent); }
+.sel-opt[aria-disabled='true'] { opacity: 0.45; cursor: default; }
+.sel-txt { display: grid; flex: 1; min-width: 0; line-height: 1.25; }
+.sel-txt b { font-weight: 750; overflow-wrap: anywhere; }
+.sel-txt small { font-size: 0.8em; font-weight: 600; color: var(--ink-3); }
+.sel-tick { display: flex; flex: none; width: 18px; color: var(--accent-ink); }
+.sel-tick svg { width: 18px; height: 18px; }
+.sel-empty { margin: 0; padding: 14px 12px 16px; color: var(--ink-3); font-weight: 650; text-align: center; }
+.sel-group { padding: 10px 10px 4px; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }

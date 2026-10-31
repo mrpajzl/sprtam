@@ -3,12 +3,13 @@ import { APPROACHES, setApproach, useApproach } from '../approach'
 import { hasSubject } from '../content'
 import { GRADE_NAME, ODB, STAGES, subjectMeta } from '../content/curriculum'
 import type { YearId } from '../content/types'
-import { readyObory, setObor, useObor } from '../obory'
+import { kindName, readyObory, setObor, useObor } from '../obory'
 import { languagesOf, schoolName, setLanguage, useLanguage } from '../school'
 import { setGrade, useProgress } from '../progress/store'
 import { Link } from '../router'
 import { Bar } from '../ui/Bar'
-import { OborGlyph } from '../ui/glyphs'
+import { OborGlyph, SubjectGlyph } from '../ui/glyphs'
+import { OptionIcon, Select, type SelectOption } from '../ui/Select'
 import { IArrow, ICheck, IChevron, IUser } from '../ui/icons'
 import { MeKeys } from './Me'
 import { switchProfile, useProfiles } from '../profiles'
@@ -42,16 +43,17 @@ export function GradePad({ level, on, onPick, link }: { level?: Level; on?: Year
   )
 }
 
-/** A setting as a row; tapping it opens the system picker (a transparent <select> over the row). */
-function Pick({ label, value, options, onPick }: { label: string; value: string; options: [string, string][]; onPick: (v: string) => void }) {
+/** A setting as a row; tapping it opens our picker (src/ui/Select.tsx) with the options. */
+function Pick({ label, value, options, onPick, search }: { label: string; value: string; options: SelectOption[]; onPick: (v: string) => void; search?: boolean }) {
   return (
-    <label class="row pick">
-      <span class="txt"><b>{label}</b><small>{options.find(([v]) => v === value)?.[1]}</small></span>
-      <span class="tag">změnit</span>
-      <select value={value} onChange={(e) => onPick(e.currentTarget.value)} aria-label={label}>
-        {options.map(([v, t]) => <option key={v} value={v}>{t}</option>)}
-      </select>
-    </label>
+    <Select class="row pick" label={label} value={value} options={options} onChange={onPick} search={search}>
+      {(o) => (
+        <>
+          <span class="txt"><b>{label}</b><small>{o?.icon != null && <OptionIcon icon={o.icon} />}<span>{o?.label}</span></small></span>
+          <span class="tag">změnit</span>
+        </>
+      )}
+    </Select>
   )
 }
 
@@ -73,16 +75,16 @@ export function SchoolForm() {
       <GradePad level={level} on={p.g} onPick={setGrade} />
       <div class="list picks">
         {level === 'ss' && p.g?.[0] === 's' && obory.length > 0 && (
-          <Pick label="Obor" value={obor?.id ?? ''} onPick={(v) => setObor(v || undefined)}
-            options={[['', 'gymnázium nebo jiná škola'], ...obory.map((o): [string, string] => [o.id, o.name])]} />
+          <Pick label="Obor" value={obor?.id ?? ''} onPick={(v) => setObor(v || undefined)} search
+            options={[{ value: '', label: 'gymnázium nebo jiná škola', icon: '🏫' }, ...obory.map((o) => ({ value: o.id, label: o.name, hint: `${o.code} · ${kindName(o)}`, icon: <OborGlyph id={o.id} /> }))]} />
         )}
         {langs.length > 1 && (
           <Pick label="Druhý cizí jazyk" value={lang ?? ''} onPick={(v) => setLanguage((v || undefined) as typeof lang)}
-            options={[['', 'všechny (nebo žádný)'], ...langs.map((s): [string, string] => [s, subjectMeta(s).name])]} />
+            options={[{ value: '', label: 'všechny (nebo žádný)' }, ...langs.map((s) => ({ value: s, label: subjectMeta(s).name, icon: <SubjectGlyph s={s} /> }))]} />
         )}
         {APPROACHES.length > 0 && (
           <Pick label="Způsob výuky" value={approach ?? ''} onPick={(v) => setApproach(v || undefined)}
-            options={[['', 'běžná škola'], ...APPROACHES.map((a): [string, string] => [a.id, `${a.emoji} ${a.name}`])]} />
+            options={[{ value: '', label: 'běžná škola', icon: '🏫' }, ...APPROACHES.map((a) => ({ value: a.id, label: a.name, icon: a.emoji }))]} />
         )}
       </div>
     </div>

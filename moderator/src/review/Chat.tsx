@@ -6,6 +6,7 @@ import { getIn } from '../editor/model'
 import type { Me } from '../passkey'
 import type { DraftView, ReviewView } from '../store'
 import { ago, Busy, dateTime, I } from '../ui/kit'
+import { Select } from '../../../src/ui/Select'
 
 // The conversation about a change (docs/MODERACE.md): threads of messages at a block, a question or the whole
 // change, replies, light formatting (Markdown-like, rendered without HTML) and suggested wording of one text field
@@ -137,7 +138,7 @@ export function Composer({ initial = '', placeholder, fields, topic, initialSugg
           <div class="c-suggest-head">
             <b><I.bulb />Návrh textu</b>
             {fields && fields.length > 1 && !editingSuggestion
-              ? <select value={sg.path} onChange={(e) => startSuggestion(e.currentTarget.value)} aria-label="Co navrhuješ změnit">{fields.map((f) => <option key={f.path} value={f.path}>{f.label}</option>)}</select>
+              ? <Select label="Co navrhuješ změnit" value={sg.path} onChange={startSuggestion} options={fields.map((f) => ({ value: f.path, label: f.label }))} />
               : <span>{fields?.find((f) => f.path === sg.path)?.label}</span>}
             {!editingSuggestion && <button type="button" class="icon s" title="Zrušit návrh textu" aria-label="Zrušit návrh textu" onClick={() => setSg(null)}><I.close /></button>}
           </div>

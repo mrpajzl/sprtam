@@ -1,6 +1,7 @@
 @import '@fontsource-variable/nunito';
 @import '@fontsource-variable/jetbrains-mono';
 @import '@fontsource-variable/atkinson-hyperlegible-next';
+@import './ui/select.css';
 /* Each widget's own styles (src/widgets/css/<name>.css); shared widget styles are below (.w, .val, .sub, .ctrls). */
 @import './widgets/css/coins.css';
 @import './widgets/css/units.css';
@@ -1018,12 +1019,12 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 
 /* ——— Plán před písemkou (screens/Plan.tsx) ——— */
 .field { display: grid; gap: 6px; margin-bottom: 14px; font-family: var(--mono); font-size: 0.8rem; font-weight: 650; color: var(--ink-2); }
-.field :is(input, select) {
+.field :is(input, select, .sel) {
   font: 750 1.05rem/1.2 'Nunito Variable', ui-rounded, system-ui, sans-serif; color: var(--ink); min-height: 50px; padding: 0 14px; width: 100%; box-sizing: border-box;
   border-radius: var(--r-s); border: 0; background: var(--card); box-shadow: inset 0 0 0 1.5px var(--line);
 }
-:root[data-font='legible'] .field :is(input, select) { font-family: inherit; }
-.field :is(input, select):focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--accent); }
+:root[data-font='legible'] .field :is(input, select, .sel) { font-family: inherit; }
+.field :is(input, select, .sel):focus-visible, .field .sel.open { outline: none; box-shadow: inset 0 0 0 2px var(--accent); }
 .plan-pick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .plan-topics .row .em { font-size: 1.4rem; }
 .plan-save { position: sticky; bottom: calc(env(safe-area-inset-bottom) + 96px); margin-top: 18px; display: grid; gap: 8px; }
@@ -1184,8 +1185,9 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .school-form .seg { margin-bottom: 16px; }
 .school-form .picks { margin-top: 16px; }
 .school-form .picks:empty { display: none; }
-.row.pick { position: relative; }
-.row.pick select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; font-size: 16px; cursor: pointer; }
-.row.pick:focus-within { outline: 2px solid var(--k-orange); outline-offset: 2px; }
+.row.pick { width: 100%; }
+.row.pick .txt small { display: flex; align-items: center; gap: 5px; }
+.row.pick .txt small span { overflow: hidden; text-overflow: ellipsis; }
+.row.pick .sel-ic.svg { width: 1.3em; height: 1.3em; }
 .sheet-more { margin-top: 14px; }
 .school-sheet .school-done { margin-top: 16px; }

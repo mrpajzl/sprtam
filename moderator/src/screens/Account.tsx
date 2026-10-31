@@ -3,6 +3,7 @@ import { ApiError, api, get, post } from '../api'
 import { addKey, withConfirm, type Me } from '../passkey'
 import { ago, Busy, copy, dateTime, I, Modal, toast } from '../ui/kit'
 import { ProfileForm } from './Profiles'
+import { Select } from '../../../src/ui/Select'
 
 interface Key { id: string; label: string; createdAt: number; lastUsedAt: number | null; synced: boolean }
 
@@ -83,9 +84,7 @@ function Tokens() {
       )}
       <form class="actions-row" onSubmit={(e) => { e.preventDefault(); if (label.trim().length >= 2) create() }}>
         <input class="inp" value={label} onInput={(e) => setLabel(e.currentTarget.value)} placeholder="K čemu (např. Agent – matematika 6)" maxLength={60} aria-label="Název tokenu" />
-        <select value={days} onChange={(e) => setDays(Number(e.currentTarget.value))} aria-label="Platnost">
-          {[7, 30, 90, 180].map((d) => <option key={d} value={d}>{d} dní</option>)}
-        </select>
+        <Select label="Platnost" value={String(days)} onChange={(d) => setDays(Number(d))} options={[7, 30, 90, 180].map((d) => ({ value: String(d), label: `${d} dní` }))} />
         <Busy class="btn" on={busy} disabled={label.trim().length < 2}><I.plus />Vytvořit token</Busy>
       </form>
       {fresh && (

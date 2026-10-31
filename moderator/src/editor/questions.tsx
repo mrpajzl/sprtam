@@ -6,6 +6,7 @@ import type { Issue } from './issues'
 import { arrayInsert, arrayMove, arrayRemove, getIn, newQuestion, newWidget, QUESTION_TYPES, questionLabel, type Path } from './model'
 import { Insert, Menu, useSortable } from './sortable'
 import { WidgetEditor } from './widgets'
+import { Select } from '../../../src/ui/Select'
 
 // Quiz questions as cards; the preview on the right lets the author answer the selected one.
 
@@ -41,10 +42,9 @@ export function QuestionList({ issues }: { issues: Issue[] }) {
                 {mine.length > 0 && <span class="badge bad">{mine.length}</span>}
                 {!ed.readOnly && (
                   <span class="tools">
-                    <select class="type-switch" value={q.type} aria-label="Druh otázky" title="Změnit druh otázky" onClick={(e) => e.stopPropagation()}
-                      onChange={(e) => { const t = e.currentTarget.value as Question['type']; ed.update(p, { ...newQuestion(t), question: q.question }) }}>
-                      {QUESTION_TYPES.map((t) => <option key={t.type} value={t.type}>{t.label}</option>)}
-                    </select>
+                    <Select class="type-switch" label="Druh otázky" title="Změnit druh otázky" value={q.type}
+                      onChange={(t) => ed.update(p, { ...newQuestion(t), question: q.question })}
+                      options={QUESTION_TYPES.map((t) => ({ value: t.type, label: t.label }))} />
                     <button type="button" class="icon s" disabled={i === 0} onClick={(e) => { e.stopPropagation(); set(arrayMove(qs, i, i - 1)); ed.setFocus({ q: i - 1 }) }} aria-label="Nahoru"><I.up /></button>
                     <button type="button" class="icon s" disabled={i === qs.length - 1} onClick={(e) => { e.stopPropagation(); set(arrayMove(qs, i, i + 1)); ed.setFocus({ q: i + 1 }) }} aria-label="Dolů"><I.down /></button>
                     <button type="button" class="icon s" onClick={(e) => { e.stopPropagation(); set(arrayInsert(qs, i + 1, structuredClone(q))); ed.setFocus({ q: i + 1 }) }} aria-label="Duplikovat"><I.copy /></button>

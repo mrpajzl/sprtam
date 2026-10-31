@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks'
 import { cleanTime, planCalendar, saveCalendar } from '../calendar'
 import { hasSubject, loadTopic } from '../content'
-import { GRADE_NAME, gradeSubjects, GRADES, subjectMeta } from '../content/curriculum'
+import { GRADE_NAME, gradeSubjects, GRADES, STAGES, subjectMeta } from '../content/curriculum'
 import { loadIndex, refFor, useIndex, type TopicRef } from '../content/library'
 import type { GradeId, Topic } from '../content/types'
 import { gradedHint, useGrading } from '../grading'
@@ -11,9 +11,10 @@ import { MODES } from '../quiz/engine'
 import { go, Link, query } from '../router'
 import { useTitle } from '../seo'
 import { Bar, Meter, Stars } from '../ui/Bar'
-import { keyStyle, SubjectKey, subjectStyle } from '../ui/glyphs'
+import { keyStyle, SubjectGlyph, SubjectKey, subjectStyle } from '../ui/glyphs'
 import { IArrow, ICalendar, ICheck, IPencil, IPrint } from '../ui/icons'
 import { Mascot } from '../ui/Mascot'
+import { Select } from '../ui/Select'
 import { useAsync } from '../ui/useAsync'
 import { Quiz } from './Quiz'
 import { Worksheet } from './Worksheet'
@@ -202,16 +203,12 @@ function Editor({ id, plan, all }: { id?: string; plan?: Plan; all: TopicRef[] }
       <label class="field"><span>Kdy</span><input type="date" value={date} min={isoOf(now)} onInput={(e) => setDate(e.currentTarget.value)} /></label>
       <h2 class="label next-label">Témata · vybráno {picked.length}</h2>
       <div class="plan-pick">
-        <label class="field"><span>Ročník</span>
-          <select value={g} onChange={(e) => setG(e.currentTarget.value as GradeId)}>
-            {GRADES.map((x) => <option key={x} value={x}>{GRADE_NAME[x]}</option>)}
-          </select>
-        </label>
-        <label class="field"><span>Předmět</span>
-          <select value={subject} onChange={(e) => setS(e.currentTarget.value)}>
-            {subjects.map((x) => <option key={x} value={x}>{subjectMeta(x).name}</option>)}
-          </select>
-        </label>
+        <div class="field"><span>Ročník</span>
+          <Select label="Ročník" value={g} onChange={setG} options={GRADES.map((x) => ({ value: x, label: GRADE_NAME[x], group: STAGES.find((st) => (st.grades as GradeId[]).includes(x))?.name }))} />
+        </div>
+        <div class="field"><span>Předmět</span>
+          <Select label="Předmět" value={subject} onChange={setS} options={subjects.map((x) => ({ value: x, label: subjectMeta(x).name, icon: <SubjectGlyph s={x} /> }))} />
+        </div>
       </div>
       <div class="list plan-topics">
         {topics.map((r) => {

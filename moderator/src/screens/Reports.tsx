@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'preact/hooks'
-import { GRADE_NAME, gradeSubjects, ODB, STAGES, subjectMeta, SUBJECTS, vocationalSubjects } from '../../../src/content/curriculum'
+import { GRADE_NAME, gradeSubjects, subjectMeta, SUBJECTS, vocationalSubjects } from '../../../src/content/curriculum'
 import type { GradeId, SubjectId } from '../../../src/content/types'
 import { Inline } from '../../../src/ui/Inline'
 import { ApiError, api, get } from '../api'
 import { go, nav } from '../router'
 import { ago, Busy, dateTime, Empty, I, Modal, toast } from '../ui/kit'
+import { Select } from '../../../src/ui/Select'
+import { gradeOptions, subjectOptions } from '../ui/filters'
 
 // Error reports from pupils („Nahlásit chybu“ in the app): which question or explanation, what is wrong and an
 // optional note. Nothing about who sent it. A moderator opens the topic, fixes it through a normal change and
@@ -93,18 +95,11 @@ export function Reports() {
         {f.topic ? (
           <span class="pill">{f.topic}<button class="icon s" onClick={() => refilter({ topic: null })} aria-label="Zrušit filtr tématu"><I.close /></button></span>
         ) : <>
-          <select class="q-select" value={f.grade ?? ''} aria-label="Ročník" onChange={(e) => {
-            const grade = (e.currentTarget.value || null) as GradeId | null
+          <Select class="q-select" label="Ročník" value={f.grade ?? ''} options={gradeOptions} onChange={(v) => {
+            const grade = (v || null) as GradeId | null
             refilter({ grade, subject: grade && f.subject && !gradeSubjects(grade).includes(f.subject) ? null : f.subject })
-          }}>
-            <option value="">Všechny ročníky</option>
-            {STAGES.map((st) => <optgroup key={st.id} label={st.name}>{st.grades.map((g) => <option key={g} value={g}>{GRADE_NAME[g]}</option>)}</optgroup>)}
-            <option value={ODB}>{GRADE_NAME[ODB]}</option>
-          </select>
-          <select class="q-select" value={f.subject ?? ''} aria-label="Předmět" disabled={!f.grade} onChange={(e) => refilter({ subject: (e.currentTarget.value || null) as SubjectId | null })}>
-            <option value="">Všechny předměty</option>
-            {subjects.map((x) => <option key={x} value={x}>{subjectMeta(x).name}</option>)}
-          </select>
+          }} />
+          <Select class="q-select" label="Předmět" value={f.subject ?? ''} disabled={!f.grade} options={subjectOptions(subjects)} onChange={(v) => refilter({ subject: (v || null) as SubjectId | null })} />
         </>}
       </div>
       {!list ? <p class="muted">Načítám…</p> : !list.length ? <Empty>{tab === 'open' ? 'Žádné otevřené hlášení. Paráda.' : 'Zatím žádné vyřízené hlášení.'}</Empty> : (

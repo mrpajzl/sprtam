@@ -2,6 +2,7 @@ import { useEffect, useState } from 'preact/hooks'
 import { ApiError, api, get, post } from '../api'
 import { withConfirm, type Me } from '../passkey'
 import { ago, Busy, copy, dateTime, I, Modal, toast } from '../ui/kit'
+import { Select } from '../../../src/ui/Select'
 
 interface U { id: string; name: string; role: 'admin' | 'moderator'; active: boolean; createdAt: number; lastLoginAt: number | null; keys: number; sessions: number; tokens: number }
 interface Inv { id: string; kind: 'user' | 'key'; name: string; role: string; by: string | null; createdAt: number; expiresAt: number }
@@ -59,9 +60,8 @@ export function Users({ me }: { me: Me }) {
                   <small>{ROLE[u.role]} · {u.keys} {u.keys === 1 ? 'klíč' : u.keys < 5 && u.keys ? 'klíče' : 'klíčů'}{u.tokens ? ` · ${u.tokens} API ${u.tokens === 1 ? 'token' : 'tokeny'}` : ''} · naposledy {ago(u.lastLoginAt)}</small>
                 </div>
                 <div class="u-actions">
-                  <select value={u.role} disabled={u.id === me.id} onChange={(e) => patch(u, { role: e.currentTarget.value }, 'Role změněna')} aria-label="Role">
-                    <option value="moderator">Moderátor</option><option value="admin">Správce</option>
-                  </select>
+                  <Select label="Role" value={u.role} disabled={u.id === me.id} onChange={(role) => patch(u, { role }, 'Role změněna')}
+                    options={[{ value: 'moderator', label: 'Moderátor' }, { value: 'admin', label: 'Správce' }]} />
                   <button class="btn small" onClick={() => keyLink(u, false)} disabled={!u.active} title="Jednorázový odkaz, kterým si přidá nový klíč (např. nový telefon)"><I.key />Nový klíč</button>
                   {u.id !== me.id && <button class="btn small" onClick={() => keyLink(u, true)} disabled={!u.active} title="Při ztrátě nebo krádeži zařízení">Zrušit klíče</button>}
                   {u.id !== me.id && (u.sessions > 0 || u.tokens > 0) && <button class="btn small" onClick={() => run(() => post(`/api/admin/users/${u.id}/end-sessions`), 'Odhlášeno ze všech zařízení').then(load)}>Odhlásit</button>}

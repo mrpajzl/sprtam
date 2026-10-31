@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'preact/hooks'
-import { GRADE_NAME, gradeSubjects, ODB, STAGES, subjectMeta, SUBJECTS, vocationalSubjects } from '../../../src/content/curriculum'
+import { GRADE_NAME, gradeSubjects, subjectMeta, SUBJECTS, vocationalSubjects } from '../../../src/content/curriculum'
 import type { GradeId, SubjectId } from '../../../src/content/types'
 import { api, ApiError, get } from '../api'
 import { DiffStats, TopicDiff } from '../diff/Diff'
@@ -11,6 +11,8 @@ import { approvalText, refreshIndex, STATUS, useIndex, type DraftFull, type Draf
 import { Threads, type ThreadActions } from '../review/Chat'
 import { ago, Busy, dateTime, Empty, I, Modal, toast } from '../ui/kit'
 import { editTopic } from './Library'
+import { Select } from '../../../src/ui/Select'
+import { gradeOptions, subjectOptions } from '../ui/filters'
 
 // Review of other moderators' changes (docs/MODERACE.md): /kontrola is the queue (tabs open / approved / rejected,
 // all visible to every moderator), /kontrola/<id> one change –
@@ -146,18 +148,11 @@ export function ReviewQueue({ me }: { me: Me }) {
             return <a key={t.id} href={queueHref(t.id, f)} onClick={nav(queueHref(t.id, f))} class={tab === t.id ? 'on' : ''} aria-current={tab === t.id ? 'page' : undefined}>{t.name}{n !== undefined && ` · ${n}`}</a>
           })}
         </nav>
-        <select class="q-select" value={f.grade ?? ''} aria-label="Ročník" onChange={(e) => {
-          const grade = (e.currentTarget.value || null) as GradeId | null
+        <Select class="q-select" label="Ročník" value={f.grade ?? ''} options={gradeOptions} onChange={(v) => {
+          const grade = (v || null) as GradeId | null
           refilter({ grade, subject: grade && f.subject && !gradeSubjects(grade).includes(f.subject) ? null : f.subject })
-        }}>
-          <option value="">Všechny ročníky</option>
-          {STAGES.map((st) => <optgroup key={st.id} label={st.name}>{st.grades.map((g) => <option key={g} value={g}>{GRADE_NAME[g]}</option>)}</optgroup>)}
-            <option value={ODB}>{GRADE_NAME[ODB]}</option>
-        </select>
-        <select class="q-select" value={f.subject ?? ''} aria-label="Předmět" onChange={(e) => refilter({ subject: (e.currentTarget.value || null) as SubjectId | null })}>
-          <option value="">Všechny předměty</option>
-          {subjects.map((x) => <option key={x} value={x}>{subjectMeta(x).name}</option>)}
-        </select>
+        }} />
+        <Select class="q-select" label="Předmět" value={f.subject ?? ''} options={subjectOptions(subjects)} onChange={(v) => refilter({ subject: (v || null) as SubjectId | null })} />
         <label class="toggle"><input type="checkbox" checked={mine} onChange={(e) => refilter({ mine: e.currentTarget.checked })} />Pouze moje</label>
       </div>
       {body}
