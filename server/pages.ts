@@ -11,6 +11,7 @@ import { askable, MAPS, MAPS_INTRO, MAPS_PATH, modesOf, PARTS, place, ROUND } fr
 import { askable as askableElements, ELEMENTS_INTRO, ELEMENTS_PATH, MODES as ELEMENT_MODES, ROUND as ELEMENT_ROUND, setById } from '../src/chem'
 import { fullTitle, gradeFor, gradeLabel, plain, SITE_NAME, summary, titles } from '../src/seo'
 import { WIDGETS } from '../src/widgets'
+import { glyphSvg, OBOR_GLYPHS, SUBJECT_GLYPHS } from '../src/ui/glyph-svg'
 import { CONTENT_AUTHOR, dateCs, joinHref, profileHref, verifierNames, type Verified } from '../src/content/verified'
 
 // A real HTML page for every public route, so links are shareable with proper previews and search
@@ -53,6 +54,8 @@ const SEARCH = icon('M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.5 15.5L2
 const BOOK = icon('M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3zM5 17a3 3 0 0 1 3-3h10')
 const DICE = icon('M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01')
 const USER = icon('M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4.5 20.5a7.5 7.5 0 0 1 15 0')
+/** An obor's glyph (src/ui/glyph-svg.ts); without an id, the odborné školy as a whole. */
+const oborGlyph = (id = 'odborne-skoly') => glyphSvg(OBOR_GLYPHS[id])
 const FORWARD = icon('M5 12h14M13 6l6 6-6 6')
 
 function block(b: Block, widgets: typeof WIDGETS): string {
@@ -142,7 +145,7 @@ ${extraList(games)}
     title: titles.learn(),
     description: 'Všechno učivo Šprtámu: třídy základní školy, ročníky střední školy, obory odborných škol, waldorfský plán a příprava na přijímačky.',
     crumbs: [home, ['Učivo', '/ucivo']],
-    body: `<div class="page learn">${tabHead('Učivo')}<a class="search-key" href="/hledat">${SEARCH}<span>Hledat téma nebo slovíčko</span></a><section class="sec"><h2 class="label">Třídy</h2>${gradePad()}</section>${obory.length || site.approaches.length ? `<section class="sec"><h2 class="label">Školy</h2><div class="list">${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_PATH}"><span class="skey m"><b class="em">🛠️</b></span><span class="txt"><b>Odborné školy</b><small>IT, strojírenství, kosmetika a další obory</small></span>${FORWARD}</a>` : ''}${site.approaches.map((a) => `<a class="row obor-key" style="${style('green')}" href="${esc(`/${a.id}`)}"><span class="skey m"><b class="em">${esc(a.emoji)}</b></span><span class="txt"><b>${esc(a.name)}</b><small>epochy a učivo po ročnících</small></span>${FORWARD}</a>`).join('')}</div></section>` : ''}${extraList(allExtras.filter((x) => x.kind === 'priprava'))}</div>${tabbar('learn')}`,
+    body: `<div class="page learn">${tabHead('Učivo')}<a class="search-key" href="/hledat">${SEARCH}<span>Hledat téma nebo slovíčko</span></a><section class="sec"><h2 class="label">Třídy</h2>${gradePad()}</section>${obory.length || site.approaches.length ? `<section class="sec"><h2 class="label">Školy</h2><div class="list">${obory.length ? `<a class="row obor-key" style="${style('ink')}" href="${OBOR_PATH}"><span class="skey m">${oborGlyph()}</span><span class="txt"><b>Odborné školy</b><small>IT, strojírenství, kosmetika a další obory</small></span>${FORWARD}</a>` : ''}${site.approaches.map((a) => `<a class="row obor-key" style="${style('green')}" href="${esc(`/${a.id}`)}"><span class="skey m"><b class="em">${esc(a.emoji)}</b></span><span class="txt"><b>${esc(a.name)}</b><small>epochy a učivo po ročnících</small></span>${FORWARD}</a>`).join('')}</div></section>` : ''}${extraList(allExtras.filter((x) => x.kind === 'priprava'))}</div>${tabbar('learn')}`,
   })
 
   out.push({
@@ -163,8 +166,8 @@ ${extraList(games)}
 <section class="about-join card"><h2>${esc(ABOUT.join.title)}</h2><p>${esc(ABOUT.join.lead)}</p><ul>${ABOUT.join.items.map((i) => `<li>${inline(i)}</li>`).join('')}</ul><a class="btn block" href="${esc(ABOUT.join.form.href)}" target="_blank" rel="noopener">${esc(ABOUT.join.form.label)}</a><a class="btn ghost block" href="mailto:${esc(ABOUT.join.email)}">Napiš na ${esc(ABOUT.join.email)}</a></section></div>${tabbar(undefined)}`,
   })
 
-  // Subject tiles: core subjects get their glyph from the app; odborné předměty show their emoji.
-  const face = (s: SubjectId) => `<span class="tile-face">${subjectMeta(s).emoji ? `<b class="em glyph-em">${esc(subjectMeta(s).emoji!)}</b>` : ''}</span>`
+  // Subject tiles: the glyph as the app draws it (src/ui/glyphs.tsx); an odborný předmět not drawn yet shows its emoji.
+  const face = (s: SubjectId) => `<span class="tile-face">${Object.hasOwn(SUBJECT_GLYPHS, s) ? glyphSvg(SUBJECT_GLYPHS[s]) : subjectMeta(s).emoji ? `<b class="em glyph-em">${esc(subjectMeta(s).emoji!)}</b>` : ''}</span>`
   const tile = (g: string, s: SubjectId) => `<a class="tile" style="${style(subjectMeta(s).c)}" href="${esc(`/g/${g}/${s}`)}">${face(s)}<b>${esc(subjectMeta(s).name)}</b></a>`
   for (const g of [...STAGES.flatMap((st) => st.grades), ODB]) {
     const gPath = `/g/${g}`
@@ -345,7 +348,7 @@ ${extraList(games)}
     title: titles.obory(),
     description: `Odborné předměty středních odborných škol po ročnících: ${obory.map((o) => o.name).join(', ')}. Vysvětlení od základů, kvízy a písemky.`,
     crumbs: oCrumbs,
-    body: `<div class="page" style="${ink}">${bar('🛠️ Odborné školy', '/')}<div class="blocks approach-about"><p>Vyber si svůj obor a ukážeme ti jeho odborné předměty ročník po ročníku. Všeobecné předměty (čeština, matematika, angličtina…) procvičíš s učivem gymnázia stejného ročníku.</p></div><h2 class="label">Obory</h2>${obory.length ? '' : '<div class="empty">Připravujeme.</div>'}<div class="list">${obory.map((o) => `<a class="row obor-row" href="${esc(`${OBOR_PATH}/${o.id}`)}"><span class="em">${esc(o.emoji)}</span><span class="txt"><b>${esc(o.name)}</b><small>${esc(`${o.code} · ${kindName(o)}`)}</small></span></a>`).join('')}</div>${[...subjects.keys()].some((k) => k.startsWith(`${ODB}/`)) ? `<a class="row obor-all" href="/g/${ODB}"><span class="txt"><b>Všechny odborné předměty</b><small>bez ohledu na obor</small></span></a>` : ''}</div>${tabbar('learn')}`,
+    body: `<div class="page" style="${ink}">${bar('Odborné školy', '/')}<div class="blocks approach-about"><p>Vyber si svůj obor a ukážeme ti jeho odborné předměty ročník po ročníku. Všeobecné předměty (čeština, matematika, angličtina…) procvičíš s učivem gymnázia stejného ročníku.</p></div><h2 class="label">Obory</h2>${obory.length ? '' : '<div class="empty">Připravujeme.</div>'}<div class="list">${obory.map((o) => `<a class="row obor-row" href="${esc(`${OBOR_PATH}/${o.id}`)}"><span class="skey m">${oborGlyph(o.id)}</span><span class="txt"><b>${esc(o.name)}</b><small>${esc(`${o.code} · ${kindName(o)}`)}</small></span></a>`).join('')}</div>${[...subjects.keys()].some((k) => k.startsWith(`${ODB}/`)) ? `<a class="row obor-all" href="/g/${ODB}"><span class="txt"><b>Všechny odborné předměty</b><small>bez ohledu na obor</small></span></a>` : ''}</div>${tabbar('learn')}`,
     ld: { '@type': 'ItemList', itemListElement: obory.map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${OBOR_PATH}/${o.id}`, name: o.name })) },
   })
   for (const o of obory) {
@@ -359,7 +362,7 @@ ${extraList(games)}
       title: titles.obor(o.name),
       description: `${o.name} (${o.code}): ${plain(o.about)}`.slice(0, 155).replace(/\s+\S*$/, '') + '…',
       crumbs: [...oCrumbs, [o.name, path]],
-      body: `<div class="page" style="${ink}">${bar(`${o.emoji} ${o.name}`, OBOR_PATH, [['Odborné školy', OBOR_PATH]])}<p class="exam-facts"><span>${esc(o.code)}</span><span>${esc(kindName(o))}</span><span>${o.years.length} ročníky</span></p><div class="blocks approach-about"><p>${inline(o.about)}</p></div>${o.years.map((y, i) => {
+      body: `<div class="page" style="${ink}">${bar(o.name, OBOR_PATH, [['Odborné školy', OBOR_PATH]])}<p class="exam-facts"><span>${esc(o.code)}</span><span>${esc(kindName(o))}</span><span>${o.years.length} ročníky</span></p><div class="blocks approach-about"><p>${inline(o.about)}</p></div>${o.years.map((y, i) => {
         const g = yearGrade(i)
         const general = y.general.filter((s) => subjects.has(`${g}/${s}`))
         return `<section class="obor-year"><h2 class="label">${esc(GRADE_NAME[g])}</h2>${odbTiles(y.odb)}${general.length ? `<p class="obor-general muted">Všeobecné: ${general.map((s) => `<a href="${esc(`/g/${g}/${s}`)}">${esc(subjectMeta(s).name)}</a>`).join(', ')}</p>` : ''}</section>`

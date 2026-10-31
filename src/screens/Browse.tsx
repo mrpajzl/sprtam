@@ -7,7 +7,7 @@ import { kindName, OBOR_PATH, oboryOf, useObor, yearOf, type Obor } from '../obo
 import { getProgress, isPinned, setGrade, stars, useProgress } from '../progress/store'
 import { Link } from '../router'
 import { Bar, Meter, Stars } from '../ui/Bar'
-import { keyStyle, SubjectGlyph, subjectStyle } from '../ui/glyphs'
+import { keyStyle, OborGlyph, SubjectGlyph, subjectStyle } from '../ui/glyphs'
 import { IArrow, IPin, ITest } from '../ui/icons'
 import { useAsync } from '../ui/useAsync'
 import { extrasFor, extrasOf, merged } from '../games'
@@ -83,7 +83,7 @@ function YearScreen({ g }: { g: YearId }) {
       <ExtraList list={merged(extrasFor(appExtras(), g, subjects))} />
       {g[0] === 's' && (
         <Link class="row obor-key" style={keyStyle('ink')} href={OBOR_PATH}>
-          <span class="skey m"><b class="em">🛠️</b></span>
+          <span class="skey m"><OborGlyph /></span>
           <span class="txt"><b>Chodíš na odbornou školu?</b><small>Vyber obor a uvidíš jeho odborné předměty</small></span>
           <IArrow />
         </Link>
@@ -100,7 +100,7 @@ function OborYearScreen({ o, g, i }: { o: Obor; g: YearId; i: number }) {
     <div class="page">
       <Bar title={GRADE_NAME[g]} />
       <Link class="row obor-key" style={keyStyle('ink')} href={`${OBOR_PATH}/${o.id}`}>
-        <span class="skey m"><b class="em">{o.emoji}</b></span>
+        <span class="skey m"><OborGlyph id={o.id} /></span>
         <span class="txt"><b>{o.name}</b><small>{o.code} · {kindName(o)}</small></span>
         <IArrow />
       </Link>

@@ -13,7 +13,7 @@ import { answeredToday, goalOf, isDue, isMistake, pinnedKeys, setGrade, stars, t
 import { go, Link } from '../router'
 import { Stars } from '../ui/Bar'
 import { appExtras, ExtraList } from '../ui/Extras'
-import { SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
+import { OborGlyph, SubjectKey, keyStyle, subjectStyle } from '../ui/glyphs'
 import { IArrow, IClose, IShuffle } from '../ui/icons'
 import { PlanRow } from './Plan'
 import { SubjectTile } from './Browse'
@@ -102,7 +102,7 @@ function MySchool({ g, o, mine: { odb, general } }: { g: YearId; o: Obor | undef
         ) : <div class="empty">Učivo tohohle ročníku připravujeme.</div>}
         {oborHint && (
           <Link class="row obor-key" style={keyStyle('ink')} href="/skola">
-            <span class="skey m"><b class="em">🛠️</b></span>
+            <span class="skey m"><OborGlyph /></span>
             <span class="txt"><b>Chodíš na odbornou školu?</b><small>vyber obor a uvidíš jeho předměty</small></span>
             <IArrow />
           </Link>

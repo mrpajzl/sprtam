@@ -8,6 +8,7 @@ import { languagesOf, schoolName, setLanguage, useLanguage } from '../school'
 import { setGrade, useProgress } from '../progress/store'
 import { Link } from '../router'
 import { Bar } from '../ui/Bar'
+import { OborGlyph } from '../ui/glyphs'
 import { IArrow, ICheck, IChevron, IUser } from '../ui/icons'
 import { MeKeys } from './Me'
 import { switchProfile, useProfiles } from '../profiles'
@@ -73,7 +74,7 @@ export function SchoolForm() {
       <div class="list picks">
         {level === 'ss' && p.g?.[0] === 's' && obory.length > 0 && (
           <Pick label="Obor" value={obor?.id ?? ''} onPick={(v) => setObor(v || undefined)}
-            options={[['', 'gymnázium nebo jiná škola'], ...obory.map((o): [string, string] => [o.id, `${o.emoji} ${o.name}`])]} />
+            options={[['', 'gymnázium nebo jiná škola'], ...obory.map((o): [string, string] => [o.id, o.name])]} />
         )}
         {langs.length > 1 && (
           <Pick label="Druhý cizí jazyk" value={lang ?? ''} onPick={(v) => setLanguage((v || undefined) as typeof lang)}
@@ -97,9 +98,10 @@ export function MeChip() {
   const me = r?.l.find((x) => x.id === r.a)
   return (
     <>
-      <button class="school-chip" aria-haspopup="dialog" aria-label={`Já: ${me ? `${me.n}, ` : ''}${g ? GRADE_NAME[g] : 'škola nevybraná'}`} onClick={() => setOpen(true)}>
+      <button class="school-chip" aria-haspopup="dialog" aria-label={`Já: ${me ? `${me.n}, ` : ''}${g ? GRADE_NAME[g] : 'škola nevybraná'}${g?.[0] === 's' && o ? `, ${o.name}` : ''}`} onClick={() => setOpen(true)}>
         <Avatar e={me?.e} />
-        <b>{g ? `${GRADE_NAME[g]}${o && g[0] === 's' ? ` · ${o.emoji}` : ''}` : 'Kam chodíš?'}</b>
+        <b>{g ? GRADE_NAME[g] : 'Kam chodíš?'}</b>
+        {g?.[0] === 's' && o && <span class="chip-obor"><OborGlyph id={o.id} /></span>}
         <IChevron />
       </button>
       {open && <MeSheet onClose={() => setOpen(false)} />}

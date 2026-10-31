@@ -137,7 +137,7 @@ ok(await fresh.locator('.home a[href*="/nemcina"], .home a[href*="/spanelstina"]
 await fresh.goto(`${BASE}/obor/informacni-technologie`); await fresh.waitForSelector('.approach-switch')
 await fresh.click('.approach-switch'); await fresh.click('.obor-pick button.num-key[aria-label="2. ročník"]')
 await fresh.goto(`${BASE}/`); await fresh.waitForSelector('.my-tiles .tile')
-ok((await fresh.locator('.school-chip').textContent()).includes('2. ročník · 💻') && await fresh.locator('.my-tiles .tile[href="/g/odb/programovani"]').count() === 1, 'an obor switched on reaches the home screen')
+ok((await fresh.locator('.school-chip').textContent()).includes('2. ročník') && await fresh.locator('.school-chip .chip-obor svg').count() === 1 && (await fresh.locator('.school-chip').getAttribute('aria-label')).includes('Informační technologie') && await fresh.locator('.my-tiles .tile[href="/g/odb/programovani"]').count() === 1, 'an obor switched on reaches the home screen')
 const homeHtml = await (await fetch(`${BASE}/`)).text()
 ok(homeHtml.includes('href="/ucivo"') && homeHtml.includes('<a class="num-key" href="/g/z7"'), 'server-rendered home links Učivo and every class')
 

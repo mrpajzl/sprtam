@@ -36,7 +36,7 @@ export interface SubjectMeta {
   name: string
   /** Key colour; subjects in one grade never share one. */
   c: KeyColor
-  /** Odborné předměty have an emoji instead of a drawn glyph (src/ui/glyphs.tsx). */
+  /** Odborné předměty: their emoji, shown until the subject gets a drawn glyph (src/ui/glyph-svg.ts). */
   emoji?: string
 }
 

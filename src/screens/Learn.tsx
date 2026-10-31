@@ -6,7 +6,7 @@ import { useProgress } from '../progress/store'
 import { Link } from '../router'
 import { TabHead } from '../ui/Bar'
 import { appExtras, ExtraList } from '../ui/Extras'
-import { keyStyle } from '../ui/glyphs'
+import { keyStyle, OborGlyph } from '../ui/glyphs'
 import { IArrow, ISearch } from '../ui/icons'
 import { GradePad, MeChip } from './School'
 
@@ -33,7 +33,7 @@ export function LearnScreen() {
           <div class="list">
             {obory && (
               <Link class="row obor-key" style={keyStyle('ink')} href={obor ? `${OBOR_PATH}/${obor.id}` : OBOR_PATH}>
-                <span class="skey m"><b class="em">{obor?.emoji ?? '🛠️'}</b></span>
+                <span class="skey m"><OborGlyph id={obor?.id} /></span>
                 <span class="txt"><b>{obor?.name ?? 'Odborné školy'}</b><small>{obor ? `můj obor · ${obor.code}` : 'IT, strojírenství, kosmetika a další obory'}</small></span>
                 <IArrow />
               </Link>
