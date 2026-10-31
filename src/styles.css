@@ -458,7 +458,6 @@ th { font-family: var(--mono); font-weight: 700; color: var(--ink-2); font-size:
 }
 .tabbar a span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tabbar svg { width: 24px; height: 24px; }
-.tabbar .aa { font-size: 1.05rem; font-weight: 800; height: 24px; line-height: 24px; }
 .tabbar a:active { transform: scale(0.94); }
 .tabbar a[aria-current] { color: var(--ink); background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 2px 0 var(--key-edge); }
 /* the lit LED of the current screen */
@@ -1124,3 +1123,4 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .skey.me-icon { background: var(--bg); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
 .school .seg { margin-bottom: 22px; }
 .school-done { margin-top: 30px; }
+.obor-pick { margin: 14px 0 6px; }

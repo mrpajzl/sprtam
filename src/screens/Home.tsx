@@ -1,8 +1,8 @@
 import type { JSX } from 'preact'
 import { approachById, useApproach } from '../approach'
 import { GRADE_NAME, GRADE_SHORT, ODB, subjectMeta } from '../content/curriculum'
-import type { YearId } from '../content/types'
-import { readyObory, useObor } from '../obory'
+import type { GradeId, YearId } from '../content/types'
+import { readyObory, useObor, type Obor } from '../obory'
 import { hasSubject } from '../content'
 import { extrasFor, merged } from '../games'
 import { useIndex, refFor, type TopicRef } from '../content/library'
@@ -34,7 +34,11 @@ export function Home() {
   const p = useProgress()
   const all = useIndex()
   const pins = all ? pinnedKeys(p).flatMap((k) => refFor(k) ?? []) : []
-  const recs = all ? recommend(p, all.filter((r) => !r.approach), 4) : []
+  const o = useObor()
+  const mine = p.g ? schoolSubjects(p.g, o, useLanguage()) : undefined
+  // A pupil who has not practised yet starts with the subjects of their own school.
+  const start = p.g && mine ? [...mine.odb.map((s): [GradeId, string] => [ODB, s]), ...mine.general.map((s): [GradeId, string] => [p.g!, s])] : undefined
+  const recs = all ? recommend(p, all.filter((r) => !r.approach), 4, start) : []
   const plans = activePlans(p.k, today())
 
   return (
@@ -50,7 +54,7 @@ export function Home() {
       <Display p={p} />
       <NextUp p={p} recs={recs} />
       {plans.length > 0 && <div class="list home-plans">{plans.map(([id, plan]) => <PlanRow key={id} id={id} plan={plan} day={planDay(plan, p.t, today())} />)}</div>}
-      {p.g ? <MySchool g={p.g} /> : <Welcome />}
+      {p.g && mine ? <MySchool g={p.g} o={o} mine={mine} /> : <Welcome />}
 
       {pins.length > 0 && (
         <section class="sec">
@@ -80,10 +84,8 @@ function Welcome() {
 }
 
 /** The pupil's year: its subjects (with an obor its odborné předměty first) and the extras that belong to them. */
-function MySchool({ g }: { g: YearId }) {
-  const o = useObor()
+function MySchool({ g, o, mine: { odb, general } }: { g: YearId; o: Obor | undefined; mine: ReturnType<typeof schoolSubjects> }) {
   const a = approachById(useApproach())
-  const { odb, general } = schoolSubjects(g, o, useLanguage())
   const extras = merged(extrasFor(appExtras(), g, [...odb, ...general]))
   const oborHint = g[0] === 's' && !o && readyObory((s) => hasSubject(ODB, s)).length > 0
   return (

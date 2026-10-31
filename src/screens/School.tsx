@@ -58,7 +58,7 @@ export function SchoolScreen() {
       </div>
       <h2 class="label">{level === 'zs' ? 'Třída' : 'Ročník'}</h2>
       <GradePad level={level} on={p.g} onPick={setGrade} />
-      {level === 'ss' && obory.length > 0 && (
+      {level === 'ss' && p.g?.[0] === 's' && obory.length > 0 && (
         <>
           <h2 class="label next-label">Obor</h2>
           <div class="list" role="radiogroup" aria-label="Obor">
