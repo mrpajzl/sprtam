@@ -17,9 +17,22 @@ Každé téma má:
 
 Obsah je ve složce [`content/`](../content): každé téma je jeden soubor `content/topics/<ročník>/<předmět>/<téma>.json`. Pravidla, podle kterých se píše, jsou v [CONTENT.md](CONTENT.md). Před každým nasazením ho automaticky kontroluje `npm run check:content`, aby u každé otázky existovala správná odpověď, bylo dost otázek a každé vysvětlení začínalo od nuly.
 
+## Jak se v aplikaci pohybovat
+
+Dole je vždy po ruce lišta se čtyřmi tlačítky:
+
+- **Domů**: tvůj den a tvoje škola. Displej se sérií dní, karta **Teď na řadě** s jedinou věcí, kterou je teď nejlepší udělat (rozdělané kolo, Dnešní opakování, Sešit chyb, nebo doporučené téma; ostatní jsou pod ní jako malá tlačítka *Pak*), plány před písemkou, **předměty tvého ročníku**, hry k nim a připnutá témata. Napoprvé se zeptá *Kam chodíš do školy?* Stačí klepnout na třídu, nebo *Jen se rozhlížím*.
+- **Učivo**: všechny třídy ZŠ a ročníky SŠ, obory odborných škol, waldorfský plán a příprava na přijímačky. Nahoře je hledání (kdekoli ho otevře i klávesa `/`).
+- **Hry**: Slepá mapa, Periodická tabulka a slovíčka všech jazyků. Nahoře ty, které patří k tvým předmětům.
+- **Já**: Moje škola, Přehled, Sešit chyb, Plán před písemkou, kdo se učí, přenos pokroku, nastavení a o aplikaci.
+
+**Moje škola** (Já → Moje škola, nebo *Změnit* u předmětů na úvodní obrazovce) je třída nebo ročník, na SŠ i obor, u ročníků s druhým cizím jazykem jazyk, který se učíš (ostatní dva se pak na úvodní obrazovce neukazují), a způsob výuky (běžná nebo waldorfská škola). Pamatuje se jen v zařízení, každý profil má svou. Když si ji nevybereš, stane se tvou první třída, kterou otevřeš.
+
+Hry a příprava (přijímačky) nejsou přilepené k jedné obrazovce. Každá v seznamu [`src/games.ts`](../src/games.ts) říká, ke kterým předmětům (případně jen ke kterým ročníkům) patří, a ukáže se všude, kde ty předměty jsou: u předmětu, u ročníku, na úvodní obrazovce a v Hrách. Slepá mapa patří k zeměpisu a vlastivědě, Periodická tabulka k chemii, slovíčka k jazyku a přijímačky k češtině a matematice v 9. třídě. U celého ročníku se slovíčka víc jazyků spojí do jednoho tlačítka *Slovíčka*.
+
 ## Waldorfská škola
 
-Kdo chodí do waldorfské školy, zapne si to v nastavení (ozubené kolečko na úvodní obrazovce). Plán ročníků je na [sprtam.cz/waldorf](https://sprtam.cz/waldorf). Pak:
+Kdo chodí do waldorfské školy, zapne si to v Moje škola (Já → Moje škola). Plán ročníků je na [sprtam.cz/waldorf](https://sprtam.cz/waldorf). Pak:
 
 - **Ročník ukazuje epochy** (v obvyklém pořadí – třídy si je každý rok skládají jinak) a ke každé témata k procvičení, i když jsou v aplikaci zařazená v jiném ročníku. Waldorfská 1. třída třeba probírá násobkové řady, které jsou v běžné škole ve 2. třídě.
 - **Vysvětlení v duchu waldorfské školy** (od celku k částem, rytmus, příběh, přírodniny) se ukáže jako první. Zatím je u matematiky 1.–3. třídy.
@@ -30,7 +43,7 @@ Plány vycházejí z tematických plánů waldorfské školy. Volba se pamatuje 
 
 ## Přijímačky na SŠ
 
-Příprava na jednotnou přijímací zkoušku po 9. třídě je na [sprtam.cz/prijimacky](https://sprtam.cz/prijimacky) (na úvodní obrazovce „Přijímačky na SŠ“). Ke každému testu (matematika 70 minut, čeština a literatura 60 minut, oba za 50 bodů) ukáže:
+Příprava na jednotnou přijímací zkoušku po 9. třídě je na [sprtam.cz/prijimacky](https://sprtam.cz/prijimacky) (v Učivu „Přijímačky na SŠ“, v 9. třídě i na úvodní obrazovce). Ke každému testu (matematika 70 minut, čeština a literatura 60 minut, oba za 50 bodů) ukáže:
 
 - **oblasti**, na které se test ptá (zlomky, rovnice, geometrie…, pravopis, skladba, literatura…), každou s tématy aplikace z 5.–9. třídy a ukazatelem, jak ti jdou;
 - **procvičení oblasti**: jeden test z otázek všech jejích témat;
@@ -41,7 +54,7 @@ Výklad a otázky jsou ty z běžných témat, pokrok je pořád jeden. Rozděle
 
 ## Slepá mapa
 
-Hra na [sprtam.cz/slepa-mapa](https://sprtam.cz/slepa-mapa) (na úvodní obrazovce „Slepá mapa“). Mapy: **Kraje Česka** (14 krajů a krajská města), **Evropa** (47 států včetně Ruska a Turecka) a **Svět** (195 států: členové OSN, Vatikán a Kosovo), který jde hrát i po světadílech (Afrika, Asie, Amerika, Austrálie a Oceánie).
+Hra na [sprtam.cz/slepa-mapa](https://sprtam.cz/slepa-mapa) (v Hrách, u zeměpisu a vlastivědy). Mapy: **Kraje Česka** (14 krajů a krajská města), **Evropa** (47 států včetně Ruska a Turecka) a **Svět** (195 států: členové OSN, Vatikán a Kosovo), který jde hrát i po světadílech (Afrika, Asie, Amerika, Austrálie a Oceánie).
 
 Na stránce mapy si ji nejdřív prohlédneš: klepnutím na místo uvidíš jeho název a hlavní město. Pod mapou je seznam všech míst. Pak si vybereš hru, buď na 10 otázek, nebo na celou mapu:
 
@@ -55,7 +68,7 @@ Mapu posuneš tažením a přiblížíš (až 60×) dvěma prsty, kolečkem myš
 
 ## Periodická tabulka
 
-Hra na [sprtam.cz/periodicka-tabulka](https://sprtam.cz/periodicka-tabulka) (na úvodní obrazovce „Periodická tabulka“). Nahoře si vybereš sadu prvků: **20 prvků** (vodík až vápník, tabulka se vejde na telefon), **ze ZŠ** (41 prvků, které by měl znát každý: prvních 20 a třeba železo, měď, stříbro, zlato, rtuť, olovo, jod nebo uran) a **všech 118**. Tabulku si nejdřív prohlédneš: klepnutím na prvek uvidíš jeho název, protonové číslo, atomovou hmotnost, skupinu, periodu, skupenství a u lehkých prvků elektrony ve slupkách. Pod tabulkou je seznam prvků sady. Pak si vybereš hru, buď na 10 otázek, nebo na všechny prvky sady:
+Hra na [sprtam.cz/periodicka-tabulka](https://sprtam.cz/periodicka-tabulka) (v Hrách a u chemie). Nahoře si vybereš sadu prvků: **20 prvků** (vodík až vápník, tabulka se vejde na telefon), **ze ZŠ** (41 prvků, které by měl znát každý: prvních 20 a třeba železo, měď, stříbro, zlato, rtuť, olovo, jod nebo uran) a **všech 118**. Tabulku si nejdřív prohlédneš: klepnutím na prvek uvidíš jeho název, protonové číslo, atomovou hmotnost, skupinu, periodu, skupenství a u lehkých prvků elektrony ve slupkách. Pod tabulkou je seznam prvků sady. Pak si vybereš hru, buď na 10 otázek, nebo na všechny prvky sady:
 
 - **Značky**: vyber značku prvku podle názvu (síra → S, Si, Sn, Na…);
 - **Názvy**: vyber název prvku podle značky;
@@ -82,7 +95,7 @@ U některých témat z matematiky a fyziky se v Rychlém kvízu, Opakování a P
 
 ### Rozdělané kolo
 
-Kolo, které nedokončíš (zavřená záložka, telefonát, zamčený telefon), se po každé odpovědi uloží. Když se na stejné místo vrátíš, aplikace se zeptá, jestli chceš **pokračovat**, nebo začít znovu. Na úvodní obrazovce je karta *Pokračovat* (křížkem ji zahodíš). Pamatuje se jedno kolo, nejvýš týden. Když se mezitím otázky v učivu změní, kolo začne znovu. Odpovědi už dané jsou v pokroku tak jako tak, uložené kolo si pamatuje jen, které otázky mělo a jak dopadly. Kód: [`src/progress/resume.ts`](../src/progress/resume.ts).
+Kolo, které nedokončíš (zavřená záložka, telefonát, zamčený telefon), se po každé odpovědi uloží. Když se na stejné místo vrátíš, aplikace se zeptá, jestli chceš **pokračovat**, nebo začít znovu. Na úvodní obrazovce je pak v kartě Teď na řadě *Pokračovat* (křížkem kolo zahodíš). Pamatuje se jedno kolo, nejvýš týden. Když se mezitím otázky v učivu změní, kolo začne znovu. Odpovědi už dané jsou v pokroku tak jako tak, uložené kolo si pamatuje jen, které otázky mělo a jak dopadly. Kód: [`src/progress/resume.ts`](../src/progress/resume.ts).
 
 ### Klávesnice
 
@@ -131,7 +144,7 @@ U tématu se drží **nejlepší** dosažený výsledek ze všech režimů. Dne�
 
 ## „Na řadě“: co procvičit dál
 
-Na úvodní obrazovce aplikace doporučí až 5 témat, nejvýš 2 z jednoho předmětu. Rozhoduje se **jen podle pokroku uloženého ve tvém zařízení**. Kód: [`src/progress/recommend.ts`](../src/progress/recommend.ts).
+Na úvodní obrazovce aplikace doporučí až 4 témata, nejvýš 2 z jednoho předmětu (v kartě Teď na řadě a pod ní). Rozhoduje se **jen podle pokroku uloženého ve tvém zařízení**. Kód: [`src/progress/recommend.ts`](../src/progress/recommend.ts).
 
 1. **Zopakovat**: téma, které jsi už procvičoval, se vrací po čase podle posledního výsledku (opakování s rozestupy):
 
@@ -163,19 +176,19 @@ Každá otázka má přihrádku 0–5, podobně jako slovíčka:
 
 Podle přihrádky se otázka vrací: 0 hned, 1 po 1 dni, 2 po 3 dnech, 3 po 7 dnech, 4 po 14 dnech, 5 po 30 dnech.
 
-- **Dnešní opakování** (na úvodní obrazovce, když je co opakovat): 10 otázek, které jsou na řadě. Nejdřív chyby, pak nižší přihrádky a nejdéle odkládané.
+- **Dnešní opakování** (na úvodní obrazovce v kartě Teď na řadě, když je co opakovat): 10 otázek, které jsou na řadě. Nejdřív chyby, pak nižší přihrádky a nejdéle odkládané.
 - **Sešit chyb**: otázky, které se ti spletly, se správnou odpovědí, po tématech. Otázka zmizí, až ji **dvakrát správně** zodpovíš (v jakémkoli režimu). Tlačítkem *Procvičit chyby* je projdeš najednou.
 - Když autoři otázku opraví, zůstane jí pokrok, pokud se nezměnilo zadání ani odpověď (oprava vysvětlení nebo nápovědy nevadí). Změněná otázka začíná znovu.
 
 ## Přehled a denní cíl
 
-- **Přehled** (klepni na displej se sérií, nebo Nastavení → Přehled): série dní, kolik dní za posledních 30 jsi procvičoval, počet kol, dnešní odpovědi, Sešit chyb a u každého ročníku a předmětu, kolik témat máš na ★, ★★ a ★★★. U slovíček kolik jich máš naučených. Hodí se i rodičům: všechno je jen z tohoto zařízení.
+- **Přehled** (klepni na displej se sérií, nebo Já → Přehled): série dní, kolik dní za posledních 30 jsi procvičoval, počet kol, dnešní odpovědi, Sešit chyb a u každého ročníku a předmětu, kolik témat máš na ★, ★★ a ★★★. U slovíček kolik jich máš naučených. Hodí se i rodičům: všechno je jen z tohoto zařízení.
 - **Denní cíl**: kolik odpovědí denně chceš dát, 10, 20 (výchozí) nebo 40, nebo bez cíle (Nastavení → Denní cíl). Počítá se každá odpověď v kvízu i u slovíček. Na displeji úvodní obrazovky je vidět, kolik už máš.
 - **Série dní** vydrží **jeden vynechaný den za týden**: když jeden den vynecháš a další den zase procvičuješ, série pokračuje (vynechaný den svítí na displeji modře). Dva vynechané dny po sobě sérii ukončí. Vynechané dny se do počtu dní nepočítají. Kód: `streakOf` v [`src/progress/recommend.ts`](../src/progress/recommend.ts).
 
 ## Plán před písemkou
 
-Na [sprtam.cz/plan](https://sprtam.cz/plan) (na úvodní obrazovce *Plán před písemkou*, nebo *Píšu z toho písemku* u tématu) si vybereš témata a den písemky. Aplikace opakování rozvrhne do zbývajících dní. Kód: [`src/progress/plan.ts`](../src/progress/plan.ts).
+Na [sprtam.cz/plan](https://sprtam.cz/plan) (Já → *Plán před písemkou*, nebo *Píšu z toho písemku* u tématu; běžící plány jsou na úvodní obrazovce) si vybereš témata a den písemky. Aplikace opakování rozvrhne do zbývajících dní. Kód: [`src/progress/plan.ts`](../src/progress/plan.ts).
 
 - Téma **umíš**, když poslední kolo mělo aspoň 75 % a procvičoval jsi ho v posledních 7 dnech.
 - **Dnes procvič**: každý den do předposledního dne před písemkou nabídne témata, která ještě neumíš: nejdřív nová (v pořadí, jak jsi je vybral), pak ta, která ti nejdou nejvíc, pak ta, která jsi nejdéle neopakoval. Kolik jich je, se řídí tím, kolik zbývá: aby se všechna stihla do předposledního dne, aspoň jedno a nejvýš 4 denně. Co jsi dnes procvičil, se do dnešní dávky počítá a znovu se nenabízí.
@@ -201,9 +214,9 @@ Na [sprtam.cz/plan](https://sprtam.cz/plan) (na úvodní obrazovce *Plán před 
 - **Hledání** (lupa nebo klávesa `/`): ve všech tématech všech ročníků podle názvu, pojmů a pravidel a ve všech slovíčkách. Funguje i bez diakritiky a dá se filtrovat podle stupně.
 - **Připnutá témata**: špendlíkem si označíš, co se zrovna učíš. Připnutá témata se vracejí dřív a jdou procvičit najednou v Mixu.
 - **Série dní**: kolik dní po sobě jsi procvičoval (počítá se, pokud jsi procvičoval dnes nebo včera; jeden vynechaný den za týden sérii nepřeruší, viz [Přehled a denní cíl](#přehled-a-denní-cíl)).
-- **Tmavý vzhled**: v nastavení (ozubené kolečko na úvodní obrazovce).
+- **Tmavý vzhled**: Já → Nastavení.
 - **Čtení** (Nastavení → Čtení): větší nebo největší písmo, víc místa mezi řádky, písmeny a slovy a **písmo pro snadné čtení** (Atkinson Hyperlegible Next: písmena jako b/d nebo I/l/1 se nepletou). Platí pro celé zařízení, uloží se v něm. Kód: [`src/reading.ts`](../src/reading.ts).
-- **Kdo se učí** (Nastavení → Kdo se učí): na jednom zařízení (rodinný tablet) se může učit víc dětí, každé má svůj pokrok, plány, sérii dní, rekordy Slepé mapy, obor a školu. Nejsou to účty: profil je jen jméno a obrázek v zařízení. Na úvodní obrazovce se nahoře ukáže, kdo se učí, a klepnutím se přepne. Vzhled a čtení jsou společné. Přenos pokroku na jiné zařízení posílá pokrok jen toho, kdo se právě učí. Kód: [`src/profiles.ts`](../src/profiles.ts).
+- **Kdo se učí** (Nastavení → Kdo se učí): na jednom zařízení (rodinný tablet) se může učit víc dětí, každé má svůj pokrok, plány, sérii dní, rekordy her a svou školu (ročník, obor, jazyk, způsob výuky). Nejsou to účty: profil je jen jméno a obrázek v zařízení. Na úvodní obrazovce se nahoře ukáže, kdo se učí, a klepnutím se přepne. Vzhled a čtení jsou společné. Přenos pokroku na jiné zařízení posílá pokrok jen toho, kdo se právě učí. Kód: [`src/profiles.ts`](../src/profiles.ts).
 - **Pracovní list** (*Pracovní list* u tématu nebo plánu): otázky k vytištění nebo uložení do PDF, 10, 20 nebo všechny (jen počty, které téma naplní; téma s příklady z generátoru naplní každý), s místem na odpověď a řešením na zvláštní stránce. Otázky s interaktivní pomůckou na papír nejdou, ty se vynechají. List vzniká v zařízení. Kód: [`src/screens/Worksheet.tsx`](../src/screens/Worksheet.tsx).
 - **Připomínka** (Nastavení → Připomínka): Šprtám nemá server, který by posílal upozornění. Připomínka proto přijde z tvého kalendáře: tlačítko stáhne soubor `.ics` s událostí každý den v čase, který si vybereš, a kalendář ji přidá. Na iPhonu soubor otevři ze *Stažených* (aplikace Soubory). Zrušíš ji v kalendáři. Kód: [`src/calendar.ts`](../src/calendar.ts).
 - **Offline**: po první návštěvě má aplikace v zařízení celé učivo všech ročníků a funguje i bez internetu.

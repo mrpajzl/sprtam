@@ -1081,3 +1081,46 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .who-actions .btn + .btn { --c: var(--k-orange); --on-c: var(--k-orange-on); }
 .who-delete { justify-self: center; margin-top: 10px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ——— Domů: Teď na řadě, the pupil's school and the extras (screens/Home.tsx, src/games.ts) ——— */
+.next { margin-top: 14px; }
+.next-top { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; }
+.next-top > :only-child { grid-column: 1 / -1; }
+.next-key { min-height: 78px; box-shadow: inset 0 0 0 2px var(--accent), 0 3px 0 var(--key-edge); }
+.next-key:active { box-shadow: inset 0 0 0 2px var(--accent), 0 1px 0 var(--key-edge); }
+.next-key .txt b { font-size: 1.05rem; }
+.row .txt small.kicker { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in oklab, var(--k-orange) 55%, var(--ink)); }
+.next-more { display: flex; align-items: center; gap: 8px; margin: 10px -18px 0; padding: 2px 18px 6px; overflow-x: auto; scrollbar-width: none; }
+.next-more::-webkit-scrollbar { display: none; }
+.next-more > small { flex: none; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--ink-3); margin: 0 2px; }
+.next-chip {
+  flex: none; display: inline-flex; align-items: center; gap: 7px; max-width: 72%; min-height: 36px; padding: 0 12px 0 10px; border-radius: 999px;
+  background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 2px 0 var(--key-edge); color: var(--ink);
+  font-weight: 750; font-size: 0.86rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: transform 0.09s var(--ease), box-shadow 0.09s var(--ease);
+}
+.next-chip::before { content: ''; flex: none; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); }
+.next-chip:active { transform: translateY(1px); box-shadow: inset 0 0 0 1px var(--line), 0 1px 0 var(--key-edge); }
+.mini-key.quiet { background: var(--key); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge); }
+.mini-key.quiet:active { box-shadow: inset 0 0 0 1px var(--line), 0 1px 0 var(--key-edge); }
+.my-approach { margin-bottom: 12px; }
+.my-tiles { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.my-tiles .tile { min-height: 0; padding: 10px; gap: 8px; }
+.my-tiles .tile-face { width: 44px; height: 44px; border-radius: 12px; }
+.my-tiles .tile-face svg { width: 28px; height: 28px; }
+.my-tiles .tile b { font-size: 0.86rem; hyphens: auto; overflow-wrap: anywhere; }
+@media (max-width: 359px) { .my-tiles { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 560px) { .my-tiles { grid-template-columns: repeat(4, 1fr); } }
+.my-tiles + .obor-key { margin-top: 14px; }
+.welcome-lead { margin: -2px 2px 14px; line-height: 1.45; }
+.welcome-skip { margin-top: 16px; }
+.extra-key .skey .em { font-size: 1.3rem; background: none; width: auto; height: auto; }
+
+/* ——— Učivo, Hry, Já, Moje škola (screens/Learn.tsx, Games.tsx, Me.tsx, School.tsx) ——— */
+.learn .search-key { margin-top: 4px; }
+.page > .lead { margin: 0 2px 18px; line-height: 1.45; }
+.me-key .txt b { font-size: 1.05rem; }
+.me-key .skey .em { font-size: 1.5rem; }
+.skey.me-icon { background: var(--bg); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+.school .seg { margin-bottom: 22px; }
+.school-done { margin-top: 30px; }

@@ -4,8 +4,7 @@ import { approachById } from './approach'
 import { EXAM } from './exam'
 import { isMode, MAPS_PATH } from './maps'
 import { ELEMENTS_PATH, isMode as isElementsMode } from './chem'
-import { ALL_GRADES, hasSubjectIn, isGrade } from './content/curriculum'
-import type { YearId } from './content/types'
+import { hasSubjectIn, isGrade } from './content/curriculum'
 import { OBOR_PATH } from './obory'
 import { decodeProgress, unpack } from './progress/code'
 import { importProgress, type Progress } from './progress/store'
@@ -20,6 +19,10 @@ import { MapGame, MapsScreen } from './screens/Maps'
 import { ElementsGame, ElementsScreen } from './screens/Elements'
 import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
+import { GamesScreen } from './screens/Games'
+import { LearnScreen } from './screens/Learn'
+import { MeScreen } from './screens/Me'
+import { SchoolScreen } from './screens/School'
 import { OborScreen } from './screens/Obor'
 import { Overview } from './screens/Overview'
 import { planFullScreen, PlanRoute } from './screens/Plan'
@@ -56,37 +59,40 @@ export function App() {
   if (a === 'mix') return <MixScreen />
   if (a === 'dnes') return <ReviewQuiz mode="dnes" />
   if (a === 'chyby' && b === 'procvicit') return <ReviewQuiz mode="chyby" />
-  if (a === 'chyby') return <><MistakesScreen /><TabBar /></>
-  if (a === 'prehled') return <><Overview /><TabBar /></>
-  if (a === 'plan') return planFullScreen(c) ? <PlanRoute key={`${b}/${c}`} id={b} sub={c} /> : <><PlanRoute key={`${b}/${c}`} id={b} sub={c} /><TabBar /></>
+  if (a === 'chyby') return <><MistakesScreen /><TabBar active="me" /></>
+  if (a === 'prehled') return <><Overview /><TabBar active="me" /></>
+  if (a === 'plan') return planFullScreen(c) ? <PlanRoute key={`${b}/${c}`} id={b} sub={c} /> : <><PlanRoute key={`${b}/${c}`} id={b} sub={c} /><TabBar active="me" /></>
   if (a === 'p' && b) return <ImportLink code={b} />
   if (a === 'presun' && b) return <MoveIn code={b} />
   if (a === 'spojit' && b) return <SyncScreen offer={b} />
-  if (a === 'hledat') return <><Search /><TabBar active="search" /></>
-  if (a === 'sdilet') return <><SyncScreen /><TabBar /></>
-  if (a === 'nastaveni') return <><Settings /><TabBar /></>
-  if (a === 'profily') return <><ProfilesScreen /><TabBar /></>
-  if (a === 'o-aplikaci') return <><About /><TabBar /></>
+  if (a === 'hledat') return <><Search /><TabBar /></>
+  if (a === 'ucivo') return <><LearnScreen /><TabBar active="learn" /></>
+  if (a === 'hry') return <><GamesScreen /><TabBar active="games" /></>
+  if (a === 'ja') return <><MeScreen /><TabBar active="me" /></>
+  if (a === 'skola') return <><SchoolScreen /><TabBar active="me" /></>
+  if (a === 'sdilet') return <><SyncScreen /><TabBar active="me" /></>
+  if (a === 'nastaveni') return <><Settings /><TabBar active="me" /></>
+  if (a === 'profily') return <><ProfilesScreen /><TabBar active="me" /></>
+  if (a === 'o-aplikaci') return <><About /><TabBar active="me" /></>
   if (a === 'widgety') return <><GalleryScreen key={b} name={b} /><TabBar /></>
   if (a === EXAM.id) {
     // Practice gets the whole screen: /prijimacky/<subject>/test, /prijimacky/<subject>/simulace, /prijimacky/<subject>/<area>/test
     if (c === 'test' || c === 'simulace' || d === 'test') return <ExamScreen part={b} area={c} test={d === 'test'} />
-    return <><ExamScreen key={`${b}/${c}`} part={b} area={c} /><TabBar /></>
+    return <><ExamScreen key={`${b}/${c}`} part={b} area={c} /><TabBar active="learn" /></>
   }
   if (`/${a}` === ELEMENTS_PATH) {
     // The game gets the whole screen: /periodicka-tabulka/<set>/<mode>
     if (b && isElementsMode(c)) return <ElementsGame set={b} mode={c} />
-    return <><ElementsScreen /><TabBar /></>
+    return <><ElementsScreen /><TabBar active="games" /></>
   }
   if (`/${a}` === MAPS_PATH) {
     // The game gets the whole screen: /slepa-mapa/<map>/<mode>
     if (b && isMode(c)) return <MapGame map={b} mode={c} />
-    return <><MapsScreen key={b} map={b} /><TabBar /></>
+    return <><MapsScreen key={b} map={b} /><TabBar active="games" /></>
   }
   if (approachById(a)) {
     if (c && d === 'test') return <ApproachScreen id={a} g={b} block={c} test />
-    const g = ALL_GRADES.includes(b as YearId) ? (b as YearId) : undefined
-    return <><ApproachScreen key={`${b}/${c}`} id={a} g={b} block={c} />{g ? <TabBar active="grade" grade={g} /> : <TabBar />}</>
+    return <><ApproachScreen key={`${b}/${c}`} id={a} g={b} block={c} /><TabBar active="learn" /></>
   }
   if (a === 'slovicka') {
     // English: /slovicka/<level>/<group>; other languages: /slovicka/<language>/<level>/<group>
@@ -95,9 +101,9 @@ export function App() {
     const lvl = LEVELS.find((l) => l.id === lv)?.id as Level | undefined
     if (lvl && grp) return <VocabDrill key={`${lang}/${lvl}`} lang={lang} level={lvl} group={grp} />
     const screen = lvl ? <VocabLevel key={`${lang}/${lvl}`} lang={lang} level={lvl} /> : m ? <VocabLangHome lang={m.id} /> : <VocabHome />
-    return <>{screen}<TabBar active="vocab" /></>
+    return <>{screen}<TabBar active="games" /></>
   }
-  if (a === OBOR_PATH.slice(1)) return <><OborScreen key={b} id={b} /><TabBar /></>
+  if (a === OBOR_PATH.slice(1)) return <><OborScreen key={b} id={b} /><TabBar active="learn" /></>
   if (a === 'g' && isGrade(b)) {
     const g = b
     const s = hasSubjectIn(g, c) ? c : undefined
@@ -105,8 +111,7 @@ export function App() {
     if (s && d && e && TOPIC_MODES.includes(e as ModeId)) return <QuizScreen g={g} s={s} id={d} mode={e as ModeId} />
     if (s && d && e === 'tisk') return <TopicWorksheet g={g} s={s} id={d} />
     const screen = !s ? <GradeScreen g={g} /> : d ? <TopicScreen g={g} s={s} id={d} /> : <SubjectScreen g={g} s={s} />
-    // Odborné předměty belong to no grade: the tab keeps the pupil's own year (their obor's year screen).
-    return <>{screen}<TabBar active="grade" grade={g === 'odb' ? undefined : g} /></>
+    return <>{screen}<TabBar active="learn" /></>
   }
   return <><Home /><TabBar active="home" /></>
 }
@@ -114,6 +119,10 @@ export function App() {
 /** Title of screens that know it without loading content; `null` = the screen sets it (topics). */
 function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'hledat') return 'Hledat'
+  if (a === 'ucivo') return titles.learn()
+  if (a === 'hry') return titles.games()
+  if (a === 'ja') return 'Já'
+  if (a === 'skola') return 'Moje škola'
   if (a === 'nastaveni') return 'Nastavení'
   if (a === 'profily') return 'Kdo se učí?'
   if (a === 'prehled') return 'Přehled'

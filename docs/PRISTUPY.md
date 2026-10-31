@@ -11,7 +11,7 @@ Co přístup v aplikaci mění:
 | Vlastní témata | Přístup smí mít témata, která v běžném učivu nejsou (např. Parsifal). V běžném seznamu předmětu se neukazují. |
 | Hodnocení | Písemka končí **slovním hodnocením** místo známky (když to přístup a ročník chce). |
 
-Přístup si dítě zvolí v **nastavení** (ozubené kolečko na úvodní obrazovce, `/nastaveni`) nebo na stránce přístupu (`/waldorf`). Volba se pamatuje jen v zařízení, jako ostatní nastavení. Stejně jako učivo se dá prohlížet i bez volby: plán každého přístupu je veřejná stránka.
+Přístup si dítě zvolí v **Moje škola** (Já → Moje škola, `/skola`) nebo na stránce přístupu (`/waldorf`). Volba se pamatuje jen v zařízení, jako ostatní nastavení. Stejně jako učivo se dá prohlížet i bez volby: plán každého přístupu je veřejná stránka.
 
 ## Soubory
 

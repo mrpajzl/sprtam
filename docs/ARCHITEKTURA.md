@@ -60,6 +60,8 @@ src/
   chem/                 Periodická tabulka (/periodicka-tabulka): 118 prvků (elements.ts, sdílí je widgety periodic a chem-equation),
                         sady a hry (index.ts), slepá tabulka (Table.tsx)
   quiz/                 režimy, vyhodnocení odpovědí, generátory příkladů
+  games.ts              hry a příprava (mapa, tabulka, slovíčka, přijímačky) a ke kterým předmětům patří
+  school.ts             Moje škola: druhý jazyk, předměty ročníku
   progress/
     store.ts            pokrok v localStorage, slučování
     code.ts             kód pokroku (QR / odkaz)
@@ -102,7 +104,11 @@ Nové vydání učiva (schválená změna v moderaci) je na sprtam.cz do 15 seku
 
 | Adresa | Obrazovka |
 |---|---|
-| `/` | Domů |
+| `/` | Domů: Teď na řadě, předměty mé školy a hry k nim |
+| `/ucivo` | Učivo: všechny třídy, obory, přístupy, příprava |
+| `/hry` | Hry (`src/games.ts`) |
+| `/ja` | Já: pokrok, profily, nastavení |
+| `/skola` | Moje škola: ročník, obor, druhý jazyk, způsob výuky (`src/school.ts`) |
 | `/g/z5` | Ročník |
 | `/g/z5/matematika` | Předmět |
 | `/g/z5/matematika/zlomky` | Téma |
@@ -117,7 +123,7 @@ Nové vydání učiva (schválená změna v moderaci) je na sprtam.cz do 15 seku
 | `/chyby`, `/chyby/procvicit` | Sešit chyb a jeho procvičení |
 | `/prehled` | Přehled: série, dnešní cíl, hvězdičky po předmětech |
 | `/sdilet` | Přenos pokroku |
-| `/nastaveni` | Nastavení: vzhled a škola (běžná, waldorfská) |
+| `/nastaveni` | Nastavení: profily, vzhled, čtení, denní cíl |
 | `/widgety`, `/widgety/<název>` | Galerie widgetů, bloků a otázek pro autory obsahu |
 | `/slepa-mapa`, `/slepa-mapa/evropa` | Slepá mapa: mapy, jedna mapa (prohlížení, seznam míst) |
 | `/slepa-mapa/evropa/najdi` | Hra (`najdi`, `mesta`, `poznej`; `?vse` = celá mapa) |

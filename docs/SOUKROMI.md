@@ -16,10 +16,12 @@ Aplikace používá úložiště prohlížeče (`localStorage`). Data v něm vid
 | `sprtam:resume` | Rozdělané kolo: adresa, režim, název, které otázky kolo mělo (téma a otázka, vygenerovaný příklad celý), jak dopadly odpovědi a u testů na čas uplynulý čas. Smaže se po dokončení kola nebo po týdnu. | [`src/progress/resume.ts`](../src/progress/resume.ts) |
 | `sprtam:profiles` | Jen když se na zařízení učí víc dětí: jména (přezdívky) a obrázky profilů a kdo se učí teď. | [`src/profiles.ts`](../src/profiles.ts) |
 | `sprtam:switching` | Jen na okamžik při přepínání profilu, aby ostatní otevřené záložky přestaly ukládat a načetly se znovu. | [`src/profiles.ts`](../src/profiles.ts) |
-| `sprtam:profile:<id>` | Odložená data ostatních profilů: jejich `sprtam:progress`, `sprtam:resume`, `sprtam:mapy`, `sprtam:prvky`, `sprtam-obor` a `sprtam-approach`. Smazáním profilu zmizí. | [`src/profiles.ts`](../src/profiles.ts) |
+| `sprtam:profile:<id>` | Odložená data ostatních profilů: jejich `sprtam:progress`, `sprtam:resume`, `sprtam:mapy`, `sprtam:prvky`, `sprtam-obor`, `sprtam-approach` a `sprtam-jazyk`. Smazáním profilu zmizí. | [`src/profiles.ts`](../src/profiles.ts) |
 | `sprtam-reading` | Nastavení čtení a ovládání, pokud sis ho změnil: velikost písma, víc místa, písmo pro snadné čtení, vypnuté klávesové zkratky. | [`src/reading.ts`](../src/reading.ts) |
 | `sprtam-theme` | `dark` nebo `light`, pokud sis přepnul vzhled. | [`src/theme.ts`](../src/theme.ts) |
 | `sprtam-approach` | `waldorf`, pokud sis zapnul waldorfskou školu. | [`src/approach.ts`](../src/approach.ts) |
+| `sprtam-obor` | Tvůj obor odborné školy, pokud sis ho vybral. | [`src/obory.ts`](../src/obory.ts) |
+| `sprtam-jazyk` | Tvůj druhý cizí jazyk (`nemcina`, `francouzstina` nebo `spanelstina`), pokud sis ho vybral v Moje škola. | [`src/school.ts`](../src/school.ts) |
 | `sprtam-heal` | Čas posledního automatického „uzdravení“ po nasazení nové verze (aby se stránka nepřenačítala dokola). | [`public/boot-check.js`](../public/boot-check.js) |
 
 Kromě toho:
