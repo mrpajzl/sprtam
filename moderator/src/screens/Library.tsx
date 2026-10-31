@@ -9,6 +9,7 @@ import { go, nav } from '../router'
 import { refreshIndex, useIndex, type Index } from '../store'
 import { Busy, Empty, I, Modal, toast } from '../ui/kit'
 import { EmojiField } from '../editor/fields'
+import { Select } from '../../../src/ui/Select'
 
 const fold = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '')
 
@@ -196,14 +197,12 @@ function NewTopic({ g, s, index, onClose }: { g: GradeId; s: SubjectId; index: I
       <form class="form" onSubmit={(e) => { e.preventDefault(); if (valid) create() }}>
         <label class="field"><span>Název tématu</span><input value={title} onInput={(e) => setTitle(e.currentTarget.value)} placeholder="např. Zlomky" maxLength={80} autoFocus /></label>
         <EmojiField value={emoji} set={setEmoji} choices={EMOJIS} />
-        <label class="field">
+        <div class="field">
           <span>Zařadit za</span>
-          <select value={after} onChange={(e) => setAfter(e.currentTarget.value)}>
-            <option value="">na začátek</option>
-            {list.map((t, i) => <option key={t.id} value={t.id}>{i + 1}. {t.emoji} {t.title}</option>)}
-          </select>
+          <Select label="Zařadit za" value={after} onChange={setAfter}
+            options={[{ value: '', label: 'na začátek' }, ...list.map((t, i) => ({ value: t.id, label: `${i + 1}. ${t.title}`, icon: t.emoji }))]} />
           <small>Pořadí, v jakém se téma během roku učí.</small>
-        </label>
+        </div>
         <details class="advanced">
           <summary>Id tématu: <code>{finalId || '…'}</code></summary>
           <label class="field">

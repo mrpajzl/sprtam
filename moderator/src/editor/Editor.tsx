@@ -16,6 +16,7 @@ import { clean, newExplanation, setIn, type Path } from './model'
 import { Preview } from './Preview'
 import { QuestionList } from './questions'
 import { editTopic } from '../screens/Library'
+import { Select } from '../../../src/ui/Select'
 
 // The topic editor: outline on the left, the section being edited in the middle, the live preview on
 // the right. Changes are saved as you type; "Odeslat ke kontrole" shows the change to the other moderators
@@ -340,24 +341,20 @@ function Meta({ draft, after, setAfter }: { draft: DraftView; after: string | nu
         <EmojiField value={t.emoji} set={(v) => ed.update(['emoji'], v, 'emoji')} choices={EMOJIS} disabled={ed.readOnly} errors={ed.errors.get('emoji') ?? []} />
         <div class="field"><span>Id tématu</span><div class="locked"><I.lock /><code>{t.id}</code></div><small>Je v adrese tématu a je na něm uložený pokrok dětí – proto se nikdy nemění.</small></div>
         {draft.kind === 'new' && (
-          <label class="field">
+          <div class="field">
             <span>Zařadit za</span>
-            <select value={after ?? ''} disabled={ed.readOnly} onChange={(e) => setAfter(e.currentTarget.value || null)}>
-              <option value="">na začátek předmětu</option>
-              {list.map((x, i) => <option key={x.id} value={x.id}>{i + 1}. {x.emoji} {x.title}</option>)}
-            </select>
+            <Select label="Zařadit za" value={after ?? ''} disabled={ed.readOnly} onChange={(v) => setAfter(v || null)}
+              options={[{ value: '', label: 'na začátek předmětu' }, ...list.map((x, i) => ({ value: x.id, label: `${i + 1}. ${x.title}`, icon: x.emoji }))]} />
             <small>Pořadí, v jakém se téma během roku učí.</small>
-          </label>
+          </div>
         )}
         {showGenerator && (
-          <label class="field">
+          <div class="field">
             <span>Generátor dalších příkladů</span>
-            <select value={t.generator ?? ''} disabled={ed.readOnly} onChange={(e) => ed.update(['generator'], e.currentTarget.value || undefined)}>
-              <option value="">žádný</option>
-              {(index?.generators ?? []).map((x) => <option key={x} value={x}>{x}</option>)}
-            </select>
+            <Select label="Generátor dalších příkladů" value={t.generator ?? ''} disabled={ed.readOnly} onChange={(v) => ed.update(['generator'], v || undefined)}
+              options={[{ value: '', label: 'žádný' }, ...(index?.generators ?? []).map((x) => ({ value: x, label: x }))]} />
             <small>Jen matematika a fyzika: aplikace k otázkám přidá náhodně vytvořené příklady daného druhu.</small>
-          </label>
+          </div>
         )}
         {t.approach && <p class="fine">Tohle téma patří jen k přístupu „{index?.approaches.find((a) => a.id === t.approach)?.name ?? t.approach}“ a ukazuje se v jeho plánu.</p>}
       </div>

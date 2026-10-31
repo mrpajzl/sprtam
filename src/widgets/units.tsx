@@ -1,6 +1,7 @@
 import { Fragment } from 'preact'
 import { useState } from 'preact/hooks'
 import { s, type Infer } from '../content/schema'
+import { Select } from '../ui/Select'
 import { defineWidget } from './kit'
 
 // A ladder of units (the biggest on top). The pupil types a number, picks its unit and taps the
@@ -110,9 +111,7 @@ function Units(p: P) {
     <div class="w units">
       <div class="units-in">
         <input type="text" inputMode="decimal" value={text} maxLength={14} aria-label="Číslo" onInput={(e) => setText(e.currentTarget.value)} />
-        <select value={from} aria-label="Jednotka zadaného čísla" onChange={(e) => setFrom(e.currentTarget.value)}>
-          {shown.map((u) => <option key={u} value={u}>{u}</option>)}
-        </select>
+        <Select label="Jednotka zadaného čísla" value={from} onChange={setFrom} search={false} options={shown.map((u) => ({ value: u, label: u }))} />
         <button class="reveal" onClick={swap} aria-label="Prohodit jednotky">⇅</button>
       </div>
       <div class="units-ladder" role="group" aria-label={`Žebřík jednotek – ${NAME[q]}. Klepni na jednotku, na kterou chceš převádět.`}>

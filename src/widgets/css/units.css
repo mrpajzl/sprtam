@@ -1,12 +1,12 @@
 /* Widget units (src/widgets/units.tsx) */
 .units-in { display: flex; gap: 8px; justify-content: center; align-items: center; }
-.units-in input, .units-in select {
+.units-in input, .units-in .sel {
   height: 44px; border-radius: 10px; border: 2px solid var(--line); background: var(--key); color: var(--ink);
   font: inherit; font-weight: 800; font-size: 1.1rem; padding: 0 10px;
 }
 .units-in input { width: 9em; min-width: 0; text-align: right; font-variant-numeric: tabular-nums; }
-.units-in select { min-width: 4.5em; }
-.units-in input:focus-visible, .units-in select:focus-visible, .units-u:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+.units-in .sel { min-width: 4.5em; }
+.units-in input:focus-visible, .units-in .sel:focus-visible, .units-u:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
 .units-in .reveal { min-width: 44px; height: 44px; padding: 0 10px; font-size: 1.1rem; }
 
 /* The ladder: two rails, a rung per unit (units of the same size share a rung: l = dm³). */

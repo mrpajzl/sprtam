@@ -128,7 +128,7 @@ ok(await fresh.locator('.extra-key[href="/slepa-mapa"]').count() === 1, 'zeměpi
 await fresh.goto(`${BASE}/`); await fresh.waitForSelector('.my-tiles .tile')
 await fresh.click('.school-chip'); await fresh.waitForSelector('.school-sheet[open]')
 await fresh.click('.school-sheet button.num-key[aria-label="7. třída"]')
-await fresh.selectOption('.school-sheet select[aria-label="Druhý cizí jazyk"]', 'francouzstina')
+await fresh.click('.school-sheet button.sel[aria-label^="Druhý cizí jazyk"]'); await fresh.click('.sel-panel [role=option]:has-text("Francouzština")')
 await fresh.click('.school-sheet .school-done'); await fresh.waitForSelector('.school-sheet', { state: 'detached' })
 ok((await fresh.locator('.school-chip').textContent()).includes('7. třída'), 'the sheet changes the class on the spot')
 await fresh.goto(`${BASE}/`); await fresh.waitForSelector('.my-tiles .tile')

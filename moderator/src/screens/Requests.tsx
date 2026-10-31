@@ -4,6 +4,7 @@ import { ApiError, api, get, post } from '../api'
 import type { Me } from '../passkey'
 import { ago, Busy, Empty, I, Modal, toast } from '../ui/kit'
 import { Showcase } from '../ui/Showcase'
+import { Select } from '../../../src/ui/Select'
 
 // Requests for new interactive widgets (pomůcky). A widget is a piece of the app's code, so a moderator
 // describes what pupils should try out and where it would help; others vote; admins plan and build it.
@@ -55,9 +56,7 @@ export function Requests({ me }: { me: Me }) {
                 <div class="actions-row">
                   {(me.role === 'admin' || (r.author.id === me.id && r.status === 'new')) && <button class="btn small" onClick={() => setEdit(r)}><I.pencil />Upravit</button>}
                   {me.role === 'admin' && (
-                    <select value={r.status} onChange={(e) => setStatus(r, e.currentTarget.value as Status)} aria-label="Stav žádosti">
-                      {(Object.keys(STATUS) as Status[]).map((s) => <option key={s} value={s}>{STATUS[s]}</option>)}
-                    </select>
+                    <Select label="Stav žádosti" value={r.status} onChange={(s) => setStatus(r, s)} options={(Object.keys(STATUS) as Status[]).map((s) => ({ value: s, label: STATUS[s] }))} />
                   )}
                 </div>
               </div>
@@ -110,13 +109,11 @@ function RequestForm({ me, req, onClose, onDone }: { me: Me; req: Req | null; on
         <label class="field"><span>Ke kterým tématům (nepovinné)</span><input value={topics} onInput={(e) => setTopics(e.currentTarget.value)} maxLength={1000} placeholder="např. 7. třída – rovnice; 8. třída – lineární funkce" /></label>
         {admin && <>
           <label class="field"><span>Poznámka správce (vidí všichni)</span><textarea rows={2} value={note} onInput={(e) => setNote(e.currentTarget.value)} maxLength={2000} /></label>
-          <label class="field">
+          <div class="field">
             <span>Hotová pomůcka</span>
-            <select value={widget} onChange={(e) => setWidget(e.currentTarget.value)}>
-              <option value="">–</option>
-              {Object.values(WIDGETS).map((w) => <option key={w.name} value={w.name}>{w.title}</option>)}
-            </select>
-          </label>
+            <Select label="Hotová pomůcka" value={widget} onChange={setWidget}
+              options={[{ value: '', label: '–' }, ...Object.values(WIDGETS).map((w) => ({ value: w.name, label: w.title, keywords: w.name }))]} />
+          </div>
         </>}
         {error && <div class="banner bad">{error}</div>}
       </form>
