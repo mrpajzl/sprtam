@@ -1,5 +1,5 @@
 import { type ComponentChildren, Fragment } from 'preact'
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks'
+import { useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks'
 import { ICheck, IChevron, ISearch } from './icons'
 
 // Our own dropdown instead of the system <select> (the app and the moderation, styles in ui/select.css): the
@@ -46,6 +46,7 @@ const GAP = 6, EDGE = 8, MAX_H = 380
 /** Lower case without diacritics, so "skola" finds "Škola". */
 export const fold = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
 
+const coarse = () => matchMedia('(pointer: coarse)').matches
 const canPopover = typeof HTMLElement !== 'undefined' && 'showPopover' in HTMLElement.prototype
 let seq = 0
 
@@ -116,8 +117,42 @@ export function Select<T extends string>(p: Props<T>) {
     const el = panel.current
     if (!open || !el) return
     if (canPopover && !el.matches(':popover-open')) el.showPopover()
-    ;(searchable ? input.current : list.current)?.focus({ preventScroll: true })
+    // On a touch screen the search field waits for a tap: the keyboard would cover half the list.
+    ;(searchable && !coarse() ? input.current : list.current)?.focus({ preventScroll: true })
+    reveal('center')
     return () => { if (canPopover && el.isConnected && el.matches(':popover-open')) el.hidePopover() }
+  }, [open])
+
+  // On a touch screen nothing behind the open list scrolls (the page, a sheet around the trigger): a swipe in the
+  // list would otherwise also move the sheet, and the list with it. Touch moves outside the list's own scrolling
+  // (the search field, the list at its end) go nowhere. (A mouse wheel stays in the list by overscroll-behavior;
+  // locking there would make the scrollbars jump.)
+  useLayoutEffect(() => {
+    const el = panel.current
+    if (!open || !el || !coarse()) return
+    const locked: [HTMLElement, string][] = []
+    for (let n = root.current?.parentElement; n; n = n.parentElement) {
+      const o = getComputedStyle(n).overflowY
+      if (n === document.documentElement || n === document.body || o === 'auto' || o === 'scroll') locked.push([n, n.style.overflow])
+    }
+    for (const [n] of locked) n.style.overflow = 'hidden'
+    let y = 0
+    const start = (e: TouchEvent) => { y = e.touches[0].clientY }
+    const move = (e: TouchEvent) => {
+      const l = list.current
+      const dy = e.touches[0].clientY - y
+      y = e.touches[0].clientY
+      const inList = l && l.contains(e.target as Node) && l.scrollHeight > l.clientHeight
+      const atEnd = l && ((dy > 0 && l.scrollTop <= 0) || (dy < 0 && l.scrollTop + l.clientHeight >= l.scrollHeight - 1))
+      if (!inList || atEnd) e.preventDefault()
+    }
+    el.addEventListener('touchstart', start, { passive: true })
+    el.addEventListener('touchmove', move, { passive: false })
+    return () => {
+      for (const [n, o] of locked) n.style.overflow = o
+      el.removeEventListener('touchstart', start)
+      el.removeEventListener('touchmove', move)
+    }
   }, [open])
 
   // Follow the trigger while the page scrolls or the keyboard resizes it; a click outside closes. (Layout effect:
@@ -142,9 +177,17 @@ export function Select<T extends string>(p: Props<T>) {
     }
   }, [open])
 
-  useEffect(() => {
-    if (open && active >= 0) list.current?.querySelector(`#${optId(active)}`)?.scrollIntoView({ block: 'nearest' })
-  }, [active, open])
+  /** Scrolls the list (only the list – scrollIntoView would move a sheet around it too) to the active option. */
+  const reveal = (how: 'nearest' | 'center', i = active) => {
+    const l = list.current, o = i >= 0 ? l?.querySelector<HTMLElement>(`#${optId(i)}`) : null
+    if (!l || !o) return
+    const top = o.offsetTop, bottom = top + o.offsetHeight
+    if (how === 'center') l.scrollTop = top - (l.clientHeight - o.offsetHeight) / 2
+    else if (top < l.scrollTop) l.scrollTop = top - 4
+    else if (bottom > l.scrollTop + l.clientHeight) l.scrollTop = bottom - l.clientHeight + 4
+  }
+  /** Moves the active option by keys and keeps it in sight. */
+  const go = (i: number) => { setActive(i); reveal('nearest', i) }
 
   const step = (from: number, d: 1 | -1) => {
     for (let i = from + d; i >= 0 && i < shown.length; i += d) if (!shown[i].disabled) return i
@@ -154,12 +197,12 @@ export function Select<T extends string>(p: Props<T>) {
   const onKey = (e: KeyboardEvent) => {
     const k = e.key
     let handled = true
-    if (k === 'ArrowDown') setActive(step(active, 1))
-    else if (k === 'ArrowUp') setActive(step(active, -1))
-    else if (k === 'Home' && !searchable) setActive(step(-1, 1))
-    else if (k === 'End' && !searchable) setActive(step(shown.length, -1))
-    else if (k === 'PageDown') setActive(step(Math.min(active + 7, shown.length), -1))
-    else if (k === 'PageUp') setActive(step(Math.max(active - 7, -1), 1))
+    if (k === 'ArrowDown') go(step(active, 1))
+    else if (k === 'ArrowUp') go(step(active, -1))
+    else if (k === 'Home' && !searchable) go(step(-1, 1))
+    else if (k === 'End' && !searchable) go(step(shown.length, -1))
+    else if (k === 'PageDown') go(step(Math.min(active + 7, shown.length), -1))
+    else if (k === 'PageUp') go(step(Math.max(active - 7, -1), 1))
     else if (k === 'Enter' || (k === ' ' && !searchable)) choose(shown[active])
     // Esc closes only the list, not a dialog around it.
     else if (k === 'Escape') hide(true)
@@ -170,7 +213,7 @@ export function Select<T extends string>(p: Props<T>) {
       t.t = now
       const s = fold(t.s)
       const i = shown.findIndex((o) => !o.disabled && fold(o.label).replace(/^\P{L}+/u, '').startsWith(s))
-      if (i >= 0) setActive(i)
+      if (i >= 0) go(i)
     } else handled = false
     if (handled) e.preventDefault()
     // The app's own keys (quiz shortcuts, a sheet's handlers) do not see typing in the list.
@@ -218,13 +261,14 @@ export function Select<T extends string>(p: Props<T>) {
                   const q = e.currentTarget.value
                   setQuery(q)
                   setActive(filter(q).findIndex((o) => !o.disabled))
+                  if (list.current) list.current.scrollTop = 0
                 }}
               />
             </label>
           )}
           <ul
-            ref={list} id={listId} class="sel-list" role="listbox" aria-label={p.label} tabIndex={searchable ? undefined : -1}
-            aria-activedescendant={!searchable && active >= 0 ? optId(active) : undefined}
+            ref={list} id={listId} class="sel-list" role="listbox" aria-label={p.label} tabIndex={-1}
+            aria-activedescendant={active >= 0 ? optId(active) : undefined}
           >
             {shown.map((o, i) => {
               const on = o.value === p.value
@@ -235,7 +279,7 @@ export function Select<T extends string>(p: Props<T>) {
                 <li
                   id={optId(i)} role="option" aria-selected={on} aria-disabled={o.disabled || undefined}
                   class={`sel-opt ${i === active ? 'act' : ''} ${on ? 'on' : ''}`}
-                  onPointerMove={() => { if (!o.disabled && i !== active) setActive(i) }}
+                  onPointerMove={(e) => { if (e.pointerType === 'mouse' && !o.disabled && i !== active) setActive(i) }}
                   onClick={() => choose(o)}
                 >
                   {o.icon != null && <OptionIcon icon={o.icon} />}
