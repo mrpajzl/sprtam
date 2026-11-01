@@ -118,7 +118,7 @@ export function Reports({ me }: { me: Me }) {
   const help = useKeys([
     { key: 'j', label: 'Další hlášení', run: () => setCur(step(cards, cur, 1)) },
     { key: 'k', label: 'Předchozí hlášení', run: () => setCur(step(cards, cur, -1)) },
-    { key: 'o', label: 'Opravit (otevře editor s hlášením)', when: !!at && tab === 'open', run: () => fix(at!) },
+    { key: 'o', label: 'Opravit (otevře editor s hlášením)', when: !!at && tab === 'open' && !at.first.fix && (!at.first.claim || at.first.claim.userId === me.id), run: () => fix(at!) },
     { key: 't', label: 'Otevřít téma', when: !!at, run: () => go(`/ucivo/${at!.first.topic}`) },
     { key: 'f', label: 'Označit jako opravené', when: !!at && tab === 'open', run: () => set(at!, 'fixed') },
     { key: 'z', label: 'Zamítnout', when: !!at && tab === 'open', run: () => setDismiss(at!) },
@@ -193,7 +193,7 @@ export function Reports({ me }: { me: Me }) {
                   <small class="fine" title={dateTime(r.createdAt)}>Nahlášeno {ago(r.createdAt)}{r.release !== null ? ` · ve vydání ${r.release}` : ''}</small>
                   <div class="actions-row">
                     {r.status === 'open' ? <>
-                      {!r.fix && <Busy class="btn small primary" on={busy === gr.key} onClick={() => fix(gr)}><I.wrench />Opravit</Busy>}
+                      {!r.fix && (!claim || claim.userId === me.id) && <Busy class="btn small primary" on={busy === gr.key} onClick={() => fix(gr)}><I.wrench />Opravit</Busy>}
                       <a class="btn small" href={href} onClick={nav(href)}><I.eye />Otevřít téma</a>
                       <button class="btn small" onClick={() => set(gr, 'fixed')}><I.check />Opraveno</button>
                       <button class="btn small" onClick={() => setDismiss(gr)}><I.close />Zamítnout</button>

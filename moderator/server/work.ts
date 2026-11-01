@@ -28,7 +28,16 @@ export function fixReports(s: Session, body: Record<string, unknown>, ip: string
   if (rows.some((r) => r!.status !== 'open')) throw new HttpError(409, 'Některé hlášení už je vyřízené.')
   const topics = new Set(rows.map((r) => r!.topic))
   if (topics.size !== 1) throw new HttpError(400, 'Opravit najednou jde jen hlášení k jednomu tématu.')
+  // Somebody else is already fixing or has taken one of them: theirs stays.
+  const claims = claimsBy('report')
+  for (const r of rows) {
+    const fixing = one<{ user_id: string; status: string; name: string }>('SELECT d.user_id, d.status, u.name FROM reports r JOIN drafts d ON d.id = r.draft_id JOIN users u ON u.id = d.user_id WHERE r.id = ?', r!.id)
+    if (fixing && fixing.user_id !== s.user.id && (fixing.status === 'draft' || fixing.status === 'review')) throw new HttpError(409, `Tohle hlášení už opravuje ${fixing.name}.`)
+    const c = claims.get(r!.id)
+    if (c && c.userId !== s.user.id) throw new HttpError(409, `Tohle hlášení si bere ${c.name}.`)
+  }
   const [g, sub, id] = [...topics][0].split('/')
+  if ((mineFor(s, g, sub, id) as DraftRow | undefined)?.status === 'review') throw new HttpError(409, 'Tvůj návrh tohoto tématu je v kontrole. Vrať ho do rozpracovaných, nebo počkej na jeho zveřejnění.')
   const { draft } = createDraft(s, { kind: 'edit', grade: g, subject: sub, topicId: id })
   for (const r of rows) run('UPDATE reports SET draft_id = ? WHERE id = ?', draft.id, r!.id)
   claimQuietly(s.user.id, 'report', rows.map((r) => r!.id))

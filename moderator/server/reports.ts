@@ -92,6 +92,11 @@ export function reportsOfDraft(draftId: string) {
   return all<ReportRow & FixRow & { decider: string | null }>(`${SELECT} WHERE r.draft_id = ? ORDER BY r.created_at`, draftId).map((r) => viewOf(r, claims))
 }
 
+/** A draft that fixed reports is deleted (left untouched, or thrown away): its author's claims of them go, the reports are free again. */
+export function releaseReportsOfDraft(draftId: string, userId: string) {
+  for (const r of all<{ id: string }>('SELECT id FROM reports WHERE draft_id = ?', draftId)) run("DELETE FROM claims WHERE kind = 'report' AND ref = ? AND user_id = ?", r.id, userId)
+}
+
 /** The draft was published: the reports it fixed are closed as fixed by its author, in that release. Runs inside the publish. */
 export function closeReportsOfDraft(draftId: string, authorId: string, release: number) {
   const ids = all<{ id: string }>("SELECT id FROM reports WHERE draft_id = ? AND status = 'open'", draftId).map((r) => r.id)

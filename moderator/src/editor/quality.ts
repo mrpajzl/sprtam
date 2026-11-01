@@ -100,7 +100,7 @@ const show = (v: number) => (Math.round(v * 1e6) / 1e6).toLocaleString('cs')
 export function qualityTips(t: TopicFile, grade: GradeId, subject = ''): Tip[] {
   const french = subject === 'francouzstina'
   const out: Tip[] = []
-  const qs = t.questions ?? []
+  const qs = (t.questions ?? []).filter((q) => q && typeof q === 'object')
 
   // The same question twice (same wording and the same options or answers).
   const seen = new Map<string, number>()
@@ -113,7 +113,7 @@ export function qualityTips(t: TopicFile, grade: GradeId, subject = ''): Tip[] {
   })
 
   // A correct option that gives itself away by its length (the app shuffles the order of options, not their length).
-  const choices = qs.map((q, i) => ({ q, i })).filter(({ q }) => q.type === 'choice' && q.options.length >= 3)
+  const choices = qs.map((q, i) => ({ q, i })).filter(({ q }) => q.type === 'choice' && Array.isArray(q.options) && q.options.length >= 3)
   for (const { q, i } of choices) {
     if (q.type !== 'choice') continue
     const right = q.options[q.answer] ?? '', others = q.options.filter((_, k) => k !== q.answer)
@@ -130,7 +130,7 @@ export function qualityTips(t: TopicFile, grade: GradeId, subject = ''): Tip[] {
     if (q.type !== 'input' && q.type !== 'choice') return
     const v = asked(q.question ?? '')
     if (v === undefined) return
-    const given = q.type === 'input' ? q.answers.map(answerNumber) : [answerNumber(q.options[q.answer] ?? '')]
+    const given = q.type === 'input' ? (q.answers ?? []).map((a) => answerNumber(String(a))) : [answerNumber(String(q.options?.[q.answer] ?? ''))]
     if (!given.length || given.some((x) => x === undefined)) return
     if (!given.some((x) => Math.abs(x! - v) < 1e-9 * Math.max(1, Math.abs(v)))) {
       out.push(tip(q.type === 'input' ? `questions[${i}].answers` : `questions[${i}].options[${q.answer}]`, `Spočítal jsem ${show(v)}, ale správná odpověď je ${q.type === 'input' ? q.answers[0] : q.options[q.answer]}. Zkontroluj výsledek.`))

@@ -12,7 +12,7 @@ import { HttpError, limit } from './http'
 import { GRADE_NAME, isCoreSubject, KEY_COLORS, ODB, type KeyColor } from '../../src/content/curriculum'
 import { changesTo, contentAt, getDoc, problemsAfter, publish, version, versionId, type DocChange } from './store'
 import { releaseClaims } from './claims'
-import { closeReportsOfDraft, reportsOfDraft } from './reports'
+import { closeReportsOfDraft, releaseReportsOfDraft, reportsOfDraft } from './reports'
 import { dropProgress, partsMissing } from './verify'
 
 // A draft is one moderator's change of one topic (an edit, or a new topic with its place in the subject).
@@ -126,7 +126,7 @@ const empty = (d: DraftRow) => d.status === 'draft' && d.submitted_at === null &
 function pruneEmpty(userId: string, keepMs: number) {
   const cutoff = Date.now() - keepMs
   for (const d of all<DraftRow>("SELECT * FROM drafts WHERE user_id = ? AND status = 'draft' AND submitted_at IS NULL AND kind = 'edit' AND updated_at < ?", userId, cutoff)) {
-    if (empty(d) && !one('SELECT 1 FROM reviews WHERE draft_id = ?', d.id)) run('DELETE FROM drafts WHERE id = ?', d.id)
+    if (empty(d) && !one('SELECT 1 FROM reviews WHERE draft_id = ?', d.id)) { releaseReportsOfDraft(d.id, d.user_id); run('DELETE FROM drafts WHERE id = ?', d.id) }
   }
 }
 
@@ -254,7 +254,7 @@ export function getDraft(s: Session, id: unknown) {
     draft: view(d, who), topic: data.topic, after: data.after ?? null, subject: founds(d, data) ? data.subject! : null, base, published: now ?? null, publishedVersion: versionId(key) ?? null,
     reviews: reviewsOf(d, who), problems: d.status === 'draft' || d.status === 'review' ? problemsOf(d, data) : [],
     /** Pupils' reports this change fixes (closed on their own when it is published). */
-    reports: reportsOfDraft(d.id),
+    reports: s.via === 'cookie' ? reportsOfDraft(d.id) : [],
   }
 }
 
@@ -329,6 +329,7 @@ export function deleteDraft(s: Session, id: unknown, ip: string) {
   if (d.user_id !== s.user.id && !isAdmin(s)) throw new HttpError(403, 'Smazat smí jen autor.')
   // Only work in progress: anything that went through review keeps its record (reviews, decisions).
   if (d.status !== 'draft') throw new HttpError(409, d.status === 'review' ? 'Návrh je v kontrole. Nejdřív ho vrať do rozpracovaných.' : 'Vyřízený návrh zůstává v historii.')
+  releaseReportsOfDraft(d.id, d.user_id)
   run('DELETE FROM drafts WHERE id = ?', d.id)
   audit('draft.deleted', s.user.id, { draft: d.id, topic: `${d.grade}/${d.subject}/${d.topic_id}` }, ip)
 }
@@ -636,7 +637,7 @@ export function rollbackDraft(s: Session, versionIdValue: unknown, ip: string) {
   if (!topicExists(g, sub, id)) throw new HttpError(409, 'Téma už v učivu není.')
   const mine = mineFor(s, g, sub, id)
   if (mine && !empty(mine)) throw new HttpError(409, 'U tohoto tématu už máš rozpracovaný návrh. Dokonči ho nebo ho smaž.')
-  if (mine) run('DELETE FROM drafts WHERE id = ?', mine.id)
+  if (mine) { releaseReportsOfDraft(mine.id, mine.user_id); run('DELETE FROM drafts WHERE id = ?', mine.id) }
   const draft = insertDraft(s, 'edit', g, sub, topic, { base: versionId(topicKey(g, sub, id)), rollbackOf: v.version.id, note: `Návrat k verzi ${v.version.n}` })
   audit('draft.rollback', s.user.id, { draft, version: v.version.id }, ip)
   return getDraft(s, draft)

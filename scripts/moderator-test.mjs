@@ -633,6 +633,8 @@ try {
   const fx = await eva.api('POST', '/api/reports/fix', { ids: same.map((r) => r.id) })
   const fd = (await eva.api('GET', `/api/drafts/${fx.body.draft}`)).body
   check(fx.status === 200 && fd.draft.kind === 'edit' && fd.reports.length === 2, '"Opravit" opens a draft that knows which reports it fixes')
+  const taken2 = await admin.api('POST', '/api/reports/fix', { ids: [same[0].id] })
+  check(taken2.status === 409 && taken2.body.error.includes(evaName), "somebody else's fix of a report stays theirs")
   const fixing = (await admin.api('GET', `/api/reports?topic=${rp.topic}`)).body
   check(fixing.length === 2 && fixing.every((r) => r.fix?.draft === fx.body.draft && r.fix.author.name === evaName && r.claim?.name === evaName), 'others see the reports are being fixed, and by whom')
   await eva.page.goto(`${BASE}/navrh/${fx.body.draft}?hlaseni=${same[0].id}`)
@@ -676,6 +678,10 @@ try {
   check((await eva.api('POST', '/api/me/replies', { kind: 'spam', text: 'x' })).status === 400 && (await eva.api('DELETE', `/api/me/replies/${sr.body.id}`)).status === 200 && (await eva.api('GET', '/api/me/replies?kind=report')).body.length === 0, 'saved replies are checked and deleted')
 
   // ——— Search in the text, and one replacement in many topics ———
+  await fetch(`${BASE}/api/search?q=zahrivani`)
+  const t0 = performance.now()
+  await fetch(`${BASE}/api/search?q=${encodeURIComponent('dělitel')}`)
+  console.log(`  (loose search over the whole content: ${Math.round(performance.now() - t0)} ms)`)
   const found = await (await fetch(`${BASE}/api/search?q=${encodeURIComponent('PODLE HLASENI')}`)).json()
   check(found.topics.length === 1 && found.topics[0].key === rp.topic && found.topics[0].hits[0].match === 'podle hlášení' && found.topics[0].hits[0].place.startsWith('Vysvětlení 1'), 'the search finds text in any topic, regardless of case and diacritics')
   check((await (await fetch(`${BASE}/api/search?q=PODLE%20HLASENI&exact=1`)).json()).topics.length === 0 && (await fetch(`${BASE}/api/search?q=x`)).status === 400, 'exact search, and a too short query is refused')

@@ -14,10 +14,11 @@ import { getDoc } from './store'
 // is ticking off every explanation and question; "Ověřit" opens once all of them are ticked. A tick belongs to the
 // text it was given for (a hash of it): when the topic changes, only the changed parts need a look again.
 
-/** Every part of a topic that is checked on its own: `ex:<i>` explanations, `q:<i>` questions, with a hash of each. */
+/** Every part of a topic that is checked on its own: `ex:<i>` explanations, `q:<i>` questions, with a tick id of each –
+ *  the part and a hash of its text, so two identical questions are still two ticks. */
 export function partsOf(t: TopicFile): [string, string][] {
   const h = (x: unknown) => createHash('sha256').update(JSON.stringify(x)).digest('base64url').slice(0, 16)
-  return [...t.explanations.map((x, i) => [`ex:${i}`, h(x)] as [string, string]), ...t.questions.map((q, i) => [`q:${i}`, h(q)] as [string, string])]
+  return [...t.explanations.map((x, i) => [`ex:${i}`, `ex:${i}:${h(x)}`] as [string, string]), ...t.questions.map((q, i) => [`q:${i}`, `q:${i}:${h(q)}`] as [string, string])]
 }
 
 const stored = (userId: string, key: string): Set<string> => {

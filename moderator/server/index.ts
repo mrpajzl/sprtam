@@ -219,7 +219,7 @@ on('POST', '/api/me/replies', async (req) => addReply(requireSession(req), await
 on('DELETE', '/api/me/replies/:id', (req, _res, p) => removeReply(requireSession(req), p[0]))
 // Searching the published text is as public as the text itself; replacing makes drafts of the moderator.
 on('GET', '/api/search', (req, _res, _p, ip) => {
-  limit(`search:${ipKey(ip)}`, 120, 10 * MINUTE)
+  limit(`search:${ipKey(ip)}`, 60, 10 * MINUTE)
   return search(query(req, 'q'), { ...filter(req), exact: query(req, 'exact') === '1' })
 }, true)
 on('POST', '/api/replace', async (req, _res, _p, ip) => replaceInTopics(requireSession(req), await readJson(req), ip))

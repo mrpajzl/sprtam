@@ -10,6 +10,7 @@ import { current, getDoc, published } from './store'
 const SKIP = new Set(['id', 'type', 'widget', 'props', 'generator', 'approach', 'format', 'verified', 'emoji'])
 
 export interface TextAt { path: string; text: string }
+interface Indexed extends TextAt { folded: string }
 
 /** Every text of a topic a pupil reads, with its path (`questions[2].options[1]`). */
 export function textsOf(t: TopicFile): TextAt[] {
@@ -41,6 +42,8 @@ export function placeOf(path: string): string {
 // ——— Matching without regard to case and diacritics, but showing the original text ———
 
 const foldChar = (c: string) => c.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '')
+/** The whole text folded at once: fast, kept per release, used to skip texts without a match. */
+const foldAll = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '')
 
 /** The folded text and, for each of its characters, where it came from in the original. */
 function folded(text: string): { f: string; at: number[] } {
@@ -74,10 +77,13 @@ export function findAll(text: string, q: string, exact: boolean): [number, numbe
 export interface Hit { path: string; place: string; before: string; match: string; after: string }
 
 const CONTEXT = 60
-function hitsIn(texts: TextAt[], q: string, exact: boolean): { hits: Hit[]; count: number } {
+function hitsIn(texts: Indexed[], q: string, exact: boolean): { hits: Hit[]; count: number } {
   const hits: Hit[] = []
   let count = 0
+  const fq = foldAll(q)
   for (const t of texts) {
+    // Most texts have no match: the folded copy says so without going through them character by character.
+    if (exact ? !t.text.includes(q) : !t.folded.includes(fq)) continue
     for (const [a, b] of findAll(t.text, q, exact)) {
       count++
       if (hits.length < 12) {
@@ -90,7 +96,7 @@ function hitsIn(texts: TextAt[], q: string, exact: boolean): { hits: Hit[]; coun
 }
 
 /** The texts of every published topic, kept until the next release. */
-let corpus: { release: number; topics: { key: string; grade: string; subject: string; id: string; title: string; emoji: string; texts: TextAt[] }[] } | undefined
+let corpus: { release: number; topics: { key: string; grade: string; subject: string; id: string; title: string; emoji: string; texts: Indexed[] }[] } | undefined
 function topics() {
   const release = current()?.release ?? 0
   if (corpus?.release === release) return corpus.topics
@@ -99,7 +105,7 @@ function topics() {
     const r = parseKey(k)
     if (r?.kind !== 'topic') continue
     const t = getDoc(k) as TopicFile
-    list.push({ key: `${r.grade}/${r.subject}/${r.id}`, grade: r.grade, subject: r.subject, id: r.id, title: t.title, emoji: t.emoji, texts: textsOf(t) })
+    list.push({ key: `${r.grade}/${r.subject}/${r.id}`, grade: r.grade, subject: r.subject, id: r.id, title: t.title, emoji: t.emoji, texts: textsOf(t).map((x) => ({ ...x, folded: foldAll(x.text) })) })
   }
   corpus = { release, topics: list }
   return list
