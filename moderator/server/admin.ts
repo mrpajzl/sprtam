@@ -109,9 +109,22 @@ export function endSessions(s: Session, id: unknown, ip: string) {
   audit('sessions.ended', s.user.id, { user: u.id, name: u.name }, ip)
 }
 
-export function auditLog(before: unknown) {
+/** A page of the audit log, newest first, optionally narrowed to one person ("-" = no account: CLI, applicants, unknown keys),
+ *  a set of actions (comma separated) and words found in the details or the IP. */
+export function auditLog(before: unknown, user: unknown, actions: unknown, q: unknown) {
   const b = typeof before === 'string' && /^\d+$/.test(before) ? Number(before) : Number.MAX_SAFE_INTEGER
+  const where = ['a.id < ?']
+  const args: (string | number)[] = [b]
+  if (user === '-') where.push('a.user_id IS NULL')
+  else if (typeof user === 'string' && user) { where.push('a.user_id = ?'); args.push(user) }
+  const acts = typeof actions === 'string' ? actions.split(',').filter((a) => /^[a-z][a-z.-]{0,40}$/.test(a)).slice(0, 50) : []
+  if (acts.length) { where.push(`a.action IN (${acts.map(() => '?').join(', ')})`); args.push(...acts) }
+  for (const w of typeof q === 'string' ? q.trim().slice(0, 100).split(/\s+/).filter(Boolean).slice(0, 5) : []) {
+    const like = `%${w.replace(/[\\%_]/g, (c) => '\\' + c)}%`
+    where.push("(a.detail LIKE ? ESCAPE '\\' OR a.ip LIKE ? ESCAPE '\\')")
+    args.push(like, like)
+  }
   return all<{ id: number; at: number; user_id: string | null; name: string | null; action: string; detail: string | null; ip: string | null }>(
-    'SELECT a.*, u.name FROM audit a LEFT JOIN users u ON u.id = a.user_id WHERE a.id < ? ORDER BY a.id DESC LIMIT 100', b,
+    `SELECT a.*, u.name FROM audit a LEFT JOIN users u ON u.id = a.user_id WHERE ${where.join(' AND ')} ORDER BY a.id DESC LIMIT 100`, ...args,
   ).map((a) => ({ id: a.id, at: a.at, user: a.name, action: a.action, detail: a.detail ? JSON.parse(a.detail) : null, ip: a.ip }))
 }

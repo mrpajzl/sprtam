@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 import { ApiError, api, get, post } from '../api'
 import { withConfirm, type Me } from '../passkey'
 import { ago, Busy, copy, dateTime, I, Modal, toast } from '../ui/kit'
@@ -15,10 +15,23 @@ const ACTION: Record<string, string> = {
   'user.role': 'změna role', 'user.renamed': 'přejmenování', 'sessions.ended': 'odhlášení ze zařízení', 'draft.submitted': 'návrh ke kontrole', 'draft.updated': 'aktualizovaný návrh', 'draft.deleted': 'smazaný návrh',
   'draft.withdrawn': 'návrh vrácen do rozpracovaných', 'draft.rebased': 'návrh převeden na novou verzi', 'draft.published': 'zveřejněno', 'draft.rejected': 'zamítnutý návrh', 'draft.rollback': 'návrh návratu ke starší verzi',
   'review.approve': 'schválení', 'review.changes': 'požadavek na úpravy', 'review.comment': 'komentář', 'review.resolved': 'vyřešený komentář',
+  'review.edited': 'upravený komentář', 'review.deleted': 'smazaný komentář', 'review.applied': 'převzatý návrh z komentáře',
+  'drafts.published-unverified': 'zveřejněno bez kontroly', 'topic.verified': 'téma označeno jako zkontrolované', 'words.published': 'zveřejněná slovíčka',
+  'report.created': 'hlášení od žáka', 'report.updated': 'vyřízené hlášení', 'profile.updated': 'úprava profilu',
   'content.imported': 'import učiva', 'content.restored-version': 'vrácená verze bez kontroly', 'content.restored-release': 'obnova vydání',
   'token.created': 'nový API token', 'token.removed': 'zrušený API token', 'widget-request.created': 'žádost o pomůcku', 'widget-request.updated': 'úprava žádosti o pomůcku', 'widget-request.deleted': 'smazaná žádost o pomůcku',
   'application.created': 'žádost o moderátorství', 'application.approved': 'schválená žádost o moderátorství', 'application.rejected': 'zamítnutá žádost o moderátorství',
 }
+
+/** The kinds of events the log can be narrowed to; each is a set of actions above. */
+const GROUPS: { name: string; actions: string[] }[] = [
+  { name: 'Přihlášení', actions: ['login', 'login.fail', 'sessions.ended'] },
+  { name: 'Účty a klíče', actions: ['user.created', 'user.disabled', 'user.enabled', 'user.role', 'user.renamed', 'user.keys-reset', 'key.added', 'key.removed', 'key.link', 'invite.created', 'invite.revoked', 'token.created', 'token.removed'] },
+  { name: 'Návrhy a zveřejnění', actions: ['draft.submitted', 'draft.updated', 'draft.deleted', 'draft.withdrawn', 'draft.rebased', 'draft.published', 'draft.rejected', 'draft.rollback', 'drafts.published-unverified', 'topic.verified', 'words.published', 'content.imported', 'content.restored-version', 'content.restored-release'] },
+  { name: 'Kontrola', actions: ['review.approve', 'review.changes', 'review.comment', 'review.edited', 'review.deleted', 'review.applied', 'review.resolved'] },
+  { name: 'Hlášení a profily', actions: ['report.created', 'report.updated', 'profile.updated'] },
+  { name: 'Žádosti', actions: ['widget-request.created', 'widget-request.updated', 'widget-request.deleted', 'application.created', 'application.approved', 'application.rejected'] },
+]
 
 const run = async (f: () => Promise<unknown>, ok?: string) => {
   try { await withConfirm(f); if (ok) toast(ok); return true } catch (e) { toast(e instanceof ApiError ? e.message : 'Akce se nepovedla.', 'bad'); return false }
@@ -50,7 +63,7 @@ export function Users({ me }: { me: Me }) {
         <button role="tab" aria-selected={tab === 'users'} class={tab === 'users' ? 'on' : ''} onClick={() => setTab('users')}>Účty</button>
         <button role="tab" aria-selected={tab === 'audit'} class={tab === 'audit' ? 'on' : ''} onClick={() => setTab('audit')}>Záznam událostí</button>
       </div>
-      {tab === 'audit' ? <Audit /> : !data ? <p class="muted">Načítám…</p> : (
+      {tab === 'audit' ? <Audit users={data?.users ?? []} /> : !data ? <p class="muted">Načítám…</p> : (
         <>
           <div class="users">
             {data.users.map((u) => (
@@ -122,26 +135,78 @@ function InviteForm({ onClose, onLink }: { onClose: () => void; onLink: (l: { ur
   )
 }
 
-function Audit() {
+/** The filter of the log: a person ("-" = no account), a group ("g:Přihlášení") or one action, and words in the details or the IP. */
+interface AuditFilter { user: string; what: string; q: string }
+const NO_FILTER: AuditFilter = { user: '', what: '', q: '' }
+
+function auditQuery(f: AuditFilter, before?: number) {
+  const p = new URLSearchParams()
+  if (before) p.set('before', String(before))
+  if (f.user) p.set('user', f.user)
+  const actions = f.what.startsWith('g:') ? GROUPS.find((g) => g.name === f.what.slice(2))?.actions.join(',') : f.what
+  if (actions) p.set('action', actions)
+  if (f.q.trim()) p.set('q', f.q.trim())
+  const s = p.toString()
+  return `/api/admin/audit${s ? `?${s}` : ''}`
+}
+
+function Audit({ users }: { users: U[] }) {
   const [list, setList] = useState<Entry[] | null>(null)
   const [more, setMore] = useState(true)
-  const load = (before?: number) => get<Entry[]>(`/api/admin/audit${before ? `?before=${before}` : ''}`).then((xs) => { setList((l) => [...(before ? l ?? [] : []), ...xs]); setMore(xs.length === 100) }, (e) => toast(e.message, 'bad'))
-  useEffect(() => { load() }, [])
-  if (!list) return <p class="muted">Načítám…</p>
+  const [f, setF] = useState<AuditFilter>(NO_FILTER)
+  const [q, setQ] = useState('')
+  const seq = useRef(0)
+  const load = (before?: number) => {
+    const n = ++seq.current
+    return get<Entry[]>(auditQuery(f, before)).then((xs) => {
+      if (n !== seq.current) return
+      setList((l) => [...(before ? l ?? [] : []), ...xs]); setMore(xs.length === 100)
+    }, (e) => toast(e.message, 'bad'))
+  }
+  useEffect(() => { setList(null); load() }, [f])
+  // Typing narrows the list after a short pause instead of on every key.
+  useEffect(() => {
+    if (q === f.q) return
+    const t = setTimeout(() => setF((x) => ({ ...x, q })), 300)
+    return () => clearTimeout(t)
+  }, [q])
+  const filtered = !!(f.user || f.what || f.q.trim())
   return (
-    <div class="audit">
-      <table>
-        <thead><tr><th>Kdy</th><th>Kdo</th><th>Co</th><th>Podrobnosti</th><th>IP</th></tr></thead>
-        <tbody>
-          {list.map((e) => (
-            <tr key={e.id} class={e.action === 'login.fail' ? 'bad' : ''}>
-              <td>{dateTime(e.at)}</td><td>{e.user ?? '–'}</td><td>{ACTION[e.action] ?? e.action}</td>
-              <td>{e.detail ? Object.entries(e.detail).map(([k, v]) => `${k}: ${typeof v === 'string' ? v : JSON.stringify(v)}`).join(', ') : ''}</td><td>{e.ip ?? ''}</td>
-            </tr>
+    <>
+      <div class="q-filters">
+        <select class="q-select" value={f.user} aria-label="Kdo" onChange={(e) => setF({ ...f, user: e.currentTarget.value })}>
+          <option value="">Všichni</option>
+          {users.map((u) => <option key={u.id} value={u.id}>{u.name}{u.active ? '' : ' (vypnutý)'}</option>)}
+          <option value="-">Bez účtu (CLI, uchazeči, neznámé klíče)</option>
+        </select>
+        <select class="q-select" value={f.what} aria-label="Co" onChange={(e) => setF({ ...f, what: e.currentTarget.value })}>
+          <option value="">Všechny události</option>
+          {GROUPS.map((g) => (
+            <optgroup key={g.name} label={g.name}>
+              <option value={`g:${g.name}`}>{g.name} – vše</option>
+              {g.actions.map((a) => <option key={a} value={a}>{ACTION[a] ?? a}</option>)}
+            </optgroup>
           ))}
-        </tbody>
-      </table>
-      {more && <button class="btn" onClick={() => load(list[list.length - 1]?.id)}>Starší</button>}
-    </div>
+        </select>
+        <input class="q-select audit-q" type="search" value={q} onInput={(e) => setQ(e.currentTarget.value)} placeholder="Hledat v podrobnostech nebo IP" aria-label="Hledat v podrobnostech nebo IP" />
+        {filtered && <button class="btn small" onClick={() => { setQ(''); setF(NO_FILTER) }}><I.close />Zrušit filtr</button>}
+      </div>
+      {!list ? <p class="muted">Načítám…</p> : !list.length ? <p class="muted">{filtered ? 'Filtru neodpovídá žádná událost.' : 'Zatím žádné události.'}</p> : (
+        <div class="audit">
+          <table>
+            <thead><tr><th>Kdy</th><th>Kdo</th><th>Co</th><th>Podrobnosti</th><th>IP</th></tr></thead>
+            <tbody>
+              {list.map((e) => (
+                <tr key={e.id} class={e.action === 'login.fail' ? 'bad' : ''}>
+                  <td>{dateTime(e.at)}</td><td>{e.user ?? '–'}</td><td>{ACTION[e.action] ?? e.action}</td>
+                  <td>{e.detail ? Object.entries(e.detail).map(([k, v]) => `${k}: ${typeof v === 'string' ? v : JSON.stringify(v)}`).join(', ') : ''}</td><td>{e.ip ?? ''}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {more && <button class="btn" onClick={() => load(list[list.length - 1]?.id)}>Starší</button>}
+        </div>
+      )}
+    </>
   )
 }

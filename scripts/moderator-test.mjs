@@ -170,6 +170,22 @@ try {
   check((await admin.api('PATCH', `/api/admin/users/${(users.find((u) => u.name === 'Ada Správcová')).id}`, { active: false })).status === 400, 'the last admin cannot switch herself off')
   check((await admin.api('PATCH', `/api/admin/users/${petr.id}`, { role: 'admin' })).status === 200, 'admin changes a role')
 
+  // ——— Audit log filters ———
+  const log = async (q) => (await admin.api('GET', `/api/admin/audit?${q}`)).body
+  const ada = users.find((u) => u.name === 'Ada Správcová')
+  const byPetr = await log(`user=${petr.id}`)
+  check(byPetr.length > 0 && byPetr.every((e) => e.user === 'Petr Moderátor'), 'the audit log narrows to one person')
+  const noAccount = await log('user=-')
+  check(noAccount.every((e) => e.user === null), 'the audit log narrows to events without an account')
+  const roles = await log('action=user.role,user.keys-reset')
+  check(roles.length === 2 && roles.every((e) => ['user.role', 'user.keys-reset'].includes(e.action)), 'the audit log narrows to a set of actions')
+  check((await log(`user=${ada.id}&action=user.role&q=${encodeURIComponent('Petr admin')}`)).length === 1 && (await log('q=%25')).length === 0, 'the audit log searches the details, % is a plain character')
+  await admin.page.goto(`${BASE}/uzivatele`)
+  await admin.page.getByRole('tab', { name: 'Záznam událostí' }).click()
+  await admin.page.getByLabel('Co').selectOption({ label: 'změna role' })
+  check(await admin.page.locator('.audit tbody tr').first().getByText('změna role').waitFor({ timeout: 5000 }).then(async () => (await admin.page.locator('.audit tbody tr').count()) === 1, () => false), 'the audit log is filtered on the page')
+  await admin.page.getByRole('button', { name: 'Zrušit filtr' }).click()
+
   // ——— Own keys: a removed key ends its sessions ———
   const add = await admin.api('POST', '/api/me/keys/options', {})
   check(add.status === 200, 'adding a key is allowed right after sign-in')
