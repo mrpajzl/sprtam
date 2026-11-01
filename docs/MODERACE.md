@@ -48,6 +48,7 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
   - **Navrhnout text:** u bloku nebo otázky vybereš, který text měníš (např. *Možnost 2* nebo *Vysvětlení*), a napíšeš, jak má znít. Zpráva ukáže změnu po slovech a autor ji tlačítkem **Převzít návrh** vloží do návrhu jako novou verzi. Když autor text mezitím změnil, převezme ho ručně v editoru.
   - Vlastní zprávu jde upravit, a dokud na ni nikdo neodpověděl, i smazat. Autor změny a zakladatel vlákna ho označí jako vyřešené (sbalí se); nová odpověď ho zase otevře.
   - Psát jde, dokud je návrh otevřený (i když ho autor vrátil do rozpracovaných).
+- Nad změnou je rámeček **automatické kontroly** s tipy ([Ověřování](#ověřování)) a u opravy hlášení seznam hlášení, která změna opravuje. Klávesové zkratky ukáže **?** ([níže](#klávesové-zkratky-a-uložené-odpovědi)).
 - **Požádat o úpravy** blokuje zveřejnění, dokud autor návrh neupraví.
 - **Schválit** (u posledního potřebného schválení **Schválit a zveřejnit**) změnu hned zveřejní jako nové vydání.
 - Moderátor vlastní změnu schválit nemůže. **Správce** může: rámeček mu ukáže *Jako správce ji můžeš schválit sám/sama*, a protože tím změnu zveřejní bez druhého páru očí, aplikace si řekne o potvrzení klíčem (přihlášení v posledních 15 minutách). API tokenem to nejde. Schvaluje se přesně ta verze, kterou vidíš: když ji autor mezitím upraví, je potřeba podívat se znovu.
@@ -55,7 +56,26 @@ Prohlížení ukazuje zveřejněnou verzi, tedy totéž, co je na sprtam.cz. Ná
 
 ## Ověřování
 
-Učivo od AI se zveřejní hned jako **neověřené** ([OBSAH.md](OBSAH.md#neověřené-učivo)). Úvodní stránka ukáže, kolik témat čeká na ověření; **Ověřovat** je vypíše. U neověřeného tématu je žlutý rámeček s tlačítkem **Ověřit**: projdi výklad v telefonu i všechny otázky se správnými odpověďmi a potvrď. U tématu se pak ukáže *Prošlo kontrolou*, tvoje jméno a datum (v moderaci, v aplikaci i ve veřejné historii). Když něco nesedí, téma raději uprav a pošli ke kontrole – schválená úprava se počítá jako ověřená.
+Učivo od AI se zveřejní hned jako **neověřené** ([OBSAH.md](OBSAH.md#neověřené-učivo)). Úvodní stránka ukáže, kolik témat čeká na ověření; **Ověřovat** vede na frontu **Ověřování** (`/overovani`, stará adresa `/ucivo?neovereno=1` vede tam).
+
+- **Fronta** řadí témata tak, jak se vyplatí je kontrolovat: nahoře co sis vzal/a nebo rozpracoval/a, pak **tvoje předměty** (z Můj profil), pak témata, ke kterým žáci hlásí chyby, a dál v pořadí učiva. Filtry: ročník, předmět a **Jen moje předměty** (`?rocnik=&predmet=`, `?vse=1` všechny předměty). Témata, která si bere někdo jiný, jsou na konci.
+- **Beru si to** řekne ostatním, že téma kontroluješ (ve frontě i na stránce tématu). Platí 2 dny, jde ho prodloužit nebo uvolnit; správce může uvolnit i cizí. Najednou jde mít zamluveno nejvýš 40 věcí. Ověřením se uvolní samo.
+- **Ověřovat po částech:** u neověřeného tématu je vedle každého vysvětlení a každé otázky zaškrtávátko. Projdi vysvětlení v telefonu, otázku i s odpovědí a odškrtni je. Rámeček ukazuje, kolik jsi prošel/a; průběh se ukládá, takže jde pokračovat jindy (i na jiném zařízení). Odškrtnutí patří k textu, který jsi viděl/a: když se téma mezitím změní, je potřeba se znovu podívat jen na změněné části. Každý moderátor má svoje odškrtnutí.
+- **Ověřit** jde, až je odškrtnuté všechno (server to hlídá). U tématu se pak ukáže *Prošlo kontrolou*, tvoje jméno a datum (v moderaci, v aplikaci i ve veřejné historii). Hned nabídne **další téma k ověření** z fronty.
+- Když něco nesedí, téma raději uprav a pošli ke kontrole – schválená úprava se počítá jako ověřená.
+- **Automatická kontrola** (rámeček s tipy) upozorní na možné překlepy (dvojí mezery, slovo dvakrát, mezera před čárkou, neuzavřené `**`, vzorce a uvozovky), výpočet, který nesedí s odpovědí (např. „Kolik je 12 · 3 + 4?“ s odpovědí 41), správnou možnost, která se prozrazuje délkou, stejnou otázku dvakrát, všechny otázky pravda/nepravda se stejnou odpovědí a moc dlouhé věty na daný ročník. Jsou to jen tipy, nic neblokují. Pořadí možností u otázek s výběrem nehlídá – aplikace je dětem míchá sama. Pravopis podtrhává prohlížeč přímo v polích editoru.
+- **Přehled pokrytí** (`/pokryti`, z fronty nebo pod **Více**): pro každý ročník a předmět kolik témat je, kolik ověřil člověk, otevřená hlášení, rozpracované změny a témata, která někdo právě kontroluje. Řazení podle ročníků nebo od nejméně ověřených; klik vede na příslušný seznam.
+
+## Na mně
+
+**Na mně** (`/na-mne`, číslo v liště = nové věci) je jedno místo pro všechno, co se týká tebe:
+
+- **Čeká na tvoje rozhodnutí:** změny ostatních odeslané ke kontrole, ke kterým ses ještě nevyjádřil/a.
+- **Novinky** za posledních 30 dní: zprávy a rozhodnutí u tvých změn (komentář, žádost o úpravy, schválení, zveřejnění, zamítnutí), odpovědi ve vláknech, kam jsi psal/a, a nová hlášení od žáků k tématům, která jsi napsal/a, schválil/a nebo ověřil/a (jejich zveřejněná verze je tvoje).
+- Otevřením položky (nebo změny v Kontrole) se položka označí jako přečtená; **Označit vše jako přečtené** všechno najednou, **Jen nové** schová přečtené.
+- **Máš zamluveno:** co sis vzal/a přes Beru si to.
+
+Moderace nic neposílá e-mailem ani jinak – Na mně je vidět jen v ní.
 
 ## Žádosti o moderátorství
 
@@ -86,9 +106,28 @@ API tokenem profil změnit nejde. Záznam událostí si pamatuje změnu jména a
 Žáci v aplikaci u každé otázky (po odpovědi) a u každého vysvětlení klepnou na **Nahlásit chybu**, nebo v otázce či vysvětlení označí slova a klepnou na **Nahlásit chybu**, které se pod nimi objeví, vyberou, co je špatně (*Špatná odpověď nebo chyba*, *Nejasné zadání*, *Překlep*, *Jiné*), a můžou připsat krátkou poznámku. Hlášení se objeví na záložce **Hlášení** (na telefonu ve spodní liště, s počtem otevřených).
 
 - Každé hlášení ukazuje téma, kterou otázku (číslo a znění, jak ho žák viděl) nebo které vysvětlení, označený text (když žák hlásil z označení), důvod, poznámku a číslo vydání učiva, ve kterém to žák viděl. Když se téma mezitím změnilo, otázka může mít jiné číslo, proto je tam i znění.
+- **Stejná hlášení** k témuž místu tématu od více žáků jsou spojená v jednu kartu (*3× nahlášeno*) se všemi poznámkami a vyřizují se najednou.
 - O odesílateli tam nic není: žádná adresa, zařízení ani jméno. Server sprtam.cz hlášení zkontroluje a pošle dál jen jeho obsah ([OBSAH.md](OBSAH.md#hlášení-chyb-od-žáků)).
-- **Otevřít téma** → *Upravit* → oprava jde běžnou kontrolou. Pak hlášení označ **Opraveno**. Když je učivo v pořádku, **Zamítnout** (s nepovinnou poznámkou pro ostatní moderátory). Vyřízené hlášení jde **znovu otevřít**.
+- **Opravit** otevře tvůj návrh tématu (rozpracovaný pokračuje) přímo na nahlášené otázce a hlášení jsou připnutá nad editorem. Oprava jde běžnou kontrolou; kontrolor vidí, která hlášení změna opravuje. **Až se změna zveřejní, hlášení se sama vyřídí jako opravená** (s číslem vydání). Ostatní u hlášení vidí, kdo ho opravuje. Když z editoru odejdeš bez úpravy, návrh zmizí a hlášení zůstane volné.
+- **Opraveno** vyřídí hlášení ručně (třeba když už to opravil někdo jiný). Když je učivo v pořádku, **Zamítnout** (s nepovinnou poznámkou pro ostatní moderátory; časté texty jde uložit jako **uloženou odpověď** a příště vložit klepnutím). Vyřízené hlášení jde **znovu otevřít**.
+- **Beru si to** u hlášení řekne ostatním, že ho řešíš (na 2 dny). Opravit si hlášení bere samo.
 - U tématu, ke kterému jsou otevřená hlášení, je nahoře upozornění s odkazem na ně. Filtrovat jde i podle ročníku a předmětu.
+
+## Hledat a nahradit
+
+**Hledat** (`/hledat`, pod **Více**, nebo z hledání v Učivu tlačítkem *Hledat i v textu témat*) prohledá celý text zveřejněných témat: výklad, otázky, možnosti, odpovědi i nápovědy. Na velkých písmenech a diakritice nezáleží (zaškrtnutím **Přesně** ano). Hledat může i nepřihlášený, je to stejné učivo, jaké je veřejné.
+
+**Nahradit…** (jen moderátoři) nahradí přesný text ve vybraných tématech (nejvýš 50 najednou). Hledaný text se při přepnutí převezme přesně tak, jak je v tématech. U každého výskytu je vidět, jak bude vypadat. Každé vybrané téma se stane **tvým návrhem** (rozpracovaný návrh tématu se doplní; téma s tvým návrhem v kontrole se přeskočí) a s **Rovnou odeslat ke kontrole** se rovnou odešle se vzkazem, co se nahradilo. Zveřejní se, až ho schválí jiný moderátor. Nahrazuje se jen text pro žáky, nikdy id, nastavení pomůcek ani emoji.
+
+## Klávesové zkratky a uložené odpovědi
+
+Na obrazovkách **Kontrola** (změna), **Hlášení**, **Ověřování** a na stránce tématu fungují zkratky jednou klávesou; **?** je vypíše. Nefungují při psaní do pole.
+
+- Kontrola: **J/K** další/předchozí změněný blok nebo otázka (ukáže ji i v telefonu), **A** schválit (zeptá se), **R** požádat o úpravy, **N** další změna, která čeká na tebe. Po schválení nebo žádosti o úpravy se rovnou otevře další změna, která čeká na tebe.
+- Hlášení: **J/K** pohyb mezi kartami, **O** opravit, **T** otevřít téma, **F** opraveno, **Z** zamítnout, **B** beru si to.
+- Ověřování: **J/K** pohyb, **O** otevřít, **B** beru si to; na stránce tématu **J/K** vysvětlení a otázky, **X** odškrtnout a jít na další, **O** ověřit.
+
+**Uložené odpovědi:** v okně *Požádat o úpravy* a *Zamítnout hlášení* jde text zaškrtnutím uložit a příště ho vložit jedním klepnutím. Každý moderátor má svoje (nejvýš 30 na druh), smazat jde křížkem.
 
 ## Historie a pomůcky
 

@@ -18,7 +18,11 @@ import {
 import { publishWords } from './words'
 import { assertSameOrigin, clientIp, cookies, HttpError, ipKey, json, limit, readJson, SECURITY_HEADERS, SESSION_COOKIE, type Req, type Res } from './http'
 import { getProfile, listProfiles, ownProfile, profileByName, saveProfile } from './profiles'
-import { createReport, listReports, reportCounts, updateReport } from './reports'
+import { activeClaims, claim, unclaim } from './claims'
+import { createReport, listReports, reportCounts, updateReport, updateReports } from './reports'
+import { search } from './search'
+import { getProgress, setProgress, verifyQueue } from './verify'
+import { addReply, checkFilter, coverage, fixReports, inbox, inboxCounts, listReplies, markSeen, removeReply, replaceInTopics } from './work'
 import { createRequest, deleteRequest, listRequests, updateRequest, voteRequest } from './requests'
 import { current, file, gzipped, history, load, previousVersion, published, releases, verifyChain, version } from './store'
 
@@ -193,6 +197,32 @@ const reportFilter = (req: Req) => ({ grade: query(req, 'grade') || null, subjec
 on('GET', '/api/reports', (req) => listReports(requireSession(req), { status: query(req, 'status') ?? 'open', ...reportFilter(req) }))
 on('GET', '/api/reports/counts', (req) => reportCounts(requireSession(req), reportFilter(req)))
 on('PATCH', '/api/reports/:id', async (req, _res, p, ip) => updateReport(requireSession(req), p[0], await readJson(req), ip))
+// The same mistake reported by several pupils: closed together. "Opravit" opens a draft the reports are fixed in.
+on('POST', '/api/reports/update', async (req, _res, _p, ip) => updateReports(requireSession(req), await readJson(req), ip))
+on('POST', '/api/reports/fix', async (req, _res, _p, ip) => fixReports(requireSession(req), await readJson(req), ip))
+
+// ——— Moderators' work: claims, verifying, what is new for me, search and replace (docs/MODERACE.md) ———
+
+on('GET', '/api/claims', (req) => { requireSession(req); return activeClaims() })
+on('POST', '/api/claims', async (req, _res, _p, ip) => claim(requireSession(req), await readJson(req), ip))
+on('DELETE', '/api/claims/:kind/:ref', (req, _res, p, ip) => unclaim(requireSession(req), p[0], p[1], ip))
+const filter = (req: Req) => checkFilter(query(req, 'grade') || null, query(req, 'subject') || null)
+on('GET', '/api/verify/queue', (req) => verifyQueue(requireSession(req), { ...filter(req), mine: query(req, 'mine') === '1' }))
+on('GET', '/api/verify/progress/:g/:s/:id', (req, _res, p) => getProgress(requireSession(req), p[0], p[1], p[2]))
+on('PUT', '/api/verify/progress/:g/:s/:id', async (req, _res, p) => setProgress(requireSession(req), p[0], p[1], p[2], await readJson(req)))
+on('GET', '/api/coverage', (req) => { requireSession(req); return coverage() })
+on('GET', '/api/inbox', (req) => inbox(requireSession(req)))
+on('GET', '/api/inbox/counts', (req) => inboxCounts(requireSession(req)))
+on('POST', '/api/inbox/seen', async (req) => markSeen(requireSession(req), await readJson(req)))
+on('GET', '/api/me/replies', (req) => listReplies(requireSession(req), query(req, 'kind')))
+on('POST', '/api/me/replies', async (req) => addReply(requireSession(req), await readJson(req)))
+on('DELETE', '/api/me/replies/:id', (req, _res, p) => removeReply(requireSession(req), p[0]))
+// Searching the published text is as public as the text itself; replacing makes drafts of the moderator.
+on('GET', '/api/search', (req, _res, _p, ip) => {
+  limit(`search:${ipKey(ip)}`, 120, 10 * MINUTE)
+  return search(query(req, 'q'), { ...filter(req), exact: query(req, 'exact') === '1' })
+}, true)
+on('POST', '/api/replace', async (req, _res, _p, ip) => replaceInTopics(requireSession(req), await readJson(req), ip))
 
 // ——— Admin ———
 

@@ -12,6 +12,9 @@ import { explanationTitle, BlockList } from './blocks'
 import { Ctx, EmojiField, FormatBar, Text, useEd, type EditorCtx, type Focus } from './fields'
 import { useHistory } from './history'
 import { checkTopic, type Issue, type Section } from './issues'
+import { qualityTips, type Tip } from './quality'
+import { Inline } from '../../../src/ui/Inline'
+import type { ReportView } from '../screens/Reports'
 import { clean, newExplanation, setIn, type Path } from './model'
 import { Preview } from './Preview'
 import { QuestionList } from './questions'
@@ -71,6 +74,8 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
   useEffect(() => () => {
     if (untouched.current && !saving.current) fetch(`/api/drafts/${draft.id}`, { method: 'DELETE', credentials: 'same-origin', keepalive: true }).then(() => refreshIndex(), () => {})
   }, [])
+  // Tips of the automatic check (quality.ts): shown, never blocking.
+  const tips = useMemo(() => qualityTips(cleaned, g, s), [cleaned])
   const errors = useMemo(() => {
     const m = new Map<string, string[]>()
     for (const i of issues) m.set(i.path, [...(m.get(i.path) ?? []), i.cs])
@@ -162,6 +167,23 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
     else jump({ ex: m.ex })
     setPvMode(m)
   }
+  // Reports this draft fixes ("Opravit" on the reports screen): pinned above the editor, the first one opened.
+  const reports = initial.reports.filter((r) => r.status === 'open')
+  const goReport = (r: ReportView) => {
+    if (r.target.kind === 'question') {
+      const plain = (x: string) => x.replace(/\s+/g, ' ').trim()
+      const byText = topic.questions.findIndex((q) => plain(q.question ?? '') === plain(r.target.text))
+      jump({ q: byText >= 0 ? byText : Math.min(r.target.index, topic.questions.length - 1) })
+    } else {
+      const byTitle = topic.explanations.findIndex((x) => x.title === r.target.text)
+      jump({ ex: byTitle >= 0 ? byTitle : Math.min(r.target.index, topic.explanations.length - 1) })
+    }
+  }
+  useEffect(() => {
+    const id = new URLSearchParams(location.search).get('hlaseni')
+    const r = id ? reports.find((x) => x.id === id) : undefined
+    if (r) goReport(r)
+  }, [])
   const goIssue = (i: Issue) => {
     if (i.section.kind === 'meta') jump({ meta: true })
     else if (i.section.kind === 'qs') jump({ q: i.question ?? 0 })
@@ -207,11 +229,12 @@ function Workspace({ initial, me }: { initial: Loaded; me: Me }) {
         {parts && <div class="sheet-backdrop narrow-only" onClick={() => setParts(false)} />}
         <nav class="outline" aria-label="Části tématu">
           <div class="sheet-head narrow-only"><b>Části tématu</b><button class="icon" onClick={() => setParts(false)} aria-label="Zavřít"><I.close /></button></div>
-          <Outline section={section} issues={issues} jump={(f) => { setParts(false); jump(f) }} />
+          <Outline section={section} issues={issues} tips={tips} jump={(f) => { setParts(false); jump(f) }} />
         </nav>
 
         <main class="ed-main">
           {!readOnly && <FormatBar />}
+          {reports.length > 0 && <FixingReports reports={reports} go={goReport} />}
           {section.kind === 'meta' && <Meta draft={draft} after={after} setAfter={setAfter} />}
           {section.kind === 'ex' && topic.explanations[section.i] && <ExplanationSection i={section.i} issues={issues.filter((x) => x.section.kind === 'ex' && x.section.i === section.i)} jump={jump} />}
           {section.kind === 'qs' && (
@@ -265,7 +288,7 @@ function ReadOnlyBanner({ draft, own }: { draft: DraftView; own: boolean }) {
 
 // ——— Outline ———
 
-function Outline({ section, issues, jump }: { section: Section; issues: Issue[]; jump: (f: Focus | { meta: true }) => void }) {
+function Outline({ section, issues, tips, jump }: { section: Section; issues: Issue[]; tips: Tip[]; jump: (f: Focus | { meta: true }) => void }) {
   const ed = useEd()
   const index = useIndex()
   const t = ed.topic
@@ -298,11 +321,12 @@ function Outline({ section, issues, jump }: { section: Section; issues: Issue[];
         <span class="ol-em">?</span><span class="ol-t"><b>Otázky</b><small>{t.questions.length} otázek</small></span><Badge n={count((i) => i.section.kind === 'qs')} />
       </button>
       <Checklist issues={issues} jump={jump} />
+      {tips.length > 0 && <Checklist issues={tips} jump={jump} tips />}
     </>
   )
 }
 
-function Checklist({ issues, jump }: { issues: Issue[]; jump: (f: Focus | { meta: true }) => void }) {
+function Checklist({ issues, jump, tips }: { issues: Issue[]; jump: (f: Focus | { meta: true }) => void; tips?: boolean }) {
   const ed = useEd()
   const where = (i: Issue) => {
     if (i.section.kind === 'meta') return 'Název'
@@ -310,6 +334,14 @@ function Checklist({ issues, jump }: { issues: Issue[]; jump: (f: Focus | { meta
     return `${explanationTitle(ed.topic.explanations[i.section.i] ?? { title: '', blocks: [] }, i.section.i)}${i.block !== undefined ? ` · blok ${i.block + 1}` : ''}`
   }
   const go = (i: Issue) => (i.section.kind === 'meta' ? jump({ meta: true }) : i.section.kind === 'qs' ? jump({ q: i.question ?? 0 }) : jump({ ex: i.section.i, block: i.block }))
+  if (tips) return (
+    <details class="checklist tips">
+      <summary class="label">Tipy automatické kontroly · {issues.length}</summary>
+      <p class="fine">Možné překlepy, výpočty a prozrazené odpovědi. Odeslání nebrání.</p>
+      <ul>{issues.slice(0, 20).map((i, k) => <li key={k}><button onClick={() => go(i)}><small>{where(i)}</small>{i.cs}</button></li>)}</ul>
+      {issues.length > 20 && <p class="fine">…a dalších {issues.length - 20}</p>}
+    </details>
+  )
   return (
     <div class={`checklist ${issues.length ? '' : 'done'}`}>
       {issues.length ? (
@@ -450,3 +482,26 @@ function Submit({ draft, changed, issues, flush, goIssue, onClose, onDone }: {
     </Modal>
   )
 }
+
+/** The pupils' reports this draft fixes, pinned above the editor: what they said and where it is. */
+function FixingReports({ reports, go }: { reports: ReportView[]; go: (r: ReportView) => void }) {
+  return (
+    <details class="ed-reports" open>
+      <summary><I.wrench /><b>Opravuješ {reports.length === 1 ? 'hlášení od žáka' : `${reports.length} hlášení od žáků`}</b><small>Po schválení a zveřejnění se samo vyřídí.</small></summary>
+      <ul>
+        {reports.map((r) => (
+          <li key={r.id}>
+            <button class="btn small" onClick={() => go(r)}>{r.target.kind === 'question' ? `Otázka ${r.target.index + 1}` : 'Vysvětlení'}<I.right /></button>
+            <span>
+              <b>{REPORT_REASON[r.reason] ?? r.reason}:</b> {r.target.kind === 'question' ? <Inline text={r.target.text} /> : `„${r.target.text}“`}
+              {r.quote && <> · označeno <mark class="rq-quote">„{r.quote}“</mark></>}
+              {r.note && <> · <i>„{r.note}“</i></>}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </details>
+  )
+}
+
+const REPORT_REASON: Record<string, string> = { wrong: 'Špatná odpověď nebo chyba', unclear: 'Nejasné zadání', typo: 'Překlep', other: 'Jiné' }

@@ -8,6 +8,7 @@ import type { Me } from '../passkey'
 import { go, nav } from '../router'
 import { refreshIndex, useIndex, type Index } from '../store'
 import { Busy, Empty, I, Modal, toast } from '../ui/kit'
+import { searchHref } from './Search'
 import { EmojiField } from '../editor/fields'
 import { Select } from '../../../src/ui/Select'
 
@@ -28,14 +29,11 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null })
   const grade = isGrade(g) ? g : undefined
   const subject = (grade && s && isSubjectOf(grade, s) ? s : undefined) as SubjectId | undefined
 
-  // /ucivo?neovereno=1: every topic nobody has checked yet, to work through.
-  const unverified = !grade && new URLSearchParams(location.search).has('neovereno')
   const hits = useMemo(() => {
-    if (index && unverified) return Object.entries(index.subjects).flatMap(([key, list]) => list.filter((t) => !t.verified).map((t) => ({ key, t })))
     if (!index || q.trim().length < 2) return null
     const words = fold(q).split(/\s+/).filter(Boolean)
     return Object.entries(index.subjects).flatMap(([key, list]) => list.filter((t) => words.every((w) => fold(t.title).includes(w) || t.id.includes(w))).map((t) => ({ key, t }))).slice(0, 80)
-  }, [index, q, unverified])
+  }, [index, q])
 
   // Phones show grades and subjects as scrolling strips once one is picked: keep the picked ones in view.
   useEffect(() => {
@@ -65,9 +63,10 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null })
       <section class="lib-main">
         {hits ? (
           <>
-            <h1>{unverified && q.trim().length < 2 ? `Neověřená témata · ${hits.length}` : `Hledání: „${q.trim()}“`}</h1>
-            {unverified && q.trim().length < 2 && <p class="muted">Témata, která připravila AI nebo se změnila bez kontroly. Děti je v aplikaci vidí s poznámkou „neověřeno“. Otevři téma, přečti výklad i otázky a klepni na <b>Ověřit</b>.</p>}
-            {hits.length ? <TopicRows index={index!} rows={hits.map(({ key, t }) => ({ key, ...t }))} me={me} showWhere /> : <Empty>Nic nenalezeno.</Empty>}
+            <h1>Hledání: „{q.trim()}“</h1>
+            <p><a class="btn small" href={searchHref({ q: q.trim() })} onClick={nav(searchHref({ q: q.trim() }))}><I.search />Hledat „{q.trim()}“ i v textu témat{me ? ' (a nahradit)' : ''}</a></p>
+            <h2 class="label">V názvech témat · {hits.length}</h2>
+            {hits.length ? <TopicRows index={index!} rows={hits.map(({ key, t }) => ({ key, ...t }))} me={me} showWhere /> : <Empty>V názvech nic.</Empty>}
           </>
         ) : !grade ? (
           <Intro index={index} me={me} />
@@ -103,7 +102,7 @@ export function Library({ g, s, me }: { g?: string; s?: string; me: Me | null })
 function UnverifiedNote({ index }: { index: Index }) {
   const n = Object.values(index.subjects).reduce((sum, l) => sum + l.filter((t) => !t.verified).length, 0)
   if (!n) return null
-  return <p class="banner warn"><I.warn /><span><b>{n} {n === 1 ? 'téma čeká' : n < 5 ? 'témata čekají' : 'témat čeká'} na ověření.</b> Připravila je AI nebo se změnila bez kontroly; děti je už vidí s poznámkou „neověřeno“.</span><a class="btn small primary" href="/ucivo?neovereno=1" onClick={nav('/ucivo?neovereno=1')}>Ověřovat</a></p>
+  return <p class="banner warn"><I.warn /><span><b>{n} {n === 1 ? 'téma čeká' : n < 5 ? 'témata čekají' : 'témat čeká'} na ověření.</b> Připravila je AI nebo se změnila bez kontroly; děti je už vidí s poznámkou „neověřeno“.</span><a class="btn small primary" href="/overovani" onClick={nav('/overovani')}>Ověřovat</a></p>
 }
 
 function Intro({ index, me }: { index?: Index; me: Me | null }) {

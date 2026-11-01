@@ -300,6 +300,44 @@ const MIGRATIONS: string[] = [
   `
   ALTER TABLE reports ADD COLUMN quote TEXT NOT NULL DEFAULT '';
   `,
+  // 7: tools that save moderators' time (docs/MODERACE.md): "Beru si to" on a report or an unverified topic, what one
+  // already went through when verifying a topic (each explanation and question with a hash of what it said), the
+  // draft a report is being fixed in (closed on its own when the draft is published), what one has already seen in
+  // "Na mně", and one's saved replies.
+  `
+  CREATE TABLE claims (
+    kind TEXT NOT NULL CHECK (kind IN ('report', 'topic')),
+    ref TEXT NOT NULL,
+    user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    created_at INTEGER NOT NULL,
+    until INTEGER NOT NULL,
+    PRIMARY KEY (kind, ref)
+  );
+  CREATE TABLE verify_progress (
+    user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    topic TEXT NOT NULL,
+    items TEXT NOT NULL DEFAULT '{}',
+    updated_at INTEGER NOT NULL,
+    PRIMARY KEY (user_id, topic)
+  );
+  ALTER TABLE reports ADD COLUMN draft_id TEXT REFERENCES drafts(id) ON DELETE SET NULL;
+  CREATE INDEX reports_draft ON reports(draft_id);
+  CREATE TABLE inbox_seen (
+    user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    item TEXT NOT NULL,
+    at INTEGER NOT NULL,
+    PRIMARY KEY (user_id, item)
+  );
+  CREATE TABLE saved_replies (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    kind TEXT NOT NULL CHECK (kind IN ('report', 'review')),
+    text TEXT NOT NULL,
+    created_at INTEGER NOT NULL
+  );
+  CREATE INDEX saved_replies_user ON saved_replies(user_id, kind);
+  CREATE INDEX reviews_user ON reviews(user_id);
+  `,
 ]
 
 const before = Number((db.prepare('PRAGMA user_version').get() as { user_version: number }).user_version)

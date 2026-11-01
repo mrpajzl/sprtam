@@ -1,7 +1,11 @@
-import { useEffect, useRef, useState } from 'preact/hooks'
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 import { GRADE_NAME, gradeSubjects, subjectMeta, SUBJECTS, vocationalSubjects } from '../../../src/content/curriculum'
 import type { GradeId, SubjectId } from '../../../src/content/types'
-import { api, ApiError, get } from '../api'
+import { api, ApiError, get, post } from '../api'
+import { qualityTips } from '../editor/quality'
+import { KeysHint, useKeys } from '../ui/keys'
+import { saveReply, SavedReplies } from '../ui/replies'
+import { Tips } from './Topic'
 import { DiffStats, TopicDiff } from '../diff/Diff'
 import { Preview } from '../editor/Preview'
 import { withConfirm, type Me } from '../passkey'
@@ -169,6 +173,20 @@ export function Review({ id, me }: { id: string; me: Me }) {
   const [busy, setBusy] = useState(false)
   const load = () => get<DraftFull>(`/api/drafts/${id}`).then(setData, (e) => setError(e instanceof ApiError ? e.message : 'Návrh se nepodařilo načíst.'))
   useEffect(() => { setData(null); load() }, [id])
+  // Opening the change = its messages and decisions in "Na mně" are seen.
+  useEffect(() => { post('/api/inbox/seen', { draft: id }).catch(() => {}) }, [id, data?.reviews.length])
+  const tips = useMemo(() => (data && (data.draft.status === 'review' || data.draft.status === 'draft') ? qualityTips(data.topic, data.draft.grade as GradeId, data.draft.subject) : []), [data?.topic])
+  // J/K walk through the changed blocks and questions.
+  const [cur, setCur] = useState(-1)
+  const walk = (by: number) => {
+    const items = [...document.querySelectorAll<HTMLElement>('.r-main .diff .d-item:not(.d-same)')]
+    if (!items.length) return
+    const k = Math.max(0, Math.min(items.length - 1, cur < 0 ? (by > 0 ? 0 : items.length - 1) : cur + by))
+    items.forEach((el, i) => el.classList.toggle('cur', i === k))
+    items[k].scrollIntoView({ block: 'center', behavior: 'smooth' })
+    items[k].querySelector<HTMLButtonElement>('.d-pick')?.click()
+    setCur(k)
+  }
   // New messages (and a new revision or decision) show up on their own while the change is open.
   const live = useRef({ data, busy })
   live.current = { data, busy }
@@ -187,6 +205,16 @@ export function Review({ id, me }: { id: string; me: Me }) {
     return () => clearInterval(t)
   }, [id])
 
+  const canDecide = !!data && data.draft.status === 'review' && data.draft.author.id !== me.id && !data.draft.conflict && !data.problems.length && data.draft.changed
+  const help = useKeys([
+    { key: 'j', label: 'Další změna (ukáže ji i v telefonu)', run: () => walk(1) },
+    { key: 'k', label: 'Předchozí změna', run: () => walk(-1) },
+    { key: 'a', label: 'Schválit (zeptá se)', when: canDecide, run: () => { if (confirm(`Schválit změnu „${data!.draft.title}“?`)) approveRef.current?.() } },
+    { key: 'r', label: 'Požádat o úpravy', when: canDecide, run: () => setAsk('changes') },
+    { key: 'n', label: 'Další změna, která čeká na tebe', run: () => nextWaiting(id, false) },
+  ], 'Zkratky při kontrole')
+  const approveRef = useRef<(() => void) | undefined>(undefined)
+
   if (error) return <div class="empty-state">{error} <a href="/kontrola" onClick={nav('/kontrola')}>Zpět na kontrolu změn</a></div>
   if (!data) return <div class="boot" />
   const d = data.draft
@@ -197,13 +225,16 @@ export function Review({ id, me }: { id: string; me: Me }) {
   const myDecision = data.reviews.filter((r) => !r.stale && r.user.id === me.id && r.verdict !== 'comment').pop()?.verdict
   const willPublish = d.approvals.filter((a) => a.id !== me.id).length + 1 >= d.needed && !d.changes.some((c) => c.id !== me.id)
 
-  const act = async (path: string, body: object, ok: string, method = 'POST', reauth = false) => {
+  const act = async (path: string, body: object, ok: string, method = 'POST', reauth = false, next = false) => {
     setBusy(true)
     try {
       const call = () => api<DraftFull & { released?: number | null }>(method, `/api/drafts/${d.id}/${path}`, body)
       const r = await (reauth ? withConfirm(call) : call())
       setData(r); refreshIndex()
-      toast(r.released ? `Zveřejněno! Na sprtam.cz je to jako vydání ${r.released}.` : ok)
+      const said = r.released ? `Zveřejněno! Na sprtam.cz je to jako vydání ${r.released}.` : ok
+      // A decision made: straight on to the next change waiting for me.
+      if (next) nextWaiting(d.id, true, said)
+      else toast(said)
       return true
     } catch (e) {
       const ex = e as ApiError
@@ -228,8 +259,10 @@ export function Review({ id, me }: { id: string; me: Me }) {
   }
   const anchored = (anchor: string) => <Threads reviews={data.reviews.filter((r) => r.anchor === anchor)} anchor={anchor} me={me} draft={d} topic={data.topic} busy={busy} act={chat} />
 
+  approveRef.current = () => act('review', { verdict: 'approve', rev: d.rev }, 'Schváleno', 'POST', own, !own)
   return (
     <div class="review">
+      {help}
       <header class="v-head">
         <a class="v-up" href={up} onClick={nav(up)}><I.back />{own ? 'Moje změny' : 'Kontrola změn'}</a>
         <div class="v-title">
@@ -250,12 +283,19 @@ export function Review({ id, me }: { id: string; me: Me }) {
       <Banners data={data} own={own} busy={busy} onRebase={() => act('rebase', {}, 'Návrh teď vychází ze zveřejněné verze. Zkontroluj ho a pošli znovu.')} />
 
       {d.note && <blockquote class="r-note"><b>{d.author.name}:</b> {d.note}</blockquote>}
+      {data.reports.length > 0 && (
+        <div class="banner info"><I.wrench /><span><b>Změna opravuje {data.reports.length === 1 ? 'hlášení od žáka' : `${data.reports.length} hlášení od žáků`}:</b>{' '}
+          {data.reports.map((r, i) => <span key={r.id}>{i ? ' · ' : ''}{r.target.kind === 'question' ? `otázka ${r.target.index + 1}` : `vysvětlení „${r.target.text}“`}{r.note ? ` („${r.note}“)` : ''}</span>)}
+          {d.status !== 'published' ? '. Po zveřejnění se hlášení samo vyřídí.' : ''}</span></div>
+      )}
+      {tips.length > 0 && <Tips tips={tips} />}
+      <KeysHint />
       {data.problems.length > 0 && (inReview || d.status === 'draft') && (
         <div class="banner bad"><I.warn />Téma ještě není v pořádku, schválit ho nejde: {data.problems.slice(0, 3).map((p) => p.message).join(' · ')}{data.problems.length > 3 ? ` (+${data.problems.length - 3})` : ''}</div>
       )}
 
       <Decision data={data} me={me} busy={busy} willPublish={willPublish} myDecision={myDecision}
-        approve={() => act('review', { verdict: 'approve', rev: d.rev }, 'Schváleno', 'POST', own)} ask={setAsk}
+        approve={() => approveRef.current!()} ask={setAsk}
         withdraw={() => act('withdraw', {}, 'Návrh je zpátky v rozpracovaných')} remove={remove} />
 
       <div class="r-body">
@@ -271,7 +311,7 @@ export function Review({ id, me }: { id: string; me: Me }) {
       </div>
 
       {ask && <Ask kind={ask} busy={busy} onClose={() => setAsk(null)} onSend={async (text) => {
-        const ok = ask === 'changes' ? await act('review', { verdict: 'changes', body: text }, 'Autor uvidí, co upravit') : await act('reject', { note: text }, 'Návrh zamítnut')
+        const ok = ask === 'changes' ? await act('review', { verdict: 'changes', body: text }, 'Autor uvidí, co upravit', 'POST', false, true) : await act('reject', { note: text }, 'Návrh zamítnut')
         if (ok) setAsk(null)
       }} />}
     </div>
@@ -380,14 +420,26 @@ function Decision({ data, me, busy, willPublish, myDecision, approve, ask, withd
 
 function Ask({ kind, busy, onClose, onSend }: { kind: 'changes' | 'reject'; busy: boolean; onClose: () => void; onSend: (text: string) => void }) {
   const [text, setText] = useState('')
+  const [keep, setKeep] = useState(false)
   return (
     <Modal title={kind === 'changes' ? 'Požádat o úpravy' : 'Zamítnout návrh'} onClose={onClose}
-      actions={<><button class="btn" onClick={onClose}>Zpět</button><Busy class={`btn ${kind === 'reject' ? 'danger' : 'primary'}`} on={busy} disabled={!text.trim()} onClick={() => onSend(text.trim())}>{kind === 'changes' ? 'Odeslat autorovi' : 'Zamítnout'}</Busy></>}>
+      actions={<><button class="btn" onClick={onClose}>Zpět</button><Busy class={`btn ${kind === 'reject' ? 'danger' : 'primary'}`} on={busy} disabled={!text.trim()} onClick={() => { if (keep) saveReply('review', text.trim()); onSend(text.trim()) }}>{kind === 'changes' ? 'Odeslat autorovi' : 'Zamítnout'}</Busy></>}>
       <p>{kind === 'changes' ? 'Napiš autorovi, co je potřeba upravit. Konkrétní místa můžeš okomentovat přímo u bloků a otázek.' : 'Návrh se uzavře a nezveřejní. Autor uvidí důvod.'}</p>
       <label class="field"><span>{kind === 'changes' ? 'Co upravit' : 'Důvod'}</span><textarea rows={4} value={text} onInput={(e) => setText(e.currentTarget.value)} maxLength={kind === 'changes' ? 4000 : 2000} autoFocus /></label>
+      <SavedReplies kind="review" text={text} setText={setText} keep={keep} setKeep={setKeep} />
     </Modal>
   )
 }
 
 /** Opens the review of a draft (used after sending it). */
 export const openReview = (id: string) => go(`/kontrola/${id}`)
+
+/** Opens the oldest change waiting for my decision other than `current` (after a decision: with what was done). */
+async function nextWaiting(current: string, decided: boolean, said = '') {
+  try {
+    const list = await get<QueueItem[]>('/api/reviews?tab=open')
+    const next = list.find((x) => x.id !== current && x.status === 'review' && !x.mine && !x.myVerdict)
+    if (next) { toast(`${said ? `${said} ` : ''}Otevírám další změnu ke kontrole.`, 'ok'); go(`/kontrola/${next.id}`) }
+    else toast(said ? `${said} Na tebe už nic dalšího nečeká. 🎉` : 'Na tebe teď nic dalšího nečeká.', decided ? 'ok' : 'info')
+  } catch { if (said) toast(said) }
+}
