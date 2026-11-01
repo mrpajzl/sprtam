@@ -42,7 +42,7 @@ function czech(path: string, m: string): string {
   return m
 }
 
-function locate(path: string, cs: string): Omit<Issue, 'path' | 'cs'> {
+export function locate(path: string, cs: string): Omit<Issue, 'path' | 'cs'> {
   let x: RegExpMatchArray | null
   if ((x = path.match(/^explanations\[(\d+)\](?:\.blocks\[(\d+)\])?/))) return { section: { kind: 'ex', i: Number(x[1]) }, block: x[2] !== undefined ? Number(x[2]) : undefined }
   if ((x = path.match(/^questions(?:\[(\d+)\])?/))) return { section: { kind: 'qs' }, question: x[1] !== undefined ? Number(x[1]) : undefined }

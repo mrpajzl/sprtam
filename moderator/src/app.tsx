@@ -4,6 +4,10 @@ import type { Me } from './passkey'
 import { go, nav, useRoute } from './router'
 import { Account } from './screens/Account'
 import { Applications } from './screens/Applications'
+import { Coverage } from './screens/Coverage'
+import { Inbox } from './screens/Inbox'
+import { Search } from './screens/Search'
+import { VerifyQueue } from './screens/VerifyQueue'
 import { Apply } from './screens/Apply'
 import { History } from './screens/History'
 import { Invite } from './screens/Invite'
@@ -25,10 +29,14 @@ import { I, Toasts } from './ui/kit'
 // /hlaseni error reports from pupils (?stav=vyrizena, ?rocnik=&predmet=, ?tema=<g>/<s>/<id>) · /pomucky widget requests · /vydani releases (admin) · /uzivatele moderators (admin) ·
 // /zadosti applications to become a moderator (admin; ?stav=vyrizene) · /ucet own account · /prihlaseni[?dalsi=<path>] sign-in · /pozvanka#<token> invite ·
 // /zapojit-se[?tema=<g>/<s>/<id>] the public application form · /moderatori[/<id>] who checks the content, moderators' profiles (?jmeno=<name>
-// opens one by name). Everything except the library, the form and the profiles needs a signed-in moderator.
+// opens one by name) · /na-mne what concerns me · /overovani the queue of unverified topics (?rocnik=&predmet=&vse=1) ·
+// /pokryti how far each subject is · /hledat[?q=&rocnik=&predmet=&presne=1] search in the text (and replace, signed in).
+// Everything except the library, the form, the profiles and the search needs a signed-in moderator.
 
-const PUBLIC = ['ucivo', 'zapojit-se', 'moderatori']
-const SCREENS = ['ucivo', 'kontrola', 'historie', 'hlaseni', 'pomucky', 'vydani', 'uzivatele', 'zadosti', 'ucet', 'zapojit-se', 'moderatori']
+const PUBLIC = ['ucivo', 'zapojit-se', 'moderatori', 'hledat']
+const SCREENS = ['ucivo', 'kontrola', 'historie', 'hlaseni', 'pomucky', 'vydani', 'uzivatele', 'zadosti', 'ucet', 'zapojit-se', 'moderatori', 'na-mne', 'overovani', 'pokryti', 'hledat']
+/** Screens reached from "Více" on phones. */
+const MORE = ['overovani', 'pokryti', 'hledat', 'pomucky', 'moderatori', 'vydani', 'uzivatele', 'zadosti', 'ucet']
 
 /** Where to go after signing in: only a path of this app, never another site. */
 const nextPath = () => { const p = new URLSearchParams(location.search).get('dalsi') ?? '/'; return /^\/(?![/\\])/.test(p) ? p : '/' }
@@ -50,11 +58,13 @@ export function App() {
   const [waiting, setWaiting] = useState(0)
   // …and how many error reports from pupils are open.
   const [reports, setReports] = useState(0)
-  // …and (admins) how many people ask to become a moderator.
+  // …and (admins) how many people ask to become a moderator…
   const [applications, setApplications] = useState(0)
+  // …and what is new for me in "Na mně".
+  const [unread, setUnread] = useState(0)
   useEffect(() => {
     if (!session?.user) return
-    get<{ mine: boolean; myVerdict: string | null; status: string }[]>('/api/reviews').then((l) => setWaiting(l.filter((d) => d.status === 'review' && !d.mine && !d.myVerdict).length), () => {})
+    get<{ unread: number; waiting: number }>('/api/inbox/counts').then((c) => { setWaiting(c.waiting); setUnread(c.unread) }, () => {})
     get<{ open: number }>('/api/reports/counts').then((c) => setReports(c.open), () => {})
     if (session.user.role === 'admin') get<{ open: number }>('/api/admin/applications/counts').then((c) => setApplications(c.open), () => {})
   }, [session?.user?.id, route.join('/')])
@@ -72,8 +82,9 @@ export function App() {
   if (!user && (screen === 'prihlaseni' || !PUBLIC.includes(screen))) return <><Login onDone={signedIn} /><Toasts /></>
   if (user && screen === 'prihlaseni') return <div class="boot" />
   if (user && screen === 'navrh' && route[1]) return <><Editor id={route[1]} me={user} /><Toasts /></>
-  // My drafts moved into the review screen (old links and bookmarks).
+  // My drafts moved into the review screen, the unverified topics into their own queue (old links and bookmarks).
   if (screen === 'navrhy') { go('/kontrola?moje=1', true); return <div class="boot" /> }
+  if (screen === 'ucivo' && !route[1] && new URLSearchParams(location.search).has('neovereno')) { go('/overovani', true); return <div class="boot" /> }
 
   const logout = async () => { await post('/api/auth/logout').catch(() => {}); setSession({ ...session, user: null }); go('/', true) }
   const link = (href: string, label: string, icon: preact.JSX.Element, on: boolean, badge = 0) => (
@@ -81,13 +92,15 @@ export function App() {
   )
   const admin = user?.role === 'admin'
   return (
-    <div class={`shell ${user ? 'has-bnav' : ''}`}>
+    <div class={`shell ${user ? 'has-bnav' : ''} ${admin ? 'admin' : ''}`}>
       <header class="top">
         <a class="brand" href="/" onClick={nav('/')}><b>šprtám</b><span>moderace</span></a>
         <nav class="tabs">
           {link('/', 'Učivo', <I.book />, screen === 'ucivo')}
+          {user && link('/na-mne', unread ? `Na mně · ${unread}` : 'Na mně', <I.bell />, screen === 'na-mne')}
           {user && link('/kontrola', waiting ? `Kontrola · ${waiting}` : 'Kontrola', <I.check />, screen === 'kontrola')}
           {user && link('/hlaseni', reports ? `Hlášení · ${reports}` : 'Hlášení', <I.warn />, screen === 'hlaseni')}
+          {user && link('/overovani', 'Ověřování', <I.flag />, screen === 'overovani' || screen === 'pokryti')}
           {user && link('/pomucky', 'Pomůcky', <I.bulb />, screen === 'pomucky')}
           {user?.role === 'admin' && link('/vydani', 'Vydání', <I.layers />, screen === 'vydani')}
           {user?.role === 'admin' && link('/uzivatele', 'Moderátoři', <I.users />, screen === 'uzivatele')}
@@ -110,7 +123,11 @@ export function App() {
           : <Library g={route[1]} s={route[2]} me={user} />)}
         {user && screen === 'kontrola' && (route[1] ? <Review key={route[1]} id={route[1]} me={user} /> : <ReviewQueue me={user} />)}
         {user && screen === 'historie' && route[3] && <History key={route.slice(1, 4).join('/')} g={route[1]} s={route[2]} id={route[3]} me={user} />}
-        {user && screen === 'hlaseni' && <Reports />}
+        {user && screen === 'hlaseni' && <Reports me={user} />}
+        {user && screen === 'na-mne' && <Inbox onCount={setUnread} />}
+        {user && screen === 'overovani' && <VerifyQueue key={location.search} me={user} />}
+        {user && screen === 'pokryti' && <Coverage />}
+        {screen === 'hledat' && <Search me={user} />}
         {user && screen === 'pomucky' && <Requests me={user} />}
         {user?.role === 'admin' && screen === 'vydani' && <Releases />}
         {user?.role === 'admin' && screen === 'uzivatele' && <Users me={user} />}
@@ -124,15 +141,19 @@ export function App() {
         // Phones: the main screens in a bottom bar within thumb reach; widget requests, admin screens and the account under "Více".
         <nav class="bnav" aria-label="Hlavní navigace">
           {link('/', 'Učivo', <I.book />, screen === 'ucivo')}
+          {link('/na-mne', 'Na mně', <I.bell />, screen === 'na-mne', unread)}
           {link('/kontrola', 'Kontrola', <I.check />, screen === 'kontrola', waiting)}
           {link('/hlaseni', 'Hlášení', <I.warn />, screen === 'hlaseni', reports)}
-          <button class={['pomucky', 'moderatori', 'vydani', 'uzivatele', 'zadosti', 'ucet'].includes(screen) || more ? 'on' : ''} onClick={() => setMore(!more)} aria-expanded={more}><I.more /><span>Více</span>{admin && applications > 0 && <i class="dot-n">{applications}</i>}</button>
+          <button class={MORE.includes(screen) || more ? 'on' : ''} onClick={() => setMore(!more)} aria-expanded={more}><I.more /><span>Více</span>{admin && applications > 0 && <i class="dot-n">{applications}</i>}</button>
         </nav>
       )}
       {more && user && (
         <>
           <div class="sheet-backdrop" onClick={() => setMore(false)} />
           <div class="more-sheet" role="dialog" aria-label="Více">
+            {link('/overovani', 'Ověřování', <I.flag />, screen === 'overovani')}
+            {link('/pokryti', 'Přehled pokrytí', <I.chart />, screen === 'pokryti')}
+            {link('/hledat', 'Hledat a nahradit', <I.search />, screen === 'hledat')}
             {link('/pomucky', 'Pomůcky', <I.bulb />, screen === 'pomucky')}
             {link('/moderatori', 'Kdo kontroluje učivo', <I.users />, screen === 'moderatori')}
             {admin && link('/vydani', 'Vydání', <I.layers />, screen === 'vydani')}

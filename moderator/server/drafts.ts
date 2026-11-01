@@ -11,6 +11,9 @@ import { isSubject, readTopic, topicExists, topicProblems, type Problem } from '
 import { HttpError, limit } from './http'
 import { GRADE_NAME, isCoreSubject, KEY_COLORS, ODB, type KeyColor } from '../../src/content/curriculum'
 import { changesTo, contentAt, getDoc, problemsAfter, publish, version, versionId, type DocChange } from './store'
+import { releaseClaims } from './claims'
+import { closeReportsOfDraft, releaseReportsOfDraft, reportsOfDraft } from './reports'
+import { dropProgress, partsMissing } from './verify'
 
 // A draft is one moderator's change of one topic (an edit, or a new topic with its place in the subject).
 // It is saved as the moderator types. "Odeslat ke kontrole" puts it in front of the other moderators: each
@@ -123,7 +126,7 @@ const empty = (d: DraftRow) => d.status === 'draft' && d.submitted_at === null &
 function pruneEmpty(userId: string, keepMs: number) {
   const cutoff = Date.now() - keepMs
   for (const d of all<DraftRow>("SELECT * FROM drafts WHERE user_id = ? AND status = 'draft' AND submitted_at IS NULL AND kind = 'edit' AND updated_at < ?", userId, cutoff)) {
-    if (empty(d) && !one('SELECT 1 FROM reviews WHERE draft_id = ?', d.id)) run('DELETE FROM drafts WHERE id = ?', d.id)
+    if (empty(d) && !one('SELECT 1 FROM reviews WHERE draft_id = ?', d.id)) { releaseReportsOfDraft(d.id, d.user_id); run('DELETE FROM drafts WHERE id = ?', d.id) }
   }
 }
 
@@ -250,6 +253,8 @@ export function getDraft(s: Session, id: unknown) {
   return {
     draft: view(d, who), topic: data.topic, after: data.after ?? null, subject: founds(d, data) ? data.subject! : null, base, published: now ?? null, publishedVersion: versionId(key) ?? null,
     reviews: reviewsOf(d, who), problems: d.status === 'draft' || d.status === 'review' ? problemsOf(d, data) : [],
+    /** Pupils' reports this change fixes (closed on their own when it is published). */
+    reports: s.via === 'cookie' ? reportsOfDraft(d.id) : [],
   }
 }
 
@@ -269,7 +274,7 @@ function insertDraft(s: Session, kind: 'edit' | 'new', g: string, sub: string, t
   return id
 }
 
-const mineFor = (s: Session, g: string, sub: string, id: string) =>
+export const mineFor = (s: Session, g: string, sub: string, id: string) =>
   one<DraftRow>("SELECT * FROM drafts WHERE user_id = ? AND grade = ? AND subject = ? AND topic_id = ? AND status IN ('draft', 'review') ORDER BY updated_at DESC", s.user.id, g, sub, id)
 
 export function createDraft(s: Session, body: Record<string, unknown>) {
@@ -324,6 +329,7 @@ export function deleteDraft(s: Session, id: unknown, ip: string) {
   if (d.user_id !== s.user.id && !isAdmin(s)) throw new HttpError(403, 'Smazat smí jen autor.')
   // Only work in progress: anything that went through review keeps its record (reviews, decisions).
   if (d.status !== 'draft') throw new HttpError(409, d.status === 'review' ? 'Návrh je v kontrole. Nejdřív ho vrať do rozpracovaných.' : 'Vyřízený návrh zůstává v historii.')
+  releaseReportsOfDraft(d.id, d.user_id)
   run('DELETE FROM drafts WHERE id = ?', d.id)
   audit('draft.deleted', s.user.id, { draft: d.id, topic: `${d.grade}/${d.subject}/${d.topic_id}` }, ip)
 }
@@ -584,8 +590,12 @@ function publishDraft(d: DraftRow, data: DraftData, approvers: string[], by: str
     if (run("UPDATE drafts SET status = 'published', decided_at = ?, decided_by = ?, release_id = ? WHERE id = ? AND status = 'review' AND rev = ?", Date.now(), by, r.release, d.id, d.rev).changes !== 1) {
       throw new HttpError(409, 'Návrh se mezitím změnil.', 'stale')
     }
+    closeReportsOfDraft(d.id, d.user_id, r.release)
   })
   audit('draft.published', by, { draft: d.id, release: r.release, topic: `${d.grade}/${d.subject}/${d.topic_id}`, approvedBy: approvers }, ip)
+  // Published after review = verified: whoever was checking the topic is done.
+  dropProgress(key)
+  releaseClaims('topic', [`${d.grade}/${d.subject}/${d.topic_id}`])
   return r.release
 }
 
@@ -627,7 +637,7 @@ export function rollbackDraft(s: Session, versionIdValue: unknown, ip: string) {
   if (!topicExists(g, sub, id)) throw new HttpError(409, 'Téma už v učivu není.')
   const mine = mineFor(s, g, sub, id)
   if (mine && !empty(mine)) throw new HttpError(409, 'U tohoto tématu už máš rozpracovaný návrh. Dokonči ho nebo ho smaž.')
-  if (mine) run('DELETE FROM drafts WHERE id = ?', mine.id)
+  if (mine) { releaseReportsOfDraft(mine.id, mine.user_id); run('DELETE FROM drafts WHERE id = ?', mine.id) }
   const draft = insertDraft(s, 'edit', g, sub, topic, { base: versionId(topicKey(g, sub, id)), rollbackOf: v.version.id, note: `Návrat k verzi ${v.version.n}` })
   audit('draft.rollback', s.user.id, { draft, version: v.version.id }, ip)
   return getDraft(s, draft)
@@ -681,6 +691,7 @@ export function publishUnverified(s: Session, body: Record<string, unknown>, ip:
       if (run("UPDATE drafts SET status = 'published', decided_at = ?, decided_by = ?, release_id = ?, decision_note = 'neověřeno' WHERE id = ? AND status IN ('draft', 'review') AND rev = ?", now, s.user.id, r.release, d.id, d.rev).changes !== 1) {
         throw new HttpError(409, 'Některý návrh se mezitím změnil. Zkus to znovu.', 'stale')
       }
+      closeReportsOfDraft(d.id, d.user_id, r.release)
     }
   })
   audit('drafts.published-unverified', s.user.id, { release: r.release, drafts: drafts.map((d) => d.id), topics: drafts.map((d) => `${d.grade}/${d.subject}/${d.topic_id}`) }, ip)
@@ -697,9 +708,14 @@ export function verifyTopic(s: Session, body: Record<string, unknown>, ip: strin
   const { topic, version: v } = readTopic(g, sub, id)
   if (body.version !== v) throw new HttpError(409, 'Téma se mezitím změnilo. Načti ho znovu a zkontroluj aktuální verzi.', 'stale')
   if (topic.verified) throw new HttpError(409, `Téma už ověřil(a) ${topic.verified.by}.`)
+  // Verified means gone through: every explanation and question ticked off (verify.ts).
+  const left = partsMissing(s.user.id, topicKey(g, sub, id), topic)
+  if (left) throw new HttpError(409, `Nejdřív projdi a odškrtni všechna vysvětlení a otázky (zbývá ${left}).`, 'incomplete', { left })
   limit(`verify:${s.user.id}`, 120, 10 * MINUTE)
   const verified: Verified = { by: s.user.name, at: today() }
   const r = publish([{ key: topicKey(g, sub, id), data: { ...topic, verified } }], { userId: s.user.id, reason: 'change', approvedBy: [s.user.id], note: 'Ověřeno' })
   audit('topic.verified', s.user.id, { topic: `${g}/${sub}/${id}`, release: r.release }, ip)
+  dropProgress(topicKey(g, sub, id))
+  releaseClaims('topic', [`${g}/${sub}/${id}`])
   return { verified, release: r.release, version: r.versions[topicKey(g, sub, id)] }
 }

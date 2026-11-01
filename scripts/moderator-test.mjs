@@ -497,7 +497,34 @@ try {
   const editing = (await admin.api('POST', '/api/drafts', { kind: 'edit', grade: 'odb', subject: 'ai-predmet', topicId: 'ai-prvni' })).body
   const t1 = await topicNow('odb', 'ai-predmet', 'ai-prvni')
   check((await eva.api('POST', '/api/content/verify', { grade: 'odb', subject: 'ai-predmet', topicId: 'ai-prvni', version: t1.version - 1 })).status === 409, 'verifying an older version than the published one is refused')
+  // Verifying is going through every part: ticks per moderator, "Beru si to", the queue.
+  const ai1 = 'odb/ai-predmet/ai-prvni'
+  const prog = (who, body) => who.api(body ? 'PUT' : 'GET', `/api/verify/progress/${ai1}`, body)
+  const parts = [...t1.topic.explanations.map((_, i) => `ex:${i}`), ...t1.topic.questions.map((_, i) => `q:${i}`)]
+  check((await prog(eva)).body.done.length === 0 && (await prog(eva)).body.total === parts.length, 'verifying starts with nothing gone through')
+  const early = await eva.api('POST', '/api/content/verify', { grade: 'odb', subject: 'ai-predmet', topicId: 'ai-prvni', version: t1.version })
+  check(early.status === 409 && early.body.code === 'incomplete' && early.body.left === parts.length, 'a topic cannot be verified before every part is ticked off')
+  check((await prog(eva, { parts: ['nope'] })).status === 400, 'an unknown part is refused')
+  check((await prog(eva, { parts: parts.slice(0, 2), done: true })).body.done.length === 2 && (await prog(admin)).body.done.length === 0, 'ticks belong to the moderator who made them')
+  check((await eva.api('POST', '/api/claims', { kind: 'topic', ref: ai1 })).status === 200, 'a moderator takes an unverified topic')
+  const taken = await admin.api('POST', '/api/claims', { kind: 'topic', ref: ai1 })
+  check(taken.status === 409 && taken.body.code === 'claimed' && taken.body.claim.name === 'Eva Učitelka', "someone else's claim stops a second one and says whose")
+  check((await eva.api('POST', '/api/claims', { kind: 'topic', ref: 'odb/ai-predmet/neni' })).status === 404 && (await eva.api('POST', '/api/claims', { kind: 'x', ref: ai1 })).status === 400, 'only existing things can be taken')
+  const evaQueue = (await eva.api('GET', '/api/verify/queue')).body
+  check(evaQueue.topics[0].key === ai1 && evaQueue.topics[0].claim?.name === 'Eva Učitelka' && evaQueue.topics[0].progress?.done === 2, 'the verification queue starts with what I took and started')
+  check((await admin.api('GET', '/api/verify/queue?grade=odb&subject=ai-predmet')).body.topics.map((t) => t.key).join() === `odb/ai-predmet/ai-druhe,${ai1}`, "the queue filters by subject and puts others' claims last")
+  await eva.page.goto(`${BASE}/ucivo/odb/ai-predmet/ai-druhe`)
+  await eva.page.locator('.v-tick').first().waitFor()
+  const verifyBtn = eva.page.locator('.verify-box').getByRole('button', { name: 'Ověřit' })
+  const ticks = await eva.page.locator('.v-tick').count()
+  check(ticks === parts.length && await verifyBtn.isDisabled(), 'every explanation and question has a tick; "Ověřit" waits for all of them')
+  for (let i = 0; i < ticks; i++) { await eva.page.locator('.v-tick').nth(i).click(); await eva.page.locator('.v-tick.on').nth(i).waitFor() }
+  check(await verifyBtn.isEnabled() && (await eva.page.locator('.vb-progress small').textContent()).includes(`${ticks} z ${ticks}`), 'ticking everything off opens "Ověřit"')
+  await eva.page.goto(`${BASE}/overovani`)
+  check(await eva.page.locator('.vq-row').first().waitFor({ timeout: 5000 }).then(async () => (await eva.page.locator('.vq-row').first().textContent()).includes('Moje'), () => false), 'the queue screen starts with my topic')
+  await prog(eva, { parts, done: true })
   const ver = await eva.api('POST', '/api/content/verify', { grade: 'odb', subject: 'ai-predmet', topicId: 'ai-prvni', version: t1.version })
+  check(!(await admin.api('GET', '/api/claims')).body.some((x) => x.ref === ai1), 'verifying releases the claim')
   const t2 = await topicNow('odb', 'ai-predmet', 'ai-prvni')
   check(ver.status === 200 && t2.topic.verified?.by === 'Eva Učitelka' && /^\d{4}-\d{2}-\d{2}$/.test(t2.topic.verified.at), 'a moderator verifies a topic: who and when')
   check((await eva.api('POST', '/api/content/verify', { grade: 'odb', subject: 'ai-predmet', topicId: 'ai-prvni', version: t2.version })).status === 409, 'a verified topic cannot be verified again')
@@ -593,6 +620,87 @@ try {
   await eva.page.getByLabel('Kdo jsem').fill('Učitelka matematiky a fyziky')
   await eva.page.getByRole('button', { name: 'Uložit profil' }).click()
   check(await eva.page.getByText('Profil uložen').waitFor({ timeout: 5000 }).then(() => true, () => false) && (await eva.api('GET', '/api/me/profile')).body.headline === 'Učitelka matematiky a fyziky', 'the profile is edited in Účet')
+
+  const evaName = (await eva.api('GET', '/api/session')).body.user.name
+  // ——— Several pupils report the same mistake: one card; "Opravit" fixes them in a draft, publishing closes them ———
+  await report(rp)
+  await report({ ...rp, note: 'Taky si myslím.', reason: 'typo' })
+  const same = (await eva.api('GET', `/api/reports?topic=${rp.topic}`)).body
+  await eva.page.goto(`${BASE}/hlaseni?tema=${rp.topic}`)
+  check(await eva.page.locator('.report', { hasText: '2× nahlášeno' }).waitFor({ timeout: 5000 }).then(() => true, () => false) && await eva.page.locator('.report').count() === 1, 'the same mistake reported twice is one card')
+  const otherReport = open.find((r) => r.topic !== rp.topic)
+  check((await eva.api('POST', '/api/reports/fix', { ids: [same[0].id, otherReport.id] })).status === 400, 'reports of two topics are not fixed in one draft')
+  const fx = await eva.api('POST', '/api/reports/fix', { ids: same.map((r) => r.id) })
+  const fd = (await eva.api('GET', `/api/drafts/${fx.body.draft}`)).body
+  check(fx.status === 200 && fd.draft.kind === 'edit' && fd.reports.length === 2, '"Opravit" opens a draft that knows which reports it fixes')
+  const taken2 = await admin.api('POST', '/api/reports/fix', { ids: [same[0].id] })
+  check(taken2.status === 409 && taken2.body.error.includes(evaName), "somebody else's fix of a report stays theirs")
+  const fixing = (await admin.api('GET', `/api/reports?topic=${rp.topic}`)).body
+  check(fixing.length === 2 && fixing.every((r) => r.fix?.draft === fx.body.draft && r.fix.author.name === evaName && r.claim?.name === evaName), 'others see the reports are being fixed, and by whom')
+  await eva.page.goto(`${BASE}/navrh/${fx.body.draft}?hlaseni=${same[0].id}`)
+  check(await eva.page.locator('.ed-reports', { hasText: 'Opravuješ 2 hlášení' }).waitFor({ timeout: 5000 }).then(() => true, () => false) && await eva.page.locator('.ed-reports').getByText('Taky si myslím.').isVisible(), 'the editor pins the reports being fixed')
+  const fixedTopic = structuredClone(fd.topic)
+  fixedTopic.explanations[0].blocks[1].text += ' Opraveno podle hlášení.'
+  check((await eva.api('PUT', `/api/drafts/${fx.body.draft}`, { topic: fixedTopic, rev: fd.draft.rev })).status === 200, 'the fix is saved')
+  await eva.page.goto(`${BASE}/hlaseni`)
+  check((await eva.api('POST', `/api/drafts/${fx.body.draft}/submit`, {})).status === 200, 'the fix is sent for review')
+  check((await admin.api('POST', `/api/drafts/${fx.body.draft}/review`, { verdict: 'comment', body: 'Díky za opravu!' })).status === 200, 'a reviewer writes to the author')
+  const inbox1 = (await eva.api('GET', '/api/inbox')).body
+  check(inbox1.items.some((i) => i.kind === 'comment' && i.by === 'Ada Správcová' && i.text === 'Díky za opravu!' && !i.seen), '"Na mně" shows a message about my change')
+  const fixRev = (await admin.api('GET', `/api/drafts/${fx.body.draft}`)).body.draft.rev
+  await admin.page.goto(`${BASE}/kontrola/${fx.body.draft}`)
+  check(await admin.page.locator('.banner', { hasText: 'Změna opravuje 2 hlášení' }).waitFor({ timeout: 5000 }).then(() => true, () => false), 'the reviewer sees which reports the change fixes')
+  await admin.page.keyboard.press('?')
+  check(await admin.page.getByRole('dialog', { name: 'Zkratky při kontrole' }).waitFor({ timeout: 3000 }).then(() => true, () => false), '"?" lists the keyboard shortcuts of the review')
+  await admin.page.keyboard.press('Escape')
+  const fixPub = await admin.api('POST', `/api/drafts/${fx.body.draft}/review`, { verdict: 'approve', rev: fixRev })
+  const nowFixed = (await eva.api('GET', `/api/reports?status=closed&topic=${rp.topic}`)).body.filter((r) => same.some((x) => x.id === r.id))
+  check(fixPub.body.released > 0 && nowFixed.length === 2 && nowFixed.every((r) => r.status === 'fixed' && r.decidedBy === evaName && r.decisionNote === `Opraveno ve vydání ${fixPub.body.released}`), 'publishing the fix closes its reports as fixed, in that release')
+  check(!(await eva.api('GET', '/api/claims')).body.some((c) => same.some((x) => x.id === c.ref)), 'closing the reports releases their claims')
+  const inbox2 = (await eva.api('GET', '/api/inbox')).body
+  check(inbox2.items.some((i) => i.kind === 'published' && i.by === 'Ada Správcová') && inbox2.unread >= 2, '"Na mně" says my change was published')
+  await report({ ...rp, note: 'Ještě něco.' })
+  const inbox3 = (await eva.api('GET', '/api/inbox')).body
+  check(inbox3.items.some((i) => i.kind === 'report' && i.text === 'Ještě něco.'), '"Na mně" shows new reports about a topic I wrote')
+  check((await eva.api('POST', '/api/inbox/seen', { draft: fx.body.draft })).status === 200 && (await eva.api('GET', '/api/inbox')).body.items.filter((i) => i.href === `/kontrola/${fx.body.draft}`).every((i) => i.seen), 'opening a change marks its news as seen')
+  await eva.page.goto(`${BASE}/na-mne`)
+  const unreadNow = (await eva.api('GET', '/api/inbox/counts')).body.unread
+  check(await eva.page.locator('.inbox-list li.new', { hasText: 'Nové hlášení od žáka' }).waitFor({ timeout: 5000 }).then(() => true, () => false) && unreadNow > 0 && (await eva.page.locator('.top .tabs').textContent()).includes(`Na mně · ${unreadNow}`), 'the "Na mně" screen lists what is new, the tab counts it')
+  await eva.page.getByRole('button', { name: 'Označit vše jako přečtené' }).click()
+  check(await eva.page.waitForFunction(() => !document.querySelector('.inbox-list li.new'), null, { timeout: 5000 }).then(() => true, () => false) && (await eva.api('GET', '/api/inbox/counts')).body.unread === 0, 'everything is marked as seen at once')
+  const lastReport = (await eva.api('GET', `/api/reports?topic=${rp.topic}`)).body
+  check((await eva.api('POST', '/api/reports/update', { ids: lastReport.map((r) => r.id), status: 'dismissed', note: 'Je to správně.' })).status === 200 && (await eva.api('GET', `/api/reports?topic=${rp.topic}`)).body.length === 0, 'several reports are closed at once')
+
+  // ——— Saved replies ———
+  const sr = await eva.api('POST', '/api/me/replies', { kind: 'report', text: 'Učivo je správně, otázka sedí.' })
+  check(sr.status === 200 && (await eva.api('POST', '/api/me/replies', { kind: 'report', text: 'Učivo je správně, otázka sedí.' })).body.id === sr.body.id, 'a saved reply is kept once')
+  check((await eva.api('GET', '/api/me/replies?kind=report')).body.length === 1 && (await admin.api('GET', '/api/me/replies?kind=report')).body.length === 0, 'saved replies are personal')
+  check((await eva.api('POST', '/api/me/replies', { kind: 'spam', text: 'x' })).status === 400 && (await eva.api('DELETE', `/api/me/replies/${sr.body.id}`)).status === 200 && (await eva.api('GET', '/api/me/replies?kind=report')).body.length === 0, 'saved replies are checked and deleted')
+
+  // ——— Search in the text, and one replacement in many topics ———
+  await fetch(`${BASE}/api/search?q=zahrivani`)
+  const t0 = performance.now()
+  await fetch(`${BASE}/api/search?q=${encodeURIComponent('dělitel')}`)
+  console.log(`  (loose search over the whole content: ${Math.round(performance.now() - t0)} ms)`)
+  const found = await (await fetch(`${BASE}/api/search?q=${encodeURIComponent('PODLE HLASENI')}`)).json()
+  check(found.topics.length === 1 && found.topics[0].key === rp.topic && found.topics[0].hits[0].match === 'podle hlášení' && found.topics[0].hits[0].place.startsWith('Vysvětlení 1'), 'the search finds text in any topic, regardless of case and diacritics')
+  check((await (await fetch(`${BASE}/api/search?q=PODLE%20HLASENI&exact=1`)).json()).topics.length === 0 && (await fetch(`${BASE}/api/search?q=x`)).status === 400, 'exact search, and a too short query is refused')
+  check((await eva.api('POST', '/api/replace', { find: 'podle hlášení.', replace: 'podle hlášení.', topics: [rp.topic] })).status === 400 && (await fetch(`${BASE}/api/replace`, { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: BASE }, body: '{}' })).status === 401, 'replacing needs a moderator and a different text')
+  const rep = await eva.api('POST', '/api/replace', { find: 'podle hlášení.', replace: 'podle hlášení!', topics: [rp.topic, 'z6/matematika/neni-to'], submit: true })
+  const repOk = rep.body.results.find((r) => r.key === rp.topic)
+  const repDraft = repOk?.draft && (await eva.api('GET', `/api/drafts/${repOk.draft}`)).body
+  check(rep.status === 200 && repOk.replaced === 1 && repOk.submitted && repDraft.draft.status === 'review' && JSON.stringify(repDraft.topic).includes('podle hlášení!') && rep.body.results.find((r) => r.key !== rp.topic).error, 'a replacement becomes a draft sent for review; missing topics say why')
+  await eva.page.goto(`${BASE}/hledat?q=podle%20hlaseni`)
+  check(await eva.page.locator('.sr-topic mark', { hasText: 'podle hlášení' }).waitFor({ timeout: 5000 }).then(() => true, () => false), 'the search screen shows the matches')
+  await eva.api('POST', `/api/drafts/${repOk.draft}/withdraw`, {})
+  await eva.api('DELETE', `/api/drafts/${repOk.draft}`)
+
+  // ——— How far the content is ———
+  const cov = (await admin.api('GET', '/api/coverage')).body
+  const z6m = cov.find((r) => r.grade === 'z6' && r.subject === 'matematika')
+  check(z6m && z6m.topics > 5 && z6m.verified >= 1 && z6m.verified <= z6m.topics && (await fetch(`${BASE}/api/coverage`)).status === 401, 'the coverage lists topics and checked ones per subject, for moderators')
+  await admin.page.goto(`${BASE}/pokryti`)
+  check(await admin.page.locator('.coverage table').first().waitFor({ timeout: 5000 }).then(() => true, () => false), 'the coverage screen shows the table')
 
   check([admin, mod, teacher, eva, janaDev].every((d) => !d.errors.length), 'no errors in the pages')
 } finally {

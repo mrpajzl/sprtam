@@ -44,6 +44,11 @@ export const I = {
   phone: P('M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM11 18h2'),
   bulb: P('M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1.1 2V16h5v-.2c.1-.8.5-1.5 1.1-2A6 6 0 0 0 12 3z'),
   layers: P('M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5'),
+  flag: P('M5 21V4M5 4h11l-2 4 2 4H5'),
+  chart: P('M4 20h16M7 16v-5M12 16V7M17 16v-8'),
+  swap: P('M4 8h13l-3-3M20 16H7l3 3'),
+  bell: P('M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 21h4'),
+  wrench: P('M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z'),
 }
 
 export function Modal({ title, onClose, children, wide, actions }: { title: string; onClose: () => void; children: ComponentChildren; wide?: boolean; actions?: ComponentChildren }) {

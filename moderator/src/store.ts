@@ -2,6 +2,7 @@ import { useEffect, useState } from 'preact/hooks'
 import { get } from './api'
 import type { TopicFile } from '../../src/content/types'
 import type { ContentIndex } from '../server/content'
+import type { ReportView } from './screens/Reports'
 import { setVocational } from '../../src/content/curriculum'
 
 // The content catalogue (titles of every topic) and who is working on what – loaded once per visit
@@ -56,6 +57,8 @@ export interface DraftFull {
   subject: { name: string; emoji: string; color: string } | null
   base: TopicFile | null; published: TopicFile | null; publishedVersion: number | null
   reviews: ReviewView[]; problems: Problem[]
+  /** Pupils' reports this change fixes (closed on their own when it is published). */
+  reports: ReportView[]
 }
 
 export const STATUS: Record<DraftStatus, string> = {
