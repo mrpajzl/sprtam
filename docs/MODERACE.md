@@ -103,7 +103,7 @@ Pravidla pro obsah: [CONTENT.md](CONTENT.md). Editor je hlídá za tebe a ukazuj
 ## Pro správce
 
 - **Žádosti** o moderátorství z formuláře `/zapojit-se` ([výše](#žádosti-o-moderátorství)).
-- **Moderátoři** (jen pro roli *Správce*): pozvat moderátora, změnit roli, vypnout účet, poslat odkaz na nový klíč, zrušit všechny klíče (ztracené nebo ukradené zařízení), odhlásit ze všech zařízení. Je tam i záznam událostí: přihlášení včetně neúspěšných, pozvánky a odeslané návrhy.
+- **Moderátoři** (jen pro roli *Správce*): pozvat moderátora, změnit roli, vypnout účet, poslat odkaz na nový klíč, zrušit všechny klíče (ztracené nebo ukradené zařízení), odhlásit ze všech zařízení. Je tam i záznam událostí: přihlášení včetně neúspěšných, pozvánky, návrhy, kontroly, zveřejnění a další. Jde filtrovat podle toho, kdo akci udělal (i „bez účtu“ – CLI, uchazeči, neznámé klíče), podle druhu události (celá skupina nebo jedna akce) a hledáním v podrobnostech a IP adrese.
 - Každá změna v této části chce **čerstvé potvrzení klíčem** (přihlášení v posledních 15 minutách). Aplikace si o něj sama řekne.
 - Aspoň jeden aktivní správce musí zůstat vždy. Sám sebe správce vypnout nemůže.
 - **Vydání:**

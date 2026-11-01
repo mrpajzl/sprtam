@@ -206,7 +206,7 @@ on('GET', '/api/admin/applications', (req) => { requireAdmin(req); return listAp
 on('GET', '/api/admin/applications/counts', (req) => { requireAdmin(req); return applicationCounts() })
 on('POST', '/api/admin/applications/:id/approve', (req, _res, p, ip) => approveApplication(requireAdmin(req, true), p[0], ip))
 on('POST', '/api/admin/applications/:id/reject', async (req, _res, p, ip) => rejectApplication(requireAdmin(req, true), p[0], await readJson(req), ip))
-on('GET', '/api/admin/audit', (req) => { requireAdmin(req); return auditLog(query(req, 'before')) })
+on('GET', '/api/admin/audit', (req) => { requireAdmin(req); return auditLog(query(req, 'before'), query(req, 'user'), query(req, 'action'), query(req, 'q')) })
 on('POST', '/api/admin/check', (req) => { requireRecent(requireAdmin(req)); return { ok: true } })
 on('GET', '/api/admin/releases', (req) => { requireAdmin(req); const b = query(req, 'before'); return releases(b ? Number(b) : undefined) })
 on('POST', '/api/admin/releases/:id/restore', async (req, _res, p, ip) => restoreRelease(requireAdmin(req, true), p[0], await readJson(req), ip))
