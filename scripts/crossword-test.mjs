@@ -1,5 +1,5 @@
 // Matematické křížovky in a real browser: the level page, every level solved by touch (one wrong tile first, a hint,
-// tapping a tile back), the result and the record, and the keyboard on a computer.
+// tapping a tile back), dragging a tile, the result and the record, and the keyboard on a computer.
 //   node scripts/crossword-test.mjs [base]   (default http://127.0.0.1:5179, the dev server: npx vite --port 5179 --host 127.0.0.1)
 // SHOTS=<dir> saves screenshots there (light and dark).
 import { chromium } from 'playwright-core'
@@ -129,6 +129,18 @@ await d.waitForSelector('.cw-bank')
   const { blanks } = await solve(d)
   await d.keyboard.press('h')
   check((await d.locator('.cw-hint small').textContent()) === '1', 'H gives a hint on a computer')
+  // Drag a tile into the first empty cell with the mouse.
+  {
+    const b = blanks.find((x) => x.key !== blanks[0].key) ?? blanks[0]
+    const from = await tile(b.v, d).boundingBox(), to = await cell(b.key, d).boundingBox()
+    await d.mouse.move(from.x + from.width / 2, from.y + from.height / 2)
+    await d.mouse.down()
+    await d.mouse.move(from.x + 40, from.y - 40, { steps: 4 })
+    check(await d.locator('.cw-ghost').isVisible(), 'a dragged tile follows the pointer')
+    await d.mouse.move(to.x + to.width / 2, to.y + to.height / 2, { steps: 8 })
+    await d.mouse.up()
+    check((await cell(b.key, d).textContent()).replace('−', '-') === String(b.v), 'a tile dropped on a cell fills it')
+  }
   // Type the numbers of the other cells; arrows and a click select the cell.
   for (const b of blanks) {
     if ((await cell(b.key, d).textContent()) !== '') continue
