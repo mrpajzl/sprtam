@@ -1,12 +1,13 @@
 import { subjectMeta, type KeyColor } from './content/curriculum'
 import type { GradeId, SubjectId, YearId } from './content/types'
 import { ELEMENTS_PATH } from './chem'
+import { CROSSWORD_PATH } from './crossword'
 import { EXAM } from './exam'
 import { MAPS_PATH } from './maps'
 import { LANGS, vocabPath } from './vocab/langs'
 import type { Level, VocabLang } from './vocab/types'
 
-// Learning games and other extras beside the topics (Slepá mapa, Periodická tabulka, slovíčka, přijímačky).
+// Learning games and other extras beside the topics (Slepá mapa, Periodická tabulka, Matematické křížovky, slovíčka, přijímačky).
 // One registry, and each extra says where it belongs: the subjects it is part of, optionally only some grades.
 // Every screen that offers extras asks the registry instead of linking them by hand: the home screen (the
 // pupil's school), a grade, a subject and the Hry tab (games) or Učivo (preparation). A new game is one entry
@@ -39,6 +40,7 @@ const range = (ls: Level[]) => (ls.length > 1 ? `${ls[0]}–${ls[ls.length - 1]}
 export function extras(levels: (lang: VocabLang) => Level[]): Extra[] {
   return [
     { id: 'slepa-mapa', kind: 'hra', name: 'Slepá mapa', hint: 'kraje, Evropa, svět', emoji: '🗺️', c: 'teal', path: MAPS_PATH, s: ['zemepis', 'vlastiveda'] },
+    { id: 'matematicke-krizovky', kind: 'hra', name: 'Matematické křížovky', hint: 'od sčítání do 10 po záporná čísla', emoji: '🔢', c: subjectMeta('matematika').c, path: CROSSWORD_PATH, s: ['matematika'] },
     { id: 'periodicka-tabulka', kind: 'hra', name: 'Periodická tabulka', hint: 'prvky, značky a hra na slepou tabulku', emoji: '🧪', c: 'green', path: ELEMENTS_PATH, s: ['chemie'] },
     ...LANGS.flatMap((l): Extra[] => {
       const ls = levels(l.id)

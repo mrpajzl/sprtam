@@ -23,14 +23,14 @@ Dole je vždy po ruce lišta se čtyřmi tlačítky:
 
 - **Dnes**: tvůj den a tvoje škola. Displej se sérií dní, karta **Teď na řadě** s jedinou věcí, kterou je teď nejlepší udělat (rozdělané kolo, Dnešní opakování, Sešit chyb, nebo doporučené téma; ostatní jsou pod ní jako malá tlačítka *Pak*), plány před písemkou, **předměty tvého ročníku**, hry k nim a připnutá témata. Napoprvé se zeptá *Kam chodíš do školy?* Stačí klepnout na třídu, nebo *Jen se rozhlížím*.
 - **Učivo**: všechny třídy ZŠ a ročníky SŠ, obory odborných škol, waldorfský plán a příprava na přijímačky. Nahoře je hledání (kdekoli ho otevře i klávesa `/`).
-- **Hry**: Slepá mapa, Periodická tabulka a slovíčka všech jazyků. Nahoře ty, které patří k tvým předmětům.
+- **Hry**: Slepá mapa, Periodická tabulka, Matematické křížovky a slovíčka všech jazyků. Nahoře ty, které patří k tvým předmětům.
 - **Hledat**: hledání ve všech tématech a slovíčkách (kdekoli ho otevře i klávesa `/`).
 
 Vpravo nahoře na Dnes, Učivu a Hrách je tlačítko **Já** s tvým obrázkem a třídou. Otevře panel, kde změníš třídu, obor, druhý jazyk a způsob výuky, přepneš, kdo se učí, a najdeš Přehled, Sešit chyb, Plán před písemkou, přenos pokroku, nastavení a o aplikaci. Bez JavaScriptu je to stránka [sprtam.cz/ja](https://sprtam.cz/ja).
 
 **Moje škola** (tlačítko Já nahoře) je třída nebo ročník, na SŠ i obor, u ročníků s druhým cizím jazykem jazyk, který se učíš (ostatní dva se pak na úvodní obrazovce neukazují), a způsob výuky (běžná nebo waldorfská škola). Pamatuje se jen v zařízení, každý profil má svou. Když si ji nevybereš, stane se tvou první třída, kterou otevřeš.
 
-Hry a příprava (přijímačky) nejsou přilepené k jedné obrazovce. Každá v seznamu [`src/games.ts`](../src/games.ts) říká, ke kterým předmětům (případně jen ke kterým ročníkům) patří, a ukáže se všude, kde ty předměty jsou: u předmětu, u ročníku, na úvodní obrazovce a v Hrách. Slepá mapa patří k zeměpisu a vlastivědě, Periodická tabulka k chemii, slovíčka k jazyku a přijímačky k češtině a matematice v 9. třídě. U celého ročníku se slovíčka víc jazyků spojí do jednoho tlačítka *Slovíčka*.
+Hry a příprava (přijímačky) nejsou přilepené k jedné obrazovce. Každá v seznamu [`src/games.ts`](../src/games.ts) říká, ke kterým předmětům (případně jen ke kterým ročníkům) patří, a ukáže se všude, kde ty předměty jsou: u předmětu, u ročníku, na úvodní obrazovce a v Hrách. Slepá mapa patří k zeměpisu a vlastivědě, Periodická tabulka k chemii, Matematické křížovky k matematice, slovíčka k jazyku a přijímačky k češtině a matematice v 9. třídě. U celého ročníku se slovíčka víc jazyků spojí do jednoho tlačítka *Slovíčka*.
 
 ## Waldorfská škola
 
@@ -79,6 +79,14 @@ Hra na [sprtam.cz/periodicka-tabulka](https://sprtam.cz/periodicka-tabulka) (v H
 - **Kov, nebo nekov?**: řekni, jestli je prvek kov, polokov, nebo nekov (bez polonia a astatu, které různé učebnice řadí různě, a bez supertěžkých prvků od rutherfordia, o kterých se to neví).
 
 Špatné odpovědi se nabízejí ty, které se snadno spletou: značky se stejným začátkem, podobné názvy, sousedé v tabulce. Po každé odpovědi hra ukáže, co si o prvku zapamatovat (značka, protonové číslo, kategorie, perioda a skupina). Ve slepé tabulce máš na každý prvek tři pokusy jako ve Slepé mapě: napoprvé je za celý bod, napodruhé za půl a po třetí chybě ti hra prvek ukáže; když klepneš vedle, řekne ti, co je na tom místě. Na konci uvidíš hvězdičky a prvky, které ti nešly, a můžeš si procvičit jen je. Nejlepší výsledek každé hry zůstává jen v zařízení (`sprtam:prvky`, viz [Soukromí](SOUKROMI.md)). Celá tabulka se na telefonu posouvá do strany, aby šla pole pohodlně trefit. Hra funguje i offline.
+
+## Matematické křížovky
+
+Hra na [sprtam.cz/matematicke-krizovky](https://sprtam.cz/matematicke-krizovky) (v Hrách a u matematiky). Křížovka jsou příklady „a ○ b = c“ vodorovně i svisle, které se kříží ve společných číslech. Některá čísla chybí a doplníš je z nabídky dole: klepneš na prázdné políčko a pak na číslo (nebo rovnou na číslo, jde do vybraného políčka). Vyplněné políčko klepnutím vyprázdníš. Jakmile je příklad celý vyplněný, zezelená, nebo zčervená, když neplatí. Žárovka nahoře vyplní jedno políčko správně. Na počítači čísla píšeš (Enter, když je číslo začátkem jiného), šipky přesouvají výběr, Backspace políčko vyprázdní a H je nápověda.
+
+Úrovně, aby křížovky šly všem dětem: **sčítání a odčítání do 10** (1. třída, 3 příklady), **do 20** (1.–2. třída), **do 100** (2.–3. třída), **malá násobilka** (3.–4. třída, násobení a dělení do 100), **všechny čtyři počty** (4.–5. třída), **počítání do 1000** (5.–6. třída, násobení a dělení jednociferným číslem) a **záporná čísla** (od 7. třídy, celá čísla od −100 do 100, 8 příkladů). Úroveň pro tvou třídu je označená *pro tebe*. Vyšší úrovně mají víc příkladů a v nabídce i čísla navíc, která nikam nepatří.
+
+Každá křížovka se vygeneruje znovu ([`src/crossword`](../src/crossword/index.ts)) a vždy jde vyřešit krok za krokem: pořád je nějaký příklad, ve kterém chybí jen jedno číslo. Řešení je proto jediné. Body jsou za příklady, které platily hned, když jsi je poprvé vyplnil (příklad s nápovědou se nepočítá). Nejlepší výsledek každé úrovně zůstává jen v zařízení (`sprtam:krizovky`, viz [Soukromí](SOUKROMI.md)). Hra funguje i offline.
 
 ## Režimy procvičování
 

@@ -59,6 +59,7 @@ src/
                         obrysy z Natural Earth v data/*.json (npx tsx scripts/maps-generate.ts)
   chem/                 Periodická tabulka (/periodicka-tabulka): 118 prvků (elements.ts, sdílí je widgety periodic a chem-equation),
                         sady a hry (index.ts), slepá tabulka (Table.tsx)
+  crossword/            Matematické křížovky (/matematicke-krizovky): úrovně a generátor křížovek, které jdou vyřešit krok za krokem
   quiz/                 režimy, vyhodnocení odpovědí, generátory příkladů
   games.ts              hry a příprava (mapa, tabulka, slovíčka, přijímačky) a ke kterým předmětům patří
   school.ts             Moje škola: druhý jazyk, předměty ročníku
@@ -129,6 +130,8 @@ Nové vydání učiva (schválená změna v moderaci) je na sprtam.cz do 15 seku
 | `/slepa-mapa/evropa/najdi` | Hra (`najdi`, `mesta`, `poznej`; `?vse` = celá mapa) |
 | `/periodicka-tabulka` | Periodická tabulka: prohlížení, sady prvků (`?sada=zaklad`, `zs`, `vse`), hry a seznam prvků |
 | `/periodicka-tabulka/zs/znacky` | Hra (`znacky`, `nazvy`, `najdi`, `poznej`, `druh`; `?vse` = všechny prvky sady) |
+| `/matematicke-krizovky` | Matematické křížovky: úrovně |
+| `/matematicke-krizovky/do20` | Křížovka (`do10`, `do20`, `do100`, `nasobilka`, `ctyri`, `do1000`, `zaporna`) |
 | `/waldorf`, `/waldorf/z1`, `/waldorf/z1/<epocha>` | Přístup k výuce: popis a volba, plán ročníku, epocha s tématy |
 | `/waldorf/z1/<epocha>/test` | Procvičení všech témat epochy |
 | `/#/p/<kód>`, `/#/spojit/<kód>`, `/#/presun/<kód>` | Import pokroku, párování, přechod ze staré domény (za `#`, server je nevidí) |
@@ -240,6 +243,7 @@ Skripty v `scripts/` se spouštějí ručně, žádné automatické CI zatím ne
 | `scripts/usability-flow.mjs` | totéž v prohlížeči: nastavení čtení, klávesy, rozdělané kolo, simulace, pracovní list a tisk, plán s kalendářem, připomínka, profily (proti běžícímu serveru, `SHOTS=1` uloží snímky) |
 | `scripts/maps-test.mjs` | Slepá mapa v prohlížeči: celá kola všech her dotykem, špatné klepnutí, výsledek a rekord, prohlížení mapy, posun a zoom myší (proti vývojovému serveru, `SHOTS=1` uloží snímky) |
 | `scripts/elements-test.mjs` | Periodická tabulka v prohlížeči: celá kola všech her dotykem s jednou chybou, výsledek, rekord a procvičení chyb, slepá tabulka na telefonu, prohlížení a sady, klávesnice a tmavý vzhled na počítači (proti vývojovému serveru, `SHOTS=1` uloží snímky) |
+| `scripts/crossword-test.mjs` | Matematické křížovky v prohlížeči: každá úroveň vyřešená dotykem (nápověda, špatné číslo, vrácení), červený příklad, výsledek a rekord, psaní čísel a tmavý vzhled na počítači (proti vývojovému serveru, `SHOTS=<složka>` uloží snímky) |
 | `scripts/selection-report-flow.mjs` | hlášení z označeného textu v prohlížeči (myš i dotyk): tlačítko pod označením, výběr zůstává, označený text dojde moderaci (spouští vlastní server, napřed `npm run build`) |
 | `scripts/report-test.mjs` | hlášení chyb přes server: kontrola, limity, přeposlání bez údajů o žákovi (spouští vlastní server a náhradu obsahové služby, napřed `npm run build`) |
 | `scripts/moderator-test.mjs` | moderace a obsahová služba: přihlášení klíčem, bezpečnostní pravidla, editor a náhled, kontrola a zveřejnění, historie a návraty, API tokeny, hlášení od žáků, zálohy (spouští vlastní server, napřed `npm run moderator:build`) |
