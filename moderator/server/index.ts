@@ -14,7 +14,7 @@ import { contentIndex, readTopic } from './content'
 import { audit, one, run } from './db'
 import {
   activeDrafts, applySuggestion, createDraft, deleteDraft, deleteReview, editReview, getDraft, getThread, listDrafts, rebaseDraft, rejectDraft, resolveReview, restoreRelease, restoreVersionNow, reviewCounts, reviewDraft, reviewQueue,
-  rollbackDraft, saveDraft, submitDraft, withdrawDraft, checkDraft, publishUnverified, verifyTopic } from './drafts'
+  rollbackDraft, saveDraft, submitDraft, withdrawDraft, checkDraft, publishUnverified, verifyTopic, unverifyTopic } from './drafts'
 import { publishWords } from './words'
 import { assertSameOrigin, clientIp, cookies, HttpError, ipKey, json, limit, readJson, SECURITY_HEADERS, SESSION_COOKIE, type Req, type Res } from './http'
 import { getProfile, listProfiles, ownProfile, profileByName, saveProfile } from './profiles'
@@ -169,6 +169,7 @@ on('POST', '/api/drafts/publish-unverified', async (req, _res, _p, ip) => publis
 // Vocabulary of other languages: published at once by an admin (moderator/server/words.ts).
 on('POST', '/api/content/words', async (req, _res, _p, ip) => publishWords(requireSession(req, tokens), await readJson(req, 4 * 1024 * 1024), ip))
 on('POST', '/api/content/verify', async (req, _res, _p, ip) => verifyTopic(requireSession(req), await readJson(req), ip))
+on('POST', '/api/content/unverify', async (req, _res, _p, ip) => unverifyTopic(requireSession(req), await readJson(req), ip))
 on('POST', '/api/drafts/:id/submit', async (req, _res, p, ip) => submitDraft(requireSession(req, tokens), p[0], await readJson(req), ip))
 on('POST', '/api/drafts/:id/checked', async (req, _res, p, ip) => checkDraft(requireSession(req, tokens), p[0], await readJson(req), ip))
 on('POST', '/api/drafts/:id/withdraw', (req, _res, p, ip) => withdrawDraft(requireSession(req, tokens), p[0], ip))
