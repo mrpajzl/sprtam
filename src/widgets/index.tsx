@@ -36,6 +36,7 @@ import memory from './memory'
 import sentence from './sentence'
 import circuit from './circuit'
 import lever from './lever'
+import forces from './forces'
 import periodic from './periodic'
 import chemEquation from './chem-equation'
 import ph from './ph'
@@ -55,7 +56,7 @@ export const WIDGET_GROUPS: { name: string; widgets: WidgetDef[] }[] = [
   { name: 'Čísla a počítání', widgets: [counter, numberLine, placeValue, column, multiply, multipleCircle, fraction, percent, clock, coins, units, primeSieve, dice, stats] },
   { name: 'Geometrie a funkce', widgets: [angle, shape, pythagoras, balance, linear, quadratic, coordinates, circle, cuboid, functions, unitCircle] },
   { name: 'Text, třídění a souvislosti', widgets: [flip, sort, gap, parts, cycle, timeline, bars, document, memory, sentence] },
-  { name: 'Fyzika a chemie', widgets: [circuit, lever, periodic, chemEquation, ph] },
+  { name: 'Fyzika a chemie', widgets: [circuit, lever, forces, periodic, chemEquation, ph] },
   { name: 'Technika a informatika', widgets: [code, binary, logicGates, subnet, resistor, gears] },
   { name: 'Ekonomika a umění', widgets: [interest, supplyDemand, color] },
 ]
