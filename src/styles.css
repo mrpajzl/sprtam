@@ -867,6 +867,54 @@ body:has(.tabbar) .toast { bottom: calc(env(safe-area-inset-bottom) + 100px); }
 .map-opts .opt[disabled] { opacity: 0.45; }
 .map-next { margin-top: 12px; }
 
+/* ── Matematické křížovky (/matematicke-krizovky, src/screens/Crossword.tsx) ── */
+.cw-example { display: flex; justify-content: center; margin: 4px 0 18px; }
+.cw-example .cw-grid { --s: 40px; }
+.cw-mine { margin-left: 8px; vertical-align: 2px; background: var(--accent-soft); color: var(--accent-ink); }
+.cw-ask { flex-direction: column; align-items: flex-start; gap: 2px; min-height: 3.4rem; margin-bottom: 8px; }
+.cw-ask b { font-size: 1.25rem; }
+.cw-board { flex: 1; min-height: 0; display: grid; place-items: center; overflow: auto; padding: 4px 0 10px; }
+.cw-grid {
+  /* Fits the screen: at most 48 px a cell, 3 px between them. */
+  --s: min(48px, calc((min(100vw, 620px) - 36px - 3px * (var(--cols) - 1)) / var(--cols)));
+  display: grid; gap: 3px;
+  grid-template-columns: repeat(var(--cols), var(--s)); grid-template-rows: repeat(var(--rows), var(--s));
+}
+.cw-cell {
+  display: grid; place-items: center; border-radius: 9px; min-width: 0;
+  font-family: var(--mono); font-weight: 800; font-size: calc(var(--s) * 0.46); line-height: 1; font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em; transition: background 0.2s, color 0.2s, box-shadow 0.15s, transform 0.12s var(--ease);
+}
+.cw-cell.mid { font-size: calc(var(--s) * 0.4); }
+.cw-cell.long { font-size: calc(var(--s) * 0.32); letter-spacing: -0.05em; }
+.cw-cell.op { color: var(--ink-2); font-size: calc(var(--s) * 0.52); }
+.cw-cell.num { background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
+.cw-cell.blank { background: var(--accent-soft); box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--accent) 45%, var(--line)); }
+button.cw-cell.blank { cursor: pointer; }
+.cw-cell.filled { background: var(--key); color: var(--accent-ink); box-shadow: inset 0 0 0 1px var(--line), 0 3px 0 var(--key-edge); }
+.cw-cell.sel { box-shadow: inset 0 0 0 3px var(--accent), 0 0 0 3px color-mix(in oklab, var(--accent) 30%, transparent); transform: scale(1.06); z-index: 1; }
+.cw-cell.ok { background: var(--ok-bg); color: var(--ok); box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--ok) 40%, transparent); }
+.cw-cell.bad { background: var(--bad-bg); color: var(--bad); box-shadow: inset 0 0 0 2px var(--bad); animation: shake 0.3s; }
+.cw-cell.sel.ok, .cw-cell.sel.bad { box-shadow: inset 0 0 0 3px var(--accent); }
+.cw-cell.hint { text-decoration: underline dotted 2px; text-underline-offset: 3px; }
+.cw-hint { position: relative; }
+.cw-hint small { position: absolute; top: 4px; right: 3px; font-family: var(--mono); font-size: 0.66rem; font-weight: 800; background: var(--accent); color: var(--on-accent); border-radius: 6px; padding: 1px 4px; }
+.cw-hint[disabled] { opacity: 0.4; }
+.cw-bank { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 6px 0 4px; }
+.cw-tile {
+  min-width: 56px; height: 56px; padding: 0 10px; border-radius: 12px;
+  font-family: var(--mono); font-size: 1.35rem; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--accent-ink);
+  background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 4px 0 var(--key-edge);
+  transition: transform 0.09s var(--ease), box-shadow 0.09s var(--ease), opacity 0.15s;
+}
+.cw-tile.long { font-size: 1.1rem; }
+.cw-tile:active { transform: translateY(3px); box-shadow: inset 0 0 0 1px var(--line), 0 1px 0 var(--key-edge); }
+.cw-tile.used { background: none; color: transparent; box-shadow: inset 0 0 0 2px var(--line); }
+.cw-tile[disabled] { pointer-events: none; }
+.cw-help { text-align: center; font-size: 0.85rem; margin-top: 10px; }
+.cw-after { text-align: center; font-size: 0.88rem; margin-top: 18px; }
+.cw-next { margin-top: 14px; }
+
 /* ── Periodická tabulka (/periodicka-tabulka, src/screens/Elements.tsx; the grid is the widget periodic's CSS) ── */
 .el-sets { margin-bottom: 4px; }
 .el-set-hint { font-size: 0.88rem; margin: 0 2px 12px; }

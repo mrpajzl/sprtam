@@ -4,6 +4,7 @@ import { approachById } from './approach'
 import { EXAM } from './exam'
 import { isMode, MAPS_PATH } from './maps'
 import { ELEMENTS_PATH, isMode as isElementsMode } from './chem'
+import { CROSSWORD_PATH } from './crossword'
 import { hasSubjectIn, isGrade } from './content/curriculum'
 import { OBOR_PATH } from './obory'
 import { decodeProgress, unpack } from './progress/code'
@@ -17,6 +18,7 @@ import { ApproachScreen } from './screens/Approach'
 import { ExamScreen } from './screens/Exam'
 import { MapGame, MapsScreen } from './screens/Maps'
 import { ElementsGame, ElementsScreen } from './screens/Elements'
+import { CrosswordGame, CrosswordScreen } from './screens/Crossword'
 import { GradeScreen, SubjectScreen } from './screens/Browse'
 import { Home } from './screens/Home'
 import { GamesScreen } from './screens/Games'
@@ -85,6 +87,11 @@ export function App() {
     if (b && isElementsMode(c)) return <ElementsGame set={b} mode={c} />
     return <><ElementsScreen /><TabBar active="games" /></>
   }
+  if (`/${a}` === CROSSWORD_PATH) {
+    // The game gets the whole screen: /matematicke-krizovky/<level>
+    if (b) return <CrosswordGame level={b} />
+    return <><CrosswordScreen /><TabBar active="games" /></>
+  }
   if (`/${a}` === MAPS_PATH) {
     // The game gets the whole screen: /slepa-mapa/<map>/<mode>
     if (b && isMode(c)) return <MapGame map={b} mode={c} />
@@ -131,7 +138,7 @@ function routeTitle([a, b, c, d]: string[]): string | null | undefined {
   if (a === 'plan') return null
   if (a === 'o-aplikaci') return ABOUT.title
   if (a === 'widgety') return 'Galerie widgetů'
-  if (a === EXAM.id || `/${a}` === MAPS_PATH || `/${a}` === ELEMENTS_PATH || approachById(a)) return null
+  if (a === EXAM.id || `/${a}` === MAPS_PATH || `/${a}` === ELEMENTS_PATH || `/${a}` === CROSSWORD_PATH || approachById(a)) return null
   if (a === 'slovicka') {
     const m = langByPath(b)
     if (m) return c ? titles.vocabLevel(c, m.title) : titles.vocab(m.title)

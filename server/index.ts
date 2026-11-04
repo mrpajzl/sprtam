@@ -10,6 +10,7 @@ import { HASH } from '../src/content/manifest'
 import { EXAM } from '../src/exam'
 import { isMode, mapById, MAPS_PATH } from '../src/maps'
 import { ELEMENTS_PATH, isMode as isElementsMode, setById } from '../src/chem'
+import { CROSSWORD_PATH, levelById as crosswordLevel } from '../src/crossword'
 import { embed, encoded, file as contentFile, pageHtml, release, startContent } from './content'
 import { render, robots, sitemap } from './pages'
 import { parseReport } from './report'
@@ -46,6 +47,8 @@ function isAppRoute(path: string) {
   if (p.length === 3 && `/${p[0]}` === MAPS_PATH) return !!mapById(p[1]) && isMode(p[2])
   // A game of Periodická tabulka: /periodicka-tabulka/zs/znacky
   if (p.length === 3 && `/${p[0]}` === ELEMENTS_PATH) return !!setById(p[1]) && isElementsMode(p[2])
+  // A crossword of Matematické křížovky: /matematicke-krizovky/do20
+  if (p.length === 2 && `/${p[0]}` === CROSSWORD_PATH) return !!crosswordLevel(p[1])
   // Practice test and the timed simulation of one part of the entrance exam: /prijimacky/matematika/test, …/simulace
   if (p.length === 3 && p[0] === EXAM.id && (p[2] === 'test' || p[2] === 'simulace')) return page(...p.slice(0, 2))
   // Practice of one epoch of a teaching approach (/waldorf/z1/<epoch>/test) or one area of the entrance exam (/prijimacky/matematika/zlomky/test)

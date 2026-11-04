@@ -115,6 +115,15 @@ await p.goto(`${BASE}/periodicka-tabulka/zaklad/najdi`)
 await p.waitForSelector('.periodic-el')
 ok(await p.locator('.periodic-el').count() === 20, 'a game of Periodická tabulka opened directly renders the app screen')
 
+// Matematické křížovky: the page is server-rendered, a crossword opens directly, an unknown level is 404.
+for (const path of ['/matematicke-krizovky', '/matematicke-krizovky/do10', '/matematicke-krizovky/zaporna']) {
+  ok((await fetch(`${BASE}${path}`)).status === 200, `${path} opens directly`)
+}
+ok((await fetch(`${BASE}/matematicke-krizovky/nic`)).status === 404 && (await fetch(`${BASE}/matematicke-krizovky/do10/nic`)).status === 404, 'unknown level of Matematické křížovky is 404')
+await p.goto(`${BASE}/matematicke-krizovky/nasobilka`)
+await p.waitForSelector('.cw-bank')
+ok(await p.locator('.cw-tile').count() > 0, 'a crossword opened directly renders the app screen')
+
 // A first visit asks for the school on the home screen; a class key makes it the pupil's.
 const fresh = await (await b.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: 'block' })).newPage()
 fresh.on('pageerror', (e) => errs.push(String(e)))
