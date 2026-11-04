@@ -1302,6 +1302,7 @@ Věta rozdělená na slova. Dítě vybere kategorii (podmět, přísudek…, slo
 
 - [`circuit`](#circuit) – Elektrický obvod
 - [`lever`](#lever) – Páka a momenty sil
+- [`forces`](#forces) – Skládání sil
 - [`periodic`](#periodic) – Periodická tabulka
 - [`chem-equation`](#chem-equation) – Vyčíslení chemické rovnice
 - [`ph`](#ph) – Stupnice pH
@@ -1376,6 +1377,47 @@ Páka na podpěře se závažími. Dítě tlačítky přidává závaží a poso
       "distance": 4
     },
     "goal": true
+  }
+}
+```
+
+<a id="forces"></a>
+
+### `forces` – Skládání sil
+
+Silový mnohoúhelník se 2–4 silami. U každé síly dítě nastaví velikost (posuvníkem nebo číslem, i zápornou) a úhel (otočným kolečkem nebo číslem); síly lze přidávat a ubírat. Tlačítky krok za krokem se síly posunou za sebe a vykreslí se výslednice R s úhlem αR. Pod obrázkem je tabulka složek Fx, Fy, jejich součty a výpočet R = √(ΣFx² + ΣFy²); uzavřený mnohoúhelník ukáže rovnováhu.
+
+**Kdy ho použít:** Technická mechanika a fyzika SŠ: skládání sil, silový trojúhelník a mnohoúhelník, výslednice, rozklad síly do složek Fx a Fy, rovnováha sil (uzavřený mnohoúhelník); fyzika 7. třída: skládání sil na jedné přímce i pod úhlem.
+
+**V otázkách:** ano – jako `"widget"` otázky typu `input` ukáže jen zadání.
+
+Živá ukázka: [/widgety/forces](https://sprtam.cz/widgety/forces)
+
+| Pole | Typ | Povinné | Popis |
+|---|---|---|---|
+| `forces` | seznam (objekt) 2–4 položek | ano | Síly na začátku (2–4). Dítě může síly přidávat a ubírat (2–4), pokud není fixed. |
+| `forces[].size` | číslo -10000–10000 | ano | Velikost síly v N (nebo kN, viz unit). Záporná velikost = síla míří opačně, tedy pod úhlem α + 180°. Nejvýš ± max. |
+| `forces[].angle` | číslo 0–360 | ano | Úhel ve stupních od kladné osy x proti směru hodinových ručiček (0° doprava, 90° nahoru, 180° doleva, 270° dolů). |
+| `max` | číslo 1–10000 | – | Největší velikost síly na posuvníku: rozsah −max až +max. Výchozí 100. |
+| `unit` | "N" \| "kN" | – | Jednotka síly: "N" (výchozí) nebo "kN". |
+| `fixed` | true / false | – | Počet sil nejde měnit (velikosti a úhly ano). |
+| `ask` | "size" \| "angle" | – | Jen v otázce: na co se ptá – "size" velikost výslednice R (výchozí), "angle" její úhel αR ve stupních (0–360°). Odpovědi se zaokrouhlují na celé číslo nebo jedno desetinné místo. |
+
+```json
+{
+  "type": "widget",
+  "widget": "forces",
+  "props": {
+    "forces": [
+      {
+        "size": 30,
+        "angle": 0
+      },
+      {
+        "size": 40,
+        "angle": 90
+      }
+    ]
   }
 }
 ```
