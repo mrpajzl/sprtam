@@ -11,7 +11,7 @@ import { CONTENT_AUTHOR, dateCs, verifierNames } from '../../../src/content/veri
 import { profileHref } from './Profiles'
 import { Preview } from '../editor/Preview'
 import { questionLabel } from '../editor/model'
-import type { Me } from '../passkey'
+import { withConfirm, type Me } from '../passkey'
 import type { PreviewMode } from '../preview/protocol'
 import { go, nav } from '../router'
 import { refreshIndex, useIndex } from '../store'
@@ -32,6 +32,7 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
   const [reports, setReports] = useState(0)
   const [version, setVersion] = useState(0)
   const [verifying, setVerifying] = useState(false)
+  const [unverifying, setUnverifying] = useState(false)
   const [verified, setVerified] = useState(false)
   // Verifying: which explanations and questions I already went through (moderator/server/verify.ts).
   const [progress, setProgress] = useState<{ done: string[]; total: number } | null>(null)
@@ -104,7 +105,7 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
           <div>
             <h1>{topic.title}</h1>
             <small>
-              Autor: {CONTENT_AUTHOR} (AI) · {topic.verified ? <span class="v-verified"><I.check />Zkontroloval/a {verifierNames(topic.verified.by).map((n, i) => <>{i ? ', ' : ''}<a class="p-name" href={profileHref(n)} onClick={nav(profileHref(n))}>{n}</a></>)} · {dateCs(topic.verified.at)} · </span> : <span class="pill unverified">čeká na kontrolu</span>}{' '}
+              Autor: {CONTENT_AUTHOR} (AI) · {topic.verified ? <span class="v-verified"><I.check />Zkontroloval/a {verifierNames(topic.verified.by).map((n, i) => <>{i ? ', ' : ''}<a class="p-name" href={profileHref(n)} onClick={nav(profileHref(n))}>{n}</a></>)} · {dateCs(topic.verified.at)}{me?.role === 'admin' && <> · <button class="link-btn" onClick={() => setUnverifying(true)}>Zrušit ověření</button></>} · </span> : <span class="pill unverified">čeká na kontrolu</span>}{' '}
               {at >= 0 ? `${at + 1}. téma z ${list.length}` : ''}
               {topic.approach ? ` · jen pro přístup ${approaches.find((a) => a.id === topic.approach)?.short ?? topic.approach}` : ''}
             </small>
@@ -145,6 +146,7 @@ export function TopicView({ g, s, id, me }: { g: string; s: string; id: string; 
             <a class="btn small primary" href={`/zapojit-se?tema=${g}/${s}/${id}`} onClick={nav(`/zapojit-se?tema=${g}/${s}/${id}`)}>Chci to schválit</a></div>
         )
       )}
+      {unverifying && topic.verified && <UnverifyDialog g={g} s={s} id={id} version={version} title={topic.title} by={topic.verified.by} onClose={() => setUnverifying(false)} onDone={(t) => { setTopic(t.topic); setVersion(t.version); setUnverifying(false); refreshIndex() }} />}
       {verifying && <VerifyDialog g={g} s={s} id={id} version={version} title={topic.title} onClose={() => setVerifying(false)} onDone={(t) => { setTopic(t.topic); setVersion(t.version); setVerifying(false); setVerified(true); refreshIndex() }} />}
       {tips.length > 0 && <Tips tips={tips} pick={(t) => { const k = t.question !== undefined ? parts.indexOf(`q:${t.question}`) : t.section.kind === 'ex' ? parts.indexOf(`ex:${t.section.i}`) : -1; if (k >= 0) showPart(k) }} />}
       {help}
@@ -233,7 +235,30 @@ function VerifyDialog({ g, s, id, version, title, onClose, onDone }: { g: string
     <Modal title={`Ověřit téma „${title}“`} onClose={onClose}
       actions={<><button class="btn" onClick={onClose}>Zpět</button><Busy class="btn primary" on={busy} onClick={go}><I.check />Ověřit</Busy></>}>
       <p>Prošel/prošla jsi a odškrtl/a <b>celý výklad i všechny otázky</b> se správnými odpověďmi. Potvrzuješ, že jsou věcně správně a srozumitelné?</p>
-      <p class="muted">U tématu se pak ukáže tvoje jméno a dnešní datum (v moderaci, v aplikaci i ve veřejné historii učiva). Když něco nesedí, téma raději uprav – schválená úprava se počítá jako ověřená.</p>
+      <p class="muted">U tématu se pak ukáže tvoje jméno a dnešní datum (v moderaci, v aplikaci i ve veřejné historii učiva). Když něco nesedí, téma raději uprav a pošli ke kontrole (schválení změny samo téma neověří – zaškrtni u ní „Celé téma jsem ověřil/a“).</p>
+    </Modal>
+  )
+}
+
+/** An admin takes back a verification given by mistake: the topic is unverified again, the reason stays in the history. */
+function UnverifyDialog({ g, s, id, version, title, by, onClose, onDone }: { g: string; s: string; id: string; version: number; title: string; by: string; onClose: () => void; onDone: (r: { topic: TopicFile; version: number }) => void }) {
+  const [busy, setBusy] = useState(false)
+  const [note, setNote] = useState('')
+  const go = async () => {
+    setBusy(true)
+    try {
+      const r = await withConfirm(() => post<{ version: number }>('/api/content/unverify', { grade: g, subject: s, topicId: id, version, note }))
+      const fresh = await get<{ topic: TopicFile; version: number }>(`/api/content/topic/${g}/${s}/${id}`)
+      toast('Ověření zrušeno. Téma je zase neověřené.')
+      onDone({ topic: fresh.topic, version: fresh.version ?? r.version })
+    } catch (e) { toast(e instanceof ApiError ? e.message : 'Zrušit ověření se nepovedlo.', 'bad'); setBusy(false) }
+  }
+  return (
+    <Modal title={`Zrušit ověření „${title}“`} onClose={onClose}
+      actions={<><button class="btn" onClick={onClose}>Zpět</button><Busy class="btn danger" on={busy} disabled={!note.trim()} onClick={go}>Zrušit ověření</Busy></>}>
+      <p>Téma teď má u sebe <b>Zkontroloval/a {by}</b>. Po zrušení bude zase <b>neověřené</b> – děti ho uvidí s poznámkou „čeká na kontrolu člověkem“ a kdokoli ho může projít a ověřit znovu.</p>
+      <label class="field"><span>Důvod (zůstane v historii tématu)</span><textarea rows={2} value={note} maxLength={500} onInput={(e) => setNote(e.currentTarget.value)} placeholder="Např. ověření se omylem podepsalo jménem schvalujícího" /></label>
+      <p class="muted">Aplikace si řekne o potvrzení klíčem.</p>
     </Modal>
   )
 }

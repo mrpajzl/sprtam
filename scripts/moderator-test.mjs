@@ -610,6 +610,15 @@ try {
   const evaProfile = (await eva.api('GET', '/api/me/profile')).body
   check(evaProfile.public === false && evaProfile.topics.some((t) => t.key === 'odb/ai-predmet/ai-prvni') && !evaProfile.topics.some((t) => t.key.startsWith('odb/testovaci/')) && evaProfile.verified === evaProfile.topics.length, 'the profile lists the topics its owner checked ("Ověřit"), not changes she only approved')
   check((await admin.api('GET', '/api/me/profile')).body.topics.some((t) => t.key === 'odb/testovaci/odb-prvni'), 'the author of a change who checked the whole topic gets the credit')
+  // An admin takes back a verification given by mistake.
+  const wrong = await topicNow('odb', 'testovaci', 'odb-prvni')
+  const unv = (body, who = admin) => who.api('POST', '/api/content/unverify', { grade: 'odb', subject: 'testovaci', topicId: 'odb-prvni', version: wrong.version, ...body })
+  check((await unv({ note: 'omyl' }, eva)).status === 403, 'only an admin takes a verification back')
+  check((await unv({})).status === 400 && (await unv({ note: 'omyl', version: wrong.version - 1 })).status === 409, 'taking it back needs a reason and the version the admin saw')
+  const unvOk = await unv({ note: 'Podepsáno omylem' })
+  const after = await topicNow('odb', 'testovaci', 'odb-prvni')
+  check(unvOk.status === 200 && !after.topic.verified && after.topic.title === wrong.topic.title && !(await admin.api('GET', '/api/me/profile')).body.topics.some((t) => t.key === 'odb/testovaci/odb-prvni'), 'the topic is unverified again and nobody keeps the credit')
+  check((await admin.api('POST', '/api/content/unverify', { grade: 'odb', subject: 'testovaci', topicId: 'odb-prvni', version: after.version, note: 'x' })).status === 409, 'an unverified topic cannot be taken back again')
   const profile = { name: 'Mgr. Eva Učitelka', headline: 'Učitelka matematiky', bio: 'Učím 15 let.\n\n\n\nRáda kontroluju.', subjects: ['matematika', 'neexistuje', 'testovaci'], web: 'skola.example/eva', avatar: '🦉', public: true }
   check((await eva.api('PUT', '/api/me/profile', { ...profile, name: 'Eva, Učitelka' })).status === 400, 'a name with a comma is refused (checkers are joined by commas)')
   check((await eva.api('PUT', '/api/me/profile', { ...profile, name: 'ada správcová' })).status === 409, "a moderator cannot take another moderator's name")

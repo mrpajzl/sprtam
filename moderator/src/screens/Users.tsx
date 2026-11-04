@@ -16,7 +16,7 @@ const ACTION: Record<string, string> = {
   'draft.withdrawn': 'návrh vrácen do rozpracovaných', 'draft.rebased': 'návrh převeden na novou verzi', 'draft.published': 'zveřejněno', 'draft.rejected': 'zamítnutý návrh', 'draft.rollback': 'návrh návratu ke starší verzi',
   'review.approve': 'schválení', 'review.changes': 'požadavek na úpravy', 'review.comment': 'komentář', 'review.resolved': 'vyřešený komentář',
   'review.edited': 'upravený komentář', 'review.deleted': 'smazaný komentář', 'review.applied': 'převzatý návrh z komentáře',
-  'drafts.published-unverified': 'zveřejněno bez kontroly', 'topic.verified': 'téma označeno jako zkontrolované', 'words.published': 'zveřejněná slovíčka',
+  'drafts.published-unverified': 'zveřejněno bez kontroly', 'topic.verified': 'téma označeno jako zkontrolované', 'topic.unverified': 'zrušené ověření tématu', 'draft.checked': 'celé téma označeno jako ověřené', 'words.published': 'zveřejněná slovíčka',
   'report.created': 'hlášení od žáka', 'report.updated': 'vyřízené hlášení', 'profile.updated': 'úprava profilu',
   'content.imported': 'import učiva', 'content.restored-version': 'vrácená verze bez kontroly', 'content.restored-release': 'obnova vydání',
   'token.created': 'nový API token', 'token.removed': 'zrušený API token', 'widget-request.created': 'žádost o pomůcku', 'widget-request.updated': 'úprava žádosti o pomůcku', 'widget-request.deleted': 'smazaná žádost o pomůcku',
@@ -27,7 +27,7 @@ const ACTION: Record<string, string> = {
 const GROUPS: { name: string; actions: string[] }[] = [
   { name: 'Přihlášení', actions: ['login', 'login.fail', 'sessions.ended'] },
   { name: 'Účty a klíče', actions: ['user.created', 'user.disabled', 'user.enabled', 'user.role', 'user.renamed', 'user.keys-reset', 'key.added', 'key.removed', 'key.link', 'invite.created', 'invite.revoked', 'token.created', 'token.removed'] },
-  { name: 'Návrhy a zveřejnění', actions: ['draft.submitted', 'draft.updated', 'draft.deleted', 'draft.withdrawn', 'draft.rebased', 'draft.published', 'draft.rejected', 'draft.rollback', 'drafts.published-unverified', 'topic.verified', 'words.published', 'content.imported', 'content.restored-version', 'content.restored-release'] },
+  { name: 'Návrhy a zveřejnění', actions: ['draft.submitted', 'draft.updated', 'draft.deleted', 'draft.withdrawn', 'draft.rebased', 'draft.published', 'draft.rejected', 'draft.rollback', 'drafts.published-unverified', 'topic.verified', 'topic.unverified', 'draft.checked', 'words.published', 'content.imported', 'content.restored-version', 'content.restored-release'] },
   { name: 'Kontrola', actions: ['review.approve', 'review.changes', 'review.comment', 'review.edited', 'review.deleted', 'review.applied', 'review.resolved'] },
   { name: 'Hlášení a profily', actions: ['report.created', 'report.updated', 'profile.updated'] },
   { name: 'Žádosti', actions: ['widget-request.created', 'widget-request.updated', 'widget-request.deleted', 'application.created', 'application.approved', 'application.rejected'] },

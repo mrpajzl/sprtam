@@ -769,3 +769,23 @@ export function verifyTopic(s: Session, body: Record<string, unknown>, ip: strin
   releaseClaims('topic', [`${g}/${sub}/${id}`])
   return { verified, release: r.release, version: r.versions[topicKey(g, sub, id)] }
 }
+
+/**
+ * An admin takes a verification back – it was given by mistake (e.g. signed with the wrong name). The topic goes out
+ * unverified again (a new version with the reason in the history) and anyone can check it properly. Browser only, with
+ * a fresh passkey confirmation, and only for the version the admin was shown.
+ */
+export function unverifyTopic(s: Session, body: Record<string, unknown>, ip: string) {
+  if (s.user.role !== 'admin') throw new HttpError(403, 'Zrušit ověření smí jen správce.')
+  requireRecent(s)
+  const g = String(body.grade ?? ''), sub = String(body.subject ?? ''), id = String(body.topicId ?? '')
+  const note = typeof body.note === 'string' ? body.note.trim().slice(0, 500) : ''
+  if (!note) throw new HttpError(400, 'Napiš důvod (zůstane v historii).')
+  const { topic, version: v } = readTopic(g, sub, id)
+  if (body.version !== v) throw new HttpError(409, 'Téma se mezitím změnilo. Načti ho znovu.', 'stale')
+  if (!topic.verified) throw new HttpError(409, 'Téma není ověřené.')
+  const was = topic.verified
+  const r = publish([{ key: topicKey(g, sub, id), data: withoutVerified(topic) }], { userId: s.user.id, reason: 'change', note: `Ověření zrušeno (${was.by}, ${was.at}): ${note}` })
+  audit('topic.unverified', s.user.id, { topic: `${g}/${sub}/${id}`, release: r.release, was, note }, ip)
+  return { release: r.release, version: r.versions[topicKey(g, sub, id)] }
+}
