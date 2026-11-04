@@ -444,11 +444,13 @@ try {
   const own = (await admin.api('POST', '/api/drafts', { kind: 'edit', grade: 'z6', subject: 'matematika', topicId: 'prvocisla' })).body
   const ownTopic = { ...own.topic, explanations: own.topic.explanations.map((x, i) => (i ? x : { ...x, blocks: x.blocks.map((b, j) => (j === 1 ? { ...b, text: `${b.text} Doplněno.` } : b)) })) }
   const ownRev = (await admin.api('PUT', `/api/drafts/${own.draft.id}`, { topic: ownTopic, rev: own.draft.rev })).body.rev
-  await admin.api('POST', `/api/drafts/${own.draft.id}/submit`, {})
+  const ownSent = (await admin.api('POST', `/api/drafts/${own.draft.id}/submit`, { checked: true })).body
+  check(ownSent.draft.checked === true && ownSent.draft.rev === ownRev + 1, 'the author can say she checked the whole topic when sending it')
   await admin.page.goto(`${BASE}/kontrola/${own.draft.id}`)
   check(await admin.page.locator('.decide.t-act').getByRole('button', { name: 'Schválit a zveřejnit' }).waitFor({ timeout: 5000 }).then(() => true, () => false), 'an admin sees she can approve her own change')
-  const self = await admin.api('POST', `/api/drafts/${own.draft.id}/review`, { verdict: 'approve', rev: ownRev })
+  const self = await admin.api('POST', `/api/drafts/${own.draft.id}/review`, { verdict: 'approve', rev: ownRev + 1 })
   check(self.status === 200 && self.body.released === 6 && (await topicText()).includes('Doplněno.'), "an admin's own approval publishes her change")
+  check((await (await fetch(`${BASE}/api/content/topic/z6/matematika/prvocisla`)).json()).topic.verified?.by === 'Ada Správcová', 'checked by its author, the topic is verified')
 
   // ——— Odborné předměty: new topics found a předmět; published in any order, they keep the intended one ———
   const base = (await (await fetch(`${BASE}/api/content/topic/z6/matematika/prvocisla`)).json()).topic
@@ -465,6 +467,11 @@ try {
   check(founded.every((f) => f.subject?.name === meta.name && !f.problems.length), 'drafts of a new odborný předmět pass the checks and say what they found')
   // The second topic is approved first: it founds the předmět; the first one then goes before it.
   const pub = async (f) => (await eva.api('POST', `/api/drafts/${f.draft.id}/review`, { verdict: 'approve', rev: (await eva.api('GET', `/api/drafts/${f.draft.id}`)).body.draft.rev })).status
+  // The author checked the whole first topic, not the second one ("Celé téma jsem ověřil/a").
+  const chk = (await admin.api('POST', `/api/drafts/${founded[0].draft.id}/checked`, { checked: true, rev: founded[0].draft.rev })).body
+  check(chk.draft.checked === true && chk.draft.rev === founded[0].draft.rev + 1, 'the author marks the whole topic as checked: a new revision')
+  check((await admin.api('POST', `/api/drafts/${founded[1].draft.id}/checked`, { checked: true, rev: founded[1].draft.rev - 1 })).status === 409, 'marking an older revision is refused')
+  check((await eva.api('POST', `/api/drafts/${founded[1].draft.id}/checked`, { checked: true, rev: founded[1].draft.rev })).status === 403, "only the author marks the whole topic as checked")
   check(await pub(founded[1]) === 200 && await pub(founded[0]) === 200, 'a reviewer approves both topics')
   const mOdb = await manifest()
   const list = await (await fetch(`${BASE}/api/public/v1/files/${mOdb.files['subject/odb/testovaci']}`)).json()
@@ -480,7 +487,8 @@ try {
 
   // ——— Unverified content: AI content goes out at once, a person checks it later ———
   const topicNow = async (g, sub, id) => (await (await fetch(`${BASE}/api/content/topic/${g}/${sub}/${id}`)).json())
-  check(!(await topicNow('odb', 'testovaci', 'odb-prvni')).topic.verified?.by.includes('?') && (await topicNow('odb', 'testovaci', 'odb-prvni')).topic.verified?.by === 'Eva Učitelka', 'a change approved in review is published as verified by its reviewer')
+  check((await topicNow('odb', 'testovaci', 'odb-prvni')).topic.verified?.by === 'Ada Správcová', 'a change whose author checked the whole topic is verified by the AUTHOR, not by the reviewer')
+  check(!(await topicNow('odb', 'testovaci', 'odb-druhe')).topic.verified, 'approving a change alone does not verify the topic')
   const ai = []
   for (const id of ['ai-prvni', 'ai-druhe']) {
     const r = await admin.api('POST', '/api/drafts', { kind: 'new', grade: 'odb', subject: 'ai-predmet', subjectMeta: { name: 'AI předmět', emoji: '🤖', color: 'red' }, order: ['ai-prvni', 'ai-druhe'], topic: { ...base, id, title: `AI ${id}` } })
@@ -529,6 +537,16 @@ try {
   check(ver.status === 200 && t2.topic.verified?.by === 'Eva Učitelka' && /^\d{4}-\d{2}-\d{2}$/.test(t2.topic.verified.at), 'a moderator verifies a topic: who and when')
   check((await eva.api('POST', '/api/content/verify', { grade: 'odb', subject: 'ai-predmet', topicId: 'ai-prvni', version: t2.version })).status === 409, 'a verified topic cannot be verified again')
   check(!(await admin.api('GET', `/api/drafts/${editing.draft.id}`)).body.draft.conflict, 'verifying does not put open edits of the topic in conflict')
+  // An edit of a verified topic approved without "checked": the topic stays verified by whoever verified it.
+  const edTopic = { ...t2.topic, verified: undefined, explanations: t2.topic.explanations.map((x, i) => (i ? x : { ...x, blocks: x.blocks.map((b, j) => (j === 1 ? { ...b, text: `${b.text} Upřesněno.` } : b)) })) }
+  const edRev = (await admin.api('PUT', `/api/drafts/${editing.draft.id}`, { topic: edTopic, rev: editing.draft.rev })).body.rev
+  const verTok = (await eva.api('POST', '/api/me/tokens', { label: 'Ověření tokenem', days: 1 })).body.token
+  check((await bearer('POST', `/api/drafts/${evaDraftAi}/checked`, { checked: true, rev: (await eva.api('GET', `/api/drafts/${evaDraftAi}`)).body.draft.rev }, verTok)).status === 403, 'an API token (an AI) cannot mark a topic as checked')
+  check((await bearer('POST', `/api/drafts/${evaDraftAi}/submit`, { checked: true }, verTok)).status === 403, 'nor when sending it for review')
+  await admin.api('POST', `/api/drafts/${editing.draft.id}/submit`, {})
+  const kept = await admin.api('POST', `/api/drafts/${editing.draft.id}/review`, { verdict: 'approve', rev: edRev })
+  const t3 = await topicNow('odb', 'ai-predmet', 'ai-prvni')
+  check(kept.status === 200 && kept.body.released && JSON.stringify(t3.topic).includes('Upřesněno.') && t3.topic.verified?.by === 'Eva Učitelka', 'an approved edit of a verified topic keeps its verifier – the approver takes no credit')
   check((await admin.api('GET', '/api/content/index')).body.subjects['odb/ai-predmet'].map((t) => !!t.verified).join() === 'true,false', 'the library knows which topics are verified')
 
   // ——— Applications to become a moderator (the app's "Chci to zkontrolovat a schválit" leads here) ———
@@ -590,7 +608,8 @@ try {
   check(Array.isArray(await anonList()) && (await anonList()).length === 0, 'nobody is listed publicly before making their profile public')
   check((await fetch(`${BASE}/api/moderators/${evaId}`)).status === 404, 'a profile that is not public is not shown to visitors')
   const evaProfile = (await eva.api('GET', '/api/me/profile')).body
-  check(evaProfile.public === false && evaProfile.topics.some((t) => t.key === 'odb/ai-predmet/ai-prvni') && evaProfile.topics.some((t) => t.key === 'odb/testovaci/odb-prvni') && evaProfile.verified === evaProfile.topics.length, 'the profile lists the topics its owner checked (by review and by "Ověřit")')
+  check(evaProfile.public === false && evaProfile.topics.some((t) => t.key === 'odb/ai-predmet/ai-prvni') && !evaProfile.topics.some((t) => t.key.startsWith('odb/testovaci/')) && evaProfile.verified === evaProfile.topics.length, 'the profile lists the topics its owner checked ("Ověřit"), not changes she only approved')
+  check((await admin.api('GET', '/api/me/profile')).body.topics.some((t) => t.key === 'odb/testovaci/odb-prvni'), 'the author of a change who checked the whole topic gets the credit')
   const profile = { name: 'Mgr. Eva Učitelka', headline: 'Učitelka matematiky', bio: 'Učím 15 let.\n\n\n\nRáda kontroluju.', subjects: ['matematika', 'neexistuje', 'testovaci'], web: 'skola.example/eva', avatar: '🦉', public: true }
   check((await eva.api('PUT', '/api/me/profile', { ...profile, name: 'Eva, Učitelka' })).status === 400, 'a name with a comma is refused (checkers are joined by commas)')
   check((await eva.api('PUT', '/api/me/profile', { ...profile, name: 'ada správcová' })).status === 409, "a moderator cannot take another moderator's name")

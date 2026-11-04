@@ -22,6 +22,12 @@ import { dropProgress, partsMissing } from './verify'
 // the content (store.ts). A moderator never approves their own change; an admin may, in a signed-in browser with a
 // fresh passkey confirmation (a stolen session alone does not publish anything). Any later edit is a new revision:
 // approvals of an older one no longer count.
+//
+// Approving a change is not verifying the topic: a reviewer checks what changed, not the whole topic. A published
+// change verifies the topic only when its author says they checked the whole topic ("Celé téma jsem ověřil/a",
+// `checked`) – then the topic is verified by the AUTHOR, never by the reviewers. Without it the topic keeps the
+// verification it had (an edit of a verified topic) or goes out unverified (a new topic, a rollback, an edit of an
+// unverified one). Only a person in the browser can say so; an API token (an AI's draft) never verifies anything.
 
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
@@ -35,6 +41,8 @@ interface DraftData {
   subject?: NewSubject
   /** The intended order of the subject's topics: drafts of one subject published in any order still end up in it. */
   order?: string[]
+  /** The author checked the whole topic (not just their change): publishing it verifies the topic in the author's name. */
+  checked?: true
 }
 
 function newSubjectOf(v: unknown): NewSubject | undefined {
@@ -74,6 +82,8 @@ export interface DraftView {
   changed: boolean
   /** Approvals of the current revision, and who asks for changes in it. */
   approvals: { id: string; name: string }[]; changes: { id: string; name: string }[]; needed: number
+  /** The author checked the whole topic: once published, it is verified by them (DraftData.checked). */
+  checked: boolean
   legacyPrUrl: string | null
 }
 
@@ -139,6 +149,7 @@ function view(d: Row, who = names()): DraftView {
     submittedAt: d.submitted_at, decidedAt: d.decided_at, decidedBy: d.decided_by ? who.get(d.decided_by) ?? '?' : null, decisionNote: d.decision_note,
     release: d.release_id, baseVersion: d.base_version, rollbackOf: d.rollback_of, conflict: conflictOf(d), changed: changedOf(d),
     approvals: people(dec.size ? approversOf(d, dec) : []), changes: people([...dec].filter(([, x]) => x === 'changes').map(([id]) => id)), needed: CONFIG.approvals, legacyPrUrl: d.legacy_pr_url,
+    checked: !!(JSON.parse(d.data) as DraftData).checked,
   }
 }
 
@@ -317,7 +328,7 @@ export function saveDraft(s: Session, id: unknown, body: Record<string, unknown>
   if (topic.id !== d.topic_id) throw new HttpError(400, 'Id tématu se nedá změnit.')
   const old = JSON.parse(d.data) as DraftData
   const after = d.kind === 'new' ? (body.after === null || typeof body.after === 'string' ? body.after : old.after ?? null) : undefined
-  const data = JSON.stringify({ topic, ...(d.kind === 'new' ? { after, ...(old.subject ? { subject: old.subject } : {}), ...(old.order ? { order: old.order } : {}) } : {}) })
+  const data = JSON.stringify({ topic, ...(d.kind === 'new' ? { after, ...(old.subject ? { subject: old.subject } : {}), ...(old.order ? { order: old.order } : {}) } : {}), ...(old.checked ? { checked: true } : {}) })
   if (data === d.data) return { rev: d.rev, updatedAt: d.updated_at }
   const rev = d.rev + 1, now = Date.now()
   run('UPDATE drafts SET data = ?, title = ?, rev = ?, updated_at = ? WHERE id = ? AND rev = ?', data, String(topic.title || d.title).slice(0, 200), rev, now, d.id, d.rev)
@@ -402,8 +413,38 @@ export function submitDraft(s: Session, id: unknown, body: Record<string, unknow
   if (s.user.role !== 'admin') limit(`submit:${actor(s)}`, 30, 60 * MINUTE)
   assertReady(d, JSON.parse(d.data))
   const note = typeof body.note === 'string' ? body.note.trim().slice(0, 2000) : ''
-  run("UPDATE drafts SET status = 'review', note = ?, submitted_rev = rev, submitted_at = ? WHERE id = ?", note || null, Date.now(), d.id)
-  audit('draft.submitted', s.user.id, { draft: d.id, topic: `${d.grade}/${d.subject}/${d.topic_id}` }, ip)
+  tx(() => {
+    if (body.checked !== undefined) setChecked(s, d, body.checked)
+    run("UPDATE drafts SET status = 'review', note = ?, submitted_rev = rev, submitted_at = ? WHERE id = ?", note || null, Date.now(), d.id)
+  })
+  audit('draft.submitted', s.user.id, { draft: d.id, topic: `${d.grade}/${d.subject}/${d.topic_id}`, ...(body.checked === true ? { checked: true } : {}) }, ip)
+  return getDraft(s, d.id)
+}
+
+/**
+ * The author says they checked the whole topic (or takes it back). It is part of what reviewers approve, so a change
+ * of it is a new revision: approvals given before no longer count. Only a person in the browser – never an API token.
+ */
+function setChecked(s: Session, d: DraftRow, value: unknown) {
+  if (typeof value !== 'boolean') throw new HttpError(400, 'checked musí být true nebo false.')
+  if (value && s.via !== 'cookie') throw new HttpError(403, 'Ověřit celé téma smí jen člověk v moderaci, ne API token.')
+  const data = JSON.parse(d.data) as DraftData
+  if (!!data.checked === value) return false
+  const { checked: _, ...rest } = data
+  const next = JSON.stringify(value ? { ...rest, checked: true } : rest)
+  if (run('UPDATE drafts SET data = ?, rev = rev + 1, updated_at = ? WHERE id = ? AND rev = ?', next, Date.now(), d.id, d.rev).changes !== 1) {
+    throw new HttpError(409, 'Návrh se mezitím změnil v jiném okně. Načti ho znovu.', 'stale')
+  }
+  return true
+}
+
+/** "Celé téma jsem ověřil/a" switched on or off by the author while the draft is open. */
+export function checkDraft(s: Session, id: unknown, body: Record<string, unknown>, ip: string) {
+  const d = load(s, id)
+  own(s, d, 'Ověření celého tématu označit')
+  open(d)
+  if (body.rev !== d.rev) throw new HttpError(409, 'Návrh se mezitím změnil v jiném okně. Načti ho znovu.', 'stale')
+  if (setChecked(s, d, body.checked)) audit('draft.checked', s.user.id, { draft: d.id, checked: body.checked }, ip)
   return getDraft(s, d.id)
 }
 
@@ -577,12 +618,21 @@ export function applySuggestion(s: Session, id: unknown, reviewId: unknown, body
   return getDraft(s, d.id)
 }
 
+/**
+ * How the topic is verified once the draft is published. Approving the change does not verify the topic: only its
+ * author, when they checked the whole topic. Otherwise an edit keeps the verification of the topic as published
+ * (the change itself went through review), and a new topic or a rollback goes out unverified.
+ */
+function verifiedAfter(d: DraftRow, data: DraftData): Verified | null {
+  if (data.checked) return { by: one<{ name: string }>('SELECT name FROM users WHERE id = ?', d.user_id)?.name ?? '?', at: today() }
+  if (d.kind !== 'edit' || d.rollback_of) return null
+  return (getDoc(topicKey(d.grade, d.subject, d.topic_id)) as TopicFile | undefined)?.verified ?? null
+}
+
 function publishDraft(d: DraftRow, data: DraftData, approvers: string[], by: string, ip: string): number {
   const key = topicKey(d.grade, d.subject, d.topic_id)
-  // Approved by people in review = checked by them.
-  const who = names()
-  const verified: Verified = { by: approvers.map((id) => who.get(id) ?? '?').join(', '), at: today() }
-  const r = publish(changesOf(d, data, verified), { userId: d.user_id, reason: d.rollback_of ? 'rollback' : 'change', draftId: d.id, approvedBy: approvers, note: d.note ?? undefined }, (r) => {
+  const verified = verifiedAfter(d, data)
+  const r = publish(changesOf(d, data, verified ?? undefined), { userId: d.user_id, reason: d.rollback_of ? 'rollback' : 'change', draftId: d.id, approvedBy: approvers, note: d.note ?? undefined }, (r) => {
     // Checked again against the database itself, in the same transaction as the write.
     const prev = one<{ id: number; data: string | null }>('SELECT id, data FROM versions WHERE key = ? AND release_id < ? ORDER BY n DESC LIMIT 1', key, r.release)
     const live = prev && prev.data !== null ? prev.id : null
