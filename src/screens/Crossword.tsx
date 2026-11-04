@@ -62,20 +62,24 @@ export function CrosswordGame({ level }: { level: string }) {
 }
 
 /** The grid: numbers, operators, empty and filled cells. `placed` = the value shown in a blank cell. */
-function Grid({ rows, cols, cells, placed, sel, marks, locked, onCell }: {
+function Grid({ rows, cols, cells, placed, sel, marks, locked, onCell, onGrab, drop }: {
   rows: number; cols: number; cells: Cell[]; placed: Record<string, number>
   sel?: string | null; marks?: Record<string, 'ok' | 'bad'>; locked?: Set<string>; onCell?: (key: string) => void
+  /** A finger or the mouse goes down on a filled cell: its number may be dragged elsewhere. */
+  onGrab?: (key: string, e: PointerEvent) => void
+  /** The cell a dragged number would land in. */
+  drop?: string | null
 }) {
   return (
     <div class="cw-grid" style={{ '--cols': cols, '--rows': rows }} role={onCell ? 'group' : undefined} aria-label={onCell ? 'Křížovka' : undefined}>
       {cells.map((x) => {
         const style = { gridRow: x.r + 1, gridColumn: x.c + 1 }
-        if (x.kind === 'op') return <span key={`${x.r},${x.c}`} data-k={`${x.r},${x.c}`} class={`cw-cell op ${x.text === '=' ? 'eq' : ''}`} style={style} aria-hidden="true">{x.text}</span>
+        if (x.kind === 'op') return <span key={`${x.r},${x.c}`} data-k={`${x.r},${x.c}`} class={`cw-cell op ${x.text === '=' ? 'eq' : ''} ${marks?.[`${x.r},${x.c}`] === 'ok' ? 'ok' : ''}`} style={style} aria-hidden="true">{x.text}</span>
         const text = x.blank ? (placed[x.key] !== undefined ? num(placed[x.key]) : '') : num(x.value)
-        const cls = `cw-cell num ${text.length >= 4 ? 'long' : text.length === 3 ? 'mid' : ''} ${x.blank ? 'blank' : ''} ${x.blank && placed[x.key] !== undefined ? 'filled' : ''} ${sel === x.key ? 'sel' : ''} ${marks?.[x.key] ?? ''} ${locked?.has(x.key) ? 'hint' : ''}`
+        const cls = `cw-cell num ${text.length >= 4 ? 'long' : text.length === 3 ? 'mid' : ''} ${x.blank ? 'blank' : ''} ${x.blank && placed[x.key] !== undefined ? 'filled' : ''} ${sel === x.key ? 'sel' : ''} ${marks?.[x.key] ?? ''} ${locked?.has(x.key) ? 'hint' : ''} ${drop === x.key ? 'drop' : ''}`
         if (!x.blank || !onCell) return <span key={x.key} data-k={x.key} class={cls} style={style} aria-hidden={onCell ? 'true' : undefined}>{text}</span>
         return (
-          <button key={x.key} data-k={x.key} type="button" class={cls} style={style} onClick={() => onCell(x.key)} aria-pressed={sel === x.key}
+          <button key={x.key} data-k={x.key} type="button" class={cls} style={style} onClick={() => onCell(x.key)} onPointerDown={placed[x.key] !== undefined && onGrab ? (e) => onGrab(x.key, e) : undefined} aria-pressed={sel === x.key}
             aria-label={`Řádek ${x.r + 1}, sloupec ${x.c + 1}: ${text ? num(placed[x.key]) : 'prázdné'}`}>{text}</button>
         )
       })}
@@ -108,6 +112,10 @@ function Game({ lv, onAgain }: { lv: Level; onAgain: () => void }) {
   const [done, setDone] = useState<number | null>(null) // seconds, once solved
   const [finished, setFinished] = useState(false) // the result is shown
   const typed = useRef('')
+  /** A number being dragged (a tile from the bank, or the number of a filled cell) and where it would land. */
+  const [drag, setDrag] = useState<{ tile: number; x: number; y: number; over: string | null } | null>(null)
+  /** After a drag the browser still sends a click: it must not also tap the tile or the cell. */
+  const dragged = useRef(false)
 
   const shown: Record<string, number> = {}
   for (const k in placed) shown[k] = pz.tiles[placed[k]]
@@ -119,7 +127,13 @@ function Game({ lv, onAgain }: { lv: Level; onAgain: () => void }) {
 
   const marks: Record<string, 'ok' | 'bad'> = {}
   // A wrong equation shows its filled-in numbers red (the given ones are right), a right one all green.
-  st.forEach((s, i) => { if (s !== null) for (const k of pz.numKeys[i]) if (s ? marks[k] !== 'bad' : blanks.includes(k) && !helped.has(k)) marks[k] = s ? 'ok' : 'bad' })
+  st.forEach((s, i) => {
+    if (s === null) return
+    // A right equation turns green as a whole, operators too.
+    const e = pz.eqs[i], [dr, dc] = e.dir === 'h' ? [0, 1] : [1, 0]
+    const ks = s ? [0, 1, 2, 3, 4].map((j) => `${e.r + dr * j},${e.c + dc * j}`) : pz.numKeys[i]
+    for (const k of ks) if (s ? marks[k] !== 'bad' : blanks.includes(k) && !helped.has(k)) marks[k] = s ? 'ok' : 'bad'
+  })
 
   // An equation is judged when it is filled in for the first time; one with a hinted number does not count as right.
   useEffect(() => {
@@ -160,16 +174,51 @@ function Game({ lv, onAgain }: { lv: Level; onAgain: () => void }) {
     setSel(k)
   }
   const onCell = (k: string) => {
-    if (done !== null || helped.has(k)) return
+    if (dragged.current || done !== null || helped.has(k)) return
     if (sel === k && placed[k] !== undefined) clear(k)
     else setSel(k)
   }
   const onTile = (tile: number) => {
-    if (done !== null) return
+    if (dragged.current || done !== null) return
     // A placed tile goes back to the bank.
     const at = Object.keys(placed).find((k) => placed[k] === tile)
     if (at) return clear(at)
     place(tile)
+  }
+
+  /** Drag and drop: a tile (or a placed number) follows the finger and lands in the empty cell under it; a placed
+   *  number dropped outside the crossword goes back to the bank. A short tap stays a tap (onClick). */
+  const grab = (tile: number, from: string | null, e: PointerEvent) => {
+    if (done !== null || (from && helped.has(from)) || (e.pointerType === 'mouse' && e.button !== 0)) return
+    const x0 = e.clientX, y0 = e.clientY
+    let moving = false
+    const target = (x: number, y: number) => {
+      const el = document.elementFromPoint(x, y)?.closest<HTMLElement>('.cw-board button[data-k]')
+      const k = el?.dataset.k
+      return k && !helped.has(k) ? k : null
+    }
+    const move = (ev: PointerEvent) => {
+      if (!moving && Math.hypot(ev.clientX - x0, ev.clientY - y0) < 8) return
+      moving = true
+      ev.preventDefault()
+      setDrag({ tile, x: ev.clientX, y: ev.clientY, over: target(ev.clientX, ev.clientY) })
+    }
+    const up = (ev: PointerEvent) => {
+      removeEventListener('pointermove', move)
+      removeEventListener('pointerup', up)
+      removeEventListener('pointercancel', up)
+      if (!moving) return
+      dragged.current = true
+      setTimeout(() => { dragged.current = false }, 0)
+      setDrag(null)
+      if (ev.type === 'pointercancel') return
+      const at = target(ev.clientX, ev.clientY)
+      if (at) place(tile, at)
+      else if (from) clear(from)
+    }
+    addEventListener('pointermove', move, { passive: false })
+    addEventListener('pointerup', up)
+    addEventListener('pointercancel', up)
   }
 
   /** Nápověda: the right number into the selected cell (or the first one that is not right yet). */
@@ -250,15 +299,16 @@ function Game({ lv, onAgain }: { lv: Level; onAgain: () => void }) {
         {pz.eqs.map((e, i) => { const [a, b, c] = shownOf(i); return <li key={i}>{e.dir === 'h' ? 'Vodorovně' : 'Svisle'}: {a} {e.op} {b} = {c}{st[i] === false ? ', neplatí' : st[i] ? ', platí' : ''}</li> })}
       </ol>
       <div class="cw-board">
-        <Grid rows={pz.rows} cols={pz.cols} cells={pz.cells} placed={shown} sel={sel} marks={marks} locked={helped} onCell={onCell} />
+        <Grid rows={pz.rows} cols={pz.cols} cells={pz.cells} placed={shown} sel={sel} marks={marks} locked={helped} onCell={onCell} onGrab={(k, e) => grab(placed[k], k, e)} drop={drag?.over} />
       </div>
       <div class="cw-bank" role="group" aria-label="Čísla k doplnění">
         {pz.tiles.map((v, i) => (
-          <button key={i} type="button" class={`cw-tile ${used.has(i) ? 'used' : ''} ${num(v).length >= 4 ? 'long' : ''}`} onClick={() => onTile(i)} disabled={done !== null}
+          <button key={i} type="button" class={`cw-tile ${used.has(i) ? 'used' : ''} ${num(v).length >= 4 ? 'long' : ''}`} onClick={() => onTile(i)} onPointerDown={used.has(i) ? undefined : (e) => grab(i, null, e)} disabled={done !== null}
             aria-label={used.has(i) ? `${num(v)}, vrátit z křížovky` : num(v)}>{num(v)}</button>
         ))}
       </div>
-      <p class="muted cw-help">{sel ? 'Klepni na číslo, které patří do vybraného políčka.' : 'Klepni na prázdné políčko.'} Vyplněné políčko klepnutím vyprázdníš.</p>
+      <p class="muted cw-help">{sel ? 'Přetáhni číslo do políčka, nebo na něj klepni.' : 'Klepni na prázdné políčko.'} Vyplněné políčko klepnutím vyprázdníš.</p>
+      {drag && <span class={`cw-tile cw-ghost ${num(pz.tiles[drag.tile]).length >= 4 ? 'long' : ''}`} style={{ left: `${drag.x}px`, top: `${drag.y}px` }} aria-hidden="true">{num(pz.tiles[drag.tile])}</span>}
     </div>
   )
 }
