@@ -17,6 +17,7 @@ import { Inline } from '../../../src/ui/Inline'
 import type { ReportView } from '../screens/Reports'
 import { clean, newExplanation, setIn, type Path } from './model'
 import { Preview } from './Preview'
+import { WholeTopicCheck } from '../review/WholeTopicCheck'
 import { QuestionList } from './questions'
 import { editTopic } from '../screens/Library'
 import { Select } from '../../../src/ui/Select'
@@ -437,6 +438,7 @@ function Submit({ draft, changed, issues, flush, goIssue, onClose, onDone }: {
   draft: DraftView; changed: boolean; issues: Issue[]; flush: () => Promise<void>; goIssue: (i: Issue) => void; onClose: () => void; onDone: (d: DraftView) => void
 }) {
   const [note, setNote] = useState('')
+  const [checked, setChecked] = useState(draft.checked)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
   const [done, setDone] = useState<DraftView | null>(null)
@@ -444,7 +446,7 @@ function Submit({ draft, changed, issues, flush, goIssue, onClose, onDone }: {
     setBusy(true); setError('')
     try {
       await flush()
-      const r = await post<{ draft: DraftView }>(`/api/drafts/${draft.id}/submit`, { note })
+      const r = await post<{ draft: DraftView }>(`/api/drafts/${draft.id}/submit`, { note, checked })
       onDone(r.draft); setDone(r.draft)
     } catch (e) {
       const ex = e as ApiError
@@ -474,6 +476,7 @@ function Submit({ draft, changed, issues, flush, goIssue, onClose, onDone }: {
       ) : (
         <>
           <p>Změnu uvidí ostatní moderátoři. Zveřejní se, až ji schválí {others}. Upravovat ji můžeš i potom – každá úprava je ale nová verze, kterou je potřeba schválit znovu.</p>
+          <WholeTopicCheck checked={checked} onChange={setChecked} />
           <label class="field"><span>Vzkaz pro kontrolu</span><textarea rows={3} value={note} onInput={(e) => setNote(e.currentTarget.value)} placeholder="Co a proč jsi změnil/a (nepovinné)" maxLength={2000} /></label>
           <p class="fine">Odesláním souhlasíš, že změnu zveřejníme pod licencí <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">CC BY-SA 4.0</a>. V historii a ve veřejném <a href="https://github.com/mrpajzl/sprtam-content" target="_blank" rel="noopener">zrcadle učiva</a> u ní bude tvoje jméno.</p>
         </>

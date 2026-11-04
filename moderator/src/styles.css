@@ -980,3 +980,11 @@ kbd { font-family: var(--mono); font-size: 0.75em; font-weight: 800; padding: 1p
   .shell.admin .tabs a:not(.on) span { display: none; }
   .shell.admin .tabs a { padding: 8px 10px; }
 }
+
+/* "Celé téma jsem ověřil/a" (Editor.tsx WholeTopicCheck): the author's claim the reviewers approve with the change. */
+.whole-check { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); cursor: pointer; margin: 0 0 12px; }
+.whole-check input { margin-top: 3px; flex: none; width: 18px; height: 18px; accent-color: var(--accent); }
+.whole-check span { display: flex; flex-direction: column; gap: 2px; }
+.whole-check small { color: var(--ink-2); font-weight: 400; }
+.whole-check.on { border-color: var(--accent); }
+.r-verify { margin: 0 0 4px; }

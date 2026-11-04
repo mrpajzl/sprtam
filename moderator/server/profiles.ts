@@ -1,6 +1,7 @@
 import { isCoreSubject } from '../../src/content/curriculum'
 import { parseKey } from '../../src/content/docs'
 import type { TopicFile } from '../../src/content/types'
+import { verifierNames } from '../../src/content/verified'
 import { AVATARS, PROFILE_LIMITS, type Profile, type ProfileDetail, type ProfileTopic } from '../src/profile'
 import type { Session } from './auth'
 import { vocational } from './content'
@@ -54,24 +55,22 @@ interface Work { topics: Map<string, ProfileTopic[]>; published: Map<string, num
 let work: { release: number; data: Work } | undefined
 
 /**
- * Topics whose CURRENT version carries `verified` belong to the moderators who approved that version (a review
- * approval or "Ověřit"); matched by account, so a later change of name keeps them. Every publish is a new release,
- * so the result is kept until the next one.
+ * Topics whose CURRENT version carries `verified` belong to the moderators named in it – whoever checked the whole
+ * topic ("Ověřit", or the author of a change who checked all of it), never just the reviewers who approved a change.
+ * Names are matched to accounts with former names too (a topic keeps the name its checker had then; names are
+ * unique, assertNameFree). Every publish is a new release, so the result is kept until the next one.
  */
 function workOf(): Work {
   const release = current()?.release ?? 0
   if (work?.release === release) return work.data
   const topics = new Map<string, ProfileTopic[]>()
-  for (const r of all<{ key: string; approved_by: string }>(
-    "SELECT d.key, v.approved_by FROM docs d JOIN versions v ON v.id = d.version WHERE d.key LIKE 'topics/%' AND v.approved_by IS NOT NULL")) {
-    const t = getDoc(r.key) as TopicFile | undefined
+  const owners = nameOwners()
+  for (const r of all<{ key: string }>("SELECT key FROM docs WHERE key LIKE 'topics/%'")) {
     const k = parseKey(r.key)
-    if (!t?.verified || k?.kind !== 'topic') continue
-    let ids: unknown
-    try { ids = JSON.parse(r.approved_by) } catch { continue }
-    if (!Array.isArray(ids)) continue
-    for (const id of ids) {
-      if (typeof id !== 'string') continue
+    if (k?.kind !== 'topic') continue
+    const t = getDoc(r.key) as TopicFile | undefined
+    if (!t?.verified) continue
+    for (const id of new Set(verifierNames(t.verified.by).map((n) => owners.get(fold(n))).filter((x): x is string => !!x))) {
       const list = topics.get(id) ?? []
       list.push({ key: `${k.grade}/${k.subject}/${k.id}`, title: t.title, emoji: t.emoji, at: t.verified.at })
       topics.set(id, list)
@@ -126,6 +125,13 @@ function formerNames(): Map<string, string> {
     const id = typeof d.user === 'string' ? d.user : r.user_id
     if (typeof from === 'string' && id && !out.has(fold(from))) out.set(fold(from), id)
   }
+  return out
+}
+
+/** Every name, current or former, folded: the account it belongs to (current names win). */
+function nameOwners(): Map<string, string> {
+  const out = formerNames()
+  for (const u of all<{ id: string; name: string }>('SELECT id, name FROM users')) out.set(fold(u.name), u.id)
   return out
 }
 

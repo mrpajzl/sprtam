@@ -11,10 +11,11 @@ import { Preview } from '../editor/Preview'
 import { withConfirm, type Me } from '../passkey'
 import type { PreviewMode } from '../preview/protocol'
 import { go, nav } from '../router'
-import { approvalText, refreshIndex, STATUS, useIndex, type DraftFull, type DraftView, type ReviewView } from '../store'
+import { approvalText, refreshIndex, STATUS, useIndex, verificationAfter, type DraftFull, type DraftView, type ReviewView } from '../store'
 import { Threads, type ThreadActions } from '../review/Chat'
 import { ago, Busy, dateTime, Empty, I, Modal, toast } from '../ui/kit'
 import { editTopic } from './Library'
+import { WholeTopicCheck } from '../review/WholeTopicCheck'
 import { Select } from '../../../src/ui/Select'
 import { gradeOptions, subjectOptions } from '../ui/filters'
 
@@ -282,6 +283,9 @@ export function Review({ id, me }: { id: string; me: Me }) {
 
       <Banners data={data} own={own} busy={busy} onRebase={() => act('rebase', {}, 'Návrh teď vychází ze zveřejněné verze. Zkontroluj ho a pošli znovu.')} />
 
+      {(d.status === 'draft' || inReview) && <Verification data={data} own={own} busy={busy}
+        onChange={(checked) => act('checked', { checked, rev: d.rev }, checked ? (inReview ? 'Označeno jako celé ověřené – je to nová verze, schválit ji je potřeba znovu' : 'Označeno jako celé ověřené') : 'Označení zrušeno – schválení zveřejní jen změnu')} />}
+
       {d.note && <blockquote class="r-note"><b>{d.author.name}:</b> {d.note}</blockquote>}
       {data.reports.length > 0 && (
         <div class="banner info"><I.wrench /><span><b>Změna opravuje {data.reports.length === 1 ? 'hlášení od žáka' : `${data.reports.length} hlášení od žáků`}:</b>{' '}
@@ -314,6 +318,26 @@ export function Review({ id, me }: { id: string; me: Me }) {
         const ok = ask === 'changes' ? await act('review', { verdict: 'changes', body: text }, 'Autor uvidí, co upravit', 'POST', false, true) : await act('reject', { note: text }, 'Návrh zamítnut')
         if (ok) setAsk(null)
       }} />}
+    </div>
+  )
+}
+
+/**
+ * What approving does to the topic's verification. Approving checks the change, not the whole topic: the topic
+ * becomes verified only when its author checked all of it – and then in the author's name, never the reviewer's.
+ */
+function Verification({ data, own, busy, onChange }: { data: DraftFull; own: boolean; busy: boolean; onChange: (checked: boolean) => void }) {
+  const d = data.draft
+  if (own) return <div class="r-verify"><WholeTopicCheck checked={d.checked} disabled={busy} onChange={onChange} /></div>
+  const v = verificationAfter(data)
+  return (
+    <div class={`banner ${v.kind === 'none' ? 'warn' : 'info'} r-verify-note`}>
+      {v.kind === 'none' ? <I.warn /> : <I.check />}
+      <span>
+        {v.kind === 'author' ? <><b>{d.author.name} ověřil/a celé téma.</b> Po zveřejnění bude téma ověřené jménem autora změny. Ty schvaluješ změnu.</>
+          : v.kind === 'keeps' ? <><b>Schvaluješ jen změnu.</b> Téma zůstane ověřené tak, jak bylo ({v.by}).</>
+          : <><b>Schvaluješ jen změnu, ne celé téma.</b> {d.author.name} celé téma jako ověřené neoznačil/a, takže se zveřejní jako neověřené. Celé ho ověří autor/ka zaškrtnutím, nebo kdokoli zvlášť přes Ověřit.</>}
+      </span>
     </div>
   )
 }

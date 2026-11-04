@@ -39,6 +39,8 @@ export interface DraftView {
   decidedAt: number | null; decidedBy: string | null; decisionNote: string | null; release: number | null
   baseVersion: number | null; rollbackOf: number | null
   conflict: boolean; changed: boolean; approvals: Person[]; changes: Person[]; needed: number
+  /** The author checked the whole topic: once published, it is verified in the author's name (not the reviewers'). */
+  checked: boolean
   legacyPrUrl: string | null
 }
 
@@ -63,6 +65,17 @@ export interface DraftFull {
 
 export const STATUS: Record<DraftStatus, string> = {
   draft: 'Rozpracováno', review: 'Ke kontrole', published: 'Zveřejněno', withdrawn: 'Staženo', rejected: 'Zamítnuto',
+}
+
+/**
+ * What publishing the draft does to the topic's verification (moderator/server/drafts.ts, verifiedAfter): approving a
+ * change never verifies the topic – only its author, when they checked the whole topic.
+ */
+export function verificationAfter(data: DraftFull): { kind: 'author' | 'keeps' | 'none'; by: string } {
+  const d = data.draft
+  if (d.checked) return { kind: 'author', by: d.author.name }
+  const v = d.kind === 'edit' && !d.rollbackOf ? data.published?.verified : undefined
+  return v ? { kind: 'keeps', by: v.by } : { kind: 'none', by: '' }
 }
 
 /** "Schváleno 1 z 2" while in review. */
