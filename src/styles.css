@@ -1260,3 +1260,69 @@ button.cw-cell.blank { cursor: pointer; }
 .row.pick .sel-ic.svg { width: 1.3em; height: 1.3em; }
 .sheet-more { margin-top: 14px; }
 .school-sheet .school-done { margin-top: 16px; }
+
+/* Neuronová síť (/neuronova-sit, src/screens/Neuro.tsx): the display with the guess, the pad, four shape keys, the
+   learning curve and the network drawn as an SVG. */
+.nn-display { display: grid; gap: 12px; padding: 14px 16px; border-radius: 20px; background: var(--lcd); color: var(--lcd-ink); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06), 0 3px 0 #000; margin-bottom: 14px; }
+.nn-lcd { display: grid; gap: 4px; min-height: 3.6em; align-content: center; }
+.nn-lcd b { font-family: var(--mono); font-size: 1.35rem; font-weight: 800; line-height: 1.15; }
+.nn-lcd small { font-family: var(--mono); font-size: 0.74rem; font-weight: 600; color: rgb(244 244 241 / 0.65); }
+.nn-bars { display: grid; gap: 6px; }
+.nn-bar { display: grid; grid-template-columns: 6.6em 1fr 3.4em; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.76rem; font-weight: 650; color: rgb(244 244 241 / 0.7); }
+.nn-bar i { height: 10px; border-radius: 3px; background: var(--lcd-off); overflow: hidden; }
+.nn-bar i b { display: block; height: 100%; background: rgb(244 244 241 / 0.45); border-radius: 3px; transition: width 0.15s var(--ease); }
+.nn-bar em { font-style: normal; text-align: right; font-variant-numeric: tabular-nums; }
+.nn-bar.best { color: var(--lcd-ink); }
+.nn-bar.best i b { background: var(--c); box-shadow: 0 0 8px color-mix(in oklab, var(--c) 60%, transparent); }
+
+.nn-pad { position: relative; width: min(100%, 420px); margin: 0 auto; aspect-ratio: 1; border-radius: var(--r); background: var(--key); box-shadow: inset 0 0 0 1px var(--line), 0 4px 0 var(--key-edge);
+  background-image: radial-gradient(circle, var(--dot) 1.2px, transparent 1.4px); background-size: 6.25% 6.25%; background-position: center; }
+.nn-pad canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: crosshair; color: var(--ink); border-radius: inherit; }
+.nn-pad-hint { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; font-family: var(--mono); font-weight: 700; font-size: 0.85rem; color: var(--ink-3); }
+.nn-pad-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 14px 2px 22px; flex-wrap: wrap; }
+.nn-pad-row .muted { font-family: var(--mono); font-size: 0.8rem; font-weight: 600; }
+.nn-clear { min-height: 44px; padding: 0 16px; }
+
+.nn-shapes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.nn-shape { display: grid; justify-items: center; gap: 4px; padding: 12px 4px 10px; border-radius: var(--r-s); background: var(--key); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line), 0 4px 0 var(--key-edge); }
+.nn-shape:active { transform: translateY(3px); box-shadow: inset 0 0 0 1px var(--line), 0 1px 0 var(--key-edge); }
+.nn-shape b { font-weight: 800; font-size: 0.86rem; }
+.nn-shape small { font-family: var(--mono); font-size: 0.72rem; font-weight: 650; color: var(--ink-3); }
+.nn-shape.guess { background: var(--accent-soft); box-shadow: inset 0 0 0 2px var(--accent), 0 4px 0 var(--key-edge); }
+.nn-shape[disabled] { opacity: 0.5; }
+.nn-icon { width: 34px; height: 34px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linejoin: round; }
+.nn-shape.guess .nn-icon { stroke: var(--accent-ink); }
+@media (max-width: 440px) { .nn-shapes { gap: 6px; } .nn-shape { padding: 12px 2px 10px; } .nn-shape b { font-size: 0.74rem; letter-spacing: -0.01em; } }
+@media (max-width: 360px) { .nn-shape b { font-size: 0.66rem; } }
+.nn-said { min-height: 3em; margin: 10px 2px 18px; font-weight: 700; text-wrap: pretty; }
+.nn-said.ok { color: var(--ok); }
+.nn-said.bad { color: var(--bad); }
+
+.nn-curve, .nn-net { margin-bottom: 22px; display: grid; gap: 10px; }
+.nn-curve svg, .nn-net svg { width: 100%; height: auto; display: block; font-family: var(--mono); font-size: 9px; font-weight: 650; fill: var(--ink-3); }
+.nn-curve p, .nn-net p { margin: 0; font-size: 0.9rem; text-wrap: pretty; }
+.nn-curve .grid { stroke: var(--line); stroke-width: 1; }
+.nn-curve .chance { stroke: var(--ink-3); stroke-width: 1; stroke-dasharray: 3 3; }
+.nn-curve .line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.nn-curve .dot-line { fill: var(--accent); }
+.nn-curve rect.ok { fill: var(--ok); }
+.nn-curve rect.bad { fill: var(--bad); }
+.nn-curve .got line { stroke: var(--ok); stroke-width: 1.5; stroke-dasharray: 4 2; }
+.nn-curve .got text { fill: var(--ok); font-weight: 800; }
+.nn-net .in { stroke: var(--line); stroke-width: 0.6; }
+.nn-net .pos { stroke: var(--accent); }
+.nn-net .neg { stroke: var(--ink-3); }
+.nn-net .frame { fill: var(--key); stroke: var(--line); }
+.nn-net .px { fill: var(--ink); }
+.nn-net .neuron { stroke-width: 1.2; }
+.nn-net .neuron.pos { fill: var(--accent); stroke: var(--accent-ink); }
+.nn-net .neuron.neg { fill: var(--ink-3); stroke: var(--ink-3); }
+.nn-net .out circle { fill: var(--accent); stroke: var(--accent-ink); stroke-width: 1.2; }
+.nn-net .out text { fill: var(--ink-2); font-size: 10px; }
+.nn-net .out text.p { fill: var(--ink-3); font-size: 9px; }
+.nn-net .out.best text { fill: var(--ink); font-weight: 800; }
+.nn-how { margin-bottom: 22px; }
+.nn-reset { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.nn-confirm { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-weight: 700; }
+.nn-danger { background: var(--bad); color: #fff; box-shadow: 0 4px 0 color-mix(in oklab, var(--bad) 60%, #000); }
+.nn-note { margin: 14px 2px 0; font-size: 0.85rem; }

@@ -124,6 +124,12 @@ await p.goto(`${BASE}/matematicke-krizovky/nasobilka`)
 await p.waitForSelector('.cw-bank')
 ok(await p.locator('.cw-tile').count() > 0, 'a crossword opened directly renders the app screen')
 
+// Neuronová síť: the page is server-rendered and opens the drawing pad; nothing below it.
+ok((await fetch(`${BASE}/neuronova-sit`)).status === 200 && (await fetch(`${BASE}/neuronova-sit/nic`)).status === 404, '/neuronova-sit opens directly, a path below it is 404')
+await p.goto(`${BASE}/neuronova-sit`)
+await p.waitForSelector('.nn-pad canvas')
+ok(await p.locator('.nn-shape').count() === 4, 'Neuronová síť opened directly renders the app screen')
+
 // A first visit asks for the school on the home screen; a class key makes it the pupil's.
 const fresh = await (await b.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: 'block' })).newPage()
 fresh.on('pageerror', (e) => errs.push(String(e)))

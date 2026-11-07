@@ -23,14 +23,14 @@ Dole je vždy po ruce lišta se čtyřmi tlačítky:
 
 - **Dnes**: tvůj den a tvoje škola. Displej se sérií dní, karta **Teď na řadě** s jedinou věcí, kterou je teď nejlepší udělat (rozdělané kolo, Dnešní opakování, Sešit chyb, nebo doporučené téma; ostatní jsou pod ní jako malá tlačítka *Pak*), plány před písemkou, **předměty tvého ročníku**, hry k nim a připnutá témata. Napoprvé se zeptá *Kam chodíš do školy?* Stačí klepnout na třídu, nebo *Jen se rozhlížím*.
 - **Učivo**: všechny třídy ZŠ a ročníky SŠ, obory odborných škol, waldorfský plán a příprava na přijímačky. Nahoře je hledání (kdekoli ho otevře i klávesa `/`).
-- **Hry**: Slepá mapa, Periodická tabulka, Matematické křížovky a slovíčka všech jazyků. Nahoře ty, které patří k tvým předmětům.
+- **Hry**: Slepá mapa, Periodická tabulka, Matematické křížovky, Neuronová síť a slovíčka všech jazyků. Nahoře ty, které patří k tvým předmětům.
 - **Hledat**: hledání ve všech tématech a slovíčkách (kdekoli ho otevře i klávesa `/`).
 
 Vpravo nahoře na Dnes, Učivu a Hrách je tlačítko **Já** s tvým obrázkem a třídou. Otevře panel, kde změníš třídu, obor, druhý jazyk a způsob výuky, přepneš, kdo se učí, a najdeš Přehled, Sešit chyb, Plán před písemkou, přenos pokroku, nastavení a o aplikaci. Bez JavaScriptu je to stránka [sprtam.cz/ja](https://sprtam.cz/ja).
 
 **Moje škola** (tlačítko Já nahoře) je třída nebo ročník, na SŠ i obor, u ročníků s druhým cizím jazykem jazyk, který se učíš (ostatní dva se pak na úvodní obrazovce neukazují), a způsob výuky (běžná nebo waldorfská škola). Pamatuje se jen v zařízení, každý profil má svou. Když si ji nevybereš, stane se tvou první třída, kterou otevřeš.
 
-Hry a příprava (přijímačky) nejsou přilepené k jedné obrazovce. Každá v seznamu [`src/games.ts`](../src/games.ts) říká, ke kterým předmětům (případně jen ke kterým ročníkům) patří, a ukáže se všude, kde ty předměty jsou: u předmětu, u ročníku, na úvodní obrazovce a v Hrách. Slepá mapa patří k zeměpisu a vlastivědě, Periodická tabulka k chemii, Matematické křížovky k matematice, slovíčka k jazyku a přijímačky k češtině a matematice v 9. třídě. U celého ročníku se slovíčka víc jazyků spojí do jednoho tlačítka *Slovíčka*.
+Hry a příprava (přijímačky) nejsou přilepené k jedné obrazovce. Každá v seznamu [`src/games.ts`](../src/games.ts) říká, ke kterým předmětům (případně jen ke kterým ročníkům) patří, a ukáže se všude, kde ty předměty jsou: u předmětu, u ročníku, na úvodní obrazovce a v Hrách. Slepá mapa patří k zeměpisu a vlastivědě, Periodická tabulka k chemii, Matematické křížovky k matematice, Neuronová síť k informatice (a odkazují na ni témata o nervové soustavě), slovíčka k jazyku a přijímačky k češtině a matematice v 9. třídě. U celého ročníku se slovíčka víc jazyků spojí do jednoho tlačítka *Slovíčka*.
 
 ## Waldorfská škola
 
@@ -87,6 +87,14 @@ Hra na [sprtam.cz/matematicke-krizovky](https://sprtam.cz/matematicke-krizovky) 
 Úrovně, aby křížovky šly všem dětem: **sčítání a odčítání do 10** (1. třída, 3 příklady), **do 20** (1.–2. třída), **do 100** (2.–3. třída), **malá násobilka** (3.–4. třída, násobení a dělení do 100), **všechny čtyři počty** (4.–5. třída), **počítání do 1000** (5.–6. třída, násobení a dělení jednociferným číslem) a **záporná čísla** (od 7. třídy, celá čísla od −100 do 100, 8 příkladů). Úroveň pro tvou třídu je označená *pro tebe*. Vyšší úrovně mají víc příkladů a v nabídce i čísla navíc, která nikam nepatří.
 
 Každá křížovka se vygeneruje znovu ([`src/crossword`](../src/crossword/index.ts)) a vždy jde vyřešit krok za krokem: pořád je nějaký příklad, ve kterém chybí jen jedno číslo. Řešení je proto jediné. Body jsou za příklady, které platily hned, když jsi je poprvé vyplnil (příklad s nápovědou se nepočítá). Nejlepší výsledek každé úrovně zůstává jen v zařízení (`sprtam:krizovky`, viz [Soukromí](SOUKROMI.md)). Hra funguje i offline.
+
+## Neuronová síť
+
+Nástroj na [sprtam.cz/neuronova-sit](https://sprtam.cz/neuronova-sit) (v Hrách, u informatiky a programování a v tématech o nervové soustavě v přírodopisu 8. třídy a biologii 3. ročníku SŠ). Ukazuje, jak se učí umělá inteligence. Na kreslicí plochu nakreslíš trojúhelník, čtverec, kruh nebo obdélník a jedním ze čtyř tlačítek (na počítači klávesy 1–4) síti řekneš, co to je. Displej nad plochou ukazuje tip sítě už během kreslení, bez klepnutí, a pruhy, jak moc si je jistá každým tvarem. Smazat kresbu jde tlačítkem nebo klávesou Esc.
+
+Síť ([`src/neuro`](../src/neuro/index.ts)) běží celá v zařízení: kresba se ořízne a zmenší na 16 × 16 políček (256 čísel), poměr stran zůstane, aby šel poznat čtverec od obdélníku. Síť má 24 skrytých neuronů a 4 výstupy, na začátku náhodné váhy. Každý pojmenovaný obrázek (a čtyři jeho mírně pootočené a posunuté kopie) je příklad, ze kterého se síť učí zpětným šířením chyby. Než se z obrázku učí, nejdřív ho zkusí uhodnout: tyhle tipy jsou poctivá zkouška a z nich je **křivka učení** (kolik z posledních 8 tipů vyšlo; náhoda je 25 %). **Bod pochopení** je první chvíle, kdy síť viděla všechny čtyři tvary a uhodla aspoň 7 z posledních 8. Obvykle to bývá po 12–20 obrázcích. Pod tím je vidět, co síť vidí, jak se rozsvítily neurony a které hlasují pro který tvar, a krátké vysvětlení.
+
+Naučené obrázky se ukládají jen v zařízení (`sprtam:neuronka`, nejvýš 150, viz [Soukromí](SOUKROMI.md)). Váhy se neukládají: při další návštěvě se síť z obrázků naučí znovu (pokaždé stejně). *Vzít zpět poslední příklad* napraví omylem zvolený tvar, *Vymazat síť* zapomene všechno.
 
 ## Režimy procvičování
 

@@ -10,7 +10,9 @@ import { MODES, type ModeId } from '../quiz/engine'
 import { getProgress, isPinned, pinnedKeys, preferExplanation, togglePin, useProgress } from '../progress/store'
 import { back, Link, query } from '../router'
 import { titles, useTitle } from '../seo'
+import { extrasOfTopic } from '../games'
 import { Bar } from '../ui/Bar'
+import { appExtras, ExtraRow } from '../ui/Extras'
 import { keyStyle, subjectStyle } from '../ui/glyphs'
 import { IArrow, IBolt, IBulb, ICalendar, IMic, IPencil, IPin, IPrint, IRepeat } from '../ui/icons'
 import { Reportable, ReportButton } from '../ui/Report'
@@ -80,6 +82,7 @@ export function TopicScreen({ g, s, id }: { g: GradeId; s: SubjectId; id: string
       <div class="list topic-extra">
         <Link class="row print-key" href={`/plan/novy?tema=${encodeURIComponent(key)}`} rel="nofollow"><ICalendar /><span class="txt"><b>Píšu z toho písemku</b><small>naplánuj si opakování do dne písemky</small></span><IArrow /></Link>
         <Link class="row print-key" href={`/g/${g}/${s}/${id}/tisk`} rel="nofollow"><IPrint /><span class="txt"><b>Pracovní list</b><small>k vytištění nebo do PDF, s řešením</small></span><IArrow /></Link>
+        {extrasOfTopic(appExtras(), key).map((x) => <ExtraRow key={x.id} x={x} hint={`vyzkoušej si: ${x.hint}`} />)}
       </div>
       {next && (
         <>

@@ -4,12 +4,13 @@ import type { ApproachMeta } from '../src/content/manifest'
 import type { ApproachYearFile, Block, Subject, SubjectId, VocabFile, WordsFile, YearBlock, YearId } from '../src/content/types'
 import { LANGS, langById, LEVEL_IDS, vocabPath, type LangMeta } from '../src/vocab/langs'
 import type { Level, VocabLang } from '../src/vocab/types'
-import { extras, extrasFor, extrasOf, merged, type Extra } from '../src/games'
+import { extras, extrasFor, extrasOf, extrasOfTopic, merged, type Extra } from '../src/games'
 import { ABOUT } from '../src/about'
 import { EXAM, partTopics } from '../src/exam'
 import { askable, MAPS, MAPS_INTRO, MAPS_PATH, modesOf, PARTS, place, ROUND } from '../src/maps'
 import { askable as askableElements, ELEMENTS_INTRO, ELEMENTS_PATH, MODES as ELEMENT_MODES, ROUND as ELEMENT_ROUND, setById } from '../src/chem'
 import { CROSSWORD_INTRO, CROSSWORD_PATH, LEVELS as CROSSWORD_LEVELS } from '../src/crossword'
+import { NEURO_INTRO, NEURO_PATH } from '../src/neuro'
 import { fullTitle, gradeFor, gradeLabel, plain, SITE_NAME, summary, titles } from '../src/seo'
 import { WIDGETS } from '../src/widgets'
 import { glyphSvg, OBOR_GLYPHS, SUBJECT_GLYPHS } from '../src/ui/glyph-svg'
@@ -101,12 +102,12 @@ const meChip = `<a class="school-chip" href="/ja" aria-label="Já"><span class="
 const tabHead = (title: string) => `<header class="bar"><h1 class="brand">${esc(title)}</h1><span class="grow"></span>${meChip}</header>`
 
 /** An extra of src/games.ts as a key (ExtraRow in src/ui/Extras.tsx). */
-const extraRow = (x: Extra) => `<a class="row extra-key" style="${style(x.c)}" href="${esc(x.path)}"><span class="skey m">${x.emoji ? `<b class="em">${esc(x.emoji)}</b>` : `<b>${esc(x.glyph ?? '')}</b>`}</span><span class="txt"><b>${esc(x.name)}</b><small>${esc(x.hint)}</small></span>${FORWARD}</a>`
+const extraRow = (x: Extra, hint = x.hint) => `<a class="row extra-key" style="${style(x.c)}" href="${esc(x.path)}"><span class="skey m">${x.emoji ? `<b class="em">${esc(x.emoji)}</b>` : `<b>${esc(x.glyph ?? '')}</b>`}</span><span class="txt"><b>${esc(x.name)}</b><small>${esc(hint)}</small></span>${FORWARD}</a>`
 /** Extras placed on a page under a label (ExtraList). */
 const extraList = (list: Extra[]) => {
   if (!list.length) return ''
   const games = list.some((x) => x.kind === 'hra'), prep = list.some((x) => x.kind === 'priprava')
-  return `<section class="sec extras"><h2 class="label">${games && prep ? 'Hry a příprava' : games ? 'Hry' : 'Příprava'}</h2><div class="list">${list.map(extraRow).join('')}</div></section>`
+  return `<section class="sec extras"><h2 class="label">${games && prep ? 'Hry a příprava' : games ? 'Hry' : 'Příprava'}</h2><div class="list">${list.map((x) => extraRow(x)).join('')}</div></section>`
 }
 /** The grade keys, each a link to its grade (GradePad in src/screens/School.tsx). */
 const gradePad = () => `<div class="pad">${STAGES.map((st) => `<div class="pad-group"><small>${STAGE_LABEL[st.id]}</small><div class="pad-keys">${st.grades.map((g) => `<a class="num-key" href="${esc(`/g/${g}`)}" aria-label="${esc(gradeLabel(g))}">${GRADE_NAME[g].split('.')[0]}</a>`).join('')}</div></div>`).join('')}</div>`
@@ -128,6 +129,8 @@ export function pages(site: SiteContent): Page[] {
   const levelsOf = (lang: VocabLang): Level[] => (lang === 'en' ? vocab.map((v) => v.level as Level).sort((x, y) => LEVEL_IDS.indexOf(x) - LEVEL_IDS.indexOf(y)) : wordsOf(langById(lang)).map((w) => w.level as Level))
   const allExtras = extras(levelsOf)
   const games = allExtras.filter((x) => x.kind === 'hra')
+  /** Games offered in a topic (the app shows them under the practice, TopicScreen). */
+  const topicExtras = (key: string) => { const l = extrasOfTopic(allExtras, key); return l.length ? `<div class="list topic-extra">${l.map((x) => extraRow(x, `vyzkoušej si: ${x.hint}`)).join('')}</div>` : '' }
 
   // Home without JS (and for crawlers): the app then shows the pupil's own school, or asks for it like this.
   out.push({
@@ -154,7 +157,7 @@ ${extraList(games)}
     title: titles.games(),
     description: `Procvičování hrou: ${games.map((x) => x.name.toLowerCase()).join(', ')}.`,
     crumbs: [home, ['Hry', '/hry']],
-    body: `<div class="page games">${tabHead('Hry')}<p class="muted lead">Procvičování hrou. Každou hru najdeš i u předmětu, ke kterému patří.</p><section class="sec"><h2 class="label">Všechny hry</h2><div class="list">${games.map(extraRow).join('')}</div></section></div>${tabbar('games')}`,
+    body: `<div class="page games">${tabHead('Hry')}<p class="muted lead">Procvičování hrou. Každou hru najdeš i u předmětu, ke kterému patří.</p><section class="sec"><h2 class="label">Všechny hry</h2><div class="list">${games.map((x) => extraRow(x)).join('')}</div></section></div>${tabbar('games')}`,
   })
 
   out.push({
@@ -216,7 +219,7 @@ ${extraList(games)}
           description: summary(explanations[0].blocks) || `${t.title} – ${subjectMeta(s).name}, ${gradeLabel(g)}.`,
           crumbs: [...sCrumbs, [t.title, tPath]],
           type: 'article',
-          body: `<div class="page" style="${style(subjectMeta(s).c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [subjectMeta(s).name, sPath]])}${explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${checkNote(t.verified, `${g}/${s}/${t.id}`)}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
+          body: `<div class="page" style="${style(subjectMeta(s).c)}">${bar(`${t.emoji} ${t.title}`, sPath, [[GRADE_NAME[g], gPath], [subjectMeta(s).name, sPath]])}${explanations.map((x) => `<section><h2 class="label">${esc(x.title)}</h2><div class="blocks">${x.blocks.map((b) => block(b, WIDGETS)).join('')}</div></section>`).join('')}${checkNote(t.verified, `${g}/${s}/${t.id}`)}${topicExtras(`${g}/${s}/${t.id}`)}${nav ? `<div class="list">${nav}</div>` : ''}</div>${gTab}`,
           ld: {
             '@type': 'LearningResource', name: t.title, inLanguage: 'cs', learningResourceType: 'Explanation', isAccessibleForFree: true,
             educationalLevel: GRADE_NAME[g], about: subjectMeta(s).name, url: `${SITE}${tPath}`,
@@ -418,6 +421,16 @@ ${extraList(games)}
     crumbs: [home, ['Matematické křížovky', CROSSWORD_PATH]],
     body: `<div class="page" style="${style(subjectMeta('matematika').c)}">${bar('🔢 Matematické křížovky', '/')}<div class="blocks approach-about"><p>${esc(CROSSWORD_INTRO)}</p></div>`
       + `<h2 class="label">Vyber si úroveň</h2><div class="list">${CROSSWORD_LEVELS.map((lv) => `<a class="row map-mode" href="${esc(`${CROSSWORD_PATH}/${lv.id}`)}" rel="nofollow"><span class="txt"><b>${esc(lv.title)}</b><small>${esc(`${lv.who} · ${lv.hint}`)}</small></span></a>`).join('')}</div></div>${tabbar('games')}`,
+  })
+  // Neuronová síť: /neuronova-sit (as src/screens/Neuro.tsx; drawing and learning need the app).
+  out.push({
+    path: NEURO_PATH,
+    title: titles.neuro(),
+    description: NEURO_INTRO,
+    crumbs: [home, ['Neuronová síť', NEURO_PATH]],
+    body: `<div class="page nn" style="${style('magenta')}">${bar('🧠 Neuronová síť', '/')}<div class="blocks approach-about"><p>${esc(NEURO_INTRO)}</p></div>`
+      + `<div class="nn-display"><div class="nn-lcd"><b>Nakresli tvar</b><small>kreslení a učení sítě potřebuje JavaScript</small></div></div>`
+      + `<h2 class="label">Jak to funguje</h2><div class="blocks nn-how"><p>Tvoje kresba se zmenší na mřížku 16 × 16 políček, tedy 256 čísel. Každý z 24 neuronů je vynásobí svými vahami, sečte a podle součtu se rozsvítí. Čtyři výstupní neurony z toho spočítají, jak moc je obrázek trojúhelník, čtverec, kruh nebo obdélník. Když síti řekneš, co jsi nakreslil, kousek posune všechny váhy, aby příště hádala líp. Křivka učení ukazuje, kolik z posledních 8 tipů vyšlo, a kdy síť tvary pochopila.</p></div></div>${tabbar('games')}`,
   })
   return out
 }
