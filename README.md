@@ -17,6 +17,7 @@
 - **Slepá mapa:** hra na hledání krajů Česka, států Evropy a světa a jejich hlavních měst – **[sprtam.cz/slepa-mapa](https://sprtam.cz/slepa-mapa)**.
 - **Periodická tabulka:** prohlížení všech 118 prvků a hra na značky, názvy, slepou tabulku a kovy a nekovy – **[sprtam.cz/periodicka-tabulka](https://sprtam.cz/periodicka-tabulka)**.
 - **Matematické křížovky:** příklady, které se kříží vodorovně i svisle, v sedmi úrovních od sčítání do 10 (1. třída) po záporná čísla – **[sprtam.cz/matematicke-krizovky](https://sprtam.cz/matematicke-krizovky)**.
+- **Neuronová síť:** nakreslíš trojúhelník, čtverec, kruh nebo obdélník, řekneš počítači, co to je, a na křivce učení sleduješ, kdy malá neuronová síť tvary pochopí a začne je poznávat sama – **[sprtam.cz/neuronova-sit](https://sprtam.cz/neuronova-sit)**.
 - **Slovíčka** s výslovností a opakováním podle Leitnerova systému: angličtina A1–C1, němčina, francouzština a španělština A1–B1.
 - **Druhý cizí jazyk** (němčina, francouzština, španělština) od 7. třídy po maturitu.
 - **Waldorfská škola:** učivo po epochách podle waldorfského plánu, vysvětlení v duchu waldorfské pedagogiky a slovní hodnocení – **[sprtam.cz/waldorf](https://sprtam.cz/waldorf)**.

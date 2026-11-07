@@ -2,12 +2,13 @@ import { subjectMeta, type KeyColor } from './content/curriculum'
 import type { GradeId, SubjectId, YearId } from './content/types'
 import { ELEMENTS_PATH } from './chem'
 import { CROSSWORD_PATH } from './crossword'
+import { NEURO_PATH } from './neuro'
 import { EXAM } from './exam'
 import { MAPS_PATH } from './maps'
 import { LANGS, vocabPath } from './vocab/langs'
 import type { Level, VocabLang } from './vocab/types'
 
-// Learning games and other extras beside the topics (Slepá mapa, Periodická tabulka, Matematické křížovky, slovíčka, přijímačky).
+// Learning games and other extras beside the topics (Slepá mapa, Periodická tabulka, Matematické křížovky, Neuronová síť, slovíčka, přijímačky).
 // One registry, and each extra says where it belongs: the subjects it is part of, optionally only some grades.
 // Every screen that offers extras asks the registry instead of linking them by hand: the home screen (the
 // pupil's school), a grade, a subject and the Hry tab (games) or Učivo (preparation). A new game is one entry
@@ -28,6 +29,8 @@ export interface Extra {
   s: SubjectId[]
   /** Only in these grades; without it wherever one of the subjects is taught. */
   g?: YearId[]
+  /** Topics it is offered in too (keys `<grade>/<subject>/<topic>`): the topic screen links it under the practice. */
+  t?: string[]
 }
 
 const WORDS = 'slovicka-'
@@ -41,6 +44,7 @@ export function extras(levels: (lang: VocabLang) => Level[]): Extra[] {
   return [
     { id: 'slepa-mapa', kind: 'hra', name: 'Slepá mapa', hint: 'kraje, Evropa, svět', emoji: '🗺️', c: 'teal', path: MAPS_PATH, s: ['zemepis', 'vlastiveda'] },
     { id: 'matematicke-krizovky', kind: 'hra', name: 'Matematické křížovky', hint: 'od sčítání do 10 po záporná čísla', emoji: '🔢', c: subjectMeta('matematika').c, path: CROSSWORD_PATH, s: ['matematika'] },
+    { id: 'neuronova-sit', kind: 'hra', name: 'Neuronová síť', hint: 'nauč počítač poznávat tvary', emoji: '🧠', c: 'magenta', path: NEURO_PATH, s: ['informatika', 'programovani'], t: ['z8/prirodopis/nervy-smysly', 's3/biologie/nervy-hormony'] },
     { id: 'periodicka-tabulka', kind: 'hra', name: 'Periodická tabulka', hint: 'prvky, značky a hra na slepou tabulku', emoji: '🧪', c: 'green', path: ELEMENTS_PATH, s: ['chemie'] },
     ...LANGS.flatMap((l): Extra[] => {
       const ls = levels(l.id)
@@ -54,6 +58,9 @@ const fits = (x: Extra, g: GradeId, s: SubjectId) => x.s.includes(s) && (!x.g ||
 
 /** Extras of a subject in a grade. */
 export const extrasOf = (all: Extra[], g: GradeId, s: SubjectId) => all.filter((x) => fits(x, g, s))
+
+/** Extras offered in a topic (`<grade>/<subject>/<topic>`). */
+export const extrasOfTopic = (all: Extra[], key: string) => all.filter((x) => x.t?.includes(key))
 
 /** Extras of any of the subjects of a grade (the grade screen, the pupil's school on the home screen). */
 export const extrasFor = (all: Extra[], g: GradeId, subjects: SubjectId[]) => all.filter((x) => subjects.some((s) => fits(x, g, s)))

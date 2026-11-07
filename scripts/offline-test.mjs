@@ -43,6 +43,7 @@ await visit('/periodicka-tabulka', '.periodic-detail', 'Periodická tabulka with
 await visit('/periodicka-tabulka/vse/poznej', '.periodic-el.pick', 'a game of Periodická tabulka')
 await visit('/matematicke-krizovky', '.cw-example', 'Matematické křížovky')
 await visit('/matematicke-krizovky/do1000', '.cw-tile', 'a crossword')
+await visit('/neuronova-sit', '.nn-pad canvas', 'Neuronová síť')
 // In-app navigation while offline.
 await p.evaluate(() => { history.pushState(null, '', '/g/z2/prvouka'); dispatchEvent(new PopStateEvent('popstate')) })
 ok(await p.waitForSelector('.list .row', { timeout: 10000 }).then(() => true, () => false), 'offline in-app navigation to another subject')
