@@ -188,8 +188,10 @@ function Pad({ strokes, onChange }: { strokes: Stroke[]; onChange: (s: Stroke[])
   const paint = () => {
     const c = canvas.current
     if (!c) return
-    const r = c.getBoundingClientRect(), dpr = Math.min(3, devicePixelRatio || 1)
-    const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr)
+    // Sized by the pad, never by the canvas itself: a canvas measured before the stylesheet applies has the size of
+    // its own bitmap, and growing the bitmap from that would double it on every resize.
+    const r = c.parentElement!.getBoundingClientRect(), dpr = Math.min(3, devicePixelRatio || 1)
+    const w = Math.min(2048, Math.round(r.width * dpr)), h = Math.min(2048, Math.round(r.height * dpr))
     if (c.width !== w || c.height !== h) { c.width = w; c.height = h }
     const g = c.getContext('2d')
     if (!g) return
@@ -211,7 +213,7 @@ function Pad({ strokes, onChange }: { strokes: Stroke[]; onChange: (s: Stroke[])
     const c = canvas.current
     if (!c) return
     const ro = new ResizeObserver(paint)
-    ro.observe(c)
+    ro.observe(c.parentElement!)
     return () => { ro.disconnect(); cancelAnimationFrame(frame.current) }
   }, [])
   const at = (e: PointerEvent): [number, number] => {
@@ -227,6 +229,7 @@ function Pad({ strokes, onChange }: { strokes: Stroke[]; onChange: (s: Stroke[])
     <div class="nn-pad">
       <canvas
         ref={canvas}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
         role="img"
         aria-label={strokes.length ? 'Tvoje kresba' : 'Kreslicí plocha: kresli prstem nebo myší'}
         onPointerDown={(e) => {
