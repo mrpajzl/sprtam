@@ -149,6 +149,16 @@ check(await d.locator('.nn-pad-hint').count() === 1, 'Escape empties the pad')
 await draw(d, hand(3))
 await shot(d, 'dark')
 
+// ——— A slow stylesheet (production): the pad must not grow while the page is still unstyled ———
+const slow = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, hasTouch: true, isMobile: true })
+await slow.route(/\.css(\?|$)/, async (r) => { await new Promise((ok) => setTimeout(ok, 1500)); await r.continue() })
+const sl = await slow.newPage()
+await sl.goto(`${base}/neuronova-sit`)
+await sl.waitForSelector('.nn-pad canvas', { state: 'attached' })
+await sl.waitForTimeout(2500)
+const size = await sl.evaluate(() => [document.querySelector('.nn-pad canvas').width, document.documentElement.scrollWidth, innerWidth])
+check(size[0] <= 1000 && size[1] <= size[2], `with a slow stylesheet the pad keeps its size (${size.join(', ')})`)
+
 check(!errors.length, `no errors${errors.length ? `: ${errors.join(' | ')}` : ''}`)
 await browser.close()
 console.log(failed ? `\n${failed} failed` : '\nall passed')
