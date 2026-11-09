@@ -99,6 +99,45 @@ export const OBORY: Obor[] = [
       { odb: ['starozitnictvi', 'obrazy-grafika', 'komunikace', 'ekonomika'], general: [...BASE, 'dejepis', 'zsv'] },
     ],
   },
+  {
+    id: 'ekonomika-podnikani',
+    code: '63-41-M/01',
+    name: 'Ekonomika a podnikání',
+    kind: 'M',
+    about: 'Ekonomika podniku, účetnictví, daně, marketing, právo a obchodní komunikace. Absolventi pracují jako účetní, asistenti, referenti v bankách, pojišťovnách a firmách nebo podnikají.',
+    years: [
+      { odb: ['ekonomika', 'pravo', 'komunikace'], general: [...BASE, 'dejepis', 'zemepis', 'zsv'] },
+      { odb: ['ekonomika', 'ucetnictvi', 'pravo', 'komunikace'], general: [...BASE, 'dejepis', 'zemepis', 'zsv'] },
+      { odb: ['ekonomika', 'ucetnictvi', 'pravo'], general: [...BASE, 'zsv'] },
+      { odb: ['ucetnictvi', 'ekonomika', 'pravo'], general: [...BASE, 'zsv'] },
+    ],
+  },
+  {
+    id: 'pravni-cinnost',
+    code: '68-43-M/01',
+    name: 'Právní činnost',
+    kind: 'M',
+    about: 'Občanské, obchodní, trestní a ústavní právo, soudy a řízení před nimi, k tomu veřejná správa, ekonomika a účetnictví. Absolventi pracují v advokátních kancelářích, u soudů, notářů, exekutorů nebo na úřadech.',
+    years: [
+      { odb: ['pravo', 'verejna-sprava', 'komunikace'], general: [...BASE, 'dejepis', 'zemepis', 'zsv'] },
+      { odb: ['pravo', 'verejna-sprava', 'ekonomika', 'komunikace'], general: [...BASE, 'dejepis', 'zsv'] },
+      { odb: ['pravo', 'verejna-sprava', 'ekonomika', 'ucetnictvi'], general: [...BASE, 'zsv'] },
+      { odb: ['pravo', 'verejna-sprava', 'ucetnictvi'], general: [...BASE, 'zsv'] },
+    ],
+  },
+  {
+    id: 'verejnospravni-cinnost',
+    code: '68-43-M/01',
+    name: 'Veřejnosprávní činnost',
+    kind: 'M',
+    about: 'Jak funguje stát, obce a kraje, správní řízení, přestupky, veřejné finance a e-government, k tomu právo, ekonomika a účetnictví. Absolventi pracují jako úředníci obcí, krajů a státních úřadů.',
+    years: [
+      { odb: ['verejna-sprava', 'pravo', 'komunikace'], general: [...BASE, 'dejepis', 'zemepis', 'zsv'] },
+      { odb: ['verejna-sprava', 'pravo', 'ekonomika', 'komunikace'], general: [...BASE, 'dejepis', 'zsv'] },
+      { odb: ['verejna-sprava', 'pravo', 'ekonomika', 'ucetnictvi'], general: [...BASE, 'zsv'] },
+      { odb: ['verejna-sprava', 'ekonomika', 'ucetnictvi'], general: [...BASE, 'zsv'] },
+    ],
+  },
 ]
 
 export const OBOR_PATH = '/obor'
