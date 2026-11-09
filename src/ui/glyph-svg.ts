@@ -70,6 +70,10 @@ const VOCATIONAL: Record<string, string> = {
   'kovy-sperky': '<circle cx="12" cy="15" r="6"/>' + tint('M9.2 5.2l1.4-2.2h2.8l1.4 2.2L12 9z') + p('M9.2 5.2l1.4-2.2h2.8l1.4 2.2L12 9z', 'M9.2 5.2h5.6'),
   'obrazy-grafika': '<rect x="3" y="4" width="18" height="16" rx="1.5"/><rect x="6" y="7" width="12" height="10" rx=".5"/>' + tint('M6 17l4-5 3 3.5 2-2 3 3.5z') + dot(14.8, 9.8, 1.1),
   starozitnictvi: tint('M3 12.2V4.5A1.5 1.5 0 0 1 4.5 3h7.7l8.6 8.6a1.5 1.5 0 0 1 0 2.1l-7.1 7.1a1.5 1.5 0 0 1-2.1 0z') + p('M3 12.2V4.5A1.5 1.5 0 0 1 4.5 3h7.7l8.6 8.6a1.5 1.5 0 0 1 0 2.1l-7.1 7.1a1.5 1.5 0 0 1-2.1 0z') + '<circle cx="7.5" cy="7.5" r="1.6"/>',
+  // Ekonomika a podnikání, právní a veřejnosprávní činnost
+  pravo: p('M12 4v16.5', 'M8 20.5h8', 'M4.5 6.5h15', 'M4.5 6.5L1.8 13M4.5 6.5L7.2 13M19.5 6.5L16.8 13M19.5 6.5L22.2 13') + tint('M1.5 13h6a3 3 0 0 1-6 0z') + tint('M16.5 13h6a3 3 0 0 1-6 0z') + p('M1.5 13h6a3 3 0 0 1-6 0zM16.5 13h6a3 3 0 0 1-6 0z') + dot(12, 3.5, 1.3),
+  ucetnictvi: tint('M5 3h14v5H5z') + p('M5 3h14v18l-2.3-1.5L14.3 21 12 19.5 9.7 21l-2.4-1.5L5 21z', 'M8.5 11.5h7M8.5 15h4.5', 'M5 8h14'),
+  'verejna-sprava': '<circle cx="12" cy="5" r="2.5"/>' + p('M10.6 7.3L10 12.5h4l-.6-5.2') + '<rect x="4.5" y="12.5" width="15" height="4" rx="1" fill="currentColor" fill-opacity=".25"/><rect x="4.5" y="12.5" width="15" height="4" rx="1"/>' + p('M5 20.5h14'),
 }
 
 /** Obory (src/obory.ts) and the odborné školy as a whole. */
@@ -80,6 +84,9 @@ const OBORY: Record<string, string> = {
   mechatronik: p('M4 20.5h8', 'M8 20.5v-3', 'M9 14.3l3.8-5.3', 'M15.8 7.8l3.4 2', 'M19.2 9.8l1.6 2.4M19.2 9.8l-.4 2.9') + '<circle cx="8" cy="15.5" r="2" fill="currentColor" fill-opacity=".25"/><circle cx="14" cy="7.5" r="2" fill="currentColor" fill-opacity=".25"/>',
   'kosmeticke-sluzby': '<circle cx="11" cy="13" r="7.5"/>' + p('M7.6 12.2c.6.7 1.7.7 2.3 0M12.1 12.2c.6.7 1.7.7 2.3 0', 'M9 16.3c1.2.9 2.8.9 4 0') + SPARKLE,
   starozitnik: tint('M10 6c-3 1.5-4.5 4-4.5 7.5 0 4 2.6 6.5 6.5 7.5 3.9-1 6.5-3.5 6.5-7.5 0-3.5-1.5-6-4.5-7.5z') + p('M9 3h6', 'M10 3v3c-3 1.5-4.5 4-4.5 7.5 0 4 2.6 6.5 6.5 7.5 3.9-1 6.5-3.5 6.5-7.5 0-3.5-1.5-6-4.5-7.5V3', 'M6 11.5h12M6.6 16h10.8'),
+  'ekonomika-podnikani': tint('M4.5 15h3v4h-3zM10.5 12.5h3V19h-3zM16.5 10h3v9h-3z') + p('M4.5 15h3v4h-3zM10.5 12.5h3V19h-3zM16.5 10h3v9h-3z', 'M3 21.5h18', 'M3.5 9l5-4.5 3.5 3 6.5-5', 'M14.5 2.5h4v4'),
+  'pravni-cinnost': '<rect x="9" y="4.5" width="10" height="5" rx="1.2" transform="rotate(45 14 7)" fill="currentColor" fill-opacity=".25"/><rect x="9" y="4.5" width="10" height="5" rx="1.2" transform="rotate(45 14 7)"/>' + p('M12.2 8.8L4 17', 'M12 20.5h9'),
+  'verejnospravni-cinnost': tint('M4 11L12 6.5l8 4.5z') + p('M4 11L12 6.5l8 4.5z', 'M6.5 13.5v4.5M10.5 13.5v4.5M13.5 13.5v4.5M17.5 13.5v4.5', 'M3.5 20.5h17', 'M12 6.5V2') + '<path d="M12 2h4.5l-1 1.3 1 1.3H12z" fill="currentColor" stroke-width="1"/>',
 }
 
 export const SUBJECT_GLYPHS: Record<string, string> = { ...CORE, ...VOCATIONAL }

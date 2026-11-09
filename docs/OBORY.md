@@ -20,7 +20,7 @@ Leží v „ročníku“ `odb`, protože nepatří jednomu ročníku ani jednomu
 
 ### Obory (kód)
 
-Každý obor v `OBORY` má id (adresa `/obor/<id>`, nemění se), kód oboru vzdělání podle RVP SOV (např. `18-20-M/01`), název, druh (`M` maturitní, `L` maturitní s odborným výcvikem, `H` s výučním listem), krátký popis a ročníky. Jeho glyf (ikona) je v `OBORY` v [`src/ui/glyph-svg.ts`](../src/ui/glyph-svg.ts) pod stejným id. Každý ročník uvádí:
+Každý obor v `OBORY` má id (adresa `/obor/<id>`, nemění se), kód oboru vzdělání podle RVP SOV (např. `18-20-M/01`; dva obory smějí mít stejný kód, když jsou to různá zaměření jednoho RVP, jako právní a veřejnosprávní činnost), název, druh (`M` maturitní, `L` maturitní s odborným výcvikem, `H` s výučním listem), krátký popis a ročníky. Jeho glyf (ikona) je v `OBORY` v [`src/ui/glyph-svg.ts`](../src/ui/glyph-svg.ts) pod stejným id. Každý ročník uvádí:
 
 - `odb`: odborné předměty (id z `topics/odb`) v pořadí, v jakém se ukazují;
 - `general`: všeobecné předměty. Bere se učivo gymnázia stejného ročníku (1. ročník oboru = `s1`).
@@ -42,5 +42,8 @@ Obor se v aplikaci ukáže, až když obsah má aspoň jeden z jeho odborných p
 | 🦾 Mechatronik (Mechanik seřizovač) | 23-45-L/01 | technické kreslení, materiály, elektrotechnika, technologie, elektronika, mechanika, části strojů, automatizace, CNC, ekonomika |
 | 💆 Kosmetické služby | 69-41-L/01 | zdravověda a dermatologie, kosmetika, kosmetické přípravky, psychologie a komunikace, manikúra a pedikúra, líčení a vizáž, ekonomika |
 | 🏺 Starožitník | 82-48-L/01 | dějiny umění a slohy, nábytek, sklo a porcelán, kovy a šperky, obrazy a grafika, starožitnický obchod, komunikace, ekonomika |
+| 📊 Ekonomika a podnikání | 63-41-M/01 | ekonomika, účetnictví, právo, komunikace |
+| ⚖️ Právní činnost | 68-43-M/01 | právo, veřejná správa, ekonomika, účetnictví, komunikace |
+| 🏛️ Veřejnosprávní činnost | 68-43-M/01 | veřejná správa (i správní právo), právo, ekonomika, účetnictví, komunikace |
 
 Všeobecné předměty zatím vycházejí z učiva gymnázia. Pro maturitní obory je to dobrá příprava, jen místy jde do větší hloubky, než SOŠ vyžaduje.
